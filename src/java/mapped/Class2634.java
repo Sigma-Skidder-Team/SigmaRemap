@@ -56,9 +56,9 @@ public class Class2634 extends Class2628 {
          BlockState var5 = var3.getBlockState(var4);
          Block var6 = var5.getBlock();
          if (this.field16952 && var6 instanceof Class3483) {
-            Integer var7 = var5.<Integer>method23463(Class3483.field19334);
+            Integer var7 = var5.<Integer>get(Class3483.field19334);
             if (var7 != 0) {
-               var3.setBlockState(var4, var5.method23465(Class3483.field19334, Integer.valueOf(var7 - 1)), 2);
+               var3.setBlockState(var4, var5.with(Class3483.field19334, Integer.valueOf(var7 - 1)), 2);
                var3.playEvent(2001, var4, Block.getStateId(var5));
             } else {
                var3.setBlockState(var4, Blocks.AIR.method11579(), 2);

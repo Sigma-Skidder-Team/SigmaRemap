@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.util.ObjectIntIdentityMap;
 
 import javax.annotation.Nullable;
 import java.util.Iterator;
@@ -9,7 +10,7 @@ import java.util.Iterator;
 public class Class2354 implements Iterable<BlockState> {
    private static String[] field16163;
    public static final BlockState field16164 = Blocks.AIR.method11579();
-   private final Class2352<BlockState> field16165 = new Class2352<BlockState>(16);
+   private final ObjectIntIdentityMap<BlockState> field16165 = new ObjectIntIdentityMap<BlockState>(16);
    private int field16166;
 
    public Class2354() {

@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Lists;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 
@@ -97,7 +98,7 @@ public class Class6898 extends Class6896 {
                   return false;
                }
             } else {
-               method21067(var1, var17, var8.field22411.method20424(var2, var17).method23465(Class3386.field18994, this.method21079(var3, var17)), var7);
+               method21067(var1, var17, var8.field22411.method20424(var2, var17).with(Class3386.field18994, this.method21079(var3, var17)), var7);
                var6.add(var17.toImmutable());
             }
          }
@@ -107,22 +108,22 @@ public class Class6898 extends Class6896 {
    }
 
    private int method21078(BlockPos var1) {
-      int var4 = MathHelper.method37772(var1.getX());
-      int var5 = MathHelper.method37772(var1.getY());
-      int var6 = MathHelper.method37772(var1.getZ());
+      int var4 = MathHelper.abs(var1.getX());
+      int var5 = MathHelper.abs(var1.getY());
+      int var6 = MathHelper.abs(var1.getZ());
       return Math.max(var4, Math.max(var5, var6));
    }
 
-   private Direction method21079(BlockPos var1, BlockPos var2) {
-      Direction var5 = Direction.Y;
+   private Direction.Axis method21079(BlockPos var1, BlockPos var2) {
+      Direction.Axis var5 = Direction.Axis.Y;
       int var6 = Math.abs(var2.getX() - var1.getX());
       int var7 = Math.abs(var2.getZ() - var1.getZ());
       int var8 = Math.max(var6, var7);
       if (var8 > 0) {
          if (var6 != var8) {
-            var5 = Direction.Z;
+            var5 = Direction.Axis.Z;
          } else {
-            var5 = Direction.X;
+            var5 = Direction.Axis.X;
          }
       }
 

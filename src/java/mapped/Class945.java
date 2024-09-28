@@ -26,7 +26,7 @@ public class Class945 extends TileEntity implements IClearable, ITickableTileEnt
 
    @Override
    public void method3647() {
-      boolean var3 = this.method3775().<Boolean>method23463(Class3244.field18698);
+      boolean var3 = this.method3775().<Boolean>get(Class3244.field18698);
       boolean var4 = this.field5324.isRemote;
       if (!var4) {
          if (!var3) {
@@ -71,25 +71,25 @@ public class Class945 extends TileEntity implements IClearable, ITickableTileEnt
          Random var5 = var3.rand;
          if (var5.nextFloat() < 0.11F) {
             for (int var6 = 0; var6 < var5.nextInt(2) + 2; var6++) {
-               Class3244.method11653(var3, var4, this.method3775().<Boolean>method23463(Class3244.field18699), false);
+               Class3244.method11653(var3, var4, this.method3775().<Boolean>get(Class3244.field18699), false);
             }
          }
 
-         int var17 = this.method3775().<Direction>method23463(Class3244.field18701).method534();
+         int var17 = this.method3775().<Direction>get(Class3244.field18701).method534();
 
          for (int var7 = 0; var7 < this.field5329.size(); var7++) {
             if (!this.field5329.get(var7).isEmpty() && var5.nextFloat() < 0.2F) {
-               Direction var8 = Direction.method547(Math.floorMod(var7 + var17, 4));
+               Direction var8 = Direction.byHorizontalIndex(Math.floorMod(var7 + var17, 4));
                float var9 = 0.3125F;
                double var10 = (double)var4.getX()
                   + 0.5
-                  - (double)((float)var8.method539() * 0.3125F)
-                  + (double)((float)var8.method537().method539() * 0.3125F);
+                  - (double)((float)var8.getXOffset() * 0.3125F)
+                  + (double)((float)var8.rotateY().getXOffset() * 0.3125F);
                double var12 = (double)var4.getY() + 0.5;
                double var14 = (double)var4.getZ()
                   + 0.5
-                  - (double)((float)var8.method541() * 0.3125F)
-                  + (double)((float)var8.method537().method541() * 0.3125F);
+                  - (double)((float)var8.getZOffset() * 0.3125F)
+                  + (double)((float)var8.rotateY().getZOffset() * 0.3125F);
 
                for (int var16 = 0; var16 < 4; var16++) {
                   var3.addParticle(ParticleTypes.field34092, var10, var12, var14, 0.0, 5.0E-4, 0.0);

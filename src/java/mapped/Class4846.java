@@ -53,7 +53,7 @@ public class Class4846 implements IRecipe<IInventory> {
 
    @Override
    public ItemStack method14971() {
-      return new ItemStack(Blocks.field37062);
+      return new ItemStack(Blocks.SMITHING_TABLE);
    }
 
    @Override

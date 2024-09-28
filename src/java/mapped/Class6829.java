@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 
@@ -77,7 +78,7 @@ public class Class6829 {
             VoxelShape var23 = var21.method23414(this.field29707.world, var20);
             if (var16 > (double)this.field29707.stepHeight && var12 * var12 + var14 * var14 < (double)Math.max(1.0F, this.field29707.getWidth())
                || !var23.isEmpty()
-                  && this.field29707.getPosY() < var23.getEnd(Direction.Y) + (double)var20.getY()
+                  && this.field29707.getPosY() < var23.getEnd(Direction.Axis.Y) + (double)var20.getY()
                   && !var22.isIn(BlockTags.field32748)
                   && !var22.isIn(BlockTags.field32771)) {
                this.field29707.method4229().method27049();

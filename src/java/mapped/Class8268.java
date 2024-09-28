@@ -21,6 +21,7 @@ import javax.annotation.Nullable;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.state.StateContainer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -49,7 +50,7 @@ public class Class8268 {
    private final Map<Class8550<?>, Comparable<?>> field35545 = Maps.newHashMap();
    private final Map<String, String> field35546 = Maps.newHashMap();
    private ResourceLocation field35547 = new ResourceLocation("");
-   private Class9348<Block, BlockState> field35548;
+   private StateContainer<Block, BlockState> field35548;
    private BlockState field35549;
    private CompoundNBT field35550;
    private ResourceLocation field35551 = new ResourceLocation("");
@@ -435,7 +436,7 @@ public class Class8268 {
          this.field35543.setCursor(var3);
          throw field35539.createWithContext(this.field35543, this.field35547.toString(), var1.method30472(), var2);
       } else {
-         this.field35549 = this.field35549.method23465(var1, var6.get());
+         this.field35549 = this.field35549.with(var1, var6.get());
          this.field35545.put(var1, var6.get());
       }
    }

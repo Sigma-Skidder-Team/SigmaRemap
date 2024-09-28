@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.DoorBlock;
 import net.minecraft.util.math.BlockPos;
 
 public abstract class Class2642 extends Class2595 {
@@ -21,8 +22,8 @@ public abstract class Class2642 extends Class2595 {
    public boolean method10850() {
       if (this.field16976) {
          BlockState var3 = this.field16974.world.getBlockState(this.field16975);
-         if (var3.getBlock() instanceof Class3461) {
-            return var3.<Boolean>method23463(Class3461.field19294);
+         if (var3.getBlock() instanceof DoorBlock) {
+            return var3.<Boolean>get(DoorBlock.OPEN);
          } else {
             this.field16976 = false;
             return false;
@@ -35,8 +36,8 @@ public abstract class Class2642 extends Class2595 {
    public void method10851(boolean var1) {
       if (this.field16976) {
          BlockState var4 = this.field16974.world.getBlockState(this.field16975);
-         if (var4.getBlock() instanceof Class3461) {
-            ((Class3461)var4.getBlock()).method12142(this.field16974.world, var4, this.field16975, var1);
+         if (var4.getBlock() instanceof DoorBlock) {
+            ((DoorBlock)var4.getBlock()).method12142(this.field16974.world, var4, this.field16975, var1);
          }
       }
    }
@@ -55,7 +56,7 @@ public abstract class Class2642 extends Class2595 {
                      this.field16974.getDistanceNearest((double)this.field16975.getX(), this.field16974.getPosY(), (double)this.field16975.getZ())
                         > 2.25
                   )) {
-                     this.field16976 = Class3461.method12144(this.field16974.world, this.field16975);
+                     this.field16976 = DoorBlock.method12144(this.field16974.world, this.field16975);
                      if (this.field16976) {
                         return true;
                      }
@@ -63,7 +64,7 @@ public abstract class Class2642 extends Class2595 {
                }
 
                this.field16975 = this.field16974.getPosition().up();
-               this.field16976 = Class3461.method12144(this.field16974.world, this.field16975);
+               this.field16976 = DoorBlock.method12144(this.field16974.world, this.field16975);
                return this.field16976;
             } else {
                return false;

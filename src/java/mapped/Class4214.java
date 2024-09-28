@@ -27,7 +27,7 @@ public class Class4214 extends Class4213 {
          this.method13006(var1, var5, 0, 0, Class9312.method35193(this.field20539)[Direction.DOWN.getIndex()]);
       }
 
-      if (Class9312.method35191(this.field20539)[Direction.field673.getIndex()] == null) {
+      if (Class9312.method35191(this.field20539)[Direction.UP.getIndex()] == null) {
          this.method13007(var1, var5, 1, 4, 1, 6, 4, 6, field20528);
       }
 

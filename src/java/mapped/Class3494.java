@@ -5,15 +5,16 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
 public class Class3494 extends Class3194 {
    private static String[] field18470;
-   public static final VoxelShape field19364 = Block.method11539(1.0, 0.0, 1.0, 15.0, 1.5, 15.0);
+   public static final VoxelShape field19364 = Block.makeCuboidShape(1.0, 0.0, 1.0, 15.0, 1.5, 15.0);
 
-   public Class3494(AbstractBlock var1) {
+   public Class3494(Properties var1) {
       super(var1);
    }
 

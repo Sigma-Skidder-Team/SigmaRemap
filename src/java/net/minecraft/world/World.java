@@ -273,7 +273,7 @@ public abstract class World implements Class1660, AutoCloseable {
          this.neighborChanged(var1.down(), var2, var1);
       }
 
-      if (skipSide != Direction.field673) {
+      if (skipSide != Direction.UP) {
          this.neighborChanged(var1.up(), var2, var1);
       }
 
@@ -611,7 +611,7 @@ public abstract class World implements Class1660, AutoCloseable {
    }
 
    public boolean method6765(BlockPos var1, Entity var2) {
-      return this.method6764(var1, var2, Direction.field673);
+      return this.method6764(var1, var2, Direction.UP);
    }
 
    public void method6766() {
@@ -749,7 +749,7 @@ public abstract class World implements Class1660, AutoCloseable {
       int var4 = 0;
       var4 = Math.max(var4, this.method7010(var1.down(), Direction.DOWN));
       if (var4 < 15) {
-         var4 = Math.max(var4, this.method7010(var1.up(), Direction.field673));
+         var4 = Math.max(var4, this.method7010(var1.up(), Direction.UP));
          if (var4 < 15) {
             var4 = Math.max(var4, this.method7010(var1.north(), Direction.NORTH));
             if (var4 < 15) {
@@ -788,7 +788,7 @@ public abstract class World implements Class1660, AutoCloseable {
 
    public boolean method6780(BlockPos var1) {
       if (this.method6779(var1.down(), Direction.DOWN) <= 0) {
-         if (this.method6779(var1.up(), Direction.field673) <= 0) {
+         if (this.method6779(var1.up(), Direction.UP) <= 0) {
             if (this.method6779(var1.north(), Direction.NORTH) <= 0) {
                if (this.method6779(var1.south(), Direction.SOUTH) <= 0) {
                   return this.method6779(var1.west(), Direction.WEST) <= 0 ? this.method6779(var1.east(), Direction.EAST) > 0 : true;
@@ -933,7 +933,7 @@ public abstract class World implements Class1660, AutoCloseable {
    public abstract Scoreboard method6805();
 
    public void updateComparatorOutputLevel(BlockPos var1, Block var2) {
-      for (Direction var6 : Class76.field161) {
+      for (Direction var6 : Direction.Plane.HORIZONTAL) {
          BlockPos var7 = var1.method8349(var6);
          if (this.method7017(var7)) {
             BlockState var8 = this.getBlockState(var7);

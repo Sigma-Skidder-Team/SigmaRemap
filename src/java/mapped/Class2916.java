@@ -25,12 +25,12 @@ public class Class2916 extends Class2914 {
             return true;
          }
 
-         var7.method8379(Direction.field673);
+         var7.method8379(Direction.UP);
       }
 
       BlockPos var17 = var7.toImmutable();
       int var10 = var2.nextInt(3) + 2;
-      List<Direction> var11 = Lists.newArrayList(Class76.field161);
+      List<Direction> var11 = Lists.newArrayList(Direction.Plane.HORIZONTAL);
       Collections.shuffle(var11, var2);
 
       for (Direction var13 : var11.subList(0, var10)) {
@@ -41,7 +41,7 @@ public class Class2916 extends Class2914 {
 
          for (int var16 = 0; var16 < var14 && this.method11250(var1, var2, var7, var4); var16++) {
             var15++;
-            var7.method8379(Direction.field673);
+            var7.method8379(Direction.UP);
             if (var16 == 0 || var15 >= 2 && var2.nextFloat() < 0.25F) {
                var7.method8379(var13);
                var15 = 0;

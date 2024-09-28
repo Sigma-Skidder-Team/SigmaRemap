@@ -4,6 +4,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -11,12 +13,12 @@ import net.minecraft.world.World;
 
 public class Class3470 extends Class3468 {
    private static String[] field19319;
-   public static final Class8554 field19320 = Class8820.field39759;
+   public static final IntegerProperty field19320 = BlockStateProperties.field39759;
    private final int field19321;
 
-   public Class3470(int var1, AbstractBlock var2) {
+   public Class3470(int var1, Properties var2) {
       super(var2);
-      this.method11578(this.field18612.method35393().method23465(field19320, Integer.valueOf(0)));
+      this.method11578(this.field18612.method35393().with(field19320, Integer.valueOf(0)));
       this.field19321 = var1;
    }
 
@@ -43,12 +45,12 @@ public class Class3470 extends Class3468 {
 
    @Override
    public int method12158(BlockState var1) {
-      return var1.<Integer>method23463(field19320);
+      return var1.<Integer>get(field19320);
    }
 
    @Override
    public BlockState method12159(BlockState var1, int var2) {
-      return var1.method23465(field19320, Integer.valueOf(var2));
+      return var1.with(field19320, Integer.valueOf(var2));
    }
 
    @Override

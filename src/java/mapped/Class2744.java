@@ -24,7 +24,7 @@ public class Class2744 extends Class2736 {
          if (this.field17258.method4230().method21664()) {
             Random var3 = this.field17258.getRNG();
             if (this.field17258.world.getGameRules().getBoolean(Class5462.field24224) && var3.nextInt(10) == 0) {
-               this.field17271 = Direction.method552(var3);
+               this.field17271 = Direction.getRandomDirection(var3);
                BlockPos var4 = new BlockPos(this.field17258.getPosX(), this.field17258.getPosY() + 0.5, this.field17258.getPosZ())
                   .method8349(this.field17271);
                BlockState var5 = this.field17258.world.getBlockState(var4);

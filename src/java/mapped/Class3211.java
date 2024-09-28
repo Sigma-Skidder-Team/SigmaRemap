@@ -4,6 +4,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
@@ -15,13 +17,13 @@ import java.util.Random;
 
 public class Class3211 extends Block {
    private static String[] field18618;
-   public static final Class8554 field18619 = Class8820.field39741;
+   public static final IntegerProperty field18619 = BlockStateProperties.field39741;
    private final Class3393 field18620;
 
-   public Class3211(Class3393 var1, AbstractBlock var2) {
+   public Class3211(Class3393 var1, Properties var2) {
       super(var2);
       this.field18620 = var1;
-      this.method11578(this.field18612.method35393().method23465(field18619, Integer.valueOf(0)));
+      this.method11578(this.field18612.method35393().with(field18619, Integer.valueOf(0)));
    }
 
    @Override
@@ -33,14 +35,14 @@ public class Class3211 extends Block {
 
    @Override
    public boolean method11499(BlockState var1) {
-      return var1.<Integer>method23463(field18619) < 5;
+      return var1.<Integer>get(field18619) < 5;
    }
 
    @Override
    public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       BlockPos var7 = var3.up();
       if (var2.method7007(var7) && var7.getY() < 256) {
-         int var8 = var1.<Integer>method23463(field18619);
+         int var8 = var1.<Integer>get(field18619);
          if (var8 < 5) {
             boolean var9 = false;
             boolean var10 = false;
@@ -86,9 +88,9 @@ public class Class3211 extends Block {
                boolean var19 = false;
 
                for (int var20 = 0; var20 < var18; var20++) {
-                  Direction var16 = Class76.field161.method247(var4);
+                  Direction var16 = Direction.Plane.HORIZONTAL.method247(var4);
                   BlockPos var17 = var3.method8349(var16);
-                  if (var2.method7007(var17) && var2.method7007(var17.down()) && method11592(var2, var17, var16.method536())) {
+                  if (var2.method7007(var17) && var2.method7007(var17.down()) && method11592(var2, var17, var16.getOpposite())) {
                      this.method11590(var2, var17, var8 + 1);
                      var19 = true;
                   }
@@ -105,17 +107,17 @@ public class Class3211 extends Block {
    }
 
    private void method11590(World var1, BlockPos var2, int var3) {
-      var1.setBlockState(var2, this.method11579().method23465(field18619, Integer.valueOf(var3)), 2);
+      var1.setBlockState(var2, this.method11579().with(field18619, Integer.valueOf(var3)), 2);
       var1.playEvent(1033, var2, 0);
    }
 
    private void method11591(World var1, BlockPos var2) {
-      var1.setBlockState(var2, this.method11579().method23465(field18619, Integer.valueOf(5)), 2);
+      var1.setBlockState(var2, this.method11579().with(field18619, Integer.valueOf(5)), 2);
       var1.playEvent(1034, var2, 0);
    }
 
    private static boolean method11592(IWorldReader var0, BlockPos var1, Direction var2) {
-      for (Direction var6 : Class76.field161) {
+      for (Direction var6 : Direction.Plane.HORIZONTAL) {
          if (var6 != var2 && !var0.method7007(var1.method8349(var6))) {
             return false;
          }
@@ -126,7 +128,7 @@ public class Class3211 extends Block {
 
    @Override
    public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
-      if (var2 != Direction.field673 && !var1.method23443(var4, var5)) {
+      if (var2 != Direction.UP && !var1.method23443(var4, var5)) {
          var4.method6860().method20726(var5, this, 1);
       }
 
@@ -140,7 +142,7 @@ public class Class3211 extends Block {
          if (var6.isAir()) {
             boolean var7 = false;
 
-            for (Direction var9 : Class76.field161) {
+            for (Direction var9 : Direction.Plane.HORIZONTAL) {
                BlockState var10 = var2.getBlockState(var3.method8349(var9));
                if (!var10.isIn(this.field18620)) {
                   if (!var10.isAir()) {
@@ -199,23 +201,23 @@ public class Class3211 extends Block {
          }
 
          for (int var12 = 0; var12 < var16; var12++) {
-            Direction var13 = Class76.field161.method247(var2);
+            Direction var13 = Direction.Plane.HORIZONTAL.method247(var2);
             BlockPos var14 = var1.method8339(var9).method8349(var13);
             if (Math.abs(var14.getX() - var3.getX()) < var4
                && Math.abs(var14.getZ() - var3.getZ()) < var4
                && var0.method7007(var14)
                && var0.method7007(var14.down())
-               && method11592(var0, var14, var13.method536())) {
+               && method11592(var0, var14, var13.getOpposite())) {
                var15 = true;
                var0.setBlockState(var14, var8.method12004(var0, var14), 2);
-               var0.setBlockState(var14.method8349(var13.method536()), var8.method12004(var0, var14.method8349(var13.method536())), 2);
+               var0.setBlockState(var14.method8349(var13.getOpposite()), var8.method12004(var0, var14.method8349(var13.getOpposite())), 2);
                method11594(var0, var14, var2, var3, var4, var5 + 1);
             }
          }
       }
 
       if (!var15) {
-         var0.setBlockState(var1.method8339(var9), Blocks.field36879.method11579().method23465(field18619, Integer.valueOf(5)), 2);
+         var0.setBlockState(var1.method8339(var9), Blocks.field36879.method11579().with(field18619, Integer.valueOf(5)), 2);
       }
    }
 

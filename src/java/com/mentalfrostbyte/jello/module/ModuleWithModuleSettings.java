@@ -84,12 +84,12 @@ public class ModuleWithModuleSettings extends Module {
     }
 
     @Override
-    public boolean method15988() {
+    public boolean isEnabled2() {
         if (this.module == null) {
             this.method16724();
         }
 
-        return this.module != null ? this.module.method15988() : this.isEnabled();
+        return this.module != null ? this.module.isEnabled2() : this.isEnabled();
     }
 
     @Override

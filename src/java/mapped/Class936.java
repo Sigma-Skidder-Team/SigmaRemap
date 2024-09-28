@@ -93,7 +93,7 @@ public class Class936 extends Class939 implements Class937, ITickableTileEntity 
 
    private boolean method3699(Supplier<Boolean> var1) {
       if (this.field5324 != null && !this.field5324.isRemote) {
-         if (!this.method3722() && this.method3775().<Boolean>method23463(Class3362.field18914)) {
+         if (!this.method3722() && this.method3775().<Boolean>get(Class3362.field18914)) {
             boolean var4 = false;
             if (!this.isEmpty()) {
                var4 = this.method3701();
@@ -129,7 +129,7 @@ public class Class936 extends Class939 implements Class937, ITickableTileEntity 
    private boolean method3701() {
       IInventory var3 = this.method3712();
       if (var3 != null) {
-         Direction var4 = this.method3775().<Direction>method23463(Class3362.field18913).method536();
+         Direction var4 = this.method3775().<Direction>get(Class3362.field18913).getOpposite();
          if (!this.method3703(var3, var4)) {
             for (int var5 = 0; var5 < this.getSizeInventory(); var5++) {
                if (!this.getStackInSlot(var5).isEmpty()) {
@@ -285,7 +285,7 @@ public class Class936 extends Class939 implements Class937, ITickableTileEntity 
 
    @Nullable
    private IInventory method3712() {
-      Direction var3 = this.method3775().<Direction>method23463(Class3362.field18913);
+      Direction var3 = this.method3775().<Direction>get(Class3362.field18913);
       return method3715(this.method3734(), this.field5325.method8349(var3));
    }
 

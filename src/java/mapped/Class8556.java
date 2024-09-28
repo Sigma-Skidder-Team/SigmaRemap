@@ -5,6 +5,7 @@ import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.util.ObjectIntIdentityMap;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.Arrays;
@@ -17,7 +18,7 @@ import java.util.stream.Collectors;
 public class Class8556<T> implements Class8555<T> {
    private final Class7833<T> field38446;
    private final Class8555<T> field38447 = (var0, var1x) -> 0;
-   private final Class2352<T> field38448;
+   private final ObjectIntIdentityMap<T> field38448;
    private final Function<CompoundNBT, T> field38449;
    private final Function<T, CompoundNBT> field38450;
    private final T field38451;
@@ -51,7 +52,7 @@ public class Class8556<T> implements Class8555<T> {
       this.field38455.unlock();
    }
 
-   public Class8556(Class7833<T> var1, Class2352<T> var2, Function<CompoundNBT, T> var3, Function<T, CompoundNBT> var4, T var5) {
+   public Class8556(Class7833<T> var1, ObjectIntIdentityMap<T> var2, Function<CompoundNBT, T> var3, Function<T, CompoundNBT> var4, T var5) {
       this.field38446 = var1;
       this.field38448 = var2;
       this.field38449 = var3;

@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.util.Direction;
 import net.minecraft.util.Rotation;
 
 // $VF: synthetic class
@@ -19,15 +20,15 @@ public class Class9111 {
       } catch (NoSuchFieldError var5) {
       }
 
-      field41872 = new int[Direction.values().length];
+      field41872 = new int[Direction.Axis.values().length];
 
       try {
-         field41872[Direction.Z.ordinal()] = 1;
+         field41872[Direction.Axis.Z.ordinal()] = 1;
       } catch (NoSuchFieldError var4) {
       }
 
       try {
-         field41872[Direction.X.ordinal()] = 2;
+         field41872[Direction.Axis.X.ordinal()] = 2;
       } catch (NoSuchFieldError var3) {
       }
    }

@@ -10,8 +10,8 @@ import net.minecraft.world.IBlockReader;
 public class Class3448 extends Class3445 implements Class3449 {
    private static String[] field19263;
 
-   public Class3448(AbstractBlock var1) {
-      super(var1, Direction.field673, VoxelShapes.method27426(), true);
+   public Class3448(Properties var1) {
+      super(var1, Direction.UP, VoxelShapes.method27426(), true);
    }
 
    @Override

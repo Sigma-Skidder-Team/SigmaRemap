@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Maps;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.state.StateContainer;
 
 import java.util.Map;
 import java.util.Map.Entry;
@@ -10,10 +11,10 @@ import java.util.function.Predicate;
 
 public class Class166 implements Predicate<BlockState> {
    public static final Predicate<BlockState> field534 = var0 -> true;
-   private final Class9348<Block, BlockState> field535;
+   private final StateContainer<Block, BlockState> field535;
    private final Map<Class8550<?>, Predicate<Object>> field536 = Maps.newHashMap();
 
-   private Class166(Class9348<Block, BlockState> var1) {
+   private Class166(StateContainer<Block, BlockState> var1) {
       this.field535 = var1;
    }
 
@@ -38,7 +39,7 @@ public class Class166 implements Predicate<BlockState> {
    }
 
    public <T extends Comparable<T>> boolean method498(BlockState var1, Class8550<T> var2, Predicate<Object> var3) {
-      Comparable var6 = var1.method23463(var2);
+      Comparable var6 = var1.get(var2);
       return var3.test(var6);
    }
 

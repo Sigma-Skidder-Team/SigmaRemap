@@ -10,6 +10,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Mirror;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -148,7 +149,7 @@ public class Class8969 {
          for (Class8266 var10 : var2.method36446(this.field40545, var1).method22981(var3)) {
             BlockPos var11 = !var4 ? var10.field35530 : method32896(var2, var10.field35530).method8337(var1);
             if (var8 == null || var8.method38396(var11)) {
-               var7.add(new Class8266(var11, var10.field35531.method23395(var2.method36437()), var10.field35532));
+               var7.add(new Class8266(var11, var10.field35531.rotate(var2.method36437()), var10.field35532));
             }
          }
 
@@ -198,7 +199,7 @@ public class Class8969 {
                BlockPos var21 = var20.field35530;
                if (var10 == null || var10.method38396(var21)) {
                   FluidState var22 = !var4.method36445() ? null : var1.getFluidState(var21);
-                  BlockState var23 = var20.field35531.method23396(var4.method36436()).method23395(var4.method36437());
+                  BlockState var23 = var20.field35531.method23396(var4.method36436()).rotate(var4.method36437());
                   if (var20.field35532 != null) {
                      TileEntity var24 = var1.getTileEntity(var21);
                      IClearable.method3802(var24);
@@ -240,7 +241,7 @@ public class Class8969 {
             }
 
             boolean var28 = true;
-            Direction[] var29 = new Direction[]{Direction.field673, Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST};
+            Direction[] var29 = new Direction[]{Direction.UP, Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST};
 
             while (var28 && !var11.isEmpty()) {
                var28 = false;
@@ -330,7 +331,7 @@ public class Class8969 {
             var0.setBlockState(var11, var15, var1 & -2);
          }
 
-         BlockState var16 = var14.method23439(var5x.method536(), var15, var0, var12, var11);
+         BlockState var16 = var14.method23439(var5x.getOpposite(), var15, var0, var12, var11);
          if (var14 != var16) {
             var0.setBlockState(var12, var16, var1 & -2);
          }
@@ -357,7 +358,7 @@ public class Class8969 {
       return var7;
    }
 
-   private void method32902(Class1659 var1, BlockPos var2, Class2089 var3, Rotation var4, BlockPos var5, Class9764 var6, boolean var7) {
+   private void method32902(Class1659 var1, BlockPos var2, Mirror var3, Rotation var4, BlockPos var5, Class9764 var6, boolean var7) {
       for (Class9559 var11 : this.field40546) {
          BlockPos var12 = method32905(var11.field44528, var3, var4, var5).method8337(var2);
          if (var6 == null || var6.method38396(var12)) {
@@ -402,7 +403,7 @@ public class Class8969 {
       }
    }
 
-   public static BlockPos method32905(BlockPos var0, Class2089 var1, Rotation var2, BlockPos var3) {
+   public static BlockPos method32905(BlockPos var0, Mirror var1, Rotation var2, BlockPos var3) {
       int var6 = var0.getX();
       int var7 = var0.getY();
       int var8 = var0.getZ();
@@ -432,7 +433,7 @@ public class Class8969 {
       }
    }
 
-   public static Vector3d method32906(Vector3d var0, Class2089 var1, Rotation var2, BlockPos var3) {
+   public static Vector3d method32906(Vector3d var0, Mirror var1, Rotation var2, BlockPos var3) {
       double var6 = var0.x;
       double var8 = var0.y;
       double var10 = var0.z;
@@ -462,15 +463,15 @@ public class Class8969 {
       }
    }
 
-   public BlockPos method32907(BlockPos var1, Class2089 var2, Rotation var3) {
+   public BlockPos method32907(BlockPos var1, Mirror var2, Rotation var3) {
       return method32908(var1, var2, var3, this.method32886().getX(), this.method32886().getZ());
    }
 
-   public static BlockPos method32908(BlockPos var0, Class2089 var1, Rotation var2, int var3, int var4) {
+   public static BlockPos method32908(BlockPos var0, Mirror var1, Rotation var2, int var3, int var4) {
       var3--;
       var4--;
-      int var7 = var1 == Class2089.field13616 ? var3 : 0;
-      int var8 = var1 == Class2089.field13615 ? var4 : 0;
+      int var7 = var1 == Mirror.field13616 ? var3 : 0;
+      int var8 = var1 == Mirror.field13615 ? var4 : 0;
       BlockPos var9 = var0;
       switch (Class9051.field41436[var2.ordinal()]) {
          case 1:
@@ -493,7 +494,7 @@ public class Class8969 {
       return this.method32910(var2, var1.method36437(), var1.method36438(), var1.method36436());
    }
 
-   public Class9764 method32910(BlockPos var1, Rotation var2, BlockPos var3, Class2089 var4) {
+   public Class9764 method32910(BlockPos var1, Rotation var2, BlockPos var3, Mirror var4) {
       BlockPos var7 = this.method32904(var2);
       int var8 = var3.getX();
       int var9 = var3.getZ();
@@ -531,7 +532,7 @@ public class Class8969 {
    private void method32911(Rotation var1, int var2, int var3, Class9764 var4, Direction var5, Direction var6) {
       BlockPos var9 = BlockPos.ZERO;
       if (var1 == Rotation.field186 || var1 == Rotation.field188) {
-         var9 = var9.method8350(var1.method252(var5), var3);
+         var9 = var9.method8350(var1.rotate(var5), var3);
       } else if (var1 != Rotation.field187) {
          var9 = var9.method8350(var5, var2);
       } else {

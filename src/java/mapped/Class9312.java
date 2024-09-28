@@ -17,7 +17,7 @@ public class Class9312 {
 
    public void method35186(Direction var1, Class9312 var2) {
       this.field43243[var1.getIndex()] = var2;
-      var2.field43243[var1.method536().getIndex()] = this;
+      var2.field43243[var1.getOpposite().getIndex()] = this;
    }
 
    public void method35187() {

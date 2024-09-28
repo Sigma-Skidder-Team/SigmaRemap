@@ -162,7 +162,7 @@ public abstract class Class208<M extends Class7586<M>> extends Class207 {
          for (int var9 = 0; var9 < 16; var9++) {
             for (int var10 = 0; var10 < 16; var10++) {
                for (int var11 = 0; var11 < 16; var11++) {
-                  long var12 = BlockPos.method8333(var6 + var9, var7 + var10, var8 + var11);
+                  long var12 = BlockPos.pack(var6 + var9, var7 + var10, var8 + var11);
                   var1.method668(var12);
                }
             }
@@ -264,28 +264,28 @@ public abstract class Class208<M extends Class7586<M>> extends Class207 {
                      long var19;
                      switch (Class7449.field32049[var12.ordinal()]) {
                         case 1:
-                           var17 = BlockPos.method8333(var6 + var16, var7, var8 + var15);
-                           var19 = BlockPos.method8333(var6 + var16, var7 - 1, var8 + var15);
+                           var17 = BlockPos.pack(var6 + var16, var7, var8 + var15);
+                           var19 = BlockPos.pack(var6 + var16, var7 - 1, var8 + var15);
                            break;
                         case 2:
-                           var17 = BlockPos.method8333(var6 + var16, var7 + 16 - 1, var8 + var15);
-                           var19 = BlockPos.method8333(var6 + var16, var7 + 16, var8 + var15);
+                           var17 = BlockPos.pack(var6 + var16, var7 + 16 - 1, var8 + var15);
+                           var19 = BlockPos.pack(var6 + var16, var7 + 16, var8 + var15);
                            break;
                         case 3:
-                           var17 = BlockPos.method8333(var6 + var15, var7 + var16, var8);
-                           var19 = BlockPos.method8333(var6 + var15, var7 + var16, var8 - 1);
+                           var17 = BlockPos.pack(var6 + var15, var7 + var16, var8);
+                           var19 = BlockPos.pack(var6 + var15, var7 + var16, var8 - 1);
                            break;
                         case 4:
-                           var17 = BlockPos.method8333(var6 + var15, var7 + var16, var8 + 16 - 1);
-                           var19 = BlockPos.method8333(var6 + var15, var7 + var16, var8 + 16);
+                           var17 = BlockPos.pack(var6 + var15, var7 + var16, var8 + 16 - 1);
+                           var19 = BlockPos.pack(var6 + var15, var7 + var16, var8 + 16);
                            break;
                         case 5:
-                           var17 = BlockPos.method8333(var6, var7 + var15, var8 + var16);
-                           var19 = BlockPos.method8333(var6 - 1, var7 + var15, var8 + var16);
+                           var17 = BlockPos.pack(var6, var7 + var15, var8 + var16);
+                           var19 = BlockPos.pack(var6 - 1, var7 + var15, var8 + var16);
                            break;
                         default:
-                           var17 = BlockPos.method8333(var6 + 16 - 1, var7 + var15, var8 + var16);
-                           var19 = BlockPos.method8333(var6 + 16, var7 + var15, var8 + var16);
+                           var17 = BlockPos.pack(var6 + 16 - 1, var7 + var15, var8 + var16);
+                           var19 = BlockPos.pack(var6 + 16, var7 + var15, var8 + var16);
                      }
 
                      var1.method672(var17, var19, var1.method655(var17, var19, var1.method652(var17)), false);

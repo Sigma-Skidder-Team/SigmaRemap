@@ -74,7 +74,7 @@ public class PaintingEntity extends Class995 {
    @Override
    public void readAdditional(CompoundNBT var1) {
       this.field5496 = Registry.field16079.getOrDefault(ResourceLocation.method8289(var1.getString("Motive")));
-      this.field5489 = Direction.method547(var1.getByte("Facing"));
+      this.field5489 = Direction.byHorizontalIndex(var1.getByte("Facing"));
       super.readAdditional(var1);
       this.method4077(this.field5489);
    }

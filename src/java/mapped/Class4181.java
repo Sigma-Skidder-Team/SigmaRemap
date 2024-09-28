@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.Mirror;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
@@ -44,7 +45,7 @@ public class Class4181 extends Class4180 {
       Class8969 var4 = var1.method31603(this.field20456);
       Class9463 var5 = new Class9463()
          .method36426(this.field20447)
-         .method36425(Class2089.field13614)
+         .method36425(Mirror.field13614)
          .method36427(ShipwreckPieces.method30927())
          .method36434(Class7095.field30528);
       this.method12943(var4, this.field20455, var5);

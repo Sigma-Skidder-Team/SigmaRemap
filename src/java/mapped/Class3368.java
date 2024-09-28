@@ -12,11 +12,13 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.state.EnumProperty;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -26,14 +28,14 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 public class Class3368 extends Class3241 {
-   public static final Class8552<Direction> field18939 = Class3433.field19198;
+   public static final EnumProperty<Direction> field18939 = Class3433.field19198;
    public static final ResourceLocation field18940 = new ResourceLocation("contents");
    private final Class112 field18941;
 
-   public Class3368(Class112 var1, AbstractBlock var2) {
+   public Class3368(Class112 var1, Properties var2) {
       super(var2);
       this.field18941 = var1;
-      this.method11578(this.field18612.method35393().method23465(field18939, Direction.field673));
+      this.method11578(this.field18612.method35393().with(field18939, Direction.UP));
    }
 
    @Override
@@ -59,7 +61,7 @@ public class Class3368 extends Class3241 {
                if (var10.method3746() != Class2126.field13872) {
                   var11 = true;
                } else {
-                  Direction var12 = var1.<Direction>method23463(field18939);
+                  Direction var12 = var1.<Direction>get(field18939);
                   var11 = var2.hasNoCollisions(Class8919.method32596(var3, var12));
                }
 
@@ -81,7 +83,7 @@ public class Class3368 extends Class3241 {
 
    @Override
    public BlockState method11495(Class5909 var1) {
-      return this.method11579().method23465(field18939, var1.method18354());
+      return this.method11579().with(field18939, var1.method18354());
    }
 
    @Override
@@ -282,12 +284,12 @@ public class Class3368 extends Class3241 {
    }
 
    @Override
-   public BlockState method11500(BlockState var1, Rotation var2) {
-      return var1.method23465(field18939, var2.method252(var1.<Direction>method23463(field18939)));
+   public BlockState rotate(BlockState var1, Rotation var2) {
+      return var1.with(field18939, var2.rotate(var1.<Direction>get(field18939)));
    }
 
    @Override
-   public BlockState method11501(BlockState var1, Class2089 var2) {
-      return var1.method23395(var2.method8749(var1.<Direction>method23463(field18939)));
+   public BlockState mirror(BlockState var1, Mirror var2) {
+      return var1.rotate(var2.toRotation(var1.<Direction>get(field18939)));
    }
 }

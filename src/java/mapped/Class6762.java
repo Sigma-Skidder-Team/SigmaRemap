@@ -4,11 +4,10 @@ import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.objects.Object2BooleanMap;
 import it.unimi.dsi.fastutil.objects.Object2BooleanOpenHashMap;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -117,42 +116,42 @@ public class Class6762 extends Class6764 {
       }
 
       double var9 = method20626(this.field29475, new BlockPos(var2.field30847, var2.field30848, var2.field30849));
-      Class7176 var11 = this.method20627(var2.field30847, var2.field30848, var2.field30849 + 1, var6, var9, net.minecraft.util.Direction.SOUTH, var8);
+      Class7176 var11 = this.method20627(var2.field30847, var2.field30848, var2.field30849 + 1, var6, var9, Direction.SOUTH, var8);
       if (this.method20623(var11, var2)) {
          var1[var5++] = var11;
       }
 
-      Class7176 var12 = this.method20627(var2.field30847 - 1, var2.field30848, var2.field30849, var6, var9, net.minecraft.util.Direction.WEST, var8);
+      Class7176 var12 = this.method20627(var2.field30847 - 1, var2.field30848, var2.field30849, var6, var9, Direction.WEST, var8);
       if (this.method20623(var12, var2)) {
          var1[var5++] = var12;
       }
 
-      Class7176 var13 = this.method20627(var2.field30847 + 1, var2.field30848, var2.field30849, var6, var9, net.minecraft.util.Direction.EAST, var8);
+      Class7176 var13 = this.method20627(var2.field30847 + 1, var2.field30848, var2.field30849, var6, var9, Direction.EAST, var8);
       if (this.method20623(var13, var2)) {
          var1[var5++] = var13;
       }
 
-      Class7176 var14 = this.method20627(var2.field30847, var2.field30848, var2.field30849 - 1, var6, var9, net.minecraft.util.Direction.NORTH, var8);
+      Class7176 var14 = this.method20627(var2.field30847, var2.field30848, var2.field30849 - 1, var6, var9, Direction.NORTH, var8);
       if (this.method20623(var14, var2)) {
          var1[var5++] = var14;
       }
 
-      Class7176 var15 = this.method20627(var2.field30847 - 1, var2.field30848, var2.field30849 - 1, var6, var9, net.minecraft.util.Direction.NORTH, var8);
+      Class7176 var15 = this.method20627(var2.field30847 - 1, var2.field30848, var2.field30849 - 1, var6, var9, Direction.NORTH, var8);
       if (this.method20624(var2, var12, var14, var15)) {
          var1[var5++] = var15;
       }
 
-      Class7176 var16 = this.method20627(var2.field30847 + 1, var2.field30848, var2.field30849 - 1, var6, var9, net.minecraft.util.Direction.NORTH, var8);
+      Class7176 var16 = this.method20627(var2.field30847 + 1, var2.field30848, var2.field30849 - 1, var6, var9, Direction.NORTH, var8);
       if (this.method20624(var2, var13, var14, var16)) {
          var1[var5++] = var16;
       }
 
-      Class7176 var17 = this.method20627(var2.field30847 - 1, var2.field30848, var2.field30849 + 1, var6, var9, net.minecraft.util.Direction.SOUTH, var8);
+      Class7176 var17 = this.method20627(var2.field30847 - 1, var2.field30848, var2.field30849 + 1, var6, var9, Direction.SOUTH, var8);
       if (this.method20624(var2, var12, var11, var17)) {
          var1[var5++] = var17;
       }
 
-      Class7176 var18 = this.method20627(var2.field30847 + 1, var2.field30848, var2.field30849 + 1, var6, var9, net.minecraft.util.Direction.SOUTH, var8);
+      Class7176 var18 = this.method20627(var2.field30847 + 1, var2.field30848, var2.field30849 + 1, var6, var9, Direction.SOUTH, var8);
       if (this.method20624(var2, var13, var11, var18)) {
          var1[var5++] = var18;
       }
@@ -204,11 +203,11 @@ public class Class6762 extends Class6764 {
    public static double method20626(IBlockReader var0, BlockPos var1) {
       BlockPos var4 = var1.down();
       VoxelShape var5 = var0.getBlockState(var4).method23414(var0, var4);
-      return (double)var4.getY() + (!var5.isEmpty() ? var5.getEnd(Direction.Y) : 0.0);
+      return (double)var4.getY() + (!var5.isEmpty() ? var5.getEnd(Direction.Axis.Y) : 0.0);
    }
 
    @Nullable
-   private Class7176 method20627(int var1, int var2, int var3, int var4, double var5, net.minecraft.util.Direction var7, Class2163 var8) {
+   private Class7176 method20627(int var1, int var2, int var3, int var4, double var5, Direction var7, Class2163 var8) {
       Class7176 var11 = null;
       BlockPos.Mutable var12 = new BlockPos.Mutable();
       double var13 = method20626(this.field29475, var12.method8372(var1, var2, var3));
@@ -238,8 +237,8 @@ public class Class6762 extends Class6764 {
                if (var11 != null
                   && (var11.field30859 == Class2163.field14185 || var11.field30859 == Class2163.field14186)
                   && this.field29476.getWidth() < 1.0F) {
-                  double var19 = (double)(var1 - var7.method539()) + 0.5;
-                  double var21 = (double)(var3 - var7.method541()) + 0.5;
+                  double var19 = (double)(var1 - var7.getXOffset()) + 0.5;
+                  double var21 = (double)(var3 - var7.getZOffset()) + 0.5;
                   AxisAlignedBB var23 = new AxisAlignedBB(
                      var19 - var17,
                      method20626(this.field29475, var12.method8373(var19, (double)(var2 + 1), var21)) + 0.001,
@@ -418,7 +417,7 @@ public class Class6762 extends Class6764 {
    private Class2163 method20632(MobEntity var1, int var2, int var3, int var4) {
       return (Class2163)this.field29473
          .computeIfAbsent(
-            BlockPos.method8333(var2, var3, var4),
+            BlockPos.pack(var2, var3, var4),
             var5 -> this.method20629(
                   this.field29475, var2, var3, var4, var1, this.field29478, this.field29479, this.field29480, this.method20648(), this.method20647()
                )
@@ -522,11 +521,11 @@ public class Class6762 extends Class6764 {
             return Class2163.field14190;
          } else if (method20636(var4)) {
             return Class2163.field14196;
-         } else if (Class3461.method12145(var4) && !var4.<Boolean>method23463(Class3461.field19294)) {
+         } else if (DoorBlock.method12145(var4) && !var4.<Boolean>get(DoorBlock.OPEN)) {
             return Class2163.field14202;
-         } else if (var5 instanceof Class3461 && var6 == Material.field38967 && !var4.<Boolean>method23463(Class3461.field19294)) {
+         } else if (var5 instanceof DoorBlock && var6 == Material.field38967 && !var4.<Boolean>get(DoorBlock.OPEN)) {
             return Class2163.field14203;
-         } else if (var5 instanceof Class3461 && var4.<Boolean>method23463(Class3461.field19294)) {
+         } else if (var5 instanceof DoorBlock && var4.<Boolean>get(DoorBlock.OPEN)) {
             return Class2163.field14201;
          } else if (var5 instanceof Class3429) {
             return Class2163.field14193;
@@ -534,7 +533,7 @@ public class Class6762 extends Class6764 {
             return Class2163.field14205;
          } else if (!var5.isIn(BlockTags.field32771)
             && !var5.isIn(BlockTags.field32764)
-            && (!(var5 instanceof Class3199) || var4.<Boolean>method23463(Class3199.field18486))) {
+            && (!(var5 instanceof FenceGateBlock) || var4.<Boolean>get(FenceGateBlock.OPEN))) {
             return var4.method23440(var0, var1, Class1947.field12614) ? Class2163.field14185 : Class2163.field14184;
          } else {
             return Class2163.field14189;

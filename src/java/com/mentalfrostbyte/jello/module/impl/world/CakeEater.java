@@ -88,7 +88,7 @@ public class CakeEater extends Module {
                                     (double) field23588.getY() + 0.5,
                                     (double) field23588.getZ() + 0.4 + Math.random() * 0.2
                             ),
-                            Direction.field673,
+                            Direction.UP,
                             field23588,
                             false
                     );

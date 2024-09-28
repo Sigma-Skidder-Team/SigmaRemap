@@ -1,15 +1,16 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class Class3388 extends Class3386 {
    private static String[] field18993;
 
-   public Class3388(AbstractBlock var1) {
+   public Class3388(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().method23465(field18994, Direction.Y));
+      this.method11578(this.field18612.method35393().with(field18994, Direction.Axis.Y));
    }
 
    @Override

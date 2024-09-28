@@ -63,7 +63,7 @@ public class Class7369 extends Class7361 {
 
          if (var7 != null
             && !var7.abilities.disableDamage
-            && (this.field31519.getRNG().nextInt(MathHelper.method37772((int)var5) + 2) == 0 || this.field31519.getRNG().nextInt(var4 + 2) == 0)) {
+            && (this.field31519.getRNG().nextInt(MathHelper.abs((int)var5) + 2) == 0 || this.field31519.getRNG().nextInt(var4 + 2) == 0)) {
             this.method23374(var7);
             return;
          }

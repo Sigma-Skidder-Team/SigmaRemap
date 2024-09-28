@@ -8,6 +8,7 @@ import net.minecraft.inventory.container.ChestContainer;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.state.properties.ChestType;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.NonNullList;
@@ -136,15 +137,15 @@ public class Class941 extends Class939 implements Class942, ITickableTileEntity 
    }
 
    private void method3760(SoundEvent var1) {
-      Class111 var4 = this.method3775().<Class111>method23463(Class3348.field18866);
-      if (var4 != Class111.field380) {
+      ChestType var4 = this.method3775().<ChestType>get(Class3348.field18866);
+      if (var4 != ChestType.field380) {
          double var5 = (double)this.field5325.getX() + 0.5;
          double var7 = (double)this.field5325.getY() + 0.5;
          double var9 = (double)this.field5325.getZ() + 0.5;
-         if (var4 == Class111.field381) {
+         if (var4 == ChestType.field381) {
             Direction var11 = Class3348.method11908(this.method3775());
-            var5 += (double)var11.method539() * 0.5;
-            var9 += (double)var11.method541() * 0.5;
+            var5 += (double)var11.getXOffset() * 0.5;
+            var9 += (double)var11.getZOffset() * 0.5;
          }
 
          this.field5324.method6743((PlayerEntity)null, var5, var7, var9, var1, Class2266.field14732, 0.5F, this.field5324.rand.nextFloat() * 0.1F + 0.9F);

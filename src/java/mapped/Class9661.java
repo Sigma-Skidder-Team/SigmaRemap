@@ -68,7 +68,7 @@ public class Class9661 {
       float var35 = (float)var2 + var8;
       float var36 = (float)var2 + var8 + var7;
       this.field45149[2] = new Class7394(new Class8161[]{var25, var24, var43, var21}, var29, var34, var30, var35, var13, var14, var12, Direction.DOWN);
-      this.field45149[3] = new Class7394(new Class8161[]{var22, var23, var27, var26}, var30, var35, var31, var34, var13, var14, var12, Direction.field673);
+      this.field45149[3] = new Class7394(new Class8161[]{var22, var23, var27, var26}, var30, var35, var31, var34, var13, var14, var12, Direction.UP);
       this.field45149[1] = new Class7394(new Class8161[]{var43, var24, var27, var23}, var28, var35, var29, var36, var13, var14, var12, Direction.WEST);
       this.field45149[4] = new Class7394(new Class8161[]{var21, var43, var23, var22}, var29, var35, var30, var36, var13, var14, var12, Direction.NORTH);
       this.field45149[0] = new Class7394(new Class8161[]{var25, var21, var22, var26}, var30, var35, var32, var36, var13, var14, var12, Direction.EAST);
@@ -121,7 +121,7 @@ public class Class9661 {
       Class8161 var25 = new Class8161(var16, var17, var18, 8.0F, 8.0F);
       Class8161 var26 = new Class8161(var2, var17, var18, 8.0F, 0.0F);
       this.field45149[2] = this.method37712(new Class8161[]{var24, var23, var33, var20}, var1[1], true, var12, var13, var11, Direction.DOWN);
-      this.field45149[3] = this.method37712(new Class8161[]{var21, var22, var26, var25}, var1[0], true, var12, var13, var11, Direction.field673);
+      this.field45149[3] = this.method37712(new Class8161[]{var21, var22, var26, var25}, var1[0], true, var12, var13, var11, Direction.UP);
       this.field45149[1] = this.method37712(new Class8161[]{var33, var23, var26, var22}, var1[5], false, var12, var13, var11, Direction.WEST);
       this.field45149[4] = this.method37712(new Class8161[]{var20, var33, var22, var21}, var1[2], false, var12, var13, var11, Direction.NORTH);
       this.field45149[0] = this.method37712(new Class8161[]{var24, var20, var21, var25}, var1[4], false, var12, var13, var11, Direction.EAST);

@@ -10,6 +10,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
@@ -29,14 +30,14 @@ public class AutoFarm extends Module {
                         if (var6.getBlock() instanceof Class3480 || var6.getBlock() instanceof Class3481 || var6.getBlock() instanceof Class3483) {
                             ItemStack var14 = mc.player.getHeldItem(Hand.MAIN_HAND);
                             if (var14 != null && var14.getItem() instanceof Class3321) {
-                                if (var6.<Integer>method23463(Class8820.field39742) != 7) {
+                                if (var6.<Integer>get(BlockStateProperties.field39742) != 7) {
                                     float[] var18 = BlockUtil.method34542(var5, Direction.DOWN);
                                     var1.setPitch(var18[0]);
                                     var1.setYaw(var18[1]);
                                     var1.method13922(new Class1358(this, var18));
                                     return;
                                 }
-                            } else if (var6.<Integer>method23463(Class8820.field39742) == 7) {
+                            } else if (var6.<Integer>get(BlockStateProperties.field39742) == 7) {
                                 float[] var17 = BlockUtil.method34542(var5, Direction.DOWN);
                                 var1.setPitch(var17[0]);
                                 var1.setYaw(var17[1]);
@@ -92,7 +93,7 @@ public class AutoFarm extends Module {
                             }
 
                             if (var16 != -1 && var13.getBlock() instanceof AirBlock) {
-                                float[] var20 = BlockUtil.method34542(var5, Direction.field673);
+                                float[] var20 = BlockUtil.method34542(var5, Direction.UP);
                                 var1.setPitch(var20[0]);
                                 var1.setYaw(var20[1]);
                                 var1.method13922(new Class649(this, var16, var20));

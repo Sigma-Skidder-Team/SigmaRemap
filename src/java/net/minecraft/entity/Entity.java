@@ -9,10 +9,10 @@ import com.mentalfrostbyte.jello.event.impl.EventStep;
 import it.unimi.dsi.fastutil.objects.Object2DoubleArrayMap;
 import it.unimi.dsi.fastutil.objects.Object2DoubleMap;
 import mapped.*;
-import mapped.Direction;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.FenceGateBlock;
 import net.minecraft.block.material.PushReaction;
 import net.minecraft.client.Minecraft;
 import net.minecraft.crash.CrashReport;
@@ -31,11 +31,14 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.scoreboard.ScorePlayerTeam;
 import net.minecraft.scoreboard.Team;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.*;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
@@ -567,7 +570,7 @@ public abstract class Entity implements INameable, ICommandSource {
          BlockPos var7 = var6.down();
          BlockState var8 = this.world.getBlockState(var7);
          Block var9 = var8.getBlock();
-         if (var9.isIn(BlockTags.field32771) || var9.isIn(BlockTags.field32764) || var9 instanceof Class3199) {
+         if (var9.isIn(BlockTags.field32771) || var9.isIn(BlockTags.field32764) || var9 instanceof FenceGateBlock) {
             return var7;
          }
       }
@@ -612,15 +615,15 @@ public abstract class Entity implements INameable, ICommandSource {
                if (var1.z == 0.0) {
                   return Vector3d.ZERO;
                } else {
-                  double var9 = this.calculatePistonDeltas(Direction.Z, var1.z);
+                  double var9 = this.calculatePistonDeltas(Direction.Axis.Z, var1.z);
                   return !(Math.abs(var9) <= 1.0E-5F) ? new Vector3d(0.0, 0.0, var9) : Vector3d.ZERO;
                }
             } else {
-               double var8 = this.calculatePistonDeltas(Direction.Y, var1.y);
+               double var8 = this.calculatePistonDeltas(Direction.Axis.Y, var1.y);
                return !(Math.abs(var8) <= 1.0E-5F) ? new Vector3d(0.0, var8, 0.0) : Vector3d.ZERO;
             }
          } else {
-            double var6 = this.calculatePistonDeltas(Direction.X, var1.x);
+            double var6 = this.calculatePistonDeltas(Direction.Axis.X, var1.x);
             return !(Math.abs(var6) <= 1.0E-5F) ? new Vector3d(var6, 0.0, 0.0) : Vector3d.ZERO;
          }
       } else {
@@ -628,7 +631,7 @@ public abstract class Entity implements INameable, ICommandSource {
       }
    }
 
-   private double calculatePistonDeltas(Direction var1, double var2) {
+   private double calculatePistonDeltas(Direction.Axis var1, double var2) {
       int var6 = var1.ordinal();
       double var7 = MathHelper.clamp(var2 + this.pistonDeltas[var6], -0.51, 0.51);
       var2 = var7 - this.pistonDeltas[var6];
@@ -705,7 +708,7 @@ public abstract class Entity implements INameable, ICommandSource {
       double var7 = var0.y;
       double var9 = var0.z;
       if (var7 != 0.0) {
-         var7 = VoxelShapes.method27437(Direction.Y, var1, var2.method30440(), var7);
+         var7 = VoxelShapes.method27437(Direction.Axis.Y, var1, var2.method30440(), var7);
          if (var7 != 0.0) {
             var1 = var1.offset(0.0, var7, 0.0);
          }
@@ -713,21 +716,21 @@ public abstract class Entity implements INameable, ICommandSource {
 
       boolean var11 = Math.abs(var5) < Math.abs(var9);
       if (var11 && var9 != 0.0) {
-         var9 = VoxelShapes.method27437(Direction.Z, var1, var2.method30440(), var9);
+         var9 = VoxelShapes.method27437(Direction.Axis.Z, var1, var2.method30440(), var9);
          if (var9 != 0.0) {
             var1 = var1.offset(0.0, 0.0, var9);
          }
       }
 
       if (var5 != 0.0) {
-         var5 = VoxelShapes.method27437(Direction.X, var1, var2.method30440(), var5);
+         var5 = VoxelShapes.method27437(Direction.Axis.X, var1, var2.method30440(), var5);
          if (!var11 && var5 != 0.0) {
             var1 = var1.offset(var5, 0.0, 0.0);
          }
       }
 
       if (!var11 && var9 != 0.0) {
-         var9 = VoxelShapes.method27437(Direction.Z, var1, var2.method30440(), var9);
+         var9 = VoxelShapes.method27437(Direction.Axis.Z, var1, var2.method30440(), var9);
       }
 
       return new Vector3d(var5, var7, var9);
@@ -738,7 +741,7 @@ public abstract class Entity implements INameable, ICommandSource {
       double var10 = var0.y;
       double var12 = var0.z;
       if (var10 != 0.0) {
-         var10 = VoxelShapes.method27438(Direction.Y, var1, var2, var10, var3, var4.method30440(), var5);
+         var10 = VoxelShapes.method27438(Direction.Axis.Y, var1, var2, var10, var3, var4.method30440(), var5);
          if (var10 != 0.0) {
             var1 = var1.offset(0.0, var10, 0.0);
          }
@@ -746,21 +749,21 @@ public abstract class Entity implements INameable, ICommandSource {
 
       boolean var14 = Math.abs(var8) < Math.abs(var12);
       if (var14 && var12 != 0.0) {
-         var12 = VoxelShapes.method27438(Direction.Z, var1, var2, var12, var3, var4.method30440(), var5);
+         var12 = VoxelShapes.method27438(Direction.Axis.Z, var1, var2, var12, var3, var4.method30440(), var5);
          if (var12 != 0.0) {
             var1 = var1.offset(0.0, 0.0, var12);
          }
       }
 
       if (var8 != 0.0) {
-         var8 = VoxelShapes.method27438(Direction.X, var1, var2, var8, var3, var4.method30440(), var5);
+         var8 = VoxelShapes.method27438(Direction.Axis.X, var1, var2, var8, var3, var4.method30440(), var5);
          if (!var14 && var8 != 0.0) {
             var1 = var1.offset(var8, 0.0, 0.0);
          }
       }
 
       if (!var14 && var12 != 0.0) {
-         var12 = VoxelShapes.method27438(Direction.Z, var1, var2, var12, var3, var4.method30440(), var5);
+         var12 = VoxelShapes.method27438(Direction.Axis.Z, var1, var2, var12, var3, var4.method30440(), var5);
       }
 
       return new Vector3d(var8, var10, var12);
@@ -1957,14 +1960,14 @@ public abstract class Entity implements INameable, ICommandSource {
       BlockPos var9 = new BlockPos(var1, var3, var5);
       Vector3d var10 = new Vector3d(var1 - (double)var9.getX(), var3 - (double)var9.getY(), var5 - (double)var9.getZ());
       BlockPos.Mutable var11 = new BlockPos.Mutable();
-      net.minecraft.util.Direction var12 = net.minecraft.util.Direction.field673;
+      Direction var12 = Direction.UP;
       double var13 = Double.MAX_VALUE;
 
-      for (net.minecraft.util.Direction var18 : new net.minecraft.util.Direction[]{net.minecraft.util.Direction.NORTH, net.minecraft.util.Direction.SOUTH, net.minecraft.util.Direction.WEST, net.minecraft.util.Direction.EAST, net.minecraft.util.Direction.field673}) {
+      for (Direction var18 : new Direction[]{Direction.NORTH, Direction.SOUTH, Direction.WEST, Direction.EAST, Direction.UP}) {
          var11.method8377(var9, var18);
          if (!this.world.getBlockState(var11).method23456(this.world, var11)) {
             double var19 = var10.getCoordinate(var18.getAxis());
-            double var21 = var18.getAxisDirection() != Class1892.field11092 ? var19 : 1.0 - var19;
+            double var21 = var18.getAxisDirection() != Direction.AxisDirection.POSITIVE ? var19 : 1.0 - var19;
             if (var21 < var13) {
                var13 = var21;
                var12 = var18;
@@ -1975,9 +1978,9 @@ public abstract class Entity implements INameable, ICommandSource {
       float var23 = this.rand.nextFloat() * 0.2F + 0.1F;
       float var24 = (float)var12.getAxisDirection().getOffset();
       Vector3d var25 = this.getMotion().scale(0.75);
-      if (var12.getAxis() != Direction.X) {
-         if (var12.getAxis() != Direction.Y) {
-            if (var12.getAxis() == Direction.Z) {
+      if (var12.getAxis() != Direction.Axis.X) {
+         if (var12.getAxis() != Direction.Axis.Y) {
+            if (var12.getAxis() == Direction.Axis.Z) {
                this.setMotion(var25.x, var25.y, (double)(var24 * var23));
             }
          } else {
@@ -2132,14 +2135,14 @@ public abstract class Entity implements INameable, ICommandSource {
             );
             return this.method2747(var1, var18, var19).<PortalInfo>map(var2 -> {
                BlockState var5x = this.world.getBlockState(this.field_242271_ac);
-               Direction var6x;
+               Direction.Axis var6x;
                Vector3d var7x;
-               if (!var5x.method23462(Class8820.field39712)) {
-                  var6x = Direction.X;
+               if (!var5x.method23462(BlockStateProperties.field39712)) {
+                  var6x = Direction.Axis.X;
                   var7x = new Vector3d(0.5, 0.0, 0.0);
                } else {
-                  var6x = var5x.<Direction>method23463(Class8820.field39712);
-                  TeleportationRepositioner var8x = Class7215.method22658(this.field_242271_ac, var6x, 21, Direction.Y, 21, var2x -> this.world.getBlockState(var2x) == var5x);
+                  var6x = var5x.<Direction.Axis>get(BlockStateProperties.field39712);
+                  TeleportationRepositioner var8x = Class7215.method22658(this.field_242271_ac, var6x, 21, Direction.Axis.Y, 21, var2x -> this.world.getBlockState(var2x) == var5x);
                   var7x = this.func_241839_a(var6x, var8x);
                }
 
@@ -2163,7 +2166,7 @@ public abstract class Entity implements INameable, ICommandSource {
       }
    }
 
-   public Vector3d func_241839_a(Direction var1, TeleportationRepositioner var2) {
+   public Vector3d func_241839_a(Direction.Axis var1, TeleportationRepositioner var2) {
       return Class7473.method24206(var2, var1, this.getPositionVec(), this.getSize(this.getPose()));
    }
 
@@ -2339,11 +2342,11 @@ public abstract class Entity implements INameable, ICommandSource {
       }
    }
 
-   public net.minecraft.util.Direction method3386() {
-      return net.minecraft.util.Direction.method549((double)this.rotationYaw);
+   public Direction method3386() {
+      return Direction.fromAngle((double)this.rotationYaw);
    }
 
-   public net.minecraft.util.Direction method3387() {
+   public Direction method3387() {
       return this.method3386();
    }
 
@@ -2444,7 +2447,7 @@ public abstract class Entity implements INameable, ICommandSource {
       }
    }
 
-   public float getMirroredYaw(Class2089 var1) {
+   public float getMirroredYaw(Mirror var1) {
       float var4 = MathHelper.method37792(this.rotationYaw);
       switch (Class9228.field42478[var1.ordinal()]) {
          case 1:

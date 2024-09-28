@@ -68,18 +68,18 @@ public class Class2944 extends Class2898<Class4707> {
          for (int var12 = -2; var12 <= 2; var12++) {
             for (int var13 = -2; var13 <= 2; var13++) {
                for (int var14 = 0; var14 <= 3; var14++) {
-                  boolean var15 = MathHelper.method37772(var12) == 2;
-                  boolean var16 = MathHelper.method37772(var13) == 2;
+                  boolean var15 = MathHelper.abs(var12) == 2;
+                  boolean var16 = MathHelper.abs(var13) == 2;
                   boolean var17 = var14 == 3;
                   if (var15 || var16 || var17) {
                      boolean var18 = var12 == -2 || var12 == 2 || var17;
                      boolean var19 = var13 == -2 || var13 == 2 || var17;
                      BlockState var20 = Blocks.IRON_BARS
                         .method11579()
-                        .method23465(Class3237.field18680, Boolean.valueOf(var18 && var13 != -2))
-                        .method23465(Class3237.field18682, Boolean.valueOf(var18 && var13 != 2))
-                        .method23465(Class3237.field18683, Boolean.valueOf(var19 && var12 != -2))
-                        .method23465(Class3237.field18681, Boolean.valueOf(var19 && var12 != 2));
+                        .with(Class3237.field18680, Boolean.valueOf(var18 && var13 != -2))
+                        .with(Class3237.field18682, Boolean.valueOf(var18 && var13 != 2))
+                        .with(Class3237.field18683, Boolean.valueOf(var19 && var12 != -2))
+                        .with(Class3237.field18681, Boolean.valueOf(var19 && var12 != 2));
                      this.method11217(var1, var11.method8372(var4.method37626() + var12, var4.method37629() + var14, var4.method37627() + var13), var20);
                   }
                }

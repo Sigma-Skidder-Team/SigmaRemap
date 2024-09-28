@@ -51,7 +51,7 @@ public class Class9701 {
          HashSet var19 = new HashSet();
          if (var10 > 0) {
             Direction var20 = (MathHelper.floor(var39) & 15) < 8 ? Direction.WEST : Direction.EAST;
-            Direction var21 = (MathHelper.floor(var6) & 15) < 8 ? Direction.DOWN : Direction.field673;
+            Direction var21 = (MathHelper.floor(var6) & 15) < 8 ? Direction.DOWN : Direction.UP;
             Direction var22 = (MathHelper.floor(var8) & 15) < 8 ? Direction.NORTH : Direction.SOUTH;
             BlockPos var23 = new BlockPos(var39, var6, var8);
             Class8066 var24 = var1.method929(var23);

@@ -5,6 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -13,9 +14,9 @@ import java.util.Random;
 
 public class Class3409 extends Block {
    private static String[] field19089;
-   public static final VoxelShape field19090 = Block.method11539(0.0, 0.0, 0.0, 16.0, 14.0, 16.0);
+   public static final VoxelShape field19090 = Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 14.0, 16.0);
 
-   public Class3409(AbstractBlock var1) {
+   public Class3409(Properties var1) {
       super(var1);
    }
 
@@ -41,7 +42,7 @@ public class Class3409 extends Block {
 
    @Override
    public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
-      if (var2 == Direction.field673 && var3.isIn(Blocks.WATER)) {
+      if (var2 == Direction.UP && var3.isIn(Blocks.WATER)) {
          var4.method6860().method20726(var5, this, 20);
       }
 

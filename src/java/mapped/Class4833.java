@@ -4,7 +4,9 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.item.Items;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
 
 import java.util.function.Predicate;
 
@@ -50,6 +52,6 @@ public class Class4833 implements ISelectionContext {
 
    @Override
    public boolean method14950(VoxelShape var1, BlockPos var2, boolean var3) {
-      return this.field22609 > (double)var2.getY() + var1.getEnd(Direction.Y) - 1.0E-5F;
+      return this.field22609 > (double)var2.getY() + var1.getEnd(Direction.Axis.Y) - 1.0E-5F;
    }
 }

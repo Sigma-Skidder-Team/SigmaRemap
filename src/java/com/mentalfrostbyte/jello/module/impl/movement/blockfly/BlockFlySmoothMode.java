@@ -48,11 +48,11 @@ public class BlockFlySmoothMode extends Module {
         double var4 = (double) var0.getX() + 0.5;
         double var6 = (double) var0.getY() + 0.5;
         double var8 = (double) var0.getZ() + 0.5;
-        var4 += (double) var1.method539() / 2.0;
-        var8 += (double) var1.method541() / 2.0;
-        var6 += (double) var1.method540() / 2.0;
+        var4 += (double) var1.getXOffset() / 2.0;
+        var8 += (double) var1.getZOffset() / 2.0;
+        var6 += (double) var1.getYOffset() / 2.0;
         double var10 = 0.2;
-        if (var1 != Direction.field673 && var1 != Direction.DOWN) {
+        if (var1 != Direction.UP && var1 != Direction.DOWN) {
             var6 += method16893(var10, -var10);
         } else {
             var4 += method16893(var10, -var10);
@@ -145,7 +145,7 @@ public class BlockFlySmoothMode extends Module {
                             return;
                         }
 
-                        if (var13.getFace() == Direction.field673
+                        if (var13.getFace() == Direction.UP
                                 && (double) var13.getPos().getY() <= mc.player.getPosY() - 1.0
                                 && mc.player.onGround) {
                             return;

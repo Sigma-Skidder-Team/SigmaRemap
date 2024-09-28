@@ -417,26 +417,26 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
          boolean var9 = var1.shouldTrackOutput();
          if (var4 != null) {
             CommandBlockTileEntity.Mode var10 = var5.method4020();
-            Direction var11 = this.player.world.getBlockState(var6).<Direction>method23463(CommandBlockBlock.field18893);
+            Direction var11 = this.player.world.getBlockState(var6).<Direction>get(CommandBlockBlock.field18893);
             switch (Class9703.field45356[var1.getMode().ordinal()]) {
                case 1:
                   BlockState var12 = Blocks.field36888.method11579();
                   this.player
                      .world
-                     .setBlockState(var6, var12.method23465(CommandBlockBlock.field18893, var11).method23465(CommandBlockBlock.field18894, Boolean.valueOf(var1.isConditional())), 2);
+                     .setBlockState(var6, var12.with(CommandBlockBlock.field18893, var11).with(CommandBlockBlock.field18894, Boolean.valueOf(var1.isConditional())), 2);
                   break;
                case 2:
                   BlockState var13 = Blocks.field36887.method11579();
                   this.player
                      .world
-                     .setBlockState(var6, var13.method23465(CommandBlockBlock.field18893, var11).method23465(CommandBlockBlock.field18894, Boolean.valueOf(var1.isConditional())), 2);
+                     .setBlockState(var6, var13.with(CommandBlockBlock.field18893, var11).with(CommandBlockBlock.field18894, Boolean.valueOf(var1.isConditional())), 2);
                   break;
                case 3:
                default:
                   BlockState var14 = Blocks.COMMAND_BLOCK.method11579();
                   this.player
                      .world
-                     .setBlockState(var6, var14.method23465(CommandBlockBlock.field18893, var11).method23465(CommandBlockBlock.field18894, Boolean.valueOf(var1.isConditional())), 2);
+                     .setBlockState(var6, var14.with(CommandBlockBlock.field18893, var11).with(CommandBlockBlock.field18894, Boolean.valueOf(var1.isConditional())), 2);
             }
 
             var7.method3779();
@@ -931,7 +931,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
          && this.player.getDistanceNearest((double)var8.getX() + 0.5, (double)var8.getY() + 0.5, (double)var8.getZ() + 0.5) < 64.0
          && var4.method6785(this.player, var8)) {
          ActionResultType var12 = this.player.interactionManager.method33860(this.player, var4, var6, var5, var7);
-         if (var9 == Direction.field673 && !var12.isSuccessOrConsume() && var8.getY() >= this.server.method1364() - 1 && method15670(this.player, var6)) {
+         if (var9 == Direction.UP && !var12.isSuccessOrConsume() && var8.getY() >= this.server.method1364() - 1 && method15670(this.player, var6)) {
             IFormattableTextComponent var11 = new TranslationTextComponent("build.tooHigh", this.server.method1364()).mergeStyle(TextFormatting.RED);
             this.player.field4855.sendPacket(new SChatPacket(var11, ChatType.GAME_INFO, Util.DUMMY_UUID));
          } else if (var12.isSuccess()) {

@@ -11,6 +11,7 @@ import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.gen.feature.jigsaw.JigsawOrientation;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 
 import java.util.ArrayList;
@@ -51,7 +52,7 @@ public class Class7490 extends Class7487 {
       var7.add(
          new Class8266(
             var2,
-            Blocks.field37114.method11579().method23465(JigsawBlock.field18712, Class182.method526(Direction.DOWN, Direction.SOUTH)),
+            Blocks.field37114.method11579().with(JigsawBlock.field18712, JigsawOrientation.method526(Direction.DOWN, Direction.SOUTH)),
             this.field32192
          )
       );

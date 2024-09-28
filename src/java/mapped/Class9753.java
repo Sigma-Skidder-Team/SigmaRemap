@@ -151,7 +151,7 @@ public class Class9753 {
          );
          return var0;
       } else {
-         Direction[] var3 = Direction.field685;
+         Direction[] var3 = Direction.VALUES;
 
          for (int var4 = 0; var4 < var3.length; var4++) {
             Direction var5 = var3[var4];

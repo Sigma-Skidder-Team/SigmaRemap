@@ -16,7 +16,7 @@ public class Class6581 implements Class6580 {
          && !Class9312.method35193(var1)[Direction.EAST.getIndex()]
          && !Class9312.method35193(var1)[Direction.NORTH.getIndex()]
          && !Class9312.method35193(var1)[Direction.SOUTH.getIndex()]
-         && !Class9312.method35193(var1)[Direction.field673.getIndex()];
+         && !Class9312.method35193(var1)[Direction.UP.getIndex()];
    }
 
    @Override

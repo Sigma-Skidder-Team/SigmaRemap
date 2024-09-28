@@ -36,6 +36,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
+import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import org.apache.commons.io.IOUtils;
@@ -106,11 +108,11 @@ public class ModelBakery {
    public static final Class7496 field40528 = Util.<Class7496>make(
       Class7496.method24427("{\"gui_light\": \"side\"}"), var0 -> var0.field32207 = "block entity marker"
    );
-   private static final Class9348<Block, BlockState> field40529 = new Class7558<Block, BlockState>(Blocks.AIR)
-      .method24737(Class8551.method30480("map"))
+   private static final StateContainer<Block, BlockState> field40529 = new Class7558<Block, BlockState>(Blocks.AIR)
+      .method24737(BooleanProperty.create("map"))
       .method24739(Block::method11579, BlockState::new);
    private static final Class8451 field40530 = new Class8451();
-   private static final Map<ResourceLocation, Class9348<Block, BlockState>> field40531 = ImmutableMap.of(new ResourceLocation("item_frame"), field40529);
+   private static final Map<ResourceLocation, StateContainer<Block, BlockState>> field40531 = ImmutableMap.of(new ResourceLocation("item_frame"), field40529);
    private final IResourceManager field40532;
    private Class1694 field40533;
    private final BlockColors field40534;
@@ -228,7 +230,7 @@ public class ModelBakery {
       return this.field40533;
    }
 
-   private static Predicate<BlockState> method32839(Class9348<Block, BlockState> var0, String var1) {
+   private static Predicate<BlockState> method32839(StateContainer<Block, BlockState> var0, String var1) {
       Map<Class8550<?>, Comparable<?>> var4 = Maps.newHashMap();
 
       for (String var6 : field40525.split(var1)) {
@@ -254,7 +256,7 @@ public class ModelBakery {
       return var2 -> {
          if (var2 != null && var12 == var2.getBlock()) {
             for (Entry var6x : var4.entrySet()) {
-               if (!Objects.equals(var2.method23463((Class8550)var6x.getKey()), var6x.getValue())) {
+               if (!Objects.equals(var2.get((Class8550)var6x.getKey()), var6x.getValue())) {
                   return false;
                }
             }
@@ -310,7 +312,7 @@ public class ModelBakery {
          Class1997 var4 = (Class1997)var1;
          if (!Objects.equals(var4.method8303(), "inventory")) {
             ResourceLocation var31 = new ResourceLocation(var1.getNamespace(), var1.getPath());
-            Class9348<Block, BlockState> var32 = Optional.ofNullable(field40531.get(var31))
+            StateContainer<Block, BlockState> var32 = Optional.ofNullable(field40531.get(var31))
                .orElseGet(() -> Registry.BLOCK.getOrDefault(var31).getStateContainer());
             this.field40536.method38573(var32);
             ImmutableList<Class8550<?>> var33 = ImmutableList.copyOf(this.field40534.method29469((Block)var32.method35394()));

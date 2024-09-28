@@ -72,14 +72,14 @@ public class ItemFrameEntity extends Class995 {
    public void method4078() {
       if (this.field5489 != null) {
          double var3 = 0.46875;
-         double var5 = (double)this.field5488.getX() + 0.5 - (double)this.field5489.method539() * 0.46875;
-         double var7 = (double)this.field5488.getY() + 0.5 - (double)this.field5489.method540() * 0.46875;
-         double var9 = (double)this.field5488.getZ() + 0.5 - (double)this.field5489.method541() * 0.46875;
+         double var5 = (double)this.field5488.getX() + 0.5 - (double)this.field5489.getXOffset() * 0.46875;
+         double var7 = (double)this.field5488.getY() + 0.5 - (double)this.field5489.getYOffset() * 0.46875;
+         double var9 = (double)this.field5488.getZ() + 0.5 - (double)this.field5489.getZOffset() * 0.46875;
          this.setRawPosition(var5, var7, var9);
          double var11 = (double)this.method4081();
          double var13 = (double)this.method4082();
          double var15 = (double)this.method4081();
-         Direction var17 = this.field5489.getAxis();
+         Direction.Axis var17 = this.field5489.getAxis();
          switch (Class9811.field45858[var17.ordinal()]) {
             case 1:
                var11 = 1.0;
@@ -104,7 +104,7 @@ public class ItemFrameEntity extends Class995 {
          if (!this.world.hasNoCollisions(this)) {
             return false;
          } else {
-            BlockState var3 = this.world.getBlockState(this.field5488.method8349(this.field5489.method536()));
+            BlockState var3 = this.world.getBlockState(this.field5488.method8349(this.field5489.getOpposite()));
             return !var3.getMaterial().isSolid() && (!this.field5489.getAxis().method324() || !Class3247.method11672(var3))
                ? false
                : this.world.getEntitiesInAABBexcluding(this, this.getBoundingBox(), field5486).isEmpty();

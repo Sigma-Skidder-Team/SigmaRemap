@@ -8,15 +8,16 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 public class HoneyBlock extends Class3231 {
    private static String[] field18979;
-   public static final VoxelShape field18980 = Block.method11539(1.0, 0.0, 1.0, 15.0, 15.0, 15.0);
+   public static final VoxelShape field18980 = Block.makeCuboidShape(1.0, 0.0, 1.0, 15.0, 15.0, 15.0);
 
-   public HoneyBlock(AbstractBlock var1) {
+   public HoneyBlock(Properties var1) {
       super(var1);
    }
 

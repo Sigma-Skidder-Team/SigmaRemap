@@ -29,17 +29,17 @@ public abstract class Class2914 extends Class2898<Class4712> {
          var1.setBlockState(var3, var4, 3);
          if (!(var2.nextFloat() < 0.25F)) {
             if (var2.nextFloat() < 0.05F) {
-               var1.setBlockState(var7, Blocks.field37005.method11579().method23465(Class3195.field18472, Integer.valueOf(var2.nextInt(4) + 1)), 2);
+               var1.setBlockState(var7, Blocks.field37005.method11579().with(Class3195.field18472, Integer.valueOf(var2.nextInt(4) + 1)), 2);
             }
          } else {
             var1.setBlockState(var7, BlockTags.field32786.method24919(var2).method11579(), 2);
          }
 
-         for (Direction var10 : Class76.field161) {
+         for (Direction var10 : Direction.Plane.HORIZONTAL) {
             if (var2.nextFloat() < 0.2F) {
                BlockPos var11 = var3.method8349(var10);
                if (var1.getBlockState(var11).isIn(Blocks.WATER)) {
-                  BlockState var12 = BlockTags.field32784.method24919(var2).method11579().method23465(Class3229.field18669, var10);
+                  BlockState var12 = BlockTags.field32784.method24919(var2).method11579().with(Class3229.field18669, var10);
                   var1.setBlockState(var11, var12, 2);
                }
             }

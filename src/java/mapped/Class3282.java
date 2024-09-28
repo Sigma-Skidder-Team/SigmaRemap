@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.dispenser.IDispenseItemBehavior;
 import net.minecraft.item.ItemStack;
+import net.minecraft.state.properties.RailShape;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.BlockPos;
@@ -27,9 +28,9 @@ public class Class3282 extends Item {
       if (var6.isIn(BlockTags.field32766)) {
          ItemStack var7 = var1.method18357();
          if (!var4.isRemote) {
-            Class96 var8 = !(var6.getBlock() instanceof Class3429)
-               ? Class96.field247
-               : var6.<Class96>method23463(((Class3429)var6.getBlock()).method12093());
+            RailShape var8 = !(var6.getBlock() instanceof Class3429)
+               ? RailShape.field247
+               : var6.<RailShape>get(((Class3429)var6.getBlock()).method12093());
             double var9 = 0.0;
             if (var8.method275()) {
                var9 = 0.5;

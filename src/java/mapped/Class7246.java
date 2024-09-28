@@ -1,21 +1,22 @@
 package mapped;
 
+import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 
 // $VF: synthetic class
 public class Class7246 {
    private static String[] field31109;
    public static final int[] field31110;
-   public static final int[] field31111 = new int[Class2089.values().length];
+   public static final int[] field31111 = new int[Mirror.values().length];
 
    static {
       try {
-         field31111[Class2089.field13615.ordinal()] = 1;
+         field31111[Mirror.field13615.ordinal()] = 1;
       } catch (NoSuchFieldError var7) {
       }
 
       try {
-         field31111[Class2089.field13616.ordinal()] = 2;
+         field31111[Mirror.field13616.ordinal()] = 2;
       } catch (NoSuchFieldError var6) {
       }
 

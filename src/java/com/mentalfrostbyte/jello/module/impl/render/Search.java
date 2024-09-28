@@ -117,9 +117,9 @@ public class Search extends Module {
                 for (BlockPos var13 : this.method16166(var1)) {
                     if (mc.world.getBlockState(var13).getBlock() == Blocks.AIR) {
                         for (Direction var11 : Direction.values()) {
-                            if (var11 != Direction.field673
-                                    && mc.world.getBlockState(var13.method8337(var11.method556())).getBlock() != Blocks.field36527
-                                    && mc.world.getBlockState(var13.method8337(var11.method556())).getBlock() != Blocks.BEDROCK) {
+                            if (var11 != Direction.UP
+                                    && mc.world.getBlockState(var13.method8337(var11.getDirectionVec())).getBlock() != Blocks.field36527
+                                    && mc.world.getBlockState(var13.method8337(var11.getDirectionVec())).getBlock() != Blocks.BEDROCK) {
                                 continue label57;
                             }
                         }

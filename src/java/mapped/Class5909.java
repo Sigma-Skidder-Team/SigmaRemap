@@ -36,9 +36,9 @@ public class Class5909 extends ItemUseContext {
          var0.method18357(),
          new BlockRayTraceResult(
             new Vector3d(
-               (double)var1.getX() + 0.5 + (double)var2.method539() * 0.5,
-               (double)var1.getY() + 0.5 + (double)var2.method540() * 0.5,
-               (double)var1.getZ() + 0.5 + (double)var2.method541() * 0.5
+               (double)var1.getX() + 0.5 + (double)var2.getXOffset() * 0.5,
+               (double)var1.getY() + 0.5 + (double)var2.getYOffset() * 0.5,
+               (double)var1.getZ() + 0.5 + (double)var2.getZOffset() * 0.5
             ),
             var2,
             var1,
@@ -72,13 +72,13 @@ public class Class5909 extends ItemUseContext {
          Direction var4 = this.method18354();
          int var5 = 0;
 
-         while (var5 < var3.length && var3[var5] != var4.method536()) {
+         while (var5 < var3.length && var3[var5] != var4.getOpposite()) {
             var5++;
          }
 
          if (var5 > 0) {
             System.arraycopy(var3, 0, var3, 1, var5);
-            var3[0] = var4.method536();
+            var3[0] = var4.getOpposite();
          }
 
          return var3;

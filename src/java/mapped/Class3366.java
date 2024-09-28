@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.block.HorizontalBlock;
+import net.minecraft.state.DirectionProperty;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
@@ -12,9 +14,12 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -29,13 +34,13 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 public class Class3366 extends Class3241 {
-   private static final net.minecraft.util.Direction[] field18934 = new net.minecraft.util.Direction[]{net.minecraft.util.Direction.WEST, net.minecraft.util.Direction.EAST, net.minecraft.util.Direction.SOUTH};
-   public static final Class8553 field18935 = Class3198.field18484;
-   public static final Class8554 field18936 = Class8820.field39754;
+   private static final Direction[] field18934 = new Direction[]{Direction.WEST, Direction.EAST, Direction.SOUTH};
+   public static final DirectionProperty field18935 = HorizontalBlock.HORIZONTAL_FACING;
+   public static final IntegerProperty field18936 = BlockStateProperties.field39754;
 
-   public Class3366(AbstractBlock var1) {
+   public Class3366(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().method23465(field18936, Integer.valueOf(0)).method23465(field18935, net.minecraft.util.Direction.NORTH));
+      this.method11578(this.field18612.method35393().with(field18936, Integer.valueOf(0)).with(field18935, Direction.NORTH));
    }
 
    @Override
@@ -45,7 +50,7 @@ public class Class3366 extends Class3241 {
 
    @Override
    public int method11649(BlockState var1, World var2, BlockPos var3) {
-      return var1.<Integer>method23463(field18936);
+      return var1.<Integer>get(field18936);
    }
 
    @Override
@@ -84,7 +89,7 @@ public class Class3366 extends Class3241 {
    @Override
    public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       ItemStack var9 = var4.getHeldItem(var5);
-      int var10 = var1.<Integer>method23463(field18936);
+      int var10 = var1.<Integer>get(field18936);
       boolean var11 = false;
       if (var10 >= 5) {
          if (var9.getItem() != Items.field37956) {
@@ -146,12 +151,12 @@ public class Class3366 extends Class3241 {
    }
 
    public void method11947(World var1, BlockState var2, BlockPos var3) {
-      var1.setBlockState(var3, var2.method23465(field18936, Integer.valueOf(0)), 3);
+      var1.setBlockState(var3, var2.with(field18936, Integer.valueOf(0)), 3);
    }
 
    @Override
    public void method11512(BlockState var1, World var2, BlockPos var3, Random var4) {
-      if (var1.<Integer>method23463(field18936) >= 5) {
+      if (var1.<Integer>get(field18936) >= 5) {
          for (int var7 = 0; var7 < var4.nextInt(1) + 1; var7++) {
             this.method11948(var2, var3, var1);
          }
@@ -161,14 +166,14 @@ public class Class3366 extends Class3241 {
    private void method11948(World var1, BlockPos var2, BlockState var3) {
       if (var3.method23449().method23474() && !(var1.rand.nextFloat() < 0.3F)) {
          VoxelShape var6 = var3.method23414(var1, var2);
-         double var7 = var6.getEnd(Direction.Y);
+         double var7 = var6.getEnd(Direction.Axis.Y);
          if (var7 >= 1.0 && !var3.isIn(BlockTags.field32781)) {
-            double var9 = var6.getStart(Direction.Y);
+            double var9 = var6.getStart(Direction.Axis.Y);
             if (!(var9 > 0.0)) {
                BlockPos var11 = var2.down();
                BlockState var12 = var1.getBlockState(var11);
                VoxelShape var13 = var12.method23414(var1, var11);
-               double var14 = var13.getEnd(Direction.Y);
+               double var14 = var13.getEnd(Direction.Axis.Y);
                if ((var14 < 1.0 || !var12.method23456(var1, var11)) && var12.method23449().method23474()) {
                   this.method11949(var1, var2, var6, (double)var2.getY() - 0.05);
                }
@@ -182,10 +187,10 @@ public class Class3366 extends Class3241 {
    private void method11949(World var1, BlockPos var2, VoxelShape var3, double var4) {
       this.method11950(
          var1,
-         (double)var2.getX() + var3.getStart(Direction.X),
-         (double)var2.getX() + var3.getEnd(Direction.X),
-         (double)var2.getZ() + var3.getStart(Direction.Z),
-         (double)var2.getZ() + var3.getEnd(Direction.Z),
+         (double)var2.getX() + var3.getStart(Direction.Axis.X),
+         (double)var2.getX() + var3.getEnd(Direction.Axis.X),
+         (double)var2.getZ() + var3.getStart(Direction.Axis.Z),
+         (double)var2.getZ() + var3.getEnd(Direction.Axis.Z),
          var4
       );
    }
@@ -204,7 +209,7 @@ public class Class3366 extends Class3241 {
 
    @Override
    public BlockState method11495(Class5909 var1) {
-      return this.method11579().method23465(field18935, var1.method18350().method536());
+      return this.method11579().with(field18935, var1.method18350().getOpposite());
    }
 
    @Override
@@ -230,7 +235,7 @@ public class Class3366 extends Class3241 {
          if (var7 instanceof BeehiveTileEntity) {
             BeehiveTileEntity var8 = (BeehiveTileEntity)var7;
             ItemStack var9 = new ItemStack(this);
-            int var10 = var3.<Integer>method23463(field18936);
+            int var10 = var3.<Integer>get(field18936);
             boolean var11 = !var8.method3913();
             if (!var11 && var10 == 0) {
                return;
@@ -269,7 +274,7 @@ public class Class3366 extends Class3241 {
    }
 
    @Override
-   public BlockState method11491(BlockState var1, net.minecraft.util.Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
       if (var4.getBlockState(var6).getBlock() instanceof Class3399) {
          TileEntity var9 = var4.getTileEntity(var5);
          if (var9 instanceof BeehiveTileEntity) {
@@ -281,7 +286,7 @@ public class Class3366 extends Class3241 {
       return super.method11491(var1, var2, var3, var4, var5, var6);
    }
 
-   public static net.minecraft.util.Direction method11951(Random var0) {
-      return Util.<net.minecraft.util.Direction>method38518(field18934, var0);
+   public static Direction method11951(Random var0) {
+      return Util.<Direction>getRandomObject(field18934, var0);
    }
 }

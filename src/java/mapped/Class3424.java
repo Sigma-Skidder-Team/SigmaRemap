@@ -7,9 +7,11 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.SwordItem;
+import net.minecraft.state.properties.BambooLeaves;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
@@ -20,9 +22,9 @@ import java.util.Random;
 
 public class Class3424 extends Block implements Class3196 {
    private static String[] field19160;
-   public static final VoxelShape field19161 = Block.method11539(4.0, 0.0, 4.0, 12.0, 12.0, 12.0);
+   public static final VoxelShape field19161 = Block.makeCuboidShape(4.0, 0.0, 4.0, 12.0, 12.0, 12.0);
 
-   public Class3424(AbstractBlock var1) {
+   public Class3424(Properties var1) {
       super(var1);
    }
 
@@ -52,7 +54,7 @@ public class Class3424 extends Block implements Class3196 {
    @Override
    public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
       if (var1.method23443(var4, var5)) {
-         if (var2 == Direction.field673 && var3.isIn(Blocks.field37009)) {
+         if (var2 == Direction.UP && var3.isIn(Blocks.field37009)) {
             var4.setBlockState(var5, Blocks.field37009.method11579(), 2);
          }
 
@@ -88,6 +90,6 @@ public class Class3424 extends Block implements Class3196 {
    }
 
    public void method12079(World var1, BlockPos var2) {
-      var1.setBlockState(var2.up(), Blocks.field37009.method11579().method23465(Class3418.field19126, Class181.field643), 3);
+      var1.setBlockState(var2.up(), Blocks.field37009.method11579().with(Class3418.field19126, BambooLeaves.field643), 3);
    }
 }

@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.util.Mirror;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
@@ -58,7 +59,7 @@ public class Class2947 extends Class2898<Class4712> {
       }
 
       int var24 = Math.max(var19 - 15 - var3.nextInt(10), 10);
-      BlockPos var25 = var11.method32907(var4.method8336(var17, var24, var18), Class2089.field13614, var8);
+      BlockPos var25 = var11.method32907(var4.method8336(var17, var24, var18), Mirror.field13614, var8);
       Class7094 var22 = new Class7094(0.9F);
       var15.method36433().method36434(var22);
       var11.method32899(var1, var25, var25, var15, var3, 4);

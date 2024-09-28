@@ -41,7 +41,7 @@ public final class Class7700 {
    public static final BlockState field33027 = Blocks.DEAD_BUSH.method11579();
    public static final BlockState field33028 = Blocks.MELON.method11579();
    public static final BlockState field33029 = Blocks.PUMPKIN.method11579();
-   public static final BlockState field33030 = Blocks.field37069.method11579().method23465(Class3484.field19342, Integer.valueOf(3));
+   public static final BlockState field33030 = Blocks.field37069.method11579().with(Class3484.field19342, Integer.valueOf(3));
    public static final BlockState field33031 = Blocks.FIRE.method11579();
    public static final BlockState field33032 = Blocks.field36531.method11579();
    public static final BlockState field33033 = Blocks.NETHERRACK.method11579();
@@ -53,15 +53,15 @@ public final class Class7700 {
    public static final BlockState field33039 = Blocks.SUNFLOWER.method11579();
    public static final BlockState field33040 = Blocks.CACTUS.method11579();
    public static final BlockState field33041 = Blocks.SUGAR_CANE.method11579();
-   public static final BlockState field33042 = Blocks.RED_MUSHROOM_BLOCK.method11579().method23465(Class3443.field19254, Boolean.valueOf(false));
+   public static final BlockState field33042 = Blocks.RED_MUSHROOM_BLOCK.method11579().with(Class3443.field19254, Boolean.valueOf(false));
    public static final BlockState field33043 = Blocks.BROWN_MUSHROOM_BLOCK
       .method11579()
-      .method23465(Class3443.field19253, Boolean.valueOf(true))
-      .method23465(Class3443.field19254, Boolean.valueOf(false));
+      .with(Class3443.field19253, Boolean.valueOf(true))
+      .with(Class3443.field19254, Boolean.valueOf(false));
    public static final BlockState field33044 = Blocks.MUSHROOM_STEM
       .method11579()
-      .method23465(Class3443.field19253, Boolean.valueOf(false))
-      .method23465(Class3443.field19254, Boolean.valueOf(false));
+      .with(Class3443.field19253, Boolean.valueOf(false))
+      .with(Class3443.field19254, Boolean.valueOf(false));
    public static final FluidState field33045 = Class9479.field44066.method25049();
    public static final FluidState field33046 = Class9479.field44068.method25049();
    public static final BlockState field33047 = Blocks.WATER.method11579();

@@ -34,10 +34,10 @@ public class Class2932 extends Class2930 {
                      var5,
                      var6.field22395
                         .method20424(var2, var3)
-                        .method23465(Class3443.field19252, Boolean.valueOf(var18))
-                        .method23465(Class3443.field19250, Boolean.valueOf(var19))
-                        .method23465(Class3443.field19249, Boolean.valueOf(var20))
-                        .method23465(Class3443.field19251, Boolean.valueOf(var21))
+                        .with(Class3443.field19252, Boolean.valueOf(var18))
+                        .with(Class3443.field19250, Boolean.valueOf(var19))
+                        .with(Class3443.field19249, Boolean.valueOf(var20))
+                        .with(Class3443.field19251, Boolean.valueOf(var21))
                   );
                }
             }

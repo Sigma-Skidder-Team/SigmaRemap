@@ -15,6 +15,6 @@ public class Class956 extends TileEntity {
    }
 
    public boolean method3870(Direction var1) {
-      return var1 == Direction.field673;
+      return var1 == Direction.UP;
    }
 }

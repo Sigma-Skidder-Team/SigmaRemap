@@ -15,7 +15,7 @@ public enum Class2156 {
    },
    field14141 {
       private final int field14144 = 1;
-      private final VoxelShape field14145 = Block.method11539(7.0, 0.0, 7.0, 9.0, 10.0, 9.0);
+      private final VoxelShape field14145 = Block.makeCuboidShape(7.0, 0.0, 7.0, 9.0, 10.0, 9.0);
 
       @Override
       public boolean method8876(BlockState blockState, IBlockReader class1665, BlockPos var3, Direction var4) {
@@ -24,7 +24,7 @@ public enum Class2156 {
    },
    field14142 {
       private final int field14146 = 2;
-      private final VoxelShape field14147 = VoxelShapes.combineAndSimplify(VoxelShapes.method27426(), Block.method11539(2.0, 0.0, 2.0, 14.0, 16.0, 14.0), IBooleanFunction.ONLY_FIRST);
+      private final VoxelShape field14147 = VoxelShapes.combineAndSimplify(VoxelShapes.method27426(), Block.makeCuboidShape(2.0, 0.0, 2.0, 14.0, 16.0, 14.0), IBooleanFunction.ONLY_FIRST);
 
       @Override
       public boolean method8876(BlockState blockState, IBlockReader class1665, BlockPos var3, Direction var4) {

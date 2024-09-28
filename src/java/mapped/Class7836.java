@@ -1,15 +1,16 @@
 package mapped;
 
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.util.ObjectIntIdentityMap;
 
 import java.util.function.Predicate;
 
 public class Class7836<T> implements Class7833<T> {
    private static String[] field33639;
-   private final Class2352<T> field33640;
+   private final ObjectIntIdentityMap<T> field33640;
    private final T field33641;
 
-   public Class7836(Class2352<T> var1, T var2) {
+   public Class7836(ObjectIntIdentityMap<T> var1, T var2) {
       this.field33640 = var1;
       this.field33641 = (T)var2;
    }

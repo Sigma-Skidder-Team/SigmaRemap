@@ -6,6 +6,8 @@ import net.minecraft.block.material.Material;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -15,23 +17,23 @@ import java.util.List;
 
 public class Class3469 extends Class3468 {
    private static String[] field19316;
-   public static final Class8551 field19317 = Class8820.field39704;
+   public static final BooleanProperty field19317 = BlockStateProperties.POWERED;
    private final Class2275 field19318;
 
-   public Class3469(Class2275 var1, AbstractBlock var2) {
+   public Class3469(Class2275 var1, Properties var2) {
       super(var2);
-      this.method11578(this.field18612.method35393().method23465(field19317, Boolean.valueOf(false)));
+      this.method11578(this.field18612.method35393().with(field19317, Boolean.valueOf(false)));
       this.field19318 = var1;
    }
 
    @Override
    public int method12158(BlockState var1) {
-      return !var1.<Boolean>method23463(field19317) ? 0 : 15;
+      return !var1.<Boolean>get(field19317) ? 0 : 15;
    }
 
    @Override
    public BlockState method12159(BlockState var1, int var2) {
-      return var1.method23465(field19317, Boolean.valueOf(var2 > 0));
+      return var1.with(field19317, Boolean.valueOf(var2 > 0));
    }
 
    @Override

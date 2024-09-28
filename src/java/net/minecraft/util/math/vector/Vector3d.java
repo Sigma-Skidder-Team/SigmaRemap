@@ -1,6 +1,7 @@
 package net.minecraft.util.math.vector;
 
 import mapped.*;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.EnumSet;
@@ -202,14 +203,14 @@ public class Vector3d implements Class2955 {
       return new Vector3d((double)(var5 * var6), (double)var7, (double)(var4 * var6));
    }
 
-   public Vector3d method11355(EnumSet<Direction> var1) {
-      double var4 = !var1.contains(Direction.X) ? this.x : (double) MathHelper.floor(this.x);
-      double var6 = !var1.contains(Direction.Y) ? this.y : (double) MathHelper.floor(this.y);
-      double var8 = !var1.contains(Direction.Z) ? this.z : (double) MathHelper.floor(this.z);
+   public Vector3d method11355(EnumSet<Direction.Axis> var1) {
+      double var4 = !var1.contains(Direction.Axis.X) ? this.x : (double) MathHelper.floor(this.x);
+      double var6 = !var1.contains(Direction.Axis.Y) ? this.y : (double) MathHelper.floor(this.y);
+      double var8 = !var1.contains(Direction.Axis.Z) ? this.z : (double) MathHelper.floor(this.z);
       return new Vector3d(var4, var6, var8);
    }
 
-   public double getCoordinate(Direction var1) {
+   public double getCoordinate(Direction.Axis var1) {
       return var1.method328(this.x, this.y, this.z);
    }
 

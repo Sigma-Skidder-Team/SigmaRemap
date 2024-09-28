@@ -8,7 +8,9 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.particles.RedstoneParticleData;
+import net.minecraft.state.BooleanProperty;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
@@ -19,11 +21,11 @@ import java.util.Random;
 
 public class Class3403 extends Block {
    private static String[] field19076;
-   public static final Class8551 field19077 = Class3383.field18987;
+   public static final BooleanProperty field19077 = Class3383.field18987;
 
-   public Class3403(AbstractBlock var1) {
+   public Class3403(Properties var1) {
       super(var1);
-      this.method11578(this.method11579().method23465(field19077, Boolean.valueOf(false)));
+      this.method11578(this.method11579().with(field19077, Boolean.valueOf(false)));
    }
 
    @Override
@@ -52,20 +54,20 @@ public class Class3403 extends Block {
 
    private static void method12041(BlockState var0, World var1, BlockPos var2) {
       method12042(var1, var2);
-      if (!var0.<Boolean>method23463(field19077)) {
-         var1.setBlockState(var2, var0.method23465(field19077, Boolean.valueOf(true)), 3);
+      if (!var0.<Boolean>get(field19077)) {
+         var1.setBlockState(var2, var0.with(field19077, Boolean.valueOf(true)), 3);
       }
    }
 
    @Override
    public boolean method11499(BlockState var1) {
-      return var1.<Boolean>method23463(field19077);
+      return var1.<Boolean>get(field19077);
    }
 
    @Override
    public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
-      if (var1.<Boolean>method23463(field19077)) {
-         var2.setBlockState(var3, var1.method23465(field19077, Boolean.valueOf(false)), 3);
+      if (var1.<Boolean>get(field19077)) {
+         var2.setBlockState(var3, var1.with(field19077, Boolean.valueOf(false)), 3);
       }
    }
 
@@ -80,7 +82,7 @@ public class Class3403 extends Block {
 
    @Override
    public void method11512(BlockState var1, World var2, BlockPos var3, Random var4) {
-      if (var1.<Boolean>method23463(field19077)) {
+      if (var1.<Boolean>get(field19077)) {
          method12042(var2, var3);
       }
    }
@@ -89,13 +91,13 @@ public class Class3403 extends Block {
       double var4 = 0.5625;
       Random var6 = var0.rand;
 
-      for (net.minecraft.util.Direction var10 : net.minecraft.util.Direction.values()) {
+      for (Direction var10 : Direction.values()) {
          BlockPos var11 = var1.method8349(var10);
          if (!var0.getBlockState(var11).method23409(var0, var11)) {
-            Direction var12 = var10.getAxis();
-            double var13 = var12 != Direction.X ? (double)var6.nextFloat() : 0.5 + 0.5625 * (double)var10.method539();
-            double var15 = var12 != Direction.Y ? (double)var6.nextFloat() : 0.5 + 0.5625 * (double)var10.method540();
-            double var17 = var12 != Direction.Z ? (double)var6.nextFloat() : 0.5 + 0.5625 * (double)var10.method541();
+            Direction.Axis var12 = var10.getAxis();
+            double var13 = var12 != Direction.Axis.X ? (double)var6.nextFloat() : 0.5 + 0.5625 * (double)var10.getXOffset();
+            double var15 = var12 != Direction.Axis.Y ? (double)var6.nextFloat() : 0.5 + 0.5625 * (double)var10.getYOffset();
+            double var17 = var12 != Direction.Axis.Z ? (double)var6.nextFloat() : 0.5 + 0.5625 * (double)var10.getZOffset();
             var0.addParticle(
                RedstoneParticleData.REDSTONE_DUST, (double)var1.getX() + var13, (double)var1.getY() + var15, (double)var1.getZ() + var17, 0.0, 0.0, 0.0
             );

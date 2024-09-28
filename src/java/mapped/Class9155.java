@@ -199,7 +199,7 @@ public class Class9155 {
       float var12 = 0.0F;
 
       for (Direction var16 : Direction.values()) {
-         Vector3i var17 = var16.method556();
+         Vector3i var17 = var16.getDirectionVec();
          Vector3f var18 = new Vector3f((float)var17.getX(), (float)var17.getY(), (float)var17.getZ());
          float var19 = var10.method25279(var18);
          if (var19 >= 0.0F && var19 > var12) {
@@ -208,7 +208,7 @@ public class Class9155 {
          }
       }
 
-      return var11 != null ? var11 : Direction.field673;
+      return var11 != null ? var11 : Direction.UP;
    }
 
    private void method34185(int[] var1, Direction var2) {

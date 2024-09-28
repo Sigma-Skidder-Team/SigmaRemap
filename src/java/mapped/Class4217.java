@@ -27,14 +27,14 @@ public class Class4217 extends Class4213 {
          this.method13006(var1, var5, 0, 0, Class9312.method35193(this.field20539)[Direction.DOWN.getIndex()]);
       }
 
-      if (Class9312.method35191(this.field20539)[Direction.field673.getIndex()] == null) {
+      if (Class9312.method35191(this.field20539)[Direction.UP.getIndex()] == null) {
          this.method13007(var1, var5, 1, 4, 1, 6, 4, 6, field20528);
       }
 
       boolean var10 = this.field20545 != 0
          && var4.nextBoolean()
          && !Class9312.method35193(this.field20539)[Direction.DOWN.getIndex()]
-         && !Class9312.method35193(this.field20539)[Direction.field673.getIndex()]
+         && !Class9312.method35193(this.field20539)[Direction.UP.getIndex()]
          && this.field20539.method35190() > 1;
       if (this.field20545 != 0) {
          if (this.field20545 != 1) {

@@ -4,13 +4,14 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.material.PushReaction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 
 public class Class3391 extends Block {
    private static String[] field19015;
-   private static final VoxelShape field19016 = Block.method11539(5.0, 5.0, 5.0, 11.0, 11.0, 11.0);
+   private static final VoxelShape field19016 = Block.makeCuboidShape(5.0, 5.0, 5.0, 11.0, 11.0, 11.0);
 
-   public Class3391(AbstractBlock var1) {
+   public Class3391(Properties var1) {
       super(var1);
    }
 

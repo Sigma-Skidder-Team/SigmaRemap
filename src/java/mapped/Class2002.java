@@ -41,7 +41,7 @@ public class Class2002 extends Vector3i {
    }
 
    public static long method8394(long var0, Direction var2) {
-      return method8395(var0, var2.method539(), var2.method540(), var2.method541());
+      return method8395(var0, var2.getXOffset(), var2.getYOffset(), var2.getZOffset());
    }
 
    public static long method8395(long var0, int var2, int var3, int var4) {

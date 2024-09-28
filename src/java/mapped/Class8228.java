@@ -14,7 +14,7 @@ public class Class8228 {
       }
 
       try {
-         field35345[Direction.field673.ordinal()] = 2;
+         field35345[Direction.UP.ordinal()] = 2;
       } catch (NoSuchFieldError var7) {
       }
 

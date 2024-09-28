@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import net.minecraft.block.BlockState;
+import net.minecraft.state.StateContainer;
 
 import java.util.Collection;
 import java.util.List;
@@ -37,7 +38,7 @@ public class Class9390 {
    }
 
    public static Class9390 method35649(BlockState var0, Class7498 var1, Collection<Class8550<?>> var2) {
-      Class9348 var5 = var0.getBlock().getStateContainer();
+      StateContainer var5 = var0.getBlock().getStateContainer();
       List var6 = var1.method24447()
          .stream()
          .filter(var2x -> var2x.method35408(var5).test(var0))
@@ -53,6 +54,6 @@ public class Class9390 {
    }
 
    private static List<Object> method35651(BlockState var0, Collection<Class8550<?>> var1) {
-      return var1.stream().map(var0::method23463).collect(ImmutableList.toImmutableList());
+      return var1.stream().map(var0::get).collect(ImmutableList.toImmutableList());
    }
 }

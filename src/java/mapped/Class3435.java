@@ -9,11 +9,16 @@ import net.minecraft.block.material.PushReaction;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraft.state.properties.PistonType;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Mirror;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -25,25 +30,25 @@ import java.util.Map.Entry;
 
 public class Class3435 extends Class3433 {
    private static String[] field19201;
-   public static final Class8551 field19202 = Class8820.field39688;
-   public static final VoxelShape field19203 = Block.method11539(0.0, 0.0, 0.0, 12.0, 16.0, 16.0);
-   public static final VoxelShape field19204 = Block.method11539(4.0, 0.0, 0.0, 16.0, 16.0, 16.0);
-   public static final VoxelShape field19205 = Block.method11539(0.0, 0.0, 0.0, 16.0, 16.0, 12.0);
-   public static final VoxelShape field19206 = Block.method11539(0.0, 0.0, 4.0, 16.0, 16.0, 16.0);
-   public static final VoxelShape field19207 = Block.method11539(0.0, 0.0, 0.0, 16.0, 12.0, 16.0);
-   public static final VoxelShape field19208 = Block.method11539(0.0, 4.0, 0.0, 16.0, 16.0, 16.0);
+   public static final BooleanProperty field19202 = BlockStateProperties.field39688;
+   public static final VoxelShape field19203 = Block.makeCuboidShape(0.0, 0.0, 0.0, 12.0, 16.0, 16.0);
+   public static final VoxelShape field19204 = Block.makeCuboidShape(4.0, 0.0, 0.0, 16.0, 16.0, 16.0);
+   public static final VoxelShape field19205 = Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 16.0, 12.0);
+   public static final VoxelShape field19206 = Block.makeCuboidShape(0.0, 0.0, 4.0, 16.0, 16.0, 16.0);
+   public static final VoxelShape field19207 = Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 12.0, 16.0);
+   public static final VoxelShape field19208 = Block.makeCuboidShape(0.0, 4.0, 0.0, 16.0, 16.0, 16.0);
    private final boolean field19209;
 
-   public Class3435(boolean var1, AbstractBlock var2) {
+   public Class3435(boolean var1, Properties var2) {
       super(var2);
-      this.method11578(this.field18612.method35393().method23465(field19198, Direction.NORTH).method23465(field19202, Boolean.valueOf(false)));
+      this.method11578(this.field18612.method35393().with(field19198, Direction.NORTH).with(field19202, Boolean.valueOf(false)));
       this.field19209 = var1;
    }
 
    @Override
    public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
-      if (var1.<Boolean>method23463(field19202)) {
-         switch (Class7273.field31199[var1.<Direction>method23463(field19198).ordinal()]) {
+      if (var1.<Boolean>get(field19202)) {
+         switch (Class7273.field31199[var1.<Direction>get(field19198).ordinal()]) {
             case 1:
                return field19208;
             case 2:
@@ -86,21 +91,21 @@ public class Class3435 extends Class3433 {
 
    @Override
    public BlockState method11495(Class5909 var1) {
-      return this.method11579().method23465(field19198, var1.method18348().method536()).method23465(field19202, Boolean.valueOf(false));
+      return this.method11579().with(field19198, var1.method18348().getOpposite()).with(field19202, Boolean.valueOf(false));
    }
 
    private void method12102(World var1, BlockPos var2, BlockState var3) {
-      Direction var6 = var3.<Direction>method23463(field19198);
+      Direction var6 = var3.<Direction>get(field19198);
       boolean var7 = this.method12103(var1, var2, var6);
-      if (var7 && !var3.<Boolean>method23463(field19202)) {
+      if (var7 && !var3.<Boolean>get(field19202)) {
          if (new Class9196(var1, var2, var6, true).method34464()) {
             var1.method6787(var2, this, 0, var6.getIndex());
          }
-      } else if (!var7 && var3.<Boolean>method23463(field19202)) {
+      } else if (!var7 && var3.<Boolean>get(field19202)) {
          BlockPos var8 = var2.method8350(var6, 2);
          BlockState var9 = var1.getBlockState(var8);
          byte var10 = 1;
-         if (var9.isIn(Blocks.MOVING_PISTON) && var9.<Direction>method23463(field19198) == var6) {
+         if (var9.isIn(Blocks.MOVING_PISTON) && var9.<Direction>get(field19198) == var6) {
             TileEntity var11 = var1.getTileEntity(var8);
             if (var11 instanceof Class955) {
                Class955 var12 = (Class955)var11;
@@ -138,11 +143,11 @@ public class Class3435 extends Class3433 {
 
    @Override
    public boolean method11647(BlockState var1, World var2, BlockPos var3, int var4, int var5) {
-      Direction var8 = var1.<Direction>method23463(field19198);
+      Direction var8 = var1.<Direction>get(field19198);
       if (!var2.isRemote) {
          boolean var9 = this.method12103(var2, var3, var8);
          if (var9 && (var4 == 1 || var4 == 2)) {
-            var2.setBlockState(var3, var1.method23465(field19202, Boolean.valueOf(true)), 2);
+            var2.setBlockState(var3, var1.with(field19202, Boolean.valueOf(true)), 2);
             return false;
          }
 
@@ -160,16 +165,16 @@ public class Class3435 extends Class3433 {
 
             BlockState var10 = Blocks.MOVING_PISTON
                .method11579()
-               .method23465(Class3356.field18896, var8)
-               .method23465(Class3356.field18897, !this.field19209 ? Class180.field638 : Class180.field639);
+               .with(Class3356.field18896, var8)
+               .with(Class3356.field18897, !this.field19209 ? PistonType.field638 : PistonType.field639);
             var2.setBlockState(var3, var10, 20);
-            var2.method6761(var3, Class3356.method11929(this.method11579().method23465(field19198, Direction.byIndex(var5 & 7)), var8, false, true));
+            var2.method6761(var3, Class3356.method11929(this.method11579().with(field19198, Direction.byIndex(var5 & 7)), var8, false, true));
             var2.func_230547_a_(var3, var10.getBlock());
             var10.method23424(var2, var3, 2);
             if (!this.field19209) {
                var2.removeBlock(var3.method8349(var8), false);
             } else {
-               BlockPos var11 = var3.method8336(var8.method539() * 2, var8.method540() * 2, var8.method541() * 2);
+               BlockPos var11 = var3.method8336(var8.getXOffset() * 2, var8.getYOffset() * 2, var8.getZOffset() * 2);
                BlockState var12 = var2.getBlockState(var11);
                boolean var13 = false;
                if (var12.isIn(Blocks.MOVING_PISTON)) {
@@ -186,7 +191,7 @@ public class Class3435 extends Class3433 {
                if (!var13) {
                   if (var4 == 1
                      && !var12.isAir()
-                     && method12104(var12, var2, var11, var8.method536(), false, var8)
+                     && method12104(var12, var2, var11, var8.getOpposite(), false, var8)
                      && (var12.method23408() == PushReaction.field15862 || var12.isIn(Blocks.PISTON) || var12.isIn(Blocks.STICKY_PISTON))) {
                      this.method12105(var2, var3, var8, false);
                   } else {
@@ -202,7 +207,7 @@ public class Class3435 extends Class3433 {
             return false;
          }
 
-         var2.setBlockState(var3, var1.method23465(field19202, Boolean.valueOf(true)), 67);
+         var2.setBlockState(var3, var1.with(field19202, Boolean.valueOf(true)), 67);
          var2.method6742((PlayerEntity)null, var3, SoundEvents.field26950, Class2266.field14732, 0.5F, var2.rand.nextFloat() * 0.25F + 0.6F);
       }
 
@@ -218,7 +223,7 @@ public class Class3435 extends Class3433 {
          return false;
       } else if (var3 == Direction.DOWN && var2.getY() == 0) {
          return false;
-      } else if (var3 == Direction.field673 && var2.getY() == var1.method7034() - 1) {
+      } else if (var3 == Direction.UP && var2.getY() == var1.method7034() - 1) {
          return false;
       } else {
          if (!var0.isIn(Blocks.PISTON) && !var0.isIn(Blocks.STICKY_PISTON)) {
@@ -234,7 +239,7 @@ public class Class3435 extends Class3433 {
                case 3:
                   return var3 == var5;
             }
-         } else if (var0.<Boolean>method23463(field19202)) {
+         } else if (var0.<Boolean>get(field19202)) {
             return false;
          }
 
@@ -265,7 +270,7 @@ public class Class3435 extends Class3433 {
 
          List var21 = var8.method34471();
          BlockState[] var22 = new BlockState[var10.size() + var21.size()];
-         Direction var23 = !var4 ? var3.method536() : var3;
+         Direction var23 = !var4 ? var3.getOpposite() : var3;
          int var15 = 0;
 
          for (int var16 = var21.size() - 1; var16 >= 0; var16--) {
@@ -282,18 +287,18 @@ public class Class3435 extends Class3433 {
             BlockState var35 = var1.getBlockState(var28);
             var28 = var28.method8349(var23);
             var9.remove(var28);
-            var1.setBlockState(var28, Blocks.MOVING_PISTON.method11579().method23465(field19198, var3), 68);
+            var1.setBlockState(var28, Blocks.MOVING_PISTON.method11579().with(field19198, var3), 68);
             var1.method6761(var28, Class3356.method11929((BlockState)var11.get(var25), var3, var4, false));
             var22[var15++] = var35;
          }
 
          if (var4) {
-            Class180 var26 = !this.field19209 ? Class180.field638 : Class180.field639;
-            BlockState var30 = Blocks.PISTON_HEAD.method11579().method23465(Class3436.field19198, var3).method23465(Class3436.field19211, var26);
+            PistonType var26 = !this.field19209 ? PistonType.field638 : PistonType.field639;
+            BlockState var30 = Blocks.PISTON_HEAD.method11579().with(Class3436.field19198, var3).with(Class3436.field19211, var26);
             BlockState var36 = Blocks.MOVING_PISTON
                .method11579()
-               .method23465(Class3356.field18896, var3)
-               .method23465(Class3356.field18897, !this.field19209 ? Class180.field638 : Class180.field639);
+               .with(Class3356.field18896, var3)
+               .with(Class3356.field18897, !this.field19209 ? PistonType.field638 : PistonType.field639);
             var9.remove(var7);
             var1.setBlockState(var7, var36, 68);
             var1.method6761(var7, Class3356.method11929(var30, var3, true, true));
@@ -335,13 +340,13 @@ public class Class3435 extends Class3433 {
    }
 
    @Override
-   public BlockState method11500(BlockState var1, Rotation var2) {
-      return var1.method23465(field19198, var2.method252(var1.<Direction>method23463(field19198)));
+   public BlockState rotate(BlockState var1, Rotation var2) {
+      return var1.with(field19198, var2.rotate(var1.<Direction>get(field19198)));
    }
 
    @Override
-   public BlockState method11501(BlockState var1, Class2089 var2) {
-      return var1.method23395(var2.method8749(var1.<Direction>method23463(field19198)));
+   public BlockState mirror(BlockState var1, Mirror var2) {
+      return var1.rotate(var2.toRotation(var1.<Direction>get(field19198)));
    }
 
    @Override
@@ -351,7 +356,7 @@ public class Class3435 extends Class3433 {
 
    @Override
    public boolean method11534(BlockState var1) {
-      return var1.<Boolean>method23463(field19202);
+      return var1.<Boolean>get(field19202);
    }
 
    @Override

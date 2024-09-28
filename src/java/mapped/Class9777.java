@@ -121,7 +121,7 @@ public final class Class9777 {
                            Class109 var44 = var32.method24382();
                            boolean var45 = var44 == Class109.field367;
                            int var46 = var40.getY();
-                           int var47 = var21 - var46 + JigsawBlock.method11675(var17.field35531).method540();
+                           int var47 = var21 - var46 + JigsawBlock.method11675(var17.field35531).getYOffset();
                            int var48;
                            if (var12 && var45) {
                               var48 = var15 + var47;

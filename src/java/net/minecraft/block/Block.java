@@ -11,10 +11,13 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.state.StateContainer;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.ObjectIntIdentityMap;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.registry.Registry;
@@ -33,11 +36,11 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Stream;
 
-public class Block extends Class3390 implements IItemProvider {
+public class Block extends AbstractBlock implements IItemProvider {
    public static final Logger field18609 = LogManager.getLogger();
-   public static final Class2352<BlockState> field18610 = new Class2352<BlockState>();
+   public static final ObjectIntIdentityMap<BlockState> field18610 = new ObjectIntIdentityMap<BlockState>();
    private static final LoadingCache<VoxelShape, Boolean> field18611 = CacheBuilder.newBuilder().maximumSize(512L).weakKeys().build(new Class4562());
-   public final Class9348<Block, BlockState> field18612;
+   public final StateContainer<Block, BlockState> field18612;
    private BlockState field18613;
    private String field18614;
    private Item field18615;
@@ -72,14 +75,14 @@ public class Block extends Class3390 implements IItemProvider {
          .withOffset((double)var3.getX(), (double)var3.getY(), (double)var3.getZ());
 
       for (Entity var8 : var2.method7181((Entity)null, var6.getBoundingBox())) {
-         double var9 = VoxelShapes.method27437(Direction.Y, var8.getBoundingBox().offset(0.0, 1.0, 0.0), Stream.<VoxelShape>of(var6), -1.0);
+         double var9 = VoxelShapes.method27437(Direction.Axis.Y, var8.getBoundingBox().offset(0.0, 1.0, 0.0), Stream.<VoxelShape>of(var6), -1.0);
          var8.setPositionAndUpdate(var8.getPosX(), var8.getPosY() + 1.0 + var9, var8.getPosZ());
       }
 
       return var1;
    }
 
-   public static VoxelShape method11539(double var0, double var2, double var4, double var6, double var8, double var10) {
+   public static VoxelShape makeCuboidShape(double var0, double var2, double var4, double var6, double var8, double var10) {
       return VoxelShapes.create(var0 / 16.0, var2 / 16.0, var4 / 16.0, var6 / 16.0, var8 / 16.0, var10 / 16.0);
    }
 
@@ -95,7 +98,7 @@ public class Block extends Class3390 implements IItemProvider {
       BlockState var5 = var0;
       BlockPos.Mutable var6 = new BlockPos.Mutable();
 
-      for (net.minecraft.util.Direction var10 : field19003) {
+      for (Direction var10 : field19003) {
          var6.method8377(var2, var10);
          var5 = var5.method23439(var10, var1.getBlockState(var6), var1, var2, var6);
       }
@@ -117,7 +120,7 @@ public class Block extends Class3390 implements IItemProvider {
       }
    }
 
-   public Block(AbstractBlock var1) {
+   public Block(Properties var1) {
       super(var1);
       Class7558<Block, BlockState> var4 = new Class7558<>(this);
       this.method11489(var4);
@@ -139,7 +142,7 @@ public class Block extends Class3390 implements IItemProvider {
       return this.field19007;
    }
 
-   public static boolean method11546(BlockState var0, IBlockReader var1, BlockPos var2, net.minecraft.util.Direction var3) {
+   public static boolean method11546(BlockState var0, IBlockReader var1, BlockPos var2, Direction var3) {
       BlockPos var6 = var2.method8349(var3);
       BlockState var7 = var1.getBlockState(var6);
       EventRenderBlocks var8 = new EventRenderBlocks(var0);
@@ -155,7 +158,7 @@ public class Block extends Class3390 implements IItemProvider {
                   byte var11 = var10.getAndMoveToFirst(var9);
                   if (var11 == 127) {
                      VoxelShape var12 = var0.method23388(var1, var2, var3);
-                     VoxelShape var13 = var7.method23388(var1, var6, var3.method536());
+                     VoxelShape var13 = var7.method23388(var1, var6, var3.getOpposite());
                      boolean var14 = VoxelShapes.compare(var12, var13, IBooleanFunction.ONLY_FIRST);
                      if (var10.size() == 2048) {
                         var10.removeLastByte();
@@ -179,15 +182,15 @@ public class Block extends Class3390 implements IItemProvider {
    }
 
    public static boolean method11547(IBlockReader var0, BlockPos var1) {
-      return var0.getBlockState(var1).method23455(var0, var1, net.minecraft.util.Direction.field673, Class2156.field14142);
+      return var0.getBlockState(var1).method23455(var0, var1, Direction.UP, Class2156.field14142);
    }
 
-   public static boolean method11548(IWorldReader var0, BlockPos var1, net.minecraft.util.Direction var2) {
+   public static boolean method11548(IWorldReader var0, BlockPos var1, Direction var2) {
       BlockState var5 = var0.getBlockState(var1);
-      return var2 == net.minecraft.util.Direction.DOWN && var5.isIn(BlockTags.field32813) ? false : var5.method23455(var0, var1, var2, Class2156.field14141);
+      return var2 == Direction.DOWN && var5.isIn(BlockTags.field32813) ? false : var5.method23455(var0, var1, var2, Class2156.field14141);
    }
 
-   public static boolean method11549(VoxelShape var0, net.minecraft.util.Direction var1) {
+   public static boolean method11549(VoxelShape var0, Direction var1) {
       VoxelShape var4 = var0.method19526(var1);
       return method11550(var4);
    }
@@ -353,7 +356,7 @@ public class Block extends Class3390 implements IItemProvider {
    public void method11489(Class7558<Block, BlockState> var1) {
    }
 
-   public Class9348<Block, BlockState> getStateContainer() {
+   public StateContainer<Block, BlockState> getStateContainer() {
       return this.field18612;
    }
 

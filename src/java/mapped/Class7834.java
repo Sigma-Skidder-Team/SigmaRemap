@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.util.ObjectIntIdentityMap;
 
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -9,14 +10,14 @@ import javax.annotation.Nullable;
 
 public class Class7834<T> implements Class7833<T> {
    private static String[] field33625;
-   private final Class2352<T> field33626;
+   private final ObjectIntIdentityMap<T> field33626;
    private final Class2353<T> field33627;
    private final Class8555<T> field33628;
    private final Function<CompoundNBT, T> field33629;
    private final Function<T, CompoundNBT> field33630;
    private final int field33631;
 
-   public Class7834(Class2352<T> var1, int var2, Class8555<T> var3, Function<CompoundNBT, T> var4, Function<T, CompoundNBT> var5) {
+   public Class7834(ObjectIntIdentityMap<T> var1, int var2, Class8555<T> var3, Function<CompoundNBT, T> var4, Function<T, CompoundNBT> var5) {
       this.field33626 = var1;
       this.field33631 = var2;
       this.field33628 = var3;

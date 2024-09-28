@@ -32,7 +32,7 @@ public class Class5736 extends EntityRenderer<ItemFrameEntity> {
       Vector3d var10 = this.getRenderOffset(var1, var3);
       var4.translate(-var10.getX(), -var10.getY(), -var10.getZ());
       double var11 = 0.46875;
-      var4.translate((double)var9.method539() * 0.46875, (double)var9.method540() * 0.46875, (double)var9.method541() * 0.46875);
+      var4.translate((double)var9.getXOffset() * 0.46875, (double)var9.getYOffset() * 0.46875, (double)var9.getZOffset() * 0.46875);
       var4.rotate(Vector3f.XP.rotationDegrees(var1.rotationPitch));
       var4.rotate(Vector3f.YP.rotationDegrees(180.0F - var1.rotationYaw));
       boolean var13 = var1.isInvisible();
@@ -92,7 +92,7 @@ public class Class5736 extends EntityRenderer<ItemFrameEntity> {
    }
 
    public Vector3d getRenderOffset(ItemFrameEntity var1, float var2) {
-      return new Vector3d((double)((float)var1.method3386().method539() * 0.3F), -0.25, (double)((float)var1.method3386().method541() * 0.3F));
+      return new Vector3d((double)((float)var1.method3386().getXOffset() * 0.3F), -0.25, (double)((float)var1.method3386().getZOffset() * 0.3F));
    }
 
    public ResourceLocation method17843(ItemFrameEntity var1) {

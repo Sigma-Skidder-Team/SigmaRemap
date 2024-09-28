@@ -7,6 +7,7 @@ import net.minecraft.fluid.Fluid;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -15,9 +16,9 @@ import java.util.Random;
 
 public class Class3365 extends Class3241 {
    private static String[] field18932;
-   public static final VoxelShape field18933 = Block.method11539(0.0, 0.0, 0.0, 16.0, 12.0, 16.0);
+   public static final VoxelShape field18933 = Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 12.0, 16.0);
 
-   public Class3365(AbstractBlock var1) {
+   public Class3365(Properties var1) {
       super(var1);
    }
 

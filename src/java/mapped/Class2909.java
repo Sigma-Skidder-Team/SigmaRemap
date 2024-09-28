@@ -54,8 +54,8 @@ public class Class2909 extends Class2898<Class4712> {
 
       BlockPos var12 = var4.method8339(2);
 
-      for (Direction var14 : Class76.field161) {
-         this.method11217(var1, var12.method8349(var14), Blocks.WALL_TORCH.method11579().method23465(Class3382.field18985, var14));
+      for (Direction var14 : Direction.Plane.HORIZONTAL) {
+         this.method11217(var1, var12.method8349(var14), Blocks.WALL_TORCH.method11579().with(Class3382.field18985, var14));
       }
 
       return true;

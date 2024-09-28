@@ -17,7 +17,7 @@ public enum Class1974 {
    private final int field12857;
    private static final Class1974[] field12858 = Util.<Class1974[]>make(new Class1974[6], var0 -> {
       var0[Direction.DOWN.getIndex()] = field12848;
-      var0[Direction.field673.getIndex()] = field12849;
+      var0[Direction.UP.getIndex()] = field12849;
       var0[Direction.NORTH.getIndex()] = field12850;
       var0[Direction.SOUTH.getIndex()] = field12851;
       var0[Direction.WEST.getIndex()] = field12852;

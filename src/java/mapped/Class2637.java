@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.state.properties.BedPart;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorldReader;
@@ -45,10 +46,10 @@ public class Class2637 extends Class2628 {
          if (var5.isIn(Blocks.CHEST)) {
             return Class941.method3763(var1, var2) < 1;
          } else {
-            return var5.isIn(Blocks.FURNACE) && var5.<Boolean>method23463(Class3353.field18876)
+            return var5.isIn(Blocks.FURNACE) && var5.<Boolean>get(Class3353.field18876)
                ? true
                : var5.method23447(
-                  BlockTags.field32770, var0 -> var0.<Class82>method23464(Class3250.field18713).<Boolean>map(var0x -> var0x != Class82.HEAD).orElse(true)
+                  BlockTags.field32770, var0 -> var0.<BedPart>method23464(Class3250.field18713).<Boolean>map(var0x -> var0x != BedPart.HEAD).orElse(true)
                );
          }
       } else {

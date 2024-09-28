@@ -2,15 +2,15 @@ package mapped;
 
 import javax.annotation.Nullable;
 
+import net.minecraft.block.HorizontalBlock;
+import net.minecraft.state.DirectionProperty;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Direction;
-import net.minecraft.util.Hand;
-import net.minecraft.util.Rotation;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.IBlockReader;
@@ -18,17 +18,17 @@ import net.minecraft.world.World;
 
 public class Class3412 extends Block {
    private static final ITextComponent field19096 = new TranslationTextComponent("container.stonecutter");
-   public static final Class8553 field19097 = Class3198.field18484;
-   public static final VoxelShape field19098 = Block.method11539(0.0, 0.0, 0.0, 16.0, 9.0, 16.0);
+   public static final DirectionProperty field19097 = HorizontalBlock.HORIZONTAL_FACING;
+   public static final VoxelShape field19098 = Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 9.0, 16.0);
 
-   public Class3412(AbstractBlock var1) {
+   public Class3412(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().method23465(field19097, Direction.NORTH));
+      this.method11578(this.field18612.method35393().with(field19097, Direction.NORTH));
    }
 
    @Override
    public BlockState method11495(Class5909 var1) {
-      return this.method11579().method23465(field19097, var1.method18350().method536());
+      return this.method11579().with(field19097, var1.method18350().getOpposite());
    }
 
    @Override
@@ -64,13 +64,13 @@ public class Class3412 extends Block {
    }
 
    @Override
-   public BlockState method11500(BlockState var1, Rotation var2) {
-      return var1.method23465(field19097, var2.method252(var1.<Direction>method23463(field19097)));
+   public BlockState rotate(BlockState var1, Rotation var2) {
+      return var1.with(field19097, var2.rotate(var1.<Direction>get(field19097)));
    }
 
    @Override
-   public BlockState method11501(BlockState var1, Class2089 var2) {
-      return var1.method23395(var2.method8749(var1.<Direction>method23463(field19097)));
+   public BlockState mirror(BlockState var1, Mirror var2) {
+      return var1.rotate(var2.toRotation(var1.<Direction>get(field19097)));
    }
 
    @Override

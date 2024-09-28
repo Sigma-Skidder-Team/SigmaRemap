@@ -4,8 +4,10 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.fluid.Fluid;
+import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -15,9 +17,9 @@ import javax.annotation.Nullable;
 
 public class Class3450 extends Class3194 implements Class3196, Class3449 {
    private static String[] field18470;
-   public static final VoxelShape field19264 = Block.method11539(2.0, 0.0, 2.0, 14.0, 12.0, 14.0);
+   public static final VoxelShape field19264 = Block.makeCuboidShape(2.0, 0.0, 2.0, 14.0, 12.0, 14.0);
 
-   public Class3450(AbstractBlock var1) {
+   public Class3450(Properties var1) {
       super(var1);
    }
 
@@ -28,7 +30,7 @@ public class Class3450 extends Class3194 implements Class3196, Class3449 {
 
    @Override
    public boolean method11490(BlockState var1, IBlockReader var2, BlockPos var3) {
-      return var1.method23454(var2, var3, Direction.field673) && !var1.isIn(Blocks.field36890);
+      return var1.method23454(var2, var3, Direction.UP) && !var1.isIn(Blocks.field36890);
    }
 
    @Nullable
@@ -66,7 +68,7 @@ public class Class3450 extends Class3194 implements Class3196, Class3449 {
    @Override
    public void method11488(ServerWorld var1, Random var2, BlockPos var3, BlockState var4) {
       BlockState var7 = Blocks.TALL_SEAGRASS.method11579();
-      BlockState var8 = var7.method23465(Class3455.field19274, Class84.field209);
+      BlockState var8 = var7.with(Class3455.field19274, DoubleBlockHalf.field209);
       BlockPos var9 = var3.up();
       if (var1.getBlockState(var9).isIn(Blocks.WATER)) {
          var1.setBlockState(var3, var7, 2);

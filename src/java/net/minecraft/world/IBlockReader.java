@@ -3,6 +3,7 @@ package net.minecraft.world;
 import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
@@ -58,7 +59,7 @@ public interface IBlockReader {
          var0 -> {
             Vector3d var3 = var0.method20745().method11336(var0.method20744());
             return BlockRayTraceResult.method31420(
-               var0.method20744(), net.minecraft.util.Direction.method553(var3.x, var3.y, var3.z), new BlockPos(var0.method20744())
+               var0.method20744(), Direction.getFacingFromVector(var3.x, var3.y, var3.z), new BlockPos(var0.method20744())
             );
          }
       );
@@ -79,10 +80,10 @@ public interface IBlockReader {
 
    default double method7038(VoxelShape var1, Supplier<VoxelShape> var2) {
       if (var1.isEmpty()) {
-         double var5 = ((VoxelShape)var2.get()).getEnd(Direction.Y);
+         double var5 = ((VoxelShape)var2.get()).getEnd(Direction.Axis.Y);
          return !(var5 >= 1.0) ? Double.NEGATIVE_INFINITY : var5 - 1.0;
       } else {
-         return var1.getEnd(Direction.Y);
+         return var1.getEnd(Direction.Axis.Y);
       }
    }
 

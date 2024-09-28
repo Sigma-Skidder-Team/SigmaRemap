@@ -78,10 +78,10 @@ public class Class2935 extends Class2898<Class4708> {
                      break;
                   }
 
-                  var14.method8379(Direction.field673);
+                  var14.method8379(Direction.UP);
                } else {
                   this.method11217(var1, var14, Blocks.BASALT.method11579());
-                  var14.method8379(Direction.field673);
+                  var14.method8379(Direction.UP);
                   var8 = true;
                }
             }
@@ -110,7 +110,7 @@ public class Class2935 extends Class2898<Class4708> {
          return false;
       } else {
          BlockState var5 = var0.getBlockState(var2.method8379(Direction.DOWN));
-         var2.method8379(Direction.field673);
+         var2.method8379(Direction.UP);
          return !var5.isAir() && !field18005.contains(var5.getBlock());
       }
    }
@@ -122,7 +122,7 @@ public class Class2935 extends Class2898<Class4708> {
          BlockState var5 = var0.getBlockState(var1);
          if (!field18005.contains(var5.getBlock())) {
             if (!var5.isAir()) {
-               var1.method8379(Direction.field673);
+               var1.method8379(Direction.UP);
                continue;
             }
 

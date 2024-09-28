@@ -43,7 +43,7 @@ public class Class3699 extends Class3676<LivingEntity> {
 
    private boolean method12576(ServerWorld var1, BlockPos var2, LivingEntity var3) {
       BlockState var6 = var1.getBlockState(var2);
-      return var6.getBlock().isIn(BlockTags.field32770) && var6.<Boolean>method23463(Class3250.field18714) && !var3.isSleeping();
+      return var6.getBlock().isIn(BlockTags.field32770) && var6.<Boolean>get(Class3250.field18714) && !var3.isSleeping();
    }
 
    private boolean method12577(ServerWorld var1, BlockPos var2) {

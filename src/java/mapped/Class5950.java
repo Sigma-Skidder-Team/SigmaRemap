@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.block.BlockState;
+import net.minecraft.state.properties.BedPart;
 import net.minecraft.util.Direction;
 import net.minecraft.world.World;
 
@@ -50,8 +51,8 @@ public class Class5950 extends Class5942<Class967> {
          this.method18480(
             var3,
             var4,
-            var11.<Class82>method23463(Class3250.field18713) == Class82.HEAD,
-            var11.<Direction>method23463(Class3250.field18484),
+            var11.<BedPart>get(Class3250.field18713) == BedPart.HEAD,
+            var11.<Direction>get(Class3250.HORIZONTAL_FACING),
             var9,
             var13,
             var6,
@@ -71,7 +72,7 @@ public class Class5950 extends Class5942<Class967> {
       var1.translate(0.0, 0.5625, !var8 ? 0.0 : -1.0);
       var1.rotate(Vector3f.XP.rotationDegrees(90.0F));
       var1.translate(0.5, 0.5, 0.5);
-      var1.rotate(Vector3f.ZP.rotationDegrees(180.0F + var4.method551()));
+      var1.rotate(Vector3f.ZP.rotationDegrees(180.0F + var4.getHorizontalAngle()));
       var1.translate(-0.5, -0.5, -0.5);
       IVertexBuilder var11 = var5.method26200(var2, RenderType::getEntitySolid);
       this.field25947.render(var1, var11, var6, var7);

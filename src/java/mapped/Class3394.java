@@ -5,36 +5,39 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
 public class Class3394 extends Block {
    private static String[] field19028;
-   public static final Class8554 field19029 = Class8820.field39745;
+   public static final IntegerProperty field19029 = BlockStateProperties.field39745;
    public static final VoxelShape[] field19030 = new VoxelShape[]{
-      Block.method11539(1.0, 0.0, 1.0, 15.0, 8.0, 15.0),
-      Block.method11539(3.0, 0.0, 1.0, 15.0, 8.0, 15.0),
-      Block.method11539(5.0, 0.0, 1.0, 15.0, 8.0, 15.0),
-      Block.method11539(7.0, 0.0, 1.0, 15.0, 8.0, 15.0),
-      Block.method11539(9.0, 0.0, 1.0, 15.0, 8.0, 15.0),
-      Block.method11539(11.0, 0.0, 1.0, 15.0, 8.0, 15.0),
-      Block.method11539(13.0, 0.0, 1.0, 15.0, 8.0, 15.0)
+      Block.makeCuboidShape(1.0, 0.0, 1.0, 15.0, 8.0, 15.0),
+      Block.makeCuboidShape(3.0, 0.0, 1.0, 15.0, 8.0, 15.0),
+      Block.makeCuboidShape(5.0, 0.0, 1.0, 15.0, 8.0, 15.0),
+      Block.makeCuboidShape(7.0, 0.0, 1.0, 15.0, 8.0, 15.0),
+      Block.makeCuboidShape(9.0, 0.0, 1.0, 15.0, 8.0, 15.0),
+      Block.makeCuboidShape(11.0, 0.0, 1.0, 15.0, 8.0, 15.0),
+      Block.makeCuboidShape(13.0, 0.0, 1.0, 15.0, 8.0, 15.0)
    };
 
-   public Class3394(AbstractBlock var1) {
+   public Class3394(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().method23465(field19029, Integer.valueOf(0)));
+      this.method11578(this.field18612.method35393().with(field19029, Integer.valueOf(0)));
    }
 
    @Override
    public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
-      return field19030[var1.<Integer>method23463(field19029)];
+      return field19030[var1.<Integer>get(field19029)];
    }
 
    @Override
@@ -57,11 +60,11 @@ public class Class3394 extends Block {
       if (var4.method2933(false)) {
          var4.method2911(Stats.field40141);
          var4.getFoodStats().method37569(2, 0.1F);
-         int var7 = var3.<Integer>method23463(field19029);
+         int var7 = var3.<Integer>get(field19029);
          if (var7 >= 6) {
             var1.removeBlock(var2, false);
          } else {
-            var1.setBlockState(var2, var3.method23465(field19029, Integer.valueOf(var7 + 1)), 3);
+            var1.setBlockState(var2, var3.with(field19029, Integer.valueOf(var7 + 1)), 3);
          }
 
          return ActionResultType.SUCCESS;
@@ -89,7 +92,7 @@ public class Class3394 extends Block {
 
    @Override
    public int method11649(BlockState var1, World var2, BlockPos var3) {
-      return (7 - var1.<Integer>method23463(field19029)) * 2;
+      return (7 - var1.<Integer>get(field19029)) * 2;
    }
 
    @Override

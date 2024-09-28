@@ -1,6 +1,5 @@
 package net.minecraft.entity;
 
-import mapped.Direction;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -40,6 +39,7 @@ import net.minecraft.potion.EffectInstance;
 import net.minecraft.scoreboard.ScorePlayerTeam;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.*;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -1333,9 +1333,9 @@ public abstract class LivingEntity extends Entity {
    }
 
    private boolean canGoThroughtTrapDoorOnLadder(BlockPos var1, BlockState var2) {
-      if (var2.<Boolean>method23463(Class3206.field18594)) {
+      if (var2.<Boolean>get(Class3206.field18594)) {
          BlockState var5 = this.world.getBlockState(var1.down());
-         if (var5.isIn(Blocks.LADDER) && var5.<net.minecraft.util.Direction>method23463(Class3423.field19154) == var2.<net.minecraft.util.Direction>method23463(Class3206.field18484)) {
+         if (var5.isIn(Blocks.LADDER) && var5.<Direction>get(Class3423.field19154) == var2.<Direction>get(Class3206.HORIZONTAL_FACING)) {
             return true;
          }
       }
@@ -2642,7 +2642,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    @Override
-   public Vector3d func_241839_a(Direction var1, TeleportationRepositioner var2) {
+   public Vector3d func_241839_a(Direction.Axis var1, TeleportationRepositioner var2) {
       return func_242288_h(super.func_241839_a(var1, var2));
    }
 
@@ -2991,7 +2991,7 @@ public abstract class LivingEntity extends Entity {
 
       BlockState var4 = this.world.getBlockState(var1);
       if (var4.getBlock() instanceof Class3250) {
-         this.world.setBlockState(var1, var4.method23465(Class3250.field18714, Boolean.valueOf(true)), 3);
+         this.world.setBlockState(var1, var4.with(Class3250.field18714, Boolean.valueOf(true)), 3);
       }
 
       this.setPose(Pose.field13621);
@@ -3013,7 +3013,7 @@ public abstract class LivingEntity extends Entity {
       this.getBedPosition().filter(this.world::method7017).ifPresent(var1 -> {
          BlockState var4 = this.world.getBlockState(var1);
          if (var4.getBlock() instanceof Class3250) {
-            this.world.setBlockState(var1, var4.method23465(Class3250.field18714, Boolean.valueOf(false)), 3);
+            this.world.setBlockState(var1, var4.with(Class3250.field18714, Boolean.valueOf(false)), 3);
             Vector3d var5 = Class3250.method11686(this.getType(), this.world, var1, this.rotationYaw).orElseGet(() -> {
                BlockPos var3x = var1.up();
                return new Vector3d((double)var3x.getX() + 0.5, (double)var3x.getY() + 0.1, (double)var3x.getZ() + 0.5);
@@ -3032,7 +3032,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    @Nullable
-   public net.minecraft.util.Direction getBedDirection() {
+   public Direction getBedDirection() {
       BlockPos var3 = this.getBedPosition().orElse((BlockPos)null);
       return var3 == null ? null : Class3250.method11678(this.world, var3);
    }

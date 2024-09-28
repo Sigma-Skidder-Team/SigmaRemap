@@ -9,6 +9,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.play.client.CPlayerPacket;
+import net.minecraft.state.StateContainer;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
@@ -513,17 +514,17 @@ public class BlockUtil {
    }
 
    public static Vector3d method34572(Direction var0, BlockPos var1) {
-      float var4 = (float)Math.max(0, var0.method539());
-      float var5 = (float)Math.max(0, var0.method541());
-      float var6 = (float)var1.getX() + var4 + (var0.method539() != 0 ? 0.0F : (float)Math.random());
-      float var7 = (float)var1.getY() + (var0.method540() != 0 ? 0.0F : (var0.method540() != 1 ? (float)Math.random() : 1.0F));
-      float var8 = (float)var1.getZ() + var5 + (var0.method541() != 0 ? 0.0F : (float)Math.random());
+      float var4 = (float)Math.max(0, var0.getXOffset());
+      float var5 = (float)Math.max(0, var0.getZOffset());
+      float var6 = (float)var1.getX() + var4 + (var0.getXOffset() != 0 ? 0.0F : (float)Math.random());
+      float var7 = (float)var1.getY() + (var0.getYOffset() != 0 ? 0.0F : (var0.getYOffset() != 1 ? (float)Math.random() : 1.0F));
+      float var8 = (float)var1.getZ() + var5 + (var0.getZOffset() != 0 ? 0.0F : (float)Math.random());
       return new Vector3d((double)var6, (double)var7, (double)var8);
    }
 
    public static int method34573(BlockState var0) {
       Block var3 = var0.getBlock();
-      Class9348 var4 = var3.getStateContainer();
+      StateContainer var4 = var3.getStateContainer();
       ImmutableList var5 = var4.getValidStates();
       return var5.indexOf(var0);
    }
@@ -639,8 +640,8 @@ public class BlockUtil {
    }
 
    public static Direction method34580(BlockPos var0) {
-      Direction var3 = Direction.field673;
-      float var4 = MathHelper.method37792(method34581(var0, Direction.field673)[0]);
+      Direction var3 = Direction.UP;
+      float var4 = MathHelper.method37792(method34581(var0, Direction.UP)[0]);
       if (var4 >= 45.0F && var4 <= 135.0F) {
          var3 = Direction.EAST;
       } else if ((!(var4 >= 135.0F) || !(var4 <= 180.0F)) && (!(var4 <= -135.0F) || !(var4 >= -180.0F))) {
@@ -653,16 +654,16 @@ public class BlockUtil {
          var3 = Direction.SOUTH;
       }
 
-      if (MathHelper.method37792(method34581(var0, Direction.field673)[1]) > 75.0F || MathHelper.method37792(method34581(var0, Direction.field673)[1]) < -75.0F) {
-         var3 = Direction.field673;
+      if (MathHelper.method37792(method34581(var0, Direction.UP)[1]) > 75.0F || MathHelper.method37792(method34581(var0, Direction.UP)[1]) < -75.0F) {
+         var3 = Direction.UP;
       }
 
       return var3;
    }
 
    public static float[] method34581(BlockPos var0, Direction var1) {
-      double var4 = (double)var0.getX() + 0.5 - mc.player.getPosX() + (double)var1.method539() / 2.0;
-      double var6 = (double)var0.getZ() + 0.5 - mc.player.getPosZ() + (double)var1.method541() / 2.0;
+      double var4 = (double)var0.getX() + 0.5 - mc.player.getPosX() + (double)var1.getXOffset() / 2.0;
+      double var6 = (double)var0.getZ() + 0.5 - mc.player.getPosZ() + (double)var1.getZOffset() / 2.0;
       double var8 = mc.player.getPosY() + (double) mc.player.getEyeHeight() - ((double)var0.getY() + 0.5);
       double var10 = (double) MathHelper.sqrt(var4 * var4 + var6 * var6);
       float var12 = (float)(Math.atan2(var6, var4) * 180.0 / Math.PI) - 90.0F;

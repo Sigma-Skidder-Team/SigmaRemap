@@ -14,10 +14,10 @@ public class Class5949 extends Class5942<Class948> {
 
    public void method18462(Class948 var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
       BlockState var9 = var1.method3775();
-      if (var9.<Boolean>method23463(Class3354.field18882)) {
+      if (var9.<Boolean>get(Class3354.field18882)) {
          var3.push();
          var3.translate(0.5, 1.0625, 0.5);
-         float var10 = var9.<Direction>method23463(Class3354.field18880).method537().method551();
+         float var10 = var9.<Direction>get(Class3354.field18880).rotateY().getHorizontalAngle();
          var3.rotate(Vector3f.YP.rotationDegrees(-var10));
          var3.rotate(Vector3f.ZP.rotationDegrees(67.5F));
          var3.translate(0.0, -0.125, 0.0);

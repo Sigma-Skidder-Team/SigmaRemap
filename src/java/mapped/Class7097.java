@@ -4,6 +4,7 @@ import com.mojang.serialization.Codec;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.state.properties.Half;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -61,12 +62,12 @@ public class Class7097 extends Class7092 {
 
    @Nullable
    private BlockState method22077(Random var1, BlockState var2) {
-      Direction var5 = var2.<Direction>method23463(Class3421.field19131);
-      Class99 var6 = var2.<Class99>method23463(Class3421.field19132);
+      Direction var5 = var2.<Direction>get(Class3421.field19131);
+      Half var6 = var2.<Half>get(Class3421.field19132);
       if (!(var1.nextFloat() >= 0.5F)) {
          BlockState[] var7 = new BlockState[]{Blocks.field36845.method11579(), Blocks.field36852.method11579()};
          BlockState[] var8 = new BlockState[]{
-            Blocks.field37016.method11579().method23465(Class3421.field19131, var5).method23465(Class3421.field19132, var6),
+            Blocks.field37016.method11579().with(Class3421.field19131, var5).with(Class3421.field19132, var6),
             Blocks.field37030.method11579()
          };
          return this.method22082(var1, var7, var8);
@@ -92,8 +93,8 @@ public class Class7097 extends Class7092 {
 
    private static BlockState method22081(Random var0, Block var1) {
       return var1.method11579()
-         .method23465(Class3421.field19131, Class76.field161.method247(var0))
-         .method23465(Class3421.field19132, Class99.values()[var0.nextInt(Class99.values().length)]);
+         .with(Class3421.field19131, Direction.Plane.HORIZONTAL.method247(var0))
+         .with(Class3421.field19132, Half.values()[var0.nextInt(Half.values().length)]);
    }
 
    private BlockState method22082(Random var1, BlockState[] var2, BlockState[] var3) {

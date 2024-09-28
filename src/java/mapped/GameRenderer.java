@@ -294,7 +294,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
             double var19 = var7.method11342(var18);
             if (var8 && var19 > 9.0) {
                this.mc.objectMouseOver = BlockRayTraceResult.method31420(
-                  var18, Direction.method553(var12.x, var12.y, var12.z), new BlockPos(var18)
+                  var18, Direction.getFacingFromVector(var12.x, var12.y, var12.z), new BlockPos(var18)
                );
             } else if (var19 < var10 || this.mc.objectMouseOver == null) {
                this.mc.objectMouseOver = var16;

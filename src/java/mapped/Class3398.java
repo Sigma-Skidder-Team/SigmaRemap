@@ -11,7 +11,7 @@ import net.minecraft.world.IWorldReader;
 public class Class3398 extends AbstractFireBlock {
    private static String[] field19036;
 
-   public Class3398(AbstractBlock var1) {
+   public Class3398(Properties var1) {
       super(var1, 2.0F);
    }
 

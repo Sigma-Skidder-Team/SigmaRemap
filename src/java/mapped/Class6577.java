@@ -95,7 +95,7 @@ public class Class6577 {
             var5.append(" ");
          }
 
-         var5.append(Util.<String>method38518(this.field28959, this.field28958));
+         var5.append(Util.<String>getRandomObject(this.field28959, this.field28958));
       }
 
       return var1.method38830().func_238358_a_(new StringTextComponent(var5.toString()).mergeStyle(field28956), var2, Style.EMPTY);

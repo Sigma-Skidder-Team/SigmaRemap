@@ -35,10 +35,10 @@ public class Class2905 extends Class2898<Class4712> {
             int var12 = MathHelper.ceil(var11);
 
             for (int var13 = -var12; var13 <= var12; var13++) {
-               float var14 = (float) MathHelper.method37772(var13) - 0.25F;
+               float var14 = (float) MathHelper.abs(var13) - 0.25F;
 
                for (int var15 = -var12; var15 <= var12; var15++) {
-                  float var16 = (float) MathHelper.method37772(var15) - 0.25F;
+                  float var16 = (float) MathHelper.abs(var15) - 0.25F;
                   if ((var13 == 0 && var15 == 0 || !(var14 * var14 + var16 * var16 > var11 * var11))
                      && (var13 != -var12 && var13 != var12 && var15 != -var12 && var15 != var12 || !(var3.nextFloat() > 0.75F))) {
                      BlockState var17 = var1.getBlockState(var4.method8336(var13, var10, var15));

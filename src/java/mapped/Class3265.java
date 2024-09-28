@@ -11,6 +11,7 @@ import net.minecraft.item.IItemTier;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolItem;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Direction;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -78,7 +79,7 @@ public class Class3265 extends ToolItem {
          PlayerEntity var8 = var1.method18358();
          var4.method6742(var8, var5, SoundEvents.field26364, Class2266.field14732, 1.0F, 1.0F);
          if (!var4.isRemote) {
-            var4.setBlockState(var5, var7.method11579().method23465(Class3386.field18994, var6.<Direction>method23463(Class3386.field18994)), 11);
+            var4.setBlockState(var5, var7.method11579().with(Class3386.field18994, var6.<Direction.Axis>get(Class3386.field18994)), 11);
             if (var8 != null) {
                var1.method18357().damageItem(1, var8, var1x -> var1x.sendBreakAnimation(var1.method18359()));
             }

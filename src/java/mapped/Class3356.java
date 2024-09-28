@@ -1,16 +1,17 @@
 package mapped;
 
+import net.minecraft.state.DirectionProperty;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.state.EnumProperty;
+import net.minecraft.state.properties.PistonType;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Direction;
-import net.minecraft.util.Hand;
-import net.minecraft.util.Rotation;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
@@ -21,12 +22,12 @@ import javax.annotation.Nullable;
 
 public class Class3356 extends Class3241 {
    private static String[] field18895;
-   public static final Class8553 field18896 = Class3436.field19198;
-   public static final Class8552<Class180> field18897 = Class3436.field19211;
+   public static final DirectionProperty field18896 = Class3436.field19198;
+   public static final EnumProperty<PistonType> field18897 = Class3436.field19211;
 
-   public Class3356(AbstractBlock var1) {
+   public Class3356(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().method23465(field18896, Direction.NORTH).method23465(field18897, Class180.field638));
+      this.method11578(this.field18612.method35393().with(field18896, Direction.NORTH).with(field18897, PistonType.field638));
    }
 
    @Nullable
@@ -51,9 +52,9 @@ public class Class3356 extends Class3241 {
 
    @Override
    public void onPlayerDestroy(Class1660 var1, BlockPos var2, BlockState var3) {
-      BlockPos var6 = var2.method8349(var3.<Direction>method23463(field18896).method536());
+      BlockPos var6 = var2.method8349(var3.<Direction>get(field18896).getOpposite());
       BlockState var7 = var1.getBlockState(var6);
-      if (var7.getBlock() instanceof Class3435 && var7.<Boolean>method23463(Class3435.field19202)) {
+      if (var7.getBlock() instanceof Class3435 && var7.<Boolean>get(Class3435.field19202)) {
          var1.removeBlock(var6, false);
       }
    }
@@ -97,13 +98,13 @@ public class Class3356 extends Class3241 {
    }
 
    @Override
-   public BlockState method11500(BlockState var1, Rotation var2) {
-      return var1.method23465(field18896, var2.method252(var1.<Direction>method23463(field18896)));
+   public BlockState rotate(BlockState var1, Rotation var2) {
+      return var1.with(field18896, var2.rotate(var1.<Direction>get(field18896)));
    }
 
    @Override
-   public BlockState method11501(BlockState var1, Class2089 var2) {
-      return var1.method23395(var2.method8749(var1.<Direction>method23463(field18896)));
+   public BlockState mirror(BlockState var1, Mirror var2) {
+      return var1.rotate(var2.toRotation(var1.<Direction>get(field18896)));
    }
 
    @Override

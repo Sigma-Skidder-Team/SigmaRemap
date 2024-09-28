@@ -9,7 +9,7 @@ import net.minecraft.world.IBlockReader;
 public class Class3396 extends Block {
    private static String[] field19033;
 
-   public Class3396(AbstractBlock var1) {
+   public Class3396(Properties var1) {
       super(var1);
    }
 

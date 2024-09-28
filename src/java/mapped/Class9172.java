@@ -359,7 +359,7 @@ public class Class9172 {
             }
 
             Comparable var12 = (Comparable)var2.get(var11);
-            Comparable var13 = var8.<Comparable>method23463(var11);
+            Comparable var13 = var8.<Comparable>get(var11);
             if (!var12.equals(var13)) {
                var9 = false;
                break;

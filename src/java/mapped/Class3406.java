@@ -5,9 +5,12 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.fluid.Fluid;
+import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.Direction;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
@@ -17,20 +20,20 @@ import java.util.Random;
 
 public class Class3406 extends Block implements Class3405 {
    private static String[] field19083;
-   public static final Class8551 field19084 = Class8820.field39686;
+   public static final BooleanProperty field19084 = BlockStateProperties.field39686;
 
-   public Class3406(AbstractBlock var1) {
+   public Class3406(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().method23465(field19084, Boolean.valueOf(true)));
+      this.method11578(this.field18612.method35393().with(field19084, Boolean.valueOf(true)));
    }
 
    @Override
    public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
       BlockState var7 = var2.getBlockState(var3.up());
       if (!var7.isAir()) {
-         var4.onEnterBubbleColumnWithAirAbove(var1.<Boolean>method23463(field19084));
+         var4.onEnterBubbleColumnWithAirAbove(var1.<Boolean>get(field19084));
       } else {
-         var4.method3354(var1.<Boolean>method23463(field19084));
+         var4.method3354(var1.<Boolean>get(field19084));
          if (!var2.isRemote) {
             ServerWorld var8 = (ServerWorld)var2;
 
@@ -79,7 +82,7 @@ public class Class3406 extends Block implements Class3405 {
 
    public static void method12045(Class1660 var0, BlockPos var1, boolean var2) {
       if (method12046(var0, var1)) {
-         var0.setBlockState(var1, Blocks.field37013.method11579().method23465(field19084, Boolean.valueOf(var2)), 2);
+         var0.setBlockState(var1, Blocks.field37013.method11579().with(field19084, Boolean.valueOf(var2)), 2);
       }
    }
 
@@ -90,7 +93,7 @@ public class Class3406 extends Block implements Class3405 {
 
    private static boolean method12047(IBlockReader var0, BlockPos var1) {
       BlockState var4 = var0.getBlockState(var1);
-      return !var4.isIn(Blocks.field37013) ? !var4.isIn(Blocks.SOUL_SAND) : var4.<Boolean>method23463(field19084);
+      return !var4.isIn(Blocks.field37013) ? !var4.isIn(Blocks.SOUL_SAND) : var4.<Boolean>get(field19084);
    }
 
    @Override
@@ -98,7 +101,7 @@ public class Class3406 extends Block implements Class3405 {
       double var7 = (double)var3.getX();
       double var9 = (double)var3.getY();
       double var11 = (double)var3.getZ();
-      if (!var1.<Boolean>method23463(field19084)) {
+      if (!var1.<Boolean>get(field19084)) {
          var2.method6748(ParticleTypes.field34103, var7 + 0.5, var9, var11 + 0.5, 0.0, 0.04, 0.0);
          var2.method6748(
             ParticleTypes.field34103, var7 + (double)var4.nextFloat(), var9 + (double)var4.nextFloat(), var11 + (double)var4.nextFloat(), 0.0, 0.04, 0.0
@@ -122,11 +125,11 @@ public class Class3406 extends Block implements Class3405 {
    public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
       if (var1.method23443(var4, var5)) {
          if (var2 != Direction.DOWN) {
-            if (var2 == Direction.field673 && !var3.isIn(Blocks.field37013) && method12046(var4, var6)) {
+            if (var2 == Direction.UP && !var3.isIn(Blocks.field37013) && method12046(var4, var6)) {
                var4.method6860().method20726(var5, this, 5);
             }
          } else {
-            var4.setBlockState(var5, Blocks.field37013.method11579().method23465(field19084, Boolean.valueOf(method12047(var4, var6))), 2);
+            var4.setBlockState(var5, Blocks.field37013.method11579().with(field19084, Boolean.valueOf(method12047(var4, var6))), 2);
          }
 
          var4.method6861().method20726(var5, Class9479.field44066, Class9479.field44066.method25057(var4));

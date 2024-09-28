@@ -36,7 +36,7 @@ public class SSpawnPaintingPacket implements IPacket<IClientPlayNetHandler> {
       this.field24277 = var1.readUniqueId();
       this.field24280 = var1.readVarInt();
       this.field24278 = var1.readBlockPos();
-      this.field24279 = Direction.method547(var1.readUnsignedByte());
+      this.field24279 = Direction.byHorizontalIndex(var1.readUnsignedByte());
    }
 
    @Override

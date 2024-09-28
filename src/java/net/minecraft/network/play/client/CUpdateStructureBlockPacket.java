@@ -4,6 +4,8 @@ import mapped.*;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.play.IServerPlayNetHandler;
+import net.minecraft.state.properties.StructureMode;
+import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -13,11 +15,11 @@ import java.io.IOException;
 public class CUpdateStructureBlockPacket implements IPacket<IServerPlayNetHandler> {
    private BlockPos pos;
    private Class1897 field_210392_b;
-   private Class104 mode;
+   private StructureMode mode;
    private String name;
    private BlockPos field_210395_e;
    private BlockPos size;
-   private Class2089 mirror;
+   private Mirror mirror;
    private Rotation rotation;
    private String field_210399_i;
    private boolean field_210400_j;
@@ -32,11 +34,11 @@ public class CUpdateStructureBlockPacket implements IPacket<IServerPlayNetHandle
    public CUpdateStructureBlockPacket(
       BlockPos var1,
       Class1897 var2,
-      Class104 var3,
+      StructureMode var3,
       String var4,
       BlockPos var5,
       BlockPos var6,
-      Class2089 var7,
+      Mirror var7,
       Rotation var8,
       String var9,
       boolean var10,
@@ -65,13 +67,13 @@ public class CUpdateStructureBlockPacket implements IPacket<IServerPlayNetHandle
    public void readPacketData(PacketBuffer buf) throws IOException {
       this.pos = buf.readBlockPos();
       this.field_210392_b = buf.readEnumValue(Class1897.class);
-      this.mode = buf.readEnumValue(Class104.class);
+      this.mode = buf.readEnumValue(StructureMode.class);
       this.name = buf.readString(32767);
       int i = 48;
       this.field_210395_e = new BlockPos(MathHelper.method37775(buf.readByte(), -48, 48), MathHelper.method37775(buf.readByte(), -48, 48), MathHelper.method37775(buf.readByte(), -48, 48));
       int j = 48;
       this.size = new BlockPos(MathHelper.method37775(buf.readByte(), 0, 48), MathHelper.method37775(buf.readByte(), 0, 48), MathHelper.method37775(buf.readByte(), 0, 48));
-      this.mirror = buf.readEnumValue(Class2089.class);
+      this.mirror = buf.readEnumValue(Mirror.class);
       this.rotation = buf.readEnumValue(Rotation.class);
       this.field_210399_i = buf.readString(12);
       this.integrity = MathHelper.clamp(buf.readFloat(), 0.0F, 1.0F);
@@ -127,7 +129,7 @@ public class CUpdateStructureBlockPacket implements IPacket<IServerPlayNetHandle
       return this.field_210392_b;
    }
 
-   public Class104 method17611() {
+   public StructureMode method17611() {
       return this.mode;
    }
 
@@ -143,7 +145,7 @@ public class CUpdateStructureBlockPacket implements IPacket<IServerPlayNetHandle
       return this.size;
    }
 
-   public Class2089 method17615() {
+   public Mirror method17615() {
       return this.mirror;
    }
 

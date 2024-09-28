@@ -4,6 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
@@ -40,7 +41,7 @@ public class Class3281 extends Item {
          }
       } else {
          var5.method6742(var4, var6, SoundEvents.field26587, Class2266.field14732, 1.0F, field18735.nextFloat() * 0.4F + 0.8F);
-         var5.setBlockState(var6, var7.method23465(Class8820.field39699, Boolean.valueOf(true)), 11);
+         var5.setBlockState(var6, var7.with(BlockStateProperties.field39699, Boolean.valueOf(true)), 11);
          if (var4 != null) {
             var1.method18357().damageItem(1, var4, var1x -> var1x.sendBreakAnimation(var1.method18359()));
          }

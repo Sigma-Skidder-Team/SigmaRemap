@@ -15,6 +15,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.StringTextComponent;
@@ -73,8 +74,8 @@ public class Class7440 {
       ServerWorld var4 = var0.method28808();
       BlockPos var5 = var0.method28807();
       BlockPos var6 = new BlockPos(-1, -1, -1);
-      BlockPos var7 = Class8969.method32905(var5.method8337(var6), Class2089.field13614, var0.method28821(), var5);
-      var4.setBlockState(var7, Blocks.BEACON.method11579().method23395(var0.method28821()));
+      BlockPos var7 = Class8969.method32905(var5.method8337(var6), Mirror.field13614, var0.method28821(), var5);
+      var4.setBlockState(var7, Blocks.BEACON.method11579().rotate(var0.method28821()));
       BlockPos var8 = var7.method8336(0, 1, 0);
       var4.setBlockState(var8, var1.method11579());
 
@@ -90,8 +91,8 @@ public class Class7440 {
       ServerWorld var4 = var0.method28808();
       BlockPos var5 = var0.method28807();
       BlockPos var6 = new BlockPos(-1, 1, -1);
-      BlockPos var7 = Class8969.method32905(var5.method8337(var6), Class2089.field13614, var0.method28821(), var5);
-      var4.setBlockState(var7, Blocks.field37061.method11579().method23395(var0.method28821()));
+      BlockPos var7 = Class8969.method32905(var5.method8337(var6), Mirror.field13614, var0.method28821(), var5);
+      var4.setBlockState(var7, Blocks.LECTERN.method11579().rotate(var0.method28821()));
       BlockState var8 = var4.getBlockState(var7);
       ItemStack var9 = method24036(var0.method28806(), var0.method28818(), var1);
       Class3354.method11919(var4, var7, var8, var9);

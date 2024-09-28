@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.google.common.math.DoubleMath;
 import it.unimi.dsi.fastutil.doubles.DoubleList;
 import net.minecraft.client.util.Util;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
@@ -22,12 +23,12 @@ public abstract class VoxelShape {
       this.field28033 = var1;
    }
 
-   public double getStart(Direction var1) {
+   public double getStart(Direction.Axis var1) {
       int var4 = this.field28033.method26720(var1);
       return var4 < this.field28033.method26732(var1) ? this.getValueUnchecked(var1, var4) : Double.POSITIVE_INFINITY;
    }
 
-   public double getEnd(Direction var1) {
+   public double getEnd(Direction.Axis var1) {
       int var4 = this.field28033.method26721(var1);
       return var4 > 0 ? this.getValueUnchecked(var1, var4) : Double.NEGATIVE_INFINITY;
    }
@@ -35,23 +36,23 @@ public abstract class VoxelShape {
    public AxisAlignedBB getBoundingBox() {
       if (!this.isEmpty()) {
          return new AxisAlignedBB(
-            this.getStart(Direction.X),
-            this.getStart(Direction.Y),
-            this.getStart(Direction.Z),
-            this.getEnd(Direction.X),
-            this.getEnd(Direction.Y),
-            this.getEnd(Direction.Z)
+            this.getStart(Direction.Axis.X),
+            this.getStart(Direction.Axis.Y),
+            this.getStart(Direction.Axis.Z),
+            this.getEnd(Direction.Axis.X),
+            this.getEnd(Direction.Axis.Y),
+            this.getEnd(Direction.Axis.Z)
          );
       } else {
          throw (UnsupportedOperationException) Util.pauseDevMode(new UnsupportedOperationException("No bounds for empty shape."));
       }
    }
 
-   public double getValueUnchecked(Direction var1, int var2) {
+   public double getValueUnchecked(Direction.Axis var1, int var2) {
       return this.method19511(var1).getDouble(var2);
    }
 
-   public abstract DoubleList method19511(Direction var1);
+   public abstract DoubleList method19511(Direction.Axis var1);
 
    public boolean isEmpty() {
       return this.field28033.method26719();
@@ -61,9 +62,9 @@ public abstract class VoxelShape {
       return (VoxelShape)(!this.isEmpty()
          ? new Class6409(
             this.field28033,
-            new Class54(this.method19511(Direction.X), var1),
-            new Class54(this.method19511(Direction.Y), var3),
-            new Class54(this.method19511(Direction.Z), var5)
+            new Class54(this.method19511(Direction.Axis.X), var1),
+            new Class54(this.method19511(Direction.Axis.Y), var3),
+            new Class54(this.method19511(Direction.Axis.Z), var5)
          )
          : VoxelShapes.method27425());
    }
@@ -82,21 +83,21 @@ public abstract class VoxelShape {
       this.field28033
          .method26736(
             (var2, var3, var4, var5, var6, var7) -> var1.method20739(
-                  this.getValueUnchecked(Direction.X, var2),
-                  this.getValueUnchecked(Direction.Y, var3),
-                  this.getValueUnchecked(Direction.Z, var4),
-                  this.getValueUnchecked(Direction.X, var5),
-                  this.getValueUnchecked(Direction.Y, var6),
-                  this.getValueUnchecked(Direction.Z, var7)
+                  this.getValueUnchecked(Direction.Axis.X, var2),
+                  this.getValueUnchecked(Direction.Axis.Y, var3),
+                  this.getValueUnchecked(Direction.Axis.Z, var4),
+                  this.getValueUnchecked(Direction.Axis.X, var5),
+                  this.getValueUnchecked(Direction.Axis.Y, var6),
+                  this.getValueUnchecked(Direction.Axis.Z, var7)
                ),
             true
          );
    }
 
    public void method19520(Class6807 var1) {
-      DoubleList var4 = this.method19511(Direction.X);
-      DoubleList var5 = this.method19511(Direction.Y);
-      DoubleList var6 = this.method19511(Direction.Z);
+      DoubleList var4 = this.method19511(Direction.Axis.X);
+      DoubleList var5 = this.method19511(Direction.Axis.Y);
+      DoubleList var6 = this.method19511(Direction.Axis.Z);
       this.field28033
          .method26739(
             (var4x, var5x, var6x, var7, var8, var9) -> var1.method20739(
@@ -112,16 +113,16 @@ public abstract class VoxelShape {
       return var3;
    }
 
-   public double method19522(Direction var1, double var2, double var4) {
-      Direction var8 = Class2321.field15905.method9099(var1);
-      Direction var9 = Class2321.field15906.method9099(var1);
+   public double method19522(Direction.Axis var1, double var2, double var4) {
+      Direction.Axis var8 = Class2321.field15905.method9099(var1);
+      Direction.Axis var9 = Class2321.field15906.method9099(var1);
       int var10 = this.method19523(var8, var2);
       int var11 = this.method19523(var9, var4);
       int var12 = this.field28033.method26731(var1, var10, var11);
       return var12 > 0 ? this.getValueUnchecked(var1, var12) : Double.NEGATIVE_INFINITY;
    }
 
-   public int method19523(Direction var1, double var2) {
+   public int method19523(Direction.Axis var1, double var2) {
       return MathHelper.method37820(0, this.field28033.method26732(var1) + 1, var4 -> {
          if (var4 >= 0) {
             return var4 <= this.field28033.method26732(var1) ? var2 < this.getValueUnchecked(var1, var4) : true;
@@ -133,7 +134,7 @@ public abstract class VoxelShape {
 
    public boolean method19524(double var1, double var3, double var5) {
       return this.field28033
-         .method26729(this.method19523(Direction.X, var1), this.method19523(Direction.Y, var3), this.method19523(Direction.Z, var5));
+         .method26729(this.method19523(Direction.Axis.X, var1), this.method19523(Direction.Axis.Y, var3), this.method19523(Direction.Axis.Z, var5));
    }
 
    @Nullable
@@ -146,7 +147,7 @@ public abstract class VoxelShape {
                   var7.x - (double)var3.getX(), var7.y - (double)var3.getY(), var7.z - (double)var3.getZ()
                )
                ? AxisAlignedBB.method19681(this.method19521(), var1, var2, var3)
-               : new BlockRayTraceResult(var7, net.minecraft.util.Direction.method553(var6.x, var6.y, var6.z).method536(), var3, true);
+               : new BlockRayTraceResult(var7, Direction.getFacingFromVector(var6.x, var6.y, var6.z).getOpposite(), var3, true);
          } else {
             return null;
          }
@@ -155,7 +156,7 @@ public abstract class VoxelShape {
       }
    }
 
-   public VoxelShape method19526(net.minecraft.util.Direction var1) {
+   public VoxelShape method19526(Direction var1) {
       if (!this.isEmpty() && this != VoxelShapes.method27426()) {
          if (this.field28034 == null) {
             this.field28034 = new VoxelShape[6];
@@ -174,20 +175,20 @@ public abstract class VoxelShape {
       }
    }
 
-   private VoxelShape method19527(net.minecraft.util.Direction var1) {
-      Direction var4 = var1.getAxis();
-      Class1892 var5 = var1.getAxisDirection();
+   private VoxelShape method19527(Direction var1) {
+      Direction.Axis var4 = var1.getAxis();
+      Direction.AxisDirection var5 = var1.getAxisDirection();
       DoubleList var6 = this.method19511(var4);
       if (var6.size() == 2 && DoubleMath.fuzzyEquals(var6.getDouble(0), 0.0, 1.0E-7) && DoubleMath.fuzzyEquals(var6.getDouble(1), 1.0, 1.0E-7)) {
          return this;
       } else {
-         int var7 = this.method19523(var4, var5 != Class1892.field11092 ? 1.0E-7 : 0.9999999);
+         int var7 = this.method19523(var4, var5 != Direction.AxisDirection.POSITIVE ? 1.0E-7 : 0.9999999);
          return new Class6407(this, var4, var7);
       }
    }
 
-   public double method19528(Direction var1, AxisAlignedBB var2, double var3) {
-      return this.method19529(Class2321.method9101(var1, Direction.X), var2, var3);
+   public double method19528(Direction.Axis var1, AxisAlignedBB var2, double var3) {
+      return this.method19529(Class2321.method9101(var1, Direction.Axis.X), var2, var3);
    }
 
    public double method19529(Class2321 var1, AxisAlignedBB var2, double var3) {
@@ -196,9 +197,9 @@ public abstract class VoxelShape {
             return 0.0;
          } else {
             Class2321 var7 = var1.method9100();
-            Direction var8 = var7.method9099(Direction.X);
-            Direction var9 = var7.method9099(Direction.Y);
-            Direction var10 = var7.method9099(Direction.Z);
+            Direction.Axis var8 = var7.method9099(Direction.Axis.X);
+            Direction.Axis var9 = var7.method9099(Direction.Axis.Y);
+            Direction.Axis var10 = var7.method9099(Direction.Axis.Z);
             double var11 = var2.method19659(var8);
             double var13 = var2.method19658(var8);
             int var15 = this.method19523(var8, var13 + 1.0E-7);

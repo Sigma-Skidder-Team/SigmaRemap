@@ -8,30 +8,33 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 public class Class3413 extends Block {
    private static String[] field19099;
-   public static final Class8554 field19100 = Class8820.field39751;
-   private static final VoxelShape field19101 = method11539(2.0, 4.0, 2.0, 14.0, 16.0, 14.0);
+   public static final IntegerProperty field19100 = BlockStateProperties.field39751;
+   private static final VoxelShape field19101 = makeCuboidShape(2.0, 4.0, 2.0, 14.0, 16.0, 14.0);
    public static final VoxelShape field19102 = VoxelShapes.combineAndSimplify(
       VoxelShapes.method27426(),
       VoxelShapes.method27432(
-         method11539(0.0, 0.0, 4.0, 16.0, 3.0, 12.0), method11539(4.0, 0.0, 0.0, 12.0, 3.0, 16.0), method11539(2.0, 0.0, 2.0, 14.0, 3.0, 14.0), field19101
+         makeCuboidShape(0.0, 0.0, 4.0, 16.0, 3.0, 12.0), makeCuboidShape(4.0, 0.0, 0.0, 12.0, 3.0, 16.0), makeCuboidShape(2.0, 0.0, 2.0, 14.0, 3.0, 14.0), field19101
       ),
       IBooleanFunction.ONLY_FIRST
    );
 
-   public Class3413(AbstractBlock var1) {
+   public Class3413(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().method23465(field19100, Integer.valueOf(0)));
+      this.method11578(this.field18612.method35393().with(field19100, Integer.valueOf(0)));
    }
 
    @Override
@@ -46,7 +49,7 @@ public class Class3413 extends Block {
 
    @Override
    public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
-      int var7 = var1.<Integer>method23463(field19100);
+      int var7 = var1.<Integer>get(field19100);
       float var8 = (float)var3.getY() + (6.0F + (float)(3 * var7)) / 16.0F;
       if (!var2.isRemote && var4.isBurning() && var7 > 0 && var4.getPosY() <= (double)var8) {
          var4.extinguish();
@@ -58,7 +61,7 @@ public class Class3413 extends Block {
    public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       ItemStack var9 = var4.getHeldItem(var5);
       if (!var9.isEmpty()) {
-         int var10 = var1.<Integer>method23463(field19100);
+         int var10 = var1.<Integer>get(field19100);
          Item var11 = var9.getItem();
          if (var11 != Items.WATER_BUCKET) {
             if (var11 != Items.BUCKET) {
@@ -198,7 +201,7 @@ public class Class3413 extends Block {
    }
 
    public void method12051(World var1, BlockPos var2, BlockState var3, int var4) {
-      var1.setBlockState(var2, var3.method23465(field19100, Integer.valueOf(MathHelper.method37775(var4, 0, 3))), 2);
+      var1.setBlockState(var2, var3.with(field19100, Integer.valueOf(MathHelper.method37775(var4, 0, 3))), 2);
       var1.updateComparatorOutputLevel(var2, this);
    }
 
@@ -208,7 +211,7 @@ public class Class3413 extends Block {
          float var5 = var1.getBiome(var2).method32503(var2);
          if (!(var5 < 0.15F)) {
             BlockState var6 = var1.getBlockState(var2);
-            if (var6.<Integer>method23463(field19100) < 3) {
+            if (var6.<Integer>get(field19100) < 3) {
                var1.setBlockState(var2, var6.method23459(field19100), 2);
             }
          }
@@ -222,7 +225,7 @@ public class Class3413 extends Block {
 
    @Override
    public int method11649(BlockState var1, World var2, BlockPos var3) {
-      return var1.<Integer>method23463(field19100);
+      return var1.<Integer>get(field19100);
    }
 
    @Override

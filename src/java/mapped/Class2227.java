@@ -5,7 +5,7 @@ import net.minecraft.util.math.BlockPos;
 
 public enum Class2227 {
    field14567(Direction.DOWN),
-   field14568(Direction.field673),
+   field14568(Direction.UP),
    field14569(Direction.NORTH),
    field14570(Direction.SOUTH),
    field14571(Direction.WEST),
@@ -16,12 +16,12 @@ public enum Class2227 {
    field14576(Direction.SOUTH, Direction.EAST),
    field14577(Direction.DOWN, Direction.NORTH),
    field14578(Direction.DOWN, Direction.SOUTH),
-   field14579(Direction.field673, Direction.NORTH),
-   field14580(Direction.field673, Direction.SOUTH),
+   field14579(Direction.UP, Direction.NORTH),
+   field14580(Direction.UP, Direction.SOUTH),
    field14581(Direction.DOWN, Direction.WEST),
    field14582(Direction.DOWN, Direction.EAST),
-   field14583(Direction.field673, Direction.WEST),
-   field14584(Direction.field673, Direction.EAST);
+   field14583(Direction.UP, Direction.WEST),
+   field14584(Direction.UP, Direction.EAST);
 
    private Direction field14585;
    private Direction field14586;
@@ -73,27 +73,27 @@ public enum Class2227 {
    }
 
    public int method8966() {
-      int var3 = this.field14585.method539();
+      int var3 = this.field14585.getXOffset();
       if (this.field14586 != null) {
-         var3 += this.field14586.method539();
+         var3 += this.field14586.getXOffset();
       }
 
       return var3;
    }
 
    public int method8967() {
-      int var3 = this.field14585.method540();
+      int var3 = this.field14585.getYOffset();
       if (this.field14586 != null) {
-         var3 += this.field14586.method540();
+         var3 += this.field14586.getYOffset();
       }
 
       return var3;
    }
 
    public int method8968() {
-      int var3 = this.field14585.method541();
+      int var3 = this.field14585.getZOffset();
       if (this.field14586 != null) {
-         var3 += this.field14586.method541();
+         var3 += this.field14586.getZOffset();
       }
 
       return var3;

@@ -9,6 +9,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
+import net.minecraft.state.properties.BedPart;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 
@@ -42,26 +43,26 @@ public class Class4913 {
       )
       .stream()
       .<BlockState>flatMap(var0 -> var0.getStateContainer().getValidStates().stream())
-      .filter(var0 -> var0.<Class82>method23463(Class3250.field18713) == Class82.HEAD)
+      .filter(var0 -> var0.<BedPart>get(Class3250.field18713) == BedPart.HEAD)
       .collect(ImmutableSet.toImmutableSet());
    private static final Map<BlockState, Class4913> field22750 = Maps.newHashMap();
    public static final Class4913 field22751 = method15185("unemployed", ImmutableSet.of(), 1, field22747, 1);
-   public static final Class4913 field22752 = method15184("armorer", method15180(Blocks.field37057), 1, 1);
-   public static final Class4913 field22753 = method15184("butcher", method15180(Blocks.field37056), 1, 1);
-   public static final Class4913 field22754 = method15184("cartographer", method15180(Blocks.field37058), 1, 1);
+   public static final Class4913 field22752 = method15184("armorer", method15180(Blocks.BLAST_FURNACE), 1, 1);
+   public static final Class4913 field22753 = method15184("butcher", method15180(Blocks.SMOKER), 1, 1);
+   public static final Class4913 field22754 = method15184("cartographer", method15180(Blocks.CARTOGRAPHY_TABLE), 1, 1);
    public static final Class4913 field22755 = method15184("cleric", method15180(Blocks.field36647), 1, 1);
    public static final Class4913 field22756 = method15184("farmer", method15180(Blocks.field37115), 1, 1);
-   public static final Class4913 field22757 = method15184("fisherman", method15180(Blocks.field37055), 1, 1);
-   public static final Class4913 field22758 = method15184("fletcher", method15180(Blocks.field37059), 1, 1);
+   public static final Class4913 field22757 = method15184("fisherman", method15180(Blocks.BARREL), 1, 1);
+   public static final Class4913 field22758 = method15184("fletcher", method15180(Blocks.FLETCHING_TABLE), 1, 1);
    public static final Class4913 field22759 = method15184("leatherworker", method15180(Blocks.field36648), 1, 1);
-   public static final Class4913 field22760 = method15184("librarian", method15180(Blocks.field37061), 1, 1);
-   public static final Class4913 field22761 = method15184("mason", method15180(Blocks.field37063), 1, 1);
+   public static final Class4913 field22760 = method15184("librarian", method15180(Blocks.LECTERN), 1, 1);
+   public static final Class4913 field22761 = method15184("mason", method15180(Blocks.STONECUTTER), 1, 1);
    public static final Class4913 field22762 = method15184("nitwit", ImmutableSet.of(), 1, 1);
-   public static final Class4913 field22763 = method15184("shepherd", method15180(Blocks.field37054), 1, 1);
-   public static final Class4913 field22764 = method15184("toolsmith", method15180(Blocks.field37062), 1, 1);
-   public static final Class4913 field22765 = method15184("weaponsmith", method15180(Blocks.field37060), 1, 1);
+   public static final Class4913 field22763 = method15184("shepherd", method15180(Blocks.LOOM), 1, 1);
+   public static final Class4913 field22764 = method15184("toolsmith", method15180(Blocks.SMITHING_TABLE), 1, 1);
+   public static final Class4913 field22765 = method15184("weaponsmith", method15180(Blocks.GRINDSTONE), 1, 1);
    public static final Class4913 field22766 = method15184("home", field22749, 1, 1);
-   public static final Class4913 field22767 = method15184("meeting", method15180(Blocks.field37064), 32, 6);
+   public static final Class4913 field22767 = method15184("meeting", method15180(Blocks.BELL), 32, 6);
    public static final Class4913 field22768 = method15184("beehive", method15180(Blocks.field37118), 0, 1);
    public static final Class4913 field22769 = method15184("bee_nest", method15180(Blocks.field37117), 0, 1);
    public static final Class4913 field22770 = method15184("nether_portal", method15180(Blocks.field36588), 0, 1);

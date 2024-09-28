@@ -42,8 +42,8 @@ public class Class2784 extends Class2595 {
                BlockPos var4 = this.field17402.getPosition();
                BlockState var5 = this.field17401.world.getBlockState(var4);
                if (var5.getBlock().isIn(BlockTags.field32770)) {
-                  this.field17403 = var5.<Direction>method23464(Class3250.field18484)
-                     .<BlockPos>map(var1 -> var4.method8349(var1.method536()))
+                  this.field17403 = var5.<Direction>method23464(Class3250.HORIZONTAL_FACING)
+                     .<BlockPos>map(var1 -> var4.method8349(var1.getOpposite()))
                      .orElseGet(() -> new BlockPos(var4));
                   return !this.method10974();
                }

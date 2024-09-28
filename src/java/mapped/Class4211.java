@@ -76,10 +76,10 @@ public class Class4211 extends Class4209 {
          }
       }
 
-      BlockState var19 = Blocks.SANDSTONE_STAIRS.method11579().method23465(Class3421.field19131, Direction.NORTH);
-      BlockState var20 = Blocks.SANDSTONE_STAIRS.method11579().method23465(Class3421.field19131, Direction.SOUTH);
-      BlockState var21 = Blocks.SANDSTONE_STAIRS.method11579().method23465(Class3421.field19131, Direction.EAST);
-      BlockState var13 = Blocks.SANDSTONE_STAIRS.method11579().method23465(Class3421.field19131, Direction.WEST);
+      BlockState var19 = Blocks.SANDSTONE_STAIRS.method11579().with(Class3421.field19131, Direction.NORTH);
+      BlockState var20 = Blocks.SANDSTONE_STAIRS.method11579().with(Class3421.field19131, Direction.SOUTH);
+      BlockState var21 = Blocks.SANDSTONE_STAIRS.method11579().with(Class3421.field19131, Direction.EAST);
+      BlockState var13 = Blocks.SANDSTONE_STAIRS.method11579().with(Class3421.field19131, Direction.WEST);
       this.method12927(var1, var5, 0, 0, 0, 4, 9, 4, Blocks.SANDSTONE.method11579(), Blocks.AIR.method11579(), false);
       this.method12927(var1, var5, 1, 10, 1, 3, 10, 3, Blocks.SANDSTONE.method11579(), Blocks.SANDSTONE.method11579(), false);
       this.method12923(var1, var19, 2, 10, 0, var5);
@@ -261,10 +261,10 @@ public class Class4211 extends Class4209 {
       this.method12923(var1, Blocks.CHISELED_SANDSTONE.method11579(), 10, -10, 13, var5);
       this.method12923(var1, Blocks.CUT_SANDSTONE.method11579(), 10, -11, 13, var5);
 
-      for (Direction var15 : Class76.field161) {
+      for (Direction var15 : Direction.Plane.HORIZONTAL) {
          if (!this.field20522[var15.method534()]) {
-            int var16 = var15.method539() * 2;
-            int var17 = var15.method541() * 2;
+            int var16 = var15.getXOffset() * 2;
+            int var17 = var15.getZOffset() * 2;
             this.field20522[var15.method534()] = this.method12933(var1, var5, var4, 10 + var16, -11, 10 + var17, Class8793.field39558);
          }
       }

@@ -23,7 +23,7 @@ public class Class5451 extends StructureStart<Class4712> {
    private void method17126(int var1, int var2) {
       int var5 = var1 * 16 - 29;
       int var6 = var2 * 16 - 29;
-      Direction var7 = Class76.field161.method247(this.field24201);
+      Direction var7 = Direction.Plane.HORIZONTAL.method247(this.field24201);
       this.field24196.add(new Class4224(this.field24201, var5, var6, var7));
       this.method17113();
       this.field24210 = true;

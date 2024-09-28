@@ -14,9 +14,7 @@ import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import mapped.*;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.WoodButtonBlock;
+import net.minecraft.block.*;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Items;
 import net.minecraft.item.SwordItem;
@@ -46,11 +44,11 @@ public class OldHitting extends Module {
         if (this.isEnabled()/* || JelloPortal.getCurrentVersion() == ViaVerList._1_8_x*/) {
             if (var1.isPre()) {
                 boolean var4 = mc.player.getHeldItemMainhand() != null && mc.player.getHeldItemMainhand().getItem() instanceof SwordItem;
-                boolean var5 = Client.getInstance().getModuleManager().getModuleByClass(KillAura.class).method15988();
+                boolean var5 = Client.getInstance().getModuleManager().getModuleByClass(KillAura.class).isEnabled();
                 boolean var6 = true;
                 if (!mc.player.isSneaking()
                         && mc.objectMouseOver.getType() == RayTraceResult.Type.BLOCK
-                        && !Client.getInstance().getModuleManager().getModuleByClass(KillAura.class).method15988()) {
+                        && !Client.getInstance().getModuleManager().getModuleByClass(KillAura.class).isEnabled()) {
                     BlockRayTraceResult var7 = (BlockRayTraceResult) mc.objectMouseOver;
                     BlockPos var8 = var7.getPos();
                     Block var9 = mc.world.getBlockState(var8).getBlock();
@@ -78,9 +76,9 @@ public class OldHitting extends Module {
                     );
                     if (var10.contains(var9)
                             || var9 instanceof WoodButtonBlock
-                            || var9 instanceof Class3203
-                            || var9 instanceof Class3199
-                            || var9 instanceof Class3461 && var9 != Blocks.IRON_DOOR) {
+                            || var9 instanceof StoneButtonBlock
+                            || var9 instanceof FenceGateBlock
+                            || var9 instanceof DoorBlock && var9 != Blocks.IRON_DOOR) {
                         var6 = false;
                     }
                 }

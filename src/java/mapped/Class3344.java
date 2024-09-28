@@ -12,6 +12,7 @@ import net.minecraft.item.Items;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.CachedBlockInfo;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
@@ -20,7 +21,7 @@ public class Class3344 extends Class3343 {
    private static Class9803 field18857;
    private static Class9803 field18858;
 
-   public Class3344(AbstractBlock var1) {
+   public Class3344(Properties var1) {
       super(Class2136.field13990, var1);
    }
 
@@ -55,10 +56,10 @@ public class Class3344 extends Class3343 {
                   (double)var14.getX() + 0.5,
                   (double)var14.getY() + 0.55,
                   (double)var14.getZ() + 0.5,
-                  var8.method33879().getAxis() != Direction.X ? 90.0F : 0.0F,
+                  var8.method33879().getAxis() != Direction.Axis.X ? 90.0F : 0.0F,
                   0.0F
                );
-               var13.renderYawOffset = var8.method33879().getAxis() != Direction.X ? 90.0F : 0.0F;
+               var13.renderYawOffset = var8.method33879().getAxis() != Direction.Axis.X ? 90.0F : 0.0F;
                var13.method5003();
 
                for (ServerPlayerEntity var12 : var0.<ServerPlayerEntity>method7182(ServerPlayerEntity.class, var13.getBoundingBox().method19664(50.0))) {

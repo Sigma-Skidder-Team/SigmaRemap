@@ -7,7 +7,10 @@ import net.minecraft.block.material.PushReaction;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraft.state.properties.PistonType;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -19,10 +22,10 @@ import java.util.List;
 
 public class Class955 extends TileEntity implements ITickableTileEntity {
    private BlockState field5361;
-   private net.minecraft.util.Direction field5362;
+   private Direction field5362;
    private boolean field5363;
    private boolean field5364;
-   private static final ThreadLocal<net.minecraft.util.Direction> field5365 = ThreadLocal.<net.minecraft.util.Direction>withInitial(() -> null);
+   private static final ThreadLocal<Direction> field5365 = ThreadLocal.<Direction>withInitial(() -> null);
    private float field5366;
    private float field5367;
    private long field5368;
@@ -32,7 +35,7 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
       super(TileEntityType.field21430);
    }
 
-   public Class955(BlockState var1, net.minecraft.util.Direction var2, boolean var3, boolean var4) {
+   public Class955(BlockState var1, Direction var2, boolean var3, boolean var4) {
       this();
       this.field5361 = var1;
       this.field5362 = var2;
@@ -49,7 +52,7 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
       return this.field5363;
    }
 
-   public net.minecraft.util.Direction method3847() {
+   public Direction method3847() {
       return this.field5362;
    }
 
@@ -66,15 +69,15 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
    }
 
    public float method3850(float var1) {
-      return (float)this.field5362.method539() * this.method3853(this.method3849(var1));
+      return (float)this.field5362.getXOffset() * this.method3853(this.method3849(var1));
    }
 
    public float method3851(float var1) {
-      return (float)this.field5362.method540() * this.method3853(this.method3849(var1));
+      return (float)this.field5362.getYOffset() * this.method3853(this.method3849(var1));
    }
 
    public float method3852(float var1) {
-      return (float)this.field5362.method541() * this.method3853(this.method3849(var1));
+      return (float)this.field5362.getZOffset() * this.method3853(this.method3849(var1));
    }
 
    private float method3853(float var1) {
@@ -85,14 +88,14 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
       return !this.method3846() && this.method3848() && this.field5361.getBlock() instanceof Class3435
          ? Blocks.PISTON_HEAD
             .method11579()
-            .method23465(Class3436.field19212, Boolean.valueOf(this.field5366 > 0.25F))
-            .method23465(Class3436.field19211, !this.field5361.isIn(Blocks.STICKY_PISTON) ? Class180.field638 : Class180.field639)
-            .method23465(Class3436.field19198, this.field5361.<net.minecraft.util.Direction>method23463(Class3435.field19198))
+            .with(Class3436.field19212, Boolean.valueOf(this.field5366 > 0.25F))
+            .with(Class3436.field19211, !this.field5361.isIn(Blocks.STICKY_PISTON) ? PistonType.field638 : PistonType.field639)
+            .with(Class3436.field19198, this.field5361.<Direction>get(Class3435.field19198))
          : this.field5361;
    }
 
    private void method3855(float var1) {
-      net.minecraft.util.Direction var4 = this.method3860();
+      Direction var4 = this.method3860();
       double var5 = (double)(var1 - this.field5366);
       VoxelShape var7 = this.method3854().method23414(this.field5324, this.getPos());
       if (!var7.isEmpty()) {
@@ -123,13 +126,13 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
                         double var19 = var14.z;
                         switch (Class8024.field34486[var4.getAxis().ordinal()]) {
                            case 1:
-                              var15 = (double)var4.method539();
+                              var15 = (double)var4.getXOffset();
                               break;
                            case 2:
-                              var17 = (double)var4.method540();
+                              var17 = (double)var4.getYOffset();
                               break;
                            case 3:
-                              var19 = (double)var4.method541();
+                              var19 = (double)var4.getZOffset();
                         }
 
                         var13.setMotion(var15, var17, var19);
@@ -163,17 +166,17 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
       }
    }
 
-   private static void method3856(net.minecraft.util.Direction var0, Entity var1, double var2, net.minecraft.util.Direction var4) {
+   private static void method3856(Direction var0, Entity var1, double var2, Direction var4) {
       field5365.set(var0);
-      var1.move(MoverType.field13744, new Vector3d(var2 * (double)var4.method539(), var2 * (double)var4.method540(), var2 * (double)var4.method541()));
-      field5365.set((net.minecraft.util.Direction)null);
+      var1.move(MoverType.field13744, new Vector3d(var2 * (double)var4.getXOffset(), var2 * (double)var4.getYOffset(), var2 * (double)var4.getZOffset()));
+      field5365.set((Direction)null);
    }
 
    private void method3857(float var1) {
       if (this.method3859()) {
-         net.minecraft.util.Direction var4 = this.method3860();
+         Direction var4 = this.method3860();
          if (var4.getAxis().method324()) {
-            double var5 = this.field5361.method23414(this.field5324, this.field5325).getEnd(Direction.Y);
+            double var5 = this.field5361.method23414(this.field5324, this.field5325).getEnd(Direction.Axis.Y);
             AxisAlignedBB var7 = this.method3862(new AxisAlignedBB(0.0, var5, 0.0, 1.0, 1.5000000999999998, 1.0));
             double var8 = (double)(var1 - this.field5366);
 
@@ -197,11 +200,11 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
       return this.field5361.isIn(Blocks.field37119);
    }
 
-   public net.minecraft.util.Direction method3860() {
-      return !this.field5363 ? this.field5362.method536() : this.field5362;
+   public Direction method3860() {
+      return !this.field5363 ? this.field5362.getOpposite() : this.field5362;
    }
 
-   private static double method3861(AxisAlignedBB var0, net.minecraft.util.Direction var1, AxisAlignedBB var2) {
+   private static double method3861(AxisAlignedBB var0, Direction var1, AxisAlignedBB var2) {
       switch (Class8024.field34487[var1.ordinal()]) {
          case 1:
             return var0.maxX - var2.minX;
@@ -222,17 +225,17 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
    private AxisAlignedBB method3862(AxisAlignedBB var1) {
       double var4 = (double)this.method3853(this.field5366);
       return var1.offset(
-         (double)this.field5325.getX() + var4 * (double)this.field5362.method539(),
-         (double)this.field5325.getY() + var4 * (double)this.field5362.method540(),
-         (double)this.field5325.getZ() + var4 * (double)this.field5362.method541()
+         (double)this.field5325.getX() + var4 * (double)this.field5362.getXOffset(),
+         (double)this.field5325.getY() + var4 * (double)this.field5362.getYOffset(),
+         (double)this.field5325.getZ() + var4 * (double)this.field5362.getZOffset()
       );
    }
 
-   private void method3863(Entity var1, net.minecraft.util.Direction var2, double var3) {
+   private void method3863(Entity var1, Direction var2, double var3) {
       AxisAlignedBB var7 = var1.getBoundingBox();
       AxisAlignedBB var8 = VoxelShapes.method27426().getBoundingBox().method19668(this.field5325);
       if (var7.method19670(var8)) {
-         net.minecraft.util.Direction var9 = var2.method536();
+         Direction var9 = var2.getOpposite();
          double var10 = method3861(var8, var9, var7) + 0.01;
          double var12 = method3861(var8, var9, var7.method19665(var8)) + 0.01;
          if (Math.abs(var10 - var12) < 0.01) {
@@ -286,8 +289,8 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
          if (this.field5361 != null && this.field5324.getBlockState(this.field5325).isIn(Blocks.MOVING_PISTON)) {
             BlockState var4 = Block.method11542(this.field5361, this.field5324, this.field5325);
             if (!var4.isAir()) {
-               if (var4.method23462(Class8820.field39710) && var4.<Boolean>method23463(Class8820.field39710)) {
-                  var4 = var4.method23465(Class8820.field39710, Boolean.valueOf(false));
+               if (var4.method23462(BlockStateProperties.field39710) && var4.<Boolean>get(BlockStateProperties.field39710)) {
+                  var4 = var4.with(BlockStateProperties.field39710, Boolean.valueOf(false));
                }
 
                this.field5324.setBlockState(this.field5325, var4, 67);
@@ -304,7 +307,7 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
    public void method3645(BlockState var1, CompoundNBT var2) {
       super.method3645(var1, var2);
       this.field5361 = Class8354.method29285(var2.getCompound("blockState"));
-      this.field5362 = net.minecraft.util.Direction.byIndex(var2.getInt("facing"));
+      this.field5362 = Direction.byIndex(var2.getInt("facing"));
       this.field5366 = var2.getFloat("progress");
       this.field5367 = this.field5366;
       this.field5363 = var2.getBoolean("extending");
@@ -325,12 +328,12 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
    public VoxelShape method3866(IBlockReader var1, BlockPos var2) {
       VoxelShape var5;
       if (!this.field5363 && this.field5364) {
-         var5 = this.field5361.method23465(Class3435.field19202, Boolean.valueOf(true)).method23414(var1, var2);
+         var5 = this.field5361.with(Class3435.field19202, Boolean.valueOf(true)).method23414(var1, var2);
       } else {
          var5 = VoxelShapes.method27425();
       }
 
-      net.minecraft.util.Direction var6 = field5365.get();
+      Direction var6 = field5365.get();
       if ((double)this.field5366 < 1.0 && var6 == this.method3860()) {
          return var5;
       } else {
@@ -340,15 +343,15 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
          } else {
             var7 = Blocks.PISTON_HEAD
                .method11579()
-               .method23465(Class3436.field19198, this.field5362)
-               .method23465(Class3436.field19212, Boolean.valueOf(this.field5363 != 1.0F - this.field5366 < 0.25F));
+               .with(Class3436.field19198, this.field5362)
+               .with(Class3436.field19212, Boolean.valueOf(this.field5363 != 1.0F - this.field5366 < 0.25F));
          }
 
          float var8 = this.method3853(this.field5366);
-         double var9 = (double)((float)this.field5362.method539() * var8);
-         double var11 = (double)((float)this.field5362.method540() * var8);
-         double var13 = (double)((float)this.field5362.method541() * var8);
-         return VoxelShapes.method27431(var5, var7.method23414(var1, var2).withOffset(var9, var11, var13));
+         double var9 = (double)((float)this.field5362.getXOffset() * var8);
+         double var11 = (double)((float)this.field5362.getYOffset() * var8);
+         double var13 = (double)((float)this.field5362.getZOffset() * var8);
+         return VoxelShapes.or(var5, var7.method23414(var1, var2).withOffset(var9, var11, var13));
       }
    }
 

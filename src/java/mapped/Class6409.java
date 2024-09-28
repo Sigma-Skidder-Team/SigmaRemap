@@ -3,6 +3,7 @@ package mapped;
 import it.unimi.dsi.fastutil.doubles.DoubleArrayList;
 import it.unimi.dsi.fastutil.doubles.DoubleList;
 import net.minecraft.client.util.Util;
+import net.minecraft.util.Direction;
 
 import java.util.Arrays;
 
@@ -37,7 +38,7 @@ public final class Class6409 extends VoxelShape {
    }
 
    @Override
-   public DoubleList method19511(Direction var1) {
+   public DoubleList method19511(Direction.Axis var1) {
       switch (Class8724.field39363[var1.ordinal()]) {
          case 1:
             return this.field28035;

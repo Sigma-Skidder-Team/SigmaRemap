@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.DirectionProperty;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -10,6 +12,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.Direction;
@@ -24,8 +27,8 @@ import java.util.Random;
 
 public class Class3357 extends Class3241 {
    private static String[] field18898;
-   public static final Class8553 field18899 = Class3433.field19198;
-   public static final Class8551 field18900 = Class8820.field39708;
+   public static final DirectionProperty field18899 = Class3433.field19198;
+   public static final BooleanProperty field18900 = BlockStateProperties.field39708;
    private static final Map<Item, IDispenseItemBehavior> field18901 = Util.make(
       new Object2ObjectOpenHashMap(), var0 -> var0.defaultReturnValue(new Class6218())
    );
@@ -34,9 +37,9 @@ public class Class3357 extends Class3241 {
       field18901.put(var0.method11581(), var1);
    }
 
-   public Class3357(AbstractBlock var1) {
+   public Class3357(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().method23465(field18899, Direction.NORTH).method23465(field18900, Boolean.valueOf(false)));
+      this.method11578(this.field18612.method35393().with(field18899, Direction.NORTH).with(field18900, Boolean.valueOf(false)));
    }
 
    @Override
@@ -80,12 +83,12 @@ public class Class3357 extends Class3241 {
    @Override
    public void method11506(BlockState var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       boolean var9 = var2.method6780(var3) || var2.method6780(var3.up());
-      boolean var10 = var1.<Boolean>method23463(field18900);
+      boolean var10 = var1.<Boolean>get(field18900);
       if (var9 && !var10) {
          var2.method6860().method20726(var3, this, 4);
-         var2.setBlockState(var3, var1.method23465(field18900, Boolean.valueOf(true)), 4);
+         var2.setBlockState(var3, var1.with(field18900, Boolean.valueOf(true)), 4);
       } else if (!var9 && var10) {
-         var2.setBlockState(var3, var1.method23465(field18900, Boolean.valueOf(false)), 4);
+         var2.setBlockState(var3, var1.with(field18900, Boolean.valueOf(false)), 4);
       }
    }
 
@@ -101,7 +104,7 @@ public class Class3357 extends Class3241 {
 
    @Override
    public BlockState method11495(Class5909 var1) {
-      return this.method11579().method23465(field18899, var1.method18348().method536());
+      return this.method11579().with(field18899, var1.method18348().getOpposite());
    }
 
    @Override
@@ -128,10 +131,10 @@ public class Class3357 extends Class3241 {
    }
 
    public static Class2955 method11934(IBlockSource var0) {
-      Direction var3 = var0.method11324().<Direction>method23463(field18899);
-      double var4 = var0.getX() + 0.7 * (double)var3.method539();
-      double var6 = var0.getY() + 0.7 * (double)var3.method540();
-      double var8 = var0.getZ() + 0.7 * (double)var3.method541();
+      Direction var3 = var0.method11324().<Direction>get(field18899);
+      double var4 = var0.getX() + 0.7 * (double)var3.getXOffset();
+      double var6 = var0.getY() + 0.7 * (double)var3.getYOffset();
+      double var8 = var0.getZ() + 0.7 * (double)var3.getZOffset();
       return new Class2959(var4, var6, var8);
    }
 
@@ -151,13 +154,13 @@ public class Class3357 extends Class3241 {
    }
 
    @Override
-   public BlockState method11500(BlockState var1, Rotation var2) {
-      return var1.method23465(field18899, var2.method252(var1.<Direction>method23463(field18899)));
+   public BlockState rotate(BlockState var1, Rotation var2) {
+      return var1.with(field18899, var2.rotate(var1.<Direction>get(field18899)));
    }
 
    @Override
-   public BlockState method11501(BlockState var1, Class2089 var2) {
-      return var1.method23395(var2.method8749(var1.<Direction>method23463(field18899)));
+   public BlockState mirror(BlockState var1, Mirror var2) {
+      return var1.rotate(var2.toRotation(var1.<Direction>get(field18899)));
    }
 
    @Override

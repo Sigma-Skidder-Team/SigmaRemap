@@ -4,6 +4,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.Minecraft;
+import net.minecraft.state.properties.PistonType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -21,27 +22,27 @@ public class Class5945 extends Class5942<Class955> {
    public void method18462(Class955 var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
       World var9 = var1.method3734();
       if (var9 != null) {
-         BlockPos var10 = var1.getPos().method8349(var1.method3860().method536());
+         BlockPos var10 = var1.getPos().method8349(var1.method3860().getOpposite());
          BlockState var11 = var1.method3864();
          if (!var11.isAir()) {
             Class7551.method24692();
             var3.push();
             var3.translate((double)var1.method3850(var2), (double)var1.method3851(var2), (double)var1.method3852(var2));
             if (var11.isIn(Blocks.PISTON_HEAD) && var1.method3849(var2) <= 4.0F) {
-               var11 = var11.method23465(Class3436.field19212, Boolean.valueOf(var1.method3849(var2) <= 0.5F));
+               var11 = var11.with(Class3436.field19212, Boolean.valueOf(var1.method3849(var2) <= 0.5F));
                this.method18467(var10, var11, var3, var4, var9, false, var6);
             } else if (var1.method3848() && !var1.method3846()) {
-               Class180 var12 = !var11.isIn(Blocks.STICKY_PISTON) ? Class180.field638 : Class180.field639;
+               PistonType var12 = !var11.isIn(Blocks.STICKY_PISTON) ? PistonType.field638 : PistonType.field639;
                BlockState var13 = Blocks.PISTON_HEAD
                   .method11579()
-                  .method23465(Class3436.field19211, var12)
-                  .method23465(Class3436.field19198, var11.<Direction>method23463(Class3435.field19198));
-               var13 = var13.method23465(Class3436.field19212, Boolean.valueOf(var1.method3849(var2) >= 0.5F));
+                  .with(Class3436.field19211, var12)
+                  .with(Class3436.field19198, var11.<Direction>get(Class3435.field19198));
+               var13 = var13.with(Class3436.field19212, Boolean.valueOf(var1.method3849(var2) >= 0.5F));
                this.method18467(var10, var13, var3, var4, var9, false, var6);
                BlockPos var14 = var10.method8349(var1.method3860());
                var3.pop();
                var3.push();
-               var11 = var11.method23465(Class3435.field19202, Boolean.valueOf(true));
+               var11 = var11.with(Class3435.field19202, Boolean.valueOf(true));
                this.method18467(var14, var11, var3, var4, var9, true, var6);
             } else {
                this.method18467(var10, var11, var3, var4, var9, false, var6);

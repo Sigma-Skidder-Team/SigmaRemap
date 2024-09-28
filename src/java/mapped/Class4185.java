@@ -4,6 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Mirror;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
@@ -36,7 +37,7 @@ public class Class4185 extends Class4180 {
       Class8969 var4 = var1.method31603(this.field20471);
       Class9463 var5 = new Class9463()
          .method36426(this.field20472)
-         .method36425(Class2089.field13614)
+         .method36425(Mirror.field13614)
          .method36427((BlockPos)Class3191.method11409().get(this.field20471))
          .method36434(Class7095.field30526);
       this.method12943(var4, this.field20455, var5);
@@ -64,7 +65,7 @@ public class Class4185 extends Class4180 {
    public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
       Class9463 var10 = new Class9463()
          .method36426(this.field20472)
-         .method36425(Class2089.field13614)
+         .method36425(Mirror.field13614)
          .method36427((BlockPos)Class3191.method11409().get(this.field20471))
          .method36434(Class7095.field30526);
       BlockPos var11 = (BlockPos)Class3191.method11408().get(this.field20471);

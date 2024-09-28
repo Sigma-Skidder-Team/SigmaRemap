@@ -19,7 +19,7 @@ import java.util.Random;
 public class Class3210 extends Block {
    private static String[] field18617;
 
-   public Class3210(AbstractBlock var1) {
+   public Class3210(Properties var1) {
       super(var1);
    }
 
@@ -39,7 +39,7 @@ public class Class3210 extends Block {
 
    @Override
    public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
-      if (var2 == Direction.field673 && var3.isIn(Blocks.WATER)) {
+      if (var2 == Direction.UP && var3.isIn(Blocks.WATER)) {
          var4.method6860().method20726(var5, this, 20);
       }
 

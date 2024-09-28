@@ -70,7 +70,7 @@ public class SpawnEggItem extends Item {
 
          EntityType var10 = this.method11855(var5.method32142());
          if (var10.method33200(
-               (ServerWorld)var4, var5, var1.method18358(), var12, Class2202.field14403, true, !Objects.equals(var6, var12) && var7 == Direction.field673
+               (ServerWorld)var4, var5, var1.method18358(), var12, Class2202.field14403, true, !Objects.equals(var6, var12) && var7 == Direction.UP
             )
             != null) {
             var5.shrink(1);

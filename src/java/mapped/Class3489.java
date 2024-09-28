@@ -5,7 +5,10 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.server.ServerWorld;
 
@@ -13,22 +16,22 @@ import java.util.Random;
 
 public class Class3489 extends Class3194 {
    private static String[] field18470;
-   public static final Class8554 field19354 = Class8820.field39740;
+   public static final IntegerProperty field19354 = BlockStateProperties.field39740;
    private static final VoxelShape[] field19355 = new VoxelShape[]{
-      Block.method11539(0.0, 0.0, 0.0, 16.0, 5.0, 16.0),
-      Block.method11539(0.0, 0.0, 0.0, 16.0, 8.0, 16.0),
-      Block.method11539(0.0, 0.0, 0.0, 16.0, 11.0, 16.0),
-      Block.method11539(0.0, 0.0, 0.0, 16.0, 14.0, 16.0)
+      Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 5.0, 16.0),
+      Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 8.0, 16.0),
+      Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 11.0, 16.0),
+      Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 14.0, 16.0)
    };
 
-   public Class3489(AbstractBlock var1) {
+   public Class3489(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().method23465(field19354, Integer.valueOf(0)));
+      this.method11578(this.field18612.method35393().with(field19354, Integer.valueOf(0)));
    }
 
    @Override
    public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
-      return field19355[var1.<Integer>method23463(field19354)];
+      return field19355[var1.<Integer>get(field19354)];
    }
 
    @Override
@@ -38,14 +41,14 @@ public class Class3489 extends Class3194 {
 
    @Override
    public boolean method11499(BlockState var1) {
-      return var1.<Integer>method23463(field19354) < 3;
+      return var1.<Integer>get(field19354) < 3;
    }
 
    @Override
    public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
-      int var7 = var1.<Integer>method23463(field19354);
+      int var7 = var1.<Integer>get(field19354);
       if (var7 < 3 && var4.nextInt(10) == 0) {
-         var1 = var1.method23465(field19354, Integer.valueOf(var7 + 1));
+         var1 = var1.with(field19354, Integer.valueOf(var7 + 1));
          var2.setBlockState(var3, var1, 2);
       }
    }

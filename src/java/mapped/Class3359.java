@@ -11,7 +11,7 @@ import net.minecraft.world.World;
 public abstract class Class3359 extends Class3241 {
    private final Class112 field18904;
 
-   public Class3359(Class112 var1, AbstractBlock var2) {
+   public Class3359(Class112 var1, Properties var2) {
       super(var2);
       this.field18904 = var1;
    }

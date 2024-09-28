@@ -1,6 +1,7 @@
 package net.minecraft.util.math;
 
 import mapped.*;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.vector.Vector3d;
 
 import java.util.Optional;
@@ -54,11 +55,11 @@ public class AxisAlignedBB {
       return new AxisAlignedBB(var0.x, var0.y, var0.z, var0.x + 1.0, var0.y + 1.0, var0.z + 1.0);
    }
 
-   public double method19658(Direction var1) {
+   public double method19658(Direction.Axis var1) {
       return var1.method328(this.minX, this.minY, this.minZ);
    }
 
-   public double method19659(Direction var1) {
+   public double method19659(Direction.Axis var1) {
       return var1.method328(this.maxX, this.maxY, this.maxZ);
    }
 
@@ -300,7 +301,7 @@ public class AxisAlignedBB {
       double var6 = var2.x - var1.x;
       double var8 = var2.y - var1.y;
       double var10 = var2.z - var1.z;
-      net.minecraft.util.Direction var12 = method19682(this, var1, var5, (net.minecraft.util.Direction)null, var6, var8, var10);
+      Direction var12 = method19682(this, var1, var5, (Direction)null, var6, var8, var10);
       if (var12 != null) {
          double var13 = var5[0];
          return Optional.<Vector3d>of(var1.add(var13 * var6, var13 * var8, var13 * var10));
@@ -312,7 +313,7 @@ public class AxisAlignedBB {
    @Nullable
    public static BlockRayTraceResult method19681(Iterable<AxisAlignedBB> var0, Vector3d var1, Vector3d var2, BlockPos var3) {
       double[] var6 = new double[]{1.0};
-      net.minecraft.util.Direction var7 = null;
+      Direction var7 = null;
       double var8 = var2.x - var1.x;
       double var10 = var2.y - var1.y;
       double var12 = var2.z - var1.z;
@@ -330,7 +331,7 @@ public class AxisAlignedBB {
    }
 
    @Nullable
-   private static net.minecraft.util.Direction method19682(AxisAlignedBB var0, Vector3d var1, double[] var2, net.minecraft.util.Direction var3, double var4, double var6, double var8) {
+   private static Direction method19682(AxisAlignedBB var0, Vector3d var1, double[] var2, Direction var3, double var4, double var6, double var8) {
       if (!(var4 > 1.0E-7)) {
          if (var4 < -1.0E-7) {
             var3 = method19683(
@@ -344,7 +345,7 @@ public class AxisAlignedBB {
                var0.maxY,
                var0.minZ,
                var0.maxZ,
-               net.minecraft.util.Direction.EAST,
+               Direction.EAST,
                var1.x,
                var1.y,
                var1.z
@@ -362,7 +363,7 @@ public class AxisAlignedBB {
             var0.maxY,
             var0.minZ,
             var0.maxZ,
-            net.minecraft.util.Direction.WEST,
+            Direction.WEST,
             var1.x,
             var1.y,
             var1.z
@@ -382,7 +383,7 @@ public class AxisAlignedBB {
                var0.maxZ,
                var0.minX,
                var0.maxX,
-               net.minecraft.util.Direction.field673,
+               Direction.UP,
                var1.y,
                var1.z,
                var1.x
@@ -400,7 +401,7 @@ public class AxisAlignedBB {
             var0.maxZ,
             var0.minX,
             var0.maxX,
-            net.minecraft.util.Direction.DOWN,
+            Direction.DOWN,
             var1.y,
             var1.z,
             var1.x
@@ -420,7 +421,7 @@ public class AxisAlignedBB {
                var0.maxX,
                var0.minY,
                var0.maxY,
-               net.minecraft.util.Direction.SOUTH,
+               Direction.SOUTH,
                var1.z,
                var1.x,
                var1.y
@@ -438,7 +439,7 @@ public class AxisAlignedBB {
             var0.maxX,
             var0.minY,
             var0.maxY,
-            net.minecraft.util.Direction.NORTH,
+            Direction.NORTH,
             var1.z,
             var1.x,
             var1.y
@@ -449,9 +450,9 @@ public class AxisAlignedBB {
    }
 
    @Nullable
-   private static net.minecraft.util.Direction method19683(
+   private static Direction method19683(
       double[] var0,
-      net.minecraft.util.Direction var1,
+      Direction var1,
       double var2,
       double var4,
       double var6,
@@ -460,7 +461,7 @@ public class AxisAlignedBB {
       double var12,
       double var14,
       double var16,
-      net.minecraft.util.Direction var18,
+      Direction var18,
       double var19,
       double var21,
       double var23

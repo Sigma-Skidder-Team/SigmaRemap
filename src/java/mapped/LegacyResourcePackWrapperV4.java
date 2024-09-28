@@ -5,6 +5,7 @@ import com.google.common.collect.Maps;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.client.util.Util;
 import net.minecraft.resources.data.IMetadataSectionSerializer;
+import net.minecraft.state.properties.ChestType;
 import net.minecraft.util.ResourceLocation;
 
 import javax.annotation.Nullable;
@@ -19,18 +20,18 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class LegacyResourcePackWrapperV4 implements IResourcePack {
-   private static final Map<String, Pair<Class111, ResourceLocation>> field1180 = Util.<Map<String, Pair<Class111, ResourceLocation>>>make(
+   private static final Map<String, Pair<ChestType, ResourceLocation>> field1180 = Util.<Map<String, Pair<ChestType, ResourceLocation>>>make(
       Maps.newHashMap(), var0 -> {
-         var0.put("textures/entity/chest/normal_left.png", new Pair(Class111.field380, new ResourceLocation("textures/entity/chest/normal_double.png")));
-         var0.put("textures/entity/chest/normal_right.png", new Pair(Class111.field381, new ResourceLocation("textures/entity/chest/normal_double.png")));
-         var0.put("textures/entity/chest/normal.png", new Pair(Class111.field379, new ResourceLocation("textures/entity/chest/normal.png")));
-         var0.put("textures/entity/chest/trapped_left.png", new Pair(Class111.field380, new ResourceLocation("textures/entity/chest/trapped_double.png")));
-         var0.put("textures/entity/chest/trapped_right.png", new Pair(Class111.field381, new ResourceLocation("textures/entity/chest/trapped_double.png")));
-         var0.put("textures/entity/chest/trapped.png", new Pair(Class111.field379, new ResourceLocation("textures/entity/chest/trapped.png")));
-         var0.put("textures/entity/chest/christmas_left.png", new Pair(Class111.field380, new ResourceLocation("textures/entity/chest/christmas_double.png")));
-         var0.put("textures/entity/chest/christmas_right.png", new Pair(Class111.field381, new ResourceLocation("textures/entity/chest/christmas_double.png")));
-         var0.put("textures/entity/chest/christmas.png", new Pair(Class111.field379, new ResourceLocation("textures/entity/chest/christmas.png")));
-         var0.put("textures/entity/chest/ender.png", new Pair(Class111.field379, new ResourceLocation("textures/entity/chest/ender.png")));
+         var0.put("textures/entity/chest/normal_left.png", new Pair(ChestType.field380, new ResourceLocation("textures/entity/chest/normal_double.png")));
+         var0.put("textures/entity/chest/normal_right.png", new Pair(ChestType.field381, new ResourceLocation("textures/entity/chest/normal_double.png")));
+         var0.put("textures/entity/chest/normal.png", new Pair(ChestType.field379, new ResourceLocation("textures/entity/chest/normal.png")));
+         var0.put("textures/entity/chest/trapped_left.png", new Pair(ChestType.field380, new ResourceLocation("textures/entity/chest/trapped_double.png")));
+         var0.put("textures/entity/chest/trapped_right.png", new Pair(ChestType.field381, new ResourceLocation("textures/entity/chest/trapped_double.png")));
+         var0.put("textures/entity/chest/trapped.png", new Pair(ChestType.field379, new ResourceLocation("textures/entity/chest/trapped.png")));
+         var0.put("textures/entity/chest/christmas_left.png", new Pair(ChestType.field380, new ResourceLocation("textures/entity/chest/christmas_double.png")));
+         var0.put("textures/entity/chest/christmas_right.png", new Pair(ChestType.field381, new ResourceLocation("textures/entity/chest/christmas_double.png")));
+         var0.put("textures/entity/chest/christmas.png", new Pair(ChestType.field379, new ResourceLocation("textures/entity/chest/christmas.png")));
+         var0.put("textures/entity/chest/ender.png", new Pair(ChestType.field379, new ResourceLocation("textures/entity/chest/ender.png")));
       }
    );
    private static final List<String> field1181 = Lists.newArrayList(
@@ -165,17 +166,17 @@ public class LegacyResourcePackWrapperV4 implements IResourcePack {
 
                Pair var6 = field1180.get(var5);
                if (var6 != null) {
-                  Class111 var7 = (Class111)var6.getFirst();
+                  ChestType var7 = (ChestType)var6.getFirst();
                   InputStream var8 = this.field1187.getResourceStream(var1, (ResourceLocation)var6.getSecond());
-                  if (var7 == Class111.field379) {
+                  if (var7 == ChestType.field379) {
                      return method1237(var8);
                   }
 
-                  if (var7 == Class111.field380) {
+                  if (var7 == ChestType.field380) {
                      return method1235(var8);
                   }
 
-                  if (var7 == Class111.field381) {
+                  if (var7 == ChestType.field381) {
                      return method1236(var8);
                   }
                }

@@ -57,7 +57,7 @@ public class Class5683 extends Class5651<Class1057, Class2887<Class1057>> {
    public void method17842(Class1057 var1, MatrixStack var2, float var3, float var4, float var5) {
       super.method17842(var1, var2, var3, var4 + 180.0F, var5);
       var2.translate(0.0, 0.5, 0.0);
-      var2.rotate(var1.method4848().method536().method532());
+      var2.rotate(var1.method4848().getOpposite().method532());
       var2.translate(0.0, -0.5, 0.0);
    }
 }

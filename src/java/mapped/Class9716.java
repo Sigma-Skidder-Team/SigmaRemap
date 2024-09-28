@@ -7,6 +7,7 @@ import it.unimi.dsi.fastutil.longs.Long2ByteLinkedOpenHashMap;
 import it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.state.StateContainer;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -59,7 +60,7 @@ public class Class9716 {
       byte var12 = var11.getAndMoveToFirst(var9);
       if (var12 == 0) {
          VoxelShape var13 = var0.method23388(var1, var2, var3);
-         VoxelShape var14 = var5.method23388(var1, var6, var3.method536());
+         VoxelShape var14 = var5.method23388(var1, var6, var3.getOpposite());
          boolean var15 = VoxelShapes.compare(var13, var14, IBooleanFunction.ONLY_FIRST);
          if (var11.size() > 400) {
             var11.removeLastByte();
@@ -82,25 +83,25 @@ public class Class9716 {
 
    public static int method38067(BlockState var0) {
       Block var3 = var0.getBlock();
-      Class9348 var4 = var3.getStateContainer();
+      StateContainer var4 = var3.getStateContainer();
       ImmutableList var5 = var4.getValidStates();
       return var5.indexOf(var0);
    }
 
    public static int method38068(Block var0) {
-      Class9348 var3 = var0.getStateContainer();
+      StateContainer var3 = var0.getStateContainer();
       ImmutableList var4 = var3.getValidStates();
       return var4.size();
    }
 
    public static BlockState method38069(Block var0, int var1) {
-      Class9348 var4 = var0.getStateContainer();
+      StateContainer var4 = var0.getStateContainer();
       ImmutableList var5 = var4.getValidStates();
       return var1 >= 0 && var1 < var5.size() ? (BlockState)var5.get(var1) : null;
    }
 
    public static List<BlockState> method38070(Block var0) {
-      Class9348 var3 = var0.getStateContainer();
+      StateContainer var3 = var0.getStateContainer();
       return var3.getValidStates();
    }
 

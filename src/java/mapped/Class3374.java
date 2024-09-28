@@ -3,6 +3,9 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraft.util.Mirror;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
@@ -11,11 +14,11 @@ import net.minecraft.world.IWorldReader;
 
 public class Class3374 extends Class3373 {
    private static String[] field18969;
-   public static final Class8554 field18970 = Class8820.field39763;
+   public static final IntegerProperty field18970 = BlockStateProperties.field39763;
 
-   public Class3374(AbstractBlock var1, Class9673 var2) {
+   public Class3374(Properties var1, Class9673 var2) {
       super(var1, var2);
-      this.method11578(this.field18612.method35393().method23465(field18970, Integer.valueOf(0)).method23465(field18966, Boolean.valueOf(false)));
+      this.method11578(this.field18612.method35393().with(field18970, Integer.valueOf(0)).with(field18966, Boolean.valueOf(false)));
    }
 
    @Override
@@ -27,8 +30,8 @@ public class Class3374 extends Class3373 {
    public BlockState method11495(Class5909 var1) {
       FluidState var4 = var1.method18360().getFluidState(var1.method18345());
       return this.method11579()
-         .method23465(field18970, Integer.valueOf(MathHelper.floor((double)((180.0F + var1.method18352()) * 16.0F / 360.0F) + 0.5) & 15))
-         .method23465(field18966, Boolean.valueOf(var4.method23472() == Class9479.field44066));
+         .with(field18970, Integer.valueOf(MathHelper.floor((double)((180.0F + var1.method18352()) * 16.0F / 360.0F) + 0.5) & 15))
+         .with(field18966, Boolean.valueOf(var4.method23472() == Class9479.field44066));
    }
 
    @Override
@@ -39,13 +42,13 @@ public class Class3374 extends Class3373 {
    }
 
    @Override
-   public BlockState method11500(BlockState var1, Rotation var2) {
-      return var1.method23465(field18970, Integer.valueOf(var2.method253(var1.<Integer>method23463(field18970), 16)));
+   public BlockState rotate(BlockState var1, Rotation var2) {
+      return var1.with(field18970, Integer.valueOf(var2.method253(var1.<Integer>get(field18970), 16)));
    }
 
    @Override
-   public BlockState method11501(BlockState var1, Class2089 var2) {
-      return var1.method23465(field18970, Integer.valueOf(var2.method8748(var1.<Integer>method23463(field18970), 16)));
+   public BlockState mirror(BlockState var1, Mirror var2) {
+      return var1.with(field18970, Integer.valueOf(var2.method8748(var1.<Integer>get(field18970), 16)));
    }
 
    @Override

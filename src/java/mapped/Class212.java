@@ -42,7 +42,7 @@ public final class Class212 extends Class200<Class7587, Class210> {
                int var19 = Integer.signum(var15 - var12);
                Direction var20;
                if (var1 != Long.MAX_VALUE) {
-                  var20 = Direction.method548(var17, var18, var19);
+                  var20 = Direction.byLong(var17, var18, var19);
                } else {
                   var20 = Direction.DOWN;
                }
@@ -55,18 +55,18 @@ public final class Class212 extends Class200<Class7587, Class210> {
                   }
 
                   int var23 = !var16 ? 0 : -1;
-                  Direction var24 = Direction.method548(var17, var23, var19);
+                  Direction var24 = Direction.byLong(var17, var23, var19);
                   if (var24 == null) {
                      return 15;
                   }
 
-                  VoxelShape var25 = this.method648(var9, var3, var24.method536());
+                  VoxelShape var25 = this.method648(var9, var3, var24.getOpposite());
                   if (VoxelShapes.method27444(VoxelShapes.method27425(), var25)) {
                      return 15;
                   }
                } else {
                   VoxelShape var26 = this.method648(var21, var1, var20);
-                  VoxelShape var28 = this.method648(var9, var3, var20.method536());
+                  VoxelShape var28 = this.method648(var9, var3, var20.getOpposite());
                   if (VoxelShapes.method27444(var26, var28)) {
                      return 15;
                   }
@@ -175,7 +175,7 @@ public final class Class212 extends Class200<Class7587, Class210> {
                !this.field748.method698(var19) && !this.field748.method724(var19);
                var17 = BlockPos.method8327(var17, 0, 16, 0)
             ) {
-               var19 = Class2002.method8394(var19, Direction.field673);
+               var19 = Class2002.method8394(var19, Direction.UP);
             }
 
             Class6785 var22 = this.field748.method699(var19, true);
@@ -207,7 +207,7 @@ public final class Class212 extends Class200<Class7587, Class210> {
       long var5 = Class2002.method8419(var1);
       if (!this.field748.method698(var5)) {
          for (var1 = BlockPos.method8334(var1); !this.field748.method698(var5) && !this.field748.method724(var5); var1 = BlockPos.method8327(var1, 0, 16, 0)) {
-            var5 = Class2002.method8394(var5, Direction.field673);
+            var5 = Class2002.method8394(var5, Direction.UP);
          }
 
          if (this.field748.method698(var5)) {

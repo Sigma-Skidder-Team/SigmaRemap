@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.serialization.Codec;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Random;
@@ -26,7 +27,7 @@ public class Class6701 extends Class6698 {
 
    @Override
    public BlockState method20424(Random var1, BlockPos var2) {
-      Direction var5 = Direction.method325(var1);
-      return this.field29336.method11579().method23465(Class3386.field18994, var5);
+      Direction.Axis var5 = Direction.Axis.method325(var1);
+      return this.field29336.method11579().with(Class3386.field18994, var5);
    }
 }

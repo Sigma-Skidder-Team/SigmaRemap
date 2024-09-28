@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.state.StateContainer;
+
 import java.util.Collection;
 import java.util.Map;
 import java.util.function.Function;
@@ -24,7 +26,7 @@ public class Class7558<O, S extends Class7378<O, S>> {
 
    private <T extends Comparable<T>> void method24738(Class8550<T> var1) {
       String var4 = var1.method30472();
-      if (!Class9348.method35404().matcher(var4).matches()) {
+      if (!StateContainer.method35404().matcher(var4).matches()) {
          throw new IllegalArgumentException(this.field32410 + " has invalidly named property: " + var4);
       } else {
          Collection<T> var5 = var1.method30474();
@@ -33,7 +35,7 @@ public class Class7558<O, S extends Class7378<O, S>> {
          } else {
             for (Comparable var7 : var5) {
                String var8 = var1.method30475((T)var7);
-               if (!Class9348.method35404().matcher(var8).matches()) {
+               if (!StateContainer.method35404().matcher(var8).matches()) {
                   throw new IllegalArgumentException(this.field32410 + " has property: " + var4 + " with invalidly named value: " + var8);
                }
             }
@@ -45,7 +47,7 @@ public class Class7558<O, S extends Class7378<O, S>> {
       }
    }
 
-   public Class9348<O, S> method24739(Function<O, S> var1, Class6967<O, S> var2) {
-      return new Class9348<O, S>(var1, this.field32410, var2, this.field32411);
+   public StateContainer<O, S> method24739(Function<O, S> var1, Class6967<O, S> var2) {
+      return new StateContainer<O, S>(var1, this.field32410, var2, this.field32411);
    }
 }

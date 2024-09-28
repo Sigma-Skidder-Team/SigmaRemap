@@ -452,7 +452,7 @@ public class ParticleManager implements Class268 {
             var13 = (double)var7 + var10.minY - 0.1F;
          }
 
-         if (var2 == Direction.field673) {
+         if (var2 == Direction.UP) {
             var13 = (double)var7 + var10.maxY + 0.1F;
          }
 

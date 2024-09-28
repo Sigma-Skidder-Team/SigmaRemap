@@ -26,7 +26,7 @@ public class Class8080 implements IAmbientSoundHandler {
          this.field34731 = false;
       } else {
          if (!this.field34731 && !this.field34732 && var4.isIn(Blocks.field37013) && !this.field34730.isSpectator()) {
-            boolean var5 = var4.<Boolean>method23463(Class3406.field19084);
+            boolean var5 = var4.<Boolean>get(Class3406.field19084);
             if (!var5) {
                this.field34730.playSound(SoundEvents.field26423, 1.0F, 1.0F);
             } else {

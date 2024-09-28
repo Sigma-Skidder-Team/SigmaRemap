@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Maps;
 import com.google.gson.*;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
 
 import javax.annotation.Nullable;
@@ -33,7 +34,7 @@ public class Class2579 implements JsonDeserializer<Class9726> {
          JsonObject var5 = JSONUtils.method32782(var1, "rotation");
          Vector3f var6 = this.method10781(var5, "origin");
          var6.method25272(0.0625F);
-         Direction var7 = this.method10775(var5);
+         Direction.Axis var7 = this.method10775(var5);
          float var8 = this.method10774(var5);
          boolean var9 = JSONUtils.getBoolean(var5, "rescale", false);
          var4 = new Class7360(var6, var7, var8, var9);
@@ -51,9 +52,9 @@ public class Class2579 implements JsonDeserializer<Class9726> {
       }
    }
 
-   private Direction method10775(JsonObject var1) {
+   private Direction.Axis method10775(JsonObject var1) {
       String var4 = JSONUtils.getString(var1, "axis");
-      Direction var5 = Direction.method321(var4.toLowerCase(Locale.ROOT));
+      Direction.Axis var5 = Direction.Axis.method321(var4.toLowerCase(Locale.ROOT));
       if (var5 != null) {
          return var5;
       } else {
@@ -61,7 +62,7 @@ public class Class2579 implements JsonDeserializer<Class9726> {
       }
    }
 
-   private Map<net.minecraft.util.Direction, Class9163> method10776(JsonDeserializationContext var1, JsonObject var2) {
+   private Map<Direction, Class9163> method10776(JsonDeserializationContext var1, JsonObject var2) {
       Map var5 = this.method10777(var1, var2);
       if (!var5.isEmpty()) {
          return var5;
@@ -70,20 +71,20 @@ public class Class2579 implements JsonDeserializer<Class9726> {
       }
    }
 
-   private Map<net.minecraft.util.Direction, Class9163> method10777(JsonDeserializationContext var1, JsonObject var2) {
-      EnumMap var5 = Maps.newEnumMap(net.minecraft.util.Direction.class);
+   private Map<Direction, Class9163> method10777(JsonDeserializationContext var1, JsonObject var2) {
+      EnumMap var5 = Maps.newEnumMap(Direction.class);
       JsonObject var6 = JSONUtils.method32782(var2, "faces");
 
       for (Entry var8 : var6.entrySet()) {
-         net.minecraft.util.Direction var9 = this.method10778((String)var8.getKey());
+         Direction var9 = this.method10778((String)var8.getKey());
          var5.put(var9, var1.deserialize((JsonElement)var8.getValue(), Class9163.class));
       }
 
       return var5;
    }
 
-   private net.minecraft.util.Direction method10778(String var1) {
-      net.minecraft.util.Direction var4 = net.minecraft.util.Direction.method545(var1);
+   private Direction method10778(String var1) {
+      Direction var4 = Direction.byName(var1);
       if (var4 != null) {
          return var4;
       } else {

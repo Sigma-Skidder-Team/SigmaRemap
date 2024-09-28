@@ -62,7 +62,7 @@ public class Class2001 extends BlockPos {
    public BlockPos method8349(Direction var1) {
       if (this.field13045 > 0) {
          if (this.field13046 == null) {
-            this.field13046 = new Class2001[Direction.field685.length];
+            this.field13046 = new Class2001[Direction.VALUES.length];
          }
 
          if (this.field13047) {
@@ -72,9 +72,9 @@ public class Class2001 extends BlockPos {
          int var4 = var1.getIndex();
          Class2001 var5 = this.field13046[var4];
          if (var5 == null) {
-            int var6 = this.field13042 + var1.method539();
-            int var7 = this.field13043 + var1.method540();
-            int var8 = this.field13044 + var1.method541();
+            int var6 = this.field13042 + var1.getXOffset();
+            int var7 = this.field13043 + var1.getYOffset();
+            int var8 = this.field13044 + var1.getZOffset();
             var5 = new Class2001(var6, var7, var8, this.field13045 - 1);
             this.field13046[var4] = var5;
          }
@@ -91,25 +91,25 @@ public class Class2001 extends BlockPos {
    }
 
    public void method8386(BlockPos var1, Direction var2) {
-      this.field13042 = var1.getX() + var2.method539();
-      this.field13043 = var1.getY() + var2.method540();
-      this.field13044 = var1.getZ() + var2.method541();
+      this.field13042 = var1.getX() + var2.getXOffset();
+      this.field13043 = var1.getY() + var2.getYOffset();
+      this.field13044 = var1.getZ() + var2.getZOffset();
    }
 
    public void method8387(BlockPos var1, Direction var2, Direction var3) {
-      this.field13042 = var1.getX() + var2.method539() + var3.method539();
-      this.field13043 = var1.getY() + var2.method540() + var3.method540();
-      this.field13044 = var1.getZ() + var2.method541() + var3.method541();
+      this.field13042 = var1.getX() + var2.getXOffset() + var3.getXOffset();
+      this.field13043 = var1.getY() + var2.getYOffset() + var3.getYOffset();
+      this.field13044 = var1.getZ() + var2.getZOffset() + var3.getZOffset();
    }
 
    private void method8388() {
       for (int var3 = 0; var3 < 6; var3++) {
          Class2001 var4 = this.field13046[var3];
          if (var4 != null) {
-            Direction var5 = Direction.field685[var3];
-            int var6 = this.field13042 + var5.method539();
-            int var7 = this.field13043 + var5.method540();
-            int var8 = this.field13044 + var5.method541();
+            Direction var5 = Direction.VALUES[var3];
+            int var6 = this.field13042 + var5.getXOffset();
+            int var7 = this.field13043 + var5.getYOffset();
+            int var8 = this.field13044 + var5.getZOffset();
             var4.method8384(var6, var7, var8);
          }
       }

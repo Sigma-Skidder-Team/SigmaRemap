@@ -107,7 +107,7 @@ public class CommandBlockTileEntity extends TileEntity {
    public boolean method4017() {
       this.conditionMet = true;
       if (this.method4021()) {
-         BlockPos var3 = this.field5325.method8349(this.field5324.getBlockState(this.field5325).<Direction>method23463(CommandBlockBlock.field18893).method536());
+         BlockPos var3 = this.field5325.method8349(this.field5324.getBlockState(this.field5325).<Direction>get(CommandBlockBlock.field18893).getOpposite());
          if (!(this.field5324.getBlockState(var3).getBlock() instanceof CommandBlockBlock)) {
             this.conditionMet = false;
          } else {
@@ -142,7 +142,7 @@ public class CommandBlockTileEntity extends TileEntity {
 
    public boolean method4021() {
       BlockState var3 = this.field5324.getBlockState(this.getPos());
-      return !(var3.getBlock() instanceof CommandBlockBlock) ? false : var3.<Boolean>method23463(CommandBlockBlock.field18894);
+      return !(var3.getBlock() instanceof CommandBlockBlock) ? false : var3.<Boolean>get(CommandBlockBlock.field18894);
    }
 
    @Override

@@ -25,7 +25,7 @@ public class Class7394 {
          }
       }
 
-      this.field31655 = var9.method542();
+      this.field31655 = var9.toVector3f();
       if (var8) {
          this.field31655.method25273(-1.0F, 1.0F, 1.0F);
       }

@@ -28,13 +28,13 @@ public class Class5947 extends Class5942<Class954> {
       float var10 = 0.6666667F;
       if (!(var9.getBlock() instanceof Class3374)) {
          var3.translate(0.5, 0.5, 0.5);
-         float var11 = -var9.<Direction>method23463(Class3375.field18972).method551();
+         float var11 = -var9.<Direction>get(Class3375.field18972).getHorizontalAngle();
          var3.rotate(Vector3f.YP.rotationDegrees(var11));
          var3.translate(0.0, -0.3125, -0.4375);
          this.field25938.field17651.showModel = false;
       } else {
          var3.translate(0.5, 0.5, 0.5);
-         float var26 = -((float)(var9.<Integer>method23463(Class3374.field18970) * 360) / 16.0F);
+         float var26 = -((float)(var9.<Integer>get(Class3374.field18970) * 360) / 16.0F);
          var3.rotate(Vector3f.YP.rotationDegrees(var26));
          this.field25938.field17651.showModel = true;
       }

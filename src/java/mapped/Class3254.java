@@ -12,7 +12,7 @@ import java.util.List;
 public class Class3254 extends Class3252 {
    private static String[] field18730;
 
-   public Class3254(AbstractBlock var1) {
+   public Class3254(Properties var1) {
       super(Class2136.field13991, var1);
    }
 

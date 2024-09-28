@@ -10,17 +10,17 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.Random;
 
 public abstract class Class3472 extends Class3471 {
-   public Class3472(AbstractBlock var1) {
+   public Class3472(Properties var1) {
       super(var1);
    }
 
    private static boolean method12160(BlockState var0, IWorldReader var1, BlockPos var2) {
       BlockPos var5 = var2.up();
       BlockState var6 = var1.getBlockState(var5);
-      if (var6.isIn(Blocks.SNOW) && var6.<Integer>method23463(Class3410.field19092) == 1) {
+      if (var6.isIn(Blocks.SNOW) && var6.<Integer>get(Class3410.field19092) == 1) {
          return true;
       } else if (var6.method23449().method23477() != 8) {
-         int var7 = Class200.method649(var1, var0, var2, var6, var5, Direction.field673, var6.getOpacity(var1, var5));
+         int var7 = Class200.method649(var1, var0, var2, var6, var5, Direction.UP, var6.getOpacity(var1, var5));
          return var7 < var1.getMaxLightLevel();
       } else {
          return false;
@@ -41,7 +41,7 @@ public abstract class Class3472 extends Class3471 {
             for (int var8 = 0; var8 < 4; var8++) {
                BlockPos var9 = var3.method8336(var4.nextInt(3) - 1, var4.nextInt(5) - 3, var4.nextInt(3) - 1);
                if (var2.getBlockState(var9).isIn(Blocks.field36396) && method12161(var7, var2, var9)) {
-                  var2.setBlockState(var9, var7.method23465(field19323, Boolean.valueOf(var2.getBlockState(var9.up()).isIn(Blocks.SNOW))));
+                  var2.setBlockState(var9, var7.with(field19323, Boolean.valueOf(var2.getBlockState(var9.up()).isIn(Blocks.SNOW))));
                }
             }
          }

@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
 
@@ -26,7 +27,7 @@ public class Class2945 extends Class2898<Class4728> {
             if (!var13) {
                var1.setBlockState(var12, var14, 2);
             } else {
-               BlockState var15 = var14.method23465(Class3455.field19274, Class84.field209);
+               BlockState var15 = var14.with(Class3455.field19274, DoubleBlockHalf.field209);
                BlockPos var16 = var12.up();
                if (var1.getBlockState(var16).isIn(Blocks.WATER)) {
                   var1.setBlockState(var12, var14, 2);

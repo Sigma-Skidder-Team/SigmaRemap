@@ -13,7 +13,7 @@ import java.util.Random;
 public class Class3352 extends Class3350 {
    private static String[] field18878;
 
-   public Class3352(AbstractBlock var1) {
+   public Class3352(Properties var1) {
       super(var1);
    }
 
@@ -33,7 +33,7 @@ public class Class3352 extends Class3350 {
 
    @Override
    public void method11512(BlockState var1, World var2, BlockPos var3, Random var4) {
-      if (var1.<Boolean>method23463(field18876)) {
+      if (var1.<Boolean>get(field18876)) {
          double var7 = (double)var3.getX() + 0.5;
          double var9 = (double)var3.getY();
          double var11 = (double)var3.getZ() + 0.5;

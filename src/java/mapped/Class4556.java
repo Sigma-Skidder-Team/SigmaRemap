@@ -25,7 +25,7 @@ public final class Class4556 extends AbstractIterator<BlockPos.Mutable> {
       this.field21979 = var2;
       this.field21980 = var3;
       this.field21981 = var4;
-      this.field21969 = new Direction[]{this.field21978, this.field21979, this.field21978.method536(), this.field21979.method536()};
+      this.field21969 = new Direction[]{this.field21978, this.field21979, this.field21978.getOpposite(), this.field21979.getOpposite()};
       this.field21970 = this.field21980.method8354().method8379(this.field21979);
       this.field21971 = 4 * this.field21981;
       this.field21972 = -1;

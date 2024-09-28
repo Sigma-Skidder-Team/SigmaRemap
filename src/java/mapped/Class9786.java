@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.state.StateContainer;
 
 public final class Class9786 {
    private static String[] field45754;
@@ -14,13 +15,13 @@ public final class Class9786 {
       .registerTypeAdapter(Class7498.class, new Class2574(this))
       .registerTypeAdapter(Class9350.class, new Class2570())
       .create();
-   private Class9348<Block, BlockState> field45756;
+   private StateContainer<Block, BlockState> field45756;
 
-   public Class9348<Block, BlockState> method38572() {
+   public StateContainer<Block, BlockState> method38572() {
       return this.field45756;
    }
 
-   public void method38573(Class9348<Block, BlockState> var1) {
+   public void method38573(StateContainer<Block, BlockState> var1) {
       this.field45756 = var1;
    }
 }

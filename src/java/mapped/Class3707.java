@@ -30,7 +30,7 @@ public class Class3707 extends Class3706 {
 
    private void method12587(ServerWorld var1, Class1042 var2, Class9378 var3, BlockState var4) {
       BlockPos var7 = var3.method35579();
-      if (var4.<Integer>method23463(Class3475.field19326) == 8) {
+      if (var4.<Integer>get(Class3475.field19326) == 8) {
          var4 = Class3475.method12166(var4, var1, var7);
       }
 
@@ -54,7 +54,7 @@ public class Class3707 extends Class3706 {
 
                for (int var20 = 0; var20 < var19; var20++) {
                   var13 = Class3475.method12165(var13, var1, var15, var7);
-                  if (var13.<Integer>method23463(Class3475.field19326) == 7) {
+                  if (var13.<Integer>get(Class3475.field19326) == 7) {
                      this.method12588(var1, var4, var7, var13);
                      return;
                   }

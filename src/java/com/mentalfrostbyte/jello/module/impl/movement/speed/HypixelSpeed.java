@@ -60,7 +60,7 @@ public class HypixelSpeed extends Module {
     @LowerPriority
     public void method16037(EventUpdate var1) {
         if (mc.player.onGround) {
-            if (!Client.getInstance().getModuleManager().getModuleByClass(Criticals.class).method15988()
+            if (!Client.getInstance().getModuleManager().getModuleByClass(Criticals.class).isEnabled2()
                     || KillAura.target == null && KillAura.field23949 == null
                     || this.field23418 != Class2094.field13641) {
                 this.field23417 = 0.0;
@@ -223,7 +223,7 @@ public class HypixelSpeed extends Module {
     }
 
     @Override
-    public boolean method15988() {
+    public boolean isEnabled2() {
         return this.isEnabled()
                 && (!mc.player.onGround || mc.player.isJumping || this.getBooleanValueFromSettingName("AutoJump") || this.field23418 == Class2094.field13641);
     }

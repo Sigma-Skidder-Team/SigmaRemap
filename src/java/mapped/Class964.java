@@ -8,7 +8,9 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
+import net.minecraft.state.properties.StructureMode;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Mirror;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
@@ -30,9 +32,9 @@ public class Class964 extends TileEntity {
    private String field5397 = "";
    private BlockPos field5398 = new BlockPos(0, 1, 0);
    private BlockPos field5399 = BlockPos.ZERO;
-   private Class2089 field5400 = Class2089.field13614;
+   private Mirror field5400 = Mirror.field13614;
    private Rotation field5401 = Rotation.field185;
-   private Class104 field5402 = Class104.field321;
+   private StructureMode field5402 = StructureMode.field321;
    private boolean field5403 = true;
    private boolean field5404;
    private boolean field5405;
@@ -95,15 +97,15 @@ public class Class964 extends TileEntity {
       }
 
       try {
-         this.field5400 = Class2089.valueOf(var2.getString("mirror"));
+         this.field5400 = Mirror.valueOf(var2.getString("mirror"));
       } catch (IllegalArgumentException var13) {
-         this.field5400 = Class2089.field13614;
+         this.field5400 = Mirror.field13614;
       }
 
       try {
-         this.field5402 = Class104.valueOf(var2.getString("mode"));
+         this.field5402 = StructureMode.valueOf(var2.getString("mode"));
       } catch (IllegalArgumentException var12) {
-         this.field5402 = Class104.field321;
+         this.field5402 = StructureMode.field321;
       }
 
       this.field5403 = var2.getBoolean("ignoreEntities");
@@ -125,7 +127,7 @@ public class Class964 extends TileEntity {
          BlockPos var3 = this.getPos();
          BlockState var4 = this.field5324.getBlockState(var3);
          if (var4.isIn(Blocks.field37113)) {
-            this.field5324.setBlockState(var3, var4.method23465(StructureBlock.field18938, this.field5402), 2);
+            this.field5324.setBlockState(var3, var4.with(StructureBlock.field18938, this.field5402), 2);
          }
       }
    }
@@ -193,11 +195,11 @@ public class Class964 extends TileEntity {
       this.field5399 = var1;
    }
 
-   public Class2089 method3944() {
+   public Mirror method3944() {
       return this.field5400;
    }
 
-   public void method3945(Class2089 var1) {
+   public void method3945(Mirror var1) {
       this.field5400 = var1;
    }
 
@@ -217,31 +219,31 @@ public class Class964 extends TileEntity {
       this.field5397 = var1;
    }
 
-   public Class104 method3950() {
+   public StructureMode method3950() {
       return this.field5402;
    }
 
-   public void method3951(Class104 var1) {
+   public void method3951(StructureMode var1) {
       this.field5402 = var1;
       BlockState var4 = this.field5324.getBlockState(this.getPos());
       if (var4.isIn(Blocks.field37113)) {
-         this.field5324.setBlockState(this.getPos(), var4.method23465(StructureBlock.field18938, var1), 2);
+         this.field5324.setBlockState(this.getPos(), var4.with(StructureBlock.field18938, var1), 2);
       }
    }
 
    public void method3952() {
       switch (Class7708.field33095[this.method3950().ordinal()]) {
          case 1:
-            this.method3951(Class104.field319);
+            this.method3951(StructureMode.field319);
             break;
          case 2:
-            this.method3951(Class104.field320);
+            this.method3951(StructureMode.field320);
             break;
          case 3:
-            this.method3951(Class104.field321);
+            this.method3951(StructureMode.field321);
             break;
          case 4:
-            this.method3951(Class104.field318);
+            this.method3951(StructureMode.field318);
       }
    }
 
@@ -270,7 +272,7 @@ public class Class964 extends TileEntity {
    }
 
    public boolean method3959() {
-      if (this.field5402 == Class104.field318) {
+      if (this.field5402 == StructureMode.field318) {
          BlockPos var3 = this.getPos();
 
          BlockPos var5 = new BlockPos(var3.getX() - 80, 0, var3.getZ() - 80);
@@ -302,7 +304,7 @@ public class Class964 extends TileEntity {
    }
 
    private List<Class964> method3960(List<Class964> var1) {
-      Predicate<Class964> var4 = var1x -> var1x.field5402 == Class104.field320 && Objects.equals(this.field5395, var1x.field5395);
+      Predicate<Class964> var4 = var1x -> var1x.field5402 == StructureMode.field320 && Objects.equals(this.field5395, var1x.field5395);
       return var1.stream().filter(var4).collect(Collectors.toList());
    }
 
@@ -366,7 +368,7 @@ public class Class964 extends TileEntity {
    }
 
    public boolean method3964(boolean var1) {
-      if (this.field5402 == Class104.field318 && !this.field5324.isRemote && this.field5395 != null) {
+      if (this.field5402 == StructureMode.field318 && !this.field5324.isRemote && this.field5395 != null) {
          BlockPos var4 = this.getPos().method8337(this.field5398);
          ServerWorld var5 = (ServerWorld)this.field5324;
          TemplateManager var6 = var5.method6938();
@@ -403,7 +405,7 @@ public class Class964 extends TileEntity {
    }
 
    public boolean method3967(ServerWorld var1, boolean var2) {
-      if (this.field5402 == Class104.field319 && this.field5395 != null) {
+      if (this.field5402 == StructureMode.field319 && this.field5395 != null) {
          TemplateManager var5 = var1.method6938();
 
          Class8969 var6;
@@ -457,7 +459,7 @@ public class Class964 extends TileEntity {
    }
 
    public boolean method3970() {
-      if (this.field5402 == Class104.field319 && !this.field5324.isRemote && this.field5395 != null) {
+      if (this.field5402 == StructureMode.field319 && !this.field5324.isRemote && this.field5395 != null) {
          ServerWorld var3 = (ServerWorld)this.field5324;
          TemplateManager var4 = var3.method6938();
 

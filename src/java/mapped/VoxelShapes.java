@@ -10,9 +10,11 @@ import it.unimi.dsi.fastutil.doubles.DoubleList;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IWorldReader;
 
 import java.util.Arrays;
@@ -112,12 +114,12 @@ public final class VoxelShapes {
       return (long)var0 * (long)(var1 / IntMath.gcd(var0, var1));
    }
 
-   public static VoxelShape method27431(VoxelShape var0, VoxelShape var1) {
+   public static VoxelShape or(VoxelShape var0, VoxelShape var1) {
       return combineAndSimplify(var0, var1, IBooleanFunction.field44051);
    }
 
    public static VoxelShape method27432(VoxelShape var0, VoxelShape... var1) {
-      return Arrays.<VoxelShape>stream(var1).reduce(var0, VoxelShapes::method27431);
+      return Arrays.<VoxelShape>stream(var1).reduce(var0, VoxelShapes::or);
    }
 
    public static VoxelShape combineAndSimplify(VoxelShape var0, VoxelShape var1, IBooleanFunction var2) {
@@ -135,12 +137,12 @@ public final class VoxelShapes {
                if (var1.isEmpty()) {
                   return !var5 ? method27425() : var0;
                } else {
-                  Class56 var7 = method27445(1, var0.method19511(Direction.X), var1.method19511(Direction.X), var5, var6);
-                  Class56 var8 = method27445(var7.method194().size() - 1, var0.method19511(Direction.Y), var1.method19511(Direction.Y), var5, var6);
+                  Class56 var7 = method27445(1, var0.method19511(Direction.Axis.X), var1.method19511(Direction.Axis.X), var5, var6);
+                  Class56 var8 = method27445(var7.method194().size() - 1, var0.method19511(Direction.Axis.Y), var1.method19511(Direction.Axis.Y), var5, var6);
                   Class56 var9 = method27445(
                      (var7.method194().size() - 1) * (var8.method194().size() - 1),
-                     var0.method19511(Direction.Z),
-                     var1.method19511(Direction.Z),
+                     var0.method19511(Direction.Axis.Z),
+                     var1.method19511(Direction.Axis.Z),
                      var5,
                      var6
                   );
@@ -171,7 +173,7 @@ public final class VoxelShapes {
          boolean var5 = var2.method36569(true, false);
          boolean var6 = var2.method36569(false, true);
 
-         for (Direction var10 : Class2321.field15907) {
+         for (Direction.Axis var10 : Class2321.field15907) {
             if (var0.getEnd(var10) < var1.getStart(var10) - 1.0E-7) {
                return var5 || var6;
             }
@@ -181,12 +183,12 @@ public final class VoxelShapes {
             }
          }
 
-         Class56 var11 = method27445(1, var0.method19511(Direction.X), var1.method19511(Direction.X), var5, var6);
-         Class56 var12 = method27445(var11.method194().size() - 1, var0.method19511(Direction.Y), var1.method19511(Direction.Y), var5, var6);
+         Class56 var11 = method27445(1, var0.method19511(Direction.Axis.X), var1.method19511(Direction.Axis.X), var5, var6);
+         Class56 var12 = method27445(var11.method194().size() - 1, var0.method19511(Direction.Axis.Y), var1.method19511(Direction.Axis.Y), var5, var6);
          Class56 var13 = method27445(
             (var11.method194().size() - 1) * (var12.method194().size() - 1),
-            var0.method19511(Direction.Z),
-            var1.method19511(Direction.Z),
+            var0.method19511(Direction.Axis.Z),
+            var1.method19511(Direction.Axis.Z),
             var5,
             var6
          );
@@ -204,7 +206,7 @@ public final class VoxelShapes {
       );
    }
 
-   public static double method27437(Direction var0, AxisAlignedBB var1, Stream<VoxelShape> var2, double var3) {
+   public static double method27437(Direction.Axis var0, AxisAlignedBB var1, Stream<VoxelShape> var2, double var3) {
       Iterator var7 = var2.iterator();
 
       while (var7.hasNext()) {
@@ -218,8 +220,8 @@ public final class VoxelShapes {
       return var3;
    }
 
-   public static double method27438(Direction var0, AxisAlignedBB var1, IWorldReader var2, double var3, ISelectionContext var5, Stream<VoxelShape> var6, boolean var7) {
-      return method27439(var1, var2, var3, var5, Class2321.method9101(var0, Direction.Z), var6, var7);
+   public static double method27438(Direction.Axis var0, AxisAlignedBB var1, IWorldReader var2, double var3, ISelectionContext var5, Stream<VoxelShape> var6, boolean var7) {
+      return method27439(var1, var2, var3, var5, Class2321.method9101(var0, Direction.Axis.Z), var6, var7);
    }
 
    private static double method27439(AxisAlignedBB var0, IWorldReader var1, double var2, ISelectionContext var4, Class2321 var5, Stream<VoxelShape> var6, boolean var7) {
@@ -229,9 +231,9 @@ public final class VoxelShapes {
          return 0.0;
       } else {
          Class2321 var10 = var5.method9100();
-         Direction var11 = var10.method9099(Direction.X);
-         Direction var12 = var10.method9099(Direction.Y);
-         Direction var13 = var10.method9099(Direction.Z);
+         Direction.Axis var11 = var10.method9099(Direction.Axis.X);
+         Direction.Axis var12 = var10.method9099(Direction.Axis.Y);
+         Direction.Axis var13 = var10.method9099(Direction.Axis.Z);
          BlockPos.Mutable var14 = new BlockPos.Mutable();
          int var15 = MathHelper.floor(var0.method19658(var11) - 1.0E-7) - 1;
          int var16 = MathHelper.floor(var0.method19659(var11) + 1.0E-7) + 1;
@@ -295,15 +297,15 @@ public final class VoxelShapes {
       return !(var0 > 0.0) ? MathHelper.floor(var2 + var0) - 1 : MathHelper.floor(var4 + var0) + 1;
    }
 
-   public static boolean method27441(VoxelShape var0, VoxelShape var1, net.minecraft.util.Direction var2) {
+   public static boolean method27441(VoxelShape var0, VoxelShape var1, Direction var2) {
       if (var0 == method27426() && var1 == method27426()) {
          return true;
       } else if (!var1.isEmpty()) {
-         Direction var5 = var2.getAxis();
-         Class1892 var6 = var2.getAxisDirection();
-         VoxelShape var7 = var6 != Class1892.field11092 ? var1 : var0;
-         VoxelShape var8 = var6 != Class1892.field11092 ? var0 : var1;
-         IBooleanFunction var9 = var6 != Class1892.field11092 ? IBooleanFunction.field44039 : IBooleanFunction.ONLY_FIRST;
+         Direction.Axis var5 = var2.getAxis();
+         Direction.AxisDirection var6 = var2.getAxisDirection();
+         VoxelShape var7 = var6 != Direction.AxisDirection.POSITIVE ? var1 : var0;
+         VoxelShape var8 = var6 != Direction.AxisDirection.POSITIVE ? var0 : var1;
+         IBooleanFunction var9 = var6 != Direction.AxisDirection.POSITIVE ? IBooleanFunction.field44039 : IBooleanFunction.ONLY_FIRST;
          return DoubleMath.fuzzyEquals(var7.getEnd(var5), 1.0, 1.0E-7)
             && DoubleMath.fuzzyEquals(var8.getStart(var5), 0.0, 1.0E-7)
             && ! compare(new Class6407(var7, var5, var7.field28033.method26732(var5) - 1), new Class6407(var8, var5, 0), var9);
@@ -312,12 +314,12 @@ public final class VoxelShapes {
       }
    }
 
-   public static VoxelShape method27442(VoxelShape var0, net.minecraft.util.Direction var1) {
+   public static VoxelShape method27442(VoxelShape var0, Direction var1) {
       if (var0 != method27426()) {
-         Direction var4 = var1.getAxis();
+         Direction.Axis var4 = var1.getAxis();
          boolean var5;
          int var6;
-         if (var1.getAxisDirection() != Class1892.field11092) {
+         if (var1.getAxisDirection() != Direction.AxisDirection.POSITIVE) {
             var5 = DoubleMath.fuzzyEquals(var0.getStart(var4), 0.0, 1.0E-7);
             var6 = 0;
          } else {
@@ -331,12 +333,12 @@ public final class VoxelShapes {
       }
    }
 
-   public static boolean method27443(VoxelShape var0, VoxelShape var1, net.minecraft.util.Direction var2) {
+   public static boolean method27443(VoxelShape var0, VoxelShape var1, Direction var2) {
       if (var0 != method27426() && var1 != method27426()) {
-         Direction var5 = var2.getAxis();
-         Class1892 var6 = var2.getAxisDirection();
-         VoxelShape var7 = var6 != Class1892.field11092 ? var1 : var0;
-         VoxelShape var8 = var6 != Class1892.field11092 ? var0 : var1;
+         Direction.Axis var5 = var2.getAxis();
+         Direction.AxisDirection var6 = var2.getAxisDirection();
+         VoxelShape var7 = var6 != Direction.AxisDirection.POSITIVE ? var1 : var0;
+         VoxelShape var8 = var6 != Direction.AxisDirection.POSITIVE ? var0 : var1;
          if (!DoubleMath.fuzzyEquals(var7.getEnd(var5), 1.0, 1.0E-7)) {
             var7 = method27425();
          }

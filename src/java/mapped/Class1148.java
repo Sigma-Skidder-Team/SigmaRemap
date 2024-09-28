@@ -8,6 +8,8 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.network.play.client.CUpdateStructureBlockPacket;
+import net.minecraft.state.properties.StructureMode;
+import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
@@ -29,9 +31,9 @@ public class Class1148 extends Screen {
    private static final ITextComponent field6246 = new TranslationTextComponent("structure_block.show_air");
    private static final ITextComponent field6247 = new TranslationTextComponent("structure_block.show_boundingbox");
    private final Class964 field6248;
-   private Class2089 field6249 = Class2089.field13614;
+   private Mirror field6249 = Mirror.field13614;
    private Rotation field6250 = Rotation.field185;
-   private Class104 field6251 = Class104.field321;
+   private StructureMode field6251 = StructureMode.field321;
    private boolean field6252;
    private boolean field6253;
    private boolean field6254;
@@ -104,7 +106,7 @@ public class Class1148 extends Screen {
       this.field6266 = this.<Button>addButton(new Button(this.width / 2 + 4, 210, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.method5501()));
       this.field6267 = this.<Button>addButton(
          new Button(this.width / 2 + 4 + 100, 185, 50, 20, new TranslationTextComponent("structure_block.button.save"), var1 -> {
-            if (this.field6248.method3950() == Class104.field318) {
+            if (this.field6248.method3950() == StructureMode.field318) {
                this.method5508(Class1897.field11139);
                this.mc.displayGuiScreen((Screen)null);
             }
@@ -112,7 +114,7 @@ public class Class1148 extends Screen {
       );
       this.field6268 = this.<Button>addButton(
          new Button(this.width / 2 + 4 + 100, 185, 50, 20, new TranslationTextComponent("structure_block.button.load"), var1 -> {
-            if (this.field6248.method3950() == Class104.field319) {
+            if (this.field6248.method3950() == StructureMode.field319) {
                this.method5508(Class1897.field11140);
                this.mc.displayGuiScreen((Screen)null);
             }
@@ -124,7 +126,7 @@ public class Class1148 extends Screen {
       }));
       this.field6274 = this.<Button>addButton(
          new Button(this.width / 2 + 4 + 100, 120, 50, 20, new TranslationTextComponent("structure_block.button.detect_size"), var1 -> {
-            if (this.field6248.method3950() == Class104.field318) {
+            if (this.field6248.method3950() == StructureMode.field318) {
                this.method5508(Class1897.field11141);
                this.mc.displayGuiScreen((Screen)null);
             }
@@ -137,13 +139,13 @@ public class Class1148 extends Screen {
       this.field6276 = this.<Button>addButton(new Button(this.width / 2 - 20, 185, 40, 20, new StringTextComponent("MIRROR"), var1 -> {
          switch (Class9686.field45294[this.field6248.method3944().ordinal()]) {
             case 1:
-               this.field6248.method3945(Class2089.field13615);
+               this.field6248.method3945(Mirror.field13615);
                break;
             case 2:
-               this.field6248.method3945(Class2089.field13616);
+               this.field6248.method3945(Mirror.field13616);
                break;
             case 3:
-               this.field6248.method3945(Class2089.field13614);
+               this.field6248.method3945(Mirror.field13614);
          }
 
          this.method5505();
@@ -274,7 +276,7 @@ public class Class1148 extends Screen {
    }
 
    private void method5505() {
-      Class2089 var3 = this.field6248.method3944();
+      Mirror var3 = this.field6248.method3944();
       switch (Class9686.field45294[var3.ordinal()]) {
          case 1:
             this.field6276.setMessage(new StringTextComponent("|"));
@@ -448,14 +450,14 @@ public class Class1148 extends Screen {
    @Override
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.renderBackground(var1);
-      Class104 var7 = this.field6248.method3950();
+      StructureMode var7 = this.field6248.method3950();
       drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2, 10, 16777215);
-      if (var7 != Class104.field321) {
+      if (var7 != StructureMode.field321) {
          method5693(var1, this.fontRenderer, field6239, this.width / 2 - 153, 30, 10526880);
          this.field6255.render(var1, var2, var3, var4);
       }
 
-      if (var7 == Class104.field319 || var7 == Class104.field318) {
+      if (var7 == StructureMode.field319 || var7 == StructureMode.field318) {
          method5693(var1, this.fontRenderer, field6240, this.width / 2 - 153, 70, 10526880);
          this.field6256.render(var1, var2, var3, var4);
          this.field6257.render(var1, var2, var3, var4);
@@ -463,7 +465,7 @@ public class Class1148 extends Screen {
          method5693(var1, this.fontRenderer, field6244, this.width / 2 + 154 - this.fontRenderer.method38821(field6244), 150, 10526880);
       }
 
-      if (var7 == Class104.field318) {
+      if (var7 == StructureMode.field318) {
          method5693(var1, this.fontRenderer, field6241, this.width / 2 - 153, 110, 10526880);
          this.field6259.render(var1, var2, var3, var4);
          this.field6260.render(var1, var2, var3, var4);
@@ -472,14 +474,14 @@ public class Class1148 extends Screen {
          method5693(var1, this.fontRenderer, field6246, this.width / 2 + 154 - this.fontRenderer.method38821(field6246), 70, 10526880);
       }
 
-      if (var7 == Class104.field319) {
+      if (var7 == StructureMode.field319) {
          method5693(var1, this.fontRenderer, field6242, this.width / 2 - 153, 110, 10526880);
          this.field6262.render(var1, var2, var3, var4);
          this.field6263.render(var1, var2, var3, var4);
          method5693(var1, this.fontRenderer, field6247, this.width / 2 + 154 - this.fontRenderer.method38821(field6247), 70, 10526880);
       }
 
-      if (var7 == Class104.field321) {
+      if (var7 == StructureMode.field321) {
          method5693(var1, this.fontRenderer, field6243, this.width / 2 - 153, 110, 10526880);
          this.field6264.render(var1, var2, var3, var4);
       }

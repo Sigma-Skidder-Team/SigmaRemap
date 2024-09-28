@@ -100,7 +100,7 @@ public class Class7212 {
       int var6 = var1 >> 8 & 15;
       if (var6 != 0) {
          if (var6 == 15) {
-            var2.add(Direction.field673);
+            var2.add(Direction.UP);
          }
       } else {
          var2.add(Direction.DOWN);

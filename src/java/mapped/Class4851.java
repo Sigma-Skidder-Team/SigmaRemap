@@ -13,7 +13,7 @@ public class Class4851 extends Class4847 {
 
    @Override
    public ItemStack method14971() {
-      return new ItemStack(Blocks.field37057);
+      return new ItemStack(Blocks.BLAST_FURNACE);
    }
 
    @Override

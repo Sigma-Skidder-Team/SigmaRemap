@@ -8,10 +8,13 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -21,14 +24,14 @@ import javax.annotation.Nullable;
 
 public class Class3441 extends Block {
    private static String[] field19240;
-   private static final VoxelShape field19241 = Block.method11539(3.0, 0.0, 3.0, 12.0, 7.0, 12.0);
-   private static final VoxelShape field19242 = Block.method11539(1.0, 0.0, 1.0, 15.0, 7.0, 15.0);
-   public static final Class8554 field19243 = Class8820.field39749;
-   public static final Class8554 field19244 = Class8820.field39748;
+   private static final VoxelShape field19241 = Block.makeCuboidShape(3.0, 0.0, 3.0, 12.0, 7.0, 12.0);
+   private static final VoxelShape field19242 = Block.makeCuboidShape(1.0, 0.0, 1.0, 15.0, 7.0, 15.0);
+   public static final IntegerProperty field19243 = BlockStateProperties.field39749;
+   public static final IntegerProperty field19244 = BlockStateProperties.field39748;
 
-   public Class3441(AbstractBlock var1) {
+   public Class3441(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().method23465(field19243, Integer.valueOf(0)).method23465(field19244, Integer.valueOf(1)));
+      this.method11578(this.field18612.method35393().with(field19243, Integer.valueOf(0)).with(field19244, Integer.valueOf(1)));
    }
 
    @Override
@@ -57,9 +60,9 @@ public class Class3441 extends Block {
 
    private void method12113(World var1, BlockPos var2, BlockState var3) {
       var1.method6742((PlayerEntity)null, var2, SoundEvents.field27167, Class2266.field14732, 0.7F, 0.9F + var1.rand.nextFloat() * 0.2F);
-      int var6 = var3.<Integer>method23463(field19244);
+      int var6 = var3.<Integer>get(field19244);
       if (var6 > 1) {
-         var1.setBlockState(var2, var3.method23465(field19244, Integer.valueOf(var6 - 1)), 2);
+         var1.setBlockState(var2, var3.with(field19244, Integer.valueOf(var6 - 1)), 2);
          var1.playEvent(2001, var2, Block.getStateId(var3));
       } else {
          var1.method7179(var2, false);
@@ -69,12 +72,12 @@ public class Class3441 extends Block {
    @Override
    public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (this.method12116(var2) && method12114(var2, var3)) {
-         int var7 = var1.<Integer>method23463(field19243);
+         int var7 = var1.<Integer>get(field19243);
          if (var7 >= 2) {
             var2.method6742((PlayerEntity)null, var3, SoundEvents.field27169, Class2266.field14732, 0.7F, 0.9F + var4.nextFloat() * 0.2F);
             var2.removeBlock(var3, false);
 
-            for (int var8 = 0; var8 < var1.<Integer>method23463(field19244); var8++) {
+            for (int var8 = 0; var8 < var1.<Integer>get(field19244); var8++) {
                var2.playEvent(2001, var3, Block.getStateId(var1));
                Class1088 var9 = EntityType.field41096.create(var2);
                var9.method4770(-24000);
@@ -84,7 +87,7 @@ public class Class3441 extends Block {
             }
          } else {
             var2.method6742((PlayerEntity)null, var3, SoundEvents.field27168, Class2266.field14732, 0.7F, 0.9F + var4.nextFloat() * 0.2F);
-            var2.setBlockState(var3, var1.method23465(field19243, Integer.valueOf(var7 + 1)), 2);
+            var2.setBlockState(var3, var1.with(field19243, Integer.valueOf(var7 + 1)), 2);
          }
       }
    }
@@ -117,7 +120,7 @@ public class Class3441 extends Block {
 
    @Override
    public boolean method11497(BlockState var1, Class5909 var2) {
-      return var2.method18357().getItem() == this.method11581() && var1.<Integer>method23463(field19244) < 4 ? true : super.method11497(var1, var2);
+      return var2.method18357().getItem() == this.method11581() && var1.<Integer>get(field19244) < 4 ? true : super.method11497(var1, var2);
    }
 
    @Nullable
@@ -126,12 +129,12 @@ public class Class3441 extends Block {
       BlockState var4 = var1.method18360().getBlockState(var1.method18345());
       return !var4.isIn(this)
          ? super.method11495(var1)
-         : var4.method23465(field19244, Integer.valueOf(Math.min(4, var4.<Integer>method23463(field19244) + 1)));
+         : var4.with(field19244, Integer.valueOf(Math.min(4, var4.<Integer>get(field19244) + 1)));
    }
 
    @Override
    public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
-      return var1.<Integer>method23463(field19244) <= 1 ? field19241 : field19242;
+      return var1.<Integer>get(field19244) <= 1 ? field19241 : field19242;
    }
 
    @Override

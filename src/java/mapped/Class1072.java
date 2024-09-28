@@ -166,7 +166,7 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
    @Override
    public Vector3d method3420(LivingEntity var1) {
       net.minecraft.util.Direction var4 = this.method3387();
-      if (var4.getAxis() == Direction.Y) {
+      if (var4.getAxis() == Direction.Axis.Y) {
          return super.method3420(var1);
       } else {
          int[][] var5 = Class4527.method14422(var4);

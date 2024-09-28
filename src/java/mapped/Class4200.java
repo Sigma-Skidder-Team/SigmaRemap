@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.Blocks;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.state.properties.SlabType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
@@ -119,11 +120,11 @@ public class Class4200 extends Class4194 {
          7,
          5,
          9,
-         Blocks.field36846.method11579().method23465(Class3208.field18605, Class86.field220),
-         Blocks.field36846.method11579().method23465(Class3208.field18605, Class86.field220),
+         Blocks.field36846.method11579().with(Class3208.field18605, SlabType.field220),
+         Blocks.field36846.method11579().with(Class3208.field18605, SlabType.field220),
          false
       );
-      this.method12923(var1, Blocks.WALL_TORCH.method11579().method23465(Class3382.field18985, Direction.SOUTH), 6, 5, 6, var5);
+      this.method12923(var1, Blocks.WALL_TORCH.method11579().with(Class3382.field18985, Direction.SOUTH), 6, 5, 6, var5);
       return true;
    }
 }

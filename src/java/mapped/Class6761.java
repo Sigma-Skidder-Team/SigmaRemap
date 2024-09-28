@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -123,7 +124,7 @@ public class Class6761 extends Class6762 {
       } else {
          BlockPos var4 = var1.down();
          VoxelShape var5 = this.field29475.getBlockState(var4).method23414(this.field29475, var4);
-         return (double)var4.getY() + (!var5.isEmpty() ? var5.getEnd(Direction.Y) : 0.0);
+         return (double)var4.getY() + (!var5.isEmpty() ? var5.getEnd(Direction.Axis.Y) : 0.0);
       }
    }
 
@@ -265,7 +266,7 @@ public class Class6761 extends Class6762 {
 
          return var8;
       } else {
-         for (net.minecraft.util.Direction var12 : net.minecraft.util.Direction.values()) {
+         for (Direction var12 : Direction.values()) {
             Class2163 var13 = method20635(var1, var7.method8372(var2, var3, var4).method8379(var12));
             if (var13 == Class2163.field14184) {
                return Class2163.field14192;

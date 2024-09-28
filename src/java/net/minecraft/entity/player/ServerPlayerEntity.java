@@ -6,6 +6,7 @@ import com.mojang.datafixers.util.Either;
 import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.HorizontalBlock;
 import net.minecraft.client.util.Util;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
@@ -28,6 +29,7 @@ import net.minecraft.scoreboard.Team;
 import net.minecraft.tileentity.CommandBlockTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -637,7 +639,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
    public Optional<TeleportationRepositioner> method2747(ServerWorld var1, BlockPos var2, boolean var3) {
       Optional var6 = super.method2747(var1, var2, var3);
       if (!var6.isPresent()) {
-         mapped.Direction var7 = this.world.getBlockState(this.field_242271_ac).<mapped.Direction>method23464(Class3401.field19060).orElse(mapped.Direction.X);
+         Direction.Axis var7 = this.world.getBlockState(this.field_242271_ac).<Direction.Axis>method23464(Class3401.field19060).orElse(Direction.Axis.X);
          Optional var8 = var1.method6937().method12332(var2, var7);
          if (!var8.isPresent()) {
             field4854.error("Unable to create a portal, likely target out of worldborder");
@@ -688,7 +690,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
 
    @Override
    public Either<Class2104, Class2341> method2752(BlockPos var1) {
-      net.minecraft.util.Direction var4 = this.world.getBlockState(var1).<net.minecraft.util.Direction>method23463(Class3198.field18484);
+      Direction var4 = this.world.getBlockState(var1).<Direction>get(HorizontalBlock.HORIZONTAL_FACING);
       if (this.isSleeping() || !this.isAlive()) {
          return Either.left(Class2104.field13718);
       } else if (!this.world.method6812().isNatural()) {
@@ -740,8 +742,8 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
       super.startSleeping(var1);
    }
 
-   private boolean method2754(BlockPos var1, net.minecraft.util.Direction var2) {
-      return this.method2755(var1) || this.method2755(var1.method8349(var2.method536()));
+   private boolean method2754(BlockPos var1, Direction var2) {
+      return this.method2755(var1) || this.method2755(var1.method8349(var2.getOpposite()));
    }
 
    private boolean method2755(BlockPos var1) {
@@ -751,9 +753,9 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
          && Math.abs(this.getPosZ() - var4.getZ()) <= 3.0;
    }
 
-   private boolean method2756(BlockPos var1, net.minecraft.util.Direction var2) {
+   private boolean method2756(BlockPos var1, Direction var2) {
       BlockPos var5 = var1.up();
-      return !this.method2917(var5) || !this.method2917(var5.method8349(var2.method536()));
+      return !this.method2917(var5) || !this.method2917(var5.method8349(var2.getOpposite()));
    }
 
    @Override

@@ -179,7 +179,7 @@ public class SimpleRegistry<T> extends MutableRegistry<T> {
          this.field16148 = var4.<Object>toArray(new Object[var4.size()]);
       }
 
-      return Util.<T>method38518((T[])this.field16148, var1);
+      return Util.<T>getRandomObject((T[])this.field16148, var1);
    }
 
    @Override

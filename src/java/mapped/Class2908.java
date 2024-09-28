@@ -62,7 +62,7 @@ public class Class2908 extends Class2898<Class4738> {
       } else {
          for (Direction var9 : field17992) {
             boolean var10 = var0.getBlockState(var1.method8349(var9)).isAir();
-            if (var10 && var9 != Direction.field673 || !var10 && var9 == Direction.field673) {
+            if (var10 && var9 != Direction.UP || !var10 && var9 == Direction.UP) {
                return false;
             }
          }

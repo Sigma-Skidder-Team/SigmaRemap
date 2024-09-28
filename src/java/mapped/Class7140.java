@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.state.BooleanProperty;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
 
@@ -51,7 +52,7 @@ public class Class7140 extends Class7139 {
       });
    }
 
-   private void method22275(Class1679 var1, BlockPos var2, Class8551 var3, Set<BlockPos> var4, Class9764 var5) {
+   private void method22275(Class1679 var1, BlockPos var2, BooleanProperty var3, Set<BlockPos> var4, Class9764 var5) {
       this.method22273(var1, var2, var3, var4, var5);
       int var8 = 4;
 

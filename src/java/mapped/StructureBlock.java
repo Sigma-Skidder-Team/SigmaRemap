@@ -5,6 +5,9 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.state.EnumProperty;
+import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraft.state.properties.StructureMode;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
@@ -16,9 +19,9 @@ import net.minecraft.world.server.ServerWorld;
 
 public class StructureBlock extends Class3241 {
    private static String[] field18937;
-   public static final Class8552<Class104> field18938 = Class8820.field39772;
+   public static final EnumProperty<StructureMode> field18938 = BlockStateProperties.field39772;
 
-   public StructureBlock(AbstractBlock var1) {
+   public StructureBlock(Properties var1) {
       super(var1);
    }
 
@@ -54,7 +57,7 @@ public class StructureBlock extends Class3241 {
 
    @Override
    public BlockState method11495(Class5909 var1) {
-      return this.method11579().method23465(field18938, Class104.field321);
+      return this.method11579().with(field18938, StructureMode.field321);
    }
 
    @Override

@@ -8,9 +8,11 @@ import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.EnumSet;
+
+import net.minecraft.util.Direction;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class Class9560 implements ArgumentType<EnumSet<Direction>> {
+public class Class9560 implements ArgumentType<EnumSet<Direction.Axis>> {
    private static final Collection<String> field44530 = Arrays.<String>asList("xyz", "x");
    private static final SimpleCommandExceptionType field44531 = new SimpleCommandExceptionType(new TranslationTextComponent("arguments.swizzle.invalid"));
 
@@ -18,25 +20,25 @@ public class Class9560 implements ArgumentType<EnumSet<Direction>> {
       return new Class9560();
    }
 
-   public static EnumSet<Direction> method37041(CommandContext<Class6619> var0, String var1) {
-      return (EnumSet<Direction>)var0.getArgument(var1, EnumSet.class);
+   public static EnumSet<Direction.Axis> method37041(CommandContext<Class6619> var0, String var1) {
+      return (EnumSet<Direction.Axis>)var0.getArgument(var1, EnumSet.class);
    }
 
-   public EnumSet<Direction> parse(StringReader var1) throws CommandSyntaxException {
-      EnumSet var4 = EnumSet.<Direction>noneOf(Direction.class);
+   public EnumSet<Direction.Axis> parse(StringReader var1) throws CommandSyntaxException {
+      EnumSet var4 = EnumSet.<Direction.Axis>noneOf(Direction.Axis.class);
 
       while (var1.canRead() && var1.peek() != ' ') {
          char var5 = var1.read();
-         Direction var6;
+         Direction.Axis var6;
          switch (var5) {
             case 'x':
-               var6 = Direction.X;
+               var6 = Direction.Axis.X;
                break;
             case 'y':
-               var6 = Direction.Y;
+               var6 = Direction.Axis.Y;
                break;
             case 'z':
-               var6 = Direction.Z;
+               var6 = Direction.Axis.Z;
                break;
             default:
                throw field44531.create();

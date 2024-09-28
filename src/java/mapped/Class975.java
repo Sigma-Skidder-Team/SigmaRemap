@@ -26,12 +26,12 @@ public class Class975 extends Class927 implements Class930 {
 
    @Override
    public int[] method3653(Direction var1) {
-      return var1 != Direction.field673 ? new int[0] : new int[]{0};
+      return var1 != Direction.UP ? new int[0] : new int[]{0};
    }
 
    @Override
    public boolean method3654(int var1, ItemStack var2, Direction var3) {
-      return !this.field5450 && var3 == Direction.field673 && Class3475.field19327.containsKey(var2.getItem());
+      return !this.field5450 && var3 == Direction.UP && Class3475.field19327.containsKey(var2.getItem());
    }
 
    @Override

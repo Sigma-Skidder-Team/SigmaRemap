@@ -33,6 +33,7 @@ import net.minecraft.scoreboard.Team;
 import net.minecraft.tileentity.CommandBlockTileEntity;
 import net.minecraft.tileentity.JigsawTileEntity;
 import net.minecraft.util.*;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -1294,10 +1295,10 @@ public abstract class PlayerEntity extends LivingEntity {
    public static Optional<Vector3d> method2908(ServerWorld var0, BlockPos var1, float var2, boolean var3, boolean var4) {
       BlockState var7 = var0.getBlockState(var1);
       Block var8 = var7.getBlock();
-      if (var8 instanceof Class3389 && var7.<Integer>method23463(Class3389.field19000) > 0 && Class3389.method11988(var0)) {
+      if (var8 instanceof Class3389 && var7.<Integer>get(Class3389.field19000) > 0 && Class3389.method11988(var0)) {
          Optional var11 = Class3389.method11991(EntityType.PLAYER, var0, var1);
          if (!var4 && var11.isPresent()) {
-            var0.setBlockState(var1, var7.method23465(Class3389.field19000, Integer.valueOf(var7.<Integer>method23463(Class3389.field19000) - 1)), 3);
+            var0.setBlockState(var1, var7.with(Class3389.field19000, Integer.valueOf(var7.<Integer>get(Class3389.field19000) - 1)), 3);
          }
 
          return var11;
@@ -1646,9 +1647,9 @@ public abstract class PlayerEntity extends LivingEntity {
       return this.abilities.allowEdit;
    }
 
-   public boolean method2936(BlockPos var1, net.minecraft.util.Direction var2, ItemStack var3) {
+   public boolean method2936(BlockPos var1, Direction var2, ItemStack var3) {
       if (!this.abilities.allowEdit) {
-         BlockPos var6 = var1.method8349(var2.method536());
+         BlockPos var6 = var1.method8349(var2.getOpposite());
          CachedBlockInfo var7 = new CachedBlockInfo(this.world, var6, false);
          return var3.method32176(this.world.method6817(), var7);
       } else {

@@ -6,12 +6,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.IItemProvider;
+import net.minecraft.util.ObjectIntIdentityMap;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IBlockDisplayReader;
 
 public class ItemColors {
-   private final Class2352<Class7216> field41160 = new Class2352<Class7216>(32);
+   private final ObjectIntIdentityMap<Class7216> field41160 = new ObjectIntIdentityMap<Class7216>(32);
 
    public static ItemColors init(BlockColors var0) {
       ItemColors var3 = new ItemColors();

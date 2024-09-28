@@ -2,31 +2,33 @@ package mapped;
 
 import java.util.Random;
 
+import net.minecraft.block.HorizontalBlock;
+import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.DirectionProperty;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.container.ChestContainer;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Direction;
-import net.minecraft.util.Hand;
-import net.minecraft.util.Rotation;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 public class Class3347 extends Class3346<Class943> implements Class3207 {
-   public static final Class8553 field18860 = Class3198.field18484;
-   public static final Class8551 field18861 = Class8820.field39710;
-   public static final VoxelShape field18862 = Block.method11539(1.0, 0.0, 1.0, 15.0, 14.0, 15.0);
+   public static final DirectionProperty field18860 = HorizontalBlock.HORIZONTAL_FACING;
+   public static final BooleanProperty field18861 = BlockStateProperties.field39710;
+   public static final VoxelShape field18862 = Block.makeCuboidShape(1.0, 0.0, 1.0, 15.0, 14.0, 15.0);
    private static final ITextComponent field18863 = new TranslationTextComponent("container.enderchest");
 
-   public Class3347(AbstractBlock var1) {
+   public Class3347(Properties var1) {
       super(var1, () -> TileEntityType.field21424);
-      this.method11578(this.field18612.method35393().method23465(field18860, Direction.NORTH).method23465(field18861, Boolean.valueOf(false)));
+      this.method11578(this.field18612.method35393().with(field18860, Direction.NORTH).with(field18861, Boolean.valueOf(false)));
    }
 
    @Override
@@ -48,8 +50,8 @@ public class Class3347 extends Class3346<Class943> implements Class3207 {
    public BlockState method11495(Class5909 var1) {
       FluidState var4 = var1.method18360().getFluidState(var1.method18345());
       return this.method11579()
-         .method23465(field18860, var1.method18350().method536())
-         .method23465(field18861, Boolean.valueOf(var4.method23472() == Class9479.field44066));
+         .with(field18860, var1.method18350().getOpposite())
+         .with(field18861, Boolean.valueOf(var4.method23472() == Class9479.field44066));
    }
 
    @Override
@@ -96,13 +98,13 @@ public class Class3347 extends Class3346<Class943> implements Class3207 {
    }
 
    @Override
-   public BlockState method11500(BlockState var1, Rotation var2) {
-      return var1.method23465(field18860, var2.method252(var1.<Direction>method23463(field18860)));
+   public BlockState rotate(BlockState var1, Rotation var2) {
+      return var1.with(field18860, var2.rotate(var1.<Direction>get(field18860)));
    }
 
    @Override
-   public BlockState method11501(BlockState var1, Class2089 var2) {
-      return var1.method23395(var2.method8749(var1.<Direction>method23463(field18860)));
+   public BlockState mirror(BlockState var1, Mirror var2) {
+      return var1.rotate(var2.toRotation(var1.<Direction>get(field18860)));
    }
 
    @Override
@@ -112,12 +114,12 @@ public class Class3347 extends Class3346<Class943> implements Class3207 {
 
    @Override
    public FluidState method11498(BlockState var1) {
-      return !var1.<Boolean>method23463(field18861) ? super.method11498(var1) : Class9479.field44066.method25078(false);
+      return !var1.<Boolean>get(field18861) ? super.method11498(var1) : Class9479.field44066.method25078(false);
    }
 
    @Override
    public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
-      if (var1.<Boolean>method23463(field18861)) {
+      if (var1.<Boolean>get(field18861)) {
          var4.method6861().method20726(var5, Class9479.field44066, Class9479.field44066.method25057(var4));
       }
 

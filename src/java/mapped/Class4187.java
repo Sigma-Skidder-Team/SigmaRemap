@@ -4,6 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.Mirror;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
@@ -15,13 +16,13 @@ import java.util.Random;
 public class Class4187 extends Class4180 {
    private final String field20476;
    private final Rotation field20477;
-   private final Class2089 field20478;
+   private final Mirror field20478;
 
    public Class4187(TemplateManager var1, String var2, BlockPos var3, Rotation var4) {
-      this(var1, var2, var3, var4, Class2089.field13614);
+      this(var1, var2, var3, var4, Mirror.field13614);
    }
 
-   public Class4187(TemplateManager var1, String var2, BlockPos var3, Rotation var4, Class2089 var5) {
+   public Class4187(TemplateManager var1, String var2, BlockPos var3, Rotation var4, Mirror var5) {
       super(Class7792.field33476, 0);
       this.field20476 = var2;
       this.field20455 = var3;
@@ -34,7 +35,7 @@ public class Class4187 extends Class4180 {
       super(Class7792.field33476, var2);
       this.field20476 = var2.getString("Template");
       this.field20477 = Rotation.valueOf(var2.getString("Rot"));
-      this.field20478 = Class2089.valueOf(var2.getString("Mi"));
+      this.field20478 = Mirror.valueOf(var2.getString("Mi"));
       this.method12966(var1);
    }
 
@@ -58,13 +59,13 @@ public class Class4187 extends Class4180 {
          Rotation var8 = this.field20454.method36437();
          BlockState var9 = Blocks.CHEST.method11579();
          if ("ChestWest".equals(var1)) {
-            var9 = var9.method23465(Class3348.field18865, var8.method252(Direction.WEST));
+            var9 = var9.with(Class3348.field18865, var8.rotate(Direction.WEST));
          } else if ("ChestEast".equals(var1)) {
-            var9 = var9.method23465(Class3348.field18865, var8.method252(Direction.EAST));
+            var9 = var9.with(Class3348.field18865, var8.rotate(Direction.EAST));
          } else if ("ChestSouth".equals(var1)) {
-            var9 = var9.method23465(Class3348.field18865, var8.method252(Direction.SOUTH));
+            var9 = var9.with(Class3348.field18865, var8.rotate(Direction.SOUTH));
          } else if ("ChestNorth".equals(var1)) {
-            var9 = var9.method23465(Class3348.field18865, var8.method252(Direction.NORTH));
+            var9 = var9.with(Class3348.field18865, var8.rotate(Direction.NORTH));
          }
 
          this.method12935(var3, var5, var4, var2, Class8793.field39562, var9);

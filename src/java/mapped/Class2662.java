@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.state.IntegerProperty;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.math.BlockPos;
 
@@ -37,19 +38,19 @@ public class Class2662 extends Class2661 {
             BlockState var5 = this.field17022.world.getBlockState(var4);
             Block var6 = var5.getBlock();
             boolean var7 = false;
-            Class8554 var8 = null;
+            IntegerProperty var8 = null;
             if (var6.isIn(BlockTags.field32796)) {
                if (!(var6 instanceof Class3480)) {
                   if (!(var6 instanceof Class3486)) {
                      if (var6 == Blocks.field37069) {
-                        int var9 = var5.<Integer>method23463(Class3484.field19342);
+                        int var9 = var5.<Integer>get(Class3484.field19342);
                         if (var9 < 3) {
                            var7 = true;
                            var8 = Class3484.field19342;
                         }
                      }
                   } else {
-                     int var10 = var5.<Integer>method23463(Class3486.field19347);
+                     int var10 = var5.<Integer>get(Class3486.field19347);
                      if (var10 < 7) {
                         var7 = true;
                         var8 = Class3486.field19347;
@@ -65,7 +66,7 @@ public class Class2662 extends Class2661 {
 
                if (var7) {
                   this.field17022.world.playEvent(2005, var4, 0);
-                  this.field17022.world.setBlockState(var4, var5.method23465(var8, Integer.valueOf(var5.<Integer>method23463(var8) + 1)));
+                  this.field17022.world.setBlockState(var4, var5.with(var8, Integer.valueOf(var5.<Integer>get(var8) + 1)));
                   Class1017.method4480(this.field17022);
                }
             }

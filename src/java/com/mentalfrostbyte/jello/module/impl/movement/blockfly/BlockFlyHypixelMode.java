@@ -50,11 +50,11 @@ public class BlockFlyHypixelMode extends Module {
         double var4 = (double) var0.getX() + 0.5;
         double var6 = (double) var0.getY() + 0.5;
         double var8 = (double) var0.getZ() + 0.5;
-        var4 += (double) var1.method539() / 2.0;
-        var8 += (double) var1.method541() / 2.0;
-        var6 += (double) var1.method540() / 2.0;
+        var4 += (double) var1.getXOffset() / 2.0;
+        var8 += (double) var1.getZOffset() / 2.0;
+        var6 += (double) var1.getYOffset() / 2.0;
         double var10 = 0.2;
-        if (var1 != Direction.field673 && var1 != Direction.DOWN) {
+        if (var1 != Direction.UP && var1 != Direction.DOWN) {
             var6 += method16117(var10, -var10);
         } else {
             var4 += method16117(var10, -var10);
@@ -238,9 +238,9 @@ public class BlockFlyHypixelMode extends Module {
                             float[] var13 = BlockUtil.method34542(this.field23468.field33646, this.field23468.field33647);
                             if ((double) var12.field33646.field13028 - mc.player.getPosY() < 0.0) {
                                 double var14 = mc.player.getPosX()
-                                        - ((double) var12.field33646.field13027 + 0.5 + (double) var12.field33647.method539() / 2.0);
+                                        - ((double) var12.field33646.field13027 + 0.5 + (double) var12.field33647.getXOffset() / 2.0);
                                 double var16 = mc.player.getPosZ()
-                                        - ((double) var12.field33646.field13029 + 0.5 + (double) var12.field33647.method541() / 2.0);
+                                        - ((double) var12.field33646.field13029 + 0.5 + (double) var12.field33647.getZOffset() / 2.0);
                                 double var18 = Math.sqrt(var14 * var14 + var16 * var16);
                                 if (var18 < 2.0) {
                                     var13[0] = mc.player.rotationYaw + 1.0F;

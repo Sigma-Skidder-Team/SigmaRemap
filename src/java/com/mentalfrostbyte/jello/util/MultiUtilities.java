@@ -1150,7 +1150,7 @@ public class MultiUtilities {
 
       for (Direction var9 : var5) {
          if (mc.world
-               .getCollisionShapes(mc.player, var4.contract(var0 * (double)var9.method539(), 0.0, var0 * (double)var9.method541()))
+               .getCollisionShapes(mc.player, var4.contract(var0 * (double)var9.getXOffset(), 0.0, var0 * (double)var9.getZOffset()))
                .count()
             > 0L) {
             return var9;
@@ -1166,12 +1166,12 @@ public class MultiUtilities {
 
       for (Direction var9 : var5) {
          Iterator var10 = mc.world
-            .getCollisionShapes(mc.player, var4.contract(var0 * (double)var9.method539(), 0.0, var0 * (double)var9.method541()))
+            .getCollisionShapes(mc.player, var4.contract(var0 * (double)var9.getXOffset(), 0.0, var0 * (double)var9.getZOffset()))
             .iterator();
          if (var10.hasNext()) {
             Vector3d var11 = mc.player
                .getPositionVec()
-               .add(mc.player.getAllowedMovement(new Vector3d((double)var9.method539(), 0.0, (double)var9.method541())));
+               .add(mc.player.getAllowedMovement(new Vector3d((double)var9.getXOffset(), 0.0, (double)var9.getZOffset())));
             return new Class9629<Direction, Vector3d>(var9, var11);
          }
       }

@@ -3,6 +3,8 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.state.properties.AttachFace;
+import net.minecraft.state.properties.RedstoneSide;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
@@ -97,10 +99,10 @@ public class Class4212 extends Class4209 {
          this.method12928(var1, var5, 4, 9, 10, 4, 9, 10, false, var4, field20527);
          this.method12928(var1, var5, 7, 9, 10, 7, 9, 10, false, var4, field20527);
          this.method12928(var1, var5, 5, 9, 7, 6, 9, 7, false, var4, field20527);
-         BlockState var17 = Blocks.COBBLESTONE_STAIRS.method11579().method23465(Class3421.field19131, Direction.EAST);
-         BlockState var18 = Blocks.COBBLESTONE_STAIRS.method11579().method23465(Class3421.field19131, Direction.WEST);
-         BlockState var12 = Blocks.COBBLESTONE_STAIRS.method11579().method23465(Class3421.field19131, Direction.SOUTH);
-         BlockState var13 = Blocks.COBBLESTONE_STAIRS.method11579().method23465(Class3421.field19131, Direction.NORTH);
+         BlockState var17 = Blocks.COBBLESTONE_STAIRS.method11579().with(Class3421.field19131, Direction.EAST);
+         BlockState var18 = Blocks.COBBLESTONE_STAIRS.method11579().with(Class3421.field19131, Direction.WEST);
+         BlockState var12 = Blocks.COBBLESTONE_STAIRS.method11579().with(Class3421.field19131, Direction.SOUTH);
+         BlockState var13 = Blocks.COBBLESTONE_STAIRS.method11579().with(Class3421.field19131, Direction.NORTH);
          this.method12923(var1, var13, 5, 9, 6, var5);
          this.method12923(var1, var13, 6, 9, 6, var5);
          this.method12923(var1, var12, 5, 9, 8, var5);
@@ -146,7 +148,7 @@ public class Class4212 extends Class4209 {
          this.method12928(var1, var5, 6, -1, 1, 6, -1, 1, false, var4, field20527);
          this.method12923(
             var1,
-            Blocks.TRIPWIRE_HOOK.method11579().method23465(Class3459.field19281, Direction.EAST).method23465(Class3459.field19283, Boolean.valueOf(true)),
+            Blocks.TRIPWIRE_HOOK.method11579().with(Class3459.field19281, Direction.EAST).with(Class3459.field19283, Boolean.valueOf(true)),
             1,
             -3,
             8,
@@ -154,7 +156,7 @@ public class Class4212 extends Class4209 {
          );
          this.method12923(
             var1,
-            Blocks.TRIPWIRE_HOOK.method11579().method23465(Class3459.field19281, Direction.WEST).method23465(Class3459.field19283, Boolean.valueOf(true)),
+            Blocks.TRIPWIRE_HOOK.method11579().with(Class3459.field19281, Direction.WEST).with(Class3459.field19283, Boolean.valueOf(true)),
             4,
             -3,
             8,
@@ -164,9 +166,9 @@ public class Class4212 extends Class4209 {
             var1,
             Blocks.TRIPWIRE
                .method11579()
-               .method23465(Class3425.field19167, Boolean.valueOf(true))
-               .method23465(Class3425.field19169, Boolean.valueOf(true))
-               .method23465(Class3425.field19164, Boolean.valueOf(true)),
+               .with(Class3425.field19167, Boolean.valueOf(true))
+               .with(Class3425.field19169, Boolean.valueOf(true))
+               .with(Class3425.field19164, Boolean.valueOf(true)),
             2,
             -3,
             8,
@@ -176,9 +178,9 @@ public class Class4212 extends Class4209 {
             var1,
             Blocks.TRIPWIRE
                .method11579()
-               .method23465(Class3425.field19167, Boolean.valueOf(true))
-               .method23465(Class3425.field19169, Boolean.valueOf(true))
-               .method23465(Class3425.field19164, Boolean.valueOf(true)),
+               .with(Class3425.field19167, Boolean.valueOf(true))
+               .with(Class3425.field19169, Boolean.valueOf(true))
+               .with(Class3425.field19164, Boolean.valueOf(true)),
             3,
             -3,
             8,
@@ -186,8 +188,8 @@ public class Class4212 extends Class4209 {
          );
          BlockState var21 = Blocks.REDSTONE_WIRE
             .method11579()
-            .method23465(Class3222.field18647, Class98.field266)
-            .method23465(Class3222.field18649, Class98.field266);
+            .with(Class3222.field18647, RedstoneSide.field266)
+            .with(Class3222.field18649, RedstoneSide.field266);
          this.method12923(var1, var21, 5, -3, 7, var5);
          this.method12923(var1, var21, 5, -3, 6, var5);
          this.method12923(var1, var21, 5, -3, 5, var5);
@@ -196,7 +198,7 @@ public class Class4212 extends Class4209 {
          this.method12923(var1, var21, 5, -3, 2, var5);
          this.method12923(
             var1,
-            Blocks.REDSTONE_WIRE.method11579().method23465(Class3222.field18647, Class98.field266).method23465(Class3222.field18650, Class98.field266),
+            Blocks.REDSTONE_WIRE.method11579().with(Class3222.field18647, RedstoneSide.field266).with(Class3222.field18650, RedstoneSide.field266),
             5,
             -3,
             1,
@@ -204,7 +206,7 @@ public class Class4212 extends Class4209 {
          );
          this.method12923(
             var1,
-            Blocks.REDSTONE_WIRE.method11579().method23465(Class3222.field18648, Class98.field266).method23465(Class3222.field18650, Class98.field266),
+            Blocks.REDSTONE_WIRE.method11579().with(Class3222.field18648, RedstoneSide.field266).with(Class3222.field18650, RedstoneSide.field266),
             4,
             -3,
             1,
@@ -215,10 +217,10 @@ public class Class4212 extends Class4209 {
             this.field20525 = this.method12936(var1, var5, var4, 3, -2, 1, Direction.NORTH, Class8793.field39560);
          }
 
-         this.method12923(var1, Blocks.VINE.method11579().method23465(Class3402.field19067, Boolean.valueOf(true)), 3, -2, 2, var5);
+         this.method12923(var1, Blocks.VINE.method11579().with(Class3402.field19067, Boolean.valueOf(true)), 3, -2, 2, var5);
          this.method12923(
             var1,
-            Blocks.TRIPWIRE_HOOK.method11579().method23465(Class3459.field19281, Direction.NORTH).method23465(Class3459.field19283, Boolean.valueOf(true)),
+            Blocks.TRIPWIRE_HOOK.method11579().with(Class3459.field19281, Direction.NORTH).with(Class3459.field19283, Boolean.valueOf(true)),
             7,
             -3,
             1,
@@ -226,7 +228,7 @@ public class Class4212 extends Class4209 {
          );
          this.method12923(
             var1,
-            Blocks.TRIPWIRE_HOOK.method11579().method23465(Class3459.field19281, Direction.SOUTH).method23465(Class3459.field19283, Boolean.valueOf(true)),
+            Blocks.TRIPWIRE_HOOK.method11579().with(Class3459.field19281, Direction.SOUTH).with(Class3459.field19283, Boolean.valueOf(true)),
             7,
             -3,
             5,
@@ -236,9 +238,9 @@ public class Class4212 extends Class4209 {
             var1,
             Blocks.TRIPWIRE
                .method11579()
-               .method23465(Class3425.field19166, Boolean.valueOf(true))
-               .method23465(Class3425.field19168, Boolean.valueOf(true))
-               .method23465(Class3425.field19164, Boolean.valueOf(true)),
+               .with(Class3425.field19166, Boolean.valueOf(true))
+               .with(Class3425.field19168, Boolean.valueOf(true))
+               .with(Class3425.field19164, Boolean.valueOf(true)),
             7,
             -3,
             2,
@@ -248,9 +250,9 @@ public class Class4212 extends Class4209 {
             var1,
             Blocks.TRIPWIRE
                .method11579()
-               .method23465(Class3425.field19166, Boolean.valueOf(true))
-               .method23465(Class3425.field19168, Boolean.valueOf(true))
-               .method23465(Class3425.field19164, Boolean.valueOf(true)),
+               .with(Class3425.field19166, Boolean.valueOf(true))
+               .with(Class3425.field19168, Boolean.valueOf(true))
+               .with(Class3425.field19164, Boolean.valueOf(true)),
             7,
             -3,
             3,
@@ -260,9 +262,9 @@ public class Class4212 extends Class4209 {
             var1,
             Blocks.TRIPWIRE
                .method11579()
-               .method23465(Class3425.field19166, Boolean.valueOf(true))
-               .method23465(Class3425.field19168, Boolean.valueOf(true))
-               .method23465(Class3425.field19164, Boolean.valueOf(true)),
+               .with(Class3425.field19166, Boolean.valueOf(true))
+               .with(Class3425.field19168, Boolean.valueOf(true))
+               .with(Class3425.field19164, Boolean.valueOf(true)),
             7,
             -3,
             4,
@@ -270,7 +272,7 @@ public class Class4212 extends Class4209 {
          );
          this.method12923(
             var1,
-            Blocks.REDSTONE_WIRE.method11579().method23465(Class3222.field18648, Class98.field266).method23465(Class3222.field18650, Class98.field266),
+            Blocks.REDSTONE_WIRE.method11579().with(Class3222.field18648, RedstoneSide.field266).with(Class3222.field18650, RedstoneSide.field266),
             8,
             -3,
             6,
@@ -278,7 +280,7 @@ public class Class4212 extends Class4209 {
          );
          this.method12923(
             var1,
-            Blocks.REDSTONE_WIRE.method11579().method23465(Class3222.field18650, Class98.field266).method23465(Class3222.field18649, Class98.field266),
+            Blocks.REDSTONE_WIRE.method11579().with(Class3222.field18650, RedstoneSide.field266).with(Class3222.field18649, RedstoneSide.field266),
             9,
             -3,
             6,
@@ -286,7 +288,7 @@ public class Class4212 extends Class4209 {
          );
          this.method12923(
             var1,
-            Blocks.REDSTONE_WIRE.method11579().method23465(Class3222.field18647, Class98.field266).method23465(Class3222.field18649, Class98.field265),
+            Blocks.REDSTONE_WIRE.method11579().with(Class3222.field18647, RedstoneSide.field266).with(Class3222.field18649, RedstoneSide.field265),
             9,
             -3,
             5,
@@ -298,8 +300,8 @@ public class Class4212 extends Class4209 {
             this.field20526 = this.method12936(var1, var5, var4, 9, -2, 3, Direction.WEST, Class8793.field39560);
          }
 
-         this.method12923(var1, Blocks.VINE.method11579().method23465(Class3402.field19066, Boolean.valueOf(true)), 8, -1, 3, var5);
-         this.method12923(var1, Blocks.VINE.method11579().method23465(Class3402.field19066, Boolean.valueOf(true)), 8, -2, 3, var5);
+         this.method12923(var1, Blocks.VINE.method11579().with(Class3402.field19066, Boolean.valueOf(true)), 8, -1, 3, var5);
+         this.method12923(var1, Blocks.VINE.method11579().with(Class3402.field19066, Boolean.valueOf(true)), 8, -2, 3, var5);
          if (!this.field20523) {
             this.field20523 = this.method12933(var1, var5, var4, 8, -3, 3, Class8793.field39559);
          }
@@ -320,8 +322,8 @@ public class Class4212 extends Class4209 {
          this.method12923(var1, Blocks.field36618.method11579(), 10, -2, 11, var5);
          BlockState var15 = Blocks.LEVER
             .method11579()
-            .method23465(Class3201.field18484, Direction.NORTH)
-            .method23465(Class3201.field18500, Class103.field314);
+            .with(Class3201.HORIZONTAL_FACING, Direction.NORTH)
+            .with(Class3201.field18500, AttachFace.field314);
          this.method12923(var1, var15, 8, -2, 12, var5);
          this.method12923(var1, var15, 9, -2, 12, var5);
          this.method12923(var1, var15, 10, -2, 12, var5);
@@ -334,19 +336,19 @@ public class Class4212 extends Class4209 {
             var1,
             Blocks.REDSTONE_WIRE
                .method11579()
-               .method23465(Class3222.field18647, Class98.field266)
-               .method23465(Class3222.field18649, Class98.field266)
-               .method23465(Class3222.field18648, Class98.field266)
-               .method23465(Class3222.field18650, Class98.field266),
+               .with(Class3222.field18647, RedstoneSide.field266)
+               .with(Class3222.field18649, RedstoneSide.field266)
+               .with(Class3222.field18648, RedstoneSide.field266)
+               .with(Class3222.field18650, RedstoneSide.field266),
             10,
             -1,
             9,
             var5
          );
-         this.method12923(var1, Blocks.STICKY_PISTON.method11579().method23465(Class3435.field19198, Direction.field673), 9, -2, 8, var5);
-         this.method12923(var1, Blocks.STICKY_PISTON.method11579().method23465(Class3435.field19198, Direction.WEST), 10, -2, 8, var5);
-         this.method12923(var1, Blocks.STICKY_PISTON.method11579().method23465(Class3435.field19198, Direction.WEST), 10, -1, 8, var5);
-         this.method12923(var1, Blocks.field36592.method11579().method23465(Class3248.field18484, Direction.NORTH), 10, -2, 10, var5);
+         this.method12923(var1, Blocks.STICKY_PISTON.method11579().with(Class3435.field19198, Direction.UP), 9, -2, 8, var5);
+         this.method12923(var1, Blocks.STICKY_PISTON.method11579().with(Class3435.field19198, Direction.WEST), 10, -2, 8, var5);
+         this.method12923(var1, Blocks.STICKY_PISTON.method11579().with(Class3435.field19198, Direction.WEST), 10, -1, 8, var5);
+         this.method12923(var1, Blocks.REPEATER.method11579().with(Class3248.HORIZONTAL_FACING, Direction.NORTH), 10, -2, 10, var5);
          if (!this.field20524) {
             this.field20524 = this.method12933(var1, var5, var4, 9, -3, 10, Class8793.field39559);
          }

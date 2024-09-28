@@ -3,24 +3,25 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.state.EnumProperty;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tileentity.JigsawTileEntity;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.Rotation;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+import net.minecraft.world.gen.feature.jigsaw.JigsawOrientation;
 
 import javax.annotation.Nullable;
 
 public class JigsawBlock extends Block implements Class3245 {
-   public static final Class8552<Class182> field18712 = Class8820.field39723;
+   public static final EnumProperty<JigsawOrientation> field18712 = BlockStateProperties.ORIENTATION;
 
-   public JigsawBlock(AbstractBlock var1) {
+   public JigsawBlock(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().method23465(field18712, Class182.field657));
+      this.method11578(this.field18612.method35393().with(field18712, JigsawOrientation.field657));
    }
 
    @Override
@@ -29,26 +30,26 @@ public class JigsawBlock extends Block implements Class3245 {
    }
 
    @Override
-   public BlockState method11500(BlockState var1, Rotation var2) {
-      return var1.method23465(field18712, var2.method251().method510(var1.<Class182>method23463(field18712)));
+   public BlockState rotate(BlockState var1, Rotation var2) {
+      return var1.with(field18712, var2.method251().method510(var1.<JigsawOrientation>get(field18712)));
    }
 
    @Override
-   public BlockState method11501(BlockState var1, Class2089 var2) {
-      return var1.method23465(field18712, var2.method8751().method510(var1.<Class182>method23463(field18712)));
+   public BlockState mirror(BlockState var1, Mirror var2) {
+      return var1.with(field18712, var2.method8751().method510(var1.<JigsawOrientation>get(field18712)));
    }
 
    @Override
    public BlockState method11495(Class5909 var1) {
-      net.minecraft.util.Direction var4 = var1.method18354();
-      net.minecraft.util.Direction var5;
-      if (var4.getAxis() != Direction.Y) {
-         var5 = net.minecraft.util.Direction.field673;
+      Direction var4 = var1.method18354();
+      Direction var5;
+      if (var4.getAxis() != Direction.Axis.Y) {
+         var5 = Direction.UP;
       } else {
-         var5 = var1.method18350().method536();
+         var5 = var1.method18350().getOpposite();
       }
 
-      return this.method11579().method23465(field18712, Class182.method526(var4, var5));
+      return this.method11579().with(field18712, JigsawOrientation.method526(var4, var5));
    }
 
    @Nullable
@@ -69,20 +70,20 @@ public class JigsawBlock extends Block implements Class3245 {
    }
 
    public static boolean method11674(Class8266 var0, Class8266 var1) {
-      net.minecraft.util.Direction var4 = method11675(var0.field35531);
-      net.minecraft.util.Direction var5 = method11675(var1.field35531);
-      net.minecraft.util.Direction var6 = method11676(var0.field35531);
-      net.minecraft.util.Direction var7 = method11676(var1.field35531);
+      Direction var4 = method11675(var0.field35531);
+      Direction var5 = method11675(var1.field35531);
+      Direction var6 = method11676(var0.field35531);
+      Direction var7 = method11676(var1.field35531);
       JigsawTileEntity.OrientationType var8 = JigsawTileEntity.OrientationType.method269(var0.field35532.getString("joint")).orElseGet(() -> !var4.getAxis().method324() ? JigsawTileEntity.OrientationType.ROLLABLE : JigsawTileEntity.OrientationType.ALIGNED);
       boolean var9 = var8 == JigsawTileEntity.OrientationType.ROLLABLE;
-      return var4 == var5.method536() && (var9 || var6 == var7) && var0.field35532.getString("target").equals(var1.field35532.getString("name"));
+      return var4 == var5.getOpposite() && (var9 || var6 == var7) && var0.field35532.getString("target").equals(var1.field35532.getString("name"));
    }
 
-   public static net.minecraft.util.Direction method11675(BlockState var0) {
-      return var0.<Class182>method23463(field18712).method527();
+   public static Direction method11675(BlockState var0) {
+      return var0.<JigsawOrientation>get(field18712).method527();
    }
 
-   public static net.minecraft.util.Direction method11676(BlockState var0) {
-      return var0.<Class182>method23463(field18712).method528();
+   public static Direction method11676(BlockState var0) {
+      return var0.<JigsawOrientation>get(field18712).method528();
    }
 }

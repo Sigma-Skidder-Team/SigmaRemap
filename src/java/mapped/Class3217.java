@@ -11,7 +11,7 @@ public class Class3217 extends Class3213 {
    private static String[] field18622;
    private final BlockState field18626;
 
-   public Class3217(Block var1, AbstractBlock var2) {
+   public Class3217(Block var1, Properties var2) {
       super(var2);
       this.field18626 = var1.method11579();
    }
@@ -44,7 +44,7 @@ public class Class3217 extends Class3213 {
          if (var9 != Direction.DOWN || method11606(var10)) {
             var5.method8377(var1, var9);
             var10 = var0.getBlockState(var5);
-            if (method11606(var10) && !var10.method23454(var0, var1, var9.method536())) {
+            if (method11606(var10) && !var10.method23454(var0, var1, var9.getOpposite())) {
                var4 = true;
                break;
             }

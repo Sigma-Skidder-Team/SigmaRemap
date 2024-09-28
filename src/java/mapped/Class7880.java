@@ -1,8 +1,9 @@
 package mapped;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
+import net.minecraft.block.*;
+import net.minecraft.state.properties.AttachFace;
+import net.minecraft.state.properties.Half;
+import net.minecraft.state.properties.SlabType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockDisplayReader;
 import net.minecraft.world.IBlockReader;
@@ -45,11 +46,11 @@ public class Class7880 {
 
          Block var6 = var5.getBlock();
          if (var6 instanceof Class3421) {
-            return var5.<Class99>method23463(Class3421.field19132) == Class99.field270;
+            return var5.<Half>get(Class3421.field19132) == Half.field270;
          }
 
          if (var6 instanceof Class3208) {
-            return var5.<Class86>method23463(Class3208.field18605) == Class86.field218;
+            return var5.<SlabType>get(Class3208.field18605) == SlabType.field218;
          }
       }
 
@@ -68,7 +69,7 @@ public class Class7880 {
                && !(var5 instanceof Class3193)
                && !(var5 instanceof Class3487)) {
             if (var5 instanceof Class3239
-               || var5 instanceof Class3199
+               || var5 instanceof FenceGateBlock
                || var5 instanceof Class3460
                || var5 instanceof Class3238
                || var5 instanceof Class3408
@@ -77,11 +78,11 @@ public class Class7880 {
             } else if (var5 instanceof Class3383) {
                return true;
             } else if (var5 instanceof Class3421) {
-               return var1.<Class99>method23463(Class3421.field19132) == Class99.field270;
+               return var1.<Half>get(Class3421.field19132) == Half.field270;
             } else if (var5 instanceof Class3208) {
-               return var1.<Class86>method23463(Class3208.field18605) == Class86.field218;
-            } else if (var5 instanceof Class3202) {
-               return var1.<Class103>method23463(Class3202.field18500) != Class103.field313;
+               return var1.<SlabType>get(Class3208.field18605) == SlabType.field218;
+            } else if (var5 instanceof AbstractButtonBlock) {
+               return var1.<AttachFace>get(AbstractButtonBlock.field18500) != AttachFace.field313;
             } else if (var5 instanceof Class3362) {
                return true;
             } else if (var5 instanceof Class3423) {

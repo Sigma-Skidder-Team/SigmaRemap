@@ -10,6 +10,7 @@ import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.vector.Vector3d;
 
 public class JumpSpider extends Module {
@@ -91,15 +92,15 @@ public class JumpSpider extends Module {
                     }
                 }
 
-                if (((net.minecraft.util.Direction) var4.method37538()).getAxis() == Direction.X) {
+                if (((Direction) var4.method37538()).getAxis() == Direction.Axis.X) {
                     var1.setX(
                             (double) Math.round((((Vector3d) var4.method37539()).x + 1.1921022E-8) * 10000.0) / 10000.0
-                                    + (double) ((net.minecraft.util.Direction) var4.method37538()).method539() * var6
+                                    + (double) ((Direction) var4.method37538()).getXOffset() * var6
                     );
                 } else {
                     var1.setZ(
                             (double) Math.round((((Vector3d) var4.method37539()).z + 1.1921022E-8) * 10000.0) / 10000.0
-                                    + (double) ((net.minecraft.util.Direction) var4.method37538()).method541() * var6
+                                    + (double) ((Direction) var4.method37538()).getZOffset() * var6
                     );
                 }
             }

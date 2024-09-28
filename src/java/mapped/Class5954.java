@@ -14,11 +14,11 @@ public class Class5954 extends Class5942<Class940> {
    }
 
    public void method18462(Class940 var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
-      Direction var9 = Direction.field673;
+      Direction var9 = Direction.UP;
       if (var1.method3770()) {
          BlockState var10 = var1.method3734().getBlockState(var1.getPos());
          if (var10.getBlock() instanceof Class3368) {
-            var9 = var10.<Direction>method23463(Class3368.field18939);
+            var9 = var10.<Direction>get(Class3368.field18939);
          }
       }
 

@@ -5,6 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -14,10 +15,10 @@ import java.util.function.Supplier;
 
 public class Class3485 extends Class3194 implements Class3196 {
    private static String[] field18470;
-   public static final VoxelShape field19345 = Block.method11539(4.0, 0.0, 4.0, 12.0, 9.0, 12.0);
+   public static final VoxelShape field19345 = Block.makeCuboidShape(4.0, 0.0, 4.0, 12.0, 9.0, 12.0);
    private final Supplier<Class7909<Class4709, ?>> field19346;
 
-   public Class3485(AbstractBlock var1, Supplier<Class7909<Class4709, ?>> var2) {
+   public Class3485(Properties var1, Supplier<Class7909<Class4709, ?>> var2) {
       super(var1);
       this.field19346 = var2;
    }

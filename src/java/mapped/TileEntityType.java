@@ -63,8 +63,8 @@ public class TileEntityType<T extends TileEntity> {
          Blocks.field36702,
          Blocks.field36709,
          Blocks.field36710,
-         Blocks.field36711,
-         Blocks.field36712,
+         Blocks.DRAGON_HEAD,
+         Blocks.DRAGON_WALL_HEAD,
          Blocks.field36705,
          Blocks.field36706,
          Blocks.field36703,
@@ -165,11 +165,11 @@ public class TileEntityType<T extends TileEntity> {
       )
    );
    public static final TileEntityType<Class959> field21445 = method13794("conduit", Class9785.<Class959>method38569(Class959::new, Blocks.field37007));
-   public static final TileEntityType<Class973> field21446 = method13794("barrel", Class9785.<Class973>method38569(Class973::new, Blocks.field37055));
-   public static final TileEntityType<Class985> field21447 = method13794("smoker", Class9785.<Class985>method38569(Class985::new, Blocks.field37056));
+   public static final TileEntityType<Class973> field21446 = method13794("barrel", Class9785.<Class973>method38569(Class973::new, Blocks.BARREL));
+   public static final TileEntityType<Class985> field21447 = method13794("smoker", Class9785.<Class985>method38569(Class985::new, Blocks.SMOKER));
    public static final TileEntityType<Class987> field21448 = method13794("blast_furnace", Class9785.<Class987>method38569(Class987::new, Blocks.BLAST_FURNACE));
-   public static final TileEntityType<Class948> field21449 = method13794("lectern", Class9785.<Class948>method38569(Class948::new, Blocks.field37061));
-   public static final TileEntityType<Class966> field21450 = method13794("bell", Class9785.<Class966>method38569(Class966::new, Blocks.field37064));
+   public static final TileEntityType<Class948> field21449 = method13794("lectern", Class9785.<Class948>method38569(Class948::new, Blocks.LECTERN));
+   public static final TileEntityType<Class966> field21450 = method13794("bell", Class9785.<Class966>method38569(Class966::new, Blocks.BELL));
    public static final TileEntityType<JigsawTileEntity> field21451 = method13794("jigsaw", Class9785.<JigsawTileEntity>method38569(JigsawTileEntity::new, Blocks.field37114));
    public static final TileEntityType<Class945> field21452 = method13794(
       "campfire", Class9785.<Class945>method38569(Class945::new, Blocks.field37067, Blocks.field37068)

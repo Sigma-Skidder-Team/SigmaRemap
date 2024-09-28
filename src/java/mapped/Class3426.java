@@ -3,6 +3,11 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.EnumProperty;
+import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraft.state.properties.NoteBlockInstrument;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
@@ -12,40 +17,40 @@ import net.minecraft.world.World;
 
 public class Class3426 extends Block {
    private static String[] field19174;
-   public static final Class8552<Class108> field19175 = Class8820.field39768;
-   public static final Class8551 field19176 = Class8820.field39704;
-   public static final Class8554 field19177 = Class8820.field39757;
+   public static final EnumProperty<NoteBlockInstrument> field19175 = BlockStateProperties.field39768;
+   public static final BooleanProperty field19176 = BlockStateProperties.POWERED;
+   public static final IntegerProperty field19177 = BlockStateProperties.field39757;
 
-   public Class3426(AbstractBlock var1) {
+   public Class3426(Properties var1) {
       super(var1);
       this.method11578(
          this.field18612
             .method35393()
-            .method23465(field19175, Class108.field347)
-            .method23465(field19177, Integer.valueOf(0))
-            .method23465(field19176, Boolean.valueOf(false))
+            .with(field19175, NoteBlockInstrument.field347)
+            .with(field19177, Integer.valueOf(0))
+            .with(field19176, Boolean.valueOf(false))
       );
    }
 
    @Override
    public BlockState method11495(Class5909 var1) {
-      return this.method11579().method23465(field19175, Class108.method300(var1.method18360().getBlockState(var1.method18345().down())));
+      return this.method11579().with(field19175, NoteBlockInstrument.method300(var1.method18360().getBlockState(var1.method18345().down())));
    }
 
    @Override
    public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
-      return var2 != Direction.DOWN ? super.method11491(var1, var2, var3, var4, var5, var6) : var1.method23465(field19175, Class108.method300(var3));
+      return var2 != Direction.DOWN ? super.method11491(var1, var2, var3, var4, var5, var6) : var1.with(field19175, NoteBlockInstrument.method300(var3));
    }
 
    @Override
    public void method11506(BlockState var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       boolean var9 = var2.method6780(var3);
-      if (var9 != var1.<Boolean>method23463(field19176)) {
+      if (var9 != var1.<Boolean>get(field19176)) {
          if (var9) {
             this.method12083(var2, var3);
          }
 
-         var2.setBlockState(var3, var1.method23465(field19176, Boolean.valueOf(var9)), 3);
+         var2.setBlockState(var3, var1.with(field19176, Boolean.valueOf(var9)), 3);
       }
    }
 
@@ -78,9 +83,9 @@ public class Class3426 extends Block {
 
    @Override
    public boolean method11647(BlockState var1, World var2, BlockPos var3, int var4, int var5) {
-      int var8 = var1.<Integer>method23463(field19177);
+      int var8 = var1.<Integer>get(field19177);
       float var9 = (float)Math.pow(2.0, (double)(var8 - 12) / 12.0);
-      var2.method6742((PlayerEntity)null, var3, var1.<Class108>method23463(field19175).method299(), Class2266.field14730, 3.0F, var9);
+      var2.method6742((PlayerEntity)null, var3, var1.<NoteBlockInstrument>get(field19175).method299(), Class2266.field14730, 3.0F, var9);
       var2.addParticle(
          ParticleTypes.field34088, (double)var3.getX() + 0.5, (double)var3.getY() + 1.2, (double)var3.getZ() + 0.5, (double)var8 / 24.0, 0.0, 0.0
       );

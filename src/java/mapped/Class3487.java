@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -12,9 +13,9 @@ import java.util.Random;
 
 public class Class3487 extends Class3194 implements Class3196 {
    private static String[] field19350;
-   public static final VoxelShape field19351 = Block.method11539(2.0, 0.0, 2.0, 14.0, 13.0, 14.0);
+   public static final VoxelShape field19351 = Block.makeCuboidShape(2.0, 0.0, 2.0, 14.0, 13.0, 14.0);
 
-   public Class3487(AbstractBlock var1) {
+   public Class3487(Properties var1) {
       super(var1);
    }
 

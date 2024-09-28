@@ -13,13 +13,13 @@ import java.util.Optional;
 import java.util.Random;
 
 public abstract class Class3445 extends Class3444 implements Class3196 {
-   public Class3445(AbstractBlock var1, Direction var2, VoxelShape var3, boolean var4) {
+   public Class3445(Properties var1, Direction var2, VoxelShape var3, boolean var4) {
       super(var1, var2, var3, var4);
    }
 
    @Override
    public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
-      if (var2 == this.field19256.method536() && !var1.method23443(var4, var5)) {
+      if (var2 == this.field19256.getOpposite() && !var1.method23443(var4, var5)) {
          var4.method6860().method20726(var5, this, 1);
       }
 

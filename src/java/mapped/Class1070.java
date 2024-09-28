@@ -18,9 +18,11 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.*;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
@@ -54,7 +56,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
       BlockPos.Mutable var7 = var3.method8354();
 
       do {
-         var7.method8379(net.minecraft.util.Direction.field673);
+         var7.method8379(Direction.UP);
       } while (var1.getFluidState(var7).method23486(FluidTags.field40470));
 
       return var1.getBlockState(var7).isAir();
@@ -183,7 +185,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
 
          for (double var15 = var6; var15 > var8; var15--) {
             var5.add(var10.toImmutable());
-            var10.method8379(net.minecraft.util.Direction.DOWN);
+            var10.method8379(Direction.DOWN);
          }
       }
 

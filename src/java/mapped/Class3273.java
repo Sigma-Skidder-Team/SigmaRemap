@@ -29,7 +29,7 @@ public class Class3273 extends Item {
          }
       } else {
          this.method11796(var4, var5);
-         var4.setBlockState(var5, var6.method23465(Class3244.field18698, Boolean.valueOf(true)));
+         var4.setBlockState(var5, var6.with(Class3244.field18698, Boolean.valueOf(true)));
          var7 = true;
       }
 

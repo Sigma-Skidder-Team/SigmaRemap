@@ -35,7 +35,7 @@ public class Class6167 extends Class6166 {
 
       for (int var9 = 0; var9 < var8; var9++) {
          var1.setBlockState(var7, var3, 2);
-         var7.method8379(Direction.field673);
+         var7.method8379(Direction.UP);
       }
    }
 }

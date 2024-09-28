@@ -29,7 +29,7 @@ public class Class4438 {
       }
 
       try {
-         field21590[Direction.field673.ordinal()] = 5;
+         field21590[Direction.UP.ordinal()] = 5;
       } catch (NoSuchFieldError var4) {
       }
 

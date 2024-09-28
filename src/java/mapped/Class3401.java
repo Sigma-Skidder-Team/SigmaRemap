@@ -10,9 +10,13 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.state.EnumProperty;
+import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
@@ -20,18 +24,18 @@ import net.minecraft.world.server.ServerWorld;
 
 public class Class3401 extends Block {
    private static String[] field19059;
-   public static final Class8552<Direction> field19060 = Class8820.field39712;
-   public static final VoxelShape field19061 = Block.method11539(0.0, 0.0, 6.0, 16.0, 16.0, 10.0);
-   public static final VoxelShape field19062 = Block.method11539(6.0, 0.0, 0.0, 10.0, 16.0, 16.0);
+   public static final EnumProperty<Direction.Axis> field19060 = BlockStateProperties.field39712;
+   public static final VoxelShape field19061 = Block.makeCuboidShape(0.0, 0.0, 6.0, 16.0, 16.0, 10.0);
+   public static final VoxelShape field19062 = Block.makeCuboidShape(6.0, 0.0, 0.0, 10.0, 16.0, 16.0);
 
-   public Class3401(AbstractBlock var1) {
+   public Class3401(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().method23465(field19060, Direction.X));
+      this.method11578(this.field18612.method35393().with(field19060, Direction.Axis.X));
    }
 
    @Override
    public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
-      switch (Class9111.field41872[var1.<Direction>method23463(field19060).ordinal()]) {
+      switch (Class9111.field41872[var1.<Direction.Axis>get(field19060).ordinal()]) {
          case 1:
             return field19062;
          case 2:
@@ -58,9 +62,9 @@ public class Class3401 extends Block {
    }
 
    @Override
-   public BlockState method11491(BlockState var1, net.minecraft.util.Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
-      Direction var9 = var2.getAxis();
-      Direction var10 = var1.<Direction>method23463(field19060);
+   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+      Direction.Axis var9 = var2.getAxis();
+      Direction.Axis var10 = var1.<Direction.Axis>get(field19060);
       boolean var11 = var10 != var9 && var9.method324();
       return !var11 && !var3.isIn(this) && !new Class7473(var4, var5, var10).method24205()
          ? Blocks.AIR.method11579()
@@ -115,15 +119,15 @@ public class Class3401 extends Block {
    }
 
    @Override
-   public BlockState method11500(BlockState var1, Rotation var2) {
+   public BlockState rotate(BlockState var1, Rotation var2) {
       switch (Class9111.field41873[var2.ordinal()]) {
          case 1:
          case 2:
-            switch (Class9111.field41872[var1.<Direction>method23463(field19060).ordinal()]) {
+            switch (Class9111.field41872[var1.<Direction.Axis>get(field19060).ordinal()]) {
                case 1:
-                  return var1.method23465(field19060, Direction.X);
+                  return var1.with(field19060, Direction.Axis.X);
                case 2:
-                  return var1.method23465(field19060, Direction.Z);
+                  return var1.with(field19060, Direction.Axis.Z);
                default:
                   return var1;
             }

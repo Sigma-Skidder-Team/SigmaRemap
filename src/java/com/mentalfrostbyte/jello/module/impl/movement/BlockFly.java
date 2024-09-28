@@ -17,8 +17,10 @@ import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import mapped.*;
+import net.minecraft.block.AbstractButtonBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.DoorBlock;
 import net.minecraft.inventory.container.ClickType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.CClientStatusPacket;
@@ -96,7 +98,7 @@ public class BlockFly extends ModuleWithModuleSettings {
         } else {
             Block var3 = ((Class3292) var0).method11845();
             return ! blocksToNotPlace.contains(var3)
-                    && !(var3 instanceof Class3202)
+                    && !(var3 instanceof AbstractButtonBlock)
                     && !(var3 instanceof Class3194)
                     && !(var3 instanceof Class3206)
                     && !(var3 instanceof Class3468)
@@ -106,7 +108,7 @@ public class BlockFly extends ModuleWithModuleSettings {
                     && !(var3 instanceof Class3250)
                     && !(var3 instanceof Class3241)
                     && !(var3 instanceof Class3348)
-                    && !(var3 instanceof Class3461);
+                    && !(var3 instanceof DoorBlock);
         }
     }
 

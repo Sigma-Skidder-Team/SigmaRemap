@@ -38,7 +38,7 @@ public class Class170 implements Predicate<CachedBlockInfo> {
                return false;
             }
 
-            if (var4.method23463(var7) != var8) {
+            if (var4.get(var7) != var8) {
                return false;
             }
          }

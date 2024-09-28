@@ -8,14 +8,15 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 public class Class3214 extends Class3213 {
    private static String[] field18623;
-   public static final VoxelShape field18624 = Block.method11539(1.0, 0.0, 1.0, 15.0, 16.0, 15.0);
+   public static final VoxelShape field18624 = Block.makeCuboidShape(1.0, 0.0, 1.0, 15.0, 16.0, 15.0);
 
-   public Class3214(AbstractBlock var1) {
+   public Class3214(Properties var1) {
       super(var1);
    }
 

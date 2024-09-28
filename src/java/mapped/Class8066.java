@@ -1,7 +1,6 @@
 package mapped;
 
 import com.google.common.collect.Sets;
-import com.mentalfrostbyte.jello.Client;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
@@ -72,8 +71,8 @@ public class Class8066 {
       this.field34623 = Config.method26977();
       this.field34629 = new Class8066[6];
       this.field34630 = false;
-      this.field34632 = new Class8066[Direction.field685.length];
-      this.field34633 = new Class8066[Direction.field685.length];
+      this.field34632 = new Class8066[Direction.VALUES.length];
+      this.field34633 = new Class8066[Direction.VALUES.length];
       this.field34634 = false;
       this.field34635 = new Class7002(this, (Direction)null, 0);
    }
@@ -124,7 +123,7 @@ public class Class8066 {
 
          this.field34614 = new AxisAlignedBB((double)var1, (double)var2, (double)var3, (double)(var1 + 16), (double)(var2 + 16), (double)(var3 + 16));
 
-         for (Direction var9 : Direction.field685) {
+         for (Direction var9 : Direction.VALUES) {
             this.field34618[var9.ordinal()].method8374(this.field34617).method8380(var9, 16);
          }
 
@@ -359,8 +358,8 @@ public class Class8066 {
 
    public Class8066 method27739(Class9242 var1, Direction var2) {
       if (!this.field34630) {
-         for (int var5 = 0; var5 < Direction.field685.length; var5++) {
-            Direction var6 = Direction.field685[var5];
+         for (int var5 = 0; var5 < Direction.VALUES.length; var5++) {
+            Direction var6 = Direction.VALUES[var5];
             BlockPos var7 = this.method27723(var6);
             this.field34629[var5] = var1.method34761(var7);
          }

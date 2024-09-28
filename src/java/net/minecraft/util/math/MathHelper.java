@@ -74,7 +74,7 @@ public class MathHelper {
       return Math.abs(var0);
    }
 
-   public static int method37772(int var0) {
+   public static int abs(int var0) {
       return Math.abs(var0);
    }
 

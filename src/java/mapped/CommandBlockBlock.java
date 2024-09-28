@@ -2,18 +2,18 @@ package mapped;
 
 import java.util.Random;
 
+import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.DirectionProperty;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tileentity.CommandBlockTileEntity;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Direction;
-import net.minecraft.util.Hand;
-import net.minecraft.util.Rotation;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.IBlockReader;
@@ -24,12 +24,12 @@ import org.apache.logging.log4j.Logger;
 
 public class CommandBlockBlock extends Class3241 {
    private static final Logger field18892 = LogManager.getLogger();
-   public static final Class8553 field18893 = Class3433.field19198;
-   public static final Class8551 field18894 = Class8820.field39684;
+   public static final DirectionProperty field18893 = Class3433.field19198;
+   public static final BooleanProperty field18894 = BlockStateProperties.field39684;
 
-   public CommandBlockBlock(AbstractBlock var1) {
+   public CommandBlockBlock(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().method23465(field18893, Direction.NORTH).method23465(field18894, Boolean.valueOf(false)));
+      this.method11578(this.field18612.method35393().with(field18893, Direction.NORTH).with(field18894, Boolean.valueOf(false)));
    }
 
    @Override
@@ -101,7 +101,7 @@ public class CommandBlockBlock extends Class3241 {
          var4.method3564(var2);
       }
 
-      method11928(var2, var3, var1.<Direction>method23463(field18893));
+      method11928(var2, var3, var1.<Direction>get(field18893));
    }
 
    @Override
@@ -156,13 +156,13 @@ public class CommandBlockBlock extends Class3241 {
    }
 
    @Override
-   public BlockState method11500(BlockState var1, Rotation var2) {
-      return var1.method23465(field18893, var2.method252(var1.<Direction>method23463(field18893)));
+   public BlockState rotate(BlockState var1, Rotation var2) {
+      return var1.with(field18893, var2.rotate(var1.<Direction>get(field18893)));
    }
 
    @Override
-   public BlockState method11501(BlockState var1, Class2089 var2) {
-      return var1.method23395(var2.method8749(var1.<Direction>method23463(field18893)));
+   public BlockState mirror(BlockState var1, Mirror var2) {
+      return var1.rotate(var2.toRotation(var1.<Direction>get(field18893)));
    }
 
    @Override
@@ -172,7 +172,7 @@ public class CommandBlockBlock extends Class3241 {
 
    @Override
    public BlockState method11495(Class5909 var1) {
-      return this.method11579().method23465(field18893, var1.method18348().method536());
+      return this.method11579().with(field18893, var1.method18348().getOpposite());
    }
 
    private static void method11928(World var0, BlockPos var1, Direction var2) {
@@ -213,7 +213,7 @@ public class CommandBlockBlock extends Class3241 {
             }
          }
 
-         var2 = var8.<Direction>method23463(field18893);
+         var2 = var8.<Direction>get(field18893);
       }
 
       if (var7 <= 0) {

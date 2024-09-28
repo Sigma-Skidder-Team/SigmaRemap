@@ -6,6 +6,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
+import net.minecraft.state.properties.Half;
+import net.minecraft.state.properties.SlabType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorldReader;
@@ -52,15 +54,15 @@ public class Class7091 extends Class7092 {
          BlockState var10 = var5.field35531;
          BlockState var11 = var9.method11579();
          if (var10.method23462(Class3421.field19131)) {
-            var11 = var11.method23465(Class3421.field19131, var10.<Direction>method23463(Class3421.field19131));
+            var11 = var11.with(Class3421.field19131, var10.<Direction>get(Class3421.field19131));
          }
 
          if (var10.method23462(Class3421.field19132)) {
-            var11 = var11.method23465(Class3421.field19132, var10.<Class99>method23463(Class3421.field19132));
+            var11 = var11.with(Class3421.field19132, var10.<Half>get(Class3421.field19132));
          }
 
          if (var10.method23462(Class3208.field18605)) {
-            var11 = var11.method23465(Class3208.field18605, var10.<Class86>method23463(Class3208.field18605));
+            var11 = var11.with(Class3208.field18605, var10.<SlabType>get(Class3208.field18605));
          }
 
          return new Class8266(var5.field35530, var11, var5.field35532);

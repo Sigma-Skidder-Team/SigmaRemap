@@ -1,28 +1,29 @@
 package mapped;
 
+import net.minecraft.block.HorizontalBlock;
+import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.DirectionProperty;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Direction;
-import net.minecraft.util.Hand;
-import net.minecraft.util.Rotation;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 
 public abstract class Class3350 extends Class3241 {
-   public static final Class8553 field18875 = Class3198.field18484;
-   public static final Class8551 field18876 = Class8820.field39699;
+   public static final DirectionProperty field18875 = HorizontalBlock.HORIZONTAL_FACING;
+   public static final BooleanProperty field18876 = BlockStateProperties.field39699;
 
-   public Class3350(AbstractBlock var1) {
+   public Class3350(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().method23465(field18875, Direction.NORTH).method23465(field18876, Boolean.valueOf(false)));
+      this.method11578(this.field18612.method35393().with(field18875, Direction.NORTH).with(field18876, Boolean.valueOf(false)));
    }
 
    @Override
@@ -39,7 +40,7 @@ public abstract class Class3350 extends Class3241 {
 
    @Override
    public BlockState method11495(Class5909 var1) {
-      return this.method11579().method23465(field18875, var1.method18350().method536());
+      return this.method11579().with(field18875, var1.method18350().getOpposite());
    }
 
    @Override
@@ -82,13 +83,13 @@ public abstract class Class3350 extends Class3241 {
    }
 
    @Override
-   public BlockState method11500(BlockState var1, Rotation var2) {
-      return var1.method23465(field18875, var2.method252(var1.<Direction>method23463(field18875)));
+   public BlockState rotate(BlockState var1, Rotation var2) {
+      return var1.with(field18875, var2.rotate(var1.<Direction>get(field18875)));
    }
 
    @Override
-   public BlockState method11501(BlockState var1, Class2089 var2) {
-      return var1.method23395(var2.method8749(var1.<Direction>method23463(field18875)));
+   public BlockState mirror(BlockState var1, Mirror var2) {
+      return var1.rotate(var2.toRotation(var1.<Direction>get(field18875)));
    }
 
    @Override

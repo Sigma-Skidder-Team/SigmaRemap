@@ -188,7 +188,7 @@ public abstract class Module {
     public void onDisable() {
     }
 
-    public boolean method15988() {
+    public boolean isEnabled2() {
         return this.isEnabled();
     }
 

@@ -4,7 +4,9 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.state.properties.RailShape;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
@@ -36,20 +38,20 @@ public class Class4191 extends Class4188 {
       var1.putInt("Num", this.field20486);
    }
 
-   public Class4191(int var1, Random var2, Class9764 var3, net.minecraft.util.Direction var4, Class102 var5) {
+   public Class4191(int var1, Random var2, Class9764 var3, Direction var4, Class102 var5) {
       super(Class7792.field33425, var1, var5);
       this.method12939(var4);
       this.field20444 = var3;
       this.field20483 = var2.nextInt(3) == 0;
       this.field20484 = !this.field20483 && var2.nextInt(23) == 0;
-      if (this.method12938().getAxis() != Direction.Z) {
+      if (this.method12938().getAxis() != Direction.Axis.Z) {
          this.field20486 = var3.method38398() / 5;
       } else {
          this.field20486 = var3.method38400() / 5;
       }
    }
 
-   public static Class9764 method12972(List<Class4178> var0, Random var1, int var2, int var3, int var4, net.minecraft.util.Direction var5) {
+   public static Class9764 method12972(List<Class4178> var0, Random var1, int var2, int var3, int var4, Direction var5) {
       Class9764 var8 = new Class9764(var2, var3, var4, var2, var3 + 3 - 1, var4);
 
       int var9;
@@ -86,7 +88,7 @@ public class Class4191 extends Class4188 {
    public void method12894(Class4178 var1, List<Class4178> var2, Random var3) {
       int var6 = this.method12916();
       int var7 = var3.nextInt(4);
-      net.minecraft.util.Direction var8 = this.method12938();
+      Direction var8 = this.method12938();
       if (var8 != null) {
          switch (Class7441.field32015[var8.ordinal()]) {
             case 1:
@@ -103,7 +105,7 @@ public class Class4191 extends Class4188 {
                      this.field20444.field45678 - 1,
                      this.field20444.field45679 - 1 + var3.nextInt(3),
                      this.field20444.field45680,
-                     net.minecraft.util.Direction.WEST,
+                     Direction.WEST,
                      var6
                   );
                } else {
@@ -114,7 +116,7 @@ public class Class4191 extends Class4188 {
                      this.field20444.field45681 + 1,
                      this.field20444.field45679 - 1 + var3.nextInt(3),
                      this.field20444.field45680,
-                     net.minecraft.util.Direction.EAST,
+                     Direction.EAST,
                      var6
                   );
                }
@@ -132,7 +134,7 @@ public class Class4191 extends Class4188 {
                      this.field20444.field45678 - 1,
                      this.field20444.field45679 - 1 + var3.nextInt(3),
                      this.field20444.field45683 - 3,
-                     net.minecraft.util.Direction.WEST,
+                     Direction.WEST,
                      var6
                   );
                } else {
@@ -143,7 +145,7 @@ public class Class4191 extends Class4188 {
                      this.field20444.field45681 + 1,
                      this.field20444.field45679 - 1 + var3.nextInt(3),
                      this.field20444.field45683 - 3,
-                     net.minecraft.util.Direction.EAST,
+                     Direction.EAST,
                      var6
                   );
                }
@@ -161,7 +163,7 @@ public class Class4191 extends Class4188 {
                      this.field20444.field45678,
                      this.field20444.field45679 - 1 + var3.nextInt(3),
                      this.field20444.field45680 - 1,
-                     net.minecraft.util.Direction.NORTH,
+                     Direction.NORTH,
                      var6
                   );
                } else {
@@ -172,7 +174,7 @@ public class Class4191 extends Class4188 {
                      this.field20444.field45678,
                      this.field20444.field45679 - 1 + var3.nextInt(3),
                      this.field20444.field45683 + 1,
-                     net.minecraft.util.Direction.SOUTH,
+                     Direction.SOUTH,
                      var6
                   );
                }
@@ -190,7 +192,7 @@ public class Class4191 extends Class4188 {
                      this.field20444.field45681 - 3,
                      this.field20444.field45679 - 1 + var3.nextInt(3),
                      this.field20444.field45680 - 1,
-                     net.minecraft.util.Direction.NORTH,
+                     Direction.NORTH,
                      var6
                   );
                } else {
@@ -201,7 +203,7 @@ public class Class4191 extends Class4188 {
                      this.field20444.field45681 - 3,
                      this.field20444.field45679 - 1 + var3.nextInt(3),
                      this.field20444.field45683 + 1,
-                     net.minecraft.util.Direction.SOUTH,
+                     Direction.SOUTH,
                      var6
                   );
                }
@@ -209,22 +211,22 @@ public class Class4191 extends Class4188 {
       }
 
       if (var6 < 8) {
-         if (var8 != net.minecraft.util.Direction.NORTH && var8 != net.minecraft.util.Direction.SOUTH) {
+         if (var8 != Direction.NORTH && var8 != Direction.SOUTH) {
             for (int var11 = this.field20444.field45678 + 3; var11 + 3 <= this.field20444.field45681; var11 += 5) {
                int var12 = var3.nextInt(5);
                if (var12 == 0) {
-                  Class6883.method20959(var1, var2, var3, var11, this.field20444.field45679, this.field20444.field45680 - 1, net.minecraft.util.Direction.NORTH, var6 + 1);
+                  Class6883.method20959(var1, var2, var3, var11, this.field20444.field45679, this.field20444.field45680 - 1, Direction.NORTH, var6 + 1);
                } else if (var12 == 1) {
-                  Class6883.method20959(var1, var2, var3, var11, this.field20444.field45679, this.field20444.field45683 + 1, net.minecraft.util.Direction.SOUTH, var6 + 1);
+                  Class6883.method20959(var1, var2, var3, var11, this.field20444.field45679, this.field20444.field45683 + 1, Direction.SOUTH, var6 + 1);
                }
             }
          } else {
             for (int var9 = this.field20444.field45680 + 3; var9 + 3 <= this.field20444.field45683; var9 += 5) {
                int var10 = var3.nextInt(5);
                if (var10 == 0) {
-                  Class6883.method20959(var1, var2, var3, this.field20444.field45678 - 1, this.field20444.field45679, var9, net.minecraft.util.Direction.WEST, var6 + 1);
+                  Class6883.method20959(var1, var2, var3, this.field20444.field45678 - 1, this.field20444.field45679, var9, Direction.WEST, var6 + 1);
                } else if (var10 == 1) {
-                  Class6883.method20959(var1, var2, var3, this.field20444.field45681 + 1, this.field20444.field45679, var9, net.minecraft.util.Direction.EAST, var6 + 1);
+                  Class6883.method20959(var1, var2, var3, this.field20444.field45681 + 1, this.field20444.field45679, var9, Direction.EAST, var6 + 1);
                }
             }
          }
@@ -235,7 +237,7 @@ public class Class4191 extends Class4188 {
    public boolean method12933(ISeedReader var1, Class9764 var2, Random var3, int var4, int var5, int var6, ResourceLocation var7) {
       BlockPos var10 = new BlockPos(this.method12920(var4, var6), this.method12921(var5), this.method12922(var4, var6));
       if (var2.method38396(var10) && var1.getBlockState(var10).isAir() && !var1.getBlockState(var10.down()).isAir()) {
-         BlockState var11 = Blocks.RAIL.method11579().method23465(Class3430.field19191, !var3.nextBoolean() ? Class96.field248 : Class96.field247);
+         BlockState var11 = Blocks.RAIL.method11579().with(Class3430.field19191, !var3.nextBoolean() ? RailShape.field248 : RailShape.field247);
          this.method12923(var1, var11, var4, var5, var6, var2);
          Class991 var12 = new Class991(var1.method6970(), (double)var10.getX() + 0.5, (double)var10.getY() + 0.5, (double)var10.getZ() + 0.5);
          var12.method3626(var7, var3.nextLong());
@@ -307,7 +309,7 @@ public class Class4191 extends Class4188 {
          }
 
          if (this.field20483) {
-            BlockState var25 = Blocks.RAIL.method11579().method23465(Class3430.field19191, Class96.field247);
+            BlockState var25 = Blocks.RAIL.method11579().with(Class3430.field19191, RailShape.field247);
 
             for (int var27 = 0; var27 <= var14; var27++) {
                BlockState var29 = this.method12924(var1, 1, -1, var27, var5);
@@ -328,15 +330,15 @@ public class Class4191 extends Class4188 {
       if (this.method12969(var1, var2, var3, var7, var6, var5)) {
          BlockState var11 = this.method12967();
          BlockState var12 = this.method12968();
-         this.method12927(var1, var2, var3, var4, var5, var3, var6 - 1, var5, var12.method23465(Class3239.field18683, Boolean.valueOf(true)), field20443, false);
-         this.method12927(var1, var2, var7, var4, var5, var7, var6 - 1, var5, var12.method23465(Class3239.field18681, Boolean.valueOf(true)), field20443, false);
+         this.method12927(var1, var2, var3, var4, var5, var3, var6 - 1, var5, var12.with(Class3239.field18683, Boolean.valueOf(true)), field20443, false);
+         this.method12927(var1, var2, var7, var4, var5, var7, var6 - 1, var5, var12.with(Class3239.field18681, Boolean.valueOf(true)), field20443, false);
          if (var8.nextInt(4) != 0) {
             this.method12927(var1, var2, var3, var6, var5, var7, var6, var5, var11, field20443, false);
             this.method12930(
-               var1, var2, var8, 0.05F, var3 + 1, var6, var5 - 1, Blocks.WALL_TORCH.method11579().method23465(Class3382.field18985, net.minecraft.util.Direction.NORTH)
+               var1, var2, var8, 0.05F, var3 + 1, var6, var5 - 1, Blocks.WALL_TORCH.method11579().with(Class3382.field18985, Direction.NORTH)
             );
             this.method12930(
-               var1, var2, var8, 0.05F, var3 + 1, var6, var5 + 1, Blocks.WALL_TORCH.method11579().method23465(Class3382.field18985, net.minecraft.util.Direction.SOUTH)
+               var1, var2, var8, 0.05F, var3 + 1, var6, var5 + 1, Blocks.WALL_TORCH.method11579().with(Class3382.field18985, Direction.SOUTH)
             );
          } else {
             this.method12927(var1, var2, var3, var6, var5, var3, var6, var5, var11, field20443, false);

@@ -140,7 +140,7 @@ public class Class4454 extends Class4441<Block> {
          .method31559(BlockTags.field32756)
          .method31559(BlockTags.field32757);
       this.method14014(BlockTags.field32751).method31559(BlockTags.field32750).method31559(BlockTags.field32758).method31559(BlockTags.field32759);
-      this.method14014(BlockTags.field32765).method31560(Blocks.ANVIL, Blocks.field36714, Blocks.field36715);
+      this.method14014(BlockTags.field32765).method31560(Blocks.ANVIL, Blocks.CHIPPED_ANVIL, Blocks.DAMAGED_ANVIL);
       this.method14014(BlockTags.field32769)
          .method31560(
             Blocks.DANDELION,
@@ -264,7 +264,7 @@ public class Class4454 extends Class4441<Block> {
          );
       this.method14014(BlockTags.field32746).method31560(Blocks.field36559, Blocks.field37144);
       this.method14014(BlockTags.field32744)
-         .method31560(Blocks.field36717, Blocks.field36718)
+         .method31560(Blocks.LIGHT_WEIGHTED_PRESSURE_PLATE, Blocks.HEAVY_WEIGHTED_PRESSURE_PLATE)
          .method31559(BlockTags.field32745)
          .method31559(BlockTags.field32746);
       this.method14014(BlockTags.field32762)
@@ -543,7 +543,7 @@ public class Class4454 extends Class4441<Block> {
       this.method14014(BlockTags.field32774)
          .method31558(Blocks.field36531)
          .method31558(Blocks.field36585)
-         .method31558(Blocks.field37066)
+         .method31558(Blocks.SOUL_LANTERN)
          .method31558(Blocks.field36586)
          .method31558(Blocks.field37068);
       this.method14014(BlockTags.field32806)
@@ -589,7 +589,7 @@ public class Class4454 extends Class4441<Block> {
       this.method14014(BlockTags.field32808).method31558(Blocks.LAVA);
       this.method14014(BlockTags.field32809).method31560(Blocks.field37067, Blocks.field37068);
       this.method14014(BlockTags.field32810)
-         .method31560(Blocks.field36521, Blocks.field37055, Blocks.CHEST, Blocks.ENDER_CHEST, Blocks.field37141, Blocks.TRAPPED_CHEST)
+         .method31560(Blocks.field36521, Blocks.BARREL, Blocks.CHEST, Blocks.ENDER_CHEST, Blocks.field37141, Blocks.TRAPPED_CHEST)
          .method31559(BlockTags.field32805)
          .method31559(BlockTags.field32775);
       this.method14014(BlockTags.field32811).method31559(BlockTags.field32766);

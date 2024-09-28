@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
@@ -28,7 +29,7 @@ public class Class2663 extends Class2661 {
          if (!var0.isIn(BlockTags.field32772)) {
             return var0.isIn(BlockTags.field32769);
          } else {
-            return !var0.isIn(Blocks.SUNFLOWER) ? true : var0.<Class84>method23463(Class3456.field19276) == Class84.field209;
+            return !var0.isIn(Blocks.SUNFLOWER) ? true : var0.<DoubleBlockHalf>get(Class3456.field19276) == DoubleBlockHalf.field209;
          }
       };
       this.field17026 = 0;

@@ -155,7 +155,7 @@ public class Class5815 extends Container {
 
    @Override
    public boolean canInteractWith(PlayerEntity var1) {
-      return isWithinUsableDistance(this.field25485, var1, Blocks.field37060);
+      return isWithinUsableDistance(this.field25485, var1, Blocks.GRINDSTONE);
    }
 
    @Override

@@ -31,14 +31,14 @@ public final class Class201 extends Class200<Class7585, Class209> {
                int var8 = Integer.signum(BlockPos.method8328(var3) - BlockPos.method8328(var1));
                int var9 = Integer.signum(BlockPos.method8329(var3) - BlockPos.method8329(var1));
                int var10 = Integer.signum(BlockPos.method8330(var3) - BlockPos.method8330(var1));
-               Direction var11 = Direction.method548(var8, var9, var10);
+               Direction var11 = Direction.byLong(var8, var9, var10);
                if (var11 != null) {
                   MutableInt var12 = new MutableInt();
                   BlockState var13 = this.method647(var3, var12);
                   if (var12.getValue() < 15) {
                      BlockState var14 = this.method647(var1, (MutableInt)null);
                      VoxelShape var15 = this.method648(var14, var1, var11);
-                     VoxelShape var16 = this.method648(var13, var3, var11.method536());
+                     VoxelShape var16 = this.method648(var13, var3, var11.getOpposite());
                      return ! VoxelShapes.method27444(var15, var16) ? var5 + Math.max(1, var12.getValue()) : 15;
                   } else {
                      return 15;

@@ -3,6 +3,9 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
@@ -10,18 +13,19 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 public class Class3372 extends Class3241 {
    private static String[] field18962;
-   public static final Class8554 field18963 = Class8820.field39759;
-   public static final Class8551 field18964 = Class8820.field39697;
-   public static final VoxelShape field18965 = Block.method11539(0.0, 0.0, 0.0, 16.0, 6.0, 16.0);
+   public static final IntegerProperty field18963 = BlockStateProperties.field39759;
+   public static final BooleanProperty field18964 = BlockStateProperties.field39697;
+   public static final VoxelShape field18965 = Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 6.0, 16.0);
 
-   public Class3372(AbstractBlock var1) {
+   public Class3372(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().method23465(field18963, Integer.valueOf(0)).method23465(field18964, Boolean.valueOf(false)));
+      this.method11578(this.field18612.method35393().with(field18963, Integer.valueOf(0)).with(field18964, Boolean.valueOf(false)));
    }
 
    @Override
@@ -36,14 +40,14 @@ public class Class3372 extends Class3241 {
 
    @Override
    public int method11514(BlockState var1, IBlockReader var2, BlockPos var3, Direction var4) {
-      return var1.<Integer>method23463(field18963);
+      return var1.<Integer>get(field18963);
    }
 
    public static void method11966(BlockState var0, World var1, BlockPos var2) {
       if (var1.method6812().hasSkyLight()) {
          int var5 = var1.method7020(Class1977.field12881, var2) - var1.method6808();
          float var6 = var1.method6750(1.0F);
-         boolean var7 = var0.<Boolean>method23463(field18964);
+         boolean var7 = var0.<Boolean>get(field18964);
          if (!var7) {
             if (var5 > 0) {
                float var8 = !(var6 < (float) Math.PI) ? (float) (Math.PI * 2) : 0.0F;
@@ -55,8 +59,8 @@ public class Class3372 extends Class3241 {
          }
 
          var5 = MathHelper.method37775(var5, 0, 15);
-         if (var0.<Integer>method23463(field18963) != var5) {
-            var1.setBlockState(var2, var0.method23465(field18963, Integer.valueOf(var5)), 3);
+         if (var0.<Integer>get(field18963) != var5) {
+            var1.setBlockState(var2, var0.with(field18963, Integer.valueOf(var5)), 3);
          }
       }
    }

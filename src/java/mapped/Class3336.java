@@ -5,6 +5,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -66,7 +67,7 @@ public class Class3336 extends Item {
       return false;
    }
 
-   public static boolean method11884(ItemStack var0, World var1, BlockPos var2, net.minecraft.util.Direction var3) {
+   public static boolean method11884(ItemStack var0, World var1, BlockPos var2, Direction var3) {
       if (var1.getBlockState(var2).isIn(Blocks.WATER) && var1.getFluidState(var2).method23477() == 8) {
          if (!(var1 instanceof ServerWorld)) {
             return true;
@@ -87,7 +88,7 @@ public class Class3336 extends Item {
                if (Objects.equals(var11, Optional.<RegistryKey<Biome>>of(Class9495.field44165))
                   || Objects.equals(var11, Optional.<RegistryKey<Biome>>of(Class9495.field44168))) {
                   if (var6 == 0 && var3 != null && var3.getAxis().method324()) {
-                     var8 = BlockTags.field32784.method24919(var1.rand).method11579().method23465(Class3229.field18669, var3);
+                     var8 = BlockTags.field32784.method24919(var1.rand).method11579().with(Class3229.field18669, var3);
                   } else if (field18735.nextInt(4) == 0) {
                      var8 = BlockTags.field32782.method24919(field18735).method11579();
                   }
@@ -95,7 +96,7 @@ public class Class3336 extends Item {
 
                if (var8.getBlock().isIn(BlockTags.field32784)) {
                   for (int var10 = 0; !var8.method23443(var1, var7) && var10 < 4; var10++) {
-                     var8 = var8.method23465(Class3229.field18669, Class76.field161.method247(field18735));
+                     var8 = var8.with(Class3229.field18669, Direction.Plane.HORIZONTAL.method247(field18735));
                   }
                }
 
@@ -128,7 +129,7 @@ public class Class3336 extends Item {
          double var8;
          if (!var5.isIn(Blocks.WATER)) {
             if (!var5.method23409(var0, var1)) {
-               var8 = var5.method23412(var0, var1).getEnd(Direction.Y);
+               var8 = var5.method23412(var0, var1).getEnd(Direction.Axis.Y);
             } else {
                var1 = var1.up();
                var2 *= 3;

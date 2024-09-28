@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.Difficulty;
 
@@ -20,9 +21,9 @@ public class Class2721 extends NearestAttackableTargetGoal<PlayerEntity> {
 
    @Override
    public AxisAlignedBB method10921(double var1) {
-      net.minecraft.util.Direction var5 = ((Class1057)this.field17153).method4848();
-      if (var5.getAxis() != Direction.X) {
-         return var5.getAxis() != Direction.Z
+      Direction var5 = ((Class1057)this.field17153).method4848();
+      if (var5.getAxis() != Direction.Axis.X) {
+         return var5.getAxis() != Direction.Axis.Z
             ? this.field17153.getBoundingBox().method19663(var1, 4.0, var1)
             : this.field17153.getBoundingBox().method19663(var1, var1, 4.0);
       } else {

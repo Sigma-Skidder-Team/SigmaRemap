@@ -10,7 +10,7 @@ import net.minecraft.world.World;
 public class Class3380 extends Class3231 {
    private static String[] field18981;
 
-   public Class3380(AbstractBlock var1) {
+   public Class3380(Properties var1) {
       super(var1);
    }
 

@@ -29,6 +29,6 @@ public class Class8983 {
 
    public static void method33186(TemplateManager var0, List<Class4178> var1, Random var2, BlockPos var3) {
       Rotation var6 = Rotation.method254(var2);
-      var1.add(new Class4182(var0, Util.<ResourceLocation>method38518(field40995, var2), var3, var6));
+      var1.add(new Class4182(var0, Util.<ResourceLocation>getRandomObject(field40995, var2), var3, var6));
    }
 }

@@ -50,14 +50,14 @@ public class Class4172 extends Class4167 {
       this.method12927(var1, var5, 2, 11, 2, 10, 12, 10, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
       BlockState var10 = Blocks.NETHER_BRICK_FENCE
          .method11579()
-         .method23465(Class3239.field18683, Boolean.valueOf(true))
-         .method23465(Class3239.field18681, Boolean.valueOf(true));
+         .with(Class3239.field18683, Boolean.valueOf(true))
+         .with(Class3239.field18681, Boolean.valueOf(true));
       BlockState var11 = Blocks.NETHER_BRICK_FENCE
          .method11579()
-         .method23465(Class3239.field18680, Boolean.valueOf(true))
-         .method23465(Class3239.field18682, Boolean.valueOf(true));
-      BlockState var12 = var11.method23465(Class3239.field18683, Boolean.valueOf(true));
-      BlockState var13 = var11.method23465(Class3239.field18681, Boolean.valueOf(true));
+         .with(Class3239.field18680, Boolean.valueOf(true))
+         .with(Class3239.field18682, Boolean.valueOf(true));
+      BlockState var12 = var11.with(Class3239.field18683, Boolean.valueOf(true));
+      BlockState var13 = var11.with(Class3239.field18681, Boolean.valueOf(true));
 
       for (int var14 = 1; var14 <= 11; var14 += 2) {
          this.method12927(var1, var5, var14, 10, 0, var14, 11, 0, var10, var10, false);
@@ -78,7 +78,7 @@ public class Class4172 extends Class4167 {
 
       this.method12923(
          var1,
-         Blocks.NETHER_BRICK_FENCE.method11579().method23465(Class3239.field18680, Boolean.valueOf(true)).method23465(Class3239.field18681, Boolean.valueOf(true)),
+         Blocks.NETHER_BRICK_FENCE.method11579().with(Class3239.field18680, Boolean.valueOf(true)).with(Class3239.field18681, Boolean.valueOf(true)),
          0,
          13,
          0,
@@ -86,7 +86,7 @@ public class Class4172 extends Class4167 {
       );
       this.method12923(
          var1,
-         Blocks.NETHER_BRICK_FENCE.method11579().method23465(Class3239.field18682, Boolean.valueOf(true)).method23465(Class3239.field18681, Boolean.valueOf(true)),
+         Blocks.NETHER_BRICK_FENCE.method11579().with(Class3239.field18682, Boolean.valueOf(true)).with(Class3239.field18681, Boolean.valueOf(true)),
          0,
          13,
          12,
@@ -94,7 +94,7 @@ public class Class4172 extends Class4167 {
       );
       this.method12923(
          var1,
-         Blocks.NETHER_BRICK_FENCE.method11579().method23465(Class3239.field18682, Boolean.valueOf(true)).method23465(Class3239.field18683, Boolean.valueOf(true)),
+         Blocks.NETHER_BRICK_FENCE.method11579().with(Class3239.field18682, Boolean.valueOf(true)).with(Class3239.field18683, Boolean.valueOf(true)),
          12,
          13,
          12,
@@ -102,7 +102,7 @@ public class Class4172 extends Class4167 {
       );
       this.method12923(
          var1,
-         Blocks.NETHER_BRICK_FENCE.method11579().method23465(Class3239.field18680, Boolean.valueOf(true)).method23465(Class3239.field18683, Boolean.valueOf(true)),
+         Blocks.NETHER_BRICK_FENCE.method11579().with(Class3239.field18680, Boolean.valueOf(true)).with(Class3239.field18683, Boolean.valueOf(true)),
          12,
          13,
          0,
@@ -114,7 +114,7 @@ public class Class4172 extends Class4167 {
          this.method12927(var1, var5, 11, 7, var19, 11, 8, var19, var13, var13, false);
       }
 
-      BlockState var20 = Blocks.NETHER_BRICK_STAIRS.method11579().method23465(Class3421.field19131, Direction.NORTH);
+      BlockState var20 = Blocks.NETHER_BRICK_STAIRS.method11579().with(Class3421.field19131, Direction.NORTH);
 
       for (int var15 = 0; var15 <= 6; var15++) {
          int var16 = var15 + 4;
@@ -149,8 +149,8 @@ public class Class4172 extends Class4167 {
       this.method12927(var1, var5, 9, 5, 2, 10, 5, 3, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
       this.method12927(var1, var5, 9, 5, 9, 10, 5, 10, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
       this.method12927(var1, var5, 10, 5, 4, 10, 5, 8, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
-      BlockState var22 = var20.method23465(Class3421.field19131, Direction.EAST);
-      BlockState var23 = var20.method23465(Class3421.field19131, Direction.WEST);
+      BlockState var22 = var20.with(Class3421.field19131, Direction.EAST);
+      BlockState var23 = var20.with(Class3421.field19131, Direction.WEST);
       this.method12923(var1, var23, 4, 5, 2, var5);
       this.method12923(var1, var23, 4, 5, 3, var5);
       this.method12923(var1, var23, 4, 5, 9, var5);

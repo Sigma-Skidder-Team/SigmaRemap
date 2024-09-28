@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.collect.Maps;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import net.minecraft.state.StateContainer;
+
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -44,7 +46,7 @@ public class Class5142 implements Class5141 {
    }
 
    @Override
-   public void method15918(Class9348<?, ?> var1) {
+   public void method15918(StateContainer<?, ?> var1) {
       List var4 = this.field23364.keySet().stream().filter(var1x -> var1.method35396(var1x.method30472()) != var1x).collect(Collectors.toList());
       if (!var4.isEmpty()) {
          throw new IllegalStateException("Properties " + var4 + " are missing from " + var1);

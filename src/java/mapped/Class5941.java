@@ -4,6 +4,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.Minecraft;
+import net.minecraft.state.properties.StructureMode;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -21,7 +22,7 @@ public class Class5941 extends Class5942<Class964> {
          if (var10.getX() >= 1
             && var10.getY() >= 1
             && var10.getZ() >= 1
-            && (var1.method3950() == Class104.field318 || var1.method3950() == Class104.field319)) {
+            && (var1.method3950() == StructureMode.field318 || var1.method3950() == StructureMode.field319)) {
             double var11 = (double)var9.getX();
             double var13 = (double)var9.getZ();
             double var15 = (double)var9.getY();
@@ -76,11 +77,11 @@ public class Class5941 extends Class5942<Class964> {
             float var32 = 0.9F;
             float var33 = 0.5F;
             IVertexBuilder var34 = var4.method25597(RenderType.getLines());
-            if (var1.method3950() == Class104.field318 || var1.method3975()) {
+            if (var1.method3950() == StructureMode.field318 || var1.method3975()) {
                WorldRenderer.method899(var3, var34, var23, var15, var25, var27, var17, var29, 0.9F, 0.9F, 0.9F, 1.0F, 0.5F, 0.5F, 0.5F);
             }
 
-            if (var1.method3950() == Class104.field318 && var1.method3973()) {
+            if (var1.method3950() == StructureMode.field318 && var1.method3973()) {
                this.method18459(var1, var34, var9, true, var3);
                this.method18459(var1, var34, var9, false, var3);
             }

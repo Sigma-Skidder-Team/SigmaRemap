@@ -1,26 +1,27 @@
 package mapped;
 
+import net.minecraft.util.Direction;
 import net.minecraft.util.Rotation;
 
 // $VF: synthetic class
 public class Class4503 {
    private static String[] field21729;
    public static final int[] field21730;
-   public static final int[] field21731 = new int[Direction.values().length];
+   public static final int[] field21731 = new int[Direction.Axis.values().length];
 
    static {
       try {
-         field21731[Direction.X.ordinal()] = 1;
+         field21731[Direction.Axis.X.ordinal()] = 1;
       } catch (NoSuchFieldError var9) {
       }
 
       try {
-         field21731[Direction.Y.ordinal()] = 2;
+         field21731[Direction.Axis.Y.ordinal()] = 2;
       } catch (NoSuchFieldError var8) {
       }
 
       try {
-         field21731[Direction.Z.ordinal()] = 3;
+         field21731[Direction.Axis.Z.ordinal()] = 3;
       } catch (NoSuchFieldError var7) {
       }
 

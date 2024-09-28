@@ -8,6 +8,7 @@ import java.util.Set;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.entity.Entity;
+import net.minecraft.state.properties.ChestType;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -316,8 +317,8 @@ public class Class8149 {
 
    private boolean method28266(Class941 var1, BlockPos var2, IBlockDisplayReader var3) {
       BlockState var6 = var3.getBlockState(var2);
-      Class111 var7 = !var6.method23462(Class3348.field18866) ? Class111.field379 : var6.<Class111>method23463(Class3348.field18866);
-      boolean var8 = var7 == Class111.field379;
+      ChestType var7 = !var6.method23462(Class3348.field18866) ? ChestType.field379 : var6.<ChestType>get(Class3348.field18866);
+      boolean var8 = var7 == ChestType.field379;
       boolean var9 = var1 instanceof Class970;
       boolean var10 = Class7050.field30441;
       boolean var11 = false;

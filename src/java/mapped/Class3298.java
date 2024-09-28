@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.World;
 
 import java.util.Map;
@@ -27,7 +28,7 @@ public class Class3298 extends Class3292 {
       BlockPos var7 = var1.method18345();
 
       for (Direction var11 : var1.method18349()) {
-         if (var11 != Direction.field673) {
+         if (var11 != Direction.UP) {
             BlockState var12 = var11 != Direction.DOWN ? var4 : this.method11845().method11495(var1);
             if (var12 != null && var12.method23443(var6, var7)) {
                var5 = var12;

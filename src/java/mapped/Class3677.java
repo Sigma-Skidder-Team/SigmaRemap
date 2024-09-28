@@ -41,7 +41,7 @@ public class Class3677 extends Class3676<Class1042> {
       }
 
       if (var7.nextInt(200) == 0 && Class3686.method12533(var1, var2, var2.getPosition())) {
-         Class112 var8 = Util.<Class112>method38518(Class112.values(), var7);
+         Class112 var8 = Util.<Class112>getRandomObject(Class112.values(), var7);
          int var9 = var7.nextInt(3);
          ItemStack var10 = this.method12510(var8, var9);
          Class888 var11 = new Class888(var2.world, var2, var2.getPosX(), var2.getPosYEye(), var2.getPosZ(), var10);

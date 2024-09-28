@@ -130,7 +130,7 @@ public abstract class Class7637 extends Class7633 {
 
    @Override
    public BlockState method25063(FluidState var1) {
-      return Blocks.LAVA.method11579().method23465(Class3404.field19079, Integer.valueOf(method25094(var1)));
+      return Blocks.LAVA.method11579().with(Class3404.field19079, Integer.valueOf(method25094(var1)));
    }
 
    @Override
@@ -158,8 +158,8 @@ public abstract class Class7637 extends Class7633 {
       int var7 = this.method25057(var1);
       if (!var3.method23474()
          && !var4.method23474()
-         && !var3.<Boolean>method23463(field32712)
-         && !var4.<Boolean>method23463(field32712)
+         && !var3.<Boolean>get(field32712)
+         && !var4.<Boolean>get(field32712)
          && var4.method23475(var1, var2) > var3.method23475(var1, var2)
          && var1.method6814().nextInt(4) != 0) {
          var7 *= 4;

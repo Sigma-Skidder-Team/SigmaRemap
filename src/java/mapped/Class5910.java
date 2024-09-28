@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
@@ -10,9 +11,9 @@ import net.minecraft.world.World;
 
 public class Class5910 extends Class5909 {
    private static String[] field25716;
-   private final net.minecraft.util.Direction field25719;
+   private final Direction field25719;
 
-   public Class5910(World var1, BlockPos var2, net.minecraft.util.Direction var3, ItemStack var4, net.minecraft.util.Direction var5) {
+   public Class5910(World var1, BlockPos var2, Direction var3, ItemStack var4, Direction var5) {
       super(var1, (PlayerEntity)null, Hand.MAIN_HAND, var4, new BlockRayTraceResult(Vector3d.method11330(var2), var5, var2, false));
       this.field25719 = var3;
    }
@@ -33,32 +34,32 @@ public class Class5910 extends Class5909 {
    }
 
    @Override
-   public net.minecraft.util.Direction method18348() {
-      return net.minecraft.util.Direction.DOWN;
+   public Direction method18348() {
+      return Direction.DOWN;
    }
 
    @Override
-   public net.minecraft.util.Direction[] method18349() {
+   public Direction[] method18349() {
       switch (Class8228.field35345[this.field25719.ordinal()]) {
          case 1:
          default:
-            return new net.minecraft.util.Direction[]{net.minecraft.util.Direction.DOWN, net.minecraft.util.Direction.NORTH, net.minecraft.util.Direction.EAST, net.minecraft.util.Direction.SOUTH, net.minecraft.util.Direction.WEST, net.minecraft.util.Direction.field673};
+            return new Direction[]{Direction.DOWN, Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST, Direction.UP};
          case 2:
-            return new net.minecraft.util.Direction[]{net.minecraft.util.Direction.DOWN, net.minecraft.util.Direction.field673, net.minecraft.util.Direction.NORTH, net.minecraft.util.Direction.EAST, net.minecraft.util.Direction.SOUTH, net.minecraft.util.Direction.WEST};
+            return new Direction[]{Direction.DOWN, Direction.UP, Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST};
          case 3:
-            return new net.minecraft.util.Direction[]{net.minecraft.util.Direction.DOWN, net.minecraft.util.Direction.NORTH, net.minecraft.util.Direction.EAST, net.minecraft.util.Direction.WEST, net.minecraft.util.Direction.field673, net.minecraft.util.Direction.SOUTH};
+            return new Direction[]{Direction.DOWN, Direction.NORTH, Direction.EAST, Direction.WEST, Direction.UP, Direction.SOUTH};
          case 4:
-            return new net.minecraft.util.Direction[]{net.minecraft.util.Direction.DOWN, net.minecraft.util.Direction.SOUTH, net.minecraft.util.Direction.EAST, net.minecraft.util.Direction.WEST, net.minecraft.util.Direction.field673, net.minecraft.util.Direction.NORTH};
+            return new Direction[]{Direction.DOWN, Direction.SOUTH, Direction.EAST, Direction.WEST, Direction.UP, Direction.NORTH};
          case 5:
-            return new net.minecraft.util.Direction[]{net.minecraft.util.Direction.DOWN, net.minecraft.util.Direction.WEST, net.minecraft.util.Direction.SOUTH, net.minecraft.util.Direction.field673, net.minecraft.util.Direction.NORTH, net.minecraft.util.Direction.EAST};
+            return new Direction[]{Direction.DOWN, Direction.WEST, Direction.SOUTH, Direction.UP, Direction.NORTH, Direction.EAST};
          case 6:
-            return new net.minecraft.util.Direction[]{net.minecraft.util.Direction.DOWN, net.minecraft.util.Direction.EAST, net.minecraft.util.Direction.SOUTH, net.minecraft.util.Direction.field673, net.minecraft.util.Direction.NORTH, net.minecraft.util.Direction.WEST};
+            return new Direction[]{Direction.DOWN, Direction.EAST, Direction.SOUTH, Direction.UP, Direction.NORTH, Direction.WEST};
       }
    }
 
    @Override
-   public net.minecraft.util.Direction method18350() {
-      return this.field25719.getAxis() != Direction.Y ? this.field25719 : net.minecraft.util.Direction.NORTH;
+   public Direction method18350() {
+      return this.field25719.getAxis() != Direction.Axis.Y ? this.field25719 : Direction.NORTH;
    }
 
    @Override

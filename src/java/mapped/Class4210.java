@@ -4,6 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.state.properties.StairsShape;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
@@ -58,18 +59,18 @@ public class Class4210 extends Class4209 {
          this.method12923(var1, Blocks.field36648.method11579(), 4, 2, 6, var5);
          this.method12923(var1, Blocks.OAK_FENCE.method11579(), 1, 2, 1, var5);
          this.method12923(var1, Blocks.OAK_FENCE.method11579(), 5, 2, 1, var5);
-         BlockState var10 = Blocks.SPRUCE_STAIRS.method11579().method23465(Class3421.field19131, Direction.NORTH);
-         BlockState var11 = Blocks.SPRUCE_STAIRS.method11579().method23465(Class3421.field19131, Direction.EAST);
-         BlockState var12 = Blocks.SPRUCE_STAIRS.method11579().method23465(Class3421.field19131, Direction.WEST);
-         BlockState var13 = Blocks.SPRUCE_STAIRS.method11579().method23465(Class3421.field19131, Direction.SOUTH);
+         BlockState var10 = Blocks.SPRUCE_STAIRS.method11579().with(Class3421.field19131, Direction.NORTH);
+         BlockState var11 = Blocks.SPRUCE_STAIRS.method11579().with(Class3421.field19131, Direction.EAST);
+         BlockState var12 = Blocks.SPRUCE_STAIRS.method11579().with(Class3421.field19131, Direction.WEST);
+         BlockState var13 = Blocks.SPRUCE_STAIRS.method11579().with(Class3421.field19131, Direction.SOUTH);
          this.method12927(var1, var5, 0, 4, 1, 6, 4, 1, var10, var10, false);
          this.method12927(var1, var5, 0, 4, 2, 0, 4, 7, var11, var11, false);
          this.method12927(var1, var5, 6, 4, 2, 6, 4, 7, var12, var12, false);
          this.method12927(var1, var5, 0, 4, 8, 6, 4, 8, var13, var13, false);
-         this.method12923(var1, var10.method23465(Class3421.field19133, Class106.field333), 0, 4, 1, var5);
-         this.method12923(var1, var10.method23465(Class3421.field19133, Class106.field332), 6, 4, 1, var5);
-         this.method12923(var1, var13.method23465(Class3421.field19133, Class106.field332), 0, 4, 8, var5);
-         this.method12923(var1, var13.method23465(Class3421.field19133, Class106.field333), 6, 4, 8, var5);
+         this.method12923(var1, var10.with(Class3421.field19133, StairsShape.field333), 0, 4, 1, var5);
+         this.method12923(var1, var10.with(Class3421.field19133, StairsShape.field332), 6, 4, 1, var5);
+         this.method12923(var1, var13.with(Class3421.field19133, StairsShape.field332), 0, 4, 8, var5);
+         this.method12923(var1, var13.with(Class3421.field19133, StairsShape.field333), 6, 4, 8, var5);
 
          for (int var14 = 2; var14 <= 7; var14 += 5) {
             for (int var15 = 1; var15 <= 5; var15 += 4) {

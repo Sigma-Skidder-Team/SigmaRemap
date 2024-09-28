@@ -157,7 +157,7 @@ public class Class994 extends AbstractMinecartEntity {
    public BlockState method3604() {
       return Blocks.FURNACE
          .method11579()
-         .method23465(Class3353.field18875, Direction.NORTH)
-         .method23465(Class3353.field18876, Boolean.valueOf(this.method4075()));
+         .with(Class3353.field18875, Direction.NORTH)
+         .with(Class3353.field18876, Boolean.valueOf(this.method4075()));
    }
 }

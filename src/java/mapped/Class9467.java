@@ -65,8 +65,8 @@ public class Class9467 {
 
    @Nullable
    public Direction method36500(Class8390 var1, int var2, int var3, int var4, int var5) {
-      for (Direction var9 : Class76.field161) {
-         if (this.method36499(var1, var2 + var9.method539(), var3 + var9.method541(), var4, var5)) {
+      for (Direction var9 : Direction.Plane.HORIZONTAL) {
+         if (this.method36499(var1, var2 + var9.getXOffset(), var3 + var9.getZOffset(), var4, var5)) {
             return var9;
          }
       }
@@ -77,30 +77,30 @@ public class Class9467 {
    private void method36501(Class8390 var1, int var2, int var3, Direction var4, int var5) {
       if (var5 > 0) {
          var1.method29404(var2, var3, 1);
-         var1.method29407(var2 + var4.method539(), var3 + var4.method541(), 0, 1);
+         var1.method29407(var2 + var4.getXOffset(), var3 + var4.getZOffset(), 0, 1);
 
          for (int var8 = 0; var8 < 8; var8++) {
-            Direction var9 = Direction.method547(this.field43994.nextInt(4));
-            if (var9 != var4.method536() && (var9 != Direction.EAST || !this.field43994.nextBoolean())) {
-               int var10 = var2 + var4.method539();
-               int var11 = var3 + var4.method541();
-               if (var1.method29406(var10 + var9.method539(), var11 + var9.method541()) == 0
-                  && var1.method29406(var10 + var9.method539() * 2, var11 + var9.method541() * 2) == 0) {
-                  this.method36501(var1, var2 + var4.method539() + var9.method539(), var3 + var4.method541() + var9.method541(), var9, var5 - 1);
+            Direction var9 = Direction.byHorizontalIndex(this.field43994.nextInt(4));
+            if (var9 != var4.getOpposite() && (var9 != Direction.EAST || !this.field43994.nextBoolean())) {
+               int var10 = var2 + var4.getXOffset();
+               int var11 = var3 + var4.getZOffset();
+               if (var1.method29406(var10 + var9.getXOffset(), var11 + var9.getZOffset()) == 0
+                  && var1.method29406(var10 + var9.getXOffset() * 2, var11 + var9.getZOffset() * 2) == 0) {
+                  this.method36501(var1, var2 + var4.getXOffset() + var9.getXOffset(), var3 + var4.getZOffset() + var9.getZOffset(), var9, var5 - 1);
                   break;
                }
             }
          }
 
-         Direction var12 = var4.method537();
-         Direction var13 = var4.method538();
-         var1.method29407(var2 + var12.method539(), var3 + var12.method541(), 0, 2);
-         var1.method29407(var2 + var13.method539(), var3 + var13.method541(), 0, 2);
-         var1.method29407(var2 + var4.method539() + var12.method539(), var3 + var4.method541() + var12.method541(), 0, 2);
-         var1.method29407(var2 + var4.method539() + var13.method539(), var3 + var4.method541() + var13.method541(), 0, 2);
-         var1.method29407(var2 + var4.method539() * 2, var3 + var4.method541() * 2, 0, 2);
-         var1.method29407(var2 + var12.method539() * 2, var3 + var12.method541() * 2, 0, 2);
-         var1.method29407(var2 + var13.method539() * 2, var3 + var13.method541() * 2, 0, 2);
+         Direction var12 = var4.rotateY();
+         Direction var13 = var4.rotateYCCW();
+         var1.method29407(var2 + var12.getXOffset(), var3 + var12.getZOffset(), 0, 2);
+         var1.method29407(var2 + var13.getXOffset(), var3 + var13.getZOffset(), 0, 2);
+         var1.method29407(var2 + var4.getXOffset() + var12.getXOffset(), var3 + var4.getZOffset() + var12.getZOffset(), 0, 2);
+         var1.method29407(var2 + var4.getXOffset() + var13.getXOffset(), var3 + var4.getZOffset() + var13.getZOffset(), 0, 2);
+         var1.method29407(var2 + var4.getXOffset() * 2, var3 + var4.getZOffset() * 2, 0, 2);
+         var1.method29407(var2 + var12.getXOffset() * 2, var3 + var12.getZOffset() * 2, 0, 2);
+         var1.method29407(var2 + var13.getXOffset() * 2, var3 + var13.getZOffset() * 2, 0, 2);
       }
    }
 
@@ -159,8 +159,8 @@ public class Class9467 {
          int var14 = var4.method29406((Integer)var13.method20692(), (Integer)var13.method20693());
          var4.method29404((Integer)var13.method20692(), (Integer)var13.method20693(), var14 | 4194304);
          Direction var15 = this.method36500(this.field43995, (Integer)var13.method20692(), (Integer)var13.method20693(), 1, var14 & 65535);
-         int var16 = (Integer)var13.method20692() + var15.method539();
-         int var9 = (Integer)var13.method20693() + var15.method541();
+         int var16 = (Integer)var13.method20692() + var15.getXOffset();
+         int var9 = (Integer)var13.method20693() + var15.getZOffset();
 
          for (int var10 = 0; var10 < Class8390.method29410(this.field43996); var10++) {
             for (int var11 = 0; var11 < Class8390.method29409(this.field43996); var11++) {
@@ -179,15 +179,15 @@ public class Class9467 {
 
          ArrayList var17 = Lists.newArrayList();
 
-         for (Direction var12 : Class76.field161) {
-            if (this.field43996.method29406(var16 + var12.method539(), var9 + var12.method541()) == 0) {
+         for (Direction var12 : Direction.Plane.HORIZONTAL) {
+            if (this.field43996.method29406(var16 + var12.getXOffset(), var9 + var12.getZOffset()) == 0) {
                var17.add(var12);
             }
          }
 
          if (!var17.isEmpty()) {
             Direction var19 = (Direction)var17.get(this.field43994.nextInt(var17.size()));
-            this.method36501(this.field43996, var16 + var19.method539(), var9 + var19.method541(), var19, 4);
+            this.method36501(this.field43996, var16 + var19.getXOffset(), var9 + var19.getZOffset(), var19, 4);
 
             while (this.method36502(this.field43996)) {
             }

@@ -5,7 +5,9 @@ import com.mojang.datafixers.util.Pair;
 import it.unimi.dsi.fastutil.booleans.BooleanArrayList;
 import it.unimi.dsi.fastutil.booleans.BooleanList;
 import net.minecraft.client.util.Util;
+import net.minecraft.util.Direction;
 import net.minecraft.util.IStringSerializable;
+import net.minecraft.world.gen.feature.jigsaw.JigsawOrientation;
 
 import java.util.Arrays;
 import java.util.Map;
@@ -63,7 +65,7 @@ public enum Class178 implements IStringSerializable {
 
    private final Class8967 field613;
    private final String field614;
-   private Map<net.minecraft.util.Direction, net.minecraft.util.Direction> field615;
+   private Map<Direction, Direction> field615;
    private final boolean field616;
    private final boolean field617;
    private final boolean field618;
@@ -118,16 +120,16 @@ public enum Class178 implements IStringSerializable {
       return this.field614;
    }
 
-   public net.minecraft.util.Direction method508(net.minecraft.util.Direction var1) {
+   public Direction method508(Direction var1) {
       if (this.field615 == null) {
-         this.field615 = Maps.newEnumMap(net.minecraft.util.Direction.class);
+         this.field615 = Maps.newEnumMap(Direction.class);
 
-         for (net.minecraft.util.Direction var7 : net.minecraft.util.Direction.values()) {
-            Direction var8 = var7.getAxis();
-            Class1892 var9 = var7.getAxisDirection();
-            Direction var10 = Direction.values()[this.field619.method8986(var8.ordinal())];
-            Class1892 var11 = !this.method509(var10) ? var9 : var9.method8151();
-            net.minecraft.util.Direction var12 = net.minecraft.util.Direction.method550(var10, var11);
+         for (Direction var7 : Direction.values()) {
+            Direction.Axis var8 = var7.getAxis();
+            Direction.AxisDirection var9 = var7.getAxisDirection();
+            Direction.Axis var10 = Direction.Axis.values()[this.field619.method8986(var8.ordinal())];
+            Direction.AxisDirection var11 = !this.method509(var10) ? var9 : var9.inverted();
+            Direction var12 = Direction.getFacingFromAxisDirection(var10, var11);
             this.field615.put(var7, var12);
          }
       }
@@ -135,7 +137,7 @@ public enum Class178 implements IStringSerializable {
       return this.field615.get(var1);
    }
 
-   public boolean method509(Direction var1) {
+   public boolean method509(Direction.Axis var1) {
       switch (Class9825.field45904[var1.ordinal()]) {
          case 1:
             return this.field616;
@@ -147,7 +149,7 @@ public enum Class178 implements IStringSerializable {
       }
    }
 
-   public Class182 method510(Class182 var1) {
-      return Class182.method526(this.method508(var1.method527()), this.method508(var1.method528()));
+   public JigsawOrientation method510(JigsawOrientation var1) {
+      return JigsawOrientation.method526(this.method508(var1.method527()), this.method508(var1.method528()));
    }
 }

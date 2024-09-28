@@ -179,7 +179,7 @@ public class Jesus extends Module {
    }
 
    @Override
-   public boolean method15988() {
+   public boolean isEnabled2() {
       return this.isEnabled() && method16953() && !this.method16950();
    }
 

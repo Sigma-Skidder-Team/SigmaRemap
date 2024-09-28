@@ -2,10 +2,11 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 
 public abstract class Class3232 extends Class3231 {
-   public Class3232(AbstractBlock var1) {
+   public Class3232(Properties var1) {
       super(var1);
    }
 

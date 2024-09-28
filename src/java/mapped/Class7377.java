@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import com.mentalfrostbyte.jello.event.impl.EventRenderBlocks;
 import com.mojang.serialization.MapCodec;
 import com.mentalfrostbyte.jello.Client;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.material.Material;
@@ -14,13 +15,11 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Direction;
-import net.minecraft.util.Hand;
-import net.minecraft.util.Rotation;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
@@ -50,20 +49,20 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
 
    public Class7377(Block var1, ImmutableMap<Class8550<?>, Comparable<?>> var2, MapCodec<BlockState> var3) {
       super(var1, var2, var3);
-      AbstractBlock var6 = var1.field19013;
-      this.field31564 = AbstractBlock.method26654(var6).applyAsInt(this.method23457());
+      AbstractBlock.Properties var6 = var1.field19013;
+      this.field31564 = AbstractBlock.Properties.method26654(var6).applyAsInt(this.method23457());
       this.field31565 = var1.method11534(this.method23457());
-      this.field31566 = AbstractBlock.method26655(var6);
-      this.field31567 = AbstractBlock.method26643(var6);
-      this.field31568 = (MaterialColor) AbstractBlock.method26653(var6).apply(this.method23457());
-      this.field31569 = AbstractBlock.method26656(var6);
-      this.field31570 = AbstractBlock.method26657(var6);
-      this.field31571 = AbstractBlock.method26658(var6);
-      this.field31572 = AbstractBlock.method26659(var6);
-      this.field31573 = AbstractBlock.method26660(var6);
-      this.field31574 = AbstractBlock.method26661(var6);
-      this.field31575 = AbstractBlock.method26662(var6);
-      this.field31576 = AbstractBlock.method26663(var6);
+      this.field31566 = AbstractBlock.Properties.method26655(var6);
+      this.field31567 = AbstractBlock.Properties.method26643(var6);
+      this.field31568 = (MaterialColor) AbstractBlock.Properties.method26653(var6).apply(this.method23457());
+      this.field31569 = AbstractBlock.Properties.method26656(var6);
+      this.field31570 = AbstractBlock.Properties.method26657(var6);
+      this.field31571 = AbstractBlock.Properties.method26658(var6);
+      this.field31572 = AbstractBlock.Properties.method26659(var6);
+      this.field31573 = AbstractBlock.Properties.method26660(var6);
+      this.field31574 = AbstractBlock.Properties.method26661(var6);
+      this.field31575 = AbstractBlock.Properties.method26662(var6);
+      this.field31576 = AbstractBlock.Properties.method26663(var6);
    }
 
    public void method23382() {
@@ -81,7 +80,7 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
    }
 
    public boolean method23385(IBlockReader var1, BlockPos var2, EntityType<?> var3) {
-      return AbstractBlock.method26664(this.getBlock().field19013).method38752(this.method23457(), var1, var2, var3);
+      return AbstractBlock.Properties.method26664(this.getBlock().field19013).method38752(this.method23457(), var1, var2, var3);
    }
 
    public boolean method23386(IBlockReader var1, BlockPos var2) {
@@ -124,12 +123,12 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
       return this.field31568;
    }
 
-   public BlockState method23395(Rotation var1) {
-      return this.getBlock().method11500(this.method23457(), var1);
+   public BlockState rotate(Rotation var1) {
+      return this.getBlock().rotate(this.method23457(), var1);
    }
 
-   public BlockState method23396(Class2089 var1) {
-      return this.getBlock().method11501(this.method23457(), var1);
+   public BlockState method23396(Mirror var1) {
+      return this.getBlock().mirror(this.method23457(), var1);
    }
 
    public BlockRenderType getRenderType() {
@@ -226,7 +225,7 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
    }
 
    public final boolean method23419(IBlockReader var1, BlockPos var2, Entity var3) {
-      return this.method23420(var1, var2, var3, Direction.field673);
+      return this.method23420(var1, var2, var3, Direction.UP);
    }
 
    public final boolean method23420(IBlockReader var1, BlockPos var2, Entity var3, Direction var4) {
@@ -263,10 +262,10 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
       this.getBlock();
       BlockPos.Mutable var7 = new BlockPos.Mutable();
 
-      for (Direction var11 : Class3390.field19003) {
+      for (Direction var11 : AbstractBlock.field19003) {
          var7.method8377(var2, var11);
          BlockState var12 = var1.getBlockState(var7);
-         BlockState var13 = var12.method23439(var11.method536(), this.method23457(), var1, var7, var2);
+         BlockState var13 = var12.method23439(var11.getOpposite(), this.method23457(), var1, var7, var2);
          Block.method11544(var12, var13, var1, var7, var3, var4);
       }
    }

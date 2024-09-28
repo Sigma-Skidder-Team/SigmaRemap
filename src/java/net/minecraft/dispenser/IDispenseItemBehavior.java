@@ -91,9 +91,9 @@ public interface IDispenseItemBehavior {
 
    static void method19201(IBlockSource var0, Entity var1, Direction var2) {
       var1.setPosition(
-         var0.getX() + (double)var2.method539() * (0.5000099999997474 - (double)var1.getWidth() / 2.0),
-         var0.getY() + (double)var2.method540() * (0.5000099999997474 - (double)var1.getHeight() / 2.0) - (double)var1.getHeight() / 2.0,
-         var0.getZ() + (double)var2.method541() * (0.5000099999997474 - (double)var1.getWidth() / 2.0)
+         var0.getX() + (double)var2.getXOffset() * (0.5000099999997474 - (double)var1.getWidth() / 2.0),
+         var0.getY() + (double)var2.getYOffset() * (0.5000099999997474 - (double)var1.getHeight() / 2.0) - (double)var1.getHeight() / 2.0,
+         var0.getZ() + (double)var2.getZOffset() * (0.5000099999997474 - (double)var1.getWidth() / 2.0)
       );
    }
 }

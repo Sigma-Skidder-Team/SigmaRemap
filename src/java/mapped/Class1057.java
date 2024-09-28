@@ -151,7 +151,7 @@ public class Class1057 extends Class1056 implements Class1008 {
                   if (!var4.isIn(Blocks.PISTON_HEAD)) {
                      this.method4846();
                   } else {
-                     Direction var5 = var4.<Direction>method23463(Class3436.field19198);
+                     Direction var5 = var4.<Direction>get(Class3436.field19198);
                      if (!this.world.method7007(var3.method8349(var5))) {
                         this.method4846();
                      } else {
@@ -160,7 +160,7 @@ public class Class1057 extends Class1056 implements Class1008 {
                      }
                   }
                } else {
-                  Direction var19 = var4.<Direction>method23463(Class3435.field19198);
+                  Direction var19 = var4.<Direction>get(Class3435.field19198);
                   if (!this.world.method7007(var3.method8349(var19))) {
                      this.method4846();
                   } else {
@@ -211,7 +211,7 @@ public class Class1057 extends Class1056 implements Class1008 {
          this.setLocationAndAngles((double)var3.getX() + 0.5, (double)var3.getY(), (double)var3.getZ() + 0.5);
          double var7 = 0.5 - (double) MathHelper.sin((0.5F + this.field5846) * (float) Math.PI) * 0.5;
          double var9 = 0.5 - (double) MathHelper.sin((0.5F + this.field5845) * (float) Math.PI) * 0.5;
-         Direction var11 = this.method4848().method536();
+         Direction var11 = this.method4848().getOpposite();
          this.setBoundingBox(
             new AxisAlignedBB(
                   this.getPosX() - 0.5,
@@ -221,7 +221,7 @@ public class Class1057 extends Class1056 implements Class1008 {
                   this.getPosY() + 1.0,
                   this.getPosZ() + 0.5
                )
-               .contract((double)var11.method539() * var7, (double)var11.method540() * var7, (double)var11.method541() * var7)
+               .contract((double)var11.getXOffset() * var7, (double)var11.getYOffset() * var7, (double)var11.getZOffset() * var7)
          );
          double var12 = var7 - var9;
          if (var12 > 0.0) {
@@ -231,7 +231,7 @@ public class Class1057 extends Class1056 implements Class1008 {
                   if (!(var16 instanceof Class1057) && !var16.noClip) {
                      var16.move(
                         MoverType.field13746,
-                        new Vector3d(var12 * (double)var11.method539(), var12 * (double)var11.method540(), var12 * (double)var11.method541())
+                        new Vector3d(var12 * (double)var11.getXOffset(), var12 * (double)var11.getYOffset(), var12 * (double)var11.getZOffset())
                      );
                   }
                }
@@ -275,8 +275,8 @@ public class Class1057 extends Class1056 implements Class1008 {
    }
 
    private boolean method4845(BlockPos var1, Direction var2) {
-      return this.world.method6764(var1.method8349(var2), this, var2.method536())
-         && this.world.hasNoCollisions(this, Class8919.method32596(var1, var2.method536()));
+      return this.world.method6764(var1.method8349(var2), this, var2.getOpposite())
+         && this.world.hasNoCollisions(this, Class8919.method32596(var1, var2.getOpposite()));
    }
 
    public boolean method4846() {

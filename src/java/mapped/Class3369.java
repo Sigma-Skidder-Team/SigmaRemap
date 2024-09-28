@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.block.HorizontalBlock;
+import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.DirectionProperty;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -7,12 +10,17 @@ import net.minecraft.block.material.PushReaction;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.state.EnumProperty;
+import net.minecraft.state.properties.BellAttachment;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
@@ -21,42 +29,42 @@ import javax.annotation.Nullable;
 
 public class Class3369 extends Class3241 {
    private static String[] field18942;
-   public static final Class8553 field18943 = Class3198.field18484;
-   public static final Class8552<Class85> field18944 = Class8820.field39725;
-   public static final Class8551 field18945 = Class8820.field39704;
-   private static final VoxelShape field18946 = Block.method11539(0.0, 0.0, 4.0, 16.0, 16.0, 12.0);
-   private static final VoxelShape field18947 = Block.method11539(4.0, 0.0, 0.0, 12.0, 16.0, 16.0);
-   private static final VoxelShape field18948 = Block.method11539(5.0, 6.0, 5.0, 11.0, 13.0, 11.0);
-   private static final VoxelShape field18949 = Block.method11539(4.0, 4.0, 4.0, 12.0, 6.0, 12.0);
-   private static final VoxelShape field18950 = VoxelShapes.method27431(field18949, field18948);
-   private static final VoxelShape field18951 = VoxelShapes.method27431(field18950, Block.method11539(7.0, 13.0, 0.0, 9.0, 15.0, 16.0));
-   private static final VoxelShape field18952 = VoxelShapes.method27431(field18950, Block.method11539(0.0, 13.0, 7.0, 16.0, 15.0, 9.0));
-   private static final VoxelShape field18953 = VoxelShapes.method27431(field18950, Block.method11539(0.0, 13.0, 7.0, 13.0, 15.0, 9.0));
-   private static final VoxelShape field18954 = VoxelShapes.method27431(field18950, Block.method11539(3.0, 13.0, 7.0, 16.0, 15.0, 9.0));
-   private static final VoxelShape field18955 = VoxelShapes.method27431(field18950, Block.method11539(7.0, 13.0, 0.0, 9.0, 15.0, 13.0));
-   private static final VoxelShape field18956 = VoxelShapes.method27431(field18950, Block.method11539(7.0, 13.0, 3.0, 9.0, 15.0, 16.0));
-   private static final VoxelShape field18957 = VoxelShapes.method27431(field18950, Block.method11539(7.0, 13.0, 7.0, 9.0, 16.0, 9.0));
+   public static final DirectionProperty field18943 = HorizontalBlock.HORIZONTAL_FACING;
+   public static final EnumProperty<BellAttachment> field18944 = BlockStateProperties.BELL_ATTACHMENT;
+   public static final BooleanProperty field18945 = BlockStateProperties.POWERED;
+   private static final VoxelShape field18946 = Block.makeCuboidShape(0.0, 0.0, 4.0, 16.0, 16.0, 12.0);
+   private static final VoxelShape field18947 = Block.makeCuboidShape(4.0, 0.0, 0.0, 12.0, 16.0, 16.0);
+   private static final VoxelShape field18948 = Block.makeCuboidShape(5.0, 6.0, 5.0, 11.0, 13.0, 11.0);
+   private static final VoxelShape field18949 = Block.makeCuboidShape(4.0, 4.0, 4.0, 12.0, 6.0, 12.0);
+   private static final VoxelShape field18950 = VoxelShapes.or(field18949, field18948);
+   private static final VoxelShape field18951 = VoxelShapes.or(field18950, Block.makeCuboidShape(7.0, 13.0, 0.0, 9.0, 15.0, 16.0));
+   private static final VoxelShape field18952 = VoxelShapes.or(field18950, Block.makeCuboidShape(0.0, 13.0, 7.0, 16.0, 15.0, 9.0));
+   private static final VoxelShape field18953 = VoxelShapes.or(field18950, Block.makeCuboidShape(0.0, 13.0, 7.0, 13.0, 15.0, 9.0));
+   private static final VoxelShape field18954 = VoxelShapes.or(field18950, Block.makeCuboidShape(3.0, 13.0, 7.0, 16.0, 15.0, 9.0));
+   private static final VoxelShape field18955 = VoxelShapes.or(field18950, Block.makeCuboidShape(7.0, 13.0, 0.0, 9.0, 15.0, 13.0));
+   private static final VoxelShape field18956 = VoxelShapes.or(field18950, Block.makeCuboidShape(7.0, 13.0, 3.0, 9.0, 15.0, 16.0));
+   private static final VoxelShape field18957 = VoxelShapes.or(field18950, Block.makeCuboidShape(7.0, 13.0, 7.0, 9.0, 16.0, 9.0));
 
-   public Class3369(AbstractBlock var1) {
+   public Class3369(Properties var1) {
       super(var1);
       this.method11578(
          this.field18612
             .method35393()
-            .method23465(field18943, net.minecraft.util.Direction.NORTH)
-            .method23465(field18944, Class85.field212)
-            .method23465(field18945, Boolean.valueOf(false))
+            .with(field18943, Direction.NORTH)
+            .with(field18944, BellAttachment.field212)
+            .with(field18945, Boolean.valueOf(false))
       );
    }
 
    @Override
    public void method11506(BlockState var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       boolean var9 = var2.method6780(var3);
-      if (var9 != var1.<Boolean>method23463(field18945)) {
+      if (var9 != var1.<Boolean>get(field18945)) {
          if (var9) {
-            this.method11962(var2, var3, (net.minecraft.util.Direction)null);
+            this.method11962(var2, var3, (Direction)null);
          }
 
-         var2.setBlockState(var3, var1.method23465(field18945, Boolean.valueOf(var9)), 3);
+         var2.setBlockState(var3, var1.with(field18945, Boolean.valueOf(var9)), 3);
       }
    }
 
@@ -73,7 +81,7 @@ public class Class3369 extends Class3241 {
    }
 
    public boolean method11960(World var1, BlockState var2, BlockRayTraceResult var3, PlayerEntity var4, boolean var5) {
-      net.minecraft.util.Direction var8 = var3.getFace();
+      Direction var8 = var3.getFace();
       BlockPos var9 = var3.getPos();
       boolean var10 = !var5 || this.method11961(var2, var8, var3.method31419().y - (double)var9.getY());
       if (!var10) {
@@ -88,10 +96,10 @@ public class Class3369 extends Class3241 {
       }
    }
 
-   private boolean method11961(BlockState var1, net.minecraft.util.Direction var2, double var3) {
-      if (var2.getAxis() != Direction.Y && !(var3 > 0.8124F)) {
-         net.minecraft.util.Direction var7 = var1.<net.minecraft.util.Direction>method23463(field18943);
-         Class85 var8 = var1.<Class85>method23463(field18944);
+   private boolean method11961(BlockState var1, Direction var2, double var3) {
+      if (var2.getAxis() != Direction.Axis.Y && !(var3 > 0.8124F)) {
+         Direction var7 = var1.<Direction>get(field18943);
+         BellAttachment var8 = var1.<BellAttachment>get(field18944);
          switch (Class7106.field30622[var8.ordinal()]) {
             case 1:
                return var7.getAxis() == var2.getAxis();
@@ -108,11 +116,11 @@ public class Class3369 extends Class3241 {
       }
    }
 
-   public boolean method11962(World var1, BlockPos var2, net.minecraft.util.Direction var3) {
+   public boolean method11962(World var1, BlockPos var2, Direction var3) {
       TileEntity var6 = var1.getTileEntity(var2);
       if (!var1.isRemote && var6 instanceof Class966) {
          if (var3 == null) {
-            var3 = var1.getBlockState(var2).<net.minecraft.util.Direction>method23463(field18943);
+            var3 = var1.getBlockState(var2).<Direction>get(field18943);
          }
 
          ((Class966)var6).method3991(var3);
@@ -124,14 +132,14 @@ public class Class3369 extends Class3241 {
    }
 
    private VoxelShape method11963(BlockState var1) {
-      net.minecraft.util.Direction var4 = var1.<net.minecraft.util.Direction>method23463(field18943);
-      Class85 var5 = var1.<Class85>method23463(field18944);
-      if (var5 != Class85.field212) {
-         if (var5 != Class85.field213) {
-            if (var5 != Class85.field215) {
-               if (var4 != net.minecraft.util.Direction.NORTH) {
-                  if (var4 != net.minecraft.util.Direction.SOUTH) {
-                     return var4 != net.minecraft.util.Direction.EAST ? field18953 : field18954;
+      Direction var4 = var1.<Direction>get(field18943);
+      BellAttachment var5 = var1.<BellAttachment>get(field18944);
+      if (var5 != BellAttachment.field212) {
+         if (var5 != BellAttachment.field213) {
+            if (var5 != BellAttachment.field215) {
+               if (var4 != Direction.NORTH) {
+                  if (var4 != Direction.SOUTH) {
+                     return var4 != Direction.EAST ? field18953 : field18954;
                   } else {
                      return field18956;
                   }
@@ -139,13 +147,13 @@ public class Class3369 extends Class3241 {
                   return field18955;
                }
             } else {
-               return var4 != net.minecraft.util.Direction.NORTH && var4 != net.minecraft.util.Direction.SOUTH ? field18952 : field18951;
+               return var4 != Direction.NORTH && var4 != Direction.SOUTH ? field18952 : field18951;
             }
          } else {
             return field18957;
          }
       } else {
-         return var4 != net.minecraft.util.Direction.NORTH && var4 != net.minecraft.util.Direction.SOUTH ? field18947 : field18946;
+         return var4 != Direction.NORTH && var4 != Direction.SOUTH ? field18947 : field18946;
       }
    }
 
@@ -167,31 +175,31 @@ public class Class3369 extends Class3241 {
    @Nullable
    @Override
    public BlockState method11495(Class5909 var1) {
-      net.minecraft.util.Direction var4 = var1.method18354();
+      Direction var4 = var1.method18354();
       BlockPos var5 = var1.method18345();
       World var6 = var1.method18360();
-      Direction var7 = var4.getAxis();
-      if (var7 != Direction.Y) {
-         boolean var8 = var7 == Direction.X
-               && var6.getBlockState(var5.west()).method23454(var6, var5.west(), net.minecraft.util.Direction.EAST)
-               && var6.getBlockState(var5.east()).method23454(var6, var5.east(), net.minecraft.util.Direction.WEST)
-            || var7 == Direction.Z
-               && var6.getBlockState(var5.north()).method23454(var6, var5.north(), net.minecraft.util.Direction.SOUTH)
-               && var6.getBlockState(var5.south()).method23454(var6, var5.south(), net.minecraft.util.Direction.NORTH);
-         BlockState var9 = this.method11579().method23465(field18943, var4.method536()).method23465(field18944, !var8 ? Class85.field214 : Class85.field215);
+      Direction.Axis var7 = var4.getAxis();
+      if (var7 != Direction.Axis.Y) {
+         boolean var8 = var7 == Direction.Axis.X
+               && var6.getBlockState(var5.west()).method23454(var6, var5.west(), Direction.EAST)
+               && var6.getBlockState(var5.east()).method23454(var6, var5.east(), Direction.WEST)
+            || var7 == Direction.Axis.Z
+               && var6.getBlockState(var5.north()).method23454(var6, var5.north(), Direction.SOUTH)
+               && var6.getBlockState(var5.south()).method23454(var6, var5.south(), Direction.NORTH);
+         BlockState var9 = this.method11579().with(field18943, var4.getOpposite()).with(field18944, !var8 ? BellAttachment.field214 : BellAttachment.field215);
          if (var9.method23443(var1.method18360(), var1.method18345())) {
             return var9;
          }
 
-         boolean var10 = var6.getBlockState(var5.down()).method23454(var6, var5.down(), net.minecraft.util.Direction.field673);
-         var9 = var9.method23465(field18944, !var10 ? Class85.field213 : Class85.field212);
+         boolean var10 = var6.getBlockState(var5.down()).method23454(var6, var5.down(), Direction.UP);
+         var9 = var9.with(field18944, !var10 ? BellAttachment.field213 : BellAttachment.field212);
          if (var9.method23443(var1.method18360(), var1.method18345())) {
             return var9;
          }
       } else {
          BlockState var11 = this.method11579()
-            .method23465(field18944, var4 != net.minecraft.util.Direction.DOWN ? Class85.field212 : Class85.field213)
-            .method23465(field18943, var1.method18350());
+            .with(field18944, var4 != Direction.DOWN ? BellAttachment.field212 : BellAttachment.field213)
+            .with(field18943, var1.method18350());
          if (var11.method23443(var1.method18360(), var5)) {
             return var11;
          }
@@ -201,19 +209,19 @@ public class Class3369 extends Class3241 {
    }
 
    @Override
-   public BlockState method11491(BlockState var1, net.minecraft.util.Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
-      Class85 var9 = var1.<Class85>method23463(field18944);
-      net.minecraft.util.Direction var10 = method11964(var1).method536();
-      if (var10 == var2 && !var1.method23443(var4, var5) && var9 != Class85.field215) {
+   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+      BellAttachment var9 = var1.<BellAttachment>get(field18944);
+      Direction var10 = method11964(var1).getOpposite();
+      if (var10 == var2 && !var1.method23443(var4, var5) && var9 != BellAttachment.field215) {
          return Blocks.AIR.method11579();
       } else {
-         if (var2.getAxis() == var1.<net.minecraft.util.Direction>method23463(field18943).getAxis()) {
-            if (var9 == Class85.field215 && !var3.method23454(var4, var6, var2)) {
-               return var1.method23465(field18944, Class85.field214).method23465(field18943, var2.method536());
+         if (var2.getAxis() == var1.<Direction>get(field18943).getAxis()) {
+            if (var9 == BellAttachment.field215 && !var3.method23454(var4, var6, var2)) {
+               return var1.with(field18944, BellAttachment.field214).with(field18943, var2.getOpposite());
             }
 
-            if (var9 == Class85.field214 && var10.method536() == var2 && var3.method23454(var4, var6, var1.<net.minecraft.util.Direction>method23463(field18943))) {
-               return var1.method23465(field18944, Class85.field215);
+            if (var9 == BellAttachment.field214 && var10.getOpposite() == var2 && var3.method23454(var4, var6, var1.<Direction>get(field18943))) {
+               return var1.with(field18944, BellAttachment.field215);
             }
          }
 
@@ -223,18 +231,18 @@ public class Class3369 extends Class3241 {
 
    @Override
    public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
-      net.minecraft.util.Direction var6 = method11964(var1).method536();
-      return var6 != net.minecraft.util.Direction.field673 ? Class3200.method11508(var2, var3, var6) : Block.method11548(var2, var3.up(), net.minecraft.util.Direction.DOWN);
+      Direction var6 = method11964(var1).getOpposite();
+      return var6 != Direction.UP ? Class3200.method11508(var2, var3, var6) : Block.method11548(var2, var3.up(), Direction.DOWN);
    }
 
-   private static net.minecraft.util.Direction method11964(BlockState var0) {
-      switch (Class7106.field30622[var0.<Class85>method23463(field18944).ordinal()]) {
+   private static Direction method11964(BlockState var0) {
+      switch (Class7106.field30622[var0.<BellAttachment>get(field18944).ordinal()]) {
          case 1:
-            return net.minecraft.util.Direction.field673;
+            return Direction.UP;
          case 4:
-            return net.minecraft.util.Direction.DOWN;
+            return Direction.DOWN;
          default:
-            return var0.<net.minecraft.util.Direction>method23463(field18943).method536();
+            return var0.<Direction>get(field18943).getOpposite();
       }
    }
 

@@ -5,7 +5,7 @@ import net.minecraft.block.Blocks;
 public class Class3463 extends Class3462 {
    private static String[] field19302;
 
-   public Class3463(AbstractBlock var1) {
+   public Class3463(Properties var1) {
       super(var1);
    }
 

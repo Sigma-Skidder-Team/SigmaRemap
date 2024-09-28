@@ -197,7 +197,7 @@ public class Class7551 {
       Class8391 var16 = var6.method17022(var3, var4);
       RenderType var17 = var6.method17023();
 
-      for (Direction var21 : Direction.field685) {
+      for (Direction var21 : Direction.VALUES) {
          if (!var7 || Class9716.method38063(var3, var1, var4, var21, var16)) {
             var8.setSeed(var9);
             List var22 = !this.field32375 ? var2.method22619(var3, var21, var8) : var2.method22628(var3, var21, var8, var12);
@@ -241,7 +241,7 @@ public class Class7551 {
       Class8391 var16 = var6.method17022(var3, var4);
       RenderType var17 = var6.method17023();
 
-      for (Direction var21 : Direction.field685) {
+      for (Direction var21 : Direction.VALUES) {
          if (!var7 || Class9716.method38063(var3, var1, var4, var21, var16)) {
             var8.setSeed(var9);
             List var22 = !this.field32375 ? var2.method22619(var3, var21, var8) : var2.method22628(var3, var21, var8, var12);
@@ -359,14 +359,14 @@ public class Class7551 {
          var6[Direction.WEST.getIndex()] = var10;
          var6[Direction.EAST.getIndex()] = var13;
          var6[Direction.DOWN.getIndex()] = var11;
-         var6[Direction.field673.getIndex()] = var14;
+         var6[Direction.UP.getIndex()] = var14;
          var6[Direction.NORTH.getIndex()] = var12;
          var6[Direction.SOUTH.getIndex()] = var15;
-         int var21 = Direction.field685.length;
+         int var21 = Direction.VALUES.length;
          var6[Direction.WEST.getIndex() + var21] = 1.0F - var10;
          var6[Direction.EAST.getIndex() + var21] = 1.0F - var13;
          var6[Direction.DOWN.getIndex() + var21] = 1.0F - var11;
-         var6[Direction.field673.getIndex() + var21] = 1.0F - var14;
+         var6[Direction.UP.getIndex() + var21] = 1.0F - var14;
          var6[Direction.NORTH.getIndex() + var21] = 1.0F - var12;
          var6[Direction.SOUTH.getIndex() + var21] = 1.0F - var15;
       }
@@ -433,7 +433,7 @@ public class Class7551 {
       Random var13 = new Random();
       long var14 = 42L;
 
-      for (Direction var19 : Direction.field685) {
+      for (Direction var19 : Direction.VALUES) {
          var13.setSeed(42L);
          if (!this.field32375) {
             method24691(var1, var2, var5, var6, var7, var4.method22619(var3, var19, var13), var8, var9);

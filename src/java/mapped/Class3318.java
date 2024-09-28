@@ -32,9 +32,9 @@ public class Class3318 extends Item {
          Class888 var8 = new Class888(
             var4,
             var1.method18358(),
-            var6.x + (double)var7.method539() * 0.15,
-            var6.y + (double)var7.method540() * 0.15,
-            var6.z + (double)var7.method541() * 0.15,
+            var6.x + (double)var7.getXOffset() * 0.15,
+            var6.y + (double)var7.getYOffset() * 0.15,
+            var6.z + (double)var7.getZOffset() * 0.15,
             var5
          );
          var4.addEntity(var8);

@@ -47,7 +47,7 @@ public class ActiveRenderInfo {
       if (!var3) {
          if (var2 instanceof LivingEntity && ((LivingEntity)var2).isSleeping()) {
             Direction var8 = ((LivingEntity)var2).getBedDirection();
-            this.method37501(var8 == null ? 0.0F : var8.method551() - 180.0F, 0.0F);
+            this.method37501(var8 == null ? 0.0F : var8.getHorizontalAngle() - 180.0F, 0.0F);
             this.method37500(0.0, 0.3, 0.0);
          }
       } else {

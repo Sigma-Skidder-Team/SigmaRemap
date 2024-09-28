@@ -4,6 +4,7 @@ import com.google.common.base.MoreObjects;
 import com.google.common.base.Splitter;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.state.StateContainer;
 
 import java.util.List;
 import java.util.Optional;
@@ -21,7 +22,7 @@ public class Class7565 implements Class7562 {
    }
 
    @Override
-   public Predicate<BlockState> method24750(Class9348<Block, BlockState> var1) {
+   public Predicate<BlockState> method24750(StateContainer<Block, BlockState> var1) {
       Class8550 var4 = var1.method35396(this.field32495);
       if (var4 == null) {
          throw new RuntimeException(String.format("Unknown property '%s' on '%s'", this.field32495, ((Block)var1.method35394()).toString()));
@@ -51,10 +52,10 @@ public class Class7565 implements Class7562 {
       }
    }
 
-   private Predicate<BlockState> method24761(Class9348<Block, BlockState> var1, Class8550<?> var2, String var3) {
+   private Predicate<BlockState> method24761(StateContainer<Block, BlockState> var1, Class8550<?> var2, String var3) {
       Optional var6 = var2.method30476(var3);
       if (var6.isPresent()) {
-         return var2x -> var2x.method23463(var2).equals(var6.get());
+         return var2x -> var2x.get(var2).equals(var6.get());
       } else {
          throw new RuntimeException(
             String.format(

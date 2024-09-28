@@ -79,7 +79,7 @@ public class Class2865<T extends MobEntity & Class1092> extends Class2855<T> {
       this.field17764.field31037 = (float) (Math.PI * 2.0 / 9.0) + var3 * MathHelper.sin(var2);
       this.field17762.rotateAngleY = var5 * (float) (Math.PI / 180.0);
       int var9 = ((Class1092)var1).method5082();
-      float var10 = 1.0F - (float) MathHelper.method37772(10 - 2 * var9) / 10.0F;
+      float var10 = 1.0F - (float) MathHelper.abs(10 - 2 * var9) / 10.0F;
       this.field17762.rotateAngleX = MathHelper.lerp(var10, 0.87266463F, (float) (-Math.PI / 9));
       if (!var1.isChild()) {
          this.field17762.rotationPointY = 2.0F;

@@ -92,7 +92,7 @@ public class Class2929 extends Class2898<Class4712> {
                if (var1.method7007(var38)) {
                   int var24 = 0;
 
-                  for (Direction var26 : Class76.field161) {
+                  for (Direction var26 : Direction.Plane.HORIZONTAL) {
                      if (var1.getBlockState(var38.method8349(var26)).getMaterial().isSolid()) {
                         var24++;
                      }
@@ -122,6 +122,6 @@ public class Class2929 extends Class2898<Class4712> {
    }
 
    private EntityType<?> method11264(Random var1) {
-      return Util.<EntityType<?>>method38518(field18003, var1);
+      return Util.<EntityType<?>>getRandomObject(field18003, var1);
    }
 }

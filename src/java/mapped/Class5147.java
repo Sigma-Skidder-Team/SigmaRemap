@@ -6,6 +6,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import net.minecraft.block.Block;
+import net.minecraft.state.StateContainer;
 
 import java.util.List;
 
@@ -49,7 +50,7 @@ public class Class5147 implements Class5146 {
    }
 
    public JsonElement get() {
-      Class9348 var3 = this.field23370.getStateContainer();
+      StateContainer var3 = this.field23370.getStateContainer();
       this.field23371.forEach(var1 -> var1.method15929(var3));
       JsonArray var4 = new JsonArray();
       this.field23371.stream().<JsonElement>map(Class5144::get).forEach(var4::add);

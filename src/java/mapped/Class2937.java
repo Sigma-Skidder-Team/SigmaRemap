@@ -71,7 +71,7 @@ public class Class2937 extends Class2898<Class4712> {
          if (var0.method7007(var2)) {
             if (var8 == var3 || !var0.method7007(var2.up())) {
                var0.setBlockState(
-                  var2, Blocks.field37088.method11579().method23465(Class3452.field19267, Integer.valueOf(MathHelper.method37782(var1, var4, var5))), 2
+                  var2, Blocks.field37088.method11579().with(Class3452.field19267, Integer.valueOf(MathHelper.method37782(var1, var4, var5))), 2
                );
                break;
             }
@@ -79,7 +79,7 @@ public class Class2937 extends Class2898<Class4712> {
             var0.setBlockState(var2, Blocks.field37089.method11579(), 2);
          }
 
-         var2.method8379(Direction.field673);
+         var2.method8379(Direction.UP);
       }
    }
 

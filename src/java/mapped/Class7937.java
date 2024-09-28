@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.util.BitSet;
 
 public final class Class7937 extends Class7938 {
@@ -45,12 +47,12 @@ public final class Class7937 extends Class7938 {
          this.field34029 = (BitSet)((Class7937)var1).field34029.clone();
       }
 
-      this.field34030 = var1.method26720(Direction.X);
-      this.field34031 = var1.method26720(Direction.Y);
-      this.field34032 = var1.method26720(Direction.Z);
-      this.field34033 = var1.method26721(Direction.X);
-      this.field34034 = var1.method26721(Direction.Y);
-      this.field34035 = var1.method26721(Direction.Z);
+      this.field34030 = var1.method26720(Direction.Axis.X);
+      this.field34031 = var1.method26720(Direction.Axis.Y);
+      this.field34032 = var1.method26720(Direction.Axis.Z);
+      this.field34033 = var1.method26721(Direction.Axis.X);
+      this.field34034 = var1.method26721(Direction.Axis.Y);
+      this.field34035 = var1.method26721(Direction.Axis.Z);
    }
 
    public int method26716(int var1, int var2, int var3) {
@@ -81,12 +83,12 @@ public final class Class7937 extends Class7938 {
    }
 
    @Override
-   public int method26720(Direction var1) {
+   public int method26720(Direction.Axis var1) {
       return var1.method327(this.field34030, this.field34031, this.field34032);
    }
 
    @Override
-   public int method26721(Direction var1) {
+   public int method26721(Direction.Axis var1) {
       return var1.method327(this.field34033, this.field34034, this.field34035);
    }
 

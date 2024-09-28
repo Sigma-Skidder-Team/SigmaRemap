@@ -5,6 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -14,9 +15,9 @@ import java.util.Random;
 public class Class3226 extends Class3224 {
    private static String[] field18662;
    private final Block field18665;
-   public static final VoxelShape field18664 = Block.method11539(2.0, 0.0, 2.0, 14.0, 15.0, 14.0);
+   public static final VoxelShape field18664 = Block.makeCuboidShape(2.0, 0.0, 2.0, 14.0, 15.0, 14.0);
 
-   public Class3226(Block var1, AbstractBlock var2) {
+   public Class3226(Block var1, Properties var2) {
       super(var2);
       this.field18665 = var1;
    }
@@ -29,7 +30,7 @@ public class Class3226 extends Class3224 {
    @Override
    public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (!method11633(var1, var2, var3)) {
-         var2.setBlockState(var3, this.field18665.method11579().method23465(field18663, Boolean.valueOf(false)), 2);
+         var2.setBlockState(var3, this.field18665.method11579().with(field18663, Boolean.valueOf(false)), 2);
       }
    }
 
@@ -39,7 +40,7 @@ public class Class3226 extends Class3224 {
          return Blocks.AIR.method11579();
       } else {
          this.method11632(var1, var4, var5);
-         if (var1.<Boolean>method23463(field18663)) {
+         if (var1.<Boolean>get(field18663)) {
             var4.method6861().method20726(var5, Class9479.field44066, Class9479.field44066.method25057(var4));
          }
 

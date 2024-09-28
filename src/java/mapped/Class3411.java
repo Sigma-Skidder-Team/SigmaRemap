@@ -3,8 +3,10 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.FenceGateBlock;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.server.ServerWorld;
@@ -15,7 +17,7 @@ public class Class3411 extends Block {
    private static String[] field19094;
    public static final VoxelShape field19095 = Class3221.field18645;
 
-   public Class3411(AbstractBlock var1) {
+   public Class3411(Properties var1) {
       super(var1);
    }
 
@@ -33,7 +35,7 @@ public class Class3411 extends Block {
 
    @Override
    public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
-      if (var2 == Direction.field673 && !var1.method23443(var4, var5)) {
+      if (var2 == Direction.UP && !var1.method23443(var4, var5)) {
          var4.method6860().method20726(var5, this, 1);
       }
 
@@ -48,7 +50,7 @@ public class Class3411 extends Block {
    @Override
    public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
       BlockState var6 = var2.getBlockState(var3.up());
-      return !var6.getMaterial().isSolid() || var6.getBlock() instanceof Class3199;
+      return !var6.getMaterial().isSolid() || var6.getBlock() instanceof FenceGateBlock;
    }
 
    @Override

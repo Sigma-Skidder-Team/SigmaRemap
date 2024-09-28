@@ -26,7 +26,7 @@ public class Class9842 {
                + ", particle: "
                + var0.getParticleTexture()
          );
-         Direction[] var3 = Direction.field685;
+         Direction[] var3 = Direction.VALUES;
 
          for (int var4 = 0; var4 < var3.length; var4++) {
             Direction var5 = var3[var4];
@@ -80,7 +80,7 @@ public class Class9842 {
 
    public static IBakedModel method38900(IBakedModel var0) {
       List var3 = method38901(var0.method22619((BlockState)null, (Direction)null, field45941));
-      Direction[] var4 = Direction.field685;
+      Direction[] var4 = Direction.VALUES;
       HashMap var5 = new HashMap();
 
       for (int var6 = 0; var6 < var4.length; var6++) {

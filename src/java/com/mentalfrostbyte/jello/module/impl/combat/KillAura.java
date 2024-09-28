@@ -476,7 +476,7 @@ public class KillAura extends Module {
         RenderSystem.shadeModel(7424);
     }
 
-    public boolean method16827() {
+    public boolean isAutoBlockEnabled() {
         return target != null
                 && mc.player.getHeldItemMainhand() != null
                 && mc.player.getHeldItemMainhand().getItem() instanceof SwordItem
@@ -484,8 +484,8 @@ public class KillAura extends Module {
     }
 
     @Override
-    public boolean method15988() {
-        return this.isEnabled() && this.method16827();
+    public boolean isEnabled2() {
+        return this.isEnabled() && this.isAutoBlockEnabled();
     }
 
     public void method16828(EventUpdate var1, String var2, boolean var3) {

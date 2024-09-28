@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.dispenser.IBlockSource;
 import net.minecraft.item.ItemStack;
+import net.minecraft.state.properties.RailShape;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -14,16 +15,16 @@ public final class Class6244 extends Class6218 {
 
    @Override
    public ItemStack dispenseStack(IBlockSource var1, ItemStack var2) {
-      Direction var5 = var1.method11324().<Direction>method23463(Class3357.field18899);
+      Direction var5 = var1.method11324().<Direction>get(Class3357.field18899);
       ServerWorld var6 = var1.method11326();
-      double var7 = var1.getX() + (double)var5.method539() * 1.125;
-      double var9 = Math.floor(var1.getY()) + (double)var5.method540();
-      double var11 = var1.getZ() + (double)var5.method541() * 1.125;
+      double var7 = var1.getX() + (double)var5.getXOffset() * 1.125;
+      double var9 = Math.floor(var1.getY()) + (double)var5.getYOffset();
+      double var11 = var1.getZ() + (double)var5.getZOffset() * 1.125;
       BlockPos var13 = var1.method11323().method8349(var5);
       BlockState var14 = var6.getBlockState(var13);
-      Class96 var15 = !(var14.getBlock() instanceof Class3429)
-         ? Class96.field247
-         : var14.<Class96>method23463(((Class3429)var14.getBlock()).method12093());
+      RailShape var15 = !(var14.getBlock() instanceof Class3429)
+         ? RailShape.field247
+         : var14.<RailShape>get(((Class3429)var14.getBlock()).method12093());
       double var16;
       if (!var14.isIn(BlockTags.field32766)) {
          if (!var14.isAir() || !var6.getBlockState(var13.down()).isIn(BlockTags.field32766)) {
@@ -31,9 +32,9 @@ public final class Class6244 extends Class6218 {
          }
 
          BlockState var18 = var6.getBlockState(var13.down());
-         Class96 var19 = !(var18.getBlock() instanceof Class3429)
-            ? Class96.field247
-            : var18.<Class96>method23463(((Class3429)var18.getBlock()).method12093());
+         RailShape var19 = !(var18.getBlock() instanceof Class3429)
+            ? RailShape.field247
+            : var18.<RailShape>get(((Class3429)var18.getBlock()).method12093());
          if (var5 != Direction.DOWN && var19.method275()) {
             var16 = -0.4;
          } else {

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.block.HorizontalBlock;
+import net.minecraft.state.DirectionProperty;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -14,8 +16,8 @@ import net.minecraft.world.World;
 
 import java.util.function.Predicate;
 
-public class Class3342 extends Class3198 implements Class3255 {
-   public static final Class8553 field18848 = Class3198.field18484;
+public class Class3342 extends HorizontalBlock implements Class3255 {
+   public static final DirectionProperty field18848 = HorizontalBlock.HORIZONTAL_FACING;
    private Class9803 field18849;
    private Class9803 field18850;
    private Class9803 field18851;
@@ -23,9 +25,9 @@ public class Class3342 extends Class3198 implements Class3255 {
    private static final Predicate<BlockState> field18853 = var0 -> var0 != null
          && (var0.isIn(Blocks.field36589) || var0.isIn(Blocks.field36590));
 
-   public Class3342(AbstractBlock var1) {
+   public Class3342(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().method23465(field18848, Direction.NORTH));
+      this.method11578(this.field18612.method35393().with(field18848, Direction.NORTH));
    }
 
    @Override
@@ -94,7 +96,7 @@ public class Class3342 extends Class3198 implements Class3255 {
 
    @Override
    public BlockState method11495(Class5909 var1) {
-      return this.method11579().method23465(field18848, var1.method18350().method536());
+      return this.method11579().with(field18848, var1.method18350().getOpposite());
    }
 
    @Override

@@ -13,7 +13,7 @@ public class Class7638 extends Class7637 {
 
    @Override
    public int method25065(FluidState var1) {
-      return var1.<Integer>method23463(field32713);
+      return var1.<Integer>get(field32713);
    }
 
    @Override

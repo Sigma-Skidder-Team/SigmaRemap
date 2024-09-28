@@ -6,11 +6,14 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
+import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
@@ -18,19 +21,19 @@ import java.util.Random;
 
 public class Class3376 extends Class3241 {
    private static String[] field18974;
-   public static final Class8551[] field18975 = new Class8551[]{Class8820.field39692, Class8820.field39693, Class8820.field39694};
-   public static final VoxelShape field18976 = VoxelShapes.method27431(
-      Block.method11539(1.0, 0.0, 1.0, 15.0, 2.0, 15.0), Block.method11539(7.0, 0.0, 7.0, 9.0, 14.0, 9.0)
+   public static final BooleanProperty[] field18975 = new BooleanProperty[]{BlockStateProperties.field39692, BlockStateProperties.field39693, BlockStateProperties.field39694};
+   public static final VoxelShape field18976 = VoxelShapes.or(
+      Block.makeCuboidShape(1.0, 0.0, 1.0, 15.0, 2.0, 15.0), Block.makeCuboidShape(7.0, 0.0, 7.0, 9.0, 14.0, 9.0)
    );
 
-   public Class3376(AbstractBlock var1) {
+   public Class3376(Properties var1) {
       super(var1);
       this.method11578(
          this.field18612
             .method35393()
-            .method23465(field18975[0], Boolean.valueOf(false))
-            .method23465(field18975[1], Boolean.valueOf(false))
-            .method23465(field18975[2], Boolean.valueOf(false))
+            .with(field18975[0], Boolean.valueOf(false))
+            .with(field18975[1], Boolean.valueOf(false))
+            .with(field18975[2], Boolean.valueOf(false))
       );
    }
 

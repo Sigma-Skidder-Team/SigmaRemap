@@ -27,7 +27,7 @@ public class Class5457 extends Class5455<Class4712> {
          BlockState var17 = var15.getBlockState(var16);
          var16.method8379(Direction.DOWN);
          BlockState var18 = var15.getBlockState(var16);
-         if (var17.isAir() && (var18.isIn(Blocks.SOUL_SAND) || var18.method23454(var15, var16, Direction.field673))) {
+         if (var17.isAir() && (var18.isIn(Blocks.SOUL_SAND) || var18.method23454(var15, var16, Direction.UP))) {
             break;
          }
       }

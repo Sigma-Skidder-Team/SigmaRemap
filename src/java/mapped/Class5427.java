@@ -42,7 +42,7 @@ public class Class5427 extends Class5424 {
    public void endVertex() {
       Vector3f var3 = new Vector3f(this.field24153, this.field24154, this.field24155);
       var3.method25282(this.field24146);
-      Direction var4 = Direction.method554(var3.method25269(), var3.method25270(), var3.method25271());
+      Direction var4 = Direction.getFacingFromVector(var3.method25269(), var3.method25270(), var3.method25271());
       Class7755 var5 = new Class7755(this.field24147, this.field24148, this.field24149, 1.0F);
       var5.method25709(this.field24145);
       var5.method25710(Vector3f.YP.rotationDegrees(180.0F));

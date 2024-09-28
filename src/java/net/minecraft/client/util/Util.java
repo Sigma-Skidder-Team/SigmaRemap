@@ -327,7 +327,7 @@ public class Util {
       }
    }
 
-   public static <T> T method38518(T[] var0, Random var1) {
+   public static <T> T getRandomObject(T[] var0, Random var1) {
       return (T)var0[var1.nextInt(var0.length)];
    }
 

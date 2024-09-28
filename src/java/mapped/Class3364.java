@@ -6,6 +6,8 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
@@ -15,11 +17,11 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 public class Class3364 extends Class3241 {
-   public static final Class8551 field18931 = Class8820.field39695;
+   public static final BooleanProperty field18931 = BlockStateProperties.field39695;
 
-   public Class3364(AbstractBlock var1) {
+   public Class3364(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().method23465(field18931, Boolean.valueOf(false)));
+      this.method11578(this.field18612.method35393().with(field18931, Boolean.valueOf(false)));
    }
 
    @Override
@@ -29,18 +31,18 @@ public class Class3364 extends Class3241 {
       if (var8.contains("BlockEntityTag")) {
          CompoundNBT var9 = var8.getCompound("BlockEntityTag");
          if (var9.contains("RecordItem")) {
-            var1.setBlockState(var2, var3.method23465(field18931, Boolean.valueOf(true)), 2);
+            var1.setBlockState(var2, var3.with(field18931, Boolean.valueOf(true)), 2);
          }
       }
    }
 
    @Override
    public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
-      if (!var1.<Boolean>method23463(field18931)) {
+      if (!var1.<Boolean>get(field18931)) {
          return ActionResultType.field14820;
       } else {
          this.method11942(var2, var3);
-         var1 = var1.method23465(field18931, Boolean.valueOf(false));
+         var1 = var1.with(field18931, Boolean.valueOf(false));
          var2.setBlockState(var3, var1, 2);
          return ActionResultType.method9002(var2.isRemote);
       }
@@ -50,7 +52,7 @@ public class Class3364 extends Class3241 {
       TileEntity var7 = var1.getTileEntity(var2);
       if (var7 instanceof Class947) {
          ((Class947)var7).method3804(var4.copy());
-         var1.setBlockState(var2, var3.method23465(field18931, Boolean.valueOf(true)), 2);
+         var1.setBlockState(var2, var3.with(field18931, Boolean.valueOf(true)), 2);
       }
    }
 

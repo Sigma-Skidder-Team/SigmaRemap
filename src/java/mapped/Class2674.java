@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
@@ -80,7 +81,7 @@ public class Class2674 extends Class2672 {
       while (true) {
          BlockPos var17 = var13.down();
          BlockState var18 = this.field17064.world.getBlockState(var17);
-         if (!var18.method23454(this.field17064.world, var17, net.minecraft.util.Direction.field673)) {
+         if (!var18.method23454(this.field17064.world, var17, Direction.UP)) {
             var13 = var13.down();
             if (var13.getY() >= MathHelper.floor(var5) - 1) {
                continue;
@@ -92,7 +93,7 @@ public class Class2674 extends Class2672 {
             BlockState var19 = this.field17064.world.getBlockState(var13);
             VoxelShape var20 = var19.method23414(this.field17064.world, var13);
             if (!var20.isEmpty()) {
-               var15 = var20.getEnd(Direction.Y);
+               var15 = var20.getEnd(Direction.Axis.Y);
             }
          }
 

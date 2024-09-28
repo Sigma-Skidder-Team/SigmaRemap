@@ -224,7 +224,7 @@ public class Class1074 extends AbstractHorseEntity {
          Class2190 var8;
          if (var7 >= 4) {
             if (var7 >= 8) {
-               var8 = Util.<Class2190>method38518(Class2190.values(), this.rand);
+               var8 = Util.<Class2190>getRandomObject(Class2190.values(), this.rand);
             } else {
                var8 = var5.method4995();
             }
@@ -236,7 +236,7 @@ public class Class1074 extends AbstractHorseEntity {
          Class2102 var10;
          if (var9 >= 2) {
             if (var9 >= 4) {
-               var10 = Util.<Class2102>method38518(Class2102.values(), this.rand);
+               var10 = Util.<Class2102>getRandomObject(Class2102.values(), this.rand);
             } else {
                var10 = var5.method4996();
             }
@@ -268,13 +268,13 @@ public class Class1074 extends AbstractHorseEntity {
    public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
       Class2190 var8;
       if (!(var4 instanceof Class5098)) {
-         var8 = Util.<Class2190>method38518(Class2190.values(), this.rand);
+         var8 = Util.<Class2190>getRandomObject(Class2190.values(), this.rand);
          var4 = new Class5098(var8);
       } else {
          var8 = ((Class5098)var4).field23195;
       }
 
-      this.method4994(var8, Util.<Class2102>method38518(Class2102.values(), this.rand));
+      this.method4994(var8, Util.<Class2102>getRandomObject(Class2102.values(), this.rand));
       return super.method4276(var1, var2, var3, (Class5093)var4, var5);
    }
 }

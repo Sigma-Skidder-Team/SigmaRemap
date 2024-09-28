@@ -3,6 +3,8 @@ package mapped;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import net.minecraft.state.StateContainer;
+
 import java.util.List;
 import java.util.function.Supplier;
 
@@ -17,7 +19,7 @@ public class Class5143 implements Class5141 {
    }
 
    @Override
-   public void method15918(Class9348<?, ?> var1) {
+   public void method15918(StateContainer<?, ?> var1) {
       this.field23367.forEach(var1x -> var1x.method15918(var1));
    }
 

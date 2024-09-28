@@ -3,12 +3,13 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 
 public class AirBlock extends Block {
    private static String[] field19128;
 
-   public AirBlock(AbstractBlock var1) {
+   public AirBlock(Properties var1) {
       super(var1);
    }
 

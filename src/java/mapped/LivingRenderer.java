@@ -106,7 +106,7 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
             Direction var14 = var1.getBedDirection();
             if (var14 != null) {
                float var15 = var1.getEyeHeight(Pose.STANDING) - 0.1F;
-               var4.translate((double)((float)(-var14.method539()) * var15), 0.0, (double)((float)(-var14.method541()) * var15));
+               var4.translate((double)((float)(-var14.getXOffset()) * var15), 0.0, (double)((float)(-var14.getZOffset()) * var15));
             }
          }
 

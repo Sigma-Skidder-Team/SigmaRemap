@@ -28,11 +28,11 @@ public class Class4219 extends Class4213 {
          this.method13006(var1, var5, 0, 0, Class9312.method35193(var11)[Direction.DOWN.getIndex()]);
       }
 
-      if (Class9312.method35191(var11)[Direction.field673.getIndex()] == null) {
+      if (Class9312.method35191(var11)[Direction.UP.getIndex()] == null) {
          this.method13007(var1, var5, 1, 4, 1, 6, 4, 7, field20528);
       }
 
-      if (Class9312.method35191(var10)[Direction.field673.getIndex()] == null) {
+      if (Class9312.method35191(var10)[Direction.UP.getIndex()] == null) {
          this.method13007(var1, var5, 1, 4, 8, 6, 4, 14, field20528);
       }
 

@@ -6,8 +6,11 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.item.ItemStack;
+import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -18,12 +21,12 @@ import java.util.Random;
 
 public class Class3404 extends Block implements Class3405 {
    private static String[] field19078;
-   public static final Class8554 field19079 = Class8820.field39755;
+   public static final IntegerProperty field19079 = BlockStateProperties.field39755;
    public final Class7633 field19080;
    private final List<FluidState> field19081;
-   public static final VoxelShape field19082 = Block.method11539(0.0, 0.0, 0.0, 16.0, 8.0, 16.0);
+   public static final VoxelShape field19082 = Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 8.0, 16.0);
 
-   public Class3404(Class7633 var1, AbstractBlock var2) {
+   public Class3404(Class7633 var1, Properties var2) {
       super(var2);
       this.field19080 = var1;
       this.field19081 = Lists.newArrayList();
@@ -34,13 +37,13 @@ public class Class3404 extends Block implements Class3405 {
       }
 
       this.field19081.add(var1.method25076(8, true));
-      this.method11578(this.field18612.method35393().method23465(field19079, Integer.valueOf(0)));
+      this.method11578(this.field18612.method35393().with(field19079, Integer.valueOf(0)));
    }
 
    @Override
    public VoxelShape method11502(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return var4.method14950(field19082, var3, true)
-            && var1.<Integer>method23463(field19079) == 0
+            && var1.<Integer>get(field19079) == 0
             && var4.method14952(var2.getFluidState(var3.up()), this.field19080)
          ? field19082
          : VoxelShapes.method27425();
@@ -68,7 +71,7 @@ public class Class3404 extends Block implements Class3405 {
 
    @Override
    public FluidState method11498(BlockState var1) {
-      int var4 = var1.<Integer>method23463(field19079);
+      int var4 = var1.<Integer>get(field19079);
       return this.field19081.get(Math.min(var4, 8));
    }
 
@@ -152,7 +155,7 @@ public class Class3404 extends Block implements Class3405 {
 
    @Override
    public Fluid method11533(Class1660 var1, BlockPos var2, BlockState var3) {
-      if (var3.<Integer>method23463(field19079) != 0) {
+      if (var3.<Integer>get(field19079) != 0) {
          return Class9479.field44064;
       } else {
          var1.setBlockState(var2, Blocks.AIR.method11579(), 11);

@@ -4,10 +4,14 @@ import com.google.common.collect.Maps;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraft.util.Mirror;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 
@@ -15,13 +19,13 @@ import java.util.Map;
 
 public class Class3360 extends Class3359 {
    private static String[] field18905;
-   public static final Class8554 field18906 = Class8820.field39763;
+   public static final IntegerProperty field18906 = BlockStateProperties.field39763;
    private static final Map<Class112, Block> field18907 = Maps.newHashMap();
-   private static final VoxelShape field18908 = Block.method11539(4.0, 0.0, 4.0, 12.0, 16.0, 12.0);
+   private static final VoxelShape field18908 = Block.makeCuboidShape(4.0, 0.0, 4.0, 12.0, 16.0, 12.0);
 
-   public Class3360(Class112 var1, AbstractBlock var2) {
+   public Class3360(Class112 var1, Properties var2) {
       super(var1, var2);
-      this.method11578(this.field18612.method35393().method23465(field18906, Integer.valueOf(0)));
+      this.method11578(this.field18612.method35393().with(field18906, Integer.valueOf(0)));
       field18907.put(var1, this);
    }
 
@@ -38,7 +42,7 @@ public class Class3360 extends Class3359 {
    @Override
    public BlockState method11495(Class5909 var1) {
       return this.method11579()
-         .method23465(field18906, Integer.valueOf(MathHelper.floor((double)((180.0F + var1.method18352()) * 16.0F / 360.0F) + 0.5) & 15));
+         .with(field18906, Integer.valueOf(MathHelper.floor((double)((180.0F + var1.method18352()) * 16.0F / 360.0F) + 0.5) & 15));
    }
 
    @Override
@@ -49,13 +53,13 @@ public class Class3360 extends Class3359 {
    }
 
    @Override
-   public BlockState method11500(BlockState var1, Rotation var2) {
-      return var1.method23465(field18906, Integer.valueOf(var2.method253(var1.<Integer>method23463(field18906), 16)));
+   public BlockState rotate(BlockState var1, Rotation var2) {
+      return var1.with(field18906, Integer.valueOf(var2.method253(var1.<Integer>get(field18906), 16)));
    }
 
    @Override
-   public BlockState method11501(BlockState var1, Class2089 var2) {
-      return var1.method23465(field18906, Integer.valueOf(var2.method8748(var1.<Integer>method23463(field18906), 16)));
+   public BlockState mirror(BlockState var1, Mirror var2) {
+      return var1.with(field18906, Integer.valueOf(var2.method8748(var1.<Integer>get(field18906), 16)));
    }
 
    @Override

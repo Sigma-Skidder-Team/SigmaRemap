@@ -3,8 +3,11 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.server.ServerWorld;
@@ -13,12 +16,12 @@ import java.util.Random;
 
 public class Class3408 extends Block {
    private static String[] field19086;
-   public static final Class8554 field19087 = Class8820.field39743;
-   public static final VoxelShape field19088 = Block.method11539(2.0, 0.0, 2.0, 14.0, 16.0, 14.0);
+   public static final IntegerProperty field19087 = BlockStateProperties.field39743;
+   public static final VoxelShape field19088 = Block.makeCuboidShape(2.0, 0.0, 2.0, 14.0, 16.0, 14.0);
 
-   public Class3408(AbstractBlock var1) {
+   public Class3408(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().method23465(field19087, Integer.valueOf(0)));
+      this.method11578(this.field18612.method35393().with(field19087, Integer.valueOf(0)));
    }
 
    @Override
@@ -43,12 +46,12 @@ public class Class3408 extends Block {
          }
 
          if (var7 < 3) {
-            int var8 = var1.<Integer>method23463(field19087);
+            int var8 = var1.<Integer>get(field19087);
             if (var8 != 15) {
-               var2.setBlockState(var3, var1.method23465(field19087, Integer.valueOf(var8 + 1)), 4);
+               var2.setBlockState(var3, var1.with(field19087, Integer.valueOf(var8 + 1)), 4);
             } else {
                var2.setBlockState(var3.up(), this.method11579());
-               var2.setBlockState(var3, var1.method23465(field19087, Integer.valueOf(0)), 4);
+               var2.setBlockState(var3, var1.with(field19087, Integer.valueOf(0)), 4);
             }
          }
       }
@@ -77,7 +80,7 @@ public class Class3408 extends Block {
             || var6.isIn(Blocks.RED_SAND)) {
             BlockPos var7 = var3.down();
 
-            for (Direction var9 : Class76.field161) {
+            for (Direction var9 : Direction.Plane.HORIZONTAL) {
                BlockState var10 = var2.getBlockState(var7.method8349(var9));
                FluidState var11 = var2.getFluidState(var7.method8349(var9));
                if (var11.method23486(FluidTags.field40469) || var10.isIn(Blocks.field36889)) {

@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.block.DoorBlock;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.server.ServerWorld;
@@ -85,7 +86,7 @@ public class Class2686 extends Class2595 {
                      for (int var12 = 0; var12 < this.field17105.method28698(); var12++) {
                         Class7176 var10 = this.field17105.method28695(var12);
                         BlockPos var11 = new BlockPos(var10.field30847, var10.field30848 + 1, var10.field30849);
-                        if (Class3461.method12144(this.field17103.world, var11)) {
+                        if (DoorBlock.method12144(this.field17103.world, var11)) {
                            this.field17105 = this.field17103
                               .method4230()
                               .method21648((double)var10.field30847, (double)var10.field30848, (double)var10.field30849, 0);

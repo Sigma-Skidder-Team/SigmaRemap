@@ -4,6 +4,7 @@ import com.google.common.collect.Sets;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.state.StateContainer;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.Collection;
@@ -17,10 +18,10 @@ import javax.annotation.Nullable;
 
 public class Class7498 implements Class7495 {
    private static String[] field32213;
-   private final Class9348<Block, BlockState> field32214;
+   private final StateContainer<Block, BlockState> field32214;
    private final List<Class9350> field32215;
 
-   public Class7498(Class9348<Block, BlockState> var1, List<Class9350> var2) {
+   public Class7498(StateContainer<Block, BlockState> var1, List<Class9350> var2) {
       this.field32214 = var1;
       this.field32215 = var2;
    }

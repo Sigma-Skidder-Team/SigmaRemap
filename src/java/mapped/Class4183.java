@@ -6,6 +6,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Mirror;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
@@ -45,7 +46,7 @@ public class Class4183 extends Class4180 {
 
    private void method12947(TemplateManager var1) {
       Class8969 var4 = var1.method31603(this.field20462);
-      Class9463 var5 = new Class9463().method36426(this.field20463).method36425(Class2089.field13614).method36434(Class7095.field30528);
+      Class9463 var5 = new Class9463().method36426(this.field20463).method36425(Mirror.field13614).method36434(Class7095.field30528);
       this.method12943(var4, this.field20455, var5);
    }
 
@@ -77,7 +78,7 @@ public class Class4183 extends Class4180 {
       } else {
          var3.setBlockState(
             var2,
-            Blocks.CHEST.method11579().method23465(Class3348.field18867, Boolean.valueOf(var3.getFluidState(var2).method23486(FluidTags.field40469))),
+            Blocks.CHEST.method11579().with(Class3348.field18867, Boolean.valueOf(var3.getFluidState(var2).method23486(FluidTags.field40469))),
             2
          );
          TileEntity var9 = var3.getTileEntity(var2);
@@ -94,7 +95,7 @@ public class Class4183 extends Class4180 {
       this.field20455 = new BlockPos(this.field20455.getX(), var10, this.field20455.getZ());
       BlockPos var11 = Class8969.method32905(
             new BlockPos(this.field20453.method32886().getX() - 1, 0, this.field20453.method32886().getZ() - 1),
-            Class2089.field13614,
+            Mirror.field13614,
             this.field20463,
             BlockPos.ZERO
          )

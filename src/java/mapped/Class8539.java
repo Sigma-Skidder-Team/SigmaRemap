@@ -27,7 +27,7 @@ public class Class8539 {
             Direction.NORTH, new Class6979((Vector3f)null, new Quaternion(new Vector3f(0.0F, 1.0F, 0.0F), 180.0F, true), (Vector3f)null, (Quaternion)null)
          );
          var0.put(
-            Direction.field673, new Class6979((Vector3f)null, new Quaternion(new Vector3f(1.0F, 0.0F, 0.0F), -90.0F, true), (Vector3f)null, (Quaternion)null)
+            Direction.UP, new Class6979((Vector3f)null, new Quaternion(new Vector3f(1.0F, 0.0F, 0.0F), -90.0F, true), (Vector3f)null, (Quaternion)null)
          );
          var0.put(
             Direction.DOWN, new Class6979((Vector3f)null, new Quaternion(new Vector3f(1.0F, 0.0F, 0.0F), 90.0F, true), (Vector3f)null, (Quaternion)null)

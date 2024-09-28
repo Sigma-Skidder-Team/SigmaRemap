@@ -3,11 +3,15 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.HorizontalBlock;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
@@ -15,11 +19,11 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-public abstract class Class3247 extends Class3198 {
-   public static final VoxelShape field18707 = Block.method11539(0.0, 0.0, 0.0, 16.0, 2.0, 16.0);
-   public static final Class8551 field18708 = Class8820.field39704;
+public abstract class Class3247 extends HorizontalBlock {
+   public static final VoxelShape field18707 = Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 2.0, 16.0);
+   public static final BooleanProperty field18708 = BlockStateProperties.POWERED;
 
-   public Class3247(AbstractBlock var1) {
+   public Class3247(Properties var1) {
       super(var1);
    }
 
@@ -36,12 +40,12 @@ public abstract class Class3247 extends Class3198 {
    @Override
    public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (!this.method11667(var2, var3, var1)) {
-         boolean var7 = var1.<Boolean>method23463(field18708);
+         boolean var7 = var1.<Boolean>get(field18708);
          boolean var8 = this.method11661(var2, var3, var1);
          if (var7 && !var8) {
-            var2.setBlockState(var3, var1.method23465(field18708, Boolean.valueOf(false)), 2);
+            var2.setBlockState(var3, var1.with(field18708, Boolean.valueOf(false)), 2);
          } else if (!var7) {
-            var2.setBlockState(var3, var1.method23465(field18708, Boolean.valueOf(true)), 2);
+            var2.setBlockState(var3, var1.with(field18708, Boolean.valueOf(true)), 2);
             if (!var8) {
                var2.method6860().method20719(var3, this, this.method11658(var1), Class2199.field14368);
             }
@@ -56,8 +60,8 @@ public abstract class Class3247 extends Class3198 {
 
    @Override
    public int method11514(BlockState var1, IBlockReader var2, BlockPos var3, Direction var4) {
-      if (var1.<Boolean>method23463(field18708)) {
-         return var1.method23463(field18484) != var4 ? 0 : this.method11659(var2, var3, var1);
+      if (var1.<Boolean>get(field18708)) {
+         return var1.get(HORIZONTAL_FACING) != var4 ? 0 : this.method11659(var2, var3, var1);
       } else {
          return 0;
       }
@@ -80,7 +84,7 @@ public abstract class Class3247 extends Class3198 {
 
    public void method11664(World var1, BlockPos var2, BlockState var3) {
       if (!this.method11667(var1, var2, var3)) {
-         boolean var6 = var3.<Boolean>method23463(field18708);
+         boolean var6 = var3.<Boolean>get(field18708);
          boolean var7 = this.method11661(var1, var2, var3);
          if (var6 != var7 && !var1.method6860().method20720(var2, this)) {
             Class2199 var8 = Class2199.field14369;
@@ -106,21 +110,21 @@ public abstract class Class3247 extends Class3198 {
    }
 
    public int method11662(World var1, BlockPos var2, BlockState var3) {
-      Direction var6 = var3.<Direction>method23463(field18484);
+      Direction var6 = var3.<Direction>get(HORIZONTAL_FACING);
       BlockPos var7 = var2.method8349(var6);
       int var8 = var1.method6779(var7, var6);
       if (var8 < 15) {
          BlockState var9 = var1.getBlockState(var7);
-         return Math.max(var8, !var9.isIn(Blocks.REDSTONE_WIRE) ? 0 : var9.<Integer>method23463(Class3222.field18651));
+         return Math.max(var8, !var9.isIn(Blocks.REDSTONE_WIRE) ? 0 : var9.<Integer>get(Class3222.field18651));
       } else {
          return var8;
       }
    }
 
    public int method11668(IWorldReader var1, BlockPos var2, BlockState var3) {
-      Direction var6 = var3.<Direction>method23463(field18484);
-      Direction var7 = var6.method537();
-      Direction var8 = var6.method538();
+      Direction var6 = var3.<Direction>get(HORIZONTAL_FACING);
+      Direction var7 = var6.rotateY();
+      Direction var8 = var6.rotateYCCW();
       return Math.max(this.method11669(var1, var2.method8349(var7), var7), this.method11669(var1, var2.method8349(var8), var8));
    }
 
@@ -129,7 +133,7 @@ public abstract class Class3247 extends Class3198 {
       if (!this.method11671(var6)) {
          return 0;
       } else if (!var6.isIn(Blocks.field36721)) {
-         return !var6.isIn(Blocks.REDSTONE_WIRE) ? var1.method7010(var2, var3) : var6.<Integer>method23463(Class3222.field18651);
+         return !var6.isIn(Blocks.REDSTONE_WIRE) ? var1.method7010(var2, var3) : var6.<Integer>get(Class3222.field18651);
       } else {
          return 15;
       }
@@ -142,7 +146,7 @@ public abstract class Class3247 extends Class3198 {
 
    @Override
    public BlockState method11495(Class5909 var1) {
-      return this.method11579().method23465(field18484, var1.method18350().method536());
+      return this.method11579().with(HORIZONTAL_FACING, var1.method18350().getOpposite());
    }
 
    @Override
@@ -166,8 +170,8 @@ public abstract class Class3247 extends Class3198 {
    }
 
    public void method11670(World var1, BlockPos var2, BlockState var3) {
-      Direction var6 = var3.<Direction>method23463(field18484);
-      BlockPos var7 = var2.method8349(var6.method536());
+      Direction var6 = var3.<Direction>get(HORIZONTAL_FACING);
+      BlockPos var7 = var2.method8349(var6.getOpposite());
       var1.neighborChanged(var7, this, var2);
       var1.notifyNeighborsOfStateExcept(var7, this, var6);
    }
@@ -185,9 +189,9 @@ public abstract class Class3247 extends Class3198 {
    }
 
    public boolean method11673(IBlockReader var1, BlockPos var2, BlockState var3) {
-      Direction var6 = var3.<Direction>method23463(field18484).method536();
+      Direction var6 = var3.<Direction>get(HORIZONTAL_FACING).getOpposite();
       BlockState var7 = var1.getBlockState(var2.method8349(var6));
-      return method11672(var7) && var7.<Direction>method23463(field18484) != var6;
+      return method11672(var7) && var7.<Direction>get(HORIZONTAL_FACING) != var6;
    }
 
    public abstract int method11658(BlockState var1);

@@ -72,7 +72,7 @@ public class Class3285 extends Item {
       World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
       BlockState var6 = var4.getBlockState(var5);
-      if (!var6.isIn(Blocks.field37061)) {
+      if (!var6.isIn(Blocks.LECTERN)) {
          return ActionResultType.field14820;
       } else {
          return !Class3354.method11919(var4, var5, var6, var1.method18357()) ? ActionResultType.field14820 : ActionResultType.method9002(var4.isRemote);

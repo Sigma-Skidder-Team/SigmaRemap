@@ -9,10 +9,10 @@ import java.util.Random;
 
 public class Class3453 extends Class3452 {
    private static String[] field19269;
-   public static final VoxelShape field19270 = Block.method11539(4.0, 0.0, 4.0, 12.0, 15.0, 12.0);
+   public static final VoxelShape field19270 = Block.makeCuboidShape(4.0, 0.0, 4.0, 12.0, 15.0, 12.0);
 
-   public Class3453(AbstractBlock var1) {
-      super(var1, Direction.field673, field19270, false, 0.1);
+   public Class3453(Properties var1) {
+      super(var1, Direction.UP, field19270, false, 0.1);
    }
 
    @Override

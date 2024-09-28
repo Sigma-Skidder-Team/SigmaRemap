@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import net.minecraft.client.util.Util;
+import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -11,7 +12,7 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 public class Class9463 {
-   private Class2089 field43962 = Class2089.field13614;
+   private Mirror field43962 = Mirror.field13614;
    private Rotation field43963 = Rotation.field185;
    private BlockPos field43964 = BlockPos.ZERO;
    private boolean field43965;
@@ -41,7 +42,7 @@ public class Class9463 {
       return var3;
    }
 
-   public Class9463 method36425(Class2089 var1) {
+   public Class9463 method36425(Mirror var1) {
       this.field43962 = var1;
       return this;
    }
@@ -96,7 +97,7 @@ public class Class9463 {
       return this;
    }
 
-   public Class2089 method36436() {
+   public Mirror method36436() {
       return this.field43962;
    }
 

@@ -2,7 +2,9 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.DoorBlock;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
@@ -50,8 +52,8 @@ public class Class4207 extends Class4194 {
             var1,
             Blocks.IRON_BARS
                .method11579()
-               .method23465(Class3237.field18680, Boolean.valueOf(true))
-               .method23465(Class3237.field18682, Boolean.valueOf(true)),
+               .with(Class3237.field18680, Boolean.valueOf(true))
+               .with(Class3237.field18682, Boolean.valueOf(true)),
             4,
             var10,
             4,
@@ -61,9 +63,9 @@ public class Class4207 extends Class4194 {
             var1,
             Blocks.IRON_BARS
                .method11579()
-               .method23465(Class3237.field18680, Boolean.valueOf(true))
-               .method23465(Class3237.field18682, Boolean.valueOf(true))
-               .method23465(Class3237.field18681, Boolean.valueOf(true)),
+               .with(Class3237.field18680, Boolean.valueOf(true))
+               .with(Class3237.field18682, Boolean.valueOf(true))
+               .with(Class3237.field18681, Boolean.valueOf(true)),
             4,
             var10,
             5,
@@ -73,8 +75,8 @@ public class Class4207 extends Class4194 {
             var1,
             Blocks.IRON_BARS
                .method11579()
-               .method23465(Class3237.field18680, Boolean.valueOf(true))
-               .method23465(Class3237.field18682, Boolean.valueOf(true)),
+               .with(Class3237.field18680, Boolean.valueOf(true))
+               .with(Class3237.field18682, Boolean.valueOf(true)),
             4,
             var10,
             6,
@@ -84,8 +86,8 @@ public class Class4207 extends Class4194 {
             var1,
             Blocks.IRON_BARS
                .method11579()
-               .method23465(Class3237.field18683, Boolean.valueOf(true))
-               .method23465(Class3237.field18681, Boolean.valueOf(true)),
+               .with(Class3237.field18683, Boolean.valueOf(true))
+               .with(Class3237.field18681, Boolean.valueOf(true)),
             5,
             var10,
             5,
@@ -95,8 +97,8 @@ public class Class4207 extends Class4194 {
             var1,
             Blocks.IRON_BARS
                .method11579()
-               .method23465(Class3237.field18683, Boolean.valueOf(true))
-               .method23465(Class3237.field18681, Boolean.valueOf(true)),
+               .with(Class3237.field18683, Boolean.valueOf(true))
+               .with(Class3237.field18681, Boolean.valueOf(true)),
             6,
             var10,
             5,
@@ -106,8 +108,8 @@ public class Class4207 extends Class4194 {
             var1,
             Blocks.IRON_BARS
                .method11579()
-               .method23465(Class3237.field18683, Boolean.valueOf(true))
-               .method23465(Class3237.field18681, Boolean.valueOf(true)),
+               .with(Class3237.field18683, Boolean.valueOf(true))
+               .with(Class3237.field18681, Boolean.valueOf(true)),
             7,
             var10,
             5,
@@ -117,7 +119,7 @@ public class Class4207 extends Class4194 {
 
       this.method12923(
          var1,
-         Blocks.IRON_BARS.method11579().method23465(Class3237.field18680, Boolean.valueOf(true)).method23465(Class3237.field18682, Boolean.valueOf(true)),
+         Blocks.IRON_BARS.method11579().with(Class3237.field18680, Boolean.valueOf(true)).with(Class3237.field18682, Boolean.valueOf(true)),
          4,
          3,
          2,
@@ -125,17 +127,17 @@ public class Class4207 extends Class4194 {
       );
       this.method12923(
          var1,
-         Blocks.IRON_BARS.method11579().method23465(Class3237.field18680, Boolean.valueOf(true)).method23465(Class3237.field18682, Boolean.valueOf(true)),
+         Blocks.IRON_BARS.method11579().with(Class3237.field18680, Boolean.valueOf(true)).with(Class3237.field18682, Boolean.valueOf(true)),
          4,
          3,
          8,
          var5
       );
-      BlockState var12 = Blocks.IRON_DOOR.method11579().method23465(Class3461.field19293, Direction.WEST);
+      BlockState var12 = Blocks.IRON_DOOR.method11579().with(DoorBlock.HORIZONTAL_FACING, Direction.WEST);
       BlockState var11 = Blocks.IRON_DOOR
          .method11579()
-         .method23465(Class3461.field19293, Direction.WEST)
-         .method23465(Class3461.field19297, Class84.field209);
+         .with(DoorBlock.HORIZONTAL_FACING, Direction.WEST)
+         .with(DoorBlock.DOUBLE_BLOCK_HALF, DoubleBlockHalf.field209);
       this.method12923(var1, var12, 4, 1, 2, var5);
       this.method12923(var1, var11, 4, 2, 2, var5);
       this.method12923(var1, var12, 4, 1, 8, var5);

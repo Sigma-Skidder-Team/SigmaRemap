@@ -2,27 +2,30 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.state.EnumProperty;
+import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Rotation;
 
 public class Class3386 extends Block {
    private static String[] field18993;
-   public static final Class8552<Direction> field18994 = Class8820.field39713;
+   public static final EnumProperty<Direction.Axis> field18994 = BlockStateProperties.field39713;
 
-   public Class3386(AbstractBlock var1) {
+   public Class3386(Properties var1) {
       super(var1);
-      this.method11578(this.method11579().method23465(field18994, Direction.Y));
+      this.method11578(this.method11579().with(field18994, Direction.Axis.Y));
    }
 
    @Override
-   public BlockState method11500(BlockState var1, Rotation var2) {
+   public BlockState rotate(BlockState var1, Rotation var2) {
       switch (Class9779.field45746[var2.ordinal()]) {
          case 1:
          case 2:
-            switch (Class9779.field45745[var1.<Direction>method23463(field18994).ordinal()]) {
+            switch (Class9779.field45745[var1.<Direction.Axis>get(field18994).ordinal()]) {
                case 1:
-                  return var1.method23465(field18994, Direction.Z);
+                  return var1.with(field18994, Direction.Axis.Z);
                case 2:
-                  return var1.method23465(field18994, Direction.X);
+                  return var1.with(field18994, Direction.Axis.X);
                default:
                   return var1;
             }
@@ -38,6 +41,6 @@ public class Class3386 extends Block {
 
    @Override
    public BlockState method11495(Class5909 var1) {
-      return this.method11579().method23465(field18994, var1.method18354().getAxis());
+      return this.method11579().with(field18994, var1.method18354().getAxis());
    }
 }

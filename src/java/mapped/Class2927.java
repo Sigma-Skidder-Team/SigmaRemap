@@ -62,7 +62,7 @@ public class Class2927 extends Class2898<Class4709> {
 
       for (int var12 = -var11; var12 <= var11; var12++) {
          for (int var13 = -var11; var13 <= var11; var13++) {
-            boolean var14 = var6 && MathHelper.method37772(var12) == var11 && MathHelper.method37772(var13) == var11;
+            boolean var14 = var6 && MathHelper.abs(var12) == var11 && MathHelper.abs(var13) == var11;
 
             for (int var15 = 0; var15 < var5; var15++) {
                var9.method8378(var4, var12, var15, var13);

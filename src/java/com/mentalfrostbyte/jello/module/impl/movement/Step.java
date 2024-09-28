@@ -11,6 +11,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.step.SpiderStep;
 import com.mentalfrostbyte.jello.module.impl.movement.step.VanillaStep;
 import mapped.*;
 import net.minecraft.block.BlockState;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 
@@ -65,7 +66,7 @@ public class Step extends ModuleWithModuleSettings {
 
         for (int var19 = 0; var19 < var14; var19++) {
             VoxelShape var20 = (VoxelShape) var13[var19];
-            BlockPos var21 = new BlockPos(var20.getStart(Direction.X), var20.getStart(Direction.Y), var20.getStart(Direction.Z));
+            BlockPos var21 = new BlockPos(var20.getStart(Direction.Axis.X), var20.getStart(Direction.Axis.Y), var20.getStart(Direction.Axis.Z));
             BlockState var22 = mc.world.getBlockState(var21);
             if (var15 == null || var20.getBoundingBox().maxY > var17) {
                 var15 = var22;

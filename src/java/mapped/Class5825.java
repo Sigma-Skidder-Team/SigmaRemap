@@ -27,7 +27,7 @@ public class Class5825 extends Class5823 {
 
    @Override
    public boolean method18191(BlockState var1) {
-      return var1.isIn(Blocks.field37062);
+      return var1.isIn(Blocks.SMITHING_TABLE);
    }
 
    @Override

@@ -50,7 +50,7 @@ public class ShipwreckPieces {
    };
 
    public static void method30926(TemplateManager var0, BlockPos var1, Rotation var2, List<Class4178> var3, Random var4, ShipwreckConfig var5) {
-      ResourceLocation var8 = Util.<ResourceLocation>method38518(!var5.field22432 ? field38810 : field38809, var4);
+      ResourceLocation var8 = Util.<ResourceLocation>getRandomObject(!var5.field22432 ? field38810 : field38809, var4);
       var3.add(new Class4181(var0, var8, var1, var2, var5.field22432));
    }
 

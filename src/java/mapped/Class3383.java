@@ -4,6 +4,8 @@ import com.google.common.collect.Lists;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.particles.RedstoneParticleData;
+import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
@@ -17,12 +19,12 @@ import java.util.WeakHashMap;
 
 public class Class3383 extends Class3381 {
    private static String[] field18982;
-   public static final Class8551 field18987 = Class8820.field39699;
+   public static final BooleanProperty field18987 = BlockStateProperties.field39699;
    private static final Map<IBlockReader, List<Class9018>> field18988 = new WeakHashMap<IBlockReader, List<Class9018>>();
 
-   public Class3383(AbstractBlock var1) {
+   public Class3383(Properties var1) {
       super(var1, RedstoneParticleData.REDSTONE_DUST);
-      this.method11578(this.field18612.method35393().method23465(field18987, Boolean.valueOf(true)));
+      this.method11578(this.field18612.method35393().with(field18987, Boolean.valueOf(true)));
    }
 
    @Override
@@ -43,7 +45,7 @@ public class Class3383 extends Class3381 {
 
    @Override
    public int method11514(BlockState var1, IBlockReader var2, BlockPos var3, Direction var4) {
-      return var1.<Boolean>method23463(field18987) && Direction.field673 != var4 ? 15 : 0;
+      return var1.<Boolean>get(field18987) && Direction.UP != var4 ? 15 : 0;
    }
 
    public boolean method11981(World var1, BlockPos var2, BlockState var3) {
@@ -59,12 +61,12 @@ public class Class3383 extends Class3381 {
          var8.remove(0);
       }
 
-      if (!var1.<Boolean>method23463(field18987)) {
+      if (!var1.<Boolean>get(field18987)) {
          if (!var7 && !method11982(var2, var3, false)) {
-            var2.setBlockState(var3, var1.method23465(field18987, Boolean.valueOf(true)), 3);
+            var2.setBlockState(var3, var1.with(field18987, Boolean.valueOf(true)), 3);
          }
       } else if (var7) {
-         var2.setBlockState(var3, var1.method23465(field18987, Boolean.valueOf(false)), 3);
+         var2.setBlockState(var3, var1.with(field18987, Boolean.valueOf(false)), 3);
          if (method11982(var2, var3, true)) {
             var2.playEvent(1502, var3, 0);
             var2.method6860().method20726(var3, var2.getBlockState(var3).getBlock(), 160);
@@ -74,7 +76,7 @@ public class Class3383 extends Class3381 {
 
    @Override
    public void method11506(BlockState var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
-      if (var1.<Boolean>method23463(field18987) == this.method11981(var2, var3, var1) && !var2.method6860().method20720(var3, this)) {
+      if (var1.<Boolean>get(field18987) == this.method11981(var2, var3, var1) && !var2.method6860().method20720(var3, this)) {
          var2.method6860().method20726(var3, this, 2);
       }
    }
@@ -91,7 +93,7 @@ public class Class3383 extends Class3381 {
 
    @Override
    public void method11512(BlockState var1, World var2, BlockPos var3, Random var4) {
-      if (var1.<Boolean>method23463(field18987)) {
+      if (var1.<Boolean>get(field18987)) {
          double var7 = (double)var3.getX() + 0.5 + (var4.nextDouble() - 0.5) * 0.2;
          double var9 = (double)var3.getY() + 0.7 + (var4.nextDouble() - 0.5) * 0.2;
          double var11 = (double)var3.getZ() + 0.5 + (var4.nextDouble() - 0.5) * 0.2;

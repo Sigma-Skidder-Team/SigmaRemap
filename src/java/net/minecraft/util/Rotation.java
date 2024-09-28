@@ -67,17 +67,17 @@ public enum Rotation {
       return this.field189;
    }
 
-   public net.minecraft.util.Direction method252(net.minecraft.util.Direction var1) {
-      if (var1.getAxis() == mapped.Direction.Y) {
+   public Direction rotate(Direction var1) {
+      if (var1.getAxis() == Direction.Axis.Y) {
          return var1;
       } else {
          switch (Class8568.field38525[this.ordinal()]) {
             case 2:
-               return var1.method537();
+               return var1.rotateY();
             case 3:
-               return var1.method536();
+               return var1.getOpposite();
             case 4:
-               return var1.method538();
+               return var1.rotateYCCW();
             default:
                return var1;
          }
@@ -98,7 +98,7 @@ public enum Rotation {
    }
 
    public static Rotation method254(Random var0) {
-      return Util.<Rotation>method38518(values(), var0);
+      return Util.<Rotation>getRandomObject(values(), var0);
    }
 
    public static List<Rotation> method255(Random var0) {

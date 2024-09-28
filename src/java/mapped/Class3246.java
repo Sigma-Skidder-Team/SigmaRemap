@@ -3,6 +3,9 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.state.EnumProperty;
+import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraft.state.properties.ComparatorMode;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
@@ -21,16 +24,16 @@ import java.util.Random;
 
 public class Class3246 extends Class3247 implements Class3245 {
    private static String[] field18705;
-   public static final Class8552<Class105> field18706 = Class8820.field39766;
+   public static final EnumProperty<ComparatorMode> field18706 = BlockStateProperties.field39766;
 
-   public Class3246(AbstractBlock var1) {
+   public Class3246(Properties var1) {
       super(var1);
       this.method11578(
          this.field18612
             .method35393()
-            .method23465(field18484, Direction.NORTH)
-            .method23465(field18708, Boolean.valueOf(false))
-            .method23465(field18706, Class105.field325)
+            .with(HORIZONTAL_FACING, Direction.NORTH)
+            .with(field18708, Boolean.valueOf(false))
+            .with(field18706, ComparatorMode.field325)
       );
    }
 
@@ -46,7 +49,7 @@ public class Class3246 extends Class3247 implements Class3245 {
    }
 
    private int method11660(World var1, BlockPos var2, BlockState var3) {
-      return var3.method23463(field18706) != Class105.field326
+      return var3.get(field18706) != ComparatorMode.field326
          ? this.method11662(var1, var2, var3)
          : Math.max(this.method11662(var1, var2, var3) - this.method11668(var1, var2, var3), 0);
    }
@@ -56,7 +59,7 @@ public class Class3246 extends Class3247 implements Class3245 {
       int var6 = this.method11662(var1, var2, var3);
       if (var6 != 0) {
          int var7 = this.method11668(var1, var2, var3);
-         return var6 > var7 ? true : var6 == var7 && var3.<Class105>method23463(field18706) == Class105.field325;
+         return var6 > var7 ? true : var6 == var7 && var3.<ComparatorMode>get(field18706) == ComparatorMode.field325;
       } else {
          return false;
       }
@@ -65,7 +68,7 @@ public class Class3246 extends Class3247 implements Class3245 {
    @Override
    public int method11662(World var1, BlockPos var2, BlockState var3) {
       int var6 = super.method11662(var1, var2, var3);
-      Direction var7 = var3.<Direction>method23463(field18484);
+      Direction var7 = var3.<Direction>get(HORIZONTAL_FACING);
       BlockPos var8 = var2.method8349(var7);
       BlockState var9 = var1.getBlockState(var8);
       if (!var9.hasComparatorInputOverride()) {
@@ -106,7 +109,7 @@ public class Class3246 extends Class3247 implements Class3245 {
    public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       if (var4.abilities.allowEdit) {
          var1 = var1.method23459(field18706);
-         float var9 = var1.method23463(field18706) != Class105.field326 ? 0.5F : 0.55F;
+         float var9 = var1.get(field18706) != ComparatorMode.field326 ? 0.5F : 0.55F;
          var2.method6742(var4, var3, SoundEvents.field26462, Class2266.field14732, 0.3F, var9);
          var2.setBlockState(var3, var1, 2);
          this.method11665(var2, var3, var1);
@@ -122,7 +125,7 @@ public class Class3246 extends Class3247 implements Class3245 {
          int var6 = this.method11660(var1, var2, var3);
          TileEntity var7 = var1.getTileEntity(var2);
          int var8 = !(var7 instanceof Class963) ? 0 : ((Class963)var7).method3930();
-         if (var6 != var8 || var3.<Boolean>method23463(field18708) != this.method11661(var1, var2, var3)) {
+         if (var6 != var8 || var3.<Boolean>get(field18708) != this.method11661(var1, var2, var3)) {
             Class2199 var9 = !this.method11673(var1, var2, var3) ? Class2199.field14370 : Class2199.field14369;
             var1.method6860().method20719(var2, this, 2, var9);
          }
@@ -139,13 +142,13 @@ public class Class3246 extends Class3247 implements Class3245 {
          var9.method3931(var6);
       }
 
-      if (var8 != var6 || var3.<Class105>method23463(field18706) == Class105.field325) {
+      if (var8 != var6 || var3.<ComparatorMode>get(field18706) == ComparatorMode.field325) {
          boolean var11 = this.method11661(var1, var2, var3);
-         boolean var10 = var3.<Boolean>method23463(field18708);
+         boolean var10 = var3.<Boolean>get(field18708);
          if (var10 && !var11) {
-            var1.setBlockState(var2, var3.method23465(field18708, Boolean.valueOf(false)), 2);
+            var1.setBlockState(var2, var3.with(field18708, Boolean.valueOf(false)), 2);
          } else if (!var10 && var11) {
-            var1.setBlockState(var2, var3.method23465(field18708, Boolean.valueOf(true)), 2);
+            var1.setBlockState(var2, var3.with(field18708, Boolean.valueOf(true)), 2);
          }
 
          this.method11670(var1, var2, var3);
@@ -171,6 +174,6 @@ public class Class3246 extends Class3247 implements Class3245 {
 
    @Override
    public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field18484, field18706, field18708);
+      var1.method24737(HORIZONTAL_FACING, field18706, field18708);
    }
 }

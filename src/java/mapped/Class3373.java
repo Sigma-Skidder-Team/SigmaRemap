@@ -4,28 +4,31 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 public abstract class Class3373 extends Class3241 implements Class3207 {
-   public static final Class8551 field18966 = Class8820.field39710;
-   public static final VoxelShape field18967 = Block.method11539(4.0, 0.0, 4.0, 12.0, 16.0, 12.0);
+   public static final BooleanProperty field18966 = BlockStateProperties.field39710;
+   public static final VoxelShape field18967 = Block.makeCuboidShape(4.0, 0.0, 4.0, 12.0, 16.0, 12.0);
    private final Class9673 field18968;
 
-   public Class3373(AbstractBlock var1, Class9673 var2) {
+   public Class3373(Properties var1, Class9673 var2) {
       super(var1);
       this.field18968 = var2;
    }
 
    @Override
    public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
-      if (var1.<Boolean>method23463(field18966)) {
+      if (var1.<Boolean>get(field18966)) {
          var4.method6861().method20726(var5, Class9479.field44066, Class9479.field44066.method25057(var4));
       }
 
@@ -73,7 +76,7 @@ public abstract class Class3373 extends Class3241 implements Class3207 {
 
    @Override
    public FluidState method11498(BlockState var1) {
-      return !var1.<Boolean>method23463(field18966) ? super.method11498(var1) : Class9479.field44066.method25078(false);
+      return !var1.<Boolean>get(field18966) ? super.method11498(var1) : Class9479.field44066.method25078(false);
    }
 
    public Class9673 method11967() {

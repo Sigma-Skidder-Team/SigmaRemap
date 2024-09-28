@@ -47,7 +47,7 @@ public class Class2924 extends Class2898<Class4712> {
 
          var1.setBlockState(var4, this.field18001, 2);
 
-         for (Direction var18 : Class76.field161) {
+         for (Direction var18 : Direction.Plane.HORIZONTAL) {
             var1.setBlockState(var4.method8349(var18), this.field18001, 2);
          }
 

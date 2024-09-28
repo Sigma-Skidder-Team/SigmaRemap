@@ -9,6 +9,8 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvents;
@@ -18,11 +20,11 @@ import net.minecraft.world.World;
 
 public class Class3458 extends Block {
    private static String[] field19278;
-   public static final Class8551 field19279 = Class8820.field39709;
+   public static final BooleanProperty field19279 = BlockStateProperties.field39709;
 
-   public Class3458(AbstractBlock var1) {
+   public Class3458(Properties var1) {
       super(var1);
-      this.method11578(this.method11579().method23465(field19279, Boolean.valueOf(false)));
+      this.method11578(this.method11579().with(field19279, Boolean.valueOf(false)));
    }
 
    @Override
@@ -43,7 +45,7 @@ public class Class3458 extends Block {
 
    @Override
    public void onBlockHarvested(World var1, BlockPos var2, BlockState var3, PlayerEntity var4) {
-      if (!var1.isRemote() && !var4.isCreative() && var3.<Boolean>method23463(field19279)) {
+      if (!var1.isRemote() && !var4.isCreative() && var3.<Boolean>get(field19279)) {
          method12131(var1, var2);
       }
 

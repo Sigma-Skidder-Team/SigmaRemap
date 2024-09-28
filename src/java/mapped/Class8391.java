@@ -18,7 +18,7 @@ public class Class8391 {
    private int field35983 = -1;
    private int field35984 = -1;
    private int field35985 = -1;
-   private float[] field35986 = new float[Direction.field685.length * 2];
+   private float[] field35986 = new float[Direction.VALUES.length * 2];
    private BitSet field35987 = new BitSet(3);
    private Class9529 field35988 = new Class9529();
    private Class2001 field35989 = null;

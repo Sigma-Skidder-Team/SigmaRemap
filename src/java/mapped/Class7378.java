@@ -32,7 +32,7 @@ public abstract class Class7378<O, S> {
    }
 
    public <T extends Comparable<T>> S method23459(Class8550<T> var1) {
-      return this.method23465(var1, method23460(var1.method30474(), this.method23463(var1)));
+      return this.with(var1, method23460(var1.method30474(), this.get(var1)));
    }
 
    public static <T> T method23460(Collection<T> var0, T var1) {
@@ -72,7 +72,7 @@ public abstract class Class7378<O, S> {
       return this.field31580.containsKey(var1);
    }
 
-   public <T extends Comparable<T>> T method23463(Class8550<T> var1) {
+   public <T extends Comparable<T>> T get(Class8550<T> var1) {
       Comparable var4 = (Comparable)this.field31580.get(var1);
       if (var4 != null) {
          return (T)var1.method30473().cast(var4);
@@ -86,7 +86,7 @@ public abstract class Class7378<O, S> {
       return var4 != null ? Optional.<T>of((T)var1.method30473().cast(var4)) : Optional.<T>empty();
    }
 
-   public <T extends Comparable<T>, V extends T> S method23465(Class8550<T> var1, V var2) {
+   public <T extends Comparable<T>, V extends T> S with(Class8550<T> var1, V var2) {
       Comparable var5 = (Comparable)this.field31580.get(var1);
       if (var5 != null) {
          if (var5 != var2) {

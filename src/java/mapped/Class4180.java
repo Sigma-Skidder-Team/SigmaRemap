@@ -5,6 +5,7 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.state.properties.StructureMode;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
@@ -51,8 +52,8 @@ public abstract class Class4180 extends Class4178 {
       if (this.field20453.method32899(var1, this.field20455, var7, this.field20454, var4, 2)) {
          for (Class8266 var11 : this.field20453.method32893(this.field20455, this.field20454, Blocks.field37113)) {
             if (var11.field35532 != null) {
-               Class104 var12 = Class104.valueOf(var11.field35532.getString("mode"));
-               if (var12 == Class104.field321) {
+               StructureMode var12 = StructureMode.valueOf(var11.field35532.getString("mode"));
+               if (var12 == StructureMode.field321) {
                   this.method12944(var11.field35532.getString("metadata"), var11.field35530, var1, var4, var5);
                }
             }

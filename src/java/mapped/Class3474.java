@@ -9,7 +9,7 @@ import java.util.Random;
 public class Class3474 extends Class3472 {
    private static String[] field19324;
 
-   public Class3474(AbstractBlock var1) {
+   public Class3474(Properties var1) {
       super(var1);
    }
 

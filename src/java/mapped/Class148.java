@@ -34,7 +34,7 @@ public class Class148 extends Class128 {
             var8 = UUID.randomUUID();
          }
 
-         EquipmentSlotType var9 = Util.<EquipmentSlotType>method38518(Class6884.method20965(var7), var5);
+         EquipmentSlotType var9 = Util.<EquipmentSlotType>getRandomObject(Class6884.method20965(var7), var5);
          var1.method32172(
             Class6884.method20966(var7),
             new AttributeModifier(var8, Class6884.method20967(var7), (double)Class6884.method20968(var7).method20924(var5), Class6884.method20969(var7)),

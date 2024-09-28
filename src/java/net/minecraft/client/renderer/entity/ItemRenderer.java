@@ -70,7 +70,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
       Random var11 = new Random();
       long var12 = 42L;
 
-      for (Direction var17 : Direction.field685) {
+      for (Direction var17 : Direction.VALUES) {
          var11.setSeed(42L);
          this.method787(var5, var6, var1.method22619((BlockState)null, var17, var11), var2, var3, var4);
       }

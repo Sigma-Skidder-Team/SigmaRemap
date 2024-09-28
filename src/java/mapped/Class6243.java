@@ -16,7 +16,7 @@ public final class Class6243 extends Class6218 {
    @Override
    public ItemStack dispenseStack(IBlockSource var1, ItemStack var2) {
       ServerWorld var5 = var1.method11326();
-      BlockPos var6 = var1.method11323().method8349(var1.method11324().<Direction>method23463(Class3357.field18899));
+      BlockPos var6 = var1.method11323().method8349(var1.method11324().<Direction>get(Class3357.field18899));
       BlockState var7 = var5.getBlockState(var6);
       Block var8 = var7.getBlock();
       if (!(var8 instanceof Class3405)) {

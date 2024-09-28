@@ -88,7 +88,7 @@ public class SpartanFly extends Module {
                             if (var6 && (var5 >= 0 || mc.player.getHeldItem(Hand.MAIN_HAND).getItem() instanceof Class3292)) {
                                 BlockRayTraceResult var7 = new BlockRayTraceResult(
                                         mc.player.getPositionVec().add(0.0, -2.0, 0.0),
-                                        Direction.field673,
+                                        Direction.UP,
                                         mc.player.getPosition().method8336(0, -2, 0),
                                         false
                                 );

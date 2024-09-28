@@ -224,14 +224,14 @@ public class Auto32k extends Module {
                     if (this.field23870 != null) {
                         if (this.field23873 != 0) {
                             if (this.field23873 == 1) {
-                                float var4 = BlockUtil.method34543(this.field23870.up(), Direction.field673)[0];
-                                float var5 = BlockUtil.method34543(this.field23870.up(), Direction.field673)[1];
+                                float var4 = BlockUtil.method34543(this.field23870.up(), Direction.UP)[0];
+                                float var5 = BlockUtil.method34543(this.field23870.up(), Direction.UP)[1];
                                 var1.setPitch(var4);
                                 var1.setYaw(var5);
                                 int var6 = mc.player.inventory.currentItem;
                                 mc.player.inventory.currentItem = this.field23871;
-                                Vector3d var7 = BlockUtil.method34572(Direction.field673, this.field23870);
-                                BlockRayTraceResult var8 = new BlockRayTraceResult(var7, Direction.field673, this.field23870, false);
+                                Vector3d var7 = BlockUtil.method34572(Direction.UP, this.field23870);
+                                BlockRayTraceResult var8 = new BlockRayTraceResult(var7, Direction.UP, this.field23870, false);
                                 ActionResultType var9 = mc.playerController.func_217292_a(mc.player, mc.world, Hand.MAIN_HAND, var8);
                                 mc.player.swingArm(Hand.MAIN_HAND);
                                 if (var9 == ActionResultType.SUCCESS) {
@@ -239,8 +239,8 @@ public class Auto32k extends Module {
                                     mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, CEntityActionPacket.Action.PRESS_SHIFT_KEY));
                                     mc.player.movementInput.field43914 = true;
                                     mc.player.inventory.currentItem = this.field23872;
-                                    Vector3d var10 = BlockUtil.method34572(Direction.field673, this.field23870.up());
-                                    BlockRayTraceResult var11 = new BlockRayTraceResult(var10, Direction.field673, this.field23870.up(), false);
+                                    Vector3d var10 = BlockUtil.method34572(Direction.UP, this.field23870.up());
+                                    BlockRayTraceResult var11 = new BlockRayTraceResult(var10, Direction.UP, this.field23870.up(), false);
                                     mc.playerController.func_217292_a(mc.player, mc.world, Hand.MAIN_HAND, var11);
                                     mc.player.swingArm(Hand.MAIN_HAND);
                                     mc.player.movementInput.field43914 = false;
@@ -249,8 +249,8 @@ public class Auto32k extends Module {
                                 }
                             }
                         } else {
-                            float var12 = BlockUtil.method34543(this.field23870, Direction.field673)[0];
-                            float var13 = BlockUtil.method34543(this.field23870, Direction.field673)[1];
+                            float var12 = BlockUtil.method34543(this.field23870, Direction.UP)[0];
+                            float var13 = BlockUtil.method34543(this.field23870, Direction.UP)[1];
                             var1.setPitch(var12);
                             var1.setYaw(var13);
                             this.field23873++;
@@ -317,8 +317,8 @@ public class Auto32k extends Module {
             }
 
             if (var1.getPacket() instanceof CUseEntityPacket) {
-                float var4 = BlockUtil.method34543(this.field23870.up(), Direction.field673)[0];
-                float var5 = BlockUtil.method34543(this.field23870.up(), Direction.field673)[1];
+                float var4 = BlockUtil.method34543(this.field23870.up(), Direction.UP)[0];
+                float var5 = BlockUtil.method34543(this.field23870.up(), Direction.UP)[1];
             }
 
             if (var1.getPacket() instanceof CPlayerPacket) {

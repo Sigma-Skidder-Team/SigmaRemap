@@ -41,7 +41,7 @@ public class Class6765 extends Class6764 {
       int var5 = 0;
 
       for (Direction var9 : Direction.values()) {
-         Class7176 var10 = this.method20651(var2.field30847 + var9.method539(), var2.field30848 + var9.method540(), var2.field30849 + var9.method541());
+         Class7176 var10 = this.method20651(var2.field30847 + var9.getXOffset(), var2.field30848 + var9.getYOffset(), var2.field30849 + var9.getZOffset());
          if (var10 != null && !var10.field30856) {
             var1[var5++] = var10;
          }

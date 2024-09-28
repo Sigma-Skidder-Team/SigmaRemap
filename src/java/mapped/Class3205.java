@@ -3,12 +3,11 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Direction;
-import net.minecraft.util.Hand;
-import net.minecraft.util.Rotation;
+import net.minecraft.state.properties.AttachFace;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.IBlockReader;
@@ -16,75 +15,75 @@ import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
 public class Class3205 extends Class3200 {
-   public static final VoxelShape field18528 = Block.method11539(2.0, 0.0, 6.0, 4.0, 7.0, 10.0);
-   public static final VoxelShape field18529 = Block.method11539(12.0, 0.0, 6.0, 14.0, 7.0, 10.0);
-   public static final VoxelShape field18530 = Block.method11539(2.0, 7.0, 5.0, 4.0, 13.0, 11.0);
-   public static final VoxelShape field18531 = Block.method11539(12.0, 7.0, 5.0, 14.0, 13.0, 11.0);
-   public static final VoxelShape field18532 = VoxelShapes.method27431(field18528, field18530);
-   public static final VoxelShape field18533 = VoxelShapes.method27431(field18529, field18531);
-   public static final VoxelShape field18534 = VoxelShapes.method27431(field18532, field18533);
-   public static final VoxelShape field18535 = VoxelShapes.method27431(field18534, Block.method11539(4.0, 4.0, 2.0, 12.0, 16.0, 14.0));
-   public static final VoxelShape field18536 = Block.method11539(6.0, 0.0, 2.0, 10.0, 7.0, 4.0);
-   public static final VoxelShape field18537 = Block.method11539(6.0, 0.0, 12.0, 10.0, 7.0, 14.0);
-   public static final VoxelShape field18538 = Block.method11539(5.0, 7.0, 2.0, 11.0, 13.0, 4.0);
-   public static final VoxelShape field18539 = Block.method11539(5.0, 7.0, 12.0, 11.0, 13.0, 14.0);
-   public static final VoxelShape field18540 = VoxelShapes.method27431(field18536, field18538);
-   public static final VoxelShape field18541 = VoxelShapes.method27431(field18537, field18539);
-   public static final VoxelShape field18542 = VoxelShapes.method27431(field18540, field18541);
-   public static final VoxelShape field18543 = VoxelShapes.method27431(field18542, Block.method11539(2.0, 4.0, 4.0, 14.0, 16.0, 12.0));
-   public static final VoxelShape field18544 = Block.method11539(2.0, 6.0, 0.0, 4.0, 10.0, 7.0);
-   public static final VoxelShape field18545 = Block.method11539(12.0, 6.0, 0.0, 14.0, 10.0, 7.0);
-   public static final VoxelShape field18546 = Block.method11539(2.0, 5.0, 7.0, 4.0, 11.0, 13.0);
-   public static final VoxelShape field18547 = Block.method11539(12.0, 5.0, 7.0, 14.0, 11.0, 13.0);
-   public static final VoxelShape field18548 = VoxelShapes.method27431(field18544, field18546);
-   public static final VoxelShape field18549 = VoxelShapes.method27431(field18545, field18547);
-   public static final VoxelShape field18550 = VoxelShapes.method27431(field18548, field18549);
-   public static final VoxelShape field18551 = VoxelShapes.method27431(field18550, Block.method11539(4.0, 2.0, 4.0, 12.0, 14.0, 16.0));
-   public static final VoxelShape field18552 = Block.method11539(2.0, 6.0, 7.0, 4.0, 10.0, 16.0);
-   public static final VoxelShape field18553 = Block.method11539(12.0, 6.0, 7.0, 14.0, 10.0, 16.0);
-   public static final VoxelShape field18554 = Block.method11539(2.0, 5.0, 3.0, 4.0, 11.0, 9.0);
-   public static final VoxelShape field18555 = Block.method11539(12.0, 5.0, 3.0, 14.0, 11.0, 9.0);
-   public static final VoxelShape field18556 = VoxelShapes.method27431(field18552, field18554);
-   public static final VoxelShape field18557 = VoxelShapes.method27431(field18553, field18555);
-   public static final VoxelShape field18558 = VoxelShapes.method27431(field18556, field18557);
-   public static final VoxelShape field18559 = VoxelShapes.method27431(field18558, Block.method11539(4.0, 2.0, 0.0, 12.0, 14.0, 12.0));
-   public static final VoxelShape field18560 = Block.method11539(7.0, 6.0, 2.0, 16.0, 10.0, 4.0);
-   public static final VoxelShape field18561 = Block.method11539(7.0, 6.0, 12.0, 16.0, 10.0, 14.0);
-   public static final VoxelShape field18562 = Block.method11539(3.0, 5.0, 2.0, 9.0, 11.0, 4.0);
-   public static final VoxelShape field18563 = Block.method11539(3.0, 5.0, 12.0, 9.0, 11.0, 14.0);
-   public static final VoxelShape field18564 = VoxelShapes.method27431(field18560, field18562);
-   public static final VoxelShape field18565 = VoxelShapes.method27431(field18561, field18563);
-   public static final VoxelShape field18566 = VoxelShapes.method27431(field18564, field18565);
-   public static final VoxelShape field18567 = VoxelShapes.method27431(field18566, Block.method11539(0.0, 2.0, 4.0, 12.0, 14.0, 12.0));
-   public static final VoxelShape field18568 = Block.method11539(0.0, 6.0, 2.0, 9.0, 10.0, 4.0);
-   public static final VoxelShape field18569 = Block.method11539(0.0, 6.0, 12.0, 9.0, 10.0, 14.0);
-   public static final VoxelShape field18570 = Block.method11539(7.0, 5.0, 2.0, 13.0, 11.0, 4.0);
-   public static final VoxelShape field18571 = Block.method11539(7.0, 5.0, 12.0, 13.0, 11.0, 14.0);
-   public static final VoxelShape field18572 = VoxelShapes.method27431(field18568, field18570);
-   public static final VoxelShape field18573 = VoxelShapes.method27431(field18569, field18571);
-   public static final VoxelShape field18574 = VoxelShapes.method27431(field18572, field18573);
-   public static final VoxelShape field18575 = VoxelShapes.method27431(field18574, Block.method11539(4.0, 2.0, 4.0, 16.0, 14.0, 12.0));
-   public static final VoxelShape field18576 = Block.method11539(2.0, 9.0, 6.0, 4.0, 16.0, 10.0);
-   public static final VoxelShape field18577 = Block.method11539(12.0, 9.0, 6.0, 14.0, 16.0, 10.0);
-   public static final VoxelShape field18578 = Block.method11539(2.0, 3.0, 5.0, 4.0, 9.0, 11.0);
-   public static final VoxelShape field18579 = Block.method11539(12.0, 3.0, 5.0, 14.0, 9.0, 11.0);
-   public static final VoxelShape field18580 = VoxelShapes.method27431(field18576, field18578);
-   public static final VoxelShape field18581 = VoxelShapes.method27431(field18577, field18579);
-   public static final VoxelShape field18582 = VoxelShapes.method27431(field18580, field18581);
-   public static final VoxelShape field18583 = VoxelShapes.method27431(field18582, Block.method11539(4.0, 0.0, 2.0, 12.0, 12.0, 14.0));
-   public static final VoxelShape field18584 = Block.method11539(6.0, 9.0, 2.0, 10.0, 16.0, 4.0);
-   public static final VoxelShape field18585 = Block.method11539(6.0, 9.0, 12.0, 10.0, 16.0, 14.0);
-   public static final VoxelShape field18586 = Block.method11539(5.0, 3.0, 2.0, 11.0, 9.0, 4.0);
-   public static final VoxelShape field18587 = Block.method11539(5.0, 3.0, 12.0, 11.0, 9.0, 14.0);
-   public static final VoxelShape field18588 = VoxelShapes.method27431(field18584, field18586);
-   public static final VoxelShape field18589 = VoxelShapes.method27431(field18585, field18587);
-   public static final VoxelShape field18590 = VoxelShapes.method27431(field18588, field18589);
-   public static final VoxelShape field18591 = VoxelShapes.method27431(field18590, Block.method11539(2.0, 0.0, 4.0, 14.0, 12.0, 12.0));
+   public static final VoxelShape field18528 = Block.makeCuboidShape(2.0, 0.0, 6.0, 4.0, 7.0, 10.0);
+   public static final VoxelShape field18529 = Block.makeCuboidShape(12.0, 0.0, 6.0, 14.0, 7.0, 10.0);
+   public static final VoxelShape field18530 = Block.makeCuboidShape(2.0, 7.0, 5.0, 4.0, 13.0, 11.0);
+   public static final VoxelShape field18531 = Block.makeCuboidShape(12.0, 7.0, 5.0, 14.0, 13.0, 11.0);
+   public static final VoxelShape field18532 = VoxelShapes.or(field18528, field18530);
+   public static final VoxelShape field18533 = VoxelShapes.or(field18529, field18531);
+   public static final VoxelShape field18534 = VoxelShapes.or(field18532, field18533);
+   public static final VoxelShape field18535 = VoxelShapes.or(field18534, Block.makeCuboidShape(4.0, 4.0, 2.0, 12.0, 16.0, 14.0));
+   public static final VoxelShape field18536 = Block.makeCuboidShape(6.0, 0.0, 2.0, 10.0, 7.0, 4.0);
+   public static final VoxelShape field18537 = Block.makeCuboidShape(6.0, 0.0, 12.0, 10.0, 7.0, 14.0);
+   public static final VoxelShape field18538 = Block.makeCuboidShape(5.0, 7.0, 2.0, 11.0, 13.0, 4.0);
+   public static final VoxelShape field18539 = Block.makeCuboidShape(5.0, 7.0, 12.0, 11.0, 13.0, 14.0);
+   public static final VoxelShape field18540 = VoxelShapes.or(field18536, field18538);
+   public static final VoxelShape field18541 = VoxelShapes.or(field18537, field18539);
+   public static final VoxelShape field18542 = VoxelShapes.or(field18540, field18541);
+   public static final VoxelShape field18543 = VoxelShapes.or(field18542, Block.makeCuboidShape(2.0, 4.0, 4.0, 14.0, 16.0, 12.0));
+   public static final VoxelShape field18544 = Block.makeCuboidShape(2.0, 6.0, 0.0, 4.0, 10.0, 7.0);
+   public static final VoxelShape field18545 = Block.makeCuboidShape(12.0, 6.0, 0.0, 14.0, 10.0, 7.0);
+   public static final VoxelShape field18546 = Block.makeCuboidShape(2.0, 5.0, 7.0, 4.0, 11.0, 13.0);
+   public static final VoxelShape field18547 = Block.makeCuboidShape(12.0, 5.0, 7.0, 14.0, 11.0, 13.0);
+   public static final VoxelShape field18548 = VoxelShapes.or(field18544, field18546);
+   public static final VoxelShape field18549 = VoxelShapes.or(field18545, field18547);
+   public static final VoxelShape field18550 = VoxelShapes.or(field18548, field18549);
+   public static final VoxelShape field18551 = VoxelShapes.or(field18550, Block.makeCuboidShape(4.0, 2.0, 4.0, 12.0, 14.0, 16.0));
+   public static final VoxelShape field18552 = Block.makeCuboidShape(2.0, 6.0, 7.0, 4.0, 10.0, 16.0);
+   public static final VoxelShape field18553 = Block.makeCuboidShape(12.0, 6.0, 7.0, 14.0, 10.0, 16.0);
+   public static final VoxelShape field18554 = Block.makeCuboidShape(2.0, 5.0, 3.0, 4.0, 11.0, 9.0);
+   public static final VoxelShape field18555 = Block.makeCuboidShape(12.0, 5.0, 3.0, 14.0, 11.0, 9.0);
+   public static final VoxelShape field18556 = VoxelShapes.or(field18552, field18554);
+   public static final VoxelShape field18557 = VoxelShapes.or(field18553, field18555);
+   public static final VoxelShape field18558 = VoxelShapes.or(field18556, field18557);
+   public static final VoxelShape field18559 = VoxelShapes.or(field18558, Block.makeCuboidShape(4.0, 2.0, 0.0, 12.0, 14.0, 12.0));
+   public static final VoxelShape field18560 = Block.makeCuboidShape(7.0, 6.0, 2.0, 16.0, 10.0, 4.0);
+   public static final VoxelShape field18561 = Block.makeCuboidShape(7.0, 6.0, 12.0, 16.0, 10.0, 14.0);
+   public static final VoxelShape field18562 = Block.makeCuboidShape(3.0, 5.0, 2.0, 9.0, 11.0, 4.0);
+   public static final VoxelShape field18563 = Block.makeCuboidShape(3.0, 5.0, 12.0, 9.0, 11.0, 14.0);
+   public static final VoxelShape field18564 = VoxelShapes.or(field18560, field18562);
+   public static final VoxelShape field18565 = VoxelShapes.or(field18561, field18563);
+   public static final VoxelShape field18566 = VoxelShapes.or(field18564, field18565);
+   public static final VoxelShape field18567 = VoxelShapes.or(field18566, Block.makeCuboidShape(0.0, 2.0, 4.0, 12.0, 14.0, 12.0));
+   public static final VoxelShape field18568 = Block.makeCuboidShape(0.0, 6.0, 2.0, 9.0, 10.0, 4.0);
+   public static final VoxelShape field18569 = Block.makeCuboidShape(0.0, 6.0, 12.0, 9.0, 10.0, 14.0);
+   public static final VoxelShape field18570 = Block.makeCuboidShape(7.0, 5.0, 2.0, 13.0, 11.0, 4.0);
+   public static final VoxelShape field18571 = Block.makeCuboidShape(7.0, 5.0, 12.0, 13.0, 11.0, 14.0);
+   public static final VoxelShape field18572 = VoxelShapes.or(field18568, field18570);
+   public static final VoxelShape field18573 = VoxelShapes.or(field18569, field18571);
+   public static final VoxelShape field18574 = VoxelShapes.or(field18572, field18573);
+   public static final VoxelShape field18575 = VoxelShapes.or(field18574, Block.makeCuboidShape(4.0, 2.0, 4.0, 16.0, 14.0, 12.0));
+   public static final VoxelShape field18576 = Block.makeCuboidShape(2.0, 9.0, 6.0, 4.0, 16.0, 10.0);
+   public static final VoxelShape field18577 = Block.makeCuboidShape(12.0, 9.0, 6.0, 14.0, 16.0, 10.0);
+   public static final VoxelShape field18578 = Block.makeCuboidShape(2.0, 3.0, 5.0, 4.0, 9.0, 11.0);
+   public static final VoxelShape field18579 = Block.makeCuboidShape(12.0, 3.0, 5.0, 14.0, 9.0, 11.0);
+   public static final VoxelShape field18580 = VoxelShapes.or(field18576, field18578);
+   public static final VoxelShape field18581 = VoxelShapes.or(field18577, field18579);
+   public static final VoxelShape field18582 = VoxelShapes.or(field18580, field18581);
+   public static final VoxelShape field18583 = VoxelShapes.or(field18582, Block.makeCuboidShape(4.0, 0.0, 2.0, 12.0, 12.0, 14.0));
+   public static final VoxelShape field18584 = Block.makeCuboidShape(6.0, 9.0, 2.0, 10.0, 16.0, 4.0);
+   public static final VoxelShape field18585 = Block.makeCuboidShape(6.0, 9.0, 12.0, 10.0, 16.0, 14.0);
+   public static final VoxelShape field18586 = Block.makeCuboidShape(5.0, 3.0, 2.0, 11.0, 9.0, 4.0);
+   public static final VoxelShape field18587 = Block.makeCuboidShape(5.0, 3.0, 12.0, 11.0, 9.0, 14.0);
+   public static final VoxelShape field18588 = VoxelShapes.or(field18584, field18586);
+   public static final VoxelShape field18589 = VoxelShapes.or(field18585, field18587);
+   public static final VoxelShape field18590 = VoxelShapes.or(field18588, field18589);
+   public static final VoxelShape field18591 = VoxelShapes.or(field18590, Block.makeCuboidShape(2.0, 0.0, 4.0, 14.0, 12.0, 12.0));
    private static final ITextComponent field18592 = new TranslationTextComponent("container.grindstone_title");
 
-   public Class3205(AbstractBlock var1) {
+   public Class3205(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().method23465(field18484, Direction.NORTH).method23465(field18500, Class103.field314));
+      this.method11578(this.field18612.method35393().with(HORIZONTAL_FACING, Direction.NORTH).with(field18500, AttachFace.field314));
    }
 
    @Override
@@ -93,8 +92,8 @@ public class Class3205 extends Class3200 {
    }
 
    private VoxelShape method11527(BlockState var1) {
-      Direction var4 = var1.<Direction>method23463(field18484);
-      switch (Class7707.field33093[var1.<Class103>method23463(field18500).ordinal()]) {
+      Direction var4 = var1.<Direction>get(HORIZONTAL_FACING);
+      switch (Class7707.field33093[var1.<AttachFace>get(field18500).ordinal()]) {
          case 1:
             if (var4 != Direction.NORTH && var4 != Direction.SOUTH) {
                return field18543;
@@ -156,18 +155,18 @@ public class Class3205 extends Class3200 {
    }
 
    @Override
-   public BlockState method11500(BlockState var1, Rotation var2) {
-      return var1.method23465(field18484, var2.method252(var1.<Direction>method23463(field18484)));
+   public BlockState rotate(BlockState var1, Rotation var2) {
+      return var1.with(HORIZONTAL_FACING, var2.rotate(var1.<Direction>get(HORIZONTAL_FACING)));
    }
 
    @Override
-   public BlockState method11501(BlockState var1, Class2089 var2) {
-      return var1.method23395(var2.method8749(var1.<Direction>method23463(field18484)));
+   public BlockState mirror(BlockState var1, Mirror var2) {
+      return var1.rotate(var2.toRotation(var1.<Direction>get(HORIZONTAL_FACING)));
    }
 
    @Override
    public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field18484, field18500);
+      var1.method24737(HORIZONTAL_FACING, field18500);
    }
 
    @Override

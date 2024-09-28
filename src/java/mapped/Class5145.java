@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.state.StateContainer;
+
 import java.util.List;
 
 public class Class5145 extends Class5144 {
@@ -12,7 +14,7 @@ public class Class5145 extends Class5144 {
    }
 
    @Override
-   public void method15929(Class9348<?, ?> var1) {
+   public void method15929(StateContainer<?, ?> var1) {
       this.field23369.method15918(var1);
    }
 

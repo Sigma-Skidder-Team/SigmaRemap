@@ -369,8 +369,8 @@ public class DedicatedServer extends MinecraftServer implements Class1646 {
             if (!this.getPlayerList().canSendCommands(var3.getGameProfile())) {
                if (this.method1377() > 0) {
                   BlockPos var6 = var1.method6947();
-                  int var7 = MathHelper.method37772(var2.getX() - var6.getX());
-                  int var8 = MathHelper.method37772(var2.getZ() - var6.getZ());
+                  int var7 = MathHelper.abs(var2.getX() - var6.getX());
+                  int var8 = MathHelper.abs(var2.getZ() - var6.getZ());
                   int var9 = Math.max(var7, var8);
                   return var9 <= this.method1377();
                } else {

@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.server.ServerWorld;
@@ -16,7 +17,7 @@ public abstract class Class3444 extends Block {
    public final boolean field19257;
    public final VoxelShape field19258;
 
-   public Class3444(AbstractBlock var1, Direction var2, VoxelShape var3, boolean var4) {
+   public Class3444(Properties var1, Direction var2, VoxelShape var3, boolean var4) {
       super(var1);
       this.field19256 = var2;
       this.field19258 = var3;
@@ -38,7 +39,7 @@ public abstract class Class3444 extends Block {
 
    @Override
    public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
-      BlockPos var6 = var3.method8349(this.field19256.method536());
+      BlockPos var6 = var3.method8349(this.field19256.getOpposite());
       BlockState var7 = var2.getBlockState(var6);
       Block var8 = var7.getBlock();
       return !this.method12123(var8) ? false : var8 == this.method12124() || var8 == this.method12125() || var7.method23454(var2, var6, this.field19256);

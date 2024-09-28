@@ -8,7 +8,7 @@ import net.minecraft.world.IBlockReader;
 public abstract class Class3251 extends Class3241 implements Class3255 {
    private final Class2137 field18725;
 
-   public Class3251(Class2137 var1, AbstractBlock var2) {
+   public Class3251(Class2137 var1, Properties var2) {
       super(var2);
       this.field18725 = var1;
    }

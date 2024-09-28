@@ -425,7 +425,7 @@ public class Class7819 {
          ArrayList var9 = Lists.newArrayList();
          BlockPos var5 = var3.method8339(1);
 
-         for (Direction var7 : Class76.field161) {
+         for (Direction var7 : Direction.Plane.HORIZONTAL) {
             List var8 = this.field33538.<EnderCrystalEntity>method7182(EnderCrystalEntity.class, new AxisAlignedBB(var5.method8350(var7, 2)));
             if (var8.isEmpty()) {
                return;

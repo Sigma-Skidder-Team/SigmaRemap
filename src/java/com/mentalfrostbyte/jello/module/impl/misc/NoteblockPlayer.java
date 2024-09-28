@@ -22,6 +22,7 @@ import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.network.play.client.CPlayerTryUseItemOnBlockPacket;
 import net.minecraft.network.play.server.SPlaySoundPacket;
 import net.minecraft.network.play.server.SPlaySoundEffectPacket;
+import net.minecraft.state.properties.NoteBlockInstrument;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
@@ -117,13 +118,13 @@ public class NoteblockPlayer extends PremiumModule {
                                         if ((var6.method28780() != 3 && this.method16414(var8) == 0 || var8.method19640() == var6.method28780())
                                                 && Class2121.method8807(var8.field28402) == (float) (var6.method28782() - 33)
                                                 && Math.sqrt(mc.player.getPosition().method8318(var8.field28401)) < (double) mc.playerController.getBlockReachDistance()) {
-                                            float[] var9 = BlockUtil.method34542(var8.field28401, Direction.field673);
+                                            float[] var9 = BlockUtil.method34542(var8.field28401, Direction.UP);
                                             if ((double) var8.field28401.getY() > mc.player.getPosY() + 1.0) {
                                                 var9 = BlockUtil.method34542(var8.field28401, Direction.DOWN);
                                             }
 
                                             mc.getConnection().sendPacket(new CPlayerPacket.RotationPacket(var9[0], var9[1], mc.player.onGround));
-                                            mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.START_DESTROY_BLOCK, var8.field28401, Direction.field673));
+                                            mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.START_DESTROY_BLOCK, var8.field28401, Direction.UP));
                                             mc.getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
                                             this.field23642.add(var8.field28401);
                                         }
@@ -153,9 +154,9 @@ public class NoteblockPlayer extends PremiumModule {
     public boolean method16407(List<Class6463> var1) {
         for (Class6463 var5 : var1) {
             if (var5.field28402 == -1.0F && Math.sqrt(mc.player.getPosition().method8318(var5.field28401)) < (double) mc.playerController.getBlockReachDistance()) {
-                float[] var6 = BlockUtil.method34542(var5.field28401, Direction.field673);
+                float[] var6 = BlockUtil.method34542(var5.field28401, Direction.UP);
                 mc.getConnection().sendPacket(new CPlayerPacket.RotationPacket(var6[0], var6[1], mc.player.onGround));
-                mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.START_DESTROY_BLOCK, var5.field28401, Direction.field673));
+                mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.START_DESTROY_BLOCK, var5.field28401, Direction.UP));
                 this.field23642.clear();
                 this.field23642.add(var5.field28401);
                 return true;
@@ -170,7 +171,7 @@ public class NoteblockPlayer extends PremiumModule {
             if (this.method16411(var5.field28402, var5.field28403)
                     && Math.sqrt(mc.player.getPosition().method8318(var5.field28401)) < (double) mc.playerController.getBlockReachDistance()) {
                 if (0 == 0) {
-                    float[] var6 = BlockUtil.method34542(var5.field28401, Direction.field673);
+                    float[] var6 = BlockUtil.method34542(var5.field28401, Direction.UP);
                     mc.player.swingArm(Hand.MAIN_HAND);
                     mc.getConnection().sendPacket(new CPlayerPacket.RotationPacket(var6[0], var6[1], mc.player.onGround));
                     mc.getConnection()
@@ -200,7 +201,7 @@ public class NoteblockPlayer extends PremiumModule {
         }
     }
 
-    public boolean method16411(float var1, Class108 var2) {
+    public boolean method16411(float var1, NoteBlockInstrument var2) {
         int var5 = 0;
 
         for (Class6463 var7 : this.field23641) {
@@ -330,7 +331,7 @@ public class NoteblockPlayer extends PremiumModule {
     }
 
     private int method16414(Class6463 var1) {
-        Map<Class108, Integer> var4 = new HashMap<>();
+        Map<NoteBlockInstrument, Integer> var4 = new HashMap<>();
 
         for (Class6463 var6 : this.field23641) {
             int var7 = var4.getOrDefault(var6.field28403, 0);

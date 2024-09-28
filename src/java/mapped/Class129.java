@@ -52,7 +52,7 @@ public class Class129 extends Class128 {
    }
 
    private static <T extends Comparable<T>> String method374(BlockState var0, Class8550<T> var1) {
-      Comparable var4 = var0.method23463(var1);
+      Comparable var4 = var0.get(var1);
       return var1.method30475((T)var4);
    }
 

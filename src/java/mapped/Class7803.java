@@ -20,7 +20,9 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.state.properties.StructureMode;
 import net.minecraft.tileentity.CommandBlockTileEntity;
+import net.minecraft.util.Mirror;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -53,24 +55,24 @@ public class Class7803 {
    public static AxisAlignedBB method26052(Class964 var0) {
       BlockPos var3 = var0.getPos();
       BlockPos var4 = var3.method8337(var0.method3942().method8336(-1, -1, -1));
-      BlockPos var5 = Class8969.method32905(var4, Class2089.field13614, var0.method3946(), var3);
+      BlockPos var5 = Class8969.method32905(var4, Mirror.field13614, var0.method3946(), var3);
       return new AxisAlignedBB(var3, var5);
    }
 
    public static Class9764 method26053(Class964 var0) {
       BlockPos var3 = var0.getPos();
       BlockPos var4 = var3.method8337(var0.method3942().method8336(-1, -1, -1));
-      BlockPos var5 = Class8969.method32905(var4, Class2089.field13614, var0.method3946(), var3);
+      BlockPos var5 = Class8969.method32905(var4, Mirror.field13614, var0.method3946(), var3);
       return new Class9764(var3, var5);
    }
 
    public static void method26054(BlockPos var0, BlockPos var1, Rotation var2, ServerWorld var3) {
-      BlockPos var6 = Class8969.method32905(var0.method8337(var1), Class2089.field13614, var2, var0);
+      BlockPos var6 = Class8969.method32905(var0.method8337(var1), Mirror.field13614, var2, var0);
       var3.setBlockState(var6, Blocks.COMMAND_BLOCK.method11579());
       CommandBlockTileEntity var7 = (CommandBlockTileEntity)var3.getTileEntity(var6);
       var7.method4009().method3562("test runthis");
-      BlockPos var8 = Class8969.method32905(var6.method8336(0, 0, -1), Class2089.field13614, var2, var6);
-      var3.setBlockState(var8, Blocks.STONE_BUTTON.method11579().method23395(var2));
+      BlockPos var8 = Class8969.method32905(var6.method8336(0, 0, -1), Mirror.field13614, var2, var6);
+      var3.setBlockState(var8, Blocks.STONE_BUTTON.method11579().rotate(var2));
    }
 
    public static void method26055(String var0, BlockPos var1, BlockPos var2, Rotation var3, ServerWorld var4) {
@@ -81,7 +83,7 @@ public class Class7803 {
       var8.method3954(false);
       var8.method3938(new ResourceLocation(var0));
       var8.method3943(var2);
-      var8.method3951(Class104.field318);
+      var8.method3951(StructureMode.field318);
       var8.method3976(true);
    }
 
@@ -143,7 +145,7 @@ public class Class7803 {
 
    public static Class9764 method26059(BlockPos var0, BlockPos var1, Rotation var2) {
       BlockPos var5 = var0.method8337(var1).method8336(-1, -1, -1);
-      BlockPos var6 = Class8969.method32905(var5, Class2089.field13614, var2, var0);
+      BlockPos var6 = Class8969.method32905(var5, Mirror.field13614, var2, var0);
       Class9764 var7 = Class9764.method38389(var0.getX(), var0.getY(), var0.getZ(), var6.getX(), var6.getY(), var6.getZ());
       int var8 = Math.min(var7.field45678, var7.field45681);
       int var9 = Math.min(var7.field45680, var7.field45683);
@@ -204,7 +206,7 @@ public class Class7803 {
    private static Class964 method26064(String var0, BlockPos var1, Rotation var2, ServerWorld var3, boolean var4) {
       var3.setBlockState(var1, Blocks.field37113.method11579());
       Class964 var7 = (Class964)var3.getTileEntity(var1);
-      var7.method3951(Class104.field319);
+      var7.method3951(StructureMode.field319);
       var7.method3947(var2);
       var7.method3954(false);
       var7.method3938(new ResourceLocation(var0));

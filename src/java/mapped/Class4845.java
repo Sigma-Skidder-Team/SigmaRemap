@@ -19,6 +19,6 @@ public class Class4845 extends Class4844 {
 
    @Override
    public ItemStack method14971() {
-      return new ItemStack(Blocks.field37063);
+      return new ItemStack(Blocks.STONECUTTER);
    }
 }

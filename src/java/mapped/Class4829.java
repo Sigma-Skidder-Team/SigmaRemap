@@ -5,6 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.fluid.Fluid;
+import net.minecraft.state.properties.SlabType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -50,7 +51,7 @@ public class Class4829 {
    }
 
    private static boolean method14923(IBlockReader var0, BlockPos var1, BlockState var2, Direction var3) {
-      return method14921(var0, var3.method536(), 1.0F, var1, var2);
+      return method14921(var0, var3.getOpposite(), 1.0F, var1, var2);
    }
 
    public static boolean method14924(IBlockDisplayReader var0, BlockPos var1, FluidState var2, BlockState var3, Direction var4) {
@@ -87,7 +88,7 @@ public class Class4829 {
             }
          }
 
-         boolean var82 = !method14920(var1, var2, Direction.field673, var4);
+         boolean var82 = !method14920(var1, var2, Direction.UP, var4);
          boolean var15 = method14924(var1, var2, var4, var10, Direction.DOWN) && !method14922(var1, var2, Direction.DOWN, 0.8888889F);
          boolean var16 = method14924(var1, var2, var4, var10, Direction.NORTH);
          boolean var17 = method14924(var1, var2, var4, var10, Direction.SOUTH);
@@ -103,7 +104,7 @@ public class Class4829 {
             float var22 = (float)(var12 & 0xFF) / 255.0F;
             var23 = false;
             float var24 = var1.method6877(Direction.DOWN, true);
-            float var25 = var1.method6877(Direction.field673, true);
+            float var25 = var1.method6877(Direction.UP, true);
             float var26 = var1.method6877(Direction.NORTH, true);
             float var27 = var1.method6877(Direction.WEST, true);
             float var28 = this.method14929(var1, var2, var4.method23472());
@@ -129,7 +130,7 @@ public class Class4829 {
 
             float var84 = 0.001F;
             float var85 = var15 ? 0.001F : 0.0F;
-            if (var82 && !method14922(var1, var2, Direction.field673, Math.min(Math.min(var28, var29), Math.min(var30, var31)))) {
+            if (var82 && !method14922(var1, var2, Direction.UP, Math.min(Math.min(var28, var29), Math.min(var30, var31)))) {
                var23 = true;
                var28 -= 0.001F;
                var29 -= 0.001F;
@@ -296,7 +297,7 @@ public class Class4829 {
 
                      if (var67 instanceof Class3208) {
                         Class3208 var69 = (Class3208)var67;
-                        if (var66.<Class86>method23463(Class3208.field18605) == Class86.field219) {
+                        if (var66.<SlabType>get(Class3208.field18605) == SlabType.field219) {
                            var123 = 0.5F;
                            var125 = 0.5F;
                         }

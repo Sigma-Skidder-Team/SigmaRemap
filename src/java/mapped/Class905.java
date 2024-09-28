@@ -11,6 +11,7 @@ import net.minecraft.network.IPacket;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.Direction;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
@@ -25,7 +26,7 @@ import java.util.UUID;
 
 public class Class905 extends ProjectileEntity {
    private Entity field5163;
-   private net.minecraft.util.Direction field5164;
+   private Direction field5164;
    private int field5165;
    private double field5166;
    private double field5167;
@@ -43,7 +44,7 @@ public class Class905 extends ProjectileEntity {
       this.setMotion(var8, var10, var12);
    }
 
-   public Class905(World var1, LivingEntity var2, Entity var3, Direction var4) {
+   public Class905(World var1, LivingEntity var2, Entity var3, Direction.Axis var4) {
       this(EntityType.field41076, var1);
       this.setShooter(var2);
       BlockPos var7 = var2.getPosition();
@@ -52,7 +53,7 @@ public class Class905 extends ProjectileEntity {
       double var12 = (double)var7.getZ() + 0.5;
       this.setLocationAndAngles(var8, var10, var12, this.rotationYaw, this.rotationPitch);
       this.field5163 = var3;
-      this.field5164 = net.minecraft.util.Direction.field673;
+      this.field5164 = Direction.UP;
       this.method3548(var4);
    }
 
@@ -86,7 +87,7 @@ public class Class905 extends ProjectileEntity {
       this.field5167 = var1.getDouble("TYD");
       this.field5168 = var1.getDouble("TZD");
       if (var1.contains("Dir", 99)) {
-         this.field5164 = net.minecraft.util.Direction.byIndex(var1.getInt("Dir"));
+         this.field5164 = Direction.byIndex(var1.getInt("Dir"));
       }
 
       if (var1.method106("Target")) {
@@ -98,11 +99,11 @@ public class Class905 extends ProjectileEntity {
    public void registerData() {
    }
 
-   private void method3547(net.minecraft.util.Direction var1) {
+   private void method3547(Direction var1) {
       this.field5164 = var1;
    }
 
-   private void method3548(Direction var1) {
+   private void method3548(Direction.Axis var1) {
       double var4 = 0.5;
       BlockPos var6;
       if (this.field5163 != null) {
@@ -115,46 +116,46 @@ public class Class905 extends ProjectileEntity {
       double var7 = (double)var6.getX() + 0.5;
       double var9 = (double)var6.getY() + var4;
       double var11 = (double)var6.getZ() + 0.5;
-      net.minecraft.util.Direction var13 = null;
+      Direction var13 = null;
       if (!var6.method8317(this.getPositionVec(), 2.0)) {
          BlockPos var22 = this.getPosition();
          ArrayList var23 = Lists.newArrayList();
-         if (var1 != Direction.X) {
+         if (var1 != Direction.Axis.X) {
             if (var22.getX() < var6.getX() && this.world.method7007(var22.east())) {
-               var23.add(net.minecraft.util.Direction.EAST);
+               var23.add(Direction.EAST);
             } else if (var22.getX() > var6.getX() && this.world.method7007(var22.west())) {
-               var23.add(net.minecraft.util.Direction.WEST);
+               var23.add(Direction.WEST);
             }
          }
 
-         if (var1 != Direction.Y) {
+         if (var1 != Direction.Axis.Y) {
             if (var22.getY() < var6.getY() && this.world.method7007(var22.up())) {
-               var23.add(net.minecraft.util.Direction.field673);
+               var23.add(Direction.UP);
             } else if (var22.getY() > var6.getY() && this.world.method7007(var22.down())) {
-               var23.add(net.minecraft.util.Direction.DOWN);
+               var23.add(Direction.DOWN);
             }
          }
 
-         if (var1 != Direction.Z) {
+         if (var1 != Direction.Axis.Z) {
             if (var22.getZ() < var6.getZ() && this.world.method7007(var22.south())) {
-               var23.add(net.minecraft.util.Direction.SOUTH);
+               var23.add(Direction.SOUTH);
             } else if (var22.getZ() > var6.getZ() && this.world.method7007(var22.north())) {
-               var23.add(net.minecraft.util.Direction.NORTH);
+               var23.add(Direction.NORTH);
             }
          }
 
-         var13 = net.minecraft.util.Direction.method552(this.rand);
+         var13 = Direction.getRandomDirection(this.rand);
          if (!var23.isEmpty()) {
-            var13 = (net.minecraft.util.Direction)var23.get(this.rand.nextInt(var23.size()));
+            var13 = (Direction)var23.get(this.rand.nextInt(var23.size()));
          } else {
             for (int var24 = 5; !this.world.method7007(var22.method8349(var13)) && var24 > 0; var24--) {
-               var13 = net.minecraft.util.Direction.method552(this.rand);
+               var13 = Direction.getRandomDirection(this.rand);
             }
          }
 
-         var7 = this.getPosX() + (double)var13.method539();
-         var9 = this.getPosY() + (double)var13.method540();
-         var11 = this.getPosZ() + (double)var13.method541();
+         var7 = this.getPosX() + (double)var13.getXOffset();
+         var9 = this.getPosY() + (double)var13.getYOffset();
+         var11 = this.getPosZ() + (double)var13.getZOffset();
       }
 
       this.method3547(var13);
@@ -229,12 +230,12 @@ public class Class905 extends ProjectileEntity {
 
             if (this.field5164 != null) {
                BlockPos var4 = this.getPosition();
-               Direction var5 = this.field5164.getAxis();
+               Direction.Axis var5 = this.field5164.getAxis();
                if (!this.world.method6765(var4.method8349(this.field5164), this)) {
                   BlockPos var6 = this.field5163.getPosition();
-                  if (var5 == Direction.X && var4.getX() == var6.getX()
-                     || var5 == Direction.Z && var4.getZ() == var6.getZ()
-                     || var5 == Direction.Y && var4.getY() == var6.getY()) {
+                  if (var5 == Direction.Axis.X && var4.getX() == var6.getX()
+                     || var5 == Direction.Axis.Z && var4.getZ() == var6.getZ()
+                     || var5 == Direction.Axis.Y && var4.getY() == var6.getY()) {
                      this.method3548(var5);
                   }
                } else {

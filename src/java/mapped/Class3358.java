@@ -12,7 +12,7 @@ public class Class3358 extends Class3357 {
    private static String[] field18902;
    private static final IDispenseItemBehavior field18903 = new Class6218();
 
-   public Class3358(AbstractBlock var1) {
+   public Class3358(Properties var1) {
       super(var1);
    }
 
@@ -34,11 +34,11 @@ public class Class3358 extends Class3357 {
       if (var7 >= 0) {
          ItemStack var8 = var6.getStackInSlot(var7);
          if (!var8.isEmpty()) {
-            Direction var9 = var1.getBlockState(var2).<Direction>method23463(field18899);
+            Direction var9 = var1.getBlockState(var2).<Direction>get(field18899);
             IInventory var10 = Class936.method3715(var1, var2.method8349(var9));
             ItemStack var12;
             if (var10 != null) {
-               var12 = Class936.method3708(var6, var10, var8.copy().split(1), var9.method536());
+               var12 = Class936.method3708(var6, var10, var8.copy().split(1), var9.getOpposite());
                if (!var12.isEmpty()) {
                   var12 = var8.copy();
                } else {

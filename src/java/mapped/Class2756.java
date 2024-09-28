@@ -25,8 +25,8 @@ public class Class2756 extends Class2754 {
          return false;
       } else {
          Direction var3 = this.field17298.method3387();
-         int var4 = var3.method539();
-         int var5 = var3.method541();
+         int var4 = var3.getXOffset();
+         int var5 = var3.getZOffset();
          BlockPos var6 = this.field17298.getPosition();
 
          for (int var10 : field17297) {
@@ -65,7 +65,7 @@ public class Class2756 extends Class2754 {
    @Override
    public void method10804() {
       Direction var3 = this.field17298.method3387();
-      this.field17298.setMotion(this.field17298.getMotion().add((double)var3.method539() * 0.6, 0.7, (double)var3.method541() * 0.6));
+      this.field17298.setMotion(this.field17298.getMotion().add((double)var3.getXOffset() * 0.6, 0.7, (double)var3.getZOffset() * 0.6));
       this.field17298.method4230().method21666();
    }
 

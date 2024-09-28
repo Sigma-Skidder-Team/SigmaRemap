@@ -111,7 +111,7 @@ public class BoatEntity extends Entity {
    }
 
    @Override
-   public Vector3d func_241839_a(Direction var1, TeleportationRepositioner var2) {
+   public Vector3d func_241839_a(Direction.Axis var1, TeleportationRepositioner var2) {
       return LivingEntity.func_242288_h(super.func_241839_a(var1, var2));
    }
 
@@ -232,7 +232,7 @@ public class BoatEntity extends Entity {
 
    @Override
    public net.minecraft.util.Direction method3387() {
-      return this.method3386().method537();
+      return this.method3386().rotateY();
    }
 
    @Override

@@ -32,6 +32,7 @@ import net.minecraft.item.Items;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.resources.IResourceManagerReloadListener;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
@@ -39,6 +40,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.StringTextComponent;
@@ -66,7 +68,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
    private static final ResourceLocation field935 = new ResourceLocation("textures/misc/forcefield.png");
    private static final ResourceLocation field936 = new ResourceLocation("textures/environment/rain.png");
    private static final ResourceLocation field937 = new ResourceLocation("textures/environment/snow.png");
-   public static final net.minecraft.util.Direction[] field938 = net.minecraft.util.Direction.values();
+   public static final Direction[] field938 = Direction.values();
    private final Minecraft mc;
    private final TextureManager field940;
    public final EntityRendererManager field941;
@@ -143,7 +145,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
    private List field1012 = new ArrayList(1024);
    private int field1013 = 0;
    private int field1014 = 0;
-   private static final Set field1015 = Collections.<net.minecraft.util.Direction>unmodifiableSet(new HashSet(Arrays.asList(net.minecraft.util.Direction.field685)));
+   private static final Set field1015 = Collections.<Direction>unmodifiableSet(new HashSet(Arrays.asList(Direction.VALUES)));
    private int field1016;
    private int field1017 = 0;
    private Class8391 field1018 = new Class8391(Blocks.AIR.method11579(), new BlockPos(0, 0, 0));
@@ -158,12 +160,12 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
    private Map<RenderType, Map> field1027 = new LinkedHashMap<RenderType, Map>();
 
    @Nullable
-   private Class8066 method854(BlockPos var1, Class8066 var2, net.minecraft.util.Direction var3) {
+   private Class8066 method854(BlockPos var1, Class8066 var2, Direction var3) {
       BlockPos var4 = var2.method27723(var3);
-      if (MathHelper.method37772(var1.getX() - var4.getX()) > this.field985 * 16) {
+      if (MathHelper.abs(var1.getX() - var4.getX()) > this.field985 * 16) {
          return null;
       } else if (var4.getY() >= 0 && var4.getY() < 256) {
-         return MathHelper.method37772(var1.getZ() - var4.getZ()) > this.field985 * 16 ? null : this.field947.method34761(var4);
+         return MathHelper.abs(var1.getZ() - var4.getZ()) > this.field985 * 16 ? null : this.field947.method34761(var4);
       } else {
          return null;
       }
@@ -392,7 +394,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
                BlockState var17 = var4.getBlockState(var11);
                FluidState var18 = var4.getFluidState(var11);
                VoxelShape var19 = var17.method23414(var4, var11);
-               double var20 = var19.method19522(Direction.Y, var13, var15);
+               double var20 = var19.method19522(Direction.Axis.Y, var13, var15);
                double var22 = (double)var18.method23475(var4, var11);
                double var24 = Math.max(var20, var22);
                Class7435 var26 = !var18.method23486(FluidTags.field40470) && !var17.isIn(Blocks.field36890) && !Class3244.method11655(var17)
@@ -918,7 +920,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
 
                   if (var2.method25122(var40.field34614)) {
                      var40.method27710(var4);
-                     var41.add(new Class7002(var40, (net.minecraft.util.Direction)null, 0));
+                     var41.add(new Class7002(var40, (Direction)null, 0));
                      break;
                   }
                }
@@ -932,7 +934,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
                }
 
                var14.method27710(var4);
-               var41.add(new Class7002(var14, (net.minecraft.util.Direction)null, 0));
+               var41.add(new Class7002(var14, (Direction)null, 0));
             } else {
                int var49 = var16.getY() > 0 ? Math.min(var21, 248) : 8;
                if (var22 != null) {
@@ -949,7 +951,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
                      if (var61 != null && var2.method25122(var61.field34614)) {
                         var61.method27710(var4);
                         Class7002 var35 = var61.method27746();
-                        Class7002.method21715(var35, (net.minecraft.util.Direction)null, 0, 0);
+                        Class7002.method21715(var35, (Direction)null, 0, 0);
                         var56.add(var35);
                      }
                   }
@@ -966,7 +968,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
          while (!var41.isEmpty()) {
             Class7002 var53 = (Class7002)var41.poll();
             Class8066 var55 = var53.field30281;
-            net.minecraft.util.Direction var57 = Class7002.method21716(var53);
+            Direction var57 = Class7002.method21716(var53);
             Class7457 var59 = var55.field34609.get();
             if (!var59.method24109() || var55.method27721()) {
                this.field945.add(var53);
@@ -980,10 +982,10 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
                this.renderInfosTileEntities.add(var53);
             }
 
-            net.minecraft.util.Direction[] var60 = var43 ? Class8597.method30746(Class7002.method21717(var53)) : net.minecraft.util.Direction.field685;
+            Direction[] var60 = var43 ? Class8597.method30746(Class7002.method21717(var53)) : Direction.VALUES;
 
-            for (net.minecraft.util.Direction var37 : var60) {
-               if (!var43 || var57 == null || var59.method24107(var57.method536(), var37)) {
+            for (Direction var37 : var60) {
+               if (!var43 || var57 == null || var59.method24107(var57.getOpposite(), var37)) {
                   Class8066 var65 = this.method875(var16, var55, var37, var50, var21);
                   if (var65 != null && var65.method27710(var4) && var2.method25122(var65.field34614)) {
                      int var39 = Class7002.method21717(var53) | 1 << var37.ordinal();
@@ -1040,7 +1042,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
    }
 
    @Nullable
-   private Class8066 method875(BlockPos var1, Class8066 var2, net.minecraft.util.Direction var3, boolean var4, int var5) {
+   private Class8066 method875(BlockPos var1, Class8066 var2, Direction var3, boolean var4, int var5) {
       Class8066 var6 = var2.method27745(var3);
       if (var6 == null) {
          return null;
@@ -1749,10 +1751,10 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
                int var15 = var14 >> 16 & 0xFF;
                int var16 = var14 >> 8 & 0xFF;
                int var17 = var14 & 0xFF;
-               net.minecraft.util.Direction var18 = Class7002.method21716(var11);
+               Direction var18 = Class7002.method21716(var11);
                if (var18 != null) {
                   var3.pos(8.0, 8.0, 8.0).color(var15, var16, var17, 255).endVertex();
-                  var3.pos((double)(8 - 16 * var18.method539()), (double)(8 - 16 * var18.method540()), (double)(8 - 16 * var18.method541()))
+                  var3.pos((double)(8 - 16 * var18.getXOffset()), (double)(8 - 16 * var18.getYOffset()), (double)(8 - 16 * var18.getZOffset()))
                      .color(var15, var16, var17, 255)
                      .endVertex();
                }
@@ -1766,15 +1768,15 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
                RenderSystem.lineWidth(10.0F);
                int var24 = 0;
 
-               for (net.minecraft.util.Direction var30 : field938) {
-                  for (net.minecraft.util.Direction var22 : field938) {
+               for (Direction var30 : field938) {
+                  for (Direction var22 : field938) {
                      boolean var23 = var12.method27715().method24107(var30, var22);
                      if (!var23) {
                         var24++;
-                        var3.pos((double)(8 + 8 * var30.method539()), (double)(8 + 8 * var30.method540()), (double)(8 + 8 * var30.method541()))
+                        var3.pos((double)(8 + 8 * var30.getXOffset()), (double)(8 + 8 * var30.getYOffset()), (double)(8 + 8 * var30.getZOffset()))
                            .color(1, 0, 0, 1)
                            .endVertex();
-                        var3.pos((double)(8 + 8 * var22.method539()), (double)(8 + 8 * var22.method540()), (double)(8 + 8 * var22.method541()))
+                        var3.pos((double)(8 + 8 * var22.getXOffset()), (double)(8 + 8 * var22.getYOffset()), (double)(8 + 8 * var22.getZOffset()))
                            .color(1, 0, 0, 1)
                            .endVertex();
                      }
@@ -3271,10 +3273,10 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
             }
             break;
          case 2000:
-            net.minecraft.util.Direction var6 = net.minecraft.util.Direction.byIndex(var4);
-            int var7 = var6.method539();
-            int var8 = var6.method540();
-            int var9 = var6.method541();
+            Direction var6 = Direction.byIndex(var4);
+            int var7 = var6.getXOffset();
+            int var8 = var6.getYOffset();
+            int var9 = var6.getZOffset();
             double var10 = (double)var3.getX() + (double)var7 * 0.6 + 0.5;
             double var12 = (double)var3.getY() + (double)var8 * 0.6 + 0.5;
             double var14 = (double)var3.getZ() + (double)var9 * 0.6 + 0.5;

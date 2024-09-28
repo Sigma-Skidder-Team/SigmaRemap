@@ -3,7 +3,9 @@ package net.minecraft.fluid;
 import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.particles.IParticleData;
+import net.minecraft.state.StateContainer;
 import net.minecraft.util.Direction;
+import net.minecraft.util.ObjectIntIdentityMap;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
@@ -14,8 +16,8 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 public abstract class Fluid {
-   public static final Class2352<FluidState> field32708 = new Class2352<FluidState>();
-   public final Class9348<Fluid, FluidState> field32709;
+   public static final ObjectIntIdentityMap<FluidState> field32708 = new ObjectIntIdentityMap<FluidState>();
+   public final StateContainer<Fluid, FluidState> field32709;
    private FluidState field32710;
 
    public Fluid() {
@@ -28,7 +30,7 @@ public abstract class Fluid {
    public void method25046(Class7558<Fluid, FluidState> var1) {
    }
 
-   public Class9348<Fluid, FluidState> method25047() {
+   public StateContainer<Fluid, FluidState> method25047() {
       return this.field32709;
    }
 

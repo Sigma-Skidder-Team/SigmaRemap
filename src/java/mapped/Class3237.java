@@ -5,22 +5,23 @@ import net.minecraft.block.BlockState;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 public class Class3237 extends Class3238 {
    private static String[] field18678;
 
-   public Class3237(AbstractBlock var1) {
+   public Class3237(Properties var1) {
       super(1.0F, 1.0F, 16.0F, 16.0F, 16.0F, var1);
       this.method11578(
          this.field18612
             .method35393()
-            .method23465(field18680, Boolean.valueOf(false))
-            .method23465(field18681, Boolean.valueOf(false))
-            .method23465(field18682, Boolean.valueOf(false))
-            .method23465(field18683, Boolean.valueOf(false))
-            .method23465(field18684, Boolean.valueOf(false))
+            .with(field18680, Boolean.valueOf(false))
+            .with(field18681, Boolean.valueOf(false))
+            .with(field18682, Boolean.valueOf(false))
+            .with(field18683, Boolean.valueOf(false))
+            .with(field18684, Boolean.valueOf(false))
       );
    }
 
@@ -38,22 +39,22 @@ public class Class3237 extends Class3238 {
       BlockState var13 = var4.getBlockState(var9);
       BlockState var14 = var4.getBlockState(var10);
       return this.method11579()
-         .method23465(field18680, Boolean.valueOf(this.method11638(var11, var11.method23454(var4, var7, Direction.SOUTH))))
-         .method23465(field18682, Boolean.valueOf(this.method11638(var12, var12.method23454(var4, var8, Direction.NORTH))))
-         .method23465(field18683, Boolean.valueOf(this.method11638(var13, var13.method23454(var4, var9, Direction.EAST))))
-         .method23465(field18681, Boolean.valueOf(this.method11638(var14, var14.method23454(var4, var10, Direction.WEST))))
-         .method23465(field18684, Boolean.valueOf(var6.method23472() == Class9479.field44066));
+         .with(field18680, Boolean.valueOf(this.method11638(var11, var11.method23454(var4, var7, Direction.SOUTH))))
+         .with(field18682, Boolean.valueOf(this.method11638(var12, var12.method23454(var4, var8, Direction.NORTH))))
+         .with(field18683, Boolean.valueOf(this.method11638(var13, var13.method23454(var4, var9, Direction.EAST))))
+         .with(field18681, Boolean.valueOf(this.method11638(var14, var14.method23454(var4, var10, Direction.WEST))))
+         .with(field18684, Boolean.valueOf(var6.method23472() == Class9479.field44066));
    }
 
    @Override
    public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
-      if (var1.<Boolean>method23463(field18684)) {
+      if (var1.<Boolean>get(field18684)) {
          var4.method6861().method20726(var5, Class9479.field44066, Class9479.field44066.method25057(var4));
       }
 
       return !var2.getAxis().method324()
          ? super.method11491(var1, var2, var3, var4, var5, var6)
-         : var1.method23465(field18685.get(var2), Boolean.valueOf(this.method11638(var3, var3.method23454(var4, var6, var2.method536()))));
+         : var1.with(field18685.get(var2), Boolean.valueOf(this.method11638(var3, var3.method23454(var4, var6, var2.getOpposite()))));
    }
 
    @Override
@@ -68,7 +69,7 @@ public class Class3237 extends Class3238 {
             return true;
          }
 
-         if (var1.<Boolean>method23463(field18685.get(var3)) && var2.<Boolean>method23463(field18685.get(var3.method536()))) {
+         if (var1.<Boolean>get(field18685.get(var3)) && var2.<Boolean>get(field18685.get(var3.getOpposite()))) {
             return true;
          }
       }

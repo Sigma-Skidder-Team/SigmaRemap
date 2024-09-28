@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import net.minecraft.block.BlockState;
+import net.minecraft.state.properties.RailShape;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -23,7 +24,7 @@ public class Class9435 {
       this.field43778 = var2;
       this.field43780 = var3;
       this.field43779 = (Class3429)var3.getBlock();
-      Class96 var6 = var3.<Class96>method23463(this.field43779.method12093());
+      RailShape var6 = var3.<RailShape>get(this.field43779.method12093());
       this.field43781 = this.field43779.method12088();
       this.method36234(var6);
    }
@@ -32,7 +33,7 @@ public class Class9435 {
       return this.field43782;
    }
 
-   private void method36234(Class96 var1) {
+   private void method36234(RailShape var1) {
       this.field43782.clear();
       switch (Class7964.field34253[var1.ordinal()]) {
          case 1:
@@ -130,7 +131,7 @@ public class Class9435 {
    public int method36240() {
       int var3 = 0;
 
-      for (Direction var5 : Class76.field161) {
+      for (Direction var5 : Direction.Plane.HORIZONTAL) {
          if (this.method36236(this.field43778.method8349(var5))) {
             var3++;
          }
@@ -153,58 +154,58 @@ public class Class9435 {
       boolean var9 = this.method36239(var5);
       boolean var10 = this.method36239(var6);
       boolean var11 = this.method36239(var7);
-      Class96 var12 = null;
+      RailShape var12 = null;
       if (var8 || var9) {
-         var12 = Class96.field247;
+         var12 = RailShape.field247;
       }
 
       if (var10 || var11) {
-         var12 = Class96.field248;
+         var12 = RailShape.field248;
       }
 
       if (!this.field43781) {
          if (var9 && var11 && !var8 && !var10) {
-            var12 = Class96.field253;
+            var12 = RailShape.field253;
          }
 
          if (var9 && var10 && !var8 && !var11) {
-            var12 = Class96.field254;
+            var12 = RailShape.field254;
          }
 
          if (var8 && var10 && !var9 && !var11) {
-            var12 = Class96.field255;
+            var12 = RailShape.field255;
          }
 
          if (var8 && var11 && !var9 && !var10) {
-            var12 = Class96.field256;
+            var12 = RailShape.field256;
          }
       }
 
-      if (var12 == Class96.field247) {
+      if (var12 == RailShape.field247) {
          if (Class3429.method12086(this.field43777, var4.up())) {
-            var12 = Class96.field251;
+            var12 = RailShape.field251;
          }
 
          if (Class3429.method12086(this.field43777, var5.up())) {
-            var12 = Class96.field252;
+            var12 = RailShape.field252;
          }
       }
 
-      if (var12 == Class96.field248) {
+      if (var12 == RailShape.field248) {
          if (Class3429.method12086(this.field43777, var7.up())) {
-            var12 = Class96.field249;
+            var12 = RailShape.field249;
          }
 
          if (Class3429.method12086(this.field43777, var6.up())) {
-            var12 = Class96.field250;
+            var12 = RailShape.field250;
          }
       }
 
       if (var12 == null) {
-         var12 = Class96.field247;
+         var12 = RailShape.field247;
       }
 
-      this.field43780 = this.field43780.method23465(this.field43779.method12093(), var12);
+      this.field43780 = this.field43780.with(this.field43779.method12093(), var12);
       this.field43777.setBlockState(this.field43778, this.field43780, 3);
    }
 
@@ -218,7 +219,7 @@ public class Class9435 {
       }
    }
 
-   public Class9435 method36244(boolean var1, boolean var2, Class96 var3) {
+   public Class9435 method36244(boolean var1, boolean var2, RailShape var3) {
       BlockPos var6 = this.field43778.north();
       BlockPos var7 = this.field43778.south();
       BlockPos var8 = this.field43778.west();
@@ -227,15 +228,15 @@ public class Class9435 {
       boolean var11 = this.method36243(var7);
       boolean var12 = this.method36243(var8);
       boolean var13 = this.method36243(var9);
-      Class96 var14 = null;
+      RailShape var14 = null;
       boolean var15 = var10 || var11;
       boolean var16 = var12 || var13;
       if (var15 && !var16) {
-         var14 = Class96.field247;
+         var14 = RailShape.field247;
       }
 
       if (var16 && !var15) {
-         var14 = Class96.field248;
+         var14 = RailShape.field248;
       }
 
       boolean var17 = var11 && var13;
@@ -244,19 +245,19 @@ public class Class9435 {
       boolean var20 = var10 && var12;
       if (!this.field43781) {
          if (var17 && !var10 && !var12) {
-            var14 = Class96.field253;
+            var14 = RailShape.field253;
          }
 
          if (var18 && !var10 && !var13) {
-            var14 = Class96.field254;
+            var14 = RailShape.field254;
          }
 
          if (var20 && !var11 && !var13) {
-            var14 = Class96.field255;
+            var14 = RailShape.field255;
          }
 
          if (var19 && !var11 && !var12) {
-            var14 = Class96.field256;
+            var14 = RailShape.field256;
          }
       }
 
@@ -265,66 +266,66 @@ public class Class9435 {
             var14 = var3;
          } else if (!var15) {
             if (var16) {
-               var14 = Class96.field248;
+               var14 = RailShape.field248;
             }
          } else {
-            var14 = Class96.field247;
+            var14 = RailShape.field247;
          }
 
          if (!this.field43781) {
             if (!var1) {
                if (var20) {
-                  var14 = Class96.field255;
+                  var14 = RailShape.field255;
                }
 
                if (var19) {
-                  var14 = Class96.field256;
+                  var14 = RailShape.field256;
                }
 
                if (var18) {
-                  var14 = Class96.field254;
+                  var14 = RailShape.field254;
                }
 
                if (var17) {
-                  var14 = Class96.field253;
+                  var14 = RailShape.field253;
                }
             } else {
                if (var17) {
-                  var14 = Class96.field253;
+                  var14 = RailShape.field253;
                }
 
                if (var18) {
-                  var14 = Class96.field254;
+                  var14 = RailShape.field254;
                }
 
                if (var19) {
-                  var14 = Class96.field256;
+                  var14 = RailShape.field256;
                }
 
                if (var20) {
-                  var14 = Class96.field255;
+                  var14 = RailShape.field255;
                }
             }
          }
       }
 
-      if (var14 == Class96.field247) {
+      if (var14 == RailShape.field247) {
          if (Class3429.method12086(this.field43777, var6.up())) {
-            var14 = Class96.field251;
+            var14 = RailShape.field251;
          }
 
          if (Class3429.method12086(this.field43777, var7.up())) {
-            var14 = Class96.field252;
+            var14 = RailShape.field252;
          }
       }
 
-      if (var14 == Class96.field248) {
+      if (var14 == RailShape.field248) {
          if (Class3429.method12086(this.field43777, var9.up())) {
-            var14 = Class96.field249;
+            var14 = RailShape.field249;
          }
 
          if (Class3429.method12086(this.field43777, var8.up())) {
-            var14 = Class96.field250;
+            var14 = RailShape.field250;
          }
       }
 
@@ -333,7 +334,7 @@ public class Class9435 {
       }
 
       this.method36234(var14);
-      this.field43780 = this.field43780.method23465(this.field43779.method12093(), var14);
+      this.field43780 = this.field43780.with(this.field43779.method12093(), var14);
       if (var2 || this.field43777.getBlockState(this.field43778) != this.field43780) {
          this.field43777.setBlockState(this.field43778, this.field43780, 3);
 

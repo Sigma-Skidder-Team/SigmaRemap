@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.DirectionProperty;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
@@ -7,42 +9,42 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.Rotation;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 public class Class3362 extends Class3241 {
    private static String[] field18912;
-   public static final Class8553 field18913 = Class8820.field39721;
-   public static final Class8551 field18914 = Class8820.field39687;
-   private static final VoxelShape field18915 = Block.method11539(0.0, 10.0, 0.0, 16.0, 16.0, 16.0);
-   private static final VoxelShape field18916 = Block.method11539(4.0, 4.0, 4.0, 12.0, 10.0, 12.0);
-   private static final VoxelShape field18917 = VoxelShapes.method27431(field18916, field18915);
+   public static final DirectionProperty field18913 = BlockStateProperties.FACING_EXCEPT_UP;
+   public static final BooleanProperty field18914 = BlockStateProperties.field39687;
+   private static final VoxelShape field18915 = Block.makeCuboidShape(0.0, 10.0, 0.0, 16.0, 16.0, 16.0);
+   private static final VoxelShape field18916 = Block.makeCuboidShape(4.0, 4.0, 4.0, 12.0, 10.0, 12.0);
+   private static final VoxelShape field18917 = VoxelShapes.or(field18916, field18915);
    private static final VoxelShape field18918 = VoxelShapes.combineAndSimplify(field18917, Class937.field5296, IBooleanFunction.ONLY_FIRST);
-   private static final VoxelShape field18919 = VoxelShapes.method27431(field18918, Block.method11539(6.0, 0.0, 6.0, 10.0, 4.0, 10.0));
-   private static final VoxelShape field18920 = VoxelShapes.method27431(field18918, Block.method11539(12.0, 4.0, 6.0, 16.0, 8.0, 10.0));
-   private static final VoxelShape field18921 = VoxelShapes.method27431(field18918, Block.method11539(6.0, 4.0, 0.0, 10.0, 8.0, 4.0));
-   private static final VoxelShape field18922 = VoxelShapes.method27431(field18918, Block.method11539(6.0, 4.0, 12.0, 10.0, 8.0, 16.0));
-   private static final VoxelShape field18923 = VoxelShapes.method27431(field18918, Block.method11539(0.0, 4.0, 6.0, 4.0, 8.0, 10.0));
+   private static final VoxelShape field18919 = VoxelShapes.or(field18918, Block.makeCuboidShape(6.0, 0.0, 6.0, 10.0, 4.0, 10.0));
+   private static final VoxelShape field18920 = VoxelShapes.or(field18918, Block.makeCuboidShape(12.0, 4.0, 6.0, 16.0, 8.0, 10.0));
+   private static final VoxelShape field18921 = VoxelShapes.or(field18918, Block.makeCuboidShape(6.0, 4.0, 0.0, 10.0, 8.0, 4.0));
+   private static final VoxelShape field18922 = VoxelShapes.or(field18918, Block.makeCuboidShape(6.0, 4.0, 12.0, 10.0, 8.0, 16.0));
+   private static final VoxelShape field18923 = VoxelShapes.or(field18918, Block.makeCuboidShape(0.0, 4.0, 6.0, 4.0, 8.0, 10.0));
    private static final VoxelShape field18924 = Class937.field5296;
-   private static final VoxelShape field18925 = VoxelShapes.method27431(Class937.field5296, Block.method11539(12.0, 8.0, 6.0, 16.0, 10.0, 10.0));
-   private static final VoxelShape field18926 = VoxelShapes.method27431(Class937.field5296, Block.method11539(6.0, 8.0, 0.0, 10.0, 10.0, 4.0));
-   private static final VoxelShape field18927 = VoxelShapes.method27431(Class937.field5296, Block.method11539(6.0, 8.0, 12.0, 10.0, 10.0, 16.0));
-   private static final VoxelShape field18928 = VoxelShapes.method27431(Class937.field5296, Block.method11539(0.0, 8.0, 6.0, 4.0, 10.0, 10.0));
+   private static final VoxelShape field18925 = VoxelShapes.or(Class937.field5296, Block.makeCuboidShape(12.0, 8.0, 6.0, 16.0, 10.0, 10.0));
+   private static final VoxelShape field18926 = VoxelShapes.or(Class937.field5296, Block.makeCuboidShape(6.0, 8.0, 0.0, 10.0, 10.0, 4.0));
+   private static final VoxelShape field18927 = VoxelShapes.or(Class937.field5296, Block.makeCuboidShape(6.0, 8.0, 12.0, 10.0, 10.0, 16.0));
+   private static final VoxelShape field18928 = VoxelShapes.or(Class937.field5296, Block.makeCuboidShape(0.0, 8.0, 6.0, 4.0, 10.0, 10.0));
 
-   public Class3362(AbstractBlock var1) {
+   public Class3362(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().method23465(field18913, net.minecraft.util.Direction.DOWN).method23465(field18914, Boolean.valueOf(true)));
+      this.method11578(this.field18612.method35393().with(field18913, Direction.DOWN).with(field18914, Boolean.valueOf(true)));
    }
 
    @Override
    public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
-      switch (Class9391.field43583[var1.<net.minecraft.util.Direction>method23463(field18913).ordinal()]) {
+      switch (Class9391.field43583[var1.<Direction>get(field18913).ordinal()]) {
          case 1:
             return field18919;
          case 2:
@@ -60,7 +62,7 @@ public class Class3362 extends Class3241 {
 
    @Override
    public VoxelShape method11938(BlockState var1, IBlockReader var2, BlockPos var3) {
-      switch (Class9391.field43583[var1.<net.minecraft.util.Direction>method23463(field18913).ordinal()]) {
+      switch (Class9391.field43583[var1.<Direction>get(field18913).ordinal()]) {
          case 1:
             return field18924;
          case 2:
@@ -78,10 +80,10 @@ public class Class3362 extends Class3241 {
 
    @Override
    public BlockState method11495(Class5909 var1) {
-      net.minecraft.util.Direction var4 = var1.method18354().method536();
+      Direction var4 = var1.method18354().getOpposite();
       return this.method11579()
-         .method23465(field18913, var4.getAxis() != Direction.Y ? var4 : net.minecraft.util.Direction.DOWN)
-         .method23465(field18914, Boolean.valueOf(true));
+         .with(field18913, var4.getAxis() != Direction.Axis.Y ? var4 : Direction.DOWN)
+         .with(field18914, Boolean.valueOf(true));
    }
 
    @Override
@@ -128,8 +130,8 @@ public class Class3362 extends Class3241 {
 
    private void method11939(World var1, BlockPos var2, BlockState var3) {
       boolean var6 = !var1.method6780(var2);
-      if (var6 != var3.<Boolean>method23463(field18914)) {
-         var1.setBlockState(var2, var3.method23465(field18914, Boolean.valueOf(var6)), 4);
+      if (var6 != var3.<Boolean>get(field18914)) {
+         var1.setBlockState(var2, var3.with(field18914, Boolean.valueOf(var6)), 4);
       }
    }
 
@@ -162,13 +164,13 @@ public class Class3362 extends Class3241 {
    }
 
    @Override
-   public BlockState method11500(BlockState var1, Rotation var2) {
-      return var1.method23465(field18913, var2.method252(var1.<net.minecraft.util.Direction>method23463(field18913)));
+   public BlockState rotate(BlockState var1, Rotation var2) {
+      return var1.with(field18913, var2.rotate(var1.<Direction>get(field18913)));
    }
 
    @Override
-   public BlockState method11501(BlockState var1, Class2089 var2) {
-      return var1.method23395(var2.method8749(var1.<net.minecraft.util.Direction>method23463(field18913)));
+   public BlockState mirror(BlockState var1, Mirror var2) {
+      return var1.rotate(var2.toRotation(var1.<Direction>get(field18913)));
    }
 
    @Override

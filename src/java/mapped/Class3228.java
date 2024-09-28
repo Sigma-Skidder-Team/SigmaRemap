@@ -14,7 +14,7 @@ public class Class3228 extends Class3227 {
    private static String[] field18666;
    private final Block field18667;
 
-   public Class3228(Block var1, AbstractBlock var2) {
+   public Class3228(Block var1, Properties var2) {
       super(var2);
       this.field18667 = var1;
    }
@@ -27,7 +27,7 @@ public class Class3228 extends Class3227 {
    @Override
    public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (!method11633(var1, var2, var3)) {
-         var2.setBlockState(var3, this.field18667.method11579().method23465(field18663, Boolean.valueOf(false)), 2);
+         var2.setBlockState(var3, this.field18667.method11579().with(field18663, Boolean.valueOf(false)), 2);
       }
    }
 
@@ -37,7 +37,7 @@ public class Class3228 extends Class3227 {
          return Blocks.AIR.method11579();
       } else {
          this.method11632(var1, var4, var5);
-         if (var1.<Boolean>method23463(field18663)) {
+         if (var1.<Boolean>get(field18663)) {
             var4.method6861().method20726(var5, Class9479.field44066, Class9479.field44066.method25057(var4));
          }
 

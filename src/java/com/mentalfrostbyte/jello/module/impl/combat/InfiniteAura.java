@@ -262,7 +262,7 @@ public class InfiniteAura extends Module {
     }
 
     @Override
-    public boolean method15988() {
+    public boolean isEnabled2() {
         return this.isEnabled() && this.method16776() && Client.getInstance().getPlayerTracker().isalive();
     }
 }

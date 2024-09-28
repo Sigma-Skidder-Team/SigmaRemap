@@ -47,7 +47,7 @@ public class Class4179 extends Class4178 {
                if (var20.isAir() || this.method12942(var20)) {
                   BlockPos var21 = var19.down();
                   BlockState var22 = var1.getBlockState(var21);
-                  if ((var22.isAir() || this.method12942(var22)) && var18 != Direction.field673) {
+                  if ((var22.isAir() || this.method12942(var22)) && var18 != Direction.UP) {
                      var1.setBlockState(var19, var13, 3);
                   } else {
                      var1.setBlockState(var19, var14, 3);

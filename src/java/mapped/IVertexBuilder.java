@@ -94,7 +94,7 @@ public interface IVertexBuilder extends Class5421 {
       int[] var13 = !this.method17024() ? var2.method30511() : var2.method30517();
       this.method17042(var2.method30516());
       boolean var14 = Class7551.method24696();
-      Vector3i var15 = var2.method30514().method556();
+      Vector3i var15 = var2.method30514().getDirectionVec();
       float var16 = (float)var15.getX();
       float var17 = (float)var15.getY();
       float var18 = (float)var15.getZ();

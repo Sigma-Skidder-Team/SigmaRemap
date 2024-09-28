@@ -175,7 +175,7 @@ public abstract class Class7195<C extends Class4729> {
          var3.set(var19);
          var5.method8372(var11, var14, var12);
          BlockState var20 = var1.getBlockState(var5);
-         BlockState var21 = var1.getBlockState(var6.method8377(var5, Direction.field673));
+         BlockState var21 = var1.getBlockState(var6.method8377(var5, Direction.UP));
          if (var20.isIn(Blocks.field36395) || var20.isIn(Blocks.MYCELIUM)) {
             var16.setTrue();
          }

@@ -32,15 +32,15 @@ public class Class7138 extends Class7139 {
             .filter(var1x -> var1x.getY() - var9 <= 2)
             .forEach(
                var5x -> {
-                  for (Direction var9x : Class76.field161) {
+                  for (Direction var9x : Direction.Plane.HORIZONTAL) {
                      if (var2.nextFloat() <= 0.25F) {
-                        Direction var10 = var9x.method536();
-                        BlockPos var11 = var5x.method8336(var10.method539(), 0, var10.method541());
+                        Direction var10 = var9x.getOpposite();
+                        BlockPos var11 = var5x.method8336(var10.getXOffset(), 0, var10.getZOffset());
                         if (Class2898.method11221(var1, var11)) {
                            BlockState var12 = Blocks.COCOA
                               .method11579()
-                              .method23465(Class3197.field18479, Integer.valueOf(var2.nextInt(3)))
-                              .method23465(Class3197.field18484, var9x);
+                              .with(Class3197.field18479, Integer.valueOf(var2.nextInt(3)))
+                              .with(Class3197.HORIZONTAL_FACING, var9x);
                            this.method22274(var1, var11, var12, var5, var6);
                         }
                      }

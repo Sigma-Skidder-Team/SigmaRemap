@@ -5,9 +5,12 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
+import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
@@ -17,13 +20,13 @@ import java.util.Random;
 
 public class Class3220 extends Block {
    private static String[] field18639;
-   public static final Class8554 field18640 = Class8820.field39743;
-   public static final VoxelShape field18641 = Block.method11539(1.0, 0.0, 1.0, 15.0, 15.0, 15.0);
-   public static final VoxelShape field18642 = Block.method11539(1.0, 0.0, 1.0, 15.0, 16.0, 15.0);
+   public static final IntegerProperty field18640 = BlockStateProperties.field39743;
+   public static final VoxelShape field18641 = Block.makeCuboidShape(1.0, 0.0, 1.0, 15.0, 15.0, 15.0);
+   public static final VoxelShape field18642 = Block.makeCuboidShape(1.0, 0.0, 1.0, 15.0, 16.0, 15.0);
 
-   public Class3220(AbstractBlock var1) {
+   public Class3220(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().method23465(field18640, Integer.valueOf(0)));
+      this.method11578(this.field18612.method35393().with(field18640, Integer.valueOf(0)));
    }
 
    @Override
@@ -44,12 +47,12 @@ public class Class3220 extends Block {
          }
 
          if (var8 < 3) {
-            int var9 = var1.<Integer>method23463(field18640);
+            int var9 = var1.<Integer>get(field18640);
             if (var9 != 15) {
-               var2.setBlockState(var3, var1.method23465(field18640, Integer.valueOf(var9 + 1)), 4);
+               var2.setBlockState(var3, var1.with(field18640, Integer.valueOf(var9 + 1)), 4);
             } else {
                var2.setBlockState(var7, this.method11579());
-               BlockState var10 = var1.method23465(field18640, Integer.valueOf(0));
+               BlockState var10 = var1.with(field18640, Integer.valueOf(0));
                var2.setBlockState(var3, var10, 4);
                var10.method23423(var2, var7, this, var3, false);
             }
@@ -78,7 +81,7 @@ public class Class3220 extends Block {
 
    @Override
    public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
-      for (Direction var7 : Class76.field161) {
+      for (Direction var7 : Direction.Plane.HORIZONTAL) {
          BlockState var8 = var2.getBlockState(var3.method8349(var7));
          Material var9 = var8.getMaterial();
          if (var9.isSolid() || var2.getFluidState(var3.method8349(var7)).method23486(FluidTags.field40470)) {

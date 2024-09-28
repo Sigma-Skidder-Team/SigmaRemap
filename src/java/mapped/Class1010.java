@@ -12,6 +12,7 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.*;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
@@ -247,7 +248,7 @@ public class Class1010 extends Class1009 implements IAngerable {
       BlockPos.Mutable var9 = new BlockPos.Mutable(var1, var3, var5);
 
       while (var9.getY() > 0 && !this.world.getBlockState(var9).getMaterial().blocksMovement()) {
-         var9.method8379(net.minecraft.util.Direction.DOWN);
+         var9.method8379(Direction.DOWN);
       }
 
       BlockState var10 = this.world.getBlockState(var9);

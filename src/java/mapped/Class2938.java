@@ -35,7 +35,7 @@ public class Class2938 extends Class2898<Class4712> {
                var1.setBlockState(var8, Blocks.SNOW.method11579(), 2);
                BlockState var16 = var1.getBlockState(var9);
                if (var16.method23462(Class3471.field19323)) {
-                  var1.setBlockState(var9, var16.method23465(Class3471.field19323, Boolean.valueOf(true)), 2);
+                  var1.setBlockState(var9, var16.with(Class3471.field19323, Boolean.valueOf(true)), 2);
                }
             }
          }

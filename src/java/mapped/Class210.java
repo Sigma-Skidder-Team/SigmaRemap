@@ -28,7 +28,7 @@ public class Class210 extends Class208<Class7587> {
          Class6785 var10 = this.method700(var8, var5);
          if (var10 == null) {
             for (var1 = BlockPos.method8334(var1); var10 == null; var10 = this.method700(var8, var5)) {
-               var5 = Class2002.method8394(var5, Direction.field673);
+               var5 = Class2002.method8394(var5, Direction.UP);
                if (++var7 >= var9) {
                   return 15;
                }
@@ -141,12 +141,12 @@ public class Class210 extends Class208<Class7587> {
       if (var5 != null) {
          return var5;
       } else {
-         long var6 = Class2002.method8394(var1, Direction.field673);
+         long var6 = Class2002.method8394(var1, Direction.UP);
          int var8 = Class7587.method24836(this.field776).get(Class2002.method8420(var1));
          if (var8 != Class7587.method24837(this.field776) && Class2002.method8408(var6) < var8) {
             Class6785 var9;
             while ((var9 = this.method699(var6, true)) == null) {
-               var6 = Class2002.method8394(var6, Direction.field673);
+               var6 = Class2002.method8394(var6, Direction.UP);
             }
 
             return new Class6785(new Class6784(var9, 0).method20669());
@@ -185,20 +185,20 @@ public class Class210 extends Class208<Class7587> {
                                          long var23;
                                          switch (Class8636.field38874[var16.ordinal()]) {
                                              case 1:
-                                                 var21 = BlockPos.method8333(var34 + var19, var36 + var20, var12);
-                                                 var23 = BlockPos.method8333(var34 + var19, var36 + var20, var12 - 1);
+                                                 var21 = BlockPos.pack(var34 + var19, var36 + var20, var12);
+                                                 var23 = BlockPos.pack(var34 + var19, var36 + var20, var12 - 1);
                                                  break;
                                              case 2:
-                                                 var21 = BlockPos.method8333(var34 + var19, var36 + var20, var12 + 16 - 1);
-                                                 var23 = BlockPos.method8333(var34 + var19, var36 + var20, var12 + 16);
+                                                 var21 = BlockPos.pack(var34 + var19, var36 + var20, var12 + 16 - 1);
+                                                 var23 = BlockPos.pack(var34 + var19, var36 + var20, var12 + 16);
                                                  break;
                                              case 3:
-                                                 var21 = BlockPos.method8333(var34, var36 + var19, var12 + var20);
-                                                 var23 = BlockPos.method8333(var34 - 1, var36 + var19, var12 + var20);
+                                                 var21 = BlockPos.pack(var34, var36 + var19, var12 + var20);
+                                                 var23 = BlockPos.pack(var34 - 1, var36 + var19, var12 + var20);
                                                  break;
                                              default:
-                                                 var21 = BlockPos.method8333(var34 + 16 - 1, var36 + var19, var12 + var20);
-                                                 var23 = BlockPos.method8333(var34 + 16, var36 + var19, var12 + var20);
+                                                 var21 = BlockPos.pack(var34 + 16 - 1, var36 + var19, var12 + var20);
+                                                 var23 = BlockPos.pack(var34 + 16, var36 + var19, var12 + var20);
                                          }
 
                                          var1.method672(var21, var23, var1.method655(var21, var23, 0), true);
@@ -209,12 +209,12 @@ public class Class210 extends Class208<Class7587> {
 
                          for (int var37 = 0; var37 < 16; var37++) {
                              for (int var38 = 0; var38 < 16; var38++) {
-                                 long var25 = BlockPos.method8333(
+                                 long var25 = BlockPos.pack(
                                          Class2002.method8406(Class2002.method8407(var7)) + var37,
                                          Class2002.method8406(Class2002.method8408(var7)),
                                          Class2002.method8406(Class2002.method8409(var7)) + var38
                                  );
-                                 long var39 = BlockPos.method8333(
+                                 long var39 = BlockPos.pack(
                                          Class2002.method8406(Class2002.method8407(var7)) + var37,
                                          Class2002.method8406(Class2002.method8408(var7)) - 1,
                                          Class2002.method8406(Class2002.method8409(var7)) + var38
@@ -225,7 +225,7 @@ public class Class210 extends Class208<Class7587> {
                      } else {
                          for (int var10 = 0; var10 < 16; var10++) {
                              for (int var11 = 0; var11 < 16; var11++) {
-                                 long var27 = BlockPos.method8333(
+                                 long var27 = BlockPos.pack(
                                          Class2002.method8406(Class2002.method8407(var7)) + var10,
                                          Class2002.method8406(Class2002.method8408(var7)) + 16 - 1,
                                          Class2002.method8406(Class2002.method8409(var7)) + var11
@@ -245,7 +245,7 @@ public class Class210 extends Class208<Class7587> {
                  if (this.field787.remove(var32) && this.method698(var32)) {
                      for (int var33 = 0; var33 < 16; var33++) {
                          for (int var35 = 0; var35 < 16; var35++) {
-                             long var29 = BlockPos.method8333(
+                             long var29 = BlockPos.pack(
                                      Class2002.method8406(Class2002.method8407(var32)) + var33,
                                      Class2002.method8406(Class2002.method8408(var32)) + 16 - 1,
                                      Class2002.method8406(Class2002.method8409(var32)) + var35

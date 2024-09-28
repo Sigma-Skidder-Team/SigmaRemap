@@ -83,7 +83,7 @@ public class Class940 extends Class939 implements Class930, ITickableTileEntity 
    }
 
    public AxisAlignedBB method3747(BlockState var1) {
-      return this.method3748(var1.<Direction>method23463(Class3368.field18939));
+      return this.method3748(var1.<Direction>get(Class3368.field18939));
    }
 
    public AxisAlignedBB method3748(Direction var1) {
@@ -91,19 +91,19 @@ public class Class940 extends Class939 implements Class930, ITickableTileEntity 
       return VoxelShapes.method27426()
          .getBoundingBox()
          .contract(
-            (double)(0.5F * var4 * (float)var1.method539()), (double)(0.5F * var4 * (float)var1.method540()), (double)(0.5F * var4 * (float)var1.method541())
+            (double)(0.5F * var4 * (float)var1.getXOffset()), (double)(0.5F * var4 * (float)var1.getYOffset()), (double)(0.5F * var4 * (float)var1.getZOffset())
          );
    }
 
    private AxisAlignedBB method3749(Direction var1) {
-      Direction var4 = var1.method536();
-      return this.method3748(var1).method19660((double)var4.method539(), (double)var4.method540(), (double)var4.method541());
+      Direction var4 = var1.getOpposite();
+      return this.method3748(var1).method19660((double)var4.getXOffset(), (double)var4.getYOffset(), (double)var4.getZOffset());
    }
 
    private void method3750() {
       BlockState var3 = this.field5324.getBlockState(this.getPos());
       if (var3.getBlock() instanceof Class3368) {
-         Direction var4 = var3.<Direction>method23463(Class3368.field18939);
+         Direction var4 = var3.<Direction>get(Class3368.field18939);
          AxisAlignedBB var5 = this.method3749(var4).method19668(this.field5325);
          List var6 = this.field5324.method7181((Entity)null, var5);
          if (!var6.isEmpty()) {
@@ -116,7 +116,7 @@ public class Class940 extends Class939 implements Class930, ITickableTileEntity 
                   AxisAlignedBB var15 = var8.getBoundingBox();
                   switch (Class9671.field45163[var4.getAxis().ordinal()]) {
                      case 1:
-                        if (var4.getAxisDirection() == Class1892.field11092) {
+                        if (var4.getAxisDirection() == Direction.AxisDirection.POSITIVE) {
                            var9 = var5.maxX - var15.minX;
                         } else {
                            var9 = var15.maxX - var5.minX;
@@ -125,7 +125,7 @@ public class Class940 extends Class939 implements Class930, ITickableTileEntity 
                         var9 += 0.01;
                         break;
                      case 2:
-                        if (var4.getAxisDirection() == Class1892.field11092) {
+                        if (var4.getAxisDirection() == Direction.AxisDirection.POSITIVE) {
                            var11 = var5.maxY - var15.minY;
                         } else {
                            var11 = var15.maxY - var5.minY;
@@ -134,7 +134,7 @@ public class Class940 extends Class939 implements Class930, ITickableTileEntity 
                         var11 += 0.01;
                         break;
                      case 3:
-                        if (var4.getAxisDirection() == Class1892.field11092) {
+                        if (var4.getAxisDirection() == Direction.AxisDirection.POSITIVE) {
                            var13 = var5.maxZ - var15.minZ;
                         } else {
                            var13 = var15.maxZ - var5.minZ;
@@ -144,7 +144,7 @@ public class Class940 extends Class939 implements Class930, ITickableTileEntity 
                   }
 
                   var8.move(
-                     MoverType.field13745, new Vector3d(var9 * (double)var4.method539(), var11 * (double)var4.method540(), var13 * (double)var4.method541())
+                     MoverType.field13745, new Vector3d(var9 * (double)var4.getXOffset(), var11 * (double)var4.getYOffset(), var13 * (double)var4.getZOffset())
                   );
                }
             }

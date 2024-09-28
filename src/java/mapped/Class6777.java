@@ -65,7 +65,7 @@ public abstract class Class6777 extends Class6768<Class8278> {
          BlockState var30 = var2.getBlockState(var27);
          if (var28.isIn(var9.getBlock()) && (var30.isAir() || var30 == var10)) {
             for (int var31 = 0; var31 < var20; var31++) {
-               var27.method8379(Direction.field673);
+               var27.method8379(Direction.UP);
                if (!var2.getBlockState(var27).isIn(var9.getBlock())) {
                   break;
                }

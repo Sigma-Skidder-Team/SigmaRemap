@@ -29,13 +29,13 @@ public class Class2926 extends Class2898<Class4712> {
                if (var14 != var13) {
                   var1.setBlockState(var10, var12, 2);
                } else {
-                  var1.setBlockState(var10, var11.method23465(Class3451.field19267, Integer.valueOf(var3.nextInt(4) + 20)), 2);
+                  var1.setBlockState(var10, var11.with(Class3451.field19267, Integer.valueOf(var3.nextInt(4) + 20)), 2);
                   var8++;
                }
             } else if (var14 > 0) {
                BlockPos var15 = var10.down();
                if (var11.method23443(var1, var15) && !var1.getBlockState(var15.down()).isIn(Blocks.field36961)) {
-                  var1.setBlockState(var15, var11.method23465(Class3451.field19267, Integer.valueOf(var3.nextInt(4) + 20)), 2);
+                  var1.setBlockState(var15, var11.with(Class3451.field19267, Integer.valueOf(var3.nextInt(4) + 20)), 2);
                   var8++;
                }
                break;

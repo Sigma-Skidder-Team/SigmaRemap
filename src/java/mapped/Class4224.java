@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.gen.feature.template.TemplateManager;
@@ -17,11 +18,11 @@ public class Class4224 extends Class4213 {
    private Class9312 field20554;
    private final List<Class4213> field20555 = Lists.newArrayList();
 
-   public Class4224(Random var1, int var2, int var3, net.minecraft.util.Direction var4) {
+   public Class4224(Random var1, int var2, int var3, Direction var4) {
       super(Class7792.field33463, 0);
       this.method12939(var4);
-      net.minecraft.util.Direction var7 = this.method12938();
-      if (var7.getAxis() != Direction.Z) {
+      Direction var7 = this.method12938();
+      if (var7.getAxis() != Direction.Axis.Z) {
          this.field20444 = new Class9764(var2, 39, var3, var2 + 58 - 1, 61, var3 + 58 - 1);
       } else {
          this.field20444 = new Class9764(var2, 39, var3, var2 + 58 - 1, 61, var3 + 58 - 1);
@@ -111,15 +112,15 @@ public class Class4224 extends Class4213 {
             for (int var27 = 0; var27 < 3; var27++) {
                int var31 = method13004(var19, var27, var23);
                if (var4[var31] != null) {
-                  for (net.minecraft.util.Direction var12 : net.minecraft.util.Direction.values()) {
-                     int var13 = var19 + var12.method539();
-                     int var14 = var27 + var12.method540();
-                     int var15 = var23 + var12.method541();
+                  for (Direction var12 : Direction.values()) {
+                     int var13 = var19 + var12.getXOffset();
+                     int var14 = var27 + var12.getYOffset();
+                     int var15 = var23 + var12.getZOffset();
                      if (var13 >= 0 && var13 < 5 && var15 >= 0 && var15 < 5 && var14 >= 0 && var14 < 3) {
                         int var16 = method13004(var13, var14, var15);
                         if (var4[var16] != null) {
                            if (var15 != var23) {
-                              var4[var31].method35186(var12.method536(), var4[var16]);
+                              var4[var31].method35186(var12.getOpposite(), var4[var16]);
                            } else {
                               var4[var31].method35186(var12, var4[var16]);
                            }
@@ -134,23 +135,23 @@ public class Class4224 extends Class4213 {
       Class9312 var20 = new Class9312(1003);
       Class9312 var24 = new Class9312(1001);
       Class9312 var28 = new Class9312(1002);
-      var4[field20536].method35186(net.minecraft.util.Direction.field673, var20);
-      var4[field20537].method35186(net.minecraft.util.Direction.SOUTH, var24);
-      var4[field20538].method35186(net.minecraft.util.Direction.SOUTH, var28);
+      var4[field20536].method35186(Direction.UP, var20);
+      var4[field20537].method35186(Direction.SOUTH, var24);
+      var4[field20538].method35186(Direction.SOUTH, var28);
       Class9312.method35194(var20, true);
       Class9312.method35194(var24, true);
       Class9312.method35194(var28, true);
       Class9312.method35196(this.field20553, true);
       this.field20554 = var4[method13004(var1.nextInt(4), 0, 2)];
       Class9312.method35194(this.field20554, true);
-      Class9312.method35194(Class9312.method35191(this.field20554)[net.minecraft.util.Direction.EAST.getIndex()], true);
-      Class9312.method35194(Class9312.method35191(this.field20554)[net.minecraft.util.Direction.NORTH.getIndex()], true);
-      Class9312.method35194(Class9312.method35191(Class9312.method35191(this.field20554)[net.minecraft.util.Direction.EAST.getIndex()])[net.minecraft.util.Direction.NORTH.getIndex()], true);
-      Class9312.method35194(Class9312.method35191(this.field20554)[net.minecraft.util.Direction.field673.getIndex()], true);
-      Class9312.method35194(Class9312.method35191(Class9312.method35191(this.field20554)[net.minecraft.util.Direction.EAST.getIndex()])[net.minecraft.util.Direction.field673.getIndex()], true);
-      Class9312.method35194(Class9312.method35191(Class9312.method35191(this.field20554)[net.minecraft.util.Direction.NORTH.getIndex()])[net.minecraft.util.Direction.field673.getIndex()], true);
+      Class9312.method35194(Class9312.method35191(this.field20554)[Direction.EAST.getIndex()], true);
+      Class9312.method35194(Class9312.method35191(this.field20554)[Direction.NORTH.getIndex()], true);
+      Class9312.method35194(Class9312.method35191(Class9312.method35191(this.field20554)[Direction.EAST.getIndex()])[Direction.NORTH.getIndex()], true);
+      Class9312.method35194(Class9312.method35191(this.field20554)[Direction.UP.getIndex()], true);
+      Class9312.method35194(Class9312.method35191(Class9312.method35191(this.field20554)[Direction.EAST.getIndex()])[Direction.UP.getIndex()], true);
+      Class9312.method35194(Class9312.method35191(Class9312.method35191(this.field20554)[Direction.NORTH.getIndex()])[Direction.UP.getIndex()], true);
       Class9312.method35194(
-         Class9312.method35191(Class9312.method35191(Class9312.method35191(this.field20554)[net.minecraft.util.Direction.EAST.getIndex()])[net.minecraft.util.Direction.NORTH.getIndex()])[net.minecraft.util.Direction.field673
+         Class9312.method35191(Class9312.method35191(Class9312.method35191(this.field20554)[Direction.EAST.getIndex()])[Direction.NORTH.getIndex()])[Direction.UP
             .getIndex()],
          true
       );
@@ -175,7 +176,7 @@ public class Class4224 extends Class4213 {
             var41++;
             int var42 = var1.nextInt(6);
             if (Class9312.method35193(var38)[var42]) {
-               int var43 = net.minecraft.util.Direction.byIndex(var42).method536().getIndex();
+               int var43 = Direction.byIndex(var42).getOpposite().getIndex();
                Class9312.method35193(var38)[var42] = false;
                Class9312.method35193(Class9312.method35191(var38)[var42])[var43] = false;
                if (var38.method35188(var34++) && Class9312.method35191(var38)[var42].method35188(var34++)) {

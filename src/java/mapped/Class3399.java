@@ -7,8 +7,12 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
+import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
@@ -21,67 +25,67 @@ import java.util.stream.Collectors;
 
 public class Class3399 extends AbstractFireBlock {
    private static String[] field19037;
-   public static final Class8554 field19038 = Class8820.field39743;
-   public static final Class8551 field19039 = Class3392.field19019;
-   public static final Class8551 field19040 = Class3392.field19020;
-   public static final Class8551 field19041 = Class3392.field19021;
-   public static final Class8551 field19042 = Class3392.field19022;
-   public static final Class8551 field19043 = Class3392.field19023;
-   private static final Map<Direction, Class8551> field19044 = Class3392.field19025
+   public static final IntegerProperty field19038 = BlockStateProperties.field39743;
+   public static final BooleanProperty field19039 = Class3392.field19019;
+   public static final BooleanProperty field19040 = Class3392.field19020;
+   public static final BooleanProperty field19041 = Class3392.field19021;
+   public static final BooleanProperty field19042 = Class3392.field19022;
+   public static final BooleanProperty field19043 = Class3392.field19023;
+   private static final Map<Direction, BooleanProperty> field19044 = Class3392.field19025
       .entrySet()
       .stream()
       .filter(var0 -> var0.getKey() != Direction.DOWN)
-      .collect(Util.<Direction, Class8551>method38484());
-   private static final VoxelShape field19045 = Block.method11539(0.0, 15.0, 0.0, 16.0, 16.0, 16.0);
-   private static final VoxelShape field19046 = Block.method11539(0.0, 0.0, 0.0, 1.0, 16.0, 16.0);
-   private static final VoxelShape field19047 = Block.method11539(15.0, 0.0, 0.0, 16.0, 16.0, 16.0);
-   private static final VoxelShape field19048 = Block.method11539(0.0, 0.0, 0.0, 16.0, 16.0, 1.0);
-   private static final VoxelShape field19049 = Block.method11539(0.0, 0.0, 15.0, 16.0, 16.0, 16.0);
+      .collect(Util.<Direction, BooleanProperty>method38484());
+   private static final VoxelShape field19045 = Block.makeCuboidShape(0.0, 15.0, 0.0, 16.0, 16.0, 16.0);
+   private static final VoxelShape field19046 = Block.makeCuboidShape(0.0, 0.0, 0.0, 1.0, 16.0, 16.0);
+   private static final VoxelShape field19047 = Block.makeCuboidShape(15.0, 0.0, 0.0, 16.0, 16.0, 16.0);
+   private static final VoxelShape field19048 = Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 16.0, 1.0);
+   private static final VoxelShape field19049 = Block.makeCuboidShape(0.0, 0.0, 15.0, 16.0, 16.0, 16.0);
    private final Map<BlockState, VoxelShape> field19050;
    private final Object2IntMap<Block> field19051 = new Object2IntOpenHashMap();
    private final Object2IntMap<Block> field19052 = new Object2IntOpenHashMap();
 
-   public Class3399(AbstractBlock var1) {
+   public Class3399(Properties var1) {
       super(var1, 1.0F);
       this.method11578(
          this.field18612
             .method35393()
-            .method23465(field19038, Integer.valueOf(0))
-            .method23465(field19039, Boolean.valueOf(false))
-            .method23465(field19040, Boolean.valueOf(false))
-            .method23465(field19041, Boolean.valueOf(false))
-            .method23465(field19042, Boolean.valueOf(false))
-            .method23465(field19043, Boolean.valueOf(false))
+            .with(field19038, Integer.valueOf(0))
+            .with(field19039, Boolean.valueOf(false))
+            .with(field19040, Boolean.valueOf(false))
+            .with(field19041, Boolean.valueOf(false))
+            .with(field19042, Boolean.valueOf(false))
+            .with(field19043, Boolean.valueOf(false))
       );
       this.field19050 = ImmutableMap.copyOf(
          this.field18612
             .getValidStates()
             .stream()
-            .filter(var0 -> var0.<Integer>method23463(field19038) == 0)
+            .filter(var0 -> var0.<Integer>get(field19038) == 0)
             .collect(Collectors.toMap(Function.<BlockState>identity(), Class3399::method12015))
       );
    }
 
    private static VoxelShape method12015(BlockState var0) {
       VoxelShape var3 = VoxelShapes.method27425();
-      if (var0.<Boolean>method23463(field19043)) {
+      if (var0.<Boolean>get(field19043)) {
          var3 = field19045;
       }
 
-      if (var0.<Boolean>method23463(field19039)) {
-         var3 = VoxelShapes.method27431(var3, field19048);
+      if (var0.<Boolean>get(field19039)) {
+         var3 = VoxelShapes.or(var3, field19048);
       }
 
-      if (var0.<Boolean>method23463(field19041)) {
-         var3 = VoxelShapes.method27431(var3, field19049);
+      if (var0.<Boolean>get(field19041)) {
+         var3 = VoxelShapes.or(var3, field19049);
       }
 
-      if (var0.<Boolean>method23463(field19040)) {
-         var3 = VoxelShapes.method27431(var3, field19047);
+      if (var0.<Boolean>get(field19040)) {
+         var3 = VoxelShapes.or(var3, field19047);
       }
 
-      if (var0.<Boolean>method23463(field19042)) {
-         var3 = VoxelShapes.method27431(var3, field19046);
+      if (var0.<Boolean>get(field19042)) {
+         var3 = VoxelShapes.or(var3, field19046);
       }
 
       return !var3.isEmpty() ? var3 : field19035;
@@ -89,12 +93,12 @@ public class Class3399 extends AbstractFireBlock {
 
    @Override
    public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
-      return !this.method11492(var1, var4, var5) ? Blocks.AIR.method11579() : this.method12021(var4, var5, var1.<Integer>method23463(field19038));
+      return !this.method11492(var1, var4, var5) ? Blocks.AIR.method11579() : this.method12021(var4, var5, var1.<Integer>get(field19038));
    }
 
    @Override
    public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
-      return this.field19050.get(var1.method23465(field19038, Integer.valueOf(0)));
+      return this.field19050.get(var1.with(field19038, Integer.valueOf(0)));
    }
 
    @Override
@@ -105,13 +109,13 @@ public class Class3399 extends AbstractFireBlock {
    public BlockState method12016(IBlockReader var1, BlockPos var2) {
       BlockPos var5 = var2.down();
       BlockState var6 = var1.getBlockState(var5);
-      if (!this.method12010(var6) && !var6.method23454(var1, var5, Direction.field673)) {
+      if (!this.method12010(var6) && !var6.method23454(var1, var5, Direction.UP)) {
          BlockState var7 = this.method11579();
 
          for (Direction var11 : Direction.values()) {
-            Class8551 var12 = field19044.get(var11);
+            BooleanProperty var12 = field19044.get(var11);
             if (var12 != null) {
-               var7 = var7.method23465(var12, Boolean.valueOf(this.method12010(var1.getBlockState(var2.method8349(var11)))));
+               var7 = var7.with(var12, Boolean.valueOf(this.method12010(var1.getBlockState(var2.method8349(var11)))));
             }
          }
 
@@ -124,7 +128,7 @@ public class Class3399 extends AbstractFireBlock {
    @Override
    public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
       BlockPos var6 = var3.down();
-      return var2.getBlockState(var6).method23454(var2, var6, Direction.field673) || this.method12022(var2, var3);
+      return var2.getBlockState(var6).method23454(var2, var6, Direction.UP) || this.method12022(var2, var3);
    }
 
    @Override
@@ -137,20 +141,20 @@ public class Class3399 extends AbstractFireBlock {
 
          BlockState var7 = var2.getBlockState(var3.down());
          boolean var8 = var7.isIn(var2.method6812().isInfiniBurn());
-         int var9 = var1.<Integer>method23463(field19038);
+         int var9 = var1.<Integer>get(field19038);
          if (!var8 && var2.method6795() && this.method12017(var2, var3) && var4.nextFloat() < 0.2F + (float)var9 * 0.03F) {
             var2.removeBlock(var3, false);
          } else {
             int var10 = Math.min(15, var9 + var4.nextInt(3) / 2);
             if (var9 != var10) {
-               var1 = var1.method23465(field19038, Integer.valueOf(var10));
+               var1 = var1.with(field19038, Integer.valueOf(var10));
                var2.setBlockState(var3, var1, 4);
             }
 
             if (!var8) {
                if (!this.method12022(var2, var3)) {
                   BlockPos var22 = var3.down();
-                  if (!var2.getBlockState(var22).method23454(var2, var22, Direction.field673) || var9 > 3) {
+                  if (!var2.getBlockState(var22).method23454(var2, var22, Direction.UP) || var9 > 3) {
                      var2.removeBlock(var3, false);
                   }
 
@@ -212,11 +216,11 @@ public class Class3399 extends AbstractFireBlock {
    }
 
    private int method12018(BlockState var1) {
-      return var1.method23462(Class8820.field39710) && var1.<Boolean>method23463(Class8820.field39710) ? 0 : this.field19052.getInt(var1.getBlock());
+      return var1.method23462(BlockStateProperties.field39710) && var1.<Boolean>get(BlockStateProperties.field39710) ? 0 : this.field19052.getInt(var1.getBlock());
    }
 
    private int method12019(BlockState var1) {
-      return var1.method23462(Class8820.field39710) && var1.<Boolean>method23463(Class8820.field39710) ? 0 : this.field19051.getInt(var1.getBlock());
+      return var1.method23462(BlockStateProperties.field39710) && var1.<Boolean>get(BlockStateProperties.field39710) ? 0 : this.field19051.getInt(var1.getBlock());
    }
 
    private void method12020(World var1, BlockPos var2, int var3, Random var4, int var5) {
@@ -240,7 +244,7 @@ public class Class3399 extends AbstractFireBlock {
 
    private BlockState method12021(Class1660 var1, BlockPos var2, int var3) {
       BlockState var6 = method12009(var1, var2);
-      return !var6.isIn(Blocks.FIRE) ? var6 : var6.method23465(field19038, Integer.valueOf(var3));
+      return !var6.isIn(Blocks.FIRE) ? var6 : var6.with(field19038, Integer.valueOf(var3));
    }
 
    private boolean method12022(IBlockReader var1, BlockPos var2) {
@@ -418,7 +422,7 @@ public class Class3399 extends AbstractFireBlock {
       var2.method12025(Blocks.field36963, 30, 60);
       var2.method12025(Blocks.field37009, 60, 60);
       var2.method12025(Blocks.field37053, 60, 60);
-      var2.method12025(Blocks.field37061, 30, 20);
+      var2.method12025(Blocks.LECTERN, 30, 20);
       var2.method12025(Blocks.field37115, 5, 20);
       var2.method12025(Blocks.field37069, 60, 100);
       var2.method12025(Blocks.field37118, 5, 20);

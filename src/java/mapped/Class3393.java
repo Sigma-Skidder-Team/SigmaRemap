@@ -14,17 +14,17 @@ import java.util.Random;
 public class Class3393 extends Class3392 {
    private static String[] field19027;
 
-   public Class3393(AbstractBlock var1) {
+   public Class3393(Properties var1) {
       super(0.3125F, var1);
       this.method11578(
          this.field18612
             .method35393()
-            .method23465(field19019, Boolean.valueOf(false))
-            .method23465(field19020, Boolean.valueOf(false))
-            .method23465(field19021, Boolean.valueOf(false))
-            .method23465(field19022, Boolean.valueOf(false))
-            .method23465(field19023, Boolean.valueOf(false))
-            .method23465(field19024, Boolean.valueOf(false))
+            .with(field19019, Boolean.valueOf(false))
+            .with(field19020, Boolean.valueOf(false))
+            .with(field19021, Boolean.valueOf(false))
+            .with(field19022, Boolean.valueOf(false))
+            .with(field19023, Boolean.valueOf(false))
+            .with(field19024, Boolean.valueOf(false))
       );
    }
 
@@ -41,12 +41,12 @@ public class Class3393 extends Class3392 {
       Block var9 = var1.getBlockState(var2.south()).getBlock();
       Block var10 = var1.getBlockState(var2.west()).getBlock();
       return this.method11579()
-         .method23465(field19024, Boolean.valueOf(var5 == this || var5 == Blocks.field36879 || var5 == Blocks.field36651))
-         .method23465(field19023, Boolean.valueOf(var6 == this || var6 == Blocks.field36879))
-         .method23465(field19019, Boolean.valueOf(var7 == this || var7 == Blocks.field36879))
-         .method23465(field19020, Boolean.valueOf(var8 == this || var8 == Blocks.field36879))
-         .method23465(field19021, Boolean.valueOf(var9 == this || var9 == Blocks.field36879))
-         .method23465(field19022, Boolean.valueOf(var10 == this || var10 == Blocks.field36879));
+         .with(field19024, Boolean.valueOf(var5 == this || var5 == Blocks.field36879 || var5 == Blocks.field36651))
+         .with(field19023, Boolean.valueOf(var6 == this || var6 == Blocks.field36879))
+         .with(field19019, Boolean.valueOf(var7 == this || var7 == Blocks.field36879))
+         .with(field19020, Boolean.valueOf(var8 == this || var8 == Blocks.field36879))
+         .with(field19021, Boolean.valueOf(var9 == this || var9 == Blocks.field36879))
+         .with(field19022, Boolean.valueOf(var10 == this || var10 == Blocks.field36879));
    }
 
    @Override
@@ -58,7 +58,7 @@ public class Class3393 extends Class3392 {
          boolean var9 = var3.getBlock() == this
             || var3.isIn(Blocks.field36879)
             || var2 == Direction.DOWN && var3.isIn(Blocks.field36651);
-         return var1.method23465(field19025.get(var2), Boolean.valueOf(var9));
+         return var1.with(field19025.get(var2), Boolean.valueOf(var9));
       }
    }
 
@@ -74,7 +74,7 @@ public class Class3393 extends Class3392 {
       BlockState var6 = var2.getBlockState(var3.down());
       boolean var7 = !var2.getBlockState(var3.up()).isAir() && !var6.isAir();
 
-      for (Direction var9 : Class76.field161) {
+      for (Direction var9 : Direction.Plane.HORIZONTAL) {
          BlockPos var10 = var3.method8349(var9);
          Block var11 = var2.getBlockState(var10).getBlock();
          if (var11 == this) {

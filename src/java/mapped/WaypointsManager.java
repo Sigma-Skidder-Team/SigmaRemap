@@ -26,6 +26,7 @@ import com.mentalfrostbyte.jello.util.FileUtil;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import totalcross.json.JSONArray;
@@ -420,7 +421,7 @@ public class WaypointsManager {
          var6 = -1;
       }
 
-      if (this.field36365.world.getBlockState(var1).method23462(Class8820.field39710)) {
+      if (this.field36365.world.getBlockState(var1).method23462(BlockStateProperties.field39710)) {
          var6 = Material.field38941.getColor().field31006;
       }
 

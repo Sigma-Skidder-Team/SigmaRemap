@@ -9,6 +9,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.state.StateContainer;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
@@ -52,7 +53,7 @@ public class Class3339 extends Item {
    private void method11886(PlayerEntity var1, BlockState var2, Class1660 var3, BlockPos var4, boolean var5, ItemStack var6) {
       if (var1.canUseCommandBlock()) {
          Block var9 = var2.getBlock();
-         Class9348 var10 = var9.getStateContainer();
+         StateContainer var10 = var9.getStateContainer();
          Collection var11 = var10.method35395();
          String var12 = Registry.BLOCK.getKey(var9).toString();
          if (!var11.isEmpty()) {
@@ -80,7 +81,7 @@ public class Class3339 extends Item {
    }
 
    private static <T extends Comparable<T>> BlockState method11887(BlockState var0, Class8550<T> var1, boolean var2) {
-      return var0.method23465(var1, method11888(var1.method30474(), var0.method23463(var1), var2));
+      return var0.with(var1, method11888(var1.method30474(), var0.get(var1), var2));
    }
 
    private static <T> T method11888(Iterable<T> var0, T var1, boolean var2) {
@@ -92,6 +93,6 @@ public class Class3339 extends Item {
    }
 
    private static <T extends Comparable<T>> String method11890(BlockState var0, Class8550<T> var1) {
-      return var1.method30475(var0.<T>method23463(var1));
+      return var1.method30475(var0.<T>get(var1));
    }
 }

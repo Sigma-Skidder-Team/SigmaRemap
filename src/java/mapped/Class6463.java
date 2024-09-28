@@ -1,17 +1,18 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.module.impl.misc.NoteblockPlayer;
+import net.minecraft.state.properties.NoteBlockInstrument;
 import net.minecraft.util.math.BlockPos;
 
 public class Class6463 {
    private static String[] field28400;
    public BlockPos field28401;
    public float field28402 = -1.0F;
-   public Class108 field28403 = Class108.field347;
+   public NoteBlockInstrument field28403 = NoteBlockInstrument.field347;
 
    public Class6463(BlockPos var1) {
       this.field28401 = var1;
-      this.field28403 = Class108.method300(NoteblockPlayer.method16415().world.getBlockState(var1.down()));
+      this.field28403 = NoteBlockInstrument.method300(NoteblockPlayer.method16415().world.getBlockState(var1.down()));
    }
 
    public int method19640() {

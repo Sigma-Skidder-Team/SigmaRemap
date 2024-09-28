@@ -4,9 +4,12 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
@@ -14,12 +17,12 @@ import javax.annotation.Nullable;
 
 public class Class3371 extends Class3241 implements Class3207 {
    private static String[] field18959;
-   public static final Class8551 field18960 = Class8820.field39710;
-   public static final VoxelShape field18961 = Block.method11539(5.0, 5.0, 5.0, 11.0, 11.0, 11.0);
+   public static final BooleanProperty field18960 = BlockStateProperties.field39710;
+   public static final VoxelShape field18961 = Block.makeCuboidShape(5.0, 5.0, 5.0, 11.0, 11.0, 11.0);
 
-   public Class3371(AbstractBlock var1) {
+   public Class3371(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().method23465(field18960, Boolean.valueOf(true)));
+      this.method11578(this.field18612.method35393().with(field18960, Boolean.valueOf(true)));
    }
 
    @Override
@@ -39,12 +42,12 @@ public class Class3371 extends Class3241 implements Class3207 {
 
    @Override
    public FluidState method11498(BlockState var1) {
-      return !var1.<Boolean>method23463(field18960) ? super.method11498(var1) : Class9479.field44066.method25078(false);
+      return !var1.<Boolean>get(field18960) ? super.method11498(var1) : Class9479.field44066.method25078(false);
    }
 
    @Override
    public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
-      if (var1.<Boolean>method23463(field18960)) {
+      if (var1.<Boolean>get(field18960)) {
          var4.method6861().method20726(var5, Class9479.field44066, Class9479.field44066.method25057(var4));
       }
 
@@ -70,7 +73,7 @@ public class Class3371 extends Class3241 implements Class3207 {
    @Override
    public BlockState method11495(Class5909 var1) {
       FluidState var4 = var1.method18360().getFluidState(var1.method18345());
-      return this.method11579().method23465(field18960, Boolean.valueOf(var4.method23486(FluidTags.field40469) && var4.method23477() == 8));
+      return this.method11579().with(field18960, Boolean.valueOf(var4.method23486(FluidTags.field40469) && var4.method23477() == 8));
    }
 
    @Override

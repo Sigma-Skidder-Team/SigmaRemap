@@ -62,7 +62,7 @@ public class SkullTileEntity extends TileEntity implements ITickableTileEntity {
    @Override
    public void method3647() {
       BlockState var3 = this.method3775();
-      if (var3.isIn(Blocks.field36711) || var3.isIn(Blocks.field36712)) {
+      if (var3.isIn(Blocks.DRAGON_HEAD) || var3.isIn(Blocks.DRAGON_WALL_HEAD)) {
          if (!this.field5324.method6780(this.field5325)) {
             this.field5428 = false;
          } else {

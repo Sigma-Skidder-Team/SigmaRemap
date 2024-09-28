@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 
 // $VF: synthetic class
@@ -24,15 +25,15 @@ public class Class7799 {
       } catch (NoSuchFieldError var5) {
       }
 
-      field33493 = new int[Class2089.values().length];
+      field33493 = new int[Mirror.values().length];
 
       try {
-         field33493[Class2089.field13615.ordinal()] = 1;
+         field33493[Mirror.field13615.ordinal()] = 1;
       } catch (NoSuchFieldError var4) {
       }
 
       try {
-         field33493[Class2089.field13616.ordinal()] = 2;
+         field33493[Mirror.field13616.ordinal()] = 2;
       } catch (NoSuchFieldError var3) {
       }
    }

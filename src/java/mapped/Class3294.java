@@ -32,9 +32,9 @@ public class Class3294 extends Class3292 {
       } else {
          Direction var8;
          if (!var1.method18351()) {
-            var8 = var1.method18354() != Direction.field673 ? Direction.field673 : var1.method18350();
+            var8 = var1.method18354() != Direction.UP ? Direction.UP : var1.method18350();
          } else {
-            var8 = !var1.method18356() ? var1.method18354() : var1.method18354().method536();
+            var8 = !var1.method18356() ? var1.method18354() : var1.method18354().getOpposite();
          }
 
          int var9 = 0;

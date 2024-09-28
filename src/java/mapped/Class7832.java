@@ -23,7 +23,7 @@ public class Class7832 {
 
    public static IBakedModel method26231(TextureAtlasSprite var0, int var1) {
       ArrayList var4 = new ArrayList();
-      Direction[] var5 = Direction.field685;
+      Direction[] var5 = Direction.VALUES;
       HashMap var6 = new HashMap();
 
       for (int var7 = 0; var7 < var5.length; var7++) {
@@ -41,7 +41,7 @@ public class Class7832 {
       ArrayList var4 = new ArrayList();
       var4.addAll(var0.method22619((BlockState)null, (Direction)null, field33624));
       var4.addAll(var1.method22619((BlockState)null, (Direction)null, field33624));
-      Direction[] var5 = Direction.field685;
+      Direction[] var5 = Direction.VALUES;
       HashMap var6 = new HashMap();
 
       for (int var7 = 0; var7 < var5.length; var7++) {
@@ -90,7 +90,7 @@ public class Class7832 {
             IBakedModel var7 = var5.method1023(var6);
             if (var7 != null && var7 != var5.getMissingModel()) {
                IBakedModel var8 = Class9842.method38900(var7);
-               Direction[] var9 = Direction.field685;
+               Direction[] var9 = Direction.VALUES;
 
                for (int var10 = 0; var10 < var9.length; var10++) {
                   Direction var11 = var9[var10];

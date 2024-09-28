@@ -166,7 +166,7 @@ public class Class9422 {
    }
 
    public static List method36148(IBlockReader var0, BlockState var1, BlockPos var2, Direction var3, List var4) {
-      if (var3 == Direction.field673 || var3 == Direction.DOWN) {
+      if (var3 == Direction.UP || var3 == Direction.DOWN) {
          return var4;
       } else if (field43707) {
          Block var7 = var1.getBlock();
@@ -221,7 +221,7 @@ public class Class9422 {
    }
 
    private static List method36151(IBlockReader var0, BlockState var1, BlockPos var2, Direction var3, List var4) {
-      Block var7 = method36154(var2, Direction.field673, var0);
+      Block var7 = method36154(var2, Direction.UP, var0);
       boolean var8 = var7 == Blocks.SNOW_BLOCK || var7 == Blocks.SNOW;
       if (!Config.method26877()) {
          if (!var8) {
@@ -247,7 +247,7 @@ public class Class9422 {
    }
 
    private static List method36152(IBlockReader var0, BlockState var1, BlockPos var2, Direction var3, List var4) {
-      Block var7 = method36154(var2, Direction.field673, var0);
+      Block var7 = method36154(var2, Direction.UP, var0);
       return var7 == Blocks.field36885 && field43686 && method36154(var2, var3, var0) == Blocks.field36885
          ? field43703.method22619(var1, var3, field43715)
          : var4;

@@ -30,7 +30,7 @@ public abstract class Class8550<T extends Comparable<T>> {
    }
 
    public Class7270<T> method30469(Class7378<?, ?> var1) {
-      return new Class7270<T>(this, var1.method23463(this));
+      return new Class7270<T>(this, var1.get(this));
    }
 
    public Stream<Class7270<T>> method30470() {

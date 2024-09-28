@@ -5,8 +5,13 @@ import com.google.gson.JsonElement;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.WallHeight;
 import net.minecraft.item.Items;
+import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.properties.*;
+import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.gen.feature.jigsaw.JigsawOrientation;
 
 import java.util.Arrays;
 import java.util.List;
@@ -59,37 +64,37 @@ public class Class9407 {
    }
 
    private static Class3629 method35810() {
-      return Class3629.<net.minecraft.util.Direction>method12310(Class8820.field39722)
-         .method12320(net.minecraft.util.Direction.EAST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13817))
-         .method12320(net.minecraft.util.Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13818))
-         .method12320(net.minecraft.util.Direction.WEST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13819))
-         .method12320(net.minecraft.util.Direction.NORTH, Class5138.method15912());
+      return Class3629.<Direction>method12310(BlockStateProperties.HORIZONTAL_FACING)
+         .method12320(Direction.EAST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13817))
+         .method12320(Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13818))
+         .method12320(Direction.WEST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13819))
+         .method12320(Direction.NORTH, Class5138.method15912());
    }
 
    private static Class3629 method35811() {
-      return Class3629.<net.minecraft.util.Direction>method12310(Class8820.field39722)
-         .method12320(net.minecraft.util.Direction.SOUTH, Class5138.method15912())
-         .method12320(net.minecraft.util.Direction.WEST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13817))
-         .method12320(net.minecraft.util.Direction.NORTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13818))
-         .method12320(net.minecraft.util.Direction.EAST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13819));
+      return Class3629.<Direction>method12310(BlockStateProperties.HORIZONTAL_FACING)
+         .method12320(Direction.SOUTH, Class5138.method15912())
+         .method12320(Direction.WEST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13817))
+         .method12320(Direction.NORTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13818))
+         .method12320(Direction.EAST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13819));
    }
 
    private static Class3629 method35812() {
-      return Class3629.<net.minecraft.util.Direction>method12310(Class8820.field39722)
-         .method12320(net.minecraft.util.Direction.EAST, Class5138.method15912())
-         .method12320(net.minecraft.util.Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13817))
-         .method12320(net.minecraft.util.Direction.WEST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13818))
-         .method12320(net.minecraft.util.Direction.NORTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13819));
+      return Class3629.<Direction>method12310(BlockStateProperties.HORIZONTAL_FACING)
+         .method12320(Direction.EAST, Class5138.method15912())
+         .method12320(Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13817))
+         .method12320(Direction.WEST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13818))
+         .method12320(Direction.NORTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13819));
    }
 
    private static Class3629 method35813() {
-      return Class3629.<net.minecraft.util.Direction>method12310(Class8820.field39720)
-         .method12320(net.minecraft.util.Direction.DOWN, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817))
-         .method12320(net.minecraft.util.Direction.field673, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13819))
-         .method12320(net.minecraft.util.Direction.NORTH, Class5138.method15912())
-         .method12320(net.minecraft.util.Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13818))
-         .method12320(net.minecraft.util.Direction.WEST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13819))
-         .method12320(net.minecraft.util.Direction.EAST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13817));
+      return Class3629.<Direction>method12310(BlockStateProperties.FACING)
+         .method12320(Direction.DOWN, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817))
+         .method12320(Direction.UP, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13819))
+         .method12320(Direction.NORTH, Class5138.method15912())
+         .method12320(Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13818))
+         .method12320(Direction.WEST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13819))
+         .method12320(Direction.EAST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13817));
    }
 
    private static Class5148 method35814(Block var0, ResourceLocation var1) {
@@ -115,7 +120,7 @@ public class Class9407 {
       );
    }
 
-   private static Class3629 method35817(Class8551 var0, ResourceLocation var1, ResourceLocation var2) {
+   private static Class3629 method35817(BooleanProperty var0, ResourceLocation var1, ResourceLocation var2) {
       return Class3629.<Boolean>method12310(var0)
          .method12320(true, Class5138.method15912().method15911(Class6891.field29864, var1))
          .method12320(false, Class5138.method15912().method15911(Class6891.field29864, var2));
@@ -135,152 +140,152 @@ public class Class9407 {
    private static Class5146 method35820(Block var0, ResourceLocation var1, ResourceLocation var2) {
       return Class5148.method15941(var0)
          .method15939(
-            Class3629.<Boolean>method12310(Class8820.field39704)
+            Class3629.<Boolean>method12310(BlockStateProperties.POWERED)
                .method12320(false, Class5138.method15912().method15911(Class6891.field29864, var1))
                .method12320(true, Class5138.method15912().method15911(Class6891.field29864, var2))
          )
          .method15939(
-            Class3629.<Class103, net.minecraft.util.Direction>method12311(Class8820.field39724, Class8820.field39722)
-               .method12300(Class103.field313, net.minecraft.util.Direction.EAST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13817))
-               .method12300(Class103.field313, net.minecraft.util.Direction.WEST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13819))
-               .method12300(Class103.field313, net.minecraft.util.Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13818))
-               .method12300(Class103.field313, net.minecraft.util.Direction.NORTH, Class5138.method15912())
+            Class3629.<AttachFace, Direction>method12311(BlockStateProperties.FACE, BlockStateProperties.HORIZONTAL_FACING)
+               .method12300(AttachFace.field313, Direction.EAST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13817))
+               .method12300(AttachFace.field313, Direction.WEST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13819))
+               .method12300(AttachFace.field313, Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13818))
+               .method12300(AttachFace.field313, Direction.NORTH, Class5138.method15912())
                .method12300(
-                  Class103.field314,
-                  net.minecraft.util.Direction.EAST,
+                  AttachFace.field314,
+                  Direction.EAST,
                   Class5138.method15912()
                      .method15911(Class6891.field29863, Class2120.field13817)
                      .method15911(Class6891.field29862, Class2120.field13817)
                      .method15911(Class6891.field29865, true)
                )
                .method12300(
-                  Class103.field314,
-                  net.minecraft.util.Direction.WEST,
+                  AttachFace.field314,
+                  Direction.WEST,
                   Class5138.method15912()
                      .method15911(Class6891.field29863, Class2120.field13819)
                      .method15911(Class6891.field29862, Class2120.field13817)
                      .method15911(Class6891.field29865, true)
                )
                .method12300(
-                  Class103.field314,
-                  net.minecraft.util.Direction.SOUTH,
+                  AttachFace.field314,
+                  Direction.SOUTH,
                   Class5138.method15912()
                      .method15911(Class6891.field29863, Class2120.field13818)
                      .method15911(Class6891.field29862, Class2120.field13817)
                      .method15911(Class6891.field29865, true)
                )
                .method12300(
-                  Class103.field314,
-                  net.minecraft.util.Direction.NORTH,
+                  AttachFace.field314,
+                  Direction.NORTH,
                   Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817).method15911(Class6891.field29865, true)
                )
                .method12300(
-                  Class103.field315,
-                  net.minecraft.util.Direction.EAST,
+                  AttachFace.field315,
+                  Direction.EAST,
                   Class5138.method15912().method15911(Class6891.field29863, Class2120.field13819).method15911(Class6891.field29862, Class2120.field13818)
                )
                .method12300(
-                  Class103.field315,
-                  net.minecraft.util.Direction.WEST,
+                  AttachFace.field315,
+                  Direction.WEST,
                   Class5138.method15912().method15911(Class6891.field29863, Class2120.field13817).method15911(Class6891.field29862, Class2120.field13818)
                )
-               .method12300(Class103.field315, net.minecraft.util.Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13818))
+               .method12300(AttachFace.field315, Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13818))
                .method12300(
-                  Class103.field315,
-                  net.minecraft.util.Direction.NORTH,
+                  AttachFace.field315,
+                  Direction.NORTH,
                   Class5138.method15912().method15911(Class6891.field29863, Class2120.field13818).method15911(Class6891.field29862, Class2120.field13818)
                )
          );
    }
 
-   private static Class3632<net.minecraft.util.Direction, Class84, Class183, Boolean> method35821(
-           Class3632<net.minecraft.util.Direction, Class84, Class183, Boolean> var0, Class84 var1, ResourceLocation var2, ResourceLocation var3
+   private static Class3632<Direction, DoubleBlockHalf, DoorHingeSide, Boolean> method35821(
+           Class3632<Direction, DoubleBlockHalf, DoorHingeSide, Boolean> var0, DoubleBlockHalf var1, ResourceLocation var2, ResourceLocation var3
    ) {
-      return var0.method12324(net.minecraft.util.Direction.EAST, var1, Class183.field664, false, Class5138.method15912().method15911(Class6891.field29864, var2))
+      return var0.method12324(Direction.EAST, var1, DoorHingeSide.field664, false, Class5138.method15912().method15911(Class6891.field29864, var2))
          .method12324(
-            net.minecraft.util.Direction.SOUTH,
+            Direction.SOUTH,
             var1,
-            Class183.field664,
+            DoorHingeSide.field664,
             false,
             Class5138.method15912().method15911(Class6891.field29864, var2).method15911(Class6891.field29863, Class2120.field13817)
          )
          .method12324(
-            net.minecraft.util.Direction.WEST,
+            Direction.WEST,
             var1,
-            Class183.field664,
+            DoorHingeSide.field664,
             false,
             Class5138.method15912().method15911(Class6891.field29864, var2).method15911(Class6891.field29863, Class2120.field13818)
          )
          .method12324(
-            net.minecraft.util.Direction.NORTH,
+            Direction.NORTH,
             var1,
-            Class183.field664,
+            DoorHingeSide.field664,
             false,
             Class5138.method15912().method15911(Class6891.field29864, var2).method15911(Class6891.field29863, Class2120.field13819)
          )
-         .method12324(net.minecraft.util.Direction.EAST, var1, Class183.field665, false, Class5138.method15912().method15911(Class6891.field29864, var3))
+         .method12324(Direction.EAST, var1, DoorHingeSide.field665, false, Class5138.method15912().method15911(Class6891.field29864, var3))
          .method12324(
-            net.minecraft.util.Direction.SOUTH,
+            Direction.SOUTH,
             var1,
-            Class183.field665,
+            DoorHingeSide.field665,
             false,
             Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13817)
          )
          .method12324(
-            net.minecraft.util.Direction.WEST,
+            Direction.WEST,
             var1,
-            Class183.field665,
+            DoorHingeSide.field665,
             false,
             Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13818)
          )
          .method12324(
-            net.minecraft.util.Direction.NORTH,
+            Direction.NORTH,
             var1,
-            Class183.field665,
+            DoorHingeSide.field665,
             false,
             Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13819)
          )
          .method12324(
-            net.minecraft.util.Direction.EAST,
+            Direction.EAST,
             var1,
-            Class183.field664,
+            DoorHingeSide.field664,
             true,
             Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13817)
          )
          .method12324(
-            net.minecraft.util.Direction.SOUTH,
+            Direction.SOUTH,
             var1,
-            Class183.field664,
+            DoorHingeSide.field664,
             true,
             Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13818)
          )
          .method12324(
-            net.minecraft.util.Direction.WEST,
+            Direction.WEST,
             var1,
-            Class183.field664,
+            DoorHingeSide.field664,
             true,
             Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13819)
          )
-         .method12324(net.minecraft.util.Direction.NORTH, var1, Class183.field664, true, Class5138.method15912().method15911(Class6891.field29864, var3))
+         .method12324(Direction.NORTH, var1, DoorHingeSide.field664, true, Class5138.method15912().method15911(Class6891.field29864, var3))
          .method12324(
-            net.minecraft.util.Direction.EAST,
+            Direction.EAST,
             var1,
-            Class183.field665,
+            DoorHingeSide.field665,
             true,
             Class5138.method15912().method15911(Class6891.field29864, var2).method15911(Class6891.field29863, Class2120.field13819)
          )
-         .method12324(net.minecraft.util.Direction.SOUTH, var1, Class183.field665, true, Class5138.method15912().method15911(Class6891.field29864, var2))
+         .method12324(Direction.SOUTH, var1, DoorHingeSide.field665, true, Class5138.method15912().method15911(Class6891.field29864, var2))
          .method12324(
-            net.minecraft.util.Direction.WEST,
+            Direction.WEST,
             var1,
-            Class183.field665,
+            DoorHingeSide.field665,
             true,
             Class5138.method15912().method15911(Class6891.field29864, var2).method15911(Class6891.field29863, Class2120.field13817)
          )
          .method12324(
-            net.minecraft.util.Direction.NORTH,
+            Direction.NORTH,
             var1,
-            Class183.field665,
+            DoorHingeSide.field665,
             true,
             Class5138.method15912().method15911(Class6891.field29864, var2).method15911(Class6891.field29863, Class2120.field13818)
          );
@@ -291,14 +296,14 @@ public class Class9407 {
          .method15939(
             method35821(
                method35821(
-                  Class3629.<net.minecraft.util.Direction, Class84, Class183, Boolean>method12313(
-                     Class8820.field39722, Class8820.field39734, Class8820.field39767, Class8820.field39702
+                  Class3629.<Direction, DoubleBlockHalf, DoorHingeSide, Boolean>method12313(
+                     BlockStateProperties.HORIZONTAL_FACING, BlockStateProperties.DOUBLE_BLOCK_HALF, BlockStateProperties.DOOR_HINGE, BlockStateProperties.OPEN
                   ),
-                  Class84.field210,
+                  DoubleBlockHalf.field210,
                   var1,
                   var2
                ),
-               Class84.field209,
+               DoubleBlockHalf.field209,
                var3,
                var4
             )
@@ -309,25 +314,25 @@ public class Class9407 {
       return Class5147.method15932(var0)
          .method15934(Class5138.method15912().method15911(Class6891.field29864, var1))
          .method15937(
-            Class5141.method15919().method15924(Class8820.field39716, true),
+            Class5141.method15919().method15924(BlockStateProperties.field39716, true),
             Class5138.method15912().method15911(Class6891.field29864, var2).method15911(Class6891.field29865, true)
          )
          .method15937(
-            Class5141.method15919().method15924(Class8820.field39717, true),
+            Class5141.method15919().method15924(BlockStateProperties.field39717, true),
             Class5138.method15912()
                .method15911(Class6891.field29864, var2)
                .method15911(Class6891.field29863, Class2120.field13817)
                .method15911(Class6891.field29865, true)
          )
          .method15937(
-            Class5141.method15919().method15924(Class8820.field39718, true),
+            Class5141.method15919().method15924(BlockStateProperties.field39718, true),
             Class5138.method15912()
                .method15911(Class6891.field29864, var2)
                .method15911(Class6891.field29863, Class2120.field13818)
                .method15911(Class6891.field29865, true)
          )
          .method15937(
-            Class5141.method15919().method15924(Class8820.field39719, true),
+            Class5141.method15919().method15924(BlockStateProperties.field39719, true),
             Class5138.method15912()
                .method15911(Class6891.field29864, var2)
                .method15911(Class6891.field29863, Class2120.field13819)
@@ -337,52 +342,52 @@ public class Class9407 {
 
    private static Class5146 method35824(Block var0, ResourceLocation var1, ResourceLocation var2, ResourceLocation var3) {
       return Class5147.method15932(var0)
-         .method15937(Class5141.method15919().method15924(Class8820.field39714, true), Class5138.method15912().method15911(Class6891.field29864, var1))
+         .method15937(Class5141.method15919().method15924(BlockStateProperties.field39714, true), Class5138.method15912().method15911(Class6891.field29864, var1))
          .method15937(
-            Class5141.method15919().method15924(Class8820.field39727, Class184.field668),
+            Class5141.method15919().method15924(BlockStateProperties.field39727, WallHeight.field668),
             Class5138.method15912().method15911(Class6891.field29864, var2).method15911(Class6891.field29865, true)
          )
          .method15937(
-            Class5141.method15919().method15924(Class8820.field39726, Class184.field668),
+            Class5141.method15919().method15924(BlockStateProperties.field39726, WallHeight.field668),
             Class5138.method15912()
                .method15911(Class6891.field29864, var2)
                .method15911(Class6891.field29863, Class2120.field13817)
                .method15911(Class6891.field29865, true)
          )
          .method15937(
-            Class5141.method15919().method15924(Class8820.field39728, Class184.field668),
+            Class5141.method15919().method15924(BlockStateProperties.field39728, WallHeight.field668),
             Class5138.method15912()
                .method15911(Class6891.field29864, var2)
                .method15911(Class6891.field29863, Class2120.field13818)
                .method15911(Class6891.field29865, true)
          )
          .method15937(
-            Class5141.method15919().method15924(Class8820.field39729, Class184.field668),
+            Class5141.method15919().method15924(BlockStateProperties.field39729, WallHeight.field668),
             Class5138.method15912()
                .method15911(Class6891.field29864, var2)
                .method15911(Class6891.field29863, Class2120.field13819)
                .method15911(Class6891.field29865, true)
          )
          .method15937(
-            Class5141.method15919().method15924(Class8820.field39727, Class184.field669),
+            Class5141.method15919().method15924(BlockStateProperties.field39727, WallHeight.field669),
             Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29865, true)
          )
          .method15937(
-            Class5141.method15919().method15924(Class8820.field39726, Class184.field669),
+            Class5141.method15919().method15924(BlockStateProperties.field39726, WallHeight.field669),
             Class5138.method15912()
                .method15911(Class6891.field29864, var3)
                .method15911(Class6891.field29863, Class2120.field13817)
                .method15911(Class6891.field29865, true)
          )
          .method15937(
-            Class5141.method15919().method15924(Class8820.field39728, Class184.field669),
+            Class5141.method15919().method15924(BlockStateProperties.field39728, WallHeight.field669),
             Class5138.method15912()
                .method15911(Class6891.field29864, var3)
                .method15911(Class6891.field29863, Class2120.field13818)
                .method15911(Class6891.field29865, true)
          )
          .method15937(
-            Class5141.method15919().method15924(Class8820.field39729, Class184.field669),
+            Class5141.method15919().method15924(BlockStateProperties.field39729, WallHeight.field669),
             Class5138.method15912()
                .method15911(Class6891.field29864, var3)
                .method15911(Class6891.field29863, Class2120.field13819)
@@ -394,7 +399,7 @@ public class Class9407 {
       return Class5148.method15942(var0, Class5138.method15912().method15911(Class6891.field29865, true))
          .method15939(method35811())
          .method15939(
-            Class3629.<Boolean, Boolean>method12311(Class8820.field39698, Class8820.field39702)
+            Class3629.<Boolean, Boolean>method12311(BlockStateProperties.IN_WALL, BlockStateProperties.OPEN)
                .method12300(false, false, Class5138.method15912().method15911(Class6891.field29864, var2))
                .method12300(true, false, Class5138.method15912().method15911(Class6891.field29864, var4))
                .method12300(false, true, Class5138.method15912().method15911(Class6891.field29864, var1))
@@ -405,160 +410,160 @@ public class Class9407 {
    private static Class5146 method35826(Block var0, ResourceLocation var1, ResourceLocation var2, ResourceLocation var3) {
       return Class5148.method15941(var0)
          .method15939(
-            Class3629.<net.minecraft.util.Direction, Class99, Class106>method12312(Class8820.field39722, Class8820.field39735, Class8820.field39771)
-               .method12326(net.minecraft.util.Direction.EAST, Class99.field271, Class106.field329, Class5138.method15912().method15911(Class6891.field29864, var2))
+            Class3629.<Direction, Half, StairsShape>method12312(BlockStateProperties.HORIZONTAL_FACING, BlockStateProperties.field39735, BlockStateProperties.field39771)
+               .method12326(Direction.EAST, Half.field271, StairsShape.field329, Class5138.method15912().method15911(Class6891.field29864, var2))
                .method12326(
-                  net.minecraft.util.Direction.WEST,
-                  Class99.field271,
-                  Class106.field329,
+                  Direction.WEST,
+                  Half.field271,
+                  StairsShape.field329,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var2)
                      .method15911(Class6891.field29863, Class2120.field13818)
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  net.minecraft.util.Direction.SOUTH,
-                  Class99.field271,
-                  Class106.field329,
+                  Direction.SOUTH,
+                  Half.field271,
+                  StairsShape.field329,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var2)
                      .method15911(Class6891.field29863, Class2120.field13817)
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  net.minecraft.util.Direction.NORTH,
-                  Class99.field271,
-                  Class106.field329,
+                  Direction.NORTH,
+                  Half.field271,
+                  StairsShape.field329,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var2)
                      .method15911(Class6891.field29863, Class2120.field13819)
                      .method15911(Class6891.field29865, true)
                )
-               .method12326(net.minecraft.util.Direction.EAST, Class99.field271, Class106.field333, Class5138.method15912().method15911(Class6891.field29864, var3))
+               .method12326(Direction.EAST, Half.field271, StairsShape.field333, Class5138.method15912().method15911(Class6891.field29864, var3))
                .method12326(
-                  net.minecraft.util.Direction.WEST,
-                  Class99.field271,
-                  Class106.field333,
+                  Direction.WEST,
+                  Half.field271,
+                  StairsShape.field333,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29863, Class2120.field13818)
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  net.minecraft.util.Direction.SOUTH,
-                  Class99.field271,
-                  Class106.field333,
+                  Direction.SOUTH,
+                  Half.field271,
+                  StairsShape.field333,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29863, Class2120.field13817)
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  net.minecraft.util.Direction.NORTH,
-                  Class99.field271,
-                  Class106.field333,
+                  Direction.NORTH,
+                  Half.field271,
+                  StairsShape.field333,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29863, Class2120.field13819)
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  net.minecraft.util.Direction.EAST,
-                  Class99.field271,
-                  Class106.field332,
+                  Direction.EAST,
+                  Half.field271,
+                  StairsShape.field332,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29863, Class2120.field13819)
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  net.minecraft.util.Direction.WEST,
-                  Class99.field271,
-                  Class106.field332,
+                  Direction.WEST,
+                  Half.field271,
+                  StairsShape.field332,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29863, Class2120.field13817)
                      .method15911(Class6891.field29865, true)
                )
-               .method12326(net.minecraft.util.Direction.SOUTH, Class99.field271, Class106.field332, Class5138.method15912().method15911(Class6891.field29864, var3))
+               .method12326(Direction.SOUTH, Half.field271, StairsShape.field332, Class5138.method15912().method15911(Class6891.field29864, var3))
                .method12326(
-                  net.minecraft.util.Direction.NORTH,
-                  Class99.field271,
-                  Class106.field332,
+                  Direction.NORTH,
+                  Half.field271,
+                  StairsShape.field332,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29863, Class2120.field13818)
                      .method15911(Class6891.field29865, true)
                )
-               .method12326(net.minecraft.util.Direction.EAST, Class99.field271, Class106.field331, Class5138.method15912().method15911(Class6891.field29864, var1))
+               .method12326(Direction.EAST, Half.field271, StairsShape.field331, Class5138.method15912().method15911(Class6891.field29864, var1))
                .method12326(
-                  net.minecraft.util.Direction.WEST,
-                  Class99.field271,
-                  Class106.field331,
-                  Class5138.method15912()
-                     .method15911(Class6891.field29864, var1)
-                     .method15911(Class6891.field29863, Class2120.field13818)
-                     .method15911(Class6891.field29865, true)
-               )
-               .method12326(
-                  net.minecraft.util.Direction.SOUTH,
-                  Class99.field271,
-                  Class106.field331,
-                  Class5138.method15912()
-                     .method15911(Class6891.field29864, var1)
-                     .method15911(Class6891.field29863, Class2120.field13817)
-                     .method15911(Class6891.field29865, true)
-               )
-               .method12326(
-                  net.minecraft.util.Direction.NORTH,
-                  Class99.field271,
-                  Class106.field331,
-                  Class5138.method15912()
-                     .method15911(Class6891.field29864, var1)
-                     .method15911(Class6891.field29863, Class2120.field13819)
-                     .method15911(Class6891.field29865, true)
-               )
-               .method12326(
-                  net.minecraft.util.Direction.EAST,
-                  Class99.field271,
-                  Class106.field330,
-                  Class5138.method15912()
-                     .method15911(Class6891.field29864, var1)
-                     .method15911(Class6891.field29863, Class2120.field13819)
-                     .method15911(Class6891.field29865, true)
-               )
-               .method12326(
-                  net.minecraft.util.Direction.WEST,
-                  Class99.field271,
-                  Class106.field330,
-                  Class5138.method15912()
-                     .method15911(Class6891.field29864, var1)
-                     .method15911(Class6891.field29863, Class2120.field13817)
-                     .method15911(Class6891.field29865, true)
-               )
-               .method12326(net.minecraft.util.Direction.SOUTH, Class99.field271, Class106.field330, Class5138.method15912().method15911(Class6891.field29864, var1))
-               .method12326(
-                  net.minecraft.util.Direction.NORTH,
-                  Class99.field271,
-                  Class106.field330,
+                  Direction.WEST,
+                  Half.field271,
+                  StairsShape.field331,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var1)
                      .method15911(Class6891.field29863, Class2120.field13818)
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  net.minecraft.util.Direction.EAST,
-                  Class99.field270,
-                  Class106.field329,
+                  Direction.SOUTH,
+                  Half.field271,
+                  StairsShape.field331,
+                  Class5138.method15912()
+                     .method15911(Class6891.field29864, var1)
+                     .method15911(Class6891.field29863, Class2120.field13817)
+                     .method15911(Class6891.field29865, true)
+               )
+               .method12326(
+                  Direction.NORTH,
+                  Half.field271,
+                  StairsShape.field331,
+                  Class5138.method15912()
+                     .method15911(Class6891.field29864, var1)
+                     .method15911(Class6891.field29863, Class2120.field13819)
+                     .method15911(Class6891.field29865, true)
+               )
+               .method12326(
+                  Direction.EAST,
+                  Half.field271,
+                  StairsShape.field330,
+                  Class5138.method15912()
+                     .method15911(Class6891.field29864, var1)
+                     .method15911(Class6891.field29863, Class2120.field13819)
+                     .method15911(Class6891.field29865, true)
+               )
+               .method12326(
+                  Direction.WEST,
+                  Half.field271,
+                  StairsShape.field330,
+                  Class5138.method15912()
+                     .method15911(Class6891.field29864, var1)
+                     .method15911(Class6891.field29863, Class2120.field13817)
+                     .method15911(Class6891.field29865, true)
+               )
+               .method12326(Direction.SOUTH, Half.field271, StairsShape.field330, Class5138.method15912().method15911(Class6891.field29864, var1))
+               .method12326(
+                  Direction.NORTH,
+                  Half.field271,
+                  StairsShape.field330,
+                  Class5138.method15912()
+                     .method15911(Class6891.field29864, var1)
+                     .method15911(Class6891.field29863, Class2120.field13818)
+                     .method15911(Class6891.field29865, true)
+               )
+               .method12326(
+                  Direction.EAST,
+                  Half.field270,
+                  StairsShape.field329,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var2)
                      .method15911(Class6891.field29862, Class2120.field13818)
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  net.minecraft.util.Direction.WEST,
-                  Class99.field270,
-                  Class106.field329,
+                  Direction.WEST,
+                  Half.field270,
+                  StairsShape.field329,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var2)
                      .method15911(Class6891.field29862, Class2120.field13818)
@@ -566,9 +571,9 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  net.minecraft.util.Direction.SOUTH,
-                  Class99.field270,
-                  Class106.field329,
+                  Direction.SOUTH,
+                  Half.field270,
+                  StairsShape.field329,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var2)
                      .method15911(Class6891.field29862, Class2120.field13818)
@@ -576,9 +581,9 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  net.minecraft.util.Direction.NORTH,
-                  Class99.field270,
-                  Class106.field329,
+                  Direction.NORTH,
+                  Half.field270,
+                  StairsShape.field329,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var2)
                      .method15911(Class6891.field29862, Class2120.field13818)
@@ -586,9 +591,9 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  net.minecraft.util.Direction.EAST,
-                  Class99.field270,
-                  Class106.field333,
+                  Direction.EAST,
+                  Half.field270,
+                  StairsShape.field333,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29862, Class2120.field13818)
@@ -596,9 +601,9 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  net.minecraft.util.Direction.WEST,
-                  Class99.field270,
-                  Class106.field333,
+                  Direction.WEST,
+                  Half.field270,
+                  StairsShape.field333,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29862, Class2120.field13818)
@@ -606,9 +611,9 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  net.minecraft.util.Direction.SOUTH,
-                  Class99.field270,
-                  Class106.field333,
+                  Direction.SOUTH,
+                  Half.field270,
+                  StairsShape.field333,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29862, Class2120.field13818)
@@ -616,27 +621,27 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  net.minecraft.util.Direction.NORTH,
-                  Class99.field270,
-                  Class106.field333,
+                  Direction.NORTH,
+                  Half.field270,
+                  StairsShape.field333,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29862, Class2120.field13818)
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  net.minecraft.util.Direction.EAST,
-                  Class99.field270,
-                  Class106.field332,
+                  Direction.EAST,
+                  Half.field270,
+                  StairsShape.field332,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29862, Class2120.field13818)
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  net.minecraft.util.Direction.WEST,
-                  Class99.field270,
-                  Class106.field332,
+                  Direction.WEST,
+                  Half.field270,
+                  StairsShape.field332,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29862, Class2120.field13818)
@@ -644,9 +649,9 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  net.minecraft.util.Direction.SOUTH,
-                  Class99.field270,
-                  Class106.field332,
+                  Direction.SOUTH,
+                  Half.field270,
+                  StairsShape.field332,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29862, Class2120.field13818)
@@ -654,9 +659,9 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  net.minecraft.util.Direction.NORTH,
-                  Class99.field270,
-                  Class106.field332,
+                  Direction.NORTH,
+                  Half.field270,
+                  StairsShape.field332,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29862, Class2120.field13818)
@@ -664,9 +669,9 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  net.minecraft.util.Direction.EAST,
-                  Class99.field270,
-                  Class106.field331,
+                  Direction.EAST,
+                  Half.field270,
+                  StairsShape.field331,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var1)
                      .method15911(Class6891.field29862, Class2120.field13818)
@@ -674,9 +679,9 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  net.minecraft.util.Direction.WEST,
-                  Class99.field270,
-                  Class106.field331,
+                  Direction.WEST,
+                  Half.field270,
+                  StairsShape.field331,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var1)
                      .method15911(Class6891.field29862, Class2120.field13818)
@@ -684,9 +689,9 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  net.minecraft.util.Direction.SOUTH,
-                  Class99.field270,
-                  Class106.field331,
+                  Direction.SOUTH,
+                  Half.field270,
+                  StairsShape.field331,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var1)
                      .method15911(Class6891.field29862, Class2120.field13818)
@@ -694,27 +699,27 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  net.minecraft.util.Direction.NORTH,
-                  Class99.field270,
-                  Class106.field331,
+                  Direction.NORTH,
+                  Half.field270,
+                  StairsShape.field331,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var1)
                      .method15911(Class6891.field29862, Class2120.field13818)
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  net.minecraft.util.Direction.EAST,
-                  Class99.field270,
-                  Class106.field330,
+                  Direction.EAST,
+                  Half.field270,
+                  StairsShape.field330,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var1)
                      .method15911(Class6891.field29862, Class2120.field13818)
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  net.minecraft.util.Direction.WEST,
-                  Class99.field270,
-                  Class106.field330,
+                  Direction.WEST,
+                  Half.field270,
+                  StairsShape.field330,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var1)
                      .method15911(Class6891.field29862, Class2120.field13818)
@@ -722,9 +727,9 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  net.minecraft.util.Direction.SOUTH,
-                  Class99.field270,
-                  Class106.field330,
+                  Direction.SOUTH,
+                  Half.field270,
+                  StairsShape.field330,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var1)
                      .method15911(Class6891.field29862, Class2120.field13818)
@@ -732,9 +737,9 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  net.minecraft.util.Direction.NORTH,
-                  Class99.field270,
-                  Class106.field330,
+                  Direction.NORTH,
+                  Half.field270,
+                  StairsShape.field330,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var1)
                      .method15911(Class6891.field29862, Class2120.field13818)
@@ -747,67 +752,67 @@ public class Class9407 {
    private static Class5146 method35827(Block var0, ResourceLocation var1, ResourceLocation var2, ResourceLocation var3) {
       return Class5148.method15941(var0)
          .method15939(
-            Class3629.<net.minecraft.util.Direction, Class99, Boolean>method12312(Class8820.field39722, Class8820.field39735, Class8820.field39702)
-               .method12326(net.minecraft.util.Direction.NORTH, Class99.field271, false, Class5138.method15912().method15911(Class6891.field29864, var2))
+            Class3629.<Direction, Half, Boolean>method12312(BlockStateProperties.HORIZONTAL_FACING, BlockStateProperties.field39735, BlockStateProperties.OPEN)
+               .method12326(Direction.NORTH, Half.field271, false, Class5138.method15912().method15911(Class6891.field29864, var2))
                .method12326(
-                  net.minecraft.util.Direction.SOUTH,
-                  Class99.field271,
+                  Direction.SOUTH,
+                  Half.field271,
                   false,
                   Class5138.method15912().method15911(Class6891.field29864, var2).method15911(Class6891.field29863, Class2120.field13818)
                )
                .method12326(
-                  net.minecraft.util.Direction.EAST,
-                  Class99.field271,
+                  Direction.EAST,
+                  Half.field271,
                   false,
                   Class5138.method15912().method15911(Class6891.field29864, var2).method15911(Class6891.field29863, Class2120.field13817)
                )
                .method12326(
-                  net.minecraft.util.Direction.WEST,
-                  Class99.field271,
+                  Direction.WEST,
+                  Half.field271,
                   false,
                   Class5138.method15912().method15911(Class6891.field29864, var2).method15911(Class6891.field29863, Class2120.field13819)
                )
-               .method12326(net.minecraft.util.Direction.NORTH, Class99.field270, false, Class5138.method15912().method15911(Class6891.field29864, var1))
+               .method12326(Direction.NORTH, Half.field270, false, Class5138.method15912().method15911(Class6891.field29864, var1))
                .method12326(
-                  net.minecraft.util.Direction.SOUTH,
-                  Class99.field270,
+                  Direction.SOUTH,
+                  Half.field270,
                   false,
                   Class5138.method15912().method15911(Class6891.field29864, var1).method15911(Class6891.field29863, Class2120.field13818)
                )
                .method12326(
-                  net.minecraft.util.Direction.EAST,
-                  Class99.field270,
+                  Direction.EAST,
+                  Half.field270,
                   false,
                   Class5138.method15912().method15911(Class6891.field29864, var1).method15911(Class6891.field29863, Class2120.field13817)
                )
                .method12326(
-                  net.minecraft.util.Direction.WEST,
-                  Class99.field270,
+                  Direction.WEST,
+                  Half.field270,
                   false,
                   Class5138.method15912().method15911(Class6891.field29864, var1).method15911(Class6891.field29863, Class2120.field13819)
                )
-               .method12326(net.minecraft.util.Direction.NORTH, Class99.field271, true, Class5138.method15912().method15911(Class6891.field29864, var3))
+               .method12326(Direction.NORTH, Half.field271, true, Class5138.method15912().method15911(Class6891.field29864, var3))
                .method12326(
-                  net.minecraft.util.Direction.SOUTH,
-                  Class99.field271,
+                  Direction.SOUTH,
+                  Half.field271,
                   true,
                   Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13818)
                )
                .method12326(
-                  net.minecraft.util.Direction.EAST,
-                  Class99.field271,
+                  Direction.EAST,
+                  Half.field271,
                   true,
                   Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13817)
                )
                .method12326(
-                  net.minecraft.util.Direction.WEST,
-                  Class99.field271,
+                  Direction.WEST,
+                  Half.field271,
                   true,
                   Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13819)
                )
                .method12326(
-                  net.minecraft.util.Direction.NORTH,
-                  Class99.field270,
+                  Direction.NORTH,
+                  Half.field270,
                   true,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
@@ -815,8 +820,8 @@ public class Class9407 {
                      .method15911(Class6891.field29863, Class2120.field13818)
                )
                .method12326(
-                  net.minecraft.util.Direction.SOUTH,
-                  Class99.field270,
+                  Direction.SOUTH,
+                  Half.field270,
                   true,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
@@ -824,8 +829,8 @@ public class Class9407 {
                      .method15911(Class6891.field29863, Class2120.field13816)
                )
                .method12326(
-                  net.minecraft.util.Direction.EAST,
-                  Class99.field270,
+                  Direction.EAST,
+                  Half.field270,
                   true,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
@@ -833,8 +838,8 @@ public class Class9407 {
                      .method15911(Class6891.field29863, Class2120.field13819)
                )
                .method12326(
-                  net.minecraft.util.Direction.WEST,
-                  Class99.field270,
+                  Direction.WEST,
+                  Half.field270,
                   true,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
@@ -847,50 +852,50 @@ public class Class9407 {
    private static Class5146 method35828(Block var0, ResourceLocation var1, ResourceLocation var2, ResourceLocation var3) {
       return Class5148.method15941(var0)
          .method15939(
-            Class3629.<net.minecraft.util.Direction, Class99, Boolean>method12312(Class8820.field39722, Class8820.field39735, Class8820.field39702)
-               .method12326(net.minecraft.util.Direction.NORTH, Class99.field271, false, Class5138.method15912().method15911(Class6891.field29864, var2))
-               .method12326(net.minecraft.util.Direction.SOUTH, Class99.field271, false, Class5138.method15912().method15911(Class6891.field29864, var2))
-               .method12326(net.minecraft.util.Direction.EAST, Class99.field271, false, Class5138.method15912().method15911(Class6891.field29864, var2))
-               .method12326(net.minecraft.util.Direction.WEST, Class99.field271, false, Class5138.method15912().method15911(Class6891.field29864, var2))
-               .method12326(net.minecraft.util.Direction.NORTH, Class99.field270, false, Class5138.method15912().method15911(Class6891.field29864, var1))
-               .method12326(net.minecraft.util.Direction.SOUTH, Class99.field270, false, Class5138.method15912().method15911(Class6891.field29864, var1))
-               .method12326(net.minecraft.util.Direction.EAST, Class99.field270, false, Class5138.method15912().method15911(Class6891.field29864, var1))
-               .method12326(net.minecraft.util.Direction.WEST, Class99.field270, false, Class5138.method15912().method15911(Class6891.field29864, var1))
-               .method12326(net.minecraft.util.Direction.NORTH, Class99.field271, true, Class5138.method15912().method15911(Class6891.field29864, var3))
+            Class3629.<Direction, Half, Boolean>method12312(BlockStateProperties.HORIZONTAL_FACING, BlockStateProperties.field39735, BlockStateProperties.OPEN)
+               .method12326(Direction.NORTH, Half.field271, false, Class5138.method15912().method15911(Class6891.field29864, var2))
+               .method12326(Direction.SOUTH, Half.field271, false, Class5138.method15912().method15911(Class6891.field29864, var2))
+               .method12326(Direction.EAST, Half.field271, false, Class5138.method15912().method15911(Class6891.field29864, var2))
+               .method12326(Direction.WEST, Half.field271, false, Class5138.method15912().method15911(Class6891.field29864, var2))
+               .method12326(Direction.NORTH, Half.field270, false, Class5138.method15912().method15911(Class6891.field29864, var1))
+               .method12326(Direction.SOUTH, Half.field270, false, Class5138.method15912().method15911(Class6891.field29864, var1))
+               .method12326(Direction.EAST, Half.field270, false, Class5138.method15912().method15911(Class6891.field29864, var1))
+               .method12326(Direction.WEST, Half.field270, false, Class5138.method15912().method15911(Class6891.field29864, var1))
+               .method12326(Direction.NORTH, Half.field271, true, Class5138.method15912().method15911(Class6891.field29864, var3))
                .method12326(
-                  net.minecraft.util.Direction.SOUTH,
-                  Class99.field271,
+                  Direction.SOUTH,
+                  Half.field271,
                   true,
                   Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13818)
                )
                .method12326(
-                  net.minecraft.util.Direction.EAST,
-                  Class99.field271,
+                  Direction.EAST,
+                  Half.field271,
                   true,
                   Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13817)
                )
                .method12326(
-                  net.minecraft.util.Direction.WEST,
-                  Class99.field271,
+                  Direction.WEST,
+                  Half.field271,
                   true,
                   Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13819)
                )
-               .method12326(net.minecraft.util.Direction.NORTH, Class99.field270, true, Class5138.method15912().method15911(Class6891.field29864, var3))
+               .method12326(Direction.NORTH, Half.field270, true, Class5138.method15912().method15911(Class6891.field29864, var3))
                .method12326(
-                  net.minecraft.util.Direction.SOUTH,
-                  Class99.field270,
+                  Direction.SOUTH,
+                  Half.field270,
                   true,
                   Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13818)
                )
                .method12326(
-                  net.minecraft.util.Direction.EAST,
-                  Class99.field270,
+                  Direction.EAST,
+                  Half.field270,
                   true,
                   Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13817)
                )
                .method12326(
-                  net.minecraft.util.Direction.WEST,
-                  Class99.field270,
+                  Direction.WEST,
+                  Half.field270,
                   true,
                   Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13819)
                )
@@ -902,11 +907,11 @@ public class Class9407 {
    }
 
    private static Class3629 method35830() {
-      return Class3629.<Direction>method12310(Class8820.field39713)
-         .method12320(Direction.Y, Class5138.method15912())
-         .method12320(Direction.Z, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817))
+      return Class3629.<Direction.Axis>method12310(BlockStateProperties.field39713)
+         .method12320(Direction.Axis.Y, Class5138.method15912())
+         .method12320(Direction.Axis.Z, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817))
          .method12320(
-            Direction.X,
+            Direction.Axis.X,
             Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817).method15911(Class6891.field29863, Class2120.field13817)
          );
    }
@@ -932,13 +937,13 @@ public class Class9407 {
    private static Class5146 method35835(Block var0, ResourceLocation var1, ResourceLocation var2) {
       return Class5148.method15941(var0)
          .method15939(
-            Class3629.<Direction>method12310(Class8820.field39713)
-               .method12320(Direction.Y, Class5138.method15912().method15911(Class6891.field29864, var1))
+            Class3629.<Direction.Axis>method12310(BlockStateProperties.field39713)
+               .method12320(Direction.Axis.Y, Class5138.method15912().method15911(Class6891.field29864, var1))
                .method12320(
-                  Direction.Z, Class5138.method15912().method15911(Class6891.field29864, var2).method15911(Class6891.field29862, Class2120.field13817)
+                  Direction.Axis.Z, Class5138.method15912().method15911(Class6891.field29864, var2).method15911(Class6891.field29862, Class2120.field13817)
                )
                .method12320(
-                  Direction.X,
+                  Direction.Axis.X,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var2)
                      .method15911(Class6891.field29862, Class2120.field13817)
@@ -958,16 +963,16 @@ public class Class9407 {
    }
 
    private static Class5146 method35838(Block var0, ResourceLocation var1, ResourceLocation var2) {
-      return Class5148.method15941(var0).method15939(method35817(Class8820.field39704, var2, var1));
+      return Class5148.method15941(var0).method15939(method35817(BlockStateProperties.POWERED, var2, var1));
    }
 
    private static Class5146 method35839(Block var0, ResourceLocation var1, ResourceLocation var2, ResourceLocation var3) {
       return Class5148.method15941(var0)
          .method15939(
-            Class3629.<Class86>method12310(Class8820.field39770)
-               .method12320(Class86.field219, Class5138.method15912().method15911(Class6891.field29864, var1))
-               .method12320(Class86.field218, Class5138.method15912().method15911(Class6891.field29864, var2))
-               .method12320(Class86.field220, Class5138.method15912().method15911(Class6891.field29864, var3))
+            Class3629.<SlabType>method12310(BlockStateProperties.field39770)
+               .method12320(SlabType.field219, Class5138.method15912().method15911(Class6891.field29864, var1))
+               .method12320(SlabType.field218, Class5138.method15912().method15911(Class6891.field29864, var2))
+               .method12320(SlabType.field220, Class5138.method15912().method15911(Class6891.field29864, var3))
          );
    }
 
@@ -1086,18 +1091,18 @@ public class Class9407 {
          .accept(
             Class5148.method15942(var2, Class5138.method15912().method15911(Class6891.field29864, var7))
                .method15939(
-                  Class3629.<net.minecraft.util.Direction>method12310(Class8820.field39722)
-                     .method12320(net.minecraft.util.Direction.WEST, Class5138.method15912())
-                     .method12320(net.minecraft.util.Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13819))
-                     .method12320(net.minecraft.util.Direction.NORTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13817))
-                     .method12320(net.minecraft.util.Direction.EAST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13818))
+                  Class3629.<Direction>method12310(BlockStateProperties.HORIZONTAL_FACING)
+                     .method12320(Direction.WEST, Class5138.method15912())
+                     .method12320(Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13819))
+                     .method12320(Direction.NORTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13817))
+                     .method12320(Direction.EAST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13818))
                )
          );
       this.field43642
          .accept(
             Class5148.method15941(var1)
                .method15939(
-                  Class3629.<Integer>method12310(Class8820.field39742)
+                  Class3629.<Integer>method12310(BlockStateProperties.field39742)
                      .method12321(
                         var3 -> Class5138.method15912().method15911(Class6891.field29864, Class9756.field45600[var3].method34805(var1, var5, this.field43643))
                      )
@@ -1139,9 +1144,9 @@ public class Class9407 {
          .accept(
             Class5148.method15941(var1)
                .method15939(
-                  Class3629.<Class84>method12310(Class8820.field39734)
-                     .method12320(Class84.field210, Class5138.method15912().method15911(Class6891.field29864, var3))
-                     .method12320(Class84.field209, Class5138.method15912().method15911(Class6891.field29864, var2))
+                  Class3629.<DoubleBlockHalf>method12310(BlockStateProperties.DOUBLE_BLOCK_HALF)
+                     .method12320(DoubleBlockHalf.field210, Class5138.method15912().method15911(Class6891.field29864, var3))
+                     .method12320(DoubleBlockHalf.field209, Class5138.method15912().method15911(Class6891.field29864, var2))
                )
          );
    }
@@ -1158,33 +1163,33 @@ public class Class9407 {
          .accept(
             Class5148.method15941(var1)
                .method15939(
-                  Class3629.<Class96>method12310(Class8820.field39736)
-                     .method12320(Class96.field247, Class5138.method15912().method15911(Class6891.field29864, var6))
+                  Class3629.<RailShape>method12310(BlockStateProperties.field39736)
+                     .method12320(RailShape.field247, Class5138.method15912().method15911(Class6891.field29864, var6))
                      .method12320(
-                        Class96.field248,
+                        RailShape.field248,
                         Class5138.method15912().method15911(Class6891.field29864, var6).method15911(Class6891.field29863, Class2120.field13817)
                      )
                      .method12320(
-                        Class96.field249,
+                        RailShape.field249,
                         Class5138.method15912().method15911(Class6891.field29864, var8).method15911(Class6891.field29863, Class2120.field13817)
                      )
                      .method12320(
-                        Class96.field250,
+                        RailShape.field250,
                         Class5138.method15912().method15911(Class6891.field29864, var9).method15911(Class6891.field29863, Class2120.field13817)
                      )
-                     .method12320(Class96.field251, Class5138.method15912().method15911(Class6891.field29864, var8))
-                     .method12320(Class96.field252, Class5138.method15912().method15911(Class6891.field29864, var9))
-                     .method12320(Class96.field253, Class5138.method15912().method15911(Class6891.field29864, var7))
+                     .method12320(RailShape.field251, Class5138.method15912().method15911(Class6891.field29864, var8))
+                     .method12320(RailShape.field252, Class5138.method15912().method15911(Class6891.field29864, var9))
+                     .method12320(RailShape.field253, Class5138.method15912().method15911(Class6891.field29864, var7))
                      .method12320(
-                        Class96.field254,
+                        RailShape.field254,
                         Class5138.method15912().method15911(Class6891.field29864, var7).method15911(Class6891.field29863, Class2120.field13817)
                      )
                      .method12320(
-                        Class96.field255,
+                        RailShape.field255,
                         Class5138.method15912().method15911(Class6891.field29864, var7).method15911(Class6891.field29863, Class2120.field13818)
                      )
                      .method12320(
-                        Class96.field256,
+                        RailShape.field256,
                         Class5138.method15912().method15911(Class6891.field29864, var7).method15911(Class6891.field29863, Class2120.field13819)
                      )
                )
@@ -1198,7 +1203,7 @@ public class Class9407 {
       ResourceLocation var7 = this.method35837(var1, "_on", Class9756.field45583, Class7287::method23005);
       ResourceLocation var8 = this.method35837(var1, "_on", Class9756.field45585, Class7287::method23005);
       ResourceLocation var9 = this.method35837(var1, "_on", Class9756.field45586, Class7287::method23005);
-      Class3629 var10 = Class3629.<Boolean, Class96>method12311(Class8820.field39704, Class8820.field39737).method12301((var6x, var7x) -> {
+      Class3629 var10 = Class3629.<Boolean, RailShape>method12311(BlockStateProperties.POWERED, BlockStateProperties.field39737).method12301((var6x, var7x) -> {
          switch (Class8902.field40295[var7x.ordinal()]) {
             case 1:
                return Class5138.method15912().method15911(Class6891.field29864, var6x ? var7 : var4);
@@ -1272,24 +1277,24 @@ public class Class9407 {
          .accept(
             Class5147.method15932(var2)
                .method15934(Class5138.method15912().method15911(Class6891.field29864, var6))
-               .method15937(Class5141.method15919().method15924(Class8820.field39716, true), Class5138.method15912().method15911(Class6891.field29864, var7))
+               .method15937(Class5141.method15919().method15924(BlockStateProperties.field39716, true), Class5138.method15912().method15911(Class6891.field29864, var7))
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39717, true),
+                  Class5141.method15919().method15924(BlockStateProperties.field39717, true),
                   Class5138.method15912().method15911(Class6891.field29864, var7).method15911(Class6891.field29863, Class2120.field13817)
                )
-               .method15937(Class5141.method15919().method15924(Class8820.field39718, true), Class5138.method15912().method15911(Class6891.field29864, var8))
+               .method15937(Class5141.method15919().method15924(BlockStateProperties.field39718, true), Class5138.method15912().method15911(Class6891.field29864, var8))
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39719, true),
+                  Class5141.method15919().method15924(BlockStateProperties.field39719, true),
                   Class5138.method15912().method15911(Class6891.field29864, var8).method15911(Class6891.field29863, Class2120.field13817)
                )
-               .method15937(Class5141.method15919().method15924(Class8820.field39716, false), Class5138.method15912().method15911(Class6891.field29864, var9))
-               .method15937(Class5141.method15919().method15924(Class8820.field39717, false), Class5138.method15912().method15911(Class6891.field29864, var10))
+               .method15937(Class5141.method15919().method15924(BlockStateProperties.field39716, false), Class5138.method15912().method15911(Class6891.field29864, var9))
+               .method15937(Class5141.method15919().method15924(BlockStateProperties.field39717, false), Class5138.method15912().method15911(Class6891.field29864, var10))
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39718, false),
+                  Class5141.method15919().method15924(BlockStateProperties.field39718, false),
                   Class5138.method15912().method15911(Class6891.field29864, var10).method15911(Class6891.field29863, Class2120.field13817)
                )
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39719, false),
+                  Class5141.method15919().method15924(BlockStateProperties.field39719, false),
                   Class5138.method15912().method15911(Class6891.field29864, var9).method15911(Class6891.field29863, Class2120.field13819)
                )
          );
@@ -1299,7 +1304,7 @@ public class Class9407 {
       Class7287 var4 = Class7287.method23030(var1);
       ResourceLocation var5 = Class9756.field45598.method34805(var1, var4, this.field43643);
       ResourceLocation var6 = this.method35837(var1, "_conditional", Class9756.field45598, var1x -> var4.method22995(Class9588.field44833, var1x));
-      this.field43642.accept(Class5148.method15941(var1).method15939(method35817(Class8820.field39684, var6, var5)).method15939(method35813()));
+      this.field43642.accept(Class5148.method15941(var1).method15939(method35817(BlockStateProperties.field39684, var6, var5)).method15939(method35813()));
    }
 
    private void method35876(Block var1) {
@@ -1319,49 +1324,49 @@ public class Class9407 {
       this.field43642
          .accept(
             Class5147.method15932(Blocks.field37009)
-               .method15935(Class5141.method15919().method15924(Class8820.field39738, 0), this.method35877(0))
-               .method15935(Class5141.method15919().method15924(Class8820.field39738, 1), this.method35877(1))
+               .method15935(Class5141.method15919().method15924(BlockStateProperties.field39738, 0), this.method35877(0))
+               .method15935(Class5141.method15919().method15924(BlockStateProperties.field39738, 1), this.method35877(1))
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39773, Class181.field643),
+                  Class5141.method15919().method15924(BlockStateProperties.field39773, BambooLeaves.field643),
                   Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field37009, "_small_leaves"))
                )
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39773, Class181.field644),
+                  Class5141.method15919().method15924(BlockStateProperties.field39773, BambooLeaves.field644),
                   Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field37009, "_large_leaves"))
                )
          );
    }
 
    private Class3629 method35879() {
-      return Class3629.<net.minecraft.util.Direction>method12310(Class8820.field39720)
-         .method12320(net.minecraft.util.Direction.DOWN, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13818))
-         .method12320(net.minecraft.util.Direction.field673, Class5138.method15912())
-         .method12320(net.minecraft.util.Direction.NORTH, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817))
+      return Class3629.<Direction>method12310(BlockStateProperties.FACING)
+         .method12320(Direction.DOWN, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13818))
+         .method12320(Direction.UP, Class5138.method15912())
+         .method12320(Direction.NORTH, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817))
          .method12320(
-            net.minecraft.util.Direction.SOUTH,
+            Direction.SOUTH,
             Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817).method15911(Class6891.field29863, Class2120.field13818)
          )
          .method12320(
-            net.minecraft.util.Direction.WEST,
+            Direction.WEST,
             Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817).method15911(Class6891.field29863, Class2120.field13819)
          )
          .method12320(
-            net.minecraft.util.Direction.EAST,
+            Direction.EAST,
             Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817).method15911(Class6891.field29863, Class2120.field13817)
          );
    }
 
    private void method35880() {
-      ResourceLocation var3 = Class7287.method23042(Blocks.field37055, "_top_open");
+      ResourceLocation var3 = Class7287.method23042(Blocks.BARREL, "_top_open");
       this.field43642
          .accept(
-            Class5148.method15941(Blocks.field37055)
+            Class5148.method15941(Blocks.BARREL)
                .method15939(this.method35879())
                .method15939(
-                  Class3629.<Boolean>method12310(Class8820.field39702)
+                  Class3629.<Boolean>method12310(BlockStateProperties.OPEN)
                      .method12320(
                         false,
-                        Class5138.method15912().method15911(Class6891.field29864, Class7524.field32275.method25591(Blocks.field37055, this.field43643))
+                        Class5138.method15912().method15911(Class6891.field29864, Class7524.field32275.method25591(Blocks.BARREL, this.field43643))
                      )
                      .method12320(
                         true,
@@ -1369,9 +1374,9 @@ public class Class9407 {
                            .method15911(
                               Class6891.field29864,
                               Class7524.field32275
-                                 .method25590(Blocks.field37055)
+                                 .method25590(Blocks.BARREL)
                                  .method24561(var1 -> var1.method22991(Class9588.field44830, var3))
-                                 .method24563(Blocks.field37055, "_open", this.field43643)
+                                 .method24563(Blocks.BARREL, "_open", this.field43643)
                            )
                      )
                )
@@ -1392,7 +1397,7 @@ public class Class9407 {
       Class7287 var6 = var5.method22995(Class9588.field44831, Class7287.method23042(var1, "_front_honey"));
       ResourceLocation var7 = Class9756.field45544.method34805(var1, var5, this.field43643);
       ResourceLocation var8 = Class9756.field45544.method34806(var1, "_honey", var6, this.field43643);
-      this.field43642.accept(Class5148.method15941(var1).method15939(method35810()).method15939(method35881(Class8820.field39754, 5, var8, var7)));
+      this.field43642.accept(Class5148.method15941(var1).method15939(method35810()).method15939(method35881(BlockStateProperties.field39754, 5, var8, var7)));
    }
 
    private void method35883(Block var1, Class8550<Integer> var2, int... var3) {
@@ -1416,78 +1421,78 @@ public class Class9407 {
    }
 
    private void method35884() {
-      ResourceLocation var3 = Class9060.method33722(Blocks.field37064, "_floor");
-      ResourceLocation var4 = Class9060.method33722(Blocks.field37064, "_ceiling");
-      ResourceLocation var5 = Class9060.method33722(Blocks.field37064, "_wall");
-      ResourceLocation var6 = Class9060.method33722(Blocks.field37064, "_between_walls");
+      ResourceLocation var3 = Class9060.method33722(Blocks.BELL, "_floor");
+      ResourceLocation var4 = Class9060.method33722(Blocks.BELL, "_ceiling");
+      ResourceLocation var5 = Class9060.method33722(Blocks.BELL, "_wall");
+      ResourceLocation var6 = Class9060.method33722(Blocks.BELL, "_between_walls");
       this.method35807(Items.field38167);
       this.field43642
          .accept(
-            Class5148.method15941(Blocks.field37064)
+            Class5148.method15941(Blocks.BELL)
                .method15939(
-                  Class3629.<net.minecraft.util.Direction, Class85>method12311(Class8820.field39722, Class8820.field39725)
-                     .method12300(net.minecraft.util.Direction.NORTH, Class85.field212, Class5138.method15912().method15911(Class6891.field29864, var3))
+                  Class3629.<Direction, BellAttachment>method12311(BlockStateProperties.HORIZONTAL_FACING, BlockStateProperties.BELL_ATTACHMENT)
+                     .method12300(Direction.NORTH, BellAttachment.field212, Class5138.method15912().method15911(Class6891.field29864, var3))
                      .method12300(
-                        net.minecraft.util.Direction.SOUTH,
-                        Class85.field212,
+                        Direction.SOUTH,
+                        BellAttachment.field212,
                         Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13818)
                      )
                      .method12300(
-                        net.minecraft.util.Direction.EAST,
-                        Class85.field212,
+                        Direction.EAST,
+                        BellAttachment.field212,
                         Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13817)
                      )
                      .method12300(
-                        net.minecraft.util.Direction.WEST,
-                        Class85.field212,
+                        Direction.WEST,
+                        BellAttachment.field212,
                         Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13819)
                      )
-                     .method12300(net.minecraft.util.Direction.NORTH, Class85.field213, Class5138.method15912().method15911(Class6891.field29864, var4))
+                     .method12300(Direction.NORTH, BellAttachment.field213, Class5138.method15912().method15911(Class6891.field29864, var4))
                      .method12300(
-                        net.minecraft.util.Direction.SOUTH,
-                        Class85.field213,
+                        Direction.SOUTH,
+                        BellAttachment.field213,
                         Class5138.method15912().method15911(Class6891.field29864, var4).method15911(Class6891.field29863, Class2120.field13818)
                      )
                      .method12300(
-                        net.minecraft.util.Direction.EAST,
-                        Class85.field213,
+                        Direction.EAST,
+                        BellAttachment.field213,
                         Class5138.method15912().method15911(Class6891.field29864, var4).method15911(Class6891.field29863, Class2120.field13817)
                      )
                      .method12300(
-                        net.minecraft.util.Direction.WEST,
-                        Class85.field213,
+                        Direction.WEST,
+                        BellAttachment.field213,
                         Class5138.method15912().method15911(Class6891.field29864, var4).method15911(Class6891.field29863, Class2120.field13819)
                      )
                      .method12300(
-                        net.minecraft.util.Direction.NORTH,
-                        Class85.field214,
+                        Direction.NORTH,
+                        BellAttachment.field214,
                         Class5138.method15912().method15911(Class6891.field29864, var5).method15911(Class6891.field29863, Class2120.field13819)
                      )
                      .method12300(
-                        net.minecraft.util.Direction.SOUTH,
-                        Class85.field214,
+                        Direction.SOUTH,
+                        BellAttachment.field214,
                         Class5138.method15912().method15911(Class6891.field29864, var5).method15911(Class6891.field29863, Class2120.field13817)
                      )
-                     .method12300(net.minecraft.util.Direction.EAST, Class85.field214, Class5138.method15912().method15911(Class6891.field29864, var5))
+                     .method12300(Direction.EAST, BellAttachment.field214, Class5138.method15912().method15911(Class6891.field29864, var5))
                      .method12300(
-                        net.minecraft.util.Direction.WEST,
-                        Class85.field214,
+                        Direction.WEST,
+                        BellAttachment.field214,
                         Class5138.method15912().method15911(Class6891.field29864, var5).method15911(Class6891.field29863, Class2120.field13818)
                      )
                      .method12300(
-                        net.minecraft.util.Direction.SOUTH,
-                        Class85.field215,
+                        Direction.SOUTH,
+                        BellAttachment.field215,
                         Class5138.method15912().method15911(Class6891.field29864, var6).method15911(Class6891.field29863, Class2120.field13817)
                      )
                      .method12300(
-                        net.minecraft.util.Direction.NORTH,
-                        Class85.field215,
+                        Direction.NORTH,
+                        BellAttachment.field215,
                         Class5138.method15912().method15911(Class6891.field29864, var6).method15911(Class6891.field29863, Class2120.field13819)
                      )
-                     .method12300(net.minecraft.util.Direction.EAST, Class85.field215, Class5138.method15912().method15911(Class6891.field29864, var6))
+                     .method12300(Direction.EAST, BellAttachment.field215, Class5138.method15912().method15911(Class6891.field29864, var6))
                      .method12300(
-                        net.minecraft.util.Direction.WEST,
-                        Class85.field215,
+                        Direction.WEST,
+                        BellAttachment.field215,
                         Class5138.method15912().method15911(Class6891.field29864, var6).method15911(Class6891.field29863, Class2120.field13818)
                      )
                )
@@ -1497,43 +1502,43 @@ public class Class9407 {
    private void method35885() {
       this.field43642
          .accept(
-            Class5148.method15942(Blocks.field37060, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33723(Blocks.field37060)))
+            Class5148.method15942(Blocks.GRINDSTONE, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33723(Blocks.GRINDSTONE)))
                .method15939(
-                  Class3629.<Class103, net.minecraft.util.Direction>method12311(Class8820.field39724, Class8820.field39722)
-                     .method12300(Class103.field313, net.minecraft.util.Direction.NORTH, Class5138.method15912())
-                     .method12300(Class103.field313, net.minecraft.util.Direction.EAST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13817))
-                     .method12300(Class103.field313, net.minecraft.util.Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13818))
-                     .method12300(Class103.field313, net.minecraft.util.Direction.WEST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13819))
-                     .method12300(Class103.field314, net.minecraft.util.Direction.NORTH, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817))
+                  Class3629.<AttachFace, Direction>method12311(BlockStateProperties.FACE, BlockStateProperties.HORIZONTAL_FACING)
+                     .method12300(AttachFace.field313, Direction.NORTH, Class5138.method15912())
+                     .method12300(AttachFace.field313, Direction.EAST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13817))
+                     .method12300(AttachFace.field313, Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13818))
+                     .method12300(AttachFace.field313, Direction.WEST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13819))
+                     .method12300(AttachFace.field314, Direction.NORTH, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817))
                      .method12300(
-                        Class103.field314,
-                        net.minecraft.util.Direction.EAST,
+                        AttachFace.field314,
+                        Direction.EAST,
                         Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817).method15911(Class6891.field29863, Class2120.field13817)
                      )
                      .method12300(
-                        Class103.field314,
-                        net.minecraft.util.Direction.SOUTH,
+                        AttachFace.field314,
+                        Direction.SOUTH,
                         Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817).method15911(Class6891.field29863, Class2120.field13818)
                      )
                      .method12300(
-                        Class103.field314,
-                        net.minecraft.util.Direction.WEST,
+                        AttachFace.field314,
+                        Direction.WEST,
                         Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817).method15911(Class6891.field29863, Class2120.field13819)
                      )
-                     .method12300(Class103.field315, net.minecraft.util.Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13818))
+                     .method12300(AttachFace.field315, Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13818))
                      .method12300(
-                        Class103.field315,
-                        net.minecraft.util.Direction.WEST,
+                        AttachFace.field315,
+                        Direction.WEST,
                         Class5138.method15912().method15911(Class6891.field29862, Class2120.field13818).method15911(Class6891.field29863, Class2120.field13817)
                      )
                      .method12300(
-                        Class103.field315,
-                        net.minecraft.util.Direction.NORTH,
+                        AttachFace.field315,
+                        Direction.NORTH,
                         Class5138.method15912().method15911(Class6891.field29862, Class2120.field13818).method15911(Class6891.field29863, Class2120.field13818)
                      )
                      .method12300(
-                        Class103.field315,
-                        net.minecraft.util.Direction.EAST,
+                        AttachFace.field315,
+                        Direction.EAST,
                         Class5138.method15912().method15911(Class6891.field29862, Class2120.field13818).method15911(Class6891.field29863, Class2120.field13819)
                      )
                )
@@ -1544,7 +1549,7 @@ public class Class9407 {
       ResourceLocation var5 = var2.method25591(var1, this.field43643);
       ResourceLocation var6 = Class7287.method23042(var1, "_front_on");
       ResourceLocation var7 = var2.method25590(var1).method24561(var1x -> var1x.method22991(Class9588.field44831, var6)).method24563(var1, "_on", this.field43643);
-      this.field43642.accept(Class5148.method15941(var1).method15939(method35817(Class8820.field39699, var7, var5)).method15939(method35810()));
+      this.field43642.accept(Class5148.method15941(var1).method15939(method35817(BlockStateProperties.field39699, var7, var5)).method15939(method35810()));
    }
 
    private void method35887(Block... var1) {
@@ -1553,7 +1558,7 @@ public class Class9407 {
       for (Block var8 : var1) {
          ResourceLocation var9 = Class9756.field45609.method34805(var8, Class7287.method23037(var8), this.field43643);
          this.method35807(var8.method11581());
-         this.field43642.accept(Class5148.method15941(var8).method15939(method35817(Class8820.field39699, var9, var4)).method15939(method35811()));
+         this.field43642.accept(Class5148.method15941(var8).method15939(method35817(BlockStateProperties.field39699, var9, var4)).method15939(method35811()));
       }
    }
 
@@ -1571,63 +1576,63 @@ public class Class9407 {
                .method15937(
                   Class5141.method15920(
                      Class5141.method15919()
-                        .method15924(Class8820.field39731, Class98.field267)
-                        .method15924(Class8820.field39730, Class98.field267)
-                        .method15924(Class8820.field39732, Class98.field267)
-                        .method15924(Class8820.field39733, Class98.field267),
+                        .method15924(BlockStateProperties.field39731, RedstoneSide.field267)
+                        .method15924(BlockStateProperties.field39730, RedstoneSide.field267)
+                        .method15924(BlockStateProperties.field39732, RedstoneSide.field267)
+                        .method15924(BlockStateProperties.field39733, RedstoneSide.field267),
                      Class5141.method15919()
-                        .method15925(Class8820.field39731, Class98.field266, Class98.field265)
-                        .method15925(Class8820.field39730, Class98.field266, Class98.field265),
+                        .method15925(BlockStateProperties.field39731, RedstoneSide.field266, RedstoneSide.field265)
+                        .method15925(BlockStateProperties.field39730, RedstoneSide.field266, RedstoneSide.field265),
                      Class5141.method15919()
-                        .method15925(Class8820.field39730, Class98.field266, Class98.field265)
-                        .method15925(Class8820.field39732, Class98.field266, Class98.field265),
+                        .method15925(BlockStateProperties.field39730, RedstoneSide.field266, RedstoneSide.field265)
+                        .method15925(BlockStateProperties.field39732, RedstoneSide.field266, RedstoneSide.field265),
                      Class5141.method15919()
-                        .method15925(Class8820.field39732, Class98.field266, Class98.field265)
-                        .method15925(Class8820.field39733, Class98.field266, Class98.field265),
+                        .method15925(BlockStateProperties.field39732, RedstoneSide.field266, RedstoneSide.field265)
+                        .method15925(BlockStateProperties.field39733, RedstoneSide.field266, RedstoneSide.field265),
                      Class5141.method15919()
-                        .method15925(Class8820.field39733, Class98.field266, Class98.field265)
-                        .method15925(Class8820.field39731, Class98.field266, Class98.field265)
+                        .method15925(BlockStateProperties.field39733, RedstoneSide.field266, RedstoneSide.field265)
+                        .method15925(BlockStateProperties.field39731, RedstoneSide.field266, RedstoneSide.field265)
                   ),
                   Class5138.method15912().method15911(Class6891.field29864, Class9060.method33720("redstone_dust_dot"))
                )
                .method15937(
-                  Class5141.method15919().method15925(Class8820.field39731, Class98.field266, Class98.field265),
+                  Class5141.method15919().method15925(BlockStateProperties.field39731, RedstoneSide.field266, RedstoneSide.field265),
                   Class5138.method15912().method15911(Class6891.field29864, Class9060.method33720("redstone_dust_side0"))
                )
                .method15937(
-                  Class5141.method15919().method15925(Class8820.field39732, Class98.field266, Class98.field265),
+                  Class5141.method15919().method15925(BlockStateProperties.field39732, RedstoneSide.field266, RedstoneSide.field265),
                   Class5138.method15912().method15911(Class6891.field29864, Class9060.method33720("redstone_dust_side_alt0"))
                )
                .method15937(
-                  Class5141.method15919().method15925(Class8820.field39730, Class98.field266, Class98.field265),
+                  Class5141.method15919().method15925(BlockStateProperties.field39730, RedstoneSide.field266, RedstoneSide.field265),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, Class9060.method33720("redstone_dust_side_alt1"))
                      .method15911(Class6891.field29863, Class2120.field13819)
                )
                .method15937(
-                  Class5141.method15919().method15925(Class8820.field39733, Class98.field266, Class98.field265),
+                  Class5141.method15919().method15925(BlockStateProperties.field39733, RedstoneSide.field266, RedstoneSide.field265),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, Class9060.method33720("redstone_dust_side1"))
                      .method15911(Class6891.field29863, Class2120.field13819)
                )
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39731, Class98.field265),
+                  Class5141.method15919().method15924(BlockStateProperties.field39731, RedstoneSide.field265),
                   Class5138.method15912().method15911(Class6891.field29864, Class9060.method33720("redstone_dust_up"))
                )
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39730, Class98.field265),
+                  Class5141.method15919().method15924(BlockStateProperties.field39730, RedstoneSide.field265),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, Class9060.method33720("redstone_dust_up"))
                      .method15911(Class6891.field29863, Class2120.field13817)
                )
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39732, Class98.field265),
+                  Class5141.method15919().method15924(BlockStateProperties.field39732, RedstoneSide.field265),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, Class9060.method33720("redstone_dust_up"))
                      .method15911(Class6891.field29863, Class2120.field13818)
                )
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39733, Class98.field265),
+                  Class5141.method15919().method15924(BlockStateProperties.field39733, RedstoneSide.field265),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, Class9060.method33720("redstone_dust_up"))
                      .method15911(Class6891.field29863, Class2120.field13819)
@@ -1642,20 +1647,20 @@ public class Class9407 {
             Class5148.method15941(Blocks.COMPARATOR)
                .method15939(method35811())
                .method15939(
-                  Class3629.<Class105, Boolean>method12311(Class8820.field39766, Class8820.field39704)
+                  Class3629.<ComparatorMode, Boolean>method12311(BlockStateProperties.field39766, BlockStateProperties.POWERED)
                      .method12300(
-                        Class105.field325, false, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33723(Blocks.COMPARATOR))
+                        ComparatorMode.field325, false, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33723(Blocks.COMPARATOR))
                      )
                      .method12300(
-                        Class105.field325, true, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.COMPARATOR, "_on"))
+                        ComparatorMode.field325, true, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.COMPARATOR, "_on"))
                      )
                      .method12300(
-                        Class105.field326,
+                        ComparatorMode.field326,
                         false,
                         Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.COMPARATOR, "_subtract"))
                      )
                      .method12300(
-                        Class105.field326,
+                        ComparatorMode.field326,
                         true,
                         Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.COMPARATOR, "_on_subtract"))
                      )
@@ -1680,27 +1685,27 @@ public class Class9407 {
             Class5147.method15932(Blocks.field36647)
                .method15934(Class5138.method15912().method15911(Class6891.field29864, Class7287.method23041(Blocks.field36647)))
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39692, true),
+                  Class5141.method15919().method15924(BlockStateProperties.field39692, true),
                   Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.field36647, "_bottle0"))
                )
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39693, true),
+                  Class5141.method15919().method15924(BlockStateProperties.field39693, true),
                   Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.field36647, "_bottle1"))
                )
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39694, true),
+                  Class5141.method15919().method15924(BlockStateProperties.field39694, true),
                   Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.field36647, "_bottle2"))
                )
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39692, false),
+                  Class5141.method15919().method15924(BlockStateProperties.field39692, false),
                   Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.field36647, "_empty0"))
                )
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39693, false),
+                  Class5141.method15919().method15924(BlockStateProperties.field39693, false),
                   Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.field36647, "_empty1"))
                )
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39694, false),
+                  Class5141.method15919().method15924(BlockStateProperties.field39694, false),
                   Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.field36647, "_empty2"))
                )
          );
@@ -1712,73 +1717,73 @@ public class Class9407 {
       this.field43642
          .accept(
             Class5147.method15932(var1)
-               .method15937(Class5141.method15919().method15924(Class8820.field39716, true), Class5138.method15912().method15911(Class6891.field29864, var4))
+               .method15937(Class5141.method15919().method15924(BlockStateProperties.field39716, true), Class5138.method15912().method15911(Class6891.field29864, var4))
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39717, true),
+                  Class5141.method15919().method15924(BlockStateProperties.field39717, true),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var4)
                      .method15911(Class6891.field29863, Class2120.field13817)
                      .method15911(Class6891.field29865, true)
                )
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39718, true),
+                  Class5141.method15919().method15924(BlockStateProperties.field39718, true),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var4)
                      .method15911(Class6891.field29863, Class2120.field13818)
                      .method15911(Class6891.field29865, true)
                )
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39719, true),
+                  Class5141.method15919().method15924(BlockStateProperties.field39719, true),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var4)
                      .method15911(Class6891.field29863, Class2120.field13819)
                      .method15911(Class6891.field29865, true)
                )
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39714, true),
+                  Class5141.method15919().method15924(BlockStateProperties.field39714, true),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var4)
                      .method15911(Class6891.field29862, Class2120.field13819)
                      .method15911(Class6891.field29865, true)
                )
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39715, true),
+                  Class5141.method15919().method15924(BlockStateProperties.field39715, true),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var4)
                      .method15911(Class6891.field29862, Class2120.field13817)
                      .method15911(Class6891.field29865, true)
                )
-               .method15937(Class5141.method15919().method15924(Class8820.field39716, false), Class5138.method15912().method15911(Class6891.field29864, var5))
+               .method15937(Class5141.method15919().method15924(BlockStateProperties.field39716, false), Class5138.method15912().method15911(Class6891.field29864, var5))
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39717, false),
+                  Class5141.method15919().method15924(BlockStateProperties.field39717, false),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var5)
                      .method15911(Class6891.field29863, Class2120.field13817)
                      .method15911(Class6891.field29865, false)
                )
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39718, false),
+                  Class5141.method15919().method15924(BlockStateProperties.field39718, false),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var5)
                      .method15911(Class6891.field29863, Class2120.field13818)
                      .method15911(Class6891.field29865, false)
                )
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39719, false),
+                  Class5141.method15919().method15924(BlockStateProperties.field39719, false),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var5)
                      .method15911(Class6891.field29863, Class2120.field13819)
                      .method15911(Class6891.field29865, false)
                )
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39714, false),
+                  Class5141.method15919().method15924(BlockStateProperties.field39714, false),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var5)
                      .method15911(Class6891.field29862, Class2120.field13819)
                      .method15911(Class6891.field29865, false)
                )
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39715, false),
+                  Class5141.method15919().method15924(BlockStateProperties.field39715, false),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var5)
                      .method15911(Class6891.field29862, Class2120.field13817)
@@ -1794,7 +1799,7 @@ public class Class9407 {
          .accept(
             Class5148.method15941(Blocks.field36591)
                .method15939(
-                  Class3629.<Integer>method12310(Class8820.field39745)
+                  Class3629.<Integer>method12310(BlockStateProperties.field39745)
                      .method12320(0, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33723(Blocks.field36591)))
                      .method12320(1, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field36591, "_slice1")))
                      .method12320(2, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field36591, "_slice2")))
@@ -1808,26 +1813,26 @@ public class Class9407 {
 
    private void method35895() {
       Class7287 var3 = new Class7287()
-         .method22991(Class9588.field44827, Class7287.method23042(Blocks.field37058, "_side3"))
+         .method22991(Class9588.field44827, Class7287.method23042(Blocks.CARTOGRAPHY_TABLE, "_side3"))
          .method22991(Class9588.field44839, Class7287.method23041(Blocks.field36405))
-         .method22991(Class9588.field44838, Class7287.method23042(Blocks.field37058, "_top"))
-         .method22991(Class9588.field44834, Class7287.method23042(Blocks.field37058, "_side3"))
-         .method22991(Class9588.field44836, Class7287.method23042(Blocks.field37058, "_side3"))
-         .method22991(Class9588.field44835, Class7287.method23042(Blocks.field37058, "_side1"))
-         .method22991(Class9588.field44837, Class7287.method23042(Blocks.field37058, "_side2"));
-      this.field43642.accept(method35829(Blocks.field37058, Class9756.field45535.method34805(Blocks.field37058, var3, this.field43643)));
+         .method22991(Class9588.field44838, Class7287.method23042(Blocks.CARTOGRAPHY_TABLE, "_top"))
+         .method22991(Class9588.field44834, Class7287.method23042(Blocks.CARTOGRAPHY_TABLE, "_side3"))
+         .method22991(Class9588.field44836, Class7287.method23042(Blocks.CARTOGRAPHY_TABLE, "_side3"))
+         .method22991(Class9588.field44835, Class7287.method23042(Blocks.CARTOGRAPHY_TABLE, "_side1"))
+         .method22991(Class9588.field44837, Class7287.method23042(Blocks.CARTOGRAPHY_TABLE, "_side2"));
+      this.field43642.accept(method35829(Blocks.CARTOGRAPHY_TABLE, Class9756.field45535.method34805(Blocks.CARTOGRAPHY_TABLE, var3, this.field43643)));
    }
 
    private void method35896() {
       Class7287 var3 = new Class7287()
-         .method22991(Class9588.field44827, Class7287.method23042(Blocks.field37062, "_front"))
-         .method22991(Class9588.field44839, Class7287.method23042(Blocks.field37062, "_bottom"))
-         .method22991(Class9588.field44838, Class7287.method23042(Blocks.field37062, "_top"))
-         .method22991(Class9588.field44834, Class7287.method23042(Blocks.field37062, "_front"))
-         .method22991(Class9588.field44835, Class7287.method23042(Blocks.field37062, "_front"))
-         .method22991(Class9588.field44836, Class7287.method23042(Blocks.field37062, "_side"))
-         .method22991(Class9588.field44837, Class7287.method23042(Blocks.field37062, "_side"));
-      this.field43642.accept(method35829(Blocks.field37062, Class9756.field45535.method34805(Blocks.field37062, var3, this.field43643)));
+         .method22991(Class9588.field44827, Class7287.method23042(Blocks.SMITHING_TABLE, "_front"))
+         .method22991(Class9588.field44839, Class7287.method23042(Blocks.SMITHING_TABLE, "_bottom"))
+         .method22991(Class9588.field44838, Class7287.method23042(Blocks.SMITHING_TABLE, "_top"))
+         .method22991(Class9588.field44834, Class7287.method23042(Blocks.SMITHING_TABLE, "_front"))
+         .method22991(Class9588.field44835, Class7287.method23042(Blocks.SMITHING_TABLE, "_front"))
+         .method22991(Class9588.field44836, Class7287.method23042(Blocks.SMITHING_TABLE, "_side"))
+         .method22991(Class9588.field44837, Class7287.method23042(Blocks.SMITHING_TABLE, "_side"));
+      this.field43642.accept(method35829(Blocks.SMITHING_TABLE, Class9756.field45535.method34805(Blocks.SMITHING_TABLE, var3, this.field43643)));
    }
 
    private void method35897(Block var1, Block var2, BiFunction<Block, Block, Class7287> var3) {
@@ -1853,7 +1858,7 @@ public class Class9407 {
          .accept(
             Class5148.method15941(Blocks.field36648)
                .method15939(
-                  Class3629.<Integer>method12310(Class8820.field39751)
+                  Class3629.<Integer>method12310(BlockStateProperties.field39751)
                      .method12320(0, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33723(Blocks.field36648)))
                      .method12320(1, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field36648, "_level1")))
                      .method12320(2, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field36648, "_level2")))
@@ -1873,7 +1878,7 @@ public class Class9407 {
       Class7287 var3 = Class7287.method22997(Blocks.field36879);
       ResourceLocation var4 = Class9756.field45591.method34805(Blocks.field36879, var3, this.field43643);
       ResourceLocation var5 = this.method35837(Blocks.field36879, "_dead", Class9756.field45591, var1 -> var3.method22995(Class9588.field44826, var1));
-      this.field43642.accept(Class5148.method15941(Blocks.field36879).method15939(method35881(Class8820.field39741, 5, var5, var4)));
+      this.field43642.accept(Class5148.method15941(Blocks.field36879).method15939(method35881(BlockStateProperties.field39741, 5, var5, var4)));
    }
 
    private void method35903(Block var1) {
@@ -1890,23 +1895,23 @@ public class Class9407 {
          .accept(
             Class5148.method15941(var1)
                .method15939(
-                  Class3629.<net.minecraft.util.Direction>method12310(Class8820.field39720)
+                  Class3629.<Direction>method12310(BlockStateProperties.FACING)
                      .method12320(
-                        net.minecraft.util.Direction.DOWN,
+                        Direction.DOWN,
                         Class5138.method15912().method15911(Class6891.field29864, var7).method15911(Class6891.field29862, Class2120.field13818)
                      )
-                     .method12320(net.minecraft.util.Direction.field673, Class5138.method15912().method15911(Class6891.field29864, var7))
-                     .method12320(net.minecraft.util.Direction.NORTH, Class5138.method15912().method15911(Class6891.field29864, var6))
+                     .method12320(Direction.UP, Class5138.method15912().method15911(Class6891.field29864, var7))
+                     .method12320(Direction.NORTH, Class5138.method15912().method15911(Class6891.field29864, var6))
                      .method12320(
-                        net.minecraft.util.Direction.EAST,
+                        Direction.EAST,
                         Class5138.method15912().method15911(Class6891.field29864, var6).method15911(Class6891.field29863, Class2120.field13817)
                      )
                      .method12320(
-                        net.minecraft.util.Direction.SOUTH,
+                        Direction.SOUTH,
                         Class5138.method15912().method15911(Class6891.field29864, var6).method15911(Class6891.field29863, Class2120.field13818)
                      )
                      .method12320(
-                        net.minecraft.util.Direction.WEST,
+                        Direction.WEST,
                         Class5138.method15912().method15911(Class6891.field29864, var6).method15911(Class6891.field29863, Class2120.field13819)
                      )
                )
@@ -1920,7 +1925,7 @@ public class Class9407 {
          .accept(
             Class5148.method15941(Blocks.field36650)
                .method15939(
-                  Class3629.<Boolean>method12310(Class8820.field39689)
+                  Class3629.<Boolean>method12310(BlockStateProperties.field39689)
                      .method12320(false, Class5138.method15912().method15911(Class6891.field29864, var3))
                      .method12320(true, Class5138.method15912().method15911(Class6891.field29864, var4))
                )
@@ -1937,51 +1942,51 @@ public class Class9407 {
       this.field43642
          .accept(
             Class5147.method15932(Blocks.field36878)
-               .method15937(Class5141.method15919().method15924(Class8820.field39716, true), Class5138.method15912().method15911(Class6891.field29864, var3))
+               .method15937(Class5141.method15919().method15924(BlockStateProperties.field39716, true), Class5138.method15912().method15911(Class6891.field29864, var3))
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39717, true),
+                  Class5141.method15919().method15924(BlockStateProperties.field39717, true),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29863, Class2120.field13817)
                      .method15911(Class6891.field29865, true)
                )
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39718, true),
+                  Class5141.method15919().method15924(BlockStateProperties.field39718, true),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29863, Class2120.field13818)
                      .method15911(Class6891.field29865, true)
                )
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39719, true),
+                  Class5141.method15919().method15924(BlockStateProperties.field39719, true),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29863, Class2120.field13819)
                      .method15911(Class6891.field29865, true)
                )
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39714, true),
+                  Class5141.method15919().method15924(BlockStateProperties.field39714, true),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29862, Class2120.field13819)
                      .method15911(Class6891.field29865, true)
                )
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39715, true),
+                  Class5141.method15919().method15924(BlockStateProperties.field39715, true),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29862, Class2120.field13817)
                      .method15911(Class6891.field29865, true)
                )
                .method15936(
-                  Class5141.method15919().method15924(Class8820.field39716, false),
+                  Class5141.method15919().method15924(BlockStateProperties.field39716, false),
                   Class5138.method15912().method15911(Class6891.field29864, var4).method15911(Class6891.field29866, 2),
                   Class5138.method15912().method15911(Class6891.field29864, var5),
                   Class5138.method15912().method15911(Class6891.field29864, var6),
                   Class5138.method15912().method15911(Class6891.field29864, var7)
                )
                .method15936(
-                  Class5141.method15919().method15924(Class8820.field39717, false),
+                  Class5141.method15919().method15924(BlockStateProperties.field39717, false),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var5)
                      .method15911(Class6891.field29863, Class2120.field13817)
@@ -2001,7 +2006,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method15936(
-                  Class5141.method15919().method15924(Class8820.field39718, false),
+                  Class5141.method15919().method15924(BlockStateProperties.field39718, false),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var6)
                      .method15911(Class6891.field29863, Class2120.field13818)
@@ -2021,7 +2026,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method15936(
-                  Class5141.method15919().method15924(Class8820.field39719, false),
+                  Class5141.method15919().method15924(BlockStateProperties.field39719, false),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var7)
                      .method15911(Class6891.field29863, Class2120.field13819)
@@ -2041,7 +2046,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method15936(
-                  Class5141.method15919().method15924(Class8820.field39714, false),
+                  Class5141.method15919().method15924(BlockStateProperties.field39714, false),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var4)
                      .method15911(Class6891.field29866, 2)
@@ -2061,7 +2066,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method15936(
-                  Class5141.method15919().method15924(Class8820.field39715, false),
+                  Class5141.method15919().method15924(BlockStateProperties.field39715, false),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var7)
                      .method15911(Class6891.field29862, Class2120.field13817)
@@ -2089,35 +2094,35 @@ public class Class9407 {
             Class5147.method15932(Blocks.field37115)
                .method15934(Class5138.method15912().method15911(Class6891.field29864, Class7287.method23041(Blocks.field37115)))
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39752, 1),
+                  Class5141.method15919().method15924(BlockStateProperties.field39752, 1),
                   Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.field37115, "_contents1"))
                )
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39752, 2),
+                  Class5141.method15919().method15924(BlockStateProperties.field39752, 2),
                   Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.field37115, "_contents2"))
                )
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39752, 3),
+                  Class5141.method15919().method15924(BlockStateProperties.field39752, 3),
                   Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.field37115, "_contents3"))
                )
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39752, 4),
+                  Class5141.method15919().method15924(BlockStateProperties.field39752, 4),
                   Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.field37115, "_contents4"))
                )
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39752, 5),
+                  Class5141.method15919().method15924(BlockStateProperties.field39752, 5),
                   Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.field37115, "_contents5"))
                )
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39752, 6),
+                  Class5141.method15919().method15924(BlockStateProperties.field39752, 6),
                   Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.field37115, "_contents6"))
                )
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39752, 7),
+                  Class5141.method15919().method15924(BlockStateProperties.field39752, 7),
                   Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.field37115, "_contents7"))
                )
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39752, 8),
+                  Class5141.method15919().method15924(BlockStateProperties.field39752, 8),
                   Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.field37115, "_contents_ready"))
                )
          );
@@ -2143,7 +2148,7 @@ public class Class9407 {
          .accept(
             Class5148.method15941(Blocks.field36720)
                .method15939(
-                  Class3629.<Boolean>method12310(Class8820.field39697)
+                  Class3629.<Boolean>method12310(BlockStateProperties.field39697)
                      .method12320(
                         false,
                         Class5138.method15912()
@@ -2177,7 +2182,7 @@ public class Class9407 {
          .method22991(Class9588.field44830, Class7287.method23042(Blocks.FARMLAND, "_moist"));
       ResourceLocation var5 = Class9756.field45603.method34805(Blocks.FARMLAND, var3, this.field43643);
       ResourceLocation var6 = Class9756.field45603.method34808(Class7287.method23042(Blocks.FARMLAND, "_moist"), var4, this.field43643);
-      this.field43642.accept(Class5148.method15941(Blocks.FARMLAND).method15939(method35881(Class8820.field39756, 7, var6, var5)));
+      this.field43642.accept(Class5148.method15941(Blocks.FARMLAND).method15939(method35881(BlockStateProperties.field39756, 7, var6, var5)));
    }
 
    private List<ResourceLocation> method35911(Block var1) {
@@ -2211,11 +2216,11 @@ public class Class9407 {
 
    private void method35915() {
       Class5142 var3 = Class5141.method15919()
-         .method15924(Class8820.field39716, false)
-         .method15924(Class8820.field39717, false)
-         .method15924(Class8820.field39718, false)
-         .method15924(Class8820.field39719, false)
-         .method15924(Class8820.field39714, false);
+         .method15924(BlockStateProperties.field39716, false)
+         .method15924(BlockStateProperties.field39717, false)
+         .method15924(BlockStateProperties.field39718, false)
+         .method15924(BlockStateProperties.field39719, false)
+         .method15924(BlockStateProperties.field39714, false);
       List var4 = this.method35911(Blocks.FIRE);
       List var5 = this.method35912(Blocks.FIRE);
       List var6 = this.method35913(Blocks.FIRE);
@@ -2223,20 +2228,20 @@ public class Class9407 {
          .accept(
             Class5147.method15932(Blocks.FIRE)
                .method15935(var3, method35914(var4, var0 -> var0))
-               .method15935(Class5141.method15920(Class5141.method15919().method15924(Class8820.field39716, true), var3), method35914(var5, var0 -> var0))
+               .method15935(Class5141.method15920(Class5141.method15919().method15924(BlockStateProperties.field39716, true), var3), method35914(var5, var0 -> var0))
                .method15935(
-                  Class5141.method15920(Class5141.method15919().method15924(Class8820.field39717, true), var3),
+                  Class5141.method15920(Class5141.method15919().method15924(BlockStateProperties.field39717, true), var3),
                   method35914(var5, var0 -> var0.method15911(Class6891.field29863, Class2120.field13817))
                )
                .method15935(
-                  Class5141.method15920(Class5141.method15919().method15924(Class8820.field39718, true), var3),
+                  Class5141.method15920(Class5141.method15919().method15924(BlockStateProperties.field39718, true), var3),
                   method35914(var5, var0 -> var0.method15911(Class6891.field29863, Class2120.field13818))
                )
                .method15935(
-                  Class5141.method15920(Class5141.method15919().method15924(Class8820.field39719, true), var3),
+                  Class5141.method15920(Class5141.method15919().method15924(BlockStateProperties.field39719, true), var3),
                   method35914(var5, var0 -> var0.method15911(Class6891.field29863, Class2120.field13819))
                )
-               .method15935(Class5141.method15919().method15924(Class8820.field39714, true), method35914(var6, var0 -> var0))
+               .method15935(Class5141.method15919().method15924(BlockStateProperties.field39714, true), method35914(var6, var0 -> var0))
          );
    }
 
@@ -2258,7 +2263,7 @@ public class Class9407 {
       ResourceLocation var4 = Class7524.field32285.method25591(var1, this.field43643);
       ResourceLocation var5 = Class7524.field32286.method25591(var1, this.field43643);
       this.method35807(var1.method11581());
-      this.field43642.accept(Class5148.method15941(var1).method15939(method35817(Class8820.field39691, var5, var4)));
+      this.field43642.accept(Class5148.method15941(var1).method15939(method35817(BlockStateProperties.field39691, var5, var4)));
    }
 
    private void method35918() {
@@ -2266,7 +2271,7 @@ public class Class9407 {
          .accept(
             Class5148.method15941(Blocks.field36889)
                .method15939(
-                  Class3629.<Integer>method12310(Class8820.field39740)
+                  Class3629.<Integer>method12310(BlockStateProperties.field39740)
                      .method12320(
                         0,
                         Class5138.method15912()
@@ -2316,7 +2321,7 @@ public class Class9407 {
    private void method35920(Block var1, ResourceLocation var2, Class5138 var3) {
       List var6 = Arrays.<Class5138>asList(method35815(var2));
       this.field43642
-         .accept(Class5148.method15941(var1).method15939(Class3629.<Boolean>method12310(Class8820.field39707).method12320(true, var3).method12319(false, var6)));
+         .accept(Class5148.method15941(var1).method15939(Class3629.<Boolean>method12310(BlockStateProperties.field39707).method12320(true, var3).method12319(false, var6)));
    }
 
    private void method35921() {
@@ -2325,7 +2330,7 @@ public class Class9407 {
          .accept(
             Class5148.method15941(Blocks.COCOA)
                .method15939(
-                  Class3629.<Integer>method12310(Class8820.field39739)
+                  Class3629.<Integer>method12310(BlockStateProperties.field39739)
                      .method12320(0, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.COCOA, "_stage0")))
                      .method12320(1, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.COCOA, "_stage1")))
                      .method12320(2, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.COCOA, "_stage2")))
@@ -2342,7 +2347,7 @@ public class Class9407 {
       Class7287 var5 = Class7287.method22997(var2);
       ResourceLocation var6 = Class9756.field45564.method34805(var1, var5, this.field43643);
       ResourceLocation var7 = Class9756.field45565.method34805(var1, var5, this.field43643);
-      this.field43642.accept(Class5148.method15941(var1).method15939(method35881(Class8820.field39759, 1, var7, var6)));
+      this.field43642.accept(Class5148.method15941(var1).method15939(method35881(BlockStateProperties.field39759, 1, var7, var6)));
    }
 
    private void method35924() {
@@ -2353,19 +2358,19 @@ public class Class9407 {
          .accept(
             Class5148.method15941(Blocks.HOPPER)
                .method15939(
-                  Class3629.<net.minecraft.util.Direction>method12310(Class8820.field39721)
-                     .method12320(net.minecraft.util.Direction.DOWN, Class5138.method15912().method15911(Class6891.field29864, var3))
-                     .method12320(net.minecraft.util.Direction.NORTH, Class5138.method15912().method15911(Class6891.field29864, var4))
+                  Class3629.<Direction>method12310(BlockStateProperties.FACING_EXCEPT_UP)
+                     .method12320(Direction.DOWN, Class5138.method15912().method15911(Class6891.field29864, var3))
+                     .method12320(Direction.NORTH, Class5138.method15912().method15911(Class6891.field29864, var4))
                      .method12320(
-                        net.minecraft.util.Direction.EAST,
+                        Direction.EAST,
                         Class5138.method15912().method15911(Class6891.field29864, var4).method15911(Class6891.field29863, Class2120.field13817)
                      )
                      .method12320(
-                        net.minecraft.util.Direction.SOUTH,
+                        Direction.SOUTH,
                         Class5138.method15912().method15911(Class6891.field29864, var4).method15911(Class6891.field29863, Class2120.field13818)
                      )
                      .method12320(
-                        net.minecraft.util.Direction.WEST,
+                        Direction.WEST,
                         Class5138.method15912().method15911(Class6891.field29864, var4).method15911(Class6891.field29863, Class2120.field13819)
                      )
                )
@@ -2391,52 +2396,52 @@ public class Class9407 {
                .method15934(Class5138.method15912().method15911(Class6891.field29864, var3))
                .method15937(
                   Class5141.method15919()
-                     .method15924(Class8820.field39716, false)
-                     .method15924(Class8820.field39717, false)
-                     .method15924(Class8820.field39718, false)
-                     .method15924(Class8820.field39719, false),
+                     .method15924(BlockStateProperties.field39716, false)
+                     .method15924(BlockStateProperties.field39717, false)
+                     .method15924(BlockStateProperties.field39718, false)
+                     .method15924(BlockStateProperties.field39719, false),
                   Class5138.method15912().method15911(Class6891.field29864, var4)
                )
                .method15937(
                   Class5141.method15919()
-                     .method15924(Class8820.field39716, true)
-                     .method15924(Class8820.field39717, false)
-                     .method15924(Class8820.field39718, false)
-                     .method15924(Class8820.field39719, false),
+                     .method15924(BlockStateProperties.field39716, true)
+                     .method15924(BlockStateProperties.field39717, false)
+                     .method15924(BlockStateProperties.field39718, false)
+                     .method15924(BlockStateProperties.field39719, false),
                   Class5138.method15912().method15911(Class6891.field29864, var5)
                )
                .method15937(
                   Class5141.method15919()
-                     .method15924(Class8820.field39716, false)
-                     .method15924(Class8820.field39717, true)
-                     .method15924(Class8820.field39718, false)
-                     .method15924(Class8820.field39719, false),
+                     .method15924(BlockStateProperties.field39716, false)
+                     .method15924(BlockStateProperties.field39717, true)
+                     .method15924(BlockStateProperties.field39718, false)
+                     .method15924(BlockStateProperties.field39719, false),
                   Class5138.method15912().method15911(Class6891.field29864, var5).method15911(Class6891.field29863, Class2120.field13817)
                )
                .method15937(
                   Class5141.method15919()
-                     .method15924(Class8820.field39716, false)
-                     .method15924(Class8820.field39717, false)
-                     .method15924(Class8820.field39718, true)
-                     .method15924(Class8820.field39719, false),
+                     .method15924(BlockStateProperties.field39716, false)
+                     .method15924(BlockStateProperties.field39717, false)
+                     .method15924(BlockStateProperties.field39718, true)
+                     .method15924(BlockStateProperties.field39719, false),
                   Class5138.method15912().method15911(Class6891.field29864, var6)
                )
                .method15937(
                   Class5141.method15919()
-                     .method15924(Class8820.field39716, false)
-                     .method15924(Class8820.field39717, false)
-                     .method15924(Class8820.field39718, false)
-                     .method15924(Class8820.field39719, true),
+                     .method15924(BlockStateProperties.field39716, false)
+                     .method15924(BlockStateProperties.field39717, false)
+                     .method15924(BlockStateProperties.field39718, false)
+                     .method15924(BlockStateProperties.field39719, true),
                   Class5138.method15912().method15911(Class6891.field29864, var6).method15911(Class6891.field29863, Class2120.field13817)
                )
-               .method15937(Class5141.method15919().method15924(Class8820.field39716, true), Class5138.method15912().method15911(Class6891.field29864, var7))
+               .method15937(Class5141.method15919().method15924(BlockStateProperties.field39716, true), Class5138.method15912().method15911(Class6891.field29864, var7))
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39717, true),
+                  Class5141.method15919().method15924(BlockStateProperties.field39717, true),
                   Class5138.method15912().method15911(Class6891.field29864, var7).method15911(Class6891.field29863, Class2120.field13817)
                )
-               .method15937(Class5141.method15919().method15924(Class8820.field39718, true), Class5138.method15912().method15911(Class6891.field29864, var8))
+               .method15937(Class5141.method15919().method15924(BlockStateProperties.field39718, true), Class5138.method15912().method15911(Class6891.field29864, var8))
                .method15937(
-                  Class5141.method15919().method15924(Class8820.field39719, true),
+                  Class5141.method15919().method15924(BlockStateProperties.field39719, true),
                   Class5138.method15912().method15911(Class6891.field29864, var8).method15911(Class6891.field29863, Class2120.field13817)
                )
          );
@@ -2455,43 +2460,43 @@ public class Class9407 {
       this.field43642
          .accept(
             Class5148.method15941(Blocks.LEVER)
-               .method15939(method35817(Class8820.field39704, var3, var4))
+               .method15939(method35817(BlockStateProperties.POWERED, var3, var4))
                .method15939(
-                  Class3629.<Class103, net.minecraft.util.Direction>method12311(Class8820.field39724, Class8820.field39722)
+                  Class3629.<AttachFace, Direction>method12311(BlockStateProperties.FACE, BlockStateProperties.HORIZONTAL_FACING)
                      .method12300(
-                        Class103.field315,
-                        net.minecraft.util.Direction.NORTH,
+                        AttachFace.field315,
+                        Direction.NORTH,
                         Class5138.method15912().method15911(Class6891.field29862, Class2120.field13818).method15911(Class6891.field29863, Class2120.field13818)
                      )
                      .method12300(
-                        Class103.field315,
-                        net.minecraft.util.Direction.EAST,
+                        AttachFace.field315,
+                        Direction.EAST,
                         Class5138.method15912().method15911(Class6891.field29862, Class2120.field13818).method15911(Class6891.field29863, Class2120.field13819)
                      )
-                     .method12300(Class103.field315, net.minecraft.util.Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13818))
+                     .method12300(AttachFace.field315, Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13818))
                      .method12300(
-                        Class103.field315,
-                        net.minecraft.util.Direction.WEST,
+                        AttachFace.field315,
+                        Direction.WEST,
                         Class5138.method15912().method15911(Class6891.field29862, Class2120.field13818).method15911(Class6891.field29863, Class2120.field13817)
                      )
-                     .method12300(Class103.field313, net.minecraft.util.Direction.NORTH, Class5138.method15912())
-                     .method12300(Class103.field313, net.minecraft.util.Direction.EAST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13817))
-                     .method12300(Class103.field313, net.minecraft.util.Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13818))
-                     .method12300(Class103.field313, net.minecraft.util.Direction.WEST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13819))
-                     .method12300(Class103.field314, net.minecraft.util.Direction.NORTH, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817))
+                     .method12300(AttachFace.field313, Direction.NORTH, Class5138.method15912())
+                     .method12300(AttachFace.field313, Direction.EAST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13817))
+                     .method12300(AttachFace.field313, Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13818))
+                     .method12300(AttachFace.field313, Direction.WEST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13819))
+                     .method12300(AttachFace.field314, Direction.NORTH, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817))
                      .method12300(
-                        Class103.field314,
-                        net.minecraft.util.Direction.EAST,
+                        AttachFace.field314,
+                        Direction.EAST,
                         Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817).method15911(Class6891.field29863, Class2120.field13817)
                      )
                      .method12300(
-                        Class103.field314,
-                        net.minecraft.util.Direction.SOUTH,
+                        AttachFace.field314,
+                        Direction.SOUTH,
                         Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817).method15911(Class6891.field29863, Class2120.field13818)
                      )
                      .method12300(
-                        Class103.field314,
-                        net.minecraft.util.Direction.WEST,
+                        AttachFace.field314,
+                        Direction.WEST,
                         Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817).method15911(Class6891.field29863, Class2120.field13819)
                      )
                )
@@ -2508,12 +2513,12 @@ public class Class9407 {
          .accept(
             Class5148.method15941(Blocks.field36588)
                .method15939(
-                  Class3629.<Direction>method12310(Class8820.field39712)
+                  Class3629.<Direction.Axis>method12310(BlockStateProperties.field39712)
                      .method12320(
-                        Direction.X, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field36588, "_ns"))
+                        Direction.Axis.X, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field36588, "_ns"))
                      )
                      .method12320(
-                        Direction.Z, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field36588, "_ew"))
+                        Direction.Axis.Z, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field36588, "_ew"))
                      )
                )
          );
@@ -2575,7 +2580,7 @@ public class Class9407 {
    private void method35932() {
       ResourceLocation var3 = Class9060.method33723(Blocks.field36895);
       ResourceLocation var4 = Class9060.method33722(Blocks.field36895, "_on");
-      this.field43642.accept(Class5148.method15941(Blocks.field36895).method15939(method35817(Class8820.field39704, var4, var3)).method15939(method35813()));
+      this.field43642.accept(Class5148.method15941(Blocks.field36895).method15939(method35817(BlockStateProperties.POWERED, var4, var3)).method15939(method35813()));
    }
 
    private void method35933() {
@@ -2597,7 +2602,7 @@ public class Class9407 {
 
    private void method35934(Block var1, ResourceLocation var2, Class7287 var3) {
       ResourceLocation var6 = Class9756.field45614.method34805(var1, var3, this.field43643);
-      this.field43642.accept(Class5148.method15941(var1).method15939(method35817(Class8820.field39688, var2, var6)).method15939(method35813()));
+      this.field43642.accept(Class5148.method15941(var1).method15939(method35817(BlockStateProperties.field39688, var2, var6)).method15939(method35813()));
    }
 
    private void method35935() {
@@ -2610,28 +2615,28 @@ public class Class9407 {
          .accept(
             Class5148.method15941(Blocks.PISTON_HEAD)
                .method15939(
-                  Class3629.<Boolean, Class180>method12311(Class8820.field39705, Class8820.field39769)
+                  Class3629.<Boolean, PistonType>method12311(BlockStateProperties.field39705, BlockStateProperties.field39769)
                      .method12300(
                         false,
-                        Class180.field638,
+                        PistonType.field638,
                         Class5138.method15912()
                            .method15911(Class6891.field29864, Class9756.field45615.method34806(Blocks.PISTON, "_head", var5, this.field43643))
                      )
                      .method12300(
                         false,
-                        Class180.field639,
+                        PistonType.field639,
                         Class5138.method15912()
                            .method15911(Class6891.field29864, Class9756.field45615.method34806(Blocks.PISTON, "_head_sticky", var4, this.field43643))
                      )
                      .method12300(
                         true,
-                        Class180.field638,
+                        PistonType.field638,
                         Class5138.method15912()
                            .method15911(Class6891.field29864, Class9756.field45616.method34806(Blocks.PISTON, "_head_short", var5, this.field43643))
                      )
                      .method12300(
                         true,
-                        Class180.field639,
+                        PistonType.field639,
                         Class5138.method15912()
                            .method15911(
                               Class6891.field29864, Class9756.field45616.method34806(Blocks.PISTON, "_head_short_sticky", var4, this.field43643)
@@ -2646,13 +2651,13 @@ public class Class9407 {
       ResourceLocation var3 = Class9060.method33722(Blocks.field37053, "_stable");
       ResourceLocation var4 = Class9060.method33722(Blocks.field37053, "_unstable");
       this.method35805(Blocks.field37053, var3);
-      this.field43642.accept(Class5148.method15941(Blocks.field37053).method15939(method35817(Class8820.field39683, var4, var3)));
+      this.field43642.accept(Class5148.method15941(Blocks.field37053).method15939(method35817(BlockStateProperties.field39683, var4, var3)));
    }
 
    private void method35937() {
       ResourceLocation var3 = Class7524.field32271.method25591(Blocks.field36653, this.field43643);
       ResourceLocation var4 = this.method35837(Blocks.field36653, "_on", Class9756.field45537, Class7287::method22999);
-      this.field43642.accept(Class5148.method15941(Blocks.field36653).method15939(method35817(Class8820.field39699, var4, var3)));
+      this.field43642.accept(Class5148.method15941(Blocks.field36653).method15939(method35817(BlockStateProperties.field39699, var4, var3)));
    }
 
    private void method35938(Block var1, Block var2) {
@@ -2674,10 +2679,10 @@ public class Class9407 {
       Class7287 var4 = Class7287.method23028(Class7287.method23042(Blocks.field36568, "_off"));
       ResourceLocation var5 = Class9756.field45612.method34805(Blocks.field36568, var3, this.field43643);
       ResourceLocation var6 = Class9756.field45612.method34806(Blocks.field36568, "_off", var4, this.field43643);
-      this.field43642.accept(Class5148.method15941(Blocks.field36568).method15939(method35817(Class8820.field39699, var5, var6)));
+      this.field43642.accept(Class5148.method15941(Blocks.field36568).method15939(method35817(BlockStateProperties.field39699, var5, var6)));
       ResourceLocation var7 = Class9756.field45613.method34805(Blocks.field36569, var3, this.field43643);
       ResourceLocation var8 = Class9756.field45613.method34806(Blocks.field36569, "_off", var4, this.field43643);
-      this.field43642.accept(Class5148.method15941(Blocks.field36569).method15939(method35817(Class8820.field39699, var7, var8)).method15939(method35812()));
+      this.field43642.accept(Class5148.method15941(Blocks.field36569).method15939(method35817(BlockStateProperties.field39699, var7, var8)).method15939(method35812()));
       this.method35808(Blocks.field36568);
       this.method35804(Blocks.field36569);
    }
@@ -2688,7 +2693,7 @@ public class Class9407 {
          .accept(
             Class5148.method15941(Blocks.REPEATER)
                .method15939(
-                  Class3629.<Integer, Boolean, Boolean>method12312(Class8820.field39746, Class8820.field39700, Class8820.field39704)
+                  Class3629.<Integer, Boolean, Boolean>method12312(BlockStateProperties.field39746, BlockStateProperties.field39700, BlockStateProperties.POWERED)
                      .method12327((var0, var1, var2) -> {
                         StringBuilder var5 = new StringBuilder();
                         var5.append('_').append(var0).append("tick");
@@ -2713,7 +2718,7 @@ public class Class9407 {
          .accept(
             Class5148.method15941(Blocks.field37005)
                .method15939(
-                  Class3629.<Integer, Boolean>method12311(Class8820.field39758, Class8820.field39710)
+                  Class3629.<Integer, Boolean>method12311(BlockStateProperties.field39758, BlockStateProperties.field39710)
                      .method12299(1, false, Arrays.<Class5138>asList(method35815(Class9060.method33720("dead_sea_pickle"))))
                      .method12299(2, false, Arrays.<Class5138>asList(method35815(Class9060.method33720("two_dead_sea_pickles"))))
                      .method12299(3, false, Arrays.<Class5138>asList(method35815(Class9060.method33720("three_dead_sea_pickles"))))
@@ -2733,7 +2738,7 @@ public class Class9407 {
          .accept(
             Class5148.method15941(Blocks.SNOW)
                .method15939(
-                  Class3629.<Integer>method12310(Class8820.field39750)
+                  Class3629.<Integer>method12310(BlockStateProperties.field39750)
                      .method12321(
                         var1 -> Class5138.method15912()
                               .method15911(Class6891.field29864, var1 >= 8 ? var4 : Class9060.method33722(Blocks.SNOW, "_height" + var1 * 2))
@@ -2747,7 +2752,7 @@ public class Class9407 {
    private void method35943() {
       this.field43642
          .accept(
-            Class5148.method15942(Blocks.field37063, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33723(Blocks.field37063)))
+            Class5148.method15942(Blocks.STONECUTTER, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33723(Blocks.STONECUTTER)))
                .method15939(method35810())
          );
    }
@@ -2759,7 +2764,7 @@ public class Class9407 {
          .accept(
             Class5148.method15941(Blocks.field37113)
                .method15939(
-                  Class3629.<Class104>method12310(Class8820.field39772)
+                  Class3629.<StructureMode>method12310(BlockStateProperties.field39772)
                      .method12321(
                         var1 -> Class5138.method15912()
                               .method15911(
@@ -2777,7 +2782,7 @@ public class Class9407 {
          .accept(
             Class5148.method15941(Blocks.field37069)
                .method15939(
-                  Class3629.<Integer>method12310(Class8820.field39740)
+                  Class3629.<Integer>method12310(BlockStateProperties.field39740)
                      .method12321(
                         var1 -> Class5138.method15912()
                               .method15911(
@@ -2795,7 +2800,7 @@ public class Class9407 {
             Class5148.method15941(Blocks.TRIPWIRE)
                .method15939(
                   Class3629.<Boolean, Boolean, Boolean, Boolean, Boolean>method12314(
-                        Class8820.field39682, Class8820.field39717, Class8820.field39716, Class8820.field39718, Class8820.field39719
+                        BlockStateProperties.field39682, BlockStateProperties.field39717, BlockStateProperties.field39716, BlockStateProperties.field39718, BlockStateProperties.field39719
                      )
                      .method12318(
                         false,
@@ -3103,7 +3108,7 @@ public class Class9407 {
          .accept(
             Class5148.method15941(Blocks.TRIPWIRE_HOOK)
                .method15939(
-                  Class3629.<Boolean, Boolean>method12311(Class8820.field39682, Class8820.field39704)
+                  Class3629.<Boolean, Boolean>method12311(BlockStateProperties.field39682, BlockStateProperties.POWERED)
                      .method12301(
                         (var0, var1) -> Class5138.method15912()
                               .method15911(Class6891.field29864, Class7287.method23042(Blocks.TRIPWIRE_HOOK, (!var0 ? "" : "_attached") + (!var1 ? "" : "_on")))
@@ -3147,7 +3152,7 @@ public class Class9407 {
          .accept(
             Class5148.method15941(Blocks.field36964)
                .method15939(
-                  Class3629.<Integer, Integer>method12311(Class8820.field39748, Class8820.field39749)
+                  Class3629.<Integer, Integer>method12311(BlockStateProperties.field39748, BlockStateProperties.field39749)
                      .method12302((var1, var2) -> Arrays.<Class5138>asList(method35815(this.method35949(var1, var2))))
                )
          );
@@ -3160,7 +3165,7 @@ public class Class9407 {
             Class5148.method15941(Blocks.VINE)
                .method15939(
                   Class3629.<Boolean, Boolean, Boolean, Boolean, Boolean>method12314(
-                        Class8820.field39717, Class8820.field39716, Class8820.field39718, Class8820.field39714, Class8820.field39719
+                        BlockStateProperties.field39717, BlockStateProperties.field39716, BlockStateProperties.field39718, BlockStateProperties.field39714, BlockStateProperties.field39719
                      )
                      .method12318(
                         false,
@@ -3518,14 +3523,14 @@ public class Class9407 {
          .accept(
             Class5148.method15941(Blocks.field37124)
                .method15939(
-                  Class3629.<Integer>method12310(Class8820.field39762)
+                  Class3629.<Integer>method12310(BlockStateProperties.field39762)
                      .method12321(var1 -> Class5138.method15912().method15911(Class6891.field29864, var6[var1]))
                )
          );
       this.method35806(Items.field38197, var6[0]);
    }
 
-   private Class5138 method35959(Class182 var1, Class5138 var2) {
+   private Class5138 method35959(JigsawOrientation var1, Class5138 var2) {
       switch (Class8902.field40294[var1.ordinal()]) {
          case 1:
             return var2.method15911(Class6891.field29862, Class2120.field13817);
@@ -3573,7 +3578,7 @@ public class Class9407 {
       this.field43642
          .accept(
             Class5148.method15942(Blocks.field37114, Class5138.method15912().method15911(Class6891.field29864, var8))
-               .method15939(Class3629.<Class182>method12310(Class8820.field39723).method12321(var1 -> this.method35959(var1, Class5138.method15912())))
+               .method15939(Class3629.<JigsawOrientation>method12310(BlockStateProperties.ORIENTATION).method12321(var1 -> this.method35959(var1, Class5138.method15912())))
          );
    }
 
@@ -3660,8 +3665,8 @@ public class Class9407 {
       this.method35901(Blocks.CHISELED_SANDSTONE, Blocks.SANDSTONE);
       this.method35901(Blocks.field36836, Blocks.field36835);
       this.method35841(Blocks.field37137, Class7524.field32271);
-      this.method35923(Blocks.field36717, Blocks.field36521);
-      this.method35923(Blocks.field36718, Blocks.field36522);
+      this.method35923(Blocks.LIGHT_WEIGHTED_PRESSURE_PLATE, Blocks.field36521);
+      this.method35923(Blocks.HEAVY_WEIGHTED_PRESSURE_PLATE, Blocks.field36522);
       this.method35888();
       this.method35892();
       this.method35894();
@@ -3709,17 +3714,17 @@ public class Class9407 {
       this.method35960();
       this.method35927(Blocks.LADDER);
       this.method35808(Blocks.LADDER);
-      this.method35927(Blocks.field37061);
+      this.method35927(Blocks.LECTERN);
       this.method35938(Blocks.TORCH, Blocks.WALL_TORCH);
       this.method35938(Blocks.field36585, Blocks.field36586);
       this.method35897(Blocks.CRAFTING_TABLE, Blocks.field36400, Class7287::method23035);
-      this.method35897(Blocks.field37059, Blocks.field36402, Class7287::method23036);
+      this.method35897(Blocks.FLETCHING_TABLE, Blocks.field36402, Class7287::method23036);
       this.method35907(Blocks.field37083);
       this.method35907(Blocks.field37074);
       this.method35903(Blocks.DISPENSER);
       this.method35903(Blocks.DROPPER);
-      this.method35917(Blocks.field37065);
-      this.method35917(Blocks.field37066);
+      this.method35917(Blocks.LANTERN);
+      this.method35917(Blocks.SOUL_LANTERN);
       this.method35832(Blocks.CHAIN, Class9060.method33723(Blocks.CHAIN));
       this.method35833(Blocks.BASALT, Class7524.field32273);
       this.method35833(Blocks.POLISHED_BASALT, Class7524.field32273);
@@ -3731,15 +3736,15 @@ public class Class9407 {
       this.method35836(Blocks.field36777, Class7524.field32273, Class7524.field32274);
       this.method35836(Blocks.field36881, Class7524.field32288, Class7524.field32289);
       this.method35836(Blocks.field36726, Class7524.field32288, Class7524.field32289);
-      this.method35834(Blocks.field37054, Class7524.field32278);
+      this.method35834(Blocks.LOOM, Class7524.field32278);
       this.method35898();
       this.method35882(Blocks.field37117, Class7287::method23031);
       this.method35882(Blocks.field37118, Class7287::method23033);
-      this.method35883(Blocks.field36884, Class8820.field39740, 0, 1, 2, 3);
-      this.method35883(Blocks.field36693, Class8820.field39742, 0, 0, 1, 1, 2, 2, 2, 3);
-      this.method35883(Blocks.NETHER_WART, Class8820.field39740, 0, 1, 1, 2);
-      this.method35883(Blocks.field36694, Class8820.field39742, 0, 0, 1, 1, 2, 2, 2, 3);
-      this.method35883(Blocks.field36539, Class8820.field39742, 0, 1, 2, 3, 4, 5, 6, 7);
+      this.method35883(Blocks.field36884, BlockStateProperties.field39740, 0, 1, 2, 3);
+      this.method35883(Blocks.field36693, BlockStateProperties.field39742, 0, 0, 1, 1, 2, 2, 2, 3);
+      this.method35883(Blocks.NETHER_WART, BlockStateProperties.field39740, 0, 1, 1, 2);
+      this.method35883(Blocks.field36694, BlockStateProperties.field39742, 0, 0, 1, 1, 2, 2, 2, 3);
+      this.method35883(Blocks.field36539, BlockStateProperties.field39742, 0, 1, 2, 3, 4, 5, 6, 7);
       this.method35867(Class9060.method33720("banner"), Blocks.field36400)
          .method26608(
             Class9756.field45628,
@@ -3815,8 +3820,8 @@ public class Class9407 {
       this.method35955(Blocks.BLACK_BED, Blocks.BLACK_WOOL);
       this.method35867(Class9060.method33720("skull"), Blocks.SOUL_SAND)
          .method26608(Class9756.field45629, Blocks.field36709, Blocks.field36707, Blocks.field36705, Blocks.field36701, Blocks.field36703)
-         .method26606(Blocks.field36711)
-         .method26607(Blocks.field36710, Blocks.field36712, Blocks.field36708, Blocks.field36706, Blocks.field36702, Blocks.field36704);
+         .method26606(Blocks.DRAGON_HEAD)
+         .method26607(Blocks.field36710, Blocks.DRAGON_WALL_HEAD, Blocks.field36708, Blocks.field36706, Blocks.field36702, Blocks.field36704);
       this.method35953(Blocks.field36896);
       this.method35953(Blocks.field36897);
       this.method35953(Blocks.field36898);
@@ -4241,7 +4246,7 @@ public class Class9407 {
       this.method35884();
       this.method35886(Blocks.FURNACE, Class7524.field32277);
       this.method35886(Blocks.BLAST_FURNACE, Class7524.field32277);
-      this.method35886(Blocks.field37056, Class7524.field32278);
+      this.method35886(Blocks.SMOKER, Class7524.field32278);
       this.method35889();
       this.method35958();
       this.method35925(Blocks.field36618, Blocks.field36624);

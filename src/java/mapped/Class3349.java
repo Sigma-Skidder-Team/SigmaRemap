@@ -11,7 +11,7 @@ import net.minecraft.world.IBlockReader;
 public class Class3349 extends Class3348 {
    private static String[] field18864;
 
-   public Class3349(AbstractBlock var1) {
+   public Class3349(Properties var1) {
       super(var1, () -> TileEntityType.field21423);
    }
 
@@ -37,6 +37,6 @@ public class Class3349 extends Class3348 {
 
    @Override
    public int method11515(BlockState var1, IBlockReader var2, BlockPos var3, Direction var4) {
-      return var4 != Direction.field673 ? 0 : var1.method23402(var2, var3, var4);
+      return var4 != Direction.UP ? 0 : var1.method23402(var2, var3, var4);
    }
 }

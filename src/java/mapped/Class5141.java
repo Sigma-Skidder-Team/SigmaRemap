@@ -1,11 +1,13 @@
 package mapped;
 
 import com.google.gson.JsonElement;
+import net.minecraft.state.StateContainer;
+
 import java.util.Arrays;
 import java.util.function.Supplier;
 
 public interface Class5141 extends Supplier<JsonElement> {
-   void method15918(Class9348<?, ?> var1);
+   void method15918(StateContainer<?, ?> var1);
 
    static Class5142 method15919() {
       return new Class5142();

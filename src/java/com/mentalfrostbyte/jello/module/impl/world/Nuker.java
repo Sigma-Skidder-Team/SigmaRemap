@@ -39,8 +39,8 @@ public class Nuker extends Module {
     }
 
     public static void method16265(BlockPos var0) {
-        mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.START_DESTROY_BLOCK, var0, Direction.field673));
-        mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.STOP_DESTROY_BLOCK, var0, Direction.field673));
+        mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.START_DESTROY_BLOCK, var0, Direction.UP));
+        mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.STOP_DESTROY_BLOCK, var0, Direction.UP));
         mc.world.setBlockState(var0, Blocks.AIR.method11579());
     }
 

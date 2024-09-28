@@ -5,6 +5,8 @@ import com.google.common.collect.Maps;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.state.properties.DoubleBlockHalf;
+import net.minecraft.util.ObjectIntIdentityMap;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IBlockDisplayReader;
@@ -15,14 +17,14 @@ import java.util.Set;
 
 public class BlockColors {
    private static String[] field36031;
-   private final Class2352<Class8040> field36032 = new Class2352<Class8040>(32);
+   private final ObjectIntIdentityMap<Class8040> field36032 = new ObjectIntIdentityMap<Class8040>(32);
    private final Map<Block, Set<Class8550<?>>> field36033 = Maps.newHashMap();
 
    public static BlockColors init() {
       BlockColors var2 = new BlockColors();
       var2.method29466(
          (var0, var1, var2x, var3) -> var1 != null && var2x != null
-               ? Class8527.method30242(var1, var0.method23463(Class3456.field19276) != Class84.field209 ? var2x : var2x.down())
+               ? Class8527.method30242(var1, var0.get(Class3456.field19276) != DoubleBlockHalf.field209 ? var2x : var2x.down())
                : -1,
          Blocks.field36802,
          Blocks.TALL_GRASS
@@ -51,12 +53,12 @@ public class BlockColors {
          Blocks.field37013,
          Blocks.field36648
       );
-      var2.method29466((var0, var1, var2x, var3) -> Class3222.method11629(var0.<Integer>method23463(Class3222.field18651)), Blocks.REDSTONE_WIRE);
+      var2.method29466((var0, var1, var2x, var3) -> Class3222.method11629(var0.<Integer>get(Class3222.field18651)), Blocks.REDSTONE_WIRE);
       var2.method29468(Class3222.field18651, Blocks.REDSTONE_WIRE);
       var2.method29466((var0, var1, var2x, var3) -> var1 != null && var2x != null ? Class8527.method30242(var1, var2x) : -1, Blocks.SUGAR_CANE);
       var2.method29466((var0, var1, var2x, var3) -> 14731036, Blocks.ATTACHED_MELON_STEM, Blocks.ATTACHED_PUMPKIN_STEM);
       var2.method29466((var0, var1, var2x, var3) -> {
-         int var6 = var0.<Integer>method23463(Class3486.field19347);
+         int var6 = var0.<Integer>get(Class3486.field19347);
          int var7 = var6 * 32;
          int var8 = 255 - var6 * 8;
          int var9 = var6 * 4;

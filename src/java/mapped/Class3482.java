@@ -3,8 +3,11 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.Items;
+import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -13,20 +16,20 @@ import java.util.Random;
 
 public class Class3482 extends Class3480 {
    private static String[] field19333;
-   public static final Class8554 field19337 = Class8820.field39740;
+   public static final IntegerProperty field19337 = BlockStateProperties.field39740;
    private static final VoxelShape[] field19338 = new VoxelShape[]{
-      Block.method11539(0.0, 0.0, 0.0, 16.0, 2.0, 16.0),
-      Block.method11539(0.0, 0.0, 0.0, 16.0, 4.0, 16.0),
-      Block.method11539(0.0, 0.0, 0.0, 16.0, 6.0, 16.0),
-      Block.method11539(0.0, 0.0, 0.0, 16.0, 8.0, 16.0)
+      Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 2.0, 16.0),
+      Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 4.0, 16.0),
+      Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 6.0, 16.0),
+      Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 8.0, 16.0)
    };
 
-   public Class3482(AbstractBlock var1) {
+   public Class3482(Properties var1) {
       super(var1);
    }
 
    @Override
-   public Class8554 method12175() {
+   public IntegerProperty method12175() {
       return field19337;
    }
 
@@ -59,6 +62,6 @@ public class Class3482 extends Class3480 {
 
    @Override
    public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
-      return field19338[var1.<Integer>method23463(this.method12175())];
+      return field19338[var1.<Integer>get(this.method12175())];
    }
 }

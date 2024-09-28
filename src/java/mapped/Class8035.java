@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 
@@ -14,7 +15,7 @@ public class Class8035 extends Class8033 {
                Codec.FLOAT.fieldOf("max_chance").orElse(0.0F).forGetter(var0x -> var0x.field34525),
                Codec.INT.fieldOf("min_dist").orElse(0).forGetter(var0x -> var0x.field34526),
                Codec.INT.fieldOf("max_dist").orElse(0).forGetter(var0x -> var0x.field34527),
-               Direction.field417.fieldOf("axis").orElse(Direction.Y).forGetter(var0x -> var0x.field34528)
+               Direction.Axis.CODEC.fieldOf("axis").orElse(Direction.Axis.Y).forGetter(var0x -> var0x.field34528)
             )
             .apply(var0, Class8035::new)
    );
@@ -22,9 +23,9 @@ public class Class8035 extends Class8033 {
    private final float field34525;
    private final int field34526;
    private final int field34527;
-   private final Direction field34528;
+   private final Direction.Axis field34528;
 
-   public Class8035(float var1, float var2, int var3, int var4, Direction var5) {
+   public Class8035(float var1, float var2, int var3, int var4, Direction.Axis var5) {
       if (var3 < var4) {
          this.field34524 = var1;
          this.field34525 = var2;
@@ -38,10 +39,10 @@ public class Class8035 extends Class8033 {
 
    @Override
    public boolean method27553(BlockPos var1, BlockPos var2, BlockPos var3, Random var4) {
-      net.minecraft.util.Direction var7 = net.minecraft.util.Direction.method555(Class1892.field11092, this.field34528);
-      float var8 = (float)Math.abs((var2.getX() - var3.getX()) * var7.method539());
-      float var9 = (float)Math.abs((var2.getY() - var3.getY()) * var7.method540());
-      float var10 = (float)Math.abs((var2.getZ() - var3.getZ()) * var7.method541());
+      Direction var7 = Direction.getFacingFromAxis(Direction.AxisDirection.POSITIVE, this.field34528);
+      float var8 = (float)Math.abs((var2.getX() - var3.getX()) * var7.getXOffset());
+      float var9 = (float)Math.abs((var2.getY() - var3.getY()) * var7.getYOffset());
+      float var10 = (float)Math.abs((var2.getZ() - var3.getZ()) * var7.getZOffset());
       int var11 = (int)(var8 + var9 + var10);
       float var12 = var4.nextFloat();
       return (double)var12

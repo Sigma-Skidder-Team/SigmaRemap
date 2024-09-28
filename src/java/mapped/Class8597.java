@@ -133,9 +133,9 @@ public class Class8597 {
       for (int var5 = 0; var5 < var3; var5++) {
          ArrayList<Direction> var6 = new ArrayList();
 
-         for (int var7 = 0; var7 < Direction.field685.length; var7++) {
-            Direction var8 = Direction.field685[var7];
-            Direction var9 = !var0 ? var8 : var8.method536();
+         for (int var7 = 0; var7 < Direction.VALUES.length; var7++) {
+            Direction var8 = Direction.VALUES[var7];
+            Direction var9 = !var0 ? var8 : var8.getOpposite();
             int var10 = 1 << var9.ordinal();
             if ((var5 & var10) != 0) {
                var6.add(var8);

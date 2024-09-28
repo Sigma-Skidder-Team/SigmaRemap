@@ -26,7 +26,7 @@ public class Class171 implements Predicate<CachedBlockInfo> {
          return false;
       } else {
          for (Class8550 var6 : this.field553) {
-            if (var4.method23463(var6) != this.field552.method23463(var6)) {
+            if (var4.get(var6) != this.field552.get(var6)) {
                return false;
             }
          }

@@ -24,6 +24,7 @@ import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
 
@@ -389,7 +390,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
          for (net.minecraft.util.Direction var19 : var15) {
             double var20 = var19.getAxis().method328(var8, 0.0, var10);
-            double var22 = var19.getAxisDirection() != Class1892.field11092 ? var20 : 1.0 - var20;
+            double var22 = var19.getAxisDirection() != net.minecraft.util.Direction.AxisDirection.POSITIVE ? var20 : 1.0 - var20;
             if (var22 < var13 && !this.method5401(var7.method8349(var19))) {
                var13 = var22;
                var12 = var19;
@@ -398,10 +399,10 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
          if (var12 != null) {
             Vector3d var24 = this.getMotion();
-            if (var12.getAxis() != Direction.X) {
-               this.setMotion(var24.x, var24.y, 0.1 * (double)var12.method541());
+            if (var12.getAxis() != Direction.Axis.X) {
+               this.setMotion(var24.x, var24.y, 0.1 * (double)var12.getZOffset());
             } else {
-               this.setMotion(0.1 * (double)var12.method539(), var24.y, var24.z);
+               this.setMotion(0.1 * (double)var12.getXOffset(), var24.y, var24.z);
             }
          }
       }
@@ -920,7 +921,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
                            BlockState var39 = this.world.getBlockState(var38);
                            VoxelShape var40;
                            if (!(var40 = var39.getCollisionShape(this.world, var38, var46)).isEmpty()) {
-                              var33 = (float)var40.getEnd(Direction.Y) + (float)var38.getY();
+                              var33 = (float)var40.getEnd(Direction.Axis.Y) + (float)var38.getY();
                               if ((double)var33 - this.getPosY() > (double)var19) {
                                  return;
                               }

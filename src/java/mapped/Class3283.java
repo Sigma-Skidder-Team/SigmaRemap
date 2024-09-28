@@ -35,7 +35,7 @@ public class Class3283 extends Item {
       World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
       BlockState var6 = var4.getBlockState(var5);
-      if (var6.isIn(Blocks.JUKEBOX) && !var6.<Boolean>method23463(Class3364.field18931)) {
+      if (var6.isIn(Blocks.JUKEBOX) && !var6.<Boolean>get(Class3364.field18931)) {
          ItemStack var7 = var1.method18357();
          if (!var4.isRemote) {
             ((Class3364) Blocks.JUKEBOX).method11941(var4, var5, var6, var7);

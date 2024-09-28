@@ -36,7 +36,7 @@ public class Class3756 extends Class3676<LivingEntity> {
             BlockState var8 = var1.getBlockState(var6.method35579());
             return var6.method35579().method8317(var2.getPositionVec(), 2.0)
                && var8.getBlock().isIn(BlockTags.field32770)
-               && !var8.<Boolean>method23463(Class3250.field18714);
+               && !var8.<Boolean>get(Class3250.field18714);
          } else {
             return false;
          }

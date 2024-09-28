@@ -15,6 +15,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.ItemStack;
+import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -562,7 +563,7 @@ public class Class9680 {
             }
          }
 
-         if (var7 instanceof Class3456 && var1.<Class84>method23463(Class3456.field19276) == Class84.field209) {
+         if (var7 instanceof Class3456 && var1.<DoubleBlockHalf>get(Class3456.field19276) == DoubleBlockHalf.field209) {
             var3 = var3.down();
             var8 = var2.getBlockState(var3);
          }
@@ -611,7 +612,7 @@ public class Class9680 {
                   }
                } else {
                   var10 = field45269;
-                  if (var1.<Class84>method23463(Class3456.field19276) == Class84.field209) {
+                  if (var1.<DoubleBlockHalf>get(Class3456.field19276) == DoubleBlockHalf.field209) {
                      var3 = var3.down();
                   }
                }
@@ -768,7 +769,7 @@ public class Class9680 {
    private static int method37860(BlockState var0, int var1) {
       Block var4 = var0.getBlock();
       if (var4 instanceof Class3222) {
-         Comparable var5 = var0.<Integer>method23463(Class3222.field18651);
+         Comparable var5 = var0.<Integer>get(Class3222.field18651);
          if (var5 instanceof Integer) {
             Integer var6 = (Integer)var5;
             return var6;
@@ -925,7 +926,7 @@ public class Class9680 {
 
       if (var6 != null) {
          if (var7 instanceof Class3486) {
-            int var8 = var0.<Integer>method23463(Class3486.field19347);
+            int var8 = var0.<Integer>get(Class3486.field19347);
             return var6.method24066(var8);
          } else {
             return -1;

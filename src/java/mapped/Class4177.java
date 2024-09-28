@@ -50,12 +50,12 @@ public class Class4177 extends Class4167 {
       this.method12927(var1, var5, 6, 2, 5, 6, 6, 6, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
       BlockState var10 = Blocks.NETHER_BRICK_FENCE
          .method11579()
-         .method23465(Class3239.field18683, Boolean.valueOf(true))
-         .method23465(Class3239.field18681, Boolean.valueOf(true));
+         .with(Class3239.field18683, Boolean.valueOf(true))
+         .with(Class3239.field18681, Boolean.valueOf(true));
       BlockState var11 = Blocks.NETHER_BRICK_FENCE
          .method11579()
-         .method23465(Class3239.field18680, Boolean.valueOf(true))
-         .method23465(Class3239.field18682, Boolean.valueOf(true));
+         .with(Class3239.field18680, Boolean.valueOf(true))
+         .with(Class3239.field18682, Boolean.valueOf(true));
       this.method12927(var1, var5, 2, 6, 0, 4, 6, 0, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
       this.method12927(var1, var5, 2, 5, 0, 4, 5, 0, var10, var10, false);
       this.method12927(var1, var5, 2, 6, 6, 4, 6, 6, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);

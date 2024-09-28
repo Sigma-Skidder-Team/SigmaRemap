@@ -11,10 +11,9 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.Hand;
-import net.minecraft.util.SoundEvents;
+import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.MathHelper;
@@ -29,7 +28,7 @@ import java.util.Random;
 
 public class Class3389 extends Block {
    private static String[] field18999;
-   public static final Class8554 field19000 = Class8820.field39762;
+   public static final IntegerProperty field19000 = BlockStateProperties.field39762;
    private static final ImmutableList<Vector3i> field19001 = ImmutableList.of(
       new Vector3i(0, 0, -1),
       new Vector3i(-1, 0, 0),
@@ -47,9 +46,9 @@ public class Class3389 extends Block {
       .add(new Vector3i(0, 1, 0))
       .build();
 
-   public Class3389(AbstractBlock var1) {
+   public Class3389(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().method23465(field19000, Integer.valueOf(0)));
+      this.method11578(this.field18612.method35393().with(field19000, Integer.valueOf(0)));
    }
 
    @Override
@@ -64,7 +63,7 @@ public class Class3389 extends Block {
          }
 
          return ActionResultType.method9002(var2.isRemote);
-      } else if (var1.<Integer>method23463(field19000) != 0) {
+      } else if (var1.<Integer>get(field19000) != 0) {
          if (!method11988(var2)) {
             if (!var2.isRemote) {
                this.method11987(var1, var2, var3);
@@ -102,7 +101,7 @@ public class Class3389 extends Block {
    }
 
    private static boolean method11985(BlockState var0) {
-      return var0.<Integer>method23463(field19000) < 4;
+      return var0.<Integer>get(field19000) < 4;
    }
 
    private static boolean method11986(BlockPos var0, World var1) {
@@ -126,7 +125,7 @@ public class Class3389 extends Block {
 
    private void method11987(BlockState var1, World var2, BlockPos var3) {
       var2.removeBlock(var3, false);
-      boolean var6 = Class76.field161.method248().<BlockPos>map(var3::method8349).anyMatch(var1x -> method11986(var1x, var2));
+      boolean var6 = Direction.Plane.HORIZONTAL.method248().<BlockPos>map(var3::method8349).anyMatch(var1x -> method11986(var1x, var2));
       boolean var7 = var6 || var2.getFluidState(var3.up()).method23486(FluidTags.field40469);
       Class5925 var8 = new Class5925(this, var7);
       var2.method6757(
@@ -147,7 +146,7 @@ public class Class3389 extends Block {
    }
 
    public static void method11989(World var0, BlockPos var1, BlockState var2) {
-      var0.setBlockState(var1, var2.method23465(field19000, Integer.valueOf(var2.<Integer>method23463(field19000) + 1)), 3);
+      var0.setBlockState(var1, var2.with(field19000, Integer.valueOf(var2.<Integer>get(field19000) + 1)), 3);
       var0.method6743(
          (PlayerEntity)null,
          (double)var1.getX() + 0.5,
@@ -162,7 +161,7 @@ public class Class3389 extends Block {
 
    @Override
    public void method11512(BlockState var1, World var2, BlockPos var3, Random var4) {
-      if (var1.<Integer>method23463(field19000) != 0) {
+      if (var1.<Integer>get(field19000) != 0) {
          if (var4.nextInt(100) == 0) {
             var2.method6743(
                (PlayerEntity)null,
@@ -195,7 +194,7 @@ public class Class3389 extends Block {
    }
 
    public static int method11990(BlockState var0, int var1) {
-      return MathHelper.method37767((float)(var0.<Integer>method23463(field19000) - 0) / 4.0F * (float)var1);
+      return MathHelper.method37767((float)(var0.<Integer>get(field19000) - 0) / 4.0F * (float)var1);
    }
 
    @Override

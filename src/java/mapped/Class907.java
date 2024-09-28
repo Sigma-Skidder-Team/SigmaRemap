@@ -15,6 +15,7 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
@@ -139,12 +140,12 @@ public class Class907 extends Entity {
                         ((Class3213)var3).method11600(this.world, var18, this);
                      }
                   } else {
-                     boolean var10 = var19.method23441(new Class5910(this.world, var18, Direction.DOWN, ItemStack.EMPTY, Direction.field673));
+                     boolean var10 = var19.method23441(new Class5910(this.world, var18, Direction.DOWN, ItemStack.EMPTY, Direction.UP));
                      boolean var11 = Class3213.method11598(this.world.getBlockState(var18.down())) && (!var5 || !var6);
                      boolean var12 = this.field5176.method23443(this.world, var18) && !var11;
                      if (var10 && var12) {
-                        if (this.field5176.method23462(Class8820.field39710) && this.world.getFluidState(var18).method23472() == Class9479.field44066) {
-                           this.field5176 = this.field5176.method23465(Class8820.field39710, Boolean.valueOf(true));
+                        if (this.field5176.method23462(BlockStateProperties.field39710) && this.world.getFluidState(var18).method23472() == Class9479.field44066) {
+                           this.field5176 = this.field5176.with(BlockStateProperties.field39710, Boolean.valueOf(true));
                         }
 
                         if (!this.world.setBlockState(var18, this.field5176, 3)) {

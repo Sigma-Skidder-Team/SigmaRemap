@@ -24,18 +24,18 @@ public class Class4218 extends Class4213 {
    public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
       Class9312 var10 = Class9312.method35191(this.field20539)[Direction.EAST.getIndex()];
       Class9312 var11 = this.field20539;
-      Class9312 var12 = Class9312.method35191(var11)[Direction.field673.getIndex()];
-      Class9312 var13 = Class9312.method35191(var10)[Direction.field673.getIndex()];
+      Class9312 var12 = Class9312.method35191(var11)[Direction.UP.getIndex()];
+      Class9312 var13 = Class9312.method35191(var10)[Direction.UP.getIndex()];
       if (Class9312.method35192(this.field20539) / 25 > 0) {
          this.method13006(var1, var5, 8, 0, Class9312.method35193(var10)[Direction.DOWN.getIndex()]);
          this.method13006(var1, var5, 0, 0, Class9312.method35193(var11)[Direction.DOWN.getIndex()]);
       }
 
-      if (Class9312.method35191(var12)[Direction.field673.getIndex()] == null) {
+      if (Class9312.method35191(var12)[Direction.UP.getIndex()] == null) {
          this.method13007(var1, var5, 1, 8, 1, 7, 8, 6, field20528);
       }
 
-      if (Class9312.method35191(var13)[Direction.field673.getIndex()] == null) {
+      if (Class9312.method35191(var13)[Direction.UP.getIndex()] == null) {
          this.method13007(var1, var5, 8, 8, 1, 14, 8, 6, field20528);
       }
 

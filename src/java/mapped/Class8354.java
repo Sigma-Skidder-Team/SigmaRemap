@@ -18,6 +18,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
 import net.minecraft.nbt.IntArrayNBT;
+import net.minecraft.state.StateContainer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.UUIDCodec;
 import net.minecraft.util.math.BlockPos;
@@ -192,7 +193,7 @@ public final class Class8354 {
          BlockState var4 = var3.method11579();
          if (var0.contains("Properties", 10)) {
             CompoundNBT var5 = var0.getCompound("Properties");
-            Class9348 var6 = var3.getStateContainer();
+            StateContainer var6 = var3.getStateContainer();
 
             for (String var8 : var5.method97()) {
                Class8550 var9 = var6.method35396(var8);
@@ -212,7 +213,7 @@ public final class Class8354 {
          field35896.warn("Unable to read property: {} with value: {} for blockstate: {}", var2, var3.getString(var2), var4.toString());
          return var0;
       } else {
-         return var0.method23465(var1, var7.get());
+         return var0.with(var1, var7.get());
       }
    }
 

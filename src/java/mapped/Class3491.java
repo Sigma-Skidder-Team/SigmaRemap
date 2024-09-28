@@ -7,6 +7,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.IBlockReader;
@@ -17,7 +18,7 @@ import java.util.Random;
 public class Class3491 extends Class3490 {
    private static String[] field19356;
 
-   public Class3491(Effect var1, AbstractBlock var2) {
+   public Class3491(Effect var1, Properties var2) {
       super(var1, 8, var2);
    }
 

@@ -8,6 +8,7 @@ import com.google.gson.JsonObject;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
+import net.minecraft.state.StateContainer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 
@@ -29,7 +30,7 @@ public class Class4449 implements Class4442 {
       for (Block var6 : Registry.BLOCK) {
          ResourceLocation var7 = Registry.BLOCK.getKey(var6);
          JsonObject var8 = new JsonObject();
-         Class9348<Block, BlockState> var9 = var6.getStateContainer();
+         StateContainer<Block, BlockState> var9 = var6.getStateContainer();
          if (!var9.method35395().isEmpty()) {
             JsonObject var10 = new JsonObject();
 
@@ -55,7 +56,7 @@ public class Class4449 implements Class4442 {
             JsonObject var22 = new JsonObject();
 
             for (Class8550 var16 : var9.method35395()) {
-               var22.addProperty(var16.method30472(), Util.method38485(var16, var20.method23463(var16)));
+               var22.addProperty(var16.method30472(), Util.method38485(var16, var20.get(var16)));
             }
 
             if (var22.size() > 0) {

@@ -49,8 +49,8 @@ public class Class9242 {
       for (int var11 = 0; var11 < this.field42528.length; var11++) {
          Class8066 var12 = this.field42528[var11];
 
-         for (int var13 = 0; var13 < Direction.field685.length; var13++) {
-            Direction var14 = Direction.field685[var13];
+         for (int var13 = 0; var13 < Direction.VALUES.length; var13++) {
+            Direction var14 = Direction.VALUES[var13];
             BlockPos var9 = var12.method27723(var14);
             Class8066 var10 = this.method34761(var9);
             var12.method27744(var14, var10);

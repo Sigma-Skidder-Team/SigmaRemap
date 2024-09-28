@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.gson.JsonElement;
+import net.minecraft.state.StateContainer;
+
 import java.util.function.Consumer;
 
 public abstract class Class8646 {
@@ -10,7 +12,7 @@ public abstract class Class8646 {
       this.field38926 = var1;
    }
 
-   public <S extends Class7378<?, S>> boolean method31078(Class9348<?, S> var1, S var2) {
+   public <S extends Class7378<?, S>> boolean method31078(StateContainer<?, S> var1, S var2) {
       Class8550 var5 = var1.method35396(this.field38926);
       return var5 != null ? this.method31076(var2, var5) : false;
    }
@@ -23,7 +25,7 @@ public abstract class Class8646 {
       return this.field38926;
    }
 
-   public void method31080(Class9348<?, ?> var1, Consumer<String> var2) {
+   public void method31080(StateContainer<?, ?> var1, Consumer<String> var2) {
       Class8550 var5 = var1.method35396(this.field38926);
       if (var5 == null) {
          var2.accept(this.field38926);

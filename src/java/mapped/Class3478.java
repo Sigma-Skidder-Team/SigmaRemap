@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.HorizontalBlock;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
@@ -11,10 +12,10 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
-public class Class3478 extends Class3198 {
+public class Class3478 extends HorizontalBlock {
    private static final ITextComponent field19331 = new TranslationTextComponent("container.loom");
 
-   public Class3478(AbstractBlock var1) {
+   public Class3478(Properties var1) {
       super(var1);
    }
 
@@ -36,11 +37,11 @@ public class Class3478 extends Class3198 {
 
    @Override
    public BlockState method11495(Class5909 var1) {
-      return this.method11579().method23465(field18484, var1.method18350().method536());
+      return this.method11579().with(HORIZONTAL_FACING, var1.method18350().getOpposite());
    }
 
    @Override
    public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field18484);
+      var1.method24737(HORIZONTAL_FACING);
    }
 }

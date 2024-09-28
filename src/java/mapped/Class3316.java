@@ -198,7 +198,7 @@ public class Class3316 extends Class3314 {
 
    private BlockState method11866(World var1, BlockState var2, BlockPos var3) {
       FluidState var6 = var2.method23449();
-      return !var6.method23474() && !var2.method23454(var1, var3, Direction.field673) ? var6.getBlockState() : var2;
+      return !var6.method23474() && !var2.method23454(var1, var3, Direction.UP) ? var6.getBlockState() : var2;
    }
 
    private static boolean method11867(Biome[] var0, int var1, int var2, int var3) {

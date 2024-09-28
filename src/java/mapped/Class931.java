@@ -97,7 +97,7 @@ public class Class931 extends Class932 implements Class930, ITickableTileEntity 
             }
 
             for (int var9 = 0; var9 < Class3376.field18975.length; var9++) {
-               var8 = var8.method23465(Class3376.field18975[var9], Boolean.valueOf(var10[var9]));
+               var8 = var8.with(Class3376.field18975[var9], Boolean.valueOf(var10[var9]));
             }
 
             this.field5324.setBlockState(this.field5325, var8, 2);
@@ -226,7 +226,7 @@ public class Class931 extends Class932 implements Class930, ITickableTileEntity 
 
    @Override
    public int[] method3653(Direction var1) {
-      if (var1 != Direction.field673) {
+      if (var1 != Direction.UP) {
          return var1 != Direction.DOWN ? field5272 : field5271;
       } else {
          return field5270;

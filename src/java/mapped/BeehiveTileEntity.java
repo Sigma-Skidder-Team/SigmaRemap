@@ -88,7 +88,7 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
    }
 
    public static int method3919(BlockState var0) {
-      return var0.<Integer>method23463(Class3366.field18936);
+      return var0.<Integer>get(Class3366.field18936);
    }
 
    public boolean method3920() {
@@ -141,7 +141,7 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
          var8.method133("Passengers");
          var8.method133("Leash");
          var8.method133("UUID");
-         Direction var9 = var1.<Direction>method23463(Class3366.field18935);
+         Direction var9 = var1.<Direction>get(Class3366.field18935);
          BlockPos var10 = var7.method8349(var9);
          boolean var11 = !this.field5324.getBlockState(var10).method23414(this.field5324, var10).isEmpty();
          if (var11 && var4 != Class2084.field13573) {
@@ -167,7 +167,7 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
                               var15--;
                            }
 
-                           this.field5324.setBlockState(this.getPos(), var1.method23465(Class3366.field18936, Integer.valueOf(var14 + var15)));
+                           this.field5324.setBlockState(this.getPos(), var1.with(Class3366.field18936, Integer.valueOf(var14 + var15)));
                         }
                      }
                   }
@@ -179,9 +179,9 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
 
                   float var24 = var12.getWidth();
                   double var16 = !var11 ? 0.55 + (double)(var24 / 2.0F) : 0.0;
-                  double var18 = (double)var7.getX() + 0.5 + var16 * (double)var9.method539();
+                  double var18 = (double)var7.getX() + 0.5 + var16 * (double)var9.getXOffset();
                   double var20 = (double)var7.getY() + 0.5 - (double)(var12.getHeight() / 2.0F);
-                  double var22 = (double)var7.getZ() + 0.5 + var16 * (double)var9.method541();
+                  double var22 = (double)var7.getZ() + 0.5 + var16 * (double)var9.getZOffset();
                   var12.setLocationAndAngles(var18, var20, var22, var12.rotationYaw, var12.rotationPitch);
                }
 

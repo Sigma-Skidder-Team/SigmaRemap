@@ -6,9 +6,12 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
@@ -18,26 +21,26 @@ import java.util.Random;
 
 public class Class3480 extends Class3194 implements Class3196 {
    private static String[] field19333;
-   public static final Class8554 field19334 = Class8820.field39742;
+   public static final IntegerProperty field19334 = BlockStateProperties.field39742;
    private static final VoxelShape[] field19335 = new VoxelShape[]{
-      Block.method11539(0.0, 0.0, 0.0, 16.0, 2.0, 16.0),
-      Block.method11539(0.0, 0.0, 0.0, 16.0, 4.0, 16.0),
-      Block.method11539(0.0, 0.0, 0.0, 16.0, 6.0, 16.0),
-      Block.method11539(0.0, 0.0, 0.0, 16.0, 8.0, 16.0),
-      Block.method11539(0.0, 0.0, 0.0, 16.0, 10.0, 16.0),
-      Block.method11539(0.0, 0.0, 0.0, 16.0, 12.0, 16.0),
-      Block.method11539(0.0, 0.0, 0.0, 16.0, 14.0, 16.0),
-      Block.method11539(0.0, 0.0, 0.0, 16.0, 16.0, 16.0)
+      Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 2.0, 16.0),
+      Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 4.0, 16.0),
+      Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 6.0, 16.0),
+      Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 8.0, 16.0),
+      Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 10.0, 16.0),
+      Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 12.0, 16.0),
+      Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 14.0, 16.0),
+      Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 16.0, 16.0)
    };
 
-   public Class3480(AbstractBlock var1) {
+   public Class3480(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().method23465(this.method12175(), Integer.valueOf(0)));
+      this.method11578(this.field18612.method35393().with(this.method12175(), Integer.valueOf(0)));
    }
 
    @Override
    public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
-      return field19335[var1.<Integer>method23463(this.method12175())];
+      return field19335[var1.<Integer>get(this.method12175())];
    }
 
    @Override
@@ -45,7 +48,7 @@ public class Class3480 extends Class3194 implements Class3196 {
       return var1.isIn(Blocks.FARMLAND);
    }
 
-   public Class8554 method12175() {
+   public IntegerProperty method12175() {
       return field19334;
    }
 
@@ -54,15 +57,15 @@ public class Class3480 extends Class3194 implements Class3196 {
    }
 
    public int method12177(BlockState var1) {
-      return var1.<Integer>method23463(this.method12175());
+      return var1.<Integer>get(this.method12175());
    }
 
    public BlockState method12178(int var1) {
-      return this.method11579().method23465(this.method12175(), Integer.valueOf(var1));
+      return this.method11579().with(this.method12175(), Integer.valueOf(var1));
    }
 
    public boolean method12179(BlockState var1) {
-      return var1.<Integer>method23463(this.method12175()) >= this.method12176();
+      return var1.<Integer>get(this.method12175()) >= this.method12176();
    }
 
    @Override
@@ -107,7 +110,7 @@ public class Class3480 extends Class3194 implements Class3196 {
             BlockState var10 = var1.getBlockState(var6.method8336(var7, 0, var8));
             if (var10.isIn(Blocks.FARMLAND)) {
                var9 = 1.0F;
-               if (var10.<Integer>method23463(Class3221.field18644) > 0) {
+               if (var10.<Integer>get(Class3221.field18644) > 0) {
                   var9 = 3.0F;
                }
             }

@@ -81,7 +81,7 @@ public class Class973 extends Class939 {
 
          this.field5438++;
          BlockState var4 = this.method3775();
-         boolean var5 = var4.<Boolean>method23463(Class3242.field18694);
+         boolean var5 = var4.<Boolean>get(Class3242.field18694);
          if (!var5) {
             this.method4027(var4, SoundEvents.field26374);
             this.method4026(var4, true);
@@ -102,12 +102,12 @@ public class Class973 extends Class939 {
       this.field5438 = Class941.method3759(this.field5324, this, var3, var4, var5);
       if (this.field5438 <= 0) {
          BlockState var6 = this.method3775();
-         if (!var6.isIn(Blocks.field37055)) {
+         if (!var6.isIn(Blocks.BARREL)) {
             this.method3765();
             return;
          }
 
-         boolean var7 = var6.<Boolean>method23463(Class3242.field18694);
+         boolean var7 = var6.<Boolean>get(Class3242.field18694);
          if (var7) {
             this.method4027(var6, SoundEvents.field26373);
             this.method4026(var6, false);
@@ -125,11 +125,11 @@ public class Class973 extends Class939 {
    }
 
    private void method4026(BlockState var1, boolean var2) {
-      this.field5324.setBlockState(this.getPos(), var1.method23465(Class3242.field18694, Boolean.valueOf(var2)), 3);
+      this.field5324.setBlockState(this.getPos(), var1.with(Class3242.field18694, Boolean.valueOf(var2)), 3);
    }
 
    private void method4027(BlockState var1, SoundEvent var2) {
-      Vector3i var5 = var1.<Direction>method23463(Class3242.field18693).method556();
+      Vector3i var5 = var1.<Direction>get(Class3242.field18693).getDirectionVec();
       double var6 = (double)this.field5325.getX() + 0.5 + (double)var5.getX() / 2.0;
       double var8 = (double)this.field5325.getY() + 0.5 + (double)var5.getY() / 2.0;
       double var10 = (double)this.field5325.getZ() + 0.5 + (double)var5.getZ() / 2.0;

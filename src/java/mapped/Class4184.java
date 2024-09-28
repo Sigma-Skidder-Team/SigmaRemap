@@ -6,6 +6,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.state.BooleanProperty;
+import net.minecraft.util.Mirror;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
@@ -23,11 +25,11 @@ public class Class4184 extends Class4180 {
    private static final Logger field20465 = LogManager.getLogger();
    private final ResourceLocation field20466;
    private final Rotation field20467;
-   private final Class2089 field20468;
+   private final Mirror field20468;
    private final Class2219 field20469;
    private final Class8299 field20470;
 
-   public Class4184(BlockPos var1, Class2219 var2, Class8299 var3, ResourceLocation var4, Class8969 var5, Rotation var6, Class2089 var7, BlockPos var8) {
+   public Class4184(BlockPos var1, Class2219 var2, Class8299 var3, ResourceLocation var4, Class8969 var5, Rotation var6, Mirror var7, BlockPos var8) {
       super(Class7792.field33460, 0);
       this.field20455 = var1;
       this.field20466 = var4;
@@ -42,7 +44,7 @@ public class Class4184 extends Class4180 {
       super(Class7792.field33460, var2);
       this.field20466 = new ResourceLocation(var2.getString("Template"));
       this.field20467 = Rotation.valueOf(var2.getString("Rotation"));
-      this.field20468 = Class2089.valueOf(var2.getString("Mirror"));
+      this.field20468 = Mirror.valueOf(var2.getString("Mirror"));
       this.field20469 = Class2219.method8946(var2.getString("VerticalPlacement"));
       this.field20470 = (Class8299)Class8299.field35673
          .parse(new Dynamic(NBTDynamicOps.INSTANCE, var2.method116("Properties")))
@@ -130,19 +132,19 @@ public class Class4184 extends Class4180 {
    private void method12951(Random var1, Class1660 var2, BlockPos var3) {
       BlockState var6 = var2.getBlockState(var3);
       if (!var6.isAir() && !var6.isIn(Blocks.VINE)) {
-         Direction var7 = Class76.field161.method247(var1);
+         Direction var7 = Direction.Plane.HORIZONTAL.method247(var1);
          BlockPos var8 = var3.method8349(var7);
          BlockState var9 = var2.getBlockState(var8);
          if (var9.isAir() && Block.method11549(var6.method23414(var2, var3), var7)) {
-            Class8551 var10 = Class3402.method12039(var7.method536());
-            var2.setBlockState(var8, Blocks.VINE.method11579().method23465(var10, Boolean.valueOf(true)), 3);
+            BooleanProperty var10 = Class3402.method12039(var7.getOpposite());
+            var2.setBlockState(var8, Blocks.VINE.method11579().with(var10, Boolean.valueOf(true)), 3);
          }
       }
    }
 
    private void method12952(Random var1, Class1660 var2, BlockPos var3) {
       if (var1.nextFloat() < 0.5F && var2.getBlockState(var3).isIn(Blocks.NETHERRACK) && var2.getBlockState(var3.up()).isAir()) {
-         var2.setBlockState(var3.up(), Blocks.field36449.method11579().method23465(Class3465.field19306, Boolean.valueOf(true)), 3);
+         var2.setBlockState(var3.up(), Blocks.field36449.method11579().with(Class3465.field19306, Boolean.valueOf(true)), 3);
       }
    }
 

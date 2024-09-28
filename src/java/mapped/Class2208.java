@@ -39,7 +39,7 @@ public enum Class2208 {
       }
    ),
    field14434(
-      new Direction[]{Direction.field673, Direction.DOWN, Direction.EAST, Direction.WEST},
+      new Direction[]{Direction.UP, Direction.DOWN, Direction.EAST, Direction.WEST},
       0.8F,
       true,
       new Class81[]{
@@ -56,7 +56,7 @@ public enum Class2208 {
       }
    ),
    field14435(
-      new Direction[]{Direction.WEST, Direction.EAST, Direction.DOWN, Direction.field673},
+      new Direction[]{Direction.WEST, Direction.EAST, Direction.DOWN, Direction.UP},
       0.8F,
       true,
       new Class81[]{
@@ -73,7 +73,7 @@ public enum Class2208 {
       }
    ),
    field14436(
-      new Direction[]{Direction.field673, Direction.DOWN, Direction.NORTH, Direction.SOUTH},
+      new Direction[]{Direction.UP, Direction.DOWN, Direction.NORTH, Direction.SOUTH},
       0.6F,
       true,
       new Class81[]{
@@ -90,7 +90,7 @@ public enum Class2208 {
       }
    ),
    field14437(
-      new Direction[]{Direction.DOWN, Direction.field673, Direction.NORTH, Direction.SOUTH},
+      new Direction[]{Direction.DOWN, Direction.UP, Direction.NORTH, Direction.SOUTH},
       0.6F,
       true,
       new Class81[]{
@@ -115,7 +115,7 @@ public enum Class2208 {
    private final Class81[] field14443;
    private static final Class2208[] field14444 = Util.<Class2208[]>make(new Class2208[6], var0 -> {
       var0[Direction.DOWN.getIndex()] = field14432;
-      var0[Direction.field673.getIndex()] = field14433;
+      var0[Direction.UP.getIndex()] = field14433;
       var0[Direction.NORTH.getIndex()] = field14434;
       var0[Direction.SOUTH.getIndex()] = field14435;
       var0[Direction.WEST.getIndex()] = field14436;

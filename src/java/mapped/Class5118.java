@@ -101,7 +101,7 @@ public class Class5118 implements Class5119 {
                   var41.draw();
                }
 
-               if (var15.method23454(var11, var14, Direction.field673)) {
+               if (var15.method23454(var11, var14, Direction.UP)) {
                   Tessellator var42 = Tessellator.getInstance();
                   BufferBuilder var47 = var42.getBuffer();
                   var47.begin(5, DefaultVertexFormats.POSITION_COLOR);

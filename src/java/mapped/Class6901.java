@@ -32,7 +32,7 @@ public class Class6901 extends Class6896 {
       method21069(var1, var11.east());
       method21069(var1, var11.south());
       method21069(var1, var11.south().east());
-      Direction var12 = Class76.field161.method247(var2);
+      Direction var12 = Direction.Plane.HORIZONTAL.method247(var2);
       int var13 = var3 - var2.nextInt(4);
       int var14 = 2 - var2.nextInt(3);
       int var15 = var4.getX();
@@ -44,8 +44,8 @@ public class Class6901 extends Class6896 {
 
       for (int var21 = 0; var21 < var3; var21++) {
          if (var21 >= var13 && var14 > 0) {
-            var18 += var12.method539();
-            var19 += var12.method541();
+            var18 += var12.getXOffset();
+            var19 += var12.getZOffset();
             var14--;
          }
 

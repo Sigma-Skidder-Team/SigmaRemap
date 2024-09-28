@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.state.DirectionProperty;
 import net.minecraft.block.BlockState;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
@@ -15,7 +16,7 @@ public class Class9324 {
       TileEntityType<S> var0,
       Function<BlockState, Class1895> var1,
       Function<BlockState, Direction> var2,
-      Class8553 var3,
+      DirectionProperty var3,
       BlockState var4,
       Class1660 var5,
       BlockPos var6,
@@ -32,7 +33,7 @@ public class Class9324 {
                BlockState var15 = var5.getBlockState(var14);
                if (var15.isIn(var4.getBlock())) {
                   Class1895 var16 = (Class1895)var1.apply(var15);
-                  if (var16 != Class1895.field11109 && var11 != var16 && var15.<Direction>method23463(var3) == var4.<Direction>method23463(var3)) {
+                  if (var16 != Class1895.field11109 && var11 != var16 && var15.<Direction>get(var3) == var4.<Direction>get(var3)) {
                      if (var7.test(var5, var14)) {
                         return Class6139::method19041;
                      }

@@ -15,6 +15,7 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.*;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -989,7 +990,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
                }
             }
 
-            var11.method8379(net.minecraft.util.Direction.field673);
+            var11.method8379(Direction.UP);
          } while (!((double)var11.getY() < var14));
       }
 

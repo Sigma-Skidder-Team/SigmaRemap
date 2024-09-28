@@ -4,8 +4,10 @@ import com.google.common.collect.ImmutableSet;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.HorizontalBlock;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Mirror;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
@@ -24,7 +26,7 @@ public abstract class Class4178 {
    public static final BlockState field20443 = Blocks.field37012.method11579();
    public Class9764 field20444;
    private Direction field20445;
-   private Class2089 field20446;
+   private Mirror field20446;
    private Rotation field20447;
    public int field20448;
    private final Class7792 field20449;
@@ -54,7 +56,7 @@ public abstract class Class4178 {
       }
 
       int var5 = var2.getInt("O");
-      this.method12939(var5 != -1 ? Direction.method547(var5) : null);
+      this.method12939(var5 != -1 ? Direction.byHorizontalIndex(var5) : null);
    }
 
    public final CompoundNBT method12914() {
@@ -192,12 +194,12 @@ public abstract class Class4178 {
    public void method12923(ISeedReader var1, BlockState var2, int var3, int var4, int var5, Class9764 var6) {
       BlockPos var9 = new BlockPos(this.method12920(var3, var5), this.method12921(var4), this.method12922(var3, var5));
       if (var6.method38396(var9)) {
-         if (this.field20446 != Class2089.field13614) {
+         if (this.field20446 != Mirror.field13614) {
             var2 = var2.method23396(this.field20446);
          }
 
          if (this.field20447 != Rotation.field185) {
-            var2 = var2.method23395(this.field20447);
+            var2 = var2.rotate(this.field20447);
          }
 
          var1.setBlockState(var9, var2, 2);
@@ -360,7 +362,7 @@ public abstract class Class4178 {
    public static BlockState method12934(IBlockReader var0, BlockPos var1, BlockState var2) {
       Direction var5 = null;
 
-      for (Direction var7 : Class76.field161) {
+      for (Direction var7 : Direction.Plane.HORIZONTAL) {
          BlockPos var8 = var1.method8349(var7);
          BlockState var9 = var0.getBlockState(var8);
          if (var9.isIn(Blocks.CHEST)) {
@@ -378,26 +380,26 @@ public abstract class Class4178 {
       }
 
       if (var5 == null) {
-         Direction var10 = var2.<Direction>method23463(Class3198.field18484);
+         Direction var10 = var2.<Direction>get(HorizontalBlock.HORIZONTAL_FACING);
          BlockPos var11 = var1.method8349(var10);
          if (var0.getBlockState(var11).method23409(var0, var11)) {
-            var10 = var10.method536();
+            var10 = var10.getOpposite();
             var11 = var1.method8349(var10);
          }
 
          if (var0.getBlockState(var11).method23409(var0, var11)) {
-            var10 = var10.method537();
+            var10 = var10.rotateY();
             var11 = var1.method8349(var10);
          }
 
          if (var0.getBlockState(var11).method23409(var0, var11)) {
-            var10 = var10.method536();
+            var10 = var10.getOpposite();
             var1.method8349(var10);
          }
 
-         return var2.method23465(Class3198.field18484, var10);
+         return var2.with(HorizontalBlock.HORIZONTAL_FACING, var10);
       } else {
-         return var2.method23465(Class3198.field18484, var5.method536());
+         return var2.with(HorizontalBlock.HORIZONTAL_FACING, var5.getOpposite());
       }
    }
 
@@ -422,7 +424,7 @@ public abstract class Class4178 {
    public boolean method12936(ISeedReader var1, Class9764 var2, Random var3, int var4, int var5, int var6, Direction var7, ResourceLocation var8) {
       BlockPos var11 = new BlockPos(this.method12920(var4, var6), this.method12921(var5), this.method12922(var4, var6));
       if (var2.method38396(var11) && !var1.getBlockState(var11).isIn(Blocks.DISPENSER)) {
-         this.method12923(var1, Blocks.DISPENSER.method11579().method23465(Class3357.field18899, var7), var4, var5, var6, var2);
+         this.method12923(var1, Blocks.DISPENSER.method11579().with(Class3357.field18899, var7), var4, var5, var6, var2);
          TileEntity var12 = var1.getTileEntity(var11);
          if (var12 instanceof Class971) {
             ((Class971)var12).method3744(var8, var3.nextLong());
@@ -447,23 +449,23 @@ public abstract class Class4178 {
       this.field20445 = var1;
       if (var1 == null) {
          this.field20447 = Rotation.field185;
-         this.field20446 = Class2089.field13614;
+         this.field20446 = Mirror.field13614;
       } else {
          switch (Class8727.field39366[var1.ordinal()]) {
             case 2:
-               this.field20446 = Class2089.field13615;
+               this.field20446 = Mirror.field13615;
                this.field20447 = Rotation.field185;
                break;
             case 3:
-               this.field20446 = Class2089.field13615;
+               this.field20446 = Mirror.field13615;
                this.field20447 = Rotation.field186;
                break;
             case 4:
-               this.field20446 = Class2089.field13614;
+               this.field20446 = Mirror.field13614;
                this.field20447 = Rotation.field186;
                break;
             default:
-               this.field20446 = Class2089.field13614;
+               this.field20446 = Mirror.field13614;
                this.field20447 = Rotation.field185;
          }
       }

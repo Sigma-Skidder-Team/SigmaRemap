@@ -35,7 +35,7 @@ public class Class2952 extends Class2898<Class4712> {
                Class939.method3740(var1, var3, var16, Class8793.field39534);
                BlockState var17 = Blocks.TORCH.method11579();
 
-               for (Direction var19 : Class76.field161) {
+               for (Direction var19 : Direction.Plane.HORIZONTAL) {
                   BlockPos var20 = var16.method8349(var19);
                   if (var17.method23443(var1, var20)) {
                      var1.setBlockState(var20, var17, 2);

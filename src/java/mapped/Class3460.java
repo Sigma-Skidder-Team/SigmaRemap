@@ -11,6 +11,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
@@ -19,10 +20,10 @@ import java.util.Map;
 public class Class3460 extends Block {
    private static String[] field19288;
    private static final Map<Block, Block> field19289 = Maps.newHashMap();
-   public static final VoxelShape field19290 = Block.method11539(5.0, 0.0, 5.0, 11.0, 6.0, 11.0);
+   public static final VoxelShape field19290 = Block.makeCuboidShape(5.0, 0.0, 5.0, 11.0, 6.0, 11.0);
    private final Block field19291;
 
-   public Class3460(Block var1, AbstractBlock var2) {
+   public Class3460(Block var1, Properties var2) {
       super(var2);
       this.field19291 = var1;
       field19289.put(var1, this);

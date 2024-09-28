@@ -17,7 +17,7 @@ public abstract class Class2930 extends Class2898<Class4727> {
 
    public void method11265(Class1660 var1, Random var2, BlockPos var3, Class4727 var4, int var5, BlockPos.Mutable var6) {
       for (int var9 = 0; var9 < var5; var9++) {
-         var6.method8374(var3).method8380(Direction.field673, var9);
+         var6.method8374(var3).method8380(Direction.UP, var9);
          if (!var1.getBlockState(var6).method23409(var1, var6)) {
             this.method11217(var1, var6, var4.field22396.method20424(var2, var3));
          }

@@ -6,8 +6,10 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.Direction;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
@@ -16,9 +18,9 @@ import java.util.Random;
 
 public abstract class AbstractFireBlock extends Block {
    private final float field19034;
-   public static final VoxelShape field19035 = Block.method11539(0.0, 0.0, 0.0, 16.0, 1.0, 16.0);
+   public static final VoxelShape field19035 = Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 1.0, 16.0);
 
-   public AbstractFireBlock(AbstractBlock var1, float var2) {
+   public AbstractFireBlock(Properties var1, float var2) {
       super(var1);
       this.field19034 = var2;
    }
@@ -56,7 +58,7 @@ public abstract class AbstractFireBlock extends Block {
 
       BlockPos var7 = var3.down();
       BlockState var8 = var2.getBlockState(var7);
-      if (!this.method12010(var8) && !var8.method23454(var2, var7, net.minecraft.util.Direction.field673)) {
+      if (!this.method12010(var8) && !var8.method23454(var2, var7, Direction.UP)) {
          if (this.method12010(var2.getBlockState(var3.west()))) {
             for (int var16 = 0; var16 < 2; var16++) {
                double var21 = (double)var3.getX() + var4.nextDouble() * 0.1F;
@@ -131,7 +133,7 @@ public abstract class AbstractFireBlock extends Block {
    public void method11589(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       if (!var4.isIn(var1.getBlock())) {
          if (method12011(var2)) {
-            Optional var8 = Class7473.method24194(var2, var3, Direction.X);
+            Optional var8 = Class7473.method24194(var2, var3, Direction.Axis.X);
             if (var8.isPresent()) {
                ((Class7473)var8.get()).method24204();
                return;
@@ -155,26 +157,26 @@ public abstract class AbstractFireBlock extends Block {
       }
    }
 
-   public static boolean method12012(World var0, BlockPos var1, net.minecraft.util.Direction var2) {
+   public static boolean method12012(World var0, BlockPos var1, Direction var2) {
       BlockState var5 = var0.getBlockState(var1);
       return !var5.isAir() ? false : method12009(var0, var1).method23443(var0, var1) || method12013(var0, var1, var2);
    }
 
-   private static boolean method12013(World var0, BlockPos var1, net.minecraft.util.Direction var2) {
+   private static boolean method12013(World var0, BlockPos var1, Direction var2) {
       if (!method12011(var0)) {
          return false;
       } else {
          BlockPos.Mutable var5 = var1.method8354();
          boolean var6 = false;
 
-         for (net.minecraft.util.Direction var10 : net.minecraft.util.Direction.values()) {
+         for (Direction var10 : Direction.values()) {
             if (var0.getBlockState(var5.method8374(var1).method8379(var10)).isIn(Blocks.field36527)) {
                var6 = true;
                break;
             }
          }
 
-         return var6 && Class7473.method24194(var0, var1, var2.method538().getAxis()).isPresent();
+         return var6 && Class7473.method24194(var0, var1, var2.rotateYCCW().getAxis()).isPresent();
       }
    }
 }

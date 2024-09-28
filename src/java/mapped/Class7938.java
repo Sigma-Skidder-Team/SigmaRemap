@@ -1,7 +1,9 @@
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public abstract class Class7938 {
-   private static final Direction[] field34036 = Direction.values();
+   private static final Direction.Axis[] field34036 = Direction.Axis.values();
    public final int field34037;
    public final int field34038;
    public final int field34039;
@@ -14,9 +16,9 @@ public abstract class Class7938 {
 
    public boolean method26728(Class2321 var1, int var2, int var3, int var4) {
       return this.method26729(
-         var1.method9098(var2, var3, var4, Direction.X),
-         var1.method9098(var2, var3, var4, Direction.Y),
-         var1.method9098(var2, var3, var4, Direction.Z)
+         var1.method9098(var2, var3, var4, Direction.Axis.X),
+         var1.method9098(var2, var3, var4, Direction.Axis.Y),
+         var1.method9098(var2, var3, var4, Direction.Axis.Z)
       );
    }
 
@@ -30,9 +32,9 @@ public abstract class Class7938 {
 
    public boolean method26730(Class2321 var1, int var2, int var3, int var4) {
       return this.method26717(
-         var1.method9098(var2, var3, var4, Direction.X),
-         var1.method9098(var2, var3, var4, Direction.Y),
-         var1.method9098(var2, var3, var4, Direction.Z)
+         var1.method9098(var2, var3, var4, Direction.Axis.X),
+         var1.method9098(var2, var3, var4, Direction.Axis.Y),
+         var1.method9098(var2, var3, var4, Direction.Axis.Z)
       );
    }
 
@@ -41,7 +43,7 @@ public abstract class Class7938 {
    public abstract void method26718(int var1, int var2, int var3, boolean var4, boolean var5);
 
    public boolean method26719() {
-      for (Direction var6 : field34036) {
+      for (Direction.Axis var6 : field34036) {
          if (this.method26720(var6) >= this.method26721(var6)) {
             return true;
          }
@@ -50,17 +52,17 @@ public abstract class Class7938 {
       return false;
    }
 
-   public abstract int method26720(Direction var1);
+   public abstract int method26720(Direction.Axis var1);
 
-   public abstract int method26721(Direction var1);
+   public abstract int method26721(Direction.Axis var1);
 
-   public int method26731(Direction var1, int var2, int var3) {
+   public int method26731(Direction.Axis var1, int var2, int var3) {
       if (var2 >= 0 && var3 >= 0) {
-         Direction var6 = Class2321.field15905.method9099(var1);
-         Direction var7 = Class2321.field15906.method9099(var1);
+         Direction.Axis var6 = Class2321.field15905.method9099(var1);
+         Direction.Axis var7 = Class2321.field15906.method9099(var1);
          if (var2 < this.method26732(var6) && var3 < this.method26732(var7)) {
             int var8 = this.method26732(var1);
-            Class2321 var9 = Class2321.method9101(Direction.X, var1);
+            Class2321 var9 = Class2321.method9101(Direction.Axis.X, var1);
 
             for (int var10 = var8 - 1; var10 >= 0; var10--) {
                if (this.method26730(var9, var10, var2, var3)) {
@@ -77,20 +79,20 @@ public abstract class Class7938 {
       }
    }
 
-   public int method26732(Direction var1) {
+   public int method26732(Direction.Axis var1) {
       return var1.method327(this.field34037, this.field34038, this.field34039);
    }
 
    public int method26733() {
-      return this.method26732(Direction.X);
+      return this.method26732(Direction.Axis.X);
    }
 
    public int method26734() {
-      return this.method26732(Direction.Y);
+      return this.method26732(Direction.Axis.Y);
    }
 
    public int method26735() {
-      return this.method26732(Direction.Z);
+      return this.method26732(Direction.Axis.Z);
    }
 
    public void method26736(Class8859 var1, boolean var2) {
@@ -101,9 +103,9 @@ public abstract class Class7938 {
 
    private void method26737(Class8859 var1, Class2321 var2, boolean var3) {
       Class2321 var6 = var2.method9100();
-      int var7 = this.method26732(var6.method9099(Direction.X));
-      int var8 = this.method26732(var6.method9099(Direction.Y));
-      int var9 = this.method26732(var6.method9099(Direction.Z));
+      int var7 = this.method26732(var6.method9099(Direction.Axis.X));
+      int var8 = this.method26732(var6.method9099(Direction.Axis.Y));
+      int var9 = this.method26732(var6.method9099(Direction.Axis.Z));
 
       for (int var10 = 0; var10 <= var7; var10++) {
          for (int var11 = 0; var11 <= var8; var11++) {
@@ -125,24 +127,24 @@ public abstract class Class7938 {
                if (var14 == 1 || var14 == 3 || var14 == 2 && (var15 & 1) == 0) {
                   if (!var3) {
                      var1.method32250(
-                        var6.method9098(var10, var11, var13, Direction.X),
-                        var6.method9098(var10, var11, var13, Direction.Y),
-                        var6.method9098(var10, var11, var13, Direction.Z),
-                        var6.method9098(var10, var11, var13 + 1, Direction.X),
-                        var6.method9098(var10, var11, var13 + 1, Direction.Y),
-                        var6.method9098(var10, var11, var13 + 1, Direction.Z)
+                        var6.method9098(var10, var11, var13, Direction.Axis.X),
+                        var6.method9098(var10, var11, var13, Direction.Axis.Y),
+                        var6.method9098(var10, var11, var13, Direction.Axis.Z),
+                        var6.method9098(var10, var11, var13 + 1, Direction.Axis.X),
+                        var6.method9098(var10, var11, var13 + 1, Direction.Axis.Y),
+                        var6.method9098(var10, var11, var13 + 1, Direction.Axis.Z)
                      );
                   } else if (var12 == -1) {
                      var12 = var13;
                   }
                } else if (var12 != -1) {
                   var1.method32250(
-                     var6.method9098(var10, var11, var12, Direction.X),
-                     var6.method9098(var10, var11, var12, Direction.Y),
-                     var6.method9098(var10, var11, var12, Direction.Z),
-                     var6.method9098(var10, var11, var13, Direction.X),
-                     var6.method9098(var10, var11, var13, Direction.Y),
-                     var6.method9098(var10, var11, var13, Direction.Z)
+                     var6.method9098(var10, var11, var12, Direction.Axis.X),
+                     var6.method9098(var10, var11, var12, Direction.Axis.Y),
+                     var6.method9098(var10, var11, var12, Direction.Axis.Z),
+                     var6.method9098(var10, var11, var13, Direction.Axis.X),
+                     var6.method9098(var10, var11, var13, Direction.Axis.Y),
+                     var6.method9098(var10, var11, var13, Direction.Axis.Z)
                   );
                   var12 = -1;
                }
@@ -240,12 +242,12 @@ public abstract class Class7938 {
 
    private void method26741(Class9841 var1, Class2321 var2) {
       Class2321 var5 = var2.method9100();
-      Direction var6 = var5.method9099(Direction.Z);
-      int var7 = this.method26732(var5.method9099(Direction.X));
-      int var8 = this.method26732(var5.method9099(Direction.Y));
+      Direction.Axis var6 = var5.method9099(Direction.Axis.Z);
+      int var7 = this.method26732(var5.method9099(Direction.Axis.X));
+      int var8 = this.method26732(var5.method9099(Direction.Axis.Y));
       int var9 = this.method26732(var6);
-      net.minecraft.util.Direction var10 = net.minecraft.util.Direction.method550(var6, Class1892.field11093);
-      net.minecraft.util.Direction var11 = net.minecraft.util.Direction.method550(var6, Class1892.field11092);
+      Direction var10 = Direction.getFacingFromAxisDirection(var6, Direction.AxisDirection.NEGATIVE);
+      Direction var11 = Direction.getFacingFromAxisDirection(var6, Direction.AxisDirection.POSITIVE);
 
       for (int var12 = 0; var12 < var7; var12++) {
          for (int var13 = 0; var13 < var8; var13++) {
@@ -256,18 +258,18 @@ public abstract class Class7938 {
                if (!var14 && var16) {
                   var1.method38895(
                      var10,
-                     var5.method9098(var12, var13, var15, Direction.X),
-                     var5.method9098(var12, var13, var15, Direction.Y),
-                     var5.method9098(var12, var13, var15, Direction.Z)
+                     var5.method9098(var12, var13, var15, Direction.Axis.X),
+                     var5.method9098(var12, var13, var15, Direction.Axis.Y),
+                     var5.method9098(var12, var13, var15, Direction.Axis.Z)
                   );
                }
 
                if (var14 && !var16) {
                   var1.method38895(
                      var11,
-                     var5.method9098(var12, var13, var15 - 1, Direction.X),
-                     var5.method9098(var12, var13, var15 - 1, Direction.Y),
-                     var5.method9098(var12, var13, var15 - 1, Direction.Z)
+                     var5.method9098(var12, var13, var15 - 1, Direction.Axis.X),
+                     var5.method9098(var12, var13, var15 - 1, Direction.Axis.Y),
+                     var5.method9098(var12, var13, var15 - 1, Direction.Axis.Z)
                   );
                }
 

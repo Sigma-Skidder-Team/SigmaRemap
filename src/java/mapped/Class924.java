@@ -72,7 +72,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       method3643(var2, Blocks.field36865, 300);
       method3643(var2, Blocks.NOTE_BLOCK, 300);
       method3643(var2, Blocks.field36525, 300);
-      method3643(var2, Blocks.field37061, 300);
+      method3643(var2, Blocks.LECTERN, 300);
       method3643(var2, Blocks.JUKEBOX, 300);
       method3643(var2, Blocks.CHEST, 300);
       method3643(var2, Blocks.TRAPPED_CHEST, 300);
@@ -101,11 +101,11 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       method3643(var2, Blocks.field37009, 50);
       method3643(var2, Blocks.DEAD_BUSH, 100);
       method3643(var2, Blocks.field37053, 400);
-      method3643(var2, Blocks.field37054, 300);
-      method3643(var2, Blocks.field37055, 300);
-      method3643(var2, Blocks.field37058, 300);
-      method3643(var2, Blocks.field37059, 300);
-      method3643(var2, Blocks.field37062, 300);
+      method3643(var2, Blocks.LOOM, 300);
+      method3643(var2, Blocks.BARREL, 300);
+      method3643(var2, Blocks.CARTOGRAPHY_TABLE, 300);
+      method3643(var2, Blocks.FLETCHING_TABLE, 300);
+      method3643(var2, Blocks.SMITHING_TABLE, 300);
       method3643(var2, Blocks.field37115, 300);
       return var2;
    }
@@ -216,7 +216,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
          if (var3 != this.method3644()) {
             var4 = true;
             this.field5324
-               .setBlockState(this.field5325, this.field5324.getBlockState(this.field5325).method23465(Class3350.field18876, Boolean.valueOf(this.method3644())), 3);
+               .setBlockState(this.field5325, this.field5324.getBlockState(this.field5325).with(Class3350.field18876, Boolean.valueOf(this.method3644())), 3);
          }
       }
 
@@ -292,7 +292,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    @Override
    public int[] method3653(Direction var1) {
       if (var1 != Direction.DOWN) {
-         return var1 != Direction.field673 ? field5246 : field5244;
+         return var1 != Direction.UP ? field5246 : field5244;
       } else {
          return field5245;
       }

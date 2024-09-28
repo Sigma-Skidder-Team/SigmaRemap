@@ -3,11 +3,15 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.FenceGateBlock;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
@@ -17,17 +21,17 @@ import java.util.Random;
 
 public class Class3221 extends Block {
    private static String[] field18643;
-   public static final Class8554 field18644 = Class8820.field39756;
-   public static final VoxelShape field18645 = Block.method11539(0.0, 0.0, 0.0, 16.0, 15.0, 16.0);
+   public static final IntegerProperty field18644 = BlockStateProperties.field39756;
+   public static final VoxelShape field18645 = Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 15.0, 16.0);
 
-   public Class3221(AbstractBlock var1) {
+   public Class3221(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().method23465(field18644, Integer.valueOf(0)));
+      this.method11578(this.field18612.method35393().with(field18644, Integer.valueOf(0)));
    }
 
    @Override
    public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
-      if (var2 == Direction.field673 && !var1.method23443(var4, var5)) {
+      if (var2 == Direction.UP && !var1.method23443(var4, var5)) {
          var4.method6860().method20726(var5, this, 1);
       }
 
@@ -37,7 +41,7 @@ public class Class3221 extends Block {
    @Override
    public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
       BlockState var6 = var2.getBlockState(var3.up());
-      return !var6.getMaterial().isSolid() || var6.getBlock() instanceof Class3199 || var6.getBlock() instanceof Class3356;
+      return !var6.getMaterial().isSolid() || var6.getBlock() instanceof FenceGateBlock || var6.getBlock() instanceof Class3356;
    }
 
    @Override
@@ -64,17 +68,17 @@ public class Class3221 extends Block {
 
    @Override
    public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
-      int var7 = var1.<Integer>method23463(field18644);
+      int var7 = var1.<Integer>get(field18644);
       if (!method11612(var2, var3) && !var2.isRainingAt(var3.up())) {
          if (var7 <= 0) {
             if (!method11611(var2, var3)) {
                method11610(var1, var2, var3);
             }
          } else {
-            var2.setBlockState(var3, var1.method23465(field18644, Integer.valueOf(var7 - 1)), 2);
+            var2.setBlockState(var3, var1.with(field18644, Integer.valueOf(var7 - 1)), 2);
          }
       } else if (var7 < 7) {
-         var2.setBlockState(var3, var1.method23465(field18644, Integer.valueOf(7)), 2);
+         var2.setBlockState(var3, var1.with(field18644, Integer.valueOf(7)), 2);
       }
    }
 

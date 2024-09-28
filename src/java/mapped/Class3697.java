@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.DoorBlock;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.math.BlockPos;
@@ -48,7 +49,7 @@ public class Class3697 extends Class3676<LivingEntity> {
       BlockPos var10 = var8.method22531();
       BlockState var11 = var1.getBlockState(var10);
       if (var11.isIn(BlockTags.field32740)) {
-         Class3461 var12 = (Class3461)var11.getBlock();
+         DoorBlock var12 = (DoorBlock)var11.getBlock();
          if (!var12.method12141(var11)) {
             var12.method12142(var1, var11, var10, true);
          }
@@ -59,7 +60,7 @@ public class Class3697 extends Class3676<LivingEntity> {
       BlockPos var15 = var9.method22531();
       BlockState var13 = var1.getBlockState(var15);
       if (var13.isIn(BlockTags.field32740)) {
-         Class3461 var14 = (Class3461)var13.getBlock();
+         DoorBlock var14 = (DoorBlock)var13.getBlock();
          if (!var14.method12141(var13)) {
             var14.method12142(var1, var13, var15, true);
             this.method12565(var1, var2, var15);
@@ -81,7 +82,7 @@ public class Class3697 extends Class3676<LivingEntity> {
                if (!method12564(var0, var1, var8)) {
                   BlockState var10 = var0.getBlockState(var9);
                   if (var10.isIn(BlockTags.field32740)) {
-                     Class3461 var11 = (Class3461)var10.getBlock();
+                     DoorBlock var11 = (DoorBlock)var10.getBlock();
                      if (var11.method12141(var10)) {
                         if (!method12562(var0, var1, var9)) {
                            var11.method12142(var0, var10, var9, false);

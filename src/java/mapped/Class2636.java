@@ -33,7 +33,7 @@ public class Class2636 extends Class2628 {
    @Override
    public boolean method10840(IWorldReader var1, BlockPos var2) {
       BlockState var5 = var1.getBlockState(var2);
-      return var5.isIn(Blocks.field37069) && var5.<Integer>method23463(Class3484.field19342) >= 2;
+      return var5.isIn(Blocks.field37069) && var5.<Integer>get(Class3484.field19342) >= 2;
    }
 
    @Override
@@ -55,8 +55,8 @@ public class Class2636 extends Class2628 {
       if (this.field16957.world.getGameRules().getBoolean(Class5462.field24224)) {
          BlockState var3 = this.field16957.world.getBlockState(this.field16933);
          if (var3.isIn(Blocks.field37069)) {
-            int var4 = var3.<Integer>method23463(Class3484.field19342);
-            var3.method23465(Class3484.field19342, Integer.valueOf(1));
+            int var4 = var3.<Integer>get(Class3484.field19342);
+            var3.with(Class3484.field19342, Integer.valueOf(1));
             int var5 = 1 + this.field16957.world.rand.nextInt(2) + (var4 != 3 ? 0 : 1);
             ItemStack var6 = this.field16957.getItemStackFromSlot(EquipmentSlotType.MAINHAND);
             if (var6.isEmpty()) {
@@ -69,7 +69,7 @@ public class Class2636 extends Class2628 {
             }
 
             this.field16957.playSound(SoundEvents.field27144, 1.0F, 1.0F);
-            this.field16957.world.setBlockState(this.field16933, var3.method23465(Class3484.field19342, Integer.valueOf(1)), 2);
+            this.field16957.world.setBlockState(this.field16933, var3.with(Class3484.field19342, Integer.valueOf(1)), 2);
          }
       }
    }

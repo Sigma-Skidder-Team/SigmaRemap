@@ -25,6 +25,7 @@ import net.minecraft.particles.IParticleData;
 import net.minecraft.scoreboard.Scoreboard;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -371,7 +372,7 @@ public class ClientWorld extends World {
          var14.method23480(this, var7, var5);
          IParticleData var15 = var14.method23485();
          if (var15 != null && this.rand.nextInt(10) == 0) {
-            boolean var16 = var13.method23454(this, var7, net.minecraft.util.Direction.DOWN);
+            boolean var16 = var13.method23454(this, var7, Direction.DOWN);
             BlockPos var17 = var7.down();
             this.method6854(var17, this.getBlockState(var17), var15, var16);
          }
@@ -405,15 +406,15 @@ public class ClientWorld extends World {
    private void method6854(BlockPos var1, BlockState var2, IParticleData var3, boolean var4) {
       if (var2.method23449().method23474()) {
          VoxelShape var7 = var2.method23414(this, var1);
-         double var8 = var7.getEnd(Direction.Y);
+         double var8 = var7.getEnd(Direction.Axis.Y);
          if (!(var8 < 1.0)) {
             if (!var2.isIn(BlockTags.field32781)) {
-               double var10 = var7.getStart(Direction.Y);
+               double var10 = var7.getStart(Direction.Axis.Y);
                if (!(var10 > 0.0)) {
                   BlockPos var12 = var1.down();
                   BlockState var13 = this.getBlockState(var12);
                   VoxelShape var14 = var13.method23414(this, var12);
-                  double var15 = var14.getEnd(Direction.Y);
+                  double var15 = var14.getEnd(Direction.Axis.Y);
                   if (var15 < 1.0 && var13.method23449().method23474()) {
                      this.method6855(var1, var3, var7, (double)var1.getY() - 0.05);
                   }
@@ -436,10 +437,10 @@ public class ClientWorld extends World {
 
    private void method6855(BlockPos var1, IParticleData var2, VoxelShape var3, double var4) {
       this.method6856(
-         (double)var1.getX() + var3.getStart(Direction.X),
-         (double)var1.getX() + var3.getEnd(Direction.X),
-         (double)var1.getZ() + var3.getStart(Direction.Z),
-         (double)var1.getZ() + var3.getEnd(Direction.Z),
+         (double)var1.getX() + var3.getStart(Direction.Axis.X),
+         (double)var1.getX() + var3.getEnd(Direction.Axis.X),
+         (double)var1.getZ() + var3.getStart(Direction.Axis.Z),
+         (double)var1.getZ() + var3.getEnd(Direction.Axis.Z),
          var4,
          var2
       );
@@ -801,7 +802,7 @@ public class ClientWorld extends World {
    }
 
    @Override
-   public float method6877(net.minecraft.util.Direction var1, boolean var2) {
+   public float method6877(Direction var1, boolean var2) {
       boolean var5 = this.method6830().method19307();
       boolean var6 = Config.isShaders();
       if (!var2) {

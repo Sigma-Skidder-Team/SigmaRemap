@@ -26,12 +26,12 @@ public class Class3341 extends Item {
       World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
       BlockState var6 = var4.getBlockState(var5);
-      if (!var6.isIn(Blocks.field36650) || var6.<Boolean>method23463(Class3400.field19054)) {
+      if (!var6.isIn(Blocks.field36650) || var6.<Boolean>get(Class3400.field19054)) {
          return ActionResultType.field14820;
       } else if (var4.isRemote) {
          return ActionResultType.SUCCESS;
       } else {
-         BlockState var7 = var6.method23465(Class3400.field19054, Boolean.valueOf(true));
+         BlockState var7 = var6.with(Class3400.field19054, Boolean.valueOf(true));
          Block.method11538(var6, var7, var4, var5);
          var4.setBlockState(var5, var7, 2);
          var4.updateComparatorOutputLevel(var5, Blocks.field36650);

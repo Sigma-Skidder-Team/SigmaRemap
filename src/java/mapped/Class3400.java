@@ -1,27 +1,33 @@
 package mapped;
 
+import net.minecraft.block.HorizontalBlock;
+import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.DirectionProperty;
 import com.google.common.base.Predicates;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.CachedBlockInfo;
+import net.minecraft.util.Mirror;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 public class Class3400 extends Block {
-   public static final Class8553 field19053 = Class3198.field18484;
-   public static final Class8551 field19054 = Class8820.field39689;
-   public static final VoxelShape field19055 = Block.method11539(0.0, 0.0, 0.0, 16.0, 13.0, 16.0);
-   public static final VoxelShape field19056 = Block.method11539(4.0, 13.0, 4.0, 12.0, 16.0, 12.0);
-   public static final VoxelShape field19057 = VoxelShapes.method27431(field19055, field19056);
+   public static final DirectionProperty field19053 = HorizontalBlock.HORIZONTAL_FACING;
+   public static final BooleanProperty field19054 = BlockStateProperties.field39689;
+   public static final VoxelShape field19055 = Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 13.0, 16.0);
+   public static final VoxelShape field19056 = Block.makeCuboidShape(4.0, 13.0, 4.0, 12.0, 16.0, 12.0);
+   public static final VoxelShape field19057 = VoxelShapes.or(field19055, field19056);
    private static Class9803 field19058;
 
-   public Class3400(AbstractBlock var1) {
+   public Class3400(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().method23465(field19053, Direction.NORTH).method23465(field19054, Boolean.valueOf(false)));
+      this.method11578(this.field18612.method35393().with(field19053, Direction.NORTH).with(field19054, Boolean.valueOf(false)));
    }
 
    @Override
@@ -31,12 +37,12 @@ public class Class3400 extends Block {
 
    @Override
    public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
-      return !var1.<Boolean>method23463(field19054) ? field19055 : field19057;
+      return !var1.<Boolean>get(field19054) ? field19055 : field19057;
    }
 
    @Override
    public BlockState method11495(Class5909 var1) {
-      return this.method11579().method23465(field19053, var1.method18350().method536()).method23465(field19054, Boolean.valueOf(false));
+      return this.method11579().with(field19053, var1.method18350().getOpposite()).with(field19054, Boolean.valueOf(false));
    }
 
    @Override
@@ -46,17 +52,17 @@ public class Class3400 extends Block {
 
    @Override
    public int method11649(BlockState var1, World var2, BlockPos var3) {
-      return !var1.<Boolean>method23463(field19054) ? 0 : 15;
+      return !var1.<Boolean>get(field19054) ? 0 : 15;
    }
 
    @Override
-   public BlockState method11500(BlockState var1, Rotation var2) {
-      return var1.method23465(field19053, var2.method252(var1.<Direction>method23463(field19053)));
+   public BlockState rotate(BlockState var1, Rotation var2) {
+      return var1.with(field19053, var2.rotate(var1.<Direction>get(field19053)));
    }
 
    @Override
-   public BlockState method11501(BlockState var1, Class2089 var2) {
-      return var1.method23395(var2.method8749(var1.<Direction>method23463(field19053)));
+   public BlockState mirror(BlockState var1, Mirror var2) {
+      return var1.rotate(var2.toRotation(var1.<Direction>get(field19053)));
    }
 
    @Override

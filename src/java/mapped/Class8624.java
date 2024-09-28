@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.state.properties.ChestType;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 
@@ -128,7 +129,7 @@ public class Class8624 {
       return new Class7826(field38771, new ResourceLocation("entity/chest/" + var0));
    }
 
-   public static Class7826 method30913(TileEntity var0, Class111 var1, boolean var2) {
+   public static Class7826 method30913(TileEntity var0, ChestType var1, boolean var2) {
       if (!var2) {
          if (!(var0 instanceof Class970)) {
             return !(var0 instanceof Class943) ? method30914(var1, field38792, field38793, field38794) : field38795;
@@ -140,7 +141,7 @@ public class Class8624 {
       }
    }
 
-   private static Class7826 method30914(Class111 var0, Class7826 var1, Class7826 var2, Class7826 var3) {
+   private static Class7826 method30914(ChestType var0, Class7826 var1, Class7826 var2, Class7826 var3) {
       switch (Class9292.field42734[var0.ordinal()]) {
          case 1:
             return var2;

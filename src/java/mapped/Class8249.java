@@ -80,7 +80,7 @@ public class Class8249 {
    }
 
    private static String method28764(Random var0, String[] var1) {
-      return Util.<String>method38518(var1, var0);
+      return Util.<String>getRandomObject(var1, var0);
    }
 
    private static Random method28765(UUID var0) {

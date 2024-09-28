@@ -62,12 +62,12 @@ public class Class4204 extends Class4194 {
       this.method12927(var1, var5, 4, 1, 9, 6, 1, 11, Blocks.LAVA.method11579(), Blocks.LAVA.method11579(), false);
       BlockState var11 = Blocks.IRON_BARS
          .method11579()
-         .method23465(Class3237.field18680, Boolean.valueOf(true))
-         .method23465(Class3237.field18682, Boolean.valueOf(true));
+         .with(Class3237.field18680, Boolean.valueOf(true))
+         .with(Class3237.field18682, Boolean.valueOf(true));
       BlockState var12 = Blocks.IRON_BARS
          .method11579()
-         .method23465(Class3237.field18683, Boolean.valueOf(true))
-         .method23465(Class3237.field18681, Boolean.valueOf(true));
+         .with(Class3237.field18683, Boolean.valueOf(true))
+         .with(Class3237.field18681, Boolean.valueOf(true));
 
       for (int var13 = 3; var13 < 14; var13 += 2) {
          this.method12927(var1, var5, 0, 3, var13, 0, 4, var13, var11, var11, false);
@@ -78,7 +78,7 @@ public class Class4204 extends Class4194 {
          this.method12927(var1, var5, var23, 3, 15, var23, 4, 15, var12, var12, false);
       }
 
-      BlockState var24 = Blocks.STONE_BRICK_STAIRS.method11579().method23465(Class3421.field19131, Direction.NORTH);
+      BlockState var24 = Blocks.STONE_BRICK_STAIRS.method11579().with(Class3421.field19131, Direction.NORTH);
       this.method12928(var1, var5, 4, 1, 5, 6, 1, 7, false, var4, Class9331.method35288());
       this.method12928(var1, var5, 4, 2, 6, 6, 2, 7, false, var4, Class9331.method35288());
       this.method12928(var1, var5, 4, 3, 7, 6, 3, 7, false, var4, Class9331.method35288());
@@ -89,10 +89,10 @@ public class Class4204 extends Class4194 {
          this.method12923(var1, var24, var14, 3, 6, var5);
       }
 
-      BlockState var25 = Blocks.field36650.method11579().method23465(Class3400.field19053, Direction.NORTH);
-      BlockState var15 = Blocks.field36650.method11579().method23465(Class3400.field19053, Direction.SOUTH);
-      BlockState var16 = Blocks.field36650.method11579().method23465(Class3400.field19053, Direction.EAST);
-      BlockState var17 = Blocks.field36650.method11579().method23465(Class3400.field19053, Direction.WEST);
+      BlockState var25 = Blocks.field36650.method11579().with(Class3400.field19053, Direction.NORTH);
+      BlockState var15 = Blocks.field36650.method11579().with(Class3400.field19053, Direction.SOUTH);
+      BlockState var16 = Blocks.field36650.method11579().with(Class3400.field19053, Direction.EAST);
+      BlockState var17 = Blocks.field36650.method11579().with(Class3400.field19053, Direction.WEST);
       boolean var18 = true;
       boolean[] var19 = new boolean[12];
 
@@ -101,18 +101,18 @@ public class Class4204 extends Class4194 {
          var18 &= var19[var20];
       }
 
-      this.method12923(var1, var25.method23465(Class3400.field19054, Boolean.valueOf(var19[0])), 4, 3, 8, var5);
-      this.method12923(var1, var25.method23465(Class3400.field19054, Boolean.valueOf(var19[1])), 5, 3, 8, var5);
-      this.method12923(var1, var25.method23465(Class3400.field19054, Boolean.valueOf(var19[2])), 6, 3, 8, var5);
-      this.method12923(var1, var15.method23465(Class3400.field19054, Boolean.valueOf(var19[3])), 4, 3, 12, var5);
-      this.method12923(var1, var15.method23465(Class3400.field19054, Boolean.valueOf(var19[4])), 5, 3, 12, var5);
-      this.method12923(var1, var15.method23465(Class3400.field19054, Boolean.valueOf(var19[5])), 6, 3, 12, var5);
-      this.method12923(var1, var16.method23465(Class3400.field19054, Boolean.valueOf(var19[6])), 3, 3, 9, var5);
-      this.method12923(var1, var16.method23465(Class3400.field19054, Boolean.valueOf(var19[7])), 3, 3, 10, var5);
-      this.method12923(var1, var16.method23465(Class3400.field19054, Boolean.valueOf(var19[8])), 3, 3, 11, var5);
-      this.method12923(var1, var17.method23465(Class3400.field19054, Boolean.valueOf(var19[9])), 7, 3, 9, var5);
-      this.method12923(var1, var17.method23465(Class3400.field19054, Boolean.valueOf(var19[10])), 7, 3, 10, var5);
-      this.method12923(var1, var17.method23465(Class3400.field19054, Boolean.valueOf(var19[11])), 7, 3, 11, var5);
+      this.method12923(var1, var25.with(Class3400.field19054, Boolean.valueOf(var19[0])), 4, 3, 8, var5);
+      this.method12923(var1, var25.with(Class3400.field19054, Boolean.valueOf(var19[1])), 5, 3, 8, var5);
+      this.method12923(var1, var25.with(Class3400.field19054, Boolean.valueOf(var19[2])), 6, 3, 8, var5);
+      this.method12923(var1, var15.with(Class3400.field19054, Boolean.valueOf(var19[3])), 4, 3, 12, var5);
+      this.method12923(var1, var15.with(Class3400.field19054, Boolean.valueOf(var19[4])), 5, 3, 12, var5);
+      this.method12923(var1, var15.with(Class3400.field19054, Boolean.valueOf(var19[5])), 6, 3, 12, var5);
+      this.method12923(var1, var16.with(Class3400.field19054, Boolean.valueOf(var19[6])), 3, 3, 9, var5);
+      this.method12923(var1, var16.with(Class3400.field19054, Boolean.valueOf(var19[7])), 3, 3, 10, var5);
+      this.method12923(var1, var16.with(Class3400.field19054, Boolean.valueOf(var19[8])), 3, 3, 11, var5);
+      this.method12923(var1, var17.with(Class3400.field19054, Boolean.valueOf(var19[9])), 7, 3, 9, var5);
+      this.method12923(var1, var17.with(Class3400.field19054, Boolean.valueOf(var19[10])), 7, 3, 10, var5);
+      this.method12923(var1, var17.with(Class3400.field19054, Boolean.valueOf(var19[11])), 7, 3, 11, var5);
       if (var18) {
          BlockState var26 = Blocks.field36649.method11579();
          this.method12923(var1, var26, 4, 3, 9, var5);

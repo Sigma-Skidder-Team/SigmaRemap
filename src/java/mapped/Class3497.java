@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.state.properties.SlabType;
+
 // $VF: synthetic class
 public class Class3497 {
    private static String[] field19371;
@@ -22,15 +24,15 @@ public class Class3497 {
       } catch (NoSuchFieldError var5) {
       }
 
-      field19372 = new int[Class86.values().length];
+      field19372 = new int[SlabType.values().length];
 
       try {
-         field19372[Class86.field220.ordinal()] = 1;
+         field19372[SlabType.field220.ordinal()] = 1;
       } catch (NoSuchFieldError var4) {
       }
 
       try {
-         field19372[Class86.field218.ordinal()] = 2;
+         field19372[SlabType.field218.ordinal()] = 2;
       } catch (NoSuchFieldError var3) {
       }
    }

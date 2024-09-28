@@ -32,11 +32,11 @@ public class Class2931 extends Class2930 {
                         var5,
                         var6.field22395
                            .method20424(var2, var3)
-                           .method23465(Class3443.field19253, Boolean.valueOf(var9 >= var4 - 1))
-                           .method23465(Class3443.field19252, Boolean.valueOf(var12 < -var11))
-                           .method23465(Class3443.field19250, Boolean.valueOf(var12 > var11))
-                           .method23465(Class3443.field19249, Boolean.valueOf(var13 < -var11))
-                           .method23465(Class3443.field19251, Boolean.valueOf(var13 > var11))
+                           .with(Class3443.field19253, Boolean.valueOf(var9 >= var4 - 1))
+                           .with(Class3443.field19252, Boolean.valueOf(var12 < -var11))
+                           .with(Class3443.field19250, Boolean.valueOf(var12 > var11))
+                           .with(Class3443.field19249, Boolean.valueOf(var13 < -var11))
+                           .with(Class3443.field19251, Boolean.valueOf(var13 > var11))
                      );
                   }
                }

@@ -11,7 +11,7 @@ import net.minecraft.world.IWorldReader;
 public class Class3194 extends Block {
    private static String[] field18470;
 
-   public Class3194(AbstractBlock var1) {
+   public Class3194(Properties var1) {
       super(var1);
    }
 

@@ -5,6 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
+import net.minecraft.util.Mirror;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
@@ -162,7 +163,7 @@ public abstract class TileEntity {
    public void method3784(Rotation var1) {
    }
 
-   public void method3785(Class2089 var1) {
+   public void method3785(Mirror var1) {
    }
 
    public TileEntityType<?> method3786() {

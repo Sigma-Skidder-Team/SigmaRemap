@@ -295,7 +295,7 @@ public class Class8896 {
    public boolean method32395(BlockState var1, Map<Class8550, List<Comparable>> var2) {
       for (Class8550 var6 : var2.keySet()) {
          List var7 = (List)var2.get(var6);
-         Comparable var8 = var1.<Comparable>method23463(var6);
+         Comparable var8 = var1.<Comparable>get(var6);
          if (var8 == null) {
             return false;
          }
@@ -448,7 +448,7 @@ public class Class8896 {
                      var5.add(var9);
                   }
                } else {
-                  var5.addAll(Arrays.asList(Direction.field685));
+                  var5.addAll(Arrays.asList(Direction.VALUES));
                }
             } else {
                var5.add(Direction.NORTH);
@@ -458,10 +458,10 @@ public class Class8896 {
             }
          }
 
-         boolean[] var10 = new boolean[Direction.field685.length];
+         boolean[] var10 = new boolean[Direction.VALUES.length];
 
          for (int var11 = 0; var11 < var10.length; var11++) {
-            var10[var11] = var5.contains(Direction.field685[var11]);
+            var10[var11] = var5.contains(Direction.VALUES[var11]);
          }
 
          return var10;
@@ -473,7 +473,7 @@ public class Class8896 {
       if (var1.equals("bottom") || var1.equals("down")) {
          return Direction.DOWN;
       } else if (var1.equals("top") || var1.equals("up")) {
-         return Direction.field673;
+         return Direction.UP;
       } else if (var1.equals("north")) {
          return Direction.NORTH;
       } else if (var1.equals("south")) {

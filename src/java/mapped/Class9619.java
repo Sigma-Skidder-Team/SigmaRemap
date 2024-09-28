@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.Minecraft;
+import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockDisplayReader;
@@ -65,7 +66,7 @@ public class Class9619 {
          var3 = method37445(field44976, var3);
          return var4.method29429(var3);
       } else {
-         net.minecraft.util.Direction var6 = var3.method30514();
+         Direction var6 = var3.method30514();
          return method37449(var0, var1, var2, var6, var3, var4);
       }
    }
@@ -73,8 +74,8 @@ public class Class9619 {
    private static boolean method37443(IBlockReader var0, BlockState var1, BlockPos var2, Class8557 var3, Class8391 var4) {
       Block var5 = var1.getBlock();
       if (var5 instanceof Class3237) {
-         net.minecraft.util.Direction var6 = var3.method30514();
-         if (var6 != net.minecraft.util.Direction.field673 && var6 != net.minecraft.util.Direction.DOWN) {
+         Direction var6 = var3.method30514();
+         if (var6 != Direction.UP && var6 != Direction.DOWN) {
             return false;
          }
 
@@ -99,17 +100,17 @@ public class Class9619 {
 
          double var14 = (double)var3.method30526();
          if (var14 < 0.4) {
-            if (var8.<Boolean>method23463(Class3238.field18683)) {
+            if (var8.<Boolean>get(Class3238.field18683)) {
                return true;
             }
          } else if (var14 > 0.6) {
-            if (var8.<Boolean>method23463(Class3238.field18681)) {
+            if (var8.<Boolean>get(Class3238.field18681)) {
                return true;
             }
          } else {
             double var12 = var3.method30528();
             if (var12 < 0.4) {
-               if (var8.<Boolean>method23463(Class3238.field18680)) {
+               if (var8.<Boolean>get(Class3238.field18680)) {
                   return true;
                }
             } else {
@@ -117,7 +118,7 @@ public class Class9619 {
                   return true;
                }
 
-               if (var8.<Boolean>method23463(Class3238.field18682)) {
+               if (var8.<Boolean>get(Class3238.field18682)) {
                   return true;
                }
             }
@@ -173,11 +174,11 @@ public class Class9619 {
          if (var3 >= 0 && var3 < field44960.length) {
             Map var4 = field44960[var3];
             if (var4 == null) {
-               var4 = new EnumMap(net.minecraft.util.Direction.class);
+               var4 = new EnumMap(Direction.class);
                field44960[var3] = (Map)var4;
             }
 
-            net.minecraft.util.Direction var5 = var1.method30514();
+            Direction var5 = var1.method30514();
             Class8557 var6 = (Class8557)var4.get(var5);
             if (var6 == null) {
                var6 = Class7832.method26233(var5, var0, var2);
@@ -213,7 +214,7 @@ public class Class9619 {
       var0[var5 + 4 + 1] = Float.floatToRawIntBits(var3.method7464(var10));
    }
 
-   private static Class8557[] method37449(IBlockDisplayReader var0, BlockState var1, BlockPos var2, net.minecraft.util.Direction var3, Class8557 var4, Class8391 var5) {
+   private static Class8557[] method37449(IBlockDisplayReader var0, BlockState var1, BlockPos var2, Direction var3, Class8557 var4, Class8391 var5) {
       Class8557[] var6 = method37450(var0, var1, var2, var3, var4, true, 0, var5);
       if (!field44964) {
          return var6;
@@ -246,7 +247,7 @@ public class Class9619 {
       }
    }
 
-   public static Class8557[] method37450(IBlockDisplayReader var0, BlockState var1, BlockPos var2, net.minecraft.util.Direction var3, Class8557 var4, boolean var5, int var6, Class8391 var7) {
+   public static Class8557[] method37450(IBlockDisplayReader var0, BlockState var1, BlockPos var2, Direction var3, Class8557 var4, boolean var5, int var6, Class8391 var7) {
       Block var8 = var1.getBlock();
       TextureAtlasSprite var9 = var4.method30516();
       if (field44963 != null) {
@@ -292,7 +293,7 @@ public class Class9619 {
       return var7.method29429(var4);
    }
 
-   public static int method37451(net.minecraft.util.Direction var0) {
+   public static int method37451(Direction var0) {
       if (var0 == null) {
          return -1;
       } else {
@@ -315,22 +316,22 @@ public class Class9619 {
       }
    }
 
-   private static net.minecraft.util.Direction method37452(int var0) {
+   private static Direction method37452(int var0) {
       switch (var0) {
          case 0:
-            return net.minecraft.util.Direction.DOWN;
+            return Direction.DOWN;
          case 1:
-            return net.minecraft.util.Direction.field673;
+            return Direction.UP;
          case 2:
-            return net.minecraft.util.Direction.NORTH;
+            return Direction.NORTH;
          case 3:
-            return net.minecraft.util.Direction.SOUTH;
+            return Direction.SOUTH;
          case 4:
-            return net.minecraft.util.Direction.WEST;
+            return Direction.WEST;
          case 5:
-            return net.minecraft.util.Direction.EAST;
+            return Direction.EAST;
          default:
-            return net.minecraft.util.Direction.field673;
+            return Direction.UP;
       }
    }
 
@@ -453,7 +454,7 @@ public class Class9619 {
    }
 
    private static int method37455(BlockState var0) {
-      Direction var1 = var0.<Direction>method23463(Class3386.field18994);
+      Direction.Axis var1 = var0.<Direction.Axis>get(Class3386.field18994);
       switch (Class9621.field44998[var1.ordinal()]) {
          case 1:
             return 2;
@@ -1214,7 +1215,7 @@ public class Class9619 {
       if (var5 == null) {
          return null;
       } else {
-         net.minecraft.util.Direction var6 = method37452(var4);
+         Direction var6 = method37452(var4);
          List var7 = var5.method22619(var3, var6, field44991);
          if (var7 == null) {
             return null;
@@ -1227,7 +1228,7 @@ public class Class9619 {
                Class8557 var11 = (Class8557)var7.get(0);
                return var11.method30516();
             } else {
-               List var8 = var5.method22619(var3, (net.minecraft.util.Direction)null, field44991);
+               List var8 = var5.method22619(var3, (Direction)null, field44991);
                if (var8 == null) {
                   return null;
                } else {

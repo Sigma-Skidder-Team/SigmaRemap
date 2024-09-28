@@ -57,6 +57,7 @@ import net.minecraft.client.gui.IngameGui;
 import net.minecraft.client.util.Splashes;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Timer;
 import net.minecraft.util.datafix.codec.DatapackCodec;
 import net.minecraft.util.math.BlockPos;
@@ -1114,7 +1115,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
             BlockRayTraceResult var2 = (BlockRayTraceResult)this.objectMouseOver;
             BlockPos var3 = var2.getPos();
             if (!this.world.getBlockState(var3).isAir()) {
-               net.minecraft.util.Direction var4 = var2.getFace();
+               Direction var4 = var2.getFace();
                if (this.playerController.onPlayerDamageBlock(var3, var4)) {
                   this.particles.addBlockHitEffects(var3, var4);
                   this.player.swingArm(Hand.MAIN_HAND);
@@ -1451,7 +1452,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
 
       while (this.gameSettings.keyBindSwapHands.isPressed()) {
          if (!this.player.isSpectator()) {
-            this.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.SWAP_ITEM_WITH_OFFHAND, BlockPos.ZERO, net.minecraft.util.Direction.DOWN));
+            this.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.SWAP_ITEM_WITH_OFFHAND, BlockPos.ZERO, Direction.DOWN));
          }
       }
 

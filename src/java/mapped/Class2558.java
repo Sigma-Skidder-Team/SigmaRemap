@@ -27,6 +27,6 @@ public class Class2558 implements JsonDeserializer<Class9163> {
    @Nullable
    private Direction method10755(JsonObject var1) {
       String var4 = JSONUtils.method32764(var1, "cullface", "");
-      return Direction.method545(var4);
+      return Direction.byName(var4);
    }
 }

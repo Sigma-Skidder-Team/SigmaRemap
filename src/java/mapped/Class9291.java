@@ -21,7 +21,7 @@ public class Class9291 {
             new PositionFacing(blockPos.east(), Direction.WEST),
             new PositionFacing(blockPos.south(), Direction.NORTH),
             new PositionFacing(blockPos.west(), Direction.EAST),
-            new PositionFacing(blockPos.down(), Direction.field673),
+            new PositionFacing(blockPos.down(), Direction.UP),
             new PositionFacing(blockPos.up(), Direction.DOWN)
          };
 
@@ -57,7 +57,7 @@ public class Class9291 {
                new PositionFacing(var1.east(), Direction.WEST),
                new PositionFacing(var1.south(), Direction.NORTH),
                new PositionFacing(var1.west(), Direction.EAST),
-               new PositionFacing(var1.down(), Direction.field673)
+               new PositionFacing(var1.down(), Direction.UP)
             };
 
             for (PositionFacing var10 : var6) {

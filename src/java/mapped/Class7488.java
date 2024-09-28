@@ -7,6 +7,7 @@ import com.mojang.serialization.DataResult;
 import com.mojang.serialization.DynamicOps;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.block.Blocks;
+import net.minecraft.state.properties.StructureMode;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
@@ -63,8 +64,8 @@ public class Class7488 extends Class7487 {
 
       for (Class8266 var11 : var8) {
          if (var11.field35532 != null) {
-            Class104 var12 = Class104.valueOf(var11.field35532.getString("mode"));
-            if (var12 == Class104.field321) {
+            StructureMode var12 = StructureMode.valueOf(var11.field35532.getString("mode"));
+            if (var12 == StructureMode.field321) {
                var9.add(var11);
             }
          }

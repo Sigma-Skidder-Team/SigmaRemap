@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.DirectionProperty;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -9,11 +11,14 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
@@ -23,26 +28,26 @@ import java.util.Random;
 
 public class Class3244 extends Class3241 implements Class3207 {
    private static String[] field18696;
-   public static final VoxelShape field18697 = Block.method11539(0.0, 0.0, 0.0, 16.0, 7.0, 16.0);
-   public static final Class8551 field18698 = Class8820.field39699;
-   public static final Class8551 field18699 = Class8820.field39706;
-   public static final Class8551 field18700 = Class8820.field39710;
-   public static final Class8553 field18701 = Class8820.field39722;
-   private static final VoxelShape field18702 = Block.method11539(6.0, 0.0, 6.0, 10.0, 16.0, 10.0);
+   public static final VoxelShape field18697 = Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 7.0, 16.0);
+   public static final BooleanProperty field18698 = BlockStateProperties.field39699;
+   public static final BooleanProperty field18699 = BlockStateProperties.field39706;
+   public static final BooleanProperty field18700 = BlockStateProperties.field39710;
+   public static final DirectionProperty field18701 = BlockStateProperties.HORIZONTAL_FACING;
+   private static final VoxelShape field18702 = Block.makeCuboidShape(6.0, 0.0, 6.0, 10.0, 16.0, 10.0);
    private final boolean field18703;
    private final int field18704;
 
-   public Class3244(boolean var1, int var2, AbstractBlock var3) {
+   public Class3244(boolean var1, int var2, Properties var3) {
       super(var3);
       this.field18703 = var1;
       this.field18704 = var2;
       this.method11578(
          this.field18612
             .method35393()
-            .method23465(field18698, Boolean.valueOf(true))
-            .method23465(field18699, Boolean.valueOf(false))
-            .method23465(field18700, Boolean.valueOf(false))
-            .method23465(field18701,net.minecraft.util.Direction.NORTH)
+            .with(field18698, Boolean.valueOf(true))
+            .with(field18699, Boolean.valueOf(false))
+            .with(field18700, Boolean.valueOf(false))
+            .with(field18701, Direction.NORTH)
       );
    }
 
@@ -68,7 +73,7 @@ public class Class3244 extends Class3241 implements Class3207 {
 
    @Override
    public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
-      if (!var4.isImmuneToFire() && var1.<Boolean>method23463(field18698) && var4 instanceof LivingEntity && !EnchantmentHelper.method26332((LivingEntity)var4)) {
+      if (!var4.isImmuneToFire() && var1.<Boolean>get(field18698) && var4 instanceof LivingEntity && !EnchantmentHelper.method26332((LivingEntity)var4)) {
          var4.attackEntityFrom(DamageSource.field38992, (float)this.field18704);
       }
 
@@ -94,21 +99,21 @@ public class Class3244 extends Class3241 implements Class3207 {
       BlockPos var5 = var1.method18345();
       boolean var6 = var4.getFluidState(var5).method23472() == Class9479.field44066;
       return this.method11579()
-         .method23465(field18700, Boolean.valueOf(var6))
-         .method23465(field18699, Boolean.valueOf(this.method11651(var4.getBlockState(var5.down()))))
-         .method23465(field18698, Boolean.valueOf(!var6))
-         .method23465(field18701, var1.method18350());
+         .with(field18700, Boolean.valueOf(var6))
+         .with(field18699, Boolean.valueOf(this.method11651(var4.getBlockState(var5.down()))))
+         .with(field18698, Boolean.valueOf(!var6))
+         .with(field18701, var1.method18350());
    }
 
    @Override
-   public BlockState method11491(BlockState var1, net.minecraft.util.Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
-      if (var1.<Boolean>method23463(field18700)) {
+   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+      if (var1.<Boolean>get(field18700)) {
          var4.method6861().method20726(var5, Class9479.field44066, Class9479.field44066.method25057(var4));
       }
 
-      return var2 != net.minecraft.util.Direction.DOWN
+      return var2 != Direction.DOWN
          ? super.method11491(var1, var2, var3, var4, var5, var6)
-         : var1.method23465(field18699, Boolean.valueOf(this.method11651(var3)));
+         : var1.with(field18699, Boolean.valueOf(this.method11651(var3)));
    }
 
    private boolean method11651(BlockState var1) {
@@ -127,7 +132,7 @@ public class Class3244 extends Class3241 implements Class3207 {
 
    @Override
    public void method11512(BlockState var1, World var2, BlockPos var3, Random var4) {
-      if (var1.<Boolean>method23463(field18698)) {
+      if (var1.<Boolean>get(field18698)) {
          if (var4.nextInt(10) == 0) {
             var2.method6745(
                (double)var3.getX() + 0.5,
@@ -160,7 +165,7 @@ public class Class3244 extends Class3241 implements Class3207 {
    public static void method11652(Class1660 var0, BlockPos var1, BlockState var2) {
       if (var0.isRemote()) {
          for (int var5 = 0; var5 < 20; var5++) {
-            method11653((World)var0, var1, var2.<Boolean>method23463(field18699), true);
+            method11653((World)var0, var1, var2.<Boolean>get(field18699), true);
          }
       }
 
@@ -172,8 +177,8 @@ public class Class3244 extends Class3241 implements Class3207 {
 
    @Override
    public boolean method11532(Class1660 var1, BlockPos var2, BlockState var3, FluidState var4) {
-      if (!var3.<Boolean>method23463(Class8820.field39710) && var4.method23472() == Class9479.field44066) {
-         boolean var7 = var3.<Boolean>method23463(field18698);
+      if (!var3.<Boolean>get(BlockStateProperties.field39710) && var4.method23472() == Class9479.field44066) {
+         boolean var7 = var3.<Boolean>get(field18698);
          if (var7) {
             if (!var1.isRemote()) {
                var1.method6742((PlayerEntity)null, var2, SoundEvents.field26611, Class2266.field14732, 1.0F, 1.0F);
@@ -182,7 +187,7 @@ public class Class3244 extends Class3241 implements Class3207 {
             method11652(var1, var2, var3);
          }
 
-         var1.setBlockState(var2, var3.method23465(field18700, Boolean.valueOf(true)).method23465(field18698, Boolean.valueOf(false)), 3);
+         var1.setBlockState(var2, var3.with(field18700, Boolean.valueOf(true)).with(field18698, Boolean.valueOf(false)), 3);
          var1.method6861().method20726(var2, var4.method23472(), var4.method23472().method25057(var1));
          return true;
       } else {
@@ -195,9 +200,9 @@ public class Class3244 extends Class3241 implements Class3207 {
       if (!var1.isRemote && var4.isBurning()) {
          Entity var7 = var4.method3460();
          boolean var8 = var7 == null || var7 instanceof PlayerEntity || var1.getGameRules().getBoolean(Class5462.field24224);
-         if (var8 && !var2.<Boolean>method23463(field18698) && !var2.<Boolean>method23463(field18700)) {
+         if (var8 && !var2.<Boolean>get(field18698) && !var2.<Boolean>get(field18700)) {
             BlockPos var9 = var3.getPos();
-            var1.setBlockState(var9, var2.method23465(Class8820.field39699, Boolean.valueOf(true)), 11);
+            var1.setBlockState(var9, var2.with(BlockStateProperties.field39699, Boolean.valueOf(true)), 11);
          }
       }
    }
@@ -247,22 +252,22 @@ public class Class3244 extends Class3241 implements Class3207 {
    }
 
    public static boolean method11655(BlockState var0) {
-      return var0.method23462(field18698) && var0.isIn(BlockTags.field32809) && var0.<Boolean>method23463(field18698);
+      return var0.method23462(field18698) && var0.isIn(BlockTags.field32809) && var0.<Boolean>get(field18698);
    }
 
    @Override
    public FluidState method11498(BlockState var1) {
-      return !var1.<Boolean>method23463(field18700) ? super.method11498(var1) : Class9479.field44066.method25078(false);
+      return !var1.<Boolean>get(field18700) ? super.method11498(var1) : Class9479.field44066.method25078(false);
    }
 
    @Override
-   public BlockState method11500(BlockState var1, Rotation var2) {
-      return var1.method23465(field18701, var2.method252(var1.<net.minecraft.util.Direction>method23463(field18701)));
+   public BlockState rotate(BlockState var1, Rotation var2) {
+      return var1.with(field18701, var2.rotate(var1.<Direction>get(field18701)));
    }
 
    @Override
-   public BlockState method11501(BlockState var1, Class2089 var2) {
-      return var1.method23395(var2.method8749(var1.<net.minecraft.util.Direction>method23463(field18701)));
+   public BlockState mirror(BlockState var1, Mirror var2) {
+      return var1.rotate(var2.toRotation(var1.<Direction>get(field18701)));
    }
 
    @Override
@@ -281,8 +286,8 @@ public class Class3244 extends Class3241 implements Class3207 {
    }
 
    public static boolean method11656(BlockState var0) {
-      return var0.method23447(BlockTags.field32809, var0x -> var0x.method23462(Class8820.field39710) && var0x.method23462(Class8820.field39699))
-         && !var0.<Boolean>method23463(Class8820.field39710)
-         && !var0.<Boolean>method23463(Class8820.field39699);
+      return var0.method23447(BlockTags.field32809, var0x -> var0x.method23462(BlockStateProperties.field39710) && var0x.method23462(BlockStateProperties.field39699))
+         && !var0.<Boolean>get(BlockStateProperties.field39710)
+         && !var0.<Boolean>get(BlockStateProperties.field39699);
    }
 }

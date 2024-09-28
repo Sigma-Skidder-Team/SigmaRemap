@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.util.Util;
+import net.minecraft.util.Mirror;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
@@ -71,8 +72,8 @@ public class Class5454 extends StructureStart<Class4726> {
       }
 
       Class8969 var13 = var3.method31603(var26);
-      Rotation var14 = Util.<Rotation>method38518(Rotation.values(), this.field24201);
-      Class2089 var15 = !(this.field24201.nextFloat() < 0.5F) ? Class2089.field13616 : Class2089.field13614;
+      Rotation var14 = Util.<Rotation>getRandomObject(Rotation.values(), this.field24201);
+      Mirror var15 = !(this.field24201.nextFloat() < 0.5F) ? Mirror.field13616 : Mirror.field13614;
       BlockPos var16 = new BlockPos(var13.method32886().getX() / 2, 0, var13.method32886().getZ() / 2);
       BlockPos var17 = new ChunkPos(var4, var5).method24364();
       Class9764 var18 = var13.method32910(var17, var14, var16, var15);

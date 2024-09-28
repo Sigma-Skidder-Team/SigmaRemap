@@ -6,6 +6,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
@@ -18,19 +19,19 @@ import java.util.function.Function;
 public class Class4527 {
    private static String[] field21839;
 
-   public static int[][] method14422(net.minecraft.util.Direction var0) {
-      net.minecraft.util.Direction var3 = var0.method537();
-      net.minecraft.util.Direction var4 = var3.method536();
-      net.minecraft.util.Direction var5 = var0.method536();
+   public static int[][] method14422(Direction var0) {
+      Direction var3 = var0.rotateY();
+      Direction var4 = var3.getOpposite();
+      Direction var5 = var0.getOpposite();
       return new int[][]{
-         {var3.method539(), var3.method541()},
-         {var4.method539(), var4.method541()},
-         {var5.method539() + var3.method539(), var5.method541() + var3.method541()},
-         {var5.method539() + var4.method539(), var5.method541() + var4.method541()},
-         {var0.method539() + var3.method539(), var0.method541() + var3.method541()},
-         {var0.method539() + var4.method539(), var0.method541() + var4.method541()},
-         {var5.method539(), var5.method541()},
-         {var0.method539(), var0.method541()}
+         {var3.getXOffset(), var3.getZOffset()},
+         {var4.getXOffset(), var4.getZOffset()},
+         {var5.getXOffset() + var3.getXOffset(), var5.getZOffset() + var3.getZOffset()},
+         {var5.getXOffset() + var4.getXOffset(), var5.getZOffset() + var4.getZOffset()},
+         {var0.getXOffset() + var3.getXOffset(), var0.getZOffset() + var3.getZOffset()},
+         {var0.getXOffset() + var4.getXOffset(), var0.getZOffset() + var4.getZOffset()},
+         {var5.getXOffset(), var5.getZOffset()},
+         {var0.getXOffset(), var0.getZOffset()}
       };
    }
 
@@ -56,7 +57,7 @@ public class Class4527 {
 
    public static VoxelShape method14426(IBlockReader var0, BlockPos var1) {
       BlockState var4 = var0.getBlockState(var1);
-      return !var4.isIn(BlockTags.field32804) && (!(var4.getBlock() instanceof Class3206) || !var4.<Boolean>method23463(Class3206.field18594))
+      return !var4.isIn(BlockTags.field32804) && (!(var4.getBlock() instanceof Class3206) || !var4.<Boolean>get(Class3206.field18594))
          ? var4.method23414(var0, var1)
          : VoxelShapes.method27425();
    }
@@ -68,11 +69,11 @@ public class Class4527 {
       while (var6 < var1) {
          VoxelShape var7 = (VoxelShape)var2.apply(var5);
          if (!var7.isEmpty()) {
-            return (double)(var0.getY() + var6) + var7.getStart(Direction.Y);
+            return (double)(var0.getY() + var6) + var7.getStart(Direction.Axis.Y);
          }
 
          var6++;
-         var5.method8379(net.minecraft.util.Direction.field673);
+         var5.method8379(Direction.UP);
       }
 
       return Double.POSITIVE_INFINITY;

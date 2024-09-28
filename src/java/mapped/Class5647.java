@@ -97,7 +97,7 @@ public class Class5647 extends ChunkGenerator {
          var0 /= 2;
          var1 /= 2;
          if (var0 <= field24993 && var1 <= field24994) {
-            int var5 = MathHelper.method37772(var0 * field24993 + var1);
+            int var5 = MathHelper.abs(var0 * field24993 + var1);
             if (var5 < field24992.size()) {
                var4 = field24992.get(var5);
             }

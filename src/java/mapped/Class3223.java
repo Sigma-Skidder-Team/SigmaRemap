@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.state.BooleanProperty;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -11,23 +12,23 @@ import java.util.Random;
 
 public class Class3223 extends Block {
    private static String[] field18660;
-   public static final Class8551 field18661 = Class3383.field18987;
+   public static final BooleanProperty field18661 = Class3383.field18987;
 
-   public Class3223(AbstractBlock var1) {
+   public Class3223(Properties var1) {
       super(var1);
-      this.method11578(this.method11579().method23465(field18661, Boolean.valueOf(false)));
+      this.method11578(this.method11579().with(field18661, Boolean.valueOf(false)));
    }
 
    @Nullable
    @Override
    public BlockState method11495(Class5909 var1) {
-      return this.method11579().method23465(field18661, Boolean.valueOf(var1.method18360().method6780(var1.method18345())));
+      return this.method11579().with(field18661, Boolean.valueOf(var1.method18360().method6780(var1.method18345())));
    }
 
    @Override
    public void method11506(BlockState var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       if (!var2.isRemote) {
-         boolean var9 = var1.<Boolean>method23463(field18661);
+         boolean var9 = var1.<Boolean>get(field18661);
          if (var9 != var2.method6780(var3)) {
             if (!var9) {
                var2.setBlockState(var3, var1.method23459(field18661), 2);
@@ -40,7 +41,7 @@ public class Class3223 extends Block {
 
    @Override
    public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
-      if (var1.<Boolean>method23463(field18661) && !var2.method6780(var3)) {
+      if (var1.<Boolean>get(field18661) && !var2.method6780(var3)) {
          var2.setBlockState(var3, var1.method23459(field18661), 2);
       }
    }

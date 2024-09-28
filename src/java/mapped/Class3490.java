@@ -3,16 +3,17 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
 
 public class Class3490 extends Class3194 {
    private static String[] field19356;
-   public static final VoxelShape field19357 = Block.method11539(5.0, 0.0, 5.0, 11.0, 10.0, 11.0);
+   public static final VoxelShape field19357 = Block.makeCuboidShape(5.0, 0.0, 5.0, 11.0, 10.0, 11.0);
    private final Effect field19358;
    private final int field19359;
 
-   public Class3490(Effect var1, int var2, AbstractBlock var3) {
+   public Class3490(Effect var1, int var2, Properties var3) {
       super(var3);
       this.field19358 = var1;
       if (!var1.isInstant()) {

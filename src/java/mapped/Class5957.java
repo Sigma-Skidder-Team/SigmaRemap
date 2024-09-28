@@ -47,7 +47,7 @@ public class Class5957<T extends Class956> extends Class5942<T> {
       this.method18488((T)var1, var4, var5, 1.0F, 1.0F, 1.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.0F, var8, var9, var10, Direction.EAST);
       this.method18488((T)var1, var4, var5, 0.0F, 0.0F, 0.0F, 1.0F, 0.0F, 1.0F, 1.0F, 0.0F, var8, var9, var10, Direction.WEST);
       this.method18488((T)var1, var4, var5, 0.0F, 1.0F, 0.0F, 0.0F, 0.0F, 0.0F, 1.0F, 1.0F, var8, var9, var10, Direction.DOWN);
-      this.method18488((T)var1, var4, var5, 0.0F, 1.0F, var2, var2, 1.0F, 1.0F, 0.0F, 0.0F, var8, var9, var10, Direction.field673);
+      this.method18488((T)var1, var4, var5, 0.0F, 1.0F, var2, var2, 1.0F, 1.0F, 0.0F, 0.0F, var8, var9, var10, Direction.UP);
    }
 
    private void method18488(

@@ -58,9 +58,9 @@ public class Class896 extends Class890 implements Class889 {
          BlockPos var10 = var9.method8349(var8);
          if (var7) {
             this.method3521(var10, var8);
-            this.method3521(var10.method8349(var8.method536()), var8);
+            this.method3521(var10.method8349(var8.getOpposite()), var8);
 
-            for (Direction var12 : Class76.field161) {
+            for (Direction var12 : Direction.Plane.HORIZONTAL) {
                this.method3521(var10.method8349(var12), var12);
             }
          }
@@ -171,7 +171,7 @@ public class Class896 extends Class890 implements Class889 {
          if (Class3244.method11655(var5)) {
             this.world.method6869((PlayerEntity)null, 1009, var1, 0);
             Class3244.method11652(this.world, var1, var5);
-            this.world.setBlockState(var1, var5.method23465(Class3244.field18698, Boolean.valueOf(false)));
+            this.world.setBlockState(var1, var5.with(Class3244.field18698, Boolean.valueOf(false)));
          }
       } else {
          this.world.removeBlock(var1, false);

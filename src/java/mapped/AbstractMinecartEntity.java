@@ -19,8 +19,10 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
+import net.minecraft.state.properties.RailShape;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -43,26 +45,26 @@ public abstract class AbstractMinecartEntity extends Entity {
       Pose.STANDING, ImmutableList.of(0, 1, -1), Pose.field13624, ImmutableList.of(0, 1, -1), Pose.field13622, ImmutableList.of(0, 1)
    );
    private boolean field5220;
-   private static final Map<Class96, Pair<Vector3i, Vector3i>> field5221 = Util.<Map<Class96, Pair<Vector3i, Vector3i>>>make(
-      Maps.newEnumMap(Class96.class), var0 -> {
-         Vector3i var3 = net.minecraft.util.Direction.WEST.method556();
-         Vector3i var4 = net.minecraft.util.Direction.EAST.method556();
-         Vector3i var5 = net.minecraft.util.Direction.NORTH.method556();
-         Vector3i var6 = net.minecraft.util.Direction.SOUTH.method556();
+   private static final Map<RailShape, Pair<Vector3i, Vector3i>> field5221 = Util.<Map<RailShape, Pair<Vector3i, Vector3i>>>make(
+      Maps.newEnumMap(RailShape.class), var0 -> {
+         Vector3i var3 = Direction.WEST.getDirectionVec();
+         Vector3i var4 = Direction.EAST.getDirectionVec();
+         Vector3i var5 = Direction.NORTH.getDirectionVec();
+         Vector3i var6 = Direction.SOUTH.getDirectionVec();
          Vector3i var7 = var3.method8312();
          Vector3i var8 = var4.method8312();
          Vector3i var9 = var5.method8312();
          Vector3i var10 = var6.method8312();
-         var0.put(Class96.field247, Pair.of(var5, var6));
-         var0.put(Class96.field248, Pair.of(var3, var4));
-         var0.put(Class96.field249, Pair.of(var7, var4));
-         var0.put(Class96.field250, Pair.of(var3, var8));
-         var0.put(Class96.field251, Pair.of(var5, var10));
-         var0.put(Class96.field252, Pair.of(var9, var6));
-         var0.put(Class96.field253, Pair.of(var6, var4));
-         var0.put(Class96.field254, Pair.of(var6, var3));
-         var0.put(Class96.field255, Pair.of(var5, var3));
-         var0.put(Class96.field256, Pair.of(var5, var4));
+         var0.put(RailShape.field247, Pair.of(var5, var6));
+         var0.put(RailShape.field248, Pair.of(var3, var4));
+         var0.put(RailShape.field249, Pair.of(var7, var4));
+         var0.put(RailShape.field250, Pair.of(var3, var8));
+         var0.put(RailShape.field251, Pair.of(var5, var10));
+         var0.put(RailShape.field252, Pair.of(var9, var6));
+         var0.put(RailShape.field253, Pair.of(var6, var4));
+         var0.put(RailShape.field254, Pair.of(var6, var3));
+         var0.put(RailShape.field255, Pair.of(var5, var3));
+         var0.put(RailShape.field256, Pair.of(var5, var4));
       }
    );
    private int field5222;
@@ -139,7 +141,7 @@ public abstract class AbstractMinecartEntity extends Entity {
    }
 
    @Override
-   public Vector3d func_241839_a(Direction var1, TeleportationRepositioner var2) {
+   public Vector3d func_241839_a(Direction.Axis var1, TeleportationRepositioner var2) {
       return LivingEntity.func_242288_h(super.func_241839_a(var1, var2));
    }
 
@@ -150,8 +152,8 @@ public abstract class AbstractMinecartEntity extends Entity {
 
    @Override
    public Vector3d method3420(LivingEntity var1) {
-      net.minecraft.util.Direction var4 = this.method3387();
-      if (var4.getAxis() == Direction.Y) {
+      Direction var4 = this.method3387();
+      if (var4.getAxis() == Direction.Axis.Y) {
          return super.method3420(var1);
       } else {
          int[][] var5 = Class4527.method14422(var4);
@@ -259,13 +261,13 @@ public abstract class AbstractMinecartEntity extends Entity {
       return !this.removed;
    }
 
-   private static Pair<Vector3i, Vector3i> method3587(Class96 var0) {
+   private static Pair<Vector3i, Vector3i> method3587(RailShape var0) {
       return field5221.get(var0);
    }
 
    @Override
-   public net.minecraft.util.Direction method3387() {
-      return !this.field5220 ? this.method3386().method537() : this.method3386().method536().method537();
+   public Direction method3387() {
+      return !this.field5220 ? this.method3386().rotateY() : this.method3386().getOpposite().rotateY();
    }
 
    @Override
@@ -302,7 +304,7 @@ public abstract class AbstractMinecartEntity extends Entity {
          } else {
             this.method3591(var6, var7);
             if (var7.isIn(Blocks.field36728)) {
-               this.method3589(var3, var4, var5, var7.<Boolean>method23463(Class3432.field19197));
+               this.method3589(var3, var4, var5, var7.<Boolean>get(Class3432.field19197));
             }
          }
 
@@ -403,13 +405,13 @@ public abstract class AbstractMinecartEntity extends Entity {
       boolean var13 = false;
       Class3429 var14 = (Class3429)var2.getBlock();
       if (var14 == Blocks.POWERED_RAIL) {
-         var12 = var2.<Boolean>method23463(Class3432.field19197);
+         var12 = var2.<Boolean>get(Class3432.field19197);
          var13 = !var12;
       }
 
       double var15 = 0.0078125;
       Vector3d var17 = this.getMotion();
-      Class96 var18 = var2.<Class96>method23463(var14.method12093());
+      RailShape var18 = var2.<RailShape>get(var14.method12093());
       switch (Class9345.field43383[var18.ordinal()]) {
          case 1:
             this.setMotion(var17.add(-0.0078125, 0.0, 0.0));
@@ -532,14 +534,14 @@ public abstract class AbstractMinecartEntity extends Entity {
             Vector3d var62 = this.getMotion();
             double var63 = var62.x;
             double var65 = var62.z;
-            if (var18 == Class96.field248) {
+            if (var18 == RailShape.field248) {
                if (this.method3592(var1.west())) {
                   var63 = 0.02;
                } else if (this.method3592(var1.east())) {
                   var63 = -0.02;
                }
             } else {
-               if (var18 != Class96.field247) {
+               if (var18 != RailShape.field247) {
                   return;
                }
 
@@ -577,7 +579,7 @@ public abstract class AbstractMinecartEntity extends Entity {
       if (!Class3429.method12087(var14)) {
          return null;
       } else {
-         Class96 var15 = var14.<Class96>method23463(((Class3429)var14.getBlock()).method12093());
+         RailShape var15 = var14.<RailShape>get(((Class3429)var14.getBlock()).method12093());
          var3 = (double)var12;
          if (var15.method275()) {
             var3 = (double)(var12 + 1);
@@ -618,7 +620,7 @@ public abstract class AbstractMinecartEntity extends Entity {
       if (!Class3429.method12087(var12)) {
          return null;
       } else {
-         Class96 var13 = var12.<Class96>method23463(((Class3429)var12.getBlock()).method12093());
+         RailShape var13 = var12.<RailShape>get(((Class3429)var12.getBlock()).method12093());
          Pair var14 = method3587(var13);
          Vector3i var15 = (Vector3i)var14.getFirst();
          Vector3i var16 = (Vector3i)var14.getSecond();

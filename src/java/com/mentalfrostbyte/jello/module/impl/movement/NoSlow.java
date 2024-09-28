@@ -29,7 +29,7 @@ public class NoSlow extends Module {
     @EventTarget
     private void method16234(EventUpdate var1) {
         if (this.isEnabled()) {
-            boolean var4 = Client.getInstance().getModuleManager().getModuleByClass(KillAura.class).method15988();
+            boolean var4 = Client.getInstance().getModuleManager().getModuleByClass(KillAura.class).isEnabled2();
             boolean var5 = mc.player.getHeldItemMainhand() != null && mc.player.getHeldItemMainhand().getItem() instanceof SwordItem;
             if (!var1.isPre()) {
                 if (var5 && mc.gameSettings.keyBindUseItem.isKeyDown() && !this.field23540 && !var4 && this.getStringSettingValueByName("Mode").equals("NCP")) {

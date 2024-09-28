@@ -29,7 +29,7 @@ public class Class9196 {
       this.field42244 = var3;
       this.field42239 = var4;
       if (!var4) {
-         this.field42241 = var3.method536();
+         this.field42241 = var3.getOpposite();
          this.field42240 = var2.method8350(var3, 2);
       } else {
          this.field42241 = var3;
@@ -91,13 +91,13 @@ public class Class9196 {
             return false;
          } else {
             while (method34465(var6)) {
-               BlockPos var8 = var1.method8350(this.field42241.method536(), var7);
+               BlockPos var8 = var1.method8350(this.field42241.getOpposite(), var7);
                Block var9 = var6;
                var5 = this.field42237.getBlockState(var8);
                var6 = var5.getBlock();
                if (var5.isAir()
                   || !method34466(var9, var6)
-                  || !Class3435.method12104(var5, this.field42237, var8, this.field42241, false, this.field42241.method536())
+                  || !Class3435.method12104(var5, this.field42237, var8, this.field42241, false, this.field42241.getOpposite())
                   || var8.equals(this.field42238)) {
                   break;
                }
@@ -110,7 +110,7 @@ public class Class9196 {
             int var16 = 0;
 
             for (int var17 = var7 - 1; var17 >= 0; var17--) {
-               this.field42242.add(var1.method8350(this.field42241.method536(), var17));
+               this.field42242.add(var1.method8350(this.field42241.getOpposite(), var17));
                var16++;
             }
 

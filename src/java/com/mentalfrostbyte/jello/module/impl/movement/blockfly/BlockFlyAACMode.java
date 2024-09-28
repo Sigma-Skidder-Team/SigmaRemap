@@ -156,7 +156,7 @@ public class BlockFlyAACMode extends Module {
             }
 
             if (this.getBooleanValueFromSettingName("Haphe (AACAP)") && !mc.player.isJumping && !mc.player.onGround) {
-                if (var3.getFace() == Direction.field673) {
+                if (var3.getFace() == Direction.UP) {
                     return false;
                 }
 
@@ -165,7 +165,7 @@ public class BlockFlyAACMode extends Module {
                 }
             }
 
-            if (var3.getFace() == Direction.field673
+            if (var3.getFace() == Direction.UP
                     && (double) (var3.getPos().getY() + 2) > mc.player.getPosY()
                     && BlockUtil.method34578(var3.getPos())) {
                 return false;
@@ -193,7 +193,7 @@ public class BlockFlyAACMode extends Module {
                     mc.getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
                 }
 
-                if (var3.getFace() == Direction.field673) {
+                if (var3.getFace() == Direction.UP) {
                     this.field23522 = var3.getPos().getY() + 2;
                 }
 

@@ -131,9 +131,9 @@ public class Class7198 extends Class7194 {
             } else {
                boolean var17 = false;
 
-               for (Direction var19 : Class76.field161) {
-                  int var20 = var8 + var19.method539();
-                  int var21 = var9 + var19.method541();
+               for (Direction var19 : Direction.Plane.HORIZONTAL) {
+                  int var20 = var8 + var19.getXOffset();
+                  int var21 = var9 + var19.getZOffset();
                   if (var20 >> 4 != var6 || var21 >> 4 != var7 || var1.getBlockState(var4.method8372(var20, var11, var21)).isAir()) {
                      var1.setBlockState(var4, field30895.getBlockState(), false);
                      var1.getFluidsToBeTicked().method20726(var4, field30895.method23472(), 0);

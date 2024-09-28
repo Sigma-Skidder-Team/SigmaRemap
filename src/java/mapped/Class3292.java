@@ -10,11 +10,13 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.state.StateContainer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
 
@@ -98,7 +100,7 @@ public class Class3292 extends Item {
       CompoundNBT var8 = var3.method32142();
       if (var8 != null) {
          CompoundNBT var9 = var8.getCompound("BlockStateTag");
-         Class9348 var10 = var4.getBlock().getStateContainer();
+         StateContainer var10 = var4.getBlock().getStateContainer();
 
          for (String var12 : var9.method97()) {
             Class8550 var13 = var10.method35396(var12);
@@ -117,7 +119,7 @@ public class Class3292 extends Item {
    }
 
    private static <T extends Comparable<T>> BlockState method11840(BlockState var0, Class8550<T> var1, String var2) {
-      return var1.method30476(var2).<BlockState>map(var2x -> var0.method23465(var1, var2x)).orElse(var0);
+      return var1.method30476(var2).<BlockState>map(var2x -> var0.with(var1, var2x)).orElse(var0);
    }
 
    public boolean method11841(Class5909 var1, BlockState var2) {
