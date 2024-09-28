@@ -1,14 +1,14 @@
 package com.mentalfrostbyte.jello.module.impl.item.autogapple;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
+import com.mentalfrostbyte.jello.event.impl.EventKeyPress;
 import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.StopUseItemEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
-import com.mentalfrostbyte.jello.event.impl.EventKeyPress;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.item.AutoGapple;
-import mapped.*;
+import mapped.KeyBinding;
 import net.minecraft.item.Items;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.datasync.DataParameter;

@@ -1,9 +1,9 @@
 package com.mentalfrostbyte.jello.util;
 
 import com.mentalfrostbyte.jello.Client;
+import org.apache.commons.io.IOUtils;
 import totalcross.json.JSONException2;
 import totalcross.json.JSONObject;
-import org.apache.commons.io.IOUtils;
 
 import java.io.File;
 import java.io.FileInputStream;

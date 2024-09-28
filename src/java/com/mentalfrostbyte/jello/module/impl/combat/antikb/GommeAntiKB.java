@@ -1,14 +1,14 @@
 package com.mentalfrostbyte.jello.module.impl.combat.antikb;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
+import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
-import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import net.minecraft.network.play.server.SEntityVelocityPacket;
-import mapped.MovementUtils;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
+import mapped.MovementUtils;
+import net.minecraft.network.play.server.SEntityVelocityPacket;
 
 public class GommeAntiKB extends Module {
     private int field23610;

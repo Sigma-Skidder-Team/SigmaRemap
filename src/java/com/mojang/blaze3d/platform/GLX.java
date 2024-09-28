@@ -3,14 +3,11 @@ package com.mojang.blaze3d.platform;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.function.Consumer;
-import java.util.function.LongSupplier;
-import java.util.function.Supplier;
-
 import com.mojang.blaze3d.systems.RenderSystem;
-import mapped.*;
+import mapped.BufferBuilder;
+import mapped.Class7582;
+import mapped.MainWindow;
+import mapped.Tessellator;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.optifine.Config;
 import org.apache.logging.log4j.LogManager;
@@ -25,6 +22,12 @@ import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GLCapabilities;
 import oshi.SystemInfo;
 import oshi.hardware.Processor;
+
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.function.Consumer;
+import java.util.function.LongSupplier;
+import java.util.function.Supplier;
 
 public class GLX {
    private static final Logger field35101 = LogManager.getLogger();

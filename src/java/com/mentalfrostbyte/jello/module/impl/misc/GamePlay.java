@@ -13,7 +13,9 @@ import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
-import mapped.*;
+import mapped.ChatScreen;
+import mapped.Class6874;
+import mapped.Class7200;
 
 import java.util.ArrayList;
 import java.util.Collections;

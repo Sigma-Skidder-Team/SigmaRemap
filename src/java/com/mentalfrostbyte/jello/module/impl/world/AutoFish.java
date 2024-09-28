@@ -7,10 +7,10 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import mapped.*;
+import mapped.Class3259;
 import net.minecraft.network.play.client.CPlayerTryUseItemPacket;
-import net.minecraft.network.play.server.SPlaySoundPacket;
 import net.minecraft.network.play.server.SPlaySoundEffectPacket;
+import net.minecraft.network.play.server.SPlaySoundPacket;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvents;
 

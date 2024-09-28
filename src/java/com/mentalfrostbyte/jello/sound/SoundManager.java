@@ -5,8 +5,6 @@ import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.advanced.AdvancedPlayer;
 
-import javax.sound.sampled.*;
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.*;
 

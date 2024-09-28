@@ -5,10 +5,10 @@ import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.combat.Aimbot;
-import net.minecraft.util.math.MathHelper;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 
 public class SmoothAimbot extends Module {
     private Entity field23894;

@@ -1,12 +1,5 @@
 package com.mojang.blaze3d.platform;
 
-import java.nio.Buffer;
-import java.nio.ByteBuffer;
-import java.nio.FloatBuffer;
-import java.nio.IntBuffer;
-import java.util.ArrayList;
-import java.util.stream.IntStream;
-
 import com.mojang.blaze3d.systems.RenderSystem;
 import mapped.*;
 import net.minecraft.client.renderer.GLAllocation;
@@ -18,19 +11,15 @@ import net.optifine.render.GlBlendState;
 import net.optifine.render.GlCullState;
 import net.optifine.shaders.Shaders;
 import net.optifine.util.LockCounter;
-import org.lwjgl.opengl.ARBCopyBuffer;
-import org.lwjgl.opengl.ARBFramebufferObject;
-import org.lwjgl.opengl.EXTFramebufferBlit;
-import org.lwjgl.opengl.EXTFramebufferObject;
-import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.GL13;
-import org.lwjgl.opengl.GL14;
-import org.lwjgl.opengl.GL15;
-import org.lwjgl.opengl.GL20;
-import org.lwjgl.opengl.GL30;
-import org.lwjgl.opengl.GL31;
-import org.lwjgl.opengl.GLCapabilities;
+import org.lwjgl.opengl.*;
 import org.lwjgl.system.MemoryUtil;
+
+import java.nio.Buffer;
+import java.nio.ByteBuffer;
+import java.nio.FloatBuffer;
+import java.nio.IntBuffer;
+import java.util.ArrayList;
+import java.util.stream.IntStream;
 
 public class GlStateManager {
    private static final FloatBuffer MATRIX_BUFFER = GLX.make(

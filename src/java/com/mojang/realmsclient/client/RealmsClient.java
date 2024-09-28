@@ -1,16 +1,16 @@
 package com.mojang.realmsclient.client;
 
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.UUID;
-import javax.annotation.Nullable;
-
 import com.mojang.realmsclient.dto.RealmsServer;
 import com.mojang.realmsclient.exception.RealmsServiceException;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import javax.annotation.Nullable;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.UUID;
 
 public class RealmsClient {
    public static Class2174 field22142 = Class2174.field14271;

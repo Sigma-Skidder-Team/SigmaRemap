@@ -5,9 +5,9 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventRenderBlocks;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import net.minecraft.block.Blocks;
 import mapped.Class3420;
 import mapped.Class7377;
+import net.minecraft.block.Blocks;
 
 public class XRay extends Module {
     public static XRay field23483;

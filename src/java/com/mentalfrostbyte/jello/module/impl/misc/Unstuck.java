@@ -2,17 +2,17 @@ package com.mentalfrostbyte.jello.module.impl.misc;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
-import com.mentalfrostbyte.jello.event.impl.EventUpdate;
-import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.EventMove;
+import com.mentalfrostbyte.jello.event.impl.EventUpdate;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
-import com.mentalfrostbyte.jello.util.MultiUtilities;
-import net.minecraft.network.play.server.SPlayerPositionLookPacket;
-import mapped.MovementUtils;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
+import mapped.MovementUtils;
+import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
 public class Unstuck extends Module {
     private int field23574;

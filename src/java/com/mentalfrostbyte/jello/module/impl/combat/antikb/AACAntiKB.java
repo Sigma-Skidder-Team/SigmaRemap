@@ -1,16 +1,17 @@
 package com.mentalfrostbyte.jello.module.impl.combat.antikb;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.EventMove;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import mapped.*;
+import mapped.MovementUtils;
+import mapped.RotationHelper;
 import net.minecraft.network.IPacket;
-import net.minecraft.network.play.server.SExplosionPacket;
 import net.minecraft.network.play.server.SEntityVelocityPacket;
+import net.minecraft.network.play.server.SExplosionPacket;
 
 public class AACAntiKB extends Module {
     public static int field23907;

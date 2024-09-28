@@ -3,12 +3,15 @@ package com.mentalfrostbyte.jello.module.impl.combat;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
-import com.mentalfrostbyte.jello.module.impl.combat.aimbot.*;
+import com.mentalfrostbyte.jello.module.impl.combat.aimbot.BasicAimbot;
+import com.mentalfrostbyte.jello.module.impl.combat.aimbot.CandCAimbot;
+import com.mentalfrostbyte.jello.module.impl.combat.aimbot.SmoothAimbot;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import mapped.*;
-import net.minecraft.entity.LivingEntity;
+import mapped.ArmorStandEntity;
+import mapped.Class8781;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 
 import java.util.Iterator;

@@ -3,9 +3,9 @@ package com.mojang.blaze3d.matrix;
 import com.google.common.collect.Queues;
 import mapped.Class8892;
 import mapped.Class8967;
-import net.minecraft.util.math.MathHelper;
 import mapped.Matrix4f;
 import net.minecraft.client.util.Util;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Quaternion;
 
 import java.util.ArrayDeque;

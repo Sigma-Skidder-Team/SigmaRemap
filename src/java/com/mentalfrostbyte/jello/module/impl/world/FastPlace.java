@@ -4,9 +4,9 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import net.minecraft.util.math.BlockRayTraceResult;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import mapped.Class3292;
+import net.minecraft.util.math.BlockRayTraceResult;
 
 public class FastPlace extends Module {
     public FastPlace() {

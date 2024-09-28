@@ -9,8 +9,8 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.client.CUseEntityPacket;
-import net.minecraft.network.play.server.SExplosionPacket;
 import net.minecraft.network.play.server.SEntityVelocityPacket;
+import net.minecraft.network.play.server.SExplosionPacket;
 
 import java.util.ArrayList;
 import java.util.List;

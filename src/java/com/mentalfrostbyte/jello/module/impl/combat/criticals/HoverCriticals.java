@@ -2,15 +2,15 @@ package com.mentalfrostbyte.jello.module.impl.combat.criticals;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.EventUpdate;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.priority.HigherPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.movement.Step;
-import net.minecraft.network.play.server.SPlayerPositionLookPacket;
-import net.minecraft.network.IPacket;
 import mapped.RayTraceResult;
+import net.minecraft.network.IPacket;
+import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
 public class HoverCriticals extends Module {
     private double field23997;

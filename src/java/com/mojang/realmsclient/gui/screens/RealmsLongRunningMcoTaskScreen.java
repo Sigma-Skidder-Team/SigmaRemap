@@ -2,7 +2,10 @@ package com.mojang.realmsclient.gui.screens;
 
 import com.google.common.collect.Sets;
 import com.mojang.blaze3d.matrix.MatrixStack;
-import mapped.*;
+import mapped.Class6034;
+import mapped.Class789;
+import mapped.Class796;
+import mapped.Class9229;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.button.Button;

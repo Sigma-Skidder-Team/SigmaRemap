@@ -1,9 +1,9 @@
 package com.mentalfrostbyte.jello.event.impl;
 
 import com.mentalfrostbyte.jello.event.CancellableEvent;
-import net.minecraft.util.HandSide;
-import net.minecraft.item.ItemStack;
 import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.HandSide;
 
 public class EventHandAnimation extends CancellableEvent {
     private final boolean field21504;

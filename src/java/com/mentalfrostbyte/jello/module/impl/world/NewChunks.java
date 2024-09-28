@@ -6,7 +6,10 @@ import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import mapped.*;
+import mapped.Box3D;
+import mapped.ChunkPos;
+import mapped.ClientColors;
+import mapped.RenderUtil;
 import net.minecraft.network.play.server.SChunkDataPacket;
 import org.lwjgl.opengl.GL11;
 

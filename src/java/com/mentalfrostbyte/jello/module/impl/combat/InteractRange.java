@@ -7,7 +7,8 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
-import mapped.*;
+import mapped.EntityRayTraceResult;
+import mapped.RayTraceResult;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockRayTraceResult;
 
