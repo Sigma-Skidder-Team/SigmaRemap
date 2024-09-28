@@ -7,7 +7,6 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.util.text.ITextComponent;
 
 public class Button extends Class1200 {
-   private static String[] field6511;
    public static final Class8103 field6512 = (var0, var1, var2, var3) -> {
    };
    public Class7192 field6513;

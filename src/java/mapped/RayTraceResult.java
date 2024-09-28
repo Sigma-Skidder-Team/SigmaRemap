@@ -24,7 +24,7 @@ public abstract class RayTraceResult {
    }
 
    public enum Type {
-       MISS,
+      MISS,
       BLOCK,
       ENTITY;
 
