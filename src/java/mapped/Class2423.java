@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Class2423 implements Serializable {
-   private static String[] field16428;
    private static final long field16429 = 1L;
    private ArrayList field16430 = new ArrayList();
 

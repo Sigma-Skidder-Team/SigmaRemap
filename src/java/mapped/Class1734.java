@@ -81,10 +81,6 @@ public final class Class1734 implements Class1735, Class1733, Cloneable {
       return new Class1778(this);
    }
 
-   public Class1734 method7587(OutputStream var1) throws IOException {
-      return this.method7588(var1, 0L, this.field9423);
-   }
-
    public Class1734 method7588(OutputStream var1, long var2, long var4) throws IOException {
       if (var1 == null) {
          throw new IllegalArgumentException("out == null");
@@ -147,10 +143,6 @@ public final class Class1734 implements Class1735, Class1733, Cloneable {
       }
    }
 
-   public Class1734 method7590(OutputStream var1) throws IOException {
-      return this.method7591(var1, this.field9423);
-   }
-
    public Class1734 method7591(OutputStream var1, long var2) throws IOException {
       if (var1 != null) {
          Class4676.method14644(this.field9423, 0L, var2);
@@ -172,20 +164,6 @@ public final class Class1734 implements Class1735, Class1733, Cloneable {
          return this;
       } else {
          throw new IllegalArgumentException("out == null");
-      }
-   }
-
-   public Class1734 method7592(InputStream var1) throws IOException {
-      this.method7594(var1, Long.MAX_VALUE, true);
-      return this;
-   }
-
-   public Class1734 method7593(InputStream var1, long var2) throws IOException {
-      if (var2 >= 0L) {
-         this.method7594(var1, var2, false);
-         return this;
-      } else {
-         throw new IllegalArgumentException("byteCount < 0: " + var2);
       }
    }
 
