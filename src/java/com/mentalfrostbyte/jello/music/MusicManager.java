@@ -8,8 +8,8 @@ import com.mentalfrostbyte.jello.event.impl.EventRender2D;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.YoutubeThumbnail;
-import com.mentalfrostbyte.jello.unmapped.MusicPlayerTrumnaheil;
+import com.mentalfrostbyte.jello.unmapped.YoutubeVideoData;
+import com.mentalfrostbyte.jello.unmapped.MusicPlayerVideo;
 import com.mentalfrostbyte.jello.util.ImageUtil;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.TextureUtil;
@@ -50,7 +50,7 @@ public class MusicManager {
     public ArrayList<Double> field32165 = new ArrayList<Double>();
     public SourceDataLine field32166;
     private boolean field32144 = false;
-    private MusicPlayerTrumnaheil field32145;
+    private MusicPlayerVideo field32145;
     private int field32146 = 50;
     private long field32147 = -1L;
     private final Thread field32148 = new Thread();
@@ -63,7 +63,7 @@ public class MusicManager {
     private int field32157;
     private long field32158 = 0L;
     private int field32159;
-    private YoutubeThumbnail field32160;
+    private YoutubeVideoData field32160;
     private boolean field32161 = true;
     private Class189 field32162 = Class189.field717;
     private boolean field32164 = false;
@@ -320,12 +320,12 @@ public class MusicManager {
         }
     }
 
-    public YoutubeThumbnail method24300() {
+    public YoutubeVideoData method24300() {
         int var3 = 0;
-        return var3 >= this.field32145.thumbnailList.size() ? null : this.field32145.thumbnailList.get(var3);
+        return var3 >= this.field32145.youtubeVideos.size() ? null : this.field32145.youtubeVideos.get(var3);
     }
 
-    private void method24301(YoutubeThumbnail var1) {
+    private void method24301(YoutubeVideoData var1) {
         if (this.field32160 != null) {
             this.field32163.clear();
             new Thread(() -> this.method24309(this.field32160)).start();
@@ -342,15 +342,15 @@ public class MusicManager {
             this.field32156 = new Thread(
                     () -> {
                         Object var3 = null;
-                        if (this.field32159 < 0 || this.field32159 >= this.field32145.thumbnailList.size()) {
+                        if (this.field32159 < 0 || this.field32159 >= this.field32145.youtubeVideos.size()) {
                             this.field32159 = 0;
                         }
 
-                        for (int var4 = this.field32159; var4 < this.field32145.thumbnailList.size(); var4++) {
-                            URL var5 = Class9275.method34960(this.field32145.thumbnailList.get(var4).field41970);
+                        for (int var4 = this.field32159; var4 < this.field32145.youtubeVideos.size(); var4++) {
+                            URL var5 = Class9275.method34960(this.field32145.youtubeVideos.get(var4).videoId);
                             Client.getClientLogger().dummyMethod(var5.toString());
                             this.field32157 = var4;
-                            this.field32160 = this.field32145.thumbnailList.get(var4);
+                            this.field32160 = this.field32145.youtubeVideos.get(var4);
                             this.field32163.clear();
 
                             while (!this.field32144) {
@@ -433,7 +433,7 @@ public class MusicManager {
                                         }
 
                                         if (!var13.method23323()
-                                                && (this.field32162 == Class189.field718 || this.field32162 == Class189.field717 && this.field32145.thumbnailList.size() == 1)) {
+                                                && (this.field32162 == Class189.field718 || this.field32162 == Class189.field717 && this.field32145.youtubeVideos.size() == 1)) {
                                             var13.method23325(0.0);
                                             this.field32158 = 0L;
                                         }
@@ -463,13 +463,13 @@ public class MusicManager {
 
                             if (this.field32162 == Class189.field718) {
                                 var4--;
-                            } else if (this.field32162 == Class189.field717 && var4 == this.field32145.thumbnailList.size() - 1) {
+                            } else if (this.field32162 == Class189.field717 && var4 == this.field32145.youtubeVideos.size() - 1) {
                                 var4 = -1;
                             } else if (this.field32162 == Class189.field716) {
                                 return;
                             }
 
-                            if (var4 < -1 || var4 >= this.field32145.thumbnailList.size()) {
+                            if (var4 < -1 || var4 >= this.field32145.youtubeVideos.size()) {
                                 var4 = 0;
                             }
                         }
@@ -488,14 +488,14 @@ public class MusicManager {
         return this.field32162;
     }
 
-    public void method24309(YoutubeThumbnail var1) {
+    public void method24309(YoutubeVideoData var1) {
         try {
             this.field32154 = true;
-            BufferedImage var4 = ImageIO.read(new URL(var1.field41972));
+            BufferedImage var4 = ImageIO.read(new URL(var1.fullUrl));
             this.field32152 = ImageUtil.method35032(var4, 15);
             this.field32152 = this.field32152
                     .getSubimage(0, (int) ((float) this.field32152.getHeight() * 0.75F), this.field32152.getWidth(), (int) ((float) this.field32152.getHeight() * 0.2F));
-            this.field32150 = var1.field41971;
+            this.field32150 = var1.title;
             if (var4.getHeight() != var4.getWidth()) {
                 if (this.field32150.contains("[NCS Release]")) {
                     this.field32149 = var4.getSubimage(1, 3, 170, 170);
@@ -556,10 +556,10 @@ public class MusicManager {
         }
     }
 
-    public void method24317(MusicPlayerTrumnaheil var1, YoutubeThumbnail var2) {
+    public void method24317(MusicPlayerVideo var1, YoutubeVideoData var2) {
         if (var1 == null) {
-            var1 = new MusicPlayerTrumnaheil("temp", "temp", YoutubeType.PLAYLIST);
-            var1.thumbnailList.add(var2);
+            var1 = new MusicPlayerVideo("temp", "temp", YoutubeType.PLAYLIST);
+            var1.youtubeVideos.add(var2);
         }
 
         this.field32145 = var1;
@@ -567,8 +567,8 @@ public class MusicManager {
         this.field32158 = 0L;
         this.field32170 = 0.0;
 
-        for (int var5 = 0; var5 < var1.thumbnailList.size(); var5++) {
-            if (var1.thumbnailList.get(var5) == var2) {
+        for (int var5 = 0; var5 < var1.youtubeVideos.size(); var5++) {
+            if (var1.youtubeVideos.get(var5) == var2) {
                 this.field32159 = var5;
             }
         }

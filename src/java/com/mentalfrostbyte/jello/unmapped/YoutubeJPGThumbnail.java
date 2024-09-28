@@ -1,13 +1,13 @@
 package com.mentalfrostbyte.jello.unmapped;
 
-public class YoutubeTrumbNail {
+public class YoutubeJPGThumbnail {
     public final String videoID;
-    public final String field33684;
+    public final String title;
     public final String fullUrl;
 
-    public YoutubeTrumbNail(String videoID, String var2) {
+    public YoutubeJPGThumbnail(String videoID, String title) {
         this.videoID = videoID;
-        this.field33684 = var2;
+        this.title = title;
         this.fullUrl = "https://i.ytimg.com/vi/" + this.videoID + "/mqdefault.jpg";
     }
 }

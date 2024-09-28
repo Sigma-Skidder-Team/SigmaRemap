@@ -3,7 +3,6 @@ package com.mentalfrostbyte.jello.unmapped;
 import totalcross.json.JSONArray;
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.apache.http.HttpEntity;
-import org.apache.http.ParseException;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -21,19 +20,19 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ThumbnailUtil {
-    public static YoutubeTrumbNail[] search(String searchTags) {
+    public static YoutubeJPGThumbnail[] search(String searchTags) {
         return extractYoutubeThumbnailsFromHtml(fetchUrlContent("https://www.google.com/search?client=safari&num=21&gbv=1&tbm=vid&oq=&aqs=&q=site%3Ayoutube.com+" + encodeUrlParameter(searchTags)));
     }
 
-    public static YoutubeTrumbNail[] getFromChannel(String channelId) {
+    public static YoutubeJPGThumbnail[] getFromChannel(String channelId) {
         return extractYoutubeThumbnails(fetchUrlContent("https://www.youtube.com/channel/" + channelId + "/videos?disable_polymer=1"));
     }
 
-    public static YoutubeTrumbNail[] getFromPlaylist(String playlistId) {
+    public static YoutubeJPGThumbnail[] getFromPlaylist(String playlistId) {
         return extractYoutubeThumbnails(fetchUrlContent("https://www.youtube.com/playlist?list=" + playlistId + "&disable_polymer=1"));
     }
 
-    public static YoutubeTrumbNail[] extractYoutubeThumbnails(String response) {
+    public static YoutubeJPGThumbnail[] extractYoutubeThumbnails(String response) {
         if (response.startsWith("[")) {
             try {
                 JSONArray jsonArray = new JSONArray(response);
@@ -43,7 +42,7 @@ public class ThumbnailUtil {
             }
         }
 
-        List<YoutubeTrumbNail> thumbnails = new ArrayList<>();
+        List<YoutubeJPGThumbnail> thumbnails = new ArrayList<>();
         // Updated regex pattern to capture expected content correctly
         String regex = "\"videoId\":\"(.{11})\".*?\"title\":\"(.*?)\"";
         Pattern pattern = Pattern.compile(regex, Pattern.DOTALL);
@@ -56,16 +55,16 @@ public class ThumbnailUtil {
             if (!title.isEmpty()) {
                 boolean isDuplicate = thumbnails.stream().anyMatch(thumbnail -> thumbnail.videoID.equals(videoId));
                 if (!isDuplicate) {
-                    thumbnails.add(new YoutubeTrumbNail(videoId, decodeAndUnescapeUrl(title)));
+                    thumbnails.add(new YoutubeJPGThumbnail(videoId, decodeAndUnescapeUrl(title)));
                 }
             }
         }
 
         System.out.println("[thumbnails] : " + thumbnails);
-        return thumbnails.toArray(new YoutubeTrumbNail[0]);
+        return thumbnails.toArray(new YoutubeJPGThumbnail[0]);
     }
 
-    public static YoutubeTrumbNail[] extractYoutubeThumbnailsFromHtml(String htmlContent) {
+    public static YoutubeJPGThumbnail[] extractYoutubeThumbnailsFromHtml(String htmlContent) {
         if (htmlContent.startsWith("[")) {
             try {
                 JSONArray jsonArray = new JSONArray(htmlContent);
@@ -75,7 +74,7 @@ public class ThumbnailUtil {
             }
         }
 
-        List<YoutubeTrumbNail> thumbnails = new ArrayList<>();
+        List<YoutubeJPGThumbnail> thumbnails = new ArrayList<>();
         // Updated regex pattern to match HTML correctly
         String regexPattern = "<a.*?href=\"/watch\\?v=(.{11})\".*?>(.*?) - YouTube</a>";
         Pattern pattern = Pattern.compile(regexPattern, Pattern.CASE_INSENSITIVE | Pattern.DOTALL);
@@ -88,13 +87,13 @@ public class ThumbnailUtil {
             if (!title.isEmpty() && !matcher.group(0).contains("play-all")) {
                 boolean alreadyExists = thumbnails.stream().anyMatch(t -> t.videoID.equals(videoId));
                 if (!alreadyExists) {
-                    thumbnails.add(new YoutubeTrumbNail(videoId, decodeAndUnescapeUrl(title)));
+                    thumbnails.add(new YoutubeJPGThumbnail(videoId, decodeAndUnescapeUrl(title)));
                 }
             }
         }
 
         System.out.println("[thumbnails from HTML] : " + thumbnails);
-        return thumbnails.toArray(new YoutubeTrumbNail[0]);
+        return thumbnails.toArray(new YoutubeJPGThumbnail[0]);
     }
 
     private static String decodeAndUnescapeUrl(String url) {

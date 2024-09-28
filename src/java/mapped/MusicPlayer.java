@@ -4,8 +4,8 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.music.MusicManager;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.unmapped.YoutubeThumbnail;
-import com.mentalfrostbyte.jello.unmapped.MusicPlayerTrumnaheil;
+import com.mentalfrostbyte.jello.unmapped.YoutubeVideoData;
+import com.mentalfrostbyte.jello.unmapped.MusicPlayerVideo;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ImageUtil;
@@ -32,9 +32,9 @@ public class MusicPlayer extends Class4278 {
    private Class4339 field20852;
    private IconPanel pngButtons;
    private MusicManager field20854 = Client.getInstance().getMusicManager();
-   public static Map<String, MusicPlayerTrumnaheil> field20855 = new LinkedHashMap<String, MusicPlayerTrumnaheil>();
+   public static Map<String, MusicPlayerVideo> field20855 = new LinkedHashMap<String, MusicPlayerVideo>();
    public static String field20856;
-   public static MusicPlayerTrumnaheil field20857;
+   public static MusicPlayerVideo field20857;
    private ButtonPanel play;
    private ButtonPanel pause;
    private ButtonPanel forwards;
@@ -45,7 +45,7 @@ public class MusicPlayer extends Class4278 {
    private IconPanel field20865;
    public SearchBoxButton searchBox;
    public Class4359 field20867;
-   public static MusicPlayerTrumnaheil[] field20868;
+   public static MusicPlayerVideo[] videos;
    private static CookieManager field20869 = new CookieManager();
    public static long field20870 = 0L;
    public float field20871 = 0.0F;
@@ -80,23 +80,23 @@ public class MusicPlayer extends Class4278 {
       this.field20865.method13300(false);
       ColorHelper var6 = new ColorHelper(1250067, -15329770).method19410(ClientColors.LIGHT_GREYISH_BLUE.getColor).method19414(Class2218.field14492);
       ArrayList var7 = new ArrayList();
-      MusicPlayer var8 = this;
+      MusicPlayer player = this;
+
       int var9 = 0;
-
-      for (MusicPlayerTrumnaheil var13 : field20868) {
+      for (MusicPlayerVideo video : videos) {
          var7.add(new Thread(() -> {
-            if (!field20855.containsKey(var13.id) && !var13.field44779) {
-               var13.field44779 = true;
-               var13.method37195();
+            if (!field20855.containsKey(video.id) && !video.field44779) {
+               video.field44779 = true;
+               video.updateVideos();
 
-               for (int var6x = 0; var13.thumbnailList.isEmpty() && var6x < 4; var6x++) {
-                  var13.method37195();
+               for (int var6x = 0; video.youtubeVideos.isEmpty() && var6x < 4; var6x++) {
+                  video.updateVideos();
                }
 
-               field20855.put(var13.id, var13);
+               field20855.put(video.id, video);
             }
 
-            this.method13222(new Class511(this, var13, var6, var8));
+            this.method13222(new MusicPlayerInstance(this, video, var6, player));
          }));
          var9++;
          ((Thread)var7.get(var7.size() - 1)).start();
@@ -169,7 +169,7 @@ public class MusicPlayer extends Class4278 {
       this.field20852.field21207 = 65;
    }
 
-   private void method13190(MusicPlayerTrumnaheil var1, YoutubeThumbnail var2) {
+   private void method13190(MusicPlayerVideo var1, YoutubeVideoData var2) {
       if (!((JelloClickGUI)this.getIcoPanel()).method13314()) {
          this.field20854.method24317(var1, var2);
          field20857 = var1;
@@ -545,20 +545,20 @@ public class MusicPlayer extends Class4278 {
    }
 
    // $VF: synthetic method
-   public static void method13211(MusicPlayer var0, MusicPlayerTrumnaheil var1, YoutubeThumbnail var2) {
+   public static void method13211(MusicPlayer var0, MusicPlayerVideo var1, YoutubeVideoData var2) {
       var0.method13190(var1, var2);
    }
 
    static {
-       field20868 = new MusicPlayerTrumnaheil[]{
-         new MusicPlayerTrumnaheil("Trap Nation", "UUa10nxShhzNrCE1o2ZOPztg", YoutubeType.PLAYLIST),
-         new MusicPlayerTrumnaheil("Chill Nation", "UUM9KEEuzacwVlkt9JfJad7g", YoutubeType.PLAYLIST),
-         new MusicPlayerTrumnaheil("VEVO", "PL9tY0BWXOZFu8MzzbNVtUvHs0cQ_gZ03m", YoutubeType.PLAYLIST),
-         new MusicPlayerTrumnaheil("Rap Nation", "UU8QfB1wbfrNwNFHQxfyNJsw", YoutubeType.PLAYLIST),
-         new MusicPlayerTrumnaheil("MrSuicideSheep", "UU5nc_ZtjKW1htCVZVRxlQAQ", YoutubeType.PLAYLIST),
-         new MusicPlayerTrumnaheil("Trap City", "UU65afEgL62PGFWXY7n6CUbA", YoutubeType.PLAYLIST),
-         new MusicPlayerTrumnaheil("CloudKid", "UUSa8IUd1uEjlREMa21I3ZPQ", YoutubeType.PLAYLIST),
-         new MusicPlayerTrumnaheil("NCS", "UU_aEa8K-EOJ3D6gOs7HcyNg", YoutubeType.PLAYLIST)
+       videos = new MusicPlayerVideo[]{
+         new MusicPlayerVideo("Trap Nation", "UUa10nxShhzNrCE1o2ZOPztg", YoutubeType.PLAYLIST),
+         new MusicPlayerVideo("Chill Nation", "UUM9KEEuzacwVlkt9JfJad7g", YoutubeType.PLAYLIST),
+         new MusicPlayerVideo("VEVO", "PL9tY0BWXOZFu8MzzbNVtUvHs0cQ_gZ03m", YoutubeType.PLAYLIST),
+         new MusicPlayerVideo("Rap Nation", "UU8QfB1wbfrNwNFHQxfyNJsw", YoutubeType.PLAYLIST),
+         new MusicPlayerVideo("MrSuicideSheep", "UU5nc_ZtjKW1htCVZVRxlQAQ", YoutubeType.PLAYLIST),
+         new MusicPlayerVideo("Trap City", "UU65afEgL62PGFWXY7n6CUbA", YoutubeType.PLAYLIST),
+         new MusicPlayerVideo("CloudKid", "UUSa8IUd1uEjlREMa21I3ZPQ", YoutubeType.PLAYLIST),
+         new MusicPlayerVideo("NCS", "UU_aEa8K-EOJ3D6gOs7HcyNg", YoutubeType.PLAYLIST)
       };
    }
 }

@@ -4,15 +4,15 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.music.MusicManager;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ThumbnailUtil;
-import com.mentalfrostbyte.jello.unmapped.YoutubeTrumbNail;
-import com.mentalfrostbyte.jello.unmapped.YoutubeThumbnail;
+import com.mentalfrostbyte.jello.unmapped.YoutubeJPGThumbnail;
+import com.mentalfrostbyte.jello.unmapped.YoutubeVideoData;
 
 import java.util.ArrayList;
 
 public class SearchBoxButton extends Class4278 {
    public Class4339 field20840;
    public UIInput field20841;
-   private ArrayList<YoutubeThumbnail> field20842;
+   private ArrayList<YoutubeVideoData> field20842;
    private MusicManager field20843 = Client.getInstance().getMusicManager();
 
    public SearchBoxButton(IconPanel var1, String var2, int var3, int var4, int var5, int var6, String var7) {
@@ -33,11 +33,11 @@ public class SearchBoxButton extends Class4278 {
          this.field20841.method13145(false);
          new Thread(
                () -> {
-                  this.field20842 = new ArrayList<YoutubeThumbnail>();
-                  YoutubeTrumbNail[] var3 = ThumbnailUtil.search(this.field20841.method13303());
+                  this.field20842 = new ArrayList<YoutubeVideoData>();
+                  YoutubeJPGThumbnail[] var3 = ThumbnailUtil.search(this.field20841.method13303());
 
-                  for (YoutubeTrumbNail var7 : var3) {
-                     this.field20842.add(new YoutubeThumbnail(var7.videoID, var7.field33684, var7.fullUrl));
+                  for (YoutubeJPGThumbnail var7 : var3) {
+                     this.field20842.add(new YoutubeVideoData(var7.videoID, var7.title, var7.fullUrl));
                   }
 
                   this.method13222(
@@ -48,7 +48,7 @@ public class SearchBoxButton extends Class4278 {
                         );
                         if (this.field20842 != null) {
                            for (int var3x = 0; var3x < this.field20842.size(); var3x++) {
-                              YoutubeThumbnail var4 = this.field20842.get(var3x);
+                              YoutubeVideoData var4 = this.field20842.get(var3x);
                               byte var5 = 80;
                               byte var6 = 10;
                               Class4286 var7x;

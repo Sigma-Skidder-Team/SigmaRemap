@@ -1,16 +1,16 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.YoutubeThumbnail;
-import com.mentalfrostbyte.jello.unmapped.MusicPlayerTrumnaheil;
+import com.mentalfrostbyte.jello.unmapped.YoutubeVideoData;
+import com.mentalfrostbyte.jello.unmapped.MusicPlayerVideo;
 
-public class Class511 implements Runnable {
-   public final MusicPlayerTrumnaheil thubmnail;
+public class MusicPlayerInstance implements Runnable {
+   public final MusicPlayerVideo thubmnail;
    public final ColorHelper colorHelper;
    public final MusicPlayer musicPlayer;
    public final MusicPlayer musicPlayer2;
 
-   public Class511(MusicPlayer var1, MusicPlayerTrumnaheil var2, ColorHelper var3, MusicPlayer var4) {
+   public MusicPlayerInstance(MusicPlayer var1, MusicPlayerVideo var2, ColorHelper var3, MusicPlayer var4) {
       this.musicPlayer2 = var1;
       this.thubmnail = var2;
       this.colorHelper = var3;
@@ -52,9 +52,9 @@ public class Class511 implements Runnable {
          var4.method13514(true);
          var4.setEnabled(false);
          var4.method13300(false);
-         if (this.thubmnail.thumbnailList != null) {
-            for (int var5 = 0; var5 < this.thubmnail.thumbnailList.size(); var5++) {
-               YoutubeThumbnail var6 = this.thubmnail.thumbnailList.get(var5);
+         if (this.thubmnail.youtubeVideos != null) {
+            for (int var5 = 0; var5 < this.thubmnail.youtubeVideos.size(); var5++) {
+               YoutubeVideoData var6 = this.thubmnail.youtubeVideos.get(var5);
                Class4286 var7 = null;
                byte var8 = 65;
                byte var9 = 10;
