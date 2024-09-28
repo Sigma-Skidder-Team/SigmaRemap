@@ -302,7 +302,7 @@ public class Class8149 {
 
    private boolean method28265(BlockPos var1, IBlockDisplayReader var2) {
       TileEntity var5 = var2.getTileEntity(var1);
-      if (!(var5 instanceof Class941)) {
+      if (!(var5 instanceof ChestTileEntity)) {
          if (!(var5 instanceof Class943)) {
             return false;
          } else {
@@ -310,14 +310,14 @@ public class Class8149 {
             return this.method28267(var7, var1, var2);
          }
       } else {
-         Class941 var6 = (Class941)var5;
+         ChestTileEntity var6 = (ChestTileEntity)var5;
          return this.method28266(var6, var1, var2);
       }
    }
 
-   private boolean method28266(Class941 var1, BlockPos var2, IBlockDisplayReader var3) {
+   private boolean method28266(ChestTileEntity var1, BlockPos var2, IBlockDisplayReader var3) {
       BlockState var6 = var3.getBlockState(var2);
-      ChestType var7 = !var6.method23462(Class3348.field18866) ? ChestType.field379 : var6.<ChestType>get(Class3348.field18866);
+      ChestType var7 = !var6.method23462(ChestBlock.TYPE) ? ChestType.field379 : var6.<ChestType>get(ChestBlock.TYPE);
       boolean var8 = var7 == ChestType.field379;
       boolean var9 = var1 instanceof Class970;
       boolean var10 = Class7050.field30441;

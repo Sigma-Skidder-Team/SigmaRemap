@@ -20,8 +20,8 @@ import javax.annotation.Nullable;
 public abstract class TileEntity {
    private static final Logger field5322 = LogManager.getLogger();
    private final TileEntityType<?> field5323;
-   public World field5324;
-   public BlockPos field5325 = BlockPos.ZERO;
+   public World world;
+   public BlockPos pos = BlockPos.ZERO;
    public boolean field5326;
    private BlockState field5327;
    private boolean field5328;
@@ -32,20 +32,20 @@ public abstract class TileEntity {
 
    @Nullable
    public World method3734() {
-      return this.field5324;
+      return this.world;
    }
 
    public void method3769(World var1, BlockPos var2) {
-      this.field5324 = var1;
-      this.field5325 = var2.toImmutable();
+      this.world = var1;
+      this.pos = var2.toImmutable();
    }
 
    public boolean method3770() {
-      return this.field5324 != null;
+      return this.world != null;
    }
 
-   public void method3645(BlockState var1, CompoundNBT var2) {
-      this.field5325 = new BlockPos(var2.getInt("x"), var2.getInt("y"), var2.getInt("z"));
+   public void read(BlockState var1, CompoundNBT var2) {
+      this.pos = new BlockPos(var2.getInt("x"), var2.getInt("y"), var2.getInt("z"));
    }
 
    public CompoundNBT write(CompoundNBT var1) {
@@ -56,9 +56,9 @@ public abstract class TileEntity {
       ResourceLocation var4 = TileEntityType.method13793(this.method3786());
       if (var4 != null) {
          var1.method109("id", var4.toString());
-         var1.putInt("x", this.field5325.getX());
-         var1.putInt("y", this.field5325.getY());
-         var1.putInt("z", this.field5325.getZ());
+         var1.putInt("x", this.pos.getX());
+         var1.putInt("y", this.pos.getY());
+         var1.putInt("z", this.pos.getZ());
          return var1;
       } else {
          throw new RuntimeException(this.getClass() + " is missing a mapping! This is a bug!");
@@ -77,7 +77,7 @@ public abstract class TileEntity {
          }
       }).<TileEntity>map(var3 -> {
          try {
-            var3.method3645(var0, var1);
+            var3.read(var0, var1);
             return (TileEntity)var3;
          } catch (Throwable var7) {
             field5322.error("Failed to load data for block entity {}", var4, var7);
@@ -90,11 +90,11 @@ public abstract class TileEntity {
    }
 
    public void markDirty() {
-      if (this.field5324 != null) {
-         this.field5327 = this.field5324.getBlockState(this.field5325);
-         this.field5324.method6775(this.field5325, this);
+      if (this.world != null) {
+         this.field5327 = this.world.getBlockState(this.pos);
+         this.world.method6775(this.pos, this);
          if (!this.field5327.isAir()) {
-            this.field5324.updateComparatorOutputLevel(this.field5325, this.field5327.getBlock());
+            this.world.updateComparatorOutputLevel(this.pos, this.field5327.getBlock());
          }
       }
    }
@@ -104,12 +104,12 @@ public abstract class TileEntity {
    }
 
    public BlockPos getPos() {
-      return this.field5325;
+      return this.pos;
    }
 
-   public BlockState method3775() {
+   public BlockState getBlockState() {
       if (this.field5327 == null) {
-         this.field5327 = this.field5324.getBlockState(this.field5325);
+         this.field5327 = this.world.getBlockState(this.pos);
       }
 
       return this.field5327;
@@ -136,7 +136,7 @@ public abstract class TileEntity {
       this.field5326 = false;
    }
 
-   public boolean method3751(int var1, int var2) {
+   public boolean receiveClientEvent(int var1, int var2) {
       return false;
    }
 
@@ -146,14 +146,14 @@ public abstract class TileEntity {
 
    public void method3781(CrashReportCategory var1) {
       var1.addDetail("Name", () -> Registry.field16078.getKey(this.method3786()) + " // " + this.getClass().getCanonicalName());
-      if (this.field5324 != null) {
-         CrashReportCategory.addBlockInfo(var1, this.field5325, this.method3775());
-         CrashReportCategory.addBlockInfo(var1, this.field5325, this.field5324.getBlockState(this.field5325));
+      if (this.world != null) {
+         CrashReportCategory.addBlockInfo(var1, this.pos, this.getBlockState());
+         CrashReportCategory.addBlockInfo(var1, this.pos, this.world.getBlockState(this.pos));
       }
    }
 
    public void method3782(BlockPos var1) {
-      this.field5325 = var1.toImmutable();
+      this.pos = var1.toImmutable();
    }
 
    public boolean method3783() {

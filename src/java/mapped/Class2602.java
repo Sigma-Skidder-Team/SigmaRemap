@@ -22,7 +22,7 @@ public class Class2602 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      List<BoatEntity> var3 = this.field16845.world.method7182(BoatEntity.class, this.field16845.getBoundingBox().method19664(5.0));
+      List<BoatEntity> var3 = this.field16845.world.getEntitiesWithinAABB(BoatEntity.class, this.field16845.getBoundingBox().method19664(5.0));
       boolean var4 = false;
 
       for (BoatEntity var6 : var3) {
@@ -53,7 +53,7 @@ public class Class2602 extends Class2595 {
 
    @Override
    public void method10804() {
-      for (BoatEntity var4 : this.field16845.world.<BoatEntity>method7182(BoatEntity.class, this.field16845.getBoundingBox().method19664(5.0))) {
+      for (BoatEntity var4 : this.field16845.world.<BoatEntity>getEntitiesWithinAABB(BoatEntity.class, this.field16845.getBoundingBox().method19664(5.0))) {
          if (var4.method3407() != null && var4.method3407() instanceof PlayerEntity) {
             this.field16846 = (PlayerEntity)var4.method3407();
             break;
@@ -88,7 +88,7 @@ public class Class2602 extends Class2595 {
                }
             }
          } else {
-            BlockPos var7 = this.field16846.getPosition().method8349(this.field16846.method3386().getOpposite());
+            BlockPos var7 = this.field16846.getPosition().method8349(this.field16846.getHorizontalFacing().getOpposite());
             var7 = var7.method8336(0, -1, 0);
             this.field16845.method4230().method21654((double)var7.getX(), (double)var7.getY(), (double)var7.getZ(), 1.0);
             if (this.field16845.getDistance(this.field16846) < 4.0F) {

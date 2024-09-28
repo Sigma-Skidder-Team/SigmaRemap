@@ -1337,7 +1337,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       }
    }
 
-   public FrameTimer method1419() {
+   public FrameTimer getFrameTimer() {
       return this.field1262;
    }
 

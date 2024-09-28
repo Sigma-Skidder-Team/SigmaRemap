@@ -257,7 +257,7 @@ public class Class1010 extends Class1009 implements IAngerable {
       if (var11 && !var12) {
          boolean var13 = this.attemptTeleport(var1, var3, var5, true);
          if (var13 && !this.isSilent()) {
-            this.world.method6743((PlayerEntity)null, this.prevPosX, this.prevPosY, this.prevPosZ, SoundEvents.field26550, this.method2864(), 1.0F, 1.0F);
+            this.world.playSound((PlayerEntity)null, this.prevPosX, this.prevPosY, this.prevPosZ, SoundEvents.field26550, this.method2864(), 1.0F, 1.0F);
             this.playSound(SoundEvents.field26550, 1.0F, 1.0F);
          }
 

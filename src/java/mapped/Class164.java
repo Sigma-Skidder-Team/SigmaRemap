@@ -60,7 +60,7 @@ public class Class164 implements Predicate<CachedBlockInfo> {
                var8.putInt("x", var2.getX());
                var8.putInt("y", var2.getY());
                var8.putInt("z", var2.getZ());
-               var7.method3645(var6, var8);
+               var7.read(var6, var8);
             }
          }
 

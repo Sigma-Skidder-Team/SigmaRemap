@@ -94,7 +94,7 @@ public class Class3410 extends Block {
 
    @Override
    public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
-      if (var2.method7020(Class1977.field12882, var3) > 11) {
+      if (var2.getLightFor(LightType.BLOCK, var3) > 11) {
          method11554(var1, var2, var3);
          var2.removeBlock(var3, false);
       }

@@ -40,7 +40,7 @@ public class Class3329 extends Item {
       int var10 = var2.getY();
       int var11 = var2.getZ();
 
-      for (MobEntity var13 : var1.<MobEntity>method7182(
+      for (MobEntity var13 : var1.<MobEntity>getEntitiesWithinAABB(
          MobEntity.class,
          new AxisAlignedBB((double)var9 - 7.0, (double)var10 - 7.0, (double)var11 - 7.0, (double)var9 + 7.0, (double)var10 + 7.0, (double)var11 + 7.0)
       )) {

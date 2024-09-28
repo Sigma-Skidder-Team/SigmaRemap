@@ -56,7 +56,7 @@ public class Class3426 extends Block {
 
    private void method12083(World var1, BlockPos var2) {
       if (var1.getBlockState(var2.up()).isAir()) {
-         var1.method6787(var2, this, 0, 0);
+         var1.addBlockEvent(var2, this, 0, 0);
       }
    }
 

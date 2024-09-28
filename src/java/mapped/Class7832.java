@@ -17,7 +17,7 @@ public class Class7832 {
    private static final Random field33624 = new Random(0L);
 
    public static IBakedModel method26230(String var0, int var1) {
-      TextureAtlasSprite var4 = Config.method26969().method1106(var0);
+      TextureAtlasSprite var4 = Config.getTextureMap().method1106(var0);
       return method26231(var4, var1);
    }
 
@@ -74,7 +74,7 @@ public class Class7832 {
    }
 
    public static IBakedModel method26234(String var0, String var1, String var2) {
-      AtlasTexture var5 = Config.method26969();
+      AtlasTexture var5 = Config.getTextureMap();
       TextureAtlasSprite var6 = var5.method1106(var1);
       TextureAtlasSprite var7 = var5.method1106(var2);
       return method26235(var0, var6, var7);

@@ -59,13 +59,13 @@ public class Class4187 extends Class4180 {
          Rotation var8 = this.field20454.method36437();
          BlockState var9 = Blocks.CHEST.method11579();
          if ("ChestWest".equals(var1)) {
-            var9 = var9.with(Class3348.field18865, var8.rotate(Direction.WEST));
+            var9 = var9.with(ChestBlock.field18865, var8.rotate(Direction.WEST));
          } else if ("ChestEast".equals(var1)) {
-            var9 = var9.with(Class3348.field18865, var8.rotate(Direction.EAST));
+            var9 = var9.with(ChestBlock.field18865, var8.rotate(Direction.EAST));
          } else if ("ChestSouth".equals(var1)) {
-            var9 = var9.with(Class3348.field18865, var8.rotate(Direction.SOUTH));
+            var9 = var9.with(ChestBlock.field18865, var8.rotate(Direction.SOUTH));
          } else if ("ChestNorth".equals(var1)) {
-            var9 = var9.with(Class3348.field18865, var8.rotate(Direction.NORTH));
+            var9 = var9.with(ChestBlock.field18865, var8.rotate(Direction.NORTH));
          }
 
          this.method12935(var3, var5, var4, var2, Class8793.field39562, var9);

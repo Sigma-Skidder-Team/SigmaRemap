@@ -132,7 +132,7 @@ public class Waypoints extends Module {
                             var9 += 16;
                         }
 
-                        int var11 = mc.world.getChunk(var6).getHeightmap(Heightmap.Type.field296).method24579(var9, var10);
+                        int var11 = mc.world.getChunk(var6).getHeightmap(Heightmap.Type.WORLD_SURFACE).method24579(var9, var10);
                         if (var11 == 0) {
                             var11 = 64;
                         }

@@ -258,7 +258,7 @@ public class Class7819 {
          }
       }
 
-      int var10 = this.field33538.method7006(Heightmap.Type.field299, Class2909.field17994).getY();
+      int var10 = this.field33538.method7006(Heightmap.Type.MOTION_BLOCKING, Class2909.field17994).getY();
 
       for (int var11 = var10; var11 >= 0; var11--) {
          Class9086 var12 = this.field33540
@@ -314,7 +314,7 @@ public class Class7819 {
       this.field33542 = 0;
 
       for (Class9648 var4 : Class2944.method11286(this.field33538)) {
-         this.field33542 = this.field33542 + this.field33538.<EnderCrystalEntity>method7182(EnderCrystalEntity.class, var4.method37631()).size();
+         this.field33542 = this.field33542 + this.field33538.<EnderCrystalEntity>getEntitiesWithinAABB(EnderCrystalEntity.class, var4.method37631()).size();
       }
 
       field33535.debug("Found {} end crystals still alive", this.field33542);
@@ -327,7 +327,7 @@ public class Class7819 {
          this.method26122(true);
          this.method26120();
          if (!this.field33546) {
-            this.field33538.setBlockState(this.field33538.method7006(Heightmap.Type.field299, Class2909.field17994), Blocks.field36652.method11579());
+            this.field33538.setBlockState(this.field33538.method7006(Heightmap.Type.MOTION_BLOCKING, Class2909.field17994), Blocks.field36652.method11579());
          }
 
          this.field33546 = true;
@@ -352,7 +352,7 @@ public class Class7819 {
    private void method26122(boolean var1) {
       Class2909 var4 = new Class2909(var1);
       if (this.field33549 == null) {
-         this.field33549 = this.field33538.method7006(Heightmap.Type.field300, Class2909.field17994).down();
+         this.field33549 = this.field33538.method7006(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, Class2909.field17994).down();
 
          while (this.field33538.getBlockState(this.field33549).isIn(Blocks.BEDROCK) && this.field33549.getY() > this.field33538.method6776()) {
             this.field33549 = this.field33549.down();
@@ -426,7 +426,7 @@ public class Class7819 {
          BlockPos var5 = var3.method8339(1);
 
          for (Direction var7 : Direction.Plane.HORIZONTAL) {
-            List var8 = this.field33538.<EnderCrystalEntity>method7182(EnderCrystalEntity.class, new AxisAlignedBB(var5.method8350(var7, 2)));
+            List var8 = this.field33538.<EnderCrystalEntity>getEntitiesWithinAABB(EnderCrystalEntity.class, new AxisAlignedBB(var5.method8350(var7, 2)));
             if (var8.isEmpty()) {
                return;
             }
@@ -463,7 +463,7 @@ public class Class7819 {
 
    public void method26130() {
       for (Class9648 var4 : Class2944.method11286(this.field33538)) {
-         for (EnderCrystalEntity var6 : this.field33538.<EnderCrystalEntity>method7182(EnderCrystalEntity.class, var4.method37631())) {
+         for (EnderCrystalEntity var6 : this.field33538.<EnderCrystalEntity>getEntitiesWithinAABB(EnderCrystalEntity.class, var4.method37631())) {
             var6.method3363(false);
             var6.method4142((BlockPos)null);
          }

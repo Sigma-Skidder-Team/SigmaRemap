@@ -44,15 +44,15 @@ public class Class954 extends TileEntity {
    }
 
    @Override
-   public void method3645(BlockState var1, CompoundNBT var2) {
+   public void read(BlockState var1, CompoundNBT var2) {
       this.field5357 = false;
-      super.method3645(var1, var2);
+      super.read(var1, var2);
       this.field5360 = Class112.method316(var2.getString("Color"), Class112.field401);
 
       for (int var5 = 0; var5 < 4; var5++) {
          String var6 = var2.getString("Text" + (var5 + 1));
          IFormattableTextComponent var7 = ITextComponent$Serializer.func_240643_a_(var6.isEmpty() ? "\"\"" : var6);
-         if (this.field5324 instanceof ServerWorld) {
+         if (this.world instanceof ServerWorld) {
             try {
                this.field5356[var5] = TextComponentUtils.func_240645_a_(this.method3843((ServerPlayerEntity)null), var7, (Entity)null, 0);
             } catch (CommandSyntaxException var9) {
@@ -87,7 +87,7 @@ public class Class954 extends TileEntity {
    @Nullable
    @Override
    public SUpdateTileEntityPacket method3776() {
-      return new SUpdateTileEntityPacket(this.field5325, 9, this.method3777());
+      return new SUpdateTileEntityPacket(this.pos, 9, this.method3777());
    }
 
    @Override
@@ -138,13 +138,13 @@ public class Class954 extends TileEntity {
       Object var5 = var1 != null ? var1.getDisplayName() : new StringTextComponent("Sign");
       return new Class6619(
          ICommandSource.field5189,
-         Vector3d.method11328(this.field5325),
+         Vector3d.method11328(this.pos),
          Vector2f.field37212,
-         (ServerWorld)this.field5324,
+         (ServerWorld)this.world,
          2,
          var4,
          (ITextComponent)var5,
-         this.field5324.getServer(),
+         this.world.getServer(),
          var1
       );
    }
@@ -159,7 +159,7 @@ public class Class954 extends TileEntity {
       } else {
          this.field5360 = var1;
          this.markDirty();
-         this.field5324.notifyBlockUpdate(this.getPos(), this.method3775(), this.method3775(), 3);
+         this.world.notifyBlockUpdate(this.getPos(), this.getBlockState(), this.getBlockState(), 3);
          return true;
       }
    }

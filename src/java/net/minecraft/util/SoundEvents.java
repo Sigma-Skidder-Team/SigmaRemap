@@ -139,7 +139,7 @@ public class SoundEvents {
    public static final SoundEvent field26446 = register("block.chain.step");
    public static final SoundEvent field26447 = register("block.chest.close");
    public static final SoundEvent field26448 = register("block.chest.locked");
-   public static final SoundEvent field26449 = register("block.chest.open");
+   public static final SoundEvent BLOCK_CHEST_OPEN = register("block.chest.open");
    public static final SoundEvent field26450 = register("entity.chicken.ambient");
    public static final SoundEvent field26451 = register("entity.chicken.death");
    public static final SoundEvent field26452 = register("entity.chicken.egg");

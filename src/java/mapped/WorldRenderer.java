@@ -240,7 +240,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
                var19.method8372(var21, 0, var20);
                Biome var27 = var10.getBiome(var19);
                if (var27.method32500() != Class87.field223) {
-                  int var28 = var10.method7006(Heightmap.Type.field299, var19).getY();
+                  int var28 = var10.method7006(Heightmap.Type.MOTION_BLOCKING, var19).getY();
                   int var29 = var12 - var16;
                   int var30 = var12 + var16;
                   if (var29 < var28) {
@@ -377,7 +377,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
          for (int var8 = 0; var8 < var7; var8++) {
             int var9 = var3.nextInt(21) - 10;
             int var10 = var3.nextInt(21) - 10;
-            BlockPos var11 = var4.method7006(Heightmap.Type.field299, var5.method8336(var9, 0, var10)).down();
+            BlockPos var11 = var4.method7006(Heightmap.Type.MOTION_BLOCKING, var5.method8336(var9, 0, var10)).down();
             Biome var12 = var4.getBiome(var11);
             if (var11.getY() > 0
                && var11.getY() <= var5.getY() + 10
@@ -409,7 +409,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
          if (var6 != null && var3.nextInt(3) < this.field997++) {
             this.field997 = 0;
             if (var6.getY() > var5.getY() + 1
-               && var4.method7006(Heightmap.Type.field299, var5).getY() > MathHelper.method37767((float)var5.getY())) {
+               && var4.method7006(Heightmap.Type.MOTION_BLOCKING, var5).getY() > MathHelper.method37767((float)var5.getY())) {
                this.mc.world.method6858(var6, SoundEvents.field27227, Class2266.field14731, 0.1F, 0.5F, false);
             } else {
                this.mc.world.method6858(var6, SoundEvents.field27226, Class2266.field14731, 0.2F, 1.0F, false);
@@ -533,7 +533,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
    }
 
    public boolean method861() {
-      return !Config.isShaders() && !Config.method26892() ? this.entityOutlineFramebuffer != null && this.field960 != null && this.mc.player != null : false;
+      return !Config.isShaders() && !Config.isAntialiasing() ? this.entityOutlineFramebuffer != null && this.field960 != null && this.mc.player != null : false;
    }
 
    private void method862() {
@@ -750,7 +750,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
       }
    }
 
-   public String method871() {
+   public String getDebugInfoRenders() {
       int var1 = this.field947.field42528.length;
       int var2 = this.method872();
       return String.format(
@@ -772,8 +772,8 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
       return var1;
    }
 
-   public String method873() {
-      return "E: " + this.field986 + "/" + this.field943.method6844() + ", B: " + this.field987 + ", " + Config.method26778();
+   public String getDebugInfoEntities() {
+      return "E: " + this.field986 + "/" + this.field943.getCountLoadedEntities() + ", B: " + this.field987 + ", " + Config.method26778();
    }
 
    public void method874(ActiveRenderInfo var1, Class7647 var2, boolean var3, int var4, boolean var5) {
@@ -1231,7 +1231,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
 
       boolean var38 = false;
       Class7735 irendertypebuffer$impl = this.field942.method26536();
-      if (Config.method26919()) {
+      if (Config.isFastRender()) {
          Class8861.method32258();
       }
 
@@ -1382,7 +1382,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
       irendertypebuffer$impl.finish(Class8624.method30905());
       irendertypebuffer$impl.finish(Class8624.method30900());
       this.field942.method26538().method25600();
-      if (Config.method26919()) {
+      if (Config.isFastRender()) {
          Class8861.method32259();
       }
 
@@ -1623,7 +1623,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
       this.mc.getProfiler().method22507(() -> "render_" + var1);
       boolean var11 = var1 != RenderType.method14304();
       ObjectListIterator<Class7002> var30 = this.field945.listIterator(var11 ? 0 : this.field945.size());
-      if (Config.method26977()) {
+      if (Config.isRenderRegions()) {
          int var31 = Integer.MIN_VALUE;
          int var33 = Integer.MIN_VALUE;
          Class8836 var34 = null;
@@ -1918,7 +1918,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
          }
       }
 
-      if (Config.method26977() && this.field955 % 20 == 0) {
+      if (Config.isRenderRegions() && this.field955 % 20 == 0) {
          this.field1027.clear();
       }
    }
@@ -2929,7 +2929,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
    }
 
    private void method910(World var1, BlockPos var2, boolean var3) {
-      for (LivingEntity var5 : var1.<LivingEntity>method7182(LivingEntity.class, new AxisAlignedBB(var2).method19664(3.0))) {
+      for (LivingEntity var5 : var1.<LivingEntity>getEntitiesWithinAABB(LivingEntity.class, new AxisAlignedBB(var2).method19664(3.0))) {
          var5.setPartying(var2, var3);
       }
    }
@@ -3678,8 +3678,8 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
       if (var1.method23398(var0, var2)) {
          return 15728880;
       } else {
-         int var3 = var0.method7020(Class1977.field12881, var2);
-         int var4 = var0.method7020(Class1977.field12882, var2);
+         int var3 = var0.getLightFor(LightType.SKY, var2);
+         int var4 = var0.getLightFor(LightType.BLOCK, var2);
          int var5 = var1.method23494(var0, var2);
          if (var4 < var5) {
             var4 = var5;

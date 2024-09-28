@@ -62,8 +62,8 @@ public class Class1664 implements IBlockDisplayReader {
    }
 
    @Override
-   public int method7020(Class1977 var1, BlockPos var2) {
-      return this.field9062.method7020(var1, var2);
+   public int getLightFor(LightType var1, BlockPos var2) {
+      return this.field9062.getLightFor(var1, var2);
    }
 
    @Override
@@ -176,7 +176,7 @@ public class Class1664 implements IBlockDisplayReader {
    }
 
    @Override
-   public Class196 method6737() {
+   public WorldLightManager method6737() {
       return this.field9062.method6737();
    }
 

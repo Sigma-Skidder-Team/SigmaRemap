@@ -124,7 +124,7 @@ public class FenceGateBlock extends HorizontalBlock {
    @Override
    public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       if (!var1.<Boolean>get(OPEN)) {
-         Direction var9 = var4.method3386();
+         Direction var9 = var4.getHorizontalFacing();
          if (var1.<Direction>get(HORIZONTAL_FACING) == var9.getOpposite()) {
             var1 = var1.with(HORIZONTAL_FACING, var9);
          }

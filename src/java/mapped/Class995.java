@@ -142,7 +142,7 @@ public abstract class Class995 extends Entity {
    }
 
    @Override
-   public Direction method3386() {
+   public Direction getHorizontalFacing() {
       return this.field5489;
    }
 

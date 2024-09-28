@@ -36,7 +36,7 @@ public class Class3344 extends Class3343 {
 
    public static void method11898(World var0, BlockPos var1, SkullTileEntity var2) {
       if (!var0.isRemote) {
-         BlockState var5 = var2.method3775();
+         BlockState var5 = var2.getBlockState();
          boolean var6 = var5.isIn(Blocks.field36703) || var5.isIn(Blocks.field36704);
          if (var6 && var1.getY() >= 0 && var0.method6997() != Difficulty.field14351) {
             Class9803 var7 = method11900();
@@ -62,7 +62,7 @@ public class Class3344 extends Class3343 {
                var13.renderYawOffset = var8.method33879().getAxis() != Direction.Axis.X ? 90.0F : 0.0F;
                var13.method5003();
 
-               for (ServerPlayerEntity var12 : var0.<ServerPlayerEntity>method7182(ServerPlayerEntity.class, var13.getBoundingBox().method19664(50.0))) {
+               for (ServerPlayerEntity var12 : var0.<ServerPlayerEntity>getEntitiesWithinAABB(ServerPlayerEntity.class, var13.getBoundingBox().method19664(50.0))) {
                   CriteriaTriggers.field44478.method15080(var12, var13);
                }
 

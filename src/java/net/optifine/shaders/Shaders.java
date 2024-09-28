@@ -753,12 +753,12 @@ public class Shaders {
         }
 
         boolean var2 = false;
-        if (Config.method26892()) {
+        if (Config.isAntialiasing()) {
             Class7399.method23634("Shaders can not be loaded, Antialiasing is enabled: " + Config.method26891() + "x");
             var2 = true;
         }
 
-        if (Config.method26890()) {
+        if (Config.isAnisotropicFiltering()) {
             Class7399.method23634("Shaders can not be loaded, Anisotropic Filtering is enabled: " + Config.method26889() + "x");
             var2 = true;
         }
@@ -4171,7 +4171,7 @@ public class Shaders {
         if (var0 == null) {
             return -1;
         } else {
-            BlockState var1 = var0.method3775();
+            BlockState var1 = var0.getBlockState();
             return Class9172.method34259(var1);
         }
     }

@@ -78,12 +78,12 @@ public class Class4183 extends Class4180 {
       } else {
          var3.setBlockState(
             var2,
-            Blocks.CHEST.method11579().with(Class3348.field18867, Boolean.valueOf(var3.getFluidState(var2).method23486(FluidTags.field40469))),
+            Blocks.CHEST.method11579().with(ChestBlock.field18867, Boolean.valueOf(var3.getFluidState(var2).method23486(FluidTags.field40469))),
             2
          );
          TileEntity var9 = var3.getTileEntity(var2);
-         if (var9 instanceof Class941) {
-            ((Class941)var9).method3744(!this.field20464 ? Class8793.field39563 : Class8793.field39564, var4.nextLong());
+         if (var9 instanceof ChestTileEntity) {
+            ((ChestTileEntity)var9).method3744(!this.field20464 ? Class8793.field39563 : Class8793.field39564, var4.nextLong());
          }
       }
    }
@@ -91,7 +91,7 @@ public class Class4183 extends Class4180 {
    @Override
    public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
       this.field20454.method36433().method36434(new Class7094(this.field20461)).method36434(Class7095.field30528);
-      int var10 = var1.method6736(Heightmap.Type.field297, this.field20455.getX(), this.field20455.getZ());
+      int var10 = var1.method6736(Heightmap.Type.OCEAN_FLOOR_WG, this.field20455.getX(), this.field20455.getZ());
       this.field20455 = new BlockPos(this.field20455.getX(), var10, this.field20455.getZ());
       BlockPos var11 = Class8969.method32905(
             new BlockPos(this.field20453.method32886().getX() - 1, 0, this.field20453.method32886().getZ() - 1),

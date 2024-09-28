@@ -45,7 +45,7 @@ public class Class1675 extends Chunk {
 
    @Nullable
    @Override
-   public Class196 method7131() {
+   public WorldLightManager method7131() {
       return null;
    }
 
@@ -97,7 +97,7 @@ public class Class1675 extends Chunk {
    }
 
    @Override
-   public boolean method7141() {
+   public boolean isEmpty() {
       return true;
    }
 

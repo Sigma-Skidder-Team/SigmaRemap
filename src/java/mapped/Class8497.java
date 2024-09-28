@@ -28,7 +28,7 @@ public final class Class8497 {
             Chunk var19 = var14.method7342(var15, var16, false);
             var18 = var18 + "Client: ";
             if (var19 != null) {
-               var18 = var18 + (!var19.method7141() ? "" : " E");
+               var18 = var18 + (!var19.isEmpty() ? "" : " E");
                var18 = var18 + "\n";
             } else {
                var18 = var18 + "0n/a\n";

@@ -29,7 +29,7 @@ public class Class7152 implements Class7151 {
       var1.putInt("y", this.field30726.getY());
       var1.putInt("z", this.field30726.getZ());
       BlockState var4 = this.field30725.method3734().getBlockState(this.field30726);
-      this.field30725.method3645(var4, var1);
+      this.field30725.read(var4, var1);
       this.field30725.markDirty();
       this.field30725.method3734().notifyBlockUpdate(this.field30726, var4, var4, 3);
    }

@@ -24,7 +24,7 @@ public class CachedBlockInfo {
    }
 
    public BlockState method37548() {
-      if (this.field45053 == null && (this.field45052 || this.field45050.method7017(this.field45051))) {
+      if (this.field45053 == null && (this.field45052 || this.field45050.isBlockLoaded(this.field45051))) {
          this.field45053 = this.field45050.getBlockState(this.field45051);
       }
 

@@ -138,7 +138,7 @@ public class Class888 extends ProjectileEntity implements Class889 {
       this.method3468();
       if (this.field5123 == 0 && !this.isSilent()) {
          this.world
-            .method6743((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26577, Class2266.field14736, 3.0F, 1.0F);
+            .playSound((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26577, Class2266.field14736, 3.0F, 1.0F);
       }
 
       this.field5123++;
@@ -209,7 +209,7 @@ public class Class888 extends ProjectileEntity implements Class889 {
          double var7 = 5.0;
          Vector3d var9 = this.getPositionVec();
 
-         for (LivingEntity var11 : this.world.<LivingEntity>method7182(LivingEntity.class, this.getBoundingBox().method19664(5.0))) {
+         for (LivingEntity var11 : this.world.<LivingEntity>getEntitiesWithinAABB(LivingEntity.class, this.getBoundingBox().method19664(5.0))) {
             if (var11 != this.field5125 && !(this.getDistanceSq(var11) > 25.0)) {
                boolean var12 = false;
 

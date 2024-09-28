@@ -12,7 +12,7 @@ public final class Class201 extends Class200<Class7585, Class209> {
    private final BlockPos.Mutable field750 = new BlockPos.Mutable();
 
    public Class201(Class1704 var1) {
-      super(var1, Class1977.field12882, new Class209(var1));
+      super(var1, LightType.BLOCK, new Class209(var1));
    }
 
    private int method664(long var1) {

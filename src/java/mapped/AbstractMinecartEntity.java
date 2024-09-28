@@ -267,7 +267,7 @@ public abstract class AbstractMinecartEntity extends Entity {
 
    @Override
    public Direction method3387() {
-      return !this.field5220 ? this.method3386().rotateY() : this.method3386().getOpposite().rotateY();
+      return !this.field5220 ? this.getHorizontalFacing().rotateY() : this.getHorizontalFacing().getOpposite().rotateY();
    }
 
    @Override

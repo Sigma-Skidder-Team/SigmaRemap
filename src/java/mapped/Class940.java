@@ -43,7 +43,7 @@ public class Class940 extends Class939 implements Class930, ITickableTileEntity 
    }
 
    @Override
-   public void method3647() {
+   public void tick() {
       this.method3745();
       if (this.field5307 == Class2126.field13873 || this.field5307 == Class2126.field13875) {
          this.method3750();
@@ -101,11 +101,11 @@ public class Class940 extends Class939 implements Class930, ITickableTileEntity 
    }
 
    private void method3750() {
-      BlockState var3 = this.field5324.getBlockState(this.getPos());
+      BlockState var3 = this.world.getBlockState(this.getPos());
       if (var3.getBlock() instanceof Class3368) {
          Direction var4 = var3.<Direction>get(Class3368.field18939);
-         AxisAlignedBB var5 = this.method3749(var4).method19668(this.field5325);
-         List var6 = this.field5324.method7181((Entity)null, var5);
+         AxisAlignedBB var5 = this.method3749(var4).method19668(this.pos);
+         List var6 = this.world.method7181((Entity)null, var5);
          if (!var6.isEmpty()) {
             for (int var7 = 0; var7 < var6.size(); var7++) {
                Entity var8 = (Entity)var6.get(var7);
@@ -158,9 +158,9 @@ public class Class940 extends Class939 implements Class930, ITickableTileEntity 
    }
 
    @Override
-   public boolean method3751(int var1, int var2) {
+   public boolean receiveClientEvent(int var1, int var2) {
       if (var1 != 1) {
-         return super.method3751(var1, var2);
+         return super.receiveClientEvent(var1, var2);
       } else {
          this.field5306 = var2;
          if (var2 == 0) {
@@ -178,7 +178,7 @@ public class Class940 extends Class939 implements Class930, ITickableTileEntity 
    }
 
    private void method3752() {
-      this.method3775().method23424(this.method3734(), this.getPos(), 3);
+      this.getBlockState().method23424(this.method3734(), this.getPos(), 3);
    }
 
    @Override
@@ -189,10 +189,10 @@ public class Class940 extends Class939 implements Class930, ITickableTileEntity 
          }
 
          this.field5306++;
-         this.field5324.method6787(this.field5325, this.method3775().getBlock(), 1, this.field5306);
+         this.world.addBlockEvent(this.pos, this.getBlockState().getBlock(), 1, this.field5306);
          if (this.field5306 == 1) {
-            this.field5324
-               .method6742((PlayerEntity)null, this.field5325, SoundEvents.field27045, Class2266.field14732, 0.5F, this.field5324.rand.nextFloat() * 0.1F + 0.9F);
+            this.world
+               .method6742((PlayerEntity)null, this.pos, SoundEvents.field27045, Class2266.field14732, 0.5F, this.world.rand.nextFloat() * 0.1F + 0.9F);
          }
       }
    }
@@ -201,22 +201,22 @@ public class Class940 extends Class939 implements Class930, ITickableTileEntity 
    public void closeInventory(PlayerEntity var1) {
       if (!var1.isSpectator()) {
          this.field5306--;
-         this.field5324.method6787(this.field5325, this.method3775().getBlock(), 1, this.field5306);
+         this.world.addBlockEvent(this.pos, this.getBlockState().getBlock(), 1, this.field5306);
          if (this.field5306 <= 0) {
-            this.field5324
-               .method6742((PlayerEntity)null, this.field5325, SoundEvents.field27044, Class2266.field14732, 0.5F, this.field5324.rand.nextFloat() * 0.1F + 0.9F);
+            this.world
+               .method6742((PlayerEntity)null, this.pos, SoundEvents.field27044, Class2266.field14732, 0.5F, this.world.rand.nextFloat() * 0.1F + 0.9F);
          }
       }
    }
 
    @Override
-   public ITextComponent method3686() {
+   public ITextComponent getDefaultName() {
       return new TranslationTextComponent("container.shulkerBox");
    }
 
    @Override
-   public void method3645(BlockState var1, CompoundNBT var2) {
-      super.method3645(var1, var2);
+   public void read(BlockState var1, CompoundNBT var2) {
+      super.read(var1, var2);
       this.method3753(var2);
    }
 
@@ -228,26 +228,26 @@ public class Class940 extends Class939 implements Class930, ITickableTileEntity 
 
    public void method3753(CompoundNBT var1) {
       this.field5305 = NonNullList.<ItemStack>method68(this.getSizeInventory(), ItemStack.EMPTY);
-      if (!this.method3741(var1) && var1.contains("Items", 9)) {
-         Class7920.method26567(var1, this.field5305);
+      if (!this.checkLootAndRead(var1) && var1.contains("Items", 9)) {
+         ItemStackHelper.loadAllItems(var1, this.field5305);
       }
    }
 
    public CompoundNBT method3754(CompoundNBT var1) {
-      if (!this.method3742(var1)) {
-         Class7920.method26566(var1, this.field5305, false);
+      if (!this.checkLootAndWrite(var1)) {
+         ItemStackHelper.method26566(var1, this.field5305, false);
       }
 
       return var1;
    }
 
    @Override
-   public NonNullList<ItemStack> method3724() {
+   public NonNullList<ItemStack> getItems() {
       return this.field5305;
    }
 
    @Override
-   public void method3725(NonNullList<ItemStack> var1) {
+   public void setItems(NonNullList<ItemStack> var1) {
       this.field5305 = var1;
    }
 
@@ -273,7 +273,7 @@ public class Class940 extends Class939 implements Class930, ITickableTileEntity 
    @Nullable
    public Class112 method3756() {
       if (this.field5311) {
-         this.field5310 = Class3368.method11955(this.method3775().getBlock());
+         this.field5310 = Class3368.method11955(this.getBlockState().getBlock());
          this.field5311 = false;
       }
 
@@ -281,7 +281,7 @@ public class Class940 extends Class939 implements Class930, ITickableTileEntity 
    }
 
    @Override
-   public Container method3690(int var1, PlayerInventory var2) {
+   public Container createMenu(int var1, PlayerInventory var2) {
       return new Class5814(var1, var2, this);
    }
 
@@ -290,7 +290,7 @@ public class Class940 extends Class939 implements Class930, ITickableTileEntity 
    }
 
    @Override
-   public ITextComponent method2954() {
+   public ITextComponent getDefaultName2() {
       return new TranslationTextComponent("container.shulkerBox");
    }
 }

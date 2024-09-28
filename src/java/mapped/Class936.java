@@ -33,11 +33,11 @@ public class Class936 extends Class939 implements Class937, ITickableTileEntity 
    }
 
    @Override
-   public void method3645(BlockState var1, CompoundNBT var2) {
-      super.method3645(var1, var2);
+   public void read(BlockState var1, CompoundNBT var2) {
+      super.read(var1, var2);
       this.field5293 = NonNullList.<ItemStack>method68(this.getSizeInventory(), ItemStack.EMPTY);
-      if (!this.method3741(var2)) {
-         Class7920.method26567(var2, this.field5293);
+      if (!this.checkLootAndRead(var2)) {
+         ItemStackHelper.loadAllItems(var2, this.field5293);
       }
 
       this.field5294 = var2.getInt("TransferCooldown");
@@ -46,8 +46,8 @@ public class Class936 extends Class939 implements Class937, ITickableTileEntity 
    @Override
    public CompoundNBT write(CompoundNBT var1) {
       super.write(var1);
-      if (!this.method3742(var1)) {
-         Class7920.method26565(var1, this.field5293);
+      if (!this.checkLootAndWrite(var1)) {
+         ItemStackHelper.saveAllItems(var1, this.field5293);
       }
 
       var1.putInt("TransferCooldown", this.field5294);
@@ -62,28 +62,28 @@ public class Class936 extends Class939 implements Class937, ITickableTileEntity 
    @Override
    public ItemStack decrStackSize(int var1, int var2) {
       this.method3743((PlayerEntity)null);
-      return Class7920.method26563(this.method3724(), var1, var2);
+      return ItemStackHelper.method26563(this.getItems(), var1, var2);
    }
 
    @Override
    public void setInventorySlotContents(int var1, ItemStack var2) {
       this.method3743((PlayerEntity)null);
-      this.method3724().set(var1, var2);
+      this.getItems().set(var1, var2);
       if (var2.getCount() > this.getInventoryStackLimit()) {
          var2.setCount(this.getInventoryStackLimit());
       }
    }
 
    @Override
-   public ITextComponent method3686() {
+   public ITextComponent getDefaultName() {
       return new TranslationTextComponent("container.hopper");
    }
 
    @Override
-   public void method3647() {
-      if (this.field5324 != null && !this.field5324.isRemote) {
+   public void tick() {
+      if (this.world != null && !this.world.isRemote) {
          this.field5294--;
-         this.field5295 = this.field5324.getGameTime();
+         this.field5295 = this.world.getGameTime();
          if (!this.method3722()) {
             this.method3721(0);
             this.method3699(() -> method3705(this));
@@ -92,8 +92,8 @@ public class Class936 extends Class939 implements Class937, ITickableTileEntity 
    }
 
    private boolean method3699(Supplier<Boolean> var1) {
-      if (this.field5324 != null && !this.field5324.isRemote) {
-         if (!this.method3722() && this.method3775().<Boolean>get(Class3362.field18914)) {
+      if (this.world != null && !this.world.isRemote) {
+         if (!this.method3722() && this.getBlockState().<Boolean>get(Class3362.field18914)) {
             boolean var4 = false;
             if (!this.isEmpty()) {
                var4 = this.method3701();
@@ -129,7 +129,7 @@ public class Class936 extends Class939 implements Class937, ITickableTileEntity 
    private boolean method3701() {
       IInventory var3 = this.method3712();
       if (var3 != null) {
-         Direction var4 = this.method3775().<Direction>get(Class3362.field18913).getOpposite();
+         Direction var4 = this.getBlockState().<Direction>get(Class3362.field18913).getOpposite();
          if (!this.method3703(var3, var4)) {
             for (int var5 = 0; var5 < this.getSizeInventory(); var5++) {
                if (!this.getStackInSlot(var5).isEmpty()) {
@@ -285,8 +285,8 @@ public class Class936 extends Class939 implements Class937, ITickableTileEntity 
 
    @Nullable
    private IInventory method3712() {
-      Direction var3 = this.method3775().<Direction>get(Class3362.field18913);
-      return method3715(this.method3734(), this.field5325.method8349(var3));
+      Direction var3 = this.getBlockState().<Direction>get(Class3362.field18913);
+      return method3715(this.method3734(), this.pos.method8349(var3));
    }
 
    @Nullable
@@ -324,8 +324,8 @@ public class Class936 extends Class939 implements Class937, ITickableTileEntity 
             TileEntity var13 = var0.getTileEntity(var10);
             if (var13 instanceof IInventory) {
                var9 = (IInventory)var13;
-               if (var9 instanceof Class941 && var12 instanceof Class3348) {
-                  var9 = Class3348.method11911((Class3348)var12, var11, var0, var10, true);
+               if (var9 instanceof ChestTileEntity && var12 instanceof ChestBlock) {
+                  var9 = ChestBlock.method11911((ChestBlock)var12, var11, var0, var10, true);
                }
             }
          }
@@ -359,17 +359,17 @@ public class Class936 extends Class939 implements Class937, ITickableTileEntity 
 
    @Override
    public double method3718() {
-      return (double)this.field5325.getX() + 0.5;
+      return (double)this.pos.getX() + 0.5;
    }
 
    @Override
    public double method3719() {
-      return (double)this.field5325.getY() + 0.5;
+      return (double)this.pos.getY() + 0.5;
    }
 
    @Override
    public double method3720() {
-      return (double)this.field5325.getZ() + 0.5;
+      return (double)this.pos.getZ() + 0.5;
    }
 
    private void method3721(int var1) {
@@ -385,12 +385,12 @@ public class Class936 extends Class939 implements Class937, ITickableTileEntity 
    }
 
    @Override
-   public NonNullList<ItemStack> method3724() {
+   public NonNullList<ItemStack> getItems() {
       return this.field5293;
    }
 
    @Override
-   public void method3725(NonNullList<ItemStack> var1) {
+   public void setItems(NonNullList<ItemStack> var1) {
       this.field5293 = var1;
    }
 
@@ -408,12 +408,12 @@ public class Class936 extends Class939 implements Class937, ITickableTileEntity 
    }
 
    @Override
-   public Container method3690(int var1, PlayerInventory var2) {
+   public Container createMenu(int var1, PlayerInventory var2) {
       return new Class5816(var1, var2, this);
    }
 
    @Override
-   public ITextComponent method2954() {
+   public ITextComponent getDefaultName2() {
       return null;
    }
 }

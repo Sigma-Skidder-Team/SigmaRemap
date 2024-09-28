@@ -109,7 +109,7 @@ public class Class8557 {
 
       float var12 = (var3 + var5) / 2.0F;
       float var13 = (var4 + var6) / 2.0F;
-      return Config.method26969().method1116((double)var12, (double)var13);
+      return Config.getTextureMap().method1116((double)var12, (double)var13);
    }
 
    public void method30522() {

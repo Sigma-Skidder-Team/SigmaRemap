@@ -81,7 +81,7 @@ public class Class4609 extends Class4566 {
    public int method14499(float var1) {
       int var4 = super.method14499(var1);
       int var5 = 0;
-      if (this.field22037.method7017(this.field22118)) {
+      if (this.field22037.isBlockLoaded(this.field22118)) {
          var5 = WorldRenderer.method944(this.field22037, this.field22118);
       }
 

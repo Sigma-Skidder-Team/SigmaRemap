@@ -192,7 +192,7 @@ public class Class1064 extends Class1066 implements Class1022 {
          SoundEvent var10 = this.method4894();
          if (var10 != null) {
             this.world
-               .method6743(
+               .playSound(
                   (PlayerEntity)null,
                   this.getPosX(),
                   this.getPosY(),
@@ -370,7 +370,7 @@ public class Class1064 extends Class1066 implements Class1022 {
       var4.shoot(var5, var7 + (double)var11, var9, 1.5F, 10.0F);
       if (!this.isSilent()) {
          this.world
-            .method6743(
+            .playSound(
                (PlayerEntity)null,
                this.getPosX(),
                this.getPosY(),

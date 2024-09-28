@@ -8,7 +8,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockReader;
 
-public class Class3349 extends Class3348 {
+public class Class3349 extends ChestBlock {
    private static String[] field18864;
 
    public Class3349(Properties var1) {
@@ -32,7 +32,7 @@ public class Class3349 extends Class3348 {
 
    @Override
    public int method11514(BlockState var1, IBlockReader var2, BlockPos var3, Direction var4) {
-      return MathHelper.method37775(Class941.method3763(var2, var3), 0, 15);
+      return MathHelper.method37775(ChestTileEntity.getPlayersUsing(var2, var3), 0, 15);
    }
 
    @Override

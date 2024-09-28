@@ -14,7 +14,7 @@ public class Class5955 extends Class5942<Class945> {
    }
 
    public void method18462(Class945 var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
-      Direction var9 = var1.method3775().<Direction>get(Class3244.field18701);
+      Direction var9 = var1.getBlockState().<Direction>get(Class3244.field18701);
       NonNullList var10 = var1.method3795();
 
       for (int var11 = 0; var11 < var10.size(); var11++) {

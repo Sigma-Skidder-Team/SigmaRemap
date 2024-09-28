@@ -139,7 +139,7 @@ public class ActiveMods extends Module {
                 }
 
                 if (Minecraft.getInstance().gameSettings.showDebugInfo) {
-                    var7 = (int) ((double) (mc.ingameGUI.field6726.field6674.size() * 9) * mc.mainWindow.getGuiScaleFactor() + 7.0);
+                    var7 = (int) ((double) (mc.ingameGUI.field6726.debugInfoRight.size() * 9) * mc.mainWindow.getGuiScaleFactor() + 7.0);
                 }
 
                 byte var10 = 0;

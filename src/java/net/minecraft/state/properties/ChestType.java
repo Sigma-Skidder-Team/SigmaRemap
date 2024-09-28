@@ -4,13 +4,13 @@ import net.minecraft.util.IStringSerializable;
 
 public enum ChestType implements IStringSerializable {
    field379("single", 0),
-   field380("left", 2),
-   field381("right", 1);
+   LEFT("left", 2),
+   RIGHT("right", 1);
 
    public static final ChestType[] field382 = values();
    private final String field383;
    private final int field384;
-   private static final ChestType[] field385 = new ChestType[]{field379, field380, field381};
+   private static final ChestType[] field385 = new ChestType[]{field379, LEFT, RIGHT};
 
    private ChestType(String var3, int var4) {
       this.field383 = var3;

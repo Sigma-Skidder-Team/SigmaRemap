@@ -75,7 +75,7 @@ public class Class3389 extends Block {
                ServerPlayerEntity var10 = (ServerPlayerEntity)var4;
                if (var10.method2827() != var2.getDimensionKey() || !var10.method2825().equals(var3)) {
                   var10.method2829(var2.getDimensionKey(), var3, 0.0F, false, true);
-                  var2.method6743(
+                  var2.playSound(
                      (PlayerEntity)null,
                      (double)var3.getX() + 0.5,
                      (double)var3.getY() + 0.5,
@@ -147,7 +147,7 @@ public class Class3389 extends Block {
 
    public static void method11989(World var0, BlockPos var1, BlockState var2) {
       var0.setBlockState(var1, var2.with(field19000, Integer.valueOf(var2.<Integer>get(field19000) + 1)), 3);
-      var0.method6743(
+      var0.playSound(
          (PlayerEntity)null,
          (double)var1.getX() + 0.5,
          (double)var1.getY() + 0.5,
@@ -163,7 +163,7 @@ public class Class3389 extends Block {
    public void method11512(BlockState var1, World var2, BlockPos var3, Random var4) {
       if (var1.<Integer>get(field19000) != 0) {
          if (var4.nextInt(100) == 0) {
-            var2.method6743(
+            var2.playSound(
                (PlayerEntity)null,
                (double)var3.getX() + 0.5,
                (double)var3.getY() + 0.5,

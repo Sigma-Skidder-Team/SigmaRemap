@@ -31,7 +31,7 @@ public class Class931 extends Class932 implements Class930, ITickableTileEntity 
    }
 
    @Override
-   public ITextComponent method3686() {
+   public ITextComponent getDefaultName() {
       return new TranslationTextComponent("container.brewing");
    }
 
@@ -52,7 +52,7 @@ public class Class931 extends Class932 implements Class930, ITickableTileEntity 
    }
 
    @Override
-   public void method3647() {
+   public void tick() {
       ItemStack var3 = this.field5273.get(4);
       if (this.field5277 <= 0 && var3.getItem() == Items.field37975) {
          this.field5277 = 20;
@@ -87,11 +87,11 @@ public class Class931 extends Class932 implements Class930, ITickableTileEntity 
          }
       }
 
-      if (!this.field5324.isRemote) {
+      if (!this.world.isRemote) {
          boolean[] var10 = this.method3687();
          if (!Arrays.equals(var10, this.field5275)) {
             this.field5275 = var10;
-            BlockState var8 = this.field5324.getBlockState(this.getPos());
+            BlockState var8 = this.world.getBlockState(this.getPos());
             if (!(var8.getBlock() instanceof Class3376)) {
                return;
             }
@@ -100,7 +100,7 @@ public class Class931 extends Class932 implements Class930, ITickableTileEntity 
                var8 = var8.with(Class3376.field18975[var9], Boolean.valueOf(var10[var9]));
             }
 
-            this.field5324.setBlockState(this.field5325, var8, 2);
+            this.world.setBlockState(this.pos, var8, 2);
          }
       }
    }
@@ -149,8 +149,8 @@ public class Class931 extends Class932 implements Class930, ITickableTileEntity 
       if (var3.getItem().method11723()) {
          ItemStack var5 = new ItemStack(var3.getItem().method11722());
          if (!var3.isEmpty()) {
-            if (!this.field5324.isRemote) {
-               Class7236.method22725(this.field5324, (double)var6.getX(), (double)var6.getY(), (double)var6.getZ(), var5);
+            if (!this.world.isRemote) {
+               Class7236.method22725(this.world, (double)var6.getX(), (double)var6.getY(), (double)var6.getZ(), var5);
             }
          } else {
             var3 = var5;
@@ -158,14 +158,14 @@ public class Class931 extends Class932 implements Class930, ITickableTileEntity 
       }
 
       this.field5273.set(3, var3);
-      this.field5324.playEvent(1035, var6, 0);
+      this.world.playEvent(1035, var6, 0);
    }
 
    @Override
-   public void method3645(BlockState var1, CompoundNBT var2) {
-      super.method3645(var1, var2);
+   public void read(BlockState var1, CompoundNBT var2) {
+      super.read(var1, var2);
       this.field5273 = NonNullList.<ItemStack>method68(this.getSizeInventory(), ItemStack.EMPTY);
-      Class7920.method26567(var2, this.field5273);
+      ItemStackHelper.loadAllItems(var2, this.field5273);
       this.field5274 = var2.getShort("BrewTime");
       this.field5277 = var2.getByte("Fuel");
    }
@@ -174,7 +174,7 @@ public class Class931 extends Class932 implements Class930, ITickableTileEntity 
    public CompoundNBT write(CompoundNBT var1) {
       super.write(var1);
       var1.putShort("BrewTime", (short)this.field5274);
-      Class7920.method26565(var1, this.field5273);
+      ItemStackHelper.saveAllItems(var1, this.field5273);
       var1.method100("Fuel", (byte)this.field5277);
       return var1;
    }
@@ -186,12 +186,12 @@ public class Class931 extends Class932 implements Class930, ITickableTileEntity 
 
    @Override
    public ItemStack decrStackSize(int var1, int var2) {
-      return Class7920.method26563(this.field5273, var1, var2);
+      return ItemStackHelper.method26563(this.field5273, var1, var2);
    }
 
    @Override
    public ItemStack removeStackFromSlot(int var1) {
-      return Class7920.method26564(this.field5273, var1);
+      return ItemStackHelper.method26564(this.field5273, var1);
    }
 
    @Override
@@ -203,9 +203,9 @@ public class Class931 extends Class932 implements Class930, ITickableTileEntity 
 
    @Override
    public boolean isUsableByPlayer(PlayerEntity var1) {
-      return this.field5324.getTileEntity(this.field5325) == this
+      return this.world.getTileEntity(this.pos) == this
          ? !(
-            var1.getDistanceNearest((double)this.field5325.getX() + 0.5, (double)this.field5325.getY() + 0.5, (double)this.field5325.getZ() + 0.5)
+            var1.getDistanceNearest((double)this.pos.getX() + 0.5, (double)this.pos.getY() + 0.5, (double)this.pos.getZ() + 0.5)
                > 64.0
          )
          : false;
@@ -249,7 +249,7 @@ public class Class931 extends Class932 implements Class930, ITickableTileEntity 
    }
 
    @Override
-   public Container method3690(int var1, PlayerInventory var2) {
+   public Container createMenu(int var1, PlayerInventory var2) {
       return new Class5819(var1, var2, this, this.field5278);
    }
 
@@ -274,7 +274,7 @@ public class Class931 extends Class932 implements Class930, ITickableTileEntity 
    }
 
    @Override
-   public ITextComponent method2954() {
+   public ITextComponent getDefaultName2() {
       return new TranslationTextComponent("container.brewing");
    }
 }

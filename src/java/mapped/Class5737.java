@@ -64,7 +64,7 @@ public class Class5737 extends EntityRenderer<PaintingEntity> {
             int var40 = MathHelper.floor(var3.getPosX());
             int var41 = MathHelper.floor(var3.getPosY() + (double)((var38 + var39) / 2.0F / 16.0F));
             int var42 = MathHelper.floor(var3.getPosZ());
-            Direction var43 = var3.method3386();
+            Direction var43 = var3.getHorizontalFacing();
             if (var43 == Direction.NORTH) {
                var40 = MathHelper.floor(var3.getPosX() + (double)((var36 + var37) / 2.0F / 16.0F));
             }

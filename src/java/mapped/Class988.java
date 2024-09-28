@@ -43,9 +43,9 @@ public class Class988 implements IInventory {
    public ItemStack decrStackSize(int var1, int var2) {
       ItemStack var5 = this.field5468.get(var1);
       if (var1 == 2 && !var5.isEmpty()) {
-         return Class7920.method26563(this.field5468, var1, var5.getCount());
+         return ItemStackHelper.method26563(this.field5468, var1, var5.getCount());
       } else {
-         ItemStack var6 = Class7920.method26563(this.field5468, var1, var2);
+         ItemStack var6 = ItemStackHelper.method26563(this.field5468, var1, var2);
          if (!var6.isEmpty() && this.method4065(var1)) {
             this.method4066();
          }
@@ -60,7 +60,7 @@ public class Class988 implements IInventory {
 
    @Override
    public ItemStack removeStackFromSlot(int var1) {
-      return Class7920.method26564(this.field5468, var1);
+      return ItemStackHelper.method26564(this.field5468, var1);
    }
 
    @Override

@@ -326,7 +326,7 @@ public class ShulkerInfo extends Module {
             Peek.method18338(var6);
             if (var6.contains("Items", 9)) {
                 NonNullList<ItemStack> var7 = NonNullList.method68(27, ItemStack.EMPTY);
-                Class7920.method26567(var6, var7);
+                ItemStackHelper.loadAllItems(var6, var7);
 
                 for (ItemStack var9 : var7) {
                     if (!var9.isEmpty()) {

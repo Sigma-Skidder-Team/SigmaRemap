@@ -67,7 +67,7 @@ public class BowItem extends Class3262 implements IVanishable {
                   var2.addEntity(var14);
                }
 
-               var2.method6743(
+               var2.playSound(
                   (PlayerEntity)null,
                   var7.getPosX(),
                   var7.getPosY(),

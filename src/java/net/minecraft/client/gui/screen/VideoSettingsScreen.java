@@ -201,8 +201,8 @@ public class VideoSettingsScreen extends Class838 {
    private void method2582() {
       this.mc.updateWindowSize();
       MainWindow var3 = this.mc.getMainWindow();
-      int var4 = Class7540.method24650(this.field4673);
-      int var5 = Class7540.method24651(this.field4673);
+      int var4 = GuiUtils.method24650(this.field4673);
+      int var5 = GuiUtils.method24651(this.field4673);
       int var6 = this.field4673.field6477 + (var4 - var5);
       int var7 = this.field4673.field6478 + var5 / 2;
       GLFW.glfwSetCursorPos(var3.getHandle(), (double)var6 * var3.getGuiScaleFactor(), (double)var7 * var3.getGuiScaleFactor());
@@ -246,12 +246,12 @@ public class VideoSettingsScreen extends Class838 {
          }
 
          if (var1.field6523 == 231) {
-            if (Config.method26892() || Config.method26893()) {
+            if (Config.isAntialiasing() || Config.method26893()) {
                Config.method26964(Class8043.method27619("of.message.shaders.aa1"), Class8043.method27619("of.message.shaders.aa2"));
                return;
             }
 
-            if (Config.method26890()) {
+            if (Config.isAnisotropicFiltering()) {
                Config.method26964(Class8043.method27619("of.message.shaders.af1"), Class8043.method27619("of.message.shaders.af2"));
                return;
             }

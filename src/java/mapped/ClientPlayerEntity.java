@@ -132,7 +132,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
    @Override
    public void tick() {
-      if (this.world.method7017(new BlockPos(this.getPosX(), 0.0, this.getPosZ()))) {
+      if (this.world.isBlockLoaded(new BlockPos(this.getPosX(), 0.0, this.getPosZ()))) {
          super.tick();
          if (!this.isPassenger()) {
             this.onUpdateWalkingPlayer();

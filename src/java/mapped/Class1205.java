@@ -5,6 +5,9 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
+/**
+ * class PowerButton extends BeaconScreen.Button
+ */
 public class Class1205 extends Class1201 {
    private final Effect field6506;
    private final TextureAtlasSprite field6507;

@@ -9,7 +9,7 @@ public class Class972 extends Class971 {
    }
 
    @Override
-   public ITextComponent method3686() {
+   public ITextComponent getDefaultName() {
       return new TranslationTextComponent("container.dropper");
    }
 }

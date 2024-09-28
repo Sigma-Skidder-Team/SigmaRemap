@@ -31,7 +31,7 @@ public class Class990 implements IInventory {
       return this.field5475.isEmpty() && this.field5476.isEmpty();
    }
 
-   public boolean method4070(IInventory var1) {
+   public boolean isPartOfLargeChest(IInventory var1) {
       return this.field5475 == var1 || this.field5476 == var1;
    }
 

@@ -9,12 +9,12 @@ public class Class9292 {
 
    static {
       try {
-         field42734[ChestType.field380.ordinal()] = 1;
+         field42734[ChestType.LEFT.ordinal()] = 1;
       } catch (NoSuchFieldError var5) {
       }
 
       try {
-         field42734[ChestType.field381.ordinal()] = 2;
+         field42734[ChestType.RIGHT.ordinal()] = 2;
       } catch (NoSuchFieldError var4) {
       }
 

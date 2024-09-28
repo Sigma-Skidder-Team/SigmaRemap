@@ -99,7 +99,7 @@ public final class Class8178 implements Class8176 {
    }
 
    private double method28471(ItemFrameEntity var1) {
-      Direction var4 = var1.method3386();
+      Direction var4 = var1.getHorizontalFacing();
       int var5 = !var4.getAxis().method323() ? 0 : 90 * var4.getAxisDirection().getOffset();
       return (double) MathHelper.method37791(180 + var4.method534() * 90 + var1.method4093() * 45 + var5);
    }

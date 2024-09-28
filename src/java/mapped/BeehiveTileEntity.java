@@ -27,18 +27,18 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
    @Override
    public void markDirty() {
       if (this.method3912()) {
-         this.method3915((PlayerEntity)null, this.field5324.getBlockState(this.getPos()), Class2084.field13573);
+         this.method3915((PlayerEntity)null, this.world.getBlockState(this.getPos()), Class2084.field13573);
       }
 
       super.markDirty();
    }
 
    public boolean method3912() {
-      if (this.field5324 == null) {
+      if (this.world == null) {
          return false;
       } else {
-         for (BlockPos var4 : BlockPos.method8359(this.field5325.method8336(-1, -1, -1), this.field5325.method8336(1, 1, 1))) {
-            if (this.field5324.getBlockState(var4).getBlock() instanceof Class3399) {
+         for (BlockPos var4 : BlockPos.method8359(this.pos.method8336(-1, -1, -1), this.pos.method8336(1, 1, 1))) {
+            if (this.world.getBlockState(var4).getBlock() instanceof Class3399) {
                return true;
             }
          }
@@ -92,7 +92,7 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
    }
 
    public boolean method3920() {
-      return Class3244.method11654(this.field5324, this.getPos());
+      return Class3244.method11654(this.world, this.getPos());
    }
 
    public void method3921() {
@@ -106,17 +106,17 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
          CompoundNBT var6 = new CompoundNBT();
          var1.writeUnlessPassenger(var6);
          this.field5392.add(new Beeee(var6, var3, !var2 ? 600 : 2400));
-         if (this.field5324 != null) {
+         if (this.world != null) {
             if (var1 instanceof Class1017) {
                Class1017 var7 = (Class1017)var1;
-               if (var7.method4422() && (!this.method3925() || this.field5324.rand.nextBoolean())) {
+               if (var7.method4422() && (!this.method3925() || this.world.rand.nextBoolean())) {
                   this.field5393 = var7.method4421();
                }
             }
 
             BlockPos var8 = this.getPos();
-            this.field5324
-               .method6743(
+            this.world
+               .playSound(
                   (PlayerEntity)null,
                   (double)var8.getX(),
                   (double)var8.getY(),
@@ -133,7 +133,7 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
    }
 
    private boolean method3923(BlockState var1, Beeee var2, List<Entity> var3, Class2084 var4) {
-      if ((this.field5324.method6741() || this.field5324.method6795()) && var4 != Class2084.field13573) {
+      if ((this.world.method6741() || this.world.method6795()) && var4 != Class2084.field13573) {
          return false;
       } else {
          BlockPos var7 = this.getPos();
@@ -143,17 +143,17 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
          var8.method133("UUID");
          Direction var9 = var1.<Direction>get(Class3366.field18935);
          BlockPos var10 = var7.method8349(var9);
-         boolean var11 = !this.field5324.getBlockState(var10).method23414(this.field5324, var10).isEmpty();
+         boolean var11 = !this.world.getBlockState(var10).method23414(this.world, var10).isEmpty();
          if (var11 && var4 != Class2084.field13573) {
             return false;
          } else {
-            Entity var12 = EntityType.method33223(var8, this.field5324, var0 -> var0);
+            Entity var12 = EntityType.method33223(var8, this.world, var0 -> var0);
             if (var12 == null) {
                return false;
             } else if (var12.getType().method33228(Class8613.field38736)) {
                if (var12 instanceof Class1017) {
                   Class1017 var13 = (Class1017)var12;
-                  if (this.method3925() && !var13.method4422() && this.field5324.rand.nextFloat() < 0.9F) {
+                  if (this.method3925() && !var13.method4422() && this.world.rand.nextFloat() < 0.9F) {
                      var13.method4423(this.field5393);
                   }
 
@@ -162,12 +162,12 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
                      if (var1.getBlock().isIn(BlockTags.field32794)) {
                         int var14 = method3919(var1);
                         if (var14 < 5) {
-                           int var15 = this.field5324.rand.nextInt(100) != 0 ? 1 : 2;
+                           int var15 = this.world.rand.nextInt(100) != 0 ? 1 : 2;
                            if (var14 + var15 > 5) {
                               var15--;
                            }
 
-                           this.field5324.setBlockState(this.getPos(), var1.with(Class3366.field18936, Integer.valueOf(var14 + var15)));
+                           this.world.setBlockState(this.getPos(), var1.with(Class3366.field18936, Integer.valueOf(var14 + var15)));
                         }
                      }
                   }
@@ -185,8 +185,8 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
                   var12.setLocationAndAngles(var18, var20, var22, var12.rotationYaw, var12.rotationPitch);
                }
 
-               this.field5324.method6742((PlayerEntity)null, var7, SoundEvents.field26397, Class2266.field14732, 1.0F, 1.0F);
-               return this.field5324.addEntity(var12);
+               this.world.method6742((PlayerEntity)null, var7, SoundEvents.field26397, Class2266.field14732, 1.0F, 1.0F);
+               return this.world.addEntity(var12);
             } else {
                return false;
             }
@@ -214,7 +214,7 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
 
    private void method3926() {
       Iterator var3 = this.field5392.iterator();
-      BlockState var4 = this.method3775();
+      BlockState var4 = this.getBlockState();
 
       while (var3.hasNext()) {
          Beeee var5 = (Beeee)var3.next();
@@ -230,15 +230,15 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
    }
 
    @Override
-   public void method3647() {
-      if (!this.field5324.isRemote) {
+   public void tick() {
+      if (!this.world.isRemote) {
          this.method3926();
          BlockPos var3 = this.getPos();
-         if (this.field5392.size() > 0 && this.field5324.method6814().nextDouble() < 0.005) {
+         if (this.field5392.size() > 0 && this.world.method6814().nextDouble() < 0.005) {
             double var4 = (double)var3.getX() + 0.5;
             double var6 = (double)var3.getY();
             double var8 = (double)var3.getZ() + 0.5;
-            this.field5324.method6743((PlayerEntity)null, var4, var6, var8, SoundEvents.field26399, Class2266.field14732, 1.0F, 1.0F);
+            this.world.playSound((PlayerEntity)null, var4, var6, var8, SoundEvents.field26399, Class2266.field14732, 1.0F, 1.0F);
          }
 
          this.method3921();
@@ -246,8 +246,8 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
    }
 
    @Override
-   public void method3645(BlockState var1, CompoundNBT var2) {
-      super.method3645(var1, var2);
+   public void read(BlockState var1, CompoundNBT var2) {
+      super.read(var1, var2);
       this.field5392.clear();
       ListNBT var5 = var2.method131("Bees", 10);
 

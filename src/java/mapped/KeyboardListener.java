@@ -434,10 +434,10 @@ public class KeyboardListener {
                   if (!this.field43921) {
                      this.mc.gameSettings.showDebugInfo = !this.mc.gameSettings.showDebugInfo;
                      this.mc.gameSettings.showDebugProfilerChart = this.mc.gameSettings.showDebugInfo && Screen.method2476();
-                     this.mc.gameSettings.field44666 = this.mc.gameSettings.showDebugInfo && Screen.method2477();
+                     this.mc.gameSettings.showLagometer = this.mc.gameSettings.showDebugInfo && Screen.method2477();
                      if (this.mc.gameSettings.showDebugInfo) {
                         if (this.mc.gameSettings.field44697) {
-                           this.mc.gameSettings.field44666 = true;
+                           this.mc.gameSettings.showLagometer = true;
                         }
 
                         if (this.mc.gameSettings.field44698) {

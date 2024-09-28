@@ -2,11 +2,11 @@ package mapped;
 
 import net.minecraft.util.math.BlockPos;
 
-public class Class196 implements Class197 {
+public class WorldLightManager implements Class197 {
    private final Class200<?, ?> field741;
    private final Class200<?, ?> field742;
 
-   public Class196(Class1704 var1, boolean var2, boolean var3) {
+   public WorldLightManager(Class1704 var1, boolean var2, boolean var3) {
       this.field741 = !var2 ? null : new Class201(var1);
       this.field742 = !var3 ? null : new Class212(var1);
    }
@@ -66,16 +66,16 @@ public class Class196 implements Class197 {
       }
    }
 
-   public Class198 method638(Class1977 var1) {
-      if (var1 != Class1977.field12882) {
+   public Class198 getLightEngine(LightType var1) {
+      if (var1 != LightType.BLOCK) {
          return (Class198)(this.field742 != null ? this.field742 : Class199.field743);
       } else {
          return (Class198)(this.field741 != null ? this.field741 : Class199.field743);
       }
    }
 
-   public String method639(Class1977 var1, Class2002 var2) {
-      if (var1 != Class1977.field12882) {
+   public String method639(LightType var1, Class2002 var2) {
+      if (var1 != LightType.BLOCK) {
          if (this.field742 != null) {
             return this.field742.method659(var2.method8425());
          }
@@ -86,8 +86,8 @@ public class Class196 implements Class197 {
       return "n/a";
    }
 
-   public void method606(Class1977 var1, Class2002 var2, Class6785 var3, boolean var4) {
-      if (var1 != Class1977.field12882) {
+   public void method606(LightType var1, Class2002 var2, Class6785 var3, boolean var4) {
+      if (var1 != LightType.BLOCK) {
          if (this.field742 != null) {
             this.field742.method658(var2.method8425(), var3, var4);
          }

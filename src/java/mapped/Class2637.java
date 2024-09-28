@@ -44,7 +44,7 @@ public class Class2637 extends Class2628 {
       if (var1.method7007(var2.up())) {
          BlockState var5 = var1.getBlockState(var2);
          if (var5.isIn(Blocks.CHEST)) {
-            return Class941.method3763(var1, var2) < 1;
+            return ChestTileEntity.getPlayersUsing(var1, var2) < 1;
          } else {
             return var5.isIn(Blocks.FURNACE) && var5.<Boolean>get(Class3353.field18876)
                ? true

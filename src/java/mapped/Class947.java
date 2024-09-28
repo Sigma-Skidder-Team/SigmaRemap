@@ -13,8 +13,8 @@ public class Class947 extends TileEntity implements IClearable {
    }
 
    @Override
-   public void method3645(BlockState var1, CompoundNBT var2) {
-      super.method3645(var1, var2);
+   public void read(BlockState var1, CompoundNBT var2) {
+      super.read(var1, var2);
       if (var2.contains("RecordItem", 10)) {
          this.method3804(ItemStack.method32104(var2.getCompound("RecordItem")));
       }

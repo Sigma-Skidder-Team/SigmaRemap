@@ -187,7 +187,7 @@ public class Class7992 {
    public static void method27252() {
       for (Class8090 var3 : method27253()) {
          if (var3.field34770 == 1) {
-            AtlasTexture var4 = Config.method26969();
+            AtlasTexture var4 = Config.getTextureMap();
             var3.method28020(var4, field34353);
             var3.method28034();
          }

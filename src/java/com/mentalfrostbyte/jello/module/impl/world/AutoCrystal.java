@@ -280,7 +280,7 @@ public class AutoCrystal extends Module {
         )
                 && mc.world.getBlockState(var4).getBlock() == Blocks.AIR
                 && mc.world.getBlockState(var5).getBlock() == Blocks.AIR
-                && mc.world.method7182(Entity.class, new AxisAlignedBB(var4)).isEmpty();
+                && mc.world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(var4)).isEmpty();
     }
 
     public List<BlockPos> method16379(BlockPos var1, float var2, int var3, boolean var4, boolean var5, int var6) {

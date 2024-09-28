@@ -29,9 +29,9 @@ public class Class966 extends TileEntity implements ITickableTileEntity {
    }
 
    @Override
-   public boolean method3751(int var1, int var2) {
+   public boolean receiveClientEvent(int var1, int var2) {
       if (var1 != 1) {
-         return super.method3751(var1, var2);
+         return super.receiveClientEvent(var1, var2);
       } else {
          this.method3992();
          this.field5421 = 0;
@@ -43,7 +43,7 @@ public class Class966 extends TileEntity implements ITickableTileEntity {
    }
 
    @Override
-   public void method3647() {
+   public void tick() {
       if (this.field5417) {
          this.field5416++;
       }
@@ -60,8 +60,8 @@ public class Class966 extends TileEntity implements ITickableTileEntity {
 
       if (this.field5420) {
          if (this.field5421 >= 40) {
-            this.method3994(this.field5324);
-            this.method3995(this.field5324);
+            this.method3994(this.world);
+            this.method3995(this.world);
             this.field5420 = false;
          } else {
             this.field5421++;
@@ -70,7 +70,7 @@ public class Class966 extends TileEntity implements ITickableTileEntity {
    }
 
    private void method3990() {
-      this.field5324.method6742((PlayerEntity)null, this.getPos(), SoundEvents.field26401, Class2266.field14732, 1.0F, 1.0F);
+      this.world.method6742((PlayerEntity)null, this.getPos(), SoundEvents.field26401, Class2266.field14732, 1.0F, 1.0F);
    }
 
    public void method3991(Direction var1) {
@@ -82,21 +82,21 @@ public class Class966 extends TileEntity implements ITickableTileEntity {
          this.field5416 = 0;
       }
 
-      this.field5324.method6787(var4, this.method3775().getBlock(), 1, var1.getIndex());
+      this.world.addBlockEvent(var4, this.getBlockState().getBlock(), 1, var1.getIndex());
    }
 
    private void method3992() {
       BlockPos var3 = this.getPos();
-      if (this.field5324.getGameTime() > this.field5415 + 60L || this.field5419 == null) {
-         this.field5415 = this.field5324.getGameTime();
+      if (this.world.getGameTime() > this.field5415 + 60L || this.field5419 == null) {
+         this.field5415 = this.world.getGameTime();
          AxisAlignedBB var4 = new AxisAlignedBB(var3).method19664(48.0);
-         this.field5419 = this.field5324.<LivingEntity>method7182(LivingEntity.class, var4);
+         this.field5419 = this.world.<LivingEntity>getEntitiesWithinAABB(LivingEntity.class, var4);
       }
 
-      if (!this.field5324.isRemote) {
+      if (!this.world.isRemote) {
          for (LivingEntity var5 : this.field5419) {
             if (var5.isAlive() && !var5.removed && var3.method8317(var5.getPositionVec(), 32.0)) {
-               var5.getBrain().method21406(Class8830.field39840, this.field5324.getGameTime());
+               var5.getBrain().method21406(Class8830.field39840, this.world.getGameTime());
             }
          }
       }

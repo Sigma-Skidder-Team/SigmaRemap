@@ -108,7 +108,7 @@ public class Class1677 implements IBlockDisplayReader {
    }
 
    @Override
-   public Class196 method6737() {
+   public WorldLightManager method6737() {
       return this.field9150.method6737();
    }
 

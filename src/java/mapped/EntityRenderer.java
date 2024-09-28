@@ -28,11 +28,11 @@ public abstract class EntityRenderer<T extends Entity> {
    }
 
    public int method17895(T var1, BlockPos var2) {
-      return var1.world.method7020(Class1977.field12881, var2);
+      return var1.world.getLightFor(LightType.SKY, var2);
    }
 
    public int method17858(T var1, BlockPos var2) {
-      return !var1.isBurning() ? var1.world.method7020(Class1977.field12882, var2) : 15;
+      return !var1.isBurning() ? var1.world.getLightFor(LightType.BLOCK, var2) : 15;
    }
 
    public boolean method17854(T var1, Class7647 var2, double var3, double var5, double var7) {

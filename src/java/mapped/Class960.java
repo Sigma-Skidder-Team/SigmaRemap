@@ -15,8 +15,8 @@ public class Class960 extends TileEntity implements ITickableTileEntity {
    }
 
    @Override
-   public void method3645(BlockState var1, CompoundNBT var2) {
-      super.method3645(var1, var2);
+   public void read(BlockState var1, CompoundNBT var2) {
+      super.read(var1, var2);
       this.field5390.method24794(var2);
    }
 
@@ -28,14 +28,14 @@ public class Class960 extends TileEntity implements ITickableTileEntity {
    }
 
    @Override
-   public void method3647() {
+   public void tick() {
       this.field5390.method24792();
    }
 
    @Nullable
    @Override
    public SUpdateTileEntityPacket method3776() {
-      return new SUpdateTileEntityPacket(this.field5325, 1, this.method3777());
+      return new SUpdateTileEntityPacket(this.pos, 1, this.method3777());
    }
 
    @Override
@@ -46,8 +46,8 @@ public class Class960 extends TileEntity implements ITickableTileEntity {
    }
 
    @Override
-   public boolean method3751(int var1, int var2) {
-      return !this.field5390.method24797(var1) ? super.method3751(var1, var2) : true;
+   public boolean receiveClientEvent(int var1, int var2) {
+      return !this.field5390.method24797(var1) ? super.receiveClientEvent(var1, var2) : true;
    }
 
    @Override

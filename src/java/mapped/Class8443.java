@@ -13,7 +13,7 @@ public class Class8443 {
    private List<Class7139> field36179 = ImmutableList.of();
    private int field36180;
    private boolean field36181;
-   private Heightmap.Type field36182 = Heightmap.Type.field298;
+   private Heightmap.Type field36182 = Heightmap.Type.OCEAN_FLOOR;
 
    public Class8443(Class6698 var1, Class6698 var2, Class6819 var3, Class6896 var4, Class7617 var5) {
       this.field36174 = var1;

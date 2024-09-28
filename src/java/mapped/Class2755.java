@@ -19,7 +19,7 @@ public class Class2755 extends Class2754 {
       if (this.field17295.method5142()) {
          LivingEntity var3 = this.field17295.method4232();
          if (var3 != null && var3.isAlive()) {
-            if (var3.method3387() == var3.method3386()) {
+            if (var3.method3387() == var3.getHorizontalFacing()) {
                boolean var4 = Class1095.method5152(this.field17295, var3);
                if (!var4) {
                   this.field17295.method4230().method21652(var3, 0);

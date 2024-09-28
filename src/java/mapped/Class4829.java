@@ -114,7 +114,7 @@ public class Class4829 {
             double var32 = (double)(var2.getX() & 15);
             double var34 = (double)(var2.getY() & 15);
             double var36 = (double)(var2.getZ() & 15);
-            if (Config.method26977()) {
+            if (Config.isRenderRegions()) {
                int var38 = var2.getX() >> 4 << 4;
                int var39 = var2.getY() >> 4 << 4;
                int var40 = var2.getZ() >> 4 << 4;

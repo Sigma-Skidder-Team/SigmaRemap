@@ -44,7 +44,7 @@ public class OutlineChestESP extends Module {
       int var6 = MultiUtilities.applyAlpha(this.access().parseSettingValueToIntBySettingName("Trapped Color"), 0.7F);
 
       for (TileEntity var8 : mc.world.loadedTileEntityList) {
-         boolean var9 = var8 instanceof Class941 && !(var8 instanceof Class970) && this.access().getBooleanValueFromSettingName("Show Regular Chests");
+         boolean var9 = var8 instanceof ChestTileEntity && !(var8 instanceof Class970) && this.access().getBooleanValueFromSettingName("Show Regular Chests");
          boolean var10 = var8 instanceof Class943 && this.access().getBooleanValueFromSettingName("Show Ender Chests");
          boolean var11 = var8 instanceof Class970 && this.access().getBooleanValueFromSettingName("Show Trapped Chests");
          if (var9 || var10 || var11) {
@@ -63,7 +63,7 @@ public class OutlineChestESP extends Module {
             }
 
             Box3D var19 = new Box3D(
-               var8.method3775().method23412(mc.world, var8.getPos()).getBoundingBox().offset(var12, var14, var16)
+               var8.getBlockState().method23412(mc.world, var8.getPos()).getBoundingBox().offset(var12, var14, var16)
             );
             if (var1) {
                RenderUtil.renderWireframeBox(var19, 3.0F, var18);

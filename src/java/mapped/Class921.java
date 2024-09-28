@@ -35,12 +35,12 @@ public class Class921 implements IInventory, Class923 {
 
    @Override
    public ItemStack decrStackSize(int var1, int var2) {
-      return Class7920.method26564(this.field5241, 0);
+      return ItemStackHelper.method26564(this.field5241, 0);
    }
 
    @Override
    public ItemStack removeStackFromSlot(int var1) {
-      return Class7920.method26564(this.field5241, 0);
+      return ItemStackHelper.method26564(this.field5241, 0);
    }
 
    @Override

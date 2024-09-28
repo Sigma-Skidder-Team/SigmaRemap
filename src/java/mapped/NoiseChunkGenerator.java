@@ -349,7 +349,7 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
          for (int var16 = 0; var16 < 16; var16++) {
             int var17 = var10 + var15;
             int var18 = var11 + var16;
-            int var19 = var2.getTopBlockY(Heightmap.Type.field295, var15, var16) + 1;
+            int var19 = var2.getTopBlockY(Heightmap.Type.WORLD_SURFACE_WG, var15, var16) + 1;
             double var20 = this.field24976.method25314((double)var17 * 0.0625, (double)var18 * 0.0625, 0.0625, (double)var15 * 0.0625) * 15.0;
             var1.getBiome(var14.method8372(var10 + var15, var19, var11 + var16))
                .method32514(var8, var2, var17, var18, var19, var20, this.field24979, this.field24980, this.method17807(), var1.method6967());
@@ -435,8 +435,8 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
       }
 
       Class1672 var79 = (Class1672)var3;
-      Heightmap var15 = var79.getHeightmap(Heightmap.Type.field297);
-      Heightmap var16 = var79.getHeightmap(Heightmap.Type.field295);
+      Heightmap var15 = var79.getHeightmap(Heightmap.Type.OCEAN_FLOOR_WG);
+      Heightmap var16 = var79.getHeightmap(Heightmap.Type.WORLD_SURFACE_WG);
       BlockPos.Mutable var17 = new BlockPos.Mutable();
       ObjectListIterator var18 = var6.iterator();
       ObjectListIterator var19 = var7.iterator();

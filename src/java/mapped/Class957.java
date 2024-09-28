@@ -49,8 +49,8 @@ public class Class957 extends Class956 implements ITickableTileEntity {
    }
 
    @Override
-   public void method3645(BlockState var1, CompoundNBT var2) {
-      super.method3645(var1, var2);
+   public void read(BlockState var1, CompoundNBT var2) {
+      super.read(var1, var2);
       this.field5372 = var2.getLong("Age");
       if (var2.contains("ExitPortal", 10)) {
          this.field5374 = Class8354.method29283(var2.getCompound("ExitPortal"));
@@ -65,15 +65,15 @@ public class Class957 extends Class956 implements ITickableTileEntity {
    }
 
    @Override
-   public void method3647() {
+   public void tick() {
       boolean var3 = this.method3872();
       boolean var4 = this.method3873();
       this.field5372++;
       if (!var4) {
-         if (!this.field5324.isRemote) {
-            List var5 = this.field5324.<Entity>getEntitiesInAABBexcluding(Entity.class, new AxisAlignedBB(this.getPos()), Class957::method3871);
+         if (!this.world.isRemote) {
+            List var5 = this.world.<Entity>getEntitiesInAABBexcluding(Entity.class, new AxisAlignedBB(this.getPos()), Class957::method3871);
             if (!var5.isEmpty()) {
-               this.method3877((Entity)var5.get(this.field5324.rand.nextInt(var5.size())));
+               this.method3877((Entity)var5.get(this.world.rand.nextInt(var5.size())));
             }
 
             if (this.field5372 % 2400L == 0L) {
@@ -112,7 +112,7 @@ public class Class957 extends Class956 implements ITickableTileEntity {
    @Nullable
    @Override
    public SUpdateTileEntityPacket method3776() {
-      return new SUpdateTileEntityPacket(this.field5325, 8, this.method3777());
+      return new SUpdateTileEntityPacket(this.pos, 8, this.method3777());
    }
 
    @Override
@@ -121,17 +121,17 @@ public class Class957 extends Class956 implements ITickableTileEntity {
    }
 
    public void method3876() {
-      if (!this.field5324.isRemote) {
+      if (!this.world.isRemote) {
          this.field5373 = 40;
-         this.field5324.method6787(this.getPos(), this.method3775().getBlock(), 1, 0);
+         this.world.addBlockEvent(this.getPos(), this.getBlockState().getBlock(), 1, 0);
          this.markDirty();
       }
    }
 
    @Override
-   public boolean method3751(int var1, int var2) {
+   public boolean receiveClientEvent(int var1, int var2) {
       if (var1 != 1) {
-         return super.method3751(var1, var2);
+         return super.receiveClientEvent(var1, var2);
       } else {
          this.field5373 = 40;
          return true;
@@ -139,10 +139,10 @@ public class Class957 extends Class956 implements ITickableTileEntity {
    }
 
    public void method3877(Entity var1) {
-      if (this.field5324 instanceof ServerWorld && !this.method3873()) {
+      if (this.world instanceof ServerWorld && !this.method3873()) {
          this.field5373 = 100;
-         if (this.field5374 == null && this.field5324.getDimensionKey() == World.THE_END) {
-            this.method3879((ServerWorld)this.field5324);
+         if (this.field5374 == null && this.world.getDimensionKey() == World.THE_END) {
+            this.method3879((ServerWorld)this.world);
          }
 
          if (this.field5374 != null) {
@@ -153,7 +153,7 @@ public class Class957 extends Class956 implements ITickableTileEntity {
             } else {
                Entity var6 = ((Class895)var1).method3460();
                if (var6 instanceof ServerPlayerEntity) {
-                  CriteriaTriggers.field44468.method15169((ServerPlayerEntity)var6, this.field5324.getBlockState(this.getPos()));
+                  CriteriaTriggers.field44468.method15169((ServerPlayerEntity)var6, this.world.getBlockState(this.getPos()));
                }
 
                if (var6 == null) {
@@ -173,7 +173,7 @@ public class Class957 extends Class956 implements ITickableTileEntity {
    }
 
    private BlockPos method3878() {
-      BlockPos var3 = method3880(this.field5324, this.field5374.method8336(0, 2, 0), 5, false);
+      BlockPos var3 = method3880(this.world, this.field5374.method8336(0, 2, 0), 5, false);
       field5371.debug("Best exit position for portal at {} is {}", this.field5374, var3);
       return var3.up();
    }
@@ -264,7 +264,7 @@ public class Class957 extends Class956 implements ITickableTileEntity {
 
    @Override
    public boolean method3870(Direction var1) {
-      return Block.method11546(this.method3775(), this.field5324, this.getPos(), var1);
+      return Block.method11546(this.getBlockState(), this.world, this.getPos(), var1);
    }
 
    public int method3884() {

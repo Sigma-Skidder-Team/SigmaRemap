@@ -377,7 +377,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
          if (var6.isSuccessOrConsume()) {
             if (var5 && !this.isSilent()) {
                this.world
-                  .method6743(
+                  .playSound(
                      (PlayerEntity)null,
                      this.getPosX(),
                      this.getPosY(),

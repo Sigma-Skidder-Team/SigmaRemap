@@ -42,7 +42,7 @@ public class Class5648 extends ChunkGenerator {
 
       for (int var4 = 0; var4 < var3.length; var4++) {
          BlockState var5 = var3[var4] != null ? var3[var4] : Blocks.AIR.method11579();
-         if (!Heightmap.Type.field299.method287().test(var5)) {
+         if (!Heightmap.Type.MOTION_BLOCKING.method287().test(var5)) {
             return var4 - 1;
          }
       }
@@ -54,8 +54,8 @@ public class Class5648 extends ChunkGenerator {
    public void method17803(Class1660 var1, Class7480 var2, IChunk var3) {
       BlockState[] var6 = this.field24999.method38130();
       BlockPos.Mutable var7 = new BlockPos.Mutable();
-      Heightmap var8 = var3.getHeightmap(Heightmap.Type.field297);
-      Heightmap var9 = var3.getHeightmap(Heightmap.Type.field295);
+      Heightmap var8 = var3.getHeightmap(Heightmap.Type.OCEAN_FLOOR_WG);
+      Heightmap var9 = var3.getHeightmap(Heightmap.Type.WORLD_SURFACE_WG);
 
       for (int var10 = 0; var10 < var6.length; var10++) {
          BlockState var11 = var6[var10];

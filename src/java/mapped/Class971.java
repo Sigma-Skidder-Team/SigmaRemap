@@ -55,46 +55,46 @@ public class Class971 extends Class939 {
    }
 
    @Override
-   public ITextComponent method3686() {
+   public ITextComponent getDefaultName() {
       return new TranslationTextComponent("container.dispenser");
    }
 
    @Override
-   public void method3645(BlockState var1, CompoundNBT var2) {
-      super.method3645(var1, var2);
+   public void read(BlockState var1, CompoundNBT var2) {
+      super.read(var1, var2);
       this.field5436 = NonNullList.<ItemStack>method68(this.getSizeInventory(), ItemStack.EMPTY);
-      if (!this.method3741(var2)) {
-         Class7920.method26567(var2, this.field5436);
+      if (!this.checkLootAndRead(var2)) {
+         ItemStackHelper.loadAllItems(var2, this.field5436);
       }
    }
 
    @Override
    public CompoundNBT write(CompoundNBT var1) {
       super.write(var1);
-      if (!this.method3742(var1)) {
-         Class7920.method26565(var1, this.field5436);
+      if (!this.checkLootAndWrite(var1)) {
+         ItemStackHelper.saveAllItems(var1, this.field5436);
       }
 
       return var1;
    }
 
    @Override
-   public NonNullList<ItemStack> method3724() {
+   public NonNullList<ItemStack> getItems() {
       return this.field5436;
    }
 
    @Override
-   public void method3725(NonNullList<ItemStack> var1) {
+   public void setItems(NonNullList<ItemStack> var1) {
       this.field5436 = var1;
    }
 
    @Override
-   public Container method3690(int var1, PlayerInventory var2) {
+   public Container createMenu(int var1, PlayerInventory var2) {
       return new Class5817(var1, var2, this);
    }
 
    @Override
-   public ITextComponent method2954() {
+   public ITextComponent getDefaultName2() {
       return new TranslationTextComponent("container.dispenser");
    }
 }

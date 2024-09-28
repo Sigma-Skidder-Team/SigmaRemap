@@ -13,14 +13,14 @@ import java.util.Arrays;
 public abstract class Class200<M extends Class7586<M>, S extends Class208<M>> extends Class202 implements Class198 {
    private static final Direction[] field745 = Direction.values();
    public final Class1704 field746;
-   public final Class1977 field747;
+   public final LightType field747;
    public final S field748;
    private boolean field749;
    public final BlockPos.Mutable field750 = new BlockPos.Mutable();
    private final long[] field751 = new long[2];
    private final IBlockReader[] field752 = new IBlockReader[2];
 
-   public Class200(Class1704 var1, Class1977 var2, S var3) {
+   public Class200(Class1704 var1, LightType var2, S var3) {
       super(16, 256, 8192);
       this.field746 = var1;
       this.field747 = var2;

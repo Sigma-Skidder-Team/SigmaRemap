@@ -187,7 +187,7 @@ public class Class1015 extends Class1014 implements Class1016 {
             MobEntity var5 = (MobEntity)var4.get(var0.rand.nextInt(var4.size()));
             if (!var5.isSilent()) {
                SoundEvent var6 = method4412(var5.getType());
-               var0.method6743(
+               var0.playSound(
                   (PlayerEntity)null, var1.getPosX(), var1.getPosY(), var1.getPosZ(), var6, var1.method2864(), 0.7F, method4413(var0.rand)
                );
                return true;
@@ -210,7 +210,7 @@ public class Class1015 extends Class1014 implements Class1016 {
 
          if (!this.isSilent()) {
             this.world
-               .method6743(
+               .playSound(
                   (PlayerEntity)null,
                   this.getPosX(),
                   this.getPosY(),

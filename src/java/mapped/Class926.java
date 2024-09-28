@@ -42,12 +42,12 @@ public class Class926 implements IInventory, Class925 {
 
    @Override
    public ItemStack removeStackFromSlot(int var1) {
-      return Class7920.method26564(this.field5256, var1);
+      return ItemStackHelper.method26564(this.field5256, var1);
    }
 
    @Override
    public ItemStack decrStackSize(int var1, int var2) {
-      ItemStack var5 = Class7920.method26563(this.field5256, var1, var2);
+      ItemStack var5 = ItemStackHelper.method26563(this.field5256, var1, var2);
       if (!var5.isEmpty()) {
          this.field5259.onCraftMatrixChanged(this);
       }

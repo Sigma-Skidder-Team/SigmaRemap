@@ -476,7 +476,7 @@ public class ParticleManager implements Class268 {
       }
    }
 
-   public String method1208() {
+   public String getStatistics() {
       return String.valueOf(this.field1169.values().stream().mapToInt(Collection::size).sum());
    }
 

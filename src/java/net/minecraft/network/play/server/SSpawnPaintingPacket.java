@@ -26,7 +26,7 @@ public class SSpawnPaintingPacket implements IPacket<IClientPlayNetHandler> {
       this.field24276 = var1.getEntityId();
       this.field24277 = var1.getUniqueID();
       this.field24278 = var1.method4085();
-      this.field24279 = var1.method3386();
+      this.field24279 = var1.getHorizontalFacing();
       this.field24280 = Registry.field16079.getId(var1.field5496);
    }
 

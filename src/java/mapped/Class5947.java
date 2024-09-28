@@ -23,7 +23,7 @@ public class Class5947 extends Class5942<Class954> {
    }
 
    public void method18462(Class954 var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
-      BlockState var9 = var1.method3775();
+      BlockState var9 = var1.getBlockState();
       var3.push();
       float var10 = 0.6666667F;
       if (!(var9.getBlock() instanceof Class3374)) {

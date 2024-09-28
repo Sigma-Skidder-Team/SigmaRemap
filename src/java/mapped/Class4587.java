@@ -215,7 +215,7 @@ public abstract class Class4587 {
 
    public int method14499(float var1) {
       BlockPos var4 = new BlockPos(this.field22041, this.field22042, this.field22043);
-      return !this.field22037.method7017(var4) ? 0 : WorldRenderer.method944(this.field22037, var4);
+      return !this.field22037.isBlockLoaded(var4) ? 0 : WorldRenderer.method944(this.field22037, var4);
    }
 
    public boolean method14522() {

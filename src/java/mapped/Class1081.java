@@ -187,7 +187,7 @@ public class Class1081 extends Class1009 implements Class1080 {
          return super.method4285(var1, var2);
       } else {
          this.world
-            .method6743(
+            .playSound(
                var1,
                this.getPosX(),
                this.getPosY(),

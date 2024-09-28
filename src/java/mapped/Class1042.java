@@ -803,7 +803,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
    public void method4716(ServerWorld var1, long var2, int var4) {
       if (this.method4717(var2)) {
          AxisAlignedBB var7 = this.getBoundingBox().method19663(10.0, 10.0, 10.0);
-         List<Class1042> var8 = var1.method7182(Class1042.class, var7);
+         List<Class1042> var8 = var1.getEntitiesWithinAABB(Class1042.class, var7);
          List<Class1042> var9 = var8.stream().filter(var2x -> var2x.method4717(var2)).limit(5L).collect(Collectors.toList());
          if (var9.size() >= var4) {
             Class1058 var10 = this.method4718(var1);

@@ -46,13 +46,13 @@ public class Class8641 {
    private final ShortSet[] field38909 = new ShortSet[16];
    private int field38910;
    private int field38911;
-   private final Class196 field38912;
+   private final WorldLightManager field38912;
    private final Class1813 field38913;
    private final Class1650 field38914;
    private boolean field38915;
    private boolean field38916;
 
-   public Class8641(ChunkPos var1, int var2, Class196 var3, Class1813 var4, Class1650 var5) {
+   public Class8641(ChunkPos var1, int var2, WorldLightManager var3, Class1813 var4, Class1650 var5) {
       this.field38907 = var1;
       this.field38912 = var3;
       this.field38913 = var4;
@@ -137,11 +137,11 @@ public class Class8641 {
       }
    }
 
-   public void method31048(Class1977 var1, int var2) {
+   public void method31048(LightType var1, int var2) {
       Chunk var5 = this.method31043();
       if (var5 != null) {
          var5.setModified(true);
-         if (var1 != Class1977.field12881) {
+         if (var1 != LightType.SKY) {
             this.field38910 |= 1 << var2 - -1;
          } else {
             this.field38911 |= 1 << var2 - -1;

@@ -39,7 +39,7 @@ public class Class9242 {
                var1.getClass();
                var10000[var8] = new Class8066(var1);
                this.field42528[var8].method27712(var5 * 16, var6 * 16, var7 * 16);
-               if (Config.method26978() && Config.method26977()) {
+               if (Config.method26978() && Config.isRenderRegions()) {
                   this.method34762(this.field42528[var8]);
                }
             }

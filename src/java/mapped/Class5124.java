@@ -26,13 +26,13 @@ public class Class5124 implements Class5119 {
       LongOpenHashSet var13 = new LongOpenHashSet();
 
       for (BlockPos var15 : BlockPos.method8359(var12.method8336(-10, -10, -10), var12.method8336(10, 10, 10))) {
-         int var16 = var11.method7020(Class1977.field12881, var15);
+         int var16 = var11.getLightFor(LightType.SKY, var15);
          float var17 = (float)(15 - var16) / 15.0F * 0.5F + 0.16F;
          int var18 = MathHelper.method37818(var17, 0.9F, 0.9F);
          long var19 = Class2002.method8419(var15.method8332());
          if (var13.add(var19)) {
             DebugRenderer.method27461(
-               var11.getChunkProvider().getLightManager().method639(Class1977.field12881, Class2002.method8393(var19)),
+               var11.getChunkProvider().getLightManager().method639(LightType.SKY, Class2002.method8393(var19)),
                (double)(Class2002.method8407(var19) * 16 + 8),
                (double)(Class2002.method8408(var19) * 16 + 8),
                (double)(Class2002.method8409(var19) * 16 + 8),

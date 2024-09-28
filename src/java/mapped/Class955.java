@@ -97,10 +97,10 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
    private void method3855(float var1) {
       Direction var4 = this.method3860();
       double var5 = (double)(var1 - this.field5366);
-      VoxelShape var7 = this.method3854().method23414(this.field5324, this.getPos());
+      VoxelShape var7 = this.method3854().method23414(this.world, this.getPos());
       if (!var7.isEmpty()) {
          AxisAlignedBB var8 = this.method3862(var7.getBoundingBox());
-         List var9 = this.field5324.method7181((Entity)null, Class7769.method25747(var8, var4, var5).method19666(var8));
+         List var9 = this.world.method7181((Entity)null, Class7769.method25747(var8, var4, var5).method19666(var8));
          if (!var9.isEmpty()) {
             List<AxisAlignedBB> var10 = var7.method19521();
             boolean var11 = this.field5361.isIn(Blocks.field36764);
@@ -176,11 +176,11 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
       if (this.method3859()) {
          Direction var4 = this.method3860();
          if (var4.getAxis().method324()) {
-            double var5 = this.field5361.method23414(this.field5324, this.field5325).getEnd(Direction.Axis.Y);
+            double var5 = this.field5361.method23414(this.world, this.pos).getEnd(Direction.Axis.Y);
             AxisAlignedBB var7 = this.method3862(new AxisAlignedBB(0.0, var5, 0.0, 1.0, 1.5000000999999998, 1.0));
             double var8 = (double)(var1 - this.field5366);
 
-            for (Entity var11 : this.field5324.getEntitiesInAABBexcluding((Entity)null, var7, var1x -> method3858(var7, var1x))) {
+            for (Entity var11 : this.world.getEntitiesInAABBexcluding((Entity)null, var7, var1x -> method3858(var7, var1x))) {
                method3856(var4, var11, var8, var4);
             }
          }
@@ -225,15 +225,15 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
    private AxisAlignedBB method3862(AxisAlignedBB var1) {
       double var4 = (double)this.method3853(this.field5366);
       return var1.offset(
-         (double)this.field5325.getX() + var4 * (double)this.field5362.getXOffset(),
-         (double)this.field5325.getY() + var4 * (double)this.field5362.getYOffset(),
-         (double)this.field5325.getZ() + var4 * (double)this.field5362.getZOffset()
+         (double)this.pos.getX() + var4 * (double)this.field5362.getXOffset(),
+         (double)this.pos.getY() + var4 * (double)this.field5362.getYOffset(),
+         (double)this.pos.getZ() + var4 * (double)this.field5362.getZOffset()
       );
    }
 
    private void method3863(Entity var1, Direction var2, double var3) {
       AxisAlignedBB var7 = var1.getBoundingBox();
-      AxisAlignedBB var8 = VoxelShapes.method27426().getBoundingBox().method19668(this.field5325);
+      AxisAlignedBB var8 = VoxelShapes.method27426().getBoundingBox().method19668(this.pos);
       if (var7.method19670(var8)) {
          Direction var9 = var2.getOpposite();
          double var10 = method3861(var8, var9, var7) + 0.01;
@@ -250,28 +250,28 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
    }
 
    public void method3865() {
-      if (this.field5324 != null && (this.field5367 < 1.0F || this.field5324.isRemote)) {
+      if (this.world != null && (this.field5367 < 1.0F || this.world.isRemote)) {
          this.field5366 = 1.0F;
          this.field5367 = this.field5366;
-         this.field5324.method6762(this.field5325);
+         this.world.method6762(this.pos);
          this.method3765();
-         if (this.field5324.getBlockState(this.field5325).isIn(Blocks.MOVING_PISTON)) {
+         if (this.world.getBlockState(this.pos).isIn(Blocks.MOVING_PISTON)) {
             BlockState var3;
             if (!this.field5364) {
-               var3 = Block.method11542(this.field5361, this.field5324, this.field5325);
+               var3 = Block.method11542(this.field5361, this.world, this.pos);
             } else {
                var3 = Blocks.AIR.method11579();
             }
 
-            this.field5324.setBlockState(this.field5325, var3, 3);
-            this.field5324.neighborChanged(this.field5325, var3.getBlock(), this.field5325);
+            this.world.setBlockState(this.pos, var3, 3);
+            this.world.neighborChanged(this.pos, var3.getBlock(), this.pos);
          }
       }
    }
 
    @Override
-   public void method3647() {
-      this.field5368 = this.field5324.getGameTime();
+   public void tick() {
+      this.field5368 = this.world.getGameTime();
       this.field5367 = this.field5366;
       if (!(this.field5367 >= 1.0F)) {
          float var3 = this.field5366 + 0.5F;
@@ -281,31 +281,31 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
          if (this.field5366 >= 1.0F) {
             this.field5366 = 1.0F;
          }
-      } else if (this.field5324.isRemote && this.field5369 < 5) {
+      } else if (this.world.isRemote && this.field5369 < 5) {
          this.field5369++;
       } else {
-         this.field5324.method6762(this.field5325);
+         this.world.method6762(this.pos);
          this.method3765();
-         if (this.field5361 != null && this.field5324.getBlockState(this.field5325).isIn(Blocks.MOVING_PISTON)) {
-            BlockState var4 = Block.method11542(this.field5361, this.field5324, this.field5325);
+         if (this.field5361 != null && this.world.getBlockState(this.pos).isIn(Blocks.MOVING_PISTON)) {
+            BlockState var4 = Block.method11542(this.field5361, this.world, this.pos);
             if (!var4.isAir()) {
                if (var4.method23462(BlockStateProperties.field39710) && var4.<Boolean>get(BlockStateProperties.field39710)) {
                   var4 = var4.with(BlockStateProperties.field39710, Boolean.valueOf(false));
                }
 
-               this.field5324.setBlockState(this.field5325, var4, 67);
-               this.field5324.neighborChanged(this.field5325, var4.getBlock(), this.field5325);
+               this.world.setBlockState(this.pos, var4, 67);
+               this.world.neighborChanged(this.pos, var4.getBlock(), this.pos);
             } else {
-               this.field5324.setBlockState(this.field5325, this.field5361, 84);
-               Block.method11543(this.field5361, var4, this.field5324, this.field5325, 3);
+               this.world.setBlockState(this.pos, this.field5361, 84);
+               Block.method11543(this.field5361, var4, this.world, this.pos, 3);
             }
          }
       }
    }
 
    @Override
-   public void method3645(BlockState var1, CompoundNBT var2) {
-      super.method3645(var1, var2);
+   public void read(BlockState var1, CompoundNBT var2) {
+      super.read(var1, var2);
       this.field5361 = Class8354.method29285(var2.getCompound("blockState"));
       this.field5362 = Direction.byIndex(var2.getInt("facing"));
       this.field5366 = var2.getFloat("progress");

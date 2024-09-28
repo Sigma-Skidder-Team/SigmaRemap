@@ -40,7 +40,7 @@ public class Class3377 extends Class3231 {
 
    @Override
    public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
-      if (var2.method7020(Class1977.field12882, var3) > 11 - var1.getOpacity(var2, var3)) {
+      if (var2.getLightFor(LightType.BLOCK, var3) > 11 - var1.getOpacity(var2, var3)) {
          this.method11968(var1, var2, var3);
       }
    }

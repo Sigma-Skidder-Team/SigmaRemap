@@ -24,8 +24,8 @@ public class Class9809 {
       .<Class940>toArray(Class940[]::new);
    private static final Class940 field45843 = new Class940((Class112)null);
    public static final Class9809 field45844 = new Class9809();
-   private final Class941 field45845 = new Class941();
-   private final Class941 field45846 = new Class970();
+   private final ChestTileEntity field45845 = new ChestTileEntity();
+   private final ChestTileEntity field45846 = new Class970();
    private final Class943 field45847 = new Class943();
    private final Class958 field45848 = new Class958();
    private final Class967 field45849 = new Class967();

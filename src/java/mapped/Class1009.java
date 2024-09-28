@@ -81,7 +81,7 @@ public abstract class Class1009 extends Class1046 implements Class1008 {
    }
 
    public static boolean method4340(Class1659 var0, BlockPos var1, Random var2) {
-      if (var0.method7020(Class1977.field12881, var1) <= var2.nextInt(32)) {
+      if (var0.getLightFor(LightType.SKY, var1) <= var2.nextInt(32)) {
          int var5 = !var0.method6970().method6794() ? var0.method7015(var1) : var0.method7016(var1, 10);
          return var5 <= var2.nextInt(8);
       } else {

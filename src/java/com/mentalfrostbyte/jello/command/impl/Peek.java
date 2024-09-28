@@ -41,7 +41,7 @@ public class Peek extends Command {
          CompoundNBT var5 = var3.getCompound("BlockEntityTag");
          method18338(var5);
          if (var5.contains("Items")) {
-            Class7920.method26567(var5, var4);
+            ItemStackHelper.loadAllItems(var5, var4);
          }
       }
 

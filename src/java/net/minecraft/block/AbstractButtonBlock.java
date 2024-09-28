@@ -160,7 +160,7 @@ public abstract class AbstractButtonBlock extends Class3200 {
    }
 
    private void method11524(BlockState var1, World var2, BlockPos var3) {
-      List var6 = var2.<AbstractArrowEntity>method7182(AbstractArrowEntity.class, var1.method23412(var2, var3).getBoundingBox().method19668(var3));
+      List var6 = var2.<AbstractArrowEntity>getEntitiesWithinAABB(AbstractArrowEntity.class, var1.method23412(var2, var3).getBoundingBox().method19668(var3));
       boolean var7 = !var6.isEmpty();
       boolean var8 = var1.<Boolean>get(field18510);
       if (var7 != var8) {

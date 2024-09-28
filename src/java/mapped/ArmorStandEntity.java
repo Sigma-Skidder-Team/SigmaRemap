@@ -521,7 +521,7 @@ public class ArmorStandEntity extends LivingEntity {
    }
 
    private void method4195() {
-      this.world.method6743((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26357, this.method2864(), 1.0F, 1.0F);
+      this.world.playSound((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26357, this.method2864(), 1.0F, 1.0F);
    }
 
    @Override
@@ -802,7 +802,7 @@ public class ArmorStandEntity extends LivingEntity {
          for (BlockPos var8 : BlockPos.method8359(
             new BlockPos(var4.minX, var4.minY, var4.minZ), new BlockPos(var4.maxX, var4.maxY, var4.maxZ)
          )) {
-            int var9 = Math.max(this.world.method7020(Class1977.field12882, var8), this.world.method7020(Class1977.field12881, var8));
+            int var9 = Math.max(this.world.getLightFor(LightType.BLOCK, var8), this.world.getLightFor(LightType.SKY, var8));
             if (var9 == 15) {
                return Vector3d.method11328(var8);
             }

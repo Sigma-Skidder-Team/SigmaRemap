@@ -16,7 +16,7 @@ public final class Class953 implements Class949 {
    }
 
    @Override
-   public ITextComponent method2954() {
+   public ITextComponent getDefaultName2() {
       return this.field5354;
    }
 

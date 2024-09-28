@@ -34,7 +34,7 @@ public class Class1672 implements IChunk {
    private final ChunkPos field9089;
    private volatile boolean field9090;
    private BiomeContainer field9091;
-   private volatile Class196 field9092;
+   private volatile WorldLightManager field9092;
    private final Map<Heightmap.Type, Heightmap> field9093 = Maps.newEnumMap(Heightmap.Type.class);
    private volatile ChunkStatus field9094 = ChunkStatus.field42133;
    private final Map<BlockPos, TileEntity> field9095 = Maps.newHashMap();
@@ -145,7 +145,7 @@ public class Class1672 implements IChunk {
                      || var2.isTransparent()
                      || var10.isTransparent()
                )) {
-               Class196 var11 = this.method7112();
+               WorldLightManager var11 = this.method7112();
                var11.checkBlock(var1);
             }
 
@@ -262,7 +262,7 @@ public class Class1672 implements IChunk {
    }
 
    @Nullable
-   public Class196 method7112() {
+   public WorldLightManager method7112() {
       return this.field9092;
    }
 
@@ -445,7 +445,7 @@ public class Class1672 implements IChunk {
       this.field9107.put(var1, var2);
    }
 
-   public void method7119(Class196 var1) {
+   public void method7119(WorldLightManager var1) {
       this.field9092 = var1;
    }
 

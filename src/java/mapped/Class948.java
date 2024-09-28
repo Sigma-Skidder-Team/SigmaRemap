@@ -42,7 +42,7 @@ public class Class948 extends TileEntity implements IClearable, Class949 {
    private void method3808() {
       this.field5336 = 0;
       this.field5337 = 0;
-      Class3354.method11921(this.method3734(), this.getPos(), this.method3775(), false);
+      Class3354.method11921(this.method3734(), this.getPos(), this.getBlockState(), false);
    }
 
    public void method3809(ItemStack var1, PlayerEntity var2) {
@@ -57,7 +57,7 @@ public class Class948 extends TileEntity implements IClearable, Class949 {
       if (var4 != this.field5336) {
          this.field5336 = var4;
          this.markDirty();
-         Class3354.method11922(this.method3734(), this.getPos(), this.method3775());
+         Class3354.method11922(this.method3734(), this.getPos(), this.getBlockState());
       }
    }
 
@@ -71,7 +71,7 @@ public class Class948 extends TileEntity implements IClearable, Class949 {
    }
 
    private ItemStack method3813(ItemStack var1, PlayerEntity var2) {
-      if (this.field5324 instanceof ServerWorld && var1.getItem() == Items.field38048) {
+      if (this.world instanceof ServerWorld && var1.getItem() == Items.field38048) {
          Class3285.method11820(var1, this.method3814(var2), var2);
       }
 
@@ -89,9 +89,9 @@ public class Class948 extends TileEntity implements IClearable, Class949 {
          var5 = new StringTextComponent("Lectern");
       }
 
-      Vector3d var6 = Vector3d.method11328(this.field5325);
+      Vector3d var6 = Vector3d.method11328(this.pos);
       return new Class6619(
-         ICommandSource.field5189, var6, Vector2f.field37212, (ServerWorld)this.field5324, 2, var4, (ITextComponent)var5, this.field5324.getServer(), var1
+         ICommandSource.field5189, var6, Vector2f.field37212, (ServerWorld)this.world, 2, var4, (ITextComponent)var5, this.world.getServer(), var1
       );
    }
 
@@ -101,8 +101,8 @@ public class Class948 extends TileEntity implements IClearable, Class949 {
    }
 
    @Override
-   public void method3645(BlockState var1, CompoundNBT var2) {
-      super.method3645(var1, var2);
+   public void read(BlockState var1, CompoundNBT var2) {
+      super.read(var1, var2);
       if (!var2.contains("Book", 10)) {
          this.field5335 = ItemStack.EMPTY;
       } else {
@@ -135,7 +135,7 @@ public class Class948 extends TileEntity implements IClearable, Class949 {
    }
 
    @Override
-   public ITextComponent method2954() {
+   public ITextComponent getDefaultName2() {
       return new TranslationTextComponent("container.lectern");
    }
 

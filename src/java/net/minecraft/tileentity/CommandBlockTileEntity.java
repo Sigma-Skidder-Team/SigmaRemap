@@ -36,8 +36,8 @@ public class CommandBlockTileEntity extends TileEntity {
    }
 
    @Override
-   public void method3645(BlockState var1, CompoundNBT var2) {
-      super.method3645(var1, var2);
+   public void read(BlockState var1, CompoundNBT var2) {
+      super.read(var1, var2);
       this.commandBlockLogic.method3561(var2);
       this.powered = var2.getBoolean("powered");
       this.conditionMet = var2.getBoolean("conditionMet");
@@ -52,7 +52,7 @@ public class CommandBlockTileEntity extends TileEntity {
       } else {
          this.method4019(false);
          CompoundNBT var3 = this.write(new CompoundNBT());
-         return new SUpdateTileEntityPacket(this.field5325, 2, var3);
+         return new SUpdateTileEntityPacket(this.pos, 2, var3);
       }
    }
 
@@ -80,23 +80,23 @@ public class CommandBlockTileEntity extends TileEntity {
    public void method4013(boolean var1) {
       boolean var4 = this.auto;
       this.auto = var1;
-      if (!var4 && var1 && !this.powered && this.field5324 != null && this.method4020() != Mode.field13323) {
+      if (!var4 && var1 && !this.powered && this.world != null && this.method4020() != Mode.field13323) {
          this.method4015();
       }
    }
 
    public void method4014() {
       Mode var3 = this.method4020();
-      if (var3 == Mode.field13324 && (this.powered || this.auto) && this.field5324 != null) {
+      if (var3 == Mode.field13324 && (this.powered || this.auto) && this.world != null) {
          this.method4015();
       }
    }
 
    private void method4015() {
-      Block var3 = this.method3775().getBlock();
+      Block var3 = this.getBlockState().getBlock();
       if (var3 instanceof CommandBlockBlock) {
          this.method4017();
-         this.field5324.method6860().method20726(this.field5325, var3, 1);
+         this.world.method6860().method20726(this.pos, var3, 1);
       }
    }
 
@@ -107,11 +107,11 @@ public class CommandBlockTileEntity extends TileEntity {
    public boolean method4017() {
       this.conditionMet = true;
       if (this.method4021()) {
-         BlockPos var3 = this.field5325.method8349(this.field5324.getBlockState(this.field5325).<Direction>get(CommandBlockBlock.field18893).getOpposite());
-         if (!(this.field5324.getBlockState(var3).getBlock() instanceof CommandBlockBlock)) {
+         BlockPos var3 = this.pos.method8349(this.world.getBlockState(this.pos).<Direction>get(CommandBlockBlock.field18893).getOpposite());
+         if (!(this.world.getBlockState(var3).getBlock() instanceof CommandBlockBlock)) {
             this.conditionMet = false;
          } else {
-            TileEntity var4 = this.field5324.getTileEntity(var3);
+            TileEntity var4 = this.world.getTileEntity(var3);
             this.conditionMet = var4 instanceof CommandBlockTileEntity && ((CommandBlockTileEntity)var4).method4009().method3557() > 0;
          }
       }
@@ -128,7 +128,7 @@ public class CommandBlockTileEntity extends TileEntity {
    }
 
    public Mode method4020() {
-      BlockState var3 = this.method3775();
+      BlockState var3 = this.getBlockState();
       if (!var3.isIn(Blocks.COMMAND_BLOCK)) {
          if (!var3.isIn(Blocks.field36887)) {
             return !var3.isIn(Blocks.field36888) ? Mode.field13325 : Mode.field13323;
@@ -141,7 +141,7 @@ public class CommandBlockTileEntity extends TileEntity {
    }
 
    public boolean method4021() {
-      BlockState var3 = this.field5324.getBlockState(this.getPos());
+      BlockState var3 = this.world.getBlockState(this.getPos());
       return !(var3.getBlock() instanceof CommandBlockBlock) ? false : var3.<Boolean>get(CommandBlockBlock.field18894);
    }
 
@@ -167,25 +167,25 @@ public class CommandBlockTileEntity extends TileEntity {
 
       @Override
       public ServerWorld method3567() {
-         return (ServerWorld)this.field5203.field5324;
+         return (ServerWorld)this.field5203.world;
       }
 
       @Override
       public void method3568() {
-         BlockState var3 = this.field5203.field5324.getBlockState(this.field5203.field5325);
-         this.method3567().notifyBlockUpdate(this.field5203.field5325, var3, var3, 3);
+         BlockState var3 = this.field5203.world.getBlockState(this.field5203.pos);
+         this.method3567().notifyBlockUpdate(this.field5203.pos, var3, var3, 3);
       }
 
       @Override
       public Vector3d method3573() {
-         return Vector3d.method11328(this.field5203.field5325);
+         return Vector3d.method11328(this.field5203.pos);
       }
 
       @Override
       public Class6619 method3574() {
          return new Class6619(
             this,
-            Vector3d.method11328(this.field5203.field5325),
+            Vector3d.method11328(this.field5203.pos),
             Vector2f.field37212,
             this.method3567(),
             2,

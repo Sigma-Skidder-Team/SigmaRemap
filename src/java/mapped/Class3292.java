@@ -156,7 +156,7 @@ public class Class3292 extends Item {
                var9.putInt("y", var2.getY());
                var9.putInt("z", var2.getZ());
                if (!var9.equals(var10)) {
-                  var8.method3645(var0.getBlockState(var2), var9);
+                  var8.read(var0.getBlockState(var2), var9);
                   var8.markDirty();
                   return true;
                }

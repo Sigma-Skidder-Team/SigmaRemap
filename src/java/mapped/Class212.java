@@ -10,7 +10,7 @@ public final class Class212 extends Class200<Class7587, Class210> {
    private static final Direction[] field796 = new Direction[]{Direction.NORTH, Direction.SOUTH, Direction.WEST, Direction.EAST};
 
    public Class212(Class1704 var1) {
-      super(var1, Class1977.field12881, new Class210(var1));
+      super(var1, LightType.SKY, new Class210(var1));
    }
 
    @Override

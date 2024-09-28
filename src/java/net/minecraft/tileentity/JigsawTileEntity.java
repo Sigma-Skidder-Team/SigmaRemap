@@ -86,8 +86,8 @@ public class JigsawTileEntity extends TileEntity {
    }
 
    @Override
-   public void method3645(BlockState var1, CompoundNBT var2) {
-      super.method3645(var1, var2);
+   public void read(BlockState var1, CompoundNBT var2) {
+      super.read(var1, var2);
       this.field5409 = new ResourceLocation(var2.getString("name"));
       this.field5410 = new ResourceLocation(var2.getString("target"));
       this.field5411 = new ResourceLocation(var2.getString("pool"));
@@ -99,7 +99,7 @@ public class JigsawTileEntity extends TileEntity {
    @Nullable
    @Override
    public SUpdateTileEntityPacket method3776() {
-      return new SUpdateTileEntityPacket(this.field5325, 12, this.method3777());
+      return new SUpdateTileEntityPacket(this.pos, 12, this.method3777());
    }
 
    @Override

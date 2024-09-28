@@ -395,7 +395,7 @@ public class ServerWorld extends World implements ISeedReader {
 
       var9.endStartSection("iceandsnow");
       if (this.rand.nextInt(16) == 0) {
-         BlockPos var19 = this.method7006(Heightmap.Type.field299, this.method6818(var7, 0, var8, 15));
+         BlockPos var19 = this.method7006(Heightmap.Type.MOTION_BLOCKING, this.method6818(var7, 0, var8, 15));
          BlockPos var21 = var19.down();
          Biome var23 = this.getBiome(var19);
          if (var23.method32504(this, var21)) {
@@ -440,7 +440,7 @@ public class ServerWorld extends World implements ISeedReader {
    }
 
    public BlockPos method6900(BlockPos var1) {
-      BlockPos var4 = this.method7006(Heightmap.Type.field299, var1);
+      BlockPos var4 = this.method7006(Heightmap.Type.MOTION_BLOCKING, var1);
       AxisAlignedBB var5 = new AxisAlignedBB(var4, new BlockPos(var4.getX(), this.method7034(), var4.getZ())).method19664(3.0);
       List var6 = this.<LivingEntity>getEntitiesInAABBexcluding(LivingEntity.class, var5, var1x -> var1x != null && var1x.isAlive() && this.method7022(var1x.getPosition()));
       if (var6.isEmpty()) {
@@ -888,7 +888,7 @@ public class ServerWorld extends World implements ISeedReader {
    }
 
    @Override
-   public void method6743(PlayerEntity var1, double var2, double var4, double var6, SoundEvent var8, Class2266 var9, float var10, float var11) {
+   public void playSound(PlayerEntity var1, double var2, double var4, double var6, SoundEvent var8, Class2266 var9, float var10, float var11) {
       this.field9045
          .getPlayerList()
          .method19466(
@@ -981,7 +981,7 @@ public class ServerWorld extends World implements ISeedReader {
    }
 
    @Override
-   public void method6787(BlockPos var1, Block var2, int var3, int var4) {
+   public void addBlockEvent(BlockPos var1, Block var2, int var3, int var4) {
       this.field9055.add(new Class6808(var1, var2, var3, var4));
    }
 
@@ -1141,7 +1141,7 @@ public class ServerWorld extends World implements ISeedReader {
    public BlockPos method6947() {
       BlockPos var3 = new BlockPos(this.worldInfo.method20029(), this.worldInfo.method20030(), this.worldInfo.method20031());
       if (!this.getWorldBorder().contains(var3)) {
-         var3 = this.method7006(Heightmap.Type.field299, new BlockPos(this.getWorldBorder().getCenterX(), 0.0, this.getWorldBorder().getCenterZ()));
+         var3 = this.method7006(Heightmap.Type.MOTION_BLOCKING, new BlockPos(this.getWorldBorder().getCenterX(), 0.0, this.getWorldBorder().getCenterZ()));
       }
 
       return var3;
@@ -1384,7 +1384,7 @@ public class ServerWorld extends World implements ISeedReader {
          method6972(this.tickableTileEntities, var0 -> Registry.field16078.getKey(var0.method3786())),
          this.method6860().method20736(),
          this.method6861().method20736(),
-         this.method6758()
+         this.getProviderName()
       );
    }
 

@@ -194,7 +194,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
          SoundEvent var3 = this.method4894();
          if (var3 != null) {
             this.world
-               .method6743(
+               .playSound(
                   (PlayerEntity)null,
                   this.getPosX(),
                   this.getPosY(),

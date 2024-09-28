@@ -83,7 +83,7 @@ public final class MainWindow implements AutoCloseable {
       this.prevWindowHeight = this.height = var3.field45781 <= 0 ? 1 : var3.field45781;
       GLFW.glfwDefaultWindowHints();
       GuiManager.method33475();
-      if (Config.method26892()) {
+      if (Config.isAntialiasing()) {
          GLFW.glfwWindowHint(135181, Config.method26891());
       }
 

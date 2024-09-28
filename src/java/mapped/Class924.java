@@ -142,10 +142,10 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    }
 
    @Override
-   public void method3645(BlockState var1, CompoundNBT var2) {
-      super.method3645(var1, var2);
+   public void read(BlockState var1, CompoundNBT var2) {
+      super.read(var1, var2);
       this.field5247 = NonNullList.<ItemStack>method68(this.getSizeInventory(), ItemStack.EMPTY);
-      Class7920.method26567(var2, this.field5247);
+      ItemStackHelper.loadAllItems(var2, this.field5247);
       this.field5248 = var2.getShort("BurnTime");
       this.field5250 = var2.getShort("CookTime");
       this.field5251 = var2.getShort("CookTimeTotal");
@@ -163,7 +163,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       var1.putShort("BurnTime", (short)this.field5248);
       var1.putShort("CookTime", (short)this.field5250);
       var1.putShort("CookTimeTotal", (short)this.field5251);
-      Class7920.method26565(var1, this.field5247);
+      ItemStackHelper.saveAllItems(var1, this.field5247);
       CompoundNBT var4 = new CompoundNBT();
       this.field5253.forEach((var1x, var2) -> var4.putInt(var1x.toString(), var2));
       var1.put("RecipesUsed", var4);
@@ -171,17 +171,17 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    }
 
    @Override
-   public void method3647() {
+   public void tick() {
       boolean var3 = this.method3644();
       boolean var4 = false;
       if (this.method3644()) {
          this.field5248--;
       }
 
-      if (!this.field5324.isRemote) {
+      if (!this.world.isRemote) {
          ItemStack var5 = this.field5247.get(1);
          if (this.method3644() || !var5.isEmpty() && !this.field5247.get(0).isEmpty()) {
-            IRecipe var6 = this.field5324.method6816().method1030(this.field5254, this, this.field5324).orElse(null);
+            IRecipe var6 = this.world.method6816().method1030(this.field5254, this, this.world).orElse(null);
             if (!this.method3644() && this.method3648(var6)) {
                this.field5248 = this.method3650(var5);
                this.field5249 = this.field5248;
@@ -215,8 +215,8 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
 
          if (var3 != this.method3644()) {
             var4 = true;
-            this.field5324
-               .setBlockState(this.field5325, this.field5324.getBlockState(this.field5325).with(Class3350.field18876, Boolean.valueOf(this.method3644())), 3);
+            this.world
+               .setBlockState(this.pos, this.world.getBlockState(this.pos).with(Class3350.field18876, Boolean.valueOf(this.method3644())), 3);
          }
       }
 
@@ -258,7 +258,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
             this.field5247.set(2, var5.copy());
          }
 
-         if (!this.field5324.isRemote) {
+         if (!this.world.isRemote) {
             this.method3636(var1);
          }
 
@@ -282,7 +282,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    }
 
    public int method3651() {
-      return this.field5324.method6816().method1030(this.field5254, this, this.field5324).<Integer>map(Class4847::method14977).orElse(200);
+      return this.world.method6816().method1030(this.field5254, this, this.world).<Integer>map(Class4847::method14977).orElse(200);
    }
 
    public static boolean method3652(ItemStack var0) {
@@ -338,12 +338,12 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
 
    @Override
    public ItemStack decrStackSize(int var1, int var2) {
-      return Class7920.method26563(this.field5247, var1, var2);
+      return ItemStackHelper.method26563(this.field5247, var1, var2);
    }
 
    @Override
    public ItemStack removeStackFromSlot(int var1) {
-      return Class7920.method26564(this.field5247, var1);
+      return ItemStackHelper.method26564(this.field5247, var1);
    }
 
    @Override
@@ -364,8 +364,8 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
 
    @Override
    public boolean isUsableByPlayer(PlayerEntity var1) {
-      return this.field5324.getTileEntity(this.field5325) == this
-         ? var1.getDistanceNearest((double)this.field5325.getX() + 0.5, (double)this.field5325.getY() + 0.5, (double)this.field5325.getZ() + 0.5)
+      return this.world.getTileEntity(this.pos) == this
+         ? var1.getDistanceNearest((double)this.pos.getX() + 0.5, (double)this.pos.getY() + 0.5, (double)this.pos.getZ() + 0.5)
             <= 64.0
          : false;
    }

@@ -50,27 +50,27 @@ public class Class950 extends TileEntity implements Class949, ITickableTileEntit
    }
 
    @Override
-   public void method3647() {
-      int var3 = this.field5325.getX();
-      int var4 = this.field5325.getY();
-      int var5 = this.field5325.getZ();
+   public void tick() {
+      int var3 = this.pos.getX();
+      int var4 = this.pos.getY();
+      int var5 = this.pos.getZ();
       BlockPos var6;
       if (this.field5343 >= var4) {
          var6 = new BlockPos(var3, this.field5343 + 1, var5);
       } else {
-         var6 = this.field5325;
+         var6 = this.pos;
          this.field5341 = Lists.newArrayList();
          this.field5343 = var6.getY() - 1;
       }
 
       Class7934 var7 = !this.field5341.isEmpty() ? this.field5341.get(this.field5341.size() - 1) : null;
-      int var8 = this.field5324.method6736(Heightmap.Type.field296, var3, var5);
+      int var8 = this.world.method6736(Heightmap.Type.WORLD_SURFACE, var3, var5);
 
       for (int var9 = 0; var9 < 10 && var6.getY() <= var8; var9++) {
-         BlockState var10 = this.field5324.getBlockState(var6);
+         BlockState var10 = this.world.getBlockState(var6);
          Block var11 = var10.getBlock();
          if (!(var11 instanceof Class3235)) {
-            if (var7 == null || var10.getOpacity(this.field5324, var6) >= 15 && var11 != Blocks.BEDROCK) {
+            if (var7 == null || var10.getOpacity(this.world, var6) >= 15 && var11 != Blocks.BEDROCK) {
                this.field5341.clear();
                this.field5343 = var8;
                break;
@@ -105,7 +105,7 @@ public class Class950 extends TileEntity implements Class949, ITickableTileEntit
       }
 
       int var14 = this.field5342;
-      if (this.field5324.getGameTime() % 80L == 0L) {
+      if (this.world.getGameTime() % 80L == 0L) {
          if (!this.field5340.isEmpty()) {
             this.method3820(var3, var4, var5);
          }
@@ -120,13 +120,13 @@ public class Class950 extends TileEntity implements Class949, ITickableTileEntit
          this.field5343 = -1;
          boolean var15 = var14 > 0;
          this.field5340 = this.field5341;
-         if (!this.field5324.isRemote) {
+         if (!this.world.isRemote) {
             boolean var16 = this.field5342 > 0;
             if (!var15 && var16) {
                this.method3822(SoundEvents.field26385);
 
-               for (ServerPlayerEntity var13 : this.field5324
-                  .<ServerPlayerEntity>method7182(
+               for (ServerPlayerEntity var13 : this.world
+                  .<ServerPlayerEntity>getEntitiesWithinAABB(
                      ServerPlayerEntity.class,
                      new AxisAlignedBB((double)var3, (double)var4, (double)var5, (double)var3, (double)(var4 - 4), (double)var5).method19663(10.0, 5.0, 10.0)
                   )) {
@@ -152,7 +152,7 @@ public class Class950 extends TileEntity implements Class949, ITickableTileEntit
 
          for (int var9 = var1 - var6; var9 <= var1 + var6 && var8; var9++) {
             for (int var10 = var3 - var6; var10 <= var3 + var6; var10++) {
-               if (!this.field5324.getBlockState(new BlockPos(var9, var7, var10)).isIn(BlockTags.field32801)) {
+               if (!this.world.getBlockState(new BlockPos(var9, var7, var10)).isIn(BlockTags.field32801)) {
                   var8 = false;
                   break;
                }
@@ -172,7 +172,7 @@ public class Class950 extends TileEntity implements Class949, ITickableTileEntit
    }
 
    private void method3821() {
-      if (!this.field5324.isRemote && this.field5344 != null) {
+      if (!this.world.isRemote && this.field5344 != null) {
          double var3 = (double)(this.field5342 * 10 + 10);
          byte var5 = 0;
          if (this.field5342 >= 4 && this.field5344 == this.field5345) {
@@ -180,8 +180,8 @@ public class Class950 extends TileEntity implements Class949, ITickableTileEntit
          }
 
          int var6 = (9 + this.field5342 * 2) * 20;
-         AxisAlignedBB var7 = new AxisAlignedBB(this.field5325).method19664(var3).contract(0.0, (double)this.field5324.method7034(), 0.0);
-         List<PlayerEntity> var8 = this.field5324.<PlayerEntity>method7182(PlayerEntity.class, var7);
+         AxisAlignedBB var7 = new AxisAlignedBB(this.pos).method19664(var3).contract(0.0, (double)this.world.method7034(), 0.0);
+         List<PlayerEntity> var8 = this.world.<PlayerEntity>getEntitiesWithinAABB(PlayerEntity.class, var7);
 
          for (PlayerEntity var10 : var8) {
             var10.addPotionEffect(new EffectInstance(this.field5344, var6, var5, true, true));
@@ -196,7 +196,7 @@ public class Class950 extends TileEntity implements Class949, ITickableTileEntit
    }
 
    public void method3822(SoundEvent var1) {
-      this.field5324.method6742((PlayerEntity)null, this.field5325, var1, Class2266.field14732, 1.0F, 1.0F);
+      this.world.method6742((PlayerEntity)null, this.pos, var1, Class2266.field14732, 1.0F, 1.0F);
    }
 
    public List<Class7934> method3823() {
@@ -210,7 +210,7 @@ public class Class950 extends TileEntity implements Class949, ITickableTileEntit
    @Nullable
    @Override
    public SUpdateTileEntityPacket method3776() {
-      return new SUpdateTileEntityPacket(this.field5325, 3, this.method3777());
+      return new SUpdateTileEntityPacket(this.pos, 3, this.method3777());
    }
 
    @Override
@@ -230,8 +230,8 @@ public class Class950 extends TileEntity implements Class949, ITickableTileEntit
    }
 
    @Override
-   public void method3645(BlockState var1, CompoundNBT var2) {
-      super.method3645(var1, var2);
+   public void read(BlockState var1, CompoundNBT var2) {
+      super.read(var1, var2);
       this.field5344 = method3825(var2.getInt("Primary"));
       this.field5345 = method3825(var2.getInt("Secondary"));
       if (var2.contains("CustomName", 8)) {
@@ -262,13 +262,13 @@ public class Class950 extends TileEntity implements Class949, ITickableTileEntit
    @Nullable
    @Override
    public Container method3627(int var1, PlayerInventory var2, PlayerEntity var3) {
-      return !Class932.method3697(var3, this.field5347, this.method2954())
+      return !Class932.method3697(var3, this.field5347, this.getDefaultName2())
          ? null
-         : new Class5821(var1, var2, this.field5348, IWorldPosCallable.method31714(this.field5324, this.getPos()));
+         : new Class5821(var1, var2, this.field5348, IWorldPosCallable.method31714(this.world, this.getPos()));
    }
 
    @Override
-   public ITextComponent method2954() {
+   public ITextComponent getDefaultName2() {
       return (ITextComponent)(this.field5346 == null ? new TranslationTextComponent("container.beacon") : this.field5346);
    }
 

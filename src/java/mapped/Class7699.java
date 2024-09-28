@@ -206,7 +206,7 @@ public class Class7699 {
             }
          } else {
             boolean var3 = this.field32983;
-            this.field32983 = this.field32978.method7017(this.field32977);
+            this.field32983 = this.field32978.isBlockLoaded(this.field32977);
             if (this.field32978.method6997() == Difficulty.field14351) {
                this.method25402();
                return;
@@ -577,7 +577,7 @@ public class Class7699 {
          int var10 = this.field32977.getZ()
             + MathHelper.method37767(MathHelper.sin(var8) * 32.0F * (float)var5)
             + this.field32978.rand.nextInt(5);
-         int var11 = this.field32978.method6736(Heightmap.Type.field296, var9, var10);
+         int var11 = this.field32978.method6736(Heightmap.Type.WORLD_SURFACE, var9, var10);
          var6.method8372(var9, var11, var10);
          if ((!this.field32978.method6952(var6) || var1 >= 2)
             && this.field32978

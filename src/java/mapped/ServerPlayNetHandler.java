@@ -1352,7 +1352,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       this.player.markPlayerActive();
       ServerWorld var5 = this.player.getServerWorld();
       BlockPos var6 = var1.getPosition();
-      if (var5.method7017(var6)) {
+      if (var5.isBlockLoaded(var6)) {
          BlockState var7 = var5.getBlockState(var6);
          TileEntity var8 = var5.getTileEntity(var6);
          if (!(var8 instanceof Class954)) {

@@ -100,7 +100,7 @@ public class Class3246 extends Class3247 implements Class3245 {
             (double)(var3.getY() + 1),
             (double)(var3.getZ() + 1)
          ),
-         var1x -> var1x != null && var1x.method3386() == var2
+         var1x -> var1x != null && var1x.getHorizontalFacing() == var2
       );
       return var6.size() != 1 ? null : (ItemFrameEntity)var6.get(0);
    }
@@ -164,7 +164,7 @@ public class Class3246 extends Class3247 implements Class3245 {
    public boolean method11647(BlockState var1, World var2, BlockPos var3, int var4, int var5) {
       super.method11647(var1, var2, var3, var4, var5);
       TileEntity var8 = var2.getTileEntity(var3);
-      return var8 != null && var8.method3751(var4, var5);
+      return var8 != null && var8.receiveClientEvent(var4, var5);
    }
 
    @Override

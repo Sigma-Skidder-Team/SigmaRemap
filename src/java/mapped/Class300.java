@@ -7,7 +7,7 @@ public final class Class300 extends Class299 {
 
    @Override
    public void tick() {
-      Class8389.method29394();
+      TextureAnimations.method29394();
    }
 
    @Override

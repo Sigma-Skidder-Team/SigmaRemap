@@ -185,7 +185,7 @@ public class Class999 extends Entity {
 
             var27.addAll(this.field5503);
             if (!var27.isEmpty()) {
-               List<LivingEntity> var30 = this.world.<LivingEntity>method7182(LivingEntity.class, this.getBoundingBox());
+               List<LivingEntity> var30 = this.world.<LivingEntity>getEntitiesWithinAABB(LivingEntity.class, this.getBoundingBox());
                if (!var30.isEmpty()) {
                   for (LivingEntity var10 : var30) {
                      if (!this.field5504.containsKey(var10) && var10.canBeHitWithPotion()) {

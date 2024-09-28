@@ -8,6 +8,6 @@ public class Class6293 extends Class6292<Class4718> {
    }
 
    public Heightmap.Type method19255(Class4718 var1) {
-      return Heightmap.Type.field295;
+      return Heightmap.Type.WORLD_SURFACE_WG;
    }
 }

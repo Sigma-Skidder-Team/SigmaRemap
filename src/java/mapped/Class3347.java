@@ -32,7 +32,7 @@ public class Class3347 extends Class3346<Class943> implements Class3207 {
    }
 
    @Override
-   public Class7995<? extends Class941> method11904(BlockState var1, World var2, BlockPos var3, boolean var4) {
+   public Class7995<? extends ChestTileEntity> method11904(BlockState var1, World var2, BlockPos var3, boolean var4) {
       return Class6139::method19041;
    }
 

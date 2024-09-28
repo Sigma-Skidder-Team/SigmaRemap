@@ -7,32 +7,32 @@ public class Class7913 {
 
    static {
       try {
-         field33895[Heightmap.Type.field295.ordinal()] = 1;
+         field33895[Heightmap.Type.WORLD_SURFACE_WG.ordinal()] = 1;
       } catch (NoSuchFieldError var8) {
       }
 
       try {
-         field33895[Heightmap.Type.field297.ordinal()] = 2;
+         field33895[Heightmap.Type.OCEAN_FLOOR_WG.ordinal()] = 2;
       } catch (NoSuchFieldError var7) {
       }
 
       try {
-         field33895[Heightmap.Type.field296.ordinal()] = 3;
+         field33895[Heightmap.Type.WORLD_SURFACE.ordinal()] = 3;
       } catch (NoSuchFieldError var6) {
       }
 
       try {
-         field33895[Heightmap.Type.field298.ordinal()] = 4;
+         field33895[Heightmap.Type.OCEAN_FLOOR.ordinal()] = 4;
       } catch (NoSuchFieldError var5) {
       }
 
       try {
-         field33895[Heightmap.Type.field299.ordinal()] = 5;
+         field33895[Heightmap.Type.MOTION_BLOCKING.ordinal()] = 5;
       } catch (NoSuchFieldError var4) {
       }
 
       try {
-         field33895[Heightmap.Type.field300.ordinal()] = 6;
+         field33895[Heightmap.Type.MOTION_BLOCKING_NO_LEAVES.ordinal()] = 6;
       } catch (NoSuchFieldError var3) {
       }
    }

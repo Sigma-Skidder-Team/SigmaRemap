@@ -232,7 +232,7 @@ public class BoatEntity extends Entity {
 
    @Override
    public net.minecraft.util.Direction method3387() {
-      return this.method3386().rotateY();
+      return this.getHorizontalFacing().rotateY();
    }
 
    @Override
@@ -290,7 +290,7 @@ public class BoatEntity extends Entity {
                   double var6 = var3 != 1 ? var5.z : -var5.z;
                   double var8 = var3 != 1 ? -var5.x : var5.x;
                   this.world
-                     .method6743(
+                     .playSound(
                         (PlayerEntity)null,
                         this.getPosX() + var6,
                         this.getPosY(),

@@ -182,12 +182,12 @@ public class Class8684 {
       if (method31267() != null) {
          Config.method26810("*** Reloading custom textures ***");
          Class8862.method32260();
-         Class8389.method29392();
+         TextureAnimations.method29392();
          method31259();
          Class8052.method27654();
          Class9422.method36143();
          Class7880.method26418();
-         Class8389.method29393();
+         TextureAnimations.method29393();
          Class9680.method37833();
          Class8862.method32261();
          Class9387.method35644();
@@ -209,7 +209,7 @@ public class Class8684 {
    }
 
    public static AtlasTexture method31267() {
-      return Config.method26969();
+      return Config.getTextureMap();
    }
 
    public static void method31268() {

@@ -30,7 +30,7 @@ public class Class903 extends Class901 {
       super.method3464(var1);
       Entity var4 = this.method3460();
       if ((var1.getType() != RayTraceResult.Type.ENTITY || !((EntityRayTraceResult)var1).getEntity().isEntityEqual(var4)) && !this.world.isRemote) {
-         List<LivingEntity> var5 = this.world.method7182(LivingEntity.class, this.getBoundingBox().method19663(4.0, 2.0, 4.0));
+         List<LivingEntity> var5 = this.world.getEntitiesWithinAABB(LivingEntity.class, this.getBoundingBox().method19663(4.0, 2.0, 4.0));
          Class999 var6 = new Class999(this.world, this.getPosX(), this.getPosY(), this.getPosZ());
          if (var4 instanceof LivingEntity) {
             var6.method4113((LivingEntity)var4);

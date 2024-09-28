@@ -12,7 +12,7 @@ public class Class987 extends Class924 {
    }
 
    @Override
-   public ITextComponent method3686() {
+   public ITextComponent getDefaultName() {
       return new TranslationTextComponent("container.blast_furnace");
    }
 
@@ -22,12 +22,12 @@ public class Class987 extends Class924 {
    }
 
    @Override
-   public Container method3690(int var1, PlayerInventory var2) {
+   public Container createMenu(int var1, PlayerInventory var2) {
       return new Class5834(var1, var2, this, this.field5252);
    }
 
    @Override
-   public ITextComponent method2954() {
+   public ITextComponent getDefaultName2() {
       return new TranslationTextComponent("container.blast_furnace");
    }
 }

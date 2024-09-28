@@ -97,7 +97,7 @@ public class Class2943 extends Class2898<Class4705> {
                      if (var8[(var41 * 16 + var45) * 8 + var49]) {
                         BlockPos var52 = var4.method8336(var41, var49 - 1, var45);
                         if (method11219(var1.getBlockState(var52).getBlock())
-                           && var1.method7020(Class1977.field12881, var4.method8336(var41, var49, var45)) > 0) {
+                           && var1.getLightFor(LightType.SKY, var4.method8336(var41, var49, var45)) > 0) {
                            Biome var55 = var1.getBiome(var52);
                            if (!var55.method32507().method24283().method28934().isIn(Blocks.MYCELIUM)) {
                               var1.setBlockState(var52, Blocks.field36395.method11579(), 2);

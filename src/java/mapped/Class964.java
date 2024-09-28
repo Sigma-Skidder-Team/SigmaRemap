@@ -76,8 +76,8 @@ public class Class964 extends TileEntity {
    }
 
    @Override
-   public void method3645(BlockState var1, CompoundNBT var2) {
-      super.method3645(var1, var2);
+   public void read(BlockState var1, CompoundNBT var2) {
+      super.read(var1, var2);
       this.method3937(var2.getString("name"));
       this.field5396 = var2.getString("author");
       this.field5397 = var2.getString("metadata");
@@ -123,11 +123,11 @@ public class Class964 extends TileEntity {
    }
 
    private void method3932() {
-      if (this.field5324 != null) {
+      if (this.world != null) {
          BlockPos var3 = this.getPos();
-         BlockState var4 = this.field5324.getBlockState(var3);
+         BlockState var4 = this.world.getBlockState(var3);
          if (var4.isIn(Blocks.field37113)) {
-            this.field5324.setBlockState(var3, var4.with(StructureBlock.field18938, this.field5402), 2);
+            this.world.setBlockState(var3, var4.with(StructureBlock.field18938, this.field5402), 2);
          }
       }
    }
@@ -135,7 +135,7 @@ public class Class964 extends TileEntity {
    @Nullable
    @Override
    public SUpdateTileEntityPacket method3776() {
-      return new SUpdateTileEntityPacket(this.field5325, 7, this.method3777());
+      return new SUpdateTileEntityPacket(this.pos, 7, this.method3777());
    }
 
    @Override
@@ -225,9 +225,9 @@ public class Class964 extends TileEntity {
 
    public void method3951(StructureMode var1) {
       this.field5402 = var1;
-      BlockState var4 = this.field5324.getBlockState(this.getPos());
+      BlockState var4 = this.world.getBlockState(this.getPos());
       if (var4.isIn(Blocks.field37113)) {
-         this.field5324.setBlockState(this.getPos(), var4.with(StructureBlock.field18938, var1), 2);
+         this.world.setBlockState(this.getPos(), var4.with(StructureBlock.field18938, var1), 2);
       }
    }
 
@@ -289,8 +289,8 @@ public class Class964 extends TileEntity {
                   var9.field45681 - var9.field45678 - 1, var9.field45682 - var9.field45679 - 1, var9.field45683 - var9.field45680 - 1
                );
                this.markDirty();
-               BlockState var10 = this.field5324.getBlockState(var3);
-               this.field5324.notifyBlockUpdate(var3, var10, var10, 3);
+               BlockState var10 = this.world.getBlockState(var3);
+               this.world.notifyBlockUpdate(var3, var10, var10, 3);
                return true;
             } else {
                return false;
@@ -312,9 +312,9 @@ public class Class964 extends TileEntity {
       ArrayList var5 = Lists.newArrayList();
 
       for (BlockPos var7 : BlockPos.method8359(var1, var2)) {
-         BlockState var8 = this.field5324.getBlockState(var7);
+         BlockState var8 = this.world.getBlockState(var7);
          if (var8.isIn(Blocks.field37113)) {
-            TileEntity var9 = this.field5324.getTileEntity(var7);
+            TileEntity var9 = this.world.getTileEntity(var7);
             if (var9 != null && var9 instanceof Class964) {
                var5.add((Class964)var9);
             }
@@ -368,9 +368,9 @@ public class Class964 extends TileEntity {
    }
 
    public boolean method3964(boolean var1) {
-      if (this.field5402 == StructureMode.field318 && !this.field5324.isRemote && this.field5395 != null) {
+      if (this.field5402 == StructureMode.field318 && !this.world.isRemote && this.field5395 != null) {
          BlockPos var4 = this.getPos().method8337(this.field5398);
-         ServerWorld var5 = (ServerWorld)this.field5324;
+         ServerWorld var5 = (ServerWorld)this.world;
          TemplateManager var6 = var5.method6938();
 
          Class8969 var7;
@@ -380,7 +380,7 @@ public class Class964 extends TileEntity {
             return false;
          }
 
-         var7.method32889(this.field5324, var4, this.field5399, !this.field5403, Blocks.field36894);
+         var7.method32889(this.world, var4, this.field5399, !this.field5403, Blocks.field36894);
          var7.method32887(this.field5396);
          if (var1) {
             try {
@@ -452,15 +452,15 @@ public class Class964 extends TileEntity {
 
    public void method3969() {
       if (this.field5395 != null) {
-         ServerWorld var3 = (ServerWorld)this.field5324;
+         ServerWorld var3 = (ServerWorld)this.world;
          TemplateManager var4 = var3.method6938();
          var4.method31613(this.field5395);
       }
    }
 
    public boolean method3970() {
-      if (this.field5402 == StructureMode.field319 && !this.field5324.isRemote && this.field5395 != null) {
-         ServerWorld var3 = (ServerWorld)this.field5324;
+      if (this.field5402 == StructureMode.field319 && !this.world.isRemote && this.field5395 != null) {
+         ServerWorld var3 = (ServerWorld)this.world;
          TemplateManager var4 = var3.method6938();
 
          try {

@@ -61,7 +61,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
    }
 
    public void method780(IBakedModel var1, ItemStack var2, int var3, int var4, MatrixStack var5, IVertexBuilder var6) {
-      boolean var9 = Config.method26969().method1114();
+      boolean var9 = Config.getTextureMap().method1114();
       boolean var10 = Config.method26894() && var9;
       if (var10) {
          var6.method17044(Class9025.field41288);

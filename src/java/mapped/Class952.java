@@ -10,12 +10,12 @@ import net.minecraft.util.text.TranslationTextComponent;
 import javax.annotation.Nullable;
 
 public class Class952 implements Class949 {
-   public final Class941 field5349;
-   public final Class941 field5350;
+   public final ChestTileEntity field5349;
+   public final ChestTileEntity field5350;
    public final IInventory field5351;
    public final Class6142 field5352;
 
-   public Class952(Class6142 var1, Class941 var2, Class941 var3, IInventory var4) {
+   public Class952(Class6142 var1, ChestTileEntity var2, ChestTileEntity var3, IInventory var4) {
       this.field5352 = var1;
       this.field5349 = var2;
       this.field5350 = var3;
@@ -35,7 +35,7 @@ public class Class952 implements Class949 {
    }
 
    @Override
-   public ITextComponent method2954() {
+   public ITextComponent getDefaultName2() {
       if (!this.field5349.method3381()) {
          return (ITextComponent)(!this.field5350.method3381() ? new TranslationTextComponent("container.chestDouble") : this.field5350.getDisplayName());
       } else {

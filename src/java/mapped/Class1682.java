@@ -45,7 +45,7 @@ public interface Class1682 {
       }
    }
 
-   default <T extends Entity> List<T> method7182(Class<? extends T> var1, AxisAlignedBB var2) {
+   default <T extends Entity> List<T> getEntitiesWithinAABB(Class<? extends T> var1, AxisAlignedBB var2) {
       return this.<T>getEntitiesInAABBexcluding(var1, var2, Class8088.field34763);
    }
 

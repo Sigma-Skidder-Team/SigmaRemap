@@ -108,7 +108,7 @@ public abstract class Class7574 {
                         return;
                      }
 
-                     int var25 = var3.method7182(
+                     int var25 = var3.getEntitiesWithinAABB(
                            var24.getClass(),
                            new AxisAlignedBB(
                                  (double)var4.getX(),

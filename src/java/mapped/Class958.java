@@ -81,8 +81,8 @@ public class Class958 extends TileEntity implements INameable {
    }
 
    @Override
-   public void method3645(BlockState var1, CompoundNBT var2) {
-      super.method3645(var1, var2);
+   public void read(BlockState var1, CompoundNBT var2) {
+      super.read(var1, var2);
       if (var2.contains("CustomName", 8)) {
          this.field5376 = ITextComponent$Serializer.func_240643_a_(var2.getString("CustomName"));
       }
@@ -90,7 +90,7 @@ public class Class958 extends TileEntity implements INameable {
       if (!this.method3770()) {
          this.field5377 = null;
       } else {
-         this.field5377 = ((Class3359)this.method3775().getBlock()).method11936();
+         this.field5377 = ((Class3359)this.getBlockState().getBlock()).method11936();
       }
 
       this.field5378 = var2.method131("Patterns", 10);
@@ -101,7 +101,7 @@ public class Class958 extends TileEntity implements INameable {
    @Nullable
    @Override
    public SUpdateTileEntityPacket method3776() {
-      return new SUpdateTileEntityPacket(this.field5325, 6, this.method3777());
+      return new SUpdateTileEntityPacket(this.pos, 6, this.method3777());
    }
 
    @Override
@@ -116,7 +116,7 @@ public class Class958 extends TileEntity implements INameable {
 
    public List<Pair<Class2154, Class112>> method3890() {
       if (this.field5380 == null && this.field5379) {
-         this.field5380 = method3891(this.method3894(this::method3775), this.field5378);
+         this.field5380 = method3891(this.method3894(this::getBlockState), this.field5378);
       }
 
       return this.field5380;

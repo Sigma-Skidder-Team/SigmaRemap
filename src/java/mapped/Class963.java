@@ -19,8 +19,8 @@ public class Class963 extends TileEntity {
    }
 
    @Override
-   public void method3645(BlockState var1, CompoundNBT var2) {
-      super.method3645(var1, var2);
+   public void read(BlockState var1, CompoundNBT var2) {
+      super.read(var1, var2);
       this.field5394 = var2.getInt("OutputSignal");
    }
 

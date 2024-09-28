@@ -15,7 +15,7 @@ public class Class210 extends Class208<Class7587> {
    private volatile boolean field791;
 
    public Class210(Class1704 var1) {
-      super(Class1977.field12881, var1, new Class7587(new Long2ObjectOpenHashMap<>(), new Long2IntOpenHashMap(), Integer.MAX_VALUE));
+      super(LightType.SKY, var1, new Class7587(new Long2ObjectOpenHashMap<>(), new Long2IntOpenHashMap(), Integer.MAX_VALUE));
    }
 
    @Override

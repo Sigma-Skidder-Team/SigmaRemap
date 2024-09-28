@@ -153,7 +153,7 @@ public interface IWorldReader extends IBlockDisplayReader, ICollisionReader, Bio
    }
 
    @Deprecated
-   default boolean method7017(BlockPos var1) {
+   default boolean isBlockLoaded(BlockPos var1) {
       return this.method6843(var1.getX() >> 4, var1.getZ() >> 4);
    }
 

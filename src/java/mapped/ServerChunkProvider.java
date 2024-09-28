@@ -406,7 +406,7 @@ public class ServerChunkProvider extends Class1702 {
    }
 
    @Override
-   public void method7373(Class1977 var1, Class2002 var2) {
+   public void method7373(LightType var1, Class2002 var2) {
       this.field9278.execute(() -> {
          Class8641 var5 = this.method7354(var2.method8423().method24352());
          if (var5 != null) {

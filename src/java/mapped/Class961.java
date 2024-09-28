@@ -12,12 +12,12 @@ public class Class961 extends TileEntity implements ITickableTileEntity {
    }
 
    @Override
-   public void method3647() {
-      if (this.field5324 != null && !this.field5324.isRemote && this.field5324.getGameTime() % 20L == 0L) {
-         BlockState var3 = this.method3775();
+   public void tick() {
+      if (this.world != null && !this.world.isRemote && this.world.getGameTime() % 20L == 0L) {
+         BlockState var3 = this.getBlockState();
          Block var4 = var3.getBlock();
          if (var4 instanceof Class3372) {
-            Class3372.method11966(var3, this.field5324, this.field5325);
+            Class3372.method11966(var3, this.world, this.pos);
          }
       }
    }

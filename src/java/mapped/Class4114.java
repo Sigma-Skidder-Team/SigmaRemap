@@ -4,7 +4,7 @@ import net.optifine.Config;
 
 public class Class4114 extends Class4057 {
    public Class4114() {
-      super(TileEntityType.field21422, "chest_large", 0.0F);
+      super(TileEntityType.CHEST, "chest_large", 0.0F);
    }
 
    @Override
@@ -50,7 +50,7 @@ public class Class4114 extends Class4057 {
    @Override
    public Class9492 method12825(Class2828 var1, float var2) {
       TileEntityRendererDispatcher var5 = TileEntityRendererDispatcher.instance;
-      Object var6 = var5.method27968(TileEntityType.field21422);
+      Object var6 = var5.method27968(TileEntityType.CHEST);
       if (var6 instanceof Class5953) {
          if (((Class5942)var6).method18463() == null) {
             var6 = new Class5953(var5);

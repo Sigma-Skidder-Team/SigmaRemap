@@ -15,7 +15,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.IntSupplier;
 
-public class Class195 extends Class196 implements AutoCloseable {
+public class Class195 extends WorldLightManager implements AutoCloseable {
    private static final Logger field734 = LogManager.getLogger();
    private final Class322<Runnable> field735;
    private final ObjectList<Pair<Class2044, Runnable>> field736 = new ObjectArrayList();
@@ -59,8 +59,8 @@ public class Class195 extends Class196 implements AutoCloseable {
          super.method605(var1, false);
 
          for (int var4 = -1; var4 < 17; var4++) {
-            super.method606(Class1977.field12882, Class2002.method8391(var1, var4), (Class6785)null, true);
-            super.method606(Class1977.field12881, Class2002.method8391(var1, var4), (Class6785)null, true);
+            super.method606(LightType.BLOCK, Class2002.method8391(var1, var4), (Class6785)null, true);
+            super.method606(LightType.SKY, Class2002.method8391(var1, var4), (Class6785)null, true);
          }
 
          for (int var5 = 0; var5 < 16; var5++) {
@@ -91,7 +91,7 @@ public class Class195 extends Class196 implements AutoCloseable {
    }
 
    @Override
-   public void method606(Class1977 var1, Class2002 var2, Class6785 var3, boolean var4) {
+   public void method606(LightType var1, Class2002 var2, Class6785 var3, boolean var4) {
       this.method608(
          var2.method8410(),
          var2.method8412(),

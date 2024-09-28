@@ -228,7 +228,7 @@ public class Class4184 extends Class4180 {
    }
 
    public static Heightmap.Type method12959(Class2219 var0) {
-      return var0 != Class2219.field14496 ? Heightmap.Type.field295 : Heightmap.Type.field297;
+      return var0 != Class2219.field14496 ? Heightmap.Type.WORLD_SURFACE_WG : Heightmap.Type.OCEAN_FLOOR_WG;
    }
 
    private static Class7872 method12960(Block var0, float var1, Block var2) {

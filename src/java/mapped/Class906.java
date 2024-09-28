@@ -56,7 +56,7 @@ public class Class906 extends Entity {
          }
 
          this.world
-            .method6743(
+            .playSound(
                (PlayerEntity)null,
                this.getPosX(),
                this.getPosY(),
@@ -67,7 +67,7 @@ public class Class906 extends Entity {
                0.8F + this.rand.nextFloat() * 0.2F
             );
          this.world
-            .method6743(
+            .playSound(
                (PlayerEntity)null,
                this.getPosX(),
                this.getPosY(),

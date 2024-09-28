@@ -79,7 +79,7 @@ public abstract class Class1028 extends Class1009 {
    }
 
    public static boolean method4572(EntityType<? extends Class1028> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
-      return var1.method7020(Class1977.field12882, var3) <= 8 ? method4342(var0, var1, var2, var3, var4) : false;
+      return var1.getLightFor(LightType.BLOCK, var3) <= 8 ? method4342(var0, var1, var2, var3, var4) : false;
    }
 
    @Override

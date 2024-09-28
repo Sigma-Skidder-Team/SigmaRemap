@@ -11,7 +11,7 @@ import javax.annotation.Nullable;
 public class Class7098 extends Class7092 {
    public static final Codec<Class7098> field30535 = RecordCodecBuilder.create(
       var0 -> var0.group(
-               Heightmap.Type.field301.fieldOf("heightmap").orElse(Heightmap.Type.field295).forGetter(var0x -> var0x.field30536),
+               Heightmap.Type.field301.fieldOf("heightmap").orElse(Heightmap.Type.WORLD_SURFACE_WG).forGetter(var0x -> var0x.field30536),
                Codec.INT.fieldOf("offset").orElse(0).forGetter(var0x -> var0x.field30537)
             )
             .apply(var0, Class7098::new)
@@ -30,14 +30,14 @@ public class Class7098 extends Class7092 {
       Heightmap.Type var9;
       if (!(var1 instanceof ServerWorld)) {
          var9 = this.field30536;
-      } else if (this.field30536 != Heightmap.Type.field295) {
-         if (this.field30536 != Heightmap.Type.field297) {
+      } else if (this.field30536 != Heightmap.Type.WORLD_SURFACE_WG) {
+         if (this.field30536 != Heightmap.Type.OCEAN_FLOOR_WG) {
             var9 = this.field30536;
          } else {
-            var9 = Heightmap.Type.field298;
+            var9 = Heightmap.Type.OCEAN_FLOOR;
          }
       } else {
-         var9 = Heightmap.Type.field296;
+         var9 = Heightmap.Type.WORLD_SURFACE;
       }
 
       int var10 = var1.method6736(var9, var5.field35530.getX(), var5.field35530.getZ()) + this.field30537;

@@ -325,7 +325,7 @@ public abstract class World implements Class1660, AutoCloseable {
    }
 
    @Override
-   public Class196 method6737() {
+   public WorldLightManager method6737() {
       return this.getChunkProvider().getLightManager();
    }
 
@@ -359,10 +359,10 @@ public abstract class World implements Class1660, AutoCloseable {
 
    @Override
    public void method6742(PlayerEntity var1, BlockPos var2, SoundEvent var3, Class2266 var4, float var5, float var6) {
-      this.method6743(var1, (double)var2.getX() + 0.5, (double)var2.getY() + 0.5, (double)var2.getZ() + 0.5, var3, var4, var5, var6);
+      this.playSound(var1, (double)var2.getX() + 0.5, (double)var2.getY() + 0.5, (double)var2.getZ() + 0.5, var3, var4, var5, var6);
    }
 
-   public abstract void method6743(PlayerEntity var1, double var2, double var4, double var6, SoundEvent var8, Class2266 var9, float var10, float var11);
+   public abstract void playSound(PlayerEntity var1, double var2, double var4, double var6, SoundEvent var8, Class2266 var9, float var10, float var11);
 
    public abstract void method6744(PlayerEntity var1, Entity var2, SoundEvent var3, Class2266 var4, float var5, float var6);
 
@@ -439,7 +439,7 @@ public abstract class World implements Class1660, AutoCloseable {
                try {
                   var3.method22504(() -> String.valueOf(TileEntityType.method13793(var5.method3786())));
                   if (var5.method3786().method13796(this.getBlockState(var6).getBlock())) {
-                     ((ITickableTileEntity)var5).method3647();
+                     ((ITickableTileEntity)var5).tick();
                   } else {
                      var5.method3787();
                   }
@@ -457,7 +457,7 @@ public abstract class World implements Class1660, AutoCloseable {
          if (var5.method3778()) {
             var4.remove();
             this.loadedTileEntityList.remove(var5);
-            if (this.method7017(var5.getPos())) {
+            if (this.isBlockLoaded(var5.getPos())) {
                this.getChunkAt(var5.getPos()).removeTileEntity(var5.getPos());
             }
          }
@@ -473,7 +473,7 @@ public abstract class World implements Class1660, AutoCloseable {
                   this.method6751(var12);
                }
 
-               if (this.method7017(var12.getPos())) {
+               if (this.isBlockLoaded(var12.getPos())) {
                   Chunk var7 = this.getChunkAt(var12.getPos());
                   BlockState var13 = var7.getBlockState(var12.getPos());
                   var7.addTileEntity(var12.getPos(), var12);
@@ -516,7 +516,7 @@ public abstract class World implements Class1660, AutoCloseable {
       return var15;
    }
 
-   public String method6758() {
+   public String getProviderName() {
       return this.getChunkProvider().method7347();
    }
 
@@ -735,7 +735,7 @@ public abstract class World implements Class1660, AutoCloseable {
    public abstract Entity getEntityByID(int var1);
 
    public void method6775(BlockPos var1, TileEntity var2) {
-      if (this.method7017(var1)) {
+      if (this.isBlockLoaded(var1)) {
          this.getChunkAt(var1).method7137();
       }
    }
@@ -841,7 +841,7 @@ public abstract class World implements Class1660, AutoCloseable {
    public void setEntityState(Entity var1, byte var2) {
    }
 
-   public void method6787(BlockPos var1, Block var2, int var3, int var4) {
+   public void addBlockEvent(BlockPos var1, Block var2, int var3, int var4) {
       this.getBlockState(var1).method23422(this, var1, var3, var4);
    }
 
@@ -884,7 +884,7 @@ public abstract class World implements Class1660, AutoCloseable {
       if (!this.method6795()) {
          return false;
       } else if (this.method7022(var1)) {
-         if (this.method7006(Heightmap.Type.field299, var1).getY() > var1.getY()) {
+         if (this.method7006(Heightmap.Type.MOTION_BLOCKING, var1).getY() > var1.getY()) {
             return false;
          } else {
             Biome var4 = this.getBiome(var1);
@@ -935,7 +935,7 @@ public abstract class World implements Class1660, AutoCloseable {
    public void updateComparatorOutputLevel(BlockPos var1, Block var2) {
       for (Direction var6 : Direction.Plane.HORIZONTAL) {
          BlockPos var7 = var1.method8349(var6);
-         if (this.method7017(var7)) {
+         if (this.isBlockLoaded(var7)) {
             BlockState var8 = this.getBlockState(var7);
             if (!var8.isIn(Blocks.COMPARATOR)) {
                if (var8.method23400(this, var7)) {
@@ -956,7 +956,7 @@ public abstract class World implements Class1660, AutoCloseable {
    public Class9755 method6807(BlockPos var1) {
       long var4 = 0L;
       float var6 = 0.0F;
-      if (this.method7017(var1)) {
+      if (this.isBlockLoaded(var1)) {
          var6 = this.method7000();
          var4 = this.getChunkAt(var1).getInhabitedTime();
       }

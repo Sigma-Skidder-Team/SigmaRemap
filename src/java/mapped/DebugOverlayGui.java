@@ -36,157 +36,157 @@ import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Class1262 extends AbstractGui {
-   private static final Map<Heightmap.Type, String> field6664 = Util.make(
-      new EnumMap<Heightmap.Type, String>(Heightmap.Type.class), var0 -> {
-         var0.put(Heightmap.Type.field295, "SW");
-         var0.put(Heightmap.Type.field296, "S");
-         var0.put(Heightmap.Type.field297, "OW");
-         var0.put(Heightmap.Type.field298, "O");
-         var0.put(Heightmap.Type.field299, "M");
-         var0.put(Heightmap.Type.field300, "ML");
+public class DebugOverlayGui extends AbstractGui {
+   private static final Map<Heightmap.Type, String> HEIGHTMAP_NAMES = Util.make(
+           new EnumMap<>(Heightmap.Type.class), var0 -> {
+         var0.put(Heightmap.Type.WORLD_SURFACE_WG, "SW");
+         var0.put(Heightmap.Type.WORLD_SURFACE, "S");
+         var0.put(Heightmap.Type.OCEAN_FLOOR_WG, "OW");
+         var0.put(Heightmap.Type.OCEAN_FLOOR, "O");
+         var0.put(Heightmap.Type.MOTION_BLOCKING, "M");
+         var0.put(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, "ML");
       }
    );
-   private final Minecraft field6665;
-   private final FontRenderer field6666;
-   private RayTraceResult field6667;
-   private RayTraceResult field6668;
-   private ChunkPos field6669;
-   private Chunk field6670;
-   private CompletableFuture<Chunk> field6671;
-   private String field6672 = null;
-   private List<String> field6673 = null;
-   public List<String> field6674 = null;
-   private long field6675 = 0L;
-   private long field6676 = 0L;
+   private final Minecraft mc;
+   private final FontRenderer fontRenderer;
+   private RayTraceResult rayTraceBlock;
+   private RayTraceResult rayTraceFluid;
+   private ChunkPos chunkPos;
+   private Chunk chunk;
+   private CompletableFuture<Chunk> futureChunk;
+   private String debugOF = null;
+   private List<String> debugInfoLeft = null;
+   public List<String> debugInfoRight = null;
+   private long updateInfoLeftTimeMs = 0L;
+   private long updateInfoRightTimeMs = 0L;
 
-   public Class1262(Minecraft var1) {
-      this.field6665 = var1;
-      this.field6666 = var1.fontRenderer;
+   public DebugOverlayGui(Minecraft var1) {
+      this.mc = var1;
+      this.fontRenderer = var1.fontRenderer;
    }
 
-   public void method5877() {
-      this.field6671 = null;
-      this.field6670 = null;
+   public void resetChunk() {
+      this.futureChunk = null;
+      this.chunk = null;
    }
 
-   public void method5878(MatrixStack var1) {
-      this.field6665.getProfiler().startSection("debug");
+   public void render(MatrixStack var1) {
+      this.mc.getProfiler().startSection("debug");
       RenderSystem.pushMatrix();
-      Entity var4 = this.field6665.getRenderViewEntity();
-      this.field6667 = var4.customPick(20.0, 0.0F, false);
-      this.field6668 = var4.customPick(20.0, 0.0F, true);
-      this.method5879(var1);
-      this.method5880(var1);
+      Entity var4 = this.mc.getRenderViewEntity();
+      this.rayTraceBlock = var4.customPick(20.0, 0.0F, false);
+      this.rayTraceFluid = var4.customPick(20.0, 0.0F, true);
+      this.renderDebugInfoLeft(var1);
+      this.renderDebugInfoRight(var1);
       RenderSystem.popMatrix();
-      if (this.field6665.gameSettings.field44666) {
-         int var5 = this.field6665.getMainWindow().getScaledWidth();
-         this.method5890(var1, this.field6665.getFrameTimer(), 0, var5 / 2, true);
-         IntegratedServer var6 = this.field6665.getIntegratedServer();
+      if (this.mc.gameSettings.showLagometer) {
+         int var5 = this.mc.getMainWindow().getScaledWidth();
+         this.func_238509_a_(var1, this.mc.getFrameTimer(), 0, var5 / 2, true);
+         IntegratedServer var6 = this.mc.getIntegratedServer();
          if (var6 != null) {
-            this.method5890(var1, var6.method1419(), var5 - Math.min(var5 / 2, 240), var5 / 2, false);
+            this.func_238509_a_(var1, var6.getFrameTimer(), var5 - Math.min(var5 / 2, 240), var5 / 2, false);
          }
       }
 
-      this.field6665.getProfiler().endSection();
+      this.mc.getProfiler().endSection();
    }
 
-   public void method5879(MatrixStack var1) {
-      List var4 = this.field6673;
-      if (var4 == null || System.currentTimeMillis() > this.field6675) {
-         var4 = this.method5881();
+   public void renderDebugInfoLeft(MatrixStack var1) {
+      List<String> var4 = this.debugInfoLeft;
+      if (var4 == null || System.currentTimeMillis() > this.updateInfoLeftTimeMs) {
+         var4 = this.getDebugInfoLeft();
          var4.add("");
-         boolean var5 = this.field6665.getIntegratedServer() != null;
+         boolean var5 = this.mc.getIntegratedServer() != null;
          var4.add(
             "Debug: Pie [shift]: "
-               + (!this.field6665.gameSettings.showDebugProfilerChart ? "hidden" : "visible")
+               + (!this.mc.gameSettings.showDebugProfilerChart ? "hidden" : "visible")
                + (!var5 ? " FPS" : " FPS + TPS")
                + " [alt]: "
-               + (!this.field6665.gameSettings.field44666 ? "hidden" : "visible")
+               + (!this.mc.gameSettings.showLagometer ? "hidden" : "visible")
          );
          var4.add("For help: press F3 + Q");
-         this.field6673 = var4;
-         this.field6675 = System.currentTimeMillis() + 100L;
+         this.debugInfoLeft = var4;
+         this.updateInfoLeftTimeMs = System.currentTimeMillis() + 100L;
       }
 
-      Class9718[] var13 = new Class9718[var4.size()];
-      Class7717[] var6 = new Class7717[var4.size()];
+      GuiPoint[] var13 = new GuiPoint[var4.size()];
+      GuiRect[] var6 = new GuiRect[var4.size()];
 
       for (int var7 = 0; var7 < var4.size(); var7++) {
          String var8 = (String)var4.get(var7);
          if (!Strings.isNullOrEmpty(var8)) {
             byte var9 = 9;
-            int var10 = this.field6666.getStringWidth(var8);
+            int var10 = this.fontRenderer.getStringWidth(var8);
             byte var11 = 2;
             int var12 = 2 + var9 * var7;
-            var6[var7] = new Class7717(1, var12 - 1, 2 + var10 + 1, var12 + var9 - 1);
-            var13[var7] = new Class9718(2, var12);
+            var6[var7] = new GuiRect(1, var12 - 1, 2 + var10 + 1, var12 + var9 - 1);
+            var13[var7] = new GuiPoint(2, var12);
          }
       }
 
-      Class7540.method24652(var1.getLast().getMatrix(), var6, -1873784752);
-      this.field6666.method38808(var4, var13, 14737632, var1.getLast().getMatrix(), false, this.field6666.method38829());
+      GuiUtils.fill(var1.getLast().getMatrix(), var6, -1873784752);
+      this.fontRenderer.renderStrings(var4, var13, 14737632, var1.getLast().getMatrix(), false, this.fontRenderer.method38829());
    }
 
-   public void method5880(MatrixStack var1) {
-      List var4 = this.field6674;
-      if (var4 == null || System.currentTimeMillis() > this.field6676) {
-         var4 = this.method5888();
-         this.field6674 = var4;
-         this.field6676 = System.currentTimeMillis() + 100L;
+   public void renderDebugInfoRight(MatrixStack var1) {
+      List var4 = this.debugInfoRight;
+      if (var4 == null || System.currentTimeMillis() > this.updateInfoRightTimeMs) {
+         var4 = this.getDebugInfoRight();
+         this.debugInfoRight = var4;
+         this.updateInfoRightTimeMs = System.currentTimeMillis() + 100L;
       }
 
-      Class9718[] var5 = new Class9718[var4.size()];
-      Class7717[] var6 = new Class7717[var4.size()];
+      GuiPoint[] var5 = new GuiPoint[var4.size()];
+      GuiRect[] var6 = new GuiRect[var4.size()];
 
       for (int var7 = 0; var7 < var4.size(); var7++) {
          String var8 = (String)var4.get(var7);
          if (!Strings.isNullOrEmpty(var8)) {
             byte var9 = 9;
-            int var10 = this.field6666.getStringWidth(var8);
-            int var11 = this.field6665.getMainWindow().getScaledWidth() - 2 - var10;
+            int var10 = this.fontRenderer.getStringWidth(var8);
+            int var11 = this.mc.getMainWindow().getScaledWidth() - 2 - var10;
             int var12 = 2 + var9 * var7;
-            var6[var7] = new Class7717(var11 - 1, var12 - 1, var11 + var10 + 1, var12 + var9 - 1);
-            var5[var7] = new Class9718(var11, var12);
+            var6[var7] = new GuiRect(var11 - 1, var12 - 1, var11 + var10 + 1, var12 + var9 - 1);
+            var5[var7] = new GuiPoint(var11, var12);
          }
       }
 
-      Class7540.method24652(var1.getLast().getMatrix(), var6, -1873784752);
-      this.field6666.method38808(var4, var5, 14737632, var1.getLast().getMatrix(), false, this.field6666.method38829());
+      GuiUtils.fill(var1.getLast().getMatrix(), var6, -1873784752);
+      this.fontRenderer.renderStrings(var4, var5, 14737632, var1.getLast().getMatrix(), false, this.fontRenderer.method38829());
    }
 
-   public List<String> method5881() {
-      if (this.field6665.debug != this.field6672) {
-         StringBuffer var3 = new StringBuffer(this.field6665.debug);
-         int var4 = Config.method26956();
-         int var5 = this.field6665.debug.indexOf("T: ");
+   public List<String> getDebugInfoLeft() {
+      if (this.mc.debug != this.debugOF) {
+         StringBuffer var3 = new StringBuffer(this.mc.debug);
+         int var4 = Config.getChunkUpdates();
+         int var5 = this.mc.debug.indexOf("T: ");
          if (var5 >= 0) {
             var3.insert(var5, "(" + var4 + " chunk updates) ");
          }
 
-         int var6 = Config.method26955();
-         int var7 = this.field6665.debug.indexOf(" fps ");
+         int var6 = Config.getFpsMin();
+         int var7 = this.mc.debug.indexOf(" fps ");
          if (var7 >= 0) {
             var3.insert(var7, "/" + var6);
          }
 
-         if (Config.method26979()) {
+         if (Config.isSmoothFps()) {
             var3.append(" sf");
          }
 
-         if (Config.method26919()) {
+         if (Config.isFastRender()) {
             var3.append(" fr");
          }
 
-         if (Config.method26890()) {
+         if (Config.isAnisotropicFiltering()) {
             var3.append(" af");
          }
 
-         if (Config.method26892()) {
+         if (Config.isAntialiasing()) {
             var3.append(" aa");
          }
 
-         if (Config.method26977()) {
+         if (Config.isRenderRegions()) {
             var3.append(" reg");
          }
 
@@ -194,20 +194,20 @@ public class Class1262 extends AbstractGui {
             var3.append(" sh");
          }
 
-         this.field6665.debug = var3.toString();
-         this.field6672 = this.field6665.debug;
+         this.mc.debug = var3.toString();
+         this.debugOF = this.mc.debug;
       }
 
-      List var9 = this.method5882();
+      List<String> var9 = this.getInfoLeft();
       StringBuilder var10 = new StringBuilder();
-      AtlasTexture var11 = Config.method26969();
+      AtlasTexture var11 = Config.getTextureMap();
       var10.append(", A: ");
       if (SmartAnimations.isActive()) {
-         var10.append(var11.method1118() + Class8389.method29403());
+         var10.append(var11.getCountAnimationsActive() + TextureAnimations.getCountAnimationsActive());
          var10.append("/");
       }
 
-      var10.append(var11.method1117() + Class8389.method29402());
+      var10.append(var11.getCountAnimations() + TextureAnimations.getCountAnimations());
       String var12 = var10.toString();
 
       for (int var13 = 0; var13 < var9.size(); var13++) {
@@ -222,38 +222,35 @@ public class Class1262 extends AbstractGui {
       return var9;
    }
 
-   public List<String> method5882() {
-      IntegratedServer var3 = this.field6665.getIntegratedServer();
-      NetworkManager var4 = this.field6665.getConnection().getNetworkManager();
+   public List<String> getInfoLeft() {
+      IntegratedServer var3 = this.mc.getIntegratedServer();
+      NetworkManager var4 = this.mc.getConnection().getNetworkManager();
       float var5 = var4.getPacketsSent();
       float var6 = var4.getPacketsReceived();
       String var7;
       if (var3 != null) {
          var7 = String.format("Integrated server @ %.0f ms ticks, %.0f tx, %.0f rx", var3.method1417(), var5, var6);
       } else {
-         var7 = String.format("\"%s\" server, %.0f tx, %.0f rx", this.field6665.player.method5395(), var5, var6);
+         var7 = String.format("\"%s\" server, %.0f tx, %.0f rx", this.mc.player.method5395(), var5, var6);
       }
 
-      BlockPos var8 = this.field6665.getRenderViewEntity().getPosition();
+      BlockPos var8 = this.mc.getRenderViewEntity().getPosition();
       String var9 = SharedConstants.getVersion().getName();
 
-      if (this.field6665.isReducedDebug()) {
+      if (this.mc.isReducedDebug()) {
          return Lists.newArrayList(
-            new String[]{
-               "Minecraft " + var9 + " (" + this.field6665.getVersion() + "/" + ClientBrandRetriever.getClientModName() + ")",
-               this.field6665.debug,
-               var7,
-               this.field6665.worldRenderer.method871(),
-               this.field6665.worldRenderer.method873(),
-               "P: " + this.field6665.particles.method1208() + ". T: " + this.field6665.world.method6844(),
-               this.field6665.world.method6758(),
-               "",
-               String.format("Chunk-relative: %d %d %d", var8.getX() & 15, var8.getY() & 15, var8.getZ() & 15)
-            }
-         );
+                 "Minecraft " + var9 + " (" + this.mc.getVersion() + "/" + ClientBrandRetriever.getClientModName() + ")",
+                 this.mc.debug,
+                 var7,
+                 this.mc.worldRenderer.getDebugInfoRenders(),
+                 this.mc.worldRenderer.getDebugInfoEntities(),
+                 "P: " + this.mc.particles.getStatistics() + ". T: " + this.mc.world.getCountLoadedEntities(),
+                 this.mc.world.getProviderName(),
+                 "",
+                 String.format("Chunk-relative: %d %d %d", var8.getX() & 15, var8.getY() & 15, var8.getZ() & 15));
       } else {
-         Entity var10 = this.field6665.getRenderViewEntity();
-         Direction var11 = var10.method3386();
+         Entity var10 = this.mc.getRenderViewEntity();
+         Direction var11 = var10.getHorizontalFacing();
          String var12;
          switch (Class7968.field34258[var11.ordinal()]) {
             case 1:
@@ -273,45 +270,45 @@ public class Class1262 extends AbstractGui {
          }
 
          ChunkPos var13 = new ChunkPos(var8);
-         if (!Objects.equals(this.field6669, var13)) {
-            this.field6669 = var13;
-            this.method5877();
+         if (!Objects.equals(this.chunkPos, var13)) {
+            this.chunkPos = var13;
+            this.resetChunk();
          }
 
-         World var14 = this.method5885();
+         World var14 = this.getWorld();
          LongSet var15 = var14 instanceof ServerWorld ? ((ServerWorld)var14).method6949() : LongSets.EMPTY_SET;
          List<String> var16 = Lists.newArrayList(
             new String[]{
                "Minecraft "
                   + SharedConstants.getVersion().getName()
                   + " ("
-                  + this.field6665.getVersion()
+                  + this.mc.getVersion()
                   + "/"
                   + ClientBrandRetriever.getClientModName()
-                  + ("release".equalsIgnoreCase(this.field6665.getVersionType()) ? "" : "/" + this.field6665.getVersionType())
+                  + ("release".equalsIgnoreCase(this.mc.getVersionType()) ? "" : "/" + this.mc.getVersionType())
                   + ")",
-               this.field6665.debug,
+               this.mc.debug,
                var7,
-               this.field6665.worldRenderer.method871(),
-               this.field6665.worldRenderer.method873(),
-               "P: " + this.field6665.particles.method1208() + ". T: " + this.field6665.world.method6844(),
-               this.field6665.world.method6758()
+               this.mc.worldRenderer.getDebugInfoRenders(),
+               this.mc.worldRenderer.getDebugInfoEntities(),
+               "P: " + this.mc.particles.getStatistics() + ". T: " + this.mc.world.getCountLoadedEntities(),
+               this.mc.world.getProviderName()
             }
          );
-         String var17 = this.method5884();
+         String var17 = this.getServerChunkStats();
          if (var17 != null) {
             var16.add(var17);
          }
 
-         var16.add(this.field6665.world.getDimensionKey().getLocation() + " FC: " + var15.size());
+         var16.add(this.mc.world.getDimensionKey().getLocation() + " FC: " + var15.size());
          var16.add("");
          var16.add(
             String.format(
                Locale.ROOT,
                "XYZ: %.3f / %.5f / %.3f",
-               this.field6665.getRenderViewEntity().getPosX(),
-               this.field6665.getRenderViewEntity().getPosY(),
-               this.field6665.getRenderViewEntity().getPosZ()
+               this.mc.getRenderViewEntity().getPosX(),
+               this.mc.getRenderViewEntity().getPosY(),
+               this.mc.getRenderViewEntity().getPosZ()
             )
          );
          var16.add(String.format("Block: %d %d %d", var8.getX(), var8.getY(), var8.getZ()));
@@ -331,24 +328,24 @@ public class Class1262 extends AbstractGui {
                Locale.ROOT, "Facing: %s (%s) (%.1f / %.1f)", var11, var12, MathHelper.method37792(var10.rotationYaw), MathHelper.method37792(var10.rotationPitch)
             )
          );
-         if (this.field6665.world != null) {
-            if (this.field6665.world.method7017(var8)) {
-               Chunk var18 = this.method5887();
-               if (var18.method7141()) {
+         if (this.mc.world != null) {
+            if (this.mc.world.isBlockLoaded(var8)) {
+               Chunk var18 = this.getChunk();
+               if (var18.isEmpty()) {
                   var16.add("Waiting for chunk...");
                } else {
-                  int var19 = this.field6665.world.getChunkProvider().getLightManager().method640(var8, 0);
-                  int var20 = this.field6665.world.method7020(Class1977.field12881, var8);
-                  int var21 = this.field6665.world.method7020(Class1977.field12882, var8);
+                  int var19 = this.mc.world.getChunkProvider().getLightManager().method640(var8, 0);
+                  int var20 = this.mc.world.getLightFor(LightType.SKY, var8);
+                  int var21 = this.mc.world.getLightFor(LightType.BLOCK, var8);
                   var16.add("Client Light: " + var19 + " (" + var20 + " sky, " + var21 + " block)");
-                  Chunk var22 = this.method5886();
+                  Chunk var22 = this.getServerChunk();
                   if (var22 != null) {
-                     Class196 var23 = var14.getChunkProvider().getLightManager();
+                     WorldLightManager var23 = var14.getChunkProvider().getLightManager();
                      var16.add(
                         "Server Light: ("
-                           + var23.method638(Class1977.field12881).method643(var8)
+                           + var23.getLightEngine(LightType.SKY).method643(var8)
                            + " sky, "
-                           + var23.method638(Class1977.field12882).method643(var8)
+                           + var23.getLightEngine(LightType.BLOCK).method643(var8)
                            + " block)"
                      );
                   } else {
@@ -359,7 +356,7 @@ public class Class1262 extends AbstractGui {
 
                   for (Heightmap.Type var27 : Heightmap.Type.values()) {
                      if (var27.method284()) {
-                        var35.append(" ").append(field6664.get(var27)).append(": ").append(var18.getTopBlockY(var27, var8.getX(), var8.getZ()));
+                        var35.append(" ").append(HEIGHTMAP_NAMES.get(var27)).append(": ").append(var18.getTopBlockY(var27, var8.getX(), var8.getZ()));
                      }
                   }
 
@@ -368,8 +365,8 @@ public class Class1262 extends AbstractGui {
                   var35.append("SH");
 
                   for (Heightmap.Type var40 : Heightmap.Type.values()) {
-                     if (var40.method285()) {
-                        var35.append(" ").append(field6664.get(var40)).append(": ");
+                     if (var40.isUsageClient()) {
+                        var35.append(" ").append(HEIGHTMAP_NAMES.get(var40)).append(": ");
                         if (var22 != null) {
                            var35.append(var22.getTopBlockY(var40, var8.getX(), var8.getZ()));
                         } else {
@@ -382,11 +379,11 @@ public class Class1262 extends AbstractGui {
                   if (var8.getY() >= 0 && var8.getY() < 256) {
                      var16.add(
                         "Biome: "
-                           + this.field6665
+                           + this.mc
                               .world
                               .method6867()
                               .<Biome>getRegistry(Registry.BIOME_KEY)
-                              .getKey(this.field6665.world.getBiome(var8))
+                              .getKey(this.mc.world.getBiome(var8))
                      );
                      long var28 = 0L;
                      float var39 = 0.0F;
@@ -402,7 +399,7 @@ public class Class1262 extends AbstractGui {
                            "Local Difficulty: %.2f // %.2f (Day %d)",
                            var41.method38328(),
                            var41.method38330(),
-                           this.field6665.world.method6784() / 24000L
+                           this.mc.world.method6784() / 24000L
                         )
                      );
                   }
@@ -433,70 +430,70 @@ public class Class1262 extends AbstractGui {
             }
          }
 
-         Shader var32 = this.field6665.gameRenderer.getShaderGroup();
+         Shader var32 = this.mc.gameRenderer.getShaderGroup();
          if (var32 != null) {
             var16.add("Shader: " + var32.method6527());
          }
 
-         var16.add(this.field6665.getSoundHandler().method1014() + String.format(" (Mood %d%%)", Math.round(this.field6665.player.method5387() * 100.0F)));
+         var16.add(this.mc.getSoundHandler().method1014() + String.format(" (Mood %d%%)", Math.round(this.mc.player.method5387() * 100.0F)));
          return var16;
       }
    }
 
    @Nullable
    private ServerWorld method5883() {
-      IntegratedServer var3 = this.field6665.getIntegratedServer();
-      return var3 == null ? null : var3.method1318(this.field6665.world.getDimensionKey());
+      IntegratedServer var3 = this.mc.getIntegratedServer();
+      return var3 == null ? null : var3.method1318(this.mc.world.getDimensionKey());
    }
 
    @Nullable
-   private String method5884() {
+   private String getServerChunkStats() {
       ServerWorld var3 = this.method5883();
-      return var3 == null ? null : var3.method6758();
+      return var3 == null ? null : var3.getProviderName();
    }
 
-   private World method5885() {
+   private World getWorld() {
       return (World)DataFixUtils.orElse(
-         Optional.<IntegratedServer>ofNullable(this.field6665.getIntegratedServer())
-            .<ServerWorld>flatMap(var1 -> Optional.ofNullable(var1.method1318(this.field6665.world.getDimensionKey()))),
-         this.field6665.world
+         Optional.<IntegratedServer>ofNullable(this.mc.getIntegratedServer())
+            .<ServerWorld>flatMap(var1 -> Optional.ofNullable(var1.method1318(this.mc.world.getDimensionKey()))),
+         this.mc.world
       );
    }
 
    @Nullable
-   private Chunk method5886() {
-      if (this.field6671 == null) {
+   private Chunk getServerChunk() {
+      if (this.futureChunk == null) {
          ServerWorld var3 = this.method5883();
          if (var3 != null) {
-            this.field6671 = var3.getChunkProvider()
-               .method7358(this.field6669.x, this.field6669.z, ChunkStatus.FULL, false)
+            this.futureChunk = var3.getChunkProvider()
+               .method7358(this.chunkPos.x, this.chunkPos.z, ChunkStatus.FULL, false)
                .<Chunk>thenApply(var0 -> (Chunk)var0.map(var0x -> (Chunk)var0x, var0x -> null));
          }
 
-         if (this.field6671 == null) {
-            this.field6671 = CompletableFuture.<Chunk>completedFuture(this.method5887());
+         if (this.futureChunk == null) {
+            this.futureChunk = CompletableFuture.<Chunk>completedFuture(this.getChunk());
          }
       }
 
-      return this.field6671.getNow((Chunk)null);
+      return this.futureChunk.getNow((Chunk)null);
    }
 
-   private Chunk method5887() {
-      if (this.field6670 == null) {
-         this.field6670 = this.field6665.world.getChunk(this.field6669.x, this.field6669.z);
+   private Chunk getChunk() {
+      if (this.chunk == null) {
+         this.chunk = this.mc.world.getChunk(this.chunkPos.x, this.chunkPos.z);
       }
 
-      return this.field6670;
+      return this.chunk;
    }
 
-   public List<String> method5888() {
+   public List<String> getDebugInfoRight() {
       long var3 = Runtime.getRuntime().maxMemory();
       long var5 = Runtime.getRuntime().totalMemory();
       long var7 = Runtime.getRuntime().freeMemory();
       long var9 = var5 - var7;
       ArrayList var11 = Lists.newArrayList(
          new String[]{
-            String.format("Java: %s %dbit", System.getProperty("java.version"), !this.field6665.isJava64bit() ? 32 : 64),
+            String.format("Java: %s %dbit", System.getProperty("java.version"), !this.mc.isJava64bit() ? 32 : 64),
             String.format("Mem: % 2d%% %03d/%03dMB", var9 * 100L / var3, method5893(var9), method5893(var3)),
             String.format("Allocated: % 2d%% %03dMB", var5 * 100L / var3, method5893(var5)),
             "",
@@ -525,12 +522,12 @@ public class Class1262 extends AbstractGui {
          }
       }
 
-      if (this.field6665.isReducedDebug()) {
+      if (this.mc.isReducedDebug()) {
          return var11;
       } else {
-         if (this.field6667.getType() == RayTraceResult.Type.BLOCK) {
-            BlockPos var24 = ((BlockRayTraceResult)this.field6667).getPos();
-            BlockState var27 = this.field6665.world.getBlockState(var24);
+         if (this.rayTraceBlock.getType() == RayTraceResult.Type.BLOCK) {
+            BlockPos var24 = ((BlockRayTraceResult)this.rayTraceBlock).getPos();
+            BlockState var27 = this.mc.world.getBlockState(var24);
             var11.add("");
             var11.add(TextFormatting.UNDERLINE + "Targeted Block: " + var24.getX() + ", " + var24.getY() + ", " + var24.getZ());
             var11.add(String.valueOf(Registry.BLOCK.getKey(var27.getBlock())));
@@ -543,7 +540,7 @@ public class Class1262 extends AbstractGui {
 
             Collection<ResourceLocation> var30;
             if (!Reflector.field42818.exists()) {
-               var30 = this.field6665.getConnection().method15798().method32657().method27138(var27.getBlock());
+               var30 = this.mc.getConnection().method15798().method32657().method27138(var27.getBlock());
             } else {
                var30 = (Collection) Reflector.call(var27.getBlock(), Reflector.field42818);
             }
@@ -553,9 +550,9 @@ public class Class1262 extends AbstractGui {
             }
          }
 
-         if (this.field6668.getType() == RayTraceResult.Type.BLOCK) {
-            BlockPos var25 = ((BlockRayTraceResult)this.field6668).getPos();
-            FluidState var28 = this.field6665.world.getFluidState(var25);
+         if (this.rayTraceFluid.getType() == RayTraceResult.Type.BLOCK) {
+            BlockPos var25 = ((BlockRayTraceResult)this.rayTraceFluid).getPos();
+            FluidState var28 = this.mc.world.getFluidState(var25);
             var11.add("");
             var11.add(TextFormatting.UNDERLINE + "Targeted Fluid: " + var25.getX() + ", " + var25.getY() + ", " + var25.getZ());
             var11.add(String.valueOf(Registry.field16070.getKey(var28.method23472())));
@@ -568,7 +565,7 @@ public class Class1262 extends AbstractGui {
 
             Collection<ResourceLocation> var32;
             if (!Reflector.field42853.exists()) {
-               var32 = this.field6665.getConnection().method15798().method32659().method27138(var28.method23472());
+               var32 = this.mc.getConnection().method15798().method32659().method27138(var28.method23472());
             } else {
                var32 = (Collection) Reflector.call(var28.method23472(), Reflector.field42853);
             }
@@ -578,7 +575,7 @@ public class Class1262 extends AbstractGui {
             }
          }
 
-         Entity var26 = this.field6665.pointedEntity;
+         Entity var26 = this.mc.pointedEntity;
          if (var26 != null) {
             var11.add("");
             var11.add(TextFormatting.UNDERLINE + "Targeted Entity");
@@ -608,11 +605,11 @@ public class Class1262 extends AbstractGui {
       return var4.method30472() + ": " + var6;
    }
 
-   private void method5890(MatrixStack var1, FrameTimer var2, int var3, int var4, boolean var5) {
+   private void func_238509_a_(MatrixStack var1, FrameTimer var2, int var3, int var4, boolean var5) {
       if (!var5) {
-         int var8 = (int)(512.0 / this.field6665.getMainWindow().getGuiScaleFactor());
+         int var8 = (int)(512.0 / this.mc.getMainWindow().getGuiScaleFactor());
          var3 = Math.max(var3, var8);
-         var4 = this.field6665.getMainWindow().getScaledWidth() - var3;
+         var4 = this.mc.getMainWindow().getScaledWidth() - var3;
          RenderSystem.disableDepthTest();
          int var9 = var2.method38594();
          int var10 = var2.method38595();
@@ -632,7 +629,7 @@ public class Class1262 extends AbstractGui {
             var16 += (long)var21;
          }
 
-         int var32 = this.field6665.getMainWindow().getScaledHeight();
+         int var32 = this.mc.getMainWindow().getScaledHeight();
          method5686(var1, var3, var32 - 60, var3 + var14, var32, -1873784752);
          BufferBuilder var33 = Tessellator.getInstance().getBuffer();
          RenderSystem.enableBlend();
@@ -661,30 +658,30 @@ public class Class1262 extends AbstractGui {
          RenderSystem.disableBlend();
          if (!var5) {
             method5686(var1, var3 + 1, var32 - 60 + 1, var3 + 14, var32 - 60 + 10, -1873784752);
-            this.field6666.method38801(var1, "20 TPS", (float)(var3 + 2), (float)(var32 - 60 + 2), 14737632);
+            this.fontRenderer.method38801(var1, "20 TPS", (float)(var3 + 2), (float)(var32 - 60 + 2), 14737632);
             this.method5684(var1, var3, var3 + var14 - 1, var32 - 60, -1);
          } else {
             method5686(var1, var3 + 1, var32 - 30 + 1, var3 + 14, var32 - 30 + 10, -1873784752);
-            this.field6666.method38801(var1, "60 FPS", (float)(var3 + 2), (float)(var32 - 30 + 2), 14737632);
+            this.fontRenderer.method38801(var1, "60 FPS", (float)(var3 + 2), (float)(var32 - 30 + 2), 14737632);
             this.method5684(var1, var3, var3 + var14 - 1, var32 - 30, -1);
             method5686(var1, var3 + 1, var32 - 60 + 1, var3 + 14, var32 - 60 + 10, -1873784752);
-            this.field6666.method38801(var1, "30 FPS", (float)(var3 + 2), (float)(var32 - 60 + 2), 14737632);
+            this.fontRenderer.method38801(var1, "30 FPS", (float)(var3 + 2), (float)(var32 - 60 + 2), 14737632);
             this.method5684(var1, var3, var3 + var14 - 1, var32 - 60, -1);
          }
 
          this.method5684(var1, var3, var3 + var14 - 1, var32 - 1, -1);
          this.method5685(var1, var3, var32 - 60, var32, -1);
          this.method5685(var1, var3 + var14 - 1, var32 - 60, var32, -1);
-         if (var5 && this.field6665.gameSettings.framerateLimit > 0 && this.field6665.gameSettings.framerateLimit <= 250) {
-            this.method5684(var1, var3, var3 + var14 - 1, var32 - 1 - (int)(1800.0 / (double)this.field6665.gameSettings.framerateLimit), -16711681);
+         if (var5 && this.mc.gameSettings.framerateLimit > 0 && this.mc.gameSettings.framerateLimit <= 250) {
+            this.method5684(var1, var3, var3 + var14 - 1, var32 - 1 - (int)(1800.0 / (double)this.mc.gameSettings.framerateLimit), -16711681);
          }
 
          String var34 = var18 + " ms min";
          String var35 = var16 / (long)var14 + " ms avg";
          String var36 = var19 + " ms max";
-         this.field6666.drawStringWithShadow(var1, var34, (float)(var3 + 2), (float)(var32 - 60 - 9), 14737632);
-         this.field6666.drawStringWithShadow(var1, var35, (float)(var3 + var14 / 2 - this.field6666.getStringWidth(var35) / 2), (float)(var32 - 60 - 9), 14737632);
-         this.field6666.drawStringWithShadow(var1, var36, (float)(var3 + var14 - this.field6666.getStringWidth(var36)), (float)(var32 - 60 - 9), 14737632);
+         this.fontRenderer.drawStringWithShadow(var1, var34, (float)(var3 + 2), (float)(var32 - 60 - 9), 14737632);
+         this.fontRenderer.drawStringWithShadow(var1, var35, (float)(var3 + var14 / 2 - this.fontRenderer.getStringWidth(var35) / 2), (float)(var32 - 60 - 9), 14737632);
+         this.fontRenderer.drawStringWithShadow(var1, var36, (float)(var3 + var14 - this.fontRenderer.getStringWidth(var36)), (float)(var32 - 60 - 9), 14737632);
          RenderSystem.enableDepthTest();
       }
    }

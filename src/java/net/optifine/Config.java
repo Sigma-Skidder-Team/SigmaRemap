@@ -990,7 +990,7 @@ public class Config {
       return 1;
    }
 
-   public static boolean method26890() {
+   public static boolean isAnisotropicFiltering() {
       return method26889() > 1;
    }
 
@@ -998,7 +998,7 @@ public class Config {
       return 0;
    }
 
-   public static boolean method26892() {
+   public static boolean isAntialiasing() {
       return method26891() > 0;
    }
 
@@ -1163,7 +1163,7 @@ public class Config {
       return field34156.field44715 == 2;
    }
 
-   public static boolean method26919() {
+   public static boolean isFastRender() {
       return field34156.field44720;
    }
 
@@ -1472,8 +1472,8 @@ public class Config {
 
    public static void method26954(MatrixStack var0) {
       int var3 = Reflector.method35077(Reflector.field43019, -1);
-      int var4 = method26955();
-      int var5 = method26956();
+      int var4 = getFpsMin();
+      int var5 = getChunkUpdates();
       int var6 = field34157.worldRenderer.method924();
       int var7 = field34157.worldRenderer.method925();
       int var8 = field34157.worldRenderer.method926();
@@ -1481,11 +1481,11 @@ public class Config {
       field34157.fontRenderer.method38801(var0, var9, 2.0F, 2.0F, -2039584);
    }
 
-   public static int method26955() {
+   public static int getFpsMin() {
       return field34171;
    }
 
-   public static int method26956() {
+   public static int getChunkUpdates() {
       return field34172;
    }
 
@@ -1594,7 +1594,7 @@ public class Config {
       field34173 = var0;
    }
 
-   public static AtlasTexture method26969() {
+   public static AtlasTexture getTextureMap() {
       return field34173;
    }
 
@@ -1642,7 +1642,7 @@ public class Config {
       }
    }
 
-   public static boolean method26977() {
+   public static boolean isRenderRegions() {
       return field34156.field44685 && GlStateManager.vboRegions;
    }
 
@@ -1650,7 +1650,7 @@ public class Config {
       return GLX.method28310();
    }
 
-   public static boolean method26979() {
+   public static boolean isSmoothFps() {
       return field34156.ofSmoothFps;
    }
 

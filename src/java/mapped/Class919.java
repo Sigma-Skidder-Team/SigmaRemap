@@ -62,7 +62,7 @@ public abstract class Class919 extends AbstractMinecartEntity implements IInvent
    @Override
    public ItemStack decrStackSize(int var1, int var2) {
       this.method3624((PlayerEntity)null);
-      return Class7920.method26563(this.field5236, var1, var2);
+      return ItemStackHelper.method26563(this.field5236, var1, var2);
    }
 
    @Override
@@ -125,7 +125,7 @@ public abstract class Class919 extends AbstractMinecartEntity implements IInvent
    public void writeAdditional(CompoundNBT var1) {
       super.writeAdditional(var1);
       if (this.field5238 == null) {
-         Class7920.method26565(var1, this.field5236);
+         ItemStackHelper.saveAllItems(var1, this.field5236);
       } else {
          var1.method109("LootTable", this.field5238.toString());
          if (this.field5239 != 0L) {
@@ -139,7 +139,7 @@ public abstract class Class919 extends AbstractMinecartEntity implements IInvent
       super.readAdditional(var1);
       this.field5236 = NonNullList.<ItemStack>method68(this.getSizeInventory(), ItemStack.EMPTY);
       if (!var1.contains("LootTable", 8)) {
-         Class7920.method26567(var1, this.field5236);
+         ItemStackHelper.loadAllItems(var1, this.field5236);
       } else {
          this.field5238 = new ResourceLocation(var1.getString("LootTable"));
          this.field5239 = var1.getLong("LootTableSeed");

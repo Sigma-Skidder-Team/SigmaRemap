@@ -160,9 +160,9 @@ public class PlayerInventory implements IInventory, INameable {
    public int method4040(Predicate<ItemStack> var1, int var2, IInventory var3) {
       int var6 = 0;
       boolean var7 = var2 == 0;
-      var6 += Class7920.method26568(this, var1, var2 - var6, var7);
-      var6 += Class7920.method26568(var3, var1, var2 - var6, var7);
-      var6 += Class7920.method26569(this.field5445, var1, var2 - var6, var7);
+      var6 += ItemStackHelper.method26568(this, var1, var2 - var6, var7);
+      var6 += ItemStackHelper.method26568(var3, var1, var2 - var6, var7);
+      var6 += ItemStackHelper.method26569(this.field5445, var1, var2 - var6, var7);
       if (this.field5445.isEmpty()) {
          this.field5445 = ItemStack.EMPTY;
       }
@@ -325,7 +325,7 @@ public class PlayerInventory implements IInventory, INameable {
          var1 -= var7.size();
       }
 
-      return var5 != null && !((ItemStack)var5.get(var1)).isEmpty() ? Class7920.method26563(var5, var1, var2) : ItemStack.EMPTY;
+      return var5 != null && !((ItemStack)var5.get(var1)).isEmpty() ? ItemStackHelper.method26563(var5, var1, var2) : ItemStack.EMPTY;
    }
 
    public void method4048(ItemStack var1) {

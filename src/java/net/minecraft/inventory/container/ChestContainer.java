@@ -107,7 +107,7 @@ public class ChestContainer extends Container {
       this.field25479.closeInventory(var1);
    }
 
-   public IInventory method18164() {
+   public IInventory getLowerChestInventory() {
       return this.field25479;
    }
 

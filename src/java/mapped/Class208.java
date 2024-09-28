@@ -11,7 +11,7 @@ import javax.annotation.Nullable;
 public abstract class Class208<M extends Class7586<M>> extends Class207 {
    public static final Class6785 field768 = new Class6785();
    private static final Direction[] field769 = Direction.values();
-   private final Class1977 field770;
+   private final LightType field770;
    private final Class1704 field771;
    public final LongSet field772 = new LongOpenHashSet();
    public final LongSet field773 = new LongOpenHashSet();
@@ -26,7 +26,7 @@ public abstract class Class208<M extends Class7586<M>> extends Class207 {
    private final LongSet field782 = new LongOpenHashSet();
    public volatile boolean field783;
 
-   public Class208(Class1977 var1, Class1704 var2, M var3) {
+   public Class208(LightType var1, Class1704 var2, M var3) {
       super(3, 16, 256);
       this.field770 = var1;
       this.field771 = var2;

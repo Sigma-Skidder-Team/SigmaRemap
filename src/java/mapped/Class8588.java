@@ -46,7 +46,7 @@ public class Class8588 {
                }
             } else {
                var1.world
-                  .method6743(
+                  .playSound(
                      (PlayerEntity)null,
                      var1.getPosX(),
                      var1.getPosY(),

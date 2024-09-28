@@ -28,7 +28,7 @@ public class Class5736 extends EntityRenderer<ItemFrameEntity> {
    public void render(ItemFrameEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       super.render(var1, var2, var3, var4, var5, var6);
       var4.push();
-      Direction var9 = var1.method3386();
+      Direction var9 = var1.getHorizontalFacing();
       Vector3d var10 = this.getRenderOffset(var1, var3);
       var4.translate(-var10.getX(), -var10.getY(), -var10.getZ());
       double var11 = 0.46875;
@@ -92,7 +92,7 @@ public class Class5736 extends EntityRenderer<ItemFrameEntity> {
    }
 
    public Vector3d getRenderOffset(ItemFrameEntity var1, float var2) {
-      return new Vector3d((double)((float)var1.method3386().getXOffset() * 0.3F), -0.25, (double)((float)var1.method3386().getZOffset() * 0.3F));
+      return new Vector3d((double)((float)var1.getHorizontalFacing().getXOffset() * 0.3F), -0.25, (double)((float)var1.getHorizontalFacing().getZOffset() * 0.3F));
    }
 
    public ResourceLocation method17843(ItemFrameEntity var1) {

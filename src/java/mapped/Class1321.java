@@ -107,7 +107,7 @@ public class Class1321 extends Screen {
          this.field6992 = var4x[var5];
          var1.setMessage(this.method6273());
       }));
-      boolean var4 = JigsawBlock.method11675(this.field6983.method3775()).getAxis().method323();
+      boolean var4 = JigsawBlock.method11675(this.field6983.getBlockState()).getAxis().method323();
       this.field6990.active = var4;
       this.field6990.field6483 = var4;
       this.<Class1238>addButton(new Class1238(this, this.width / 2 - 154, 180, 100, 20, StringTextComponent.EMPTY, 0.0));
@@ -183,7 +183,7 @@ public class Class1321 extends Screen {
       this.field6985.render(var1, var2, var3, var4);
       method5693(var1, this.fontRenderer, field6982, this.width / 2 - 153, 115, 10526880);
       this.field6987.render(var1, var2, var3, var4);
-      if (JigsawBlock.method11675(this.field6983.method3775()).getAxis().method323()) {
+      if (JigsawBlock.method11675(this.field6983.getBlockState()).getAxis().method323()) {
          method5693(var1, this.fontRenderer, field6978, this.width / 2 - 153, 156, 16777215);
       }
 

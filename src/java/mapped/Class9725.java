@@ -61,7 +61,7 @@ public class Class9725 {
       ChunkSection[] var18 = new ChunkSection[16];
       boolean var19 = var0.method6812().hasSkyLight();
       ServerChunkProvider var20 = var0.getChunkProvider();
-      Class196 var21 = var20.getLightManager();
+      WorldLightManager var21 = var20.getLightManager();
       if (var15) {
          var21.method609(var3, true);
       }
@@ -82,11 +82,11 @@ public class Class9725 {
 
          if (var15) {
             if (var30.contains("BlockLight", 7)) {
-               var21.method606(Class1977.field12882, Class2002.method8391(var3, var25), new Class6785(var30.getByteArray("BlockLight")), true);
+               var21.method606(LightType.BLOCK, Class2002.method8391(var3, var25), new Class6785(var30.getByteArray("BlockLight")), true);
             }
 
             if (var19 && var30.contains("SkyLight", 7)) {
-               var21.method606(Class1977.field12881, Class2002.method8391(var3, var25), new Class6785(var30.getByteArray("SkyLight")), true);
+               var21.method606(LightType.SKY, Class2002.method8391(var3, var25), new Class6785(var30.getByteArray("SkyLight")), true);
             }
          }
       }
@@ -227,8 +227,8 @@ public class Class9725 {
             .filter(var1x -> var1x != null && var1x.getYLocation() >> 4 == var13)
             .findFirst()
             .orElse(Chunk.field9111);
-         Class6785 var15 = var10.method638(Class1977.field12882).method642(Class2002.method8391(var4, var13));
-         Class6785 var16 = var10.method638(Class1977.field12881).method642(Class2002.method8391(var4, var13));
+         Class6785 var15 = var10.getLightEngine(LightType.BLOCK).method642(Class2002.method8391(var4, var13));
+         Class6785 var16 = var10.getLightEngine(LightType.SKY).method642(Class2002.method8391(var4, var13));
          if (var14 != Chunk.field9111 || var15 != null || var16 != null) {
             CompoundNBT var17 = new CompoundNBT();
             var17.method100("Y", (byte)(var13 & 0xFF));

@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public enum Class109 implements IStringSerializable {
-   field366("terrain_matching", ImmutableList.of(new Class7098(Heightmap.Type.field295, -1))),
+   field366("terrain_matching", ImmutableList.of(new Class7098(Heightmap.Type.WORLD_SURFACE_WG, -1))),
    field367("rigid", ImmutableList.of());
 
    public static final Codec<Class109> field368 = IStringSerializable.<Class109>method258(Class109::values, Class109::method302);

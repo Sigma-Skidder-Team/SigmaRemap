@@ -355,7 +355,7 @@ public abstract class PlayerEntity extends LivingEntity {
 
    @Override
    public void playSound(SoundEvent var1, float var2, float var3) {
-      this.world.method6743(this, this.getPosX(), this.getPosY(), this.getPosZ(), var1, this.method2864(), var2, var3);
+      this.world.playSound(this, this.getPosX(), this.getPosY(), this.getPosZ(), var1, this.method2864(), var2, var3);
    }
 
    public void method2834(SoundEvent var1, Class2266 var2, float var3, float var4) {
@@ -503,7 +503,7 @@ public abstract class PlayerEntity extends LivingEntity {
                var1x -> {
                   if (!Class1015.method4409(this.world, this)) {
                      this.world
-                        .method6743(
+                        .playSound(
                            (PlayerEntity)null,
                            this.getPosX(),
                            this.getPosY(),
@@ -1059,7 +1059,7 @@ public abstract class PlayerEntity extends LivingEntity {
             var9 += EnchantmentHelper.method26323(this);
             if (this.isSprinting() && var7) {
                this.world
-                  .method6743((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26952, this.method2864(), 1.0F, 1.0F);
+                  .playSound((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26952, this.method2864(), 1.0F, 1.0F);
                var9++;
                var8 = true;
             }
@@ -1102,7 +1102,7 @@ public abstract class PlayerEntity extends LivingEntity {
             boolean var18 = var1.attackEntityFrom(DamageSource.method31117(this), var4);
             if (!var18) {
                this.world
-                  .method6743((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26953, this.method2864(), 1.0F, 1.0F);
+                  .playSound((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26953, this.method2864(), 1.0F, 1.0F);
                if (var15) {
                   var1.extinguish();
                }
@@ -1130,7 +1130,7 @@ public abstract class PlayerEntity extends LivingEntity {
                if (var11) {
                   float var19 = 1.0F + EnchantmentHelper.method26319(this) * var4;
 
-                  for (LivingEntity var21 : this.world.<LivingEntity>method7182(LivingEntity.class, var1.getBoundingBox().method19663(1.0, 0.25, 1.0))) {
+                  for (LivingEntity var21 : this.world.<LivingEntity>getEntitiesWithinAABB(LivingEntity.class, var1.getBoundingBox().method19663(1.0, 0.25, 1.0))) {
                      if (var21 != this
                         && var21 != var1
                         && !this.isOnSameTeam(var21)
@@ -1146,7 +1146,7 @@ public abstract class PlayerEntity extends LivingEntity {
                   }
 
                   this.world
-                     .method6743((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26955, this.method2864(), 1.0F, 1.0F);
+                     .playSound((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26955, this.method2864(), 1.0F, 1.0F);
                   this.method2902();
                }
 
@@ -1158,19 +1158,19 @@ public abstract class PlayerEntity extends LivingEntity {
 
                if (var10) {
                   this.world
-                     .method6743((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26951, this.method2864(), 1.0F, 1.0F);
+                     .playSound((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26951, this.method2864(), 1.0F, 1.0F);
                   this.method2795(var1);
                }
 
                if (!var10 && !var11) {
                   if (!var7) {
                      this.world
-                        .method6743(
+                        .playSound(
                            (PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26956, this.method2864(), 1.0F, 1.0F
                         );
                   } else {
                      this.world
-                        .method6743(
+                        .playSound(
                            (PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26954, this.method2864(), 1.0F, 1.0F
                         );
                   }
@@ -1612,7 +1612,7 @@ public abstract class PlayerEntity extends LivingEntity {
       if (var1 > 0 && this.field4920 % 5 == 0 && (float)this.field4925 < (float)this.ticksExisted - 100.0F) {
          float var4 = this.field4920 <= 30 ? (float)this.field4920 / 30.0F : 1.0F;
          this.world
-            .method6743((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26965, this.method2864(), var4 * 0.75F, 1.0F);
+            .playSound((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26965, this.method2864(), var4 * 0.75F, 1.0F);
          this.field4925 = this.ticksExisted;
       }
    }
@@ -2034,7 +2034,7 @@ public abstract class PlayerEntity extends LivingEntity {
    public ItemStack onFoodEaten(World var1, ItemStack var2) {
       this.getFoodStats().method37570(var2.getItem(), var2);
       this.addStat(Stats.field40098.method172(var2.getItem()));
-      var1.method6743(
+      var1.playSound(
          (PlayerEntity)null,
          this.getPosX(),
          this.getPosY(),

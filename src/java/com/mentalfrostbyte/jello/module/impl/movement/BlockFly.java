@@ -107,7 +107,7 @@ public class BlockFly extends ModuleWithModuleSettings {
                     && !(var3 instanceof Class3343)
                     && !(var3 instanceof Class3250)
                     && !(var3 instanceof Class3241)
-                    && !(var3 instanceof Class3348)
+                    && !(var3 instanceof ChestBlock)
                     && !(var3 instanceof DoorBlock);
         }
     }

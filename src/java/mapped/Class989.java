@@ -68,12 +68,12 @@ public class Class989 implements IInventory {
 
    @Override
    public boolean isUsableByPlayer(PlayerEntity var1) {
-      if (this.field5473.field5324.getTileEntity(this.field5473.field5325) == this.field5473) {
+      if (this.field5473.world.getTileEntity(this.field5473.pos) == this.field5473) {
          return !(
                var1.getDistanceNearest(
-                     (double)this.field5473.field5325.getX() + 0.5,
-                     (double)this.field5473.field5325.getY() + 0.5,
-                     (double)this.field5473.field5325.getZ() + 0.5
+                     (double)this.field5473.pos.getX() + 0.5,
+                     (double)this.field5473.pos.getY() + 0.5,
+                     (double)this.field5473.pos.getZ() + 0.5
                   )
                   > 64.0
             )

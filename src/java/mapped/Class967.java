@@ -18,12 +18,12 @@ public class Class967 extends TileEntity {
 
    @Override
    public SUpdateTileEntityPacket method3776() {
-      return new SUpdateTileEntityPacket(this.field5325, 11, this.method3777());
+      return new SUpdateTileEntityPacket(this.pos, 11, this.method3777());
    }
 
    public Class112 method4000() {
       if (this.field5423 == null) {
-         this.field5423 = ((Class3250)this.method3775().getBlock()).method11690();
+         this.field5423 = ((Class3250)this.getBlockState().getBlock()).method11690();
       }
 
       return this.field5423;

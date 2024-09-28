@@ -188,14 +188,14 @@ public class Class7529 extends Class7530 {
             this.field32327.remove("frame-" + var14.method20353());
          }
 
-         Class6674 var8 = new Class6674(var12, var10.method3386().method534() * 90, var10.getEntityId());
+         Class6674 var8 = new Class6674(var12, var10.getHorizontalFacing().method534() * 90, var10.getEntityId());
          this.method24596(
             MapDecorationType.field14517,
             var1.world,
             "frame-" + var10.getEntityId(),
             (double)var12.getX(),
             (double)var12.getZ(),
-            (double)(var10.method3386().method534() * 90),
+            (double)(var10.getHorizontalFacing().method534() * 90),
             (ITextComponent)null
          );
          this.field32328.put(var8.method20354(), var8);

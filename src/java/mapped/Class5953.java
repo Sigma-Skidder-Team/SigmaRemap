@@ -64,25 +64,25 @@ public class Class5953<T extends TileEntity & Class942> extends Class5942<T> {
    public void method18462(T var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
       World var9 = var1.method3734();
       boolean var10 = var9 != null;
-      BlockState var11 = !var10 ? Blocks.CHEST.method11579().with(Class3348.field18865, Direction.SOUTH) : var1.method3775();
-      ChestType var12 = !var11.method23462(Class3348.field18866) ? ChestType.field379 : var11.<ChestType>get(Class3348.field18866);
+      BlockState var11 = !var10 ? Blocks.CHEST.method11579().with(ChestBlock.field18865, Direction.SOUTH) : var1.getBlockState();
+      ChestType var12 = !var11.method23462(ChestBlock.TYPE) ? ChestType.field379 : var11.<ChestType>get(ChestBlock.TYPE);
       Block var13 = var11.getBlock();
       if (var13 instanceof Class3346) {
          Class3346 var14 = (Class3346)var13;
          boolean var15 = var12 != ChestType.field379;
          var3.push();
-         float var16 = var11.<Direction>get(Class3348.field18865).getHorizontalAngle();
+         float var16 = var11.<Direction>get(ChestBlock.field18865).getHorizontalAngle();
          var3.translate(0.5, 0.5, 0.5);
          var3.rotate(Vector3f.YP.rotationDegrees(-var16));
          var3.translate(-0.5, -0.5, -0.5);
-         Class7995<? extends Class941> var17;
+         Class7995<? extends ChestTileEntity> var17;
          if (!var10) {
             var17 = Class6139::method19041;
          } else {
             var17 = var14.method11904(var11, var9, var1.getPos(), true);
          }
 
-         float var18 = var17.method27292(Class3348.method11912((Class942)var1)).get(var2);
+         float var18 = var17.method27292(ChestBlock.method11912((Class942)var1)).get(var2);
          var18 = 1.0F - var18;
          var18 = 1.0F - var18 * var18 * var18;
          int var19 = var17.method27292(new Class6138<>()).applyAsInt(var5);
@@ -90,7 +90,7 @@ public class Class5953<T extends TileEntity & Class942> extends Class5942<T> {
          IVertexBuilder var21 = var20.method26200(var4, RenderType::getEntityCutout);
          if (!var15) {
             this.method18486(var3, var21, this.field25955, this.field25957, this.field25956, var18, var19, var6);
-         } else if (var12 != ChestType.field380) {
+         } else if (var12 != ChestType.LEFT) {
             this.method18486(var3, var21, this.field25958, this.field25960, this.field25959, var18, var19, var6);
          } else {
             this.method18486(var3, var21, this.field25961, this.field25963, this.field25962, var18, var19, var6);

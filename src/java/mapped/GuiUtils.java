@@ -4,7 +4,7 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 
-public class Class7540 {
+public class GuiUtils {
    private static String[] field32352;
 
    public static int method24650(Widget var0) {
@@ -15,7 +15,7 @@ public class Class7540 {
       return Class1232.method5815(var0);
    }
 
-   public static void method24652(Matrix4f var0, Class7717[] var1, int var2) {
+   public static void fill(Matrix4f var0, GuiRect[] var1, int var2) {
       float var5 = (float)(var2 >> 24 & 0xFF) / 255.0F;
       float var6 = (float)(var2 >> 16 & 0xFF) / 255.0F;
       float var7 = (float)(var2 >> 8 & 0xFF) / 255.0F;
@@ -27,7 +27,7 @@ public class Class7540 {
       var9.begin(7, DefaultVertexFormats.POSITION_COLOR);
 
       for (int var10 = 0; var10 < var1.length; var10++) {
-         Class7717 var11 = var1[var10];
+         GuiRect var11 = var1[var10];
          if (var11 != null) {
             int var12 = var11.method25502();
             int var13 = var11.method25503();

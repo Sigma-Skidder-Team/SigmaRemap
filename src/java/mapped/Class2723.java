@@ -53,7 +53,7 @@ public class Class2723<T extends Class1028> extends Class2595 {
             var6 = var8.method11351(90.0F).scale(0.4).add(var6);
             Vector3d var9 = var6.method11336(var7).method11333().scale(10.0).add(var7);
             BlockPos var10 = new BlockPos(var9);
-            var10 = this.field17212.world.method7006(Heightmap.Type.field300, var10);
+            var10 = this.field17212.world.method7006(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, var10);
             if (var4.method21654((double)var10.getX(), (double)var10.getY(), (double)var10.getZ(), !var3 ? this.field17213 : this.field17214)
                )
              {
@@ -80,7 +80,7 @@ public class Class2723<T extends Class1028> extends Class2595 {
       Random var3 = this.field17212.getRNG();
       BlockPos var4 = this.field17212
          .world
-         .method7006(Heightmap.Type.field300, this.field17212.getPosition().method8336(-8 + var3.nextInt(16), 0, -8 + var3.nextInt(16)));
+         .method7006(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, this.field17212.getPosition().method8336(-8 + var3.nextInt(16), 0, -8 + var3.nextInt(16)));
       return this.field17212.method4230().method21654((double)var4.getX(), (double)var4.getY(), (double)var4.getZ(), this.field17213);
    }
 }

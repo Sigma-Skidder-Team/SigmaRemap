@@ -466,7 +466,7 @@ public class Class1097 extends Class1018 {
          );
       this.playSound(SoundEvents.field26870, 1.0F, 1.0F);
 
-      for (Class1097 var5 : this.world.<Class1097>method7182(Class1097.class, this.getBoundingBox().method19664(10.0))) {
+      for (Class1097 var5 : this.world.<Class1097>getEntitiesWithinAABB(Class1097.class, this.getBoundingBox().method19664(10.0))) {
          if (!var5.isChild() && var5.onGround && !var5.isInWater() && var5.method5230()) {
             var5.jump();
          }

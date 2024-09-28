@@ -50,7 +50,7 @@ public class Class3634 {
       BlockPos.Mutable var14 = var1.method8354();
 
       for (BlockPos.Mutable var16 : BlockPos.method8365(var1, 16, Direction.EAST, Direction.SOUTH)) {
-         int var17 = Math.min(var13, this.field19668.method6736(Heightmap.Type.field299, var16.getX(), var16.getZ()));
+         int var17 = Math.min(var13, this.field19668.method6736(Heightmap.Type.MOTION_BLOCKING, var16.getX(), var16.getZ()));
          boolean var18 = true;
          if (var12.contains(var16) && var12.contains(var16.method8380(var5, 1))) {
             var16.method8380(var5.getOpposite(), 1);

@@ -20,7 +20,7 @@ public class Class2720 extends NearestAttackableTargetGoal<PlayerEntity> {
          return false;
       } else {
          if (super.method10803()) {
-            for (Class1096 var4 : this.field17206.world.<Class1096>method7182(Class1096.class, this.field17206.getBoundingBox().method19663(8.0, 4.0, 8.0))) {
+            for (Class1096 var4 : this.field17206.world.<Class1096>getEntitiesWithinAABB(Class1096.class, this.field17206.getBoundingBox().method19663(8.0, 4.0, 8.0))) {
                if (var4.isChild()) {
                   return true;
                }

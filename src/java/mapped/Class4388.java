@@ -426,7 +426,7 @@ public class Class4388 {
    }
 
    public static void method13832(PlayerEntity var0, boolean var1) {
-      List<Class1034> var4 = var0.world.method7182(Class1034.class, var0.getBoundingBox().method19664(16.0));
+      List<Class1034> var4 = var0.world.getEntitiesWithinAABB(Class1034.class, var0.getBoundingBox().method19664(16.0));
       var4.stream().filter(Class4388::method13865).filter(var2 -> !var1 || Class6983.method21583(var2, var0)).forEach(var1x -> {
          if (!var1x.world.getGameRules().getBoolean(Class5462.field24255)) {
             method13849(var1x, var0);

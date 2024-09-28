@@ -68,7 +68,7 @@ public class Class8066 {
       this.field34620 = Config.method26799();
       this.field34621 = !Reflector.field42761.method20245();
       this.field34622 = false;
-      this.field34623 = Config.method26977();
+      this.field34623 = Config.isRenderRegions();
       this.field34629 = new Class8066[6];
       this.field34630 = false;
       this.field34632 = new Class8066[Direction.VALUES.length];

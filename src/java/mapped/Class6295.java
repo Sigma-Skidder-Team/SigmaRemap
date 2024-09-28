@@ -9,6 +9,6 @@ public class Class6295<DC extends Class4716> extends Class6292<DC> {
 
    @Override
    public Heightmap.Type method19255(DC var1) {
-      return Heightmap.Type.field299;
+      return Heightmap.Type.MOTION_BLOCKING;
    }
 }

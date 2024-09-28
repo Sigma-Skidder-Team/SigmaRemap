@@ -53,7 +53,7 @@ public class Class831 extends Screen {
    @Override
    public void tick() {
       this.field4612++;
-      if (!this.field4611.method3786().method13796(this.field4611.method3775().getBlock())) {
+      if (!this.field4611.method3786().method13796(this.field4611.getBlockState().getBlock())) {
          this.method2541();
       }
    }
@@ -101,7 +101,7 @@ public class Class831 extends Screen {
       float var7 = 93.75F;
       var1.method35292(93.75F, -93.75F, 93.75F);
       var1.translate(0.0, -1.3125, 0.0);
-      BlockState var8 = this.field4611.method3775();
+      BlockState var8 = this.field4611.getBlockState();
       boolean var9 = var8.getBlock() instanceof Class3374;
       if (!var9) {
          var1.translate(0.0, -0.3125, 0.0);

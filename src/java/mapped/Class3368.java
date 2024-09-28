@@ -166,7 +166,7 @@ public class Class3368 extends Class3241 {
 
          if (var7.contains("Items", 9)) {
             NonNullList<ItemStack> var8 = NonNullList.method68(27, ItemStack.EMPTY);
-            Class7920.method26567(var7, var8);
+            ItemStackHelper.loadAllItems(var7, var8);
             int var9 = 0;
             int var10 = 0;
 

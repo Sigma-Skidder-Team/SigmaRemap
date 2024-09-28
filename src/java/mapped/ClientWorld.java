@@ -258,7 +258,7 @@ public class ClientWorld extends World {
       return true;
    }
 
-   public int method6844() {
+   public int getCountLoadedEntities() {
       return this.entitiesById.size();
    }
 
@@ -480,7 +480,7 @@ public class ClientWorld extends World {
    }
 
    @Override
-   public void method6743(PlayerEntity var1, double var2, double var4, double var6, SoundEvent var8, Class2266 var9, float var10, float var11) {
+   public void playSound(PlayerEntity var1, double var2, double var4, double var6, SoundEvent var8, Class2266 var9, float var10, float var11) {
       if (Reflector.field42848.exists()) {
          Object var14 = Reflector.field42848.call(var1, var8, var9, var10, var11);
          if (Reflector.method35064(var14, Reflector.field42809) || Reflector.call(var14, Reflector.field42980) == null) {
@@ -868,7 +868,7 @@ public class ClientWorld extends World {
    public BlockPos method6880() {
       BlockPos var3 = new BlockPos(this.worldInfo.method20029(), this.worldInfo.method20030(), this.worldInfo.method20031());
       if (!this.getWorldBorder().contains(var3)) {
-         var3 = this.method7006(Heightmap.Type.field299, new BlockPos(this.getWorldBorder().getCenterX(), 0.0, this.getWorldBorder().getCenterZ()));
+         var3 = this.method7006(Heightmap.Type.MOTION_BLOCKING, new BlockPos(this.getWorldBorder().getCenterX(), 0.0, this.getWorldBorder().getCenterZ()));
       }
 
       return var3;

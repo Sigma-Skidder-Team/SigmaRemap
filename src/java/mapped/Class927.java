@@ -50,7 +50,7 @@ public class Class927 implements IInventory, Class925 {
 
    @Override
    public ItemStack decrStackSize(int var1, int var2) {
-      ItemStack var5 = Class7920.method26563(this.field5262, var1, var2);
+      ItemStack var5 = ItemStackHelper.method26563(this.field5262, var1, var2);
       if (!var5.isEmpty()) {
          this.markDirty();
       }

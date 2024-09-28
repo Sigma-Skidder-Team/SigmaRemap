@@ -181,7 +181,7 @@ public class GameSettings {
    private PointOfView field44663 = PointOfView.field12822;
    public boolean showDebugInfo;
    public boolean showDebugProfilerChart;
-   public boolean field44666;
+   public boolean showLagometer;
    public String field44667 = "";
    public boolean smoothCamera;
    public double fov = 70.0;

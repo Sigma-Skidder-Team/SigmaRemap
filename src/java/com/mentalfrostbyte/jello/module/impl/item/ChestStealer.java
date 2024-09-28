@@ -33,10 +33,10 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class ChestStealer extends Module {
     public boolean field23621;
-    private final ConcurrentHashMap<Class941, Boolean> field23622;
+    private final ConcurrentHashMap<ChestTileEntity, Boolean> field23622;
     private final TimerUtil field23623 = new TimerUtil();
     private final TimerUtil field23624 = new TimerUtil();
-    private Class941 field23625;
+    private ChestTileEntity field23625;
 
     public ChestStealer() {
         super(ModuleCategory.ITEM, "ChestStealer", "Steals items from chest");
@@ -46,7 +46,7 @@ public class ChestStealer extends Module {
         this.registerSetting(new BooleanSetting("Close", "Automatically closes the chest when done", true));
         this.registerSetting(new NumberSetting<Float>("Delay", "Click delay", 0.2F, Float.class, 0.0F, 1.0F, 0.01F));
         this.registerSetting(new NumberSetting<Float>("First Item", "Tick delay before grabbing first item", 0.2F, Float.class, 0.0F, 1.0F, 0.01F));
-        this.field23622 = new ConcurrentHashMap<Class941, Boolean>();
+        this.field23622 = new ConcurrentHashMap<ChestTileEntity, Boolean>();
     }
 
     @Override
@@ -87,7 +87,7 @@ public class ChestStealer extends Module {
                 boolean var14 = false;
 
                 for (Entry var6 : this.field23622.entrySet()) {
-                    Class941 var7 = (Class941) var6.getKey();
+                    ChestTileEntity var7 = (ChestTileEntity) var6.getKey();
                     boolean var8 = (Boolean) var6.getValue();
                     float var9 = (float) var7.getPos().getX();
                     float var10 = (float) var7.getPos().getY() + 0.1F;
@@ -195,7 +195,7 @@ public class ChestStealer extends Module {
                                     mc.player.method2772();
                                 }
 
-                                for (Class941 var10 : this.field23622.keySet()) {
+                                for (ChestTileEntity var10 : this.field23622.keySet()) {
                                     if (var10 == this.field23625) {
                                         this.field23625 = null;
                                         this.field23622.put(var10, true);
@@ -275,7 +275,7 @@ public class ChestStealer extends Module {
         }
 
         for (BlockPos var11 : var5) {
-            if (BlockUtil.getBlockFromPosition(var11) instanceof Class3348 || BlockUtil.getBlockFromPosition(var11) instanceof Class3467) {
+            if (BlockUtil.getBlockFromPosition(var11) instanceof ChestBlock || BlockUtil.getBlockFromPosition(var11) instanceof Class3467) {
                 return true;
             }
         }
@@ -348,15 +348,15 @@ public class ChestStealer extends Module {
 
     private void method16370() {
         List<TileEntity> var3 = mc.world.loadedTileEntityList;
-        var3.removeIf(var0 -> !(var0 instanceof Class941));
+        var3.removeIf(var0 -> !(var0 instanceof ChestTileEntity));
 
         for (TileEntity var5 : var3) {
-            if (!this.field23622.containsKey((Class941) var5)) {
-                this.field23622.put((Class941) var5, false);
+            if (!this.field23622.containsKey((ChestTileEntity) var5)) {
+                this.field23622.put((ChestTileEntity) var5, false);
             }
         }
 
-        for (Class941 var7 : this.field23622.keySet()) {
+        for (ChestTileEntity var7 : this.field23622.keySet()) {
             if (!var3.contains(var7)) {
                 this.field23622.remove(var7);
             }

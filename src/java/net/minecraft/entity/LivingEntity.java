@@ -1946,7 +1946,7 @@ public abstract class LivingEntity extends Entity {
             Vector3d var13 = this.method3109(var1, var9);
             double var29 = var13.y;
             if (!this.isPotionActive(Effects.LEVITATION)) {
-               if (this.world.isRemote && !this.world.method7017(var8)) {
+               if (this.world.isRemote && !this.world.isBlockLoaded(var8)) {
                   if (!(this.getPosY() > 0.0)) {
                      var29 = 0.0;
                   } else {
@@ -2889,7 +2889,7 @@ public abstract class LivingEntity extends Entity {
       boolean var18 = false;
       BlockPos var19 = new BlockPos(var1, var3, var5);
       World var20 = this.world;
-      if (var20.method7017(var19)) {
+      if (var20.isBlockLoaded(var19)) {
          boolean var21 = false;
 
          while (!var21 && var19.getY() > 0) {
@@ -3010,7 +3010,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    public void wakeUp() {
-      this.getBedPosition().filter(this.world::method7017).ifPresent(var1 -> {
+      this.getBedPosition().filter(this.world::isBlockLoaded).ifPresent(var1 -> {
          BlockState var4 = this.world.getBlockState(var1);
          if (var4.getBlock() instanceof Class3250) {
             this.world.setBlockState(var1, var4.with(Class3250.field18714, Boolean.valueOf(false)), 3);
@@ -3057,7 +3057,7 @@ public abstract class LivingEntity extends Entity {
 
    public ItemStack onFoodEaten(World var1, ItemStack var2) {
       if (var2.method32184()) {
-         var1.method6743(
+         var1.playSound(
             (PlayerEntity)null,
             this.getPosX(),
             this.getPosY(),

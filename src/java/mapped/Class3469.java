@@ -63,7 +63,7 @@ public class Class3469 extends Class3468 {
             var6 = var1.method7181(null, var5);
             break;
          case 2:
-            var6 = var1.method7182(LivingEntity.class, var5);
+            var6 = var1.getEntitiesWithinAABB(LivingEntity.class, var5);
             break;
          default:
             return 0;

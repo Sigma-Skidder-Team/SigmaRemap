@@ -227,7 +227,7 @@ public abstract class Class4178 {
       int var9 = this.method12921(var3 + 1);
       int var10 = this.method12922(var2, var4);
       BlockPos var11 = new BlockPos(var8, var9, var10);
-      return var5.method38396(var11) ? var9 < var1.method6736(Heightmap.Type.field297, var8, var10) : false;
+      return var5.method38396(var11) ? var9 < var1.method6736(Heightmap.Type.OCEAN_FLOOR_WG, var8, var10) : false;
    }
 
    public void method12926(ISeedReader var1, Class9764 var2, int var3, int var4, int var5, int var6, int var7, int var8) {
@@ -411,8 +411,8 @@ public abstract class Class4178 {
 
          var1.setBlockState(var4, var6, 2);
          TileEntity var9 = var1.getTileEntity(var4);
-         if (var9 instanceof Class941) {
-            ((Class941)var9).method3744(var5, var3.nextLong());
+         if (var9 instanceof ChestTileEntity) {
+            ((ChestTileEntity)var9).method3744(var5, var3.nextLong());
          }
 
          return true;

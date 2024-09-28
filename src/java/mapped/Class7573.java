@@ -15,17 +15,17 @@ public class Class7573 extends Class7574 {
 
    @Override
    public void method24785(int var1) {
-      this.field32514.field5324.method6787(this.field32514.field5325, Blocks.field36532, var1, 0);
+      this.field32514.world.addBlockEvent(this.field32514.pos, Blocks.field36532, var1, 0);
    }
 
    @Override
    public World method24786() {
-      return this.field32514.field5324;
+      return this.field32514.world;
    }
 
    @Override
    public BlockPos method24787() {
-      return this.field32514.field5325;
+      return this.field32514.pos;
    }
 
    @Override
@@ -33,7 +33,7 @@ public class Class7573 extends Class7574 {
       super.method24788(var1);
       if (this.method24786() != null) {
          BlockState var4 = this.method24786().getBlockState(this.method24787());
-         this.method24786().notifyBlockUpdate(this.field32514.field5325, var4, var4, 4);
+         this.method24786().notifyBlockUpdate(this.field32514.pos, var4, var4, 4);
       }
    }
 }

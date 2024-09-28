@@ -70,9 +70,9 @@ public class Class8079 implements IAmbientSoundHandler {
                   this.field34720.getPosYEye() + (double)this.field34723.nextInt(var5) - (double)var1.method27075(),
                   this.field34720.getPosZ() + (double)this.field34723.nextInt(var5) - (double)var1.method27075()
                );
-               int var7 = var4.method7020(Class1977.field12881, var6);
+               int var7 = var4.getLightFor(LightType.SKY, var6);
                if (var7 <= 0) {
-                  this.field34727 = this.field34727 - (float)(var4.method7020(Class1977.field12882, var6) - 1) / (float)var1.method27074();
+                  this.field34727 = this.field34727 - (float)(var4.getLightFor(LightType.BLOCK, var6) - 1) / (float)var1.method27074();
                } else {
                   this.field34727 = this.field34727 - (float)var7 / (float)var4.getMaxLightLevel() * 0.001F;
                }

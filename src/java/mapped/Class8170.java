@@ -243,7 +243,7 @@ public final class Class8170 {
       ChunkPos var4 = var1.getPos();
       int var5 = var4.getX() + var0.rand.nextInt(16);
       int var6 = var4.getZ() + var0.rand.nextInt(16);
-      int var7 = var1.getTopBlockY(Heightmap.Type.field296, var5, var6) + 1;
+      int var7 = var1.getTopBlockY(Heightmap.Type.WORLD_SURFACE, var5, var6) + 1;
       int var8 = var0.rand.nextInt(var7 + 1);
       return new BlockPos(var5, var8, var6);
    }

@@ -73,8 +73,8 @@ public class Class838 extends Screen {
       for (int var5 = 0; var5 < var2.size(); var5++) {
          Widget var6 = (Widget)var2.get(var5);
          if (var6.field6483) {
-            int var7 = Class7540.method24650(var6);
-            int var8 = Class7540.method24651(var6);
+            int var7 = GuiUtils.method24650(var6);
+            int var8 = GuiUtils.method24651(var6);
             if (var0 >= var6.field6477 && var1 >= var6.field6478 && var0 < var6.field6477 + var7 && var1 < var6.field6478 + var8) {
                return var6;
             }

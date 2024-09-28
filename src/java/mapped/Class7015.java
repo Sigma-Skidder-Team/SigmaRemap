@@ -110,7 +110,7 @@ public class Class7015 implements Class7016 {
       for (int var5 = 0; var5 < 10; var5++) {
          int var6 = var2.getX() + var1.rand.nextInt(16) - 8;
          int var7 = var2.getZ() + var1.rand.nextInt(16) - 8;
-         int var8 = var1.method6736(Heightmap.Type.field296, var6, var7);
+         int var8 = var1.method6736(Heightmap.Type.WORLD_SURFACE, var6, var7);
          BlockPos var9 = new BlockPos(var6, var8, var7);
          if (var1.method6952(var9) && Class1009.method4341(EntityType.field41107, var1, Class2202.field14398, var9, var1.rand)) {
             return Vector3d.method11330(var9);

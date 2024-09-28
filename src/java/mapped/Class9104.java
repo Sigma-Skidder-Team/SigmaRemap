@@ -651,7 +651,7 @@ public class Class9104 {
                   new Class7618(1, 1, 0, 1, 2, OptionalInt.empty())
                )
                .method29691(Integer.MAX_VALUE)
-               .method29693(Heightmap.Type.field299)
+               .method29693(Heightmap.Type.MOTION_BLOCKING)
                .method29692()
                .method29694()
          )
@@ -744,7 +744,7 @@ public class Class9104 {
                   new Class7616(0, 0, 0, OptionalInt.of(4))
                )
                .method29692()
-               .method29693(Heightmap.Type.field299)
+               .method29693(Heightmap.Type.MOTION_BLOCKING)
                .method29694()
          )
    );
@@ -853,7 +853,7 @@ public class Class9104 {
                   new Class6897(1, 0, 0),
                   new Class7616(0, 0, 0)
                )
-               .method29693(Heightmap.Type.field300)
+               .method29693(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES)
                .method29694()
          )
    );

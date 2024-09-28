@@ -512,7 +512,7 @@ public class BufferBuilder extends Class5424 implements Class5426 {
 
    public void method17075() {
       if (this.field24129 != null) {
-         int var3 = Config.method26969().method1109();
+         int var3 = Config.getTextureMap().method1109();
          if (this.field24128.length <= var3) {
             this.field24128 = new boolean[var3 + 1];
          }

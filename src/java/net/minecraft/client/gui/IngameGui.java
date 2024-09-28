@@ -55,7 +55,7 @@ public class IngameGui extends AbstractGui {
     public float field6723 = 1.0F;
     private int field6724;
     private ItemStack field6725 = ItemStack.EMPTY;
-    public final Class1262 field6726;
+    public final DebugOverlayGui field6726;
     private final Class1269 field6727;
     private final Class1195 field6728;
     private final Class1265 field6729;
@@ -77,7 +77,7 @@ public class IngameGui extends AbstractGui {
     public IngameGui(Minecraft var1) {
         this.field6716 = var1;
         this.field6717 = var1.getItemRenderer();
-        this.field6726 = new Class1262(var1);
+        this.field6726 = new DebugOverlayGui(var1);
         this.field6728 = new Class1195(var1);
         this.field6718 = new Class1266(var1);
         this.field6729 = new Class1265(var1, this);
@@ -193,7 +193,7 @@ public class IngameGui extends AbstractGui {
 
         this.method5965(var1);
         if (this.field6716.gameSettings.showDebugInfo) {
-            this.field6726.method5878(var1);
+            this.field6726.render(var1);
         }
 
         if (!this.field6716.gameSettings.hideGUI) {
@@ -1051,7 +1051,7 @@ public class IngameGui extends AbstractGui {
 
     public void tick() {
         if (this.field6716.world == null) {
-            Class8389.method29394();
+            TextureAnimations.method29394();
         }
 
         if (this.field6721 > 0) {
@@ -1184,6 +1184,6 @@ public class IngameGui extends AbstractGui {
     }
 
     public void reset() {
-        this.field6726.method5877();
+        this.field6726.resetChunk();
     }
 }

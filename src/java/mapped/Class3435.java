@@ -99,7 +99,7 @@ public class Class3435 extends Class3433 {
       boolean var7 = this.method12103(var1, var2, var6);
       if (var7 && !var3.<Boolean>get(field19202)) {
          if (new Class9196(var1, var2, var6, true).method34464()) {
-            var1.method6787(var2, this, 0, var6.getIndex());
+            var1.addBlockEvent(var2, this, 0, var6.getIndex());
          }
       } else if (!var7 && var3.<Boolean>get(field19202)) {
          BlockPos var8 = var2.method8350(var6, 2);
@@ -115,7 +115,7 @@ public class Class3435 extends Class3433 {
             }
          }
 
-         var1.method6787(var2, this, var10, var6.getIndex());
+         var1.addBlockEvent(var2, this, var10, var6.getIndex());
       }
    }
 

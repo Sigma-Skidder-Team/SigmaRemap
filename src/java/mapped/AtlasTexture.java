@@ -714,11 +714,11 @@ public class AtlasTexture extends Class290 implements Class288 {
       }
    }
 
-   public int method1117() {
+   public int getCountAnimations() {
       return this.field1104.size();
    }
 
-   public int method1118() {
+   public int getCountAnimationsActive() {
       return this.field1120;
    }
 

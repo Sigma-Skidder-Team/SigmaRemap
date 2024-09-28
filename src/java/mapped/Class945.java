@@ -25,9 +25,9 @@ public class Class945 extends TileEntity implements IClearable, ITickableTileEnt
    }
 
    @Override
-   public void method3647() {
-      boolean var3 = this.method3775().<Boolean>get(Class3244.field18698);
-      boolean var4 = this.field5324.isRemote;
+   public void tick() {
+      boolean var3 = this.getBlockState().<Boolean>get(Class3244.field18698);
+      boolean var4 = this.world.isRemote;
       if (!var4) {
          if (!var3) {
             for (int var5 = 0; var5 < this.field5329.size(); var5++) {
@@ -50,13 +50,13 @@ public class Class945 extends TileEntity implements IClearable, ITickableTileEnt
             this.field5330[var3]++;
             if (this.field5330[var3] >= this.field5331[var3]) {
                Class927 var6 = new Class927(var4);
-               ItemStack var7 = this.field5324
+               ItemStack var7 = this.world
                   .method6816()
-                  .<IInventory, Class4850>method1030(Class7207.field30939, var6, this.field5324)
+                  .<IInventory, Class4850>method1030(Class7207.field30939, var6, this.world)
                   .<ItemStack>map(var1 -> var1.method14962(var6))
                   .orElse(var4);
                BlockPos var8 = this.getPos();
-               Class7236.method22725(this.field5324, (double)var8.getX(), (double)var8.getY(), (double)var8.getZ(), var7);
+               Class7236.method22725(this.world, (double)var8.getX(), (double)var8.getY(), (double)var8.getZ(), var7);
                this.field5329.set(var3, ItemStack.EMPTY);
                this.method3799();
             }
@@ -71,11 +71,11 @@ public class Class945 extends TileEntity implements IClearable, ITickableTileEnt
          Random var5 = var3.rand;
          if (var5.nextFloat() < 0.11F) {
             for (int var6 = 0; var6 < var5.nextInt(2) + 2; var6++) {
-               Class3244.method11653(var3, var4, this.method3775().<Boolean>get(Class3244.field18699), false);
+               Class3244.method11653(var3, var4, this.getBlockState().<Boolean>get(Class3244.field18699), false);
             }
          }
 
-         int var17 = this.method3775().<Direction>get(Class3244.field18701).method534();
+         int var17 = this.getBlockState().<Direction>get(Class3244.field18701).method534();
 
          for (int var7 = 0; var7 < this.field5329.size(); var7++) {
             if (!this.field5329.get(var7).isEmpty() && var5.nextFloat() < 0.2F) {
@@ -104,10 +104,10 @@ public class Class945 extends TileEntity implements IClearable, ITickableTileEnt
    }
 
    @Override
-   public void method3645(BlockState var1, CompoundNBT var2) {
-      super.method3645(var1, var2);
+   public void read(BlockState var1, CompoundNBT var2) {
+      super.read(var1, var2);
       this.field5329.clear();
-      Class7920.method26567(var2, this.field5329);
+      ItemStackHelper.loadAllItems(var2, this.field5329);
       if (var2.contains("CookingTimes", 11)) {
          int[] var5 = var2.getIntArray("CookingTimes");
          System.arraycopy(var5, 0, this.field5330, 0, Math.min(this.field5331.length, var5.length));
@@ -129,14 +129,14 @@ public class Class945 extends TileEntity implements IClearable, ITickableTileEnt
 
    private CompoundNBT method3796(CompoundNBT var1) {
       super.write(var1);
-      Class7920.method26566(var1, this.field5329, true);
+      ItemStackHelper.method26566(var1, this.field5329, true);
       return var1;
    }
 
    @Nullable
    @Override
    public SUpdateTileEntityPacket method3776() {
-      return new SUpdateTileEntityPacket(this.field5325, 13, this.method3777());
+      return new SUpdateTileEntityPacket(this.pos, 13, this.method3777());
    }
 
    @Override
@@ -146,7 +146,7 @@ public class Class945 extends TileEntity implements IClearable, ITickableTileEnt
 
    public Optional<Class4850> method3797(ItemStack var1) {
       return !this.field5329.stream().noneMatch(ItemStack::isEmpty)
-         ? this.field5324.method6816().<IInventory, Class4850>method1030(Class7207.field30939, new Class927(var1), this.field5324)
+         ? this.world.method6816().<IInventory, Class4850>method1030(Class7207.field30939, new Class927(var1), this.world)
          : Optional.<Class4850>empty();
    }
 
@@ -167,7 +167,7 @@ public class Class945 extends TileEntity implements IClearable, ITickableTileEnt
 
    private void method3799() {
       this.markDirty();
-      this.method3734().notifyBlockUpdate(this.getPos(), this.method3775(), this.method3775(), 3);
+      this.method3734().notifyBlockUpdate(this.getPos(), this.getBlockState(), this.getBlockState(), 3);
    }
 
    @Override
@@ -176,9 +176,9 @@ public class Class945 extends TileEntity implements IClearable, ITickableTileEnt
    }
 
    public void method3800() {
-      if (this.field5324 != null) {
-         if (!this.field5324.isRemote) {
-            Class7236.method22724(this.field5324, this.getPos(), this.method3795());
+      if (this.world != null) {
+         if (!this.world.isRemote) {
+            Class7236.method22724(this.world, this.getPos(), this.method3795());
          }
 
          this.method3799();

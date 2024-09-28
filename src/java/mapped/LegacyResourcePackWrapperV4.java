@@ -22,14 +22,14 @@ import java.util.stream.Collectors;
 public class LegacyResourcePackWrapperV4 implements IResourcePack {
    private static final Map<String, Pair<ChestType, ResourceLocation>> field1180 = Util.<Map<String, Pair<ChestType, ResourceLocation>>>make(
       Maps.newHashMap(), var0 -> {
-         var0.put("textures/entity/chest/normal_left.png", new Pair(ChestType.field380, new ResourceLocation("textures/entity/chest/normal_double.png")));
-         var0.put("textures/entity/chest/normal_right.png", new Pair(ChestType.field381, new ResourceLocation("textures/entity/chest/normal_double.png")));
+         var0.put("textures/entity/chest/normal_left.png", new Pair(ChestType.LEFT, new ResourceLocation("textures/entity/chest/normal_double.png")));
+         var0.put("textures/entity/chest/normal_right.png", new Pair(ChestType.RIGHT, new ResourceLocation("textures/entity/chest/normal_double.png")));
          var0.put("textures/entity/chest/normal.png", new Pair(ChestType.field379, new ResourceLocation("textures/entity/chest/normal.png")));
-         var0.put("textures/entity/chest/trapped_left.png", new Pair(ChestType.field380, new ResourceLocation("textures/entity/chest/trapped_double.png")));
-         var0.put("textures/entity/chest/trapped_right.png", new Pair(ChestType.field381, new ResourceLocation("textures/entity/chest/trapped_double.png")));
+         var0.put("textures/entity/chest/trapped_left.png", new Pair(ChestType.LEFT, new ResourceLocation("textures/entity/chest/trapped_double.png")));
+         var0.put("textures/entity/chest/trapped_right.png", new Pair(ChestType.RIGHT, new ResourceLocation("textures/entity/chest/trapped_double.png")));
          var0.put("textures/entity/chest/trapped.png", new Pair(ChestType.field379, new ResourceLocation("textures/entity/chest/trapped.png")));
-         var0.put("textures/entity/chest/christmas_left.png", new Pair(ChestType.field380, new ResourceLocation("textures/entity/chest/christmas_double.png")));
-         var0.put("textures/entity/chest/christmas_right.png", new Pair(ChestType.field381, new ResourceLocation("textures/entity/chest/christmas_double.png")));
+         var0.put("textures/entity/chest/christmas_left.png", new Pair(ChestType.LEFT, new ResourceLocation("textures/entity/chest/christmas_double.png")));
+         var0.put("textures/entity/chest/christmas_right.png", new Pair(ChestType.RIGHT, new ResourceLocation("textures/entity/chest/christmas_double.png")));
          var0.put("textures/entity/chest/christmas.png", new Pair(ChestType.field379, new ResourceLocation("textures/entity/chest/christmas.png")));
          var0.put("textures/entity/chest/ender.png", new Pair(ChestType.field379, new ResourceLocation("textures/entity/chest/ender.png")));
       }
@@ -172,11 +172,11 @@ public class LegacyResourcePackWrapperV4 implements IResourcePack {
                      return method1237(var8);
                   }
 
-                  if (var7 == ChestType.field380) {
+                  if (var7 == ChestType.LEFT) {
                      return method1235(var8);
                   }
 
-                  if (var7 == ChestType.field381) {
+                  if (var7 == ChestType.RIGHT) {
                      return method1236(var8);
                   }
                }

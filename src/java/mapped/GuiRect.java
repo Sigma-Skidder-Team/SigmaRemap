@@ -1,13 +1,13 @@
 package mapped;
 
-public class Class7717 {
+public class GuiRect {
    private static String[] field33122;
    private int field33123;
    private int field33124;
    private int field33125;
    private int field33126;
 
-   public Class7717(int var1, int var2, int var3, int var4) {
+   public GuiRect(int var1, int var2, int var3, int var4) {
       this.field33123 = var1;
       this.field33124 = var2;
       this.field33125 = var3;

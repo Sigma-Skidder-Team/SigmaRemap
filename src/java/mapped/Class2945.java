@@ -18,7 +18,7 @@ public class Class2945 extends Class2898<Class4728> {
       boolean var8 = false;
       int var9 = var3.nextInt(8) - var3.nextInt(8);
       int var10 = var3.nextInt(8) - var3.nextInt(8);
-      int var11 = var1.method6736(Heightmap.Type.field298, var4.getX() + var9, var4.getZ() + var10);
+      int var11 = var1.method6736(Heightmap.Type.OCEAN_FLOOR, var4.getX() + var9, var4.getZ() + var10);
       BlockPos var12 = new BlockPos(var4.getX() + var9, var11, var4.getZ() + var10);
       if (var1.getBlockState(var12).isIn(Blocks.WATER)) {
          boolean var13 = var3.nextDouble() < (double)var5.field22399;

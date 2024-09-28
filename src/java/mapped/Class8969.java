@@ -224,7 +224,7 @@ public class Class8969 {
                               var20.field35532.method103("LootTableSeed", var5.nextLong());
                            }
 
-                           var39.method3645(var20.field35531, var20.field35532);
+                           var39.read(var20.field35531, var20.field35532);
                            var39.method3785(var4.method36436());
                            var39.method3784(var4.method36437());
                         }

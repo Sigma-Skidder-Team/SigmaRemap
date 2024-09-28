@@ -31,19 +31,19 @@ public class Class973 extends Class939 {
    @Override
    public CompoundNBT write(CompoundNBT var1) {
       super.write(var1);
-      if (!this.method3742(var1)) {
-         Class7920.method26565(var1, this.field5437);
+      if (!this.checkLootAndWrite(var1)) {
+         ItemStackHelper.saveAllItems(var1, this.field5437);
       }
 
       return var1;
    }
 
    @Override
-   public void method3645(BlockState var1, CompoundNBT var2) {
-      super.method3645(var1, var2);
+   public void read(BlockState var1, CompoundNBT var2) {
+      super.read(var1, var2);
       this.field5437 = NonNullList.<ItemStack>method68(this.getSizeInventory(), ItemStack.EMPTY);
-      if (!this.method3741(var2)) {
-         Class7920.method26567(var2, this.field5437);
+      if (!this.checkLootAndRead(var2)) {
+         ItemStackHelper.loadAllItems(var2, this.field5437);
       }
    }
 
@@ -53,22 +53,22 @@ public class Class973 extends Class939 {
    }
 
    @Override
-   public NonNullList<ItemStack> method3724() {
+   public NonNullList<ItemStack> getItems() {
       return this.field5437;
    }
 
    @Override
-   public void method3725(NonNullList<ItemStack> var1) {
+   public void setItems(NonNullList<ItemStack> var1) {
       this.field5437 = var1;
    }
 
    @Override
-   public ITextComponent method3686() {
+   public ITextComponent getDefaultName() {
       return new TranslationTextComponent("container.barrel");
    }
 
    @Override
-   public Container method3690(int var1, PlayerInventory var2) {
+   public Container createMenu(int var1, PlayerInventory var2) {
       return ChestContainer.method18162(var1, var2, this);
    }
 
@@ -80,7 +80,7 @@ public class Class973 extends Class939 {
          }
 
          this.field5438++;
-         BlockState var4 = this.method3775();
+         BlockState var4 = this.getBlockState();
          boolean var5 = var4.<Boolean>get(Class3242.field18694);
          if (!var5) {
             this.method4027(var4, SoundEvents.field26374);
@@ -92,16 +92,16 @@ public class Class973 extends Class939 {
    }
 
    private void method4024() {
-      this.field5324.method6860().method20726(this.getPos(), this.method3775().getBlock(), 5);
+      this.world.method6860().method20726(this.getPos(), this.getBlockState().getBlock(), 5);
    }
 
    public void method4025() {
-      int var3 = this.field5325.getX();
-      int var4 = this.field5325.getY();
-      int var5 = this.field5325.getZ();
-      this.field5438 = Class941.method3759(this.field5324, this, var3, var4, var5);
+      int var3 = this.pos.getX();
+      int var4 = this.pos.getY();
+      int var5 = this.pos.getZ();
+      this.field5438 = ChestTileEntity.calculatePlayersUsing(this.world, this, var3, var4, var5);
       if (this.field5438 <= 0) {
-         BlockState var6 = this.method3775();
+         BlockState var6 = this.getBlockState();
          if (!var6.isIn(Blocks.BARREL)) {
             this.method3765();
             return;
@@ -125,19 +125,19 @@ public class Class973 extends Class939 {
    }
 
    private void method4026(BlockState var1, boolean var2) {
-      this.field5324.setBlockState(this.getPos(), var1.with(Class3242.field18694, Boolean.valueOf(var2)), 3);
+      this.world.setBlockState(this.getPos(), var1.with(Class3242.field18694, Boolean.valueOf(var2)), 3);
    }
 
    private void method4027(BlockState var1, SoundEvent var2) {
       Vector3i var5 = var1.<Direction>get(Class3242.field18693).getDirectionVec();
-      double var6 = (double)this.field5325.getX() + 0.5 + (double)var5.getX() / 2.0;
-      double var8 = (double)this.field5325.getY() + 0.5 + (double)var5.getY() / 2.0;
-      double var10 = (double)this.field5325.getZ() + 0.5 + (double)var5.getZ() / 2.0;
-      this.field5324.method6743((PlayerEntity)null, var6, var8, var10, var2, Class2266.field14732, 0.5F, this.field5324.rand.nextFloat() * 0.1F + 0.9F);
+      double var6 = (double)this.pos.getX() + 0.5 + (double)var5.getX() / 2.0;
+      double var8 = (double)this.pos.getY() + 0.5 + (double)var5.getY() / 2.0;
+      double var10 = (double)this.pos.getZ() + 0.5 + (double)var5.getZ() / 2.0;
+      this.world.playSound((PlayerEntity)null, var6, var8, var10, var2, Class2266.field14732, 0.5F, this.world.rand.nextFloat() * 0.1F + 0.9F);
    }
 
    @Override
-   public ITextComponent method2954() {
+   public ITextComponent getDefaultName2() {
       return new TranslationTextComponent("container.barrel");
    }
 }

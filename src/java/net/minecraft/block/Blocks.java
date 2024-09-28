@@ -485,7 +485,7 @@ public class Blocks {
    );
    public static final Block field36533 = register("oak_stairs", new Class3421(field36400.method11579(), AbstractBlock.Properties.method26613(field36400)));
    public static final Block CHEST = register(
-      "chest", new Class3348(AbstractBlock.Properties.method26609(Material.field38956).method26623(2.5F).method26619(SoundType.field36200), () -> TileEntityType.field21422)
+      "chest", new ChestBlock(AbstractBlock.Properties.method26609(Material.field38956).method26623(2.5F).method26619(SoundType.field36200), () -> TileEntityType.CHEST)
    );
    public static final Block REDSTONE_WIRE = register(
       "redstone_wire", new Class3222(AbstractBlock.Properties.method26609(Material.field38946).method26614().method26622())

@@ -6,7 +6,7 @@ import net.minecraft.util.math.BlockPos;
 public class Class209 extends Class208<Class7585> {
 
    public Class209(Class1704 var1) {
-      super(Class1977.field12882, var1, new Class7585(new Long2ObjectOpenHashMap<>()));
+      super(LightType.BLOCK, var1, new Class7585(new Long2ObjectOpenHashMap<>()));
    }
 
    @Override

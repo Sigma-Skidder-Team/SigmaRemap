@@ -29,34 +29,34 @@ import java.util.function.BiPredicate;
 import java.util.function.Supplier;
 import javax.annotation.Nullable;
 
-public class Class3348 extends Class3346<Class941> implements Class3207 {
+public class ChestBlock extends Class3346<ChestTileEntity> implements Class3207 {
    private static String[] field18864;
    public static final DirectionProperty field18865 = HorizontalBlock.HORIZONTAL_FACING;
-   public static final EnumProperty<ChestType> field18866 = BlockStateProperties.field39765;
+   public static final EnumProperty<ChestType> TYPE = BlockStateProperties.field39765;
    public static final BooleanProperty field18867 = BlockStateProperties.field39710;
    public static final VoxelShape field18868 = Block.makeCuboidShape(1.0, 0.0, 0.0, 15.0, 14.0, 15.0);
    public static final VoxelShape field18869 = Block.makeCuboidShape(1.0, 0.0, 1.0, 15.0, 14.0, 16.0);
    public static final VoxelShape field18870 = Block.makeCuboidShape(0.0, 0.0, 1.0, 15.0, 14.0, 15.0);
    public static final VoxelShape field18871 = Block.makeCuboidShape(1.0, 0.0, 1.0, 16.0, 14.0, 15.0);
    public static final VoxelShape field18872 = Block.makeCuboidShape(1.0, 0.0, 1.0, 15.0, 14.0, 15.0);
-   private static final Class6139<Class941, Optional<IInventory>> field18873 = new Class6140();
-   private static final Class6139<Class941, Optional<Class949>> field18874 = new Class6142();
+   private static final Class6139<ChestTileEntity, Optional<IInventory>> field18873 = new Class6140();
+   private static final Class6139<ChestTileEntity, Optional<Class949>> field18874 = new Class6142();
 
-   public Class3348(Properties var1, Supplier<TileEntityType<? extends Class941>> var2) {
+   public ChestBlock(Properties var1, Supplier<TileEntityType<? extends ChestTileEntity>> var2) {
       super(var1, var2);
       this.method11578(
          this.field18612
             .method35393()
             .with(field18865, Direction.NORTH)
-            .with(field18866, ChestType.field379)
+            .with(TYPE, ChestType.field379)
             .with(field18867, Boolean.valueOf(false))
       );
    }
 
    public static Class1895 method11907(BlockState var0) {
-      ChestType var3 = var0.<ChestType>get(field18866);
+      ChestType var3 = var0.<ChestType>get(TYPE);
       if (var3 != ChestType.field379) {
-         return var3 != ChestType.field381 ? Class1895.field11111 : Class1895.field11110;
+         return var3 != ChestType.RIGHT ? Class1895.field11111 : Class1895.field11110;
       } else {
          return Class1895.field11109;
       }
@@ -74,15 +74,15 @@ public class Class3348 extends Class3346<Class941> implements Class3207 {
       }
 
       if (var3.isIn(this) && var2.getAxis().method324()) {
-         ChestType var9 = var3.<ChestType>get(field18866);
-         if (var1.<ChestType>get(field18866) == ChestType.field379
+         ChestType var9 = var3.<ChestType>get(TYPE);
+         if (var1.<ChestType>get(TYPE) == ChestType.field379
             && var9 != ChestType.field379
             && var1.<Direction>get(field18865) == var3.<Direction>get(field18865)
-            && method11908(var3) == var2.getOpposite()) {
-            return var1.with(field18866, var9.method308());
+            && getDirectionToAttached(var3) == var2.getOpposite()) {
+            return var1.with(TYPE, var9.method308());
          }
-      } else if (method11908(var1) == var2) {
-         return var1.with(field18866, ChestType.field379);
+      } else if (getDirectionToAttached(var1) == var2) {
+         return var1.with(TYPE, ChestType.field379);
       }
 
       return super.method11491(var1, var2, var3, var4, var5, var6);
@@ -90,10 +90,10 @@ public class Class3348 extends Class3346<Class941> implements Class3207 {
 
    @Override
    public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
-      if (var1.<ChestType>get(field18866) == ChestType.field379) {
+      if (var1.<ChestType>get(TYPE) == ChestType.field379) {
          return field18872;
       } else {
-         switch (Class8810.field39644[method11908(var1).ordinal()]) {
+         switch (Class8810.field39644[getDirectionToAttached(var1).ordinal()]) {
             case 1:
             default:
                return field18868;
@@ -107,9 +107,9 @@ public class Class3348 extends Class3346<Class941> implements Class3207 {
       }
    }
 
-   public static Direction method11908(BlockState var0) {
+   public static Direction getDirectionToAttached(BlockState var0) {
       Direction var3 = var0.<Direction>get(field18865);
-      return var0.get(field18866) != ChestType.field380 ? var3.rotateYCCW() : var3.rotateY();
+      return var0.get(TYPE) != ChestType.LEFT ? var3.rotateYCCW() : var3.rotateY();
    }
 
    @Override
@@ -123,23 +123,23 @@ public class Class3348 extends Class3346<Class941> implements Class3207 {
          Direction var9 = this.method11909(var1, var8.getOpposite());
          if (var9 != null && var9.getAxis() != var8.getAxis()) {
             var5 = var9;
-            var4 = var9.rotateYCCW() != var8.getOpposite() ? ChestType.field380 : ChestType.field381;
+            var4 = var9.rotateYCCW() != var8.getOpposite() ? ChestType.LEFT : ChestType.RIGHT;
          }
       }
 
       if (var4 == ChestType.field379 && !var7) {
          if (var5 != this.method11909(var1, var5.rotateY())) {
             if (var5 == this.method11909(var1, var5.rotateYCCW())) {
-               var4 = ChestType.field381;
+               var4 = ChestType.RIGHT;
             }
          } else {
-            var4 = ChestType.field380;
+            var4 = ChestType.LEFT;
          }
       }
 
       return this.method11579()
          .with(field18865, var5)
-         .with(field18866, var4)
+         .with(TYPE, var4)
          .with(field18867, Boolean.valueOf(var6.method23472() == Class9479.field44066));
    }
 
@@ -151,15 +151,15 @@ public class Class3348 extends Class3346<Class941> implements Class3207 {
    @Nullable
    private Direction method11909(Class5909 var1, Direction var2) {
       BlockState var5 = var1.method18360().getBlockState(var1.method18345().method8349(var2));
-      return var5.isIn(this) && var5.get(field18866) == ChestType.field379 ? var5.<Direction>get(field18865) : null;
+      return var5.isIn(this) && var5.get(TYPE) == ChestType.field379 ? var5.<Direction>get(field18865) : null;
    }
 
    @Override
    public void method11563(World var1, BlockPos var2, BlockState var3, LivingEntity var4, ItemStack var5) {
       if (var5.method32152()) {
          TileEntity var8 = var1.getTileEntity(var2);
-         if (var8 instanceof Class941) {
-            ((Class941)var8).method3695(var5.method32149());
+         if (var8 instanceof ChestTileEntity) {
+            ((ChestTileEntity)var8).method3695(var5.method32149());
          }
       }
    }
@@ -198,20 +198,20 @@ public class Class3348 extends Class3346<Class941> implements Class3207 {
    }
 
    @Nullable
-   public static IInventory method11911(Class3348 var0, BlockState var1, World var2, BlockPos var3, boolean var4) {
+   public static IInventory method11911(ChestBlock var0, BlockState var1, World var2, BlockPos var3, boolean var4) {
       return var0.method11904(var1, var2, var3, var4).<Optional<IInventory>>method27292(field18873).orElse((IInventory)null);
    }
 
    @Override
-   public Class7995<? extends Class941> method11904(BlockState var1, World var2, BlockPos var3, boolean var4) {
+   public Class7995<? extends ChestTileEntity> method11904(BlockState var1, World var2, BlockPos var3, boolean var4) {
       BiPredicate<Class1660, BlockPos> var7;
       if (!var4) {
-         var7 = Class3348::method11913;
+         var7 = ChestBlock::method11913;
       } else {
          var7 = (var0, var1x) -> false;
       }
 
-      return Class9324.method35243(this.field18859.get(), Class3348::method11907, Class3348::method11908, field18865, var1, var2, var3, var7);
+      return Class9324.method35243(this.field18859.get(), ChestBlock::method11907, ChestBlock::getDirectionToAttached, field18865, var1, var2, var3, var7);
    }
 
    @Nullable
@@ -220,13 +220,13 @@ public class Class3348 extends Class3346<Class941> implements Class3207 {
       return this.method11904(var1, var2, var3, false).<Optional<Class949>>method27292(field18874).orElse((Class949)null);
    }
 
-   public static Class6139<Class941, Float2FloatFunction> method11912(Class942 var0) {
+   public static Class6139<ChestTileEntity, Float2FloatFunction> method11912(Class942 var0) {
       return new Class6141(var0);
    }
 
    @Override
    public TileEntity method11646(IBlockReader var1) {
-      return new Class941();
+      return new ChestTileEntity();
    }
 
    public static boolean method11913(Class1660 var0, BlockPos var1) {
@@ -239,7 +239,7 @@ public class Class3348 extends Class3346<Class941> implements Class3207 {
    }
 
    private static boolean method11915(Class1660 var0, BlockPos var1) {
-      List<Class1098> var4 = var0.method7182(
+      List<Class1098> var4 = var0.getEntitiesWithinAABB(
          Class1098.class,
          new AxisAlignedBB(
             (double)var1.getX(),
@@ -283,7 +283,7 @@ public class Class3348 extends Class3346<Class941> implements Class3207 {
 
    @Override
    public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field18865, field18866, field18867);
+      var1.method24737(field18865, TYPE, field18867);
    }
 
    @Override

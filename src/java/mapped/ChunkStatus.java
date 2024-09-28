@@ -21,8 +21,8 @@ import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
 
 public class ChunkStatus {
-   private static final EnumSet<Heightmap.Type> field42130 = EnumSet.<Heightmap.Type>of(Heightmap.Type.field297, Heightmap.Type.field295);
-   private static final EnumSet<Heightmap.Type> field42131 = EnumSet.<Heightmap.Type>of(Heightmap.Type.field298, Heightmap.Type.field296, Heightmap.Type.field299, Heightmap.Type.field300);
+   private static final EnumSet<Heightmap.Type> field42130 = EnumSet.<Heightmap.Type>of(Heightmap.Type.OCEAN_FLOOR_WG, Heightmap.Type.WORLD_SURFACE_WG);
+   private static final EnumSet<Heightmap.Type> field42131 = EnumSet.<Heightmap.Type>of(Heightmap.Type.OCEAN_FLOOR, Heightmap.Type.WORLD_SURFACE, Heightmap.Type.MOTION_BLOCKING, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES);
    private static final Class9241 field42132 = (var0, var1, var2, var3, var4, var5) -> {
       if (var5 instanceof Class1672 && !var5.getStatus().method34306(var0)) {
          ((Class1672)var5).method7111(var0);
@@ -89,7 +89,7 @@ public class ChunkStatus {
          Class1672 var10 = (Class1672)var7;
          var10.method7119(var4);
          if (!var7.getStatus().method34306(var0)) {
-            Heightmap.method24577(var7, EnumSet.<Heightmap.Type>of(Heightmap.Type.field299, Heightmap.Type.field300, Heightmap.Type.field298, Heightmap.Type.field296));
+            Heightmap.method24577(var7, EnumSet.<Heightmap.Type>of(Heightmap.Type.MOTION_BLOCKING, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, Heightmap.Type.OCEAN_FLOOR, Heightmap.Type.WORLD_SURFACE));
             Class1691 var11 = new Class1691(var1, var6);
             var2.method17821(var11, var1.method6893().method24339(var11));
             var10.method7111(var0);

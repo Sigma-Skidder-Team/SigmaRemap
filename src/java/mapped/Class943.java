@@ -18,21 +18,21 @@ public class Class943 extends TileEntity implements Class942, ITickableTileEntit
    }
 
    @Override
-   public void method3647() {
+   public void tick() {
       if (++this.field5321 % 20 * 4 == 0) {
-         this.field5324.method6787(this.field5325, Blocks.ENDER_CHEST, 1, this.field5320);
+         this.world.addBlockEvent(this.pos, Blocks.ENDER_CHEST, 1, this.field5320);
       }
 
       this.field5319 = this.field5318;
-      int var3 = this.field5325.getX();
-      int var4 = this.field5325.getY();
-      int var5 = this.field5325.getZ();
+      int var3 = this.pos.getX();
+      int var4 = this.pos.getY();
+      int var5 = this.pos.getZ();
       float var6 = 0.1F;
       if (this.field5320 > 0 && this.field5318 == 0.0F) {
          double var7 = (double)var3 + 0.5;
          double var9 = (double)var5 + 0.5;
-         this.field5324
-            .method6743(
+         this.world
+            .playSound(
                (PlayerEntity)null,
                var7,
                (double)var4 + 0.5,
@@ -40,7 +40,7 @@ public class Class943 extends TileEntity implements Class942, ITickableTileEntit
                SoundEvents.field26535,
                Class2266.field14732,
                0.5F,
-               this.field5324.rand.nextFloat() * 0.1F + 0.9F
+               this.world.rand.nextFloat() * 0.1F + 0.9F
             );
       }
 
@@ -60,8 +60,8 @@ public class Class943 extends TileEntity implements Class942, ITickableTileEntit
          if (this.field5318 < 0.5F && var11 >= 0.5F) {
             double var15 = (double)var3 + 0.5;
             double var13 = (double)var5 + 0.5;
-            this.field5324
-               .method6743(
+            this.world
+               .playSound(
                   (PlayerEntity)null,
                   var15,
                   (double)var4 + 0.5,
@@ -69,7 +69,7 @@ public class Class943 extends TileEntity implements Class942, ITickableTileEntit
                   SoundEvents.field26534,
                   Class2266.field14732,
                   0.5F,
-                  this.field5324.rand.nextFloat() * 0.1F + 0.9F
+                  this.world.rand.nextFloat() * 0.1F + 0.9F
                );
          }
 
@@ -80,9 +80,9 @@ public class Class943 extends TileEntity implements Class942, ITickableTileEntit
    }
 
    @Override
-   public boolean method3751(int var1, int var2) {
+   public boolean receiveClientEvent(int var1, int var2) {
       if (var1 != 1) {
-         return super.method3751(var1, var2);
+         return super.receiveClientEvent(var1, var2);
       } else {
          this.field5320 = var2;
          return true;
@@ -97,25 +97,25 @@ public class Class943 extends TileEntity implements Class942, ITickableTileEntit
 
    public void method3766() {
       this.field5320++;
-      this.field5324.method6787(this.field5325, Blocks.ENDER_CHEST, 1, this.field5320);
+      this.world.addBlockEvent(this.pos, Blocks.ENDER_CHEST, 1, this.field5320);
    }
 
    public void method3767() {
       this.field5320--;
-      this.field5324.method6787(this.field5325, Blocks.ENDER_CHEST, 1, this.field5320);
+      this.world.addBlockEvent(this.pos, Blocks.ENDER_CHEST, 1, this.field5320);
    }
 
    public boolean method3768(PlayerEntity var1) {
-      return this.field5324.getTileEntity(this.field5325) == this
+      return this.world.getTileEntity(this.pos) == this
          ? !(
-            var1.getDistanceNearest((double)this.field5325.getX() + 0.5, (double)this.field5325.getY() + 0.5, (double)this.field5325.getZ() + 0.5)
+            var1.getDistanceNearest((double)this.pos.getX() + 0.5, (double)this.pos.getY() + 0.5, (double)this.pos.getZ() + 0.5)
                > 64.0
          )
          : false;
    }
 
    @Override
-   public float method3762(float var1) {
+   public float getLidAngle(float var1) {
       return MathHelper.lerp(var1, this.field5319, this.field5318);
    }
 }

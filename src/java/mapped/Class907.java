@@ -169,7 +169,7 @@ public class Class907 extends Entity {
                                     }
                                  }
 
-                                 var13.method3645(this.field5176, var14);
+                                 var13.read(this.field5176, var14);
                                  var13.markDirty();
                               }
                            }

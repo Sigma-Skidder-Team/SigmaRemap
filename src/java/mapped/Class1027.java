@@ -120,7 +120,7 @@ public class Class1027 extends Class1026 implements Class1022 {
                this.method4567(true);
                if (!this.isSilent()) {
                   this.world
-                     .method6743(
+                     .playSound(
                         (PlayerEntity)null,
                         this.getPosX(),
                         this.getPosY(),
@@ -232,7 +232,7 @@ public class Class1027 extends Class1026 implements Class1022 {
          var14.shoot(var6, var8 + (double)(var12 * 0.2F), var10, 0.75F, 8.0F);
          if (!this.isSilent()) {
             this.world
-               .method6743(
+               .playSound(
                   (PlayerEntity)null,
                   this.getPosX(),
                   this.getPosY(),

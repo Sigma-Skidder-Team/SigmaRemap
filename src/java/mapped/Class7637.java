@@ -109,7 +109,7 @@ public abstract class Class7637 extends Class7633 {
    }
 
    private boolean method25103(IWorldReader var1, BlockPos var2) {
-      return var2.getY() >= 0 && var2.getY() < 256 && !var1.method7017(var2) ? false : var1.getBlockState(var2).getMaterial().isFlammable();
+      return var2.getY() >= 0 && var2.getY() < 256 && !var1.isBlockLoaded(var2) ? false : var1.getBlockState(var2).getMaterial().isFlammable();
    }
 
    @Nullable

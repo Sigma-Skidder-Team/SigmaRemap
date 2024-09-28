@@ -632,7 +632,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          BlockPos var10 = new BlockPos(var9.getInt("x"), var9.getInt("y"), var9.getInt("z"));
          TileEntity var11 = this.field23273.getTileEntity(var10);
          if (var11 != null) {
-            var11.method3645(this.field23273.getBlockState(var10), var9);
+            var11.read(this.field23273.getBlockState(var10), var9);
          }
       }
    }
@@ -644,7 +644,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       int var5 = var1.method17493();
       Class1705 var6 = this.field23273.getChunkProvider();
       var6.method7399(var4, var5);
-      Class196 var7 = var6.getLightManager();
+      WorldLightManager var7 = var6.getLightManager();
 
       for (int var8 = 0; var8 < 16; var8++) {
          this.field23273.method6868(var4, var8, var5);
@@ -1090,7 +1090,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          || var6 == 12 && var5 instanceof JigsawTileEntity
          || var6 == 13 && var5 instanceof Class945
          || var6 == 14 && var5 instanceof BeehiveTileEntity) {
-         var5.method3645(this.field23272.world.getBlockState(var4), var1.method17638());
+         var5.read(this.field23272.world.getBlockState(var4), var1.method17638());
       }
 
       if (var7 && this.field23272.currentScreen instanceof Class1326) {
@@ -1125,7 +1125,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleBlockAction(SBlockActionPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      this.field23272.world.method6787(var1.method17278(), var1.method17281(), var1.method17279(), var1.method17280());
+      this.field23272.world.addBlockEvent(var1.method17278(), var1.method17281(), var1.method17279(), var1.method17280());
    }
 
    @Override
@@ -1159,7 +1159,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                                        this.field23273.addParticle(ParticleTypes.field34064, var4.getPosX(), var4.getPosY(), var4.getPosZ(), 0.0, 0.0, 0.0);
                                        if (var7 == 1) {
                                           this.field23273
-                                             .method6743(
+                                             .playSound(
                                                 var4,
                                                 var4.getPosX(),
                                                 var4.getPosY(),
@@ -1173,7 +1173,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                                     }
                                  } else {
                                     this.field23273
-                                       .method6743(
+                                       .playSound(
                                           var4, var4.getPosX(), var4.getPosY(), var4.getPosZ(), SoundEvents.field26985, Class2266.field14734, 1.0F, 1.0F
                                        );
                                  }
@@ -1185,7 +1185,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                            }
                         } else {
                            this.field23273
-                              .method6743(
+                              .playSound(
                                  var4, var4.getPosX(), var4.getPosYEye(), var4.getPosZ(), SoundEvents.field26362, Class2266.field14735, 0.18F, 0.45F
                               );
                         }
@@ -1574,7 +1574,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       this.field23272
          .world
-         .method6743(
+         .playSound(
             this.field23272.player,
             var1.method17551(),
             var1.method17552(),
@@ -2145,15 +2145,15 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       int var4 = var1.method17360();
       int var5 = var1.method17361();
-      Class196 var6 = this.field23273.getChunkProvider().getLightManager();
+      WorldLightManager var6 = this.field23273.getChunkProvider().getLightManager();
       int var7 = var1.method17362();
       int var8 = var1.method17363();
       Iterator var9 = var1.method17364().iterator();
-      this.method15789(var4, var5, var6, Class1977.field12881, var7, var8, var9, var1.method17368());
+      this.method15789(var4, var5, var6, LightType.SKY, var7, var8, var9, var1.method17368());
       int var10 = var1.method17365();
       int var11 = var1.method17366();
       Iterator var12 = var1.method17367().iterator();
-      this.method15789(var4, var5, var6, Class1977.field12882, var10, var11, var12, var1.method17368());
+      this.method15789(var4, var5, var6, LightType.BLOCK, var10, var11, var12, var1.method17368());
    }
 
    @Override
@@ -2188,7 +2188,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       this.field23272.playerController.acknowledgePlayerDiggingReceived(this.field23273, var1.method17557(), var1.method17556(), var1.method17559(), var1.method17558());
    }
 
-   private void method15789(int var1, int var2, Class196 var3, Class1977 var4, int var5, int var6, Iterator<byte[]> var7, boolean var8) {
+   private void method15789(int var1, int var2, WorldLightManager var3, LightType var4, int var5, int var6, Iterator<byte[]> var7, boolean var8) {
       for (int var11 = 0; var11 < 18; var11++) {
          int var12 = -1 + var11;
          boolean var13 = (var5 & 1 << var11) != 0;

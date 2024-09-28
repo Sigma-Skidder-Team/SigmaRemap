@@ -72,23 +72,23 @@ public enum Class2230 implements Class2234 {
       public BlockState method8970(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
          if (var3.isIn(var1.getBlock())
                  && var2.getAxis().method324()
-                 && var1.get(Class3348.field18866) == ChestType.field379
-                 && var3.get(Class3348.field18866) == ChestType.field379) {
+                 && var1.get(ChestBlock.TYPE) == ChestType.field379
+                 && var3.get(ChestBlock.TYPE) == ChestType.field379) {
 
-            Direction var9 = var1.get(Class3348.field18865);
-            if (var2.getAxis() != var9.getAxis() && var9 == var3.get(Class3348.field18865)) {
-               ChestType var10 = var2 != var9.rotateY() ? ChestType.field381 : ChestType.field380;
-               var4.setBlockState(var6, var3.with(Class3348.field18866, var10.method308()), 18);
+            Direction var9 = var1.get(ChestBlock.field18865);
+            if (var2.getAxis() != var9.getAxis() && var9 == var3.get(ChestBlock.field18865)) {
+               ChestType var10 = var2 != var9.rotateY() ? ChestType.RIGHT : ChestType.LEFT;
+               var4.setBlockState(var6, var3.with(ChestBlock.TYPE, var10.method308()), 18);
                if (var9 == Direction.NORTH || var9 == Direction.EAST
                ) {
                   TileEntity var11 = var4.getTileEntity(var5);
                   TileEntity var12 = var4.getTileEntity(var6);
-                  if (var11 instanceof Class941 && var12 instanceof Class941) {
-                     Class941.method3764((Class941)var11, (Class941)var12);
+                  if (var11 instanceof ChestTileEntity && var12 instanceof ChestTileEntity) {
+                     ChestTileEntity.swapContents((ChestTileEntity)var11, (ChestTileEntity)var12);
                   }
                }
 
-               return var1.with(Class3348.field18866, var10);
+               return var1.with(ChestBlock.TYPE, var10);
             }
          }
 

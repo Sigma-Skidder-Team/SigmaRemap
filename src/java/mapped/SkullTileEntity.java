@@ -45,8 +45,8 @@ public class SkullTileEntity extends TileEntity implements ITickableTileEntity {
    }
 
    @Override
-   public void method3645(BlockState var1, CompoundNBT var2) {
-      super.method3645(var1, var2);
+   public void read(BlockState var1, CompoundNBT var2) {
+      super.read(var1, var2);
       if (!var2.contains("SkullOwner", 10)) {
          if (var2.contains("ExtraType", 8)) {
             String var5 = var2.getString("ExtraType");
@@ -60,10 +60,10 @@ public class SkullTileEntity extends TileEntity implements ITickableTileEntity {
    }
 
    @Override
-   public void method3647() {
-      BlockState var3 = this.method3775();
+   public void tick() {
+      BlockState var3 = this.getBlockState();
       if (var3.isIn(Blocks.DRAGON_HEAD) || var3.isIn(Blocks.DRAGON_WALL_HEAD)) {
-         if (!this.field5324.method6780(this.field5325)) {
+         if (!this.world.method6780(this.pos)) {
             this.field5428 = false;
          } else {
             this.field5428 = true;
@@ -84,7 +84,7 @@ public class SkullTileEntity extends TileEntity implements ITickableTileEntity {
    @Nullable
    @Override
    public SUpdateTileEntityPacket method3776() {
-      return new SUpdateTileEntityPacket(this.field5325, 4, this.method3777());
+      return new SUpdateTileEntityPacket(this.pos, 4, this.method3777());
    }
 
    @Override

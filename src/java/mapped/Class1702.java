@@ -38,7 +38,7 @@ public abstract class Class1702 implements Class1704, AutoCloseable {
    public void close() throws IOException {
    }
 
-   public abstract Class196 getLightManager();
+   public abstract WorldLightManager getLightManager();
 
    public void method7349(boolean var1, boolean var2) {
    }

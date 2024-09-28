@@ -129,7 +129,7 @@ public class Class993 extends AbstractMinecartEntity {
          this.world.setEntityState(this, (byte)10);
          if (!this.isSilent()) {
             this.world
-               .method6743((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field27146, Class2266.field14732, 1.0F, 1.0F);
+               .playSound((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field27146, Class2266.field14732, 1.0F, 1.0F);
          }
       }
    }

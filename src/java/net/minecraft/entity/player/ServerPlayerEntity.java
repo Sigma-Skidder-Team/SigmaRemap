@@ -328,7 +328,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
 
    public void method2735() {
       try {
-         if (!this.isSpectator() || this.world.method7017(this.getPosition())) {
+         if (!this.isSpectator() || this.world.isBlockLoaded(this.getPosition())) {
             super.tick();
          }
 
@@ -813,7 +813,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
 
    public void method2763(double var1, boolean var3) {
       BlockPos var6 = this.getOnPosition();
-      if (this.world.method7017(var6)) {
+      if (this.world.isBlockLoaded(var6)) {
          super.updateFallState(var1, var3, this.world.getBlockState(var6), var6);
       }
    }
@@ -838,7 +838,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
          this.method2765();
          Container var4 = var1.method3627(this.field4889, this.inventory, this);
          if (var4 != null) {
-            this.field4855.sendPacket(new SOpenWindowPacket(var4.windowId, var4.getType(), var1.method2954()));
+            this.field4855.sendPacket(new SOpenWindowPacket(var4.windowId, var4.getType(), var1.getDefaultName2()));
             var4.addListener(this);
             this.openContainer = var4;
             return OptionalInt.of(this.field4889);

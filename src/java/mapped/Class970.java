@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class970 extends Class941 {
+public class Class970 extends ChestTileEntity {
    private static String[] field5434;
 
    public Class970() {
@@ -8,8 +8,8 @@ public class Class970 extends Class941 {
    }
 
    @Override
-   public void method3761() {
-      super.method3761();
-      this.field5324.notifyNeighborsOfStateChange(this.field5325.down(), this.method3775().getBlock());
+   public void onOpenOrClose() {
+      super.onOpenOrClose();
+      this.world.notifyNeighborsOfStateChange(this.pos.down(), this.getBlockState().getBlock());
    }
 }

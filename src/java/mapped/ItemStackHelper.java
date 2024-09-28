@@ -7,7 +7,7 @@ import net.minecraft.util.NonNullList;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class Class7920 {
+public class ItemStackHelper {
    public static ItemStack method26563(List<ItemStack> var0, int var1, int var2) {
       return var1 >= 0 && var1 < var0.size() && !((ItemStack)var0.get(var1)).isEmpty() && var2 > 0
          ? ((ItemStack)var0.get(var1)).split(var2)
@@ -18,7 +18,7 @@ public class Class7920 {
       return var1 >= 0 && var1 < var0.size() ? var0.set(var1, ItemStack.EMPTY) : ItemStack.EMPTY;
    }
 
-   public static CompoundNBT method26565(CompoundNBT var0, NonNullList<ItemStack> var1) {
+   public static CompoundNBT saveAllItems(CompoundNBT var0, NonNullList<ItemStack> var1) {
       return method26566(var0, var1, true);
    }
 
@@ -42,7 +42,7 @@ public class Class7920 {
       return var0;
    }
 
-   public static void method26567(CompoundNBT var0, NonNullList<ItemStack> var1) {
+   public static void loadAllItems(CompoundNBT var0, NonNullList<ItemStack> var1) {
       ListNBT var4 = var0.method131("Items", 10);
 
       for (int var5 = 0; var5 < var4.size(); var5++) {

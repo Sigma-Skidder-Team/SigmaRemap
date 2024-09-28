@@ -69,7 +69,7 @@ public class ItemUseContext {
    }
 
    public Direction method18350() {
-      return this.field25721 != null ? this.field25721.method3386() : Direction.NORTH;
+      return this.field25721 != null ? this.field25721.getHorizontalFacing() : Direction.NORTH;
    }
 
    public boolean method18351() {

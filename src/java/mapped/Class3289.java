@@ -48,7 +48,7 @@ public class Class3289 extends Item {
                var12.setLocationAndAngles(var12.getPosX(), var12.getPosY(), var12.getPosZ(), var13, 0.0F);
                this.method11828(var12, var5.rand);
                var5.addEntity(var12);
-               var5.method6743(
+               var5.playSound(
                   (PlayerEntity)null, var12.getPosX(), var12.getPosY(), var12.getPosZ(), SoundEvents.field26360, Class2266.field14732, 0.75F, 0.8F
                );
             }

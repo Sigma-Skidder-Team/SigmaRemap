@@ -153,7 +153,7 @@ public class Class938 extends Class919 implements Class937 {
    }
 
    @Override
-   public ITextComponent method2954() {
+   public ITextComponent getDefaultName2() {
       return null;
    }
 }

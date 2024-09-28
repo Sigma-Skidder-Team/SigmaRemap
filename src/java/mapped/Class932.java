@@ -22,8 +22,8 @@ public abstract class Class932 extends TileEntity implements IInventory, Class94
    }
 
    @Override
-   public void method3645(BlockState var1, CompoundNBT var2) {
-      super.method3645(var1, var2);
+   public void read(BlockState var1, CompoundNBT var2) {
+      super.read(var1, var2);
       this.field5279 = Class7969.method27093(var2);
       if (var2.contains("CustomName", 8)) {
          this.field5280 = ITextComponent$Serializer.func_240643_a_(var2.getString("CustomName"));
@@ -47,7 +47,7 @@ public abstract class Class932 extends TileEntity implements IInventory, Class94
 
    @Override
    public ITextComponent getName() {
-      return this.field5280 == null ? this.method3686() : this.field5280;
+      return this.field5280 == null ? this.getDefaultName() : this.field5280;
    }
 
    @Override
@@ -61,7 +61,7 @@ public abstract class Class932 extends TileEntity implements IInventory, Class94
       return this.field5280;
    }
 
-   public abstract ITextComponent method3686();
+   public abstract ITextComponent getDefaultName();
 
    public boolean method3696(PlayerEntity var1) {
       return method3697(var1, this.field5279, this.getDisplayName());
@@ -80,8 +80,8 @@ public abstract class Class932 extends TileEntity implements IInventory, Class94
    @Nullable
    @Override
    public Container method3627(int var1, PlayerInventory var2, PlayerEntity var3) {
-      return !this.method3696(var3) ? null : this.method3690(var1, var2);
+      return !this.method3696(var3) ? null : this.createMenu(var1, var2);
    }
 
-   public abstract Container method3690(int var1, PlayerInventory var2);
+   public abstract Container createMenu(int var1, PlayerInventory var2);
 }

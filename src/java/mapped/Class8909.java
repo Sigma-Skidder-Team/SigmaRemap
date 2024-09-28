@@ -59,7 +59,7 @@ public class Class8909 {
                }
 
                var7.world
-                  .method6743(
+                  .playSound(
                      (PlayerEntity)null,
                      var7.getPosX(),
                      var7.getPosY(),

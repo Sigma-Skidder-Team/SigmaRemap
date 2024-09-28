@@ -300,7 +300,7 @@ public class Class6450 {
                             var42.field27681.putInt("x", var42.field27679.getX());
                             var42.field27681.putInt("y", var42.field27679.getY());
                             var42.field27681.putInt("z", var42.field27679.getZ());
-                            var44.method3645(var42.field27680, var42.field27681);
+                            var44.read(var42.field27680, var42.field27681);
                             var44.markDirty();
                         }
 

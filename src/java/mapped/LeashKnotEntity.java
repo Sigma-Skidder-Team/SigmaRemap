@@ -102,7 +102,7 @@ public class LeashKnotEntity extends Class995 {
          boolean var5 = false;
          double var6 = 7.0;
          List<MobEntity> var8 = this.world
-            .<MobEntity>method7182(
+            .<MobEntity>getEntitiesWithinAABB(
                MobEntity.class,
                new AxisAlignedBB(
                   this.getPosX() - 7.0,
@@ -146,7 +146,7 @@ public class LeashKnotEntity extends Class995 {
       int var5 = var1.getY();
       int var6 = var1.getZ();
 
-      for (LeashKnotEntity var8 : var0.<LeashKnotEntity>method7182(
+      for (LeashKnotEntity var8 : var0.<LeashKnotEntity>getEntitiesWithinAABB(
          LeashKnotEntity.class, new AxisAlignedBB((double)var4 - 1.0, (double)var5 - 1.0, (double)var6 - 1.0, (double)var4 + 1.0, (double)var5 + 1.0, (double)var6 + 1.0)
       )) {
          if (var8.method4085().equals(var1)) {

@@ -15,5 +15,5 @@ public abstract class Class3346<E extends TileEntity> extends Class3241 {
       this.field18859 = var2;
    }
 
-   public abstract Class7995<? extends Class941> method11904(BlockState var1, World var2, BlockPos var3, boolean var4);
+   public abstract Class7995<? extends ChestTileEntity> method11904(BlockState var1, World var2, BlockPos var3, boolean var4);
 }

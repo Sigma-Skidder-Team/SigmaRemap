@@ -18,19 +18,19 @@ import org.apache.logging.log4j.Logger;
 public class Class1705 extends Class1702 {
    private static final Logger field9288 = LogManager.getLogger();
    private final Chunk field9289;
-   private final Class196 field9290;
+   private final WorldLightManager field9290;
    public volatile Class8815 field9291;
    private final ClientWorld field9292;
 
    public Class1705(ClientWorld var1, int var2) {
       this.field9292 = var1;
       this.field9289 = new Class1675(var1, new ChunkPos(0, 0));
-      this.field9290 = new Class196(this, true, var1.method6812().hasSkyLight());
+      this.field9290 = new WorldLightManager(this, true, var1.method6812().hasSkyLight());
       this.field9291 = new Class8815(this, method7404(var2));
    }
 
    @Override
-   public Class196 getLightManager() {
+   public WorldLightManager getLightManager() {
       return this.field9290;
    }
 
@@ -116,7 +116,7 @@ public class Class1705 extends Class1702 {
          }
 
          ChunkSection[] var16 = ((Chunk)var11).getSections();
-         Class196 var17 = this.getLightManager();
+         WorldLightManager var17 = this.getLightManager();
          var17.method605(new ChunkPos(var1, var2), true);
 
          for (int var18 = 0; var18 < var16.length; var18++) {
@@ -178,7 +178,7 @@ public class Class1705 extends Class1702 {
    }
 
    @Override
-   public void method7373(Class1977 var1, Class2002 var2) {
+   public void method7373(LightType var1, Class2002 var2) {
       Minecraft.getInstance().worldRenderer.method906(var2.method8410(), var2.method8411(), var2.method8412());
    }
 

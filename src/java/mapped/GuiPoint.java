@@ -1,11 +1,11 @@
 package mapped;
 
-public class Class9718 {
+public class GuiPoint {
    private static String[] field45406;
    private int field45407;
    private int field45408;
 
-   public Class9718(int var1, int var2) {
+   public GuiPoint(int var1, int var2) {
       this.field45407 = var1;
       this.field45408 = var2;
    }

@@ -179,7 +179,7 @@ public class WaypointsManager {
                      boolean var18 = this.field36366.contains(var17.getPos());
                      boolean var19 = this.field36367.contains(var17.getPos());
                      if ((!var18 || var19)
-                        && !var17.method7141()
+                        && !var17.isEmpty()
                         && this.field36365.world.getChunkProvider().method7352(var17.getPos())
                         && this.field36365.world.getDimensionKey() == World.OVERWORLD) {
                         if (!var18) {
@@ -381,7 +381,7 @@ public class WaypointsManager {
    private boolean method30004(Chunk var1) {
       Chunk var4 = this.field36365.world.getChunk(var1.getPos().x, var1.getPos().z + 1);
       Chunk var5 = this.field36365.world.getChunk(var1.getPos().x, var1.getPos().z - 1);
-      return var4 != null && !var4.method7141() && var5 != null && !var5.method7141();
+      return var4 != null && !var4.isEmpty() && var5 != null && !var5.isEmpty();
    }
 
    public ByteBuffer method30005(Chunk var1, boolean var2) {
@@ -393,7 +393,7 @@ public class WaypointsManager {
          for (int var9 = 0; var9 < 16; var9++) {
             BlockPos var10 = new BlockPos(var6 + var8, 64, var7 + var9);
             int var11 = this.method30006(
-               new BlockPos(var10.getX(), var1.getHeightmap(Heightmap.Type.field296).method24579(var8, var9) - 1, var10.getZ()), var2
+               new BlockPos(var10.getX(), var1.getHeightmap(Heightmap.Type.WORLD_SURFACE).method24579(var8, var9) - 1, var10.getZ()), var2
             );
             var5.put((byte)(var11 >> 16 & 0xFF));
             var5.put((byte)(var11 >> 8 & 0xFF));

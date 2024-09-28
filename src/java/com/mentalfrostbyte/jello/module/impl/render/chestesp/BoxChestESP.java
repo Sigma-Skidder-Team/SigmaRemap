@@ -32,7 +32,7 @@ public class BoxChestESP extends Module {
         int var5 = MultiUtilities.applyAlpha(this.access().parseSettingValueToIntBySettingName("Trapped Color"), 0.14F);
 
         for (TileEntity var7 : mc.world.loadedTileEntityList) {
-            boolean var8 = var7 instanceof Class941 && !(var7 instanceof Class970) && this.access().getBooleanValueFromSettingName("Show Regular Chests");
+            boolean var8 = var7 instanceof ChestTileEntity && !(var7 instanceof Class970) && this.access().getBooleanValueFromSettingName("Show Regular Chests");
             boolean var9 = var7 instanceof Class943 && this.access().getBooleanValueFromSettingName("Show Ender Chests");
             boolean var10 = var7 instanceof Class970 && this.access().getBooleanValueFromSettingName("Show Trapped Chests");
             if (var8 || var9 || var10) {
@@ -51,7 +51,7 @@ public class BoxChestESP extends Module {
                 }
 
                 Box3D var18 = new Box3D(
-                        var7.method3775().method23412(mc.world, var7.getPos()).getBoundingBox().offset(var11, var13, var15)
+                        var7.getBlockState().method23412(mc.world, var7.getPos()).getBoundingBox().offset(var11, var13, var15)
                 );
                 GL11.glAlphaFunc(519, 0.0F);
                 RenderUtil.render3DColoredBox(var18, var17);

@@ -162,7 +162,7 @@ public class Class1691 implements ISeedReader {
    }
 
    @Override
-   public Class196 method6737() {
+   public WorldLightManager method6737() {
       return this.field9205.method6737();
    }
 

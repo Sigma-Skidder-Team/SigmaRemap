@@ -74,7 +74,7 @@ public class Class1673 extends Class1672 {
 
    @Nullable
    @Override
-   public Class196 method7112() {
+   public WorldLightManager method7112() {
       return this.field9109.method7131();
    }
 
@@ -83,10 +83,10 @@ public class Class1673 extends Class1672 {
    }
 
    private Heightmap.Type method7126(Heightmap.Type var1) {
-      if (var1 != Heightmap.Type.field295) {
-         return var1 != Heightmap.Type.field297 ? var1 : Heightmap.Type.field298;
+      if (var1 != Heightmap.Type.WORLD_SURFACE_WG) {
+         return var1 != Heightmap.Type.OCEAN_FLOOR_WG ? var1 : Heightmap.Type.OCEAN_FLOOR;
       } else {
-         return Heightmap.Type.field296;
+         return Heightmap.Type.WORLD_SURFACE;
       }
    }
 

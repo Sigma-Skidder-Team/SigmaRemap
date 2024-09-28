@@ -26,7 +26,7 @@ public class Class146 extends Class128 {
          NonNullList var5 = NonNullList.create();
          this.field489.forEach(var2x -> var2x.method14697(var2, var2xx -> var2xx.method19893(Class7318.method23179(var5::add), var2)));
          CompoundNBT var6 = new CompoundNBT();
-         Class7920.method26565(var6, var5);
+         ItemStackHelper.saveAllItems(var6, var5);
          CompoundNBT var7 = var1.getOrCreateTag();
          var7.put("BlockEntityTag", var6.method140(var7.getCompound("BlockEntityTag")));
          return var1;

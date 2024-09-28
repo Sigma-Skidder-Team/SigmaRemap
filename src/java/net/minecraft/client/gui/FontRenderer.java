@@ -95,13 +95,13 @@ public class FontRenderer {
       }
    }
 
-   public void method38808(List<String> var1, Class9718[] var2, int var3, Matrix4f var4, boolean var5, boolean var6) {
+   public void renderStrings(List<String> var1, GuiPoint[] var2, int var3, Matrix4f var4, boolean var5, boolean var6) {
       Class7735 var9 = Class7733.method25595(Tessellator.getInstance().getBuffer());
 
       for (int var10 = 0; var10 < var1.size(); var10++) {
          String var11 = (String)var1.get(var10);
          if (var11 != null && !var11.isEmpty()) {
-            Class9718 var12 = var2[var10];
+            GuiPoint var12 = var2[var10];
             if (var12 != null) {
                float var13 = (float)var12.method38078();
                float var14 = (float)var12.method38079();

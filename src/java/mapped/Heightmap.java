@@ -129,12 +129,12 @@ public class Heightmap {
    }
 
    public enum Type implements IStringSerializable {
-      field295("WORLD_SURFACE_WG", Class2029.field13170, method24587()),
-      field296("WORLD_SURFACE", Class2029.field13172, method24587()),
-      field297("OCEAN_FLOOR_WG", Class2029.field13170, method24588()),
-      field298("OCEAN_FLOOR", Class2029.field13171, method24588()),
-      field299("MOTION_BLOCKING", Class2029.field13172, var0 -> var0.getMaterial().blocksMovement() || !var0.method23449().method23474()),
-      field300(
+      WORLD_SURFACE_WG("WORLD_SURFACE_WG", Class2029.field13170, method24587()),
+      WORLD_SURFACE("WORLD_SURFACE", Class2029.field13172, method24587()),
+      OCEAN_FLOOR_WG("OCEAN_FLOOR_WG", Class2029.field13170, method24588()),
+      OCEAN_FLOOR("OCEAN_FLOOR", Class2029.field13171, method24588()),
+      MOTION_BLOCKING("MOTION_BLOCKING", Class2029.field13172, var0 -> var0.getMaterial().blocksMovement() || !var0.method23449().method23474()),
+      MOTION_BLOCKING_NO_LEAVES(
          "MOTION_BLOCKING_NO_LEAVES",
          Class2029.field13171,
          var0 -> (var0.getMaterial().blocksMovement() || !var0.method23449().method23474()) && !(var0.getBlock() instanceof Class3465)
@@ -149,7 +149,7 @@ public class Heightmap {
             var0.put(var6.field302, var6);
          }
       });
-      private static final Type[] field306 = new Type[]{field295, field296, field297, field298, field299, field300};
+      private static final Type[] field306 = new Type[]{WORLD_SURFACE_WG, WORLD_SURFACE, OCEAN_FLOOR_WG, OCEAN_FLOOR, MOTION_BLOCKING, MOTION_BLOCKING_NO_LEAVES};
 
       private Type(String var3, Class2029 var4, Predicate<BlockState> var5) {
          this.field302 = var3;
@@ -165,7 +165,7 @@ public class Heightmap {
          return this.field303 == Class2029.field13172;
       }
 
-      public boolean method285() {
+      public boolean isUsageClient() {
          return this.field303 != Class2029.field13170;
       }
 

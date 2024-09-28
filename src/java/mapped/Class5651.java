@@ -59,8 +59,8 @@ public abstract class Class5651<T extends MobEntity, M extends Class2827<T>> ext
          BlockPos var32 = new BlockPos(var5.getEyePosition(var2));
          int var33 = this.method17858((T)var1, var31);
          int var34 = this.field25097.<Entity>getRenderer(var5).method17858(var5, var32);
-         int var35 = var1.world.method7020(Class1977.field12881, var31);
-         int var36 = var1.world.method7020(Class1977.field12881, var32);
+         int var35 = var1.world.getLightFor(LightType.SKY, var31);
+         int var36 = var1.world.getLightFor(LightType.SKY, var32);
          if (Config.isShaders()) {
             Shaders.method33119();
          }

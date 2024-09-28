@@ -16,7 +16,7 @@ import java.util.Arrays;
 import java.util.Properties;
 import javax.imageio.ImageIO;
 
-public class Class8389 {
+public class TextureAnimations {
    private static Class9200[] field35971 = null;
    private static int field35972 = 0;
    private static int field35973 = 0;
@@ -239,11 +239,11 @@ public class Class8389 {
       return var5;
    }
 
-   public static int method29402() {
+   public static int getCountAnimations() {
       return field35971 != null ? field35971.length : 0;
    }
 
-   public static int method29403() {
+   public static int getCountAnimationsActive() {
       return field35972;
    }
 }

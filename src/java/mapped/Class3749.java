@@ -116,7 +116,7 @@ public class Class3749 extends Class3676<Class1042> {
                   }
 
                   if (var13) {
-                     var1.method6743(
+                     var1.playSound(
                         (PlayerEntity)null,
                         (double)this.field19897.getX(),
                         (double)this.field19897.getY(),

@@ -100,7 +100,7 @@ public class Class3316 extends Class3314 {
                      int var22 = (var8 / var6 + var17 - 64) * var6;
                      LinkedHashMultiset var23 = LinkedHashMultiset.create();
                      Chunk var24 = var1.getChunkAt(new BlockPos(var21, 0, var22));
-                     if (!var24.method7141()) {
+                     if (!var24.isEmpty()) {
                         ChunkPos var25 = var24.getPos();
                         int var26 = var21 & 15;
                         int var27 = var22 & 15;
@@ -112,7 +112,7 @@ public class Class3316 extends Class3314 {
 
                            for (int var33 = 0; var33 < var6; var33++) {
                               for (int var36 = 0; var36 < var6; var36++) {
-                                 int var37 = var24.getTopBlockY(Heightmap.Type.field296, var33 + var26, var36 + var27) + 1;
+                                 int var37 = var24.getTopBlockY(Heightmap.Type.WORLD_SURFACE, var33 + var26, var36 + var27) + 1;
                                  BlockState var38;
                                  if (var37 <= 1) {
                                     var38 = Blocks.BEDROCK.method11579();

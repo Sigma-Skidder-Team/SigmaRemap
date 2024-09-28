@@ -842,7 +842,7 @@ public abstract class Entity implements INameable, ICommandSource {
 
    public void playSound(SoundEvent var1, float var2, float var3) {
       if (!this.isSilent()) {
-         this.world.method6743((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), var1, this.method2864(), var2, var3);
+         this.world.playSound((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), var1, this.method2864(), var2, var3);
       }
    }
 
@@ -1094,7 +1094,7 @@ public abstract class Entity implements INameable, ICommandSource {
 
    public float getBrightness() {
       BlockPos.Mutable var3 = new BlockPos.Mutable(this.getPosX(), 0.0, this.getPosZ());
-      if (!this.world.method7017(var3)) {
+      if (!this.world.isBlockLoaded(var3)) {
          return 0.0F;
       } else {
          var3.method8308(MathHelper.floor(this.getPosYEye()));
@@ -2152,7 +2152,7 @@ public abstract class Entity implements INameable, ICommandSource {
       } else {
          BlockPos var6;
          if (!var5) {
-            var6 = var1.method7006(Heightmap.Type.field300, var1.method6947());
+            var6 = var1.method7006(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, var1.method6947());
          } else {
             var6 = ServerWorld.field9038;
          }
@@ -2342,12 +2342,12 @@ public abstract class Entity implements INameable, ICommandSource {
       }
    }
 
-   public Direction method3386() {
+   public Direction getHorizontalFacing() {
       return Direction.fromAngle((double)this.rotationYaw);
    }
 
    public Direction method3387() {
-      return this.method3386();
+      return this.getHorizontalFacing();
    }
 
    public HoverEvent method3388() {

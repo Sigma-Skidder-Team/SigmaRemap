@@ -43,9 +43,9 @@ public class Class5950 extends Class5942<Class967> {
          this.method18480(var3, var4, true, Direction.SOUTH, var9, var5, var6, false);
          this.method18480(var3, var4, false, Direction.SOUTH, var9, var5, var6, true);
       } else {
-         BlockState var11 = var1.method3775();
+         BlockState var11 = var1.getBlockState();
          Class7995<Class967> var12 = Class9324.<Class967>method35243(
-            TileEntityType.field21444, Class3250::method11684, Class3250::method11683, Class3348.field18865, var11, var10, var1.getPos(), (var0, var1x) -> false
+            TileEntityType.field21444, Class3250::method11684, Class3250::method11683, ChestBlock.field18865, var11, var10, var1.getPos(), (var0, var1x) -> false
          );
          int var13 = var12.method27292(new Class6138<>()).get(var5);
          this.method18480(

@@ -260,10 +260,10 @@ public class Chunk implements IChunk {
       if (var11 != var2) {
          Block var12 = var2.getBlock();
          Block var13 = var11.getBlock();
-         this.field9117.get(Heightmap.Type.field299).method24578(var6, var7, var8, var2);
-         this.field9117.get(Heightmap.Type.field300).method24578(var6, var7, var8, var2);
-         this.field9117.get(Heightmap.Type.field298).method24578(var6, var7, var8, var2);
-         this.field9117.get(Heightmap.Type.field296).method24578(var6, var7, var8, var2);
+         this.field9117.get(Heightmap.Type.MOTION_BLOCKING).method24578(var6, var7, var8, var2);
+         this.field9117.get(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES).method24578(var6, var7, var8, var2);
+         this.field9117.get(Heightmap.Type.OCEAN_FLOOR).method24578(var6, var7, var8, var2);
+         this.field9117.get(Heightmap.Type.WORLD_SURFACE).method24578(var6, var7, var8, var2);
          boolean var14 = var9.method21858();
          if (var10 != var14) {
             this.field9116.getChunkProvider().getLightManager().method641(var1, var14);
@@ -310,7 +310,7 @@ public class Chunk implements IChunk {
    }
 
    @Nullable
-   public Class196 method7131() {
+   public WorldLightManager method7131() {
       return this.field9116.getChunkProvider().getLightManager();
    }
 
@@ -529,7 +529,7 @@ public class Chunk implements IChunk {
       }
    }
 
-   public boolean method7141() {
+   public boolean isEmpty() {
       return false;
    }
 

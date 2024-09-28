@@ -73,7 +73,7 @@ public class Class3341 extends Item {
                   CriteriaTriggers.field44477.method15065((ServerPlayerEntity)var2, var8);
                }
 
-               var1.method6743(
+               var1.playSound(
                   (PlayerEntity)null,
                   var2.getPosX(),
                   var2.getPosY(),

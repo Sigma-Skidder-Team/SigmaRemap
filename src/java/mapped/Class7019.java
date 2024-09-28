@@ -130,7 +130,7 @@ public class Class7019 implements Class7016 {
       for (int var7 = 0; var7 < 10; var7++) {
          int var8 = var2.getX() + this.field30322.nextInt(var3 * 2) - var3;
          int var9 = var2.getZ() + this.field30322.nextInt(var3 * 2) - var3;
-         int var10 = var1.method6736(Heightmap.Type.field296, var8, var9);
+         int var10 = var1.method6736(Heightmap.Type.WORLD_SURFACE, var8, var9);
          BlockPos var11 = new BlockPos(var8, var10, var9);
          if (Class8170.method28429(Class2068.field13472, var1, var11, EntityType.field41100)) {
             var6 = var11;

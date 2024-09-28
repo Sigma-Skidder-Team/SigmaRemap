@@ -58,7 +58,7 @@ public abstract class Class901 extends ProjectileEntity {
    @Override
    public void tick() {
       Entity var3 = this.method3460();
-      if (this.world.isRemote || (var3 == null || !var3.removed) && this.world.method7017(this.getPosition())) {
+      if (this.world.isRemote || (var3 == null || !var3.removed) && this.world.isBlockLoaded(this.getPosition())) {
          super.tick();
          if (this.method3529()) {
             this.setFire(1);

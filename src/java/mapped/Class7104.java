@@ -532,7 +532,7 @@ public class Class7104 {
    }
 
    private static TextureAtlasSprite method22106(String var0) {
-      AtlasTexture var3 = Config.method26969();
+      AtlasTexture var3 = Config.getTextureMap();
       TextureAtlasSprite var4 = var3.method1104(var0);
       return var4 == null ? var3.method1104("block/" + var0) : var4;
    }

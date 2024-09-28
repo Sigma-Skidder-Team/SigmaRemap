@@ -38,10 +38,10 @@ public class Class5450 extends StructureStart<Class4712> {
 
       int var13 = (var4 << 4) + 7;
       int var14 = (var5 << 4) + 7;
-      int var15 = var2.method17829(var13, var14, Heightmap.Type.field295);
-      int var16 = var2.method17829(var13, var14 + var12, Heightmap.Type.field295);
-      int var17 = var2.method17829(var13 + var11, var14, Heightmap.Type.field295);
-      int var18 = var2.method17829(var13 + var11, var14 + var12, Heightmap.Type.field295);
+      int var15 = var2.method17829(var13, var14, Heightmap.Type.WORLD_SURFACE_WG);
+      int var16 = var2.method17829(var13, var14 + var12, Heightmap.Type.WORLD_SURFACE_WG);
+      int var17 = var2.method17829(var13 + var11, var14, Heightmap.Type.WORLD_SURFACE_WG);
+      int var18 = var2.method17829(var13 + var11, var14 + var12, Heightmap.Type.WORLD_SURFACE_WG);
       int var19 = Math.min(Math.min(var15, var16), Math.min(var17, var18));
       if (var19 >= 60) {
          BlockPos var20 = new BlockPos(var4 * 16 + 8, var19 + 1, var5 * 16 + 8);

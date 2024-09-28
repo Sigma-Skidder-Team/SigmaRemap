@@ -41,7 +41,7 @@ public class Class8578 {
          field38572 = field38570.getProfiler();
       }
 
-      if (field38571.showDebugInfo && (field38571.field44697 || field38571.field44666)) {
+      if (field38571.showDebugInfo && (field38571.field44697 || field38571.showLagometer)) {
          field38573 = true;
          long var2 = System.nanoTime();
          if (field38591 != -1L) {
@@ -75,7 +75,7 @@ public class Class8578 {
    }
 
    public static void method30657(MatrixStack var0, int var1) {
-      if (field38571 != null && (field38571.field44697 || field38571.field44666)) {
+      if (field38571 != null && (field38571.field44697 || field38571.showLagometer)) {
          long var4 = System.nanoTime();
          GlStateManager.method23883(256);
          GlStateManager.matrixMode(5889);
