@@ -6,6 +6,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -306,7 +307,7 @@ public class Class1058 extends Class1056 implements IAngerable {
             }
          }
 
-         return Class8170.method28428(var1, var4, var1.getBlockState(var4), Class9479.field44064.method25049(), EntityType.field41041) && var1.checkNoEntityCollision(this);
+         return Class8170.method28428(var1, var4, var1.getBlockState(var4), Fluids.EMPTY.method25049(), EntityType.field41041) && var1.checkNoEntityCollision(this);
       }
    }
 

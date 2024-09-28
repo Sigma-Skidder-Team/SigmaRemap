@@ -73,8 +73,8 @@ public class Class9680 {
    private static int[] field45263 = null;
    private static int[] field45264 = null;
    private static int[] field45265 = null;
-   private static final BlockState field45266 = Blocks.field36396.method11579();
-   private static final BlockState field45267 = Blocks.WATER.method11579();
+   private static final BlockState field45266 = Blocks.field36396.getDefaultState();
+   private static final BlockState field45267 = Blocks.WATER.getDefaultState();
    public static Random field45268 = new Random();
    private static final Class7443 field45269 = new Class7447();
    private static final Class7443 field45270 = new Class7445();
@@ -833,7 +833,7 @@ public class Class9680 {
    }
 
    private static int method37865(IBlockDisplayReader var0, BlockPos var1) {
-      return field45252 >= 0 ? field45252 : method37855().method29465(Blocks.LILY_PAD.method11579(), var0, var1, 0);
+      return field45252 >= 0 ? field45252 : method37855().method29465(Blocks.LILY_PAD.getDefaultState(), var0, var1, 0);
    }
 
    private static Vector3d method37866(Vector3d var0) {

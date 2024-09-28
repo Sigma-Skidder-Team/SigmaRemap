@@ -27,9 +27,9 @@ public abstract class Class4188 extends Class4178 {
       switch (Class7441.field32016[this.field20479.ordinal()]) {
          case 1:
          default:
-            return Blocks.field36400.method11579();
+            return Blocks.field36400.getDefaultState();
          case 2:
-            return Blocks.field36405.method11579();
+            return Blocks.field36405.getDefaultState();
       }
    }
 
@@ -37,9 +37,9 @@ public abstract class Class4188 extends Class4178 {
       switch (Class7441.field32016[this.field20479.ordinal()]) {
          case 1:
          default:
-            return Blocks.OAK_FENCE.method11579();
+            return Blocks.OAK_FENCE.getDefaultState();
          case 2:
-            return Blocks.field36871.method11579();
+            return Blocks.field36871.getDefaultState();
       }
    }
 

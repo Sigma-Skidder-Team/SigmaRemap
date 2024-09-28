@@ -26,7 +26,7 @@ public class Class8400 {
    public TextureAtlasSprite method29491(ItemStack var1) {
       IBakedModel var4 = this.method29492(var1);
       return var4 == this.field36049.getMissingModel() && var1.getItem() instanceof Class3292
-         ? this.field36049.method1025().getTexture(((Class3292)var1.getItem()).method11845().method11579())
+         ? this.field36049.method1025().getTexture(((Class3292)var1.getItem()).method11845().getDefaultState())
          : var4.getParticleTexture();
    }
 

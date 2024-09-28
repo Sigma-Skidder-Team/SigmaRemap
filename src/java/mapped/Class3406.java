@@ -5,13 +5,17 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.fluid.Fluid;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.Direction;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -24,7 +28,7 @@ public class Class3406 extends Block implements Class3405 {
 
    public Class3406(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().with(field19084, Boolean.valueOf(true)));
+      this.setDefaultState(this.stateContainer.getBaseState().with(field19084, Boolean.valueOf(true)));
    }
 
    @Override
@@ -66,27 +70,27 @@ public class Class3406 extends Block implements Class3405 {
    }
 
    @Override
-   public void method11589(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+   public void onBlockAdded(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       method12045(var2, var3.up(), method12047(var2, var3.down()));
    }
 
    @Override
-   public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void tick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       method12045(var2, var3.up(), method12047(var2, var3));
    }
 
    @Override
-   public FluidState method11498(BlockState var1) {
-      return Class9479.field44066.method25078(false);
+   public FluidState getFluidState(BlockState var1) {
+      return Fluids.WATER.getStillFluidState(false);
    }
 
-   public static void method12045(Class1660 var0, BlockPos var1, boolean var2) {
+   public static void method12045(IWorld var0, BlockPos var1, boolean var2) {
       if (method12046(var0, var1)) {
-         var0.setBlockState(var1, Blocks.field37013.method11579().with(field19084, Boolean.valueOf(var2)), 2);
+         var0.setBlockState(var1, Blocks.field37013.getDefaultState().with(field19084, Boolean.valueOf(var2)), 2);
       }
    }
 
-   public static boolean method12046(Class1660 var0, BlockPos var1) {
+   public static boolean method12046(IWorld var0, BlockPos var1) {
       FluidState var4 = var0.getFluidState(var1);
       return var0.getBlockState(var1).isIn(Blocks.WATER) && var4.method23477() >= 8 && var4.method23473();
    }
@@ -97,7 +101,7 @@ public class Class3406 extends Block implements Class3405 {
    }
 
    @Override
-   public void method11512(BlockState var1, World var2, BlockPos var3, Random var4) {
+   public void animateTick(BlockState var1, World var2, BlockPos var3, Random var4) {
       double var7 = (double)var3.getX();
       double var9 = (double)var3.getY();
       double var11 = (double)var3.getZ();
@@ -122,20 +126,20 @@ public class Class3406 extends Block implements Class3405 {
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       if (var1.method23443(var4, var5)) {
          if (var2 != Direction.DOWN) {
             if (var2 == Direction.UP && !var3.isIn(Blocks.field37013) && method12046(var4, var6)) {
-               var4.method6860().method20726(var5, this, 5);
+               var4.method6860().scheduleTick(var5, this, 5);
             }
          } else {
-            var4.setBlockState(var5, Blocks.field37013.method11579().with(field19084, Boolean.valueOf(method12047(var4, var6))), 2);
+            var4.setBlockState(var5, Blocks.field37013.getDefaultState().with(field19084, Boolean.valueOf(method12047(var4, var6))), 2);
          }
 
-         var4.method6861().method20726(var5, Class9479.field44066, Class9479.field44066.method25057(var4));
-         return super.method11491(var1, var2, var3, var4, var5, var6);
+         var4.getPendingFluidTicks().scheduleTick(var5, Fluids.WATER, Fluids.WATER.getTickRate(var4));
+         return super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
       } else {
-         return Blocks.WATER.method11579();
+         return Blocks.WATER.getDefaultState();
       }
    }
 
@@ -146,7 +150,7 @@ public class Class3406 extends Block implements Class3405 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return VoxelShapes.method27425();
    }
 
@@ -156,13 +160,13 @@ public class Class3406 extends Block implements Class3405 {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field19084);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field19084);
    }
 
    @Override
-   public Fluid method11533(Class1660 var1, BlockPos var2, BlockState var3) {
-      var1.setBlockState(var2, Blocks.AIR.method11579(), 11);
-      return Class9479.field44066;
+   public Fluid method11533(IWorld var1, BlockPos var2, BlockState var3) {
+      var1.setBlockState(var2, Blocks.AIR.getDefaultState(), 11);
+      return Fluids.WATER;
    }
 }

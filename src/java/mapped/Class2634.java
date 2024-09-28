@@ -61,7 +61,7 @@ public class Class2634 extends Class2628 {
                var3.setBlockState(var4, var5.with(Class3483.field19334, Integer.valueOf(var7 - 1)), 2);
                var3.playEvent(2001, var4, Block.getStateId(var5));
             } else {
-               var3.setBlockState(var4, Blocks.AIR.method11579(), 2);
+               var3.setBlockState(var4, Blocks.AIR.getDefaultState(), 2);
                var3.method7180(var4, true, this.field16950);
             }
 

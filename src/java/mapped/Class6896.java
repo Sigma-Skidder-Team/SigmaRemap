@@ -56,7 +56,7 @@ public abstract class Class6896 {
 
    public static void method21069(Class1679 var0, BlockPos var1) {
       if (!method21068(var0, var1)) {
-         Class2903.method11232(var0, var1, Blocks.field36396.method11579());
+         Class2903.method11232(var0, var1, Blocks.field36396.getDefaultState());
       }
    }
 

@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
@@ -21,16 +22,16 @@ public class Class3193 extends Class3194 implements Class3196 {
    public Class3193(Class7665 var1, Properties var2) {
       super(var2);
       this.field18469 = var1;
-      this.method11578(this.field18612.method35393().with(field18467, Integer.valueOf(0)));
+      this.setDefaultState(this.stateContainer.getBaseState().with(field18467, Integer.valueOf(0)));
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return field18468;
    }
 
    @Override
-   public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void randomTick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var2.method7015(var3.up()) >= 9 && var4.nextInt(7) == 0) {
          this.method11485(var2, var3, var1, var4);
       }
@@ -60,7 +61,7 @@ public class Class3193 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field18467);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field18467);
    }
 }

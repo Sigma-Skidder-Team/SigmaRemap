@@ -46,7 +46,7 @@ public final class Class8016 implements Class8015 {
          return false;
       }
 
-      var11 = EndCityPieces.method36644(var5, EndCityPieces.method36643(var1, var11, new BlockPos(4, var12, 0), "bridge_end", var9.method250(Rotation.field187), true));
+      var11 = EndCityPieces.method36644(var5, EndCityPieces.method36643(var1, var11, new BlockPos(4, var12, 0), "bridge_end", var9.method250(Rotation.CLOCKWISE_180), true));
       var11.field20448 = -1;
       return true;
    }

@@ -22,7 +22,7 @@ public class Class2945 extends Class2898<Class4728> {
       BlockPos var12 = new BlockPos(var4.getX() + var9, var11, var4.getZ() + var10);
       if (var1.getBlockState(var12).isIn(Blocks.WATER)) {
          boolean var13 = var3.nextDouble() < (double)var5.field22399;
-         BlockState var14 = !var13 ? Blocks.SEAGRASS.method11579() : Blocks.TALL_SEAGRASS.method11579();
+         BlockState var14 = !var13 ? Blocks.SEAGRASS.getDefaultState() : Blocks.TALL_SEAGRASS.getDefaultState();
          if (var14.method23443(var1, var12)) {
             if (!var13) {
                var1.setBlockState(var12, var14, 2);

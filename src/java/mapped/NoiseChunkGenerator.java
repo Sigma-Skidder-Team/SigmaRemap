@@ -10,6 +10,7 @@ import net.minecraft.client.util.Util;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.provider.BiomeProvider;
 import net.minecraft.world.chunk.ChunkSection;
@@ -47,7 +48,7 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
          }
       }
    });
-   private static final BlockState field24966 = Blocks.AIR.method11579();
+   private static final BlockState field24966 = Blocks.AIR.getDefaultState();
    private final int field24967;
    private final int field24968;
    private final int field24969;
@@ -374,7 +375,7 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
             if (var12) {
                for (int var16 = 0; var16 < 5; var16++) {
                   if (var16 <= var2.nextInt(5)) {
-                     var1.setBlockState(var5.method8372(var15.getX(), var10 - var16, var15.getZ()), Blocks.BEDROCK.method11579(), false);
+                     var1.setBlockState(var5.method8372(var15.getX(), var10 - var16, var15.getZ()), Blocks.BEDROCK.getDefaultState(), false);
                   }
                }
             }
@@ -382,7 +383,7 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
             if (var13) {
                for (int var17 = 4; var17 >= 0; var17--) {
                   if (var17 <= var2.nextInt(5)) {
-                     var1.setBlockState(var5.method8372(var15.getX(), var9 + var17, var15.getZ()), Blocks.BEDROCK.method11579(), false);
+                     var1.setBlockState(var5.method8372(var15.getX(), var9 + var17, var15.getZ()), Blocks.BEDROCK.getDefaultState(), false);
                   }
                }
             }
@@ -391,7 +392,7 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
    }
 
    @Override
-   public void method17803(Class1660 var1, Class7480 var2, IChunk var3) {
+   public void method17803(IWorld var1, Class7480 var2, IChunk var3) {
       ObjectArrayList var6 = new ObjectArrayList(10);
       ObjectArrayList var7 = new ObjectArrayList(32);
       ChunkPos var8 = var3.getPos();

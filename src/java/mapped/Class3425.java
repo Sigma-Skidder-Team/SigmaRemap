@@ -4,8 +4,10 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.Items;
 import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Direction;
@@ -13,6 +15,7 @@ import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -36,9 +39,9 @@ public class Class3425 extends Block {
 
    public Class3425(Class3459 var1, Properties var2) {
       super(var2);
-      this.method11578(
-         this.field18612
-            .method35393()
+      this.setDefaultState(
+         this.stateContainer
+            .getBaseState()
             .with(field19163, Boolean.valueOf(false))
             .with(field19164, Boolean.valueOf(false))
             .with(field19165, Boolean.valueOf(false))
@@ -51,15 +54,15 @@ public class Class3425 extends Block {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return !var1.<Boolean>get(field19164) ? field19172 : field19171;
    }
 
    @Override
-   public BlockState method11495(Class5909 var1) {
-      World var4 = var1.method18360();
-      BlockPos var5 = var1.method18345();
-      return this.method11579()
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      World var4 = var1.getWorld();
+      BlockPos var5 = var1.getPos();
+      return this.getDefaultState()
          .with(field19166, Boolean.valueOf(this.method12082(var4.getBlockState(var5.north()), Direction.NORTH)))
          .with(field19167, Boolean.valueOf(this.method12082(var4.getBlockState(var5.east()), Direction.EAST)))
          .with(field19168, Boolean.valueOf(this.method12082(var4.getBlockState(var5.south()), Direction.SOUTH)))
@@ -67,21 +70,21 @@ public class Class3425 extends Block {
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
-      return !var2.getAxis().method324()
-         ? super.method11491(var1, var2, var3, var4, var5, var6)
+   public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
+      return !var2.getAxis().isHorizontal()
+         ? super.updatePostPlacement(var1, var2, var3, var4, var5, var6)
          : var1.with(field19170.get(var2), Boolean.valueOf(this.method12082(var3, var2)));
    }
 
    @Override
-   public void method11589(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+   public void onBlockAdded(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       if (!var4.isIn(var1.getBlock())) {
          this.method12080(var2, var3, var1);
       }
    }
 
    @Override
-   public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+   public void onReplaced(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       if (!var5 && !var1.isIn(var4.getBlock())) {
          this.method12080(var2, var3, var1.with(field19163, Boolean.valueOf(true)));
       }
@@ -123,7 +126,7 @@ public class Class3425 extends Block {
    }
 
    @Override
-   public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void tick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var2.getBlockState(var3).<Boolean>get(field19163)) {
          this.method12081(var2, var3);
       }
@@ -150,7 +153,7 @@ public class Class3425 extends Block {
       }
 
       if (var7) {
-         var1.method6860().method20726(new BlockPos(var2), this, 10);
+         var1.method6860().scheduleTick(new BlockPos(var2), this, 10);
       }
    }
 
@@ -195,7 +198,7 @@ public class Class3425 extends Block {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field19163, field19164, field19165, field19166, field19167, field19169, field19168);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field19163, field19164, field19165, field19166, field19167, field19169, field19168);
    }
 }

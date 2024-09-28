@@ -148,7 +148,7 @@ public class Class905 extends ProjectileEntity {
          if (!var23.isEmpty()) {
             var13 = (Direction)var23.get(this.rand.nextInt(var23.size()));
          } else {
-            for (int var24 = 5; !this.world.method7007(var22.method8349(var13)) && var24 > 0; var24--) {
+            for (int var24 = 5; !this.world.method7007(var22.offset(var13)) && var24 > 0; var24--) {
                var13 = Direction.getRandomDirection(this.rand);
             }
          }
@@ -231,7 +231,7 @@ public class Class905 extends ProjectileEntity {
             if (this.field5164 != null) {
                BlockPos var4 = this.getPosition();
                Direction.Axis var5 = this.field5164.getAxis();
-               if (!this.world.method6765(var4.method8349(this.field5164), this)) {
+               if (!this.world.method6765(var4.offset(this.field5164), this)) {
                   BlockPos var6 = this.field5163.getPosition();
                   if (var5 == Direction.Axis.X && var4.getX() == var6.getX()
                      || var5 == Direction.Axis.Z && var4.getZ() == var6.getZ()

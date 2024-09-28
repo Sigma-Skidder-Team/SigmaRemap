@@ -7,6 +7,7 @@ import net.minecraft.block.HorizontalBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -37,11 +38,11 @@ public class Class3486 extends Class3194 implements Class3196 {
    public Class3486(Class3462 var1, Properties var2) {
       super(var2);
       this.field19349 = var1;
-      this.method11578(this.field18612.method35393().with(field19347, Integer.valueOf(0)));
+      this.setDefaultState(this.stateContainer.getBaseState().with(field19347, Integer.valueOf(0)));
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return field19348[var1.<Integer>get(field19347)];
    }
 
@@ -51,14 +52,14 @@ public class Class3486 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void randomTick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var2.method7021(var3, 0) >= 9) {
          float var7 = Class3480.method12182(this, var2, var3);
          if (var4.nextInt((int)(25.0F / var7) + 1) == 0) {
             int var8 = var1.<Integer>get(field19347);
             if (var8 >= 7) {
                Direction var9 = Direction.Plane.HORIZONTAL.method247(var4);
-               BlockPos var10 = var3.method8349(var9);
+               BlockPos var10 = var3.offset(var9);
                BlockState var11 = var2.getBlockState(var10.down());
                if (var2.getBlockState(var10).isAir()
                   && (
@@ -68,8 +69,8 @@ public class Class3486 extends Class3194 implements Class3196 {
                         || var11.isIn(Blocks.field36398)
                         || var11.isIn(Blocks.field36395)
                   )) {
-                  var2.setBlockState(var10, this.field19349.method11579());
-                  var2.setBlockState(var3, this.field19349.method12147().method11579().with(HorizontalBlock.HORIZONTAL_FACING, var9));
+                  var2.setBlockState(var10, this.field19349.getDefaultState());
+                  var2.setBlockState(var3, this.field19349.method12147().getDefaultState().with(HorizontalBlock.HORIZONTAL_FACING, var9));
                }
             } else {
                var1 = var1.with(field19347, Integer.valueOf(var8 + 1));
@@ -115,8 +116,8 @@ public class Class3486 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field19347);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field19347);
    }
 
    public Class3462 method12185() {

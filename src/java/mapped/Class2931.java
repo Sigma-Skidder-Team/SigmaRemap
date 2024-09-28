@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorld;
 
 import java.util.Random;
 
@@ -11,7 +12,7 @@ public class Class2931 extends Class2930 {
    }
 
    @Override
-   public void method11269(Class1660 var1, Random var2, BlockPos var3, int var4, BlockPos.Mutable var5, Class4727 var6) {
+   public void method11269(IWorld var1, Random var2, BlockPos var3, int var4, BlockPos.Mutable var5, Class4727 var6) {
       for (int var9 = var4 - 3; var9 <= var4; var9++) {
          int var10 = var9 >= var4 ? var6.field22397 - 1 : var6.field22397;
          int var11 = var6.field22397 - 2;

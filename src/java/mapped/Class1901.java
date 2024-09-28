@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.vector.Orientation;
 import net.minecraft.util.math.vector.Quaternion;
 
 import java.util.Arrays;
@@ -28,7 +29,7 @@ public enum Class1901 implements Class1902 {
    private static final Map<Integer, Class1901> field11175 = Arrays.<Class1901>stream(values())
       .collect(Collectors.toMap(var0 -> var0.field11178, var0 -> (Class1901)var0));
    private final Class6979 field11176;
-   private final Class178 field11177;
+   private final Orientation field11177;
    private final int field11178;
    private static final Class1901[] field11179 = new Class1901[]{
       field11159,
@@ -57,14 +58,14 @@ public enum Class1901 implements Class1902 {
       this.field11178 = method8165(var3, var4);
       Quaternion var7 = new Quaternion(new Vector3f(0.0F, 1.0F, 0.0F), (float)(-var4), true);
       var7.method31182(new Quaternion(new Vector3f(1.0F, 0.0F, 0.0F), (float)(-var3), true));
-      Class178 var8 = Class178.field565;
+      Orientation var8 = Orientation.IDENTITY;
 
       for (int var9 = 0; var9 < var4; var9 += 90) {
-         var8 = var8.method507(Class178.field585);
+         var8 = var8.method507(Orientation.ROT_90_Y_NEG);
       }
 
       for (int var10 = 0; var10 < var3; var10 += 90) {
-         var8 = var8.method507(Class178.field583);
+         var8 = var8.method507(Orientation.ROT_90_X_NEG);
       }
 
       this.field11176 = new Class6979((Vector3f)null, var7, (Vector3f)null, (Quaternion)null);

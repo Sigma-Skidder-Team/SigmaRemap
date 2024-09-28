@@ -39,7 +39,7 @@ public class Class2947 extends Class2898<Class4712> {
    }
 
    public boolean method11213(ISeedReader var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4712 var5) {
-      Rotation var8 = Rotation.method254(var3);
+      Rotation var8 = Rotation.randomRotation(var3);
       int var9 = var3.nextInt(field18024.length);
       TemplateManager var10 = var1.method6970().getServer().method1435();
       Class8969 var11 = var10.method31603(field18024[var9]);

@@ -7,9 +7,9 @@ public class Class3236 extends Class3237 implements Class3235 {
    public Class3236(Class112 var1, Properties var2) {
       super(var2);
       this.field18677 = var1;
-      this.method11578(
-         this.field18612
-            .method35393()
+      this.setDefaultState(
+         this.stateContainer
+            .getBaseState()
             .with(field18680, Boolean.valueOf(false))
             .with(field18681, Boolean.valueOf(false))
             .with(field18682, Boolean.valueOf(false))

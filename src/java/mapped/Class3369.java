@@ -1,6 +1,8 @@
 package mapped;
 
 import net.minecraft.block.HorizontalBlock;
+import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.block.Block;
@@ -11,6 +13,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.state.EnumProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BellAttachment;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tileentity.TileEntity;
@@ -22,6 +25,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
@@ -47,9 +51,9 @@ public class Class3369 extends Class3241 {
 
    public Class3369(Properties var1) {
       super(var1);
-      this.method11578(
-         this.field18612
-            .method35393()
+      this.setDefaultState(
+         this.stateContainer
+            .getBaseState()
             .with(field18943, Direction.NORTH)
             .with(field18944, BellAttachment.field212)
             .with(field18945, Boolean.valueOf(false))
@@ -76,7 +80,7 @@ public class Class3369 extends Class3241 {
    }
 
    @Override
-   public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
+   public ActionResultType onBlockActivated(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       return !this.method11960(var2, var1, var6, var4, true) ? ActionResultType.field14820 : ActionResultType.method9002(var2.isRemote);
    }
 
@@ -163,7 +167,7 @@ public class Class3369 extends Class3241 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return this.method11963(var1);
    }
 
@@ -174,10 +178,10 @@ public class Class3369 extends Class3241 {
 
    @Nullable
    @Override
-   public BlockState method11495(Class5909 var1) {
-      Direction var4 = var1.method18354();
-      BlockPos var5 = var1.method18345();
-      World var6 = var1.method18360();
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      Direction var4 = var1.getFace();
+      BlockPos var5 = var1.getPos();
+      World var6 = var1.getWorld();
       Direction.Axis var7 = var4.getAxis();
       if (var7 != Direction.Axis.Y) {
          boolean var8 = var7 == Direction.Axis.X
@@ -186,21 +190,21 @@ public class Class3369 extends Class3241 {
             || var7 == Direction.Axis.Z
                && var6.getBlockState(var5.north()).method23454(var6, var5.north(), Direction.SOUTH)
                && var6.getBlockState(var5.south()).method23454(var6, var5.south(), Direction.NORTH);
-         BlockState var9 = this.method11579().with(field18943, var4.getOpposite()).with(field18944, !var8 ? BellAttachment.field214 : BellAttachment.field215);
-         if (var9.method23443(var1.method18360(), var1.method18345())) {
+         BlockState var9 = this.getDefaultState().with(field18943, var4.getOpposite()).with(field18944, !var8 ? BellAttachment.field214 : BellAttachment.field215);
+         if (var9.method23443(var1.getWorld(), var1.getPos())) {
             return var9;
          }
 
          boolean var10 = var6.getBlockState(var5.down()).method23454(var6, var5.down(), Direction.UP);
          var9 = var9.with(field18944, !var10 ? BellAttachment.field213 : BellAttachment.field212);
-         if (var9.method23443(var1.method18360(), var1.method18345())) {
+         if (var9.method23443(var1.getWorld(), var1.getPos())) {
             return var9;
          }
       } else {
-         BlockState var11 = this.method11579()
+         BlockState var11 = this.getDefaultState()
             .with(field18944, var4 != Direction.DOWN ? BellAttachment.field212 : BellAttachment.field213)
-            .with(field18943, var1.method18350());
-         if (var11.method23443(var1.method18360(), var5)) {
+            .with(field18943, var1.getPlacementHorizontalFacing());
+         if (var11.method23443(var1.getWorld(), var5)) {
             return var11;
          }
       }
@@ -209,11 +213,11 @@ public class Class3369 extends Class3241 {
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       BellAttachment var9 = var1.<BellAttachment>get(field18944);
       Direction var10 = method11964(var1).getOpposite();
       if (var10 == var2 && !var1.method23443(var4, var5) && var9 != BellAttachment.field215) {
-         return Blocks.AIR.method11579();
+         return Blocks.AIR.getDefaultState();
       } else {
          if (var2.getAxis() == var1.<Direction>get(field18943).getAxis()) {
             if (var9 == BellAttachment.field215 && !var3.method23454(var4, var6, var2)) {
@@ -225,7 +229,7 @@ public class Class3369 extends Class3241 {
             }
          }
 
-         return super.method11491(var1, var2, var3, var4, var5, var6);
+         return super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
       }
    }
 
@@ -252,8 +256,8 @@ public class Class3369 extends Class3241 {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field18943, field18944, field18945);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field18943, field18944, field18945);
    }
 
    @Nullable
@@ -263,7 +267,7 @@ public class Class3369 extends Class3241 {
    }
 
    @Override
-   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
+   public boolean allowsMovement(BlockState var1, IBlockReader var2, BlockPos var3, PathType var4) {
       return false;
    }
 }

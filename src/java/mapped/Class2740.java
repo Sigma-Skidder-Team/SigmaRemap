@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.pathfinding.PathType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 
@@ -20,7 +21,7 @@ public class Class2740 extends Class2736 {
 
       while (
          var3 != null
-            && !this.field17258.world.getBlockState(new BlockPos(var3)).method23440(this.field17258.world, new BlockPos(var3), Class1947.field12615)
+            && !this.field17258.world.getBlockState(new BlockPos(var3)).method23440(this.field17258.world, new BlockPos(var3), PathType.field12615)
             && var4++ < 10
       ) {
          var3 = Class8037.method27581(this.field17258, 10, 7);

@@ -8,6 +8,7 @@ import com.google.gson.JsonObject;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
+import net.minecraft.state.Property;
 import net.minecraft.state.StateContainer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
@@ -34,7 +35,7 @@ public class Class4449 implements Class4442 {
          if (!var9.method35395().isEmpty()) {
             JsonObject var10 = new JsonObject();
 
-            for (Class8550 var12 : var9.method35395()) {
+            for (Property var12 : var9.method35395()) {
                JsonArray var13 = new JsonArray();
 
                for (Object var15 : var12.method30474()) {
@@ -55,7 +56,7 @@ public class Class4449 implements Class4442 {
             JsonObject var21 = new JsonObject();
             JsonObject var22 = new JsonObject();
 
-            for (Class8550 var16 : var9.method35395()) {
+            for (Property var16 : var9.method35395()) {
                var22.addProperty(var16.method30472(), Util.method38485(var16, var20.get(var16)));
             }
 
@@ -64,7 +65,7 @@ public class Class4449 implements Class4442 {
             }
 
             var21.addProperty("id", Block.getStateId(var20));
-            if (var20 == var6.method11579()) {
+            if (var20 == var6.getDefaultState()) {
                var21.addProperty("default", true);
             }
 

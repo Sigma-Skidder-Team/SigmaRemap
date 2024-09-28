@@ -151,8 +151,8 @@ public final class DimensionSettings {
             false,
             var1
          ),
-         Blocks.STONE.method11579(),
-         Blocks.WATER.method11579(),
+         Blocks.STONE.getDefaultState(),
+         Blocks.WATER.getDefaultState(),
          -10,
          0,
          63,
@@ -163,18 +163,18 @@ public final class DimensionSettings {
    static {
       method35169(field43231, method35173(new Class9763(true), true, field43231.getLocation()));
       method35169(
-              field_242736_e, method35172(new Class9763(false), Blocks.NETHERRACK.method11579(), Blocks.LAVA.method11579(), field_242736_e.getLocation())
+              field_242736_e, method35172(new Class9763(false), Blocks.NETHERRACK.getDefaultState(), Blocks.LAVA.getDefaultState(), field_242736_e.getLocation())
       );
       method35169(
               field_242737_f,
-         method35171(new Class9763(false), Blocks.field36651.method11579(), Blocks.AIR.method11579(), field_242737_f.getLocation(), true, true)
+         method35171(new Class9763(false), Blocks.field36651.getDefaultState(), Blocks.AIR.getDefaultState(), field_242737_f.getLocation(), true, true)
       );
       method35169(
-         field43234, method35172(new Class9763(true), Blocks.STONE.method11579(), Blocks.WATER.method11579(), field43234.getLocation())
+         field43234, method35172(new Class9763(true), Blocks.STONE.getDefaultState(), Blocks.WATER.getDefaultState(), field43234.getLocation())
       );
       method35169(
          field43235,
-         method35171(new Class9763(true), Blocks.STONE.method11579(), Blocks.WATER.method11579(), field43235.getLocation(), false, false)
+         method35171(new Class9763(true), Blocks.STONE.getDefaultState(), Blocks.WATER.getDefaultState(), field43235.getLocation(), false, false)
       );
    }
 }

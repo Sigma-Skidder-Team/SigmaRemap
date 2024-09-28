@@ -44,7 +44,7 @@ public class ThumbnailUtil {
 
         List<YoutubeJPGThumbnail> thumbnails = new ArrayList<>();
         // Updated regex pattern to capture expected content correctly
-        String regex = "\"videoId\":\"(.{11})\".*?\"title\":\"(.*?)\"";
+        String regex = "\"videoId\":\"([\\w-]{11})\".*?\"title\":*\"runs\":\\[*\"text\":\"(.*?)\"";
         Pattern pattern = Pattern.compile(regex, Pattern.DOTALL);
         Matcher matcher = pattern.matcher(response.replace("\n", "").replace("\r", ""));
 

@@ -19,7 +19,7 @@ public class Class7096 extends Class7092 {
       BlockPos var9 = var5.field35530;
       boolean var10 = var1.getBlockState(var9).isIn(Blocks.LAVA);
       return var10 && !Block.method11550(var5.field35531.method23412(var1, var9))
-         ? new Class8266(var9, Blocks.LAVA.method11579(), var5.field35532)
+         ? new Class8266(var9, Blocks.LAVA.getDefaultState(), var5.field35532)
          : var5;
    }
 

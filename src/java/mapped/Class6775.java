@@ -10,9 +10,9 @@ import net.minecraft.world.chunk.IChunk;
 import java.util.Random;
 
 public class Class6775 extends Class6773 {
-   private static final BlockState field29495 = Blocks.field36730.method11579();
-   private static final BlockState field29549 = Blocks.field36731.method11579();
-   private static final BlockState field29550 = Blocks.field36794.method11579();
+   private static final BlockState field29495 = Blocks.field36730.getDefaultState();
+   private static final BlockState field29549 = Blocks.field36731.getDefaultState();
+   private static final BlockState field29550 = Blocks.field36794.getDefaultState();
 
    public Class6775(Codec<Class8278> var1) {
       super(var1);
@@ -70,7 +70,7 @@ public class Class6775 extends Class6773 {
                            var23 = var21;
                         }
                      } else {
-                        var19 = Blocks.AIR.method11579();
+                        var19 = Blocks.AIR.getDefaultState();
                         var23 = var9;
                      }
 
@@ -101,9 +101,9 @@ public class Class6775 extends Class6773 {
                            var2.setBlockState(var29, var32, false);
                         }
                      } else if (!var25) {
-                        var2.setBlockState(var29, Blocks.field36395.method11579(), false);
+                        var2.setBlockState(var29, Blocks.field36395.getDefaultState(), false);
                      } else {
-                        var2.setBlockState(var29, Blocks.field36397.method11579(), false);
+                        var2.setBlockState(var29, Blocks.field36397.getDefaultState(), false);
                      }
                   }
 

@@ -96,7 +96,7 @@ public class CommandBlockTileEntity extends TileEntity {
       Block var3 = this.getBlockState().getBlock();
       if (var3 instanceof CommandBlockBlock) {
          this.method4017();
-         this.world.method6860().method20726(this.pos, var3, 1);
+         this.world.method6860().scheduleTick(this.pos, var3, 1);
       }
    }
 
@@ -107,7 +107,7 @@ public class CommandBlockTileEntity extends TileEntity {
    public boolean method4017() {
       this.conditionMet = true;
       if (this.method4021()) {
-         BlockPos var3 = this.pos.method8349(this.world.getBlockState(this.pos).<Direction>get(CommandBlockBlock.field18893).getOpposite());
+         BlockPos var3 = this.pos.offset(this.world.getBlockState(this.pos).<Direction>get(CommandBlockBlock.field18893).getOpposite());
          if (!(this.world.getBlockState(var3).getBlock() instanceof CommandBlockBlock)) {
             this.conditionMet = false;
          } else {

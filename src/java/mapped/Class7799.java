@@ -11,17 +11,17 @@ public class Class7799 {
 
    static {
       try {
-         field33494[Rotation.field186.ordinal()] = 1;
+         field33494[Rotation.CLOCKWISE_90.ordinal()] = 1;
       } catch (NoSuchFieldError var7) {
       }
 
       try {
-         field33494[Rotation.field187.ordinal()] = 2;
+         field33494[Rotation.CLOCKWISE_180.ordinal()] = 2;
       } catch (NoSuchFieldError var6) {
       }
 
       try {
-         field33494[Rotation.field188.ordinal()] = 3;
+         field33494[Rotation.COUNTERCLOCKWISE_90.ordinal()] = 3;
       } catch (NoSuchFieldError var5) {
       }
 

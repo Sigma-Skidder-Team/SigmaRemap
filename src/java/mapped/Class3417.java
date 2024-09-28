@@ -19,19 +19,19 @@ public class Class3417 extends Block {
    }
 
    @Override
-   public void method11589(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+   public void onBlockAdded(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       if (var2.method6812().isUltrawarm()) {
-         var2.setBlockState(var3, Blocks.field36452.method11579(), 3);
+         var2.setBlockState(var3, Blocks.field36452.getDefaultState(), 3);
          var2.playEvent(2009, var3, 0);
          var2.method6742((PlayerEntity)null, var3, SoundEvents.field26582, Class2266.field14732, 1.0F, (1.0F + var2.method6814().nextFloat() * 0.2F) * 0.7F);
       }
    }
 
    @Override
-   public void method11512(BlockState var1, World var2, BlockPos var3, Random var4) {
+   public void animateTick(BlockState var1, World var2, BlockPos var3, Random var4) {
       Direction var7 = Direction.getRandomDirection(var4);
       if (var7 != Direction.UP) {
-         BlockPos var8 = var3.method8349(var7);
+         BlockPos var8 = var3.offset(var7);
          BlockState var9 = var2.getBlockState(var8);
          if (!var1.method23410() || !var9.method23454(var2, var8, var7.getOpposite())) {
             double var10 = (double)var3.getX();

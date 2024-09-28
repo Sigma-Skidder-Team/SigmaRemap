@@ -220,18 +220,18 @@ public class Class9037 {
          ServerWorld var7 = var0.method20172();
          BlockPos var8 = new BlockPos(var0.method20171());
          BlockPos var9 = new BlockPos(var8.getX(), var0.method20172().method7006(Heightmap.Type.WORLD_SURFACE, var8).getY(), var8.getZ() + 3);
-         Class7803.method26055(var1.toLowerCase(), var9, new BlockPos(var2, var3, var4), Rotation.field185, var7);
+         Class7803.method26055(var1.toLowerCase(), var9, new BlockPos(var2, var3, var4), Rotation.NONE, var7);
 
          for (int var10 = 0; var10 < var2; var10++) {
             for (int var11 = 0; var11 < var4; var11++) {
                BlockPos var12 = new BlockPos(var9.getX() + var10, var9.getY() + 1, var9.getZ() + var11);
                Block var13 = Blocks.POLISHED_ANDESITE;
-               Class164 var14 = new Class164(var13.method11579(), Collections.EMPTY_SET, (CompoundNBT)null);
+               Class164 var14 = new Class164(var13.getDefaultState(), Collections.EMPTY_SET, (CompoundNBT)null);
                var14.method496(var7, var12, 2);
             }
          }
 
-         Class7803.method26054(var9, new BlockPos(1, 0, -1), Rotation.field185, var7);
+         Class7803.method26054(var9, new BlockPos(1, 0, -1), Rotation.NONE, var7);
          return 0;
       } else {
          throw new IllegalArgumentException("The structure must be less than 48 blocks big in each axis");

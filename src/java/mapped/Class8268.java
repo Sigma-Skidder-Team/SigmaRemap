@@ -21,6 +21,7 @@ import javax.annotation.Nullable;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.state.Property;
 import net.minecraft.state.StateContainer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
@@ -47,7 +48,7 @@ public class Class8268 {
    private static final BiFunction<SuggestionsBuilder, Class7984<Block>, CompletableFuture<Suggestions>> field35542 = (var0, var1) -> var0.buildFuture();
    private final StringReader field35543;
    private final boolean field35544;
-   private final Map<Class8550<?>, Comparable<?>> field35545 = Maps.newHashMap();
+   private final Map<Property<?>, Comparable<?>> field35545 = Maps.newHashMap();
    private final Map<String, String> field35546 = Maps.newHashMap();
    private ResourceLocation field35547 = new ResourceLocation("");
    private StateContainer<Block, BlockState> field35548;
@@ -62,7 +63,7 @@ public class Class8268 {
       this.field35544 = var2;
    }
 
-   public Map<Class8550<?>, Comparable<?>> method28836() {
+   public Map<Property<?>, Comparable<?>> method28836() {
       return this.field35545;
    }
 
@@ -126,7 +127,7 @@ public class Class8268 {
    private CompletableFuture<Suggestions> method28843(SuggestionsBuilder var1, Class7984<Block> var2) {
       String var5 = var1.getRemaining().toLowerCase(Locale.ROOT);
 
-      for (Class8550 var7 : this.field35549.method23461()) {
+      for (Property var7 : this.field35549.method23461()) {
          if (!this.field35545.containsKey(var7) && var7.method30472().startsWith(var5)) {
             var1.suggest(var7.method30472() + '=');
          }
@@ -141,7 +142,7 @@ public class Class8268 {
          ITag<Block> var6 = var2.get(this.field35551);
          if (var6 != null) {
             for (Block var8 : var6.method24918()) {
-               for (Class8550 var10 : var8.getStateContainer().method35395()) {
+               for (Property var10 : var8.getStateContainer().method35395()) {
                   if (!this.field35546.containsKey(var10.method30472()) && var10.method30472().startsWith(var5)) {
                      var1.suggest(var10.method30472() + '=');
                   }
@@ -200,7 +201,7 @@ public class Class8268 {
       return var1.buildFuture();
    }
 
-   private static <T extends Comparable<T>> SuggestionsBuilder method28849(SuggestionsBuilder var0, Class8550<T> var1) {
+   private static <T extends Comparable<T>> SuggestionsBuilder method28849(SuggestionsBuilder var0, Property<T> var1) {
       for (Comparable var5 : var1.method30474()) {
          if (!(var5 instanceof Integer)) {
             var0.suggest(var1.method30475((T)var5));
@@ -218,13 +219,13 @@ public class Class8268 {
          ITag<Block> var7 = var2.get(this.field35551);
          if (var7 != null) {
             for (Block var9 : var7.method24918()) {
-               Class8550 var10 = var9.getStateContainer().method35396(var3);
+               Property var10 = var9.getStateContainer().method35396(var3);
                if (var10 != null) {
                   method28849(var1, var10);
                }
 
                if (!var6) {
-                  for (Class8550 var12 : var9.getStateContainer().method35395()) {
+                  for (Property var12 : var9.getStateContainer().method35395()) {
                      if (!this.field35546.containsKey(var12.method30472())) {
                         var6 = true;
                         break;
@@ -306,7 +307,7 @@ public class Class8268 {
          return field35536.createWithContext(this.field35543, this.field35547.toString());
       });
       this.field35548 = var4.getStateContainer();
-      this.field35549 = var4.method11579();
+      this.field35549 = var4.getDefaultState();
    }
 
    public void method28856() throws CommandSyntaxException {
@@ -329,7 +330,7 @@ public class Class8268 {
          this.field35543.skipWhitespace();
          int var3 = this.field35543.getCursor();
          String var4 = this.field35543.readString();
-         Class8550 var5 = this.field35548.method35396(var4);
+         Property var5 = this.field35548.method35396(var4);
          if (var5 == null) {
             this.field35543.setCursor(var3);
             throw field35537.createWithContext(this.field35543, this.field35547.toString(), var4);
@@ -430,7 +431,7 @@ public class Class8268 {
       this.field35550 = new Class7671(this.field35543).method25195();
    }
 
-   private <T extends Comparable<T>> void method28860(Class8550<T> var1, String var2, int var3) throws CommandSyntaxException {
+   private <T extends Comparable<T>> void method28860(Property<T> var1, String var2, int var3) throws CommandSyntaxException {
       Optional<T> var6 = var1.method30476(var2);
       if (!var6.isPresent()) {
          this.field35543.setCursor(var3);
@@ -453,7 +454,7 @@ public class Class8268 {
                var3.append(',');
             }
 
-            method28861(var3, (Class8550)var6.getKey(), (Comparable<?>)var6.getValue());
+            method28861(var3, (Property)var6.getKey(), (Comparable<?>)var6.getValue());
          }
 
          var3.append(']');
@@ -462,7 +463,7 @@ public class Class8268 {
       return var3.toString();
    }
 
-   private static <T extends Comparable<T>> void method28861(StringBuilder var0, Class8550<T> var1, Comparable<?> var2) {
+   private static <T extends Comparable<T>> void method28861(StringBuilder var0, Property<T> var1, Comparable<?> var2) {
       var0.append(var1.method30472());
       var0.append('=');
       var0.append(var1.method30475((T)var2));

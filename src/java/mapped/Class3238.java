@@ -5,7 +5,11 @@ import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.IWaterLoggable;
 import net.minecraft.client.util.Util;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
+import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.Mirror;
@@ -17,17 +21,17 @@ import net.minecraft.world.IBlockReader;
 
 import java.util.Map;
 
-public class Class3238 extends Block implements Class3207 {
+public class Class3238 extends Block implements IWaterLoggable {
    private static String[] field18679;
    public static final BooleanProperty field18680 = Class3392.field19019;
    public static final BooleanProperty field18681 = Class3392.field19020;
    public static final BooleanProperty field18682 = Class3392.field19021;
    public static final BooleanProperty field18683 = Class3392.field19022;
-   public static final BooleanProperty field18684 = BlockStateProperties.field39710;
+   public static final BooleanProperty field18684 = BlockStateProperties.WATERLOGGED;
    public static final Map<Direction, BooleanProperty> field18685 = Class3392.field19025
       .entrySet()
       .stream()
-      .filter(var0 -> var0.getKey().getAxis().method324())
+      .filter(var0 -> var0.getKey().getAxis().isHorizontal())
       .collect(Util.<Direction, BooleanProperty>method38484());
    public final VoxelShape[] field18686;
    public final VoxelShape[] field18687;
@@ -37,7 +41,7 @@ public class Class3238 extends Block implements Class3207 {
       super(var6);
       this.field18686 = this.method11639(var1, var2, var5, 0.0F, var5);
       this.field18687 = this.method11639(var1, var2, var3, 0.0F, var4);
-      UnmodifiableIterator var9 = this.field18612.getValidStates().iterator();
+      UnmodifiableIterator var9 = this.stateContainer.getValidStates().iterator();
 
       while (var9.hasNext()) {
          BlockState var10 = (BlockState)var9.next();
@@ -89,7 +93,7 @@ public class Class3238 extends Block implements Class3207 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return this.field18687[this.method11641(var1)];
    }
 
@@ -99,7 +103,7 @@ public class Class3238 extends Block implements Class3207 {
    }
 
    private static int method11640(Direction var0) {
-      return 1 << var0.method534();
+      return 1 << var0.getHorizontalIndex();
    }
 
    public int method11641(BlockState var1) {
@@ -126,12 +130,12 @@ public class Class3238 extends Block implements Class3207 {
    }
 
    @Override
-   public FluidState method11498(BlockState var1) {
-      return !var1.<Boolean>get(field18684) ? super.method11498(var1) : Class9479.field44066.method25078(false);
+   public FluidState getFluidState(BlockState var1) {
+      return !var1.<Boolean>get(field18684) ? super.getFluidState(var1) : Fluids.WATER.getStillFluidState(false);
    }
 
    @Override
-   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
+   public boolean allowsMovement(BlockState var1, IBlockReader var2, BlockPos var3, PathType var4) {
       return false;
    }
 

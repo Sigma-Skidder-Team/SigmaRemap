@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
+import net.minecraft.pathfinding.PathType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
@@ -217,7 +218,7 @@ public class Class6991 extends Class6990 {
       for (BlockPos var15 : BlockPos.method8359(new BlockPos(var1, var2, var3), new BlockPos(var1 + var4 - 1, var2 + var5 - 1, var3 + var6 - 1))) {
          double var16 = (double)var15.getX() + 0.5 - var7.x;
          double var18 = (double)var15.getZ() + 0.5 - var7.z;
-         if (!(var16 * var8 + var18 * var10 < 0.0) && !this.field30244.getBlockState(var15).method23440(this.field30244, var15, Class1947.field12614)) {
+         if (!(var16 * var8 + var18 * var10 < 0.0) && !this.field30244.getBlockState(var15).method23440(this.field30244, var15, PathType.field12614)) {
             return false;
          }
       }

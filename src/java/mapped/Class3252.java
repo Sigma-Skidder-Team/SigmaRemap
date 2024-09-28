@@ -1,11 +1,13 @@
 package mapped;
 
 import net.minecraft.block.HorizontalBlock;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.DirectionProperty;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.state.StateContainer;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Rotation;
@@ -34,7 +36,7 @@ public class Class3252 extends Class3251 {
 
    public Class3252(Class2137 var1, Properties var2) {
       super(var1, var2);
-      this.method11578(this.field18612.method35393().with(field18727, Direction.NORTH));
+      this.setDefaultState(this.stateContainer.getBaseState().with(field18727, Direction.NORTH));
    }
 
    @Override
@@ -43,22 +45,22 @@ public class Class3252 extends Class3251 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return field18728.get(var1.<Direction>get(field18727));
    }
 
    @Override
-   public BlockState method11495(Class5909 var1) {
-      BlockState var4 = this.method11579();
-      World var5 = var1.method18360();
-      BlockPos var6 = var1.method18345();
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      BlockState var4 = this.getDefaultState();
+      World var5 = var1.getWorld();
+      BlockPos var6 = var1.getPos();
       Direction[] var7 = var1.method18349();
 
       for (Direction var11 : var7) {
-         if (var11.getAxis().method324()) {
+         if (var11.getAxis().isHorizontal()) {
             Direction var12 = var11.getOpposite();
             var4 = var4.with(field18727, var12);
-            if (!var5.getBlockState(var6.method8349(var11)).method23441(var1)) {
+            if (!var5.getBlockState(var6.offset(var11)).method23441(var1)) {
                return var4;
             }
          }
@@ -78,7 +80,7 @@ public class Class3252 extends Class3251 {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field18727);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field18727);
    }
 }

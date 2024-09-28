@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.state.Property;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.CachedBlockInfo;
 
@@ -28,7 +29,7 @@ public class Class170 implements Predicate<CachedBlockInfo> {
          return false;
       } else {
          for (Entry var6 : this.field550.entrySet()) {
-            Class8550 var7 = var4.getBlock().getStateContainer().method35396((String)var6.getKey());
+            Property var7 = var4.getBlock().getStateContainer().method35396((String)var6.getKey());
             if (var7 == null) {
                return false;
             }

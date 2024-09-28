@@ -7,6 +7,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.IWorld;
 
 import java.util.Random;
 
@@ -15,7 +16,7 @@ public abstract class Class2930 extends Class2898<Class4727> {
       super(var1);
    }
 
-   public void method11265(Class1660 var1, Random var2, BlockPos var3, Class4727 var4, int var5, BlockPos.Mutable var6) {
+   public void method11265(IWorld var1, Random var2, BlockPos var3, Class4727 var4, int var5, BlockPos.Mutable var6) {
       for (int var9 = 0; var9 < var5; var9++) {
          var6.method8374(var3).method8380(Direction.UP, var9);
          if (!var1.getBlockState(var6).method23409(var1, var6)) {
@@ -33,7 +34,7 @@ public abstract class Class2930 extends Class2898<Class4727> {
       return var4;
    }
 
-   public boolean method11267(Class1660 var1, BlockPos var2, int var3, BlockPos.Mutable var4, Class4727 var5) {
+   public boolean method11267(IWorld var1, BlockPos var2, int var3, BlockPos.Mutable var4, Class4727 var5) {
       int var8 = var2.getY();
       if (var8 >= 1 && var8 + var3 + 1 < 256) {
          Block var9 = var1.getBlockState(var2.down()).getBlock();
@@ -74,5 +75,5 @@ public abstract class Class2930 extends Class2898<Class4727> {
 
    public abstract int method11268(int var1, int var2, int var3, int var4);
 
-   public abstract void method11269(Class1660 var1, Random var2, BlockPos var3, int var4, BlockPos.Mutable var5, Class4727 var6);
+   public abstract void method11269(IWorld var1, Random var2, BlockPos var3, int var4, BlockPos.Mutable var5, Class4727 var6);
 }

@@ -53,7 +53,7 @@ public class Class4185 extends Class4180 {
    @Override
    public void method12944(String var1, BlockPos var2, Class1659 var3, Random var4, Class9764 var5) {
       if ("chest".equals(var1)) {
-         var3.setBlockState(var2, Blocks.AIR.method11579(), 3);
+         var3.setBlockState(var2, Blocks.AIR.getDefaultState(), 3);
          TileEntity var8 = var3.getTileEntity(var2.down());
          if (var8 instanceof ChestTileEntity) {
             ((ChestTileEntity)var8).method3744(Class8793.field39561, var4.nextLong());
@@ -78,7 +78,7 @@ public class Class4185 extends Class4180 {
          BlockPos var16 = this.field20455.method8337(Class8969.method32896(var10, new BlockPos(3, 0, 5)));
          BlockState var17 = var1.getBlockState(var16.down());
          if (!var17.isAir() && !var17.isIn(Blocks.LADDER)) {
-            var1.setBlockState(var16, Blocks.SNOW_BLOCK.method11579(), 3);
+            var1.setBlockState(var16, Blocks.SNOW_BLOCK.getDefaultState(), 3);
          }
       }
 

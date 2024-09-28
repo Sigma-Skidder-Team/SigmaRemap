@@ -4,6 +4,7 @@ import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.IWorld;
 
 import java.util.Random;
 
@@ -28,7 +29,7 @@ public abstract class Class2921<U extends Class4698> extends Class2898<U> {
       return var9 > 0;
    }
 
-   public abstract boolean method11251(Class1660 var1, BlockPos var2, U var3);
+   public abstract boolean method11251(IWorld var1, BlockPos var2, U var3);
 
    public abstract int method11252(U var1);
 

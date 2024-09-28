@@ -33,13 +33,13 @@ public class Class3377 extends Class3231 {
 
          Material var9 = var1.getBlockState(var3.down()).getMaterial();
          if (var9.blocksMovement() || var9.isLiquid()) {
-            var1.setBlockState(var3, Blocks.WATER.method11579());
+            var1.setBlockState(var3, Blocks.WATER.getDefaultState());
          }
       }
    }
 
    @Override
-   public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void randomTick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var2.getLightFor(LightType.BLOCK, var3) > 11 - var1.getOpacity(var2, var3)) {
          this.method11968(var1, var2, var3);
       }
@@ -47,7 +47,7 @@ public class Class3377 extends Class3231 {
 
    public void method11968(BlockState var1, World var2, BlockPos var3) {
       if (!var2.method6812().isUltrawarm()) {
-         var2.setBlockState(var3, Blocks.WATER.method11579());
+         var2.setBlockState(var3, Blocks.WATER.getDefaultState());
          var2.neighborChanged(var3, Blocks.WATER, var3);
       } else {
          var2.removeBlock(var3, false);

@@ -2,7 +2,9 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.EnumProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Rotation;
@@ -13,7 +15,7 @@ public class Class3386 extends Block {
 
    public Class3386(Properties var1) {
       super(var1);
-      this.method11578(this.method11579().with(field18994, Direction.Axis.Y));
+      this.setDefaultState(this.getDefaultState().with(field18994, Direction.Axis.Y));
    }
 
    @Override
@@ -35,12 +37,12 @@ public class Class3386 extends Block {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field18994);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field18994);
    }
 
    @Override
-   public BlockState method11495(Class5909 var1) {
-      return this.method11579().with(field18994, var1.method18354().getAxis());
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      return this.getDefaultState().with(field18994, var1.getFace().getAxis());
    }
 }

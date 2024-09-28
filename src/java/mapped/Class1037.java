@@ -14,6 +14,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -74,7 +75,7 @@ public class Class1037 extends ZombieEntity implements Class1022 {
          : var4.nextInt(15) == 0 && var8;
    }
 
-   private static boolean method4641(Class1660 var0, BlockPos var1) {
+   private static boolean method4641(IWorld var0, BlockPos var1) {
       return var1.getY() < var0.method6776() - 5;
    }
 

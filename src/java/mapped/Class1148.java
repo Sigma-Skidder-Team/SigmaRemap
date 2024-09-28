@@ -32,7 +32,7 @@ public class Class1148 extends Screen {
    private static final ITextComponent field6247 = new TranslationTextComponent("structure_block.show_boundingbox");
    private final Class964 field6248;
    private Mirror field6249 = Mirror.field13614;
-   private Rotation field6250 = Rotation.field185;
+   private Rotation field6250 = Rotation.NONE;
    private StructureMode field6251 = StructureMode.field321;
    private boolean field6252;
    private boolean field6253;
@@ -159,19 +159,19 @@ public class Class1148 extends Screen {
          this.method5504();
       }));
       this.field6269 = this.<Button>addButton(new Button(this.width / 2 - 1 - 40 - 1 - 40 - 20, 185, 40, 20, new StringTextComponent("0"), var1 -> {
-         this.field6248.method3947(Rotation.field185);
+         this.field6248.method3947(Rotation.NONE);
          this.method5506();
       }));
       this.field6270 = this.<Button>addButton(new Button(this.width / 2 - 1 - 40 - 20, 185, 40, 20, new StringTextComponent("90"), var1 -> {
-         this.field6248.method3947(Rotation.field186);
+         this.field6248.method3947(Rotation.CLOCKWISE_90);
          this.method5506();
       }));
       this.field6271 = this.<Button>addButton(new Button(this.width / 2 + 1 + 20, 185, 40, 20, new StringTextComponent("180"), var1 -> {
-         this.field6248.method3947(Rotation.field187);
+         this.field6248.method3947(Rotation.CLOCKWISE_180);
          this.method5506();
       }));
       this.field6272 = this.<Button>addButton(new Button(this.width / 2 + 1 + 40 + 1 + 20, 185, 40, 20, new StringTextComponent("270"), var1 -> {
-         this.field6248.method3947(Rotation.field188);
+         this.field6248.method3947(Rotation.COUNTERCLOCKWISE_90);
          this.method5506();
       }));
       this.field6255 = new Class1304(

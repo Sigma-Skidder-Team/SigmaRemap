@@ -3,11 +3,11 @@ package net.minecraft.state.properties;
 import net.minecraft.util.IStringSerializable;
 
 public enum Half implements IStringSerializable {
-   field270("top"),
-   field271("bottom");
+   TOP("top"),
+   BOTTOM("bottom");
 
    private final String field272;
-   private static final Half[] field273 = new Half[]{field270, field271};
+   private static final Half[] field273 = new Half[]{TOP, BOTTOM};
 
    private Half(String var3) {
       this.field272 = var3;

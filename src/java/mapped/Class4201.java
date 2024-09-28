@@ -59,8 +59,8 @@ public class Class4201 extends Class4194 {
       this.method12928(var1, var5, 0, 0, 0, 4, 4, 6, true, var4, Class9331.method35288());
       this.method12984(var1, var4, var5, this.field20495, 1, 1, 0);
       this.method12984(var1, var4, var5, Class2213.field14470, 1, 1, 6);
-      BlockState var10 = Blocks.WALL_TORCH.method11579().with(Class3382.field18985, Direction.EAST);
-      BlockState var11 = Blocks.WALL_TORCH.method11579().with(Class3382.field18985, Direction.WEST);
+      BlockState var10 = Blocks.WALL_TORCH.getDefaultState().with(Class3382.field18985, Direction.EAST);
+      BlockState var11 = Blocks.WALL_TORCH.getDefaultState().with(Class3382.field18985, Direction.WEST);
       this.method12930(var1, var5, var4, 0.1F, 1, 2, 1, var10);
       this.method12930(var1, var5, var4, 0.1F, 3, 2, 1, var11);
       this.method12930(var1, var5, var4, 0.1F, 1, 2, 5, var10);

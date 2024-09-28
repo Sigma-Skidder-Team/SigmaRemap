@@ -14,7 +14,7 @@ public class Class7880 {
    private static IBakedModel field33823 = null;
 
    public static void method26418() {
-      field33823 = Config.method26860().getBlockRendererDispatcher().getBlockModelShapes().method38153(Blocks.SNOW.method11579());
+      field33823 = Config.method26860().getBlockRendererDispatcher().getBlockModelShapes().method38153(Blocks.SNOW.getDefaultState());
    }
 
    public static IBakedModel method26419() {
@@ -22,7 +22,7 @@ public class Class7880 {
    }
 
    public static BlockState method26420() {
-      return Blocks.SNOW.method11579();
+      return Blocks.SNOW.getDefaultState();
    }
 
    public static boolean method26421(IBlockDisplayReader var0, BlockState var1, BlockPos var2) {
@@ -45,12 +45,12 @@ public class Class7880 {
          }
 
          Block var6 = var5.getBlock();
-         if (var6 instanceof Class3421) {
-            return var5.<Half>get(Class3421.field19132) == Half.field270;
+         if (var6 instanceof StairsBlock) {
+            return var5.<Half>get(StairsBlock.HALF) == Half.TOP;
          }
 
-         if (var6 instanceof Class3208) {
-            return var5.<SlabType>get(Class3208.field18605) == SlabType.field218;
+         if (var6 instanceof SlabBlock) {
+            return var5.<SlabType>get(SlabBlock.field18605) == SlabType.field218;
          }
       }
 
@@ -77,10 +77,10 @@ public class Class7880 {
                return true;
             } else if (var5 instanceof Class3383) {
                return true;
-            } else if (var5 instanceof Class3421) {
-               return var1.<Half>get(Class3421.field19132) == Half.field270;
-            } else if (var5 instanceof Class3208) {
-               return var1.<SlabType>get(Class3208.field18605) == SlabType.field218;
+            } else if (var5 instanceof StairsBlock) {
+               return var1.<Half>get(StairsBlock.HALF) == Half.TOP;
+            } else if (var5 instanceof SlabBlock) {
+               return var1.<SlabType>get(SlabBlock.field18605) == SlabType.field218;
             } else if (var5 instanceof AbstractButtonBlock) {
                return var1.<AttachFace>get(AbstractButtonBlock.field18500) != AttachFace.field313;
             } else if (var5 instanceof Class3362) {

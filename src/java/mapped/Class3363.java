@@ -9,6 +9,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.pathfinding.PathType;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
@@ -28,18 +29,18 @@ public class Class3363 extends Class3241 {
    }
 
    @Override
-   public boolean method11534(BlockState var1) {
+   public boolean isTransparent(BlockState var1) {
       return true;
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return field18930;
    }
 
    @Override
-   public void method11512(BlockState var1, World var2, BlockPos var3, Random var4) {
-      super.method11512(var1, var2, var3, var4);
+   public void animateTick(BlockState var1, World var2, BlockPos var3, Random var4) {
+      super.animateTick(var1, var2, var3, var4);
 
       for (int var7 = -2; var7 <= 2; var7++) {
          for (int var8 = -2; var8 <= 2; var8++) {
@@ -82,7 +83,7 @@ public class Class3363 extends Class3241 {
    }
 
    @Override
-   public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
+   public ActionResultType onBlockActivated(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       if (!var2.isRemote) {
          var4.method2766(var1.method23445(var2, var3));
          return ActionResultType.field14819;
@@ -114,7 +115,7 @@ public class Class3363 extends Class3241 {
    }
 
    @Override
-   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
+   public boolean allowsMovement(BlockState var1, IBlockReader var2, BlockPos var3, PathType var4) {
       return false;
    }
 }

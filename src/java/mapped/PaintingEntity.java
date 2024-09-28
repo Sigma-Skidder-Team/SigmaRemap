@@ -67,7 +67,7 @@ public class PaintingEntity extends Class995 {
    @Override
    public void writeAdditional(CompoundNBT var1) {
       var1.method109("Motive", Registry.field16079.getKey(this.field5496).toString());
-      var1.method100("Facing", (byte)this.field5489.method534());
+      var1.method100("Facing", (byte)this.field5489.getHorizontalIndex());
       super.writeAdditional(var1);
    }
 

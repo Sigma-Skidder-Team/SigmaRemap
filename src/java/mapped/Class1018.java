@@ -11,6 +11,7 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -92,7 +93,7 @@ public abstract class Class1018 extends Class1045 {
       this.field5703 = !var1.method106("LoveCause") ? null : var1.method105("LoveCause");
    }
 
-   public static boolean method4500(EntityType<? extends Class1018> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method4500(EntityType<? extends Class1018> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
       return var1.getBlockState(var3.down()).isIn(Blocks.field36395) && var1.method7021(var3, 0) > 8;
    }
 

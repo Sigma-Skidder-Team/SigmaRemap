@@ -14,13 +14,13 @@ import java.util.Random;
 import java.util.stream.IntStream;
 
 public class Class6773 extends Class6768<Class8278> {
-   private static final BlockState field29495 = Blocks.field36730.method11579();
-   private static final BlockState field29549 = Blocks.field36731.method11579();
-   private static final BlockState field29550 = Blocks.field36794.method11579();
-   private static final BlockState field29551 = Blocks.field36734.method11579();
-   private static final BlockState field29552 = Blocks.field36742.method11579();
-   private static final BlockState field29553 = Blocks.field36744.method11579();
-   private static final BlockState field29554 = Blocks.field36738.method11579();
+   private static final BlockState field29495 = Blocks.field36730.getDefaultState();
+   private static final BlockState field29549 = Blocks.field36731.getDefaultState();
+   private static final BlockState field29550 = Blocks.field36794.getDefaultState();
+   private static final BlockState field29551 = Blocks.field36734.getDefaultState();
+   private static final BlockState field29552 = Blocks.field36742.getDefaultState();
+   private static final BlockState field29553 = Blocks.field36744.getDefaultState();
+   private static final BlockState field29554 = Blocks.field36738.getDefaultState();
    public BlockState[] field29555;
    public long field29556;
    public Class7691 field29557;
@@ -82,7 +82,7 @@ public class Class6773 extends Class6768<Class8278> {
                            var23 = var21;
                         }
                      } else {
-                        var19 = Blocks.AIR.method11579();
+                        var19 = Blocks.AIR.getDefaultState();
                         var23 = var9;
                      }
 

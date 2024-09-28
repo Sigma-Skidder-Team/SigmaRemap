@@ -6,6 +6,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorld;
 
 import java.util.Collections;
 import java.util.List;
@@ -17,7 +18,7 @@ public class Class2917 extends Class2914 {
    }
 
    @Override
-   public boolean method11249(Class1660 var1, Random var2, BlockPos var3, BlockState var4) {
+   public boolean method11249(IWorld var1, Random var2, BlockPos var3, BlockState var4) {
       if (!this.method11250(var1, var2, var3, var4)) {
          return false;
       } else {

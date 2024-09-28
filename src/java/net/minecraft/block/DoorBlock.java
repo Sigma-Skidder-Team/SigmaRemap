@@ -1,6 +1,8 @@
 package net.minecraft.block;
 
 import mapped.*;
+import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.block.material.Material;
@@ -9,6 +11,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.state.EnumProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.state.properties.DoorHingeSide;
 import net.minecraft.state.properties.DoubleBlockHalf;
@@ -19,6 +22,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
@@ -37,9 +41,9 @@ public class DoorBlock extends Block {
 
    public DoorBlock(Properties var1) {
       super(var1);
-      this.method11578(
-         this.field18612
-            .method35393()
+      this.setDefaultState(
+         this.stateContainer
+            .getBaseState()
             .with(HORIZONTAL_FACING, Direction.NORTH)
             .with(OPEN, Boolean.valueOf(false))
             .with(DOOR_HINGE, DoorHingeSide.field664)
@@ -49,7 +53,7 @@ public class DoorBlock extends Block {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       Direction var7 = var1.<Direction>get(HORIZONTAL_FACING);
       boolean var8 = !var1.<Boolean>get(OPEN);
       boolean var9 = var1.<DoorHingeSide>get(DOOR_HINGE) == DoorHingeSide.field665;
@@ -67,7 +71,7 @@ public class DoorBlock extends Block {
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       DoubleBlockHalf var9 = var1.<DoubleBlockHalf>get(DOUBLE_BLOCK_HALF);
       if (var2.getAxis() == Direction.Axis.Y && var9 == DoubleBlockHalf.field210 == (var2 == Direction.UP)) {
          return var3.isIn(this) && var3.get(DOUBLE_BLOCK_HALF) != var9
@@ -75,11 +79,11 @@ public class DoorBlock extends Block {
                .with(OPEN, var3.<Boolean>get(OPEN))
                .with(DOOR_HINGE, var3.<DoorHingeSide>get(DOOR_HINGE))
                .with(POWERED, var3.<Boolean>get(POWERED))
-            : Blocks.AIR.method11579();
+            : Blocks.AIR.getDefaultState();
       } else {
          return var9 == DoubleBlockHalf.field210 && var2 == Direction.DOWN && !var1.method23443(var4, var5)
-            ? Blocks.AIR.method11579()
-            : super.method11491(var1, var2, var3, var4, var5, var6);
+            ? Blocks.AIR.getDefaultState()
+            : super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
       }
    }
 
@@ -93,7 +97,7 @@ public class DoorBlock extends Block {
    }
 
    @Override
-   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
+   public boolean allowsMovement(BlockState var1, IBlockReader var2, BlockPos var3, PathType var4) {
       switch (Class5988.field26126[var4.ordinal()]) {
          case 1:
             return var1.<Boolean>get(OPEN);
@@ -116,13 +120,13 @@ public class DoorBlock extends Block {
 
    @Nullable
    @Override
-   public BlockState method11495(Class5909 var1) {
-      BlockPos var4 = var1.method18345();
-      if (var4.getY() < 255 && var1.method18360().getBlockState(var4.up()).method23441(var1)) {
-         World var5 = var1.method18360();
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      BlockPos var4 = var1.getPos();
+      if (var4.getY() < 255 && var1.getWorld().getBlockState(var4.up()).method23441(var1)) {
+         World var5 = var1.getWorld();
          boolean var6 = var5.method6780(var4) || var5.method6780(var4.up());
-         return this.method11579()
-            .with(HORIZONTAL_FACING, var1.method18350())
+         return this.getDefaultState()
+            .with(HORIZONTAL_FACING, var1.getPlacementHorizontalFacing())
             .with(DOOR_HINGE, this.method12140(var1))
             .with(POWERED, Boolean.valueOf(var6))
             .with(OPEN, Boolean.valueOf(var6))
@@ -137,20 +141,20 @@ public class DoorBlock extends Block {
       var1.setBlockState(var2.up(), var3.with(DOUBLE_BLOCK_HALF, DoubleBlockHalf.field209), 3);
    }
 
-   private DoorHingeSide method12140(Class5909 var1) {
-      World var4 = var1.method18360();
-      BlockPos var5 = var1.method18345();
-      Direction var6 = var1.method18350();
+   private DoorHingeSide method12140(BlockItemUseContext var1) {
+      World var4 = var1.getWorld();
+      BlockPos var5 = var1.getPos();
+      Direction var6 = var1.getPlacementHorizontalFacing();
       BlockPos var7 = var5.up();
       Direction var8 = var6.rotateYCCW();
-      BlockPos var9 = var5.method8349(var8);
+      BlockPos var9 = var5.offset(var8);
       BlockState var10 = var4.getBlockState(var9);
-      BlockPos var11 = var7.method8349(var8);
+      BlockPos var11 = var7.offset(var8);
       BlockState var12 = var4.getBlockState(var11);
       Direction var13 = var6.rotateY();
-      BlockPos var14 = var5.method8349(var13);
+      BlockPos var14 = var5.offset(var13);
       BlockState var15 = var4.getBlockState(var14);
-      BlockPos var16 = var7.method8349(var13);
+      BlockPos var16 = var7.offset(var13);
       BlockState var17 = var4.getBlockState(var16);
       int var18 = (!var10.method23456(var4, var9) ? 0 : -1)
          + (!var12.method23456(var4, var11) ? 0 : -1)
@@ -162,7 +166,7 @@ public class DoorBlock extends Block {
          if ((!var20 || var19) && var18 >= 0) {
             int var21 = var6.getXOffset();
             int var22 = var6.getZOffset();
-            Vector3d var23 = var1.method18355();
+            Vector3d var23 = var1.getHitVec();
             double var24 = var23.x - (double)var5.getX();
             double var26 = var23.z - (double)var5.getZ();
             return var21 < 0 && var26 < 0.5 || var21 > 0 && var26 > 0.5 || var22 < 0 && var24 > 0.5 || var22 > 0 && var24 < 0.5
@@ -177,7 +181,7 @@ public class DoorBlock extends Block {
    }
 
    @Override
-   public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
+   public ActionResultType onBlockActivated(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       if (this.field19004 != Material.field38967) {
          var1 = var1.method23459(OPEN);
          var2.setBlockState(var3, var1, 10);
@@ -202,7 +206,7 @@ public class DoorBlock extends Block {
    @Override
    public void method11506(BlockState var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       boolean var9 = var2.method6780(var3)
-         || var2.method6780(var3.method8349(var1.get(DOUBLE_BLOCK_HALF) != DoubleBlockHalf.field210 ? Direction.DOWN : Direction.UP));
+         || var2.method6780(var3.offset(var1.get(DOUBLE_BLOCK_HALF) != DoubleBlockHalf.field210 ? Direction.DOWN : Direction.UP));
       if (var4 != this && var9 != var1.<Boolean>get(POWERED)) {
          if (var9 != var1.<Boolean>get(OPEN)) {
             this.method12143(var2, var3, var9);
@@ -244,8 +248,8 @@ public class DoorBlock extends Block {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(DOUBLE_BLOCK_HALF, HORIZONTAL_FACING, OPEN, DOOR_HINGE, POWERED);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(DOUBLE_BLOCK_HALF, HORIZONTAL_FACING, OPEN, DOOR_HINGE, POWERED);
    }
 
    public static boolean method12144(World var0, BlockPos var1) {

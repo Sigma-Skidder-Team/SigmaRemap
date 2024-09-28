@@ -7,6 +7,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.util.math.BlockPos;
@@ -35,11 +36,11 @@ public class Class3480 extends Class3194 implements Class3196 {
 
    public Class3480(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().with(this.method12175(), Integer.valueOf(0)));
+      this.setDefaultState(this.stateContainer.getBaseState().with(this.method12175(), Integer.valueOf(0)));
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return field19335[var1.<Integer>get(this.method12175())];
    }
 
@@ -61,7 +62,7 @@ public class Class3480 extends Class3194 implements Class3196 {
    }
 
    public BlockState method12178(int var1) {
-      return this.method11579().with(this.method12175(), Integer.valueOf(var1));
+      return this.getDefaultState().with(this.method12175(), Integer.valueOf(var1));
    }
 
    public boolean method12179(BlockState var1) {
@@ -69,12 +70,12 @@ public class Class3480 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public boolean method11499(BlockState var1) {
+   public boolean ticksRandomly(BlockState var1) {
       return !this.method12179(var1);
    }
 
    @Override
-   public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void randomTick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var2.method7021(var3, 0) >= 9) {
          int var7 = this.method12177(var1);
          if (var7 < this.method12176()) {
@@ -183,7 +184,7 @@ public class Class3480 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field19334);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field19334);
    }
 }

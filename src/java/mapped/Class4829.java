@@ -3,8 +3,10 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.SlabBlock;
 import net.minecraft.client.Minecraft;
 import net.minecraft.fluid.Fluid;
+import net.minecraft.fluid.FluidState;
 import net.minecraft.state.properties.SlabType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -21,17 +23,17 @@ public class Class4829 {
    private TextureAtlasSprite field22604;
 
    public void method14919() {
-      this.field22602[0] = Minecraft.getInstance().getModelManager().method1025().method38153(Blocks.LAVA.method11579()).getParticleTexture();
+      this.field22602[0] = Minecraft.getInstance().getModelManager().method1025().method38153(Blocks.LAVA.getDefaultState()).getParticleTexture();
       this.field22602[1] = ModelBakery.field40510.getSprite();
-      this.field22603[0] = Minecraft.getInstance().getModelManager().method1025().method38153(Blocks.WATER.method11579()).getParticleTexture();
+      this.field22603[0] = Minecraft.getInstance().getModelManager().method1025().method38153(Blocks.WATER.getDefaultState()).getParticleTexture();
       this.field22603[1] = ModelBakery.field40511.getSprite();
       this.field22604 = ModelBakery.field40512.getSprite();
    }
 
    private static boolean method14920(IBlockReader var0, BlockPos var1, Direction var2, FluidState var3) {
-      BlockPos var6 = var1.method8349(var2);
+      BlockPos var6 = var1.offset(var2);
       FluidState var7 = var0.getFluidState(var6);
-      return var7.method23472().method25066(var3.method23472());
+      return var7.getFluid().method25066(var3.getFluid());
    }
 
    private static boolean method14921(IBlockReader var0, Direction var1, float var2, BlockPos var3, BlockState var4) {
@@ -45,7 +47,7 @@ public class Class4829 {
    }
 
    private static boolean method14922(IBlockReader var0, BlockPos var1, Direction var2, float var3) {
-      BlockPos var6 = var1.method8349(var2);
+      BlockPos var6 = var1.offset(var2);
       BlockState var7 = var0.getBlockState(var6);
       return method14921(var0, var2, var3, var6, var7);
    }
@@ -81,7 +83,7 @@ public class Class4829 {
          int var12 = -1;
          float var13 = 1.0F;
          if (Reflector.field42833.exists()) {
-            Object var14 = Reflector.call(var4.method23472(), Reflector.field42833);
+            Object var14 = Reflector.call(var4.getFluid(), Reflector.field42833);
             if (var14 != null && Reflector.field42840.exists()) {
                var12 = Reflector.method35065(var14, Reflector.field42840, var1, var2);
                var13 = (float)(var12 >> 24 & 0xFF) / 255.0F;
@@ -107,10 +109,10 @@ public class Class4829 {
             float var25 = var1.method6877(Direction.UP, true);
             float var26 = var1.method6877(Direction.NORTH, true);
             float var27 = var1.method6877(Direction.WEST, true);
-            float var28 = this.method14929(var1, var2, var4.method23472());
-            float var29 = this.method14929(var1, var2.south(), var4.method23472());
-            float var30 = this.method14929(var1, var2.east().south(), var4.method23472());
-            float var31 = this.method14929(var1, var2.east(), var4.method23472());
+            float var28 = this.method14929(var1, var2, var4.getFluid());
+            float var29 = this.method14929(var1, var2.south(), var4.getFluid());
+            float var30 = this.method14929(var1, var2.east().south(), var4.getFluid());
+            float var31 = this.method14929(var1, var2.east(), var4.getFluid());
             double var32 = (double)(var2.getX() & 15);
             double var34 = (double)(var2.getY() & 15);
             double var36 = (double)(var2.getZ() & 15);
@@ -269,7 +271,7 @@ public class Class4829 {
 
                if (var119 && !method14922(var1, var2, var117, Math.max(var93, var97))) {
                   var23 = true;
-                  BlockPos var121 = var2.method8349(var117);
+                  BlockPos var121 = var2.offset(var117);
                   TextureAtlasSprite var122 = var9[1];
                   float var123 = 0.0F;
                   float var125 = 0.0F;
@@ -295,9 +297,9 @@ public class Class4829 {
                         var125 = 0.9375F;
                      }
 
-                     if (var67 instanceof Class3208) {
-                        Class3208 var69 = (Class3208)var67;
-                        if (var66.<SlabType>get(Class3208.field18605) == SlabType.field219) {
+                     if (var67 instanceof SlabBlock) {
+                        SlabBlock var69 = (SlabBlock)var67;
+                        if (var66.<SlabType>get(SlabBlock.field18605) == SlabType.field219) {
                            var123 = 0.5F;
                            var125 = 0.5F;
                         }
@@ -392,12 +394,12 @@ public class Class4829 {
 
       for (int var8 = 0; var8 < 4; var8++) {
          BlockPos var9 = var2.method8336(-(var8 & 1), 0, -(var8 >> 1 & 1));
-         if (var1.getFluidState(var9.up()).method23472().method25066(var3)) {
+         if (var1.getFluidState(var9.up()).getFluid().method25066(var3)) {
             return 1.0F;
          }
 
          FluidState var10 = var1.getFluidState(var9);
-         if (!var10.method23472().method25066(var3)) {
+         if (!var10.getFluid().method25066(var3)) {
             if (!var1.getBlockState(var9).getMaterial().isSolid()) {
                var6++;
             }

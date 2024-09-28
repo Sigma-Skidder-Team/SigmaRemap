@@ -11,6 +11,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.fluid.Fluid;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -25,10 +27,10 @@ public abstract class Class7195<C extends Class4729> {
    public static final Class7195<Class4728> field30890 = method22604("canyon", new Class7196(Class4728.field22398));
    public static final Class7195<Class4728> field30891 = method22604("underwater_canyon", new Class7197(Class4728.field22398));
    public static final Class7195<Class4728> field30892 = method22604("underwater_cave", new Class7198(Class4728.field22398));
-   public static final BlockState field30893 = Blocks.AIR.method11579();
-   public static final BlockState field30894 = Blocks.field37012.method11579();
-   public static final FluidState field30895 = Class9479.field44066.method25049();
-   public static final FluidState field30896 = Class9479.field44068.method25049();
+   public static final BlockState field30893 = Blocks.AIR.getDefaultState();
+   public static final BlockState field30894 = Blocks.field37012.getDefaultState();
+   public static final FluidState field30895 = Fluids.WATER.method25049();
+   public static final FluidState field30896 = Fluids.LAVA.method25049();
    public Set<Block> field30897 = ImmutableSet.of(
       Blocks.STONE,
       Blocks.GRANITE,
@@ -63,7 +65,7 @@ public abstract class Class7195<C extends Class4729> {
          Blocks.PACKED_ICE
       }
    );
-   public Set<Fluid> field30898 = ImmutableSet.of(Class9479.field44066);
+   public Set<Fluid> field30898 = ImmutableSet.of(Fluids.WATER);
    private final Codec<Class6815<C>> field30899;
    public final int field30900;
 
@@ -221,7 +223,7 @@ public abstract class Class7195<C extends Class4729> {
       for (int var13 = var4; var13 < var5; var13++) {
          for (int var14 = var8; var14 < var9; var14++) {
             for (int var15 = var6 - 1; var15 <= var7 + 1; var15++) {
-               if (this.field30898.contains(var1.getFluidState(var12.method8372(var13 + var2 * 16, var15, var14 + var3 * 16)).method23472())) {
+               if (this.field30898.contains(var1.getFluidState(var12.method8372(var13 + var2 * 16, var15, var14 + var3 * 16)).getFluid())) {
                   return true;
                }
 

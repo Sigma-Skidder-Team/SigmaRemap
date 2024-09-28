@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.state.Property;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.CachedBlockInfo;
 import net.minecraft.util.math.BlockPos;
@@ -13,10 +14,10 @@ import java.util.function.Predicate;
 
 public class Class164 implements Predicate<CachedBlockInfo> {
    private final BlockState field529;
-   private final Set<Class8550<?>> field530;
+   private final Set<Property<?>> field530;
    private final CompoundNBT field531;
 
-   public Class164(BlockState var1, Set<Class8550<?>> var2, CompoundNBT var3) {
+   public Class164(BlockState var1, Set<Property<?>> var2, CompoundNBT var3) {
       this.field529 = var1;
       this.field530 = var2;
       this.field531 = var3;
@@ -31,7 +32,7 @@ public class Class164 implements Predicate<CachedBlockInfo> {
       if (!var4.isIn(this.field529.getBlock())) {
          return false;
       } else {
-         for (Class8550 var6 : this.field530) {
+         for (Property var6 : this.field530) {
             if (var4.get(var6) != this.field529.get(var6)) {
                return false;
             }

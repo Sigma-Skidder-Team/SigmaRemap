@@ -5,6 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.particles.RedstoneParticleData;
 import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -24,21 +25,21 @@ public class Class3383 extends Class3381 {
 
    public Class3383(Properties var1) {
       super(var1, RedstoneParticleData.REDSTONE_DUST);
-      this.method11578(this.field18612.method35393().with(field18987, Boolean.valueOf(true)));
+      this.setDefaultState(this.stateContainer.getBaseState().with(field18987, Boolean.valueOf(true)));
    }
 
    @Override
-   public void method11589(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+   public void onBlockAdded(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       for (Direction var11 : Direction.values()) {
-         var2.notifyNeighborsOfStateChange(var3.method8349(var11), this);
+         var2.notifyNeighborsOfStateChange(var3.offset(var11), this);
       }
    }
 
    @Override
-   public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+   public void onReplaced(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       if (!var5) {
          for (Direction var11 : Direction.values()) {
-            var2.notifyNeighborsOfStateChange(var3.method8349(var11), this);
+            var2.notifyNeighborsOfStateChange(var3.offset(var11), this);
          }
       }
    }
@@ -53,7 +54,7 @@ public class Class3383 extends Class3381 {
    }
 
    @Override
-   public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void tick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       boolean var7 = this.method11981(var2, var3, var1);
       List var8 = field18988.get(var2);
 
@@ -69,7 +70,7 @@ public class Class3383 extends Class3381 {
          var2.setBlockState(var3, var1.with(field18987, Boolean.valueOf(false)), 3);
          if (method11982(var2, var3, true)) {
             var2.playEvent(1502, var3, 0);
-            var2.method6860().method20726(var3, var2.getBlockState(var3).getBlock(), 160);
+            var2.method6860().scheduleTick(var3, var2.getBlockState(var3).getBlock(), 160);
          }
       }
    }
@@ -77,7 +78,7 @@ public class Class3383 extends Class3381 {
    @Override
    public void method11506(BlockState var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       if (var1.<Boolean>get(field18987) == this.method11981(var2, var3, var1) && !var2.method6860().method20720(var3, this)) {
-         var2.method6860().method20726(var3, this, 2);
+         var2.method6860().scheduleTick(var3, this, 2);
       }
    }
 
@@ -92,7 +93,7 @@ public class Class3383 extends Class3381 {
    }
 
    @Override
-   public void method11512(BlockState var1, World var2, BlockPos var3, Random var4) {
+   public void animateTick(BlockState var1, World var2, BlockPos var3, Random var4) {
       if (var1.<Boolean>get(field18987)) {
          double var7 = (double)var3.getX() + 0.5 + (var4.nextDouble() - 0.5) * 0.2;
          double var9 = (double)var3.getY() + 0.7 + (var4.nextDouble() - 0.5) * 0.2;
@@ -102,8 +103,8 @@ public class Class3383 extends Class3381 {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field18987);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field18987);
    }
 
    private static boolean method11982(World var0, BlockPos var1, boolean var2) {

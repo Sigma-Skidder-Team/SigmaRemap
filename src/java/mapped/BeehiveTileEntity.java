@@ -142,7 +142,7 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
          var8.method133("Leash");
          var8.method133("UUID");
          Direction var9 = var1.<Direction>get(Class3366.field18935);
-         BlockPos var10 = var7.method8349(var9);
+         BlockPos var10 = var7.offset(var9);
          boolean var11 = !this.world.getBlockState(var10).method23414(this.world, var10).isEmpty();
          if (var11 && var4 != Class2084.field13573) {
             return false;

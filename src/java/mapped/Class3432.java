@@ -3,7 +3,9 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.Property;
 import net.minecraft.state.EnumProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.state.properties.RailShape;
 import net.minecraft.util.Mirror;
@@ -18,7 +20,7 @@ public class Class3432 extends Class3429 {
 
    public Class3432(Properties var1) {
       super(true, var1);
-      this.method11578(this.field18612.method35393().with(field19196, RailShape.field247).with(field19197, Boolean.valueOf(false)));
+      this.setDefaultState(this.stateContainer.getBaseState().with(field19196, RailShape.field247).with(field19197, Boolean.valueOf(false)));
    }
 
    public boolean method12098(World var1, BlockPos var2, BlockState var3, boolean var4, int var5) {
@@ -132,7 +134,7 @@ public class Class3432 extends Class3429 {
    }
 
    @Override
-   public Class8550<RailShape> method12093() {
+   public Property<RailShape> method12093() {
       return field19196;
    }
 
@@ -255,7 +257,7 @@ public class Class3432 extends Class3429 {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field19196, field19197);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field19196, field19197);
    }
 }

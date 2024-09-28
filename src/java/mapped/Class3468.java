@@ -10,6 +10,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -26,7 +27,7 @@ public abstract class Class3468 extends Block {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return this.method12158(var1) <= 0 ? field19314 : field19313;
    }
 
@@ -40,10 +41,10 @@ public abstract class Class3468 extends Block {
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       return var2 == Direction.DOWN && !var1.method23443(var4, var5)
-         ? Blocks.AIR.method11579()
-         : super.method11491(var1, var2, var3, var4, var5, var6);
+         ? Blocks.AIR.getDefaultState()
+         : super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
    }
 
    @Override
@@ -53,7 +54,7 @@ public abstract class Class3468 extends Block {
    }
 
    @Override
-   public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void tick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       int var7 = this.method12158(var1);
       if (var7 > 0) {
          this.method12153(var2, var3, var1, var7);
@@ -88,22 +89,22 @@ public abstract class Class3468 extends Block {
       }
 
       if (var9) {
-         var1.method6860().method20726(new BlockPos(var2), this, this.method12152());
+         var1.method6860().scheduleTick(new BlockPos(var2), this, this.method12152());
       }
    }
 
-   public abstract void method12154(Class1660 var1, BlockPos var2);
+   public abstract void method12154(IWorld var1, BlockPos var2);
 
-   public abstract void method12155(Class1660 var1, BlockPos var2);
+   public abstract void method12155(IWorld var1, BlockPos var2);
 
    @Override
-   public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+   public void onReplaced(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       if (!var5 && !var1.isIn(var4.getBlock())) {
          if (this.method12158(var1) > 0) {
             this.method12156(var2, var3);
          }
 
-         super.method11513(var1, var2, var3, var4, var5);
+         super.onReplaced(var1, var2, var3, var4, var5);
       }
    }
 

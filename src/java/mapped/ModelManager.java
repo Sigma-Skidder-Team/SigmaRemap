@@ -2,6 +2,7 @@ package mapped;
 
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import net.minecraft.block.BlockState;
+import net.minecraft.fluid.FluidState;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.Map;

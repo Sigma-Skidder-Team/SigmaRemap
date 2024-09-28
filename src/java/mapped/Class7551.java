@@ -102,7 +102,7 @@ public class Class7551 {
       for (Class8557 var14 : var9) {
          if (var6) {
             this.method24687(var1, var2, var3, var14.method30511(), var14.method30514(), (float[])null, var10);
-            BlockPos var15 = !var10.get(0) ? var3 : var3.method8349(var14.method30514());
+            BlockPos var15 = !var10.get(0) ? var3 : var3.offset(var14.method30514());
             var4 = WorldRenderer.method945(var1, var2, var15);
          }
 
@@ -245,7 +245,7 @@ public class Class7551 {
          if (!var7 || Class9716.method38063(var3, var1, var4, var21, var16)) {
             var8.setSeed(var9);
             List var22 = !this.field32375 ? var2.method22619(var3, var21, var8) : var2.method22628(var3, var21, var8, var12);
-            int var23 = WorldRenderer.method945(var1, var3, var4.method8349(var21));
+            int var23 = WorldRenderer.method945(var1, var3, var4.offset(var21));
             var22 = Class8464.method29766(var22, var1, var3, var4, var21, var17, var9, var16);
             this.method24688(var1, var3, var4, var23, var11, false, var5, var6, var22, var16);
             var15 = true;
@@ -410,7 +410,7 @@ public class Class7551 {
          Class8557 var16 = (Class8557)var9.get(var15);
          if (var6) {
             this.method24687(var1, var2, var3, var16.method30511(), var16.method30514(), (float[])null, var13);
-            BlockPos var17 = !var13.get(0) ? var3 : var3.method8349(var16.method30514());
+            BlockPos var17 = !var13.get(0) ? var3 : var3.offset(var16.method30514());
             var4 = WorldRenderer.method945(var1, var2, var17);
          }
 
@@ -536,7 +536,7 @@ public class Class7551 {
 
                      var12.method29411(var25, var4);
                      if (!var13) {
-                        int var26 = WorldRenderer.method945(var1, var25, var4.method8349(var23.method30514()));
+                        int var26 = WorldRenderer.method945(var1, var25, var4.offset(var23.method30514()));
                         this.method24688(var1, var25, var4, var26, var7, false, var5, var21, var24, var12);
                      } else {
                         this.method24685(var1, var25, var4, var5, var21, var24, var7, var12);

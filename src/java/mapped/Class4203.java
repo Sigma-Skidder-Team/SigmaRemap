@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.StairsBlock;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -40,16 +41,16 @@ public class Class4203 extends Class4194 {
       this.method12928(var1, var5, 0, 0, 0, 4, 10, 7, true, var4, Class9331.method35288());
       this.method12984(var1, var4, var5, this.field20495, 1, 7, 0);
       this.method12984(var1, var4, var5, Class2213.field14470, 1, 1, 7);
-      BlockState var10 = Blocks.COBBLESTONE_STAIRS.method11579().with(Class3421.field19131, Direction.SOUTH);
+      BlockState var10 = Blocks.COBBLESTONE_STAIRS.getDefaultState().with(StairsBlock.FACING, Direction.SOUTH);
 
       for (int var11 = 0; var11 < 6; var11++) {
          this.method12923(var1, var10, 1, 6 - var11, 1 + var11, var5);
          this.method12923(var1, var10, 2, 6 - var11, 1 + var11, var5);
          this.method12923(var1, var10, 3, 6 - var11, 1 + var11, var5);
          if (var11 < 5) {
-            this.method12923(var1, Blocks.field36615.method11579(), 1, 5 - var11, 1 + var11, var5);
-            this.method12923(var1, Blocks.field36615.method11579(), 2, 5 - var11, 1 + var11, var5);
-            this.method12923(var1, Blocks.field36615.method11579(), 3, 5 - var11, 1 + var11, var5);
+            this.method12923(var1, Blocks.field36615.getDefaultState(), 1, 5 - var11, 1 + var11, var5);
+            this.method12923(var1, Blocks.field36615.getDefaultState(), 2, 5 - var11, 1 + var11, var5);
+            this.method12923(var1, Blocks.field36615.getDefaultState(), 3, 5 - var11, 1 + var11, var5);
          }
       }
 

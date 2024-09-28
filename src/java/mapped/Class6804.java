@@ -16,7 +16,7 @@ public class Class6804<T> implements ITickList<T> {
    }
 
    @Override
-   public void method20726(BlockPos var1, T var2, int var3) {
+   public void scheduleTick(BlockPos var1, T var2, int var3) {
    }
 
    @Override

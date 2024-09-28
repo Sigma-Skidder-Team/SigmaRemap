@@ -1,7 +1,7 @@
-package mapped;
+package net.minecraft.item;
 
+import mapped.ItemUseContext;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
@@ -9,28 +9,28 @@ import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 
-public class Class5909 extends ItemUseContext {
+public class BlockItemUseContext extends ItemUseContext {
    private static String[] field25716;
    public BlockPos field25717;
    public boolean field25718 = true;
 
-   public Class5909(PlayerEntity var1, Hand var2, ItemStack var3, BlockRayTraceResult var4) {
+   public BlockItemUseContext(PlayerEntity var1, Hand var2, ItemStack var3, BlockRayTraceResult var4) {
       this(var1.world, var1, var2, var3, var4);
    }
 
-   public Class5909(ItemUseContext var1) {
-      this(var1.method18360(), var1.method18358(), var1.method18359(), var1.method18357(), var1.method18353());
+   public BlockItemUseContext(ItemUseContext var1) {
+      this(var1.getWorld(), var1.method18358(), var1.method18359(), var1.method18357(), var1.method18353());
    }
 
-   public Class5909(World var1, PlayerEntity var2, Hand var3, ItemStack var4, BlockRayTraceResult var5) {
+   public BlockItemUseContext(World var1, PlayerEntity var2, Hand var3, ItemStack var4, BlockRayTraceResult var5) {
       super(var1, var2, var3, var4, var5);
-      this.field25717 = var5.getPos().method8349(var5.getFace());
+      this.field25717 = var5.getPos().offset(var5.getFace());
       this.field25718 = var1.getBlockState(var5.getPos()).method23441(this);
    }
 
-   public static Class5909 method18344(Class5909 var0, BlockPos var1, Direction var2) {
-      return new Class5909(
-         var0.method18360(),
+   public static BlockItemUseContext method18344(BlockItemUseContext var0, BlockPos var1, Direction var2) {
+      return new BlockItemUseContext(
+         var0.getWorld(),
          var0.method18358(),
          var0.method18359(),
          var0.method18357(),
@@ -48,12 +48,12 @@ public class Class5909 extends ItemUseContext {
    }
 
    @Override
-   public BlockPos method18345() {
-      return !this.field25718 ? this.field25717 : super.method18345();
+   public BlockPos getPos() {
+      return !this.field25718 ? this.field25717 : super.getPos();
    }
 
    public boolean method18346() {
-      return this.field25718 || this.method18360().getBlockState(this.method18345()).method23441(this);
+      return this.field25718 || this.getWorld().getBlockState(this.getPos()).method23441(this);
    }
 
    public boolean method18347() {
@@ -69,7 +69,7 @@ public class Class5909 extends ItemUseContext {
       if (this.field25718) {
          return var3;
       } else {
-         Direction var4 = this.method18354();
+         Direction var4 = this.getFace();
          int var5 = 0;
 
          while (var5 < var3.length && var3[var5] != var4.getOpposite()) {

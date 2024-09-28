@@ -18,6 +18,7 @@ import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluid;
+import net.minecraft.fluid.FluidState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.IPacket;
@@ -366,7 +367,7 @@ public class ClientWorld extends World {
       int var12 = var3 + this.rand.nextInt(var4) - this.rand.nextInt(var4);
       var7.method8372(var10, var11, var12);
       BlockState var13 = this.getBlockState(var7);
-      var13.getBlock().method11512(var13, this, var7, var5);
+      var13.getBlock().animateTick(var13, this, var7, var5);
       FluidState var14 = this.getFluidState(var7);
       if (!var14.method23474()) {
          var14.method23480(this, var7, var5);
@@ -556,7 +557,7 @@ public class ClientWorld extends World {
    }
 
    @Override
-   public ITickList<Fluid> method6861() {
+   public ITickList<Fluid> getPendingFluidTicks() {
       return Class6804.<Fluid>method20727();
    }
 

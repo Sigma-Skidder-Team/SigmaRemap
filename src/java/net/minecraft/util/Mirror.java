@@ -1,17 +1,17 @@
 package net.minecraft.util;
 
-import mapped.Class178;
+import net.minecraft.util.math.vector.Orientation;
 import mapped.Class8449;
 
 public enum Mirror {
-   field13614(Class178.field565),
-   field13615(Class178.field592),
-   field13616(Class178.field590);
+   field13614(Orientation.IDENTITY),
+   field13615(Orientation.INVERT_Z),
+   field13616(Orientation.INVERT_X);
 
-   private final Class178 field13617;
+   private final Orientation field13617;
    private static final Mirror[] field13618 = new Mirror[]{field13614, field13615, field13616};
 
-   private Mirror(Class178 var3) {
+   private Mirror(Orientation var3) {
       this.field13617 = var3;
    }
 
@@ -30,7 +30,7 @@ public enum Mirror {
 
    public Rotation toRotation(Direction var1) {
       Direction.Axis var4 = var1.getAxis();
-      return this == field13615 && var4 == Direction.Axis.Z || this == field13616 && var4 == Direction.Axis.X ? Rotation.field187 : Rotation.field185;
+      return this == field13615 && var4 == Direction.Axis.Z || this == field13616 && var4 == Direction.Axis.X ? Rotation.CLOCKWISE_180 : Rotation.NONE;
    }
 
    public Direction method8750(Direction var1) {
@@ -41,7 +41,7 @@ public enum Mirror {
       }
    }
 
-   public Class178 method8751() {
+   public Orientation method8751() {
       return this.field13617;
    }
 }

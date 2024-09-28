@@ -6,6 +6,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 
 public class Class3398 extends AbstractFireBlock {
@@ -16,8 +17,8 @@ public class Class3398 extends AbstractFireBlock {
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
-      return !this.method11492(var1, var4, var5) ? Blocks.AIR.method11579() : this.method11579();
+   public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
+      return !this.method11492(var1, var4, var5) ? Blocks.AIR.getDefaultState() : this.getDefaultState();
    }
 
    @Override

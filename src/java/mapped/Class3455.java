@@ -4,6 +4,9 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.fluid.Fluid;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.state.EnumProperty;
 import net.minecraft.state.properties.DoubleBlockHalf;
@@ -11,6 +14,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 
 import javax.annotation.Nullable;
@@ -25,7 +29,7 @@ public class Class3455 extends Class3456 implements Class3449 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return field19275;
    }
 
@@ -41,10 +45,10 @@ public class Class3455 extends Class3456 implements Class3449 {
 
    @Nullable
    @Override
-   public BlockState method11495(Class5909 var1) {
-      BlockState var4 = super.method11495(var1);
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      BlockState var4 = super.getStateForPlacement(var1);
       if (var4 != null) {
-         FluidState var5 = var1.method18360().getFluidState(var1.method18345().up());
+         FluidState var5 = var1.getWorld().getFluidState(var1.getPos().up());
          if (var5.method23486(FluidTags.field40469) && var5.method23477() == 8) {
             return var4;
          }
@@ -65,8 +69,8 @@ public class Class3455 extends Class3456 implements Class3449 {
    }
 
    @Override
-   public FluidState method11498(BlockState var1) {
-      return Class9479.field44066.method25078(false);
+   public FluidState getFluidState(BlockState var1) {
+      return Fluids.WATER.getStillFluidState(false);
    }
 
    @Override
@@ -75,7 +79,7 @@ public class Class3455 extends Class3456 implements Class3449 {
    }
 
    @Override
-   public boolean method11532(Class1660 var1, BlockPos var2, BlockState var3, FluidState var4) {
+   public boolean method11532(IWorld var1, BlockPos var2, BlockState var3, FluidState var4) {
       return false;
    }
 }

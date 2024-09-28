@@ -45,7 +45,7 @@ public class Class3344 extends Class3343 {
                for (int var9 = 0; var9 < var7.method38654(); var9++) {
                   for (int var10 = 0; var10 < var7.method38653(); var10++) {
                      CachedBlockInfo var11 = var8.method33881(var9, var10, 0);
-                     var0.setBlockState(var11.method37551(), Blocks.AIR.method11579(), 2);
+                     var0.setBlockState(var11.method37551(), Blocks.AIR.getDefaultState(), 2);
                      var0.playEvent(2001, var11.method37551(), Block.getStateId(var11.method37548()));
                   }
                }

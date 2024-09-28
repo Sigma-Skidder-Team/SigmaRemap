@@ -12,6 +12,8 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.fluid.Fluid;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
@@ -57,8 +59,8 @@ public class Class1672 implements IChunk {
          var1,
          var2,
          (ChunkSection[])null,
-         new Class6806<Block>(var0 -> var0 == null || var0.method11579().isAir(), var1),
-         new Class6806<Fluid>(var0 -> var0 == null || var0 == Class9479.field44064, var1)
+         new Class6806<Block>(var0 -> var0 == null || var0.getDefaultState().isAir(), var1),
+         new Class6806<Fluid>(var0 -> var0 == null || var0 == Fluids.EMPTY, var1)
       );
    }
 
@@ -81,9 +83,9 @@ public class Class1672 implements IChunk {
       int var4 = var1.getY();
       if (!World.isYOutOfBounds(var4)) {
          ChunkSection var5 = this.getSections()[var4 >> 4];
-         return !ChunkSection.method21859(var5) ? var5.method21852(var1.getX() & 15, var4 & 15, var1.getZ() & 15) : Blocks.AIR.method11579();
+         return !ChunkSection.method21859(var5) ? var5.method21852(var1.getX() & 15, var4 & 15, var1.getZ() & 15) : Blocks.AIR.getDefaultState();
       } else {
-         return Blocks.field37011.method11579();
+         return Blocks.field37011.getDefaultState();
       }
    }
 
@@ -92,9 +94,9 @@ public class Class1672 implements IChunk {
       int var4 = var1.getY();
       if (!World.isYOutOfBounds(var4)) {
          ChunkSection var5 = this.getSections()[var4 >> 4];
-         return !ChunkSection.method21859(var5) ? var5.method21853(var1.getX() & 15, var4 & 15, var1.getZ() & 15) : Class9479.field44064.method25049();
+         return !ChunkSection.method21859(var5) ? var5.method21853(var1.getX() & 15, var4 & 15, var1.getZ() & 15) : Fluids.EMPTY.method25049();
       } else {
-         return Class9479.field44064.method25049();
+         return Fluids.EMPTY.method25049();
       }
    }
 
@@ -174,7 +176,7 @@ public class Class1672 implements IChunk {
             return var10;
          }
       } else {
-         return Blocks.field37011.method11579();
+         return Blocks.field37011.getDefaultState();
       }
    }
 

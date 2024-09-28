@@ -116,7 +116,7 @@ public class BlockPos extends Vector3i {
    }
 
    public BlockPos up() {
-      return this.method8349(Direction.UP);
+      return this.offset(Direction.UP);
    }
 
    public BlockPos method8339(int var1) {
@@ -124,7 +124,7 @@ public class BlockPos extends Vector3i {
    }
 
    public BlockPos down() {
-      return this.method8349(Direction.DOWN);
+      return this.offset(Direction.DOWN);
    }
 
    public BlockPos method8340(int var1) {
@@ -132,7 +132,7 @@ public class BlockPos extends Vector3i {
    }
 
    public BlockPos north() {
-      return this.method8349(Direction.NORTH);
+      return this.offset(Direction.NORTH);
    }
 
    public BlockPos method8342(int var1) {
@@ -140,7 +140,7 @@ public class BlockPos extends Vector3i {
    }
 
    public BlockPos south() {
-      return this.method8349(Direction.SOUTH);
+      return this.offset(Direction.SOUTH);
    }
 
    public BlockPos method8344(int var1) {
@@ -148,7 +148,7 @@ public class BlockPos extends Vector3i {
    }
 
    public BlockPos west() {
-      return this.method8349(Direction.WEST);
+      return this.offset(Direction.WEST);
    }
 
    public BlockPos method8346(int var1) {
@@ -156,14 +156,14 @@ public class BlockPos extends Vector3i {
    }
 
    public BlockPos east() {
-      return this.method8349(Direction.EAST);
+      return this.offset(Direction.EAST);
    }
 
    public BlockPos method8348(int var1) {
       return this.method8350(Direction.EAST, var1);
    }
 
-   public BlockPos method8349(Direction var1) {
+   public BlockPos offset(Direction var1) {
       return new BlockPos(this.getX() + var1.getXOffset(), this.getY() + var1.getYOffset(), this.getZ() + var1.getZOffset());
    }
 

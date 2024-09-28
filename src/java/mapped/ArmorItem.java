@@ -37,7 +37,7 @@ public class ArmorItem extends Item implements Class3255 {
    private final Multimap<Attribute, AttributeModifier> field_234656_m_;
 
    public static boolean func_226626_a_(IBlockSource var0, ItemStack var1) {
-      BlockPos var4 = var0.method11323().method8349(var0.method11324().<Direction>get(Class3357.field18899));
+      BlockPos var4 = var0.method11323().offset(var0.method11324().<Direction>get(Class3357.field18899));
       List var5 = var0.method11326().<Entity>getEntitiesInAABBexcluding(LivingEntity.class, new AxisAlignedBB(var4), Class8088.field34763.and(new Class165(var1)));
       if (!var5.isEmpty()) {
          LivingEntity var6 = (LivingEntity)var5.get(0);

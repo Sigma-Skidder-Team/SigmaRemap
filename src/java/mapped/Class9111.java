@@ -11,12 +11,12 @@ public class Class9111 {
 
    static {
       try {
-         field41873[Rotation.field188.ordinal()] = 1;
+         field41873[Rotation.COUNTERCLOCKWISE_90.ordinal()] = 1;
       } catch (NoSuchFieldError var6) {
       }
 
       try {
-         field41873[Rotation.field186.ordinal()] = 2;
+         field41873[Rotation.CLOCKWISE_90.ordinal()] = 2;
       } catch (NoSuchFieldError var5) {
       }
 

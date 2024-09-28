@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -36,24 +37,24 @@ public class Class4170 extends Class4167 {
 
    @Override
    public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
-      this.method12927(var1, var5, 0, 3, 0, 12, 4, 12, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
-      this.method12927(var1, var5, 0, 5, 0, 12, 13, 12, Blocks.AIR.method11579(), Blocks.AIR.method11579(), false);
-      this.method12927(var1, var5, 0, 5, 0, 1, 12, 12, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
-      this.method12927(var1, var5, 11, 5, 0, 12, 12, 12, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
-      this.method12927(var1, var5, 2, 5, 11, 4, 12, 12, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
-      this.method12927(var1, var5, 8, 5, 11, 10, 12, 12, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
-      this.method12927(var1, var5, 5, 9, 11, 7, 12, 12, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
-      this.method12927(var1, var5, 2, 5, 0, 4, 12, 1, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
-      this.method12927(var1, var5, 8, 5, 0, 10, 12, 1, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
-      this.method12927(var1, var5, 5, 9, 0, 7, 12, 1, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
-      this.method12927(var1, var5, 2, 11, 2, 10, 12, 10, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
-      this.method12927(var1, var5, 5, 8, 0, 7, 8, 0, Blocks.NETHER_BRICK_FENCE.method11579(), Blocks.NETHER_BRICK_FENCE.method11579(), false);
+      this.method12927(var1, var5, 0, 3, 0, 12, 4, 12, Blocks.NETHER_BRICKS.getDefaultState(), Blocks.NETHER_BRICKS.getDefaultState(), false);
+      this.method12927(var1, var5, 0, 5, 0, 12, 13, 12, Blocks.AIR.getDefaultState(), Blocks.AIR.getDefaultState(), false);
+      this.method12927(var1, var5, 0, 5, 0, 1, 12, 12, Blocks.NETHER_BRICKS.getDefaultState(), Blocks.NETHER_BRICKS.getDefaultState(), false);
+      this.method12927(var1, var5, 11, 5, 0, 12, 12, 12, Blocks.NETHER_BRICKS.getDefaultState(), Blocks.NETHER_BRICKS.getDefaultState(), false);
+      this.method12927(var1, var5, 2, 5, 11, 4, 12, 12, Blocks.NETHER_BRICKS.getDefaultState(), Blocks.NETHER_BRICKS.getDefaultState(), false);
+      this.method12927(var1, var5, 8, 5, 11, 10, 12, 12, Blocks.NETHER_BRICKS.getDefaultState(), Blocks.NETHER_BRICKS.getDefaultState(), false);
+      this.method12927(var1, var5, 5, 9, 11, 7, 12, 12, Blocks.NETHER_BRICKS.getDefaultState(), Blocks.NETHER_BRICKS.getDefaultState(), false);
+      this.method12927(var1, var5, 2, 5, 0, 4, 12, 1, Blocks.NETHER_BRICKS.getDefaultState(), Blocks.NETHER_BRICKS.getDefaultState(), false);
+      this.method12927(var1, var5, 8, 5, 0, 10, 12, 1, Blocks.NETHER_BRICKS.getDefaultState(), Blocks.NETHER_BRICKS.getDefaultState(), false);
+      this.method12927(var1, var5, 5, 9, 0, 7, 12, 1, Blocks.NETHER_BRICKS.getDefaultState(), Blocks.NETHER_BRICKS.getDefaultState(), false);
+      this.method12927(var1, var5, 2, 11, 2, 10, 12, 10, Blocks.NETHER_BRICKS.getDefaultState(), Blocks.NETHER_BRICKS.getDefaultState(), false);
+      this.method12927(var1, var5, 5, 8, 0, 7, 8, 0, Blocks.NETHER_BRICK_FENCE.getDefaultState(), Blocks.NETHER_BRICK_FENCE.getDefaultState(), false);
       BlockState var10 = Blocks.NETHER_BRICK_FENCE
-         .method11579()
+         .getDefaultState()
          .with(Class3239.field18683, Boolean.valueOf(true))
          .with(Class3239.field18681, Boolean.valueOf(true));
       BlockState var11 = Blocks.NETHER_BRICK_FENCE
-         .method11579()
+         .getDefaultState()
          .with(Class3239.field18680, Boolean.valueOf(true))
          .with(Class3239.field18682, Boolean.valueOf(true));
 
@@ -62,10 +63,10 @@ public class Class4170 extends Class4167 {
          this.method12927(var1, var5, var12, 10, 12, var12, 11, 12, var10, var10, false);
          this.method12927(var1, var5, 0, 10, var12, 0, 11, var12, var11, var11, false);
          this.method12927(var1, var5, 12, 10, var12, 12, 11, var12, var11, var11, false);
-         this.method12923(var1, Blocks.NETHER_BRICKS.method11579(), var12, 13, 0, var5);
-         this.method12923(var1, Blocks.NETHER_BRICKS.method11579(), var12, 13, 12, var5);
-         this.method12923(var1, Blocks.NETHER_BRICKS.method11579(), 0, 13, var12, var5);
-         this.method12923(var1, Blocks.NETHER_BRICKS.method11579(), 12, 13, var12, var5);
+         this.method12923(var1, Blocks.NETHER_BRICKS.getDefaultState(), var12, 13, 0, var5);
+         this.method12923(var1, Blocks.NETHER_BRICKS.getDefaultState(), var12, 13, 12, var5);
+         this.method12923(var1, Blocks.NETHER_BRICKS.getDefaultState(), 0, 13, var12, var5);
+         this.method12923(var1, Blocks.NETHER_BRICKS.getDefaultState(), 12, 13, var12, var5);
          if (var12 != 11) {
             this.method12923(var1, var10, var12 + 1, 13, 0, var5);
             this.method12923(var1, var10, var12 + 1, 13, 12, var5);
@@ -76,7 +77,7 @@ public class Class4170 extends Class4167 {
 
       this.method12923(
          var1,
-         Blocks.NETHER_BRICK_FENCE.method11579().with(Class3239.field18680, Boolean.valueOf(true)).with(Class3239.field18681, Boolean.valueOf(true)),
+         Blocks.NETHER_BRICK_FENCE.getDefaultState().with(Class3239.field18680, Boolean.valueOf(true)).with(Class3239.field18681, Boolean.valueOf(true)),
          0,
          13,
          0,
@@ -84,7 +85,7 @@ public class Class4170 extends Class4167 {
       );
       this.method12923(
          var1,
-         Blocks.NETHER_BRICK_FENCE.method11579().with(Class3239.field18682, Boolean.valueOf(true)).with(Class3239.field18681, Boolean.valueOf(true)),
+         Blocks.NETHER_BRICK_FENCE.getDefaultState().with(Class3239.field18682, Boolean.valueOf(true)).with(Class3239.field18681, Boolean.valueOf(true)),
          0,
          13,
          12,
@@ -92,7 +93,7 @@ public class Class4170 extends Class4167 {
       );
       this.method12923(
          var1,
-         Blocks.NETHER_BRICK_FENCE.method11579().with(Class3239.field18682, Boolean.valueOf(true)).with(Class3239.field18683, Boolean.valueOf(true)),
+         Blocks.NETHER_BRICK_FENCE.getDefaultState().with(Class3239.field18682, Boolean.valueOf(true)).with(Class3239.field18683, Boolean.valueOf(true)),
          12,
          13,
          12,
@@ -100,7 +101,7 @@ public class Class4170 extends Class4167 {
       );
       this.method12923(
          var1,
-         Blocks.NETHER_BRICK_FENCE.method11579().with(Class3239.field18680, Boolean.valueOf(true)).with(Class3239.field18683, Boolean.valueOf(true)),
+         Blocks.NETHER_BRICK_FENCE.getDefaultState().with(Class3239.field18680, Boolean.valueOf(true)).with(Class3239.field18683, Boolean.valueOf(true)),
          12,
          13,
          0,
@@ -136,34 +137,34 @@ public class Class4170 extends Class4167 {
          );
       }
 
-      this.method12927(var1, var5, 4, 2, 0, 8, 2, 12, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
-      this.method12927(var1, var5, 0, 2, 4, 12, 2, 8, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
-      this.method12927(var1, var5, 4, 0, 0, 8, 1, 3, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
-      this.method12927(var1, var5, 4, 0, 9, 8, 1, 12, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
-      this.method12927(var1, var5, 0, 0, 4, 3, 1, 8, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
-      this.method12927(var1, var5, 9, 0, 4, 12, 1, 8, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
+      this.method12927(var1, var5, 4, 2, 0, 8, 2, 12, Blocks.NETHER_BRICKS.getDefaultState(), Blocks.NETHER_BRICKS.getDefaultState(), false);
+      this.method12927(var1, var5, 0, 2, 4, 12, 2, 8, Blocks.NETHER_BRICKS.getDefaultState(), Blocks.NETHER_BRICKS.getDefaultState(), false);
+      this.method12927(var1, var5, 4, 0, 0, 8, 1, 3, Blocks.NETHER_BRICKS.getDefaultState(), Blocks.NETHER_BRICKS.getDefaultState(), false);
+      this.method12927(var1, var5, 4, 0, 9, 8, 1, 12, Blocks.NETHER_BRICKS.getDefaultState(), Blocks.NETHER_BRICKS.getDefaultState(), false);
+      this.method12927(var1, var5, 0, 0, 4, 3, 1, 8, Blocks.NETHER_BRICKS.getDefaultState(), Blocks.NETHER_BRICKS.getDefaultState(), false);
+      this.method12927(var1, var5, 9, 0, 4, 12, 1, 8, Blocks.NETHER_BRICKS.getDefaultState(), Blocks.NETHER_BRICKS.getDefaultState(), false);
 
       for (int var15 = 4; var15 <= 8; var15++) {
          for (int var13 = 0; var13 <= 2; var13++) {
-            this.method12932(var1, Blocks.NETHER_BRICKS.method11579(), var15, -1, var13, var5);
-            this.method12932(var1, Blocks.NETHER_BRICKS.method11579(), var15, -1, 12 - var13, var5);
+            this.method12932(var1, Blocks.NETHER_BRICKS.getDefaultState(), var15, -1, var13, var5);
+            this.method12932(var1, Blocks.NETHER_BRICKS.getDefaultState(), var15, -1, 12 - var13, var5);
          }
       }
 
       for (int var16 = 0; var16 <= 2; var16++) {
          for (int var18 = 4; var18 <= 8; var18++) {
-            this.method12932(var1, Blocks.NETHER_BRICKS.method11579(), var16, -1, var18, var5);
-            this.method12932(var1, Blocks.NETHER_BRICKS.method11579(), 12 - var16, -1, var18, var5);
+            this.method12932(var1, Blocks.NETHER_BRICKS.getDefaultState(), var16, -1, var18, var5);
+            this.method12932(var1, Blocks.NETHER_BRICKS.getDefaultState(), 12 - var16, -1, var18, var5);
          }
       }
 
-      this.method12927(var1, var5, 5, 5, 5, 7, 5, 7, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
-      this.method12927(var1, var5, 6, 1, 6, 6, 4, 6, Blocks.AIR.method11579(), Blocks.AIR.method11579(), false);
-      this.method12923(var1, Blocks.NETHER_BRICKS.method11579(), 6, 0, 6, var5);
-      this.method12923(var1, Blocks.LAVA.method11579(), 6, 5, 6, var5);
+      this.method12927(var1, var5, 5, 5, 5, 7, 5, 7, Blocks.NETHER_BRICKS.getDefaultState(), Blocks.NETHER_BRICKS.getDefaultState(), false);
+      this.method12927(var1, var5, 6, 1, 6, 6, 4, 6, Blocks.AIR.getDefaultState(), Blocks.AIR.getDefaultState(), false);
+      this.method12923(var1, Blocks.NETHER_BRICKS.getDefaultState(), 6, 0, 6, var5);
+      this.method12923(var1, Blocks.LAVA.getDefaultState(), 6, 5, 6, var5);
       BlockPos var17 = new BlockPos(this.method12920(6, 6), this.method12921(5), this.method12922(6, 6));
       if (var5.method38396(var17)) {
-         var1.method6861().method20726(var17, Class9479.field44068, 0);
+         var1.getPendingFluidTicks().scheduleTick(var17, Fluids.LAVA, 0);
       }
 
       return true;

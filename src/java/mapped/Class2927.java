@@ -9,6 +9,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.IWorld;
 
 import java.util.Random;
 
@@ -41,21 +42,21 @@ public class Class2927 extends Class2898<Class4709> {
          }
 
          boolean var13 = !var5.field22341 && var3.nextFloat() < 0.06F;
-         var1.setBlockState(var4, Blocks.AIR.method11579(), 4);
+         var1.setBlockState(var4, Blocks.AIR.getDefaultState(), 4);
          this.method11258(var1, var3, var5, var9, var11, var13);
          this.method11259(var1, var3, var5, var9, var11, var13);
          return true;
       }
    }
 
-   private static boolean method11257(Class1660 var0, BlockPos var1, boolean var2) {
+   private static boolean method11257(IWorld var0, BlockPos var1, boolean var2) {
       return var0.method6815(var1, var1x -> {
          Material var4 = var1x.getMaterial();
          return var1x.getMaterial().isReplaceable() || var2 && var4 == Material.PLANTS;
       });
    }
 
-   private void method11258(Class1660 var1, Random var2, Class4709 var3, BlockPos var4, int var5, boolean var6) {
+   private void method11258(IWorld var1, Random var2, Class4709 var3, BlockPos var4, int var5, boolean var6) {
       BlockPos.Mutable var9 = new BlockPos.Mutable();
       BlockState var10 = var3.field22338;
       int var11 = !var6 ? 0 : 1;
@@ -86,7 +87,7 @@ public class Class2927 extends Class2898<Class4709> {
       }
    }
 
-   private void method11259(Class1660 var1, Random var2, Class4709 var3, BlockPos var4, int var5, boolean var6) {
+   private void method11259(IWorld var1, Random var2, Class4709 var3, BlockPos var4, int var5, boolean var6) {
       BlockPos.Mutable var9 = new BlockPos.Mutable();
       boolean var10 = var3.field22339.isIn(Blocks.field36891);
       int var11 = Math.min(var2.nextInt(1 + var5 / 3) + 5, var5);
@@ -134,7 +135,7 @@ public class Class2927 extends Class2898<Class4709> {
       }
    }
 
-   private void method11260(Class1660 var1, Random var2, Class4709 var3, BlockPos.Mutable var4, float var5, float var6, float var7) {
+   private void method11260(IWorld var1, Random var2, Class4709 var3, BlockPos.Mutable var4, float var5, float var6, float var7) {
       if (!(var2.nextFloat() < var5)) {
          if (var2.nextFloat() < var6) {
             this.method11217(var1, var4, var3.field22339);
@@ -147,7 +148,7 @@ public class Class2927 extends Class2898<Class4709> {
       }
    }
 
-   private void method11261(Class1660 var1, Random var2, BlockPos var3, BlockState var4, boolean var5) {
+   private void method11261(IWorld var1, Random var2, BlockPos var3, BlockState var4, boolean var5) {
       if (!var1.getBlockState(var3.down()).isIn(var4.getBlock())) {
          if ((double)var2.nextFloat() < 0.15) {
             this.method11217(var1, var3, var4);
@@ -160,7 +161,7 @@ public class Class2927 extends Class2898<Class4709> {
       }
    }
 
-   private static void method11262(BlockPos var0, Class1660 var1, Random var2) {
+   private static void method11262(BlockPos var0, IWorld var1, Random var2) {
       BlockPos.Mutable var5 = var0.method8354().method8379(Direction.DOWN);
       if (var1.method7007(var5)) {
          int var6 = MathHelper.method37782(var2, 1, 5);

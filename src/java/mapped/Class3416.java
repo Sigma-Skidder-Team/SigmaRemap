@@ -21,7 +21,7 @@ public class Class3416 extends Block {
    }
 
    @Override
-   public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
+   public ActionResultType onBlockActivated(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       if (!var2.isRemote) {
          var4.method2766(var1.method23445(var2, var3));
          var4.method2911(Stats.field40169);

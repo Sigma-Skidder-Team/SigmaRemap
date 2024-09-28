@@ -1,12 +1,13 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.vector.Matrix3f;
 
 public class Class5427 extends Class5424 {
    private static String[] field24143;
    private final IVertexBuilder field24144;
    private final Matrix4f field24145;
-   private final Class8967 field24146;
+   private final Matrix3f field24146;
    private float field24147;
    private float field24148;
    private float field24149;
@@ -17,7 +18,7 @@ public class Class5427 extends Class5424 {
    private float field24154;
    private float field24155;
 
-   public Class5427(IVertexBuilder var1, Matrix4f var2, Class8967 var3) {
+   public Class5427(IVertexBuilder var1, Matrix4f var2, Matrix3f var3) {
       this.field24144 = var1;
       this.field24145 = var2.method35514();
       this.field24145.method35507();

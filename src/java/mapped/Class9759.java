@@ -13,6 +13,7 @@ import java.util.function.BiFunction;
 import javax.annotation.Nullable;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.state.Property;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -25,7 +26,7 @@ public class Class9759 {
    private static final BiFunction<SuggestionsBuilder, Class7984<Item>, CompletableFuture<Suggestions>> field45654 = (var0, var1) -> var0.buildFuture();
    private final StringReader field45655;
    private final boolean field45656;
-   private final Map<Class8550<?>, Comparable<?>> field45657 = Maps.newHashMap();
+   private final Map<Property<?>, Comparable<?>> field45657 = Maps.newHashMap();
    private Item field45658;
    private CompoundNBT field45659;
    private ResourceLocation field45660 = new ResourceLocation("");

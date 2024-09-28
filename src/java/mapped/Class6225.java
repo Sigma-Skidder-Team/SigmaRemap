@@ -22,7 +22,7 @@ public class Class6225 extends Class6218 {
       double var7 = var1.getX() + (double)((float)var5.getXOffset() * 1.125F);
       double var9 = var1.getY() + (double)((float)var5.getYOffset() * 1.125F);
       double var11 = var1.getZ() + (double)((float)var5.getZOffset() * 1.125F);
-      BlockPos var13 = var1.method11323().method8349(var5);
+      BlockPos var13 = var1.method11323().offset(var5);
       double var14;
       if (!var6.getFluidState(var13).method23486(FluidTags.field40469)) {
          if (!var6.getBlockState(var13).isAir() || !var6.getFluidState(var13.down()).method23486(FluidTags.field40469)) {

@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 
 public class Class7095 extends Class7092 {
    public static final Codec<Class7095> field30525 = BlockState.field31585
-      .xmap(Class7377::getBlock, Block::method11579)
+      .xmap(Class7377::getBlock, Block::getDefaultState)
       .listOf()
       .fieldOf("blocks")
       .xmap(Class7095::new, var0 -> var0.field30529)

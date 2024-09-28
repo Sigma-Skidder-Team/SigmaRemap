@@ -9,9 +9,12 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
+import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.EnumProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BedPart;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tileentity.TileEntity;
@@ -28,6 +31,7 @@ import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.ICollisionReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import org.apache.commons.lang3.ArrayUtils;
 
@@ -52,7 +56,7 @@ public class Class3250 extends HorizontalBlock implements Class3245 {
    public Class3250(Class112 var1, Properties var2) {
       super(var2);
       this.field18724 = var1;
-      this.method11578(this.field18612.method35393().with(field18713, BedPart.FOOT).with(field18714, Boolean.valueOf(false)));
+      this.setDefaultState(this.stateContainer.getBaseState().with(field18713, BedPart.FOOT).with(field18714, Boolean.valueOf(false)));
    }
 
    @Nullable
@@ -62,10 +66,10 @@ public class Class3250 extends HorizontalBlock implements Class3245 {
    }
 
    @Override
-   public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
+   public ActionResultType onBlockActivated(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       if (!var2.isRemote) {
          if (var1.<BedPart>get(field18713) != BedPart.HEAD) {
-            var3 = var3.method8349(var1.<Direction>get(HORIZONTAL_FACING));
+            var3 = var3.offset(var1.<Direction>get(HORIZONTAL_FACING));
             var1 = var2.getBlockState(var3);
             if (!var1.isIn(this)) {
                return ActionResultType.field14819;
@@ -89,7 +93,7 @@ public class Class3250 extends HorizontalBlock implements Class3245 {
             }
          } else {
             var2.removeBlock(var3, false);
-            BlockPos var9 = var3.method8349(var1.<Direction>get(HORIZONTAL_FACING).getOpposite());
+            BlockPos var9 = var3.offset(var1.<Direction>get(HORIZONTAL_FACING).getOpposite());
             if (var2.getBlockState(var9).isIn(this)) {
                var2.removeBlock(var9, false);
             }
@@ -149,13 +153,13 @@ public class Class3250 extends HorizontalBlock implements Class3245 {
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       if (var2 != method11682(var1.<BedPart>get(field18713), var1.<Direction>get(HORIZONTAL_FACING))) {
-         return super.method11491(var1, var2, var3, var4, var5, var6);
+         return super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
       } else {
          return var3.isIn(this) && var3.get(field18713) != var1.get(field18713)
             ? var1.with(field18714, var3.<Boolean>get(field18714))
-            : Blocks.AIR.method11579();
+            : Blocks.AIR.getDefaultState();
       }
    }
 
@@ -168,10 +172,10 @@ public class Class3250 extends HorizontalBlock implements Class3245 {
       if (!var1.isRemote && var4.isCreative()) {
          BedPart var7 = var3.<BedPart>get(field18713);
          if (var7 == BedPart.FOOT) {
-            BlockPos var8 = var2.method8349(method11682(var7, var3.<Direction>get(HORIZONTAL_FACING)));
+            BlockPos var8 = var2.offset(method11682(var7, var3.<Direction>get(HORIZONTAL_FACING)));
             BlockState var9 = var1.getBlockState(var8);
             if (var9.getBlock() == this && var9.<BedPart>get(field18713) == BedPart.HEAD) {
-               var1.setBlockState(var8, Blocks.AIR.method11579(), 35);
+               var1.setBlockState(var8, Blocks.AIR.getDefaultState(), 35);
                var1.method6869(var4, 2001, var8, Block.getStateId(var9));
             }
          }
@@ -182,15 +186,15 @@ public class Class3250 extends HorizontalBlock implements Class3245 {
 
    @Nullable
    @Override
-   public BlockState method11495(Class5909 var1) {
-      Direction var4 = var1.method18350();
-      BlockPos var5 = var1.method18345();
-      BlockPos var6 = var5.method8349(var4);
-      return !var1.method18360().getBlockState(var6).method23441(var1) ? null : this.method11579().with(HORIZONTAL_FACING, var4);
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      Direction var4 = var1.getPlacementHorizontalFacing();
+      BlockPos var5 = var1.getPos();
+      BlockPos var6 = var5.offset(var4);
+      return !var1.getWorld().getBlockState(var6).method23441(var1) ? null : this.getDefaultState().with(HORIZONTAL_FACING, var4);
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       Direction var7 = method11683(var1).getOpposite();
       switch (Class8903.field40297[var7.ordinal()]) {
          case 1:
@@ -284,8 +288,8 @@ public class Class3250 extends HorizontalBlock implements Class3245 {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(HORIZONTAL_FACING, field18713, field18714);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(HORIZONTAL_FACING, field18713, field18714);
    }
 
    @Override
@@ -297,7 +301,7 @@ public class Class3250 extends HorizontalBlock implements Class3245 {
    public void method11563(World var1, BlockPos var2, BlockState var3, LivingEntity var4, ItemStack var5) {
       super.method11563(var1, var2, var3, var4, var5);
       if (!var1.isRemote) {
-         BlockPos var8 = var2.method8349(var3.<Direction>get(HORIZONTAL_FACING));
+         BlockPos var8 = var2.offset(var3.<Direction>get(HORIZONTAL_FACING));
          var1.setBlockState(var8, var3.with(field18713, BedPart.HEAD), 3);
          var1.func_230547_a_(var2, Blocks.AIR);
          var3.method23424(var1, var2, 3);
@@ -315,7 +319,7 @@ public class Class3250 extends HorizontalBlock implements Class3245 {
    }
 
    @Override
-   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
+   public boolean allowsMovement(BlockState var1, IBlockReader var2, BlockPos var3, PathType var4) {
       return false;
    }
 

@@ -20,6 +20,7 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -46,7 +47,7 @@ public abstract class Class1049 extends WaterMobEntity {
       return super.method4255() || this.method4793();
    }
 
-   public static boolean method4792(EntityType<? extends Class1049> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method4792(EntityType<? extends Class1049> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
       return var1.getBlockState(var3).isIn(Blocks.WATER) && var1.getBlockState(var3.up()).isIn(Blocks.WATER);
    }
 

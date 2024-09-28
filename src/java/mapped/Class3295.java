@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.item.BlockItemUseContext;
 
 public class Class3295 extends Class3292 {
    private static String[] field18803;
@@ -12,8 +13,8 @@ public class Class3295 extends Class3292 {
    }
 
    @Override
-   public boolean method11843(Class5909 var1, BlockState var2) {
-      var1.method18360().setBlockState(var1.method18345().up(), Blocks.AIR.method11579(), 27);
+   public boolean method11843(BlockItemUseContext var1, BlockState var2) {
+      var1.getWorld().setBlockState(var1.getPos().up(), Blocks.AIR.getDefaultState(), 27);
       return super.method11843(var1, var2);
    }
 }

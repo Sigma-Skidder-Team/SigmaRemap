@@ -39,7 +39,7 @@ public class BlockUtil {
    }
 
    public static boolean method34538(Block var0, BlockPos var1) {
-      VoxelShape var4 = var0.method11579().method23414(mc.world, var1);
+      VoxelShape var4 = var0.getDefaultState().method23414(mc.world, var1);
       return !method34578(var1)
          && mc.world.checkNoEntityCollision(mc.player, var4)
          && var1.getY() <= mc.player.getPosition().getY();
@@ -599,7 +599,7 @@ public class BlockUtil {
    public static boolean method34578(BlockPos var0) {
       if (var0 != null) {
          Block var3 = mc.world.getBlockState(var0).getBlock();
-         return !var3.method11579().method23410() && var3.method11579().getMaterial().isReplaceable()
+         return !var3.getDefaultState().method23410() && var3.getDefaultState().getMaterial().isReplaceable()
             ? false
             : !(var3 instanceof Class3410) || method34573(mc.world.getBlockState(var0)) != 0;
       } else {

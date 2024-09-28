@@ -4,13 +4,17 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.HorizontalBlock;
+import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -44,16 +48,16 @@ public class Class3197 extends HorizontalBlock implements Class3196 {
 
    public Class3197(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().with(HORIZONTAL_FACING, Direction.NORTH).with(field18479, Integer.valueOf(0)));
+      this.setDefaultState(this.stateContainer.getBaseState().with(HORIZONTAL_FACING, Direction.NORTH).with(field18479, Integer.valueOf(0)));
    }
 
    @Override
-   public boolean method11499(BlockState var1) {
+   public boolean ticksRandomly(BlockState var1) {
       return var1.<Integer>get(field18479) < 2;
    }
 
    @Override
-   public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void randomTick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var2.rand.nextInt(5) == 0) {
          int var7 = var1.<Integer>get(field18479);
          if (var7 < 2) {
@@ -64,12 +68,12 @@ public class Class3197 extends HorizontalBlock implements Class3196 {
 
    @Override
    public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
-      Block var6 = var2.getBlockState(var3.method8349(var1.<Direction>get(HORIZONTAL_FACING))).getBlock();
+      Block var6 = var2.getBlockState(var3.offset(var1.<Direction>get(HORIZONTAL_FACING))).getBlock();
       return var6.isIn(BlockTags.field32756);
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       int var7 = var1.<Integer>get(field18479);
       switch (Class9737.field45471[var1.<Direction>get(HORIZONTAL_FACING).ordinal()]) {
          case 1:
@@ -86,13 +90,13 @@ public class Class3197 extends HorizontalBlock implements Class3196 {
 
    @Nullable
    @Override
-   public BlockState method11495(Class5909 var1) {
-      BlockState var4 = this.method11579();
-      World var5 = var1.method18360();
-      BlockPos var6 = var1.method18345();
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      BlockState var4 = this.getDefaultState();
+      World var5 = var1.getWorld();
+      BlockPos var6 = var1.getPos();
 
       for (Direction var10 : var1.method18349()) {
-         if (var10.getAxis().method324()) {
+         if (var10.getAxis().isHorizontal()) {
             var4 = var4.with(HORIZONTAL_FACING, var10);
             if (var4.method23443(var5, var6)) {
                return var4;
@@ -104,10 +108,10 @@ public class Class3197 extends HorizontalBlock implements Class3196 {
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       return var2 == var1.get(HORIZONTAL_FACING) && !var1.method23443(var4, var5)
-         ? Blocks.AIR.method11579()
-         : super.method11491(var1, var2, var3, var4, var5, var6);
+         ? Blocks.AIR.getDefaultState()
+         : super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
    }
 
    @Override
@@ -126,12 +130,12 @@ public class Class3197 extends HorizontalBlock implements Class3196 {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(HORIZONTAL_FACING, field18479);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(HORIZONTAL_FACING, field18479);
    }
 
    @Override
-   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
+   public boolean allowsMovement(BlockState var1, IBlockReader var2, BlockPos var3, PathType var4) {
       return false;
    }
 }

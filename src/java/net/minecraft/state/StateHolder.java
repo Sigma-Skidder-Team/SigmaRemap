@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.state;
 
 import com.google.common.collect.ArrayTable;
 import com.google.common.collect.HashBasedTable;
@@ -8,6 +8,8 @@ import com.google.common.collect.Table;
 import com.google.common.collect.UnmodifiableIterator;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
+import mapped.Class10;
+
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,20 +20,20 @@ import java.util.Map.Entry;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public abstract class Class7378<O, S> {
-   private static final Function<Entry<Class8550<?>, Comparable<?>>, String> field31578 = new Class10();
+public abstract class StateHolder<O, S> {
+   private static final Function<Entry<Property<?>, Comparable<?>>, String> field31578 = new Class10();
    public final O field31579;
-   private final ImmutableMap<Class8550<?>, Comparable<?>> field31580;
-   private Table<Class8550<?>, Comparable<?>, S> field31581;
+   private final ImmutableMap<Property<?>, Comparable<?>> field31580;
+   private Table<Property<?>, Comparable<?>, S> field31581;
    public final MapCodec<S> field31582;
 
-   public Class7378(O var1, ImmutableMap<Class8550<?>, Comparable<?>> var2, MapCodec<S> var3) {
+   public StateHolder(O var1, ImmutableMap<Property<?>, Comparable<?>> var2, MapCodec<S> var3) {
       this.field31579 = (O)var1;
       this.field31580 = var2;
       this.field31582 = var3;
    }
 
-   public <T extends Comparable<T>> S method23459(Class8550<T> var1) {
+   public <T extends Comparable<T>> S method23459(Property<T> var1) {
       return this.with(var1, method23460(var1.method30474(), this.get(var1)));
    }
 
@@ -64,15 +66,15 @@ public abstract class Class7378<O, S> {
       return var3.toString();
    }
 
-   public Collection<Class8550<?>> method23461() {
-      return Collections.<Class8550<?>>unmodifiableCollection(this.field31580.keySet());
+   public Collection<Property<?>> method23461() {
+      return Collections.<Property<?>>unmodifiableCollection(this.field31580.keySet());
    }
 
-   public <T extends Comparable<T>> boolean method23462(Class8550<T> var1) {
+   public <T extends Comparable<T>> boolean method23462(Property<T> var1) {
       return this.field31580.containsKey(var1);
    }
 
-   public <T extends Comparable<T>> T get(Class8550<T> var1) {
+   public <T extends Comparable<T>> T get(Property<T> var1) {
       Comparable var4 = (Comparable)this.field31580.get(var1);
       if (var4 != null) {
          return (T)var1.method30473().cast(var4);
@@ -81,12 +83,12 @@ public abstract class Class7378<O, S> {
       }
    }
 
-   public <T extends Comparable<T>> Optional<T> method23464(Class8550<T> var1) {
+   public <T extends Comparable<T>> Optional<T> method23464(Property<T> var1) {
       Comparable var4 = (Comparable)this.field31580.get(var1);
       return var4 != null ? Optional.<T>of((T)var1.method30473().cast(var4)) : Optional.<T>empty();
    }
 
-   public <T extends Comparable<T>, V extends T> S with(Class8550<T> var1, V var2) {
+   public <T extends Comparable<T>, V extends T> S with(Property<T> var1, V var2) {
       Comparable var5 = (Comparable)this.field31580.get(var1);
       if (var5 != null) {
          if (var5 != var2) {
@@ -104,16 +106,16 @@ public abstract class Class7378<O, S> {
       }
    }
 
-   public void method23466(Map<Map<Class8550<?>, Comparable<?>>, S> var1) {
+   public void method23466(Map<Map<Property<?>, Comparable<?>>, S> var1) {
       if (this.field31581 != null) {
          throw new IllegalStateException();
       } else {
          HashBasedTable var4 = HashBasedTable.create();
-         UnmodifiableIterator<Entry<Class8550<?>, Comparable<?>>> var5 = this.field31580.entrySet().iterator();
+         UnmodifiableIterator<Entry<Property<?>, Comparable<?>>> var5 = this.field31580.entrySet().iterator();
 
          while (var5.hasNext()) {
-            Entry<Class8550<?>, Comparable<?>> var6 = var5.next();
-            Class8550<?> var7 = var6.getKey();
+            Entry<Property<?>, Comparable<?>> var6 = var5.next();
+            Property<?> var7 = var6.getKey();
 
             for (Comparable var9 : var7.method30474()) {
                if (var9 != var6.getValue()) {
@@ -122,21 +124,21 @@ public abstract class Class7378<O, S> {
             }
          }
 
-         this.field31581 = (Table<Class8550<?>, Comparable<?>, S>)(!var4.isEmpty() ? ArrayTable.create(var4) : var4);
+         this.field31581 = (Table<Property<?>, Comparable<?>, S>)(!var4.isEmpty() ? ArrayTable.create(var4) : var4);
       }
    }
 
-   private Map<Class8550<?>, Comparable<?>> method23467(Class8550<?> var1, Comparable<?> var2) {
+   private Map<Property<?>, Comparable<?>> method23467(Property<?> var1, Comparable<?> var2) {
       HashMap var5 = Maps.newHashMap(this.field31580);
       var5.put(var1, var2);
       return var5;
    }
 
-   public ImmutableMap<Class8550<?>, Comparable<?>> method23468() {
+   public ImmutableMap<Property<?>, Comparable<?>> method23468() {
       return this.field31580;
    }
 
-   public static <O, S extends Class7378<O, S>> Codec<S> method23469(Codec<O> p_235897_0_, Function<O, S> p_235897_1_) {
+   public static <O, S extends StateHolder<O, S>> Codec<S> method23469(Codec<O> p_235897_0_, Function<O, S> p_235897_1_) {
       return p_235897_0_.dispatch("Name", (p_235895_0_) -> {
          return p_235895_0_.field31579;
       }, (p_235900_1_) -> {

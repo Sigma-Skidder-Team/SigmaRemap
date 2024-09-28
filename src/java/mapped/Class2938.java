@@ -28,11 +28,11 @@ public class Class2938 extends Class2898<Class4712> {
             var9.method8374(var8).method8380(Direction.DOWN, 1);
             Biome var15 = var1.getBiome(var8);
             if (var15.method32505(var1, var9, false)) {
-               var1.setBlockState(var9, Blocks.ICE.method11579(), 2);
+               var1.setBlockState(var9, Blocks.ICE.getDefaultState(), 2);
             }
 
             if (var15.method32506(var1, var8)) {
-               var1.setBlockState(var8, Blocks.SNOW.method11579(), 2);
+               var1.setBlockState(var8, Blocks.SNOW.getDefaultState(), 2);
                BlockState var16 = var1.getBlockState(var9);
                if (var16.method23462(Class3471.field19323)) {
                   var1.setBlockState(var9, var16.with(Class3471.field19323, Boolean.valueOf(true)), 2);

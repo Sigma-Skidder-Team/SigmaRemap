@@ -34,15 +34,15 @@ public class Class4179 extends Class4178 {
       while (var11.getY() > 0) {
          BlockState var12 = var1.getBlockState(var11);
          BlockState var13 = var1.getBlockState(var11.down());
-         if (var13 == Blocks.SANDSTONE.method11579()
-            || var13 == Blocks.STONE.method11579()
-            || var13 == Blocks.ANDESITE.method11579()
-            || var13 == Blocks.GRANITE.method11579()
-            || var13 == Blocks.DIORITE.method11579()) {
-            BlockState var14 = !var12.isAir() && !this.method12942(var12) ? var12 : Blocks.SAND.method11579();
+         if (var13 == Blocks.SANDSTONE.getDefaultState()
+            || var13 == Blocks.STONE.getDefaultState()
+            || var13 == Blocks.ANDESITE.getDefaultState()
+            || var13 == Blocks.GRANITE.getDefaultState()
+            || var13 == Blocks.DIORITE.getDefaultState()) {
+            BlockState var14 = !var12.isAir() && !this.method12942(var12) ? var12 : Blocks.SAND.getDefaultState();
 
             for (Direction var18 : Direction.values()) {
-               BlockPos var19 = var11.method8349(var18);
+               BlockPos var19 = var11.offset(var18);
                BlockState var20 = var1.getBlockState(var19);
                if (var20.isAir() || this.method12942(var20)) {
                   BlockPos var21 = var19.down();
@@ -68,6 +68,6 @@ public class Class4179 extends Class4178 {
    }
 
    private boolean method12942(BlockState var1) {
-      return var1 == Blocks.WATER.method11579() || var1 == Blocks.LAVA.method11579();
+      return var1 == Blocks.WATER.getDefaultState() || var1 == Blocks.LAVA.getDefaultState();
    }
 }

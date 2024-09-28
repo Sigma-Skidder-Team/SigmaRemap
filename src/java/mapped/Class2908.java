@@ -8,6 +8,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.IWorld;
 
 import java.util.Random;
 
@@ -53,7 +54,7 @@ public class Class2908 extends Class2898<Class4738> {
       return var8;
    }
 
-   private static boolean method11247(Class1660 var0, BlockPos var1, Class4738 var2) {
+   private static boolean method11247(IWorld var0, BlockPos var1, Class4738 var2) {
       BlockState var5 = var0.getBlockState(var1);
       if (var5.isIn(var2.method14874().getBlock())) {
          return false;
@@ -61,7 +62,7 @@ public class Class2908 extends Class2898<Class4738> {
          return false;
       } else {
          for (Direction var9 : field17992) {
-            boolean var10 = var0.getBlockState(var1.method8349(var9)).isAir();
+            boolean var10 = var0.getBlockState(var1.offset(var9)).isAir();
             if (var10 && var9 != Direction.UP || !var10 && var9 == Direction.UP) {
                return false;
             }

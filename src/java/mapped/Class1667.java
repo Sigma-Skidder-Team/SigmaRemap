@@ -3,6 +3,8 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -88,7 +90,7 @@ public class Class1667 implements IBlockReader, ICollisionReader {
          IChunk var4 = this.method7044(var1);
          return var4.getBlockState(var1);
       } else {
-         return Blocks.AIR.method11579();
+         return Blocks.AIR.getDefaultState();
       }
    }
 
@@ -108,7 +110,7 @@ public class Class1667 implements IBlockReader, ICollisionReader {
          IChunk var4 = this.method7044(var1);
          return var4.getFluidState(var1);
       } else {
-         return Class9479.field44064.method25049();
+         return Fluids.EMPTY.method25049();
       }
    }
 }

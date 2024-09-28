@@ -22,8 +22,8 @@ public class Class3282 extends Item {
 
    @Override
    public ActionResultType method11707(ItemUseContext var1) {
-      World var4 = var1.method18360();
-      BlockPos var5 = var1.method18345();
+      World var4 = var1.getWorld();
+      BlockPos var5 = var1.getPos();
       BlockState var6 = var4.getBlockState(var5);
       if (var6.isIn(BlockTags.field32766)) {
          ItemStack var7 = var1.method18357();

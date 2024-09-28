@@ -2,10 +2,13 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.fluid.Fluids;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -18,9 +21,9 @@ public abstract class Class3445 extends Class3444 implements Class3196 {
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       if (var2 == this.field19256.getOpposite() && !var1.method23443(var4, var5)) {
-         var4.method6860().method20726(var5, this, 1);
+         var4.method6860().scheduleTick(var5, this, 1);
       }
 
       Class3452 var9 = this.method12124();
@@ -32,10 +35,10 @@ public abstract class Class3445 extends Class3444 implements Class3196 {
       }
 
       if (this.field19257) {
-         var4.method6861().method20726(var5, Class9479.field44066, Class9479.field44066.method25057(var4));
+         var4.getPendingFluidTicks().scheduleTick(var5, Fluids.WATER, Fluids.WATER.getTickRate(var4));
       }
 
-      return super.method11491(var1, var2, var3, var4, var5, var6);
+      return super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
    }
 
    @Override
@@ -46,7 +49,7 @@ public abstract class Class3445 extends Class3444 implements Class3196 {
    @Override
    public boolean method11486(IBlockReader var1, BlockPos var2, BlockState var3, boolean var4) {
       Optional var7 = this.method12126(var1, var2, var3);
-      return var7.isPresent() && this.method12124().method12127(var1.getBlockState(((BlockPos)var7.get()).method8349(this.field19256)));
+      return var7.isPresent() && this.method12124().method12127(var1.getBlockState(((BlockPos)var7.get()).offset(this.field19256)));
    }
 
    @Override
@@ -68,7 +71,7 @@ public abstract class Class3445 extends Class3444 implements Class3196 {
 
       Block var7;
       do {
-         var6 = var6.method8349(this.field19256);
+         var6 = var6.offset(this.field19256);
          var7 = var1.getBlockState(var6).getBlock();
       } while (var7 == var3.getBlock());
 
@@ -76,7 +79,7 @@ public abstract class Class3445 extends Class3444 implements Class3196 {
    }
 
    @Override
-   public boolean method11497(BlockState var1, Class5909 var2) {
+   public boolean method11497(BlockState var1, BlockItemUseContext var2) {
       boolean var5 = super.method11497(var1, var2);
       return var5 && var2.method18357().getItem() == this.method12124().method11581() ? false : var5;
    }

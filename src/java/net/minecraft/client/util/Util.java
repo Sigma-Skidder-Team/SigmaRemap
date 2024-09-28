@@ -9,6 +9,7 @@ import com.mojang.datafixers.types.Type;
 import com.mojang.serialization.DataResult;
 import it.unimi.dsi.fastutil.Hash.Strategy;
 import mapped.*;
+import net.minecraft.state.Property;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
@@ -49,7 +50,7 @@ public class Util {
       return Collectors.<Entry<? extends K, ? extends V>, K, V>toMap(Entry::getKey, Entry::getValue);
    }
 
-   public static <T extends Comparable<T>> String method38485(Class8550<T> var0, Object var1) {
+   public static <T extends Comparable<T>> String method38485(Property<T> var0, Object var1) {
       return var0.method30475((T)var1);
    }
 

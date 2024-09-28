@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.BlockItemUseContext;
 
 import javax.annotation.Nullable;
 
@@ -15,7 +16,7 @@ public class Class3293 extends Class3292 {
 
    @Nullable
    @Override
-   public BlockState method11838(Class5909 var1) {
+   public BlockState method11838(BlockItemUseContext var1) {
       PlayerEntity var4 = var1.method18358();
       return var4 != null && !var4.canUseCommandBlock() ? null : super.method11838(var1);
    }

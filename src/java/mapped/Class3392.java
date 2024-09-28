@@ -80,7 +80,7 @@ public class Class3392 extends Block {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return this.field19026[this.method12002(var1)];
    }
 

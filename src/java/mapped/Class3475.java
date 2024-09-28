@@ -8,13 +8,16 @@ import net.minecraft.client.util.Util;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -132,7 +135,7 @@ public class Class3475 extends Block implements Class3476 {
 
    public Class3475(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().with(field19326, Integer.valueOf(0)));
+      this.setDefaultState(this.stateContainer.getBaseState().with(field19326, Integer.valueOf(0)));
    }
 
    public static void method12164(World var0, BlockPos var1, boolean var2) {
@@ -169,7 +172,7 @@ public class Class3475 extends Block implements Class3476 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return field19329[var1.<Integer>get(field19326)];
    }
 
@@ -184,14 +187,14 @@ public class Class3475 extends Block implements Class3476 {
    }
 
    @Override
-   public void method11589(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+   public void onBlockAdded(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       if (var1.<Integer>get(field19326) == 7) {
-         var2.method6860().method20726(var3, var1.getBlock(), 20);
+         var2.method6860().scheduleTick(var3, var1.getBlock(), 20);
       }
    }
 
    @Override
-   public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
+   public ActionResultType onBlockActivated(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       int var9 = var1.<Integer>get(field19326);
       ItemStack var10 = var4.getHeldItem(var5);
       if (var9 < 8 && field19327.containsKey(var10.getItem())) {
@@ -241,13 +244,13 @@ public class Class3475 extends Block implements Class3476 {
       return var13;
    }
 
-   private static BlockState method12167(BlockState var0, Class1660 var1, BlockPos var2) {
+   private static BlockState method12167(BlockState var0, IWorld var1, BlockPos var2) {
       BlockState var5 = var0.with(field19326, Integer.valueOf(0));
       var1.setBlockState(var2, var5, 3);
       return var5;
    }
 
-   private static BlockState method12168(BlockState var0, Class1660 var1, BlockPos var2, ItemStack var3) {
+   private static BlockState method12168(BlockState var0, IWorld var1, BlockPos var2, ItemStack var3) {
       int var6 = var0.<Integer>get(field19326);
       float var7 = field19327.getFloat(var3.getItem());
       if ((var6 != 0 || !(var7 > 0.0F)) && !(var1.method6814().nextDouble() < (double)var7)) {
@@ -257,7 +260,7 @@ public class Class3475 extends Block implements Class3476 {
          BlockState var9 = var0.with(field19326, Integer.valueOf(var8));
          var1.setBlockState(var2, var9, 3);
          if (var8 == 7) {
-            var1.method6860().method20726(var2, var0.getBlock(), 20);
+            var1.method6860().scheduleTick(var2, var0.getBlock(), 20);
          }
 
          return var9;
@@ -265,7 +268,7 @@ public class Class3475 extends Block implements Class3476 {
    }
 
    @Override
-   public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void tick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var1.<Integer>get(field19326) == 7) {
          var2.setBlockState(var3, var1.method23459(field19326), 3);
          var2.method6742((PlayerEntity)null, var3, SoundEvents.field26466, Class2266.field14732, 1.0F, 1.0F);
@@ -283,17 +286,17 @@ public class Class3475 extends Block implements Class3476 {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field19326);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field19326);
    }
 
    @Override
-   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
+   public boolean allowsMovement(BlockState var1, IBlockReader var2, BlockPos var3, PathType var4) {
       return false;
    }
 
    @Override
-   public Class930 method12169(BlockState var1, Class1660 var2, BlockPos var3) {
+   public Class930 method12169(BlockState var1, IWorld var2, BlockPos var3) {
       int var6 = var1.<Integer>get(field19326);
       return (Class930)(var6 != 8
          ? (Class930)(var6 >= 7 ? new Class976() : new Class975(var1, var2, var3))
@@ -301,12 +304,12 @@ public class Class3475 extends Block implements Class3476 {
    }
 
    // $VF: synthetic method
-   public static BlockState method12171(BlockState var0, Class1660 var1, BlockPos var2) {
+   public static BlockState method12171(BlockState var0, IWorld var1, BlockPos var2) {
       return method12167(var0, var1, var2);
    }
 
    // $VF: synthetic method
-   public static BlockState method12172(BlockState var0, Class1660 var1, BlockPos var2, ItemStack var3) {
+   public static BlockState method12172(BlockState var0, IWorld var1, BlockPos var2, ItemStack var3) {
       return method12168(var0, var1, var2, var3);
    }
 }

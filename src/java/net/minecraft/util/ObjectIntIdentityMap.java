@@ -38,7 +38,7 @@ public class ObjectIntIdentityMap<T> implements Class2347<T> {
       }
    }
 
-   public void method9269(T var1) {
+   public void add(T var1) {
       this.method9268((T)var1, this.field16154);
    }
 

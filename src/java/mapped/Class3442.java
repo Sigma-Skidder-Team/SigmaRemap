@@ -48,13 +48,13 @@ public class Class3442 extends Block {
    }
 
    @Override
-   public void method11560(World var1, BlockPos var2, Explosion var3) {
+   public void onExplosionDestroy(World var1, BlockPos var2, Explosion var3) {
       if (var1 instanceof ServerWorld) {
          this.method12120((ServerWorld)var1, var2);
       }
    }
 
    public static BlockState method12121(Block var0) {
-      return field19247.get(var0).method11579();
+      return field19247.get(var0).getDefaultState();
    }
 }

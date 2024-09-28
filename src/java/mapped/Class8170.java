@@ -12,7 +12,9 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.fluid.FluidState;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.pathfinding.PathType;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -371,7 +373,7 @@ public final class Class8170 {
 
       if (Class6914.method21120(var1) == Class2068.field13472) {
          BlockPos var8 = var7.down();
-         if (var0.getBlockState(var8).method23440(var0, var8, Class1947.field12614)) {
+         if (var0.getBlockState(var8).method23440(var0, var8, PathType.field12614)) {
             return var8;
          }
       }

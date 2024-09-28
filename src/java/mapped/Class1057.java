@@ -152,19 +152,19 @@ public class Class1057 extends Class1056 implements Class1008 {
                      this.method4846();
                   } else {
                      Direction var5 = var4.<Direction>get(Class3436.field19198);
-                     if (!this.world.method7007(var3.method8349(var5))) {
+                     if (!this.world.method7007(var3.offset(var5))) {
                         this.method4846();
                      } else {
-                        var3 = var3.method8349(var5);
+                        var3 = var3.offset(var5);
                         this.dataManager.method35446(field5842, Optional.<BlockPos>of(var3));
                      }
                   }
                } else {
                   Direction var19 = var4.<Direction>get(Class3435.field19198);
-                  if (!this.world.method7007(var3.method8349(var19))) {
+                  if (!this.world.method7007(var3.offset(var19))) {
                      this.method4846();
                   } else {
-                     var3 = var3.method8349(var19);
+                     var3 = var3.offset(var19);
                      this.dataManager.method35446(field5842, Optional.<BlockPos>of(var3));
                   }
                }
@@ -275,7 +275,7 @@ public class Class1057 extends Class1056 implements Class1008 {
    }
 
    private boolean method4845(BlockPos var1, Direction var2) {
-      return this.world.method6764(var1.method8349(var2), this, var2.getOpposite())
+      return this.world.method6764(var1.offset(var2), this, var2.getOpposite())
          && this.world.hasNoCollisions(this, Class8919.method32596(var1, var2.getOpposite()));
    }
 

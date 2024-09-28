@@ -12,6 +12,7 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.server.ServerWorld;
@@ -71,7 +72,7 @@ public class Class1096 extends Class1018 implements IAngerable {
          .method21849(Attributes.ATTACK_DAMAGE, 6.0);
    }
 
-   public static boolean method5181(EntityType<Class1096> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method5181(EntityType<Class1096> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
       Optional var7 = var1.method7178(var3);
       return !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Class9495.field44131))
             && !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Class9495.field44171))

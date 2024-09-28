@@ -1,5 +1,10 @@
 package mapped;
 
+import net.minecraft.block.IWaterLoggable;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
+import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.block.Block;
@@ -11,6 +16,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tileentity.TileEntity;
@@ -20,18 +26,19 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.Optional;
 import java.util.Random;
 
-public class Class3244 extends Class3241 implements Class3207 {
+public class Class3244 extends Class3241 implements IWaterLoggable {
    private static String[] field18696;
    public static final VoxelShape field18697 = Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 7.0, 16.0);
    public static final BooleanProperty field18698 = BlockStateProperties.field39699;
    public static final BooleanProperty field18699 = BlockStateProperties.field39706;
-   public static final BooleanProperty field18700 = BlockStateProperties.field39710;
+   public static final BooleanProperty field18700 = BlockStateProperties.WATERLOGGED;
    public static final DirectionProperty field18701 = BlockStateProperties.HORIZONTAL_FACING;
    private static final VoxelShape field18702 = Block.makeCuboidShape(6.0, 0.0, 6.0, 10.0, 16.0, 10.0);
    private final boolean field18703;
@@ -41,9 +48,9 @@ public class Class3244 extends Class3241 implements Class3207 {
       super(var3);
       this.field18703 = var1;
       this.field18704 = var2;
-      this.method11578(
-         this.field18612
-            .method35393()
+      this.setDefaultState(
+         this.stateContainer
+            .getBaseState()
             .with(field18698, Boolean.valueOf(true))
             .with(field18699, Boolean.valueOf(false))
             .with(field18700, Boolean.valueOf(false))
@@ -52,7 +59,7 @@ public class Class3244 extends Class3241 implements Class3207 {
    }
 
    @Override
-   public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
+   public ActionResultType onBlockActivated(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       TileEntity var9 = var2.getTileEntity(var3);
       if (var9 instanceof Class945) {
          Class945 var10 = (Class945)var9;
@@ -81,38 +88,38 @@ public class Class3244 extends Class3241 implements Class3207 {
    }
 
    @Override
-   public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+   public void onReplaced(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       if (!var1.isIn(var4.getBlock())) {
          TileEntity var8 = var2.getTileEntity(var3);
          if (var8 instanceof Class945) {
             Class7236.method22724(var2, var3, ((Class945)var8).method3795());
          }
 
-         super.method11513(var1, var2, var3, var4, var5);
+         super.onReplaced(var1, var2, var3, var4, var5);
       }
    }
 
    @Nullable
    @Override
-   public BlockState method11495(Class5909 var1) {
-      World var4 = var1.method18360();
-      BlockPos var5 = var1.method18345();
-      boolean var6 = var4.getFluidState(var5).method23472() == Class9479.field44066;
-      return this.method11579()
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      World var4 = var1.getWorld();
+      BlockPos var5 = var1.getPos();
+      boolean var6 = var4.getFluidState(var5).getFluid() == Fluids.WATER;
+      return this.getDefaultState()
          .with(field18700, Boolean.valueOf(var6))
          .with(field18699, Boolean.valueOf(this.method11651(var4.getBlockState(var5.down()))))
          .with(field18698, Boolean.valueOf(!var6))
-         .with(field18701, var1.method18350());
+         .with(field18701, var1.getPlacementHorizontalFacing());
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       if (var1.<Boolean>get(field18700)) {
-         var4.method6861().method20726(var5, Class9479.field44066, Class9479.field44066.method25057(var4));
+         var4.getPendingFluidTicks().scheduleTick(var5, Fluids.WATER, Fluids.WATER.getTickRate(var4));
       }
 
       return var2 != Direction.DOWN
-         ? super.method11491(var1, var2, var3, var4, var5, var6)
+         ? super.updatePostPlacement(var1, var2, var3, var4, var5, var6)
          : var1.with(field18699, Boolean.valueOf(this.method11651(var3)));
    }
 
@@ -121,7 +128,7 @@ public class Class3244 extends Class3241 implements Class3207 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return field18697;
    }
 
@@ -131,7 +138,7 @@ public class Class3244 extends Class3241 implements Class3207 {
    }
 
    @Override
-   public void method11512(BlockState var1, World var2, BlockPos var3, Random var4) {
+   public void animateTick(BlockState var1, World var2, BlockPos var3, Random var4) {
       if (var1.<Boolean>get(field18698)) {
          if (var4.nextInt(10) == 0) {
             var2.method6745(
@@ -162,7 +169,7 @@ public class Class3244 extends Class3241 implements Class3207 {
       }
    }
 
-   public static void method11652(Class1660 var0, BlockPos var1, BlockState var2) {
+   public static void method11652(IWorld var0, BlockPos var1, BlockState var2) {
       if (var0.isRemote()) {
          for (int var5 = 0; var5 < 20; var5++) {
             method11653((World)var0, var1, var2.<Boolean>get(field18699), true);
@@ -176,8 +183,8 @@ public class Class3244 extends Class3241 implements Class3207 {
    }
 
    @Override
-   public boolean method11532(Class1660 var1, BlockPos var2, BlockState var3, FluidState var4) {
-      if (!var3.<Boolean>get(BlockStateProperties.field39710) && var4.method23472() == Class9479.field44066) {
+   public boolean method11532(IWorld var1, BlockPos var2, BlockState var3, FluidState var4) {
+      if (!var3.<Boolean>get(BlockStateProperties.WATERLOGGED) && var4.getFluid() == Fluids.WATER) {
          boolean var7 = var3.<Boolean>get(field18698);
          if (var7) {
             if (!var1.isRemote()) {
@@ -188,7 +195,7 @@ public class Class3244 extends Class3241 implements Class3207 {
          }
 
          var1.setBlockState(var2, var3.with(field18700, Boolean.valueOf(true)).with(field18698, Boolean.valueOf(false)), 3);
-         var1.method6861().method20726(var2, var4.method23472(), var4.method23472().method25057(var1));
+         var1.getPendingFluidTicks().scheduleTick(var2, var4.getFluid(), var4.getFluid().getTickRate(var1));
          return true;
       } else {
          return false;
@@ -256,8 +263,8 @@ public class Class3244 extends Class3241 implements Class3207 {
    }
 
    @Override
-   public FluidState method11498(BlockState var1) {
-      return !var1.<Boolean>get(field18700) ? super.method11498(var1) : Class9479.field44066.method25078(false);
+   public FluidState getFluidState(BlockState var1) {
+      return !var1.<Boolean>get(field18700) ? super.getFluidState(var1) : Fluids.WATER.getStillFluidState(false);
    }
 
    @Override
@@ -271,8 +278,8 @@ public class Class3244 extends Class3241 implements Class3207 {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field18698, field18699, field18700, field18701);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field18698, field18699, field18700, field18701);
    }
 
    @Override
@@ -281,13 +288,13 @@ public class Class3244 extends Class3241 implements Class3207 {
    }
 
    @Override
-   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
+   public boolean allowsMovement(BlockState var1, IBlockReader var2, BlockPos var3, PathType var4) {
       return false;
    }
 
    public static boolean method11656(BlockState var0) {
-      return var0.method23447(BlockTags.field32809, var0x -> var0x.method23462(BlockStateProperties.field39710) && var0x.method23462(BlockStateProperties.field39699))
-         && !var0.<Boolean>get(BlockStateProperties.field39710)
+      return var0.method23447(BlockTags.field32809, var0x -> var0x.method23462(BlockStateProperties.WATERLOGGED) && var0x.method23462(BlockStateProperties.field39699))
+         && !var0.<Boolean>get(BlockStateProperties.WATERLOGGED)
          && !var0.<Boolean>get(BlockStateProperties.field39699);
    }
 }

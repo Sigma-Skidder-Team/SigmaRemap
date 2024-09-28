@@ -41,7 +41,7 @@ public class Class6806<T> implements ITickList<T> {
 
              for (Short var7 : this.field29630[var5]) {
                  BlockPos var8 = Class1672.method7114(var7, var5, this.field29629);
-                 var1.method20726(var8, var2.apply(var8), 0);
+                 var1.scheduleTick(var8, var2.apply(var8), 0);
              }
 
             this.field29630[var5].clear();

@@ -9,6 +9,7 @@ import java.util.function.Function;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunk;
@@ -38,7 +39,7 @@ public class Class7193 extends Class7194 {
             Blocks.field37130
          }
       );
-      this.field30898 = ImmutableSet.of(Class9479.field44068, Class9479.field44066);
+      this.field30898 = ImmutableSet.of(Fluids.LAVA, Fluids.WATER);
    }
 
    @Override

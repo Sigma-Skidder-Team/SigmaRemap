@@ -40,7 +40,7 @@ public enum Direction implements IStringSerializable {
       .sorted(Comparator.comparingInt(var0 -> var0.index))
       .<Direction>toArray(Direction[]::new);
    private static final Direction[] BY_HORIZONTAL_INDEX = Arrays.<Direction>stream(VALUES)
-      .filter(var0 -> var0.getAxis().method324())
+      .filter(var0 -> var0.getAxis().isHorizontal())
       .sorted(Comparator.comparingInt(var0 -> var0.horizontalIndex))
       .<Direction>toArray(Direction[]::new);
    private static final Long2ObjectMap<Direction> BY_LONG = Arrays.<Direction>stream(VALUES)
@@ -127,7 +127,7 @@ public enum Direction implements IStringSerializable {
       return this.index;
    }
 
-   public int method534() {
+   public int getHorizontalIndex() {
       return this.horizontalIndex;
    }
 
@@ -382,7 +382,7 @@ public enum Direction implements IStringSerializable {
          return this == Y;
       }
 
-      public boolean method324() {
+      public boolean isHorizontal() {
          return this == X || this == Z;
       }
 

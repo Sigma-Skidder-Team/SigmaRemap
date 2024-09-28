@@ -2,28 +2,33 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.fluid.FlowingFluid;
 import net.minecraft.fluid.Fluid;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.item.Items;
 import net.minecraft.particles.IParticleData;
+import net.minecraft.state.StateContainer;
 import net.minecraft.util.Direction;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
 import java.util.Random;
 import javax.annotation.Nullable;
 
-public abstract class Class7637 extends Class7633 {
+public abstract class LavaFluid extends FlowingFluid {
    @Override
    public Fluid method25075() {
-      return Class9479.field44067;
+      return Fluids.FLOWING_LAVA;
    }
 
    @Override
    public Fluid method25077() {
-      return Class9479.field44068;
+      return Fluids.LAVA;
    }
 
    @Override
@@ -100,7 +105,7 @@ public abstract class Class7637 extends Class7633 {
 
    private boolean method25102(IWorldReader var1, BlockPos var2) {
       for (Direction var8 : Direction.values()) {
-         if (this.method25103(var1, var2.method8349(var8))) {
+         if (this.method25103(var1, var2.offset(var8))) {
             return true;
          }
       }
@@ -119,7 +124,7 @@ public abstract class Class7637 extends Class7633 {
    }
 
    @Override
-   public void method25081(Class1660 var1, BlockPos var2, BlockState var3) {
+   public void method25081(IWorld var1, BlockPos var2, BlockState var3) {
       this.method25104(var1, var2);
    }
 
@@ -130,12 +135,12 @@ public abstract class Class7637 extends Class7633 {
 
    @Override
    public BlockState method25063(FluidState var1) {
-      return Blocks.LAVA.method11579().with(Class3404.field19079, Integer.valueOf(method25094(var1)));
+      return Blocks.LAVA.getDefaultState().with(Class3404.field19079, Integer.valueOf(method25094(var1)));
    }
 
    @Override
    public boolean method25066(Fluid var1) {
-      return var1 == Class9479.field44068 || var1 == Class9479.field44067;
+      return var1 == Fluids.LAVA || var1 == Fluids.FLOWING_LAVA;
    }
 
    @Override
@@ -149,13 +154,13 @@ public abstract class Class7637 extends Class7633 {
    }
 
    @Override
-   public int method25057(IWorldReader var1) {
+   public int getTickRate(IWorldReader var1) {
       return !var1.method6812().isUltrawarm() ? 30 : 10;
    }
 
    @Override
    public int method25093(World var1, BlockPos var2, FluidState var3, FluidState var4) {
-      int var7 = this.method25057(var1);
+      int var7 = this.getTickRate(var1);
       if (!var3.method23474()
          && !var4.method23474()
          && !var3.<Boolean>get(field32712)
@@ -168,7 +173,7 @@ public abstract class Class7637 extends Class7633 {
       return var7;
    }
 
-   private void method25104(Class1660 var1, BlockPos var2) {
+   private void method25104(IWorld var1, BlockPos var2) {
       var1.playEvent(1501, var2, 0);
    }
 
@@ -178,12 +183,12 @@ public abstract class Class7637 extends Class7633 {
    }
 
    @Override
-   public void method25080(Class1660 var1, BlockPos var2, BlockState var3, Direction var4, FluidState var5) {
+   public void method25080(IWorld var1, BlockPos var2, BlockState var3, Direction var4, FluidState var5) {
       if (var4 == Direction.DOWN) {
          FluidState var8 = var1.getFluidState(var2);
          if (this.method25067(FluidTags.field40470) && var8.method23486(FluidTags.field40469)) {
             if (var3.getBlock() instanceof Class3404) {
-               var1.setBlockState(var2, Blocks.STONE.method11579(), 3);
+               var1.setBlockState(var2, Blocks.STONE.getDefaultState(), 3);
             }
 
             this.method25104(var1, var2);
@@ -202,5 +207,39 @@ public abstract class Class7637 extends Class7633 {
    @Override
    public float method25060() {
       return 100.0F;
+   }
+
+   public static class Source extends LavaFluid {
+      private static String[] field32719;
+
+      @Override
+      public int method25065(FluidState var1) {
+         return 8;
+      }
+
+      @Override
+      public boolean method25064(FluidState var1) {
+         return true;
+      }
+   }
+
+   public static class Flowing extends LavaFluid {
+      private static String[] field32718;
+
+      @Override
+      public void method25046(StateContainer.Builder<Fluid, FluidState> var1) {
+         super.method25046(var1);
+         var1.add(field32713);
+      }
+
+      @Override
+      public int method25065(FluidState var1) {
+         return var1.<Integer>get(field32713);
+      }
+
+      @Override
+      public boolean method25064(FluidState var1) {
+         return false;
+      }
    }
 }

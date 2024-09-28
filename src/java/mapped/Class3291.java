@@ -17,8 +17,8 @@ public class Class3291 extends Item {
 
    @Override
    public ActionResultType method11707(ItemUseContext var1) {
-      World var4 = var1.method18360();
-      BlockPos var5 = var1.method18345();
+      World var4 = var1.getWorld();
+      BlockPos var5 = var1.getPos();
       BlockState var6 = var4.getBlockState(var5);
       if (!var6.isIn(Blocks.LECTERN)) {
          return ActionResultType.field14820;

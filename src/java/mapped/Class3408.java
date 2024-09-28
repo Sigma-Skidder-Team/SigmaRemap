@@ -3,12 +3,15 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.fluid.FluidState;
 import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.server.ServerWorld;
 
@@ -21,23 +24,23 @@ public class Class3408 extends Block {
 
    public Class3408(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().with(field19087, Integer.valueOf(0)));
+      this.setDefaultState(this.stateContainer.getBaseState().with(field19087, Integer.valueOf(0)));
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return field19088;
    }
 
    @Override
-   public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void tick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (!var1.method23443(var2, var3)) {
          var2.method7179(var3, true);
       }
    }
 
    @Override
-   public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void randomTick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var2.method7007(var3.up())) {
          int var7 = 1;
 
@@ -50,7 +53,7 @@ public class Class3408 extends Block {
             if (var8 != 15) {
                var2.setBlockState(var3, var1.with(field19087, Integer.valueOf(var8 + 1)), 4);
             } else {
-               var2.setBlockState(var3.up(), this.method11579());
+               var2.setBlockState(var3.up(), this.getDefaultState());
                var2.setBlockState(var3, var1.with(field19087, Integer.valueOf(0)), 4);
             }
          }
@@ -58,12 +61,12 @@ public class Class3408 extends Block {
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       if (!var1.method23443(var4, var5)) {
-         var4.method6860().method20726(var5, this, 1);
+         var4.method6860().scheduleTick(var5, this, 1);
       }
 
-      return super.method11491(var1, var2, var3, var4, var5, var6);
+      return super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
    }
 
    @Override
@@ -81,8 +84,8 @@ public class Class3408 extends Block {
             BlockPos var7 = var3.down();
 
             for (Direction var9 : Direction.Plane.HORIZONTAL) {
-               BlockState var10 = var2.getBlockState(var7.method8349(var9));
-               FluidState var11 = var2.getFluidState(var7.method8349(var9));
+               BlockState var10 = var2.getBlockState(var7.offset(var9));
+               FluidState var11 = var2.getFluidState(var7.offset(var9));
                if (var11.method23486(FluidTags.field40469) || var10.isIn(Blocks.field36889)) {
                   return true;
                }
@@ -94,7 +97,7 @@ public class Class3408 extends Block {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field19087);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field19087);
    }
 }

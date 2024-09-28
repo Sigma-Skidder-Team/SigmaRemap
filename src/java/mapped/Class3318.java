@@ -24,11 +24,11 @@ public class Class3318 extends Item {
 
    @Override
    public ActionResultType method11707(ItemUseContext var1) {
-      World var4 = var1.method18360();
+      World var4 = var1.getWorld();
       if (!var4.isRemote) {
          ItemStack var5 = var1.method18357();
-         Vector3d var6 = var1.method18355();
-         Direction var7 = var1.method18354();
+         Vector3d var6 = var1.getHitVec();
+         Direction var7 = var1.getFace();
          Class888 var8 = new Class888(
             var4,
             var1.method18358(),

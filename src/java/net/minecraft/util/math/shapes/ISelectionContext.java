@@ -2,6 +2,8 @@ package net.minecraft.util.math.shapes;
 
 import mapped.*;
 import net.minecraft.entity.Entity;
+import net.minecraft.fluid.FlowingFluid;
+import net.minecraft.fluid.FluidState;
 import net.minecraft.util.math.BlockPos;
 
 public interface ISelectionContext {
@@ -19,5 +21,5 @@ public interface ISelectionContext {
 
    boolean method14951(Item var1);
 
-   boolean method14952(FluidState var1, Class7633 var2);
+   boolean method14952(FluidState var1, FlowingFluid var2);
 }

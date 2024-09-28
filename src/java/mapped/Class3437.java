@@ -3,6 +3,9 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.material.PushReaction;
+import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.pathfinding.PathType;
+import net.minecraft.state.StateContainer;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Rotation;
@@ -21,7 +24,7 @@ public class Class3437 extends Class3433 {
 
    public Class3437(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().with(field19198, Direction.UP));
+      this.setDefaultState(this.stateContainer.getBaseState().with(field19198, Direction.UP));
    }
 
    @Override
@@ -35,7 +38,7 @@ public class Class3437 extends Class3433 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       switch (Class8694.field39238[var1.<Direction>get(field19198).getAxis().ordinal()]) {
          case 1:
          default:
@@ -48,16 +51,16 @@ public class Class3437 extends Class3433 {
    }
 
    @Override
-   public BlockState method11495(Class5909 var1) {
-      Direction var4 = var1.method18354();
-      BlockState var5 = var1.method18360().getBlockState(var1.method18345().method8349(var4.getOpposite()));
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      Direction var4 = var1.getFace();
+      BlockState var5 = var1.getWorld().getBlockState(var1.getPos().offset(var4.getOpposite()));
       return var5.isIn(this) && var5.get(field19198) == var4
-         ? this.method11579().with(field19198, var4.getOpposite())
-         : this.method11579().with(field19198, var4);
+         ? this.getDefaultState().with(field19198, var4.getOpposite())
+         : this.getDefaultState().with(field19198, var4);
    }
 
    @Override
-   public void method11512(BlockState var1, World var2, BlockPos var3, Random var4) {
+   public void animateTick(BlockState var1, World var2, BlockPos var3, Random var4) {
       Direction var7 = var1.<Direction>get(field19198);
       double var8 = (double)var3.getX() + 0.55 - (double)(var4.nextFloat() * 0.1F);
       double var10 = (double)var3.getY() + 0.55 - (double)(var4.nextFloat() * 0.1F);
@@ -77,8 +80,8 @@ public class Class3437 extends Class3433 {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field19198);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field19198);
    }
 
    @Override
@@ -87,7 +90,7 @@ public class Class3437 extends Class3433 {
    }
 
    @Override
-   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
+   public boolean allowsMovement(BlockState var1, IBlockReader var2, BlockPos var3, PathType var4) {
       return false;
    }
 }

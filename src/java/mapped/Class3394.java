@@ -5,7 +5,9 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
@@ -14,6 +16,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
@@ -32,16 +35,16 @@ public class Class3394 extends Block {
 
    public Class3394(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().with(field19029, Integer.valueOf(0)));
+      this.setDefaultState(this.stateContainer.getBaseState().with(field19029, Integer.valueOf(0)));
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return field19030[var1.<Integer>get(field19029)];
    }
 
    @Override
-   public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
+   public ActionResultType onBlockActivated(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       if (var2.isRemote) {
          ItemStack var9 = var4.getHeldItem(var5);
          if (this.method12005(var2, var3, var1, var4).isSuccessOrConsume()) {
@@ -56,7 +59,7 @@ public class Class3394 extends Block {
       return this.method12005(var2, var3, var1, var4);
    }
 
-   private ActionResultType method12005(Class1660 var1, BlockPos var2, BlockState var3, PlayerEntity var4) {
+   private ActionResultType method12005(IWorld var1, BlockPos var2, BlockState var3, PlayerEntity var4) {
       if (var4.method2933(false)) {
          var4.method2911(Stats.field40141);
          var4.getFoodStats().method37569(2, 0.1F);
@@ -74,10 +77,10 @@ public class Class3394 extends Block {
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       return var2 == Direction.DOWN && !var1.method23443(var4, var5)
-         ? Blocks.AIR.method11579()
-         : super.method11491(var1, var2, var3, var4, var5, var6);
+         ? Blocks.AIR.getDefaultState()
+         : super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
    }
 
    @Override
@@ -86,8 +89,8 @@ public class Class3394 extends Block {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field19029);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field19029);
    }
 
    @Override
@@ -101,7 +104,7 @@ public class Class3394 extends Block {
    }
 
    @Override
-   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
+   public boolean allowsMovement(BlockState var1, IBlockReader var2, BlockPos var3, PathType var4) {
       return false;
    }
 }

@@ -16,13 +16,13 @@ public class Class3273 extends Item {
 
    @Override
    public ActionResultType method11707(ItemUseContext var1) {
-      World var4 = var1.method18360();
-      BlockPos var5 = var1.method18345();
+      World var4 = var1.getWorld();
+      BlockPos var5 = var1.getPos();
       BlockState var6 = var4.getBlockState(var5);
       boolean var7 = false;
       if (!Class3244.method11656(var6)) {
-         var5 = var5.method8349(var1.method18354());
-         if (AbstractFireBlock.method12012(var4, var5, var1.method18350())) {
+         var5 = var5.offset(var1.getFace());
+         if (AbstractFireBlock.method12012(var4, var5, var1.getPlacementHorizontalFacing())) {
             this.method11796(var4, var5);
             var4.setBlockState(var5, AbstractFireBlock.method12009(var4, var5));
             var7 = true;

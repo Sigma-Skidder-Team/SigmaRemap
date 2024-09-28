@@ -6,7 +6,9 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import net.minecraft.block.BlockState;
+import net.minecraft.fluid.FluidState;
 import net.minecraft.state.StateContainer;
+import net.minecraft.state.StateHolder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +41,7 @@ public class Class7340 {
       this.field31446 = ImmutableList.copyOf(var1);
    }
 
-   public <S extends Class7378<?, S>> boolean method23257(StateContainer<?, S> var1, S var2) {
+   public <S extends StateHolder<?, S>> boolean method23257(StateContainer<?, S> var1, S var2) {
       for (Class8646 var6 : this.field31446) {
          if (!var6.method31078(var1, (S)var2)) {
             return false;
@@ -54,7 +56,7 @@ public class Class7340 {
    }
 
    public boolean method23259(FluidState var1) {
-      return this.method23257(var1.method23472().method25047(), var1);
+      return this.method23257(var1.getFluid().getStateContainer(), var1);
    }
 
    public void method23260(StateContainer<?, ?> var1, Consumer<String> var2) {

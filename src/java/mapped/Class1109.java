@@ -10,6 +10,7 @@ import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
@@ -26,7 +27,7 @@ public class Class1109 extends Class1108 {
       return Class1009.method4343().method21849(Attributes.MOVEMENT_SPEED, 0.2F);
    }
 
-   public static boolean method5335(EntityType<Class1109> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method5335(EntityType<Class1109> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
       return var1.method6997() != Difficulty.field14351;
    }
 

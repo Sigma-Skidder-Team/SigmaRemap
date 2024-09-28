@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
@@ -21,11 +23,11 @@ public enum Class1666 implements IBlockReader {
 
    @Override
    public BlockState getBlockState(BlockPos var1) {
-      return Blocks.AIR.method11579();
+      return Blocks.AIR.getDefaultState();
    }
 
    @Override
    public FluidState getFluidState(BlockPos var1) {
-      return Class9479.field44064.method25049();
+      return Fluids.EMPTY.method25049();
    }
 }

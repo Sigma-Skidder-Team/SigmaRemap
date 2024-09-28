@@ -1,11 +1,13 @@
 package mapped;
 
+import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.state.EnumProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.PistonType;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
@@ -14,6 +16,7 @@ import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
 import java.util.Collections;
@@ -27,7 +30,7 @@ public class Class3356 extends Class3241 {
 
    public Class3356(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().with(field18896, Direction.NORTH).with(field18897, PistonType.field638));
+      this.setDefaultState(this.stateContainer.getBaseState().with(field18896, Direction.NORTH).with(field18897, PistonType.field638));
    }
 
    @Nullable
@@ -41,7 +44,7 @@ public class Class3356 extends Class3241 {
    }
 
    @Override
-   public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+   public void onReplaced(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       if (!var1.isIn(var4.getBlock())) {
          TileEntity var8 = var2.getTileEntity(var3);
          if (var8 instanceof Class955) {
@@ -51,8 +54,8 @@ public class Class3356 extends Class3241 {
    }
 
    @Override
-   public void onPlayerDestroy(Class1660 var1, BlockPos var2, BlockState var3) {
-      BlockPos var6 = var2.method8349(var3.<Direction>get(field18896).getOpposite());
+   public void onPlayerDestroy(IWorld var1, BlockPos var2, BlockState var3) {
+      BlockPos var6 = var2.offset(var3.<Direction>get(field18896).getOpposite());
       BlockState var7 = var1.getBlockState(var6);
       if (var7.getBlock() instanceof Class3435 && var7.<Boolean>get(Class3435.field19202)) {
          var1.removeBlock(var6, false);
@@ -60,7 +63,7 @@ public class Class3356 extends Class3241 {
    }
 
    @Override
-   public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
+   public ActionResultType onBlockActivated(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       if (!var2.isRemote && var2.getTileEntity(var3) == null) {
          var2.removeBlock(var3, false);
          return ActionResultType.field14819;
@@ -76,7 +79,7 @@ public class Class3356 extends Class3241 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return VoxelShapes.method27425();
    }
 
@@ -108,12 +111,12 @@ public class Class3356 extends Class3241 {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field18896, field18897);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field18896, field18897);
    }
 
    @Override
-   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
+   public boolean allowsMovement(BlockState var1, IBlockReader var2, BlockPos var3, PathType var4) {
       return false;
    }
 }

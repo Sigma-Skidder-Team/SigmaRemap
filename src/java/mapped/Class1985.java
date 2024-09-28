@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.fluid.FluidState;
+
 import java.util.function.Predicate;
 
 public enum Class1985 {

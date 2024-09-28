@@ -2,13 +2,12 @@ package net.minecraft.state;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
-import mapped.Class8550;
 
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Optional;
 
-public class IntegerProperty extends Class8550<Integer> {
+public class IntegerProperty extends Property<Integer> {
    private final ImmutableSet<Integer> field38445;
 
    public IntegerProperty(String var1, int var2, int var3) {

@@ -52,7 +52,7 @@ public final class Class9777 {
       for (Class8266 var17 : var8.method24374(this.field45737, var9, var10, this.field45739)) {
          Direction var18 = JigsawBlock.method11675(var17.field35531);
          BlockPos var19 = var17.field35530;
-         BlockPos var20 = var19.method8349(var18);
+         BlockPos var20 = var19.offset(var18);
          int var21 = var19.getY() - var15;
          int var22 = -1;
          ResourceLocation var23 = new ResourceLocation(var17.field35532.getString("pool"));
@@ -89,13 +89,13 @@ public final class Class9777 {
                      break;
                   }
 
-                  for (Rotation var34 : Rotation.method255(this.field45739)) {
+                  for (Rotation var34 : Rotation.shuffledRotations(this.field45739)) {
                      List<Class8266> var35 = var32.method24374(this.field45737, BlockPos.ZERO, var34, this.field45739);
                      Class9764 var36 = var32.method24375(this.field45737, BlockPos.ZERO, var34);
                      int var37;
                      if (var5 && var36.method38399() <= 16) {
                         var37 = var35.stream().mapToInt(var2x -> {
-                           if (var36.method38396(var2x.field35530.method8349(JigsawBlock.method11675(var2x.field35531)))) {
+                           if (var36.method38396(var2x.field35530.offset(JigsawBlock.method11675(var2x.field35531)))) {
                               ResourceLocation var5x = new ResourceLocation(var2x.field35532.getString("pool"));
                               Optional<Class9369> var6 = this.field45733.method9187(var5x);
                               Optional<Class9369> var7 = var6.<Class9369>flatMap(var1xx -> this.field45733.method9187(var1xx.method35534()));

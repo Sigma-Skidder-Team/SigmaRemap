@@ -3,6 +3,8 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.pathfinding.PathType;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.AttachFace;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
@@ -83,7 +85,7 @@ public class Class3205 extends Class3200 {
 
    public Class3205(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().with(HORIZONTAL_FACING, Direction.NORTH).with(field18500, AttachFace.field314));
+      this.setDefaultState(this.stateContainer.getBaseState().with(HORIZONTAL_FACING, Direction.NORTH).with(field18500, AttachFace.field314));
    }
 
    @Override
@@ -129,7 +131,7 @@ public class Class3205 extends Class3200 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return this.method11527(var1);
    }
 
@@ -139,7 +141,7 @@ public class Class3205 extends Class3200 {
    }
 
    @Override
-   public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
+   public ActionResultType onBlockActivated(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       if (!var2.isRemote) {
          var4.method2766(var1.method23445(var2, var3));
          var4.method2911(Stats.field40176);
@@ -165,12 +167,12 @@ public class Class3205 extends Class3200 {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(HORIZONTAL_FACING, field18500);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(HORIZONTAL_FACING, field18500);
    }
 
    @Override
-   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
+   public boolean allowsMovement(BlockState var1, IBlockReader var2, BlockPos var3, PathType var4) {
       return false;
    }
 }

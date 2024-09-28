@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.vector.Matrix3f;
 
 public abstract class Class5727<T extends AbstractArrowEntity> extends EntityRenderer<T> {
    public Class5727(EntityRendererManager var1) {
@@ -35,7 +36,7 @@ public abstract class Class5727<T extends AbstractArrowEntity> extends EntityRen
       IVertexBuilder var25 = var5.method25597(RenderType.getEntityCutout(this.method17843((T)var1)));
       Class8892 var21 = var4.getLast();
       Matrix4f var22 = var21.getMatrix();
-      Class8967 var23 = var21.method32362();
+      Matrix3f var23 = var21.method32362();
       this.method17913(var22, var23, var25, -7, -2, -2, 0.0F, 0.15625F, -1, 0, 0, var6);
       this.method17913(var22, var23, var25, -7, -2, 2, 0.15625F, 0.15625F, -1, 0, 0, var6);
       this.method17913(var22, var23, var25, -7, 2, 2, 0.15625F, 0.3125F, -1, 0, 0, var6);
@@ -58,7 +59,7 @@ public abstract class Class5727<T extends AbstractArrowEntity> extends EntityRen
    }
 
    public void method17913(
-           Matrix4f var1, Class8967 var2, IVertexBuilder var3, int var4, int var5, int var6, float var7, float var8, int var9, int var10, int var11, int var12
+           Matrix4f var1, Matrix3f var2, IVertexBuilder var3, int var4, int var5, int var6, float var7, float var8, int var9, int var10, int var11, int var12
    ) {
       var3.pos(var1, (float)var4, (float)var5, (float)var6)
          .color(255, 255, 255, 255)

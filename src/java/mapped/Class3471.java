@@ -3,10 +3,13 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorld;
 
 public class Class3471 extends Block {
    private static String[] field19322;
@@ -14,24 +17,24 @@ public class Class3471 extends Block {
 
    public Class3471(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().with(field19323, Boolean.valueOf(false)));
+      this.setDefaultState(this.stateContainer.getBaseState().with(field19323, Boolean.valueOf(false)));
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       return var2 == Direction.UP
          ? var1.with(field19323, Boolean.valueOf(var3.isIn(Blocks.SNOW_BLOCK) || var3.isIn(Blocks.SNOW)))
-         : super.method11491(var1, var2, var3, var4, var5, var6);
+         : super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
    }
 
    @Override
-   public BlockState method11495(Class5909 var1) {
-      BlockState var4 = var1.method18360().getBlockState(var1.method18345().up());
-      return this.method11579().with(field19323, Boolean.valueOf(var4.isIn(Blocks.SNOW_BLOCK) || var4.isIn(Blocks.SNOW)));
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      BlockState var4 = var1.getWorld().getBlockState(var1.getPos().up());
+      return this.getDefaultState().with(field19323, Boolean.valueOf(var4.isIn(Blocks.SNOW_BLOCK) || var4.isIn(Blocks.SNOW)));
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field19323);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field19323);
    }
 }

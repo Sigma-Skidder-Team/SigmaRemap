@@ -23,17 +23,17 @@ public class Class7246 {
       field31110 = new int[Rotation.values().length];
 
       try {
-         field31110[Rotation.field187.ordinal()] = 1;
+         field31110[Rotation.CLOCKWISE_180.ordinal()] = 1;
       } catch (NoSuchFieldError var5) {
       }
 
       try {
-         field31110[Rotation.field188.ordinal()] = 2;
+         field31110[Rotation.COUNTERCLOCKWISE_90.ordinal()] = 2;
       } catch (NoSuchFieldError var4) {
       }
 
       try {
-         field31110[Rotation.field186.ordinal()] = 3;
+         field31110[Rotation.CLOCKWISE_90.ordinal()] = 3;
       } catch (NoSuchFieldError var3) {
       }
    }

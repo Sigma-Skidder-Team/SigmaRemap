@@ -11,7 +11,7 @@ import net.minecraft.world.biome.Biome;
 import java.util.Random;
 
 public class Class2943 extends Class2898<Class4705> {
-   private static final BlockState field18006 = Blocks.field37012.method11579();
+   private static final BlockState field18006 = Blocks.field37012.getDefaultState();
 
    public Class2943(Codec<Class4705> var1) {
       super(var1);
@@ -100,9 +100,9 @@ public class Class2943 extends Class2898<Class4705> {
                            && var1.getLightFor(LightType.SKY, var4.method8336(var41, var49, var45)) > 0) {
                            Biome var55 = var1.getBiome(var52);
                            if (!var55.method32507().method24283().method28934().isIn(Blocks.MYCELIUM)) {
-                              var1.setBlockState(var52, Blocks.field36395.method11579(), 2);
+                              var1.setBlockState(var52, Blocks.field36395.getDefaultState(), 2);
                            } else {
-                              var1.setBlockState(var52, Blocks.MYCELIUM.method11579(), 2);
+                              var1.setBlockState(var52, Blocks.MYCELIUM.getDefaultState(), 2);
                            }
                         }
                      }
@@ -124,7 +124,7 @@ public class Class2943 extends Class2898<Class4705> {
                                  || var50 > 0 && var8[(var42 * 16 + var46) * 8 + (var50 - 1)]
                            );
                         if (var53 && (var50 < 4 || var3.nextInt(2) != 0) && var1.getBlockState(var4.method8336(var42, var50, var46)).getMaterial().isSolid()) {
-                           var1.setBlockState(var4.method8336(var42, var50, var46), Blocks.STONE.method11579(), 2);
+                           var1.setBlockState(var4.method8336(var42, var50, var46), Blocks.STONE.getDefaultState(), 2);
                         }
                      }
                   }
@@ -137,7 +137,7 @@ public class Class2943 extends Class2898<Class4705> {
                      byte var51 = 4;
                      BlockPos var54 = var4.method8336(var43, 4, var47);
                      if (var1.getBiome(var54).method32505(var1, var54, false)) {
-                        var1.setBlockState(var54, Blocks.ICE.method11579(), 2);
+                        var1.setBlockState(var54, Blocks.ICE.getDefaultState(), 2);
                      }
                   }
                }

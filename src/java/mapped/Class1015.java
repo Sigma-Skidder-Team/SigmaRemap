@@ -24,6 +24,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -261,7 +262,7 @@ public class Class1015 extends Class1014 implements Class1016 {
       return false;
    }
 
-   public static boolean method4410(EntityType<Class1015> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method4410(EntityType<Class1015> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
       BlockState var7 = var1.getBlockState(var3.down());
       return (
             var7.isIn(BlockTags.LEAVES)

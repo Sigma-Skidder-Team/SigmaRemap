@@ -37,7 +37,7 @@ public class BlockStateProperties {
    public static final BooleanProperty field39707 = BooleanProperty.create("snowy");
    public static final BooleanProperty field39708 = BooleanProperty.create("triggered");
    public static final BooleanProperty field39709 = BooleanProperty.create("unstable");
-   public static final BooleanProperty field39710 = BooleanProperty.create("waterlogged");
+   public static final BooleanProperty WATERLOGGED = BooleanProperty.create("waterlogged");
    public static final BooleanProperty field39711 = BooleanProperty.create("vine_end");
    public static final EnumProperty<Direction.Axis> field39712 = EnumProperty.<Direction.Axis>method30483("axis", Direction.Axis.class, Direction.Axis.X, Direction.Axis.Z);
    public static final EnumProperty<Direction.Axis> field39713 = EnumProperty.<Direction.Axis>create("axis", Direction.Axis.class);
@@ -64,7 +64,7 @@ public class BlockStateProperties {
    public static final EnumProperty<RedstoneSide> field39732 = EnumProperty.<RedstoneSide>create("south", RedstoneSide.class);
    public static final EnumProperty<RedstoneSide> field39733 = EnumProperty.<RedstoneSide>create("west", RedstoneSide.class);
    public static final EnumProperty<DoubleBlockHalf> DOUBLE_BLOCK_HALF = EnumProperty.<DoubleBlockHalf>create("half", DoubleBlockHalf.class);
-   public static final EnumProperty<Half> field39735 = EnumProperty.<Half>create("half", Half.class);
+   public static final EnumProperty<Half> HALF = EnumProperty.<Half>create("half", Half.class);
    public static final EnumProperty<RailShape> field39736 = EnumProperty.<RailShape>create("shape", RailShape.class);
    public static final EnumProperty<RailShape> field39737 = EnumProperty.<RailShape>method30482(
       "shape", RailShape.class, var0 -> var0 != RailShape.field256 && var0 != RailShape.field255 && var0 != RailShape.field253 && var0 != RailShape.field254
@@ -102,7 +102,7 @@ public class BlockStateProperties {
    public static final EnumProperty<NoteBlockInstrument> field39768 = EnumProperty.<NoteBlockInstrument>create("instrument", NoteBlockInstrument.class);
    public static final EnumProperty<PistonType> field39769 = EnumProperty.<PistonType>create("type", PistonType.class);
    public static final EnumProperty<SlabType> field39770 = EnumProperty.<SlabType>create("type", SlabType.class);
-   public static final EnumProperty<StairsShape> field39771 = EnumProperty.<StairsShape>create("shape", StairsShape.class);
+   public static final EnumProperty<StairsShape> STAIRS_SHAPE = EnumProperty.<StairsShape>create("shape", StairsShape.class);
    public static final EnumProperty<StructureMode> field39772 = EnumProperty.<StructureMode>create("mode", StructureMode.class);
    public static final EnumProperty<BambooLeaves> field39773 = EnumProperty.<BambooLeaves>create("leaves", BambooLeaves.class);
 }

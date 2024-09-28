@@ -9,6 +9,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.IWorld;
 
 import java.util.Random;
 
@@ -68,7 +69,7 @@ public class Class2950 extends Class2898<Class4705> {
       return true;
    }
 
-   private void method11292(Random var1, Class1660 var2, int var3, int var4, BlockPos var5, boolean var6, int var7, double var8, int var10) {
+   private void method11292(Random var1, IWorld var2, int var3, int var4, BlockPos var5, boolean var6, int var7, double var8, int var10) {
       int var13 = !var1.nextBoolean() ? 1 : -1;
       int var14 = !var1.nextBoolean() ? 1 : -1;
       int var15 = var1.nextInt(Math.max(var3 / 2 - 2, 1));
@@ -99,7 +100,7 @@ public class Class2950 extends Class2898<Class4705> {
       }
    }
 
-   private void method11293(int var1, int var2, BlockPos var3, Class1660 var4, boolean var5, double var6, BlockPos var8, int var9, int var10) {
+   private void method11293(int var1, int var2, BlockPos var3, IWorld var4, boolean var5, double var6, BlockPos var8, int var9, int var10) {
       int var13 = var1 + 1 + var9 / 3;
       int var14 = Math.min(var1 - 3, 3) + var10 / 2 - 1;
 
@@ -111,10 +112,10 @@ public class Class2950 extends Class2898<Class4705> {
                Block var20 = var4.getBlockState(var19).getBlock();
                if (this.method11303(var20) || var20 == Blocks.SNOW_BLOCK) {
                   if (!var5) {
-                     this.method11217(var4, var19, Blocks.AIR.method11579());
+                     this.method11217(var4, var19, Blocks.AIR.getDefaultState());
                      this.method11294(var4, var19);
                   } else {
-                     this.method11217(var4, var19, Blocks.WATER.method11579());
+                     this.method11217(var4, var19, Blocks.WATER.getDefaultState());
                   }
                }
             }
@@ -122,14 +123,14 @@ public class Class2950 extends Class2898<Class4705> {
       }
    }
 
-   private void method11294(Class1660 var1, BlockPos var2) {
+   private void method11294(IWorld var1, BlockPos var2) {
       if (var1.getBlockState(var2.up()).isIn(Blocks.SNOW)) {
-         this.method11217(var1, var2.up(), Blocks.AIR.method11579());
+         this.method11217(var1, var2.up(), Blocks.AIR.getDefaultState());
       }
    }
 
    private void method11295(
-      Class1660 var1,
+      IWorld var1,
       Random var2,
       BlockPos var3,
       int var4,
@@ -158,7 +159,7 @@ public class Class2950 extends Class2898<Class4705> {
       }
    }
 
-   private void method11296(BlockPos var1, Class1660 var2, Random var3, int var4, int var5, boolean var6, boolean var7, BlockState var8) {
+   private void method11296(BlockPos var1, IWorld var2, Random var3, int var4, int var5, boolean var6, boolean var7, BlockState var8) {
       BlockState var11 = var2.getBlockState(var1);
       if (var11.getMaterial() == Material.field38932
          || var11.isIn(Blocks.SNOW_BLOCK)
@@ -167,7 +168,7 @@ public class Class2950 extends Class2898<Class4705> {
          boolean var12 = !var6 || var3.nextDouble() > 0.05;
          int var13 = !var6 ? 2 : 3;
          if (var7 && !var11.isIn(Blocks.WATER) && (double)var4 <= (double)var3.nextInt(Math.max(1, var5 / var13)) + (double)var5 * 0.6 && var12) {
-            this.method11217(var2, var1, Blocks.SNOW_BLOCK.method11579());
+            this.method11217(var2, var1, Blocks.SNOW_BLOCK.getDefaultState());
          } else {
             this.method11217(var2, var1, var8);
          }
@@ -225,7 +226,7 @@ public class Class2950 extends Class2898<Class4705> {
       return var1.getBlockState(var2.down()).getMaterial() == Material.field38932;
    }
 
-   private void method11305(Class1660 var1, BlockPos var2, int var3, int var4, boolean var5, int var6) {
+   private void method11305(IWorld var1, BlockPos var2, int var3, int var4, boolean var5, int var6) {
       int var9 = !var5 ? var3 / 2 : var6;
 
       for (int var10 = -var9; var10 <= var9; var10++) {
@@ -235,8 +236,8 @@ public class Class2950 extends Class2898<Class4705> {
                Block var14 = var1.getBlockState(var13).getBlock();
                if (this.method11303(var14) || var14 == Blocks.SNOW) {
                   if (this.method11304(var1, var13)) {
-                     this.method11217(var1, var13, Blocks.AIR.method11579());
-                     this.method11217(var1, var13.up(), Blocks.AIR.method11579());
+                     this.method11217(var1, var13, Blocks.AIR.getDefaultState());
+                     this.method11217(var1, var13.up(), Blocks.AIR.getDefaultState());
                   } else if (this.method11303(var14)) {
                      Block[] var15 = new Block[]{
                         var1.getBlockState(var13.west()).getBlock(),
@@ -253,7 +254,7 @@ public class Class2950 extends Class2898<Class4705> {
                      }
 
                      if (var16 >= 3) {
-                        this.method11217(var1, var13, Blocks.AIR.method11579());
+                        this.method11217(var1, var13, Blocks.AIR.getDefaultState());
                      }
                   }
                }

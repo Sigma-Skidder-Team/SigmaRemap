@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import mapped.*;
+import net.minecraft.state.Property;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
@@ -13,7 +14,7 @@ import net.optifine.Config;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class BlockState extends Class7377 {
-   public static final Codec<BlockState> field31585 = method23469(Registry.BLOCK, Block::method11579).stable();
+   public static final Codec<BlockState> field31585 = method23469(Registry.BLOCK, Block::getDefaultState).stable();
    private int field31586 = -1;
    private int field31587 = -1;
    private ResourceLocation field31588;
@@ -68,7 +69,7 @@ public class BlockState extends Class7377 {
       return this.field31577 != null && this.field31577.field28445;
    }
 
-   public BlockState(Block var1, ImmutableMap<Class8550<?>, Comparable<?>> var2, MapCodec<BlockState> var3) {
+   public BlockState(Block var1, ImmutableMap<Property<?>, Comparable<?>> var2, MapCodec<BlockState> var3) {
       super(var1, var2, var3);
    }
 

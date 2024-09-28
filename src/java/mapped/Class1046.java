@@ -5,6 +5,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
@@ -22,7 +23,7 @@ public abstract class Class1046 extends MobEntity {
    }
 
    @Override
-   public boolean method4265(Class1660 var1, Class2202 var2) {
+   public boolean method4265(IWorld var1, Class2202 var2) {
       return this.method4339(this.getPosition(), var1) >= 0.0F;
    }
 

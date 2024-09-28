@@ -41,9 +41,9 @@ public abstract class Class995 extends Entity {
 
    public void method4077(Direction var1) {
       Validate.notNull(var1);
-      Validate.isTrue(var1.getAxis().method324());
+      Validate.isTrue(var1.getAxis().isHorizontal());
       this.field5489 = var1;
-      this.rotationYaw = (float)(this.field5489.method534() * 90);
+      this.rotationYaw = (float)(this.field5489.getHorizontalIndex() * 90);
       this.prevRotationYaw = this.rotationYaw;
       this.method4078();
    }
@@ -106,7 +106,7 @@ public abstract class Class995 extends Entity {
       } else {
          int var3 = Math.max(1, this.method4081() / 16);
          int var4 = Math.max(1, this.method4082() / 16);
-         BlockPos var5 = this.field5488.method8349(this.field5489.getOpposite());
+         BlockPos var5 = this.field5488.offset(this.field5489.getOpposite());
          Direction var6 = this.field5489.rotateYCCW();
          BlockPos.Mutable var7 = new BlockPos.Mutable();
 

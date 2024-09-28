@@ -30,7 +30,7 @@ public class Class3240 extends Class3241 implements Class3235 {
    }
 
    @Override
-   public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
+   public ActionResultType onBlockActivated(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       if (!var2.isRemote) {
          TileEntity var9 = var2.getTileEntity(var3);
          if (var9 instanceof Class950) {

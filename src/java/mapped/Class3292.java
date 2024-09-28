@@ -8,8 +8,10 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.state.Property;
 import net.minecraft.state.StateContainer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
@@ -31,22 +33,22 @@ public class Class3292 extends Item {
 
    @Override
    public ActionResultType method11707(ItemUseContext var1) {
-      ActionResultType var4 = this.method11834(new Class5909(var1));
-      return !var4.isSuccessOrConsume() && this.isFood() ? this.method11700(var1.method18360(), var1.method18358(), var1.method18359()).method20694() : var4;
+      ActionResultType var4 = this.method11834(new BlockItemUseContext(var1));
+      return !var4.isSuccessOrConsume() && this.isFood() ? this.method11700(var1.getWorld(), var1.method18358(), var1.method18359()).method20694() : var4;
    }
 
-   public ActionResultType method11834(Class5909 var1) {
+   public ActionResultType method11834(BlockItemUseContext var1) {
       if (!var1.method18346()) {
          return ActionResultType.FAIL;
       } else {
-         Class5909 var4 = this.method11836(var1);
+         BlockItemUseContext var4 = this.method11836(var1);
          if (var4 != null) {
             BlockState var5 = this.method11838(var4);
             if (var5 == null) {
                return ActionResultType.FAIL;
             } else if (this.method11843(var4, var5)) {
-               BlockPos var6 = var4.method18345();
-               World var7 = var4.method18360();
+               BlockPos var6 = var4.getPos();
+               World var7 = var4.getWorld();
                PlayerEntity var8 = var4.method18358();
                ItemStack var9 = var4.method18357();
                BlockState var10 = var7.getBlockState(var6);
@@ -81,7 +83,7 @@ public class Class3292 extends Item {
    }
 
    @Nullable
-   public Class5909 method11836(Class5909 var1) {
+   public BlockItemUseContext method11836(BlockItemUseContext var1) {
       return var1;
    }
 
@@ -90,8 +92,8 @@ public class Class3292 extends Item {
    }
 
    @Nullable
-   public BlockState method11838(Class5909 var1) {
-      BlockState var4 = this.method11845().method11495(var1);
+   public BlockState method11838(BlockItemUseContext var1) {
+      BlockState var4 = this.method11845().getStateForPlacement(var1);
       return var4 != null && this.method11841(var1, var4) ? var4 : null;
    }
 
@@ -103,7 +105,7 @@ public class Class3292 extends Item {
          StateContainer var10 = var4.getBlock().getStateContainer();
 
          for (String var12 : var9.method97()) {
-            Class8550 var13 = var10.method35396(var12);
+            Property var13 = var10.method35396(var12);
             if (var13 != null) {
                String var14 = var9.method116(var12).getString();
                var7 = method11840(var7, var13, var14);
@@ -118,22 +120,22 @@ public class Class3292 extends Item {
       return var7;
    }
 
-   private static <T extends Comparable<T>> BlockState method11840(BlockState var0, Class8550<T> var1, String var2) {
+   private static <T extends Comparable<T>> BlockState method11840(BlockState var0, Property<T> var1, String var2) {
       return var1.method30476(var2).<BlockState>map(var2x -> var0.with(var1, var2x)).orElse(var0);
    }
 
-   public boolean method11841(Class5909 var1, BlockState var2) {
+   public boolean method11841(BlockItemUseContext var1, BlockState var2) {
       PlayerEntity var5 = var1.method18358();
       ISelectionContext var6 = var5 != null ? ISelectionContext.forEntity(var5) : ISelectionContext.method14947();
-      return (!this.method11842() || var2.method23443(var1.method18360(), var1.method18345())) && var1.method18360().placedBlockCollides(var2, var1.method18345(), var6);
+      return (!this.method11842() || var2.method23443(var1.getWorld(), var1.getPos())) && var1.getWorld().placedBlockCollides(var2, var1.getPos(), var6);
    }
 
    public boolean method11842() {
       return true;
    }
 
-   public boolean method11843(Class5909 var1, BlockState var2) {
-      return var1.method18360().setBlockState(var1.method18345(), var2, 11);
+   public boolean method11843(BlockItemUseContext var1, BlockState var2) {
+      return var1.getWorld().setBlockState(var1.getPos(), var2, 11);
    }
 
    public static boolean method11844(World var0, PlayerEntity var1, BlockPos var2, ItemStack var3) {

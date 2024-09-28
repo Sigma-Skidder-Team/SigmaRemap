@@ -11,6 +11,8 @@ import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.IPacket;
@@ -38,7 +40,7 @@ import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
-public abstract class World implements Class1660, AutoCloseable {
+public abstract class World implements IWorld, AutoCloseable {
    public static final Logger LOGGER = LogManager.getLogger();
    public static final Codec<RegistryKey<World>> CODEC = ResourceLocation.CODEC
       .xmap(RegistryKey.method31400(Registry.WORLD_KEY), RegistryKey::getLocation);
@@ -291,7 +293,7 @@ public abstract class World implements Class1660, AutoCloseable {
          BlockState var6 = this.getBlockState(var1);
 
          try {
-            var6.method23423(this, var1, var2, var3, false);
+            var6.neighborChanged(this, var1, var2, var3, false);
          } catch (Throwable var10) {
             CrashReport var8 = CrashReport.makeCrashReport(var10, "Exception while updating neighbours");
             CrashReportCategory var9 = var8.makeCategory("Block being updated");
@@ -335,7 +337,7 @@ public abstract class World implements Class1660, AutoCloseable {
          Chunk var4 = this.getChunk(var1.getX() >> 4, var1.getZ() >> 4);
          return var4.getBlockState(var1);
       } else {
-         return Blocks.field37011.method11579();
+         return Blocks.field37011.getDefaultState();
       }
    }
 
@@ -345,7 +347,7 @@ public abstract class World implements Class1660, AutoCloseable {
          Chunk var4 = this.getChunkAt(var1);
          return var4.getFluidState(var1);
       } else {
-         return Class9479.field44064.method25049();
+         return Fluids.EMPTY.method25049();
       }
    }
 
@@ -810,7 +812,7 @@ public abstract class World implements Class1660, AutoCloseable {
       int var4 = 0;
 
       for (Direction var8 : FACING_VALUES) {
-         int var9 = this.method6779(var1.method8349(var8), var8);
+         int var9 = this.method6779(var1.offset(var8), var8);
          if (var9 >= 15) {
             return 15;
          }
@@ -934,19 +936,19 @@ public abstract class World implements Class1660, AutoCloseable {
 
    public void updateComparatorOutputLevel(BlockPos var1, Block var2) {
       for (Direction var6 : Direction.Plane.HORIZONTAL) {
-         BlockPos var7 = var1.method8349(var6);
+         BlockPos var7 = var1.offset(var6);
          if (this.isBlockLoaded(var7)) {
             BlockState var8 = this.getBlockState(var7);
             if (!var8.isIn(Blocks.COMPARATOR)) {
                if (var8.method23400(this, var7)) {
-                  var7 = var7.method8349(var6);
+                  var7 = var7.offset(var6);
                   var8 = this.getBlockState(var7);
                   if (var8.isIn(Blocks.COMPARATOR)) {
-                     var8.method23423(this, var7, var2, var1, false);
+                     var8.neighborChanged(this, var7, var2, var1, false);
                   }
                }
             } else {
-               var8.method23423(this, var7, var2, var1, false);
+               var8.neighborChanged(this, var7, var2, var1, false);
             }
          }
       }

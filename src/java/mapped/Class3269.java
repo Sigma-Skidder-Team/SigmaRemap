@@ -41,13 +41,13 @@ public class Class3269 extends ToolItem {
    public static final Map<Block, BlockState> field18767 = Maps.newHashMap(
       ImmutableMap.of(
          Blocks.field36395,
-         Blocks.FARMLAND.method11579(),
+         Blocks.FARMLAND.getDefaultState(),
          Blocks.field36885,
-         Blocks.FARMLAND.method11579(),
+         Blocks.FARMLAND.getDefaultState(),
          Blocks.field36396,
-         Blocks.FARMLAND.method11579(),
+         Blocks.FARMLAND.getDefaultState(),
          Blocks.field36397,
-         Blocks.field36396.method11579()
+         Blocks.field36396.getDefaultState()
       )
    );
 
@@ -57,9 +57,9 @@ public class Class3269 extends ToolItem {
 
    @Override
    public ActionResultType method11707(ItemUseContext var1) {
-      World var4 = var1.method18360();
-      BlockPos var5 = var1.method18345();
-      if (var1.method18354() != Direction.DOWN && var4.getBlockState(var5.up()).isAir()) {
+      World var4 = var1.getWorld();
+      BlockPos var5 = var1.getPos();
+      if (var1.getFace() != Direction.DOWN && var4.getBlockState(var5.up()).isAir()) {
          BlockState var6 = field18767.get(var4.getBlockState(var5).getBlock());
          if (var6 != null) {
             PlayerEntity var7 = var1.method18358();

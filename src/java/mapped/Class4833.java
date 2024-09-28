@@ -2,7 +2,9 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.fluid.FlowingFluid;
 import net.minecraft.fluid.Fluid;
+import net.minecraft.fluid.FluidState;
 import net.minecraft.item.Items;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -41,8 +43,8 @@ public class Class4833 implements ISelectionContext {
    }
 
    @Override
-   public boolean method14952(FluidState var1, Class7633 var2) {
-      return this.field22611.test(var2) && !var1.method23472().method25066(var2);
+   public boolean method14952(FluidState var1, FlowingFluid var2) {
+      return this.field22611.test(var2) && !var1.getFluid().method25066(var2);
    }
 
    @Override

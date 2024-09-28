@@ -8,7 +8,11 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.fluid.Fluid;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
+import net.minecraft.pathfinding.PathType;
 import net.minecraft.util.*;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -17,6 +21,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -59,11 +64,11 @@ public abstract class AbstractBlock {
    }
 
    @Deprecated
-   public void method11618(BlockState var1, Class1660 var2, BlockPos var3, int var4, int var5) {
+   public void method11618(BlockState var1, IWorld var2, BlockPos var3, int var4, int var5) {
    }
 
    @Deprecated
-   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
+   public boolean allowsMovement(BlockState var1, IBlockReader var2, BlockPos var3, PathType var4) {
       switch (Class8735.field39385[var4.ordinal()]) {
          case 1:
             return !var1.method23456(var2, var3);
@@ -77,7 +82,7 @@ public abstract class AbstractBlock {
    }
 
    @Deprecated
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       return var1;
    }
 
@@ -92,18 +97,18 @@ public abstract class AbstractBlock {
    }
 
    @Deprecated
-   public void method11589(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+   public void onBlockAdded(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
    }
 
    @Deprecated
-   public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+   public void onReplaced(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       if (this.isTileEntityProvider() && !var1.isIn(var4.getBlock())) {
          var2.method6762(var3);
       }
    }
 
    @Deprecated
-   public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
+   public ActionResultType onBlockActivated(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       return ActionResultType.field14820;
    }
 
@@ -118,7 +123,7 @@ public abstract class AbstractBlock {
    }
 
    @Deprecated
-   public boolean method11534(BlockState var1) {
+   public boolean isTransparent(BlockState var1) {
       return false;
    }
 
@@ -133,8 +138,8 @@ public abstract class AbstractBlock {
    }
 
    @Deprecated
-   public FluidState method11498(BlockState var1) {
-      return Class9479.field44064.method25049();
+   public FluidState getFluidState(BlockState var1) {
+      return Fluids.EMPTY.method25049();
    }
 
    @Deprecated
@@ -157,7 +162,7 @@ public abstract class AbstractBlock {
    }
 
    @Deprecated
-   public boolean method11497(BlockState var1, Class5909 var2) {
+   public boolean method11497(BlockState var1, BlockItemUseContext var2) {
       return this.field19004.isReplaceable() && (var2.method18357().isEmpty() || var2.method18357().getItem() != this.method11581());
    }
 
@@ -230,7 +235,7 @@ public abstract class AbstractBlock {
    }
 
    @Deprecated
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return VoxelShapes.method27426();
    }
 
@@ -245,12 +250,12 @@ public abstract class AbstractBlock {
    }
 
    @Deprecated
-   public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
-      this.method11522(var1, var2, var3, var4);
+   public void randomTick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+      this.tick(var1, var2, var3, var4);
    }
 
    @Deprecated
-   public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void tick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
    }
 
    @Deprecated
@@ -269,7 +274,7 @@ public abstract class AbstractBlock {
    }
 
    @Deprecated
-   public void method11602(BlockState var1, World var2, BlockPos var3, PlayerEntity var4) {
+   public void onBlockClicked(BlockState var1, World var2, BlockPos var3, PlayerEntity var4) {
    }
 
    @Deprecated
@@ -308,7 +313,7 @@ public abstract class AbstractBlock {
    public abstract Block method11584();
 
    public MaterialColor method12000() {
-      return (MaterialColor) Properties.method26653(this.field19013).apply(this.method11584().method11579());
+      return (MaterialColor) Properties.method26653(this.field19013).apply(this.method11584().getDefaultState());
    }
 
    public static class Properties {

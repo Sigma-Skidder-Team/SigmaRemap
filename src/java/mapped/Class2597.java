@@ -62,8 +62,8 @@ public class Class2597 extends Class2595 {
             BlockPos var4 = var3.down();
             if (this.field16824.getBlockState(var4).isIn(Blocks.field36395)) {
                if (this.field16824.getGameRules().getBoolean(Class5462.field24224)) {
-                  this.field16824.playEvent(2001, var4, Block.getStateId(Blocks.field36395.method11579()));
-                  this.field16824.setBlockState(var4, Blocks.field36396.method11579(), 2);
+                  this.field16824.playEvent(2001, var4, Block.getStateId(Blocks.field36395.getDefaultState()));
+                  this.field16824.setBlockState(var4, Blocks.field36396.getDefaultState(), 2);
                }
 
                this.field16823.method4235();

@@ -3,16 +3,17 @@ package mapped;
 import com.mojang.datafixers.DataFixUtils;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IStructureReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.gen.feature.structure.StructureStart;
 
 import java.util.stream.Stream;
 import javax.annotation.Nullable;
 
 public class Class7480 {
-   private final Class1660 field32171;
+   private final IWorld field32171;
    private final DimensionGeneratorSettings field32172;
 
-   public Class7480(Class1660 var1, DimensionGeneratorSettings var2) {
+   public Class7480(IWorld var1, DimensionGeneratorSettings var2) {
       this.field32171 = var1;
       this.field32172 = var2;
    }

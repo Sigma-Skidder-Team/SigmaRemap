@@ -5,10 +5,12 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
 public class Class3470 extends Class3468 {
@@ -18,7 +20,7 @@ public class Class3470 extends Class3468 {
 
    public Class3470(int var1, Properties var2) {
       super(var2);
-      this.method11578(this.field18612.method35393().with(field19320, Integer.valueOf(0)));
+      this.setDefaultState(this.stateContainer.getBaseState().with(field19320, Integer.valueOf(0)));
       this.field19321 = var1;
    }
 
@@ -34,12 +36,12 @@ public class Class3470 extends Class3468 {
    }
 
    @Override
-   public void method12154(Class1660 var1, BlockPos var2) {
+   public void method12154(IWorld var1, BlockPos var2) {
       var1.method6742((PlayerEntity)null, var2, SoundEvents.field26761, Class2266.field14732, 0.3F, 0.90000004F);
    }
 
    @Override
-   public void method12155(Class1660 var1, BlockPos var2) {
+   public void method12155(IWorld var1, BlockPos var2) {
       var1.method6742((PlayerEntity)null, var2, SoundEvents.field26760, Class2266.field14732, 0.3F, 0.75F);
    }
 
@@ -59,7 +61,7 @@ public class Class3470 extends Class3468 {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field19320);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field19320);
    }
 }

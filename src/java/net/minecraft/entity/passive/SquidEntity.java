@@ -10,6 +10,7 @@ import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -178,7 +179,7 @@ public class SquidEntity extends WaterMobEntity {
       this.move(MoverType.SELF, this.getMotion());
    }
 
-   public static boolean method4839(EntityType<SquidEntity> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method4839(EntityType<SquidEntity> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
       return var3.getY() > 45 && var3.getY() < var1.method6776();
    }
 

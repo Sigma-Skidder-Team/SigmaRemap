@@ -17,6 +17,7 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -136,7 +137,7 @@ public class Class1088 extends Class1018 {
       return super.method4276(var1, var2, var3, var4, var5);
    }
 
-   public static boolean method5053(EntityType<Class1088> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method5053(EntityType<Class1088> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
       return var3.getY() < var1.method6776() + 4 && Class3441.method12114(var1, var3) && var1.method7021(var3, 0) > 8;
    }
 
@@ -257,7 +258,7 @@ public class Class1088 extends Class1018 {
       if (this.isAlive() && this.method5047() && this.field5962 >= 1 && this.field5962 % 5 == 0) {
          BlockPos var3 = this.getPosition();
          if (Class3441.method12114(this.world, var3)) {
-            this.world.playEvent(2001, var3, Block.getStateId(Blocks.SAND.method11579()));
+            this.world.playEvent(2001, var3, Block.getStateId(Blocks.SAND.getDefaultState()));
          }
       }
    }

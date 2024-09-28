@@ -25,7 +25,7 @@ public class Class8464 {
            List<Class8557> var0, IBlockDisplayReader var1, BlockState var2, BlockPos var3, Direction var4, RenderType var5, long var6, Class8391 var8
    ) {
       if (var4 != null) {
-         if (var8.method29427() && Class9753.method38322(var1.getBlockState(var3.method8349(var4)), var2)) {
+         if (var8.method29427() && Class9753.method38322(var1.getBlockState(var3.offset(var4)), var2)) {
             return field36283;
          }
 

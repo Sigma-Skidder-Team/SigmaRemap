@@ -7,6 +7,8 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
@@ -156,18 +158,18 @@ public class ActiveRenderInfo {
 
    public FluidState method37512() {
       if (!this.valid) {
-         return Class9479.field44064.method25049();
+         return Fluids.EMPTY.method25049();
       } else {
          FluidState var3 = this.world.getFluidState(this.blockPos);
          return !var3.method23474()
                && this.pos.y >= (double)((float)this.blockPos.getY() + var3.method23475(this.world, this.blockPos))
-            ? Class9479.field44064.method25049()
+            ? Fluids.EMPTY.method25049()
             : var3;
       }
    }
 
    public BlockState method37513() {
-      return this.valid ? this.world.getBlockState(this.blockPos) : Blocks.AIR.method11579();
+      return this.valid ? this.world.getBlockState(this.blockPos) : Blocks.AIR.getDefaultState();
    }
 
    public void setAnglesInternal(float var1, float var2) {
@@ -184,7 +186,7 @@ public class ActiveRenderInfo {
 
          return var3;
       } else {
-         return Blocks.AIR.method11579();
+         return Blocks.AIR.getDefaultState();
       }
    }
 

@@ -233,7 +233,7 @@ public class Class9422 {
          }
       } else if (!var8) {
          if (field43688) {
-            BlockPos var9 = var2.down().method8349(var3);
+            BlockPos var9 = var2.down().offset(var3);
             BlockState var10 = var0.getBlockState(var9);
             if (var10.getBlock() == Blocks.field36398) {
                return field43705.method22619(var1, var3, field43715);
@@ -276,7 +276,7 @@ public class Class9422 {
    }
 
    private static Block method36154(BlockPos var0, Direction var1, IBlockReader var2) {
-      BlockPos var5 = var0.method8349(var1);
+      BlockPos var5 = var0.offset(var1);
       return var2.getBlockState(var5).getBlock();
    }
 

@@ -7,6 +7,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.network.play.server.SChatPacket;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -22,9 +23,9 @@ public class Class3294 extends Class3292 {
 
    @Nullable
    @Override
-   public Class5909 method11836(Class5909 var1) {
-      BlockPos var4 = var1.method18345();
-      World var5 = var1.method18360();
+   public BlockItemUseContext method11836(BlockItemUseContext var1) {
+      BlockPos var4 = var1.getPos();
+      World var5 = var1.getWorld();
       BlockState var6 = var5.getBlockState(var4);
       Block var7 = this.method11845();
       if (!var6.isIn(var7)) {
@@ -32,9 +33,9 @@ public class Class3294 extends Class3292 {
       } else {
          Direction var8;
          if (!var1.method18351()) {
-            var8 = var1.method18354() != Direction.UP ? Direction.UP : var1.method18350();
+            var8 = var1.getFace() != Direction.UP ? Direction.UP : var1.getPlacementHorizontalFacing();
          } else {
-            var8 = !var1.method18356() ? var1.method18354() : var1.method18354().getOpposite();
+            var8 = !var1.method18356() ? var1.getFace() : var1.getFace().getOpposite();
          }
 
          int var9 = 0;
@@ -56,13 +57,13 @@ public class Class3294 extends Class3292 {
             var6 = var5.getBlockState(var10);
             if (!var6.isIn(this.method11845())) {
                if (var6.method23441(var1)) {
-                  return Class5909.method18344(var1, var10, var8);
+                  return BlockItemUseContext.method18344(var1, var10, var8);
                }
                break;
             }
 
             var10.method8379(var8);
-            if (var8.getAxis().method324()) {
+            if (var8.getAxis().isHorizontal()) {
                var9++;
             }
          }

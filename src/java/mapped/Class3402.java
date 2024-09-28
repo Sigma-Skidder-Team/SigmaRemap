@@ -5,13 +5,16 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.server.ServerWorld;
 
@@ -42,16 +45,16 @@ public class Class3402 extends Block {
 
    public Class3402(Properties var1) {
       super(var1);
-      this.method11578(
-         this.field18612
-            .method35393()
+      this.setDefaultState(
+         this.stateContainer
+            .getBaseState()
             .with(field19064, Boolean.valueOf(false))
             .with(field19065, Boolean.valueOf(false))
             .with(field19066, Boolean.valueOf(false))
             .with(field19067, Boolean.valueOf(false))
             .with(field19068, Boolean.valueOf(false))
       );
-      this.field19075 = ImmutableMap.copyOf(this.field18612.getValidStates().stream().collect(Collectors.toMap(Function.identity(), Class3402::method12030)));
+      this.field19075 = ImmutableMap.copyOf(this.stateContainer.getValidStates().stream().collect(Collectors.toMap(Function.identity(), Class3402::method12030)));
    }
 
    private static VoxelShape method12030(BlockState var0) {
@@ -80,7 +83,7 @@ public class Class3402 extends Block {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return this.field19075.get(var1);
    }
 
@@ -109,7 +112,7 @@ public class Class3402 extends Block {
       if (var3 == Direction.DOWN) {
          return false;
       } else {
-         BlockPos var6 = var2.method8349(var3);
+         BlockPos var6 = var2.offset(var3);
          if (!method12034(var1, var6, var3)) {
             if (var3.getAxis() == Direction.Axis.Y) {
                return false;
@@ -157,23 +160,23 @@ public class Class3402 extends Block {
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       if (var2 != Direction.DOWN) {
          BlockState var9 = this.method12035(var1, var4, var5);
-         return this.method12031(var9) ? var9 : Blocks.AIR.method11579();
+         return this.method12031(var9) ? var9 : Blocks.AIR.getDefaultState();
       } else {
-         return super.method11491(var1, var2, var3, var4, var5, var6);
+         return super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
       }
    }
 
    @Override
-   public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void randomTick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var2.rand.nextInt(4) == 0) {
          Direction var7 = Direction.getRandomDirection(var4);
          BlockPos var8 = var3.up();
-         if (var7.getAxis().method324() && !var1.<Boolean>get(method12039(var7))) {
+         if (var7.getAxis().isHorizontal() && !var1.<Boolean>get(method12039(var7))) {
             if (this.method12038(var2, var3)) {
-               BlockPos var19 = var3.method8349(var7);
+               BlockPos var19 = var3.offset(var7);
                BlockState var21 = var2.getBlockState(var19);
                if (!var21.isAir()) {
                   if (method12034(var2, var19, var7)) {
@@ -184,20 +187,20 @@ public class Class3402 extends Block {
                   Direction var24 = var7.rotateYCCW();
                   boolean var13 = var1.<Boolean>get(method12039(var23));
                   boolean var14 = var1.<Boolean>get(method12039(var24));
-                  BlockPos var15 = var19.method8349(var23);
-                  BlockPos var16 = var19.method8349(var24);
+                  BlockPos var15 = var19.offset(var23);
+                  BlockPos var16 = var19.offset(var24);
                   if (var13 && method12034(var2, var15, var23)) {
-                     var2.setBlockState(var19, this.method11579().with(method12039(var23), Boolean.valueOf(true)), 2);
+                     var2.setBlockState(var19, this.getDefaultState().with(method12039(var23), Boolean.valueOf(true)), 2);
                   } else if (var14 && method12034(var2, var16, var24)) {
-                     var2.setBlockState(var19, this.method11579().with(method12039(var24), Boolean.valueOf(true)), 2);
+                     var2.setBlockState(var19, this.getDefaultState().with(method12039(var24), Boolean.valueOf(true)), 2);
                   } else {
                      Direction var17 = var7.getOpposite();
-                     if (var13 && var2.method7007(var15) && method12034(var2, var3.method8349(var23), var17)) {
-                        var2.setBlockState(var15, this.method11579().with(method12039(var17), Boolean.valueOf(true)), 2);
-                     } else if (var14 && var2.method7007(var16) && method12034(var2, var3.method8349(var24), var17)) {
-                        var2.setBlockState(var16, this.method11579().with(method12039(var17), Boolean.valueOf(true)), 2);
+                     if (var13 && var2.method7007(var15) && method12034(var2, var3.offset(var23), var17)) {
+                        var2.setBlockState(var15, this.getDefaultState().with(method12039(var17), Boolean.valueOf(true)), 2);
+                     } else if (var14 && var2.method7007(var16) && method12034(var2, var3.offset(var24), var17)) {
+                        var2.setBlockState(var16, this.getDefaultState().with(method12039(var17), Boolean.valueOf(true)), 2);
                      } else if ((double)var2.rand.nextFloat() < 0.05 && method12034(var2, var19.up(), Direction.UP)) {
-                        var2.setBlockState(var19, this.method11579().with(field19064, Boolean.valueOf(true)), 2);
+                        var2.setBlockState(var19, this.getDefaultState().with(field19064, Boolean.valueOf(true)), 2);
                      }
                   }
                }
@@ -217,7 +220,7 @@ public class Class3402 extends Block {
                   BlockState var18 = var1;
 
                   for (Direction var22 : Direction.Plane.HORIZONTAL) {
-                     if (var4.nextBoolean() || !method12034(var2, var8.method8349(var22), Direction.UP)) {
+                     if (var4.nextBoolean() || !method12034(var2, var8.offset(var22), Direction.UP)) {
                         var18 = var18.with(method12039(var22), Boolean.valueOf(false));
                      }
                   }
@@ -234,7 +237,7 @@ public class Class3402 extends Block {
                BlockPos var9 = var3.down();
                BlockState var10 = var2.getBlockState(var9);
                if (var10.isAir() || var10.isIn(this)) {
-                  BlockState var11 = !var10.isAir() ? var10 : this.method11579();
+                  BlockState var11 = !var10.isAir() ? var10 : this.getDefaultState();
                   BlockState var12 = this.method12036(var1, var11, var4);
                   if (var11 != var12 && this.method12037(var12)) {
                      var2.setBlockState(var9, var12, 2);
@@ -283,23 +286,23 @@ public class Class3402 extends Block {
    }
 
    @Override
-   public boolean method11497(BlockState var1, Class5909 var2) {
-      BlockState var5 = var2.method18360().getBlockState(var2.method18345());
+   public boolean method11497(BlockState var1, BlockItemUseContext var2) {
+      BlockState var5 = var2.getWorld().getBlockState(var2.getPos());
       return !var5.isIn(this) ? super.method11497(var1, var2) : this.method12032(var5) < field19069.size();
    }
 
    @Nullable
    @Override
-   public BlockState method11495(Class5909 var1) {
-      BlockState var4 = var1.method18360().getBlockState(var1.method18345());
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      BlockState var4 = var1.getWorld().getBlockState(var1.getPos());
       boolean var5 = var4.isIn(this);
-      BlockState var6 = !var5 ? this.method11579() : var4;
+      BlockState var6 = !var5 ? this.getDefaultState() : var4;
 
       for (Direction var10 : var1.method18349()) {
          if (var10 != Direction.DOWN) {
             BooleanProperty var11 = method12039(var10);
             boolean var12 = var5 && var4.<Boolean>get(var11);
-            if (!var12 && this.method12033(var1.method18360(), var1.method18345(), var10)) {
+            if (!var12 && this.method12033(var1.getWorld(), var1.getPos(), var10)) {
                return var6.with(var11, Boolean.valueOf(true));
             }
          }
@@ -309,8 +312,8 @@ public class Class3402 extends Block {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field19064, field19065, field19066, field19067, field19068);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field19064, field19065, field19066, field19067, field19068);
    }
 
    @Override

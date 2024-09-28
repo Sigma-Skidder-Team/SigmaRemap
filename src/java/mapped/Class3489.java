@@ -6,6 +6,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
@@ -26,11 +27,11 @@ public class Class3489 extends Class3194 {
 
    public Class3489(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().with(field19354, Integer.valueOf(0)));
+      this.setDefaultState(this.stateContainer.getBaseState().with(field19354, Integer.valueOf(0)));
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return field19355[var1.<Integer>get(field19354)];
    }
 
@@ -40,12 +41,12 @@ public class Class3489 extends Class3194 {
    }
 
    @Override
-   public boolean method11499(BlockState var1) {
+   public boolean ticksRandomly(BlockState var1) {
       return var1.<Integer>get(field19354) < 3;
    }
 
    @Override
-   public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void randomTick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       int var7 = var1.<Integer>get(field19354);
       if (var7 < 3 && var4.nextInt(10) == 0) {
          var1 = var1.with(field19354, Integer.valueOf(var7 + 1));
@@ -59,7 +60,7 @@ public class Class3489 extends Class3194 {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field19354);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field19354);
    }
 }

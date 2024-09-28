@@ -16,6 +16,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Matrix3f;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.math.vector.Vector3i;
 import net.optifine.render.GlBlendState;
@@ -514,7 +515,7 @@ public class ShadersRender {
          GlStateManager.disableLighting();
          Class8892 var9 = var3.getLast();
          Matrix4f var10 = var9.getMatrix();
-         Class8967 var11 = var9.method32362();
+         Matrix3f var11 = var9.method32362();
          IVertexBuilder var12 = var4.method25597(RenderType.getEntitySolid(field24257));
          float var13 = 0.5F;
          float var14 = var13 * 0.15F;

@@ -1,11 +1,13 @@
 package mapped;
 
+import net.minecraft.util.math.vector.Matrix3f;
+
 public final class Class8892 {
    private static String[] field40236;
    private final Matrix4f field40237;
-   private final Class8967 field40238;
+   private final Matrix3f field40238;
 
-   public Class8892(Matrix4f var1, Class8967 var2) {
+   public Class8892(Matrix4f var1, Matrix3f var2) {
       this.field40237 = var1;
       this.field40238 = var2;
    }
@@ -14,7 +16,7 @@ public final class Class8892 {
       return this.field40237;
    }
 
-   public Class8967 method32362() {
+   public Matrix3f method32362() {
       return this.field40238;
    }
 
@@ -29,7 +31,7 @@ public final class Class8892 {
    }
 
    // $VF: synthetic method
-   public static Class8967 method32364(Class8892 var0) {
+   public static Matrix3f method32364(Class8892 var0) {
       return var0.field40238;
    }
 }

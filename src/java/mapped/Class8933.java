@@ -28,14 +28,14 @@ public interface Class8933 {
    default void method32662(PacketBuffer var1) {
       this.method32657().method27139(var1, Registry.BLOCK);
       this.method32658().method27139(var1, Registry.ITEM);
-      this.method32659().method27139(var1, Registry.field16070);
+      this.method32659().method27139(var1, Registry.FLUID);
       this.method32660().method27139(var1, Registry.ENTITY_TYPE);
    }
 
    static Class8933 method32663(PacketBuffer var0) {
       Class7984 var3 = Class7984.<Block>method27140(var0, Registry.BLOCK);
       Class7984 var4 = Class7984.<Item>method27140(var0, Registry.ITEM);
-      Class7984 var5 = Class7984.<Fluid>method27140(var0, Registry.field16070);
+      Class7984 var5 = Class7984.<Fluid>method27140(var0, Registry.FLUID);
       Class7984 var6 = Class7984.<EntityType<?>>method27140(var0, Registry.ENTITY_TYPE);
       return method32664(var3, var4, var5, var6);
    }

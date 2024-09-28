@@ -2,7 +2,9 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -16,13 +18,13 @@ public class Class3223 extends Block {
 
    public Class3223(Properties var1) {
       super(var1);
-      this.method11578(this.method11579().with(field18661, Boolean.valueOf(false)));
+      this.setDefaultState(this.getDefaultState().with(field18661, Boolean.valueOf(false)));
    }
 
    @Nullable
    @Override
-   public BlockState method11495(Class5909 var1) {
-      return this.method11579().with(field18661, Boolean.valueOf(var1.method18360().method6780(var1.method18345())));
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      return this.getDefaultState().with(field18661, Boolean.valueOf(var1.getWorld().method6780(var1.getPos())));
    }
 
    @Override
@@ -33,21 +35,21 @@ public class Class3223 extends Block {
             if (!var9) {
                var2.setBlockState(var3, var1.method23459(field18661), 2);
             } else {
-               var2.method6860().method20726(var3, this, 4);
+               var2.method6860().scheduleTick(var3, this, 4);
             }
          }
       }
    }
 
    @Override
-   public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void tick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var1.<Boolean>get(field18661) && !var2.method6780(var3)) {
          var2.setBlockState(var3, var1.method23459(field18661), 2);
       }
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field18661);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field18661);
    }
 }

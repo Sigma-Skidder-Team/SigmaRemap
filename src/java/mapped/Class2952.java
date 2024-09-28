@@ -31,12 +31,12 @@ public class Class2952 extends Class2898<Class4712> {
             var11.method8372(var13, 0, var15);
             BlockPos var16 = var1.method7006(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, var11);
             if (var1.method7007(var16) || var1.getBlockState(var16).method23414(var1, var16).isEmpty()) {
-               var1.setBlockState(var16, Blocks.CHEST.method11579(), 2);
+               var1.setBlockState(var16, Blocks.CHEST.getDefaultState(), 2);
                Class939.method3740(var1, var3, var16, Class8793.field39534);
-               BlockState var17 = Blocks.TORCH.method11579();
+               BlockState var17 = Blocks.TORCH.getDefaultState();
 
                for (Direction var19 : Direction.Plane.HORIZONTAL) {
-                  BlockPos var20 = var16.method8349(var19);
+                  BlockPos var20 = var16.offset(var19);
                   if (var17.method23443(var1, var20)) {
                      var1.setBlockState(var20, var17, 2);
                   }

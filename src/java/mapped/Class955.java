@@ -87,7 +87,7 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
    private BlockState method3854() {
       return !this.method3846() && this.method3848() && this.field5361.getBlock() instanceof Class3435
          ? Blocks.PISTON_HEAD
-            .method11579()
+            .getDefaultState()
             .with(Class3436.field19212, Boolean.valueOf(this.field5366 > 0.25F))
             .with(Class3436.field19211, !this.field5361.isIn(Blocks.STICKY_PISTON) ? PistonType.field638 : PistonType.field639)
             .with(Class3436.field19198, this.field5361.<Direction>get(Class3435.field19198))
@@ -175,7 +175,7 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
    private void method3857(float var1) {
       if (this.method3859()) {
          Direction var4 = this.method3860();
-         if (var4.getAxis().method324()) {
+         if (var4.getAxis().isHorizontal()) {
             double var5 = this.field5361.method23414(this.world, this.pos).getEnd(Direction.Axis.Y);
             AxisAlignedBB var7 = this.method3862(new AxisAlignedBB(0.0, var5, 0.0, 1.0, 1.5000000999999998, 1.0));
             double var8 = (double)(var1 - this.field5366);
@@ -260,7 +260,7 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
             if (!this.field5364) {
                var3 = Block.method11542(this.field5361, this.world, this.pos);
             } else {
-               var3 = Blocks.AIR.method11579();
+               var3 = Blocks.AIR.getDefaultState();
             }
 
             this.world.setBlockState(this.pos, var3, 3);
@@ -289,8 +289,8 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
          if (this.field5361 != null && this.world.getBlockState(this.pos).isIn(Blocks.MOVING_PISTON)) {
             BlockState var4 = Block.method11542(this.field5361, this.world, this.pos);
             if (!var4.isAir()) {
-               if (var4.method23462(BlockStateProperties.field39710) && var4.<Boolean>get(BlockStateProperties.field39710)) {
-                  var4 = var4.with(BlockStateProperties.field39710, Boolean.valueOf(false));
+               if (var4.method23462(BlockStateProperties.WATERLOGGED) && var4.<Boolean>get(BlockStateProperties.WATERLOGGED)) {
+                  var4 = var4.with(BlockStateProperties.WATERLOGGED, Boolean.valueOf(false));
                }
 
                this.world.setBlockState(this.pos, var4, 67);
@@ -342,7 +342,7 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
             var7 = this.field5361;
          } else {
             var7 = Blocks.PISTON_HEAD
-               .method11579()
+               .getDefaultState()
                .with(Class3436.field19198, this.field5362)
                .with(Class3436.field19212, Boolean.valueOf(this.field5363 != 1.0F - this.field5366 < 0.25F));
          }

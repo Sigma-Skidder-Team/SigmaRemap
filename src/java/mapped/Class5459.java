@@ -17,7 +17,7 @@ public class Class5459 extends StructureStart<Class4712> {
       int var10 = var4 * 16;
       int var11 = var5 * 16;
       BlockPos var12 = new BlockPos(var10, 90, var11);
-      Rotation var13 = Rotation.method254(this.field24201);
+      Rotation var13 = Rotation.randomRotation(this.field24201);
       Class3191.method11407(var3, var12, var13, this.field24196, this.field24201);
       this.method17113();
    }

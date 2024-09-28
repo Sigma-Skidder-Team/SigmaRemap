@@ -18,7 +18,7 @@ import java.util.Random;
 public class Class2929 extends Class2898<Class4712> {
    private static final Logger field18002 = LogManager.getLogger();
    private static final EntityType<?>[] field18003 = new EntityType[]{EntityType.field41078, EntityType.field41107, EntityType.field41107, EntityType.field41085};
-   private static final BlockState field18004 = Blocks.field37012.method11579();
+   private static final BlockState field18004 = Blocks.field37012.getDefaultState();
 
    public Class2929(Codec<Class4712> var1) {
       super(var1);
@@ -74,9 +74,9 @@ public class Class2929 extends Class2898<Class4712> {
                      var1.setBlockState(var34, field18004, 2);
                   } else if (var36.getMaterial().isSolid() && !var36.isIn(Blocks.CHEST)) {
                      if (var30 == -1 && var3.nextInt(4) != 0) {
-                        var1.setBlockState(var34, Blocks.field36526.method11579(), 2);
+                        var1.setBlockState(var34, Blocks.field36526.getDefaultState(), 2);
                      } else {
-                        var1.setBlockState(var34, Blocks.field36399.method11579(), 2);
+                        var1.setBlockState(var34, Blocks.field36399.getDefaultState(), 2);
                      }
                   }
                }
@@ -93,13 +93,13 @@ public class Class2929 extends Class2898<Class4712> {
                   int var24 = 0;
 
                   for (Direction var26 : Direction.Plane.HORIZONTAL) {
-                     if (var1.getBlockState(var38.method8349(var26)).getMaterial().isSolid()) {
+                     if (var1.getBlockState(var38.offset(var26)).getMaterial().isSolid()) {
                         var24++;
                      }
                   }
 
                   if (var24 == 1) {
-                     var1.setBlockState(var38, Class4178.method12934(var1, var38, Blocks.CHEST.method11579()), 2);
+                     var1.setBlockState(var38, Class4178.method12934(var1, var38, Blocks.CHEST.getDefaultState()), 2);
                      Class939.method3740(var1, var3, var38, Class8793.field39536);
                      break;
                   }
@@ -107,7 +107,7 @@ public class Class2929 extends Class2898<Class4712> {
             }
          }
 
-         var1.setBlockState(var4, Blocks.field36532.method11579(), 2);
+         var1.setBlockState(var4, Blocks.field36532.getDefaultState(), 2);
          TileEntity var29 = var1.getTileEntity(var4);
          if (!(var29 instanceof Class960)) {
             field18002.error("Failed to fetch mob spawner entity at ({}, {}, {})", var4.getX(), var4.getY(), var4.getZ());

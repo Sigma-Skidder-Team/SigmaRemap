@@ -35,22 +35,22 @@ public class Class9686 {
       field45295 = new int[Rotation.values().length];
 
       try {
-         field45295[Rotation.field185.ordinal()] = 1;
+         field45295[Rotation.NONE.ordinal()] = 1;
       } catch (NoSuchFieldError var9) {
       }
 
       try {
-         field45295[Rotation.field187.ordinal()] = 2;
+         field45295[Rotation.CLOCKWISE_180.ordinal()] = 2;
       } catch (NoSuchFieldError var8) {
       }
 
       try {
-         field45295[Rotation.field188.ordinal()] = 3;
+         field45295[Rotation.COUNTERCLOCKWISE_90.ordinal()] = 3;
       } catch (NoSuchFieldError var7) {
       }
 
       try {
-         field45295[Rotation.field186.ordinal()] = 4;
+         field45295[Rotation.CLOCKWISE_90.ordinal()] = 4;
       } catch (NoSuchFieldError var6) {
       }
 

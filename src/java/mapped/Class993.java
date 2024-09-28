@@ -6,6 +6,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.fluid.FluidState;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.DamageSource;
@@ -32,7 +33,7 @@ public class Class993 extends AbstractMinecartEntity {
 
    @Override
    public BlockState method3604() {
-      return Blocks.TNT.method11579();
+      return Blocks.TNT.getDefaultState();
    }
 
    @Override

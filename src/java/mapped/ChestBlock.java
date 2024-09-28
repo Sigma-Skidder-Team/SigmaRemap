@@ -1,6 +1,11 @@
 package mapped;
 
 import net.minecraft.block.HorizontalBlock;
+import net.minecraft.block.IWaterLoggable;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
+import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.DirectionProperty;
 import it.unimi.dsi.fastutil.floats.Float2FloatFunction;
@@ -11,6 +16,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.state.EnumProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.state.properties.ChestType;
 import net.minecraft.tileentity.TileEntity;
@@ -21,6 +27,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
 import java.util.List;
@@ -29,11 +36,11 @@ import java.util.function.BiPredicate;
 import java.util.function.Supplier;
 import javax.annotation.Nullable;
 
-public class ChestBlock extends Class3346<ChestTileEntity> implements Class3207 {
+public class ChestBlock extends Class3346<ChestTileEntity> implements IWaterLoggable {
    private static String[] field18864;
    public static final DirectionProperty field18865 = HorizontalBlock.HORIZONTAL_FACING;
    public static final EnumProperty<ChestType> TYPE = BlockStateProperties.field39765;
-   public static final BooleanProperty field18867 = BlockStateProperties.field39710;
+   public static final BooleanProperty field18867 = BlockStateProperties.WATERLOGGED;
    public static final VoxelShape field18868 = Block.makeCuboidShape(1.0, 0.0, 0.0, 15.0, 14.0, 15.0);
    public static final VoxelShape field18869 = Block.makeCuboidShape(1.0, 0.0, 1.0, 15.0, 14.0, 16.0);
    public static final VoxelShape field18870 = Block.makeCuboidShape(0.0, 0.0, 1.0, 15.0, 14.0, 15.0);
@@ -44,9 +51,9 @@ public class ChestBlock extends Class3346<ChestTileEntity> implements Class3207 
 
    public ChestBlock(Properties var1, Supplier<TileEntityType<? extends ChestTileEntity>> var2) {
       super(var1, var2);
-      this.method11578(
-         this.field18612
-            .method35393()
+      this.setDefaultState(
+         this.stateContainer
+            .getBaseState()
             .with(field18865, Direction.NORTH)
             .with(TYPE, ChestType.field379)
             .with(field18867, Boolean.valueOf(false))
@@ -68,12 +75,12 @@ public class ChestBlock extends Class3346<ChestTileEntity> implements Class3207 
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       if (var1.<Boolean>get(field18867)) {
-         var4.method6861().method20726(var5, Class9479.field44066, Class9479.field44066.method25057(var4));
+         var4.getPendingFluidTicks().scheduleTick(var5, Fluids.WATER, Fluids.WATER.getTickRate(var4));
       }
 
-      if (var3.isIn(this) && var2.getAxis().method324()) {
+      if (var3.isIn(this) && var2.getAxis().isHorizontal()) {
          ChestType var9 = var3.<ChestType>get(TYPE);
          if (var1.<ChestType>get(TYPE) == ChestType.field379
             && var9 != ChestType.field379
@@ -85,11 +92,11 @@ public class ChestBlock extends Class3346<ChestTileEntity> implements Class3207 
          return var1.with(TYPE, ChestType.field379);
       }
 
-      return super.method11491(var1, var2, var3, var4, var5, var6);
+      return super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       if (var1.<ChestType>get(TYPE) == ChestType.field379) {
          return field18872;
       } else {
@@ -113,13 +120,13 @@ public class ChestBlock extends Class3346<ChestTileEntity> implements Class3207 
    }
 
    @Override
-   public BlockState method11495(Class5909 var1) {
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
       ChestType var4 = ChestType.field379;
-      Direction var5 = var1.method18350().getOpposite();
-      FluidState var6 = var1.method18360().getFluidState(var1.method18345());
+      Direction var5 = var1.getPlacementHorizontalFacing().getOpposite();
+      FluidState var6 = var1.getWorld().getFluidState(var1.getPos());
       boolean var7 = var1.method18351();
-      Direction var8 = var1.method18354();
-      if (var8.getAxis().method324() && var7) {
+      Direction var8 = var1.getFace();
+      if (var8.getAxis().isHorizontal() && var7) {
          Direction var9 = this.method11909(var1, var8.getOpposite());
          if (var9 != null && var9.getAxis() != var8.getAxis()) {
             var5 = var9;
@@ -137,20 +144,20 @@ public class ChestBlock extends Class3346<ChestTileEntity> implements Class3207 
          }
       }
 
-      return this.method11579()
+      return this.getDefaultState()
          .with(field18865, var5)
          .with(TYPE, var4)
-         .with(field18867, Boolean.valueOf(var6.method23472() == Class9479.field44066));
+         .with(field18867, Boolean.valueOf(var6.getFluid() == Fluids.WATER));
    }
 
    @Override
-   public FluidState method11498(BlockState var1) {
-      return !var1.<Boolean>get(field18867) ? super.method11498(var1) : Class9479.field44066.method25078(false);
+   public FluidState getFluidState(BlockState var1) {
+      return !var1.<Boolean>get(field18867) ? super.getFluidState(var1) : Fluids.WATER.getStillFluidState(false);
    }
 
    @Nullable
-   private Direction method11909(Class5909 var1, Direction var2) {
-      BlockState var5 = var1.method18360().getBlockState(var1.method18345().method8349(var2));
+   private Direction method11909(BlockItemUseContext var1, Direction var2) {
+      BlockState var5 = var1.getWorld().getBlockState(var1.getPos().offset(var2));
       return var5.isIn(this) && var5.get(TYPE) == ChestType.field379 ? var5.<Direction>get(field18865) : null;
    }
 
@@ -165,7 +172,7 @@ public class ChestBlock extends Class3346<ChestTileEntity> implements Class3207 
    }
 
    @Override
-   public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+   public void onReplaced(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       if (!var1.isIn(var4.getBlock())) {
          TileEntity var8 = var2.getTileEntity(var3);
          if (var8 instanceof IInventory) {
@@ -173,12 +180,12 @@ public class ChestBlock extends Class3346<ChestTileEntity> implements Class3207 
             var2.updateComparatorOutputLevel(var3, this);
          }
 
-         super.method11513(var1, var2, var3, var4, var5);
+         super.onReplaced(var1, var2, var3, var4, var5);
       }
    }
 
    @Override
-   public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
+   public ActionResultType onBlockActivated(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       if (!var2.isRemote) {
          Class949 var9 = this.method11528(var1, var2, var3);
          if (var9 != null) {
@@ -204,7 +211,7 @@ public class ChestBlock extends Class3346<ChestTileEntity> implements Class3207 
 
    @Override
    public Class7995<? extends ChestTileEntity> method11904(BlockState var1, World var2, BlockPos var3, boolean var4) {
-      BiPredicate<Class1660, BlockPos> var7;
+      BiPredicate<IWorld, BlockPos> var7;
       if (!var4) {
          var7 = ChestBlock::method11913;
       } else {
@@ -229,7 +236,7 @@ public class ChestBlock extends Class3346<ChestTileEntity> implements Class3207 
       return new ChestTileEntity();
    }
 
-   public static boolean method11913(Class1660 var0, BlockPos var1) {
+   public static boolean method11913(IWorld var0, BlockPos var1) {
       return method11914(var0, var1) || method11915(var0, var1);
    }
 
@@ -238,7 +245,7 @@ public class ChestBlock extends Class3346<ChestTileEntity> implements Class3207 
       return var0.getBlockState(var4).method23400(var0, var4);
    }
 
-   private static boolean method11915(Class1660 var0, BlockPos var1) {
+   private static boolean method11915(IWorld var0, BlockPos var1) {
       List<Class1098> var4 = var0.getEntitiesWithinAABB(
          Class1098.class,
          new AxisAlignedBB(
@@ -282,12 +289,12 @@ public class ChestBlock extends Class3346<ChestTileEntity> implements Class3207 
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field18865, TYPE, field18867);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field18865, TYPE, field18867);
    }
 
    @Override
-   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
+   public boolean allowsMovement(BlockState var1, IBlockReader var2, BlockPos var3, PathType var4) {
       return false;
    }
 }

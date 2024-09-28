@@ -59,13 +59,13 @@ public class Class3385 extends Block implements Class3196 {
       }
 
       if (var8 && var7) {
-         var1.setBlockState(var3, !var2.nextBoolean() ? Blocks.field37083.method11579() : Blocks.field37074.method11579(), 3);
+         var1.setBlockState(var3, !var2.nextBoolean() ? Blocks.field37083.getDefaultState() : Blocks.field37074.getDefaultState(), 3);
       } else if (!var8) {
          if (var7) {
-            var1.setBlockState(var3, Blocks.field37083.method11579(), 3);
+            var1.setBlockState(var3, Blocks.field37083.getDefaultState(), 3);
          }
       } else {
-         var1.setBlockState(var3, Blocks.field37074.method11579(), 3);
+         var1.setBlockState(var3, Blocks.field37074.getDefaultState(), 3);
       }
    }
 }

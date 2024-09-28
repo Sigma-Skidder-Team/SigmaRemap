@@ -5,6 +5,7 @@ import com.google.common.collect.Maps;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.state.Property;
 import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.util.ObjectIntIdentityMap;
 import net.minecraft.util.math.BlockPos;
@@ -18,7 +19,7 @@ import java.util.Set;
 public class BlockColors {
    private static String[] field36031;
    private final ObjectIntIdentityMap<Class8040> field36032 = new ObjectIntIdentityMap<Class8040>(32);
-   private final Map<Block, Set<Class8550<?>>> field36033 = Maps.newHashMap();
+   private final Map<Block, Set<Property<?>>> field36033 = Maps.newHashMap();
 
    public static BlockColors init() {
       BlockColors var2 = new BlockColors();
@@ -90,17 +91,17 @@ public class BlockColors {
       }
    }
 
-   private void method29467(Set<Class8550<?>> var1, Block... var2) {
+   private void method29467(Set<Property<?>> var1, Block... var2) {
       for (Block var8 : var2) {
          this.field36033.put(var8, var1);
       }
    }
 
-   private void method29468(Class8550<?> var1, Block... var2) {
+   private void method29468(Property<?> var1, Block... var2) {
       this.method29467(ImmutableSet.of(var1), var2);
    }
 
-   public Set<Class8550<?>> method29469(Block var1) {
+   public Set<Property<?>> method29469(Block var1) {
       return this.field36033.getOrDefault(var1, ImmutableSet.of());
    }
 }

@@ -4,13 +4,14 @@ import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.fluid.FluidState;
 import net.minecraft.network.PacketBuffer;
 
 import java.util.function.Predicate;
 
 public class ChunkSection {
    private static String[] field30367;
-   private static final Class7833<BlockState> field30368 = new Class7836<BlockState>(Block.field18610, Blocks.AIR.method11579());
+   private static final Class7833<BlockState> field30368 = new Class7836<BlockState>(Block.field18610, Blocks.AIR.getDefaultState());
    private final int field30369;
    private short field30370;
    private short field30371;
@@ -28,7 +29,7 @@ public class ChunkSection {
       this.field30371 = var3;
       this.field30372 = var4;
       this.field30373 = new Class8556<BlockState>(
-         field30368, Block.field18610, Class8354::method29285, Class8354::method29287, Blocks.AIR.method11579()
+         field30368, Block.field18610, Class8354::method29285, Class8354::method29287, Blocks.AIR.getDefaultState()
       );
    }
 

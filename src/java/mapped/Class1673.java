@@ -6,6 +6,8 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.fluid.Fluid;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
@@ -195,12 +197,12 @@ public class Class1673 extends Class1672 {
 
    @Override
    public Class6806<Block> getBlocksToBeTicked() {
-      return new Class6806<Block>(var0 -> var0.method11579().isAir(), this.getPos());
+      return new Class6806<Block>(var0 -> var0.getDefaultState().isAir(), this.getPos());
    }
 
    @Override
    public Class6806<Fluid> getFluidsToBeTicked() {
-      return new Class6806<Fluid>(var0 -> var0 == Class9479.field44064, this.getPos());
+      return new Class6806<Fluid>(var0 -> var0 == Fluids.EMPTY, this.getPos());
    }
 
    @Override

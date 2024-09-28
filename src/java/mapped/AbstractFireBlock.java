@@ -5,6 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
 import net.minecraft.util.SoundEvents;
@@ -26,23 +27,23 @@ public abstract class AbstractFireBlock extends Block {
    }
 
    @Override
-   public BlockState method11495(Class5909 var1) {
-      return method12009(var1.method18360(), var1.method18345());
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      return method12009(var1.getWorld(), var1.getPos());
    }
 
    public static BlockState method12009(IBlockReader var0, BlockPos var1) {
       BlockPos var4 = var1.down();
       BlockState var5 = var0.getBlockState(var4);
-      return !Class3398.method12014(var5.getBlock()) ? ((Class3399) Blocks.FIRE).method12016(var0, var1) : Blocks.field36531.method11579();
+      return !Class3398.method12014(var5.getBlock()) ? ((Class3399) Blocks.FIRE).method12016(var0, var1) : Blocks.field36531.getDefaultState();
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return field19035;
    }
 
    @Override
-   public void method11512(BlockState var1, World var2, BlockPos var3, Random var4) {
+   public void animateTick(BlockState var1, World var2, BlockPos var3, Random var4) {
       if (var4.nextInt(24) == 0) {
          var2.method6745(
             (double)var3.getX() + 0.5,
@@ -130,7 +131,7 @@ public abstract class AbstractFireBlock extends Block {
    }
 
    @Override
-   public void method11589(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+   public void onBlockAdded(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       if (!var4.isIn(var1.getBlock())) {
          if (method12011(var2)) {
             Optional var8 = Class7473.method24194(var2, var3, Direction.Axis.X);

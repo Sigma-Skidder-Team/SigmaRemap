@@ -14,6 +14,7 @@ import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluid;
+import net.minecraft.fluid.FluidState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.particles.IParticleData;
@@ -175,7 +176,7 @@ public class Class1691 implements ISeedReader {
             Block.spawnDrops(var7, this.field9205, var1, var8, var3, ItemStack.EMPTY);
          }
 
-         return this.setBlockState(var1, Blocks.AIR.method11579(), 3, var4);
+         return this.setBlockState(var1, Blocks.AIR.getDefaultState(), 3, var4);
       } else {
          return false;
       }
@@ -262,7 +263,7 @@ public class Class1691 implements ISeedReader {
 
    @Override
    public boolean removeBlock(BlockPos var1, boolean var2) {
-      return this.setBlockState(var1, Blocks.AIR.method11579(), 3);
+      return this.setBlockState(var1, Blocks.AIR.getDefaultState(), 3);
    }
 
    @Override
@@ -316,7 +317,7 @@ public class Class1691 implements ISeedReader {
    }
 
    @Override
-   public ITickList<Fluid> method6861() {
+   public ITickList<Fluid> getPendingFluidTicks() {
       return this.field9211;
    }
 

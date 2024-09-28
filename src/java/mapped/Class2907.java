@@ -6,6 +6,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -29,7 +30,7 @@ public class Class2907 extends Class2898<Class4712> {
                return true;
             }
 
-            var1.setBlockState(var8, Blocks.BASALT.method11579(), 2);
+            var1.setBlockState(var8, Blocks.BASALT.getDefaultState(), 2);
             var10 = var10 && this.method11246(var1, var3, var9.method8377(var8, Direction.NORTH));
             var11 = var11 && this.method11246(var1, var3, var9.method8377(var8, Direction.SOUTH));
             var12 = var12 && this.method11246(var1, var3, var9.method8377(var8, Direction.WEST));
@@ -60,7 +61,7 @@ public class Class2907 extends Class2898<Class4712> {
                   }
 
                   if (!var1.method7007(var9.method8377(var14, Direction.DOWN))) {
-                     var1.setBlockState(var14, Blocks.BASALT.method11579(), 2);
+                     var1.setBlockState(var14, Blocks.BASALT.getDefaultState(), 2);
                   }
                }
             }
@@ -72,17 +73,17 @@ public class Class2907 extends Class2898<Class4712> {
       }
    }
 
-   private void method11245(Class1660 var1, Random var2, BlockPos var3) {
+   private void method11245(IWorld var1, Random var2, BlockPos var3) {
       if (var2.nextBoolean()) {
-         var1.setBlockState(var3, Blocks.BASALT.method11579(), 2);
+         var1.setBlockState(var3, Blocks.BASALT.getDefaultState(), 2);
       }
    }
 
-   private boolean method11246(Class1660 var1, Random var2, BlockPos var3) {
+   private boolean method11246(IWorld var1, Random var2, BlockPos var3) {
       if (var2.nextInt(10) == 0) {
          return false;
       } else {
-         var1.setBlockState(var3, Blocks.BASALT.method11579(), 2);
+         var1.setBlockState(var3, Blocks.BASALT.getDefaultState(), 2);
          return true;
       }
    }

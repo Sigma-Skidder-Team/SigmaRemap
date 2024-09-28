@@ -13,12 +13,12 @@ import net.minecraft.world.ISeedReader;
 import java.util.Set;
 
 public abstract class Class4213 extends Class4178 {
-   public static final BlockState field20528 = Blocks.field36767.method11579();
-   public static final BlockState field20529 = Blocks.field36768.method11579();
-   public static final BlockState field20530 = Blocks.field36769.method11579();
+   public static final BlockState field20528 = Blocks.field36767.getDefaultState();
+   public static final BlockState field20529 = Blocks.field36768.getDefaultState();
+   public static final BlockState field20530 = Blocks.field36769.getDefaultState();
    public static final BlockState field20531 = field20529;
-   public static final BlockState field20532 = Blocks.field36776.method11579();
-   public static final BlockState field20533 = Blocks.WATER.method11579();
+   public static final BlockState field20532 = Blocks.field36776.getDefaultState();
+   public static final BlockState field20533 = Blocks.WATER.getDefaultState();
    public static final Set<Block> field20534 = ImmutableSet.<Block>builder()
       .add(Blocks.ICE)
       .add(Blocks.PACKED_ICE)
@@ -89,7 +89,7 @@ public abstract class Class4213 extends Class4178 {
                BlockState var14 = this.method12924(var1, var12, var11, var13, var2);
                if (!field20534.contains(var14.getBlock())) {
                   if (this.method12921(var11) >= var1.method6776() && var14 != field20533) {
-                     this.method12923(var1, Blocks.AIR.method11579(), var12, var11, var13, var2);
+                     this.method12923(var1, Blocks.AIR.getDefaultState(), var12, var11, var13, var2);
                   } else {
                      this.method12923(var1, field20533, var12, var11, var13, var2);
                   }

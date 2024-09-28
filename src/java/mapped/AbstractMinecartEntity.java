@@ -125,7 +125,7 @@ public abstract class AbstractMinecartEntity extends Entity {
       this.dataManager.register(field5213, 0);
       this.dataManager.register(field5214, 1);
       this.dataManager.register(field5215, 0.0F);
-      this.dataManager.register(field5216, Block.getStateId(Blocks.AIR.method11579()));
+      this.dataManager.register(field5216, Block.getStateId(Blocks.AIR.getDefaultState()));
       this.dataManager.register(field5217, 6);
       this.dataManager.register(field5218, false);
    }
@@ -798,7 +798,7 @@ public abstract class AbstractMinecartEntity extends Entity {
    }
 
    public BlockState method3604() {
-      return Blocks.AIR.method11579();
+      return Blocks.AIR.getDefaultState();
    }
 
    public int method3605() {

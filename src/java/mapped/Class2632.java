@@ -6,6 +6,7 @@ import net.minecraft.item.Items;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunk;
@@ -62,7 +63,7 @@ public class Class2632 extends Class2628 {
       this.field16947 = 0;
    }
 
-   public void method10842(Class1660 var1, BlockPos var2) {
+   public void method10842(IWorld var1, BlockPos var2) {
    }
 
    public void method10843(World var1, BlockPos var2) {

@@ -4,6 +4,7 @@ import com.mojang.serialization.Codec;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.IWorld;
 
 import java.util.BitSet;
 import java.util.Random;
@@ -41,7 +42,7 @@ public class Class2933 extends Class2898<Class4734> {
    }
 
    public boolean method11270(
-      Class1660 var1,
+      IWorld var1,
       Random var2,
       Class4734 var3,
       double var4,

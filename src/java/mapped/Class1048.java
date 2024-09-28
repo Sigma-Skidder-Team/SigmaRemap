@@ -17,6 +17,7 @@ import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 
@@ -291,7 +292,7 @@ public class Class1048 extends WaterMobEntity {
       }
    }
 
-   public static boolean method4784(EntityType<Class1048> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method4784(EntityType<Class1048> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
       if (var3.getY() > 45 && var3.getY() < var1.method6776()) {
          Optional var7 = var1.method7178(var3);
          return (

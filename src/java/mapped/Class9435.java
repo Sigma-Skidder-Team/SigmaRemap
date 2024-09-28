@@ -132,7 +132,7 @@ public class Class9435 {
       int var3 = 0;
 
       for (Direction var5 : Direction.Plane.HORIZONTAL) {
-         if (this.method36236(this.field43778.method8349(var5))) {
+         if (this.method36236(this.field43778.offset(var5))) {
             var3++;
          }
       }

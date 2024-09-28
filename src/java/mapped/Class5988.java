@@ -1,26 +1,27 @@
 package mapped;
 
+import net.minecraft.pathfinding.PathType;
 import net.minecraft.util.Direction;
 
 // $VF: synthetic class
 public class Class5988 {
    private static String[] field26124;
    public static final int[] field26125;
-   public static final int[] field26126 = new int[Class1947.values().length];
+   public static final int[] field26126 = new int[PathType.values().length];
 
    static {
       try {
-         field26126[Class1947.field12614.ordinal()] = 1;
+         field26126[PathType.field12614.ordinal()] = 1;
       } catch (NoSuchFieldError var9) {
       }
 
       try {
-         field26126[Class1947.field12615.ordinal()] = 2;
+         field26126[PathType.field12615.ordinal()] = 2;
       } catch (NoSuchFieldError var8) {
       }
 
       try {
-         field26126[Class1947.field12616.ordinal()] = 3;
+         field26126[PathType.field12616.ordinal()] = 3;
       } catch (NoSuchFieldError var7) {
       }
 

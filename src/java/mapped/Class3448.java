@@ -3,9 +3,12 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.fluid.Fluid;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 
 public class Class3448 extends Class3445 implements Class3449 {
    private static String[] field19263;
@@ -20,8 +23,8 @@ public class Class3448 extends Class3445 implements Class3449 {
    }
 
    @Override
-   public FluidState method11498(BlockState var1) {
-      return Class9479.field44066.method25078(false);
+   public FluidState getFluidState(BlockState var1) {
+      return Fluids.WATER.getStillFluidState(false);
    }
 
    @Override
@@ -30,7 +33,7 @@ public class Class3448 extends Class3445 implements Class3449 {
    }
 
    @Override
-   public boolean method11532(Class1660 var1, BlockPos var2, BlockState var3, FluidState var4) {
+   public boolean method11532(IWorld var1, BlockPos var2, BlockState var3, FluidState var4) {
       return false;
    }
 }

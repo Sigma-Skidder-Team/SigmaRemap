@@ -9,6 +9,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
@@ -102,7 +103,7 @@ public class Class1107 extends Class1009 {
       return !Class3442.method12119(var2.getBlockState(var1.down())) ? super.method4339(var1, var2) : 10.0F;
    }
 
-   public static boolean method5317(EntityType<Class1107> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method5317(EntityType<Class1107> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
       if (!method4342(var0, var1, var2, var3, var4)) {
          return false;
       } else {

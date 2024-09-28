@@ -391,7 +391,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          for (net.minecraft.util.Direction var19 : var15) {
             double var20 = var19.getAxis().method328(var8, 0.0, var10);
             double var22 = var19.getAxisDirection() != net.minecraft.util.Direction.AxisDirection.POSITIVE ? var20 : 1.0 - var20;
-            if (var22 < var13 && !this.method5401(var7.method8349(var19))) {
+            if (var22 < var13 && !this.method5401(var7.offset(var19))) {
                var13 = var22;
                var12 = var19;
             }

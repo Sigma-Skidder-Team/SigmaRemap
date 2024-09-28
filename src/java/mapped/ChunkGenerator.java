@@ -8,6 +8,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeContainer;
 import net.minecraft.world.biome.BiomeManager;
@@ -254,7 +255,7 @@ public abstract class ChunkGenerator {
       }
    }
 
-   public abstract void method17803(Class1660 var1, Class7480 var2, IChunk var3);
+   public abstract void method17803(IWorld var1, Class7480 var2, IChunk var3);
 
    public int method17807() {
       return 63;

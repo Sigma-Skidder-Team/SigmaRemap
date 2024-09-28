@@ -10,6 +10,7 @@ import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
@@ -24,11 +25,11 @@ public class Class3458 extends Block {
 
    public Class3458(Properties var1) {
       super(var1);
-      this.method11578(this.method11579().with(field19279, Boolean.valueOf(false)));
+      this.setDefaultState(this.getDefaultState().with(field19279, Boolean.valueOf(false)));
    }
 
    @Override
-   public void method11589(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+   public void onBlockAdded(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       if (!var4.isIn(var1.getBlock()) && var2.method6780(var3)) {
          method12131(var2, var3);
          var2.removeBlock(var3, false);
@@ -53,7 +54,7 @@ public class Class3458 extends Block {
    }
 
    @Override
-   public void method11560(World var1, BlockPos var2, Explosion var3) {
+   public void onExplosionDestroy(World var1, BlockPos var2, Explosion var3) {
       if (!var1.isRemote) {
          Class1004 var6 = new Class1004(var1, (double)var2.getX() + 0.5, (double)var2.getY(), (double)var2.getZ() + 0.5, var3.method25789());
          var6.method4182((short)(var1.rand.nextInt(var6.method4184() / 4) + var6.method4184() / 8));
@@ -74,14 +75,14 @@ public class Class3458 extends Block {
    }
 
    @Override
-   public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
+   public ActionResultType onBlockActivated(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       ItemStack var9 = var4.getHeldItem(var5);
       Item var10 = var9.getItem();
       if (var10 != Items.field37794 && var10 != Items.field38046) {
-         return super.method11505(var1, var2, var3, var4, var5, var6);
+         return super.onBlockActivated(var1, var2, var3, var4, var5, var6);
       } else {
          method12132(var2, var3, var4);
-         var2.setBlockState(var3, Blocks.AIR.method11579(), 11);
+         var2.setBlockState(var3, Blocks.AIR.getDefaultState(), 11);
          if (!var4.isCreative()) {
             if (var10 != Items.field37794) {
                var9.shrink(1);
@@ -112,7 +113,7 @@ public class Class3458 extends Block {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field19279);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field19279);
    }
 }

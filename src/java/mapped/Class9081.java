@@ -184,7 +184,7 @@ public class Class9081 {
                float var18 = 1.0F;
                BlockState var19 = this.field41570.getBlockState(var1);
                if (!var19.isAir()) {
-                  var19.method23436(this.field41570, var1, this.field41571);
+                  var19.onBlockClicked(this.field41570, var1, this.field41571);
                   var18 = var19.method23406(this.field41571, this.field41571.world, var1);
                }
 
@@ -319,7 +319,7 @@ public class Class9081 {
          boolean var11 = var1.method2851() && var10;
          ItemStack var12 = var3.copy();
          if (!var11) {
-            ActionResultType var13 = var9.method23435(var2, var1, var4, var5);
+            ActionResultType var13 = var9.onBlockActivated(var2, var1, var4, var5);
             if (var13.isSuccessOrConsume()) {
                CriteriaTriggers.field44503.method15155(var1, var8, var12);
                return var13;

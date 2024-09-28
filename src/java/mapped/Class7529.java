@@ -17,6 +17,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -81,7 +82,7 @@ public class Class7529 extends Class7530 {
          this.field32326.put(var6.method24189(), var6);
          this.method24596(
             var6.method24186(),
-            (Class1660)null,
+            (IWorld)null,
             var6.method24189(),
             (double)var6.method24185().getX(),
             (double)var6.method24185().getZ(),
@@ -97,7 +98,7 @@ public class Class7529 extends Class7530 {
          this.field32328.put(var7.method20354(), var7);
          this.method24596(
             MapDecorationType.field14517,
-            (Class1660)null,
+            (IWorld)null,
             "frame-" + var7.method20353(),
             (double)var7.method20351().getX(),
             (double)var7.method20351().getZ(),
@@ -188,14 +189,14 @@ public class Class7529 extends Class7530 {
             this.field32327.remove("frame-" + var14.method20353());
          }
 
-         Class6674 var8 = new Class6674(var12, var10.getHorizontalFacing().method534() * 90, var10.getEntityId());
+         Class6674 var8 = new Class6674(var12, var10.getHorizontalFacing().getHorizontalIndex() * 90, var10.getEntityId());
          this.method24596(
             MapDecorationType.field14517,
             var1.world,
             "frame-" + var10.getEntityId(),
             (double)var12.getX(),
             (double)var12.getZ(),
-            (double)(var10.getHorizontalFacing().method534() * 90),
+            (double)(var10.getHorizontalFacing().getHorizontalIndex() * 90),
             (ITextComponent)null
          );
          this.field32328.put(var8.method20354(), var8);
@@ -244,7 +245,7 @@ public class Class7529 extends Class7530 {
       }
    }
 
-   private void method24596(MapDecorationType var1, Class1660 var2, String var3, double var4, double var6, double var8, ITextComponent var10) {
+   private void method24596(MapDecorationType var1, IWorld var2, String var3, double var4, double var6, double var8, ITextComponent var10) {
       int var13 = 1 << this.field32321;
       float var14 = (float)(var4 - (double)this.field32316) / (float)var13;
       float var15 = (float)(var6 - (double)this.field32317) / (float)var13;
@@ -323,7 +324,7 @@ public class Class7529 extends Class7530 {
       return var4;
    }
 
-   public void method24600(Class1660 var1, BlockPos var2) {
+   public void method24600(IWorld var1, BlockPos var2) {
       double var5 = (double)var2.getX() + 0.5;
       double var7 = (double)var2.getZ() + 0.5;
       int var9 = 1 << this.field32321;

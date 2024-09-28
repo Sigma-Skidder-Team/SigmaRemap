@@ -4,6 +4,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.vector.Matrix3f;
 import net.optifine.Config;
 
 public class Class5731 extends EntityRenderer<ExperienceOrbEntity> {
@@ -47,7 +48,7 @@ public class Class5731 extends EntityRenderer<ExperienceOrbEntity> {
       IVertexBuilder var23 = var5.method25597(field25142);
       Class8892 var24 = var4.getLast();
       Matrix4f var25 = var24.getMatrix();
-      Class8967 var26 = var24.method32362();
+      Matrix3f var26 = var24.method32362();
       int var27 = var19;
       int var28 = 255;
       int var29 = var21;
@@ -69,7 +70,7 @@ public class Class5731 extends EntityRenderer<ExperienceOrbEntity> {
    }
 
    private static void method17914(
-           IVertexBuilder var0, Matrix4f var1, Class8967 var2, float var3, float var4, int var5, int var6, int var7, float var8, float var9, int var10
+           IVertexBuilder var0, Matrix4f var1, Matrix3f var2, float var3, float var4, int var5, int var6, int var7, float var8, float var9, int var10
    ) {
       var0.pos(var1, var3, var4, 0.0F)
          .color(var5, var6, var7, 128)

@@ -14,6 +14,7 @@ import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3i;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -129,26 +130,26 @@ public class Class4184 extends Class4180 {
    public void method12944(String var1, BlockPos var2, Class1659 var3, Random var4, Class9764 var5) {
    }
 
-   private void method12951(Random var1, Class1660 var2, BlockPos var3) {
+   private void method12951(Random var1, IWorld var2, BlockPos var3) {
       BlockState var6 = var2.getBlockState(var3);
       if (!var6.isAir() && !var6.isIn(Blocks.VINE)) {
          Direction var7 = Direction.Plane.HORIZONTAL.method247(var1);
-         BlockPos var8 = var3.method8349(var7);
+         BlockPos var8 = var3.offset(var7);
          BlockState var9 = var2.getBlockState(var8);
          if (var9.isAir() && Block.method11549(var6.method23414(var2, var3), var7)) {
             BooleanProperty var10 = Class3402.method12039(var7.getOpposite());
-            var2.setBlockState(var8, Blocks.VINE.method11579().with(var10, Boolean.valueOf(true)), 3);
+            var2.setBlockState(var8, Blocks.VINE.getDefaultState().with(var10, Boolean.valueOf(true)), 3);
          }
       }
    }
 
-   private void method12952(Random var1, Class1660 var2, BlockPos var3) {
+   private void method12952(Random var1, IWorld var2, BlockPos var3) {
       if (var1.nextFloat() < 0.5F && var2.getBlockState(var3).isIn(Blocks.NETHERRACK) && var2.getBlockState(var3.up()).isAir()) {
-         var2.setBlockState(var3.up(), Blocks.field36449.method11579().with(Class3465.field19306, Boolean.valueOf(true)), 3);
+         var2.setBlockState(var3.up(), Blocks.field36449.getDefaultState().with(Class3465.field19306, Boolean.valueOf(true)), 3);
       }
    }
 
-   private void method12953(Random var1, Class1660 var2) {
+   private void method12953(Random var1, IWorld var2) {
       for (int var5 = this.field20444.field45678 + 1; var5 < this.field20444.field45681; var5++) {
          for (int var6 = this.field20444.field45680 + 1; var6 < this.field20444.field45683; var6++) {
             BlockPos var7 = new BlockPos(var5, this.field20444.field45679, var6);
@@ -159,7 +160,7 @@ public class Class4184 extends Class4180 {
       }
    }
 
-   private void method12954(Random var1, Class1660 var2, BlockPos var3) {
+   private void method12954(Random var1, IWorld var2, BlockPos var3) {
       BlockPos.Mutable var6 = var3.method8354();
       this.method12957(var1, var2, var6);
       int var7 = 8;
@@ -171,7 +172,7 @@ public class Class4184 extends Class4180 {
       }
    }
 
-   private void method12955(Random var1, Class1660 var2) {
+   private void method12955(Random var1, IWorld var2) {
       boolean var5 = this.field20469 == Class2219.field14494 || this.field20469 == Class2219.field14496;
       Vector3i var6 = this.field20444.method38401();
       int var7 = var6.getX();
@@ -207,7 +208,7 @@ public class Class4184 extends Class4180 {
       }
    }
 
-   private boolean method12956(Class1660 var1, BlockPos var2) {
+   private boolean method12956(IWorld var1, BlockPos var2) {
       BlockState var5 = var1.getBlockState(var2);
       return !var5.isIn(Blocks.AIR)
          && !var5.isIn(Blocks.field36527)
@@ -215,15 +216,15 @@ public class Class4184 extends Class4180 {
          && (this.field20469 == Class2219.field14499 || !var5.isIn(Blocks.LAVA));
    }
 
-   private void method12957(Random var1, Class1660 var2, BlockPos var3) {
+   private void method12957(Random var1, IWorld var2, BlockPos var3) {
       if (!this.field20470.field35674 && var1.nextFloat() < 0.07F) {
-         var2.setBlockState(var3, Blocks.field36890.method11579(), 3);
+         var2.setBlockState(var3, Blocks.field36890.getDefaultState(), 3);
       } else {
-         var2.setBlockState(var3, Blocks.NETHERRACK.method11579(), 3);
+         var2.setBlockState(var3, Blocks.NETHERRACK.getDefaultState(), 3);
       }
    }
 
-   private static int method12958(Class1660 var0, int var1, int var2, Class2219 var3) {
+   private static int method12958(IWorld var0, int var1, int var2, Class2219 var3) {
       return var0.method6736(method12959(var3), var1, var2) - 1;
    }
 
@@ -232,10 +233,10 @@ public class Class4184 extends Class4180 {
    }
 
    private static Class7872 method12960(Block var0, float var1, Block var2) {
-      return new Class7872(new Class6439(var0, var1), Class6435.field28275, var2.method11579());
+      return new Class7872(new Class6439(var0, var1), Class6435.field28275, var2.getDefaultState());
    }
 
    private static Class7872 method12961(Block var0, Block var1) {
-      return new Class7872(new Class6438(var0), Class6435.field28275, var1.method11579());
+      return new Class7872(new Class6438(var0), Class6435.field28275, var1.getDefaultState());
    }
 }

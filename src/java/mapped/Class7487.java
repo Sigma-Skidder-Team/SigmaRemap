@@ -8,6 +8,7 @@ import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 
 import java.util.List;
@@ -37,7 +38,7 @@ public abstract class Class7487 {
 
    public abstract Class8325<?> method24377();
 
-   public void method24380(Class1660 var1, Class8266 var2, BlockPos var3, Rotation var4, Random var5, Class9764 var6) {
+   public void method24380(IWorld var1, Class8266 var2, BlockPos var3, Rotation var4, Random var5, Class9764 var6) {
    }
 
    public Class7487 method24381(Class109 var1) {

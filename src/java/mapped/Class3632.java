@@ -1,17 +1,19 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.state.Property;
+
 import java.util.Collections;
 import java.util.List;
 
 public class Class3632<T1 extends Comparable<T1>, T2 extends Comparable<T2>, T3 extends Comparable<T3>, T4 extends Comparable<T4>> extends Class3629 {
    private static String[] field19658;
-   private final Class8550<T1> field19659;
-   private final Class8550<T2> field19660;
-   private final Class8550<T3> field19661;
-   private final Class8550<T4> field19662;
+   private final Property<T1> field19659;
+   private final Property<T2> field19660;
+   private final Property<T3> field19661;
+   private final Property<T4> field19662;
 
-   public Class3632(Class8550<T1> var1, Class8550<T2> var2, Class8550<T3> var3, Class8550<T4> var4) {
+   public Class3632(Property<T1> var1, Property<T2> var2, Property<T3> var3, Property<T4> var4) {
       this.field19659 = var1;
       this.field19660 = var2;
       this.field19661 = var3;
@@ -19,7 +21,7 @@ public class Class3632<T1 extends Comparable<T1>, T2 extends Comparable<T2>, T3 
    }
 
    @Override
-   public List<Class8550<?>> method12298() {
+   public List<Property<?>> method12298() {
       return ImmutableList.of(this.field19659, this.field19660, this.field19661, this.field19662);
    }
 

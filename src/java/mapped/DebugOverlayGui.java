@@ -16,7 +16,9 @@ import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
+import net.minecraft.fluid.FluidState;
 import net.minecraft.network.NetworkManager;
+import net.minecraft.state.Property;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -555,7 +557,7 @@ public class DebugOverlayGui extends AbstractGui {
             FluidState var28 = this.mc.world.getFluidState(var25);
             var11.add("");
             var11.add(TextFormatting.UNDERLINE + "Targeted Fluid: " + var25.getX() + ", " + var25.getY() + ", " + var25.getZ());
-            var11.add(String.valueOf(Registry.field16070.getKey(var28.method23472())));
+            var11.add(String.valueOf(Registry.FLUID.getKey(var28.getFluid())));
             UnmodifiableIterator var31 = var28.method23468().entrySet().iterator();
 
             while (var31.hasNext()) {
@@ -565,9 +567,9 @@ public class DebugOverlayGui extends AbstractGui {
 
             Collection<ResourceLocation> var32;
             if (!Reflector.field42853.exists()) {
-               var32 = this.mc.getConnection().method15798().method32659().method27138(var28.method23472());
+               var32 = this.mc.getConnection().method15798().method32659().method27138(var28.getFluid());
             } else {
-               var32 = (Collection) Reflector.call(var28.method23472(), Reflector.field42853);
+               var32 = (Collection) Reflector.call(var28.getFluid(), Reflector.field42853);
             }
 
             for (ResourceLocation var36 : var32) {
@@ -590,8 +592,8 @@ public class DebugOverlayGui extends AbstractGui {
       }
    }
 
-   private String method5889(Entry<Class8550<?>, Comparable<?>> var1) {
-      Class8550<?> var4 = var1.getKey();
+   private String method5889(Entry<Property<?>, Comparable<?>> var1) {
+      Property<?> var4 = var1.getKey();
       Comparable<?> var5 = var1.getValue();
       String var6 = Util.method38485(var4, var5);
       if (!Boolean.TRUE.equals(var5)) {

@@ -50,7 +50,7 @@ public class Class900 extends Class898 {
       if (!this.world.isRemote) {
          Entity var4 = this.method3460();
          if (var4 == null || !(var4 instanceof MobEntity) || this.world.getGameRules().getBoolean(Class5462.field24224)) {
-            BlockPos var5 = var1.getPos().method8349(var1.getFace());
+            BlockPos var5 = var1.getPos().offset(var1.getFace());
             if (this.world.method7007(var5)) {
                this.world.setBlockState(var5, AbstractFireBlock.method12009(this.world, var5));
             }

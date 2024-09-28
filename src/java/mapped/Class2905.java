@@ -44,14 +44,14 @@ public class Class2905 extends Class2898<Class4712> {
                      BlockState var17 = var1.getBlockState(var4.method8336(var13, var10, var15));
                      Block var18 = var17.getBlock();
                      if (var17.isAir() || method11219(var18) || var18 == Blocks.SNOW_BLOCK || var18 == Blocks.ICE) {
-                        this.method11217(var1, var4.method8336(var13, var10, var15), Blocks.PACKED_ICE.method11579());
+                        this.method11217(var1, var4.method8336(var13, var10, var15), Blocks.PACKED_ICE.getDefaultState());
                      }
 
                      if (var10 != 0 && var12 > 1) {
                         var17 = var1.getBlockState(var4.method8336(var13, -var10, var15));
                         var18 = var17.getBlock();
                         if (var17.isAir() || method11219(var18) || var18 == Blocks.SNOW_BLOCK || var18 == Blocks.ICE) {
-                           this.method11217(var1, var4.method8336(var13, -var10, var15), Blocks.PACKED_ICE.method11579());
+                           this.method11217(var1, var4.method8336(var13, -var10, var15), Blocks.PACKED_ICE.getDefaultState());
                         }
                      }
                   }
@@ -87,7 +87,7 @@ public class Class2905 extends Class2898<Class4712> {
                      break;
                   }
 
-                  this.method11217(var1, var23, Blocks.PACKED_ICE.method11579());
+                  this.method11217(var1, var23, Blocks.PACKED_ICE.getDefaultState());
                   var23 = var23.down();
                   if (--var24 <= 0) {
                      var23 = var23.method8340(var3.nextInt(5) + 1);

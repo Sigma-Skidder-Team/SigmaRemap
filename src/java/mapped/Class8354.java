@@ -4,7 +4,6 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.UnmodifiableIterator;
 import com.mojang.authlib.GameProfile;
-import com.mojang.authlib.properties.Property;
 import com.mojang.datafixers.DataFixer;
 import com.mojang.serialization.Dynamic;
 import java.util.Optional;
@@ -18,7 +17,9 @@ import net.minecraft.block.Blocks;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
 import net.minecraft.nbt.IntArrayNBT;
+import net.minecraft.state.Property;
 import net.minecraft.state.StateContainer;
+import net.minecraft.state.StateHolder;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.UUIDCodec;
 import net.minecraft.util.math.BlockPos;
@@ -53,9 +54,9 @@ public final class Class8354 {
                   CompoundNBT var11 = var9.method153(var10);
                   String var12 = var11.getString("Value");
                   if (var11.contains("Signature", 8)) {
-                     var5.getProperties().put(var8, new Property(var8, var12, var11.getString("Signature")));
+                     var5.getProperties().put(var8, new com.mojang.authlib.properties.Property(var8, var12, var11.getString("Signature")));
                   } else {
-                     var5.getProperties().put(var8, new Property(var8, var12));
+                     var5.getProperties().put(var8, new com.mojang.authlib.properties.Property(var8, var12));
                   }
                }
             }
@@ -82,7 +83,7 @@ public final class Class8354 {
          for (String var6 : var1.getProperties().keySet()) {
             ListNBT var7 = new ListNBT();
 
-            for (Property var9 : var1.getProperties().get(var6)) {
+            for (com.mojang.authlib.properties.Property var9 : var1.getProperties().get(var6)) {
                CompoundNBT var10 = new CompoundNBT();
                var10.method109("Value", var9.getValue());
                if (var9.hasSignature()) {
@@ -187,16 +188,16 @@ public final class Class8354 {
 
    public static BlockState method29285(CompoundNBT var0) {
       if (!var0.contains("Name", 8)) {
-         return Blocks.AIR.method11579();
+         return Blocks.AIR.getDefaultState();
       } else {
          Block var3 = Registry.BLOCK.getOrDefault(new ResourceLocation(var0.getString("Name")));
-         BlockState var4 = var3.method11579();
+         BlockState var4 = var3.getDefaultState();
          if (var0.contains("Properties", 10)) {
             CompoundNBT var5 = var0.getCompound("Properties");
             StateContainer var6 = var3.getStateContainer();
 
             for (String var8 : var5.method97()) {
-               Class8550 var9 = var6.method35396(var8);
+               Property var9 = var6.method35396(var8);
                if (var9 != null) {
                   var4 = method29286(var4, var9, var8, var5, var0);
                }
@@ -207,7 +208,7 @@ public final class Class8354 {
       }
    }
 
-   private static <S extends Class7378<?, S>, T extends Comparable<T>> S method29286(S var0, Class8550<T> var1, String var2, CompoundNBT var3, CompoundNBT var4) {
+   private static <S extends StateHolder<?, S>, T extends Comparable<T>> S method29286(S var0, Property<T> var1, String var2, CompoundNBT var3, CompoundNBT var4) {
       Optional<T> var7 = var1.method30476(var3.getString(var2));
       if (!var7.isPresent()) {
          field35896.warn("Unable to read property: {} with value: {} for blockstate: {}", var2, var3.getString(var2), var4.toString());
@@ -227,7 +228,7 @@ public final class Class8354 {
 
          while (var6.hasNext()) {
             Entry var7 = (Entry)var6.next();
-            Class8550 var8 = (Class8550)var7.getKey();
+            Property var8 = (Property)var7.getKey();
             var5.method109(var8.method30472(), method29288(var8, (Comparable<?>)var7.getValue()));
          }
 
@@ -237,7 +238,7 @@ public final class Class8354 {
       return var3;
    }
 
-   private static <T extends Comparable<T>> String method29288(Class8550<T> var0, Comparable<?> var1) {
+   private static <T extends Comparable<T>> String method29288(Property<T> var0, Comparable<?> var1) {
       return var0.method30475((T)var1);
    }
 

@@ -20,7 +20,7 @@ public class Class3487 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return field19351;
    }
 
@@ -37,7 +37,7 @@ public class Class3487 extends Class3194 implements Class3196 {
    @Override
    public void method11488(ServerWorld var1, Random var2, BlockPos var3, BlockState var4) {
       Class3456 var7 = (Class3456)(this != Blocks.FERN ? Blocks.TALL_GRASS : Blocks.field36802);
-      if (var7.method11579().method23443(var1, var3) && var1.method7007(var3.up())) {
+      if (var7.getDefaultState().method23443(var1, var3) && var1.method7007(var3.up())) {
          var7.method12129(var1, var3, 2);
       }
    }

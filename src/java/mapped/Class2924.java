@@ -11,9 +11,9 @@ import java.util.Random;
 
 public class Class2924 extends Class2898<Class4712> {
    private static final Class166 field17998 = Class166.method497(Blocks.SAND);
-   private final BlockState field17999 = Blocks.field36847.method11579();
-   private final BlockState field18000 = Blocks.SANDSTONE.method11579();
-   private final BlockState field18001 = Blocks.WATER.method11579();
+   private final BlockState field17999 = Blocks.field36847.getDefaultState();
+   private final BlockState field18000 = Blocks.SANDSTONE.getDefaultState();
+   private final BlockState field18001 = Blocks.WATER.getDefaultState();
 
    public Class2924(Codec<Class4712> var1) {
       super(var1);
@@ -48,7 +48,7 @@ public class Class2924 extends Class2898<Class4712> {
          var1.setBlockState(var4, this.field18001, 2);
 
          for (Direction var18 : Direction.Plane.HORIZONTAL) {
-            var1.setBlockState(var4.method8349(var18), this.field18001, 2);
+            var1.setBlockState(var4.offset(var18), this.field18001, 2);
          }
 
          for (int var14 = -2; var14 <= 2; var14++) {

@@ -4,7 +4,6 @@ import com.google.common.base.Predicates;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import mapped.Class8550;
 import net.minecraft.util.IStringSerializable;
 
 import java.util.Arrays;
@@ -14,7 +13,7 @@ import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-public class EnumProperty<T extends Enum<T> & IStringSerializable> extends Class8550<T> {
+public class EnumProperty<T extends Enum<T> & IStringSerializable> extends Property<T> {
    private final ImmutableSet<T> field38442;
    private final Map<String, T> field38443 = Maps.newHashMap();
 

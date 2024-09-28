@@ -13,6 +13,7 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -102,7 +103,7 @@ public class Class1112 extends Class1111 implements Class1008 {
       return 5.0F;
    }
 
-   public static boolean method5361(EntityType<Class1112> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method5361(EntityType<Class1112> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
       return var1.method6997() != Difficulty.field14351 && var4.nextInt(20) == 0 && method4264(var0, var1, var2, var3, var4);
    }
 

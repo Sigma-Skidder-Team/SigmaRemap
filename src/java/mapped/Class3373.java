@@ -2,7 +2,10 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.IWaterLoggable;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemStack;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.properties.BlockStateProperties;
@@ -14,10 +17,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
-public abstract class Class3373 extends Class3241 implements Class3207 {
-   public static final BooleanProperty field18966 = BlockStateProperties.field39710;
+public abstract class Class3373 extends Class3241 implements IWaterLoggable {
+   public static final BooleanProperty field18966 = BlockStateProperties.WATERLOGGED;
    public static final VoxelShape field18967 = Block.makeCuboidShape(4.0, 0.0, 4.0, 12.0, 16.0, 12.0);
    private final Class9673 field18968;
 
@@ -27,16 +31,16 @@ public abstract class Class3373 extends Class3241 implements Class3207 {
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       if (var1.<Boolean>get(field18966)) {
-         var4.method6861().method20726(var5, Class9479.field44066, Class9479.field44066.method25057(var4));
+         var4.getPendingFluidTicks().scheduleTick(var5, Fluids.WATER, Fluids.WATER.getTickRate(var4));
       }
 
-      return super.method11491(var1, var2, var3, var4, var5, var6);
+      return super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return field18967;
    }
 
@@ -51,7 +55,7 @@ public abstract class Class3373 extends Class3241 implements Class3207 {
    }
 
    @Override
-   public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
+   public ActionResultType onBlockActivated(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       ItemStack var9 = var4.getHeldItem(var5);
       boolean var10 = var9.getItem() instanceof Class3321 && var4.abilities.allowEdit;
       if (!var2.isRemote) {
@@ -75,8 +79,8 @@ public abstract class Class3373 extends Class3241 implements Class3207 {
    }
 
    @Override
-   public FluidState method11498(BlockState var1) {
-      return !var1.<Boolean>get(field18966) ? super.method11498(var1) : Class9479.field44066.method25078(false);
+   public FluidState getFluidState(BlockState var1) {
+      return !var1.<Boolean>get(field18966) ? super.getFluidState(var1) : Fluids.WATER.getStillFluidState(false);
    }
 
    public Class9673 method11967() {

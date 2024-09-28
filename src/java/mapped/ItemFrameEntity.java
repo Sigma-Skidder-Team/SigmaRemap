@@ -55,12 +55,12 @@ public class ItemFrameEntity extends Class995 {
    public void method4077(net.minecraft.util.Direction var1) {
       Validate.notNull(var1);
       this.field5489 = var1;
-      if (!var1.getAxis().method324()) {
+      if (!var1.getAxis().isHorizontal()) {
          this.rotationPitch = (float)(-90 * var1.getAxisDirection().getOffset());
          this.rotationYaw = 0.0F;
       } else {
          this.rotationPitch = 0.0F;
-         this.rotationYaw = (float)(this.field5489.method534() * 90);
+         this.rotationYaw = (float)(this.field5489.getHorizontalIndex() * 90);
       }
 
       this.prevRotationPitch = this.rotationPitch;
@@ -104,8 +104,8 @@ public class ItemFrameEntity extends Class995 {
          if (!this.world.hasNoCollisions(this)) {
             return false;
          } else {
-            BlockState var3 = this.world.getBlockState(this.field5488.method8349(this.field5489.getOpposite()));
-            return !var3.getMaterial().isSolid() && (!this.field5489.getAxis().method324() || !Class3247.method11672(var3))
+            BlockState var3 = this.world.getBlockState(this.field5488.offset(this.field5489.getOpposite()));
+            return !var3.getMaterial().isSolid() && (!this.field5489.getAxis().isHorizontal() || !Class3247.method11672(var3))
                ? false
                : this.world.getEntitiesInAABBexcluding(this, this.getBoundingBox(), field5486).isEmpty();
          }

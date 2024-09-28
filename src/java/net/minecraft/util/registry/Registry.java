@@ -11,6 +11,7 @@ import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.fluid.Fluid;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -71,7 +72,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final RegistryKey<Registry<World>> WORLD_KEY = createKey("dimension");
    public static final RegistryKey<Registry<Dimension>> DIMENSION_KEY = createKey("dimension");
    public static final Registry<SoundEvent> field16069 = method9175(field16036, () -> SoundEvents.field26714);
-   public static final Class2351<Fluid> field16070 = method9176(field16037, "empty", () -> Class9479.field44064);
+   public static final Class2351<Fluid> FLUID = method9176(field16037, "empty", () -> Fluids.EMPTY);
    public static final Registry<Effect> EFFECTS = method9175(field16038, () -> Effects.LUCK);
    public static final Class2351<Block> BLOCK = method9176(field16039, "air", () -> Blocks.AIR);
    public static final Registry<Enchantment> ENCHANTMENT = method9175(field16040, () -> Enchantments.FORTUNE);

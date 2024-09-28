@@ -2,7 +2,9 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
@@ -18,11 +20,11 @@ public class Class3343 extends Class3251 {
 
    public Class3343(Class2137 var1, Properties var2) {
       super(var1, var2);
-      this.method11578(this.field18612.method35393().with(field18855, Integer.valueOf(0)));
+      this.setDefaultState(this.stateContainer.getBaseState().with(field18855, Integer.valueOf(0)));
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return field18856;
    }
 
@@ -32,13 +34,13 @@ public class Class3343 extends Class3251 {
    }
 
    @Override
-   public BlockState method11495(Class5909 var1) {
-      return this.method11579().with(field18855, Integer.valueOf(MathHelper.floor((double)(var1.method18352() * 16.0F / 360.0F) + 0.5) & 15));
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      return this.getDefaultState().with(field18855, Integer.valueOf(MathHelper.floor((double)(var1.method18352() * 16.0F / 360.0F) + 0.5) & 15));
    }
 
    @Override
    public BlockState rotate(BlockState var1, Rotation var2) {
-      return var1.with(field18855, Integer.valueOf(var2.method253(var1.<Integer>get(field18855), 16)));
+      return var1.with(field18855, Integer.valueOf(var2.rotate(var1.<Integer>get(field18855), 16)));
    }
 
    @Override
@@ -47,7 +49,7 @@ public class Class3343 extends Class3251 {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field18855);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field18855);
    }
 }

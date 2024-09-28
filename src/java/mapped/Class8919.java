@@ -12,6 +12,6 @@ public class Class8919 {
          .getBoundingBox()
          .contract((double)(0.5F * (float)var1.getXOffset()), (double)(0.5F * (float)var1.getYOffset()), (double)(0.5F * (float)var1.getZOffset()))
          .method19660((double)var1.getXOffset(), (double)var1.getYOffset(), (double)var1.getZOffset())
-         .method19668(var0.method8349(var1));
+         .method19668(var0.offset(var1));
    }
 }

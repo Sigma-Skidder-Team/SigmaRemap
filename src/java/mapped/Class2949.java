@@ -7,6 +7,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.IWorld;
 
 import java.util.Random;
 
@@ -32,8 +33,8 @@ public class Class2949 extends Class2898<Class4712> {
       }
    }
 
-   private void method11289(Class1660 var1, Random var2, BlockPos var3) {
-      var1.setBlockState(var3, Blocks.field36891.method11579(), 2);
+   private void method11289(IWorld var1, Random var2, BlockPos var3) {
+      var1.setBlockState(var3, Blocks.field36891.getDefaultState(), 2);
       BlockPos.Mutable var6 = new BlockPos.Mutable();
       BlockPos.Mutable var7 = new BlockPos.Mutable();
 
@@ -54,13 +55,13 @@ public class Class2949 extends Class2898<Class4712> {
             }
 
             if (var9 == 1) {
-               var1.setBlockState(var6, Blocks.field36891.method11579(), 2);
+               var1.setBlockState(var6, Blocks.field36891.getDefaultState(), 2);
             }
          }
       }
    }
 
-   private void method11290(Class1660 var1, Random var2, BlockPos var3) {
+   private void method11290(IWorld var1, Random var2, BlockPos var3) {
       BlockPos.Mutable var6 = new BlockPos.Mutable();
 
       for (int var7 = 0; var7 < 100; var7++) {
@@ -84,17 +85,17 @@ public class Class2949 extends Class2898<Class4712> {
       }
    }
 
-   public static void method11291(Class1660 var0, Random var1, BlockPos.Mutable var2, int var3, int var4, int var5) {
+   public static void method11291(IWorld var0, Random var1, BlockPos.Mutable var2, int var3, int var4, int var5) {
       for (int var8 = 0; var8 <= var3; var8++) {
          if (var0.method7007(var2)) {
             if (var8 == var3 || !var0.method7007(var2.down())) {
                var0.setBlockState(
-                  var2, Blocks.field37086.method11579().with(Class3452.field19267, Integer.valueOf(MathHelper.method37782(var1, var4, var5))), 2
+                  var2, Blocks.field37086.getDefaultState().with(Class3452.field19267, Integer.valueOf(MathHelper.method37782(var1, var4, var5))), 2
                );
                break;
             }
 
-            var0.setBlockState(var2, Blocks.field37087.method11579(), 2);
+            var0.setBlockState(var2, Blocks.field37087.getDefaultState(), 2);
          }
 
          var2.method8379(Direction.DOWN);

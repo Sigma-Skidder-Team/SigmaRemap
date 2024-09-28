@@ -25,17 +25,17 @@ public class Class8191 {
       field35214 = new int[Rotation.values().length];
 
       try {
-         field35214[Rotation.field187.ordinal()] = 1;
+         field35214[Rotation.CLOCKWISE_180.ordinal()] = 1;
       } catch (NoSuchFieldError var15) {
       }
 
       try {
-         field35214[Rotation.field188.ordinal()] = 2;
+         field35214[Rotation.COUNTERCLOCKWISE_90.ordinal()] = 2;
       } catch (NoSuchFieldError var14) {
       }
 
       try {
-         field35214[Rotation.field186.ordinal()] = 3;
+         field35214[Rotation.CLOCKWISE_90.ordinal()] = 3;
       } catch (NoSuchFieldError var13) {
       }
 

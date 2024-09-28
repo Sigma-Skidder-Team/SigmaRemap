@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Maps;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import net.minecraft.state.Property;
 import net.minecraft.state.StateContainer;
 
 import java.util.List;
@@ -11,30 +12,30 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Class5142 implements Class5141 {
-   private final Map<Class8550<?>, String> field23364 = Maps.newHashMap();
+   private final Map<Property<?>, String> field23364 = Maps.newHashMap();
 
-   private static <T extends Comparable<T>> String method15921(Class8550<T> var0, Stream<T> var1) {
+   private static <T extends Comparable<T>> String method15921(Property<T> var0, Stream<T> var1) {
       return var1.<CharSequence>map(var0::method30475).collect(Collectors.joining("|"));
    }
 
-   private static <T extends Comparable<T>> String method15922(Class8550<T> var0, T var1, T[] var2) {
+   private static <T extends Comparable<T>> String method15922(Property<T> var0, T var1, T[] var2) {
       return method15921(var0, Stream.<T>concat(Stream.of((T)var1), Stream.of((T[])var2)));
    }
 
-   private <T extends Comparable<T>> void method15923(Class8550<T> var1, String var2) {
+   private <T extends Comparable<T>> void method15923(Property<T> var1, String var2) {
       String var5 = this.field23364.put(var1, var2);
       if (var5 != null) {
          throw new IllegalStateException("Tried to replace " + var1 + " value from " + var5 + " to " + var2);
       }
    }
 
-   public final <T extends Comparable<T>> Class5142 method15924(Class8550<T> var1, T var2) {
+   public final <T extends Comparable<T>> Class5142 method15924(Property<T> var1, T var2) {
       this.method15923(var1, var1.method30475((T)var2));
       return this;
    }
 
    @SafeVarargs
-   public final <T extends Comparable<T>> Class5142 method15925(Class8550<T> var1, T var2, T... var3) {
+   public final <T extends Comparable<T>> Class5142 method15925(Property<T> var1, T var2, T... var3) {
       this.method15923(var1, method15922(var1, (T)var2, (T[])var3));
       return this;
    }

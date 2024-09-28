@@ -34,7 +34,7 @@ public class Class938 extends Class919 implements Class937 {
 
    @Override
    public BlockState method3604() {
-      return Blocks.HOPPER.method11579();
+      return Blocks.HOPPER.getDefaultState();
    }
 
    @Override

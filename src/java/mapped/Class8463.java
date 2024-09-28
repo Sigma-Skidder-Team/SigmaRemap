@@ -5,6 +5,7 @@ import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
 import net.minecraft.fluid.Fluid;
+import net.minecraft.fluid.FluidState;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
@@ -26,7 +27,7 @@ public class Class8463 {
       if (this != field36278) {
          if (var1.method6763(var2)) {
             FluidState var5 = var1.getFluidState(var2);
-            Fluid var6 = var5.method23472();
+            Fluid var6 = var5.getFluid();
             if (this.field36279 != null && !this.field36279.method24917(var6)) {
                return false;
             } else {
@@ -46,7 +47,7 @@ public class Class8463 {
          Fluid var4 = null;
          if (var3.has("fluid")) {
             ResourceLocation var5 = new ResourceLocation(JSONUtils.getString(var3, "fluid"));
-            var4 = Registry.field16070.getOrDefault(var5);
+            var4 = Registry.FLUID.getOrDefault(var5);
          }
 
          ITag var7 = null;
@@ -69,7 +70,7 @@ public class Class8463 {
       if (this != field36278) {
          JsonObject var3 = new JsonObject();
          if (this.field36280 != null) {
-            var3.addProperty("fluid", Registry.field16070.getKey(this.field36280).toString());
+            var3.addProperty("fluid", Registry.FLUID.getKey(this.field36280).toString());
          }
 
          if (this.field36279 != null) {

@@ -13,6 +13,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3i;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.IWorld;
 
 import java.util.*;
 
@@ -152,7 +153,7 @@ public class Class2903 extends Class2898<Class4733> {
       }
    }
 
-   private Class7938 method11236(Class1660 var1, Class9764 var2, Set<BlockPos> var3, Set<BlockPos> var4) {
+   private Class7938 method11236(IWorld var1, Class9764 var2, Set<BlockPos> var3, Set<BlockPos> var4) {
       ArrayList var7 = Lists.newArrayList();
       Class7937 var8 = new Class7937(var2.method38398(), var2.method38399(), var2.method38400());
       byte var9 = 6;

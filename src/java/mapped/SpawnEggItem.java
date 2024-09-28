@@ -40,13 +40,13 @@ public class SpawnEggItem extends Item {
 
    @Override
    public ActionResultType method11707(ItemUseContext var1) {
-      World var4 = var1.method18360();
+      World var4 = var1.getWorld();
       if (!(var4 instanceof ServerWorld)) {
          return ActionResultType.SUCCESS;
       } else {
          ItemStack var5 = var1.method18357();
-         BlockPos var6 = var1.method18345();
-         Direction var7 = var1.method18354();
+         BlockPos var6 = var1.getPos();
+         Direction var7 = var1.getFace();
          BlockState var8 = var4.getBlockState(var6);
          if (var8.isIn(Blocks.field36532)) {
             TileEntity var9 = var4.getTileEntity(var6);
@@ -63,7 +63,7 @@ public class SpawnEggItem extends Item {
 
          BlockPos var12;
          if (!var8.method23414(var4, var6).isEmpty()) {
-            var12 = var6.method8349(var7);
+            var12 = var6.offset(var7);
          } else {
             var12 = var6;
          }

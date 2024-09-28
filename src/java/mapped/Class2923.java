@@ -6,6 +6,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.IWorld;
 
 import java.util.Random;
 
@@ -37,13 +38,13 @@ public class Class2923 extends Class2898<Class4710> {
       }
    }
 
-   private boolean method11255(Class1660 var1, BlockPos var2, Random var3) {
+   private boolean method11255(IWorld var1, BlockPos var2, Random var3) {
       BlockPos var6 = var2.down();
       BlockState var7 = var1.getBlockState(var6);
       return !var7.isIn(Blocks.field36885) ? var7.method23454(var1, var6, Direction.UP) : var3.nextBoolean();
    }
 
-   private void method11256(Class1660 var1, BlockPos var2, Random var3, Class4710 var4) {
+   private void method11256(IWorld var1, BlockPos var2, Random var3, Class4710 var4) {
       if (var1.method7007(var2) && this.method11255(var1, var2, var3)) {
          var1.setBlockState(var2, var4.field22343.method20424(var3, var2), 4);
       }

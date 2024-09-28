@@ -5,7 +5,9 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.Property;
 import net.minecraft.state.EnumProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.state.properties.RailShape;
 import net.minecraft.util.Mirror;
@@ -28,7 +30,7 @@ public class Class3431 extends Class3429 {
 
    public Class3431(Properties var1) {
       super(true, var1);
-      this.method11578(this.field18612.method35393().with(field19194, Boolean.valueOf(false)).with(field19193, RailShape.field247));
+      this.setDefaultState(this.stateContainer.getBaseState().with(field19194, Boolean.valueOf(false)).with(field19193, RailShape.field247));
    }
 
    @Override
@@ -44,7 +46,7 @@ public class Class3431 extends Class3429 {
    }
 
    @Override
-   public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void tick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var1.<Boolean>get(field19194)) {
          this.method12094(var2, var3, var1);
       }
@@ -92,7 +94,7 @@ public class Class3431 extends Class3429 {
          }
 
          if (var7) {
-            var1.method6860().method20726(var2, this, 20);
+            var1.method6860().scheduleTick(var2, this, 20);
          }
 
          var1.updateComparatorOutputLevel(var2, this);
@@ -104,19 +106,19 @@ public class Class3431 extends Class3429 {
 
       for (BlockPos var9 : var7.method36233()) {
          BlockState var10 = var1.getBlockState(var9);
-         var10.method23423(var1, var9, var10.getBlock(), var2, false);
+         var10.neighborChanged(var1, var9, var10.getBlock(), var2, false);
       }
    }
 
    @Override
-   public void method11589(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+   public void onBlockAdded(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       if (!var4.isIn(var1.getBlock())) {
          this.method12094(var2, var3, this.method12089(var1, var2, var3, var5));
       }
    }
 
    @Override
-   public Class8550<RailShape> method12093() {
+   public Property<RailShape> method12093() {
       return field19193;
    }
 
@@ -277,7 +279,7 @@ public class Class3431 extends Class3429 {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field19193, field19194);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field19193, field19194);
    }
 }

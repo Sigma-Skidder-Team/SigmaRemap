@@ -16,7 +16,7 @@ public class Class5445 extends StructureStart<ShipwreckConfig> {
    }
 
    public void method17109(DynamicRegistries var1, ChunkGenerator var2, TemplateManager var3, int var4, int var5, Biome var6, ShipwreckConfig var7) {
-      Rotation var10 = Rotation.method254(this.field24201);
+      Rotation var10 = Rotation.randomRotation(this.field24201);
       BlockPos var11 = new BlockPos(var4 * 16, 90, var5 * 16);
       ShipwreckPieces.method30926(var3, var11, var10, this.field24196, this.field24201, var7);
       this.method17113();

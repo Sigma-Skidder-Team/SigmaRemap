@@ -22,6 +22,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.server.ServerWorld;
@@ -328,7 +329,7 @@ public class Class1094 extends Class1018 {
       return super.method4276(var1, var2, var3, (Class5093)var4, var5);
    }
 
-   private int method5116(Class1660 var1) {
+   private int method5116(IWorld var1) {
       Biome var4 = var1.getBiome(this.getPosition());
       int var5 = this.rand.nextInt(100);
       if (var4.method32500() != Class87.field225) {
@@ -342,7 +343,7 @@ public class Class1094 extends Class1018 {
       }
    }
 
-   public static boolean method5117(EntityType<Class1094> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method5117(EntityType<Class1094> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
       BlockState var7 = var1.getBlockState(var3.down());
       return (var7.isIn(Blocks.field36395) || var7.isIn(Blocks.SNOW) || var7.isIn(Blocks.SAND))
          && var1.method7021(var3, 0) > 8;

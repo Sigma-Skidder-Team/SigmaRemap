@@ -10,6 +10,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -134,7 +135,7 @@ public class Class1104 extends Class1009 {
       }
    }
 
-   public static boolean method5299(EntityType<Class1104> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method5299(EntityType<Class1104> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
       if (!method4342(var0, var1, var2, var3, var4)) {
          return false;
       } else {

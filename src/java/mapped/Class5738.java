@@ -8,6 +8,7 @@ import net.minecraft.item.Items;
 import net.minecraft.util.HandSide;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.vector.Matrix3f;
 import net.minecraft.util.math.vector.Vector3d;
 
 public class Class5738 extends EntityRenderer<Class904> {
@@ -28,7 +29,7 @@ public class Class5738 extends EntityRenderer<Class904> {
          var4.rotate(Vector3f.YP.rotationDegrees(180.0F));
          Class8892 var10 = var4.getLast();
          Matrix4f var11 = var10.getMatrix();
-         Class8967 var12 = var10.method32362();
+         Matrix3f var12 = var10.method32362();
          IVertexBuilder var13 = var5.method25597(field25160);
          method17922(var13, var11, var12, var6, 0.0F, 0, 0, 1);
          method17922(var13, var11, var12, var6, 1.0F, 0, 1, 1);
@@ -95,7 +96,7 @@ public class Class5738 extends EntityRenderer<Class904> {
       return (float)var0 / (float)var1;
    }
 
-   private static void method17922(IVertexBuilder var0, Matrix4f var1, Class8967 var2, int var3, float var4, int var5, int var6, int var7) {
+   private static void method17922(IVertexBuilder var0, Matrix4f var1, Matrix3f var2, int var3, float var4, int var5, int var6, int var7) {
       var0.pos(var1, var4 - 0.5F, (float)var5 - 0.5F, 0.0F)
          .color(255, 255, 255, 255)
          .tex((float)var6, (float)var7)

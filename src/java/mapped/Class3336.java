@@ -7,6 +7,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.server.ServerWorld;
@@ -23,13 +24,13 @@ public class Class3336 extends Item {
 
    @Override
    public ActionResultType method11707(ItemUseContext var1) {
-      World var4 = var1.method18360();
-      BlockPos var5 = var1.method18345();
-      BlockPos var6 = var5.method8349(var1.method18354());
+      World var4 = var1.getWorld();
+      BlockPos var5 = var1.getPos();
+      BlockPos var6 = var5.offset(var1.getFace());
       if (!method11883(var1.method18357(), var4, var5)) {
          BlockState var7 = var4.getBlockState(var5);
-         boolean var8 = var7.method23454(var4, var5, var1.method18354());
-         if (var8 && method11884(var1.method18357(), var4, var6, var1.method18354())) {
+         boolean var8 = var7.method23454(var4, var5, var1.getFace());
+         if (var8 && method11884(var1.method18357(), var4, var6, var1.getFace())) {
             if (!var4.isRemote) {
                var4.playEvent(2005, var6, 0);
             }
@@ -75,7 +76,7 @@ public class Class3336 extends Item {
             label110:
             for (int var6 = 0; var6 < 128; var6++) {
                BlockPos var7 = var2;
-               BlockState var8 = Blocks.SEAGRASS.method11579();
+               BlockState var8 = Blocks.SEAGRASS.getDefaultState();
 
                for (int var9 = 0; var9 < var6 / 16; var9++) {
                   var7 = var7.method8336(field18735.nextInt(3) - 1, (field18735.nextInt(3) - 1) * field18735.nextInt(3) / 2, field18735.nextInt(3) - 1);
@@ -87,10 +88,10 @@ public class Class3336 extends Item {
                Optional var11 = var1.method7178(var7);
                if (Objects.equals(var11, Optional.<RegistryKey<Biome>>of(Class9495.field44165))
                   || Objects.equals(var11, Optional.<RegistryKey<Biome>>of(Class9495.field44168))) {
-                  if (var6 == 0 && var3 != null && var3.getAxis().method324()) {
-                     var8 = BlockTags.field32784.method24919(var1.rand).method11579().with(Class3229.field18669, var3);
+                  if (var6 == 0 && var3 != null && var3.getAxis().isHorizontal()) {
+                     var8 = BlockTags.field32784.method24919(var1.rand).getDefaultState().with(Class3229.field18669, var3);
                   } else if (field18735.nextInt(4) == 0) {
-                     var8 = BlockTags.field32782.method24919(field18735).method11579();
+                     var8 = BlockTags.field32782.method24919(field18735).getDefaultState();
                   }
                }
 
@@ -118,7 +119,7 @@ public class Class3336 extends Item {
       }
    }
 
-   public static void method11885(Class1660 var0, BlockPos var1, int var2) {
+   public static void method11885(IWorld var0, BlockPos var1, int var2) {
       if (var2 == 0) {
          var2 = 15;
       }

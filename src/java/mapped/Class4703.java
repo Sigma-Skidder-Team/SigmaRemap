@@ -19,7 +19,7 @@ public class Class4703 implements Class4698 {
                BlockState.field31585
                   .listOf()
                   .fieldOf("whitelist")
-                  .forGetter(var0x -> var0x.field22308.stream().<BlockState>map(Block::method11579).collect(Collectors.toList())),
+                  .forGetter(var0x -> var0x.field22308.stream().<BlockState>map(Block::getDefaultState).collect(Collectors.toList())),
                BlockState.field31585.listOf().fieldOf("blacklist").forGetter(var0x -> ImmutableList.copyOf(var0x.field22309)),
                Codec.INT.fieldOf("tries").orElse(128).forGetter(var0x -> var0x.field22310),
                Codec.INT.fieldOf("xspread").orElse(7).forGetter(var0x -> var0x.field22311),

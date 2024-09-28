@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
+import net.minecraft.state.Property;
 import net.minecraft.util.Direction;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.ResourceLocation;
@@ -70,7 +71,7 @@ public class Class8896 {
             Class9727 var6 = var5[0];
             int var7 = var6.method38103();
             Block var8 = Registry.BLOCK.getByValue(var7);
-            return var8.method11579();
+            return var8.getDefaultState();
          } else {
             return var2;
          }
@@ -165,7 +166,7 @@ public class Class8896 {
       if (var2.length <= 0) {
          return null;
       } else {
-         BlockState var5 = var1.method11579();
+         BlockState var5 = var1.getDefaultState();
          Collection var6 = var5.method23461();
          HashMap var7 = new HashMap();
 
@@ -180,7 +181,7 @@ public class Class8896 {
 
                String var11 = var10[0];
                String var12 = var10[1];
-               Class8550 var13 = Class7104.method22099(var11, var6);
+               Property var13 = Class7104.method22099(var11, var6);
                if (var13 == null) {
                   this.method32403("Property not found: " + var11 + ", block: " + var1);
                   return null;
@@ -238,7 +239,7 @@ public class Class8896 {
       }
    }
 
-   public static Comparable method32391(Class8550 var0, String var1) {
+   public static Comparable method32391(Property var0, String var1) {
       Class var4 = var0.method30473();
       Comparable var5 = method32394(var1, var4);
       if (var5 == null) {
@@ -292,8 +293,8 @@ public class Class8896 {
       }
    }
 
-   public boolean method32395(BlockState var1, Map<Class8550, List<Comparable>> var2) {
-      for (Class8550 var6 : var2.keySet()) {
+   public boolean method32395(BlockState var1, Map<Property, List<Comparable>> var2) {
+      for (Property var6 : var2.keySet()) {
          List var7 = (List)var2.get(var6);
          Comparable var8 = var1.<Comparable>get(var6);
          if (var8 == null) {

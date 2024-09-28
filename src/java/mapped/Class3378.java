@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -20,16 +21,16 @@ public class Class3378 extends Class3377 {
 
    public Class3378(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().with(field18978, Integer.valueOf(0)));
+      this.setDefaultState(this.stateContainer.getBaseState().with(field18978, Integer.valueOf(0)));
    }
 
    @Override
-   public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
-      this.method11522(var1, var2, var3, var4);
+   public void randomTick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+      this.tick(var1, var2, var3, var4);
    }
 
    @Override
-   public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void tick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if ((var4.nextInt(3) == 0 || this.method11970(var2, var3, 4))
          && var2.method7015(var3) > 11 - var1.<Integer>get(field18978) - var1.getOpacity(var2, var3)
          && this.method11969(var1, var2, var3)) {
@@ -39,11 +40,11 @@ public class Class3378 extends Class3377 {
             var7.method8377(var3, var11);
             BlockState var12 = var2.getBlockState(var7);
             if (var12.isIn(this) && !this.method11969(var12, var2, var7)) {
-               var2.method6860().method20726(var7, this, MathHelper.method37782(var4, 20, 40));
+               var2.method6860().scheduleTick(var7, this, MathHelper.method37782(var4, 20, 40));
             }
          }
       } else {
-         var2.method6860().method20726(var3, this, MathHelper.method37782(var4, 20, 40));
+         var2.method6860().scheduleTick(var3, this, MathHelper.method37782(var4, 20, 40));
       }
    }
 
@@ -84,8 +85,8 @@ public class Class3378 extends Class3377 {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field18978);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field18978);
    }
 
    @Override

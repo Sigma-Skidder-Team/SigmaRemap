@@ -58,8 +58,8 @@ public class Class3271 extends Item implements IVanishable {
 
    @Override
    public ActionResultType method11707(ItemUseContext var1) {
-      BlockPos var4 = var1.method18345();
-      World var5 = var1.method18360();
+      BlockPos var4 = var1.getPos();
+      World var5 = var1.getWorld();
       if (!var5.getBlockState(var4).isIn(Blocks.field37129)) {
          return super.method11707(var1);
       } else {

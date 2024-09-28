@@ -16,6 +16,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -215,7 +216,7 @@ public class Class1090 extends Class1018 {
       return field5972.test(var1);
    }
 
-   public static boolean method5078(EntityType<Class1090> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method5078(EntityType<Class1090> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
       return var4.nextInt(3) != 0;
    }
 

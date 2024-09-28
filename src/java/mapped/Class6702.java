@@ -13,17 +13,17 @@ public class Class6702 extends Class6698 {
    private static String[] field29337;
    public static final Codec<Class6702> field29338 = Codec.unit(() -> Class6702.field29340);
    private static final BlockState[] field29339 = new BlockState[]{
-      Blocks.DANDELION.method11579(),
-      Blocks.POPPY.method11579(),
-      Blocks.ALLIUM.method11579(),
-      Blocks.AZURE_BLUET.method11579(),
-      Blocks.RED_TULIP.method11579(),
-      Blocks.ORANGE_TULIP.method11579(),
-      Blocks.WHITE_TULIP.method11579(),
-      Blocks.PINK_TULIP.method11579(),
-      Blocks.OXEYE_DAISY.method11579(),
-      Blocks.CORNFLOWER.method11579(),
-      Blocks.LILY_OF_THE_VALLEY.method11579()
+      Blocks.DANDELION.getDefaultState(),
+      Blocks.POPPY.getDefaultState(),
+      Blocks.ALLIUM.getDefaultState(),
+      Blocks.AZURE_BLUET.getDefaultState(),
+      Blocks.RED_TULIP.getDefaultState(),
+      Blocks.ORANGE_TULIP.getDefaultState(),
+      Blocks.WHITE_TULIP.getDefaultState(),
+      Blocks.PINK_TULIP.getDefaultState(),
+      Blocks.OXEYE_DAISY.getDefaultState(),
+      Blocks.CORNFLOWER.getDefaultState(),
+      Blocks.LILY_OF_THE_VALLEY.getDefaultState()
    };
    public static final Class6702 field29340 = new Class6702();
 

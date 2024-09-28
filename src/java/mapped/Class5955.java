@@ -22,7 +22,7 @@ public class Class5955 extends Class5942<Class945> {
          if (var12 != ItemStack.EMPTY) {
             var3.push();
             var3.translate(0.5, 0.44921875, 0.5);
-            Direction var13 = Direction.byHorizontalIndex((var11 + var9.method534()) % 4);
+            Direction var13 = Direction.byHorizontalIndex((var11 + var9.getHorizontalIndex()) % 4);
             float var14 = -var13.getHorizontalAngle();
             var3.rotate(Vector3f.YP.rotationDegrees(var14));
             var3.rotate(Vector3f.XP.rotationDegrees(90.0F));

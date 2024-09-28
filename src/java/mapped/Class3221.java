@@ -7,12 +7,16 @@ import net.minecraft.block.FenceGateBlock;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -26,16 +30,16 @@ public class Class3221 extends Block {
 
    public Class3221(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().with(field18644, Integer.valueOf(0)));
+      this.setDefaultState(this.stateContainer.getBaseState().with(field18644, Integer.valueOf(0)));
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       if (var2 == Direction.UP && !var1.method23443(var4, var5)) {
-         var4.method6860().method20726(var5, this, 1);
+         var4.method6860().scheduleTick(var5, this, 1);
       }
 
-      return super.method11491(var1, var2, var3, var4, var5, var6);
+      return super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
    }
 
    @Override
@@ -45,29 +49,29 @@ public class Class3221 extends Block {
    }
 
    @Override
-   public BlockState method11495(Class5909 var1) {
-      return this.method11579().method23443(var1.method18360(), var1.method18345()) ? super.method11495(var1) : Blocks.field36396.method11579();
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      return this.getDefaultState().method23443(var1.getWorld(), var1.getPos()) ? super.getStateForPlacement(var1) : Blocks.field36396.getDefaultState();
    }
 
    @Override
-   public boolean method11534(BlockState var1) {
+   public boolean isTransparent(BlockState var1) {
       return true;
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return field18645;
    }
 
    @Override
-   public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void tick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (!var1.method23443(var2, var3)) {
          method11610(var1, var2, var3);
       }
    }
 
    @Override
-   public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void randomTick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       int var7 = var1.<Integer>get(field18644);
       if (!method11612(var2, var3) && !var2.isRainingAt(var3.up())) {
          if (var7 <= 0) {
@@ -96,7 +100,7 @@ public class Class3221 extends Block {
    }
 
    public static void method11610(BlockState var0, World var1, BlockPos var2) {
-      var1.setBlockState(var2, method11538(var0, Blocks.field36396.method11579(), var1, var2));
+      var1.setBlockState(var2, method11538(var0, Blocks.field36396.getDefaultState(), var1, var2));
    }
 
    private static boolean method11611(IBlockReader var0, BlockPos var1) {
@@ -115,12 +119,12 @@ public class Class3221 extends Block {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field18644);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field18644);
    }
 
    @Override
-   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
+   public boolean allowsMovement(BlockState var1, IBlockReader var2, BlockPos var3, PathType var4) {
       return false;
    }
 }

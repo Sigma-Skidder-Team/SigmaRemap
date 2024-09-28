@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.HorizontalBlock;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -15,6 +16,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tileentity.TileEntity;
@@ -27,6 +29,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
 import java.util.List;
@@ -40,7 +43,7 @@ public class Class3366 extends Class3241 {
 
    public Class3366(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().with(field18936, Integer.valueOf(0)).with(field18935, Direction.NORTH));
+      this.setDefaultState(this.stateContainer.getBaseState().with(field18936, Integer.valueOf(0)).with(field18935, Direction.NORTH));
    }
 
    @Override
@@ -87,7 +90,7 @@ public class Class3366 extends Class3241 {
    }
 
    @Override
-   public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
+   public ActionResultType onBlockActivated(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       ItemStack var9 = var4.getHeldItem(var5);
       int var10 = var1.<Integer>get(field18936);
       boolean var11 = false;
@@ -115,7 +118,7 @@ public class Class3366 extends Class3241 {
       }
 
       if (!var11) {
-         return super.method11505(var1, var2, var3, var4, var5, var6);
+         return super.onBlockActivated(var1, var2, var3, var4, var5, var6);
       } else {
          if (Class3244.method11654(var2, var3)) {
             this.method11947(var2, var1, var3);
@@ -155,7 +158,7 @@ public class Class3366 extends Class3241 {
    }
 
    @Override
-   public void method11512(BlockState var1, World var2, BlockPos var3, Random var4) {
+   public void animateTick(BlockState var1, World var2, BlockPos var3, Random var4) {
       if (var1.<Integer>get(field18936) >= 5) {
          for (int var7 = 0; var7 < var4.nextInt(1) + 1; var7++) {
             this.method11948(var2, var3, var1);
@@ -208,13 +211,13 @@ public class Class3366 extends Class3241 {
    }
 
    @Override
-   public BlockState method11495(Class5909 var1) {
-      return this.method11579().with(field18935, var1.method18350().getOpposite());
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      return this.getDefaultState().with(field18935, var1.getPlacementHorizontalFacing().getOpposite());
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field18936, field18935);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field18936, field18935);
    }
 
    @Override
@@ -274,7 +277,7 @@ public class Class3366 extends Class3241 {
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       if (var4.getBlockState(var6).getBlock() instanceof Class3399) {
          TileEntity var9 = var4.getTileEntity(var5);
          if (var9 instanceof BeehiveTileEntity) {
@@ -283,7 +286,7 @@ public class Class3366 extends Class3241 {
          }
       }
 
-      return super.method11491(var1, var2, var3, var4, var5, var6);
+      return super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
    }
 
    public static Direction method11951(Random var0) {

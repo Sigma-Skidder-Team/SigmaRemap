@@ -294,7 +294,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
             boolean var12 = false;
 
             for (Block var14 : BlockTags.field32780.method24918()) {
-               if (var8.method7206().contains(var14.method11579())) {
+               if (var8.method7206().contains(var14.getDefaultState())) {
                   var12 = true;
                   break;
                }

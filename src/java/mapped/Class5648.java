@@ -5,6 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.chunk.IChunk;
 
 import java.util.Arrays;
@@ -41,7 +42,7 @@ public class Class5648 extends ChunkGenerator {
       BlockState[] var3 = this.field24999.method38130();
 
       for (int var4 = 0; var4 < var3.length; var4++) {
-         BlockState var5 = var3[var4] != null ? var3[var4] : Blocks.AIR.method11579();
+         BlockState var5 = var3[var4] != null ? var3[var4] : Blocks.AIR.getDefaultState();
          if (!Heightmap.Type.MOTION_BLOCKING.method287().test(var5)) {
             return var4 - 1;
          }
@@ -51,7 +52,7 @@ public class Class5648 extends ChunkGenerator {
    }
 
    @Override
-   public void method17803(Class1660 var1, Class7480 var2, IChunk var3) {
+   public void method17803(IWorld var1, Class7480 var2, IChunk var3) {
       BlockState[] var6 = this.field24999.method38130();
       BlockPos.Mutable var7 = new BlockPos.Mutable();
       Heightmap var8 = var3.getHeightmap(Heightmap.Type.OCEAN_FLOOR_WG);
@@ -89,7 +90,7 @@ public class Class5648 extends ChunkGenerator {
    public IBlockReader method17798(int var1, int var2) {
       return new Class1669(
          Arrays.<BlockState>stream(this.field24999.method38130())
-            .<BlockState>map(var0 -> (BlockState)(var0 != null ? var0 : Blocks.AIR.method11579()))
+            .<BlockState>map(var0 -> (BlockState)(var0 != null ? var0 : Blocks.AIR.getDefaultState()))
             .<BlockState>toArray(BlockState[]::new)
       );
    }

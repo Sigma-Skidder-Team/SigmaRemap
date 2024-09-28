@@ -28,7 +28,7 @@ public class Class3365 extends Class3241 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return field18933;
    }
 
@@ -54,7 +54,7 @@ public class Class3365 extends Class3241 {
    }
 
    @Override
-   public void method11512(BlockState var1, World var2, BlockPos var3, Random var4) {
+   public void animateTick(BlockState var1, World var2, BlockPos var3, Random var4) {
       double var7 = (double)var3.getX() + var4.nextDouble();
       double var9 = (double)var3.getY() + 0.8;
       double var11 = (double)var3.getZ() + var4.nextDouble();

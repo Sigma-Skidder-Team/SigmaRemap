@@ -8,6 +8,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeManager;
 import net.minecraft.world.chunk.IChunk;
@@ -27,8 +28,8 @@ public class Class5647 extends ChunkGenerator {
       .collect(Collectors.<BlockState>toList());
    private static final int field24993 = MathHelper.ceil(MathHelper.sqrt((float)field24992.size()));
    private static final int field24994 = MathHelper.ceil((float)field24992.size() / (float)field24993);
-   public static final BlockState field24995 = Blocks.AIR.method11579();
-   public static final BlockState field24996 = Blocks.field36765.method11579();
+   public static final BlockState field24995 = Blocks.AIR.getDefaultState();
+   public static final BlockState field24996 = Blocks.field36765.getDefaultState();
    private final Registry<Biome> field24997;
 
    public Class5647(Registry<Biome> var1) {
@@ -78,7 +79,7 @@ public class Class5647 extends ChunkGenerator {
    }
 
    @Override
-   public void method17803(Class1660 var1, Class7480 var2, IChunk var3) {
+   public void method17803(IWorld var1, Class7480 var2, IChunk var3) {
    }
 
    @Override

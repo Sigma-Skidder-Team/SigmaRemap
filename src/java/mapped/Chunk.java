@@ -14,6 +14,8 @@ import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.fluid.Fluid;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.tileentity.TileEntity;
@@ -189,14 +191,14 @@ public class Chunk implements IChunk {
       if (this.field9116.isDebug()) {
          BlockState var11 = null;
          if (var5 == 60) {
-            var11 = Blocks.field36765.method11579();
+            var11 = Blocks.field36765.getDefaultState();
          }
 
          if (var5 == 70) {
             var11 = Class5647.method17835(var4, var6);
          }
 
-         return var11 == null ? Blocks.AIR.method11579() : var11;
+         return var11 == null ? Blocks.AIR.getDefaultState() : var11;
       } else {
          try {
             if (var5 >= 0 && var5 >> 4 < this.field9112.length) {
@@ -206,7 +208,7 @@ public class Chunk implements IChunk {
                }
             }
 
-            return Blocks.AIR.method11579();
+            return Blocks.AIR.getDefaultState();
          } catch (Throwable var10) {
             CrashReport var8 = CrashReport.makeCrashReport(var10, "Getting block state");
             CrashReportCategory var9 = var8.makeCategory("Block being got");
@@ -230,7 +232,7 @@ public class Chunk implements IChunk {
             }
          }
 
-         return Class9479.field44064.method25049();
+         return Fluids.EMPTY.method25049();
       } catch (Throwable var9) {
          CrashReport var7 = CrashReport.makeCrashReport(var9, "Getting fluid state");
          CrashReportCategory var8 = var7.makeCategory("Block being got");
@@ -274,7 +276,7 @@ public class Chunk implements IChunk {
                this.field9116.method6762(var1);
             }
          } else {
-            var11.method23429(this.field9116, var1, var2, var3);
+            var11.onReplaced(this.field9116, var1, var2, var3);
          }
 
          if (var9.method21852(var6, var7 & 15, var8).isIn(var12)) {
@@ -774,11 +776,11 @@ public class Chunk implements IChunk {
 
       if (!(this.field9125 instanceof Class6806)) {
          if (this.field9125 instanceof Class6801) {
-            ((Class6801)this.field9125).method20723(this.field9116.method6861());
+            ((Class6801)this.field9125).method20723(this.field9116.getPendingFluidTicks());
             this.field9125 = Class6804.method20727();
          }
       } else {
-         ((Class6806<Fluid>)this.field9125).method20738(this.field9116.method6861(), var1 -> this.getFluidState(var1).method23472());
+         ((Class6806<Fluid>)this.field9125).method20738(this.field9116.getPendingFluidTicks(), var1 -> this.getFluidState(var1).getFluid());
          this.field9125 = Class6804.method20727();
       }
    }
@@ -793,7 +795,7 @@ public class Chunk implements IChunk {
 
       if (this.field9125 == Class6804.<Fluid>method20727()) {
          this.field9125 = new Class6801<>(
-                 Registry.field16070::getKey, var1.method6861().method20729(this.field9132, true, false), var1.getGameTime()
+                 Registry.FLUID::getKey, var1.getPendingFluidTicks().method20729(this.field9132, true, false), var1.getGameTime()
          );
          this.setModified(true);
       }

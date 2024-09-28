@@ -4,9 +4,13 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.SwordItem;
+import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.EnumProperty;
 import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BambooLeaves;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tags.BlockTags;
@@ -15,6 +19,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -33,9 +38,9 @@ public class Class3418 extends Block implements Class3196 {
 
    public Class3418(Properties var1) {
       super(var1);
-      this.method11578(
-         this.field18612
-            .method35393()
+      this.setDefaultState(
+         this.stateContainer
+            .getBaseState()
             .with(field19125, Integer.valueOf(0))
             .with(field19126, BambooLeaves.field642)
             .with(field19127, Integer.valueOf(0))
@@ -43,8 +48,8 @@ public class Class3418 extends Block implements Class3196 {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field19125, field19126, field19127);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field19125, field19126, field19127);
    }
 
    @Override
@@ -58,14 +63,14 @@ public class Class3418 extends Block implements Class3196 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       VoxelShape var7 = var1.get(field19126) != BambooLeaves.field644 ? field19122 : field19123;
       Vector3d var8 = var1.method23421(var2, var3);
       return var7.withOffset(var8.x, var8.y, var8.z);
    }
 
    @Override
-   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
+   public boolean allowsMovement(BlockState var1, IBlockReader var2, BlockPos var3, PathType var4) {
       return false;
    }
 
@@ -77,24 +82,24 @@ public class Class3418 extends Block implements Class3196 {
 
    @Nullable
    @Override
-   public BlockState method11495(Class5909 var1) {
-      FluidState var4 = var1.method18360().getFluidState(var1.method18345());
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      FluidState var4 = var1.getWorld().getFluidState(var1.getPos());
       if (var4.method23474()) {
-         BlockState var5 = var1.method18360().getBlockState(var1.method18345().down());
+         BlockState var5 = var1.getWorld().getBlockState(var1.getPos().down());
          if (!var5.isIn(BlockTags.field32787)) {
             return null;
          } else if (!var5.isIn(Blocks.field37008)) {
             if (var5.isIn(Blocks.field37009)) {
                int var7 = var5.<Integer>get(field19125) <= 0 ? 0 : 1;
-               return this.method11579().with(field19125, Integer.valueOf(var7));
+               return this.getDefaultState().with(field19125, Integer.valueOf(var7));
             } else {
-               BlockState var6 = var1.method18360().getBlockState(var1.method18345().up());
+               BlockState var6 = var1.getWorld().getBlockState(var1.getPos().up());
                return !var6.isIn(Blocks.field37009) && !var6.isIn(Blocks.field37008)
-                  ? Blocks.field37008.method11579()
-                  : this.method11579().with(field19125, var6.<Integer>get(field19125));
+                  ? Blocks.field37008.getDefaultState()
+                  : this.getDefaultState().with(field19125, var6.<Integer>get(field19125));
             }
          } else {
-            return this.method11579().with(field19125, Integer.valueOf(0));
+            return this.getDefaultState().with(field19125, Integer.valueOf(0));
          }
       } else {
          return null;
@@ -102,19 +107,19 @@ public class Class3418 extends Block implements Class3196 {
    }
 
    @Override
-   public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void tick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (!var1.method23443(var2, var3)) {
          var2.method7179(var3, true);
       }
    }
 
    @Override
-   public boolean method11499(BlockState var1) {
+   public boolean ticksRandomly(BlockState var1) {
       return var1.<Integer>get(field19127) == 0;
    }
 
    @Override
-   public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void randomTick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var1.<Integer>get(field19127) == 0
          && var4.nextInt(3) == 0
          && var2.method7007(var3.up())
@@ -132,16 +137,16 @@ public class Class3418 extends Block implements Class3196 {
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       if (!var1.method23443(var4, var5)) {
-         var4.method6860().method20726(var5, this, 1);
+         var4.method6860().scheduleTick(var5, this, 1);
       }
 
       if (var2 == Direction.UP && var3.isIn(Blocks.field37009) && var3.<Integer>get(field19125) > var1.<Integer>get(field19125)) {
          var4.setBlockState(var5, var1.method23459(field19125), 2);
       }
 
-      return super.method11491(var1, var2, var3, var4, var5, var6);
+      return super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
    }
 
    @Override
@@ -202,7 +207,7 @@ public class Class3418 extends Block implements Class3196 {
       int var13 = (var5 < 11 || !(var4.nextFloat() < 0.25F)) && var5 != 15 ? 0 : 1;
       var2.setBlockState(
          var3.up(),
-         this.method11579().with(field19125, Integer.valueOf(var12)).with(field19126, var11).with(field19127, Integer.valueOf(var13)),
+         this.getDefaultState().with(field19125, Integer.valueOf(var12)).with(field19126, var11).with(field19127, Integer.valueOf(var13)),
          3
       );
    }

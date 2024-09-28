@@ -63,7 +63,7 @@ public abstract class Class4180 extends Class4178 {
             if (var18.field35532 != null) {
                String var19 = var18.field35532.getString("final_state");
                Class8268 var13 = new Class8268(new StringReader(var19), false);
-               BlockState var14 = Blocks.AIR.method11579();
+               BlockState var14 = Blocks.AIR.getDefaultState();
 
                try {
                   var13.method28840(true);

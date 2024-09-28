@@ -28,12 +28,12 @@ public class Class2960 extends Structure<Class4712> {
 
    private static int method11360(int var0, int var1, ChunkGenerator var2) {
       Random var5 = new Random((long)(var0 + var1 * 10387313));
-      Rotation var6 = Rotation.method254(var5);
+      Rotation var6 = Rotation.randomRotation(var5);
       byte var7 = 5;
       byte var8 = 5;
-      if (var6 != Rotation.field186) {
-         if (var6 != Rotation.field187) {
-            if (var6 == Rotation.field188) {
+      if (var6 != Rotation.CLOCKWISE_90) {
+         if (var6 != Rotation.CLOCKWISE_180) {
+            if (var6 == Rotation.COUNTERCLOCKWISE_90) {
                var8 = -5;
             }
          } else {

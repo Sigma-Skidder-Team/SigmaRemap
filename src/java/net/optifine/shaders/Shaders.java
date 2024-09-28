@@ -13,6 +13,7 @@ import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.shader.FramebufferConstants;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.fluid.FluidState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Hand;
@@ -2698,7 +2699,7 @@ public class Shaders {
                     var5 = Class8715.method31433(var5);
                 }
 
-                int var7 = var6 != null ? var6.method11579().getLightValue() : 0;
+                int var7 = var6 != null ? var6.getDefaultState().getLightValue() : 0;
                 ItemStack var8 = field40591.player != null ? field40591.player.getHeldItemOffhand() : null;
                 Item var9 = var8 != null ? var8.getItem() : null;
                 int var10 = -1;
@@ -2712,7 +2713,7 @@ public class Shaders {
                     var10 = Class8715.method31433(var10);
                 }
 
-                int var12 = var11 != null ? var11.method11579().getLightValue() : 0;
+                int var12 = var11 != null ? var11.getDefaultState().getLightValue() : 0;
                 if (method32993() && var12 > var7) {
                     var5 = var10;
                     var7 = var12;
@@ -4458,7 +4459,7 @@ public class Shaders {
 
     public static void method33134(Block var0) {
         field40986++;
-        int var1 = var0.method11526(var0.method11579()).ordinal();
+        int var1 = var0.method11526(var0.getDefaultState()).ordinal();
         field40985[field40986 * 2] = Registry.BLOCK.getId(var0) & 65535 | var1 << 16;
         field40985[field40986 * 2 + 1] = 0;
     }
@@ -4621,7 +4622,7 @@ public class Shaders {
                 if (var3 == null) {
                     return false;
                 } else {
-                    RenderType var4 = Class8928.method32630(var3.method11579());
+                    RenderType var4 = Class8928.method32630(var3.getDefaultState());
                     return var4 == Class9025.field41291;
                 }
             }

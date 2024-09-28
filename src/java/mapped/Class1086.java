@@ -15,6 +15,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -39,7 +40,7 @@ public class Class1086 extends Class1087 implements Class1020 {
       return !var2.getBlockState(var1.down()).isIn(Blocks.MYCELIUM) ? var2.method7009(var1) - 0.5F : 10.0F;
    }
 
-   public static boolean method5034(EntityType<Class1086> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method5034(EntityType<Class1086> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
       return var1.getBlockState(var3.down()).isIn(Blocks.MYCELIUM) && var1.method7021(var3, 0) > 8;
    }
 

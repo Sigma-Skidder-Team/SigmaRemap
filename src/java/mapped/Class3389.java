@@ -2,16 +2,18 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.UnmodifiableIterator;
-import com.google.common.collect.ImmutableList.Builder;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.fluid.FluidState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
@@ -39,7 +41,7 @@ public class Class3389 extends Block {
       new Vector3i(-1, 0, 1),
       new Vector3i(1, 0, 1)
    );
-   private static final ImmutableList<Vector3i> field19002 = new Builder()
+   private static final ImmutableList<Vector3i> field19002 = new ImmutableList.Builder()
       .addAll(field19001)
       .addAll(field19001.stream().<Vector3i>map(Vector3i::method8312).iterator())
       .addAll(field19001.stream().<Vector3i>map(Vector3i::method8310).iterator())
@@ -48,11 +50,11 @@ public class Class3389 extends Block {
 
    public Class3389(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().with(field19000, Integer.valueOf(0)));
+      this.setDefaultState(this.stateContainer.getBaseState().with(field19000, Integer.valueOf(0)));
    }
 
    @Override
-   public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
+   public ActionResultType onBlockActivated(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       ItemStack var9 = var4.getHeldItem(var5);
       if (var5 == Hand.MAIN_HAND && !method11984(var9) && method11984(var4.getHeldItem(Hand.OFF_HAND))) {
          return ActionResultType.field14820;
@@ -125,7 +127,7 @@ public class Class3389 extends Block {
 
    private void method11987(BlockState var1, World var2, BlockPos var3) {
       var2.removeBlock(var3, false);
-      boolean var6 = Direction.Plane.HORIZONTAL.method248().<BlockPos>map(var3::method8349).anyMatch(var1x -> method11986(var1x, var2));
+      boolean var6 = Direction.Plane.HORIZONTAL.method248().<BlockPos>map(var3::offset).anyMatch(var1x -> method11986(var1x, var2));
       boolean var7 = var6 || var2.getFluidState(var3.up()).method23486(FluidTags.field40469);
       Class5925 var8 = new Class5925(this, var7);
       var2.method6757(
@@ -160,7 +162,7 @@ public class Class3389 extends Block {
    }
 
    @Override
-   public void method11512(BlockState var1, World var2, BlockPos var3, Random var4) {
+   public void animateTick(BlockState var1, World var2, BlockPos var3, Random var4) {
       if (var1.<Integer>get(field19000) != 0) {
          if (var4.nextInt(100) == 0) {
             var2.playSound(
@@ -184,8 +186,8 @@ public class Class3389 extends Block {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field19000);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field19000);
    }
 
    @Override
@@ -224,7 +226,7 @@ public class Class3389 extends Block {
    }
 
    @Override
-   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
+   public boolean allowsMovement(BlockState var1, IBlockReader var2, BlockPos var3, PathType var4) {
       return false;
    }
 }

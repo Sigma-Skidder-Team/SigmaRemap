@@ -4,6 +4,7 @@ import com.google.common.collect.UnmodifiableIterator;
 import mapped.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityType;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.state.properties.BedPart;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tileentity.TileEntity;
@@ -105,12 +106,12 @@ public class Blocks {
       "bedrock", new Block(AbstractBlock.Properties.method26609(Material.field38966).method26621(-1.0F, 3600000.0F).method26626().method26629(Blocks::method30012))
    );
    public static final Block WATER = register(
-      "water", new Class3404(Class9479.field44066, AbstractBlock.Properties.method26609(Material.field38941).method26614().method26623(100.0F).method26626())
+      "water", new Class3404(Fluids.WATER, AbstractBlock.Properties.method26609(Material.field38941).method26614().method26623(100.0F).method26626())
    );
    public static final Block LAVA = register(
       "lava",
       new Class3404(
-         Class9479.field44068,
+         Fluids.LAVA,
          AbstractBlock.Properties.method26609(Material.field38943).method26614().method26624().method26623(100.0F).method26620(var0 -> 15).method26626()
       )
    );
@@ -483,7 +484,7 @@ public class Blocks {
    public static final Block field36532 = register(
       "spawner", new Class3370(AbstractBlock.Properties.method26609(Material.field38966).method26635().method26623(5.0F).method26619(SoundType.field36205).method26615())
    );
-   public static final Block field36533 = register("oak_stairs", new Class3421(field36400.method11579(), AbstractBlock.Properties.method26613(field36400)));
+   public static final Block field36533 = register("oak_stairs", new StairsBlock(field36400.getDefaultState(), AbstractBlock.Properties.method26613(field36400)));
    public static final Block CHEST = register(
       "chest", new ChestBlock(AbstractBlock.Properties.method26609(Material.field38956).method26623(2.5F).method26619(SoundType.field36200), () -> TileEntityType.CHEST)
    );
@@ -566,7 +567,7 @@ public class Blocks {
    public static final Block RAIL = register(
       "rail", new Class3430(AbstractBlock.Properties.method26609(Material.field38946).method26614().method26623(0.7F).method26619(SoundType.field36205))
    );
-   public static final Block COBBLESTONE_STAIRS = register("cobblestone_stairs", new Class3421(field36399.method11579(), AbstractBlock.Properties.method26613(field36399)));
+   public static final Block COBBLESTONE_STAIRS = register("cobblestone_stairs", new StairsBlock(field36399.getDefaultState(), AbstractBlock.Properties.method26613(field36399)));
    public static final Block OAK_WALL_SIGN = register(
       "oak_wall_sign",
       new Class3375(
@@ -996,8 +997,8 @@ public class Blocks {
       "oak_fence_gate",
       new FenceGateBlock(AbstractBlock.Properties.method26611(Material.field38956, field36400.method12000()).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
-   public static final Block BRICK_STAIRS = register("brick_stairs", new Class3421(field36523.method11579(), AbstractBlock.Properties.method26613(field36523)));
-   public static final Block STONE_BRICK_STAIRS = register("stone_brick_stairs", new Class3421(field36615.method11579(), AbstractBlock.Properties.method26613(field36615)));
+   public static final Block BRICK_STAIRS = register("brick_stairs", new StairsBlock(field36523.getDefaultState(), AbstractBlock.Properties.method26613(field36523)));
+   public static final Block STONE_BRICK_STAIRS = register("stone_brick_stairs", new StairsBlock(field36615.getDefaultState(), AbstractBlock.Properties.method26613(field36615)));
    public static final Block MYCELIUM = register(
       "mycelium",
       new Class3474(AbstractBlock.Properties.method26611(Material.field38951, MaterialColor.field30971).method26624().method26623(0.6F).method26619(SoundType.field36202))
@@ -1013,7 +1014,7 @@ public class Blocks {
       "nether_brick_fence",
       new Class3239(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.field30982).method26635().method26621(2.0F, 6.0F).method26619(SoundType.field36237))
    );
-   public static final Block NETHER_BRICK_STAIRS = register("nether_brick_stairs", new Class3421(NETHER_BRICKS.method11579(), AbstractBlock.Properties.method26613(NETHER_BRICKS)));
+   public static final Block NETHER_BRICK_STAIRS = register("nether_brick_stairs", new StairsBlock(NETHER_BRICKS.getDefaultState(), AbstractBlock.Properties.method26613(NETHER_BRICKS)));
    public static final Block NETHER_WART = register(
       "nether_wart",
       new Class3489(AbstractBlock.Properties.method26611(Material.PLANTS, MaterialColor.field30975).method26614().method26624().method26619(SoundType.field36223))
@@ -1063,7 +1064,7 @@ public class Blocks {
    public static final Block COCOA = register(
       "cocoa", new Class3197(AbstractBlock.Properties.method26609(Material.PLANTS).method26624().method26621(0.2F, 3.0F).method26619(SoundType.field36200).method26615())
    );
-   public static final Block SANDSTONE_STAIRS = register("sandstone_stairs", new Class3421(SANDSTONE.method11579(), AbstractBlock.Properties.method26613(SANDSTONE)));
+   public static final Block SANDSTONE_STAIRS = register("sandstone_stairs", new StairsBlock(SANDSTONE.getDefaultState(), AbstractBlock.Properties.method26613(SANDSTONE)));
    public static final Block EMERALD_ORE = register(
       "emerald_ore", new Class3420(AbstractBlock.Properties.method26609(Material.field38966).method26635().method26621(3.0F, 3.0F))
    );
@@ -1078,9 +1079,9 @@ public class Blocks {
       "emerald_block",
       new Block(AbstractBlock.Properties.method26611(Material.field38967, MaterialColor.field30980).method26635().method26621(5.0F, 6.0F).method26619(SoundType.field36205))
    );
-   public static final Block SPRUCE_STAIRS = register("spruce_stairs", new Class3421(field36401.method11579(), AbstractBlock.Properties.method26613(field36401)));
-   public static final Block field36662 = register("birch_stairs", new Class3421(field36402.method11579(), AbstractBlock.Properties.method26613(field36402)));
-   public static final Block field36663 = register("jungle_stairs", new Class3421(field36403.method11579(), AbstractBlock.Properties.method26613(field36403)));
+   public static final Block SPRUCE_STAIRS = register("spruce_stairs", new StairsBlock(field36401.getDefaultState(), AbstractBlock.Properties.method26613(field36401)));
+   public static final Block field36662 = register("birch_stairs", new StairsBlock(field36402.getDefaultState(), AbstractBlock.Properties.method26613(field36402)));
+   public static final Block field36663 = register("jungle_stairs", new StairsBlock(field36403.getDefaultState(), AbstractBlock.Properties.method26613(field36403)));
    public static final Block COMMAND_BLOCK = register(
       "command_block",
       new CommandBlockBlock(AbstractBlock.Properties.method26611(Material.field38967, MaterialColor.field30973).method26635().method26621(-1.0F, 3600000.0F).method26626())
@@ -1298,7 +1299,7 @@ public class Blocks {
    public static final Block field36726 = register(
       "quartz_pillar", new Class3386(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.field30961).method26635().method26623(0.8F))
    );
-   public static final Block field36727 = register("quartz_stairs", new Class3421(field36724.method11579(), AbstractBlock.Properties.method26613(field36724)));
+   public static final Block field36727 = register("quartz_stairs", new StairsBlock(field36724.getDefaultState(), AbstractBlock.Properties.method26613(field36724)));
    public static final Block field36728 = register(
       "activator_rail", new Class3432(AbstractBlock.Properties.method26609(Material.field38946).method26614().method26623(0.7F).method26619(SoundType.field36205))
    );
@@ -1415,8 +1416,8 @@ public class Blocks {
       "black_stained_glass_pane",
       new Class3236(Class112.field401, AbstractBlock.Properties.method26609(Material.field38963).method26623(0.3F).method26619(SoundType.field36206).method26615())
    );
-   public static final Block field36762 = register("acacia_stairs", new Class3421(field36404.method11579(), AbstractBlock.Properties.method26613(field36404)));
-   public static final Block field36763 = register("dark_oak_stairs", new Class3421(field36405.method11579(), AbstractBlock.Properties.method26613(field36405)));
+   public static final Block field36762 = register("acacia_stairs", new StairsBlock(field36404.getDefaultState(), AbstractBlock.Properties.method26613(field36404)));
+   public static final Block field36763 = register("dark_oak_stairs", new StairsBlock(field36405.getDefaultState(), AbstractBlock.Properties.method26613(field36405)));
    public static final Block field36764 = register(
       "slime_block",
       new Class3380(AbstractBlock.Properties.method26611(Material.field38949, MaterialColor.field30948).method26616(0.8F).method26619(SoundType.field36212).method26615())
@@ -1445,17 +1446,17 @@ public class Blocks {
    public static final Block field36769 = register(
       "dark_prismarine", new Block(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.field30978).method26635().method26621(1.5F, 6.0F))
    );
-   public static final Block field36770 = register("prismarine_stairs", new Class3421(field36767.method11579(), AbstractBlock.Properties.method26613(field36767)));
-   public static final Block field36771 = register("prismarine_brick_stairs", new Class3421(field36768.method11579(), AbstractBlock.Properties.method26613(field36768)));
-   public static final Block field36772 = register("dark_prismarine_stairs", new Class3421(field36769.method11579(), AbstractBlock.Properties.method26613(field36769)));
+   public static final Block field36770 = register("prismarine_stairs", new StairsBlock(field36767.getDefaultState(), AbstractBlock.Properties.method26613(field36767)));
+   public static final Block field36771 = register("prismarine_brick_stairs", new StairsBlock(field36768.getDefaultState(), AbstractBlock.Properties.method26613(field36768)));
+   public static final Block field36772 = register("dark_prismarine_stairs", new StairsBlock(field36769.getDefaultState(), AbstractBlock.Properties.method26613(field36769)));
    public static final Block field36773 = register(
-      "prismarine_slab", new Class3208(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.field30970).method26635().method26621(1.5F, 6.0F))
+      "prismarine_slab", new SlabBlock(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.field30970).method26635().method26621(1.5F, 6.0F))
    );
    public static final Block field36774 = register(
-      "prismarine_brick_slab", new Class3208(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.field30978).method26635().method26621(1.5F, 6.0F))
+      "prismarine_brick_slab", new SlabBlock(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.field30978).method26635().method26621(1.5F, 6.0F))
    );
    public static final Block field36775 = register(
-      "dark_prismarine_slab", new Class3208(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.field30978).method26635().method26621(1.5F, 6.0F))
+      "dark_prismarine_slab", new SlabBlock(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.field30978).method26635().method26621(1.5F, 6.0F))
    );
    public static final Block field36776 = register(
       "sea_lantern",
@@ -1742,65 +1743,65 @@ public class Blocks {
    public static final Block field36837 = register(
       "cut_red_sandstone", new Block(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.field30962).method26635().method26623(0.8F))
    );
-   public static final Block field36838 = register("red_sandstone_stairs", new Class3421(field36835.method11579(), AbstractBlock.Properties.method26613(field36835)));
+   public static final Block field36838 = register("red_sandstone_stairs", new StairsBlock(field36835.getDefaultState(), AbstractBlock.Properties.method26613(field36835)));
    public static final Block field36839 = register(
-      "oak_slab", new Class3208(AbstractBlock.Properties.method26611(Material.field38956, MaterialColor.field30960).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
+      "oak_slab", new SlabBlock(AbstractBlock.Properties.method26611(Material.field38956, MaterialColor.field30960).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field36840 = register(
-      "spruce_slab", new Class3208(AbstractBlock.Properties.method26611(Material.field38956, MaterialColor.field30981).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
+      "spruce_slab", new SlabBlock(AbstractBlock.Properties.method26611(Material.field38956, MaterialColor.field30981).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field36841 = register(
-      "birch_slab", new Class3208(AbstractBlock.Properties.method26611(Material.field38956, MaterialColor.field30949).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
+      "birch_slab", new SlabBlock(AbstractBlock.Properties.method26611(Material.field38956, MaterialColor.field30949).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field36842 = register(
-      "jungle_slab", new Class3208(AbstractBlock.Properties.method26611(Material.field38956, MaterialColor.field30957).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
+      "jungle_slab", new SlabBlock(AbstractBlock.Properties.method26611(Material.field38956, MaterialColor.field30957).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field36843 = register(
-      "acacia_slab", new Class3208(AbstractBlock.Properties.method26611(Material.field38956, MaterialColor.field30962).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
+      "acacia_slab", new SlabBlock(AbstractBlock.Properties.method26611(Material.field38956, MaterialColor.field30962).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field36844 = register(
       "dark_oak_slab",
-      new Class3208(AbstractBlock.Properties.method26611(Material.field38956, MaterialColor.field30973).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
+      new SlabBlock(AbstractBlock.Properties.method26611(Material.field38956, MaterialColor.field30973).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field36845 = register(
-      "stone_slab", new Class3208(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.STONE).method26635().method26621(2.0F, 6.0F))
+      "stone_slab", new SlabBlock(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.STONE).method26635().method26621(2.0F, 6.0F))
    );
    public static final Block field36846 = register(
-      "smooth_stone_slab", new Class3208(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.STONE).method26635().method26621(2.0F, 6.0F))
+      "smooth_stone_slab", new SlabBlock(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.STONE).method26635().method26621(2.0F, 6.0F))
    );
    public static final Block field36847 = register(
-      "sandstone_slab", new Class3208(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.field30949).method26635().method26621(2.0F, 6.0F))
+      "sandstone_slab", new SlabBlock(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.field30949).method26635().method26621(2.0F, 6.0F))
    );
    public static final Block field36848 = register(
-      "cut_sandstone_slab", new Class3208(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.field30949).method26635().method26621(2.0F, 6.0F))
+      "cut_sandstone_slab", new SlabBlock(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.field30949).method26635().method26621(2.0F, 6.0F))
    );
    public static final Block field36849 = register(
-      "petrified_oak_slab", new Class3208(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.field30960).method26635().method26621(2.0F, 6.0F))
+      "petrified_oak_slab", new SlabBlock(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.field30960).method26635().method26621(2.0F, 6.0F))
    );
    public static final Block field36850 = register(
-      "cobblestone_slab", new Class3208(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.STONE).method26635().method26621(2.0F, 6.0F))
+      "cobblestone_slab", new SlabBlock(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.STONE).method26635().method26621(2.0F, 6.0F))
    );
    public static final Block field36851 = register(
-      "brick_slab", new Class3208(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.field30975).method26635().method26621(2.0F, 6.0F))
+      "brick_slab", new SlabBlock(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.field30975).method26635().method26621(2.0F, 6.0F))
    );
    public static final Block field36852 = register(
-      "stone_brick_slab", new Class3208(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.STONE).method26635().method26621(2.0F, 6.0F))
+      "stone_brick_slab", new SlabBlock(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.STONE).method26635().method26621(2.0F, 6.0F))
    );
    public static final Block field36853 = register(
       "nether_brick_slab",
-      new Class3208(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.field30982).method26635().method26621(2.0F, 6.0F).method26619(SoundType.field36237))
+      new SlabBlock(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.field30982).method26635().method26621(2.0F, 6.0F).method26619(SoundType.field36237))
    );
    public static final Block field36854 = register(
-      "quartz_slab", new Class3208(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.field30961).method26635().method26621(2.0F, 6.0F))
+      "quartz_slab", new SlabBlock(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.field30961).method26635().method26621(2.0F, 6.0F))
    );
    public static final Block field36855 = register(
-      "red_sandstone_slab", new Class3208(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.field30962).method26635().method26621(2.0F, 6.0F))
+      "red_sandstone_slab", new SlabBlock(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.field30962).method26635().method26621(2.0F, 6.0F))
    );
    public static final Block field36856 = register(
-      "cut_red_sandstone_slab", new Class3208(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.field30962).method26635().method26621(2.0F, 6.0F))
+      "cut_red_sandstone_slab", new SlabBlock(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.field30962).method26635().method26621(2.0F, 6.0F))
    );
    public static final Block field36857 = register(
-      "purpur_slab", new Class3208(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.field30963).method26635().method26621(2.0F, 6.0F))
+      "purpur_slab", new SlabBlock(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.field30963).method26635().method26621(2.0F, 6.0F))
    );
    public static final Block field36858 = register(
       "smooth_stone", new Block(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.STONE).method26635().method26621(2.0F, 6.0F))
@@ -1895,7 +1896,7 @@ public class Blocks {
    public static final Block field36881 = register(
       "purpur_pillar", new Class3386(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.field30963).method26635().method26621(1.5F, 6.0F))
    );
-   public static final Block field36882 = register("purpur_stairs", new Class3421(field36880.method11579(), AbstractBlock.Properties.method26613(field36880)));
+   public static final Block field36882 = register("purpur_stairs", new StairsBlock(field36880.getDefaultState(), AbstractBlock.Properties.method26613(field36880)));
    public static final Block field36883 = register(
       "end_stone_bricks", new Block(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.field30949).method26635().method26621(3.0F, 9.0F))
    );
@@ -2425,41 +2426,41 @@ public class Blocks {
    public static final Block field37013 = register(
       "bubble_column", new Class3406(AbstractBlock.Properties.method26609(Material.field38942).method26614().method26626())
    );
-   public static final Block field37014 = register("polished_granite_stairs", new Class3421(POLISHED_GRANITE.method11579(), AbstractBlock.Properties.method26613(POLISHED_GRANITE)));
+   public static final Block field37014 = register("polished_granite_stairs", new StairsBlock(POLISHED_GRANITE.getDefaultState(), AbstractBlock.Properties.method26613(POLISHED_GRANITE)));
    public static final Block field37015 = register(
-      "smooth_red_sandstone_stairs", new Class3421(field36861.method11579(), AbstractBlock.Properties.method26613(field36861))
+      "smooth_red_sandstone_stairs", new StairsBlock(field36861.getDefaultState(), AbstractBlock.Properties.method26613(field36861))
    );
    public static final Block field37016 = register(
-      "mossy_stone_brick_stairs", new Class3421(field36616.method11579(), AbstractBlock.Properties.method26613(field36616))
+      "mossy_stone_brick_stairs", new StairsBlock(field36616.getDefaultState(), AbstractBlock.Properties.method26613(field36616))
    );
-   public static final Block field37017 = register("polished_diorite_stairs", new Class3421(POLISHED_DIORITE.method11579(), AbstractBlock.Properties.method26613(POLISHED_DIORITE)));
+   public static final Block field37017 = register("polished_diorite_stairs", new StairsBlock(POLISHED_DIORITE.getDefaultState(), AbstractBlock.Properties.method26613(POLISHED_DIORITE)));
    public static final Block field37018 = register(
-      "mossy_cobblestone_stairs", new Class3421(field36526.method11579(), AbstractBlock.Properties.method26613(field36526))
+      "mossy_cobblestone_stairs", new StairsBlock(field36526.getDefaultState(), AbstractBlock.Properties.method26613(field36526))
    );
-   public static final Block field37019 = register("end_stone_brick_stairs", new Class3421(field36883.method11579(), AbstractBlock.Properties.method26613(field36883)));
-   public static final Block field37020 = register("stone_stairs", new Class3421(STONE.method11579(), AbstractBlock.Properties.method26613(STONE)));
-   public static final Block field37021 = register("smooth_sandstone_stairs", new Class3421(field36859.method11579(), AbstractBlock.Properties.method26613(field36859)));
-   public static final Block field37022 = register("smooth_quartz_stairs", new Class3421(field36860.method11579(), AbstractBlock.Properties.method26613(field36860)));
-   public static final Block field37023 = register("granite_stairs", new Class3421(GRANITE.method11579(), AbstractBlock.Properties.method26613(GRANITE)));
-   public static final Block field37024 = register("andesite_stairs", new Class3421(ANDESITE.method11579(), AbstractBlock.Properties.method26613(ANDESITE)));
-   public static final Block field37025 = register("red_nether_brick_stairs", new Class3421(field36892.method11579(), AbstractBlock.Properties.method26613(field36892)));
+   public static final Block field37019 = register("end_stone_brick_stairs", new StairsBlock(field36883.getDefaultState(), AbstractBlock.Properties.method26613(field36883)));
+   public static final Block field37020 = register("stone_stairs", new StairsBlock(STONE.getDefaultState(), AbstractBlock.Properties.method26613(STONE)));
+   public static final Block field37021 = register("smooth_sandstone_stairs", new StairsBlock(field36859.getDefaultState(), AbstractBlock.Properties.method26613(field36859)));
+   public static final Block field37022 = register("smooth_quartz_stairs", new StairsBlock(field36860.getDefaultState(), AbstractBlock.Properties.method26613(field36860)));
+   public static final Block field37023 = register("granite_stairs", new StairsBlock(GRANITE.getDefaultState(), AbstractBlock.Properties.method26613(GRANITE)));
+   public static final Block field37024 = register("andesite_stairs", new StairsBlock(ANDESITE.getDefaultState(), AbstractBlock.Properties.method26613(ANDESITE)));
+   public static final Block field37025 = register("red_nether_brick_stairs", new StairsBlock(field36892.getDefaultState(), AbstractBlock.Properties.method26613(field36892)));
    public static final Block field37026 = register(
-      "polished_andesite_stairs", new Class3421(POLISHED_ANDESITE.method11579(), AbstractBlock.Properties.method26613(POLISHED_ANDESITE))
+      "polished_andesite_stairs", new StairsBlock(POLISHED_ANDESITE.getDefaultState(), AbstractBlock.Properties.method26613(POLISHED_ANDESITE))
    );
-   public static final Block field37027 = register("diorite_stairs", new Class3421(DIORITE.method11579(), AbstractBlock.Properties.method26613(DIORITE)));
-   public static final Block field37028 = register("polished_granite_slab", new Class3208(AbstractBlock.Properties.method26613(POLISHED_GRANITE)));
-   public static final Block field37029 = register("smooth_red_sandstone_slab", new Class3208(AbstractBlock.Properties.method26613(field36861)));
-   public static final Block field37030 = register("mossy_stone_brick_slab", new Class3208(AbstractBlock.Properties.method26613(field36616)));
-   public static final Block field37031 = register("polished_diorite_slab", new Class3208(AbstractBlock.Properties.method26613(POLISHED_DIORITE)));
-   public static final Block field37032 = register("mossy_cobblestone_slab", new Class3208(AbstractBlock.Properties.method26613(field36526)));
-   public static final Block field37033 = register("end_stone_brick_slab", new Class3208(AbstractBlock.Properties.method26613(field36883)));
-   public static final Block field37034 = register("smooth_sandstone_slab", new Class3208(AbstractBlock.Properties.method26613(field36859)));
-   public static final Block field37035 = register("smooth_quartz_slab", new Class3208(AbstractBlock.Properties.method26613(field36860)));
-   public static final Block field37036 = register("granite_slab", new Class3208(AbstractBlock.Properties.method26613(GRANITE)));
-   public static final Block field37037 = register("andesite_slab", new Class3208(AbstractBlock.Properties.method26613(ANDESITE)));
-   public static final Block field37038 = register("red_nether_brick_slab", new Class3208(AbstractBlock.Properties.method26613(field36892)));
-   public static final Block field37039 = register("polished_andesite_slab", new Class3208(AbstractBlock.Properties.method26613(POLISHED_ANDESITE)));
-   public static final Block field37040 = register("diorite_slab", new Class3208(AbstractBlock.Properties.method26613(DIORITE)));
+   public static final Block field37027 = register("diorite_stairs", new StairsBlock(DIORITE.getDefaultState(), AbstractBlock.Properties.method26613(DIORITE)));
+   public static final Block field37028 = register("polished_granite_slab", new SlabBlock(AbstractBlock.Properties.method26613(POLISHED_GRANITE)));
+   public static final Block field37029 = register("smooth_red_sandstone_slab", new SlabBlock(AbstractBlock.Properties.method26613(field36861)));
+   public static final Block field37030 = register("mossy_stone_brick_slab", new SlabBlock(AbstractBlock.Properties.method26613(field36616)));
+   public static final Block field37031 = register("polished_diorite_slab", new SlabBlock(AbstractBlock.Properties.method26613(POLISHED_DIORITE)));
+   public static final Block field37032 = register("mossy_cobblestone_slab", new SlabBlock(AbstractBlock.Properties.method26613(field36526)));
+   public static final Block field37033 = register("end_stone_brick_slab", new SlabBlock(AbstractBlock.Properties.method26613(field36883)));
+   public static final Block field37034 = register("smooth_sandstone_slab", new SlabBlock(AbstractBlock.Properties.method26613(field36859)));
+   public static final Block field37035 = register("smooth_quartz_slab", new SlabBlock(AbstractBlock.Properties.method26613(field36860)));
+   public static final Block field37036 = register("granite_slab", new SlabBlock(AbstractBlock.Properties.method26613(GRANITE)));
+   public static final Block field37037 = register("andesite_slab", new SlabBlock(AbstractBlock.Properties.method26613(ANDESITE)));
+   public static final Block field37038 = register("red_nether_brick_slab", new SlabBlock(AbstractBlock.Properties.method26613(field36892)));
+   public static final Block field37039 = register("polished_andesite_slab", new SlabBlock(AbstractBlock.Properties.method26613(POLISHED_ANDESITE)));
+   public static final Block field37040 = register("diorite_slab", new SlabBlock(AbstractBlock.Properties.method26613(DIORITE)));
    public static final Block field37041 = register("brick_wall", new Class3415(AbstractBlock.Properties.method26613(field36523)));
    public static final Block field37042 = register("prismarine_wall", new Class3415(AbstractBlock.Properties.method26613(field36767)));
    public static final Block field37043 = register("red_sandstone_wall", new Class3415(AbstractBlock.Properties.method26613(field36835)));
@@ -2645,11 +2646,11 @@ public class Blocks {
    );
    public static final Block field37093 = register(
       "crimson_slab",
-      new Class3208(AbstractBlock.Properties.method26611(Material.field38957, field37091.method12000()).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
+      new SlabBlock(AbstractBlock.Properties.method26611(Material.field38957, field37091.method12000()).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field37094 = register(
       "warped_slab",
-      new Class3208(AbstractBlock.Properties.method26611(Material.field38957, field37092.method12000()).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
+      new SlabBlock(AbstractBlock.Properties.method26611(Material.field38957, field37092.method12000()).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field37095 = register(
       "crimson_pressure_plate",
@@ -2701,8 +2702,8 @@ public class Blocks {
       "warped_fence_gate",
       new FenceGateBlock(AbstractBlock.Properties.method26611(Material.field38957, field37092.method12000()).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
-   public static final Block field37103 = register("crimson_stairs", new Class3421(field37091.method11579(), AbstractBlock.Properties.method26613(field37091)));
-   public static final Block field37104 = register("warped_stairs", new Class3421(field37092.method11579(), AbstractBlock.Properties.method26613(field37092)));
+   public static final Block field37103 = register("crimson_stairs", new StairsBlock(field37091.getDefaultState(), AbstractBlock.Properties.method26613(field37091)));
+   public static final Block field37104 = register("warped_stairs", new StairsBlock(field37092.getDefaultState(), AbstractBlock.Properties.method26613(field37092)));
    public static final Block field37105 = register(
       "crimson_button", new WoodButtonBlock(AbstractBlock.Properties.method26609(Material.field38946).method26614().method26623(0.5F).method26619(SoundType.field36200))
    );
@@ -2824,9 +2825,9 @@ public class Blocks {
    public static final Block field37130 = register(
       "blackstone", new Block(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.field30976).method26635().method26621(1.5F, 6.0F))
    );
-   public static final Block field37131 = register("blackstone_stairs", new Class3421(field37130.method11579(), AbstractBlock.Properties.method26613(field37130)));
+   public static final Block field37131 = register("blackstone_stairs", new StairsBlock(field37130.getDefaultState(), AbstractBlock.Properties.method26613(field37130)));
    public static final Block field37132 = register("blackstone_wall", new Class3415(AbstractBlock.Properties.method26613(field37130)));
-   public static final Block field37133 = register("blackstone_slab", new Class3208(AbstractBlock.Properties.method26613(field37130).method26621(2.0F, 6.0F)));
+   public static final Block field37133 = register("blackstone_slab", new SlabBlock(AbstractBlock.Properties.method26613(field37130).method26621(2.0F, 6.0F)));
    public static final Block field37134 = register("polished_blackstone", new Block(AbstractBlock.Properties.method26613(field37130).method26621(2.0F, 6.0F)));
    public static final Block field37135 = register(
       "polished_blackstone_bricks", new Block(AbstractBlock.Properties.method26613(field37134).method26621(1.5F, 6.0F))
@@ -2836,19 +2837,19 @@ public class Blocks {
       "chiseled_polished_blackstone", new Block(AbstractBlock.Properties.method26613(field37134).method26621(1.5F, 6.0F))
    );
    public static final Block field37138 = register(
-      "polished_blackstone_brick_slab", new Class3208(AbstractBlock.Properties.method26613(field37135).method26621(2.0F, 6.0F))
+      "polished_blackstone_brick_slab", new SlabBlock(AbstractBlock.Properties.method26613(field37135).method26621(2.0F, 6.0F))
    );
    public static final Block field37139 = register(
-      "polished_blackstone_brick_stairs", new Class3421(field37135.method11579(), AbstractBlock.Properties.method26613(field37135))
+      "polished_blackstone_brick_stairs", new StairsBlock(field37135.getDefaultState(), AbstractBlock.Properties.method26613(field37135))
    );
    public static final Block field37140 = register("polished_blackstone_brick_wall", new Class3415(AbstractBlock.Properties.method26613(field37135)));
    public static final Block field37141 = register(
       "gilded_blackstone", new Block(AbstractBlock.Properties.method26613(field37130).method26619(SoundType.field36246))
    );
    public static final Block field37142 = register(
-      "polished_blackstone_stairs", new Class3421(field37134.method11579(), AbstractBlock.Properties.method26613(field37134))
+      "polished_blackstone_stairs", new StairsBlock(field37134.getDefaultState(), AbstractBlock.Properties.method26613(field37134))
    );
-   public static final Block field37143 = register("polished_blackstone_slab", new Class3208(AbstractBlock.Properties.method26613(field37134)));
+   public static final Block field37143 = register("polished_blackstone_slab", new SlabBlock(AbstractBlock.Properties.method26613(field37134)));
    public static final Block field37144 = register(
       "polished_blackstone_pressure_plate",
       new Class3469(Class2275.field14824, AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.field30976).method26635().method26614().method26623(0.5F))
@@ -2976,7 +2977,7 @@ public class Blocks {
 
          while (var8.hasNext()) {
             BlockState var9 = (BlockState)var8.next();
-            Block.field18610.method9269(var9);
+            Block.field18610.add(var9);
          }
 
          var7.method11999();

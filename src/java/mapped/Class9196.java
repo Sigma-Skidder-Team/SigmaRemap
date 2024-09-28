@@ -33,7 +33,7 @@ public class Class9196 {
          this.field42240 = var2.method8350(var3, 2);
       } else {
          this.field42241 = var3;
-         this.field42240 = var2.method8349(var3);
+         this.field42240 = var2.offset(var3);
       }
    }
 
@@ -176,7 +176,7 @@ public class Class9196 {
 
       for (Direction var8 : Direction.values()) {
          if (var8.getAxis() != this.field42241.getAxis()) {
-            BlockPos var9 = var1.method8349(var8);
+            BlockPos var9 = var1.offset(var8);
             BlockState var10 = this.field42237.getBlockState(var9);
             if (method34466(var10.getBlock(), var4.getBlock()) && !this.method34467(var9, var8)) {
                return false;

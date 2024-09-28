@@ -5,6 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorld;
 
 import java.util.function.BiPredicate;
 import java.util.function.Function;
@@ -18,9 +19,9 @@ public class Class9324 {
       Function<BlockState, Direction> var2,
       DirectionProperty var3,
       BlockState var4,
-      Class1660 var5,
+      IWorld var5,
       BlockPos var6,
-      BiPredicate<Class1660, BlockPos> var7
+      BiPredicate<IWorld, BlockPos> var7
    ) {
       TileEntity var10 = var0.method13797(var5, var6);
       if (var10 != null) {
@@ -29,7 +30,7 @@ public class Class9324 {
             boolean var12 = var11 == Class1895.field11109;
             boolean var13 = var11 == Class1895.field11110;
             if (!var12) {
-               BlockPos var14 = var6.method8349((Direction)var2.apply(var4));
+               BlockPos var14 = var6.offset((Direction)var2.apply(var4));
                BlockState var15 = var5.getBlockState(var14);
                if (var15.isIn(var4.getBlock())) {
                   Class1895 var16 = (Class1895)var1.apply(var15);

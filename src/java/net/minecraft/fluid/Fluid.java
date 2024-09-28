@@ -16,21 +16,21 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 public abstract class Fluid {
-   public static final ObjectIntIdentityMap<FluidState> field32708 = new ObjectIntIdentityMap<FluidState>();
+   public static final ObjectIntIdentityMap<FluidState> STATE_REGISTRY = new ObjectIntIdentityMap<FluidState>();
    public final StateContainer<Fluid, FluidState> field32709;
    private FluidState field32710;
 
    public Fluid() {
-      Class7558<Fluid, FluidState> var3 = new Class7558<>(this);
+      StateContainer.Builder<Fluid, FluidState> var3 = new StateContainer.Builder<>(this);
       this.method25046(var3);
       this.field32709 = var3.method24739(Fluid::method25049, FluidState::new);
-      this.method25048(this.field32709.method35393());
+      this.method25048(this.field32709.getBaseState());
    }
 
-   public void method25046(Class7558<Fluid, FluidState> var1) {
+   public void method25046(StateContainer.Builder<Fluid, FluidState> var1) {
    }
 
-   public StateContainer<Fluid, FluidState> method25047() {
+   public StateContainer<Fluid, FluidState> getStateContainer() {
       return this.field32709;
    }
 
@@ -62,7 +62,7 @@ public abstract class Fluid {
 
    public abstract Vector3d method25056(IBlockReader var1, BlockPos var2, FluidState var3);
 
-   public abstract int method25057(IWorldReader var1);
+   public abstract int getTickRate(IWorldReader var1);
 
    public boolean method25058() {
       return false;

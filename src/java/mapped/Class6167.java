@@ -5,6 +5,7 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorld;
 
 import java.util.Random;
 
@@ -29,7 +30,7 @@ public class Class6167 extends Class6166 {
    }
 
    @Override
-   public void method19061(Class1660 var1, BlockPos var2, BlockState var3, Random var4) {
+   public void method19061(IWorld var1, BlockPos var2, BlockState var3, Random var4) {
       BlockPos.Mutable var7 = var2.method8354();
       int var8 = this.field27593 + var4.nextInt(var4.nextInt(this.field27594 + 1) + 1);
 

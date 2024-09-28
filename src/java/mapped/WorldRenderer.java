@@ -27,6 +27,7 @@ import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.fluid.FluidState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.particles.IParticleData;
@@ -148,7 +149,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
    private static final Set field1015 = Collections.<Direction>unmodifiableSet(new HashSet(Arrays.asList(Direction.VALUES)));
    private int field1016;
    private int field1017 = 0;
-   private Class8391 field1018 = new Class8391(Blocks.AIR.method11579(), new BlockPos(0, 0, 0));
+   private Class8391 field1018 = new Class8391(Blocks.AIR.getDefaultState(), new BlockPos(0, 0, 0));
    public boolean field1019 = false;
    public boolean field1020 = false;
    private boolean field1021 = false;

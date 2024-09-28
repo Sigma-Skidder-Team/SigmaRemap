@@ -2,6 +2,9 @@ package mapped;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import net.minecraft.state.Property;
+import net.minecraft.state.StateHolder;
+
 import java.util.Optional;
 
 public class Class8645 extends Class8646 {
@@ -15,7 +18,7 @@ public class Class8645 extends Class8646 {
    }
 
    @Override
-   public <T extends Comparable<T>> boolean method31076(Class7378<?, ?> var1, Class8550<T> var2) {
+   public <T extends Comparable<T>> boolean method31076(StateHolder<?, ?> var1, Property<T> var2) {
       T var5 = var1.get(var2);
       if (this.field38924 != null) {
          Optional<T> var6 = var2.method30476(this.field38924);

@@ -15,6 +15,7 @@ import java.util.function.Predicate;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.state.Property;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.CachedBlockInfo;
 import net.minecraft.util.math.BlockPos;
@@ -25,7 +26,7 @@ public class Class8031 {
    private static final Dynamic2CommandExceptionType field34511 = new Dynamic2CommandExceptionType(
       (var0, var1) -> new TranslationTextComponent("commands.fill.toobig", var0, var1)
    );
-   private static final Class164 field34512 = new Class164(Blocks.AIR.method11579(), Collections.<Class8550<?>>emptySet(), (CompoundNBT)null);
+   private static final Class164 field34512 = new Class164(Blocks.AIR.getDefaultState(), Collections.<Property<?>>emptySet(), (CompoundNBT)null);
    private static final SimpleCommandExceptionType field34513 = new SimpleCommandExceptionType(new TranslationTextComponent("commands.fill.failed"));
 
    public static void method27540(CommandDispatcher<Class6619> var0) {

@@ -5,6 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.HorizontalBlock;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.properties.BlockStateProperties;
@@ -28,7 +29,7 @@ public abstract class Class3247 extends HorizontalBlock {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return field18707;
    }
 
@@ -38,7 +39,7 @@ public abstract class Class3247 extends HorizontalBlock {
    }
 
    @Override
-   public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void tick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (!this.method11667(var2, var3, var1)) {
          boolean var7 = var1.<Boolean>get(field18708);
          boolean var8 = this.method11661(var2, var3, var1);
@@ -75,7 +76,7 @@ public abstract class Class3247 extends HorizontalBlock {
          var2.removeBlock(var3, false);
 
          for (Direction var13 : Direction.values()) {
-            var2.notifyNeighborsOfStateChange(var3.method8349(var13), this);
+            var2.notifyNeighborsOfStateChange(var3.offset(var13), this);
          }
       } else {
          this.method11664(var2, var3, var1);
@@ -111,7 +112,7 @@ public abstract class Class3247 extends HorizontalBlock {
 
    public int method11662(World var1, BlockPos var2, BlockState var3) {
       Direction var6 = var3.<Direction>get(HORIZONTAL_FACING);
-      BlockPos var7 = var2.method8349(var6);
+      BlockPos var7 = var2.offset(var6);
       int var8 = var1.method6779(var7, var6);
       if (var8 < 15) {
          BlockState var9 = var1.getBlockState(var7);
@@ -125,7 +126,7 @@ public abstract class Class3247 extends HorizontalBlock {
       Direction var6 = var3.<Direction>get(HORIZONTAL_FACING);
       Direction var7 = var6.rotateY();
       Direction var8 = var6.rotateYCCW();
-      return Math.max(this.method11669(var1, var2.method8349(var7), var7), this.method11669(var1, var2.method8349(var8), var8));
+      return Math.max(this.method11669(var1, var2.offset(var7), var7), this.method11669(var1, var2.offset(var8), var8));
    }
 
    public int method11669(IWorldReader var1, BlockPos var2, Direction var3) {
@@ -145,33 +146,33 @@ public abstract class Class3247 extends HorizontalBlock {
    }
 
    @Override
-   public BlockState method11495(Class5909 var1) {
-      return this.method11579().with(HORIZONTAL_FACING, var1.method18350().getOpposite());
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      return this.getDefaultState().with(HORIZONTAL_FACING, var1.getPlacementHorizontalFacing().getOpposite());
    }
 
    @Override
    public void method11563(World var1, BlockPos var2, BlockState var3, LivingEntity var4, ItemStack var5) {
       if (this.method11661(var1, var2, var3)) {
-         var1.method6860().method20726(var2, this, 1);
+         var1.method6860().scheduleTick(var2, this, 1);
       }
    }
 
    @Override
-   public void method11589(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+   public void onBlockAdded(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       this.method11670(var2, var3, var1);
    }
 
    @Override
-   public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+   public void onReplaced(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       if (!var5 && !var1.isIn(var4.getBlock())) {
-         super.method11513(var1, var2, var3, var4, var5);
+         super.onReplaced(var1, var2, var3, var4, var5);
          this.method11670(var2, var3, var1);
       }
    }
 
    public void method11670(World var1, BlockPos var2, BlockState var3) {
       Direction var6 = var3.<Direction>get(HORIZONTAL_FACING);
-      BlockPos var7 = var2.method8349(var6.getOpposite());
+      BlockPos var7 = var2.offset(var6.getOpposite());
       var1.neighborChanged(var7, this, var2);
       var1.notifyNeighborsOfStateExcept(var7, this, var6);
    }
@@ -190,7 +191,7 @@ public abstract class Class3247 extends HorizontalBlock {
 
    public boolean method11673(IBlockReader var1, BlockPos var2, BlockState var3) {
       Direction var6 = var3.<Direction>get(HORIZONTAL_FACING).getOpposite();
-      BlockState var7 = var1.getBlockState(var2.method8349(var6));
+      BlockState var7 = var1.getBlockState(var2.offset(var6));
       return method11672(var7) && var7.<Direction>get(HORIZONTAL_FACING) != var6;
    }
 

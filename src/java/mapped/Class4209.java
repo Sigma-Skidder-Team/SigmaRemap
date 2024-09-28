@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorld;
 
 import java.util.Random;
 
@@ -41,7 +42,7 @@ public abstract class Class4209 extends Class4178 {
       var1.putInt("HPos", this.field20519);
    }
 
-   public boolean method13002(Class1660 var1, Class9764 var2, int var3) {
+   public boolean method13002(IWorld var1, Class9764 var2, int var3) {
       if (this.field20519 >= 0) {
          return true;
       } else {

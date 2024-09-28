@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
@@ -17,7 +18,7 @@ public class Class3457 extends Class3456 implements Class3196 {
    }
 
    @Override
-   public boolean method11497(BlockState var1, Class5909 var2) {
+   public boolean method11497(BlockState var1, BlockItemUseContext var2) {
       return false;
    }
 

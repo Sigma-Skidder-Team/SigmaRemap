@@ -28,22 +28,22 @@ public class Class4503 {
       field21730 = new int[Rotation.values().length];
 
       try {
-         field21730[Rotation.field185.ordinal()] = 1;
+         field21730[Rotation.NONE.ordinal()] = 1;
       } catch (NoSuchFieldError var6) {
       }
 
       try {
-         field21730[Rotation.field186.ordinal()] = 2;
+         field21730[Rotation.CLOCKWISE_90.ordinal()] = 2;
       } catch (NoSuchFieldError var5) {
       }
 
       try {
-         field21730[Rotation.field187.ordinal()] = 3;
+         field21730[Rotation.CLOCKWISE_180.ordinal()] = 3;
       } catch (NoSuchFieldError var4) {
       }
 
       try {
-         field21730[Rotation.field188.ordinal()] = 4;
+         field21730[Rotation.COUNTERCLOCKWISE_90.ordinal()] = 4;
       } catch (NoSuchFieldError var3) {
       }
    }

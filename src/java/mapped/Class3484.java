@@ -9,6 +9,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.DamageSource;
@@ -32,7 +33,7 @@ public class Class3484 extends Class3194 implements Class3196 {
 
    public Class3484(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().with(field19342, Integer.valueOf(0)));
+      this.setDefaultState(this.stateContainer.getBaseState().with(field19342, Integer.valueOf(0)));
    }
 
    @Override
@@ -41,21 +42,21 @@ public class Class3484 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       if (var1.<Integer>get(field19342) != 0) {
-         return var1.<Integer>get(field19342) >= 3 ? super.method11483(var1, var2, var3, var4) : field19344;
+         return var1.<Integer>get(field19342) >= 3 ? super.getShape(var1, var2, var3, var4) : field19344;
       } else {
          return field19343;
       }
    }
 
    @Override
-   public boolean method11499(BlockState var1) {
+   public boolean ticksRandomly(BlockState var1) {
       return var1.<Integer>get(field19342) < 3;
    }
 
    @Override
-   public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void randomTick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       int var7 = var1.<Integer>get(field19342);
       if (var7 < 3 && var4.nextInt(5) == 0 && var2.method7021(var3.up(), 0) >= 9) {
          var2.setBlockState(var3, var1.with(field19342, Integer.valueOf(var7 + 1)), 2);
@@ -77,13 +78,13 @@ public class Class3484 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
+   public ActionResultType onBlockActivated(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       int var9 = var1.<Integer>get(field19342);
       boolean var10 = var9 == 3;
       if (!var10 && var4.getHeldItem(var5).getItem() == Items.field37934) {
          return ActionResultType.field14820;
       } else if (var9 <= 1) {
-         return super.method11505(var1, var2, var3, var4, var5, var6);
+         return super.onBlockActivated(var1, var2, var3, var4, var5, var6);
       } else {
          int var11 = 1 + var2.rand.nextInt(2);
          method11557(var2, var3, new ItemStack(Items.field38170, var11 + (!var10 ? 0 : 1)));
@@ -94,8 +95,8 @@ public class Class3484 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field19342);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field19342);
    }
 
    @Override

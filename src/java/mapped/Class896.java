@@ -55,13 +55,13 @@ public class Class896 extends Class890 implements Class889 {
          boolean var7 = var5 == Class8137.field34977 && var6.isEmpty();
          Direction var8 = var1.getFace();
          BlockPos var9 = var1.getPos();
-         BlockPos var10 = var9.method8349(var8);
+         BlockPos var10 = var9.offset(var8);
          if (var7) {
             this.method3521(var10, var8);
-            this.method3521(var10.method8349(var8.getOpposite()), var8);
+            this.method3521(var10.offset(var8.getOpposite()), var8);
 
             for (Direction var12 : Direction.Plane.HORIZONTAL) {
-               this.method3521(var10.method8349(var12), var12);
+               this.method3521(var10.offset(var12), var12);
             }
          }
       }

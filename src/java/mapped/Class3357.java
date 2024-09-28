@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.DirectionProperty;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
@@ -12,6 +13,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
@@ -39,11 +41,11 @@ public class Class3357 extends Class3241 {
 
    public Class3357(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().with(field18899, Direction.NORTH).with(field18900, Boolean.valueOf(false)));
+      this.setDefaultState(this.stateContainer.getBaseState().with(field18899, Direction.NORTH).with(field18900, Boolean.valueOf(false)));
    }
 
    @Override
-   public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
+   public ActionResultType onBlockActivated(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       if (!var2.isRemote) {
          TileEntity var9 = var2.getTileEntity(var3);
          if (var9 instanceof Class971) {
@@ -85,7 +87,7 @@ public class Class3357 extends Class3241 {
       boolean var9 = var2.method6780(var3) || var2.method6780(var3.up());
       boolean var10 = var1.<Boolean>get(field18900);
       if (var9 && !var10) {
-         var2.method6860().method20726(var3, this, 4);
+         var2.method6860().scheduleTick(var3, this, 4);
          var2.setBlockState(var3, var1.with(field18900, Boolean.valueOf(true)), 4);
       } else if (!var9 && var10) {
          var2.setBlockState(var3, var1.with(field18900, Boolean.valueOf(false)), 4);
@@ -93,7 +95,7 @@ public class Class3357 extends Class3241 {
    }
 
    @Override
-   public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void tick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       this.method11932(var2, var3);
    }
 
@@ -103,8 +105,8 @@ public class Class3357 extends Class3241 {
    }
 
    @Override
-   public BlockState method11495(Class5909 var1) {
-      return this.method11579().with(field18899, var1.method18348().getOpposite());
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      return this.getDefaultState().with(field18899, var1.method18348().getOpposite());
    }
 
    @Override
@@ -118,7 +120,7 @@ public class Class3357 extends Class3241 {
    }
 
    @Override
-   public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+   public void onReplaced(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       if (!var1.isIn(var4.getBlock())) {
          TileEntity var8 = var2.getTileEntity(var3);
          if (var8 instanceof Class971) {
@@ -126,7 +128,7 @@ public class Class3357 extends Class3241 {
             var2.updateComparatorOutputLevel(var3, this);
          }
 
-         super.method11513(var1, var2, var3, var4, var5);
+         super.onReplaced(var1, var2, var3, var4, var5);
       }
    }
 
@@ -164,7 +166,7 @@ public class Class3357 extends Class3241 {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field18899, field18900);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field18899, field18900);
    }
 }

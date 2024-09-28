@@ -17,6 +17,7 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -152,7 +153,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
       }
    }
 
-   public static boolean method5081(EntityType<Class1091> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method5081(EntityType<Class1091> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
       return !var1.getBlockState(var3.down()).isIn(Blocks.field36891);
    }
 

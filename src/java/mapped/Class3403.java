@@ -6,9 +6,11 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.particles.RedstoneParticleData;
 import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
@@ -25,13 +27,13 @@ public class Class3403 extends Block {
 
    public Class3403(Properties var1) {
       super(var1);
-      this.method11578(this.method11579().with(field19077, Boolean.valueOf(false)));
+      this.setDefaultState(this.getDefaultState().with(field19077, Boolean.valueOf(false)));
    }
 
    @Override
-   public void method11602(BlockState var1, World var2, BlockPos var3, PlayerEntity var4) {
+   public void onBlockClicked(BlockState var1, World var2, BlockPos var3, PlayerEntity var4) {
       method12041(var1, var2, var3);
-      super.method11602(var1, var2, var3, var4);
+      super.onBlockClicked(var1, var2, var3, var4);
    }
 
    @Override
@@ -41,7 +43,7 @@ public class Class3403 extends Block {
    }
 
    @Override
-   public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
+   public ActionResultType onBlockActivated(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       if (!var2.isRemote) {
          method12041(var1, var2, var3);
       } else {
@@ -49,7 +51,7 @@ public class Class3403 extends Block {
       }
 
       ItemStack var9 = var4.getHeldItem(var5);
-      return var9.getItem() instanceof Class3292 && new Class5909(var4, var5, var9, var6).method18346() ? ActionResultType.field14820 : ActionResultType.SUCCESS;
+      return var9.getItem() instanceof Class3292 && new BlockItemUseContext(var4, var5, var9, var6).method18346() ? ActionResultType.field14820 : ActionResultType.SUCCESS;
    }
 
    private static void method12041(BlockState var0, World var1, BlockPos var2) {
@@ -60,12 +62,12 @@ public class Class3403 extends Block {
    }
 
    @Override
-   public boolean method11499(BlockState var1) {
+   public boolean ticksRandomly(BlockState var1) {
       return var1.<Boolean>get(field19077);
    }
 
    @Override
-   public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void randomTick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var1.<Boolean>get(field19077)) {
          var2.setBlockState(var3, var1.with(field19077, Boolean.valueOf(false)), 3);
       }
@@ -81,7 +83,7 @@ public class Class3403 extends Block {
    }
 
    @Override
-   public void method11512(BlockState var1, World var2, BlockPos var3, Random var4) {
+   public void animateTick(BlockState var1, World var2, BlockPos var3, Random var4) {
       if (var1.<Boolean>get(field19077)) {
          method12042(var2, var3);
       }
@@ -92,7 +94,7 @@ public class Class3403 extends Block {
       Random var6 = var0.rand;
 
       for (Direction var10 : Direction.values()) {
-         BlockPos var11 = var1.method8349(var10);
+         BlockPos var11 = var1.offset(var10);
          if (!var0.getBlockState(var11).method23409(var0, var11)) {
             Direction.Axis var12 = var10.getAxis();
             double var13 = var12 != Direction.Axis.X ? (double)var6.nextFloat() : 0.5 + 0.5625 * (double)var10.getXOffset();
@@ -106,7 +108,7 @@ public class Class3403 extends Block {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field19077);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field19077);
    }
 }

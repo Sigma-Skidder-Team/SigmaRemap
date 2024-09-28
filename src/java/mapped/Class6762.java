@@ -6,6 +6,9 @@ import it.unimi.dsi.fastutil.objects.Object2BooleanMap;
 import it.unimi.dsi.fastutil.objects.Object2BooleanOpenHashMap;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
+import net.minecraft.pathfinding.PathType;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -42,10 +45,10 @@ public class Class6762 extends Class6764 {
       BlockPos.Mutable var3 = new BlockPos.Mutable();
       int var4 = MathHelper.floor(this.field29476.getPosY());
       BlockState var5 = this.field29475.getBlockState(var3.method8373(this.field29476.getPosX(), (double)var4, this.field29476.getPosZ()));
-      if (!this.field29476.method3107(var5.method23449().method23472())) {
+      if (!this.field29476.method3107(var5.method23449().getFluid())) {
          if (this.method20649() && this.field29476.isInWater()) {
             while (true) {
-               if (var5.getBlock() != Blocks.WATER && var5.method23449() != Class9479.field44066.method25078(false)) {
+               if (var5.getBlock() != Blocks.WATER && var5.method23449() != Fluids.WATER.getStillFluidState(false)) {
                   var4--;
                   break;
                }
@@ -56,7 +59,7 @@ public class Class6762 extends Class6764 {
             BlockPos var6 = this.field29476.getPosition();
 
             while (
-               (this.field29475.getBlockState(var6).isAir() || this.field29475.getBlockState(var6).method23440(this.field29475, var6, Class1947.field12614))
+               (this.field29475.getBlockState(var6).isAir() || this.field29475.getBlockState(var6).method23440(this.field29475, var6, PathType.field12614))
                   && var6.getY() > 0
             ) {
                var6 = var6.down();
@@ -67,7 +70,7 @@ public class Class6762 extends Class6764 {
             var4 = MathHelper.floor(this.field29476.getPosY() + 0.5);
          }
       } else {
-         while (this.field29476.method3107(var5.method23449().method23472())) {
+         while (this.field29476.method3107(var5.method23449().getFluid())) {
             var5 = this.field29475.getBlockState(var3.method8373(this.field29476.getPosX(), (double)(++var4), this.field29476.getPosZ()));
          }
 
@@ -534,7 +537,7 @@ public class Class6762 extends Class6764 {
          } else if (!var5.isIn(BlockTags.field32771)
             && !var5.isIn(BlockTags.field32764)
             && (!(var5 instanceof FenceGateBlock) || var4.<Boolean>get(FenceGateBlock.OPEN))) {
-            return var4.method23440(var0, var1, Class1947.field12614) ? Class2163.field14185 : Class2163.field14184;
+            return var4.method23440(var0, var1, PathType.field12614) ? Class2163.field14185 : Class2163.field14184;
          } else {
             return Class2163.field14189;
          }

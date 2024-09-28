@@ -10,6 +10,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.fluid.FluidState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -115,7 +116,7 @@ public class Class3316 extends Class3314 {
                                  int var37 = var24.getTopBlockY(Heightmap.Type.WORLD_SURFACE, var33 + var26, var36 + var27) + 1;
                                  BlockState var38;
                                  if (var37 <= 1) {
-                                    var38 = Blocks.BEDROCK.method11579();
+                                    var38 = Blocks.BEDROCK.getDefaultState();
                                  } else {
                                     do {
                                        var31.method8372(var25.getX() + var33 + var26, --var37, var25.getZ() + var36 + var27);
@@ -146,9 +147,9 @@ public class Class3316 extends Class3314 {
                            int var42 = var21 + var22 * 231871;
                            var42 = var42 * var42 * 31287121 + var42 * 11;
                            if ((var42 >> 20 & 1) != 0) {
-                              var23.add(Blocks.STONE.method11579().method23394(var1, BlockPos.ZERO), 100);
+                              var23.add(Blocks.STONE.getDefaultState().method23394(var1, BlockPos.ZERO), 100);
                            } else {
-                              var23.add(Blocks.field36396.method11579().method23394(var1, BlockPos.ZERO), 10);
+                              var23.add(Blocks.field36396.getDefaultState().method23394(var1, BlockPos.ZERO), 10);
                            }
 
                            var29 = 100.0;
@@ -394,16 +395,16 @@ public class Class3316 extends Class3314 {
 
    @Override
    public ActionResultType method11707(ItemUseContext var1) {
-      BlockState var4 = var1.method18360().getBlockState(var1.method18345());
+      BlockState var4 = var1.getWorld().getBlockState(var1.getPos());
       if (!var4.isIn(BlockTags.field32760)) {
          return super.method11707(var1);
       } else {
-         if (!var1.method18360().isRemote) {
-            Class7529 var5 = method11861(var1.method18357(), var1.method18360());
-            var5.method24600(var1.method18360(), var1.method18345());
+         if (!var1.getWorld().isRemote) {
+            Class7529 var5 = method11861(var1.method18357(), var1.getWorld());
+            var5.method24600(var1.getWorld(), var1.getPos());
          }
 
-         return ActionResultType.method9002(var1.method18360().isRemote);
+         return ActionResultType.method9002(var1.getWorld().isRemote);
       }
    }
 }

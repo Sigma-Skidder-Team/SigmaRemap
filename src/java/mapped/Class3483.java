@@ -31,7 +31,7 @@ public class Class3483 extends Class3480 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return field19340[var1.<Integer>get(this.method12175())];
    }
 }

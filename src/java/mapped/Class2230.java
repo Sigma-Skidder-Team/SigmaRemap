@@ -13,6 +13,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.palette.UpgradeData;
+import net.minecraft.world.IWorld;
 
 import java.util.List;
 
@@ -57,21 +58,21 @@ public enum Class2230 implements Class2234 {
       Blocks.DARK_OAK_WALL_SIGN
    ) {
       @Override
-      public BlockState method8970(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+      public BlockState method8970(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
          return var1;
       }
    },
    field14619() {
       @Override
-      public BlockState method8970(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+      public BlockState method8970(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
          return var1.method23439(var2, var4.getBlockState(var6), var4, var5, var6);
       }
    },
    field14620(Blocks.CHEST, Blocks.TRAPPED_CHEST) {
       @Override
-      public BlockState method8970(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+      public BlockState method8970(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
          if (var3.isIn(var1.getBlock())
-                 && var2.getAxis().method324()
+                 && var2.getAxis().isHorizontal()
                  && var1.get(ChestBlock.TYPE) == ChestType.field379
                  && var3.get(ChestBlock.TYPE) == ChestType.field379) {
 
@@ -98,7 +99,7 @@ public enum Class2230 implements Class2234 {
    field14621(true, Blocks.field36450, Blocks.field36448, Blocks.field36451, Blocks.field36449, Blocks.field36446, Blocks.field36447) {
       private final ThreadLocal<List<ObjectSet<BlockPos>>> field14625 = ThreadLocal.withInitial(() -> Lists.newArrayListWithCapacity(7));
       @Override
-      public BlockState method8970(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+      public BlockState method8970(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
          BlockState var9 = var1.method23439(var2, var4.getBlockState(var6), var4, var5, var6);
          if (var1 != var9) {
             int var10 = var9.get(BlockStateProperties.field39747);
@@ -116,7 +117,7 @@ public enum Class2230 implements Class2234 {
       }
 
       @Override
-      public void method8971(Class1660 var1) {
+      public void method8971(IWorld var1) {
          BlockPos.Mutable var4 = new BlockPos.Mutable();
          List<ObjectSet<BlockPos>> var5 = this.field14625.get();
 
@@ -147,11 +148,11 @@ public enum Class2230 implements Class2234 {
    },
    field14622(Blocks.MELON_STEM, Blocks.PUMPKIN_STEM) {
       @Override
-      public BlockState method8970(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+      public BlockState method8970(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
          if (var1.get(Class3486.field19347) == 7) {
             Class3462 var9 = ((Class3486)var1.getBlock()).method12185();
             if (var3.isIn(var9)) {
-               return var9.method12147().method11579().with(HorizontalBlock.HORIZONTAL_FACING, var2);
+               return var9.method12147().getDefaultState().with(HorizontalBlock.HORIZONTAL_FACING, var2);
             }
          }
 

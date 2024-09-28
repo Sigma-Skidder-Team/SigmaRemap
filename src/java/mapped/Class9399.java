@@ -9,17 +9,17 @@ public class Class9399 {
 
    static {
       try {
-         field43617[Rotation.field187.ordinal()] = 1;
+         field43617[Rotation.CLOCKWISE_180.ordinal()] = 1;
       } catch (NoSuchFieldError var5) {
       }
 
       try {
-         field43617[Rotation.field188.ordinal()] = 2;
+         field43617[Rotation.COUNTERCLOCKWISE_90.ordinal()] = 2;
       } catch (NoSuchFieldError var4) {
       }
 
       try {
-         field43617[Rotation.field186.ordinal()] = 3;
+         field43617[Rotation.CLOCKWISE_90.ordinal()] = 3;
       } catch (NoSuchFieldError var3) {
       }
    }

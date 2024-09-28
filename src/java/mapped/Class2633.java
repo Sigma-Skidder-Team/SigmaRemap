@@ -4,6 +4,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
 public class Class2633 extends Class2632 {
@@ -16,7 +17,7 @@ public class Class2633 extends Class2632 {
    }
 
    @Override
-   public void method10842(Class1660 var1, BlockPos var2) {
+   public void method10842(IWorld var1, BlockPos var2) {
       var1.method6742((PlayerEntity)null, var2, SoundEvents.field27288, Class2266.field14733, 0.5F, 0.9F + ZombieEntity.method4665(this.field16948).nextFloat() * 0.2F);
    }
 

@@ -233,7 +233,7 @@ public class Projectiles extends Module {
                         double var45 = var4.field15827 - mc.gameRenderer.getActiveRenderInfo().getPos().getZ();
                         GL11.glPushMatrix();
                         GL11.glTranslated(var49, var42, var45);
-                        BlockPos var33 = new BlockPos(0, 0, 0).method8349(((BlockRayTraceResult) var4.field15831).getFace());
+                        BlockPos var33 = new BlockPos(0, 0, 0).offset(((BlockRayTraceResult) var4.field15831).getFace());
                         GL11.glRotatef(
                                 45.0F,
                                 this.field23732.method23931((float) var33.getX()),

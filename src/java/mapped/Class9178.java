@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.state.Property;
 import net.minecraft.util.IStringSerializable;
 
 import java.util.List;
@@ -16,20 +17,20 @@ public class Class9178 {
       return new Class9178();
    }
 
-   public Class9178 method34326(Class8550<?> var1, String var2) {
+   public Class9178 method34326(Property<?> var1, String var2) {
       this.field42157.add(new Class8647(var1.method30472(), var2));
       return this;
    }
 
-   public Class9178 method34327(Class8550<Integer> var1, int var2) {
+   public Class9178 method34327(Property<Integer> var1, int var2) {
       return this.method34326(var1, Integer.toString(var2));
    }
 
-   public Class9178 method34328(Class8550<Boolean> var1, boolean var2) {
+   public Class9178 method34328(Property<Boolean> var1, boolean var2) {
       return this.method34326(var1, Boolean.toString(var2));
    }
 
-   public <T extends Comparable<T> & IStringSerializable> Class9178 method34329(Class8550<T> var1, T var2) {
+   public <T extends Comparable<T> & IStringSerializable> Class9178 method34329(Property<T> var1, T var2) {
       return this.method34326(var1, ((IStringSerializable)var2).getString());
    }
 

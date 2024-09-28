@@ -24,7 +24,7 @@ public class Class2919 extends Class2898<Class4712> {
          boolean var8 = false;
 
          for (Direction var12 : Direction.values()) {
-            if (var12 != Direction.DOWN && var1.getBlockState(var4.method8349(var12)).isIn(Blocks.PACKED_ICE)) {
+            if (var12 != Direction.DOWN && var1.getBlockState(var4.offset(var12)).isIn(Blocks.PACKED_ICE)) {
                var8 = true;
                break;
             }
@@ -33,7 +33,7 @@ public class Class2919 extends Class2898<Class4712> {
          if (!var8) {
             return false;
          } else {
-            var1.setBlockState(var4, Blocks.field37006.method11579(), 2);
+            var1.setBlockState(var4, Blocks.field37006.getDefaultState(), 2);
 
             for (int var19 = 0; var19 < 200; var19++) {
                int var20 = var3.nextInt(5) - var3.nextInt(6);
@@ -50,9 +50,9 @@ public class Class2919 extends Class2898<Class4712> {
                      || var13.isIn(Blocks.PACKED_ICE)
                      || var13.isIn(Blocks.ICE)) {
                      for (Direction var17 : Direction.values()) {
-                        BlockState var18 = var1.getBlockState(var22.method8349(var17));
+                        BlockState var18 = var1.getBlockState(var22.offset(var17));
                         if (var18.isIn(Blocks.field37006)) {
-                           var1.setBlockState(var22, Blocks.field37006.method11579(), 2);
+                           var1.setBlockState(var22, Blocks.field37006.getDefaultState(), 2);
                            break;
                         }
                      }

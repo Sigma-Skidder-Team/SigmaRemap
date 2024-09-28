@@ -30,7 +30,7 @@ public class Class3473 extends Class3472 implements Class3196 {
    @Override
    public void method11488(ServerWorld var1, Random var2, BlockPos var3, BlockState var4) {
       BlockPos var7 = var3.up();
-      BlockState var8 = Blocks.GRASS.method11579();
+      BlockState var8 = Blocks.GRASS.getDefaultState();
 
       label61:
       for (int var9 = 0; var9 < 128; var9++) {

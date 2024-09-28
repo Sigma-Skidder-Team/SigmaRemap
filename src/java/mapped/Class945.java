@@ -75,7 +75,7 @@ public class Class945 extends TileEntity implements IClearable, ITickableTileEnt
             }
          }
 
-         int var17 = this.getBlockState().<Direction>get(Class3244.field18701).method534();
+         int var17 = this.getBlockState().<Direction>get(Class3244.field18701).getHorizontalIndex();
 
          for (int var7 = 0; var7 < this.field5329.size(); var7++) {
             if (!this.field5329.get(var7).isEmpty() && var5.nextFloat() < 0.2F) {

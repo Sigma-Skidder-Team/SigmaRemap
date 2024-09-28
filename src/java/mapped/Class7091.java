@@ -2,9 +2,7 @@ package mapped;
 
 import com.google.common.collect.Maps;
 import com.mojang.serialization.Codec;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
+import net.minecraft.block.*;
 import net.minecraft.client.util.Util;
 import net.minecraft.state.properties.Half;
 import net.minecraft.state.properties.SlabType;
@@ -52,17 +50,17 @@ public class Class7091 extends Class7092 {
       Block var9 = this.field30520.get(var5.field35531.getBlock());
       if (var9 != null) {
          BlockState var10 = var5.field35531;
-         BlockState var11 = var9.method11579();
-         if (var10.method23462(Class3421.field19131)) {
-            var11 = var11.with(Class3421.field19131, var10.<Direction>get(Class3421.field19131));
+         BlockState var11 = var9.getDefaultState();
+         if (var10.method23462(StairsBlock.FACING)) {
+            var11 = var11.with(StairsBlock.FACING, var10.<Direction>get(StairsBlock.FACING));
          }
 
-         if (var10.method23462(Class3421.field19132)) {
-            var11 = var11.with(Class3421.field19132, var10.<Half>get(Class3421.field19132));
+         if (var10.method23462(StairsBlock.HALF)) {
+            var11 = var11.with(StairsBlock.HALF, var10.<Half>get(StairsBlock.HALF));
          }
 
-         if (var10.method23462(Class3208.field18605)) {
-            var11 = var11.with(Class3208.field18605, var10.<SlabType>get(Class3208.field18605));
+         if (var10.method23462(SlabBlock.field18605)) {
+            var11 = var11.with(SlabBlock.field18605, var10.<SlabType>get(SlabBlock.field18605));
          }
 
          return new Class8266(var5.field35530, var11, var5.field35532);

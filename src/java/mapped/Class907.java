@@ -7,6 +7,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
@@ -29,7 +30,7 @@ import net.minecraft.world.World;
 import java.util.List;
 
 public class Class907 extends Entity {
-   private BlockState field5176 = Blocks.SAND.method11579();
+   private BlockState field5176 = Blocks.SAND.getDefaultState();
    public int field5177;
    public boolean field5178 = true;
    private boolean field5179;
@@ -144,8 +145,8 @@ public class Class907 extends Entity {
                      boolean var11 = Class3213.method11598(this.world.getBlockState(var18.down())) && (!var5 || !var6);
                      boolean var12 = this.field5176.method23443(this.world, var18) && !var11;
                      if (var10 && var12) {
-                        if (this.field5176.method23462(BlockStateProperties.field39710) && this.world.getFluidState(var18).method23472() == Class9479.field44066) {
-                           this.field5176 = this.field5176.with(BlockStateProperties.field39710, Boolean.valueOf(true));
+                        if (this.field5176.method23462(BlockStateProperties.WATERLOGGED) && this.world.getFluidState(var18).getFluid() == Fluids.WATER) {
+                           this.field5176 = this.field5176.with(BlockStateProperties.WATERLOGGED, Boolean.valueOf(true));
                         }
 
                         if (!this.world.setBlockState(var18, this.field5176, 3)) {
@@ -251,7 +252,7 @@ public class Class907 extends Entity {
       }
 
       if (this.field5176.isAir()) {
-         this.field5176 = Blocks.SAND.method11579();
+         this.field5176 = Blocks.SAND.getDefaultState();
       }
    }
 

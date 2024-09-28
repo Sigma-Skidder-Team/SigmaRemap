@@ -9,22 +9,22 @@ public class Class8568 {
 
    static {
       try {
-         field38525[Rotation.field185.ordinal()] = 1;
+         field38525[Rotation.NONE.ordinal()] = 1;
       } catch (NoSuchFieldError var6) {
       }
 
       try {
-         field38525[Rotation.field186.ordinal()] = 2;
+         field38525[Rotation.CLOCKWISE_90.ordinal()] = 2;
       } catch (NoSuchFieldError var5) {
       }
 
       try {
-         field38525[Rotation.field187.ordinal()] = 3;
+         field38525[Rotation.CLOCKWISE_180.ordinal()] = 3;
       } catch (NoSuchFieldError var4) {
       }
 
       try {
-         field38525[Rotation.field188.ordinal()] = 4;
+         field38525[Rotation.COUNTERCLOCKWISE_90.ordinal()] = 4;
       } catch (NoSuchFieldError var3) {
       }
    }

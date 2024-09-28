@@ -23,8 +23,8 @@ public class Class3341 extends Item {
 
    @Override
    public ActionResultType method11707(ItemUseContext var1) {
-      World var4 = var1.method18360();
-      BlockPos var5 = var1.method18345();
+      World var4 = var1.getWorld();
+      BlockPos var5 = var1.getPos();
       BlockState var6 = var4.getBlockState(var5);
       if (!var6.isIn(Blocks.field36650) || var6.<Boolean>get(Class3400.field19054)) {
          return ActionResultType.field14820;
@@ -43,7 +43,7 @@ public class Class3341 extends Item {
 
             for (int var10 = 0; var10 < 3; var10++) {
                for (int var11 = 0; var11 < 3; var11++) {
-                  var4.setBlockState(var9.method8336(var10, 0, var11), Blocks.field36649.method11579(), 2);
+                  var4.setBlockState(var9.method8336(var10, 0, var11), Blocks.field36649.getDefaultState(), 2);
                }
             }
 

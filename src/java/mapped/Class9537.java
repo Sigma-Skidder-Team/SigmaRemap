@@ -21,7 +21,7 @@ public class Class9537 {
 
    public Class9537(int var1, Block var2) {
       this.field44404 = var1;
-      this.field44403 = var2.method11579();
+      this.field44403 = var2.getDefaultState();
    }
 
    public int method36905() {

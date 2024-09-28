@@ -4,13 +4,14 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Matrix3f;
 import net.minecraft.util.math.vector.Vector3i;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public interface IVertexBuilder extends Class5421 {
    Logger field24103 = LogManager.getLogger();
-   ThreadLocal<Class8391> field24104 = ThreadLocal.<Class8391>withInitial(() -> new Class8391(Blocks.AIR.method11579(), new BlockPos(0, 0, 0)));
+   ThreadLocal<Class8391> field24104 = ThreadLocal.<Class8391>withInitial(() -> new Class8391(Blocks.AIR.getDefaultState(), new BlockPos(0, 0, 0)));
    boolean field24105 = Reflector.field42864.method20245();
 
    default Class8391 method17022(BlockState var1, BlockPos var2) {
@@ -99,7 +100,7 @@ public interface IVertexBuilder extends Class5421 {
       float var17 = (float)var15.getY();
       float var18 = (float)var15.getZ();
       Matrix4f var19 = var1.getMatrix();
-      Class8967 var20 = var1.method32362();
+      Matrix3f var20 = var1.method32362();
       float var21 = var20.method32832(var16, var17, var18);
       float var22 = var20.method32833(var16, var17, var18);
       float var23 = var20.method32834(var16, var17, var18);
@@ -172,7 +173,7 @@ public interface IVertexBuilder extends Class5421 {
       return this.pos((double)var7, (double)var8, (double)var9);
    }
 
-   default IVertexBuilder method17041(Class8967 var1, float var2, float var3, float var4) {
+   default IVertexBuilder method17041(Matrix3f var1, float var2, float var3, float var4) {
       float var7 = var1.method32832(var2, var3, var4);
       float var8 = var1.method32833(var2, var3, var4);
       float var9 = var1.method32834(var2, var3, var4);
@@ -227,7 +228,7 @@ public interface IVertexBuilder extends Class5421 {
       return var0 * 8 + 6;
    }
 
-   default Vector3f method17052(int[] var1, int var2, Class8967 var3) {
+   default Vector3f method17052(int[] var1, int var2, Matrix3f var3) {
       byte var6 = 7;
       int var7 = var1[var2 + var6];
       byte var8 = (byte)(var7 >> 0 & 0xFF);

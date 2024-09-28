@@ -1,6 +1,8 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.pathfinding.PathType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -60,10 +62,10 @@ public class Class6765 extends Class6764 {
       BlockPos var7 = new BlockPos(var2, var3, var4);
       FluidState var8 = var1.getFluidState(var7);
       BlockState var9 = var1.getBlockState(var7);
-      if (var8.method23474() && var9.method23440(var1, var7.down(), Class1947.field12615) && var9.isAir()) {
+      if (var8.method23474() && var9.method23440(var1, var7.down(), PathType.field12615) && var9.isAir()) {
          return Class2163.field14204;
       } else {
-         return var8.method23486(FluidTags.field40469) && var9.method23440(var1, var7, Class1947.field12615) ? Class2163.field14191 : Class2163.field14184;
+         return var8.method23486(FluidTags.field40469) && var9.method23440(var1, var7, PathType.field12615) ? Class2163.field14191 : Class2163.field14184;
       }
    }
 
@@ -99,7 +101,7 @@ public class Class6765 extends Class6764 {
             for (int var9 = var3; var9 < var3 + this.field29480; var9++) {
                FluidState var10 = this.field29475.getFluidState(var6.method8372(var7, var8, var9));
                BlockState var11 = this.field29475.getBlockState(var6.method8372(var7, var8, var9));
-               if (var10.method23474() && var11.method23440(this.field29475, var6.down(), Class1947.field12615) && var11.isAir()) {
+               if (var10.method23474() && var11.method23440(this.field29475, var6.down(), PathType.field12615) && var11.isAir()) {
                   return Class2163.field14204;
                }
 
@@ -111,6 +113,6 @@ public class Class6765 extends Class6764 {
       }
 
       BlockState var12 = this.field29475.getBlockState(var6);
-      return !var12.method23440(this.field29475, var6, Class1947.field12615) ? Class2163.field14184 : Class2163.field14191;
+      return !var12.method23440(this.field29475, var6, PathType.field12615) ? Class2163.field14184 : Class2163.field14191;
    }
 }

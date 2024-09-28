@@ -8,9 +8,11 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.particles.RedstoneParticleData;
 import net.minecraft.state.EnumProperty;
 import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.state.properties.RedstoneSide;
 import net.minecraft.util.*;
@@ -19,6 +21,7 @@ import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
@@ -68,16 +71,16 @@ public class Class3222 extends Block {
 
    public Class3222(Properties var1) {
       super(var1);
-      this.method11578(
-         this.field18612
-            .method35393()
+      this.setDefaultState(
+         this.stateContainer
+            .getBaseState()
             .with(field18647, RedstoneSide.field267)
             .with(field18648, RedstoneSide.field267)
             .with(field18649, RedstoneSide.field267)
             .with(field18650, RedstoneSide.field267)
             .with(field18651, Integer.valueOf(0))
       );
-      this.field18658 = this.method11579()
+      this.field18658 = this.getDefaultState()
          .with(field18647, RedstoneSide.field266)
          .with(field18648, RedstoneSide.field266)
          .with(field18649, RedstoneSide.field266)
@@ -110,18 +113,18 @@ public class Class3222 extends Block {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return this.field18656.get(var1.with(field18651, Integer.valueOf(0)));
    }
 
    @Override
-   public BlockState method11495(Class5909 var1) {
-      return this.method11614(var1.method18360(), this.field18658, var1.method18345());
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      return this.method11614(var1.getWorld(), this.field18658, var1.getPos());
    }
 
    private BlockState method11614(IBlockReader var1, BlockState var2, BlockPos var3) {
       boolean var6 = method11617(var2);
-      var2 = this.method11615(var1, this.method11579().with(field18651, var2.<Integer>get(field18651)), var3);
+      var2 = this.method11615(var1, this.getDefaultState().with(field18651, var2.<Integer>get(field18651)), var3);
       if (var6 && method11617(var2)) {
          return var2;
       } else {
@@ -165,7 +168,7 @@ public class Class3222 extends Block {
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       if (var2 != Direction.DOWN) {
          if (var2 == Direction.UP) {
             return this.method11614(var4, var1, var5);
@@ -197,7 +200,7 @@ public class Class3222 extends Block {
    }
 
    @Override
-   public void method11618(BlockState var1, Class1660 var2, BlockPos var3, int var4, int var5) {
+   public void method11618(BlockState var1, IWorld var2, BlockPos var3, int var4, int var5) {
       BlockPos.Mutable var8 = new BlockPos.Mutable();
 
       for (Direction var10 : Direction.Plane.HORIZONTAL) {
@@ -206,7 +209,7 @@ public class Class3222 extends Block {
             var8.method8379(Direction.DOWN);
             BlockState var12 = var2.getBlockState(var8);
             if (!var12.isIn(Blocks.field36895)) {
-               BlockPos var13 = var8.method8349(var10.getOpposite());
+               BlockPos var13 = var8.offset(var10.getOpposite());
                BlockState var14 = var12.method23439(var10.getOpposite(), var2.getBlockState(var13), var2, var8, var13);
                method11544(var12, var14, var2, var8, var4, var5);
             }
@@ -214,7 +217,7 @@ public class Class3222 extends Block {
             var8.method8377(var3, var10).method8379(Direction.UP);
             BlockState var16 = var2.getBlockState(var8);
             if (!var16.isIn(Blocks.field36895)) {
-               BlockPos var17 = var8.method8349(var10.getOpposite());
+               BlockPos var17 = var8.offset(var10.getOpposite());
                BlockState var15 = var16.method23439(var10.getOpposite(), var2.getBlockState(var17), var2, var8, var17);
                method11544(var16, var15, var2, var8, var4, var5);
             }
@@ -227,7 +230,7 @@ public class Class3222 extends Block {
    }
 
    private RedstoneSide method11620(IBlockReader var1, BlockPos var2, Direction var3, boolean var4) {
-      BlockPos var7 = var2.method8349(var3);
+      BlockPos var7 = var2.offset(var3);
       BlockState var8 = var1.getBlockState(var7);
       if (var4) {
          boolean var9 = this.method11621(var1, var7, var8);
@@ -267,7 +270,7 @@ public class Class3222 extends Block {
          var7.add(var2);
 
          for (Direction var11 : Direction.values()) {
-            var7.add(var2.method8349(var11));
+            var7.add(var2.offset(var11));
          }
 
          for (BlockPos var13 : var7) {
@@ -283,7 +286,7 @@ public class Class3222 extends Block {
       int var6 = 0;
       if (var5 < 15) {
          for (Direction var8 : Direction.Plane.HORIZONTAL) {
-            BlockPos var9 = var2.method8349(var8);
+            BlockPos var9 = var2.offset(var8);
             BlockState var10 = var1.getBlockState(var9);
             var6 = Math.max(var6, this.method11624(var10));
             BlockPos var11 = var2.up();
@@ -307,18 +310,18 @@ public class Class3222 extends Block {
          var1.notifyNeighborsOfStateChange(var2, this);
 
          for (Direction var8 : Direction.values()) {
-            var1.notifyNeighborsOfStateChange(var2.method8349(var8), this);
+            var1.notifyNeighborsOfStateChange(var2.offset(var8), this);
          }
       }
    }
 
    @Override
-   public void method11589(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+   public void onBlockAdded(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       if (!var4.isIn(var1.getBlock()) && !var2.isRemote) {
          this.method11622(var2, var3, var1);
 
          for (Direction var9 : Direction.Plane.field162) {
-            var2.notifyNeighborsOfStateChange(var3.method8349(var9), this);
+            var2.notifyNeighborsOfStateChange(var3.offset(var9), this);
          }
 
          this.method11626(var2, var3);
@@ -326,12 +329,12 @@ public class Class3222 extends Block {
    }
 
    @Override
-   public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+   public void onReplaced(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       if (!var5 && !var1.isIn(var4.getBlock())) {
-         super.method11513(var1, var2, var3, var4, var5);
+         super.onReplaced(var1, var2, var3, var4, var5);
          if (!var2.isRemote) {
             for (Direction var11 : Direction.values()) {
-               var2.notifyNeighborsOfStateChange(var3.method8349(var11), this);
+               var2.notifyNeighborsOfStateChange(var3.offset(var11), this);
             }
 
             this.method11622(var2, var3, var1);
@@ -342,11 +345,11 @@ public class Class3222 extends Block {
 
    private void method11626(World var1, BlockPos var2) {
       for (Direction var6 : Direction.Plane.HORIZONTAL) {
-         this.method11625(var1, var2.method8349(var6));
+         this.method11625(var1, var2.offset(var6));
       }
 
       for (Direction var9 : Direction.Plane.HORIZONTAL) {
-         BlockPos var7 = var2.method8349(var9);
+         BlockPos var7 = var2.offset(var9);
          if (!var1.getBlockState(var7).method23400(var1, var7)) {
             this.method11625(var1, var7.down());
          } else {
@@ -434,7 +437,7 @@ public class Class3222 extends Block {
    }
 
    @Override
-   public void method11512(BlockState var1, World var2, BlockPos var3, Random var4) {
+   public void animateTick(BlockState var1, World var2, BlockPos var3, Random var4) {
       int var7 = var1.<Integer>get(field18651);
       if (var7 != 0) {
          for (Direction var9 : Direction.Plane.HORIZONTAL) {
@@ -489,17 +492,17 @@ public class Class3222 extends Block {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field18647, field18648, field18649, field18650, field18651);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field18647, field18648, field18649, field18650, field18651);
    }
 
    @Override
-   public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
+   public ActionResultType onBlockActivated(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       if (!var4.abilities.allowEdit) {
          return ActionResultType.field14820;
       } else {
          if (method11616(var1) || method11617(var1)) {
-            BlockState var9 = !method11616(var1) ? this.field18658 : this.method11579();
+            BlockState var9 = !method11616(var1) ? this.field18658 : this.getDefaultState();
             var9 = var9.with(field18651, var1.<Integer>get(field18651));
             var9 = this.method11614(var2, var9, var3);
             if (var9 != var1) {
@@ -515,7 +518,7 @@ public class Class3222 extends Block {
 
    private void method11631(World var1, BlockPos var2, BlockState var3, BlockState var4) {
       for (Direction var8 : Direction.Plane.HORIZONTAL) {
-         BlockPos var9 = var2.method8349(var8);
+         BlockPos var9 = var2.offset(var8);
          if (var3.<RedstoneSide>get(field18652.get(var8)).method279() != var4.<RedstoneSide>get(field18652.get(var8)).method279()
             && var1.getBlockState(var9).method23400(var1, var9)) {
             var1.notifyNeighborsOfStateExcept(var9, var4.getBlock(), var8.getOpposite());

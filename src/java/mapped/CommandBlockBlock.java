@@ -2,6 +2,7 @@ package mapped;
 
 import java.util.Random;
 
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.block.Block;
@@ -10,6 +11,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tileentity.CommandBlockTileEntity;
 import net.minecraft.tileentity.TileEntity;
@@ -29,7 +31,7 @@ public class CommandBlockBlock extends Class3241 {
 
    public CommandBlockBlock(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().with(field18893, Direction.NORTH).with(field18894, Boolean.valueOf(false)));
+      this.setDefaultState(this.stateContainer.getBaseState().with(field18893, Direction.NORTH).with(field18894, Boolean.valueOf(false)));
    }
 
    @Override
@@ -50,14 +52,14 @@ public class CommandBlockBlock extends Class3241 {
             var10.method4010(var11);
             if (!var12 && !var10.isAuto() && var10.method4020() != CommandBlockTileEntity.Mode.field13323 && var11) {
                var10.method4017();
-               var2.method6860().method20726(var3, this, 1);
+               var2.method6860().scheduleTick(var3, this, 1);
             }
          }
       }
    }
 
    @Override
-   public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void tick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       TileEntity var7 = var2.getTileEntity(var3);
       if (var7 instanceof CommandBlockTileEntity) {
          CommandBlockTileEntity var8 = (CommandBlockTileEntity)var7;
@@ -86,7 +88,7 @@ public class CommandBlockBlock extends Class3241 {
             }
 
             if (var8.isPowered() || var8.isAuto()) {
-               var2.method6860().method20726(var3, this, 1);
+               var2.method6860().scheduleTick(var3, this, 1);
             }
          }
 
@@ -105,7 +107,7 @@ public class CommandBlockBlock extends Class3241 {
    }
 
    @Override
-   public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
+   public ActionResultType onBlockActivated(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       TileEntity var9 = var2.getTileEntity(var3);
       if (var9 instanceof CommandBlockTileEntity && var4.canUseCommandBlock()) {
          var4.method2770((CommandBlockTileEntity)var9);
@@ -166,13 +168,13 @@ public class CommandBlockBlock extends Class3241 {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field18893, field18894);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field18893, field18894);
    }
 
    @Override
-   public BlockState method11495(Class5909 var1) {
-      return this.method11579().with(field18893, var1.method18348().getOpposite());
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      return this.getDefaultState().with(field18893, var1.method18348().getOpposite());
    }
 
    private static void method11928(World var0, BlockPos var1, Direction var2) {

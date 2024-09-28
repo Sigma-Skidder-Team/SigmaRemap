@@ -6,6 +6,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.IWorld;
 
 import java.util.Random;
 
@@ -18,7 +19,7 @@ public class Class2946 extends Class2898<Class4710> {
       return method11288(var1, var3, var4, var5, 8, 4);
    }
 
-   public static boolean method11288(Class1660 var0, Random var1, BlockPos var2, Class4710 var3, int var4, int var5) {
+   public static boolean method11288(IWorld var0, Random var1, BlockPos var2, Class4710 var3, int var4, int var5) {
       Block var8 = var0.getBlockState(var2.down()).getBlock();
       if (var8.isIn(BlockTags.field32799)) {
          int var9 = var2.getY();

@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.StairsBlock;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -36,9 +37,9 @@ public class Class4176 extends Class4167 {
 
    @Override
    public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
-      BlockState var10 = Blocks.NETHER_BRICK_STAIRS.method11579().with(Class3421.field19131, Direction.SOUTH);
+      BlockState var10 = Blocks.NETHER_BRICK_STAIRS.getDefaultState().with(StairsBlock.FACING, Direction.SOUTH);
       BlockState var11 = Blocks.NETHER_BRICK_FENCE
-         .method11579()
+         .getDefaultState()
          .with(Class3239.field18680, Boolean.valueOf(true))
          .with(Class3239.field18682, Boolean.valueOf(true));
 
@@ -46,24 +47,24 @@ public class Class4176 extends Class4167 {
          int var13 = Math.max(1, 7 - var12);
          int var14 = Math.min(Math.max(var13 + 5, 14 - var12), 13);
          int var15 = var12;
-         this.method12927(var1, var5, 0, 0, var12, 4, var13, var12, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
-         this.method12927(var1, var5, 1, var13 + 1, var12, 3, var14 - 1, var12, Blocks.AIR.method11579(), Blocks.AIR.method11579(), false);
+         this.method12927(var1, var5, 0, 0, var12, 4, var13, var12, Blocks.NETHER_BRICKS.getDefaultState(), Blocks.NETHER_BRICKS.getDefaultState(), false);
+         this.method12927(var1, var5, 1, var13 + 1, var12, 3, var14 - 1, var12, Blocks.AIR.getDefaultState(), Blocks.AIR.getDefaultState(), false);
          if (var12 <= 6) {
             this.method12923(var1, var10, 1, var13 + 1, var12, var5);
             this.method12923(var1, var10, 2, var13 + 1, var12, var5);
             this.method12923(var1, var10, 3, var13 + 1, var12, var5);
          }
 
-         this.method12927(var1, var5, 0, var14, var12, 4, var14, var12, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
-         this.method12927(var1, var5, 0, var13 + 1, var12, 0, var14 - 1, var12, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
-         this.method12927(var1, var5, 4, var13 + 1, var12, 4, var14 - 1, var12, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
+         this.method12927(var1, var5, 0, var14, var12, 4, var14, var12, Blocks.NETHER_BRICKS.getDefaultState(), Blocks.NETHER_BRICKS.getDefaultState(), false);
+         this.method12927(var1, var5, 0, var13 + 1, var12, 0, var14 - 1, var12, Blocks.NETHER_BRICKS.getDefaultState(), Blocks.NETHER_BRICKS.getDefaultState(), false);
+         this.method12927(var1, var5, 4, var13 + 1, var12, 4, var14 - 1, var12, Blocks.NETHER_BRICKS.getDefaultState(), Blocks.NETHER_BRICKS.getDefaultState(), false);
          if ((var12 & 1) == 0) {
             this.method12927(var1, var5, 0, var13 + 2, var12, 0, var13 + 3, var12, var11, var11, false);
             this.method12927(var1, var5, 4, var13 + 2, var12, 4, var13 + 3, var12, var11, var11, false);
          }
 
          for (int var16 = 0; var16 <= 4; var16++) {
-            this.method12932(var1, Blocks.NETHER_BRICKS.method11579(), var16, -1, var15, var5);
+            this.method12932(var1, Blocks.NETHER_BRICKS.getDefaultState(), var16, -1, var15, var5);
          }
       }
 

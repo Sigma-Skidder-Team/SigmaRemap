@@ -12,6 +12,7 @@ import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
+import net.minecraft.block.StairsBlock;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
@@ -196,7 +197,7 @@ public class Class8795 {
                   }
 
                   if (var25 && var33 && var10 > 0.75 && var38) {
-                     if (this.mc.world.getBlockState(var8.field44271.method33979().down()).getBlock() instanceof Class3421 && var10 < 1.1) {
+                     if (this.mc.world.getBlockState(var8.field44271.method33979().down()).getBlock() instanceof StairsBlock && var10 < 1.1) {
                         MultiUtilities.addChatMessage("YA" + var10);
                      } else {
                         this.mc.player.jump();

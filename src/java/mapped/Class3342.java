@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.HorizontalBlock;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -8,6 +9,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.state.StateContainer;
 import net.minecraft.util.CachedBlockInfo;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -27,11 +29,11 @@ public class Class3342 extends HorizontalBlock implements Class3255 {
 
    public Class3342(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().with(field18848, Direction.NORTH));
+      this.setDefaultState(this.stateContainer.getBaseState().with(field18848, Direction.NORTH));
    }
 
    @Override
-   public void method11589(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+   public void onBlockAdded(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       if (!var4.isIn(var1.getBlock())) {
          this.method11892(var2, var3);
       }
@@ -49,7 +51,7 @@ public class Class3342 extends HorizontalBlock implements Class3255 {
             for (int var6 = 0; var6 < this.method11896().method38654(); var6++) {
                for (int var7 = 0; var7 < this.method11896().method38653(); var7++) {
                   CachedBlockInfo var8 = var5.method33881(var6, var7, 0);
-                  var1.setBlockState(var8.method37551(), Blocks.AIR.method11579(), 2);
+                  var1.setBlockState(var8.method37551(), Blocks.AIR.getDefaultState(), 2);
                   var1.playEvent(2001, var8.method37551(), Block.getStateId(var8.method37548()));
                }
             }
@@ -74,7 +76,7 @@ public class Class3342 extends HorizontalBlock implements Class3255 {
       } else {
          for (int var13 = 0; var13 < this.method11894().method38653(); var13++) {
             CachedBlockInfo var16 = var5.method33881(0, var13, 0);
-            var1.setBlockState(var16.method37551(), Blocks.AIR.method11579(), 2);
+            var1.setBlockState(var16.method37551(), Blocks.AIR.getDefaultState(), 2);
             var1.playEvent(2001, var16.method37551(), Block.getStateId(var16.method37548()));
          }
 
@@ -95,13 +97,13 @@ public class Class3342 extends HorizontalBlock implements Class3255 {
    }
 
    @Override
-   public BlockState method11495(Class5909 var1) {
-      return this.method11579().with(field18848, var1.method18350().getOpposite());
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      return this.getDefaultState().with(field18848, var1.getPlacementHorizontalFacing().getOpposite());
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field18848);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field18848);
    }
 
    private Class9803 method11893() {

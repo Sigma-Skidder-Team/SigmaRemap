@@ -16,20 +16,20 @@ public class EndCityPieces {
    private static final Class8015 field44107 = new Class8018();
    private static final List<Class6793<Rotation, BlockPos>> field44108 = Lists.newArrayList(
       new Class6793[]{
-         new Class6793<Rotation, BlockPos>(Rotation.field185, new BlockPos(1, -1, 0)),
-         new Class6793<Rotation, BlockPos>(Rotation.field186, new BlockPos(6, -1, 1)),
-         new Class6793<Rotation, BlockPos>(Rotation.field188, new BlockPos(0, -1, 5)),
-         new Class6793<Rotation, BlockPos>(Rotation.field187, new BlockPos(5, -1, 6))
+         new Class6793<Rotation, BlockPos>(Rotation.NONE, new BlockPos(1, -1, 0)),
+         new Class6793<Rotation, BlockPos>(Rotation.CLOCKWISE_90, new BlockPos(6, -1, 1)),
+         new Class6793<Rotation, BlockPos>(Rotation.COUNTERCLOCKWISE_90, new BlockPos(0, -1, 5)),
+         new Class6793<Rotation, BlockPos>(Rotation.CLOCKWISE_180, new BlockPos(5, -1, 6))
       }
    );
    private static final Class8015 field44109 = new Class8017();
    private static final Class8015 field44110 = new Class8016();
    private static final List<Class6793<Rotation, BlockPos>> field44111 = Lists.newArrayList(
       new Class6793[]{
-         new Class6793<Rotation, BlockPos>(Rotation.field185, new BlockPos(4, -1, 0)),
-         new Class6793<Rotation, BlockPos>(Rotation.field186, new BlockPos(12, -1, 4)),
-         new Class6793<Rotation, BlockPos>(Rotation.field188, new BlockPos(0, -1, 8)),
-         new Class6793<Rotation, BlockPos>(Rotation.field187, new BlockPos(8, -1, 12))
+         new Class6793<Rotation, BlockPos>(Rotation.NONE, new BlockPos(4, -1, 0)),
+         new Class6793<Rotation, BlockPos>(Rotation.CLOCKWISE_90, new BlockPos(12, -1, 4)),
+         new Class6793<Rotation, BlockPos>(Rotation.COUNTERCLOCKWISE_90, new BlockPos(0, -1, 8)),
+         new Class6793<Rotation, BlockPos>(Rotation.CLOCKWISE_180, new BlockPos(8, -1, 12))
       }
    );
    private static final Class8015 field44112 = new Class8014();

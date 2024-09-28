@@ -21,15 +21,15 @@ public class Class3312 extends Item {
 
    @Override
    public ActionResultType method11707(ItemUseContext var1) {
-      BlockPos var4 = var1.method18345();
-      Direction var5 = var1.method18354();
-      BlockPos var6 = var4.method8349(var5);
+      BlockPos var4 = var1.getPos();
+      Direction var5 = var1.getFace();
+      BlockPos var6 = var4.offset(var5);
       PlayerEntity var7 = var1.method18358();
       ItemStack var8 = var1.method18357();
       if (var7 != null && !this.method11857(var7, var5, var8, var6)) {
          return ActionResultType.FAIL;
       } else {
-         World var9 = var1.method18360();
+         World var9 = var1.getWorld();
          Object var10;
          if (this.field18822 != EntityType.field41060) {
             if (this.field18822 != EntityType.field41043) {

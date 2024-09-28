@@ -33,10 +33,10 @@ public abstract class Class3472 extends Class3471 {
    }
 
    @Override
-   public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void randomTick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (method12160(var1, var2, var3)) {
          if (var2.method7015(var3.up()) >= 9) {
-            BlockState var7 = this.method11579();
+            BlockState var7 = this.getDefaultState();
 
             for (int var8 = 0; var8 < 4; var8++) {
                BlockPos var9 = var3.method8336(var4.nextInt(3) - 1, var4.nextInt(5) - 3, var4.nextInt(3) - 1);
@@ -46,7 +46,7 @@ public abstract class Class3472 extends Class3471 {
             }
          }
       } else {
-         var2.setBlockState(var3, Blocks.field36396.method11579());
+         var2.setBlockState(var3, Blocks.field36396.getDefaultState());
       }
    }
 }

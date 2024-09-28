@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
@@ -21,15 +22,15 @@ public class Class3298 extends Class3292 {
 
    @Nullable
    @Override
-   public BlockState method11838(Class5909 var1) {
-      BlockState var4 = this.field18807.method11495(var1);
+   public BlockState method11838(BlockItemUseContext var1) {
+      BlockState var4 = this.field18807.getStateForPlacement(var1);
       BlockState var5 = null;
-      World var6 = var1.method18360();
-      BlockPos var7 = var1.method18345();
+      World var6 = var1.getWorld();
+      BlockPos var7 = var1.getPos();
 
       for (Direction var11 : var1.method18349()) {
          if (var11 != Direction.UP) {
-            BlockState var12 = var11 != Direction.DOWN ? var4 : this.method11845().method11495(var1);
+            BlockState var12 = var11 != Direction.DOWN ? var4 : this.method11845().getStateForPlacement(var1);
             if (var12 != null && var12.method23443(var6, var7)) {
                var5 = var12;
                break;

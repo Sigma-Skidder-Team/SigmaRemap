@@ -3,14 +3,21 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.IWaterLoggable;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
+import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -18,10 +25,10 @@ import net.minecraft.world.server.ServerWorld;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class Class3195 extends Class3194 implements Class3196, Class3207 {
+public class Class3195 extends Class3194 implements Class3196, IWaterLoggable {
    private static String[] field18471;
    public static final IntegerProperty field18472 = BlockStateProperties.field39758;
-   public static final BooleanProperty field18473 = BlockStateProperties.field39710;
+   public static final BooleanProperty field18473 = BlockStateProperties.WATERLOGGED;
    public static final VoxelShape field18474 = Block.makeCuboidShape(6.0, 0.0, 6.0, 10.0, 6.0, 10.0);
    public static final VoxelShape field18475 = Block.makeCuboidShape(3.0, 0.0, 3.0, 13.0, 6.0, 13.0);
    public static final VoxelShape field18476 = Block.makeCuboidShape(2.0, 0.0, 2.0, 14.0, 6.0, 14.0);
@@ -29,17 +36,17 @@ public class Class3195 extends Class3194 implements Class3196, Class3207 {
 
    public Class3195(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().with(field18472, Integer.valueOf(1)).with(field18473, Boolean.valueOf(true)));
+      this.setDefaultState(this.stateContainer.getBaseState().with(field18472, Integer.valueOf(1)).with(field18473, Boolean.valueOf(true)));
    }
 
    @Nullable
    @Override
-   public BlockState method11495(Class5909 var1) {
-      BlockState var4 = var1.method18360().getBlockState(var1.method18345());
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      BlockState var4 = var1.getWorld().getBlockState(var1.getPos());
       if (!var4.isIn(this)) {
-         FluidState var5 = var1.method18360().getFluidState(var1.method18345());
-         boolean var6 = var5.method23472() == Class9479.field44066;
-         return super.method11495(var1).with(field18473, Boolean.valueOf(var6));
+         FluidState var5 = var1.getWorld().getFluidState(var1.getPos());
+         boolean var6 = var5.getFluid() == Fluids.WATER;
+         return super.getStateForPlacement(var1).with(field18473, Boolean.valueOf(var6));
       } else {
          return var4.with(field18472, Integer.valueOf(Math.min(4, var4.<Integer>get(field18472) + 1)));
       }
@@ -61,25 +68,25 @@ public class Class3195 extends Class3194 implements Class3196, Class3207 {
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       if (var1.method23443(var4, var5)) {
          if (var1.<Boolean>get(field18473)) {
-            var4.method6861().method20726(var5, Class9479.field44066, Class9479.field44066.method25057(var4));
+            var4.getPendingFluidTicks().scheduleTick(var5, Fluids.WATER, Fluids.WATER.getTickRate(var4));
          }
 
-         return super.method11491(var1, var2, var3, var4, var5, var6);
+         return super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
       } else {
-         return Blocks.AIR.method11579();
+         return Blocks.AIR.getDefaultState();
       }
    }
 
    @Override
-   public boolean method11497(BlockState var1, Class5909 var2) {
+   public boolean method11497(BlockState var1, BlockItemUseContext var2) {
       return var2.method18357().getItem() == this.method11581() && var1.<Integer>get(field18472) < 4 ? true : super.method11497(var1, var2);
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       switch (var1.<Integer>get(field18472)) {
          case 1:
          default:
@@ -94,13 +101,13 @@ public class Class3195 extends Class3194 implements Class3196, Class3207 {
    }
 
    @Override
-   public FluidState method11498(BlockState var1) {
-      return !var1.<Boolean>get(field18473) ? super.method11498(var1) : Class9479.field44066.method25078(false);
+   public FluidState getFluidState(BlockState var1) {
+      return !var1.<Boolean>get(field18473) ? super.getFluidState(var1) : Fluids.WATER.getStillFluidState(false);
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field18472, field18473);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field18472, field18473);
    }
 
    @Override
@@ -132,7 +139,7 @@ public class Class3195 extends Class3194 implements Class3196, Class3207 {
                   if (var17 != var3 && var2.nextInt(6) == 0 && var1.getBlockState(var17).isIn(Blocks.WATER)) {
                      BlockState var18 = var1.getBlockState(var17.down());
                      if (var18.isIn(BlockTags.field32783)) {
-                        var1.setBlockState(var17, Blocks.field37005.method11579().with(field18472, Integer.valueOf(var2.nextInt(4) + 1)), 3);
+                        var1.setBlockState(var17, Blocks.field37005.getDefaultState().with(field18472, Integer.valueOf(var2.nextInt(4) + 1)), 3);
                      }
                   }
                }
@@ -154,7 +161,7 @@ public class Class3195 extends Class3194 implements Class3196, Class3207 {
    }
 
    @Override
-   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
+   public boolean allowsMovement(BlockState var1, IBlockReader var2, BlockPos var3, PathType var4) {
       return false;
    }
 }

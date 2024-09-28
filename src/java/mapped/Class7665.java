@@ -4,6 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
@@ -16,7 +17,7 @@ public abstract class Class7665 {
    public boolean method25182(ServerWorld var1, ChunkGenerator var2, BlockPos var3, BlockState var4, Random var5) {
       Class7909 var8 = this.method25186(var5, this.method25187(var1, var3));
       if (var8 != null) {
-         var1.setBlockState(var3, Blocks.AIR.method11579(), 4);
+         var1.setBlockState(var3, Blocks.AIR.getDefaultState(), 4);
          ((Class4733)var8.field33887).method14849();
          if (!var8.method26521(var1, var2, var5, var3)) {
             var1.setBlockState(var3, var4, 4);
@@ -29,7 +30,7 @@ public abstract class Class7665 {
       }
    }
 
-   private boolean method25187(Class1660 var1, BlockPos var2) {
+   private boolean method25187(IWorld var1, BlockPos var2) {
       for (BlockPos var6 : BlockPos.Mutable.method8359(var2.down().method8342(2).method8346(2), var2.up().method8344(2).method8348(2))) {
          if (var1.getBlockState(var6).isIn(BlockTags.field32773)) {
             return true;

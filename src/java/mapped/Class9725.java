@@ -18,6 +18,7 @@ import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.fluid.Fluid;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.LongArrayNBT;
 import net.minecraft.tileentity.TileEntity;
@@ -53,8 +54,8 @@ public class Class9725 {
          var0.method6867().<Biome>getRegistry(Registry.BIOME_KEY), var3, var8, !var9.contains("Biomes", 11) ? null : var9.getIntArray("Biomes")
       );
       UpgradeData var12 = !var9.contains("UpgradeData", 10) ? UpgradeData.field40388 : new UpgradeData(var9.getCompound("UpgradeData"));
-      Class6806 var13 = new Class6806<Block>(var0x -> var0x == null || var0x.method11579().isAir(), var3, var9.method131("ToBeTicked", 9));
-      Class6806 var14 = new Class6806<Fluid>(var0x -> var0x == null || var0x == Class9479.field44064, var3, var9.method131("LiquidsToBeTicked", 9));
+      Class6806 var13 = new Class6806<Block>(var0x -> var0x == null || var0x.getDefaultState().isAir(), var3, var9.method131("ToBeTicked", 9));
+      Class6806 var14 = new Class6806<Fluid>(var0x -> var0x == null || var0x == Fluids.EMPTY, var3, var9.method131("LiquidsToBeTicked", 9));
       boolean var15 = var9.getBoolean("isLightOn");
       ListNBT var16 = var9.method131("Sections", 10);
       byte var17 = 16;
@@ -123,7 +124,7 @@ public class Class9725 {
          if (!var9.contains("LiquidTicks", 9)) {
             var44 = var14;
          } else {
-            var44 = Class6801.<Fluid>method20722(var9.method131("LiquidTicks", 10), Registry.field16070::getKey, Registry.field16070::getOrDefault);
+            var44 = Class6801.<Fluid>method20722(var9.method131("LiquidTicks", 10), Registry.FLUID::getKey, Registry.FLUID::getOrDefault);
          }
 
          var43 = new Chunk(
@@ -313,7 +314,7 @@ public class Class9725 {
       ITickList var33 = var1.getFluidsToBeTicked();
       if (!(var33 instanceof Class6806)) {
          if (!(var33 instanceof Class6801)) {
-            var6.put("LiquidTicks", var0.method6861().method20733(var4));
+            var6.put("LiquidTicks", var0.getPendingFluidTicks().method20733(var4));
          } else {
             var6.put("LiquidTicks", ((Class6801)var33).method20721());
          }

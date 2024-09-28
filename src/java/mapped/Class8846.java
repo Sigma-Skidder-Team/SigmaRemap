@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.util.math.vector.Matrix3f;
 import net.minecraft.util.math.vector.Quaternion;
 
 import java.util.Random;
@@ -70,11 +71,11 @@ public class Class8846 {
    }
 
    private static void method32093() {
-      Class8967 var2 = new Class8967();
+      Matrix3f var2 = new Matrix3f();
       var2.method32835(field39967);
-      Class8967 var3 = var2.method32831();
+      Matrix3f var3 = var2.method32831();
       Quaternion var4 = new Quaternion(field39967.nextFloat(), field39967.nextFloat(), field39967.nextFloat(), field39967.nextFloat());
-      var2.method32828(new Class8967(var4));
+      var2.method32828(new Matrix3f(var4));
       var3.method32829(var4);
       if (!var3.equals(var2)) {
          method32096("*** DIFFERENT ***");
@@ -86,7 +87,7 @@ public class Class8846 {
    private static void method32094() {
       Vector3f var2 = new Vector3f(field39967.nextFloat(), field39967.nextFloat(), field39967.nextFloat());
       Vector3f var3 = var2.method25287();
-      Class8967 var4 = new Class8967();
+      Matrix3f var4 = new Matrix3f();
       var4.method32835(field39967);
       var2.method25282(var4);
       float var5 = var4.method32832(var3.method25269(), var3.method25270(), var3.method25271());

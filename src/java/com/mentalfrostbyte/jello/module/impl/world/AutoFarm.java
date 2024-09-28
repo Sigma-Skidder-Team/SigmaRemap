@@ -98,7 +98,7 @@ public class AutoFarm extends Module {
                                 var1.setYaw(var20[1]);
                                 var1.method13922(new Class649(this, var16, var20));
                                 mc.rightClickDelayTimer = 2;
-                                BlockState var11 = Blocks.field36539.method11579();
+                                BlockState var11 = Blocks.field36539.getDefaultState();
                                 mc.world.setBlockState(var5.up(), var11);
                                 return;
                             }

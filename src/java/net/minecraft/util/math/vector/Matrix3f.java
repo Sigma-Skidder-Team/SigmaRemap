@@ -1,13 +1,14 @@
-package mapped;
+package net.minecraft.util.math.vector;
 
 import com.mojang.datafixers.util.Pair;
 import java.util.Random;
 
+import mapped.Matrix4f;
+import mapped.Vector3f;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.vector.Quaternion;
 import org.apache.commons.lang3.tuple.Triple;
 
-public final class Class8967 {
+public final class Matrix3f {
    private static final float field40495 = 3.0F + 2.0F * (float)Math.sqrt(2.0);
    private static final float field40496 = (float)Math.cos(Math.PI / 8);
    private static final float field40497 = (float)Math.sin(Math.PI / 8);
@@ -22,10 +23,10 @@ public final class Class8967 {
    public float field40506;
    public float field40507;
 
-   public Class8967() {
+   public Matrix3f() {
    }
 
-   public Class8967(Quaternion var1) {
+   public Matrix3f(Quaternion var1) {
       float var4 = var1.method31178();
       float var5 = var1.method31179();
       float var6 = var1.method31180();
@@ -50,15 +51,15 @@ public final class Class8967 {
       this.field40504 = 2.0F * (var12 - var14);
    }
 
-   public static Class8967 method32817(float var0, float var1, float var2) {
-      Class8967 var5 = new Class8967();
+   public static Matrix3f method32817(float var0, float var1, float var2) {
+      Matrix3f var5 = new Matrix3f();
       var5.field40499 = var0;
       var5.field40503 = var1;
       var5.field40507 = var2;
       return var5;
    }
 
-   public Class8967(Matrix4f var1) {
+   public Matrix3f(Matrix4f var1) {
       this.field40499 = var1.field43471;
       this.field40500 = var1.field43472;
       this.field40501 = var1.field43473;
@@ -70,7 +71,7 @@ public final class Class8967 {
       this.field40507 = var1.field43481;
    }
 
-   public Class8967(Class8967 var1) {
+   public Matrix3f(Matrix3f var1) {
       this.field40499 = var1.field40499;
       this.field40500 = var1.field40500;
       this.field40501 = var1.field40501;
@@ -108,8 +109,8 @@ public final class Class8967 {
       return Pair.of(var5, var6);
    }
 
-   private static Quaternion method32820(Class8967 var0) {
-      Class8967 var3 = new Class8967();
+   private static Quaternion method32820(Matrix3f var0) {
+      Matrix3f var3 = new Matrix3f();
       Quaternion var4 = Quaternion.field39030.method31189();
       if (var0.field40500 * var0.field40500 + var0.field40502 * var0.field40502 > 1.0E-6F) {
          Pair var5 = method32818(var0.field40499, 0.5F * (var0.field40500 + var0.field40502), var0.field40503);
@@ -192,7 +193,7 @@ public final class Class8967 {
    public Triple<Quaternion, Vector3f, Quaternion> method32822() {
       Quaternion var3 = Quaternion.field39030.method31189();
       Quaternion var4 = Quaternion.field39030.method31189();
-      Class8967 var5 = this.method32831();
+      Matrix3f var5 = this.method32831();
       var5.method32821();
       var5.method32828(this);
 
@@ -201,8 +202,8 @@ public final class Class8967 {
       }
 
       var4.method31188();
-      Class8967 var31 = new Class8967(this);
-      var31.method32828(new Class8967(var4));
+      Matrix3f var31 = new Matrix3f(this);
+      var31.method32828(new Matrix3f(var4));
       float var7 = 1.0F;
       Pair var8 = method32819(var31.field40499, var31.field40502);
       Float var9 = (Float)var8.getFirst();
@@ -212,7 +213,7 @@ public final class Class8967 {
       float var13 = var10 * var10 + var9 * var9;
       Quaternion var14 = new Quaternion(0.0F, 0.0F, var9, var10);
       var3.method31182(var14);
-      Class8967 var15 = new Class8967();
+      Matrix3f var15 = new Matrix3f();
       var15.method32824();
       var15.field40499 = var11;
       var15.field40503 = var11;
@@ -229,7 +230,7 @@ public final class Class8967 {
       float var20 = var17 * var17 + var16 * var16;
       Quaternion var21 = new Quaternion(0.0F, var16, 0.0F, var17);
       var3.method31182(var21);
-      Class8967 var22 = new Class8967();
+      Matrix3f var22 = new Matrix3f();
       var22.method32824();
       var22.field40499 = var18;
       var22.field40507 = var18;
@@ -246,7 +247,7 @@ public final class Class8967 {
       float var27 = var24 * var24 + var23 * var23;
       Quaternion var28 = new Quaternion(var23, 0.0F, 0.0F, var24);
       var3.method31182(var28);
-      Class8967 var29 = new Class8967();
+      Matrix3f var29 = new Matrix3f();
       var29.method32824();
       var29.field40503 = var25;
       var29.field40507 = var25;
@@ -266,7 +267,7 @@ public final class Class8967 {
       if (this == var1) {
          return true;
       } else if (var1 != null && this.getClass() == var1.getClass()) {
-         Class8967 var4 = (Class8967)var1;
+         Matrix3f var4 = (Matrix3f)var1;
          return Float.compare(var4.field40499, this.field40499) == 0
             && Float.compare(var4.field40500, this.field40500) == 0
             && Float.compare(var4.field40501, this.field40501) == 0
@@ -294,7 +295,7 @@ public final class Class8967 {
       return 31 * var3 + (this.field40507 == 0.0F ? 0 : Float.floatToIntBits(this.field40507));
    }
 
-   public void method32823(Class8967 var1) {
+   public void method32823(Matrix3f var1) {
       this.field40499 = var1.field40499;
       this.field40500 = var1.field40500;
       this.field40501 = var1.field40501;
@@ -408,7 +409,7 @@ public final class Class8967 {
       }
    }
 
-   public void method32828(Class8967 var1) {
+   public void method32828(Matrix3f var1) {
       float var4 = this.field40499 * var1.field40499 + this.field40500 * var1.field40502 + this.field40501 * var1.field40505;
       float var5 = this.field40499 * var1.field40500 + this.field40500 * var1.field40503 + this.field40501 * var1.field40506;
       float var6 = this.field40499 * var1.field40501 + this.field40500 * var1.field40504 + this.field40501 * var1.field40507;
@@ -484,8 +485,8 @@ public final class Class8967 {
       this.field40507 *= var1;
    }
 
-   public Class8967 method32831() {
-      return new Class8967(this);
+   public Matrix3f method32831() {
+      return new Matrix3f(this);
    }
 
    public float method32832(float var1, float var2, float var3) {
@@ -512,8 +513,8 @@ public final class Class8967 {
       this.field40507 = var1.nextFloat();
    }
 
-   public void method32836(Class8967 var1) {
-      Class8967 var4 = var1.method32831();
+   public void method32836(Matrix3f var1) {
+      Matrix3f var4 = var1.method32831();
       var4.method32828(this);
       this.method32823(var4);
    }

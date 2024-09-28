@@ -6,9 +6,9 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 
 public class Class6778 extends Class6777 {
-   private static final BlockState field29564 = Blocks.SOUL_SAND.method11579();
-   private static final BlockState field29565 = Blocks.SOUL_SOIL.method11579();
-   private static final BlockState field29566 = Blocks.GRAVEL.method11579();
+   private static final BlockState field29564 = Blocks.SOUL_SAND.getDefaultState();
+   private static final BlockState field29565 = Blocks.SOUL_SOIL.getDefaultState();
+   private static final BlockState field29566 = Blocks.GRAVEL.getDefaultState();
    private static final ImmutableList<BlockState> field29567 = ImmutableList.of(field29564, field29565);
 
    public Class6778(Codec<Class8278> var1) {

@@ -7,8 +7,10 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tileentity.TileEntity;
@@ -31,7 +33,7 @@ public class Class3441 extends Block {
 
    public Class3441(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().with(field19243, Integer.valueOf(0)).with(field19244, Integer.valueOf(1)));
+      this.setDefaultState(this.stateContainer.getBaseState().with(field19243, Integer.valueOf(0)).with(field19244, Integer.valueOf(1)));
    }
 
    @Override
@@ -70,7 +72,7 @@ public class Class3441 extends Block {
    }
 
    @Override
-   public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void randomTick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (this.method12116(var2) && method12114(var2, var3)) {
          int var7 = var1.<Integer>get(field19243);
          if (var7 >= 2) {
@@ -101,7 +103,7 @@ public class Class3441 extends Block {
    }
 
    @Override
-   public void method11589(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+   public void onBlockAdded(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       if (method12114(var2, var3) && !var2.isRemote) {
          var2.playEvent(2005, var3, 0);
       }
@@ -119,27 +121,27 @@ public class Class3441 extends Block {
    }
 
    @Override
-   public boolean method11497(BlockState var1, Class5909 var2) {
+   public boolean method11497(BlockState var1, BlockItemUseContext var2) {
       return var2.method18357().getItem() == this.method11581() && var1.<Integer>get(field19244) < 4 ? true : super.method11497(var1, var2);
    }
 
    @Nullable
    @Override
-   public BlockState method11495(Class5909 var1) {
-      BlockState var4 = var1.method18360().getBlockState(var1.method18345());
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      BlockState var4 = var1.getWorld().getBlockState(var1.getPos());
       return !var4.isIn(this)
-         ? super.method11495(var1)
+         ? super.getStateForPlacement(var1)
          : var4.with(field19244, Integer.valueOf(Math.min(4, var4.<Integer>get(field19244) + 1)));
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return var1.<Integer>get(field19244) <= 1 ? field19241 : field19242;
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field19243, field19244);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field19243, field19244);
    }
 
    private boolean method12117(World var1, Entity var2) {

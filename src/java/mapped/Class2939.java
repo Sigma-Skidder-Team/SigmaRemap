@@ -4,6 +4,7 @@ import com.mojang.serialization.Codec;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.IWorld;
 
 import java.util.Random;
 
@@ -37,7 +38,7 @@ public class Class2939 extends Class2898<Class4734> {
       return Math.round((var1.nextFloat() - var1.nextFloat()) * (float)var2);
    }
 
-   private boolean method11284(Class1660 var1, BlockPos var2) {
+   private boolean method11284(IWorld var1, BlockPos var2) {
       BlockPos.Mutable var5 = new BlockPos.Mutable();
 
       for (Direction var9 : Direction.values()) {

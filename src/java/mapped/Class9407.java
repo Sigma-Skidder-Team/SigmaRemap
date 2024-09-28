@@ -8,6 +8,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.WallHeight;
 import net.minecraft.item.Items;
 import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.Property;
 import net.minecraft.state.properties.*;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
@@ -410,12 +411,12 @@ public class Class9407 {
    private static Class5146 method35826(Block var0, ResourceLocation var1, ResourceLocation var2, ResourceLocation var3) {
       return Class5148.method15941(var0)
          .method15939(
-            Class3629.<Direction, Half, StairsShape>method12312(BlockStateProperties.HORIZONTAL_FACING, BlockStateProperties.field39735, BlockStateProperties.field39771)
-               .method12326(Direction.EAST, Half.field271, StairsShape.field329, Class5138.method15912().method15911(Class6891.field29864, var2))
+            Class3629.<Direction, Half, StairsShape>method12312(BlockStateProperties.HORIZONTAL_FACING, BlockStateProperties.HALF, BlockStateProperties.STAIRS_SHAPE)
+               .method12326(Direction.EAST, Half.BOTTOM, StairsShape.STRAIGHT, Class5138.method15912().method15911(Class6891.field29864, var2))
                .method12326(
                   Direction.WEST,
-                  Half.field271,
-                  StairsShape.field329,
+                  Half.BOTTOM,
+                  StairsShape.STRAIGHT,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var2)
                      .method15911(Class6891.field29863, Class2120.field13818)
@@ -423,8 +424,8 @@ public class Class9407 {
                )
                .method12326(
                   Direction.SOUTH,
-                  Half.field271,
-                  StairsShape.field329,
+                  Half.BOTTOM,
+                  StairsShape.STRAIGHT,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var2)
                      .method15911(Class6891.field29863, Class2120.field13817)
@@ -432,18 +433,18 @@ public class Class9407 {
                )
                .method12326(
                   Direction.NORTH,
-                  Half.field271,
-                  StairsShape.field329,
+                  Half.BOTTOM,
+                  StairsShape.STRAIGHT,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var2)
                      .method15911(Class6891.field29863, Class2120.field13819)
                      .method15911(Class6891.field29865, true)
                )
-               .method12326(Direction.EAST, Half.field271, StairsShape.field333, Class5138.method15912().method15911(Class6891.field29864, var3))
+               .method12326(Direction.EAST, Half.BOTTOM, StairsShape.OUTER_RIGHT, Class5138.method15912().method15911(Class6891.field29864, var3))
                .method12326(
                   Direction.WEST,
-                  Half.field271,
-                  StairsShape.field333,
+                  Half.BOTTOM,
+                  StairsShape.OUTER_RIGHT,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29863, Class2120.field13818)
@@ -451,8 +452,8 @@ public class Class9407 {
                )
                .method12326(
                   Direction.SOUTH,
-                  Half.field271,
-                  StairsShape.field333,
+                  Half.BOTTOM,
+                  StairsShape.OUTER_RIGHT,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29863, Class2120.field13817)
@@ -460,8 +461,8 @@ public class Class9407 {
                )
                .method12326(
                   Direction.NORTH,
-                  Half.field271,
-                  StairsShape.field333,
+                  Half.BOTTOM,
+                  StairsShape.OUTER_RIGHT,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29863, Class2120.field13819)
@@ -469,8 +470,8 @@ public class Class9407 {
                )
                .method12326(
                   Direction.EAST,
-                  Half.field271,
-                  StairsShape.field332,
+                  Half.BOTTOM,
+                  StairsShape.OUTER_LEFT,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29863, Class2120.field13819)
@@ -478,28 +479,28 @@ public class Class9407 {
                )
                .method12326(
                   Direction.WEST,
-                  Half.field271,
-                  StairsShape.field332,
+                  Half.BOTTOM,
+                  StairsShape.OUTER_LEFT,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29863, Class2120.field13817)
                      .method15911(Class6891.field29865, true)
                )
-               .method12326(Direction.SOUTH, Half.field271, StairsShape.field332, Class5138.method15912().method15911(Class6891.field29864, var3))
+               .method12326(Direction.SOUTH, Half.BOTTOM, StairsShape.OUTER_LEFT, Class5138.method15912().method15911(Class6891.field29864, var3))
                .method12326(
                   Direction.NORTH,
-                  Half.field271,
-                  StairsShape.field332,
+                  Half.BOTTOM,
+                  StairsShape.OUTER_LEFT,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29863, Class2120.field13818)
                      .method15911(Class6891.field29865, true)
                )
-               .method12326(Direction.EAST, Half.field271, StairsShape.field331, Class5138.method15912().method15911(Class6891.field29864, var1))
+               .method12326(Direction.EAST, Half.BOTTOM, StairsShape.INNER_RIGHT, Class5138.method15912().method15911(Class6891.field29864, var1))
                .method12326(
                   Direction.WEST,
-                  Half.field271,
-                  StairsShape.field331,
+                  Half.BOTTOM,
+                  StairsShape.INNER_RIGHT,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var1)
                      .method15911(Class6891.field29863, Class2120.field13818)
@@ -507,8 +508,8 @@ public class Class9407 {
                )
                .method12326(
                   Direction.SOUTH,
-                  Half.field271,
-                  StairsShape.field331,
+                  Half.BOTTOM,
+                  StairsShape.INNER_RIGHT,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var1)
                      .method15911(Class6891.field29863, Class2120.field13817)
@@ -516,8 +517,8 @@ public class Class9407 {
                )
                .method12326(
                   Direction.NORTH,
-                  Half.field271,
-                  StairsShape.field331,
+                  Half.BOTTOM,
+                  StairsShape.INNER_RIGHT,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var1)
                      .method15911(Class6891.field29863, Class2120.field13819)
@@ -525,8 +526,8 @@ public class Class9407 {
                )
                .method12326(
                   Direction.EAST,
-                  Half.field271,
-                  StairsShape.field330,
+                  Half.BOTTOM,
+                  StairsShape.INNER_LEFT,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var1)
                      .method15911(Class6891.field29863, Class2120.field13819)
@@ -534,18 +535,18 @@ public class Class9407 {
                )
                .method12326(
                   Direction.WEST,
-                  Half.field271,
-                  StairsShape.field330,
+                  Half.BOTTOM,
+                  StairsShape.INNER_LEFT,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var1)
                      .method15911(Class6891.field29863, Class2120.field13817)
                      .method15911(Class6891.field29865, true)
                )
-               .method12326(Direction.SOUTH, Half.field271, StairsShape.field330, Class5138.method15912().method15911(Class6891.field29864, var1))
+               .method12326(Direction.SOUTH, Half.BOTTOM, StairsShape.INNER_LEFT, Class5138.method15912().method15911(Class6891.field29864, var1))
                .method12326(
                   Direction.NORTH,
-                  Half.field271,
-                  StairsShape.field330,
+                  Half.BOTTOM,
+                  StairsShape.INNER_LEFT,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var1)
                      .method15911(Class6891.field29863, Class2120.field13818)
@@ -553,8 +554,8 @@ public class Class9407 {
                )
                .method12326(
                   Direction.EAST,
-                  Half.field270,
-                  StairsShape.field329,
+                  Half.TOP,
+                  StairsShape.STRAIGHT,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var2)
                      .method15911(Class6891.field29862, Class2120.field13818)
@@ -562,8 +563,8 @@ public class Class9407 {
                )
                .method12326(
                   Direction.WEST,
-                  Half.field270,
-                  StairsShape.field329,
+                  Half.TOP,
+                  StairsShape.STRAIGHT,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var2)
                      .method15911(Class6891.field29862, Class2120.field13818)
@@ -572,8 +573,8 @@ public class Class9407 {
                )
                .method12326(
                   Direction.SOUTH,
-                  Half.field270,
-                  StairsShape.field329,
+                  Half.TOP,
+                  StairsShape.STRAIGHT,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var2)
                      .method15911(Class6891.field29862, Class2120.field13818)
@@ -582,8 +583,8 @@ public class Class9407 {
                )
                .method12326(
                   Direction.NORTH,
-                  Half.field270,
-                  StairsShape.field329,
+                  Half.TOP,
+                  StairsShape.STRAIGHT,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var2)
                      .method15911(Class6891.field29862, Class2120.field13818)
@@ -592,8 +593,8 @@ public class Class9407 {
                )
                .method12326(
                   Direction.EAST,
-                  Half.field270,
-                  StairsShape.field333,
+                  Half.TOP,
+                  StairsShape.OUTER_RIGHT,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29862, Class2120.field13818)
@@ -602,8 +603,8 @@ public class Class9407 {
                )
                .method12326(
                   Direction.WEST,
-                  Half.field270,
-                  StairsShape.field333,
+                  Half.TOP,
+                  StairsShape.OUTER_RIGHT,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29862, Class2120.field13818)
@@ -612,8 +613,8 @@ public class Class9407 {
                )
                .method12326(
                   Direction.SOUTH,
-                  Half.field270,
-                  StairsShape.field333,
+                  Half.TOP,
+                  StairsShape.OUTER_RIGHT,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29862, Class2120.field13818)
@@ -622,8 +623,8 @@ public class Class9407 {
                )
                .method12326(
                   Direction.NORTH,
-                  Half.field270,
-                  StairsShape.field333,
+                  Half.TOP,
+                  StairsShape.OUTER_RIGHT,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29862, Class2120.field13818)
@@ -631,8 +632,8 @@ public class Class9407 {
                )
                .method12326(
                   Direction.EAST,
-                  Half.field270,
-                  StairsShape.field332,
+                  Half.TOP,
+                  StairsShape.OUTER_LEFT,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29862, Class2120.field13818)
@@ -640,8 +641,8 @@ public class Class9407 {
                )
                .method12326(
                   Direction.WEST,
-                  Half.field270,
-                  StairsShape.field332,
+                  Half.TOP,
+                  StairsShape.OUTER_LEFT,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29862, Class2120.field13818)
@@ -650,8 +651,8 @@ public class Class9407 {
                )
                .method12326(
                   Direction.SOUTH,
-                  Half.field270,
-                  StairsShape.field332,
+                  Half.TOP,
+                  StairsShape.OUTER_LEFT,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29862, Class2120.field13818)
@@ -660,8 +661,8 @@ public class Class9407 {
                )
                .method12326(
                   Direction.NORTH,
-                  Half.field270,
-                  StairsShape.field332,
+                  Half.TOP,
+                  StairsShape.OUTER_LEFT,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29862, Class2120.field13818)
@@ -670,8 +671,8 @@ public class Class9407 {
                )
                .method12326(
                   Direction.EAST,
-                  Half.field270,
-                  StairsShape.field331,
+                  Half.TOP,
+                  StairsShape.INNER_RIGHT,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var1)
                      .method15911(Class6891.field29862, Class2120.field13818)
@@ -680,8 +681,8 @@ public class Class9407 {
                )
                .method12326(
                   Direction.WEST,
-                  Half.field270,
-                  StairsShape.field331,
+                  Half.TOP,
+                  StairsShape.INNER_RIGHT,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var1)
                      .method15911(Class6891.field29862, Class2120.field13818)
@@ -690,8 +691,8 @@ public class Class9407 {
                )
                .method12326(
                   Direction.SOUTH,
-                  Half.field270,
-                  StairsShape.field331,
+                  Half.TOP,
+                  StairsShape.INNER_RIGHT,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var1)
                      .method15911(Class6891.field29862, Class2120.field13818)
@@ -700,8 +701,8 @@ public class Class9407 {
                )
                .method12326(
                   Direction.NORTH,
-                  Half.field270,
-                  StairsShape.field331,
+                  Half.TOP,
+                  StairsShape.INNER_RIGHT,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var1)
                      .method15911(Class6891.field29862, Class2120.field13818)
@@ -709,8 +710,8 @@ public class Class9407 {
                )
                .method12326(
                   Direction.EAST,
-                  Half.field270,
-                  StairsShape.field330,
+                  Half.TOP,
+                  StairsShape.INNER_LEFT,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var1)
                      .method15911(Class6891.field29862, Class2120.field13818)
@@ -718,8 +719,8 @@ public class Class9407 {
                )
                .method12326(
                   Direction.WEST,
-                  Half.field270,
-                  StairsShape.field330,
+                  Half.TOP,
+                  StairsShape.INNER_LEFT,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var1)
                      .method15911(Class6891.field29862, Class2120.field13818)
@@ -728,8 +729,8 @@ public class Class9407 {
                )
                .method12326(
                   Direction.SOUTH,
-                  Half.field270,
-                  StairsShape.field330,
+                  Half.TOP,
+                  StairsShape.INNER_LEFT,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var1)
                      .method15911(Class6891.field29862, Class2120.field13818)
@@ -738,8 +739,8 @@ public class Class9407 {
                )
                .method12326(
                   Direction.NORTH,
-                  Half.field270,
-                  StairsShape.field330,
+                  Half.TOP,
+                  StairsShape.INNER_LEFT,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var1)
                      .method15911(Class6891.field29862, Class2120.field13818)
@@ -752,67 +753,67 @@ public class Class9407 {
    private static Class5146 method35827(Block var0, ResourceLocation var1, ResourceLocation var2, ResourceLocation var3) {
       return Class5148.method15941(var0)
          .method15939(
-            Class3629.<Direction, Half, Boolean>method12312(BlockStateProperties.HORIZONTAL_FACING, BlockStateProperties.field39735, BlockStateProperties.OPEN)
-               .method12326(Direction.NORTH, Half.field271, false, Class5138.method15912().method15911(Class6891.field29864, var2))
+            Class3629.<Direction, Half, Boolean>method12312(BlockStateProperties.HORIZONTAL_FACING, BlockStateProperties.HALF, BlockStateProperties.OPEN)
+               .method12326(Direction.NORTH, Half.BOTTOM, false, Class5138.method15912().method15911(Class6891.field29864, var2))
                .method12326(
                   Direction.SOUTH,
-                  Half.field271,
+                  Half.BOTTOM,
                   false,
                   Class5138.method15912().method15911(Class6891.field29864, var2).method15911(Class6891.field29863, Class2120.field13818)
                )
                .method12326(
                   Direction.EAST,
-                  Half.field271,
+                  Half.BOTTOM,
                   false,
                   Class5138.method15912().method15911(Class6891.field29864, var2).method15911(Class6891.field29863, Class2120.field13817)
                )
                .method12326(
                   Direction.WEST,
-                  Half.field271,
+                  Half.BOTTOM,
                   false,
                   Class5138.method15912().method15911(Class6891.field29864, var2).method15911(Class6891.field29863, Class2120.field13819)
                )
-               .method12326(Direction.NORTH, Half.field270, false, Class5138.method15912().method15911(Class6891.field29864, var1))
+               .method12326(Direction.NORTH, Half.TOP, false, Class5138.method15912().method15911(Class6891.field29864, var1))
                .method12326(
                   Direction.SOUTH,
-                  Half.field270,
+                  Half.TOP,
                   false,
                   Class5138.method15912().method15911(Class6891.field29864, var1).method15911(Class6891.field29863, Class2120.field13818)
                )
                .method12326(
                   Direction.EAST,
-                  Half.field270,
+                  Half.TOP,
                   false,
                   Class5138.method15912().method15911(Class6891.field29864, var1).method15911(Class6891.field29863, Class2120.field13817)
                )
                .method12326(
                   Direction.WEST,
-                  Half.field270,
+                  Half.TOP,
                   false,
                   Class5138.method15912().method15911(Class6891.field29864, var1).method15911(Class6891.field29863, Class2120.field13819)
                )
-               .method12326(Direction.NORTH, Half.field271, true, Class5138.method15912().method15911(Class6891.field29864, var3))
+               .method12326(Direction.NORTH, Half.BOTTOM, true, Class5138.method15912().method15911(Class6891.field29864, var3))
                .method12326(
                   Direction.SOUTH,
-                  Half.field271,
+                  Half.BOTTOM,
                   true,
                   Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13818)
                )
                .method12326(
                   Direction.EAST,
-                  Half.field271,
+                  Half.BOTTOM,
                   true,
                   Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13817)
                )
                .method12326(
                   Direction.WEST,
-                  Half.field271,
+                  Half.BOTTOM,
                   true,
                   Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13819)
                )
                .method12326(
                   Direction.NORTH,
-                  Half.field270,
+                  Half.TOP,
                   true,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
@@ -821,7 +822,7 @@ public class Class9407 {
                )
                .method12326(
                   Direction.SOUTH,
-                  Half.field270,
+                  Half.TOP,
                   true,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
@@ -830,7 +831,7 @@ public class Class9407 {
                )
                .method12326(
                   Direction.EAST,
-                  Half.field270,
+                  Half.TOP,
                   true,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
@@ -839,7 +840,7 @@ public class Class9407 {
                )
                .method12326(
                   Direction.WEST,
-                  Half.field270,
+                  Half.TOP,
                   true,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
@@ -852,50 +853,50 @@ public class Class9407 {
    private static Class5146 method35828(Block var0, ResourceLocation var1, ResourceLocation var2, ResourceLocation var3) {
       return Class5148.method15941(var0)
          .method15939(
-            Class3629.<Direction, Half, Boolean>method12312(BlockStateProperties.HORIZONTAL_FACING, BlockStateProperties.field39735, BlockStateProperties.OPEN)
-               .method12326(Direction.NORTH, Half.field271, false, Class5138.method15912().method15911(Class6891.field29864, var2))
-               .method12326(Direction.SOUTH, Half.field271, false, Class5138.method15912().method15911(Class6891.field29864, var2))
-               .method12326(Direction.EAST, Half.field271, false, Class5138.method15912().method15911(Class6891.field29864, var2))
-               .method12326(Direction.WEST, Half.field271, false, Class5138.method15912().method15911(Class6891.field29864, var2))
-               .method12326(Direction.NORTH, Half.field270, false, Class5138.method15912().method15911(Class6891.field29864, var1))
-               .method12326(Direction.SOUTH, Half.field270, false, Class5138.method15912().method15911(Class6891.field29864, var1))
-               .method12326(Direction.EAST, Half.field270, false, Class5138.method15912().method15911(Class6891.field29864, var1))
-               .method12326(Direction.WEST, Half.field270, false, Class5138.method15912().method15911(Class6891.field29864, var1))
-               .method12326(Direction.NORTH, Half.field271, true, Class5138.method15912().method15911(Class6891.field29864, var3))
+            Class3629.<Direction, Half, Boolean>method12312(BlockStateProperties.HORIZONTAL_FACING, BlockStateProperties.HALF, BlockStateProperties.OPEN)
+               .method12326(Direction.NORTH, Half.BOTTOM, false, Class5138.method15912().method15911(Class6891.field29864, var2))
+               .method12326(Direction.SOUTH, Half.BOTTOM, false, Class5138.method15912().method15911(Class6891.field29864, var2))
+               .method12326(Direction.EAST, Half.BOTTOM, false, Class5138.method15912().method15911(Class6891.field29864, var2))
+               .method12326(Direction.WEST, Half.BOTTOM, false, Class5138.method15912().method15911(Class6891.field29864, var2))
+               .method12326(Direction.NORTH, Half.TOP, false, Class5138.method15912().method15911(Class6891.field29864, var1))
+               .method12326(Direction.SOUTH, Half.TOP, false, Class5138.method15912().method15911(Class6891.field29864, var1))
+               .method12326(Direction.EAST, Half.TOP, false, Class5138.method15912().method15911(Class6891.field29864, var1))
+               .method12326(Direction.WEST, Half.TOP, false, Class5138.method15912().method15911(Class6891.field29864, var1))
+               .method12326(Direction.NORTH, Half.BOTTOM, true, Class5138.method15912().method15911(Class6891.field29864, var3))
                .method12326(
                   Direction.SOUTH,
-                  Half.field271,
+                  Half.BOTTOM,
                   true,
                   Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13818)
                )
                .method12326(
                   Direction.EAST,
-                  Half.field271,
+                  Half.BOTTOM,
                   true,
                   Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13817)
                )
                .method12326(
                   Direction.WEST,
-                  Half.field271,
+                  Half.BOTTOM,
                   true,
                   Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13819)
                )
-               .method12326(Direction.NORTH, Half.field270, true, Class5138.method15912().method15911(Class6891.field29864, var3))
+               .method12326(Direction.NORTH, Half.TOP, true, Class5138.method15912().method15911(Class6891.field29864, var3))
                .method12326(
                   Direction.SOUTH,
-                  Half.field270,
+                  Half.TOP,
                   true,
                   Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13818)
                )
                .method12326(
                   Direction.EAST,
-                  Half.field270,
+                  Half.TOP,
                   true,
                   Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13817)
                )
                .method12326(
                   Direction.WEST,
-                  Half.field270,
+                  Half.TOP,
                   true,
                   Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13819)
                )
@@ -1383,7 +1384,7 @@ public class Class9407 {
          );
    }
 
-   private static <T extends Comparable<T>> Class3629 method35881(Class8550<T> var0, T var1, ResourceLocation var2, ResourceLocation var3) {
+   private static <T extends Comparable<T>> Class3629 method35881(Property<T> var0, T var1, ResourceLocation var2, ResourceLocation var3) {
       Class5138 var6 = Class5138.method15912().method15911(Class6891.field29864, var2);
       Class5138 var7 = Class5138.method15912().method15911(Class6891.field29864, var3);
       return Class3629.method12310(var0).method12321(var3x -> {
@@ -1400,7 +1401,7 @@ public class Class9407 {
       this.field43642.accept(Class5148.method15941(var1).method15939(method35810()).method15939(method35881(BlockStateProperties.field39754, 5, var8, var7)));
    }
 
-   private void method35883(Block var1, Class8550<Integer> var2, int... var3) {
+   private void method35883(Block var1, Property<Integer> var2, int... var3) {
       if (var2.method30474().size() == var3.length) {
          Int2ObjectOpenHashMap var6 = new Int2ObjectOpenHashMap();
          Class3629 var7 = Class3629.<Integer>method12310(var2)
@@ -2718,7 +2719,7 @@ public class Class9407 {
          .accept(
             Class5148.method15941(Blocks.field37005)
                .method15939(
-                  Class3629.<Integer, Boolean>method12311(BlockStateProperties.field39758, BlockStateProperties.field39710)
+                  Class3629.<Integer, Boolean>method12311(BlockStateProperties.field39758, BlockStateProperties.WATERLOGGED)
                      .method12299(1, false, Arrays.<Class5138>asList(method35815(Class9060.method33720("dead_sea_pickle"))))
                      .method12299(2, false, Arrays.<Class5138>asList(method35815(Class9060.method33720("two_dead_sea_pickles"))))
                      .method12299(3, false, Arrays.<Class5138>asList(method35815(Class9060.method33720("three_dead_sea_pickles"))))

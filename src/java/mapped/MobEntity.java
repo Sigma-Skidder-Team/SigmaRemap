@@ -23,6 +23,7 @@ import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -729,12 +730,12 @@ public abstract class MobEntity extends LivingEntity {
       return var1 + var6;
    }
 
-   public static boolean method4264(EntityType<? extends MobEntity> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method4264(EntityType<? extends MobEntity> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
       BlockPos var7 = var3.down();
       return var2 == Class2202.field14393 || var1.getBlockState(var7).method23385(var1, var7, var0);
    }
 
-   public boolean method4265(Class1660 var1, Class2202 var2) {
+   public boolean method4265(IWorld var1, Class2202 var2) {
       return true;
    }
 

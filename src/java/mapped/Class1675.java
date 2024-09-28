@@ -4,6 +4,8 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -29,7 +31,7 @@ public class Class1675 extends Chunk {
 
    @Override
    public BlockState getBlockState(BlockPos var1) {
-      return Blocks.field37011.method11579();
+      return Blocks.field37011.getDefaultState();
    }
 
    @Nullable
@@ -40,7 +42,7 @@ public class Class1675 extends Chunk {
 
    @Override
    public FluidState getFluidState(BlockPos var1) {
-      return Class9479.field44064.method25049();
+      return Fluids.EMPTY.method25049();
    }
 
    @Nullable

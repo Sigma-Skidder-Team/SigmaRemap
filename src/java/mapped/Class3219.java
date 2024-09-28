@@ -27,9 +27,9 @@ public class Class3219 extends Block implements Class3196 {
    }
 
    @Override
-   public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void randomTick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (!method11609(var1, var2, var3)) {
-         var2.setBlockState(var3, Blocks.NETHERRACK.method11579());
+         var2.setBlockState(var3, Blocks.NETHERRACK.getDefaultState());
       }
    }
 

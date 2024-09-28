@@ -4,6 +4,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import it.unimi.dsi.fastutil.objects.ObjectList;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.vector.Matrix3f;
 import net.optifine.Config;
 
 import java.util.ArrayList;
@@ -195,7 +196,7 @@ public class ModelRenderer {
 
    private void method22683(Class8892 var1, IVertexBuilder var2, int var3, int var4, float var5, float var6, float var7, float var8) {
       Matrix4f var11 = var1.getMatrix();
-      Class8967 var12 = var1.method32362();
+      Matrix3f var12 = var1.method32362();
       int var13 = this.field31040.size();
 
       for (int var14 = 0; var14 < var13; var14++) {

@@ -111,7 +111,7 @@ public class Class9830 {
             BlockPos var17 = (BlockPos)var13.remove(var16);
             int var18 = var17.getX();
             int var19 = var17.getZ();
-            Rotation var20 = Rotation.method254(var1);
+            Rotation var20 = Rotation.randomRotation(var1);
             BlockPos var21 = Class8969.method32905(new BlockPos(5, 0, 6), Mirror.field13614, var20, BlockPos.ZERO).method8336(var18, 0, var19);
             Class9764 var22 = Class9764.method38389(var18, 0, var19, var21.getX(), 0, var21.getZ());
             if (!var22.method38390(var11)) {

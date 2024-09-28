@@ -48,7 +48,7 @@ public class Class2734 extends Class2595 {
       boolean var14 = var13.getPos().equals(var8);
       if (var10.isIn(BlockTags.field32778) && var14) {
          var4.removeBlock(var8, false);
-         this.field17254.method4356(var9.getBlock().method11579());
+         this.field17254.method4356(var9.getBlock().getDefaultState());
       }
    }
 }

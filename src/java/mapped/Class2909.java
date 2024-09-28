@@ -28,34 +28,34 @@ public class Class2909 extends Class2898<Class4712> {
                if (var9.getY() <= var4.getY()) {
                   if (var10) {
                      if (!this.field17995) {
-                        this.method11217(var1, new BlockPos(var9), Blocks.AIR.method11579());
+                        this.method11217(var1, new BlockPos(var9), Blocks.AIR.getDefaultState());
                      } else {
-                        this.method11217(var1, new BlockPos(var9), Blocks.field36649.method11579());
+                        this.method11217(var1, new BlockPos(var9), Blocks.field36649.getDefaultState());
                      }
                   } else {
-                     this.method11217(var1, var9, Blocks.BEDROCK.method11579());
+                     this.method11217(var1, var9, Blocks.BEDROCK.getDefaultState());
                   }
                } else {
-                  this.method11217(var1, var9, Blocks.AIR.method11579());
+                  this.method11217(var1, var9, Blocks.AIR.getDefaultState());
                }
             } else if (!var10) {
                if (var9.getY() < var4.getY()) {
-                  this.method11217(var1, var9, Blocks.field36651.method11579());
+                  this.method11217(var1, var9, Blocks.field36651.getDefaultState());
                }
             } else {
-               this.method11217(var1, var9, Blocks.BEDROCK.method11579());
+               this.method11217(var1, var9, Blocks.BEDROCK.getDefaultState());
             }
          }
       }
 
       for (int var11 = 0; var11 < 4; var11++) {
-         this.method11217(var1, var4.method8339(var11), Blocks.BEDROCK.method11579());
+         this.method11217(var1, var4.method8339(var11), Blocks.BEDROCK.getDefaultState());
       }
 
       BlockPos var12 = var4.method8339(2);
 
       for (Direction var14 : Direction.Plane.HORIZONTAL) {
-         this.method11217(var1, var12.method8349(var14), Blocks.WALL_TORCH.method11579().with(Class3382.field18985, var14));
+         this.method11217(var1, var12.offset(var14), Blocks.WALL_TORCH.getDefaultState().with(Class3382.field18985, var14));
       }
 
       return true;

@@ -2,7 +2,9 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.state.Property;
 import net.minecraft.state.EnumProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.state.properties.RailShape;
 import net.minecraft.util.Mirror;
@@ -16,18 +18,18 @@ public class Class3430 extends Class3429 {
 
    public Class3430(Properties var1) {
       super(false, var1);
-      this.method11578(this.field18612.method35393().with(field19191, RailShape.field247));
+      this.setDefaultState(this.stateContainer.getBaseState().with(field19191, RailShape.field247));
    }
 
    @Override
    public void method12091(BlockState var1, World var2, BlockPos var3, Block var4) {
-      if (var4.method11579().method23401() && new Class9435(var2, var3, var1).method36240() == 3) {
+      if (var4.getDefaultState().method23401() && new Class9435(var2, var3, var1).method36240() == 3) {
          this.method12092(var2, var3, var1, false);
       }
    }
 
    @Override
-   public Class8550<RailShape> method12093() {
+   public Property<RailShape> method12093() {
       return field19191;
    }
 
@@ -150,7 +152,7 @@ public class Class3430 extends Class3429 {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field19191);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field19191);
    }
 }

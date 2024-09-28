@@ -9,6 +9,7 @@ import com.google.gson.JsonObject;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.block.Block;
 import net.minecraft.client.util.Util;
+import net.minecraft.state.Property;
 
 import java.util.List;
 import java.util.Map;
@@ -19,7 +20,7 @@ import java.util.stream.Stream;
 public class Class5148 implements Class5146 {
    private final Block field23372;
    private final List<Class5138> field23373;
-   private final Set<Class8550<?>> field23374 = Sets.newHashSet();
+   private final Set<Property<?>> field23374 = Sets.newHashSet();
    private final List<Class3629> field23375 = Lists.newArrayList();
 
    private Class5148(Block var1, List<Class5138> var2) {

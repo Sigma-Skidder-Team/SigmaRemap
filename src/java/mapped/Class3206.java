@@ -3,10 +3,16 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalBlock;
+import net.minecraft.block.IWaterLoggable;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
+import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.EnumProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.state.properties.Half;
 import net.minecraft.util.ActionResultType;
@@ -16,14 +22,15 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
-public class Class3206 extends HorizontalBlock implements Class3207 {
+public class Class3206 extends HorizontalBlock implements IWaterLoggable {
    private static String[] field18593;
    public static final BooleanProperty field18594 = BlockStateProperties.OPEN;
-   public static final EnumProperty<Half> field18595 = BlockStateProperties.field39735;
+   public static final EnumProperty<Half> field18595 = BlockStateProperties.HALF;
    public static final BooleanProperty field18596 = BlockStateProperties.POWERED;
-   public static final BooleanProperty field18597 = BlockStateProperties.field39710;
+   public static final BooleanProperty field18597 = BlockStateProperties.WATERLOGGED;
    public static final VoxelShape field18598 = Block.makeCuboidShape(0.0, 0.0, 0.0, 3.0, 16.0, 16.0);
    public static final VoxelShape field18599 = Block.makeCuboidShape(13.0, 0.0, 0.0, 16.0, 16.0, 16.0);
    public static final VoxelShape field18600 = Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 16.0, 3.0);
@@ -33,21 +40,21 @@ public class Class3206 extends HorizontalBlock implements Class3207 {
 
    public Class3206(Properties var1) {
       super(var1);
-      this.method11578(
-         this.field18612
-            .method35393()
+      this.setDefaultState(
+         this.stateContainer
+            .getBaseState()
             .with(HORIZONTAL_FACING, Direction.NORTH)
             .with(field18594, Boolean.valueOf(false))
-            .with(field18595, Half.field271)
+            .with(field18595, Half.BOTTOM)
             .with(field18596, Boolean.valueOf(false))
             .with(field18597, Boolean.valueOf(false))
       );
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       if (!var1.<Boolean>get(field18594)) {
-         return var1.get(field18595) == Half.field270 ? field18603 : field18602;
+         return var1.get(field18595) == Half.TOP ? field18603 : field18602;
       } else {
          switch (Class8826.field39790[var1.<Direction>get(HORIZONTAL_FACING).ordinal()]) {
             case 1:
@@ -64,7 +71,7 @@ public class Class3206 extends HorizontalBlock implements Class3207 {
    }
 
    @Override
-   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
+   public boolean allowsMovement(BlockState var1, IBlockReader var2, BlockPos var3, PathType var4) {
       switch (Class8826.field39791[var4.ordinal()]) {
          case 1:
             return var1.<Boolean>get(field18594);
@@ -78,12 +85,12 @@ public class Class3206 extends HorizontalBlock implements Class3207 {
    }
 
    @Override
-   public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
+   public ActionResultType onBlockActivated(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       if (this.field19004 != Material.field38967) {
          var1 = var1.method23459(field18594);
          var2.setBlockState(var3, var1, 2);
          if (var1.<Boolean>get(field18597)) {
-            var2.method6861().method20726(var3, Class9479.field44066, Class9479.field44066.method25057(var2));
+            var2.getPendingFluidTicks().scheduleTick(var3, Fluids.WATER, Fluids.WATER.getTickRate(var2));
          }
 
          this.method11530(var4, var2, var3, var1.<Boolean>get(field18594));
@@ -115,48 +122,48 @@ public class Class3206 extends HorizontalBlock implements Class3207 {
 
             var2.setBlockState(var3, var1.with(field18596, Boolean.valueOf(var9)), 2);
             if (var1.<Boolean>get(field18597)) {
-               var2.method6861().method20726(var3, Class9479.field44066, Class9479.field44066.method25057(var2));
+               var2.getPendingFluidTicks().scheduleTick(var3, Fluids.WATER, Fluids.WATER.getTickRate(var2));
             }
          }
       }
    }
 
    @Override
-   public BlockState method11495(Class5909 var1) {
-      BlockState var4 = this.method11579();
-      FluidState var5 = var1.method18360().getFluidState(var1.method18345());
-      Direction var6 = var1.method18354();
-      if (!var1.method18347() && var6.getAxis().method324()) {
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      BlockState var4 = this.getDefaultState();
+      FluidState var5 = var1.getWorld().getFluidState(var1.getPos());
+      Direction var6 = var1.getFace();
+      if (!var1.method18347() && var6.getAxis().isHorizontal()) {
          var4 = var4.with(HORIZONTAL_FACING, var6)
-            .with(field18595, !(var1.method18355().y - (double)var1.method18345().getY() > 0.5) ? Half.field271 : Half.field270);
+            .with(field18595, !(var1.getHitVec().y - (double)var1.getPos().getY() > 0.5) ? Half.BOTTOM : Half.TOP);
       } else {
-         var4 = var4.with(HORIZONTAL_FACING, var1.method18350().getOpposite())
-            .with(field18595, var6 != Direction.UP ? Half.field270 : Half.field271);
+         var4 = var4.with(HORIZONTAL_FACING, var1.getPlacementHorizontalFacing().getOpposite())
+            .with(field18595, var6 != Direction.UP ? Half.TOP : Half.BOTTOM);
       }
 
-      if (var1.method18360().method6780(var1.method18345())) {
+      if (var1.getWorld().method6780(var1.getPos())) {
          var4 = var4.with(field18594, Boolean.valueOf(true)).with(field18596, Boolean.valueOf(true));
       }
 
-      return var4.with(field18597, Boolean.valueOf(var5.method23472() == Class9479.field44066));
+      return var4.with(field18597, Boolean.valueOf(var5.getFluid() == Fluids.WATER));
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(HORIZONTAL_FACING, field18594, field18595, field18596, field18597);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(HORIZONTAL_FACING, field18594, field18595, field18596, field18597);
    }
 
    @Override
-   public FluidState method11498(BlockState var1) {
-      return !var1.<Boolean>get(field18597) ? super.method11498(var1) : Class9479.field44066.method25078(false);
+   public FluidState getFluidState(BlockState var1) {
+      return !var1.<Boolean>get(field18597) ? super.getFluidState(var1) : Fluids.WATER.getStillFluidState(false);
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       if (var1.<Boolean>get(field18597)) {
-         var4.method6861().method20726(var5, Class9479.field44066, Class9479.field44066.method25057(var4));
+         var4.getPendingFluidTicks().scheduleTick(var5, Fluids.WATER, Fluids.WATER.getTickRate(var4));
       }
 
-      return super.method11491(var1, var2, var3, var4, var5, var6);
+      return super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
    }
 }

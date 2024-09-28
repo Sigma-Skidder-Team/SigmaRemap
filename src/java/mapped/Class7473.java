@@ -9,6 +9,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.server.ServerWorld;
 
 import java.util.Optional;
@@ -18,7 +19,7 @@ import javax.annotation.Nullable;
 public class Class7473 {
    private static String[] field32110;
    private static final Class8609 field32111 = (var0, var1, var2) -> var0.isIn(Blocks.field36527);
-   private final Class1660 field32112;
+   private final IWorld field32112;
    private final Direction.Axis field32113;
    private final Direction field32114;
    private int field32115;
@@ -26,11 +27,11 @@ public class Class7473 {
    private int field32117;
    private int field32118;
 
-   public static Optional<Class7473> method24194(Class1660 var0, BlockPos var1, Direction.Axis var2) {
+   public static Optional<Class7473> method24194(IWorld var0, BlockPos var1, Direction.Axis var2) {
       return method24195(var0, var1, var0x -> var0x.method24203() && var0x.field32115 == 0, var2);
    }
 
-   public static Optional<Class7473> method24195(Class1660 var0, BlockPos var1, Predicate<Class7473> var2, Direction.Axis var3) {
+   public static Optional<Class7473> method24195(IWorld var0, BlockPos var1, Predicate<Class7473> var2, Direction.Axis var3) {
       Optional var6 = Optional.<Class7473>of(new Class7473(var0, var1, var3)).filter(var2);
       if (!var6.isPresent()) {
          Direction.Axis var7 = var3 != Direction.Axis.X ? Direction.Axis.X : Direction.Axis.Z;
@@ -40,7 +41,7 @@ public class Class7473 {
       }
    }
 
-   public Class7473(Class1660 var1, BlockPos var2, Direction.Axis var3) {
+   public Class7473(IWorld var1, BlockPos var2, Direction.Axis var3) {
       this.field32112 = var1;
       this.field32113 = var3;
       this.field32114 = var3 != Direction.Axis.X ? Direction.SOUTH : Direction.WEST;
@@ -151,7 +152,7 @@ public class Class7473 {
    }
 
    public void method24204() {
-      BlockState var3 = Blocks.field36588.method11579().with(Class3401.field19060, this.field32113);
+      BlockState var3 = Blocks.field36588.getDefaultState().with(Class3401.field19060, this.field32113);
       BlockPos.method8359(this.field32116, this.field32116.method8350(Direction.UP, this.field32117 - 1).method8350(this.field32114, this.field32118 - 1))
          .forEach(var2 -> this.field32112.setBlockState(var2, var3, 18));
    }

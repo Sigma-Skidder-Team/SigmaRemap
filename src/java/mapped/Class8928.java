@@ -7,6 +7,8 @@ import net.minecraft.block.Blocks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;
 import net.minecraft.fluid.Fluid;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemStack;
 
 import java.util.Map;
@@ -259,8 +261,8 @@ public class Class8928 {
    });
    private static final Map<Fluid, RenderType> field40408 = Util.<Map<Fluid, RenderType>>make(Maps.newHashMap(), var0 -> {
       RenderType var3 = RenderType.method14304();
-      var0.put(Class9479.field44065, var3);
-      var0.put(Class9479.field44066, var3);
+      var0.put(Fluids.FLOWING_WATER, var3);
+      var0.put(Fluids.WATER, var3);
    });
    private static boolean field40409;
 
@@ -305,12 +307,12 @@ public class Class8928 {
          return !var1 ? Class8624.method30908() : Class8624.method30909();
       } else {
          Block var5 = ((Class3292)var4).method11845();
-         return method32632(var5.method11579(), var1);
+         return method32632(var5.getDefaultState(), var1);
       }
    }
 
    public static RenderType method32634(FluidState var0) {
-      RenderType var3 = field40408.get(var0.method23472());
+      RenderType var3 = field40408.get(var0.getFluid());
       return var3 == null ? RenderType.method14300() : var3;
    }
 

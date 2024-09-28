@@ -8,6 +8,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.fluid.FluidState;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Mirror;
@@ -16,6 +17,7 @@ import net.minecraft.util.Rotation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
 import java.util.ArrayList;
@@ -203,7 +205,7 @@ public class Class8969 {
                   if (var20.field35532 != null) {
                      TileEntity var24 = var1.getTileEntity(var21);
                      IClearable.method3802(var24);
-                     var1.setBlockState(var21, Blocks.field36765.method11579(), 20);
+                     var1.setBlockState(var21, Blocks.field36765.getDefaultState(), 20);
                   }
 
                   if (var1.setBlockState(var21, var23, var6)) {
@@ -253,7 +255,7 @@ public class Class8969 {
                   FluidState var40 = var1.getFluidState(var33);
 
                   for (int var25 = 0; var25 < var29.length && !var40.method23473(); var25++) {
-                     BlockPos var26 = var36.method8349(var29[var25]);
+                     BlockPos var26 = var36.offset(var29[var25]);
                      FluidState var27 = var1.getFluidState(var26);
                      if (var27.method23475(var1, var26) > var40.method23475(var1, var36) || var27.method23473() && !var40.method23473()) {
                         var40 = var27;
@@ -320,10 +322,10 @@ public class Class8969 {
       }
    }
 
-   public static void method32900(Class1660 var0, int var1, Class7938 var2, int var3, int var4, int var5) {
+   public static void method32900(IWorld var0, int var1, Class7938 var2, int var3, int var4, int var5) {
       var2.method26740((var5x, var6, var7, var8) -> {
          BlockPos var11 = new BlockPos(var3 + var6, var4 + var7, var5 + var8);
-         BlockPos var12 = var11.method8349(var5x);
+         BlockPos var12 = var11.offset(var5x);
          BlockState var13 = var0.getBlockState(var11);
          BlockState var14 = var0.getBlockState(var12);
          BlockState var15 = var13.method23439(var5x, var14, var0, var11, var12);
@@ -338,7 +340,7 @@ public class Class8969 {
       });
    }
 
-   public static List<Class8266> method32901(Class1660 var0, BlockPos var1, BlockPos var2, Class9463 var3, List<Class8266> var4) {
+   public static List<Class8266> method32901(IWorld var0, BlockPos var1, BlockPos var2, Class9463 var3, List<Class8266> var4) {
       List<Class8266> var7 = Lists.newArrayList();
 
       for (Class8266 var9 : var4) {
@@ -531,9 +533,9 @@ public class Class8969 {
 
    private void method32911(Rotation var1, int var2, int var3, Class9764 var4, Direction var5, Direction var6) {
       BlockPos var9 = BlockPos.ZERO;
-      if (var1 == Rotation.field186 || var1 == Rotation.field188) {
+      if (var1 == Rotation.CLOCKWISE_90 || var1 == Rotation.COUNTERCLOCKWISE_90) {
          var9 = var9.method8350(var1.rotate(var5), var3);
-      } else if (var1 != Rotation.field187) {
+      } else if (var1 != Rotation.CLOCKWISE_180) {
          var9 = var9.method8350(var5, var2);
       } else {
          var9 = var9.method8350(var6, var2);

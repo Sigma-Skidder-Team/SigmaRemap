@@ -11,7 +11,7 @@ import net.minecraft.world.chunk.IChunk;
 import java.util.Random;
 
 public class Class6772 extends Class6768<Class8278> {
-   private static final BlockState field29546 = Blocks.field37012.method11579();
+   private static final BlockState field29546 = Blocks.field37012.getDefaultState();
    public long field29547;
    private Class7689 field29548;
 

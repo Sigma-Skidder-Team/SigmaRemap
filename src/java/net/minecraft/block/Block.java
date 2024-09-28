@@ -10,6 +10,7 @@ import net.minecraft.client.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.state.StateContainer;
 import net.minecraft.tags.BlockTags;
@@ -25,6 +26,7 @@ import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -40,7 +42,7 @@ public class Block extends AbstractBlock implements IItemProvider {
    public static final Logger field18609 = LogManager.getLogger();
    public static final ObjectIntIdentityMap<BlockState> field18610 = new ObjectIntIdentityMap<BlockState>();
    private static final LoadingCache<VoxelShape, Boolean> field18611 = CacheBuilder.newBuilder().maximumSize(512L).weakKeys().build(new Class4562());
-   public final StateContainer<Block, BlockState> field18612;
+   public final StateContainer<Block, BlockState> stateContainer;
    private BlockState field18613;
    private String field18614;
    private Item field18615;
@@ -63,7 +65,7 @@ public class Block extends AbstractBlock implements IItemProvider {
 
    public static BlockState method11536(int var0) {
       BlockState var3 = field18610.getByValue(var0);
-      return var3 != null ? var3 : Blocks.AIR.method11579();
+      return var3 != null ? var3 : Blocks.AIR.getDefaultState();
    }
 
    public static Block method11537(Item var0) {
@@ -94,7 +96,7 @@ public class Block extends AbstractBlock implements IItemProvider {
       return this == var1;
    }
 
-   public static BlockState method11542(BlockState var0, Class1660 var1, BlockPos var2) {
+   public static BlockState method11542(BlockState var0, IWorld var1, BlockPos var2) {
       BlockState var5 = var0;
       BlockPos.Mutable var6 = new BlockPos.Mutable();
 
@@ -106,11 +108,11 @@ public class Block extends AbstractBlock implements IItemProvider {
       return var5;
    }
 
-   public static void method11543(BlockState var0, BlockState var1, Class1660 var2, BlockPos var3, int var4) {
+   public static void method11543(BlockState var0, BlockState var1, IWorld var2, BlockPos var3, int var4) {
       method11544(var0, var1, var2, var3, var4, 512);
    }
 
-   public static void method11544(BlockState var0, BlockState var1, Class1660 var2, BlockPos var3, int var4, int var5) {
+   public static void method11544(BlockState var0, BlockState var1, IWorld var2, BlockPos var3, int var4, int var5) {
       if (var1 != var0) {
          if (!var1.isAir()) {
             var2.setBlockState(var3, var1, var4 & -33, var5);
@@ -122,10 +124,10 @@ public class Block extends AbstractBlock implements IItemProvider {
 
    public Block(Properties var1) {
       super(var1);
-      Class7558<Block, BlockState> var4 = new Class7558<>(this);
-      this.method11489(var4);
-      this.field18612 = var4.method24739(Block::method11579, BlockState::new);
-      this.method11578(this.field18612.method35393());
+      StateContainer.Builder<Block, BlockState> var4 = new StateContainer.Builder<>(this);
+      this.fillStateContainer(var4);
+      this.stateContainer = var4.method24739(Block::getDefaultState, BlockState::new);
+      this.setDefaultState(this.stateContainer.getBaseState());
    }
 
    public static boolean method11545(Block var0) {
@@ -138,12 +140,12 @@ public class Block extends AbstractBlock implements IItemProvider {
          || var0.isIn(BlockTags.field32805);
    }
 
-   public boolean method11499(BlockState var1) {
+   public boolean ticksRandomly(BlockState var1) {
       return this.field19007;
    }
 
    public static boolean method11546(BlockState var0, IBlockReader var1, BlockPos var2, Direction var3) {
-      BlockPos var6 = var2.method8349(var3);
+      BlockPos var6 = var2.offset(var3);
       BlockState var7 = var1.getBlockState(var6);
       EventRenderBlocks var8 = new EventRenderBlocks(var0);
       Client.getInstance().getEventManager().call(var8);
@@ -203,10 +205,10 @@ public class Block extends AbstractBlock implements IItemProvider {
       return !method11550(var1.method23412(var2, var3)) && var1.method23449().method23474();
    }
 
-   public void method11512(BlockState var1, World var2, BlockPos var3, Random var4) {
+   public void animateTick(BlockState var1, World var2, BlockPos var3, Random var4) {
    }
 
-   public void onPlayerDestroy(Class1660 var1, BlockPos var2, BlockState var3) {
+   public void onPlayerDestroy(IWorld var1, BlockPos var2, BlockState var3) {
    }
 
    public static List<ItemStack> method11552(BlockState var0, ServerWorld var1, BlockPos var2, TileEntity var3) {
@@ -235,7 +237,7 @@ public class Block extends AbstractBlock implements IItemProvider {
       }
    }
 
-   public static void method11555(BlockState var0, Class1660 var1, BlockPos var2, TileEntity var3) {
+   public static void method11555(BlockState var0, IWorld var1, BlockPos var2, TileEntity var3) {
       if (var1 instanceof ServerWorld) {
          method11552(var0, (ServerWorld)var1, var2, var3).forEach(var2x -> method11557((ServerWorld)var1, var2, var2x));
          var0.method23433((ServerWorld)var1, var2, ItemStack.EMPTY);
@@ -271,19 +273,19 @@ public class Block extends AbstractBlock implements IItemProvider {
       }
    }
 
-   public float method11559() {
+   public float getExplosionResistance() {
       return this.field19006;
    }
 
-   public void method11560(World var1, BlockPos var2, Explosion var3) {
+   public void onExplosionDestroy(World var1, BlockPos var2, Explosion var3) {
    }
 
    public void onEntityWalk(World var1, BlockPos var2, Entity var3) {
    }
 
    @Nullable
-   public BlockState method11495(Class5909 var1) {
-      return this.method11579();
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      return this.getDefaultState();
    }
 
    public void method11562(World var1, PlayerEntity var2, BlockPos var3, BlockState var4, TileEntity var5, ItemStack var6) {
@@ -353,18 +355,18 @@ public class Block extends AbstractBlock implements IItemProvider {
       return true;
    }
 
-   public void method11489(Class7558<Block, BlockState> var1) {
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
    }
 
    public StateContainer<Block, BlockState> getStateContainer() {
-      return this.field18612;
+      return this.stateContainer;
    }
 
-   public final void method11578(BlockState var1) {
+   public final void setDefaultState(BlockState var1) {
       this.field18613 = var1;
    }
 
-   public final BlockState method11579() {
+   public final BlockState getDefaultState() {
       return this.field18613;
    }
 

@@ -1,13 +1,15 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.ImmutableMap.Builder;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.FenceGateBlock;
-import net.minecraft.block.WallHeight;
+import net.minecraft.block.*;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
+import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.Property;
 import net.minecraft.state.EnumProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Mirror;
@@ -16,19 +18,20 @@ import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
 import java.util.Map;
 
-public class Class3415 extends Block implements Class3207 {
+public class Class3415 extends Block implements IWaterLoggable {
    private static String[] field19105;
    public static final BooleanProperty field19106 = BlockStateProperties.field39714;
    public static final EnumProperty<WallHeight> field19107 = BlockStateProperties.field39726;
    public static final EnumProperty<WallHeight> field19108 = BlockStateProperties.field39727;
    public static final EnumProperty<WallHeight> field19109 = BlockStateProperties.field39728;
    public static final EnumProperty<WallHeight> field19110 = BlockStateProperties.field39729;
-   public static final BooleanProperty field19111 = BlockStateProperties.field39710;
+   public static final BooleanProperty field19111 = BlockStateProperties.WATERLOGGED;
    private final Map<BlockState, VoxelShape> field19112;
    private final Map<BlockState, VoxelShape> field19113;
    private static final VoxelShape field19114 = Block.makeCuboidShape(7.0, 0.0, 7.0, 9.0, 16.0, 9.0);
@@ -39,9 +42,9 @@ public class Class3415 extends Block implements Class3207 {
 
    public Class3415(Properties var1) {
       super(var1);
-      this.method11578(
-         this.field18612
-            .method35393()
+      this.setDefaultState(
+         this.stateContainer
+            .getBaseState()
             .with(field19106, Boolean.valueOf(true))
             .with(field19108, WallHeight.field667)
             .with(field19107, WallHeight.field667)
@@ -75,7 +78,7 @@ public class Class3415 extends Block implements Class3207 {
       VoxelShape var19 = Block.makeCuboidShape((double)var11, (double)var4, (double)var11, (double)var12, (double)var6, 16.0);
       VoxelShape var20 = Block.makeCuboidShape(0.0, (double)var4, (double)var11, (double)var12, (double)var6, (double)var12);
       VoxelShape var21 = Block.makeCuboidShape((double)var11, (double)var4, (double)var11, 16.0, (double)var6, (double)var12);
-      Builder var22 = ImmutableMap.builder();
+      ImmutableMap.Builder var22 = ImmutableMap.builder();
 
       for (Boolean var24 : field19106.method30474()) {
          for (WallHeight var26 : field19107.method30474()) {
@@ -91,7 +94,7 @@ public class Class3415 extends Block implements Class3207 {
                         var33 = VoxelShapes.or(var33, var13);
                      }
 
-                     BlockState var34 = this.method11579()
+                     BlockState var34 = this.getDefaultState()
                         .with(field19106, var24)
                         .with(field19107, var26)
                         .with(field19110, var30)
@@ -109,7 +112,7 @@ public class Class3415 extends Block implements Class3207 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return this.field19112.get(var1);
    }
 
@@ -119,7 +122,7 @@ public class Class3415 extends Block implements Class3207 {
    }
 
    @Override
-   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
+   public boolean allowsMovement(BlockState var1, IBlockReader var2, BlockPos var3, PathType var4) {
       return false;
    }
 
@@ -130,10 +133,10 @@ public class Class3415 extends Block implements Class3207 {
    }
 
    @Override
-   public BlockState method11495(Class5909 var1) {
-      World var4 = var1.method18360();
-      BlockPos var5 = var1.method18345();
-      FluidState var6 = var1.method18360().getFluidState(var1.method18345());
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      World var4 = var1.getWorld();
+      BlockPos var5 = var1.getPos();
+      FluidState var6 = var1.getWorld().getFluidState(var1.getPos());
       BlockPos var7 = var5.north();
       BlockPos var8 = var5.east();
       BlockPos var9 = var5.south();
@@ -148,24 +151,24 @@ public class Class3415 extends Block implements Class3207 {
       boolean var18 = this.method12055(var13, var13.method23454(var4, var8, Direction.WEST), Direction.WEST);
       boolean var19 = this.method12055(var14, var14.method23454(var4, var9, Direction.NORTH), Direction.NORTH);
       boolean var20 = this.method12055(var15, var15.method23454(var4, var10, Direction.EAST), Direction.EAST);
-      BlockState var21 = this.method11579().with(field19111, Boolean.valueOf(var6.method23472() == Class9479.field44066));
+      BlockState var21 = this.getDefaultState().with(field19111, Boolean.valueOf(var6.getFluid() == Fluids.WATER));
       return this.method12060(var4, var21, var11, var16, var17, var18, var19, var20);
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       if (var1.<Boolean>get(field19111)) {
-         var4.method6861().method20726(var5, Class9479.field44066, Class9479.field44066.method25057(var4));
+         var4.getPendingFluidTicks().scheduleTick(var5, Fluids.WATER, Fluids.WATER.getTickRate(var4));
       }
 
       if (var2 != Direction.DOWN) {
          return var2 != Direction.UP ? this.method12059(var4, var5, var1, var6, var3, var2) : this.method12058(var4, var1, var6, var3);
       } else {
-         return super.method11491(var1, var2, var3, var4, var5, var6);
+         return super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
       }
    }
 
-   private static boolean method12056(BlockState var0, Class8550<WallHeight> var1) {
+   private static boolean method12056(BlockState var0, Property<WallHeight> var1) {
       return var0.get(var1) != WallHeight.field667;
    }
 
@@ -237,8 +240,8 @@ public class Class3415 extends Block implements Class3207 {
    }
 
    @Override
-   public FluidState method11498(BlockState var1) {
-      return !var1.<Boolean>get(field19111) ? super.method11498(var1) : Class9479.field44066.method25078(false);
+   public FluidState getFluidState(BlockState var1) {
+      return !var1.<Boolean>get(field19111) ? super.getFluidState(var1) : Fluids.WATER.getStillFluidState(false);
    }
 
    @Override
@@ -247,8 +250,8 @@ public class Class3415 extends Block implements Class3207 {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field19106, field19108, field19107, field19110, field19109, field19111);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field19106, field19108, field19107, field19110, field19109, field19111);
    }
 
    @Override

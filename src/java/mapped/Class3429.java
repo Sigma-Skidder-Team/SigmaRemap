@@ -3,6 +3,8 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.material.PushReaction;
+import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.state.Property;
 import net.minecraft.state.properties.RailShape;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
@@ -35,7 +37,7 @@ public abstract class Class3429 extends Block {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       RailShape var7 = !var1.isIn(this) ? null : var1.<RailShape>get(this.method12093());
       return var7 != null && var7.method275() ? field19188 : field19187;
    }
@@ -46,7 +48,7 @@ public abstract class Class3429 extends Block {
    }
 
    @Override
-   public void method11589(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+   public void onBlockAdded(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       if (!var4.isIn(var1.getBlock())) {
          this.method12089(var1, var2, var3, var5);
       }
@@ -55,7 +57,7 @@ public abstract class Class3429 extends Block {
    public BlockState method12089(BlockState var1, World var2, BlockPos var3, boolean var4) {
       var1 = this.method12092(var2, var3, var1, true);
       if (this.field19189) {
-         var1.method23423(var2, var3, this, var3, var4);
+         var1.neighborChanged(var2, var3, this, var3, var4);
       }
 
       return var1;
@@ -111,9 +113,9 @@ public abstract class Class3429 extends Block {
    }
 
    @Override
-   public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+   public void onReplaced(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       if (!var5) {
-         super.method11513(var1, var2, var3, var4, var5);
+         super.onReplaced(var1, var2, var3, var4, var5);
          if (var1.<RailShape>get(this.method12093()).method275()) {
             var2.notifyNeighborsOfStateChange(var3.up(), this);
          }
@@ -126,12 +128,12 @@ public abstract class Class3429 extends Block {
    }
 
    @Override
-   public BlockState method11495(Class5909 var1) {
-      BlockState var4 = super.method11579();
-      Direction var5 = var1.method18350();
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      BlockState var4 = super.getDefaultState();
+      Direction var5 = var1.getPlacementHorizontalFacing();
       boolean var6 = var5 == Direction.EAST || var5 == Direction.WEST;
       return var4.with(this.method12093(), !var6 ? RailShape.field247 : RailShape.field248);
    }
 
-   public abstract Class8550<RailShape> method12093();
+   public abstract Property<RailShape> method12093();
 }

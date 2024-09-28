@@ -1,31 +1,33 @@
-package mapped;
+package net.minecraft.fluid;
 
+import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.fluid.Fluid;
 import net.minecraft.item.Items;
 import net.minecraft.particles.IParticleData;
+import net.minecraft.state.StateContainer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
 import java.util.Random;
 import javax.annotation.Nullable;
 
-public abstract class Class7634 extends Class7633 {
+public abstract class WaterFluid extends FlowingFluid {
    @Override
    public Fluid method25075() {
-      return Class9479.field44065;
+      return Fluids.FLOWING_WATER;
    }
 
    @Override
    public Fluid method25077() {
-      return Class9479.field44066;
+      return Fluids.WATER;
    }
 
    @Override
@@ -73,7 +75,7 @@ public abstract class Class7634 extends Class7633 {
    }
 
    @Override
-   public void method25081(Class1660 var1, BlockPos var2, BlockState var3) {
+   public void method25081(IWorld var1, BlockPos var2, BlockState var3) {
       TileEntity var6 = !var3.getBlock().isTileEntityProvider() ? null : var1.getTileEntity(var2);
       Block.method11555(var3, var1, var2, var6);
    }
@@ -85,12 +87,12 @@ public abstract class Class7634 extends Class7633 {
 
    @Override
    public BlockState method25063(FluidState var1) {
-      return Blocks.WATER.method11579().with(Class3404.field19079, Integer.valueOf(method25094(var1)));
+      return Blocks.WATER.getDefaultState().with(Class3404.field19079, Integer.valueOf(method25094(var1)));
    }
 
    @Override
    public boolean method25066(Fluid var1) {
-      return var1 == Class9479.field44066 || var1 == Class9479.field44065;
+      return var1 == Fluids.WATER || var1 == Fluids.FLOWING_WATER;
    }
 
    @Override
@@ -99,7 +101,7 @@ public abstract class Class7634 extends Class7633 {
    }
 
    @Override
-   public int method25057(IWorldReader var1) {
+   public int getTickRate(IWorldReader var1) {
       return 5;
    }
 
@@ -111,5 +113,39 @@ public abstract class Class7634 extends Class7633 {
    @Override
    public float method25060() {
       return 100.0F;
+   }
+
+   public static class Flowing extends WaterFluid {
+      private static String[] field32717;
+
+      @Override
+      public void method25046(StateContainer.Builder<Fluid, FluidState> var1) {
+         super.method25046(var1);
+         var1.add(field32713);
+      }
+
+      @Override
+      public int method25065(FluidState var1) {
+         return var1.<Integer>get(field32713);
+      }
+
+      @Override
+      public boolean method25064(FluidState var1) {
+         return false;
+      }
+   }
+
+   public static class Source extends WaterFluid {
+      private static String[] field32716;
+
+      @Override
+      public int method25065(FluidState var1) {
+         return 8;
+      }
+
+      @Override
+      public boolean method25064(FluidState var1) {
+         return true;
+      }
    }
 }

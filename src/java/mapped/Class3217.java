@@ -2,9 +2,11 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
 public class Class3217 extends Class3213 {
@@ -13,7 +15,7 @@ public class Class3217 extends Class3213 {
 
    public Class3217(Block var1, Properties var2) {
       super(var2);
-      this.field18626 = var1.method11579();
+      this.field18626 = var1.getDefaultState();
    }
 
    @Override
@@ -24,11 +26,11 @@ public class Class3217 extends Class3213 {
    }
 
    @Override
-   public BlockState method11495(Class5909 var1) {
-      World var4 = var1.method18360();
-      BlockPos var5 = var1.method18345();
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      World var4 = var1.getWorld();
+      BlockPos var5 = var1.getPos();
       BlockState var6 = var4.getBlockState(var5);
-      return !method11604(var4, var5, var6) ? super.method11495(var1) : this.field18626;
+      return !method11604(var4, var5, var6) ? super.getStateForPlacement(var1) : this.field18626;
    }
 
    private static boolean method11604(IBlockReader var0, BlockPos var1, BlockState var2) {
@@ -59,8 +61,8 @@ public class Class3217 extends Class3213 {
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
-      return !method11605(var4, var5) ? super.method11491(var1, var2, var3, var4, var5, var6) : this.field18626;
+   public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
+      return !method11605(var4, var5) ? super.updatePostPlacement(var1, var2, var3, var4, var5, var6) : this.field18626;
    }
 
    @Override

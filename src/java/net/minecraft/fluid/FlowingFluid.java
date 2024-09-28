@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.fluid;
 
 import com.google.common.collect.Maps;
 import com.mojang.datafixers.util.Pair;
@@ -7,20 +7,22 @@ import it.unimi.dsi.fastutil.shorts.Short2BooleanMap;
 import it.unimi.dsi.fastutil.shorts.Short2BooleanOpenHashMap;
 import it.unimi.dsi.fastutil.shorts.Short2ObjectMap;
 import it.unimi.dsi.fastutil.shorts.Short2ObjectOpenHashMap;
+import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.DoorBlock;
 import net.minecraft.block.material.Material;
-import net.minecraft.fluid.Fluid;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
@@ -28,7 +30,7 @@ import java.util.EnumMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-public abstract class Class7633 extends Fluid {
+public abstract class FlowingFluid extends Fluid {
    public static final BooleanProperty field32712 = BlockStateProperties.field39690;
    public static final IntegerProperty field32713 = BlockStateProperties.field39753;
    private static final ThreadLocal<Object2ByteLinkedOpenHashMap<Class8570>> field32714 = ThreadLocal.<Object2ByteLinkedOpenHashMap<Class8570>>withInitial(
@@ -41,8 +43,8 @@ public abstract class Class7633 extends Fluid {
    private final Map<FluidState, VoxelShape> field32715 = Maps.newIdentityHashMap();
 
    @Override
-   public void method25046(Class7558<Fluid, FluidState> var1) {
-      var1.method24737(field32712);
+   public void method25046(StateContainer.Builder<Fluid, FluidState> var1) {
+      var1.add(field32712);
    }
 
    @Override
@@ -94,13 +96,13 @@ public abstract class Class7633 extends Fluid {
    }
 
    private boolean method25069(FluidState var1) {
-      return var1.method23474() || var1.method23472().method25066(this);
+      return var1.method23474() || var1.getFluid().method25066(this);
    }
 
    public boolean method25070(IBlockReader var1, BlockPos var2, Direction var3) {
       BlockState var6 = var1.getBlockState(var2);
       FluidState var7 = var1.getFluidState(var2);
-      if (!var7.method23472().method25066(this)) {
+      if (!var7.getFluid().method25066(this)) {
          if (var3 != Direction.UP) {
             return var6.getMaterial() != Material.field38964 ? var6.method23454(var1, var2, var3) : false;
          } else {
@@ -111,14 +113,14 @@ public abstract class Class7633 extends Fluid {
       }
    }
 
-   public void method25071(Class1660 var1, BlockPos var2, FluidState var3) {
+   public void method25071(IWorld var1, BlockPos var2, FluidState var3) {
       if (!var3.method23474()) {
          BlockState var6 = var1.getBlockState(var2);
          BlockPos var7 = var2.down();
          BlockState var8 = var1.getBlockState(var7);
          FluidState var9 = this.method25073(var1, var7, var8);
-         if (!this.method25091(var1, var2, var6, Direction.DOWN, var7, var8, var1.getFluidState(var7), var9.method23472())) {
-            if (var3.method23473() || !this.method25084(var1, var9.method23472(), var2, var6, var7, var8)) {
+         if (!this.method25091(var1, var2, var6, Direction.DOWN, var7, var8, var1.getFluidState(var7), var9.getFluid())) {
+            if (var3.method23473() || !this.method25084(var1, var9.getFluid(), var2, var6, var7, var8)) {
                this.method25072(var1, var2, var3, var6);
             }
          } else {
@@ -130,7 +132,7 @@ public abstract class Class7633 extends Fluid {
       }
    }
 
-   private void method25072(Class1660 var1, BlockPos var2, FluidState var3, BlockState var4) {
+   private void method25072(IWorld var1, BlockPos var2, FluidState var3, BlockState var4) {
       int var7 = var3.method23477() - this.method25092(var1);
       if (var3.<Boolean>get(field32712)) {
          var7 = 7;
@@ -142,9 +144,9 @@ public abstract class Class7633 extends Fluid {
          for (Entry<Direction, FluidState> var10 : var8.entrySet()) {
             Direction var11 = var10.getKey();
             FluidState var12 = var10.getValue();
-            BlockPos var13 = var2.method8349(var11);
+            BlockPos var13 = var2.offset(var11);
             BlockState var14 = var1.getBlockState(var13);
-            if (this.method25091(var1, var2, var4, var11, var13, var14, var1.getFluidState(var13), var12.method23472())) {
+            if (this.method25091(var1, var2, var4, var11, var13, var14, var1.getFluidState(var13), var12.getFluid())) {
                this.method25080(var1, var13, var14, var11, var12);
             }
          }
@@ -156,10 +158,10 @@ public abstract class Class7633 extends Fluid {
       int var7 = 0;
 
       for (Direction var9 : Direction.Plane.HORIZONTAL) {
-         BlockPos var10 = var2.method8349(var9);
+         BlockPos var10 = var2.offset(var9);
          BlockState var11 = var1.getBlockState(var10);
          FluidState var12 = var11.method23449();
-         if (var12.method23472().method25066(this) && this.method25074(var9, var1, var2, var3, var10, var11)) {
+         if (var12.getFluid().method25066(this) && this.method25074(var9, var1, var2, var3, var10, var11)) {
             if (var12.method23473()) {
                var7++;
             }
@@ -172,18 +174,18 @@ public abstract class Class7633 extends Fluid {
          BlockState var13 = var1.getBlockState(var2.down());
          FluidState var15 = var13.method23449();
          if (var13.getMaterial().isSolid() || this.method25086(var15)) {
-            return this.method25078(false);
+            return this.getStillFluidState(false);
          }
       }
 
       BlockPos var14 = var2.up();
       BlockState var16 = var1.getBlockState(var14);
       FluidState var17 = var16.method23449();
-      if (!var17.method23474() && var17.method23472().method25066(this) && this.method25074(Direction.UP, var1, var2, var3, var14, var16)) {
+      if (!var17.method23474() && var17.getFluid().method25066(this) && this.method25074(Direction.UP, var1, var2, var3, var14, var16)) {
          return this.method25076(8, true);
       } else {
          int var18 = var6 - this.method25092(var1);
-         return var18 > 0 ? this.method25076(var18, false) : Class9479.field44064.method25049();
+         return var18 > 0 ? this.method25076(var18, false) : Fluids.EMPTY.method25049();
       }
    }
 
@@ -228,13 +230,13 @@ public abstract class Class7633 extends Fluid {
 
    public abstract Fluid method25077();
 
-   public FluidState method25078(boolean var1) {
+   public FluidState getStillFluidState(boolean var1) {
       return this.method25077().method25049().with(field32712, Boolean.valueOf(var1));
    }
 
    public abstract boolean method25079();
 
-   public void method25080(Class1660 var1, BlockPos var2, BlockState var3, Direction var4, FluidState var5) {
+   public void method25080(IWorld var1, BlockPos var2, BlockState var3, Direction var4, FluidState var5) {
       if (!(var3.getBlock() instanceof Class3449)) {
          if (!var3.isAir()) {
             this.method25081(var1, var2, var3);
@@ -246,7 +248,7 @@ public abstract class Class7633 extends Fluid {
       }
    }
 
-   public abstract void method25081(Class1660 var1, BlockPos var2, BlockState var3);
+   public abstract void method25081(IWorld var1, BlockPos var2, BlockState var3);
 
    private static short method25082(BlockPos var0, BlockPos var1) {
       int var4 = var1.getX() - var0.getX();
@@ -268,7 +270,7 @@ public abstract class Class7633 extends Fluid {
 
       for (Direction var13 : Direction.Plane.HORIZONTAL) {
          if (var13 != var4) {
-            BlockPos var14 = var2.method8349(var13);
+            BlockPos var14 = var2.offset(var13);
             short var15 = method25082(var6, var14);
             Pair var16 = (Pair)var7.computeIfAbsent(var15, var2x -> {
                BlockState var5x = var1.getBlockState(var14);
@@ -301,7 +303,7 @@ public abstract class Class7633 extends Fluid {
 
    private boolean method25084(IBlockReader var1, Fluid var2, BlockPos var3, BlockState var4, BlockPos var5, BlockState var6) {
       if (this.method25074(Direction.DOWN, var1, var3, var4, var5, var6)) {
-         return !var6.method23449().method23472().method25066(this) ? this.method25090(var1, var5, var6, var2) : true;
+         return !var6.method23449().getFluid().method25066(this) ? this.method25090(var1, var5, var6, var2) : true;
       } else {
          return false;
       }
@@ -312,7 +314,7 @@ public abstract class Class7633 extends Fluid {
    }
 
    private boolean method25086(FluidState var1) {
-      return var1.method23472().method25066(this) && var1.method23473();
+      return var1.getFluid().method25066(this) && var1.method23473();
    }
 
    public abstract int method25087(IWorldReader var1);
@@ -321,7 +323,7 @@ public abstract class Class7633 extends Fluid {
       int var5 = 0;
 
       for (Direction var7 : Direction.Plane.HORIZONTAL) {
-         BlockPos var8 = var2.method8349(var7);
+         BlockPos var8 = var2.offset(var7);
          FluidState var9 = var1.getFluidState(var8);
          if (this.method25086(var9)) {
             var5++;
@@ -338,7 +340,7 @@ public abstract class Class7633 extends Fluid {
       Short2BooleanOpenHashMap var9 = new Short2BooleanOpenHashMap();
 
       for (Direction var11 : Direction.Plane.HORIZONTAL) {
-         BlockPos var12 = var2.method8349(var11);
+         BlockPos var12 = var2.offset(var11);
          short var13 = method25082(var2, var12);
          Pair var14 = (Pair)var8.computeIfAbsent(var13, var2x -> {
             BlockState var5 = var1.getBlockState(var12);
@@ -347,7 +349,7 @@ public abstract class Class7633 extends Fluid {
          BlockState var15 = (BlockState)var14.getFirst();
          FluidState var16 = (FluidState)var14.getSecond();
          FluidState var17 = this.method25073(var1, var12, var15);
-         if (this.method25085(var1, var17.method23472(), var2, var3, var11, var12, var15, var16)) {
+         if (this.method25085(var1, var17.getFluid(), var2, var3, var11, var12, var15, var16)) {
             BlockPos var18 = var12.down();
             boolean var19 = var9.computeIfAbsent(var13, var5 -> {
                BlockState var8x = var1.getBlockState(var18);
@@ -401,7 +403,7 @@ public abstract class Class7633 extends Fluid {
    public abstract int method25092(IWorldReader var1);
 
    public int method25093(World var1, BlockPos var2, FluidState var3, FluidState var4) {
-      return this.method25057(var1);
+      return this.getTickRate(var1);
    }
 
    @Override
@@ -414,12 +416,12 @@ public abstract class Class7633 extends Fluid {
                var3 = var6;
                BlockState var8 = var6.getBlockState();
                var1.setBlockState(var2, var8, 2);
-               var1.method6861().method20726(var2, var6.method23472(), var7);
+               var1.getPendingFluidTicks().scheduleTick(var2, var6.getFluid(), var7);
                var1.notifyNeighborsOfStateChange(var2, var8.getBlock());
             }
          } else {
             var3 = var6;
-            var1.setBlockState(var2, Blocks.AIR.method11579(), 3);
+            var1.setBlockState(var2, Blocks.AIR.getDefaultState(), 3);
          }
       }
 
@@ -431,7 +433,7 @@ public abstract class Class7633 extends Fluid {
    }
 
    private static boolean method25095(FluidState var0, IBlockReader var1, BlockPos var2) {
-      return var0.method23472().method25066(var1.getFluidState(var2.up()).method23472());
+      return var0.getFluid().method25066(var1.getFluidState(var2.up()).getFluid());
    }
 
    @Override

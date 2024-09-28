@@ -6,6 +6,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.IWorld;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -41,7 +42,7 @@ public class Class2941 extends Class2898<Class4704> {
    }
 
    @Nullable
-   private static BlockPos method11285(Class1660 var0, BlockPos.Mutable var1, Block var2) {
+   private static BlockPos method11285(IWorld var0, BlockPos.Mutable var1, Block var2) {
       while (var1.getY() > 1) {
          BlockState var5 = var0.getBlockState(var1);
          if (var5.isIn(var2)) {

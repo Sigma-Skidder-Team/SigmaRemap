@@ -150,9 +150,9 @@ public final class ItemStack {
 
    public ActionResultType onItemUse(ItemUseContext var1) {
       PlayerEntity var4 = var1.method18358();
-      BlockPos var5 = var1.method18345();
-      CachedBlockInfo var6 = new CachedBlockInfo(var1.method18360(), var5, false);
-      if (var4 != null && !var4.abilities.allowEdit && !this.method32176(var1.method18360().method6817(), var6)) {
+      BlockPos var5 = var1.getPos();
+      CachedBlockInfo var6 = new CachedBlockInfo(var1.getWorld(), var5, false);
+      if (var4 != null && !var4.abilities.allowEdit && !this.method32176(var1.getWorld().method6817(), var6)) {
          return ActionResultType.field14820;
       } else {
          Item var7 = this.getItem();

@@ -170,18 +170,18 @@ public class InvManager extends Module {
                         return 1.0F;
                     }
 
-                    var6 = var5.getDestroySpeed(var0, Blocks.field36422.method11579());
+                    var6 = var5.getDestroySpeed(var0, Blocks.field36422.getDefaultState());
                     if (var4.toLowerCase().contains("gold")) {
                         var6 -= 5.0F;
                     }
                 } else {
-                    var6 = var5.getDestroySpeed(var0, Blocks.field36396.method11579());
+                    var6 = var5.getDestroySpeed(var0, Blocks.field36396.getDefaultState());
                     if (var4.toLowerCase().contains("gold")) {
                         var6 -= 5.0F;
                     }
                 }
             } else {
-                var6 = var5.getDestroySpeed(var0, Blocks.STONE.method11579());
+                var6 = var5.getDestroySpeed(var0, Blocks.STONE.getDefaultState());
                 if (var4.toLowerCase().contains("gold")) {
                     var6 -= 5.0F;
                 }

@@ -10,9 +10,11 @@ import net.minecraft.block.material.PushReaction;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.container.Container;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.state.EnumProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.Direction;
@@ -35,7 +37,7 @@ public class Class3368 extends Class3241 {
    public Class3368(Class112 var1, Properties var2) {
       super(var2);
       this.field18941 = var1;
-      this.method11578(this.field18612.method35393().with(field18939, Direction.UP));
+      this.setDefaultState(this.stateContainer.getBaseState().with(field18939, Direction.UP));
    }
 
    @Override
@@ -49,7 +51,7 @@ public class Class3368 extends Class3241 {
    }
 
    @Override
-   public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
+   public ActionResultType onBlockActivated(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       if (!var2.isRemote) {
          if (!var4.isSpectator()) {
             TileEntity var9 = var2.getTileEntity(var3);
@@ -82,13 +84,13 @@ public class Class3368 extends Class3241 {
    }
 
    @Override
-   public BlockState method11495(Class5909 var1) {
-      return this.method11579().with(field18939, var1.method18354());
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      return this.getDefaultState().with(field18939, var1.getFace());
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field18939);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field18939);
    }
 
    @Override
@@ -144,14 +146,14 @@ public class Class3368 extends Class3241 {
    }
 
    @Override
-   public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+   public void onReplaced(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       if (!var1.isIn(var4.getBlock())) {
          TileEntity var8 = var2.getTileEntity(var3);
          if (var8 instanceof Class940) {
             var2.updateComparatorOutputLevel(var3, var1.getBlock());
          }
 
-         super.method11513(var1, var2, var3, var4, var5);
+         super.onReplaced(var1, var2, var3, var4, var5);
       }
    }
 
@@ -195,7 +197,7 @@ public class Class3368 extends Class3241 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       TileEntity var7 = var2.getTileEntity(var3);
       return !(var7 instanceof Class940) ? VoxelShapes.method27426() : VoxelShapes.create(((Class940)var7).method3747(var1));
    }

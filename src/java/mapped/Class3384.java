@@ -1,17 +1,20 @@
 package mapped;
 
 import net.minecraft.block.HorizontalBlock;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.state.StateContainer;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
@@ -25,7 +28,7 @@ public class Class3384 extends Class3383 {
 
    public Class3384(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().with(field18990, Direction.NORTH).with(field18991, Boolean.valueOf(true)));
+      this.setDefaultState(this.stateContainer.getBaseState().with(field18990, Direction.NORTH).with(field18991, Boolean.valueOf(true)));
    }
 
    @Override
@@ -34,7 +37,7 @@ public class Class3384 extends Class3383 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return Class3382.method11980(var1);
    }
 
@@ -44,19 +47,19 @@ public class Class3384 extends Class3383 {
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
-      return Blocks.WALL_TORCH.method11491(var1, var2, var3, var4, var5, var6);
+   public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
+      return Blocks.WALL_TORCH.updatePostPlacement(var1, var2, var3, var4, var5, var6);
    }
 
    @Nullable
    @Override
-   public BlockState method11495(Class5909 var1) {
-      BlockState var4 = Blocks.WALL_TORCH.method11495(var1);
-      return var4 != null ? this.method11579().with(field18990, var4.<Direction>get(field18990)) : null;
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      BlockState var4 = Blocks.WALL_TORCH.getStateForPlacement(var1);
+      return var4 != null ? this.getDefaultState().with(field18990, var4.<Direction>get(field18990)) : null;
    }
 
    @Override
-   public void method11512(BlockState var1, World var2, BlockPos var3, Random var4) {
+   public void animateTick(BlockState var1, World var2, BlockPos var3, Random var4) {
       if (var1.<Boolean>get(field18991)) {
          Direction var7 = var1.<Direction>get(field18990).getOpposite();
          double var8 = 0.27;
@@ -70,7 +73,7 @@ public class Class3384 extends Class3383 {
    @Override
    public boolean method11981(World var1, BlockPos var2, BlockState var3) {
       Direction var6 = var3.<Direction>get(field18990).getOpposite();
-      return var1.method6778(var2.method8349(var6), var6);
+      return var1.method6778(var2.offset(var6), var6);
    }
 
    @Override
@@ -89,7 +92,7 @@ public class Class3384 extends Class3383 {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field18990, field18991);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field18990, field18991);
    }
 }

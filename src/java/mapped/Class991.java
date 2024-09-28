@@ -42,7 +42,7 @@ public class Class991 extends Class919 {
 
    @Override
    public BlockState method3604() {
-      return Blocks.CHEST.method11579().with(ChestBlock.field18865, Direction.NORTH);
+      return Blocks.CHEST.getDefaultState().with(ChestBlock.field18865, Direction.NORTH);
    }
 
    @Override

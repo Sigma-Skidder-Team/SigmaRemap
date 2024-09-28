@@ -6,6 +6,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.vector.Matrix3f;
 
 public class Class5737 extends EntityRenderer<PaintingEntity> {
    private static String[] field25158;
@@ -34,7 +35,7 @@ public class Class5737 extends EntityRenderer<PaintingEntity> {
    private void method17919(MatrixStack var1, IVertexBuilder var2, PaintingEntity var3, int var4, int var5, TextureAtlasSprite var6, TextureAtlasSprite var7) {
       Class8892 var10 = var1.getLast();
       Matrix4f var11 = var10.getMatrix();
-      Class8967 var12 = var10.method32362();
+      Matrix3f var12 = var10.method32362();
       float var13 = (float)(-var4) / 2.0F;
       float var14 = (float)(-var5) / 2.0F;
       float var15 = 0.5F;
@@ -115,7 +116,7 @@ public class Class5737 extends EntityRenderer<PaintingEntity> {
    }
 
    private void method17920(
-           Matrix4f var1, Class8967 var2, IVertexBuilder var3, float var4, float var5, float var6, float var7, float var8, int var9, int var10, int var11, int var12
+           Matrix4f var1, Matrix3f var2, IVertexBuilder var3, float var4, float var5, float var6, float var7, float var8, int var9, int var10, int var11, int var12
    ) {
       var3.pos(var1, var4, var5, var8)
          .color(255, 255, 255, 255)

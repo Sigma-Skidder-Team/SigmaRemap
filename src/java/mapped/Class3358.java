@@ -35,7 +35,7 @@ public class Class3358 extends Class3357 {
          ItemStack var8 = var6.getStackInSlot(var7);
          if (!var8.isEmpty()) {
             Direction var9 = var1.getBlockState(var2).<Direction>get(field18899);
-            IInventory var10 = Class936.method3715(var1, var2.method8349(var9));
+            IInventory var10 = Class936.method3715(var1, var2.offset(var9));
             ItemStack var12;
             if (var10 != null) {
                var12 = Class936.method3708(var6, var10, var8.copy().split(1), var9.getOpposite());

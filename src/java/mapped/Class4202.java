@@ -54,50 +54,50 @@ public class Class4202 extends Class4194 {
 
       this.method12928(var1, var5, 0, 0, 0, 13, var10 - 1, 14, true, var4, Class9331.method35288());
       this.method12984(var1, var4, var5, this.field20495, 4, 1, 0);
-      this.method12929(var1, var5, var4, 0.07F, 2, 1, 1, 11, 4, 13, Blocks.COBWEB.method11579(), Blocks.COBWEB.method11579(), false, false);
+      this.method12929(var1, var5, var4, 0.07F, 2, 1, 1, 11, 4, 13, Blocks.COBWEB.getDefaultState(), Blocks.COBWEB.getDefaultState(), false, false);
       boolean var11 = true;
       byte var12 = 12;
 
       for (int var13 = 1; var13 <= 13; var13++) {
          if ((var13 - 1) % 4 != 0) {
-            this.method12927(var1, var5, 1, 1, var13, 1, 4, var13, Blocks.field36525.method11579(), Blocks.field36525.method11579(), false);
-            this.method12927(var1, var5, 12, 1, var13, 12, 4, var13, Blocks.field36525.method11579(), Blocks.field36525.method11579(), false);
+            this.method12927(var1, var5, 1, 1, var13, 1, 4, var13, Blocks.field36525.getDefaultState(), Blocks.field36525.getDefaultState(), false);
+            this.method12927(var1, var5, 12, 1, var13, 12, 4, var13, Blocks.field36525.getDefaultState(), Blocks.field36525.getDefaultState(), false);
             if (this.field20509) {
-               this.method12927(var1, var5, 1, 6, var13, 1, 9, var13, Blocks.field36525.method11579(), Blocks.field36525.method11579(), false);
-               this.method12927(var1, var5, 12, 6, var13, 12, 9, var13, Blocks.field36525.method11579(), Blocks.field36525.method11579(), false);
+               this.method12927(var1, var5, 1, 6, var13, 1, 9, var13, Blocks.field36525.getDefaultState(), Blocks.field36525.getDefaultState(), false);
+               this.method12927(var1, var5, 12, 6, var13, 12, 9, var13, Blocks.field36525.getDefaultState(), Blocks.field36525.getDefaultState(), false);
             }
          } else {
-            this.method12927(var1, var5, 1, 1, var13, 1, 4, var13, Blocks.field36400.method11579(), Blocks.field36400.method11579(), false);
-            this.method12927(var1, var5, 12, 1, var13, 12, 4, var13, Blocks.field36400.method11579(), Blocks.field36400.method11579(), false);
-            this.method12923(var1, Blocks.WALL_TORCH.method11579().with(Class3382.field18985, Direction.EAST), 2, 3, var13, var5);
-            this.method12923(var1, Blocks.WALL_TORCH.method11579().with(Class3382.field18985, Direction.WEST), 11, 3, var13, var5);
+            this.method12927(var1, var5, 1, 1, var13, 1, 4, var13, Blocks.field36400.getDefaultState(), Blocks.field36400.getDefaultState(), false);
+            this.method12927(var1, var5, 12, 1, var13, 12, 4, var13, Blocks.field36400.getDefaultState(), Blocks.field36400.getDefaultState(), false);
+            this.method12923(var1, Blocks.WALL_TORCH.getDefaultState().with(Class3382.field18985, Direction.EAST), 2, 3, var13, var5);
+            this.method12923(var1, Blocks.WALL_TORCH.getDefaultState().with(Class3382.field18985, Direction.WEST), 11, 3, var13, var5);
             if (this.field20509) {
-               this.method12927(var1, var5, 1, 6, var13, 1, 9, var13, Blocks.field36400.method11579(), Blocks.field36400.method11579(), false);
-               this.method12927(var1, var5, 12, 6, var13, 12, 9, var13, Blocks.field36400.method11579(), Blocks.field36400.method11579(), false);
+               this.method12927(var1, var5, 1, 6, var13, 1, 9, var13, Blocks.field36400.getDefaultState(), Blocks.field36400.getDefaultState(), false);
+               this.method12927(var1, var5, 12, 6, var13, 12, 9, var13, Blocks.field36400.getDefaultState(), Blocks.field36400.getDefaultState(), false);
             }
          }
       }
 
       for (int var22 = 3; var22 < 12; var22 += 2) {
-         this.method12927(var1, var5, 3, 1, var22, 4, 3, var22, Blocks.field36525.method11579(), Blocks.field36525.method11579(), false);
-         this.method12927(var1, var5, 6, 1, var22, 7, 3, var22, Blocks.field36525.method11579(), Blocks.field36525.method11579(), false);
-         this.method12927(var1, var5, 9, 1, var22, 10, 3, var22, Blocks.field36525.method11579(), Blocks.field36525.method11579(), false);
+         this.method12927(var1, var5, 3, 1, var22, 4, 3, var22, Blocks.field36525.getDefaultState(), Blocks.field36525.getDefaultState(), false);
+         this.method12927(var1, var5, 6, 1, var22, 7, 3, var22, Blocks.field36525.getDefaultState(), Blocks.field36525.getDefaultState(), false);
+         this.method12927(var1, var5, 9, 1, var22, 10, 3, var22, Blocks.field36525.getDefaultState(), Blocks.field36525.getDefaultState(), false);
       }
 
       if (this.field20509) {
-         this.method12927(var1, var5, 1, 5, 1, 3, 5, 13, Blocks.field36400.method11579(), Blocks.field36400.method11579(), false);
-         this.method12927(var1, var5, 10, 5, 1, 12, 5, 13, Blocks.field36400.method11579(), Blocks.field36400.method11579(), false);
-         this.method12927(var1, var5, 4, 5, 1, 9, 5, 2, Blocks.field36400.method11579(), Blocks.field36400.method11579(), false);
-         this.method12927(var1, var5, 4, 5, 12, 9, 5, 13, Blocks.field36400.method11579(), Blocks.field36400.method11579(), false);
-         this.method12923(var1, Blocks.field36400.method11579(), 9, 5, 11, var5);
-         this.method12923(var1, Blocks.field36400.method11579(), 8, 5, 11, var5);
-         this.method12923(var1, Blocks.field36400.method11579(), 9, 5, 10, var5);
+         this.method12927(var1, var5, 1, 5, 1, 3, 5, 13, Blocks.field36400.getDefaultState(), Blocks.field36400.getDefaultState(), false);
+         this.method12927(var1, var5, 10, 5, 1, 12, 5, 13, Blocks.field36400.getDefaultState(), Blocks.field36400.getDefaultState(), false);
+         this.method12927(var1, var5, 4, 5, 1, 9, 5, 2, Blocks.field36400.getDefaultState(), Blocks.field36400.getDefaultState(), false);
+         this.method12927(var1, var5, 4, 5, 12, 9, 5, 13, Blocks.field36400.getDefaultState(), Blocks.field36400.getDefaultState(), false);
+         this.method12923(var1, Blocks.field36400.getDefaultState(), 9, 5, 11, var5);
+         this.method12923(var1, Blocks.field36400.getDefaultState(), 8, 5, 11, var5);
+         this.method12923(var1, Blocks.field36400.getDefaultState(), 9, 5, 10, var5);
          BlockState var23 = Blocks.OAK_FENCE
-            .method11579()
+            .getDefaultState()
             .with(Class3239.field18683, Boolean.valueOf(true))
             .with(Class3239.field18681, Boolean.valueOf(true));
          BlockState var14 = Blocks.OAK_FENCE
-            .method11579()
+            .getDefaultState()
             .with(Class3239.field18680, Boolean.valueOf(true))
             .with(Class3239.field18682, Boolean.valueOf(true));
          this.method12927(var1, var5, 3, 6, 3, 3, 6, 11, var14, var14, false);
@@ -107,7 +107,7 @@ public class Class4202 extends Class4194 {
          this.method12923(
             var1,
             Blocks.OAK_FENCE
-               .method11579()
+               .getDefaultState()
                .with(Class3239.field18680, Boolean.valueOf(true))
                .with(Class3239.field18681, Boolean.valueOf(true)),
             3,
@@ -118,7 +118,7 @@ public class Class4202 extends Class4194 {
          this.method12923(
             var1,
             Blocks.OAK_FENCE
-               .method11579()
+               .getDefaultState()
                .with(Class3239.field18682, Boolean.valueOf(true))
                .with(Class3239.field18681, Boolean.valueOf(true)),
             3,
@@ -129,7 +129,7 @@ public class Class4202 extends Class4194 {
          this.method12923(
             var1,
             Blocks.OAK_FENCE
-               .method11579()
+               .getDefaultState()
                .with(Class3239.field18680, Boolean.valueOf(true))
                .with(Class3239.field18683, Boolean.valueOf(true)),
             10,
@@ -142,7 +142,7 @@ public class Class4202 extends Class4194 {
             this.method12923(
                var1,
                Blocks.OAK_FENCE
-                  .method11579()
+                  .getDefaultState()
                   .with(Class3239.field18682, Boolean.valueOf(true))
                   .with(Class3239.field18683, Boolean.valueOf(true)),
                8 + var15,
@@ -154,7 +154,7 @@ public class Class4202 extends Class4194 {
                this.method12923(
                   var1,
                   Blocks.OAK_FENCE
-                     .method11579()
+                     .getDefaultState()
                      .with(Class3239.field18680, Boolean.valueOf(true))
                      .with(Class3239.field18681, Boolean.valueOf(true)),
                   8 + var15,
@@ -165,7 +165,7 @@ public class Class4202 extends Class4194 {
             }
          }
 
-         BlockState var24 = Blocks.LADDER.method11579().with(Class3423.field19154, Direction.SOUTH);
+         BlockState var24 = Blocks.LADDER.getDefaultState().with(Class3423.field19154, Direction.SOUTH);
          this.method12923(var1, var24, 10, 1, 13, var5);
          this.method12923(var1, var24, 10, 2, 13, var5);
          this.method12923(var1, var24, 10, 3, 13, var5);
@@ -175,9 +175,9 @@ public class Class4202 extends Class4194 {
          this.method12923(var1, var24, 10, 7, 13, var5);
          byte var16 = 7;
          byte var17 = 7;
-         BlockState var18 = Blocks.OAK_FENCE.method11579().with(Class3239.field18681, Boolean.valueOf(true));
+         BlockState var18 = Blocks.OAK_FENCE.getDefaultState().with(Class3239.field18681, Boolean.valueOf(true));
          this.method12923(var1, var18, 6, 9, 7, var5);
-         BlockState var19 = Blocks.OAK_FENCE.method11579().with(Class3239.field18683, Boolean.valueOf(true));
+         BlockState var19 = Blocks.OAK_FENCE.getDefaultState().with(Class3239.field18683, Boolean.valueOf(true));
          this.method12923(var1, var19, 7, 9, 7, var5);
          this.method12923(var1, var18, 6, 8, 7, var5);
          this.method12923(var1, var19, 7, 8, 7, var5);
@@ -190,7 +190,7 @@ public class Class4202 extends Class4194 {
          this.method12923(var1, var18.with(Class3239.field18682, Boolean.valueOf(true)), 6, 7, 8, var5);
          this.method12923(var1, var19.with(Class3239.field18680, Boolean.valueOf(true)), 7, 7, 6, var5);
          this.method12923(var1, var19.with(Class3239.field18682, Boolean.valueOf(true)), 7, 7, 8, var5);
-         BlockState var21 = Blocks.TORCH.method11579();
+         BlockState var21 = Blocks.TORCH.getDefaultState();
          this.method12923(var1, var21, 5, 8, 7, var5);
          this.method12923(var1, var21, 8, 8, 7, var5);
          this.method12923(var1, var21, 6, 8, 6, var5);

@@ -5,6 +5,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.vector.Matrix3f;
 
 public class Class233<T extends LivingEntity, M extends PlayerModel<T>> extends Class231<T, M> {
    private static final ResourceLocation field879 = new ResourceLocation("textures/entity/bee/bee_stinger.png");
@@ -40,7 +41,7 @@ public class Class233<T extends LivingEntity, M extends PlayerModel<T>> extends 
          var1.rotate(Vector3f.XP.rotationDegrees(90.0F));
          Class8892 var21 = var1.getLast();
          Matrix4f var22 = var21.getMatrix();
-         Class8967 var23 = var21.method32362();
+         Matrix3f var23 = var21.method32362();
          method837(var19, var22, var23, -4.5F, -1, 0.0F, 0.0F, var3);
          method837(var19, var22, var23, 4.5F, -1, 0.125F, 0.0F, var3);
          method837(var19, var22, var23, 4.5F, 1, 0.125F, 0.0625F, var3);
@@ -48,7 +49,7 @@ public class Class233<T extends LivingEntity, M extends PlayerModel<T>> extends 
       }
    }
 
-   private static void method837(IVertexBuilder var0, Matrix4f var1, Class8967 var2, float var3, int var4, float var5, float var6, int var7) {
+   private static void method837(IVertexBuilder var0, Matrix4f var1, Matrix3f var2, float var3, int var4, float var5, float var6, int var7) {
       var0.pos(var1, var3, (float)var4, 0.0F)
          .color(255, 255, 255, 255)
          .tex(var5, var6)

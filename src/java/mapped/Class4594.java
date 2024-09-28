@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.fluid.Fluid;
+import net.minecraft.fluid.FluidState;
 import net.minecraft.util.math.BlockPos;
 
 public class Class4594 extends Class4566 {
@@ -41,7 +42,7 @@ public class Class4594 extends Class4566 {
             this.field22046 *= 0.98F;
             BlockPos var3 = new BlockPos(this.field22041, this.field22042, this.field22043);
             FluidState var4 = this.field22037.getFluidState(var3);
-            if (var4.method23472() == this.field22087 && this.field22042 < (double)((float)var3.getY() + var4.method23475(this.field22037, var3))) {
+            if (var4.getFluid() == this.field22087 && this.field22042 < (double)((float)var3.getY() + var4.method23475(this.field22037, var3))) {
                this.method14518();
             }
          }

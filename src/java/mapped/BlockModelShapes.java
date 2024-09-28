@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Maps;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.state.Property;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 
@@ -53,7 +54,7 @@ public class BlockModelShapes {
       return new Class1997(var0, method38158(var1.method23468()));
    }
 
-   public static String method38158(Map<Class8550<?>, Comparable<?>> var0) {
+   public static String method38158(Map<Property<?>, Comparable<?>> var0) {
       StringBuilder var3 = new StringBuilder();
 
       for (Entry var5 : var0.entrySet()) {
@@ -61,7 +62,7 @@ public class BlockModelShapes {
             var3.append(',');
          }
 
-         Class8550 var6 = (Class8550)var5.getKey();
+         Property var6 = (Property)var5.getKey();
          var3.append(var6.method30472());
          var3.append('=');
          var3.append(method38159(var6, (Comparable<?>)var5.getValue()));
@@ -70,7 +71,7 @@ public class BlockModelShapes {
       return var3.toString();
    }
 
-   private static <T extends Comparable<T>> String method38159(Class8550<T> var0, Comparable<?> var1) {
+   private static <T extends Comparable<T>> String method38159(Property<T> var0, Comparable<?> var1) {
       return var0.method30475((T)var1);
    }
 }

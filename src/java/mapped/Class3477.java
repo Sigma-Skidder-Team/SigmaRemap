@@ -4,6 +4,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalBlock;
 import net.minecraft.block.material.PushReaction;
+import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.state.StateContainer;
 
 public class Class3477 extends HorizontalBlock {
    private static String[] field19330;
@@ -13,13 +15,13 @@ public class Class3477 extends HorizontalBlock {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(HORIZONTAL_FACING);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(HORIZONTAL_FACING);
    }
 
    @Override
-   public BlockState method11495(Class5909 var1) {
-      return this.method11579().with(HORIZONTAL_FACING, var1.method18350().getOpposite());
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      return this.getDefaultState().with(HORIZONTAL_FACING, var1.getPlacementHorizontalFacing().getOpposite());
    }
 
    @Override

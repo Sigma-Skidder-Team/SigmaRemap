@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
@@ -9,7 +10,7 @@ import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 
-public class Class5910 extends Class5909 {
+public class Class5910 extends BlockItemUseContext {
    private static String[] field25716;
    private final Direction field25719;
 
@@ -19,13 +20,13 @@ public class Class5910 extends Class5909 {
    }
 
    @Override
-   public BlockPos method18345() {
+   public BlockPos getPos() {
       return this.method18353().getPos();
    }
 
    @Override
    public boolean method18346() {
-      return this.method18360().getBlockState(this.method18353().getPos()).method23441(this);
+      return this.getWorld().getBlockState(this.method18353().getPos()).method23441(this);
    }
 
    @Override
@@ -58,7 +59,7 @@ public class Class5910 extends Class5909 {
    }
 
    @Override
-   public Direction method18350() {
+   public Direction getPlacementHorizontalFacing() {
       return this.field25719.getAxis() != Direction.Axis.Y ? this.field25719 : Direction.NORTH;
    }
 
@@ -69,6 +70,6 @@ public class Class5910 extends Class5909 {
 
    @Override
    public float method18352() {
-      return (float)(this.field25719.method534() * 90);
+      return (float)(this.field25719.getHorizontalIndex() * 90);
    }
 }

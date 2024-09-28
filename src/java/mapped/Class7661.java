@@ -31,7 +31,7 @@ public abstract class Class7661 extends Class7665 {
       Class7909 var10 = this.method25183(var5);
       if (var10 != null) {
          ((Class4733)var10.field33887).method14849();
-         BlockState var11 = Blocks.AIR.method11579();
+         BlockState var11 = Blocks.AIR.getDefaultState();
          var1.setBlockState(var3.method8336(var6, 0, var7), var11, 4);
          var1.setBlockState(var3.method8336(var6 + 1, 0, var7), var11, 4);
          var1.setBlockState(var3.method8336(var6, 0, var7 + 1), var11, 4);

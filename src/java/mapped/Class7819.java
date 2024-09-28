@@ -327,7 +327,7 @@ public class Class7819 {
          this.method26122(true);
          this.method26120();
          if (!this.field33546) {
-            this.field33538.setBlockState(this.field33538.method7006(Heightmap.Type.MOTION_BLOCKING, Class2909.field17994), Blocks.field36652.method11579());
+            this.field33538.setBlockState(this.field33538.method7006(Heightmap.Type.MOTION_BLOCKING, Class2909.field17994), Blocks.field36652.getDefaultState());
          }
 
          this.field33546 = true;
@@ -447,7 +447,7 @@ public class Class7819 {
                   for (int var7 = 0; var7 < this.field33540.method38652(); var7++) {
                      CachedBlockInfo var8 = var4.method33881(var5, var6, var7);
                      if (var8.method37548().isIn(Blocks.BEDROCK) || var8.method37548().isIn(Blocks.field36649)) {
-                        this.field33538.setBlockState(var8.method37551(), Blocks.field36651.method11579());
+                        this.field33538.setBlockState(var8.method37551(), Blocks.field36651.getDefaultState());
                      }
                   }
                }

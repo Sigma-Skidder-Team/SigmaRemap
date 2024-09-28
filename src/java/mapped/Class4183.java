@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
+import net.minecraft.fluid.FluidState;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tileentity.TileEntity;
@@ -70,15 +71,15 @@ public class Class4183 extends Class4180 {
             var8.method4276(var3, var3.method6807(var2), Class2202.field14394, (Class5093)null, (CompoundNBT)null);
             var3.method6995(var8);
             if (var2.getY() <= var3.method6776()) {
-               var3.setBlockState(var2, Blocks.WATER.method11579(), 2);
+               var3.setBlockState(var2, Blocks.WATER.getDefaultState(), 2);
             } else {
-               var3.setBlockState(var2, Blocks.AIR.method11579(), 2);
+               var3.setBlockState(var2, Blocks.AIR.getDefaultState(), 2);
             }
          }
       } else {
          var3.setBlockState(
             var2,
-            Blocks.CHEST.method11579().with(ChestBlock.field18867, Boolean.valueOf(var3.getFluidState(var2).method23486(FluidTags.field40469))),
+            Blocks.CHEST.getDefaultState().with(ChestBlock.field18867, Boolean.valueOf(var3.getFluidState(var2).method23486(FluidTags.field40469))),
             2
          );
          TileEntity var9 = var3.getTileEntity(var2);

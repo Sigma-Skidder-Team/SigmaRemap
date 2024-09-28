@@ -53,9 +53,9 @@ public class Class2944 extends Class2898<Class4707> {
       )) {
          if (var9.method8320((double)var4.method37626(), (double)var9.getY(), (double)var4.method37627(), false) <= (double)(var7 * var7 + 1)
             && var9.getY() < var4.method37629()) {
-            this.method11217(var1, var9, Blocks.field36527.method11579());
+            this.method11217(var1, var9, Blocks.field36527.getDefaultState());
          } else if (var9.getY() > 65) {
-            this.method11217(var1, var9, Blocks.AIR.method11579());
+            this.method11217(var1, var9, Blocks.AIR.getDefaultState());
          }
       }
 
@@ -75,7 +75,7 @@ public class Class2944 extends Class2898<Class4707> {
                      boolean var18 = var12 == -2 || var12 == 2 || var17;
                      boolean var19 = var13 == -2 || var13 == 2 || var17;
                      BlockState var20 = Blocks.IRON_BARS
-                        .method11579()
+                        .getDefaultState()
                         .with(Class3237.field18680, Boolean.valueOf(var18 && var13 != -2))
                         .with(Class3237.field18682, Boolean.valueOf(var18 && var13 != 2))
                         .with(Class3237.field18683, Boolean.valueOf(var19 && var12 != -2))
@@ -92,6 +92,6 @@ public class Class2944 extends Class2898<Class4707> {
       var22.method3363(var3.method14775());
       var22.setLocationAndAngles((double)var4.method37626() + 0.5, (double)(var4.method37629() + 1), (double)var4.method37627() + 0.5, var2.nextFloat() * 360.0F, 0.0F);
       var1.addEntity(var22);
-      this.method11217(var1, new BlockPos(var4.method37626(), var4.method37629(), var4.method37627()), Blocks.BEDROCK.method11579());
+      this.method11217(var1, new BlockPos(var4.method37626(), var4.method37629(), var4.method37627()), Blocks.BEDROCK.getDefaultState());
    }
 }

@@ -628,7 +628,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
       for (int var6 = -2; var6 <= 2; var6++) {
          for (int var7 = -2; var7 <= 2; var7++) {
             for (int var8 = -1; var8 < 3; var8++) {
-               BlockState var9 = var8 != -1 ? Blocks.AIR.method11579() : Blocks.field36527.method11579();
+               BlockState var9 = var8 != -1 ? Blocks.AIR.getDefaultState() : Blocks.field36527.getDefaultState();
                var1.setBlockState(var5.method8374(var2).method8381(var7, var8, var6), var9);
             }
          }
@@ -743,7 +743,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
    }
 
    private boolean method2754(BlockPos var1, Direction var2) {
-      return this.method2755(var1) || this.method2755(var1.method8349(var2.getOpposite()));
+      return this.method2755(var1) || this.method2755(var1.offset(var2.getOpposite()));
    }
 
    private boolean method2755(BlockPos var1) {
@@ -755,7 +755,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
 
    private boolean method2756(BlockPos var1, Direction var2) {
       BlockPos var5 = var1.up();
-      return !this.method2917(var5) || !this.method2917(var5.method8349(var2.getOpposite()));
+      return !this.method2917(var5) || !this.method2917(var5.offset(var2.getOpposite()));
    }
 
    @Override

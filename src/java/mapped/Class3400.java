@@ -1,12 +1,15 @@
 package mapped;
 
 import net.minecraft.block.HorizontalBlock;
+import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.DirectionProperty;
 import com.google.common.base.Predicates;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.CachedBlockInfo;
 import net.minecraft.util.Mirror;
@@ -27,22 +30,22 @@ public class Class3400 extends Block {
 
    public Class3400(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().with(field19053, Direction.NORTH).with(field19054, Boolean.valueOf(false)));
+      this.setDefaultState(this.stateContainer.getBaseState().with(field19053, Direction.NORTH).with(field19054, Boolean.valueOf(false)));
    }
 
    @Override
-   public boolean method11534(BlockState var1) {
+   public boolean isTransparent(BlockState var1) {
       return true;
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return !var1.<Boolean>get(field19054) ? field19055 : field19057;
    }
 
    @Override
-   public BlockState method11495(Class5909 var1) {
-      return this.method11579().with(field19053, var1.method18350().getOpposite()).with(field19054, Boolean.valueOf(false));
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      return this.getDefaultState().with(field19053, var1.getPlacementHorizontalFacing().getOpposite()).with(field19054, Boolean.valueOf(false));
    }
 
    @Override
@@ -66,8 +69,8 @@ public class Class3400 extends Block {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field19053, field19054);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field19053, field19054);
    }
 
    public static Class9803 method12029() {
@@ -114,7 +117,7 @@ public class Class3400 extends Block {
    }
 
    @Override
-   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
+   public boolean allowsMovement(BlockState var1, IBlockReader var2, BlockPos var3, PathType var4) {
       return false;
    }
 }

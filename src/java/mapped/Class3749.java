@@ -98,19 +98,19 @@ public class Class3749 extends Class3676<Class1042> {
                         if (var12.getItem() != Items.field38053) {
                            if (var12.getItem() != Items.field38052) {
                               if (var12.getItem() == Items.field38112) {
-                                 var1.setBlockState(this.field19897, Blocks.field36884.method11579(), 3);
+                                 var1.setBlockState(this.field19897, Blocks.field36884.getDefaultState(), 3);
                                  var13 = true;
                               }
                            } else {
-                              var1.setBlockState(this.field19897, Blocks.field36693.method11579(), 3);
+                              var1.setBlockState(this.field19897, Blocks.field36693.getDefaultState(), 3);
                               var13 = true;
                            }
                         } else {
-                           var1.setBlockState(this.field19897, Blocks.field36694.method11579(), 3);
+                           var1.setBlockState(this.field19897, Blocks.field36694.getDefaultState(), 3);
                            var13 = true;
                         }
                      } else {
-                        var1.setBlockState(this.field19897, Blocks.field36539.method11579(), 3);
+                        var1.setBlockState(this.field19897, Blocks.field36539.getDefaultState(), 3);
                         var13 = true;
                      }
                   }

@@ -11,9 +11,9 @@ import net.minecraft.world.chunk.IChunk;
 import java.util.Random;
 
 public class Class6774 extends Class6773 {
-   private static final BlockState field29495 = Blocks.field36730.method11579();
-   private static final BlockState field29549 = Blocks.field36731.method11579();
-   private static final BlockState field29550 = Blocks.field36794.method11579();
+   private static final BlockState field29495 = Blocks.field36730.getDefaultState();
+   private static final BlockState field29549 = Blocks.field36731.getDefaultState();
+   private static final BlockState field29550 = Blocks.field36794.getDefaultState();
 
    public Class6774(Codec<Class8278> var1) {
       super(var1);
@@ -87,7 +87,7 @@ public class Class6774 extends Class6773 {
                         var27 = var25;
                      }
                   } else {
-                     var23 = Blocks.AIR.method11579();
+                     var23 = Blocks.AIR.getDefaultState();
                      var27 = var9;
                   }
 

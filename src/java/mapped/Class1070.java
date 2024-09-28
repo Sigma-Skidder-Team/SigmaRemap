@@ -24,6 +24,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -52,7 +53,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
       this.method4224(Class2163.field14196, 0.0F);
    }
 
-   public static boolean method4976(EntityType<Class1070> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method4976(EntityType<Class1070> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
       BlockPos.Mutable var7 = var3.method8354();
 
       do {

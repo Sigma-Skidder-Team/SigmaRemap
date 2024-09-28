@@ -8,6 +8,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
@@ -24,15 +25,15 @@ public class Class3381 extends Block {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return field18983;
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       return var2 == Direction.DOWN && !this.method11492(var1, var4, var5)
-         ? Blocks.AIR.method11579()
-         : super.method11491(var1, var2, var3, var4, var5, var6);
+         ? Blocks.AIR.getDefaultState()
+         : super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
    }
 
    @Override
@@ -41,7 +42,7 @@ public class Class3381 extends Block {
    }
 
    @Override
-   public void method11512(BlockState var1, World var2, BlockPos var3, Random var4) {
+   public void animateTick(BlockState var1, World var2, BlockPos var3, Random var4) {
       double var7 = (double)var3.getX() + 0.5;
       double var9 = (double)var3.getY() + 0.7;
       double var11 = (double)var3.getZ() + 0.5;

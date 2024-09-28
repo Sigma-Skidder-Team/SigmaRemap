@@ -5,6 +5,7 @@ import java.util.Objects;
 import javax.annotation.Nullable;
 
 import net.minecraft.client.util.Util;
+import net.minecraft.util.math.vector.Matrix3f;
 import net.minecraft.util.math.vector.Quaternion;
 import org.apache.commons.lang3.tuple.Triple;
 
@@ -64,7 +65,7 @@ public final class Class6979 {
    private void method21545() {
       if (!this.field30195) {
          Pair var3 = method21547(this.field30194);
-         Triple var4 = ((Class8967)var3.getFirst()).method32822();
+         Triple var4 = ((Matrix3f)var3.getFirst()).method32822();
          this.field30196 = (Vector3f)var3.getSecond();
          this.field30197 = (Quaternion)var4.getLeft();
          this.field30198 = (Vector3f)var4.getMiddle();
@@ -97,10 +98,10 @@ public final class Class6979 {
       return var6;
    }
 
-   public static Pair<Class8967, Vector3f> method21547(Matrix4f var0) {
+   public static Pair<Matrix3f, Vector3f> method21547(Matrix4f var0) {
       var0.method35510(1.0F / var0.field43486);
       Vector3f var3 = new Vector3f(var0.field43474, var0.field43478, var0.field43482);
-      Class8967 var4 = new Class8967(var0);
+      Matrix3f var4 = new Matrix3f(var0);
       return Pair.of(var4, var3);
    }
 

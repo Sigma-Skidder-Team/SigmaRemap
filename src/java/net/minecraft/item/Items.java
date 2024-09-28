@@ -4,6 +4,7 @@ import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvents;
@@ -842,13 +843,13 @@ public class Items {
       "warped_sign", new Class3300(new Item.Properties().method17775(16).method17779(ItemGroup.field31666), Blocks.field37110, Blocks.field37112)
    );
    public static final Item BUCKET = method30157(
-      "bucket", new Class3287(Class9479.field44064, new Item.Properties().method17775(16).method17779(ItemGroup.field31669))
+      "bucket", new Class3287(Fluids.EMPTY, new Item.Properties().method17775(16).method17779(ItemGroup.field31669))
    );
    public static final Item WATER_BUCKET = method30157(
-      "water_bucket", new Class3287(Class9479.field44066, new Item.Properties().method17778(BUCKET).method17775(1).method17779(ItemGroup.field31669))
+      "water_bucket", new Class3287(Fluids.WATER, new Item.Properties().method17778(BUCKET).method17775(1).method17779(ItemGroup.field31669))
    );
    public static final Item LAVA_BUCKET = method30157(
-      "lava_bucket", new Class3287(Class9479.field44068, new Item.Properties().method17778(BUCKET).method17775(1).method17779(ItemGroup.field31669))
+      "lava_bucket", new Class3287(Fluids.LAVA, new Item.Properties().method17778(BUCKET).method17775(1).method17779(ItemGroup.field31669))
    );
    public static final Item MINECART = method30157(
       "minecart", new Class3282(MinecartType.MINECART, new Item.Properties().method17775(1).method17779(ItemGroup.field31668))
@@ -864,16 +865,16 @@ public class Items {
       "milk_bucket", new Class3274(new Item.Properties().method17778(BUCKET).method17775(1).method17779(ItemGroup.field31669))
    );
    public static final Item field37892 = method30157(
-      "pufferfish_bucket", new Class3288(EntityType.field41070, Class9479.field44066, new Item.Properties().method17775(1).method17779(ItemGroup.field31669))
+      "pufferfish_bucket", new Class3288(EntityType.field41070, Fluids.WATER, new Item.Properties().method17775(1).method17779(ItemGroup.field31669))
    );
    public static final Item SALMON_BUCKET = method30157(
-      "salmon_bucket", new Class3288(EntityType.field41073, Class9479.field44066, new Item.Properties().method17775(1).method17779(ItemGroup.field31669))
+      "salmon_bucket", new Class3288(EntityType.field41073, Fluids.WATER, new Item.Properties().method17775(1).method17779(ItemGroup.field31669))
    );
    public static final Item field37894 = method30157(
-      "cod_bucket", new Class3288(EntityType.field41015, Class9479.field44066, new Item.Properties().method17775(1).method17779(ItemGroup.field31669))
+      "cod_bucket", new Class3288(EntityType.field41015, Fluids.WATER, new Item.Properties().method17775(1).method17779(ItemGroup.field31669))
    );
    public static final Item field37895 = method30157(
-      "tropical_fish_bucket", new Class3288(EntityType.field41095, Class9479.field44066, new Item.Properties().method17775(1).method17779(ItemGroup.field31669))
+      "tropical_fish_bucket", new Class3288(EntityType.field41095, Fluids.WATER, new Item.Properties().method17775(1).method17779(ItemGroup.field31669))
    );
    public static final Item field37896 = method30157("brick", new Item(new Item.Properties().method17779(ItemGroup.field31675)));
    public static final Item field37897 = method30157("clay_ball", new Item(new Item.Properties().method17779(ItemGroup.field31675)));

@@ -25,7 +25,7 @@ public class Class2906 extends Class2898<Class4712> {
          if (var1.method7007(var8)) {
             for (Direction var13 : field17990) {
                if (var13 != Direction.DOWN && Class3402.method12034(var1, var8, var13)) {
-                  var1.setBlockState(var8, Blocks.VINE.method11579().with(Class3402.method12039(var13), Boolean.valueOf(true)), 2);
+                  var1.setBlockState(var8, Blocks.VINE.getDefaultState().with(Class3402.method12039(var13), Boolean.valueOf(true)), 2);
                   break;
                }
             }

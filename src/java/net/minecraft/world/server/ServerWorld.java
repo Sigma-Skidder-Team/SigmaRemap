@@ -23,6 +23,8 @@ import net.minecraft.entity.passive.WaterMobEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.fluid.Fluid;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.server.*;
 import net.minecraft.particles.IParticleData;
@@ -79,10 +81,10 @@ public class ServerWorld extends World implements ISeedReader {
    private int field9049;
    private final Class3634 field9050;
    private final Class6805<Block> field9051 = new Class6805<Block>(
-      this, var0 -> var0 == null || var0.method11579().isAir(), Registry.BLOCK::getKey, this::method6906
+      this, var0 -> var0 == null || var0.getDefaultState().isAir(), Registry.BLOCK::getKey, this::method6906
    );
    private final Class6805<Fluid> field9052 = new Class6805<Fluid>(
-      this, var0 -> var0 == null || var0 == Class9479.field44064, Registry.field16070::getKey, this::method6905
+      this, var0 -> var0 == null || var0 == Fluids.EMPTY, Registry.FLUID::getKey, this::method6905
    );
    private final Set<Class6990> field9053 = Sets.newHashSet();
    public final Class7531 field9054;
@@ -399,11 +401,11 @@ public class ServerWorld extends World implements ISeedReader {
          BlockPos var21 = var19.down();
          Biome var23 = this.getBiome(var19);
          if (var23.method32504(this, var21)) {
-            this.setBlockState(var21, Blocks.ICE.method11579());
+            this.setBlockState(var21, Blocks.ICE.getDefaultState());
          }
 
          if (var6 && var23.method32506(this, var19)) {
-            this.setBlockState(var19, Blocks.SNOW.method11579());
+            this.setBlockState(var19, Blocks.SNOW.getDefaultState());
          }
 
          if (var6 && this.getBiome(var21).method32500() == Class87.field224) {
@@ -495,7 +497,7 @@ public class ServerWorld extends World implements ISeedReader {
 
    private void method6905(Class8269<Fluid> var1) {
       FluidState var4 = this.getFluidState(var1.field35556);
-      if (var4.method23472() == var1.method28874()) {
+      if (var4.getFluid() == var1.method28874()) {
          var4.method23479(this, var1.field35556);
       }
    }
@@ -1013,7 +1015,7 @@ public class ServerWorld extends World implements ISeedReader {
       return this.field9051;
    }
 
-   public Class6805<Fluid> method6861() {
+   public Class6805<Fluid> getPendingFluidTicks() {
       return this.field9052;
    }
 
@@ -1255,7 +1257,7 @@ public class ServerWorld extends World implements ISeedReader {
          var5.write(String.format("entities: %d\n", this.field9039.size()));
          var5.write(String.format("block_entities: %d\n", this.loadedTileEntityList.size()));
          var5.write(String.format("block_ticks: %d\n", this.method6860().method20736()));
-         var5.write(String.format("fluid_ticks: %d\n", this.method6861().method20736()));
+         var5.write(String.format("fluid_ticks: %d\n", this.getPendingFluidTicks().method20736()));
          var5.write("distance_manager: " + var4.method6566().method35140() + "\n");
          var5.write(String.format("pending_tasks: %d\n", this.getChunkProvider().method7369()));
       }
@@ -1383,7 +1385,7 @@ public class ServerWorld extends World implements ISeedReader {
          this.tickableTileEntities.size(),
          method6972(this.tickableTileEntities, var0 -> Registry.field16078.getKey(var0.method3786())),
          this.method6860().method20736(),
-         this.method6861().method20736(),
+         this.getPendingFluidTicks().method20736(),
          this.getProviderName()
       );
    }
@@ -1411,7 +1413,7 @@ public class ServerWorld extends World implements ISeedReader {
       int var5 = var3.getY() - 2;
       int var6 = var3.getZ();
       BlockPos.method8364(var4 - 2, var5 + 1, var6 - 2, var4 + 2, var5 + 3, var6 + 2)
-         .forEach(var1 -> var0.setBlockState(var1, Blocks.AIR.method11579()));
-      BlockPos.method8364(var4 - 2, var5, var6 - 2, var4 + 2, var5, var6 + 2).forEach(var1 -> var0.setBlockState(var1, Blocks.field36527.method11579()));
+         .forEach(var1 -> var0.setBlockState(var1, Blocks.AIR.getDefaultState()));
+      BlockPos.method8364(var4 - 2, var5, var6 - 2, var4 + 2, var5, var6 + 2).forEach(var1 -> var0.setBlockState(var1, Blocks.field36527.getDefaultState()));
    }
 }

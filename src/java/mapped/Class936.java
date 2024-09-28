@@ -286,7 +286,7 @@ public class Class936 extends Class939 implements Class937, ITickableTileEntity 
    @Nullable
    private IInventory method3712() {
       Direction var3 = this.getBlockState().<Direction>get(Class3362.field18913);
-      return method3715(this.method3734(), this.pos.method8349(var3));
+      return method3715(this.method3734(), this.pos.offset(var3));
    }
 
    @Nullable

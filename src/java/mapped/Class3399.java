@@ -7,13 +7,16 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -47,9 +50,9 @@ public class Class3399 extends AbstractFireBlock {
 
    public Class3399(Properties var1) {
       super(var1, 1.0F);
-      this.method11578(
-         this.field18612
-            .method35393()
+      this.setDefaultState(
+         this.stateContainer
+            .getBaseState()
             .with(field19038, Integer.valueOf(0))
             .with(field19039, Boolean.valueOf(false))
             .with(field19040, Boolean.valueOf(false))
@@ -58,7 +61,7 @@ public class Class3399 extends AbstractFireBlock {
             .with(field19043, Boolean.valueOf(false))
       );
       this.field19050 = ImmutableMap.copyOf(
-         this.field18612
+         this.stateContainer
             .getValidStates()
             .stream()
             .filter(var0 -> var0.<Integer>get(field19038) == 0)
@@ -92,36 +95,36 @@ public class Class3399 extends AbstractFireBlock {
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
-      return !this.method11492(var1, var4, var5) ? Blocks.AIR.method11579() : this.method12021(var4, var5, var1.<Integer>get(field19038));
+   public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
+      return !this.method11492(var1, var4, var5) ? Blocks.AIR.getDefaultState() : this.method12021(var4, var5, var1.<Integer>get(field19038));
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return this.field19050.get(var1.with(field19038, Integer.valueOf(0)));
    }
 
    @Override
-   public BlockState method11495(Class5909 var1) {
-      return this.method12016(var1.method18360(), var1.method18345());
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      return this.method12016(var1.getWorld(), var1.getPos());
    }
 
    public BlockState method12016(IBlockReader var1, BlockPos var2) {
       BlockPos var5 = var2.down();
       BlockState var6 = var1.getBlockState(var5);
       if (!this.method12010(var6) && !var6.method23454(var1, var5, Direction.UP)) {
-         BlockState var7 = this.method11579();
+         BlockState var7 = this.getDefaultState();
 
          for (Direction var11 : Direction.values()) {
             BooleanProperty var12 = field19044.get(var11);
             if (var12 != null) {
-               var7 = var7.with(var12, Boolean.valueOf(this.method12010(var1.getBlockState(var2.method8349(var11)))));
+               var7 = var7.with(var12, Boolean.valueOf(this.method12010(var1.getBlockState(var2.offset(var11)))));
             }
          }
 
          return var7;
       } else {
-         return this.method11579();
+         return this.getDefaultState();
       }
    }
 
@@ -132,8 +135,8 @@ public class Class3399 extends AbstractFireBlock {
    }
 
    @Override
-   public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
-      var2.method6860().method20726(var3, this, method12024(var2.rand));
+   public void tick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+      var2.method6860().scheduleTick(var3, this, method12024(var2.rand));
       if (var2.getGameRules().getBoolean(Class5462.field24223)) {
          if (!var1.method23443(var2, var3)) {
             var2.removeBlock(var3, false);
@@ -216,11 +219,11 @@ public class Class3399 extends AbstractFireBlock {
    }
 
    private int method12018(BlockState var1) {
-      return var1.method23462(BlockStateProperties.field39710) && var1.<Boolean>get(BlockStateProperties.field39710) ? 0 : this.field19052.getInt(var1.getBlock());
+      return var1.method23462(BlockStateProperties.WATERLOGGED) && var1.<Boolean>get(BlockStateProperties.WATERLOGGED) ? 0 : this.field19052.getInt(var1.getBlock());
    }
 
    private int method12019(BlockState var1) {
-      return var1.method23462(BlockStateProperties.field39710) && var1.<Boolean>get(BlockStateProperties.field39710) ? 0 : this.field19051.getInt(var1.getBlock());
+      return var1.method23462(BlockStateProperties.WATERLOGGED) && var1.<Boolean>get(BlockStateProperties.WATERLOGGED) ? 0 : this.field19051.getInt(var1.getBlock());
    }
 
    private void method12020(World var1, BlockPos var2, int var3, Random var4, int var5) {
@@ -242,14 +245,14 @@ public class Class3399 extends AbstractFireBlock {
       }
    }
 
-   private BlockState method12021(Class1660 var1, BlockPos var2, int var3) {
+   private BlockState method12021(IWorld var1, BlockPos var2, int var3) {
       BlockState var6 = method12009(var1, var2);
       return !var6.isIn(Blocks.FIRE) ? var6 : var6.with(field19038, Integer.valueOf(var3));
    }
 
    private boolean method12022(IBlockReader var1, BlockPos var2) {
       for (Direction var8 : Direction.values()) {
-         if (this.method12010(var1.getBlockState(var2.method8349(var8)))) {
+         if (this.method12010(var1.getBlockState(var2.offset(var8)))) {
             return true;
          }
       }
@@ -264,7 +267,7 @@ public class Class3399 extends AbstractFireBlock {
          int var5 = 0;
 
          for (Direction var9 : Direction.values()) {
-            BlockState var10 = var1.getBlockState(var2.method8349(var9));
+            BlockState var10 = var1.getBlockState(var2.offset(var9));
             var5 = Math.max(this.method12019(var10), var5);
          }
 
@@ -278,9 +281,9 @@ public class Class3399 extends AbstractFireBlock {
    }
 
    @Override
-   public void method11589(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
-      super.method11589(var1, var2, var3, var4, var5);
-      var2.method6860().method20726(var3, this, method12024(var2.rand));
+   public void onBlockAdded(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+      super.onBlockAdded(var1, var2, var3, var4, var5);
+      var2.method6860().scheduleTick(var3, this, method12024(var2.rand));
    }
 
    private static int method12024(Random var0) {
@@ -288,8 +291,8 @@ public class Class3399 extends AbstractFireBlock {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field19038, field19039, field19040, field19041, field19042, field19043);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field19038, field19039, field19040, field19041, field19042, field19043);
    }
 
    private void method12025(Block var1, int var2, int var3) {

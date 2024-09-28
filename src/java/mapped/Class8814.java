@@ -30,7 +30,7 @@ public class Class8814 {
    ) {
       Structure.method11365();
       MutableRegistry var12 = var0.<Class9369>getRegistry(Registry.field16105);
-      Rotation var13 = Rotation.method254(var7);
+      Rotation var13 = Rotation.randomRotation(var7);
       Class9369 var14 = var1.method14743().get();
       Class7487 var15 = var14.method35535(var7);
       Class4193 var16 = var2.method21640(var4, var15, var5, var15.method24383(), var13, var15.method24375(var4, var5, var13));

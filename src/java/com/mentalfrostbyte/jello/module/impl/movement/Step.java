@@ -11,6 +11,8 @@ import com.mentalfrostbyte.jello.module.impl.movement.step.SpiderStep;
 import com.mentalfrostbyte.jello.module.impl.movement.step.VanillaStep;
 import mapped.*;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.SlabBlock;
+import net.minecraft.block.StairsBlock;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -78,14 +80,14 @@ public class Step extends ModuleWithModuleSettings {
         if (!mc.player.isInWater() && !mc.player.isInLava()) {
             if (var15 != null) {
                 if (!mc.player.onGround) {
-                    if (var15.getBlock() instanceof Class3208) {
+                    if (var15.getBlock() instanceof SlabBlock) {
                         VoxelShape var24 = var15.method23412(mc.world, var16);
                         if (var24.getBoundingBox().maxY == 1.0) {
                             return Class2131.field13904;
                         }
                     }
 
-                    if (var15.getBlock() instanceof Class3421) {
+                    if (var15.getBlock() instanceof StairsBlock) {
                         return Class2131.field13905;
                     }
 
@@ -93,8 +95,8 @@ public class Step extends ModuleWithModuleSettings {
                 }
 
                 if (var10 != var1.getHeight() && var10 < 0.5) {
-                    if (!(var15.getBlock() instanceof Class3208)) {
-                        if (var15.getBlock() instanceof Class3421) {
+                    if (!(var15.getBlock() instanceof SlabBlock)) {
+                        if (var15.getBlock() instanceof StairsBlock) {
                             return Class2131.field13905;
                         }
                     } else {

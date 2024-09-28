@@ -28,7 +28,7 @@ public class Class5740 extends EntityRenderer<Class1004> {
       var4.rotate(Vector3f.YP.rotationDegrees(-90.0F));
       var4.translate(-0.5, -0.5, 0.5);
       var4.rotate(Vector3f.YP.rotationDegrees(90.0F));
-      Class5733.method17916(Blocks.TNT.method11579(), var4, var5, var6, var1.method4184() / 5 % 2 == 0);
+      Class5733.method17916(Blocks.TNT.getDefaultState(), var4, var5, var6, var1.method4184() / 5 % 2 == 0);
       var4.pop();
       super.render(var1, var2, var3, var4, var5, var6);
    }

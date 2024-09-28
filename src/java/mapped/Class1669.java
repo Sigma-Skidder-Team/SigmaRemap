@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.fluid.FluidState;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
@@ -25,7 +26,7 @@ public final class Class1669 implements IBlockReader {
    @Override
    public BlockState getBlockState(BlockPos var1) {
       int var4 = var1.getY();
-      return var4 >= 0 && var4 < this.field9087.length ? this.field9087[var4] : Blocks.AIR.method11579();
+      return var4 >= 0 && var4 < this.field9087.length ? this.field9087[var4] : Blocks.AIR.getDefaultState();
    }
 
    @Override

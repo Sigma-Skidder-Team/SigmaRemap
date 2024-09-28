@@ -43,24 +43,24 @@ public class Class4171 extends Class4167 {
       for (int var11 = 0; var11 <= 4; var11++) {
          for (int var12 = 3; var12 <= 4; var12++) {
             int var13 = var10.nextInt(8);
-            this.method12927(var1, var5, var11, var12, 0, var11, var12, var13, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
+            this.method12927(var1, var5, var11, var12, 0, var11, var12, var13, Blocks.NETHER_BRICKS.getDefaultState(), Blocks.NETHER_BRICKS.getDefaultState(), false);
          }
       }
 
       int var15 = var10.nextInt(8);
-      this.method12927(var1, var5, 0, 5, 0, 0, 5, var15, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
+      this.method12927(var1, var5, 0, 5, 0, 0, 5, var15, Blocks.NETHER_BRICKS.getDefaultState(), Blocks.NETHER_BRICKS.getDefaultState(), false);
       var15 = var10.nextInt(8);
-      this.method12927(var1, var5, 4, 5, 0, 4, 5, var15, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
+      this.method12927(var1, var5, 4, 5, 0, 4, 5, var15, Blocks.NETHER_BRICKS.getDefaultState(), Blocks.NETHER_BRICKS.getDefaultState(), false);
 
       for (int var17 = 0; var17 <= 4; var17++) {
          int var19 = var10.nextInt(5);
-         this.method12927(var1, var5, var17, 2, 0, var17, 2, var19, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
+         this.method12927(var1, var5, var17, 2, 0, var17, 2, var19, Blocks.NETHER_BRICKS.getDefaultState(), Blocks.NETHER_BRICKS.getDefaultState(), false);
       }
 
       for (int var18 = 0; var18 <= 4; var18++) {
          for (int var20 = 0; var20 <= 1; var20++) {
             int var14 = var10.nextInt(3);
-            this.method12927(var1, var5, var18, var20, 0, var18, var20, var14, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
+            this.method12927(var1, var5, var18, var20, 0, var18, var20, var14, Blocks.NETHER_BRICKS.getDefaultState(), Blocks.NETHER_BRICKS.getDefaultState(), false);
          }
       }
 

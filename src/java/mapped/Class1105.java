@@ -12,6 +12,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
@@ -303,7 +304,7 @@ public class Class1105 extends Class1009 {
       return var1.checkNoEntityCollision(this);
    }
 
-   public static boolean method5311(EntityType<? extends Class1105> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method5311(EntityType<? extends Class1105> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
       return (var4.nextInt(20) == 0 || !var1.method7008(var3))
          && var1.method6997() != Difficulty.field14351
          && (var2 == Class2202.field14393 || var1.getFluidState(var3).method23486(FluidTags.field40469));

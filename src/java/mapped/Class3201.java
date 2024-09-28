@@ -5,6 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.particles.RedstoneParticleData;
 import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.AttachFace;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.ActionResultType;
@@ -15,6 +16,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -33,9 +35,9 @@ public class Class3201 extends Class3200 {
 
    public Class3201(Properties var1) {
       super(var1);
-      this.method11578(
-         this.field18612
-            .method35393()
+      this.setDefaultState(
+         this.stateContainer
+            .getBaseState()
             .with(HORIZONTAL_FACING, Direction.NORTH)
             .with(field18501, Boolean.valueOf(false))
             .with(field18500, AttachFace.field314)
@@ -43,7 +45,7 @@ public class Class3201 extends Class3200 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       switch (Class6596.field29026[var1.<AttachFace>get(field18500).ordinal()]) {
          case 1:
             switch (Class6596.field29024[var1.<Direction>get(HORIZONTAL_FACING).getAxis().ordinal()]) {
@@ -78,7 +80,7 @@ public class Class3201 extends Class3200 {
    }
 
    @Override
-   public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
+   public ActionResultType onBlockActivated(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       if (!var2.isRemote) {
          BlockState var11 = this.method11510(var1, var2, var3);
          float var10 = !var11.<Boolean>get(field18501) ? 0.5F : 0.6F;
@@ -101,7 +103,7 @@ public class Class3201 extends Class3200 {
       return var1;
    }
 
-   private static void method11511(BlockState var0, Class1660 var1, BlockPos var2, float var3) {
+   private static void method11511(BlockState var0, IWorld var1, BlockPos var2, float var3) {
       Direction var6 = var0.<Direction>get(HORIZONTAL_FACING).getOpposite();
       Direction var7 = method11509(var0).getOpposite();
       double var8 = (double)var2.getX() + 0.5 + 0.1 * (double)var6.getXOffset() + 0.2 * (double)var7.getXOffset();
@@ -111,20 +113,20 @@ public class Class3201 extends Class3200 {
    }
 
    @Override
-   public void method11512(BlockState var1, World var2, BlockPos var3, Random var4) {
+   public void animateTick(BlockState var1, World var2, BlockPos var3, Random var4) {
       if (var1.<Boolean>get(field18501) && var4.nextFloat() < 0.25F) {
          method11511(var1, var2, var3, 0.5F);
       }
    }
 
    @Override
-   public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+   public void onReplaced(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       if (!var5 && !var1.isIn(var4.getBlock())) {
          if (var1.<Boolean>get(field18501)) {
             this.method11517(var1, var2, var3);
          }
 
-         super.method11513(var1, var2, var3, var4, var5);
+         super.onReplaced(var1, var2, var3, var4, var5);
       }
    }
 
@@ -145,11 +147,11 @@ public class Class3201 extends Class3200 {
 
    private void method11517(BlockState var1, World var2, BlockPos var3) {
       var2.notifyNeighborsOfStateChange(var3, this);
-      var2.notifyNeighborsOfStateChange(var3.method8349(method11509(var1).getOpposite()), this);
+      var2.notifyNeighborsOfStateChange(var3.offset(method11509(var1).getOpposite()), this);
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field18500, HORIZONTAL_FACING, field18501);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field18500, HORIZONTAL_FACING, field18501);
    }
 }

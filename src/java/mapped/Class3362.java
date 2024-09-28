@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.block.Block;
@@ -9,6 +11,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
@@ -39,11 +42,11 @@ public class Class3362 extends Class3241 {
 
    public Class3362(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().with(field18913, Direction.DOWN).with(field18914, Boolean.valueOf(true)));
+      this.setDefaultState(this.stateContainer.getBaseState().with(field18913, Direction.DOWN).with(field18914, Boolean.valueOf(true)));
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       switch (Class9391.field43583[var1.<Direction>get(field18913).ordinal()]) {
          case 1:
             return field18919;
@@ -79,9 +82,9 @@ public class Class3362 extends Class3241 {
    }
 
    @Override
-   public BlockState method11495(Class5909 var1) {
-      Direction var4 = var1.method18354().getOpposite();
-      return this.method11579()
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      Direction var4 = var1.getFace().getOpposite();
+      return this.getDefaultState()
          .with(field18913, var4.getAxis() != Direction.Axis.Y ? var4 : Direction.DOWN)
          .with(field18914, Boolean.valueOf(true));
    }
@@ -102,14 +105,14 @@ public class Class3362 extends Class3241 {
    }
 
    @Override
-   public void method11589(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+   public void onBlockAdded(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       if (!var4.isIn(var1.getBlock())) {
          this.method11939(var2, var3, var1);
       }
    }
 
    @Override
-   public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
+   public ActionResultType onBlockActivated(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       if (!var2.isRemote) {
          TileEntity var9 = var2.getTileEntity(var3);
          if (var9 instanceof Class936) {
@@ -136,7 +139,7 @@ public class Class3362 extends Class3241 {
    }
 
    @Override
-   public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+   public void onReplaced(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       if (!var1.isIn(var4.getBlock())) {
          TileEntity var8 = var2.getTileEntity(var3);
          if (var8 instanceof Class936) {
@@ -144,7 +147,7 @@ public class Class3362 extends Class3241 {
             var2.updateComparatorOutputLevel(var3, this);
          }
 
-         super.method11513(var1, var2, var3, var4, var5);
+         super.onReplaced(var1, var2, var3, var4, var5);
       }
    }
 
@@ -174,8 +177,8 @@ public class Class3362 extends Class3241 {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field18913, field18914);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field18913, field18914);
    }
 
    @Override
@@ -187,7 +190,7 @@ public class Class3362 extends Class3241 {
    }
 
    @Override
-   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
+   public boolean allowsMovement(BlockState var1, IBlockReader var2, BlockPos var3, PathType var4) {
       return false;
    }
 }

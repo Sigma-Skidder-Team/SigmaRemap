@@ -33,7 +33,7 @@ public class Class964 extends TileEntity {
    private BlockPos field5398 = new BlockPos(0, 1, 0);
    private BlockPos field5399 = BlockPos.ZERO;
    private Mirror field5400 = Mirror.field13614;
-   private Rotation field5401 = Rotation.field185;
+   private Rotation field5401 = Rotation.NONE;
    private StructureMode field5402 = StructureMode.field321;
    private boolean field5403 = true;
    private boolean field5404;
@@ -93,7 +93,7 @@ public class Class964 extends TileEntity {
       try {
          this.field5401 = Rotation.valueOf(var2.getString("rotation"));
       } catch (IllegalArgumentException var14) {
-         this.field5401 = Rotation.field185;
+         this.field5401 = Rotation.NONE;
       }
 
       try {

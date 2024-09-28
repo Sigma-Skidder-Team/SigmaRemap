@@ -81,7 +81,7 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
             return;
          }
 
-         BlockState var6 = Blocks.SNOW.method11579();
+         BlockState var6 = Blocks.SNOW.getDefaultState();
 
          for (int var7 = 0; var7 < 4; var7++) {
             var3 = MathHelper.floor(this.getPosX() + (double)((float)(var7 % 2 * 2 - 1) * 0.25F));

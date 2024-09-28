@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.fluid.Fluid;
+import net.minecraft.fluid.FluidState;
 import net.minecraft.item.Items;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -10,7 +11,7 @@ import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 
-public class Class7632 extends Fluid {
+public class EmptyFluid extends Fluid {
    private static String[] field32711;
 
    @Override
@@ -29,7 +30,7 @@ public class Class7632 extends Fluid {
    }
 
    @Override
-   public int method25057(IWorldReader var1) {
+   public int getTickRate(IWorldReader var1) {
       return 0;
    }
 
@@ -55,7 +56,7 @@ public class Class7632 extends Fluid {
 
    @Override
    public BlockState method25063(FluidState var1) {
-      return Blocks.AIR.method11579();
+      return Blocks.AIR.getDefaultState();
    }
 
    @Override

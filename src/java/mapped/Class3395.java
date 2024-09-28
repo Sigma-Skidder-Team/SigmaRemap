@@ -7,6 +7,7 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -14,6 +15,7 @@ import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -25,7 +27,7 @@ public class Class3395 extends Block {
 
    public Class3395(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().with(field19032, Integer.valueOf(0)));
+      this.setDefaultState(this.stateContainer.getBaseState().with(field19032, Integer.valueOf(0)));
    }
 
    @Override
@@ -39,7 +41,7 @@ public class Class3395 extends Block {
       }
    }
 
-   private static int method12006(Class1660 var0, BlockState var1, BlockRayTraceResult var2, Entity var3) {
+   private static int method12006(IWorld var0, BlockState var1, BlockRayTraceResult var2, Entity var3) {
       int var6 = method12007(var2, var2.getVec());
       int var7 = !(var3 instanceof AbstractArrowEntity) ? 8 : 20;
       if (!var0.method6860().method20718(var2.getPos(), var1.getBlock())) {
@@ -69,13 +71,13 @@ public class Class3395 extends Block {
       return Math.max(1, MathHelper.method37774(15.0 * MathHelper.clamp((0.5 - var12) / 0.5, 0.0, 1.0)));
    }
 
-   private static void method12008(Class1660 var0, BlockState var1, int var2, BlockPos var3, int var4) {
+   private static void method12008(IWorld var0, BlockState var1, int var2, BlockPos var3, int var4) {
       var0.setBlockState(var3, var1.with(field19032, Integer.valueOf(var2)), 3);
-      var0.method6860().method20726(var3, var1.getBlock(), var4);
+      var0.method6860().scheduleTick(var3, var1.getBlock(), var4);
    }
 
    @Override
-   public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void tick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var1.<Integer>get(field19032) != 0) {
          var2.setBlockState(var3, var1.with(field19032, Integer.valueOf(0)), 3);
       }
@@ -92,12 +94,12 @@ public class Class3395 extends Block {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field19032);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field19032);
    }
 
    @Override
-   public void method11589(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+   public void onBlockAdded(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       if (!var2.isRemote()
          && !var1.isIn(var4.getBlock())
          && var1.<Integer>get(field19032) > 0

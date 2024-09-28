@@ -16,6 +16,7 @@ import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -207,7 +208,7 @@ public class Class1114 extends Class1113 {
       var1.method100("BatFlags", this.dataManager.<Byte>method35445(field6093));
    }
 
-   public static boolean method5366(EntityType<Class1114> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method5366(EntityType<Class1114> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
       if (var3.getY() < var1.method6776()) {
          int var7 = var1.method7015(var3);
          int var8 = 4;

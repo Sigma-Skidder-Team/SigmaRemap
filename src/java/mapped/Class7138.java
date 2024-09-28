@@ -38,7 +38,7 @@ public class Class7138 extends Class7139 {
                         BlockPos var11 = var5x.method8336(var10.getXOffset(), 0, var10.getZOffset());
                         if (Class2898.method11221(var1, var11)) {
                            BlockState var12 = Blocks.COCOA
-                              .method11579()
+                              .getDefaultState()
                               .with(Class3197.field18479, Integer.valueOf(var2.nextInt(3)))
                               .with(Class3197.HORIZONTAL_FACING, var9x);
                            this.method22274(var1, var11, var12, var5, var6);

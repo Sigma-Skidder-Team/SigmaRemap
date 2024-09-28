@@ -20,6 +20,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.state.Property;
 import net.minecraft.state.properties.StructureMode;
 import net.minecraft.tileentity.CommandBlockTileEntity;
 import net.minecraft.util.Mirror;
@@ -40,13 +41,13 @@ public class Class7803 {
    public static Rotation method26051(int var0) {
       switch (var0) {
          case 0:
-            return Rotation.field185;
+            return Rotation.NONE;
          case 1:
-            return Rotation.field186;
+            return Rotation.CLOCKWISE_90;
          case 2:
-            return Rotation.field187;
+            return Rotation.CLOCKWISE_180;
          case 3:
-            return Rotation.field188;
+            return Rotation.COUNTERCLOCKWISE_90;
          default:
             throw new IllegalArgumentException("rotationSteps must be a value from 0-3. Got value " + var0);
       }
@@ -68,17 +69,17 @@ public class Class7803 {
 
    public static void method26054(BlockPos var0, BlockPos var1, Rotation var2, ServerWorld var3) {
       BlockPos var6 = Class8969.method32905(var0.method8337(var1), Mirror.field13614, var2, var0);
-      var3.setBlockState(var6, Blocks.COMMAND_BLOCK.method11579());
+      var3.setBlockState(var6, Blocks.COMMAND_BLOCK.getDefaultState());
       CommandBlockTileEntity var7 = (CommandBlockTileEntity)var3.getTileEntity(var6);
       var7.method4009().method3562("test runthis");
       BlockPos var8 = Class8969.method32905(var6.method8336(0, 0, -1), Mirror.field13614, var2, var6);
-      var3.setBlockState(var8, Blocks.STONE_BUTTON.method11579().rotate(var2));
+      var3.setBlockState(var8, Blocks.STONE_BUTTON.getDefaultState().rotate(var2));
    }
 
    public static void method26055(String var0, BlockPos var1, BlockPos var2, Rotation var3, ServerWorld var4) {
       Class9764 var7 = method26059(var1, var2, var3);
       method26058(var7, var1.getY(), var4);
-      var4.setBlockState(var1, Blocks.field37113.method11579());
+      var4.setBlockState(var1, Blocks.field37113.getDefaultState());
       Class964 var8 = (Class964)var4.getTileEntity(var1);
       var8.method3954(false);
       var8.method3938(new ResourceLocation(var0));
@@ -91,10 +92,10 @@ public class Class7803 {
       BlockPos var8 = method26063(var0, var4).method32886();
       Class9764 var9 = method26059(var1, var8, var2);
       BlockPos var10;
-      if (var2 != Rotation.field185) {
-         if (var2 != Rotation.field186) {
-            if (var2 != Rotation.field187) {
-               if (var2 != Rotation.field188) {
+      if (var2 != Rotation.NONE) {
+         if (var2 != Rotation.CLOCKWISE_90) {
+            if (var2 != Rotation.CLOCKWISE_180) {
+               if (var2 != Rotation.COUNTERCLOCKWISE_90) {
                   throw new IllegalArgumentException("Invalid rotation: " + var2);
                }
 
@@ -204,7 +205,7 @@ public class Class7803 {
    }
 
    private static Class964 method26064(String var0, BlockPos var1, Rotation var2, ServerWorld var3, boolean var4) {
-      var3.setBlockState(var1, Blocks.field37113.method11579());
+      var3.setBlockState(var1, Blocks.field37113.getDefaultState());
       Class964 var7 = (Class964)var3.getTileEntity(var1);
       var7.method3951(StructureMode.field319);
       var7.method3947(var2);
@@ -256,10 +257,10 @@ public class Class7803 {
       }
 
       if (var5 == null) {
-         var5 = Blocks.AIR.method11579();
+         var5 = Blocks.AIR.getDefaultState();
       }
 
-      Class164 var8 = new Class164(var5, Collections.<Class8550<?>>emptySet(), (CompoundNBT)null);
+      Class164 var8 = new Class164(var5, Collections.<Property<?>>emptySet(), (CompoundNBT)null);
       var8.method496(var2, var1, 2);
       var2.func_230547_a_(var1, var5.getBlock());
    }

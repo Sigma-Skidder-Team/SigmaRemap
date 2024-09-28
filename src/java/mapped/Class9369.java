@@ -79,7 +79,7 @@ public class Class9369 {
       if (this.field43497 == Integer.MIN_VALUE) {
          this.field43497 = this.field43495
             .stream()
-            .mapToInt(var1x -> var1x.method24375(var1, BlockPos.ZERO, Rotation.field185).method38399())
+            .mapToInt(var1x -> var1x.method24375(var1, BlockPos.ZERO, Rotation.NONE).method38399())
             .max()
             .orElse(0);
       }

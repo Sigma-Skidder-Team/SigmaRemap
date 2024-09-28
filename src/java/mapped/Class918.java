@@ -56,7 +56,7 @@ public class Class918 extends AbstractMinecartEntity {
 
    @Override
    public BlockState method3604() {
-      return Blocks.COMMAND_BLOCK.method11579();
+      return Blocks.COMMAND_BLOCK.getDefaultState();
    }
 
    public CommandBlockLogic method3614() {

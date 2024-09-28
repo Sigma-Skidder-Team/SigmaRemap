@@ -35,25 +35,25 @@ public abstract class Class4194 extends Class4178 {
             this.method12927(var1, var3, var5, var6, var7, var5 + 3 - 1, var6 + 3 - 1, var7, field20443, field20443, false);
             break;
          case 2:
-            this.method12923(var1, Blocks.field36615.method11579(), var5, var6, var7, var3);
-            this.method12923(var1, Blocks.field36615.method11579(), var5, var6 + 1, var7, var3);
-            this.method12923(var1, Blocks.field36615.method11579(), var5, var6 + 2, var7, var3);
-            this.method12923(var1, Blocks.field36615.method11579(), var5 + 1, var6 + 2, var7, var3);
-            this.method12923(var1, Blocks.field36615.method11579(), var5 + 2, var6 + 2, var7, var3);
-            this.method12923(var1, Blocks.field36615.method11579(), var5 + 2, var6 + 1, var7, var3);
-            this.method12923(var1, Blocks.field36615.method11579(), var5 + 2, var6, var7, var3);
-            this.method12923(var1, Blocks.OAK_DOOR.method11579(), var5 + 1, var6, var7, var3);
-            this.method12923(var1, Blocks.OAK_DOOR.method11579().with(DoorBlock.DOUBLE_BLOCK_HALF, DoubleBlockHalf.field209), var5 + 1, var6 + 1, var7, var3);
+            this.method12923(var1, Blocks.field36615.getDefaultState(), var5, var6, var7, var3);
+            this.method12923(var1, Blocks.field36615.getDefaultState(), var5, var6 + 1, var7, var3);
+            this.method12923(var1, Blocks.field36615.getDefaultState(), var5, var6 + 2, var7, var3);
+            this.method12923(var1, Blocks.field36615.getDefaultState(), var5 + 1, var6 + 2, var7, var3);
+            this.method12923(var1, Blocks.field36615.getDefaultState(), var5 + 2, var6 + 2, var7, var3);
+            this.method12923(var1, Blocks.field36615.getDefaultState(), var5 + 2, var6 + 1, var7, var3);
+            this.method12923(var1, Blocks.field36615.getDefaultState(), var5 + 2, var6, var7, var3);
+            this.method12923(var1, Blocks.OAK_DOOR.getDefaultState(), var5 + 1, var6, var7, var3);
+            this.method12923(var1, Blocks.OAK_DOOR.getDefaultState().with(DoorBlock.DOUBLE_BLOCK_HALF, DoubleBlockHalf.field209), var5 + 1, var6 + 1, var7, var3);
             break;
          case 3:
-            this.method12923(var1, Blocks.field37012.method11579(), var5 + 1, var6, var7, var3);
-            this.method12923(var1, Blocks.field37012.method11579(), var5 + 1, var6 + 1, var7, var3);
-            this.method12923(var1, Blocks.IRON_BARS.method11579().with(Class3237.field18683, Boolean.valueOf(true)), var5, var6, var7, var3);
-            this.method12923(var1, Blocks.IRON_BARS.method11579().with(Class3237.field18683, Boolean.valueOf(true)), var5, var6 + 1, var7, var3);
+            this.method12923(var1, Blocks.field37012.getDefaultState(), var5 + 1, var6, var7, var3);
+            this.method12923(var1, Blocks.field37012.getDefaultState(), var5 + 1, var6 + 1, var7, var3);
+            this.method12923(var1, Blocks.IRON_BARS.getDefaultState().with(Class3237.field18683, Boolean.valueOf(true)), var5, var6, var7, var3);
+            this.method12923(var1, Blocks.IRON_BARS.getDefaultState().with(Class3237.field18683, Boolean.valueOf(true)), var5, var6 + 1, var7, var3);
             this.method12923(
                var1,
                Blocks.IRON_BARS
-                  .method11579()
+                  .getDefaultState()
                   .with(Class3237.field18681, Boolean.valueOf(true))
                   .with(Class3237.field18683, Boolean.valueOf(true)),
                var5,
@@ -64,7 +64,7 @@ public abstract class Class4194 extends Class4178 {
             this.method12923(
                var1,
                Blocks.IRON_BARS
-                  .method11579()
+                  .getDefaultState()
                   .with(Class3237.field18681, Boolean.valueOf(true))
                   .with(Class3237.field18683, Boolean.valueOf(true)),
                var5 + 1,
@@ -75,7 +75,7 @@ public abstract class Class4194 extends Class4178 {
             this.method12923(
                var1,
                Blocks.IRON_BARS
-                  .method11579()
+                  .getDefaultState()
                   .with(Class3237.field18681, Boolean.valueOf(true))
                   .with(Class3237.field18683, Boolean.valueOf(true)),
                var5 + 2,
@@ -83,21 +83,21 @@ public abstract class Class4194 extends Class4178 {
                var7,
                var3
             );
-            this.method12923(var1, Blocks.IRON_BARS.method11579().with(Class3237.field18681, Boolean.valueOf(true)), var5 + 2, var6 + 1, var7, var3);
-            this.method12923(var1, Blocks.IRON_BARS.method11579().with(Class3237.field18681, Boolean.valueOf(true)), var5 + 2, var6, var7, var3);
+            this.method12923(var1, Blocks.IRON_BARS.getDefaultState().with(Class3237.field18681, Boolean.valueOf(true)), var5 + 2, var6 + 1, var7, var3);
+            this.method12923(var1, Blocks.IRON_BARS.getDefaultState().with(Class3237.field18681, Boolean.valueOf(true)), var5 + 2, var6, var7, var3);
             break;
          case 4:
-            this.method12923(var1, Blocks.field36615.method11579(), var5, var6, var7, var3);
-            this.method12923(var1, Blocks.field36615.method11579(), var5, var6 + 1, var7, var3);
-            this.method12923(var1, Blocks.field36615.method11579(), var5, var6 + 2, var7, var3);
-            this.method12923(var1, Blocks.field36615.method11579(), var5 + 1, var6 + 2, var7, var3);
-            this.method12923(var1, Blocks.field36615.method11579(), var5 + 2, var6 + 2, var7, var3);
-            this.method12923(var1, Blocks.field36615.method11579(), var5 + 2, var6 + 1, var7, var3);
-            this.method12923(var1, Blocks.field36615.method11579(), var5 + 2, var6, var7, var3);
-            this.method12923(var1, Blocks.IRON_DOOR.method11579(), var5 + 1, var6, var7, var3);
-            this.method12923(var1, Blocks.IRON_DOOR.method11579().with(DoorBlock.DOUBLE_BLOCK_HALF, DoubleBlockHalf.field209), var5 + 1, var6 + 1, var7, var3);
-            this.method12923(var1, Blocks.STONE_BUTTON.method11579().with(AbstractButtonBlock.HORIZONTAL_FACING, Direction.NORTH), var5 + 2, var6 + 1, var7 + 1, var3);
-            this.method12923(var1, Blocks.STONE_BUTTON.method11579().with(AbstractButtonBlock.HORIZONTAL_FACING, Direction.SOUTH), var5 + 2, var6 + 1, var7 - 1, var3);
+            this.method12923(var1, Blocks.field36615.getDefaultState(), var5, var6, var7, var3);
+            this.method12923(var1, Blocks.field36615.getDefaultState(), var5, var6 + 1, var7, var3);
+            this.method12923(var1, Blocks.field36615.getDefaultState(), var5, var6 + 2, var7, var3);
+            this.method12923(var1, Blocks.field36615.getDefaultState(), var5 + 1, var6 + 2, var7, var3);
+            this.method12923(var1, Blocks.field36615.getDefaultState(), var5 + 2, var6 + 2, var7, var3);
+            this.method12923(var1, Blocks.field36615.getDefaultState(), var5 + 2, var6 + 1, var7, var3);
+            this.method12923(var1, Blocks.field36615.getDefaultState(), var5 + 2, var6, var7, var3);
+            this.method12923(var1, Blocks.IRON_DOOR.getDefaultState(), var5 + 1, var6, var7, var3);
+            this.method12923(var1, Blocks.IRON_DOOR.getDefaultState().with(DoorBlock.DOUBLE_BLOCK_HALF, DoubleBlockHalf.field209), var5 + 1, var6 + 1, var7, var3);
+            this.method12923(var1, Blocks.STONE_BUTTON.getDefaultState().with(AbstractButtonBlock.HORIZONTAL_FACING, Direction.NORTH), var5 + 2, var6 + 1, var7 + 1, var3);
+            this.method12923(var1, Blocks.STONE_BUTTON.getDefaultState().with(AbstractButtonBlock.HORIZONTAL_FACING, Direction.SOUTH), var5 + 2, var6 + 1, var7 - 1, var3);
       }
    }
 

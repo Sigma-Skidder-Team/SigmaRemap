@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.vector.Matrix3f;
 
 public class Class8515 {
    private static String[] field38198;
@@ -194,7 +195,7 @@ public class Class8515 {
    ) {
       Class8892 var18 = var0.getLast();
       Matrix4f var19 = var18.getMatrix();
-      Class8967 var20 = var18.method32362();
+      Matrix3f var20 = var18.method32362();
       float var21 = var20.method32832(var13, var14, var15);
       float var22 = var20.method32833(var13, var14, var15);
       float var23 = var20.method32834(var13, var14, var15);

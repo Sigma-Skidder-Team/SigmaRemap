@@ -20,12 +20,12 @@ public class Class5450 extends StructureStart<Class4712> {
    }
 
    public void method17109(DynamicRegistries var1, ChunkGenerator var2, TemplateManager var3, int var4, int var5, Biome var6, Class4712 var7) {
-      Rotation var10 = Rotation.method254(this.field24201);
+      Rotation var10 = Rotation.randomRotation(this.field24201);
       byte var11 = 5;
       byte var12 = 5;
-      if (var10 != Rotation.field186) {
-         if (var10 != Rotation.field187) {
-            if (var10 == Rotation.field188) {
+      if (var10 != Rotation.CLOCKWISE_90) {
+         if (var10 != Rotation.CLOCKWISE_180) {
+            if (var10 == Rotation.COUNTERCLOCKWISE_90) {
                var12 = -5;
             }
          } else {
@@ -77,7 +77,7 @@ public class Class5450 extends StructureStart<Class4712> {
                         break;
                      }
 
-                     var1.setBlockState(var17, Blocks.field36399.method11579(), 2);
+                     var1.setBlockState(var17, Blocks.field36399.getDefaultState(), 2);
                   }
                }
             }

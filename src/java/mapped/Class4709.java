@@ -17,11 +17,11 @@ public class Class4709 implements Class4698 {
             .apply(var0, Class4709::new)
    );
    public static final Class4709 field22333 = new Class4709(
-      Blocks.field37083.method11579(), Blocks.field37079.method11579(), Blocks.field36891.method11579(), Blocks.field37085.method11579(), true
+      Blocks.field37083.getDefaultState(), Blocks.field37079.getDefaultState(), Blocks.field36891.getDefaultState(), Blocks.field37085.getDefaultState(), true
    );
    public static final Class4709 field22334;
    public static final Class4709 field22335 = new Class4709(
-      Blocks.field37074.method11579(), Blocks.field37070.method11579(), Blocks.field37076.method11579(), Blocks.field37085.method11579(), true
+      Blocks.field37074.getDefaultState(), Blocks.field37070.getDefaultState(), Blocks.field37076.getDefaultState(), Blocks.field37085.getDefaultState(), true
    );
    public static final Class4709 field22336;
    public final BlockState field22337;

@@ -55,7 +55,7 @@ public class HoeItem extends ToolItem {
          Blocks.SOUL_SOIL
       }
    );
-   public static final Map<Block, BlockState> field18770 = Maps.newHashMap(ImmutableMap.of(Blocks.field36395, Blocks.field36885.method11579()));
+   public static final Map<Block, BlockState> field18770 = Maps.newHashMap(ImmutableMap.of(Blocks.field36395, Blocks.field36885.getDefaultState()));
 
    public HoeItem(IItemTier var1, float var2, float var3, Properties var4) {
       super(var2, var3, var1, field18769, var4);
@@ -68,10 +68,10 @@ public class HoeItem extends ToolItem {
 
    @Override
    public ActionResultType method11707(ItemUseContext var1) {
-      World var4 = var1.method18360();
-      BlockPos var5 = var1.method18345();
+      World var4 = var1.getWorld();
+      BlockPos var5 = var1.getPos();
       BlockState var6 = var4.getBlockState(var5);
-      if (var1.method18354() == Direction.DOWN) {
+      if (var1.getFace() == Direction.DOWN) {
          return ActionResultType.field14820;
       } else {
          PlayerEntity var7 = var1.method18358();

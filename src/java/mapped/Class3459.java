@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.HorizontalBlock;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.DirectionProperty;
 import com.google.common.base.MoreObjects;
@@ -10,6 +11,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Direction;
@@ -18,6 +20,7 @@ import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -37,9 +40,9 @@ public class Class3459 extends Block {
 
    public Class3459(Properties var1) {
       super(var1);
-      this.method11578(
-         this.field18612
-            .method35393()
+      this.setDefaultState(
+         this.stateContainer
+            .getBaseState()
             .with(field19281, Direction.NORTH)
             .with(field19282, Boolean.valueOf(false))
             .with(field19283, Boolean.valueOf(false))
@@ -47,7 +50,7 @@ public class Class3459 extends Block {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       switch (Class7594.field32602[var1.<Direction>get(field19281).ordinal()]) {
          case 1:
          default:
@@ -64,28 +67,28 @@ public class Class3459 extends Block {
    @Override
    public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
       Direction var6 = var1.<Direction>get(field19281);
-      BlockPos var7 = var3.method8349(var6.getOpposite());
+      BlockPos var7 = var3.offset(var6.getOpposite());
       BlockState var8 = var2.getBlockState(var7);
-      return var6.getAxis().method324() && var8.method23454(var2, var7, var6);
+      return var6.getAxis().isHorizontal() && var8.method23454(var2, var7, var6);
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       return var2.getOpposite() == var1.get(field19281) && !var1.method23443(var4, var5)
-         ? Blocks.AIR.method11579()
-         : super.method11491(var1, var2, var3, var4, var5, var6);
+         ? Blocks.AIR.getDefaultState()
+         : super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
    }
 
    @Nullable
    @Override
-   public BlockState method11495(Class5909 var1) {
-      BlockState var4 = this.method11579().with(field19282, Boolean.valueOf(false)).with(field19283, Boolean.valueOf(false));
-      World var5 = var1.method18360();
-      BlockPos var6 = var1.method18345();
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      BlockState var4 = this.getDefaultState().with(field19282, Boolean.valueOf(false)).with(field19283, Boolean.valueOf(false));
+      World var5 = var1.getWorld();
+      BlockPos var6 = var1.getPos();
       Direction[] var7 = var1.method18349();
 
       for (Direction var11 : var7) {
-         if (var11.getAxis().method324()) {
+         if (var11.getAxis().isHorizontal()) {
             Direction var12 = var11.getOpposite();
             var4 = var4.with(field19281, var12);
             if (var4.method23443(var5, var6)) {
@@ -134,7 +137,7 @@ public class Class3459 extends Block {
             var14 |= var20 && var21;
             var16[var17] = var19;
             if (var17 == var6) {
-               var1.method6860().method20726(var2, this, 10);
+               var1.method6860().scheduleTick(var2, this, 10);
                var13 &= var20;
             }
          }
@@ -142,7 +145,7 @@ public class Class3459 extends Block {
 
       var13 &= var15 > 1;
       var14 &= var13;
-      BlockState var24 = this.method11579().with(field19283, Boolean.valueOf(var13)).with(field19282, Boolean.valueOf(var14));
+      BlockState var24 = this.getDefaultState().with(field19283, Boolean.valueOf(var13)).with(field19282, Boolean.valueOf(var14));
       if (var15 > 0) {
          BlockPos var25 = var2.method8350(var10, var15);
          Direction var27 = var10.getOpposite();
@@ -173,7 +176,7 @@ public class Class3459 extends Block {
    }
 
    @Override
-   public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void tick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       this.method12134(var2, var3, var1, false, true, -1, (BlockState)null);
    }
 
@@ -191,11 +194,11 @@ public class Class3459 extends Block {
 
    private void method12136(World var1, BlockPos var2, Direction var3) {
       var1.notifyNeighborsOfStateChange(var2, this);
-      var1.notifyNeighborsOfStateChange(var2.method8349(var3.getOpposite()), this);
+      var1.notifyNeighborsOfStateChange(var2.offset(var3.getOpposite()), this);
    }
 
    @Override
-   public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+   public void onReplaced(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       if (!var5 && !var1.isIn(var4.getBlock())) {
          boolean var8 = var1.<Boolean>get(field19283);
          boolean var9 = var1.<Boolean>get(field19282);
@@ -205,10 +208,10 @@ public class Class3459 extends Block {
 
          if (var9) {
             var2.notifyNeighborsOfStateChange(var3, this);
-            var2.notifyNeighborsOfStateChange(var3.method8349(var1.<Direction>get(field19281).getOpposite()), this);
+            var2.notifyNeighborsOfStateChange(var3.offset(var1.<Direction>get(field19281).getOpposite()), this);
          }
 
-         super.method11513(var1, var2, var3, var4, var5);
+         super.onReplaced(var1, var2, var3, var4, var5);
       }
    }
 
@@ -242,7 +245,7 @@ public class Class3459 extends Block {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field19281, field19282, field19283);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field19281, field19282, field19283);
    }
 }

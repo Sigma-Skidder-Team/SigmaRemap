@@ -7,6 +7,7 @@ import it.unimi.dsi.fastutil.longs.Long2ByteLinkedOpenHashMap;
 import it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.state.Property;
 import net.minecraft.state.StateContainer;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
@@ -35,7 +36,7 @@ public class Class9716 {
       Client.getInstance().getEventManager().call(var7);
       if (!var7.method13971()) {
          if (!var7.isCancelled()) {
-            BlockPos var8 = var2.method8349(var3);
+            BlockPos var8 = var2.offset(var3);
             BlockState var9 = var1.getBlockState(var8);
             if (!var9.method23495()) {
                if (!var0.method23411(var9, var3)) {
@@ -109,7 +110,7 @@ public class Class9716 {
       return var0.method23496();
    }
 
-   public static Collection<Class8550<?>> method38072(BlockState var0) {
+   public static Collection<Property<?>> method38072(BlockState var0) {
       return var0.method23461();
    }
 }

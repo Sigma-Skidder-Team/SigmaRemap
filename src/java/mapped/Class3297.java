@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.item.BlockItemUseContext;
 
 public class Class3297 extends Class3292 {
    private static String[] field18805;
@@ -11,7 +12,7 @@ public class Class3297 extends Class3292 {
    }
 
    @Override
-   public boolean method11843(Class5909 var1, BlockState var2) {
-      return var1.method18360().setBlockState(var1.method18345(), var2, 26);
+   public boolean method11843(BlockItemUseContext var1, BlockState var2) {
+      return var1.getWorld().setBlockState(var1.getPos(), var2, 26);
    }
 }

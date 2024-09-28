@@ -4,8 +4,13 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FenceGateBlock;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.pathfinding.PathType;
+import net.minecraft.state.StateContainer;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
@@ -14,6 +19,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
 public class Class3239 extends Class3238 {
@@ -22,9 +28,9 @@ public class Class3239 extends Class3238 {
 
    public Class3239(Properties var1) {
       super(2.0F, 2.0F, 16.0F, 16.0F, 24.0F, var1);
-      this.method11578(
-         this.field18612
-            .method35393()
+      this.setDefaultState(
+         this.stateContainer
+            .getBaseState()
             .with(field18680, Boolean.valueOf(false))
             .with(field18681, Boolean.valueOf(false))
             .with(field18682, Boolean.valueOf(false))
@@ -41,11 +47,11 @@ public class Class3239 extends Class3238 {
 
    @Override
    public VoxelShape method11635(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
-      return this.method11483(var1, var2, var3, var4);
+      return this.getShape(var1, var2, var3, var4);
    }
 
    @Override
-   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
+   public boolean allowsMovement(BlockState var1, IBlockReader var2, BlockPos var3, PathType var4) {
       return false;
    }
 
@@ -57,11 +63,11 @@ public class Class3239 extends Class3238 {
    }
 
    private boolean method11645(Block var1) {
-      return var1.isIn(BlockTags.field32771) && var1.isIn(BlockTags.field32743) == this.method11579().isIn(BlockTags.field32743);
+      return var1.isIn(BlockTags.field32771) && var1.isIn(BlockTags.field32743) == this.getDefaultState().isIn(BlockTags.field32743);
    }
 
    @Override
-   public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
+   public ActionResultType onBlockActivated(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       if (!var2.isRemote) {
          return Class3329.method11880(var4, var2, var3);
       } else {
@@ -71,10 +77,10 @@ public class Class3239 extends Class3238 {
    }
 
    @Override
-   public BlockState method11495(Class5909 var1) {
-      World var4 = var1.method18360();
-      BlockPos var5 = var1.method18345();
-      FluidState var6 = var1.method18360().getFluidState(var1.method18345());
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      World var4 = var1.getWorld();
+      BlockPos var5 = var1.getPos();
+      FluidState var6 = var1.getWorld().getFluidState(var1.getPos());
       BlockPos var7 = var5.north();
       BlockPos var8 = var5.east();
       BlockPos var9 = var5.south();
@@ -83,27 +89,27 @@ public class Class3239 extends Class3238 {
       BlockState var12 = var4.getBlockState(var8);
       BlockState var13 = var4.getBlockState(var9);
       BlockState var14 = var4.getBlockState(var10);
-      return super.method11495(var1)
+      return super.getStateForPlacement(var1)
          .with(field18680, Boolean.valueOf(this.method11644(var11, var11.method23454(var4, var7, Direction.SOUTH), Direction.SOUTH)))
          .with(field18681, Boolean.valueOf(this.method11644(var12, var12.method23454(var4, var8, Direction.WEST), Direction.WEST)))
          .with(field18682, Boolean.valueOf(this.method11644(var13, var13.method23454(var4, var9, Direction.NORTH), Direction.NORTH)))
          .with(field18683, Boolean.valueOf(this.method11644(var14, var14.method23454(var4, var10, Direction.EAST), Direction.EAST)))
-         .with(field18684, Boolean.valueOf(var6.method23472() == Class9479.field44066));
+         .with(field18684, Boolean.valueOf(var6.getFluid() == Fluids.WATER));
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       if (var1.<Boolean>get(field18684)) {
-         var4.method6861().method20726(var5, Class9479.field44066, Class9479.field44066.method25057(var4));
+         var4.getPendingFluidTicks().scheduleTick(var5, Fluids.WATER, Fluids.WATER.getTickRate(var4));
       }
 
       return var2.getAxis().method326() != Direction.Plane.HORIZONTAL
-         ? super.method11491(var1, var2, var3, var4, var5, var6)
+         ? super.updatePostPlacement(var1, var2, var3, var4, var5, var6)
          : var1.with(field18685.get(var2), Boolean.valueOf(this.method11644(var3, var3.method23454(var4, var6, var2.getOpposite()), var2.getOpposite())));
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field18680, field18681, field18683, field18682, field18684);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field18680, field18681, field18683, field18682, field18684);
    }
 }

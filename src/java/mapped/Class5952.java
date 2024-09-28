@@ -44,7 +44,7 @@ public class Class5952 extends Class5942<SkullTileEntity> {
       BlockState var10 = var1.getBlockState();
       boolean var11 = var10.getBlock() instanceof Class3252;
       Direction var12 = !var11 ? null : var10.<Direction>get(Class3252.field18727);
-      float var13 = 22.5F * (float)(!var11 ? var10.<Integer>get(Class3343.field18855) : (2 + var12.method534()) * 4);
+      float var13 = 22.5F * (float)(!var11 ? var10.<Integer>get(Class3343.field18855) : (2 + var12.getHorizontalIndex()) * 4);
       method18482(var12, var13, ((Class3251)var10.getBlock()).method11696(), var1.method4005(), var9, var3, var4, var5);
    }
 

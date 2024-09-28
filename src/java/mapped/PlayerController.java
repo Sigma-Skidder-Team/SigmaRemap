@@ -7,6 +7,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.fluid.FluidState;
 import net.minecraft.inventory.container.ClickType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
@@ -108,7 +109,7 @@ public class PlayerController {
                   this.sendDiggingPacket(CPlayerDiggingPacket.Action.START_DESTROY_BLOCK, var1, var2);
                   boolean var6 = !var5.isAir();
                   if (var6 && this.field31362 == 0.0F) {
-                     var5.method23436(this.mc.world, var1, this.mc.player);
+                     var5.onBlockClicked(this.mc.world, var1, this.mc.player);
                   }
 
                   if (var6 && var5.method23406(this.mc.player, this.mc.player.world, var1) >= 1.0F) {
@@ -241,7 +242,7 @@ public class PlayerController {
             boolean var9 = !var1.getHeldItemMainhand().isEmpty() || !var1.getHeldItemOffhand().isEmpty();
             boolean var10 = var1.method2851() && var9;
             if (!var10) {
-               ActionResultType var11 = var2.getBlockState(var7).method23435(var2, var1, var3, var4);
+               ActionResultType var11 = var2.getBlockState(var7).onBlockActivated(var2, var1, var3, var4);
                if (var11.isSuccessOrConsume()) {
                   this.connection.sendPacket(new CPlayerTryUseItemOnBlockPacket(var3, var4));
                   return var11;

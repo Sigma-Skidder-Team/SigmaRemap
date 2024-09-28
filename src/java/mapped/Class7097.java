@@ -4,6 +4,7 @@ import com.mojang.serialization.Codec;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.StairsBlock;
 import net.minecraft.state.properties.Half;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
@@ -52,8 +53,8 @@ public class Class7097 extends Class7092 {
    @Nullable
    private BlockState method22076(Random var1) {
       if (!(var1.nextFloat() >= 0.5F)) {
-         BlockState[] var4 = new BlockState[]{Blocks.field36617.method11579(), method22081(var1, Blocks.STONE_BRICK_STAIRS)};
-         BlockState[] var5 = new BlockState[]{Blocks.field36616.method11579(), method22081(var1, Blocks.field37016)};
+         BlockState[] var4 = new BlockState[]{Blocks.field36617.getDefaultState(), method22081(var1, Blocks.STONE_BRICK_STAIRS)};
+         BlockState[] var5 = new BlockState[]{Blocks.field36616.getDefaultState(), method22081(var1, Blocks.field37016)};
          return this.method22082(var1, var4, var5);
       } else {
          return null;
@@ -62,13 +63,13 @@ public class Class7097 extends Class7092 {
 
    @Nullable
    private BlockState method22077(Random var1, BlockState var2) {
-      Direction var5 = var2.<Direction>get(Class3421.field19131);
-      Half var6 = var2.<Half>get(Class3421.field19132);
+      Direction var5 = var2.<Direction>get(StairsBlock.FACING);
+      Half var6 = var2.<Half>get(StairsBlock.HALF);
       if (!(var1.nextFloat() >= 0.5F)) {
-         BlockState[] var7 = new BlockState[]{Blocks.field36845.method11579(), Blocks.field36852.method11579()};
+         BlockState[] var7 = new BlockState[]{Blocks.field36845.getDefaultState(), Blocks.field36852.getDefaultState()};
          BlockState[] var8 = new BlockState[]{
-            Blocks.field37016.method11579().with(Class3421.field19131, var5).with(Class3421.field19132, var6),
-            Blocks.field37030.method11579()
+            Blocks.field37016.getDefaultState().with(StairsBlock.FACING, var5).with(StairsBlock.HALF, var6),
+            Blocks.field37030.getDefaultState()
          };
          return this.method22082(var1, var7, var8);
       } else {
@@ -78,23 +79,23 @@ public class Class7097 extends Class7092 {
 
    @Nullable
    private BlockState method22078(Random var1) {
-      return !(var1.nextFloat() < this.field30534) ? null : Blocks.field37030.method11579();
+      return !(var1.nextFloat() < this.field30534) ? null : Blocks.field37030.getDefaultState();
    }
 
    @Nullable
    private BlockState method22079(Random var1) {
-      return !(var1.nextFloat() < this.field30534) ? null : Blocks.field37044.method11579();
+      return !(var1.nextFloat() < this.field30534) ? null : Blocks.field37044.getDefaultState();
    }
 
    @Nullable
    private BlockState method22080(Random var1) {
-      return !(var1.nextFloat() < 0.15F) ? null : Blocks.field37123.method11579();
+      return !(var1.nextFloat() < 0.15F) ? null : Blocks.field37123.getDefaultState();
    }
 
    private static BlockState method22081(Random var0, Block var1) {
-      return var1.method11579()
-         .with(Class3421.field19131, Direction.Plane.HORIZONTAL.method247(var0))
-         .with(Class3421.field19132, Half.values()[var0.nextInt(Half.values().length)]);
+      return var1.getDefaultState()
+         .with(StairsBlock.FACING, Direction.Plane.HORIZONTAL.method247(var0))
+         .with(StairsBlock.HALF, Half.values()[var0.nextInt(Half.values().length)]);
    }
 
    private BlockState method22082(Random var1, BlockState[] var2, BlockState[] var3) {

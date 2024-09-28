@@ -11,9 +11,9 @@ import java.util.Random;
 import java.util.stream.IntStream;
 
 public class Class6781 extends Class6768<Class8278> {
-   private static final BlockState field29573 = Blocks.field37012.method11579();
-   private static final BlockState field29490 = Blocks.GRAVEL.method11579();
-   private static final BlockState field29574 = Blocks.SOUL_SAND.method11579();
+   private static final BlockState field29573 = Blocks.field37012.getDefaultState();
+   private static final BlockState field29490 = Blocks.GRAVEL.getDefaultState();
+   private static final BlockState field29574 = Blocks.SOUL_SAND.getDefaultState();
    public long field29575;
    public Class7689 field29576;
 

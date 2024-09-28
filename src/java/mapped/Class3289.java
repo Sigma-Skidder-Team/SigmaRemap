@@ -5,6 +5,7 @@ import java.util.Random;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
@@ -26,11 +27,11 @@ public class Class3289 extends Item {
 
    @Override
    public ActionResultType method11707(ItemUseContext var1) {
-      Direction var4 = var1.method18354();
+      Direction var4 = var1.getFace();
       if (var4 != Direction.DOWN) {
-         World var5 = var1.method18360();
-         Class5909 var6 = new Class5909(var1);
-         BlockPos var7 = var6.method18345();
+         World var5 = var1.getWorld();
+         BlockItemUseContext var6 = new BlockItemUseContext(var1);
+         BlockPos var7 = var6.getPos();
          ItemStack var8 = var1.method18357();
          Vector3d var9 = Vector3d.method11330(var7);
          AxisAlignedBB var10 = EntityType.field41006.getSize().method32098(var9.getX(), var9.getY(), var9.getZ());

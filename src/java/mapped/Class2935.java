@@ -8,6 +8,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.IWorld;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -61,7 +62,7 @@ public class Class2935 extends Class2898<Class4708> {
       }
    }
 
-   private boolean method11272(Class1660 var1, int var2, BlockPos var3, int var4, int var5) {
+   private boolean method11272(IWorld var1, int var2, BlockPos var3, int var4, int var5) {
       boolean var8 = false;
 
       for (BlockPos var10 : BlockPos.method8364(
@@ -80,7 +81,7 @@ public class Class2935 extends Class2898<Class4708> {
 
                   var14.method8379(Direction.UP);
                } else {
-                  this.method11217(var1, var14, Blocks.BASALT.method11579());
+                  this.method11217(var1, var14, Blocks.BASALT.getDefaultState());
                   var14.method8379(Direction.UP);
                   var8 = true;
                }
@@ -92,7 +93,7 @@ public class Class2935 extends Class2898<Class4708> {
    }
 
    @Nullable
-   private static BlockPos method11273(Class1660 var0, int var1, BlockPos.Mutable var2, int var3) {
+   private static BlockPos method11273(IWorld var0, int var1, BlockPos.Mutable var2, int var3) {
       while (var2.getY() > 1 && var3 > 0) {
          var3--;
          if (method11274(var0, var1, var2)) {
@@ -105,7 +106,7 @@ public class Class2935 extends Class2898<Class4708> {
       return null;
    }
 
-   private static boolean method11274(Class1660 var0, int var1, BlockPos.Mutable var2) {
+   private static boolean method11274(IWorld var0, int var1, BlockPos.Mutable var2) {
       if (!method11276(var0, var1, var2)) {
          return false;
       } else {
@@ -116,7 +117,7 @@ public class Class2935 extends Class2898<Class4708> {
    }
 
    @Nullable
-   private static BlockPos method11275(Class1660 var0, BlockPos.Mutable var1, int var2) {
+   private static BlockPos method11275(IWorld var0, BlockPos.Mutable var1, int var2) {
       while (var1.getY() < var0.method7034() && var2 > 0) {
          var2--;
          BlockState var5 = var0.getBlockState(var1);
@@ -135,7 +136,7 @@ public class Class2935 extends Class2898<Class4708> {
       return null;
    }
 
-   private static boolean method11276(Class1660 var0, int var1, BlockPos var2) {
+   private static boolean method11276(IWorld var0, int var1, BlockPos var2) {
       BlockState var5 = var0.getBlockState(var2);
       return var5.isAir() || var5.isIn(Blocks.LAVA) && var2.getY() <= var1;
    }

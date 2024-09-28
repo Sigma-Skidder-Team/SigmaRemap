@@ -17,6 +17,7 @@ import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 
@@ -257,7 +258,7 @@ public class Class1108 extends MobEntity implements Class1008 {
       return this.method5319() != 1 ? Class8793.field39533 : this.getType().method33212();
    }
 
-   public static boolean method5328(EntityType<Class1108> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method5328(EntityType<Class1108> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
       if (var1.method6997() != Difficulty.field14351) {
          if (Objects.equals(var1.method7178(var3), Optional.<RegistryKey<Biome>>of(Class9495.field44127))
             && var3.getY() > 50

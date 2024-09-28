@@ -2,6 +2,7 @@ package mapped;
 
 import it.unimi.dsi.fastutil.floats.Float2FloatFunction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.vector.Matrix3f;
 import net.minecraft.util.math.vector.Quaternion;
 import net.minecraft.util.math.vector.Vector3d;
 
@@ -137,7 +138,7 @@ public final class Vector3f {
       this.field32905 = var4 * var8 - var5 * var7;
    }
 
-   public void method25282(Class8967 var1) {
+   public void method25282(Matrix3f var1) {
       float var4 = this.field32903;
       float var5 = this.field32904;
       float var6 = this.field32905;

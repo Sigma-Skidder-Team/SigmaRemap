@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.dispenser.IBlockSource;
+import net.minecraft.fluid.FlowingFluid;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
@@ -16,14 +17,14 @@ public final class Class6243 extends Class6218 {
    @Override
    public ItemStack dispenseStack(IBlockSource var1, ItemStack var2) {
       ServerWorld var5 = var1.method11326();
-      BlockPos var6 = var1.method11323().method8349(var1.method11324().<Direction>get(Class3357.field18899));
+      BlockPos var6 = var1.method11323().offset(var1.method11324().<Direction>get(Class3357.field18899));
       BlockState var7 = var5.getBlockState(var6);
       Block var8 = var7.getBlock();
       if (!(var8 instanceof Class3405)) {
          return super.dispenseStack(var1, var2);
       } else {
          Fluid var9 = ((Class3405)var8).method11533(var5, var6, var7);
-         if (var9 instanceof Class7633) {
+         if (var9 instanceof FlowingFluid) {
             Item var10 = var9.method25050();
             var2.shrink(1);
             if (!var2.isEmpty()) {

@@ -37,6 +37,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
 import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.Property;
 import net.minecraft.state.StateContainer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
@@ -108,9 +109,9 @@ public class ModelBakery {
    public static final Class7496 field40528 = Util.<Class7496>make(
       Class7496.method24427("{\"gui_light\": \"side\"}"), var0 -> var0.field32207 = "block entity marker"
    );
-   private static final StateContainer<Block, BlockState> field40529 = new Class7558<Block, BlockState>(Blocks.AIR)
-      .method24737(BooleanProperty.create("map"))
-      .method24739(Block::method11579, BlockState::new);
+   private static final StateContainer<Block, BlockState> field40529 = new StateContainer.Builder<Block, BlockState>(Blocks.AIR)
+      .add(BooleanProperty.create("map"))
+      .method24739(Block::getDefaultState, BlockState::new);
    private static final Class8451 field40530 = new Class8451();
    private static final Map<ResourceLocation, StateContainer<Block, BlockState>> field40531 = ImmutableMap.of(new ResourceLocation("item_frame"), field40529);
    private final IResourceManager field40532;
@@ -231,13 +232,13 @@ public class ModelBakery {
    }
 
    private static Predicate<BlockState> method32839(StateContainer<Block, BlockState> var0, String var1) {
-      Map<Class8550<?>, Comparable<?>> var4 = Maps.newHashMap();
+      Map<Property<?>, Comparable<?>> var4 = Maps.newHashMap();
 
       for (String var6 : field40525.split(var1)) {
          Iterator<String> var7 = field40526.split(var6).iterator();
          if (var7.hasNext()) {
             String var8 = var7.next();
-            Class8550<?> var9 = var0.method35396(var8);
+            Property<?> var9 = var0.method35396(var8);
             if (var9 != null && var7.hasNext()) {
                String var10 = var7.next();
                Comparable var11 = method32840(var9, var10);
@@ -256,7 +257,7 @@ public class ModelBakery {
       return var2 -> {
          if (var2 != null && var12 == var2.getBlock()) {
             for (Entry var6x : var4.entrySet()) {
-               if (!Objects.equals(var2.get((Class8550)var6x.getKey()), var6x.getValue())) {
+               if (!Objects.equals(var2.get((Property)var6x.getKey()), var6x.getValue())) {
                   return false;
                }
             }
@@ -269,7 +270,7 @@ public class ModelBakery {
    }
 
    @Nullable
-   public static <T extends Comparable<T>> T method32840(Class8550<T> var0, String var1) {
+   public static <T extends Comparable<T>> T method32840(Property<T> var0, String var1) {
       return (T)var0.method30476(var1).orElse(null);
    }
 
@@ -315,7 +316,7 @@ public class ModelBakery {
             StateContainer<Block, BlockState> var32 = Optional.ofNullable(field40531.get(var31))
                .orElseGet(() -> Registry.BLOCK.getOrDefault(var31).getStateContainer());
             this.field40536.method38573(var32);
-            ImmutableList<Class8550<?>> var33 = ImmutableList.copyOf(this.field40534.method29469((Block)var32.method35394()));
+            ImmutableList<Property<?>> var33 = ImmutableList.copyOf(this.field40534.method29469((Block)var32.method35394()));
             ImmutableList<BlockState> var8 = var32.getValidStates();
             Map<Class1997, BlockState> var9 = Maps.newHashMap();
             var8.forEach(var2 -> {

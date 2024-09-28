@@ -13,11 +13,11 @@ import java.util.Random;
 import java.util.stream.IntStream;
 
 public class Class6771 extends Class6768<Class8278> {
-   public static final BlockState field29539 = Blocks.PACKED_ICE.method11579();
-   public static final BlockState field29540 = Blocks.SNOW_BLOCK.method11579();
-   private static final BlockState field29541 = Blocks.AIR.method11579();
-   private static final BlockState field29490 = Blocks.GRAVEL.method11579();
-   private static final BlockState field29542 = Blocks.ICE.method11579();
+   public static final BlockState field29539 = Blocks.PACKED_ICE.getDefaultState();
+   public static final BlockState field29540 = Blocks.SNOW_BLOCK.getDefaultState();
+   private static final BlockState field29541 = Blocks.AIR.getDefaultState();
+   private static final BlockState field29490 = Blocks.GRAVEL.getDefaultState();
+   private static final BlockState field29542 = Blocks.ICE.getDefaultState();
    private Class7691 field29543;
    private Class7691 field29544;
    private long field29545;
@@ -100,7 +100,7 @@ public class Class6771 extends Class6768<Class8278> {
                      var2.setBlockState(var21, var30, false);
                      if (var33 == 0 && var30.isIn(Blocks.SAND) && var32 > 1) {
                         var33 = var1.nextInt(4) + Math.max(0, var37 - 63);
-                        var30 = !var30.isIn(Blocks.RED_SAND) ? Blocks.SANDSTONE.method11579() : Blocks.field36835.method11579();
+                        var30 = !var30.isIn(Blocks.RED_SAND) ? Blocks.SANDSTONE.getDefaultState() : Blocks.field36835.getDefaultState();
                      }
                   }
                } else {

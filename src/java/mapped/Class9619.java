@@ -40,7 +40,7 @@ public class Class9619 {
    private static final int field44972 = 0;
    private static final int field44973 = 1;
    private static final int field44974 = 2;
-   public static final BlockState field44975 = Blocks.AIR.method11579();
+   public static final BlockState field44975 = Blocks.AIR.getDefaultState();
    private static TextureAtlasSprite field44976 = null;
    public static ResourceLocation field44977 = Class8684.field39209;
    private static final Class2227[] field44978 = new Class2227[]{Class2227.field14571, Class2227.field14572, Class2227.field14569, Class2227.field14570};
@@ -83,7 +83,7 @@ public class Class9619 {
             return false;
          }
 
-         BlockPos var7 = var2.method8349(var3.method30514());
+         BlockPos var7 = var2.offset(var3.method30514());
          BlockState var8 = var0.getBlockState(var7);
          if (var8.getBlock() != var5) {
             return false;
@@ -1139,7 +1139,7 @@ public class Class9619 {
             }
          }
 
-         BlockPos var10 = var3.method8349(method37452(var4));
+         BlockPos var10 = var3.offset(method37452(var4));
          BlockState var9 = var1.getBlockState(var10);
          if (var9.method23409(var1, var10)) {
             return false;
@@ -1172,7 +1172,7 @@ public class Class9619 {
             }
          }
 
-         BlockPos var10 = var3.method8349(method37452(var4));
+         BlockPos var10 = var3.offset(method37452(var4));
          BlockState var9 = var1.getBlockState(var10);
          return var9.method23409(var1, var10) ? false : var4 != 1 || var9.getBlock() != Blocks.SNOW;
       }

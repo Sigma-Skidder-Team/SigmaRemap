@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.vector.Matrix3f;
 
 import java.util.List;
 
@@ -133,7 +134,7 @@ public class Class5946 extends Class5942<Class950> {
    ) {
       Class8892 var22 = var0.getLast();
       Matrix4f var23 = var22.getMatrix();
-      Class8967 var24 = var22.method32362();
+      Matrix3f var24 = var22.method32362();
       method18471(var23, var24, var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11, var16, var17, var18, var19);
       method18471(var23, var24, var1, var2, var3, var4, var5, var6, var7, var14, var15, var12, var13, var16, var17, var18, var19);
       method18471(var23, var24, var1, var2, var3, var4, var5, var6, var7, var10, var11, var14, var15, var16, var17, var18, var19);
@@ -142,7 +143,7 @@ public class Class5946 extends Class5942<Class950> {
 
    private static void method18471(
       Matrix4f var0,
-      Class8967 var1,
+      Matrix3f var1,
       IVertexBuilder var2,
       float var3,
       float var4,
@@ -167,7 +168,7 @@ public class Class5946 extends Class5942<Class950> {
 
    private static void method18472(
       Matrix4f var0,
-      Class8967 var1,
+      Matrix3f var1,
       IVertexBuilder var2,
       float var3,
       float var4,

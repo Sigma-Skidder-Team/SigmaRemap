@@ -12,7 +12,7 @@ import java.util.Random;
 
 public class Class2951 extends Class2898<Class4728> {
    private static final BlockState field18027 = Blocks.field37009
-      .method11579()
+      .getDefaultState()
       .with(Class3418.field19125, Integer.valueOf(1))
       .with(Class3418.field19126, BambooLeaves.field642)
       .with(Class3418.field19127, Integer.valueOf(0));
@@ -30,7 +30,7 @@ public class Class2951 extends Class2898<Class4728> {
       BlockPos.Mutable var9 = var4.method8354();
       BlockPos.Mutable var10 = var4.method8354();
       if (var1.method7007(var9)) {
-         if (Blocks.field37009.method11579().method23443(var1, var9)) {
+         if (Blocks.field37009.getDefaultState().method23443(var1, var9)) {
             int var11 = var3.nextInt(12) + 5;
             if (var3.nextFloat() < var5.field22399) {
                int var12 = var3.nextInt(4) + 1;
@@ -42,7 +42,7 @@ public class Class2951 extends Class2898<Class4728> {
                      if (var15 * var15 + var16 * var16 <= var12 * var12) {
                         var10.method8372(var13, var1.method6736(Heightmap.Type.WORLD_SURFACE, var13, var14) - 1, var14);
                         if (method11219(var1.getBlockState(var10).getBlock())) {
-                           var1.setBlockState(var10, Blocks.field36398.method11579(), 2);
+                           var1.setBlockState(var10, Blocks.field36398.getDefaultState(), 2);
                         }
                      }
                   }

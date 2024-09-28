@@ -6,6 +6,7 @@ import com.google.gson.JsonParser;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
+import net.minecraft.state.Property;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.optifine.Config;
@@ -281,7 +282,7 @@ public class Class9172 {
                   return;
                }
 
-               BlockState var15 = var14.method11579();
+               BlockState var15 = var14.getDefaultState();
                Collection var16 = var15.method23461();
                LinkedHashMap var17 = new LinkedHashMap();
                JsonObject var18 = (JsonObject)var11.get("Properties");
@@ -289,7 +290,7 @@ public class Class9172 {
                   for (Entry var20 : var18.entrySet()) {
                      String var21 = (String)var20.getKey();
                      String var22 = ((JsonElement)var20.getValue()).getAsString();
-                     Class8550 var23 = Class7104.method22099(var21, var16);
+                     Property var23 = Class7104.method22099(var21, var16);
                      if (var23 == null) {
                         Config.method26811("Invalid property (" + var1 + "): " + var21);
                      } else {
@@ -345,14 +346,14 @@ public class Class9172 {
       var0.add(var11);
    }
 
-   private static Class9727 method34273(Block var0, int var1, Map<Class8550, Comparable> var2) {
+   private static Class9727 method34273(Block var0, int var1, Map<Property, Comparable> var2) {
       ArrayList<BlockState> var5 = new ArrayList();
-      Set<Class8550> var6 = var2.keySet();
+      Set<Property> var6 = var2.keySet();
 
       for (BlockState var8 : Class9716.method38070(var0)) {
          boolean var9 = true;
 
-         for (Class8550 var11 : var6) {
+         for (Property var11 : var6) {
             if (!var8.method23462(var11)) {
                var9 = false;
                break;
@@ -385,7 +386,7 @@ public class Class9172 {
    private static void method34274() {
       for (ResourceLocation var3 : Registry.BLOCK.method9190()) {
          Block var4 = Registry.BLOCK.getOrDefault(var3);
-         int var5 = var4.method11579().method23490();
+         int var5 = var4.getDefaultState().method23490();
          Class9590[] var6 = method34263(var5);
          if (var6 != null) {
             for (BlockState var8 : Class9716.method38070(var4)) {

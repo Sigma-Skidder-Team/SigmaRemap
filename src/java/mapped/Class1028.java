@@ -4,6 +4,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -78,7 +79,7 @@ public abstract class Class1028 extends Class1009 {
       return super.method4276(var1, var2, var3, var4, var5);
    }
 
-   public static boolean method4572(EntityType<? extends Class1028> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method4572(EntityType<? extends Class1028> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
       return var1.getLightFor(LightType.BLOCK, var3) <= 8 ? method4342(var0, var1, var2, var3, var4) : false;
    }
 

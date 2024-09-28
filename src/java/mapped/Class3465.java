@@ -2,13 +2,16 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -21,7 +24,7 @@ public class Class3465 extends Block {
 
    public Class3465(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().with(field19305, Integer.valueOf(7)).with(field19306, Boolean.valueOf(false)));
+      this.setDefaultState(this.stateContainer.getBaseState().with(field19305, Integer.valueOf(7)).with(field19306, Boolean.valueOf(false)));
    }
 
    @Override
@@ -30,12 +33,12 @@ public class Class3465 extends Block {
    }
 
    @Override
-   public boolean method11499(BlockState var1) {
+   public boolean ticksRandomly(BlockState var1) {
       return var1.<Integer>get(field19305) == 7 && !var1.<Boolean>get(field19306);
    }
 
    @Override
-   public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void randomTick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (!var1.<Boolean>get(field19306) && var1.<Integer>get(field19305) == 7) {
          method11554(var1, var2, var3);
          var2.removeBlock(var3, false);
@@ -43,7 +46,7 @@ public class Class3465 extends Block {
    }
 
    @Override
-   public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void tick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       var2.setBlockState(var3, method12149(var1, var2, var3), 3);
    }
 
@@ -53,16 +56,16 @@ public class Class3465 extends Block {
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       int var9 = method12150(var3) + 1;
       if (var9 != 1 || var1.<Integer>get(field19305) != var9) {
-         var4.method6860().method20726(var5, this, 1);
+         var4.method6860().scheduleTick(var5, this, 1);
       }
 
       return var1;
    }
 
-   private static BlockState method12149(BlockState var0, Class1660 var1, BlockPos var2) {
+   private static BlockState method12149(BlockState var0, IWorld var1, BlockPos var2) {
       int var5 = 7;
       BlockPos.Mutable var6 = new BlockPos.Mutable();
 
@@ -86,7 +89,7 @@ public class Class3465 extends Block {
    }
 
    @Override
-   public void method11512(BlockState var1, World var2, BlockPos var3, Random var4) {
+   public void animateTick(BlockState var1, World var2, BlockPos var3, Random var4) {
       if (var2.isRainingAt(var3.up()) && var4.nextInt(15) == 1) {
          BlockPos var7 = var3.down();
          BlockState var8 = var2.getBlockState(var7);
@@ -100,12 +103,12 @@ public class Class3465 extends Block {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field19305, field19306);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field19305, field19306);
    }
 
    @Override
-   public BlockState method11495(Class5909 var1) {
-      return method12149(this.method11579().with(field19306, Boolean.valueOf(true)), var1.method18360(), var1.method18345());
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      return method12149(this.getDefaultState().with(field19306, Boolean.valueOf(true)), var1.getWorld(), var1.getPos());
    }
 }

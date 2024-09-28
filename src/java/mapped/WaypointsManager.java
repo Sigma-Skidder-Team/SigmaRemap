@@ -421,7 +421,7 @@ public class WaypointsManager {
          var6 = -1;
       }
 
-      if (this.field36365.world.getBlockState(var1).method23462(BlockStateProperties.field39710)) {
+      if (this.field36365.world.getBlockState(var1).method23462(BlockStateProperties.WATERLOGGED)) {
          var6 = Material.field38941.getColor().field31006;
       }
 

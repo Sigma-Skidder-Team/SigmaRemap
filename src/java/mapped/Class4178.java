@@ -5,6 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.HorizontalBlock;
+import net.minecraft.fluid.FluidState;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Mirror;
@@ -23,7 +24,7 @@ import java.util.Random;
 import java.util.Set;
 
 public abstract class Class4178 {
-   public static final BlockState field20443 = Blocks.field37012.method11579();
+   public static final BlockState field20443 = Blocks.field37012.getDefaultState();
    public Class9764 field20444;
    private Direction field20445;
    private Mirror field20446;
@@ -64,7 +65,7 @@ public abstract class Class4178 {
       var3.method109("id", Registry.field16116.getKey(this.method12941()).toString());
       var3.put("BB", this.field20444.method38402());
       Direction var4 = this.method12938();
-      var3.putInt("O", var4 != null ? var4.method534() : -1);
+      var3.putInt("O", var4 != null ? var4.getHorizontalIndex() : -1);
       var3.putInt("GD", this.field20448);
       this.method12897(var3);
       return var3;
@@ -198,14 +199,14 @@ public abstract class Class4178 {
             var2 = var2.method23396(this.field20446);
          }
 
-         if (this.field20447 != Rotation.field185) {
+         if (this.field20447 != Rotation.NONE) {
             var2 = var2.rotate(this.field20447);
          }
 
          var1.setBlockState(var9, var2, 2);
          FluidState var10 = var1.getFluidState(var9);
          if (!var10.method23474()) {
-            var1.method6861().method20726(var9, var10.method23472(), 0);
+            var1.getPendingFluidTicks().scheduleTick(var9, var10.getFluid(), 0);
          }
 
          if (field20450.contains(var2.getBlock())) {
@@ -219,7 +220,7 @@ public abstract class Class4178 {
       int var9 = this.method12921(var3);
       int var10 = this.method12922(var2, var4);
       BlockPos var11 = new BlockPos(var8, var9, var10);
-      return var5.method38396(var11) ? var1.getBlockState(var11) : Blocks.AIR.method11579();
+      return var5.method38396(var11) ? var1.getBlockState(var11) : Blocks.AIR.getDefaultState();
    }
 
    public boolean method12925(IWorldReader var1, int var2, int var3, int var4, Class9764 var5) {
@@ -234,7 +235,7 @@ public abstract class Class4178 {
       for (int var11 = var4; var11 <= var7; var11++) {
          for (int var12 = var3; var12 <= var6; var12++) {
             for (int var13 = var5; var13 <= var8; var13++) {
-               this.method12923(var1, Blocks.AIR.method11579(), var12, var11, var13, var2);
+               this.method12923(var1, Blocks.AIR.getDefaultState(), var12, var11, var13, var2);
             }
          }
       }
@@ -363,7 +364,7 @@ public abstract class Class4178 {
       Direction var5 = null;
 
       for (Direction var7 : Direction.Plane.HORIZONTAL) {
-         BlockPos var8 = var1.method8349(var7);
+         BlockPos var8 = var1.offset(var7);
          BlockState var9 = var0.getBlockState(var8);
          if (var9.isIn(Blocks.CHEST)) {
             return var2;
@@ -381,20 +382,20 @@ public abstract class Class4178 {
 
       if (var5 == null) {
          Direction var10 = var2.<Direction>get(HorizontalBlock.HORIZONTAL_FACING);
-         BlockPos var11 = var1.method8349(var10);
+         BlockPos var11 = var1.offset(var10);
          if (var0.getBlockState(var11).method23409(var0, var11)) {
             var10 = var10.getOpposite();
-            var11 = var1.method8349(var10);
+            var11 = var1.offset(var10);
          }
 
          if (var0.getBlockState(var11).method23409(var0, var11)) {
             var10 = var10.rotateY();
-            var11 = var1.method8349(var10);
+            var11 = var1.offset(var10);
          }
 
          if (var0.getBlockState(var11).method23409(var0, var11)) {
             var10 = var10.getOpposite();
-            var1.method8349(var10);
+            var1.offset(var10);
          }
 
          return var2.with(HorizontalBlock.HORIZONTAL_FACING, var10);
@@ -406,7 +407,7 @@ public abstract class Class4178 {
    public boolean method12935(Class1659 var1, Class9764 var2, Random var3, BlockPos var4, ResourceLocation var5, BlockState var6) {
       if (var2.method38396(var4) && !var1.getBlockState(var4).isIn(Blocks.CHEST)) {
          if (var6 == null) {
-            var6 = method12934(var1, var4, Blocks.CHEST.method11579());
+            var6 = method12934(var1, var4, Blocks.CHEST.getDefaultState());
          }
 
          var1.setBlockState(var4, var6, 2);
@@ -424,7 +425,7 @@ public abstract class Class4178 {
    public boolean method12936(ISeedReader var1, Class9764 var2, Random var3, int var4, int var5, int var6, Direction var7, ResourceLocation var8) {
       BlockPos var11 = new BlockPos(this.method12920(var4, var6), this.method12921(var5), this.method12922(var4, var6));
       if (var2.method38396(var11) && !var1.getBlockState(var11).isIn(Blocks.DISPENSER)) {
-         this.method12923(var1, Blocks.DISPENSER.method11579().with(Class3357.field18899, var7), var4, var5, var6, var2);
+         this.method12923(var1, Blocks.DISPENSER.getDefaultState().with(Class3357.field18899, var7), var4, var5, var6, var2);
          TileEntity var12 = var1.getTileEntity(var11);
          if (var12 instanceof Class971) {
             ((Class971)var12).method3744(var8, var3.nextLong());
@@ -448,25 +449,25 @@ public abstract class Class4178 {
    public void method12939(Direction var1) {
       this.field20445 = var1;
       if (var1 == null) {
-         this.field20447 = Rotation.field185;
+         this.field20447 = Rotation.NONE;
          this.field20446 = Mirror.field13614;
       } else {
          switch (Class8727.field39366[var1.ordinal()]) {
             case 2:
                this.field20446 = Mirror.field13615;
-               this.field20447 = Rotation.field185;
+               this.field20447 = Rotation.NONE;
                break;
             case 3:
                this.field20446 = Mirror.field13615;
-               this.field20447 = Rotation.field186;
+               this.field20447 = Rotation.CLOCKWISE_90;
                break;
             case 4:
                this.field20446 = Mirror.field13614;
-               this.field20447 = Rotation.field186;
+               this.field20447 = Rotation.CLOCKWISE_90;
                break;
             default:
                this.field20446 = Mirror.field13614;
-               this.field20447 = Rotation.field185;
+               this.field20447 = Rotation.NONE;
          }
       }
    }

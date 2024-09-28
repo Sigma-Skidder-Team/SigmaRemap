@@ -5,15 +5,16 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorld;
 
 public class Class929 extends Class927 implements Class930 {
    private static String[] field5260;
    private final BlockState field5266;
-   private final Class1660 field5267;
+   private final IWorld field5267;
    private final BlockPos field5268;
    private boolean field5269;
 
-   public Class929(BlockState var1, Class1660 var2, BlockPos var3, ItemStack var4) {
+   public Class929(BlockState var1, IWorld var2, BlockPos var3, ItemStack var4) {
       super(var4);
       this.field5266 = var1;
       this.field5267 = var2;

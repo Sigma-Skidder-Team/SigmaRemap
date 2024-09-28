@@ -35,15 +35,15 @@ public class ItemUseContext {
       return this.field25723;
    }
 
-   public BlockPos method18345() {
+   public BlockPos getPos() {
       return this.field25723.getPos();
    }
 
-   public Direction method18354() {
+   public Direction getFace() {
       return this.field25723.getFace();
    }
 
-   public Vector3d method18355() {
+   public Vector3d getHitVec() {
       return this.field25723.getVec();
    }
 
@@ -64,11 +64,11 @@ public class ItemUseContext {
       return this.field25722;
    }
 
-   public World method18360() {
+   public World getWorld() {
       return this.field25724;
    }
 
-   public Direction method18350() {
+   public Direction getPlacementHorizontalFacing() {
       return this.field25721 != null ? this.field25721.getHorizontalFacing() : Direction.NORTH;
    }
 

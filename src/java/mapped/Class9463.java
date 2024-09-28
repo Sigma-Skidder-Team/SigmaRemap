@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 
 public class Class9463 {
    private Mirror field43962 = Mirror.field13614;
-   private Rotation field43963 = Rotation.field185;
+   private Rotation field43963 = Rotation.NONE;
    private BlockPos field43964 = BlockPos.ZERO;
    private boolean field43965;
    private ChunkPos field43966;

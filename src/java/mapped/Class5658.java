@@ -5,6 +5,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.vector.Matrix3f;
 import net.minecraft.util.math.vector.Vector3d;
 
 public class Class5658 extends Class5651<Class1105, Class2820> {
@@ -96,7 +97,7 @@ public class Class5658 extends Class5651<Class1105, Class2820> {
          IVertexBuilder var48 = var5.method25597(field25022);
          Class8892 var49 = var4.getLast();
          Matrix4f var50 = var49.getMatrix();
-         Class8967 var51 = var49.method32362();
+         Matrix3f var51 = var49.method32362();
          method17862(var48, var50, var51, var36, var17, var37, var23, var24, var25, 0.4999F, var47);
          method17862(var48, var50, var51, var36, 0.0F, var37, var23, var24, var25, 0.4999F, var46);
          method17862(var48, var50, var51, var38, 0.0F, var39, var23, var24, var25, 0.0F, var46);
@@ -119,7 +120,7 @@ public class Class5658 extends Class5651<Class1105, Class2820> {
    }
 
    private static void method17862(
-           IVertexBuilder var0, Matrix4f var1, Class8967 var2, float var3, float var4, float var5, int var6, int var7, int var8, float var9, float var10
+           IVertexBuilder var0, Matrix4f var1, Matrix3f var2, float var3, float var4, float var5, int var6, int var7, int var8, float var9, float var10
    ) {
       var0.pos(var1, var3, var4, var5)
          .color(var6, var7, var8, 255)

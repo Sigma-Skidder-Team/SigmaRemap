@@ -2,7 +2,7 @@ package com.mojang.blaze3d.matrix;
 
 import com.google.common.collect.Queues;
 import mapped.Class8892;
-import mapped.Class8967;
+import net.minecraft.util.math.vector.Matrix3f;
 import mapped.Matrix4f;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.math.MathHelper;
@@ -17,7 +17,7 @@ public class MatrixStack {
    private final Deque<Class8892> field43311 = Util.<Deque<Class8892>>make(Queues.newArrayDeque(), var0 -> {
       Matrix4f var3 = new Matrix4f();
       var3.method35503();
-      Class8967 var4 = new Class8967();
+      Matrix3f var4 = new Matrix3f();
       var4.method32824();
       var0.add(new Class8892(var3, var4));
    });
@@ -42,7 +42,7 @@ public class MatrixStack {
       float var8 = 1.0F / var2;
       float var9 = 1.0F / var3;
       float var10 = MathHelper.method37817(var7 * var8 * var9);
-      Class8892.method32364(var6).method32828(Class8967.method32817(var10 * var7, var10 * var8, var10 * var9));
+      Class8892.method32364(var6).method32828(Matrix3f.method32817(var10 * var7, var10 * var8, var10 * var9));
    }
 
    public void rotate(Quaternion var1) {

@@ -21,7 +21,7 @@ public class Class2902 extends Class2898<Class4701> {
          boolean var13 = Math.abs(var9.getY() - var4.getY()) == 2;
          if (var10 && var11 && var12) {
             BlockPos var14 = var9.toImmutable();
-            this.method11217(var1, var14, Blocks.field36886.method11579());
+            this.method11217(var1, var14, Blocks.field36886.getDefaultState());
             var5.method14747().ifPresent(var3x -> {
                TileEntity var6 = var1.getTileEntity(var14);
                if (var6 instanceof Class957) {
@@ -32,14 +32,14 @@ public class Class2902 extends Class2898<Class4701> {
             });
          } else if (!var11) {
             if (var13 && var10 && var12) {
-               this.method11217(var1, var9, Blocks.BEDROCK.method11579());
+               this.method11217(var1, var9, Blocks.BEDROCK.getDefaultState());
             } else if ((var10 || var12) && !var13) {
-               this.method11217(var1, var9, Blocks.BEDROCK.method11579());
+               this.method11217(var1, var9, Blocks.BEDROCK.getDefaultState());
             } else {
-               this.method11217(var1, var9, Blocks.AIR.method11579());
+               this.method11217(var1, var9, Blocks.AIR.getDefaultState());
             }
          } else {
-            this.method11217(var1, var9, Blocks.AIR.method11579());
+            this.method11217(var1, var9, Blocks.AIR.getDefaultState());
          }
       }
 

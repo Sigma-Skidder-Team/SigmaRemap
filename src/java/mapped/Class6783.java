@@ -65,7 +65,7 @@ public class Class6783 extends Class6768<Class8278> {
                      var2.setBlockState(var19, var18, false);
                      if (var20 == 0 && var18.isIn(Blocks.SAND) && var21 > 1) {
                         var20 = var1.nextInt(4) + Math.max(0, var24 - 63);
-                        var18 = !var18.isIn(Blocks.RED_SAND) ? Blocks.SANDSTONE.method11579() : Blocks.field36835.method11579();
+                        var18 = !var18.isIn(Blocks.RED_SAND) ? Blocks.SANDSTONE.getDefaultState() : Blocks.field36835.getDefaultState();
                      }
                   }
                } else {
@@ -75,7 +75,7 @@ public class Class6783 extends Class6768<Class8278> {
                         var18 = var12;
                      }
                   } else {
-                     var17 = Blocks.AIR.method11579();
+                     var17 = Blocks.AIR.getDefaultState();
                      var18 = var9;
                   }
 
@@ -83,7 +83,7 @@ public class Class6783 extends Class6768<Class8278> {
                      if (!(var3.method32503(var19.method8372(var4, var24, var5)) < 0.15F)) {
                         var17 = var10;
                      } else {
-                        var17 = Blocks.ICE.method11579();
+                        var17 = Blocks.ICE.getDefaultState();
                      }
 
                      var19.method8372(var22, var24, var23);
@@ -94,7 +94,7 @@ public class Class6783 extends Class6768<Class8278> {
                      if (var24 >= var14 - 7 - var21) {
                         var2.setBlockState(var19, var18, false);
                      } else {
-                        var17 = Blocks.AIR.method11579();
+                        var17 = Blocks.AIR.getDefaultState();
                         var18 = var9;
                         var2.setBlockState(var19, var13, false);
                      }

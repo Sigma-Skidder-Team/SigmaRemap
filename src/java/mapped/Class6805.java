@@ -83,7 +83,7 @@ public class Class6805<T> implements ITickList<T> {
                   throw new ReportedException(var8);
                }
             } else {
-               this.method20726(var11.field35556, (T)var11.method28874(), 0);
+               this.scheduleTick(var11.field35556, (T)var11.method28874(), 0);
             }
          }
 

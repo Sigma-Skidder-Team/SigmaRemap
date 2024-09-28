@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.state.EnumProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.state.properties.ComparatorMode;
 import net.minecraft.tileentity.TileEntity;
@@ -28,9 +29,9 @@ public class Class3246 extends Class3247 implements Class3245 {
 
    public Class3246(Properties var1) {
       super(var1);
-      this.method11578(
-         this.field18612
-            .method35393()
+      this.setDefaultState(
+         this.stateContainer
+            .getBaseState()
             .with(HORIZONTAL_FACING, Direction.NORTH)
             .with(field18708, Boolean.valueOf(false))
             .with(field18706, ComparatorMode.field325)
@@ -69,11 +70,11 @@ public class Class3246 extends Class3247 implements Class3245 {
    public int method11662(World var1, BlockPos var2, BlockState var3) {
       int var6 = super.method11662(var1, var2, var3);
       Direction var7 = var3.<Direction>get(HORIZONTAL_FACING);
-      BlockPos var8 = var2.method8349(var7);
+      BlockPos var8 = var2.offset(var7);
       BlockState var9 = var1.getBlockState(var8);
       if (!var9.hasComparatorInputOverride()) {
          if (var6 < 15 && var9.method23400(var1, var8)) {
-            var8 = var8.method8349(var7);
+            var8 = var8.offset(var7);
             var9 = var1.getBlockState(var8);
             ItemFrameEntity var10 = this.method11663(var1, var7, var8);
             int var11 = Math.max(var10 != null ? var10.method4096() : Integer.MIN_VALUE, !var9.hasComparatorInputOverride() ? Integer.MIN_VALUE : var9.method23404(var1, var8));
@@ -106,7 +107,7 @@ public class Class3246 extends Class3247 implements Class3245 {
    }
 
    @Override
-   public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
+   public ActionResultType onBlockActivated(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       if (var4.abilities.allowEdit) {
          var1 = var1.method23459(field18706);
          float var9 = var1.get(field18706) != ComparatorMode.field326 ? 0.5F : 0.55F;
@@ -156,7 +157,7 @@ public class Class3246 extends Class3247 implements Class3245 {
    }
 
    @Override
-   public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void tick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       this.method11665(var2, var3, var1);
    }
 
@@ -173,7 +174,7 @@ public class Class3246 extends Class3247 implements Class3245 {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(HORIZONTAL_FACING, field18706, field18708);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(HORIZONTAL_FACING, field18706, field18708);
    }
 }

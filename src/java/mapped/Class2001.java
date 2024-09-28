@@ -59,7 +59,7 @@ public class Class2001 extends BlockPos {
    }
 
    @Override
-   public BlockPos method8349(Direction var1) {
+   public BlockPos offset(Direction var1) {
       if (this.field13045 > 0) {
          if (this.field13046 == null) {
             this.field13046 = new Class2001[Direction.VALUES.length];
@@ -87,7 +87,7 @@ public class Class2001 extends BlockPos {
 
    @Override
    public BlockPos method8350(Direction var1, int var2) {
-      return var2 != 1 ? super.method8350(var1, var2).toImmutable() : this.method8349(var1);
+      return var2 != 1 ? super.method8350(var1, var2).toImmutable() : this.offset(var1);
    }
 
    public void method8386(BlockPos var1, Direction var2) {

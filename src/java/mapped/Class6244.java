@@ -20,7 +20,7 @@ public final class Class6244 extends Class6218 {
       double var7 = var1.getX() + (double)var5.getXOffset() * 1.125;
       double var9 = Math.floor(var1.getY()) + (double)var5.getYOffset();
       double var11 = var1.getZ() + (double)var5.getZOffset() * 1.125;
-      BlockPos var13 = var1.method11323().method8349(var5);
+      BlockPos var13 = var1.method11323().offset(var5);
       BlockState var14 = var6.getBlockState(var13);
       RailShape var15 = !(var14.getBlock() instanceof Class3429)
          ? RailShape.field247

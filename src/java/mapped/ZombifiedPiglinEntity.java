@@ -15,6 +15,7 @@ import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -151,7 +152,7 @@ public class ZombifiedPiglinEntity extends ZombieEntity implements IAngerable {
 
 
 
-   public static boolean method4879(EntityType<ZombifiedPiglinEntity> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method4879(EntityType<ZombifiedPiglinEntity> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
       return var1.method6997() != Difficulty.field14351 && var1.getBlockState(var3.down()).getBlock() != Blocks.field36891;
    }
 

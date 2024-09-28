@@ -69,8 +69,8 @@ public class Class3265 extends ToolItem {
 
    @Override
    public ActionResultType method11707(ItemUseContext var1) {
-      World var4 = var1.method18360();
-      BlockPos var5 = var1.method18345();
+      World var4 = var1.getWorld();
+      BlockPos var5 = var1.getPos();
       BlockState var6 = var4.getBlockState(var5);
       Block var7 = field18758.get(var6.getBlock());
       if (var7 == null) {
@@ -79,7 +79,7 @@ public class Class3265 extends ToolItem {
          PlayerEntity var8 = var1.method18358();
          var4.method6742(var8, var5, SoundEvents.field26364, Class2266.field14732, 1.0F, 1.0F);
          if (!var4.isRemote) {
-            var4.setBlockState(var5, var7.method11579().with(Class3386.field18994, var6.<Direction.Axis>get(Class3386.field18994)), 11);
+            var4.setBlockState(var5, var7.getDefaultState().with(Class3386.field18994, var6.<Direction.Axis>get(Class3386.field18994)), 11);
             if (var8 != null) {
                var1.method18357().damageItem(1, var8, var1x -> var1x.sendBreakAnimation(var1.method18359()));
             }

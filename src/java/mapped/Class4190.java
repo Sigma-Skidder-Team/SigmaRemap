@@ -24,7 +24,7 @@ public class Class4190 extends Class4188 {
    public void method12897(CompoundNBT var1) {
       super.method12897(var1);
       var1.putBoolean("tf", this.field20482);
-      var1.putInt("D", this.field20481.method534());
+      var1.putInt("D", this.field20481.getHorizontalIndex());
    }
 
    public Class4190(int var1, Class9764 var2, Direction var3, Class102 var4) {

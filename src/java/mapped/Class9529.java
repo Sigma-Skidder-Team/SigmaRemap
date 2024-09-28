@@ -33,7 +33,7 @@ public class Class9529 {
    }
 
    public void method36827(IBlockDisplayReader var1, BlockState var2, BlockPos var3, Direction var4, float[] var5, BitSet var6, boolean var7) {
-      BlockPos var10 = !var6.get(0) ? var3 : var3.method8349(var4);
+      BlockPos var10 = !var6.get(0) ? var3 : var3.offset(var4);
       Class2208 var11 = Class2208.method8926(var4);
       Class2001 var12 = this.field44353;
       Class4049 var13 = Class7551.method24699();

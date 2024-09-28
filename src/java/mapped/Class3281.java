@@ -20,12 +20,12 @@ public class Class3281 extends Item {
    @Override
    public ActionResultType method11707(ItemUseContext var1) {
       PlayerEntity var4 = var1.method18358();
-      World var5 = var1.method18360();
-      BlockPos var6 = var1.method18345();
+      World var5 = var1.getWorld();
+      BlockPos var6 = var1.getPos();
       BlockState var7 = var5.getBlockState(var6);
       if (!Class3244.method11656(var7)) {
-         BlockPos var8 = var6.method8349(var1.method18354());
-         if (!AbstractFireBlock.method12012(var5, var8, var1.method18350())) {
+         BlockPos var8 = var6.offset(var1.getFace());
+         if (!AbstractFireBlock.method12012(var5, var8, var1.getPlacementHorizontalFacing())) {
             return ActionResultType.FAIL;
          } else {
             var5.method6742(var4, var8, SoundEvents.field26587, Class2266.field14732, 1.0F, field18735.nextFloat() * 0.4F + 0.8F);

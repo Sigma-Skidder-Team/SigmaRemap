@@ -4,6 +4,7 @@ import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorld;
 
 import java.util.Random;
 
@@ -13,7 +14,7 @@ public class Class2915 extends Class2914 {
    }
 
    @Override
-   public boolean method11249(Class1660 var1, Random var2, BlockPos var3, BlockState var4) {
+   public boolean method11249(IWorld var1, Random var2, BlockPos var3, BlockState var4) {
       int var7 = var2.nextInt(3) + 3;
       int var8 = var2.nextInt(3) + 3;
       int var9 = var2.nextInt(3) + 3;

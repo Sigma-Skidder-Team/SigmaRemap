@@ -8,6 +8,8 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
+import net.minecraft.block.SlabBlock;
+import net.minecraft.block.StairsBlock;
 
 public class UnfullPhase extends Module {
     private int field23843;
@@ -39,9 +41,9 @@ public class UnfullPhase extends Module {
         if (this.isEnabled()) {
             if (var1.getVoxelShape() != null && var1.getBlockPos().getY() == this.field23843 - 1
                     || var1.getBlockPos().getY() == this.field23843
-                    || var1.getBlockPos().getY() == this.field23843 + 1 && mc.world.getBlockState(var1.getBlockPos()).getBlock() instanceof Class3208
+                    || var1.getBlockPos().getY() == this.field23843 + 1 && mc.world.getBlockState(var1.getBlockPos()).getBlock() instanceof SlabBlock
                     || mc.world.getBlockState(var1.getBlockPos()).getBlock() instanceof Class3465
-                    || mc.world.getBlockState(var1.getBlockPos()).getBlock() instanceof Class3421
+                    || mc.world.getBlockState(var1.getBlockPos()).getBlock() instanceof StairsBlock
                     || mc.world.getBlockState(var1.getBlockPos()).getBlock() instanceof Class3415
                     || mc.world.getBlockState(var1.getBlockPos()).getBlock() instanceof Class3377) {
                 var1.setBoxelShape(null);

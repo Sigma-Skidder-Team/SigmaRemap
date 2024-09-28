@@ -14,8 +14,8 @@ public class Class3474 extends Class3472 {
    }
 
    @Override
-   public void method11512(BlockState var1, World var2, BlockPos var3, Random var4) {
-      super.method11512(var1, var2, var3, var4);
+   public void animateTick(BlockState var1, World var2, BlockPos var3, Random var4) {
+      super.animateTick(var1, var2, var3, var4);
       if (var4.nextInt(10) == 0) {
          var2.addParticle(
             ParticleTypes.field34087,

@@ -14,7 +14,12 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.fluid.Fluid;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
+import net.minecraft.pathfinding.PathType;
+import net.minecraft.state.Property;
+import net.minecraft.state.StateHolder;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
@@ -22,6 +27,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -31,7 +37,7 @@ import java.util.Random;
 import java.util.function.Predicate;
 import javax.annotation.Nullable;
 
-public abstract class Class7377 extends Class7378<Block, BlockState> {
+public abstract class Class7377 extends StateHolder<Block, BlockState> {
    private final int field31564;
    private final boolean field31565;
    private final boolean field31566;
@@ -47,11 +53,11 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
    private final Class8609 field31576;
    public Class6486 field31577;
 
-   public Class7377(Block var1, ImmutableMap<Class8550<?>, Comparable<?>> var2, MapCodec<BlockState> var3) {
+   public Class7377(Block var1, ImmutableMap<Property<?>, Comparable<?>> var2, MapCodec<BlockState> var3) {
       super(var1, var2, var3);
       AbstractBlock.Properties var6 = var1.field19013;
       this.field31564 = AbstractBlock.Properties.method26654(var6).applyAsInt(this.method23457());
-      this.field31565 = var1.method11534(this.method23457());
+      this.field31565 = var1.isTransparent(this.method23457());
       this.field31566 = AbstractBlock.Properties.method26655(var6);
       this.field31567 = AbstractBlock.Properties.method26643(var6);
       this.field31568 = (MaterialColor) AbstractBlock.Properties.method26653(var6).apply(this.method23457());
@@ -201,7 +207,7 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
    }
 
    public VoxelShape method23413(IBlockReader var1, BlockPos var2, ISelectionContext var3) {
-      return this.getBlock().method11483(this.method23457(), var1, var2, var3);
+      return this.getBlock().getShape(this.method23457(), var1, var2, var3);
    }
 
    public VoxelShape method23414(IBlockReader var1, BlockPos var2) {
@@ -250,15 +256,15 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
       return this.getBlock().method11647(this.method23457(), var1, var2, var3, var4);
    }
 
-   public void method23423(World var1, BlockPos var2, Block var3, BlockPos var4, boolean var5) {
+   public void neighborChanged(World var1, BlockPos var2, Block var3, BlockPos var4, boolean var5) {
       this.getBlock().method11506(this.method23457(), var1, var2, var3, var4, var5);
    }
 
-   public final void method23424(Class1660 var1, BlockPos var2, int var3) {
+   public final void method23424(IWorld var1, BlockPos var2, int var3) {
       this.updateNeighbours(var1, var2, var3, 512);
    }
 
-   public final void updateNeighbours(Class1660 var1, BlockPos var2, int var3, int var4) {
+   public final void updateNeighbours(IWorld var1, BlockPos var2, int var3, int var4) {
       this.getBlock();
       BlockPos.Mutable var7 = new BlockPos.Mutable();
 
@@ -270,28 +276,28 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
       }
    }
 
-   public final void method23426(Class1660 var1, BlockPos var2, int var3) {
+   public final void method23426(IWorld var1, BlockPos var2, int var3) {
       this.updateDiagonalNeighbors(var1, var2, var3, 512);
    }
 
-   public void updateDiagonalNeighbors(Class1660 var1, BlockPos var2, int var3, int var4) {
+   public void updateDiagonalNeighbors(IWorld var1, BlockPos var2, int var3, int var4) {
       this.getBlock().method11618(this.method23457(), var1, var2, var3, var4);
    }
 
    public void method23428(World var1, BlockPos var2, BlockState var3, boolean var4) {
-      this.getBlock().method11589(this.method23457(), var1, var2, var3, var4);
+      this.getBlock().onBlockAdded(this.method23457(), var1, var2, var3, var4);
    }
 
-   public void method23429(World var1, BlockPos var2, BlockState var3, boolean var4) {
-      this.getBlock().method11513(this.method23457(), var1, var2, var3, var4);
+   public void onReplaced(World var1, BlockPos var2, BlockState var3, boolean var4) {
+      this.getBlock().onReplaced(this.method23457(), var1, var2, var3, var4);
    }
 
    public void method23430(ServerWorld var1, BlockPos var2, Random var3) {
-      this.getBlock().method11522(this.method23457(), var1, var2, var3);
+      this.getBlock().tick(this.method23457(), var1, var2, var3);
    }
 
    public void method23431(ServerWorld var1, BlockPos var2, Random var3) {
-      this.getBlock().method11484(this.method23457(), var1, var2, var3);
+      this.getBlock().randomTick(this.method23457(), var1, var2, var3);
    }
 
    public void method23432(World var1, BlockPos var2, Entity var3) {
@@ -306,12 +312,12 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
       return this.getBlock().method11697(this.method23457(), var1);
    }
 
-   public ActionResultType method23435(World var1, PlayerEntity var2, Hand var3, BlockRayTraceResult var4) {
-      return this.getBlock().method11505(this.method23457(), var1, var4.getPos(), var2, var3, var4);
+   public ActionResultType onBlockActivated(World var1, PlayerEntity var2, Hand var3, BlockRayTraceResult var4) {
+      return this.getBlock().onBlockActivated(this.method23457(), var1, var4.getPos(), var2, var3, var4);
    }
 
-   public void method23436(World var1, BlockPos var2, PlayerEntity var3) {
-      this.getBlock().method11602(this.method23457(), var1, var2, var3);
+   public void onBlockClicked(World var1, BlockPos var2, PlayerEntity var3) {
+      this.getBlock().onBlockClicked(this.method23457(), var1, var2, var3);
    }
 
    public boolean method23437(IBlockReader var1, BlockPos var2) {
@@ -322,15 +328,15 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
       return this.field31574.method30847(this.method23457(), var1, var2);
    }
 
-   public BlockState method23439(Direction var1, BlockState var2, Class1660 var3, BlockPos var4, BlockPos var5) {
-      return this.getBlock().method11491(this.method23457(), var1, var2, var3, var4, var5);
+   public BlockState method23439(Direction var1, BlockState var2, IWorld var3, BlockPos var4, BlockPos var5) {
+      return this.getBlock().updatePostPlacement(this.method23457(), var1, var2, var3, var4, var5);
    }
 
-   public boolean method23440(IBlockReader var1, BlockPos var2, Class1947 var3) {
-      return this.getBlock().method11494(this.method23457(), var1, var2, var3);
+   public boolean method23440(IBlockReader var1, BlockPos var2, PathType var3) {
+      return this.getBlock().allowsMovement(this.method23457(), var1, var2, var3);
    }
 
-   public boolean method23441(Class5909 var1) {
+   public boolean method23441(BlockItemUseContext var1) {
       return this.getBlock().method11497(this.method23457(), var1);
    }
 
@@ -364,11 +370,11 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
    }
 
    public FluidState method23449() {
-      return this.getBlock().method11498(this.method23457());
+      return this.getBlock().getFluidState(this.method23457());
    }
 
    public boolean method23450() {
-      return this.getBlock().method11499(this.method23457());
+      return this.getBlock().ticksRandomly(this.method23457());
    }
 
    public long method23451(BlockPos var1) {

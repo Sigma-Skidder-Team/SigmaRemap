@@ -23,27 +23,27 @@ public class Class8332 {
       field35834 = new int[StairsShape.values().length];
 
       try {
-         field35834[StairsShape.field330.ordinal()] = 1;
+         field35834[StairsShape.INNER_LEFT.ordinal()] = 1;
       } catch (NoSuchFieldError var7) {
       }
 
       try {
-         field35834[StairsShape.field331.ordinal()] = 2;
+         field35834[StairsShape.INNER_RIGHT.ordinal()] = 2;
       } catch (NoSuchFieldError var6) {
       }
 
       try {
-         field35834[StairsShape.field332.ordinal()] = 3;
+         field35834[StairsShape.OUTER_LEFT.ordinal()] = 3;
       } catch (NoSuchFieldError var5) {
       }
 
       try {
-         field35834[StairsShape.field333.ordinal()] = 4;
+         field35834[StairsShape.OUTER_RIGHT.ordinal()] = 4;
       } catch (NoSuchFieldError var4) {
       }
 
       try {
-         field35834[StairsShape.field329.ordinal()] = 5;
+         field35834[StairsShape.STRAIGHT.ordinal()] = 5;
       } catch (NoSuchFieldError var3) {
       }
    }

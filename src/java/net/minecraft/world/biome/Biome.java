@@ -17,6 +17,8 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
 import net.minecraft.crash.CrashReport;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
@@ -136,7 +138,7 @@ public final class Biome {
          if (var2.getY() >= 0 && var2.getY() < 256 && var1.getLightFor(LightType.BLOCK, var2) < 10) {
             BlockState var6 = var1.getBlockState(var2);
             FluidState var7 = var1.getFluidState(var2);
-            if (var7.method23472() == Class9479.field44066 && var6.getBlock() instanceof Class3404) {
+            if (var7.getFluid() == Fluids.WATER && var6.getBlock() instanceof Class3404) {
                if (!var3) {
                   return true;
                }
@@ -159,7 +161,7 @@ public final class Biome {
       if (!(this.method32503(var2) >= 0.15F)) {
          if (var2.getY() >= 0 && var2.getY() < 256 && var1.getLightFor(LightType.BLOCK, var2) < 10) {
             BlockState var5 = var1.getBlockState(var2);
-            if (var5.isAir() && Blocks.SNOW.method11579().method23443(var1, var2)) {
+            if (var5.isAir() && Blocks.SNOW.getDefaultState().method23443(var1, var2)) {
                return true;
             }
          }

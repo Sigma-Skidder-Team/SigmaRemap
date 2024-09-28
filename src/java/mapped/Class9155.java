@@ -4,6 +4,7 @@ import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.vector.Matrix3f;
 import net.minecraft.util.math.vector.Quaternion;
 import net.minecraft.util.math.vector.Vector3i;
 import net.optifine.Config;
@@ -81,7 +82,7 @@ public class Class9155 {
 
       float var21 = (float)Math.toRadians((double)var0.field45940);
       Vector3f var22 = new Vector3f(MathHelper.cos(var21), MathHelper.sin(var21), 0.0F);
-      Class8967 var23 = new Class8967(var6);
+      Matrix3f var23 = new Matrix3f(var6);
       var22.method25282(var23);
       int var24 = Math.floorMod(-((int)Math.round(Math.toDegrees(Math.atan2((double)var22.method25270(), (double)var22.method25269())) / 90.0)) * 90, 360);
       return new Class9840(new float[]{var17, var19, var18, var20}, var24);

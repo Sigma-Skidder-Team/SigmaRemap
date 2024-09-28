@@ -9,7 +9,7 @@ import java.util.Iterator;
 
 public class Class2354 implements Iterable<BlockState> {
    private static String[] field16163;
-   public static final BlockState field16164 = Blocks.AIR.method11579();
+   public static final BlockState field16164 = Blocks.AIR.getDefaultState();
    private final ObjectIntIdentityMap<BlockState> field16165 = new ObjectIntIdentityMap<BlockState>(16);
    private int field16166;
 

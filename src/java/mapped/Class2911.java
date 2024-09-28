@@ -66,7 +66,7 @@ public class Class2911 extends Class2898<Class4697> {
 
                if (var10 == var5.field22287 && var11 == var5.field22288) {
                   var1.setBlockState(var4, var5.field22285.getBlockState(), 2);
-                  var1.method6861().method20726(var4, var5.field22285.method23472(), 0);
+                  var1.getPendingFluidTicks().scheduleTick(var4, var5.field22285.getFluid(), 0);
                   var9++;
                }
 

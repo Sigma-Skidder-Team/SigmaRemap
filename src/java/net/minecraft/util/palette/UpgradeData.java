@@ -12,6 +12,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.ChunkSection;
 import org.apache.logging.log4j.LogManager;
@@ -95,7 +96,7 @@ public class UpgradeData {
       }
    }
 
-   private static BlockState method32605(BlockState var0, Direction var1, Class1660 var2, BlockPos var3, BlockPos var4) {
+   private static BlockState method32605(BlockState var0, Direction var1, IWorld var2, BlockPos var3, BlockPos var4) {
       return field40392.getOrDefault(var0.getBlock(), Class2230.field14619).method8970(var0, var1, var2.getBlockState(var4), var2, var3, var4);
    }
 

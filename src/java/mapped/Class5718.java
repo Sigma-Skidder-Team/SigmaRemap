@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.vector.Matrix3f;
 import net.optifine.Config;
 import net.optifine.shaders.Shaders;
 
@@ -138,7 +139,7 @@ public class Class5718 extends EntityRenderer<Class1007> {
       float var18 = 0.0F;
       Class8892 var19 = var5.getLast();
       Matrix4f var20 = var19.getMatrix();
-      Class8967 var21 = var19.method32362();
+      Matrix3f var21 = var19.method32362();
 
       for (int var22 = 1; var22 <= 8; var22++) {
          float var23 = MathHelper.sin((float)var22 * (float) (Math.PI * 2) / 8.0F) * 0.75F;

@@ -4,9 +4,13 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.fluid.Fluid;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 
 import java.util.Random;
 import javax.annotation.Nullable;
@@ -40,7 +44,7 @@ public class Class3451 extends Class3452 implements Class3449 {
    }
 
    @Override
-   public boolean method11532(Class1660 var1, BlockPos var2, BlockState var3, FluidState var4) {
+   public boolean method11532(IWorld var1, BlockPos var2, BlockState var3, FluidState var4) {
       return false;
    }
 
@@ -51,13 +55,13 @@ public class Class3451 extends Class3452 implements Class3449 {
 
    @Nullable
    @Override
-   public BlockState method11495(Class5909 var1) {
-      FluidState var4 = var1.method18360().getFluidState(var1.method18345());
-      return var4.method23486(FluidTags.field40469) && var4.method23477() == 8 ? super.method11495(var1) : null;
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      FluidState var4 = var1.getWorld().getFluidState(var1.getPos());
+      return var4.method23486(FluidTags.field40469) && var4.method23477() == 8 ? super.getStateForPlacement(var1) : null;
    }
 
    @Override
-   public FluidState method11498(BlockState var1) {
-      return Class9479.field44066.method25078(false);
+   public FluidState getFluidState(BlockState var1) {
+      return Fluids.WATER.getStillFluidState(false);
    }
 }

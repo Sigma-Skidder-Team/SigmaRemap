@@ -10,7 +10,7 @@ public class Class3388 extends Class3386 {
 
    public Class3388(Properties var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().with(field18994, Direction.Axis.Y));
+      this.setDefaultState(this.stateContainer.getBaseState().with(field18994, Direction.Axis.Y));
    }
 
    @Override

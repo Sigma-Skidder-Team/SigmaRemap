@@ -4,10 +4,13 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FenceGateBlock;
+import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.pathfinding.PathType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.server.ServerWorld;
 
@@ -22,28 +25,28 @@ public class Class3411 extends Block {
    }
 
    @Override
-   public boolean method11534(BlockState var1) {
+   public boolean isTransparent(BlockState var1) {
       return true;
    }
 
    @Override
-   public BlockState method11495(Class5909 var1) {
-      return this.method11579().method23443(var1.method18360(), var1.method18345())
-         ? super.method11495(var1)
-         : Block.method11538(this.method11579(), Blocks.field36396.method11579(), var1.method18360(), var1.method18345());
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      return this.getDefaultState().method23443(var1.getWorld(), var1.getPos())
+         ? super.getStateForPlacement(var1)
+         : Block.method11538(this.getDefaultState(), Blocks.field36396.getDefaultState(), var1.getWorld(), var1.getPos());
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       if (var2 == Direction.UP && !var1.method23443(var4, var5)) {
-         var4.method6860().method20726(var5, this, 1);
+         var4.method6860().scheduleTick(var5, this, 1);
       }
 
-      return super.method11491(var1, var2, var3, var4, var5, var6);
+      return super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
    }
 
    @Override
-   public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void tick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       Class3221.method11610(var1, var2, var3);
    }
 
@@ -54,12 +57,12 @@ public class Class3411 extends Block {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return field19095;
    }
 
    @Override
-   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
+   public boolean allowsMovement(BlockState var1, IBlockReader var2, BlockPos var3, PathType var4) {
       return false;
    }
 }

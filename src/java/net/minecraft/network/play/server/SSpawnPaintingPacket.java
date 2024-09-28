@@ -45,7 +45,7 @@ public class SSpawnPaintingPacket implements IPacket<IClientPlayNetHandler> {
       var1.writeUniqueId(this.field24277);
       var1.writeVarInt(this.field24280);
       var1.writeBlockPos(this.field24278);
-      var1.writeByte(this.field24279.method534());
+      var1.writeByte(this.field24279.getHorizontalIndex());
    }
 
    public void processPacket(IClientPlayNetHandler var1) {

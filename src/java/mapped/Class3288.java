@@ -11,6 +11,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -32,7 +33,7 @@ public class Class3288 extends Class3287 {
    }
 
    @Override
-   public void method11826(PlayerEntity var1, Class1660 var2, BlockPos var3) {
+   public void method11826(PlayerEntity var1, IWorld var2, BlockPos var3) {
       var2.method6742(var1, var3, SoundEvents.field26427, Class2266.field14734, 1.0F, 1.0F);
    }
 

@@ -1,6 +1,8 @@
 package mapped;
 
 import net.minecraft.block.HorizontalBlock;
+import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.block.Block;
@@ -8,6 +10,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
@@ -58,9 +61,9 @@ public class Class3354 extends Class3241 {
 
    public Class3354(Properties var1) {
       super(var1);
-      this.method11578(
-         this.field18612
-            .method35393()
+      this.setDefaultState(
+         this.stateContainer
+            .getBaseState()
             .with(field18880, Direction.NORTH)
             .with(field18881, Boolean.valueOf(false))
             .with(field18882, Boolean.valueOf(false))
@@ -78,13 +81,13 @@ public class Class3354 extends Class3241 {
    }
 
    @Override
-   public boolean method11534(BlockState var1) {
+   public boolean isTransparent(BlockState var1) {
       return true;
    }
 
    @Override
-   public BlockState method11495(Class5909 var1) {
-      World var4 = var1.method18360();
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      World var4 = var1.getWorld();
       ItemStack var5 = var1.method18357();
       CompoundNBT var6 = var5.method32142();
       PlayerEntity var7 = var1.method18358();
@@ -96,7 +99,7 @@ public class Class3354 extends Class3241 {
          }
       }
 
-      return this.method11579().with(field18880, var1.method18350().getOpposite()).with(field18882, Boolean.valueOf(var8));
+      return this.getDefaultState().with(field18880, var1.getPlacementHorizontalFacing().getOpposite()).with(field18882, Boolean.valueOf(var8));
    }
 
    @Override
@@ -105,7 +108,7 @@ public class Class3354 extends Class3241 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       switch (Class7719.field33128[var1.<Direction>get(field18880).ordinal()]) {
          case 1:
             return field18889;
@@ -131,8 +134,8 @@ public class Class3354 extends Class3241 {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field18880, field18881, field18882);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field18880, field18881, field18882);
    }
 
    @Nullable
@@ -170,7 +173,7 @@ public class Class3354 extends Class3241 {
 
    public static void method11922(World var0, BlockPos var1, BlockState var2) {
       method11923(var0, var1, var2, true);
-      var0.method6860().method20726(var1, var2.getBlock(), 2);
+      var0.method6860().scheduleTick(var1, var2.getBlock(), 2);
       var0.playEvent(1043, var1, 0);
    }
 
@@ -184,12 +187,12 @@ public class Class3354 extends Class3241 {
    }
 
    @Override
-   public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void tick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       method11923(var2, var3, var1, false);
    }
 
    @Override
-   public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+   public void onReplaced(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       if (!var1.isIn(var4.getBlock())) {
          if (var1.<Boolean>get(field18882)) {
             this.method11925(var1, var2, var3);
@@ -199,7 +202,7 @@ public class Class3354 extends Class3241 {
             var2.notifyNeighborsOfStateChange(var3.down(), this);
          }
 
-         super.method11513(var1, var2, var3, var4, var5);
+         super.onReplaced(var1, var2, var3, var4, var5);
       }
    }
 
@@ -253,7 +256,7 @@ public class Class3354 extends Class3241 {
    }
 
    @Override
-   public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
+   public ActionResultType onBlockActivated(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       if (var1.<Boolean>get(field18882)) {
          if (!var2.isRemote) {
             this.method11926(var2, var3, var4);
@@ -281,7 +284,7 @@ public class Class3354 extends Class3241 {
    }
 
    @Override
-   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
+   public boolean allowsMovement(BlockState var1, IBlockReader var2, BlockPos var3, PathType var4) {
       return false;
    }
 }

@@ -6,8 +6,10 @@ import com.google.common.collect.Sets;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.DoorBlock;
+import net.minecraft.block.SlabBlock;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Items;
+import net.minecraft.state.Property;
 import net.minecraft.state.properties.BedPart;
 import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.state.properties.SlabType;
@@ -142,14 +144,14 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                      Class4695.method14724(var0)
                         .method18296(
                            Class140.method420(Class6871.method20919(2))
-                              .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34329(Class3208.field18605, SlabType.field220)))
+                              .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34329(SlabBlock.field18605, SlabType.field220)))
                         )
                   )
                )
          );
    }
 
-   private static <T extends Comparable<T> & IStringSerializable> Class5888 method11072(Block var0, Class8550<T> var1, T var2) {
+   private static <T extends Comparable<T> & IStringSerializable> Class5888 method11072(Block var0, Property<T> var1, T var2) {
       return Class7318.method23188()
          .method18320(
             method11060(

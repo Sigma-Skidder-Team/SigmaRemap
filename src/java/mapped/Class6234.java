@@ -17,7 +17,7 @@ public final class Class6234 extends Class6230 {
       ServerWorld var5 = var1.method11326();
       this.method19204(true);
       Direction var6 = var1.method11324().<Direction>get(Class3357.field18899);
-      BlockPos var7 = var1.method11323().method8349(var6);
+      BlockPos var7 = var1.method11323().offset(var6);
       BlockState var8 = var5.getBlockState(var7);
       if (!AbstractFireBlock.method12012(var5, var7, var6)) {
          if (!Class3244.method11656(var8)) {

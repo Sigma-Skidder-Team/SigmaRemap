@@ -1,17 +1,16 @@
-package mapped;
+package net.minecraft.world;
 
+import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.Difficulty;
-import net.minecraft.world.ITickList;
 
 import java.util.Random;
 
-public interface Class1660 extends Class1678, Class1661 {
+public interface IWorld extends Class1678, Class1661 {
    @Override
    default long method6996() {
       return this.getWorldInfo().method20034();
@@ -19,7 +18,7 @@ public interface Class1660 extends Class1678, Class1661 {
 
    ITickList<Block> method6860();
 
-   ITickList<Fluid> method6861();
+   ITickList<Fluid> getPendingFluidTicks();
 
    Class6612 getWorldInfo();
 

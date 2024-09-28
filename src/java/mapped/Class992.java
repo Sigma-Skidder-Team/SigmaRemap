@@ -25,7 +25,7 @@ public class Class992 extends AbstractMinecartEntity {
 
    @Override
    public BlockState method3604() {
-      return Blocks.field36532.method11579();
+      return Blocks.field36532.getDefaultState();
    }
 
    @Override

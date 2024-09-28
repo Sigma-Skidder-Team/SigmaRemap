@@ -1649,7 +1649,7 @@ public abstract class PlayerEntity extends LivingEntity {
 
    public boolean method2936(BlockPos var1, Direction var2, ItemStack var3) {
       if (!this.abilities.allowEdit) {
-         BlockPos var6 = var1.method8349(var2.getOpposite());
+         BlockPos var6 = var1.offset(var2.getOpposite());
          CachedBlockInfo var7 = new CachedBlockInfo(this.world, var6, false);
          return var3.method32176(this.world.method6817(), var7);
       } else {

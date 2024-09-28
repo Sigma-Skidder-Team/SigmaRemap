@@ -25,6 +25,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.fluid.Fluid;
+import net.minecraft.fluid.FluidState;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -1180,7 +1181,7 @@ public abstract class LivingEntity extends Entity {
          if (var1 instanceof WitherEntity) {
             if (this.world.getGameRules().getBoolean(Class5462.field24224)) {
                BlockPos var5 = this.getPosition();
-               BlockState var6 = Blocks.WITHER_ROSE.method11579();
+               BlockState var6 = Blocks.WITHER_ROSE.getDefaultState();
                if (this.world.getBlockState(var5).isAir() && var6.method23443(this.world, var5)) {
                   this.world.setBlockState(var5, var6, 3);
                   var4 = true;
@@ -1884,7 +1885,7 @@ public abstract class LivingEntity extends Entity {
          }
 
          FluidState var7 = this.world.getFluidState(this.getPosition());
-         if (this.isInWater() && this.method2897() && !this.method3107(var7.method23472())) {
+         if (this.isInWater() && this.method2897() && !this.method3107(var7.getFluid())) {
             double var34 = this.getPosY();
             float var38 = !this.isSprinting() ? this.getWaterSlowDown() : 0.9F;
             float var39 = 0.02F;
@@ -1919,7 +1920,7 @@ public abstract class LivingEntity extends Entity {
             if (this.collidedHorizontally && this.isOffsetPositionInLiquid(var16.x, var16.y + 0.6F - this.getPosY() + var34, var16.z)) {
                this.setMotion(var16.x, 0.3F, var16.z);
             }
-         } else if (this.isInLava() && this.method2897() && !this.method3107(var7.method23472())) {
+         } else if (this.isInLava() && this.method2897() && !this.method3107(var7.getFluid())) {
             double var10 = this.getPosY();
             this.moveRelative(0.02F, var1);
             this.move(MoverType.SELF, this.getMotion());

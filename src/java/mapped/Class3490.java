@@ -24,7 +24,7 @@ public class Class3490 extends Class3194 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       Vector3d var7 = var1.method23421(var2, var3);
       return field19357.withOffset(var7.x, var7.y, var7.z);
    }

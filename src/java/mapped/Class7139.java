@@ -20,7 +20,7 @@ public abstract class Class7139 {
    public abstract void method22269(ISeedReader var1, Random var2, List<BlockPos> var3, List<BlockPos> var4, Set<BlockPos> var5, Class9764 var6);
 
    public void method22273(Class1681 var1, BlockPos var2, BooleanProperty var3, Set<BlockPos> var4, Class9764 var5) {
-      this.method22274(var1, var2, Blocks.VINE.method11579().with(var3, Boolean.valueOf(true)), var4, var5);
+      this.method22274(var1, var2, Blocks.VINE.getDefaultState().with(var3, Boolean.valueOf(true)), var4, var5);
    }
 
    public void method22274(Class1681 var1, BlockPos var2, BlockState var3, Set<BlockPos> var4, Class9764 var5) {

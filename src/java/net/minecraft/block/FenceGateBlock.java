@@ -2,7 +2,10 @@ package net.minecraft.block;
 
 import mapped.*;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.ActionResultType;
@@ -12,6 +15,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
 public class FenceGateBlock extends HorizontalBlock {
@@ -39,9 +43,9 @@ public class FenceGateBlock extends HorizontalBlock {
 
    public FenceGateBlock(Properties var1) {
       super(var1);
-      this.method11578(
-         this.field18612
-            .method35393()
+      this.setDefaultState(
+         this.stateContainer
+            .getBaseState()
             .with(OPEN, Boolean.valueOf(false))
             .with(POWERED, Boolean.valueOf(false))
             .with(IN_WALL, Boolean.valueOf(false))
@@ -49,7 +53,7 @@ public class FenceGateBlock extends HorizontalBlock {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       if (!var1.<Boolean>get(IN_WALL)) {
          return var1.<Direction>get(HORIZONTAL_FACING).getAxis() != Direction.Axis.X ? field18489 : field18490;
       } else {
@@ -58,12 +62,12 @@ public class FenceGateBlock extends HorizontalBlock {
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       Direction.Axis var9 = var2.getAxis();
       if (var1.<Direction>get(HORIZONTAL_FACING).rotateY().getAxis() != var9) {
-         return super.method11491(var1, var2, var3, var4, var5, var6);
+         return super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
       } else {
-         boolean var10 = this.method11504(var3) || this.method11504(var4.getBlockState(var5.method8349(var2.getOpposite())));
+         boolean var10 = this.method11504(var3) || this.method11504(var4.getBlockState(var5.offset(var2.getOpposite())));
          return var1.with(IN_WALL, Boolean.valueOf(var10));
       }
    }
@@ -87,7 +91,7 @@ public class FenceGateBlock extends HorizontalBlock {
    }
 
    @Override
-   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
+   public boolean allowsMovement(BlockState var1, IBlockReader var2, BlockPos var3, PathType var4) {
       switch (Class9845.field45949[var4.ordinal()]) {
          case 1:
             return var1.<Boolean>get(OPEN);
@@ -101,16 +105,16 @@ public class FenceGateBlock extends HorizontalBlock {
    }
 
    @Override
-   public BlockState method11495(Class5909 var1) {
-      World var4 = var1.method18360();
-      BlockPos var5 = var1.method18345();
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      World var4 = var1.getWorld();
+      BlockPos var5 = var1.getPos();
       boolean var6 = var4.method6780(var5);
-      Direction var7 = var1.method18350();
+      Direction var7 = var1.getPlacementHorizontalFacing();
       Direction.Axis var8 = var7.getAxis();
       boolean var9 = var8 == Direction.Axis.Z
             && (this.method11504(var4.getBlockState(var5.west())) || this.method11504(var4.getBlockState(var5.east())))
          || var8 == Direction.Axis.X && (this.method11504(var4.getBlockState(var5.north())) || this.method11504(var4.getBlockState(var5.south())));
-      return this.method11579()
+      return this.getDefaultState()
          .with(HORIZONTAL_FACING, var7)
          .with(OPEN, Boolean.valueOf(var6))
          .with(POWERED, Boolean.valueOf(var6))
@@ -122,7 +126,7 @@ public class FenceGateBlock extends HorizontalBlock {
    }
 
    @Override
-   public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
+   public ActionResultType onBlockActivated(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       if (!var1.<Boolean>get(OPEN)) {
          Direction var9 = var4.getHorizontalFacing();
          if (var1.<Direction>get(HORIZONTAL_FACING) == var9.getOpposite()) {
@@ -154,8 +158,8 @@ public class FenceGateBlock extends HorizontalBlock {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(HORIZONTAL_FACING, OPEN, POWERED, IN_WALL);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(HORIZONTAL_FACING, OPEN, POWERED, IN_WALL);
    }
 
    public static boolean method11507(BlockState var0, Direction var1) {

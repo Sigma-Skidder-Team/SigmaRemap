@@ -2,11 +2,14 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
 import java.util.Map;
@@ -23,9 +26,9 @@ public class Class3443 extends Block {
 
    public Class3443(Properties var1) {
       super(var1);
-      this.method11578(
-         this.field18612
-            .method35393()
+      this.setDefaultState(
+         this.stateContainer
+            .getBaseState()
             .with(field19249, Boolean.valueOf(true))
             .with(field19250, Boolean.valueOf(true))
             .with(field19251, Boolean.valueOf(true))
@@ -36,10 +39,10 @@ public class Class3443 extends Block {
    }
 
    @Override
-   public BlockState method11495(Class5909 var1) {
-      World var4 = var1.method18360();
-      BlockPos var5 = var1.method18345();
-      return this.method11579()
+   public BlockState getStateForPlacement(BlockItemUseContext var1) {
+      World var4 = var1.getWorld();
+      BlockPos var5 = var1.getPos();
+      return this.getDefaultState()
          .with(field19254, Boolean.valueOf(this != var4.getBlockState(var5.down()).getBlock()))
          .with(field19253, Boolean.valueOf(this != var4.getBlockState(var5.up()).getBlock()))
          .with(field19249, Boolean.valueOf(this != var4.getBlockState(var5.north()).getBlock()))
@@ -49,8 +52,8 @@ public class Class3443 extends Block {
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
-      return !var3.isIn(this) ? super.method11491(var1, var2, var3, var4, var5, var6) : var1.with(field19255.get(var2), Boolean.valueOf(false));
+   public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
+      return !var3.isIn(this) ? super.updatePostPlacement(var1, var2, var3, var4, var5, var6) : var1.with(field19255.get(var2), Boolean.valueOf(false));
    }
 
    @Override
@@ -74,7 +77,7 @@ public class Class3443 extends Block {
    }
 
    @Override
-   public void method11489(Class7558<Block, BlockState> var1) {
-      var1.method24737(field19253, field19254, field19249, field19250, field19251, field19252);
+   public void fillStateContainer(StateContainer.Builder<Block, BlockState> var1) {
+      var1.add(field19253, field19254, field19249, field19250, field19251, field19252);
    }
 }

@@ -1,12 +1,11 @@
 package net.minecraft.state;
 
 import com.google.common.collect.ImmutableSet;
-import mapped.Class8550;
 
 import java.util.Collection;
 import java.util.Optional;
 
-public class BooleanProperty extends Class8550<Boolean> {
+public class BooleanProperty extends Property<Boolean> {
    private final ImmutableSet<Boolean> field38441 = ImmutableSet.of(true, false);
 
    public BooleanProperty(String var1) {

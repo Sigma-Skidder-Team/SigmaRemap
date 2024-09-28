@@ -23,7 +23,7 @@ public class Class3243 extends Class3241 {
    }
 
    @Override
-   public void method11512(BlockState var1, World var2, BlockPos var3, Random var4) {
+   public void animateTick(BlockState var1, World var2, BlockPos var3, Random var4) {
       TileEntity var7 = var2.getTileEntity(var3);
       if (var7 instanceof Class957) {
          int var8 = ((Class957)var7).method3884();

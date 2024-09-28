@@ -22,7 +22,7 @@ public class Class5945 extends Class5942<Class955> {
    public void method18462(Class955 var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
       World var9 = var1.method3734();
       if (var9 != null) {
-         BlockPos var10 = var1.getPos().method8349(var1.method3860().getOpposite());
+         BlockPos var10 = var1.getPos().offset(var1.method3860().getOpposite());
          BlockState var11 = var1.method3864();
          if (!var11.isAir()) {
             Class7551.method24692();
@@ -34,12 +34,12 @@ public class Class5945 extends Class5942<Class955> {
             } else if (var1.method3848() && !var1.method3846()) {
                PistonType var12 = !var11.isIn(Blocks.STICKY_PISTON) ? PistonType.field638 : PistonType.field639;
                BlockState var13 = Blocks.PISTON_HEAD
-                  .method11579()
+                  .getDefaultState()
                   .with(Class3436.field19211, var12)
                   .with(Class3436.field19198, var11.<Direction>get(Class3435.field19198));
                var13 = var13.with(Class3436.field19212, Boolean.valueOf(var1.method3849(var2) >= 0.5F));
                this.method18467(var10, var13, var3, var4, var9, false, var6);
-               BlockPos var14 = var10.method8349(var1.method3860());
+               BlockPos var14 = var10.offset(var1.method3860());
                var3.pop();
                var3.push();
                var11 = var11.with(Class3435.field19202, Boolean.valueOf(true));

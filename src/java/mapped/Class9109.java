@@ -17,7 +17,7 @@ public class Class9109 {
    public static final Class9319<Class8278> field41852 = method33963(
       "ice_spikes",
       Class6768.field29523
-         .method20657(new Class8278(Blocks.SNOW_BLOCK.method11579(), Blocks.field36396.method11579(), Blocks.GRAVEL.method11579()))
+         .method20657(new Class8278(Blocks.SNOW_BLOCK.getDefaultState(), Blocks.field36396.getDefaultState(), Blocks.GRAVEL.getDefaultState()))
    );
    public static final Class9319<Class8278> field41853 = method33963("mountain", Class6768.field29524.method20657(Class6768.field29509));
    public static final Class9319<Class8278> field41854 = method33963("mycelium", Class6768.field29523.method20657(Class6768.field29516));
