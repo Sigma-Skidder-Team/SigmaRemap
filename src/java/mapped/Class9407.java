@@ -1639,25 +1639,25 @@ public class Class9407 {
       this.method35807(Items.field37789);
       this.field43642
          .accept(
-            Class5148.method15941(Blocks.field36719)
+            Class5148.method15941(Blocks.COMPARATOR)
                .method15939(method35811())
                .method15939(
                   Class3629.<Class105, Boolean>method12311(Class8820.field39766, Class8820.field39704)
                      .method12300(
-                        Class105.field325, false, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33723(Blocks.field36719))
+                        Class105.field325, false, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33723(Blocks.COMPARATOR))
                      )
                      .method12300(
-                        Class105.field325, true, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field36719, "_on"))
+                        Class105.field325, true, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.COMPARATOR, "_on"))
                      )
                      .method12300(
                         Class105.field326,
                         false,
-                        Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field36719, "_subtract"))
+                        Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.COMPARATOR, "_subtract"))
                      )
                      .method12300(
                         Class105.field326,
                         true,
-                        Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field36719, "_on_subtract"))
+                        Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.COMPARATOR, "_on_subtract"))
                      )
                )
          );
@@ -2346,12 +2346,12 @@ public class Class9407 {
    }
 
    private void method35924() {
-      ResourceLocation var3 = Class9060.method33723(Blocks.field36723);
-      ResourceLocation var4 = Class9060.method33722(Blocks.field36723, "_side");
+      ResourceLocation var3 = Class9060.method33723(Blocks.HOPPER);
+      ResourceLocation var4 = Class9060.method33722(Blocks.HOPPER, "_side");
       this.method35807(Items.field37545);
       this.field43642
          .accept(
-            Class5148.method15941(Blocks.field36723)
+            Class5148.method15941(Blocks.HOPPER)
                .method15939(
                   Class3629.<net.minecraft.util.Direction>method12310(Class8820.field39721)
                      .method12320(net.minecraft.util.Direction.DOWN, Class5138.method15912().method15911(Class6891.field29864, var3))
@@ -2686,7 +2686,7 @@ public class Class9407 {
       this.method35807(Items.field37788);
       this.field43642
          .accept(
-            Class5148.method15941(Blocks.field36592)
+            Class5148.method15941(Blocks.REPEATER)
                .method15939(
                   Class3629.<Integer, Boolean, Boolean>method12312(Class8820.field39746, Class8820.field39700, Class8820.field39704)
                      .method12327((var0, var1, var2) -> {
@@ -2700,7 +2700,7 @@ public class Class9407 {
                            var5.append("_locked");
                         }
 
-                        return Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.field36592, var5.toString()));
+                        return Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.REPEATER, var5.toString()));
                      })
                )
                .method15939(method35811())
@@ -4235,12 +4235,12 @@ public class Class9407 {
       this.method35875(Blocks.field36887);
       this.method35875(Blocks.field36888);
       this.method35876(Blocks.ANVIL);
-      this.method35876(Blocks.field36714);
-      this.method35876(Blocks.field36715);
+      this.method35876(Blocks.CHIPPED_ANVIL);
+      this.method35876(Blocks.DAMAGED_ANVIL);
       this.method35880();
       this.method35884();
       this.method35886(Blocks.FURNACE, Class7524.field32277);
-      this.method35886(Blocks.field37057, Class7524.field32277);
+      this.method35886(Blocks.BLAST_FURNACE, Class7524.field32277);
       this.method35886(Blocks.field37056, Class7524.field32278);
       this.method35889();
       this.method35958();

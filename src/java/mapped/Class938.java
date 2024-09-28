@@ -34,7 +34,7 @@ public class Class938 extends Class919 implements Class937 {
 
    @Override
    public BlockState method3604() {
-      return Blocks.field36723.method11579();
+      return Blocks.HOPPER.method11579();
    }
 
    @Override
@@ -121,7 +121,7 @@ public class Class938 extends Class919 implements Class937 {
    public void method3586(DamageSource var1) {
       super.method3586(var1);
       if (this.world.getGameRules().getBoolean(Class5462.field24229)) {
-         this.entityDropItem(Blocks.field36723);
+         this.entityDropItem(Blocks.HOPPER);
       }
    }
 

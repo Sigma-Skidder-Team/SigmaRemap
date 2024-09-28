@@ -937,11 +937,11 @@ public abstract class World implements Class1660, AutoCloseable {
          BlockPos var7 = var1.method8349(var6);
          if (this.method7017(var7)) {
             BlockState var8 = this.getBlockState(var7);
-            if (!var8.isIn(Blocks.field36719)) {
+            if (!var8.isIn(Blocks.COMPARATOR)) {
                if (var8.method23400(this, var7)) {
                   var7 = var7.method8349(var6);
                   var8 = this.getBlockState(var7);
-                  if (var8.isIn(Blocks.field36719)) {
+                  if (var8.isIn(Blocks.COMPARATOR)) {
                      var8.method23423(this, var7, var2, var1, false);
                   }
                }

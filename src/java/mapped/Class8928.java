@@ -21,7 +21,7 @@ public class Class8928 {
       var0.put(Blocks.IRON_BARS, var4);
       var0.put(Blocks.GLASS_PANE, var4);
       var0.put(Blocks.TRIPWIRE_HOOK, var4);
-      var0.put(Blocks.field36723, var4);
+      var0.put(Blocks.HOPPER, var4);
       var0.put(Blocks.CHAIN, var4);
       var0.put(Blocks.field36449, var4);
       var0.put(Blocks.field36446, var4);
@@ -93,7 +93,7 @@ public class Class8928 {
       var0.put(Blocks.field36569, var5);
       var0.put(Blocks.CACTUS, var5);
       var0.put(Blocks.SUGAR_CANE, var5);
-      var0.put(Blocks.field36592, var5);
+      var0.put(Blocks.REPEATER, var5);
       var0.put(Blocks.field36609, var5);
       var0.put(Blocks.field36610, var5);
       var0.put(Blocks.field36611, var5);
@@ -139,7 +139,7 @@ public class Class8928 {
       var0.put(Blocks.field36692, var5);
       var0.put(Blocks.field36693, var5);
       var0.put(Blocks.field36694, var5);
-      var0.put(Blocks.field36719, var5);
+      var0.put(Blocks.COMPARATOR, var5);
       var0.put(Blocks.field36728, var5);
       var0.put(Blocks.field36766, var5);
       var0.put(Blocks.SUNFLOWER, var5);

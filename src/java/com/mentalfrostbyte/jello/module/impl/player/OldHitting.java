@@ -16,6 +16,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.WoodButtonBlock;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Items;
 import net.minecraft.item.SwordItem;
@@ -42,7 +43,7 @@ public class OldHitting extends Module {
     @HigherPriority
     @Class5631
     private void method16020(EventUpdate var1) {
-        if (this.isEnabled()) {
+        if (this.isEnabled()/* || JelloPortal.getCurrentVersion() == ViaVerList._1_8_x*/) {
             if (var1.isPre()) {
                 boolean var4 = mc.player.getHeldItemMainhand() != null && mc.player.getHeldItemMainhand().getItem() instanceof SwordItem;
                 boolean var5 = Client.getInstance().getModuleManager().getModuleByClass(KillAura.class).method15988();
@@ -61,22 +62,22 @@ public class OldHitting extends Module {
                                     Blocks.CRAFTING_TABLE,
                                     Blocks.BEACON,
                                     Blocks.FURNACE,
-                                    Blocks.field37057,
+                                    Blocks.BLAST_FURNACE,
                                     Blocks.ENCHANTING_TABLE,
                                     Blocks.ANVIL,
-                                    Blocks.field36714,
-                                    Blocks.field36715,
+                                    Blocks.CHIPPED_ANVIL,
+                                    Blocks.DAMAGED_ANVIL,
                                     Blocks.DISPENSER,
                                     Blocks.NOTE_BLOCK,
                                     Blocks.LEVER,
-                                    Blocks.field36723,
+                                    Blocks.HOPPER,
                                     Blocks.DROPPER,
-                                    Blocks.field36592,
-                                    Blocks.field36719
+                                    Blocks.REPEATER,
+                                    Blocks.COMPARATOR
                             )
                     );
                     if (var10.contains(var9)
-                            || var9 instanceof Class3204
+                            || var9 instanceof WoodButtonBlock
                             || var9 instanceof Class3203
                             || var9 instanceof Class3199
                             || var9 instanceof Class3461 && var9 != Blocks.IRON_DOOR) {
@@ -110,16 +111,16 @@ public class OldHitting extends Module {
     @EventTarget
     @LowerPriority
     @Class5631
-    private void method16021(ReceivePacketEvent var1) {
-        if (this.isEnabled()) {
+    private void onPacketReceive(ReceivePacketEvent event) {
+        if (this.isEnabled() /* || JelloPortal.getCurrentVersion() == ViaVerList._1_8_x*/) {
             if (mc.player != null) {
-                if (var1.getPacket() instanceof SEntityEquipmentPacket) {
-                    SEntityEquipmentPacket var4 = (SEntityEquipmentPacket) var1.getPacket();
+                if (event.getPacket() instanceof SEntityEquipmentPacket) {
+                    SEntityEquipmentPacket pack = (SEntityEquipmentPacket) event.getPacket();
 
-                    var4.func_241790_c_().removeIf(var6 -> var4.getEntityID() == mc.player.getEntityId()
-                            && var6.getFirst() == EquipmentSlotType.OFFHAND
-                            && var6.getSecond() != null
-                            && var6.getSecond().getItem() == Items.field38119);
+                    pack.func_241790_c_().removeIf(pakcie -> pack.getEntityID() == mc.player.getEntityId()
+                            && pakcie.getFirst() == EquipmentSlotType.OFFHAND
+                            && pakcie.getSecond() != null
+                            && pakcie.getSecond().getItem() == Items.field38119);
                 }
             }
         }
@@ -128,66 +129,65 @@ public class OldHitting extends Module {
     @EventTarget
     @LowerPriority
     @Class5631
-    private void method16022(EventHandAnimation var1) {
-        if (this.isEnabled()) {
-            float var4 = var1.method13924();
-            if (var1.method13926() && var1.getHand() == HandSide.LEFT && var1.getItemStack().getItem() instanceof Class3334) {
-                var1.method13931(false);
-            } else if (var1.getHand() != HandSide.LEFT || !field23408) {
-                if (field23408 && var1.method13926()) {
-                    var1.setCancelled(true);
-                    String var5 = this.getStringSettingValueByName("Animation");
-                    switch (var5) {
+    private void method16022(EventHandAnimation event) {
+        if (this.isEnabled()/* || JelloPortal.getCurrentVersion() == ViaVerList._1_8_x*/) {
+            float var4 = event.method13924();
+            if (event.method13926() && event.getHand() == HandSide.LEFT && event.getItemStack().getItem() instanceof Class3334) {
+                event.method13931(false);
+            } else if (event.getHand() != HandSide.LEFT || !field23408) {
+                if (field23408 && event.method13926()) {
+                    event.setCancelled(true);
+                    switch (this.getStringSettingValueByName("Animation")) {
                         case "Vanilla":
-                            this.method16026(0.0F, var4, var1.getMatrix());
+                            this.method16026(0.0F, var4, event.getMatrix());
                             break;
                         case "Tap":
-                            this.method16027(0.0F, var4, var1.getMatrix());
+                            this.method16027(0.0F, var4, event.getMatrix());
                             break;
                         case "Tap2":
-                            this.method16028(0.0F, var4, var1.getMatrix());
+                            this.method16028(0.0F, var4, event.getMatrix());
                             break;
                         case "Slide":
-                            this.method16029(0.0F, var4, var1.getMatrix());
+                            this.method16029(0.0F, var4, event.getMatrix());
                             break;
                         case "Slide2":
-                            this.method16030(0.0F, var4, var1.getMatrix());
+                            this.method16030(0.0F, var4, event.getMatrix());
                             break;
                         case "Scale":
-                            this.method16031(0.0F, var4, var1.getMatrix());
+                            this.method16031(0.0F, var4, event.getMatrix());
                             break;
                         case "Leaked":
-                            this.method16032(0.0F, var4, var1.getMatrix());
+                            this.method16032(0.0F, var4, event.getMatrix());
                             break;
                         case "Ninja":
-                            this.method16025(0.0F, var4, var1.getMatrix());
+                            this.method16025(0.0F, var4, event.getMatrix());
                             break;
                         case "Tomy":
-                            this.method16024(0.0F, var4, var1.getMatrix());
+                            this.method16024(0.0F, var4, event.getMatrix());
                             break;
                         case "Down":
-                            this.method16033(0.0F, var4, var1.getMatrix());
+                            this.method16033(0.0F, var4, event.getMatrix());
                     }
                 }
             }
         }
     }
 
-    private void method16023(float var1, float var2, float var3, float var4, MatrixStack var5) {
+    private void rotate(float var1, float var2, float var3, float var4, MatrixStack var5) {
         var5.rotate(new Vector3f(var2, var3, var4).rotationDegrees(var1));
     }
 
     private void method16024(float var1, float var2, MatrixStack var3) {
         var3.translate(0.48F, -0.55F, -0.71999997F);
         var3.translate(0.0, (double) (var1 * -0.6F), 0.0);
-        this.method16023(77.0F, 0.0F, 1.0F, 0.0F, var3);
-        this.method16023(-10.0F, 0.0F, 0.0F, 1.0F, var3);
+        this.rotate(77.0F, 0.0F, 1.0F, 0.0F, var3);
+        this.rotate(-10.0F, 0.0F, 0.0F, 1.0F, var3);
         float var6 = MathHelper.sin(var2 * var2 * (float) Math.PI);
         float var7 = MathHelper.sin(MathHelper.method37765(var2) * (float) Math.PI);
-        this.method16023(var6 * -20.0F, 0.0F, 1.0F, 0.0F, var3);
-        this.method16023(var7 * -20.0F, 0.0F, 0.0F, 1.0F, var3);
-        this.method16023(var7 * -69.0F, 1.0F, 0.0F, 0.0F, var3);
-        this.method16023(-80.0F, 1.0F, 0.0F, 0.0F, var3);
+        this.rotate(var6 * -20.0F, 0.0F, 1.0F, 0.0F, var3);
+        this.rotate(var7 * -20.0F, 0.0F, 0.0F, 1.0F, var3);
+        this.rotate(var7 * -69.0F, 1.0F, 0.0F, 0.0F, var3);
+        this.rotate(-80.0F, 1.0F, 0.0F, 0.0F, var3);
         float var8 = 1.2F;
         var3.method35292(var8, var8, var8);
     }
@@ -195,14 +195,14 @@ public class OldHitting extends Module {
     private void method16025(float var1, float var2, MatrixStack var3) {
         var3.translate(0.48F, -0.39F, -0.71999997F);
         var3.translate(0.0, (double) (var1 * -0.6F), 0.0);
-        this.method16023(100.0F, 0.0F, 1.0F, 0.0F, var3);
-        this.method16023(-50.0F, 0.0F, 0.0F, 1.0F, var3);
+        this.rotate(100.0F, 0.0F, 1.0F, 0.0F, var3);
+        this.rotate(-50.0F, 0.0F, 0.0F, 1.0F, var3);
         float var6 = MathHelper.sin(var2 * (float) Math.PI);
         float var7 = MathHelper.sin(var2 * (float) Math.PI);
-        this.method16023(var6 * -10.0F, 0.0F, 1.0F, 0.0F, var3);
-        this.method16023(var7 * -30.0F, 0.0F, 0.0F, 1.0F, var3);
-        this.method16023(var7 * 109.0F, 1.0F, 0.0F, 0.0F, var3);
-        this.method16023(-90.0F, 1.0F, 0.0F, 0.0F, var3);
+        this.rotate(var6 * -10.0F, 0.0F, 1.0F, 0.0F, var3);
+        this.rotate(var7 * -30.0F, 0.0F, 0.0F, 1.0F, var3);
+        this.rotate(var7 * 109.0F, 1.0F, 0.0F, 0.0F, var3);
+        this.rotate(-90.0F, 1.0F, 0.0F, 0.0F, var3);
         float var8 = 1.2F;
         var3.method35292(var8, var8, var8);
     }
@@ -210,14 +210,14 @@ public class OldHitting extends Module {
     private void method16026(float var1, float var2, MatrixStack var3) {
         var3.translate(0.48F, -0.55F, -0.71999997F);
         var3.translate(0.0, (double) (var1 * -0.6F), 0.0);
-        this.method16023(77.0F, 0.0F, 1.0F, 0.0F, var3);
-        this.method16023(-10.0F, 0.0F, 0.0F, 1.0F, var3);
+        this.rotate(77.0F, 0.0F, 1.0F, 0.0F, var3);
+        this.rotate(-10.0F, 0.0F, 0.0F, 1.0F, var3);
         float var6 = MathHelper.sin(var2 * var2 * (float) Math.PI);
         float var7 = MathHelper.sin(MathHelper.method37765(var2) * (float) Math.PI);
-        this.method16023(var6 * -20.0F, 0.0F, 1.0F, 0.0F, var3);
-        this.method16023(var7 * -20.0F, 0.0F, 0.0F, 1.0F, var3);
-        this.method16023(var7 * -69.0F, 1.0F, 0.0F, 0.0F, var3);
-        this.method16023(-80.0F, 1.0F, 0.0F, 0.0F, var3);
+        this.rotate(var6 * -20.0F, 0.0F, 1.0F, 0.0F, var3);
+        this.rotate(var7 * -20.0F, 0.0F, 0.0F, 1.0F, var3);
+        this.rotate(var7 * -69.0F, 1.0F, 0.0F, 0.0F, var3);
+        this.rotate(-80.0F, 1.0F, 0.0F, 0.0F, var3);
         float var8 = 1.2F;
         var3.method35292(var8, var8, var8);
     }
@@ -226,24 +226,24 @@ public class OldHitting extends Module {
         var3.translate(0.0, -3.5, 0.0);
         var3.translate(0.56F, -0.52F, -0.72F);
         var3.translate(0.56F, -0.22F, -0.71999997F);
-        this.method16023(45.0F, 0.0F, 1.0F, 0.0F, var3);
+        this.rotate(45.0F, 0.0F, 1.0F, 0.0F, var3);
         float var6 = MathHelper.sin(MathHelper.method37765(var2) * (float) Math.PI);
-        this.method16023(0.0F, 0.0F, 0.0F, 1.0F, var3);
-        this.method16023(var6 * -9.0F, 1.0F, 0.0F, 0.0F, var3);
-        this.method16023(-9.0F, 0.0F, 0.0F, 1.0F, var3);
+        this.rotate(0.0F, 0.0F, 0.0F, 1.0F, var3);
+        this.rotate(var6 * -9.0F, 1.0F, 0.0F, 0.0F, var3);
+        this.rotate(-9.0F, 0.0F, 0.0F, 1.0F, var3);
         var3.translate(0.0, 3.2F, 0.0);
-        this.method16023(-80.0F, 1.0F, 0.0F, 0.0F, var3);
+        this.rotate(-80.0F, 1.0F, 0.0F, 0.0F, var3);
         var3.method35292(2.7F, 2.7F, 2.7F);
     }
 
     private void method16028(float var1, float var2, MatrixStack var3) {
         var3.translate(0.648F, -0.55F, -0.71999997F);
         var3.translate(0.0, (double) (var1 * -0.6F), 0.0);
-        this.method16023(77.0F, 0.0F, 1.0F, 0.0F, var3);
-        this.method16023(-10.0F, 0.0F, 0.0F, 1.0F, var3);
+        this.rotate(77.0F, 0.0F, 1.0F, 0.0F, var3);
+        this.rotate(-10.0F, 0.0F, 0.0F, 1.0F, var3);
         float var6 = MathHelper.sin(MathHelper.method37765(var2) * (float) Math.PI);
-        this.method16023(-80.0F, 1.0F, 0.0F, 0.0F, var3);
-        this.method16023(-var6 * 10.0F, 1.0F, -2.0F, 3.0F, var3);
+        this.rotate(-80.0F, 1.0F, 0.0F, 0.0F, var3);
+        this.rotate(-var6 * 10.0F, 1.0F, -2.0F, 3.0F, var3);
         float var7 = 1.2F;
         var3.method35292(var7, var7, var7);
     }
@@ -251,11 +251,11 @@ public class OldHitting extends Module {
     private void method16029(float var1, float var2, MatrixStack var3) {
         var3.translate(0.648F, -0.55F, -0.71999997F);
         var3.translate(0.0, (double) (var1 * -0.6F), 0.0);
-        this.method16023(77.0F, 0.0F, 1.0F, 0.0F, var3);
-        this.method16023(-10.0F, 0.0F, 0.0F, 1.0F, var3);
+        this.rotate(77.0F, 0.0F, 1.0F, 0.0F, var3);
+        this.rotate(-10.0F, 0.0F, 0.0F, 1.0F, var3);
         float var6 = MathHelper.sin(MathHelper.method37765(var2) * (float) Math.PI);
-        this.method16023(-80.0F, 1.0F, 0.0F, 0.0F, var3);
-        this.method16023(-var6 * 20.0F, 1.0F, 0.0F, 0.0F, var3);
+        this.rotate(-80.0F, 1.0F, 0.0F, 0.0F, var3);
+        this.rotate(-var6 * 20.0F, 1.0F, 0.0F, 0.0F, var3);
         float var7 = 1.2F;
         var3.method35292(var7, var7, var7);
     }
@@ -263,14 +263,14 @@ public class OldHitting extends Module {
     private void method16030(float var1, float var2, MatrixStack var3) {
         var3.translate(0.48F, -0.55F, -0.71999997F);
         var3.translate(0.0, (double) (var1 * -0.6F), 0.0);
-        this.method16023(77.0F, 0.0F, 1.0F, 0.0F, var3);
-        this.method16023(-10.0F, 0.0F, 0.0F, 1.0F, var3);
+        this.rotate(77.0F, 0.0F, 1.0F, 0.0F, var3);
+        this.rotate(-10.0F, 0.0F, 0.0F, 1.0F, var3);
         float var6 = MathHelper.sin(var2 * var2 * (float) Math.PI);
         float var7 = MathHelper.sin(MathHelper.method37765(var2) * (float) Math.PI);
-        this.method16023(var6 * -20.0F, 0.0F, 1.0F, 0.0F, var3);
-        this.method16023(var7 * -20.0F, 0.0F, 0.0F, 1.0F, var3);
-        this.method16023(var7 * -69.0F, 1.0F, 0.0F, 0.0F, var3);
-        this.method16023(-80.0F, 1.0F, 0.0F, 0.0F, var3);
+        this.rotate(var6 * -20.0F, 0.0F, 1.0F, 0.0F, var3);
+        this.rotate(var7 * -20.0F, 0.0F, 0.0F, 1.0F, var3);
+        this.rotate(var7 * -69.0F, 1.0F, 0.0F, 0.0F, var3);
+        this.rotate(-80.0F, 1.0F, 0.0F, 0.0F, var3);
         float var8 = 1.2F;
         var3.method35292(var8, var8, var8);
     }
@@ -278,10 +278,10 @@ public class OldHitting extends Module {
     private void method16031(float var1, float var2, MatrixStack var3) {
         var3.translate(0.48F, -0.55F, -0.71999997F);
         var3.translate(0.0, (double) (var1 * -0.2F), 0.0);
-        this.method16023(77.0F, 0.0F, 1.0F, 0.0F, var3);
-        this.method16023(-10.0F, 0.0F, 0.0F, 1.0F, var3);
+        this.rotate(77.0F, 0.0F, 1.0F, 0.0F, var3);
+        this.rotate(-10.0F, 0.0F, 0.0F, 1.0F, var3);
         float var6 = MathHelper.sin(MathHelper.method37765(var2) * (float) Math.PI);
-        this.method16023(-80.0F, 1.0F, 0.0F, 0.0F, var3);
+        this.rotate(-80.0F, 1.0F, 0.0F, 0.0F, var3);
         float var7 = 1.2F - var6 * 0.3F;
         var3.method35292(var7, var7, var7);
     }
@@ -289,20 +289,20 @@ public class OldHitting extends Module {
     private void method16032(float var1, float var2, MatrixStack var3) {
         var3.translate(0.56, -0.52, -0.72);
         float var6 = MathHelper.sin(MathHelper.method37765(var2) * (float) Math.PI);
-        this.method16023(77.0F, 0.0F, 1.0F, 0.0F, var3);
-        this.method16023(-10.0F, 0.0F, 0.0F, 1.0F, var3);
-        this.method16023(-80.0F, 1.0F, 0.0F, 0.0F, var3);
-        this.method16023(var6 * 10.0F, -4.0F, -2.0F, 5.0F, var3);
-        this.method16023(var6 * 30.0F, 1.0F, -0.0F, -1.0F, var3);
+        this.rotate(77.0F, 0.0F, 1.0F, 0.0F, var3);
+        this.rotate(-10.0F, 0.0F, 0.0F, 1.0F, var3);
+        this.rotate(-80.0F, 1.0F, 0.0F, 0.0F, var3);
+        this.rotate(var6 * 10.0F, -4.0F, -2.0F, 5.0F, var3);
+        this.rotate(var6 * 30.0F, 1.0F, -0.0F, -1.0F, var3);
     }
 
     private void method16033(float var1, float var2, MatrixStack var3) {
         float var6 = MathHelper.sin(MathHelper.method37765(var2) * (float) Math.PI);
         var3.translate(0.48F, -0.55F, -0.71999997F);
         var3.translate(0.0, (double) (var6 * -0.2F), 0.0);
-        this.method16023(77.0F, 0.0F, 1.0F, 0.0F, var3);
-        this.method16023(-10.0F, 0.0F, 0.0F, 1.0F, var3);
-        this.method16023(-80.0F, 1.0F, 0.0F, 0.0F, var3);
+        this.rotate(77.0F, 0.0F, 1.0F, 0.0F, var3);
+        this.rotate(-10.0F, 0.0F, 0.0F, 1.0F, var3);
+        this.rotate(-80.0F, 1.0F, 0.0F, 0.0F, var3);
         float var7 = 1.2F;
         var3.method35292(var7, var7, var7);
     }
