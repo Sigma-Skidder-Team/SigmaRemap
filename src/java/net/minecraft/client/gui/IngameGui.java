@@ -456,7 +456,7 @@ public class IngameGui extends AbstractGui {
             RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
             this.field6716.getTextureManager().bindTexture(field6712);
             ItemStack var6 = var5.getHeldItemOffhand();
-            HandSide var7 = var5.getPrimaryHand().method8920();
+            HandSide var7 = var5.getPrimaryHand().opposite();
             int var8 = this.field6741 / 2;
             int var9 = this.method5702();
             short var10 = 182;

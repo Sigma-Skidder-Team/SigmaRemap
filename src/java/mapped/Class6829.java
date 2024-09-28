@@ -90,7 +90,7 @@ public class Class6829 {
          float var4 = (float)this.field29711 * var3;
          float var5 = this.field29712;
          float var6 = this.field29713;
-         float var7 = MathHelper.method37765(var5 * var5 + var6 * var6);
+         float var7 = MathHelper.sqrt(var5 * var5 + var6 * var6);
          if (var7 < 1.0F) {
             var7 = 1.0F;
          }

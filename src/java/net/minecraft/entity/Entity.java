@@ -1156,7 +1156,7 @@ public abstract class Entity implements INameable, ICommandSource {
       float var4 = (float)(this.getPosX() - var1.getPosX());
       float var5 = (float)(this.getPosY() - var1.getPosY());
       float var6 = (float)(this.getPosZ() - var1.getPosZ());
-      return MathHelper.method37765(var4 * var4 + var5 * var5 + var6 * var6);
+      return MathHelper.sqrt(var4 * var4 + var5 * var5 + var6 * var6);
    }
 
    public double getDistanceNearest(double var1, double var3, double var5) {

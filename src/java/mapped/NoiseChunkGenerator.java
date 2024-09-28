@@ -42,7 +42,7 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
    private static final float[] field24965 = Util.<float[]>make(new float[25], var0 -> {
       for (int var3 = -2; var3 <= 2; var3++) {
          for (int var4 = -2; var4 <= 2; var4++) {
-            float var5 = 10.0F / MathHelper.method37765((float)(var3 * var3 + var4 * var4) + 0.2F);
+            float var5 = 10.0F / MathHelper.sqrt((float)(var3 * var3 + var4 * var4) + 0.2F);
             var0[var3 + 2 + (var4 + 2) * 5] = var5;
          }
       }

@@ -181,7 +181,7 @@ public class OldHitting extends Module {
         this.rotate(77.0F, 0.0F, 1.0F, 0.0F, var3);
         this.rotate(-10.0F, 0.0F, 0.0F, 1.0F, var3);
         float var6 = MathHelper.sin(var2 * var2 * (float) Math.PI);
-        float var7 = MathHelper.sin(MathHelper.method37765(var2) * (float) Math.PI);
+        float var7 = MathHelper.sin(MathHelper.sqrt(var2) * (float) Math.PI);
         this.rotate(var6 * -20.0F, 0.0F, 1.0F, 0.0F, var3);
         this.rotate(var7 * -20.0F, 0.0F, 0.0F, 1.0F, var3);
         this.rotate(var7 * -69.0F, 1.0F, 0.0F, 0.0F, var3);
@@ -211,7 +211,7 @@ public class OldHitting extends Module {
         this.rotate(77.0F, 0.0F, 1.0F, 0.0F, var3);
         this.rotate(-10.0F, 0.0F, 0.0F, 1.0F, var3);
         float var6 = MathHelper.sin(var2 * var2 * (float) Math.PI);
-        float var7 = MathHelper.sin(MathHelper.method37765(var2) * (float) Math.PI);
+        float var7 = MathHelper.sin(MathHelper.sqrt(var2) * (float) Math.PI);
         this.rotate(var6 * -20.0F, 0.0F, 1.0F, 0.0F, var3);
         this.rotate(var7 * -20.0F, 0.0F, 0.0F, 1.0F, var3);
         this.rotate(var7 * -69.0F, 1.0F, 0.0F, 0.0F, var3);
@@ -225,7 +225,7 @@ public class OldHitting extends Module {
         var3.translate(0.56F, -0.52F, -0.72F);
         var3.translate(0.56F, -0.22F, -0.71999997F);
         this.rotate(45.0F, 0.0F, 1.0F, 0.0F, var3);
-        float var6 = MathHelper.sin(MathHelper.method37765(var2) * (float) Math.PI);
+        float var6 = MathHelper.sin(MathHelper.sqrt(var2) * (float) Math.PI);
         this.rotate(0.0F, 0.0F, 0.0F, 1.0F, var3);
         this.rotate(var6 * -9.0F, 1.0F, 0.0F, 0.0F, var3);
         this.rotate(-9.0F, 0.0F, 0.0F, 1.0F, var3);
@@ -239,7 +239,7 @@ public class OldHitting extends Module {
         var3.translate(0.0, (double) (var1 * -0.6F), 0.0);
         this.rotate(77.0F, 0.0F, 1.0F, 0.0F, var3);
         this.rotate(-10.0F, 0.0F, 0.0F, 1.0F, var3);
-        float var6 = MathHelper.sin(MathHelper.method37765(var2) * (float) Math.PI);
+        float var6 = MathHelper.sin(MathHelper.sqrt(var2) * (float) Math.PI);
         this.rotate(-80.0F, 1.0F, 0.0F, 0.0F, var3);
         this.rotate(-var6 * 10.0F, 1.0F, -2.0F, 3.0F, var3);
         float var7 = 1.2F;
@@ -251,7 +251,7 @@ public class OldHitting extends Module {
         var3.translate(0.0, (double) (var1 * -0.6F), 0.0);
         this.rotate(77.0F, 0.0F, 1.0F, 0.0F, var3);
         this.rotate(-10.0F, 0.0F, 0.0F, 1.0F, var3);
-        float var6 = MathHelper.sin(MathHelper.method37765(var2) * (float) Math.PI);
+        float var6 = MathHelper.sin(MathHelper.sqrt(var2) * (float) Math.PI);
         this.rotate(-80.0F, 1.0F, 0.0F, 0.0F, var3);
         this.rotate(-var6 * 20.0F, 1.0F, 0.0F, 0.0F, var3);
         float var7 = 1.2F;
@@ -264,7 +264,7 @@ public class OldHitting extends Module {
         this.rotate(77.0F, 0.0F, 1.0F, 0.0F, var3);
         this.rotate(-10.0F, 0.0F, 0.0F, 1.0F, var3);
         float var6 = MathHelper.sin(var2 * var2 * (float) Math.PI);
-        float var7 = MathHelper.sin(MathHelper.method37765(var2) * (float) Math.PI);
+        float var7 = MathHelper.sin(MathHelper.sqrt(var2) * (float) Math.PI);
         this.rotate(var6 * -20.0F, 0.0F, 1.0F, 0.0F, var3);
         this.rotate(var7 * -20.0F, 0.0F, 0.0F, 1.0F, var3);
         this.rotate(var7 * -69.0F, 1.0F, 0.0F, 0.0F, var3);
@@ -278,7 +278,7 @@ public class OldHitting extends Module {
         var3.translate(0.0, (double) (var1 * -0.2F), 0.0);
         this.rotate(77.0F, 0.0F, 1.0F, 0.0F, var3);
         this.rotate(-10.0F, 0.0F, 0.0F, 1.0F, var3);
-        float var6 = MathHelper.sin(MathHelper.method37765(var2) * (float) Math.PI);
+        float var6 = MathHelper.sin(MathHelper.sqrt(var2) * (float) Math.PI);
         this.rotate(-80.0F, 1.0F, 0.0F, 0.0F, var3);
         float var7 = 1.2F - var6 * 0.3F;
         var3.method35292(var7, var7, var7);
@@ -286,7 +286,7 @@ public class OldHitting extends Module {
 
     private void method16032(float var1, float var2, MatrixStack var3) {
         var3.translate(0.56, -0.52, -0.72);
-        float var6 = MathHelper.sin(MathHelper.method37765(var2) * (float) Math.PI);
+        float var6 = MathHelper.sin(MathHelper.sqrt(var2) * (float) Math.PI);
         this.rotate(77.0F, 0.0F, 1.0F, 0.0F, var3);
         this.rotate(-10.0F, 0.0F, 0.0F, 1.0F, var3);
         this.rotate(-80.0F, 1.0F, 0.0F, 0.0F, var3);
@@ -295,7 +295,7 @@ public class OldHitting extends Module {
     }
 
     private void method16033(float var1, float var2, MatrixStack var3) {
-        float var6 = MathHelper.sin(MathHelper.method37765(var2) * (float) Math.PI);
+        float var6 = MathHelper.sin(MathHelper.sqrt(var2) * (float) Math.PI);
         var3.translate(0.48F, -0.55F, -0.71999997F);
         var3.translate(0.0, (double) (var6 * -0.2F), 0.0);
         this.rotate(77.0F, 0.0F, 1.0F, 0.0F, var3);

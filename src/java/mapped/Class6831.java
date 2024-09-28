@@ -24,12 +24,12 @@ public class Class6831 extends Class6829 {
       float var3 = (float)(Class1110.method5339(this.field29717).x - this.field29717.getPosX());
       float var4 = (float)(Class1110.method5339(this.field29717).y - this.field29717.getPosY());
       float var5 = (float)(Class1110.method5339(this.field29717).z - this.field29717.getPosZ());
-      double var6 = (double) MathHelper.method37765(var3 * var3 + var5 * var5);
+      double var6 = (double) MathHelper.sqrt(var3 * var3 + var5 * var5);
       double var8 = 1.0 - (double) MathHelper.method37771(var4 * 0.7F) / var6;
       var3 = (float)((double)var3 * var8);
       var5 = (float)((double)var5 * var8);
-      var6 = (double) MathHelper.method37765(var3 * var3 + var5 * var5);
-      double var10 = (double) MathHelper.method37765(var3 * var3 + var5 * var5 + var4 * var4);
+      var6 = (double) MathHelper.sqrt(var3 * var3 + var5 * var5);
+      double var10 = (double) MathHelper.sqrt(var3 * var3 + var5 * var5 + var4 * var4);
       float var12 = this.field29717.rotationYaw;
       float var13 = (float) MathHelper.method37814((double)var5, (double)var3);
       float var14 = MathHelper.method37792(this.field29717.rotationYaw + 90.0F);

@@ -79,7 +79,7 @@ public class Class3272 extends Item implements IVanishable {
                   float var12 = -MathHelper.sin(var18 * (float) (Math.PI / 180.0)) * MathHelper.cos(var11 * (float) (Math.PI / 180.0));
                   float var13 = -MathHelper.sin(var11 * (float) (Math.PI / 180.0));
                   float var14 = MathHelper.cos(var18 * (float) (Math.PI / 180.0)) * MathHelper.cos(var11 * (float) (Math.PI / 180.0));
-                  float var15 = MathHelper.method37765(var12 * var12 + var13 * var13 + var14 * var14);
+                  float var15 = MathHelper.sqrt(var12 * var12 + var13 * var13 + var14 * var14);
                   float var16 = 3.0F * ((1.0F + (float)var9) / 4.0F);
                   var12 *= var16 / var15;
                   var13 *= var16 / var15;

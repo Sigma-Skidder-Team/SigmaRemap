@@ -79,7 +79,7 @@ public class Class2783 extends Class2595 {
                }
 
                if (this.field17397 > 1) {
-                  float var13 = MathHelper.method37765(MathHelper.sqrt(var5)) * 0.5F;
+                  float var13 = MathHelper.sqrt(MathHelper.sqrt(var5)) * 0.5F;
                   if (!this.field17396.isSilent()) {
                      this.field17396.world.method6869((PlayerEntity)null, 1018, this.field17396.getPosition(), 0);
                   }

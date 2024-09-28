@@ -123,15 +123,15 @@ public class Class5718 extends EntityRenderer<Class1007> {
    }
 
    public static void method17906(float var0, float var1, float var2, float var3, int var4, MatrixStack var5, Class7733 var6, int var7) {
-      float var10 = MathHelper.method37765(var0 * var0 + var2 * var2);
-      float var11 = MathHelper.method37765(var0 * var0 + var1 * var1 + var2 * var2);
+      float var10 = MathHelper.sqrt(var0 * var0 + var2 * var2);
+      float var11 = MathHelper.sqrt(var0 * var0 + var1 * var1 + var2 * var2);
       var5.push();
       var5.translate(0.0, 2.0, 0.0);
       var5.rotate(Vector3f.YP.method25285((float)(-Math.atan2((double)var2, (double)var0)) - (float) (Math.PI / 2)));
       var5.rotate(Vector3f.XP.method25285((float)(-Math.atan2((double)var10, (double)var1)) - (float) (Math.PI / 2)));
       IVertexBuilder var12 = var6.method25597(field25113);
       float var13 = 0.0F - ((float)var4 + var3) * 0.01F;
-      float var14 = MathHelper.method37765(var0 * var0 + var1 * var1 + var2 * var2) / 32.0F - ((float)var4 + var3) * 0.01F;
+      float var14 = MathHelper.sqrt(var0 * var0 + var1 * var1 + var2 * var2) / 32.0F - ((float)var4 + var3) * 0.01F;
       byte var15 = 8;
       float var16 = 0.0F;
       float var17 = 0.75F;

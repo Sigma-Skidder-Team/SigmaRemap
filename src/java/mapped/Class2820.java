@@ -86,7 +86,7 @@ public class Class2820 extends Class2803<Class1105> {
             .method11333()
             .method11351((float) (Math.PI / 2));
          double var18 = var16.dotProduct(var17);
-         this.field17573.rotationPointX = MathHelper.method37765((float)Math.abs(var18)) * 2.0F * (float)Math.signum(var18);
+         this.field17573.rotationPointX = MathHelper.sqrt((float)Math.abs(var18)) * 2.0F * (float)Math.signum(var18);
       }
 
       this.field17573.showModel = true;

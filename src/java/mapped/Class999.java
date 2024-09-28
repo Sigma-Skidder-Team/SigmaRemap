@@ -235,7 +235,7 @@ public class Class999 extends Entity {
 
             for (int var28 = 0; (float)var28 < var25; var28++) {
                float var31 = this.rand.nextFloat() * (float) (Math.PI * 2);
-               float var34 = MathHelper.method37765(this.rand.nextFloat()) * var4;
+               float var34 = MathHelper.sqrt(this.rand.nextFloat()) * var4;
                float var36 = MathHelper.cos(var31) * var34;
                float var11 = MathHelper.sin(var31) * var34;
                if (var24.getType() != ParticleTypes.field34068) {
@@ -269,7 +269,7 @@ public class Class999 extends Entity {
          } else if (this.rand.nextBoolean()) {
             for (int var26 = 0; var26 < 2; var26++) {
                float var29 = this.rand.nextFloat() * (float) (Math.PI * 2);
-               float var32 = MathHelper.method37765(this.rand.nextFloat()) * 0.2F;
+               float var32 = MathHelper.sqrt(this.rand.nextFloat()) * 0.2F;
                float var35 = MathHelper.cos(var29) * var32;
                float var37 = MathHelper.sin(var29) * var32;
                if (var24.getType() != ParticleTypes.field34068) {

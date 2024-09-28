@@ -148,7 +148,7 @@ public class Class6898 extends Class6896 {
       if (!((float)var2 < (float)var1 * 0.3F)) {
          float var5 = (float)var1 / 2.0F;
          float var6 = var5 - (float)var2;
-         float var7 = MathHelper.method37765(var5 * var5 - var6 * var6);
+         float var7 = MathHelper.sqrt(var5 * var5 - var6 * var6);
          if (var6 != 0.0F) {
             if (Math.abs(var6) >= var5) {
                return 0.0F;

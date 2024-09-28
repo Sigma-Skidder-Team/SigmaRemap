@@ -274,7 +274,7 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
          }
       } else {
          float var12 = ((float)var1.deathTime + var5 - 1.0F) / 20.0F * 1.6F;
-         var12 = MathHelper.method37765(var12);
+         var12 = MathHelper.sqrt(var12);
          if (var12 > 1.0F) {
             var12 = 1.0F;
          }

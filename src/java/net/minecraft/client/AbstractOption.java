@@ -270,7 +270,7 @@ public abstract class AbstractOption {
       (var0, var1) -> var0.guiScale != 0 ? var1.method17956(var0.guiScale) : var1.method17955(new TranslationTextComponent("options.guiScale.auto"))
    );
    public static final Class5804 field25345 = new Class5804(
-      "options.mainHand", (var0, var1) -> var0.field44591 = var0.field44591.method8920(), (var0, var1) -> var1.method17955(var0.field44591.method8921())
+      "options.mainHand", (var0, var1) -> var0.field44591 = var0.field44591.opposite(), (var0, var1) -> var1.method17955(var0.field44591.method8921())
    );
    public static final Class5804 field25346 = new Class5804(
       "options.narrator",

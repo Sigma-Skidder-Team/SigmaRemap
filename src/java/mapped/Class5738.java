@@ -42,7 +42,7 @@ public class Class5738 extends EntityRenderer<Class904> {
          }
 
          float var16 = var9.getSwingProgress(var3);
-         float var17 = MathHelper.sin(MathHelper.method37765(var16) * (float) Math.PI);
+         float var17 = MathHelper.sin(MathHelper.sqrt(var16) * (float) Math.PI);
          float var18 = MathHelper.lerp(var3, var9.prevRenderYawOffset, var9.renderYawOffset) * (float) (Math.PI / 180.0);
          double var19 = (double) MathHelper.sin(var18);
          double var21 = (double) MathHelper.cos(var18);

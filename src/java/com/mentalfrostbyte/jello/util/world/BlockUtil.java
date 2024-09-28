@@ -297,11 +297,11 @@ public class BlockUtil {
    }
 
    private static float method34557(float var0, float var1) {
-      return MathHelper.method37765((var0 - 0.5F) * (var0 - 0.5F) + (var1 - 0.5F) * (var1 - 0.5F));
+      return MathHelper.sqrt((var0 - 0.5F) * (var0 - 0.5F) + (var1 - 0.5F) * (var1 - 0.5F));
    }
 
    private static float method34558(float var0, float var1, float var2) {
-      return MathHelper.method37765((var0 - 0.5F) * (var0 - 0.5F) + (var1 - 0.5F) * (var1 - 0.5F) + (var2 - 0.5F) * (var2 - 0.5F));
+      return MathHelper.sqrt((var0 - 0.5F) * (var0 - 0.5F) + (var1 - 0.5F) * (var1 - 0.5F) + (var2 - 0.5F) * (var2 - 0.5F));
    }
 
    public static Block method34559(PlayerEntity var0) {

@@ -22,7 +22,7 @@ public class Class232<T extends LivingEntity, M extends PlayerModel<T>> extends 
 
    @Override
    public void method836(MatrixStack var1, Class7733 var2, int var3, Entity var4, float var5, float var6, float var7, float var8) {
-      float var11 = MathHelper.method37765(var5 * var5 + var7 * var7);
+      float var11 = MathHelper.sqrt(var5 * var5 + var7 * var7);
       this.field878 = new Class887(var4.world, var4.getPosX(), var4.getPosY(), var4.getPosZ());
       this.field878.rotationYaw = (float)(Math.atan2((double)var5, (double)var7) * 180.0F / (float)Math.PI);
       this.field878.rotationPitch = (float)(Math.atan2((double)var6, (double)var11) * 180.0F / (float)Math.PI);

@@ -14,7 +14,7 @@ public enum HandSide {
       this.field14419 = var3;
    }
 
-   public HandSide method8920() {
+   public HandSide opposite() {
       return this != LEFT ? LEFT : RIGHT;
    }
 

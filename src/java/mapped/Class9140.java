@@ -34,7 +34,7 @@ public class Class9140 {
    public static void method34123(float var0, float var1, float var2, float var3) {
       float var6 = var0 * var0 + var1 * var1 + var2 * var2;
       if (var6 >= 1.0E-4F) {
-         var6 = MathHelper.method37765(var6);
+         var6 = MathHelper.sqrt(var6);
          if (var6 < 1.0F) {
             var6 = 1.0F;
          }

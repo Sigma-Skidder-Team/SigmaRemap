@@ -25,7 +25,7 @@ public class Class5647 extends ChunkGenerator {
    private static final List<BlockState> field24992 = StreamSupport.<Block>stream(Registry.BLOCK.spliterator(), false)
       .<BlockState>flatMap(var0 -> var0.getStateContainer().getValidStates().stream())
       .collect(Collectors.<BlockState>toList());
-   private static final int field24993 = MathHelper.ceil(MathHelper.method37765((float)field24992.size()));
+   private static final int field24993 = MathHelper.ceil(MathHelper.sqrt((float)field24992.size()));
    private static final int field24994 = MathHelper.ceil((float)field24992.size() / (float)field24993);
    public static final BlockState field24995 = Blocks.AIR.method11579();
    public static final BlockState field24996 = Blocks.field36765.method11579();

@@ -303,7 +303,7 @@ public class BipedModel<T extends LivingEntity> extends AgeableModel<T> implemen
          HandSide var5 = this.getMainHand((T)var1);
          ModelRenderer var6 = this.getArmForSide(var5);
          float var7 = this.swingProgress;
-         this.bipedBody.rotateAngleY = MathHelper.sin(MathHelper.method37765(var7) * (float) (Math.PI * 2)) * 0.2F;
+         this.bipedBody.rotateAngleY = MathHelper.sin(MathHelper.sqrt(var7) * (float) (Math.PI * 2)) * 0.2F;
          if (var5 == HandSide.LEFT) {
             this.bipedBody.rotateAngleY *= -1.0F;
          }
@@ -384,7 +384,7 @@ public class BipedModel<T extends LivingEntity> extends AgeableModel<T> implemen
 
    public HandSide getMainHand(T var1) {
       HandSide var4 = var1.getPrimaryHand();
-      return var1.swingingHand != Hand.MAIN_HAND ? var4.method8920() : var4;
+      return var1.swingingHand != Hand.MAIN_HAND ? var4.opposite() : var4;
    }
 
    public static enum ArmPose

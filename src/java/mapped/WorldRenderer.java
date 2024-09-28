@@ -181,7 +181,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
          for (int var4 = 0; var4 < 32; var4++) {
             float var5 = (float)(var4 - 16);
             float var6 = (float)(var3 - 16);
-            float var7 = MathHelper.method37765(var5 * var5 + var6 * var6);
+            float var7 = MathHelper.sqrt(var5 * var5 + var6 * var6);
             this.field998[var3 << 5 | var4] = -var6 / var7;
             this.field999[var3 << 5 | var4] = var5 / var7;
          }

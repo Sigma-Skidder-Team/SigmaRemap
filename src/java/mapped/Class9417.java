@@ -59,6 +59,6 @@ public class Class9417 {
    private static float method36134(int var0, int var1, int var2, int var3) {
       int var6 = var2 - var0;
       int var7 = var3 - var1;
-      return MathHelper.method37765((float)(var6 * var6 + var7 * var7));
+      return MathHelper.sqrt((float)(var6 * var6 + var7 * var7));
    }
 }

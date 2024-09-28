@@ -83,7 +83,7 @@ public class FirstPersonRenderer {
 
       var1.push();
       var1.translate((double)(var10 * 0.51F), (double)(-0.08F + var4 * -1.2F), -0.75);
-      float var11 = MathHelper.method37765(var6);
+      float var11 = MathHelper.sqrt(var6);
       float var12 = MathHelper.sin(var11 * (float) Math.PI);
       float var13 = -0.5F * var12;
       float var14 = 0.4F * MathHelper.sin(var11 * (float) (Math.PI * 2));
@@ -96,7 +96,7 @@ public class FirstPersonRenderer {
    }
 
    private void method37584(MatrixStack var1, Class7733 var2, int var3, float var4, float var5, float var6) {
-      float var9 = MathHelper.method37765(var6);
+      float var9 = MathHelper.sqrt(var6);
       float var10 = -0.2F * MathHelper.sin(var6 * (float) Math.PI);
       float var11 = -0.4F * MathHelper.sin(var9 * (float) Math.PI);
       var1.translate(0.0, (double)(-var10 / 2.0F), (double)var11);
@@ -138,7 +138,7 @@ public class FirstPersonRenderer {
    private void method37586(MatrixStack var1, Class7733 var2, int var3, float var4, float var5, HandSide var6) {
       boolean var9 = var6 != HandSide.LEFT;
       float var10 = !var9 ? -1.0F : 1.0F;
-      float var11 = MathHelper.method37765(var5);
+      float var11 = MathHelper.sqrt(var5);
       float var12 = -0.3F * MathHelper.sin(var11 * (float) Math.PI);
       float var13 = 0.4F * MathHelper.sin(var11 * (float) (Math.PI * 2));
       float var14 = -0.4F * MathHelper.sin(var5 * (float) Math.PI);
@@ -183,7 +183,7 @@ public class FirstPersonRenderer {
       int var6 = var2 != HandSide.RIGHT ? -1 : 1;
       float var7 = MathHelper.sin(var3 * var3 * (float) Math.PI);
       var1.rotate(Vector3f.YP.rotationDegrees((float)var6 * (45.0F + var7 * -20.0F)));
-      float var8 = MathHelper.sin(MathHelper.method37765(var3) * (float) Math.PI);
+      float var8 = MathHelper.sin(MathHelper.sqrt(var3) * (float) Math.PI);
       var1.rotate(Vector3f.ZP.rotationDegrees((float)var6 * var8 * -20.0F));
       var1.rotate(Vector3f.XP.rotationDegrees(var8 * -80.0F));
       var1.rotate(Vector3f.YP.rotationDegrees((float)var6 * -45.0F));
@@ -257,7 +257,7 @@ public class FirstPersonRenderer {
    ) {
       if (!Config.isShaders() || ! Shaders.method33153(var4)) {
          boolean var13 = var4 == Hand.MAIN_HAND;
-         HandSide var14 = var13 ? var1.getPrimaryHand() : var1.getPrimaryHand().method8920();
+         HandSide var14 = var13 ? var1.getPrimaryHand() : var1.getPrimaryHand().opposite();
          var8.push();
          if (var6.isEmpty()) {
             if (var13 && !var1.isInvisible()) {
@@ -296,8 +296,8 @@ public class FirstPersonRenderer {
                var8.method35292(1.0F, 1.0F, 1.0F + var37 * 0.2F);
                var8.rotate(Vector3f.field32899.rotationDegrees((float)var30 * 45.0F));
             } else {
-               float var32 = -0.4F * MathHelper.sin(MathHelper.method37765(var5) * (float) Math.PI);
-               float var36 = 0.2F * MathHelper.sin(MathHelper.method37765(var5) * (float) (Math.PI * 2));
+               float var32 = -0.4F * MathHelper.sin(MathHelper.sqrt(var5) * (float) Math.PI);
+               float var36 = 0.2F * MathHelper.sin(MathHelper.sqrt(var5) * (float) (Math.PI * 2));
                float var40 = -0.2F * MathHelper.sin(var5 * (float) Math.PI);
                var8.translate((double)((float)var30 * var32), (double)var36, (double)var40);
                this.method37589(var8, var14, var7);
@@ -384,8 +384,8 @@ public class FirstPersonRenderer {
                Client.getInstance().getEventManager().call(var16);
 
                if (!var16.isCancelled()) {
-                  float var28 = -0.4F * MathHelper.sin(MathHelper.method37765(var5) * (float) Math.PI);
-                  float var18 = 0.2F * MathHelper.sin(MathHelper.method37765(var5) * (float) (Math.PI * 2));
+                  float var28 = -0.4F * MathHelper.sin(MathHelper.sqrt(var5) * (float) Math.PI);
+                  float var18 = 0.2F * MathHelper.sin(MathHelper.sqrt(var5) * (float) (Math.PI * 2));
                   float var19 = -0.2F * MathHelper.sin(var5 * (float) Math.PI);
                   int var20 = var15 ? 1 : -1;
                   var8.translate((double)((float)var20 * var28), (double)var18, (double)var19);

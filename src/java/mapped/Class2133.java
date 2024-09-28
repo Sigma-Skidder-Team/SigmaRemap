@@ -233,7 +233,7 @@ public enum Class2133 {
          case 29:
             return Math.signum(method8826(var1, 0));
          case 30:
-            return MathHelper.method37765(method8826(var1, 0));
+            return MathHelper.sqrt(method8826(var1, 0));
          case 31:
             float var6 = method8826(var1, 0);
             float var7 = method8826(var1, 1);
