@@ -73,13 +73,13 @@ public class Jesus extends Module {
    @EventTarget
    public void method16946(EventUpdate var1) {
       if (this.isEnabled() && mc.world != null && var1.isPre() && mc.getCurrentServerData() != null) {
-         if (method16953() && !this.method16951(mc.player.boundingBox)) {
+         if (isWalkingOnLiquid() && !this.method16951(mc.player.boundingBox)) {
             this.field24017++;
          } else {
             this.field24017 = 0;
          }
 
-         if (method16953() && !this.method16951(mc.player.boundingBox)) {
+         if (isWalkingOnLiquid() && !this.method16951(mc.player.boundingBox)) {
             mc.player.jumpTicks = 0;
             var1.method13908(true);
             this.field24015++;
@@ -116,7 +116,7 @@ public class Jesus extends Module {
                }
             }
          } else {
-            if (method16953() && var1.getY() != -0.0784000015258789 && var1.getY() != MovementUtils.method37080()) {
+            if (isWalkingOnLiquid() && var1.getY() != -0.0784000015258789 && var1.getY() != MovementUtils.method37080()) {
                var1.setY(-0.078);
             }
 
@@ -141,7 +141,7 @@ public class Jesus extends Module {
                         var1.setY(var14);
                      }
                   }
-               } else if (method16953() && this.field24015 % 2 == 0) {
+               } else if (isWalkingOnLiquid() && this.field24015 % 2 == 0) {
                   this.field24016++;
                   double var12 = this.method16954((double)this.field24016);
                   MovementUtils.setSpeed(var1, 0.25);
@@ -159,7 +159,7 @@ public class Jesus extends Module {
    @EventTarget
    public void method16948(JumpEvent var1) {
       if (this.isEnabled() && mc.world != null && mc.getCurrentServerData() != null) {
-         if (method16953()) {
+         if (isWalkingOnLiquid()) {
             if (this.field24015 % 2 != 0) {
                var1.setCancelled(true);
             }
@@ -172,7 +172,7 @@ public class Jesus extends Module {
    @EventTarget
    public void method16949(EventStep var1) {
       if (this.isEnabled() && !(var1.getHeight() < 0.2)) {
-         if (method16953()) {
+         if (isWalkingOnLiquid()) {
             var1.setCancelled(true);
          }
       }
@@ -180,7 +180,7 @@ public class Jesus extends Module {
 
    @Override
    public boolean isEnabled2() {
-      return this.isEnabled() && method16953() && !this.method16950();
+      return this.isEnabled() && isWalkingOnLiquid() && !this.method16950();
    }
 
    public boolean method16950() {
@@ -202,27 +202,27 @@ public class Jesus extends Module {
       return BlockPos.method8363(var5, var7, var9, var6 - 1, var8 - 1, var10 - 1).anyMatch(var1x -> var11.test(mc.world.getBlockState(var1x)));
    }
 
-   public static boolean method16953() {
-      AxisAlignedBB var2 = mc.player.boundingBox.offset(0.0, -0.001, 0.0);
-      Stream var3 = mc.world.getCollisionShapes(mc.player, var2);
-      Iterator var4 = var3.iterator();
-      boolean var5 = true;
-      if (var4.hasNext()) {
-         while (var4.hasNext()) {
-            VoxelShape var6 = (VoxelShape)var4.next();
-            AxisAlignedBB var7 = var6.getBoundingBox();
-            BlockPos var8 = new BlockPos(var7.method19685());
-            Block var9 = mc.world.getBlockState(var8).getBlock();
-            if (var9 != Blocks.WATER
-               && var9 != Blocks.LAVA
-               && var9 != Blocks.AIR
-               && var9 != Blocks.SEAGRASS
-               && var9 != Blocks.TALL_SEAGRASS) {
-               var5 = false;
+   public static boolean isWalkingOnLiquid() {
+      AxisAlignedBB box = mc.player.boundingBox.offset(0.0, -0.001, 0.0);
+      Stream<VoxelShape> collisionShapes = mc.world.getCollisionShapes(mc.player, box);
+      Iterator<VoxelShape> shapeIterator = collisionShapes.iterator();
+      boolean isLiquid = true;
+      if (shapeIterator.hasNext()) {
+         while (shapeIterator.hasNext()) {
+            VoxelShape shape = shapeIterator.next();
+            AxisAlignedBB bb = shape.getBoundingBox();
+            BlockPos pos = new BlockPos(bb.method19685());
+            Block block = mc.world.getBlockState(pos).getBlock();
+            if (block != Blocks.WATER
+               && block != Blocks.LAVA
+               && block != Blocks.AIR
+               && block != Blocks.SEAGRASS
+               && block != Blocks.TALL_SEAGRASS) {
+               isLiquid = false;
             }
          }
 
-         return var5;
+         return isLiquid;
       } else {
          return false;
       }

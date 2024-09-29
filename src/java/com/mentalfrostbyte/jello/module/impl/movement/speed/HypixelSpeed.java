@@ -179,7 +179,7 @@ public class HypixelSpeed extends Module {
     @EventTarget
     @LowerPriority
     public void method16039(JumpEvent var1) {
-        if (!Jesus.method16953() && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
+        if (!Jesus.isWalkingOnLiquid() && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
             if (this.getBooleanValueFromSettingName("Auto Jump") || mc.player.isJumping) {
                 if (this.field23414 < 0) {
                     var1.setCancelled(true);

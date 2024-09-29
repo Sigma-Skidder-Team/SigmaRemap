@@ -40,7 +40,7 @@ public class Class4311 extends Screen {
       this.field20987.doThis((var1, var2) -> {
          this.field20991 = "§bLogging in...";
          new Thread(() -> {
-            Account var3x = new Account(this.field20985.method13303(), this.field20986.method13303());
+            Account var3x = new Account(this.field20985.getTypedText(), this.field20986.getTypedText());
             if (!this.field20990.login(var3x)) {
                this.field20991 = "§cLogin failed!";
             } else {

@@ -26,30 +26,29 @@ public class KillAuraAttackLambda implements Runnable {
    @Override
    public void run() {
       boolean var3 = (float)Math.round((float)Math.random() * 100.0F) <= this.killauraModule.getNumberValueBySettingName("Hit Chance");
-      float var4 = Math.max(KillAura.method16837().player.getDistance(KillAura.field23949.getEntity()), this.killauraModule.getNumberValueBySettingName("Range"));
+      float var4 = Math.max(KillAura.mc.player.getDistance(KillAura.field23949.getEntity()), this.killauraModule.getNumberValueBySettingName("Range"));
       EntityRayTraceResult var5;
       if (!this.killauraModule.getStringSettingValueByName("Attack Mode").equals("Pre")) {
          var5 = MultiUtilities.method17712(
-            KillAura.method16843(this.killauraModule).yaw, KillAura.method16843(this.killauraModule).pitch, var4, (double)this.field1477
+            KillAura.getRotations(this.killauraModule).yaw, KillAura.getRotations(this.killauraModule).pitch, var4, (double)this.field1477
          );
       } else {
          double var6 = Math.sqrt(
-            KillAura.method16838().player.getMotion().x * KillAura.method16839().player.getMotion().x
-               + KillAura.method16840().player.getMotion().z * KillAura.method16841().player.getMotion().z
+            KillAura.mc.player.getMotion().x * KillAura.mc.player.getMotion().x
+               + KillAura.mc.player.getMotion().z * KillAura.mc.player.getMotion().z
          );
-         double var10003 = (double)this.field1477;
-         var5 = MultiUtilities.method17712(KillAura.method16842(this.killauraModule).yaw, KillAura.method16842(this.killauraModule).pitch, var4, var10003 + var6);
+          var5 = MultiUtilities.method17712(KillAura.getRotations2(this.killauraModule).yaw, KillAura.getRotations2(this.killauraModule).pitch, var4, (double) this.field1477 + var6);
       }
 
       if (KillAura.target != null
-         && KillAura.method16844(this.killauraModule).isBlocking()
+         && KillAura.interactAB.isBlocking()
          && !this.killauraModule.getStringSettingValueByName("Autoblock Mode").equals("Vanilla")) {
-         KillAura.method16844(this.killauraModule).method36816();
+         KillAura.interactAB.method36816();
       }
 
       String mode = this.killauraModule.getStringSettingValueByName("Mode");
       if (var3 && (var5 != null || !this.killauraModule.getBooleanValueFromSettingName("Raytrace") || mode.equals("Multi"))) {
-         for (TimedEntity timedEnt : KillAura.getEntites(this.killauraModule)) {
+         for (TimedEntity timedEnt : KillAura.entities) {
             Entity entity = timedEnt.getEntity();
             if (var5 != null && this.killauraModule.getBooleanValueFromSettingName("Raytrace") && !mode.equals("Multi")) {
                entity = var5.getEntity();
@@ -104,9 +103,9 @@ public class KillAuraAttackLambda implements Runnable {
          KillAura.mc.player.swingArm(Hand.MAIN_HAND);
       }
 
-      if (KillAura.target != null && KillAura.method16844(this.killauraModule).method36817() && this.killauraModule.getStringSettingValueByName("Autoblock Mode").equals("Basic1")) {
-         KillAura.method16844(this.killauraModule)
-            .block(KillAura.target, KillAura.method16843(this.killauraModule).yaw, KillAura.method16843(this.killauraModule).pitch);
+      if (KillAura.target != null && KillAura.interactAB.method36817() && this.killauraModule.getStringSettingValueByName("Autoblock Mode").equals("Basic1")) {
+         KillAura.interactAB
+            .block(KillAura.target, KillAura.getRotations(this.killauraModule).yaw, KillAura.getRotations(this.killauraModule).pitch);
       }
    }
 }

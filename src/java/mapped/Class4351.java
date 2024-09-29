@@ -52,11 +52,11 @@ public class Class4351 extends Class4278 {
          if (this.field21268.method13297() && var3x == 257) {
             this.field21268.setEnabled(false);
             this.field21268.method13145(false);
-            if (Client.getInstance().getModuleManager().method14667().method20768(this.field21268.method13303())) {
+            if (Client.getInstance().getModuleManager().method14667().method20768(this.field21268.getTypedText())) {
                return;
             }
 
-            var7.field31263 = this.field21268.method13303();
+            var7.field31263 = this.field21268.getTypedText();
 
             try {
                Client.getInstance().getModuleManager().method14667().method20769();
@@ -108,7 +108,7 @@ public class Class4351 extends Class4278 {
       if (!this.field21268.method13297() && this.field21268.method13287()) {
          this.field21268.setEnabled(false);
          this.field21268.method13145(false);
-         this.field21267.field31263 = this.field21268.method13303();
+         this.field21267.field31263 = this.field21268.getTypedText();
 
          try {
             Client.getInstance().getModuleManager().method14667().method20769();

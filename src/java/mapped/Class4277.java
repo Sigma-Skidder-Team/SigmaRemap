@@ -81,13 +81,13 @@ public class Class4277 extends Class4247 {
          (float)(var6 / 2),
          MultiUtilities.applyAlpha(MultiUtilities.method17692(this.textColor.method19405(), 0.8F), var1 * var1 * var1)
       );
-      if (this.method13303() != null) {
+      if (this.getTypedText() != null) {
          int var11 = Math.max(0, 9 - this.field20734.getXA());
          RenderUtil.drawString(
             ResourceRegistry.JelloLightFont14,
-            (float)(var8 - ResourceRegistry.JelloLightFont14.method23942(this.method13303()) - 10 - var11),
+            (float)(var8 - ResourceRegistry.JelloLightFont14.method23942(this.getTypedText()) - 10 - var11),
             (float)(var9 - 5),
-            this.method13303(),
+            this.getTypedText(),
             MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F * this.field20735.calcPercent() * var1)
          );
       }

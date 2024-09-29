@@ -70,12 +70,12 @@ public class ButtonPanel extends Class4247 {
                ? 0
                : (this.textColor.method19413() != Class2218.field14491 ? this.getHeightA() / 2 : this.getHeightA())
          );
-      if (this.method13303() != null) {
+      if (this.getTypedText() != null) {
          RenderUtil.method11440(
             this.getFont(),
             (float)(this.field20585 + var10),
             (float)var11,
-            this.method13303(),
+            this.getTypedText(),
             MultiUtilities.applyAlpha(this.textColor.getTextColor(), var1),
             this.textColor.method19411(),
             this.textColor.method19413()

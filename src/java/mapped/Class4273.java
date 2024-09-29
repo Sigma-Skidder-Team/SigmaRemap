@@ -23,7 +23,7 @@ public class Class4273 extends Class4247 {
 
    @Override
    public void draw(float var1) {
-      if (this.method13303() != null) {
+      if (this.getTypedText() != null) {
          this.method13225();
          int var4 = this.textColor.method19405();
          int var5 = this.getXA()
@@ -38,7 +38,7 @@ public class Class4273 extends Class4247 {
                   ? 0
                   : (this.textColor.method19413() != Class2218.field14491 ? this.getHeightA() / 2 : this.getHeightA())
             );
-         int var7 = this.getFont().method23942(this.method13303());
+         int var7 = this.getFont().method23942(this.getTypedText());
          byte var8 = 18;
          float var9 = this.field20709 * this.field20709 * this.field20709;
          boolean var10 = false;

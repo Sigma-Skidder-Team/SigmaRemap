@@ -88,7 +88,7 @@ public class Class4271 extends Class4247 {
       RenderUtil.drawRoundedRect(
          (float)this.getXA(), (float)this.getYA(), (float)this.getWidthA(), (float)(this.getHeightA() + this.method13108()), 6.0F, var1 * 0.21F
       );
-      if (this.method13303() != null) {
+      if (this.getTypedText() != null) {
          RenderUtil.method11415(this);
          RenderUtil.drawString(
             this.getFont(),

@@ -127,7 +127,7 @@ public class Class4362 extends Class4247 {
    }
 
    @Override
-   public String method13303() {
+   public String getTypedText() {
       return this.method13636().size() <= 0 ? null : this.method13636().get(this.method13640());
    }
 

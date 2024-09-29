@@ -89,12 +89,12 @@ public class Class4236 extends PNGIconButton implements Class4238 {
          this.method13025(),
          MultiUtilities.applyAlpha(MultiUtilities.method17690(this.textColor.method19405(), this.textColor.method19403(), 1.0F - var4), var1)
       );
-      if (this.method13303() != null) {
+      if (this.getTypedText() != null) {
          RenderUtil.method11440(
             this.getFont(),
             (float)(var8 + var6 / 2),
             (float)(var9 + var7 / 2),
-            this.method13303(),
+            this.getTypedText(),
             MultiUtilities.applyAlpha(this.textColor.getTextColor(), var1),
             this.textColor.method19411(),
             this.textColor.method19413()
@@ -105,7 +105,7 @@ public class Class4236 extends PNGIconButton implements Class4238 {
       float var13 = 0.8F + var5 * 0.2F;
       if (var5 > 0.0F) {
          GL11.glPushMatrix();
-         String var14 = this.method13303() != null ? this.method13303() : this.field20891;
+         String var14 = this.getTypedText() != null ? this.getTypedText() : this.field20891;
          GL11.glTranslatef(
             (float)(this.getXA() + this.getWidthA() / 2 - var12.method23942(var14) / 2), (float)(this.getYA() + this.getHeightA() - 40), 0.0F
          );

@@ -102,12 +102,12 @@ public class AccountSignUpScreen extends Class4247 {
                this.registerButton.setEnabled(false);
                Class9507 var3 = Client.getInstance().getNetworkManager().method30452();
                if (var3 != null) {
-                  var3.method36706(this.captchaBox.method13303());
+                  var3.method36706(this.captchaBox.getTypedText());
                }
 
                String var4 = Client.getInstance()
                   .getNetworkManager()
-                  .method30448(this.usernameInputBox.method13303(), this.passwordInputBox.method13303(), this.emailInputBox.method13303(), var3);
+                  .method30448(this.usernameInputBox.getTypedText(), this.passwordInputBox.getTypedText(), this.emailInputBox.getTypedText(), var3);
                LoginAndOutScreen var5 = (LoginAndOutScreen)this.getIcoPanel();
                var5.method13424("Success", "You can now login.");
                var5.method13423();

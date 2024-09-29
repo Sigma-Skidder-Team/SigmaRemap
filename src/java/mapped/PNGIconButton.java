@@ -52,12 +52,12 @@ public class PNGIconButton extends ButtonPanel {
             (float)(this.textColor.method19405() >> 24 & 0xFF) / 255.0F * var1
          )
       );
-      if (this.method13303() != null) {
+      if (this.getTypedText() != null) {
          RenderUtil.method11440(
             this.getFont(),
             (float)(this.getXA() + this.getWidthA() / 2),
             (float)(this.getYA() + this.getHeightA() / 2),
-            this.method13303(),
+            this.getTypedText(),
             MultiUtilities.applyAlpha(this.textColor.getTextColor(), var1),
             this.textColor.method19411(),
             this.textColor.method19413()

@@ -1,5 +1,6 @@
 package com.mentalfrostbyte.jello.unmapped;
 
+import org.apache.http.ParseException;
 import totalcross.json.JSONArray;
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.apache.http.HttpEntity;
@@ -43,8 +44,7 @@ public class ThumbnailUtil {
         }
 
         List<YoutubeJPGThumbnail> thumbnails = new ArrayList<>();
-        // Updated regex pattern to capture expected content correctly
-        String regex = "\"videoId\":\"([\\w-]{11})\".*?\"title\":*\"runs\":\\[*\"text\":\"(.*?)\"";
+        String regex = "r\":\\{\"videoId\":\"(.{11})\"(.*?)\"text\":\"(.{1,100})\"\\}]";
         Pattern pattern = Pattern.compile(regex, Pattern.DOTALL);
         Matcher matcher = pattern.matcher(response.replace("\n", "").replace("\r", ""));
 
@@ -74,26 +74,25 @@ public class ThumbnailUtil {
             }
         }
 
-        List<YoutubeJPGThumbnail> thumbnails = new ArrayList<>();
-        // Updated regex pattern to match HTML correctly
-        String regexPattern = "<a.*?href=\"/watch\\?v=(.{11})\".*?>(.*?) - YouTube</a>";
-        Pattern pattern = Pattern.compile(regexPattern, Pattern.CASE_INSENSITIVE | Pattern.DOTALL);
+        ArrayList thumbnails = new ArrayList();
+        String regexPattern = "<a(.*?)watch%3Fv%3D(.{11})[\\\"&](.*?)><div (.*?)>(.{1,100}) - YouTube<\\/div><\\/h3>";
+        Pattern pattern = Pattern.compile("<a(.*?)watch%3Fv%3D(.{11})[\\\"&](.*?)><div (.*?)>(.{1,100}) - YouTube<\\/div><\\/h3>", 8);
         Matcher matcher = pattern.matcher(htmlContent.replace("\n", "").replace("\r", ""));
 
+        label62:
         while (matcher.find()) {
-            String videoId = matcher.group(1);
-            String title = matcher.group(2).replaceAll("<.*?>", "").trim();
-
-            if (!title.isEmpty() && !matcher.group(0).contains("play-all")) {
-                boolean alreadyExists = thumbnails.stream().anyMatch(t -> t.videoID.equals(videoId));
-                if (!alreadyExists) {
-                    thumbnails.add(new YoutubeJPGThumbnail(videoId, decodeAndUnescapeUrl(title)));
+            if (!matcher.group(5).contains("</") && !matcher.group(5).equals(" ") && matcher.group(5).length() != 0 && !matcher.group(1).contains("play-all")) {
+                for (Object var8 : thumbnails) {
+                    if (var8 instanceof YoutubeJPGThumbnail && ((YoutubeJPGThumbnail) var8).videoID.equals(matcher.group(2))) {
+                        continue label62;
+                    }
                 }
+
+                thumbnails.add(new YoutubeJPGThumbnail(matcher.group(2), decodeAndUnescapeUrl(matcher.group(5).replaceAll("<(.*?)>", ""))));
             }
         }
 
-        System.out.println("[thumbnails from HTML] : " + thumbnails);
-        return thumbnails.toArray(new YoutubeJPGThumbnail[0]);
+        return (YoutubeJPGThumbnail[]) thumbnails.<YoutubeJPGThumbnail>toArray(new YoutubeJPGThumbnail[0]);
     }
 
     private static String decodeAndUnescapeUrl(String url) {
@@ -121,31 +120,49 @@ public class ThumbnailUtil {
     }
 
     private static String fetchUrlContent(String url) {
-        try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
-            HttpGet get = new HttpGet(url);
-            if (url.contains("playlist")) {
-                get.addHeader("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36");
-            } else {
-                get.addHeader("User-Agent", "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)");
-            }
+        System.out.println(":" + url);
+        CloseableHttpClient var3 = HttpClients.createDefault();
+        HttpGet var4 = new HttpGet(url);
+        if (url.contains("playlist")) {
+            var4.addHeader("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36");
+        } else {
+            var4.addHeader("User-Agent", "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)");
+        }
 
-            // Execute the HTTP request
-            try (CloseableHttpResponse httpResponse = httpClient.execute(get)) {
-                HttpEntity entity = httpResponse.getEntity();
-                if (entity == null) {
-                    System.err.println("[fetchUrlContent] No content found for URL: " + url);
-                    return "[fetchUrlContent] No content found for URL: " + url;
+        try {
+            CloseableHttpResponse var5 = var3.execute(var4);
+            Throwable var6 = null;
+
+            String var9;
+            try {
+                HttpEntity var7 = var5.getEntity();
+                if (var7 == null) {
+                    return "";
                 }
 
-                System.out.println("[fetchUrlContent] " + url + " -- " + entity);
-                return EntityUtils.toString(entity);
-            } catch (IOException e) {
-                System.err.println("[fetchUrlContent] IOException while fetching content from: " + url);
-                throw new RuntimeException(e);
+                String var8 = EntityUtils.toString(var7);
+                var9 = var8;
+            } catch (Throwable var20) {
+                var6 = var20;
+                throw var20;
+            } finally {
+                if (var5 != null) {
+                    if (var6 != null) {
+                        try {
+                            var5.close();
+                        } catch (Throwable var19) {
+                            var6.addSuppressed(var19);
+                        }
+                    } else {
+                        var5.close();
+                    }
+                }
             }
-        } catch (IOException e) {
-            System.err.println("[fetchUrlContent] Failed to create HTTP client or execute request: " + e.getMessage());
-            throw new RuntimeException(e);
+
+            return var9;
+        } catch (IllegalStateException | IOException | ParseException var22) {
+            var22.printStackTrace();
+            return "";
         }
     }
 }

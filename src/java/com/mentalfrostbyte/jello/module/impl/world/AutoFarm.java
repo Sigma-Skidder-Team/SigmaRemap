@@ -34,14 +34,14 @@ public class AutoFarm extends Module {
                                     float[] var18 = BlockUtil.method34542(var5, Direction.DOWN);
                                     var1.setPitch(var18[0]);
                                     var1.setYaw(var18[1]);
-                                    var1.method13922(new Class1358(this, var18));
+                                    var1.attackPost(new Class1358(this, var18));
                                     return;
                                 }
                             } else if (var6.<Integer>get(BlockStateProperties.field39742) == 7) {
                                 float[] var17 = BlockUtil.method34542(var5, Direction.DOWN);
                                 var1.setPitch(var17[0]);
                                 var1.setYaw(var17[1]);
-                                var1.method13922(new Class532(this, var5));
+                                var1.attackPost(new Class532(this, var5));
                                 mc.world.method7179(var5, false);
                                 return;
                             }
@@ -54,7 +54,7 @@ public class AutoFarm extends Module {
                                         float[] var9 = BlockUtil.method34541(var5.up());
                                         var1.setPitch(var9[0]);
                                         var1.setYaw(var9[1]);
-                                        var1.method13922(new Class1431(this, var5));
+                                        var1.attackPost(new Class1431(this, var5));
                                         mc.world.method7179(var5.up(), false);
                                     }
                                 }
@@ -65,7 +65,7 @@ public class AutoFarm extends Module {
                                     float[] var19 = BlockUtil.method34541(var5.up());
                                     var1.setPitch(var19[0]);
                                     var1.setYaw(var19[1]);
-                                    var1.method13922(new Class654(this, var5));
+                                    var1.attackPost(new Class654(this, var5));
                                     mc.world.method7179(var5.up(), false);
                                 }
                             }
@@ -96,7 +96,7 @@ public class AutoFarm extends Module {
                                 float[] var20 = BlockUtil.method34542(var5, Direction.UP);
                                 var1.setPitch(var20[0]);
                                 var1.setYaw(var20[1]);
-                                var1.method13922(new Class649(this, var16, var20));
+                                var1.attackPost(new Class649(this, var16, var20));
                                 mc.rightClickDelayTimer = 2;
                                 BlockState var11 = Blocks.field36539.getDefaultState();
                                 mc.world.setBlockState(var5.up(), var11);

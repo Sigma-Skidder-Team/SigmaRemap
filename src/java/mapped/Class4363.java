@@ -217,7 +217,7 @@ public class Class4363 extends Class4247 {
          20.0F,
          var1 * 0.2F * this.field21330.calcPercent()
       );
-      if (this.method13303() != null) {
+      if (this.getTypedText() != null) {
          RenderUtil.method11415(this);
          String var4 = "";
 
@@ -231,7 +231,7 @@ public class Class4363 extends Class4247 {
             this.getFont(),
             (float)(this.getXA() + 10),
             (float)(this.getYA() + (this.getHeightA() - this.getFont().method23952()) / 2 + 1),
-            this.method13303() + var4,
+            this.getTypedText() + var4,
             MultiUtilities.applyAlpha(this.textColor.method19405(), var1 * 0.7F)
          );
          RenderUtil.endScissor();
@@ -309,7 +309,7 @@ public class Class4363 extends Class4247 {
    }
 
    @Override
-   public String method13303() {
+   public String getTypedText() {
       return this.method13651().size() <= 0 ? null : this.method13651().get(this.method13655());
    }
 

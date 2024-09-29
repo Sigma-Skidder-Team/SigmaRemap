@@ -29,7 +29,7 @@ public class UIButton extends Class4247 {
 
    @Override
    public void draw(float var1) {
-      if (this.method13303() != null) {
+      if (this.getTypedText() != null) {
          int var4 = this.textColor.method19405();
          int var5 = this.getXA()
             + (
@@ -43,14 +43,14 @@ public class UIButton extends Class4247 {
                   ? 0
                   : (this.textColor.method19413() != Class2218.field14491 ? this.getHeightA() / 2 : this.getHeightA())
             );
-         int var7 = this.getFont().method23942(this.method13303());
+         int var7 = this.getFont().method23942(this.getTypedText());
          byte var8 = 18;
          float var9 = (float)Math.pow((double)this.field20711.calcPercent(), 3.0);
          RenderUtil.method11440(
             this.getFont(),
             (float)var5,
             (float)var6,
-            this.method13303(),
+            this.getTypedText(),
             MultiUtilities.applyAlpha(var4, var1 * MultiUtilities.method17710(var4)),
             this.textColor.method19411(),
             this.textColor.method19413()

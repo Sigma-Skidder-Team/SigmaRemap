@@ -94,9 +94,9 @@ public class Class4345 extends Class4339 {
                )
             );
             var24.setFont(ResourceRegistry.JelloLightFont18);
-            var24.method13151(var1x -> var2.setCurrentValue(var1x.method13303()));
+            var24.method13151(var1x -> var2.setCurrentValue(var1x.getTypedText()));
             var2.addObserver(var2x -> {
-               if (var24.method13303() != ((InputSetting)var2).getCurrentValue()) {
+               if (var24.getTypedText() != ((InputSetting)var2).getCurrentValue()) {
                   var24.method13304(((InputSetting)var2).getCurrentValue());
                }
             });

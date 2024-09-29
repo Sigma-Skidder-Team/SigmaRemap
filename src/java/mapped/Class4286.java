@@ -108,7 +108,7 @@ public class Class4286 extends Class4278 {
                try {
                   BufferedImage var3 = ImageIO.read(this.field20772);
                   if (var3.getHeight() != var3.getWidth()) {
-                     if (this.method13303().contains("[NCS Release]")) {
+                     if (this.getTypedText().contains("[NCS Release]")) {
                         this.field20773 = var3.getSubimage(1, 3, 170, 170);
                      } else {
                         this.field20773 = var3.getSubimage(70, 0, 180, 180);
@@ -190,7 +190,7 @@ public class Class4286 extends Class4278 {
          ClientResource var11 = ResourceRegistry.JelloLightFont12;
          if (this.field20912 != null) {
             RenderUtil.method11415(this);
-            String[] var12 = this.method13303().replaceAll("\\(.*\\)", "").replaceAll("\\[.*\\]", "").split(" - ");
+            String[] var12 = this.getTypedText().replaceAll("\\(.*\\)", "").replaceAll("\\[.*\\]", "").split(" - ");
             if (var12.length > 1) {
                RenderUtil.drawString(
                   var11,

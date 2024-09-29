@@ -44,22 +44,21 @@ public class KillAura extends Module {
     public static boolean field23937 = false;
     public static Entity target;
     public static TimedEntity field23949;
-    public static Rotations field23951 = new Rotations(0.0F, 0.0F);
+    public static Rotations previousRotations = new Rotations(0.0F, 0.0F);
     public static int field23954;
     public HashMap<Entity, Animation> field23961 = new HashMap<Entity, Animation>();
-    private InteractAutoBlock interactAB;
+    public static InteractAutoBlock interactAB;
     private int field23939;
     private int field23940;
     private int field23941;
     private int field23942;
     private int currentitem;
-    private int field23944;
     private int field23945;
     private int field23946;
     private int field23947;
-    private List<TimedEntity> field23950;
+    public static List<TimedEntity> entities;
     private Rotations rotations;
-    private Rotations rots;
+    private Rotations rotations2;
     private double field23955;
     private float field23956;
     private float field23957;
@@ -100,91 +99,46 @@ public class KillAura extends Module {
         this.registerSetting(new ColorSetting("ESP Color", "The render color", ClientColors.LIGHT_GREYISH_BLUE.getColor));
     }
 
-    // $VF: synthetic method
-    public static Minecraft method16837() {
-        return mc;
+    public static Rotations getRotations2(KillAura killaura) {
+        return killaura.rotations2;
     }
 
-    // $VF: synthetic method
-    public static Minecraft method16838() {
-        return mc;
+    public static Rotations getRotations(KillAura killaura) {
+        return killaura.rotations;
     }
 
-    // $VF: synthetic method
-    public static Minecraft method16839() {
-        return mc;
+    public static int method16846(KillAura killaura) {
+        return killaura.field23942;
     }
 
-    // $VF: synthetic method
-    public static Minecraft method16840() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16841() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Rotations method16842(KillAura var0) {
-        return var0.rots;
-    }
-
-    // $VF: synthetic method
-    public static Rotations method16843(KillAura var0) {
-        return var0.rotations;
-    }
-
-    // $VF: synthetic method
-    public static InteractAutoBlock method16844(KillAura var0) {
-        return var0.interactAB;
-    }
-
-    // $VF: synthetic method
-    public static List<TimedEntity> getEntites(KillAura var0) {
-        return var0.field23950;
-    }
-
-    // $VF: synthetic method
-    public static int method16846(KillAura var0) {
-        return var0.field23942;
-    }
-
-    // $VF: synthetic method
-    public static int method16847(KillAura var0, int var1) {
-        return var0.field23942 = var1;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16848() {
-        return mc;
+    public static int method16847(KillAura killaura, int var1) {
+        return killaura.field23942 = var1;
     }
 
     @Override
     public void method15953() {
-        this.field23950 = new ArrayList<TimedEntity>();
-        this.interactAB = new InteractAutoBlock(this);
+        entities = new ArrayList<>();
+        interactAB = new InteractAutoBlock(this);
         super.method15953();
     }
 
     @Override
     public void onEnable() {
-        this.field23950 = new ArrayList<TimedEntity>();
+        entities = new ArrayList<>();
         target = null;
         field23949 = null;
-        this.field23939 = (int) this.interactAB.method36819(0);
+        this.field23939 = (int) interactAB.method36819(0);
         this.field23940 = 0;
         this.field23942 = 0;
         field23954 = 0;
-        this.rots = new Rotations(mc.player.field6122, mc.player.field6123);
+        this.rotations2 = new Rotations(mc.player.field6122, mc.player.field6123);
         this.rotations = new Rotations(mc.player.rotationYaw, mc.player.rotationPitch);
-        field23951 = new Rotations(mc.player.rotationYaw, mc.player.rotationPitch);
+        previousRotations = new Rotations(mc.player.rotationYaw, mc.player.rotationPitch);
         this.field23957 = -1.0F;
-        this.interactAB
-                .setBlocking(mc.player.getHeldItem(Hand.MAIN_HAND).getItem() instanceof SwordItem && mc.gameSettings.keyBindUseItem.isKeyDown());
+        interactAB.setBlocking(mc.player.getHeldItem(Hand.MAIN_HAND).getItem() instanceof SwordItem && mc.gameSettings.keyBindUseItem.isKeyDown());
         this.field23959 = false;
         this.field23946 = -1;
-        this.interactAB.field44349.clear();
+        interactAB.field44349.clear();
         this.field23961.clear();
         if (mc.player.onGround) {
             this.field23941 = 1;
@@ -197,13 +151,13 @@ public class KillAura extends Module {
     public void onDisable() {
         target = null;
         field23949 = null;
-        this.field23950 = null;
+        entities = null;
         field23937 = false;
         super.onDisable();
     }
 
     @EventTarget
-    public void method16818(WorldLoadEvent var1) {
+    public void onWorldChange(WorldLoadEvent event) {
         if (this.isEnabled() && this.getBooleanValueFromSettingName("Disable on death")) {
             Client.getInstance().getNotificationManager().send(new Notification("Aura", "Aura disabled due to respawn"));
             this.toggle();
@@ -211,7 +165,7 @@ public class KillAura extends Module {
     }
 
     @EventTarget
-    public void method16819(TickEvent var1) {
+    public void onTick(TickEvent event) {
         if (this.isEnabled()) {
             if (this.field23957 != -1.0F) {
                 this.field23957++;
@@ -227,12 +181,12 @@ public class KillAura extends Module {
     }
 
     @EventTarget
-    public void method16820(StopUseItemEvent var1) {
+    public void onStopuseItem(StopUseItemEvent event) {
         if (this.isEnabled()) {
             if (!this.getStringSettingValueByName("Autoblock Mode").equals("None")
                     && (mc.player.getHeldItemMainhand().getItem() instanceof SwordItem || this.currentitem != mc.player.inventory.currentItem)
                     && target != null) {
-                var1.setCancelled(true);
+                event.setCancelled(true);
             } else if (mc.player.getHeldItemMainhand().getItem() instanceof SwordItem) {
                 this.field23945 = 2;
             }
@@ -241,64 +195,64 @@ public class KillAura extends Module {
 
     @EventTarget
     @LowestPriority
-    public void onUpdate(EventUpdate var1) {
+    public void onUpdate(EventUpdate event) {
         if (this.isEnabled() && mc.player != null) {
-            if (!var1.isPre()) {
+            if (!event.isPre()) {
                 this.currentitem = mc.player.inventory.currentItem;
-                if (target != null && this.interactAB.method36817() && this.rotations != null) {
-                    this.interactAB.block(target, this.rotations.yaw, this.rotations.pitch);
+                if (target != null && interactAB.method36817() && this.rotations != null) {
+                    interactAB.block(target, this.rotations.yaw, this.rotations.pitch);
                 }
             } else {
                 if (this.field23945 > 0) {
                     this.field23945--;
                 }
 
-                if (target != null && this.interactAB.isBlocking() && MovementUtils.isMoving() && this.getStringSettingValueByName("Autoblock Mode").equals("NCP")) {
-                    this.interactAB.method36816();
+                if (target != null && interactAB.isBlocking() && MovementUtils.isMoving() && this.getStringSettingValueByName("Autoblock Mode").equals("NCP")) {
+                    interactAB.method36816();
                 }
 
-                if (this.interactAB.isBlocking() && (!(mc.player.getHeldItemMainhand().getItem() instanceof SwordItem) || target == null)) {
-                    this.interactAB.setBlocking(false);
+                if (interactAB.isBlocking() && (!(mc.player.getHeldItemMainhand().getItem() instanceof SwordItem) || target == null)) {
+                    interactAB.setBlocking(false);
                 }
 
                 if (this.field23946 >= 0) {
                     if (this.field23946 == 0) {
-                        this.interactAB.method36816();
-                        this.interactAB.setBlocking(true);
+                        interactAB.method36816();
+                        interactAB.setBlocking(true);
                     }
 
                     this.field23946--;
                 }
 
                 this.method16830();
-                if (this.field23950 != null && !this.field23950.isEmpty()) {
+                if (entities != null && !entities.isEmpty()) {
                     this.field23939++;
                     float var4 = this.getNumberValueBySettingName("Hit box expand");
                     ModuleWithModuleSettings var5 = (ModuleWithModuleSettings) Client.getInstance().getModuleManager().getModuleByClass(Criticals.class);
                     if (var5.isEnabled() && var5.getStringSettingValueByName("Type").equalsIgnoreCase("Minis")) {
-                        this.method16828(var1, var5.method16726().getStringSettingValueByName("Mode"), var5.method16726().getBooleanValueFromSettingName("Avoid Fall Damage"));
+                        this.method16828(event, var5.method16726().getStringSettingValueByName("Mode"), var5.method16726().getBooleanValueFromSettingName("Avoid Fall Damage"));
                     }
 
                     this.method16831();
-                    if (var1.getPitch() - mc.player.rotationYaw != 0.0F) {
-                        this.rotations.yaw = var1.getPitch();
-                        this.rotations.pitch = var1.getYaw();
+                    if (event.getPitch() - mc.player.rotationYaw != 0.0F) {
+                        this.rotations.yaw = event.getPitch();
+                        this.rotations.pitch = event.getYaw();
                     }
 
-                    var1.setPitch(this.rotations.yaw);
-                    var1.setYaw(this.rotations.pitch);
-                    boolean var6 = this.interactAB.method36821(this.field23939);
+                    event.setPitch(this.rotations.yaw);
+                    event.setYaw(this.rotations.pitch);
+                    boolean var6 = interactAB.method36821(this.field23939);
                     float cooldown19 = !((double) mc.player.method2973() < 1.26) && this.getBooleanValueFromSettingName("Cooldown") ? mc.player.getCooledAttackStrength(0.0F) : 1.0F;
                     boolean var8 = field23954 == 0 && var6 && cooldown19 >= 1.0F;
                     if (var6) {
-                        this.interactAB.setupDelay();
+                        interactAB.setupDelay();
                     }
 
                     if (var8) {
                         KillAuraAttackLambda attack = new KillAuraAttackLambda(this, var4);
                         boolean isPre = this.getStringSettingValueByName("Attack Mode").equals("Pre");
                         if (!isPre) {
-                            var1.method13922(attack);
+                            event.attackPost(attack);
                         } else {
                             attack.run();
                         }
@@ -315,35 +269,30 @@ public class KillAura extends Module {
     }
 
     @EventTarget
-    public void method16822(EventRender var1) {
+    public void on2D(EventRender var1) {
         if (field23949 != null && !this.getBooleanValueFromSettingName("Silent") && !this.getStringSettingValueByName("Rotation Mode").equals("None")) {
-            float var4 = MathHelper.method37792(this.rots.yaw + (this.rotations.yaw - this.rots.yaw) * mc.getRenderPartialTicks());
-            float var5 = MathHelper.method37792(this.rots.pitch + (this.rotations.pitch - this.rots.pitch) * mc.getRenderPartialTicks());
+            float var4 = MathHelper.method37792(this.rotations2.yaw + (this.rotations.yaw - this.rotations2.yaw) * mc.getRenderPartialTicks());
+            float var5 = MathHelper.method37792(this.rotations2.pitch + (this.rotations.pitch - this.rotations2.pitch) * mc.getRenderPartialTicks());
             mc.player.rotationYaw = var4;
             mc.player.rotationPitch = var5;
         }
     }
 
     @EventTarget
-    public void method16823(Render3DEvent var1) {
-        if (this.field23950 != null) {
-            Iterator var4 = this.field23961.entrySet().iterator();
+    public void on3D(Render3DEvent var1) {
+        if (entities != null) {
+            Iterator<Entry<Entity, Animation>> var4 = this.field23961.entrySet().iterator();
 
             while (var4.hasNext()) {
-                Entry var5 = (Entry) var4.next();
+                Entry<Entity, Animation> var5 = var4.next();
 
-                for (TimedEntity var7 : this.field23950) {
-                    if (!var5.getKey().equals(var7.getEntity())) {
-                    }
-                }
-
-                ((Animation) var5.getValue()).changeDirection(Direction.BACKWARDS);
-                if (((Animation) var5.getValue()).calcPercent() == 0.0F) {
+                var5.getValue().changeDirection(Direction.BACKWARDS);
+                if (var5.getValue().calcPercent() == 0.0F) {
                     var4.remove();
                 }
             }
 
-            for (TimedEntity var10 : this.field23950) {
+            for (TimedEntity var10 : entities) {
                 if (var10 != null) {
                     if (!this.field23961.containsKey(var10.getEntity())) {
                         this.field23961.put(var10.getEntity(), new Animation(250, 250));
@@ -360,24 +309,24 @@ public class KillAura extends Module {
     }
 
     @EventTarget
-    public void method16824(ReceivePacketEvent var1) {
-        IPacket var4 = var1.getPacket();
-        if (!(var4 instanceof SEntityPacket)) {
-            if (var4 instanceof SEntityStatusPacket) {
-                SEntityStatusPacket var5 = (SEntityStatusPacket) var4;
+    public void onReceivePacket(ReceivePacketEvent event) {
+        IPacket<?> packet = event.getPacket();
+        if (!(packet instanceof SEntityPacket)) {
+            if (packet instanceof SEntityStatusPacket) {
+                SEntityStatusPacket var5 = (SEntityStatusPacket) packet;
                 if (var5.getOpCode() == 3) {
-                    this.interactAB.field44349.remove(var5.getEntity(mc.world));
+                    interactAB.field44349.remove(var5.getEntity(mc.world));
                 }
             }
         } else {
-            SEntityPacket var11 = (SEntityPacket) var4;
+            SEntityPacket var11 = (SEntityPacket) packet;
             if (var11.func_229745_h_() && (var11.posX != 0 || var11.posY != 0 || var11.posZ != 0)) {
-                for (Entry var7 : this.interactAB.field44349.entrySet()) {
+                for (Entry var7 : interactAB.field44349.entrySet()) {
                     Entity var8 = (Entity) var7.getKey();
                     List var9 = (List) var7.getValue();
                     if (var11.getEntity(mc.world) == var8) {
                         Vector3d var10 = var8.field_242272_av.scale(2.4414062E-4F);
-                        var9.add(new Class9629<Vector3d, Long>(var10, System.currentTimeMillis()));
+                        var9.add(new Class9629<>(var10, System.currentTimeMillis()));
                     }
                 }
             }
@@ -492,7 +441,7 @@ public class KillAura extends Module {
         double var6 = !var2.equals("Hypixel") ? 0.0 : 1.0E-14;
         boolean var8 = true;
         if (this.field23940 == 0 && this.field23941 >= 1 && Step.field23887 > 1) {
-            if (this.interactAB.method36820(this.field23939)) {
+            if (interactAB.method36820(this.field23939)) {
                 this.field23940 = 1;
                 var8 = var3;
                 var6 = !var2.equals("Cubecraft") ? 0.0626 : MovementUtils.method37080() / 10.0;
@@ -507,7 +456,7 @@ public class KillAura extends Module {
             }
         }
 
-        boolean var9 = !Jesus.method16953() && (mc.player.onGround || MultiUtilities.isAboveBounds(mc.player, 0.001F));
+        boolean var9 = !Jesus.isWalkingOnLiquid() && (mc.player.onGround || MultiUtilities.isAboveBounds(mc.player, 0.001F));
         if (!var9) {
             this.field23941 = 0;
             this.field23940 = 0;
@@ -532,7 +481,7 @@ public class KillAura extends Module {
     }
 
     private Entity method16829(List<TimedEntity> var1) {
-        var1 = this.interactAB.sortEntities(var1);
+        var1 = interactAB.sortEntities(var1);
         return !var1.isEmpty() && var1.get(0).getEntity().getDistance(mc.player) <= this.getNumberValueBySettingName("Block Range")
                 ? var1.get(0).getEntity()
                 : null;
@@ -542,115 +491,115 @@ public class KillAura extends Module {
         float blockingRange = this.getNumberValueBySettingName("Block Range");
         float range = this.getNumberValueBySettingName("Range");
         String mode = this.getStringSettingValueByName("Mode");
-        List<TimedEntity> var6 = this.interactAB.method36823(Math.max(blockingRange, range));
-        var6 = this.interactAB.sortEntities(var6);
+        List<TimedEntity> var6 = interactAB.method36823(Math.max(blockingRange, range));
+        var6 = interactAB.sortEntities(var6);
         if (this.rotations == null) {
             this.onEnable();
         }
 
         if (var6 != null && !var6.isEmpty() && !mc.gameSettings.keyBindAttack.isPressed()) {
             target = this.method16829(var6);
-            var6 = this.interactAB.method36823(range);
+            var6 = interactAB.method36823(range);
             if (mode.equals("Single") || mode.equals("Multi")) {
-                var6 = this.interactAB.sortEntities(var6);
+                var6 = interactAB.sortEntities(var6);
             }
 
             if (var6.isEmpty()) {
                 field23949 = null;
-                this.field23950.clear();
-                this.field23939 = (int) this.interactAB.method36819(0);
+                entities.clear();
+                this.field23939 = (int) interactAB.method36819(0);
                 this.field23940 = 0;
                 field23937 = false;
                 this.rotations.yaw = mc.player.rotationYaw;
                 this.rotations.pitch = mc.player.rotationPitch;
-                field23951.yaw = this.rotations.yaw;
-                field23951.pitch = this.rotations.pitch;
+                previousRotations.yaw = this.rotations.yaw;
+                previousRotations.pitch = this.rotations.pitch;
                 this.field23957 = -1.0F;
                 this.field23955 = Math.random();
                 this.field23946 = -1;
             } else {
                 if (this.field23957 == -1.0F) {
                     float var7 = RotationHelper.method34148(MultiUtilities.method17751(((TimedEntity) var6.get(0)).getEntity())).yaw;
-                    float var8 = Math.abs(MultiUtilities.method17756(var7, field23951.yaw));
+                    float var8 = Math.abs(MultiUtilities.method17756(var7, previousRotations.yaw));
                     this.field23956 = var8 * 1.95F / 50.0F;
                     this.field23957++;
                     this.field23955 = Math.random();
                 }
 
-                this.field23950 = var6;
-                float var12 = RotationHelper.method34148(MultiUtilities.method17751(this.field23950.get(0).getEntity())).yaw;
-                if (!this.field23950.isEmpty() & !mode.equals("Switch")) {
-                    if (field23949 != null && field23949.getEntity() != this.field23950.get(0).getEntity()) {
-                        float var13 = Math.abs(MultiUtilities.method17756(var12, field23951.yaw));
+                entities = var6;
+                float var12 = RotationHelper.method34148(MultiUtilities.method17751(entities.get(0).getEntity())).yaw;
+                if (!entities.isEmpty() & !mode.equals("Switch")) {
+                    if (field23949 != null && field23949.getEntity() != entities.get(0).getEntity()) {
+                        float var13 = Math.abs(MultiUtilities.method17756(var12, previousRotations.yaw));
                         this.field23956 = var13 * 1.95F / 50.0F;
                         this.field23955 = Math.random();
                     }
 
-                    field23949 = this.field23950.get(0);
+                    field23949 = entities.get(0);
                 }
 
                 if (!mode.equals("Switch")) {
                     if (!mode.equals("Multi2")) {
                         if (mode.equals("Single")
-                                && !this.field23950.isEmpty()
-                                && (field23949 == null || field23949.getEntity() != this.field23950.get(0).getEntity())) {
-                            field23949 = this.field23950.get(0);
+                                && !entities.isEmpty()
+                                && (field23949 == null || field23949.getEntity() != entities.get(0).getEntity())) {
+                            field23949 = entities.get(0);
                         }
                     } else {
-                        if (this.field23942 >= this.field23950.size()) {
+                        if (this.field23942 >= entities.size()) {
                             this.field23942 = 0;
                         }
 
-                        field23949 = this.field23950.get(this.field23942);
+                        field23949 = entities.get(this.field23942);
                     }
                 } else if ((
                         field23949 == null
                                 || field23949.getTimer() == null
                                 || field23949.isExpired()
-                                || !this.field23950.contains(field23949)
+                                || !entities.contains(field23949)
                                 || mc.player.getDistance(field23949.getEntity()) > range
                 )
-                        && this.field23950.size() > 0) {
-                    if (this.field23942 + 1 < this.field23950.size()) {
-                        if (field23949 != null && !Client.getInstance().getFriendManager().isFriend(this.field23950.get(this.field23942).getEntity())) {
+                        && !entities.isEmpty()) {
+                    if (this.field23942 + 1 < entities.size()) {
+                        if (field23949 != null && !Client.getInstance().getFriendManager().isFriend(entities.get(this.field23942).getEntity())) {
                             this.field23942++;
                         }
                     } else {
                         this.field23942 = 0;
                     }
 
-                    Vector3d var14 = MultiUtilities.method17751(this.field23950.get(this.field23942).getEntity());
-                    float var9 = Math.abs(MultiUtilities.method17756(RotationHelper.method34148(var14).yaw, field23951.yaw));
+                    Vector3d var14 = MultiUtilities.method17751(entities.get(this.field23942).getEntity());
+                    float var9 = Math.abs(MultiUtilities.method17756(RotationHelper.method34148(var14).yaw, previousRotations.yaw));
                     this.field23956 = var9 * 1.95F / 50.0F;
                     this.field23955 = Math.random();
                     field23949 = new TimedEntity(
-                            this.field23950.get(this.field23942).getEntity(), new ExpirationTimer(!this.getStringSettingValueByName("Rotation Mode").equals("NCP") ? 500L : 270L)
+                            entities.get(this.field23942).getEntity(), new ExpirationTimer(!this.getStringSettingValueByName("Rotation Mode").equals("NCP") ? 500L : 270L)
                     );
                 }
 
-                if (this.field23942 >= this.field23950.size()) {
+                if (this.field23942 >= entities.size()) {
                     this.field23942 = 0;
                 }
 
                 if (!mode.equals("Multi")) {
-                    this.field23950.clear();
-                    this.field23950.add(field23949);
+                    entities.clear();
+                    entities.add(field23949);
                 }
             }
         } else {
             field23949 = null;
             target = null;
-            if (this.field23950 != null) {
-                this.field23950.clear();
+            if (entities != null) {
+                entities.clear();
             }
 
-            this.field23939 = (int) this.interactAB.method36819(0);
+            this.field23939 = (int) interactAB.method36819(0);
             this.field23940 = 0;
             field23937 = false;
             this.rotations.yaw = mc.player.rotationYaw;
             this.rotations.pitch = mc.player.rotationPitch;
-            field23951.yaw = this.rotations.yaw;
-            field23951.pitch = this.rotations.pitch;
+            previousRotations.yaw = this.rotations.yaw;
+            previousRotations.pitch = this.rotations.pitch;
             this.field23957 = -1.0F;
             this.field23955 = Math.random();
             this.field23946 = -1;
@@ -658,15 +607,19 @@ public class KillAura extends Module {
     }
 
     private void method16831() {
-        Entity var3 = field23949.getEntity();
-        Rotations var4 = RotationHelper.getRotations(var3, !this.getBooleanValueFromSettingName("Through walls"));
-        float var5 = RotationHelper.method34152(this.rotations.yaw, var4.yaw);
-        float var6 = var4.pitch - this.rotations.pitch;
+        Entity targ = field23949.getEntity();
+        Rotations newRots = RotationHelper.getRotations(targ, !this.getBooleanValueFromSettingName("Through walls"));
+        if (newRots == null) {
+            System.out.println("[KillAura] newRots is null??? on line 612");
+            return;
+        }
+        float var5 = RotationHelper.method34152(this.rotations.yaw, newRots.yaw);
+        float var6 = newRots.pitch - this.rotations.pitch;
         String var7 = this.getStringSettingValueByName("Rotation Mode");
         switch (var7) {
             case "Test":
-                this.rots.yaw = this.rotations.yaw;
-                this.rots.pitch = this.rotations.pitch;
+                this.rotations2.yaw = this.rotations.yaw;
+                this.rotations2.pitch = this.rotations.pitch;
                 if (Math.abs(var5) > 80.0F) {
                     float var9 = (float) this.method16832(-10.2, 10.2);
                     float var30 = var5 * var5 * 1.13F / 2.0F + var9;
@@ -697,9 +650,9 @@ public class KillAura extends Module {
                 if (mc.player.ticksExisted % 5 == 0) {
                     double var32 = 10.0;
                     this.rotations.yaw = this.rotations.yaw
-                            + (float) this.method16832(-var32, var32) / (mc.player.getDistance(var3) + 1.0F);
+                            + (float) this.method16832(-var32, var32) / (mc.player.getDistance(targ) + 1.0F);
                     this.rotations.pitch = this.rotations.pitch
-                            + (float) this.method16832(-var32, var32) / (mc.player.getDistance(var3) + 1.0F);
+                            + (float) this.method16832(-var32, var32) / (mc.player.getDistance(targ) + 1.0F);
                 }
 
                 if (Math.abs(var6) > 10.0F) {
@@ -707,7 +660,7 @@ public class KillAura extends Module {
                 }
 
                 Entity var28 = MultiUtilities.method17711(
-                        this.rots.pitch, this.rots.yaw, this.getNumberValueBySettingName("Range"), this.getNumberValueBySettingName("Hit box expand")
+                        this.rotations2.pitch, this.rotations2.yaw, this.getNumberValueBySettingName("Range"), this.getNumberValueBySettingName("Hit box expand")
                 );
                 if (var28 != null && (double) this.field23947 > this.method16832(2.0, 5.0)) {
                     this.field23947 = 0;
@@ -715,19 +668,19 @@ public class KillAura extends Module {
                 }
                 break;
             case "NCP":
-                this.rots.yaw = this.rotations.yaw;
-                this.rots.pitch = this.rotations.pitch;
-                this.rotations = var4;
+                this.rotations2.yaw = this.rotations.yaw;
+                this.rotations2.pitch = this.rotations.pitch;
+                this.rotations = newRots;
                 break;
             case "AAC":
                 if (!RotationHelper.raytraceVector(
-                        new Vector3d(var3.getPosX(), var3.getPosY() - 1.6 - this.field23955 + (double) var3.getEyeHeight(), var3.getPosZ())
+                        new Vector3d(targ.getPosX(), targ.getPosY() - 1.6 - this.field23955 + (double) targ.getEyeHeight(), targ.getPosZ())
                 )) {
                 }
 
                 float var29 = this.field23957 / Math.max(1.0F, this.field23956);
-                double var33 = var3.getPosX() - var3.lastTickPosX;
-                double var34 = var3.getPosZ() - var3.lastTickPosZ;
+                double var33 = targ.getPosX() - targ.lastTickPosX;
+                double var34 = targ.getPosZ() - targ.lastTickPosZ;
                 float var35 = (float) Math.sqrt(var33 * var33 + var34 * var34);
                 float var36 = MathUtils.lerp(var29, 0.57, -0.135, 0.095, -0.3);
                 float var37 = Math.min(1.0F, MathUtils.lerp(var29, 0.57, -0.135, 0.095, -0.3));
@@ -736,16 +689,16 @@ public class KillAura extends Module {
                     var37 = Math.min(1.0F, MathUtils.lerp(var29, 0.18, 0.13, 1.0, 1.04));
                 }
 
-                float var38 = MultiUtilities.method17756(field23951.yaw, var4.yaw);
-                float var39 = var4.pitch - field23951.pitch;
-                this.rots.yaw = this.rotations.yaw;
-                this.rots.pitch = this.rotations.pitch;
-                this.rotations.yaw = field23951.yaw + var36 * var38;
-                this.rotations.pitch = (field23951.pitch + var37 * var39) % 90.0F;
+                float var38 = MultiUtilities.method17756(previousRotations.yaw, newRots.yaw);
+                float var39 = newRots.pitch - previousRotations.pitch;
+                this.rotations2.yaw = this.rotations.yaw;
+                this.rotations2.pitch = this.rotations.pitch;
+                this.rotations.yaw = previousRotations.yaw + var36 * var38;
+                this.rotations.pitch = (previousRotations.pitch + var37 * var39) % 90.0F;
                 if (var29 == 0.0F || var29 >= 1.0F || (double) var35 > 0.1 && this.field23956 < 4.0F) {
-                    float var41 = Math.abs(MultiUtilities.method17756(var4.yaw, field23951.yaw));
+                    float var41 = Math.abs(MultiUtilities.method17756(newRots.yaw, previousRotations.yaw));
                     this.field23956 = (float) Math.round(var41 * 1.8F / 50.0F);
-                    if (this.field23956 <= 1.0F && Math.abs(MultiUtilities.method17756(var4.yaw, this.rotations.yaw)) > 10.0F) {
+                    if (this.field23956 <= 1.0F && Math.abs(MultiUtilities.method17756(newRots.yaw, this.rotations.yaw)) > 10.0F) {
                     }
 
                     this.field23957 = 0.0F;
@@ -753,39 +706,39 @@ public class KillAura extends Module {
                         this.field23955 = Math.random() * 0.5 + 0.25;
                     }
 
-                    field23951.yaw = this.rotations.yaw;
-                    field23951.pitch = this.rotations.pitch;
+                    previousRotations.yaw = this.rotations.yaw;
+                    previousRotations.pitch = this.rotations.pitch;
                 }
                 break;
             case "Smooth":
-                this.rots.yaw = this.rotations.yaw;
-                this.rots.pitch = this.rotations.pitch;
+                this.rotations2.yaw = this.rotations.yaw;
+                this.rotations2.pitch = this.rotations.pitch;
                 this.rotations.yaw = (float) ((double) this.rotations.yaw + (double) (var5 * 2.0F) / 5.0);
                 this.rotations.pitch = (float) ((double) this.rotations.pitch + (double) (var6 * 2.0F) / 5.0);
                 break;
             case "None":
-                this.rots.yaw = this.rotations.yaw;
-                this.rots.pitch = this.rotations.pitch;
+                this.rotations2.yaw = this.rotations.yaw;
+                this.rotations2.pitch = this.rotations.pitch;
                 this.rotations.yaw = mc.player.rotationYaw;
                 this.rotations.pitch = mc.player.rotationPitch;
                 break;
             case "LockView":
-                this.rots.yaw = this.rotations.yaw;
-                this.rots.pitch = this.rotations.pitch;
+                this.rotations2.yaw = this.rotations.yaw;
+                this.rotations2.pitch = this.rotations.pitch;
                 EntityRayTraceResult ray = MultiUtilities.method17714(
-                        var3, this.rotations.yaw, this.rotations.pitch, var0 -> true, this.getNumberValueBySettingName("Range")
+                        targ, this.rotations.yaw, this.rotations.pitch, var0 -> true, this.getNumberValueBySettingName("Range")
                 );
-                if (ray == null || ray.getEntity() != var3) {
-                    this.rotations = var4;
+                if (ray == null || ray.getEntity() != targ) {
+                    this.rotations = newRots;
                 }
                 break;
             case "Test2":
                 EntityRayTraceResult var24 = MultiUtilities.method17714(
-                        var3, this.rotations.yaw, this.rotations.pitch, var0 -> true, this.getNumberValueBySettingName("Range")
+                        targ, this.rotations.yaw, this.rotations.pitch, var0 -> true, this.getNumberValueBySettingName("Range")
                 );
-                if (var24 != null && var24.getEntity() == var3) {
-                    this.rots.yaw = this.rotations.yaw;
-                    this.rots.pitch = this.rotations.pitch;
+                if (var24 != null && var24.getEntity() == targ) {
+                    this.rotations2.yaw = this.rotations.yaw;
+                    this.rotations2.pitch = this.rotations.pitch;
                     this.rotations.yaw = (float) ((double) this.rotations.yaw + (Math.random() - 0.5) * 2.0 + (double) (var5 / 10.0F));
                     this.rotations.pitch = (float) ((double) this.rotations.pitch + (Math.random() - 0.5) * 2.0 + (double) (var6 / 10.0F));
                     this.field23957 = 0.0F;
@@ -794,19 +747,19 @@ public class KillAura extends Module {
                 }
 
                 float var10 = this.field23957 / Math.max(1.0F, this.field23956);
-                double var15 = var3.getPosX() - var3.lastTickPosX;
-                double var17 = var3.getPosZ() - var3.lastTickPosZ;
+                double var15 = targ.getPosX() - targ.lastTickPosX;
+                double var17 = targ.getPosZ() - targ.lastTickPosZ;
                 float var19 = (float) Math.sqrt(var15 * var15 + var17 * var17);
                 float var20 = MathUtils.lerp(var10, 0.57, -0.135, 0.095, -0.3);
                 float var21 = Math.min(1.0F, MathUtils.lerp(var10, 0.57, -0.135, 0.095, -0.3));
-                float var22 = MultiUtilities.method17756(field23951.yaw, var4.yaw);
-                float var23 = var4.pitch - field23951.pitch;
-                this.rots.yaw = this.rotations.yaw;
-                this.rots.pitch = this.rotations.pitch;
-                this.rotations.yaw = field23951.yaw + var20 * var22;
-                this.rotations.pitch = (field23951.pitch + var21 * var23) % 90.0F;
+                float var22 = MultiUtilities.method17756(previousRotations.yaw, newRots.yaw);
+                float var23 = newRots.pitch - previousRotations.pitch;
+                this.rotations2.yaw = this.rotations.yaw;
+                this.rotations2.pitch = this.rotations.pitch;
+                this.rotations.yaw = previousRotations.yaw + var20 * var22;
+                this.rotations.pitch = (previousRotations.pitch + var21 * var23) % 90.0F;
                 if (var10 == 0.0F || var10 >= 1.0F || (double) var19 > 0.1 && this.field23956 < 4.0F) {
-                    float var25 = Math.abs(MultiUtilities.method17756(var4.yaw, field23951.yaw));
+                    float var25 = Math.abs(MultiUtilities.method17756(newRots.yaw, previousRotations.yaw));
                     this.field23956 = (float) Math.round(var25 * 1.8F / 50.0F);
                     if (this.field23956 < 3.0F) {
                         this.field23956 = 3.0F;
@@ -817,10 +770,13 @@ public class KillAura extends Module {
                         this.field23955 = Math.random() * 0.5 + 0.25;
                     }
 
-                    field23951.yaw = this.rotations.yaw;
-                    field23951.pitch = this.rotations.pitch;
+                    previousRotations.yaw = this.rotations.yaw;
+                    previousRotations.pitch = this.rotations.pitch;
                 }
         }
+
+        mc.player.rotationYawHead = this.rotations.yaw;
+        mc.player.renderYawOffset = this.rotations.yaw;
     }
 
     private double method16832(double var1, double var3) {

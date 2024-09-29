@@ -107,9 +107,9 @@ public class Class4343 extends Class4339 implements Class4342 {
                )
             );
             var35.setFont(ResourceRegistry.JelloLightFont18);
-            var35.method13151(var1x -> setting.setCurrentValue(var1x.method13303()));
+            var35.method13151(var1x -> setting.setCurrentValue(var1x.getTypedText()));
             setting.addObserver(var2x -> {
-               if (var35.method13303() != ((InputSetting)setting).getCurrentValue()) {
+               if (var35.getTypedText() != ((InputSetting)setting).getCurrentValue()) {
                   var35.method13304(((InputSetting)setting).getCurrentValue());
                }
             });

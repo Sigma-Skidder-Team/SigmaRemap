@@ -31,15 +31,15 @@ public class Class4314 extends Screen {
       this.field21028.method13155(true);
       this.field21028.method13147("*");
       this.field21029.doThis((var2, var3) -> {
-         if (this.field21027.method13303().length() > 0) {
-            if (!this.field21027.method13303().equals(var1.getEmail())) {
-               var1.setName(this.field21027.method13303());
+         if (this.field21027.getTypedText().length() > 0) {
+            if (!this.field21027.getTypedText().equals(var1.getEmail())) {
+               var1.setName(this.field21027.getTypedText());
             }
 
-            var1.setEmail(this.field21027.method13303());
+            var1.setEmail(this.field21027.getTypedText());
          }
 
-         var1.setPassword(this.field21028.method13303());
+         var1.setPassword(this.field21028.getTypedText());
          this.field21032 = "Edited!";
       });
       this.field21030.doThis((var0, var1x) -> Client.getInstance().getGuiManager().method33482(new SigmaClassicAltManager()));

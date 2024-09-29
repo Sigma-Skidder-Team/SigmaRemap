@@ -11,15 +11,15 @@ import java.util.ArrayList;
 
 public class SearchBoxButton extends Class4278 {
    public Class4339 field20840;
-   public UIInput field20841;
+   public UIInput searchBox;
    private ArrayList<YoutubeVideoData> field20842;
    private MusicManager field20843 = Client.getInstance().getMusicManager();
 
    public SearchBoxButton(IconPanel var1, String var2, int var3, int var4, int var5, int var6, String var7) {
       super(var1, var2, var3, var4, var5, var6, ColorHelper.field27961, var7, false);
       this.addToList(this.field20840 = new Class4339(this, "albumView", 0, 0, var5, var6, ColorHelper.field27961, "View"));
-      this.addToList(this.field20841 = new UIInput(this, "searchInput", 30, 14, var5 - 60, 70, UIInput.field20742, "", "Search..."));
-      this.field20841.method13292(true);
+      this.addToList(this.searchBox = new UIInput(this, "searchInput", 30, 14, var5 - 60, 70, UIInput.field20742, "", "Search..."));
+      this.searchBox.method13292(true);
    }
 
    @Override
@@ -29,12 +29,12 @@ public class SearchBoxButton extends Class4278 {
 
    @Override
    public void keyPressed(int var1) {
-      if (var1 == 257 && this.field20841.method13297()) {
-         this.field20841.method13145(false);
+      if (var1 == 257 && this.searchBox.method13297()) {
+         this.searchBox.method13145(false);
          new Thread(
                () -> {
                   this.field20842 = new ArrayList<YoutubeVideoData>();
-                  YoutubeJPGThumbnail[] var3 = ThumbnailUtil.search(this.field20841.method13303());
+                  YoutubeJPGThumbnail[] var3 = ThumbnailUtil.search(this.searchBox.getTypedText());
 
                   for (YoutubeJPGThumbnail var7 : var3) {
                      this.field20842.add(new YoutubeVideoData(var7.videoID, var7.title, var7.fullUrl));

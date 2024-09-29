@@ -39,7 +39,7 @@ public class NCPSpeed extends Module {
     public void method16346(EventUpdate var1) {
         if (this.isEnabled()
                 && mc.player != null
-                && !Jesus.method16953()
+                && !Jesus.isWalkingOnLiquid()
                 && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
             if (var1.isPre() && Speed.field23893 > 1) {
                 double var4 = mc.player.getPosX() - mc.player.field6119;
@@ -56,7 +56,7 @@ public class NCPSpeed extends Module {
     @EventTarget
     public void method16347(EventMove var1) {
         if (this.isEnabled() && mc.player != null) {
-            if (!Jesus.method16953() && !mc.player.isInWater()) {
+            if (!Jesus.isWalkingOnLiquid() && !mc.player.isInWater()) {
                 if (this.field23608 < 2) {
                     this.field23608++;
                 }
@@ -92,7 +92,7 @@ public class NCPSpeed extends Module {
     @EventTarget
     @LowerPriority
     public void method16348(JumpEvent var1) {
-        if (this.isEnabled() && !Jesus.method16953()) {
+        if (this.isEnabled() && !Jesus.isWalkingOnLiquid()) {
             if (this.field23607 != 0) {
                 var1.setCancelled(true);
             }

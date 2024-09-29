@@ -34,7 +34,7 @@ public class UITextDisplay extends Class4278 {
             ResourceRegistry.JelloLightFont18_1,
             (float)this.getXA(),
             (float)this.getYA(),
-            this.method13303(),
+            this.getTypedText(),
             MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1)
          );
          GL11.glAlphaFunc(519, 0.0F);
@@ -45,7 +45,7 @@ public class UITextDisplay extends Class4278 {
             this.getFont(),
             (float)this.getXA(),
             (float)this.getYA(),
-            this.method13303(),
+            this.getTypedText(),
             MultiUtilities.applyAlpha(this.textColor.getTextColor(), var1 * MultiUtilities.method17710(this.textColor.getTextColor()))
          );
       }

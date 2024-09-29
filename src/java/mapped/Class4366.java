@@ -132,13 +132,13 @@ public class Class4366 extends Class4247 {
          }
       }
 
-      if (this.method13303() != null) {
+      if (this.getTypedText() != null) {
          RenderUtil.method11415(this);
          RenderUtil.drawString(
             this.getFont(),
             (float)(this.getXA() + 7),
             (float)(this.getYA() + (this.getHeightA() - this.getFont().method23952()) / 2),
-            this.method13303(),
+            this.getTypedText(),
             MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * 0.5F)
          );
          RenderUtil.endScissor();
@@ -193,7 +193,7 @@ public class Class4366 extends Class4247 {
    }
 
    @Override
-   public String method13303() {
+   public String getTypedText() {
       return this.method13667().size() <= 0 ? null : this.method13667().get(this.method13671());
    }
 

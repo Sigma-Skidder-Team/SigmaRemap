@@ -599,16 +599,16 @@ public class MusicManager {
     public URL method24323(URL var1) {
         String var4 = var1.toString();
         String var5 = System.getProperty("user.home");
-        YoutubeDLRequest var6 = new YoutubeDLRequest(var4, var5);
-        var6.setOption("g");
-        var6.setOption("no-check-certificate", " ");
-        var6.setOption("rm-cache-dir", " ");
-        var6.setOption("retries", 10);
-        var6.setOption("f", 18);
+        YoutubeDLRequest request = new YoutubeDLRequest(var4, var5);
+        request.setOption("get-url");
+        request.setOption("no-check-certificate");
+        request.setOption("rm-cache-dir");
+        request.setOption("retries", "10");
+        request.setOption("format", "18");
 
         try {
             YoutubeDL.setExecutablePath(this.method24333());
-            YoutubeDLResponse var7 = YoutubeDL.execute(var6);
+            YoutubeDLResponse var7 = YoutubeDL.execute(request);
             String var8 = var7.getOut();
             return new URL(var8);
         } catch (YoutubeDLException var9) {

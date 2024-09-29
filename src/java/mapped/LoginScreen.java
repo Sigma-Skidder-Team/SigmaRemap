@@ -111,10 +111,10 @@ public class LoginScreen extends Class4247 {
          this.loginButton.setEnabled(false);
          Class9507 var3 = Client.getInstance().getNetworkManager().method30452();
          if (var3 != null) {
-            var3.method36706(this.field21355.method13303());
+            var3.method36706(this.field21355.getTypedText());
          }
 
-         String var4 = Client.getInstance().getNetworkManager().method30447(this.inputUsername.method13303(), this.inputPassword.method13303(), var3);
+         String var4 = Client.getInstance().getNetworkManager().method30447(this.inputUsername.getTypedText(), this.inputPassword.getTypedText(), var3);
          if (var4 != null) {
             LoginAndOutScreen var5 = (LoginAndOutScreen)this.getIcoPanel();
             var5.method13424("Error", var4);

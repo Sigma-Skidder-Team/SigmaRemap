@@ -75,7 +75,7 @@ public class NoGroundCriticals extends Module {
                 boolean var6 = false;
                 boolean var7 = mc.objectMouseOver != null && mc.objectMouseOver.getType() == RayTraceResult.Type.BLOCK;
                 boolean var8 = mc.playerController.getIsHittingBlock() || mc.gameSettings.keyBindAttack.isKeyDown() && var7;
-                if (!var8 && !Jesus.method16953()) {
+                if (!var8 && !Jesus.isWalkingOnLiquid()) {
                     switch (this.field23410) {
                         case 0:
                             var1.method13908(true);

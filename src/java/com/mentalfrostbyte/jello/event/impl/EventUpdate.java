@@ -99,7 +99,7 @@ public class EventUpdate extends CancellableEvent {
         return this.pre;
     }
 
-    public void method13922(Runnable runnable) {
+    public void attackPost(Runnable runnable) {
         this.runnables.add(runnable);
     }
 

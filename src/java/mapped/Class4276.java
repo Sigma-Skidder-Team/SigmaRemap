@@ -51,7 +51,7 @@ public class Class4276 extends Class4247 {
             ResourceRegistry.JelloLightFont25
          )
       );
-      var8.doThis((var1x, var2x) -> this.method13132(this.field20729.method13303(), this.method13130(), this.field20730.field21296));
+      var8.doThis((var1x, var2x) -> this.method13132(this.field20729.getTypedText(), this.method13130(), this.field20730.field21296));
       this.addToList(this.field20729 = new UIInput(this, "Name", 20, 7, this.widthA - 40, 60, UIInput.field20741, "My waypoint", "My waypoint"));
       this.field20729.method13148();
       this.field20729.method13156(false);
@@ -74,8 +74,8 @@ public class Class4276 extends Class4247 {
    }
 
    public Vector3i method13130() {
-      if (this.field20728.method13303() != null && this.field20728.method13303().contains(" ")) {
-         String[] var3 = this.field20728.method13303().split(" ");
+      if (this.field20728.getTypedText() != null && this.field20728.getTypedText().contains(" ")) {
+         String[] var3 = this.field20728.getTypedText().split(" ");
          if (var3.length == 2 && var3[0].matches("-?\\d+") && var3[1].matches("-?\\d+")) {
             int var4 = Integer.valueOf(var3[0]);
             int var5 = Integer.valueOf(var3[1]);

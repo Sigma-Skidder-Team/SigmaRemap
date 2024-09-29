@@ -824,7 +824,7 @@ public class IconPanel implements IGuiEventListener {
         this.field20911 = var1;
     }
 
-    public String method13303() {
+    public String getTypedText() {
         return this.field20912;
     }
 

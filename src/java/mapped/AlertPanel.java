@@ -129,7 +129,7 @@ public class AlertPanel extends Class4247 {
       if (var8 != null && var9 != null) {
          UIInput var20 = var9;
          var8.method13151(var2x -> {
-            String var5x = var2x.method13303();
+            String var5x = var2x.getTypedText();
             if (var5x != null && var5x.contains(":")) {
                String[] var6 = var5x.split(":");
                if (var6.length <= 2) {
@@ -173,7 +173,7 @@ public class AlertPanel extends Class4247 {
          Class4278 var6 = (Class4278)var5;
          if (var6 instanceof UIInput) {
             UIInput var7 = (UIInput)var6;
-            var3.put(var7.method13153(), var7.method13303());
+            var3.put(var7.method13153(), var7.getTypedText());
          }
       }
 

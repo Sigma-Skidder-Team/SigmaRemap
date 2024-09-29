@@ -40,7 +40,7 @@ public class Class4326 extends Screen {
       this.field21118.doThis((var1, var2) -> {
          this.field21122 = "§bLogging in...";
          new Thread(() -> {
-            Account var3x = new Account(this.field21116.method13303(), this.field21117.method13303());
+            Account var3x = new Account(this.field21116.getTypedText(), this.field21117.getTypedText());
             if (!this.field21121.updateSelectedEmail(var3x)) {
                this.field21122 = "§cAlt failed!";
             } else {

@@ -62,7 +62,7 @@ public class Class4246 extends ButtonPanel {
          var6,
          MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
-      if (this.method13303() == null) {
+      if (this.getTypedText() == null) {
       }
 
       ClientResource var7 = ResourceRegistry.JelloLightFont12;

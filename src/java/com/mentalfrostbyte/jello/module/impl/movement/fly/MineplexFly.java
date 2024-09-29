@@ -3,8 +3,8 @@ package com.mentalfrostbyte.jello.module.impl.movement.fly;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.*;
+import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
@@ -20,7 +20,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.vector.Vector3d;
 
-public class MineplexFly extends PremiumModule {
+public class MineplexFly extends Module {
     private int field23668;
     private int field23669;
     private int field23670;
@@ -31,7 +31,7 @@ public class MineplexFly extends PremiumModule {
     private boolean field23675;
 
     public MineplexFly() {
-        super("Mineplex", "Mineplex fly/longjump", ModuleCategory.MOVEMENT);
+        super(ModuleCategory.MOVEMENT, "Mineplex", "Mineplex fly/longjump");
         this.registerSetting(new NumberSetting<Float>("Boost", "Boost value", 4.0F, Float.class, 1.0F, 8.0F, 0.01F));
         this.registerSetting(new BooleanSetting("Fake", "Simulate a real fly", false));
     }

@@ -78,7 +78,7 @@ public class TestSpeed extends Module {
     @EventTarget
     @LowerPriority
     public void method16798(JumpEvent var1) {
-        if (this.isEnabled() && !Jesus.method16953() && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
+        if (this.isEnabled() && !Jesus.isWalkingOnLiquid() && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
             if (!mc.gameSettings.keyBindJump.isKeyDown() || !Client.getInstance().getModuleManager().getModuleByClass(BlockFly.class).isEnabled()) {
                 this.field23916 = MovementUtils.method37083()[0];
                 this.field23918 = 0;

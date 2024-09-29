@@ -45,7 +45,7 @@ public class Class7898 implements Class7897 {
    public float[][] method26462(float[] var1) throws UnsupportedOperationException {
       float[][] var4 = new float[3][var1.length];
       this.method26465(false, var1, null, var4[0], var4[1]);
-      var4[2] = (float[])this.field33853.clone();
+      var4[2] = this.field33853.clone();
       return var4;
    }
 
@@ -187,16 +187,22 @@ public class Class7898 implements Class7897 {
    }
 
    static {
-      byte var4 = 2;
+      long var4 = 2;  // Change int to long to prevent overflow
 
       for (int var5 = 1; var5 <= 16; var5++) {
-         field33850[var5 - 1] = new int[var4];
+         if (var4 <= 0) {
+            System.err.println("Debug Info: var4 is " + var4 + " at iteration " + var5);
+            throw new IllegalArgumentException("Array size cannot be negative or zero");
+         }
+
+         field33850[var5 - 1] = new int[(int) var4];  // Cast back to int for array size
 
          for (int var8 = 0; var8 < var4; var8++) {
             field33850[var5 - 1][var8] = method26467(var8, var5);
          }
 
-         var4 <<= 1;
+         var4 <<= 1;  // Shifting as a long to avoid overflow
       }
    }
+
 }

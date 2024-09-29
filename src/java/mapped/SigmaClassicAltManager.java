@@ -209,7 +209,7 @@ public class SigmaClassicAltManager extends Screen {
    }
 
    public void method13403() {
-      List<Account> var4 = Class8270.method28878(this.field21061.getAccounts(), Class2209.field14448, "", this.field21066.method13303());
+      List<Account> var4 = Class8270.method28878(this.field21061.getAccounts(), Class2209.field14448, "", this.field21066.getTypedText());
       int var5 = 0;
       if (this.field21055 != null) {
          var5 = this.field21055.method13513();

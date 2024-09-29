@@ -163,7 +163,7 @@ public class MusicPlayer extends Class4278 {
       }
 
       var1.setEnabled(true);
-      this.field20849 = var1.method13303();
+      this.field20849 = var1.getTypedText();
       this.field20852 = var1;
       this.searchBox.setEnabled(false);
       this.field20852.field21207 = 65;

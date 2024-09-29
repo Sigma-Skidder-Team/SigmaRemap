@@ -41,10 +41,10 @@ public class RedeemKeyScreen extends IconPanel {
       var10.doThis((var2x, var3x) -> new Thread(() -> {
             Class9507 var4x = Client.getInstance().getNetworkManager().method30452();
             if (var4x != null) {
-               var4x.method36706(this.field21138.method13303());
+               var4x.method36706(this.field21138.getTypedText());
             }
 
-            this.field21135 = Client.getInstance().getNetworkManager().method30451(var9.method13303(), Client.getInstance().getNetworkManager().method30452());
+            this.field21135 = Client.getInstance().getNetworkManager().method30451(var9.getTypedText(), Client.getInstance().getNetworkManager().method30452());
             if (this.field21135 == null) {
                this.field21135 = "";
             }

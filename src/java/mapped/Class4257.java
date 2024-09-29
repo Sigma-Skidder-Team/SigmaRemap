@@ -17,7 +17,7 @@ public class Class4257 extends Class4247 {
       super(var1, var2, var3, var4, var5, var6, var7);
       this.addToList(this.field20639 = new UIInput(this, "search", 50, 0, var5 - 60, var6 - 2, UIInput.field20741, "", "Search..."));
       this.field20639.method13156(false);
-      this.field20639.method13151(var1x -> this.field20640 = this.field20639.method13303());
+      this.field20639.method13151(var1x -> this.field20640 = this.field20639.getTypedText());
    }
 
    @Override

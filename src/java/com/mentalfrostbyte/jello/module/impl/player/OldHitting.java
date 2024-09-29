@@ -41,14 +41,15 @@ public class OldHitting extends Module {
     @HigherPriority
     @Class5631
     private void method16020(EventUpdate var1) {
-        if (this.isEnabled()/* || JelloPortal.getCurrentVersion() == ViaVerList._1_8_x*/) {
+        /* || JelloPortal.getCurrentVersion() == ViaVerList._1_8_x*/
+        if (this.isEnabled() || mc.gameSettings.keyBindUseItem.isKeyDown()) {
             if (var1.isPre()) {
                 boolean var4 = mc.player.getHeldItemMainhand() != null && mc.player.getHeldItemMainhand().getItem() instanceof SwordItem;
                 boolean var5 = Client.getInstance().getModuleManager().getModuleByClass(KillAura.class).isEnabled();
                 boolean var6 = true;
                 if (!mc.player.isSneaking()
                         && mc.objectMouseOver.getType() == RayTraceResult.Type.BLOCK
-                        && !Client.getInstance().getModuleManager().getModuleByClass(KillAura.class).isEnabled()) {
+                        && !var5) {
                     BlockRayTraceResult var7 = (BlockRayTraceResult) mc.objectMouseOver;
                     BlockPos var8 = var7.getPos();
                     Block var9 = mc.world.getBlockState(var8).getBlock();
@@ -83,7 +84,7 @@ public class OldHitting extends Module {
                     }
                 }
 
-                field23408 = mc.gameSettings.keyBindUseItem.isKeyDown() && var4 && var6 && var6 || var5;
+                field23408 = mc.gameSettings.keyBindUseItem.isKeyDown() && var4 && var6 && var6 || (var5 && KillAura.target != null);
                 /*
                 if (!field23408) {
                     if (ViaVersionLoader.entites.contains(mc.player)) {
@@ -110,7 +111,8 @@ public class OldHitting extends Module {
     @LowerPriority
     @Class5631
     private void onPacketReceive(ReceivePacketEvent event) {
-        if (this.isEnabled() /* || JelloPortal.getCurrentVersion() == ViaVerList._1_8_x*/) {
+        /* || JelloPortal.getCurrentVersion() == ViaVerList._1_8_x*/
+        if (this.isEnabled() || mc.gameSettings.keyBindUseItem.isKeyDown()) {
             if (mc.player != null) {
                 if (event.getPacket() instanceof SEntityEquipmentPacket) {
                     SEntityEquipmentPacket pack = (SEntityEquipmentPacket) event.getPacket();
@@ -128,7 +130,8 @@ public class OldHitting extends Module {
     @LowerPriority
     @Class5631
     private void method16022(EventHandAnimation event) {
-        if (this.isEnabled()/* || JelloPortal.getCurrentVersion() == ViaVerList._1_8_x*/) {
+        //JelloPortal.getCurrentVersion() == ViaVerList._1_8_x*
+        if (this.isEnabled() || mc.gameSettings.keyBindUseItem.isKeyDown()) {
             float var4 = event.method13924();
             if (event.method13926() && event.getHand() == HandSide.LEFT && event.getItemStack().getItem() instanceof Class3334) {
                 event.method13931(false);
