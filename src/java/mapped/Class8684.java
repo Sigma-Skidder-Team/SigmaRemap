@@ -15,11 +15,13 @@ import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
 
 import com.mojang.blaze3d.platform.GlStateManager;
+import net.minecraft.client.renderer.texture.NativeImage;
 import net.minecraft.client.renderer.texture.Texture;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.optifine.Config;
 import net.optifine.entity.model.CustomEntityModels;
+import net.optifine.reflect.ReflectorForge;
 import net.optifine.shaders.Shaders;
 import org.apache.commons.io.IOUtils;
 import org.lwjgl.BufferUtils;
@@ -205,7 +207,7 @@ public class Class8684 {
          Class7031.method21825();
          Config.method26861().tick();
          Config.method26810("Disable Forge light pipeline");
-         Class9561.method37054(false);
+         ReflectorForge.setForgeUseThing(false);
       }
    }
 
@@ -318,13 +320,13 @@ public class Class8684 {
       return var3 == var0;
    }
 
-   public static Class1806 method31279(Class1806 var0, int var1) {
+   public static NativeImage method31279(NativeImage var0, int var1) {
       BufferedImage var4 = method31280(var0);
       BufferedImage var5 = method31282(var4, var1);
       return method31281(var5);
    }
 
-   public static BufferedImage method31280(Class1806 var0) {
+   public static BufferedImage method31280(NativeImage var0) {
       int var3 = var0.method7886();
       int var4 = var0.method7887();
       int[] var5 = new int[var3 * var4];
@@ -334,12 +336,12 @@ public class Class8684 {
       return var6;
    }
 
-   private static Class1806 method31281(BufferedImage var0) {
+   private static NativeImage method31281(BufferedImage var0) {
       int var3 = var0.getWidth();
       int var4 = var0.getHeight();
       int[] var5 = new int[var3 * var4];
       var0.getRGB(0, 0, var3, var4, var5, 0, var3);
-      Class1806 var6 = new Class1806(var3, var4, false);
+      NativeImage var6 = new NativeImage(var3, var4, false);
       var6.method7915().put(var5);
       return var6;
    }
@@ -414,10 +416,10 @@ public class Class8684 {
    }
 
    public static void method31286(TextureAtlasSprite var0) {
-      Class1806[] var3 = var0.method7488();
+      NativeImage[] var3 = var0.method7488();
 
       for (int var4 = 0; var4 < var3.length; var4++) {
-         Class1806 var5 = var3[var4];
+         NativeImage var5 = var3[var4];
          if (var5 != null) {
             Config.method26810("" + var4 + ": " + var5.method7886() * var5.method7887());
          } else {
@@ -510,9 +512,9 @@ public class Class8684 {
    }
 
    public static void method31292() {
-      GlStateManager.method23856(3314, 0);
-      GlStateManager.method23856(3316, 0);
-      GlStateManager.method23856(3315, 0);
-      GlStateManager.method23856(3317, 4);
+      GlStateManager.pixelStore(3314, 0);
+      GlStateManager.pixelStore(3316, 0);
+      GlStateManager.pixelStore(3315, 0);
+      GlStateManager.pixelStore(3317, 4);
    }
 }

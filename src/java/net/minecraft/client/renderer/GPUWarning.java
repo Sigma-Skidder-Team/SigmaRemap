@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.client.renderer;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
@@ -6,6 +6,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.JsonSyntaxException;
+import mapped.*;
 import net.minecraft.util.ResourceLocation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -52,7 +53,7 @@ public class GPUWarning extends Class269<Class4678> {
       return this.field1042 && !this.field1043;
    }
 
-   public boolean method980() {
+   public boolean func_241701_h_() {
       return this.field1044;
    }
 

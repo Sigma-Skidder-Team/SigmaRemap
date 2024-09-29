@@ -22,7 +22,7 @@ public interface Class7205 {
       return this.method22627().method22620();
    }
 
-   default IBakedModel method22630(Class2327 var1, MatrixStack var2) {
+   default IBakedModel method22630(ItemCameraTransformsTransformType var1, MatrixStack var2) {
       return (IBakedModel) Reflector.field42871.call(this.method22627(), var1, var2);
    }
 

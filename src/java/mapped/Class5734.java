@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -25,7 +26,7 @@ public class Class5734 extends EntityRenderer<Class902> {
       float var10 = MathHelper.lerp(var3, var1.prevRotationPitch, var1.rotationPitch);
       IVertexBuilder var11 = var5.method25597(this.field25148.method11028(this.method17843(var1)));
       this.field25148.method11174(0.0F, var9, var10);
-      this.field25148.method11016(var4, var11, var6, Class213.field798, 1.0F, 1.0F, 1.0F, 1.0F);
+      this.field25148.method11016(var4, var11, var6, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
       var4.pop();
       super.render(var1, var2, var3, var4, var5, var6);
    }

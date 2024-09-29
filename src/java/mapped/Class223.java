@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 
@@ -18,7 +19,7 @@ public abstract class Class223<T extends Entity & Class1080, M extends Class2827
          this.method825().copyModelAttributesTo(var14);
          IVertexBuilder var15 = var2.method25597(RenderType.method14326(this.method832(), this.method831(var13), var13 * 0.01F));
          var14.setRotationAngles(var4, var5, var6, var8, var9, var10);
-         var14.method11016(var1, var15, var3, Class213.field798, 0.5F, 0.5F, 0.5F, 1.0F);
+         var14.method11016(var1, var15, var3, OverlayTexture.NO_OVERLAY, 0.5F, 0.5F, 0.5F, 1.0F);
       }
    }
 

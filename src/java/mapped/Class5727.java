@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Matrix3f;
@@ -64,7 +65,7 @@ public abstract class Class5727<T extends AbstractArrowEntity> extends EntityRen
       var3.pos(var1, (float)var4, (float)var5, (float)var6)
          .color(255, 255, 255, 255)
          .tex(var7, var8)
-         .method17035(Class213.field798)
+         .method17035(OverlayTexture.NO_OVERLAY)
          .method17034(var12)
          .method17041(var2, (float)var9, (float)var11, (float)var10)
          .endVertex();

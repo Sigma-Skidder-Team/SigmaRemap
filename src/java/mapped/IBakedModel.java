@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.client.renderer.model.ItemCameraTransforms;
 import net.minecraft.util.Direction;
 
 import java.util.List;
@@ -19,8 +20,8 @@ public interface IBakedModel extends Class7205 {
 
    TextureAtlasSprite getParticleTexture();
 
-   default Class9264 method22625() {
-      return Class9264.field42603;
+   default ItemCameraTransforms method22625() {
+      return ItemCameraTransforms.DEFAULT;
    }
 
    Class6391 method22626();

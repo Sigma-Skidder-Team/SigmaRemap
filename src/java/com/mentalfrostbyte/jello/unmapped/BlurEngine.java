@@ -14,13 +14,14 @@ import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import mapped.*;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.shader.ShaderGroup;
 import net.minecraft.network.play.server.SCloseWindowPacket;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
 public class BlurEngine {
    private static Minecraft mc = Minecraft.getInstance();
-   private static Shader blurShader;
+   private static ShaderGroup blurShader;
    public static Framebuffer frameBuff;
    public static Framebuffer frameBuff2;
    public static int frameBuffWidth = mc.framebuffer.framebufferWidth;
@@ -52,8 +53,8 @@ public class BlurEngine {
       if (Client.getInstance().getGuiManager().method33472() && frameBuffWidth < screenWidth && frameBuffHeight < screenHeight) {
          if (frameBuff == null) {
             try {
-               blurShader = new Shader(mc.getTextureManager(), new SigmaBlurShader(), mc.getFramebuffer(), new ResourceLocation("jelloblur"));
-               blurShader.method6525(mc.framebuffer.framebufferWidth, mc.framebuffer.framebufferHeight);
+               blurShader = new ShaderGroup(mc.getTextureManager(), new SigmaBlurShader(), mc.getFramebuffer(), new ResourceLocation("jelloblur"));
+               blurShader.createBindFramebuffers(mc.framebuffer.framebufferWidth, mc.framebuffer.framebufferHeight);
                blurShader.elements.get(0).method7410().getFromName("Radius").setValue(35.0F);
                blurShader.elements.get(1).method7410().getFromName("Radius").setValue(35.0F);
                frameBuff = blurShader.method6528("jello");
@@ -64,7 +65,7 @@ public class BlurEngine {
          }
 
          if (frameBuff.framebufferHeight != mc.framebuffer.framebufferHeight || frameBuff.framebufferWidth != mc.framebuffer.framebufferWidth) {
-            blurShader.method6525(mc.framebuffer.framebufferWidth, mc.framebuffer.framebufferHeight);
+            blurShader.createBindFramebuffers(mc.framebuffer.framebufferWidth, mc.framebuffer.framebufferHeight);
          }
 
          RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ONE, DestFactor.field12936);

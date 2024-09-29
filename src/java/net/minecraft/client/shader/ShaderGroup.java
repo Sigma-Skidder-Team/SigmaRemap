@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.client.shader;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
@@ -7,6 +7,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
 import com.mojang.blaze3d.systems.RenderSystem;
+import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.Texture;
 import net.minecraft.util.ResourceLocation;
@@ -20,7 +21,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Map;
 
-public class Shader implements AutoCloseable {
+public class ShaderGroup implements AutoCloseable {
    private final Framebuffer field8936;
    private final IResourceManager field8937;
    private final String field8938;
@@ -33,7 +34,7 @@ public class Shader implements AutoCloseable {
    private float field8945;
    private float field8946;
 
-   public Shader(TextureManager var1, IResourceManager var2, Framebuffer var3, ResourceLocation var4) throws IOException, JsonSyntaxException {
+   public ShaderGroup(TextureManager var1, IResourceManager var2, Framebuffer var3, ResourceLocation var4) throws IOException, JsonSyntaxException {
       this.field8937 = var2;
       this.field8936 = var3;
       this.field8945 = 0.0F;
@@ -290,7 +291,7 @@ public class Shader implements AutoCloseable {
       this.field8942 = Matrix4f.method35512((float)this.field8936.framebufferTextureWidth, (float)this.field8936.framebufferTextureHeight, 0.1F, 1000.0F);
    }
 
-   public void method6525(int var1, int var2) {
+   public void createBindFramebuffers(int var1, int var2) {
       this.field8943 = this.field8936.framebufferTextureWidth;
       this.field8944 = this.field8936.framebufferTextureHeight;
       this.method6524();

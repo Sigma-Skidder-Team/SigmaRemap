@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.client.renderer.model.ItemCameraTransforms;
 import net.minecraft.util.Direction;
 
 import java.util.List;
@@ -49,7 +50,7 @@ public class Class7204 implements IBakedModel {
    }
 
    @Override
-   public Class9264 method22625() {
+   public ItemCameraTransforms method22625() {
       return this.field30925.method22625();
    }
 

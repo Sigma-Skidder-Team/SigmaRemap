@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ActiveRenderInfo;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.util.math.MathHelper;
 
 public class Class4592 extends Class4587 {
@@ -32,7 +33,7 @@ public class Class4592 extends Class4587 {
       var8.translate(0.0, -1.101F, 1.5);
       Class7735 var9 = Minecraft.getInstance().getRenderTypeBuffers().getBufferSource();
       IVertexBuilder var10 = var9.method25597(this.field22079);
-      this.field22078.method11016(var8, var10, 15728880, Class213.field798, 1.0F, 1.0F, 1.0F, var7);
+      this.field22078.method11016(var8, var10, 15728880, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, var7);
       var9.method25602();
    }
 }

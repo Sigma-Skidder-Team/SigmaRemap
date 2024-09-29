@@ -10,9 +10,9 @@ import javax.annotation.Nullable;
 
 public class DynamicTexture extends Texture {
    private static final Logger field1132 = LogManager.getLogger();
-   private Class1806 field1133;
+   private NativeImage field1133;
 
-   public DynamicTexture(Class1806 var1) {
+   public DynamicTexture(NativeImage var1) {
       this.field1133 = var1;
       if (RenderSystem.isOnRenderThread()) {
          TextureUtil.method30368(this.getGlTextureId(), this.field1133.method7886(), this.field1133.method7887());
@@ -33,7 +33,7 @@ public class DynamicTexture extends Texture {
 
    public DynamicTexture(int var1, int var2, boolean var3) {
       RenderSystem.assertThread(RenderSystem::isOnGameThreadOrInit);
-      this.field1133 = new Class1806(var1, var2, var3);
+      this.field1133 = new NativeImage(var1, var2, var3);
       TextureUtil.method30368(this.getGlTextureId(), this.field1133.method7886(), this.field1133.method7887());
       if (Config.isShaders()) {
          Class9336.method35317(this);
@@ -54,11 +54,11 @@ public class DynamicTexture extends Texture {
    }
 
    @Nullable
-   public Class1806 method1141() {
+   public NativeImage method1141() {
       return this.field1133;
    }
 
-   public void method1142(Class1806 var1) {
+   public void method1142(NativeImage var1) {
       if (this.field1133 != null) {
          this.field1133.close();
       }

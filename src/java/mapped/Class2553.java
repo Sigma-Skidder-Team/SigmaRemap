@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.gson.*;
 import com.mojang.datafixers.util.Either;
+import net.minecraft.client.renderer.model.ItemCameraTransforms;
 import net.minecraft.util.ResourceLocation;
 
 import java.lang.reflect.Type;
@@ -20,10 +21,10 @@ public class Class2553 implements JsonDeserializer<Class7496> {
       String var8 = this.method10746(var6);
       Map var9 = this.method10744(var6);
       boolean var10 = this.method10747(var6);
-      Class9264 var11 = Class9264.field42603;
+      ItemCameraTransforms var11 = ItemCameraTransforms.DEFAULT;
       if (var6.has("display")) {
          JsonObject var12 = JSONUtils.method32782(var6, "display");
-         var11 = (Class9264)var3.deserialize(var12, Class9264.class);
+         var11 = (ItemCameraTransforms)var3.deserialize(var12, ItemCameraTransforms.class);
       }
 
       List var15 = this.method10743(var3, var6);

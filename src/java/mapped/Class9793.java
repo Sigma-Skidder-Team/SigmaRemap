@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.ResourceLocation;
 import net.optifine.Config;
+import net.optifine.reflect.ReflectorForge;
 import net.optifine.shaders.Shaders;
 
 import java.io.IOException;
@@ -53,7 +54,7 @@ public class Class9793 {
    }
 
    private static void method38607(List<Integer> var0) {
-      String[] var3 = Class9561.method37049();
+      String[] var3 = ReflectorForge.method37049();
 
       for (int var4 = 0; var4 < var3.length; var4++) {
          String var5 = var3[var4];

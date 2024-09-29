@@ -14,6 +14,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.optifine.Config;
+import net.optifine.reflect.ReflectorForge;
 
 import java.util.*;
 import java.util.concurrent.CancellationException;
@@ -103,7 +104,7 @@ public class Class2011 extends Class2009 {
                   var11.method22646(var19);
                }
 
-               if (Class9561.method37045(var20)) {
+               if (ReflectorForge.method37045(var20)) {
                   TileEntity var22 = var14.method7029(var19, Class2206.field14423);
                   if (var22 != null) {
                      this.method8533(var4, var12, var22);

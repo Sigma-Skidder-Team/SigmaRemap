@@ -28,6 +28,7 @@ import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import net.optifine.Config;
+import net.optifine.reflect.ReflectorForge;
 
 import javax.annotation.Nullable;
 import java.util.*;
@@ -618,8 +619,8 @@ public abstract class MobEntity extends LivingEntity {
          PlayerEntity var3 = this.world.method7185(this, -1.0);
          if (Reflector.field42844.exists()) {
             Object var4 = Reflector.field42844.method20223(this);
-            if (var4 != Class9561.field44533) {
-               if (var4 == Class9561.field44532) {
+            if (var4 != ReflectorForge.field44533) {
+               if (var4 == ReflectorForge.field44532) {
                   this.remove();
                   var3 = null;
                }
@@ -887,7 +888,7 @@ public abstract class MobEntity extends LivingEntity {
          if (var4 instanceof ArmorItem) {
             return ((ArmorItem)var4).getType();
          } else if (var4 != Items.field38120) {
-            return !Class9561.method37052(var0, (PlayerEntity)null) ? EquipmentSlotType.MAINHAND : EquipmentSlotType.OFFHAND;
+            return !ReflectorForge.method37052(var0, (PlayerEntity)null) ? EquipmentSlotType.MAINHAND : EquipmentSlotType.OFFHAND;
          } else {
             return EquipmentSlotType.CHEST;
          }

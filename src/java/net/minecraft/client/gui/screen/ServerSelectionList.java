@@ -10,6 +10,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.client.multiplayer.ServerList;
 import net.minecraft.client.renderer.texture.DynamicTexture;
+import net.minecraft.client.renderer.texture.NativeImage;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.*;
@@ -213,7 +214,7 @@ public class ServerSelectionList extends Class1274<ServerSelectionList.Entry> {
 
          boolean var13 = this.server.field33193 != SharedConstants.getVersion().getProtocolVersion();
          this.mc.fontRenderer.method38801(var1, this.server.serverName, (float)(var4 + 32 + 3), (float)(var3 + 1), 16777215);
-         List var14 = this.mc.fontRenderer.method38828(this.server.serverMOTD, var5 - 32 - 2);
+         List var14 = this.mc.fontRenderer.trimStringToWidth(this.server.serverMOTD, var5 - 32 - 2);
 
          for (int var15 = 0; var15 < Math.min(var14.size(), 2); var15++) {
             this.mc.fontRenderer.method38804(var1, (Class9125)var14.get(var15), (float)(var4 + 32 + 3), (float)(var3 + 12 + 9 * var15), 8421504);
@@ -357,7 +358,7 @@ public class ServerSelectionList extends Class1274<ServerSelectionList.Entry> {
             this.icon = null;
          } else {
             try {
-               Class1806 var4 = Class1806.method7909(var1);
+               NativeImage var4 = NativeImage.method7909(var1);
                Validate.validState(var4.method7886() == 64, "Must be 64 pixels wide", new Object[0]);
                Validate.validState(var4.method7887() == 64, "Must be 64 pixels high", new Object[0]);
                if (this.icon == null) {

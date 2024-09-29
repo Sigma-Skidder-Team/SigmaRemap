@@ -14,7 +14,7 @@ public class Class6685 extends Class6678 {
 
    @Override
    public String method20360() {
-      return "const " + this.field29296 + " " + this.method20366() + " = " + this.method20370() + "; // Shader option " + this.method20370();
+      return "const " + this.field29296 + " " + this.method20366() + " = " + this.method20370() + "; // ShaderGroup option " + this.method20370();
    }
 
    @Override

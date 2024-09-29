@@ -25,7 +25,7 @@ public class SystemToast implements Class7601 {
 
    public static SystemToast method24902(Minecraft var0, Type var1, ITextComponent var2, ITextComponent var3) {
       FontRenderer var6 = var0.fontRenderer;
-      List<Class9125> var7 = var6.method38828(var3, 200);
+      List<Class9125> var7 = var6.trimStringToWidth(var3, 200);
       int var8 = Math.max(200, var7.stream().mapToInt(var6::method38822).max().orElse(200));
       return new SystemToast(var1, var2, var7, var8 + 30);
    }

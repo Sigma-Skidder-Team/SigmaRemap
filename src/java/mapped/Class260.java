@@ -23,7 +23,7 @@ public class Class260 extends Class219<Class1021, Class2878<Class1021>> {
          ItemStack var14 = new ItemStack(Blocks.field36589);
          Minecraft.getInstance()
             .getItemRenderer()
-            .method790(var4, var14, Class2327.field15929, false, var1, var2, var4.world, var3, LivingRenderer.method17883(var4, 0.0F));
+            .method790(var4, var14, ItemCameraTransformsTransformType.HEAD, false, var1, var2, var4.world, var3, LivingRenderer.method17883(var4, 0.0F));
          var1.pop();
       }
    }

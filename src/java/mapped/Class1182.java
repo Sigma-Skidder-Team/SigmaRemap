@@ -13,7 +13,7 @@ public abstract class Class1182 extends Class1180 {
    public Class1182(Class1127 class1127, List<Class9125> var1, ITextComponent var2) {
       super(class1127, var1);
       this.field6382 = Lists.newArrayList();
-      this.field6381 = class1127.mc.fontRenderer.method38828(var2, 175);
+      this.field6381 = class1127.mc.fontRenderer.trimStringToWidth(var2, 175);
    }
 
    @Override

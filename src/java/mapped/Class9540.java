@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.renderer.texture.NativeImage;
+
 public class Class9540 {
    private static String[] field44420;
    private Class8601 field44421;
@@ -25,7 +27,7 @@ public class Class9540 {
       this.field44423 = var3;
    }
 
-   public boolean method36917(ClientWorld var1, float var2, Class1806 var3, boolean var4, float var5) {
+   public boolean method36917(ClientWorld var1, float var2, NativeImage var3, boolean var4, float var5) {
       int var8 = var3.method7886() * var3.method7887();
       if (this.field44426.length != var8) {
          this.field44426 = new int[var8];

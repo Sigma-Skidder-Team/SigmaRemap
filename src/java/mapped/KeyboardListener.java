@@ -16,6 +16,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.ScreenShotHelper;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.MathHelper;
@@ -341,7 +342,7 @@ public class KeyboardListener {
                   if (!Screen.hasControlDown()) {
                   }
 
-                  Class8683.method31251(
+                  ScreenShotHelper.saveScreenshot(
                      this.mc.gameDir,
                      this.mc.getMainWindow().getFramebufferWidth(),
                      this.mc.getMainWindow().getFramebufferHeight(),

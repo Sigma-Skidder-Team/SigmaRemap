@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.texture.NativeImage;
 import net.minecraft.client.renderer.texture.TextureUtil;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.ResourceLocation;
@@ -38,7 +39,7 @@ public class DownloadingTexture extends Class293 {
       this.field1144 = var5;
    }
 
-   private void method1149(Class1806 var1) {
+   private void method1149(NativeImage var1) {
       if (this.field1144 instanceof Class1458) {
          Class1458 var4 = (Class1458)this.field1144;
          var1 = var4.method6460(var1);
@@ -48,7 +49,7 @@ public class DownloadingTexture extends Class293 {
       this.method1150(var1);
    }
 
-   private void method1150(Class1806 var1) {
+   private void method1150(NativeImage var1) {
       if (this.field1144 != null) {
          this.field1144.run();
       }
@@ -63,7 +64,7 @@ public class DownloadingTexture extends Class293 {
       });
    }
 
-   private void method1151(Class1806 var1) {
+   private void method1151(NativeImage var1) {
       TextureUtil.method30368(this.getGlTextureId(), var1.method7886(), var1.method7887());
       var1.method7893(0, 0, 0, true);
       this.field1147 = var1 != null;
@@ -83,7 +84,7 @@ public class DownloadingTexture extends Class293 {
          }
       });
       if (this.field1145 == null) {
-         Class1806 var4;
+         NativeImage var4;
          if (this.field1141 != null && this.field1141.isFile()) {
             field1136.debug("Loading http texture from local cache ({})", this.field1141);
             FileInputStream var5 = new FileInputStream(this.field1141);
@@ -114,7 +115,7 @@ public class DownloadingTexture extends Class293 {
                         }
 
                         Minecraft.getInstance().execute(() -> {
-                           Class1806 var4xx = this.method1152(var4x);
+                           NativeImage var4xx = this.method1152(var4x);
                            if (var4xx != null) {
                               this.method1149(var4xx);
                               this.method1155();
@@ -148,11 +149,11 @@ public class DownloadingTexture extends Class293 {
    }
 
    @Nullable
-   private Class1806 method1152(InputStream var1) {
-      Class1806 var4 = null;
+   private NativeImage method1152(InputStream var1) {
+      NativeImage var4 = null;
 
       try {
-         var4 = Class1806.method7879(var1);
+         var4 = NativeImage.method7879(var1);
          if (this.field1143) {
             var4 = method1157(var4);
          }
@@ -179,12 +180,12 @@ public class DownloadingTexture extends Class293 {
          if (var4.method27942() / 100 == 2) {
             byte[] var5 = var4.method27946();
             ByteArrayInputStream var6 = new ByteArrayInputStream(var5);
-            Class1806 var7;
+            NativeImage var7;
             if (this.field1141 != null) {
                FileUtils.copyInputStreamToFile(var6, this.field1141);
-               var7 = Class1806.method7879(new FileInputStream(this.field1141));
+               var7 = NativeImage.method7879(new FileInputStream(this.field1141));
             } else {
-               var7 = Class1806.method7879(var6);
+               var7 = NativeImage.method7879(var6);
             }
 
             this.method1149(var7);
@@ -210,10 +211,10 @@ public class DownloadingTexture extends Class293 {
       return this.field1144;
    }
 
-   private static Class1806 method1157(Class1806 var0) {
+   private static NativeImage method1157(NativeImage var0) {
       boolean var3 = var0.method7887() == 32;
       if (var3) {
-         Class1806 var4 = new Class1806(64, 64, true);
+         NativeImage var4 = new NativeImage(64, 64, true);
          var4.method7903(var0);
          var0.close();
          var0 = var4;
@@ -242,7 +243,7 @@ public class DownloadingTexture extends Class293 {
       return var0;
    }
 
-   private static void method1158(Class1806 var0, int var1, int var2, int var3, int var4) {
+   private static void method1158(NativeImage var0, int var1, int var2, int var3, int var4) {
       for (int var7 = var1; var7 < var3; var7++) {
          for (int var8 = var2; var8 < var4; var8++) {
             int var9 = var0.method7889(var7, var8);
@@ -259,7 +260,7 @@ public class DownloadingTexture extends Class293 {
       }
    }
 
-   private static void method1159(Class1806 var0, int var1, int var2, int var3, int var4) {
+   private static void method1159(NativeImage var0, int var1, int var2, int var3, int var4) {
       for (int var7 = var1; var7 < var3; var7++) {
          for (int var8 = var2; var8 < var4; var8++) {
             var0.method7890(var7, var8, var0.method7889(var7, var8) | 0xFF000000);

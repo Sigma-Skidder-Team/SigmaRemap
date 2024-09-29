@@ -8,6 +8,7 @@ import net.minecraft.client.AbstractOption;
 import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.widget.Widget;
+import net.minecraft.client.renderer.GPUWarning;
 import net.minecraft.util.text.*;
 import net.optifine.Config;
 import org.lwjgl.glfw.GLFW;

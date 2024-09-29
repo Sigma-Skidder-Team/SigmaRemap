@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public enum GraphicsFanciness {
-   field13603(0, "options.graphics.fast"),
+   FAST(0, "options.graphics.fast"),
    FANCY(1, "options.graphics.fancy"),
    FABULOUS(2, "options.graphics.fabulous");
 
@@ -15,7 +15,7 @@ public enum GraphicsFanciness {
       .<GraphicsFanciness>toArray(GraphicsFanciness[]::new);
    private final int field13607;
    private final String field13608;
-   private static final GraphicsFanciness[] field13609 = new GraphicsFanciness[]{field13603, FANCY, FABULOUS};
+   private static final GraphicsFanciness[] field13609 = new GraphicsFanciness[]{FAST, FANCY, FABULOUS};
 
    private GraphicsFanciness(int var3, String var4) {
       this.field13607 = var3;
@@ -26,7 +26,7 @@ public enum GraphicsFanciness {
       return this.field13607;
    }
 
-   public String method8744() {
+   public String func_238164_b_() {
       return this.field13608;
    }
 

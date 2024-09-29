@@ -53,7 +53,7 @@ public class Class7704 {
    public static Class7704 method25460(List<Class7781> var0) {
       if (var0.isEmpty()) {
          return null;
-      } else if (!Reflector.field43013.method20238()) {
+      } else if (!Reflector.field43013.exists()) {
          return null;
       } else {
          Map<ResourceLocation, Set<Float>> var3 = new LinkedHashMap();

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.renderer.texture.NativeImage;
+
 public class Class2056 implements Class2051 {
    private static String[] field13393;
    private final int field13394;
@@ -52,7 +54,7 @@ public class Class2056 implements Class2051 {
 
    @Override
    public void method8691(int var1, int var2) {
-      Class1806 var5 = new Class1806(Class2237.field14629, this.field13394, this.field13395, false);
+      NativeImage var5 = new NativeImage(NativeImage.PixelFormat.field14629, this.field13394, this.field13395, false);
       var5.method7899(
          Class1769.method7741(this.field13400),
          this.field13399,

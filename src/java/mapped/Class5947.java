@@ -5,6 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.renderer.texture.NativeImage;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -57,15 +58,15 @@ public class Class5947 extends Class5942<Class954> {
          }
 
          double var16 = 0.4;
-         int var18 = (int)((double)Class1806.method7911(var15) * 0.4);
-         int var19 = (int)((double)Class1806.method7912(var15) * 0.4);
-         int var20 = (int)((double)Class1806.method7913(var15) * 0.4);
-         int var21 = Class1806.method7914(0, var20, var19, var18);
+         int var18 = (int)((double) NativeImage.method7911(var15) * 0.4);
+         int var19 = (int)((double) NativeImage.method7912(var15) * 0.4);
+         int var20 = (int)((double) NativeImage.method7913(var15) * 0.4);
+         int var21 = NativeImage.method7914(0, var20, var19, var18);
          byte var22 = 20;
 
          for (int var23 = 0; var23 < 4; var23++) {
             Class9125 var24 = var1.method3837(var23, var1x -> {
-               List var4x = var13.method38828(var1x, 90);
+               List var4x = var13.trimStringToWidth(var1x, 90);
                return !var4x.isEmpty() ? (Class9125)var4x.get(0) : Class9125.field41930;
             });
             if (var24 != null) {

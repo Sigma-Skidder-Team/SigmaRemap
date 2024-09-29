@@ -32,6 +32,7 @@ import net.minecraft.world.*;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.server.ServerWorld;
 import net.optifine.reflect.FieldLocatorTypes;
+import net.optifine.reflect.ReflectorForge;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -181,7 +182,7 @@ public class Reflector {
    public static Class6636 field42897 = new Class6636("net.minecraftforge.common.ForgeConfig");
    public static Class6633 field42898 = new Class6633(field42897, "CLIENT");
    public static Class6636 field42899 = new Class6636("net.minecraftforge.common.ForgeConfig$Client");
-   public static Class6633 field42900 = new Class6633(field42899, "forgeLightPipelineEnabled");
+   public static Class6633 ForgeConfig_Client_useCombinedDepthStencilAttachment = new Class6633(field42899, "forgeLightPipelineEnabled");
    public static Class6636 field42901 = new Class6636("net.minecraftforge.common.ForgeConfigSpec");
    public static Class6633 field42902 = new Class6633(field42901, "childConfig");
    public static Class6636 field42903 = new Class6636("net.minecraftforge.common.ForgeConfigSpec$ConfigValue");
@@ -196,7 +197,7 @@ public class Reflector {
    public static Class6631 field42912 = new Class6631(field42909, "getFontRenderer");
    public static Class6631 field42913 = new Class6631(field42909, "getItemStackTileEntityRenderer");
    public static Class6631 field42914 = new Class6631(field42909, "getRGBDurabilityForDisplay");
-   public static Class6631 field42915 = new Class6631(field42909, "isDamageable", new Class[]{ItemStack.class});
+   public static Class6631 IForgeItem_isDamageable1 = new Class6631(field42909, "isDamageable", new Class[]{ItemStack.class});
    public static Class6631 field42916 = new Class6631(field42909, "isShield");
    public static Class6631 field42917 = new Class6631(field42909, "onEntitySwing");
    public static Class6631 field42918 = new Class6631(field42909, "shouldCauseReequipAnimation");
@@ -424,7 +425,7 @@ public class Reflector {
    public static Class6633 field43130 = new Class6633(field43128, ModelRenderer[].class, 1);
    public static Class6636 field43131 = new Class6636(Class2859.class);
    public static Class9475 field43132 = new Class9475(field43131, ModelRenderer.class, 10);
-   public static Class6636 field43133 = Class9561.method37044();
+   public static Class6636 field43133 = ReflectorForge.getReflectorClassOptiFineResourceLocator();
    public static Class6631 field43134 = new Class6631(field43133, "getOptiFineResourceStream");
    public static Class6636 field43135 = new Class6636(Class5725.class);
    public static Class6633 field43136 = new Class6633(field43135, Class2883.class);

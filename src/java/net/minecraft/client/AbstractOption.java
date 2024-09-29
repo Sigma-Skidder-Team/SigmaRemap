@@ -3,18 +3,17 @@ package net.minecraft.client;
 import java.util.List;
 import java.util.Optional;
 
+import com.mojang.blaze3d.platform.GLX;
 import com.mojang.blaze3d.platform.GlStateManager;
 import mapped.*;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.widget.Widget;
+import net.minecraft.client.renderer.GPUWarning;
 import net.minecraft.client.settings.NarratorStatus;
 import net.minecraft.client.settings.ParticleStatus;
 import net.minecraft.entity.player.ChatVisibility;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.text.TextFormatting;
-import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.util.text.*;
 import net.optifine.Config;
 
 public abstract class AbstractOption {
@@ -104,7 +103,7 @@ public abstract class AbstractOption {
       var0 -> Math.pow((double)var0.fovScaleEffect, 2.0),
       (var0, var1) -> var0.fovScaleEffect = MathHelper.sqrt(var1),
       (var0, var1) -> {
-         var1.method17950(Minecraft.getInstance().fontRenderer.method38828(field25324, 200));
+         var1.setOptionValues(Minecraft.getInstance().fontRenderer.trimStringToWidth(field25324, 200));
          double var4 = var1.method18083(var1.getValue(var0));
          return var4 != 0.0 ? var1.method17953(var4) : var1.method17955(new TranslationTextComponent("options.fovEffectScale.off"));
       }
@@ -112,7 +111,7 @@ public abstract class AbstractOption {
    private static final ITextComponent field25326 = new TranslationTextComponent("options.screenEffectScale.tooltip");
    public static final Class5807 field25327 = new Class5807(
       "options.screenEffectScale", 0.0, 1.0, 0.0F, var0 -> (double)var0.screenEffectScale, (var0, var1) -> var0.screenEffectScale = var1.floatValue(), (var0, var1) -> {
-         var1.method17950(Minecraft.getInstance().fontRenderer.method38828(field25326, 200));
+         var1.setOptionValues(Minecraft.getInstance().fontRenderer.trimStringToWidth(field25326, 200));
          double var4 = var1.method18083(var1.getValue(var0));
          return var4 != 0.0 ? var1.method17953(var4) : var1.method17955(new TranslationTextComponent("options.screenEffectScale.off"));
       }
@@ -228,38 +227,38 @@ public abstract class AbstractOption {
       (var0, var1) -> var0.chatVisibility = ChatVisibility.getValue((var0.chatVisibility.getId() + var1) % 3),
       (var0, var1) -> var1.method17955(new TranslationTextComponent(var0.chatVisibility.getResourceKey()))
    );
-   private static final ITextComponent field25340 = new TranslationTextComponent("options.graphics.fast.tooltip");
-   private static final ITextComponent field25341 = new TranslationTextComponent(
+   private static final ITextComponent FAST_GRAPHICS = new TranslationTextComponent("options.graphics.fast.tooltip");
+   private static final ITextComponent FABULOUS_GRAPHICS = new TranslationTextComponent(
       "options.graphics.fabulous.tooltip", new TranslationTextComponent("options.graphics.fabulous").mergeStyle(TextFormatting.ITALIC)
    );
-   private static final ITextComponent field25342 = new TranslationTextComponent("options.graphics.fancy.tooltip");
+   private static final ITextComponent FANCY_GRAPHICS = new TranslationTextComponent("options.graphics.fancy.tooltip");
    public static final Class5804 field25343 = new Class5804("options.graphics", (var0, var1) -> {
-      Minecraft var4 = Minecraft.getInstance();
-      GPUWarning var5 = var4.getGPUWarning();
-      if (var0.graphicFanciness == GraphicsFanciness.FANCY && var5.method975()) {
-         var5.method976();
+      Minecraft minecraft = Minecraft.getInstance();
+      GPUWarning gpuwarning = minecraft.getGPUWarning();
+      if (var0.graphicFanciness == GraphicsFanciness.FANCY && gpuwarning.method975()) {
+         gpuwarning.method976();
       } else {
          var0.graphicFanciness = var0.graphicFanciness.method8745();
-         if (var0.graphicFanciness == GraphicsFanciness.FABULOUS && (Config.isShaders() || !GlStateManager.isFabulous() || var5.method980())) {
-            var0.graphicFanciness = GraphicsFanciness.field13603;
+         if (var0.graphicFanciness == GraphicsFanciness.FABULOUS && (Config.isShaders() || !GLX.isUsingFBOs() || !GlStateManager.isFabulous() || gpuwarning.func_241701_h_())) {
+            var0.graphicFanciness = GraphicsFanciness.FAST;
          }
 
          var0.method37162();
-         var4.worldRenderer.loadRenderers();
+         minecraft.worldRenderer.loadRenderers();
       }
    }, (var0, var1) -> {
-      switch (Class9496.field44201[var0.graphicFanciness.ordinal()]) {
-         case 1:
-            var1.method17950(Minecraft.getInstance().fontRenderer.method38828(field25340, 200));
+      switch (var0.graphicFanciness) {
+         case FAST:
+            var1.setOptionValues(Minecraft.getInstance().fontRenderer.trimStringToWidth(FAST_GRAPHICS, 200));
             break;
-         case 2:
-            var1.method17950(Minecraft.getInstance().fontRenderer.method38828(field25342, 200));
+         case FANCY:
+            var1.setOptionValues(Minecraft.getInstance().fontRenderer.trimStringToWidth(FANCY_GRAPHICS, 200));
             break;
-         case 3:
-            var1.method17950(Minecraft.getInstance().fontRenderer.method38828(field25341, 200));
+         case FABULOUS:
+            var1.setOptionValues(Minecraft.getInstance().fontRenderer.trimStringToWidth(FABULOUS_GRAPHICS, 200));
       }
 
-      TranslationTextComponent var4 = new TranslationTextComponent(var0.graphicFanciness.method8744());
+      IFormattableTextComponent var4 = new TranslationTextComponent(var0.graphicFanciness.func_238164_b_());
       return var0.graphicFanciness == GraphicsFanciness.FABULOUS ? var1.method17955(var4.mergeStyle(TextFormatting.ITALIC)) : var1.method17955(var4);
    });
    public static final Class5804 field25344 = new Class5804(
@@ -449,7 +448,7 @@ public abstract class AbstractOption {
       return this.field25371;
    }
 
-   public void method17950(List<Class9125> var1) {
+   public void setOptionValues(List<Class9125> var1) {
       this.field25372 = Optional.<List<Class9125>>of(var1);
    }
 

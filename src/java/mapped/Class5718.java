@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Matrix3f;
@@ -39,13 +40,13 @@ public class Class5718 extends EntityRenderer<Class1007> {
       this.field25115.setLivingAnimations(var1, 0.0F, 0.0F, var3);
       if (var1.field5635 <= 0) {
          IVertexBuilder var12 = var5.method25597(field25110);
-         this.field25115.method11016(var4, var12, var6, Class213.method731(0.0F, var11), 1.0F, 1.0F, 1.0F, 1.0F);
+         this.field25115.method11016(var4, var12, var6, OverlayTexture.method731(0.0F, var11), 1.0F, 1.0F, 1.0F, 1.0F);
       } else {
          float var22 = (float)var1.field5635 / 200.0F;
          IVertexBuilder var13 = var5.method25597(RenderType.method14324(field25107, var22));
-         this.field25115.method11016(var4, var13, var6, Class213.field798, 1.0F, 1.0F, 1.0F, 1.0F);
+         this.field25115.method11016(var4, var13, var6, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
          IVertexBuilder var14 = var5.method25597(field25111);
-         this.field25115.method11016(var4, var14, var6, Class213.method731(0.0F, var11), 1.0F, 1.0F, 1.0F, 1.0F);
+         this.field25115.method11016(var4, var14, var6, OverlayTexture.method731(0.0F, var11), 1.0F, 1.0F, 1.0F, 1.0F);
       }
 
       IVertexBuilder var23 = var5.method25597(field25112);
@@ -54,7 +55,7 @@ public class Class5718 extends EntityRenderer<Class1007> {
       }
 
       Config.method26874().field1020 = true;
-      this.field25115.method11016(var4, var23, var6, Class213.field798, 1.0F, 1.0F, 1.0F, 1.0F);
+      this.field25115.method11016(var4, var23, var6, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
       Config.method26874().field1020 = false;
       if (Config.isShaders()) {
          Shaders.method33082();
@@ -148,28 +149,28 @@ public class Class5718 extends EntityRenderer<Class1007> {
          var12.pos(var20, var16 * 0.2F, var17 * 0.2F, 0.0F)
             .color(0, 0, 0, 255)
             .tex(var18, var13)
-            .method17035(Class213.field798)
+            .method17035(OverlayTexture.NO_OVERLAY)
             .method17034(var7)
             .method17041(var21, 0.0F, -1.0F, 0.0F)
             .endVertex();
          var12.pos(var20, var16, var17, var11)
             .color(255, 255, 255, 255)
             .tex(var18, var14)
-            .method17035(Class213.field798)
+            .method17035(OverlayTexture.NO_OVERLAY)
             .method17034(var7)
             .method17041(var21, 0.0F, -1.0F, 0.0F)
             .endVertex();
          var12.pos(var20, var23, var24, var11)
             .color(255, 255, 255, 255)
             .tex(var25, var14)
-            .method17035(Class213.field798)
+            .method17035(OverlayTexture.NO_OVERLAY)
             .method17034(var7)
             .method17041(var21, 0.0F, -1.0F, 0.0F)
             .endVertex();
          var12.pos(var20, var23 * 0.2F, var24 * 0.2F, 0.0F)
             .color(0, 0, 0, 255)
             .tex(var25, var13)
-            .method17035(Class213.field798)
+            .method17035(OverlayTexture.NO_OVERLAY)
             .method17034(var7)
             .method17041(var21, 0.0F, -1.0F, 0.0F)
             .endVertex();

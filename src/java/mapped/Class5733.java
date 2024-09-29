@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.util.math.MathHelper;
 import net.optifine.Config;
 import net.optifine.shaders.Shaders;
@@ -31,9 +32,9 @@ public class Class5733 extends Class5732<Class993> {
    public static void method17916(BlockState var0, MatrixStack var1, Class7733 var2, int var3, boolean var4) {
       int var7;
       if (!var4) {
-         var7 = Class213.field798;
+         var7 = OverlayTexture.NO_OVERLAY;
       } else {
-         var7 = Class213.method730(Class213.method728(1.0F), 10);
+         var7 = OverlayTexture.method730(OverlayTexture.method728(1.0F), 10);
       }
 
       if (Config.isShaders() && var4) {

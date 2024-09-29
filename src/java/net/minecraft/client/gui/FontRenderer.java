@@ -234,7 +234,7 @@ public class FontRenderer {
    public void method38826(ITextProperties var1, int var2, int var3, int var4, int var5) {
       Matrix4f var8 = Class6979.method21542().method21548();
 
-      for (Class9125 var10 : this.method38828(var1, var4)) {
+      for (Class9125 var10 : this.trimStringToWidth(var1, var4)) {
          this.method38809(var10, (float)var2, (float)var3, var5, var8, false);
          var3 += 9;
       }
@@ -244,7 +244,7 @@ public class FontRenderer {
       return 9 * this.field45931.func_238365_g_(var1, var2, Style.EMPTY).size();
    }
 
-   public List<Class9125> method38828(ITextProperties var1, int var2) {
+   public List<Class9125> trimStringToWidth(ITextProperties var1, int var2) {
       return LanguageMap.getInstance().func_244260_a(this.field45931.func_238362_b_(var1, var2, Style.EMPTY));
    }
 

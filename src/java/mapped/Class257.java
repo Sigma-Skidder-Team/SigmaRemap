@@ -49,7 +49,7 @@ public class Class257 extends Class219<Class1095, Class2864<Class1095>> {
       }
 
       ItemStack var16 = var4.getItemStackFromSlot(EquipmentSlotType.MAINHAND);
-      Minecraft.getInstance().getFirstPersonRenderer().method37580(var4, var16, Class2327.field15931, false, var1, var2, var3);
+      Minecraft.getInstance().getFirstPersonRenderer().method37580(var4, var16, ItemCameraTransformsTransformType.GROUND, false, var1, var2, var3);
       var1.pop();
    }
 }

@@ -22,9 +22,9 @@ public class Class2843 extends Class2828 {
    }
 
    public Class5942 method11173(Class5942 var1) {
-      if (Reflector.field43155.method20238()) {
-         if (Reflector.field43156.method20238()) {
-            if (Reflector.field43157.method20238()) {
+      if (Reflector.field43155.exists()) {
+         if (Reflector.field43156.exists()) {
+            if (Reflector.field43157.exists()) {
                Reflector.method35082(var1, Reflector.field43155, this.field17640);
                Reflector.method35082(var1, Reflector.field43156, this.field17641);
                Reflector.method35082(var1, Reflector.field43157, this.field17642);

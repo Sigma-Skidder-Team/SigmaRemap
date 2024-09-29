@@ -12,6 +12,7 @@ import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.client.renderer.entity.PlayerRenderer;
 import net.minecraft.client.renderer.entity.ItemRenderer;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.LivingEntity;
@@ -480,7 +481,7 @@ public class EntityRendererManager {
       var1.pos(var0.getMatrix(), var3, var4, var5)
          .color(1.0F, 1.0F, 1.0F, var2)
          .tex(var6, var7)
-         .method17035(Class213.field798)
+         .method17035(OverlayTexture.NO_OVERLAY)
          .method17034(15728880)
          .method17041(var0.method32362(), 0.0F, 1.0F, 0.0F)
          .endVertex();

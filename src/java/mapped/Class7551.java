@@ -12,6 +12,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockDisplayReader;
 import net.optifine.Config;
+import net.optifine.reflect.ReflectorForge;
 import net.optifine.shaders.Shaders;
 
 import java.util.BitSet;
@@ -134,7 +135,7 @@ public class Class7551 {
       int var11,
       Class7180 var12
    ) {
-      boolean var15 = Minecraft.isAmbientOcclusionEnabled() && Class9561.method37047(var3, var1, var4) == 0 && var2.method22620();
+      boolean var15 = Minecraft.isAmbientOcclusionEnabled() && ReflectorForge.method37047(var3, var1, var4) == 0 && var2.method22620();
       if (this.field32375) {
          var12 = var2.method22631(var1, var4, var3, var12);
       }

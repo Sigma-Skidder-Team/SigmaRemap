@@ -37,6 +37,7 @@ import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextComponent$Serializer;
+import net.optifine.reflect.ReflectorForge;
 
 public class PacketBuffer extends ByteBuf {
    private final ByteBuf field43618;
@@ -304,7 +305,7 @@ public class PacketBuffer extends ByteBuf {
          this.writeVarInt(Item.method11701(var5));
          this.writeByte(var1.getCount());
          CompoundNBT var6 = null;
-         if (Class9561.method37058(var5, var1) || var5.method11721()) {
+         if (ReflectorForge.isDamageable(var5, var1) || var5.method11721()) {
             if (var2 && Reflector.field42923.exists()) {
                var6 = (CompoundNBT) Reflector.call(var1, Reflector.field42923);
             } else {

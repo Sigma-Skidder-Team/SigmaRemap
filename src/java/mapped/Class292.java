@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import net.minecraft.client.renderer.texture.NativeImage;
 import net.minecraft.client.renderer.texture.Texture;
 import net.minecraft.client.renderer.texture.TextureUtil;
 import net.optifine.shaders.Shaders;
@@ -21,10 +22,10 @@ public class Class292 extends Texture {
       this.method1132();
       InputStream var4 = Shaders.method33138(this.field1134);
       if (var4 == null) {
-         throw new FileNotFoundException("Shader texture not found: " + this.field1134);
+         throw new FileNotFoundException("ShaderGroup texture not found: " + this.field1134);
       } else {
          try {
-            Class1806 var5 = Class1806.method7879(var4);
+            NativeImage var5 = NativeImage.method7879(var4);
             Class9620 var6 = method1144(this.field1134, new Class9620(false, false));
             TextureUtil.method30368(this.getGlTextureId(), var5.method7886(), var5.method7887());
             var5.method7895(0, 0, 0, 0, 0, var5.method7886(), var5.method7887(), var6.method37495(), var6.method37496(), false, true);

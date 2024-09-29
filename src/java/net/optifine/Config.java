@@ -38,6 +38,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.StringTextComponent;
+import net.optifine.reflect.ReflectorForge;
 import net.optifine.shaders.Shaders;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -115,7 +116,7 @@ public class Config {
       if (field34156 == null) {
          field34156 = var0;
          method26936();
-         Class9561.method37042("optifine.ForgeSplashCompatible", Boolean.TRUE);
+         ReflectorForge.putLaunchBlackboard("optifine.ForgeSplashCompatible", Boolean.TRUE);
          field34160 = field34156.field44688;
       }
    }
@@ -186,7 +187,7 @@ public class Config {
    }
 
    public static InputStream method26784(String var0) {
-      InputStream var3 = Class9561.method37043(var0);
+      InputStream var3 = ReflectorForge.getOptiFineResourceStream(var0);
       return var3 == null ? Config.class.getResourceAsStream(var0) : var3;
    }
 
@@ -522,7 +523,7 @@ public class Config {
    }
 
    public static boolean method26818() {
-      return field34156.graphicFanciness != GraphicsFanciness.field13603;
+      return field34156.graphicFanciness != GraphicsFanciness.FAST;
    }
 
    public static boolean method26819() {

@@ -194,7 +194,7 @@ public abstract class Screen extends FocusableGui implements IScreen, Class1190 
             if (var9 == null) {
                ITextComponent var10 = var7.<ITextComponent>getParameter(HoverEvent$Action.SHOW_TEXT);
                if (var10 != null) {
-                  this.method2461(var1, this.mc.fontRenderer.method38828(var10, Math.max(this.width / 2, 200)), var3, var4);
+                  this.method2461(var1, this.mc.fontRenderer.trimStringToWidth(var10, Math.max(this.width / 2, 200)), var3, var4);
                }
             } else if (this.mc.gameSettings.field44588) {
                this.method2460(var1, var9.getTooltip(), var3, var4);

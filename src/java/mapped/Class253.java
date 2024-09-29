@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 
 public class Class253 extends Class219<Class1010, Class2799<Class1010>> {
    private static String[] field909;
@@ -22,7 +23,7 @@ public class Class253 extends Class219<Class1010, Class2799<Class1010>> {
          float var14 = 0.5F;
          var1.method35292(-0.5F, -0.5F, 0.5F);
          var1.rotate(Vector3f.YP.rotationDegrees(90.0F));
-         Minecraft.getInstance().getBlockRendererDispatcher().method814(var13, var1, var2, var3, Class213.field798);
+         Minecraft.getInstance().getBlockRendererDispatcher().method814(var13, var1, var2, var3, OverlayTexture.NO_OVERLAY);
          var1.pop();
       }
    }

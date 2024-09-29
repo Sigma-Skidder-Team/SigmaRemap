@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
@@ -39,7 +40,7 @@ public class Class250<T extends PlayerEntity> extends Class219<T, PlayerModel<T>
          var1.push();
          var1.translate(!var9 ? -0.4F : 0.4F, !var4.isCrouching() ? -1.5 : -1.3F, 0.0);
          IVertexBuilder var17 = var2.method25597(this.field907.method11028(Class5697.field25067[var12.getInt("Variant")]));
-         this.field907.method11019(var1, var17, var3, Class213.field798, var5, var6, var7, var8, var4.ticksExisted);
+         this.field907.method11019(var1, var17, var3, OverlayTexture.NO_OVERLAY, var5, var6, var7, var8, var4.ticksExisted);
          var1.pop();
          Config.method26874().field1000 = var14;
          if (Config.isShaders()) {

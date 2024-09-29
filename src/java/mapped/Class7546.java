@@ -6,6 +6,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import net.minecraft.client.renderer.texture.NativeImage;
 import net.minecraft.util.ResourceLocation;
 
 import java.io.IOException;
@@ -64,7 +65,7 @@ public class Class7546 implements Class7544 {
    @Override
    public Class1768 method24664(IResourceManager var1) {
       try (JSonShader var4 = var1.getShader(this.field32365)) {
-         Class1806 var6 = Class1806.method7880(Class2237.field14626, var4.getFile());
+         NativeImage var6 = NativeImage.method7880(NativeImage.PixelFormat.field14626, var4.getFile());
          int var7 = var6.method7886();
          int var8 = var6.method7887();
          int var9 = var7 / this.field32366.get(0).length;
@@ -118,7 +119,7 @@ public class Class7546 implements Class7544 {
       }
    }
 
-   private int method24667(Class1806 var1, int var2, int var3, int var4, int var5) {
+   private int method24667(NativeImage var1, int var2, int var3, int var4, int var5) {
       int var8;
       for (var8 = var2 - 1; var8 >= 0; var8--) {
          int var9 = var4 * var2 + var8;

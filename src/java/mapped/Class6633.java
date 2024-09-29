@@ -61,7 +61,7 @@ public class Class6633 implements Class6632 {
       Reflector.method35082(var1, this, var2);
    }
 
-   public boolean method20238() {
+   public boolean exists() {
       return this.method20233() != null;
    }
 

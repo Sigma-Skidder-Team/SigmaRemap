@@ -11,6 +11,7 @@ import java.util.Random;
 import java.util.function.Predicate;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.client.renderer.model.ItemCameraTransforms;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.Direction;
 import org.apache.commons.lang3.tuple.Pair;
@@ -22,7 +23,7 @@ public class Class7201 implements IBakedModel {
    public final boolean field30911;
    public final boolean field30912;
    public final TextureAtlasSprite field30913;
-   public final Class9264 field30914;
+   public final ItemCameraTransforms field30914;
    public final Class6391 field30915;
    private final Map<BlockState, BitSet> field30916 = new Object2ObjectOpenCustomHashMap(Util.method38509());
 
@@ -95,7 +96,7 @@ public class Class7201 implements IBakedModel {
    }
 
    @Override
-   public Class9264 method22625() {
+   public ItemCameraTransforms method22625() {
       return this.field30914;
    }
 

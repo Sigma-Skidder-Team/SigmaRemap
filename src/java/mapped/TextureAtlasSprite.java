@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Lists;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.client.renderer.texture.NativeImage;
 import net.minecraft.client.renderer.texture.TextureUtil;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
@@ -18,7 +19,7 @@ public class TextureAtlasSprite implements AutoCloseable {
    private final AtlasTexture field9324;
    private final Class9431 field9325;
    private final Class7788 field9326;
-   public final Class1806[] field9327;
+   public final NativeImage[] field9327;
    private final int[] field9328;
    private final int[] field9329;
    private final Class1816 field9330;
@@ -101,7 +102,7 @@ public class TextureAtlasSprite implements AutoCloseable {
       this.field9355 = var1.field9355;
    }
 
-   public TextureAtlasSprite(AtlasTexture var1, Class9431 var2, int var3, int var4, int var5, int var6, int var7, Class1806 var8) {
+   public TextureAtlasSprite(AtlasTexture var1, Class9431 var2, int var3, int var4, int var5, int var6, int var7, NativeImage var8) {
       this.field9324 = var1;
       Class7788 var11 = Class9431.method36203(var2);
       int var12 = Class9431.method36204(var2);
@@ -114,7 +115,7 @@ public class TextureAtlasSprite implements AutoCloseable {
       this.field9336 = (float)(var7 + var13) / (float)var5;
       if (Class9431.method36206(var2) > 1.0) {
          int var14 = (int)Math.round((double)var8.method7886() * Class9431.method36206(var2));
-         Class1806 var15 = Class8684.method31279(var8, var14);
+         NativeImage var15 = Class8684.method31279(var8, var14);
          if (var15 != var8) {
             var8.close();
             var8 = var15;
@@ -125,7 +126,7 @@ public class TextureAtlasSprite implements AutoCloseable {
          this.method7480(var8);
       }
 
-      Class1806 var24 = var8;
+      NativeImage var24 = var8;
       int var25 = var8.method7886() / var11.method25811(var12);
       int var16 = var8.method7887() / var11.method25810(var13);
       if (var11.method25812() > 0) {
@@ -212,7 +213,7 @@ public class TextureAtlasSprite implements AutoCloseable {
       this.method7456(var4, var5, this.field9327);
    }
 
-   private void method7456(int var1, int var2, Class1806[] var3) {
+   private void method7456(int var1, int var2, NativeImage[] var3) {
       boolean var6 = false;
       boolean var7 = this.field9346;
 
@@ -286,7 +287,7 @@ public class TextureAtlasSprite implements AutoCloseable {
 
    @Override
    public void close() {
-      for (Class1806 var6 : this.field9327) {
+      for (NativeImage var6 : this.field9327) {
          if (var6 != null) {
             var6.close();
          }
@@ -456,7 +457,7 @@ public class TextureAtlasSprite implements AutoCloseable {
       return this.field9355;
    }
 
-   private void method7480(Class1806 var1) {
+   private void method7480(NativeImage var1) {
       int[] var4 = new int[var1.method7886() * var1.method7887()];
       var1.method7915().get(var4);
       this.method7481(var4);
@@ -540,7 +541,7 @@ public class TextureAtlasSprite implements AutoCloseable {
       return var1 * var4;
    }
 
-   public Class1806[] method7488() {
+   public NativeImage[] method7488() {
       return this.field9327;
    }
 
@@ -587,9 +588,9 @@ public class TextureAtlasSprite implements AutoCloseable {
 
             Pair var13 = var12.method25807(var11.field33321, var11.field33322);
             Class9431 var14 = new Class9431(var5, (Integer)var13.getFirst(), (Integer)var13.getSecond(), var12);
-            Class1806 var15 = Class1806.method7879(var8.getFile());
+            NativeImage var15 = NativeImage.method7879(var8.getFile());
             if (var15.method7886() != this.method7457()) {
-               Class1806 var16 = Class8684.method31279(var15, this.method7457());
+               NativeImage var16 = Class8684.method31279(var15, this.method7457());
                if (var16 != var15) {
                   double var17 = 1.0 * (double)this.method7457() / (double)var15.method7886();
                   var15.close();
@@ -606,7 +607,7 @@ public class TextureAtlasSprite implements AutoCloseable {
       }
 
       if (var7 == null) {
-         Class1806 var30 = new Class1806(this.method7457(), this.method7458(), false);
+         NativeImage var30 = new NativeImage(this.method7457(), this.method7458(), false);
          int var31 = Class8684.method31291(var2);
          var30.method7904(0, 0, var30.method7886(), var30.method7887(), var31);
          Class9431 var32 = new Class9431(var5, this.method7457(), this.method7458(), Class7788.field33412);
@@ -688,7 +689,7 @@ public class TextureAtlasSprite implements AutoCloseable {
    }
 
    // $VF: synthetic method
-   public static void method7509(TextureAtlasSprite var0, int var1, int var2, Class1806[] var3) {
+   public static void method7509(TextureAtlasSprite var0, int var1, int var2, NativeImage[] var3) {
       var0.method7456(var1, var2, var3);
    }
 

@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.ResourceLocation;
 
@@ -24,7 +25,7 @@ public class Class261<T extends LivingEntity> extends Class219<T, PlayerModel<T>
             float var16 = 0.75F * (float)var14;
             var1.method35292(var16, var16, var16);
             var1.translate(0.0, (double)(-0.2F + 0.6F * (float)var14), 0.0);
-            this.field922.render(var1, var13, var3, Class213.field798);
+            this.field922.render(var1, var13, var3, OverlayTexture.NO_OVERLAY);
             var1.pop();
          }
       }

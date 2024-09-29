@@ -728,11 +728,11 @@ public class MultiUtilities {
 
    public static void method17739() {
       if (mc.getRenderViewEntity() instanceof PlayerEntity && Client.getInstance().getGuiManager().method33470()) {
-         if (mc.gameRenderer.field828 != null) {
-            mc.gameRenderer.field828.close();
+         if (mc.gameRenderer.shaderGroup != null) {
+            mc.gameRenderer.shaderGroup.close();
          }
 
-         mc.gameRenderer.method736(field24953);
+         mc.gameRenderer.loadShader(field24953);
       }
 
       method17741(20);
@@ -743,17 +743,17 @@ public class MultiUtilities {
    }
 
    public static void method17741(int var0) {
-      if (mc.gameRenderer.field828 != null) {
-         mc.gameRenderer.field828.elements.get(0).method7410().getFromName("Radius").setValue((float)var0);
-         mc.gameRenderer.field828.elements.get(1).method7410().getFromName("Radius").setValue((float)var0);
+      if (mc.gameRenderer.shaderGroup != null) {
+         mc.gameRenderer.shaderGroup.elements.get(0).method7410().getFromName("Radius").setValue((float)var0);
+         mc.gameRenderer.shaderGroup.elements.get(1).method7410().getFromName("Radius").setValue((float)var0);
       }
    }
 
    public static void method17742() {
-      if (mc.gameRenderer.field831 == GameRenderer.field830) {
-         mc.gameRenderer.field828 = null;
+      if (mc.gameRenderer.shaderIndex == GameRenderer.field830) {
+         mc.gameRenderer.shaderGroup = null;
       } else {
-         mc.gameRenderer.method736(GameRenderer.field829[mc.gameRenderer.field831]);
+         mc.gameRenderer.loadShader(GameRenderer.field829[mc.gameRenderer.shaderIndex]);
       }
    }
 

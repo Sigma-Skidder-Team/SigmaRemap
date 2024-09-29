@@ -7,7 +7,7 @@ public class Class9496 {
 
    static {
       try {
-         field44201[GraphicsFanciness.field13603.ordinal()] = 1;
+         field44201[GraphicsFanciness.FAST.ordinal()] = 1;
       } catch (NoSuchFieldError var5) {
       }
 

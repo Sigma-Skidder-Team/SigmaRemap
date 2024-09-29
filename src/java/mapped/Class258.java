@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.item.ItemStack;
 
 public class Class258 extends Class219<Class1074, Class2856<Class1074>> {
@@ -33,7 +34,7 @@ public class Class258 extends Class219<Class1074, Class2856<Class1074>> {
          }
 
          IVertexBuilder var19 = var2.method25597(RenderType.getEntityCutoutNoCull(var14.method11797()));
-         this.field918.method11016(var1, var19, var3, Class213.field798, var15, var16, var17, 1.0F);
+         this.field918.method11016(var1, var19, var3, OverlayTexture.NO_OVERLAY, var15, var16, var17, 1.0F);
       }
    }
 }

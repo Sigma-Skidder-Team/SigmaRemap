@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.renderer.texture.NativeImage;
 import net.minecraft.util.ResourceLocation;
 
 import java.io.IOException;
@@ -12,7 +13,7 @@ public class Class4230 {
       int[] var8;
       try (
               JSonShader var4 = var0.getShader(var1);
-              Class1806 var6 = Class1806.method7879(var4.getFile());
+              NativeImage var6 = NativeImage.method7879(var4.getFile());
       ) {
          var8 = var6.method7892();
       }

@@ -1,19 +1,21 @@
 package mapped;
 
+import net.minecraft.client.renderer.texture.NativeImage;
+
 public final class Class1816 implements AutoCloseable {
    private static String[] field9810;
-   private final Class1806[] field9811;
+   private final NativeImage[] field9811;
    public final TextureAtlasSprite field9812;
 
    public Class1816(TextureAtlasSprite var1, Class9431 var2, int var3) {
       this.field9812 = var1;
-      this.field9811 = new Class1806[var3 + 1];
+      this.field9811 = new NativeImage[var3 + 1];
 
       for (int var6 = 0; var6 < this.field9811.length; var6++) {
          int var7 = Class9431.method36204(var2) >> var6;
          int var8 = Class9431.method36205(var2) >> var6;
          if (this.field9811[var6] == null) {
-            this.field9811[var6] = new Class1806(var7, var8, false);
+            this.field9811[var6] = new NativeImage(var7, var8, false);
          }
       }
    }
@@ -59,7 +61,7 @@ public final class Class1816 implements AutoCloseable {
 
    @Override
    public void close() {
-      for (Class1806 var6 : this.field9811) {
+      for (NativeImage var6 : this.field9811) {
          if (var6 != null) {
             var6.close();
          }

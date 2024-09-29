@@ -92,7 +92,7 @@ public class WinGameScreen extends Screen {
                      var8 = var10 + TextFormatting.WHITE + TextFormatting.OBFUSCATED + "XXXXXXXX".substring(0, var7.nextInt(4) + 3) + var11;
                   }
 
-                  this.field7128.addAll(this.mc.fontRenderer.method38828(new StringTextComponent(var8), 274));
+                  this.field7128.addAll(this.mc.fontRenderer.trimStringToWidth(new StringTextComponent(var8), 274));
                   this.field7128.add(Class9125.field41930);
                }
 
@@ -118,7 +118,7 @@ public class WinGameScreen extends Screen {
                   var23 = false;
                }
 
-               for (Class9125 var26 : this.mc.fontRenderer.method38828(new StringTextComponent(var19), 274)) {
+               for (Class9125 var26 : this.mc.fontRenderer.trimStringToWidth(new StringTextComponent(var19), 274)) {
                   if (var23) {
                      this.field7129.add(this.field7128.size());
                   }

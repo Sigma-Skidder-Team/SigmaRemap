@@ -885,7 +885,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                this.field23272.particles.method1196(var4, ParticleTypes.field34097, 30);
                this.field23273.method6745(var4.getPosX(), var4.getPosY(), var4.getPosZ(), SoundEvents.field27147, var4.method2864(), 1.0F, 1.0F, false);
                if (var4 == this.field23272.player) {
-                  this.field23272.gameRenderer.method763(method15785(this.field23272.player));
+                  this.field23272.gameRenderer.displayItemActivation(method15785(this.field23272.player));
                }
             }
          } else {

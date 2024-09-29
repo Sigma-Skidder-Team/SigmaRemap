@@ -41,6 +41,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biomes;
 import net.optifine.DynamicLights;
 import net.optifine.Config;
+import net.optifine.reflect.ReflectorForge;
 import net.optifine.shaders.Shaders;
 
 import javax.annotation.Nullable;
@@ -174,7 +175,7 @@ public class ClientWorld extends World {
          if (var1.addedToChunk || var1.isSpectator()) {
             var1.ticksExisted++;
             this.getProfiler().method22504(() -> Registry.ENTITY_TYPE.getKey(var1.getType()).toString());
-            if (Class9561.method37057(var1)) {
+            if (ReflectorForge.canUpdate(var1)) {
                var1.tick();
             }
 
@@ -239,7 +240,7 @@ public class ClientWorld extends World {
 
    public void method6840(Chunk var1) {
       List<TileEntity> var4;
-      if (!Reflector.field42944.method20238()) {
+      if (!Reflector.field42944.exists()) {
          var4 = this.tileEntitiesToBeRemoved;
       } else {
          var4 = (List<TileEntity>) Reflector.method35072(this, Reflector.field42944);

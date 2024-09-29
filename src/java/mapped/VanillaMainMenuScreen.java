@@ -13,6 +13,7 @@ import net.minecraft.client.util.Util;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.optifine.reflect.ReflectorForge;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -92,7 +93,7 @@ public class VanillaMainMenuScreen extends Screen {
       if (!this.mc.isDemo()) {
          this.method2596(var4, 24);
          if (Reflector.field42976.exists()) {
-            var5 = Class9561.addDemoButtons(this, var4, 24);
+            var5 = ReflectorForge.addDemoButtons(this, var4, 24);
             this.<Button>addButton(var5);
          }
       } else {
@@ -172,7 +173,7 @@ public class VanillaMainMenuScreen extends Screen {
             if (!var1x.active) {
                this.method2461(
                   var2x,
-                  this.mc.fontRenderer.method38828(new TranslationTextComponent("title.multiplayer.disabled"), Math.max(this.width / 2 - 43, 170)),
+                  this.mc.fontRenderer.trimStringToWidth(new TranslationTextComponent("title.multiplayer.disabled"), Math.max(this.width / 2 - 43, 170)),
                   var3,
                   var4
                );

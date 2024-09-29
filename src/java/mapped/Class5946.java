@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Matrix3f;
@@ -183,7 +184,7 @@ public class Class5946 extends Class5942<Class950> {
       var2.pos(var0, var8, (float)var7, var9)
          .color(var3, var4, var5, var6)
          .tex(var10, var11)
-         .method17035(Class213.field798)
+         .method17035(OverlayTexture.NO_OVERLAY)
          .method17034(15728880)
          .method17041(var1, 0.0F, 1.0F, 0.0F)
          .endVertex();

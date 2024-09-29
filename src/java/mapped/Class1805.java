@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.renderer.texture.NativeImage;
 import net.minecraft.util.ResourceLocation;
 
 import java.io.Closeable;
@@ -8,7 +9,7 @@ import javax.annotation.Nullable;
 
 public class Class1805 implements Closeable {
    private final Class9620 field9719;
-   private final Class1806 field9720;
+   private final NativeImage field9720;
    private final IOException field9721;
 
    public Class1805(IOException var1) {
@@ -17,7 +18,7 @@ public class Class1805 implements Closeable {
       this.field9720 = null;
    }
 
-   public Class1805(Class9620 var1, Class1806 var2) {
+   public Class1805(Class9620 var1, NativeImage var2) {
       this.field9721 = null;
       this.field9719 = var1;
       this.field9720 = var2;
@@ -25,7 +26,7 @@ public class Class1805 implements Closeable {
 
    public static Class1805 method7875(IResourceManager var0, ResourceLocation var1) {
       try (JSonShader var4 = var0.getShader(var1)) {
-         Class1806 var6 = Class1806.method7879(var4.getFile());
+         NativeImage var6 = NativeImage.method7879(var4.getFile());
          Class9620 var7 = null;
 
          try {
@@ -45,7 +46,7 @@ public class Class1805 implements Closeable {
       return this.field9719;
    }
 
-   public Class1806 method7877() throws IOException {
+   public NativeImage method7877() throws IOException {
       if (this.field9721 == null) {
          return this.field9720;
       } else {

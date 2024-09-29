@@ -13,6 +13,7 @@ import javax.imageio.ImageIO;
 
 import com.mojang.blaze3d.platform.GlStateManager;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.texture.NativeImage;
 import net.minecraft.client.renderer.texture.Texture;
 import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.client.renderer.texture.TextureUtil;
@@ -294,13 +295,13 @@ public class Class9336 {
 
    public static void method35317(DynamicTexture var0) {
       Class9732 var3 = var0.method1135();
-      Class1806 var4 = var0.method1141();
+      NativeImage var4 = var0.method1141();
       int var5 = var4.method7886();
       int var6 = var4.method7887();
-      Class1806 var7 = method35334(var5, var6, -8421377);
+      NativeImage var7 = method35334(var5, var6, -8421377);
       TextureUtil.method30368(var3.field45440, var5, var6);
       var7.method7895(0, 0, 0, 0, 0, var5, var6, false, false, false, true);
-      Class1806 var8 = method35334(var5, var6, 0);
+      NativeImage var8 = method35334(var5, var6, 0);
       TextureUtil.method30368(var3.field45441, var5, var6);
       var8.method7895(0, 0, 0, 0, 0, var5, var6, false, false, false, true);
       GlStateManager.bindTexture(var3.field45439);
@@ -341,17 +342,17 @@ public class Class9336 {
       GlStateManager.bindTexture(var6.field45439);
    }
 
-   private static Class1806[] method35321(Class1806 var0, int var1) {
+   private static NativeImage[] method35321(NativeImage var0, int var1) {
       if (var1 < 0) {
          var1 = 0;
       }
 
-      Class1806[] var4 = new Class1806[var1 + 1];
+      NativeImage[] var4 = new NativeImage[var1 + 1];
       var4[0] = var0;
       if (var1 > 0) {
          for (int var5 = 1; var5 <= var1; var5++) {
-            Class1806 var6 = var4[var5 - 1];
-            Class1806 var7 = new Class1806(var6.method7886() >> 1, var6.method7887() >> 1, false);
+            NativeImage var6 = var4[var5 - 1];
+            NativeImage var7 = new NativeImage(var6.method7886() >> 1, var6.method7887() >> 1, false);
             int var8 = var7.method7886();
             int var9 = var7.method7887();
 
@@ -662,10 +663,10 @@ public class Class9336 {
       }
    }
 
-   private static Class1806 method35333(IResourceManager var0, ResourceLocation var1, int var2, int var3, int var4) {
-      Class1806 var7 = method35335(var0, var1, var2, var3);
+   private static NativeImage method35333(IResourceManager var0, ResourceLocation var1, int var2, int var3, int var4) {
+      NativeImage var7 = method35335(var0, var1, var2, var3);
       if (var7 == null) {
-         var7 = new Class1806(var2, var3, false);
+         var7 = new NativeImage(var2, var3, false);
          int var8 = Class8684.method31291(var4);
          var7.method7904(0, 0, var2, var3, var8);
       }
@@ -673,20 +674,20 @@ public class Class9336 {
       return var7;
    }
 
-   private static Class1806 method35334(int var0, int var1, int var2) {
-      Class1806 var5 = new Class1806(var0, var1, false);
+   private static NativeImage method35334(int var0, int var1, int var2) {
+      NativeImage var5 = new NativeImage(var0, var1, false);
       int var6 = Class8684.method31291(var2);
       var5.method7916(var6);
       return var5;
    }
 
-   private static Class1806 method35335(IResourceManager var0, ResourceLocation var1, int var2, int var3) {
+   private static NativeImage method35335(IResourceManager var0, ResourceLocation var1, int var2, int var3) {
       if (var1 == null) {
          return null;
       } else {
          try {
             JSonShader var6 = var0.getShader(var1);
-            Class1806 var7 = Class1806.method7879(var6.getFile());
+            NativeImage var7 = NativeImage.method7879(var6.getFile());
             if (var7 == null) {
                return null;
             } else if (var7.method7886() == var2 && var7.method7887() == var3) {
@@ -701,15 +702,15 @@ public class Class9336 {
       }
    }
 
-   public static void method35336(int var0, Class1806 var1, boolean var2, boolean var3, IResourceManager var4, ResourceLocation var5, Class9732 var6) {
+   public static void method35336(int var0, NativeImage var1, boolean var2, boolean var3, IResourceManager var4, ResourceLocation var5, Class9732 var6) {
       int var9 = var1.method7886();
       int var10 = var1.method7887();
       ResourceLocation var11 = method35332(var5, "n");
-      Class1806 var12 = method35333(var4, var11, var9, var10, -8421377);
+      NativeImage var12 = method35333(var4, var11, var9, var10, -8421377);
       TextureUtil.method30370(var6.field45440, 0, var9, var10);
       var12.method7895(0, 0, 0, 0, 0, var9, var10, var2, var3, false, true);
       ResourceLocation var13 = method35332(var5, "s");
-      Class1806 var14 = method35333(var4, var13, var9, var10, 0);
+      NativeImage var14 = method35333(var4, var13, var9, var10, 0);
       TextureUtil.method30370(var6.field45441, 0, var9, var10);
       var14.method7895(0, 0, 0, 0, 0, var9, var10, var2, var3, false, true);
       GlStateManager.bindTexture(var6.field45439);

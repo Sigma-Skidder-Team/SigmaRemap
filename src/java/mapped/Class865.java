@@ -4,6 +4,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -79,7 +80,7 @@ public class Class865 extends ContainerScreen<Class5837> {
          var1.method35292(0.6666667F, -0.6666667F, -0.6666667F);
          this.field4803.rotateAngleX = 0.0F;
          this.field4803.rotationPointY = -32.0F;
-         Class5948.method18478(var1, var14, 15728880, Class213.field798, this.field4803, ModelBakery.field40513, true, this.field4804);
+         Class5948.method18478(var1, var14, 15728880, OverlayTexture.NO_OVERLAY, this.field4803, ModelBakery.field40513, true, this.field4804);
          var1.pop();
          var14.method25602();
       } else if (this.field4810) {
@@ -142,7 +143,7 @@ public class Class865 extends ContainerScreen<Class5837> {
       this.field4803.rotateAngleX = 0.0F;
       this.field4803.rotationPointY = -32.0F;
       List var12 = Class958.method3891(Class112.field393, Class958.method3886(var6));
-      Class5948.method18478(var9, var11, 15728880, Class213.field798, this.field4803, ModelBakery.field40513, true, var12);
+      Class5948.method18478(var9, var11, 15728880, OverlayTexture.NO_OVERLAY, this.field4803, ModelBakery.field40513, true, var12);
       var9.pop();
       var11.method25602();
    }

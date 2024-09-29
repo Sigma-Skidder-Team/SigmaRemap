@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.DynamicTexture;
+import net.minecraft.client.renderer.texture.NativeImage;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.optifine.Config;
@@ -10,7 +11,7 @@ import net.optifine.shaders.Shaders;
 
 public class Class1699 implements AutoCloseable {
    private final DynamicTexture field9248;
-   private final Class1806 field9249;
+   private final NativeImage field9249;
    private final ResourceLocation field9250;
    private boolean field9251;
    private float field9252;

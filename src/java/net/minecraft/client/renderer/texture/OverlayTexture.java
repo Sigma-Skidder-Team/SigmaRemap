@@ -1,16 +1,15 @@
-package mapped;
+package net.minecraft.client.renderer.texture;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.optifine.shaders.Shaders;
 
-public class Class213 implements AutoCloseable {
+public class OverlayTexture implements AutoCloseable {
    private static String[] field797;
-   public static final int field798 = method730(0, 10);
+   public static final int NO_OVERLAY = method730(0, 10);
    private final DynamicTexture field799 = new DynamicTexture(16, 16, false);
 
-   public Class213() {
-      Class1806 var3 = this.field799.method1141();
+   public OverlayTexture() {
+      NativeImage var3 = this.field799.method1141();
 
       for (int var4 = 0; var4 < 16; var4++) {
          for (int var5 = 0; var5 < 16; var5++) {

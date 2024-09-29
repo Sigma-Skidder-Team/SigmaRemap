@@ -14,6 +14,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
+import net.minecraft.client.shader.ShaderGroup;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.fluid.FluidState;
@@ -433,9 +434,9 @@ public class DebugOverlayGui extends AbstractGui {
             }
          }
 
-         Shader var32 = this.mc.gameRenderer.getShaderGroup();
+         ShaderGroup var32 = this.mc.gameRenderer.getShaderGroup();
          if (var32 != null) {
-            var16.add("Shader: " + var32.method6527());
+            var16.add("ShaderGroup: " + var32.method6527());
          }
 
          var16.add(this.mc.getSoundHandler().method1014() + String.format(" (Mood %d%%)", Math.round(this.mc.player.method5387() * 100.0F)));

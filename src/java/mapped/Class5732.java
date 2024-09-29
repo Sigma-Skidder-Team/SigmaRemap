@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
@@ -79,7 +80,7 @@ public class Class5732<T extends AbstractMinecartEntity> extends EntityRenderer<
       var4.method35292(-1.0F, -1.0F, 1.0F);
       this.field25144.setRotationAngles((T)var1, 0.0F, 0.0F, -0.1F, 0.0F, 0.0F);
       IVertexBuilder var34 = var5.method25597(this.field25144.method11028(this.method17843((T)var1)));
-      this.field25144.method11016(var4, var34, var6, Class213.field798, 1.0F, 1.0F, 1.0F, 1.0F);
+      this.field25144.method11016(var4, var34, var6, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
       var4.pop();
    }
 
@@ -88,6 +89,6 @@ public class Class5732<T extends AbstractMinecartEntity> extends EntityRenderer<
    }
 
    public void method17915(T var1, float var2, BlockState var3, MatrixStack var4, Class7733 var5, int var6) {
-      Minecraft.getInstance().getBlockRendererDispatcher().method814(var3, var4, var5, var6, Class213.field798);
+      Minecraft.getInstance().getBlockRendererDispatcher().method814(var3, var4, var5, var6, OverlayTexture.NO_OVERLAY);
    }
 }

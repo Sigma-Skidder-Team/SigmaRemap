@@ -33,7 +33,7 @@ public class Class9809 {
    private final Class2853 field45851 = new Class2853();
    private final Class2842 field45852 = new Class2842();
 
-   public void method38685(ItemStack var1, Class2327 var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
+   public void method38685(ItemStack var1, ItemCameraTransformsTransformType var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
       if (EmissiveTextures.isActive()) {
          EmissiveTextures.beginRender();
       }

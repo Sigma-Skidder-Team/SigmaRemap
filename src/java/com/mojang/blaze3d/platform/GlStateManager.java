@@ -631,7 +631,7 @@ public class GlStateManager {
       }
    }
 
-   public static int method23755() {
+   public static int genFramebuffers() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
       switch (Class9579.field44781[fboMode.ordinal()]) {
          case 1:
@@ -645,7 +645,7 @@ public class GlStateManager {
       }
    }
 
-   public static int setFramebufferFilter(int var0) {
+   public static int checkFramebufferStatus(int var0) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
       switch (Class9579.field44781[fboMode.ordinal()]) {
          case 1:
@@ -1420,17 +1420,17 @@ public class GlStateManager {
       GL11.glLineWidth(var0);
    }
 
-   public static void method23856(int var0, int var1) {
+   public static void pixelStore(int var0, int var1) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
       GL11.glPixelStorei(var0, var1);
    }
 
-   public static void method23857(int var0, float var1) {
+   public static void pixelTransfer(int var0, float var1) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glPixelTransferf(var0, var1);
    }
 
-   public static void method23858(int var0, int var1, int var2, int var3, int var4, int var5, ByteBuffer var6) {
+   public static void readPixels(int var0, int var1, int var2, int var3, int var4, int var5, ByteBuffer var6) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glReadPixels(var0, var1, var2, var3, var4, var5, var6);
    }
@@ -1671,6 +1671,12 @@ public class GlStateManager {
    public static void method23891() {
       clientStateLocked = false;
    }
+
+   public static void readPixels(int p_readPixels_0_, int p_readPixels_1_, int p_readPixels_2_, int p_readPixels_3_, int p_readPixels_4_, int p_readPixels_5_, long p_readPixels_6_)
+   {
+      GL11.glReadPixels(p_readPixels_0_, p_readPixels_1_, p_readPixels_2_, p_readPixels_3_, p_readPixels_4_, p_readPixels_5_, p_readPixels_6_);
+   }
+
 
    public enum SourceFactor {
       CONSTANT_ALPHA(32771),

@@ -25,13 +25,13 @@ public class Class242<T extends LivingEntity, M extends Class2827<T> & IHasArm> 
             var1.method35292(0.5F, 0.5F, 0.5F);
          }
 
-         this.method838(var4, var15, Class2327.field15926, HandSide.RIGHT, var1, var2, var3);
-         this.method838(var4, var14, Class2327.field15925, HandSide.LEFT, var1, var2, var3);
+         this.method838(var4, var15, ItemCameraTransformsTransformType.THIRD_PERSON_RIGHT_HAND, HandSide.RIGHT, var1, var2, var3);
+         this.method838(var4, var14, ItemCameraTransformsTransformType.THIRD_PERSON_LEFT_HAND, HandSide.LEFT, var1, var2, var3);
          var1.pop();
       }
    }
 
-   private void method838(LivingEntity var1, ItemStack var2, Class2327 var3, HandSide var4, MatrixStack var5, Class7733 var6, int var7) {
+   private void method838(LivingEntity var1, ItemStack var2, ItemCameraTransformsTransformType var3, HandSide var4, MatrixStack var5, Class7733 var6, int var7) {
       if (!var2.isEmpty()) {
          var5.push();
          this.method825().translateHand(var4, var5);

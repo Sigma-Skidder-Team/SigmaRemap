@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
@@ -53,7 +54,7 @@ public class Class233<T extends LivingEntity, M extends PlayerModel<T>> extends 
       var0.pos(var1, var3, (float)var4, 0.0F)
          .color(255, 255, 255, 255)
          .tex(var5, var6)
-         .method17035(Class213.field798)
+         .method17035(OverlayTexture.NO_OVERLAY)
          .method17034(var7)
          .method17041(var2, 0.0F, 1.0F, 0.0F)
          .endVertex();

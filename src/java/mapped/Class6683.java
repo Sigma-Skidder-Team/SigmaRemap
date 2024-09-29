@@ -12,7 +12,7 @@ public class Class6683 extends Class6682 {
 
    @Override
    public String method20360() {
-      return "const bool " + this.method20366() + " = " + this.method20370() + "; // Shader option " + this.method20370();
+      return "const bool " + this.method20366() + " = " + this.method20370() + "; // ShaderGroup option " + this.method20370();
    }
 
    public static Class6679 method20391(String var0, String var1) {

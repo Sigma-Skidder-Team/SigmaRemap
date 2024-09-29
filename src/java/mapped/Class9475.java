@@ -49,7 +49,7 @@ public class Class9475 {
       } else {
          for (int var3 = 0; var3 < this.field44036.length; var3++) {
             Class6633 var4 = this.field44036[var3];
-            if (!var4.method20238()) {
+            if (!var4.exists()) {
                return false;
             }
          }

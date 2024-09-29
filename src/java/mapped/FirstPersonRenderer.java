@@ -8,6 +8,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.client.renderer.entity.PlayerRenderer;
 import net.minecraft.client.renderer.entity.ItemRenderer;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
@@ -38,10 +39,10 @@ public class FirstPersonRenderer {
       this.field45086 = var1.getItemRenderer();
    }
 
-   public void method37580(LivingEntity var1, ItemStack var2, Class2327 var3, boolean var4, MatrixStack var5, Class7733 var6, int var7) {
+   public void method37580(LivingEntity var1, ItemStack var2, ItemCameraTransformsTransformType var3, boolean var4, MatrixStack var5, Class7733 var6, int var7) {
       Class7992.method27282(var4);
       if (!var2.isEmpty()) {
-         this.field45086.method790(var1, var2, var3, var4, var5, var6, var1.world, var7, Class213.field798);
+         this.field45086.method790(var1, var2, var3, var4, var5, var6, var1.world, var7, OverlayTexture.NO_OVERLAY);
       }
 
       Class7992.method27282(false);
@@ -308,7 +309,7 @@ public class FirstPersonRenderer {
                }
             }
 
-            this.method37580(var1, var6, var27 ? Class2327.field15928 : Class2327.field15927, !var27, var8, var9, var10);
+            this.method37580(var1, var6, var27 ? ItemCameraTransformsTransformType.FIRST_PERSON_RIGHT_HAND : ItemCameraTransformsTransformType.FIRST_PERSON_LEFT_HAND, !var27, var8, var9, var10);
          } else {
             boolean var15 = var14 == HandSide.RIGHT;
             EventHandAnimation var16 = new EventHandAnimation(true, var5, var7, var14, var6, var8);
@@ -395,7 +396,7 @@ public class FirstPersonRenderer {
             }
 
             if (var16 == null || var16.method13930()) {
-               this.method37580(var1, var6, var15 ? Class2327.field15928 : Class2327.field15927, !var15, var8, var9, var10);
+               this.method37580(var1, var6, var15 ? ItemCameraTransformsTransformType.FIRST_PERSON_RIGHT_HAND : ItemCameraTransformsTransformType.FIRST_PERSON_LEFT_HAND, !var15, var8, var9, var10);
             }
 
             var16 = new EventHandAnimation(false, var5, var7, var14, var6, var8);

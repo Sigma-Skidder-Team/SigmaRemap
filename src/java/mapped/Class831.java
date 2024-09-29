@@ -6,6 +6,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.button.Button;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.network.play.client.CUpdateSignPacket;
 import net.minecraft.util.text.ITextComponent;
@@ -114,9 +115,9 @@ public class Class831 extends Screen {
       Class7735 var12 = this.mc.getRenderTypeBuffers().getBufferSource();
       Class7826 var13 = Class5947.method18473(var8.getBlock());
       IVertexBuilder var14 = var13.method26200(var12, this.field4610::method11028);
-      this.field4610.field17650.render(var1, var14, 15728880, Class213.field798);
+      this.field4610.field17650.render(var1, var14, 15728880, OverlayTexture.NO_OVERLAY);
       if (var9) {
-         this.field4610.field17651.render(var1, var14, 15728880, Class213.field798);
+         this.field4610.field17651.render(var1, var14, 15728880, OverlayTexture.NO_OVERLAY);
       }
 
       var1.pop();

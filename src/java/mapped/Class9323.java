@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.renderer.texture.NativeImage;
 import net.optifine.Config;
 
 import java.lang.reflect.Method;
@@ -25,12 +26,12 @@ public class Class9323 {
       return field43281 != null ? field43281.getAsLong() : -1L;
    }
 
-   public static synchronized void method35238(Class1806 var0) {
-      field43279 = field43279 + var0.method7917();
+   public static synchronized void method35238(NativeImage var0) {
+      field43279 = field43279 + var0.getSize();
    }
 
-   public static synchronized void method35239(Class1806 var0) {
-      field43279 = field43279 - var0.method7917();
+   public static synchronized void method35239(NativeImage var0) {
+      field43279 = field43279 - var0.getSize();
    }
 
    public static long method35240() {

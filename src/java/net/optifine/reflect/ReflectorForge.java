@@ -1,10 +1,11 @@
-package mapped;
+package net.optifine.reflect;
 
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.Screen;
@@ -19,21 +20,21 @@ import net.minecraft.world.IBlockDisplayReader;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
-public class Class9561 {
+public class ReflectorForge {
    public static Object field44532 = Reflector.method35071(Reflector.field42815);
    public static Object field44533 = Reflector.method35071(Reflector.field42814);
    public static Object field44534 = Reflector.method35071(Reflector.field42816);
    public static final boolean field44535 = Reflector.field42829.exists();
    public static final boolean field44536 = Reflector.field42835.exists();
 
-   public static void method37042(String var0, Object var1) {
+   public static void putLaunchBlackboard(String var0, Object var1) {
       Map var4 = (Map) Reflector.method35071(Reflector.field42959);
       if (var4 != null) {
          var4.put(var0, var1);
       }
    }
 
-   public static InputStream method37043(String var0) {
+   public static InputStream getOptiFineResourceStream(String var0) {
       if (Reflector.field43133.method20245()) {
          var0 = Class9402.method35762(var0, "/");
          return (InputStream) Reflector.method35062(Reflector.field43134, var0);
@@ -42,7 +43,7 @@ public class Class9561 {
       }
    }
 
-   public static Class6636 method37044() {
+   public static Class6636 getReflectorClassOptiFineResourceLocator() {
       String var2 = "optifine.OptiFineResourceLocator";
       Object var3 = System.getProperties().get(var2 + ".class");
       if (!(var3 instanceof Class)) {
@@ -122,14 +123,19 @@ public class Class9561 {
          : null;
    }
 
-   public static void method37054(boolean var0) {
-      if (Reflector.field42900.method20238()) {
-         method37056(Reflector.field42900, var0);
+   public static boolean getForgeUseCombinedDepthStencilAttachment()
+   {
+      return Reflector.ForgeConfig_Client_useCombinedDepthStencilAttachment.exists() ? getConfigClientBoolean(Reflector.ForgeConfig_Client_useCombinedDepthStencilAttachment, false) : false;
+   }
+
+   public static void setForgeUseThing(boolean var0) {
+      if (Reflector.ForgeConfig_Client_useCombinedDepthStencilAttachment.exists()) {
+         setConfigClientBoolean(Reflector.ForgeConfig_Client_useCombinedDepthStencilAttachment, var0);
       }
    }
 
-   public static boolean method37055(Class6633 var0, boolean var1) {
-      if (var0.method20238()) {
+   public static boolean getConfigClientBoolean(Class6633 var0, boolean var1) {
+      if (var0.exists()) {
          Object var4 = Reflector.field42898.method20234();
          if (var4 != null) {
             Object var5 = Reflector.method35072(var4, var0);
@@ -142,8 +148,8 @@ public class Class9561 {
       }
    }
 
-   private static void method37056(Class6633 var0, boolean var1) {
-      if (var0.method20238()) {
+   private static void setConfigClientBoolean(Class6633 var0, boolean var1) {
+      if (var0.exists()) {
          Object var4 = Reflector.field42898.method20234();
          if (var4 != null) {
             Object var5 = Reflector.method35072(var4, var0);
@@ -161,11 +167,11 @@ public class Class9561 {
       }
    }
 
-   public static boolean method37057(Entity var0) {
+   public static boolean canUpdate(Entity var0) {
       return !field44536 ? true : Reflector.method35064(var0, Reflector.field42835);
    }
 
-   public static boolean method37058(Item var0, ItemStack var1) {
-      return !Reflector.field42915.exists() ? var0.isDamageable() : Reflector.method35064(var0, Reflector.field42915, var1);
+   public static boolean isDamageable(Item var0, ItemStack var1) {
+      return !Reflector.IForgeItem_isDamageable1.exists() ? var0.isDamageable() : Reflector.method35064(var0, Reflector.IForgeItem_isDamageable1, var1);
    }
 }

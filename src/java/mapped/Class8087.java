@@ -34,7 +34,7 @@ public class Class8087 {
    public static void method27972(String var0, String var1) {
       if (var1 != null) {
          int var4 = method27976(var0, var1);
-         RenderSystem.method27865(var4);
+         RenderSystem.bindTexture(var4);
       } else {
          Minecraft.getInstance().getTextureManager().bindTexture(field34755);
       }
@@ -47,7 +47,7 @@ public class Class8087 {
          method27975(var0);
          var1.run();
       } finally {
-         RenderSystem.method27816();
+         RenderSystem.popAttributes();
       }
    }
 
@@ -69,13 +69,13 @@ public class Class8087 {
                method27974(var3);
             } else {
                int var5 = method27976(var0, field34753.get(var0));
-               RenderSystem.method27865(var5);
+               RenderSystem.bindTexture(var5);
             }
          } else {
             method27974(var3);
          }
       } else {
-         RenderSystem.method27865(Class7275.method22907(field34751.get(var0)));
+         RenderSystem.bindTexture(Class7275.method22907(field34751.get(var0)));
       }
    }
 
@@ -119,7 +119,7 @@ public class Class8087 {
       }
 
       RenderSystem.method27860(33984);
-      RenderSystem.method27865(var5);
+      RenderSystem.bindTexture(var5);
       TextureUtil.method30375(var15, var6, var7);
       field34751.put(var0, new Class7275(var1, var5));
       return var5;

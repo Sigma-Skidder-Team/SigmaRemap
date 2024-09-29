@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -121,7 +122,7 @@ public class Class5737 extends EntityRenderer<PaintingEntity> {
       var3.pos(var1, var4, var5, var8)
          .color(255, 255, 255, 255)
          .tex(var6, var7)
-         .method17035(Class213.field798)
+         .method17035(OverlayTexture.NO_OVERLAY)
          .method17034(var12)
          .method17041(var2, (float)var9, (float)var10, (float)var11)
          .endVertex();

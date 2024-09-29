@@ -8,6 +8,7 @@ import java.util.Arrays;
 import java.util.Map;
 import javax.annotation.Nullable;
 
+import net.minecraft.client.renderer.texture.NativeImage;
 import net.minecraft.util.ResourceLocation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,7 +18,7 @@ public class Class1770 implements Class1768 {
    private final IResourceManager field9587;
    private final byte[] field9588;
    private final String field9589;
-   private final Map<ResourceLocation, Class1806> field9590 = Maps.newHashMap();
+   private final Map<ResourceLocation, NativeImage> field9590 = Maps.newHashMap();
 
    public Class1770(IResourceManager var1, byte[] var2, String var3) {
       this.field9587 = var1;
@@ -30,7 +31,7 @@ public class Class1770 implements Class1768 {
 
          try (
                  JSonShader var9 = this.field9587.getShader(var8);
-                 Class1806 var11 = Class1806.method7880(Class2237.field14626, var9.getFile());
+                 NativeImage var11 = NativeImage.method7880(NativeImage.PixelFormat.field14626, var9.getFile());
          ) {
             if (var11.method7886() == 256 && var11.method7887() == 256) {
                for (int var13 = 0; var13 < 256; var13++) {
@@ -50,7 +51,7 @@ public class Class1770 implements Class1768 {
 
    @Override
    public void close() {
-      this.field9590.values().forEach(Class1806::close);
+      this.field9590.values().forEach(NativeImage::close);
    }
 
    private ResourceLocation method7743(int var1) {
@@ -64,7 +65,7 @@ public class Class1770 implements Class1768 {
       if (var1 >= 0 && var1 <= 65535) {
          byte var4 = this.field9588[var1];
          if (var4 != 0) {
-            Class1806 var5 = this.field9590.computeIfAbsent(this.method7743(var1), this::method7744);
+            NativeImage var5 = this.field9590.computeIfAbsent(this.method7743(var1), this::method7744);
             if (var5 != null) {
                int var6 = method7745(var4);
                return new Class2057(var1 % 16 * 16 + var6, (var1 & 0xFF) / 16 * 16, method7746(var4) - var6, 16, var5);
@@ -91,9 +92,9 @@ public class Class1770 implements Class1768 {
    }
 
    @Nullable
-   private Class1806 method7744(ResourceLocation var1) {
+   private NativeImage method7744(ResourceLocation var1) {
       try (JSonShader var4 = this.field9587.getShader(var1)) {
-         return Class1806.method7880(Class2237.field14626, var4.getFile());
+         return NativeImage.method7880(NativeImage.PixelFormat.field14626, var4.getFile());
       } catch (IOException var18) {
          field9586.error("Couldn't load texture {}", var1, var18);
          return null;

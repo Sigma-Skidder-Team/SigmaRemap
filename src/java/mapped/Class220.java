@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.client.renderer.entity.ItemRenderer;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
@@ -46,7 +47,7 @@ public class Class220<T extends LivingEntity, M extends Class2827<T>> extends Cl
          this.method825().copyModelAttributesTo(this.field865);
          this.field865.setRotationAngles((T)var4, var5, var6, var8, var9, var10);
          IVertexBuilder var16 = ItemRenderer.method782(var2, RenderType.method14308(var14), false, var13.method32159());
-         this.field865.method11016(var1, var16, var3, Class213.field798, 1.0F, 1.0F, 1.0F, 1.0F);
+         this.field865.method11016(var1, var16, var3, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
          var1.pop();
       }
    }

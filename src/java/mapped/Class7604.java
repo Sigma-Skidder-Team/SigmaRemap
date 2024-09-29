@@ -26,7 +26,7 @@ public class Class7604 implements Class7601 {
       if (var7 == null) {
          return Class2139.field14004;
       } else {
-         List<Class9125> var8 = var2.method5915().fontRenderer.method38828(var7.method34934(), 125);
+         List<Class9125> var8 = var2.method5915().fontRenderer.trimStringToWidth(var7.method34934(), 125);
          int var9 = var7.method34938() != Class1965.field12815 ? 16776960 : 16746751;
          if (var8.size() != 1) {
             short var10 = 1500;

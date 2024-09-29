@@ -1,9 +1,11 @@
 package mapped;
 
+import net.minecraft.client.renderer.texture.NativeImage;
+
 public final class Class2055 implements Class2051 {
    private static String[] field13383;
    private final float field13384;
-   private final Class1806 field13385;
+   private final NativeImage field13385;
    private final int field13386;
    private final int field13387;
    private final int field13388;
@@ -12,7 +14,7 @@ public final class Class2055 implements Class2051 {
    private final int field13391;
    private float field13392 = 1.0F;
 
-   public Class2055(float var1, Class1806 var2, int var3, int var4, int var5, int var6, int var7, int var8) {
+   public Class2055(float var1, NativeImage var2, int var3, int var4, int var5, int var6, int var7, int var8) {
       this.field13384 = var1;
       this.field13385 = var2;
       this.field13386 = var3;
@@ -55,7 +57,7 @@ public final class Class2055 implements Class2051 {
 
    @Override
    public boolean method8692() {
-      return this.field13385.method7888().method8973() > 1;
+      return this.field13385.method7888().getPixelSize() > 1;
    }
 
    @Override

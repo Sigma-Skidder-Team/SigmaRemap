@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -33,7 +34,7 @@ public class Class5723 extends EntityRenderer<EnderCrystalEntity> {
       var4.push();
       var4.method35292(2.0F, 2.0F, 2.0F);
       var4.translate(0.0, -0.5, 0.0);
-      int var12 = Class213.field798;
+      int var12 = OverlayTexture.NO_OVERLAY;
       if (var1.method4145()) {
          this.field25127.render(var4, var11, var6, var12);
       }

@@ -3,46 +3,46 @@ package mapped;
 // $VF: synthetic class
 public class Class7791 {
    private static String[] field33423;
-   public static final int[] field33424 = new int[Class2327.values().length];
+   public static final int[] field33424 = new int[ItemCameraTransformsTransformType.values().length];
 
    static {
       try {
-         field33424[Class2327.field15925.ordinal()] = 1;
+         field33424[ItemCameraTransformsTransformType.THIRD_PERSON_LEFT_HAND.ordinal()] = 1;
       } catch (NoSuchFieldError var10) {
       }
 
       try {
-         field33424[Class2327.field15926.ordinal()] = 2;
+         field33424[ItemCameraTransformsTransformType.THIRD_PERSON_RIGHT_HAND.ordinal()] = 2;
       } catch (NoSuchFieldError var9) {
       }
 
       try {
-         field33424[Class2327.field15927.ordinal()] = 3;
+         field33424[ItemCameraTransformsTransformType.FIRST_PERSON_LEFT_HAND.ordinal()] = 3;
       } catch (NoSuchFieldError var8) {
       }
 
       try {
-         field33424[Class2327.field15928.ordinal()] = 4;
+         field33424[ItemCameraTransformsTransformType.FIRST_PERSON_RIGHT_HAND.ordinal()] = 4;
       } catch (NoSuchFieldError var7) {
       }
 
       try {
-         field33424[Class2327.field15929.ordinal()] = 5;
+         field33424[ItemCameraTransformsTransformType.HEAD.ordinal()] = 5;
       } catch (NoSuchFieldError var6) {
       }
 
       try {
-         field33424[Class2327.field15930.ordinal()] = 6;
+         field33424[ItemCameraTransformsTransformType.GUI.ordinal()] = 6;
       } catch (NoSuchFieldError var5) {
       }
 
       try {
-         field33424[Class2327.field15931.ordinal()] = 7;
+         field33424[ItemCameraTransformsTransformType.GROUND.ordinal()] = 7;
       } catch (NoSuchFieldError var4) {
       }
 
       try {
-         field33424[Class2327.field15932.ordinal()] = 8;
+         field33424[ItemCameraTransformsTransformType.FIXED.ordinal()] = 8;
       } catch (NoSuchFieldError var3) {
       }
    }

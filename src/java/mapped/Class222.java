@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.client.renderer.entity.PlayerRenderer;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.entity.Entity;
 import net.optifine.Config;
 
@@ -19,7 +20,7 @@ public class Class222 extends Class219 {
 
    @Override
    public void method820(MatrixStack var1, Class7733 var2, int var3, Entity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
-      this.method829(var4, var1, var2, var3, Class213.field798);
+      this.method829(var4, var1, var2, var3, OverlayTexture.NO_OVERLAY);
    }
 
    public void method829(Entity var1, MatrixStack var2, Class7733 var3, int var4, int var5) {

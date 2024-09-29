@@ -78,7 +78,7 @@ public class Class235<T extends LivingEntity, M extends Class2827<T> & IHasHead>
                var1.translate(0.0, 0.1875, 0.0);
             }
 
-            Minecraft.getInstance().getFirstPersonRenderer().method37580(var4, var13, Class2327.field15929, false, var1, var2, var3);
+            Minecraft.getInstance().getFirstPersonRenderer().method37580(var4, var13, ItemCameraTransformsTransformType.HEAD, false, var1, var2, var3);
          }
 
          var1.pop();

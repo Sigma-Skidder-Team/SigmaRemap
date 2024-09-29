@@ -31,7 +31,7 @@ public class Class844 extends Class838 {
    public void init() {
       this.<Class1210>addButton(new Class1210(0, this.width / 2 - 100, this.height / 6 + 96, this.field4679));
       this.field4678.clear();
-      this.field4678.addAll(this.mc.fontRenderer.method38828(this.field4677, this.width - 50));
+      this.field4678.addAll(this.mc.fontRenderer.trimStringToWidth(this.field4677, this.width - 50));
    }
 
    @Override

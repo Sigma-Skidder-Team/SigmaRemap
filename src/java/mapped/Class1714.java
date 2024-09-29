@@ -3,13 +3,14 @@ package mapped;
 import com.google.common.collect.Lists;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.DynamicTexture;
+import net.minecraft.client.renderer.texture.NativeImage;
 import net.minecraft.util.ResourceLocation;
 
 public final class Class1714 extends TextureAtlasSprite {
    private static final ResourceLocation field9360 = new ResourceLocation("missingno");
    private static DynamicTexture field9361;
-   private static final LazyValue<Class1806> field9362 = new LazyValue<Class1806>(() -> {
-      Class1806 var2 = new Class1806(16, 16, false);
+   private static final LazyValue<NativeImage> field9362 = new LazyValue<NativeImage>(() -> {
+      NativeImage var2 = new NativeImage(16, 16, false);
 
       for (int var5 = 0; var5 < 16; var5++) {
          for (int var6 = 0; var6 < 16; var6++) {
@@ -62,10 +63,10 @@ public final class Class1714 extends TextureAtlasSprite {
       return field9361;
    }
 
-   private static Class1806 method7516(int var0, int var1) {
+   private static NativeImage method7516(int var0, int var1) {
       int var4 = var0 / 2;
       int var5 = var1 / 2;
-      Class1806 var6 = new Class1806(var0, var1, false);
+      NativeImage var6 = new NativeImage(var0, var1, false);
       int var7 = -16777216;
       int var8 = -524040;
 

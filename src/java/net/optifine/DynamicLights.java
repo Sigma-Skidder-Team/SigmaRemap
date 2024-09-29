@@ -12,6 +12,7 @@ import net.minecraft.item.Items;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.optifine.reflect.ReflectorForge;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -74,7 +75,7 @@ public class DynamicLights {
       field43894 = true;
       field43881.clear();
       field43882.clear();
-      String[] var2 = Class9561.method37049();
+      String[] var2 = ReflectorForge.method37049();
 
       for (int var3 = 0; var3 < var2.length; var3++) {
          String var4 = var2[var3];

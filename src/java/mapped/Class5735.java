@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.renderer.entity.ItemRenderer;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -35,7 +36,7 @@ public class Class5735<T extends Entity & Class889> extends EntityRenderer<T> {
          var4.method35292(this.field25151, this.field25151, this.field25151);
          var4.rotate(this.field25097.method32230());
          var4.rotate(Vector3f.YP.rotationDegrees(180.0F));
-         this.field25150.method789(((Class889)var1).method3509(), Class2327.field15931, var6, Class213.field798, var4, var5);
+         this.field25150.renderItem(((Class889)var1).method3509(), ItemCameraTransformsTransformType.GROUND, var6, OverlayTexture.NO_OVERLAY, var4, var5);
          var4.pop();
          super.render((T)var1, var2, var3, var4, var5, var6);
       }

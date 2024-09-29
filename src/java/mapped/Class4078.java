@@ -60,7 +60,7 @@ public class Class4078 extends Class4057 {
             var6 = new Class5951(var5);
          }
 
-         if (Reflector.field43163.method20238()) {
+         if (Reflector.field43163.exists()) {
             Reflector.method35082(var6, Reflector.field43163, var1);
             return (Class9492)var6;
          } else {

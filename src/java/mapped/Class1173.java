@@ -12,6 +12,7 @@ import net.minecraft.client.gui.screen.CreateWorldScreen;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.WorldSelectionScreen;
 import net.minecraft.client.renderer.texture.DynamicTexture;
+import net.minecraft.client.renderer.texture.NativeImage;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvents;
@@ -101,7 +102,7 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
          } else {
             AbstractGui.method5699(var1, var4, var3, 96.0F, (float)var18, 32, 32, 256, 256);
             if (var17) {
-               this.field6352.method6421(this.field6351.fontRenderer.method38828(Class1276.method6073(), 175));
+               this.field6352.method6421(this.field6351.fontRenderer.trimStringToWidth(Class1276.method6073(), 175));
             }
          }
       }
@@ -301,7 +302,7 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
       boolean var3 = this.field6355 != null && this.field6355.isFile();
       if (var3) {
          try (FileInputStream var4 = new FileInputStream(this.field6355)) {
-            Class1806 var6 = Class1806.method7879(var4);
+            NativeImage var6 = NativeImage.method7879(var4);
             Validate.validState(var6.method7886() == 64, "Must be 64 pixels wide", new Object[0]);
             Validate.validState(var6.method7887() == 64, "Must be 64 pixels high", new Object[0]);
             DynamicTexture var7 = new DynamicTexture(var6);

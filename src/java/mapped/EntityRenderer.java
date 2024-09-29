@@ -10,6 +10,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
+import net.optifine.reflect.ReflectorForge;
 
 public abstract class EntityRenderer<T extends Entity> {
    public final EntityRendererManager field25097;
@@ -68,7 +69,7 @@ public abstract class EntityRenderer<T extends Entity> {
          Object var9 = Reflector.method35087(Reflector.field42994, var1, var1.getDisplayName(), this, var4, var5, var6, var3);
          Reflector.method35086(var9);
          Object var10 = Reflector.call(var9, Reflector.field42810);
-         if (var10 != Class9561.field44533 && (var10 == Class9561.field44532 || this.method17852((T)var1))) {
+         if (var10 != ReflectorForge.field44533 && (var10 == ReflectorForge.field44532 || this.method17852((T)var1))) {
             ITextComponent var11 = (ITextComponent) Reflector.call(var9, Reflector.field42995);
             this.method17893((T)var1, var11, var4, var5, var6);
          }

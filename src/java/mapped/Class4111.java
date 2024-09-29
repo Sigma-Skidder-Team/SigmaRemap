@@ -57,7 +57,7 @@ public class Class4111 extends Class4057 {
          }
 
          Class5655 var8 = (Class5655)var6;
-         if (Reflector.field43148.method20238()) {
+         if (Reflector.field43148.exists()) {
             Reflector.field43148.method20237(var8, var1);
             return (Class9492)var8;
          } else {

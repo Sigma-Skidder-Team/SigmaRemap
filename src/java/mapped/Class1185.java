@@ -43,8 +43,8 @@ public class Class1185 extends Class1178<Class1185> {
       this.field6390 = var3;
       this.field6391 = var4;
       this.field6392 = var5;
-      this.field6396 = var1.fontRenderer.method38828(new TranslationTextComponent("gui.socialInteractions.tooltip.hide", var4), 150);
-      this.field6397 = var1.fontRenderer.method38828(new TranslationTextComponent("gui.socialInteractions.tooltip.show", var4), 150);
+      this.field6396 = var1.fontRenderer.trimStringToWidth(new TranslationTextComponent("gui.socialInteractions.tooltip.hide", var4), 150);
+      this.field6397 = var1.fontRenderer.trimStringToWidth(new TranslationTextComponent("gui.socialInteractions.tooltip.show", var4), 150);
       FilterManager var8 = var1.func_244599_aA();
       if (!var1.player.getGameProfile().getId().equals(var3) && !var8.method37608(var3)) {
          this.field6394 = new Class1244(this, 0, 0, 20, 20, 0, 38, 20, SocialInteractionsScreen.field6215, 256, 256, var4x -> {

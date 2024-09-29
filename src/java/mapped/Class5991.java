@@ -15,7 +15,7 @@ public interface Class5991 {
    static Class5991 method18584(FontRenderer var0, ITextProperties var1, int var2) {
       return method18587(
          var0,
-         var0.method38828(var1, var2)
+         var0.trimStringToWidth(var1, var2)
             .stream()
             .<Class9806>map(var1x -> new Class9806(var1x, var0.method38822(var1x), null))
             .collect(ImmutableList.toImmutableList())
@@ -25,7 +25,7 @@ public interface Class5991 {
    static Class5991 method18585(FontRenderer var0, ITextProperties var1, int var2, int var3) {
       return method18587(
          var0,
-         var0.method38828(var1, var2)
+         var0.trimStringToWidth(var1, var2)
             .stream()
             .limit((long)var3)
             .<Class9806>map(var1x -> new Class9806(var1x, var0.method38822(var1x), null))

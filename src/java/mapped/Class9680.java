@@ -12,6 +12,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.texture.NativeImage;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.ItemStack;
@@ -937,7 +938,7 @@ public class Class9680 {
       }
    }
 
-   public static boolean method37875(ClientWorld var0, float var1, Class1806 var2, boolean var3, float var4) {
+   public static boolean method37875(ClientWorld var0, float var1, NativeImage var2, boolean var3, float var4) {
       if (var0 != null) {
          if (field45239 != null) {
             int var7 = Class8509.method30144(var0);

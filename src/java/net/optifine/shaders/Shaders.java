@@ -2558,7 +2558,7 @@ public class Shaders {
 
             String var7 = GL32.glGetShaderInfoLog(var0, var4);
             var7 = Class9402.method35776(var7, " \n\r\t");
-            Class7399.method23634("Shader info log: " + var1 + "\n" + var7);
+            Class7399.method23634("ShaderGroup info log: " + var1 + "\n" + var7);
             return false;
         }
     }

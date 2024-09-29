@@ -3,6 +3,7 @@ package net.minecraft.client.renderer.entity;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import mapped.*;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -163,9 +164,9 @@ public class PlayerRenderer extends LivingRenderer<AbstractClientPlayerEntity, P
       var9.swimAnimation = 0.0F;
       var9.setRotationAngles(var4, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F);
       var5.rotateAngleX = 0.0F;
-      var5.render(var1, var2.method25597(RenderType.getEntitySolid(var4.method5371())), var3, Class213.field798);
+      var5.render(var1, var2.method25597(RenderType.getEntitySolid(var4.method5371())), var3, OverlayTexture.NO_OVERLAY);
       var6.rotateAngleX = 0.0F;
-      var6.render(var1, var2.method25597(RenderType.getEntityTranslucent(var4.method5371())), var3, Class213.field798);
+      var6.render(var1, var2.method25597(RenderType.getEntityTranslucent(var4.method5371())), var3, OverlayTexture.NO_OVERLAY);
    }
 
    public void method17842(AbstractClientPlayerEntity var1, MatrixStack var2, float var3, float var4, float var5) {

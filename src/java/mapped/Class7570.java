@@ -55,7 +55,7 @@ public class Class7570 implements Class7567 {
       } else {
          Builder var13 = ImmutableList.builder().add(var6.func_241878_f());
          TranslationTextComponent var14 = new TranslationTextComponent(var10);
-         this.field32509.field6858.font.method38828(var14, 150).forEach(var13::add);
+         this.field32509.field6858.font.trimStringToWidth(var14, 150).forEach(var13::add);
          var11 = var13.add(var9.func_241878_f()).build();
          var12 = var14.getString() + "\n" + var9.getString();
       }

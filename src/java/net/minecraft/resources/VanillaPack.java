@@ -7,6 +7,7 @@ import mapped.*;
 import net.minecraft.client.util.Util;
 import net.minecraft.resources.data.IMetadataSectionSerializer;
 import net.minecraft.util.ResourceLocation;
+import net.optifine.reflect.ReflectorForge;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -167,7 +168,7 @@ public class VanillaPack implements IResourcePack {
    @Nullable
    public InputStream getInputStreamVanilla(ResourcePackType var1, ResourceLocation var2) {
       String var5 = method1244(var1, var2);
-      InputStream var6 = Class9561.method37043(var5);
+      InputStream var6 = ReflectorForge.getOptiFineResourceStream(var5);
       if (var6 != null) {
          return var6;
       } else {
@@ -206,7 +207,7 @@ public class VanillaPack implements IResourcePack {
    @Override
    public boolean resourceExists(ResourcePackType var1, ResourceLocation var2) {
       String var5 = method1244(var1, var2);
-      InputStream var6 = Class9561.method37043(var5);
+      InputStream var6 = ReflectorForge.getOptiFineResourceStream(var5);
       if (var6 != null) {
          return true;
       } else {

@@ -14,7 +14,10 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.client.renderer.ActiveRenderInfo;
+import net.minecraft.client.renderer.texture.NativeImage;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
+import net.minecraft.client.shader.ShaderGroup;
 import net.minecraft.client.util.Util;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
@@ -29,6 +32,7 @@ import net.minecraft.resources.IResourceManagerReloadListener;
 import net.minecraft.util.CachedBlockInfo;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.ScreenShotHelper;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
@@ -40,6 +44,8 @@ import net.minecraft.util.text.event.ClickEvent;
 import net.minecraft.util.text.event.ClickEvent$Action;
 import net.minecraft.world.GameType;
 import net.minecraft.world.World;
+import net.minecraftforge.resource.IResourceType;
+import net.minecraftforge.resource.VanillaResourceType;
 import net.optifine.Config;
 import net.optifine.shaders.Shaders;
 import net.optifine.shaders.ShadersRender;
@@ -55,9 +61,9 @@ import java.util.Random;
 
 public class GameRenderer implements IResourceManagerReloadListener, AutoCloseable {
    private static final ResourceLocation field800 = new ResourceLocation("textures/misc/nausea.png");
-   private static final Logger field801 = LogManager.getLogger();
+   private static final Logger LOGGER = LogManager.getLogger();
    private final Minecraft mc;
-   private final IResourceManager field803;
+   private final IResourceManager resourceManager;
    private final Random field804 = new Random();
    private float farPlaneDistance;
    public final FirstPersonRenderer itemRenderer;
@@ -73,16 +79,16 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
    private long field816;
    private long field817 = Util.milliTime();
    public final Class1699 lightmapTexture;
-   private final Class213 field819 = new Class213();
+   private final OverlayTexture field819 = new OverlayTexture();
    private boolean field820;
    private float field821 = 1.0F;
    private float field822;
    private float field823;
-   private ItemStack field824;
-   private int field825;
-   private float field826;
-   private float field827;
-   public Shader field828;
+   private ItemStack itemActivationItem;
+   private int itemActivationTicks;
+   private float itemActivationOffX;
+   private float itemActivationOffY;
+   public ShaderGroup shaderGroup;
    public static final ResourceLocation[] field829 = new ResourceLocation[]{
       new ResourceLocation("shaders/post/notch.json"),
       new ResourceLocation("shaders/post/fxaa.json"),
@@ -110,8 +116,8 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
       new ResourceLocation("shaders/post/spider.json")
    };
    public static final int field830 = field829.length;
-   public int field831 = field830;
-   private boolean field832;
+   public int shaderIndex = field830;
+   private boolean useShader;
    private final ActiveRenderInfo activeRender = new ActiveRenderInfo();
    private boolean field834 = false;
    private World field835 = null;
@@ -122,17 +128,17 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
    private int field840 = 0;
    private float field841 = 0.0F;
    private float field842 = 0.0F;
-   private Shader[] field843 = new Shader[10];
+   private ShaderGroup[] fxaaShaders = new ShaderGroup[10];
    private boolean field844 = false;
 
    public GameRenderer(Minecraft var1, IResourceManager var2, RenderTypeBuffers var3) {
       this.mc = var1;
-      this.field803 = var2;
+      this.resourceManager = var2;
       this.itemRenderer = var1.getFirstPersonRenderer();
       this.field807 = new Class194(var1.getTextureManager());
       this.lightmapTexture = new Class1699(this, var1);
       this.field808 = var3;
-      this.field828 = null;
+      this.shaderGroup = null;
    }
 
    @Override
@@ -144,24 +150,24 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
    }
 
    public void stopUseShader() {
-      if (this.field828 != null) {
-         this.field828.close();
+      if (this.shaderGroup != null) {
+         this.shaderGroup.close();
       }
 
-      this.field828 = null;
-      this.field831 = field830;
+      this.shaderGroup = null;
+      this.shaderIndex = field830;
    }
 
    public void method734() {
-      this.field832 = !this.field832;
+      this.useShader = !this.useShader;
    }
 
    public void loadEntityShader(Entity var1) {
-      if (this.field828 != null) {
-         this.field828.close();
+      if (this.shaderGroup != null) {
+         this.shaderGroup.close();
       }
 
-      this.field828 = null;
+      this.shaderGroup = null;
       if (!(var1 instanceof Class1081)) {
          if (!(var1 instanceof Class1101)) {
             if (!(var1 instanceof Class1010)) {
@@ -169,47 +175,47 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
                   Reflector.method35062(Reflector.field42880, var1, this);
                }
             } else {
-               this.method736(new ResourceLocation("shaders/post/invert.json"));
+               this.loadShader(new ResourceLocation("shaders/post/invert.json"));
             }
          } else {
-            this.method736(new ResourceLocation("shaders/post/spider.json"));
+            this.loadShader(new ResourceLocation("shaders/post/spider.json"));
          }
       } else {
-         this.method736(new ResourceLocation("shaders/post/creeper.json"));
+         this.loadShader(new ResourceLocation("shaders/post/creeper.json"));
       }
    }
 
-   public void method736(ResourceLocation var1) {
+   public void loadShader(ResourceLocation var1) {
       if (GLX.isUsingFBOs()) {
-         if (this.field828 != null) {
-            this.field828.close();
+         if (this.shaderGroup != null) {
+            this.shaderGroup.close();
          }
 
          try {
-            this.field828 = new Shader(this.mc.getTextureManager(), this.field803, this.mc.getFramebuffer(), var1);
-            this.field828.method6525(this.mc.getMainWindow().getFramebufferWidth(), this.mc.getMainWindow().getFramebufferHeight());
-            this.field832 = true;
+            this.shaderGroup = new ShaderGroup(this.mc.getTextureManager(), this.resourceManager, this.mc.getFramebuffer(), var1);
+            this.shaderGroup.createBindFramebuffers(this.mc.getMainWindow().getFramebufferWidth(), this.mc.getMainWindow().getFramebufferHeight());
+            this.useShader = true;
          } catch (IOException var5) {
-            field801.warn("Failed to load shader: {}", var1, var5);
-            this.field831 = field830;
-            this.field832 = false;
+            LOGGER.warn("Failed to load shader: {}", var1, var5);
+            this.shaderIndex = field830;
+            this.useShader = false;
          } catch (JsonSyntaxException var6) {
-            field801.warn("Failed to parse shader: {}", var1, var6);
-            this.field831 = field830;
-            this.field832 = false;
+            LOGGER.warn("Failed to parse shader: {}", var1, var6);
+            this.shaderIndex = field830;
+            this.useShader = false;
          }
       }
    }
 
    @Override
    public void method737(IResourceManager var1) {
-      if (this.field828 != null) {
-         this.field828.close();
+      if (this.shaderGroup != null) {
+         this.shaderGroup.close();
       }
 
-      this.field828 = null;
-      if (this.field831 != field830) {
-         this.method736(field829[this.field831]);
+      this.shaderGroup = null;
+      if (this.shaderIndex != field830) {
+         this.loadShader(field829[this.shaderIndex]);
       } else {
          this.loadEntityShader(this.mc.getRenderViewEntity());
       }
@@ -238,22 +244,22 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
          }
       }
 
-      if (this.field825 > 0) {
-         this.field825--;
-         if (this.field825 == 0) {
-            this.field824 = null;
+      if (this.itemActivationTicks > 0) {
+         this.itemActivationTicks--;
+         if (this.itemActivationTicks == 0) {
+            this.itemActivationItem = null;
          }
       }
    }
 
    @Nullable
-   public Shader getShaderGroup() {
-      return this.field828;
+   public ShaderGroup getShaderGroup() {
+      return this.shaderGroup;
    }
 
    public void updateShaderGroupSize(int var1, int var2) {
-      if (this.field828 != null) {
-         this.field828.method6525(var1, var2);
+      if (this.shaderGroup != null) {
+         this.shaderGroup.createBindFramebuffers(var1, var2);
       }
 
       this.mc.worldRenderer.method870(var1, var2);
@@ -566,7 +572,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
             }
 
             this.mc.worldRenderer.method860();
-            if (this.field828 != null && this.field832) {
+            if (this.shaderGroup != null && this.useShader) {
                RenderSystem.disableBlend();
                RenderSystem.disableDepthTest();
                RenderSystem.disableAlphaTest();
@@ -574,7 +580,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
                RenderSystem.matrixMode(5890);
                RenderSystem.pushMatrix();
                RenderSystem.loadIdentity();
-               this.field828.method6526(var1);
+               this.shaderGroup.method6526(var1);
                RenderSystem.popMatrix();
                RenderSystem.enableTexture();
             }
@@ -609,7 +615,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
 
             if (!this.mc.gameSettings.hideGUI || this.mc.currentScreen != null) {
                RenderSystem.method27939();
-               this.method764(this.mc.getMainWindow().getScaledWidth(), this.mc.getMainWindow().getScaledHeight(), var1);
+               this.renderItemActivation(this.mc.getMainWindow().getScaledWidth(), this.mc.getMainWindow().getScaledHeight(), var1);
                ResourcesDecrypter.gingerbreadIconPNG.bind();
                this.mc.ingameGUI.method5961(var10, var1);
                if (this.mc.gameSettings.field44699 && !this.mc.gameSettings.showDebugInfo) {
@@ -703,7 +709,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
 
    private void method752() {
       if (this.mc.worldRenderer.method872() > 10 && this.mc.worldRenderer.method921() && !this.mc.getIntegratedServer().method1305()) {
-         Class1806 var3 = Class8683.method31254(this.mc.getMainWindow().getFramebufferWidth(), this.mc.getMainWindow().getFramebufferHeight(), this.mc.getFramebuffer());
+         NativeImage var3 = ScreenShotHelper.createScreenshot(this.mc.getMainWindow().getFramebufferWidth(), this.mc.getMainWindow().getFramebufferHeight(), this.mc.getFramebuffer());
          Util.method38493().execute(() -> {
             int var4 = var3.method7886();
             int var5 = var3.method7887();
@@ -717,11 +723,11 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
                var5 = var4;
             }
 
-            try (Class1806 var8 = new Class1806(64, 64, false)) {
+            try (NativeImage var8 = new NativeImage(64, 64, false)) {
                var3.method7907(var6, var7, var4, var5, var8);
                var8.method7898(this.mc.getIntegratedServer().method1306());
             } catch (IOException var29) {
-               field801.warn("Couldn't save auto screenshot", var29);
+               LOGGER.warn("Couldn't save auto screenshot", var29);
             } finally {
                var3.close();
             }
@@ -867,7 +873,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
    }
 
    public void resetData() {
-      this.field824 = null;
+      this.itemActivationItem = null;
       this.field807.method596();
       this.activeRender.method37518();
    }
@@ -980,7 +986,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
          this.field835 = var3;
       }
 
-      if (!this.method761(Shaders.field40878)) {
+      if (!this.setFxaaShader(Shaders.field40878)) {
          Shaders.field40878 = 0;
       }
 
@@ -1024,58 +1030,70 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
       }
    }
 
-   public boolean method761(int var1) {
-      if (GLX.isUsingFBOs()) {
-         if (this.field828 != null && this.field828 != this.field843[2] && this.field828 != this.field843[4]) {
-            return true;
-         } else if (var1 != 2 && var1 != 4) {
-            if (this.field828 != null) {
-               this.field828.close();
-               this.field828 = null;
-               return true;
-            } else {
-               return true;
-            }
-         } else if (this.field828 != null && this.field828 == this.field843[var1]) {
-            return true;
-         } else if (this.mc.world != null) {
-            this.method736(new ResourceLocation("shaders/post/fxaa_of_" + var1 + "x.json"));
-            this.field843[var1] = this.field828;
-            return this.field832;
-         } else {
+   public boolean setFxaaShader(int p_setFxaaShader_1_) {
+      if (!GLX.isUsingFBOs())
+      {
+         return false;
+      }
+      else if (this.shaderGroup != null && this.shaderGroup != this.fxaaShaders[2] && this.shaderGroup != this.fxaaShaders[4])
+      {
+         return true;
+      }
+      else if (p_setFxaaShader_1_ != 2 && p_setFxaaShader_1_ != 4)
+      {
+         if (this.shaderGroup == null)
+         {
             return true;
          }
-      } else {
-         return false;
+         else
+         {
+            this.shaderGroup.close();
+            this.shaderGroup = null;
+            return true;
+         }
+      }
+      else if (this.shaderGroup != null && this.shaderGroup == this.fxaaShaders[p_setFxaaShader_1_])
+      {
+         return true;
+      }
+      else if (this.mc.world == null)
+      {
+         return true;
+      }
+      else
+      {
+         this.loadShader(new ResourceLocation("shaders/post/fxaa_of_" + p_setFxaaShader_1_ + "x.json"));
+         this.fxaaShaders[p_setFxaaShader_1_] = this.shaderGroup;
+         return this.useShader;
       }
    }
 
-   public Class1991 method762() {
-      return Class1990.field12992;
+   public IResourceType method762() {
+      return VanillaResourceType.SHADERS;
    }
 
-   public void method763(ItemStack var1) {
-      this.field824 = var1;
-      this.field825 = 40;
-      this.field826 = this.field804.nextFloat() * 2.0F - 1.0F;
-      this.field827 = this.field804.nextFloat() * 2.0F - 1.0F;
+   public void displayItemActivation(ItemStack var1) {
+      this.itemActivationItem = var1;
+      this.itemActivationTicks = 40;
+      this.itemActivationOffX = this.field804.nextFloat() * 2.0F - 1.0F;
+      this.itemActivationOffY = this.field804.nextFloat() * 2.0F - 1.0F;
    }
 
-   public void method764(int var1, int var2, float var3) {
-      if (this.field824 != null && this.field825 > 0) {
-         int var6 = 40 - this.field825;
+   public void renderItemActivation(int var1, int var2, float var3) {
+      if (this.itemActivationItem != null && this.itemActivationTicks > 0) {
+         int var6 = 40 - this.itemActivationTicks;
          float var7 = ((float)var6 + var3) / 40.0F;
          float var8 = var7 * var7;
          float var9 = var7 * var8;
          float var10 = 10.25F * var9 * var8 - 24.95F * var8 * var8 + 25.5F * var9 - 13.8F * var8 + 4.0F * var7;
          float var11 = var10 * (float) Math.PI;
-         float var12 = this.field826 * (float)(var1 / 4);
-         float var13 = this.field827 * (float)(var2 / 4);
+         float var12 = this.itemActivationOffX * (float)(var1 / 4);
+         float var13 = this.itemActivationOffY * (float)(var2 / 4);
          RenderSystem.enableAlphaTest();
          RenderSystem.pushMatrix();
          RenderSystem.method27814();
          RenderSystem.enableDepthTest();
-         RenderSystem.method27850();
+         RenderSystem.disableCull();
          MatrixStack var14 = new MatrixStack();
          var14.push();
          var14.translate(
@@ -1089,10 +1107,10 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
          var14.rotate(Vector3f.XP.rotationDegrees(6.0F * MathHelper.cos(var7 * 8.0F)));
          var14.rotate(Vector3f.ZP.rotationDegrees(6.0F * MathHelper.cos(var7 * 8.0F)));
          Class7735 var16 = this.field808.getBufferSource();
-         this.mc.getItemRenderer().method789(this.field824, Class2327.field15932, 15728880, Class213.field798, var14, var16);
+         this.mc.getItemRenderer().renderItem(this.itemActivationItem, ItemCameraTransformsTransformType.FIXED, 15728880, OverlayTexture.NO_OVERLAY, var14, var16);
          var14.pop();
          var16.method25602();
-         RenderSystem.method27816();
+         RenderSystem.popAttributes();
          RenderSystem.popMatrix();
          RenderSystem.enableCull();
          RenderSystem.disableDepthTest();
@@ -1147,7 +1165,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
       return this.lightmapTexture;
    }
 
-   public Class213 method770() {
+   public OverlayTexture method770() {
       return this.field819;
    }
 }

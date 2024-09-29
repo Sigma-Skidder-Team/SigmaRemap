@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
+import net.minecraft.client.renderer.texture.NativeImage;
 import net.minecraft.util.ResourceLocation;
 
 public class Class1458 implements Runnable {
@@ -18,8 +19,8 @@ public class Class1458 implements Runnable {
    public void run() {
    }
 
-   public Class1806 method6460(Class1806 var1) {
-      Class1806 var4 = Class8156.method28292(var1);
+   public NativeImage method6460(NativeImage var1) {
+      NativeImage var4 = Class8156.method28292(var1);
       this.field7843 = Class8156.method28293(var1, var4);
       return var4;
    }

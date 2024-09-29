@@ -6,6 +6,7 @@ import com.google.common.collect.Sets;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.client.renderer.texture.NativeImage;
 import net.minecraft.client.renderer.texture.Texture;
 import net.minecraft.client.renderer.texture.TextureUtil;
 import net.minecraft.client.util.Util;
@@ -364,7 +365,7 @@ public class AtlasTexture extends Texture implements Class288 {
       ResourceLocation var10 = this.method1096(var2.method36195());
 
       try (JSonShader var11 = var1.getShader(var10)) {
-         Class1806 var13 = Class1806.method7879(var11.getFile());
+         NativeImage var13 = NativeImage.method7879(var11.getFile());
          TextureAtlasSprite var14 = new TextureAtlasSprite(this, var2, var5, var3, var4, var6, var7, var13);
          var14.method7498(var1);
          return var14;

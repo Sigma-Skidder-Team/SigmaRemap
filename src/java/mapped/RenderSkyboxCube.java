@@ -31,7 +31,7 @@ public class RenderSkyboxCube {
       RenderSystem.method27883(180.0F, 1.0F, 0.0F, 0.0F);
       RenderSystem.enableBlend();
       RenderSystem.disableAlphaTest();
-      RenderSystem.method27850();
+      RenderSystem.disableCull();
       RenderSystem.depthMask(false);
       RenderSystem.defaultBlendFunc();
       byte var9 = 2;

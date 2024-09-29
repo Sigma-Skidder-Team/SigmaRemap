@@ -9,6 +9,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
@@ -21,7 +22,10 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
+import net.minecraftforge.resource.IResourceType;
+import net.minecraftforge.resource.VanillaResourceType;
 import net.optifine.Config;
+import net.optifine.reflect.ReflectorForge;
 import net.optifine.shaders.Shaders;
 
 import java.util.List;
@@ -83,16 +87,16 @@ public class ItemRenderer implements IResourceManagerReloadListener {
       }
    }
 
-   public void method781(ItemStack var1, Class2327 var2, boolean var3, MatrixStack var4, Class7733 var5, int var6, int var7, IBakedModel var8) {
+   public void method781(ItemStack var1, ItemCameraTransformsTransformType var2, boolean var3, MatrixStack var4, Class7733 var5, int var6, int var7, IBakedModel var8) {
       if (!var1.isEmpty()) {
          var4.push();
-         boolean var11 = var2 == Class2327.field15930 || var2 == Class2327.field15931 || var2 == Class2327.field15932;
+         boolean var11 = var2 == ItemCameraTransformsTransformType.GUI || var2 == ItemCameraTransformsTransformType.GROUND || var2 == ItemCameraTransformsTransformType.FIXED;
          if (var1.getItem() == Items.field38144 && var11) {
             var8 = this.field848.method29496().method1023(new Class1997("minecraft:trident#inventory"));
          }
 
          if (!Reflector.field42870.exists()) {
-            var8.method22625().method34866(var2).method20691(var3, var4);
+            var8.method22625().getTransform(var2).method20691(var3, var4);
          } else {
             var8 = (IBakedModel) Reflector.field42870.call(var4, var8, var2, var3);
          }
@@ -100,7 +104,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
          var4.translate(-0.5, -0.5, -0.5);
          if (!var8.method22623() && (var1.getItem() != Items.field38144 || var11)) {
             boolean var16;
-            if (var2 != Class2327.field15930 && !var2.method9103() && var1.getItem() instanceof Class3292) {
+            if (var2 != ItemCameraTransformsTransformType.GUI && !var2.isFirstPerson() && var1.getItem() instanceof Class3292) {
                Block var13 = ((Class3292)var1.getItem()).method11845();
                var16 = !(var13 instanceof Class3231) && !(var13 instanceof Class3236);
             } else {
@@ -115,8 +119,8 @@ public class ItemRenderer implements IResourceManagerReloadListener {
                if (var1.getItem() == Items.field37905 && var1.method32159()) {
                   var4.push();
                   Class8892 var15 = var4.getLast();
-                  if (var2 != Class2327.field15930) {
-                     if (var2.method9103()) {
+                  if (var2 != ItemCameraTransformsTransformType.GUI) {
+                     if (var2.isFirstPerson()) {
                         var15.getMatrix().method35510(0.75F);
                      }
                   } else {
@@ -272,11 +276,11 @@ public class ItemRenderer implements IResourceManagerReloadListener {
       return var9 != null ? var9 : this.field848.method29496().getMissingModel();
    }
 
-   public void method789(ItemStack var1, Class2327 var2, int var3, int var4, MatrixStack var5, Class7733 var6) {
+   public void renderItem(ItemStack var1, ItemCameraTransformsTransformType var2, int var3, int var4, MatrixStack var5, Class7733 var6) {
       this.method790((LivingEntity)null, var1, var2, false, var5, var6, (World)null, var3, var4);
    }
 
-   public void method790(LivingEntity var1, ItemStack var2, Class2327 var3, boolean var4, MatrixStack var5, Class7733 var6, World var7, int var8, int var9) {
+   public void method790(LivingEntity var1, ItemStack var2, ItemCameraTransformsTransformType var3, boolean var4, MatrixStack var5, Class7733 var6, World var7, int var8, int var9) {
       if (!var2.isEmpty()) {
          IBakedModel var12 = this.method788(var2, var7, var1);
          this.method781(var2, var3, var4, var5, var6, var8, var9, var12);
@@ -309,7 +313,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
          Class7516.method24502();
       }
 
-      this.method781(var1, Class2327.field15930, false, var7, var8, 15728880, Class213.field798, var4);
+      this.method781(var1, ItemCameraTransformsTransformType.GUI, false, var7, var8, 15728880, OverlayTexture.NO_OVERLAY, var4);
       var8.method25602();
       RenderSystem.enableDepthTest();
       if (var9) {
@@ -381,7 +385,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
             var10.method25602();
          }
 
-         if (Class9561.method37046(var2)) {
+         if (ReflectorForge.method37046(var2)) {
             RenderSystem.disableDepthTest();
             RenderSystem.disableTexture();
             RenderSystem.disableAlphaTest();
@@ -442,7 +446,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
       this.field848.method29497();
    }
 
-   public Class1991 method800() {
-      return Class1990.field12988;
+   public IResourceType method800() {
+      return VanillaResourceType.field12988;
    }
 }

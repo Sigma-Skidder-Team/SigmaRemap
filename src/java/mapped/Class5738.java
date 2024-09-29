@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -100,7 +101,7 @@ public class Class5738 extends EntityRenderer<Class904> {
       var0.pos(var1, var4 - 0.5F, (float)var5 - 0.5F, 0.0F)
          .color(255, 255, 255, 255)
          .tex((float)var6, (float)var7)
-         .method17035(Class213.field798)
+         .method17035(OverlayTexture.NO_OVERLAY)
          .method17034(var3)
          .method17041(var2, 0.0F, 1.0F, 0.0F)
          .endVertex();

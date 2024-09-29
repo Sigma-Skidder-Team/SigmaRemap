@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -75,7 +76,7 @@ public class Class5731 extends EntityRenderer<ExperienceOrbEntity> {
       var0.pos(var1, var3, var4, 0.0F)
          .color(var5, var6, var7, 128)
          .tex(var8, var9)
-         .method17035(Class213.field798)
+         .method17035(OverlayTexture.NO_OVERLAY)
          .method17034(var10)
          .method17041(var2, 0.0F, 1.0F, 0.0F)
          .endVertex();

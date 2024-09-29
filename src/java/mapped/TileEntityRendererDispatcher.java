@@ -4,6 +4,7 @@ import com.google.common.collect.Maps;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.renderer.ActiveRenderInfo;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.tileentity.TileEntity;
@@ -88,11 +89,11 @@ public class TileEntityRendererDispatcher {
          EmissiveTextures.beginRender();
       }
 
-      var0.method18462(var1, var2, var3, var4, var8, Class213.field798);
+      var0.method18462(var1, var2, var3, var4, var8, OverlayTexture.NO_OVERLAY);
       if (EmissiveTextures.isActive()) {
          if (EmissiveTextures.hasEmissive()) {
             EmissiveTextures.beginRenderEmissive();
-            var0.method18462(var1, var2, var3, var4, Class1699.field9258, Class213.field798);
+            var0.method18462(var1, var2, var3, var4, Class1699.field9258, OverlayTexture.NO_OVERLAY);
             EmissiveTextures.endRenderEmissive();
          }
 

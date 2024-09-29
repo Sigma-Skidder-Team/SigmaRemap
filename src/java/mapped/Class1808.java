@@ -254,7 +254,7 @@ public class Class1808 implements Class1809, AutoCloseable {
             RenderSystem.enableTexture();
             int var6 = var5.getAsInt();
             if (var6 != -1) {
-               RenderSystem.method27865(var6);
+               RenderSystem.bindTexture(var6);
                Class1708.method7431(this.field9748.get(var3), var3);
             }
          }
@@ -292,7 +292,7 @@ public class Class1808 implements Class1809, AutoCloseable {
          if (var6 != -1) {
             this.field9748.add(var6);
          } else {
-            field9742.warn("Shader {} could not find sampler named {} in the specified shader program.", this.field9753, var5);
+            field9742.warn("ShaderGroup {} could not find sampler named {} in the specified shader program.", this.field9753, var5);
             this.field9746.remove(var5);
             var3.add(var4);
          }

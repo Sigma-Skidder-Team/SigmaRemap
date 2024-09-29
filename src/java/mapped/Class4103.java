@@ -33,7 +33,7 @@ public class Class4103 extends Class4057 {
    public Class9492 method12825(Class2828 var1, float var2) {
       EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Class5739 var6 = new Class5739(var5);
-      if (Reflector.field43067.method20238()) {
+      if (Reflector.field43067.exists()) {
          Reflector.method35082(var6, Reflector.field43067, var1);
          var6.shadowSize = var2;
          return (Class9492)var6;

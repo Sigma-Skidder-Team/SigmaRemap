@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
+import net.minecraft.client.renderer.texture.NativeImage;
 import net.minecraft.client.renderer.texture.Texture;
 import net.minecraft.util.ResourceLocation;
 import net.optifine.Config;
@@ -42,7 +43,7 @@ public class Class8156 {
       }
    }
 
-   public static Class1806 method28292(Class1806 var0) {
+   public static NativeImage method28292(NativeImage var0) {
       byte var3 = 64;
       byte var4 = 32;
       int var5 = var0.method7886();
@@ -51,13 +52,13 @@ public class Class8156 {
          var3 *= 2;
       }
 
-      Class1806 var7 = new Class1806(var3, var4, true);
+      NativeImage var7 = new NativeImage(var3, var4, true);
       var7.method7903(var0);
       var0.close();
       return var7;
    }
 
-   public static boolean method28293(Class1806 var0, Class1806 var1) {
+   public static boolean method28293(NativeImage var0, NativeImage var1) {
       return var0.method7886() > var1.method7887();
    }
 

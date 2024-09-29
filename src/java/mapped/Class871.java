@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
@@ -109,7 +110,7 @@ public class Class871 extends ContainerScreen<Class5822> {
       field4831.method11177(0.0F, var14, var15, var12);
       Class7735 var16 = Class7733.method25595(Tessellator.getInstance().getBuffer());
       IVertexBuilder var17 = var16.method25597(field4831.method11028(field4830));
-      field4831.method11016(var1, var17, 15728880, Class213.field798, 1.0F, 1.0F, 1.0F, 1.0F);
+      field4831.method11016(var1, var17, 15728880, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
       var16.method25602();
       var1.pop();
       RenderSystem.matrixMode(5889);

@@ -92,7 +92,7 @@ public class Class1265 extends AbstractGui {
       int var19 = var16 * var40 + (var40 - 1) * 5;
       List<Class9125> var20 = null;
       if (this.field6695 != null) {
-         var20 = this.field6692.fontRenderer.method38828(this.field6695, var2 - 50);
+         var20 = this.field6692.fontRenderer.trimStringToWidth(this.field6695, var2 - 50);
 
          for (Class9125 var22 : var20) {
             var19 = Math.max(var19, this.field6692.fontRenderer.method38822(var22));
@@ -101,7 +101,7 @@ public class Class1265 extends AbstractGui {
 
       List<Class9125> var42 = null;
       if (this.field6694 != null) {
-         var42 = this.field6692.fontRenderer.method38828(this.field6694, var2 - 50);
+         var42 = this.field6692.fontRenderer.trimStringToWidth(this.field6694, var2 - 50);
 
          for (Class9125 var23 : var42) {
             var19 = Math.max(var19, this.field6692.fontRenderer.method38822(var23));

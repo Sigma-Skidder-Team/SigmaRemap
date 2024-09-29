@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.client.renderer.texture.NativeImage;
 import net.minecraft.client.util.Util;
 import net.minecraft.resources.data.IMetadataSectionSerializer;
 import net.minecraft.state.properties.ChestType;
@@ -145,7 +146,7 @@ public class LegacyResourcePackWrapperV4 implements IResourcePack {
             } else {
                if ("textures/entity/enderdragon/dragon.png".equals(var5) || "textures/entity/enderdragon/dragon_exploding.png".equals(var5)) {
                   ByteArrayInputStream var21;
-                  try (Class1806 var24 = Class1806.method7879(this.field1187.getResourceStream(var1, var2))) {
+                  try (NativeImage var24 = NativeImage.method7879(this.field1187.getResourceStream(var1, var2))) {
                      int var9 = var24.method7886() / 256;
 
                      for (int var10 = 88 * var9; var10 < 200 * var9; var10++) {
@@ -191,8 +192,8 @@ public class LegacyResourcePackWrapperV4 implements IResourcePack {
    public static InputStream method1233(InputStream var0, InputStream var1, int var2, int var3, int var4, int var5, int var6) throws IOException {
       ByteArrayInputStream var22;
       try (
-         Class1806 var9 = Class1806.method7879(var1);
-         Class1806 var11 = Class1806.method7879(var0);
+              NativeImage var9 = NativeImage.method7879(var1);
+              NativeImage var11 = NativeImage.method7879(var0);
       ) {
          int var13 = var11.method7886();
          int var14 = var11.method7887();
@@ -200,15 +201,15 @@ public class LegacyResourcePackWrapperV4 implements IResourcePack {
             return null;
          }
 
-         try (Class1806 var74 = new Class1806(var13, var14, true)) {
+         try (NativeImage var74 = new NativeImage(var13, var14, true)) {
             int var17 = var13 / var2;
 
             for (int var18 = var4 * var17; var18 < var6 * var17; var18++) {
                for (int var19 = var3 * var17; var19 < var5 * var17; var19++) {
-                  int var20 = Class1806.method7911(var9.method7889(var19, var18));
+                  int var20 = NativeImage.method7911(var9.method7889(var19, var18));
                   int var21 = var11.method7889(var19, var18);
                   var74.method7890(
-                     var19, var18, Class1806.method7914(var20, Class1806.method7913(var21), Class1806.method7912(var21), Class1806.method7911(var21))
+                     var19, var18, NativeImage.method7914(var20, NativeImage.method7913(var21), NativeImage.method7912(var21), NativeImage.method7911(var21))
                   );
                }
             }
@@ -222,11 +223,11 @@ public class LegacyResourcePackWrapperV4 implements IResourcePack {
 
    public static InputStream method1234(InputStream var0) throws IOException {
       ByteArrayInputStream var9;
-      try (Class1806 var3 = Class1806.method7879(var0)) {
+      try (NativeImage var3 = NativeImage.method7879(var0)) {
          int var5 = var3.method7886();
          int var6 = var3.method7887();
 
-         try (Class1806 var7 = new Class1806(2 * var5, 2 * var6, true)) {
+         try (NativeImage var7 = new NativeImage(2 * var5, 2 * var6, true)) {
             method1238(var3, var7, 0, 0, 0, 0, var5, var6, 1, false, false);
             var9 = new ByteArrayInputStream(var7.method7901());
          }
@@ -237,11 +238,11 @@ public class LegacyResourcePackWrapperV4 implements IResourcePack {
 
    public static InputStream method1235(InputStream var0) throws IOException {
       ByteArrayInputStream var10;
-      try (Class1806 var3 = Class1806.method7879(var0)) {
+      try (NativeImage var3 = NativeImage.method7879(var0)) {
          int var5 = var3.method7886();
          int var6 = var3.method7887();
 
-         try (Class1806 var7 = new Class1806(var5 / 2, var6, true)) {
+         try (NativeImage var7 = new NativeImage(var5 / 2, var6, true)) {
             int var9 = var6 / 64;
             method1238(var3, var7, 29, 0, 29, 0, 15, 14, var9, false, true);
             method1238(var3, var7, 59, 0, 14, 0, 15, 14, var9, false, true);
@@ -267,11 +268,11 @@ public class LegacyResourcePackWrapperV4 implements IResourcePack {
 
    public static InputStream method1236(InputStream var0) throws IOException {
       ByteArrayInputStream var10;
-      try (Class1806 var3 = Class1806.method7879(var0)) {
+      try (NativeImage var3 = NativeImage.method7879(var0)) {
          int var5 = var3.method7886();
          int var6 = var3.method7887();
 
-         try (Class1806 var7 = new Class1806(var5 / 2, var6, true)) {
+         try (NativeImage var7 = new NativeImage(var5 / 2, var6, true)) {
             int var9 = var6 / 64;
             method1238(var3, var7, 14, 0, 29, 0, 15, 14, var9, false, true);
             method1238(var3, var7, 44, 0, 14, 0, 15, 14, var9, false, true);
@@ -297,11 +298,11 @@ public class LegacyResourcePackWrapperV4 implements IResourcePack {
 
    public static InputStream method1237(InputStream var0) throws IOException {
       ByteArrayInputStream var10;
-      try (Class1806 var3 = Class1806.method7879(var0)) {
+      try (NativeImage var3 = NativeImage.method7879(var0)) {
          int var5 = var3.method7886();
          int var6 = var3.method7887();
 
-         try (Class1806 var7 = new Class1806(var5, var6, true)) {
+         try (NativeImage var7 = new NativeImage(var5, var6, true)) {
             int var9 = var6 / 64;
             method1238(var3, var7, 14, 0, 28, 0, 14, 14, var9, false, true);
             method1238(var3, var7, 28, 0, 14, 0, 14, 14, var9, false, true);
@@ -355,7 +356,7 @@ public class LegacyResourcePackWrapperV4 implements IResourcePack {
    }
 
    private static void method1238(
-      Class1806 var0, Class1806 var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, boolean var10
+           NativeImage var0, NativeImage var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, boolean var10
    ) {
       var7 *= var8;
       var6 *= var8;

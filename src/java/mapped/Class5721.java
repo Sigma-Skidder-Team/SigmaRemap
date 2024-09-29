@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -37,7 +38,7 @@ public class Class5721 extends EntityRenderer<Class907> {
                   false,
                   new Random(),
                   var9.method23451(var1.method3553()),
-                  Class213.field798
+                  OverlayTexture.NO_OVERLAY
                );
             var4.pop();
             super.render(var1, var2, var3, var4, var5, var6);

@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.EventRenderEntity;
 import com.mentalfrostbyte.jello.event.impl.EventRenderNameTag;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Pose;
 import net.minecraft.entity.player.PlayerEntity;
@@ -213,7 +214,7 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
    }
 
    public static int method17883(LivingEntity var0, float var1) {
-      return Class213.method730(Class213.method728(var1), Class213.method729(var0.hurtTime > 0 || var0.deathTime > 0));
+      return OverlayTexture.method730(OverlayTexture.method728(var1), OverlayTexture.method729(var0.hurtTime > 0 || var0.deathTime > 0));
    }
 
    public boolean method17869(T var1) {

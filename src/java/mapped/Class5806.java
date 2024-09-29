@@ -47,7 +47,7 @@ public class Class5806 extends AbstractOption {
    @Override
    public Widget createWidget(GameSettings var1, int var2, int var3, int var4) {
       if (this.field25448 != null) {
-         this.method17950(Minecraft.getInstance().fontRenderer.method38828(this.field25448, 200));
+         this.setOptionValues(Minecraft.getInstance().fontRenderer.trimStringToWidth(this.field25448, 200));
       }
 
       return new OptionButton(var2, var3, var4, 20, this, this.func_238152_c_(var1), var2x -> {

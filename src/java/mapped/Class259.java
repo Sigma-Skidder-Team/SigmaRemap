@@ -26,7 +26,7 @@ public class Class259 extends Class219<Class1048, Class2805<Class1048>> {
       }
 
       ItemStack var17 = !var13 ? var4.getHeldItemOffhand() : var4.getHeldItemMainhand();
-      Minecraft.getInstance().getFirstPersonRenderer().method37580(var4, var17, Class2327.field15931, false, var1, var2, var3);
+      Minecraft.getInstance().getFirstPersonRenderer().method37580(var4, var17, ItemCameraTransformsTransformType.GROUND, false, var1, var2, var3);
       var1.pop();
    }
 }

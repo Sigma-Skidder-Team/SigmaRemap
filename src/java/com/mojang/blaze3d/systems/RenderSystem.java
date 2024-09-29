@@ -123,7 +123,7 @@ public class RenderSystem {
    }
 
    @Deprecated
-   public static void method27816() {
+   public static void popAttributes() {
       assertThread(RenderSystem::isOnGameThread);
       GlStateManager.popAttributes();
    }
@@ -312,7 +312,7 @@ public class RenderSystem {
       GlStateManager.method23787();
    }
 
-   public static void method27850() {
+   public static void disableCull() {
       assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23788();
    }
@@ -386,7 +386,7 @@ public class RenderSystem {
       GlStateManager.method23812(var0);
    }
 
-   public static void method27865(int var0) {
+   public static void bindTexture(int var0) {
       GlStateManager.bindTexture(var0);
    }
 
@@ -549,16 +549,16 @@ public class RenderSystem {
 
    public static void method27894(int var0, int var1) {
       assertThread(RenderSystem::isOnGameThreadOrInit);
-      GlStateManager.method23856(var0, var1);
+      GlStateManager.pixelStore(var0, var1);
    }
 
    public static void method27895(int var0, float var1) {
-      GlStateManager.method23857(var0, var1);
+      GlStateManager.pixelTransfer(var0, var1);
    }
 
    public static void method27896(int var0, int var1, int var2, int var3, int var4, int var5, ByteBuffer var6) {
       assertThread(RenderSystem::isOnGameThread);
-      GlStateManager.method23858(var0, var1, var2, var3, var4, var5, var6);
+      GlStateManager.readPixels(var0, var1, var2, var3, var4, var5, var6);
    }
 
    public static void method27897(int var0, Consumer<String> var1) {

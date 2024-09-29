@@ -21,6 +21,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.settings.ParticleStatus;
+import net.minecraft.client.shader.ShaderGroup;
 import net.minecraft.client.util.Util;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
@@ -49,8 +50,11 @@ import net.minecraft.world.IBlockDisplayReader;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.minecraftforge.resource.IResourceType;
+import net.minecraftforge.resource.VanillaResourceType;
 import net.optifine.DynamicLights;
 import net.optifine.Config;
+import net.optifine.reflect.ReflectorForge;
 import net.optifine.render.RenderStateManager;
 import net.optifine.shaders.Shaders;
 import net.optifine.shaders.ShadersRender;
@@ -94,13 +98,13 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
    private final Long2ObjectMap<SortedSet<Class1995>> field957 = new Long2ObjectOpenHashMap();
    private final Map<BlockPos, Class6340> field958 = Maps.newHashMap();
    public Framebuffer entityOutlineFramebuffer;
-   private Shader field960;
+   private ShaderGroup field960;
    private Framebuffer field961;
    private Framebuffer field962;
    private Framebuffer field963;
    private Framebuffer field964;
    private Framebuffer field965;
-   private Shader field966;
+   private ShaderGroup field966;
    private double frustumUpdatePosX = Double.MIN_VALUE;
    private double frustumUpdatePosY = Double.MIN_VALUE;
    private double frustumUpdatePosZ = Double.MIN_VALUE;
@@ -219,7 +223,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
          Tessellator var14 = Tessellator.getInstance();
          BufferBuilder var15 = var14.getBuffer();
          RenderSystem.enableAlphaTest();
-         RenderSystem.method27850();
+         RenderSystem.disableCull();
          RenderSystem.normal3f(0.0F, 1.0F, 0.0F);
          RenderSystem.enableBlend();
          RenderSystem.defaultBlendFunc();
@@ -438,7 +442,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
       this.field940.bindTexture(field935);
       RenderSystem.method27863(3553, 10242, 10497);
       RenderSystem.method27863(3553, 10243, 10497);
-      RenderSystem.method27865(0);
+      RenderSystem.bindTexture(0);
       this.method857();
       if (Minecraft.isFabulousGraphicsEnabled()) {
          this.method858();
@@ -453,8 +457,8 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
       ResourceLocation var1 = new ResourceLocation("shaders/post/entity_outline.json");
 
       try {
-         this.field960 = new Shader(this.mc.getTextureManager(), this.mc.getResourceManager(), this.mc.getFramebuffer(), var1);
-         this.field960.method6525(this.mc.getMainWindow().getFramebufferWidth(), this.mc.getMainWindow().getFramebufferHeight());
+         this.field960 = new ShaderGroup(this.mc.getTextureManager(), this.mc.getResourceManager(), this.mc.getFramebuffer(), var1);
+         this.field960.createBindFramebuffers(this.mc.getMainWindow().getFramebufferWidth(), this.mc.getMainWindow().getFramebufferHeight());
          this.entityOutlineFramebuffer = this.field960.method6521("final");
       } catch (IOException var3) {
          field930.warn("Failed to load shader: {}", var1, var3);
@@ -472,8 +476,8 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
       ResourceLocation var1 = new ResourceLocation("shaders/post/transparency.json");
 
       try {
-         Shader var2 = new Shader(this.mc.getTextureManager(), this.mc.getResourceManager(), this.mc.getFramebuffer(), var1);
-         var2.method6525(this.mc.getMainWindow().getFramebufferWidth(), this.mc.getMainWindow().getFramebufferHeight());
+         ShaderGroup var2 = new ShaderGroup(this.mc.getTextureManager(), this.mc.getResourceManager(), this.mc.getFramebuffer(), var1);
+         var2.createBindFramebuffers(this.mc.getMainWindow().getFramebufferWidth(), this.mc.getMainWindow().getFramebufferHeight());
          Framebuffer var10 = var2.method6521("translucent");
          Framebuffer var11 = var2.method6521("itemEntity");
          Framebuffer var12 = var2.method6521("particles");
@@ -746,11 +750,11 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
    public void method870(int var1, int var2) {
       this.setDisplayListEntitiesDirty();
       if (this.field960 != null) {
-         this.field960.method6525(var1, var2);
+         this.field960.createBindFramebuffers(var1, var2);
       }
 
       if (this.field966 != null) {
-         this.field966.method6525(var1, var2);
+         this.field966.createBindFramebuffers(var1, var2);
       }
    }
 
@@ -1737,7 +1741,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
          double var6 = var1.getPos().getY();
          double var8 = var1.getPos().getZ();
          RenderSystem.depthMask(true);
-         RenderSystem.method27850();
+         RenderSystem.disableCull();
          RenderSystem.enableBlend();
          RenderSystem.defaultBlendFunc();
          RenderSystem.disableTexture();
@@ -1829,7 +1833,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
       }
 
       if (this.field989 != null) {
-         RenderSystem.method27850();
+         RenderSystem.disableCull();
          RenderSystem.disableTexture();
          RenderSystem.enableBlend();
          RenderSystem.defaultBlendFunc();
@@ -2216,7 +2220,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
                Shaders.method33076();
             }
 
-            RenderSystem.method27850();
+            RenderSystem.disableCull();
             RenderSystem.enableBlend();
             RenderSystem.enableAlphaTest();
             RenderSystem.enableDepthTest();
@@ -2604,7 +2608,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
          RenderSystem.method27852();
          RenderSystem.method27939();
          RenderSystem.enableAlphaTest();
-         RenderSystem.method27850();
+         RenderSystem.disableCull();
          float var18 = (float)(Util.milliTime() % 3000L) / 3000.0F;
          float var19 = 0.0F;
          float var20 = 0.0F;
@@ -3298,7 +3302,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
             break;
          case 2001:
             BlockState var16 = Block.method11536(var4);
-            if (!Class9561.method37050(var16, this.world, var3)) {
+            if (!ReflectorForge.method37050(var16, this.world, var3)) {
                SoundType var47 = var16.getSoundType();
                if (Reflector.field42827.exists()) {
                   var47 = (SoundType) Reflector.call(var16, Reflector.field42827, this.world, var3, null);
@@ -3663,8 +3667,8 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
       }
    }
 
-   public Class1991 method942() {
-      return Class1990.field12988;
+   public IResourceType method942() {
+      return VanillaResourceType.field12988;
    }
 
    public void method943(Collection<TileEntity> var1, Collection<TileEntity> var2) {

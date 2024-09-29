@@ -17,7 +17,7 @@ public class Class6678 extends Class6679 {
 
    @Override
    public String method20360() {
-      return "#define " + this.method20366() + " " + this.method20370() + " // Shader option " + this.method20370();
+      return "#define " + this.method20366() + " " + this.method20370() + " // ShaderGroup option " + this.method20370();
    }
 
    @Override

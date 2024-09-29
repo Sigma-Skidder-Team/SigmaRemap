@@ -4,18 +4,20 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.IntSet;
 import it.unimi.dsi.fastutil.ints.IntSets;
 import javax.annotation.Nullable;
+
+import net.minecraft.client.renderer.texture.NativeImage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class Class1771 implements Class1768 {
    private static String[] field9591;
    private static final Logger field9592 = LogManager.getLogger();
-   private final Class1806 field9593;
+   private final NativeImage field9593;
    private final Int2ObjectMap<Class2055> field9594;
    private boolean field9595 = false;
    private float field9596 = -1.0F;
 
-   public Class1771(Class1806 var1, Int2ObjectMap<Class2055> var2) {
+   public Class1771(NativeImage var1, Int2ObjectMap<Class2055> var2) {
       this.field9593 = var1;
       this.field9594 = var2;
    }

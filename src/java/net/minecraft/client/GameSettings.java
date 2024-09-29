@@ -353,7 +353,7 @@ public class GameSettings {
             if ("true".equals(var23.getString("fancyGraphics"))) {
                this.graphicFanciness = GraphicsFanciness.FANCY;
             } else {
-               this.graphicFanciness = GraphicsFanciness.field13603;
+               this.graphicFanciness = GraphicsFanciness.FAST;
             }
          }
 
@@ -2116,7 +2116,7 @@ public class GameSettings {
             this.cloudOption = CloudOption.OFF;
             break;
          default:
-            if (this.graphicFanciness != GraphicsFanciness.field13603) {
+            if (this.graphicFanciness != GraphicsFanciness.FAST) {
                this.cloudOption = CloudOption.field11186;
             } else {
                this.cloudOption = CloudOption.FAST;
@@ -2300,7 +2300,7 @@ public class GameSettings {
    }
 
    private void method37171() {
-      if (Reflector.field42954.method20238() && Reflector.field42930.exists()) {
+      if (Reflector.field42954.exists() && Reflector.field42930.exists()) {
          Object var1 = Reflector.method35071(Reflector.field42954);
          Reflector.call(this.keyBindForward, Reflector.field42930, var1);
          Reflector.call(this.keyBindLeft, Reflector.field42930, var1);

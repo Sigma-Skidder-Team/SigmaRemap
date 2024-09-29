@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.client.renderer.model.ItemCameraTransforms;
 import net.minecraft.util.Direction;
 
 import java.util.Collections;
@@ -9,12 +10,12 @@ import java.util.Random;
 
 public class Class7203 implements IBakedModel {
    private static String[] field30917;
-   private final Class9264 field30918;
+   private final ItemCameraTransforms field30918;
    private final Class6391 field30919;
    private final TextureAtlasSprite field30920;
    private final boolean field30921;
 
-   public Class7203(Class9264 var1, Class6391 var2, TextureAtlasSprite var3, boolean var4) {
+   public Class7203(ItemCameraTransforms var1, Class6391 var2, TextureAtlasSprite var3, boolean var4) {
       this.field30918 = var1;
       this.field30919 = var2;
       this.field30920 = var3;
@@ -52,7 +53,7 @@ public class Class7203 implements IBakedModel {
    }
 
    @Override
-   public Class9264 method22625() {
+   public ItemCameraTransforms method22625() {
       return this.field30918;
    }
 

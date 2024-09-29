@@ -4,6 +4,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.client.renderer.texture.DynamicTexture;
+import net.minecraft.client.renderer.texture.NativeImage;
 import net.minecraft.util.ResourceLocation;
 
 import java.awt.Dimension;
@@ -13,7 +14,7 @@ public class Class7078 {
    private boolean field30469 = false;
    private Class7954[] field30470 = new Class7954[0];
    private ResourceLocation field30471 = null;
-   private Class1806 field30472 = null;
+   private NativeImage field30472 = null;
    private DynamicTexture field30473 = null;
    private ResourceLocation field30474 = new ResourceLocation("textures/block/red_wool.png");
    public static final int field30475 = 0;
@@ -76,11 +77,11 @@ public class Class7078 {
       }
    }
 
-   public Class1806 method21993() {
+   public NativeImage method21993() {
       return this.field30472;
    }
 
-   public void method21994(Class1806 var1) {
+   public void method21994(NativeImage var1) {
       this.field30472 = var1;
    }
 

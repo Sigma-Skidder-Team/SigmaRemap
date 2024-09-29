@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import net.minecraft.client.renderer.model.ItemCameraTransforms;
 import net.minecraft.util.Direction;
 
 import java.util.List;
@@ -15,13 +16,13 @@ public class Class9071 {
    private TextureAtlasSprite field41512;
    private final boolean field41513;
    private final boolean field41514;
-   private final Class9264 field41515;
+   private final ItemCameraTransforms field41515;
 
    public Class9071(Class7496 var1, Class6391 var2, boolean var3) {
       this(var1.method24429(), var1.method24430().method8812(), var3, var1.method24440(), var2);
    }
 
-   private Class9071(boolean var1, boolean var2, boolean var3, Class9264 var4, Class6391 var5) {
+   private Class9071(boolean var1, boolean var2, boolean var3, ItemCameraTransforms var4, Class6391 var5) {
       for (Direction var11 : Direction.values()) {
          this.field41509.put(var11, Lists.newArrayList());
       }

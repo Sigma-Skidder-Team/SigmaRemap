@@ -21,6 +21,8 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+import net.minecraft.client.renderer.model.ItemCameraTransforms;
+import net.minecraft.client.renderer.model.ItemTransformVec3f;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import org.apache.logging.log4j.LogManager;
@@ -34,14 +36,14 @@ public class Class7496 implements Class7495 {
       .registerTypeAdapter(Class9726.class, new Class2579())
       .registerTypeAdapter(Class9163.class, new Class2558())
       .registerTypeAdapter(Class9840.class, new Class2572())
-      .registerTypeAdapter(Class6792.class, new Class2561())
-      .registerTypeAdapter(Class9264.class, new Class2566())
+      .registerTypeAdapter(ItemTransformVec3f.class, new ItemCameraTransforms.Deserializer())
+      .registerTypeAdapter(ItemCameraTransforms.class, new ItemCameraTransforms.Class2566())
       .registerTypeAdapter(Class7781.class, new Class2560())
       .create();
    private final List<Class9726> field32202;
    private final Class2129 field32203;
    private final boolean field32204;
-   private final Class9264 field32205;
+   private final ItemCameraTransforms field32205;
    private final List<Class7781> field32206;
    public String field32207 = "";
    public final Map<String, Either<Class7826, String>> field32208;
@@ -57,7 +59,7 @@ public class Class7496 implements Class7495 {
    }
 
    public Class7496(
-           ResourceLocation var1, List<Class9726> var2, Map<String, Either<Class7826, String>> var3, boolean var4, Class2129 var5, Class9264 var6, List<Class7781> var7
+           ResourceLocation var1, List<Class9726> var2, Map<String, Either<Class7826, String>> var3, boolean var4, Class2129 var5, ItemCameraTransforms var6, List<Class7781> var7
    ) {
       this.field32202 = var2;
       this.field32204 = var4;
@@ -245,20 +247,20 @@ public class Class7496 implements Class7495 {
       return this.field32209 != null ? this.field32209.method24439() : this;
    }
 
-   public Class9264 method24440() {
-      Class6792 var3 = this.method24441(Class2327.field15925);
-      Class6792 var4 = this.method24441(Class2327.field15926);
-      Class6792 var5 = this.method24441(Class2327.field15927);
-      Class6792 var6 = this.method24441(Class2327.field15928);
-      Class6792 var7 = this.method24441(Class2327.field15929);
-      Class6792 var8 = this.method24441(Class2327.field15930);
-      Class6792 var9 = this.method24441(Class2327.field15931);
-      Class6792 var10 = this.method24441(Class2327.field15932);
-      return new Class9264(var3, var4, var5, var6, var7, var8, var9, var10);
+   public ItemCameraTransforms method24440() {
+      ItemTransformVec3f var3 = this.method24441(ItemCameraTransformsTransformType.THIRD_PERSON_LEFT_HAND);
+      ItemTransformVec3f var4 = this.method24441(ItemCameraTransformsTransformType.THIRD_PERSON_RIGHT_HAND);
+      ItemTransformVec3f var5 = this.method24441(ItemCameraTransformsTransformType.FIRST_PERSON_LEFT_HAND);
+      ItemTransformVec3f var6 = this.method24441(ItemCameraTransformsTransformType.FIRST_PERSON_RIGHT_HAND);
+      ItemTransformVec3f var7 = this.method24441(ItemCameraTransformsTransformType.HEAD);
+      ItemTransformVec3f var8 = this.method24441(ItemCameraTransformsTransformType.GUI);
+      ItemTransformVec3f var9 = this.method24441(ItemCameraTransformsTransformType.GROUND);
+      ItemTransformVec3f var10 = this.method24441(ItemCameraTransformsTransformType.FIXED);
+      return new ItemCameraTransforms(var3, var4, var5, var6, var7, var8, var9, var10);
    }
 
-   private Class6792 method24441(Class2327 var1) {
-      return this.field32209 != null && !this.field32205.method34867(var1) ? this.field32209.method24441(var1) : this.field32205.method34866(var1);
+   private ItemTransformVec3f method24441(ItemCameraTransformsTransformType var1) {
+      return this.field32209 != null && !this.field32205.hasCustomTransform(var1) ? this.field32209.method24441(var1) : this.field32205.getTransform(var1);
    }
 
    @Override

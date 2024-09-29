@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.renderer.texture.NativeImage;
 import net.minecraft.client.util.Util;
 
 public class Class6977 {
@@ -10,15 +11,15 @@ public class Class6977 {
       }
    });
 
-   public static Class1806[] method21536(Class1806 var0, int var1) {
-      Class1806[] var4 = new Class1806[var1 + 1];
+   public static NativeImage[] method21536(NativeImage var0, int var1) {
+      NativeImage[] var4 = new NativeImage[var1 + 1];
       var4[0] = var0;
       if (var1 > 0) {
          boolean var5 = false;
 
          for (int var6 = 1; var6 <= var1; var6++) {
-            Class1806 var7 = var4[var6 - 1];
-            Class1806 var8 = new Class1806(var7.method7886() >> 1, var7.method7887() >> 1, false);
+            NativeImage var7 = var4[var6 - 1];
+            NativeImage var8 = new NativeImage(var7.method7886() >> 1, var7.method7887() >> 1, false);
             int var9 = var8.method7886();
             int var10 = var8.method7887();
 

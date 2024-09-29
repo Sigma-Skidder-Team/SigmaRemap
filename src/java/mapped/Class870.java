@@ -136,7 +136,7 @@ public class Class870 extends Screen {
       this.blit(var1, var7, 2, 0, 0, 192, 192);
       if (this.field4824 != this.field4822) {
          ITextProperties var9 = this.field4821.method24461(this.field4822);
-         this.field4823 = this.font.method38828(var9, 114);
+         this.field4823 = this.font.trimStringToWidth(var9, 114);
          this.field4825 = new TranslationTextComponent("book.pageIndicator", this.field4822 + 1, Math.max(this.method2693(), 1));
       }
 

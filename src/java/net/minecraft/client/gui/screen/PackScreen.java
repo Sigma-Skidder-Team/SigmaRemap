@@ -8,6 +8,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.renderer.texture.DynamicTexture;
+import net.minecraft.client.renderer.texture.NativeImage;
 import net.minecraft.client.util.Util;
 import net.minecraft.resources.ResourcePackInfo;
 import net.minecraft.resources.ResourcePackList;
@@ -187,7 +188,7 @@ public class PackScreen extends Screen {
          ResourceLocation var10 = new ResourceLocation(
             "minecraft", "pack/" + Util.method38533(var9, ResourceLocation::method8298) + "/" + Hashing.sha1().hashUnencodedChars(var9) + "/icon"
          );
-         Class1806 var11 = Class1806.method7879(var7);
+         NativeImage var11 = NativeImage.method7879(var7);
          var1.loadTexture(var10, new DynamicTexture(var11));
          return var10;
       } catch (FileNotFoundException var43) {

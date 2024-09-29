@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -125,7 +126,7 @@ public class Class5658 extends Class5651<Class1105, Class2820> {
       var0.pos(var1, var3, var4, var5)
          .color(var6, var7, var8, 255)
          .tex(var9, var10)
-         .method17035(Class213.field798)
+         .method17035(OverlayTexture.NO_OVERLAY)
          .method17034(15728880)
          .method17041(var2, 0.0F, 1.0F, 0.0F)
          .endVertex();

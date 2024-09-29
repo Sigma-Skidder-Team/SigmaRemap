@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.block.BlockState;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.fluid.FluidState;
@@ -9,6 +10,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.resources.IResourceManagerReloadListener;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockDisplayReader;
+import net.minecraftforge.resource.IResourceType;
+import net.minecraftforge.resource.VanillaResourceType;
 
 import java.util.Random;
 
@@ -43,7 +46,7 @@ public class BlockRendererDispatcher implements IResourceManagerReloadListener {
       if (var1.getRenderType() == BlockRenderType.MODEL) {
          IBakedModel var9 = this.field853.method38153(var1);
          long var10 = var1.method23451(var2);
-         this.field854.method24680(var3, var9, var1, var2, var4, var5, true, this.field856, var10, Class213.field798, var6);
+         this.field854.method24680(var3, var9, var1, var2, var4, var5, true, this.field856, var10, OverlayTexture.NO_OVERLAY, var6);
       }
    }
 
@@ -56,7 +59,7 @@ public class BlockRendererDispatcher implements IResourceManagerReloadListener {
          BlockRenderType var11 = var1.getRenderType();
          return var11 != BlockRenderType.MODEL
             ? false
-            : this.field854.method24680(var3, this.method813(var1), var1, var2, var4, var5, var6, var7, var1.method23451(var2), Class213.field798, var8);
+            : this.field854.method24680(var3, this.method813(var1), var1, var2, var4, var5, var6, var7, var1.method23451(var2), OverlayTexture.NO_OVERLAY, var8);
       } catch (Throwable var14) {
          CrashReport var12 = CrashReport.makeCrashReport(var14, "Tesselating block in world");
          CrashReportCategory var13 = var12.makeCategory("Block being tesselated");
@@ -105,9 +108,9 @@ public class BlockRendererDispatcher implements IResourceManagerReloadListener {
                if (Reflector.field42913.exists()) {
                   ItemStack var15 = new ItemStack(var1.getBlock());
                   Class9809 var16 = (Class9809) Reflector.call(var15.getItem(), Reflector.field42913);
-                  var16.method38685(var15, Class2327.field15924, var2, var3, var4, var5);
+                  var16.method38685(var15, ItemCameraTransformsTransformType.NONE, var2, var3, var4, var5);
                } else {
-                  Class9809.field45844.method38685(new ItemStack(var1.getBlock()), Class2327.field15924, var2, var3, var4, var5);
+                  Class9809.field45844.method38685(new ItemStack(var1.getBlock()), ItemCameraTransformsTransformType.NONE, var2, var3, var4, var5);
                }
          }
       }
@@ -118,7 +121,7 @@ public class BlockRendererDispatcher implements IResourceManagerReloadListener {
       this.field855.method14919();
    }
 
-   public Class1991 method816() {
-      return Class1990.field12988;
+   public IResourceType method816() {
+      return VanillaResourceType.field12988;
    }
 }

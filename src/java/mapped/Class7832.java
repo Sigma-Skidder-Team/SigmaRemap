@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.client.renderer.model.ItemCameraTransforms;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -34,7 +35,7 @@ public class Class7832 {
       }
 
       Class6391 var10 = Class6391.field27973;
-      return new Class7206(var4, var6, true, true, true, var0, Class9264.field42603, var10);
+      return new Class7206(var4, var6, true, true, true, var0, ItemCameraTransforms.DEFAULT, var10);
    }
 
    public static IBakedModel method26232(IBakedModel var0, IBakedModel var1) {
@@ -55,7 +56,7 @@ public class Class7832 {
       boolean var13 = var0.method22620();
       boolean var14 = var0.method22623();
       TextureAtlasSprite var15 = var0.getParticleTexture();
-      Class9264 var10 = var0.method22625();
+      ItemCameraTransforms var10 = var0.method22625();
       Class6391 var11 = var0.method22626();
       return new Class7206(var4, var6, var13, var14, true, var15, var10, var11);
    }

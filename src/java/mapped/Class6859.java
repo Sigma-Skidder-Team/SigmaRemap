@@ -6,6 +6,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonParser;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.texture.NativeImage;
 import net.minecraft.util.ResourceLocation;
 import net.optifine.Config;
 
@@ -49,7 +50,7 @@ public class Class6859 {
                               var13 = "items/" + var10 + "/users/" + this.field29782 + ".png";
                            }
 
-                           Class1806 var14 = this.method20905(var13);
+                           NativeImage var14 = this.method20905(var13);
                            if (var14 == null) {
                               continue;
                            }
@@ -72,12 +73,12 @@ public class Class6859 {
       }
    }
 
-   private Class1806 method20905(String var1) {
+   private NativeImage method20905(String var1) {
       String var4 = Class8819.method31850() + "/" + var1;
 
       try {
          byte[] var5 = Class7615.method24949(var4, Minecraft.getInstance().getProxy());
-         return Class1806.method7879(new ByteArrayInputStream(var5));
+         return NativeImage.method7879(new ByteArrayInputStream(var5));
       } catch (IOException var6) {
          Config.method26811("Error loading item texture " + var1 + ": " + var6.getClass().getName() + ": " + var6.getMessage());
          return null;

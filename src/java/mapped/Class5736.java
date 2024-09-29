@@ -4,6 +4,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.ItemRenderer;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.ItemFrameEntity;
 import net.minecraft.item.ItemStack;
@@ -12,6 +13,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
 import net.optifine.Config;
+import net.optifine.reflect.ReflectorForge;
 import net.optifine.shaders.Shaders;
 
 public class Class5736 extends EntityRenderer<ItemFrameEntity> {
@@ -53,7 +55,7 @@ public class Class5736 extends EntityRenderer<ItemFrameEntity> {
                1.0F,
                1.0F,
                var6,
-               Class213.field798
+               OverlayTexture.NO_OVERLAY
             );
          var4.pop();
       }
@@ -73,14 +75,14 @@ public class Class5736 extends EntityRenderer<ItemFrameEntity> {
             if (!var20) {
                var4.method35292(0.5F, 0.5F, 0.5F);
                if (this.method17917(var1)) {
-                  this.field25156.method789(var19, Class2327.field15932, var6, Class213.field798, var4, var5);
+                  this.field25156.renderItem(var19, ItemCameraTransformsTransformType.FIXED, var6, OverlayTexture.NO_OVERLAY, var4, var5);
                }
             } else {
                var4.rotate(Vector3f.ZP.rotationDegrees(180.0F));
                float var17 = 0.0078125F;
                var4.method35292(0.0078125F, 0.0078125F, 0.0078125F);
                var4.translate(-64.0, -64.0, 0.0);
-               Class7529 var18 = Class9561.method37048(var19, var1.world);
+               Class7529 var18 = ReflectorForge.method37048(var19, var1.world);
                var4.translate(0.0, 0.0, -1.0);
                if (var18 != null) {
                   this.field25155.gameRenderer.method756().method593(var4, var5, var18, true, var6);

@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.util;
 
 import java.io.File;
 import java.text.DateFormat;
@@ -9,6 +9,10 @@ import java.util.function.Consumer;
 import com.mojang.blaze3d.platform.GLX;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
+import net.minecraft.client.renderer.texture.NativeImage;
+import mapped.Framebuffer;
+import mapped.MainWindow;
+import mapped.Reflector;
 import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;
@@ -23,15 +27,15 @@ import net.optifine.Config;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Class8683 {
+public class ScreenShotHelper {
    private static final Logger field39161 = LogManager.getLogger();
    private static final DateFormat field39162 = new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss");
 
-   public static void method31251(File var0, int var1, int var2, Framebuffer var3, Consumer<ITextComponent> var4) {
-      method31252(var0, (String)null, var1, var2, var3, var4);
+   public static void saveScreenshot(File var0, int var1, int var2, Framebuffer var3, Consumer<ITextComponent> var4) {
+      saveScreenshot(var0, (String)null, var1, var2, var3, var4);
    }
 
-   public static void method31252(File var0, String var1, int var2, int var3, Framebuffer var4, Consumer<ITextComponent> var5) {
+   public static void saveScreenshot(File var0, String var1, int var2, int var3, Framebuffer var4, Consumer<ITextComponent> var5) {
       if (RenderSystem.isOnRenderThread()) {
          method31253(var0, var1, var2, var3, var4, var5);
       } else {
@@ -48,8 +52,8 @@ public class Class8683 {
       int var13 = var10.guiScale;
       int var14 = var9.calcGuiScale(var8.gameSettings.guiScale, var8.gameSettings.forceUnicodeFont);
       int var15 = Config.method26975();
-      boolean var16 = GLX.isUsingFBOs() && var15 > 1;
-      if (var16) {
+      boolean flag = GLX.isUsingFBOs() && var15 > 1;
+      if (flag) {
          var10.guiScale = var14 * var15;
          var9.method8052(var11 * var15, var12 * var15);
          GlStateManager.method23832();
@@ -59,8 +63,8 @@ public class Class8683 {
          var8.gameRenderer.updateCameraAndRender(var8.getRenderPartialTicks(), System.nanoTime(), true);
       }
 
-      Class1806 var17 = method31254(var2, var3, var4);
-      if (var16) {
+      NativeImage var17 = createScreenshot(var2, var3, var4);
+      if (flag) {
          var8.getFramebuffer().unbindFramebuffer();
          GlStateManager.method23833();
          Config.method26928().guiScale = var13;
@@ -73,7 +77,7 @@ public class Class8683 {
       if (var1 != null) {
          var19 = new File(var18, var1);
       } else {
-         var19 = method31255(var18);
+         var19 = getTimestampedPNGFileForDirectory(var18);
       }
 
       Object var20 = null;
@@ -113,17 +117,27 @@ public class Class8683 {
          );
    }
 
-   public static Class1806 method31254(int var0, int var1, Framebuffer var2) {
-      var0 = var2.framebufferTextureWidth;
-      var1 = var2.framebufferTextureHeight;
-      Class1806 var5 = new Class1806(var0, var1, false);
-      RenderSystem.method27865(var2.getFramebufferTexture());
-      var5.method7897(0, true);
-      var5.method7906();
-      return var5;
+   public static NativeImage createScreenshot(int width, int height, Framebuffer framebufferIn) {
+      if (!GLX.isUsingFBOs())
+      {
+         NativeImage nativeimage1 = new NativeImage(width, height, false);
+         nativeimage1.downloadFromFramebuffer(true);
+         nativeimage1.flip();
+         return nativeimage1;
+      }
+      else
+      {
+         width = framebufferIn.framebufferTextureWidth;
+         height = framebufferIn.framebufferTextureHeight;
+         NativeImage nativeimage = new NativeImage(width, height, false);
+         RenderSystem.bindTexture(framebufferIn.getFramebufferTexture());
+         nativeimage.downloadFromTexture(0, true);
+         nativeimage.flip();
+         return nativeimage;
+      }
    }
 
-   private static File method31255(File var0) {
+   private static File getTimestampedPNGFileForDirectory(File var0) {
       String var3 = field39162.format(new Date());
       int var4 = 1;
 

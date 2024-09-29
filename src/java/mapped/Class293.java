@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.blaze3d.systems.RenderSystem;
+import net.minecraft.client.renderer.texture.NativeImage;
 import net.minecraft.client.renderer.texture.Texture;
 import net.minecraft.client.renderer.texture.TextureUtil;
 import net.minecraft.util.ResourceLocation;
@@ -38,7 +39,7 @@ public class Class293 extends Texture {
          var7 = var5.method37496();
       }
 
-      Class1806 var8 = var4.method7877();
+      NativeImage var8 = var4.method7877();
       if (RenderSystem.isOnRenderThreadOrInit()) {
          this.method1145(var8, var6, var7);
       } else {
@@ -46,7 +47,7 @@ public class Class293 extends Texture {
       }
    }
 
-   private void method1145(Class1806 var1, boolean var2, boolean var3) {
+   private void method1145(NativeImage var1, boolean var2, boolean var3) {
       TextureUtil.method30370(this.getGlTextureId(), 0, var1.method7886(), var1.method7887());
       var1.method7895(0, 0, 0, 0, 0, var1.method7886(), var1.method7887(), var2, var3, false, true);
       if (Config.isShaders()) {

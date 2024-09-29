@@ -31,6 +31,7 @@ import net.minecraft.client.gui.screen.MultiplayerScreen;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.multiplayer.PlayerController;
 import net.minecraft.client.multiplayer.ServerData;
+import net.minecraft.client.renderer.GPUWarning;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.resources.DownloadingPackFinder;
@@ -920,6 +921,8 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       framebuffer.resize(this.mainWindow.getFramebufferWidth(), this.mainWindow.getFramebufferHeight(), IS_RUNNING_ON_MAC);
       this.gameRenderer.updateShaderGroupSize(this.mainWindow.getFramebufferWidth(), this.mainWindow.getFramebufferHeight());
       this.mouseHelper.setIgnoreFirstMove();
+      framebuffer.unbindFramebuffer();
+      //framebuffer.bindFramebuffer(IS_RUNNING_ON_MAC);
    }
 
    @Override
