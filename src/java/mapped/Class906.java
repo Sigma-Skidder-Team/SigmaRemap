@@ -51,7 +51,7 @@ public class Class906 extends Entity {
       super.tick();
       if (this.field5171 == 2) {
          Difficulty var3 = this.world.method6997();
-         if (var3 == Difficulty.field14353 || var3 == Difficulty.field14354) {
+         if (var3 == Difficulty.NORMAL || var3 == Difficulty.HARD) {
             this.method3551(4);
          }
 

@@ -6,6 +6,8 @@ import com.mojang.datafixers.util.Either;
 import it.unimi.dsi.fastutil.longs.Long2ObjectLinkedOpenHashMap;
 import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import it.unimi.dsi.fastutil.longs.LongSet;
+import net.minecraft.util.math.ChunkPos;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;

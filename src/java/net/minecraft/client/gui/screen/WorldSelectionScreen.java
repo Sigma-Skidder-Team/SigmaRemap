@@ -39,7 +39,7 @@ public class WorldSelectionScreen extends Screen {
    @Override
    public void init() {
       this.mc.keyboardListener.enableRepeatEvents(true);
-      this.field7119 = new TextFieldWidget(this.fontRenderer, this.width / 2 - 100, 22, 200, 20, this.field7119, new TranslationTextComponent("selectWorld.search"));
+      this.field7119 = new TextFieldWidget(this.font, this.width / 2 - 100, 22, 200, 20, this.field7119, new TranslationTextComponent("selectWorld.search"));
       this.field7119.method5631(var1 -> this.field7120.method6066(() -> var1, false));
       this.field7120 = new Class1276(
          this, this.mc, this.width, this.height, 48, this.height - 64, 36, () -> this.field7119.getText(), this.field7120
@@ -126,7 +126,7 @@ public class WorldSelectionScreen extends Screen {
       this.field7114 = null;
       this.field7120.render(var1, var2, var3, var4);
       this.field7119.render(var1, var2, var3, var4);
-      drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2, 8, 16777215);
+      drawCenteredString(var1, this.font, this.title, this.width / 2, 8, 16777215);
       super.render(var1, var2, var3, var4);
       if (this.field7114 != null) {
          this.method2461(var1, this.field7114, var2, var3);

@@ -90,7 +90,7 @@ public class ConnectingScreen extends Screen {
          NarratorChatListener.INSTANCE.say(new TranslationTextComponent("narrator.joining").getString());
       }
 
-      drawCenteredString(var1, this.fontRenderer, this.field6939, this.width / 2, this.height / 2 - 50, 16777215);
+      drawCenteredString(var1, this.font, this.field6939, this.width / 2, this.height / 2 - 50, 16777215);
       super.render(var1, var2, var3, var4);
    }
 

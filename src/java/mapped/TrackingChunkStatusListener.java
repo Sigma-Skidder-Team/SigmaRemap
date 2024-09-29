@@ -1,9 +1,12 @@
 package mapped;
 
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
+import net.minecraft.util.math.ChunkPos;
+import net.minecraft.world.chunk.listener.IChunkStatusListener;
+
 import javax.annotation.Nullable;
 
-public class TrackingChunkStatusListener implements Class7243 {
+public class TrackingChunkStatusListener implements IChunkStatusListener {
    private static String[] field31101;
    private final Class7244 field31102;
    private final Long2ObjectOpenHashMap<ChunkStatus> field31103;
@@ -47,9 +50,9 @@ public class TrackingChunkStatusListener implements Class7243 {
    }
 
    @Override
-   public void method22738() {
+   public void stop() {
       this.field31108 = false;
-      this.field31102.method22738();
+      this.field31102.stop();
    }
 
    public int method22743() {

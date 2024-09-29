@@ -70,9 +70,9 @@ public class CUpdateStructureBlockPacket implements IPacket<IServerPlayNetHandle
       this.mode = buf.readEnumValue(StructureMode.class);
       this.name = buf.readString(32767);
       int i = 48;
-      this.field_210395_e = new BlockPos(MathHelper.method37775(buf.readByte(), -48, 48), MathHelper.method37775(buf.readByte(), -48, 48), MathHelper.method37775(buf.readByte(), -48, 48));
+      this.field_210395_e = new BlockPos(MathHelper.clamp(buf.readByte(), -48, 48), MathHelper.clamp(buf.readByte(), -48, 48), MathHelper.clamp(buf.readByte(), -48, 48));
       int j = 48;
-      this.size = new BlockPos(MathHelper.method37775(buf.readByte(), 0, 48), MathHelper.method37775(buf.readByte(), 0, 48), MathHelper.method37775(buf.readByte(), 0, 48));
+      this.size = new BlockPos(MathHelper.clamp(buf.readByte(), 0, 48), MathHelper.clamp(buf.readByte(), 0, 48), MathHelper.clamp(buf.readByte(), 0, 48));
       this.mirror = buf.readEnumValue(Mirror.class);
       this.rotation = buf.readEnumValue(Rotation.class);
       this.field_210399_i = buf.readString(12);

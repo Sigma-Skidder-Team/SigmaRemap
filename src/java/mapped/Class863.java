@@ -19,7 +19,7 @@ public class Class863 extends ContainerScreen<Class5819> {
    @Override
    public void init() {
       super.init();
-      this.field4723 = (this.xSize - this.fontRenderer.method38821(this.title)) / 2;
+      this.field4723 = (this.xSize - this.font.method38821(this.title)) / 2;
    }
 
    @Override
@@ -37,7 +37,7 @@ public class Class863 extends ContainerScreen<Class5819> {
       int var8 = (this.height - this.ySize) / 2;
       this.blit(var1, var7, var8, 0, 0, this.xSize, this.ySize);
       int var9 = this.field4727.method18174();
-      int var10 = MathHelper.method37775((18 * var9 + 20 - 1) / 20, 0, 18);
+      int var10 = MathHelper.clamp((18 * var9 + 20 - 1) / 20, 0, 18);
       if (var10 > 0) {
          this.blit(var1, var7 + 60, var8 + 44, 176, 29, var10, 4);
       }

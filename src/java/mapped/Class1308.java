@@ -35,7 +35,7 @@ public class Class1308 extends Screen {
       );
       GameSettings var4 = this.mc.gameSettings;
       this.field6914 = Class5991.method18586(
-         this.fontRenderer,
+         this.font,
          new TranslationTextComponent(
             "demo.help.movementShort", var4.keyBindForward.func_238171_j_(), var4.keyBindLeft.func_238171_j_(), var4.keyBindBack.func_238171_j_(), var4.keyBindRight.func_238171_j_()
          ),
@@ -43,7 +43,7 @@ public class Class1308 extends Screen {
          new TranslationTextComponent("demo.help.jump", var4.keyBindJump.func_238171_j_()),
          new TranslationTextComponent("demo.help.inventory", var4.keyBindInventory.func_238171_j_())
       );
-      this.field6915 = Class5991.method18584(this.fontRenderer, new TranslationTextComponent("demo.help.fullWrapped"), 218);
+      this.field6915 = Class5991.method18584(this.font, new TranslationTextComponent("demo.help.fullWrapped"), 218);
    }
 
    @Override
@@ -61,7 +61,7 @@ public class Class1308 extends Screen {
       this.renderBackground(var1);
       int var7 = (this.width - 248) / 2 + 10;
       int var8 = (this.height - 166) / 2 + 8;
-      this.fontRenderer.func_243248_b(var1, this.title, (float)var7, (float)var8, 2039583);
+      this.font.func_243248_b(var1, this.title, (float)var7, (float)var8, 2039583);
       var8 = this.field6914.method18591(var1, var7, var8 + 12, 12, 5197647);
       this.field6915.method18591(var1, var7, var8 + 20, 9, 2039583);
       super.render(var1, var2, var3, var4);

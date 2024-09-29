@@ -59,7 +59,7 @@ public class Class3372 extends Class3241 {
             var5 = 15 - var5;
          }
 
-         var5 = MathHelper.method37775(var5, 0, 15);
+         var5 = MathHelper.clamp(var5, 0, 15);
          if (var0.<Integer>get(field18963) != var5) {
             var1.setBlockState(var2, var0.with(field18963, Integer.valueOf(var5)), 3);
          }

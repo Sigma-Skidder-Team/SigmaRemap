@@ -49,9 +49,9 @@ public class Class808 extends RealmsScreen {
    @Override
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.renderBackground(var1);
-      method5690(var1, this.fontRenderer, this.field4326.field13982, this.width / 2, method1929(2), this.field4326.field13981);
-      drawCenteredString(var1, this.fontRenderer, this.field4327, this.width / 2, method1929(4), 16777215);
-      drawCenteredString(var1, this.fontRenderer, this.field4328, this.width / 2, method1929(6), 16777215);
+      drawCenteredString(var1, this.font, this.field4326.field13982, this.width / 2, method1929(2), this.field4326.field13981);
+      drawCenteredString(var1, this.font, this.field4327, this.width / 2, method1929(4), 16777215);
+      drawCenteredString(var1, this.font, this.field4328, this.width / 2, method1929(6), 16777215);
       super.render(var1, var2, var3, var4);
    }
 }

@@ -67,7 +67,7 @@ public class DedicatedServer extends MinecraftServer implements Class1646 {
    }
 
    @Override
-   public boolean method1277() throws IOException {
+   public boolean init() throws IOException {
       Class372 var3 = new Class372(this, "Server console handler");
       var3.setDaemon(true);
       var3.setUncaughtExceptionHandler(new Class6030(field1208));
@@ -82,15 +82,15 @@ public class DedicatedServer extends MinecraftServer implements Class1646 {
       if (this.method1334()) {
          this.method1294("127.0.0.1");
       } else {
-         this.method1351(var4.field43785);
+         this.setOnlineMode(var4.field43785);
          this.method1353(var4.field43786);
          this.method1294(var4.field43787);
       }
 
-      this.method1358(var4.field43790);
-      this.method1360(var4.field43791);
+      this.setAllowPvp(var4.field43790);
+      this.setAllowFlight(var4.field43791);
       this.method1346(var4.field43792, this.method6497());
-      this.method1363(var4.field43793);
+      this.setMOTD(var4.field43793);
       this.method1379(var4.field43794);
       super.method1383((Integer)var4.field43831.get());
       this.method1416(var4.field43795);
@@ -105,7 +105,7 @@ public class DedicatedServer extends MinecraftServer implements Class1646 {
          this.method1331(var4.field43799);
       }
 
-      this.method1335();
+      this.func_244801_P();
       field1208.info("Starting Minecraft server on {}:{}", this.method1293().isEmpty() ? "*" : this.method1293(), this.method1330());
 
       try {
@@ -140,7 +140,7 @@ public class DedicatedServer extends MinecraftServer implements Class1646 {
          SkullTileEntity.setSessionService(this.method1384());
          PlayerProfileCache.setOnlineMode(this.method1350());
          field1208.info("Preparing level \"{}\"", this.method6511());
-         this.method1279();
+         this.func_240800_l__();
          long var9 = Util.nanoTime() - var7;
          String var11 = String.format(Locale.ROOT, "%.3fs", (double)var9 / 1.0E9);
          field1208.info("Done ({})! For help, type \"help\"", var11);
@@ -226,8 +226,8 @@ public class DedicatedServer extends MinecraftServer implements Class1646 {
    }
 
    @Override
-   public void method1280() {
-      this.method1336(this.method6498().field43796, true);
+   public void func_230543_p_() {
+      this.setDifficultyForAllWorlds(this.method6498().field43796, true);
    }
 
    @Override
@@ -238,14 +238,14 @@ public class DedicatedServer extends MinecraftServer implements Class1646 {
    @Override
    public CrashReport method1326(CrashReport var1) {
       var1 = super.method1326(var1);
-      var1.getCategory().addDetail("Is Modded", () -> this.method1327().orElse("Unknown (can't tell)"));
+      var1.getCategory().addDetail("Is Modded", () -> this.func_230045_q_().orElse("Unknown (can't tell)"));
       var1.getCategory().addDetail("Type", () -> "Dedicated Server (map_server.txt)");
       return var1;
    }
 
    @Override
-   public Optional<String> method1327() {
-      String var3 = this.method1325();
+   public Optional<String> func_230045_q_() {
+      String var3 = this.getServerModName();
       return "vanilla".equals(var3) ? Optional.<String>empty() : Optional.<String>of("Definitely; Server brand changed to '" + var3 + "'");
    }
 

@@ -23,6 +23,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.TextFormatting;
@@ -632,7 +633,7 @@ public class DebugOverlayGui extends AbstractGui {
          }
 
          int var32 = this.mc.getMainWindow().getScaledHeight();
-         method5686(var1, var3, var32 - 60, var3 + var14, var32, -1873784752);
+         fill(var1, var3, var32 - 60, var3 + var14, var32, -1873784752);
          BufferBuilder var33 = Tessellator.getInstance().getBuffer();
          RenderSystem.enableBlend();
          RenderSystem.disableTexture();
@@ -642,7 +643,7 @@ public class DebugOverlayGui extends AbstractGui {
          for (Matrix4f var22 = Class6979.method21542().method21548(); var15 != var10; var15 = var2.method38596(var15 + 1)) {
             int var23 = var2.method38593(var11[var15], !var5 ? 60 : 30, !var5 ? 20 : 60);
             int var24 = !var5 ? 60 : 100;
-            int var25 = this.method5891(MathHelper.method37775(var23, 0, var24), 0, var24 / 2, var24);
+            int var25 = this.method5891(MathHelper.clamp(var23, 0, var24), 0, var24 / 2, var24);
             int var26 = var25 >> 24 & 0xFF;
             int var27 = var25 >> 16 & 0xFF;
             int var28 = var25 >> 8 & 0xFF;
@@ -659,14 +660,14 @@ public class DebugOverlayGui extends AbstractGui {
          RenderSystem.enableTexture();
          RenderSystem.disableBlend();
          if (!var5) {
-            method5686(var1, var3 + 1, var32 - 60 + 1, var3 + 14, var32 - 60 + 10, -1873784752);
+            fill(var1, var3 + 1, var32 - 60 + 1, var3 + 14, var32 - 60 + 10, -1873784752);
             this.fontRenderer.method38801(var1, "20 TPS", (float)(var3 + 2), (float)(var32 - 60 + 2), 14737632);
             this.method5684(var1, var3, var3 + var14 - 1, var32 - 60, -1);
          } else {
-            method5686(var1, var3 + 1, var32 - 30 + 1, var3 + 14, var32 - 30 + 10, -1873784752);
+            fill(var1, var3 + 1, var32 - 30 + 1, var3 + 14, var32 - 30 + 10, -1873784752);
             this.fontRenderer.method38801(var1, "60 FPS", (float)(var3 + 2), (float)(var32 - 30 + 2), 14737632);
             this.method5684(var1, var3, var3 + var14 - 1, var32 - 30, -1);
-            method5686(var1, var3 + 1, var32 - 60 + 1, var3 + 14, var32 - 60 + 10, -1873784752);
+            fill(var1, var3 + 1, var32 - 60 + 1, var3 + 14, var32 - 60 + 10, -1873784752);
             this.fontRenderer.method38801(var1, "30 FPS", (float)(var3 + 2), (float)(var32 - 60 + 2), 14737632);
             this.method5684(var1, var3, var3 + var14 - 1, var32 - 60, -1);
          }
@@ -703,10 +704,10 @@ public class DebugOverlayGui extends AbstractGui {
       int var11 = var2 >> 16 & 0xFF;
       int var12 = var2 >> 8 & 0xFF;
       int var13 = var2 & 0xFF;
-      int var14 = MathHelper.method37775((int) MathHelper.lerp(var3, (float)var6, (float)var10), 0, 255);
-      int var15 = MathHelper.method37775((int) MathHelper.lerp(var3, (float)var7, (float)var11), 0, 255);
-      int var16 = MathHelper.method37775((int) MathHelper.lerp(var3, (float)var8, (float)var12), 0, 255);
-      int var17 = MathHelper.method37775((int) MathHelper.lerp(var3, (float)var9, (float)var13), 0, 255);
+      int var14 = MathHelper.clamp((int) MathHelper.lerp(var3, (float)var6, (float)var10), 0, 255);
+      int var15 = MathHelper.clamp((int) MathHelper.lerp(var3, (float)var7, (float)var11), 0, 255);
+      int var16 = MathHelper.clamp((int) MathHelper.lerp(var3, (float)var8, (float)var12), 0, 255);
+      int var17 = MathHelper.clamp((int) MathHelper.lerp(var3, (float)var9, (float)var13), 0, 255);
       return var14 << 24 | var15 << 16 | var16 << 8 | var17;
    }
 

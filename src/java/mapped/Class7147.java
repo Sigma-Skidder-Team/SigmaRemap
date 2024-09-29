@@ -22,7 +22,7 @@ public final class Class7147 extends Effect {
       if (var1 instanceof ServerPlayerEntity && !var1.isSpectator()) {
          ServerPlayerEntity var5 = (ServerPlayerEntity)var1;
          ServerWorld var6 = var5.getServerWorld();
-         if (var6.method6997() == Difficulty.field14351) {
+         if (var6.method6997() == Difficulty.PEACEFUL) {
             return;
          }
 

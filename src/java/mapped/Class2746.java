@@ -19,7 +19,7 @@ public class Class2746 extends Class2595 {
    @Override
    public boolean method10803() {
       LivingEntity var3 = this.field17279.method4232();
-      return var3 != null && var3.isAlive() ? this.field17279.world.method6997() != Difficulty.field14351 : false;
+      return var3 != null && var3.isAlive() ? this.field17279.world.method6997() != Difficulty.PEACEFUL : false;
    }
 
    @Override
@@ -35,7 +35,7 @@ public class Class2746 extends Class2595 {
 
    @Override
    public void method10805() {
-      if (this.field17279.world.method6997() != Difficulty.field14351) {
+      if (this.field17279.world.method6997() != Difficulty.PEACEFUL) {
          this.field17278--;
          LivingEntity var3 = this.field17279.method4232();
          this.field17279.method4227().method28040(var3, 180.0F, 180.0F);

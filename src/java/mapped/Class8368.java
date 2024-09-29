@@ -44,7 +44,7 @@ public class Class8368 {
       }
 
       if (var10) {
-         AbstractGui.method5686(
+         AbstractGui.fill(
             var1,
             this.field35920.method36780(),
             this.field35920.method36781() - 1,
@@ -52,7 +52,7 @@ public class Class8368 {
             this.field35920.method36781(),
             Class6850.method20849(this.field35928)
          );
-         AbstractGui.method5686(
+         AbstractGui.fill(
             var1,
             this.field35920.method36780(),
             this.field35920.method36781() + this.field35920.method36783(),
@@ -63,7 +63,7 @@ public class Class8368 {
          if (var8) {
             for (int var12 = 0; var12 < this.field35920.method36782(); var12++) {
                if (var12 % 2 == 0) {
-                  AbstractGui.method5686(
+                  AbstractGui.fill(
                      var1,
                      this.field35920.method36780() + var12,
                      this.field35920.method36781() - 1,
@@ -78,7 +78,7 @@ public class Class8368 {
          if (var9) {
             for (int var15 = 0; var15 < this.field35920.method36782(); var15++) {
                if (var15 % 2 == 0) {
-                  AbstractGui.method5686(
+                  AbstractGui.fill(
                      var1,
                      this.field35920.method36780() + var15,
                      this.field35920.method36781() + this.field35920.method36783(),
@@ -95,7 +95,7 @@ public class Class8368 {
 
       for (int var13 = 0; var13 < var6; var13++) {
          Suggestion var14 = this.field35922.get(var13 + this.field35923);
-         AbstractGui.method5686(
+         AbstractGui.fill(
             var1,
             this.field35920.method36780(),
             this.field35920.method36781() + 12 * var13,
@@ -160,7 +160,7 @@ public class Class8368 {
       if (!this.field35920.method36784(var5, var6)) {
          return false;
       } else {
-         this.field35923 = MathHelper.method37775(
+         this.field35923 = MathHelper.clamp(
             (int)((double)this.field35923 - var1), 0, Math.max(this.field35922.size() - Class6850.method20847(this.field35928), 0)
          );
          return true;
@@ -203,14 +203,14 @@ public class Class8368 {
       int var5 = this.field35923 + Class6850.method20847(this.field35928) - 1;
       if (this.field35924 >= var4) {
          if (this.field35924 > var5) {
-            this.field35923 = MathHelper.method37775(
+            this.field35923 = MathHelper.clamp(
                this.field35924 + Class6850.method20853(this.field35928) - Class6850.method20847(this.field35928),
                0,
                Math.max(this.field35922.size() - Class6850.method20847(this.field35928), 0)
             );
          }
       } else {
-         this.field35923 = MathHelper.method37775(this.field35924, 0, Math.max(this.field35922.size() - Class6850.method20847(this.field35928), 0));
+         this.field35923 = MathHelper.clamp(this.field35924, 0, Math.max(this.field35922.size() - Class6850.method20847(this.field35928), 0));
       }
    }
 

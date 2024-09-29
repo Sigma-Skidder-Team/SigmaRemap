@@ -57,18 +57,18 @@ public class IntegratedServer extends MinecraftServer {
    }
 
    @Override
-   public boolean method1277() {
+   public boolean init() {
       field1208.info("Starting integrated minecraft server version " + SharedConstants.getVersion().getName());
-      this.method1351(true);
-      this.method1358(true);
-      this.method1360(true);
-      this.method1335();
-      if (Reflector.field43001.exists() && !Reflector.method35056(Reflector.field43001, this)) {
+      this.setOnlineMode(true);
+      this.setAllowPvp(true);
+      this.setAllowFlight(true);
+      this.func_244801_P();
+      if (Reflector.ServerLifecycleHooks_handleServerAboutToStart.exists() && !Reflector.callBoolean(Reflector.ServerLifecycleHooks_handleServerAboutToStart, this)) {
          return false;
       } else {
-         this.method1279();
-         this.method1363(this.method1332() + " - " + this.method1436().method20054());
-         return !Reflector.field43002.exists() ? true : Reflector.method35056(Reflector.field43002, this);
+         this.func_240800_l__();
+         this.setMOTD(this.getServerOwner() + " - " + this.func_240793_aU_().getWorldName());
+         return !Reflector.ServerLifecycleHooks_handleServerStarting.exists() ? true : Reflector.callBoolean(Reflector.ServerLifecycleHooks_handleServerStarting, this);
       }
    }
 
@@ -136,15 +136,15 @@ public class IntegratedServer extends MinecraftServer {
       var1 = super.method1326(var1);
       var1.getCategory().addDetail("Type", "Integrated Server (map_client.txt)");
       var1.getCategory()
-         .addDetail("Is Modded", () -> this.method1327().orElse("Probably not. Jar signature remains and both client + server brands are untouched."));
+         .addDetail("Is Modded", () -> this.func_230045_q_().orElse("Probably not. Jar signature remains and both client + server brands are untouched."));
       return var1;
    }
 
    @Override
-   public Optional<String> method1327() {
+   public Optional<String> func_230045_q_() {
       String var3 = ClientBrandRetriever.getClientModName();
       if (var3.equals("vanilla")) {
-         var3 = this.method1325();
+         var3 = this.getServerModName();
          if ("vanilla".equals(var3)) {
             return Minecraft.class.getSigners() != null ? Optional.<String>empty() : Optional.<String>of("Very likely; Jar signature invalidated");
          } else {
@@ -174,7 +174,7 @@ public class IntegratedServer extends MinecraftServer {
          int var6 = this.method1418(this.field8920.player.getGameProfile());
          this.field8920.player.method5399(var6);
 
-         for (ServerPlayerEntity var8 : this.getPlayerList().method19488()) {
+         for (ServerPlayerEntity var8 : this.getPlayerList().getPlayers()) {
             this.getCommandManager().method18837(var8);
          }
 
@@ -197,7 +197,7 @@ public class IntegratedServer extends MinecraftServer {
    public void initiateShutdown(boolean var1) {
       if (!Reflector.field42967.method20245() || this.method1295()) {
          this.method1635(() -> {
-            for (ServerPlayerEntity var4 : Lists.newArrayList(this.getPlayerList().method19488())) {
+            for (ServerPlayerEntity var4 : Lists.newArrayList(this.getPlayerList().getPlayers())) {
                if (!var4.getUniqueID().equals(this.field8923)) {
                   this.getPlayerList().method19450(var4);
                }
@@ -249,7 +249,7 @@ public class IntegratedServer extends MinecraftServer {
 
    @Override
    public boolean method1421(GameProfile var1) {
-      return var1.getName().equalsIgnoreCase(this.method1332());
+      return var1.getName().equalsIgnoreCase(this.getServerOwner());
    }
 
    @Override

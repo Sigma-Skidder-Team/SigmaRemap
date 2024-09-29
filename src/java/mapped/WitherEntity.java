@@ -219,7 +219,7 @@ public class WitherEntity extends Class1009 implements Class1080, Class1022 {
          for (int var3 = 1; var3 < 3; var3++) {
             if (this.ticksExisted >= this.field5932[var3 - 1]) {
                this.field5932[var3 - 1] = this.ticksExisted + 10 + this.rand.nextInt(10);
-               if (this.world.method6997() == Difficulty.field14353 || this.world.method6997() == Difficulty.field14354) {
+               if (this.world.method6997() == Difficulty.NORMAL || this.world.method6997() == Difficulty.HARD) {
                   int var4 = var3 - 1;
                   int var5 = this.field5933[var3 - 1];
                   this.field5933[var4] = this.field5933[var3 - 1] + 1;
@@ -461,7 +461,7 @@ public class WitherEntity extends Class1009 implements Class1080, Class1022 {
 
    @Override
    public void method3447() {
-      if (this.world.method6997() == Difficulty.field14351 && this.method4256()) {
+      if (this.world.method6997() == Difficulty.PEACEFUL && this.method4256()) {
          this.remove();
       } else {
          this.field4973 = 0;

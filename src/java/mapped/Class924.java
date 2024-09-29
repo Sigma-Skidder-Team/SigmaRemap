@@ -210,7 +210,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
                this.field5250 = 0;
             }
          } else if (!this.method3644() && this.field5250 > 0) {
-            this.field5250 = MathHelper.method37775(this.field5250 - 2, 0, this.field5251);
+            this.field5250 = MathHelper.clamp(this.field5250 - 2, 0, this.field5251);
          }
 
          if (var3 != this.method3644()) {
@@ -429,7 +429,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    }
 
    private static void method3658(World var0, Vector3d var1, int var2, float var3) {
-      int var6 = MathHelper.method37767((float)var2 * var3);
+      int var6 = MathHelper.floor((float)var2 * var3);
       float var7 = MathHelper.method37807((float)var2 * var3);
       if (var7 != 0.0F && Math.random() < (double)var7) {
          var6++;

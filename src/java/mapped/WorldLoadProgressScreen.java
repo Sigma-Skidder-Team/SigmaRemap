@@ -46,7 +46,7 @@ public class WorldLoadProgressScreen extends Screen {
    @Override
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.renderBackground(var1);
-      String var7 = MathHelper.method37775(this.field7026.method22745(), 0, 100) + "%";
+      String var7 = MathHelper.clamp(this.field7026.method22745(), 0, 100) + "%";
       long var8 = Util.milliTime();
       if (var8 - this.field7027 > 2000L) {
          this.field7027 = var8;
@@ -57,7 +57,7 @@ public class WorldLoadProgressScreen extends Screen {
       int var11 = this.height / 2;
       byte var12 = 30;
       method6319(var1, this.field7026, var10, var11 + 30, 2, 0);
-      method5690(var1, this.fontRenderer, var7, var10, var11 - 4 - 30, 16777215);
+      drawCenteredString(var1, this.font, var7, var10, var11 - 4 - 30, 16777215);
    }
 
    public static void method6319(MatrixStack var0, TrackingChunkStatusListener var1, int var2, int var3, int var4, int var5) {
@@ -70,10 +70,10 @@ public class WorldLoadProgressScreen extends Screen {
       int var14 = var3 - var12 / 2;
       int var15 = var10 / 2 + 1;
       if (var5 != 0) {
-         method5686(var0, var2 - var15, var3 - var15, var2 - var15 + 1, var3 + var15, -16772609);
-         method5686(var0, var2 + var15 - 1, var3 - var15, var2 + var15, var3 + var15, -16772609);
-         method5686(var0, var2 - var15, var3 - var15, var2 + var15, var3 - var15 + 1, -16772609);
-         method5686(var0, var2 - var15, var3 + var15 - 1, var2 + var15, var3 + var15, -16772609);
+         fill(var0, var2 - var15, var3 - var15, var2 - var15 + 1, var3 + var15, -16772609);
+         fill(var0, var2 + var15 - 1, var3 - var15, var2 + var15, var3 + var15, -16772609);
+         fill(var0, var2 - var15, var3 - var15, var2 + var15, var3 - var15 + 1, -16772609);
+         fill(var0, var2 - var15, var3 + var15 - 1, var2 + var15, var3 + var15, -16772609);
       }
 
       for (int var17 = 0; var17 < var11; var17++) {
@@ -81,7 +81,7 @@ public class WorldLoadProgressScreen extends Screen {
             ChunkStatus var19 = var1.method22746(var17, var18);
             int var20 = var13 + var17 * var8;
             int var21 = var14 + var18 * var8;
-            method5686(var0, var20, var21, var20 + var4, var21 + var4, field7028.getInt(var19) | 0xFF000000);
+            fill(var0, var20, var21, var20 + var4, var21 + var4, field7028.getInt(var19) | 0xFF000000);
          }
       }
    }

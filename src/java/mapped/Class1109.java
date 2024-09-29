@@ -28,7 +28,7 @@ public class Class1109 extends Class1108 {
    }
 
    public static boolean method5335(EntityType<Class1109> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
-      return var1.method6997() != Difficulty.field14351;
+      return var1.method6997() != Difficulty.PEACEFUL;
    }
 
    @Override

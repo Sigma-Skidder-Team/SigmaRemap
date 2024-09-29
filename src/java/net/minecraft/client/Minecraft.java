@@ -1620,7 +1620,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
             CrashReport var13 = CrashReport.makeCrashReport(var19, "Starting integrated server");
             CrashReportCategory var14 = var13.makeCategory("Starting integrated server");
             var14.addDetail("Level ID", var1);
-            var14.addDetail("Level Name", var9.method20054());
+            var14.addDetail("Level Name", var9.getWorldName());
             throw new ReportedException(var13);
          }
 

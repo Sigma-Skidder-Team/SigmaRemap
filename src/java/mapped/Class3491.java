@@ -54,7 +54,7 @@ public class Class3491 extends Class3490 {
 
    @Override
    public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
-      if (!var2.isRemote && var2.method6997() != Difficulty.field14351 && var4 instanceof LivingEntity) {
+      if (!var2.isRemote && var2.method6997() != Difficulty.PEACEFUL && var4 instanceof LivingEntity) {
          LivingEntity var7 = (LivingEntity)var4;
          if (!var7.isInvulnerableTo(DamageSource.field39007)) {
             var7.addPotionEffect(new EffectInstance(Effects.WITHER, 40));

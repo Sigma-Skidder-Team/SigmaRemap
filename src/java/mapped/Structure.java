@@ -5,6 +5,7 @@ import com.mojang.serialization.Codec;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.biome.Biome;
@@ -25,17 +26,17 @@ public abstract class Structure<C extends Class4698> {
    public static final BiMap<String, Structure<?>> field_236365_a_ = HashBiMap.create();
    private static final Map<Structure<?>, Class1993> field18056 = com.google.common.collect.Maps.newHashMap();
    private static final Logger field18057 = LogManager.getLogger();
-   public static final Structure<Class4700> field18058 = method11363("Pillager_Outpost", new Class2968(Class4700.field22296), Class1993.field13002);
-   public static final Structure<Class4735> field18059 = method11363("Mineshaft", new Class2972(Class4735.field22425), Class1993.field13001);
-   public static final Structure<Class4712> field18060 = method11363("Mansion", new Class2976(Class4712.field22349), Class1993.field13002);
-   public static final Structure<Class4712> field18061 = method11363("Jungle_Pyramid", new Class2977(Class4712.field22349), Class1993.field13002);
-   public static final Structure<Class4712> field18062 = method11363("Desert_Pyramid", new Class2975(Class4712.field22349), Class1993.field13002);
-   public static final Structure<Class4712> field18063 = method11363("Igloo", new Class2966(Class4712.field22349), Class1993.field13002);
-   public static final Structure<Class4726> field18064 = method11363("Ruined_Portal", new Class2978(Class4726.field22392), Class1993.field13002);
-   public static final Structure<ShipwreckConfig> field18065 = method11363("Shipwreck", new Class2964(ShipwreckConfig.field22431), Class1993.field13002);
-   public static final Class2974 field18066 = method11363("Swamp_Hut", new Class2974(Class4712.field22349), Class1993.field13002);
-   public static final Structure<Class4712> field18067 = method11363("Stronghold", new Class2962(Class4712.field22349), Class1993.field13003);
-   public static final Structure<Class4712> field18068 = method11363("Monument", new Class2971(Class4712.field22349), Class1993.field13002);
+   public static final Structure<Class4700> PILLAGER_OUTPOST = method11363("Pillager_Outpost", new Class2968(Class4700.field22296), Class1993.field13002);
+   public static final Structure<Class4735> MINESHAFT = method11363("Mineshaft", new Class2972(Class4735.field22425), Class1993.field13001);
+   public static final Structure<Class4712> MANSION = method11363("Mansion", new Class2976(Class4712.field22349), Class1993.field13002);
+   public static final Structure<Class4712> JUNGLE_PYRAMID = method11363("Jungle_Pyramid", new Class2977(Class4712.field22349), Class1993.field13002);
+   public static final Structure<Class4712> DESERT_PYRAMID = method11363("Desert_Pyramid", new Class2975(Class4712.field22349), Class1993.field13002);
+   public static final Structure<Class4712> IGLOO = method11363("Igloo", new Class2966(Class4712.field22349), Class1993.field13002);
+   public static final Structure<Class4726> RUINED_PORTAL = method11363("Ruined_Portal", new Class2978(Class4726.field22392), Class1993.field13002);
+   public static final Structure<ShipwreckConfig> SHIPWRECK = method11363("Shipwreck", new Class2964(ShipwreckConfig.field22431), Class1993.field13002);
+   public static final Class2974 SWAMP_HUT = method11363("Swamp_Hut", new Class2974(Class4712.field22349), Class1993.field13002);
+   public static final Structure<Class4712> STRONGHOLD = method11363("Stronghold", new Class2962(Class4712.field22349), Class1993.field13003);
+   public static final Structure<Class4712> MONUMENT = method11363("Monument", new Class2971(Class4712.field22349), Class1993.field13002);
    public static final Structure<Class4711> field18069 = method11363("Ocean_Ruin", new Class2965(Class4711.field22344), Class1993.field13002);
    public static final Structure<Class4712> field18070 = method11363("Fortress", new Class2973(Class4712.field22349), Class1993.field13005);
    public static final Structure<Class4712> field18071 = method11363("EndCity", new Class2960(Class4712.field22349), Class1993.field13002);
@@ -43,7 +44,7 @@ public abstract class Structure<C extends Class4698> {
    public static final Structure<Class4700> field18073 = method11363("Village", new Class2969(Class4700.field22296), Class1993.field13002);
    public static final Structure<Class4712> field18074 = method11363("Nether_Fossil", new Class2979(Class4712.field22349), Class1993.field13005);
    public static final Structure<Class4700> field18075 = method11363("Bastion_Remnant", new Class2970(Class4700.field22296), Class1993.field13002);
-   public static final List<Structure<?>> field18076 = ImmutableList.of(field18058, field18073, field18074);
+   public static final List<Structure<?>> field18076 = ImmutableList.of(PILLAGER_OUTPOST, field18073, field18074);
    private static final ResourceLocation field18077 = new ResourceLocation("jigsaw");
    private static final Map<ResourceLocation, ResourceLocation> field18078 = ImmutableMap.<ResourceLocation, ResourceLocation>builder()
       .put(new ResourceLocation("nvi"), field18077)

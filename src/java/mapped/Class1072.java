@@ -197,7 +197,7 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
 
    @Override
    public void method3353(ServerWorld var1, Class906 var2) {
-      if (var1.method6997() == Difficulty.field14351) {
+      if (var1.method6997() == Difficulty.PEACEFUL) {
          super.method3353(var1, var2);
       } else {
          ZombifiedPiglinEntity var5 = EntityType.field41110.create(var1);

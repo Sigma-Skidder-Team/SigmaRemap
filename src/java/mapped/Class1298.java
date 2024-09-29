@@ -206,7 +206,7 @@ public abstract class Class1298 extends FocusableGui implements Class1190 {
          int var15 = this.method6159();
          if (var15 > 0) {
             int var16 = (int)((float)((this.field6874 - this.field6873) * (this.field6874 - this.field6873)) / (float)this.method6150());
-            var16 = MathHelper.method37775(var16, 32, this.field6874 - this.field6873 - 8);
+            var16 = MathHelper.clamp(var16, 32, this.field6874 - this.field6873 - 8);
             int var17 = (int)this.field6880 * (this.field6874 - this.field6873 - var16) / var15 + this.field6873;
             if (var17 < this.field6873) {
                var17 = this.field6873;
@@ -291,7 +291,7 @@ public abstract class Class1298 extends FocusableGui implements Class1190 {
                   }
 
                   int var14 = (int)((float)((this.field6874 - this.field6873) * (this.field6874 - this.field6873)) / (float)this.method6150());
-                  var14 = MathHelper.method37775(var14, 32, this.field6874 - this.field6873 - 8);
+                  var14 = MathHelper.clamp(var14, 32, this.field6874 - this.field6873 - 8);
                   double var15 = var12 / (double)(this.field6874 - this.field6873 - var14);
                   if (var15 < 1.0) {
                      var15 = 1.0;

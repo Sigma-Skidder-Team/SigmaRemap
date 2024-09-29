@@ -28,7 +28,7 @@ public class Class1176 extends Class1155<Class1176> {
 
    @Override
    public void render(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
-      AbstractGui.method5693(var1, this.field6370.field6847.fontRenderer, this.field6369, var4 + 5, var3 + 2, 16777215);
+      AbstractGui.drawString(var1, this.field6370.field6847.font, this.field6369, var4 + 5, var3 + 2, 16777215);
    }
 
    @Override

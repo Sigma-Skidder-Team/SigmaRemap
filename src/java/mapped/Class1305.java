@@ -73,14 +73,14 @@ public class Class1305 extends Screen implements Class1306 {
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       if (!this.field6906) {
          this.method6182().render(var1, var2, var3, var4);
-         drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2, 20, 16777215);
+         drawCenteredString(var1, this.font, this.title, this.width / 2, 20, 16777215);
          super.render(var1, var2, var3, var4);
       } else {
          this.renderBackground(var1);
-         drawCenteredString(var1, this.fontRenderer, field6899, this.width / 2, this.height / 2, 16777215);
-         method5690(
+         drawCenteredString(var1, this.font, field6899, this.width / 2, this.height / 2, 16777215);
+         drawCenteredString(
             var1,
-            this.fontRenderer,
+            this.font,
             field6907[(int)(Util.milliTime() / 150L % (long)field6907.length)],
             this.width / 2,
             this.height / 2 + 18,

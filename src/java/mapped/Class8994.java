@@ -10,17 +10,17 @@ public class Class8994 {
 
    static {
       try {
-         field41135[Difficulty.field14352.ordinal()] = 1;
+         field41135[Difficulty.EASY.ordinal()] = 1;
       } catch (NoSuchFieldError var9) {
       }
 
       try {
-         field41135[Difficulty.field14353.ordinal()] = 2;
+         field41135[Difficulty.NORMAL.ordinal()] = 2;
       } catch (NoSuchFieldError var8) {
       }
 
       try {
-         field41135[Difficulty.field14354.ordinal()] = 3;
+         field41135[Difficulty.HARD.ordinal()] = 3;
       } catch (NoSuchFieldError var7) {
       }
 

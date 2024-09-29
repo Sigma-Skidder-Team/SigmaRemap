@@ -203,7 +203,7 @@ public class Class848 extends Class838 {
       if (this.field4698 == null) {
          drawCenteredString(var1, this.field4630, this.title, this.width / 2, 15, 16777215);
       } else {
-         method5690(var1, this.field4630, this.field4698, this.width / 2, 15, 16777215);
+         drawCenteredString(var1, this.field4630, this.field4698, this.width / 2, 15, 16777215);
       }
 
       super.render(var1, var2, var3, var4);

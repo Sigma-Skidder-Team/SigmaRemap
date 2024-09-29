@@ -5,6 +5,7 @@ import mapped.*;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.util.math.ChunkPos;
 
 import java.io.IOException;
 import java.util.List;

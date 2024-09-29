@@ -90,7 +90,7 @@ public class SocialInteractionsScreen extends Screen {
       int var3 = this.field6227.method6022() / 3;
       int var4 = this.field6227.method6053();
       int var5 = this.field6227.method6054();
-      int var6 = this.fontRenderer.method38821(field6226) + 40;
+      int var6 = this.font.method38821(field6226) + 40;
       int var7 = 64 + 16 * this.method5483();
       int var8 = (this.width - var6) / 2;
       this.field6231 = this.<Button>addButton(new Button(var4, 45, var3, 20, field6216, var1 -> this.method5486(Class2332.field15951)));
@@ -106,7 +106,7 @@ public class SocialInteractionsScreen extends Screen {
             this.mc.displayGuiScreen(this);
          }, "https://aka.ms/javablocking", true))));
       String var9 = this.field6228 == null ? "" : this.field6228.getText();
-      this.field6228 = new Class1301(this, this.fontRenderer, this.method5485() + 28, 78, 196, 16, field6222);
+      this.field6228 = new Class1301(this, this.font, this.method5485() + 28, 78, 196, 16, field6222);
       this.field6228.method5657(16);
       this.field6228.method5661(false);
       this.field6228.method5671(true);
@@ -182,7 +182,7 @@ public class SocialInteractionsScreen extends Screen {
       this.method5488(this.mc);
       this.renderBackground(var1);
       if (this.field6235 != null) {
-         method5693(var1, this.mc.fontRenderer, this.field6235, this.method5485() + 8, 35, -1);
+         drawString(var1, this.mc.fontRenderer, this.field6235, this.method5485() + 8, 35, -1);
       }
 
       if (!this.field6227.method6137()) {
@@ -200,7 +200,7 @@ public class SocialInteractionsScreen extends Screen {
       }
 
       if (!this.field6228.method5746() && this.field6228.getText().isEmpty()) {
-         method5693(var1, this.mc.fontRenderer, field6222, this.field6228.field6477, this.field6228.field6478, -1);
+         drawString(var1, this.mc.fontRenderer, field6222, this.field6228.field6477, this.field6228.field6478, -1);
       } else {
          this.field6228.render(var1, var2, var3, var4);
       }

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.ChunkPos;
+
 public class Class7021 implements Class7022 {
    public final ChunkPos field30329;
    public final Class1649 field30330;

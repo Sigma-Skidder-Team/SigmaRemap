@@ -138,7 +138,7 @@ public class Class8578 {
          int var17 = 512 / var1 + 2;
          int var18 = var7 / var1 - 8;
          IngameGui var19 = field38570.ingameGUI;
-         IngameGui.method5686(var0, var17 - 1, var18 - 1, var17 + 50, var18 + 10, -1605349296);
+         IngameGui.fill(var0, var17 - 1, var18 - 1, var17 + 50, var18 + 10, -1605349296);
          field38570.fontRenderer.method38801(var0, " " + Class8777.method31655() + " MB/s", (float)var17, (float)var18, var16);
          field38592 = System.nanoTime() - var4;
       }

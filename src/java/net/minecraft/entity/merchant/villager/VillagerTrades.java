@@ -1,9 +1,10 @@
-package mapped;
+package net.minecraft.entity.merchant.villager;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import mapped.*;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
 import net.minecraft.item.ItemStack;
@@ -11,7 +12,7 @@ import net.minecraft.item.Items;
 
 import java.util.Map;
 
-public class Class9721 {
+public class VillagerTrades {
    private static String[] field45413;
    public static final Map<Class8395, Int2ObjectMap<Class5391[]>> field45414 = Util.<Map<Class8395, Int2ObjectMap<Class5391[]>>>make(
       Maps.newHashMap(),
@@ -251,9 +252,9 @@ public class Class9721 {
                   1,
                   new Class5391[]{new Class5396(Items.field37899, 24, 16, 2), new Class5395(Items.field38056, 7, 1, 1)},
                   2,
-                  new Class5391[]{new Class5396(Items.field37471, 11, 16, 10), new Class5398(13, Structure.field18068, MapDecorationType.field14525, 12, 5)},
+                  new Class5391[]{new Class5396(Items.field37471, 11, 16, 10), new Class5398(13, Structure.MONUMENT, MapDecorationType.MONUMENT, 12, 5)},
                   3,
-                  new Class5391[]{new Class5396(Items.field37905, 1, 12, 20), new Class5398(14, Structure.field18060, MapDecorationType.field14524, 12, 10)},
+                  new Class5391[]{new Class5396(Items.field37905, 1, 12, 20), new Class5398(14, Structure.MANSION, MapDecorationType.MANSION, 12, 10)},
                   4,
                   new Class5391[]{
                      new Class5395(Items.ITEM_FRAME, 7, 1, 15),

@@ -168,7 +168,7 @@ public class RealmsResetWorldScreen extends Class813 {
 
       AbstractGui.method5699(var1, var2, var3 + 12, 0.0F, 0.0F, 60, 60, 60, 60);
       int var10 = !var6 ? 16777215 : 10526880;
-      drawCenteredString(var1, this.fontRenderer, var4, var2 + 30, var3, var10);
+      drawCenteredString(var1, this.font, var4, var2 + 30, var3, var10);
    }
 
    @Override

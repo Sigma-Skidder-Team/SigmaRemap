@@ -50,7 +50,7 @@ public class Class830 extends ConfirmScreen {
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       super.render(var1, var2, var3, var4);
       if (this.field4609) {
-         drawCenteredString(var1, this.fontRenderer, this.field4606, this.width / 2, 110, 16764108);
+         drawCenteredString(var1, this.font, this.field4606, this.width / 2, 110, 16764108);
       }
    }
 }

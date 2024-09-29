@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.datafixers.DataFixer;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;

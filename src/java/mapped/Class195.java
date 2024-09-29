@@ -6,6 +6,7 @@ import it.unimi.dsi.fastutil.objects.ObjectList;
 import it.unimi.dsi.fastutil.objects.ObjectListIterator;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.chunk.ChunkSection;
 import net.minecraft.world.chunk.IChunk;
 import org.apache.logging.log4j.LogManager;
@@ -182,7 +183,7 @@ public class Class195 extends WorldLightManager implements AutoCloseable {
       }
    }
 
-   public void method613(int var1) {
+   public void func_215598_a(int var1) {
       this.field739 = var1;
    }
 }

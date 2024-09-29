@@ -40,7 +40,7 @@ public class Class1171 extends Class1155<Class1171> {
    public void method5577(MatrixStack var1, Class9007<?> var2, int var3, int var4, boolean var5) {
       String var8 = var2 != null ? var2.method33277(Class1305.method6193(this.field6346.field6846).method28961(var2)) : "-";
       AbstractGui.drawString(
-         var1, this.field6346.field6846.fontRenderer, var8, var3 - this.field6346.field6846.fontRenderer.getStringWidth(var8), var4 + 5, !var5 ? 9474192 : 16777215
+         var1, this.field6346.field6846.font, var8, var3 - this.field6346.field6846.font.getStringWidth(var8), var4 + 5, !var5 ? 9474192 : 16777215
       );
    }
 }

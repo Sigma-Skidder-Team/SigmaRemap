@@ -179,7 +179,7 @@ public class Class905 extends ProjectileEntity {
 
    @Override
    public void method3447() {
-      if (this.world.method6997() == Difficulty.field14351) {
+      if (this.world.method6997() == Difficulty.PEACEFUL) {
          this.remove();
       }
    }

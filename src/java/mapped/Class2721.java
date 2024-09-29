@@ -16,7 +16,7 @@ public class Class2721 extends NearestAttackableTargetGoal<PlayerEntity> {
 
    @Override
    public boolean method10803() {
-      return this.field17207.world.method6997() != Difficulty.field14351 ? super.method10803() : false;
+      return this.field17207.world.method6997() != Difficulty.PEACEFUL ? super.method10803() : false;
    }
 
    @Override

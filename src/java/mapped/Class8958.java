@@ -23,6 +23,7 @@ import joptsimple.OptionSpecBuilder;
 import net.minecraft.client.util.Util;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.resources.ResourcePackList;
+import net.minecraft.util.WorldOptimizer;
 import net.minecraft.util.datafix.codec.DatapackCodec;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
@@ -156,24 +157,24 @@ public class Class8958 {
 
    private static void method32728(SaveFormat.LevelSave var0, DataFixer var1, boolean var2, BooleanSupplier var3, ImmutableSet<RegistryKey<World>> var4) {
       field40474.info("Forcing world upgrade!");
-      Class7958 var7 = new Class7958(var0, var1, var4, var2);
+      WorldOptimizer var7 = new WorldOptimizer(var0, var1, var4, var2);
       ITextComponent var8 = null;
 
-      while (!var7.method27062()) {
-         ITextComponent var9 = var7.method27069();
+      while (!var7.isFinished()) {
+         ITextComponent var9 = var7.getStatusText();
          if (var8 != var9) {
             var8 = var9;
-            field40474.info(var7.method27069().getString());
+            field40474.info(var7.getStatusText().getString());
          }
 
-         int var10 = var7.method27066();
+         int var10 = var7.getTotalChunks();
          if (var10 > 0) {
-            int var11 = var7.method27067() + var7.method27068();
-            field40474.info("{}% completed ({} / {} chunks)...", MathHelper.method37767((float)var11 / (float)var10 * 100.0F), var11, var10);
+            int var11 = var7.getConverted() + var7.getSkipped();
+            field40474.info("{}% completed ({} / {} chunks)...", MathHelper.floor((float)var11 / (float)var10 * 100.0F), var11, var10);
          }
 
          if (!var3.getAsBoolean()) {
-            var7.method27059();
+            var7.cancel();
          } else {
 
          }

@@ -61,7 +61,7 @@ public class ProtectionEnchantment extends Enchantment {
    public static int getFireTimeForEntity(LivingEntity var0, int var1) {
       int var4 = EnchantmentHelper.method26322(Enchantments.FIRE_PROTECTION, var0);
       if (var4 > 0) {
-         var1 -= MathHelper.method37767((float)var1 * (float)var4 * 0.15F);
+         var1 -= MathHelper.floor((float)var1 * (float)var4 * 0.15F);
       }
 
       return var1;

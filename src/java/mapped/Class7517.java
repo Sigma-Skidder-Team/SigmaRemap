@@ -20,7 +20,7 @@ public class Class7517 {
       var0 -> new TranslationTextComponent("commands.schedule.cleared.failure", var0)
    );
    private static final SuggestionProvider<Class6619> field32249 = (var0, var1) -> Class6618.method20147(
-         ((Class6619)var0.getSource()).method20177().method1436().method20098().method20074().method30537(), var1
+         ((Class6619)var0.getSource()).method20177().func_240793_aU_().method20098().method20074().method30537(), var1
       );
 
    public static void method24504(CommandDispatcher<Class6619> var0) {
@@ -81,7 +81,7 @@ public class Class7517 {
       if (var2 != 0) {
          long var6 = var0.method20172().getGameTime() + (long)var2;
          ResourceLocation var8 = (ResourceLocation)var1.getFirst();
-         Class8559 var9 = var0.method20177().method1436().method20098().method20074();
+         Class8559 var9 = var0.method20177().func_240793_aU_().method20098().method20074();
          ((Either)var1.getSecond()).ifLeft(var7 -> {
             String var10 = var8.toString();
             if (var3) {
@@ -106,7 +106,7 @@ public class Class7517 {
    }
 
    private static int method24506(Class6619 var0, String var1) throws CommandSyntaxException {
-      int var4 = var0.method20177().method1436().method20098().method20074().method30536(var1);
+      int var4 = var0.method20177().func_240793_aU_().method20098().method20074().method30536(var1);
       if (var4 != 0) {
          var0.method20179(new TranslationTextComponent("commands.schedule.cleared.success", var4, var1), true);
          return var4;

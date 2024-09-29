@@ -113,7 +113,7 @@ public class Class845 extends Class838 {
       this.renderBackground(var1);
       drawCenteredString(var1, this.field4630, this.title, this.width / 2, 20, 16777215);
       if (this.field4682 != null) {
-         method5690(var1, this.field4630, this.field4682, this.width / 2, this.height / 6 + 60, 16777215);
+         drawCenteredString(var1, this.field4630, this.field4682, this.width / 2, this.height / 6 + 60, 16777215);
          if (System.currentTimeMillis() > this.field4683) {
             this.field4682 = null;
             this.method2591((String)null);

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.ChunkPos;
+
 import java.util.function.IntConsumer;
 import java.util.function.IntSupplier;
 

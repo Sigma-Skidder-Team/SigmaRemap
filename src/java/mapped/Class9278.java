@@ -52,9 +52,9 @@ public class Class9278 {
       this.field42669 = var3;
       this.field42670 = var4;
       this.method34974();
-      this.field42675 = MathHelper.method37767(var2.rotationYaw * 256.0F / 360.0F);
-      this.field42676 = MathHelper.method37767(var2.rotationPitch * 256.0F / 360.0F);
-      this.field42677 = MathHelper.method37767(var2.getRotationYawHead() * 256.0F / 360.0F);
+      this.field42675 = MathHelper.floor(var2.rotationYaw * 256.0F / 360.0F);
+      this.field42676 = MathHelper.floor(var2.rotationPitch * 256.0F / 360.0F);
+      this.field42677 = MathHelper.floor(var2.getRotationYawHead() * 256.0F / 360.0F);
       this.field42683 = var2.isOnGround();
    }
 
@@ -86,8 +86,8 @@ public class Class9278 {
       if (this.field42679 % this.field42669 == 0 || this.field42668.isAirBorne || this.field42668.getDataManager().method35447()) {
          if (!this.field42668.isPassenger()) {
             this.field42680++;
-            int var22 = MathHelper.method37767(this.field42668.rotationYaw * 256.0F / 360.0F);
-            int var25 = MathHelper.method37767(this.field42668.rotationPitch * 256.0F / 360.0F);
+            int var22 = MathHelper.floor(this.field42668.rotationYaw * 256.0F / 360.0F);
+            int var25 = MathHelper.floor(this.field42668.rotationPitch * 256.0F / 360.0F);
             Vector3d var27 = this.field42668.getPositionVec().method11336(SEntityPacket.method17232(this.field42672, this.field42673, this.field42674));
             boolean var28 = var27.lengthSquared() >= 7.6293945E-6F;
             Object var29 = null;
@@ -151,8 +151,8 @@ public class Class9278 {
 
             this.field42682 = false;
          } else {
-            int var21 = MathHelper.method37767(this.field42668.rotationYaw * 256.0F / 360.0F);
-            int var24 = MathHelper.method37767(this.field42668.rotationPitch * 256.0F / 360.0F);
+            int var21 = MathHelper.floor(this.field42668.rotationYaw * 256.0F / 360.0F);
+            int var24 = MathHelper.floor(this.field42668.rotationPitch * 256.0F / 360.0F);
             boolean var26 = Math.abs(var21 - this.field42675) >= 1 || Math.abs(var24 - this.field42676) >= 1;
             if (var26) {
                this.field42671.accept(new SEntityPacket.LookPacket(this.field42668.getEntityId(), (byte)var21, (byte)var24, this.field42668.isOnGround()));
@@ -165,7 +165,7 @@ public class Class9278 {
             this.field42682 = true;
          }
 
-         int var23 = MathHelper.method37767(this.field42668.getRotationYawHead() * 256.0F / 360.0F);
+         int var23 = MathHelper.floor(this.field42668.getRotationYawHead() * 256.0F / 360.0F);
          if (Math.abs(var23 - this.field42677) >= 1) {
             this.field42671.accept(new SEntityHeadLookPacket(this.field42668, (byte)var23));
             this.field42677 = var23;
@@ -198,7 +198,7 @@ public class Class9278 {
       }
 
       IPacket var4 = this.field42668.createSpawnPacket();
-      this.field42677 = MathHelper.method37767(this.field42668.getRotationYawHead() * 256.0F / 360.0F);
+      this.field42677 = MathHelper.floor(this.field42668.getRotationYawHead() * 256.0F / 360.0F);
       var1.accept(var4);
       if (!this.field42668.getDataManager().method35456()) {
          var1.accept(new SEntityMetadataPacket(this.field42668.getEntityId(), this.field42668.getDataManager(), true));

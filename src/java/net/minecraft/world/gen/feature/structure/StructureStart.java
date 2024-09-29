@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import mapped.*;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.vector.Vector3i;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.ISeedReader;
@@ -15,7 +16,7 @@ import java.util.List;
 import java.util.Random;
 
 public abstract class StructureStart<C extends Class4698> {
-   public static final StructureStart<?> field24194 = new Class5443(Structure.field18059, 0, 0, Class9764.method38386(), 0, 0L);
+   public static final StructureStart<?> field24194 = new Class5443(Structure.MINESHAFT, 0, 0, Class9764.method38386(), 0, 0L);
    private final Structure<C> field24195;
    public final List<Class4178> field24196 = Lists.newArrayList();
    public Class9764 field24197;

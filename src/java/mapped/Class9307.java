@@ -17,6 +17,7 @@ import java.util.concurrent.Executor;
 import javax.annotation.Nullable;
 
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.util.math.ChunkPos;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

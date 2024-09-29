@@ -20,10 +20,11 @@ import net.minecraft.util.datafix.codec.DatapackCodec;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.GameType;
+import net.minecraft.world.storage.IServerWorldInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class ServerWorldInfo implements Class6608, IServerConfiguration {
+public class ServerWorldInfo implements IServerWorldInfo, IServerConfiguration {
    private static final Logger field29063 = LogManager.getLogger();
    private WorldSettings field29064;
    private final DimensionGeneratorSettings field29065;
@@ -209,7 +210,7 @@ public class ServerWorldInfo implements Class6608, IServerConfiguration {
    }
 
    @Override
-   public boolean method20045() {
+   public boolean isHardcore() {
       return false;
    }
 
@@ -360,7 +361,7 @@ public class ServerWorldInfo implements Class6608, IServerConfiguration {
    }
 
    @Override
-   public String method20054() {
+   public String getWorldName() {
       return this.field29064.method32426();
    }
 
@@ -382,6 +383,11 @@ public class ServerWorldInfo implements Class6608, IServerConfiguration {
    @Override
    public boolean method20042() {
       return this.field29081;
+   }
+
+   @Override
+   public String method20054() {
+      return this.field29064.method32426();
    }
 
    @Override
@@ -430,11 +436,6 @@ public class ServerWorldInfo implements Class6608, IServerConfiguration {
    }
 
    @Override
-   public boolean isHardcore() {
-      return this.field29064.method32428();
-   }
-
-   @Override
    public boolean method20072() {
       return this.field29064.method32430();
    }
@@ -470,12 +471,17 @@ public class ServerWorldInfo implements Class6608, IServerConfiguration {
    }
 
    @Override
-   public void method20085(Difficulty var1) {
+   public boolean method20048() {
+      return false;
+   }
+
+   @Override
+   public void setDifficulty(Difficulty var1) {
       this.field29064 = this.field29064.method32434(var1);
    }
 
    @Override
-   public boolean method20048() {
+   public boolean isDifficultyLocked() {
       return this.field29084;
    }
 
@@ -491,7 +497,7 @@ public class ServerWorldInfo implements Class6608, IServerConfiguration {
 
    @Override
    public void method20049(CrashReportCategory var1) {
-      Class6608.super.method20049(var1);
+      IServerWorldInfo.super.method20049(var1);
       IServerConfiguration.super.method20049(var1);
    }
 
@@ -562,7 +568,7 @@ public class ServerWorldInfo implements Class6608, IServerConfiguration {
    }
 
    @Override
-   public void method20095(String var1, boolean var2) {
+   public void addServerBranding(String var1, boolean var2) {
       this.field29091.add(var1);
       this.field29092 |= var2;
    }
@@ -578,7 +584,7 @@ public class ServerWorldInfo implements Class6608, IServerConfiguration {
    }
 
    @Override
-   public Class6608 method20098() {
+   public IServerWorldInfo method20098() {
       return this;
    }
 

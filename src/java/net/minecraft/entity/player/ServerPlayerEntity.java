@@ -32,6 +32,7 @@ import net.minecraft.util.*;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.*;
@@ -103,7 +104,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
 
    private void method2721(ServerWorld var1) {
       BlockPos var4 = var1.method6947();
-      if (var1.method6812().hasSkyLight() && var1.getServer().method1436().method20067() != GameType.field11104) {
+      if (var1.method6812().hasSkyLight() && var1.getServer().func_240793_aU_().method20067() != GameType.field11104) {
          int var5 = Math.max(0, this.field4856.method1395(var1));
          int var6 = MathHelper.floor(var1.getWorldBorder().method24528((double)var4.getX(), (double)var4.getZ()));
          if (var6 < var5) {

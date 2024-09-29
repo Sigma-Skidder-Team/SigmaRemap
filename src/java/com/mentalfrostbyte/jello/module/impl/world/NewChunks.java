@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.Box3D;
-import mapped.ChunkPos;
+import net.minecraft.util.math.ChunkPos;
 import mapped.ClientColors;
 import mapped.RenderUtil;
 import net.minecraft.network.play.server.SChunkDataPacket;

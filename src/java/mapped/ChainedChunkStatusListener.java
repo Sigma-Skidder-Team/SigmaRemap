@@ -1,12 +1,15 @@
 package mapped;
 
+import net.minecraft.util.math.ChunkPos;
+import net.minecraft.world.chunk.listener.IChunkStatusListener;
+
 import java.util.concurrent.Executor;
 
-public class ChainedChunkStatusListener implements Class7243 {
-   private final Class7243 field31094;
+public class ChainedChunkStatusListener implements IChunkStatusListener {
+   private final IChunkStatusListener field31094;
    private final Class322<Runnable> field31095;
 
-   public ChainedChunkStatusListener(Class7243 var1, Executor var2) {
+   public ChainedChunkStatusListener(IChunkStatusListener var1, Executor var2) {
       this.field31094 = var1;
       this.field31095 = Class322.method1650(var2, "progressListener");
    }
@@ -22,7 +25,7 @@ public class ChainedChunkStatusListener implements Class7243 {
    }
 
    @Override
-   public void method22738() {
-      this.field31095.method1641(this.field31094::method22738);
+   public void stop() {
+      this.field31095.method1641(this.field31094::stop);
    }
 }

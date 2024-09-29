@@ -23,9 +23,9 @@ public class Class820 extends RealmsScreen {
       Class9229.method34711(field4473.getString());
       TranslationTextComponent var3 = new TranslationTextComponent("mco.account.update");
       ITextComponent var4 = DialogTexts.field30663;
-      int var5 = Math.max(this.fontRenderer.method38821(var3), this.fontRenderer.method38821(var4)) + 30;
+      int var5 = Math.max(this.font.method38821(var3), this.font.method38821(var4)) + 30;
       TranslationTextComponent var6 = new TranslationTextComponent("mco.account.privacy.info");
-      int var7 = (int)((double)this.fontRenderer.method38821(var6) * 1.2);
+      int var7 = (int)((double)this.font.method38821(var6) * 1.2);
       this.<Button>addButton(
          new Button(
             this.width / 2 - var7 / 2, method1929(11), var7, 20, var6, var0 -> Util.getOSType().method8181("https://aka.ms/MinecraftGDPR")
@@ -37,7 +37,7 @@ public class Class820 extends RealmsScreen {
          )
       );
       this.<Button>addButton(new Button(this.width / 2 + 5, method1929(13), var5, 20, var4, var1 -> this.mc.displayGuiScreen(this.field4474)));
-      this.field4475 = Class5991.method18584(this.fontRenderer, field4473, (int)Math.round((double)this.width * 0.9));
+      this.field4475 = Class5991.method18584(this.font, field4473, (int)Math.round((double)this.width * 0.9));
    }
 
    @Override

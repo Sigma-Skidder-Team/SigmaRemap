@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 
 public class WorldLightManager implements Class197 {
    private final Class200<?, ?> field741;

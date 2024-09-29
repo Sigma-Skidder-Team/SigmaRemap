@@ -53,7 +53,7 @@ public class Class948 extends TileEntity implements IClearable, Class949 {
    }
 
    private void method3810(int var1) {
-      int var4 = MathHelper.method37775(var1, 0, this.field5337 - 1);
+      int var4 = MathHelper.clamp(var1, 0, this.field5337 - 1);
       if (var4 != this.field5336) {
          this.field5336 = var4;
          this.markDirty();
@@ -67,7 +67,7 @@ public class Class948 extends TileEntity implements IClearable, Class949 {
 
    public int method3812() {
       float var3 = this.field5337 <= 1 ? 1.0F : (float)this.method3811() / ((float)this.field5337 - 1.0F);
-      return MathHelper.method37767(var3 * 14.0F) + (!this.method3806() ? 0 : 1);
+      return MathHelper.floor(var3 * 14.0F) + (!this.method3806() ? 0 : 1);
    }
 
    private ItemStack method3813(ItemStack var1, PlayerEntity var2) {
@@ -110,7 +110,7 @@ public class Class948 extends TileEntity implements IClearable, Class949 {
       }
 
       this.field5337 = Class3285.method11819(this.field5335);
-      this.field5336 = MathHelper.method37775(var2.getInt("Page"), 0, this.field5337 - 1);
+      this.field5336 = MathHelper.clamp(var2.getInt("Page"), 0, this.field5337 - 1);
    }
 
    @Override

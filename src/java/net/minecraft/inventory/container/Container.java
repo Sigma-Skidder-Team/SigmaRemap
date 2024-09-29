@@ -605,7 +605,7 @@ public abstract class Container {
    public static void computeStackSize(Set<Slot> var0, int var1, ItemStack var2, int var3) {
       switch (var1) {
          case 0:
-            var2.setCount(MathHelper.method37767((float)var2.getCount() / (float)var0.size()));
+            var2.setCount(MathHelper.floor((float)var2.getCount() / (float)var0.size()));
             break;
          case 1:
             var2.setCount(1);
@@ -639,7 +639,7 @@ public abstract class Container {
          }
 
          var4 /= (float)var0.getSizeInventory();
-         return MathHelper.method37767(var4 * 14.0F) + (var3 <= 0 ? 0 : 1);
+         return MathHelper.floor(var4 * 14.0F) + (var3 <= 0 ? 0 : 1);
       } else {
          return 0;
       }

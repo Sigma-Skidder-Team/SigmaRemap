@@ -46,13 +46,13 @@ public class Class870 extends Screen {
 
    public void method2690(Class7502 var1) {
       this.field4821 = var1;
-      this.field4822 = MathHelper.method37775(this.field4822, 0, var1.method24459());
+      this.field4822 = MathHelper.clamp(this.field4822, 0, var1.method24459());
       this.method2694();
       this.field4824 = -1;
    }
 
    public boolean method2691(int var1) {
-      int var4 = MathHelper.method37775(var1, 0, this.field4821.method24459() - 1);
+      int var4 = MathHelper.clamp(var1, 0, this.field4821.method24459() - 1);
       if (var4 == this.field4822) {
          return false;
       } else {
@@ -136,18 +136,18 @@ public class Class870 extends Screen {
       this.blit(var1, var7, 2, 0, 0, 192, 192);
       if (this.field4824 != this.field4822) {
          ITextProperties var9 = this.field4821.method24461(this.field4822);
-         this.field4823 = this.fontRenderer.method38828(var9, 114);
+         this.field4823 = this.font.method38828(var9, 114);
          this.field4825 = new TranslationTextComponent("book.pageIndicator", this.field4822 + 1, Math.max(this.method2693(), 1));
       }
 
       this.field4824 = this.field4822;
-      int var13 = this.fontRenderer.method38821(this.field4825);
-      this.fontRenderer.func_243248_b(var1, this.field4825, (float)(var7 - var13 + 192 - 44), 18.0F, 0);
+      int var13 = this.font.method38821(this.field4825);
+      this.font.func_243248_b(var1, this.field4825, (float)(var7 - var13 + 192 - 44), 18.0F, 0);
       int var10 = Math.min(14, this.field4823.size());
 
       for (int var11 = 0; var11 < var10; var11++) {
          Class9125 var12 = this.field4823.get(var11);
-         this.fontRenderer.method38804(var1, var12, (float)(var7 + 36), (float)(32 + var11 * 9), 0);
+         this.font.method38804(var1, var12, (float)(var7 + 36), (float)(32 + var11 * 9), 0);
       }
 
       Style var14 = this.method2695((double)var2, (double)var3);

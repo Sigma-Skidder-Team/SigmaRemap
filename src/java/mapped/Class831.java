@@ -95,7 +95,7 @@ public class Class831 extends Screen {
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       Class7516.method24502();
       this.renderBackground(var1);
-      drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2, 40, 16777215);
+      drawCenteredString(var1, this.font, this.title, this.width / 2, 40, 16777215);
       var1.push();
       var1.translate((double)(this.width / 2), 0.0, 50.0);
       float var7 = 93.75F;
@@ -132,8 +132,8 @@ public class Class831 extends Screen {
       for (int var21 = 0; var21 < this.field4615.length; var21++) {
          String var22 = this.field4615[var21];
          if (var22 != null) {
-            if (this.fontRenderer.method38829()) {
-               var22 = this.fontRenderer.method38806(var22);
+            if (this.font.method38829()) {
+               var22 = this.font.method38806(var22);
             }
 
             float var23 = (float)(-this.mc.fontRenderer.getStringWidth(var22) / 2);
@@ -158,7 +158,7 @@ public class Class831 extends Screen {
             int var35 = this.mc.fontRenderer.getStringWidth(var34.substring(0, Math.max(Math.min(var17, var34.length()), 0)));
             int var36 = var35 - this.mc.fontRenderer.getStringWidth(var34) / 2;
             if (var10 && var17 < var34.length()) {
-               method5686(var1, var36, var19 - 1, var36 + 1, var19 + 9, 0xFF000000 | var16);
+               fill(var1, var36, var19 - 1, var36 + 1, var19 + 9, 0xFF000000 | var16);
             }
 
             if (var18 != var17) {

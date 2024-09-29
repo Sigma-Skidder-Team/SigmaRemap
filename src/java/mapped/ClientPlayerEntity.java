@@ -331,7 +331,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    public void method5392() {
-      this.connection.sendPacket(new CEntityActionPacket(this, CEntityActionPacket.Action.START_RIDING_JUMP, MathHelper.method37767(this.method5406() * 100.0F)));
+      this.connection.sendPacket(new CEntityActionPacket(this, CEntityActionPacket.Action.START_RIDING_JUMP, MathHelper.floor(this.method5406() * 100.0F)));
    }
 
    public void sendHorseInventory() {
@@ -719,11 +719,11 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       if (!this.areEyesInFluid(FluidTags.field40469)) {
          if (this.field6149 > 0) {
             this.areEyesInFluid(FluidTags.field40469);
-            this.field6149 = MathHelper.method37775(this.field6149 - 10, 0, 600);
+            this.field6149 = MathHelper.clamp(this.field6149 - 10, 0, 600);
          }
       } else {
          int var13 = !this.isSpectator() ? 1 : 10;
-         this.field6149 = MathHelper.method37775(this.field6149 + var13, 0, 600);
+         this.field6149 = MathHelper.clamp(this.field6149 + var13, 0, 600);
       }
 
       if (this.abilities.isFlying && this.isCurrentViewEntity()) {
@@ -754,7 +754,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
          if (var3 && !this.movementInput.field43913) {
             this.field6139 = -10;
-            var15.method4966(MathHelper.method37767(this.method5406() * 100.0F));
+            var15.method4966(MathHelper.floor(this.method5406() * 100.0F));
             this.method5392();
          } else if (!var3 && this.movementInput.field43913) {
             this.field6139 = 0;

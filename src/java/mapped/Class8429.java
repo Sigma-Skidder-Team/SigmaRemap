@@ -179,7 +179,7 @@ public class Class8429 {
             if (!this.method29614()) {
                var6 = Lists.newArrayList();
 
-               for (ServerPlayerEntity var8 : var1.method20177().getPlayerList().method19488()) {
+               for (ServerPlayerEntity var8 : var1.method20177().getPlayerList().getPlayers()) {
                   if (var5.test(var8)) {
                      var6.add(var8);
                   }

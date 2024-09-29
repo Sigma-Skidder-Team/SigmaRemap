@@ -217,12 +217,12 @@ public class Class804 extends RealmsScreen {
          this.method1971(var1, var2, var3, this.field4215);
       }
 
-      drawCenteredString(var1, this.fontRenderer, this.field4203, this.width / 2, 13, 16777215);
+      drawCenteredString(var1, this.font, this.field4203, this.width / 2, 13, 16777215);
       if (this.field4213) {
          ITextComponent[] var7 = this.field4211;
 
          for (int var8 = 0; var8 < var7.length; var8++) {
-            int var9 = this.fontRenderer.method38821(var7[var8]);
+            int var9 = this.font.method38821(var7[var8]);
             int var10 = this.width / 2 - var9 / 2;
             int var11 = method1929(-1 + var8);
             if (var2 >= var10 && var2 <= var10 + var9 && var3 >= var11 && var3 <= var11 + 9) {
@@ -242,7 +242,7 @@ public class Class804 extends RealmsScreen {
                }
             }
 
-            drawCenteredString(var1, this.fontRenderer, (ITextComponent)var13, this.width / 2, method1929(-1 + var12), var14);
+            drawCenteredString(var1, this.font, (ITextComponent)var13, this.width / 2, method1929(-1 + var12), var14);
          }
       }
 
@@ -254,12 +254,12 @@ public class Class804 extends RealmsScreen {
       for (int var7 = 0; var7 < var4.size(); var7++) {
          Class8081 var8 = (Class8081)var4.get(var7);
          int var9 = method1929(4 + var7);
-         int var10 = var8.field34733.stream().mapToInt(var1x -> this.fontRenderer.getStringWidth(var1x.method18864())).sum();
+         int var10 = var8.field34733.stream().mapToInt(var1x -> this.font.getStringWidth(var1x.method18864())).sum();
          int var11 = this.width / 2 - var10 / 2;
 
          for (Class6102 var13 : var8.field34733) {
             int var14 = !var13.method18865() ? 16777215 : 3368635;
-            int var15 = this.fontRenderer.drawStringWithShadow(var1, var13.method18864(), (float)var11, (float)var9, var14);
+            int var15 = this.font.drawStringWithShadow(var1, var13.method18864(), (float)var11, (float)var9, var14);
             if (var13.method18865() && var2 > var11 && var2 < var15 && var3 > var9 - 3 && var3 < var9 + 8) {
                this.field4207 = new StringTextComponent(var13.method18866());
                this.field4208 = var13.method18866();
@@ -274,9 +274,9 @@ public class Class804 extends RealmsScreen {
       if (var2 != null) {
          int var7 = var3 + 12;
          int var8 = var4 - 12;
-         int var9 = this.fontRenderer.method38821(var2);
+         int var9 = this.font.method38821(var2);
          this.method5688(var1, var7 - 3, var8 - 3, var7 + var9 + 3, var8 + 8 + 3, -1073741824, -1073741824);
-         this.fontRenderer.method38803(var1, var2, (float)var7, (float)var8, 16777215);
+         this.font.method38803(var1, var2, (float)var7, (float)var8, 16777215);
       }
    }
 
@@ -307,22 +307,22 @@ public class Class804 extends RealmsScreen {
 
    // $VF: synthetic method
    public static FontRenderer method1983(Class804 var0) {
-      return var0.fontRenderer;
+      return var0.font;
    }
 
    // $VF: synthetic method
    public static FontRenderer method1984(Class804 var0) {
-      return var0.fontRenderer;
+      return var0.font;
    }
 
    // $VF: synthetic method
    public static FontRenderer method1985(Class804 var0) {
-      return var0.fontRenderer;
+      return var0.font;
    }
 
    // $VF: synthetic method
    public static FontRenderer method1986(Class804 var0) {
-      return var0.fontRenderer;
+      return var0.font;
    }
 
    // $VF: synthetic method
@@ -337,12 +337,12 @@ public class Class804 extends RealmsScreen {
 
    // $VF: synthetic method
    public static FontRenderer method1989(Class804 var0) {
-      return var0.fontRenderer;
+      return var0.font;
    }
 
    // $VF: synthetic method
    public static FontRenderer method1990(Class804 var0) {
-      return var0.fontRenderer;
+      return var0.font;
    }
 
    // $VF: synthetic method

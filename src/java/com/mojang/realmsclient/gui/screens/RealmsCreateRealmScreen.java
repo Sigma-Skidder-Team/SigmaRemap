@@ -114,8 +114,8 @@ public class RealmsCreateRealmScreen extends RealmsScreen {
     public void render(MatrixStack var1, int var2, int var3, float var4) {
         this.renderBackground(var1);
         this.field4172.func_239560_a_(this, var1);
-        this.fontRenderer.func_243248_b(var1, field4165, (float) (this.width / 2 - 100), 52.0F, 10526880);
-        this.fontRenderer.func_243248_b(var1, field4166, (float) (this.width / 2 - 100), 102.0F, 10526880);
+        this.font.func_243248_b(var1, field4165, (float) (this.width / 2 - 100), 52.0F, 10526880);
+        this.font.func_243248_b(var1, field4166, (float) (this.width / 2 - 100), 102.0F, 10526880);
         if (this.field4169 != null) {
             this.field4169.render(var1, var2, var3, var4);
         }

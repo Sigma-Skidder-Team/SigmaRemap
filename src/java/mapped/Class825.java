@@ -128,18 +128,18 @@ public class Class825 extends RealmsScreen {
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.renderBackground(var1);
       int var7 = this.width / 2 - 100;
-      drawCenteredString(var1, this.fontRenderer, field4542, this.width / 2, 17, 16777215);
-      this.fontRenderer.func_243248_b(var1, field4543, (float)var7, (float)method1929(0), 10526880);
-      this.fontRenderer.method38801(var1, this.field4556, (float)var7, (float)method1929(1), 16777215);
+      drawCenteredString(var1, this.font, field4542, this.width / 2, 17, 16777215);
+      this.font.func_243248_b(var1, field4543, (float)var7, (float)method1929(0), 10526880);
+      this.font.method38801(var1, this.field4556, (float)var7, (float)method1929(1), 16777215);
       if (this.field4557 != Class2144.field14031) {
          if (this.field4557 == Class2144.field14032) {
-            this.fontRenderer.func_243248_b(var1, field4545, (float)var7, (float)method1929(3), 10526880);
+            this.font.func_243248_b(var1, field4545, (float)var7, (float)method1929(3), 10526880);
          }
       } else {
-         this.fontRenderer.func_243248_b(var1, field4544, (float)var7, (float)method1929(3), 10526880);
+         this.font.func_243248_b(var1, field4544, (float)var7, (float)method1929(3), 10526880);
       }
 
-      this.fontRenderer.func_243248_b(var1, this.field4555, (float)var7, (float)method1929(4), 16777215);
+      this.font.func_243248_b(var1, this.field4555, (float)var7, (float)method1929(4), 16777215);
       super.render(var1, var2, var3, var4);
    }
 

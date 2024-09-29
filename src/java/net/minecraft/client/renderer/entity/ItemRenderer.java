@@ -421,7 +421,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
             RenderSystem.defaultBlendFunc();
             Tessellator var23 = Tessellator.getInstance();
             BufferBuilder var24 = var23.getBuffer();
-            this.method799(var24, var3, var4 + MathHelper.method37767(16.0F * (1.0F - var22)), 16, MathHelper.ceil(16.0F * var22), 255, 255, 255, 127);
+            this.method799(var24, var3, var4 + MathHelper.floor(16.0F * (1.0F - var22)), 16, MathHelper.ceil(16.0F * var22), 255, 255, 255, 127);
             RenderSystem.enableTexture();
             RenderSystem.enableDepthTest();
          }

@@ -32,7 +32,7 @@ public class Class945 extends TileEntity implements IClearable, ITickableTileEnt
          if (!var3) {
             for (int var5 = 0; var5 < this.field5329.size(); var5++) {
                if (this.field5330[var5] > 0) {
-                  this.field5330[var5] = MathHelper.method37775(this.field5330[var5] - 2, 0, this.field5331[var5]);
+                  this.field5330[var5] = MathHelper.clamp(this.field5330[var5] - 2, 0, this.field5331[var5]);
                }
             }
          } else {

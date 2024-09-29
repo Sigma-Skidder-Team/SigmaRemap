@@ -19,6 +19,6 @@ public final class Class6410 extends VoxelShape {
    @Override
    public int method19523(Direction.Axis var1, double var2) {
       int var6 = this.field28033.method26732(var1);
-      return MathHelper.method37775(MathHelper.floor(var2 * (double)var6), -1, var6);
+      return MathHelper.clamp(MathHelper.floor(var2 * (double)var6), -1, var6);
    }
 }

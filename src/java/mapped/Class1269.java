@@ -83,7 +83,7 @@ public class Class1269 extends AbstractGui implements Class1270 {
                0.0F
             );
             RenderSystem.scalef(1.0F, 1.0F, 1.0F);
-            method5686(var1, -var21 - 1, -var23 - 1, var21 + 1, var23 + 1, this.field6744.gameSettings.method37140(0.8F));
+            fill(var1, -var21 - 1, -var23 - 1, var21 + 1, var23 + 1, this.field6744.gameSettings.method37140(0.8F));
             RenderSystem.enableBlend();
             if (!var20) {
                if (!(var16 > 0.0)) {

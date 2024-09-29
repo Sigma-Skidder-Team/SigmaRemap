@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.ChunkPos;
+
 import java.io.Serializable;
 
 public class Class2531 implements Serializable {

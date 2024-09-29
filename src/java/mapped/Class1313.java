@@ -146,7 +146,7 @@ public class Class1313 extends Screen {
       this.mc.keyboardListener.enableRepeatEvents(true);
       this.field6928 = new TranslationTextComponent("createWorld.customize.presets.share");
       this.field6929 = new TranslationTextComponent("createWorld.customize.presets.list");
-      this.field6932 = new TextFieldWidget(this.fontRenderer, 50, 40, this.width - 100, 20, this.field6928);
+      this.field6932 = new TextFieldWidget(this.font, 50, 40, this.width - 100, 20, this.field6928);
       this.field6932.method5657(1230);
       MutableRegistry var3 = this.field6927.field7000.field7092.method5789().<Biome>getRegistry(Registry.BIOME_KEY);
       this.field6932.method5635(method6204(var3, this.field6927.method6294()));
@@ -195,9 +195,9 @@ public class Class1313 extends Screen {
       this.field6930.render(var1, var2, var3, var4);
       RenderSystem.pushMatrix();
       RenderSystem.translatef(0.0F, 0.0F, 400.0F);
-      drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2, 8, 16777215);
-      method5693(var1, this.fontRenderer, this.field6928, 50, 30, 10526880);
-      method5693(var1, this.fontRenderer, this.field6929, 50, 70, 10526880);
+      drawCenteredString(var1, this.font, this.title, this.width / 2, 8, 16777215);
+      drawString(var1, this.font, this.field6928, 50, 30, 10526880);
+      drawString(var1, this.font, this.field6929, 50, 70, 10526880);
       RenderSystem.popMatrix();
       this.field6932.render(var1, var2, var3, var4);
       super.render(var1, var2, var3, var4);
@@ -290,7 +290,7 @@ public class Class1313 extends Screen {
          new TranslationTextComponent("createWorld.customize.preset.tunnelers_dream"),
          Blocks.STONE,
          Biomes.MOUNTAINS,
-         Arrays.<Structure<?>>asList(Structure.field18059),
+         Arrays.<Structure<?>>asList(Structure.MINESHAFT),
          true,
          true,
          false,
@@ -303,7 +303,7 @@ public class Class1313 extends Screen {
          new TranslationTextComponent("createWorld.customize.preset.water_world"),
          Items.WATER_BUCKET,
          Biomes.DEEP_OCEAN,
-         Arrays.<Structure<?>>asList(Structure.field18069, Structure.field18065, Structure.field18068),
+         Arrays.<Structure<?>>asList(Structure.field18069, Structure.SHIPWRECK, Structure.MONUMENT),
          false,
          false,
          false,
@@ -317,7 +317,7 @@ public class Class1313 extends Screen {
          new TranslationTextComponent("createWorld.customize.preset.overworld"),
          Blocks.GRASS,
          Biomes.PLAINS,
-         Arrays.<Structure<?>>asList(Structure.field18073, Structure.field18059, Structure.field18058, Structure.field18064),
+         Arrays.<Structure<?>>asList(Structure.field18073, Structure.MINESHAFT, Structure.PILLAGER_OUTPOST, Structure.RUINED_PORTAL),
          true,
          true,
          true,
@@ -330,7 +330,7 @@ public class Class1313 extends Screen {
          new TranslationTextComponent("createWorld.customize.preset.snowy_kingdom"),
          Blocks.SNOW,
          Biomes.SNOWY_TUNDRA,
-         Arrays.<Structure<?>>asList(Structure.field18073, Structure.field18063),
+         Arrays.<Structure<?>>asList(Structure.field18073, Structure.IGLOO),
          false,
          false,
          false,
@@ -356,7 +356,7 @@ public class Class1313 extends Screen {
          new TranslationTextComponent("createWorld.customize.preset.desert"),
          Blocks.SAND,
          Biomes.DESERT,
-         Arrays.<Structure<?>>asList(Structure.field18073, Structure.field18062, Structure.field18059),
+         Arrays.<Structure<?>>asList(Structure.field18073, Structure.DESERT_PYRAMID, Structure.MINESHAFT),
          true,
          true,
          false,

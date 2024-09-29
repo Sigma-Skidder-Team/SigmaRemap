@@ -180,7 +180,7 @@ public class IngameGui extends AbstractGui {
             }
 
             int var10 = (int) (220.0F * var9) << 24 | 1052704;
-            method5686(var1, 0, 0, this.field6741, this.field6742, var10);
+            fill(var1, 0, 0, this.field6741, this.field6742, var10);
             RenderSystem.enableAlphaTest();
             RenderSystem.enableDepthTest();
             this.field6716.getProfiler().endSection();
@@ -239,7 +239,7 @@ public class IngameGui extends AbstractGui {
                     var19 = (int) (var16 * 255.0F / (float) this.field6736);
                 }
 
-                var19 = MathHelper.method37775(var19, 0, 255);
+                var19 = MathHelper.clamp(var19, 0, 255);
                 if (var19 > 8) {
                     RenderSystem.pushMatrix();
                     RenderSystem.translatef((float) (this.field6741 / 2), (float) (this.field6742 / 2), 0.0F);
@@ -319,7 +319,7 @@ public class IngameGui extends AbstractGui {
         int var8 = this.field6716.gameSettings.method37140(0.0F);
         if (var8 != 0) {
             int var9 = -var4 / 2;
-            method5686(var1, var9 - 2, var3 - 2, var9 + var4 + 2, var3 + 9 + 2, Class9470.method36521(var8, var5));
+            fill(var1, var9 - 2, var3 - 2, var9 + var4 + 2, var3 + 9 + 2, Class9470.method36521(var8, var5));
         }
     }
 
@@ -596,7 +596,7 @@ public class IngameGui extends AbstractGui {
                 RenderSystem.pushMatrix();
                 RenderSystem.enableBlend();
                 RenderSystem.defaultBlendFunc();
-                method5686(var1, var7 - 2, var8 - 2, var7 + var6 + 2, var8 + 9 + 2, this.field6716.gameSettings.method37141(0));
+                fill(var1, var7 - 2, var8 - 2, var7 + var6 + 2, var8 + 9 + 2, this.field6716.gameSettings.method37141(0));
                 FontRenderer var10 = null;
                 if (Reflector.field42912.exists()) {
                     var10 = (FontRenderer) Reflector.call(this.field6725.getItem(), Reflector.field42912, this.field6725);
@@ -669,12 +669,12 @@ public class IngameGui extends AbstractGui {
             String var24 = TextFormatting.RED + "" + var22.method36050();
             int var25 = var29 - var17 * 9;
             int var26 = this.field6741 - 3 + 2;
-            method5686(var1, var31 - 2, var25, var26, var25 + 9, var18);
+            fill(var1, var31 - 2, var25, var26, var25 + 9, var18);
             this.method5991().func_243248_b(var1, var23, (float) var31, (float) var25, -1);
             this.method5991().method38801(var1, var24, (float) (var26 - this.method5991().getStringWidth(var24)), (float) var25, -1);
             if (var17 == var6.size()) {
-                method5686(var1, var31 - 2, var25 - 9 - 1, var26, var25 - 1, var19);
-                method5686(var1, var31 - 2, var25 - 1, var26, var25, var18);
+                fill(var1, var31 - 2, var25 - 9 - 1, var26, var25 - 1, var19);
+                fill(var1, var31 - 2, var25 - 1, var26, var25, var18);
                 this.method5991().func_243248_b(var1, var9, (float) (var31 + var11 / 2 - var10 / 2), (float) (var25 - 9), -1);
             }
         }

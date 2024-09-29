@@ -43,7 +43,7 @@ public class Class9417 {
    }
 
    public static int method36133(Class6619 var0, String var1, BlockPos var2, BlockPos var3, String var4) {
-      int var7 = MathHelper.method37767(method36134(var2.getX(), var2.getZ(), var3.getX(), var3.getZ()));
+      int var7 = MathHelper.floor(method36134(var2.getX(), var2.getZ(), var3.getX(), var3.getZ()));
       IFormattableTextComponent var8 = TextComponentUtils.wrapWithSquareBrackets(
             new TranslationTextComponent("chat.coordinates", var3.getX(), "~", var3.getZ())
          )

@@ -85,7 +85,7 @@ public class Class1199 extends Widget {
 
       this.blit(var1, this.field6477, this.field6478, var8, var9, this.field6475, this.field6476);
       List var14 = this.method5755();
-      this.field6498 = MathHelper.method37767(this.field6496 / 30.0F) % var14.size();
+      this.field6498 = MathHelper.floor(this.field6496 / 30.0F) % var14.size();
       ItemStack var12 = ((IRecipe)var14.get(this.field6498)).getRecipeOutput();
       int var13 = 4;
       if (this.field6495.method34895() && this.method5755().size() > 1) {

@@ -305,7 +305,7 @@ public class Class1015 extends Class1014 implements Class1016 {
    }
 
    public static SoundEvent method4411(World var0, Random var1) {
-      if (var0.method6997() != Difficulty.field14351 && var1.nextInt(1000) == 0) {
+      if (var0.method6997() != Difficulty.PEACEFUL && var1.nextInt(1000) == 0) {
          ArrayList var4 = Lists.newArrayList(field5676.keySet());
          return method4412((EntityType<?>)var4.get(var1.nextInt(var4.size())));
       } else {
@@ -380,7 +380,7 @@ public class Class1015 extends Class1014 implements Class1016 {
    }
 
    public int method4414() {
-      return MathHelper.method37775(this.dataManager.<Integer>method35445(field5672), 0, 4);
+      return MathHelper.clamp(this.dataManager.<Integer>method35445(field5672), 0, 4);
    }
 
    public void method4415(int var1) {

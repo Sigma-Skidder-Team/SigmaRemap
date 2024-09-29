@@ -138,8 +138,8 @@ public class PackScreen extends Screen {
       this.method2471(0);
       this.field7101.render(var1, var2, var3, var4);
       this.field7102.render(var1, var2, var3, var4);
-      drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2, 8, 16777215);
-      drawCenteredString(var1, this.fontRenderer, field7094, this.width / 2, 20, 16777215);
+      drawCenteredString(var1, this.font, this.title, this.width / 2, 8, 16777215);
+      drawCenteredString(var1, this.font, field7094, this.width / 2, 20, 16777215);
       super.render(var1, var2, var3, var4);
    }
 

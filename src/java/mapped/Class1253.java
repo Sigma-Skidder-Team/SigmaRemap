@@ -23,7 +23,7 @@ public interface Class1253<T> {
          }
 
          boolean var13 = (float)var10 < (float)var2 / 2.0F;
-         int var14 = MathHelper.method37767((float)var2 / 2.0F - (float)var10 / 2.0F);
+         int var14 = MathHelper.floor((float)var2 / 2.0F - (float)var10 / 2.0F);
          if (var13 && var14 > var12) {
             var18 += var1;
             var12++;
@@ -35,7 +35,7 @@ public interface Class1253<T> {
             }
 
             var13 = (float)var9 < (float)var1 / 2.0F;
-            var14 = MathHelper.method37767((float)var1 / 2.0F - (float)var9 / 2.0F);
+            var14 = MathHelper.floor((float)var1 / 2.0F - (float)var9 / 2.0F);
             int var16 = var9;
             boolean var17 = var15 < var9;
             if (var13) {

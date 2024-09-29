@@ -1,7 +1,10 @@
-package mapped;
+package net.minecraft.util.math;
 
-import net.minecraft.util.math.BlockPos;
+import mapped.AbstractSpliterator;
+import org.jetbrains.annotations.Nullable;
 
+import java.util.Spliterators;
+import java.util.function.Consumer;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
@@ -114,14 +117,47 @@ public class ChunkPos {
    }
 
    public static Stream<ChunkPos> method24366(ChunkPos var0, int var1) {
-      return method24367(new ChunkPos(var0.x - var1, var0.z - var1), new ChunkPos(var0.x + var1, var0.z + var1));
+      return getAllInBox(new ChunkPos(var0.x - var1, var0.z - var1), new ChunkPos(var0.x + var1, var0.z + var1));
    }
 
-   public static Stream<ChunkPos> method24367(ChunkPos var0, ChunkPos var1) {
-      int var4 = Math.abs(var0.x - var1.x) + 1;
-      int var5 = Math.abs(var0.z - var1.z) + 1;
-      int var6 = var0.x >= var1.x ? -1 : 1;
-      int var7 = var0.z >= var1.z ? -1 : 1;
-      return StreamSupport.<ChunkPos>stream(new Class8182((long)(var4 * var5), 64, var0, var1, var7, var6), false);
+   public static Stream<ChunkPos> getAllInBox(ChunkPos start, ChunkPos end) {
+      int i = Math.abs(start.x - end.x) + 1;
+      int j = Math.abs(start.z - end.z) + 1;
+      int k = start.x >= end.x ? -1 : 1;
+      int l = start.z >= end.z ? -1 : 1;
+      return StreamSupport.stream(new Spliterators.AbstractSpliterator<ChunkPos>((long)(i * j), 64)
+      {
+         @Nullable
+         private ChunkPos current;
+         public boolean tryAdvance(Consumer<? super ChunkPos > p_tryAdvance_1_)
+         {
+            if (this.current == null)
+            {
+               this.current = start;
+            }
+            else
+            {
+               int i1 = this.current.x;
+               int j1 = this.current.z;
+
+               if (i1 == end.x)
+               {
+                  if (j1 == end.z)
+                  {
+                     return false;
+                  }
+
+                  this.current = new ChunkPos(start.x, j1 + l);
+               }
+               else
+               {
+                  this.current = new ChunkPos(i1 + k, j1);
+               }
+            }
+
+            p_tryAdvance_1_.accept(this.current);
+            return true;
+         }
+      }, false);
    }
 }

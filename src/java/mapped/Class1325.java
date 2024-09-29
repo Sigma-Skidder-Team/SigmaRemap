@@ -51,12 +51,12 @@ public abstract class Class1325 extends Screen {
             this.method6306();
          })
       );
-      this.field7010 = new Class1300(this, this.fontRenderer, this.width / 2 - 150, 50, 300, 20, new TranslationTextComponent("advMode.command"));
+      this.field7010 = new Class1300(this, this.font, this.width / 2 - 150, 50, 300, 20, new TranslationTextComponent("advMode.command"));
       this.field7010.method5657(32500);
       this.field7010.method5631(this::method6309);
       this.children.add(this.field7010);
       this.field7011 = new TextFieldWidget(
-         this.fontRenderer, this.width / 2 - 150, this.method6305(), 276, 20, new TranslationTextComponent("advMode.previousOutput")
+         this.font, this.width / 2 - 150, this.method6305(), 276, 20, new TranslationTextComponent("advMode.previousOutput")
       );
       this.field7011.method5657(32500);
       this.field7011.method5666(false);
@@ -64,7 +64,7 @@ public abstract class Class1325 extends Screen {
       this.children.add(this.field7011);
       this.setFocusedDefault(this.field7010);
       this.field7010.method5654(true);
-      this.field7016 = new Class6850(this.mc, this, this.field7010, this.fontRenderer, true, true, 0, 7, false, Integer.MIN_VALUE);
+      this.field7016 = new Class6850(this.mc, this, this.field7010, this.font, true, true, 0, 7, false, Integer.MIN_VALUE);
       this.field7016.method20829(true);
       this.field7016.method20835();
    }
@@ -145,13 +145,13 @@ public abstract class Class1325 extends Screen {
    @Override
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.renderBackground(var1);
-      drawCenteredString(var1, this.fontRenderer, field7007, this.width / 2, 20, 16777215);
-      method5693(var1, this.fontRenderer, field7008, this.width / 2 - 150, 40, 10526880);
+      drawCenteredString(var1, this.font, field7007, this.width / 2, 20, 16777215);
+      drawString(var1, this.font, field7008, this.width / 2 - 150, 40, 10526880);
       this.field7010.render(var1, var2, var3, var4);
       int var7 = 75;
       if (!this.field7011.getText().isEmpty()) {
          var7 += 46 + this.method6305() - 135;
-         method5693(var1, this.fontRenderer, field7009, this.width / 2 - 150, var7 + 4, 10526880);
+         drawString(var1, this.font, field7009, this.width / 2 - 150, var7 + 4, 10526880);
          this.field7011.render(var1, var2, var3, var4);
       }
 

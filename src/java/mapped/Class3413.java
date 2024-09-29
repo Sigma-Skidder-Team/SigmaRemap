@@ -203,7 +203,7 @@ public class Class3413 extends Block {
    }
 
    public void method12051(World var1, BlockPos var2, BlockState var3, int var4) {
-      var1.setBlockState(var2, var3.with(field19100, Integer.valueOf(MathHelper.method37775(var4, 0, 3))), 2);
+      var1.setBlockState(var2, var3.with(field19100, Integer.valueOf(MathHelper.clamp(var4, 0, 3))), 2);
       var1.updateComparatorOutputLevel(var2, this);
    }
 

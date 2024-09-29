@@ -19,7 +19,7 @@ import net.optifine.Config;
 
 public abstract class AbstractOption {
    public static final Class5807 field25315 = new Class5807("options.biomeBlendRadius", 0.0, 7.0, 1.0F, var0 -> (double)var0.biomeBlendRadius, (var0, var1) -> {
-      var0.biomeBlendRadius = MathHelper.method37775((int)var1.doubleValue(), 0, 7);
+      var0.biomeBlendRadius = MathHelper.clamp((int)var1.doubleValue(), 0, 7);
       Minecraft.getInstance().worldRenderer.loadRenderers();
    }, (var0, var1) -> {
       double var4 = var1.getValue(var0);

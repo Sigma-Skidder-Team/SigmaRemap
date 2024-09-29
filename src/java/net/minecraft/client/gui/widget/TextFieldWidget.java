@@ -218,7 +218,7 @@ public class TextFieldWidget extends Widget implements Class1190, IGuiEventListe
    }
 
    public void method5650(int var1) {
-      this.field6427 = MathHelper.method37775(var1, 0, this.field6419.length());
+      this.field6427 = MathHelper.clamp(var1, 0, this.field6419.length());
    }
 
    public void method5651() {
@@ -365,8 +365,8 @@ public class TextFieldWidget extends Widget implements Class1190, IGuiEventListe
       if (this.method5670()) {
          if (this.method5660()) {
             int var7 = !this.method5746() ? -6250336 : -1;
-            method5686(var1, this.field6477 - 1, this.field6478 - 1, this.field6477 + this.field6475 + 1, this.field6478 + this.field6476 + 1, var7);
-            method5686(var1, this.field6477, this.field6478, this.field6477 + this.field6475, this.field6478 + this.field6476, -16777216);
+            fill(var1, this.field6477 - 1, this.field6478 - 1, this.field6477 + this.field6475 + 1, this.field6478 + this.field6476 + 1, var7);
+            fill(var1, this.field6477, this.field6478, this.field6477 + this.field6475, this.field6478 + this.field6476, -16777216);
          }
 
          int var19 = !this.field6424 ? this.field6430 : this.field6429;
@@ -410,7 +410,7 @@ public class TextFieldWidget extends Widget implements Class1190, IGuiEventListe
             if (!var20) {
                this.field6418.drawStringWithShadow(var1, "_", (float)var17, (float)var14, var19);
             } else {
-               AbstractGui.method5686(var1, var17, var14 - 1, var17 + 1, var14 + 1 + 9, -3092272);
+               AbstractGui.fill(var1, var17, var14 - 1, var17 + 1, var14 + 1 + 9, -3092272);
             }
          }
 
@@ -525,7 +525,7 @@ public class TextFieldWidget extends Widget implements Class1190, IGuiEventListe
 
    public void method5668(int var1) {
       int var4 = this.field6419.length();
-      this.field6428 = MathHelper.method37775(var1, 0, var4);
+      this.field6428 = MathHelper.clamp(var1, 0, var4);
       if (this.field6418 != null) {
          if (this.field6426 > var4) {
             this.field6426 = var4;
@@ -546,7 +546,7 @@ public class TextFieldWidget extends Widget implements Class1190, IGuiEventListe
             this.field6426 = this.field6426 + (this.field6428 - var7);
          }
 
-         this.field6426 = MathHelper.method37775(this.field6426, 0, var4);
+         this.field6426 = MathHelper.clamp(this.field6426, 0, var4);
       }
    }
 

@@ -93,9 +93,9 @@ public abstract class Class860<T extends Container> extends ContainerScreen<T> {
             var10 = var10 + ' ' + I18n.format("enchantment.level." + (var9.method8629() + 1));
          }
 
-         this.fontRenderer.drawStringWithShadow(var1, var10, (float)(var2 + 10 + 18), (float)(var7 + 6), 16777215);
+         this.font.drawStringWithShadow(var1, var10, (float)(var2 + 10 + 18), (float)(var7 + 6), 16777215);
          String var11 = Class7182.method22535(var9, 1.0F);
-         this.fontRenderer.drawStringWithShadow(var1, var11, (float)(var2 + 10 + 18), (float)(var7 + 6 + 10), 8355711);
+         this.font.drawStringWithShadow(var1, var11, (float)(var2 + 10 + 18), (float)(var7 + 6 + 10), 8355711);
          var7 += var3;
       }
    }

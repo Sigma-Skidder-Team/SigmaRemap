@@ -21,6 +21,7 @@ import net.minecraft.network.PacketBuffer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.palette.UpgradeData;
 import net.minecraft.util.registry.Registry;
@@ -474,8 +475,8 @@ public class Chunk implements IChunk {
    public void method7138(Entity var1, AxisAlignedBB var2, List<Entity> var3, Predicate<? super Entity> var4) {
       int var7 = MathHelper.floor((var2.minY - 2.0) / 16.0);
       int var8 = MathHelper.floor((var2.maxY + 2.0) / 16.0);
-      var7 = MathHelper.method37775(var7, 0, this.field9120.length - 1);
-      var8 = MathHelper.method37775(var8, 0, this.field9120.length - 1);
+      var7 = MathHelper.clamp(var7, 0, this.field9120.length - 1);
+      var8 = MathHelper.clamp(var8, 0, this.field9120.length - 1);
 
       for (int var9 = var7; var9 <= var8; var9++) {
          Class51 var10 = this.field9120[var9];
@@ -504,8 +505,8 @@ public class Chunk implements IChunk {
    public <T extends Entity> void method7139(EntityType<?> var1, AxisAlignedBB var2, List<? super T> var3, Predicate<? super T> var4) {
       int var7 = MathHelper.floor((var2.minY - 2.0) / 16.0);
       int var8 = MathHelper.floor((var2.maxY + 2.0) / 16.0);
-      var7 = MathHelper.method37775(var7, 0, this.field9120.length - 1);
-      var8 = MathHelper.method37775(var8, 0, this.field9120.length - 1);
+      var7 = MathHelper.clamp(var7, 0, this.field9120.length - 1);
+      var8 = MathHelper.clamp(var8, 0, this.field9120.length - 1);
 
       for (int var9 = var7; var9 <= var8; var9++) {
          for (Entity var11 : this.field9120[var9].method176(Entity.class)) {
@@ -519,8 +520,8 @@ public class Chunk implements IChunk {
    public <T extends Entity> void method7140(Class<? extends T> var1, AxisAlignedBB var2, List<T> var3, Predicate<? super T> var4) {
       int var7 = MathHelper.floor((var2.minY - 2.0) / 16.0);
       int var8 = MathHelper.floor((var2.maxY + 2.0) / 16.0);
-      var7 = MathHelper.method37775(var7, 0, this.field9120.length - 1);
-      var8 = MathHelper.method37775(var8, 0, this.field9120.length - 1);
+      var7 = MathHelper.clamp(var7, 0, this.field9120.length - 1);
+      var8 = MathHelper.clamp(var8, 0, this.field9120.length - 1);
 
       for (int var9 = var7; var9 <= var8; var9++) {
          for (Entity var11 : this.field9120[var9].method176(var1)) {

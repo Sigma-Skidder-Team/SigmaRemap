@@ -59,12 +59,12 @@ public class AddServerScreen extends Screen {
     @Override
     public void init() {
         this.mc.keyboardListener.enableRepeatEvents(true);
-        this.field7042 = new TextFieldWidget(this.fontRenderer, this.width / 2 - 100, 66, 200, 20, new TranslationTextComponent("addServer.enterName"));
+        this.field7042 = new TextFieldWidget(this.font, this.width / 2 - 100, 66, 200, 20, new TranslationTextComponent("addServer.enterName"));
         this.field7042.method5654(true);
         this.field7042.method5635(this.field7040.serverName);
         this.field7042.method5631(this::method6337);
         this.children.add(this.field7042);
-        this.field7041 = new TextFieldWidget(this.fontRenderer, this.width / 2 - 100, 106, 200, 20, new TranslationTextComponent("addServer.enterIp"));
+        this.field7041 = new TextFieldWidget(this.font, this.width / 2 - 100, 106, 200, 20, new TranslationTextComponent("addServer.enterIp"));
         this.field7041.method5657(128);
         this.field7041.method5635(this.field7040.serverIP);
         this.field7041.method5638(this.field7045);
@@ -130,9 +130,9 @@ public class AddServerScreen extends Screen {
     @Override
     public void render(MatrixStack var1, int var2, int var3, float var4) {
         this.renderBackground(var1);
-        drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2, 17, 16777215);
-        method5693(var1, this.fontRenderer, field7036, this.width / 2 - 100, 53, 10526880);
-        method5693(var1, this.fontRenderer, field7037, this.width / 2 - 100, 94, 10526880);
+        drawCenteredString(var1, this.font, this.title, this.width / 2, 17, 16777215);
+        drawString(var1, this.font, field7036, this.width / 2 - 100, 53, 10526880);
+        drawString(var1, this.font, field7037, this.width / 2 - 100, 94, 10526880);
         this.field7042.render(var1, var2, var3, var4);
         this.field7041.render(var1, var2, var3, var4);
         super.render(var1, var2, var3, var4);

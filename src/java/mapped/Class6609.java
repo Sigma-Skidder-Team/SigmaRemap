@@ -4,14 +4,15 @@ import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.GameType;
+import net.minecraft.world.storage.IServerWorldInfo;
 
 import java.util.UUID;
 
-public class Class6609 implements Class6608 {
+public class Class6609 implements IServerWorldInfo {
    private final IServerConfiguration field29061;
-   private final Class6608 field29062;
+   private final IServerWorldInfo field29062;
 
-   public Class6609(IServerConfiguration var1, Class6608 var2) {
+   public Class6609(IServerConfiguration var1, IServerWorldInfo var2) {
       this.field29061 = var1;
       this.field29062 = var2;
    }
@@ -48,7 +49,7 @@ public class Class6609 implements Class6608 {
 
    @Override
    public String method20054() {
-      return this.field29061.method20054();
+      return this.field29061.getWorldName();
    }
 
    @Override
@@ -135,7 +136,7 @@ public class Class6609 implements Class6608 {
 
    @Override
    public boolean isHardcore() {
-      return this.field29061.method20045();
+      return this.field29061.isHardcore();
    }
 
    @Override
@@ -173,7 +174,7 @@ public class Class6609 implements Class6608 {
 
    @Override
    public boolean method20048() {
-      return this.field29061.method20048();
+      return this.field29061.isDifficultyLocked();
    }
 
    @Override

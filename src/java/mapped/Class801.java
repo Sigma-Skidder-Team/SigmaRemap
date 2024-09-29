@@ -27,7 +27,7 @@ public class Class801 extends RealmsScreen {
       var3.setConnectedToRealms(false);
       var3.getPackFinder().clearResourcePack();
       Class9229.method34711(this.field4181.getString() + ": " + this.field4182.getString());
-      this.field4183 = Class5991.method18584(this.fontRenderer, this.field4182, this.width - 50);
+      this.field4183 = Class5991.method18584(this.font, this.field4182, this.width - 50);
       this.field4185 = this.field4183.method18592() * 9;
       this.<Button>addButton(
          new Button(
@@ -44,7 +44,7 @@ public class Class801 extends RealmsScreen {
    @Override
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.renderBackground(var1);
-      drawCenteredString(var1, this.fontRenderer, this.field4181, this.width / 2, this.height / 2 - this.field4185 / 2 - 18, 11184810);
+      drawCenteredString(var1, this.font, this.field4181, this.width / 2, this.height / 2 - this.field4185 / 2 - 18, 11184810);
       this.field4183.method18588(var1, this.width / 2, this.height / 2 - this.field4185 / 2);
       super.render(var1, var2, var3, var4);
    }

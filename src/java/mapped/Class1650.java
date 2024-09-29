@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.util.math.ChunkPos;
 
 import java.util.stream.Stream;
 

@@ -12,6 +12,7 @@ import net.minecraft.network.play.server.SUpdateLightPacket;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.ChunkSection;
@@ -328,7 +329,7 @@ public class Class8641 {
    }
 
    public static ChunkHolderLocationType method31063(int var0) {
-      return field38898[MathHelper.method37775(33 - var0 + 1, 0, field38898.length - 1)];
+      return field38898[MathHelper.clamp(33 - var0 + 1, 0, field38898.length - 1)];
    }
 
    public boolean method31064() {

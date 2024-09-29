@@ -8,6 +8,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
@@ -571,23 +572,23 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
 
    @Override
    public List<Class6692> method17808(Biome var1, Class7480 var2, Class179 var3, BlockPos var4) {
-      if (var2.method24345(var4, true, Structure.field18066).method17117()) {
+      if (var2.method24345(var4, true, Structure.SWAMP_HUT).method17117()) {
          if (var3 == Class179.field623) {
-            return Structure.field18066.method11374();
+            return Structure.SWAMP_HUT.method11374();
          }
 
          if (var3 == Class179.field624) {
-            return Structure.field18066.method11375();
+            return Structure.SWAMP_HUT.method11375();
          }
       }
 
       if (var3 == Class179.field623) {
-         if (var2.method24345(var4, false, Structure.field18058).method17117()) {
-            return Structure.field18058.method11374();
+         if (var2.method24345(var4, false, Structure.PILLAGER_OUTPOST).method17117()) {
+            return Structure.PILLAGER_OUTPOST.method11374();
          }
 
-         if (var2.method24345(var4, false, Structure.field18068).method17117()) {
-            return Structure.field18068.method11374();
+         if (var2.method24345(var4, false, Structure.MONUMENT).method17117()) {
+            return Structure.MONUMENT.method11374();
          }
 
          if (var2.method24345(var4, true, Structure.field18070).method17117()) {

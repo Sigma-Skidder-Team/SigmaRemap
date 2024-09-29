@@ -17,8 +17,8 @@ public class Class2514 extends JList<String> {
       if (this.field16636++ % 20 == 0) {
          Vector var3 = new Vector();
 
-         for (int var4 = 0; var4 < this.field16635.getPlayerList().method19488().size(); var4++) {
-            var3.add(this.field16635.getPlayerList().method19488().get(var4).getGameProfile().getName());
+         for (int var4 = 0; var4 < this.field16635.getPlayerList().getPlayers().size(); var4++) {
+            var3.add(this.field16635.getPlayerList().getPlayers().get(var4).getGameProfile().getName());
          }
 
          this.setListData(var3);

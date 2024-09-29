@@ -58,7 +58,7 @@ public class InventoryScreen extends Class860<PlayerContainer> implements Class8
 
    @Override
    public void method2617(MatrixStack var1, int var2, int var3) {
-      this.fontRenderer.func_243248_b(var1, this.title, (float)this.field4723, (float)this.field4724, 4210752);
+      this.font.func_243248_b(var1, this.title, (float)this.field4723, (float)this.field4724, 4210752);
    }
 
    @Override

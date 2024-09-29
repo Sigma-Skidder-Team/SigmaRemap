@@ -117,7 +117,7 @@ public class Class9079 {
    }
 
    private int method33833(int var1) {
-      return MathHelper.method37775(var1, 0, this.field41558.get().length());
+      return MathHelper.clamp(var1, 0, this.field41558.get().length());
    }
 
    private void method33834(String var1, String var2) {
@@ -125,7 +125,7 @@ public class Class9079 {
          var1 = this.method33845(var1);
       }
 
-      this.field41563 = MathHelper.method37775(this.field41563, 0, var1.length());
+      this.field41563 = MathHelper.clamp(this.field41563, 0, var1.length());
       String var5 = new StringBuilder(var1).insert(this.field41563, var2).toString();
       if (this.field41562.test(var5)) {
          this.field41559.accept(var5);
@@ -240,8 +240,8 @@ public class Class9079 {
 
    public void method33852(int var1, int var2) {
       int var5 = this.field41558.get().length();
-      this.field41563 = MathHelper.method37775(var1, 0, var5);
-      this.field41564 = MathHelper.method37775(var2, 0, var5);
+      this.field41563 = MathHelper.clamp(var1, 0, var5);
+      this.field41564 = MathHelper.clamp(var2, 0, var5);
    }
 
    public boolean method33853() {

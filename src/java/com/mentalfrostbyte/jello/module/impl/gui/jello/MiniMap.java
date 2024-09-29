@@ -13,6 +13,7 @@ import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL11;
 

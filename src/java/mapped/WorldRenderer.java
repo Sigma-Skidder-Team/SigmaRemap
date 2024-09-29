@@ -412,7 +412,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
          if (var6 != null && var3.nextInt(3) < this.field997++) {
             this.field997 = 0;
             if (var6.getY() > var5.getY() + 1
-               && var4.method7006(Heightmap.Type.MOTION_BLOCKING, var5).getY() > MathHelper.method37767((float)var5.getY())) {
+               && var4.method7006(Heightmap.Type.MOTION_BLOCKING, var5).getY() > MathHelper.floor((float)var5.getY())) {
                this.mc.world.method6858(var6, SoundEvents.field27227, Class2266.field14731, 0.1F, 0.5F, false);
             } else {
                this.mc.world.method6858(var6, SoundEvents.field27226, Class2266.field14731, 0.2F, 1.0F, false);
@@ -1434,7 +1434,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
          BlockState var75 = this.world.getBlockState(var69);
          boolean var80;
          if (Reflector.field42830.exists() && Reflector.field42882.exists()) {
-            var80 = !Reflector.method35056(Reflector.field42882, this, var6, var64, var2, matrixStackIn, irendertypebuffer$impl)
+            var80 = !Reflector.callBoolean(Reflector.field42882, this, var6, var64, var2, matrixStackIn, irendertypebuffer$impl)
                && !Reflector.method35064(var75, Reflector.field42830, this.world, var69)
                && this.world.getWorldBorder().contains(var69);
          } else {

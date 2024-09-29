@@ -109,7 +109,7 @@ public class Class1265 extends AbstractGui {
       }
 
       if (var20 != null) {
-         method5686(var1, var2 / 2 - var19 / 2 - 1, var18 - 1, var2 / 2 + var19 / 2 + 1, var18 + var20.size() * 9, Integer.MIN_VALUE);
+         fill(var1, var2 / 2 - var19 / 2 - 1, var18 - 1, var2 / 2 + var19 / 2 + 1, var18 + var20.size() * 9, Integer.MIN_VALUE);
 
          for (Class9125 var46 : var20) {
             int var24 = this.field6692.fontRenderer.method38822(var46);
@@ -120,7 +120,7 @@ public class Class1265 extends AbstractGui {
          var18++;
       }
 
-      method5686(var1, var2 / 2 - var19 / 2 - 1, var18 - 1, var2 / 2 + var19 / 2 + 1, var18 + var38 * 9, Integer.MIN_VALUE);
+      fill(var1, var2 / 2 - var19 / 2 - 1, var18 - 1, var2 / 2 + var19 / 2 + 1, var18 + var38 * 9, Integer.MIN_VALUE);
       int var45 = this.field6692.gameSettings.method37141(553648127);
 
       for (int var47 = 0; var47 < var37; var47++) {
@@ -128,7 +128,7 @@ public class Class1265 extends AbstractGui {
          int var25 = var47 % var38;
          int var26 = var17 + var49 * var16 + var49 * 5;
          int var27 = var18 + var25 * 9;
-         method5686(var1, var26, var27, var26 + var16, var27 + 8, var45);
+         fill(var1, var26, var27, var26 + var16, var27 + 8, var45);
          RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          RenderSystem.enableAlphaTest();
          RenderSystem.enableBlend();
@@ -171,7 +171,7 @@ public class Class1265 extends AbstractGui {
 
       if (var42 != null) {
          var18 = var18 + var38 * 9 + 1;
-         method5686(var1, var2 / 2 - var19 / 2 - 1, var18 - 1, var2 / 2 + var19 / 2 + 1, var18 + var42.size() * 9, Integer.MIN_VALUE);
+         fill(var1, var2 / 2 - var19 / 2 - 1, var18 - 1, var2 / 2 + var19 / 2 + 1, var18 + var42.size() * 9, Integer.MIN_VALUE);
 
          for (Class9125 var50 : var42) {
             int var51 = this.field6692.fontRenderer.method38822(var50);
@@ -245,7 +245,7 @@ public class Class1265 extends AbstractGui {
          int var15 = Math.max(MathHelper.ceil((float)(var10 / 2)), Math.max(MathHelper.ceil((float)(var6.method19982() / 2)), 10));
          boolean var16 = var6.method19986() > (long)this.field6693.method5990() && (var6.method19986() - (long)this.field6693.method5990()) / 3L % 2L == 1L;
          if (var14 > 0) {
-            int var17 = MathHelper.method37767(Math.min((float)(var5 - var4 - 4) / (float)var15, 9.0F));
+            int var17 = MathHelper.floor(Math.min((float)(var5 - var4 - 4) / (float)var15, 9.0F));
             if (var17 <= 3) {
                float var18 = MathHelper.clamp((float)var10 / 20.0F, 0.0F, 1.0F);
                int var19 = (int)((1.0F - var18) * 255.0F) << 16 | (int)(var18 * 255.0F) << 8;

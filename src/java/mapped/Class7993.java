@@ -32,8 +32,8 @@ public class Class7993 {
             this.field34372 = ALC10.alcCreateContext(this.field34371, (IntBuffer)null);
             ALC10.alcMakeContextCurrent(this.field34372);
             int var4 = this.method27284();
-            int var5 = MathHelper.method37775((int) MathHelper.sqrt((float)var4), 2, 8);
-            int var6 = MathHelper.method37775(var4 - var5, 8, 255);
+            int var5 = MathHelper.clamp((int) MathHelper.sqrt((float)var4), 2, 8);
+            int var6 = MathHelper.clamp(var4 - var5, 8, 255);
             this.field34374 = new Class6760(var6);
             this.field34375 = new Class6760(var5);
             ALCapabilities var7 = AL.createCapabilities(var3);

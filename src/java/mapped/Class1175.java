@@ -52,7 +52,7 @@ public class Class1175 extends Class1155<Class1175> {
       Class2064 var13 = this.field6363.method14678();
       if (!var13.isCompatible()) {
          RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-         AbstractGui.method5686(var1, var4 - 1, var3 - 1, var4 + var5 - 9, var3 + var6 + 1, -8978432);
+         AbstractGui.fill(var1, var4 - 1, var3 - 1, var4 + var5 - 9, var3 + var6 + 1, -8978432);
       }
 
       this.field6361.getTextureManager().bindTexture(this.field6363.method14677());
@@ -62,7 +62,7 @@ public class Class1175 extends Class1155<Class1175> {
       Class5991 var15 = this.field6365;
       if (this.method5600() && (this.field6361.gameSettings.touchscreen || var9)) {
          this.field6361.getTextureManager().bindTexture(Class1275.method6064());
-         AbstractGui.method5686(var1, var4, var3, var4 + 32, var3 + 32, -1601138544);
+         AbstractGui.fill(var1, var4, var3, var4 + 32, var3 + 32, -1601138544);
          RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          int var16 = var7 - var4;
          int var17 = var8 - var3;

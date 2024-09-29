@@ -367,7 +367,7 @@ public class KeyboardListener {
                if (action != 1 && (action != 2 || !this.field43916)) {
                   if (action == 0) {
                      if (Reflector.field42888.exists()) {
-                        var11[0] = Reflector.method35056(Reflector.field42888, this.mc.currentScreen, key, scanCode, modifiers);
+                        var11[0] = Reflector.callBoolean(Reflector.field42888, this.mc.currentScreen, key, scanCode, modifiers);
                         if (var11[0]) {
                            return;
                         }
@@ -375,12 +375,12 @@ public class KeyboardListener {
 
                      var11[0] = var15.keyReleased(key, scanCode, modifiers);
                      if (Reflector.field42889.exists() && !var11[0]) {
-                        var11[0] = Reflector.method35056(Reflector.field42889, this.mc.currentScreen, key, scanCode, modifiers);
+                        var11[0] = Reflector.callBoolean(Reflector.field42889, this.mc.currentScreen, key, scanCode, modifiers);
                      }
                   }
                } else {
                   if (Reflector.field42886.exists()) {
-                     var11[0] = Reflector.method35056(Reflector.field42886, this.mc.currentScreen, key, scanCode, modifiers);
+                     var11[0] = Reflector.callBoolean(Reflector.field42886, this.mc.currentScreen, key, scanCode, modifiers);
                      if (var11[0]) {
                         return;
                      }
@@ -388,7 +388,7 @@ public class KeyboardListener {
 
                   var11[0] = var15.keyPressed(key, scanCode, modifiers);
                   if (Reflector.field42887.exists() && !var11[0]) {
-                     var11[0] = Reflector.method35056(Reflector.field42887, this.mc.currentScreen, key, scanCode, modifiers);
+                     var11[0] = Reflector.callBoolean(Reflector.field42887, this.mc.currentScreen, key, scanCode, modifiers);
                   }
                }
             }, "keyPressed event handler", var15.getClass().getCanonicalName());
@@ -467,20 +467,20 @@ public class KeyboardListener {
             if (Character.charCount(var3) != 1) {
                for (char var11 : Character.toChars(var3)) {
                   Screen.wrapScreenError(() -> {
-                     if (!Reflector.field42884.exists() || !Reflector.method35056(Reflector.field42884, this.mc.currentScreen, var11, var4)) {
+                     if (!Reflector.field42884.exists() || !Reflector.callBoolean(Reflector.field42884, this.mc.currentScreen, var11, var4)) {
                         boolean var6 = var7.charTyped(var11, var4);
                         if (Reflector.field42885.exists() && !var6) {
-                           Reflector.method35056(Reflector.field42885, this.mc.currentScreen, var11, var4);
+                           Reflector.callBoolean(Reflector.field42885, this.mc.currentScreen, var11, var4);
                         }
                      }
                   }, "charTyped event handler", var7.getClass().getCanonicalName());
                }
             } else {
                Screen.wrapScreenError(() -> {
-                  if (!Reflector.field42884.exists() || !Reflector.method35056(Reflector.field42884, this.mc.currentScreen, (char)var3, var4)) {
+                  if (!Reflector.field42884.exists() || !Reflector.callBoolean(Reflector.field42884, this.mc.currentScreen, (char)var3, var4)) {
                      boolean var6 = var7.charTyped((char)var3, var4);
                      if (Reflector.field42885.exists() && !var6) {
-                        Reflector.method35056(Reflector.field42885, this.mc.currentScreen, (char)var3, var4);
+                        Reflector.callBoolean(Reflector.field42885, this.mc.currentScreen, (char)var3, var4);
                      }
                   }
                }, "charTyped event handler", var7.getClass().getCanonicalName());

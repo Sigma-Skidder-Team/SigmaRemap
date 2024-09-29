@@ -90,7 +90,7 @@ public class Class800 extends RealmsScreen {
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.renderBackground(var1);
       this.field4176.func_239560_a_(this, var1);
-      this.fontRenderer.func_243248_b(var1, field4173, (float)(this.width / 2 - 100), (float)method1929(1), 10526880);
+      this.font.func_243248_b(var1, field4173, (float)(this.width / 2 - 100), (float)method1929(1), 10526880);
       this.field4177.render(var1, var2, var3, var4);
       super.render(var1, var2, var3, var4);
    }

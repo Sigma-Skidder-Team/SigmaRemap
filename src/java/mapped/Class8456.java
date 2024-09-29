@@ -63,7 +63,7 @@ public class Class8456 {
             new TranslationTextComponent("commands.debug.stopped", String.format(Locale.ROOT, "%.2f", var6), var4.method25633(), String.format("%.2f", var7)),
             true
          );
-         return MathHelper.method37767(var7);
+         return MathHelper.floor(var7);
       } else {
          throw field36264.create();
       }

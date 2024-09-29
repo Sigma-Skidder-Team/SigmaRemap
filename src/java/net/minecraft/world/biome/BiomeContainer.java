@@ -1,6 +1,7 @@
 package net.minecraft.world.biome;
 
 import mapped.*;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.biome.provider.BiomeProvider;
 import org.apache.logging.log4j.LogManager;
@@ -90,7 +91,7 @@ public class BiomeContainer implements BiomeManager.IBiomeReader {
    @Override
    public Biome getNoiseBiome(int var1, int var2, int var3) {
       int var6 = var1 & field9155;
-      int var7 = MathHelper.method37775(var2, 0, field9156);
+      int var7 = MathHelper.clamp(var2, 0, field9156);
       int var8 = var3 & field9155;
       return this.field9158[var7 << field9152 + field9152 | var8 << field9152 | var6];
    }

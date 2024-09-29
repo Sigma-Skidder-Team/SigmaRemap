@@ -99,8 +99,8 @@ public class Class872 extends ContainerScreen<Class5821> {
 
    @Override
    public void method2617(MatrixStack var1, int var2, int var3) {
-      drawCenteredString(var1, this.fontRenderer, field4842, 62, 10, 14737632);
-      drawCenteredString(var1, this.fontRenderer, field4843, 169, 10, 14737632);
+      drawCenteredString(var1, this.font, field4842, 62, 10, 14737632);
+      drawCenteredString(var1, this.font, field4843, 169, 10, 14737632);
 
       for (Widget var7 : this.field4566) {
          if (var7.method5737()) {

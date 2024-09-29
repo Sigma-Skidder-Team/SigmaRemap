@@ -68,7 +68,7 @@ public class Class8894 {
       if (this.field40253.test(var2)) {
          Consumer var5 = ILootFunction.method369(this.field40255, var1, var2);
          Random var6 = var2.method26088();
-         int var7 = this.field40256.method20914(var6) + MathHelper.method37767(this.field40257.method20924(var6) * var2.method26089());
+         int var7 = this.field40256.method20914(var6) + MathHelper.floor(this.field40257.method20924(var6) * var2.method26089());
 
          for (int var8 = 0; var8 < var7; var8++) {
             this.method32370(var5, var2);

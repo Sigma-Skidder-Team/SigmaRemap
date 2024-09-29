@@ -40,7 +40,7 @@ public abstract class Screen extends FocusableGui implements IScreen, Class1190 
    public int height;
    public final List<Widget> field4566 = Lists.newArrayList();
    public boolean passEvents;
-   public FontRenderer fontRenderer;
+   public FontRenderer font;
    private URI field4569;
 
    public Screen(ITextComponent var1) {
@@ -118,7 +118,7 @@ public abstract class Screen extends FocusableGui implements IScreen, Class1190 
          int var7 = 0;
 
          for (Class9125 var9 : var2) {
-            int var10 = this.fontRenderer.method38822(var9);
+            int var10 = this.font.method38822(var9);
             if (var10 > var7) {
                var7 = var10;
             }
@@ -170,7 +170,7 @@ public abstract class Screen extends FocusableGui implements IScreen, Class1190 
          for (int var19 = 0; var19 < var2.size(); var19++) {
             Class9125 var20 = (Class9125)var2.get(var19);
             if (var20 != null) {
-               this.fontRenderer.method38813(var20, (float)var21, (float)var22, -1, true, var17, var18, false, 0, 15728880);
+               this.font.method38813(var20, (float)var21, (float)var22, -1, true, var17, var18, false, 0, 15728880);
             }
 
             if (var19 == 0) {
@@ -278,7 +278,7 @@ public abstract class Screen extends FocusableGui implements IScreen, Class1190 
    public void init(Minecraft var1, int var2, int var3) {
       this.mc = var1;
       this.field4563 = var1.getItemRenderer();
-      this.fontRenderer = var1.fontRenderer;
+      this.font = var1.fontRenderer;
       this.width = var2;
       this.height = var3;
       this.field4566.clear();

@@ -146,10 +146,10 @@ public class Class819 extends RealmsScreen {
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.renderBackground(var1);
       super.render(var1, var2, var3, var4);
-      drawCenteredString(var1, this.fontRenderer, this.field4467, this.width / 2, 17, 16777215);
+      drawCenteredString(var1, this.font, this.field4467, this.width / 2, 17, 16777215);
 
       for (int var7 = 0; var7 < this.field4468.length; var7++) {
-         drawCenteredString(var1, this.fontRenderer, this.field4468[var7], this.width / 2, method1929(-1) + 3 + var7 * 12, 10526880);
+         drawCenteredString(var1, this.font, this.field4468[var7], this.width / 2, method1929(-1) + 3 + var7 * 12, 10526880);
       }
 
       if (this.field4465 != null) {
@@ -304,6 +304,6 @@ public class Class819 extends RealmsScreen {
       }
 
       AbstractGui.method5699(var1, var2, var3, 0.0F, 0.0F, 80, 80, 80, 80);
-      method5690(var1, this.fontRenderer, var7, var2 + 40, var3 + 66, 16777215);
+      drawCenteredString(var1, this.font, var7, var2 + 40, var3 + 66, 16777215);
    }
 }

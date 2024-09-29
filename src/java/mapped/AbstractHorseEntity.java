@@ -178,7 +178,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    public int method4946(int var1) {
-      int var4 = MathHelper.method37775(this.method4944() + var1, 0, this.method4907());
+      int var4 = MathHelper.clamp(this.method4944() + var1, 0, this.method4907());
       this.method4945(var4);
       return var4;
    }

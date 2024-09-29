@@ -235,7 +235,7 @@ public class FirstPersonRenderer {
          float var21 = var9 != Hand.MAIN_HAND ? 0.0F : var8;
          float var16 = 1.0F - MathHelper.lerp(var1, this.field45082, this.field45081);
          if (!Reflector.field42894.exists()
-            || !Reflector.method35056(Reflector.field42894, Hand.MAIN_HAND, var2, var3, var5, var1, var10, var21, var16, this.field45079)) {
+            || !Reflector.callBoolean(Reflector.field42894, Hand.MAIN_HAND, var2, var3, var5, var1, var10, var21, var16, this.field45079)) {
             this.method37591(var4, var1, var10, Hand.MAIN_HAND, var21, this.field45079, var16, var2, var3, var5);
          }
       }
@@ -244,7 +244,7 @@ public class FirstPersonRenderer {
          float var22 = var9 != Hand.OFF_HAND ? 0.0F : var8;
          float var23 = 1.0F - MathHelper.lerp(var1, this.field45084, this.field45083);
          if (!Reflector.field42894.exists()
-            || !Reflector.method35056(Reflector.field42894, Hand.OFF_HAND, var2, var3, var5, var1, var10, var22, var23, this.field45080)) {
+            || !Reflector.callBoolean(Reflector.field42894, Hand.OFF_HAND, var2, var3, var5, var1, var10, var22, var23, this.field45080)) {
             this.method37591(var4, var1, var10, Hand.OFF_HAND, var22, this.field45080, var23, var2, var3, var5);
          }
       }
@@ -423,8 +423,8 @@ public class FirstPersonRenderer {
       if (!var3.isRowingBoat()) {
          float var6 = var3.getCooledAttackStrength(1.0F);
          if (Reflector.field42896.exists()) {
-            boolean var7 = Reflector.method35056(Reflector.field42896, this.field45079, var4, var3.inventory.currentItem);
-            boolean var8 = Reflector.method35056(Reflector.field42896, this.field45080, var5, -1);
+            boolean var7 = Reflector.callBoolean(Reflector.field42896, this.field45079, var4, var3.inventory.currentItem);
+            boolean var8 = Reflector.callBoolean(Reflector.field42896, this.field45080, var5, -1);
             if (!var7 && !Objects.equals(this.field45079, var4)) {
                this.field45079 = var4;
             }

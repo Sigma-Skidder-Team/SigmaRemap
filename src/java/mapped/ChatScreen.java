@@ -24,13 +24,13 @@ public class ChatScreen extends Screen {
    public void init() {
       this.mc.keyboardListener.enableRepeatEvents(true);
       this.field7047 = this.mc.ingameGUI.getChatGUI().method5934().size();
-      this.field7048 = new Class1303(this, this.fontRenderer, 4, this.height - 12, this.width - 4, 12, new TranslationTextComponent("chat.editBox"));
+      this.field7048 = new Class1303(this, this.font, 4, this.height - 12, this.width - 4, 12, new TranslationTextComponent("chat.editBox"));
       this.field7048.method5657(256);
       this.field7048.method5661(false);
       this.field7048.method5635(this.field7049);
       this.field7048.method5631(this::method6344);
       this.children.add(this.field7048);
-      this.field7050 = new Class6850(this.mc, this, this.field7048, this.fontRenderer, false, false, 1, 10, true, -805306368);
+      this.field7050 = new Class6850(this.mc, this, this.field7048, this.font, false, false, 1, 10, true, -805306368);
       this.field7050.method20835();
       this.setFocusedDefault(this.field7048);
    }
@@ -155,7 +155,7 @@ public class ChatScreen extends Screen {
    public void method6345(int var1) {
       int var4 = this.field7047 + var1;
       int var5 = this.mc.ingameGUI.getChatGUI().method5934().size();
-      var4 = MathHelper.method37775(var4, 0, var5);
+      var4 = MathHelper.clamp(var4, 0, var5);
       if (var4 != this.field7047) {
          if (var4 != var5) {
             if (this.field7047 == var5) {
@@ -176,7 +176,7 @@ public class ChatScreen extends Screen {
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.setListener(this.field7048);
       this.field7048.method5654(true);
-      method5686(var1, 2, this.height - 14, this.width - 2, this.height - 2, this.mc.gameSettings.method37141(Integer.MIN_VALUE));
+      fill(var1, 2, this.height - 14, this.width - 2, this.height - 2, this.mc.gameSettings.method37141(Integer.MIN_VALUE));
       this.field7048.render(var1, var2, var3, var4);
       this.field7050.method20843(var1, var2, var3);
       Style var7 = this.mc.ingameGUI.getChatGUI().method5939((double)var2, (double)var3);

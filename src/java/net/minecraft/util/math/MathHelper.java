@@ -51,7 +51,7 @@ public class MathHelper {
       return (float)Math.sqrt(var0);
    }
 
-   public static int method37767(float var0) {
+   public static int floor(float var0) {
       int var3 = (int)var0;
       return !(var0 < (float)var3) ? var3 : var3 - 1;
    }
@@ -88,7 +88,7 @@ public class MathHelper {
       return !(var0 > (double)var4) ? var4 : var4 + 1;
    }
 
-   public static int method37775(int var0, int var1, int var2) {
+   public static int clamp(int var0, int var1, int var2) {
       if (var0 >= var1) {
          return Math.min(var0, var2);
       } else {
@@ -294,7 +294,7 @@ public class MathHelper {
    }
 
    public static int method37805(float var0, float var1, float var2) {
-      return method37806(method37767(var0 * 255.0F), method37767(var1 * 255.0F), method37767(var2 * 255.0F));
+      return method37806(floor(var0 * 255.0F), floor(var1 * 255.0F), floor(var2 * 255.0F));
    }
 
    public static int method37806(int var0, int var1, int var2) {
@@ -303,7 +303,7 @@ public class MathHelper {
    }
 
    public static float method37807(float var0) {
-      return var0 - (float)method37767(var0);
+      return var0 - (float) floor(var0);
    }
 
    public static double frac(double var0) {
@@ -451,9 +451,9 @@ public class MathHelper {
             throw new RuntimeException("Something went wrong when converting from HSV to RGB. Input was " + var0 + ", " + var1 + ", " + var2);
       }
 
-      int var13 = method37775((int)(var10 * 255.0F), 0, 255);
-      int var14 = method37775((int)(var11 * 255.0F), 0, 255);
-      int var15 = method37775((int)(var12 * 255.0F), 0, 255);
+      int var13 = clamp((int)(var10 * 255.0F), 0, 255);
+      int var14 = clamp((int)(var11 * 255.0F), 0, 255);
+      int var15 = clamp((int)(var12 * 255.0F), 0, 255);
       return var13 << 16 | var14 << 8 | var15;
    }
 

@@ -12,6 +12,7 @@ import com.mojang.serialization.JsonOps;
 import it.unimi.dsi.fastutil.booleans.BooleanConsumer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.screen.OptimizeWorldScreen;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.client.gui.widget.button.Button;
@@ -102,7 +103,7 @@ public class EditWorldScreen extends Screen {
                      method6323(this.field7035);
                   }
 
-                  this.mc.displayGuiScreen(Class837.method2560(this.mc, this.field7033, this.mc.getDataFixer(), this.field7035, var2));
+                  this.mc.displayGuiScreen(OptimizeWorldScreen.method2560(this.mc, this.field7033, this.mc.getDataFixer(), this.field7035, var2));
                }, new TranslationTextComponent("optimizeWorld.confirm.title"), new TranslationTextComponent("optimizeWorld.confirm.description"), true))
          )
       );
@@ -175,7 +176,7 @@ public class EditWorldScreen extends Screen {
       var3.active = this.field7035.method8002().isFile();
       Class2024 var4 = this.field7035.method7997();
       String var5 = var4 != null ? var4.method8644() : "";
-      this.field7034 = new TextFieldWidget(this.fontRenderer, this.width / 2 - 100, 38, 200, 20, new TranslationTextComponent("selectWorld.enterName"));
+      this.field7034 = new TextFieldWidget(this.font, this.width / 2 - 100, 38, 200, 20, new TranslationTextComponent("selectWorld.enterName"));
       this.field7034.method5635(var5);
       this.field7034.method5631(var1 -> this.field7032.active = !var1.trim().isEmpty());
       this.children.add(this.field7034);
@@ -251,8 +252,8 @@ public class EditWorldScreen extends Screen {
    @Override
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.renderBackground(var1);
-      drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2, 15, 16777215);
-      method5693(var1, this.fontRenderer, field7031, this.width / 2 - 100, 24, 10526880);
+      drawCenteredString(var1, this.font, this.title, this.width / 2, 15, 16777215);
+      drawString(var1, this.font, field7031, this.width / 2 - 100, 24, 10526880);
       this.field7034.render(var1, var2, var3, var4);
       super.render(var1, var2, var3, var4);
    }

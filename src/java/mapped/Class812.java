@@ -134,8 +134,8 @@ public class Class812 extends RealmsScreen {
    @Override
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.renderBackground(var1);
-      drawCenteredString(var1, this.fontRenderer, this.field4360, this.width / 2, 20, 16777215);
-      drawCenteredString(var1, this.fontRenderer, this.field4366, this.width / 2, 50, 16777215);
+      drawCenteredString(var1, this.font, this.field4360, this.width / 2, 20, 16777215);
+      drawCenteredString(var1, this.font, this.field4366, this.width / 2, 50, 16777215);
       if (this.field4369) {
          this.method2236(var1);
       }
@@ -146,19 +146,19 @@ public class Class812 extends RealmsScreen {
       }
 
       if (this.field4365 != null) {
-         drawCenteredString(var1, this.fontRenderer, this.field4365, this.width / 2, 110, 16711680);
+         drawCenteredString(var1, this.font, this.field4365, this.width / 2, 110, 16711680);
       }
 
       super.render(var1, var2, var3, var4);
    }
 
    private void method2236(MatrixStack var1) {
-      int var4 = this.fontRenderer.method38821(this.field4366);
+      int var4 = this.font.method38821(this.field4366);
       if (this.field4375 % 10 == 0) {
          this.field4377++;
       }
 
-      this.fontRenderer.method38801(var1, field4376[this.field4377 % field4376.length], (float)(this.width / 2 + var4 / 2 + 5), 50.0F, 16777215);
+      this.font.method38801(var1, field4376[this.field4377 % field4376.length], (float)(this.width / 2 + var4 / 2 + 5), 50.0F, 16777215);
    }
 
    private void method2237(MatrixStack var1) {
@@ -181,7 +181,7 @@ public class Class812 extends RealmsScreen {
       var7.pos(var8, 80.0, 0.0).color(128, 128, 128, 255).endVertex();
       var6.draw();
       RenderSystem.enableTexture();
-      method5690(var1, this.fontRenderer, this.field4367 + " %", this.width / 2, 84, 16777215);
+      drawCenteredString(var1, this.font, this.field4367 + " %", this.width / 2, 84, 16777215);
    }
 
    private void method2238(MatrixStack var1) {
@@ -205,9 +205,9 @@ public class Class812 extends RealmsScreen {
 
    private void method2239(MatrixStack var1, long var2) {
       if (var2 > 0L) {
-         int var6 = this.fontRenderer.getStringWidth(this.field4367);
+         int var6 = this.font.getStringWidth(this.field4367);
          String var7 = "(" + Class2072.method8729(var2) + "/s)";
-         this.fontRenderer.method38801(var1, var7, (float)(this.width / 2 + var6 / 2 + 15), 84.0F, 16777215);
+         this.font.method38801(var1, var7, (float)(this.width / 2 + var6 / 2 + 15), 84.0F, 16777215);
       }
    }
 

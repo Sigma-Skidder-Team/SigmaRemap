@@ -60,13 +60,13 @@ public class WorkingScreen extends Screen implements Class1339 {
 
          if (this.field7109 > 0) {
             if (this.field7107 != null) {
-               drawCenteredString(var1, this.fontRenderer, this.field7107, this.width / 2, 70, 16777215);
+               drawCenteredString(var1, this.font, this.field7107, this.width / 2, 70, 16777215);
             }
 
             if (this.field7108 != null && this.field7109 != 0) {
                drawCenteredString(
                   var1,
-                  this.fontRenderer,
+                  this.font,
                   new StringTextComponent("").append(this.field7108).appendString(" " + this.field7109 + "%"),
                   this.width / 2,
                   90,

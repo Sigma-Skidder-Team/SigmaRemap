@@ -3,6 +3,7 @@ package mapped;
 import it.unimi.dsi.fastutil.longs.Long2ByteMap.Entry;
 import it.unimi.dsi.fastutil.longs.*;
 import it.unimi.dsi.fastutil.objects.ObjectIterator;
+import net.minecraft.util.math.ChunkPos;
 
 public class Class206 extends Class205 {
    private static String[] field761;

@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.util;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -20,26 +20,28 @@ import java.util.concurrent.ThreadFactory;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import mapped.*;
 import net.minecraft.client.util.Util;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Class7958 {
+public class WorldOptimizer {
    private static final Logger field34206 = LogManager.getLogger();
    private static final ThreadFactory field34207 = new ThreadFactoryBuilder().setDaemon(true).build();
    private final ImmutableSet<RegistryKey<World>> field34208;
    private final boolean field34209;
    private final SaveFormat.LevelSave field34210;
-   private final Thread field34211;
+   private final Thread thread;
    private final DataFixer field34212;
    private volatile boolean field34213 = true;
    private volatile boolean field34214;
    private volatile float field34215;
-   private volatile int field34216;
+   private volatile int done;
    private volatile int field34217;
    private volatile int field34218;
    private final Object2FloatMap<RegistryKey<World>> field34219 = Object2FloatMaps.synchronize(new Object2FloatOpenCustomHashMap(Util.method38509()));
@@ -47,32 +49,32 @@ public class Class7958 {
    private static final Pattern field34221 = Pattern.compile("^r\\.(-?[0-9]+)\\.(-?[0-9]+)\\.mca$");
    private final Class8250 field34222;
 
-   public Class7958(SaveFormat.LevelSave var1, DataFixer var2, ImmutableSet<RegistryKey<World>> var3, boolean var4) {
+   public WorldOptimizer(SaveFormat.LevelSave var1, DataFixer var2, ImmutableSet<RegistryKey<World>> var3, boolean var4) {
       this.field34208 = var3;
       this.field34209 = var4;
       this.field34212 = var2;
       this.field34210 = var1;
       this.field34222 = new Class8250(new File(this.field34210.method7992(World.OVERWORLD), "data"), var2);
-      this.field34211 = field34207.newThread(this::method27060);
-      this.field34211.setUncaughtExceptionHandler((var1x, var2x) -> {
+      this.thread = field34207.newThread(this::optimize);
+      this.thread.setUncaughtExceptionHandler((var1x, var2x) -> {
          field34206.error("Error upgrading world", var2x);
          this.field34220 = new TranslationTextComponent("optimizeWorld.stage.failed");
          this.field34214 = true;
       });
-      this.field34211.start();
+      this.thread.start();
    }
 
-   public void method27059() {
+   public void cancel() {
       this.field34213 = false;
 
       try {
-         this.field34211.join();
+         this.thread.join();
       } catch (InterruptedException var4) {
       }
    }
 
-   private void method27060() {
-      this.field34216 = 0;
+   private void optimize() {
+      this.done = 0;
       Builder var3 = ImmutableMap.builder();
       UnmodifiableIterator var4 = this.field34208.iterator();
 
@@ -80,13 +82,13 @@ public class Class7958 {
          RegistryKey var5 = (RegistryKey)var4.next();
          List var6 = this.method27061(var5);
          var3.put(var5, var6.listIterator());
-         this.field34216 = this.field34216 + var6.size();
+         this.done = this.done + var6.size();
       }
 
-      if (this.field34216 == 0) {
+      if (this.done == 0) {
          this.field34214 = true;
       } else {
-         float var29 = (float)this.field34216;
+         float var29 = (float)this.done;
          ImmutableMap var30 = var3.build();
          Builder var31 = ImmutableMap.builder();
          UnmodifiableIterator var7 = this.field34208.iterator();
@@ -222,35 +224,35 @@ public class Class7958 {
       }
    }
 
-   public boolean method27062() {
+   public boolean isFinished() {
       return this.field34214;
    }
 
-   public ImmutableSet<RegistryKey<World>> method27063() {
+   public ImmutableSet<RegistryKey<World>> func_233533_c_() {
       return this.field34208;
    }
 
-   public float method27064(RegistryKey<World> var1) {
+   public float func_233531_a_(RegistryKey<World> var1) {
       return this.field34219.getFloat(var1);
    }
 
-   public float method27065() {
+   public float getTotalProgress() {
       return this.field34215;
    }
 
-   public int method27066() {
-      return this.field34216;
+   public int getTotalChunks() {
+      return this.done;
    }
 
-   public int method27067() {
+   public int getConverted() {
       return this.field34217;
    }
 
-   public int method27068() {
+   public int getSkipped() {
       return this.field34218;
    }
 
-   public ITextComponent method27069() {
+   public ITextComponent getStatusText() {
       return this.field34220;
    }
 }

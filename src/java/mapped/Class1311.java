@@ -30,13 +30,13 @@ public class Class1311 extends Screen {
    public void init() {
       super.init();
       this.<Button>addButton(new Button(this.width / 2 - 100, this.height / 6 + 168, 200, 20, this.field6921, var1 -> this.field6918.run()));
-      this.field6920 = Class5991.method18584(this.fontRenderer, this.field6919, this.width - 50);
+      this.field6920 = Class5991.method18584(this.font, this.field6919, this.width - 50);
    }
 
    @Override
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.renderBackground(var1);
-      drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2, 70, 16777215);
+      drawCenteredString(var1, this.font, this.title, this.width / 2, 70, 16777215);
       this.field6920.method18588(var1, this.width / 2, 90);
       super.render(var1, var2, var3, var4);
    }

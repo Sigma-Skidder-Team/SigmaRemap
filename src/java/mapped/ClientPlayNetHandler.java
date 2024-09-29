@@ -68,6 +68,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.registry.Registry;
@@ -143,7 +144,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       this.field23281 = var1.method17296();
       boolean var7 = var1.method17299();
       boolean var8 = var1.method17300();
-      Class6606 var9 = new Class6606(Difficulty.field14353, var1.method17289(), var8);
+      Class6606 var9 = new Class6606(Difficulty.NORMAL, var1.method17289(), var8);
       this.field23274 = var9;
       this.field23273 = new ClientWorld(this, var9, var5, var6, this.field23281, this.field23272::getProfiler, this.field23272.worldRenderer, var7, var1.method17288());
       this.field23272.loadWorld(this.field23273);
@@ -1140,7 +1141,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       ClientPlayerEntity var4 = this.field23272.player;
       Class9385 var5 = var1.method17397();
       float var6 = var1.method17398();
-      int var7 = MathHelper.method37767(var6 + 0.5F);
+      int var7 = MathHelper.floor(var6 + 0.5F);
       if (var5 != SChangeGameStatePacket.field24560) {
          if (var5 != SChangeGameStatePacket.field24561) {
             if (var5 != SChangeGameStatePacket.field24562) {

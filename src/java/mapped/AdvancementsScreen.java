@@ -116,10 +116,10 @@ public class AdvancementsScreen extends Screen implements Class1131 {
          RenderSystem.depthFunc(515);
          RenderSystem.disableDepthTest();
       } else {
-         method5686(var1, var4 + 9, var5 + 18, var4 + 9 + 234, var5 + 18 + 113, -16777216);
+         fill(var1, var4 + 9, var5 + 18, var4 + 9 + 234, var5 + 18 + 113, -16777216);
          int var9 = var4 + 9 + 117;
-         drawCenteredString(var1, this.fontRenderer, field6182, var9, var5 + 18 + 56 - 4, -1);
-         drawCenteredString(var1, this.fontRenderer, field6181, var9, var5 + 18 + 113 - 9, -1);
+         drawCenteredString(var1, this.font, field6182, var9, var5 + 18 + 56 - 4, -1);
+         drawCenteredString(var1, this.font, field6181, var9, var5 + 18 + 113 - 9, -1);
       }
    }
 
@@ -145,7 +145,7 @@ public class AdvancementsScreen extends Screen implements Class1131 {
          RenderSystem.disableBlend();
       }
 
-      this.fontRenderer.func_243248_b(var1, field6183, (float)(var2 + 8), (float)(var3 + 6), 4210752);
+      this.font.func_243248_b(var1, field6183, (float)(var2 + 8), (float)(var3 + 6), 4210752);
    }
 
    private void method5447(MatrixStack var1, int var2, int var3, int var4, int var5) {

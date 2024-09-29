@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.datafixers.util.Either;
+import net.minecraft.util.math.ChunkPos;
 
 public class Class7025 implements Class7022 {
    public final int field30333;

@@ -532,7 +532,7 @@ public class Class2840 implements Consumer<BiConsumer<ResourceLocation, Class588
                   .method18291(
                      Class4695.method14724(Items.field38056)
                         .method18296(
-                           ExplorationMap.method423().method18313(Structure.field18072).method18314(MapDecorationType.field14542).method18315((byte)1).method18316(false)
+                           ExplorationMap.method423().method18313(Structure.field18072).method18314(MapDecorationType.RED_X).method18315((byte)1).method18316(false)
                         )
                   )
             )
@@ -759,7 +759,7 @@ public class Class2840 implements Consumer<BiConsumer<ResourceLocation, Class588
                      Class4695.method14724(Items.field38056)
                         .method18299(10)
                         .method18296(
-                           ExplorationMap.method423().method18313(Structure.field18072).method18314(MapDecorationType.field14542).method18315((byte)1).method18316(false)
+                           ExplorationMap.method423().method18313(Structure.field18072).method18314(MapDecorationType.RED_X).method18315((byte)1).method18316(false)
                         )
                   )
             )
@@ -786,7 +786,7 @@ public class Class2840 implements Consumer<BiConsumer<ResourceLocation, Class588
                      Class4695.method14724(Items.field38056)
                         .method18299(5)
                         .method18296(
-                           ExplorationMap.method423().method18313(Structure.field18072).method18314(MapDecorationType.field14542).method18315((byte)1).method18316(false)
+                           ExplorationMap.method423().method18313(Structure.field18072).method18314(MapDecorationType.RED_X).method18315((byte)1).method18316(false)
                         )
                   )
             )

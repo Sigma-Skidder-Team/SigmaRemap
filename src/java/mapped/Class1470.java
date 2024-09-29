@@ -59,7 +59,7 @@ public class Class1470 implements Runnable {
             CrashReportCategory var19 = var18.makeCategory("Thread Dump");
             var19.addDetail("Threads", var11);
             CrashReportCategory var20 = var18.makeCategory("Performance stats");
-            var20.addDetail("Random tick rate", () -> this.field7908.method1436().method20046().<Class7464>method17128(Class5462.field24235).toString());
+            var20.addDetail("Random tick rate", () -> this.field7908.func_240793_aU_().method20046().<Class7464>method17128(Class5462.field24235).toString());
             var20.addDetail(
                "Level stats",
                () -> Streams.stream(this.field7908.method1320())

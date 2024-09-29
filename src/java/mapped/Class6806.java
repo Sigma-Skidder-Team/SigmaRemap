@@ -2,6 +2,7 @@ package mapped;
 
 import it.unimi.dsi.fastutil.shorts.ShortList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.ITickList;
 import net.minecraft.world.chunk.IChunk;
 

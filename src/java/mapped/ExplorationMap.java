@@ -16,7 +16,7 @@ import java.util.Set;
 public class ExplorationMap extends Class128 {
    private static final Logger field471 = LogManager.getLogger();
    public static final Structure<?> field_237425_a_ = Structure.field18072;
-   public static final MapDecorationType field_215910_a = MapDecorationType.field14524;
+   public static final MapDecorationType field_215910_a = MapDecorationType.MANSION;
    private final Structure<?> field474;
    private final MapDecorationType field475;
    private final byte field476;

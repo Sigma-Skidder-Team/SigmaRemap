@@ -17,7 +17,7 @@ public class Class874 extends ContainerScreen<Class5817> {
    @Override
    public void init() {
       super.init();
-      this.field4723 = (this.xSize - this.fontRenderer.method38821(this.title)) / 2;
+      this.field4723 = (this.xSize - this.font.method38821(this.title)) / 2;
    }
 
    @Override

@@ -26,7 +26,7 @@ public class SServerDifficultyPacket implements IPacket<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24575 = Difficulty.method8907(var1.readUnsignedByte());
+      this.field24575 = Difficulty.byId(var1.readUnsignedByte());
       this.field24576 = var1.readBoolean();
    }
 

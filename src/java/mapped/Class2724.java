@@ -54,7 +54,7 @@ public class Class2724 extends Class2595 {
          if (this.field17218 != 0) {
             if (this.field17218 >= this.field17217.method5303()) {
                float var4 = 1.0F;
-               if (this.field17217.world.method6997() == Difficulty.field14354) {
+               if (this.field17217.world.method6997() == Difficulty.HARD) {
                   var4 += 2.0F;
                }
 

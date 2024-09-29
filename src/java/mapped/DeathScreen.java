@@ -104,13 +104,13 @@ public class DeathScreen extends Screen {
       this.method5688(var1, 0, 0, this.width, this.height, 1615855616, -1602211792);
       RenderSystem.pushMatrix();
       RenderSystem.scalef(2.0F, 2.0F, 2.0F);
-      drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2 / 2, 30, 16777215);
+      drawCenteredString(var1, this.font, this.title, this.width / 2 / 2, 30, 16777215);
       RenderSystem.popMatrix();
       if (this.field4571 != null) {
-         drawCenteredString(var1, this.fontRenderer, this.field4571, this.width / 2, 85, 16777215);
+         drawCenteredString(var1, this.font, this.field4571, this.width / 2, 85, 16777215);
       }
 
-      drawCenteredString(var1, this.fontRenderer, this.field4573, this.width / 2, 100, 16777215);
+      drawCenteredString(var1, this.font, this.field4573, this.width / 2, 100, 16777215);
       if (this.field4571 != null && var3 > 85 && var3 < 94) {
          Style var7 = this.method2490(var2);
          this.method2462(var1, var7, var2, var3);

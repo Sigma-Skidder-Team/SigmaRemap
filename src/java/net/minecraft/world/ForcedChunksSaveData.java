@@ -1,13 +1,14 @@
-package mapped;
+package net.minecraft.world;
 
 import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import it.unimi.dsi.fastutil.longs.LongSet;
+import mapped.Class7530;
 import net.minecraft.nbt.CompoundNBT;
 
-public class Class7536 extends Class7530 {
+public class ForcedChunksSaveData extends Class7530 {
    private LongSet field32343 = new LongOpenHashSet();
 
-   public Class7536() {
+   public ForcedChunksSaveData() {
       super("chunks");
    }
 
@@ -22,7 +23,7 @@ public class Class7536 extends Class7530 {
       return var1;
    }
 
-   public LongSet method24638() {
+   public LongSet getChunks() {
       return this.field32343;
    }
 }

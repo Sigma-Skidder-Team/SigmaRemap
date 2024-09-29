@@ -10,6 +10,7 @@ import net.minecraft.fluid.Fluid;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.palette.UpgradeData;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IStructureReader;

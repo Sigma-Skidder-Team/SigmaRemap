@@ -32,7 +32,7 @@ public class Class7604 implements Class7601 {
             short var10 = 1500;
             float var11 = 300.0F;
             if (var3 >= 1500L) {
-               int var12 = MathHelper.method37767(MathHelper.clamp((float)(var3 - 1500L) / 300.0F, 0.0F, 1.0F) * 252.0F) << 24 | 67108864;
+               int var12 = MathHelper.floor(MathHelper.clamp((float)(var3 - 1500L) / 300.0F, 0.0F, 1.0F) * 252.0F) << 24 | 67108864;
                int var13 = this.method24899() / 2 - var8.size() * 9 / 2;
 
                for (Class9125 var15 : var8) {
@@ -40,7 +40,7 @@ public class Class7604 implements Class7601 {
                   var13 += 9;
                }
             } else {
-               int var16 = MathHelper.method37767(MathHelper.clamp((float)(1500L - var3) / 300.0F, 0.0F, 1.0F) * 255.0F) << 24 | 67108864;
+               int var16 = MathHelper.floor(MathHelper.clamp((float)(1500L - var3) / 300.0F, 0.0F, 1.0F) * 255.0F) << 24 | 67108864;
                var2.method5915().fontRenderer.func_243248_b(var1, var7.method34938().method8245(), 30.0F, 11.0F, var9 | var16);
             }
          } else {

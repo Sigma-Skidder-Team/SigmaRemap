@@ -25,6 +25,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.*;
 import net.minecraft.world.chunk.IChunk;
@@ -288,8 +289,8 @@ public class Reflector {
    public static Class6631 field42998 = new Class6631(field42996, "getScreenshotFile");
    public static Class6631 field42999 = new Class6631(field42996, "getResultMessage");
    public static Class6636 field43000 = new Class6636("net.minecraftforge.fml.server.ServerLifecycleHooks");
-   public static Class6631 field43001 = new Class6631(field43000, "handleServerAboutToStart");
-   public static Class6631 field43002 = new Class6631(field43000, "handleServerStarting");
+   public static Class6631 ServerLifecycleHooks_handleServerAboutToStart = new Class6631(field43000, "handleServerAboutToStart");
+   public static Class6631 ServerLifecycleHooks_handleServerStarting = new Class6631(field43000, "handleServerStarting");
    public static Class6636 field43003 = new Class6636("net.minecraftforge.event.world.WorldEvent$Load");
    public static Class6634 field43004 = new Class6634(field43003, new Class[]{IWorld.class});
    private static boolean field43005 = method35096("*** Reflector Vanilla ***");
@@ -473,7 +474,7 @@ public class Reflector {
       }
    }
 
-   public static boolean method35056(Class6631 var0, Object... var1) {
+   public static boolean callBoolean(Class6631 var0, Object... var1) {
       try {
          Method var4 = var0.method20213();
          if (var4 == null) {

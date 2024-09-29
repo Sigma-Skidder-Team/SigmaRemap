@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.merchant.villager.VillagerTrades;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -92,8 +93,8 @@ public class Class1044 extends Class1043 {
 
    @Override
    public void method4713() {
-      Class5391[] var3 = (Class5391[])Class9721.field45415.get(1);
-      Class5391[] var4 = (Class5391[])Class9721.field45415.get(2);
+      Class5391[] var3 = (Class5391[]) VillagerTrades.field45415.get(1);
+      Class5391[] var4 = (Class5391[]) VillagerTrades.field45415.get(2);
       if (var3 != null && var4 != null) {
          Class46 var5 = this.method4742();
          this.method4754(var5, var3, 5);

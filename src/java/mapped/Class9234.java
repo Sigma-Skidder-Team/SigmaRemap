@@ -30,7 +30,7 @@ public class Class9234 {
 
    private static int method34729(Class6619 var0, Function<ServerPlayerEntity, ITextComponent> var1) {
       Class6395 var4 = var0.method20177().getPlayerList();
-      List var5 = var4.method19488();
+      List var5 = var4.getPlayers();
       IFormattableTextComponent var6 = TextComponentUtils.func_240649_b_(var5, var1);
       var0.method20179(new TranslationTextComponent("commands.list.players", var5.size(), var4.method19475(), var6), false);
       return var5.size();

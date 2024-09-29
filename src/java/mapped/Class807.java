@@ -192,9 +192,9 @@ public class Class807 extends RealmsScreen {
       this.renderBackground(var1);
       this.field4317.render(var1, var2, var3, var4);
       this.field4325.func_239560_a_(this, var1);
-      this.fontRenderer.func_243248_b(var1, field4311, (float)((this.width - 150) / 2 - 90), 20.0F, 10526880);
+      this.font.func_243248_b(var1, field4311, (float)((this.width - 150) / 2 - 90), 20.0F, 10526880);
       if (this.field4323) {
-         this.fontRenderer.func_243248_b(var1, field4312, 20.0F, (float)(this.height / 2 - 10), 16777215);
+         this.font.func_243248_b(var1, field4312, 20.0F, (float)(this.height / 2 - 10), 16777215);
       }
 
       this.field4320.active = !this.field4323;
@@ -208,9 +208,9 @@ public class Class807 extends RealmsScreen {
       if (var2 != null) {
          int var7 = var3 + 12;
          int var8 = var4 - 12;
-         int var9 = this.fontRenderer.method38821(var2);
+         int var9 = this.font.method38821(var2);
          this.method5688(var1, var7 - 3, var8 - 3, var7 + var9 + 3, var8 + 8 + 3, -1073741824, -1073741824);
-         this.fontRenderer.method38803(var1, var2, (float)var7, (float)var8, 16777215);
+         this.font.method38803(var1, var2, (float)var7, (float)var8, 16777215);
       }
    }
 
@@ -277,12 +277,12 @@ public class Class807 extends RealmsScreen {
 
    // $VF: synthetic method
    public static FontRenderer method2196(Class807 var0) {
-      return var0.fontRenderer;
+      return var0.font;
    }
 
    // $VF: synthetic method
    public static FontRenderer method2197(Class807 var0) {
-      return var0.fontRenderer;
+      return var0.font;
    }
 
    // $VF: synthetic method

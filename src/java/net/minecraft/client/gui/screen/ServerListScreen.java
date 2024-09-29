@@ -51,7 +51,7 @@ public class ServerListScreen extends Screen {
       this.<Button>addButton(
          new Button(this.width / 2 - 100, this.height / 4 + 120 + 12, 200, 20, DialogTexts.GUI_CANCEL, var1 -> this.field6976.accept(false))
       );
-      this.field6975 = new TextFieldWidget(this.fontRenderer, this.width / 2 - 100, 116, 200, 20, new TranslationTextComponent("addServer.enterIp"));
+      this.field6975 = new TextFieldWidget(this.font, this.width / 2 - 100, 116, 200, 20, new TranslationTextComponent("addServer.enterIp"));
       this.field6975.method5657(128);
       this.field6975.method5654(true);
       this.field6975.method5635(this.mc.gameSettings.field44667);
@@ -93,8 +93,8 @@ public class ServerListScreen extends Screen {
    @Override
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.renderBackground(var1);
-      drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2, 20, 16777215);
-      method5693(var1, this.fontRenderer, field6972, this.width / 2 - 100, 100, 10526880);
+      drawCenteredString(var1, this.font, this.title, this.width / 2, 20, 16777215);
+      drawString(var1, this.font, field6972, this.width / 2 - 100, 100, 10526880);
       this.field6975.render(var1, var2, var3, var4);
       super.render(var1, var2, var3, var4);
    }

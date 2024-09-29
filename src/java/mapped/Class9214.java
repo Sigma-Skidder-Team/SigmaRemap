@@ -13,7 +13,7 @@ public class Class9214 implements GameSession {
    public Class9214(ClientWorld var1, ClientPlayerEntity var2, ClientPlayNetHandler var3) {
       this.field42400 = var3.method15790().size();
       this.field42401 = !var3.getNetworkManager().isLocalChannel();
-      this.field42402 = var1.method6997().method8909();
+      this.field42402 = var1.method6997().getTranslationKey();
       Class6589 var6 = var3.method15792(var2.getUniqueID());
       if (var6 == null) {
          this.field42403 = "unknown";

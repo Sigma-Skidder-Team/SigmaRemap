@@ -69,17 +69,17 @@ public class Class32 extends NumberNBT {
 
    @Override
    public int getInt() {
-      return MathHelper.method37767(this.field62);
+      return MathHelper.floor(this.field62);
    }
 
    @Override
    public short getShort() {
-      return (short)(MathHelper.method37767(this.field62) & 65535);
+      return (short)(MathHelper.floor(this.field62) & 65535);
    }
 
    @Override
    public byte getByte() {
-      return (byte)(MathHelper.method37767(this.field62) & 0xFF);
+      return (byte)(MathHelper.floor(this.field62) & 0xFF);
    }
 
    @Override

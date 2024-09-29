@@ -71,7 +71,7 @@ public class Util {
    }
 
    private static ExecutorService method38490(String var0) {
-      int var3 = MathHelper.method37775(Runtime.getRuntime().availableProcessors() - 1, 1, 7);
+      int var3 = MathHelper.clamp(Runtime.getRuntime().availableProcessors() - 1, 1, 7);
       Object var4;
       if (var3 > 0) {
          var4 = new ForkJoinPool(var3, var1 -> {

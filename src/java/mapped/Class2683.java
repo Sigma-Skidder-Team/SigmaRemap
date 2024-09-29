@@ -43,12 +43,12 @@ public class Class2683 extends Class2595 {
          this.field17098 = false;
          this.field17097.method4230().method21666();
          BlockPos var4 = this.field17097.getPosition();
-         Structure var5 = !((double)var3.rand.nextFloat() >= 0.5) ? Structure.field18065 : Structure.field18069;
+         Structure var5 = !((double)var3.rand.nextFloat() >= 0.5) ? Structure.SHIPWRECK : Structure.field18069;
          BlockPos var6 = var3.method6943(var5, var4, 50, false);
          if (var6 != null) {
             this.field17097.method4776(var6);
          } else {
-            Structure var7 = !var5.equals(Structure.field18069) ? Structure.field18069 : Structure.field18065;
+            Structure var7 = !var5.equals(Structure.field18069) ? Structure.field18069 : Structure.SHIPWRECK;
             BlockPos var8 = var3.method6943(var7, var4, 50, false);
             if (var8 == null) {
                this.field17098 = true;

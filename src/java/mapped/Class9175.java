@@ -41,7 +41,7 @@ public class Class9175 {
       ScorePlayerTeam var5 = (ScorePlayerTeam)var4.getTeam();
       if (var5 != null) {
          IFormattableTextComponent var6 = var5.method28569().mergeStyle(field42128);
-         List<ServerPlayerEntity> var7 = var0.method20177().getPlayerList().method19488();
+         List<ServerPlayerEntity> var7 = var0.method20177().getPlayerList().getPlayers();
 
          for (ServerPlayerEntity var9 : var7) {
             if (var9 != var4) {

@@ -247,8 +247,8 @@ public class Class1024 extends Class1025 implements Class1023 {
       if (var6) {
          ItemStack var7 = new ItemStack(Items.CROSSBOW);
          HashMap var8 = Maps.newHashMap();
-         if (var1 <= var5.method25435(Difficulty.field14353)) {
-            if (var1 > var5.method25435(Difficulty.field14352)) {
+         if (var1 <= var5.method25435(Difficulty.NORMAL)) {
+            if (var1 > var5.method25435(Difficulty.EASY)) {
                var8.put(Enchantments.QUICK_CHARGE, 1);
             }
          } else {

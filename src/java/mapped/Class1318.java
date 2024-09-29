@@ -68,8 +68,8 @@ public class Class1318 extends Screen {
          method5699(var1, var7, var8, 0.0F, 0.0F, 125, 75, 128, 128);
          var1.pop();
          super.render(var1, var2, var3, var4);
-         this.field6966.ifPresent(var2x -> drawCenteredString(var1, this.fontRenderer, Class2150.method8863(var2x), this.width / 2, this.height / 2 - 30 - 20, -1));
-         drawCenteredString(var1, this.fontRenderer, field6964, this.width / 2, this.height / 2 + 5, 16777215);
+         this.field6966.ifPresent(var2x -> drawCenteredString(var1, this.font, Class2150.method8863(var2x), this.width / 2, this.height / 2 - 30 - 20, -1));
+         drawCenteredString(var1, this.font, field6964, this.width / 2, this.height / 2 + 5, 16777215);
          if (!this.field6969) {
             this.field6967 = var2;
             this.field6968 = var3;

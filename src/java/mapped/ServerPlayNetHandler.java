@@ -1405,7 +1405,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    public void func_217263_a(CSetDifficultyPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       if (this.player.method3424(2) || this.method15657()) {
-         this.server.method1336(var1.func_218773_b(), false);
+         this.server.setDifficultyForAllWorlds(var1.func_218773_b(), false);
       }
    }
 

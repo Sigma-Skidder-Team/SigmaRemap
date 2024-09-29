@@ -9,10 +9,12 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.network.IPacket;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.chunk.listener.IChunkStatusListener;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 import net.minecraft.world.server.ServerWorld;
 
@@ -58,7 +60,7 @@ public class ServerChunkProvider extends Class1702 {
       ChunkGenerator var6,
       int var7,
       boolean var8,
-      Class7243 var9,
+      IChunkStatusListener var9,
       Supplier<Class8250> var10
    ) {
       this.field9275 = var1;
@@ -84,7 +86,7 @@ public class ServerChunkProvider extends Class1702 {
       return this.field9279.method6539(var1);
    }
 
-   public int method7355() {
+   public int getLoadedChunksCount() {
       return this.field9279.method6560();
    }
 
@@ -424,7 +426,7 @@ public class ServerChunkProvider extends Class1702 {
    }
 
    @Override
-   public void method7350(ChunkPos var1, boolean var2) {
+   public void forceChunk(ChunkPos var1, boolean var2) {
       this.field9273.method35133(var1, var2);
    }
 

@@ -24,7 +24,7 @@ public class Class9145 {
       MinecraftServer var5 = var0.method20177();
       var5.method1370(var1);
       if (var5.method1380()) {
-         for (ServerPlayerEntity var7 : var5.getPlayerList().method19488()) {
+         for (ServerPlayerEntity var7 : var5.getPlayerList().getPlayers()) {
             if (var7.interactionManager.getGameType() != var1) {
                var7.method2799(var1);
                var4++;

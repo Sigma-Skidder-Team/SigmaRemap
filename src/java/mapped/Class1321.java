@@ -80,27 +80,27 @@ public class Class1321 extends Screen {
    @Override
    public void init() {
       this.mc.keyboardListener.enableRepeatEvents(true);
-      this.field6986 = new TextFieldWidget(this.fontRenderer, this.width / 2 - 152, 20, 300, 20, new TranslationTextComponent("jigsaw_block.pool"));
+      this.field6986 = new TextFieldWidget(this.font, this.width / 2 - 152, 20, 300, 20, new TranslationTextComponent("jigsaw_block.pool"));
       this.field6986.method5657(128);
       this.field6986.method5635(this.field6983.method3980().toString());
       this.field6986.method5631(var1 -> this.method6272());
       this.children.add(this.field6986);
-      this.field6984 = new TextFieldWidget(this.fontRenderer, this.width / 2 - 152, 55, 300, 20, new TranslationTextComponent("jigsaw_block.name"));
+      this.field6984 = new TextFieldWidget(this.font, this.width / 2 - 152, 55, 300, 20, new TranslationTextComponent("jigsaw_block.name"));
       this.field6984.method5657(128);
       this.field6984.method5635(this.field6983.method3978().toString());
       this.field6984.method5631(var1 -> this.method6272());
       this.children.add(this.field6984);
-      this.field6985 = new TextFieldWidget(this.fontRenderer, this.width / 2 - 152, 90, 300, 20, new TranslationTextComponent("jigsaw_block.target"));
+      this.field6985 = new TextFieldWidget(this.font, this.width / 2 - 152, 90, 300, 20, new TranslationTextComponent("jigsaw_block.target"));
       this.field6985.method5657(128);
       this.field6985.method5635(this.field6983.method3979().toString());
       this.field6985.method5631(var1 -> this.method6272());
       this.children.add(this.field6985);
-      this.field6987 = new TextFieldWidget(this.fontRenderer, this.width / 2 - 152, 125, 300, 20, new TranslationTextComponent("jigsaw_block.final_state"));
+      this.field6987 = new TextFieldWidget(this.font, this.width / 2 - 152, 125, 300, 20, new TranslationTextComponent("jigsaw_block.final_state"));
       this.field6987.method5657(256);
       this.field6987.method5635(this.field6983.method3981());
       this.children.add(this.field6987);
       this.field6992 = this.field6983.method3982();
-      int var3 = this.fontRenderer.method38821(field6978) + 10;
+      int var3 = this.font.method38821(field6978) + 10;
       this.field6990 = this.<Button>addButton(new Button(this.width / 2 - 152 + var3, 150, 300 - var3, 20, this.method6273(), var1 -> {
          JigsawTileEntity.OrientationType[] var4x = JigsawTileEntity.OrientationType.values();
          int var5 = (this.field6992.ordinal() + 1) % var4x.length;
@@ -175,16 +175,16 @@ public class Class1321 extends Screen {
    @Override
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.renderBackground(var1);
-      method5693(var1, this.fontRenderer, field6979, this.width / 2 - 153, 10, 10526880);
+      drawString(var1, this.font, field6979, this.width / 2 - 153, 10, 10526880);
       this.field6986.render(var1, var2, var3, var4);
-      method5693(var1, this.fontRenderer, field6980, this.width / 2 - 153, 45, 10526880);
+      drawString(var1, this.font, field6980, this.width / 2 - 153, 45, 10526880);
       this.field6984.render(var1, var2, var3, var4);
-      method5693(var1, this.fontRenderer, field6981, this.width / 2 - 153, 80, 10526880);
+      drawString(var1, this.font, field6981, this.width / 2 - 153, 80, 10526880);
       this.field6985.render(var1, var2, var3, var4);
-      method5693(var1, this.fontRenderer, field6982, this.width / 2 - 153, 115, 10526880);
+      drawString(var1, this.font, field6982, this.width / 2 - 153, 115, 10526880);
       this.field6987.render(var1, var2, var3, var4);
       if (JigsawBlock.method11675(this.field6983.getBlockState()).getAxis().method323()) {
-         method5693(var1, this.fontRenderer, field6978, this.width / 2 - 153, 156, 16777215);
+         drawString(var1, this.font, field6978, this.width / 2 - 153, 156, 16777215);
       }
 
       super.render(var1, var2, var3, var4);

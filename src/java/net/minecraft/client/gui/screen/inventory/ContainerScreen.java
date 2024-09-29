@@ -160,14 +160,14 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
       this.method5703(200);
       this.field4563.field847 = 200.0F;
       this.field4563.method793(var1, var2, var3);
-      this.field4563.method798(this.fontRenderer, var1, var2, var3 - (!this.field4737.isEmpty() ? 8 : 0), var4);
+      this.field4563.method798(this.font, var1, var2, var3 - (!this.field4737.isEmpty() ? 8 : 0), var4);
       this.method5703(0);
       this.field4563.field847 = 0.0F;
    }
 
    public void method2617(MatrixStack var1, int var2, int var3) {
-      this.fontRenderer.func_243248_b(var1, this.title, (float)this.field4723, (float)this.field4724, 4210752);
-      this.fontRenderer.func_243248_b(var1, this.field4728.getDisplayName(), (float)this.field4725, (float)this.playerInventoryTitleY, 4210752);
+      this.font.func_243248_b(var1, this.title, (float)this.field4723, (float)this.field4724, 4210752);
+      this.font.func_243248_b(var1, this.field4728.getDisplayName(), (float)this.field4725, (float)this.playerInventoryTitleY, 4210752);
    }
 
    public abstract void method2618(MatrixStack var1, float var2, int var3, int var4);
@@ -217,12 +217,12 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
 
       if (!var9) {
          if (var8) {
-            method5686(var1, var5, var6, var5 + 16, var6 + 16, -2130706433);
+            fill(var1, var5, var6, var5 + 16, var6 + 16, -2130706433);
          }
 
          RenderSystem.enableDepthTest();
          this.field4563.method795(this.mc.player, var7, var5, var6);
-         this.field4563.method798(this.fontRenderer, var7, var5, var6, var11);
+         this.field4563.method798(this.font, var7, var5, var6, var11);
       }
 
       this.field4563.field847 = 0.0F;

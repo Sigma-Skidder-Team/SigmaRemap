@@ -12,6 +12,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
@@ -260,7 +261,7 @@ public class Class1108 extends MobEntity implements Class1008 {
    }
 
    public static boolean method5328(EntityType<Class1108> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
-      if (var1.method6997() != Difficulty.field14351) {
+      if (var1.method6997() != Difficulty.PEACEFUL) {
          if (Objects.equals(var1.method7178(var3), Optional.<RegistryKey<Biome>>of(Biomes.SWAMP))
             && var3.getY() > 50
             && var3.getY() < 70

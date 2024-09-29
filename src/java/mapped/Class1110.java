@@ -50,7 +50,7 @@ public class Class1110 extends Class1111 implements Class1008 {
    }
 
    public void method5336(int var1) {
-      this.dataManager.method35446(field6087, MathHelper.method37775(var1, 0, 64));
+      this.dataManager.method35446(field6087, MathHelper.clamp(var1, 0, 64));
    }
 
    private void method5337() {

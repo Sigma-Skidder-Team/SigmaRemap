@@ -222,7 +222,7 @@ public class CreativeScreen extends Class860<Class5820> {
       } else {
          super.init();
          this.mc.keyboardListener.enableRepeatEvents(true);
-         this.field4779 = new TextFieldWidget(this.fontRenderer, this.field4734 + 82, this.field4735 + 6, 80, 9, new TranslationTextComponent("itemGroup.search"));
+         this.field4779 = new TextFieldWidget(this.font, this.field4734 + 82, this.field4735 + 6, 80, 9, new TranslationTextComponent("itemGroup.search"));
          this.field4779.method5657(50);
          this.field4779.method5661(false);
          this.field4779.method5671(false);
@@ -364,7 +364,7 @@ public class CreativeScreen extends Class860<Class5820> {
       ItemGroup var6 = ItemGroup.field31664[field4776];
       if (var6.method23648()) {
          RenderSystem.disableBlend();
-         this.fontRenderer.func_243248_b(var1, var6.method23643(), 8.0F, 6.0F, 4210752);
+         this.font.func_243248_b(var1, var6.method23643(), 8.0F, 6.0F, 4210752);
       }
    }
 
@@ -735,7 +735,7 @@ public class CreativeScreen extends Class860<Class5820> {
       RenderSystem.enableRescaleNormal();
       ItemStack var13 = var2.method23644();
       this.field4563.method793(var13, var10, var11);
-      this.field4563.method797(this.fontRenderer, var13, var10, var11);
+      this.field4563.method797(this.font, var13, var10, var11);
       this.field4563.field847 = 0.0F;
    }
 

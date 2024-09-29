@@ -239,9 +239,9 @@ public class Class1343 extends RealmsScreen {
    @Override
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.renderBackground(var1);
-      this.fontRenderer
+      this.font
          .func_243248_b(
-            var1, field7137, (float)(this.field7140 + this.field7141 / 2 - this.fontRenderer.method38821(field7137) / 2), (float)(method1929(0) - 5), 16777215
+            var1, field7137, (float)(this.field7140 + this.field7141 / 2 - this.font.method38821(field7137) / 2), (float)(method1929(0) - 5), 16777215
          );
       this.field7162.func_239560_a_(this, var1);
       if (this.field7163 != null) {

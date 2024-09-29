@@ -41,7 +41,7 @@ public class Class7020 implements Class7016 {
                         Class9755 var11 = var1.method6807(var10);
                         if (var11.method38329(var6.nextFloat() * 3.0F)) {
                            Class8287 var12 = ((ServerPlayerEntity)var9).method2809();
-                           int var13 = MathHelper.method37775(var12.method28961(Stats.field40104.method172(Stats.field40108)), 1, Integer.MAX_VALUE);
+                           int var13 = MathHelper.clamp(var12.method28961(Stats.field40104.method172(Stats.field40108)), 1, Integer.MAX_VALUE);
                            short var14 = 24000;
                            if (var6.nextInt(var13) >= 72000) {
                               BlockPos var15 = var10.method8339(20 + var6.nextInt(15)).method8348(-10 + var6.nextInt(21)).method8344(-10 + var6.nextInt(21));

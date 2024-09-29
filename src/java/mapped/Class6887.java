@@ -174,7 +174,7 @@ public class Class6887 extends Scoreboard {
    public void method21024(Class8375 var1) {
       List<IPacket<?>> var4 = this.method21023(var1);
 
-      for (ServerPlayerEntity var6 : this.field29848.getPlayerList().method19488()) {
+      for (ServerPlayerEntity var6 : this.field29848.getPlayerList().getPlayers()) {
          for (IPacket var8 : var4) {
             var6.field4855.sendPacket(var8);
          }
@@ -199,7 +199,7 @@ public class Class6887 extends Scoreboard {
    public void method21026(Class8375 var1) {
       List<IPacket<?>> var4 = this.method21025(var1);
 
-      for (ServerPlayerEntity var6 : this.field29848.getPlayerList().method19488()) {
+      for (ServerPlayerEntity var6 : this.field29848.getPlayerList().getPlayers()) {
          for (IPacket var8 : var4) {
             var6.field4855.sendPacket(var8);
          }

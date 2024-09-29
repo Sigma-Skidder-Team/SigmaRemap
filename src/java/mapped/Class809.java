@@ -47,10 +47,10 @@ public class Class809 extends RealmsScreen {
          var8 = field4334;
       }
 
-      drawCenteredString(var1, this.fontRenderer, var7, this.width / 2, method1929(3), 16711680);
+      drawCenteredString(var1, this.font, var7, this.width / 2, method1929(3), 16711680);
 
       for (int var9 = 0; var9 < var8.length; var9++) {
-         drawCenteredString(var1, this.fontRenderer, var8[var9], this.width / 2, method1929(5) + var9 * 12, 16777215);
+         drawCenteredString(var1, this.font, var8[var9], this.width / 2, method1929(5) + var9 * 12, 16777215);
       }
 
       super.render(var1, var2, var3, var4);

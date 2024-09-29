@@ -537,7 +537,7 @@ public class Class1007 extends MobEntity implements Class1008 {
 
       if (!this.world.isRemote) {
          if (this.field5635 > 150 && this.field5635 % 5 == 0 && var6) {
-            this.method4327(MathHelper.method37767((float)var7 * 0.08F));
+            this.method4327(MathHelper.floor((float)var7 * 0.08F));
          }
 
          if (this.field5635 == 1 && !this.isSilent()) {
@@ -550,7 +550,7 @@ public class Class1007 extends MobEntity implements Class1008 {
       this.renderYawOffset = this.rotationYaw;
       if (this.field5635 == 200 && !this.world.isRemote) {
          if (var6) {
-            this.method4327(MathHelper.method37767((float)var7 * 0.2F));
+            this.method4327(MathHelper.floor((float)var7 * 0.2F));
          }
 
          if (this.field5638 != null) {
@@ -578,17 +578,17 @@ public class Class1007 extends MobEntity implements Class1008 {
             if (var3 >= 12) {
                if (var3 >= 20) {
                   int var5 = var3 - 20;
-                  var6 = MathHelper.method37767(20.0F * MathHelper.cos(2.0F * ((float) -Math.PI + (float) (Math.PI / 4) * (float)var5)));
-                  var7 = MathHelper.method37767(20.0F * MathHelper.sin(2.0F * ((float) -Math.PI + (float) (Math.PI / 4) * (float)var5)));
+                  var6 = MathHelper.floor(20.0F * MathHelper.cos(2.0F * ((float) -Math.PI + (float) (Math.PI / 4) * (float)var5)));
+                  var7 = MathHelper.floor(20.0F * MathHelper.sin(2.0F * ((float) -Math.PI + (float) (Math.PI / 4) * (float)var5)));
                } else {
                   int var8 = var3 - 12;
-                  var6 = MathHelper.method37767(40.0F * MathHelper.cos(2.0F * ((float) -Math.PI + (float) (Math.PI / 8) * (float)var8)));
-                  var7 = MathHelper.method37767(40.0F * MathHelper.sin(2.0F * ((float) -Math.PI + (float) (Math.PI / 8) * (float)var8)));
+                  var6 = MathHelper.floor(40.0F * MathHelper.cos(2.0F * ((float) -Math.PI + (float) (Math.PI / 8) * (float)var8)));
+                  var7 = MathHelper.floor(40.0F * MathHelper.sin(2.0F * ((float) -Math.PI + (float) (Math.PI / 8) * (float)var8)));
                   var4 += 10;
                }
             } else {
-               var6 = MathHelper.method37767(60.0F * MathHelper.cos(2.0F * ((float) -Math.PI + (float) (Math.PI / 12) * (float)var3)));
-               var7 = MathHelper.method37767(60.0F * MathHelper.sin(2.0F * ((float) -Math.PI + (float) (Math.PI / 12) * (float)var3)));
+               var6 = MathHelper.floor(60.0F * MathHelper.cos(2.0F * ((float) -Math.PI + (float) (Math.PI / 12) * (float)var3)));
+               var7 = MathHelper.floor(60.0F * MathHelper.sin(2.0F * ((float) -Math.PI + (float) (Math.PI / 12) * (float)var3)));
             }
 
             int var9 = Math.max(

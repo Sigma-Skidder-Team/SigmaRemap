@@ -143,10 +143,10 @@ public class IngameMenuScreen extends Screen {
    @Override
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       if (!this.field4621) {
-         drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2, 10, 16777215);
+         drawCenteredString(var1, this.font, this.title, this.width / 2, 10, 16777215);
       } else {
          this.renderBackground(var1);
-         drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2, 40, 16777215);
+         drawCenteredString(var1, this.font, this.title, this.width / 2, 40, 16777215);
       }
 
       super.render(var1, var2, var3, var4);

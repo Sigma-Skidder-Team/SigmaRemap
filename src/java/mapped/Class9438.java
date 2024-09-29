@@ -5,40 +5,40 @@ import net.minecraft.world.gen.feature.structure.ShipwreckConfig;
 
 public class Class9438 {
    public static final Class9300<Class4700, ? extends Structure<Class4700>> field43834 = method36275(
-      "pillager_outpost", Structure.field18058.method11368(new Class4700(() -> Class8685.field39213, 7))
+      "pillager_outpost", Structure.PILLAGER_OUTPOST.method11368(new Class4700(() -> Class8685.field39213, 7))
    );
    public static final Class9300<Class4735, ? extends Structure<Class4735>> field43835 = method36275(
-      "mineshaft", Structure.field18059.method11368(new Class4735(0.004F, Class102.field307))
+      "mineshaft", Structure.MINESHAFT.method11368(new Class4735(0.004F, Class102.field307))
    );
    public static final Class9300<Class4735, ? extends Structure<Class4735>> field43836 = method36275(
-      "mineshaft_mesa", Structure.field18059.method11368(new Class4735(0.004F, Class102.field308))
+      "mineshaft_mesa", Structure.MINESHAFT.method11368(new Class4735(0.004F, Class102.field308))
    );
    public static final Class9300<Class4712, ? extends Structure<Class4712>> field43837 = method36275(
-      "mansion", Structure.field18060.method11368(Class4712.field22350)
+      "mansion", Structure.MANSION.method11368(Class4712.field22350)
    );
    public static final Class9300<Class4712, ? extends Structure<Class4712>> field43838 = method36275(
-      "jungle_pyramid", Structure.field18061.method11368(Class4712.field22350)
+      "jungle_pyramid", Structure.JUNGLE_PYRAMID.method11368(Class4712.field22350)
    );
    public static final Class9300<Class4712, ? extends Structure<Class4712>> field43839 = method36275(
-      "desert_pyramid", Structure.field18062.method11368(Class4712.field22350)
+      "desert_pyramid", Structure.DESERT_PYRAMID.method11368(Class4712.field22350)
    );
    public static final Class9300<Class4712, ? extends Structure<Class4712>> field43840 = method36275(
-      "igloo", Structure.field18063.method11368(Class4712.field22350)
+      "igloo", Structure.IGLOO.method11368(Class4712.field22350)
    );
    public static final Class9300<ShipwreckConfig, ? extends Structure<ShipwreckConfig>> field43841 = method36275(
-      "shipwreck", Structure.field18065.method11368(new ShipwreckConfig(false))
+      "shipwreck", Structure.SHIPWRECK.method11368(new ShipwreckConfig(false))
    );
    public static final Class9300<ShipwreckConfig, ? extends Structure<ShipwreckConfig>> field43842 = method36275(
-      "shipwreck_beached", Structure.field18065.method11368(new ShipwreckConfig(true))
+      "shipwreck_beached", Structure.SHIPWRECK.method11368(new ShipwreckConfig(true))
    );
    public static final Class9300<Class4712, ? extends Structure<Class4712>> field43843 = method36275(
-      "swamp_hut", Structure.field18066.method11368(Class4712.field22350)
+      "swamp_hut", Structure.SWAMP_HUT.method11368(Class4712.field22350)
    );
    public static final Class9300<Class4712, ? extends Structure<Class4712>> field43844 = method36275(
-      "stronghold", Structure.field18067.method11368(Class4712.field22350)
+      "stronghold", Structure.STRONGHOLD.method11368(Class4712.field22350)
    );
    public static final Class9300<Class4712, ? extends Structure<Class4712>> field43845 = method36275(
-      "monument", Structure.field18068.method11368(Class4712.field22350)
+      "monument", Structure.MONUMENT.method11368(Class4712.field22350)
    );
    public static final Class9300<Class4711, ? extends Structure<Class4711>> field43846 = method36275(
       "ocean_ruin_cold", Structure.field18069.method11368(new Class4711(Class110.field374, 0.3F, 0.9F))
@@ -77,25 +77,25 @@ public class Class9438 {
       "village_taiga", Structure.field18073.method11368(new Class4700(() -> Class8481.field36359, 6))
    );
    public static final Class9300<Class4726, ? extends Structure<Class4726>> field43858 = method36275(
-      "ruined_portal", Structure.field18064.method11368(new Class4726(Class107.STANDARD))
+      "ruined_portal", Structure.RUINED_PORTAL.method11368(new Class4726(Class107.STANDARD))
    );
    public static final Class9300<Class4726, ? extends Structure<Class4726>> field43859 = method36275(
-      "ruined_portal_desert", Structure.field18064.method11368(new Class4726(Class107.DESERT))
+      "ruined_portal_desert", Structure.RUINED_PORTAL.method11368(new Class4726(Class107.DESERT))
    );
    public static final Class9300<Class4726, ? extends Structure<Class4726>> field43860 = method36275(
-      "ruined_portal_jungle", Structure.field18064.method11368(new Class4726(Class107.JUNGLE))
+      "ruined_portal_jungle", Structure.RUINED_PORTAL.method11368(new Class4726(Class107.JUNGLE))
    );
    public static final Class9300<Class4726, ? extends Structure<Class4726>> field43861 = method36275(
-      "ruined_portal_swamp", Structure.field18064.method11368(new Class4726(Class107.SWAMP))
+      "ruined_portal_swamp", Structure.RUINED_PORTAL.method11368(new Class4726(Class107.SWAMP))
    );
    public static final Class9300<Class4726, ? extends Structure<Class4726>> field43862 = method36275(
-      "ruined_portal_mountain", Structure.field18064.method11368(new Class4726(Class107.MOUNTAIN))
+      "ruined_portal_mountain", Structure.RUINED_PORTAL.method11368(new Class4726(Class107.MOUNTAIN))
    );
    public static final Class9300<Class4726, ? extends Structure<Class4726>> field43863 = method36275(
-      "ruined_portal_ocean", Structure.field18064.method11368(new Class4726(Class107.OCEAN))
+      "ruined_portal_ocean", Structure.RUINED_PORTAL.method11368(new Class4726(Class107.OCEAN))
    );
    public static final Class9300<Class4726, ? extends Structure<Class4726>> field43864 = method36275(
-      "ruined_portal_nether", Structure.field18064.method11368(new Class4726(Class107.NETHER))
+      "ruined_portal_nether", Structure.RUINED_PORTAL.method11368(new Class4726(Class107.NETHER))
    );
 
    private static <FC extends Class4698, F extends Structure<FC>> Class9300<FC, F> method36275(String var0, Class9300<FC, F> var1) {

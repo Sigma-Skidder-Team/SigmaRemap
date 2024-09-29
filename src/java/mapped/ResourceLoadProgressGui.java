@@ -62,7 +62,7 @@ public class ResourceLoadProgressGui extends LoadingGui {
          }
 
          int var13 = MathHelper.ceil((1.0F - MathHelper.clamp(var11 - 1.0F, 0.0F, 1.0F)) * 255.0F);
-         method5686(var1, 0, 0, var7, var8, this.field6445 | var13 << 24);
+         fill(var1, 0, 0, var7, var8, this.field6445 | var13 << 24);
          var14 = 1.0F - MathHelper.clamp(var11 - 1.0F, 0.0F, 1.0F);
       } else if (this.field6441) {
          if (this.field6438.currentScreen != null && var12 < 1.0F) {
@@ -70,10 +70,10 @@ public class ResourceLoadProgressGui extends LoadingGui {
          }
 
          int var27 = MathHelper.method37774(MathHelper.clamp((double)var12, 0.15, 1.0) * 255.0);
-         method5686(var1, 0, 0, var7, var8, this.field6445 | var27 << 24);
+         fill(var1, 0, 0, var7, var8, this.field6445 | var27 << 24);
          var14 = MathHelper.clamp(var12, 0.0F, 1.0F);
       } else {
-         method5686(var1, 0, 0, var7, var8, this.field6445 | 0xFF000000);
+         fill(var1, 0, 0, var7, var8, this.field6445 | 0xFF000000);
          var14 = 1.0F;
       }
 
@@ -141,22 +141,22 @@ public class ResourceLoadProgressGui extends LoadingGui {
          int var12 = this.field6446 >> 8 & 0xFF;
          int var13 = this.field6446 & 0xFF;
          int var14 = Class9470.method36520(var10, var11, var12, var13);
-         method5686(var1, var2, var3, var4, var5, var14);
+         fill(var1, var2, var3, var4, var5, var14);
       }
 
       int var18 = this.field6447 >> 16 & 0xFF;
       int var19 = this.field6447 >> 8 & 0xFF;
       int var20 = this.field6447 & 0xFF;
       int var21 = Class9470.method36520(var10, var18, var19, var20);
-      method5686(var1, var2 + 1, var3, var4 - 1, var3 + 1, var21);
-      method5686(var1, var2 + 1, var5, var4 - 1, var5 - 1, var21);
-      method5686(var1, var2, var3, var2 + 1, var5, var21);
-      method5686(var1, var4, var3, var4 - 1, var5, var21);
+      fill(var1, var2 + 1, var3, var4 - 1, var3 + 1, var21);
+      fill(var1, var2 + 1, var5, var4 - 1, var5 - 1, var21);
+      fill(var1, var2, var3, var2 + 1, var5, var21);
+      fill(var1, var4, var3, var4 - 1, var5, var21);
       int var15 = this.field6448 >> 16 & 0xFF;
       int var16 = this.field6448 >> 8 & 0xFF;
       int var17 = this.field6448 & 0xFF;
       var21 = Class9470.method36520(var10, var15, var16, var17);
-      method5686(var1, var2 + 2, var3 + 2, var2 + var9, var5 - 2, var21);
+      fill(var1, var2 + 2, var3 + 2, var2 + var9, var5 - 2, var21);
    }
 
    @Override

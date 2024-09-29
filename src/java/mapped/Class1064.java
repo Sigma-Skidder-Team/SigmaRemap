@@ -105,7 +105,7 @@ public class Class1064 extends Class1066 implements Class1022 {
    }
 
    public int method4889() {
-      return MathHelper.method37775(this.dataManager.<Integer>method35445(field5872), 0, 3);
+      return MathHelper.clamp(this.dataManager.<Integer>method35445(field5872), 0, 3);
    }
 
    public void method4890(int var1) {

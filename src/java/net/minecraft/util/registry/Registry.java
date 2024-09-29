@@ -116,7 +116,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final RegistryKey<Registry<Class2898<?>>> field16111 = createKey("worldgen/feature");
    public static final Registry<Class2898<?>> field16112 = method9175(field16111, () -> Class2898.field17961);
    public static final RegistryKey<Registry<Structure<?>>> field16113 = createKey("worldgen/structure_feature");
-   public static final Registry<Structure<?>> field16114 = method9175(field16113, () -> Structure.field18059);
+   public static final Registry<Structure<?>> field16114 = method9175(field16113, () -> Structure.MINESHAFT);
    public static final RegistryKey<Registry<Class7792>> field16115 = createKey("worldgen/structure_piece");
    public static final Registry<Class7792> field16116 = method9175(field16115, () -> Class7792.field33427);
    public static final RegistryKey<Registry<Class6272<?>>> field16117 = createKey("worldgen/decorator");

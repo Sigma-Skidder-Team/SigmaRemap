@@ -5,6 +5,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.server.ServerWorld;
 
@@ -93,7 +94,7 @@ public class Class3634 {
       }
 
       if (var6 == -1.0) {
-         var8 = new BlockPos(var1.getX(), MathHelper.method37775(var1.getY(), 70, this.field19668.method6998() - 10), var1.getZ())
+         var8 = new BlockPos(var1.getX(), MathHelper.clamp(var1.getY(), 70, this.field19668.method6998() - 10), var1.getZ())
             .toImmutable();
          Direction var24 = var5.rotateY();
          if (!var12.contains(var8)) {

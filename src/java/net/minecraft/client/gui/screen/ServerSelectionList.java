@@ -302,7 +302,7 @@ public class ServerSelectionList extends Class1274<ServerSelectionList.Entry> {
 
          if (this.mc.gameSettings.touchscreen || var9) {
             this.mc.getTextureManager().bindTexture(method6090());
-            method5686(var1, var4, var3, var4 + 32, var3 + 32, -1601138544);
+            fill(var1, var4, var3, var4 + 32, var3 + 32, -1601138544);
             RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
             int var24 = var7 - var4;
             int var25 = var8 - var3;

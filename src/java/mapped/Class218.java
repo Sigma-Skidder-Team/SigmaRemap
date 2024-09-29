@@ -50,7 +50,7 @@ public class Class218<T extends LivingEntity & Class1041, M extends Class2827<T>
             ResourceLocation var20 = this.method818("profession", Registry.field16090.getKey(var15));
             method824(var18, var20, var1, var2, var3, var4, 1.0F, 1.0F, 1.0F);
             if (var15 != Class8395.field36022) {
-               ResourceLocation var21 = this.method818("profession_level", (ResourceLocation)field858.get(MathHelper.method37775(var13.method26572(), 1, field858.size())));
+               ResourceLocation var21 = this.method818("profession_level", (ResourceLocation)field858.get(MathHelper.clamp(var13.method26572(), 1, field858.size())));
                method824(var18, var21, var1, var2, var3, var4, 1.0F, 1.0F, 1.0F);
             }
          }

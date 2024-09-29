@@ -118,7 +118,7 @@ public class Class6850 {
                var5 = Math.max(var5, this.field29750.getStringWidth(var7.getText()));
             }
 
-            int var8 = MathHelper.method37775(
+            int var8 = MathHelper.clamp(
                this.field29749.method5673(var4.getRange().getStart()), 0, this.field29749.method5673(0) + this.field29749.method5667() - var5
             );
             int var9 = !this.field29755 ? 72 : this.field29748.height - 12;
@@ -261,7 +261,7 @@ public class Class6850 {
 
       if (!var7.isEmpty()) {
          this.field29757.addAll(var7);
-         this.field29758 = MathHelper.method37775(
+         this.field29758 = MathHelper.clamp(
             this.field29749.method5673(var5.startPos), 0, this.field29749.method5673(0) + this.field29749.method5667() - var8
          );
          this.field29759 = var8;
@@ -321,7 +321,7 @@ public class Class6850 {
 
          for (Class9125 var8 : this.field29757) {
             int var9 = !this.field29755 ? 72 + 12 * var6 : this.field29748.height - 14 - 13 - 12 * var6;
-            AbstractGui.method5686(var1, this.field29758 - 1, var9, this.field29758 + this.field29759 + 1, var9 + 12, this.field29756);
+            AbstractGui.fill(var1, this.field29758 - 1, var9, this.field29758 + this.field29759 + 1, var9 + 12, this.field29756);
             this.field29750.method38802(var1, var8, (float)this.field29758, (float)(var9 + 2), -1);
             var6++;
          }

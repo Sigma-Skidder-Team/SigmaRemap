@@ -11,6 +11,7 @@ import net.minecraft.crash.CrashReport;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.optifine.Config;
 
@@ -116,7 +117,7 @@ public class Class2011 extends Class2009 {
 
                   for (int var25 = 0; var25 < var24.length; var25++) {
                      RenderType var26 = var24[var25];
-                     if (!Class9016.method33348() || Reflector.method35056(Reflector.field42941, var37, var26)) {
+                     if (!Class9016.method33348() || Reflector.callBoolean(Reflector.field42941, var37, var26)) {
                         if (Class9016.method33350()) {
                            Reflector.callVoid(Reflector.field42895, var26);
                         }
@@ -143,7 +144,7 @@ public class Class2011 extends Class2009 {
 
                   for (int var39 = 0; var39 < var38.length; var39++) {
                      RenderType var40 = var38[var39];
-                     if (!Class9016.method33349() || Reflector.method35056(Reflector.field42940, var20, var40)) {
+                     if (!Class9016.method33349() || Reflector.callBoolean(Reflector.field42940, var20, var40)) {
                         if (Class9016.method33350()) {
                            Reflector.callVoid(Reflector.field42895, var40);
                         }

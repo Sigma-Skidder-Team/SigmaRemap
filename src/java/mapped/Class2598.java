@@ -79,7 +79,7 @@ public class Class2598 extends Class2595 {
       if (--this.field16829 != 0) {
          if (this.field16829 < 0) {
             float var6 = MathHelper.sqrt(var3) / this.field16834;
-            this.field16829 = MathHelper.method37767(var6 * (float)(this.field16833 - this.field16832) + (float)this.field16832);
+            this.field16829 = MathHelper.floor(var6 * (float)(this.field16833 - this.field16832) + (float)this.field16832);
          }
       } else {
          if (!var5) {
@@ -89,7 +89,7 @@ public class Class2598 extends Class2595 {
          float var8 = MathHelper.sqrt(var3) / this.field16834;
          float var7 = MathHelper.clamp(var8, 0.1F, 1.0F);
          this.field16827.method4530(this.field16828, var7);
-         this.field16829 = MathHelper.method37767(var8 * (float)(this.field16833 - this.field16832) + (float)this.field16832);
+         this.field16829 = MathHelper.floor(var8 * (float)(this.field16833 - this.field16832) + (float)this.field16832);
       }
    }
 }

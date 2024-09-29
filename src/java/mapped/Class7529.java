@@ -66,7 +66,7 @@ public class Class7529 extends Class7530 {
          .orElseThrow(() -> new IllegalArgumentException("Invalid map dimension: " + var1.method116("dimension")));
       this.field32316 = var1.getInt("xCenter");
       this.field32317 = var1.getInt("zCenter");
-      this.field32321 = (byte) MathHelper.method37775(var1.getByte("scale"), 0, 4);
+      this.field32321 = (byte) MathHelper.clamp(var1.getByte("scale"), 0, 4);
       this.field32319 = !var1.contains("trackingPosition", 1) || var1.getBoolean("trackingPosition");
       this.field32320 = var1.getBoolean("unlimitedTracking");
       this.field32323 = var1.getBoolean("locked");
@@ -97,7 +97,7 @@ public class Class7529 extends Class7530 {
          Class6674 var7 = Class6674.method20349(var8.method153(var9));
          this.field32328.put(var7.method20354(), var7);
          this.method24596(
-            MapDecorationType.field14517,
+            MapDecorationType.FRAME,
             (IWorld)null,
             "frame-" + var7.method20353(),
             (double)var7.method20351().getX(),
@@ -165,7 +165,7 @@ public class Class7529 extends Class7530 {
          if (!var6.field38390.removed && (var6.field38390.inventory.method4058(var2) || var2.method32165())) {
             if (!var2.method32165() && var6.field38390.world.getDimensionKey() == this.field32318 && this.field32319) {
                this.method24596(
-                  MapDecorationType.field14516,
+                  MapDecorationType.PLAYER,
                   var6.field38390.world,
                   var7,
                   var6.field38390.getPosX(),
@@ -191,7 +191,7 @@ public class Class7529 extends Class7530 {
 
          Class6674 var8 = new Class6674(var12, var10.getHorizontalFacing().getHorizontalIndex() * 90, var10.getEntityId());
          this.method24596(
-            MapDecorationType.field14517,
+            MapDecorationType.FRAME,
             var1.world,
             "frame-" + var10.getEntityId(),
             (double)var12.getX(),
@@ -210,7 +210,7 @@ public class Class7529 extends Class7530 {
             CompoundNBT var16 = var13.method153(var15);
             if (!this.field32327.containsKey(var16.getString("id"))) {
                this.method24596(
-                  MapDecorationType.method8957(var16.getByte("type")),
+                  MapDecorationType.byIcon(var16.getByte("type")),
                   var1.world,
                   var16.getString("id"),
                   var16.getDouble("x"),
@@ -233,15 +233,15 @@ public class Class7529 extends Class7530 {
       }
 
       CompoundNBT var7 = new CompoundNBT();
-      var7.method100("type", var3.method8953());
+      var7.method100("type", var3.getIcon());
       var7.method109("id", var2);
       var7.method108("x", (double)var1.getX());
       var7.method108("z", (double)var1.getZ());
       var7.method108("rot", 180.0);
       var6.add(var7);
-      if (var3.method8955()) {
+      if (var3.hasMapColor()) {
          CompoundNBT var8 = var0.method32144("display");
-         var8.putInt("MapColor", var3.method8956());
+         var8.putInt("MapColor", var3.getMapColor());
       }
    }
 
@@ -261,21 +261,21 @@ public class Class7529 extends Class7530 {
             var20 = (byte)(var22 * var22 * 34187121 + var22 * 121 >> 15 & 15);
          }
       } else {
-         if (var1 != MapDecorationType.field14516) {
+         if (var1 != MapDecorationType.PLAYER) {
             this.field32327.remove(var3);
             return;
          }
 
          short var19 = 320;
          if (Math.abs(var14) < 320.0F && Math.abs(var15) < 320.0F) {
-            var1 = MapDecorationType.field14522;
+            var1 = MapDecorationType.PLAYER_OFF_MAP;
          } else {
             if (!this.field32320) {
                this.field32327.remove(var3);
                return;
             }
 
-            var1 = MapDecorationType.field14523;
+            var1 = MapDecorationType.PLAYER_OFF_LIMITS;
          }
 
          var20 = 0;

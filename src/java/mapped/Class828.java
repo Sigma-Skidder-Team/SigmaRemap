@@ -39,7 +39,7 @@ public class Class828 extends Screen {
    private final List<String> field4584 = Lists.newArrayList();
    private String field4585 = "";
    private final Class9079 field4586 = new Class9079(
-      this::method2509, this::method2510, this::method2494, this::method2493, var1x -> var1x.length() < 1024 && this.fontRenderer.method38827(var1x, 114) <= 128
+      this::method2509, this::method2510, this::method2494, this::method2493, var1x -> var1x.length() < 1024 && this.font.method38827(var1x, 114) <= 128
    );
    private final Class9079 field4587 = new Class9079(
       () -> this.field4585, var1x -> this.field4585 = var1x, this::method2494, this::method2493, var0 -> var0.length() < 16
@@ -375,12 +375,12 @@ public class Class828 extends Screen {
       byte var8 = 2;
       this.blit(var1, var7, 2, 0, 0, 192, 192);
       if (!this.field4581) {
-         int var9 = this.fontRenderer.method38821(this.field4598);
-         this.fontRenderer.func_243248_b(var1, this.field4598, (float)(var7 - var9 + 192 - 44), 18.0F, 0);
+         int var9 = this.font.method38821(this.field4598);
+         this.font.func_243248_b(var1, this.field4598, (float)(var7 - var9 + 192 - 44), 18.0F, 0);
          Class8398 var10 = this.method2517();
 
          for (Class8067 var14 : Class8398.method29486(var10)) {
-            this.fontRenderer.func_243248_b(var1, Class8067.method27765(var14), (float)Class8067.method27766(var14), (float)Class8067.method27767(var14), -16777216);
+            this.font.func_243248_b(var1, Class8067.method27765(var14), (float)Class8067.method27766(var14), (float)Class8067.method27767(var14), -16777216);
          }
 
          this.method2512(Class8398.method29487(var10));
@@ -388,13 +388,13 @@ public class Class828 extends Screen {
       } else {
          boolean var15 = this.field4582 / 6 % 2 == 0;
          Class9125 var16 = Class9125.method34041(Class9125.method34038(this.field4585, Style.EMPTY), !var15 ? field4577 : field4576);
-         int var17 = this.fontRenderer.method38821(field4574);
-         this.fontRenderer.func_243248_b(var1, field4574, (float)(var7 + 36 + (114 - var17) / 2), 34.0F, 0);
-         int var18 = this.fontRenderer.method38822(var16);
-         this.fontRenderer.method38804(var1, var16, (float)(var7 + 36 + (114 - var18) / 2), 50.0F, 0);
-         int var19 = this.fontRenderer.method38821(this.field4599);
-         this.fontRenderer.func_243248_b(var1, this.field4599, (float)(var7 + 36 + (114 - var19) / 2), 60.0F, 0);
-         this.fontRenderer.method38826(field4575, var7 + 36, 82, 114, 0);
+         int var17 = this.font.method38821(field4574);
+         this.font.func_243248_b(var1, field4574, (float)(var7 + 36 + (114 - var17) / 2), 34.0F, 0);
+         int var18 = this.font.method38822(var16);
+         this.font.method38804(var1, var16, (float)(var7 + 36 + (114 - var18) / 2), 50.0F, 0);
+         int var19 = this.font.method38821(this.field4599);
+         this.font.func_243248_b(var1, this.field4599, (float)(var7 + 36 + (114 - var19) / 2), 60.0F, 0);
+         this.font.method38826(field4575, var7 + 36, 82, 114, 0);
       }
 
       super.render(var1, var2, var3, var4);
@@ -404,9 +404,9 @@ public class Class828 extends Screen {
       if (this.field4582 / 6 % 2 == 0) {
          var2 = this.method2514(var2);
          if (var3) {
-            this.fontRenderer.method38801(var1, "_", (float)var2.field27614, (float)var2.field27615, 0);
+            this.font.method38801(var1, "_", (float)var2.field27614, (float)var2.field27615, 0);
          } else {
-            AbstractGui.method5686(var1, var2.field27614, var2.field27615 - 1, var2.field27614 + 1, var2.field27615 + 9, -16777216);
+            AbstractGui.fill(var1, var2.field27614, var2.field27615 - 1, var2.field27614 + 1, var2.field27615 + 9, -16777216);
          }
       }
    }
@@ -452,7 +452,7 @@ public class Class828 extends Screen {
          if (var5 == 0) {
             long var8 = Util.milliTime();
             Class8398 var10 = this.method2517();
-            int var11 = var10.method29481(this.fontRenderer, this.method2513(new Class6178((int)var1, (int)var3)));
+            int var11 = var10.method29481(this.font, this.method2513(new Class6178((int)var1, (int)var3)));
             if (var11 >= 0) {
                if (var11 != this.field4589 || var8 - this.field4588 >= 250L) {
                   this.field4586.method33850(var11, Screen.method2476());
@@ -483,7 +483,7 @@ public class Class828 extends Screen {
       if (!super.mouseDragged(var1, var3, var5, var6, var8)) {
          if (var5 == 0) {
             Class8398 var12 = this.method2517();
-            int var13 = var12.method29481(this.fontRenderer, this.method2513(new Class6178((int)var1, (int)var3)));
+            int var13 = var12.method29481(this.font, this.method2513(new Class6178((int)var1, (int)var3)));
             this.field4586.method33850(var13, true);
             this.method2518();
          }
@@ -521,7 +521,7 @@ public class Class828 extends Screen {
          ArrayList<Class8067> var7 = Lists.newArrayList();
          MutableInt var8 = new MutableInt();
          MutableBoolean var9 = new MutableBoolean();
-         CharacterManager var10 = this.fontRenderer.method38830();
+         CharacterManager var10 = this.font.method38830();
          var10.func_238353_a_(var3, 114, Style.EMPTY, true, (var6x, var7x, var8x) -> {
             int var11x = var8.getAndIncrement();
             String var12x = var3.substring(var7x, var8x);
@@ -539,7 +539,7 @@ public class Class828 extends Screen {
             var15 = new Class6178(0, var7.size() * 9);
          } else {
             int var13 = method2521(var11, var4);
-            int var14 = this.fontRenderer.getStringWidth(var3.substring(var11[var13], var4));
+            int var14 = this.font.getStringWidth(var3.substring(var11[var13], var4));
             var15 = new Class6178(var14, var13 * 9);
          }
 

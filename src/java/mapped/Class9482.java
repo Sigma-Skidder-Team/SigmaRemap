@@ -43,7 +43,7 @@ public class Class9482 {
             Class6619 var3 = (Class6619)var0x.getSource();
             MinecraftServer var4 = var3.method20177();
             ResourcePackList var5 = var4.method1402();
-            IServerConfiguration var6 = var4.method1436();
+            IServerConfiguration var6 = var4.func_240793_aU_();
             Collection var7 = var5.func_232621_d_();
             Collection var8 = method36606(var5, var6, var7);
             var3.method20179(new TranslationTextComponent("commands.reload.success"), true);

@@ -39,21 +39,21 @@ public class Class9733 {
       )
       .stable();
    private static final Map<Structure<?>, Class9300<?, ?>> field45444 = Util.<Map<Structure<?>, Class9300<?, ?>>>make(Maps.newHashMap(), var0 -> {
-      var0.put(Structure.field18059, Class9438.field43835);
+      var0.put(Structure.MINESHAFT, Class9438.field43835);
       var0.put(Structure.field18073, Class9438.field43853);
-      var0.put(Structure.field18067, Class9438.field43844);
-      var0.put(Structure.field18066, Class9438.field43843);
-      var0.put(Structure.field18062, Class9438.field43839);
-      var0.put(Structure.field18061, Class9438.field43838);
-      var0.put(Structure.field18063, Class9438.field43840);
+      var0.put(Structure.STRONGHOLD, Class9438.field43844);
+      var0.put(Structure.SWAMP_HUT, Class9438.field43843);
+      var0.put(Structure.DESERT_PYRAMID, Class9438.field43839);
+      var0.put(Structure.JUNGLE_PYRAMID, Class9438.field43838);
+      var0.put(Structure.IGLOO, Class9438.field43840);
       var0.put(Structure.field18069, Class9438.field43846);
-      var0.put(Structure.field18065, Class9438.field43841);
-      var0.put(Structure.field18068, Class9438.field43845);
+      var0.put(Structure.SHIPWRECK, Class9438.field43841);
+      var0.put(Structure.MONUMENT, Class9438.field43845);
       var0.put(Structure.field18071, Class9438.field43850);
-      var0.put(Structure.field18060, Class9438.field43837);
+      var0.put(Structure.MANSION, Class9438.field43837);
       var0.put(Structure.field18070, Class9438.field43848);
-      var0.put(Structure.field18058, Class9438.field43834);
-      var0.put(Structure.field18064, Class9438.field43858);
+      var0.put(Structure.PILLAGER_OUTPOST, Class9438.field43834);
+      var0.put(Structure.RUINED_PORTAL, Class9438.field43858);
       var0.put(Structure.field18075, Class9438.field43852);
    });
    private final Registry<Biome> field45445;

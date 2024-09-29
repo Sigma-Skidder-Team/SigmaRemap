@@ -138,8 +138,8 @@ public class Class1017 extends Class1018 implements IAngerable, Class1016 {
          if (var1 instanceof LivingEntity) {
             ((LivingEntity)var1).method3079(((LivingEntity)var1).method3078() + 1);
             byte var5 = 0;
-            if (this.world.method6997() != Difficulty.field14353) {
-               if (this.world.method6997() == Difficulty.field14354) {
+            if (this.world.method6997() != Difficulty.NORMAL) {
+               if (this.world.method6997() == Difficulty.HARD) {
                   var5 = 18;
                }
             } else {
@@ -277,7 +277,7 @@ public class Class1017 extends Class1018 implements IAngerable, Class1016 {
 
       if (var3) {
          this.field5690++;
-         if (this.field5690 % 5 == 0 && this.rand.nextInt(MathHelper.method37775(1200 - this.field5690, 1, 1200)) == 0) {
+         if (this.field5690 % 5 == 0 && this.rand.nextInt(MathHelper.clamp(1200 - this.field5690, 1, 1200)) == 0) {
             this.attackEntityFrom(DamageSource.field39005, this.getHealth());
          }
       }

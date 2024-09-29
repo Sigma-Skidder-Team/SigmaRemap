@@ -181,11 +181,11 @@ public class Class1282 extends Class1274<Class1171> {
       if (var2 != null) {
          int var7 = var3 + 12;
          int var8 = var4 - 12;
-         int var9 = this.field6846.fontRenderer.method38821(var2);
+         int var9 = this.field6846.font.method38821(var2);
          this.method5688(var1, var7 - 3, var8 - 3, var7 + var9 + 3, var8 + 8 + 3, -1073741824, -1073741824);
          RenderSystem.pushMatrix();
          RenderSystem.translatef(0.0F, 0.0F, 400.0F);
-         this.field6846.fontRenderer.method38803(var1, var2, (float)var7, (float)var8, -1);
+         this.field6846.font.method38803(var1, var2, (float)var7, (float)var8, -1);
          RenderSystem.popMatrix();
       }
    }

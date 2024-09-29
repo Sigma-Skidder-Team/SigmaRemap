@@ -24,8 +24,8 @@ public class Class1134 extends Screen {
    @Override
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.method5688(var1, 0, 0, this.width, this.height, -12574688, -11530224);
-      drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2, 90, 16777215);
-      drawCenteredString(var1, this.fontRenderer, this.field6190, this.width / 2, 110, 16777215);
+      drawCenteredString(var1, this.font, this.title, this.width / 2, 90, 16777215);
+      drawCenteredString(var1, this.font, this.field6190, this.width / 2, 110, 16777215);
       super.render(var1, var2, var3, var4);
    }
 

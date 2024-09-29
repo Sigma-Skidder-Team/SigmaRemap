@@ -38,7 +38,7 @@ public class Class5946 extends Class5942<Class950> {
       var0.translate(0.5, 0.0, 0.5);
       float var15 = (float)Math.floorMod(var5, 40L) + var3;
       float var16 = var8 >= 0 ? -var15 : var15;
-      float var17 = MathHelper.method37807(var16 * 0.2F - (float) MathHelper.method37767(var16 * 0.1F));
+      float var17 = MathHelper.method37807(var16 * 0.2F - (float) MathHelper.floor(var16 * 0.1F));
       float var18 = var9[0];
       float var19 = var9[1];
       float var20 = var9[2];

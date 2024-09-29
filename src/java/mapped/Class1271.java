@@ -76,11 +76,11 @@ public class Class1271 extends AbstractGui {
       RenderSystem.enableDepthTest();
       RenderSystem.translatef(0.0F, 0.0F, 950.0F);
       RenderSystem.colorMask(false, false, false, false);
-      method5686(var1, 4680, 2260, -4680, -2260, -16777216);
+      fill(var1, 4680, 2260, -4680, -2260, -16777216);
       RenderSystem.colorMask(true, true, true, true);
       RenderSystem.translatef(0.0F, 0.0F, -950.0F);
       RenderSystem.depthFunc(518);
-      method5686(var1, 234, 113, 0, 0, -16777216);
+      fill(var1, 234, 113, 0, 0, -16777216);
       RenderSystem.depthFunc(515);
       ResourceLocation var4 = this.field6753.method34937();
       if (var4 == null) {
@@ -106,7 +106,7 @@ public class Class1271 extends AbstractGui {
       RenderSystem.depthFunc(518);
       RenderSystem.translatef(0.0F, 0.0F, -950.0F);
       RenderSystem.colorMask(false, false, false, false);
-      method5686(var1, 4680, 2260, -4680, -2260, -16777216);
+      fill(var1, 4680, 2260, -4680, -2260, -16777216);
       RenderSystem.colorMask(true, true, true, true);
       RenderSystem.translatef(0.0F, 0.0F, 950.0F);
       RenderSystem.depthFunc(515);
@@ -116,7 +116,7 @@ public class Class1271 extends AbstractGui {
    public void method6006(MatrixStack var1, int var2, int var3, int var4, int var5) {
       RenderSystem.pushMatrix();
       RenderSystem.translatef(0.0F, 0.0F, 200.0F);
-      method5686(var1, 0, 0, 234, 113, MathHelper.method37767(this.field6764 * 255.0F) << 24);
+      fill(var1, 0, 0, 234, 113, MathHelper.floor(this.field6764 * 255.0F) << 24);
       boolean var8 = false;
       int var9 = MathHelper.floor(this.field6758);
       int var10 = MathHelper.floor(this.field6759);

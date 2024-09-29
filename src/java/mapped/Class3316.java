@@ -19,6 +19,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
@@ -349,7 +350,7 @@ public class Class3316 extends Class3314 {
             var1,
             var5.field32316,
             var5.field32317,
-            MathHelper.method37775(var5.field32321 + var2, 0, 4),
+            MathHelper.clamp(var5.field32321 + var2, 0, 4),
             var5.field32319,
             var5.field32320,
             var5.field32318

@@ -38,7 +38,7 @@ public class TutorialToast implements Class7601 {
       }
 
       if (this.field32629) {
-         AbstractGui.method5686(var1, 3, 28, 157, 29, -1);
+         AbstractGui.fill(var1, 3, 28, 157, 29, -1);
          float var7 = (float) MathHelper.method37779((double)this.field32627, (double)this.field32628, (double)((float)(var3 - this.field32626) / 100.0F));
          int var8;
          if (!(this.field32628 >= this.field32627)) {
@@ -47,7 +47,7 @@ public class TutorialToast implements Class7601 {
             var8 = -16755456;
          }
 
-         AbstractGui.method5686(var1, 3, 28, (int)(3.0F + 154.0F * var7), 29, var8);
+         AbstractGui.fill(var1, 3, 28, (int)(3.0F + 154.0F * var7), 29, var8);
          this.field32627 = var7;
          this.field32626 = var3;
       }

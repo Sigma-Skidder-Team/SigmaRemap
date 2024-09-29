@@ -32,7 +32,7 @@ public abstract class Class855<T extends Class5831> extends ContainerScreen<T> i
          this.field4734 = this.field4759.method5837(this.field4760, this.width, this.xSize);
          ((Class1243)var1).method5819(this.field4734 + 20, this.height / 2 - 49);
       }));
-      this.field4723 = (this.xSize - this.fontRenderer.method38821(this.title)) / 2;
+      this.field4723 = (this.xSize - this.font.method38821(this.title)) / 2;
    }
 
    @Override

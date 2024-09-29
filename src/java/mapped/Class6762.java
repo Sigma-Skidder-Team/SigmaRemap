@@ -115,7 +115,7 @@ public class Class6762 extends Class6764 {
       Class2163 var7 = this.method20632(this.field29476, var2.field30847, var2.field30848 + 1, var2.field30849);
       Class2163 var8 = this.method20632(this.field29476, var2.field30847, var2.field30848, var2.field30849);
       if (this.field29476.method4223(var7) >= 0.0F && var8 != Class2163.field14206) {
-         var6 = MathHelper.method37767(Math.max(1.0F, this.field29476.stepHeight));
+         var6 = MathHelper.floor(Math.max(1.0F, this.field29476.stepHeight));
       }
 
       double var9 = method20626(this.field29475, new BlockPos(var2.field30847, var2.field30848, var2.field30849));

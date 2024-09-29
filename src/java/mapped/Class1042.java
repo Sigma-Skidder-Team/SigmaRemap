@@ -11,6 +11,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.merchant.villager.VillagerTrades;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -384,7 +385,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
       int var4 = this.method4703(var1);
       if (var4 != 0) {
          for (Class9346 var6 : this.method4742()) {
-            var6.method35376(-MathHelper.method37767((float)var4 * var6.method35380()));
+            var6.method35376(-MathHelper.floor((float)var4 * var6.method35380()));
          }
       }
 
@@ -702,7 +703,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
 
    @Override
    public void method3353(ServerWorld var1, Class906 var2) {
-      if (var1.method6997() == Difficulty.field14351) {
+      if (var1.method6997() == Difficulty.PEACEFUL) {
          super.method3353(var1, var2);
       } else {
          LOGGER.info("Villager {} was struck by lightning {}.", this, var2);
@@ -769,7 +770,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
    @Override
    public void method4713() {
       Class7921 var3 = this.method4674();
-      Int2ObjectMap var4 = Class9721.field45414.get(var3.method26571());
+      Int2ObjectMap var4 = VillagerTrades.field45414.get(var3.method26571());
       if (var4 != null && !var4.isEmpty()) {
          Class5391[] var5 = (Class5391[])var4.get(var3.method26572());
          if (var5 != null) {

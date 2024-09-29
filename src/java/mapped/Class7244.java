@@ -1,12 +1,14 @@
 package mapped;
 
 import net.minecraft.client.util.Util;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.chunk.listener.IChunkStatusListener;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Class7244 implements Class7243 {
+public class Class7244 implements IChunkStatusListener {
    private static final Logger field31096 = LogManager.getLogger();
    private final int field31097;
    private int field31098;
@@ -33,17 +35,17 @@ public class Class7244 implements Class7243 {
       int var5 = this.method22741();
       if (Util.milliTime() > this.field31100) {
          this.field31100 += 500L;
-         field31096.info(new TranslationTextComponent("menu.preparingSpawn", MathHelper.method37775(var5, 0, 100)).getString());
+         field31096.info(new TranslationTextComponent("menu.preparingSpawn", MathHelper.clamp(var5, 0, 100)).getString());
       }
    }
 
    @Override
-   public void method22738() {
+   public void stop() {
       field31096.info("Time elapsed: {} ms", Util.milliTime() - this.field31099);
       this.field31100 = Long.MAX_VALUE;
    }
 
    public int method22741() {
-      return MathHelper.method37767((float)this.field31098 * 100.0F / (float)this.field31097);
+      return MathHelper.floor((float)this.field31098 * 100.0F / (float)this.field31097);
    }
 }

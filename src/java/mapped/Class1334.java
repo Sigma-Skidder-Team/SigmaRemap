@@ -26,7 +26,7 @@ public class Class1334 extends Screen {
    @Override
    public void init() {
       super.init();
-      this.field7059 = Class5991.method18584(this.fontRenderer, field7055, this.width - 50);
+      this.field7059 = Class5991.method18584(this.font, field7055, this.width - 50);
       int var3 = (this.field7059.method18592() + 1) * 9 * 2;
       this.<Button>addButton(new Button(this.width / 2 - 155, 100 + var3, 150, 20, DialogTexts.GUI_PROCEED, var1 -> {
          if (this.field7058.method5820()) {
@@ -51,7 +51,7 @@ public class Class1334 extends Screen {
    @Override
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.method2471(0);
-      method5693(var1, this.fontRenderer, field7054, 25, 30, 16777215);
+      drawString(var1, this.font, field7054, 25, 30, 16777215);
       this.field7059.method18590(var1, 25, 70, 18, 16777215);
       super.render(var1, var2, var3, var4);
    }

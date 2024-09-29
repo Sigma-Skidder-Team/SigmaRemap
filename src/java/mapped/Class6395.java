@@ -140,7 +140,7 @@ public abstract class Class6395 {
             var12.method6966()
          )
       );
-      var15.sendPacket(new SCustomPayloadPlayPacket(SCustomPayloadPlayPacket.field24537, new PacketBuffer(Unpooled.buffer()).writeString(this.method19444().method1325())));
+      var15.sendPacket(new SCustomPayloadPlayPacket(SCustomPayloadPlayPacket.field24537, new PacketBuffer(Unpooled.buffer()).writeString(this.method19444().getServerModName())));
       var15.sendPacket(new SServerDifficultyPacket(var14.method20047(), var14.method20048()));
       var15.sendPacket(new SPlayerAbilitiesPacket(var2.abilities));
       var15.sendPacket(new SHeldItemChangePacket(var2.inventory.currentItem));
@@ -240,9 +240,9 @@ public abstract class Class6395 {
 
    @Nullable
    public CompoundNBT method19448(ServerPlayerEntity var1) {
-      CompoundNBT var4 = this.field27990.method1436().method20083();
+      CompoundNBT var4 = this.field27990.func_240793_aU_().method20083();
       CompoundNBT var5;
-      if (var1.getName().getString().equals(this.field27990.method1332()) && var4 != null) {
+      if (var1.getName().getString().equals(this.field27990.getServerOwner()) && var4 != null) {
          var5 = var4;
          var1.read(var4);
          field27988.debug("loading single player");
@@ -571,7 +571,7 @@ public abstract class Class6395 {
    }
 
    public boolean canSendCommands(GameProfile var1) {
-      return this.field27995.method14441(var1) || this.field27990.method1421(var1) && this.field27990.method1436().method20072() || this.field28005;
+      return this.field27995.method14441(var1) || this.field27990.method1421(var1) && this.field27990.func_240793_aU_().method20072() || this.field28005;
    }
 
    @Nullable
@@ -695,7 +695,7 @@ public abstract class Class6395 {
          var1.interactionManager.method33862(var2.interactionManager.getGameType(), var2.interactionManager.method33864());
       }
 
-      var1.interactionManager.method33867(var3.getServer().method1436().method20067());
+      var1.interactionManager.method33867(var3.getServer().func_240793_aU_().method20067());
    }
 
    public void method19482(boolean var1) {
@@ -758,7 +758,7 @@ public abstract class Class6395 {
       }
    }
 
-   public List<ServerPlayerEntity> method19488() {
+   public List<ServerPlayerEntity> getPlayers() {
       return this.field27991;
    }
 

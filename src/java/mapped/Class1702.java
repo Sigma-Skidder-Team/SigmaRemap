@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.chunk.IChunk;
 
@@ -43,7 +44,7 @@ public abstract class Class1702 implements Class1704, AutoCloseable {
    public void method7349(boolean var1, boolean var2) {
    }
 
-   public void method7350(ChunkPos var1, boolean var2) {
+   public void forceChunk(ChunkPos var1, boolean var2) {
    }
 
    public boolean method7351(Entity var1) {

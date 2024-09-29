@@ -6,6 +6,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.datafix.codec.DatapackCodec;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.GameType;
+import net.minecraft.world.storage.IServerWorldInfo;
 
 import java.util.Set;
 import javax.annotation.Nullable;
@@ -19,7 +20,7 @@ public interface IServerConfiguration {
 
    Set<String> method20097();
 
-   void method20095(String var1, boolean var2);
+   void addServerBranding(String var1, boolean var2);
 
    default void method20049(CrashReportCategory var1) {
       var1.addDetail("Known server brands", () -> String.join(", ", this.method20097()));
@@ -46,17 +47,17 @@ public interface IServerConfiguration {
 
    void method20094(CompoundNBT var1);
 
-   Class6608 method20098();
+   IServerWorldInfo method20098();
 
    WorldSettings method20099();
 
    CompoundNBT method20080(DynamicRegistries var1, CompoundNBT var2);
 
-   boolean method20045();
+   boolean isHardcore();
 
    int method20084();
 
-   String method20054();
+   String getWorldName();
 
    GameType method20067();
 
@@ -66,9 +67,9 @@ public interface IServerConfiguration {
 
    Difficulty method20047();
 
-   void method20085(Difficulty var1);
+   void setDifficulty(Difficulty var1);
 
-   boolean method20048();
+   boolean isDifficultyLocked();
 
    void method20086(boolean var1);
 

@@ -33,7 +33,7 @@ public class Class6822 extends Class6819 {
 
       for (int var15 = var13.getY() - var6 + var9; var15 <= var13.getY() + var9; var15++) {
          int var16 = var13.getY() - var15;
-         int var17 = var7 + var5.method35438() + MathHelper.method37767((float)var16 / (float)var6 * 3.5F);
+         int var17 = var7 + var5.method35438() + MathHelper.floor((float)var16 / (float)var6 * 3.5F);
          int var18;
          if (var16 > 0 && var17 == var14 && (var15 & 1) == 0) {
             var18 = var17 + 1;

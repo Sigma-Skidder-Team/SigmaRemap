@@ -31,7 +31,7 @@ public class Class8516 {
          this.method30162();
       }
 
-      int var4 = MathHelper.method37775((int)(var1 * 32767.5F - 0.5F), -32768, 32767);
+      int var4 = MathHelper.clamp((int)(var1 * 32767.5F - 0.5F), -32768, 32767);
       this.field38217.putShort((short)var4);
       this.field38216 += 2;
    }

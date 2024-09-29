@@ -35,18 +35,22 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.ForcedChunksSaveData;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkSection;
 import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.chunk.listener.IChunkStatusListener;
 import net.minecraft.world.gen.feature.structure.StructureStart;
 import net.minecraft.world.gen.feature.template.TemplateManager;
+import net.minecraft.world.storage.IServerWorldInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -75,7 +79,7 @@ public class ServerWorld extends World implements ISeedReader {
    private final ServerChunkProvider field9043;
    public boolean field9044;
    private final MinecraftServer field9045;
-   private final Class6608 field9046;
+   private final IServerWorldInfo field9046;
    public boolean field9047;
    private boolean field9048;
    private int field9049;
@@ -99,10 +103,10 @@ public class ServerWorld extends World implements ISeedReader {
       MinecraftServer var1,
       Executor var2,
       SaveFormat.LevelSave var3,
-      Class6608 var4,
+      IServerWorldInfo var4,
       RegistryKey<World> var5,
       DimensionType var6,
-      Class7243 var7,
+      IChunkStatusListener var7,
       ChunkGenerator var8,
       boolean var9,
       long var10,
@@ -135,11 +139,11 @@ public class ServerWorld extends World implements ISeedReader {
          var4.method20073(var1.method1286());
       }
 
-      this.field9059 = new Class7480(this, var1.method1436().getDimensionGeneratorSettings());
+      this.field9059 = new Class7480(this, var1.func_240793_aU_().getDimensionGeneratorSettings());
       if (!this.method6812().doesHasDragonFight()) {
          this.field9058 = null;
       } else {
-         this.field9058 = new Class7819(this, var1.method1436().getDimensionGeneratorSettings().method26259(), var1.method1436().method20089());
+         this.field9058 = new Class7819(this, var1.func_240793_aU_().getDimensionGeneratorSettings().method26259(), var1.func_240793_aU_().method20089());
       }
    }
 
@@ -608,7 +612,7 @@ public class ServerWorld extends World implements ISeedReader {
 
    private void method6911() {
       if (this.field9058 != null) {
-         this.field9045.method1436().method20090(this.field9058.method26109());
+         this.field9045.func_240793_aU_().method20090(this.field9058.method26109());
       }
 
       this.getChunkProvider().method7383().method28773();
@@ -877,7 +881,7 @@ public class ServerWorld extends World implements ISeedReader {
 
    @Override
    public void sendBlockBreakProgress(int var1, BlockPos var2, int var3) {
-      for (ServerPlayerEntity var7 : this.field9045.getPlayerList().method19488()) {
+      for (ServerPlayerEntity var7 : this.field9045.getPlayerList().getPlayers()) {
          if (var7 != null && var7.world == this && var7.getEntityId() != var1) {
             double var8 = (double)var2.getX() - var7.getPosX();
             double var10 = (double)var2.getY() - var7.getPosY();
@@ -1081,7 +1085,7 @@ public class ServerWorld extends World implements ISeedReader {
 
    @Nullable
    public BlockPos method6943(Structure<?> var1, BlockPos var2, int var3, boolean var4) {
-      return this.field9045.method1436().getDimensionGeneratorSettings().method26260() ? this.getChunkProvider().method7370().method17820(this, var1, var2, var3, var4) : null;
+      return this.field9045.func_240793_aU_().getDimensionGeneratorSettings().method26260() ? this.getChunkProvider().method7370().method17820(this, var1, var2, var3, var4) : null;
    }
 
    @Nullable
@@ -1154,19 +1158,19 @@ public class ServerWorld extends World implements ISeedReader {
    }
 
    public LongSet method6949() {
-      Class7536 var3 = this.method6945().<Class7536>method28768(Class7536::new, "chunks");
-      return (LongSet)(var3 == null ? LongSets.EMPTY_SET : LongSets.unmodifiable(var3.method24638()));
+      ForcedChunksSaveData var3 = this.method6945().<ForcedChunksSaveData>method28768(ForcedChunksSaveData::new, "chunks");
+      return (LongSet)(var3 == null ? LongSets.EMPTY_SET : LongSets.unmodifiable(var3.getChunks()));
    }
 
    public boolean method6950(int var1, int var2, boolean var3) {
-      Class7536 var6 = this.method6945().<Class7536>method28767(Class7536::new, "chunks");
+      ForcedChunksSaveData var6 = this.method6945().<ForcedChunksSaveData>method28767(ForcedChunksSaveData::new, "chunks");
       ChunkPos var7 = new ChunkPos(var1, var2);
       long var8 = var7.method24352();
       boolean var10;
       if (!var3) {
-         var10 = var6.method24638().remove(var8);
+         var10 = var6.getChunks().remove(var8);
       } else {
-         var10 = var6.method24638().add(var8);
+         var10 = var6.getChunks().add(var8);
          if (var10) {
             this.getChunk(var1, var2);
          }
@@ -1174,7 +1178,7 @@ public class ServerWorld extends World implements ISeedReader {
 
       var6.method24606(var10);
       if (var10) {
-         this.getChunkProvider().method7350(var7, var3);
+         this.getChunkProvider().forceChunk(var7, var3);
       }
 
       return var10;
@@ -1352,12 +1356,12 @@ public class ServerWorld extends World implements ISeedReader {
    }
 
    public boolean method6966() {
-      return this.field9045.method1436().getDimensionGeneratorSettings().method26268();
+      return this.field9045.func_240793_aU_().getDimensionGeneratorSettings().method26268();
    }
 
    @Override
    public long method6967() {
-      return this.field9045.method1436().getDimensionGeneratorSettings().method26259();
+      return this.field9045.func_240793_aU_().getDimensionGeneratorSettings().method26259();
    }
 
    @Nullable

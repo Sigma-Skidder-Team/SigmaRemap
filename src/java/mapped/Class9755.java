@@ -37,15 +37,15 @@ public class Class9755 {
    }
 
    private float method38331(Difficulty var1, long var2, long var4, float var6) {
-      if (var1 != Difficulty.field14351) {
-         boolean var9 = var1 == Difficulty.field14354;
+      if (var1 != Difficulty.PEACEFUL) {
+         boolean var9 = var1 == Difficulty.HARD;
          float var10 = 0.75F;
          float var11 = MathHelper.clamp(((float)var2 + -72000.0F) / 1440000.0F, 0.0F, 1.0F) * 0.25F;
          var10 += var11;
          float var12 = 0.0F;
          var12 += MathHelper.clamp((float)var4 / 3600000.0F, 0.0F, 1.0F) * (!var9 ? 0.75F : 1.0F);
          var12 += MathHelper.clamp(var6 * 0.25F, 0.0F, var11);
-         if (var1 == Difficulty.field14352) {
+         if (var1 == Difficulty.EASY) {
             var12 *= 0.5F;
          }
 

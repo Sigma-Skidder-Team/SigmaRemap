@@ -175,46 +175,46 @@ public class Class1148 extends Screen {
          this.method5506();
       }));
       this.field6255 = new Class1304(
-         this, this.fontRenderer, this.width / 2 - 152, 40, 300, 20, new TranslationTextComponent("structure_block.structure_name")
+         this, this.font, this.width / 2 - 152, 40, 300, 20, new TranslationTextComponent("structure_block.structure_name")
       );
       this.field6255.method5657(64);
       this.field6255.method5635(this.field6248.method3934());
       this.children.add(this.field6255);
       BlockPos var3 = this.field6248.method3940();
-      this.field6256 = new TextFieldWidget(this.fontRenderer, this.width / 2 - 152, 80, 80, 20, new TranslationTextComponent("structure_block.position.x"));
+      this.field6256 = new TextFieldWidget(this.font, this.width / 2 - 152, 80, 80, 20, new TranslationTextComponent("structure_block.position.x"));
       this.field6256.method5657(15);
       this.field6256.method5635(Integer.toString(var3.getX()));
       this.children.add(this.field6256);
-      this.field6257 = new TextFieldWidget(this.fontRenderer, this.width / 2 - 72, 80, 80, 20, new TranslationTextComponent("structure_block.position.y"));
+      this.field6257 = new TextFieldWidget(this.font, this.width / 2 - 72, 80, 80, 20, new TranslationTextComponent("structure_block.position.y"));
       this.field6257.method5657(15);
       this.field6257.method5635(Integer.toString(var3.getY()));
       this.children.add(this.field6257);
-      this.field6258 = new TextFieldWidget(this.fontRenderer, this.width / 2 + 8, 80, 80, 20, new TranslationTextComponent("structure_block.position.z"));
+      this.field6258 = new TextFieldWidget(this.font, this.width / 2 + 8, 80, 80, 20, new TranslationTextComponent("structure_block.position.z"));
       this.field6258.method5657(15);
       this.field6258.method5635(Integer.toString(var3.getZ()));
       this.children.add(this.field6258);
       BlockPos var4 = this.field6248.method3942();
-      this.field6259 = new TextFieldWidget(this.fontRenderer, this.width / 2 - 152, 120, 80, 20, new TranslationTextComponent("structure_block.size.x"));
+      this.field6259 = new TextFieldWidget(this.font, this.width / 2 - 152, 120, 80, 20, new TranslationTextComponent("structure_block.size.x"));
       this.field6259.method5657(15);
       this.field6259.method5635(Integer.toString(var4.getX()));
       this.children.add(this.field6259);
-      this.field6260 = new TextFieldWidget(this.fontRenderer, this.width / 2 - 72, 120, 80, 20, new TranslationTextComponent("structure_block.size.y"));
+      this.field6260 = new TextFieldWidget(this.font, this.width / 2 - 72, 120, 80, 20, new TranslationTextComponent("structure_block.size.y"));
       this.field6260.method5657(15);
       this.field6260.method5635(Integer.toString(var4.getY()));
       this.children.add(this.field6260);
-      this.field6261 = new TextFieldWidget(this.fontRenderer, this.width / 2 + 8, 120, 80, 20, new TranslationTextComponent("structure_block.size.z"));
+      this.field6261 = new TextFieldWidget(this.font, this.width / 2 + 8, 120, 80, 20, new TranslationTextComponent("structure_block.size.z"));
       this.field6261.method5657(15);
       this.field6261.method5635(Integer.toString(var4.getZ()));
       this.children.add(this.field6261);
-      this.field6262 = new TextFieldWidget(this.fontRenderer, this.width / 2 - 152, 120, 80, 20, new TranslationTextComponent("structure_block.integrity.integrity"));
+      this.field6262 = new TextFieldWidget(this.font, this.width / 2 - 152, 120, 80, 20, new TranslationTextComponent("structure_block.integrity.integrity"));
       this.field6262.method5657(15);
       this.field6262.method5635(this.field6279.format((double)this.field6248.method3955()));
       this.children.add(this.field6262);
-      this.field6263 = new TextFieldWidget(this.fontRenderer, this.width / 2 - 72, 120, 80, 20, new TranslationTextComponent("structure_block.integrity.seed"));
+      this.field6263 = new TextFieldWidget(this.font, this.width / 2 - 72, 120, 80, 20, new TranslationTextComponent("structure_block.integrity.seed"));
       this.field6263.method5657(31);
       this.field6263.method5635(Long.toString(this.field6248.method3957()));
       this.children.add(this.field6263);
-      this.field6264 = new TextFieldWidget(this.fontRenderer, this.width / 2 - 152, 120, 240, 20, new TranslationTextComponent("structure_block.custom_data"));
+      this.field6264 = new TextFieldWidget(this.font, this.width / 2 - 152, 120, 240, 20, new TranslationTextComponent("structure_block.custom_data"));
       this.field6264.method5657(128);
       this.field6264.method5635(this.field6248.method3948());
       this.children.add(this.field6264);
@@ -451,42 +451,42 @@ public class Class1148 extends Screen {
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.renderBackground(var1);
       StructureMode var7 = this.field6248.method3950();
-      drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2, 10, 16777215);
+      drawCenteredString(var1, this.font, this.title, this.width / 2, 10, 16777215);
       if (var7 != StructureMode.field321) {
-         method5693(var1, this.fontRenderer, field6239, this.width / 2 - 153, 30, 10526880);
+         drawString(var1, this.font, field6239, this.width / 2 - 153, 30, 10526880);
          this.field6255.render(var1, var2, var3, var4);
       }
 
       if (var7 == StructureMode.field319 || var7 == StructureMode.field318) {
-         method5693(var1, this.fontRenderer, field6240, this.width / 2 - 153, 70, 10526880);
+         drawString(var1, this.font, field6240, this.width / 2 - 153, 70, 10526880);
          this.field6256.render(var1, var2, var3, var4);
          this.field6257.render(var1, var2, var3, var4);
          this.field6258.render(var1, var2, var3, var4);
-         method5693(var1, this.fontRenderer, field6244, this.width / 2 + 154 - this.fontRenderer.method38821(field6244), 150, 10526880);
+         drawString(var1, this.font, field6244, this.width / 2 + 154 - this.font.method38821(field6244), 150, 10526880);
       }
 
       if (var7 == StructureMode.field318) {
-         method5693(var1, this.fontRenderer, field6241, this.width / 2 - 153, 110, 10526880);
+         drawString(var1, this.font, field6241, this.width / 2 - 153, 110, 10526880);
          this.field6259.render(var1, var2, var3, var4);
          this.field6260.render(var1, var2, var3, var4);
          this.field6261.render(var1, var2, var3, var4);
-         method5693(var1, this.fontRenderer, field6245, this.width / 2 + 154 - this.fontRenderer.method38821(field6245), 110, 10526880);
-         method5693(var1, this.fontRenderer, field6246, this.width / 2 + 154 - this.fontRenderer.method38821(field6246), 70, 10526880);
+         drawString(var1, this.font, field6245, this.width / 2 + 154 - this.font.method38821(field6245), 110, 10526880);
+         drawString(var1, this.font, field6246, this.width / 2 + 154 - this.font.method38821(field6246), 70, 10526880);
       }
 
       if (var7 == StructureMode.field319) {
-         method5693(var1, this.fontRenderer, field6242, this.width / 2 - 153, 110, 10526880);
+         drawString(var1, this.font, field6242, this.width / 2 - 153, 110, 10526880);
          this.field6262.render(var1, var2, var3, var4);
          this.field6263.render(var1, var2, var3, var4);
-         method5693(var1, this.fontRenderer, field6247, this.width / 2 + 154 - this.fontRenderer.method38821(field6247), 70, 10526880);
+         drawString(var1, this.font, field6247, this.width / 2 + 154 - this.font.method38821(field6247), 70, 10526880);
       }
 
       if (var7 == StructureMode.field321) {
-         method5693(var1, this.fontRenderer, field6243, this.width / 2 - 153, 110, 10526880);
+         drawString(var1, this.font, field6243, this.width / 2 - 153, 110, 10526880);
          this.field6264.render(var1, var2, var3, var4);
       }
 
-      method5693(var1, this.fontRenderer, var7.method295(), this.width / 2 - 153, 174, 10526880);
+      drawString(var1, this.font, var7.method295(), this.width / 2 - 153, 174, 10526880);
       super.render(var1, var2, var3, var4);
    }
 

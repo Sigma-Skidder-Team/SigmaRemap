@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.structure.StructureStart;

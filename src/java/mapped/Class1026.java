@@ -131,7 +131,7 @@ public abstract class Class1026 extends Class1028 {
                   var7.removeActivePotionEffect(Effects.BAD_OMEN);
                }
 
-               var12 = MathHelper.method37775(var12, 0, 4);
+               var12 = MathHelper.clamp(var12, 0, 4);
                EffectInstance var10 = new EffectInstance(Effects.BAD_OMEN, 120000, var12, false, false, true);
                if (!this.world.getGameRules().getBoolean(Class5462.field24246)) {
                   var7.addPotionEffect(var10);

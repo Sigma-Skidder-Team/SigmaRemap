@@ -217,7 +217,7 @@ public enum Class2133 {
          case 21:
             return (float)Math.exp((double)method8826(var1, 0));
          case 22:
-            return (float) MathHelper.method37767(method8826(var1, 0));
+            return (float) MathHelper.floor(method8826(var1, 0));
          case 23:
             return (float) MathHelper.ceil(method8826(var1, 0));
          case 24:
@@ -237,7 +237,7 @@ public enum Class2133 {
          case 31:
             float var6 = method8826(var1, 0);
             float var7 = method8826(var1, 1);
-            return var6 - var7 * (float) MathHelper.method37767(var6 / var7);
+            return var6 - var7 * (float) MathHelper.floor(var6 / var7);
          case 32:
             Minecraft var8 = Minecraft.getInstance();
             ClientWorld var9 = var8.world;

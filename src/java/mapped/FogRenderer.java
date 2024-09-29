@@ -116,7 +116,7 @@ public class FogRenderer {
          field40350 = var55 / 255.0F;
          if (field40351 != var25) {
             field40351 = var25;
-            field40352 = MathHelper.method37767(var48) << 16 | MathHelper.method37767(var54) << 8 | MathHelper.method37767(var55);
+            field40352 = MathHelper.floor(var48) << 16 | MathHelper.floor(var54) << 8 | MathHelper.floor(var55);
             field40353 = var19;
          }
       }

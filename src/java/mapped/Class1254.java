@@ -218,7 +218,7 @@ public class Class1254 extends AbstractGui implements Class1190, IGuiEventListen
          int var8 = (this.field6636 - 166) / 2;
          this.blit(var1, var7, var8, 1, 1, 147, 166);
          if (!this.field6643.method5746() && this.field6643.getText().isEmpty()) {
-            method5693(var1, this.field6642.fontRenderer, field6631, var7 + 25, var8 + 14, -1);
+            drawString(var1, this.field6642.fontRenderer, field6631, var7 + 25, var8 + 14, -1);
          } else {
             this.field6643.render(var1, var2, var3, var4);
          }

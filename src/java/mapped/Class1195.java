@@ -41,7 +41,7 @@ public class Class1195 extends AbstractGui implements Class1196 {
             int var6 = this.field6471.getMainWindow().getScaledWidth() / 2;
             int var7 = this.method5702();
             this.method5703(-90);
-            int var8 = MathHelper.method37767((float)this.field6471.getMainWindow().getScaledHeight() - 22.0F * var5);
+            int var8 = MathHelper.floor((float)this.field6471.getMainWindow().getScaledHeight() - 22.0F * var5);
             Class8548 var9 = this.field6473.method27575();
             this.method5721(var1, var5, var6, var8, var9);
             this.method5703(var7);

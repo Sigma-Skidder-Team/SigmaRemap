@@ -49,38 +49,38 @@ public class Class7468 {
    public MapDecorationType method24186() {
       switch (Class7178.field30861[this.field32105.ordinal()]) {
          case 1:
-            return MapDecorationType.field14526;
+            return MapDecorationType.BANNER_WHITE;
          case 2:
-            return MapDecorationType.field14527;
+            return MapDecorationType.BANNER_ORANGE;
          case 3:
-            return MapDecorationType.field14528;
+            return MapDecorationType.BANNER_MAGENTA;
          case 4:
-            return MapDecorationType.field14529;
+            return MapDecorationType.BANNER_LIGHT_BLUE;
          case 5:
-            return MapDecorationType.field14530;
+            return MapDecorationType.BANNER_YELLOW;
          case 6:
-            return MapDecorationType.field14531;
+            return MapDecorationType.BANNER_LIME;
          case 7:
-            return MapDecorationType.field14532;
+            return MapDecorationType.BANNER_PINK;
          case 8:
-            return MapDecorationType.field14533;
+            return MapDecorationType.BANNER_GRAY;
          case 9:
-            return MapDecorationType.field14534;
+            return MapDecorationType.BANNER_LIGHT_GRAY;
          case 10:
-            return MapDecorationType.field14535;
+            return MapDecorationType.BANNER_CYAN;
          case 11:
-            return MapDecorationType.field14536;
+            return MapDecorationType.BANNER_PURPLE;
          case 12:
-            return MapDecorationType.field14537;
+            return MapDecorationType.BANNER_BLUE;
          case 13:
-            return MapDecorationType.field14538;
+            return MapDecorationType.BANNER_BROWN;
          case 14:
-            return MapDecorationType.field14539;
+            return MapDecorationType.BANNER_GREEN;
          case 15:
-            return MapDecorationType.field14540;
+            return MapDecorationType.BANNER_RED;
          case 16:
          default:
-            return MapDecorationType.field14541;
+            return MapDecorationType.BANNER_BLACK;
       }
    }
 

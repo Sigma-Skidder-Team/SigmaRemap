@@ -129,7 +129,7 @@ public class Class822 extends RealmsScreen {
          this.field4497.active = false;
       }
 
-      drawCenteredString(var1, this.fontRenderer, this.field4490, this.width / 2, 50, 16777215);
+      drawCenteredString(var1, this.font, this.field4490, this.width / 2, 50, 16777215);
       if (this.field4494) {
          this.method2363(var1);
       }
@@ -141,7 +141,7 @@ public class Class822 extends RealmsScreen {
 
       if (this.field4489 != null) {
          for (int var7 = 0; var7 < this.field4489.length; var7++) {
-            drawCenteredString(var1, this.fontRenderer, this.field4489[var7], this.width / 2, 110 + 12 * var7, 16711680);
+            drawCenteredString(var1, this.font, this.field4489[var7], this.width / 2, 110 + 12 * var7, 16711680);
          }
       }
 
@@ -149,8 +149,8 @@ public class Class822 extends RealmsScreen {
    }
 
    private void method2363(MatrixStack var1) {
-      int var4 = this.fontRenderer.method38821(this.field4490);
-      this.fontRenderer.method38801(var1, field4481[this.field4498 / 10 % field4481.length], (float)(this.width / 2 + var4 / 2 + 5), 50.0F, 16777215);
+      int var4 = this.font.method38821(this.field4490);
+      this.font.method38801(var1, field4481[this.field4498 / 10 % field4481.length], (float)(this.width / 2 + var4 / 2 + 5), 50.0F, 16777215);
    }
 
    private void method2364(MatrixStack var1) {
@@ -173,7 +173,7 @@ public class Class822 extends RealmsScreen {
       var11.pos(var6, 80.0, 0.0).color(128, 128, 128, 255).endVertex();
       var10.draw();
       RenderSystem.enableTexture();
-      method5690(var1, this.fontRenderer, this.field4491 + " %", this.width / 2, 84, 16777215);
+      drawCenteredString(var1, this.font, this.field4491 + " %", this.width / 2, 84, 16777215);
    }
 
    private void method2365(MatrixStack var1) {
@@ -197,9 +197,9 @@ public class Class822 extends RealmsScreen {
 
    private void method2366(MatrixStack var1, long var2) {
       if (var2 > 0L) {
-         int var6 = this.fontRenderer.getStringWidth(this.field4491);
+         int var6 = this.font.getStringWidth(this.field4491);
          String var7 = "(" + Class2072.method8729(var2) + "/s)";
-         this.fontRenderer.method38801(var1, var7, (float)(this.width / 2 + var6 / 2 + 15), 84.0F, 16777215);
+         this.font.method38801(var1, var7, (float)(this.width / 2 + var6 / 2 + 15), 84.0F, 16777215);
       }
    }
 

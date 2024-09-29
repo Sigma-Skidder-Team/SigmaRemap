@@ -101,15 +101,15 @@ public class Class817 extends RealmsScreen {
    @Override
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.renderBackground(var1);
-      drawCenteredString(var1, this.fontRenderer, field4446, this.width / 2, 17, 16777215);
-      this.fontRenderer.func_243248_b(var1, field4447, (float)(this.width / 2 - 120), (float)method1929(5), 16777215);
-      int var7 = this.fontRenderer.method38821(field4447);
+      drawCenteredString(var1, this.font, field4446, this.width / 2, 17, 16777215);
+      this.font.func_243248_b(var1, field4447, (float)(this.width / 2 - 120), (float)method1929(5), 16777215);
+      int var7 = this.font.method38821(field4447);
       int var8 = this.width / 2 - 121 + var7;
       int var9 = method1929(5);
-      int var10 = var8 + this.fontRenderer.method38821(field4448) + 1;
+      int var10 = var8 + this.font.method38821(field4448) + 1;
       int var11 = var9 + 1 + 9;
       this.field4452 = var8 <= var2 && var2 <= var10 && var9 <= var3 && var3 <= var11;
-      this.fontRenderer.func_243248_b(var1, field4448, (float)(this.width / 2 - 120 + var7), (float)method1929(5), !this.field4452 ? 3368635 : 7107012);
+      this.font.func_243248_b(var1, field4448, (float)(this.width / 2 - 120 + var7), (float)method1929(5), !this.field4452 ? 3368635 : 7107012);
       super.render(var1, var2, var3, var4);
    }
 }

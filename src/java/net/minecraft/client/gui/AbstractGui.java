@@ -23,7 +23,7 @@ public abstract class AbstractGui {
          var3 = var8;
       }
 
-      method5686(var1, var2, var4, var3 + 1, var4 + 1, var5);
+      fill(var1, var2, var4, var3 + 1, var4 + 1, var5);
    }
 
    public void method5685(MatrixStack var1, int var2, int var3, int var4, int var5) {
@@ -33,10 +33,10 @@ public abstract class AbstractGui {
          var4 = var8;
       }
 
-      method5686(var1, var2, var3 + 1, var2 + 1, var4, var5);
+      fill(var1, var2, var3 + 1, var2 + 1, var4, var5);
    }
 
-   public static void method5686(MatrixStack var0, int var1, int var2, int var3, int var4, int var5) {
+   public static void fill(MatrixStack var0, int var1, int var2, int var3, int var4, int var5) {
       method5687(var0.getLast().getMatrix(), var1, var2, var3, var4, var5);
    }
 
@@ -104,7 +104,7 @@ public abstract class AbstractGui {
       var1.pos(var0, (float)var4, (float)var5, (float)var6).color(var16, var17, var18, var15).endVertex();
    }
 
-   public static void method5690(MatrixStack var0, FontRenderer var1, String var2, int var3, int var4, int var5) {
+   public static void drawCenteredString(MatrixStack var0, FontRenderer var1, String var2, int var3, int var4, int var5) {
       var1.drawStringWithShadow(var0, var2, (float)(var3 - var1.getStringWidth(var2) / 2), (float)var4, var5);
    }
 
@@ -117,7 +117,7 @@ public abstract class AbstractGui {
       var1.drawStringWithShadow(var0, var2, (float)var3, (float)var4, var5);
    }
 
-   public static void method5693(MatrixStack var0, FontRenderer var1, ITextComponent var2, int var3, int var4, int var5) {
+   public static void drawString(MatrixStack var0, FontRenderer var1, ITextComponent var2, int var3, int var4, int var5) {
       var1.method38803(var0, var2, (float)var3, (float)var4, var5);
    }
 

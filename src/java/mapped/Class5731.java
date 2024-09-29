@@ -18,7 +18,7 @@ public class Class5731 extends EntityRenderer<ExperienceOrbEntity> {
    }
 
    public int method17858(ExperienceOrbEntity var1, BlockPos var2) {
-      return MathHelper.method37775(super.method17858(var1, var2) + 7, 0, 15);
+      return MathHelper.clamp(super.method17858(var1, var2) + 7, 0, 15);
    }
 
    public void render(ExperienceOrbEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {

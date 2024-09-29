@@ -38,7 +38,7 @@ public class EnchantmentHelper {
             CompoundNBT var7 = var5.method153(var6);
             ResourceLocation var8 = ResourceLocation.method8289(var7.getString("id"));
             if (var8 != null && var8.equals(var4)) {
-               return MathHelper.method37775(var7.getInt("lvl"), 0, 255);
+               return MathHelper.clamp(var7.getInt("lvl"), 0, 255);
             }
          }
 
@@ -301,7 +301,7 @@ public class EnchantmentHelper {
       } else {
          var2 = var2 + 1 + var0.nextInt(var8 / 4 + 1) + var0.nextInt(var8 / 4 + 1);
          float var9 = (var0.nextFloat() + var0.nextFloat() - 1.0F) * 0.15F;
-         var2 = MathHelper.method37775(Math.round((float)var2 + (float)var2 * var9), 1, Integer.MAX_VALUE);
+         var2 = MathHelper.clamp(Math.round((float)var2 + (float)var2 * var9), 1, Integer.MAX_VALUE);
          List var10 = method26346(var2, var1, var3);
          if (!var10.isEmpty()) {
             var6.add(Class8879.<Class6691>method32314(var0, var10));

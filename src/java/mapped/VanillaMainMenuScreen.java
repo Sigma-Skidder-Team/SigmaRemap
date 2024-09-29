@@ -84,7 +84,7 @@ public class VanillaMainMenuScreen extends Screen {
          this.field4708 = this.mc.getSplashes().method990();
       }
 
-      this.field4714 = this.fontRenderer.getStringWidth("Copyright Mojang AB. Do not distribute!");
+      this.field4714 = this.font.getStringWidth("Copyright Mojang AB. Do not distribute!");
       this.field4715 = this.width - this.field4714 - 2;
       byte var3 = 24;
       int var4 = this.height / 4 + 48;
@@ -261,7 +261,7 @@ public class VanillaMainMenuScreen extends Screen {
 
       float var7 = !this.field4717 ? 1.0F : (float)(Util.milliTime() - this.field4718) / 1000.0F;
       GlStateManager.disableDepthTest();
-      method5686(var1, 0, 0, this.width, this.height, -1);
+      fill(var1, 0, 0, this.width, this.height, -1);
       this.field4716.method13754(var4, MathHelper.clamp(var7, 0.0F, 1.0F));
       short var8 = 274;
       int var9 = this.width / 2 - 137;
@@ -294,7 +294,7 @@ public class VanillaMainMenuScreen extends Screen {
          this.mc.getTextureManager().bindTexture(field4711);
          method5699(var1, var9 + 88, 67, 0.0F, 0.0F, 98, 14, 128, 16);
          if (Reflector.field42893.exists()) {
-            Reflector.callVoid(Reflector.field42893, this, var1, this.fontRenderer, this.width, this.height);
+            Reflector.callVoid(Reflector.field42893, this, var1, this.font, this.width, this.height);
          }
 
          if (this.field4708 != null) {
@@ -303,9 +303,9 @@ public class VanillaMainMenuScreen extends Screen {
             RenderSystem.method27883(-20.0F, 0.0F, 0.0F, 1.0F);
             float var13 = 1.8F
                - MathHelper.method37771(MathHelper.sin((float)(Util.milliTime() % 1000L) / 1000.0F * (float) (Math.PI * 2)) * 0.1F);
-            var13 = var13 * 100.0F / (float)(this.fontRenderer.getStringWidth(this.field4708) + 32);
+            var13 = var13 * 100.0F / (float)(this.font.getStringWidth(this.field4708) + 32);
             RenderSystem.scalef(var13, var13, var13);
-            method5690(var1, this.fontRenderer, this.field4708, 0, -8, 16776960 | var12);
+            drawCenteredString(var1, this.font, this.field4708, 0, -8, 16776960 | var12);
             RenderSystem.popMatrix();
          }
 
@@ -321,19 +321,19 @@ public class VanillaMainMenuScreen extends Screen {
          }
 
          if (!Reflector.field42762.method20245()) {
-            drawString(var1, this.fontRenderer, var17, 2, this.height - 10, 16777215 | var12);
+            drawString(var1, this.font, var17, 2, this.height - 10, 16777215 | var12);
          } else {
             if (Reflector.field42764.exists()) {
-               BiConsumer<Integer, String> var14 = (var3x, var4x) -> drawString(var1, this.fontRenderer, var4x, 2, this.height - (10 + var3x * 10), 16777215 | var12);
+               BiConsumer<Integer, String> var14 = (var3x, var4x) -> drawString(var1, this.font, var4x, 2, this.height - (10 + var3x * 10), 16777215 | var12);
                Reflector.method35062(Reflector.field42764, true, true, var14);
             }
 
             if (Reflector.field42765.exists()) {
                BiConsumer<Integer, String> var19 = (var3x, var4x) -> drawString(
                      var1,
-                     this.fontRenderer,
+                     this.font,
                      var4x,
-                     this.width - this.fontRenderer.getStringWidth(var4x),
+                     this.width - this.font.getStringWidth(var4x),
                      this.height - (10 + (var3x + 1) * 10),
                      16777215 | var12
                   );
@@ -341,9 +341,9 @@ public class VanillaMainMenuScreen extends Screen {
             }
          }
 
-         drawString(var1, this.fontRenderer, "Copyright Mojang AB. Do not distribute!", this.field4715, this.height - 10, 16777215 | var12);
+         drawString(var1, this.font, "Copyright Mojang AB. Do not distribute!", this.field4715, this.height - 10, 16777215 | var12);
          if (var2 > this.field4715 && var2 < this.field4715 + this.field4714 && var3 > this.height - 10 && var3 < this.height) {
-            method5686(var1, this.field4715, this.height - 1, this.field4715 + this.field4714, this.height, 16777215 | var12);
+            fill(var1, this.field4715, this.height - 1, this.field4715 + this.field4714, this.height, 16777215 | var12);
          }
 
          for (Widget var15 : this.field4566) {

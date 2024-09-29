@@ -27,6 +27,6 @@ public class Class8055 {
 
    public ItemStack method27662() {
       ItemStack[] var3 = this.field34588.method332();
-      return var3[MathHelper.method37767(Class9235.method34740(this.field34591) / 30.0F) % var3.length];
+      return var3[MathHelper.floor(Class9235.method34740(this.field34591) / 30.0F) % var3.length];
    }
 }

@@ -17,7 +17,7 @@ public class DatapackFailureScreen extends Screen {
    @Override
    public void init() {
       super.init();
-      this.field6213 = Class5991.method18584(this.fontRenderer, this.getTextComponent(), this.width - 50);
+      this.field6213 = Class5991.method18584(this.font, this.getTextComponent(), this.width - 50);
       this.<Button>addButton(
          new Button(
             this.width / 2 - 155, this.height / 6 + 96, 150, 20, new TranslationTextComponent("datapackFailure.safeMode"), var1 -> this.field6214.run()

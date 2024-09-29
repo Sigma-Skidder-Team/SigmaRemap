@@ -81,7 +81,7 @@ public class Class1266 extends AbstractGui {
                         }
 
                         if (this.field6699.gameSettings.field44729 != 3) {
-                           method5686(var1, -2, (int)(var29 - var16), 0 + var11 + 4, (int)var29, var27 << 24);
+                           fill(var1, -2, (int)(var29 - var16), 0 + var11 + 4, (int)var29, var27 << 24);
                         }
 
                         RenderSystem.enableBlend();
@@ -109,7 +109,7 @@ public class Class1266 extends AbstractGui {
                int var35 = (int)(255.0 * var14);
                var1.push();
                var1.translate(0.0, 0.0, 50.0);
-               method5686(var1, -2, 0, var11 + 4, 9, var35 << 24);
+               fill(var1, -2, 0, var11 + 4, 9, var35 << 24);
                RenderSystem.enableBlend();
                var1.translate(0.0, 0.0, 50.0);
                this.field6699
@@ -130,8 +130,8 @@ public class Class1266 extends AbstractGui {
                if (var36 != var37) {
                   int var38 = var31 <= 0 ? 96 : 170;
                   int var39 = !this.field6705 ? 3355562 : 13382451;
-                  method5686(var1, 0, -var31, 2, -var31 - var32, var39 + (var38 << 24));
-                  method5686(var1, 2, -var31, 1, -var31 - var32, 13421772 + (var38 << 24));
+                  fill(var1, 0, -var31, 2, -var31 - var32, var39 + (var38 << 24));
+                  fill(var1, 2, -var31, 1, -var31 - var32, 13421772 + (var38 << 24));
                }
             }
 
@@ -296,7 +296,7 @@ public class Class1266 extends AbstractGui {
       int var3 = method5945(this.field6699.gameSettings.field44596);
       MainWindow var4 = Minecraft.getInstance().getMainWindow();
       int var5 = (int)((double)(var4.getFramebufferWidth() - 3) / var4.getGuiScaleFactor());
-      return MathHelper.method37775(var3, 0, var5);
+      return MathHelper.clamp(var3, 0, var5);
    }
 
    public int method5943() {

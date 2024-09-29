@@ -66,7 +66,7 @@ public class Class1251 extends Widget implements Class1253<Class120> {
          RenderSystem.scalef(0.42F, 0.42F, 1.0F);
          Class1263.method5908(this.field6627)
             .getItemRenderer()
-            .method793(var10.field39894[MathHelper.method37767(Class1263.method5910(this.field6627) / 30.0F) % var10.field39894.length], var12, var13);
+            .method793(var10.field39894[MathHelper.floor(Class1263.method5910(this.field6627) / 30.0F) % var10.field39894.length], var12, var13);
          RenderSystem.popMatrix();
       }
 

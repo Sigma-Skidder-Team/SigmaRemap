@@ -119,7 +119,7 @@ public final class DimensionSettings {
 
    private static DimensionSettings method35172(Class9763 var0, BlockState var1, BlockState var2, ResourceLocation var3) {
       HashMap var6 = Maps.newHashMap(Class9763.field45674);
-      var6.put(Structure.field18064, new Class8483(25, 10, 34222645));
+      var6.put(Structure.RUINED_PORTAL, new Class8483(25, 10, 34222645));
       return new DimensionSettings(
          new Class9763(Optional.<Class9245>ofNullable(var0.method38382()), var6),
          new Class9556(

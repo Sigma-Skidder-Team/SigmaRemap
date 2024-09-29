@@ -2,6 +2,7 @@ package mapped;
 
 import it.unimi.dsi.fastutil.longs.Long2ObjectLinkedOpenHashMap;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 
 import java.util.Arrays;
 import java.util.concurrent.locks.ReentrantReadWriteLock;

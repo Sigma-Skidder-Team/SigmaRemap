@@ -29,6 +29,7 @@ import net.minecraft.util.CryptManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.datafix.codec.DatapackCodec;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.registry.Registry;
@@ -37,13 +38,16 @@ import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.util.text.filter.IChatFilter;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.ForcedChunksSaveData;
 import net.minecraft.world.GameType;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeManager;
 import net.minecraft.world.biome.provider.BiomeProvider;
+import net.minecraft.world.chunk.listener.IChunkStatusListener;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 import net.minecraft.world.server.ServerWorld;
+import net.minecraft.world.storage.IServerWorldInfo;
 import org.apache.commons.lang3.Validate;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -78,7 +82,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    private static final Logger LOGGER = LogManager.getLogger();
    public static final File USER_CACHE_FILE = new File("usercache.json");
    public static final WorldSettings field1210 = new WorldSettings(
-      "Demo World", GameType.field11102, false, Difficulty.field14353, false, new Class5462(), DatapackCodec.VANILLA_CODEC
+      "Demo World", GameType.field11102, false, Difficulty.NORMAL, false, new Class5462(), DatapackCodec.VANILLA_CODEC
    );
    public final SaveFormat.LevelSave field1211;
    public final Class8716 field1212;
@@ -94,7 +98,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    private String field1222;
    private int field1223 = -1;
    public final DynamicRegistriesImpl field1224;
-   private final Map<RegistryKey<World>, ServerWorld> field1225 = Maps.newLinkedHashMap();
+   private final Map<RegistryKey<World>, ServerWorld> worlds = Maps.newLinkedHashMap();
    private Class6395 field1226;
    private volatile boolean field1227 = true;
    private boolean field1228;
@@ -108,7 +112,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    private int field1236;
    private int field1237;
    public final long[] tickTimeArray = new long[100];
-   private KeyPair field1239;
+   private KeyPair serverKeyPair;
    private String field1240;
    private boolean field1241;
    private String field1242 = "";
@@ -122,7 +126,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    private final PlayerProfileCache field1250;
    private long field1251;
    private final Thread field1252;
-   private long field1253 = Util.milliTime();
+   private long serverTime = Util.milliTime();
    private long field1254;
    private boolean field1255;
    private boolean field1256;
@@ -190,7 +194,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       this.method1409().method21021(new Class1415(var4));
    }
 
-   public abstract boolean method1277() throws IOException;
+   public abstract boolean init() throws IOException;
 
    public static void func_240777_a_(SaveFormat.LevelSave var0) {
       if (var0.method7995()) {
@@ -199,20 +203,20 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       }
    }
 
-   public void method1279() {
-      this.method1285();
-      this.field_240768_i_.method20095(this.method1325(), this.method1327().isPresent());
-      Class7243 var3 = this.field1218.method28561(11);
-      this.method1281(var3);
-      this.method1280();
-      this.method1284(var3);
+   public void func_240800_l__() {
+      this.setResourcePackFromWorld();
+      this.field_240768_i_.addServerBranding(this.getServerModName(), this.func_230045_q_().isPresent());
+      IChunkStatusListener var3 = this.field1218.create(11);
+      this.func_240787_a_(var3);
+      this.func_230543_p_();
+      this.loadInitialChunks(var3);
    }
 
-   public void method1280() {
+   public void func_230543_p_() {
    }
 
-   public void method1281(Class7243 var1) {
-      Class6608 var4 = this.field_240768_i_.method20098();
+   public void func_240787_a_(IChunkStatusListener var1) {
+      IServerWorldInfo var4 = this.field_240768_i_.method20098();
       DimensionGeneratorSettings var5 = this.field_240768_i_.getDimensionGeneratorSettings();
       boolean var6 = var5.method26267();
       long var7 = var5.method26259();
@@ -233,7 +237,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       }
 
       ServerWorld var16 = new ServerWorld(this, this.backgroundExecutor, this.field1211, var4, World.OVERWORLD, var14, var1, (ChunkGenerator)var15, var6, var9, var11, true);
-      this.field1225.put(World.OVERWORLD, var16);
+      this.worlds.put(World.OVERWORLD, var16);
       Class8250 var17 = var16.method6945();
       this.method1276(var17);
       this.field1259 = new Class8962(var17);
@@ -244,7 +248,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
             method1282(var16, var4, var5.method26261(), var6, true);
             var4.method20071(true);
             if (var6) {
-               this.method1283(this.field_240768_i_);
+               this.func_240778_a_(this.field_240768_i_);
             }
          } catch (Throwable var28) {
             CrashReport var20 = CrashReport.makeCrashReport(var28, "Exception initializing level");
@@ -274,12 +278,12 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
             Class6609 var25 = new Class6609(this.field_240768_i_, var4);
             ServerWorld var26 = new ServerWorld(this, this.backgroundExecutor, this.field1211, var25, var22, var23, var1, var24, var6, var9, ImmutableList.of(), false);
             var18.method24543(new Class7048(var26.getWorldBorder()));
-            this.field1225.put(var22, var26);
+            this.worlds.put(var22, var26);
          }
       }
    }
 
-   private static void method1282(ServerWorld var0, Class6608 var1, boolean var2, boolean var3, boolean var4) {
+   private static void method1282(ServerWorld var0, IServerWorldInfo var1, boolean var2, boolean var3, boolean var4) {
       ChunkGenerator var7 = var0.getChunkProvider().method7370();
       if (var4) {
          if (!var3) {
@@ -337,10 +341,10 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       }
    }
 
-   private void method1283(IServerConfiguration var1) {
-      var1.method20085(Difficulty.field14351);
+   private void func_240778_a_(IServerConfiguration var1) {
+      var1.setDifficulty(Difficulty.PEACEFUL);
       var1.method20086(true);
-      Class6608 var4 = var1.method20098();
+      IServerWorldInfo var4 = var1.method20098();
       var4.method20044(false);
       var4.method20055(false);
       var4.method20061(1000000000);
@@ -348,45 +352,45 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       var4.method20073(GameType.SPECTATOR);
    }
 
-   private void method1284(Class7243 var1) {
+   private void loadInitialChunks(IChunkStatusListener var1) {
       ServerWorld var4 = this.method1317();
       LOGGER.info("Preparing start region for dimension {}", var4.getDimensionKey().getLocation());
       BlockPos var5 = var4.method6947();
       var1.method22736(new ChunkPos(var5));
       ServerChunkProvider var6 = var4.getChunkProvider();
-      var6.getLightManager().method613(500);
-      this.field1253 = Util.milliTime();
+      var6.getLightManager().func_215598_a(500);
+      this.serverTime = Util.milliTime();
       var6.registerTicket(Class8561.field38480, new ChunkPos(var5), 11, Class2341.field16010);
 
-      while (var6.method7355() != 441) {
-         this.field1253 = Util.milliTime() + 10L;
-         this.method1299();
+      while (var6.getLoadedChunksCount() != 441) {
+         this.serverTime = Util.milliTime() + 10L;
+         this.runScheduledTasks();
       }
 
-      this.field1253 = Util.milliTime() + 10L;
-      this.method1299();
+      this.serverTime = Util.milliTime() + 10L;
+      this.runScheduledTasks();
 
-      for (ServerWorld var8 : this.field1225.values()) {
-         Class7536 var9 = var8.method6945().<Class7536>method28768(Class7536::new, "chunks");
-         if (var9 != null) {
-            LongIterator var10 = var9.method24638().iterator();
+      for (ServerWorld serverworld1 : this.worlds.values()) {
+         ForcedChunksSaveData forcedchunkssavedata = serverworld1.method6945().method28768(ForcedChunksSaveData::new, "chunks");
+         if (forcedchunkssavedata != null) {
+            LongIterator longiterator = forcedchunkssavedata.getChunks().iterator();
 
-            while (var10.hasNext()) {
-               long var11 = var10.nextLong();
-               ChunkPos var13 = new ChunkPos(var11);
-               var8.getChunkProvider().method7350(var13, true);
+            while (longiterator.hasNext()) {
+               long i = longiterator.nextLong();
+               ChunkPos var13 = new ChunkPos(i);
+               serverworld1.getChunkProvider().forceChunk(var13, true);
             }
          }
       }
 
-      this.field1253 = Util.milliTime() + 10L;
-      this.method1299();
-      var1.method22738();
-      var6.getLightManager().method613(5);
-      this.method1338();
+      this.serverTime = Util.milliTime() + 10L;
+      this.runScheduledTasks();
+      var1.stop();
+      var6.getLightManager().func_215598_a(5);
+      this.func_240794_aZ_();
    }
 
-   public void method1285() {
+   public void setResourcePackFromWorld() {
       File var3 = this.field1211.resolveFilePath(FolderName.field23353).toFile();
       if (var3.isFile()) {
          String var4 = this.field1211.method7990();
@@ -404,7 +408,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    }
 
    public boolean method1287() {
-      return this.field_240768_i_.method20045();
+      return this.field_240768_i_.isHardcore();
    }
 
    public abstract int method1288();
@@ -426,7 +430,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       }
 
       ServerWorld var9 = this.method1317();
-      Class6608 var10 = this.field_240768_i_.method20098();
+      IServerWorldInfo var10 = this.field_240768_i_.method20098();
       var10.method20068(var9.getWorldBorder().method24556());
       this.field_240768_i_.method20094(this.method1414().method29605());
       this.field1211.method8001(this.field1224, this.field_240768_i_, this.getPlayerList().method19479());
@@ -508,22 +512,22 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
 
    public void func_240802_v_() {
       try {
-         if (this.method1277()) {
-            this.field1253 = Util.milliTime();
+         if (this.init()) {
+            this.serverTime = Util.milliTime();
             this.field1219.method31701(new StringTextComponent(this.field1235));
             this.field1219.method31705(new Class9226(SharedConstants.getVersion().getName(), SharedConstants.getVersion().getProtocolVersion()));
             this.method1304(this.field1219);
 
             while (this.field1227) {
-               long var3 = Util.milliTime() - this.field1253;
-               if (var3 > 2000L && this.field1253 - this.field1245 >= 15000L) {
+               long var3 = Util.milliTime() - this.serverTime;
+               if (var3 > 2000L && this.serverTime - this.field1245 >= 15000L) {
                   long var5 = var3 / 50L;
                   LOGGER.warn("Can't keep up! Is the server overloaded? Running {}ms or {} ticks behind", var3, var5);
-                  this.field1253 += var5 * 50L;
-                  this.field1245 = this.field1253;
+                  this.serverTime += var5 * 50L;
+                  this.field1245 = this.serverTime;
                }
 
-               this.field1253 += 50L;
+               this.serverTime += 50L;
                LongTickDetector var51 = LongTickDetector.method36636("Server");
                this.method1428(var51);
                this.field1216.startTick();
@@ -531,8 +535,8 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
                this.method1310(this::method1298);
                this.field1216.endStartSection("nextTickWait");
                this.field1255 = true;
-               this.field1254 = Math.max(Util.milliTime() + 50L, this.field1253);
-               this.method1299();
+               this.field1254 = Math.max(Util.milliTime() + 50L, this.serverTime);
+               this.runScheduledTasks();
                this.field1216.endSection();
                this.field1216.endTick();
                this.method1429(var51);
@@ -573,10 +577,10 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    }
 
    private boolean method1298() {
-      return this.method1628() || Util.milliTime() < (!this.field1255 ? this.field1253 : this.field1254);
+      return this.method1628() || Util.milliTime() < (!this.field1255 ? this.serverTime : this.field1254);
    }
 
-   public void method1299() {
+   public void runScheduledTasks() {
       this.drainTasks();
       this.driveUntil(() -> !this.method1298());
    }
@@ -671,7 +675,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
          int var11 = MathHelper.method37782(this.field1220, 0, this.method1322() - var10.length);
 
          for (int var12 = 0; var12 < var10.length; var12++) {
-            var10[var12] = this.field1226.method19488().get(var11 + var12).getGameProfile();
+            var10[var12] = this.field1226.getPlayers().get(var11 + var12).getGameProfile();
          }
 
          Collections.shuffle(Arrays.<GameProfile>asList(var10));
@@ -771,20 +775,20 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    }
 
    public final ServerWorld method1317() {
-      return this.field1225.get(World.OVERWORLD);
+      return this.worlds.get(World.OVERWORLD);
    }
 
    @Nullable
    public ServerWorld method1318(RegistryKey<World> var1) {
-      return this.field1225.get(var1);
+      return this.worlds.get(var1);
    }
 
    public Set<RegistryKey<World>> method1319() {
-      return this.field1225.keySet();
+      return this.worlds.keySet();
    }
 
    public Iterable<ServerWorld> method1320() {
-      return this.field1225.values();
+      return this.worlds.values();
    }
 
    public String method1321() {
@@ -803,14 +807,14 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       return this.field1226.method19460();
    }
 
-   public String method1325() {
+   public String getServerModName() {
       return "vanilla";
    }
 
    public CrashReport method1326(CrashReport var1) {
       if (this.field1226 != null) {
          var1.getCategory()
-            .addDetail("Player Count", () -> this.field1226.method19474() + " / " + this.field1226.method19475() + "; " + this.field1226.method19488());
+            .addDetail("Player Count", () -> this.field1226.method19474() + " / " + this.field1226.method19475() + "; " + this.field1226.getPlayers());
       }
 
       var1.getCategory().addDetail("Data Packs", () -> {
@@ -836,7 +840,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       return var1;
    }
 
-   public abstract Optional<String> method1327();
+   public abstract Optional<String> func_230045_q_();
 
    @Override
    public void sendMessage(ITextComponent var1, UUID var2) {
@@ -844,7 +848,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    }
 
    public KeyPair method1329() {
-      return this.field1239;
+      return this.serverKeyPair;
    }
 
    public int method1330() {
@@ -855,7 +859,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       this.field1223 = var1;
    }
 
-   public String method1332() {
+   public String getServerOwner() {
       return this.field1240;
    }
 
@@ -867,21 +871,21 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       return this.field1240 != null;
    }
 
-   public void method1335() {
+   public void func_244801_P() {
       LOGGER.info("Generating keypair");
 
       try {
-         this.field1239 = CryptManager.method32737();
+         this.serverKeyPair = CryptManager.generateKeyPair();
       } catch (CryptException var4) {
          throw new IllegalStateException("Failed to generate key pair", var4);
       }
    }
 
-   public void method1336(Difficulty var1, boolean var2) {
-      if (var2 || !this.field_240768_i_.method20048()) {
-         this.field_240768_i_.method20085(!this.field_240768_i_.method20045() ? var1 : Difficulty.field14354);
-         this.method1338();
-         this.getPlayerList().method19488().forEach(this::method1340);
+   public void setDifficultyForAllWorlds(Difficulty var1, boolean var2) {
+      if (var2 || !this.field_240768_i_.isDifficultyLocked()) {
+         this.field_240768_i_.setDifficulty(!this.field_240768_i_.isHardcore() ? var1 : Difficulty.HARD);
+         this.func_240794_aZ_();
+         this.getPlayerList().getPlayers().forEach(this::sendDifficultyToPlayer);
       }
    }
 
@@ -889,7 +893,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       return var1;
    }
 
-   private void method1338() {
+   private void func_240794_aZ_() {
       for (ServerWorld var4 : this.method1320()) {
          var4.method6767(this.method1341(), this.method1354());
       }
@@ -897,16 +901,16 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
 
    public void method1339(boolean var1) {
       this.field_240768_i_.method20086(var1);
-      this.getPlayerList().method19488().forEach(this::method1340);
+      this.getPlayerList().getPlayers().forEach(this::sendDifficultyToPlayer);
    }
 
-   private void method1340(ServerPlayerEntity var1) {
+   private void sendDifficultyToPlayer(ServerPlayerEntity var1) {
       Class6612 var4 = var1.getServerWorld().getWorldInfo();
       var1.field4855.sendPacket(new SServerDifficultyPacket(var4.method20047(), var4.method20048()));
    }
 
    public boolean method1341() {
-      return this.field_240768_i_.method20047() != Difficulty.field14351;
+      return this.field_240768_i_.method20047() != Difficulty.PEACEFUL;
    }
 
    public boolean method1342() {
@@ -951,7 +955,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
             var1.addClientStat("world[" + var4 + "][dimension]", var6.getDimensionKey().getLocation());
             var1.addClientStat("world[" + var4 + "][mode]", this.field_240768_i_.method20067());
             var1.addClientStat("world[" + var4 + "][difficulty]", var6.method6997());
-            var1.addClientStat("world[" + var4 + "][hardcore]", this.field_240768_i_.method20045());
+            var1.addClientStat("world[" + var4 + "][hardcore]", this.field_240768_i_.isHardcore());
             var1.addClientStat("world[" + var4 + "][height]", this.field1236);
             var1.addClientStat("world[" + var4 + "][chunks_loaded]", var6.getChunkProvider().method7371());
             var4++;
@@ -969,7 +973,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       return this.field1231;
    }
 
-   public void method1351(boolean var1) {
+   public void setOnlineMode(boolean var1) {
       this.field1231 = var1;
    }
 
@@ -995,7 +999,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       return this.field1233;
    }
 
-   public void method1358(boolean var1) {
+   public void setAllowPvp(boolean var1) {
       this.field1233 = var1;
    }
 
@@ -1003,7 +1007,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       return this.field1234;
    }
 
-   public void method1360(boolean var1) {
+   public void setAllowFlight(boolean var1) {
       this.field1234 = var1;
    }
 
@@ -1013,7 +1017,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       return this.field1235;
    }
 
-   public void method1363(String var1) {
+   public void setMOTD(String var1) {
       this.field1235 = var1;
    }
 
@@ -1133,7 +1137,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    }
 
    public long getServerTime() {
-      return this.field1253;
+      return this.serverTime;
    }
 
    public DataFixer getDataFixer() {
@@ -1227,7 +1231,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
          Class6395 var4 = var1.method20177().getPlayerList();
          Class4531 var5 = var4.method19468();
 
-         for (ServerPlayerEntity var7 : Lists.newArrayList(var4.method19488())) {
+         for (ServerPlayerEntity var7 : Lists.newArrayList(var4.getPlayers())) {
             if (!var5.method14448(var7.getGameProfile())) {
                var7.field4855.disconnect(new TranslationTextComponent("multiplayer.disconnect.not_whitelisted"));
             }
@@ -1350,7 +1354,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    public void method1422(Path var1) throws IOException {
       Path var4 = var1.resolve("levels");
 
-      for (Entry var6 : this.field1225.entrySet()) {
+      for (Entry var6 : this.worlds.entrySet()) {
          ResourceLocation var7 = ((RegistryKey)var6.getKey()).getLocation();
          Path var8 = var4.resolve(var7.getNamespace()).resolve(var7.getPath());
          Files.createDirectories(var8);
@@ -1462,7 +1466,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       return this.field_240765_ak_;
    }
 
-   public IServerConfiguration method1436() {
+   public IServerConfiguration func_240793_aU_() {
       return this.field_240768_i_;
    }
 

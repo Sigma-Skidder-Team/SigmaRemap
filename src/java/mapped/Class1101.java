@@ -140,7 +140,7 @@ public class Class1101 extends Class1009 {
 
       if (var4 == null) {
          var4 = new Class5092();
-         if (var1.method6997() == Difficulty.field14354 && var1.method6814().nextFloat() < 0.1F * var2.method38330()) {
+         if (var1.method6997() == Difficulty.HARD && var1.method6814().nextFloat() < 0.1F * var2.method38330()) {
             ((Class5092)var4).method15575(var1.method6814());
          }
       }

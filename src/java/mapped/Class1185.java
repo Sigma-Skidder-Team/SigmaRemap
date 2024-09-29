@@ -81,11 +81,11 @@ public class Class1185 extends Class1178<Class1185> {
       ITextComponent var16 = this.method5620();
       int var17;
       if (var16 != StringTextComponent.EMPTY) {
-         AbstractGui.method5686(var1, var4, var3, var4 + var5, var3 + var6, field6406);
+         AbstractGui.fill(var1, var4, var3, var4 + var5, var3 + var6, field6406);
          var17 = var3 + (var6 - 18) / 2;
          this.field6388.fontRenderer.func_243248_b(var1, var16, (float)var15, (float)(var17 + 12), field6408);
       } else {
-         AbstractGui.method5686(var1, var4, var3, var4 + var5, var3 + var6, field6405);
+         AbstractGui.fill(var1, var4, var3, var4 + var5, var3 + var6, field6405);
          var17 = var3 + (var6 - 9) / 2;
       }
 
@@ -96,7 +96,7 @@ public class Class1185 extends Class1178<Class1185> {
       RenderSystem.disableBlend();
       this.field6388.fontRenderer.method38801(var1, this.field6391, (float)var15, (float)var17, field6407);
       if (this.field6393) {
-         AbstractGui.method5686(var1, var13, var14, var13 + 24, var14 + 24, field6404);
+         AbstractGui.fill(var1, var13, var14, var13 + 24, var14 + 24, field6404);
       }
 
       if (this.field6394 != null && this.field6395 != null) {

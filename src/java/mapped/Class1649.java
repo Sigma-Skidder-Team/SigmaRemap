@@ -21,10 +21,12 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.server.*;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.palette.UpgradeData;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.chunk.listener.IChunkStatusListener;
 import net.minecraft.world.gen.feature.structure.StructureStart;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 import net.minecraft.world.server.ServerWorld;
@@ -64,7 +66,7 @@ public class Class1649 extends Class1648 implements Class1650 {
    private final Class1812 field8964;
    private final Class321<Class6875<Runnable>> field8965;
    private final Class321<Class6875<Runnable>> field8966;
-   private final Class7243 field8967;
+   private final IChunkStatusListener field8967;
    private final Class9306 field8968;
    private final AtomicInteger field8969 = new AtomicInteger();
    private final TemplateManager field8970;
@@ -84,7 +86,7 @@ public class Class1649 extends Class1648 implements Class1650 {
       Class318<Runnable> var6,
       Class1704 var7,
       ChunkGenerator var8,
-      Class7243 var9,
+      IChunkStatusListener var9,
       Supplier<Class8250> var10,
       int var11,
       boolean var12
@@ -644,7 +646,7 @@ public class Class1649 extends Class1648 implements Class1650 {
    }
 
    public void method6563(int var1) {
-      int var4 = MathHelper.method37775(var1 + 1, 3, 64);
+      int var4 = MathHelper.clamp(var1 + 1, 3, 64);
       if (var4 != this.field8976) {
          int var5 = this.field8976;
          this.field8976 = var4;

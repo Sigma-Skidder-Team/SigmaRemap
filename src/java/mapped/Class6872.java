@@ -34,7 +34,7 @@ public class Class6872 implements Class6870 {
 
    @Override
    public int method20914(Random var1) {
-      return MathHelper.method37782(var1, MathHelper.method37767(this.field29803), MathHelper.method37767(this.field29804));
+      return MathHelper.method37782(var1, MathHelper.floor(this.field29803), MathHelper.floor(this.field29804));
    }
 
    public float method20924(Random var1) {

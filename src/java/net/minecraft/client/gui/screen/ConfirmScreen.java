@@ -40,13 +40,13 @@ public class ConfirmScreen extends Screen {
       this.<Button>addButton(
          new Button(this.width / 2 - 155 + 160, this.height / 6 + 96, 150, 20, this.field4603, var1 -> this.field4605.accept(false))
       );
-      this.field4601 = Class5991.method18584(this.fontRenderer, this.field4600, this.width - 50);
+      this.field4601 = Class5991.method18584(this.font, this.field4600, this.width - 50);
    }
 
    @Override
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.renderBackground(var1);
-      drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2, 70, 16777215);
+      drawCenteredString(var1, this.font, this.title, this.width / 2, 70, 16777215);
       this.field4601.method18588(var1, this.width / 2, 90);
       super.render(var1, var2, var3, var4);
    }

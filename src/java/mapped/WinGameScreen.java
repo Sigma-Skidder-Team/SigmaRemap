@@ -212,10 +212,10 @@ public class WinGameScreen extends Screen {
          if ((float)var11 + var10 + 12.0F + 8.0F > 0.0F && (float)var11 + var10 < (float)this.height) {
             Class9125 var17 = this.field7128.get(var12);
             if (!this.field7129.contains(var12)) {
-               this.fontRenderer.field45929.setSeed((long)((float)((long)var12 * 4238972211L) + this.field7127 / 4.0F));
-               this.fontRenderer.method38802(var1, var17, (float)var8, (float)var11, 16777215);
+               this.font.field45929.setSeed((long)((float)((long)var12 * 4238972211L) + this.field7127 / 4.0F));
+               this.font.method38802(var1, var17, (float)var8, (float)var11, 16777215);
             } else {
-               this.fontRenderer.method38802(var1, var17, (float)(var8 + (274 - this.fontRenderer.method38822(var17)) / 2), (float)var11, 16777215);
+               this.font.method38802(var1, var17, (float)(var8 + (274 - this.font.method38822(var17)) / 2), (float)var11, 16777215);
             }
          }
 

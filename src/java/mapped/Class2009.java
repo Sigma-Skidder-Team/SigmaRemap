@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.primitives.Doubles;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 
 import java.util.Collections;
 import java.util.Map;

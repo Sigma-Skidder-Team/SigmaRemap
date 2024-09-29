@@ -58,16 +58,16 @@ public class Class862 extends ContainerScreen<Class5826> {
       int var6 = this.field4727.method18208();
       if (var6 > 0 && var6 <= 5 && this.field4727.method18218()) {
          IFormattableTextComponent var7 = this.title.deepCopy().append(field4788).append(new TranslationTextComponent("merchant.level." + var6));
-         int var8 = this.fontRenderer.method38821(var7);
+         int var8 = this.font.method38821(var7);
          int var9 = 49 + this.xSize / 2 - var8 / 2;
-         this.fontRenderer.func_243248_b(var1, var7, (float)var9, 6.0F, 4210752);
+         this.font.func_243248_b(var1, var7, (float)var9, 6.0F, 4210752);
       } else {
-         this.fontRenderer.func_243248_b(var1, this.title, (float)(49 + this.xSize / 2 - this.fontRenderer.method38821(this.title) / 2), 6.0F, 4210752);
+         this.font.func_243248_b(var1, this.title, (float)(49 + this.xSize / 2 - this.font.method38821(this.title) / 2), 6.0F, 4210752);
       }
 
-      this.fontRenderer.func_243248_b(var1, this.field4728.getDisplayName(), (float)this.field4725, (float)this.playerInventoryTitleY, 4210752);
-      int var10 = this.fontRenderer.method38821(field4787);
-      this.fontRenderer.func_243248_b(var1, field4787, (float)(5 - var10 / 2 + 48), 6.0F, 4210752);
+      this.font.func_243248_b(var1, this.field4728.getDisplayName(), (float)this.field4725, (float)this.playerInventoryTitleY, 4210752);
+      int var10 = this.font.method38821(field4787);
+      this.font.func_243248_b(var1, field4787, (float)(5 - var10 / 2 + 48), 6.0F, 4210752);
    }
 
    @Override
@@ -103,11 +103,11 @@ public class Class862 extends ContainerScreen<Class5826> {
          if (var8 >= var9 && Class7921.method26578(var7)) {
             byte var10 = 100;
             float var11 = 100.0F / (float)(Class7921.method26577(var7) - var9);
-            int var12 = Math.min(MathHelper.method37767(var11 * (float)(var8 - var9)), 100);
+            int var12 = Math.min(MathHelper.floor(var11 * (float)(var8 - var9)), 100);
             method5697(var1, var2 + 136, var3 + 16, this.method5702(), 0.0F, 191.0F, var12 + 1, 5, 256, 512);
             int var13 = this.field4727.method18206();
             if (var13 > 0) {
-               int var14 = Math.min(MathHelper.method37767((float)var13 * var11), 100 - var12);
+               int var14 = Math.min(MathHelper.floor((float)var13 * var11), 100 - var12);
                method5697(var1, var2 + 136 + var12 + 1, var3 + 16 + 1, this.method5702(), 2.0F, 182.0F, var14, 3, 256, 512);
             }
          }
@@ -158,12 +158,12 @@ public class Class862 extends ContainerScreen<Class5826> {
                this.method2665(var1, var16, var15, var11, var19);
                if (!var17.isEmpty()) {
                   this.field4563.method794(var17, var8 + 5 + 35, var19);
-                  this.field4563.method797(this.fontRenderer, var17, var8 + 5 + 35, var19);
+                  this.field4563.method797(this.font, var17, var8 + 5 + 35, var19);
                }
 
                this.method2664(var1, var14, var8, var19);
                this.field4563.method794(var18, var8 + 5 + 68, var19);
-               this.field4563.method797(this.fontRenderer, var18, var8 + 5 + 68, var19);
+               this.field4563.method797(this.font, var18, var8 + 5 + 68, var19);
                this.field4563.field847 = 0.0F;
                var10 += 20;
                var12++;
@@ -210,14 +210,14 @@ public class Class862 extends ContainerScreen<Class5826> {
    private void method2665(MatrixStack var1, ItemStack var2, ItemStack var3, int var4, int var5) {
       this.field4563.method794(var2, var4, var5);
       if (var3.getCount() != var2.getCount()) {
-         this.field4563.method798(this.fontRenderer, var3, var4, var5, var3.getCount() != 1 ? null : "1");
-         this.field4563.method798(this.fontRenderer, var2, var4 + 14, var5, var2.getCount() != 1 ? null : "1");
+         this.field4563.method798(this.font, var3, var4, var5, var3.getCount() != 1 ? null : "1");
+         this.field4563.method798(this.font, var2, var4 + 14, var5, var2.getCount() != 1 ? null : "1");
          this.mc.getTextureManager().bindTexture(field4786);
          this.method5703(this.method5702() + 300);
          method5697(var1, var4 + 7, var5 + 12, this.method5702(), 0.0F, 176.0F, 9, 2, 256, 512);
          this.method5703(this.method5702() - 300);
       } else {
-         this.field4563.method797(this.fontRenderer, var2, var4, var5);
+         this.field4563.method797(this.font, var2, var4, var5);
       }
    }
 
@@ -231,7 +231,7 @@ public class Class862 extends ContainerScreen<Class5826> {
       if (this.method2666(var9)) {
          int var10 = var9 - 7;
          this.field4792 = (int)((double)this.field4792 - var5);
-         this.field4792 = MathHelper.method37775(this.field4792, 0, var10);
+         this.field4792 = MathHelper.clamp(this.field4792, 0, var10);
       }
 
       return true;
@@ -248,7 +248,7 @@ public class Class862 extends ContainerScreen<Class5826> {
          int var15 = var12 - 7;
          float var16 = ((float)var3 - (float)var13 - 13.5F) / ((float)(var14 - var13) - 27.0F);
          var16 = var16 * (float)var15 + 0.5F;
-         this.field4792 = MathHelper.method37775((int)var16, 0, var15);
+         this.field4792 = MathHelper.clamp((int)var16, 0, var15);
          return true;
       }
    }

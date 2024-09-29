@@ -338,7 +338,7 @@ public class Class9037 {
          (double)var0.method20172().method7006(Heightmap.Type.WORLD_SURFACE, new BlockPos(var0.method20171())).getY(),
          var0.method20171().z
       );
-      Class7440.method24040(var4, var5, Class7879.field33820, MathHelper.method37775(var1, 0, 1024));
+      Class7440.method24040(var4, var5, Class7879.field33820, MathHelper.clamp(var1, 0, 1024));
       return 1;
    }
 

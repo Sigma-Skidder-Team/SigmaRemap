@@ -20,13 +20,13 @@ public class Class1170 extends Class1155<Class1170> {
 
    @Override
    public void render(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
-      AbstractGui.method5693(var1, this.field6345.field6835.fontRenderer, this.field6344, var4 + 2, var3 + 1, var2 % 2 != 0 ? 9474192 : 16777215);
+      AbstractGui.drawString(var1, this.field6345.field6835.font, this.field6344, var4 + 2, var3 + 1, var2 % 2 != 0 ? 9474192 : 16777215);
       String var13 = this.field6343.method33277(Class1305.method6193(this.field6345.field6835).method28961(this.field6343));
       AbstractGui.drawString(
          var1,
-         this.field6345.field6835.fontRenderer,
+         this.field6345.field6835.font,
          var13,
-         var4 + 2 + 213 - this.field6345.field6835.fontRenderer.getStringWidth(var13),
+         var4 + 2 + 213 - this.field6345.field6835.font.getStringWidth(var13),
          var3 + 1,
          var2 % 2 != 0 ? 9474192 : 16777215
       );

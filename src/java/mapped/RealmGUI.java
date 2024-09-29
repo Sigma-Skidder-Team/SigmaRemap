@@ -234,7 +234,7 @@ public class RealmGUI extends RealmsScreen {
       var8.draw();
       this.field4539.func_239560_a_(this, var1);
       if (this.field4528 != null && this.field4528.field27450 != null) {
-         this.fontRenderer
+         this.font
             .func_243248_b(
                var1,
                new StringTextComponent("")
@@ -247,7 +247,7 @@ public class RealmGUI extends RealmsScreen {
                10526880
             );
       } else {
-         this.fontRenderer.func_243248_b(var1, field4525, (float)this.field4530, (float)method1929(0), 10526880);
+         this.font.func_243248_b(var1, field4525, (float)this.field4530, (float)method1929(0), 10526880);
       }
 
       super.render(var1, var2, var3, var4);
@@ -260,9 +260,9 @@ public class RealmGUI extends RealmsScreen {
       if (var2 != null) {
          int var7 = var3 + 12;
          int var8 = var4 - 12;
-         int var9 = this.fontRenderer.method38821(var2);
+         int var9 = this.font.method38821(var2);
          this.method5688(var1, var7 - 3, var8 - 3, var7 + var9 + 3, var8 + 8 + 3, -1073741824, -1073741824);
-         this.fontRenderer.method38803(var1, var2, (float)var7, (float)var8, 16777215);
+         this.font.method38803(var1, var2, (float)var7, (float)var8, 16777215);
       }
    }
 
@@ -309,7 +309,7 @@ public class RealmGUI extends RealmsScreen {
 
    // $VF: synthetic method
    public static FontRenderer method2426(RealmGUI var0) {
-      return var0.fontRenderer;
+      return var0.font;
    }
 
    // $VF: synthetic method

@@ -29,6 +29,7 @@ import net.minecraft.network.play.server.SPlaySoundEffectPacket;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
@@ -171,7 +172,7 @@ public class Class7699 {
    public void method25401(PlayerEntity var1) {
       if (var1.isPotionActive(Effects.BAD_OMEN)) {
          this.field32982 = this.field32982 + var1.getActivePotionEffect(Effects.BAD_OMEN).method8629() + 1;
-         this.field32982 = MathHelper.method37775(this.field32982, 0, this.method25399());
+         this.field32982 = MathHelper.clamp(this.field32982, 0, this.method25399());
       }
 
       var1.removeEffects(Effects.BAD_OMEN);
@@ -207,7 +208,7 @@ public class Class7699 {
          } else {
             boolean var3 = this.field32983;
             this.field32983 = this.field32978.isBlockLoaded(this.field32977);
-            if (this.field32978.method6997() == Difficulty.field14351) {
+            if (this.field32978.method6997() == Difficulty.PEACEFUL) {
                this.method25402();
                return;
             }
@@ -451,8 +452,8 @@ public class Class7699 {
             this.method25414(var5, var15, var1, false);
             if (Class2127.method8809(var11) == EntityType.field41072) {
                Class1026 var16 = null;
-               if (var5 != this.method25435(Difficulty.field14353)) {
-                  if (var5 >= this.method25435(Difficulty.field14354)) {
+               if (var5 != this.method25435(Difficulty.NORMAL)) {
+                  if (var5 >= this.method25435(Difficulty.HARD)) {
                      if (var13 != 0) {
                         var16 = EntityType.field41099.create(this.field32978);
                      } else {
@@ -572,10 +573,10 @@ public class Class7699 {
       for (int var7 = 0; var7 < var2; var7++) {
          float var8 = this.field32978.rand.nextFloat() * (float) (Math.PI * 2);
          int var9 = this.field32977.getX()
-            + MathHelper.method37767(MathHelper.cos(var8) * 32.0F * (float)var5)
+            + MathHelper.floor(MathHelper.cos(var8) * 32.0F * (float)var5)
             + this.field32978.rand.nextInt(5);
          int var10 = this.field32977.getZ()
-            + MathHelper.method37767(MathHelper.sin(var8) * 32.0F * (float)var5)
+            + MathHelper.floor(MathHelper.sin(var8) * 32.0F * (float)var5)
             + this.field32978.rand.nextInt(5);
          int var11 = this.field32978.method6736(Heightmap.Type.WORLD_SURFACE, var9, var10);
          var6.method8372(var9, var11, var10);
@@ -660,8 +661,8 @@ public class Class7699 {
 
    private int method25432(Class2127 var1, Random var2, int var3, Class9755 var4, boolean var5) {
       Difficulty var8 = var4.method38327();
-      boolean var9 = var8 == Difficulty.field14352;
-      boolean var10 = var8 == Difficulty.field14353;
+      boolean var9 = var8 == Difficulty.EASY;
+      boolean var10 = var8 == Difficulty.NORMAL;
       int var11;
       switch (Class8994.field41134[var1.ordinal()]) {
          case 1:

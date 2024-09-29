@@ -1,6 +1,7 @@
 package mapped;
 
 import it.unimi.dsi.fastutil.longs.Long2IntLinkedOpenHashMap;
+import net.minecraft.util.math.ChunkPos;
 
 public final class Class7900 implements Class7899 {
    private static String[] field33854;

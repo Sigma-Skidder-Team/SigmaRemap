@@ -206,6 +206,6 @@ public class Class1218 extends Button implements IScreen {
       }
 
       method5699(var1, var2, var3, 0.0F, 0.0F, 80, 80, 80, 80);
-      method5690(var1, var19.fontRenderer, var7, var2 + 40, var3 + 66, 16777215);
+      drawCenteredString(var1, var19.fontRenderer, var7, var2 + 40, var3 + 66, 16777215);
    }
 }

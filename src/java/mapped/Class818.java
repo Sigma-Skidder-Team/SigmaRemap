@@ -97,8 +97,8 @@ public class Class818 extends RealmsScreen {
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.renderBackground(var1);
       this.field4461.func_239560_a_(this, var1);
-      this.fontRenderer.func_243248_b(var1, field4454, (float)(this.width / 2 - 106), (float)method1929(3), 10526880);
-      this.fontRenderer.func_243248_b(var1, field4455, (float)(this.width / 2 - 106), (float)method1929(7), 10526880);
+      this.font.func_243248_b(var1, field4454, (float)(this.width / 2 - 106), (float)method1929(3), 10526880);
+      this.font.func_243248_b(var1, field4455, (float)(this.width / 2 - 106), (float)method1929(7), 10526880);
       this.field4460.render(var1, var2, var3, var4);
       this.field4459.render(var1, var2, var3, var4);
       super.render(var1, var2, var3, var4);

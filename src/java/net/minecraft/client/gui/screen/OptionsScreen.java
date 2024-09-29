@@ -64,7 +64,7 @@ public class OptionsScreen extends Screen {
          this.difficultyButton = this.addButton(
             new Button(
                this.width / 2 - 155 + var3 % 2 * 160, this.height / 6 - 12 + 24 * (var3 >> 1), 150, 20, this.method5431(this.worldDifficulty), var1 -> {
-                  this.worldDifficulty = Difficulty.method8907(this.worldDifficulty.getId() + 1);
+                  this.worldDifficulty = Difficulty.byId(this.worldDifficulty.getId() + 1);
                   this.mc.getConnection().sendPacket(new CSetDifficultyPacket(this.worldDifficulty));
                   this.difficultyButton.setMessage(this.method5431(this.worldDifficulty));
                }
@@ -83,7 +83,7 @@ public class OptionsScreen extends Screen {
                               new TranslationTextComponent("difficulty.lock.title"),
                               new TranslationTextComponent(
                                  "difficulty.lock.question",
-                                 new TranslationTextComponent("options.difficulty." + this.mc.world.getWorldInfo().method20047().method8909())
+                                 new TranslationTextComponent("options.difficulty." + this.mc.world.getWorldInfo().method20047().getTranslationKey())
                               )
                            )
                         )
@@ -230,7 +230,7 @@ public class OptionsScreen extends Screen {
    @Override
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.renderBackground(var1);
-      drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2, 15, 16777215);
+      drawCenteredString(var1, this.font, this.title, this.width / 2, 15, 16777215);
       super.render(var1, var2, var3, var4);
    }
 }

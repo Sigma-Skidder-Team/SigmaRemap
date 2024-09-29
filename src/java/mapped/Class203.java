@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.ChunkPos;
+
 public abstract class Class203 extends Class202 {
    public Class203(int var1, int var2, int var3) {
       super(var1, var2, var3);

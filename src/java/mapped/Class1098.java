@@ -316,7 +316,7 @@ public class Class1098 extends TameableEntity {
       }
 
       ServerWorld var8 = var1.method6970();
-      if (var8 instanceof ServerWorld && var8.method6893().method24345(this.getPosition(), true, Structure.field18066).method17117()) {
+      if (var8 instanceof ServerWorld && var8.method6893().method24345(this.getPosition(), true, Structure.SWAMP_HUT).method17117()) {
          this.method5251(10);
          this.method4278();
       }

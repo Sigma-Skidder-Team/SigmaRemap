@@ -279,7 +279,7 @@ public class Class842 extends Class838 {
       if (var8 >= this.width - 5) {
          drawString(var1, this.field4630, var7, 5, this.height - 40, 8421504);
       } else {
-         method5690(var1, this.field4630, var7, this.width / 2, this.height - 40, 8421504);
+         drawCenteredString(var1, this.field4630, var7, this.width / 2, this.height - 40, 8421504);
       }
 
       super.render(var1, var2, var3, var4);
@@ -297,7 +297,7 @@ public class Class842 extends Class838 {
    }
 
    public void method2572(MatrixStack var1, String var2, int var3, int var4, int var5) {
-      method5690(var1, this.field4630, var2, var3, var4, var5);
+      drawCenteredString(var1, this.field4630, var2, var3, var4, var5);
    }
 
    public static String method2573(boolean var0) {

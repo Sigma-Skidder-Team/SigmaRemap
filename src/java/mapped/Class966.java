@@ -137,7 +137,7 @@ public class Class966 extends TileEntity implements ITickableTileEntity {
                   );
                   double var9 = (double)((float)var4.getX() + 0.5F) + (double)(1.0F / var8) * (var4x.getPosX() - (double)var4.getX());
                   double var11 = (double)((float)var4.getZ() + 0.5F) + (double)(1.0F / var8) * (var4x.getPosZ() - (double)var4.getZ());
-                  int var13 = MathHelper.method37775((var6 - 21) / -2, 3, 15);
+                  int var13 = MathHelper.clamp((var6 - 21) / -2, 3, 15);
 
                   for (int var14 = 0; var14 < var13; var14++) {
                      int var15 = var5.addAndGet(5);

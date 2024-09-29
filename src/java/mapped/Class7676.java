@@ -32,7 +32,7 @@ public class Class7676 {
                                  (var0x, var1) -> {
                                     Class6395 var4 = ((Class6619)var0x.getSource()).method20177().getPlayerList();
                                     return Class6618.method20148(
-                                       var4.method19488()
+                                       var4.getPlayers()
                                           .stream()
                                           .filter(var1x -> !var4.method19468().method14448(var1x.getGameProfile()))
                                           .<String>map(var0xx -> var0xx.getGameProfile().getName()),

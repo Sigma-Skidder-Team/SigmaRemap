@@ -107,8 +107,8 @@ public abstract class Class202 {
 
    private void method673(long var1, long var3, int var5, int var6, int var7, boolean var8) {
       if (!this.method650(var3)) {
-         var5 = MathHelper.method37775(var5, 0, this.field754 - 1);
-         var6 = MathHelper.method37775(var6, 0, this.field754 - 1);
+         var5 = MathHelper.clamp(var5, 0, this.field754 - 1);
+         var6 = MathHelper.clamp(var6, 0, this.field754 - 1);
          boolean var11;
          if (var7 != 255) {
             var11 = false;
@@ -119,7 +119,7 @@ public abstract class Class202 {
 
          int var12;
          if (!var8) {
-            var12 = MathHelper.method37775(this.method651(var3, var1, var5), 0, this.field754 - 1);
+            var12 = MathHelper.clamp(this.method651(var3, var1, var5), 0, this.field754 - 1);
          } else {
             var12 = Math.min(var7, var5);
          }
@@ -142,7 +142,7 @@ public abstract class Class202 {
 
    public final void method674(long var1, long var3, int var5, boolean var6) {
       int var9 = this.field756.get(var3) & 255;
-      int var10 = MathHelper.method37775(this.method655(var1, var3, var5), 0, this.field754 - 1);
+      int var10 = MathHelper.clamp(this.method655(var1, var3, var5), 0, this.field754 - 1);
       if (!var6) {
          int var11;
          boolean var12;
@@ -151,7 +151,7 @@ public abstract class Class202 {
             var12 = false;
          } else {
             var12 = true;
-            var11 = MathHelper.method37775(this.method652(var3), 0, this.field754 - 1);
+            var11 = MathHelper.clamp(this.method652(var3), 0, this.field754 - 1);
          }
 
          if (var10 == var11) {
@@ -174,7 +174,7 @@ public abstract class Class202 {
             var1--;
             LongLinkedOpenHashSet var4 = this.field755[this.field757];
             long var5 = var4.removeFirstLong();
-            int var7 = MathHelper.method37775(this.method652(var5), 0, this.field754 - 1);
+            int var7 = MathHelper.clamp(this.method652(var5), 0, this.field754 - 1);
             if (var4.isEmpty()) {
                this.method667(this.field754);
             }

@@ -385,11 +385,11 @@ public class BlockPos extends Vector3i {
       public Mutable method8383(Direction.Axis var1, int var2, int var3) {
          switch (Class4503.field21731[var1.ordinal()]) {
             case 1:
-               return this.method8372(MathHelper.method37775(this.getX(), var2, var3), this.getY(), this.getZ());
+               return this.method8372(MathHelper.clamp(this.getX(), var2, var3), this.getY(), this.getZ());
             case 2:
-               return this.method8372(this.getX(), MathHelper.method37775(this.getY(), var2, var3), this.getZ());
+               return this.method8372(this.getX(), MathHelper.clamp(this.getY(), var2, var3), this.getZ());
             case 3:
-               return this.method8372(this.getX(), this.getY(), MathHelper.method37775(this.getZ(), var2, var3));
+               return this.method8372(this.getX(), this.getY(), MathHelper.clamp(this.getZ(), var2, var3));
             default:
                throw new IllegalStateException("Unable to clamp axis " + var1);
          }

@@ -26,7 +26,7 @@ public class CryptManager {
       }
    }
 
-   public static KeyPair method32737() throws CryptException {
+   public static KeyPair generateKeyPair() throws CryptException {
       try {
          KeyPairGenerator var2 = KeyPairGenerator.getInstance("RSA");
          var2.initialize(1024);

@@ -17,7 +17,7 @@ public final class Class8088 {
    public static final Predicate<Entity> field34760 = var0 -> var0 instanceof IInventory && var0.isAlive();
    public static final Predicate<Entity> field34761 = var0 -> !(var0 instanceof PlayerEntity) || !var0.isSpectator() && !((PlayerEntity)var0).isCreative();
    public static final Predicate<Entity> field34762 = var0 -> !(var0 instanceof PlayerEntity)
-         || !var0.isSpectator() && !((PlayerEntity)var0).isCreative() && var0.world.method6997() != Difficulty.field14351;
+         || !var0.isSpectator() && !((PlayerEntity)var0).isCreative() && var0.world.method6997() != Difficulty.PEACEFUL;
    public static final Predicate<Entity> field34763 = var0 -> !var0.isSpectator();
 
    public static Predicate<Entity> method27980(double var0, double var2, double var4, double var6) {

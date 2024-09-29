@@ -74,7 +74,7 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
       RenderSystem.disableBlend();
       if (this.field6351.gameSettings.touchscreen || var9) {
          this.field6351.getTextureManager().bindTexture(Class1276.method6072());
-         AbstractGui.method5686(var1, var4, var3, var4 + 32, var3 + 32, -1601138544);
+         AbstractGui.fill(var1, var4, var3, var4 + 32, var3 + 32, -1601138544);
          RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          int var16 = var7 - var4;
          boolean var17 = var16 < 32;

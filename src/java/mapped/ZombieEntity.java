@@ -37,7 +37,7 @@ public class ZombieEntity extends Class1009 {
    private static final DataParameter<Boolean> field5760 = EntityDataManager.<Boolean>createKey(ZombieEntity.class, DataSerializers.field33398);
    private static final DataParameter<Integer> field5761 = EntityDataManager.<Integer>createKey(ZombieEntity.class, DataSerializers.VARINT);
    private static final DataParameter<Boolean> field5762 = EntityDataManager.<Boolean>createKey(ZombieEntity.class, DataSerializers.field33398);
-   private static final Predicate<Difficulty> field5763 = var0 -> var0 == Difficulty.field14354;
+   private static final Predicate<Difficulty> field5763 = var0 -> var0 == Difficulty.HARD;
    private final Class2643 field5764 = new Class2643(this, field5763);
    private boolean field5765;
    private int field5766;
@@ -243,7 +243,7 @@ public class ZombieEntity extends Class1009 {
          }
 
          if (var6 != null
-            && this.world.method6997() == Difficulty.field14354
+            && this.world.method6997() == Difficulty.HARD
             && (double)this.rand.nextFloat() < this.getAttributeValue(Attributes.field42116)
             && this.world.getGameRules().getBoolean(Class5462.field24226)) {
             int var7 = MathHelper.floor(this.getPosX());
@@ -327,7 +327,7 @@ public class ZombieEntity extends Class1009 {
    @Override
    public void method4270(Class9755 var1) {
       super.method4270(var1);
-      if (this.rand.nextFloat() < (this.world.method6997() != Difficulty.field14354 ? 0.01F : 0.05F)) {
+      if (this.rand.nextFloat() < (this.world.method6997() != Difficulty.HARD ? 0.01F : 0.05F)) {
          int var4 = this.rand.nextInt(3);
          if (var4 != 0) {
             this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.field37821));
@@ -360,8 +360,8 @@ public class ZombieEntity extends Class1009 {
    @Override
    public void method2927(ServerWorld var1, LivingEntity var2) {
       super.method2927(var1, var2);
-      if ((var1.method6997() == Difficulty.field14353 || var1.method6997() == Difficulty.field14354) && var2 instanceof Class1042) {
-         if (var1.method6997() != Difficulty.field14354 && this.rand.nextBoolean()) {
+      if ((var1.method6997() == Difficulty.NORMAL || var1.method6997() == Difficulty.HARD) && var2 instanceof Class1042) {
+         if (var1.method6997() != Difficulty.HARD && this.rand.nextBoolean()) {
             return;
          }
 

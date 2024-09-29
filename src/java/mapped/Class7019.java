@@ -16,16 +16,17 @@ import net.minecraft.world.IWorldReader;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.server.ServerWorld;
+import net.minecraft.world.storage.IServerWorldInfo;
 
 public class Class7019 implements Class7016 {
    private static String[] field30321;
    private final Random field30322 = new Random();
-   private final Class6608 field30323;
+   private final IServerWorldInfo field30323;
    private int field30324;
    private int field30325;
    private int field30326;
 
-   public Class7019(Class6608 var1) {
+   public Class7019(IServerWorldInfo var1) {
       this.field30323 = var1;
       this.field30324 = 1200;
       this.field30325 = var1.method20062();
@@ -49,7 +50,7 @@ public class Class7019 implements Class7016 {
                this.field30325 = 24000;
                if (var1.getGameRules().getBoolean(Class5462.field24226)) {
                   int var6 = this.field30326;
-                  this.field30326 = MathHelper.method37775(this.field30326 + 25, 25, 75);
+                  this.field30326 = MathHelper.clamp(this.field30326 + 25, 25, 75);
                   this.field30323.method20065(this.field30326);
                   if (this.field30322.nextInt(100) <= var6) {
                      if (!this.method21750(var1)) {

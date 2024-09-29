@@ -35,7 +35,7 @@ public class ChunkStatus {
    public static final ChunkStatus field42134 = method34290(
       "structure_starts", field42133, 0, field42130, Class2076.field13524, (var0, var1, var2, var3, var4, var5, var6, var7) -> {
          if (!var7.getStatus().method34306(var0)) {
-            if (var1.getServer().method1436().getDimensionGeneratorSettings().method26260()) {
+            if (var1.getServer().func_240793_aU_().getDimensionGeneratorSettings().method26260()) {
                var2.method17825(var1.func_241828_r(), var1.method6893(), var7, var3, var1.method6967());
             }
 

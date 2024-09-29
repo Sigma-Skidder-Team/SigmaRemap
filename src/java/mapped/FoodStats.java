@@ -35,7 +35,7 @@ public class FoodStats {
       if (this.field45073 > 4.0F) {
          this.field45073 -= 4.0F;
          if (!(this.field45072 > 0.0F)) {
-            if (var4 != Difficulty.field14351) {
+            if (var4 != Difficulty.PEACEFUL) {
                this.field45071 = Math.max(this.field45071 - 1, 0);
             }
          } else {
@@ -64,7 +64,7 @@ public class FoodStats {
       } else {
          this.field45074++;
          if (this.field45074 >= 80) {
-            if (var1.getHealth() > 10.0F || var4 == Difficulty.field14354 || var1.getHealth() > 1.0F && var4 == Difficulty.field14353) {
+            if (var1.getHealth() > 10.0F || var4 == Difficulty.HARD || var1.getHealth() > 1.0F && var4 == Difficulty.NORMAL) {
                var1.attackEntityFrom(DamageSource.field39000, 1.0F);
             }
 

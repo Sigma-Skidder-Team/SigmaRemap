@@ -70,9 +70,9 @@ public class Class7015 implements Class7016 {
             if (var1.method6952(var6) && var1.getBiome(var6).getCategory() != Class100.field289) {
                for (int var7 = 0; var7 < 10; var7++) {
                   float var8 = var1.rand.nextFloat() * (float) (Math.PI * 2);
-                  this.field30314 = var6.getX() + MathHelper.method37767(MathHelper.cos(var8) * 32.0F);
+                  this.field30314 = var6.getX() + MathHelper.floor(MathHelper.cos(var8) * 32.0F);
                   this.field30315 = var6.getY();
-                  this.field30316 = var6.getZ() + MathHelper.method37767(MathHelper.sin(var8) * 32.0F);
+                  this.field30316 = var6.getZ() + MathHelper.floor(MathHelper.sin(var8) * 32.0F);
                   if (this.method21745(var1, new BlockPos(this.field30314, this.field30315, this.field30316)) != null) {
                      this.field30313 = 0;
                      this.field30312 = 20;

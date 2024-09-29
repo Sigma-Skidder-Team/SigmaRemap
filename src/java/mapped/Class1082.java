@@ -133,7 +133,7 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
             this.field5600.addGoal(4, this.field5947);
          } else {
             byte var4 = 20;
-            if (this.world.method6997() != Difficulty.field14354) {
+            if (this.world.method6997() != Difficulty.HARD) {
                var4 = 40;
             }
 

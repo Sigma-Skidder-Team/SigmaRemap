@@ -199,7 +199,7 @@ public class RealmsMainScreen extends RealmsScreen {
 
          this.<Class1287>addListener(this.field4273);
          this.setListenerDefault(this.field4273);
-         this.field4298 = Class5991.method18584(this.fontRenderer, field4251, 100);
+         this.field4298 = Class5991.method18584(this.font, field4251, 100);
       } else {
          this.mc.displayGuiScreen(field4268);
       }
@@ -746,9 +746,9 @@ public class RealmsMainScreen extends RealmsScreen {
       boolean var24 = var7 && var11;
       if (var24) {
          ITextComponent var25 = var10 != 0 ? field4243 : field4242;
-         int var19 = this.fontRenderer.method38821(var25);
+         int var19 = this.font.method38821(var25);
          this.method5688(var1, var23 - 3, var3 - 3, var23 + var19 + 3, var3 + 8 + 3, -1073741824, -1073741824);
-         this.fontRenderer.method38803(var1, var25, (float)var23, (float)var3, -1);
+         this.font.method38803(var1, var25, (float)var23, (float)var3, -1);
       }
    }
 
@@ -881,7 +881,7 @@ public class RealmsMainScreen extends RealmsScreen {
          int var8 = 0;
 
          for (ITextComponent var10 : var2) {
-            int var11 = this.fontRenderer.method38821(var10);
+            int var11 = this.font.method38821(var10);
             if (var11 > var8) {
                var8 = var11;
             }
@@ -896,7 +896,7 @@ public class RealmsMainScreen extends RealmsScreen {
          for (ITextComponent var12 : var2) {
             int var13 = var15 - (var7 != 0 ? 0 : 3) + var7;
             this.method5688(var1, var14 - 3, var13, var14 + var8 + 3, var15 + 8 + 3 + var7, -1073741824, -1073741824);
-            this.fontRenderer.method38803(var1, var12, (float)var14, (float)(var15 + var7), 16777215);
+            this.font.method38803(var1, var12, (float)var14, (float)(var15 + var7), 16777215);
             var7 += 10;
          }
       }
@@ -957,7 +957,7 @@ public class RealmsMainScreen extends RealmsScreen {
       RenderSystem.translatef((float)(this.width / 2 - 25), 20.0F, 0.0F);
       RenderSystem.method27883(-20.0F, 0.0F, 0.0F, 1.0F);
       RenderSystem.scalef(1.5F, 1.5F, 1.5F);
-      this.fontRenderer.method38801(var1, "LOCAL!", 0.0F, 0.0F, 8388479);
+      this.font.method38801(var1, "LOCAL!", 0.0F, 0.0F, 8388479);
       RenderSystem.popMatrix();
    }
 
@@ -968,7 +968,7 @@ public class RealmsMainScreen extends RealmsScreen {
       RenderSystem.translatef((float)(this.width / 2 - 25), 20.0F, 0.0F);
       RenderSystem.method27883(-20.0F, 0.0F, 0.0F, 1.0F);
       RenderSystem.scalef(1.5F, 1.5F, 1.5F);
-      this.fontRenderer.method38801(var1, "STAGE!", 0.0F, 0.0F, -256);
+      this.font.method38801(var1, "STAGE!", 0.0F, 0.0F, -256);
       RenderSystem.popMatrix();
    }
 
@@ -1226,7 +1226,7 @@ public class RealmsMainScreen extends RealmsScreen {
 
    // $VF: synthetic method
    public static FontRenderer method2125(RealmsMainScreen var0) {
-      return var0.fontRenderer;
+      return var0.font;
    }
 
    // $VF: synthetic method
@@ -1276,17 +1276,17 @@ public class RealmsMainScreen extends RealmsScreen {
 
    // $VF: synthetic method
    public static FontRenderer method2135(RealmsMainScreen var0) {
-      return var0.fontRenderer;
+      return var0.font;
    }
 
    // $VF: synthetic method
    public static FontRenderer method2136(RealmsMainScreen var0) {
-      return var0.fontRenderer;
+      return var0.font;
    }
 
    // $VF: synthetic method
    public static FontRenderer method2137(RealmsMainScreen var0) {
-      return var0.fontRenderer;
+      return var0.font;
    }
 
    // $VF: synthetic method
@@ -1321,12 +1321,12 @@ public class RealmsMainScreen extends RealmsScreen {
 
    // $VF: synthetic method
    public static FontRenderer method2144(RealmsMainScreen var0) {
-      return var0.fontRenderer;
+      return var0.font;
    }
 
    // $VF: synthetic method
    public static FontRenderer method2145(RealmsMainScreen var0) {
-      return var0.fontRenderer;
+      return var0.font;
    }
 
    // $VF: synthetic method
@@ -1336,12 +1336,12 @@ public class RealmsMainScreen extends RealmsScreen {
 
    // $VF: synthetic method
    public static FontRenderer method2147(RealmsMainScreen var0) {
-      return var0.fontRenderer;
+      return var0.font;
    }
 
    // $VF: synthetic method
    public static FontRenderer method2148(RealmsMainScreen var0) {
-      return var0.fontRenderer;
+      return var0.font;
    }
 
    // $VF: synthetic method
@@ -1351,32 +1351,32 @@ public class RealmsMainScreen extends RealmsScreen {
 
    // $VF: synthetic method
    public static FontRenderer method2150(RealmsMainScreen var0) {
-      return var0.fontRenderer;
+      return var0.font;
    }
 
    // $VF: synthetic method
    public static FontRenderer method2151(RealmsMainScreen var0) {
-      return var0.fontRenderer;
+      return var0.font;
    }
 
    // $VF: synthetic method
    public static FontRenderer method2152(RealmsMainScreen var0) {
-      return var0.fontRenderer;
+      return var0.font;
    }
 
    // $VF: synthetic method
    public static FontRenderer method2153(RealmsMainScreen var0) {
-      return var0.fontRenderer;
+      return var0.font;
    }
 
    // $VF: synthetic method
    public static FontRenderer method2154(RealmsMainScreen var0) {
-      return var0.fontRenderer;
+      return var0.font;
    }
 
    // $VF: synthetic method
    public static FontRenderer method2155(RealmsMainScreen var0) {
-      return var0.fontRenderer;
+      return var0.font;
    }
 
    // $VF: synthetic method
@@ -1436,6 +1436,6 @@ public class RealmsMainScreen extends RealmsScreen {
 
    // $VF: synthetic method
    public static FontRenderer method2167(RealmsMainScreen var0) {
-      return var0.fontRenderer;
+      return var0.font;
    }
 }

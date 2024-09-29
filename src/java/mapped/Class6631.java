@@ -87,7 +87,7 @@ public class Class6631 implements Class6632 {
    }
 
    public boolean method20218(Object... var1) {
-      return Reflector.method35056(this, var1);
+      return Reflector.callBoolean(this, var1);
    }
 
    public int method20219(Object... var1) {
@@ -111,7 +111,7 @@ public class Class6631 implements Class6632 {
    }
 
    public boolean method20224(Object var1) {
-      return Reflector.method35056(this, var1);
+      return Reflector.callBoolean(this, var1);
    }
 
    public int method20225(Object var1) {

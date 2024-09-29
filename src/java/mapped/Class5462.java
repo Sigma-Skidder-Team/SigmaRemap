@@ -36,7 +36,7 @@ public class Class5462 {
    public static final Class9221<Class7466> field24237 = method17127("reducedDebugInfo", Class2155.field14137, Class7466.method24179(false, (var0, var1) -> {
       byte var4 = (byte)(!var1.method24174() ? 23 : 22);
 
-      for (ServerPlayerEntity var6 : var0.getPlayerList().method19488()) {
+      for (ServerPlayerEntity var6 : var0.getPlayerList().getPlayers()) {
          var6.field4855.sendPacket(new SEntityStatusPacket(var6, var4));
       }
    }));
@@ -51,7 +51,7 @@ public class Class5462 {
    public static final Class9221<Class7466> field24246 = method17127("disableRaids", Class2155.field14132, Class7466.method24178(false));
    public static final Class9221<Class7466> field24247 = method17127("doInsomnia", Class2155.field14133, Class7466.method24178(true));
    public static final Class9221<Class7466> field24248 = method17127("doImmediateRespawn", Class2155.field14131, Class7466.method24179(false, (var0, var1) -> {
-      for (ServerPlayerEntity var5 : var0.getPlayerList().method19488()) {
+      for (ServerPlayerEntity var5 : var0.getPlayerList().getPlayers()) {
          var5.field4855.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24571, !var1.method24174() ? 0.0F : 1.0F));
       }
    }));

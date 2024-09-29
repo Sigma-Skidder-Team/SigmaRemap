@@ -8,39 +8,38 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public enum Difficulty {
-   field14351(0, "peaceful"),
-   field14352(1, "easy"),
-   field14353(2, "normal"),
-   field14354(3, "hard");
+   PEACEFUL(0, "peaceful"),
+   EASY(1, "easy"),
+   NORMAL(2, "normal"),
+   HARD(3, "hard");
 
-   private static final Difficulty[] field14355 = Arrays.<Difficulty>stream(values())
-      .sorted(Comparator.comparingInt(Difficulty::getId))
-      .<Difficulty>toArray(Difficulty[]::new);
-   private final int field14356;
-   private final String field14357;
-   private static final Difficulty[] field14358 = new Difficulty[]{field14351, field14352, field14353, field14354};
+   private static final Difficulty[] ID_MAPPING = Arrays.stream(values()).sorted(Comparator.comparingInt(Difficulty::getId)).toArray((size) -> {
+      return new Difficulty[size];
+   });
+   private final int id;
+   private final String translationKey;
 
-   private Difficulty(int var3, String var4) {
-      this.field14356 = var3;
-      this.field14357 = var4;
+   private Difficulty(int difficultyIdIn, String difficultyResourceKeyIn) {
+      this.id = difficultyIdIn;
+      this.translationKey = difficultyResourceKeyIn;
    }
 
    public int getId() {
-      return this.field14356;
+      return this.id;
    }
 
    public ITextComponent getDisplayName() {
-      return new TranslationTextComponent("options.difficulty." + this.field14357);
+      return new TranslationTextComponent("options.difficulty." + this.translationKey);
    }
 
-   public static Difficulty method8907(int var0) {
-      return field14355[var0 % field14355.length];
+   public static Difficulty byId(int var0) {
+      return ID_MAPPING[var0 % ID_MAPPING.length];
    }
 
    @Nullable
-   public static Difficulty method8908(String var0) {
+   public static Difficulty byName(String var0) {
       for (Difficulty var6 : values()) {
-         if (var6.field14357.equals(var0)) {
+         if (var6.translationKey.equals(var0)) {
             return var6;
          }
       }
@@ -48,11 +47,11 @@ public enum Difficulty {
       return null;
    }
 
-   public String method8909() {
-      return this.field14357;
+   public String getTranslationKey() {
+      return this.translationKey;
    }
 
-   public Difficulty method8910() {
-      return field14355[(this.field14356 + 1) % field14355.length];
+   public Difficulty getNextDifficulty() {
+      return ID_MAPPING[(this.id + 1) % ID_MAPPING.length];
    }
 }

@@ -26,7 +26,7 @@ public class Class1312 extends Screen {
          this.field6924.method22328(this.width, this.height);
       }
 
-      drawCenteredString(var1, this.fontRenderer, field6923, this.width / 2, this.height / 2 - 50, 16777215);
+      drawCenteredString(var1, this.font, field6923, this.width / 2, this.height / 2 - 50, 16777215);
       super.render(var1, var2, var3, var4);
    }
 

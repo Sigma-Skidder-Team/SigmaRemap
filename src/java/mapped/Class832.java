@@ -25,7 +25,7 @@ public class Class832 extends Screen {
 
    @Override
    public void init() {
-      this.field4617 = Class5991.method18584(this.fontRenderer, this.field4616, this.width - 50);
+      this.field4617 = Class5991.method18584(this.font, this.field4616, this.width - 50);
       this.field4619 = this.field4617.method18592() * 9;
       this.<Button>addButton(
          new Button(
@@ -42,7 +42,7 @@ public class Class832 extends Screen {
    @Override
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.renderBackground(var1);
-      drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2, this.height / 2 - this.field4619 / 2 - 18, 11184810);
+      drawCenteredString(var1, this.font, this.title, this.width / 2, this.height / 2 - this.field4619 / 2 - 18, 11184810);
       this.field4617.method18588(var1, this.width / 2, this.height / 2 - this.field4619 / 2);
       super.render(var1, var2, var3, var4);
    }

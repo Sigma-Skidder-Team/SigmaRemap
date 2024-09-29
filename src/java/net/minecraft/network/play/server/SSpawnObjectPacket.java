@@ -37,8 +37,8 @@ public class SSpawnObjectPacket implements IPacket<IClientPlayNetHandler> {
       this.field24362 = var3;
       this.field24363 = var5;
       this.field24364 = var7;
-      this.field24368 = MathHelper.method37767(var9 * 256.0F / 360.0F);
-      this.field24369 = MathHelper.method37767(var10 * 256.0F / 360.0F);
+      this.field24368 = MathHelper.floor(var9 * 256.0F / 360.0F);
+      this.field24369 = MathHelper.floor(var10 * 256.0F / 360.0F);
       this.field24370 = var11;
       this.field24371 = var12;
       this.field24365 = (int)(MathHelper.clamp(var13.x, -3.9, 3.9) * 8000.0);

@@ -36,12 +36,12 @@ public class Class1307 extends Screen {
 
       while (var6.hasNext()) {
          Class8001 var7 = (Class8001)var6.next();
-         this.field6912 = Math.max(this.field6912, 20 + this.fontRenderer.method38821(Class8001.method27333(var7)) + 20);
+         this.field6912 = Math.max(this.field6912, 20 + this.font.method38821(Class8001.method27333(var7)) + 20);
       }
 
       int var13 = 5 + this.field6912 + 5;
       int var14 = var13 * this.field6909.size();
-      this.field6910 = Class5991.method18584(this.fontRenderer, this.field6908, var14);
+      this.field6910 = Class5991.method18584(this.font, this.field6908, var14);
       int var8 = this.field6910.method18592() * 9;
       this.field6911 = (int)((double)var3 / 2.0 - (double)var8 / 2.0);
       int var9 = this.field6911 + var8 + 18;
@@ -56,7 +56,7 @@ public class Class1307 extends Screen {
    @Override
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.method2471(0);
-      drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2, this.field6911 - 18, -1);
+      drawCenteredString(var1, this.font, this.title, this.width / 2, this.field6911 - 18, -1);
       this.field6910.method18588(var1, this.width / 2, this.field6911);
       super.render(var1, var2, var3, var4);
    }

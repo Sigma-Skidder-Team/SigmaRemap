@@ -19,6 +19,7 @@ import net.minecraft.network.play.server.SChangeBlockPacket;
 import net.minecraft.network.play.server.SChunkDataPacket;
 import net.minecraft.network.play.server.SMultiBlockChangePacket;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import org.lwjgl.opengl.GL11;
 
 import java.awt.Color;

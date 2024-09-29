@@ -21,7 +21,7 @@ public class Class7982 {
    }
 
    public byte method27125() {
-      return this.field34303.method8953();
+      return this.field34303.getIcon();
    }
 
    public MapDecorationType method27126() {
@@ -41,7 +41,7 @@ public class Class7982 {
    }
 
    public boolean method27130() {
-      return this.field34303.method8954();
+      return this.field34303.isRenderedOnFrame();
    }
 
    @Nullable
@@ -77,7 +77,7 @@ public class Class7982 {
 
    @Override
    public int hashCode() {
-      int var3 = this.field34303.method8953();
+      int var3 = this.field34303.getIcon();
       var3 = 31 * var3 + this.field34304;
       var3 = 31 * var3 + this.field34305;
       var3 = 31 * var3 + this.field34306;

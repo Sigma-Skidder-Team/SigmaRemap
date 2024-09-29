@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.ChunkPos;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;

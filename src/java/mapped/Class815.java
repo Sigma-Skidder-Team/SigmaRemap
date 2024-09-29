@@ -212,19 +212,19 @@ public class Class815 extends Class813 {
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.field4420 = null;
       this.renderBackground(var1);
-      drawCenteredString(var1, this.fontRenderer, field4412, this.width / 2, method1929(4), 16777215);
+      drawCenteredString(var1, this.font, field4412, this.width / 2, method1929(4), 16777215);
       super.render(var1, var2, var3, var4);
       if (this.field4422 != null) {
          String var7 = this.field4422.method18907();
-         int var8 = this.fontRenderer.getStringWidth(var7);
+         int var8 = this.font.getStringWidth(var7);
          int var9 = this.field4422.field27447 != Class2261.field14706 ? 8388479 : 10526880;
-         int var10 = this.fontRenderer.method38821(field4413);
-         drawCenteredString(var1, this.fontRenderer, field4413, this.width / 2, 12, 16777215);
-         method5690(var1, this.fontRenderer, var7, this.width / 2, 24, var9);
+         int var10 = this.font.method38821(field4413);
+         drawCenteredString(var1, this.font, field4413, this.width / 2, 12, 16777215);
+         drawCenteredString(var1, this.font, var7, this.width / 2, 24, var9);
          int var11 = Math.min(this.method2273(2, 3) + 80 - 11, this.width / 2 + var8 / 2 + var10 / 2 + 10);
          this.method2283(var1, var11, 7, var2, var3);
          if (this.method2288()) {
-            this.fontRenderer
+            this.font
                .func_243248_b(
                   var1,
                   field4414.deepCopy().appendString(this.field4422.method18908()),
@@ -238,7 +238,7 @@ public class Class815 extends Class813 {
             this.method2282(var1, this.field4420, var2, var3);
          }
       } else {
-         drawCenteredString(var1, this.fontRenderer, field4413, this.width / 2, 17, 16777215);
+         drawCenteredString(var1, this.font, field4413, this.width / 2, 17, 16777215);
       }
    }
 
@@ -362,13 +362,13 @@ public class Class815 extends Class813 {
    public void method2282(MatrixStack var1, ITextComponent var2, int var3, int var4) {
       int var7 = var3 + 12;
       int var8 = var4 - 12;
-      int var9 = this.fontRenderer.method38821(var2);
+      int var9 = this.font.method38821(var2);
       if (var7 + var9 + 3 > this.field4425) {
          var7 = var7 - var9 - 20;
       }
 
       this.method5688(var1, var7 - 3, var8 - 3, var7 + var9 + 3, var8 + 8 + 3, -1073741824, -1073741824);
-      this.fontRenderer.method38803(var1, var2, (float)var7, (float)var8, 16777215);
+      this.font.method38803(var1, var2, (float)var7, (float)var8, 16777215);
    }
 
    private void method2283(MatrixStack var1, int var2, int var3, int var4, int var5) {

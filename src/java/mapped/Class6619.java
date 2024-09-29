@@ -341,7 +341,7 @@ public class Class6619 implements Class6618 {
       IFormattableTextComponent var4 = new TranslationTextComponent("chat.type.admin", this.method20169(), var1)
          .mergeStyle(new TextFormatting[]{TextFormatting.GRAY, TextFormatting.ITALIC});
       if (this.field29130.method1413().getBoolean(Class5462.field24236)) {
-         for (ServerPlayerEntity var6 : this.field29130.getPlayerList().method19488()) {
+         for (ServerPlayerEntity var6 : this.field29130.getPlayerList().getPlayers()) {
             if (var6 != this.field29124 && this.field29130.getPlayerList().canSendCommands(var6.getGameProfile())) {
                var6.sendMessage(var4, Util.DUMMY_UUID);
             }

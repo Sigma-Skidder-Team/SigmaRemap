@@ -46,8 +46,8 @@ public class CreateWorldScreen extends Screen {
    private String field7069;
    private Class2079 field7070 = Class2079.field13539;
    private Class2079 field7071;
-   private Difficulty field7072 = Difficulty.field14353;
-   private Difficulty field7073 = Difficulty.field14353;
+   private Difficulty field7072 = Difficulty.NORMAL;
+   private Difficulty field7073 = Difficulty.NORMAL;
    private boolean field7074;
    private boolean field7075;
    public boolean field7076;
@@ -126,7 +126,7 @@ public class CreateWorldScreen extends Screen {
    @Override
    public void init() {
       this.mc.keyboardListener.enableRepeatEvents(true);
-      this.field7068 = new Class1302(this, this.fontRenderer, this.width / 2 - 100, 60, 200, 20, new TranslationTextComponent("selectWorld.enterName"));
+      this.field7068 = new Class1302(this, this.font, this.width / 2 - 100, 60, 200, 20, new TranslationTextComponent("selectWorld.enterName"));
       this.field7068.method5635(this.field7090);
       this.field7068.method5631(var1 -> {
          this.field7090 = var1;
@@ -151,7 +151,7 @@ public class CreateWorldScreen extends Screen {
          var1.method5744(250);
       }));
       this.field7083 = this.<Button>addButton(new Class1223(this, var4, 100, 150, 20, new TranslationTextComponent("options.difficulty"), var1 -> {
-         this.field7072 = this.field7072.method8910();
+         this.field7072 = this.field7072.getNextDifficulty();
          this.field7073 = this.field7072;
          var1.method5744(250);
       }));
@@ -176,7 +176,7 @@ public class CreateWorldScreen extends Screen {
                }))
          )
       );
-      this.field7092.method5780(this, this.mc, this.fontRenderer);
+      this.field7092.method5780(this, this.mc, this.font);
       this.field7084 = this.<Button>addButton(
          new Button(var4, 185, 150, 20, new TranslationTextComponent("selectWorld.moreWorldOptions"), var1 -> this.method6357())
       );
@@ -229,7 +229,7 @@ public class CreateWorldScreen extends Screen {
          if (var3.method26267()) {
             Class5462 var4 = new Class5462();
             var4.<Class7466>method17128(Class5462.field24232).method24175(false, (MinecraftServer)null);
-            var5 = new WorldSettings(this.field7068.getText().trim(), GameType.SPECTATOR, false, Difficulty.field14351, true, var4, DatapackCodec.VANILLA_CODEC);
+            var5 = new WorldSettings(this.field7068.getText().trim(), GameType.SPECTATOR, false, Difficulty.PEACEFUL, true, var4, DatapackCodec.VANILLA_CODEC);
          } else {
             var5 = new WorldSettings(
                this.field7068.getText().trim(),
@@ -265,7 +265,7 @@ public class CreateWorldScreen extends Screen {
          this.field7076 = true;
          this.field7087.active = false;
          this.field7092.field6558.active = false;
-         this.field7073 = Difficulty.field14354;
+         this.field7073 = Difficulty.HARD;
          this.field7083.active = false;
       }
 
@@ -350,26 +350,26 @@ public class CreateWorldScreen extends Screen {
    @Override
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.renderBackground(var1);
-      drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2, 20, -1);
+      drawCenteredString(var1, this.font, this.title, this.width / 2, 20, -1);
       if (!this.field7080) {
-         method5693(var1, this.fontRenderer, field7064, this.width / 2 - 100, 47, -6250336);
-         method5693(
+         drawString(var1, this.font, field7064, this.width / 2 - 100, 47, -6250336);
+         drawString(
             var1,
-            this.fontRenderer,
+            this.font,
             new StringTextComponent("").append(field7065).appendString(" ").appendString(this.field7069),
             this.width / 2 - 100,
             85,
             -6250336
          );
          this.field7068.render(var1, var2, var3, var4);
-         method5693(var1, this.fontRenderer, this.field7088, this.width / 2 - 150, 122, -6250336);
-         method5693(var1, this.fontRenderer, this.field7089, this.width / 2 - 150, 134, -6250336);
+         drawString(var1, this.font, this.field7088, this.width / 2 - 150, 122, -6250336);
+         drawString(var1, this.font, this.field7089, this.width / 2 - 150, 134, -6250336);
          if (this.field7087.field6483) {
-            method5693(var1, this.fontRenderer, field7066, this.width / 2 - 150, 172, -6250336);
+            drawString(var1, this.font, field7066, this.width / 2 - 150, 172, -6250336);
          }
       } else {
-         method5693(var1, this.fontRenderer, field7062, this.width / 2 - 100, 47, -6250336);
-         method5693(var1, this.fontRenderer, field7063, this.width / 2 - 100, 85, -6250336);
+         drawString(var1, this.font, field7062, this.width / 2 - 100, 47, -6250336);
+         drawString(var1, this.font, field7063, this.width / 2 - 100, 85, -6250336);
          this.field7092.render(var1, var2, var3, var4);
       }
 

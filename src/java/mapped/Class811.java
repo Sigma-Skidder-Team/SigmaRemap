@@ -187,17 +187,17 @@ public class Class811 extends RealmsScreen {
 
    // $VF: synthetic method
    public static FontRenderer method2226(Class811 var0) {
-      return var0.fontRenderer;
+      return var0.font;
    }
 
    // $VF: synthetic method
    public static FontRenderer method2227(Class811 var0) {
-      return var0.fontRenderer;
+      return var0.font;
    }
 
    // $VF: synthetic method
    public static FontRenderer method2228(Class811 var0) {
-      return var0.fontRenderer;
+      return var0.font;
    }
 
    // $VF: synthetic method

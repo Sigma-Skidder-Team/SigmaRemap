@@ -256,7 +256,7 @@ public abstract class Class1273<E extends Class1154<E>> extends FocusableGui imp
       if (var17 > 0) {
          RenderSystem.disableTexture();
          int var18 = (int)((float)((this.field6788 - this.field6787) * (this.field6788 - this.field6787)) / (float)this.method6036());
-         var18 = MathHelper.method37775(var18, 32, this.field6788 - this.field6787 - 8);
+         var18 = MathHelper.clamp(var18, 32, this.field6788 - this.field6787 - 8);
          int var20 = (int)this.method6044() * (this.field6788 - this.field6787 - var18) / var17 + this.field6787;
          if (var20 < this.field6787) {
             var20 = this.field6787;
@@ -368,7 +368,7 @@ public abstract class Class1273<E extends Class1154<E>> extends FocusableGui imp
                if (!(var3 > (double)this.field6788)) {
                   double var12 = (double)Math.max(1, this.method6046());
                   int var14 = this.field6788 - this.field6787;
-                  int var15 = MathHelper.method37775((int)((float)(var14 * var14) / (float)this.method6036()), 32, var14 - 8);
+                  int var15 = MathHelper.clamp((int)((float)(var14 * var14) / (float)this.method6036()), 32, var14 - 8);
                   double var16 = Math.max(1.0, var12 / (double)(var14 - var15));
                   this.method6045(this.method6044() + var8 * var16);
                } else {
@@ -430,7 +430,7 @@ public abstract class Class1273<E extends Class1154<E>> extends FocusableGui imp
          int var6 = this.getEventListeners().indexOf(this.getSelected());
 
          while (true) {
-            int var7 = MathHelper.method37775(var6 + var5, 0, this.method6031() - 1);
+            int var7 = MathHelper.clamp(var6 + var5, 0, this.method6031() - 1);
             if (var6 == var7) {
                break;
             }

@@ -177,7 +177,7 @@ public class GameSettings {
    );
    public Minecraft field44659;
    private final File field44660;
-   public Difficulty field44661 = Difficulty.field14353;
+   public Difficulty field44661 = Difficulty.NORMAL;
    public boolean hideGUI;
    private PointOfView field44663 = PointOfView.field12822;
    public boolean showDebugInfo;
@@ -494,7 +494,7 @@ public class GameSettings {
                }
 
                if ("difficulty".equals(var4)) {
-                  this.field44661 = Difficulty.method8907(Integer.parseInt(var5));
+                  this.field44661 = Difficulty.byId(Integer.parseInt(var5));
                }
 
                if ("graphicsMode".equals(var4)) {
@@ -730,7 +730,7 @@ public class GameSettings {
    }
 
    public void saveOptions() {
-      if (!Reflector.field42770.exists() || !Reflector.method35056(Reflector.field42770)) {
+      if (!Reflector.field42770.exists() || !Reflector.callBoolean(Reflector.field42770)) {
          try (PrintWriter var1 = new PrintWriter(new OutputStreamWriter(new FileOutputStream(this.field44660), StandardCharsets.UTF_8))) {
             var1.println("version:" + SharedConstants.getVersion().getWorldVersion());
             var1.println("autoJump:" + AbstractOption.field25351.method18080(this));

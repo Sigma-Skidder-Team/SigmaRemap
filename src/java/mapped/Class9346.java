@@ -73,8 +73,8 @@ public class Class9346 {
    public ItemStack method35366() {
       int var3 = this.field43384.getCount();
       ItemStack var4 = this.field43384.copy();
-      int var5 = Math.max(0, MathHelper.method37767((float)(var3 * this.field43391) * this.field43392));
-      var4.setCount(MathHelper.method37775(var3 + var5 + this.field43390, 1, this.field43384.getItem().getMaxStackSize()));
+      int var5 = Math.max(0, MathHelper.floor((float)(var3 * this.field43391) * this.field43392));
+      var4.setCount(MathHelper.clamp(var3 + var5 + this.field43390, 1, this.field43384.getItem().getMaxStackSize()));
       return var4;
    }
 

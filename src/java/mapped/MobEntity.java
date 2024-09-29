@@ -470,7 +470,7 @@ public abstract class MobEntity extends LivingEntity {
       this.world.getProfiler().startSection("looting");
       boolean var3 = this.world.getGameRules().getBoolean(Class5462.field24224);
       if (Reflector.field42847.exists()) {
-         var3 = Reflector.method35056(Reflector.field42847, this.world, this);
+         var3 = Reflector.callBoolean(Reflector.field42847, this.world, this);
       }
 
       if (!this.world.isRemote && this.method4280() && this.isAlive() && !this.dead && var3) {
@@ -612,7 +612,7 @@ public abstract class MobEntity extends LivingEntity {
 
    @Override
    public void method3447() {
-      if (this.world.method6997() == Difficulty.field14351 && this.method4256()) {
+      if (this.world.method6997() == Difficulty.PEACEFUL && this.method4256()) {
          this.remove();
       } else if (!this.method4282() && !this.method4255()) {
          PlayerEntity var3 = this.world.method7185(this, -1.0);
@@ -840,7 +840,7 @@ public abstract class MobEntity extends LivingEntity {
    public void method4270(Class9755 var1) {
       if (this.rand.nextFloat() < 0.15F * var1.method38330()) {
          int var4 = this.rand.nextInt(2);
-         float var5 = this.world.method6997() != Difficulty.field14354 ? 0.25F : 0.1F;
+         float var5 = this.world.method6997() != Difficulty.HARD ? 0.25F : 0.1F;
          if (this.rand.nextFloat() < 0.095F) {
             var4++;
          }

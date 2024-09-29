@@ -18,7 +18,7 @@ public class Class6396 extends Class6395 {
 
    @Override
    public void method19449(ServerPlayerEntity var1) {
-      if (var1.getName().getString().equals(this.method19444().method1332())) {
+      if (var1.getName().getString().equals(this.method19444().getServerOwner())) {
          this.field28007 = var1.writeWithoutTypeId(new CompoundNBT());
       }
 
@@ -27,7 +27,7 @@ public class Class6396 extends Class6395 {
 
    @Override
    public ITextComponent method19451(SocketAddress var1, GameProfile var2) {
-      return (ITextComponent)(var2.getName().equalsIgnoreCase(this.method19444().method1332()) && this.method19465(var2.getName()) != null
+      return (ITextComponent)(var2.getName().equalsIgnoreCase(this.method19444().getServerOwner()) && this.method19465(var2.getName()) != null
          ? new TranslationTextComponent("multiplayer.disconnect.name_taken")
          : super.method19451(var1, var2));
    }

@@ -56,7 +56,7 @@ public class Class803 extends RealmsScreen {
    @Override
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.renderBackground(var1);
-      method5690(var1, this.fontRenderer, "Changes from last backup", this.width / 2, 10, 16777215);
+      drawCenteredString(var1, this.font, "Changes from last backup", this.width / 2, 10, 16777215);
       this.field4193.render(var1, var2, var3, var4);
       super.render(var1, var2, var3, var4);
    }

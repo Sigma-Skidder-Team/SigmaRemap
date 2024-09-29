@@ -1,11 +1,15 @@
-package mapped;
+package net.minecraft.world.storage;
 
+import mapped.Class7235;
+import mapped.Class8559;
+import mapped.ISpawnWorldInfo;
+import mapped.MinecraftServer;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.world.GameType;
 
 import java.util.UUID;
 
-public interface Class6608 extends ISpawnWorldInfo {
+public interface IServerWorldInfo extends ISpawnWorldInfo {
    String method20054();
 
    void method20055(boolean var1);

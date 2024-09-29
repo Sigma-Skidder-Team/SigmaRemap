@@ -58,7 +58,7 @@ public class Class1127 extends Screen {
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.field6170 = null;
       this.field6167.render(var1, var2, var3, var4);
-      drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2, 20, 16777215);
+      drawCenteredString(var1, this.font, this.title, this.width / 2, 20, 16777215);
       super.render(var1, var2, var3, var4);
       if (this.field6170 != null) {
          this.method2461(var1, this.field6170, var2, var3);

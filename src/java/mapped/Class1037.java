@@ -67,7 +67,7 @@ public class Class1037 extends ZombieEntity implements Class1022 {
 
    public static boolean method4640(EntityType<Class1037> var0, Class1659 var1, Class2202 var2, BlockPos var3, Random var4) {
       Optional var7 = var1.method7178(var3);
-      boolean var8 = var1.method6997() != Difficulty.field14351
+      boolean var8 = var1.method6997() != Difficulty.PEACEFUL
          && method4340(var1, var3, var4)
          && (var2 == Class2202.field14393 || var1.getFluidState(var3).method23486(FluidTags.field40469));
       return !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Biomes.RIVER))

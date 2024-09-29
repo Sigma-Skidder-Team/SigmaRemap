@@ -8,6 +8,7 @@ import net.minecraft.state.properties.AttachFace;
 import net.minecraft.state.properties.RedstoneSide;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 

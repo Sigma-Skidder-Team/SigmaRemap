@@ -14,6 +14,7 @@ import net.minecraft.util.Mirror;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 import net.minecraft.world.server.ServerWorld;
@@ -81,13 +82,13 @@ public class Class964 extends TileEntity {
       this.method3937(var2.getString("name"));
       this.field5396 = var2.getString("author");
       this.field5397 = var2.getString("metadata");
-      int var5 = MathHelper.method37775(var2.getInt("posX"), -48, 48);
-      int var6 = MathHelper.method37775(var2.getInt("posY"), -48, 48);
-      int var7 = MathHelper.method37775(var2.getInt("posZ"), -48, 48);
+      int var5 = MathHelper.clamp(var2.getInt("posX"), -48, 48);
+      int var6 = MathHelper.clamp(var2.getInt("posY"), -48, 48);
+      int var7 = MathHelper.clamp(var2.getInt("posZ"), -48, 48);
       this.field5398 = new BlockPos(var5, var6, var7);
-      int var8 = MathHelper.method37775(var2.getInt("sizeX"), 0, 48);
-      int var9 = MathHelper.method37775(var2.getInt("sizeY"), 0, 48);
-      int var10 = MathHelper.method37775(var2.getInt("sizeZ"), 0, 48);
+      int var8 = MathHelper.clamp(var2.getInt("sizeX"), 0, 48);
+      int var9 = MathHelper.clamp(var2.getInt("sizeY"), 0, 48);
+      int var10 = MathHelper.clamp(var2.getInt("sizeZ"), 0, 48);
       this.field5399 = new BlockPos(var8, var9, var10);
 
       try {

@@ -83,7 +83,7 @@ public class ControlsScreen extends Class1135 {
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.renderBackground(var1);
       this.field6201.render(var1, var2, var3, var4);
-      drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2, 8, 16777215);
+      drawCenteredString(var1, this.font, this.title, this.width / 2, 8, 16777215);
       boolean var7 = false;
 
       for (KeyBinding var11 : this.field6193.field44658) {

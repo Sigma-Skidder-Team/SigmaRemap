@@ -17,6 +17,7 @@ import net.minecraft.fluid.Fluids;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.palette.UpgradeData;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeContainer;

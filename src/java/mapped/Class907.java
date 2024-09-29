@@ -199,7 +199,7 @@ public class Class907 extends Entity {
             DamageSource var8 = !var7 ? DamageSource.field39009 : DamageSource.field39008;
 
             for (Entity var10 : var6) {
-               var10.attackEntityFrom(var8, (float)Math.min(MathHelper.method37767((float)var5 * this.field5182), this.field5181));
+               var10.attackEntityFrom(var8, (float)Math.min(MathHelper.floor((float)var5 * this.field5182), this.field5181));
             }
 
             if (var7 && (double)this.rand.nextFloat() < 0.05F + (double)var5 * 0.05) {

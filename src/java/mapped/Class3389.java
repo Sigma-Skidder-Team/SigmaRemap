@@ -196,7 +196,7 @@ public class Class3389 extends Block {
    }
 
    public static int method11990(BlockState var0, int var1) {
-      return MathHelper.method37767((float)(var0.<Integer>get(field19000) - 0) / 4.0F * (float)var1);
+      return MathHelper.floor((float)(var0.<Integer>get(field19000) - 0) / 4.0F * (float)var1);
    }
 
    @Override

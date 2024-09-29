@@ -28,6 +28,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
 import totalcross.json.JSONArray;
 import org.lwjgl.BufferUtils;
@@ -280,7 +281,7 @@ public class WaypointsManager {
       if (this.field36365.getIntegratedServer() == null && this.field36365.getCurrentServerData() != null) {
          var3 = "server/" + this.field36365.getCurrentServerData().serverIP.replace("/", ":");
       } else if (this.field36365.getIntegratedServer() != null) {
-         var3 = "local/" + this.field36365.getIntegratedServer().method1436().method20054();
+         var3 = "local/" + this.field36365.getIntegratedServer().func_240793_aU_().getWorldName();
       }
 
       return var3;

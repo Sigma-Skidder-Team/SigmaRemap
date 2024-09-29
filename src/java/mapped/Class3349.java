@@ -32,7 +32,7 @@ public class Class3349 extends ChestBlock {
 
    @Override
    public int method11514(BlockState var1, IBlockReader var2, BlockPos var3, Direction var4) {
-      return MathHelper.method37775(ChestTileEntity.getPlayersUsing(var2, var3), 0, 15);
+      return MathHelper.clamp(ChestTileEntity.getPlayersUsing(var2, var3), 0, 15);
    }
 
    @Override

@@ -442,7 +442,7 @@ public abstract class PlayerEntity extends LivingEntity {
          this.field4907--;
       }
 
-      if (this.world.method6997() == Difficulty.field14351 && this.world.getGameRules().getBoolean(Class5462.field24231)) {
+      if (this.world.method6997() == Difficulty.PEACEFUL && this.world.getGameRules().getBoolean(Class5462.field24231)) {
          if (this.getHealth() < this.method3075() && this.ticksExisted % 20 == 0) {
             this.heal(1.0F);
          }
@@ -789,15 +789,15 @@ public abstract class PlayerEntity extends LivingEntity {
             if (!this.getShouldBeDead()) {
                this.method2949();
                if (var1.method31111()) {
-                  if (this.world.method6997() == Difficulty.field14351) {
+                  if (this.world.method6997() == Difficulty.PEACEFUL) {
                      var2 = 0.0F;
                   }
 
-                  if (this.world.method6997() == Difficulty.field14352) {
+                  if (this.world.method6997() == Difficulty.EASY) {
                      var2 = Math.min(var2 / 2.0F + 1.0F, var2);
                   }
 
-                  if (this.world.method6997() == Difficulty.field14354) {
+                  if (this.world.method6997() == Difficulty.HARD) {
                      var2 = var2 * 3.0F / 2.0F;
                   }
                }
@@ -843,7 +843,7 @@ public abstract class PlayerEntity extends LivingEntity {
          }
 
          if (var1 >= 3.0F) {
-            int var4 = 1 + MathHelper.method37767(var1);
+            int var4 = 1 + MathHelper.floor(var1);
             Hand var5 = this.getActiveHand();
             this.activeItemStack.damageItem(var4, this, var1x -> var1x.sendBreakAnimation(var5));
             if (this.activeItemStack.isEmpty()) {
@@ -1566,7 +1566,7 @@ public abstract class PlayerEntity extends LivingEntity {
    public void method2781(int var1) {
       this.method2876(var1);
       this.field4922 = this.field4922 + (float)var1 / (float)this.method2930();
-      this.field4921 = MathHelper.method37775(this.field4921 + var1, 0, Integer.MAX_VALUE);
+      this.field4921 = MathHelper.clamp(this.field4921 + var1, 0, Integer.MAX_VALUE);
 
       while (this.field4922 < 0.0F) {
          float var4 = this.field4922 * (float)this.method2930();

@@ -206,7 +206,7 @@ public class MultiplayerScreen extends Screen {
       this.hoveringText = null;
       this.renderBackground(var1);
       this.serverListSelector.render(var1, var2, var3, var4);
-      drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2, 20, 16777215);
+      drawCenteredString(var1, this.font, this.title, this.width / 2, 20, 16777215);
       super.render(var1, var2, var3, var4);
       if (this.hoveringText != null) {
          this.method2460(var1, this.hoveringText, var2, var3);

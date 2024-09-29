@@ -130,13 +130,13 @@ public class Class871 extends ContainerScreen<Class5822> {
          RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          if (var22 != 0) {
             String var23 = "" + var22;
-            int var24 = 86 - this.fontRenderer.getStringWidth(var23);
-            ITextProperties var25 = Class6577.method19915().method19916(this.fontRenderer, var24);
+            int var24 = 86 - this.font.getStringWidth(var23);
+            ITextProperties var25 = Class6577.method19915().method19916(this.font, var24);
             int var26 = 6839882;
             if ((var18 < var19 + 1 || this.mc.player.field4920 < var22) && !this.mc.player.abilities.isCreativeMode) {
                this.blit(var1, var20, var8 + 14 + 19 * var19, 0, 185, 108, 19);
                this.blit(var1, var20 + 1, var8 + 15 + 19 * var19, 16 * var19, 239, 16, 16);
-               this.fontRenderer.method38826(var25, var21, var8 + 16 + 19 * var19, var24, (var26 & 16711422) >> 1);
+               this.font.method38826(var25, var21, var8 + 16 + 19 * var19, var24, (var26 & 16711422) >> 1);
                var26 = 4226832;
             } else {
                int var27 = var3 - (var7 + 60);
@@ -149,11 +149,11 @@ public class Class871 extends ContainerScreen<Class5822> {
                }
 
                this.blit(var1, var20 + 1, var8 + 15 + 19 * var19, 16 * var19, 223, 16, 16);
-               this.fontRenderer.method38826(var25, var21, var8 + 16 + 19 * var19, var24, var26);
+               this.font.method38826(var25, var21, var8 + 16 + 19 * var19, var24, var26);
                var26 = 8453920;
             }
 
-            this.fontRenderer.drawStringWithShadow(var1, var23, (float)(var21 + 86 - this.fontRenderer.getStringWidth(var23)), (float)(var8 + 16 + 19 * var19 + 7), var26);
+            this.font.drawStringWithShadow(var1, var23, (float)(var21 + 86 - this.font.getStringWidth(var23)), (float)(var8 + 16 + 19 * var19 + 7), var26);
          } else {
             this.blit(var1, var20, var8 + 14 + 19 * var19, 0, 185, 108, 19);
          }

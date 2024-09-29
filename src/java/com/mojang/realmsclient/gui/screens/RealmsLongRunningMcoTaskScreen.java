@@ -91,12 +91,12 @@ public class RealmsLongRunningMcoTaskScreen extends RealmsScreen implements Clas
    @Override
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.renderBackground(var1);
-      drawCenteredString(var1, this.fontRenderer, this.field4158, this.width / 2, method1929(3), 16777215);
+      drawCenteredString(var1, this.font, this.field4158, this.width / 2, method1929(3), 16777215);
       ITextComponent var7 = this.field4159;
       if (var7 != null) {
-         drawCenteredString(var1, this.fontRenderer, var7, this.width / 2, method1929(8), 16711680);
+         drawCenteredString(var1, this.font, var7, this.width / 2, method1929(8), 16711680);
       } else {
-         method5690(var1, this.fontRenderer, field4164[this.field4161 % field4164.length], this.width / 2, method1929(8), 8421504);
+         drawCenteredString(var1, this.font, field4164[this.field4161 % field4164.length], this.width / 2, method1929(8), 8421504);
       }
 
       super.render(var1, var2, var3, var4);
