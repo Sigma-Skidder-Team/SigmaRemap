@@ -3,6 +3,7 @@ package com.mentalfrostbyte.jello.unmapped;
 import mapped.YoutubeType;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MusicPlayerVideo {
@@ -25,6 +26,7 @@ public class MusicPlayerVideo {
             if (this.type == YoutubeType.PLAYLIST) {
                 System.out.println("getting from playlist " + this.displayName);
                 thumbnails = ThumbnailUtil.getFromPlaylist(this.id);
+                System.out.println(this.displayName + ": \n" + Arrays.toString(thumbnails));
             }
         } else {
             System.out.println("getting from channel " + this.displayName);
