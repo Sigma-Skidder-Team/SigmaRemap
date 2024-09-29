@@ -234,7 +234,7 @@ public class Class8969 {
 
                      if (var22 != null && var23.getBlock() instanceof Class3449) {
                         ((Class3449)var23.getBlock()).method11532(var1, var21, var23, var22);
-                        if (!var22.method23473()) {
+                        if (!var22.isSource()) {
                            var11.add(var21);
                         }
                      }
@@ -254,16 +254,16 @@ public class Class8969 {
                   BlockPos var36 = var33;
                   FluidState var40 = var1.getFluidState(var33);
 
-                  for (int var25 = 0; var25 < var29.length && !var40.method23473(); var25++) {
+                  for (int var25 = 0; var25 < var29.length && !var40.isSource(); var25++) {
                      BlockPos var26 = var36.offset(var29[var25]);
                      FluidState var27 = var1.getFluidState(var26);
-                     if (var27.method23475(var1, var26) > var40.method23475(var1, var36) || var27.method23473() && !var40.method23473()) {
+                     if (var27.method23475(var1, var26) > var40.method23475(var1, var36) || var27.isSource() && !var40.isSource()) {
                         var40 = var27;
                         var36 = var26;
                      }
                   }
 
-                  if (var40.method23473()) {
+                  if (var40.isSource()) {
                      BlockState var44 = var1.getBlockState(var33);
                      Block var47 = var44.getBlock();
                      if (var47 instanceof Class3449) {

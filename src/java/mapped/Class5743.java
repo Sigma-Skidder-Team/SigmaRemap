@@ -51,7 +51,7 @@ public class Class5743<T extends Entity> extends LivingRenderer<AbstractClientPl
       } else {
          if (!var1.method5368() && !var4) {
             field25166.put(var1.getGameProfile().getId(), new ResourceLocation(""));
-            Minecraft.getInstance().getSkinManager().method38346(var1.getGameProfile(), (var1x, var2, var3) -> {
+            Minecraft.getInstance().getSkinManager().method38loadProfileTextures346(var1.getGameProfile(), (var1x, var2, var3) -> {
                if (var1x == Type.SKIN) {
                   field25166.put(var1.getGameProfile().getId(), var2);
                }

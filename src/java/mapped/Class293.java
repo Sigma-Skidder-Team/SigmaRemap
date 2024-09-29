@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.blaze3d.systems.RenderSystem;
+import net.minecraft.client.renderer.texture.Texture;
 import net.minecraft.client.renderer.texture.TextureUtil;
 import net.minecraft.util.ResourceLocation;
 import net.optifine.Config;
@@ -9,7 +10,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 
-public class Class293 extends Class290 {
+public class Class293 extends Texture {
    private static String[] field1135;
    private static final Logger field1136 = LogManager.getLogger();
    public final ResourceLocation field1137;

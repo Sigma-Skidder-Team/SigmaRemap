@@ -24,10 +24,10 @@ public class Class2721 extends NearestAttackableTargetGoal<PlayerEntity> {
       Direction var5 = ((Class1057)this.field17153).method4848();
       if (var5.getAxis() != Direction.Axis.X) {
          return var5.getAxis() != Direction.Axis.Z
-            ? this.field17153.getBoundingBox().method19663(var1, 4.0, var1)
-            : this.field17153.getBoundingBox().method19663(var1, var1, 4.0);
+            ? this.field17153.getBoundingBox().grow(var1, 4.0, var1)
+            : this.field17153.getBoundingBox().grow(var1, var1, 4.0);
       } else {
-         return this.field17153.getBoundingBox().method19663(4.0, var1, var1);
+         return this.field17153.getBoundingBox().grow(4.0, var1, var1);
       }
    }
 }

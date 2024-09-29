@@ -72,9 +72,9 @@ public class Class3366 extends Class3241 {
    }
 
    private void method11943(World var1, BlockPos var2) {
-      List<Class1017> var5 = var1.getEntitiesWithinAABB(Class1017.class, new AxisAlignedBB(var2).method19663(8.0, 6.0, 8.0));
+      List<Class1017> var5 = var1.getEntitiesWithinAABB(Class1017.class, new AxisAlignedBB(var2).grow(8.0, 6.0, 8.0));
       if (!var5.isEmpty()) {
-         List var6 = var1.<PlayerEntity>getEntitiesWithinAABB(PlayerEntity.class, new AxisAlignedBB(var2).method19663(8.0, 6.0, 8.0));
+         List var6 = var1.<PlayerEntity>getEntitiesWithinAABB(PlayerEntity.class, new AxisAlignedBB(var2).grow(8.0, 6.0, 8.0));
          int var7 = var6.size();
 
          for (Class1017 var9 : var5) {
@@ -167,7 +167,7 @@ public class Class3366 extends Class3241 {
    }
 
    private void method11948(World var1, BlockPos var2, BlockState var3) {
-      if (var3.method23449().method23474() && !(var1.rand.nextFloat() < 0.3F)) {
+      if (var3.method23449().isEmpty() && !(var1.rand.nextFloat() < 0.3F)) {
          VoxelShape var6 = var3.method23414(var1, var2);
          double var7 = var6.getEnd(Direction.Axis.Y);
          if (var7 >= 1.0 && !var3.isIn(BlockTags.field32781)) {
@@ -177,7 +177,7 @@ public class Class3366 extends Class3241 {
                BlockState var12 = var1.getBlockState(var11);
                VoxelShape var13 = var12.method23414(var1, var11);
                double var14 = var13.getEnd(Direction.Axis.Y);
-               if ((var14 < 1.0 || !var12.method23456(var1, var11)) && var12.method23449().method23474()) {
+               if ((var14 < 1.0 || !var12.method23456(var1, var11)) && var12.method23449().isEmpty()) {
                   this.method11949(var1, var2, var6, (double)var2.getY() - 0.05);
                }
             } else {

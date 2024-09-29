@@ -14,6 +14,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.RayTraceContext;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.math.vector.Vector3i;
 import net.minecraft.util.registry.Registry;
@@ -377,9 +378,9 @@ public class BlockUtil {
    public static float[] method34565() {
       BlockRayTraceResult var2 = method34566(MovementUtils.method37086() - 270.0F);
       if (var2.getType() != RayTraceResult.Type.MISS) {
-         double var3 = var2.getVec().x - (double)var2.getPos().getX();
-         double var5 = var2.getVec().z - (double)var2.getPos().getZ();
-         double var7 = var2.getVec().y - (double)var2.getPos().getY();
+         double var3 = var2.getHitVec().x - (double)var2.getPos().getX();
+         double var5 = var2.getHitVec().z - (double)var2.getPos().getZ();
+         double var7 = var2.getHitVec().y - (double)var2.getPos().getY();
          double var9 = (double)var2.getPos().getX() - Minecraft.getInstance().player.getPosX() + var3;
          double var11 = (double)var2.getPos().getY()
             - (Minecraft.getInstance().player.getPosY() + (double) Minecraft.getInstance().player.getEyeHeight())
@@ -410,7 +411,7 @@ public class BlockUtil {
          mc.player.field6121 + (double)(var6 * var7)
       );
       Entity var9 = mc.getRenderViewEntity();
-      return mc.world.rayTraceBlocks(new RayTraceContext(var3, var8, Class2271.field14775, Class1985.field12962, var9));
+      return mc.world.rayTraceBlocks(new RayTraceContext(var3, var8, RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, var9));
    }
 
    public static BlockRayTraceResult rayTrace(float var0, float var1, float var2) {
@@ -432,7 +433,7 @@ public class BlockUtil {
          mc.player.field6121 + (double)(var8 * var2)
       );
       Entity var10 = mc.getRenderViewEntity();
-      return mc.world.rayTraceBlocks(new RayTraceContext(var5, var9, Class2271.field14775, Class1985.field12962, var10));
+      return mc.world.rayTraceBlocks(new RayTraceContext(var5, var9, RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, var10));
    }
 
    public static BlockRayTraceResult method34568(float var0, float var1, float var2, EventUpdate var3) {
@@ -452,7 +453,7 @@ public class BlockUtil {
          mc.player.field6121 + (double)(var9 * var2)
       );
       Entity var11 = mc.getRenderViewEntity();
-      return mc.world.rayTraceBlocks(new RayTraceContext(var6, var10, Class2271.field14775, Class1985.field12962, var11));
+      return mc.world.rayTraceBlocks(new RayTraceContext(var6, var10, RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, var11));
    }
 
    public static RayTraceResult method34569(float var0, float var1, float var2, float var3) {
@@ -478,7 +479,7 @@ public class BlockUtil {
          mc.player.field6121 + (double)(var13 * var2)
       );
       Entity var15 = mc.getRenderViewEntity();
-      return mc.world.rayTraceBlocks(new RayTraceContext(var10, var14, Class2271.field14775, Class1985.field12962, var15));
+      return mc.world.rayTraceBlocks(new RayTraceContext(var10, var14, RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, var15));
    }
 
    public static RayTraceResult method34570(BlockPos var0) {
@@ -490,7 +491,7 @@ public class BlockUtil {
          (double)var0.getY(),
          (double)var0.getZ() + 0.5 + RandomUtils.nextDouble(0.01, 0.04)
       );
-      return mc.world.rayTraceBlocks(new RayTraceContext(var3, var4, Class2271.field14775, Class1985.field12962, mc.getRenderViewEntity()));
+      return mc.world.rayTraceBlocks(new RayTraceContext(var3, var4, RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, mc.getRenderViewEntity()));
    }
 
    private boolean method34571(PositionFacing var1, float var2, float var3) {
@@ -509,7 +510,7 @@ public class BlockUtil {
          mc.player.getPosZ() + (double)(var9 * var10)
       );
       Entity var12 = mc.getRenderViewEntity();
-      BlockRayTraceResult var13 = mc.world.rayTraceBlocks(new RayTraceContext(var6, var11, Class2271.field14775, Class1985.field12964, var12));
+      BlockRayTraceResult var13 = mc.world.rayTraceBlocks(new RayTraceContext(var6, var11, RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.ANY, var12));
       return var13 == null ? false : var13.getPos().equals(var1.blockPos) && var13.getFace() == var1.direction;
    }
 

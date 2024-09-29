@@ -336,7 +336,7 @@ public class IngameGui extends AbstractGui {
                 RenderSystem.method27903(10);
                 RenderSystem.popMatrix();
             } else {
-                RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15994, DestFactor.field12933, GlStateManager.SourceFactor.field15990, DestFactor.field12936);
+                RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.ONE_MINUS_DST_COLOR, DestFactor.field12933, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
                 byte var5 = 15;
                 this.blit(var1, (this.field6741 - 15) / 2, (this.field6742 - 15) / 2, 0, 0, 15, 15);
                 if (this.field6716.gameSettings.field44603 == Class2207.field14426) {
@@ -971,7 +971,7 @@ public class IngameGui extends AbstractGui {
 
             RenderSystem.disableDepthTest();
             RenderSystem.depthMask(false);
-            RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field16000, DestFactor.field12933, GlStateManager.SourceFactor.field15990, DestFactor.field12936);
+            RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.ZERO, DestFactor.field12933, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
             if (!(var5 > 0.0F)) {
                 RenderSystem.color4f(this.field6723, this.field6723, this.field6723, 1.0F);
             } else {
@@ -993,7 +993,7 @@ public class IngameGui extends AbstractGui {
             RenderSystem.defaultBlendFunc();
         } else {
             RenderSystem.enableDepthTest();
-            RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12932, GlStateManager.SourceFactor.field15990, DestFactor.field12936);
+            RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
         }
     }
 

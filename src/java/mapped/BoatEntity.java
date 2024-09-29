@@ -309,7 +309,7 @@ public class BoatEntity extends Entity {
       }
 
       this.doBlockCollisions();
-      List var11 = this.world.getEntitiesInAABBexcluding(this, this.getBoundingBox().method19663(0.2F, -0.01F, 0.2F), Class8088.method27981(this));
+      List var11 = this.world.getEntitiesInAABBexcluding(this, this.getBoundingBox().grow(0.2F, -0.01F, 0.2F), Class8088.method27981(this));
       if (!var11.isEmpty()) {
          boolean var12 = !this.world.isRemote && !(this.method3407() instanceof PlayerEntity);
 
@@ -556,7 +556,7 @@ public class BoatEntity extends Entity {
                var13.method8372(var14, var15, var16);
                FluidState var17 = this.world.getFluidState(var13);
                if (var17.method23486(FluidTags.field40469) && var4 < (double)((float)var13.getY() + var17.method23475(this.world, var13))) {
-                  if (!var17.method23473()) {
+                  if (!var17.isSource()) {
                      return Class2096.field13657;
                   }
 

@@ -43,8 +43,8 @@ public class Class3690<T> extends Class3676<Class1046> {
       if (var1.getBrain().method21404(Class8830.field39824)) {
          Class8999 var4 = var1.getBrain().<Class8999>method21410(Class8830.field39824).get();
          if (var4.method33252() == this.field19715) {
-            Vector3d var5 = var4.method33251().method26356().method11336(var1.getPositionVec());
-            Vector3d var6 = this.method12540(var1).method11336(var1.getPositionVec());
+            Vector3d var5 = var4.method33251().method26356().subtract(var1.getPositionVec());
+            Vector3d var6 = this.method12540(var1).subtract(var1.getPositionVec());
             return var5.dotProduct(var6) < 0.0;
          } else {
             return false;

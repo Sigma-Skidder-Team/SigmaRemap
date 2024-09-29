@@ -49,6 +49,6 @@ public class Class6831 extends Class6829 {
       double var20 = (double)(this.field29716 * MathHelper.sin(var17 * (float) (Math.PI / 180.0))) * Math.abs((double)var5 / var10);
       double var22 = (double)(this.field29716 * MathHelper.sin(var16 * (float) (Math.PI / 180.0))) * Math.abs((double)var4 / var10);
       Vector3d var24 = this.field29717.getMotion();
-      this.field29717.setMotion(var24.add(new Vector3d(var18, var22, var20).method11336(var24).scale(0.2)));
+      this.field29717.setMotion(var24.add(new Vector3d(var18, var22, var20).subtract(var24).scale(0.2)));
    }
 }

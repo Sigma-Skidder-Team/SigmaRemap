@@ -3,7 +3,7 @@ package mapped;
 public class Class1709 {
    private static String[] field9315;
 
-   public void getValue(float var1) {
+   public void setValue(float var1) {
    }
 
    public void method7438(float var1, float var2) {

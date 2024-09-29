@@ -18,7 +18,7 @@ import java.net.Proxy.Type;
 import java.net.URL;
 import java.util.concurrent.CompletableFuture;
 
-public class Class294 extends Class293 {
+public class DownloadingTexture extends Class293 {
    private static final Logger field1136 = LogManager.getLogger();
    private final File field1141;
    private final String field1142;
@@ -30,7 +30,7 @@ public class Class294 extends Class293 {
    public boolean field1148 = false;
    private boolean field1149 = false;
 
-   public Class294(File var1, String var2, ResourceLocation var3, boolean var4, Runnable var5) {
+   public DownloadingTexture(File var1, String var2, ResourceLocation var3, boolean var4, Runnable var5) {
       super(var3);
       this.field1141 = var1;
       this.field1142 = var2;

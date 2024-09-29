@@ -36,10 +36,7 @@ import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.*;
 import net.minecraft.util.Direction;
-import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.ChunkPos;
-import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.*;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.IFormattableTextComponent;
@@ -648,7 +645,7 @@ public abstract class Entity implements INameable, ICommandSource {
       Stream var7 = ! VoxelShapes.compare(var6, VoxelShapes.create(var4.shrink(1.0E-7)), IBooleanFunction.AND)
          ? Stream.<VoxelShape>of(var6)
          : Stream.empty();
-      Stream var8 = this.world.func_230318_c_(this, var4.contract(var1), var0 -> true);
+      Stream var8 = this.world.func_230318_c_(this, var4.expand(var1), var0 -> true);
       Class8544 var9 = new Class8544(Stream.concat(var8, var7));
       Vector3d var10 = var1.lengthSquared() != 0.0 ? collideBoundingBoxHeuristically(this, var1, var4, this.world, var5, var9) : var1;
       boolean var11 = var1.x != var10.x;
@@ -658,7 +655,7 @@ public abstract class Entity implements INameable, ICommandSource {
       if (this.stepHeight > 0.0F && var14 && (var11 || var13)) {
          Vector3d var15 = collideBoundingBoxHeuristically(this, new Vector3d(var1.x, (double)this.stepHeight, var1.z), var4, this.world, var5, var9);
          Vector3d var16 = collideBoundingBoxHeuristically(
-            this, new Vector3d(0.0, (double)this.stepHeight, 0.0), var4.contract(var1.x, 0.0, var1.z), this.world, var5, var9
+            this, new Vector3d(0.0, (double)this.stepHeight, 0.0), var4.expand(var1.x, 0.0, var1.z), this.world, var5, var9
          );
          if (var16.y < (double)this.stepHeight) {
             Vector3d var17 = collideBoundingBoxHeuristically(this, new Vector3d(var1.x, 0.0, var1.z), var4.offset(var16), this.world, var5, var9)
@@ -700,7 +697,7 @@ public abstract class Entity implements INameable, ICommandSource {
          boolean var12 = var0 != null && var0 instanceof ClientPlayerEntity;
          return collideBoundingBox(var1, var2, var3, var4, var5, var12);
       } else {
-         Class8544 var11 = new Class8544<VoxelShape>(Stream.<VoxelShape>concat(var5.method30440(), var3.getCollisionShapes(var0, var2.contract(var1))));
+         Class8544 var11 = new Class8544<VoxelShape>(Stream.<VoxelShape>concat(var5.method30440(), var3.getCollisionShapes(var0, var2.expand(var1))));
          return getAllowedMovement(var1, var2, var11);
       }
    }
@@ -1261,11 +1258,11 @@ public abstract class Entity implements INameable, ICommandSource {
       return this.getVectorForRotation(var1 - 90.0F, var2);
    }
 
-   public final Vector3d getEyePosition(float var1) {
-      if (var1 != 1.0F) {
-         double var4 = MathHelper.lerp((double)var1, this.prevPosX, this.getPosX());
-         double var6 = MathHelper.lerp((double)var1, this.prevPosY, this.getPosY()) + (double)this.getEyeHeight();
-         double var8 = MathHelper.lerp((double)var1, this.prevPosZ, this.getPosZ());
+   public final Vector3d getEyePosition(float partialTicks) {
+      if (partialTicks != 1.0F) {
+         double var4 = MathHelper.lerp((double)partialTicks, this.prevPosX, this.getPosX());
+         double var6 = MathHelper.lerp((double)partialTicks, this.prevPosY, this.getPosY()) + (double)this.getEyeHeight();
+         double var8 = MathHelper.lerp((double)partialTicks, this.prevPosZ, this.getPosZ());
          return new Vector3d(var4, var6, var8);
       } else {
          return new Vector3d(this.getPosX(), this.getPosYEye(), this.getPosZ());
@@ -1283,11 +1280,11 @@ public abstract class Entity implements INameable, ICommandSource {
       return new Vector3d(var4, var6, var8);
    }
 
-   public RayTraceResult customPick(double var1, float var3, boolean var4) {
-      Vector3d var7 = this.getEyePosition(var3);
-      Vector3d var8 = this.getLook(var3);
-      Vector3d var9 = var7.add(var8.x * var1, var8.y * var1, var8.z * var1);
-      return this.world.rayTraceBlocks(new RayTraceContext(var7, var9, Class2271.field14775, !var4 ? Class1985.field12962 : Class1985.field12964, this));
+   public RayTraceResult pick(double rayTraceDistance, float partialTicks, boolean p_213324_4_) {
+      Vector3d var7 = this.getEyePosition(partialTicks);
+      Vector3d var8 = this.getLook(partialTicks);
+      Vector3d var9 = var7.add(var8.x * rayTraceDistance, var8.y * rayTraceDistance, var8.z * rayTraceDistance);
+      return this.world.rayTraceBlocks(new RayTraceContext(var7, var9, RayTraceContext.BlockMode.OUTLINE, !p_213324_4_ ? RayTraceContext.FluidMode.NONE : RayTraceContext.FluidMode.ANY, this));
    }
 
    public boolean canBeCollidedWith() {

@@ -6,6 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.RayTraceContext;
 import net.minecraft.world.World;
 
 public class Class3302 extends Class3292 {
@@ -22,7 +23,7 @@ public class Class3302 extends Class3292 {
 
    @Override
    public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
-      BlockRayTraceResult var6 = method11735(var1, var2, Class1985.field12963);
+      BlockRayTraceResult var6 = method11735(var1, var2, RayTraceContext.FluidMode.SOURCE_ONLY);
       BlockRayTraceResult var7 = var6.method31422(var6.getPos().up());
       ActionResultType var8 = super.method11707(new ItemUseContext(var2, var3, var7));
       return new Class6794<ItemStack>(var8, var2.getHeldItem(var3));

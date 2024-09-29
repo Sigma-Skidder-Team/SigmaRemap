@@ -85,7 +85,7 @@ public class Class4298 extends Class4278 {
          var12 = (float)Math.sin((double)var12);
          new PlayerModel(0.0F, false);
          new PlayerRenderer(this.field20824.getRenderManager());
-         Class7735 var15 = Minecraft.getInstance().getRenderTypeBuffers().method26536();
+         Class7735 var15 = Minecraft.getInstance().getRenderTypeBuffers().getBufferSource();
          new MatrixStack();
          RenderSystem.pushMatrix();
          this.field20824.getRenderManager().method32215(false);

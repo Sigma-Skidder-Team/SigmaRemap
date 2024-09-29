@@ -19,7 +19,7 @@ public abstract class RayTraceResult {
 
    public abstract Type getType();
 
-   public Vector3d getVec() {
+   public Vector3d getHitVec() {
       return this.vec;
    }
 

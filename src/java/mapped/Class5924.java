@@ -11,7 +11,7 @@ public class Class5924 {
    private static String[] field25808;
 
    public Optional<Float> method18423(Explosion var1, IBlockReader var2, BlockPos var3, BlockState var4, FluidState var5) {
-      return var4.isAir() && var5.method23474()
+      return var4.isAir() && var5.isEmpty()
          ? Optional.<Float>empty()
          : Optional.<Float>of(Math.max(var4.getBlock().getExplosionResistance(), var5.method23487()));
    }

@@ -7,6 +7,7 @@ import com.mojang.authlib.minecraft.MinecraftProfileTexture.Type;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.DefaultPlayerSkin;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Direction;
@@ -32,7 +33,7 @@ public class Class5952 extends Class5942<SkullTileEntity> {
       var0.put(Class2136.field13992, new ResourceLocation("textures/entity/zombie/zombie.png"));
       var0.put(Class2136.field13993, new ResourceLocation("textures/entity/creeper/creeper.png"));
       var0.put(Class2136.field13994, new ResourceLocation("textures/entity/enderdragon/dragon.png"));
-      var0.put(Class2136.field13991, Class7209.method22636());
+      var0.put(Class2136.field13991, DefaultPlayerSkin.getDefaultSkinLegacy());
    });
 
    public Class5952(TileEntityRendererDispatcher var1) {
@@ -69,9 +70,9 @@ public class Class5952 extends Class5942<SkullTileEntity> {
       ResourceLocation var4 = field25953.get(var0);
       if (var0 == Class2136.field13991 && var1 != null) {
          Minecraft var5 = Minecraft.getInstance();
-         Map var6 = var5.getSkinManager().method38347(var1);
+         Map var6 = var5.getSkinManager().loadSkinFromCache(var1);
          return !var6.containsKey(Type.SKIN)
-            ? RenderType.getEntityCutoutNoCull(Class7209.method22637(PlayerEntity.method2960(var1)))
+            ? RenderType.getEntityCutoutNoCull(DefaultPlayerSkin.method22637(PlayerEntity.method2960(var1)))
             : RenderType.getEntityTranslucent(var5.getSkinManager().method38344((MinecraftProfileTexture)var6.get(Type.SKIN), Type.SKIN));
       } else {
          return RenderType.method14314(var4);

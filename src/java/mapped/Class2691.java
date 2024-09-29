@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.projectile.ProjectileHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.RangedInteger;
@@ -91,7 +92,7 @@ public class Class2691<T extends Class1009 & Class1022 & Class1023> extends Clas
                if (this.field17126 != Class2229.field14615) {
                   if (this.field17126 == Class2229.field14616 && var4) {
                      this.field17125.method4530(var3, 1.0F);
-                     ItemStack var9 = this.field17125.getHeldItem(Class9456.method36389(this.field17125, Items.CROSSBOW));
+                     ItemStack var9 = this.field17125.getHeldItem(ProjectileHelper.method36389(this.field17125, Items.CROSSBOW));
                      CrossbowItem.method11756(var9, false);
                      this.field17126 = Class2229.field14613;
                   }
@@ -116,7 +117,7 @@ public class Class2691<T extends Class1009 & Class1022 & Class1023> extends Clas
                }
             }
          } else if (!var8) {
-            this.field17125.setActiveHand(Class9456.method36389(this.field17125, Items.CROSSBOW));
+            this.field17125.setActiveHand(ProjectileHelper.method36389(this.field17125, Items.CROSSBOW));
             this.field17126 = Class2229.field14614;
             this.field17125.method4535(true);
          }

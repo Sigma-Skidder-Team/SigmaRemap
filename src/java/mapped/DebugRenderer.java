@@ -7,6 +7,7 @@ import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.projectile.ProjectileHelper;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
@@ -95,12 +96,12 @@ public class DebugRenderer {
          Vector3d var4 = var0.getEyePosition(1.0F);
          Vector3d var5 = var0.getLook(1.0F).scale((double)var1);
          Vector3d var6 = var4.add(var5);
-         AxisAlignedBB var7 = var0.getBoundingBox().contract(var5).method19664(1.0);
+         AxisAlignedBB var7 = var0.getBoundingBox().expand(var5).method19664(1.0);
          int var8 = var1 * var1;
          Predicate<Entity> var9 = var0x -> !var0x.isSpectator() && var0x.canBeCollidedWith();
-         EntityRayTraceResult var10 = Class9456.method36386(var0, var4, var6, var7, var9, (double)var8);
+         EntityRayTraceResult var10 = ProjectileHelper.rayTraceEntities(var0, var4, var6, var7, var9, (double)var8);
          if (var10 != null) {
-            return !(var4.method11342(var10.getVec()) > (double)var8) ? Optional.<Entity>of(var10.getEntity()) : Optional.<Entity>empty();
+            return !(var4.squareDistanceTo(var10.getHitVec()) > (double)var8) ? Optional.<Entity>of(var10.getEntity()) : Optional.<Entity>empty();
          } else {
             return Optional.<Entity>empty();
          }

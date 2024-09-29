@@ -91,7 +91,7 @@ public class Class4250 extends Class4247 {
       GL11.glAlphaFunc(519, 0.0F);
       RenderSystem.enableBlend();
       RenderSystem.disableTexture();
-      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12932, GlStateManager.SourceFactor.field15990, DestFactor.field12936);
+      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
       GL11.glEnable(2848);
       GL11.glBegin(3);
       GL11.glVertex2f(0.0F, var6);

@@ -16,6 +16,7 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.RayTraceContext;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
@@ -31,7 +32,7 @@ public class Class3287 extends Item {
    @Override
    public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = var2.getHeldItem(var3);
-      BlockRayTraceResult var7 = method11735(var1, var2, this.field18798 != Fluids.EMPTY ? Class1985.field12962 : Class1985.field12963);
+      BlockRayTraceResult var7 = method11735(var1, var2, this.field18798 != Fluids.EMPTY ? RayTraceContext.FluidMode.NONE : RayTraceContext.FluidMode.SOURCE_ONLY);
       if (var7.getType() != RayTraceResult.Type.MISS) {
          if (var7.getType() != RayTraceResult.Type.BLOCK) {
             return Class6794.<ItemStack>method20698(var6);
@@ -121,7 +122,7 @@ public class Class3287 extends Item {
                   var2.method7179(var3, true);
                }
 
-               if (!var2.setBlockState(var3, this.field18798.method25049().getBlockState(), 11) && !var7.method23449().method23473()) {
+               if (!var2.setBlockState(var3, this.field18798.method25049().getBlockState(), 11) && !var7.method23449().isSource()) {
                   return false;
                } else {
                   this.method11826(var1, var2, var3);

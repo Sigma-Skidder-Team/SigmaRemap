@@ -15,6 +15,7 @@ import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
 
 import com.mojang.blaze3d.platform.GlStateManager;
+import net.minecraft.client.renderer.texture.Texture;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.optifine.Config;
@@ -163,12 +164,12 @@ public class Class8684 {
       return var3;
    }
 
-   public static Class290 method31265(ResourceLocation var0) {
-      Class290 var3 = Config.method26861().getTexture(var0);
+   public static Texture method31265(ResourceLocation var0) {
+      Texture var3 = Config.method26861().getTexture(var0);
       if (var3 == null) {
          if (Config.method26866(var0)) {
             Class293 var4 = new Class293(var0);
-            Config.method26861().method1073(var0, var4);
+            Config.method26861().loadTexture(var0, var4);
             return var4;
          } else {
             return null;
@@ -226,7 +227,7 @@ public class Class8684 {
    public static void method31269() {
       Class300 var2 = new Class300();
       ResourceLocation var3 = new ResourceLocation("optifine/tickable_textures");
-      Config.method26861().method1073(var3, var2);
+      Config.method26861().loadTexture(var3, var2);
    }
 
    public static void method31270(ModelBakery var0) {

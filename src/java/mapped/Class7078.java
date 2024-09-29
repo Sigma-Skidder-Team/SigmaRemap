@@ -38,7 +38,7 @@ public class Class7078 {
          } else {
             if (this.field30473 == null && this.field30472 != null) {
                this.field30473 = new DynamicTexture(this.field30472);
-               Minecraft.getInstance().getTextureManager().method1073(this.field30471, this.field30473);
+               Minecraft.getInstance().getTextureManager().loadTexture(this.field30471, this.field30473);
             }
 
             var9 = this.field30471;

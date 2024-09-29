@@ -158,7 +158,7 @@ public class AutoMLG extends PremiumModule {
         double var3 = mc.player.getMotion().x;
         double var5 = mc.player.getMotion().y;
         double var7 = mc.player.getMotion().z;
-        AxisAlignedBB var9 = mc.player.boundingBox.contract(var3, 0.0, var7).offset(0.0, var5, 0.0);
+        AxisAlignedBB var9 = mc.player.boundingBox.expand(var3, 0.0, var7).offset(0.0, var5, 0.0);
         Stream var10 = mc.world.getCollisionShapes(mc.player, var9);
         Iterator var11 = var10.iterator();
         BlockPos var12 = null;
@@ -184,7 +184,7 @@ public class AutoMLG extends PremiumModule {
             return var12;
         } else {
             var5 = mc.player.getMotion().y - 1.0;
-            var9 = mc.player.boundingBox.contract(var3, 0.0, var7).offset(0.0, var5, 0.0);
+            var9 = mc.player.boundingBox.expand(var3, 0.0, var7).offset(0.0, var5, 0.0);
             var10 = mc.world.getCollisionShapes(mc.player, var9);
             var11 = var10.iterator();
 

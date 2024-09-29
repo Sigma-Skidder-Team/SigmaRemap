@@ -65,7 +65,7 @@ public class Class1269 extends AbstractGui implements Class1270 {
          for (Class9113 var12 : this.field6745) {
             short var13 = 255;
             ITextComponent var14 = var12.method33993();
-            Vector3d var15 = var12.method33995().method11336(var4).method11333();
+            Vector3d var15 = var12.method33995().subtract(var4).method11333();
             double var16 = -var7.dotProduct(var15);
             double var18 = -var5.dotProduct(var15);
             boolean var20 = var18 > 0.5;

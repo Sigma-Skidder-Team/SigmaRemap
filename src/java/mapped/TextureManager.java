@@ -16,6 +16,7 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.realmsclient.RealmsMainScreen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.widget.Widget;
+import net.minecraft.client.renderer.texture.Texture;
 import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.client.renderer.texture.TextureUtil;
 import net.minecraft.crash.CrashReport;
@@ -28,11 +29,11 @@ import org.apache.logging.log4j.Logger;
 public class TextureManager implements Class268, Class288, AutoCloseable {
    private static final Logger field1093 = LogManager.getLogger();
    public static final ResourceLocation field1094 = new ResourceLocation("");
-   private final Map<ResourceLocation, Class290> field1095 = Maps.newHashMap();
+   private final Map<ResourceLocation, Texture> field1095 = Maps.newHashMap();
    private final Set<Class288> field1096 = Sets.newHashSet();
    private final Map<String, Integer> field1097 = Maps.newHashMap();
    private final IResourceManager field1098;
-   private Class290 field1099;
+   private Texture field1099;
    private ResourceLocation field1100;
 
    public TextureManager(IResourceManager var1) {
@@ -55,22 +56,22 @@ public class TextureManager implements Class268, Class288, AutoCloseable {
       Object var4 = this.field1095.get(var1);
       if (var4 == null) {
          var4 = new Class293(var1);
-         this.method1073(var1, (Class290)var4);
+         this.loadTexture(var1, (Texture)var4);
       }
 
       if (!Config.isShaders()) {
-         ((Class290)var4).method1133();
+         ((Texture)var4).method1133();
       } else {
-         Class9336.method35315((Class290)var4);
+         Class9336.method35315((Texture)var4);
       }
 
-      this.field1099 = (Class290)var4;
+      this.field1099 = (Texture)var4;
       this.field1100 = var1;
    }
 
-   public void method1073(ResourceLocation var1, Class290 var2) {
+   public void loadTexture(ResourceLocation var1, Texture var2) {
       var2 = this.method1075(var1, var2);
-      Class290 var5 = this.field1095.put(var1, var2);
+      Texture var5 = this.field1095.put(var1, var2);
       if (var5 != var2) {
          if (var5 != null && var5 != Class1714.method7515()) {
             this.field1096.remove(var5);
@@ -83,7 +84,7 @@ public class TextureManager implements Class268, Class288, AutoCloseable {
       }
    }
 
-   private void method1074(ResourceLocation var1, Class290 var2) {
+   private void method1074(ResourceLocation var1, Texture var2) {
       if (var2 != Class1714.method7515()) {
          try {
             var2.close();
@@ -95,7 +96,7 @@ public class TextureManager implements Class268, Class288, AutoCloseable {
       var2.method1132();
    }
 
-   private Class290 method1075(ResourceLocation var1, Class290 var2) {
+   private Texture method1075(ResourceLocation var1, Texture var2) {
       try {
          var2.method1090(this.field1098);
          return var2;
@@ -115,7 +116,7 @@ public class TextureManager implements Class268, Class288, AutoCloseable {
    }
 
    @Nullable
-   public Class290 getTexture(ResourceLocation var1) {
+   public Texture getTexture(ResourceLocation var1) {
       return this.field1095.get(var1);
    }
 
@@ -129,7 +130,7 @@ public class TextureManager implements Class268, Class288, AutoCloseable {
 
       this.field1097.put(var1, var5);
       ResourceLocation var6 = new ResourceLocation(String.format("dynamic/%s_%d", var1, var5));
-      this.method1073(var6, var2);
+      this.loadTexture(var6, var2);
       return var6;
    }
 
@@ -139,7 +140,7 @@ public class TextureManager implements Class268, Class288, AutoCloseable {
       } else {
          Class295 var5 = new Class295(this.field1098, var1, var2);
          this.field1095.put(var1, var5);
-         return var5.method1165().thenRunAsync(() -> this.method1073(var1, var5), TextureManager::method1079);
+         return var5.method1165().thenRunAsync(() -> this.loadTexture(var1, var5), TextureManager::method1079);
       }
    }
 
@@ -155,7 +156,7 @@ public class TextureManager implements Class268, Class288, AutoCloseable {
    }
 
    public void method1081(ResourceLocation var1) {
-      Class290 var4 = this.getTexture(var1);
+      Texture var4 = this.getTexture(var1);
       if (var4 != null) {
          this.field1095.remove(var1);
          TextureUtil.releaseTextureId(var4.getGlTextureId());
@@ -180,8 +181,8 @@ public class TextureManager implements Class268, Class288, AutoCloseable {
          ResourceLocation var10 = (ResourceLocation)var9.next();
          String var11 = var10.getPath();
          if (var11.startsWith("optifine/") || EmissiveTextures.method30606(var10)) {
-            Class290 var12 = this.field1095.get(var10);
-            if (var12 instanceof Class290) {
+            Texture var12 = this.field1095.get(var10);
+            if (var12 instanceof Texture) {
                var12.method1132();
             }
 
@@ -195,13 +196,13 @@ public class TextureManager implements Class268, Class288, AutoCloseable {
          .thenAcceptAsync(var3x -> {
             Class1714.method7515();
             RealmsMainScreen.method2061(this.field1098);
-            HashSet var6x = new HashSet<Entry<ResourceLocation, Class290>>(this.field1095.entrySet());
+            HashSet var6x = new HashSet<Entry<ResourceLocation, Texture>>(this.field1095.entrySet());
             Iterator var7 = var6x.iterator();
 
             while (var7.hasNext()) {
                Entry var8 = (Entry)var7.next();
                ResourceLocation var9x = (ResourceLocation)var8.getKey();
-               Class290 var10x = (Class290)var8.getValue();
+               Texture var10x = (Texture)var8.getValue();
                if (var10x == Class1714.method7515() && !var9x.equals(Class1714.method7513())) {
                   var7.remove();
                } else {
@@ -211,7 +212,7 @@ public class TextureManager implements Class268, Class288, AutoCloseable {
          }, var0 -> RenderSystem.recordRenderCall(var0::run));
    }
 
-   public Class290 method1082() {
+   public Texture method1082() {
       return this.field1099;
    }
 

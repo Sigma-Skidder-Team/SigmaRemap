@@ -359,7 +359,7 @@ public class RenderSystem {
 
    public static void method27859(Class2270 var0) {
       assertThread(RenderSystem::isOnGameThread);
-      GlStateManager.method23797(var0.field14772);
+      GlStateManager.logicOp(var0.field14772);
    }
 
    public static void method27860(int var0) {
@@ -420,17 +420,17 @@ public class RenderSystem {
 
    public static void method27871(int var0, int var1, int var2) {
       assertThread(RenderSystem::isOnGameThread);
-      GlStateManager.method23823(var0, var1, var2);
+      GlStateManager.stencilFunc(var0, var1, var2);
    }
 
    public static void method27872(int var0) {
       assertThread(RenderSystem::isOnGameThread);
-      GlStateManager.method23824(var0);
+      GlStateManager.stencilMask(var0);
    }
 
    public static void method27873(int var0, int var1, int var2) {
       assertThread(RenderSystem::isOnGameThread);
-      GlStateManager.method23825(var0, var1, var2);
+      GlStateManager.stencilOp(var0, var1, var2);
    }
 
    public static void method27874(double var0) {
@@ -801,7 +801,7 @@ public class RenderSystem {
    }
 
    public static void defaultBlendFunc() {
-      blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12932, GlStateManager.SourceFactor.field15990, DestFactor.field12936);
+      blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
    }
 
    public static void method27939() {

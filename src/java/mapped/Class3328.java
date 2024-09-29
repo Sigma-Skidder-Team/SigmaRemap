@@ -7,6 +7,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.RayTraceContext;
 import net.minecraft.world.World;
 
 import java.util.List;
@@ -25,7 +26,7 @@ public class Class3328 extends Item {
       );
       ItemStack var7 = var2.getHeldItem(var3);
       if (var6.isEmpty()) {
-         BlockRayTraceResult var10 = method11735(var1, var2, Class1985.field12963);
+         BlockRayTraceResult var10 = method11735(var1, var2, RayTraceContext.FluidMode.SOURCE_ONLY);
          if (var10.getType() != RayTraceResult.Type.MISS) {
             if (var10.getType() == RayTraceResult.Type.BLOCK) {
                BlockPos var9 = var10.getPos();

@@ -133,11 +133,11 @@ public class Heightmap {
       WORLD_SURFACE("WORLD_SURFACE", Class2029.field13172, method24587()),
       OCEAN_FLOOR_WG("OCEAN_FLOOR_WG", Class2029.field13170, method24588()),
       OCEAN_FLOOR("OCEAN_FLOOR", Class2029.field13171, method24588()),
-      MOTION_BLOCKING("MOTION_BLOCKING", Class2029.field13172, var0 -> var0.getMaterial().blocksMovement() || !var0.method23449().method23474()),
+      MOTION_BLOCKING("MOTION_BLOCKING", Class2029.field13172, var0 -> var0.getMaterial().blocksMovement() || !var0.method23449().isEmpty()),
       MOTION_BLOCKING_NO_LEAVES(
          "MOTION_BLOCKING_NO_LEAVES",
          Class2029.field13171,
-         var0 -> (var0.getMaterial().blocksMovement() || !var0.method23449().method23474()) && !(var0.getBlock() instanceof Class3465)
+         var0 -> (var0.getMaterial().blocksMovement() || !var0.method23449().isEmpty()) && !(var0.getBlock() instanceof Class3465)
       );
 
       public static final Codec<Type> field301 = IStringSerializable.<Type>method258(Type::values, Type::method286);

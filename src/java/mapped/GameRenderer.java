@@ -20,7 +20,9 @@ import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.item.ItemFrameEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.ProjectileHelper;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.resources.IResourceManagerReloadListener;
@@ -178,7 +180,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
    }
 
    public void method736(ResourceLocation var1) {
-      if (GLX.method28309()) {
+      if (GLX.isUsingFBOs()) {
          if (this.field828 != null) {
             this.field828.close();
          }
@@ -214,7 +216,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
    }
 
    public void renderWorld() {
-      this.method742();
+      this.updateFovModifierHand();
       this.lightmapTexture.method7315();
       if (this.mc.getRenderViewEntity() == null) {
          this.mc.setRenderViewEntity(this.mc.player);
@@ -258,49 +260,60 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
    }
 
    public void getMouseOver(float var1) {
-      Entity var4 = this.mc.getRenderViewEntity();
-      if (var4 != null && this.mc.world != null) {
+      Entity entity = this.mc.getRenderViewEntity();
+
+      if (entity != null && this.mc.world != null)
+      {
          this.mc.getProfiler().startSection("pick");
          this.mc.pointedEntity = null;
-         double var5 = (double)this.mc.playerController.getBlockReachDistance();
-         this.mc.objectMouseOver = var4.customPick(var5, var1, false);
-         Vector3d var7 = var4.getEyePosition(var1);
-         boolean var8 = false;
-         byte var9 = 3;
-         double var10 = var5;
-         if (!this.mc.playerController.extendedReach()) {
-            if (var5 > 3.0) {
-               var8 = true;
+
+         double d0 = (double)this.mc.playerController.getBlockReachDistance();
+         this.mc.objectMouseOver = entity.pick(d0, var1, false);
+
+         Vector3d vector3d = entity.getEyePosition(var1);
+         boolean flag = false;
+         int i = 3;
+         double d1 = d0;
+         if (this.mc.playerController.extendedReach())
+         {
+            d1 = 6.0D;
+            d0 = d1;
+         }
+         else
+         {
+            if (d0 > 3.0D)
+            {
+               flag = true;
             }
 
-            var5 = var5;
-         } else {
-            var10 = 6.0;
-            var5 = var10;
+            d0 = d0;
          }
 
-         var10 *= var10;
+         d1 = d1 * d1;
+
          if (this.mc.objectMouseOver != null) {
-            var10 = this.mc.objectMouseOver.getVec().method11342(var7);
+            d1 = this.mc.objectMouseOver.getHitVec().squareDistanceTo(vector3d);
          }
 
-         Vector3d var12 = var4.getLook(1.0F);
-         Vector3d var13 = var7.add(var12.x * var5, var12.y * var5, var12.z * var5);
-         float var14 = 1.0F;
-         AxisAlignedBB var15 = var4.getBoundingBox().contract(var12.scale(var5)).method19663(1.0, 1.0, 1.0);
-         EntityRayTraceResult var16 = Class9456.method36386(var4, var7, var13, var15, var0 -> !var0.isSpectator() && var0.canBeCollidedWith(), var10);
-         if (var16 != null) {
-            Entity var17 = var16.getEntity();
-            Vector3d var18 = var16.getVec();
-            double var19 = var7.method11342(var18);
-            if (var8 && var19 > 9.0) {
-               this.mc.objectMouseOver = BlockRayTraceResult.method31420(
-                  var18, Direction.getFacingFromVector(var12.x, var12.y, var12.z), new BlockPos(var18)
+         Vector3d vector3d1 = entity.getLook(1.0F);
+         Vector3d vector3d2 = vector3d.add(vector3d1.x * d0, vector3d1.y * d0, vector3d1.z * d0);
+         float f = 1.0F;
+         AxisAlignedBB axisalignedbb = entity.getBoundingBox().expand(vector3d1.scale(d0)).grow(1.0, 1.0, 1.0);
+         EntityRayTraceResult entityraytraceresult = ProjectileHelper.rayTraceEntities(entity, vector3d, vector3d2, axisalignedbb, var0 -> !var0.isSpectator() && var0.canBeCollidedWith(), d1);
+
+         if (entityraytraceresult != null) {
+            Entity entity1 = entityraytraceresult.getEntity();
+            Vector3d vector3d3 = entityraytraceresult.getHitVec();
+            double d2 = vector3d.squareDistanceTo(vector3d3);
+            if (flag && d2 > 9.0) {
+               this.mc.objectMouseOver = BlockRayTraceResult.createMiss(
+                  vector3d3, Direction.getFacingFromVector(vector3d1.x, vector3d1.y, vector3d1.z), new BlockPos(vector3d3)
                );
-            } else if (var19 < var10 || this.mc.objectMouseOver == null) {
-               this.mc.objectMouseOver = var16;
-               if (var17 instanceof LivingEntity || var17 instanceof ItemFrameEntity) {
-                  this.mc.pointedEntity = var17;
+            } else if (d2 < d1 || this.mc.objectMouseOver == null) {
+               this.mc.objectMouseOver = entityraytraceresult;
+
+               if (entity1 instanceof LivingEntity || entity1 instanceof ItemFrameEntity) {
+                  this.mc.pointedEntity = entity1;
                }
             }
          }
@@ -309,7 +322,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
       }
    }
 
-   private void method742() {
+   private void updateFovModifierHand() {
       float var3 = 1.0F;
       if (this.mc.getRenderViewEntity() instanceof AbstractClientPlayerEntity) {
          AbstractClientPlayerEntity var4 = (AbstractClientPlayerEntity)this.mc.getRenderViewEntity();
@@ -367,7 +380,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
          }
 
          FluidState var10 = var1.method37512();
-         if (!var10.method23474()) {
+         if (!var10.isEmpty()) {
             var6 = var6 * 60.0 / 70.0;
          }
 
@@ -443,14 +456,14 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
                if (!Config.isShaders()) {
                   this.itemRenderer
                      .method37590(
-                        var3, var1, this.field808.method26536(), this.mc.player, this.mc.getRenderManager().method32208(this.mc.player, var3)
+                        var3, var1, this.field808.getBufferSource(), this.mc.player, this.mc.getRenderManager().method32208(this.mc.player, var3)
                      );
                } else {
                   ShadersRender.method17156(
                      this.itemRenderer,
                      var3,
                      var1,
-                     this.field808.method26536(),
+                     this.field808.getBufferSource(),
                      this.mc.player,
                      this.mc.getRenderManager().method32208(this.mc.player, var3),
                      var6
@@ -1012,7 +1025,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
    }
 
    public boolean method761(int var1) {
-      if (GLX.method28309()) {
+      if (GLX.isUsingFBOs()) {
          if (this.field828 != null && this.field828 != this.field843[2] && this.field828 != this.field843[4]) {
             return true;
          } else if (var1 != 2 && var1 != 4) {
@@ -1075,7 +1088,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
          var14.rotate(Vector3f.YP.rotationDegrees(900.0F * MathHelper.method37771(MathHelper.sin(var11))));
          var14.rotate(Vector3f.XP.rotationDegrees(6.0F * MathHelper.cos(var7 * 8.0F)));
          var14.rotate(Vector3f.ZP.rotationDegrees(6.0F * MathHelper.cos(var7 * 8.0F)));
-         Class7735 var16 = this.field808.method26536();
+         Class7735 var16 = this.field808.getBufferSource();
          this.mc.getItemRenderer().method789(this.field824, Class2327.field15932, 15728880, Class213.field798, var14, var16);
          var14.pop();
          var16.method25602();
@@ -1100,7 +1113,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
       RenderSystem.disableDepthTest();
       RenderSystem.depthMask(false);
       RenderSystem.enableBlend();
-      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15990, DestFactor.field12927, GlStateManager.SourceFactor.field15990, DestFactor.field12927);
+      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.ONE, DestFactor.field12927, GlStateManager.SourceFactor.ONE, DestFactor.field12927);
       RenderSystem.color4f(var8, var9, var10, 1.0F);
       this.mc.getTextureManager().bindTexture(field800);
       Tessellator tessellator = Tessellator.getInstance();

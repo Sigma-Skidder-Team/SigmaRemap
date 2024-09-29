@@ -65,7 +65,7 @@ public class HurtByTargetGoal extends Class2699 {
 
    public void method10919() {
       double var3 = this.method10914();
-      AxisAlignedBB var5 = AxisAlignedBB.method19657(this.field17153.getPositionVec()).method19663(var3, 10.0, var3);
+      AxisAlignedBB var5 = AxisAlignedBB.method19657(this.field17153.getPositionVec()).grow(var3, 10.0, var3);
       List var6 = this.field17153.world.method7183(this.field17153.getClass(), var5);
       Iterator var7 = var6.iterator();
 

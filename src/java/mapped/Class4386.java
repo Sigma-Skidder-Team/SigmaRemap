@@ -265,7 +265,7 @@ public class Class4386 {
                } else {
                   Vector3d var14 = new Vector3d(var1.method19287(), var1.method19288(), var1.method19289());
                   if (!this.field21417.isEmpty()) {
-                     boolean var15 = var13 || var12 == Class2279.field14845 || this.field21407.method37746().method11342(var14) < (double)(var8 * var8);
+                     boolean var15 = var13 || var12 == Class2279.field14845 || this.field21407.method37746().squareDistanceTo(var14) < (double)(var8 * var8);
                      if (!var15) {
                         field21401.debug(field21400, "Did not notify listeners of soundEvent: {}, it is too far away to hear", var5);
                      } else {

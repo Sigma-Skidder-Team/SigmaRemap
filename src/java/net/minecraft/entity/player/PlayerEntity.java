@@ -472,9 +472,9 @@ public abstract class PlayerEntity extends LivingEntity {
       if (this.getHealth() > 0.0F && !this.isSpectator()) {
          AxisAlignedBB var4;
          if (this.isPassenger() && !this.getRidingEntity().removed) {
-            var4 = this.getBoundingBox().method19666(this.getRidingEntity().getBoundingBox()).method19663(1.0, 0.0, 1.0);
+            var4 = this.getBoundingBox().method19666(this.getRidingEntity().getBoundingBox()).grow(1.0, 0.0, 1.0);
          } else {
-            var4 = this.getBoundingBox().method19663(1.0, 0.5, 1.0);
+            var4 = this.getBoundingBox().grow(1.0, 0.5, 1.0);
          }
 
          List var5 = this.world.method7181(this, var4);
@@ -1130,7 +1130,7 @@ public abstract class PlayerEntity extends LivingEntity {
                if (var11) {
                   float var19 = 1.0F + EnchantmentHelper.method26319(this) * var4;
 
-                  for (LivingEntity var21 : this.world.<LivingEntity>getEntitiesWithinAABB(LivingEntity.class, var1.getBoundingBox().method19663(1.0, 0.25, 1.0))) {
+                  for (LivingEntity var21 : this.world.<LivingEntity>getEntitiesWithinAABB(LivingEntity.class, var1.getBoundingBox().grow(1.0, 0.25, 1.0))) {
                      if (var21 != this
                         && var21 != var1
                         && !this.isOnSameTeam(var21)
@@ -1376,7 +1376,7 @@ public abstract class PlayerEntity extends LivingEntity {
          double var12 = !(var10 < -0.2) ? 0.06 : 0.085;
          if (var10 <= 0.0
             || this.isJumping
-            || !this.world.getBlockState(new BlockPos(this.getPosX(), this.getPosY() + 1.0 - 0.1, this.getPosZ())).method23449().method23474()) {
+            || !this.world.getBlockState(new BlockPos(this.getPosX(), this.getPosY() + 1.0 - 0.1, this.getPosZ())).method23449().isEmpty()) {
             Vector3d var14 = this.getMotion();
             this.setMotion(var14.add(0.0, (var10 - var14.y) * var12, 0.0));
          }

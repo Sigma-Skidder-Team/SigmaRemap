@@ -265,10 +265,10 @@ public class Class1007 extends MobEntity implements Class1008 {
             this.method4318(this.field5631, (double)(var34 * -4.5F), 2.0, (double)(var33 * -4.5F));
             if (!this.world.isRemote && this.hurtTime == 0) {
                this.method4321(
-                  this.world.getEntitiesInAABBexcluding(this, this.field5630.getBoundingBox().method19663(4.0, 2.0, 4.0).offset(0.0, -2.0, 0.0), Class8088.field34761)
+                  this.world.getEntitiesInAABBexcluding(this, this.field5630.getBoundingBox().grow(4.0, 2.0, 4.0).offset(0.0, -2.0, 0.0), Class8088.field34761)
                );
                this.method4321(
-                  this.world.getEntitiesInAABBexcluding(this, this.field5631.getBoundingBox().method19663(4.0, 2.0, 4.0).offset(0.0, -2.0, 0.0), Class8088.field34761)
+                  this.world.getEntitiesInAABBexcluding(this, this.field5631.getBoundingBox().grow(4.0, 2.0, 4.0).offset(0.0, -2.0, 0.0), Class8088.field34761)
                );
                this.method4322(this.world.getEntitiesInAABBexcluding(this, this.field5624.getBoundingBox().method19664(1.0), Class8088.field34761));
                this.method4322(this.world.getEntitiesInAABBexcluding(this, this.field5625.getBoundingBox().method19664(1.0), Class8088.field34761));

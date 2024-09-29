@@ -196,11 +196,11 @@ public class GLX {
       return (T)var0;
    }
 
-   public static boolean method28309() {
-      return true;
+   public static boolean isUsingFBOs() {
+      return !Config.isAntialiasing();
    }
 
-   public static boolean method28310() {
+   public static boolean useVbo() {
       return true;
    }
 }

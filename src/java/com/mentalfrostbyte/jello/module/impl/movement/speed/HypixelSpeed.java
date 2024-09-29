@@ -150,7 +150,7 @@ public class HypixelSpeed extends Module {
                         if (this.field23414 == 0) {
                             double var6 = 0.399 + (double) MovementUtils.method37079() * 0.1 + 1.0E-5;
                             if (this.getBooleanValueFromSettingName("BorderJump")
-                                    && mc.world.getCollisionShapes(mc.player, mc.player.boundingBox.contract(0.0, -var6 - 0.0625, 0.0)).count()
+                                    && mc.world.getCollisionShapes(mc.player, mc.player.boundingBox.expand(0.0, -var6 - 0.0625, 0.0)).count()
                                     == 0L) {
                                 this.field23415 = 0.4103345672948576 + Math.random() * 1.0E-6 + (double) MovementUtils.method37078() * 0.085;
                                 this.field23416 = -1.0;

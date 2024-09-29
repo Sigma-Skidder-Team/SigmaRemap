@@ -474,7 +474,7 @@ public abstract class MobEntity extends LivingEntity {
       }
 
       if (!this.world.isRemote && this.method4280() && this.isAlive() && !this.dead && var3) {
-         for (ItemEntity var5 : this.world.<ItemEntity>getEntitiesWithinAABB(ItemEntity.class, this.getBoundingBox().method19663(1.0, 0.0, 1.0))) {
+         for (ItemEntity var5 : this.world.<ItemEntity>getEntitiesWithinAABB(ItemEntity.class, this.getBoundingBox().grow(1.0, 0.0, 1.0))) {
             if (!var5.removed && !var5.method4124().isEmpty() && !var5.method4135() && this.method4253(var5.method4124())) {
                this.method4246(var5);
             }

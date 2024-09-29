@@ -49,9 +49,9 @@ public class Class2723<T extends Class1028> extends Class2595 {
          } else {
             Vector3d var6 = Vector3d.method11330(this.field17212.method4574());
             Vector3d var7 = this.field17212.getPositionVec();
-            Vector3d var8 = var7.method11336(var6);
+            Vector3d var8 = var7.subtract(var6);
             var6 = var8.method11351(90.0F).scale(0.4).add(var6);
-            Vector3d var9 = var6.method11336(var7).method11333().scale(10.0).add(var7);
+            Vector3d var9 = var6.subtract(var7).method11333().scale(10.0).add(var7);
             BlockPos var10 = new BlockPos(var9);
             var10 = this.field17212.world.method7006(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, var10);
             if (var4.method21654((double)var10.getX(), (double)var10.getY(), (double)var10.getZ(), !var3 ? this.field17213 : this.field17214)

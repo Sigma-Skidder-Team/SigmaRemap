@@ -6,6 +6,7 @@ import java.util.Properties;
 
 import com.mojang.blaze3d.platform.GlStateManager;
 import net.minecraft.client.renderer.GLAllocation;
+import net.minecraft.client.renderer.texture.Texture;
 import net.minecraft.util.ResourceLocation;
 import net.optifine.Config;
 import org.lwjgl.opengl.GL11;
@@ -113,7 +114,7 @@ public class Class9200 {
    public void method34482() {
       if (this.field42263) {
          if (this.field42250 < 0) {
-            Class290 var3 = Class8684.method31265(this.field42249);
+            Texture var3 = Class8684.method31265(this.field42249);
             if (var3 == null) {
                this.field42263 = false;
                return;

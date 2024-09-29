@@ -296,14 +296,14 @@ public class ItemRenderer implements IResourceManagerReloadListener {
       RenderSystem.enableAlphaTest();
       RenderSystem.method27939();
       RenderSystem.enableBlend();
-      RenderSystem.blendFunc(GlStateManager.SourceFactor.field15997, DestFactor.field12932);
+      RenderSystem.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932);
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       RenderSystem.translatef((float)var2, (float)var3, 100.0F + this.field847);
       RenderSystem.translatef(8.0F, 8.0F, 0.0F);
       RenderSystem.scalef(1.0F, -1.0F, 1.0F);
       RenderSystem.scalef(16.0F, 16.0F, 16.0F);
       MatrixStack var7 = new MatrixStack();
-      Class7735 var8 = Minecraft.getInstance().getRenderTypeBuffers().method26536();
+      Class7735 var8 = Minecraft.getInstance().getRenderTypeBuffers().getBufferSource();
       boolean var9 = !var4.method22622();
       if (var9) {
          Class7516.method24502();

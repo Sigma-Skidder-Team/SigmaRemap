@@ -5,6 +5,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
+import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.resource.ClientResource;
@@ -32,7 +33,7 @@ import org.lwjgl.opengl.GL11;
 import java.io.File;
 import java.util.*;
 
-public class NoteblockPlayer extends PremiumModule {
+public class NoteblockPlayer extends Module {
     public int field23638;
     private Class2403 field23639;
     private List<String> field23640 = new ArrayList<String>();
@@ -40,7 +41,7 @@ public class NoteblockPlayer extends PremiumModule {
     private final List<BlockPos> field23642 = new ArrayList<BlockPos>();
 
     public NoteblockPlayer() {
-        super("NoteblockPlayer", "Plays noteblocks! Needs NBS files in sigma5/nbs", ModuleCategory.MISC);
+        super(ModuleCategory.MISC, "NoteblockPlayer", "Plays noteblocks! Needs NBS files in sigma5/nbs");
         File var3 = new File(Client.getInstance().getFile() + "/nbs");
         if (var3.exists()) {
             this.field23640 = new ArrayList<String>(Arrays.asList(var3.list()));

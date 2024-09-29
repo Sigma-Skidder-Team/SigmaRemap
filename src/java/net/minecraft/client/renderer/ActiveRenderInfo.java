@@ -13,6 +13,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.RayTraceContext;
 import net.minecraft.util.math.vector.Quaternion;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
@@ -82,9 +83,9 @@ public class ActiveRenderInfo {
             this.pos.y - (double)this.look.method25270() * var1 + (double)var7,
             this.pos.z - (double)this.look.method25271() * var1 + (double)var8
          );
-         BlockRayTraceResult var11 = this.world.rayTraceBlocks(new RayTraceContext(var9, var10, Class2271.field14776, Class1985.field12962, this.renderViewEntity));
+         BlockRayTraceResult var11 = this.world.rayTraceBlocks(new RayTraceContext(var9, var10, RayTraceContext.BlockMode.field14776, RayTraceContext.FluidMode.NONE, this.renderViewEntity));
          if (var11.getType() != RayTraceResult.Type.MISS) {
-            double var12 = var11.getVec().method11341(this.pos);
+            double var12 = var11.getHitVec().method11341(this.pos);
             if (var12 < var1 && !Client.getInstance().getModuleManager().getModuleByClass(CameraNoClip.class).isEnabled()) {
                var1 = var12;
             }
@@ -161,7 +162,7 @@ public class ActiveRenderInfo {
          return Fluids.EMPTY.method25049();
       } else {
          FluidState var3 = this.world.getFluidState(this.blockPos);
-         return !var3.method23474()
+         return !var3.isEmpty()
                && this.pos.y >= (double)((float)this.blockPos.getY() + var3.method23475(this.world, this.blockPos))
             ? Fluids.EMPTY.method25049()
             : var3;

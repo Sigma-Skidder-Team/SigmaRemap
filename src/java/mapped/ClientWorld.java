@@ -12,6 +12,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
+import net.minecraft.client.multiplayer.PlayerController;
 import net.minecraft.client.util.Util;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
@@ -371,7 +372,7 @@ public class ClientWorld extends World {
       BlockState var13 = this.getBlockState(var7);
       var13.getBlock().animateTick(var13, this, var7, var5);
       FluidState var14 = this.getFluidState(var7);
-      if (!var14.method23474()) {
+      if (!var14.isEmpty()) {
          var14.method23480(this, var7, var5);
          IParticleData var15 = var14.method23485();
          if (var15 != null && this.rand.nextInt(10) == 0) {
@@ -407,7 +408,7 @@ public class ClientWorld extends World {
    }
 
    private void method6854(BlockPos var1, BlockState var2, IParticleData var3, boolean var4) {
-      if (var2.method23449().method23474()) {
+      if (var2.method23449().isEmpty()) {
          VoxelShape var7 = var2.method23414(this, var1);
          double var8 = var7.getEnd(Direction.Axis.Y);
          if (!(var8 < 1.0)) {
@@ -418,7 +419,7 @@ public class ClientWorld extends World {
                   BlockState var13 = this.getBlockState(var12);
                   VoxelShape var14 = var13.method23414(this, var12);
                   double var15 = var14.getEnd(Direction.Axis.Y);
-                  if (var15 < 1.0 && var13.method23449().method23474()) {
+                  if (var15 < 1.0 && var13.method23449().isEmpty()) {
                      this.method6855(var1, var3, var7, (double)var1.getY() - 0.05);
                   }
                } else {

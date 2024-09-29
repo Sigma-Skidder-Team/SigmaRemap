@@ -199,7 +199,7 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
 
       if (!var3) {
          if (!var2) {
-            if (var1.isGlowing() && !Config.method26860().worldRenderer.method861()) {
+            if (var1.isGlowing() && !Config.method26860().worldRenderer.isRenderEntityOutlines()) {
                return this.field25086.method11028(var7);
             } else {
                return !var4 ? null : RenderType.method14329(var7);

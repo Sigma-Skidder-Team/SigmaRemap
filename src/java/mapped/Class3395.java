@@ -37,12 +37,12 @@ public class Class3395 extends Block {
       if (var8 instanceof ServerPlayerEntity) {
          ServerPlayerEntity var9 = (ServerPlayerEntity)var8;
          var9.method2911(Stats.field40177);
-         CriteriaTriggers.field44502.method15161(var9, var4, var3.getVec(), var7);
+         CriteriaTriggers.field44502.method15161(var9, var4, var3.getHitVec(), var7);
       }
    }
 
    private static int method12006(IWorld var0, BlockState var1, BlockRayTraceResult var2, Entity var3) {
-      int var6 = method12007(var2, var2.getVec());
+      int var6 = method12007(var2, var2.getHitVec());
       int var7 = !(var3 instanceof AbstractArrowEntity) ? 8 : 20;
       if (!var0.method6860().method20718(var2.getPos(), var1.getBlock())) {
          method12008(var0, var1, var6, var2.getPos(), var7);

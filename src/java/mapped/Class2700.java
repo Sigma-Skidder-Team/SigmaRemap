@@ -21,7 +21,7 @@ public class Class2700 extends Class2699 {
 
    @Override
    public boolean method10803() {
-      AxisAlignedBB var3 = this.field17162.getBoundingBox().method19663(10.0, 8.0, 10.0);
+      AxisAlignedBB var3 = this.field17162.getBoundingBox().grow(10.0, 8.0, 10.0);
       List<Class1042> var4 = this.field17162.world.<Class1042>method7195(Class1042.class, this.field17164, this.field17162, var3);
       List<PlayerEntity> var5 = this.field17162.world.method7194(this.field17164, this.field17162, var3);
 

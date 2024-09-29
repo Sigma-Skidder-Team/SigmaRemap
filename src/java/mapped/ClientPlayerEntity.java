@@ -897,13 +897,13 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
                   Vector3d var21 = var6.add(var43.scale((double)var20));
                   float var22 = this.getWidth();
                   float var23 = this.getHeight();
-                  AxisAlignedBB var24 = new AxisAlignedBB(var5, var21.add(0.0, (double)var23, 0.0)).method19663((double)var22, 0.0, (double)var22);
+                  AxisAlignedBB var24 = new AxisAlignedBB(var5, var21.add(0.0, (double)var23, 0.0)).grow((double)var22, 0.0, (double)var22);
                   Vector3d var25 = var5.add(0.0, 0.51F, 0.0);
                   var21 = var21.add(0.0, 0.51F, 0.0);
                   Vector3d var26 = var43.method11335(new Vector3d(0.0, 1.0, 0.0));
                   Vector3d var27 = var26.scale((double)(var22 * 0.5F));
-                  Vector3d var28 = var25.method11336(var27);
-                  Vector3d var29 = var21.method11336(var27);
+                  Vector3d var28 = var25.subtract(var27);
+                  Vector3d var29 = var21.subtract(var27);
                   Vector3d var30 = var25.add(var27);
                   Vector3d var31 = var21.add(var27);
                   Iterator var32 = this.world.func_234867_d_(this, var24, var0 -> true).<AxisAlignedBB>flatMap(var0 -> var0.method19521().stream()).iterator();

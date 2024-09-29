@@ -138,9 +138,9 @@ public abstract class VoxelShape {
    }
 
    @Nullable
-   public BlockRayTraceResult method19525(Vector3d var1, Vector3d var2, BlockPos var3) {
+   public BlockRayTraceResult rayTrace(Vector3d var1, Vector3d var2, BlockPos var3) {
       if (!this.isEmpty()) {
-         Vector3d var6 = var2.method11336(var1);
+         Vector3d var6 = var2.subtract(var1);
          if (!(var6.lengthSquared() < 1.0E-7)) {
             Vector3d var7 = var1.add(var6.scale(0.001));
             return !this.method19524(

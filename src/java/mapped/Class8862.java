@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.client.renderer.texture.Texture;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.optifine.Config;
@@ -55,7 +56,7 @@ public class Class8862 {
                if (var15.method25511(var9)) {
                   String var16 = Class9402.method35774(var15.field33129, ".png");
                   ResourceLocation var17 = new ResourceLocation(var16);
-                  Class290 var18 = Class8684.method31265(var17);
+                  Texture var18 = Class8684.method31265(var17);
                   if (var18 == null) {
                      Config.method26815("CustomSky: Texture not found: " + var17);
                   } else {

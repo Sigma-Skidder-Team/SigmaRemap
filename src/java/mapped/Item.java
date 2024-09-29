@@ -19,6 +19,7 @@ import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.RayTraceContext;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.ITextComponent;
@@ -233,7 +234,7 @@ public class Item implements IItemProvider {
       return this.getMaxStackSize() == 1 && this.isDamageable();
    }
 
-   public static BlockRayTraceResult method11735(World var0, PlayerEntity var1, Class1985 var2) {
+   public static BlockRayTraceResult method11735(World var0, PlayerEntity var1, RayTraceContext.FluidMode var2) {
       float var5 = var1.rotationPitch;
       float var6 = var1.rotationYaw;
       Vector3d var7 = var1.getEyePosition(1.0F);
@@ -245,7 +246,7 @@ public class Item implements IItemProvider {
       float var13 = var8 * var10;
       double var14 = 5.0;
       Vector3d var16 = var7.add((double)var12 * 5.0, (double)var11 * 5.0, (double)var13 * 5.0);
-      return var0.rayTraceBlocks(new RayTraceContext(var7, var16, Class2271.field14775, var2, var1));
+      return var0.rayTraceBlocks(new RayTraceContext(var7, var16, RayTraceContext.BlockMode.OUTLINE, var2, var1));
    }
 
    public int method11736() {

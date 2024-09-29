@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.RayTraceContext;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.math.vector.Vector3i;
 import net.minecraft.world.World;
@@ -82,7 +83,7 @@ public class Class6997 extends Class6990 {
 
          for (int var9 = Math.min(this.field30245.method28699() + 6, this.field30245.method28698() - 1); var9 > this.field30245.method28699(); var9--) {
             var8 = this.field30245.method28701(this.field30243, var9);
-            if (!(var8.method11342(var3) > 36.0) && this.method21671(var3, var8, 0, 0, 0)) {
+            if (!(var8.squareDistanceTo(var3) > 36.0) && this.method21671(var3, var8, 0, 0, 0)) {
                this.field30245.method28700(var9);
                break;
             }
@@ -95,7 +96,7 @@ public class Class6997 extends Class6990 {
    @Override
    public void method21661(Vector3d var1) {
       if (this.field30247 - this.field30248 > 100) {
-         if (var1.method11342(this.field30249) < 2.25) {
+         if (var1.squareDistanceTo(this.field30249) < 2.25) {
             this.method21666();
          }
 
@@ -127,7 +128,7 @@ public class Class6997 extends Class6990 {
    @Override
    public boolean method21671(Vector3d var1, Vector3d var2, int var3, int var4, int var5) {
       Vector3d var8 = new Vector3d(var2.x, var2.y + (double)this.field30243.getHeight() * 0.5, var2.z);
-      return this.field30244.rayTraceBlocks(new RayTraceContext(var1, var8, Class2271.field14774, Class1985.field12962, this.field30243)).getType()
+      return this.field30244.rayTraceBlocks(new RayTraceContext(var1, var8, RayTraceContext.BlockMode.field14774, RayTraceContext.FluidMode.NONE, this.field30243)).getType()
          == RayTraceResult.Type.MISS;
    }
 

@@ -132,7 +132,7 @@ public interface IWorldReader extends IBlockDisplayReader, ICollisionReader, Bio
          for (int var12 = var6; var12 < var7; var12++) {
             for (int var13 = var8; var13 < var9; var13++) {
                BlockState var14 = this.getBlockState(var10.method8372(var11, var12, var13));
-               if (!var14.method23449().method23474()) {
+               if (!var14.method23449().isEmpty()) {
                   return true;
                }
             }

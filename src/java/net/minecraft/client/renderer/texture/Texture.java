@@ -1,15 +1,18 @@
-package mapped;
+package net.minecraft.client.renderer.texture;
 
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
-import net.minecraft.client.renderer.texture.TextureUtil;
+import mapped.Class9336;
+import mapped.Class9732;
+import mapped.IResourceManager;
+import mapped.TextureManager;
 import net.minecraft.util.ResourceLocation;
 import net.optifine.Config;
 
 import java.io.IOException;
 import java.util.concurrent.Executor;
 
-public abstract class Class290 implements AutoCloseable {
+public abstract class Texture implements AutoCloseable {
    public int field1125 = -1;
    public boolean field1126;
    public boolean field1127;
@@ -81,7 +84,7 @@ public abstract class Class290 implements AutoCloseable {
    }
 
    public void method1134(TextureManager var1, IResourceManager var2, ResourceLocation var3, Executor var4) {
-      var1.method1073(var3, this);
+      var1.loadTexture(var3, this);
    }
 
    @Override

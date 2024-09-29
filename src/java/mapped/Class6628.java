@@ -1,13 +1,14 @@
 package mapped;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.texture.Texture;
 import net.minecraft.util.ResourceLocation;
 
 public class Class6628 implements Class6627 {
    private int field29153 = -1;
    private ResourceLocation field29154;
    private int field29155 = 0;
-   private Class290 field29156;
+   private Texture field29156;
    public static final int field29157 = 0;
    public static final int field29158 = 1;
    public static final int field29159 = 2;
@@ -18,13 +19,13 @@ public class Class6628 implements Class6627 {
       this.field29155 = var3;
    }
 
-   public Class290 method20210() {
+   public Texture method20210() {
       if (this.field29156 == null) {
          TextureManager var3 = Minecraft.getInstance().getTextureManager();
          this.field29156 = var3.getTexture(this.field29154);
          if (this.field29156 == null) {
             this.field29156 = new Class293(this.field29154);
-            var3.method1073(this.field29154, this.field29156);
+            var3.loadTexture(this.field29154, this.field29156);
             this.field29156 = var3.getTexture(this.field29154);
          }
       }
@@ -34,8 +35,8 @@ public class Class6628 implements Class6627 {
 
    @Override
    public int method20207() {
-      Class290 var3 = this.method20210();
-      if (this.field29155 != 0 && var3 instanceof Class290) {
+      Texture var3 = this.method20210();
+      if (this.field29155 != 0 && var3 instanceof Texture) {
          Class9732 var4 = var3.field1128;
          if (var4 != null) {
             if (this.field29155 == 1) {

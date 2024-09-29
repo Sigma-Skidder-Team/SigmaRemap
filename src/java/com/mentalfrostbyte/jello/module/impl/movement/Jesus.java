@@ -98,7 +98,7 @@ public class Jesus extends Module {
       if (this.isEnabled() && mc.world != null && !AutoMLG.method16421()) {
          if (this.method16951(mc.player.boundingBox) && !mc.player.isSneaking()) {
             BlockState var4 = mc.world.getBlockState(mc.player.getPosition());
-            if (var4 != null && !var4.method23449().method23474()) {
+            if (var4 != null && !var4.method23449().isEmpty()) {
                double var5 = (double)var4.method23449().method23476();
                if (var5 > 0.4) {
                   if (this.getBooleanValueFromSettingName("Swim up")) {

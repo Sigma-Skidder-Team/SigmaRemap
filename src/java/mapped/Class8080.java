@@ -18,7 +18,7 @@ public class Class8080 implements IAmbientSoundHandler {
    @Override
    public void tick() {
       World var3 = this.field34730.world;
-      BlockState var4 = var3.method7004(this.field34730.getBoundingBox().method19663(0.0, -0.4F, 0.0).shrink(0.001))
+      BlockState var4 = var3.method7004(this.field34730.getBoundingBox().grow(0.0, -0.4F, 0.0).shrink(0.001))
          .filter(var0 -> var0.isIn(Blocks.field37013))
          .findFirst()
          .orElse((BlockState)null);

@@ -77,7 +77,7 @@ public class Class915 extends Entity {
       if (!this.world.isRemote) {
          if (--this.field5207 < 0) {
             if (this.field5207 == -8) {
-               for (LivingEntity var16 : this.world.<LivingEntity>getEntitiesWithinAABB(LivingEntity.class, this.getBoundingBox().method19663(0.2, 0.0, 0.2))) {
+               for (LivingEntity var16 : this.world.<LivingEntity>getEntitiesWithinAABB(LivingEntity.class, this.getBoundingBox().grow(0.2, 0.0, 0.2))) {
                   this.method3583(var16);
                }
             }

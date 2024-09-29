@@ -136,7 +136,7 @@ public class ItemEntity extends Entity {
 
          this.isAirBorne = this.isAirBorne | this.method3257();
          if (!this.world.isRemote) {
-            double var7 = this.getMotion().method11336(var3).lengthSquared();
+            double var7 = this.getMotion().subtract(var3).lengthSquared();
             if (var7 > 0.01) {
                this.isAirBorne = true;
             }
@@ -163,7 +163,7 @@ public class ItemEntity extends Entity {
    private void method4117() {
       if (this.method4118()) {
          for (ItemEntity var4 : this.world
-            .<ItemEntity>getEntitiesInAABBexcluding(ItemEntity.class, this.getBoundingBox().method19663(0.5, 0.0, 0.5), var1 -> var1 != this && var1.method4118())) {
+            .<ItemEntity>getEntitiesInAABBexcluding(ItemEntity.class, this.getBoundingBox().grow(0.5, 0.0, 0.5), var1 -> var1 != this && var1.method4118())) {
             if (var4.method4118()) {
                this.method4119(var4);
                if (this.removed) {

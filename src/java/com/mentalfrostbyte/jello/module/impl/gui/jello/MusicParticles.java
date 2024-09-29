@@ -3,6 +3,7 @@ package com.mentalfrostbyte.jello.module.impl.gui.jello;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventRender;
+import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import mapped.Class5968;
@@ -12,12 +13,12 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class MusicParticles extends PremiumModule {
+public class MusicParticles extends Module {
     public long field23676 = 0L;
     private final List<Class5968> field23677 = new ArrayList<Class5968>();
 
     public MusicParticles() {
-        super("MusicParticles", "Shows nice particles when music is playing", ModuleCategory.GUI);
+        super(ModuleCategory.GUI, "MusicParticles", "Shows nice particles when music is playing");
         this.method16005(false);
     }
 

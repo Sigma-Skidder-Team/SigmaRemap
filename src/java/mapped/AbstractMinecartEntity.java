@@ -327,7 +327,7 @@ public abstract class AbstractMinecartEntity extends Entity {
 
          this.setRotation(this.rotationYaw, this.rotationPitch);
          if (this.getMinecartType() == MinecartType.MINECART && horizontalMag(this.getMotion()) > 0.01) {
-            List var25 = this.world.getEntitiesInAABBexcluding(this, this.getBoundingBox().method19663(0.2F, 0.0, 0.2F), Class8088.method27981(this));
+            List var25 = this.world.getEntitiesInAABBexcluding(this, this.getBoundingBox().grow(0.2F, 0.0, 0.2F), Class8088.method27981(this));
             if (!var25.isEmpty()) {
                for (int var26 = 0; var26 < var25.size(); var26++) {
                   Entity var24 = (Entity)var25.get(var26);
@@ -343,7 +343,7 @@ public abstract class AbstractMinecartEntity extends Entity {
                }
             }
          } else {
-            for (Entity var23 : this.world.method7181(this, this.getBoundingBox().method19663(0.2F, 0.0, 0.2F))) {
+            for (Entity var23 : this.world.method7181(this, this.getBoundingBox().grow(0.2F, 0.0, 0.2F))) {
                if (!this.method3409(var23) && var23.canBePushed() && var23 instanceof AbstractMinecartEntity) {
                   var23.applyEntityCollision(this);
                }

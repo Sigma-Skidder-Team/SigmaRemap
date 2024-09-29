@@ -26,42 +26,40 @@ public class ThumbnailUtil {
     }
 
     public static YoutubeJPGThumbnail[] getFromChannel(String channelId) {
-        return extractYoutubeThumbnails(fetchUrlContent("https://www.youtube.com/channel/" + channelId + "/videos?disable_polymer=1"));
+        return extractYoutubeThumbnails(fetchUrlContent("https://www.youtube.com/@" + channelId + "/videos?disable_polymer=1"));
     }
 
     public static YoutubeJPGThumbnail[] getFromPlaylist(String playlistId) {
         return extractYoutubeThumbnails(fetchUrlContent("https://www.youtube.com/playlist?list=" + playlistId + "&disable_polymer=1"));
     }
 
-    public static YoutubeJPGThumbnail[] extractYoutubeThumbnails(String response) {
-        if (response.startsWith("[")) {
+    public static YoutubeJPGThumbnail[] extractYoutubeThumbnails(String htmlContent) {
+        if (htmlContent.startsWith("[")) {
             try {
-                JSONArray jsonArray = new JSONArray(response);
-                response = jsonArray.getJSONObject(1).getJsonObject("body").getString("content");
+                JSONArray jsonArray = new JSONArray(htmlContent);
+                htmlContent = jsonArray.getJSONObject(1).getJsonObject("body").getString("content");
             } catch (Exception exception) {
                 throw new RuntimeException(exception);
             }
         }
 
-        List<YoutubeJPGThumbnail> thumbnails = new ArrayList<>();
+        ArrayList thumbnails = new ArrayList();
         String regex = "r\":\\{\"videoId\":\"(.{11})\"(.*?)\"text\":\"(.{1,100})\"\\}]";
-        Pattern pattern = Pattern.compile(regex, Pattern.DOTALL);
-        Matcher matcher = pattern.matcher(response.replace("\n", "").replace("\r", ""));
+        Pattern pattern = Pattern.compile("r\":\\{\"videoId\":\"(.{11})\"(.*?)\"text\":\"(.{1,100})\"\\}]", 8);
+        Matcher matcher = pattern.matcher(htmlContent.replace("\n", "").replace("\r", ""));
 
+        label36:
         while (matcher.find()) {
-            String videoId = matcher.group(1);
-            String title = matcher.group(2).replaceAll("<.*?>", "").trim();
-
-            if (!title.isEmpty()) {
-                boolean isDuplicate = thumbnails.stream().anyMatch(thumbnail -> thumbnail.videoID.equals(videoId));
-                if (!isDuplicate) {
-                    thumbnails.add(new YoutubeJPGThumbnail(videoId, decodeAndUnescapeUrl(title)));
+            for (Object var8 : thumbnails) {
+                if (var8 instanceof YoutubeJPGThumbnail && ((YoutubeJPGThumbnail) var8).videoID.equals(matcher.group(1))) {
+                    continue label36;
                 }
             }
+
+            thumbnails.add(new YoutubeJPGThumbnail(matcher.group(1), decodeAndUnescapeUrl(StringEscapeUtils.unescapeJava(matcher.group(3)))));
         }
 
-        System.out.println("[thumbnails] : " + thumbnails);
-        return thumbnails.toArray(new YoutubeJPGThumbnail[0]);
+        return (YoutubeJPGThumbnail[]) thumbnails.<YoutubeJPGThumbnail>toArray(new YoutubeJPGThumbnail[0]);
     }
 
     public static YoutubeJPGThumbnail[] extractYoutubeThumbnailsFromHtml(String htmlContent) {
@@ -124,7 +122,7 @@ public class ThumbnailUtil {
         CloseableHttpClient var3 = HttpClients.createDefault();
         HttpGet var4 = new HttpGet(url);
         if (url.contains("playlist")) {
-            var4.addHeader("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36");
+            var4.addHeader("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:43.0) Gecko/20100101 Firefox/43.0.4");
         } else {
             var4.addHeader("User-Agent", "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)");
         }

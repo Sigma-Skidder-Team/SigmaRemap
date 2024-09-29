@@ -5,6 +5,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.entity.projectile.ProjectileHelper;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
 import net.minecraft.tileentity.TileEntity;
@@ -42,7 +43,7 @@ public abstract class Class893 extends ProjectileEntity {
    @Override
    public void tick() {
       super.tick();
-      RayTraceResult var3 = Class9456.method36385(this, this::method3467);
+      RayTraceResult var3 = ProjectileHelper.method36385(this, this::method3467);
       boolean var4 = false;
       if (var3.getType() == RayTraceResult.Type.BLOCK) {
          BlockPos var5 = ((BlockRayTraceResult)var3).getPos();

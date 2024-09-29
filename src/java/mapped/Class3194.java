@@ -38,7 +38,7 @@ public class Class3194 extends Block {
 
    @Override
    public boolean method11493(BlockState var1, IBlockReader var2, BlockPos var3) {
-      return var1.method23449().method23474();
+      return var1.method23449().isEmpty();
    }
 
    @Override

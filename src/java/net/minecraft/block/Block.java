@@ -202,7 +202,7 @@ public class Block extends AbstractBlock implements IItemProvider {
    }
 
    public boolean method11493(BlockState var1, IBlockReader var2, BlockPos var3) {
-      return !method11550(var1.method23412(var2, var3)) && var1.method23449().method23474();
+      return !method11550(var1.method23412(var2, var3)) && var1.method23449().isEmpty();
    }
 
    public void animateTick(BlockState var1, World var2, BlockPos var3, Random var4) {

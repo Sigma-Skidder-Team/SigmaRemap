@@ -117,7 +117,7 @@ public class InventoryScreen extends Class860<PlayerContainer> implements Class8
       var12.method31184();
       var18.method32214(var12);
       var18.method32215(false);
-      Class7735 var19 = Minecraft.getInstance().getRenderTypeBuffers().method26536();
+      Class7735 var19 = Minecraft.getInstance().getRenderTypeBuffers().getBufferSource();
       RenderSystem.runAsFancy(() -> var18.renderEntityStatic(var5, 0.0, 0.0, 0.0, 0.0F, 1.0F, var10, var19, 15728880));
       var19.method25602();
       var18.method32215(true);

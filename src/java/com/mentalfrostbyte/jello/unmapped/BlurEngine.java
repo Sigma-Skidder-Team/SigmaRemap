@@ -54,8 +54,8 @@ public class BlurEngine {
             try {
                blurShader = new Shader(mc.getTextureManager(), new SigmaBlurShader(), mc.getFramebuffer(), new ResourceLocation("jelloblur"));
                blurShader.method6525(mc.framebuffer.framebufferWidth, mc.framebuffer.framebufferHeight);
-               blurShader.elements.get(0).method7410().getFromName("Radius").getValue(35.0F);
-               blurShader.elements.get(1).method7410().getFromName("Radius").getValue(35.0F);
+               blurShader.elements.get(0).method7410().getFromName("Radius").setValue(35.0F);
+               blurShader.elements.get(1).method7410().getFromName("Radius").setValue(35.0F);
                frameBuff = blurShader.method6528("jello");
                frameBuff2 = blurShader.method6528("jelloswap");
             } catch (IOException | JsonSyntaxException var5) {
@@ -67,7 +67,7 @@ public class BlurEngine {
             blurShader.method6525(mc.framebuffer.framebufferWidth, mc.framebuffer.framebufferHeight);
          }
 
-         RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12932, GlStateManager.SourceFactor.field15990, DestFactor.field12936);
+         RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
          RenderSystem.enableBlend();
          GL11.glDisable(2929);
          GL11.glDisable(3008);

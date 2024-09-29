@@ -195,7 +195,7 @@ public class RenderUtil {
       BufferBuilder var12 = var11.getBuffer();
       RenderSystem.enableBlend();
       RenderSystem.disableTexture();
-      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12932, GlStateManager.SourceFactor.field15990, DestFactor.field12936);
+      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
       RenderSystem.color4f(var8, var9, var10, var14);
       var12.begin(7, DefaultVertexFormats.field43341);
       var12.pos((double)var0, (double)var3, 0.0).endVertex();
@@ -222,7 +222,7 @@ public class RenderUtil {
 
       RenderSystem.enableBlend();
       RenderSystem.disableTexture();
-      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12932, GlStateManager.SourceFactor.field15990, DestFactor.field12936);
+      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
       var4.bindFramebuffer(true);
       var4.framebufferRender((int)var0 - (int)var2, (int)var1 - (int)var3);
       RenderSystem.enableTexture();
@@ -260,7 +260,7 @@ public class RenderUtil {
       RenderSystem.disableTexture();
       RenderSystem.enableBlend();
       RenderSystem.disableAlphaTest();
-      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12932, GlStateManager.SourceFactor.field15990, DestFactor.field12936);
+      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
       RenderSystem.shadeModel(7425);
       Tessellator var16 = Tessellator.getInstance();
       BufferBuilder var17 = var16.getBuffer();
@@ -296,7 +296,7 @@ public class RenderUtil {
       RenderSystem.disableTexture();
       RenderSystem.enableBlend();
       RenderSystem.disableAlphaTest();
-      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12932, GlStateManager.SourceFactor.field15990, DestFactor.field12936);
+      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
       RenderSystem.shadeModel(7425);
       Tessellator var26 = Tessellator.getInstance();
       BufferBuilder var27 = var26.getBuffer();

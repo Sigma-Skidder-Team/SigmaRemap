@@ -225,7 +225,7 @@ public class WinGameScreen extends Screen {
       RenderSystem.popMatrix();
       this.mc.getTextureManager().bindTexture(field7123);
       RenderSystem.enableBlend();
-      RenderSystem.blendFunc(GlStateManager.SourceFactor.field16000, DestFactor.field12933);
+      RenderSystem.blendFunc(GlStateManager.SourceFactor.ZERO, DestFactor.field12933);
       int var16 = this.width;
       int var18 = this.height;
       Tessellator var14 = Tessellator.getInstance();

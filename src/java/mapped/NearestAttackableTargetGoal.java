@@ -42,7 +42,7 @@ public class NearestAttackableTargetGoal<T extends LivingEntity> extends Class26
    }
 
    public AxisAlignedBB method10921(double var1) {
-      return this.field17153.getBoundingBox().method19663(var1, 4.0, var1);
+      return this.field17153.getBoundingBox().grow(var1, 4.0, var1);
    }
 
    public void method10922() {

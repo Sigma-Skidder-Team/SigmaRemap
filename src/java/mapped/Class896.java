@@ -94,7 +94,7 @@ public class Class896 extends Class890 implements Class889 {
    }
 
    private void method3517() {
-      AxisAlignedBB var3 = this.getBoundingBox().method19663(4.0, 2.0, 4.0);
+      AxisAlignedBB var3 = this.getBoundingBox().grow(4.0, 2.0, 4.0);
       List<LivingEntity> var4 = this.world.getEntitiesInAABBexcluding(LivingEntity.class, var3, field5131);
       if (!var4.isEmpty()) {
          for (LivingEntity var6 : var4) {
@@ -107,7 +107,7 @@ public class Class896 extends Class890 implements Class889 {
    }
 
    private void method3518(List<EffectInstance> var1, Entity var2) {
-      AxisAlignedBB var5 = this.getBoundingBox().method19663(4.0, 2.0, 4.0);
+      AxisAlignedBB var5 = this.getBoundingBox().grow(4.0, 2.0, 4.0);
       List<LivingEntity> var6 = this.world.getEntitiesWithinAABB(LivingEntity.class, var5);
       if (!var6.isEmpty()) {
          for (LivingEntity var8 : var6) {

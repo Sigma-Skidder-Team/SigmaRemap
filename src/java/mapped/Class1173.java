@@ -305,7 +305,7 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
             Validate.validState(var6.method7886() == 64, "Must be 64 pixels wide", new Object[0]);
             Validate.validState(var6.method7887() == 64, "Must be 64 pixels high", new Object[0]);
             DynamicTexture var7 = new DynamicTexture(var6);
-            this.field6351.getTextureManager().method1073(this.field6354, var7);
+            this.field6351.getTextureManager().loadTexture(this.field6354, var7);
             return var7;
          } catch (Throwable var20) {
             Class1276.method6078().error("Invalid icon for world {}", this.field6353.method8643(), var20);

@@ -7,6 +7,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.RayTraceContext;
 import net.minecraft.util.math.vector.Vector3d;
 
 import java.util.Date;
@@ -191,7 +192,7 @@ public class RotationHelper {
       Vector3d var3 = new Vector3d(
          mc.player.getPosX(), mc.player.getPosY() + (double) mc.player.getEyeHeight(), mc.player.getPosZ()
       );
-      RayTraceContext var4 = new RayTraceContext(var3, vec, Class2271.field14775, Class1985.field12962, mc.player);
+      RayTraceContext var4 = new RayTraceContext(var3, vec, RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, mc.player);
       BlockRayTraceResult var5 = mc.world.rayTraceBlocks(var4);
       boolean var6 = var5.getType() == RayTraceResult.Type.MISS || var5.getType() == RayTraceResult.Type.ENTITY;
       Block var7 = mc.world.getBlockState(var5.getPos()).getBlock();

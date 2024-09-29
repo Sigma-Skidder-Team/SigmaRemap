@@ -6,6 +6,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.entity.projectile.ProjectileHelper;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
@@ -209,7 +210,7 @@ public class Class905 extends ProjectileEntity {
             );
          }
 
-         RayTraceResult var7 = Class9456.method36385(this, this::method3467);
+         RayTraceResult var7 = ProjectileHelper.method36385(this, this::method3467);
          if (var7.getType() != RayTraceResult.Type.MISS) {
             this.method3464(var7);
          }
@@ -218,7 +219,7 @@ public class Class905 extends ProjectileEntity {
       this.doBlockCollisions();
       Vector3d var8 = this.getMotion();
       this.setPosition(this.getPosX() + var8.x, this.getPosY() + var8.y, this.getPosZ() + var8.z);
-      Class9456.method36388(this, 0.5F);
+      ProjectileHelper.method36388(this, 0.5F);
       if (!this.world.isRemote) {
          if (this.field5163 != null && !this.field5163.removed) {
             if (this.field5165 > 0) {

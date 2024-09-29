@@ -7,6 +7,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.entity.projectile.ProjectileHelper;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -238,7 +239,7 @@ public class Class904 extends ProjectileEntity {
    }
 
    private void method3535() {
-      RayTraceResult var3 = Class9456.method36385(this, this::method3467);
+      RayTraceResult var3 = ProjectileHelper.method36385(this, this::method3467);
       this.method3464(var3);
    }
 
@@ -411,7 +412,7 @@ public class Class904 extends ProjectileEntity {
       BlockState var4 = this.world.getBlockState(var1);
       if (!var4.isAir() && !var4.isIn(Blocks.LILY_PAD)) {
          FluidState var5 = var4.method23449();
-         return var5.method23486(FluidTags.field40469) && var5.method23473() && var4.method23414(this.world, var1).isEmpty()
+         return var5.method23486(FluidTags.field40469) && var5.isSource() && var4.method23414(this.world, var1).isEmpty()
             ? Class2331.field15948
             : Class2331.field15949;
       } else {

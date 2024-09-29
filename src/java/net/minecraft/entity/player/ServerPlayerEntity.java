@@ -462,7 +462,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
    }
 
    private void method2738() {
-      AxisAlignedBB var3 = new AxisAlignedBB(this.getPosition()).method19663(32.0, 10.0, 32.0);
+      AxisAlignedBB var3 = new AxisAlignedBB(this.getPosition()).grow(32.0, 10.0, 32.0);
       this.world
          .<MobEntity>method7183(MobEntity.class, var3)
          .stream()

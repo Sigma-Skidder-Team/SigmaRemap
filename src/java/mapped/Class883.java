@@ -4,6 +4,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.entity.projectile.ProjectileHelper;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
 import net.minecraft.util.DamageSource;
@@ -45,7 +46,7 @@ public class Class883 extends ProjectileEntity {
    public void tick() {
       super.tick();
       Vector3d var3 = this.getMotion();
-      RayTraceResult var4 = Class9456.method36385(this, this::method3467);
+      RayTraceResult var4 = ProjectileHelper.method36385(this, this::method3467);
       if (var4 != null) {
          this.method3464(var4);
       }

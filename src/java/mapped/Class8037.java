@@ -61,13 +61,13 @@ public class Class8037 {
 
    @Nullable
    public static Vector3d method27590(Class1046 var0, int var1, int var2, Vector3d var3) {
-      Vector3d var6 = var0.getPositionVec().method11336(var3);
+      Vector3d var6 = var0.getPositionVec().subtract(var3);
       return method27592(var0, var1, var2, 0, var6, true, (float) (Math.PI / 2), var0::method4771, false, 0, 0, true);
    }
 
    @Nullable
    public static Vector3d method27591(Class1046 var0, int var1, int var2, Vector3d var3) {
-      Vector3d var6 = var0.getPositionVec().method11336(var3);
+      Vector3d var6 = var0.getPositionVec().subtract(var3);
       return method27592(var0, var1, var2, 0, var6, false, (float) (Math.PI / 2), var0::method4771, true, 0, 0, true);
    }
 

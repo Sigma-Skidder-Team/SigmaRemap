@@ -9,6 +9,7 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.client.resources.DefaultPlayerSkin;
 import net.minecraft.scoreboard.ScorePlayerTeam;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
@@ -38,7 +39,7 @@ public class Class7224 implements Class7222 {
          this.field31057 = AbstractClientPlayerEntity.method5376(var8);
          AbstractClientPlayerEntity.method5375(this.field31057, var8);
       } else {
-         this.field31057 = Class7209.method22636();
+         this.field31057 = DefaultPlayerSkin.getDefaultSkinLegacy();
       }
    }
 

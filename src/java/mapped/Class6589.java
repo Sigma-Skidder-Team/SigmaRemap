@@ -8,6 +8,7 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.DefaultPlayerSkin;
 import net.minecraft.network.play.server.SPlayerListItemPacket;
 import net.minecraft.scoreboard.ScorePlayerTeam;
 import net.minecraft.util.ResourceLocation;
@@ -61,12 +62,12 @@ public class Class6589 {
    }
 
    public String method19972() {
-      return this.field29008 != null ? this.field29008 : Class7209.method22638(this.field29003.getId());
+      return this.field29008 != null ? this.field29008 : DefaultPlayerSkin.method22638(this.field29003.getId());
    }
 
    public ResourceLocation method19973() {
       this.method19977();
-      return (ResourceLocation)MoreObjects.firstNonNull(this.field29004.get(Type.SKIN), Class7209.method22637(this.field29003.getId()));
+      return (ResourceLocation)MoreObjects.firstNonNull(this.field29004.get(Type.SKIN), DefaultPlayerSkin.method22637(this.field29003.getId()));
    }
 
    @Nullable
@@ -90,7 +91,7 @@ public class Class6589 {
       synchronized (this) {
          if (!this.field29007) {
             this.field29007 = true;
-            Minecraft.getInstance().getSkinManager().method38346(this.field29003, (var1, var2, var3) -> {
+            Minecraft.getInstance().getSkinManager().method38loadProfileTextures346(this.field29003, (var1, var2, var3) -> {
                this.field29004.put(var1, var2);
                if (var1 == Type.SKIN) {
                   this.field29008 = var3.getMetadata("model");

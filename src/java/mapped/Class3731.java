@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.projectile.ProjectileHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.world.server.ServerWorld;
@@ -47,7 +48,7 @@ public class Class3731<E extends MobEntity & Class1023, T extends LivingEntity> 
             if (this.field19841 != Class2276.field14828) {
                if (this.field19841 == Class2276.field14829) {
                   ((Class1022)var1).method4530(var2, 1.0F);
-                  ItemStack var5 = var1.getHeldItem(Class9456.method36389(var1, Items.CROSSBOW));
+                  ItemStack var5 = var1.getHeldItem(ProjectileHelper.method36389(var1, Items.CROSSBOW));
                   CrossbowItem.method11756(var5, false);
                   this.field19841 = Class2276.field14826;
                }
@@ -72,7 +73,7 @@ public class Class3731<E extends MobEntity & Class1023, T extends LivingEntity> 
             }
          }
       } else {
-         var1.setActiveHand(Class9456.method36389(var1, Items.CROSSBOW));
+         var1.setActiveHand(ProjectileHelper.method36389(var1, Items.CROSSBOW));
          this.field19841 = Class2276.field14827;
          ((Class1023)var1).method4535(true);
       }

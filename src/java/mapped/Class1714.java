@@ -56,7 +56,7 @@ public final class Class1714 extends TextureAtlasSprite {
    public static DynamicTexture method7515() {
       if (field9361 == null) {
          field9361 = new DynamicTexture(field9362.getValue());
-         Minecraft.getInstance().getTextureManager().method1073(field9360, field9361);
+         Minecraft.getInstance().getTextureManager().loadTexture(field9360, field9361);
       }
 
       return field9361;

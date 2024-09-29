@@ -23,7 +23,7 @@ public abstract class Class2692 extends Class2595 {
    public boolean method10911() {
       return !this.field17133
          .world
-         .<LivingEntity>method7195(LivingEntity.class, this.field17132, this.field17133, this.field17133.getBoundingBox().method19663(12.0, 6.0, 12.0))
+         .<LivingEntity>method7195(LivingEntity.class, this.field17132, this.field17133, this.field17133.getBoundingBox().grow(12.0, 6.0, 12.0))
          .isEmpty();
    }
 }

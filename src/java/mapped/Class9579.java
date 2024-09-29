@@ -26,41 +26,41 @@ public class Class9579 {
       }
 
       try {
-         field44783[GlStateManager.TexGen.field14213.ordinal()] = 4;
+         field44783[GlStateManager.TexGen.Q.ordinal()] = 4;
       } catch (NoSuchFieldError var9) {
       }
 
       field44782 = new int[GlStateManager.SupportType.values().length];
 
       try {
-         field44782[GlStateManager.SupportType.field15978.ordinal()] = 1;
+         field44782[GlStateManager.SupportType.BASE.ordinal()] = 1;
       } catch (NoSuchFieldError var8) {
       }
 
       try {
-         field44782[GlStateManager.SupportType.field15979.ordinal()] = 2;
+         field44782[GlStateManager.SupportType.EXT.ordinal()] = 2;
       } catch (NoSuchFieldError var7) {
       }
 
       try {
-         field44782[GlStateManager.SupportType.field15980.ordinal()] = 3;
+         field44782[GlStateManager.SupportType.NONE.ordinal()] = 3;
       } catch (NoSuchFieldError var6) {
       }
 
       field44781 = new int[GlStateManager.FramebufferExtension.values().length];
 
       try {
-         field44781[GlStateManager.FramebufferExtension.field13460.ordinal()] = 1;
+         field44781[GlStateManager.FramebufferExtension.BASE.ordinal()] = 1;
       } catch (NoSuchFieldError var5) {
       }
 
       try {
-         field44781[GlStateManager.FramebufferExtension.field13461.ordinal()] = 2;
+         field44781[GlStateManager.FramebufferExtension.ARB.ordinal()] = 2;
       } catch (NoSuchFieldError var4) {
       }
 
       try {
-         field44781[GlStateManager.FramebufferExtension.field13462.ordinal()] = 3;
+         field44781[GlStateManager.FramebufferExtension.EXT.ordinal()] = 3;
       } catch (NoSuchFieldError var3) {
       }
    }

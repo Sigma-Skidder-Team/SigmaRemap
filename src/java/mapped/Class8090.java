@@ -10,6 +10,7 @@ import java.util.TreeSet;
 
 import com.mojang.blaze3d.platform.GlStateManager;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.texture.Texture;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Items;
 import net.minecraft.util.Direction;
@@ -814,7 +815,7 @@ public class Class8090 {
    public float method28030(TextureManager var1) {
       if (this.field34798 <= 0) {
          if (this.field34790 != null) {
-            Class290 var4 = var1.getTexture(this.field34790);
+            Texture var4 = var1.getTexture(this.field34790);
             int var5 = var4.getGlTextureId();
             int var6 = GlStateManager.method23865();
             GlStateManager.bindTexture(var5);
@@ -833,7 +834,7 @@ public class Class8090 {
    public float method28031(TextureManager var1) {
       if (this.field34799 <= 0) {
          if (this.field34790 != null) {
-            Class290 var4 = var1.getTexture(this.field34790);
+            Texture var4 = var1.getTexture(this.field34790);
             int var5 = var4.getGlTextureId();
             int var6 = GlStateManager.method23865();
             GlStateManager.bindTexture(var5);

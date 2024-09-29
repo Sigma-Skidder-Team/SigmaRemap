@@ -51,7 +51,7 @@ public class InteractAutoBlock {
          if (var6 != null) {
             this.mc
                .getConnection()
-               .sendPacket(new CUseEntityPacket(var6.getEntity(), Hand.MAIN_HAND, var6.getVec(), this.mc.player.isSneaking()));
+               .sendPacket(new CUseEntityPacket(var6.getEntity(), Hand.MAIN_HAND, var6.getHitVec(), this.mc.player.isSneaking()));
             this.mc.getConnection().sendPacket(new CUseEntityPacket(var6.getEntity(), Hand.MAIN_HAND, this.mc.player.isSneaking()));
          }
       }

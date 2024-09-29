@@ -1647,7 +1647,7 @@ public class Config {
    }
 
    public static boolean method26978() {
-      return GLX.method28310();
+      return GLX.useVbo();
    }
 
    public static boolean isSmoothFps() {

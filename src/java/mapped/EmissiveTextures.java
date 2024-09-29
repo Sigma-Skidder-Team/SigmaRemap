@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.texture.Texture;
 import net.minecraft.util.ResourceLocation;
 import net.optifine.Config;
 
@@ -41,7 +42,7 @@ public class EmissiveTextures {
 
    public static ResourceLocation method30591(ResourceLocation var0) {
       if (field38505) {
-         Class290 var3 = field38511.getTexture(var0);
+         Texture var3 = field38511.getTexture(var0);
          ResourceLocation var4 = null;
          if (var3 instanceof Class293) {
             var4 = ((Class293)var3).field1139;

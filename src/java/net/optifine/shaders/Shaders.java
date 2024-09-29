@@ -9,6 +9,7 @@ import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.client.renderer.GLAllocation;
+import net.minecraft.client.renderer.texture.Texture;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.shader.FramebufferConstants;
 import net.minecraft.entity.LivingEntity;
@@ -305,7 +306,7 @@ public class Shaders {
     private static int field40853 = 0;
     public static Properties field40854 = null;
     public static Properties field40855 = null;
-    public static Class290 field40856 = null;
+    public static Texture field40856 = null;
     public static boolean[] field40857 = new boolean[2];
     public static boolean[] field40858 = new boolean[2];
     public static boolean[] field40859 = new boolean[2];

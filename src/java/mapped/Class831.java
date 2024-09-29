@@ -111,7 +111,7 @@ public class Class831 extends Screen {
       float var11 = 0.6666667F;
       var1.push();
       var1.method35292(0.6666667F, -0.6666667F, -0.6666667F);
-      Class7735 var12 = this.mc.getRenderTypeBuffers().method26536();
+      Class7735 var12 = this.mc.getRenderTypeBuffers().getBufferSource();
       Class7826 var13 = Class5947.method18473(var8.getBlock());
       IVertexBuilder var14 = var13.method26200(var12, this.field4610::method11028);
       this.field4610.field17650.render(var1, var14, 15728880, Class213.field798);

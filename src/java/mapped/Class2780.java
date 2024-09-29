@@ -22,7 +22,7 @@ public class Class2780 extends Class2595 {
    @Override
    public boolean method10803() {
       if (!this.field17382.method4296() && !this.field17382.method4914()) {
-         List<Entity> var3 = this.field17382.world.getEntitiesInAABBexcluding(this.field17382, this.field17382.getBoundingBox().method19663(9.0, 4.0, 9.0), var0 -> {
+         List<Entity> var3 = this.field17382.world.getEntitiesInAABBexcluding(this.field17382, this.field17382.getBoundingBox().grow(9.0, 4.0, 9.0), var0 -> {
             EntityType var3x = var0.getType();
             return var3x == EntityType.field41047 || var3x == EntityType.field41094;
          });

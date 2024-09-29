@@ -221,7 +221,7 @@ public class Class1057 extends Class1056 implements Class1008 {
                   this.getPosY() + 1.0,
                   this.getPosZ() + 0.5
                )
-               .contract((double)var11.getXOffset() * var7, (double)var11.getYOffset() * var7, (double)var11.getZOffset() * var7)
+               .expand((double)var11.getXOffset() * var7, (double)var11.getYOffset() * var7, (double)var11.getZOffset() * var7)
          );
          double var12 = var7 - var9;
          if (var12 > 0.0) {

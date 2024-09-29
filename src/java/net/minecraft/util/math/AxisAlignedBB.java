@@ -143,11 +143,11 @@ public class AxisAlignedBB {
       return new AxisAlignedBB(var9, var11, var13, var15, var17, var19);
    }
 
-   public AxisAlignedBB contract(Vector3d var1) {
-      return this.contract(var1.x, var1.y, var1.z);
+   public AxisAlignedBB expand(Vector3d var1) {
+      return this.expand(var1.x, var1.y, var1.z);
    }
 
-   public AxisAlignedBB contract(double var1, double var3, double var5) {
+   public AxisAlignedBB expand(double var1, double var3, double var5) {
       double var9 = this.minX;
       double var11 = this.minY;
       double var13 = this.minZ;
@@ -181,7 +181,7 @@ public class AxisAlignedBB {
       return new AxisAlignedBB(var9, var11, var13, var15, var17, var19);
    }
 
-   public AxisAlignedBB method19663(double var1, double var3, double var5) {
+   public AxisAlignedBB grow(double var1, double var3, double var5) {
       double var9 = this.minX - var1;
       double var11 = this.minY - var3;
       double var13 = this.minZ - var5;
@@ -192,7 +192,7 @@ public class AxisAlignedBB {
    }
 
    public AxisAlignedBB method19664(double var1) {
-      return this.method19663(var1, var1, var1);
+      return this.grow(var1, var1, var1);
    }
 
    public AxisAlignedBB method19665(AxisAlignedBB var1) {

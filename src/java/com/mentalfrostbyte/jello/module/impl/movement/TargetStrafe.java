@@ -146,7 +146,7 @@ public class TargetStrafe extends Module {
     private boolean method16153(Vector3d var1) {
         if (!(mc.player.getPositionVec().y < 1.0)) {
             AxisAlignedBB var4 = new AxisAlignedBB(var1.add(-0.15, 0.0, -0.15), var1.add(0.15, (double) mc.player.getHeight(), 0.15));
-            var4 = var4.contract(0.0, -mc.player.getPositionVec().y, 0.0);
+            var4 = var4.expand(0.0, -mc.player.getPositionVec().y, 0.0);
             return mc.world.getCollisionShapes(mc.player, var4).count() == 0L;
         } else {
             return true;

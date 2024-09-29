@@ -66,7 +66,7 @@ public class Vector3d implements Class2955 {
       );
    }
 
-   public Vector3d method11336(Vector3d var1) {
+   public Vector3d subtract(Vector3d var1) {
       return this.method11337(var1.x, var1.y, var1.z);
    }
 
@@ -93,7 +93,7 @@ public class Vector3d implements Class2955 {
       return (double) MathHelper.sqrt(var4 * var4 + var6 * var6 + var8 * var8);
    }
 
-   public double method11342(Vector3d var1) {
+   public double squareDistanceTo(Vector3d var1) {
       double var4 = var1.x - this.x;
       double var6 = var1.y - this.y;
       double var8 = var1.z - this.z;

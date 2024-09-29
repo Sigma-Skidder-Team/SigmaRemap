@@ -124,7 +124,7 @@ public class Class3316 extends Class3314 {
                                        var38 = var24.getBlockState(var31);
                                     } while (var38.method23394(var1, var31) == MaterialColor.AIR && var37 > 0);
 
-                                    if (var37 > 0 && !var38.method23449().method23474()) {
+                                    if (var37 > 0 && !var38.method23449().isEmpty()) {
                                        int var39 = var37 - 1;
                                        var32.method8374(var31);
 
@@ -133,7 +133,7 @@ public class Class3316 extends Class3314 {
                                           var32.method8308(var39--);
                                           var40 = var24.getBlockState(var32);
                                           var28++;
-                                       } while (var39 > 0 && !var40.method23449().method23474());
+                                       } while (var39 > 0 && !var40.method23449().isEmpty());
 
                                        var38 = this.method11866(var1, var38, var31);
                                     }
@@ -200,7 +200,7 @@ public class Class3316 extends Class3314 {
 
    private BlockState method11866(World var1, BlockState var2, BlockPos var3) {
       FluidState var6 = var2.method23449();
-      return !var6.method23474() && !var2.method23454(var1, var3, Direction.UP) ? var6.getBlockState() : var2;
+      return !var6.isEmpty() && !var2.method23454(var1, var3, Direction.UP) ? var6.getBlockState() : var2;
    }
 
    private static boolean method11867(Biome[] var0, int var1, int var2, int var3) {

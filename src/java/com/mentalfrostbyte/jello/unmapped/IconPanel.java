@@ -355,9 +355,8 @@ public class IconPanel implements IGuiEventListener {
         if (var1 != null) {
             for (IconPanel var5 : this.method13241()) {
                 if (var5.method13257().equals(var1.method13257())) {
-                    throw new RuntimeException(
-                            "Children with duplicate IDs! Child with id \"" + var5.method13257() + "\" already exists in view \"" + this.method13257() + "\"!"
-                    );
+                    System.out.println("Children with duplicate IDs! Child with id \"" + var5.method13257() + "\" already exists in view \"" + this.method13257() + "\"!");
+                    return;
                 }
             }
 

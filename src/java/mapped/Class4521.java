@@ -2,6 +2,7 @@ package mapped;
 
 import it.unimi.dsi.fastutil.objects.ObjectOpenCustomHashSet;
 import net.minecraft.util.ResourceLocation;
+import net.optifine.render.RenderStateManager;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,7 +18,7 @@ public final class Class4521 extends RenderType {
 
    private Class4521(String var1, Class7831 var2, int var3, int var4, boolean var5, boolean var6, Class9484 var7) {
       super(
-         var1, var2, var3, var4, var5, var6, () -> Class8861.method32252(Class9484.method36616(var7)), () -> Class8861.method32253(Class9484.method36616(var7))
+         var1, var2, var3, var4, var5, var6, () -> RenderStateManager.method32252(Class9484.method36616(var7)), () -> RenderStateManager.method32253(Class9484.method36616(var7))
       );
       this.field21822 = var7;
       this.field21824 = Class9484.method36617(var7) != Class2041.field13342

@@ -53,7 +53,7 @@ public class Class4593 extends Class4587 {
       double var14 = MathHelper.lerp((double)var7, this.field22082.getPosX(), var8);
       double var16 = MathHelper.lerp((double)var7, this.field22082.getPosY(), var10);
       double var18 = MathHelper.lerp((double)var7, this.field22082.getPosZ(), var12);
-      Class7735 var20 = this.field22081.method26536();
+      Class7735 var20 = this.field22081.getBufferSource();
       Vector3d var21 = var2.getPos();
       this.field22085
          .renderEntityStatic(

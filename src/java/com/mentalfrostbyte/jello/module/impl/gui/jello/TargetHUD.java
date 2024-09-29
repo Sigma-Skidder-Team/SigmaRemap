@@ -211,7 +211,7 @@ public class TargetHUD extends Module {
             Quaternion var11 = Vector3f.ZP.rotationDegrees(180.0F);
             var10.rotate(var11);
             var4.method32215(false);
-            Class7735 var12 = Minecraft.getInstance().getRenderTypeBuffers().method26536();
+            Class7735 var12 = Minecraft.getInstance().getRenderTypeBuffers().getBufferSource();
             RenderSystem.runAsFancy(
                     () -> var5.method17924(
                             var9, 100.0F, 0.0F, var10, var12, 15728880, Math.min(1.0F, this.field23689.calcPercent() * 4.0F), this.field23691.calcPercent()

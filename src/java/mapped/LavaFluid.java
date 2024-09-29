@@ -161,8 +161,8 @@ public abstract class LavaFluid extends FlowingFluid {
    @Override
    public int method25093(World var1, BlockPos var2, FluidState var3, FluidState var4) {
       int var7 = this.getTickRate(var1);
-      if (!var3.method23474()
-         && !var4.method23474()
+      if (!var3.isEmpty()
+         && !var4.isEmpty()
          && !var3.<Boolean>get(field32712)
          && !var4.<Boolean>get(field32712)
          && var4.method23475(var1, var2) > var3.method23475(var1, var2)

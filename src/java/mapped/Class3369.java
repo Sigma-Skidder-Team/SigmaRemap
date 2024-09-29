@@ -87,7 +87,7 @@ public class Class3369 extends Class3241 {
    public boolean method11960(World var1, BlockState var2, BlockRayTraceResult var3, PlayerEntity var4, boolean var5) {
       Direction var8 = var3.getFace();
       BlockPos var9 = var3.getPos();
-      boolean var10 = !var5 || this.method11961(var2, var8, var3.getVec().y - (double)var9.getY());
+      boolean var10 = !var5 || this.method11961(var2, var8, var3.getHitVec().y - (double)var9.getY());
       if (!var10) {
          return false;
       } else {

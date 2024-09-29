@@ -124,6 +124,6 @@ public class Class9140 {
    }
 
    public static boolean method34129() {
-      return method34125(field41996.player.getBoundingBox().contract(0.0, -0.4F, 0.0).method19660(0.001, 0.001, 0.001), Material.field38941);
+      return method34125(field41996.player.getBoundingBox().expand(0.0, -0.4F, 0.0).method19660(0.001, 0.001, 0.001), Material.field38941);
    }
 }

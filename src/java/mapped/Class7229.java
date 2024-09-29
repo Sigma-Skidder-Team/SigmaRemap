@@ -9,6 +9,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.client.resources.DefaultPlayerSkin;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.play.client.CSpectatePacket;
 import net.minecraft.util.ResourceLocation;
@@ -24,9 +25,9 @@ public class Class7229 implements Class7222 {
    public Class7229(GameProfile var1) {
       this.field31070 = var1;
       Minecraft var4 = Minecraft.getInstance();
-      Map var5 = var4.getSkinManager().method38347(var1);
+      Map var5 = var4.getSkinManager().loadSkinFromCache(var1);
       if (!var5.containsKey(Type.SKIN)) {
-         this.field31071 = Class7209.method22637(PlayerEntity.method2960(var1));
+         this.field31071 = DefaultPlayerSkin.method22637(PlayerEntity.method2960(var1));
       } else {
          this.field31071 = var4.getSkinManager().method38344((MinecraftProfileTexture)var5.get(Type.SKIN), Type.SKIN);
       }

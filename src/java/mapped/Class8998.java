@@ -66,7 +66,7 @@ public class Class8998 {
 
    public void method33243(ServerPlayerEntity var1) {
       if (var1 != this.field41148) {
-         Vector3d var4 = var1.getPositionVec().method11336(this.field41147.method34975());
+         Vector3d var4 = var1.getPositionVec().subtract(this.field41147.method34975());
          int var5 = Math.min(this.method33245(), (Class1649.method6634(this.field41152) - 1) * 16);
          boolean var6 = var4.x >= (double)(-var5)
             && var4.x <= (double)var5

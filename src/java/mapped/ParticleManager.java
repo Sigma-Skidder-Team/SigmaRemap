@@ -45,7 +45,7 @@ public class ParticleManager implements Class268 {
    private final AtlasTexture field1176 = new AtlasTexture(AtlasTexture.field1103);
 
    public ParticleManager(ClientWorld var1, TextureManager var2) {
-      var2.method1073(this.field1176.getTextureLocation(), this.field1176);
+      var2.loadTexture(this.field1176.getTextureLocation(), this.field1176);
       this.world = var1;
       this.field1171 = var2;
       this.method1190();

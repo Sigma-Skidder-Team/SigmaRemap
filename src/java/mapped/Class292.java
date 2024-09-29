@@ -2,13 +2,14 @@ package mapped;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import net.minecraft.client.renderer.texture.Texture;
 import net.minecraft.client.renderer.texture.TextureUtil;
 import net.optifine.shaders.Shaders;
 import org.apache.commons.io.IOUtils;
 
 import java.io.*;
 
-public class Class292 extends Class290 {
+public class Class292 extends Texture {
    private String field1134;
 
    public Class292(String var1) {

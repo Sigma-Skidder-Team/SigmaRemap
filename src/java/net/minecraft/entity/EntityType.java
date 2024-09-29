@@ -2,6 +2,7 @@ package net.minecraft.entity;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.item.ItemFrameEntity;
 import net.minecraft.entity.passive.WolfEntity;
 import com.google.common.collect.ImmutableSet;
 import java.util.Optional;
@@ -480,7 +481,7 @@ public class EntityType<T extends Entity> {
    public static double method33203(IWorldReader var0, BlockPos var1, boolean var2, AxisAlignedBB var3) {
       AxisAlignedBB var6 = new AxisAlignedBB(var1);
       if (var2) {
-         var6 = var6.contract(0.0, -1.0, 0.0);
+         var6 = var6.expand(0.0, -1.0, 0.0);
       }
 
       Stream var7 = var0.func_234867_d_((Entity)null, var6, var0x -> true);

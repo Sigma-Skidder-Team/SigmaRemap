@@ -5,6 +5,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.entity.projectile.ProjectileHelper;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -67,7 +68,7 @@ public class Class1033 extends Class1031 implements Class1022 {
 
    @Override
    public AxisAlignedBB getRenderBoundingBox() {
-      return this.getBoundingBox().method19663(3.0, 0.0, 3.0);
+      return this.getBoundingBox().grow(3.0, 0.0, 3.0);
    }
 
    @Override
@@ -167,8 +168,8 @@ public class Class1033 extends Class1031 implements Class1022 {
 
    @Override
    public void method4530(LivingEntity var1, float var2) {
-      ItemStack var5 = this.findAmmo(this.getHeldItem(Class9456.method36389(this, Items.BOW)));
-      AbstractArrowEntity var6 = Class9456.method36390(this, var5, var2);
+      ItemStack var5 = this.findAmmo(this.getHeldItem(ProjectileHelper.method36389(this, Items.BOW)));
+      AbstractArrowEntity var6 = ProjectileHelper.method36390(this, var5, var2);
       double var7 = var1.getPosX() - this.getPosX();
       double var9 = var1.getPosYHeight(0.3333333333333333) - var6.getPosY();
       double var11 = var1.getPosZ() - this.getPosZ();

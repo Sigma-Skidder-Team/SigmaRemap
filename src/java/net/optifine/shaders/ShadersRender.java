@@ -221,7 +221,7 @@ public class ShadersRender {
          var8.getProfiler().endStartSection("shadow entities");
          WorldRenderer var20 = var8.worldRenderer;
          EntityRendererManager var21 = var8.getRenderManager();
-         Class7735 var22 = var20.method937().method26536();
+         Class7735 var22 = var20.method937().getBufferSource();
          boolean var23 = Shaders.isShadowPass && !var8.player.isSpectator();
 
          for (Class7002 var25 : var20.method938()) {
@@ -411,7 +411,7 @@ public class ShadersRender {
          GlStateManager.method23788();
       }
 
-      if (GLX.method28310()) {
+      if (GLX.useVbo()) {
          GL20.glEnableVertexAttribArray(Shaders.field40671);
          GL20.glEnableVertexAttribArray(Shaders.field40672);
          GL20.glEnableVertexAttribArray(Shaders.field40670);
@@ -419,7 +419,7 @@ public class ShadersRender {
    }
 
    public static void method17163(RenderType var0) {
-      if (GLX.method28310()) {
+      if (GLX.useVbo()) {
          GL20.glDisableVertexAttribArray(Shaders.field40671);
          GL20.glDisableVertexAttribArray(Shaders.field40672);
          GL20.glDisableVertexAttribArray(Shaders.field40670);

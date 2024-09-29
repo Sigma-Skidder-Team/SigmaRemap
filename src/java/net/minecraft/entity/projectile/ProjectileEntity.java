@@ -72,7 +72,7 @@ public abstract class ProjectileEntity extends Entity {
       Entity var3 = this.method3460();
       if (var3 != null) {
          for (Entity var5 : this.world
-            .getEntitiesInAABBexcluding(this, this.getBoundingBox().contract(this.getMotion()).method19664(1.0), var0 -> !var0.isSpectator() && var0.canBeCollidedWith())) {
+            .getEntitiesInAABBexcluding(this, this.getBoundingBox().expand(this.getMotion()).method19664(1.0), var0 -> !var0.isSpectator() && var0.canBeCollidedWith())) {
             if (var5.method3415() == var3.method3415()) {
                return false;
             }

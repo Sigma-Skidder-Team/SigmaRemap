@@ -96,7 +96,7 @@ public abstract class FlowingFluid extends Fluid {
    }
 
    private boolean method25069(FluidState var1) {
-      return var1.method23474() || var1.getFluid().method25066(this);
+      return var1.isEmpty() || var1.getFluid().method25066(this);
    }
 
    public boolean method25070(IBlockReader var1, BlockPos var2, Direction var3) {
@@ -114,13 +114,13 @@ public abstract class FlowingFluid extends Fluid {
    }
 
    public void method25071(IWorld var1, BlockPos var2, FluidState var3) {
-      if (!var3.method23474()) {
+      if (!var3.isEmpty()) {
          BlockState var6 = var1.getBlockState(var2);
          BlockPos var7 = var2.down();
          BlockState var8 = var1.getBlockState(var7);
          FluidState var9 = this.method25073(var1, var7, var8);
          if (!this.method25091(var1, var2, var6, Direction.DOWN, var7, var8, var1.getFluidState(var7), var9.getFluid())) {
-            if (var3.method23473() || !this.method25084(var1, var9.getFluid(), var2, var6, var7, var8)) {
+            if (var3.isSource() || !this.method25084(var1, var9.getFluid(), var2, var6, var7, var8)) {
                this.method25072(var1, var2, var3, var6);
             }
          } else {
@@ -162,7 +162,7 @@ public abstract class FlowingFluid extends Fluid {
          BlockState var11 = var1.getBlockState(var10);
          FluidState var12 = var11.method23449();
          if (var12.getFluid().method25066(this) && this.method25074(var9, var1, var2, var3, var10, var11)) {
-            if (var12.method23473()) {
+            if (var12.isSource()) {
                var7++;
             }
 
@@ -181,7 +181,7 @@ public abstract class FlowingFluid extends Fluid {
       BlockPos var14 = var2.up();
       BlockState var16 = var1.getBlockState(var14);
       FluidState var17 = var16.method23449();
-      if (!var17.method23474() && var17.getFluid().method25066(this) && this.method25074(Direction.UP, var1, var2, var3, var14, var16)) {
+      if (!var17.isEmpty() && var17.getFluid().method25066(this) && this.method25074(Direction.UP, var1, var2, var3, var14, var16)) {
          return this.method25076(8, true);
       } else {
          int var18 = var6 - this.method25092(var1);
@@ -314,7 +314,7 @@ public abstract class FlowingFluid extends Fluid {
    }
 
    private boolean method25086(FluidState var1) {
-      return var1.getFluid().method25066(this) && var1.method23473();
+      return var1.getFluid().method25066(this) && var1.isSource();
    }
 
    public abstract int method25087(IWorldReader var1);
@@ -408,10 +408,10 @@ public abstract class FlowingFluid extends Fluid {
 
    @Override
    public void method25052(World var1, BlockPos var2, FluidState var3) {
-      if (!var3.method23473()) {
+      if (!var3.isSource()) {
          FluidState var6 = this.method25073(var1, var2, var1.getBlockState(var2));
          int var7 = this.method25093(var1, var2, var3, var6);
-         if (!var6.method23474()) {
+         if (!var6.isEmpty()) {
             if (!var6.equals(var3)) {
                var3 = var6;
                BlockState var8 = var6.getBlockState();
@@ -429,7 +429,7 @@ public abstract class FlowingFluid extends Fluid {
    }
 
    public static int method25094(FluidState var0) {
-      return !var0.method23473() ? 8 - Math.min(var0.method23477(), 8) + (!var0.<Boolean>get(field32712) ? 0 : 8) : 0;
+      return !var0.isSource() ? 8 - Math.min(var0.method23477(), 8) + (!var0.<Boolean>get(field32712) ? 0 : 8) : 0;
    }
 
    private static boolean method25095(FluidState var0, IBlockReader var1, BlockPos var2) {

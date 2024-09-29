@@ -11,6 +11,7 @@ import java.util.function.Consumer;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.item.ItemFrameEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.inventory.EquipmentSlotType;
@@ -88,7 +89,7 @@ public class Class9278 {
             this.field42680++;
             int var22 = MathHelper.floor(this.field42668.rotationYaw * 256.0F / 360.0F);
             int var25 = MathHelper.floor(this.field42668.rotationPitch * 256.0F / 360.0F);
-            Vector3d var27 = this.field42668.getPositionVec().method11336(SEntityPacket.method17232(this.field42672, this.field42673, this.field42674));
+            Vector3d var27 = this.field42668.getPositionVec().subtract(SEntityPacket.method17232(this.field42672, this.field42673, this.field42674));
             boolean var28 = var27.lengthSquared() >= 7.6293945E-6F;
             Object var29 = null;
             boolean var30 = var28 || this.field42679 % 60 == 0;
@@ -128,7 +129,7 @@ public class Class9278 {
             if ((this.field42670 || this.field42668.isAirBorne || this.field42668 instanceof LivingEntity && ((LivingEntity)this.field42668).isElytraFlying())
                && this.field42679 > 0) {
                Vector3d var18 = this.field42668.getMotion();
-               double var19 = var18.method11342(this.field42678);
+               double var19 = var18.squareDistanceTo(this.field42678);
                if (var19 > 1.0E-7 || var19 > 0.0 && var18.lengthSquared() == 0.0) {
                   this.field42678 = var18;
                   this.field42671.accept(new SEntityVelocityPacket(this.field42668.getEntityId(), this.field42678));

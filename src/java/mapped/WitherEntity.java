@@ -236,7 +236,7 @@ public class WitherEntity extends Class1009 implements Class1080, Class1022 {
 
                int var23 = this.method5014(var3);
                if (var23 <= 0) {
-                  List var27 = this.world.<LivingEntity>method7195(LivingEntity.class, field5937, this, this.getBoundingBox().method19663(20.0, 8.0, 20.0));
+                  List var27 = this.world.<LivingEntity>method7195(LivingEntity.class, field5937, this, this.getBoundingBox().grow(20.0, 8.0, 20.0));
 
                   for (int var29 = 0; var29 < 10 && !var27.isEmpty(); var29++) {
                      LivingEntity var31 = (LivingEntity)var27.get(this.rand.nextInt(var27.size()));

@@ -44,6 +44,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.RayTraceContext;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -2591,7 +2592,7 @@ public abstract class LivingEntity extends Entity {
    public boolean canEntityBeSeen(Entity var1) {
       Vector3d var4 = new Vector3d(this.getPosX(), this.getPosYEye(), this.getPosZ());
       Vector3d var5 = new Vector3d(var1.getPosX(), var1.getPosYEye(), var1.getPosZ());
-      return this.world.rayTraceBlocks(new RayTraceContext(var4, var5, Class2271.field14774, Class1985.field12962, this)).getType() == RayTraceResult.Type.MISS;
+      return this.world.rayTraceBlocks(new RayTraceContext(var4, var5, RayTraceContext.BlockMode.field14774, RayTraceContext.FluidMode.NONE, this)).getType() == RayTraceResult.Type.MISS;
    }
 
    @Override
@@ -3019,7 +3020,7 @@ public abstract class LivingEntity extends Entity {
                BlockPos var3x = var1.up();
                return new Vector3d((double)var3x.getX() + 0.5, (double)var3x.getY() + 0.1, (double)var3x.getZ() + 0.5);
             });
-            Vector3d var6 = Vector3d.method11330(var1).method11336(var5).method11333();
+            Vector3d var6 = Vector3d.method11330(var1).subtract(var5).method11333();
             float var7 = (float) MathHelper.wrapDegrees(MathHelper.method37814(var6.z, var6.x) * 180.0F / (float)Math.PI - 90.0);
             this.setPosition(var5.x, var5.y, var5.z);
             this.rotationYaw = var7;
@@ -3121,7 +3122,7 @@ public abstract class LivingEntity extends Entity {
          return super.getRenderBoundingBox();
       } else {
          float var3 = 0.5F;
-         return this.getBoundingBox().method19663(0.5, 0.5, 0.5);
+         return this.getBoundingBox().grow(0.5, 0.5, 0.5);
       }
    }
 }

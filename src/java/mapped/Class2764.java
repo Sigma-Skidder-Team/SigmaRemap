@@ -17,7 +17,7 @@ public class Class2764 extends Class2595 {
    @Override
    public boolean method10803() {
       if (this.field17333.method4767() < 0) {
-         List<? extends Class1018> var3 = this.field17333.world.getEntitiesWithinAABB(this.field17333.getClass(), this.field17333.getBoundingBox().method19663(8.0, 4.0, 8.0));
+         List<? extends Class1018> var3 = this.field17333.world.getEntitiesWithinAABB(this.field17333.getClass(), this.field17333.getBoundingBox().grow(8.0, 4.0, 8.0));
          Class1018 var4 = null;
          double var5 = Double.MAX_VALUE;
 

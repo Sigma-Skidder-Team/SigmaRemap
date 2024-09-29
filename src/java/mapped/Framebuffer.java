@@ -1,5 +1,6 @@
 package mapped;
 
+import com.mojang.blaze3d.platform.GLX;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.renderer.texture.TextureUtil;
@@ -173,18 +174,26 @@ public class Framebuffer {
       GlStateManager.bindTexture(0);
    }
 
-   public void bindFramebuffer(boolean var1) {
-      if (RenderSystem.isOnRenderThread()) {
-         this.bindFramebufferRaw(var1);
-      } else {
-         RenderSystem.recordRenderCall(() -> this.bindFramebufferRaw(var1));
+   public void bindFramebuffer(boolean setViewportIn) {
+      if (!RenderSystem.isOnRenderThread())
+      {
+         RenderSystem.recordRenderCall(() ->
+         {
+            this.bindFramebufferRaw(setViewportIn);
+         });
+      }
+      else
+      {
+         this.bindFramebufferRaw(setViewportIn);
       }
    }
 
-   private void bindFramebufferRaw(boolean var1) {
+   private void bindFramebufferRaw(boolean setViewportIn) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
       GlStateManager.bindFramebuffer(FramebufferConstants.GL_FRAMEBUFFER, this.framebufferObject);
-      if (var1) {
+
+      if (setViewportIn)
+      {
          GlStateManager.viewport(0, 0, this.framebufferWidth, this.framebufferHeight);
       }
    }

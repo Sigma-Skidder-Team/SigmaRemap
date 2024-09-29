@@ -25,7 +25,7 @@ public abstract class Class6443 {
       int var3 = var0.method31861();
       int var4 = 1;
       int var5 = 0;
-      int var6 = 0;
+      int var6;
 
       do {
          var6 = var0.method31861();
@@ -34,18 +34,19 @@ public abstract class Class6443 {
          var4++;
       } while ((var6 & 128) == 128);
 
-      Class6443 var7 = method19560(var3);
+      Class6443 var7 = method19560(var3);  // Retrieve or create a Class6443 instance
       var7.field28304 = var3;
       var7.field28305 = var5;
-      var7.field28306 = var0.method31871();
-      var7.method19555(var0);
-      long var8 = (long)var5 - (var0.method31871() - var7.field28306);
+      var7.field28306 = var0.method31871();  // Store the current offset or position
+      var7.method19555(var0);  // Process the descriptor
+
+      long var8 = (long)var5 - (var0.method31871() - var7.field28306);  // Calculate remaining bytes
       if (var8 > 0L) {
-         Logger.getLogger("MP4 Boxes").log(Level.INFO, "Descriptor: bytes left: {0}, offset: {1}", new Long[]{var8, var0.method31871()});
-         var0.method31870(var8);
+         Logger.getLogger("MP4 Boxes").log(Level.INFO, "Descriptor: bytes left: {0}, offset: {1}", new Object[]{var8, var0.method31871()});
+         var0.method31870(var8);  // Skip remaining bytes
       }
 
-      var7.field28305 += var4;
+      var7.field28305 += var4;  // Adjust field length for the descriptor size
       return var7;
    }
 

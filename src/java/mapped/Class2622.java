@@ -28,7 +28,7 @@ public class Class2622 extends Class2595 {
                this.field16914 = this.method10826(this.field16912);
                Predicate<AbstractGroupFishEntity> var3 = var0 -> var0.method4805() || !var0.method4800();
                List<AbstractGroupFishEntity> var4 = this.field16912.world.getEntitiesInAABBexcluding(this.field16912.getClass(),
-                       this.field16912.getBoundingBox().method19663(8.0, 8.0, 8.0), var3);
+                       this.field16912.getBoundingBox().grow(8.0, 8.0, 8.0), var3);
                AbstractGroupFishEntity var5 = var4.stream().filter(AbstractGroupFishEntity::method4805).findAny().orElse(this.field16912);
                var5.method4809(var4.stream().filter(var0 -> !var0.method4800()));
                return this.field16912.method4800();

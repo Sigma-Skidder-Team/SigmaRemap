@@ -70,7 +70,7 @@ public class ChunkSection {
          }
       }
 
-      if (!var9.method23474()) {
+      if (!var9.isEmpty()) {
          this.field30372--;
       }
 
@@ -81,7 +81,7 @@ public class ChunkSection {
          }
       }
 
-      if (!var10.method23474()) {
+      if (!var10.isEmpty()) {
          this.field30372++;
       }
 
@@ -143,7 +143,7 @@ public class ChunkSection {
             }
          }
 
-         if (!var5x.method23474()) {
+         if (!var5x.isEmpty()) {
             this.field30370 = (short)(this.field30370 + var2);
             if (var5x.method23481()) {
                this.field30372 = (short)(this.field30372 + var2);

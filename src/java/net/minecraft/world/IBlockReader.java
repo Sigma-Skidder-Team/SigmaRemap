@@ -5,10 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
-import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.BlockRayTraceResult;
-import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.*;
 import net.minecraft.util.math.vector.Vector3d;
 
 import javax.annotation.Nullable;
@@ -47,20 +44,20 @@ public interface IBlockReader {
          (var1x, var2) -> {
             BlockState var5 = this.getBlockState(var2);
             FluidState var6 = this.getFluidState(var2);
-            Vector3d var7 = var1x.method20745();
-            Vector3d var8 = var1x.method20744();
-            VoxelShape var9 = var1x.method20746(var5, this, var2);
+            Vector3d var7 = var1x.getStartVec();
+            Vector3d var8 = var1x.getEndVec();
+            VoxelShape var9 = var1x.getBlockShape(var5, this, var2);
             BlockRayTraceResult var10 = this.rayTraceBlocks(var7, var8, var2, var9, var5);
-            VoxelShape var11 = var1x.method20747(var6, this, var2);
-            BlockRayTraceResult var12 = var11.method19525(var7, var8, var2);
-            double var13 = var10 != null ? var1x.method20745().method11342(var10.getVec()) : Double.MAX_VALUE;
-            double var15 = var12 != null ? var1x.method20745().method11342(var12.getVec()) : Double.MAX_VALUE;
+            VoxelShape var11 = var1x.getFluidShape(var6, this, var2);
+            BlockRayTraceResult var12 = var11.rayTrace(var7, var8, var2);
+            double var13 = var10 != null ? var1x.getStartVec().squareDistanceTo(var10.getHitVec()) : Double.MAX_VALUE;
+            double var15 = var12 != null ? var1x.getStartVec().squareDistanceTo(var12.getHitVec()) : Double.MAX_VALUE;
             return !(var13 <= var15) ? var12 : var10;
          },
          var0 -> {
-            Vector3d var3 = var0.method20745().method11336(var0.method20744());
-            return BlockRayTraceResult.method31420(
-               var0.method20744(), Direction.getFacingFromVector(var3.x, var3.y, var3.z), new BlockPos(var0.method20744())
+            Vector3d var3 = var0.getStartVec().subtract(var0.getEndVec());
+            return BlockRayTraceResult.createMiss(
+               var0.getEndVec(), Direction.getFacingFromVector(var3.x, var3.y, var3.z), new BlockPos(var0.getEndVec())
             );
          }
       );
@@ -68,10 +65,10 @@ public interface IBlockReader {
 
    @Nullable
    default BlockRayTraceResult rayTraceBlocks(Vector3d var1, Vector3d var2, BlockPos var3, VoxelShape var4, BlockState var5) {
-      BlockRayTraceResult var8 = var4.method19525(var1, var2, var3);
+      BlockRayTraceResult var8 = var4.rayTrace(var1, var2, var3);
       if (var8 != null) {
-         BlockRayTraceResult var9 = var5.method23418(this, var3).method19525(var1, var2, var3);
-         if (var9 != null && var9.getVec().method11336(var1).lengthSquared() < var8.getVec().method11336(var1).lengthSquared()) {
+         BlockRayTraceResult var9 = var5.method23418(this, var3).rayTrace(var1, var2, var3);
+         if (var9 != null && var9.getHitVec().subtract(var1).lengthSquared() < var8.getHitVec().subtract(var1).lengthSquared()) {
             return var8.method31421(var9.getFace());
          }
       }
@@ -96,8 +93,8 @@ public interface IBlockReader {
    }
 
    static <T> T doRayTrace(RayTraceContext var0, BiFunction<RayTraceContext, BlockPos, T> var1, Function<RayTraceContext, T> var2) {
-      Vector3d var5 = var0.method20745();
-      Vector3d var6 = var0.method20744();
+      Vector3d var5 = var0.getStartVec();
+      Vector3d var6 = var0.getEndVec();
       if (!var5.equals(var6)) {
          double var7 = MathHelper.lerp(-1.0E-7, var6.x, var5.x);
          double var9 = MathHelper.lerp(-1.0E-7, var6.y, var5.y);

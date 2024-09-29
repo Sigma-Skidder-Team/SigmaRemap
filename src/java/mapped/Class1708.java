@@ -104,7 +104,7 @@ public class Class1708 extends Class1709 implements AutoCloseable {
    }
 
    @Override
-   public void getValue(float var1) {
+   public void setValue(float var1) {
       ((Buffer)this.field9311).position(0);
       this.field9311.put(0, var1);
       this.method7433();

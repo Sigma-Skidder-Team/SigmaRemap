@@ -188,7 +188,7 @@ public class PackScreen extends Screen {
             "minecraft", "pack/" + Util.method38533(var9, ResourceLocation::method8298) + "/" + Hashing.sha1().hashUnencodedChars(var9) + "/icon"
          );
          Class1806 var11 = Class1806.method7879(var7);
-         var1.method1073(var10, new DynamicTexture(var11));
+         var1.loadTexture(var10, new DynamicTexture(var11));
          return var10;
       } catch (FileNotFoundException var43) {
       } catch (Exception var44) {

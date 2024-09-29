@@ -131,7 +131,7 @@ public class AGCFly extends Module {
     private double method16785() {
         if (!(mc.player.getPositionVec().y < 1.0)) {
             if (!mc.player.onGround) {
-                AxisAlignedBB var3 = mc.player.boundingBox.contract(0.0, -mc.player.getPositionVec().y, 0.0);
+                AxisAlignedBB var3 = mc.player.boundingBox.expand(0.0, -mc.player.getPositionVec().y, 0.0);
                 Iterator var4 = mc.world.getCollisionShapes(mc.player, var3).iterator();
                 double var5 = -1.0;
                 BlockPos var7 = null;

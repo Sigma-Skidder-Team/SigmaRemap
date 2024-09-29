@@ -90,7 +90,7 @@ public class Class940 extends Class939 implements Class930, ITickableTileEntity 
       float var4 = this.method3755(1.0F);
       return VoxelShapes.method27426()
          .getBoundingBox()
-         .contract(
+         .expand(
             (double)(0.5F * var4 * (float)var1.getXOffset()), (double)(0.5F * var4 * (float)var1.getYOffset()), (double)(0.5F * var4 * (float)var1.getZOffset())
          );
    }

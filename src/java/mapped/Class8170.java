@@ -254,7 +254,7 @@ public final class Class8170 {
    public static boolean method28428(IBlockReader var0, BlockPos var1, BlockState var2, FluidState var3, EntityType<?> var4) {
       if (!var2.method23456(var0, var1)) {
          if (!var2.method23401()) {
-            if (var3.method23474()) {
+            if (var3.isEmpty()) {
                return !var2.isIn(BlockTags.field32811) ? !var4.method33220(var2) : false;
             } else {
                return false;

@@ -6,6 +6,8 @@ import com.mentalfrostbyte.jello.event.impl.Class4423;
 import com.mojang.authlib.GameProfile;
 import mapped.*;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.texture.Texture;
+import net.minecraft.client.resources.DefaultPlayerSkin;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.GameType;
@@ -74,7 +76,7 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
 
    public ResourceLocation method5371() {
       Class6589 var3 = this.method5369();
-      return var3 != null ? var3.method19973() : Class7209.method22637(this.getUniqueID());
+      return var3 != null ? var3.method19973() : DefaultPlayerSkin.method22637(this.getUniqueID());
    }
 
    @Nullable
@@ -106,21 +108,21 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
       return var3 != null ? var3.method19975() : null;
    }
 
-   public static Class294 method5375(ResourceLocation var0, String var1) {
+   public static DownloadingTexture method5375(ResourceLocation var0, String var1) {
       TextureManager var4 = Minecraft.getInstance().getTextureManager();
       Object var5 = var4.getTexture(var0);
       if (var5 == null) {
-         var5 = new Class294(
+         var5 = new DownloadingTexture(
             (File)null,
             String.format("http://skins.minecraft.net/MinecraftSkins/%s.png", Class9001.method33255(var1)),
-            Class7209.method22637(method2961(var1)),
+            DefaultPlayerSkin.method22637(method2961(var1)),
             true,
             (Runnable)null
          );
-         var4.method1073(var0, (Class290)var5);
+         var4.loadTexture(var0, (Texture)var5);
       }
 
-      return (Class294)var5;
+      return (DownloadingTexture)var5;
    }
 
    public static ResourceLocation method5376(String var0) {
@@ -129,7 +131,7 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
 
    public String method5377() {
       Class6589 var3 = this.method5369();
-      return var3 != null ? var3.method19972() : Class7209.method22638(this.getUniqueID());
+      return var3 != null ? var3.method19972() : DefaultPlayerSkin.method22638(this.getUniqueID());
    }
 
    public float method5378() {

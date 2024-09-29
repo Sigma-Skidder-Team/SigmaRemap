@@ -27,7 +27,7 @@ public class Class2777 extends Class2595 {
                   this.field17372.getPosX(),
                   this.field17372.getPosY(),
                   this.field17372.getPosZ(),
-                  this.field17372.getBoundingBox().method19663(6.0, 2.0, 6.0)
+                  this.field17372.getBoundingBox().grow(6.0, 2.0, 6.0)
                );
             return this.field17373 != null;
          } else {

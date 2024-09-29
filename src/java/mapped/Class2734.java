@@ -6,6 +6,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.RayTraceContext;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 
@@ -44,7 +45,7 @@ public class Class2734 extends Class2595 {
          (double) MathHelper.floor(this.field17254.getPosZ()) + 0.5
       );
       Vector3d var12 = new Vector3d((double)var5 + 0.5, (double)var6 + 0.5, (double)var7 + 0.5);
-      BlockRayTraceResult var13 = var4.rayTraceBlocks(new RayTraceContext(var11, var12, Class2271.field14775, Class1985.field12962, this.field17254));
+      BlockRayTraceResult var13 = var4.rayTraceBlocks(new RayTraceContext(var11, var12, RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, this.field17254));
       boolean var14 = var13.getPos().equals(var8);
       if (var10.isIn(BlockTags.field32778) && var14) {
          var4.removeBlock(var8, false);

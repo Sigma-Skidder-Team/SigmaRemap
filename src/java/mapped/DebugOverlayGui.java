@@ -77,8 +77,8 @@ public class DebugOverlayGui extends AbstractGui {
       this.mc.getProfiler().startSection("debug");
       RenderSystem.pushMatrix();
       Entity var4 = this.mc.getRenderViewEntity();
-      this.rayTraceBlock = var4.customPick(20.0, 0.0F, false);
-      this.rayTraceFluid = var4.customPick(20.0, 0.0F, true);
+      this.rayTraceBlock = var4.pick(20.0, 0.0F, false);
+      this.rayTraceFluid = var4.pick(20.0, 0.0F, true);
       this.renderDebugInfoLeft(var1);
       this.renderDebugInfoRight(var1);
       RenderSystem.popMatrix();

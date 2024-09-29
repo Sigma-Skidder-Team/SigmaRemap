@@ -59,7 +59,7 @@ public class Class5658 extends Class5651<Class1105, Class2820> {
          var4.translate(0.0, (double)var13, 0.0);
          Vector3d var14 = this.method17861(var9, (double)var9.getHeight() * 0.5, var3);
          Vector3d var15 = this.method17861(var1, (double)var13, var3);
-         Vector3d var16 = var14.method11336(var15);
+         Vector3d var16 = var14.subtract(var15);
          float var17 = (float)(var16.length() + 1.0);
          var16 = var16.method11333();
          float var18 = (float)Math.acos(var16.y);

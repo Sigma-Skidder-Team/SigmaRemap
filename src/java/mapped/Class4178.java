@@ -206,7 +206,7 @@ public abstract class Class4178 {
 
          var1.setBlockState(var9, var2, 2);
          FluidState var10 = var1.getFluidState(var9);
-         if (!var10.method23474()) {
+         if (!var10.isEmpty()) {
             var1.getPendingFluidTicks().scheduleTick(var9, var10.getFluid(), 0);
          }
 

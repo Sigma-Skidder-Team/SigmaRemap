@@ -33,7 +33,7 @@ public class Class6878 {
                for (int var13 = var11 + 1; var13 >= 0; var13--) {
                   var6.method8372(var1, var13, var2);
                   BlockState var14 = var0.getBlockState(var6);
-                  if (!var14.method23449().method23474()) {
+                  if (!var14.method23449().isEmpty()) {
                      break;
                   }
 

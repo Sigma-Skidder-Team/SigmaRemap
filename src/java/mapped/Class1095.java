@@ -570,7 +570,7 @@ public class Class1095 extends Class1018 {
    public SoundEvent getAmbientSound() {
       if (!this.isSleeping()) {
          if (!this.world.method6740() && this.rand.nextFloat() < 0.1F) {
-            List var3 = this.world.<Entity>getEntitiesInAABBexcluding(PlayerEntity.class, this.getBoundingBox().method19663(16.0, 16.0, 16.0), Class8088.field34763);
+            List var3 = this.world.<Entity>getEntitiesInAABBexcluding(PlayerEntity.class, this.getBoundingBox().grow(16.0, 16.0, 16.0), Class8088.field34763);
             if (var3.isEmpty()) {
                return SoundEvents.field26594;
             }

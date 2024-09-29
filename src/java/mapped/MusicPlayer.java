@@ -55,6 +55,21 @@ public class MusicPlayer extends Class4278 {
 
    public MusicPlayer(IconPanel var1, String var2) {
       super(var1, var2, 875, 55, 800, 600, false);
+
+      if (videos == null) {
+         MusicPlayerVideo[] var4 = new MusicPlayerVideo[]{
+                 new MusicPlayerVideo("Trap Nation", "UUa10nxShhzNrCE1o2ZOPztg", YoutubeType.PLAYLIST),
+                 new MusicPlayerVideo("Chill Nation", "UUM9KEEuzacwVlkt9JfJad7g", YoutubeType.PLAYLIST),
+                 new MusicPlayerVideo("VEVO", "PL9tY0BWXOZFu8MzzbNVtUvHs0cQ_gZ03m", YoutubeType.PLAYLIST),
+                 new MusicPlayerVideo("Rap Nation", "UU8QfB1wbfrNwNFHQxfyNJsw", YoutubeType.PLAYLIST),
+                 new MusicPlayerVideo("MrSuicideSheep", "UU5nc_ZtjKW1htCVZVRxlQAQ", YoutubeType.PLAYLIST),
+                 new MusicPlayerVideo("Trap City", "UU65afEgL62PGFWXY7n6CUbA", YoutubeType.PLAYLIST),
+                 new MusicPlayerVideo("CloudKid", "UUSa8IUd1uEjlREMa21I3ZPQ", YoutubeType.PLAYLIST),
+                 new MusicPlayerVideo("NCS", "UU_aEa8K-EOJ3D6gOs7HcyNg", YoutubeType.PLAYLIST)
+         };
+         videos = var4;
+      }
+
       field20870 = System.nanoTime();
       this.setWidthA(800);
       this.setHeightA(600);
@@ -88,10 +103,6 @@ public class MusicPlayer extends Class4278 {
             if (!field20855.containsKey(video.id) && !video.field44779) {
                video.field44779 = true;
                video.updateVideos();
-
-               for (int var6x = 0; video.youtubeVideos.isEmpty() && var6x < 4; var6x++) {
-                  video.updateVideos();
-               }
 
                field20855.put(video.id, video);
             }
@@ -547,18 +558,5 @@ public class MusicPlayer extends Class4278 {
    // $VF: synthetic method
    public static void method13211(MusicPlayer var0, MusicPlayerVideo var1, YoutubeVideoData var2) {
       var0.method13190(var1, var2);
-   }
-
-   static {
-       videos = new MusicPlayerVideo[]{
-         new MusicPlayerVideo("Trap Nation", "UUa10nxShhzNrCE1o2ZOPztg", YoutubeType.PLAYLIST),
-         new MusicPlayerVideo("Chill Nation", "UUM9KEEuzacwVlkt9JfJad7g", YoutubeType.PLAYLIST),
-         new MusicPlayerVideo("VEVO", "PL9tY0BWXOZFu8MzzbNVtUvHs0cQ_gZ03m", YoutubeType.PLAYLIST),
-         new MusicPlayerVideo("Rap Nation", "UU8QfB1wbfrNwNFHQxfyNJsw", YoutubeType.PLAYLIST),
-         new MusicPlayerVideo("MrSuicideSheep", "UU5nc_ZtjKW1htCVZVRxlQAQ", YoutubeType.PLAYLIST),
-         new MusicPlayerVideo("Trap City", "UU65afEgL62PGFWXY7n6CUbA", YoutubeType.PLAYLIST),
-         new MusicPlayerVideo("CloudKid", "UUSa8IUd1uEjlREMa21I3ZPQ", YoutubeType.PLAYLIST),
-         new MusicPlayerVideo("NCS", "UU_aEa8K-EOJ3D6gOs7HcyNg", YoutubeType.PLAYLIST)
-      };
    }
 }

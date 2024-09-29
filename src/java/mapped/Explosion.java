@@ -22,6 +22,7 @@ import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.RayTraceContext;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -100,7 +101,7 @@ public class Explosion {
                   double var22 = MathHelper.lerp((double)var18, var4.minY, var4.maxY);
                   double var24 = MathHelper.lerp((double)var19, var4.minZ, var4.maxZ);
                   Vector3d var26 = new Vector3d(var20 + var11, var22, var24 + var13);
-                  if (var1.world.rayTraceBlocks(new RayTraceContext(var26, var0, Class2271.field14774, Class1985.field12962, var1)).getType()
+                  if (var1.world.rayTraceBlocks(new RayTraceContext(var26, var0, RayTraceContext.BlockMode.field14774, RayTraceContext.FluidMode.NONE, var1)).getType()
                      == RayTraceResult.Type.MISS) {
                      var15++;
                   }

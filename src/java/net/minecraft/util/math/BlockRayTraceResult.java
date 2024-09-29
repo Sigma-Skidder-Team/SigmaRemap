@@ -11,7 +11,7 @@ public class BlockRayTraceResult extends RayTraceResult {
    private final boolean field39320;
    private final boolean field39321;
 
-   public static BlockRayTraceResult method31420(Vector3d var0, Direction var1, BlockPos var2) {
+   public static BlockRayTraceResult createMiss(Vector3d var0, Direction var1, BlockPos var2) {
       return new BlockRayTraceResult(true, var0, var1, var2, false);
    }
 

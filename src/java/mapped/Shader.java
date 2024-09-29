@@ -8,6 +8,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.texture.Texture;
 import net.minecraft.util.ResourceLocation;
 import org.apache.commons.io.IOUtils;
 import totalcross.json.JSONException;
@@ -165,7 +166,7 @@ public class Shader implements AutoCloseable {
                      }
 
                      var1.bindTexture(var22);
-                     Class290 var24 = var1.getTexture(var22);
+                     Texture var24 = var1.getTexture(var22);
                      int var25 = JSONUtils.method32777(var16, "width");
                      int var26 = JSONUtils.method32777(var16, "height");
                      boolean var27 = JSONUtils.method32768(var16, "bilinear");
@@ -239,7 +240,7 @@ public class Shader implements AutoCloseable {
             default:
                break;
             case 1:
-               var6.getValue(var7[0]);
+               var6.setValue(var7[0]);
                break;
             case 2:
                var6.method7438(var7[0], var7[1]);

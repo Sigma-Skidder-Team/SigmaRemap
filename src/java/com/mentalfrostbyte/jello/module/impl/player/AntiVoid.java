@@ -109,7 +109,7 @@ public class AntiVoid extends Module {
         if (!(mc.player.getPositionVec().y < 1.0)) {
             if (!mc.player.onGround) {
                 AxisAlignedBB var3 = mc.player.boundingBox;
-                var3 = var3.contract(0.0, -mc.player.getPositionVec().y, 0.0);
+                var3 = var3.expand(0.0, -mc.player.getPositionVec().y, 0.0);
                 return mc.world.getCollisionShapes(mc.player, var3).count() == 0L;
             } else {
                 return false;

@@ -447,7 +447,7 @@ public class MultiUtilities {
          Vector3d var11 = method17721(var1, var0);
          Vector3d var12 = var7.add(var11.x * var9, var11.y * var9, var11.z * var9);
          float var13 = 1.0F;
-         AxisAlignedBB var14 = var8.getBoundingBox().contract(var11.scale(var9)).method19663(1.0, 1.0, 1.0);
+         AxisAlignedBB var14 = var8.getBoundingBox().expand(var11.scale(var9)).grow(1.0, 1.0, 1.0);
          return method17713(
             mc.world, var8, var7, var12, var14, var0x -> var0x instanceof LivingEntity || var0x instanceof Class907, (double)(var2 * var2), var3
          );
@@ -471,7 +471,7 @@ public class MultiUtilities {
                break;
             }
          } else {
-            double var19 = var2.method11342((Vector3d)var18.get());
+            double var19 = var2.squareDistanceTo((Vector3d)var18.get());
             if (var19 < var12) {
                var14 = var16;
                var12 = var19;
@@ -493,11 +493,11 @@ public class MultiUtilities {
       Vector3d var14 = var12.add(var13.x * var8, var13.y * var8, var13.z * var8);
 
       for (Entity var16 : mc.world
-         .getEntitiesInAABBexcluding(mc.player, mc.player.getBoundingBox().contract(var13.scale(var8)).method19663(1.0, 1.0, 1.0), var3)) {
+         .getEntitiesInAABBexcluding(mc.player, mc.player.getBoundingBox().expand(var13.scale(var8)).grow(1.0, 1.0, 1.0), var3)) {
          AxisAlignedBB var17 = var16.getBoundingBox();
          Optional var18 = var17.method19680(var12, var14);
          if (var18.isPresent()) {
-            double var19 = var12.method11342((Vector3d)var18.get());
+            double var19 = var12.squareDistanceTo((Vector3d)var18.get());
             if (var19 < var8 && (var16 == var0 || var0 == null)) {
                var11 = ((Vector3d)var18.get()).method11337(var16.getPosX(), var16.getPosY(), var16.getPosZ());
                var10 = var16;
@@ -578,7 +578,7 @@ public class MultiUtilities {
    public static boolean method17727(double var0, double var2, boolean var4) {
       AxisAlignedBB var7 = mc.player.boundingBox;
       if (var4) {
-         var7 = var7.method19663(1.235F, 0.0, 1.235F);
+         var7 = var7.grow(1.235F, 0.0, 1.235F);
       }
 
       AxisAlignedBB var8 = new AxisAlignedBB(
@@ -597,7 +597,7 @@ public class MultiUtilities {
       if (mc.player.getRidingEntity() != null) {
          double var4 = mc.player.getRidingEntity().prevPosX - mc.player.getRidingEntity().getPosX();
          double var6 = mc.player.getRidingEntity().prevPosZ - mc.player.getRidingEntity().getPosZ();
-         var2 = mc.player.getRidingEntity().boundingBox.contract(Math.abs(var4), 1.0, Math.abs(var6));
+         var2 = mc.player.getRidingEntity().boundingBox.expand(Math.abs(var4), 1.0, Math.abs(var6));
       }
 
       Stream var3 = mc.world.getCollisionShapes(mc.player, var2);
@@ -744,8 +744,8 @@ public class MultiUtilities {
 
    public static void method17741(int var0) {
       if (mc.gameRenderer.field828 != null) {
-         mc.gameRenderer.field828.elements.get(0).method7410().getFromName("Radius").getValue((float)var0);
-         mc.gameRenderer.field828.elements.get(1).method7410().getFromName("Radius").getValue((float)var0);
+         mc.gameRenderer.field828.elements.get(0).method7410().getFromName("Radius").setValue((float)var0);
+         mc.gameRenderer.field828.elements.get(1).method7410().getFromName("Radius").setValue((float)var0);
       }
    }
 
@@ -1141,7 +1141,7 @@ public class MultiUtilities {
 
       for (Direction var9 : var5) {
          if (mc.world
-               .getCollisionShapes(mc.player, var4.contract(var0 * (double)var9.getXOffset(), 0.0, var0 * (double)var9.getZOffset()))
+               .getCollisionShapes(mc.player, var4.expand(var0 * (double)var9.getXOffset(), 0.0, var0 * (double)var9.getZOffset()))
                .count()
             > 0L) {
             return var9;
@@ -1157,7 +1157,7 @@ public class MultiUtilities {
 
       for (Direction var9 : var5) {
          Iterator var10 = mc.world
-            .getCollisionShapes(mc.player, var4.contract(var0 * (double)var9.getXOffset(), 0.0, var0 * (double)var9.getZOffset()))
+            .getCollisionShapes(mc.player, var4.expand(var0 * (double)var9.getXOffset(), 0.0, var0 * (double)var9.getZOffset()))
             .iterator();
          if (var10.hasNext()) {
             Vector3d var11 = mc.player
@@ -1173,7 +1173,7 @@ public class MultiUtilities {
    public static boolean method17761() {
       double var2 = 1.0E-7;
       return mc.world
-            .getCollisionShapes(mc.player, mc.player.boundingBox.contract(var2, 0.0, var2).contract(-var2, 0.0, -var2))
+            .getCollisionShapes(mc.player, mc.player.boundingBox.expand(var2, 0.0, var2).expand(-var2, 0.0, -var2))
             .count()
          > 0L;
    }
@@ -1189,7 +1189,7 @@ public class MultiUtilities {
       if (!(var0.getPosY() < 1.0)) {
          if (!var0.onGround) {
             AxisAlignedBB var3 = var0.getBoundingBox();
-            var3 = var3.contract(0.0, -var0.getPosY(), 0.0);
+            var3 = var3.expand(0.0, -var0.getPosY(), 0.0);
             return mc.world.getCollisionShapes(mc.player, var3).count() == 0L;
          } else {
             return false;

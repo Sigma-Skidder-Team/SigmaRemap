@@ -31,11 +31,11 @@ public final class FluidState extends StateHolder<Fluid, FluidState> {
       return this.field31579;
    }
 
-   public boolean method23473() {
+   public boolean isSource() {
       return this.getFluid().method25064(this);
    }
 
-   public boolean method23474() {
+   public boolean isEmpty() {
       return this.getFluid().method25059();
    }
 

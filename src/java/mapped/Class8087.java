@@ -17,6 +17,7 @@ import javax.imageio.ImageIO;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.TextureUtil;
+import net.minecraft.client.resources.DefaultPlayerSkin;
 import net.minecraft.util.ResourceLocation;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.io.IOUtils;
@@ -51,7 +52,7 @@ public class Class8087 {
    }
 
    private static void method27974(UUID var0) {
-      Minecraft.getInstance().getTextureManager().bindTexture(Class7209.method22637(var0));
+      Minecraft.getInstance().getTextureManager().bindTexture(DefaultPlayerSkin.method22637(var0));
    }
 
    private static void method27975(String var0) {

@@ -409,7 +409,7 @@ public abstract class Class6395 {
          if (!var20.isIn(BlockTags.field32770) && !var15) {
             var18 = var6;
          } else {
-            Vector3d var17 = Vector3d.method11330(var5).method11336(var16).method11333();
+            Vector3d var17 = Vector3d.method11330(var5).subtract(var16).method11333();
             var18 = (float) MathHelper.wrapDegrees(MathHelper.method37814(var17.z, var17.x) * 180.0F / (float)Math.PI - 90.0);
          }
 

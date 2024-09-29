@@ -1,13 +1,14 @@
-package mapped;
+package net.minecraft.entity.projectile;
 
+import mapped.*;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.RayTraceContext;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 
@@ -15,7 +16,7 @@ import java.util.Optional;
 import java.util.function.Predicate;
 import javax.annotation.Nullable;
 
-public final class Class9456 {
+public final class ProjectileHelper {
    private static String[] field43938;
 
    public static RayTraceResult method36385(Entity var0, Predicate<Entity> var1) {
@@ -23,12 +24,12 @@ public final class Class9456 {
       World var5 = var0.world;
       Vector3d var6 = var0.getPositionVec();
       Vector3d var7 = var6.add(var4);
-      Object var8 = var5.rayTraceBlocks(new RayTraceContext(var6, var7, Class2271.field14774, Class1985.field12962, var0));
+      Object var8 = var5.rayTraceBlocks(new RayTraceContext(var6, var7, RayTraceContext.BlockMode.field14774, RayTraceContext.FluidMode.NONE, var0));
       if (((RayTraceResult)var8).getType() != RayTraceResult.Type.MISS) {
-         var7 = ((RayTraceResult)var8).getVec();
+         var7 = ((RayTraceResult)var8).getHitVec();
       }
 
-      EntityRayTraceResult var9 = method36387(var5, var0, var6, var7, var0.getBoundingBox().contract(var0.getMotion()).method19664(1.0), var1);
+      EntityRayTraceResult var9 = method36387(var5, var0, var6, var7, var0.getBoundingBox().expand(var0.getMotion()).method19664(1.0), var1);
       if (var9 != null) {
          var8 = var9;
       }
@@ -37,7 +38,7 @@ public final class Class9456 {
    }
 
    @Nullable
-   public static EntityRayTraceResult method36386(Entity var0, Vector3d var1, Vector3d var2, AxisAlignedBB var3, Predicate<Entity> var4, double var5) {
+   public static EntityRayTraceResult rayTraceEntities(Entity var0, Vector3d var1, Vector3d var2, AxisAlignedBB var3, Predicate<Entity> var4, double var5) {
       World var9 = var0.world;
       double var10 = var5;
       Entity var12 = null;
@@ -49,7 +50,7 @@ public final class Class9456 {
          if (!var16.method19673(var1)) {
             if (var17.isPresent()) {
                Vector3d var18 = (Vector3d)var17.get();
-               double var19 = var1.method11342(var18);
+               double var19 = var1.squareDistanceTo(var18);
                if (var19 < var10 || var10 == 0.0) {
                   if (var15.method3415() != var0.method3415()) {
                      var12 = var15;
@@ -80,7 +81,7 @@ public final class Class9456 {
          AxisAlignedBB var13 = var12.getBoundingBox().method19664(0.3F);
          Optional var14 = var13.method19680(var2, var3);
          if (var14.isPresent()) {
-            double var15 = var2.method11342((Vector3d)var14.get());
+            double var15 = var2.squareDistanceTo((Vector3d)var14.get());
             if (var15 < var8) {
                var10 = var12;
                var8 = var15;

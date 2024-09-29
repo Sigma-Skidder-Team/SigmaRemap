@@ -18,7 +18,7 @@ public class Class7892 extends Class7882<MobEntity> {
 
    public void method26425(ServerWorld var1, MobEntity var2) {
       Brain var5 = var2.getBrain();
-      List<ItemEntity> var6 = var1.<ItemEntity>getEntitiesInAABBexcluding(ItemEntity.class, var2.getBoundingBox().method19663(8.0, 4.0, 8.0), var0 -> true);
+      List<ItemEntity> var6 = var1.<ItemEntity>getEntitiesInAABBexcluding(ItemEntity.class, var2.getBoundingBox().grow(8.0, 4.0, 8.0), var0 -> true);
       var6.sort(Comparator.comparingDouble(var2::getDistanceSq));
       Optional var7 = var6.stream()
          .filter(var1x -> var2.method4253(var1x.method4124()))

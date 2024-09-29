@@ -43,7 +43,7 @@ public class RenderTypeBuffers {
       return this.field33889;
    }
 
-   public Class7735 method26536() {
+   public Class7735 getBufferSource() {
       return this.field33891;
    }
 

@@ -128,7 +128,7 @@ public class Class950 extends TileEntity implements Class949, ITickableTileEntit
                for (ServerPlayerEntity var13 : this.world
                   .<ServerPlayerEntity>getEntitiesWithinAABB(
                      ServerPlayerEntity.class,
-                     new AxisAlignedBB((double)var3, (double)var4, (double)var5, (double)var3, (double)(var4 - 4), (double)var5).method19663(10.0, 5.0, 10.0)
+                     new AxisAlignedBB((double)var3, (double)var4, (double)var5, (double)var3, (double)(var4 - 4), (double)var5).grow(10.0, 5.0, 10.0)
                   )) {
                   CriteriaTriggers.field44476.method15096(var13, this);
                }
@@ -180,7 +180,7 @@ public class Class950 extends TileEntity implements Class949, ITickableTileEntit
          }
 
          int var6 = (9 + this.field5342 * 2) * 20;
-         AxisAlignedBB var7 = new AxisAlignedBB(this.pos).method19664(var3).contract(0.0, (double)this.world.method7034(), 0.0);
+         AxisAlignedBB var7 = new AxisAlignedBB(this.pos).method19664(var3).expand(0.0, (double)this.world.method7034(), 0.0);
          List<PlayerEntity> var8 = this.world.<PlayerEntity>getEntitiesWithinAABB(PlayerEntity.class, var7);
 
          for (PlayerEntity var10 : var8) {

@@ -40,7 +40,7 @@ public class ResourceLoadProgressGui extends LoadingGui {
    }
 
    public static void loadLogoTexture(Minecraft var0) {
-      var0.getTextureManager().method1073(field6435, new Class297());
+      var0.getTextureManager().loadTexture(field6435, new Class297());
    }
 
    @Override

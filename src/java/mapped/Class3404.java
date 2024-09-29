@@ -110,7 +110,7 @@ public class Class3404 extends Block implements Class3405 {
 
    @Override
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
-      if (var1.method23449().method23473() || var3.method23449().method23473()) {
+      if (var1.method23449().isSource() || var3.method23449().isSource()) {
          var4.getPendingFluidTicks().scheduleTick(var5, var1.method23449().getFluid(), this.field19080.getTickRate(var4));
       }
 
@@ -132,7 +132,7 @@ public class Class3404 extends Block implements Class3405 {
             if (var10 != Direction.DOWN) {
                BlockPos var11 = var2.offset(var10);
                if (var1.getFluidState(var11).method23486(FluidTags.field40469)) {
-                  Block var12 = !var1.getFluidState(var2).method23473() ? Blocks.field36399 : Blocks.field36527;
+                  Block var12 = !var1.getFluidState(var2).isSource() ? Blocks.field36399 : Blocks.field36527;
                   var1.setBlockState(var2, var12.getDefaultState());
                   this.method12044(var1, var2);
                   return false;

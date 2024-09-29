@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.projectile.ProjectileHelper;
 import net.minecraft.item.Items;
 
 import java.util.EnumSet;
@@ -112,7 +113,7 @@ public class Class2758<T extends Class1009 & Class1022> extends Class2595 {
 
          if (!this.field17304.isHandActive()) {
             if (--this.field17308 <= 0 && this.field17309 >= -60) {
-               this.field17304.setActiveHand(Class9456.method36389(this.field17304, Items.BOW));
+               this.field17304.setActiveHand(ProjectileHelper.method36389(this.field17304, Items.BOW));
             }
          } else if (!var6 && this.field17309 < -60) {
             this.field17304.resetActiveHand();

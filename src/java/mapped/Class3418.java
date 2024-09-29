@@ -84,7 +84,7 @@ public class Class3418 extends Block implements Class3196 {
    @Override
    public BlockState getStateForPlacement(BlockItemUseContext var1) {
       FluidState var4 = var1.getWorld().getFluidState(var1.getPos());
-      if (var4.method23474()) {
+      if (var4.isEmpty()) {
          BlockState var5 = var1.getWorld().getBlockState(var1.getPos().down());
          if (!var5.isIn(BlockTags.field32787)) {
             return null;

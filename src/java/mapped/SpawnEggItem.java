@@ -15,6 +15,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.RayTraceContext;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -83,7 +84,7 @@ public class SpawnEggItem extends Item {
    @Override
    public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = var2.getHeldItem(var3);
-      BlockRayTraceResult var7 = method11735(var1, var2, Class1985.field12963);
+      BlockRayTraceResult var7 = method11735(var1, var2, RayTraceContext.FluidMode.SOURCE_ONLY);
       if (var7.getType() == RayTraceResult.Type.BLOCK) {
          if (var1 instanceof ServerWorld) {
             BlockRayTraceResult var8 = var7;

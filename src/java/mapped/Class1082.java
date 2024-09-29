@@ -9,6 +9,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.entity.projectile.ProjectileHelper;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -128,7 +129,7 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
       if (this.world != null && !this.world.isRemote) {
          this.field5600.method20003(this.field5947);
          this.field5600.method20003(this.field5946);
-         ItemStack var3 = this.getHeldItem(Class9456.method36389(this, Items.BOW));
+         ItemStack var3 = this.getHeldItem(ProjectileHelper.method36389(this, Items.BOW));
          if (var3.getItem() != Items.BOW) {
             this.field5600.addGoal(4, this.field5947);
          } else {
@@ -145,7 +146,7 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
 
    @Override
    public void method4530(LivingEntity var1, float var2) {
-      ItemStack var5 = this.findAmmo(this.getHeldItem(Class9456.method36389(this, Items.BOW)));
+      ItemStack var5 = this.findAmmo(this.getHeldItem(ProjectileHelper.method36389(this, Items.BOW)));
       AbstractArrowEntity var6 = this.method5032(var5, var2);
       double var7 = var1.getPosX() - this.getPosX();
       double var9 = var1.getPosYHeight(0.3333333333333333) - var6.getPosY();
@@ -157,7 +158,7 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
    }
 
    public AbstractArrowEntity method5032(ItemStack var1, float var2) {
-      return Class9456.method36390(this, var1, var2);
+      return ProjectileHelper.method36390(this, var1, var2);
    }
 
    @Override

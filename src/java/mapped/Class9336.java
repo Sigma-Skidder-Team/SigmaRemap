@@ -13,6 +13,7 @@ import javax.imageio.ImageIO;
 
 import com.mojang.blaze3d.platform.GlStateManager;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.texture.Texture;
 import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.client.renderer.texture.TextureUtil;
 import net.minecraft.util.ResourceLocation;
@@ -190,7 +191,7 @@ public class Class9336 {
       return var4;
    }
 
-   public static Class9732 method35309(Class290 var0) {
+   public static Class9732 method35309(Texture var0) {
       Class9732 var3 = var0.field1128;
       if (var3 == null) {
          int var4 = var0.getGlTextureId();
@@ -206,7 +207,7 @@ public class Class9336 {
       return var3;
    }
 
-   public static void method35310(Class290 var0, int var1) {
+   public static void method35310(Texture var0, int var1) {
       Class9732 var4 = var0.field1128;
       if (var4 != null) {
          var0.field1128 = null;
@@ -264,7 +265,7 @@ public class Class9336 {
       GlStateManager.bindTexture(var0.field45439);
    }
 
-   public static void method35315(Class290 var0) {
+   public static void method35315(Texture var0) {
       int var3 = var0.getGlTextureId();
       method35314(var0.method1135());
       if (GlStateManager.method23863() == 33984) {
@@ -318,7 +319,7 @@ public class Class9336 {
       }
    }
 
-   public static Class290 method35319() {
+   public static Texture method35319() {
       DynamicTexture var2 = new DynamicTexture(1, 1, true);
       var2.method1141().method7890(0, 0, -1);
       var2.method1140();
@@ -727,7 +728,7 @@ public class Class9336 {
 
    public static void method35339() {
       TextureManager var2 = Minecraft.getInstance().getTextureManager();
-      Class290 var3 = var2.getTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
+      Texture var3 = var2.getTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
       if (var3 != null) {
          Class9732 var4 = var3.method1135();
          GlStateManager.bindTexture(var4.field45439);

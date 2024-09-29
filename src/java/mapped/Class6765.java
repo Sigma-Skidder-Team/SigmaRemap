@@ -62,7 +62,7 @@ public class Class6765 extends Class6764 {
       BlockPos var7 = new BlockPos(var2, var3, var4);
       FluidState var8 = var1.getFluidState(var7);
       BlockState var9 = var1.getBlockState(var7);
-      if (var8.method23474() && var9.method23440(var1, var7.down(), PathType.field12615) && var9.isAir()) {
+      if (var8.isEmpty() && var9.method23440(var1, var7.down(), PathType.field12615) && var9.isAir()) {
          return Class2163.field14204;
       } else {
          return var8.method23486(FluidTags.field40469) && var9.method23440(var1, var7, PathType.field12615) ? Class2163.field14191 : Class2163.field14184;
@@ -85,7 +85,7 @@ public class Class6765 extends Class6764 {
          var6 = super.method20641(var1, var2, var3);
          var6.field30859 = var7;
          var6.field30858 = Math.max(var6.field30858, var8);
-         if (this.field29475.getFluidState(new BlockPos(var1, var2, var3)).method23474()) {
+         if (this.field29475.getFluidState(new BlockPos(var1, var2, var3)).isEmpty()) {
             var6.field30858 += 8.0F;
          }
       }
@@ -101,7 +101,7 @@ public class Class6765 extends Class6764 {
             for (int var9 = var3; var9 < var3 + this.field29480; var9++) {
                FluidState var10 = this.field29475.getFluidState(var6.method8372(var7, var8, var9));
                BlockState var11 = this.field29475.getBlockState(var6.method8372(var7, var8, var9));
-               if (var10.method23474() && var11.method23440(this.field29475, var6.down(), PathType.field12615) && var11.isAir()) {
+               if (var10.isEmpty() && var11.method23440(this.field29475, var6.down(), PathType.field12615) && var11.isAir()) {
                   return Class2163.field14204;
                }
 

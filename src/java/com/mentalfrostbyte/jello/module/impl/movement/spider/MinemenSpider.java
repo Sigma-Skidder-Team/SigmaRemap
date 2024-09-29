@@ -32,7 +32,7 @@ public class MinemenSpider extends Module {
     private void method16636(EventMove var1) {
         double var4 = 1.0E-5;
         boolean var6 = mc.world
-                .getCollisionShapes(mc.player, mc.player.boundingBox.contract(var4, 0.0, var4).contract(-var4, 0.0, -var4))
+                .getCollisionShapes(mc.player, mc.player.boundingBox.expand(var4, 0.0, var4).expand(-var4, 0.0, -var4))
                 .count()
                 > 0L;
         if (var6) {
@@ -107,7 +107,7 @@ public class MinemenSpider extends Module {
             double var5 = 1.0E-5;
             if (var4 != null
                     && mc.world
-                    .getCollisionShapes(mc.player, mc.player.boundingBox.contract(var5, 0.0, var5).contract(-var5, 0.0, -var5))
+                    .getCollisionShapes(mc.player, mc.player.boundingBox.expand(var5, 0.0, var5).expand(-var5, 0.0, -var5))
                     .count()
                     > 0L) {
                 if (!MultiUtilities.isAboveBounds(mc.player, 1.0E-4F)) {

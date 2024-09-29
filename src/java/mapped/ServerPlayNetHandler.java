@@ -334,7 +334,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    private boolean method15664(Entity var1) {
-      return var1.world.method7035(var1.getBoundingBox().method19664(0.0625).contract(0.0, -0.55, 0.0)).allMatch(Class7377::isAir);
+      return var1.world.method7035(var1.getBoundingBox().method19664(0.0625).expand(0.0, -0.55, 0.0)).allMatch(Class7377::isAir);
    }
 
    @Override

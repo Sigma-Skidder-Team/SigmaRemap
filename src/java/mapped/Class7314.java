@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.multiplayer.PlayerController;
 
 public class Class7314 extends PlayerController {
    private static String[] field31356;

@@ -34,7 +34,7 @@ public class Class295 extends Class293 {
    @Override
    public void method1134(TextureManager var1, IResourceManager var2, ResourceLocation var3, Executor var4) {
       this.field1150 = CompletableFuture.<Class1805>supplyAsync(() -> Class1805.method7875(var2, this.field1137), Util.getServerExecutor());
-      this.field1150.thenRunAsync(() -> var1.method1073(this.field1137, this), method1166(var4));
+      this.field1150.thenRunAsync(() -> var1.loadTexture(this.field1137, this), method1166(var4));
    }
 
    private static Executor method1166(Executor var0) {

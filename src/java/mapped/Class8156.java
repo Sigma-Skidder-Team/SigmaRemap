@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
+import net.minecraft.client.renderer.texture.Texture;
 import net.minecraft.util.ResourceLocation;
 import net.optifine.Config;
 
@@ -17,9 +18,9 @@ public class Class8156 {
          String var4 = "http://s.optifine.net/capes/" + var3 + ".png";
          ResourceLocation var5 = new ResourceLocation("capeof/" + var3);
          TextureManager var6 = Minecraft.getInstance().getTextureManager();
-         Class290 var7 = var6.getTexture(var5);
-         if (var7 != null && var7 instanceof Class294) {
-            Class294 var8 = (Class294)var7;
+         Texture var7 = var6.getTexture(var5);
+         if (var7 != null && var7 instanceof DownloadingTexture) {
+            DownloadingTexture var8 = (DownloadingTexture)var7;
             if (var8.field1147 != null) {
                if (var8.field1147) {
                   var0.method5381(var5);
@@ -35,9 +36,9 @@ public class Class8156 {
 
          Class1458 var11 = new Class1458(var0, var5);
          ResourceLocation var9 = Class8684.field39210;
-         Class294 var10 = new Class294((File)null, var4, var9, false, var11);
+         DownloadingTexture var10 = new DownloadingTexture((File)null, var4, var9, false, var11);
          var10.field1148 = true;
-         var6.method1073(var5, var10);
+         var6.loadTexture(var5, var10);
       }
    }
 
@@ -64,7 +65,7 @@ public class Class8156 {
       String var3 = var0.method5379();
       ResourceLocation var4 = new ResourceLocation("capeof/" + var3);
       TextureManager var5 = Config.method26861();
-      Class290 var6 = var5.getTexture(var4);
+      Texture var6 = var5.getTexture(var4);
       if (var6 instanceof Class293) {
          Class293 var7 = (Class293)var6;
          var7.method1132();

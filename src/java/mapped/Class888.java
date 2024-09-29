@@ -5,6 +5,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.entity.projectile.ProjectileHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -17,6 +18,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.RayTraceContext;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 
@@ -129,7 +131,7 @@ public class Class888 extends ProjectileEntity implements Class889 {
          }
       }
 
-      RayTraceResult var12 = Class9456.method36385(this, this::method3467);
+      RayTraceResult var12 = ProjectileHelper.method36385(this, this::method3467);
       if (!this.noClip) {
          this.method3464(var12);
          this.isAirBorne = true;
@@ -215,7 +217,7 @@ public class Class888 extends ProjectileEntity implements Class889 {
 
                for (int var13 = 0; var13 < 2; var13++) {
                   Vector3d var14 = new Vector3d(var11.getPosX(), var11.getPosYHeight(0.5 * (double)var13), var11.getPosZ());
-                  BlockRayTraceResult var15 = this.world.rayTraceBlocks(new RayTraceContext(var9, var14, Class2271.field14774, Class1985.field12962, this));
+                  BlockRayTraceResult var15 = this.world.rayTraceBlocks(new RayTraceContext(var9, var14, RayTraceContext.BlockMode.field14774, RayTraceContext.FluidMode.NONE, this));
                   if (var15.getType() == RayTraceResult.Type.MISS) {
                      var12 = true;
                      break;

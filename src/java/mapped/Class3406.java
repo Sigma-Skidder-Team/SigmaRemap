@@ -92,7 +92,7 @@ public class Class3406 extends Block implements Class3405 {
 
    public static boolean method12046(IWorld var0, BlockPos var1) {
       FluidState var4 = var0.getFluidState(var1);
-      return var0.getBlockState(var1).isIn(Blocks.WATER) && var4.method23477() >= 8 && var4.method23473();
+      return var0.getBlockState(var1).isIn(Blocks.WATER) && var4.method23477() >= 8 && var4.isSource();
    }
 
    private static boolean method12047(IBlockReader var0, BlockPos var1) {

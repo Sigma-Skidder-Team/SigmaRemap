@@ -8,7 +8,7 @@ import org.apache.logging.log4j.Logger;
 
 import javax.annotation.Nullable;
 
-public class DynamicTexture extends Class290 {
+public class DynamicTexture extends Texture {
    private static final Logger field1132 = LogManager.getLogger();
    private Class1806 field1133;
 

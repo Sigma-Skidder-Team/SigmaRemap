@@ -109,7 +109,7 @@ public class Class3389 extends Block {
    private static boolean method11986(BlockPos var0, World var1) {
       FluidState var4 = var1.getFluidState(var0);
       if (var4.method23486(FluidTags.field40469)) {
-         if (!var4.method23473()) {
+         if (!var4.isSource()) {
             float var5 = (float)var4.method23477();
             if (!(var5 < 2.0F)) {
                FluidState var6 = var1.getFluidState(var0.down());

@@ -11,6 +11,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.RayTraceContext;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -57,7 +58,7 @@ public class Class3341 extends Item {
    @Override
    public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = var2.getHeldItem(var3);
-      BlockRayTraceResult var7 = method11735(var1, var2, Class1985.field12962);
+      BlockRayTraceResult var7 = method11735(var1, var2, RayTraceContext.FluidMode.NONE);
       if (var7.getType() == RayTraceResult.Type.BLOCK && var1.getBlockState(var7.getPos()).isIn(Blocks.field36650)) {
          return Class6794.<ItemStack>method20698(var6);
       } else {

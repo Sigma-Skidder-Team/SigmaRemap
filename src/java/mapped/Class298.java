@@ -1,11 +1,12 @@
 package mapped;
 
+import net.minecraft.client.renderer.texture.Texture;
 import net.minecraft.client.renderer.texture.TextureUtil;
 import net.minecraft.util.ResourceLocation;
 
 import javax.annotation.Nullable;
 
-public class Class298 extends Class290 {
+public class Class298 extends Texture {
    private static String[] field1152;
    private final ResourceLocation field1153;
    private final RenderType field1154;

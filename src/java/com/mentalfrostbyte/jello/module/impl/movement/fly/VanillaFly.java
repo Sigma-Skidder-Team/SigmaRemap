@@ -149,7 +149,7 @@ public class VanillaFly extends Module {
     private double getGroundCollisionHeight() {
         if (!(mc.player.getPositionVec().y < 1.0)) {
             if (!mc.player.onGround) {
-                AxisAlignedBB alignedBB = mc.player.boundingBox.contract(0.0, -mc.player.getPositionVec().y, 0.0);
+                AxisAlignedBB alignedBB = mc.player.boundingBox.expand(0.0, -mc.player.getPositionVec().y, 0.0);
                 Iterator<VoxelShape> shapeIterator = mc.world.getCollisionShapes(mc.player, alignedBB).iterator();
                 double maxCollisionHeight = -1.0;
 

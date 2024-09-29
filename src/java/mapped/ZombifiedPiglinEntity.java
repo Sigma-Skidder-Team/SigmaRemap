@@ -117,7 +117,7 @@ public class ZombifiedPiglinEntity extends ZombieEntity implements IAngerable {
 
    private void method4877() {
       double var3 = this.getAttributeValue(Attributes.field42106);
-      AxisAlignedBB var5 = AxisAlignedBB.method19657(this.getPositionVec()).method19663(var3, 10.0, var3);
+      AxisAlignedBB var5 = AxisAlignedBB.method19657(this.getPositionVec()).grow(var3, 10.0, var3);
       this.world
          .<ZombifiedPiglinEntity>method7183(ZombifiedPiglinEntity.class, var5)
          .stream()

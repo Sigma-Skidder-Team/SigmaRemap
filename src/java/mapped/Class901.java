@@ -4,6 +4,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.entity.projectile.ProjectileHelper;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
@@ -64,7 +65,7 @@ public abstract class Class901 extends ProjectileEntity {
             this.setFire(1);
          }
 
-         RayTraceResult var4 = Class9456.method36385(this, this::method3467);
+         RayTraceResult var4 = ProjectileHelper.method36385(this, this::method3467);
          if (var4.getType() != RayTraceResult.Type.MISS) {
             this.method3464(var4);
          }
@@ -74,7 +75,7 @@ public abstract class Class901 extends ProjectileEntity {
          double var6 = this.getPosX() + var5.x;
          double var8 = this.getPosY() + var5.y;
          double var10 = this.getPosZ() + var5.z;
-         Class9456.method36388(this, 0.2F);
+         ProjectileHelper.method36388(this, 0.2F);
          float var12 = this.method3531();
          if (this.isInWater()) {
             for (int var13 = 0; var13 < 4; var13++) {

@@ -6,6 +6,7 @@ import net.minecraft.item.Items;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.RayTraceContext;
 import net.minecraft.util.math.vector.Vector3d;
 
 import java.util.ArrayList;
@@ -115,7 +116,7 @@ public enum Class2309 {
             .world
             .getEntitiesInAABBexcluding(
                Projectiles.method16543().player,
-               var16.offset((double)this.field15828, (double)this.field15829, (double)this.field15830).method19663(1.0, 1.0, 1.0),
+               var16.offset((double)this.field15828, (double)this.field15829, (double)this.field15830).grow(1.0, 1.0, 1.0),
                Class8088.field34763.and(new Class167(this, var15, var13, var14))
             );
          if (var17.size() > 0) {
@@ -127,12 +128,12 @@ public enum Class2309 {
 
          BlockRayTraceResult var18 = Projectiles.method16546()
             .world
-            .rayTraceBlocks(new RayTraceContext(var13, var14, Class2271.field14774, Class1985.field12962, Projectiles.method16545().player));
+            .rayTraceBlocks(new RayTraceContext(var13, var14, RayTraceContext.BlockMode.field14774, RayTraceContext.FluidMode.NONE, Projectiles.method16545().player));
          if (var18 != null && var18.getType() != RayTraceResult.Type.MISS) {
             this.field15831 = var18;
-            this.field15825 = this.field15831.getVec().x;
-            this.field15826 = this.field15831.getVec().y;
-            this.field15827 = this.field15831.getVec().z;
+            this.field15825 = this.field15831.getHitVec().x;
+            this.field15826 = this.field15831.getHitVec().y;
+            this.field15827 = this.field15831.getHitVec().z;
             var3.add(new Class9110(this.field15825, this.field15826, this.field15827));
             break;
          }

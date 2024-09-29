@@ -367,7 +367,7 @@ public class ServerSelectionList extends Class1274<ServerSelectionList.Entry> {
                   this.icon.method1140();
                }
 
-               this.mc.getTextureManager().method1073(this.serverIcon, this.icon);
+               this.mc.getTextureManager().loadTexture(this.serverIcon, this.icon);
             } catch (Throwable var5) {
                System.out.println("LINE 371 ServerSelectionList");
                method6091().error("Invalid icon for server {} ({})", this.server.serverName, this.server.serverIP, var5);

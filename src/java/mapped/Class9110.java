@@ -121,7 +121,7 @@ public class Class9110 {
    public boolean method33980() {
       if (field41868.world.getBlockState(this.method33979()).getBlock() == Blocks.LAVA) {
          return false;
-      } else if (field41868.world.getBlockState(this.method33979()).method23449().method23474()) {
+      } else if (field41868.world.getBlockState(this.method33979()).method23449().isEmpty()) {
          return field41868.world.getBlockState(this.method33979().down()).getBlock() instanceof Class3239
             ? false
             : this.method33988(this.method33979()) && this.method33988(this.method33979().up());

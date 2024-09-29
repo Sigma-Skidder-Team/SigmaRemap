@@ -235,8 +235,8 @@ public abstract class Class6990 {
          Vector3d var4 = Vector3d.method11330(this.field30245.method28704());
          if (var1.method11340(var4, 2.0)) {
             Vector3d var5 = Vector3d.method11330(this.field30245.method28702(this.field30245.method28699() + 1));
-            Vector3d var6 = var5.method11336(var4);
-            Vector3d var7 = var1.method11336(var4);
+            Vector3d var6 = var5.subtract(var4);
+            Vector3d var7 = var1.subtract(var4);
             return var6.dotProduct(var7) > 0.0;
          } else {
             return false;
@@ -248,7 +248,7 @@ public abstract class Class6990 {
 
    public void method21661(Vector3d var1) {
       if (this.field30247 - this.field30248 > 100) {
-         if (!(var1.method11342(this.field30249) < 2.25)) {
+         if (!(var1.squareDistanceTo(this.field30249) < 2.25)) {
             this.field30262 = false;
          } else {
             this.field30262 = true;

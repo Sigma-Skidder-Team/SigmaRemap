@@ -6,6 +6,7 @@ import com.google.common.collect.Sets;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.client.renderer.texture.Texture;
 import net.minecraft.client.renderer.texture.TextureUtil;
 import net.minecraft.client.util.Util;
 import net.minecraft.crash.CrashReport;
@@ -28,7 +29,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class AtlasTexture extends Class290 implements Class288 {
+public class AtlasTexture extends Texture implements Class288 {
    private static final Logger field1101 = LogManager.getLogger();
    /** @deprecated */
    public static final ResourceLocation LOCATION_BLOCKS_TEXTURE = PlayerContainer.field25539;

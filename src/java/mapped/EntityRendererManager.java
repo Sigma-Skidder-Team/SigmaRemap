@@ -17,6 +17,7 @@ import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.item.ItemFrameEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -493,7 +494,7 @@ public class EntityRendererManager {
    }
 
    public double method32228(Entity var1) {
-      return this.info.getPos().method11342(var1.getPositionVec());
+      return this.info.getPos().squareDistanceTo(var1.getPositionVec());
    }
 
    public double getDistanceToCamera(double var1, double var3, double var5) {

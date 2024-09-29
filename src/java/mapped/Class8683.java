@@ -48,7 +48,7 @@ public class Class8683 {
       int var13 = var10.guiScale;
       int var14 = var9.calcGuiScale(var8.gameSettings.guiScale, var8.gameSettings.forceUnicodeFont);
       int var15 = Config.method26975();
-      boolean var16 = GLX.method28309() && var15 > 1;
+      boolean var16 = GLX.isUsingFBOs() && var15 > 1;
       if (var16) {
          var10.guiScale = var14 * var15;
          var9.method8052(var11 * var15, var12 * var15);

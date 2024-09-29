@@ -1,9 +1,12 @@
-package mapped;
+package net.optifine.render;
+
+import mapped.Class4510;
+import mapped.RenderType;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class Class8861 {
+public class RenderStateManager {
    private static String[] field40047;
    private static boolean field40048;
    private static final Class4510[] field40049 = new Class4510[RenderType.method14365()];
@@ -62,7 +65,7 @@ public class Class8861 {
       field40049[var1] = var0;
    }
 
-   public static void method32258() {
+   public static void enableCache() {
       if (!field40048) {
          field40048 = true;
          Arrays.fill(field40049, null);

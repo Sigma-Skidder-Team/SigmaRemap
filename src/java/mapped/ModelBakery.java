@@ -207,7 +207,7 @@ public class ModelBakery {
          AtlasTexture var7 = (AtlasTexture)var6.getFirst();
          Class8226 var8 = (Class8226)var6.getSecond();
          var7.method1091(var8);
-         var1.method1073(var7.getTextureLocation(), var7);
+         var1.loadTexture(var7.getTextureLocation(), var7);
          var1.bindTexture(var7.getTextureLocation());
          var7.method1101(var8);
       }

@@ -86,7 +86,7 @@ public class Class1162 extends Class1161 {
             RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
             RenderSystem.enableBlend();
             RealmsMainScreen.method2139(this.field6317).getTextureManager().bindTexture(RealmsMainScreen.method2138());
-            RenderSystem.blendFunc(GlStateManager.SourceFactor.field15997, DestFactor.field12932);
+            RenderSystem.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932);
             ITextComponent var23;
             ITextComponent var24;
             if (!var1.field27453) {
