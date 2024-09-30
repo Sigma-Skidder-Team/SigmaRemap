@@ -26,7 +26,6 @@ public class MusicPlayerVideo {
             if (this.type == YoutubeType.PLAYLIST) {
                 System.out.println("getting from playlist " + this.displayName);
                 thumbnails = ThumbnailUtil.getFromPlaylist(this.id);
-                System.out.println(this.displayName + ": \n" + Arrays.toString(thumbnails));
             }
         } else {
             System.out.println("getting from channel " + this.displayName);
