@@ -17,11 +17,11 @@ import org.apache.logging.log4j.Logger;
 
 public class ScreenManager {
    private static final Logger LOG = LogManager.getLogger();
-   private static final Map<ContainerType<?>, IScreenFactory<?, ?>> FACTORIES = Maps.newHashMap();
+   private static final Map<ContainerType<?>, ScreenManager.IScreenFactory<?, ?>> FACTORIES = Maps.newHashMap();
 
    public static <T extends Container> void openScreen(ContainerType<T> var0, Minecraft var1, int var2, ITextComponent var3) {
       if (var0 != null) {
-         IScreenFactory< T, ? > iscreenfactory = getFactory(var0);
+         ScreenManager.IScreenFactory< T, ? > iscreenfactory = getFactory(var0);
          if (iscreenfactory != null) {
             iscreenfactory.createScreen(var3, var0, var1, var2);
          } else {
@@ -33,12 +33,12 @@ public class ScreenManager {
    }
 
    @Nullable
-   private static <T extends Container> IScreenFactory<T, ?> getFactory(ContainerType<T> var0) {
-      return (IScreenFactory<T, ?>) FACTORIES.get(var0);
+   private static <T extends Container> ScreenManager.IScreenFactory<T, ?> getFactory(ContainerType<T> var0) {
+      return (ScreenManager.IScreenFactory<T, ?>) FACTORIES.get(var0);
    }
 
-   private static <M extends Container, U extends Screen & IHasContainer<M>> void registerFactory(ContainerType<? extends M> var0, IScreenFactory<M, U> var1) {
-      IScreenFactory iscreenfactory = FACTORIES.put(var0, var1);
+   private static <M extends Container, U extends Screen & IHasContainer<M>> void registerFactory(ContainerType<? extends M> var0, ScreenManager.IScreenFactory<M, U> var1) {
+      ScreenManager.IScreenFactory iscreenfactory = FACTORIES.put(var0, var1);
       if (iscreenfactory != null) {
          throw new IllegalStateException("Duplicate registration for " + Registry.MENU.getKey(var0));
       }
@@ -84,13 +84,13 @@ public class ScreenManager {
       registerFactory(ContainerType.STONECUTTER, StonecutterScreen::new);
    }
 
-   public static interface IScreenFactory<T extends Container, U extends Screen & IHasContainer<T>> {
-      default void createScreen(ITextComponent var1, ContainerType<T> var2, Minecraft var3, int var4) {
-         Screen var7 = this.method29748((T)var2.method29013(var4, var3.player.inventory), var3.player.inventory, var1);
-         var3.player.openContainer = ((IHasContainer)var7).method2628();
-         var3.displayGuiScreen(var7);
+   interface IScreenFactory<T extends Container, U extends Screen & IHasContainer<T>> {
+      default void createScreen(ITextComponent var1, ContainerType<T> var2, Minecraft mc, int var4) {
+         U u = this.create(var2.create(var4, mc.player.inventory), mc.player.inventory, var1);
+         mc.player.openContainer = u.getContainer();
+         mc.displayGuiScreen(u);
       }
 
-      U method29748(T var1, PlayerInventory var2, ITextComponent var3);
+      U create(T var1, PlayerInventory var2, ITextComponent var3);
    }
 }

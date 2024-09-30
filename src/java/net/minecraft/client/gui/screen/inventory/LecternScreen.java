@@ -22,7 +22,7 @@ public class LecternScreen extends Class870 implements IHasContainer<Class5818> 
       this.field4817 = var1;
    }
 
-   public Class5818 method2628() {
+   public Class5818 getContainer() {
       return this.field4817;
    }
 

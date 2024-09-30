@@ -144,10 +144,10 @@ public class NameTags extends Module {
 
                 if (mc.currentScreen instanceof FurnaceScreen) {
                     FurnaceScreen var6 = (FurnaceScreen) mc.currentScreen;
-                    var5.field30453 = var6.method2628().getSlot(0).getStack();
-                    var5.field30454 = new ItemStack(var6.method2628().getSlot(1).getStack().getItem());
-                    var5.field30454.count = var6.method2628().getSlot(1).getStack().count;
-                    var5.field30455 = var6.method2628().getSlot(2).getStack();
+                    var5.field30453 = var6.getContainer().getSlot(0).getStack();
+                    var5.field30454 = new ItemStack(var6.getContainer().getSlot(1).getStack().getItem());
+                    var5.field30454.count = var6.getContainer().getSlot(1).getStack().count;
+                    var5.field30455 = var6.getContainer().getSlot(2).getStack();
                 }
             }
         }

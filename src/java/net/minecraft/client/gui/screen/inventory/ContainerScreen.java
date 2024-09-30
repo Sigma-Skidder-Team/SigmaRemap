@@ -606,7 +606,7 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
    }
 
    @Override
-   public T method2628() {
+   public T getContainer() {
       return this.field4727;
    }
 

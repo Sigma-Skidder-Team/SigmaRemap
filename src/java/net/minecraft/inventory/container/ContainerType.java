@@ -39,7 +39,7 @@ public class ContainerType<T extends Container> {
       this.field35672 = var1;
    }
 
-   public T method29013(int var1, PlayerInventory var2) {
+   public T create(int var1, PlayerInventory var2) {
       return this.field35672.method29030(var1, var2);
    }
 }
