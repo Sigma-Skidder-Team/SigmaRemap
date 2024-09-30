@@ -36,7 +36,7 @@ public class Class6775 extends Class6773 {
       int var17 = var4 & 15;
       int var18 = var5 & 15;
       BlockState var19 = field29495;
-      Class8277 var20 = var3.method32507().method24283();
+      Class8277 var20 = var3.getGenerationSettings().method24283();
       BlockState var21 = var20.method28935();
       BlockState var22 = var20.method28934();
       BlockState var23 = var21;
@@ -49,7 +49,7 @@ public class Class6775 extends Class6773 {
 
       for (int var30 = var6; var30 >= 0; var30--) {
          if (var28 < 15) {
-            var29.method8372(var17, var30, var18);
+            var29.setPos(var17, var30, var18);
             BlockState var31 = var2.getBlockState(var29);
             if (!var31.isAir()) {
                if (var31.isIn(var9.getBlock())) {

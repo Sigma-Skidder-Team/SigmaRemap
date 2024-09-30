@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.network.DebugPacketSender;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.server.ServerWorld;
@@ -37,7 +38,7 @@ public class Class3699 extends Class3676<LivingEntity> {
       } else if (this.method12576(var10, var9, var2)) {
          var7.method21405(this.field19748);
          var1.method6951().method6674(var9);
-         Class7393.method23615(var1, var9);
+         DebugPacketSender.method23615(var1, var9);
       }
    }
 

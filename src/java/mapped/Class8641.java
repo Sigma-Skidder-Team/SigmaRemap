@@ -17,8 +17,10 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.SectionPos;
 import net.minecraft.world.LightType;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.chunk.ChunkSection;
 import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.server.ChunkManager;
 
 import java.util.List;
 import java.util.Optional;
@@ -60,7 +62,7 @@ public class Class8641 {
       this.field38912 = var3;
       this.field38913 = var4;
       this.field38914 = var5;
-      this.field38904 = Class1649.field8951 + 1;
+      this.field38904 = ChunkManager.MAX_LOADED_LEVEL + 1;
       this.field38905 = this.field38904;
       this.field38906 = this.field38904;
       this.method31060(var2);
@@ -171,7 +173,7 @@ public class Class8641 {
          for (int var11 = 0; var11 < this.field38909.length; var11++) {
             ShortSet var7 = this.field38909[var11];
             if (var7 != null) {
-               SectionPos var8 = SectionPos.method8391(var1.getPos(), var11);
+               SectionPos var8 = SectionPos.from(var1.getPos(), var11);
                if (var7.size() != 1) {
                   ChunkSection var9 = var1.getSections()[var8.getY()];
                   SMultiBlockChangePacket var10 = new SMultiBlockChangePacket(var8, var7, var9, this.field38916);
@@ -212,7 +214,7 @@ public class Class8641 {
       this.field38914.method6576(this.field38907, var2).forEach(var1x -> var1x.field4855.sendPacket(var1));
    }
 
-   public CompletableFuture<Either<IChunk, Class7022>> method31053(ChunkStatus var1, Class1649 var2) {
+   public CompletableFuture<Either<IChunk, Class7022>> method31053(ChunkStatus var1, ChunkManager var2) {
       int var5 = var1.method34297();
       CompletableFuture var6 = this.field38899.get(var5);
       if (var6 != null) {
@@ -260,11 +262,11 @@ public class Class8641 {
       this.field38905 = var1;
    }
 
-   public void method31061(Class1649 var1) {
+   public void method31061(ChunkManager var1) {
       ChunkStatus var4 = method31062(this.field38904);
       ChunkStatus var5 = method31062(this.field38905);
-      boolean var6 = this.field38904 <= Class1649.field8951;
-      boolean var7 = this.field38905 <= Class1649.field8951;
+      boolean var6 = this.field38904 <= ChunkManager.MAX_LOADED_LEVEL;
+      boolean var7 = this.field38905 <= ChunkManager.MAX_LOADED_LEVEL;
       ChunkHolderLocationType var8 = method31063(this.field38904);
       ChunkHolderLocationType var9 = method31063(this.field38905);
       if (var6) {
@@ -347,7 +349,7 @@ public class Class8641 {
          CompletableFuture<Either<IChunk, Class7022>> var5 = this.field38899.get(var4);
          if (var5 != null) {
             Optional<IChunk> var6 = var5.getNow(field38893).left();
-            if (var6.isPresent() && var6.get() instanceof Class1672) {
+            if (var6.isPresent() && var6.get() instanceof ChunkPrimer) {
                this.field38899.set(var4, CompletableFuture.<Either<IChunk, Class7022>>completedFuture(Either.left(var1)));
             }
          }

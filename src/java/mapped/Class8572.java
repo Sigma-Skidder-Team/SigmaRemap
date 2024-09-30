@@ -7,6 +7,7 @@ import it.unimi.dsi.fastutil.longs.Long2ObjectLinkedOpenHashMap;
 import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import it.unimi.dsi.fastutil.longs.LongSet;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.world.server.ChunkManager;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,7 +17,7 @@ import java.util.stream.Stream;
 import javax.annotation.Nullable;
 
 public class Class8572<T> {
-   public static final int field38532 = Class1649.field8951 + 2 + 32;
+   public static final int field38532 = ChunkManager.MAX_LOADED_LEVEL + 2 + 32;
    private final List<Long2ObjectLinkedOpenHashMap<List<Optional<T>>>> field38533 = IntStream.range(0, field38532)
       .mapToObj(var0 -> new Long2ObjectLinkedOpenHashMap<List<Optional<T>>>())
       .collect(Collectors.toList());

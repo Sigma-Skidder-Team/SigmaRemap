@@ -15,6 +15,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.network.DebugPacketSender;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
@@ -118,11 +119,11 @@ public class Class7440 {
    }
 
    public static void method24038(ServerWorld var0) {
-      Class7393.method23611(var0);
+      DebugPacketSender.method23611(var0);
    }
 
    private static void method24039(ServerWorld var0, BlockPos var1, String var2) {
-      Class7393.method23610(var0, var1, var2, -2130771968, Integer.MAX_VALUE);
+      DebugPacketSender.method23610(var0, var1, var2, -2130771968, Integer.MAX_VALUE);
    }
 
    public static void method24040(ServerWorld var0, BlockPos var1, Class7879 var2, int var3) {

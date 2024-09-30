@@ -7,18 +7,20 @@ import com.google.common.collect.ImmutableMap.Builder;
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
+import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.gen.OctavesNoiseGenerator;
 
 import java.util.Comparator;
 import java.util.Random;
 
 public abstract class Class6777 extends Class6768<Class8278> {
    private long field29560;
-   private ImmutableMap<BlockState, Class7689> field29561 = ImmutableMap.of();
-   private ImmutableMap<BlockState, Class7689> field29562 = ImmutableMap.of();
-   private Class7689 field29563;
+   private ImmutableMap<BlockState, OctavesNoiseGenerator> field29561 = ImmutableMap.of();
+   private ImmutableMap<BlockState, OctavesNoiseGenerator> field29562 = ImmutableMap.of();
+   private OctavesNoiseGenerator field29563;
 
    public Class6777(Codec<Class8278> var1) {
       super(var1);
@@ -48,20 +50,20 @@ public abstract class Class6777 extends Class6768<Class8278> {
       BlockState var25 = (BlockState)this.field29562
          .entrySet()
          .stream()
-         .max(Comparator.comparing(var3x -> ((Class7689)var3x.getValue()).method25310((double)var4, (double)var11, (double)var5)))
+         .max(Comparator.comparing(var3x -> ((OctavesNoiseGenerator)var3x.getValue()).method25310((double)var4, (double)var11, (double)var5)))
          .get()
          .getKey();
       BlockState var26 = (BlockState)this.field29561
          .entrySet()
          .stream()
-         .max(Comparator.comparing(var3x -> ((Class7689)var3x.getValue()).method25310((double)var4, (double)var11, (double)var5)))
+         .max(Comparator.comparing(var3x -> ((OctavesNoiseGenerator)var3x.getValue()).method25310((double)var4, (double)var11, (double)var5)))
          .get()
          .getKey();
       BlockPos.Mutable var27 = new BlockPos.Mutable();
-      BlockState var28 = var2.getBlockState(var27.method8372(var18, 128, var19));
+      BlockState var28 = var2.getBlockState(var27.setPos(var18, 128, var19));
 
       for (int var29 = 127; var29 >= 0; var29--) {
-         var27.method8372(var18, var29, var19);
+         var27.setPos(var18, var29, var19);
          BlockState var30 = var2.getBlockState(var27);
          if (var28.isIn(var9.getBlock()) && (var30.isAir() || var30 == var10)) {
             for (int var31 = 0; var31 < var20; var31++) {
@@ -73,7 +75,7 @@ public abstract class Class6777 extends Class6768<Class8278> {
                var2.setBlockState(var27, var25, false);
             }
 
-            var27.method8372(var18, var29, var19);
+            var27.setPos(var18, var29, var19);
          }
 
          if ((var28.isAir() || var28 == var10) && var30.isIn(var9.getBlock())) {
@@ -97,19 +99,19 @@ public abstract class Class6777 extends Class6768<Class8278> {
       if (this.field29560 != var1 || this.field29563 == null || this.field29561.isEmpty() || this.field29562.isEmpty()) {
          this.field29561 = method20661(this.method20662(), var1);
          this.field29562 = method20661(this.method20663(), var1 + (long)this.field29561.size());
-         this.field29563 = new Class7689(new Class2420(var1 + (long)this.field29561.size() + (long)this.field29562.size()), ImmutableList.of(0));
+         this.field29563 = new OctavesNoiseGenerator(new SharedSeedRandom(var1 + (long)this.field29561.size() + (long)this.field29562.size()), ImmutableList.of(0));
       }
 
       this.field29560 = var1;
    }
 
-   private static ImmutableMap<BlockState, Class7689> method20661(ImmutableList<BlockState> var0, long var1) {
+   private static ImmutableMap<BlockState, OctavesNoiseGenerator> method20661(ImmutableList<BlockState> var0, long var1) {
       Builder var5 = new Builder();
       UnmodifiableIterator var6 = var0.iterator();
 
       while (var6.hasNext()) {
          BlockState var7 = (BlockState)var6.next();
-         var5.put(var7, new Class7689(new Class2420(var1), ImmutableList.of(-4)));
+         var5.put(var7, new OctavesNoiseGenerator(new SharedSeedRandom(var1), ImmutableList.of(-4)));
          var1++;
       }
 

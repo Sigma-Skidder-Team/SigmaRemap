@@ -13,6 +13,7 @@ import net.minecraft.client.util.Util;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.WorldGenRegistries;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.gen.carver.ConfiguredCarver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -24,9 +25,9 @@ public abstract class DynamicRegistries {
          method32456(var2, Registry.DIMENSION_TYPE_KEY, DimensionType.CODEC, DimensionType.CODEC);
          method32456(var2, Registry.BIOME_KEY, Biome.field40307, Biome.field40308);
          method32455(var2, Registry.field16100, Class9319.field43262);
-         method32455(var2, Registry.field16101, Class6815.field29674);
+         method32455(var2, Registry.field16101, ConfiguredCarver.field29674);
          method32455(var2, Registry.field16102, Class7909.field33882);
-         method32455(var2, Registry.field16103, Class9300.field43171);
+         method32455(var2, Registry.field16103, StructureFeature.field43171);
          method32455(var2, Registry.field16104, Class7525.field32305);
          method32455(var2, Registry.field16105, Class9369.field43491);
          method32455(var2, Registry.NOISE_SETTINGS_KEY, DimensionSettings.field43220);

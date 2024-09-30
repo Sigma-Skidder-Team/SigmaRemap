@@ -16,6 +16,7 @@ import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.vector.Vector3i;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.IWorld;
+import net.minecraft.world.gen.feature.structure.StructureManager;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -103,7 +104,7 @@ public class Class4184 extends Class4180 {
    }
 
    @Override
-   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
       if (!var5.method38396(this.field20455)) {
          return true;
       } else {
@@ -194,7 +195,7 @@ public class Class4184 extends Class4180 {
                if (var1.nextDouble() < (double)var19) {
                   int var20 = method12958(var2, var15, var16, this.field20469);
                   int var21 = !var5 ? Math.min(this.field20444.field45679, var20) : var20;
-                  var14.method8372(var15, var21, var16);
+                  var14.setPos(var15, var21, var16);
                   if (Math.abs(var21 - this.field20444.field45679) <= 3 && this.method12956(var2, var14)) {
                      this.method12957(var1, var2, var14);
                      if (this.field20470.field35677) {

@@ -18,7 +18,7 @@ public final class Dimension {
    public static final Codec<Dimension> field43951 = RecordCodecBuilder.create(
       var0 -> var0.group(
                DimensionType.DIMENSION_TYPE_CODEC.fieldOf("type").forGetter(Dimension::method36411),
-               ChunkGenerator.field24984.fieldOf("generator").forGetter(Dimension::method36413)
+               ChunkGenerator.field_235948_a_.fieldOf("generator").forGetter(Dimension::method36413)
             )
             .apply(var0, var0.stable(Dimension::new))
    );
@@ -88,12 +88,12 @@ public final class Dimension {
                return false;
             } else if (!var10.method17792(var0, DimensionSettings.field_242737_f)) {
                return false;
-            } else if (var9.method17824() instanceof Class1686) {
-               Class1686 var11 = (Class1686)var9.method17824();
+            } else if (var9.getBiomeProvider() instanceof Class1686) {
+               Class1686 var11 = (Class1686)var9.getBiomeProvider();
                if (!var11.method7210(var0)) {
                   return false;
-               } else if (var10.method17824() instanceof EndBiomeProvider) {
-                  EndBiomeProvider var12 = (EndBiomeProvider)var10.method17824();
+               } else if (var10.getBiomeProvider() instanceof EndBiomeProvider) {
+                  EndBiomeProvider var12 = (EndBiomeProvider)var10.getBiomeProvider();
                   return var12.method7236(var0);
                } else {
                   return false;

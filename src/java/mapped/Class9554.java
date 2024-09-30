@@ -18,7 +18,7 @@ public class Class9554 {
          (LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("seed").requires(var1x -> !var1 || var1x.method20129(2)))
             .executes(
                var0x -> {
-                  long var3 = ((Class6619)var0x.getSource()).method20172().method6967();
+                  long var3 = ((Class6619)var0x.getSource()).method20172().getSeed();
                   IFormattableTextComponent var5 = TextComponentUtils.wrapWithSquareBrackets(
                      new StringTextComponent(String.valueOf(var3))
                         .modifyStyle(

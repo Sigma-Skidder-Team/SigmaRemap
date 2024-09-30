@@ -267,7 +267,7 @@ public class Class3250 extends HorizontalBlock implements Class3245 {
       BlockPos.Mutable var7 = new BlockPos.Mutable();
 
       for (int[] var11 : var3) {
-         var7.method8372(var2.getX() + var11[0], var2.getY(), var2.getZ() + var11[1]);
+         var7.setPos(var2.getX() + var11[0], var2.getY(), var2.getZ() + var11[1]);
          Vector3d var12 = Class4527.method14428(var0, var1, var7, var4);
          if (var12 != null) {
             return Optional.<Vector3d>of(var12);

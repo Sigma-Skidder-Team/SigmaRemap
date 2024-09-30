@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.world.biome;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -11,21 +11,23 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Supplier;
 
+import mapped.*;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.IStringSerializable;
+import net.minecraft.world.gen.carver.ConfiguredCarver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Class7478 {
+public class BiomeGenerationSettings {
    public static final Logger field32135 = LogManager.getLogger();
-   public static final Class7478 field32136 = new Class7478(() -> Class9109.field41856, ImmutableMap.of(), ImmutableList.of(), ImmutableList.of());
-   public static final MapCodec<Class7478> field32137 = RecordCodecBuilder.mapCodec(
+   public static final BiomeGenerationSettings field32136 = new BiomeGenerationSettings(() -> Class9109.field41856, ImmutableMap.of(), ImmutableList.of(), ImmutableList.of());
+   public static final MapCodec<BiomeGenerationSettings> field32137 = RecordCodecBuilder.mapCodec(
       var0 -> var0.group(
                Class9319.field43263.fieldOf("surface_builder").forGetter(var0x -> var0x.field32138),
                Codec.simpleMap(
-                     Class97.field261,
-                     Class6815.field29676.promotePartial(Util.func_240982_a_("Carver: ", field32135::error)),
-                     IStringSerializable.method260(Class97.values())
+                     GenerationStageCarving.field261,
+                     ConfiguredCarver.field29676.promotePartial(Util.func_240982_a_("Carver: ", field32135::error)),
+                     IStringSerializable.method260(GenerationStageCarving.values())
                   )
                   .fieldOf("carvers")
                   .forGetter(var0x -> var0x.field32139),
@@ -34,24 +36,24 @@ public class Class7478 {
                   .listOf()
                   .fieldOf("features")
                   .forGetter(var0x -> var0x.field32140),
-               Class9300.field43173
+               StructureFeature.field43173
                   .promotePartial(Util.func_240982_a_("Structure start: ", field32135::error))
                   .fieldOf("starts")
                   .forGetter(var0x -> var0x.field32141)
             )
-            .apply(var0, Class7478::new)
+            .apply(var0, BiomeGenerationSettings::new)
    );
    private final Supplier<Class9319<?>> field32138;
-   private final Map<Class97, List<Supplier<Class6815<?>>>> field32139;
+   private final Map<GenerationStageCarving, List<Supplier<ConfiguredCarver<?>>>> field32139;
    private final List<List<Supplier<Class7909<?, ?>>>> field32140;
-   private final List<Supplier<Class9300<?, ?>>> field32141;
+   private final List<Supplier<StructureFeature<?, ?>>> field32141;
    private final List<Class7909<?, ?>> field32142;
 
-   public Class7478(
+   public BiomeGenerationSettings(
            Supplier<Class9319<?>> var1,
-           Map<Class97, List<Supplier<Class6815<?>>>> var2,
+           Map<GenerationStageCarving, List<Supplier<ConfiguredCarver<?>>>> var2,
            List<List<Supplier<Class7909<?, ?>>>> var3,
-           List<Supplier<Class9300<?, ?>>> var4
+           List<Supplier<StructureFeature<?, ?>>> var4
    ) {
       this.field32138 = var1;
       this.field32139 = var2;
@@ -65,21 +67,21 @@ public class Class7478 {
          .collect(ImmutableList.toImmutableList());
    }
 
-   public List<Supplier<Class6815<?>>> method24276(Class97 var1) {
+   public List<Supplier<ConfiguredCarver<?>>> getCarvers(GenerationStageCarving var1) {
       return this.field32139.getOrDefault(var1, ImmutableList.of());
    }
 
-   public boolean method24277(Structure<?> var1) {
-      return this.field32141.stream().anyMatch(var1x -> var1x.get().field43174 == var1);
+   public boolean hasStructure(Structure<?> var1) {
+      return this.field32141.stream().anyMatch(var1x -> var1x.get().field_236268_b_ == var1);
    }
 
-   public Collection<Supplier<Class9300<?, ?>>> method24278() {
+   public Collection<Supplier<StructureFeature<?, ?>>> getStructures() {
       return this.field32141;
    }
 
-   public Class9300<?, ?> method24279(Class9300<?, ?> var1) {
-      return (Class9300<?, ?>)DataFixUtils.orElse(
-         this.field32141.stream().<Class9300>map(Supplier::get).filter(var1x -> var1x.field43174 == var1.field43174).findAny(), var1
+   public StructureFeature<?, ?> method24279(StructureFeature<?, ?> var1) {
+      return (StructureFeature<?, ?>)DataFixUtils.orElse(
+         this.field32141.stream().<StructureFeature>map(Supplier::get).filter(var1x -> var1x.field_236268_b_ == var1.field_236268_b_).findAny(), var1
       );
    }
 

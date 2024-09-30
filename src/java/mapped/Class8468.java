@@ -1,35 +1,37 @@
 package mapped;
 
+import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
+import net.minecraft.world.gen.feature.structure.StructureFeatures;
 
 public class Class8468 {
    private static String[] field36289;
 
    public static void method29770(Class7935 var0) {
-      var0.method26693(Class9438.field43836);
-      var0.method26693(Class9438.field43844);
+      var0.method26693(StructureFeatures.field43836);
+      var0.method26693(StructureFeatures.field_244145_k);
    }
 
    public static void method29771(Class7935 var0) {
-      var0.method26693(Class9438.field43835);
-      var0.method26693(Class9438.field43844);
+      var0.method26693(StructureFeatures.field43835);
+      var0.method26693(StructureFeatures.field_244145_k);
    }
 
    public static void method29772(Class7935 var0) {
-      var0.method26693(Class9438.field43835);
-      var0.method26693(Class9438.field43841);
+      var0.method26693(StructureFeatures.field43835);
+      var0.method26693(StructureFeatures.field43841);
    }
 
    public static void method29773(Class7935 var0) {
-      var0.method26692(Class97.field259, Class7827.field33606);
-      var0.method26692(Class97.field259, Class7827.field33607);
+      var0.method26692(GenerationStageCarving.field259, Class7827.field33606);
+      var0.method26692(GenerationStageCarving.field259, Class7827.field33607);
    }
 
    public static void method29774(Class7935 var0) {
-      var0.method26692(Class97.field259, Class7827.field33608);
-      var0.method26692(Class97.field259, Class7827.field33607);
-      var0.method26692(Class97.field260, Class7827.field33609);
-      var0.method26692(Class97.field260, Class7827.field33610);
+      var0.method26692(GenerationStageCarving.field259, Class7827.field33608);
+      var0.method26692(GenerationStageCarving.field259, Class7827.field33607);
+      var0.method26692(GenerationStageCarving.field260, Class7827.field33609);
+      var0.method26692(GenerationStageCarving.field260, Class7827.field33610);
    }
 
    public static void method29775(Class7935 var0) {
@@ -329,14 +331,14 @@ public class Class8468 {
    }
 
    public static void method29838(Class9328 var0) {
-      var0.method35249(Class179.field624, new Class6692(EntityType.SHEEP, 12, 4, 4));
-      var0.method35249(Class179.field624, new Class6692(EntityType.field41064, 10, 4, 4));
-      var0.method35249(Class179.field624, new Class6692(EntityType.field41014, 10, 4, 4));
-      var0.method35249(Class179.field624, new Class6692(EntityType.field41016, 8, 4, 4));
+      var0.method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.SHEEP, 12, 4, 4));
+      var0.method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.field41064, 10, 4, 4));
+      var0.method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.field41014, 10, 4, 4));
+      var0.method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.field41016, 8, 4, 4));
    }
 
    public static void method29839(Class9328 var0) {
-      var0.method35249(Class179.field625, new Class6692(EntityType.field41008, 10, 8, 8));
+      var0.method35249(EntityClassification.field625, new MobSpawnInfoSpawners(EntityType.field41008, 10, 8, 8));
    }
 
    public static void method29840(Class9328 var0) {
@@ -345,64 +347,64 @@ public class Class8468 {
    }
 
    public static void method29841(Class9328 var0, int var1, int var2, int var3) {
-      var0.method35249(Class179.field626, new Class6692(EntityType.field41086, var1, 1, var2));
-      var0.method35249(Class179.field627, new Class6692(EntityType.field41015, var3, 3, 6));
+      var0.method35249(EntityClassification.field626, new MobSpawnInfoSpawners(EntityType.field41086, var1, 1, var2));
+      var0.method35249(EntityClassification.field627, new MobSpawnInfoSpawners(EntityType.field41015, var3, 3, 6));
       method29840(var0);
-      var0.method35249(Class179.field623, new Class6692(EntityType.field41021, 5, 1, 1));
+      var0.method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41021, 5, 1, 1));
    }
 
    public static void method29842(Class9328 var0, int var1, int var2) {
-      var0.method35249(Class179.field626, new Class6692(EntityType.field41086, var1, var2, 4));
-      var0.method35249(Class179.field627, new Class6692(EntityType.field41095, 25, 8, 8));
-      var0.method35249(Class179.field626, new Class6692(EntityType.field41018, 2, 1, 2));
+      var0.method35249(EntityClassification.field626, new MobSpawnInfoSpawners(EntityType.field41086, var1, var2, 4));
+      var0.method35249(EntityClassification.field627, new MobSpawnInfoSpawners(EntityType.field41095, 25, 8, 8));
+      var0.method35249(EntityClassification.field626, new MobSpawnInfoSpawners(EntityType.field41018, 2, 1, 2));
       method29840(var0);
    }
 
    public static void method29843(Class9328 var0) {
       method29838(var0);
-      var0.method35249(Class179.field624, new Class6692(EntityType.field41038, 5, 2, 6));
-      var0.method35249(Class179.field624, new Class6692(EntityType.field41019, 1, 1, 3));
+      var0.method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.field41038, 5, 2, 6));
+      var0.method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.field41019, 1, 1, 3));
       method29840(var0);
    }
 
    public static void method29844(Class9328 var0) {
-      var0.method35249(Class179.field624, new Class6692(EntityType.RABBIT, 10, 2, 3));
-      var0.method35249(Class179.field624, new Class6692(EntityType.field41068, 1, 1, 2));
+      var0.method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.RABBIT, 10, 2, 3));
+      var0.method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.field41068, 1, 1, 2));
       method29839(var0);
       method29846(var0, 95, 5, 20);
-      var0.method35249(Class179.field623, new Class6692(EntityType.field41087, 80, 4, 4));
+      var0.method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41087, 80, 4, 4));
    }
 
    public static void method29845(Class9328 var0) {
-      var0.method35249(Class179.field624, new Class6692(EntityType.RABBIT, 4, 2, 3));
+      var0.method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.RABBIT, 4, 2, 3));
       method29839(var0);
       method29846(var0, 19, 1, 100);
-      var0.method35249(Class179.field623, new Class6692(EntityType.field41039, 80, 4, 4));
+      var0.method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41039, 80, 4, 4));
    }
 
    public static void method29846(Class9328 var0, int var1, int var2, int var3) {
-      var0.method35249(Class179.field623, new Class6692(EntityType.field41085, 100, 4, 4));
-      var0.method35249(Class179.field623, new Class6692(EntityType.field41107, var1, 4, 4));
-      var0.method35249(Class179.field623, new Class6692(EntityType.field41109, var2, 1, 1));
-      var0.method35249(Class179.field623, new Class6692(EntityType.field41078, var3, 4, 4));
-      var0.method35249(Class179.field623, new Class6692(EntityType.field41017, 100, 4, 4));
-      var0.method35249(Class179.field623, new Class6692(EntityType.field41080, 100, 4, 4));
-      var0.method35249(Class179.field623, new Class6692(EntityType.field41025, 10, 1, 4));
-      var0.method35249(Class179.field623, new Class6692(EntityType.field41101, 5, 1, 1));
+      var0.method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41085, 100, 4, 4));
+      var0.method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41107, var1, 4, 4));
+      var0.method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41109, var2, 1, 1));
+      var0.method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41078, var3, 4, 4));
+      var0.method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41017, 100, 4, 4));
+      var0.method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41080, 100, 4, 4));
+      var0.method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41025, 10, 1, 4));
+      var0.method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41101, 5, 1, 1));
    }
 
    public static void method29847(Class9328 var0) {
-      var0.method35249(Class179.field624, new Class6692(EntityType.field41058, 8, 4, 8));
+      var0.method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.field41058, 8, 4, 8));
       method29839(var0);
    }
 
    public static void method29848(Class9328 var0) {
       method29838(var0);
-      var0.method35249(Class179.field624, new Class6692(EntityType.field41014, 10, 4, 4));
+      var0.method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.field41014, 10, 4, 4));
       method29840(var0);
    }
 
    public static void method29849(Class9328 var0) {
-      var0.method35249(Class179.field623, new Class6692(EntityType.field41025, 10, 4, 4));
+      var0.method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41025, 10, 4, 4));
    }
 }

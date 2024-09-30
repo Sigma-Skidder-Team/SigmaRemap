@@ -25,7 +25,7 @@ public final class Class201 extends LightEngine<Class7585, Class209> {
       int var6 = BlockPos.unpackY(var1);
       int var7 = BlockPos.unpackZ(var1);
       IBlockReader var8 = this.chunkProvider.getChunkForLight(var5 >> 4, var7 >> 4);
-      return var8 == null ? 0 : var8.getLightValue(this.field750.method8372(var5, var6, var7));
+      return var8 == null ? 0 : var8.getLightValue(this.field750.setPos(var5, var6, var7));
    }
 
    @Override

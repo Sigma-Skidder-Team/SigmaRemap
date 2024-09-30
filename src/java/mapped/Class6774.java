@@ -51,7 +51,7 @@ public class Class6774 extends Class6773 {
       int var21 = var4 & 15;
       int var22 = var5 & 15;
       BlockState var23 = field29495;
-      Class8277 var24 = var3.method32507().method24283();
+      Class8277 var24 = var3.getGenerationSettings().method24283();
       BlockState var25 = var24.method28935();
       BlockState var26 = var24.method28934();
       BlockState var27 = var25;
@@ -62,7 +62,7 @@ public class Class6774 extends Class6773 {
       BlockPos.Mutable var38 = new BlockPos.Mutable();
 
       for (int var39 = Math.max(var6, (int)var17 + 1); var39 >= 0; var39--) {
-         var38.method8372(var21, var39, var22);
+         var38.setPos(var21, var39, var22);
          if (var2.getBlockState(var38).isAir() && var39 < (int)var17) {
             var2.setBlockState(var38, var9, false);
          }

@@ -8,6 +8,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.server.ServerWorld;
+import net.minecraft.world.server.TicketType;
 
 import java.util.Comparator;
 import java.util.Optional;
@@ -25,13 +26,13 @@ public class Class3634 {
       int var6 = !var2 ? 128 : 16;
       var5.method6682(this.field19668, var1, var6);
       Optional<Class9343> var7 = var5.method6665(var0 -> var0 == Class4913.field22770, var1, var6, Class2093.field13637)
-         .sorted(Comparator.<Class9343>comparingDouble(var1x -> var1x.method35355().method8318(var1)).thenComparingInt(var0 -> var0.method35355().getY()))
+         .sorted(Comparator.<Class9343>comparingDouble(var1x -> var1x.method35355().distanceSq(var1)).thenComparingInt(var0 -> var0.method35355().getY()))
          .filter(var1x -> this.field19668.getBlockState(var1x.method35355()).method23462(BlockStateProperties.field39712))
          .findFirst();
       return var7.<TeleportationRepositioner>map(
          var1x -> {
             BlockPos var4 = var1x.method35355();
-            this.field19668.getChunkProvider().registerTicket(Class8561.field38485, new ChunkPos(var4), 3, var4);
+            this.field19668.getChunkProvider().registerTicket(TicketType.field38485, new ChunkPos(var4), 3, var4);
             BlockState var5x = this.field19668.getBlockState(var4);
             return Class7215.method22658(
                var4, var5x.<Direction.Axis>get(BlockStateProperties.field39712), 21, Direction.Axis.Y, 21, var2x -> this.field19668.getBlockState(var2x) == var5x
@@ -70,7 +71,7 @@ public class Class3634 {
                      if (var21 <= 0 || var21 >= 3) {
                         var16.method8308(var19);
                         if (this.method12333(var16, var14, var5, 0)) {
-                           double var22 = var1.method8318(var16);
+                           double var22 = var1.distanceSq(var16);
                            if (this.method12333(var16, var14, var5, -1) && this.method12333(var16, var14, var5, 1) && (var6 == -1.0 || var6 > var22)) {
                               var6 = var22;
                               var8 = var16.toImmutable();

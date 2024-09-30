@@ -306,10 +306,10 @@ public class Class6763 extends Class6762 {
    @Override
    public Class2163 method20621(IBlockReader var1, int var2, int var3, int var4) {
       BlockPos.Mutable var7 = new BlockPos.Mutable();
-      Class2163 var8 = method20635(var1, var7.method8372(var2, var3, var4));
+      Class2163 var8 = method20635(var1, var7.setPos(var2, var3, var4));
       if (var8 == Class2163.field14185 && var3 >= 1) {
-         BlockState var9 = var1.getBlockState(var7.method8372(var2, var3 - 1, var4));
-         Class2163 var10 = method20635(var1, var7.method8372(var2, var3 - 1, var4));
+         BlockState var9 = var1.getBlockState(var7.setPos(var2, var3 - 1, var4));
+         Class2163 var10 = method20635(var1, var7.setPos(var2, var3 - 1, var4));
          if (var10 == Class2163.field14196 || var9.isIn(Blocks.field36890) || var10 == Class2163.field14190 || var9.isIn(BlockTags.field32809)
             )
           {
@@ -336,7 +336,7 @@ public class Class6763 extends Class6762 {
       }
 
       if (var8 == Class2163.field14186 || var8 == Class2163.field14185) {
-         var8 = method20634(var1, var7.method8372(var2, var3, var4), var8);
+         var8 = method20634(var1, var7.setPos(var2, var3, var4), var8);
       }
 
       return var8;

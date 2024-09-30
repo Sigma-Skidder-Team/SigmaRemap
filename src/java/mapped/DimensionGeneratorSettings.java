@@ -149,11 +149,11 @@ public class DimensionGeneratorSettings {
    }
 
    public boolean method26267() {
-      return this.method26265() instanceof Class5647;
+      return this.method26265() instanceof DebugChunkGenerator;
    }
 
    public boolean method26268() {
-      return this.method26265() instanceof Class5648;
+      return this.method26265() instanceof FlatChunkGenerator;
    }
 
    public boolean func_236229_j_() {
@@ -210,11 +210,11 @@ public class DimensionGeneratorSettings {
                method26262(
                   var14,
                   var17,
-                  new Class5648(Class9733.field45443.parse(var21).resultOrPartial(field33651::error).orElseGet(() -> Class9733.method38132(var15)))
+                  new FlatChunkGenerator(Class9733.field45443.parse(var21).resultOrPartial(field33651::error).orElseGet(() -> Class9733.method38132(var15)))
                )
             );
          case "debug_all_block_states":
-            return new DimensionGeneratorSettings(var10, var7, false, method26262(var14, var17, new Class5647(var15)));
+            return new DimensionGeneratorSettings(var10, var7, false, method26262(var14, var17, new DebugChunkGenerator(var15)));
          case "amplified":
             return new DimensionGeneratorSettings(
                var10,
@@ -247,7 +247,7 @@ public class DimensionGeneratorSettings {
             RegistryKey var12 = (RegistryKey)var11.getKey();
             var7.<Dimension>register(
                var12,
-               new Dimension(((Dimension)var11.getValue()).method36411(), ((Dimension)var11.getValue()).method36413().method17791(var8)),
+               new Dimension(((Dimension)var11.getValue()).method36411(), ((Dimension)var11.getValue()).method36413().func_230349_a_(var8)),
                this.field33655.method9185((Dimension)var11.getValue())
             );
          }

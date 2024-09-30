@@ -6,6 +6,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.gen.feature.structure.StructureManager;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 
 import java.util.List;
@@ -53,7 +54,7 @@ public class Class4208 extends Class4194 {
    }
 
    @Override
-   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
       for (int var10 = 0; var10 < this.field20515; var10++) {
          this.method12923(var1, Blocks.field36615.getDefaultState(), 0, 0, var10, var5);
          this.method12923(var1, Blocks.field36615.getDefaultState(), 1, 0, var10, var5);

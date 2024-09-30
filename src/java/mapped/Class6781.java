@@ -3,9 +3,11 @@ package mapped;
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.gen.OctavesNoiseGenerator;
 
 import java.util.Random;
 import java.util.stream.IntStream;
@@ -15,7 +17,7 @@ public class Class6781 extends Class6768<Class8278> {
    private static final BlockState field29490 = Blocks.GRAVEL.getDefaultState();
    private static final BlockState field29574 = Blocks.SOUL_SAND.getDefaultState();
    public long field29575;
-   public Class7689 field29576;
+   public OctavesNoiseGenerator field29576;
 
    public Class6781(Codec<Class8278> var1) {
       super(var1);
@@ -48,7 +50,7 @@ public class Class6781 extends Class6768<Class8278> {
       BlockState var28 = var14.method28935();
 
       for (int var29 = 127; var29 >= 0; var29--) {
-         var25.method8372(var18, var29, var19);
+         var25.setPos(var18, var29, var19);
          BlockState var30 = var2.getBlockState(var25);
          if (!var30.isAir()) {
             if (var30.isIn(var9.getBlock())) {
@@ -99,7 +101,7 @@ public class Class6781 extends Class6768<Class8278> {
    @Override
    public void method20658(long var1) {
       if (this.field29575 != var1 || this.field29576 == null) {
-         this.field29576 = new Class7689(new Class2420(var1), IntStream.rangeClosed(-3, 0));
+         this.field29576 = new OctavesNoiseGenerator(new SharedSeedRandom(var1), IntStream.rangeClosed(-3, 0));
       }
 
       this.field29575 = var1;

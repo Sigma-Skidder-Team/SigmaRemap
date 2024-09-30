@@ -36,8 +36,8 @@ public class SUpdateLightPacket implements IPacket<IClientPlayNetHandler> {
       this.field24505 = Lists.newArrayList();
 
       for (int var6 = 0; var6 < 18; var6++) {
-         NibbleArray var7 = var2.getLightEngine(LightType.SKY).method642(SectionPos.method8391(var1, -1 + var6));
-         NibbleArray var8 = var2.getLightEngine(LightType.BLOCK).method642(SectionPos.method8391(var1, -1 + var6));
+         NibbleArray var7 = var2.getLightEngine(LightType.SKY).method642(SectionPos.from(var1, -1 + var6));
+         NibbleArray var8 = var2.getLightEngine(LightType.BLOCK).method642(SectionPos.from(var1, -1 + var6));
          if (var7 != null) {
             if (!var7.method20677()) {
                this.field24500 |= 1 << var6;
@@ -69,7 +69,7 @@ public class SUpdateLightPacket implements IPacket<IClientPlayNetHandler> {
 
       for (int var8 = 0; var8 < 18; var8++) {
          if ((this.field24500 & 1 << var8) != 0) {
-            NibbleArray var9 = var2.getLightEngine(LightType.SKY).method642(SectionPos.method8391(var1, -1 + var8));
+            NibbleArray var9 = var2.getLightEngine(LightType.SKY).method642(SectionPos.from(var1, -1 + var8));
             if (var9 != null && !var9.method20677()) {
                this.field24504.add((byte[])var9.method20669().clone());
             } else {
@@ -81,7 +81,7 @@ public class SUpdateLightPacket implements IPacket<IClientPlayNetHandler> {
          }
 
          if ((this.field24501 & 1 << var8) != 0) {
-            NibbleArray var10 = var2.getLightEngine(LightType.BLOCK).method642(SectionPos.method8391(var1, -1 + var8));
+            NibbleArray var10 = var2.getLightEngine(LightType.BLOCK).method642(SectionPos.from(var1, -1 + var8));
             if (var10 != null && !var10.method20677()) {
                this.field24505.add((byte[])var10.method20669().clone());
             } else {

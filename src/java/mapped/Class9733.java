@@ -17,7 +17,11 @@ import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeGenerationSettings;
 import net.minecraft.world.biome.Biomes;
+import net.minecraft.world.gen.feature.structure.StructureFeatures;
+import net.minecraft.world.gen.settings.DimensionStructuresSettings;
+import net.minecraft.world.gen.settings.StructureSpreadSettings;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -26,7 +30,7 @@ public class Class9733 {
    public static final Codec<Class9733> field45443 = RecordCodecBuilder.<Class9733>create(
          var0 -> var0.group(
                   Class8611.<Biome>method30859(Registry.BIOME_KEY).forGetter(var0x -> var0x.field45445),
-                  Class9763.field45673.fieldOf("structures").forGetter(Class9733::method38126),
+                  DimensionStructuresSettings.field45673.fieldOf("structures").forGetter(Class9733::method38126),
                   Class9537.field44402.listOf().fieldOf("layers").forGetter(Class9733::method38129),
                   Codec.BOOL.fieldOf("lakes").orElse(false).forGetter(var0x -> var0x.field45452),
                   Codec.BOOL.fieldOf("features").orElse(false).forGetter(var0x -> var0x.field45451),
@@ -38,26 +42,26 @@ public class Class9733 {
                .apply(var0, Class9733::new)
       )
       .stable();
-   private static final Map<Structure<?>, Class9300<?, ?>> field45444 = Util.<Map<Structure<?>, Class9300<?, ?>>>make(Maps.newHashMap(), var0 -> {
-      var0.put(Structure.MINESHAFT, Class9438.field43835);
-      var0.put(Structure.field18073, Class9438.field43853);
-      var0.put(Structure.STRONGHOLD, Class9438.field43844);
-      var0.put(Structure.SWAMP_HUT, Class9438.field43843);
-      var0.put(Structure.DESERT_PYRAMID, Class9438.field43839);
-      var0.put(Structure.JUNGLE_PYRAMID, Class9438.field43838);
-      var0.put(Structure.IGLOO, Class9438.field43840);
-      var0.put(Structure.field18069, Class9438.field43846);
-      var0.put(Structure.SHIPWRECK, Class9438.field43841);
-      var0.put(Structure.MONUMENT, Class9438.field43845);
-      var0.put(Structure.field18071, Class9438.field43850);
-      var0.put(Structure.MANSION, Class9438.field43837);
-      var0.put(Structure.field18070, Class9438.field43848);
-      var0.put(Structure.PILLAGER_OUTPOST, Class9438.field43834);
-      var0.put(Structure.RUINED_PORTAL, Class9438.field43858);
-      var0.put(Structure.field18075, Class9438.field43852);
+   private static final Map<Structure<?>, StructureFeature<?, ?>> field45444 = Util.<Map<Structure<?>, StructureFeature<?, ?>>>make(Maps.newHashMap(), var0 -> {
+      var0.put(Structure.MINESHAFT, StructureFeatures.field43835);
+      var0.put(Structure.field18073, StructureFeatures.field43853);
+      var0.put(Structure.STRONGHOLD, StructureFeatures.field_244145_k);
+      var0.put(Structure.SWAMP_HUT, StructureFeatures.field43843);
+      var0.put(Structure.DESERT_PYRAMID, StructureFeatures.field43839);
+      var0.put(Structure.JUNGLE_PYRAMID, StructureFeatures.field43838);
+      var0.put(Structure.IGLOO, StructureFeatures.field43840);
+      var0.put(Structure.field18069, StructureFeatures.field43846);
+      var0.put(Structure.SHIPWRECK, StructureFeatures.field43841);
+      var0.put(Structure.MONUMENT, StructureFeatures.field43845);
+      var0.put(Structure.field18071, StructureFeatures.field43850);
+      var0.put(Structure.MANSION, StructureFeatures.field43837);
+      var0.put(Structure.field18070, StructureFeatures.field43848);
+      var0.put(Structure.PILLAGER_OUTPOST, StructureFeatures.field43834);
+      var0.put(Structure.RUINED_PORTAL, StructureFeatures.field43858);
+      var0.put(Structure.field18075, StructureFeatures.field43852);
    });
    private final Registry<Biome> field45445;
-   private final Class9763 field45446;
+   private final DimensionStructuresSettings field45446;
    private final List<Class9537> field45447 = Lists.newArrayList();
    private Supplier<Biome> field45448;
    private final BlockState[] field45449 = new BlockState[256];
@@ -65,7 +69,7 @@ public class Class9733 {
    private boolean field45451 = false;
    private boolean field45452 = false;
 
-   public Class9733(Registry<Biome> var1, Class9763 var2, List<Class9537> var3, boolean var4, boolean var5, Optional<Supplier<Biome>> var6) {
+   public Class9733(Registry<Biome> var1, DimensionStructuresSettings var2, List<Class9537> var3, boolean var4, boolean var5, Optional<Supplier<Biome>> var6) {
       this(var2, var1);
       if (var4) {
          this.method38124();
@@ -85,17 +89,17 @@ public class Class9733 {
       }
    }
 
-   public Class9733(Class9763 var1, Registry<Biome> var2) {
+   public Class9733(DimensionStructuresSettings var1, Registry<Biome> var2) {
       this.field45445 = var2;
       this.field45446 = var1;
       this.field45448 = () -> var2.getOrThrow(Biomes.PLAINS);
    }
 
-   public Class9733 method38121(Class9763 var1) {
+   public Class9733 method38121(DimensionStructuresSettings var1) {
       return this.method38122(this.field45447, var1);
    }
 
-   public Class9733 method38122(List<Class9537> var1, Class9763 var2) {
+   public Class9733 method38122(List<Class9537> var1, DimensionStructuresSettings var2) {
       Class9733 var5 = new Class9733(var2, this.field45445);
 
       for (Class9537 var7 : var1) {
@@ -125,7 +129,7 @@ public class Class9733 {
 
    public Biome method38125() {
       Biome var3 = this.method38127();
-      Class7478 var4 = var3.method32507();
+      BiomeGenerationSettings var4 = var3.getGenerationSettings();
       Class7935 var5 = new Class7935().method26689(var4.method24282());
       if (this.field45452) {
          var5.method26690(Class1993.field12999, Class9104.field41673);
@@ -168,11 +172,11 @@ public class Class9733 {
          .method37916(var3.method32516())
          .method37917(var3.method32519())
          .method37919(var5.method26695())
-         .method37918(var3.method32499())
+         .method37918(var3.getMobSpawnInfo())
          .method37921();
    }
 
-   public Class9763 method38126() {
+   public DimensionStructuresSettings method38126() {
       return this.field45446;
    }
 
@@ -215,8 +219,8 @@ public class Class9733 {
    }
 
    public static Class9733 method38132(Registry<Biome> var0) {
-      Class9763 var3 = new Class9763(
-         Optional.<Class9245>of(Class9763.field45675), Maps.newHashMap(ImmutableMap.of(Structure.field18073, Class9763.field45674.get(Structure.field18073)))
+      DimensionStructuresSettings var3 = new DimensionStructuresSettings(
+         Optional.<StructureSpreadSettings>of(DimensionStructuresSettings.field45675), Maps.newHashMap(ImmutableMap.of(Structure.field18073, DimensionStructuresSettings.field45674.get(Structure.field18073)))
       );
       Class9733 var4 = new Class9733(var3, var0);
       var4.field45448 = () -> var0.getOrThrow(Biomes.PLAINS);

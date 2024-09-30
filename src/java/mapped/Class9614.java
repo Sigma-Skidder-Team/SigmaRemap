@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.passive.WolfEntity;
 import com.google.common.collect.ImmutableMap;
 import java.util.Map;
@@ -101,7 +102,7 @@ public class Class9614 {
    public static void method37377() {
       Registry.ENTITY_TYPE
          .method9192()
-         .filter(var0 -> var0.method33209() != Class179.field628)
+         .filter(var0 -> var0.method33209() != EntityClassification.field628)
          .filter(var0 -> !method37376((EntityType<?>)var0))
          .<ResourceLocation>map(Registry.ENTITY_TYPE::getKey)
          .forEach(var0 -> {

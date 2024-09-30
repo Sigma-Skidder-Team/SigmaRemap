@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.world.gen;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
@@ -7,28 +7,31 @@ import it.unimi.dsi.fastutil.doubles.DoubleList;
 import it.unimi.dsi.fastutil.ints.IntBidirectionalIterator;
 import it.unimi.dsi.fastutil.ints.IntRBTreeSet;
 import it.unimi.dsi.fastutil.ints.IntSortedSet;
+import mapped.Class7690;
+import mapped.Class8718;
+import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.List;
 import java.util.stream.IntStream;
 import javax.annotation.Nullable;
 
-public class Class7689 implements Class7690 {
+public class OctavesNoiseGenerator implements Class7690 {
    private final Class8718[] field32928;
    private final DoubleList field32929;
    private final double field32930;
    private final double field32931;
 
-   public Class7689(Class2420 var1, IntStream var2) {
+   public OctavesNoiseGenerator(SharedSeedRandom var1, IntStream var2) {
       this(var1, var2.boxed().collect(ImmutableList.toImmutableList()));
    }
 
-   public Class7689(Class2420 var1, List<Integer> var2) {
+   public OctavesNoiseGenerator(SharedSeedRandom var1, List<Integer> var2) {
       this(var1, new IntRBTreeSet(var2));
    }
 
-   public static Class7689 method25308(Class2420 var0, int var1, DoubleList var2) {
-      return new Class7689(var0, Pair.of(var1, var2));
+   public static OctavesNoiseGenerator method25308(SharedSeedRandom var0, int var1, DoubleList var2) {
+      return new OctavesNoiseGenerator(var0, Pair.of(var1, var2));
    }
 
    private static Pair<Integer, DoubleList> method25309(IntSortedSet var0) {
@@ -54,11 +57,11 @@ public class Class7689 implements Class7690 {
       }
    }
 
-   private Class7689(Class2420 var1, IntSortedSet var2) {
+   private OctavesNoiseGenerator(SharedSeedRandom var1, IntSortedSet var2) {
       this(var1, method25309(var2));
    }
 
-   private Class7689(Class2420 var1, Pair<Integer, DoubleList> var2) {
+   private OctavesNoiseGenerator(SharedSeedRandom var1, Pair<Integer, DoubleList> var2) {
       int var5 = (Integer)var2.getFirst();
       this.field32929 = (DoubleList)var2.getSecond();
       Class8718 var6 = new Class8718(var1);
@@ -74,11 +77,11 @@ public class Class7689 implements Class7690 {
 
       for (int var9 = var8 - 1; var9 >= 0; var9--) {
          if (var9 >= var7) {
-            var1.method10369(262);
+            var1.skip(262);
          } else {
             double var12 = this.field32929.getDouble(var9);
             if (var12 == 0.0) {
-               var1.method10369(262);
+               var1.skip(262);
             } else {
                this.field32928[var9] = new Class8718(var1);
             }
@@ -87,15 +90,15 @@ public class Class7689 implements Class7690 {
 
       if (var8 < var7 - 1) {
          long var18 = (long)(var6.method31444(0.0, 0.0, 0.0, 0.0, 0.0) * 9.223372E18F);
-         Class2420 var14 = new Class2420(var18);
+         SharedSeedRandom var14 = new SharedSeedRandom(var18);
 
          for (int var15 = var8 + 1; var15 < var7; var15++) {
             if (var15 < 0) {
-               var14.method10369(262);
+               var14.skip(262);
             } else {
                double var16 = this.field32929.getDouble(var15);
                if (var16 == 0.0) {
-                  var14.method10369(262);
+                  var14.skip(262);
                } else {
                   this.field32928[var15] = new Class8718(var14);
                }
@@ -121,7 +124,7 @@ public class Class7689 implements Class7690 {
          if (var21 != null) {
             var14 += this.field32929.getDouble(var20)
                * var21.method31444(
-                  method25313(var1 * var16), !var11 ? method25313(var3 * var16) : -var21.field39338, method25313(var5 * var16), var7 * var16, var9 * var16
+                  maintainPrecision(var1 * var16), !var11 ? maintainPrecision(var3 * var16) : -var21.field39338, maintainPrecision(var5 * var16), var7 * var16, var9 * var16
                )
                * var18;
          }
@@ -138,7 +141,7 @@ public class Class7689 implements Class7690 {
       return this.field32928[this.field32928.length - 1 - var1];
    }
 
-   public static double method25313(double var0) {
+   public static double maintainPrecision(double var0) {
       return var0 - (double) MathHelper.method37770(var0 / 3.3554432E7 + 0.5) * 3.3554432E7;
    }
 

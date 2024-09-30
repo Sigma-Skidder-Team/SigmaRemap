@@ -100,7 +100,7 @@ public class Class9764 {
          && this.field45679 <= var1.field45682;
    }
 
-   public boolean method38391(int var1, int var2, int var3, int var4) {
+   public boolean intersectsWith(int var1, int var2, int var3, int var4) {
       return this.field45681 >= var1 && this.field45678 <= var3 && this.field45683 >= var2 && this.field45680 <= var4;
    }
 

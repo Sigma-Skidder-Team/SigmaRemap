@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.world.gen;
 
 import java.util.Collections;
 import java.util.List;
@@ -7,6 +7,7 @@ import java.util.function.Predicate;
 import java.util.stream.Stream;
 import javax.annotation.Nullable;
 
+import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -27,12 +28,13 @@ import net.minecraft.world.ITickList;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeManager;
 import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.gen.feature.structure.StructureManager;
 import net.minecraft.world.gen.feature.structure.StructureStart;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Class1691 implements ISeedReader {
+public class WorldGenRegion implements ISeedReader {
    private static final Logger field9200 = LogManager.getLogger();
    private final List<IChunk> field9201;
    private final int field9202;
@@ -48,9 +50,9 @@ public class Class1691 implements ISeedReader {
    private final BiomeManager field9212;
    private final ChunkPos field9213;
    private final ChunkPos field9214;
-   private final Class7480 field9215;
+   private final StructureManager field9215;
 
-   public Class1691(ServerWorld var1, List<IChunk> var2) {
+   public WorldGenRegion(ServerWorld var1, List<IChunk> var2) {
       int var5 = MathHelper.floor(Math.sqrt((double)var2.size()));
       if (var5 * var5 == var2.size()) {
          ChunkPos var6 = ((IChunk)var2.get(var2.size() / 2)).getPos();
@@ -59,24 +61,24 @@ public class Class1691 implements ISeedReader {
          this.field9203 = var6.z;
          this.field9204 = var5;
          this.field9205 = var1;
-         this.field9206 = var1.method6967();
+         this.field9206 = var1.getSeed();
          this.field9207 = var1.getWorldInfo();
          this.field9208 = var1.method6814();
          this.field9209 = var1.method6812();
          this.field9212 = new BiomeManager(this, BiomeManager.getHashedSeed(this.field9206), var1.method6812().getMagnifier());
          this.field9213 = ((IChunk)var2.get(0)).getPos();
          this.field9214 = ((IChunk)var2.get(var2.size() - 1)).getPos();
-         this.field9215 = var1.method6893().method24339(this);
+         this.field9215 = var1.func_241112_a_().method24339(this);
       } else {
          throw (IllegalStateException) Util.pauseDevMode(new IllegalStateException("Cache size is not a square."));
       }
    }
 
-   public int method7241() {
+   public int getMainChunkX() {
       return this.field9202;
    }
 
-   public int method7242() {
+   public int getMainChunkZ() {
       return this.field9203;
    }
 
@@ -305,7 +307,7 @@ public class Class1691 implements ISeedReader {
    }
 
    @Override
-   public long method6967() {
+   public long getSeed() {
       return this.field9206;
    }
 

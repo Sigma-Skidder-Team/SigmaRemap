@@ -7,10 +7,7 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.particles.IParticleData;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
-import net.minecraft.util.SoundEvents;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
@@ -276,7 +273,7 @@ public class Class1108 extends MobEntity implements Class1008 {
          }
 
          ChunkPos var7 = new ChunkPos(var3);
-         boolean var8 = Class2420.method10375(var7.x, var7.z, ((ISeedReader)var1).method6967(), 987234911L).nextInt(10) == 0;
+         boolean var8 = SharedSeedRandom.method10375(var7.x, var7.z, ((ISeedReader)var1).getSeed(), 987234911L).nextInt(10) == 0;
          if (var4.nextInt(10) == 0 && var8 && var3.getY() < 40) {
             return method4264(var0, var1, var2, var3, var4);
          }

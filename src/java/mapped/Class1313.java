@@ -20,6 +20,8 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biomes;
+import net.minecraft.world.gen.settings.DimensionStructuresSettings;
+import net.minecraft.world.gen.settings.StructureSpreadSettings;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -220,10 +222,10 @@ public class Class1313 extends Screen {
          HashMap var9 = Maps.newHashMap();
 
          for (Structure var11 : var3) {
-            var9.put(var11, Class9763.field45674.get(var11));
+            var9.put(var11, DimensionStructuresSettings.field45674.get(var11));
          }
 
-         Class9763 var13 = new Class9763(!var4 ? Optional.<Class9245>empty() : Optional.<Class9245>of(Class9763.field45675), var9);
+         DimensionStructuresSettings var13 = new DimensionStructuresSettings(!var4 ? Optional.<StructureSpreadSettings>empty() : Optional.<StructureSpreadSettings>of(DimensionStructuresSettings.field45675), var9);
          Class9733 var14 = new Class9733(var13, var6x);
          if (var5) {
             var14.method38123();

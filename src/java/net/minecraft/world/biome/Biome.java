@@ -20,6 +20,7 @@ import net.minecraft.crash.CrashReport;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
@@ -30,6 +31,8 @@ import net.minecraft.util.registry.WorldGenRegistries;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.LightType;
 import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.gen.WorldGenRegion;
+import net.minecraft.world.gen.feature.structure.StructureManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -42,7 +45,7 @@ public final class Biome {
                Codec.FLOAT.fieldOf("depth").forGetter(var0x -> var0x.field40318),
                Codec.FLOAT.fieldOf("scale").forGetter(var0x -> var0x.field40319),
                Class7752.field33278.fieldOf("effects").forGetter(var0x -> var0x.field40321),
-               Class7478.field32137.forGetter(var0x -> var0x.field40316),
+               BiomeGenerationSettings.field32137.forGetter(var0x -> var0x.field40316),
                Class8835.field39900.forGetter(var0x -> var0x.field40317)
             )
             .apply(var0, Biome::new)
@@ -55,18 +58,18 @@ public final class Biome {
                Codec.FLOAT.fieldOf("scale").forGetter(var0x -> var0x.field40319),
                Class7752.field33278.fieldOf("effects").forGetter(var0x -> var0x.field40321)
             )
-            .apply(var0, (var0x, var1, var2, var3, var4) -> new Biome(var0x, var1, var2, var3, var4, Class7478.field32136, Class8835.field39899))
+            .apply(var0, (var0x, var1, var2, var3, var4) -> new Biome(var0x, var1, var2, var3, var4, BiomeGenerationSettings.field32136, Class8835.field39899))
    );
    public static final Codec<Supplier<Biome>> field40309 = RegistryKeyCodec.create(Registry.BIOME_KEY, field40307);
    public static final Codec<List<Supplier<Biome>>> field40310 = RegistryKeyCodec.<Biome>method33672(Registry.BIOME_KEY, field40307);
-   private final Map<Integer, List<Structure<?>>> field40311 = Registry.field16114
+   private final Map<Integer, List<Structure<?>>> field40311 = Registry.STRUCTURE_FEATURE
       .method9192()
       .collect(Collectors.<Structure<?>, Integer>groupingBy(var0 -> var0.method11364().ordinal()));
-   private static final Class7691 field40312 = new Class7691(new Class2420(1234L), ImmutableList.of(0));
-   private static final Class7691 field40313 = new Class7691(new Class2420(3456L), ImmutableList.of(-2, -1, 0));
-   public static final Class7691 field40314 = new Class7691(new Class2420(2345L), ImmutableList.of(0));
+   private static final Class7691 field40312 = new Class7691(new SharedSeedRandom(1234L), ImmutableList.of(0));
+   private static final Class7691 field40313 = new Class7691(new SharedSeedRandom(3456L), ImmutableList.of(-2, -1, 0));
+   public static final Class7691 field40314 = new Class7691(new SharedSeedRandom(2345L), ImmutableList.of(0));
    private final Class7035 field40315;
-   private final Class7478 field40316;
+   private final BiomeGenerationSettings field40316;
    private final Class8835 field40317;
    private final float field40318;
    private final float field40319;
@@ -78,7 +81,7 @@ public final class Biome {
          return var3x;
       }));
 
-   private Biome(Class7035 var1, Class100 var2, float var3, float var4, Class7752 var5, Class7478 var6, Class8835 var7) {
+   private Biome(Class7035 var1, Class100 var2, float var3, float var4, Class7752 var5, BiomeGenerationSettings var6, Class8835 var7) {
       this.field40315 = var1;
       this.field40316 = var6;
       this.field40317 = var7;
@@ -92,7 +95,7 @@ public final class Biome {
       return this.field40321.method25676();
    }
 
-   public Class8835 method32499() {
+   public Class8835 getMobSpawnInfo() {
       return this.field40317;
    }
 
@@ -176,11 +179,11 @@ public final class Biome {
       }
    }
 
-   public Class7478 method32507() {
+   public BiomeGenerationSettings getGenerationSettings() {
       return this.field40316;
    }
 
-   public void method32508(Class7480 var1, ChunkGenerator var2, Class1691 var3, long var4, Class2420 var6, BlockPos var7) {
+   public void generateFeatures(StructureManager var1, ChunkGenerator var2, WorldGenRegion var3, long var4, SharedSeedRandom var6, BlockPos var7) {
       List<List<Supplier<Class7909<?, ?>>>> var10 = this.field40316.method24281();
       int var11 = Class1993.values().length;
 
@@ -201,7 +204,7 @@ public final class Biome {
                      );
                } catch (Exception var22) {
                   CrashReport var21 = CrashReport.makeCrashReport(var22, "Feature placement");
-                  var21.makeCategory("Feature").addDetail("Id", Registry.field16114.getKey(var15)).addDetail("Description", () -> var15.toString());
+                  var21.makeCategory("Feature").addDetail("Id", Registry.STRUCTURE_FEATURE.getKey(var15)).addDetail("Description", () -> var15.toString());
                   throw new ReportedException(var21);
                }
 
@@ -321,7 +324,7 @@ public final class Biome {
    }
 
    // $VF: synthetic method
-   public Biome(Class7035 var1, Class100 var2, float var3, float var4, Class7752 var5, Class7478 var6, Class8835 var7, Class14 var8) {
+   public Biome(Class7035 var1, Class100 var2, float var3, float var4, Class7752 var5, BiomeGenerationSettings var6, Class8835 var7, Class14 var8) {
       this(var1, var2, var3, var4, var5, var6, var7);
    }
 

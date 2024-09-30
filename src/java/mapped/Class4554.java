@@ -31,7 +31,7 @@ public final class Class4554 extends AbstractIterator<BlockPos> {
          int var5 = var4 % this.field21961;
          int var6 = var4 / this.field21961;
          this.field21958++;
-         return this.field21957.method8372(this.field21962 + var3, this.field21963 + var5, this.field21964 + var6);
+         return this.field21957.setPos(this.field21962 + var3, this.field21963 + var5, this.field21964 + var6);
       } else {
          return (BlockPos)this.endOfData();
       }

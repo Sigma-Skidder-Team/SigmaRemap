@@ -452,7 +452,7 @@ public class BoatEntity extends Entity {
 
          for (int var13 = var4; var13 < var5; var13++) {
             for (int var14 = var8; var14 < var9; var14++) {
-               var10.method8372(var13, var11, var14);
+               var10.setPos(var13, var11, var14);
                FluidState var15 = this.world.getFluidState(var10);
                if (var15.method23486(FluidTags.field40469)) {
                   var12 = Math.max(var12, var15.method23475(this.world, var10));
@@ -492,7 +492,7 @@ public class BoatEntity extends Entity {
             if (var17 != 2) {
                for (int var18 = var7; var18 < var8; var18++) {
                   if (var17 <= 0 || var18 != var7 && var18 != var8 - 1) {
-                     var14.method8372(var15, var18, var16);
+                     var14.setPos(var15, var18, var16);
                      BlockState var19 = this.world.getBlockState(var14);
                      if (!(var19.getBlock() instanceof LilyPadBlock)
                         && VoxelShapes.compare(
@@ -525,7 +525,7 @@ public class BoatEntity extends Entity {
       for (int var12 = var4; var12 < var5; var12++) {
          for (int var13 = var6; var13 < var7; var13++) {
             for (int var14 = var8; var14 < var9; var14++) {
-               var11.method8372(var12, var13, var14);
+               var11.setPos(var12, var13, var14);
                FluidState var15 = this.world.getFluidState(var11);
                if (var15.method23486(FluidTags.field40469)) {
                   float var16 = (float)var13 + var15.method23475(this.world, var11);
@@ -555,7 +555,7 @@ public class BoatEntity extends Entity {
       for (int var14 = var6; var14 < var7; var14++) {
          for (int var15 = var8; var15 < var9; var15++) {
             for (int var16 = var10; var16 < var11; var16++) {
-               var13.method8372(var14, var15, var16);
+               var13.setPos(var14, var15, var16);
                FluidState var17 = this.world.getFluidState(var13);
                if (var17.method23486(FluidTags.field40469) && var4 < (double)((float)var13.getY() + var17.method23475(this.world, var13))) {
                   if (!var17.isSource()) {

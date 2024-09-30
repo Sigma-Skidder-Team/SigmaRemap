@@ -53,7 +53,7 @@ public class Class3473 extends Class3472 implements Class3196 {
             if (var2.nextInt(8) != 0) {
                var12 = var8;
             } else {
-               List var13 = var1.getBiome(var10).method32507().method24280();
+               List var13 = var1.getBiome(var10).getGenerationSettings().method24280();
                if (var13.isEmpty()) {
                   continue;
                }

@@ -5,6 +5,7 @@ import com.mojang.serialization.Codec;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunk;
@@ -48,7 +49,7 @@ public class Class6773 extends Class6768<Class8278> {
       int var17 = var4 & 15;
       int var18 = var5 & 15;
       BlockState var19 = field29495;
-      Class8277 var20 = var3.method32507().method24283();
+      Class8277 var20 = var3.getGenerationSettings().method24283();
       BlockState var21 = var20.method28935();
       BlockState var22 = var20.method28934();
       BlockState var23 = var21;
@@ -61,7 +62,7 @@ public class Class6773 extends Class6768<Class8278> {
 
       for (int var30 = var6; var30 >= 0; var30--) {
          if (var28 < 15) {
-            var29.method8372(var17, var30, var18);
+            var29.setPos(var17, var30, var18);
             BlockState var31 = var2.getBlockState(var29);
             if (!var31.isAir()) {
                if (var31.isIn(var9.getBlock())) {
@@ -145,7 +146,7 @@ public class Class6773 extends Class6768<Class8278> {
       }
 
       if (this.field29556 != var1 || this.field29557 == null || this.field29558 == null) {
-         Class2420 var5 = new Class2420(var1);
+         SharedSeedRandom var5 = new SharedSeedRandom(var1);
          this.field29557 = new Class7691(var5, IntStream.rangeClosed(-3, 0));
          this.field29558 = new Class7691(var5, ImmutableList.of(0));
       }
@@ -156,7 +157,7 @@ public class Class6773 extends Class6768<Class8278> {
    public void method20659(long var1) {
       this.field29555 = new BlockState[64];
       Arrays.fill(this.field29555, field29550);
-      Class2420 var5 = new Class2420(var1);
+      SharedSeedRandom var5 = new SharedSeedRandom(var1);
       this.field29559 = new Class7691(var5, ImmutableList.of(0));
 
       for (int var14 = 0; var14 < 64; var14++) {

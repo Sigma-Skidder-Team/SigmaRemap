@@ -7,6 +7,7 @@ import net.minecraft.network.IPacket;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.SectionPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.server.ChunkManager;
 
 import java.util.Collection;
 import java.util.List;
@@ -19,12 +20,12 @@ public class Class8998 {
    private final int field41149;
    private SectionPos field41150;
    private final Set<ServerPlayerEntity> field41151;
-   public final Class1649 field41152;
+   public final ChunkManager field41152;
 
-   public Class8998(Class1649 var1, Entity var2, int var3, int var4, boolean var5) {
+   public Class8998(ChunkManager var1, Entity var2, int var3, int var4, boolean var5) {
       this.field41152 = var1;
       this.field41151 = Sets.newHashSet();
-      this.field41147 = new Class9278(Class1649.method6633(var1), var2, var4, var5, this::method33239);
+      this.field41147 = new Class9278(ChunkManager.method6633(var1), var2, var4, var5, this::method33239);
       this.field41148 = var2;
       this.field41149 = var3;
       this.field41150 = SectionPos.method8392(var2);
@@ -68,7 +69,7 @@ public class Class8998 {
    public void method33243(ServerPlayerEntity var1) {
       if (var1 != this.field41148) {
          Vector3d var4 = var1.getPositionVec().subtract(this.field41147.method34975());
-         int var5 = Math.min(this.method33245(), (Class1649.method6634(this.field41152) - 1) * 16);
+         int var5 = Math.min(this.method33245(), (ChunkManager.method6634(this.field41152) - 1) * 16);
          boolean var6 = var4.x >= (double)(-var5)
             && var4.x <= (double)var5
             && var4.z >= (double)(-var5)
@@ -84,7 +85,7 @@ public class Class8998 {
                ChunkPos var8 = new ChunkPos(this.field41148.chunkCoordX, this.field41148.chunkCoordZ);
                Class8641 var9 = this.field41152.method6539(var8.asLong());
                if (var9 != null && var9.method31043() != null) {
-                  var7 = Class1649.method6635(var8, var1, false) <= Class1649.method6634(this.field41152);
+                  var7 = ChunkManager.method6635(var8, var1, false) <= ChunkManager.method6634(this.field41152);
                }
             }
 
@@ -96,7 +97,7 @@ public class Class8998 {
    }
 
    private int method33244(int var1) {
-      return Class1649.method6633(this.field41152).getServer().method1337(var1);
+      return ChunkManager.method6633(this.field41152).getServer().method1337(var1);
    }
 
    private int method33245() {

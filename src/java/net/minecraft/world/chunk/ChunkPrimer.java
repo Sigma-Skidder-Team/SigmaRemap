@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.world.chunk;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
@@ -7,6 +7,7 @@ import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import it.unimi.dsi.fastutil.longs.LongSet;
 import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
 import it.unimi.dsi.fastutil.shorts.ShortList;
+import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -21,8 +22,6 @@ import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.palette.UpgradeData;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeContainer;
-import net.minecraft.world.chunk.ChunkSection;
-import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.gen.feature.structure.StructureStart;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -32,7 +31,7 @@ import java.util.*;
 import java.util.Map.Entry;
 import java.util.stream.Stream;
 
-public class Class1672 implements IChunk {
+public class ChunkPrimer implements IChunk {
    private static final Logger field9088 = LogManager.getLogger();
    private final ChunkPos field9089;
    private volatile boolean field9090;
@@ -52,10 +51,10 @@ public class Class1672 implements IChunk {
    private final Class6806<Block> field9104;
    private final Class6806<Fluid> field9105;
    private long field9106;
-   private final Map<Class97, BitSet> field9107 = new Object2ObjectArrayMap();
+   private final Map<GenerationStageCarving, BitSet> field9107 = new Object2ObjectArrayMap();
    private volatile boolean field9108;
 
-   public Class1672(ChunkPos var1, UpgradeData var2) {
+   public ChunkPrimer(ChunkPos var1, UpgradeData var2) {
       this(
          var1,
          var2,
@@ -65,7 +64,7 @@ public class Class1672 implements IChunk {
       );
    }
 
-   public Class1672(ChunkPos var1, UpgradeData var2, ChunkSection[] var3, Class6806<Block> var4, Class6806<Fluid> var5) {
+   public ChunkPrimer(ChunkPos var1, UpgradeData var2, ChunkSection[] var3, Class6806<Block> var4, Class6806<Fluid> var5) {
       this.field9089 = var1;
       this.field9103 = var2;
       this.field9104 = var4;
@@ -229,7 +228,7 @@ public class Class1672 implements IChunk {
       return this.field9098;
    }
 
-   public void method7110(BiomeContainer var1) {
+   public void setBiomes(BiomeContainer var1) {
       this.field9091 = var1;
    }
 
@@ -436,15 +435,15 @@ public class Class1672 implements IChunk {
    }
 
    @Nullable
-   public BitSet method7116(Class97 var1) {
+   public BitSet method7116(GenerationStageCarving var1) {
       return this.field9107.get(var1);
    }
 
-   public BitSet method7117(Class97 var1) {
+   public BitSet getOrAddCarvingMask(GenerationStageCarving var1) {
       return this.field9107.computeIfAbsent(var1, var0 -> new BitSet(65536));
    }
 
-   public void method7118(Class97 var1, BitSet var2) {
+   public void method7118(GenerationStageCarving var1, BitSet var2) {
       this.field9107.put(var1, var2);
    }
 

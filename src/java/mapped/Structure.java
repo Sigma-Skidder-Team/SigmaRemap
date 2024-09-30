@@ -4,6 +4,7 @@ import com.google.common.collect.*;
 import com.mojang.serialization.Codec;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.SectionPos;
@@ -13,8 +14,10 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.provider.BiomeProvider;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.gen.feature.structure.ShipwreckConfig;
+import net.minecraft.world.gen.feature.structure.StructureManager;
 import net.minecraft.world.gen.feature.structure.StructureStart;
 import net.minecraft.world.gen.feature.template.TemplateManager;
+import net.minecraft.world.gen.settings.StructureSeparationSettings;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -53,16 +56,16 @@ public abstract class Structure<C extends Class4698> {
       .put(new ResourceLocation("bastionremnant"), field18077)
       .put(new ResourceLocation("runtime"), field18077)
       .build();
-   private final Codec<Class9300<C, Structure<C>>> field18079;
+   private final Codec<StructureFeature<C, Structure<C>>> field18079;
 
    private static <F extends Structure<?>> F method11363(String var0, F var1, Class1993 var2) {
       field_236365_a_.put(var0.toLowerCase(Locale.ROOT), var1);
       field18056.put(var1, var2);
-      return Registry.<F>register(Registry.field16114, var0.toLowerCase(Locale.ROOT), (F)var1);
+      return Registry.<F>register(Registry.STRUCTURE_FEATURE, var0.toLowerCase(Locale.ROOT), (F)var1);
    }
 
    public Structure(Codec<C> var1) {
-      this.field18079 = var1.fieldOf("config").xmap(var1x -> new Class9300<C, Structure<C>>(this, (C)var1x), var0 -> var0.field43175).codec();
+      this.field18079 = var1.fieldOf("config").xmap(var1x -> new StructureFeature<C, Structure<C>>(this, (C)var1x), var0 -> var0.field43175).codec();
    }
 
    public Class1993 method11364() {
@@ -78,7 +81,7 @@ public abstract class Structure<C extends Class4698> {
       if ("INVALID".equals(var6)) {
          return StructureStart.field24194;
       } else {
-         Structure var7 = Registry.field16114.getOrDefault(new ResourceLocation(var6.toLowerCase(Locale.ROOT)));
+         Structure var7 = Registry.STRUCTURE_FEATURE.getOrDefault(new ResourceLocation(var6.toLowerCase(Locale.ROOT)));
          if (var7 == null) {
             field18057.error("Unknown feature id: {}", var6);
             return null;
@@ -119,22 +122,22 @@ public abstract class Structure<C extends Class4698> {
       }
    }
 
-   public Codec<Class9300<C, Structure<C>>> method11367() {
+   public Codec<StructureFeature<C, Structure<C>>> method11367() {
       return this.field18079;
    }
 
-   public Class9300<C, ? extends Structure<C>> method11368(C var1) {
-      return new Class9300(this, (C)var1);
+   public StructureFeature<C, ? extends Structure<C>> method11368(C var1) {
+      return new StructureFeature(this, (C)var1);
    }
 
    @Nullable
-   public BlockPos method11369(IWorldReader var1, Class7480 var2, BlockPos var3, int var4, boolean var5, long var6, Class8483 var8) {
+   public BlockPos func_236388_a_(IWorldReader var1, StructureManager var2, BlockPos var3, int var4, boolean var5, long var6, StructureSeparationSettings var8) {
       int var11 = var8.method29980();
       int var12 = var3.getX() >> 4;
       int var13 = var3.getZ() >> 4;
       int var14 = 0;
 
-      for (Class2420 var15 = new Class2420(); var14 <= var4; var14++) {
+      for (SharedSeedRandom var15 = new SharedSeedRandom(); var14 <= var4; var14++) {
          for (int var16 = -var14; var16 <= var14; var16++) {
             boolean var17 = var16 == -var14 || var16 == var14;
 
@@ -145,7 +148,7 @@ public abstract class Structure<C extends Class4698> {
                   int var21 = var13 + var11 * var18;
                   ChunkPos var22 = this.method11370(var8, var6, var15, var20, var21);
                   IChunk var23 = var1.getChunk(var22.x, var22.z, ChunkStatus.field42134);
-                  StructureStart var24 = var2.method24341(SectionPos.method8391(var23.getPos(), 0), this, var23);
+                  StructureStart var24 = var2.method24341(SectionPos.from(var23.getPos(), 0), this, var23);
                   if (var24 != null && var24.method17117()) {
                      if (var5 && var24.method17121()) {
                         var24.method17122();
@@ -176,7 +179,7 @@ public abstract class Structure<C extends Class4698> {
       return true;
    }
 
-   public final ChunkPos method11370(Class8483 var1, long var2, Class2420 var4, int var5, int var6) {
+   public final ChunkPos method11370(StructureSeparationSettings var1, long var2, SharedSeedRandom var4, int var5, int var6) {
       int var9 = var1.method29980();
       int var10 = var1.method29981();
       int var11 = Math.floorDiv(var5, var9);
@@ -195,7 +198,7 @@ public abstract class Structure<C extends Class4698> {
       return new ChunkPos(var11 * var9 + var13, var12 * var9 + var14);
    }
 
-   public boolean method11361(ChunkGenerator var1, BiomeProvider var2, long var3, Class2420 var5, int var6, int var7, Biome var8, ChunkPos var9, C var10) {
+   public boolean method11361(ChunkGenerator var1, BiomeProvider var2, long var3, SharedSeedRandom var5, int var6, int var7, Biome var8, ChunkPos var9, C var10) {
       return true;
    }
 
@@ -212,8 +215,8 @@ public abstract class Structure<C extends Class4698> {
       ChunkPos var7,
       Biome var8,
       int var9,
-      Class2420 var10,
-      Class8483 var11,
+      SharedSeedRandom var10,
+      StructureSeparationSettings var11,
       C var12
    ) {
       ChunkPos var15 = this.method11370(var11, var5, var10, var7.x, var7.z);
@@ -236,11 +239,11 @@ public abstract class Structure<C extends Class4698> {
       return (String) field_236365_a_.inverse().get(this);
    }
 
-   public List<Class6692> method11374() {
+   public List<MobSpawnInfoSpawners> method11374() {
       return ImmutableList.of();
    }
 
-   public List<Class6692> method11375() {
+   public List<MobSpawnInfoSpawners> method11375() {
       return ImmutableList.of();
    }
 }

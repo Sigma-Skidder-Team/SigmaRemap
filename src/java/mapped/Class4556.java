@@ -35,7 +35,7 @@ public final class Class4556 extends AbstractIterator<BlockPos.Mutable> {
    }
 
    public BlockPos.Mutable computeNext() {
-      this.field21970.method8372(this.field21975, this.field21976, this.field21977).method8379(this.field21969[(this.field21972 + 4) % 4]);
+      this.field21970.setPos(this.field21975, this.field21976, this.field21977).method8379(this.field21969[(this.field21972 + 4) % 4]);
       this.field21975 = this.field21970.getX();
       this.field21976 = this.field21970.getY();
       this.field21977 = this.field21970.getZ();

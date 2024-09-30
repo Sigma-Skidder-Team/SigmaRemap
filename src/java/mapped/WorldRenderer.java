@@ -246,7 +246,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
                int var22 = (var20 - var13 + 16) * 32 + var21 - var11 + 16;
                double var23 = (double)this.field998[var22] * 0.5;
                double var25 = (double)this.field999[var22] * 0.5;
-               var19.method8372(var21, 0, var20);
+               var19.setPos(var21, 0, var20);
                Biome var27 = var10.getBiome(var19);
                if (var27.method32500() != Class87.field223) {
                   int var28 = var10.method7006(Heightmap.Type.MOTION_BLOCKING, var19).getY();
@@ -267,7 +267,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
 
                   if (var29 != var30) {
                      Random var32 = new Random((long)(var21 * var21 * 3121 + var21 * 45238971 ^ var20 * var20 * 418711 + var20 * 13761));
-                     var19.method8372(var21, var29, var20);
+                     var19.setPos(var21, var29, var20);
                      float var33 = var27.method32503(var19);
                      if (var33 >= 0.15F) {
                         if (var17 != 0) {
@@ -286,7 +286,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
                         double var38 = (double)((float)var20 + 0.5F) - var7;
                         float var40 = MathHelper.sqrt(var36 * var36 + var38 * var38) / (float)var16;
                         float var41 = ((1.0F - var40 * var40) * 0.5F + 0.5F) * var48;
-                        var19.method8372(var21, var31, var20);
+                        var19.setPos(var21, var31, var20);
                         int var42 = method944(var10, var19);
                         var15.pos((double)var21 - var3 - var23 + 0.5, (double)var30 - var5, (double)var20 - var7 - var25 + 0.5)
                            .tex(0.0F, (float)var29 * 0.25F + var35)
@@ -326,7 +326,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
                         double var39 = (double)((float)var20 + 0.5F) - var7;
                         float var52 = MathHelper.sqrt(var37 * var37 + var39 * var39) / (float)var16;
                         float var53 = ((1.0F - var52 * var52) * 0.3F + 0.5F) * var48;
-                        var19.method8372(var21, var31, var20);
+                        var19.setPos(var21, var31, var20);
                         int var43 = method944(var10, var19);
                         int var44 = var43 >> 16 & 65535;
                         int var45 = (var43 & 65535) * 3;
@@ -966,7 +966,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
                   }
                }
 
-               var56.sort(Comparator.comparingDouble(var1x -> var13.method8318(var1x.field30281.method27718().method8336(8, 8, 8))));
+               var56.sort(Comparator.comparingDouble(var1x -> var13.distanceSq(var1x.field30281.method27718().method8336(8, 8, 8))));
                var41.addAll(var56);
             }
          }

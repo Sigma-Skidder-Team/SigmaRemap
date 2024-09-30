@@ -19,7 +19,7 @@ public class Class2910 extends Class2898<Class4732> {
             int var11 = var4.getX() + var9;
             int var12 = var4.getZ() + var10;
             int var13 = var5.field22408;
-            var8.method8372(var11, var13, var12);
+            var8.setPos(var11, var13, var12);
             if (var1.getBlockState(var8).isAir()) {
                var1.setBlockState(var8, var5.field22409, 2);
             }

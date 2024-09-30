@@ -3,6 +3,7 @@ package net.minecraft.world.gen.feature.structure;
 import com.google.common.collect.Lists;
 import mapped.*;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.vector.Vector3i;
@@ -23,21 +24,21 @@ public abstract class StructureStart<C extends Class4698> {
    private final int field24198;
    private final int field24199;
    private int field24200;
-   public final Class2420 field24201;
+   public final SharedSeedRandom field24201;
 
    public StructureStart(Structure<C> var1, int var2, int var3, Class9764 var4, int var5, long var6) {
       this.field24195 = var1;
       this.field24198 = var2;
       this.field24199 = var3;
       this.field24200 = var5;
-      this.field24201 = new Class2420();
-      this.field24201.method10373(var6, var2, var3);
+      this.field24201 = new SharedSeedRandom();
+      this.field24201.setLargeFeatureSeed(var6, var2, var3);
       this.field24197 = var4;
    }
 
    public abstract void method17109(DynamicRegistries var1, ChunkGenerator var2, TemplateManager var3, int var4, int var5, Biome var6, C var7);
 
-   public Class9764 method17110() {
+   public Class9764 getBoundingBox() {
       return this.field24197;
    }
 
@@ -45,7 +46,7 @@ public abstract class StructureStart<C extends Class4698> {
       return this.field24196;
    }
 
-   public void method17112(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6) {
+   public void method17112(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6) {
       synchronized (this.field24196) {
          if (!this.field24196.isEmpty()) {
             Class9764 var10 = this.field24196.get(0).field20444;
@@ -76,7 +77,7 @@ public abstract class StructureStart<C extends Class4698> {
    public CompoundNBT method17114(int var1, int var2) {
       CompoundNBT var5 = new CompoundNBT();
       if (this.method17117()) {
-         var5.method109("id", Registry.field16114.getKey(this.method17125()).toString());
+         var5.method109("id", Registry.STRUCTURE_FEATURE.getKey(this.getStructure()).toString());
          var5.putInt("ChunkX", var1);
          var5.putInt("ChunkZ", var2);
          var5.putInt("references", this.field24200);
@@ -152,7 +153,7 @@ public abstract class StructureStart<C extends Class4698> {
       this.field24200++;
    }
 
-   public int method17123() {
+   public int getRefCount() {
       return this.field24200;
    }
 
@@ -160,7 +161,7 @@ public abstract class StructureStart<C extends Class4698> {
       return 1;
    }
 
-   public Structure<?> method17125() {
+   public Structure<?> getStructure() {
       return this.field24195;
    }
 }

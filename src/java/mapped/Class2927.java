@@ -35,7 +35,7 @@ public class Class2927 extends Class2898<Class4709> {
          }
 
          if (!var5.field22341) {
-            int var12 = var2.method17806();
+            int var12 = var2.func_230355_e_();
             if (var9.getY() + var11 + 1 >= var12) {
                return false;
             }

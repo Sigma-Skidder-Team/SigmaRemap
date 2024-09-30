@@ -5,6 +5,7 @@ import net.minecraft.entity.*;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.DebugPacketSender;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
@@ -346,7 +347,7 @@ public class Class1017 extends Class1018 implements IAngerable, Class1016 {
    @Override
    public void method4257() {
       super.method4257();
-      Class7393.method23623(this);
+      DebugPacketSender.method23623(this);
    }
 
    private int method4434() {

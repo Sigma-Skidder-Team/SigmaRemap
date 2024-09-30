@@ -4,6 +4,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.TieredItem;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.DebugPacketSender;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
@@ -121,7 +122,7 @@ public abstract class Class1035 extends Class1009 {
    @Override
    public void method4257() {
       super.method4257();
-      Class7393.method23622(this);
+      DebugPacketSender.method23622(this);
    }
 
    public abstract void method4630();

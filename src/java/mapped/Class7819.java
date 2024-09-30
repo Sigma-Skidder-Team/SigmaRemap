@@ -27,6 +27,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.server.ServerWorld;
+import net.minecraft.world.server.TicketType;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -126,9 +127,9 @@ public class Class7819 {
       }
 
       if (this.field33537.method12288().isEmpty()) {
-         this.field33538.getChunkProvider().method7375(Class8561.field38481, new ChunkPos(0, 0), 9, Class2341.field16010);
+         this.field33538.getChunkProvider().releaseTicket(TicketType.field38481, new ChunkPos(0, 0), 9, Class2341.field16010);
       } else {
-         this.field33538.getChunkProvider().registerTicket(Class8561.field38481, new ChunkPos(0, 0), 9, Class2341.field16010);
+         this.field33538.getChunkProvider().registerTicket(TicketType.field38481, new ChunkPos(0, 0), 9, Class2341.field16010);
          boolean var3 = this.method26116();
          if (this.field33548 && var3) {
             this.method26111();

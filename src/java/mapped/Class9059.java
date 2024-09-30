@@ -13,7 +13,7 @@ public class Class9059 {
    }
 
    public double method33719(BlockPos var1) {
-      double var4 = this.field41468.method8318(var1);
+      double var4 = this.field41468.distanceSq(var1);
       return var4 != 0.0 ? this.field41469 / Math.sqrt(var4) : Double.POSITIVE_INFINITY;
    }
 }

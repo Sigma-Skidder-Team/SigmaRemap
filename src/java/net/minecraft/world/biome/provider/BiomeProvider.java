@@ -40,7 +40,7 @@ public abstract class BiomeProvider implements BiomeManager.IBiomeReader {
 
    public abstract BiomeProvider method7200(long var1);
 
-   public List<Biome> method7201() {
+   public List<Biome> getBiomes() {
       return this.field9162;
    }
 
@@ -71,7 +71,7 @@ public abstract class BiomeProvider implements BiomeManager.IBiomeReader {
    }
 
    @Nullable
-   public BlockPos method7203(int var1, int var2, int var3, int var4, Predicate<Biome> var5, Random var6) {
+   public BlockPos findBiomePosition(int var1, int var2, int var3, int var4, Predicate<Biome> var5, Random var6) {
       return this.method7204(var1, var2, var3, var4, 1, var5, var6, false);
    }
 
@@ -119,14 +119,14 @@ public abstract class BiomeProvider implements BiomeManager.IBiomeReader {
       return var15;
    }
 
-   public boolean method7205(Structure<?> var1) {
-      return this.field9160.computeIfAbsent(var1, var1x -> this.field9162.stream().anyMatch(var1xx -> var1xx.method32507().method24277(var1x)));
+   public boolean hasStructure(Structure<?> var1) {
+      return this.field9160.computeIfAbsent(var1, var1x -> this.field9162.stream().anyMatch(var1xx -> var1xx.getGenerationSettings().hasStructure(var1x)));
    }
 
    public Set<BlockState> method7206() {
       if (this.field9161.isEmpty()) {
          for (Biome var4 : this.field9162) {
-            this.field9161.add(var4.method32507().method24283().method28934());
+            this.field9161.add(var4.getGenerationSettings().method24283().method28934());
          }
       }
 

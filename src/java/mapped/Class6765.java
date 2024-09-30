@@ -99,8 +99,8 @@ public class Class6765 extends Class6764 {
       for (int var7 = var1; var7 < var1 + this.field29478; var7++) {
          for (int var8 = var2; var8 < var2 + this.field29479; var8++) {
             for (int var9 = var3; var9 < var3 + this.field29480; var9++) {
-               FluidState var10 = this.field29475.getFluidState(var6.method8372(var7, var8, var9));
-               BlockState var11 = this.field29475.getBlockState(var6.method8372(var7, var8, var9));
+               FluidState var10 = this.field29475.getFluidState(var6.setPos(var7, var8, var9));
+               BlockState var11 = this.field29475.getBlockState(var6.setPos(var7, var8, var9));
                if (var10.isEmpty() && var11.method23440(this.field29475, var6.down(), PathType.field12615) && var11.isAir()) {
                   return Class2163.field14204;
                }

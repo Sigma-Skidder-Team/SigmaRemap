@@ -329,7 +329,7 @@ public class BlockPos extends Vector3i {
          return super.method8352(var1).toImmutable();
       }
 
-      public Mutable method8372(int var1, int var2, int var3) {
+      public Mutable setPos(int var1, int var2, int var3) {
          this.method8307(var1);
          this.method8308(var2);
          this.method8309(var3);
@@ -337,19 +337,19 @@ public class BlockPos extends Vector3i {
       }
 
       public Mutable method8373(double var1, double var3, double var5) {
-         return this.method8372(MathHelper.floor(var1), MathHelper.floor(var3), MathHelper.floor(var5));
+         return this.setPos(MathHelper.floor(var1), MathHelper.floor(var3), MathHelper.floor(var5));
       }
 
       public Mutable method8374(Vector3i var1) {
-         return this.method8372(var1.getX(), var1.getY(), var1.getZ());
+         return this.setPos(var1.getX(), var1.getY(), var1.getZ());
       }
 
       public Mutable setPos(long var1) {
-         return this.method8372(unpackX(var1), unpackY(var1), unpackZ(var1));
+         return this.setPos(unpackX(var1), unpackY(var1), unpackZ(var1));
       }
 
       public Mutable method8376(Class2321 var1, int var2, int var3, int var4) {
-         return this.method8372(
+         return this.setPos(
             var1.method9098(var2, var3, var4, Direction.Axis.X),
             var1.method9098(var2, var3, var4, Direction.Axis.Y),
             var1.method9098(var2, var3, var4, Direction.Axis.Z)
@@ -357,11 +357,11 @@ public class BlockPos extends Vector3i {
       }
 
       public Mutable method8377(Vector3i var1, Direction var2) {
-         return this.method8372(var1.getX() + var2.getXOffset(), var1.getY() + var2.getYOffset(), var1.getZ() + var2.getZOffset());
+         return this.setPos(var1.getX() + var2.getXOffset(), var1.getY() + var2.getYOffset(), var1.getZ() + var2.getZOffset());
       }
 
       public Mutable method8378(Vector3i var1, int var2, int var3, int var4) {
-         return this.method8372(var1.getX() + var2, var1.getY() + var3, var1.getZ() + var4);
+         return this.setPos(var1.getX() + var2, var1.getY() + var3, var1.getZ() + var4);
       }
 
       public Mutable method8379(Direction var1) {
@@ -369,27 +369,27 @@ public class BlockPos extends Vector3i {
       }
 
       public Mutable method8380(Direction var1, int var2) {
-         return this.method8372(
+         return this.setPos(
             this.getX() + var1.getXOffset() * var2, this.getY() + var1.getYOffset() * var2, this.getZ() + var1.getZOffset() * var2
          );
       }
 
       public Mutable method8381(int var1, int var2, int var3) {
-         return this.method8372(this.getX() + var1, this.getY() + var2, this.getZ() + var3);
+         return this.setPos(this.getX() + var1, this.getY() + var2, this.getZ() + var3);
       }
 
       public Mutable method8382(Vector3i var1) {
-         return this.method8372(this.getX() + var1.getX(), this.getY() + var1.getY(), this.getZ() + var1.getZ());
+         return this.setPos(this.getX() + var1.getX(), this.getY() + var1.getY(), this.getZ() + var1.getZ());
       }
 
       public Mutable method8383(Direction.Axis var1, int var2, int var3) {
          switch (Class4503.field21731[var1.ordinal()]) {
             case 1:
-               return this.method8372(MathHelper.clamp(this.getX(), var2, var3), this.getY(), this.getZ());
+               return this.setPos(MathHelper.clamp(this.getX(), var2, var3), this.getY(), this.getZ());
             case 2:
-               return this.method8372(this.getX(), MathHelper.clamp(this.getY(), var2, var3), this.getZ());
+               return this.setPos(this.getX(), MathHelper.clamp(this.getY(), var2, var3), this.getZ());
             case 3:
-               return this.method8372(this.getX(), this.getY(), MathHelper.clamp(this.getZ(), var2, var3));
+               return this.setPos(this.getX(), this.getY(), MathHelper.clamp(this.getZ(), var2, var3));
             default:
                throw new IllegalStateException("Unable to clamp axis " + var1);
          }

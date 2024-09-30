@@ -34,7 +34,7 @@ public class Class2940 extends Class2898<Class4705> {
             float var12 = (float)(var9 + var10 + var11) * 0.333F + 0.5F;
 
             for (BlockPos var14 : BlockPos.method8359(var4.method8336(-var9, -var10, -var11), var4.method8336(var9, var10, var11))) {
-               if (var14.method8318(var4) <= (double)(var12 * var12)) {
+               if (var14.distanceSq(var4) <= (double)(var12 * var12)) {
                   var1.setBlockState(var14, var5.field22322, 4);
                }
             }

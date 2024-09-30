@@ -29,7 +29,7 @@ public class Class2952 extends Class2898<Class4712> {
 
       for (Integer var13 : var9) {
          for (Integer var15 : var10) {
-            var11.method8372(var13, 0, var15);
+            var11.setPos(var13, 0, var15);
             BlockPos var16 = var1.method7006(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, var11);
             if (var1.method7007(var16) || var1.getBlockState(var16).method23414(var1, var16).isEmpty()) {
                var1.setBlockState(var16, Blocks.CHEST.getDefaultState(), 2);

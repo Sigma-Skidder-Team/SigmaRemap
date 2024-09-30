@@ -28,6 +28,7 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.world.ITickList;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeContainer;
+import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.chunk.ChunkSection;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.gen.feature.structure.StructureStart;
@@ -124,7 +125,7 @@ public class Chunk implements IChunk {
       }
    }
 
-   public Chunk(World var1, Class1672 var2) {
+   public Chunk(World var1, ChunkPrimer var2) {
       this(
          var1,
          var2.getPos(),
@@ -196,7 +197,7 @@ public class Chunk implements IChunk {
          }
 
          if (var5 == 70) {
-            var11 = Class5647.method17835(var4, var6);
+            var11 = DebugChunkGenerator.method17835(var4, var6);
          }
 
          return var11 == null ? Blocks.AIR.getDefaultState() : var11;
@@ -708,7 +709,7 @@ public class Chunk implements IChunk {
 
             while (var5.hasNext()) {
                Short var6 = (Short)var5.next();
-               BlockPos var7 = Class1672.method7114(var6, var4, var3);
+               BlockPos var7 = ChunkPrimer.method7114(var6, var4, var3);
                BlockState var8 = this.getBlockState(var7);
                BlockState var9 = Block.method11542(var8, this.field9116, var7);
                this.field9116.setBlockState(var7, var9, 20);

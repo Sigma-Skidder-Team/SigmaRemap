@@ -40,7 +40,7 @@ public class Class2951 extends Class2898<Class4728> {
                      int var15 = var13 - var4.getX();
                      int var16 = var14 - var4.getZ();
                      if (var15 * var15 + var16 * var16 <= var12 * var12) {
-                        var10.method8372(var13, var1.method6736(Heightmap.Type.WORLD_SURFACE, var13, var14) - 1, var14);
+                        var10.setPos(var13, var1.method6736(Heightmap.Type.WORLD_SURFACE, var13, var14) - 1, var14);
                         if (method11219(var1.getBlockState(var10).getBlock())) {
                            var1.setBlockState(var10, Blocks.PODZOL.getDefaultState(), 2);
                         }

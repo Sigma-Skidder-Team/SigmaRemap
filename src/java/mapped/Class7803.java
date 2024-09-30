@@ -245,10 +245,10 @@ public class Class7803 {
       if (!(var6 instanceof Class9733)) {
          if (var1.getY() != var0 - 1) {
             if (var1.getY() < var0 - 1) {
-               var5 = var2.getBiome(var1).method32507().method24283().method28935();
+               var5 = var2.getBiome(var1).getGenerationSettings().method24283().method28935();
             }
          } else {
-            var5 = var2.getBiome(var1).method32507().method24283().method28934();
+            var5 = var2.getBiome(var1).getGenerationSettings().method24283().method28934();
          }
       } else {
          BlockState[] var7 = var6.method38130();

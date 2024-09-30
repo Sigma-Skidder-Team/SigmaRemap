@@ -30,7 +30,7 @@ public class Class2912 extends Class2898<Class4712> {
          for (int var10 = var8.getZ(); var10 <= var8.method24359(); var10++) {
             for (int var11 = var8.getX(); var11 <= var8.method24358(); var11++) {
                if (method11248(field17996.getX(), field17996.getZ(), var11, var10) <= 16) {
-                  var9.method8372(var11, field17996.getY(), var10);
+                  var9.setPos(var11, field17996.getY(), var10);
                   if (!var9.equals(field17996)) {
                      var1.setBlockState(var9, Blocks.STONE.getDefaultState(), 2);
                   } else {

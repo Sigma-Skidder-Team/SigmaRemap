@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.network.DebugPacketSender;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.server.ServerWorld;
 
@@ -41,7 +42,7 @@ public class Class3753 extends Class3676<Class1042> {
                var6.method6674(var4);
             }
 
-            Class7393.method23615(var1, var4);
+            DebugPacketSender.method23615(var1, var4);
          }
       });
       var2.getBrain().method21405(Class8830.field39815);

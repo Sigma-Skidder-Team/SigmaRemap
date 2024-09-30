@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import it.unimi.dsi.fastutil.ints.IntRBTreeSet;
 import it.unimi.dsi.fastutil.ints.IntSortedSet;
+import net.minecraft.util.SharedSeedRandom;
+
 import java.util.List;
 import java.util.stream.IntStream;
 
@@ -11,15 +13,15 @@ public class Class7691 implements Class7690 {
    private final double field32933;
    private final double field32934;
 
-   public Class7691(Class2420 var1, IntStream var2) {
+   public Class7691(SharedSeedRandom var1, IntStream var2) {
       this(var1, var2.boxed().collect(ImmutableList.toImmutableList()));
    }
 
-   public Class7691(Class2420 var1, List<Integer> var2) {
+   public Class7691(SharedSeedRandom var1, List<Integer> var2) {
       this(var1, new IntRBTreeSet(var2));
    }
 
-   private Class7691(Class2420 var1, IntSortedSet var2) {
+   private Class7691(SharedSeedRandom var1, IntSortedSet var2) {
       if (var2.isEmpty()) {
          throw new IllegalArgumentException("Need some octaves!");
       } else {
@@ -40,19 +42,19 @@ public class Class7691 implements Class7690 {
                if (var10 >= 0 && var2.contains(var9 - var10)) {
                   this.field32932[var10] = new Class8972(var1);
                } else {
-                  var1.method10369(262);
+                  var1.skip(262);
                }
             }
 
             if (var6 > 0) {
                long var11 = (long)(var8.method32932(var8.field40562, var8.field40563, var8.field40564) * 9.223372E18F);
-               Class2420 var13 = new Class2420(var11);
+               SharedSeedRandom var13 = new SharedSeedRandom(var11);
 
                for (int var14 = var9 - 1; var14 >= 0; var14--) {
                   if (var14 < var7 && var2.contains(var9 - var14)) {
                      this.field32932[var14] = new Class8972(var13);
                   } else {
-                     var13.method10369(262);
+                     var13.skip(262);
                   }
                }
             }

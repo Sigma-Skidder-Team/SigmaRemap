@@ -346,7 +346,7 @@ public class Class7699 {
       Stream<SectionPos> var3 = SectionPos.method8427(SectionPos.method8390(this.field32977), 2);
       var3.filter(this.field32978::method6953)
          .map(SectionPos::method8422)
-         .min(Comparator.comparingDouble(var1 -> var1.method8318(this.field32977)))
+         .min(Comparator.comparingDouble(var1 -> var1.distanceSq(this.field32977)))
          .ifPresent(this::method25429);
    }
 
@@ -390,7 +390,7 @@ public class Class7699 {
 
          for (Class1026 var7 : var5) {
             BlockPos var8 = var7.getPosition();
-            if (var7.removed || var7.world.getDimensionKey() != this.field32978.getDimensionKey() || this.field32977.method8318(var8) >= 12544.0) {
+            if (var7.removed || var7.world.getDimensionKey() != this.field32978.getDimensionKey() || this.field32977.distanceSq(var8) >= 12544.0) {
                var4.add(var7);
             } else if (var7.ticksExisted > 600) {
                if (this.field32978.getEntityByUuid(var7.getUniqueID()) == null) {
@@ -582,7 +582,7 @@ public class Class7699 {
             + MathHelper.floor(MathHelper.sin(var8) * 32.0F * (float)var5)
             + this.field32978.rand.nextInt(5);
          int var11 = this.field32978.method6736(Heightmap.Type.WORLD_SURFACE, var9, var10);
-         var6.method8372(var9, var11, var10);
+         var6.setPos(var9, var11, var10);
          if ((!this.field32978.method6952(var6) || var1 >= 2)
             && this.field32978
                .method7019(

@@ -17,6 +17,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
+import net.minecraft.network.DebugPacketSender;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
@@ -575,7 +576,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
                BiPredicate var9 = field5793.get(var1);
                if (var8.isPresent() && var9.test(this, var8.get())) {
                   var7.method6674(var3.method35579());
-                  Class7393.method23615(var6, var3.method35579());
+                  DebugPacketSender.method23615(var6, var3.method35579());
                }
             }
          });
@@ -909,7 +910,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
    @Override
    public void method4257() {
       super.method4257();
-      Class7393.method23622(this);
+      DebugPacketSender.method23622(this);
    }
 
    @Override

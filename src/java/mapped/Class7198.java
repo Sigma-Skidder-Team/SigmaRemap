@@ -111,7 +111,7 @@ public class Class7198 extends Class7194 {
             return false;
          } else {
             var2.set(var15);
-            var4.method8372(var8, var11, var9);
+            var4.setPos(var8, var11, var9);
             BlockState var16 = var1.getBlockState(var4);
             if (!var0.method22609(var16)) {
                return false;
@@ -134,7 +134,7 @@ public class Class7198 extends Class7194 {
                for (Direction var19 : Direction.Plane.HORIZONTAL) {
                   int var20 = var8 + var19.getXOffset();
                   int var21 = var9 + var19.getZOffset();
-                  if (var20 >> 4 != var6 || var21 >> 4 != var7 || var1.getBlockState(var4.method8372(var20, var11, var21)).isAir()) {
+                  if (var20 >> 4 != var6 || var21 >> 4 != var7 || var1.getBlockState(var4.setPos(var20, var11, var21)).isAir()) {
                      var1.setBlockState(var4, field30895.getBlockState(), false);
                      var1.getFluidsToBeTicked().scheduleTick(var4, field30895.getFluid(), 0);
                      var17 = true;
@@ -142,7 +142,7 @@ public class Class7198 extends Class7194 {
                   }
                }
 
-               var4.method8372(var8, var11, var9);
+               var4.setPos(var8, var11, var9);
                if (var17) {
                   return true;
                } else {

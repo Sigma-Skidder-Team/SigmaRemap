@@ -1,28 +1,31 @@
-package mapped;
+package net.minecraft.world.gen.feature.structure;
 
 import com.mojang.datafixers.DataFixUtils;
+import mapped.ChunkStatus;
+import mapped.DimensionGeneratorSettings;
+import mapped.Structure;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.SectionPos;
 import net.minecraft.world.IStructureReader;
 import net.minecraft.world.IWorld;
-import net.minecraft.world.gen.feature.structure.StructureStart;
+import net.minecraft.world.gen.WorldGenRegion;
 
 import java.util.stream.Stream;
 import javax.annotation.Nullable;
 
-public class Class7480 {
+public class StructureManager {
    private final IWorld field32171;
    private final DimensionGeneratorSettings field32172;
 
-   public Class7480(IWorld var1, DimensionGeneratorSettings var2) {
+   public StructureManager(IWorld var1, DimensionGeneratorSettings var2) {
       this.field32171 = var1;
       this.field32172 = var2;
    }
 
-   public Class7480 method24339(Class1691 var1) {
+   public StructureManager method24339(WorldGenRegion var1) {
       if (var1.method6970() == this.field32171) {
-         return new Class7480(var1, this.field32172);
+         return new StructureManager(var1, this.field32172);
       } else {
          throw new IllegalStateException("Using invalid feature manager (source level: " + var1.method6970() + ", region: " + var1);
       }
@@ -33,7 +36,7 @@ public class Class7480 {
          .getChunk(var1.method8410(), var1.method8412(), ChunkStatus.field42135)
          .method7099(var2)
          .stream()
-         .<SectionPos>map(var0 -> SectionPos.method8391(new ChunkPos(var0), 0))
+         .<SectionPos>map(var0 -> SectionPos.from(new ChunkPos(var0), 0))
          .<StructureStart<?>>map(var2x -> this.method24341(var2x, var2, this.field32171.getChunk(var2x.method8410(), var2x.method8412(), ChunkStatus.field42134)))
          .filter(var0 -> var0 != null && var0.method17117());
    }
@@ -43,11 +46,11 @@ public class Class7480 {
       return var3.method7097(var2);
    }
 
-   public void method24342(SectionPos var1, Structure<?> var2, StructureStart<?> var3, IStructureReader var4) {
+   public void func_235014_a_(SectionPos var1, Structure<?> var2, StructureStart<?> var3, IStructureReader var4) {
       var4.method7098(var2, var3);
    }
 
-   public void method24343(SectionPos var1, Structure<?> var2, long var3, IStructureReader var5) {
+   public void func_235012_a_(SectionPos var1, Structure<?> var2, long var3, IStructureReader var5) {
       var5.method7100(var2, var3);
    }
 
@@ -58,7 +61,7 @@ public class Class7480 {
    public StructureStart<?> method24345(BlockPos var1, boolean var2, Structure<?> var3) {
       return (StructureStart<?>)DataFixUtils.orElse(
          this.method24340(SectionPos.method8390(var1), var3)
-            .filter(var1x -> var1x.method17110().method38396(var1))
+            .filter(var1x -> var1x.getBoundingBox().method38396(var1))
             .filter(var2x -> !var2 || var2x.method17111().stream().anyMatch(var1xx -> var1xx.method12915().method38396(var1)))
             .findFirst(),
          StructureStart.field24194

@@ -4,6 +4,7 @@ import it.unimi.dsi.fastutil.shorts.ShortList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.ITickList;
+import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.chunk.IChunk;
 
 import java.util.function.Function;
@@ -41,7 +42,7 @@ public class Class6806<T> implements ITickList<T> {
          if (this.field29630[var5] != null) {
 
              for (Short var7 : this.field29630[var5]) {
-                 BlockPos var8 = Class1672.method7114(var7, var5, this.field29629);
+                 BlockPos var8 = ChunkPrimer.method7114(var7, var5, this.field29629);
                  var1.scheduleTick(var8, var2.apply(var8), 0);
              }
 
@@ -57,7 +58,7 @@ public class Class6806<T> implements ITickList<T> {
 
    @Override
    public void method20719(BlockPos var1, T var2, int var3, Class2199 var4) {
-      IChunk.getList(this.field29630, var1.getY() >> 4).add(Class1672.method7113(var1));
+      IChunk.getList(this.field29630, var1.getY() >> 4).add(ChunkPrimer.method7113(var1));
    }
 
    @Override

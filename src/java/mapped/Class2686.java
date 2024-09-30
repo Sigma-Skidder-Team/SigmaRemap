@@ -51,7 +51,7 @@ public class Class2686 extends Class2595 {
                Vector3d var5 = Class8037.method27584(this.field17103, 15, 7, var3x -> {
                   if (var3.method6952(var3x)) {
                      Optional var6x = var3.method6951().method6670(Class4913.field22748, this::method10902, var3x, 10, Class2093.field13636);
-                     return var6x.isPresent() ? -((BlockPos)var6x.get()).method8318(var4) : Double.NEGATIVE_INFINITY;
+                     return var6x.isPresent() ? -((BlockPos)var6x.get()).distanceSq(var4) : Double.NEGATIVE_INFINITY;
                   } else {
                      return Double.NEGATIVE_INFINITY;
                   }

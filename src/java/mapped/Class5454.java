@@ -81,7 +81,7 @@ public class Class5454 extends StructureStart<Class4726> {
       Vector3i var19 = var18.method38401();
       int var20 = var19.getX();
       int var21 = var19.getZ();
-      int var22 = var2.method17797(var20, var21, Class4184.method12959(var11)) - 1;
+      int var22 = var2.getHeight(var20, var21, Class4184.method12959(var11)) - 1;
       int var23 = Class2978.method11390(this.field24201, var2, var11, var10.field35676, var22, var18.method38399(), var18);
       BlockPos var24 = new BlockPos(var17.getX(), var23, var17.getZ());
       if (var7.field22393 == Class107.MOUNTAIN || var7.field22393 == Class107.OCEAN || var7.field22393 == Class107.STANDARD) {

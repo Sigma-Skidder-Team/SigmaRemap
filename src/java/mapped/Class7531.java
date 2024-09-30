@@ -4,6 +4,7 @@ import com.google.common.collect.Maps;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.DebugPacketSender;
 import net.minecraft.network.play.server.SEntityStatusPacket;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.math.BlockPos;
@@ -55,7 +56,7 @@ public class Class7531 extends Class7530 {
          this.method24605();
       }
 
-      Class7393.method23621(this.field32333, this.field32332.values());
+      DebugPacketSender.method23621(this.field32333, this.field32332.values());
    }
 
    public static boolean method24612(Class1026 var0, Class7699 var1) {
@@ -174,7 +175,7 @@ public class Class7531 extends Class7530 {
       double var6 = (double)var2;
 
       for (Class7699 var9 : this.field32332.values()) {
-         double var10 = var9.method25428().method8318(var1);
+         double var10 = var9.method25428().distanceSq(var1);
          if (var9.method25433() && var10 < var6) {
             var5 = var9;
             var6 = var10;

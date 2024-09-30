@@ -44,7 +44,7 @@ public class Class6902 extends Class6896 {
             var13--;
          }
 
-         if (method21070(var1, var2, var14.method8372(var15, var19, var16), var5, var6, var7)) {
+         if (method21070(var1, var2, var14.setPos(var15, var19, var16), var5, var6, var7)) {
             var17 = var19 + 1;
          }
       }
@@ -63,7 +63,7 @@ public class Class6902 extends Class6896 {
                int var22 = var4.getY() + var21;
                var15 += var26.getXOffset();
                var16 += var26.getZOffset();
-               if (method21070(var1, var2, var14.method8372(var15, var22, var16), var5, var6, var7)) {
+               if (method21070(var1, var2, var14.setPos(var15, var22, var16), var5, var6, var7)) {
                   var17 = var22 + 1;
                }
             }

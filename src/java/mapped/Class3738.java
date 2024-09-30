@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.world.server.ServerWorld;
@@ -13,7 +14,7 @@ public class Class3738 extends Class3676<LivingEntity> {
    private final Predicate<LivingEntity> field19861;
    private final float field19862;
 
-   public Class3738(Class179 var1, float var2) {
+   public Class3738(EntityClassification var1, float var2) {
       this(var1x -> var1.equals(var1x.getType().method33209()), var2);
    }
 

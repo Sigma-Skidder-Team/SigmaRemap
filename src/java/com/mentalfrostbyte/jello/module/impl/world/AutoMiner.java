@@ -232,7 +232,7 @@ public class AutoMiner extends Module {
 
          for (BlockPos var6 : var3) {
             BlockPos var7 = (BlockPos)var10.get(var10.size() - 1);
-            double var8 = Math.sqrt(var6.method8318(var7));
+            double var8 = Math.sqrt(var6.distanceSq(var7));
             if (var8 > 4.0 && !Class9110.method33984(var6)) {
                var10.add(var6);
             }

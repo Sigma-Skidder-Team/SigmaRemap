@@ -127,7 +127,7 @@ public abstract class Class6395 {
             var2.getEntityId(),
             var2.interactionManager.getGameType(),
             var2.interactionManager.method33864(),
-            BiomeManager.getHashedSeed(var12.method6967()),
+            BiomeManager.getHashedSeed(var12.getSeed()),
             var14.isHardcore(),
             this.field27990.method1319(),
             this.field28001,
@@ -429,7 +429,7 @@ public abstract class Class6395 {
             new SRespawnPacket(
                var12.world.method6812(),
                var12.world.getDimensionKey(),
-               BiomeManager.getHashedSeed(var12.getServerWorld().method6967()),
+               BiomeManager.getHashedSeed(var12.getServerWorld().getSeed()),
                var12.interactionManager.getGameType(),
                var12.interactionManager.method33864(),
                var12.getServerWorld().isDebug(),

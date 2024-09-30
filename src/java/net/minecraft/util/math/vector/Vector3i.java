@@ -125,7 +125,7 @@ public class Vector3i implements Comparable<Vector3i> {
       return this.method8320(var1.getX(), var1.getY(), var1.getZ(), true) < var2 * var2;
    }
 
-   public double method8318(Vector3i var1) {
+   public double distanceSq(Vector3i var1) {
       return this.method8320((double)var1.getX(), (double)var1.getY(), (double)var1.getZ(), true);
    }
 

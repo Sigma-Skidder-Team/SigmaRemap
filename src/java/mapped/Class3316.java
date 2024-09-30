@@ -120,7 +120,7 @@ public class Class3316 extends Class3314 {
                                     var38 = Blocks.BEDROCK.getDefaultState();
                                  } else {
                                     do {
-                                       var31.method8372(var25.getX() + var33 + var26, --var37, var25.getZ() + var36 + var27);
+                                       var31.setPos(var25.getX() + var33 + var26, --var37, var25.getZ() + var36 + var27);
                                        var38 = var24.getBlockState(var31);
                                     } while (var38.method23394(var1, var31) == MaterialColor.AIR && var37 > 0);
 

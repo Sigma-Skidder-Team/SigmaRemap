@@ -22,7 +22,7 @@ public class Class5447 extends StructureStart<Class4712> {
       do {
          this.field24196.clear();
          this.field24197 = Class9764.method38386();
-         this.field24201.method10373(this.field24205 + (long)(var10++), var4, var5);
+         this.field24201.setLargeFeatureSeed(this.field24205 + (long)(var10++), var4, var5);
          Class9331.method35283();
          var11 = new Class4196(this.field24201, (var4 << 4) + 2, (var5 << 4) + 2);
          this.field24196.add(var11);
@@ -36,7 +36,7 @@ public class Class5447 extends StructureStart<Class4712> {
          }
 
          this.method17113();
-         this.method17115(var2.method17807(), this.field24201, 10);
+         this.method17115(var2.func_230356_f_(), this.field24201, 10);
       } while (this.field24196.isEmpty() || var11.field20499 == null);
    }
 }

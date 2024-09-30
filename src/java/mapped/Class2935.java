@@ -32,7 +32,7 @@ public class Class2935 extends Class2898<Class4708> {
    }
 
    public boolean method11213(ISeedReader var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4708 var5) {
-      int var8 = var2.method17807();
+      int var8 = var2.func_230356_f_();
       if (method11274(var1, var8, var4.method8354())) {
          int var9 = var5.method14783().method27633(var3);
          boolean var10 = var3.nextFloat() < 0.9F;

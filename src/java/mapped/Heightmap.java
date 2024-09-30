@@ -43,7 +43,7 @@ public class Heightmap {
             }
 
             for (int var14 = var7 - 1; var14 >= 0; var14--) {
-               var8.method8372(var9, var14, var10);
+               var8.setPos(var9, var14, var10);
                BlockState var15 = var0.getBlockState(var8);
                if (!var15.isIn(Blocks.AIR)) {
                   while (var6.hasNext()) {
@@ -75,7 +75,7 @@ public class Heightmap {
                BlockPos.Mutable var8 = new BlockPos.Mutable();
 
                for (int var9 = var2 - 1; var9 >= 0; var9--) {
-                  var8.method8372(var1, var9, var3);
+                  var8.setPos(var1, var9, var3);
                   if (this.field32311.test(this.field32312.getBlockState(var8))) {
                      this.method24581(var1, var3, var9 + 1);
                      return true;

@@ -19,6 +19,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.gen.carver.ConfiguredCarver;
 import org.apache.commons.lang3.mutable.MutableBoolean;
 
 public abstract class Class7195<C extends Class4729> {
@@ -66,7 +67,7 @@ public abstract class Class7195<C extends Class4729> {
       }
    );
    public Set<Fluid> field30898 = ImmutableSet.of(Fluids.WATER);
-   private final Codec<Class6815<C>> field30899;
+   private final Codec<ConfiguredCarver<C>> field30899;
    public final int field30900;
 
    private static <C extends Class4729, F extends Class7195<C>> F method22604(String var0, F var1) {
@@ -75,14 +76,14 @@ public abstract class Class7195<C extends Class4729> {
 
    public Class7195(Codec<C> var1, int var2) {
       this.field30900 = var2;
-      this.field30899 = var1.fieldOf("config").xmap(this::method22605, Class6815::method20775).codec();
+      this.field30899 = var1.fieldOf("config").xmap(this::method22605, ConfiguredCarver::method20775).codec();
    }
 
-   public Class6815<C> method22605(C var1) {
-      return new Class6815<C>(this, var1);
+   public ConfiguredCarver<C> method22605(C var1) {
+      return new ConfiguredCarver<C>(this, var1);
    }
 
-   public Codec<Class6815<C>> method22606() {
+   public Codec<ConfiguredCarver<C>> method22606() {
       return this.field30899;
    }
 
@@ -175,7 +176,7 @@ public abstract class Class7195<C extends Class4729> {
          return false;
       } else {
          var3.set(var19);
-         var5.method8372(var11, var14, var12);
+         var5.setPos(var11, var14, var12);
          BlockState var20 = var1.getBlockState(var5);
          BlockState var21 = var1.getBlockState(var6.method8377(var5, Direction.UP));
          if (var20.isIn(Blocks.GRASS_BLOCK) || var20.isIn(Blocks.MYCELIUM)) {
@@ -188,7 +189,7 @@ public abstract class Class7195<C extends Class4729> {
                if (var16.isTrue()) {
                   var7.method8377(var5, Direction.DOWN);
                   if (var1.getBlockState(var7).isIn(Blocks.DIRT)) {
-                     var1.setBlockState(var7, ((Biome)var2.apply(var5)).method32507().method24283().method28934(), false);
+                     var1.setBlockState(var7, ((Biome)var2.apply(var5)).getGenerationSettings().method24283().method28934(), false);
                   }
                }
             } else {
@@ -223,7 +224,7 @@ public abstract class Class7195<C extends Class4729> {
       for (int var13 = var4; var13 < var5; var13++) {
          for (int var14 = var8; var14 < var9; var14++) {
             for (int var15 = var6 - 1; var15 <= var7 + 1; var15++) {
-               if (this.field30898.contains(var1.getFluidState(var12.method8372(var13 + var2 * 16, var15, var14 + var3 * 16)).getFluid())) {
+               if (this.field30898.contains(var1.getFluidState(var12.setPos(var13 + var2 * 16, var15, var14 + var3 * 16)).getFluid())) {
                   return true;
                }
 

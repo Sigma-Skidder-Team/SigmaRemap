@@ -1,9 +1,11 @@
 package net.minecraft.world.biome;
 
 import mapped.*;
+import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.gen.feature.structure.StructureFeatures;
 
 public class BiomeMaker {
 
@@ -16,9 +18,9 @@ public class BiomeMaker {
    public static Biome makeGiantTaigaBiome(float var0, float var1, float var2, boolean var3) {
       Class9328 var6 = new Class9328();
       Class8468.method29838(var6);
-      var6.method35249(Class179.field624, new Class6692(EntityType.field41105, 8, 4, 4));
-      var6.method35249(Class179.field624, new Class6692(EntityType.RABBIT, 4, 2, 3));
-      var6.method35249(Class179.field624, new Class6692(EntityType.FOX, 8, 2, 4));
+      var6.method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.field41105, 8, 4, 4));
+      var6.method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.RABBIT, 4, 2, 3));
+      var6.method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.FOX, 8, 2, 4));
       if (!var3) {
          Class8468.method29839(var6);
          Class8468.method29846(var6, 100, 25, 100);
@@ -28,7 +30,7 @@ public class BiomeMaker {
 
       Class7935 var7 = new Class7935().method26688(Class9109.field41849);
       Class8468.method29771(var7);
-      var7.method26693(Class9438.field43858);
+      var7.method26693(StructureFeatures.field43858);
       Class8468.method29773(var7);
       Class8468.method29775(var7);
       Class8468.method29777(var7);
@@ -72,7 +74,7 @@ public class BiomeMaker {
       Class8468.method29840(var5);
       Class7935 var6 = new Class7935().method26688(Class9109.field41850);
       Class8468.method29771(var6);
-      var6.method26693(Class9438.field43858);
+      var6.method26693(StructureFeatures.field43858);
       Class8468.method29773(var6);
       Class8468.method29775(var6);
       Class8468.method29777(var6);
@@ -132,8 +134,8 @@ public class BiomeMaker {
    public static Biome method36067() {
       Class9328 var2 = new Class9328();
       Class8468.method29848(var2);
-      var2.method35249(Class179.field624, new Class6692(EntityType.field41062, 10, 1, 1))
-         .method35249(Class179.field623, new Class6692(EntityType.field41059, 2, 1, 1));
+      var2.method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.field41062, 10, 1, 1))
+         .method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41059, 2, 1, 1));
       return method36073(0.2F, 0.4F, 0.9F, false, false, true, var2);
    }
 
@@ -152,9 +154,9 @@ public class BiomeMaker {
    private static Biome method36071(float var0, float var1, int var2, int var3, int var4) {
       Class9328 var7 = new Class9328();
       Class8468.method29848(var7);
-      var7.method35249(Class179.field624, new Class6692(EntityType.field41062, var2, 1, var3))
-         .method35249(Class179.field623, new Class6692(EntityType.field41059, 2, 1, var4))
-         .method35249(Class179.field624, new Class6692(EntityType.field41061, 1, 1, 2));
+      var7.method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.field41062, var2, 1, var3))
+         .method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41059, 2, 1, var4))
+         .method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.field41061, 1, 1, 2));
       var7.method35252();
       return method36073(var0, var1, 0.9F, false, false, false, var7);
    }
@@ -162,20 +164,20 @@ public class BiomeMaker {
    private static Biome method36072(float var0, float var1, int var2, int var3) {
       Class9328 var6 = new Class9328();
       Class8468.method29848(var6);
-      var6.method35249(Class179.field624, new Class6692(EntityType.field41062, var2, 1, var3))
-         .method35249(Class179.field624, new Class6692(EntityType.field41061, 80, 1, 2))
-         .method35249(Class179.field623, new Class6692(EntityType.field41059, 2, 1, 1));
+      var6.method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.field41062, var2, 1, var3))
+         .method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.field41061, 80, 1, 2))
+         .method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41059, 2, 1, 1));
       return method36073(var0, var1, 0.9F, true, false, false, var6);
    }
 
    private static Biome method36073(float var0, float var1, float var2, boolean var3, boolean var4, boolean var5, Class9328 var6) {
       Class7935 var9 = new Class7935().method26688(Class9109.field41850);
       if (!var4 && !var5) {
-         var9.method26693(Class9438.field43838);
+         var9.method26693(StructureFeatures.field43838);
       }
 
       Class8468.method29771(var9);
-      var9.method26693(Class9438.field43860);
+      var9.method26693(StructureFeatures.field43860);
       Class8468.method29773(var9);
       Class8468.method29775(var9);
       Class8468.method29777(var9);
@@ -227,11 +229,11 @@ public class BiomeMaker {
    public static Biome method36074(float var0, float var1, Class9319<Class8278> var2, boolean var3) {
       Class9328 var6 = new Class9328();
       Class8468.method29838(var6);
-      var6.method35249(Class179.field624, new Class6692(EntityType.field41047, 5, 4, 6));
+      var6.method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.field41047, 5, 4, 6));
       Class8468.method29840(var6);
       Class7935 var7 = new Class7935().method26688(var2);
       Class8468.method29771(var7);
-      var7.method26693(Class9438.field43862);
+      var7.method26693(StructureFeatures.field43862);
       Class8468.method29773(var7);
       Class8468.method29775(var7);
       Class8468.method29777(var7);
@@ -278,12 +280,12 @@ public class BiomeMaker {
       Class8468.method29845(var7);
       Class7935 var8 = new Class7935().method26688(Class9109.field41844);
       if (var2) {
-         var8.method26693(Class9438.field43854);
-         var8.method26693(Class9438.field43834);
+         var8.method26693(StructureFeatures.field43854);
+         var8.method26693(StructureFeatures.field43834);
       }
 
       if (var3) {
-         var8.method26693(Class9438.field43839);
+         var8.method26693(StructureFeatures.field43839);
       }
 
       if (var4) {
@@ -291,7 +293,7 @@ public class BiomeMaker {
       }
 
       Class8468.method29771(var8);
-      var8.method26693(Class9438.field43859);
+      var8.method26693(StructureFeatures.field43859);
       Class8468.method29773(var8);
       Class8468.method29776(var8);
       Class8468.method29777(var8);
@@ -336,11 +338,11 @@ public class BiomeMaker {
 
       Class7935 var4 = new Class7935().method26688(Class9109.field41850);
       if (!isSunflowerVariant) {
-         var4.method26693(Class9438.field43853).method26693(Class9438.field43834);
+         var4.method26693(StructureFeatures.field43853).method26693(StructureFeatures.field43834);
       }
 
       Class8468.method29771(var4);
-      var4.method26693(Class9438.field43858);
+      var4.method26693(StructureFeatures.field43858);
       Class8468.method29773(var4);
       Class8468.method29775(var4);
       Class8468.method29777(var4);
@@ -416,14 +418,14 @@ public class BiomeMaker {
    }
 
    public static Biome method36080() {
-      Class7935 var2 = new Class7935().method26688(Class9109.field41845).method26693(Class9438.field43850);
+      Class7935 var2 = new Class7935().method26688(Class9109.field41845).method26693(StructureFeatures.field43850);
       return method36077(var2);
    }
 
    public static Biome method36081() {
       Class7935 var2 = new Class7935()
          .method26688(Class9109.field41845)
-         .method26693(Class9438.field43850)
+         .method26693(StructureFeatures.field43850)
          .method26690(Class1993.field13002, Class9104.field41634)
          .method26690(Class1993.field13006, Class9104.field41636);
       return method36077(var2);
@@ -439,7 +441,7 @@ public class BiomeMaker {
       Class8468.method29847(var4);
       Class7935 var5 = new Class7935().method26688(Class9109.field41854);
       Class8468.method29771(var5);
-      var5.method26693(Class9438.field43858);
+      var5.method26693(StructureFeatures.field43858);
       Class8468.method29773(var5);
       Class8468.method29775(var5);
       Class8468.method29777(var5);
@@ -475,11 +477,11 @@ public class BiomeMaker {
    private static Biome method36084(float var0, float var1, float var2, boolean var3, boolean var4, Class9328 var5) {
       Class7935 var8 = new Class7935().method26688(!var4 ? Class9109.field41850 : Class9109.field41858);
       if (!var3 && !var4) {
-         var8.method26693(Class9438.field43855).method26693(Class9438.field43834);
+         var8.method26693(StructureFeatures.field43855).method26693(StructureFeatures.field43834);
       }
 
       Class8468.method29771(var8);
-      var8.method26693(!var3 ? Class9438.field43858 : Class9438.field43862);
+      var8.method26693(!var3 ? StructureFeatures.field43858 : StructureFeatures.field43862);
       Class8468.method29773(var8);
       Class8468.method29775(var8);
       Class8468.method29777(var8);
@@ -533,15 +535,15 @@ public class BiomeMaker {
    private static Class9328 method36086() {
       Class9328 var2 = new Class9328();
       Class8468.method29838(var2);
-      var2.method35249(Class179.field624, new Class6692(EntityType.field41038, 1, 2, 6))
-         .method35249(Class179.field624, new Class6692(EntityType.field41019, 1, 1, 1));
+      var2.method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.field41038, 1, 2, 6))
+         .method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.field41019, 1, 1, 1));
       Class8468.method29840(var2);
       return var2;
    }
 
    public static Biome method36087() {
       Class9328 var2 = method36086();
-      var2.method35249(Class179.field624, new Class6692(EntityType.field41047, 8, 4, 4));
+      var2.method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.field41047, 8, 4, 4));
       return method36084(1.5F, 0.025F, 1.0F, true, false, var2);
    }
 
@@ -550,7 +552,7 @@ public class BiomeMaker {
       Class8468.method29840(var7);
       Class7935 var8 = new Class7935().method26688(var0);
       Class8468.method29770(var8);
-      var8.method26693(!var3 ? Class9438.field43858 : Class9438.field43862);
+      var8.method26693(!var3 ? StructureFeatures.field43858 : StructureFeatures.field43862);
       Class8468.method29773(var8);
       Class8468.method29775(var8);
       Class8468.method29777(var8);
@@ -626,24 +628,24 @@ public class BiomeMaker {
 
    private static Class7935 method36093(Class9319<Class8278> var0, boolean var1, boolean var2, boolean var3) {
       Class7935 var6 = new Class7935().method26688(var0);
-      Class9300 var7 = !var2 ? Class9438.field43846 : Class9438.field43847;
+      StructureFeature var7 = !var2 ? StructureFeatures.field43846 : StructureFeatures.field43847;
       if (!var3) {
          var6.method26693(var7);
          if (var1) {
-            var6.method26693(Class9438.field43845);
+            var6.method26693(StructureFeatures.field43845);
          }
 
          Class8468.method29772(var6);
       } else {
          if (var1) {
-            var6.method26693(Class9438.field43845);
+            var6.method26693(StructureFeatures.field43845);
          }
 
          Class8468.method29772(var6);
          var6.method26693(var7);
       }
 
-      var6.method26693(Class9438.field43863);
+      var6.method26693(StructureFeatures.field43863);
       Class8468.method29774(var6);
       Class8468.method29775(var6);
       Class8468.method29777(var6);
@@ -662,7 +664,7 @@ public class BiomeMaker {
    public static Biome method36094(boolean var0) {
       Class9328 var3 = new Class9328();
       Class8468.method29841(var3, 3, 4, 15);
-      var3.method35249(Class179.field627, new Class6692(EntityType.field41073, 15, 1, 5));
+      var3.method35249(EntityClassification.field627, new MobSpawnInfoSpawners(EntityType.field41073, 15, 1, 5));
       boolean var4 = !var0;
       Class7935 var5 = method36093(Class9109.field41850, var0, false, var4);
       var5.method26690(Class1993.field13006, !var0 ? Class9104.field41652 : Class9104.field41653);
@@ -675,7 +677,7 @@ public class BiomeMaker {
    public static Biome method36095(boolean var0) {
       Class9328 var3 = new Class9328();
       Class8468.method29841(var3, 1, 4, 10);
-      var3.method35249(Class179.field626, new Class6692(EntityType.field41018, 1, 1, 2));
+      var3.method35249(EntityClassification.field626, new MobSpawnInfoSpawners(EntityType.field41018, 1, 1, 2));
       Class7935 var4 = method36093(Class9109.field41850, var0, false, true);
       var4.method26690(Class1993.field13006, !var0 ? Class9104.field41654 : Class9104.field41656);
       Class8468.method29830(var4);
@@ -692,9 +694,9 @@ public class BiomeMaker {
          Class8468.method29841(var3, 8, 4, 8);
       }
 
-      var3.method35249(Class179.field627, new Class6692(EntityType.field41070, 5, 1, 3))
-         .method35249(Class179.field627, new Class6692(EntityType.field41095, 25, 8, 8))
-         .method35249(Class179.field626, new Class6692(EntityType.field41018, 2, 1, 2));
+      var3.method35249(EntityClassification.field627, new MobSpawnInfoSpawners(EntityType.field41070, 5, 1, 3))
+         .method35249(EntityClassification.field627, new MobSpawnInfoSpawners(EntityType.field41095, 25, 8, 8))
+         .method35249(EntityClassification.field626, new MobSpawnInfoSpawners(EntityType.field41018, 2, 1, 2));
       Class7935 var4 = method36093(Class9109.field41857, var0, true, false);
       var4.method26690(Class1993.field13006, !var0 ? Class9104.field41658 : Class9104.field41659);
       if (var0) {
@@ -707,7 +709,7 @@ public class BiomeMaker {
    }
 
    public static Biome method36097() {
-      Class9328 var2 = new Class9328().method35249(Class179.field627, new Class6692(EntityType.field41070, 15, 1, 3));
+      Class9328 var2 = new Class9328().method35249(EntityClassification.field627, new MobSpawnInfoSpawners(EntityType.field41070, 15, 1, 3));
       Class8468.method29842(var2, 10, 4);
       Class7935 var3 = method36093(Class9109.field41848, false, true, false)
          .method26690(Class1993.field13006, Class9104.field41807)
@@ -720,7 +722,7 @@ public class BiomeMaker {
    public static Biome method36098() {
       Class9328 var2 = new Class9328();
       Class8468.method29842(var2, 5, 1);
-      var2.method35249(Class179.field623, new Class6692(EntityType.field41021, 5, 1, 1));
+      var2.method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41021, 5, 1, 1));
       Class7935 var3 = method36093(Class9109.field41848, true, true, false).method26690(Class1993.field13006, Class9104.field41659);
       Class8468.method29830(var3);
       Class8468.method29835(var3);
@@ -729,20 +731,20 @@ public class BiomeMaker {
 
    public static Biome method36099(boolean var0) {
       Class9328 var3 = new Class9328()
-         .method35249(Class179.field626, new Class6692(EntityType.field41086, 1, 1, 4))
-         .method35249(Class179.field627, new Class6692(EntityType.field41073, 15, 1, 5))
-         .method35249(Class179.field624, new Class6692(EntityType.field41068, 1, 1, 2));
+         .method35249(EntityClassification.field626, new MobSpawnInfoSpawners(EntityType.field41086, 1, 1, 4))
+         .method35249(EntityClassification.field627, new MobSpawnInfoSpawners(EntityType.field41073, 15, 1, 5))
+         .method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.field41068, 1, 1, 2));
       Class8468.method29840(var3);
-      var3.method35249(Class179.field623, new Class6692(EntityType.field41021, 5, 1, 1));
+      var3.method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41021, 5, 1, 1));
       float var4 = !var0 ? 0.0F : 0.5F;
       Class7935 var5 = new Class7935().method26688(Class9109.field41847);
-      var5.method26693(Class9438.field43846);
+      var5.method26693(StructureFeatures.field43846);
       if (var0) {
-         var5.method26693(Class9438.field43845);
+         var5.method26693(StructureFeatures.field43845);
       }
 
       Class8468.method29772(var5);
-      var5.method26693(Class9438.field43863);
+      var5.method26693(StructureFeatures.field43863);
       Class8468.method29774(var5);
       Class8468.method29775(var5);
       Class8468.method29833(var5);
@@ -783,7 +785,7 @@ public class BiomeMaker {
    private static Biome method36100(float var0, float var1, boolean var2, Class9328 var3) {
       Class7935 var6 = new Class7935().method26688(Class9109.field41850);
       Class8468.method29771(var6);
-      var6.method26693(Class9438.field43858);
+      var6.method26693(StructureFeatures.field43858);
       Class8468.method29773(var6);
       Class8468.method29775(var6);
       Class8468.method29777(var6);
@@ -839,21 +841,21 @@ public class BiomeMaker {
    }
 
    public static Biome method36102(float var0, float var1) {
-      Class9328 var4 = method36101().method35249(Class179.field624, new Class6692(EntityType.field41105, 5, 4, 4)).method35252();
+      Class9328 var4 = method36101().method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.field41105, 5, 4, 4)).method35252();
       return method36100(var0, var1, false, var4);
    }
 
    public static Biome method36103() {
-      Class9328 var2 = method36101().method35249(Class179.field624, new Class6692(EntityType.RABBIT, 4, 2, 3));
+      Class9328 var2 = method36101().method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.RABBIT, 4, 2, 3));
       return method36100(0.1F, 0.4F, true, var2);
    }
 
    public static Biome method36104(float var0, float var1, boolean var2, boolean var3, boolean var4, boolean var5) {
       Class9328 var8 = new Class9328();
       Class8468.method29838(var8);
-      var8.method35249(Class179.field624, new Class6692(EntityType.field41105, 8, 4, 4))
-         .method35249(Class179.field624, new Class6692(EntityType.RABBIT, 4, 2, 3))
-         .method35249(Class179.field624, new Class6692(EntityType.FOX, 8, 2, 4));
+      var8.method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.field41105, 8, 4, 4))
+         .method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.RABBIT, 4, 2, 3))
+         .method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.FOX, 8, 2, 4));
       if (!var2 && !var3) {
          var8.method35252();
       }
@@ -862,16 +864,16 @@ public class BiomeMaker {
       float var9 = !var2 ? 0.25F : -0.5F;
       Class7935 var10 = new Class7935().method26688(Class9109.field41850);
       if (var4) {
-         var10.method26693(Class9438.field43857);
-         var10.method26693(Class9438.field43834);
+         var10.method26693(StructureFeatures.field43857);
+         var10.method26693(StructureFeatures.field43834);
       }
 
       if (var5) {
-         var10.method26693(Class9438.field43840);
+         var10.method26693(StructureFeatures.field43840);
       }
 
       Class8468.method29771(var10);
-      var10.method26693(!var3 ? Class9438.field43858 : Class9438.field43862);
+      var10.method26693(!var3 ? StructureFeatures.field43858 : StructureFeatures.field43862);
       Class8468.method29773(var10);
       Class8468.method29775(var10);
       Class8468.method29777(var10);
@@ -918,9 +920,9 @@ public class BiomeMaker {
       Class8468.method29838(var5);
       Class8468.method29840(var5);
       Class7935 var6 = new Class7935().method26688(Class9109.field41850);
-      var6.method26693(Class9438.field43837);
+      var6.method26693(StructureFeatures.field43837);
       Class8468.method29771(var6);
-      var6.method26693(Class9438.field43858);
+      var6.method26693(StructureFeatures.field43858);
       Class8468.method29773(var6);
       Class8468.method29775(var6);
       Class8468.method29777(var6);
@@ -961,14 +963,14 @@ public class BiomeMaker {
       Class9328 var5 = new Class9328();
       Class8468.method29838(var5);
       Class8468.method29840(var5);
-      var5.method35249(Class179.field623, new Class6692(EntityType.field41080, 1, 1, 1));
+      var5.method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41080, 1, 1, 1));
       Class7935 var6 = new Class7935().method26688(Class9109.field41861);
       if (!var2) {
-         var6.method26693(Class9438.field43843);
+         var6.method26693(StructureFeatures.field43843);
       }
 
-      var6.method26693(Class9438.field43835);
-      var6.method26693(Class9438.field43861);
+      var6.method26693(StructureFeatures.field43835);
+      var6.method26693(StructureFeatures.field43861);
       Class8468.method29773(var6);
       if (!var2) {
          Class8468.method29828(var6);
@@ -1018,15 +1020,15 @@ public class BiomeMaker {
       Class8468.method29844(var6);
       Class7935 var7 = new Class7935().method26688(!var2 ? Class9109.field41850 : Class9109.field41852);
       if (!var2 && !var3) {
-         var7.method26693(Class9438.field43856).method26693(Class9438.field43840);
+         var7.method26693(StructureFeatures.field43856).method26693(StructureFeatures.field43840);
       }
 
       Class8468.method29771(var7);
       if (!var2 && !var3) {
-         var7.method26693(Class9438.field43834);
+         var7.method26693(StructureFeatures.field43834);
       }
 
-      var7.method26693(!var3 ? Class9438.field43858 : Class9438.field43862);
+      var7.method26693(!var3 ? StructureFeatures.field43858 : StructureFeatures.field43862);
       Class8468.method29773(var7);
       Class8468.method29775(var7);
       Class8468.method29777(var7);
@@ -1068,13 +1070,13 @@ public class BiomeMaker {
 
    public static Biome method36108(float var0, float var1, float var2, int var3, boolean var4) {
       Class9328 var7 = new Class9328()
-         .method35249(Class179.field626, new Class6692(EntityType.field41086, 2, 1, 4))
-         .method35249(Class179.field627, new Class6692(EntityType.field41073, 5, 1, 5));
+         .method35249(EntityClassification.field626, new MobSpawnInfoSpawners(EntityType.field41086, 2, 1, 4))
+         .method35249(EntityClassification.field627, new MobSpawnInfoSpawners(EntityType.field41073, 5, 1, 5));
       Class8468.method29840(var7);
-      var7.method35249(Class179.field623, new Class6692(EntityType.field41021, !var4 ? 100 : 1, 1, 1));
+      var7.method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41021, !var4 ? 100 : 1, 1, 1));
       Class7935 var8 = new Class7935().method26688(Class9109.field41850);
-      var8.method26693(Class9438.field43835);
-      var8.method26693(Class9438.field43858);
+      var8.method26693(StructureFeatures.field43835);
+      var8.method26693(StructureFeatures.field43858);
       Class8468.method29773(var8);
       Class8468.method29775(var8);
       Class8468.method29777(var8);
@@ -1116,20 +1118,20 @@ public class BiomeMaker {
    public static Biome method36109(float var0, float var1, float var2, float var3, int var4, boolean var5, boolean var6) {
       Class9328 var9 = new Class9328();
       if (!var6 && !var5) {
-         var9.method35249(Class179.field624, new Class6692(EntityType.field41096, 5, 2, 5));
+         var9.method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.field41096, 5, 2, 5));
       }
 
       Class8468.method29840(var9);
       Class7935 var10 = new Class7935().method26688(!var6 ? Class9109.field41844 : Class9109.field41860);
       if (!var6) {
-         var10.method26693(Class9438.field43835);
-         var10.method26693(Class9438.field43851);
-         var10.method26693(Class9438.field43842);
+         var10.method26693(StructureFeatures.field43835);
+         var10.method26693(StructureFeatures.field43851);
+         var10.method26693(StructureFeatures.field43842);
       } else {
          Class8468.method29771(var10);
       }
 
-      var10.method26693(!var6 ? Class9438.field43858 : Class9438.field43862);
+      var10.method26693(!var6 ? StructureFeatures.field43858 : StructureFeatures.field43862);
       Class8468.method29773(var10);
       Class8468.method29775(var10);
       Class8468.method29777(var10);
@@ -1189,19 +1191,19 @@ public class BiomeMaker {
 
    public static Biome method36111() {
       Class8835 var2 = new Class9328()
-         .method35249(Class179.field623, new Class6692(EntityType.field41034, 50, 4, 4))
-         .method35249(Class179.field623, new Class6692(EntityType.field41110, 100, 4, 4))
-         .method35249(Class179.field623, new Class6692(EntityType.field41049, 2, 4, 4))
-         .method35249(Class179.field623, new Class6692(EntityType.field41025, 1, 4, 4))
-         .method35249(Class179.field623, new Class6692(EntityType.field41065, 15, 4, 4))
-         .method35249(Class179.field624, new Class6692(EntityType.field41088, 60, 1, 2))
+         .method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41034, 50, 4, 4))
+         .method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41110, 100, 4, 4))
+         .method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41049, 2, 4, 4))
+         .method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41025, 1, 4, 4))
+         .method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41065, 15, 4, 4))
+         .method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.field41088, 60, 1, 2))
          .method35253();
       Class7935 var3 = new Class7935()
          .method26688(Class9109.field41855)
-         .method26693(Class9438.field43864)
-         .method26693(Class9438.field43848)
-         .method26693(Class9438.field43852)
-         .method26692(Class97.field259, Class7827.field33611)
+         .method26693(StructureFeatures.field43864)
+         .method26693(StructureFeatures.field43848)
+         .method26693(StructureFeatures.field43852)
+         .method26692(GenerationStageCarving.field259, Class7827.field33611)
          .method26690(Class1993.field13006, Class9104.field41685);
       Class8468.method29821(var3);
       var3.method26690(Class1993.field13005, Class9104.field41689)
@@ -1242,10 +1244,10 @@ public class BiomeMaker {
       double var2 = 0.7;
       double var4 = 0.15;
       Class8835 var6 = new Class9328()
-         .method35249(Class179.field623, new Class6692(EntityType.field41078, 20, 5, 5))
-         .method35249(Class179.field623, new Class6692(EntityType.field41034, 50, 4, 4))
-         .method35249(Class179.field623, new Class6692(EntityType.field41025, 1, 4, 4))
-         .method35249(Class179.field624, new Class6692(EntityType.field41088, 60, 1, 2))
+         .method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41078, 20, 5, 5))
+         .method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41034, 50, 4, 4))
+         .method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41025, 1, 4, 4))
+         .method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.field41088, 60, 1, 2))
          .method35250(EntityType.field41078, 0.7, 0.15)
          .method35250(EntityType.field41034, 0.7, 0.15)
          .method35250(EntityType.field41025, 0.7, 0.15)
@@ -1253,11 +1255,11 @@ public class BiomeMaker {
          .method35253();
       Class7935 var7 = new Class7935()
          .method26688(Class9109.field41859)
-         .method26693(Class9438.field43848)
-         .method26693(Class9438.field43849)
-         .method26693(Class9438.field43864)
-         .method26693(Class9438.field43852)
-         .method26692(Class97.field259, Class7827.field33611)
+         .method26693(StructureFeatures.field43848)
+         .method26693(StructureFeatures.field43849)
+         .method26693(StructureFeatures.field43864)
+         .method26693(StructureFeatures.field43852)
+         .method26692(GenerationStageCarving.field259, Class7827.field33611)
          .method26690(Class1993.field13006, Class9104.field41685)
          .method26690(Class1993.field13000, Class9104.field41651)
          .method26690(Class1993.field13005, Class9104.field41689)
@@ -1297,15 +1299,15 @@ public class BiomeMaker {
 
    public static Biome method36113() {
       Class8835 var2 = new Class9328()
-         .method35249(Class179.field623, new Class6692(EntityType.field41034, 40, 1, 1))
-         .method35249(Class179.field623, new Class6692(EntityType.field41049, 100, 2, 5))
-         .method35249(Class179.field624, new Class6692(EntityType.field41088, 60, 1, 2))
+         .method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41034, 40, 1, 1))
+         .method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41049, 100, 2, 5))
+         .method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.field41088, 60, 1, 2))
          .method35253();
       Class7935 var3 = new Class7935()
          .method26688(Class9109.field41842)
-         .method26693(Class9438.field43864)
-         .method26692(Class97.field259, Class7827.field33611)
-         .method26693(Class9438.field43848)
+         .method26693(StructureFeatures.field43864)
+         .method26692(GenerationStageCarving.field259, Class7827.field33611)
+         .method26693(StructureFeatures.field43848)
          .method26690(Class1993.field13002, Class9104.field41639)
          .method26690(Class1993.field13006, Class9104.field41684)
          .method26690(Class1993.field13002, Class9104.field41640)
@@ -1351,17 +1353,17 @@ public class BiomeMaker {
 
    public static Biome method36114() {
       Class8835 var2 = new Class9328()
-         .method35249(Class179.field623, new Class6692(EntityType.field41110, 1, 2, 4))
-         .method35249(Class179.field623, new Class6692(EntityType.field41037, 9, 3, 4))
-         .method35249(Class179.field623, new Class6692(EntityType.field41065, 5, 3, 4))
-         .method35249(Class179.field624, new Class6692(EntityType.field41088, 60, 1, 2))
+         .method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41110, 1, 2, 4))
+         .method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41037, 9, 3, 4))
+         .method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41065, 5, 3, 4))
+         .method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.field41088, 60, 1, 2))
          .method35253();
       Class7935 var3 = new Class7935()
          .method26688(Class9109.field41843)
-         .method26693(Class9438.field43864)
-         .method26692(Class97.field259, Class7827.field33611)
-         .method26693(Class9438.field43848)
-         .method26693(Class9438.field43852)
+         .method26693(StructureFeatures.field43864)
+         .method26692(GenerationStageCarving.field259, Class7827.field33611)
+         .method26693(StructureFeatures.field43848)
+         .method26693(StructureFeatures.field43852)
          .method26690(Class1993.field13006, Class9104.field41685);
       Class8468.method29821(var3);
       var3.method26690(Class1993.field13005, Class9104.field41689)
@@ -1401,16 +1403,16 @@ public class BiomeMaker {
 
    public static Biome method36115() {
       Class8835 var2 = new Class9328()
-         .method35249(Class179.field623, new Class6692(EntityType.field41025, 1, 4, 4))
-         .method35249(Class179.field624, new Class6692(EntityType.field41088, 60, 1, 2))
+         .method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41025, 1, 4, 4))
+         .method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.field41088, 60, 1, 2))
          .method35250(EntityType.field41025, 1.0, 0.12)
          .method35253();
       Class7935 var3 = new Class7935()
          .method26688(Class9109.field41862)
-         .method26693(Class9438.field43848)
-         .method26693(Class9438.field43852)
-         .method26693(Class9438.field43864)
-         .method26692(Class97.field259, Class7827.field33611)
+         .method26693(StructureFeatures.field43848)
+         .method26693(StructureFeatures.field43852)
+         .method26693(StructureFeatures.field43864)
+         .method26692(GenerationStageCarving.field259, Class7827.field33611)
          .method26690(Class1993.field13006, Class9104.field41685);
       Class8468.method29821(var3);
       var3.method26690(Class1993.field13005, Class9104.field41689)

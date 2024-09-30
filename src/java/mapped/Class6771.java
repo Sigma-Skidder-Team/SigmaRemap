@@ -5,6 +5,7 @@ import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.material.Material;
+import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunk;
@@ -43,7 +44,7 @@ public class Class6771 extends Class6768<Class8278> {
       double var17 = 0.0;
       double var19 = 0.0;
       BlockPos.Mutable var21 = new BlockPos.Mutable();
-      float var22 = var3.method32503(var21.method8372(var4, 63, var5));
+      float var22 = var3.method32503(var21.setPos(var4, 63, var5));
       double var23 = Math.min(Math.abs(var7), this.field29543.method25315((double)var4 * 0.1, (double)var5 * 0.1, false) * 15.0);
       if (var23 > 1.8) {
          double var38 = 0.09765625;
@@ -68,7 +69,7 @@ public class Class6771 extends Class6768<Class8278> {
 
       int var25 = var4 & 15;
       int var26 = var5 & 15;
-      Class8277 var27 = var3.method32507().method24283();
+      Class8277 var27 = var3.getGenerationSettings().method24283();
       BlockState var28 = var27.method28935();
       BlockState var29 = var27.method28934();
       BlockState var30 = var28;
@@ -80,7 +81,7 @@ public class Class6771 extends Class6768<Class8278> {
       int var36 = var11 + 18 + var1.nextInt(10);
 
       for (int var37 = Math.max(var6, (int)var17 + 1); var37 >= 0; var37--) {
-         var21.method8372(var25, var37, var26);
+         var21.setPos(var25, var37, var26);
          if (var2.getBlockState(var21).isAir() && var37 < (int)var17 && var1.nextDouble() > 0.01) {
             var2.setBlockState(var21, field29539, false);
          } else if (var2.getBlockState(var21).getMaterial() == Material.field38941
@@ -115,7 +116,7 @@ public class Class6771 extends Class6768<Class8278> {
                   }
 
                   if (var37 < var11 && (var31 == null || var31.isAir())) {
-                     if (!(var3.method32503(var21.method8372(var4, var37, var5)) < 0.15F)) {
+                     if (!(var3.method32503(var21.setPos(var4, var37, var5)) < 0.15F)) {
                         var31 = var10;
                      } else {
                         var31 = field29542;
@@ -148,7 +149,7 @@ public class Class6771 extends Class6768<Class8278> {
    @Override
    public void method20658(long var1) {
       if (this.field29545 != var1 || this.field29543 == null || this.field29544 == null) {
-         Class2420 var5 = new Class2420(var1);
+         SharedSeedRandom var5 = new SharedSeedRandom(var1);
          this.field29543 = new Class7691(var5, IntStream.rangeClosed(-3, 0));
          this.field29544 = new Class7691(var5, ImmutableList.of(0));
       }

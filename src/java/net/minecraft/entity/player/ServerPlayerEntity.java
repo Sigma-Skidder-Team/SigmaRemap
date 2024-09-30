@@ -573,7 +573,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
                new SRespawnPacket(
                   var1.method6812(),
                   var1.getDimensionKey(),
-                  BiomeManager.getHashedSeed(var1.method6967()),
+                  BiomeManager.getHashedSeed(var1.getSeed()),
                   this.interactionManager.getGameType(),
                   this.interactionManager.method33864(),
                   var1.isDebug(),
@@ -1303,7 +1303,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
                new SRespawnPacket(
                   var1.method6812(),
                   var1.getDimensionKey(),
-                  BiomeManager.getHashedSeed(var1.method6967()),
+                  BiomeManager.getHashedSeed(var1.getSeed()),
                   this.interactionManager.getGameType(),
                   this.interactionManager.method33864(),
                   var1.isDebug(),

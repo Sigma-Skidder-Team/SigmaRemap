@@ -7,25 +7,27 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.gen.WorldGenRegion;
+import net.minecraft.world.gen.feature.structure.StructureManager;
 
 import java.util.Arrays;
 
-public class Class5648 extends ChunkGenerator {
-   public static final Codec<Class5648> field24998 = Class9733.field45443.fieldOf("settings").xmap(Class5648::new, Class5648::method17837).codec();
+public class FlatChunkGenerator extends ChunkGenerator {
+   public static final Codec<FlatChunkGenerator> field_236069_d_ = Class9733.field45443.fieldOf("settings").xmap(FlatChunkGenerator::new, FlatChunkGenerator::method17837).codec();
    private final Class9733 field24999;
 
-   public Class5648(Class9733 var1) {
+   public FlatChunkGenerator(Class9733 var1) {
       super(new Class1688(var1.method38125()), new Class1688(var1.method38127()), var1.method38126(), 0L);
       this.field24999 = var1;
    }
 
    @Override
-   public Codec<? extends ChunkGenerator> method17790() {
-      return field24998;
+   public Codec<? extends ChunkGenerator> func_230347_a_() {
+      return field_236069_d_;
    }
 
    @Override
-   public ChunkGenerator method17791(long var1) {
+   public ChunkGenerator func_230349_a_(long var1) {
       return this;
    }
 
@@ -34,11 +36,11 @@ public class Class5648 extends ChunkGenerator {
    }
 
    @Override
-   public void method17801(Class1691 var1, IChunk var2) {
+   public void generateSurface(WorldGenRegion var1, IChunk var2) {
    }
 
    @Override
-   public int method17823() {
+   public int getGroundHeight() {
       BlockState[] var3 = this.field24999.method38130();
 
       for (int var4 = 0; var4 < var3.length; var4++) {
@@ -52,7 +54,7 @@ public class Class5648 extends ChunkGenerator {
    }
 
    @Override
-   public void method17803(IWorld var1, Class7480 var2, IChunk var3) {
+   public void func_230352_b_(IWorld var1, StructureManager var2, IChunk var3) {
       BlockState[] var6 = this.field24999.method38130();
       BlockPos.Mutable var7 = new BlockPos.Mutable();
       Heightmap var8 = var3.getHeightmap(Heightmap.Type.OCEAN_FLOOR_WG);
@@ -63,7 +65,7 @@ public class Class5648 extends ChunkGenerator {
          if (var11 != null) {
             for (int var12 = 0; var12 < 16; var12++) {
                for (int var13 = 0; var13 < 16; var13++) {
-                  var3.setBlockState(var7.method8372(var12, var10, var13), var11, false);
+                  var3.setBlockState(var7.setPos(var12, var10, var13), var11, false);
                   var8.method24578(var12, var10, var13, var11);
                   var9.method24578(var12, var10, var13, var11);
                }
@@ -73,7 +75,7 @@ public class Class5648 extends ChunkGenerator {
    }
 
    @Override
-   public int method17797(int var1, int var2, Heightmap.Type var3) {
+   public int getHeight(int var1, int var2, Heightmap.Type var3) {
       BlockState[] var6 = this.field24999.method38130();
 
       for (int var7 = var6.length - 1; var7 >= 0; var7--) {
@@ -87,7 +89,7 @@ public class Class5648 extends ChunkGenerator {
    }
 
    @Override
-   public IBlockReader method17798(int var1, int var2) {
+   public IBlockReader func_230348_a_(int var1, int var2) {
       return new Class1669(
          Arrays.<BlockState>stream(this.field24999.method38130())
             .<BlockState>map(var0 -> (BlockState)(var0 != null ? var0 : Blocks.AIR.getDefaultState()))

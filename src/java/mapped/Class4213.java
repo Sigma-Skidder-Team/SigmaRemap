@@ -131,7 +131,7 @@ public abstract class Class4213 extends Class4178 {
       int var9 = this.method12922(var2, var3);
       int var10 = this.method12920(var4, var5);
       int var11 = this.method12922(var4, var5);
-      return var1.method38391(Math.min(var8, var10), Math.min(var9, var11), Math.max(var8, var10), Math.max(var9, var11));
+      return var1.intersectsWith(Math.min(var8, var10), Math.min(var9, var11), Math.max(var8, var10), Math.max(var9, var11));
    }
 
    public boolean method13009(ISeedReader var1, Class9764 var2, int var3, int var4, int var5) {

@@ -369,7 +369,7 @@ public class ClientWorld extends World {
       int var10 = var1 + this.rand.nextInt(var4) - this.rand.nextInt(var4);
       int var11 = var2 + this.rand.nextInt(var4) - this.rand.nextInt(var4);
       int var12 = var3 + this.rand.nextInt(var4) - this.rand.nextInt(var4);
-      var7.method8372(var10, var11, var12);
+      var7.setPos(var10, var11, var12);
       BlockState var13 = this.getBlockState(var7);
       var13.getBlock().animateTick(var13, this, var7, var5);
       FluidState var14 = this.getFluidState(var7);
@@ -859,7 +859,7 @@ public class ClientWorld extends World {
          BlockPos.Mutable var11 = new BlockPos.Mutable();
 
          while (var10.method32365()) {
-            var11.method8372(var10.method32366(), var10.method32367(), var10.method32368());
+            var11.setPos(var10.method32366(), var10.method32367(), var10.method32368());
             int var12 = var2.method32943(this.getBiome(var11), (double)var11.getX(), (double)var11.getZ());
             var7 += (var12 & 0xFF0000) >> 16;
             var8 += (var12 & 0xFF00) >> 8;

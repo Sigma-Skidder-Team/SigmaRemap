@@ -21,6 +21,7 @@ import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
+import net.minecraft.world.server.TicketType;
 
 public class Class9651 {
    private static final SimpleCommandExceptionType field45127 = new SimpleCommandExceptionType(
@@ -251,7 +252,7 @@ public class Class9651 {
             }
          } else {
             ChunkPos var19 = new ChunkPos(new BlockPos(var3, var5, var7));
-            var2.getChunkProvider().registerTicket(Class8561.field38486, var19, 1, var1.getEntityId());
+            var2.getChunkProvider().registerTicket(TicketType.field38486, var19, 1, var1.getEntityId());
             var1.stopRiding();
             if (((ServerPlayerEntity)var1).isSleeping()) {
                ((ServerPlayerEntity)var1).stopSleepInBed(true, true);

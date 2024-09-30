@@ -86,7 +86,7 @@ public class Class3735 extends Class3676<MobEntity> {
 
       if (var7 != null && this.field19852 != null) {
          Class8999 var9 = var8.method21410(Class8830.field39824).get();
-         if (var9.method33251().method26357().method8318(this.field19852) > 4.0 && this.method12662(var2, var9, var1.getGameTime())) {
+         if (var9.method33251().method26357().distanceSq(this.field19852) > 4.0 && this.method12662(var2, var9, var1.getGameTime())) {
             this.field19852 = var9.method33251().method26357();
             this.method12502(var1, var2, var3);
          }

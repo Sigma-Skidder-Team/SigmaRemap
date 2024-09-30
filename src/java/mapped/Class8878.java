@@ -4,13 +4,14 @@ import com.google.common.collect.ImmutableSet;
 import net.minecraft.block.Block;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 
 public class Class8878<T extends Entity> {
    private static String[] field40180;
    private final Class9283<T> field40181;
-   private final Class179 field40182;
+   private final EntityClassification field40182;
    private ImmutableSet<Block> field40183 = ImmutableSet.of();
    private boolean field40184 = true;
    private boolean field40185 = true;
@@ -20,17 +21,17 @@ public class Class8878<T extends Entity> {
    private int field40189 = 3;
    private EntitySize field40190 = EntitySize.method32101(0.6F, 1.8F);
 
-   private Class8878(Class9283<T> var1, Class179 var2) {
+   private Class8878(Class9283<T> var1, EntityClassification var2) {
       this.field40181 = var1;
       this.field40182 = var2;
-      this.field40187 = var2 == Class179.field624 || var2 == Class179.field628;
+      this.field40187 = var2 == EntityClassification.field624 || var2 == EntityClassification.field628;
    }
 
-   public static <T extends Entity> Class8878<T> method32299(Class9283<T> var0, Class179 var1) {
+   public static <T extends Entity> Class8878<T> method32299(Class9283<T> var0, EntityClassification var1) {
       return new Class8878<T>(var0, var1);
    }
 
-   public static <T extends Entity> Class8878<T> method32300(Class179 var0) {
+   public static <T extends Entity> Class8878<T> method32300(EntityClassification var0) {
       return new Class8878<T>((var0x, var1) -> null, var0);
    }
 

@@ -119,7 +119,7 @@ public class UpgradeData {
                int var17 = var16 & 15;
                int var18 = var16 >> 8 & 15;
                int var19 = var16 >> 4 & 15;
-               var4.method8372(var6.getX() + var17, (var8 << 4) + var18, var6.getZ() + var19);
+               var4.setPos(var6.getX() + var17, (var8 << 4) + var18, var6.getZ() + var19);
                BlockState var20 = (BlockState)var12.method30499(var16);
                BlockState var21 = var20;
 

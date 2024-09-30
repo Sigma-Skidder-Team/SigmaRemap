@@ -47,6 +47,7 @@ import net.minecraft.world.biome.provider.BiomeProvider;
 import net.minecraft.world.chunk.listener.IChunkStatusListener;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 import net.minecraft.world.server.ServerWorld;
+import net.minecraft.world.server.TicketType;
 import net.minecraft.world.storage.IServerWorldInfo;
 import org.apache.commons.lang3.Validate;
 import org.apache.logging.log4j.LogManager;
@@ -287,9 +288,9 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       ChunkGenerator var7 = var0.getChunkProvider().method7370();
       if (var4) {
          if (!var3) {
-            BiomeProvider var8 = var7.method17824();
-            Random var9 = new Random(var0.method6967());
-            BlockPos var10 = var8.method7203(0, var0.method6776(), 0, 256, var0x -> var0x.method32499().method31971(), var9);
+            BiomeProvider var8 = var7.getBiomeProvider();
+            Random var9 = new Random(var0.getSeed());
+            BlockPos var10 = var8.findBiomePosition(0, var0.method6776(), 0, 256, var0x -> var0x.getMobSpawnInfo().method31971(), var9);
             ChunkPos var11 = var10 != null ? new ChunkPos(var10) : new ChunkPos(0, 0);
             if (var10 == null) {
                LOGGER.warn("Unable to find spawn biome");
@@ -304,7 +305,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
                }
             }
 
-            var1.method20041(var11.method24364().method8336(8, var7.method17823(), 8), 0.0F);
+            var1.method20041(var11.method24364().method8336(8, var7.getGroundHeight(), 8), 0.0F);
             int var20 = 0;
             int var21 = 0;
             int var15 = 0;
@@ -337,7 +338,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
             var1.method20041(BlockPos.ZERO.up(), 0.0F);
          }
       } else {
-         var1.method20041(BlockPos.ZERO.method8339(var7.method17823()), 0.0F);
+         var1.method20041(BlockPos.ZERO.method8339(var7.getGroundHeight()), 0.0F);
       }
    }
 
@@ -360,7 +361,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       ServerChunkProvider var6 = var4.getChunkProvider();
       var6.getLightManager().func_215598_a(500);
       this.serverTime = Util.milliTime();
-      var6.registerTicket(Class8561.field38480, new ChunkPos(var5), 11, Class2341.field16010);
+      var6.registerTicket(TicketType.field38480, new ChunkPos(var5), 11, Class2341.field16010);
 
       while (var6.getLoadedChunksCount() != 441) {
          this.serverTime = Util.milliTime() + 10L;

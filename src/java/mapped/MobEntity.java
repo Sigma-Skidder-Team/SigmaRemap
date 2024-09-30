@@ -16,6 +16,7 @@ import net.minecraft.item.Items;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolItem;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.DebugPacketSender;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
@@ -683,7 +684,7 @@ public abstract class MobEntity extends LivingEntity {
    }
 
    public void method4257() {
-      Class7393.method23620(this.world, this, this.field5600);
+      DebugPacketSender.method23620(this.world, this, this.field5600);
    }
 
    public void updateAITasks() {
@@ -1087,7 +1088,7 @@ public abstract class MobEntity extends LivingEntity {
    }
 
    public boolean method4287(BlockPos var1) {
-      return this.field5617 != -1.0F ? this.field5616.method8318(var1) < (double)(this.field5617 * this.field5617) : true;
+      return this.field5617 != -1.0F ? this.field5616.distanceSq(var1) < (double)(this.field5617 * this.field5617) : true;
    }
 
    public void method4288(BlockPos var1, int var2) {

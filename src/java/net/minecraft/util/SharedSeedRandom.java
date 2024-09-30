@@ -1,19 +1,19 @@
-package mapped;
+package net.minecraft.util;
 
 import java.util.Random;
 
-public class Class2420 extends Random {
+public class SharedSeedRandom extends Random {
    private static String[] field16422;
    private int field16423;
 
-   public Class2420() {
+   public SharedSeedRandom() {
    }
 
-   public Class2420(long var1) {
+   public SharedSeedRandom(long var1) {
       super(var1);
    }
 
-   public void method10369(int var1) {
+   public void skip(int var1) {
       for (int var4 = 0; var4 < var1; var4++) {
          this.next(1);
       }
@@ -31,7 +31,7 @@ public class Class2420 extends Random {
       return var5;
    }
 
-   public long method10371(long var1, int var3, int var4) {
+   public long setDecorationSeed(long var1, int var3, int var4) {
       this.setSeed(var1);
       long var7 = this.nextLong() | 1L;
       long var9 = this.nextLong() | 1L;
@@ -46,7 +46,7 @@ public class Class2420 extends Random {
       return var7;
    }
 
-   public long method10373(long var1, int var3, int var4) {
+   public long setLargeFeatureSeed(long var1, int var3, int var4) {
       this.setSeed(var1);
       long var7 = this.nextLong();
       long var9 = this.nextLong();

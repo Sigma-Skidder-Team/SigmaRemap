@@ -18,7 +18,9 @@ import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.chunk.listener.IChunkStatusListener;
 import net.minecraft.world.gen.feature.template.TemplateManager;
+import net.minecraft.world.server.ChunkManager;
 import net.minecraft.world.server.ServerWorld;
+import net.minecraft.world.server.TicketType;
 
 import java.io.File;
 import java.io.IOException;
@@ -37,13 +39,13 @@ import javax.annotation.Nullable;
 
 public class ServerChunkProvider extends Class1702 {
    private static final List<ChunkStatus> field9272 = ChunkStatus.method34292();
-   private final Class9307 field9273;
+   private final Class9307 ticketManager;
    private final ChunkGenerator field9274;
    private final ServerWorld field9275;
    private final Thread field9276;
    private final Class195 field9277;
    private final Class320 field9278;
-   public final Class1649 field9279;
+   public final ChunkManager field9279;
    private final Class8250 field9280;
    private long field9281;
    private boolean field9282 = true;
@@ -73,9 +75,9 @@ public class ServerChunkProvider extends Class1702 {
       File var14 = new File(var13, "data");
       var14.mkdirs();
       this.field9280 = new Class8250(var14, var3);
-      this.field9279 = new Class1649(var1, var2, var3, var4, var5, this.field9278, this, this.method7370(), var9, var10, var7, var8);
+      this.field9279 = new ChunkManager(var1, var2, var3, var4, var5, this.field9278, this, this.method7370(), var9, var10, var7, var8);
       this.field9277 = this.field9279.method6537();
-      this.field9273 = this.field9279.method6566();
+      this.ticketManager = this.field9279.method6566();
       this.method7357();
    }
 
@@ -202,7 +204,7 @@ public class ServerChunkProvider extends Class1702 {
       int var10 = 33 + ChunkStatus.method34296(var3);
       Class8641 var11 = this.method7354(var8);
       if (var4) {
-         this.field9273.method35128(Class8561.field38487, var7, var10, var7);
+         this.ticketManager.registerWithLevel(TicketType.field38487, var7, var10, var7);
          if (this.method7360(var11, var10)) {
             IProfiler var12 = this.field9275.getProfiler();
             var12.startSection("chunkLoad");
@@ -263,7 +265,7 @@ public class ServerChunkProvider extends Class1702 {
    }
 
    private boolean method7363() {
-      boolean var3 = this.field9273.method35125(this.field9279);
+      boolean var3 = this.ticketManager.method35125(this.field9279);
       boolean var4 = this.field9279.method6549();
       if (!var3 && !var4) {
          return false;
@@ -314,7 +316,7 @@ public class ServerChunkProvider extends Class1702 {
 
    public void method7366(BooleanSupplier var1) {
       this.field9275.getProfiler().startSection("purge");
-      this.field9273.method35123();
+      this.ticketManager.method35123();
       this.method7363();
       this.field9275.getProfiler().endStartSection("chunks");
       this.method7367();
@@ -336,7 +338,7 @@ public class ServerChunkProvider extends Class1702 {
          int var10 = this.field9275.getGameRules().method17136(Class5462.field24235);
          boolean var11 = var7.method20033() % 400L == 0L;
          this.field9275.getProfiler().startSection("naturalSpawnCount");
-         int var12 = this.field9273.method35138();
+         int var12 = this.ticketManager.method35138();
          Class7307 var13 = Class8170.method28415(var12, this.field9275.method6965(), this::method7368);
          this.field9287 = var13;
          this.field9275.getProfiler().endSection();
@@ -419,17 +421,16 @@ public class ServerChunkProvider extends Class1702 {
       });
    }
 
-   public <T> void registerTicket(Class8561<T> var1, ChunkPos var2, int var3, T var4) {
-      this.field9273.method35130(var1, var2, var3, var4);
+   public <T> void registerTicket(TicketType<T> var1, ChunkPos var2, int var3, T var4) {
+      this.ticketManager.release(var1, var2, var3, var4);
    }
 
-   public <T> void method7375(Class8561<T> var1, ChunkPos var2, int var3, T var4) {
-      this.field9273.method35131(var1, var2, var3, var4);
+   public <T> void releaseTicket(TicketType<T> var1, ChunkPos var2, int var3, T var4) {
+      this.ticketManager.register(var1, var2, var3, var4);
    }
 
-   @Override
    public void forceChunk(ChunkPos var1, boolean var2) {
-      this.field9273.method35133(var1, var2);
+      this.ticketManager.forceChunk(var1, var2);
    }
 
    public void method7376(ServerPlayerEntity var1) {

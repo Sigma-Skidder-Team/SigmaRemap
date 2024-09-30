@@ -1,12 +1,12 @@
-package mapped;
+package net.minecraft.network;
 
 import io.netty.buffer.Unpooled;
 import java.util.Collection;
 
+import mapped.*;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.play.server.SCustomPayloadPlayPacket;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -18,7 +18,7 @@ import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Class7393 {
+public class DebugPacketSender {
    private static String[] field31651;
    private static final Logger field31652 = LogManager.getLogger();
 
@@ -60,7 +60,7 @@ public class Class7393 {
    public static void method23618(World var0, BlockPos var1) {
    }
 
-   public static void method23619(ISeedReader var0, StructureStart<?> var1) {
+   public static void sendStructureStart(ISeedReader var0, StructureStart<?> var1) {
    }
 
    public static void method23620(World var0, MobEntity var1, Class6603 var2) {

@@ -46,7 +46,7 @@ public class FrostWalkerEnchantment extends Enchantment {
 
          for (BlockPos var10 : BlockPos.method8359(var2.method8335((double)(-var7), -1.0, (double)(-var7)), var2.method8335((double)var7, -1.0, (double)var7))) {
             if (var10.method8317(var0.getPositionVec(), (double)var7)) {
-               var8.method8372(var10.getX(), var10.getY() + 1, var10.getZ());
+               var8.setPos(var10.getX(), var10.getY() + 1, var10.getZ());
                BlockState var11 = var1.getBlockState(var8);
                if (var11.isAir()) {
                   BlockState var12 = var1.getBlockState(var10);

@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.entity.EntityType;
+import net.minecraft.network.DebugPacketSender;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.server.ServerWorld;
 
@@ -55,7 +56,7 @@ public class Class3723 extends Class3676<Class1042> {
          Optional var7 = this.method12619(var1, var2, var3);
          if (!var7.isPresent()) {
             var1.method6951().method6674((BlockPos)var6.get());
-            Class7393.method23615(var1, (BlockPos)var6.get());
+            DebugPacketSender.method23615(var1, (BlockPos)var6.get());
          } else {
             this.method12620(var1, (Class1042)var7.get(), (BlockPos)var6.get());
          }

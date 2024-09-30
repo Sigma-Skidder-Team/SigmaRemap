@@ -50,7 +50,7 @@ public class Class2667 extends Class2661 {
       Stream<Class9343> var5 = var4.method6666(var0 -> var0 == Class4913.field22768 || var0 == Class4913.field22769, var3, 20, Class2093.field13637);
       return var5.map(Class9343::method35355)
          .filter(var1 -> Class1017.method4494(this.field17022, var1))
-         .sorted(Comparator.comparingDouble(var1 -> var1.method8318(var3)))
+         .sorted(Comparator.comparingDouble(var1 -> var1.distanceSq(var3)))
          .collect(Collectors.<BlockPos>toList());
    }
 

@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import it.unimi.dsi.fastutil.longs.Long2LongMap;
 import it.unimi.dsi.fastutil.longs.Long2LongOpenHashMap;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.network.DebugPacketSender;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.server.ServerWorld;
 
@@ -31,7 +32,7 @@ public class Class3689 extends Class3676<LivingEntity> {
          Class1046 var5 = (Class1046)var2;
          Class1653 var6 = var1.method6951();
          Optional var7 = var6.method6671(Class4913.field22766.method15182(), var2.getPosition(), 48, Class2093.field13637);
-         return var7.isPresent() && !(((BlockPos)var7.get()).method8318(var5.getPosition()) <= 4.0);
+         return var7.isPresent() && !(((BlockPos)var7.get()).distanceSq(var5.getPosition()) <= 4.0);
       }
    }
 
@@ -61,7 +62,7 @@ public class Class3689 extends Class3676<LivingEntity> {
          Optional var13 = var8.method6676(var12);
          if (var13.isPresent()) {
             var2.getBrain().method21406(Class8830.field39824, new Class8999(var12, this.field19709, 1));
-            Class7393.method23615(var1, var12);
+            DebugPacketSender.method23615(var1, var12);
          }
       } else if (this.field19711 < 5) {
          this.field19710.long2LongEntrySet().removeIf(var1x -> var1x.getLongValue() < this.field19712);

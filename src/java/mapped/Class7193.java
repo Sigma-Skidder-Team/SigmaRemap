@@ -84,7 +84,7 @@ public class Class7193 extends Class7194 {
       int var19 = var13 | var15 << 4 | var14 << 8;
       if (!var3.get(var19)) {
          var3.set(var19);
-         var5.method8372(var11, var14, var12);
+         var5.setPos(var11, var14, var12);
          if (!this.method22609(var1.getBlockState(var5))) {
             return false;
          } else {

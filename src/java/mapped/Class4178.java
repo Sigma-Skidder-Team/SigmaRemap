@@ -18,6 +18,7 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.IWorldReader;
+import net.minecraft.world.gen.feature.structure.StructureManager;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -77,7 +78,7 @@ public abstract class Class4178 {
    public void method12894(Class4178 var1, List<Class4178> var2, Random var3) {
    }
 
-   public abstract boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7);
+   public abstract boolean method12896(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7);
 
    public Class9764 method12915() {
       return this.field20444;
@@ -90,7 +91,7 @@ public abstract class Class4178 {
    public boolean method12917(ChunkPos var1, int var2) {
       int var5 = var1.x << 4;
       int var6 = var1.z << 4;
-      return this.field20444.method38391(var5 - var2, var6 - var2, var5 + 15 + var2, var6 + 15 + var2);
+      return this.field20444.intersectsWith(var5 - var2, var6 - var2, var5 + 15 + var2, var6 + 15 + var2);
    }
 
    public static Class4178 method12918(List<Class4178> var0, Class9764 var1) {
@@ -114,11 +115,11 @@ public abstract class Class4178 {
 
       for (int var12 = var5; var12 <= var8; var12++) {
          for (int var13 = var7; var13 <= var10; var13++) {
-            if (var1.getBlockState(var11.method8372(var12, var6, var13)).getMaterial().isLiquid()) {
+            if (var1.getBlockState(var11.setPos(var12, var6, var13)).getMaterial().isLiquid()) {
                return true;
             }
 
-            if (var1.getBlockState(var11.method8372(var12, var9, var13)).getMaterial().isLiquid()) {
+            if (var1.getBlockState(var11.setPos(var12, var9, var13)).getMaterial().isLiquid()) {
                return true;
             }
          }
@@ -126,11 +127,11 @@ public abstract class Class4178 {
 
       for (int var14 = var5; var14 <= var8; var14++) {
          for (int var16 = var6; var16 <= var9; var16++) {
-            if (var1.getBlockState(var11.method8372(var14, var16, var7)).getMaterial().isLiquid()) {
+            if (var1.getBlockState(var11.setPos(var14, var16, var7)).getMaterial().isLiquid()) {
                return true;
             }
 
-            if (var1.getBlockState(var11.method8372(var14, var16, var10)).getMaterial().isLiquid()) {
+            if (var1.getBlockState(var11.setPos(var14, var16, var10)).getMaterial().isLiquid()) {
                return true;
             }
          }
@@ -138,11 +139,11 @@ public abstract class Class4178 {
 
       for (int var15 = var7; var15 <= var10; var15++) {
          for (int var17 = var6; var17 <= var9; var17++) {
-            if (var1.getBlockState(var11.method8372(var5, var17, var15)).getMaterial().isLiquid()) {
+            if (var1.getBlockState(var11.setPos(var5, var17, var15)).getMaterial().isLiquid()) {
                return true;
             }
 
-            if (var1.getBlockState(var11.method8372(var8, var17, var15)).getMaterial().isLiquid()) {
+            if (var1.getBlockState(var11.setPos(var8, var17, var15)).getMaterial().isLiquid()) {
                return true;
             }
          }

@@ -16,6 +16,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
 import net.minecraft.crash.CrashReport;
+import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -25,6 +26,7 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
+import net.minecraft.network.DebugPacketSender;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.server.*;
 import net.minecraft.particles.IParticleData;
@@ -45,6 +47,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkSection;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.chunk.listener.IChunkStatusListener;
+import net.minecraft.world.gen.feature.structure.StructureManager;
 import net.minecraft.world.gen.feature.structure.StructureStart;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 import net.minecraft.world.storage.IServerWorldInfo;
@@ -93,7 +96,7 @@ public class ServerWorld extends World implements ISeedReader {
    private boolean field9056;
    private final List<Class7016> field9057;
    private final Class7819 field9058;
-   private final Class7480 field9059;
+   private final StructureManager field9059;
    private final boolean field9060;
 
    public ServerWorld(
@@ -136,7 +139,7 @@ public class ServerWorld extends World implements ISeedReader {
          var4.method20073(var1.method1286());
       }
 
-      this.field9059 = new Class7480(this, var1.func_240793_aU_().getDimensionGeneratorSettings());
+      this.field9059 = new StructureManager(this, var1.func_240793_aU_().getDimensionGeneratorSettings());
       if (!this.method6812().doesHasDragonFight()) {
          this.field9058 = null;
       } else {
@@ -154,10 +157,10 @@ public class ServerWorld extends World implements ISeedReader {
 
    @Override
    public Biome method6871(int var1, int var2, int var3) {
-      return this.getChunkProvider().method7370().method17824().getNoiseBiome(var1, var2, var3);
+      return this.getChunkProvider().method7370().getBiomeProvider().getNoiseBiome(var1, var2, var3);
    }
 
-   public Class7480 method6893() {
+   public StructureManager func_241112_a_() {
       return this.field9059;
    }
 
@@ -1082,14 +1085,14 @@ public class ServerWorld extends World implements ISeedReader {
 
    @Nullable
    public BlockPos method6943(Structure<?> var1, BlockPos var2, int var3, boolean var4) {
-      return this.field9045.func_240793_aU_().getDimensionGeneratorSettings().method26260() ? this.getChunkProvider().method7370().method17820(this, var1, var2, var3, var4) : null;
+      return this.field9045.func_240793_aU_().getDimensionGeneratorSettings().method26260() ? this.getChunkProvider().method7370().func_235956_a_(this, var1, var2, var3, var4) : null;
    }
 
    @Nullable
    public BlockPos method6944(Biome var1, BlockPos var2, int var3, int var4) {
       return this.getChunkProvider()
          .method7370()
-         .method17824()
+         .getBiomeProvider()
          .method7204(var2.getX(), var2.getY(), var2.getZ(), var3, var4, var1x -> var1x == var1, this.rand, true);
    }
 
@@ -1136,8 +1139,8 @@ public class ServerWorld extends World implements ISeedReader {
    public void method6946(BlockPos var1, float var2) {
       ChunkPos var5 = new ChunkPos(new BlockPos(this.worldInfo.method20029(), 0, this.worldInfo.method20031()));
       this.worldInfo.method20041(var1, var2);
-      this.getChunkProvider().method7375(Class8561.field38480, var5, 11, Class2341.field16010);
-      this.getChunkProvider().registerTicket(Class8561.field38480, new ChunkPos(var1), 11, Class2341.field16010);
+      this.getChunkProvider().releaseTicket(TicketType.field38480, var5, 11, Class2341.field16010);
+      this.getChunkProvider().registerTicket(TicketType.field38480, new ChunkPos(var1), 11, Class2341.field16010);
       this.getServer().getPlayerList().method19456(new SWorldSpawnChangedPacket(var1, var2));
    }
 
@@ -1194,11 +1197,11 @@ public class ServerWorld extends World implements ISeedReader {
          BlockPos var8 = var1.toImmutable();
          var6.ifPresent(var2x -> this.getServer().execute(() -> {
                this.method6951().method6662(var8);
-               Class7393.method23614(this, var8);
+               DebugPacketSender.method23614(this, var8);
             }));
          var7.ifPresent(var2x -> this.getServer().execute(() -> {
                this.method6951().method6661(var8, var2x);
-               Class7393.method23613(this, var8);
+               DebugPacketSender.method23613(this, var8);
             }));
       }
    }
@@ -1241,7 +1244,7 @@ public class ServerWorld extends World implements ISeedReader {
    }
 
    public void method6960(Path var1) throws IOException {
-      Class1649 var4 = this.getChunkProvider().field9279;
+      ChunkManager var4 = this.getChunkProvider().field9279;
 
       try (BufferedWriter var5 = Files.newBufferedWriter(var1.resolve("stats.txt"))) {
          var5.write(String.format("spawning_chunks: %d\n", var4.method6566().method35138()));
@@ -1251,7 +1254,7 @@ public class ServerWorld extends World implements ISeedReader {
 
             while (var8.hasNext()) {
                it.unimi.dsi.fastutil.objects.Object2IntMap.Entry var9 = (it.unimi.dsi.fastutil.objects.Object2IntMap.Entry)var8.next();
-               var5.write(String.format("spawn_count.%s: %d\n", ((Class179)var9.getKey()).method517(), var9.getIntValue()));
+               var5.write(String.format("spawn_count.%s: %d\n", ((EntityClassification)var9.getKey()).method517(), var9.getIntValue()));
             }
          }
 
@@ -1357,7 +1360,7 @@ public class ServerWorld extends World implements ISeedReader {
    }
 
    @Override
-   public long method6967() {
+   public long getSeed() {
       return this.field9045.func_240793_aU_().getDimensionGeneratorSettings().method26259();
    }
 
@@ -1368,7 +1371,7 @@ public class ServerWorld extends World implements ISeedReader {
 
    @Override
    public Stream<? extends StructureStart<?>> method6969(SectionPos var1, Structure<?> var2) {
-      return this.method6893().method24340(var1, var2);
+      return this.func_241112_a_().method24340(var1, var2);
    }
 
    @Override

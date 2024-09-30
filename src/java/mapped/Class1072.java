@@ -179,7 +179,7 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
             AxisAlignedBB var10 = var1.getPoseAABB(var9);
 
             for (int[] var14 : var5) {
-               var7.method8372(var6.getX() + var14[0], var6.getY(), var6.getZ() + var14[1]);
+               var7.setPos(var6.getX() + var14[0], var6.getY(), var6.getZ() + var14[1]);
                double var15 = this.world.method7039(var7);
                if (Class4527.method14423(var15)) {
                   Vector3d var17 = Vector3d.method11331(var7, var15);

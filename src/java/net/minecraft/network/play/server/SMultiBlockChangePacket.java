@@ -76,7 +76,7 @@ public class SMultiBlockChangePacket implements IPacket<IClientPlayNetHandler> {
 
       for (int var5 = 0; var5 < this.field24643.length; var5++) {
          short var6 = this.field24643[var5];
-         var4.method8372(this.field24642.method8402(var6), this.field24642.method8403(var6), this.field24642.method8404(var6));
+         var4.setPos(this.field24642.method8402(var6), this.field24642.method8403(var6), this.field24642.method8404(var6));
          var1.accept(var4, this.field24644[var5]);
       }
    }

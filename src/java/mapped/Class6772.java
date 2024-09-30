@@ -4,16 +4,18 @@ import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.gen.OctavesNoiseGenerator;
 
 import java.util.Random;
 
 public class Class6772 extends Class6768<Class8278> {
    private static final BlockState field29546 = Blocks.field37012.getDefaultState();
    public long field29547;
-   private Class7689 field29548;
+   private OctavesNoiseGenerator field29548;
 
    public Class6772(Codec<Class8278> var1) {
       super(var1);
@@ -46,7 +48,7 @@ public class Class6772 extends Class6768<Class8278> {
       BlockState var29 = var14.method28935();
 
       for (int var30 = 127; var30 >= 0; var30--) {
-         var27.method8372(var18, var30, var19);
+         var27.setPos(var18, var30, var19);
          BlockState var31 = var14.method28934();
          BlockState var32 = var2.getBlockState(var27);
          if (!var32.isAir()) {
@@ -92,7 +94,7 @@ public class Class6772 extends Class6768<Class8278> {
    @Override
    public void method20658(long var1) {
       if (this.field29547 != var1 || this.field29548 == null) {
-         this.field29548 = new Class7689(new Class2420(var1), ImmutableList.of(0));
+         this.field29548 = new OctavesNoiseGenerator(new SharedSeedRandom(var1), ImmutableList.of(0));
       }
 
       this.field29547 = var1;

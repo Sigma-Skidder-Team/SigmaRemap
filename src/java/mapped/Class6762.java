@@ -213,7 +213,7 @@ public class Class6762 extends Class6764 {
    private Class7176 method20627(int var1, int var2, int var3, int var4, double var5, Direction var7, Class2163 var8) {
       Class7176 var11 = null;
       BlockPos.Mutable var12 = new BlockPos.Mutable();
-      double var13 = method20626(this.field29475, var12.method8372(var1, var2, var3));
+      double var13 = method20626(this.field29475, var12.setPos(var1, var2, var3));
       if (!(var13 - var5 > 1.125)) {
          Class2163 var15 = this.method20632(this.field29476, var1, var2, var3);
          float var16 = this.field29476.method4223(var15);
@@ -438,7 +438,7 @@ public class Class6762 extends Class6764 {
       int var6 = var1.getZ();
       Class2163 var7 = method20635(var0, var1);
       if (var7 == Class2163.field14185 && var5 >= 1) {
-         Class2163 var8 = method20635(var0, var1.method8372(var4, var5 - 1, var6));
+         Class2163 var8 = method20635(var0, var1.setPos(var4, var5 - 1, var6));
          var7 = var8 != Class2163.field14186 && var8 != Class2163.field14185 && var8 != Class2163.field14191 && var8 != Class2163.field14190
             ? Class2163.field14186
             : Class2163.field14185;
@@ -460,7 +460,7 @@ public class Class6762 extends Class6764 {
       }
 
       if (var7 == Class2163.field14186) {
-         var7 = method20634(var0, var1.method8372(var4, var5, var6), var7);
+         var7 = method20634(var0, var1.setPos(var4, var5, var6), var7);
       }
 
       return var7;
@@ -475,7 +475,7 @@ public class Class6762 extends Class6764 {
          for (int var9 = -1; var9 <= 1; var9++) {
             for (int var10 = -1; var10 <= 1; var10++) {
                if (var8 != 0 || var10 != 0) {
-                  var1.method8372(var5 + var8, var6 + var9, var7 + var10);
+                  var1.setPos(var5 + var8, var6 + var9, var7 + var10);
                   BlockState var11 = var0.getBlockState(var1);
                   if (var11.isIn(Blocks.CACTUS)) {
                      return Class2163.field14197;

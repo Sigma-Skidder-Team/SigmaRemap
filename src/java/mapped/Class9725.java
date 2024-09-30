@@ -33,6 +33,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeContainer;
 import net.minecraft.world.biome.provider.BiomeProvider;
+import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.chunk.ChunkSection;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.chunk.NibbleArray;
@@ -45,9 +46,9 @@ import org.apache.logging.log4j.Logger;
 public class Class9725 {
    private static final Logger field45421 = LogManager.getLogger();
 
-   public static Class1672 method38087(ServerWorld var0, TemplateManager var1, Class1653 var2, ChunkPos var3, CompoundNBT var4) {
+   public static ChunkPrimer method38087(ServerWorld var0, TemplateManager var1, Class1653 var2, ChunkPos var3, CompoundNBT var4) {
       ChunkGenerator var7 = var0.getChunkProvider().method7370();
-      BiomeProvider var8 = var7.method17824();
+      BiomeProvider var8 = var7.getBiomeProvider();
       CompoundNBT var9 = var4.getCompound("Level");
       ChunkPos var10 = new ChunkPos(var9.getInt("xPos"), var9.getInt("zPos"));
       if (!Objects.equals(var3, var10)) {
@@ -87,11 +88,11 @@ public class Class9725 {
 
          if (var15) {
             if (var30.contains("BlockLight", 7)) {
-               var21.method606(LightType.BLOCK, SectionPos.method8391(var3, var25), new NibbleArray(var30.getByteArray("BlockLight")), true);
+               var21.method606(LightType.BLOCK, SectionPos.from(var3, var25), new NibbleArray(var30.getByteArray("BlockLight")), true);
             }
 
             if (var19 && var30.contains("SkyLight", 7)) {
-               var21.method606(LightType.SKY, SectionPos.method8391(var3, var25), new NibbleArray(var30.getByteArray("SkyLight")), true);
+               var21.method606(LightType.SKY, SectionPos.from(var3, var25), new NibbleArray(var30.getByteArray("SkyLight")), true);
             }
          }
       }
@@ -100,8 +101,8 @@ public class Class9725 {
       Class2076 var40 = method38089(var4);
       Object var43;
       if (var40 != Class2076.field13525) {
-         Class1672 var26 = new Class1672(var3, var12, var18, var13, var14);
-         var26.method7110(var11);
+         ChunkPrimer var26 = new ChunkPrimer(var3, var12, var18, var13, var14);
+         var26.setBiomes(var11);
          var43 = var26;
          var26.setInhabitedTime(var23);
          var26.method7111(ChunkStatus.method34304(var9.getString("Status")));
@@ -151,7 +152,7 @@ public class Class9725 {
 
       Heightmap.method24577((IChunk)var43, var45);
       CompoundNBT var47 = var9.getCompound("Structures");
-      ((IChunk)var43).setStructureStarts(method38092(var1, var47, var0.method6967()));
+      ((IChunk)var43).setStructureStarts(method38092(var1, var47, var0.getSeed()));
       ((IChunk)var43).method7102(method38093(var3, var47));
       if (var9.getBoolean("shouldSave")) {
          ((IChunk)var43).setModified(true);
@@ -170,7 +171,7 @@ public class Class9725 {
       if (var40 == Class2076.field13525) {
          return new Class1673((Chunk)var43);
       } else {
-         Class1672 var50 = (Class1672)var43;
+         ChunkPrimer var50 = (ChunkPrimer)var43;
          ListNBT var51 = var9.method131("Entities", 10);
 
          for (int var52 = 0; var52 < var51.size(); var52++) {
@@ -197,7 +198,7 @@ public class Class9725 {
          CompoundNBT var56 = var9.getCompound("CarvingMasks");
 
          for (String var58 : var56.method97()) {
-            Class97 var39 = Class97.valueOf(var58);
+            GenerationStageCarving var39 = GenerationStageCarving.valueOf(var58);
             var50.method7118(var39, BitSet.valueOf(var56.getByteArray(var58)));
          }
 
@@ -232,8 +233,8 @@ public class Class9725 {
             .filter(var1x -> var1x != null && var1x.getYLocation() >> 4 == var13)
             .findFirst()
             .orElse(Chunk.field9111);
-         NibbleArray var15 = var10.getLightEngine(LightType.BLOCK).method642(SectionPos.method8391(var4, var13));
-         NibbleArray var16 = var10.getLightEngine(LightType.SKY).method642(SectionPos.method8391(var4, var13));
+         NibbleArray var15 = var10.getLightEngine(LightType.BLOCK).method642(SectionPos.from(var4, var13));
+         NibbleArray var16 = var10.getLightEngine(LightType.SKY).method642(SectionPos.from(var4, var13));
          if (var14 != Chunk.field9111 || var15 != null || var16 != null) {
             CompoundNBT var17 = new CompoundNBT();
             var17.method100("Y", (byte)(var13 & 0xFF));
@@ -275,12 +276,12 @@ public class Class9725 {
       var6.put("TileEntities", var23);
       ListNBT var25 = new ListNBT();
       if (var1.getStatus().method34303() != Class2076.field13525) {
-         Class1672 var27 = (Class1672)var1;
+         ChunkPrimer var27 = (ChunkPrimer)var1;
          var25.addAll(var27.method7109());
          var6.put("Lights", method38094(var27.method7103()));
          CompoundNBT var31 = new CompoundNBT();
 
-         for (Class97 var20 : Class97.values()) {
+         for (GenerationStageCarving var20 : GenerationStageCarving.values()) {
             BitSet var21 = var27.method7116(var20);
             if (var21 != null) {
                var31.method110(var20.toString(), var21.toByteArray());

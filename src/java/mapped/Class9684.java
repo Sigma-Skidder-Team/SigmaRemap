@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeGenerationSettings;
 
 public class Class9684 {
    private Class87 field45277;
@@ -12,7 +13,7 @@ public class Class9684 {
    private Float field45283;
    private Class7752 field45284;
    private Class8835 field45285;
-   private Class7478 field45286;
+   private BiomeGenerationSettings field45286;
 
    public Class9684 method37911(Class87 var1) {
       this.field45277 = var1;
@@ -54,7 +55,7 @@ public class Class9684 {
       return this;
    }
 
-   public Class9684 method37919(Class7478 var1) {
+   public Class9684 method37919(BiomeGenerationSettings var1) {
       this.field45286 = var1;
       return this;
    }

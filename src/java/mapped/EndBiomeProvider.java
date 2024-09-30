@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
@@ -47,8 +48,8 @@ public class EndBiomeProvider extends BiomeProvider {
       this.field9197 = var6;
       this.field9198 = var7;
       this.field9199 = var8;
-      Class2420 var11 = new Class2420(var2);
-      var11.method10369(17292);
+      SharedSeedRandom var11 = new SharedSeedRandom(var2);
+      var11.skip(17292);
       this.field9192 = new Class8972(var11);
    }
 

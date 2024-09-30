@@ -14,6 +14,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.palette.UpgradeData;
 import net.minecraft.world.biome.BiomeContainer;
+import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.chunk.ChunkSection;
 import net.minecraft.world.gen.feature.structure.StructureStart;
 
@@ -22,7 +23,7 @@ import java.util.BitSet;
 import java.util.Map;
 import java.util.stream.Stream;
 
-public class Class1673 extends Class1672 {
+public class Class1673 extends ChunkPrimer {
    private final Chunk field9109;
 
    public Class1673(Chunk var1) {
@@ -188,7 +189,7 @@ public class Class1673 extends Class1672 {
    }
 
    @Override
-   public void method7110(BiomeContainer var1) {
+   public void setBiomes(BiomeContainer var1) {
    }
 
    @Override
@@ -207,12 +208,12 @@ public class Class1673 extends Class1672 {
    }
 
    @Override
-   public BitSet method7116(Class97 var1) {
+   public BitSet method7116(GenerationStageCarving var1) {
       throw (UnsupportedOperationException) Util.pauseDevMode(new UnsupportedOperationException("Meaningless in this context"));
    }
 
    @Override
-   public BitSet method7117(Class97 var1) {
+   public BitSet getOrAddCarvingMask(GenerationStageCarving var1) {
       throw (UnsupportedOperationException) Util.pauseDevMode(new UnsupportedOperationException("Meaningless in this context"));
    }
 

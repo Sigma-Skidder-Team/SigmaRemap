@@ -17,6 +17,7 @@ import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.shader.ShaderGroup;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityClassification;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.state.Property;
@@ -426,7 +427,7 @@ public class DebugOverlayGui extends AbstractGui {
                   "SC: "
                      + var34
                      + ", "
-                     + Stream.<Class179>of(Class179.values())
+                     + Stream.<EntityClassification>of(EntityClassification.values())
                         .<CharSequence>map(var1 -> Character.toUpperCase(var1.method517().charAt(0)) + ": " + var33.getInt(var1))
                         .collect(Collectors.joining(", "))
                );

@@ -66,7 +66,7 @@ public abstract class Class203 extends LevelBasedGraph {
 
    public abstract int method679(long var1);
 
-   public void method680(long var1, int var3, boolean var4) {
+   public void updateSourceLevel(long var1, int var3, boolean var4) {
       this.method672(ChunkPos.SENTINEL, var1, var3, var4);
    }
 }

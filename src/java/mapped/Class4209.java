@@ -52,7 +52,7 @@ public abstract class Class4209 extends Class4178 {
 
          for (int var9 = this.field20444.field45680; var9 <= this.field20444.field45683; var9++) {
             for (int var10 = this.field20444.field45678; var10 <= this.field20444.field45681; var10++) {
-               var8.method8372(var10, 64, var9);
+               var8.setPos(var10, 64, var9);
                if (var2.method38396(var8)) {
                   var6 += var1.method7006(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, var8).getY();
                   var7++;

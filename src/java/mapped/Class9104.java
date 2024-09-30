@@ -148,7 +148,7 @@ public class Class9104 {
                Class7700.field33066, ImmutableList.of(Class7700.field33060), ImmutableList.of(Class7700.field33047), ImmutableList.of(Class7700.field33047)
             )
          )
-         .method26510(Class6272.field27768.method19244(new Class4724(Class97.field260, 0.1F)))
+         .method26510(Class6272.field27768.method19244(new Class4724(GenerationStageCarving.field260, 0.1F)))
    );
    public static final Class7909<?, ?> field41665 = method33941(
       "iceberg_packed",

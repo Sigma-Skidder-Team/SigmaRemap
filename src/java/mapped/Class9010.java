@@ -4,6 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.chunk.ChunkPrimer;
 
 import java.util.BitSet;
 
@@ -22,15 +23,15 @@ public class Class9010 {
    }
 
    public int method33297() {
-      return this.field41216.method17806();
+      return this.field41216.func_230355_e_();
    }
 
    public int method33298() {
-      return this.field41216.method17807();
+      return this.field41216.func_230356_f_();
    }
 
-   public BitSet method33299(ChunkPos var1, Class97 var2) {
-      return ((Class1672)this.field41215.getChunk(var1.x, var1.z)).method7117(var2);
+   public BitSet method33299(ChunkPos var1, GenerationStageCarving var2) {
+      return ((ChunkPrimer)this.field41215.getChunk(var1.x, var1.z)).getOrAddCarvingMask(var2);
    }
 
    public BlockState method33300(BlockPos var1) {

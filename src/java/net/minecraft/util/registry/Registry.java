@@ -21,6 +21,7 @@ import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.provider.BiomeProvider;
+import net.minecraft.world.gen.carver.ConfiguredCarver;
 import org.apache.commons.lang3.Validate;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -105,9 +106,9 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final Registry<Class7130> field16098 = method9175(field16065, () -> Class8582.field38595);
    public static final RegistryKey<Registry<DimensionSettings>> NOISE_SETTINGS_KEY = createKey("worldgen/noise_settings");
    public static final RegistryKey<Registry<Class9319<?>>> field16100 = createKey("worldgen/configured_surface_builder");
-   public static final RegistryKey<Registry<Class6815<?>>> field16101 = createKey("worldgen/configured_carver");
+   public static final RegistryKey<Registry<ConfiguredCarver<?>>> field16101 = createKey("worldgen/configured_carver");
    public static final RegistryKey<Registry<Class7909<?, ?>>> field16102 = createKey("worldgen/configured_feature");
-   public static final RegistryKey<Registry<Class9300<?, ?>>> field16103 = createKey("worldgen/configured_structure_feature");
+   public static final RegistryKey<Registry<StructureFeature<?, ?>>> field16103 = createKey("worldgen/configured_structure_feature");
    public static final RegistryKey<Registry<Class3622>> field16104 = createKey("worldgen/processor_list");
    public static final RegistryKey<Registry<Class9369>> field16105 = createKey("worldgen/template_pool");
    public static final RegistryKey<Registry<Biome>> BIOME_KEY = createKey("worldgen/biome");
@@ -118,7 +119,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final RegistryKey<Registry<Class2898<?>>> field16111 = createKey("worldgen/feature");
    public static final Registry<Class2898<?>> field16112 = method9175(field16111, () -> Class2898.field17961);
    public static final RegistryKey<Registry<Structure<?>>> field16113 = createKey("worldgen/structure_feature");
-   public static final Registry<Structure<?>> field16114 = method9175(field16113, () -> Structure.MINESHAFT);
+   public static final Registry<Structure<?>> STRUCTURE_FEATURE = method9175(field16113, () -> Structure.MINESHAFT);
    public static final RegistryKey<Registry<Class7792>> field16115 = createKey("worldgen/structure_piece");
    public static final Registry<Class7792> field16116 = method9175(field16115, () -> Class7792.field33427);
    public static final RegistryKey<Registry<Class6272<?>>> field16117 = createKey("worldgen/decorator");
@@ -140,7 +141,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final Registry<Class9542<?>> field16133 = method9175(field16123, () -> Class9542.field44429);
    public static final Registry<Class7646<?>> field16134 = method9175(field16124, () -> Class7646.field32820);
    public static final Registry<Codec<? extends BiomeProvider>> field16135 = method9177(field16125, Lifecycle.stable(), () -> BiomeProvider.field9159);
-   public static final Registry<Codec<? extends ChunkGenerator>> field16136 = method9177(field16126, Lifecycle.stable(), () -> ChunkGenerator.field24984);
+   public static final Registry<Codec<? extends ChunkGenerator>> CHUNK_GENERATOR_CODEC = method9177(field16126, Lifecycle.stable(), () -> ChunkGenerator.field_235948_a_);
    public static final Registry<Class7525<?>> field16137 = method9175(field16127, () -> Class7525.field32294);
    public static final Registry<Class8325<?>> field16138 = method9175(field16128, () -> Class8325.field35773);
    private final RegistryKey<? extends Registry<T>> field16139;

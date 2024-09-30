@@ -38,12 +38,12 @@ public abstract class BiomeGeneratorTypeScreens {
                         var1.method26259(),
                         var1.method26260(),
                         var1.method26261(),
-                        DimensionGeneratorSettings.method26262(var0.field7092.method5789().<DimensionType>getRegistry(Registry.DIMENSION_TYPE_KEY), var1.method26264(), new Class5648(var2))
+                        DimensionGeneratorSettings.method26262(var0.field7092.method5789().<DimensionType>getRegistry(Registry.DIMENSION_TYPE_KEY), var1.method26264(), new FlatChunkGenerator(var2))
                      )
                   ),
-            !(var4 instanceof Class5648)
+            !(var4 instanceof FlatChunkGenerator)
                ? Class9733.method38132(var0.field7092.method5789().<Biome>getRegistry(Registry.BIOME_KEY))
-               : ((Class5648)var4).method17837()
+               : ((FlatChunkGenerator)var4).method17837()
          );
       },
       Optional.<BiomeGeneratorTypeScreens>of(field26029),
@@ -99,8 +99,8 @@ public abstract class BiomeGeneratorTypeScreens {
 
    private static Biome method18503(DynamicRegistries var0, DimensionGeneratorSettings var1) {
       return var1.method26265()
-         .method17824()
-         .method7201()
+         .getBiomeProvider()
+         .getBiomes()
          .stream()
          .findFirst()
          .orElse(var0.<Biome>getRegistry(Registry.BIOME_KEY).getOrThrow(Biomes.PLAINS));
@@ -108,8 +108,8 @@ public abstract class BiomeGeneratorTypeScreens {
 
    public static Optional<BiomeGeneratorTypeScreens> method18504(DimensionGeneratorSettings var0) {
       ChunkGenerator var3 = var0.method26265();
-      if (!(var3 instanceof Class5648)) {
-         return !(var3 instanceof Class5647) ? Optional.<BiomeGeneratorTypeScreens>empty() : Optional.<BiomeGeneratorTypeScreens>of(field26032);
+      if (!(var3 instanceof FlatChunkGenerator)) {
+         return !(var3 instanceof DebugChunkGenerator) ? Optional.<BiomeGeneratorTypeScreens>empty() : Optional.<BiomeGeneratorTypeScreens>of(field26032);
       } else {
          return Optional.<BiomeGeneratorTypeScreens>of(field26026);
       }

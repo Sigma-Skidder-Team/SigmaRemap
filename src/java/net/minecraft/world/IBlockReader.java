@@ -138,7 +138,7 @@ public interface IBlockReader {
                   var39 += var33;
                }
 
-               Object var45 = var1.apply(var0, var22.method8372(var19, var20, var21));
+               Object var45 = var1.apply(var0, var22.setPos(var19, var20, var21));
                if (var45 != null) {
                   return (T)var45;
                }

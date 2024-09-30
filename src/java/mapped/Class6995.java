@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.network.DebugPacketSender;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
@@ -56,7 +57,7 @@ public class Class6995 extends Class6990 {
             this.method21659();
          }
 
-         Class7393.method23617(this.field30244, this.field30243, this.field30245, this.field30254);
+         DebugPacketSender.method23617(this.field30244, this.field30243, this.field30245, this.field30254);
          if (!this.method21664()) {
             Vector3d var4 = this.field30245.method28703(this.field30243);
             this.field30243.method4228().method20813(var4.x, var4.y, var4.z, this.field30246);

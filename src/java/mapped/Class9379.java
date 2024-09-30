@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 
@@ -228,10 +229,10 @@ public class Class9379 {
                Pair.of(new Class3738(EntityType.field41012, 8.0F), 8),
                Pair.of(new Class3738(EntityType.field41098, 8.0F), 2),
                Pair.of(new Class3738(EntityType.PLAYER, 8.0F), 2),
-               Pair.of(new Class3738(Class179.field624, 8.0F), 1),
-               Pair.of(new Class3738(Class179.field626, 8.0F), 1),
-               Pair.of(new Class3738(Class179.field627, 8.0F), 1),
-               Pair.of(new Class3738(Class179.field623, 8.0F), 1),
+               Pair.of(new Class3738(EntityClassification.field624, 8.0F), 1),
+               Pair.of(new Class3738(EntityClassification.field626, 8.0F), 1),
+               Pair.of(new Class3738(EntityClassification.field627, 8.0F), 1),
+               Pair.of(new Class3738(EntityClassification.field623, 8.0F), 1),
                Pair.of(new Class3675(30, 60), 2)
             )
          )

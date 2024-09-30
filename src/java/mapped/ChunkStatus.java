@@ -9,7 +9,9 @@ import net.minecraft.client.util.Util;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.gen.WorldGenRegion;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 import net.minecraft.world.server.ServerWorld;
 
@@ -24,8 +26,8 @@ public class ChunkStatus {
    private static final EnumSet<Heightmap.Type> field42130 = EnumSet.<Heightmap.Type>of(Heightmap.Type.OCEAN_FLOOR_WG, Heightmap.Type.WORLD_SURFACE_WG);
    private static final EnumSet<Heightmap.Type> field42131 = EnumSet.<Heightmap.Type>of(Heightmap.Type.OCEAN_FLOOR, Heightmap.Type.WORLD_SURFACE, Heightmap.Type.MOTION_BLOCKING, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES);
    private static final Class9241 field42132 = (var0, var1, var2, var3, var4, var5) -> {
-      if (var5 instanceof Class1672 && !var5.getStatus().method34306(var0)) {
-         ((Class1672)var5).method7111(var0);
+      if (var5 instanceof ChunkPrimer && !var5.getStatus().method34306(var0)) {
+         ((ChunkPrimer)var5).method7111(var0);
       }
 
       return CompletableFuture.completedFuture(Either.left(var5));
@@ -36,11 +38,11 @@ public class ChunkStatus {
       "structure_starts", field42133, 0, field42130, Class2076.field13524, (var0, var1, var2, var3, var4, var5, var6, var7) -> {
          if (!var7.getStatus().method34306(var0)) {
             if (var1.getServer().func_240793_aU_().getDimensionGeneratorSettings().method26260()) {
-               var2.method17825(var1.func_241828_r(), var1.method6893(), var7, var3, var1.method6967());
+               var2.func_242707_a(var1.func_241828_r(), var1.func_241112_a_(), var7, var3, var1.getSeed());
             }
 
-            if (var7 instanceof Class1672) {
-               ((Class1672)var7).method7111(var0);
+            if (var7 instanceof ChunkPrimer) {
+               ((ChunkPrimer)var7).method7111(var0);
             }
          }
 
@@ -49,8 +51,8 @@ public class ChunkStatus {
    );
    public static final ChunkStatus field42135 = method34289(
       "structure_references", field42134, 8, field42130, Class2076.field13524, (var0, var1, var2, var3) -> {
-         Class1691 var6 = new Class1691(var0, var2);
-         var1.method17827(var6, var0.method6893().method24339(var6), var3);
+         WorldGenRegion var6 = new WorldGenRegion(var0, var2);
+         var1.func_235953_a_(var6, var0.func_241112_a_().method24339(var6), var3);
       }
    );
    public static final ChunkStatus field42136 = method34289(
@@ -59,14 +61,14 @@ public class ChunkStatus {
       0,
       field42130,
       Class2076.field13524,
-      (var0, var1, var2, var3) -> var1.method17818(var0.func_241828_r().<Biome>getRegistry(Registry.BIOME_KEY), var3)
+      (var0, var1, var2, var3) -> var1.func_242706_a(var0.func_241828_r().<Biome>getRegistry(Registry.BIOME_KEY), var3)
    );
    public static final ChunkStatus field42137 = method34289("noise", field42136, 8, field42130, Class2076.field13524, (var0, var1, var2, var3) -> {
-      Class1691 var6 = new Class1691(var0, var2);
-      var1.method17803(var6, var0.method6893().method24339(var6), var3);
+      WorldGenRegion var6 = new WorldGenRegion(var0, var2);
+      var1.func_230352_b_(var6, var0.func_241112_a_().method24339(var6), var3);
    });
    public static final ChunkStatus field42138 = method34289(
-      "surface", field42137, 0, field42130, Class2076.field13524, (var0, var1, var2, var3) -> var1.method17801(new Class1691(var0, var2), var3)
+      "surface", field42137, 0, field42130, Class2076.field13524, (var0, var1, var2, var3) -> var1.generateSurface(new WorldGenRegion(var0, var2), var3)
    );
    public static final ChunkStatus field42139 = method34289(
       "carvers",
@@ -74,7 +76,7 @@ public class ChunkStatus {
       0,
       field42130,
       Class2076.field13524,
-      (var0, var1, var2, var3) -> var1.method17819(var0.method6967(), var0.getBiomeManager(), var3, Class97.field259)
+      (var0, var1, var2, var3) -> var1.func_230350_a_(var0.getSeed(), var0.getBiomeManager(), var3, GenerationStageCarving.field259)
    );
    public static final ChunkStatus field42140 = method34289(
       "liquid_carvers",
@@ -82,16 +84,16 @@ public class ChunkStatus {
       0,
       field42131,
       Class2076.field13524,
-      (var0, var1, var2, var3) -> var1.method17819(var0.method6967(), var0.getBiomeManager(), var3, Class97.field260)
+      (var0, var1, var2, var3) -> var1.func_230350_a_(var0.getSeed(), var0.getBiomeManager(), var3, GenerationStageCarving.field260)
    );
    public static final ChunkStatus field42141 = method34290(
       "features", field42140, 8, field42131, Class2076.field13524, (var0, var1, var2, var3, var4, var5, var6, var7) -> {
-         Class1672 var10 = (Class1672)var7;
+         ChunkPrimer var10 = (ChunkPrimer)var7;
          var10.method7119(var4);
          if (!var7.getStatus().method34306(var0)) {
             Heightmap.method24577(var7, EnumSet.<Heightmap.Type>of(Heightmap.Type.MOTION_BLOCKING, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, Heightmap.Type.OCEAN_FLOOR, Heightmap.Type.WORLD_SURFACE));
-            Class1691 var11 = new Class1691(var1, var6);
-            var2.method17821(var11, var1.method6893().method24339(var11));
+            WorldGenRegion var11 = new WorldGenRegion(var1, var6);
+            var2.func_230351_a_(var11, var1.func_241112_a_().method24339(var11));
             var10.method7111(var0);
          }
 
@@ -108,7 +110,7 @@ public class ChunkStatus {
       (var0, var1, var2, var3, var4, var5) -> method34288(var0, var3, var5)
    );
    public static final ChunkStatus field42143 = method34289(
-      "spawn", field42142, 0, field42131, Class2076.field13524, (var0, var1, var2, var3) -> var1.method17809(new Class1691(var0, var2))
+      "spawn", field42142, 0, field42131, Class2076.field13524, (var0, var1, var2, var3) -> var1.func_230354_a_(new WorldGenRegion(var0, var2))
    );
    public static final ChunkStatus field42144 = method34289("heightmaps", field42143, 0, field42131, Class2076.field13524, (var0, var1, var2, var3) -> {
    });
@@ -147,7 +149,7 @@ public class ChunkStatus {
    private static CompletableFuture<Either<IChunk, Class7022>> method34288(ChunkStatus var0, Class195 var1, IChunk var2) {
       boolean var5 = method34293(var0, var2);
       if (!var2.getStatus().method34306(var0)) {
-         ((Class1672)var2).method7111(var0);
+         ((ChunkPrimer)var2).method7111(var0);
       }
 
       return var1.method610(var2, var5).thenApply(Either::left);

@@ -34,7 +34,7 @@ public final class Class4551 extends AbstractIterator<BlockPos> {
    public BlockPos computeNext() {
       if (this.field21939 > 0) {
          BlockPos.Mutable var3 = this.field21938
-            .method8372(
+            .setPos(
                this.field21941 + this.field21942.nextInt(this.field21943),
                this.field21944 + this.field21942.nextInt(this.field21945),
                this.field21946 + this.field21942.nextInt(this.field21947)

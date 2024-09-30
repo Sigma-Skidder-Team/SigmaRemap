@@ -56,7 +56,7 @@ public final class Class4550 extends AbstractIterator<BlockPos> {
             int var6 = this.field21924 - Math.abs(var4) - Math.abs(var5);
             if (var6 <= this.field21934) {
                this.field21929 = var6 != 0;
-               var3 = this.field21923.method8372(this.field21935 + var4, this.field21936 + var5, this.field21930 + var6);
+               var3 = this.field21923.setPos(this.field21935 + var4, this.field21936 + var5, this.field21930 + var6);
             }
          }
 

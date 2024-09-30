@@ -7,6 +7,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.gen.feature.structure.StructureManager;
 import net.minecraft.world.gen.feature.structure.StructureStart;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 
@@ -39,10 +40,10 @@ public class Class5450 extends StructureStart<Class4712> {
 
       int var13 = (var4 << 4) + 7;
       int var14 = (var5 << 4) + 7;
-      int var15 = var2.method17829(var13, var14, Heightmap.Type.WORLD_SURFACE_WG);
-      int var16 = var2.method17829(var13, var14 + var12, Heightmap.Type.WORLD_SURFACE_WG);
-      int var17 = var2.method17829(var13 + var11, var14, Heightmap.Type.WORLD_SURFACE_WG);
-      int var18 = var2.method17829(var13 + var11, var14 + var12, Heightmap.Type.WORLD_SURFACE_WG);
+      int var15 = var2.getNoiseHeightMinusOne(var13, var14, Heightmap.Type.WORLD_SURFACE_WG);
+      int var16 = var2.getNoiseHeightMinusOne(var13, var14 + var12, Heightmap.Type.WORLD_SURFACE_WG);
+      int var17 = var2.getNoiseHeightMinusOne(var13 + var11, var14, Heightmap.Type.WORLD_SURFACE_WG);
+      int var18 = var2.getNoiseHeightMinusOne(var13 + var11, var14 + var12, Heightmap.Type.WORLD_SURFACE_WG);
       int var19 = Math.min(Math.min(var15, var16), Math.min(var17, var18));
       if (var19 >= 60) {
          BlockPos var20 = new BlockPos(var4 * 16 + 8, var19 + 1, var5 * 16 + 8);
@@ -54,7 +55,7 @@ public class Class5450 extends StructureStart<Class4712> {
    }
 
    @Override
-   public void method17112(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6) {
+   public void method17112(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6) {
       super.method17112(var1, var2, var3, var4, var5, var6);
       int var9 = this.field24197.field45679;
 

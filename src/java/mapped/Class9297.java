@@ -2,20 +2,22 @@ package mapped;
 
 import it.unimi.dsi.fastutil.doubles.DoubleList;
 import it.unimi.dsi.fastutil.doubles.DoubleListIterator;
+import net.minecraft.util.SharedSeedRandom;
+import net.minecraft.world.gen.OctavesNoiseGenerator;
 
 public class Class9297 {
    private static String[] field42742;
    private final double field42743;
-   private final Class7689 field42744;
-   private final Class7689 field42745;
+   private final OctavesNoiseGenerator field42744;
+   private final OctavesNoiseGenerator field42745;
 
-   public static Class9297 method35044(Class2420 var0, int var1, DoubleList var2) {
+   public static Class9297 method35044(SharedSeedRandom var0, int var1, DoubleList var2) {
       return new Class9297(var0, var1, var2);
    }
 
-   private Class9297(Class2420 var1, int var2, DoubleList var3) {
-      this.field42744 = Class7689.method25308(var1, var2, var3);
-      this.field42745 = Class7689.method25308(var1, var2, var3);
+   private Class9297(SharedSeedRandom var1, int var2, DoubleList var3) {
+      this.field42744 = OctavesNoiseGenerator.method25308(var1, var2, var3);
+      this.field42745 = OctavesNoiseGenerator.method25308(var1, var2, var3);
       int var6 = Integer.MAX_VALUE;
       int var7 = Integer.MIN_VALUE;
       DoubleListIterator var8 = var3.iterator();

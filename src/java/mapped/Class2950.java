@@ -19,7 +19,7 @@ public class Class2950 extends Class2898<Class4705> {
    }
 
    public boolean method11213(ISeedReader var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4705 var5) {
-      var4 = new BlockPos(var4.getX(), var2.method17807(), var4.getZ());
+      var4 = new BlockPos(var4.getX(), var2.func_230356_f_(), var4.getZ());
       boolean var8 = var3.nextDouble() > 0.7;
       BlockState var9 = var5.field22322;
       double var10 = var3.nextDouble() * 2.0 * Math.PI;

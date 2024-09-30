@@ -52,6 +52,7 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
+import net.minecraft.world.server.TicketType;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -800,7 +801,7 @@ public abstract class Entity implements INameable, ICommandSource {
          for (int var7 = var4.getX(); var7 <= var5.getX(); var7++) {
             for (int var8 = var4.getY(); var8 <= var5.getY(); var8++) {
                for (int var9 = var4.getZ(); var9 <= var5.getZ(); var9++) {
-                  var6.method8372(var7, var8, var9);
+                  var6.setPos(var7, var8, var9);
                   BlockState var10 = this.world.getBlockState(var6);
 
                   try {
@@ -2275,7 +2276,7 @@ public abstract class Entity implements INameable, ICommandSource {
    public final void teleportKeepLoaded(double var1, double var3, double var5) {
       if (this.world instanceof ServerWorld) {
          ChunkPos var9 = new ChunkPos(new BlockPos(var1, var3, var5));
-         ((ServerWorld)this.world).getChunkProvider().registerTicket(Class8561.field38486, var9, 0, this.getEntityId());
+         ((ServerWorld)this.world).getChunkProvider().registerTicket(TicketType.field38486, var9, 0, this.getEntityId());
          this.world.getChunk(var9.x, var9.z);
          this.setPositionAndUpdate(var1, var3, var5);
       }
@@ -2669,7 +2670,7 @@ public abstract class Entity implements INameable, ICommandSource {
          for (int var20 = var7; var20 < var8; var20++) {
             for (int var21 = var9; var21 < var10; var21++) {
                for (int var22 = var11; var22 < var12; var22++) {
-                  var19.method8372(var20, var21, var22);
+                  var19.setPos(var20, var21, var22);
                   FluidState var23 = this.world.getFluidState(var19);
                   if (var23.method23486(var1)) {
                      double var24 = (double)((float)var21 + var23.method23475(this.world, var19));

@@ -24,6 +24,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.CompressedStreamTools;
+import net.minecraft.network.DebugPacketSender;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -261,7 +262,7 @@ public class Class9037 {
                   .setClickEvent(new ClickEvent(ClickEvent$Action.COPY_TO_CLIPBOARD, "final BlockPos " + var1 + " = new BlockPos(" + var10 + ");"))
             );
          var0.method20179(new StringTextComponent("Position relative to " + var11 + ": ").append(var12), false);
-         Class7393.method23610(var6, new BlockPos(var5), var10, -2147418368, 10000);
+         DebugPacketSender.method23610(var6, new BlockPos(var5), var10, -2147418368, 10000);
          return 1;
       } else {
          var0.method20181(new StringTextComponent("Can't find a structure block that contains the targeted pos " + var5));

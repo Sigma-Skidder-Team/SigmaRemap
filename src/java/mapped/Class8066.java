@@ -113,7 +113,7 @@ public class Class8066 {
    public void method27712(int var1, int var2, int var3) {
       if (var1 != this.field34617.getX() || var2 != this.field34617.getY() || var3 != this.field34617.getZ()) {
          this.method27716();
-         this.field34617.method8372(var1, var2, var3);
+         this.field34617.setPos(var1, var2, var3);
          if (this.field34623) {
             byte var6 = 8;
             this.field34624 = var1 >> var6 << var6;

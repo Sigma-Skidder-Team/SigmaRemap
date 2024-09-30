@@ -8,6 +8,9 @@ import net.minecraft.block.Blocks;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.WorldGenRegistries;
+import net.minecraft.world.gen.settings.DimensionStructuresSettings;
+import net.minecraft.world.gen.settings.StructureSeparationSettings;
+import net.minecraft.world.gen.settings.StructureSpreadSettings;
 
 import java.util.HashMap;
 import java.util.Objects;
@@ -17,7 +20,7 @@ import java.util.function.Supplier;
 public final class DimensionSettings {
    public static final Codec<DimensionSettings> field43220 = RecordCodecBuilder.create(
       var0 -> var0.group(
-               Class9763.field45673.fieldOf("structures").forGetter(DimensionSettings::method35160),
+               DimensionStructuresSettings.field45673.fieldOf("structures").forGetter(DimensionSettings::method35160),
                Class9556.field44510.fieldOf("noise").forGetter(DimensionSettings::method35161),
                BlockState.field31585.fieldOf("default_block").forGetter(DimensionSettings::method35162),
                BlockState.field31585.fieldOf("default_fluid").forGetter(DimensionSettings::method35163),
@@ -29,7 +32,7 @@ public final class DimensionSettings {
             .apply(var0, DimensionSettings::new)
    );
    public static final Codec<Supplier<DimensionSettings>> field43221 = RegistryKeyCodec.create(Registry.NOISE_SETTINGS_KEY, field43220);
-   private final Class9763 field43222;
+   private final DimensionStructuresSettings field43222;
    private final Class9556 field43223;
    private final BlockState field43224;
    private final BlockState field43225;
@@ -43,9 +46,9 @@ public final class DimensionSettings {
    public static final RegistryKey<DimensionSettings> field_242737_f = RegistryKey.<DimensionSettings>getOrCreateKey(Registry.NOISE_SETTINGS_KEY, new ResourceLocation("end"));
    public static final RegistryKey<DimensionSettings> field43234 = RegistryKey.<DimensionSettings>getOrCreateKey(Registry.NOISE_SETTINGS_KEY, new ResourceLocation("caves"));
    public static final RegistryKey<DimensionSettings> field43235 = RegistryKey.<DimensionSettings>getOrCreateKey(Registry.NOISE_SETTINGS_KEY, new ResourceLocation("floating_islands"));
-   private static final DimensionSettings field43236 = method35169(field43230, method35173(new Class9763(true), false, field43230.getLocation()));
+   private static final DimensionSettings field43236 = method35169(field43230, method35173(new DimensionStructuresSettings(true), false, field43230.getLocation()));
 
-   private DimensionSettings(Class9763 var1, Class9556 var2, BlockState var3, BlockState var4, int var5, int var6, int var7, boolean var8) {
+   private DimensionSettings(DimensionStructuresSettings var1, Class9556 var2, BlockState var3, BlockState var4, int var5, int var6, int var7, boolean var8) {
       this.field43222 = var1;
       this.field43223 = var2;
       this.field43224 = var3;
@@ -56,7 +59,7 @@ public final class DimensionSettings {
       this.field43229 = var8;
    }
 
-   public Class9763 method35160() {
+   public DimensionStructuresSettings method35160() {
       return this.field43222;
    }
 
@@ -102,7 +105,7 @@ public final class DimensionSettings {
       return field43236;
    }
 
-   private static DimensionSettings method35171(Class9763 var0, BlockState var1, BlockState var2, ResourceLocation var3, boolean var4, boolean var5) {
+   private static DimensionSettings method35171(DimensionStructuresSettings var0, BlockState var1, BlockState var2, ResourceLocation var3, boolean var4, boolean var5) {
       return new DimensionSettings(
          var0,
          new Class9556(
@@ -117,11 +120,11 @@ public final class DimensionSettings {
       );
    }
 
-   private static DimensionSettings method35172(Class9763 var0, BlockState var1, BlockState var2, ResourceLocation var3) {
-      HashMap var6 = Maps.newHashMap(Class9763.field45674);
-      var6.put(Structure.RUINED_PORTAL, new Class8483(25, 10, 34222645));
+   private static DimensionSettings method35172(DimensionStructuresSettings var0, BlockState var1, BlockState var2, ResourceLocation var3) {
+      HashMap var6 = Maps.newHashMap(DimensionStructuresSettings.field45674);
+      var6.put(Structure.RUINED_PORTAL, new StructureSeparationSettings(25, 10, 34222645));
       return new DimensionSettings(
-         new Class9763(Optional.<Class9245>ofNullable(var0.method38382()), var6),
+         new DimensionStructuresSettings(Optional.<StructureSpreadSettings>ofNullable(var0.func_236199_b_()), var6),
          new Class9556(
             128, new Class8562(1.0, 3.0, 80.0, 60.0), new Class8208(120, 3, 0), new Class8208(320, 4, -1), 1, 2, 0.0, 0.019921875, false, false, false, false
          ),
@@ -134,7 +137,7 @@ public final class DimensionSettings {
       );
    }
 
-   private static DimensionSettings method35173(Class9763 var0, boolean var1, ResourceLocation var2) {
+   private static DimensionSettings method35173(DimensionStructuresSettings var0, boolean var1, ResourceLocation var2) {
       double var5 = 0.9999999814507745;
       return new DimensionSettings(
          var0,
@@ -162,20 +165,20 @@ public final class DimensionSettings {
    }
 
    static {
-      method35169(field43231, method35173(new Class9763(true), true, field43231.getLocation()));
+      method35169(field43231, method35173(new DimensionStructuresSettings(true), true, field43231.getLocation()));
       method35169(
-              field_242736_e, method35172(new Class9763(false), Blocks.NETHERRACK.getDefaultState(), Blocks.LAVA.getDefaultState(), field_242736_e.getLocation())
+              field_242736_e, method35172(new DimensionStructuresSettings(false), Blocks.NETHERRACK.getDefaultState(), Blocks.LAVA.getDefaultState(), field_242736_e.getLocation())
       );
       method35169(
               field_242737_f,
-         method35171(new Class9763(false), Blocks.field36651.getDefaultState(), Blocks.AIR.getDefaultState(), field_242737_f.getLocation(), true, true)
+         method35171(new DimensionStructuresSettings(false), Blocks.field36651.getDefaultState(), Blocks.AIR.getDefaultState(), field_242737_f.getLocation(), true, true)
       );
       method35169(
-         field43234, method35172(new Class9763(true), Blocks.STONE.getDefaultState(), Blocks.WATER.getDefaultState(), field43234.getLocation())
+         field43234, method35172(new DimensionStructuresSettings(true), Blocks.STONE.getDefaultState(), Blocks.WATER.getDefaultState(), field43234.getLocation())
       );
       method35169(
          field43235,
-         method35171(new Class9763(true), Blocks.STONE.getDefaultState(), Blocks.WATER.getDefaultState(), field43235.getLocation(), false, false)
+         method35171(new DimensionStructuresSettings(true), Blocks.STONE.getDefaultState(), Blocks.WATER.getDefaultState(), field43235.getLocation(), false, false)
       );
    }
 }

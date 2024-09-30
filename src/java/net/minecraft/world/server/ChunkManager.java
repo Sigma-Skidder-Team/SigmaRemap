@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.world.server;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
@@ -11,6 +11,7 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.longs.*;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap.Entry;
 import it.unimi.dsi.fastutil.objects.ObjectIterator;
+import mapped.*;
 import net.minecraft.client.util.Util;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
@@ -19,6 +20,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.DebugPacketSender;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.server.*;
 import net.minecraft.util.math.ChunkPos;
@@ -26,12 +28,12 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.SectionPos;
 import net.minecraft.util.palette.UpgradeData;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.chunk.IChunkLightProvider;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.chunk.listener.IChunkStatusListener;
 import net.minecraft.world.gen.feature.structure.StructureStart;
 import net.minecraft.world.gen.feature.template.TemplateManager;
-import net.minecraft.world.server.ServerWorld;
 import org.apache.commons.lang3.mutable.MutableBoolean;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -50,9 +52,9 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Class1649 extends Class1648 implements Class1650 {
+public class ChunkManager extends Class1648 implements Class1650 {
    private static final Logger field8950 = LogManager.getLogger();
-   public static final int field8951 = 33 + ChunkStatus.method34295();
+   public static final int MAX_LOADED_LEVEL = 33 + ChunkStatus.method34295();
    private final Long2ObjectLinkedOpenHashMap<Class8641> field8952 = new Long2ObjectLinkedOpenHashMap();
    private volatile Long2ObjectLinkedOpenHashMap<Class8641> field8953 = this.field8952.clone();
    private final Long2ObjectLinkedOpenHashMap<Class8641> field8954 = new Long2ObjectLinkedOpenHashMap();
@@ -79,7 +81,7 @@ public class Class1649 extends Class1648 implements Class1650 {
    private final Queue<Runnable> field8975 = Queues.newConcurrentLinkedQueue();
    private int field8976;
 
-   public Class1649(
+   public ChunkManager(
       ServerWorld var1,
       SaveFormat.LevelSave var2,
       DataFixer var3,
@@ -233,7 +235,7 @@ public class Class1649 extends Class1648 implements Class1650 {
 
    @Nullable
    private Class8641 method6544(long var1, int var3, Class8641 var4, int var5) {
-      if (var5 > field8951 && var3 > field8951) {
+      if (var5 > MAX_LOADED_LEVEL && var3 > MAX_LOADED_LEVEL) {
          return var4;
       } else {
          if (var4 != null) {
@@ -241,14 +243,14 @@ public class Class1649 extends Class1648 implements Class1650 {
          }
 
          if (var4 != null) {
-            if (var3 <= field8951) {
+            if (var3 <= MAX_LOADED_LEVEL) {
                this.field8962.remove(var1);
             } else {
                this.field8962.add(var1);
             }
          }
 
-         if (var3 <= field8951 && var4 == null) {
+         if (var3 <= MAX_LOADED_LEVEL && var4 == null) {
             var4 = (Class8641)this.field8954.remove(var1);
             if (var4 == null) {
                var4 = new Class8641(new ChunkPos(var1), var3, this.field8957, this.field8964, this);
@@ -389,7 +391,7 @@ public class Class1649 extends Class1648 implements Class1650 {
             Optional var7 = var4.left();
             if (var7.isPresent()) {
                if (var2 == ChunkStatus.field42142) {
-                  this.field8968.method35128(Class8561.field38484, var5, 33 + ChunkStatus.method34296(ChunkStatus.field42141), var5);
+                  this.field8968.registerWithLevel(TicketType.field38484, var5, 33 + ChunkStatus.method34296(ChunkStatus.field42141), var5);
                }
 
                IChunk var8 = (IChunk)var7.get();
@@ -423,7 +425,7 @@ public class Class1649 extends Class1648 implements Class1650 {
             if (var4 != null) {
                boolean var9 = var4.contains("Level", 10) && var4.getCompound("Level").contains("Status", 8);
                if (var9) {
-                  Class1672 var6 = Class9725.method38087(this.field8956, this.field8970, this.field8961, var1, var4);
+                  ChunkPrimer var6 = Class9725.method38087(this.field8956, this.field8970, this.field8961, var1, var4);
                   var6.setLastSaveTime(this.field8956.getGameTime());
                   this.method6553(var1, var6.getStatus().method34303());
                   return Either.left(var6);
@@ -444,7 +446,7 @@ public class Class1649 extends Class1648 implements Class1650 {
          }
 
          this.method6552(var1);
-         return Either.left(new Class1672(var1, UpgradeData.field40388));
+         return Either.left(new ChunkPrimer(var1, UpgradeData.field40388));
       }, this.field8958);
    }
 
@@ -491,7 +493,7 @@ public class Class1649 extends Class1648 implements Class1650 {
       this.field8958
          .method1641(
             Util.method38515(
-               () -> this.field8968.method35129(Class8561.field38484, var1, 33 + ChunkStatus.method34296(ChunkStatus.field42141), var1),
+               () -> this.field8968.releaseWithLevel(TicketType.field38484, var1, 33 + ChunkStatus.method34296(ChunkStatus.field42141), var1),
                () -> "release light ticket " + var1
             )
          );
@@ -516,7 +518,7 @@ public class Class1649 extends Class1648 implements Class1650 {
             ChunkPos var5x = var1.method31056();
             Chunk var6;
             if (!(var2x instanceof Class1673)) {
-               var6 = new Chunk(this.field8956, (Class1672)var2x);
+               var6 = new Chunk(this.field8956, (ChunkPrimer)var2x);
                var1.method31066(new Class1673(var6));
             } else {
                var6 = ((Class1673)var2x).method7127();
@@ -683,7 +685,7 @@ public class Class1649 extends Class1648 implements Class1650 {
                   this.method6582(var1, var3, var9);
                }
 
-               Class7393.method23612(this.field8956, var2);
+               DebugPacketSender.method23612(this.field8956, var2);
             }
          }
 
@@ -994,7 +996,7 @@ public class Class1649 extends Class1648 implements Class1650 {
       }
 
       var1.method2830(var3.getPos(), var2[0], var2[1]);
-      Class7393.method23612(this.field8956, var3.getPos());
+      DebugPacketSender.method23612(this.field8956, var3.getPos());
       List<Entity> var6 = Lists.newArrayList();
       List<Entity> var7 = Lists.newArrayList();
 
@@ -1034,12 +1036,12 @@ public class Class1649 extends Class1648 implements Class1650 {
    }
 
    // $VF: synthetic method
-   public static ServerWorld method6633(Class1649 var0) {
+   public static ServerWorld method6633(ChunkManager var0) {
       return var0.field8956;
    }
 
    // $VF: synthetic method
-   public static int method6634(Class1649 var0) {
+   public static int method6634(ChunkManager var0) {
       return var0.field8976;
    }
 
@@ -1049,12 +1051,12 @@ public class Class1649 extends Class1648 implements Class1650 {
    }
 
    // $VF: synthetic method
-   public static LongSet method6636(Class1649 var0) {
+   public static LongSet method6636(ChunkManager var0) {
       return var0.field8962;
    }
 
    // $VF: synthetic method
-   public static Class8641 method6637(Class1649 var0, long var1, int var3, Class8641 var4, int var5) {
+   public static Class8641 method6637(ChunkManager var0, long var1, int var3, Class8641 var4, int var5) {
       return var0.method6544(var1, var3, var4, var5);
    }
 }

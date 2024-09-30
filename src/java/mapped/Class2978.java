@@ -73,14 +73,14 @@ public class Class2978 extends Structure<Class4726> {
          new BlockPos(var6.field45678, 0, var6.field45683),
          new BlockPos(var6.field45681, 0, var6.field45683)
       );
-      List<IBlockReader> var11 = var20.stream().map(var1x -> var1.method17798(var1x.getX(), var1x.getZ())).collect(Collectors.toList());
+      List<IBlockReader> var11 = var20.stream().map(var1x -> var1.func_230348_a_(var1x.getX(), var1x.getZ())).collect(Collectors.toList());
       Heightmap.Type var12 = var2 != Class2219.field14496 ? Heightmap.Type.WORLD_SURFACE_WG : Heightmap.Type.OCEAN_FLOOR_WG;
       BlockPos.Mutable var13 = new BlockPos.Mutable();
 
       int var14;
       for (var14 = var9; var14 > 15; var14--) {
          int var15 = 0;
-         var13.method8372(0, var14, 0);
+         var13.setPos(0, var14, 0);
 
          for (IBlockReader var17 : var11) {
             BlockState var18 = var17.getBlockState(var13);

@@ -6,6 +6,7 @@ import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeRegistry;
@@ -83,10 +84,10 @@ public class Class1686 extends BiomeProvider {
       this.field9167 = var5;
       this.field9168 = var6;
       this.field9169 = var7;
-      this.field9170 = Class9297.method35044(new Class2420(var1), var4.method20760(), var4.method20761());
-      this.field9171 = Class9297.method35044(new Class2420(var1 + 1L), var5.method20760(), var5.method20761());
-      this.field9172 = Class9297.method35044(new Class2420(var1 + 2L), var6.method20760(), var6.method20761());
-      this.field9173 = Class9297.method35044(new Class2420(var1 + 3L), var7.method20760(), var7.method20761());
+      this.field9170 = Class9297.method35044(new SharedSeedRandom(var1), var4.method20760(), var4.method20761());
+      this.field9171 = Class9297.method35044(new SharedSeedRandom(var1 + 1L), var5.method20760(), var5.method20761());
+      this.field9172 = Class9297.method35044(new SharedSeedRandom(var1 + 2L), var6.method20760(), var6.method20761());
+      this.field9173 = Class9297.method35044(new SharedSeedRandom(var1 + 3L), var7.method20760(), var7.method20761());
       this.field9174 = var3;
       this.field9175 = false;
    }

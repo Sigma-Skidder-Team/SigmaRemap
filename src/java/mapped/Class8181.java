@@ -68,7 +68,7 @@ public class Class8181 extends AbstractSpliterator<VoxelShape> {
          if (var7 != 3) {
             IBlockReader var8 = this.method28474(var4, var6);
             if (var8 != null) {
-               this.field35190.method8372(var4, var5, var6);
+               this.field35190.setPos(var4, var5, var6);
                BlockState var9 = var8.getBlockState(this.field35190);
                if (this.field35194.test(var9, this.field35190) && (var7 != 1 || var9.method23390()) && (var7 != 2 || var9.isIn(Blocks.MOVING_PISTON))) {
                   VoxelShape var10 = var9.getCollisionShape(this.field35192, this.field35190, this.field35188);

@@ -55,7 +55,7 @@ public class Class6783 extends Class6768<Class8278> {
       int var23 = var5 & 15;
 
       for (int var24 = var6; var24 >= 0; var24--) {
-         var19.method8372(var22, var24, var23);
+         var19.setPos(var22, var24, var23);
          BlockState var25 = var2.getBlockState(var19);
          if (!var25.isAir()) {
             if (var25.isIn(var9.getBlock())) {
@@ -80,13 +80,13 @@ public class Class6783 extends Class6768<Class8278> {
                   }
 
                   if (var24 < var14 && (var17 == null || var17.isAir())) {
-                     if (!(var3.method32503(var19.method8372(var4, var24, var5)) < 0.15F)) {
+                     if (!(var3.method32503(var19.setPos(var4, var24, var5)) < 0.15F)) {
                         var17 = var10;
                      } else {
                         var17 = Blocks.ICE.getDefaultState();
                      }
 
-                     var19.method8372(var22, var24, var23);
+                     var19.setPos(var22, var24, var23);
                   }
 
                   var20 = var21;

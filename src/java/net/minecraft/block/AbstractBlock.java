@@ -12,6 +12,7 @@ import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
+import net.minecraft.network.DebugPacketSender;
 import net.minecraft.pathfinding.PathType;
 import net.minecraft.util.*;
 import net.minecraft.util.Direction;
@@ -93,7 +94,7 @@ public abstract class AbstractBlock {
 
    @Deprecated
    public void method11506(BlockState var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
-      Class7393.method23618(var2, var3);
+      DebugPacketSender.method23618(var2, var3);
    }
 
    @Deprecated

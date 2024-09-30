@@ -11,6 +11,6 @@ public final class Class5972 extends BiomeGeneratorTypeScreens {
 
    @Override
    public ChunkGenerator method18500(Registry<Biome> var1, Registry<DimensionSettings> var2, long var3) {
-      return new Class5648(Class9733.method38132(var1));
+      return new FlatChunkGenerator(Class9733.method38132(var1));
    }
 }

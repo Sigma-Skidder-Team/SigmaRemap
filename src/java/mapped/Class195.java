@@ -13,6 +13,7 @@ import net.minecraft.world.chunk.ChunkSection;
 import net.minecraft.world.chunk.IChunkLightProvider;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.chunk.NibbleArray;
+import net.minecraft.world.server.ChunkManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -24,12 +25,12 @@ public class Class195 extends WorldLightManager implements AutoCloseable {
    private static final Logger field734 = LogManager.getLogger();
    private final Class322<Runnable> field735;
    private final ObjectList<Pair<Class2044, Runnable>> field736 = new ObjectArrayList();
-   private final Class1649 field737;
+   private final ChunkManager field737;
    private final Class321<Class6875<Runnable>> field738;
    private volatile int field739 = 5;
    private final AtomicBoolean field740 = new AtomicBoolean();
 
-   public Class195(IChunkLightProvider var1, Class1649 var2, boolean var3, Class322<Runnable> var4, Class321<Class6875<Runnable>> var5) {
+   public Class195(IChunkLightProvider var1, ChunkManager var2, boolean var3, Class322<Runnable> var4, Class321<Class6875<Runnable>> var5) {
       super(var1, true, var3);
       this.field737 = var2;
       this.field738 = var5;
@@ -64,12 +65,12 @@ public class Class195 extends WorldLightManager implements AutoCloseable {
          super.method605(var1, false);
 
          for (int var4 = -1; var4 < 17; var4++) {
-            super.method606(LightType.BLOCK, SectionPos.method8391(var1, var4), (NibbleArray)null, true);
-            super.method606(LightType.SKY, SectionPos.method8391(var1, var4), (NibbleArray)null, true);
+            super.method606(LightType.BLOCK, SectionPos.from(var1, var4), (NibbleArray)null, true);
+            super.method606(LightType.SKY, SectionPos.from(var1, var4), (NibbleArray)null, true);
          }
 
          for (int var5 = 0; var5 < 16; var5++) {
-            super.updateSectionStatus(SectionPos.method8391(var1, var5), true);
+            super.updateSectionStatus(SectionPos.from(var1, var5), true);
          }
       }, () -> "updateChunkStatus " + var1 + " " + true));
    }
@@ -135,7 +136,7 @@ public class Class195 extends WorldLightManager implements AutoCloseable {
          for (int var7 = 0; var7 < 16; var7++) {
             ChunkSection var8 = var6[var7];
             if (!ChunkSection.method21859(var8)) {
-               super.updateSectionStatus(SectionPos.method8391(var5, var7), false);
+               super.updateSectionStatus(SectionPos.from(var5, var7), false);
             }
          }
 

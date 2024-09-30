@@ -20,9 +20,9 @@ public class Class5457 extends Class5455<Class4712> {
       ChunkPos var10 = new ChunkPos(var4, var5);
       int var11 = var10.getX() + this.field24201.nextInt(16);
       int var12 = var10.getZ() + this.field24201.nextInt(16);
-      int var13 = var2.method17807();
-      int var14 = var13 + this.field24201.nextInt(var2.method17806() - 2 - var13);
-      IBlockReader var15 = var2.method17798(var11, var12);
+      int var13 = var2.func_230356_f_();
+      int var14 = var13 + this.field24201.nextInt(var2.func_230355_e_() - 2 - var13);
+      IBlockReader var15 = var2.func_230348_a_(var11, var12);
 
       for (BlockPos.Mutable var16 = new BlockPos.Mutable(var11, var14, var12); var14 > var13; var14--) {
          BlockState var17 = var15.getBlockState(var16);

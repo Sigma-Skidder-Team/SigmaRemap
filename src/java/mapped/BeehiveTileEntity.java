@@ -6,6 +6,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.DebugPacketSender;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
@@ -96,7 +97,7 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
    }
 
    public void method3921() {
-      Class7393.method23624(this);
+      DebugPacketSender.method23624(this);
    }
 
    public void method3922(Entity var1, boolean var2, int var3) {

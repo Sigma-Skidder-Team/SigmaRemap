@@ -17,12 +17,12 @@ public class Class6878 {
       BlockPos.Mutable var6 = new BlockPos.Mutable(var1, 0, var2);
       Biome var7 = var0.getBiome(var6);
       boolean var8 = var0.method6812().getHasCeiling();
-      BlockState var9 = var7.method32507().method24283().method28934();
+      BlockState var9 = var7.getGenerationSettings().method24283().method28934();
       if (var3 && !var9.getBlock().isIn(BlockTags.field32780)) {
          return null;
       } else {
          Chunk var10 = var0.getChunk(var1 >> 4, var2 >> 4);
-         int var11 = !var8 ? var10.getTopBlockY(Heightmap.Type.MOTION_BLOCKING, var1 & 15, var2 & 15) : var0.getChunkProvider().method7370().method17823();
+         int var11 = !var8 ? var10.getTopBlockY(Heightmap.Type.MOTION_BLOCKING, var1 & 15, var2 & 15) : var0.getChunkProvider().method7370().getGroundHeight();
          if (var11 < 0) {
             return null;
          } else {
@@ -31,7 +31,7 @@ public class Class6878 {
                return null;
             } else {
                for (int var13 = var11 + 1; var13 >= 0; var13--) {
-                  var6.method8372(var1, var13, var2);
+                  var6.setPos(var1, var13, var2);
                   BlockState var14 = var0.getBlockState(var6);
                   if (!var14.method23449().isEmpty()) {
                      break;

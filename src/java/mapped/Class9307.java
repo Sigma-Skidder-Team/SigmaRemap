@@ -19,6 +19,9 @@ import javax.annotation.Nullable;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.SectionPos;
+import net.minecraft.world.server.ChunkManager;
+import net.minecraft.world.server.Ticket;
+import net.minecraft.world.server.TicketType;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -26,8 +29,8 @@ public abstract class Class9307 {
    private static final Logger field43204 = LogManager.getLogger();
    private static final int field43205 = 33 + ChunkStatus.method34296(ChunkStatus.FULL) - 2;
    private final Long2ObjectMap<ObjectSet<ServerPlayerEntity>> field43206 = new Long2ObjectOpenHashMap();
-   private final Long2ObjectOpenHashMap<Class52<Class2005<?>>> field43207 = new Long2ObjectOpenHashMap();
-   private final Class204 field43208 = new Class204(this);
+   private final Long2ObjectOpenHashMap<SortedArraySet<Ticket<?>>> field43207 = new Long2ObjectOpenHashMap();
+   private final Class204 ticketTracker = new Class204(this);
    private final Class205 field43209 = new Class205(this, 8);
    private final Class206 field43210 = new Class206(this, 65);
    private final Set<Class8641> field43211 = Sets.newHashSet();
@@ -36,7 +39,7 @@ public abstract class Class9307 {
    private final Class321<Class8132> field43214;
    private final LongSet field43215 = new LongOpenHashSet();
    private final Executor field43216;
-   private long field43217;
+   private long currentTime;
 
    public Class9307(Executor var1, Executor var2) {
       Class321 var5 = Class321.<Runnable>method1648("player ticket throttler", var2::execute);
@@ -48,13 +51,13 @@ public abstract class Class9307 {
    }
 
    public void method35123() {
-      this.field43217++;
-      ObjectIterator<Entry<Class52<Class2005<?>>>> var3 = this.field43207.long2ObjectEntrySet().fastIterator();
+      this.currentTime++;
+      ObjectIterator<Entry<SortedArraySet<Ticket<?>>>> var3 = this.field43207.long2ObjectEntrySet().fastIterator();
 
       while (var3.hasNext()) {
-         Entry<Class52<Class2005<?>>> var4 = var3.next();
-         if (var4.getValue().removeIf(var1 -> var1.method8487(this.field43217))) {
-            this.field43208.method680(var4.getLongKey(), method35124(var4.getValue()), false);
+         Entry<SortedArraySet<Ticket<?>>> var4 = var3.next();
+         if (var4.getValue().removeIf(var1 -> var1.method8487(this.currentTime))) {
+            this.ticketTracker.updateSourceLevel(var4.getLongKey(), getLevel(var4.getValue()), false);
          }
 
          if (var4.getValue().isEmpty()) {
@@ -63,8 +66,8 @@ public abstract class Class9307 {
       }
    }
 
-   private static int method35124(Class52<Class2005<?>> var0) {
-      return var0.isEmpty() ? Class1649.field8951 + 1 : ((Class2005)var0.method188()).method8485();
+   private static int getLevel(SortedArraySet<Ticket<?>> var0) {
+      return var0.isEmpty() ? ChunkManager.MAX_LOADED_LEVEL + 1 : ((Ticket)var0.getSmallest()).getLevel();
    }
 
    public abstract boolean method35120(long var1);
@@ -75,10 +78,10 @@ public abstract class Class9307 {
    @Nullable
    public abstract Class8641 method35122(long var1, int var3, Class8641 var4, int var5);
 
-   public boolean method35125(Class1649 var1) {
+   public boolean method35125(ChunkManager var1) {
       this.field43209.method684();
       this.field43210.method684();
-      int var4 = Integer.MAX_VALUE - this.field43208.method681(Integer.MAX_VALUE);
+      int var4 = Integer.MAX_VALUE - this.ticketTracker.method681(Integer.MAX_VALUE);
       boolean var5 = var4 != 0;
       if (!var5) {
       }
@@ -93,7 +96,7 @@ public abstract class Class9307 {
 
             while (var6.hasNext()) {
                long var7 = var6.nextLong();
-               if (this.method35132(var7).stream().anyMatch(var0 -> var0.method8484() == Class8561.field38482)) {
+               if (this.getTicketSet(var7).stream().anyMatch(var0 -> var0.method8484() == TicketType.field38482)) {
                   Class8641 var9 = var1.method6538(var7);
                   if (var9 == null) {
                      throw new IllegalStateException();
@@ -112,64 +115,62 @@ public abstract class Class9307 {
       }
    }
 
-   private void method35126(long var1, Class2005<?> var3) {
-      Class52<Class2005<?>> var6 = this.method35132(var1);
-      int var7 = method35124(var6);
-      Class2005<?> var8 = var6.method187(var3);
-      var8.method8486(this.field43217);
-      if (var3.method8485() < var7) {
-         this.field43208.method680(var1, var3.method8485(), true);
+   private void register(long var1, Ticket<?> var3) {
+      SortedArraySet<Ticket<?>> var6 = this.getTicketSet(var1);
+      int var7 = getLevel(var6);
+      Ticket<?> var8 = var6.func_226175_a_(var3);
+      var8.setTimestamp(this.currentTime);
+      if (var3.getLevel() < var7) {
+         this.ticketTracker.updateSourceLevel(var1, var3.getLevel(), true);
       }
    }
 
-   private void method35127(long var1, Class2005<?> var3) {
-      Class52 var6 = this.method35132(var1);
-      if (!var6.remove(var3)) {
+   private void release(long chunkPosIn, Ticket<?> ticketIn) {
+      SortedArraySet < Ticket<? >>sortedarrayset = this.getTicketSet(chunkPosIn);
+
+      if (sortedarrayset.isEmpty()) {
+         this.field43207.remove(chunkPosIn);
       }
 
-      if (var6.isEmpty()) {
-         this.field43207.remove(var1);
-      }
-
-      this.field43208.method680(var1, method35124(var6), false);
+      this.ticketTracker.updateSourceLevel(chunkPosIn, getLevel(sortedarrayset), false);
    }
 
-   public <T> void method35128(Class8561<T> var1, ChunkPos var2, int var3, T var4) {
-      this.method35126(var2.asLong(), new Class2005(var1, var3, var4));
+   public <T> void registerWithLevel(TicketType<T> var1, ChunkPos var2, int var3, T var4) {
+      this.register(var2.asLong(), new Ticket(var1, var3, var4));
    }
 
-   public <T> void method35129(Class8561<T> var1, ChunkPos var2, int var3, T var4) {
-      Class2005 var7 = new Class2005(var1, var3, var4);
-      this.method35127(var2.asLong(), var7);
+   public <T> void releaseWithLevel(TicketType<T> var1, ChunkPos var2, int var3, T var4) {
+      Ticket var7 = new Ticket(var1, var3, var4);
+      this.release(var2.asLong(), var7);
    }
 
-   public <T> void method35130(Class8561<T> var1, ChunkPos var2, int var3, T var4) {
-      this.method35126(var2.asLong(), new Class2005(var1, 33 - var3, var4));
+   public <T> void release(TicketType<T> var1, ChunkPos var2, int var3, T var4) {
+      this.register(var2.asLong(), new Ticket(var1, 33 - var3, var4));
    }
 
-   public <T> void method35131(Class8561<T> var1, ChunkPos var2, int var3, T var4) {
-      Class2005 var7 = new Class2005(var1, 33 - var3, var4);
-      this.method35127(var2.asLong(), var7);
+   public <T> void register(TicketType<T> var1, ChunkPos var2, int var3, T var4) {
+      Ticket var7 = new Ticket(var1, 33 - var3, var4);
+      this.release(var2.asLong(), var7);
    }
 
-   private Class52<Class2005<?>> method35132(long var1) {
-      return (Class52<Class2005<?>>)this.field43207.computeIfAbsent(var1, var0 -> Class52.method179(4));
+   private SortedArraySet<Ticket<?>> getTicketSet(long var1) {
+      return (SortedArraySet<Ticket<?>>)this.field43207.computeIfAbsent(var1, var0 -> SortedArraySet.newSet(4));
    }
 
-   public void method35133(ChunkPos var1, boolean var2) {
-      Class2005 var5 = new Class2005<ChunkPos>(Class8561.field38483, 31, var1);
+   public void forceChunk(ChunkPos var1, boolean var2) {
+      Ticket var5 = new Ticket<ChunkPos>(TicketType.FORCED, 31, var1);
       if (!var2) {
-         this.method35127(var1.asLong(), var5);
+         this.release(var1.asLong(), var5);
       } else {
-         this.method35126(var1.asLong(), var5);
+         this.register(var1.asLong(), var5);
       }
    }
 
    public void method35134(SectionPos var1, ServerPlayerEntity var2) {
       long var5 = var1.method8423().asLong();
       ((ObjectSet)this.field43206.computeIfAbsent(var5, var0 -> new ObjectOpenHashSet())).add(var2);
-      this.field43209.method680(var5, 0, true);
-      this.field43210.method680(var5, 0, true);
+      this.field43209.updateSourceLevel(var5, 0, true);
+      this.field43210.updateSourceLevel(var5, 0, true);
    }
 
    public void method35135(SectionPos var1, ServerPlayerEntity var2) {
@@ -178,16 +179,16 @@ public abstract class Class9307 {
       var7.remove(var2);
       if (var7.isEmpty()) {
          this.field43206.remove(var5);
-         this.field43209.method680(var5, Integer.MAX_VALUE, false);
-         this.field43210.method680(var5, Integer.MAX_VALUE, false);
+         this.field43209.updateSourceLevel(var5, Integer.MAX_VALUE, false);
+         this.field43210.updateSourceLevel(var5, Integer.MAX_VALUE, false);
       }
    }
 
    public String method35136(long var1) {
-      Class52 var5 = (Class52)this.field43207.get(var1);
+      SortedArraySet var5 = (SortedArraySet)this.field43207.get(var1);
       String var6;
       if (var5 != null && !var5.isEmpty()) {
-         var6 = ((Class2005)var5.method188()).toString();
+         var6 = ((Ticket)var5.getSmallest()).toString();
       } else {
          var6 = "no_ticket";
       }
@@ -254,13 +255,13 @@ public abstract class Class9307 {
    }
 
    // $VF: synthetic method
-   public static void method35157(Class9307 var0, long var1, Class2005 var3) {
-      var0.method35127(var1, var3);
+   public static void method35157(Class9307 var0, long var1, Ticket var3) {
+      var0.release(var1, var3);
    }
 
    // $VF: synthetic method
-   public static void method35158(Class9307 var0, long var1, Class2005 var3) {
-      var0.method35126(var1, var3);
+   public static void method35158(Class9307 var0, long var1, Ticket var3) {
+      var0.register(var1, var3);
    }
 
    // $VF: synthetic method

@@ -11,6 +11,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.DebugPacketSender;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
@@ -342,6 +343,6 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    @Override
    public void method4257() {
       super.method4257();
-      Class7393.method23622(this);
+      DebugPacketSender.method23622(this);
    }
 }

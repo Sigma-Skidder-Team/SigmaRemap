@@ -57,13 +57,13 @@ public class Class1653 extends Class1652<Class8377> {
 
    public Stream<Class9343> method6666(Predicate<Class4913> var1, BlockPos var2, int var3, Class2093 var4) {
       int var7 = var3 * var3;
-      return this.method6665(var1, var2, var3, var4).filter(var2x -> var2x.method35355().method8318(var2) <= (double)var7);
+      return this.method6665(var1, var2, var3, var4).filter(var2x -> var2x.method35355().distanceSq(var2) <= (double)var7);
    }
 
    public Stream<Class9343> method6667(Predicate<Class4913> var1, ChunkPos var2, Class2093 var3) {
       return IntStream.range(0, 16)
          .boxed()
-         .<Optional<Class8377>>map(var2x -> this.method6643(SectionPos.method8391(var2, var2x).asLong()))
+         .<Optional<Class8377>>map(var2x -> this.method6643(SectionPos.from(var2, var2x).asLong()))
          .filter(Optional::isPresent)
          .<Class9343>flatMap(var2x -> var2x.get().method29351(var1, var3));
    }
@@ -73,7 +73,7 @@ public class Class1653 extends Class1652<Class8377> {
    }
 
    public Stream<BlockPos> method6669(Predicate<Class4913> var1, Predicate<BlockPos> var2, BlockPos var3, int var4, Class2093 var5) {
-      return this.method6668(var1, var2, var3, var4, var5).sorted(Comparator.comparingDouble(var1x -> var1x.method8318(var3)));
+      return this.method6668(var1, var2, var3, var4, var5).sorted(Comparator.comparingDouble(var1x -> var1x.distanceSq(var3)));
    }
 
    public Optional<BlockPos> method6670(Predicate<Class4913> var1, Predicate<BlockPos> var2, BlockPos var3, int var4, Class2093 var5) {
@@ -81,7 +81,7 @@ public class Class1653 extends Class1652<Class8377> {
    }
 
    public Optional<BlockPos> method6671(Predicate<Class4913> var1, BlockPos var2, int var3, Class2093 var4) {
-      return this.method6666(var1, var2, var3, var4).<BlockPos>map(Class9343::method35355).min(Comparator.comparingDouble(var1x -> var1x.method8318(var2)));
+      return this.method6666(var1, var2, var3, var4).<BlockPos>map(Class9343::method35355).min(Comparator.comparingDouble(var1x -> var1x.distanceSq(var2)));
    }
 
    public Optional<BlockPos> method6672(Predicate<Class4913> var1, Predicate<BlockPos> var2, BlockPos var3, int var4) {
@@ -138,7 +138,7 @@ public class Class1653 extends Class1652<Class8377> {
    }
 
    public void method6679(ChunkPos var1, ChunkSection var2) {
-      SectionPos var5 = SectionPos.method8391(var1, var2.getYLocation() >> 4);
+      SectionPos var5 = SectionPos.from(var1, var2.getYLocation() >> 4);
       Util.<Class8377>acceptOrElse(this.method6643(var5.asLong()), var3 -> var3.method29358(var3x -> {
             if (method6680(var2)) {
                this.method6681(var2, var5, var3x);

@@ -121,7 +121,7 @@ public class Class2933 extends Class2898<Class4734> {
                               int var63 = var54 - var16 + (var57 - var17) * var19 + (var60 - var18) * var19 * var20;
                               if (!var24.get(var63)) {
                                  var24.set(var63);
-                                 var25.method8372(var54, var57, var60);
+                                 var25.setPos(var54, var57, var60);
                                  if (var3.field22422.method19540(var1.getBlockState(var25), var2)) {
                                     var1.setBlockState(var25, var3.field22424, 2);
                                     var23++;

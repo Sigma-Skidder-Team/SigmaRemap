@@ -24,7 +24,7 @@ public class Class2944 extends Class2898<Class4707> {
    }
 
    public static List<Class9648> method11286(ISeedReader var0) {
-      Random var3 = new Random(var0.method6967());
+      Random var3 = new Random(var0.getSeed());
       long var4 = var3.nextLong() & 65535L;
       return (List<Class9648>)field18007.getUnchecked(var4);
    }
@@ -80,7 +80,7 @@ public class Class2944 extends Class2898<Class4707> {
                         .with(Class3237.field18682, Boolean.valueOf(var18 && var13 != 2))
                         .with(Class3237.field18683, Boolean.valueOf(var19 && var12 != -2))
                         .with(Class3237.field18681, Boolean.valueOf(var19 && var12 != 2));
-                     this.method11217(var1, var11.method8372(var4.method37626() + var12, var4.method37629() + var14, var4.method37627() + var13), var20);
+                     this.method11217(var1, var11.setPos(var4.method37626() + var12, var4.method37629() + var14, var4.method37627() + var13), var20);
                   }
                }
             }

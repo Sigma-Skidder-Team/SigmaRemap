@@ -4,6 +4,8 @@ import it.unimi.dsi.fastutil.longs.Long2ByteMap.Entry;
 import it.unimi.dsi.fastutil.longs.*;
 import it.unimi.dsi.fastutil.objects.ObjectIterator;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.world.server.Ticket;
+import net.minecraft.world.server.TicketType;
 
 public class Class206 extends Class205 {
    private static String[] field761;
@@ -41,7 +43,7 @@ public class Class206 extends Class205 {
 
    private void method686(long var1, int var3, boolean var4, boolean var5) {
       if (var4 != var5) {
-         Class2005 var8 = new Class2005<ChunkPos>(Class8561.field38482, Class9307.method35152(), new ChunkPos(var1));
+         Ticket var8 = new Ticket<ChunkPos>(TicketType.field38482, Class9307.method35152(), new ChunkPos(var1));
          if (!var5) {
             Class9307.method35154(this.field764)
                .method1641(

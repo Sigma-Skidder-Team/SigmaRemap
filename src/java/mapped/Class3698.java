@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableMap.Builder;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
+import net.minecraft.network.DebugPacketSender;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.server.ServerWorld;
 
@@ -80,7 +81,7 @@ public class Class3698 extends Class3676<Class1046> {
             var2.getBrain().method21406(this.field19742, Class9378.method35577(var1.getDimensionKey(), var13));
             this.field19744.ifPresent(var2xx -> var1.setEntityState(var2, var2xx));
             this.field19746.clear();
-            Class7393.method23615(var1, var13);
+            DebugPacketSender.method23615(var1, var13);
          });
       } else {
          for (BlockPos var12 : var9) {

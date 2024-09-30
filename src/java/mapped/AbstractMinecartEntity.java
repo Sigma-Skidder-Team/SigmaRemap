@@ -173,7 +173,7 @@ public abstract class AbstractMinecartEntity extends Entity {
                int var16 = (Integer)var15.next();
 
                for (int[] var20 : var5) {
-                  var7.method8372(var6.getX() + var20[0], var6.getY() + var16, var6.getZ() + var20[1]);
+                  var7.setPos(var6.getX() + var20[0], var6.getY() + var16, var6.getZ() + var20[1]);
                   double var21 = this.world
                      .method7038(Class4527.method14426(this.world, var7), () -> Class4527.method14426(this.world, var7.down()));
                   if (Class4527.method14423(var21)) {

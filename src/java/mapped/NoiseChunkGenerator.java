@@ -7,6 +7,8 @@ import it.unimi.dsi.fastutil.objects.ObjectListIterator;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
+import net.minecraft.entity.EntityClassification;
+import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
@@ -15,8 +17,12 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.provider.BiomeProvider;
+import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.chunk.ChunkSection;
 import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.gen.OctavesNoiseGenerator;
+import net.minecraft.world.gen.WorldGenRegion;
+import net.minecraft.world.gen.feature.structure.StructureManager;
 
 import java.util.List;
 import java.util.Random;
@@ -25,9 +31,9 @@ import java.util.function.Supplier;
 import java.util.stream.IntStream;
 
 public final class NoiseChunkGenerator extends ChunkGenerator {
-   public static final Codec<NoiseChunkGenerator> field24963 = RecordCodecBuilder.create(
+   public static final Codec<NoiseChunkGenerator> field_236079_d_ = RecordCodecBuilder.create(
       var0 -> var0.group(
-               BiomeProvider.field9159.fieldOf("biome_source").forGetter(var0x -> var0x.field24985),
+               BiomeProvider.field9159.fieldOf("biome_source").forGetter(var0x -> var0x.biomeProvider),
                Codec.LONG.fieldOf("seed").stable().forGetter(var0x -> var0x.field24981),
                DimensionSettings.field43221.fieldOf("settings").forGetter(var0x -> var0x.field24982)
             )
@@ -37,7 +43,7 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
       for (int var3 = 0; var3 < 24; var3++) {
          for (int var4 = 0; var4 < 24; var4++) {
             for (int var5 = 0; var5 < 24; var5++) {
-               var0[var3 * 24 * 24 + var4 * 24 + var5] = (float)method17805(var4 - 12, var5 - 12, var3 - 12);
+               var0[var3 * 24 * 24 + var4 * 24 + var5] = (float) func_222554_b(var4 - 12, var5 - 12, var3 - 12);
             }
          }
       }
@@ -56,12 +62,12 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
    private final int field24969;
    private final int field24970;
    private final int field24971;
-   public final Class2420 field24972;
-   private final Class7689 field24973;
-   private final Class7689 field24974;
-   private final Class7689 field24975;
+   public final SharedSeedRandom randomSeed;
+   private final OctavesNoiseGenerator field24973;
+   private final OctavesNoiseGenerator field24974;
+   private final OctavesNoiseGenerator field24975;
    private final Class7690 field24976;
-   private final Class7689 field24977;
+   private final OctavesNoiseGenerator field24977;
    private final Class8972 field24978;
    public final BlockState field24979;
    public final BlockState field24980;
@@ -87,32 +93,32 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
       this.field24969 = 16 / this.field24968;
       this.field24970 = var9.method37010() / this.field24967;
       this.field24971 = 16 / this.field24968;
-      this.field24972 = new Class2420(var3);
-      this.field24973 = new Class7689(this.field24972, IntStream.rangeClosed(-15, 0));
-      this.field24974 = new Class7689(this.field24972, IntStream.rangeClosed(-15, 0));
-      this.field24975 = new Class7689(this.field24972, IntStream.rangeClosed(-7, 0));
+      this.randomSeed = new SharedSeedRandom(var3);
+      this.field24973 = new OctavesNoiseGenerator(this.randomSeed, IntStream.rangeClosed(-15, 0));
+      this.field24974 = new OctavesNoiseGenerator(this.randomSeed, IntStream.rangeClosed(-15, 0));
+      this.field24975 = new OctavesNoiseGenerator(this.randomSeed, IntStream.rangeClosed(-7, 0));
       this.field24976 = (Class7690)(!var9.method37018()
-         ? new Class7689(this.field24972, IntStream.rangeClosed(-3, 0))
-         : new Class7691(this.field24972, IntStream.rangeClosed(-3, 0)));
-      this.field24972.method10369(2620);
-      this.field24977 = new Class7689(this.field24972, IntStream.rangeClosed(-15, 0));
+         ? new OctavesNoiseGenerator(this.randomSeed, IntStream.rangeClosed(-3, 0))
+         : new Class7691(this.randomSeed, IntStream.rangeClosed(-3, 0)));
+      this.randomSeed.skip(2620);
+      this.field24977 = new OctavesNoiseGenerator(this.randomSeed, IntStream.rangeClosed(-15, 0));
       if (!var9.method37020()) {
          this.field24978 = null;
       } else {
-         Class2420 var10 = new Class2420(var3);
-         var10.method10369(17292);
+         SharedSeedRandom var10 = new SharedSeedRandom(var3);
+         var10.skip(17292);
          this.field24978 = new Class8972(var10);
       }
    }
 
    @Override
-   public Codec<? extends ChunkGenerator> method17790() {
-      return field24963;
+   public Codec<? extends ChunkGenerator> func_230347_a_() {
+      return field_236079_d_;
    }
 
    @Override
-   public ChunkGenerator method17791(long var1) {
-      return new NoiseChunkGenerator(this.field24985.method7200(var1), var1, this.field24982);
+   public ChunkGenerator func_230349_a_(long var1) {
+      return new NoiseChunkGenerator(this.biomeProvider.method7200(var1), var1, this.field24982);
    }
 
    public boolean method17792(long var1, RegistryKey<DimensionSettings> var3) {
@@ -120,45 +126,45 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
    }
 
    private double method17793(int var1, int var2, int var3, double var4, double var6, double var8, double var10) {
-      double var14 = 0.0;
-      double var16 = 0.0;
-      double var18 = 0.0;
-      boolean var20 = true;
-      double var21 = 1.0;
+      double d0 = 0.0;
+      double d1 = 0.0;
+      double d2 = 0.0;
+      boolean flag = true;
+      double d3 = 1.0;
 
       for (int var23 = 0; var23 < 16; var23++) {
-         double var24 = Class7689.method25313((double)var1 * var4 * var21);
-         double var26 = Class7689.method25313((double)var2 * var6 * var21);
-         double var28 = Class7689.method25313((double)var3 * var4 * var21);
-         double var30 = var6 * var21;
+         double var24 = OctavesNoiseGenerator.maintainPrecision((double)var1 * var4 * d3);
+         double var26 = OctavesNoiseGenerator.maintainPrecision((double)var2 * var6 * d3);
+         double var28 = OctavesNoiseGenerator.maintainPrecision((double)var3 * var4 * d3);
+         double var30 = var6 * d3;
          Class8718 var32 = this.field24973.method25312(var23);
          if (var32 != null) {
-            var14 += var32.method31444(var24, var26, var28, var30, (double)var2 * var30) / var21;
+            d0 += var32.method31444(var24, var26, var28, var30, (double)var2 * var30) / d3;
          }
 
          Class8718 var33 = this.field24974.method25312(var23);
          if (var33 != null) {
-            var16 += var33.method31444(var24, var26, var28, var30, (double)var2 * var30) / var21;
+            d1 += var33.method31444(var24, var26, var28, var30, (double)var2 * var30) / d3;
          }
 
          if (var23 < 8) {
             Class8718 var34 = this.field24975.method25312(var23);
             if (var34 != null) {
-               var18 += var34.method31444(
-                     Class7689.method25313((double)var1 * var8 * var21),
-                     Class7689.method25313((double)var2 * var10 * var21),
-                     Class7689.method25313((double)var3 * var8 * var21),
-                     var10 * var21,
-                     (double)var2 * var10 * var21
+               d2 += var34.method31444(
+                     OctavesNoiseGenerator.maintainPrecision((double)var1 * var8 * d3),
+                     OctavesNoiseGenerator.maintainPrecision((double)var2 * var10 * d3),
+                     OctavesNoiseGenerator.maintainPrecision((double)var3 * var8 * d3),
+                     var10 * d3,
+                     (double)var2 * var10 * d3
                   )
-                  / var21;
+                  / d3;
             }
          }
 
-         var21 /= 2.0;
+         d3 /= 2.0;
       }
 
-      return MathHelper.method37779(var14 / 512.0, var16 / 512.0, (var18 / 10.0 + 1.0) / 2.0);
+      return MathHelper.method37779(d0 / 512.0, d1 / 512.0, (d2 / 10.0 + 1.0) / 2.0);
    }
 
    private double[] method17794(int var1, int var2) {
@@ -176,12 +182,12 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
          float var8 = 0.0F;
          float var9 = 0.0F;
          int var10 = 2;
-         int var11 = this.method17807();
-         float var12 = this.field24985.getNoiseBiome(var2, var11, var3).method32515();
+         int var11 = this.func_230356_f_();
+         float var12 = this.biomeProvider.getNoiseBiome(var2, var11, var3).method32515();
 
          for (int var13 = -2; var13 <= 2; var13++) {
             for (int var18 = -2; var18 <= 2; var18++) {
-               Biome var23 = this.field24985.getNoiseBiome(var2 + var13, var11, var3 + var18);
+               Biome var23 = this.biomeProvider.getNoiseBiome(var2 + var13, var11, var3 + var18);
                float var24 = var23.method32515();
                float var25 = var23.method32517();
                float var26;
@@ -270,12 +276,12 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
    }
 
    @Override
-   public int method17797(int var1, int var2, Heightmap.Type var3) {
+   public int getHeight(int var1, int var2, Heightmap.Type var3) {
       return this.method17799(var1, var2, (BlockState[])null, var3.method287());
    }
 
    @Override
-   public IBlockReader method17798(int var1, int var2) {
+   public IBlockReader func_230348_a_(int var1, int var2) {
       BlockState[] var5 = new BlockState[this.field24970 * this.field24967];
       this.method17799(var1, var2, var5, (Predicate<BlockState>)null);
       return new Class1669(var5);
@@ -323,7 +329,7 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
    public BlockState method17800(double var1, int var3) {
       BlockState var6;
       if (!(var1 > 0.0)) {
-         if (var3 >= this.method17807()) {
+         if (var3 >= this.func_230356_f_()) {
             var6 = field24966;
          } else {
             var6 = this.field24980;
@@ -336,11 +342,11 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
    }
 
    @Override
-   public void method17801(Class1691 var1, IChunk var2) {
+   public void generateSurface(WorldGenRegion var1, IChunk var2) {
       ChunkPos var5 = var2.getPos();
       int var6 = var5.x;
       int var7 = var5.z;
-      Class2420 var8 = new Class2420();
+      SharedSeedRandom var8 = new SharedSeedRandom();
       var8.method10370(var6, var7);
       ChunkPos var9 = var2.getPos();
       int var10 = var9.getX();
@@ -354,8 +360,8 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
             int var18 = var11 + var16;
             int var19 = var2.getTopBlockY(Heightmap.Type.WORLD_SURFACE_WG, var15, var16) + 1;
             double var20 = this.field24976.method25314((double)var17 * 0.0625, (double)var18 * 0.0625, 0.0625, (double)var15 * 0.0625) * 15.0;
-            var1.getBiome(var14.method8372(var10 + var15, var19, var11 + var16))
-               .method32514(var8, var2, var17, var18, var19, var20, this.field24979, this.field24980, this.method17807(), var1.method6967());
+            var1.getBiome(var14.setPos(var10 + var15, var19, var11 + var16))
+               .method32514(var8, var2, var17, var18, var19, var20, this.field24979, this.field24980, this.func_230356_f_(), var1.getSeed());
          }
       }
 
@@ -377,7 +383,7 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
             if (var12) {
                for (int var16 = 0; var16 < 5; var16++) {
                   if (var16 <= var2.nextInt(5)) {
-                     var1.setBlockState(var5.method8372(var15.getX(), var10 - var16, var15.getZ()), Blocks.BEDROCK.getDefaultState(), false);
+                     var1.setBlockState(var5.setPos(var15.getX(), var10 - var16, var15.getZ()), Blocks.BEDROCK.getDefaultState(), false);
                   }
                }
             }
@@ -385,7 +391,7 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
             if (var13) {
                for (int var17 = 4; var17 >= 0; var17--) {
                   if (var17 <= var2.nextInt(5)) {
-                     var1.setBlockState(var5.method8372(var15.getX(), var9 + var17, var15.getZ()), Blocks.BEDROCK.getDefaultState(), false);
+                     var1.setBlockState(var5.setPos(var15.getX(), var9 + var17, var15.getZ()), Blocks.BEDROCK.getDefaultState(), false);
                   }
                }
             }
@@ -394,7 +400,7 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
    }
 
    @Override
-   public void method17803(IWorld var1, Class7480 var2, IChunk var3) {
+   public void func_230352_b_(IWorld var1, StructureManager var2, IChunk var3) {
       ObjectArrayList var6 = new ObjectArrayList(10);
       ObjectArrayList var7 = new ObjectArrayList(32);
       ChunkPos var8 = var3.getPos();
@@ -404,7 +410,7 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
       int var12 = var10 << 4;
 
       for (Structure var14 : Structure.field18076) {
-         var2.method24340(SectionPos.method8391(var8, 0), var14).forEach(var5 -> {
+         var2.method24340(SectionPos.from(var8, 0), var14).forEach(var5 -> {
             for (Class4178 var9x : var5.method17111()) {
                if (var9x.method12917(var8, 12)) {
                   if (!(var9x instanceof Class4193)) {
@@ -437,7 +443,7 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
          var77[1][var78] = new double[this.field24970 + 1];
       }
 
-      Class1672 var79 = (Class1672)var3;
+      ChunkPrimer var79 = (ChunkPrimer)var3;
       Heightmap var15 = var79.getHeightmap(Heightmap.Type.OCEAN_FLOOR_WG);
       Heightmap var16 = var79.getHeightmap(Heightmap.Type.WORLD_SURFACE_WG);
       BlockPos.Mutable var17 = new BlockPos.Mutable();
@@ -517,7 +523,7 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
                         BlockState var84 = this.method17800(var70, var41);
                         if (var84 != field24966) {
                            if (var84.getLightValue() != 0) {
-                              var17.method8372(var55, var41, var64);
+                              var17.setPos(var55, var41, var64);
                               var79.method7105(var17);
                            }
 
@@ -552,7 +558,7 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
       }
    }
 
-   private static double method17805(int var0, int var1, int var2) {
+   private static double func_222554_b(int var0, int var1, int var2) {
       double var5 = (double)(var0 * var0 + var2 * var2);
       double var7 = (double)var1 + 0.5;
       double var9 = var7 * var7;
@@ -562,28 +568,28 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
    }
 
    @Override
-   public int method17806() {
+   public int func_230355_e_() {
       return this.field24983;
    }
 
    @Override
-   public int method17807() {
+   public int func_230356_f_() {
       return this.field24982.get().method35166();
    }
 
    @Override
-   public List<Class6692> method17808(Biome var1, Class7480 var2, Class179 var3, BlockPos var4) {
+   public List<MobSpawnInfoSpawners> func_230353_a_(Biome var1, StructureManager var2, EntityClassification var3, BlockPos var4) {
       if (var2.method24345(var4, true, Structure.SWAMP_HUT).method17117()) {
-         if (var3 == Class179.field623) {
+         if (var3 == EntityClassification.field623) {
             return Structure.SWAMP_HUT.method11374();
          }
 
-         if (var3 == Class179.field624) {
+         if (var3 == EntityClassification.field624) {
             return Structure.SWAMP_HUT.method11375();
          }
       }
 
-      if (var3 == Class179.field623) {
+      if (var3 == EntityClassification.field623) {
          if (var2.method24345(var4, false, Structure.PILLAGER_OUTPOST).method17117()) {
             return Structure.PILLAGER_OUTPOST.method11374();
          }
@@ -597,17 +603,17 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
          }
       }
 
-      return super.method17808(var1, var2, var3, var4);
+      return super.func_230353_a_(var1, var2, var3, var4);
    }
 
    @Override
-   public void method17809(Class1691 var1) {
+   public void func_230354_a_(WorldGenRegion var1) {
       if (!this.field24982.get().method35167()) {
-         int var4 = var1.method7241();
-         int var5 = var1.method7242();
+         int var4 = var1.getMainChunkX();
+         int var5 = var1.getMainChunkZ();
          Biome var6 = var1.getBiome(new ChunkPos(var4, var5).method24364());
-         Class2420 var7 = new Class2420();
-         var7.method10371(var1.method6967(), var4 << 4, var5 << 4);
+         SharedSeedRandom var7 = new SharedSeedRandom();
+         var7.setDecorationSeed(var1.getSeed(), var4 << 4, var5 << 4);
          Class8170.method28430(var1, var6, var4, var5, var7);
       }
    }

@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.util.Rotation;
+import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.provider.BiomeProvider;
@@ -18,7 +19,7 @@ public class Class2960 extends Structure<Class4712> {
       return false;
    }
 
-   public boolean method11361(ChunkGenerator var1, BiomeProvider var2, long var3, Class2420 var5, int var6, int var7, Biome var8, ChunkPos var9, Class4712 var10) {
+   public boolean method11361(ChunkGenerator var1, BiomeProvider var2, long var3, SharedSeedRandom var5, int var6, int var7, Biome var8, ChunkPos var9, Class4712 var10) {
       return method11360(var6, var7, var1) >= 60;
    }
 
@@ -47,10 +48,10 @@ public class Class2960 extends Structure<Class4712> {
 
       int var9 = (var0 << 4) + 7;
       int var10 = (var1 << 4) + 7;
-      int var11 = var2.method17829(var9, var10, Heightmap.Type.WORLD_SURFACE_WG);
-      int var12 = var2.method17829(var9, var10 + var8, Heightmap.Type.WORLD_SURFACE_WG);
-      int var13 = var2.method17829(var9 + var7, var10, Heightmap.Type.WORLD_SURFACE_WG);
-      int var14 = var2.method17829(var9 + var7, var10 + var8, Heightmap.Type.WORLD_SURFACE_WG);
+      int var11 = var2.getNoiseHeightMinusOne(var9, var10, Heightmap.Type.WORLD_SURFACE_WG);
+      int var12 = var2.getNoiseHeightMinusOne(var9, var10 + var8, Heightmap.Type.WORLD_SURFACE_WG);
+      int var13 = var2.getNoiseHeightMinusOne(var9 + var7, var10, Heightmap.Type.WORLD_SURFACE_WG);
+      int var14 = var2.getNoiseHeightMinusOne(var9 + var7, var10 + var8, Heightmap.Type.WORLD_SURFACE_WG);
       return Math.min(Math.min(var11, var12), Math.min(var13, var14));
    }
 
