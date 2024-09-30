@@ -75,7 +75,7 @@ public class BlockFlySmoothMode extends Module {
     }
 
     @Override
-    public void method15953() {
+    public void initialize() {
         this.field23976 = (BlockFly) this.access();
     }
 

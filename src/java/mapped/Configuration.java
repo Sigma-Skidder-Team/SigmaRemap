@@ -8,33 +8,33 @@ import totalcross.json.JSONException;
 import totalcross.json.JSONException2;
 import totalcross.json.JSONObject;
 
-public class Class7286 {
+public class Configuration {
    private JSONObject field31261;
-   public JSONObject field31262;
-   public String field31263;
+   public JSONObject serializedConfigData;
+   public String getName;
 
-   public Class7286() {
+   public Configuration() {
    }
 
-   public Class7286(String var1, JSONObject var2) {
-      this.field31263 = var1;
-      this.field31262 = var2;
+   public Configuration(String var1, JSONObject var2) {
+      this.getName = var1;
+      this.serializedConfigData = var2;
    }
 
-   public Class7286(String var1, Class7286 var2) {
-      this.field31263 = var1;
-      this.field31262 = var2.field31262;
+   public Configuration(String var1, Configuration var2) {
+      this.getName = var1;
+      this.serializedConfigData = var2.serializedConfigData;
    }
 
-   public Class7286 method22984(JSONObject var1) throws JSONException {
-      this.field31262 = var1.getJsonObject("modConfig");
-      this.field31263 = var1.getString("name");
+   public Configuration method22984(JSONObject var1) throws JSONException {
+      this.serializedConfigData = var1.getJsonObject("modConfig");
+      this.getName = var1.getString("name");
       return this;
    }
 
    public JSONObject method22985(JSONObject var1) {
-      var1.put("modConfig", this.field31262);
-      var1.put("name", this.field31263);
+      var1.put("modConfig", this.serializedConfigData);
+      var1.put("name", this.getName);
       return var1;
    }
 
@@ -42,15 +42,15 @@ public class Class7286 {
       return this.field31261;
    }
 
-   public Class7286 method22987(String var1) {
-      return new Class7286(var1, this.field31262);
+   public Configuration method22987(String var1) {
+      return new Configuration(var1, this.serializedConfigData);
    }
 
    public void method22988() {
       JSONArray var3 = null;
 
       try {
-         var3 = CJsonUtils.getJSONArrayOrNull(this.field31262, "mods");
+         var3 = CJsonUtils.getJSONArrayOrNull(this.serializedConfigData, "mods");
       } catch (JSONException2 var10) {
       }
 
@@ -78,7 +78,7 @@ public class Class7286 {
       JSONArray var5 = null;
 
       try {
-         var5 = CJsonUtils.getJSONArrayOrNull(this.field31262, "mods");
+         var5 = CJsonUtils.getJSONArrayOrNull(this.serializedConfigData, "mods");
       } catch (JSONException2 var12) {
       }
 
@@ -113,7 +113,7 @@ public class Class7286 {
       JSONArray var4 = null;
 
       try {
-         var4 = CJsonUtils.getJSONArrayOrNull(this.field31262, "mods");
+         var4 = CJsonUtils.getJSONArrayOrNull(this.serializedConfigData, "mods");
       } catch (JSONException2 var10) {
       }
 

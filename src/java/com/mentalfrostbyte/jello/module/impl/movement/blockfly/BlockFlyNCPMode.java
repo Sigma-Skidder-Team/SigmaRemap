@@ -78,7 +78,7 @@ public class BlockFlyNCPMode extends Module {
     }
 
     @Override
-    public void method15953() {
+    public void initialize() {
         this.field23928 = (BlockFly) this.access();
     }
 

@@ -62,7 +62,7 @@ public class ActiveMods extends Module {
     }
 
     @Override
-    public void method15953() {
+    public void initialize() {
         this.field23612.clear();
 
         for (Module var4 : Client.getInstance().getModuleManager().getModuleMap().values()) {

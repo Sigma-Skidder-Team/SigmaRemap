@@ -20,7 +20,7 @@ import java.util.List;
 public class ModuleWithModuleSettings extends Module {
     private final List<Class6547> field23882 = new ArrayList<>();
     public Module[] moduleArray;
-    public Module module;
+    public Module parentModule;
     public ModeSetting modeSetting;
     private final List<String> stringList = new ArrayList<>();
 
@@ -47,10 +47,10 @@ public class ModuleWithModuleSettings extends Module {
             if (this.isEnabled() && mc.player != null) {
                 var6.setState(var7);
                 if (var7) {
-                    this.module = var6;
+                    this.parentModule = var6;
                 }
             } else if (this.isEnabled()) {
-                var6.method15998(var7);
+                var6.setEnabledBasic(var7);
             }
 
             this.method16728(var6, var7);
@@ -85,15 +85,15 @@ public class ModuleWithModuleSettings extends Module {
 
     @Override
     public boolean isEnabled2() {
-        if (this.module == null) {
+        if (this.parentModule == null) {
             this.method16724();
         }
 
-        return this.module != null ? this.module.isEnabled2() : this.isEnabled();
+        return this.parentModule != null ? this.parentModule.isEnabled2() : this.isEnabled();
     }
 
     @Override
-    public JSONObject method15986(JSONObject var1) {
+    public JSONObject initialize(JSONObject var1) {
         JSONObject var4 = CJsonUtils.getJSONObjectOrNull(var1, "sub-options");
         if (var4 != null) {
             for (Module var8 : this.moduleArray) {
@@ -120,7 +120,7 @@ public class ModuleWithModuleSettings extends Module {
             }
         }
 
-        JSONObject var18 = super.method15986(var1);
+        JSONObject var18 = super.initialize(var1);
         if (this.enabled) {
             this.method16724();
         }
@@ -129,7 +129,7 @@ public class ModuleWithModuleSettings extends Module {
     }
 
     @Override
-    public JSONObject method15987(JSONObject var1) {
+    public JSONObject buildUpModuleData(JSONObject obj) {
         try {
             JSONObject var4 = new JSONObject();
 
@@ -137,14 +137,14 @@ public class ModuleWithModuleSettings extends Module {
                 JSONArray var9 = new JSONArray();
 
                 for (Setting var11 : var8.settingMap.values()) {
-                    var9.put(var11.addDataToJSONObject(new JSONObject()));
+                    var9.put(var11.buildUpSettingData(new JSONObject()));
                 }
 
                 var4.put(var8.getName(), var9);
             }
 
-            var1.put("sub-options", var4);
-            return super.method15987(var1);
+            obj.put("sub-options", var4);
+            return super.buildUpModuleData(obj);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -154,7 +154,7 @@ public class ModuleWithModuleSettings extends Module {
     public void onEnable() {
         this.method16724();
         if (!Client.getInstance().getNetworkManager().isPremium()) {
-            this.method15998(false);
+            this.setEnabledBasic(false);
         }
     }
 
@@ -166,12 +166,12 @@ public class ModuleWithModuleSettings extends Module {
     }
 
     @Override
-    public void method15985() {
+    public void resetModuleState() {
         for (Module var6 : this.moduleArray) {
             var6.setState(false);
         }
 
-        super.method15985();
+        super.resetModuleState();
     }
 
     public final ModuleWithModuleSettings method16727(Class6547 var1) {
@@ -186,11 +186,11 @@ public class ModuleWithModuleSettings extends Module {
     }
 
     @Override
-    public void method15953() {
-        super.method15953();
+    public void initialize() {
+        super.initialize();
 
         for (Module var6 : this.moduleArray) {
-            var6.method15953();
+            var6.initialize();
         }
     }
 }

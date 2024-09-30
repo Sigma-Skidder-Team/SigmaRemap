@@ -353,7 +353,7 @@ public class Class6412 implements Class6413 {
       field28042.put(1935894633L, new String[]{"Scheme Information Box"});
       field28042.put(1953653099L, new String[]{"Track Box"});
       field28042.put(1953653094L, new String[]{"Track Fragment Box"});
-      field28042.put(1969517665L, new String[]{"User Data Box"});
+      field28042.put(1969517665L, new String[]{"ChatCommandExecutor Data Box"});
       field28042.put(1768715124L, new String[]{"iTunes Meta List Box"});
       field28042.put(757935405L, new String[]{"Custom iTunes Metadata Box"});
       field28042.put(1631670868L, new String[]{"Album Artist Name Box"});

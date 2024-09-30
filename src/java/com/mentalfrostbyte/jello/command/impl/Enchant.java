@@ -1,7 +1,9 @@
 package com.mentalfrostbyte.jello.command.impl;
 
+import com.mentalfrostbyte.jello.command.ChatCommandExecutor;
 import com.mentalfrostbyte.jello.command.Command;
 import com.mentalfrostbyte.jello.command.CommandException;
+import com.mentalfrostbyte.jello.command.CommandType;
 import mapped.*;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.ItemStack;
@@ -16,9 +18,9 @@ public class Enchant extends Command {
    }
 
    @Override
-   public void run(String var1, ChatCommandArguments[] var2, Class6669 var3) throws CommandException {
+   public void run(String var1, ChatCommandArguments[] var2, ChatCommandExecutor var3) throws CommandException {
       if (var2.length == 2) {
-         if (var2[1].method30895() == Class2193.field14336) {
+         if (var2[1].getCommandType() == CommandType.field14336) {
             if (!mc.playerController.isNotCreative()) {
                Enchantment var6 = null;
                ItemStack var7 = mc.player.getHeldItemMainhand().copy();

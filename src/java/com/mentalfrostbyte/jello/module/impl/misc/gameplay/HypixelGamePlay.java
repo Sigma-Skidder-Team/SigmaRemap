@@ -38,7 +38,7 @@ public class HypixelGamePlay extends Module {
     }
 
     @Override
-    public void method15953() {
+    public void initialize() {
         this.field23626 = (GamePlay) this.access();
     }
 

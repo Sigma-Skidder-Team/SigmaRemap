@@ -37,7 +37,7 @@ public class ActiveMods extends Module {
     }
 
     @Override
-    public void method15953() {
+    public void initialize() {
         this.method16853();
         this.method16852();
     }

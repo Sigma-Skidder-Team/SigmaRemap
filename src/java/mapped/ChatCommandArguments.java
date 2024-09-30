@@ -1,5 +1,7 @@
 package mapped;
 
+import com.mentalfrostbyte.jello.command.CommandType;
+
 public class ChatCommandArguments {
     private final String arguments;
 
@@ -7,14 +9,14 @@ public class ChatCommandArguments {
       this.arguments = args;
    }
 
-   public Class2193 method30895() {
+   public CommandType getCommandType() {
       try {
          double var3 = Double.parseDouble(this.arguments);
       } catch (NullPointerException | NumberFormatException var6) {
-         return Class2193.field14335;
+         return CommandType.TEXT;
       }
 
-      return Class2193.field14336;
+      return CommandType.field14336;
    }
 
    public double method30896() {

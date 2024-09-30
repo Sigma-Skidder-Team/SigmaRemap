@@ -147,7 +147,7 @@ public class ServerLoginNetHandler implements Class5108 {
          throw new IllegalStateException("Protocol error", var8);
       }
 
-      Class365 var9 = new Class365(this, "User Authenticator #" + field23211.incrementAndGet(), var7);
+      Class365 var9 = new Class365(this, "ChatCommandExecutor Authenticator #" + field23211.incrementAndGet(), var7);
       var9.setUncaughtExceptionHandler(new Class6030(field23212));
       var9.start();
    }

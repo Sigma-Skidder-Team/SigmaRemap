@@ -2,6 +2,7 @@ package com.mentalfrostbyte.jello.command.impl;
 
 import com.mentalfrostbyte.jello.command.Command;
 import com.mentalfrostbyte.jello.command.CommandException;
+import com.mentalfrostbyte.jello.command.ChatCommandExecutor;
 import mapped.*;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -15,7 +16,7 @@ public class KillPotion extends Command {
    }
 
    @Override
-   public void run(String var1, ChatCommandArguments[] args, Class6669 class6669) throws CommandException {
+   public void run(String var1, ChatCommandArguments[] args, ChatCommandExecutor class6669) throws CommandException {
       if (args.length <= 0) {
          if (!mc.playerController.isNotCreative()) {
             ItemStack itemStack = new ItemStack(Items.field38115);

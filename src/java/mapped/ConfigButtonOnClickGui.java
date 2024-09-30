@@ -38,45 +38,45 @@ public class ConfigButtonOnClickGui extends Class4247 {
 
    public void method13610() {
       Client.getInstance();
-      Class6814 var3 = Client.getInstance().getModuleManager().method14667();
-      Class7286 var4 = var3.method20770();
+      Class6814 var3 = Client.getInstance().getModuleManager().getConfigurationManager();
+      Configuration var4 = var3.getCurrentConfig();
       int var5 = 1;
 
-      while (var3.method20768(var4.field31263 + " Copy " + var5)) {
+      while (var3.method20768(var4.getName + " Copy " + var5)) {
          var5++;
       }
 
-      var3.method20763(var4.method22987(var4.field31263 + " Copy " + var5));
+      var3.saveConfig(var4.method22987(var4.getName + " Copy " + var5));
       this.method13222(() -> this.method13615());
       this.field21300.method13119(false);
    }
 
-   public void method13611(Class7286 var1) {
+   public void method13611(Configuration var1) {
       Client.getInstance();
-      Class6814 var4 = Client.getInstance().getModuleManager().method14667();
-      Class7286 var5 = var4.method20770();
+      Class6814 var4 = Client.getInstance().getModuleManager().getConfigurationManager();
+      Configuration var5 = var4.getCurrentConfig();
       int var6 = 1;
 
-      while (var4.method20768(var1.field31263 + " " + var6)) {
+      while (var4.method20768(var1.getName + " " + var6)) {
          var6++;
       }
 
-      var4.method20763(var1.method22987(var1.field31263 + " " + var6));
+      var4.saveConfig(var1.method22987(var1.getName + " " + var6));
       this.method13222(() -> this.method13615());
       this.field21300.method13119(false);
    }
 
    public void method13612() {
       Client.getInstance();
-      Class6814 var3 = Client.getInstance().getModuleManager().method14667();
+      Class6814 var3 = Client.getInstance().getModuleManager().getConfigurationManager();
       int var4 = 1;
 
       while (var3.method20768("New Profile " + var4)) {
          var4++;
       }
 
-      var3.method20763(new Class7286("New Profile " + var4, new JSONObject()));
-      this.method13222(() -> this.method13615());
+      var3.saveConfig(new Configuration("New Profile " + var4, new JSONObject()));
+      this.method13222(this::method13615);
       this.field21300.method13119(false);
    }
 
@@ -113,7 +113,7 @@ public class ConfigButtonOnClickGui extends Class4247 {
       int var4 = 0;
       byte var5 = 70;
 
-      for (Class7286 var7 : Client.getInstance().getModuleManager().method14667().method20772()) {
+      for (Configuration var7 : Client.getInstance().getModuleManager().getConfigurationManager().getAllConfigs()) {
          Class4351 var8 = new Class4351(this, "profile" + var4, 0, var5 * var4, this.field21299.getWidthA(), var5, var7, var4);
          this.field21299.addToList(var8);
          this.field21301.add(var8);

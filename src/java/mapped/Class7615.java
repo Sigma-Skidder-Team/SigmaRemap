@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class Class7615 {
    private static Map<Object, Class9433> field32658 = new HashMap<Object, Class9433>();
-   public static final String field32659 = "User-Agent";
+   public static final String field32659 = "ChatCommandExecutor-Agent";
    public static final String field32660 = "Host";
    public static final String field32661 = "Accept";
    public static final String field32662 = "Location";
@@ -49,7 +49,7 @@ public class Class7615 {
          String var8 = "GET";
          String var9 = "HTTP/1.1";
          LinkedHashMap var10 = new LinkedHashMap();
-         var10.put("User-Agent", "Java/" + System.getProperty("java.version"));
+         var10.put("ChatCommandExecutor-Agent", "Java/" + System.getProperty("java.version"));
          var10.put("Host", var6);
          var10.put("Accept", "text/html, image/gif, image/png");
          var10.put("Connection", "keep-alive");

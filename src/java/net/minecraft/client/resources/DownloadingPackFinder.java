@@ -74,7 +74,7 @@ public class DownloadingPackFinder implements IPackFinder {
       var2.put("X-Minecraft-Version", SharedConstants.getVersion().getName());
       var2.put("X-Minecraft-Version-ID", SharedConstants.getVersion().getId());
       var2.put("X-Minecraft-Pack-Format", String.valueOf(SharedConstants.getVersion().getPackVersion()));
-      var2.put("User-Agent", "Minecraft Java/" + SharedConstants.getVersion().getName());
+      var2.put("ChatCommandExecutor-Agent", "Minecraft Java/" + SharedConstants.getVersion().getName());
       return var2;
    }
 

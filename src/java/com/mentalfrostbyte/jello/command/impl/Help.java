@@ -1,11 +1,11 @@
 package com.mentalfrostbyte.jello.command.impl;
 
+import com.mentalfrostbyte.jello.command.ChatCommandExecutor;
 import com.mentalfrostbyte.jello.command.Command;
 import com.mentalfrostbyte.jello.command.CommandException;
 
 import com.mentalfrostbyte.jello.Client;
-import mapped.Class2193;
-import mapped.Class6669;
+import com.mentalfrostbyte.jello.command.CommandType;
 import mapped.ChatCommandArguments;
 
 import java.util.List;
@@ -19,11 +19,11 @@ public class Help extends Command {
    }
 
    @Override
-   public void run(String var1, ChatCommandArguments[] var2, Class6669 var3) throws CommandException {
+   public void run(String var1, ChatCommandArguments[] var2, ChatCommandExecutor var3) throws CommandException {
       List var6 = Client.getInstance().getCommandManager().getCommands();
       int var7 = (int)Math.ceil((double)((float)var6.size() / 7.0F));
-      int var8 = var2.length == 1 && var2[0].method30895() == Class2193.field14336 ? var2[0].method30898() - 1 : 0;
-      if (var2.length == 1 && var2[0].method30895() == Class2193.field14335) {
+      int var8 = var2.length == 1 && var2[0].getCommandType() == CommandType.field14336 ? var2[0].method30898() - 1 : 0;
+      if (var2.length == 1 && var2[0].getCommandType() == CommandType.TEXT) {
          Command var12 = Client.getInstance().getCommandManager().method30231(var2[0].getArguments());
          if (var12 == null) {
             throw new CommandException();

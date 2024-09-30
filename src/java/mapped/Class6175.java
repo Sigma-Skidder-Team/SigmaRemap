@@ -50,8 +50,8 @@ public final class Class6175 implements Class6172 {
          var5.method25238("Cookie", this.method19084(var8));
       }
 
-      if (var4.method28615("User-Agent") == null) {
-         var5.method25238("User-Agent", Class9669.method37724());
+      if (var4.method28615("ChatCommandExecutor-Agent") == null) {
+         var5.method25238("ChatCommandExecutor-Agent", Class9669.method37724());
       }
 
       Class1797 var9 = var1.method28409(var5.method25252());

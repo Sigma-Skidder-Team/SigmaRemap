@@ -1,11 +1,11 @@
 package com.mentalfrostbyte.jello.command.impl;
 
+import com.mentalfrostbyte.jello.command.ChatCommandExecutor;
 import com.mentalfrostbyte.jello.command.Command;
 import com.mentalfrostbyte.jello.command.CommandException;
 
 import com.mentalfrostbyte.jello.Client;
-import mapped.Class2193;
-import mapped.Class6669;
+import com.mentalfrostbyte.jello.command.CommandType;
 import mapped.ChatCommandArguments;
 
 import java.util.List;
@@ -18,10 +18,10 @@ public class Enemy extends Command {
    }
 
    @Override
-   public void run(String var1, ChatCommandArguments[] var2, Class6669 var3) throws CommandException {
+   public void run(String var1, ChatCommandArguments[] var2, ChatCommandExecutor var3) throws CommandException {
       if (var2.length == 0) {
          throw new CommandException();
-      } else if (var2[0].method30895() == Class2193.field14335) {
+      } else if (var2[0].getCommandType() == CommandType.TEXT) {
          String var6 = var2[0].getArguments();
          String var7 = var6.toLowerCase();
          switch (var7) {

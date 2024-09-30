@@ -56,8 +56,8 @@ public class Speed extends ModuleWithModuleSettings {
     }
 
     public void method16764() {
-        if (this.module instanceof HypixelSpeed) {
-            HypixelSpeed var3 = (HypixelSpeed) this.module;
+        if (this.parentModule instanceof HypixelSpeed) {
+            HypixelSpeed var3 = (HypixelSpeed) this.parentModule;
             var3.method16044();
         }
     }

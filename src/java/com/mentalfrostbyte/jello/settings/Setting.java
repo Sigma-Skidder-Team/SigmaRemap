@@ -24,7 +24,7 @@ public abstract class Setting<T> {
 
     public abstract JSONObject loadCurrentValueFromJSONObject(JSONObject jsonObject);
 
-    public JSONObject addDataToJSONObject(JSONObject jsonObject) {
+    public JSONObject buildUpSettingData(JSONObject jsonObject) {
         jsonObject.put("name", this.getName());
         jsonObject.put("value", this.currentValue);
         return jsonObject;

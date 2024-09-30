@@ -42,16 +42,16 @@ public abstract class SubOptionSetting2 extends Setting<Boolean> {
    }
 
    @Override
-   public JSONObject addDataToJSONObject(JSONObject jsonObject) {
+   public JSONObject buildUpSettingData(JSONObject jsonObject) {
       JSONArray array = new JSONArray();
 
       for (Setting setting : this.getSubSettings()) {
-         array.put(setting.addDataToJSONObject(new JSONObject()));
+         array.put(setting.buildUpSettingData(new JSONObject()));
       }
 
       jsonObject.put("children", array);
       jsonObject.put("name", this.getName());
-      return super.addDataToJSONObject(jsonObject);
+      return super.buildUpSettingData(jsonObject);
    }
 
    public List<Setting> getSubSettings() {

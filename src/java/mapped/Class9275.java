@@ -61,7 +61,7 @@ public class Class9275 {
    public static String method34959(String var0, boolean var1) throws IOException {
       URLConnection var4 = new URL(var0).openConnection();
       var4.setRequestProperty(
-         "User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Safari/604.1.38"
+         "ChatCommandExecutor-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Safari/604.1.38"
       );
       if (var1) {
          var4.setRequestProperty("Accept", "application/json");

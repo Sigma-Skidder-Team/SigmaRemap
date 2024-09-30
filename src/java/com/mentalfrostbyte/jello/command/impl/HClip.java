@@ -2,6 +2,8 @@ package com.mentalfrostbyte.jello.command.impl;
 
 import com.mentalfrostbyte.jello.command.Command;
 import com.mentalfrostbyte.jello.command.CommandException;
+import com.mentalfrostbyte.jello.command.ChatCommandExecutor;
+import com.mentalfrostbyte.jello.command.CommandType;
 import mapped.*;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import net.minecraft.util.math.MathHelper;
@@ -15,10 +17,10 @@ public class HClip extends Command {
    }
 
    @Override
-   public void run(String var1, ChatCommandArguments[] var2, Class6669 var3) throws CommandException {
+   public void run(String var1, ChatCommandArguments[] var2, ChatCommandExecutor var3) throws CommandException {
       if (var2.length != 0) {
          if (var2.length <= 1) {
-            if (var2[0].method30895() != Class2193.field14336) {
+            if (var2[0].getCommandType() != CommandType.field14336) {
                throw new CommandException("Invalid distance \"" + var2[0].getArguments() + "\"");
             } else {
                float var6 = (float)Math.toRadians((double)(mc.player.rotationYaw + 90.0F));

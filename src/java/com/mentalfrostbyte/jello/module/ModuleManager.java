@@ -33,7 +33,7 @@ import java.util.*;
 
 public class ModuleManager {
     private final Map<Class<? extends Module>, Module> moduleMap = new LinkedHashMap<>();
-    private Class6814 field22247;
+    private Class6814 profile;
     private Class4378 field22248;
     private List<Module> modules;
 
@@ -214,37 +214,37 @@ public class ModuleManager {
         this.method14654();
     }
 
-    public JSONObject method14656(JSONObject var1) {
-        JSONArray var4 = null;
+    public JSONObject load(JSONObject json) {
+        JSONArray array = null;
 
         try {
-            var4 = CJsonUtils.getJSONArrayOrNull(var1, "mods");
-        } catch (JSONException2 var14) {
+            array = CJsonUtils.getJSONArrayOrNull(json, "mods");
+        } catch (JSONException2 ignored) {
         }
 
-        for (Module var6 : this.moduleMap.values()) {
-            var6.method15985();
+        for (Module modulesFound : this.moduleMap.values()) {
+            modulesFound.resetModuleState();
         }
 
-        if (var4 != null) {
-            for (int var15 = 0; var15 < var4.length(); var15++) {
-                JSONObject var17 = var4.getJSONObject(var15);
-                String var7 = null;
+        if (array != null) {
+            for (int var15 = 0; var15 < array.length(); var15++) {
+                JSONObject moduleObject = array.getJSONObject(var15);
+                String moduleName = null;
 
                 try {
-                    var7 = CJsonUtils.getStringOrDefault(var17, "name", null);
+                    moduleName = CJsonUtils.getStringOrDefault(moduleObject, "name", null);
                 } catch (JSONException2 var13) {
                     Client.getInstance().getLogger().warn("Invalid name in mod list config");
                 }
 
-                for (Module var9 : this.moduleMap.values()) {
-                    if (var9.getName().equals(var7)) {
+                for (Module module : this.moduleMap.values()) {
+                    if (module.getName().equals(moduleName)) {
                         try {
-                            var9.method15986(var17);
+                            module.initialize(moduleObject);
                         } catch (JSONException2 var12) {
                             Client.getInstance()
                                     .getLogger()
-                                    .warn("Could not initialize mod " + var9.getName() + " from config. All settings for this mod have been erased.");
+                                    .warn("Could not initialize mod " + module.getName() + " from config. All settings for this mod have been erased.");
                         }
                         break;
                     }
@@ -254,41 +254,41 @@ public class ModuleManager {
             Client.getInstance().getLogger().info("Mods array does not exist in config. Assuming a blank profile...");
         }
 
-        for (Module var18 : this.moduleMap.values()) {
-            if (var18.isEnabled()) {
-                Client.getInstance().getEventManager().subscribe(var18);
-                if (var18 instanceof ModuleWithModuleSettings) {
-                    ModuleWithModuleSettings var20 = (ModuleWithModuleSettings) var18;
-                    if (var20.module != null) {
-                        Client.getInstance().getEventManager().subscribe(var20.module);
+        for (Module module : this.moduleMap.values()) {
+            if (module.isEnabled()) {
+                Client.getInstance().getEventManager().subscribe(module);
+                if (module instanceof ModuleWithModuleSettings) {
+                    ModuleWithModuleSettings moduleWithSettings = (ModuleWithModuleSettings) module;
+                    if (moduleWithSettings.parentModule != null) {
+                        Client.getInstance().getEventManager().subscribe(moduleWithSettings.parentModule);
                     }
                 }
             } else {
-                Client.getInstance().getEventManager().unsubscribe(var18);
-                if (var18 instanceof ModuleWithModuleSettings) {
-                    ModuleWithModuleSettings var19 = (ModuleWithModuleSettings) var18;
+                Client.getInstance().getEventManager().unsubscribe(module);
+                if (module instanceof ModuleWithModuleSettings) {
+                    ModuleWithModuleSettings moduleWithSettings = (ModuleWithModuleSettings) module;
 
-                    for (Module var11 : var19.moduleArray) {
-                        Client.getInstance().getEventManager().unsubscribe(var11);
+                    for (Module module1 : moduleWithSettings.moduleArray) {
+                        Client.getInstance().getEventManager().unsubscribe(module1);
                     }
                 }
             }
 
-            var18.method15953();
+            module.initialize();
         }
 
-        return var1;
+        return json;
     }
 
-    public JSONObject method14657(JSONObject var1) {
-        JSONArray var4 = new JSONArray();
+    public JSONObject saveCurrentConfigToJSON(JSONObject obj) {
+        JSONArray array = new JSONArray();
 
-        for (Module var6 : this.moduleMap.values()) {
-            var4.put(var6.method15987(new JSONObject()));
+        for (Module module : this.moduleMap.values()) {
+            array.put(module.buildUpModuleData(new JSONObject()));
         }
 
-        var1.put("mods", var4);
-        return var1;
+        obj.put("mods", array);
+        return obj;
     }
 
     public void method14658() {
@@ -325,11 +325,11 @@ public class ModuleManager {
             var4 = "Classic";
         }
 
-        this.field22247 = new Class6814();
+        this.profile = new Class6814();
         this.field22248 = new Class4378();
 
         try {
-            this.field22247.method20767(var4);
+            this.profile.loadProfile(var4);
             this.field22248.method13732(var1);
         } catch (IOException var6) {
             Client.getInstance().getLogger().error("Could not load profiles!");
@@ -341,11 +341,11 @@ public class ModuleManager {
     }
 
     public void method14660(JSONObject var1) {
-        var1.put("profile", this.field22247.method20770().field31263);
-        this.field22247.method20770().field31262 = this.method14657(new JSONObject());
+        var1.put("profile", this.profile.getCurrentConfig().getName);
+        this.profile.getCurrentConfig().serializedConfigData = this.saveCurrentConfigToJSON(new JSONObject());
 
         try {
-            this.field22247.method20769();
+            this.profile.saveAndReplaceConfigs();
             this.field22248.method13731(var1);
         } catch (IOException var5) {
             var5.printStackTrace();
@@ -393,8 +393,8 @@ public class ModuleManager {
         return moduleList;
     }
 
-    public Class6814 method14667() {
-        return this.field22247;
+    public Class6814 getConfigurationManager() {
+        return this.profile;
     }
 
     public Class4378 method14668() {

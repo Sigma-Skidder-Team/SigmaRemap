@@ -168,7 +168,7 @@ public class GuiManager {
         this.field41355 = var1;
     }
 
-    public void method33460() {
+    public void endTick() {
         if (this.field41352 != null) {
             this.field41354[0] = Math.max(0, Math.min(Minecraft.getInstance().mainWindow.getWidth(), (int) Minecraft.getInstance().mouseHelper.method36738()));
             this.field41354[1] = Math.max(0, Math.min(Minecraft.getInstance().mainWindow.getHeight(), (int) Minecraft.getInstance().mouseHelper.method36739()));

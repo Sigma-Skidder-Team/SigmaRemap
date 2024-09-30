@@ -1,9 +1,8 @@
 package mapped;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -16,35 +15,57 @@ import totalcross.json.JSONException2;
 import totalcross.json.JSONObject;
 
 public class Class6814 {
-   private List<Class7286> field29667 = new ArrayList<Class7286>();
-   private Class7286 field29668;
-   private Class7286 field29669;
-   public static final String field29670 = ".profile";
-   public static final String field29671 = "/profiles/";
-   public static final String field29672 = "Default";
+   private final List<Configuration> savedConfigs = new ArrayList<>();
+   private Configuration currentConfigs;
 
-   public void method20763(Class7286 var1) {
-      this.field29667.add(0, var1);
+   private static String configFolder;
+   private static String configFileExtension;
+
+   static {
+      if (Client.getInstance().getClientMode().equals(ClientMode.CLASSIC)) {
+         configFolder = "/Configs/";
+         configFileExtension = ".config";
+      } else {
+         configFolder = "/profiles/";
+         configFileExtension = ".profile";
+      }
    }
 
-   public boolean method20764(Class7286 var1) {
-      if (Client.getInstance().getClientMode() == ClientMode.CLASSIC && var1.field31263.equals("Classic")) {
+   public void saveConfig(Configuration config) {
+       try {
+          this.savedConfigs.add(0, config);
+          File configItself = new File(Client.getInstance().getFile() + configFolder + config.getName + configFileExtension);
+          if (!configItself.exists()) {
+             configItself.createNewFile();
+          }
+           IOUtils.write(config.method22985(new JSONObject()).toString(0), Files.newOutputStream(configItself.toPath()));
+       } catch (IOException e) {
+           throw new RuntimeException(e);
+       }
+   }
+
+   public void removeConfig(Configuration config) {
+      this.savedConfigs.remove(config);
+   }
+
+   public boolean checkConfig(Configuration config) {
+      if (Client.getInstance().getClientMode() == ClientMode.CLASSIC && config.getName.equals("Classic")) {
          return false;
-      } else if (this.field29667.size() <= 1) {
+      } else if (this.savedConfigs.size() <= 1) {
          return false;
       } else {
-         this.field29667.remove(var1);
-         if (var1 == this.field29668) {
-            this.method20771(this.field29667.get(0));
+         this.savedConfigs.remove(config);
+         if (config == this.currentConfigs) {
+            this.loadConfig(this.savedConfigs.get(0));
          }
 
          return true;
       }
    }
 
-   public boolean method20765(String var1) {
-      for (Class7286 var5 : this.field29667) {
-         if (var5.field31263.equals(var1) && this.method20764(var5)) {
+   public boolean removeConfig(String configName) {
+      for (Configuration var5 : this.savedConfigs) {
+         if (var5.getName.equals(configName) && this.checkConfig(var5)) {
             return true;
          }
       }
@@ -52,9 +73,9 @@ public class Class6814 {
       return false;
    }
 
-   public Class7286 method20766(String var1) {
-      for (Class7286 var5 : this.field29667) {
-         if (var5.field31263.toLowerCase().equals(var1.toLowerCase())) {
+   public Configuration getConfigByName(String var1) {
+      for (Configuration var5 : this.savedConfigs) {
+         if (var5.getName.toLowerCase().equals(var1.toLowerCase())) {
             return var5;
          }
       }
@@ -62,42 +83,42 @@ public class Class6814 {
       return null;
    }
 
-   public void method20767(String var1) throws IOException {
-      File var4 = new File(Client.getInstance().getFile() + "/profiles/");
-      if (!var4.exists()) {
-         var4.mkdirs();
+   public void loadProfile(String name) throws IOException {
+      File configFolderFolder = new File(Client.getInstance().getFile() + configFolder);
+      if (!configFolderFolder.exists()) {
+         configFolderFolder.mkdirs();
       }
 
-      File[] var5 = var4.listFiles((var0, var1x) -> var1x.toLowerCase().endsWith(".profile"));
+      File[] configsFound = configFolderFolder.listFiles((var0, var1x) -> var1x.toLowerCase().endsWith(configFileExtension));
 
-      for (File var9 : var5) {
+      for (File config : configsFound) {
          try {
-            JSONObject var10 = new JSONObject(IOUtils.toString(new FileInputStream(var9)));
-            Class7286 var11 = new Class7286().method22984(var10);
-            var11.field31263 = var9.getName().substring(0, var9.getName().length() - ".profile".length());
-            this.field29667.add(var11);
-            if (var1 != null && var11.field31263.toLowerCase().equals(var1.toLowerCase())) {
-               this.field29668 = var11;
+            JSONObject object = new JSONObject(IOUtils.toString(Files.newInputStream(config.toPath())));
+            Configuration configuration = new Configuration().method22984(object);
+            configuration.getName = config.getName().substring(0, config.getName().length() - ".profile".length());
+            this.savedConfigs.add(configuration);
+            if (configuration.getName.equalsIgnoreCase(name)) {
+               this.currentConfigs = configuration;
             }
          } catch (JSONException2 var12) {
-            Client.getInstance().getLogger().warn("Unable to load profile from " + var9.getName());
+            Client.getInstance().getLogger().warn("Unable to load profile from " + config.getName());
          }
       }
 
-      if (this.field29667.size() == 0 || this.field29668 == null) {
-         if (var1 == null || var1.length() == 0) {
-            var1 = "Default";
+      if (this.savedConfigs.isEmpty() || this.currentConfigs == null) {
+         if (name == null || name.isEmpty()) {
+            name = "Default";
          }
 
-         this.field29667.add(this.field29668 = new Class7286(var1, new JSONObject()));
+         this.savedConfigs.add(this.currentConfigs = new Configuration(name, new JSONObject()));
       }
 
-      Client.getInstance().getModuleManager().method14656(this.field29668.field31262);
+      Client.getInstance().getModuleManager().load(this.currentConfigs.serializedConfigData);
    }
 
    public boolean method20768(String var1) {
-      for (Class7286 var5 : this.field29667) {
-         if (var5.field31263.toLowerCase().equals(var1.toLowerCase())) {
+      for (Configuration var5 : this.savedConfigs) {
+         if (var5.getName.toLowerCase().equals(var1.toLowerCase())) {
             return true;
          }
       }
@@ -105,51 +126,53 @@ public class Class6814 {
       return false;
    }
 
-   public void method20769() throws IOException {
-      this.field29668.field31262 = Client.getInstance().getModuleManager().method14657(new JSONObject());
-      File var3 = new File(Client.getInstance().getFile() + "/profiles/");
-      if (!var3.exists()) {
-         var3.mkdirs();
+   public void saveAndReplaceConfigs() throws IOException {
+      this.currentConfigs.serializedConfigData = Client.getInstance().getModuleManager().saveCurrentConfigToJSON(new JSONObject());
+      File configFolderFolder = new File(Client.getInstance().getFile() + configFolder);
+      if (!configFolderFolder.exists()) {
+         configFolderFolder.mkdirs();
       }
 
-      File[] var4 = var3.listFiles((var0, var1) -> var1.toLowerCase().endsWith(".profile"));
+      File[] configs = configFolderFolder.listFiles((var0, var1) -> var1.toLowerCase().endsWith(configFileExtension));
 
-      for (File var8 : var4) {
-         var8.delete();
+      // Delete each old config file
+      for (File configItself : configs) {
+         configItself.delete();
       }
 
-      for (Class7286 var10 : this.field29667) {
-         File var11 = new File(Client.getInstance().getFile() + "/profiles/" + var10.field31263 + ".profile");
-         if (!var11.exists()) {
-            var11.createNewFile();
+      // Create new config files for each saved configuration
+      for (Configuration savedConfig : this.savedConfigs) {
+         File configItself = new File(Client.getInstance().getFile() + configFolder + savedConfig.getName + configFileExtension);
+         if (!configItself.exists()) {
+            configItself.createNewFile();
          }
 
-         IOUtils.write(var10.method22985(new JSONObject()).toString(0), new FileOutputStream(var11));
+         IOUtils.write(savedConfig.method22985(new JSONObject()).toString(0), Files.newOutputStream(configItself.toPath()));
       }
    }
 
-   public Class7286 method20770() {
-      return this.field29668;
+   public Configuration getCurrentConfig() {
+      return this.currentConfigs;
    }
 
-   public void method20771(Class7286 var1) {
-      Client.getInstance().method19924();
-      RandomModuleThread.field8343 = new HashMap<Object, Integer>();
+   public void loadConfig(Configuration var1) {
+      Client.getInstance().saveClientData();
+      RandomModuleThread.field8343 = new HashMap<>();
       if (Client.getInstance().getClientMode() != ClientMode.CLASSIC) {
-         this.field29668.field31262 = Client.getInstance().getModuleManager().method14657(new JSONObject());
-         this.field29668 = var1;
-         Client.getInstance().getConfig().put("profile", var1.field31263);
-         Client.getInstance().getModuleManager().method14656(var1.field31262);
-         Client.getInstance().method19924();
+         this.currentConfigs.serializedConfigData = Client.getInstance().getModuleManager().saveCurrentConfigToJSON(new JSONObject());
+         this.currentConfigs = var1;
+         Client.getInstance().getConfig().put("profile", var1.getName);
+         Client.getInstance().getModuleManager().load(var1.serializedConfigData);
+         Client.getInstance().saveClientData();
       } else {
-         this.field29668.field31262 = var1.method22986();
+         this.currentConfigs.serializedConfigData = var1.method22986();
          Client.getInstance().getConfig().put("profile", "Classic");
-         Client.getInstance().getModuleManager().method14656(var1.field31262);
-         Client.getInstance().method19924();
+         Client.getInstance().getModuleManager().load(var1.serializedConfigData);
+         Client.getInstance().saveClientData();
       }
    }
 
-   public List<Class7286> method20772() {
-      return this.field29667;
+   public List<Configuration> getAllConfigs() {
+      return this.savedConfigs;
    }
 }

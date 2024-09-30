@@ -122,9 +122,9 @@ public class ThumbnailUtil {
         CloseableHttpClient var3 = HttpClients.createDefault();
         HttpGet var4 = new HttpGet(url);
         if (url.contains("playlist")) {
-            var4.addHeader("User-Agent", "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)");
+            var4.addHeader("ChatCommandExecutor-Agent", "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)");
         } else {
-            var4.addHeader("User-Agent", "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)");
+            var4.addHeader("ChatCommandExecutor-Agent", "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)");
         }
 
         try {

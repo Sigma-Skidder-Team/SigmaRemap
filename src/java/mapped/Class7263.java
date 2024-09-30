@@ -270,7 +270,7 @@ public final class Class7263 extends Class7264 implements Class7266 {
          .method25235(this.field31155.method25539().method19049())
          .method25238("Host", Class9474.method36545(this.field31155.method25539().method19049(), true))
          .method25238("Proxy-Connection", "Keep-Alive")
-         .method25238("User-Agent", Class9669.method37724())
+         .method25238("ChatCommandExecutor-Agent", Class9669.method37724())
          .method25252();
    }
 

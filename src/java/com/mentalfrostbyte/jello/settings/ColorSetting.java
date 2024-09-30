@@ -34,7 +34,7 @@ public class ColorSetting extends Setting<Integer> {
    }
 
    @Override
-   public JSONObject addDataToJSONObject(JSONObject jsonObject) {
+   public JSONObject buildUpSettingData(JSONObject jsonObject) {
       jsonObject.put("name", this.getName());
       jsonObject.put("value", this.getCurrentValue());
       jsonObject.put("rainbow", this.isRainbowEnabled);

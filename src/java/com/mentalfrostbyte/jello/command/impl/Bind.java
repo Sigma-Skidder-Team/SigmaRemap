@@ -1,12 +1,10 @@
 package com.mentalfrostbyte.jello.command.impl;
 
-import com.mentalfrostbyte.jello.command.Command;
-import com.mentalfrostbyte.jello.command.CommandException;
+import com.mentalfrostbyte.jello.command.*;
 
 import java.util.Map.Entry;
 
 import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.command.CommandManager;
 import com.mentalfrostbyte.jello.module.Module;
 import mapped.*;
 import net.minecraft.util.text.StringTextComponent;
@@ -19,7 +17,7 @@ public class Bind extends Command {
    }
 
    @Override
-   public void run(String var1, ChatCommandArguments[] var2, Class6669 var3) throws CommandException {
+   public void run(String var1, ChatCommandArguments[] var2, ChatCommandExecutor var3) throws CommandException {
       Object var6 = null;
       if (var2.length == 0) {
          CommandManager.method30238(() -> mc.displayGuiScreen(new Class1144(new StringTextComponent("GuiKeybinds"))));
@@ -35,7 +33,7 @@ public class Bind extends Command {
                }
             } else {
                var6 = this.method18330(var2[0].getArguments());
-               if (var6 == null || var2[0].method30895() != Class2193.field14335) {
+               if (var6 == null || var2[0].getCommandType() != CommandType.TEXT) {
                   throw new CommandException("Module " + var2[0].getArguments() + " not found");
                }
 
@@ -54,7 +52,7 @@ public class Bind extends Command {
             }
          } else {
             var6 = this.method18330(var2[0].getArguments());
-            if (var6 == null || var2[0].method30895() != Class2193.field14335) {
+            if (var6 == null || var2[0].getCommandType() != CommandType.TEXT) {
                throw new CommandException("Module " + var2[0].getArguments() + " not found");
             }
 

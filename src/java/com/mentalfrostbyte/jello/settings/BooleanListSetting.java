@@ -18,7 +18,7 @@ public class BooleanListSetting extends Setting<List<String>> {
    }
 
    @Override
-   public JSONObject addDataToJSONObject(JSONObject jsonObject) {
+   public JSONObject buildUpSettingData(JSONObject jsonObject) {
       jsonObject.put("name", this.getName());
       jsonObject.put("value", new JSONArray(this.currentValue.toArray()));
       return jsonObject;

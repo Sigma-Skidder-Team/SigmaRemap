@@ -257,8 +257,8 @@ public class JelloClickGUI extends Screen {
          var4 *= 1.0F + var8 * 0.2F;
       }
 
-      if (Client.getInstance().getModuleManager().method14667().method20770() != null) {
-         String var12 = Client.getInstance().getModuleManager().method14667().method20770().field31263;
+      if (Client.getInstance().getModuleManager().getConfigurationManager().getCurrentConfig() != null) {
+         String var12 = Client.getInstance().getModuleManager().getConfigurationManager().getCurrentConfig().getName;
          RenderUtil.drawString(
             ResourceRegistry.JelloLightFont20,
             (float)(this.widthA - ResourceRegistry.JelloLightFont20.method23942(var12) - 80),

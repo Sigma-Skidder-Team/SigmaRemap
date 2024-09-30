@@ -4,9 +4,9 @@ import com.mentalfrostbyte.jello.command.Command;
 import com.mentalfrostbyte.jello.command.CommandException;
 
 import com.mentalfrostbyte.jello.Client;
-import mapped.Class6669;
+import com.mentalfrostbyte.jello.command.ChatCommandExecutor;
 import mapped.Class6814;
-import mapped.Class7286;
+import mapped.Configuration;
 import mapped.ChatCommandArguments;
 import totalcross.json.JSONObject;
 
@@ -16,27 +16,27 @@ public class Panic extends Command {
    }
 
    @Override
-   public void run(String var1, ChatCommandArguments[] var2, Class6669 var3) throws CommandException {
+   public void run(String var1, ChatCommandArguments[] var2, ChatCommandExecutor var3) throws CommandException {
       if (var2.length > 0) {
          throw new CommandException("Too many arguments");
       } else {
-         Class6814 var6 = Client.getInstance().getModuleManager().method14667();
+         Class6814 var6 = Client.getInstance().getModuleManager().getConfigurationManager();
          if (var6.method20768("Panic")) {
-            int var7 = var6.method20772().size();
+            int var7 = var6.getAllConfigs().size();
 
             for (int var8 = 0; var8 < var7; var8++) {
-               Class7286 var9 = var6.method20772().get(var8);
-               if (var9.field31263.equals("Panic")) {
-                  var6.method20764(var9);
+               Configuration var9 = var6.getAllConfigs().get(var8);
+               if (var9.getName.equals("Panic")) {
+                  var6.checkConfig(var9);
                   var8--;
                   var7--;
                }
             }
          }
 
-         Class7286 var10 = new Class7286("Panic", new JSONObject());
-         var6.method20763(var10);
-         var6.method20771(var10);
+         Configuration var10 = new Configuration("Panic", new JSONObject());
+         var6.saveConfig(var10);
+         var6.loadConfig(var10);
          var3.send("All modules disabled.");
       }
    }

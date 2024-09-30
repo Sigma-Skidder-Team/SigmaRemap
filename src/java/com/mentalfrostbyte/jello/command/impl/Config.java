@@ -1,6 +1,7 @@
 package com.mentalfrostbyte.jello.command.impl;
 
 import com.mentalfrostbyte.jello.ClientMode;
+import com.mentalfrostbyte.jello.command.ChatCommandExecutor;
 import com.mentalfrostbyte.jello.command.Command;
 import com.mentalfrostbyte.jello.command.CommandException;
 
@@ -11,80 +12,90 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import com.mentalfrostbyte.jello.Client;
-import mapped.Class2193;
-import mapped.Class6669;
-import mapped.Class7286;
+import com.mentalfrostbyte.jello.command.CommandType;
+import mapped.Configuration;
 import mapped.ChatCommandArguments;
 import org.apache.commons.io.IOUtils;
 import totalcross.json.JSONException2;
 import totalcross.json.JSONObject;
 
 public class Config extends Command {
-   private final String folder = "/configs/";
-   private final String fileType = ".config";
-   private final ArrayList<String> field25714 = new ArrayList<String>(Arrays.asList("add", "create", "new", "save"));
-   private final ArrayList<String> field25715 = new ArrayList<String>(Arrays.asList("remove", "delete", "del", "rem"));
+   private String configFolder;
+   private String configFileExtension;
+   private final ArrayList<String> saveCommands = new ArrayList<String>(Arrays.asList("add", "create", "new", "save"));
+   private final ArrayList<String> deleteCommands = new ArrayList<String>(Arrays.asList("remove", "delete", "del", "rem"));
 
    public Config() {
       super("config", "Manage configs", "configs", "profiles", "profile");
-      this.registerSubCommands(new String[]{"load/save/remove/list"});
+      this.registerSubCommands("load", "save", "remove", "list");
+
+      if (Client.getInstance().getClientMode().equals(ClientMode.CLASSIC)) {
+         configFolder = "/Configs/";
+         configFileExtension = ".config";
+      } else {
+         configFolder = "/profiles/";
+         configFileExtension = ".profile";
+      }
    }
 
    @Override
-   public void run(String var1, ChatCommandArguments[] args, Class6669 var3) throws CommandException {
+   public void run(String var1, ChatCommandArguments[] args, ChatCommandExecutor user) throws CommandException {
       if (args.length == 0) {
          throw new CommandException();
       } else if (args.length <= 2) {
-         if (args[0].method30895() != Class2193.field14335) {
+         if (args[0].getCommandType() != CommandType.TEXT) {
             throw new CommandException();
          } else {
             String action = args[0].getArguments().toLowerCase();
+
             if (!action.equalsIgnoreCase("load")) {
-               if (!this.field25714.contains(action)) {
-                  if (!this.field25715.contains(action)) {
+               if (!this.saveCommands.contains(action)) {
+                  if (!this.deleteCommands.contains(action)) {
                      if (!action.equalsIgnoreCase("list")) {
                         throw new CommandException();
                      }
 
-                     var3.send("§l" + Client.getInstance().getModuleManager().method14667().method20772().size() + " " + this.method18342() + " :");
+                     user.send("§l" + Client.getInstance().getModuleManager().getConfigurationManager().getAllConfigs().size() + " " + this.getConfigOrProfileName() + " :");
 
-                     for (Class7286 var8 : Client.getInstance().getModuleManager().method14667().method20772()) {
-                        boolean var9 = Client.getInstance().getModuleManager().method14667().method20770() == var8;
-                        if (Client.getInstance().getClientMode() != ClientMode.CLASSIC || !var9) {
-                           var3.send((!var9 ? "" : "§n") + var8.field31263);
+                     for (Configuration config : Client.getInstance().getModuleManager().getConfigurationManager().getAllConfigs()) {
+                        boolean isCurrentConfig = Client.getInstance().getModuleManager().getConfigurationManager().getCurrentConfig() == config;
+                        if (Client.getInstance().getClientMode() != ClientMode.CLASSIC || !isCurrentConfig) {
+                           user.send((!isCurrentConfig ? "" : "§n") + config.getName);
                         }
                      }
                   } else if (args.length != 1) {
-                     String var10 = args[1].getArguments().toLowerCase();
-                     if (!Client.getInstance().getModuleManager().method14667().method20765(var10)) {
-                        var3.send(this.method18342() + " not found!");
+                     String name = args[1].getArguments().toLowerCase();
+                     if (!Client.getInstance().getModuleManager().getConfigurationManager().removeConfig(name)) {
+                        user.send(this.getConfigOrProfileName() + " not found!");
                      } else {
-                        var3.send("Removed " + this.method18342());
+                        user.send("Removed " + this.getConfigOrProfileName());
                      }
                   } else {
-                     var3.send("Usage : .config remove <name>");
+                     user.send("Usage : .config remove <name>");
                   }
                } else if (args.length != 1) {
-                  String var11 = args[1].getArguments().toLowerCase();
-                  Class7286 var13 = Client.getInstance().getModuleManager().method14667().method20770();
-                  var13.field31262 = Client.getInstance().getModuleManager().method14657(new JSONObject());
-                  Client.getInstance().getModuleManager().method14667().method20765(var11);
-                  Client.getInstance().getModuleManager().method14667().method20763(new Class7286(var11, var13.field31262));
-                  var3.send("Saved " + this.method18342());
+                  String name = args[1].getArguments().toLowerCase();
+                  String ogName = args[1].getArguments();
+                  Configuration currentConfig = Client.getInstance().getModuleManager().getConfigurationManager().getCurrentConfig();
+                  currentConfig.serializedConfigData = Client.getInstance().getModuleManager().saveCurrentConfigToJSON(new JSONObject());
+                  Client.getInstance().getModuleManager().getConfigurationManager().removeConfig(name);
+                  Client.getInstance().getModuleManager().getConfigurationManager().saveConfig(new Configuration(name, currentConfig.serializedConfigData));
+                  saveConfigToFile(ogName);
+                  user.send("Saved " + this.getConfigOrProfileName());
                } else {
-                  var3.send("Usage : .config save <name>");
+                  user.send("Usage : .config save <name>");
                }
             } else if (args.length != 1) {
-               String var12 = args[1].getArguments().toLowerCase();
-               Class7286 var14 = Client.getInstance().getModuleManager().method14667().method20766(var12);
-               if (var14 == null) {
-                  var3.send(this.method18342() + " not found!");
+               String name = args[1].getArguments().toLowerCase();
+               Configuration config = Client.getInstance().getModuleManager().getConfigurationManager().getConfigByName(name);
+               if (config == null) {
+                  user.send(this.getConfigOrProfileName() + " not found!");
                } else {
-                  Client.getInstance().getModuleManager().method14667().method20771(var14);
-                  var3.send(this.method18342() + " was loaded!");
+                  Client.getInstance().getModuleManager().getConfigurationManager().loadConfig(config);
+                  user.send(this.getConfigOrProfileName() + " was loaded!");
                }
             } else {
-               var3.send("Usage : .config load <name>");
+               user.send("Usage : .config load <name>");
             }
          }
       } else {
@@ -92,30 +103,30 @@ public class Config extends Command {
       }
    }
 
-   public String method18342() {
+   public String getConfigOrProfileName() {
       return Client.getInstance().getClientMode() != ClientMode.CLASSIC ? "Profile" : "Config";
    }
 
-   public void method18343(String var1) {
-      JSONObject var4 = Client.getInstance().getModuleManager().method14657(new JSONObject());
-      File var5 = new File(Client.getInstance().getFile() + "/configs/");
-      if (!var5.exists()) {
-         var5.mkdirs();
+   public void saveConfigToFile(String configName) {
+      JSONObject jsonConfig  = Client.getInstance().getModuleManager().saveCurrentConfigToJSON(new JSONObject());
+      File configFolder = new File(Client.getInstance().getFile() + this.configFolder);
+      if (!configFolder.exists()) {
+         configFolder.mkdirs();
       }
 
-      File var6 = new File(Client.getInstance().getFile() + "/configs/" + var1 + ".config");
-      if (!var6.exists()) {
+      File configFile = new File(Client.getInstance().getFile() + this.configFolder + configName + this.configFileExtension);
+      if (!configFile.exists()) {
          try {
-            var6.createNewFile();
-         } catch (IOException var9) {
-            var9.printStackTrace();
+            configFile.createNewFile();
+         } catch (IOException e) {
+            throw new RuntimeException(e);
          }
       }
 
       try {
-         IOUtils.write(new JSONObject().toString(0), new FileOutputStream(var6));
-      } catch (IOException | JSONException2 var8) {
-         var8.printStackTrace();
+         IOUtils.write(jsonConfig.toString(0), new FileOutputStream(configFile));
+      } catch (IOException | JSONException2 e) {
+         throw new RuntimeException(e);
       }
    }
 }

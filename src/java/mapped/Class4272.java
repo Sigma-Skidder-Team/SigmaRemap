@@ -18,11 +18,11 @@ public class Class4272 extends Class4247 {
 
    public Class4272(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, 0, ColorHelper.field27961, false);
-      UIButton var9;
+      UIButton blankButton;
       this.addToList(
-         var9 = new UIButton(this, "blankButton", 25, 0, ResourceRegistry.JelloLightFont20.method23942("Blank"), 30, ColorHelper.field27961, "Blank", ResourceRegistry.JelloLightFont20)
+         blankButton = new UIButton(this, "blankButton", 25, 0, ResourceRegistry.JelloLightFont20.method23942("Blank"), 30, ColorHelper.field27961, "Blank", ResourceRegistry.JelloLightFont20)
       );
-      var9.doThis((var1x, var2x) -> {
+      blankButton.doThis((var1x, var2x) -> {
          ConfigButtonOnClickGui var5x = (ConfigButtonOnClickGui)this.getIcoPanel();
          var5x.method13612();
       });
@@ -63,9 +63,9 @@ public class Class4272 extends Class4247 {
                   this.method13118(true);
                   new Thread(() -> {
                      Client.getInstance();
-                     Class6814 var5xx = Client.getInstance().getModuleManager().method14667();
-                     Class7286 var6x = var5xx.method20770();
-                     Class7286 var7x = field20706.method28657(var6x, var7);
+                     Class6814 var5xx = Client.getInstance().getModuleManager().getConfigurationManager();
+                     Configuration var6x = var5xx.getCurrentConfig();
+                     Configuration var7x = field20706.method28657(var6x, var7);
                      var5x.method13611(var7x);
                      this.method13118(false);
                   }).start();

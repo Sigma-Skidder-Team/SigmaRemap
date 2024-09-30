@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.command.CommandException;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.module.Module;
-import mapped.Class6669;
+import com.mentalfrostbyte.jello.command.ChatCommandExecutor;
 import mapped.ChatCommandArguments;
 
 public class Toggle extends Command {
@@ -15,7 +15,7 @@ public class Toggle extends Command {
    }
 
    @Override
-   public void run(String var1, ChatCommandArguments[] var2, Class6669 var3) throws CommandException {
+   public void run(String var1, ChatCommandArguments[] var2, ChatCommandExecutor var3) throws CommandException {
       if (var2.length != 1) {
          throw new CommandException();
       } else {

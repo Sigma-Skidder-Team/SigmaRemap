@@ -1,9 +1,9 @@
 package com.mentalfrostbyte.jello.command.impl;
 
+import com.mentalfrostbyte.jello.command.ChatCommandExecutor;
 import com.mentalfrostbyte.jello.command.Command;
 import com.mentalfrostbyte.jello.command.CommandException;
-import mapped.Class2193;
-import mapped.Class6669;
+import com.mentalfrostbyte.jello.command.CommandType;
 import mapped.ChatCommandArguments;
 import net.minecraft.entity.Entity;
 
@@ -17,10 +17,10 @@ public class EntityDesync extends Command {
    }
 
    @Override
-   public void run(String var1, ChatCommandArguments[] var2, Class6669 var3) throws CommandException {
+   public void run(String var1, ChatCommandArguments[] var2, ChatCommandExecutor var3) throws CommandException {
       if (var2.length != 0) {
          if (var2.length <= 1) {
-            if (var2[0].method30895() != Class2193.field14335) {
+            if (var2[0].getCommandType() != CommandType.TEXT) {
                throw new CommandException();
             } else {
                if (!var2[0].getArguments().startsWith("d")) {

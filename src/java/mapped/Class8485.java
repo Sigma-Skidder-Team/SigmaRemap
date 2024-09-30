@@ -25,7 +25,7 @@ public class Class8485 {
       String var6 = "Set-Cookie";
       var5.setRequestMethod("GET");
       var5.setRequestProperty(
-         "User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/604.4.7 (KHTML, like Gecko) Version/11.0.2 Safari/604.4.7"
+         "ChatCommandExecutor-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/604.4.7 (KHTML, like Gecko) Version/11.0.2 Safari/604.4.7"
       );
       var5.setRequestProperty("Accept-Language", "en-us");
       var5.setRequestProperty("Accept", "application/json");

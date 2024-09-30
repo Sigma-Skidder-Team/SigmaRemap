@@ -77,7 +77,7 @@ public class BlockFlyHypixelMode extends Module {
     }
 
     @Override
-    public void method15953() {
+    public void initialize() {
         this.field23473 = (BlockFly) this.access();
     }
 

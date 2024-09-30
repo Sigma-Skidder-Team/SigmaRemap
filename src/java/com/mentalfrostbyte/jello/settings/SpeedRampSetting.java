@@ -17,7 +17,7 @@ public class SpeedRampSetting extends Setting<SpeedRampSetting.SpeedRamp> {
     }
 
     @Override
-    public JSONObject addDataToJSONObject(JSONObject jsonObject) {
+    public JSONObject buildUpSettingData(JSONObject jsonObject) {
         jsonObject.put("name", this.getName());
         jsonObject.put("value", this.getCurrentValue().toJSONArray());
         return jsonObject;

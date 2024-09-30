@@ -116,10 +116,10 @@ public class KillAura extends Module {
     }
 
     @Override
-    public void method15953() {
+    public void initialize() {
         entities = new ArrayList<>();
         interactAB = new InteractAutoBlock(this);
-        super.method15953();
+        super.initialize();
     }
 
     @Override

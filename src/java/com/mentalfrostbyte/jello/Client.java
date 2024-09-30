@@ -43,7 +43,7 @@ public class Client {
     public static List<Texture> textureList = new ArrayList<Texture>();
     public static boolean dontRenderHand = false;
     private static Client instance;
-    private final File file = new File("sigma5");
+    private File file = new File("sigma5");
     private JSONObject config;
     private boolean field28968 = true;
     private Logger logger;
@@ -174,16 +174,16 @@ public class Client {
         this.logger.info("Done.");
     }
 
-    public void method19924() {
+    public void saveClientData() {
         try {
             FileUtil.save(this.config, new File(this.file + "/config.json"));
-        } catch (IOException var4) {
-            var4.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
     public void endTick() {
-        this.guiManager.method33460();
+        this.guiManager.endTick();
     }
 
     public void method19926() {
@@ -350,11 +350,13 @@ public class Client {
             if (mode == ClientMode.JELLO) {
                 this.initRPC();
                 GLFW.glfwSetWindowTitle(mc.mainWindow.getHandle(), "Jello for Sigma 5.0");
+                file = new File("sigma5");
             }
         } else {
             ClassicDecryption.init();
             getInstance().getGuiManager().method33452();
             GLFW.glfwSetWindowTitle(mc.mainWindow.getHandle(), "Classic Sigma 5.0");
+            file = new File("Sigma");
         }
 
         if (this.moduleManager == null && RandomModuleThread.field8341 != null) {

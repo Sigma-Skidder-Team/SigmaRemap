@@ -35,7 +35,7 @@ public class BowFly extends Module {
     }
 
     @Override
-    public void method15953() {
+    public void initialize() {
     }
 
     @EventTarget

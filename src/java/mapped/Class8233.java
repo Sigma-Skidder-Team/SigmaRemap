@@ -40,10 +40,10 @@ public class Class8233 {
       return new JSONObject();
    }
 
-   public Class7286 method28657(Class7286 var1, String var2) {
-      Class7286 var5 = new Class7286(var2, var1);
+   public Configuration method28657(Configuration var1, String var2) {
+      Configuration var5 = new Configuration(var2, var1);
       var5.method22988();
-      Class7286 var6 = new Class7286("settings", this.getJsonObject(var2).getJsonObject("modConfig"));
+      Configuration var6 = new Configuration("settings", this.getJsonObject(var2).getJsonObject("modConfig"));
 
       for (Module var8 : Client.getInstance().getModuleManager().getModuleMap().values()) {
          JSONObject var9 = var6.method22990(var8);

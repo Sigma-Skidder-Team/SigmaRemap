@@ -1,5 +1,6 @@
 package com.mentalfrostbyte.jello.command.impl;
 
+import com.mentalfrostbyte.jello.command.ChatCommandExecutor;
 import com.mentalfrostbyte.jello.command.Command;
 import com.mentalfrostbyte.jello.command.CommandException;
 import com.mentalfrostbyte.jello.Client;
@@ -22,7 +23,7 @@ public class TP extends Command {
    }
 
    @Override
-   public void run(String var1, ChatCommandArguments[] var2, Class6669 var3) throws CommandException {
+   public void run(String var1, ChatCommandArguments[] var2, ChatCommandExecutor var3) throws CommandException {
       if (var2.length == 0) {
          throw new CommandException();
       } else if (var2.length > 1) {

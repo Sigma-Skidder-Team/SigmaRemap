@@ -29,7 +29,7 @@ public class AutoSprint extends Module {
     public void method16343(TickEvent var1) {
         if (this.isEnabled()) {
             ModuleWithModuleSettings var4 = (ModuleWithModuleSettings) Client.getInstance().getModuleManager().getModuleByClass(BlockFly.class);
-            Module var5 = var4.module;
+            Module var5 = var4.parentModule;
             if (var5 == null || !var5.isEnabled() || !(var5 instanceof BlockFlyAACMode) || var5.getBooleanValueFromSettingName("Haphe (AACAP)")) {
                 mc.player.setSprinting(mc.player.moveForward > 0.0F && !((BlockFly) Client.getInstance().getModuleManager().getModuleByClass(BlockFly.class)).method16732());
             }

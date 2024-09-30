@@ -22,7 +22,7 @@ public class JartexGamePlay extends Module {
     }
 
     @Override
-    public void method15953() {
+    public void initialize() {
         this.field23527 = (GamePlay) this.access();
     }
 

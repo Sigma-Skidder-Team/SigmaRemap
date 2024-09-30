@@ -4,6 +4,7 @@ import com.mentalfrostbyte.jello.command.Command;
 import com.mentalfrostbyte.jello.command.CommandException;
 
 import com.mentalfrostbyte.jello.command.CommandManager;
+import com.mentalfrostbyte.jello.command.ChatCommandExecutor;
 import mapped.*;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -16,7 +17,7 @@ public class Peek extends Command {
    }
 
    @Override
-   public void run(String var1, ChatCommandArguments[] var2, Class6669 var3) throws CommandException {
+   public void run(String var1, ChatCommandArguments[] var2, ChatCommandExecutor var3) throws CommandException {
       if (var2.length == 0) {
          ItemStack var6 = mc.player.inventory.method4028();
          if (var6.getItem() instanceof Class3292 && ((Class3292)var6.getItem()).method11845() instanceof Class3241) {

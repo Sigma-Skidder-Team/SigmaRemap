@@ -2,8 +2,8 @@ package com.mentalfrostbyte.jello.command.impl;
 
 import com.mentalfrostbyte.jello.command.Command;
 import com.mentalfrostbyte.jello.command.CommandException;
-import mapped.Class2193;
-import mapped.Class6669;
+import com.mentalfrostbyte.jello.command.CommandType;
+import com.mentalfrostbyte.jello.command.ChatCommandExecutor;
 import mapped.ChatCommandArguments;
 import net.minecraft.network.play.client.CPlayerPacket;
 
@@ -14,12 +14,12 @@ public class Damage extends Command {
    }
 
    @Override
-   public void run(String var1, ChatCommandArguments[] var2, Class6669 var3) throws CommandException {
+   public void run(String var1, ChatCommandArguments[] var2, ChatCommandExecutor var3) throws CommandException {
       if (var2.length == 0) {
          throw new CommandException();
       } else if (var2.length > 1) {
          throw new CommandException("Too many arguments");
-      } else if (var2[0].method30895() != Class2193.field14336) {
+      } else if (var2[0].getCommandType() != CommandType.field14336) {
          throw new CommandException("Invalid heart damage amount \"" + var2[0].getArguments() + "\"");
       } else {
          for (int var6 = 0; (double)var6 < 80.0 + 40.0 * (var2[0].method30896() - 0.5); var6++) {

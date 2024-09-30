@@ -17,7 +17,7 @@ public class Fullbright extends Module {
     }
 
     @Override
-    public void method15953() {
+    public void initialize() {
         if (!this.isEnabled()) {
             mc.gameSettings.gamma = 1.0;
         }

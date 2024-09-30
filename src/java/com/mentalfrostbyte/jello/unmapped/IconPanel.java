@@ -604,7 +604,7 @@ public class IconPanel implements IGuiEventListener {
         }
     }
 
-    public final IconPanel method13253(Class8446 var1) {
+    public final IconPanel onType(Class8446 var1) {
         this.field20923.add(var1);
         return this;
     }

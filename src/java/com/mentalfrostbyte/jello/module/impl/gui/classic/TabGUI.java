@@ -36,7 +36,7 @@ public class TabGUI extends Module {
    }
 
    @Override
-   public void method15953() {
+   public void initialize() {
       this.field23383.add(ModuleCategory.COMBAT);
       this.field23383.add(ModuleCategory.PLAYER);
       this.field23383.add(ModuleCategory.MOVEMENT);

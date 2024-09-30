@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.command.Command;
 import com.mentalfrostbyte.jello.command.CommandException;
 
 import com.mentalfrostbyte.jello.Client;
-import mapped.Class6669;
+import com.mentalfrostbyte.jello.command.ChatCommandExecutor;
 import mapped.ChatCommandArguments;
 import net.minecraft.client.Minecraft;
 
@@ -14,7 +14,7 @@ public class HighDPI extends Command {
    }
 
    @Override
-   public void run(String var1, ChatCommandArguments[] var2, Class6669 var3) throws CommandException {
+   public void run(String var1, ChatCommandArguments[] var2, ChatCommandExecutor var3) throws CommandException {
       if (var2.length <= 0) {
          if (Minecraft.IS_RUNNING_ON_MAC) {
             if (!Client.getInstance().getGuiManager().method33474()) {

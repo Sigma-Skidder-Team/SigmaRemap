@@ -22,7 +22,7 @@ public abstract class Module {
     public String descriptor;
     public ModuleCategory category;
     public boolean enabled;
-    public boolean field23391;
+    public boolean allowed;
     private boolean field23392 = true;
     private Module field23394 = null;
 
@@ -113,25 +113,25 @@ public abstract class Module {
         this.settingMap.get(var1).setCurrentValue(var2);
     }
 
-    public void method15985() {
+    public void resetModuleState() {
         if (this.enabled) {
             this.onDisable();
         }
 
         this.enabled = false;
-        this.field23391 = true;
+        this.allowed = true;
 
         for (Setting var4 : this.settingMap.values()) {
             var4.resetToDefault();
         }
     }
 
-    public JSONObject method15986(JSONObject var1) {
+    public JSONObject initialize(JSONObject var1) {
         JSONArray var4 = CJsonUtils.getJSONArrayOrNull(var1, "options");
 
         this.enabled = var1.method21763("enabled");
 
-        this.field23391 = var1.method21763("allowed");
+        this.allowed = var1.method21763("allowed");
 
         if (var4 != null) {
             for (int var5 = 0; var5 < var4.length(); var5++) {
@@ -160,19 +160,19 @@ public abstract class Module {
         return var1;
     }
 
-    public JSONObject method15987(JSONObject jo) {
+    public JSONObject buildUpModuleData(JSONObject obj) {
         try {
-            jo.put("name", this.getName());
-            jo.method21800("enabled", this.enabled);
-            jo.method21800("allowed", this.method16001());
+            obj.put("name", this.getName());
+            obj.method21800("enabled", this.enabled);
+            obj.method21800("allowed", this.isAllowed());
             JSONArray jsonArray = new JSONArray();
 
-            for (Setting s : this.settingMap.values()) {
-                jsonArray.put(s.addDataToJSONObject(new JSONObject()));
+            for (Setting<?> s : this.settingMap.values()) {
+                jsonArray.put(s.buildUpSettingData(new JSONObject()));
             }
 
-            jo.put("options", jsonArray);
-            return jo;
+            obj.put("options", jsonArray);
+            return obj;
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -248,8 +248,8 @@ public abstract class Module {
         Client.getInstance().getModuleManager().method14668().method13737(this);
     }
 
-    public void method15998(boolean var1) {
-        this.enabled = var1;
+    public void setEnabledBasic(boolean enabled) {
+        this.enabled = enabled;
         if (!this.enabled) {
             Client.getInstance().getEventManager().unsubscribe(this);
         } else {
@@ -298,12 +298,12 @@ public abstract class Module {
         this.setEnabled(!this.isEnabled());
     }
 
-    public boolean method16001() {
-        return this.field23391;
+    public boolean isAllowed() {
+        return this.allowed;
     }
 
-    public void method16002(boolean var1) {
-        this.field23391 = var1;
+    public void setAllowed(boolean var1) {
+        this.allowed = var1;
     }
 
     public void method16003(Module var1) {
@@ -322,6 +322,6 @@ public abstract class Module {
         return this.field23392;
     }
 
-    public void method15953() {
+    public void initialize() {
     }
 }

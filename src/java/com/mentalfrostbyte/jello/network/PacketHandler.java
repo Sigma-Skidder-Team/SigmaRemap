@@ -82,8 +82,8 @@ public class PacketHandler {
                         Client.getInstance().getEventManager().subscribe(var23);
                         if (var23 instanceof ModuleWithModuleSettings) {
                             ModuleWithModuleSettings var27 = (ModuleWithModuleSettings) var23;
-                            if (var27.module != null) {
-                                Client.getInstance().getEventManager().subscribe(var27.module);
+                            if (var27.parentModule != null) {
+                                Client.getInstance().getEventManager().subscribe(var27.parentModule);
                             }
                         }
                     } else {

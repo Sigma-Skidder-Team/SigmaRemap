@@ -21,7 +21,7 @@ public class MineplexGamePlay extends Module {
     }
 
     @Override
-    public void method15953() {
+    public void initialize() {
         this.field23602 = (GamePlay) this.access();
     }
 
