@@ -44,6 +44,10 @@ public class Class6814 {
        }
    }
 
+   public void listOnly(Configuration config) {
+      this.savedConfigs.add(config);
+   }
+
    public void removeConfig(Configuration config) {
       this.savedConfigs.remove(config);
    }

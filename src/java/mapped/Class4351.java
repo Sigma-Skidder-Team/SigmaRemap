@@ -32,6 +32,22 @@ public class Class4351 extends Class4278 {
       this.field21270 = (int)((float)var5 * 0.8F);
       this.currentConfig = config;
       this.field21271 = var6;
+
+      /*
+      File profileDirectory = new File(Client.getInstance().getFile() + "/profiles/");
+      if (profileDirectory.listFiles() != null) {
+         boolean profileExists = Files.exists(new File(profileDirectory, config.getName + ".profile").toPath());
+
+         if (Client.getInstance().getModuleManager().getConfigurationManager().checkConfig(config) && !profileExists) {
+            Client.getInstance().getModuleManager().getConfigurationManager().removeConfig(config);
+            return;
+         } else if (Client.getInstance().getModuleManager().getConfigurationManager().checkConfig(config) && profileExists) {
+            Client.getInstance().getModuleManager().getConfigurationManager().listOnly(config);
+         }
+      }
+
+       */
+
       ColorHelper var11 = ColorHelper.field27961.method19415();
       var11.method19406(-11371052);
       var11.method19404(-12096331);

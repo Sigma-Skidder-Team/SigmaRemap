@@ -153,9 +153,6 @@ public class ModuleWithModuleSettings extends Module {
     @Override
     public void onEnable() {
         this.method16724();
-        if (!Client.getInstance().getNetworkManager().isPremium()) {
-            this.setEnabledBasic(false);
-        }
     }
 
     @Override
