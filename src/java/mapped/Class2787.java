@@ -1,6 +1,8 @@
 package mapped;
 
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.stats.Stats;
 
 import java.util.Random;
 

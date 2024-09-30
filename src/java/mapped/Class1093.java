@@ -162,11 +162,11 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
    }
 
    @Override
-   public boolean attackEntityFrom(DamageSource var1, float var2) {
-      boolean var5 = super.attackEntityFrom(var1, var2);
+   public boolean attackEntityFrom(DamageSource source, float var2) {
+      boolean var5 = super.attackEntityFrom(source, var2);
       if (!this.world.isRemote) {
-         if (var5 && var1.getTrueSource() instanceof LivingEntity) {
-            LivingEntity var6 = (LivingEntity)var1.getTrueSource();
+         if (var5 && source.getTrueSource() instanceof LivingEntity) {
+            LivingEntity var6 = (LivingEntity) source.getTrueSource();
             if (Class8088.field34762.test(var6) && !Class6983.method21582(this, var6, 4.0)) {
                this.method5100(var6);
             }

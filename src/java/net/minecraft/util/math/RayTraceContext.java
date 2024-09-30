@@ -42,7 +42,7 @@ public class RayTraceContext {
    }
 
    public VoxelShape getFluidShape(FluidState var1, IBlockReader var2, BlockPos var3) {
-      return !this.field29639.test(var1) ? VoxelShapes.method27425() : var1.method23489(var2, var3);
+      return !this.field29639.test(var1) ? VoxelShapes.empty() : var1.method23489(var2, var3);
    }
 
    public enum FluidMode {

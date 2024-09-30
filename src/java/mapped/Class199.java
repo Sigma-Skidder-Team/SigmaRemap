@@ -1,17 +1,20 @@
 package mapped;
 
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.SectionPos;
+import net.minecraft.world.chunk.NibbleArray;
+import net.minecraft.world.lighting.IWorldLightListener;
 
 import javax.annotation.Nullable;
 
-public enum Class199 implements Class198 {
+public enum Class199 implements IWorldLightListener {
    field743;
 
    private static final Class199[] field744 = new Class199[]{field743};
 
    @Nullable
    @Override
-   public Class6785 method642(Class2002 var1) {
+   public NibbleArray method642(SectionPos var1) {
       return null;
    }
 
@@ -21,6 +24,6 @@ public enum Class199 implements Class198 {
    }
 
    @Override
-   public void method604(Class2002 var1, boolean var2) {
+   public void updateSectionStatus(SectionPos var1, boolean var2) {
    }
 }

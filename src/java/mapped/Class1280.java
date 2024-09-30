@@ -4,6 +4,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import it.unimi.dsi.fastutil.objects.ObjectListIterator;
 import net.minecraft.client.Minecraft;
+import net.minecraft.stats.Stats;
 
 import java.util.Comparator;
 

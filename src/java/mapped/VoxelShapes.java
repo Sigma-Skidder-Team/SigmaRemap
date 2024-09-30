@@ -41,7 +41,7 @@ public final class VoxelShapes {
       new Class7937(0, 0, 0), new DoubleArrayList(new double[]{0.0}), new DoubleArrayList(new double[]{0.0}), new DoubleArrayList(new double[]{0.0})
    );
 
-   public static VoxelShape method27425() {
+   public static VoxelShape empty() {
       return field34464;
    }
 
@@ -59,7 +59,7 @@ public final class VoxelShapes {
       int var5 = method27429(var0.minZ, var0.maxZ);
       if (var3 >= 0 && var4 >= 0 && var5 >= 0) {
          if (var3 == 0 && var4 == 0 && var5 == 0) {
-            return !var0.method19674(0.5, 0.5, 0.5) ? method27425() : method27426();
+            return !var0.method19674(0.5, 0.5, 0.5) ? empty() : method27426();
          } else {
             int var6 = 1 << var3;
             int var7 = 1 << var4;
@@ -129,13 +129,13 @@ public final class VoxelShapes {
    public static VoxelShape method27434(VoxelShape var0, VoxelShape var1, IBooleanFunction var2) {
       if (!var2.method36569(false, false)) {
          if (var0 == var1) {
-            return !var2.method36569(true, true) ? method27425() : var0;
+            return !var2.method36569(true, true) ? empty() : var0;
          } else {
             boolean var5 = var2.method36569(true, false);
             boolean var6 = var2.method36569(false, true);
             if (!var0.isEmpty()) {
                if (var1.isEmpty()) {
-                  return !var5 ? method27425() : var0;
+                  return !var5 ? empty() : var0;
                } else {
                   Class56 var7 = method27445(1, var0.method19511(Direction.Axis.X), var1.method19511(Direction.Axis.X), var5, var6);
                   Class56 var8 = method27445(var7.method194().size() - 1, var0.method19511(Direction.Axis.Y), var1.method19511(Direction.Axis.Y), var5, var6);
@@ -152,7 +152,7 @@ public final class VoxelShapes {
                      : new Class6409(var10, var7.method194(), var8.method194(), var9.method194()));
                }
             } else {
-               return !var6 ? method27425() : var1;
+               return !var6 ? empty() : var1;
             }
          }
       } else {
@@ -327,24 +327,24 @@ public final class VoxelShapes {
             var6 = var0.field28033.method26732(var4) - 1;
          }
 
-         return (VoxelShape)(var5 ? new Class6407(var0, var4, var6) : method27425());
+         return (VoxelShape)(var5 ? new Class6407(var0, var4, var6) : empty());
       } else {
          return method27426();
       }
    }
 
-   public static boolean method27443(VoxelShape var0, VoxelShape var1, Direction var2) {
+   public static boolean doAdjacentCubeSidesFillSquare(VoxelShape var0, VoxelShape var1, Direction var2) {
       if (var0 != method27426() && var1 != method27426()) {
          Direction.Axis var5 = var2.getAxis();
          Direction.AxisDirection var6 = var2.getAxisDirection();
          VoxelShape var7 = var6 != Direction.AxisDirection.POSITIVE ? var1 : var0;
          VoxelShape var8 = var6 != Direction.AxisDirection.POSITIVE ? var0 : var1;
          if (!DoubleMath.fuzzyEquals(var7.getEnd(var5), 1.0, 1.0E-7)) {
-            var7 = method27425();
+            var7 = empty();
          }
 
          if (!DoubleMath.fuzzyEquals(var8.getStart(var5), 0.0, 1.0E-7)) {
-            var8 = method27425();
+            var8 = empty();
          }
 
          return ! compare(

@@ -341,15 +341,15 @@ public class Class1057 extends Class1056 implements Class1008 {
    }
 
    @Override
-   public boolean attackEntityFrom(DamageSource var1, float var2) {
+   public boolean attackEntityFrom(DamageSource source, float var2) {
       if (this.method4847()) {
-         Entity var5 = var1.getImmediateSource();
+         Entity var5 = source.getImmediateSource();
          if (var5 instanceof AbstractArrowEntity) {
             return false;
          }
       }
 
-      if (!super.attackEntityFrom(var1, var2)) {
+      if (!super.attackEntityFrom(source, var2)) {
          return false;
       } else {
          if ((double)this.getHealth() < (double)this.method3075() * 0.5 && this.rand.nextInt(4) == 0) {

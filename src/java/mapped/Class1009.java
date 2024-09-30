@@ -8,10 +8,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.Difficulty;
-import net.minecraft.world.IWorld;
-import net.minecraft.world.IWorldReader;
-import net.minecraft.world.World;
+import net.minecraft.world.*;
 
 import java.util.Random;
 import java.util.function.Predicate;
@@ -57,8 +54,8 @@ public abstract class Class1009 extends Class1046 implements Class1008 {
    }
 
    @Override
-   public boolean attackEntityFrom(DamageSource var1, float var2) {
-      return !this.isInvulnerableTo(var1) ? super.attackEntityFrom(var1, var2) : false;
+   public boolean attackEntityFrom(DamageSource source, float var2) {
+      return !this.isInvulnerableTo(source) ? super.attackEntityFrom(source, var2) : false;
    }
 
    @Override

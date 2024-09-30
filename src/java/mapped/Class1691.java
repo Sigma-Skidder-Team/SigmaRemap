@@ -21,10 +21,7 @@ import net.minecraft.particles.IParticleData;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.SoundEvent;
-import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.ChunkPos;
-import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.*;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.ITickList;
 import net.minecraft.world.biome.Biome;
@@ -375,7 +372,7 @@ public class Class1691 implements ISeedReader {
    }
 
    @Override
-   public Stream<? extends StructureStart<?>> method6969(Class2002 var1, Structure<?> var2) {
+   public Stream<? extends StructureStart<?>> method6969(SectionPos var1, Structure<?> var2) {
       return this.field9215.method24340(var1, var2);
    }
 }

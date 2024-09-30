@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.stats.Stats;
 
 public class Class5868 extends Slot {
    private static String[] field25641;

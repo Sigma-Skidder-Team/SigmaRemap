@@ -1,5 +1,8 @@
-package mapped;
+package net.minecraft.stats;
 
+import mapped.Class49;
+import mapped.Class8762;
+import mapped.Item;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.ResourceLocation;
@@ -41,7 +44,7 @@ public class Stats {
    public static final ResourceLocation field40128 = method32294("damage_dealt_absorbed", Class8762.field39448);
    public static final ResourceLocation field40129 = method32294("damage_dealt_resisted", Class8762.field39448);
    public static final ResourceLocation field40130 = method32294("damage_taken", Class8762.field39448);
-   public static final ResourceLocation field40131 = method32294("damage_blocked_by_shield", Class8762.field39448);
+   public static final ResourceLocation DAMAGE_BLOCKED_BY_SHIELD = method32294("damage_blocked_by_shield", Class8762.field39448);
    public static final ResourceLocation field40132 = method32294("damage_absorbed", Class8762.field39448);
    public static final ResourceLocation field40133 = method32294("damage_resisted", Class8762.field39448);
    public static final ResourceLocation field40134 = method32294("deaths", Class8762.field39447);

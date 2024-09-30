@@ -160,10 +160,10 @@ public class Class4454 extends Class4441<Block> {
       this.method14014(BlockTags.field32778)
          .method31559(BlockTags.field32769)
          .method31560(
-            Blocks.field36395,
-            Blocks.field36396,
-            Blocks.field36397,
-            Blocks.field36398,
+            Blocks.GRASS_BLOCK,
+            Blocks.DIRT,
+            Blocks.COARSE_DIRT,
+            Blocks.PODZOL,
             Blocks.SAND,
             Blocks.RED_SAND,
             Blocks.GRAVEL,
@@ -367,7 +367,7 @@ public class Class4454 extends Class4441<Block> {
       this.method14014(BlockTags.field32783)
          .method31560(Blocks.field36970, Blocks.field36971, Blocks.field36972, Blocks.field36973, Blocks.field36974);
       this.method14014(BlockTags.field32779).method31560(Blocks.ICE, Blocks.PACKED_ICE, Blocks.field37006, Blocks.field36889);
-      this.method14014(BlockTags.field32780).method31560(Blocks.field36395, Blocks.field36398);
+      this.method14014(BlockTags.field32780).method31560(Blocks.GRASS_BLOCK, Blocks.PODZOL);
       this.method14014(BlockTags.LEAVES)
          .method31560(Blocks.field36449, Blocks.field36446, Blocks.field36447, Blocks.field36451, Blocks.field36450, Blocks.field36448);
       this.method14014(BlockTags.field32781)
@@ -409,10 +409,10 @@ public class Class4454 extends Class4441<Block> {
             Blocks.field37009,
             Blocks.field37008,
             Blocks.GRAVEL,
-            Blocks.field36396,
-            Blocks.field36395,
-            Blocks.field36398,
-            Blocks.field36397,
+            Blocks.DIRT,
+            Blocks.GRASS_BLOCK,
+            Blocks.PODZOL,
+            Blocks.COARSE_DIRT,
             Blocks.MYCELIUM
          );
       this.method14014(BlockTags.field32788)
@@ -607,7 +607,7 @@ public class Class4454 extends Class4441<Block> {
       this.method14014(BlockTags.field32813).method31559(BlockTags.field32812);
       this.method14014(BlockTags.field32814)
          .method31558(Blocks.MYCELIUM)
-         .method31558(Blocks.field36398)
+         .method31558(Blocks.PODZOL)
          .method31558(Blocks.field37083)
          .method31558(Blocks.field37074);
       this.method14014(BlockTags.INFINIBURN_OVERWORLD).method31560(Blocks.NETHERRACK, Blocks.field36890);

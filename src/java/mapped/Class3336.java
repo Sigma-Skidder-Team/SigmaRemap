@@ -97,12 +97,12 @@ public class Class3336 extends Item {
                }
 
                if (var8.getBlock().isIn(BlockTags.field32784)) {
-                  for (int var10 = 0; !var8.method23443(var1, var7) && var10 < 4; var10++) {
+                  for (int var10 = 0; !var8.isValidPosition(var1, var7) && var10 < 4; var10++) {
                      var8 = var8.with(Class3229.field18669, Direction.Plane.HORIZONTAL.method247(field18735));
                   }
                }
 
-               if (var8.method23443(var1, var7)) {
+               if (var8.isValidPosition(var1, var7)) {
                   BlockState var12 = var1.getBlockState(var7);
                   if (var12.isIn(Blocks.WATER) && var1.getFluidState(var7).method23477() == 8) {
                      var1.setBlockState(var7, var8, 3);

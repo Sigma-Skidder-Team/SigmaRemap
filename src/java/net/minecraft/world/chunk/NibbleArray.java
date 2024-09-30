@@ -1,25 +1,25 @@
-package mapped;
+package net.minecraft.world.chunk;
 
 import net.minecraft.client.util.Util;
 
-public class Class6785 {
+public class NibbleArray {
    public byte[] field29578;
 
-   public Class6785() {
+   public NibbleArray() {
    }
 
-   public Class6785(byte[] var1) {
+   public NibbleArray(byte[] var1) {
       this.field29578 = var1;
       if (var1.length != 2048) {
          throw (IllegalArgumentException) Util.pauseDevMode(new IllegalArgumentException("ChunkNibbleArrays should be 2048 bytes not: " + var1.length));
       }
    }
 
-   public Class6785(int var1) {
+   public NibbleArray(int var1) {
       this.field29578 = new byte[var1];
    }
 
-   public int method20670(int var1, int var2, int var3) {
+   public int get(int var1, int var2, int var3) {
       return this.method20672(this.method20668(var1, var2, var3));
    }
 
@@ -69,8 +69,8 @@ public class Class6785 {
       return this.field29578;
    }
 
-   public Class6785 method20676() {
-      return this.field29578 != null ? new Class6785((byte[])this.field29578.clone()) : new Class6785();
+   public NibbleArray method20676() {
+      return this.field29578 != null ? new NibbleArray((byte[])this.field29578.clone()) : new NibbleArray();
    }
 
    @Override

@@ -31,7 +31,7 @@ public class Class2946 extends Class2898<Class4710> {
                   var1.nextInt(var4) - var1.nextInt(var4), var1.nextInt(var5) - var1.nextInt(var5), var1.nextInt(var4) - var1.nextInt(var4)
                );
                BlockState var13 = var3.field22343.method20424(var1, var12);
-               if (var0.method7007(var12) && var12.getY() > 0 && var13.method23443(var0, var12)) {
+               if (var0.method7007(var12) && var12.getY() > 0 && var13.isValidPosition(var0, var12)) {
                   var0.setBlockState(var12, var13, 2);
                   var10++;
                }

@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.BushBlock;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItemUseContext;
@@ -21,7 +22,7 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
-public class Class3456 extends Class3194 {
+public class Class3456 extends BushBlock {
    private static String[] field18470;
    public static final EnumProperty<DoubleBlockHalf> field19276 = BlockStateProperties.DOUBLE_BLOCK_HALF;
 
@@ -36,7 +37,7 @@ public class Class3456 extends Class3194 {
       if (var2.getAxis() != Direction.Axis.Y
          || var9 == DoubleBlockHalf.field210 != (var2 == Direction.UP)
          || var3.isIn(this) && var3.<DoubleBlockHalf>get(field19276) != var9) {
-         return var9 == DoubleBlockHalf.field210 && var2 == Direction.DOWN && !var1.method23443(var4, var5)
+         return var9 == DoubleBlockHalf.field210 && var2 == Direction.DOWN && !var1.isValidPosition(var4, var5)
             ? Blocks.AIR.getDefaultState()
             : super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
       } else {
@@ -57,9 +58,9 @@ public class Class3456 extends Class3194 {
    }
 
    @Override
-   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
+   public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
       if (var1.<DoubleBlockHalf>get(field19276) != DoubleBlockHalf.field209) {
-         return super.method11492(var1, var2, var3);
+         return super.isValidPosition(var1, var2, var3);
       } else {
          BlockState var6 = var2.getBlockState(var3.down());
          return var6.isIn(this) && var6.<DoubleBlockHalf>get(field19276) == DoubleBlockHalf.field210;

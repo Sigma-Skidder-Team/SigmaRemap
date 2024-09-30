@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.BushBlock;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
@@ -13,7 +14,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-public class Class3479 extends Class3194 implements Class3196 {
+public class Class3479 extends BushBlock implements Class3196 {
    private static String[] field18470;
    public static final VoxelShape field19332 = Block.makeCuboidShape(5.0, 0.0, 5.0, 11.0, 6.0, 11.0);
 
@@ -43,29 +44,29 @@ public class Class3479 extends Class3194 implements Class3196 {
          BlockPos var11 = var3.method8336(var4.nextInt(3) - 1, var4.nextInt(2) - var4.nextInt(2), var4.nextInt(3) - 1);
 
          for (int var12 = 0; var12 < 4; var12++) {
-            if (var2.method7007(var11) && var1.method23443(var2, var11)) {
+            if (var2.method7007(var11) && var1.isValidPosition(var2, var11)) {
                var3 = var11;
             }
 
             var11 = var3.method8336(var4.nextInt(3) - 1, var4.nextInt(2) - var4.nextInt(2), var4.nextInt(3) - 1);
          }
 
-         if (var2.method7007(var11) && var1.method23443(var2, var11)) {
+         if (var2.method7007(var11) && var1.isValidPosition(var2, var11)) {
             var2.setBlockState(var11, var1, 2);
          }
       }
    }
 
    @Override
-   public boolean method11490(BlockState var1, IBlockReader var2, BlockPos var3) {
-      return var1.method23409(var2, var3);
+   public boolean isValidGround(BlockState state, IBlockReader var2, BlockPos var3) {
+      return state.method23409(var2, var3);
    }
 
    @Override
-   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
+   public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
       BlockPos var6 = var3.down();
       BlockState var7 = var2.getBlockState(var6);
-      return var7.isIn(BlockTags.field32814) ? true : var2.method7021(var3, 0) < 13 && this.method11490(var7, var2, var6);
+      return var7.isIn(BlockTags.field32814) ? true : var2.method7021(var3, 0) < 13 && this.isValidGround(var7, var2, var6);
    }
 
    public boolean method12174(ServerWorld var1, BlockPos var2, BlockState var3, Random var4) {

@@ -32,7 +32,7 @@ public class Class3406 extends Block implements Class3405 {
    }
 
    @Override
-   public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
+   public void onEntityCollision(BlockState var1, World var2, BlockPos var3, Entity var4) {
       BlockState var7 = var2.getBlockState(var3.up());
       if (!var7.isAir()) {
          var4.onEnterBubbleColumnWithAirAbove(var1.<Boolean>get(field19084));
@@ -127,7 +127,7 @@ public class Class3406 extends Block implements Class3405 {
 
    @Override
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
-      if (var1.method23443(var4, var5)) {
+      if (var1.isValidPosition(var4, var5)) {
          if (var2 != Direction.DOWN) {
             if (var2 == Direction.UP && !var3.isIn(Blocks.field37013) && method12046(var4, var6)) {
                var4.method6860().scheduleTick(var5, this, 5);
@@ -144,14 +144,14 @@ public class Class3406 extends Block implements Class3405 {
    }
 
    @Override
-   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
+   public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
       BlockState var6 = var2.getBlockState(var3.down());
       return var6.isIn(Blocks.field37013) || var6.isIn(Blocks.field36890) || var6.isIn(Blocks.SOUL_SAND);
    }
 
    @Override
    public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
-      return VoxelShapes.method27425();
+      return VoxelShapes.empty();
    }
 
    @Override

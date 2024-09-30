@@ -33,7 +33,7 @@ public class Class1675 extends Chunk {
 
    @Override
    public BlockState getBlockState(BlockPos var1) {
-      return Blocks.field37011.getDefaultState();
+      return Blocks.VOID_AIR.getDefaultState();
    }
 
    @Nullable

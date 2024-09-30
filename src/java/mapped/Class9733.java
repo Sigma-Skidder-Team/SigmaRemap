@@ -221,8 +221,8 @@ public class Class9733 {
       Class9733 var4 = new Class9733(var3, var0);
       var4.field45448 = () -> var0.getOrThrow(Biomes.PLAINS);
       var4.method38129().add(new Class9537(1, Blocks.BEDROCK));
-      var4.method38129().add(new Class9537(2, Blocks.field36396));
-      var4.method38129().add(new Class9537(1, Blocks.field36395));
+      var4.method38129().add(new Class9537(2, Blocks.DIRT));
+      var4.method38129().add(new Class9537(1, Blocks.GRASS_BLOCK));
       var4.method38131();
       return var4;
    }

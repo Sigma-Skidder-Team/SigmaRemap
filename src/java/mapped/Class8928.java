@@ -19,7 +19,7 @@ public class Class8928 {
       RenderType var3 = RenderType.method14343();
       var0.put(Blocks.TRIPWIRE, var3);
       RenderType var4 = RenderType.method14301();
-      var0.put(Blocks.field36395, var4);
+      var0.put(Blocks.GRASS_BLOCK, var4);
       var0.put(Blocks.IRON_BARS, var4);
       var0.put(Blocks.GLASS_PANE, var4);
       var0.put(Blocks.TRIPWIRE_HOOK, var4);

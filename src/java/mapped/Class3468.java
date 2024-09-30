@@ -42,13 +42,13 @@ public abstract class Class3468 extends Block {
 
    @Override
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
-      return var2 == Direction.DOWN && !var1.method23443(var4, var5)
+      return var2 == Direction.DOWN && !var1.isValidPosition(var4, var5)
          ? Blocks.AIR.getDefaultState()
          : super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
    }
 
    @Override
-   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
+   public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
       BlockPos var6 = var3.down();
       return method11547(var2, var6) || method11548(var2, var6, Direction.UP);
    }
@@ -62,7 +62,7 @@ public abstract class Class3468 extends Block {
    }
 
    @Override
-   public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
+   public void onEntityCollision(BlockState var1, World var2, BlockPos var3, Entity var4) {
       if (!var2.isRemote) {
          int var7 = this.method12158(var1);
          if (var7 == 0) {

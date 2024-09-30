@@ -268,8 +268,8 @@ public class Class1094 extends Class1018 {
    }
 
    @Override
-   public boolean attackEntityFrom(DamageSource var1, float var2) {
-      return !this.isInvulnerableTo(var1) ? super.attackEntityFrom(var1, var2) : false;
+   public boolean attackEntityFrom(DamageSource source, float var2) {
+      return !this.isInvulnerableTo(source) ? super.attackEntityFrom(source, var2) : false;
    }
 
    private boolean method5113(Item var1) {
@@ -345,7 +345,7 @@ public class Class1094 extends Class1018 {
 
    public static boolean method5117(EntityType<Class1094> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
       BlockState var7 = var1.getBlockState(var3.down());
-      return (var7.isIn(Blocks.field36395) || var7.isIn(Blocks.SNOW) || var7.isIn(Blocks.SAND))
+      return (var7.isIn(Blocks.GRASS_BLOCK) || var7.isIn(Blocks.SNOW) || var7.isIn(Blocks.SAND))
          && var1.method7021(var3, 0) > 8;
    }
 

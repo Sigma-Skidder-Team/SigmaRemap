@@ -1,13 +1,15 @@
 package mapped;
 
-public class Class6784 extends Class6785 {
+import net.minecraft.world.chunk.NibbleArray;
+
+public class Class6784 extends NibbleArray {
    private static String[] field29577;
 
    public Class6784() {
       super(128);
    }
 
-   public Class6784(Class6785 var1, int var2) {
+   public Class6784(NibbleArray var1, int var2) {
       super(128);
       System.arraycopy(var1.method20669(), var2 * 128, this.field29578, 0, 128);
    }

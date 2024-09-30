@@ -249,7 +249,7 @@ public class Class3222 extends Block {
    }
 
    @Override
-   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
+   public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
       BlockPos var6 = var3.down();
       BlockState var7 = var2.getBlockState(var6);
       return this.method11621(var2, var6, var7);
@@ -361,7 +361,7 @@ public class Class3222 extends Block {
    @Override
    public void method11506(BlockState var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       if (!var2.isRemote) {
-         if (!var1.method23443(var2, var3)) {
+         if (!var1.isValidPosition(var2, var3)) {
             method11554(var1, var2, var3);
             var2.removeBlock(var3, false);
          } else {

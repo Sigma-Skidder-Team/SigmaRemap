@@ -12,12 +12,12 @@ public class Class8561<T> {
    private final long field38479;
    public static final Class8561<Class2341> field38480 = method30544("start", (var0, var1) -> 0);
    public static final Class8561<Class2341> field38481 = method30544("dragon", (var0, var1) -> 0);
-   public static final Class8561<ChunkPos> field38482 = method30544("player", Comparator.<ChunkPos>comparingLong(ChunkPos::method24352));
-   public static final Class8561<ChunkPos> field38483 = method30544("forced", Comparator.<ChunkPos>comparingLong(ChunkPos::method24352));
-   public static final Class8561<ChunkPos> field38484 = method30544("light", Comparator.<ChunkPos>comparingLong(ChunkPos::method24352));
+   public static final Class8561<ChunkPos> field38482 = method30544("player", Comparator.<ChunkPos>comparingLong(ChunkPos::asLong));
+   public static final Class8561<ChunkPos> field38483 = method30544("forced", Comparator.<ChunkPos>comparingLong(ChunkPos::asLong));
+   public static final Class8561<ChunkPos> field38484 = method30544("light", Comparator.<ChunkPos>comparingLong(ChunkPos::asLong));
    public static final Class8561<BlockPos> field38485 = method30545("portal", Vector3i::compareTo, 300);
    public static final Class8561<Integer> field38486 = method30545("post_teleport", Integer::compareTo, 5);
-   public static final Class8561<ChunkPos> field38487 = method30545("unknown", Comparator.<ChunkPos>comparingLong(ChunkPos::method24352), 1);
+   public static final Class8561<ChunkPos> field38487 = method30545("unknown", Comparator.<ChunkPos>comparingLong(ChunkPos::asLong), 1);
 
    public static <T> Class8561<T> method30544(String var0, Comparator<T> var1) {
       return new Class8561<T>(var0, var1, 0L);

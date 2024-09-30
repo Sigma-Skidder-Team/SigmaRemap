@@ -39,7 +39,7 @@ public class Class3431 extends Class3429 {
    }
 
    @Override
-   public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
+   public void onEntityCollision(BlockState var1, World var2, BlockPos var3, Entity var4) {
       if (!var2.isRemote && !var1.<Boolean>get(field19194)) {
          this.method12094(var2, var3, var1);
       }
@@ -67,7 +67,7 @@ public class Class3431 extends Class3429 {
    }
 
    private void method12094(World var1, BlockPos var2, BlockState var3) {
-      if (this.method11492(var3, var1, var2)) {
+      if (this.isValidPosition(var3, var1, var2)) {
          boolean var6 = var3.<Boolean>get(field19194);
          boolean var7 = false;
          List var8 = this.<AbstractMinecartEntity>method12096(var1, var2, AbstractMinecartEntity.class, (Predicate<Entity>)null);

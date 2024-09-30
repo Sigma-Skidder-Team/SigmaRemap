@@ -31,11 +31,11 @@ public class Class3422 extends Block {
 
    @Override
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
-      return var1.method23443(var4, var5) ? super.updatePostPlacement(var1, var2, var3, var4, var5, var6) : Blocks.AIR.getDefaultState();
+      return var1.isValidPosition(var4, var5) ? super.updatePostPlacement(var1, var2, var3, var4, var5, var6) : Blocks.AIR.getDefaultState();
    }
 
    @Override
-   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
+   public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
       return !var2.method7007(var3.down());
    }
 }

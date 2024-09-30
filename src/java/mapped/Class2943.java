@@ -5,7 +5,9 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.SectionPos;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.LightType;
 import net.minecraft.world.biome.Biome;
 
 import java.util.Random;
@@ -26,7 +28,7 @@ public class Class2943 extends Class2898<Class4705> {
          return false;
       } else {
          var4 = var4.method8340(4);
-         if (var1.method6969(Class2002.method8390(var4), Structure.field18073).findAny().isPresent()) {
+         if (var1.method6969(SectionPos.method8390(var4), Structure.field18073).findAny().isPresent()) {
             return false;
          } else {
             boolean[] var8 = new boolean[2048];
@@ -100,7 +102,7 @@ public class Class2943 extends Class2898<Class4705> {
                            && var1.getLightFor(LightType.SKY, var4.method8336(var41, var49, var45)) > 0) {
                            Biome var55 = var1.getBiome(var52);
                            if (!var55.method32507().method24283().method28934().isIn(Blocks.MYCELIUM)) {
-                              var1.setBlockState(var52, Blocks.field36395.getDefaultState(), 2);
+                              var1.setBlockState(var52, Blocks.GRASS_BLOCK.getDefaultState(), 2);
                            } else {
                               var1.setBlockState(var52, Blocks.MYCELIUM.getDefaultState(), 2);
                            }

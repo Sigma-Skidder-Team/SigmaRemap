@@ -301,12 +301,12 @@ public class Class1010 extends Class1009 implements IAngerable {
    }
 
    @Override
-   public boolean attackEntityFrom(DamageSource var1, float var2) {
-      if (this.isInvulnerableTo(var1)) {
+   public boolean attackEntityFrom(DamageSource source, float var2) {
+      if (this.isInvulnerableTo(source)) {
          return false;
-      } else if (!(var1 instanceof Class8653)) {
-         boolean var6 = super.attackEntityFrom(var1, var2);
-         if (!this.world.isRemote() && !(var1.getTrueSource() instanceof LivingEntity) && this.rand.nextInt(10) != 0) {
+      } else if (!(source instanceof Class8653)) {
+         boolean var6 = super.attackEntityFrom(source, var2);
+         if (!this.world.isRemote() && !(source.getTrueSource() instanceof LivingEntity) && this.rand.nextInt(10) != 0) {
             this.method4353();
          }
 

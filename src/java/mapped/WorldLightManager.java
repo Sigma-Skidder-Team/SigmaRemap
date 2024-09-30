@@ -2,114 +2,126 @@ package mapped;
 
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.SectionPos;
+import net.minecraft.world.LightType;
+import net.minecraft.world.chunk.IChunkLightProvider;
+import net.minecraft.world.chunk.NibbleArray;
+import net.minecraft.world.lighting.IWorldLightListener;
+import net.minecraft.world.lighting.LightEngine;
 
 public class WorldLightManager implements Class197 {
-   private final Class200<?, ?> field741;
-   private final Class200<?, ?> field742;
+   private final LightEngine<?, ?> blockLight;
+   private final LightEngine<?, ?> skyLight;
 
-   public WorldLightManager(Class1704 var1, boolean var2, boolean var3) {
-      this.field741 = !var2 ? null : new Class201(var1);
-      this.field742 = !var3 ? null : new Class212(var1);
+   public WorldLightManager(IChunkLightProvider var1, boolean var2, boolean var3) {
+      this.blockLight = !var2 ? null : new Class201(var1);
+      this.skyLight = !var3 ? null : new Class212(var1);
    }
 
    public void checkBlock(BlockPos var1) {
-      if (this.field741 != null) {
-         this.field741.method660(var1);
+      if (this.blockLight != null) {
+         this.blockLight.checkLight(var1);
       }
 
-      if (this.field742 != null) {
-         this.field742.method660(var1);
-      }
-   }
-
-   public void method601(BlockPos var1, int var2) {
-      if (this.field741 != null) {
-         this.field741.method661(var1, var2);
+      if (this.skyLight != null) {
+         this.skyLight.checkLight(var1);
       }
    }
 
-   public boolean method637() {
-      return this.field742 != null && this.field742.method656() ? true : this.field741 != null && this.field741.method656();
+   public void onBlockEmissionIncrease(BlockPos var1, int var2) {
+      if (this.blockLight != null) {
+         this.blockLight.func_215623_a(var1, var2);
+      }
    }
 
-   public int tick(int var1, boolean var2, boolean var3) {
-      if (this.field741 != null && this.field742 != null) {
-         int var6 = var1 / 2;
-         int var7 = this.field741.method657(var6, var2, var3);
-         int var8 = var1 - var6 + var7;
-         int var9 = this.field742.method657(var8, var2, var3);
-         return var7 == 0 && var9 > 0 ? this.field741.method657(var9, var2, var3) : var9;
-      } else if (this.field741 == null) {
-         return this.field742 == null ? var1 : this.field742.method657(var1, var2, var3);
+   public boolean hasLightWork() {
+      if (this.skyLight != null && this.skyLight.func_215619_a())
+      {
+         return true;
+      }
+      else
+      {
+         return this.blockLight != null && this.blockLight.func_215619_a();
+      }
+   }
+
+   public int tick(int toUpdateCount, boolean updateSkyLight, boolean updateBlockLight) {
+      if (this.blockLight != null && this.skyLight != null) {
+         int i = toUpdateCount / 2;
+         int j = this.blockLight.tick(i, updateSkyLight, updateBlockLight);
+         int k = toUpdateCount - i + j;
+         int l = this.skyLight.tick(k, updateSkyLight, updateBlockLight);
+         return j == 0 && l > 0 ? this.blockLight.tick(l, updateSkyLight, updateBlockLight) : l;
+      } else if (this.blockLight == null) {
+         return this.skyLight == null ? toUpdateCount : this.skyLight.tick(toUpdateCount, updateSkyLight, updateBlockLight);
       } else {
-         return this.field741.method657(var1, var2, var3);
+         return this.blockLight.tick(toUpdateCount, updateSkyLight, updateBlockLight);
       }
    }
 
-   @Override
-   public void method604(Class2002 var1, boolean var2) {
-      if (this.field741 != null) {
-         this.field741.method604(var1, var2);
+   public void updateSectionStatus(SectionPos var1, boolean var2) {
+      if (this.blockLight != null) {
+         this.blockLight.updateSectionStatus(var1, var2);
       }
 
-      if (this.field742 != null) {
-         this.field742.method604(var1, var2);
+      if (this.skyLight != null) {
+         this.skyLight.updateSectionStatus(var1, var2);
       }
    }
 
    public void method605(ChunkPos var1, boolean var2) {
-      if (this.field741 != null) {
-         this.field741.method662(var1, var2);
+      if (this.blockLight != null) {
+         this.blockLight.func_215620_a(var1, var2);
       }
 
-      if (this.field742 != null) {
-         this.field742.method662(var1, var2);
+      if (this.skyLight != null) {
+         this.skyLight.func_215620_a(var1, var2);
       }
    }
 
-   public Class198 getLightEngine(LightType var1) {
+   public IWorldLightListener getLightEngine(LightType var1) {
       if (var1 != LightType.BLOCK) {
-         return (Class198)(this.field742 != null ? this.field742 : Class199.field743);
+         return (IWorldLightListener)(this.skyLight != null ? this.skyLight : Class199.field743);
       } else {
-         return (Class198)(this.field741 != null ? this.field741 : Class199.field743);
+         return (IWorldLightListener)(this.blockLight != null ? this.blockLight : Class199.field743);
       }
    }
 
-   public String method639(LightType var1, Class2002 var2) {
+   public String method639(LightType var1, SectionPos var2) {
       if (var1 != LightType.BLOCK) {
-         if (this.field742 != null) {
-            return this.field742.method659(var2.method8425());
+         if (this.skyLight != null) {
+            return this.skyLight.method659(var2.asLong());
          }
-      } else if (this.field741 != null) {
-         return this.field741.method659(var2.method8425());
+      } else if (this.blockLight != null) {
+         return this.blockLight.method659(var2.asLong());
       }
 
       return "n/a";
    }
 
-   public void method606(LightType var1, Class2002 var2, Class6785 var3, boolean var4) {
+   public void method606(LightType var1, SectionPos var2, NibbleArray var3, boolean var4) {
       if (var1 != LightType.BLOCK) {
-         if (this.field742 != null) {
-            this.field742.method658(var2.method8425(), var3, var4);
+         if (this.skyLight != null) {
+            this.skyLight.method658(var2.asLong(), var3, var4);
          }
-      } else if (this.field741 != null) {
-         this.field741.method658(var2.method8425(), var3, var4);
+      } else if (this.blockLight != null) {
+         this.blockLight.method658(var2.asLong(), var3, var4);
       }
    }
 
    public void method609(ChunkPos var1, boolean var2) {
-      if (this.field741 != null) {
-         this.field741.method663(var1, var2);
+      if (this.blockLight != null) {
+         this.blockLight.retainChunkData(var1, var2);
       }
 
-      if (this.field742 != null) {
-         this.field742.method663(var1, var2);
+      if (this.skyLight != null) {
+         this.skyLight.retainChunkData(var1, var2);
       }
    }
 
    public int method640(BlockPos var1, int var2) {
-      int var5 = this.field742 != null ? this.field742.method643(var1) - var2 : 0;
-      int var6 = this.field741 != null ? this.field741.method643(var1) : 0;
+      int var5 = this.skyLight != null ? this.skyLight.method643(var1) - var2 : 0;
+      int var6 = this.blockLight != null ? this.blockLight.method643(var1) : 0;
       return Math.max(var6, var5);
    }
 }

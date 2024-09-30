@@ -18,6 +18,7 @@ import javax.annotation.Nullable;
 
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.SectionPos;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -134,21 +135,21 @@ public abstract class Class9307 {
    }
 
    public <T> void method35128(Class8561<T> var1, ChunkPos var2, int var3, T var4) {
-      this.method35126(var2.method24352(), new Class2005(var1, var3, var4));
+      this.method35126(var2.asLong(), new Class2005(var1, var3, var4));
    }
 
    public <T> void method35129(Class8561<T> var1, ChunkPos var2, int var3, T var4) {
       Class2005 var7 = new Class2005(var1, var3, var4);
-      this.method35127(var2.method24352(), var7);
+      this.method35127(var2.asLong(), var7);
    }
 
    public <T> void method35130(Class8561<T> var1, ChunkPos var2, int var3, T var4) {
-      this.method35126(var2.method24352(), new Class2005(var1, 33 - var3, var4));
+      this.method35126(var2.asLong(), new Class2005(var1, 33 - var3, var4));
    }
 
    public <T> void method35131(Class8561<T> var1, ChunkPos var2, int var3, T var4) {
       Class2005 var7 = new Class2005(var1, 33 - var3, var4);
-      this.method35127(var2.method24352(), var7);
+      this.method35127(var2.asLong(), var7);
    }
 
    private Class52<Class2005<?>> method35132(long var1) {
@@ -158,21 +159,21 @@ public abstract class Class9307 {
    public void method35133(ChunkPos var1, boolean var2) {
       Class2005 var5 = new Class2005<ChunkPos>(Class8561.field38483, 31, var1);
       if (!var2) {
-         this.method35127(var1.method24352(), var5);
+         this.method35127(var1.asLong(), var5);
       } else {
-         this.method35126(var1.method24352(), var5);
+         this.method35126(var1.asLong(), var5);
       }
    }
 
-   public void method35134(Class2002 var1, ServerPlayerEntity var2) {
-      long var5 = var1.method8423().method24352();
+   public void method35134(SectionPos var1, ServerPlayerEntity var2) {
+      long var5 = var1.method8423().asLong();
       ((ObjectSet)this.field43206.computeIfAbsent(var5, var0 -> new ObjectOpenHashSet())).add(var2);
       this.field43209.method680(var5, 0, true);
       this.field43210.method680(var5, 0, true);
    }
 
-   public void method35135(Class2002 var1, ServerPlayerEntity var2) {
-      long var5 = var1.method8423().method24352();
+   public void method35135(SectionPos var1, ServerPlayerEntity var2) {
+      long var5 = var1.method8423().asLong();
       ObjectSet var7 = (ObjectSet)this.field43206.get(var5);
       var7.remove(var2);
       if (var7.isEmpty()) {

@@ -179,7 +179,7 @@ public class EnchantmentHelper {
       return method26322(Enchantments.RESPIRATION, var0);
    }
 
-   public static int method26326(LivingEntity var0) {
+   public static int getDepthStriderModifier(LivingEntity var0) {
       return method26322(Enchantments.DEPTH_STRIDER, var0);
    }
 

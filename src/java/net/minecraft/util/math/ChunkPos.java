@@ -1,6 +1,5 @@
 package net.minecraft.util.math;
 
-import mapped.AbstractSpliterator;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Spliterators;
@@ -29,7 +28,7 @@ public class ChunkPos {
       this.z = (int)(var1 >> 32);
    }
 
-   public long method24352() {
+   public long asLong() {
       return asLong(this.x, this.z);
    }
 
@@ -37,27 +36,28 @@ public class ChunkPos {
       return (long)var0 & 4294967295L | ((long)var1 & 4294967295L) << 32;
    }
 
-   public static int method24354(long var0) {
+   public static int getX(long var0) {
       return (int)(var0 & 4294967295L);
    }
 
-   public static int method24355(long var0) {
+   public static int getZ(long var0) {
       return (int)(var0 >>> 32 & 4294967295L);
    }
 
-   @Override
    public int hashCode() {
-      if (this.cachedHashCode == 0) {
-         int var3 = 1664525 * this.x + 1013904223;
-         int var4 = 1664525 * (this.z ^ -559038737) + 1013904223;
-         this.cachedHashCode = var3 ^ var4;
+      if (this.cachedHashCode != 0)
+      {
          return this.cachedHashCode;
-      } else {
+      }
+      else
+      {
+         int i = 1664525 * this.x + 1013904223;
+         int j = 1664525 * (this.z ^ -559038737) + 1013904223;
+         this.cachedHashCode = i ^ j;
          return this.cachedHashCode;
       }
    }
 
-   @Override
    public boolean equals(Object var1) {
       if (this != var1) {
          if (!(var1 instanceof ChunkPos)) {

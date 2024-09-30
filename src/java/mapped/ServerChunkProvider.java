@@ -11,7 +11,9 @@ import net.minecraft.network.IPacket;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.SectionPos;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.LightType;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.chunk.listener.IChunkStatusListener;
@@ -196,7 +198,7 @@ public class ServerChunkProvider extends Class1702 {
 
    private CompletableFuture<Either<IChunk, Class7022>> method7359(int var1, int var2, ChunkStatus var3, boolean var4) {
       ChunkPos var7 = new ChunkPos(var1, var2);
-      long var8 = var7.method24352();
+      long var8 = var7.asLong();
       int var10 = 33 + ChunkStatus.method34296(var3);
       Class8641 var11 = this.method7354(var8);
       if (var4) {
@@ -222,13 +224,13 @@ public class ServerChunkProvider extends Class1702 {
 
    @Override
    public boolean method7345(int var1, int var2) {
-      Class8641 var5 = this.method7354(new ChunkPos(var1, var2).method24352());
+      Class8641 var5 = this.method7354(new ChunkPos(var1, var2).asLong());
       int var6 = 33 + ChunkStatus.method34296(ChunkStatus.FULL);
       return !this.method7360(var5, var6);
    }
 
    @Override
-   public IBlockReader method7344(int var1, int var2) {
+   public IBlockReader getChunkForLight(int var1, int var2) {
       long var5 = ChunkPos.asLong(var1, var2);
       Class8641 var7 = this.method7354(var5);
       if (var7 != null) {
@@ -252,7 +254,7 @@ public class ServerChunkProvider extends Class1702 {
       }
    }
 
-   public World method7386() {
+   public World getWorld() {
       return this.field9275;
    }
 
@@ -279,7 +281,7 @@ public class ServerChunkProvider extends Class1702 {
 
    @Override
    public boolean method7352(ChunkPos var1) {
-      return this.method7364(var1.method24352(), Class8641::method31041);
+      return this.method7364(var1.asLong(), Class8641::method31041);
    }
 
    @Override
@@ -408,9 +410,9 @@ public class ServerChunkProvider extends Class1702 {
    }
 
    @Override
-   public void method7373(LightType var1, Class2002 var2) {
+   public void method7373(LightType var1, SectionPos var2) {
       this.field9278.execute(() -> {
-         Class8641 var5 = this.method7354(var2.method8423().method24352());
+         Class8641 var5 = this.method7354(var2.method8423().asLong());
          if (var5 != null) {
             var5.method31048(var1, var2.method8411());
          }

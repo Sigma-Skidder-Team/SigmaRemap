@@ -90,20 +90,20 @@ public abstract class Class7377 extends StateHolder<Block, BlockState> {
    }
 
    public boolean method23386(IBlockReader var1, BlockPos var2) {
-      return this.field31577 == null ? this.getBlock().method11493(this.method23457(), var1, var2) : Class6486.method19652(this.field31577);
+      return this.field31577 == null ? this.getBlock().propagatesSkylightDown(this.method23457(), var1, var2) : Class6486.method19652(this.field31577);
    }
 
    public int getOpacity(IBlockReader var1, BlockPos var2) {
       return this.field31577 == null ? this.getBlock().method11996(this.method23457(), var1, var2) : Class6486.method19653(this.field31577);
    }
 
-   public VoxelShape method23388(IBlockReader var1, BlockPos var2, Direction var3) {
+   public VoxelShape getFaceOcclusionShape(IBlockReader var1, BlockPos var2, Direction var3) {
       return this.field31577 != null && Class6486.method19654(this.field31577) != null
          ? Class6486.method19654(this.field31577)[var3.ordinal()]
-         : VoxelShapes.method27442(this.method23389(var1, var2), var3);
+         : VoxelShapes.method27442(this.getRenderShapeTrue(var1, var2), var3);
    }
 
-   public VoxelShape method23389(IBlockReader var1, BlockPos var2) {
+   public VoxelShape getRenderShapeTrue(IBlockReader var1, BlockPos var2) {
       return this.getBlock().method11503(this.method23457(), var1, var2);
    }
 
@@ -188,13 +188,13 @@ public abstract class Class7377 extends StateHolder<Block, BlockState> {
    public boolean method23409(IBlockReader var1, BlockPos var2) {
       if (this.field31577 == null) {
          BlockState var5 = this.method23457();
-         return !var5.method23410() ? false : Block.method11550(var5.method23389(var1, var2));
+         return !var5.isSolid() ? false : Block.method11550(var5.getRenderShapeTrue(var1, var2));
       } else {
          return this.field31577.field28438;
       }
    }
 
-   public boolean method23410() {
+   public boolean isSolid() {
       return this.field31571;
    }
 
@@ -301,7 +301,7 @@ public abstract class Class7377 extends StateHolder<Block, BlockState> {
    }
 
    public void method23432(World var1, BlockPos var2, Entity var3) {
-      this.getBlock().method11523(this.method23457(), var1, var2, var3);
+      this.getBlock().onEntityCollision(this.method23457(), var1, var2, var3);
    }
 
    public void method23433(ServerWorld var1, BlockPos var2, ItemStack var3) {
@@ -344,8 +344,8 @@ public abstract class Class7377 extends StateHolder<Block, BlockState> {
       return this.getBlock().method11650(this.method23457(), var1);
    }
 
-   public boolean method23443(IWorldReader var1, BlockPos var2) {
-      return this.getBlock().method11492(this.method23457(), var1, var2);
+   public boolean isValidPosition(IWorldReader var1, BlockPos var2) {
+      return this.getBlock().isValidPosition(this.method23457(), var1, var2);
    }
 
    public boolean method23444(IBlockReader var1, BlockPos var2) {

@@ -33,7 +33,7 @@ public class Class8572<T> {
    public void method30625(int var1, ChunkPos var2, int var3) {
       if (var1 < field38532) {
          Long2ObjectLinkedOpenHashMap<List<Optional<T>>> var6 = this.field38533.get(var1);
-         List<Optional<T>> var7 = var6.remove(var2.method24352());
+         List<Optional<T>> var7 = var6.remove(var2.asLong());
          if (var1 == this.field38534) {
             while (this.field38534 < field38532 && this.field38533.get(this.field38534).isEmpty()) {
                this.field38534++;
@@ -41,7 +41,7 @@ public class Class8572<T> {
          }
 
          if (var7 != null && !var7.isEmpty()) {
-            this.field38533.get(var3).computeIfAbsent(var2.method24352(), var0 -> Lists.newArrayList()).addAll(var7);
+            this.field38533.get(var3).computeIfAbsent(var2.asLong(), var0 -> Lists.newArrayList()).addAll(var7);
             this.field38534 = Math.min(this.field38534, var3);
          }
       }

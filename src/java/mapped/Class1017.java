@@ -518,14 +518,14 @@ public class Class1017 extends Class1018 implements IAngerable, Class1016 {
    }
 
    @Override
-   public boolean attackEntityFrom(DamageSource var1, float var2) {
-      if (!this.isInvulnerableTo(var1)) {
-         Entity var5 = var1.getTrueSource();
+   public boolean attackEntityFrom(DamageSource source, float var2) {
+      if (!this.isInvulnerableTo(source)) {
+         Entity var5 = source.getTrueSource();
          if (!this.world.isRemote) {
             Class2663.method10871(this.field5698);
          }
 
-         return super.attackEntityFrom(var1, var2);
+         return super.attackEntityFrom(source, var2);
       } else {
          return false;
       }

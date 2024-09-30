@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.BushBlock;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
@@ -19,7 +20,7 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.Random;
 import javax.annotation.Nullable;
 
-public class Class3450 extends Class3194 implements Class3196, Class3449 {
+public class Class3450 extends BushBlock implements Class3196, Class3449 {
    private static String[] field18470;
    public static final VoxelShape field19264 = Block.makeCuboidShape(2.0, 0.0, 2.0, 14.0, 12.0, 14.0);
 
@@ -33,8 +34,8 @@ public class Class3450 extends Class3194 implements Class3196, Class3449 {
    }
 
    @Override
-   public boolean method11490(BlockState var1, IBlockReader var2, BlockPos var3) {
-      return var1.method23454(var2, var3, Direction.UP) && !var1.isIn(Blocks.field36890);
+   public boolean isValidGround(BlockState state, IBlockReader var2, BlockPos var3) {
+      return state.method23454(var2, var3, Direction.UP) && !state.isIn(Blocks.field36890);
    }
 
    @Nullable

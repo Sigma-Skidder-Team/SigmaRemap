@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
@@ -127,7 +128,7 @@ public class Class3292 extends Item {
    public boolean method11841(BlockItemUseContext var1, BlockState var2) {
       PlayerEntity var5 = var1.method18358();
       ISelectionContext var6 = var5 != null ? ISelectionContext.forEntity(var5) : ISelectionContext.method14947();
-      return (!this.method11842() || var2.method23443(var1.getWorld(), var1.getPos())) && var1.getWorld().placedBlockCollides(var2, var1.getPos(), var6);
+      return (!this.method11842() || var2.isValidPosition(var1.getWorld(), var1.getPos())) && var1.getWorld().placedBlockCollides(var2, var1.getPos(), var6);
    }
 
    public boolean method11842() {

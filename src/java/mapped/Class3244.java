@@ -18,6 +18,7 @@ import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraft.stats.Stats;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
@@ -79,12 +80,12 @@ public class Class3244 extends Class3241 implements IWaterLoggable {
    }
 
    @Override
-   public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
+   public void onEntityCollision(BlockState var1, World var2, BlockPos var3, Entity var4) {
       if (!var4.isImmuneToFire() && var1.<Boolean>get(field18698) && var4 instanceof LivingEntity && !EnchantmentHelper.method26332((LivingEntity)var4)) {
          var4.attackEntityFrom(DamageSource.field38992, (float)this.field18704);
       }
 
-      super.method11523(var1, var2, var3, var4);
+      super.onEntityCollision(var1, var2, var3, var4);
    }
 
    @Override

@@ -119,7 +119,7 @@ public class Class3425 extends Block {
    }
 
    @Override
-   public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
+   public void onEntityCollision(BlockState var1, World var2, BlockPos var3, Entity var4) {
       if (!var2.isRemote && !var1.<Boolean>get(field19163)) {
          this.method12081(var2, var3);
       }

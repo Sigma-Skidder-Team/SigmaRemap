@@ -35,7 +35,7 @@ public class Class3221 extends Block {
 
    @Override
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
-      if (var2 == Direction.UP && !var1.method23443(var4, var5)) {
+      if (var2 == Direction.UP && !var1.isValidPosition(var4, var5)) {
          var4.method6860().scheduleTick(var5, this, 1);
       }
 
@@ -43,14 +43,14 @@ public class Class3221 extends Block {
    }
 
    @Override
-   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
+   public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
       BlockState var6 = var2.getBlockState(var3.up());
       return !var6.getMaterial().isSolid() || var6.getBlock() instanceof FenceGateBlock || var6.getBlock() instanceof Class3356;
    }
 
    @Override
    public BlockState getStateForPlacement(BlockItemUseContext var1) {
-      return this.getDefaultState().method23443(var1.getWorld(), var1.getPos()) ? super.getStateForPlacement(var1) : Blocks.field36396.getDefaultState();
+      return this.getDefaultState().isValidPosition(var1.getWorld(), var1.getPos()) ? super.getStateForPlacement(var1) : Blocks.DIRT.getDefaultState();
    }
 
    @Override
@@ -65,7 +65,7 @@ public class Class3221 extends Block {
 
    @Override
    public void tick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
-      if (!var1.method23443(var2, var3)) {
+      if (!var1.isValidPosition(var2, var3)) {
          method11610(var1, var2, var3);
       }
    }
@@ -100,7 +100,7 @@ public class Class3221 extends Block {
    }
 
    public static void method11610(BlockState var0, World var1, BlockPos var2) {
-      var1.setBlockState(var2, method11538(var0, Blocks.field36396.getDefaultState(), var1, var2));
+      var1.setBlockState(var2, method11538(var0, Blocks.DIRT.getDefaultState(), var1, var2));
    }
 
    private static boolean method11611(IBlockReader var0, BlockPos var1) {

@@ -42,6 +42,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
+import net.minecraft.entity.item.BoatEntity;
 import net.minecraft.entity.item.ItemFrameEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -72,6 +73,7 @@ import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.SectionPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.ITextComponent;
@@ -79,9 +81,11 @@ import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.GameType;
+import net.minecraft.world.LightType;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeContainer;
+import net.minecraft.world.chunk.NibbleArray;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -651,7 +655,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
       for (int var8 = 0; var8 < 16; var8++) {
          this.field23273.method6868(var4, var8, var5);
-         var7.method604(Class2002.method8389(var4, var8, var5), true);
+         var7.updateSectionStatus(SectionPos.method8389(var4, var8, var5), true);
       }
 
       var7.method605(new ChunkPos(var4, var5), false);
@@ -2197,7 +2201,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          boolean var13 = (var5 & 1 << var11) != 0;
          boolean var14 = (var6 & 1 << var11) != 0;
          if (var13 || var14) {
-            var3.method606(var4, Class2002.method8389(var1, var12, var2), !var13 ? new Class6785() : new Class6785((byte[])((byte[])var7.next()).clone()), var8);
+            var3.method606(var4, SectionPos.method8389(var1, var12, var2), !var13 ? new NibbleArray() : new NibbleArray((byte[])((byte[])var7.next()).clone()), var8);
             this.field23273.method6868(var1, var12, var2);
          }
       }

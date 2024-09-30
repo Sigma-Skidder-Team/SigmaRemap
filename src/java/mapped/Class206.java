@@ -49,7 +49,7 @@ public class Class206 extends Class205 {
                );
          } else {
             Class9307.method35153(this.field764).method1641(Class1812.method7960(() -> Class9307.method35156(this.field764).execute(() -> {
-                  if (!this.method687(this.method652(var1))) {
+                  if (!this.method687(this.getLevel(var1))) {
                      Class9307.method35154(this.field764).method1641(Class1812.method7962(() -> {
                      }, var1, false));
                   } else {
@@ -70,7 +70,7 @@ public class Class206 extends Class205 {
          while (var3.hasNext()) {
             long var4 = var3.nextLong();
             int var6 = this.field766.get(var4);
-            int var7 = this.method652(var4);
+            int var7 = this.getLevel(var4);
             if (var6 != var7) {
                Class9307.method35155(this.field764).method7965(new ChunkPos(var4), () -> this.field766.get(var4), var7, var3x -> {
                   if (var3x < this.field766.defaultReturnValue()) {

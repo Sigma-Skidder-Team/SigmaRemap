@@ -55,13 +55,13 @@ public class Class1112 extends Class1111 implements Class1008 {
    }
 
    @Override
-   public boolean attackEntityFrom(DamageSource var1, float var2) {
-      if (!this.isInvulnerableTo(var1)) {
-         if (var1.getImmediateSource() instanceof Class899 && var1.getTrueSource() instanceof PlayerEntity) {
-            super.attackEntityFrom(var1, 1000.0F);
+   public boolean attackEntityFrom(DamageSource source, float var2) {
+      if (!this.isInvulnerableTo(source)) {
+         if (source.getImmediateSource() instanceof Class899 && source.getTrueSource() instanceof PlayerEntity) {
+            super.attackEntityFrom(source, 1000.0F);
             return true;
          } else {
-            return super.attackEntityFrom(var1, var2);
+            return super.attackEntityFrom(source, var2);
          }
       } else {
          return false;

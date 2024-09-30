@@ -123,13 +123,13 @@ public class Class3436 extends Class3433 {
 
    @Override
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
-      return var2.getOpposite() == var1.get(field19198) && !var1.method23443(var4, var5)
+      return var2.getOpposite() == var1.get(field19198) && !var1.isValidPosition(var4, var5)
          ? Blocks.AIR.getDefaultState()
          : super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
    }
 
    @Override
-   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
+   public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
       BlockState var6 = var2.getBlockState(var3.offset(var1.<Direction>get(field19198).getOpposite()));
       return this.method12108(var1, var6)
          || var6.isIn(Blocks.MOVING_PISTON) && var6.<Direction>get(field19198) == var1.<Direction>get(field19198);
@@ -137,7 +137,7 @@ public class Class3436 extends Class3433 {
 
    @Override
    public void method11506(BlockState var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
-      if (var1.method23443(var2, var3)) {
+      if (var1.isValidPosition(var2, var3)) {
          BlockPos var9 = var3.offset(var1.<Direction>get(field19198).getOpposite());
          var2.getBlockState(var9).neighborChanged(var2, var9, var4, var5, false);
       }

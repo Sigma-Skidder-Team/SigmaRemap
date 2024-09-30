@@ -25,7 +25,7 @@ public class Class2926 extends Class2898<Class4712> {
          for (int var14 = 0; var14 <= var13; var14++) {
             if (var1.getBlockState(var10).isIn(Blocks.WATER)
                && var1.getBlockState(var10.up()).isIn(Blocks.WATER)
-               && var12.method23443(var1, var10)) {
+               && var12.isValidPosition(var1, var10)) {
                if (var14 != var13) {
                   var1.setBlockState(var10, var12, 2);
                } else {
@@ -34,7 +34,7 @@ public class Class2926 extends Class2898<Class4712> {
                }
             } else if (var14 > 0) {
                BlockPos var15 = var10.down();
-               if (var11.method23443(var1, var15) && !var1.getBlockState(var15.down()).isIn(Blocks.field36961)) {
+               if (var11.isValidPosition(var1, var15) && !var1.getBlockState(var15.down()).isIn(Blocks.field36961)) {
                   var1.setBlockState(var15, var11.with(Class3451.field19267, Integer.valueOf(var3.nextInt(4) + 20)), 2);
                   var8++;
                }

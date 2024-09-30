@@ -131,7 +131,7 @@ public class Class1024 extends Class1025 implements Class1023 {
    @Override
    public float method4339(BlockPos var1, IWorldReader var2) {
       BlockState var5 = var2.getBlockState(var1.down());
-      return !var5.isIn(Blocks.field36395) && !var5.isIn(Blocks.SAND) ? 0.5F - var2.method7009(var1) : 10.0F;
+      return !var5.isIn(Blocks.GRASS_BLOCK) && !var5.isIn(Blocks.SAND) ? 0.5F - var2.method7009(var1) : 10.0F;
    }
 
    @Override

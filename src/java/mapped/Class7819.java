@@ -10,6 +10,7 @@ import java.util.*;
 import java.util.function.Predicate;
 import javax.annotation.Nullable;
 
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;

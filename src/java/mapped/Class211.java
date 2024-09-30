@@ -21,12 +21,12 @@ public final class Class211 extends Class207 {
    }
 
    @Override
-   public int method652(long var1) {
+   public int getLevel(long var1) {
       return this.field793.get(var1);
    }
 
    @Override
-   public void method654(long var1, int var3) {
+   public void setLevel(long var1, int var3) {
       if (var3 <= 6) {
          this.field793.put(var1, (byte)var3);
       } else {
@@ -35,6 +35,6 @@ public final class Class211 extends Class207 {
    }
 
    public void method726() {
-      super.method676(Integer.MAX_VALUE);
+      super.processUpdates(Integer.MAX_VALUE);
    }
 }

@@ -14,6 +14,8 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.SectionPos;
+import net.minecraft.world.LightType;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.ChunkSection;
 import net.minecraft.world.chunk.IChunk;
@@ -128,13 +130,13 @@ public class Class8641 {
    public void method31047(BlockPos var1) {
       Chunk var4 = this.method31043();
       if (var4 != null) {
-         byte var5 = (byte)Class2002.method8396(var1.getY());
+         byte var5 = (byte) SectionPos.toChunk(var1.getY());
          if (this.field38909[var5] == null) {
             this.field38908 = true;
             this.field38909[var5] = new ShortArraySet();
          }
 
-         this.field38909[var5].add(Class2002.method8398(var1));
+         this.field38909[var5].add(SectionPos.method8398(var1));
       }
    }
 
@@ -169,7 +171,7 @@ public class Class8641 {
          for (int var11 = 0; var11 < this.field38909.length; var11++) {
             ShortSet var7 = this.field38909[var11];
             if (var7 != null) {
-               Class2002 var8 = Class2002.method8391(var1.getPos(), var11);
+               SectionPos var8 = SectionPos.method8391(var1.getPos(), var11);
                if (var7.size() != 1) {
                   ChunkSection var9 = var1.getSections()[var8.getY()];
                   SMultiBlockChangePacket var10 = new SMultiBlockChangePacket(var8, var7, var9, this.field38916);

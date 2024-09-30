@@ -289,7 +289,7 @@ public class WitherEntity extends Class1009 implements Class1080, Class1022 {
                         BlockPos var19 = new BlockPos(var16, var17, var18);
                         BlockState var20 = this.world.getBlockState(var19);
                         if (method5002(var20)) {
-                           var30 = this.world.method7180(var19, true, this) || var30;
+                           var30 = this.world.destroyBlock(var19, true, this) || var30;
                         }
                      }
                   }
@@ -418,22 +418,22 @@ public class WitherEntity extends Class1009 implements Class1080, Class1022 {
    }
 
    @Override
-   public boolean attackEntityFrom(DamageSource var1, float var2) {
-      if (this.isInvulnerableTo(var1)) {
+   public boolean attackEntityFrom(DamageSource source, float var2) {
+      if (this.isInvulnerableTo(source)) {
          return false;
-      } else if (var1 == DamageSource.field38999 || var1.getTrueSource() instanceof WitherEntity) {
+      } else if (source == DamageSource.field38999 || source.getTrueSource() instanceof WitherEntity) {
          return false;
-      } else if (this.method5012() > 0 && var1 != DamageSource.field39004) {
+      } else if (this.method5012() > 0 && source != DamageSource.field39004) {
          return false;
       } else {
          if (this.method5016()) {
-            Entity var5 = var1.getImmediateSource();
+            Entity var5 = source.getImmediateSource();
             if (var5 instanceof AbstractArrowEntity) {
                return false;
             }
          }
 
-         Entity var7 = var1.getTrueSource();
+         Entity var7 = source.getTrueSource();
          if (var7 != null && !(var7 instanceof PlayerEntity) && var7 instanceof LivingEntity && ((LivingEntity)var7).getCreatureAttribute() == this.getCreatureAttribute()) {
             return false;
          } else {
@@ -445,7 +445,7 @@ public class WitherEntity extends Class1009 implements Class1080, Class1022 {
                this.field5933[var6] = this.field5933[var6] + 3;
             }
 
-            return super.attackEntityFrom(var1, var2);
+            return super.attackEntityFrom(source, var2);
          }
       }
    }

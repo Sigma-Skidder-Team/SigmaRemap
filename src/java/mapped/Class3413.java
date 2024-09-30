@@ -12,6 +12,7 @@ import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraft.stats.Stats;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvents;
@@ -50,7 +51,7 @@ public class Class3413 extends Block {
    }
 
    @Override
-   public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
+   public void onEntityCollision(BlockState var1, World var2, BlockPos var3, Entity var4) {
       int var7 = var1.<Integer>get(field19100);
       float var8 = (float)var3.getY() + (6.0F + (float)(3 * var7)) / 16.0F;
       if (!var2.isRemote && var4.isBurning() && var7 > 0 && var4.getPosY() <= (double)var8) {

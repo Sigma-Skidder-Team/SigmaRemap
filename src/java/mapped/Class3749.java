@@ -84,7 +84,7 @@ public class Class3749 extends Class3676<Class1042> {
             Block var8 = var7.getBlock();
             Block var9 = var1.getBlockState(this.field19897.down()).getBlock();
             if (var8 instanceof Class3480 && ((Class3480)var8).method12179(var7)) {
-               var1.method7180(this.field19897, true, var2);
+               var1.destroyBlock(this.field19897, true, var2);
             }
 
             if (var7.isAir() && var9 instanceof Class3221 && var2.method4712()) {

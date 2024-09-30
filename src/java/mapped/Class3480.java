@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.BushBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -20,7 +21,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-public class Class3480 extends Class3194 implements Class3196 {
+public class Class3480 extends BushBlock implements Class3196 {
    private static String[] field19333;
    public static final IntegerProperty field19334 = BlockStateProperties.field39742;
    private static final VoxelShape[] field19335 = new VoxelShape[]{
@@ -45,8 +46,8 @@ public class Class3480 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public boolean method11490(BlockState var1, IBlockReader var2, BlockPos var3) {
-      return var1.isIn(Blocks.FARMLAND);
+   public boolean isValidGround(BlockState state, IBlockReader var2, BlockPos var3) {
+      return state.isIn(Blocks.FARMLAND);
    }
 
    public IntegerProperty method12175() {
@@ -146,17 +147,17 @@ public class Class3480 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
-      return (var2.method7021(var3, 0) >= 8 || var2.method7022(var3)) && super.method11492(var1, var2, var3);
+   public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
+      return (var2.method7021(var3, 0) >= 8 || var2.method7022(var3)) && super.isValidPosition(var1, var2, var3);
    }
 
    @Override
-   public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
+   public void onEntityCollision(BlockState var1, World var2, BlockPos var3, Entity var4) {
       if (var4 instanceof Class1029 && var2.getGameRules().getBoolean(Class5462.field24224)) {
-         var2.method7180(var3, true, var4);
+         var2.destroyBlock(var3, true, var4);
       }
 
-      super.method11523(var1, var2, var3, var4);
+      super.onEntityCollision(var1, var2, var3, var4);
    }
 
    public IItemProvider method12183() {

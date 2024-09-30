@@ -29,7 +29,7 @@ public class Class3465 extends Block {
 
    @Override
    public VoxelShape method11995(BlockState var1, IBlockReader var2, BlockPos var3) {
-      return VoxelShapes.method27425();
+      return VoxelShapes.empty();
    }
 
    @Override
@@ -93,7 +93,7 @@ public class Class3465 extends Block {
       if (var2.isRainingAt(var3.up()) && var4.nextInt(15) == 1) {
          BlockPos var7 = var3.down();
          BlockState var8 = var2.getBlockState(var7);
-         if (!var8.method23410() || !var8.method23454(var2, var7, Direction.UP)) {
+         if (!var8.isSolid() || !var8.method23454(var2, var7, Direction.UP)) {
             double var9 = (double)var3.getX() + var4.nextDouble();
             double var11 = (double)var3.getY() - 0.05;
             double var13 = (double)var3.getZ() + var4.nextDouble();

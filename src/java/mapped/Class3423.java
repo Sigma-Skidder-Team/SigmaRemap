@@ -55,14 +55,14 @@ public class Class3423 extends Block implements IWaterLoggable {
    }
 
    @Override
-   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
+   public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
       Direction var6 = var1.<Direction>get(field19154);
       return this.method12078(var2, var3.offset(var6.getOpposite()), var6);
    }
 
    @Override
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
-      if (var2.getOpposite() == var1.<Direction>get(field19154) && !var1.method23443(var4, var5)) {
+      if (var2.getOpposite() == var1.<Direction>get(field19154) && !var1.isValidPosition(var4, var5)) {
          return Blocks.AIR.getDefaultState();
       } else {
          if (var1.<Boolean>get(field19155)) {
@@ -91,7 +91,7 @@ public class Class3423 extends Block implements IWaterLoggable {
       for (Direction var11 : var1.method18349()) {
          if (var11.getAxis().isHorizontal()) {
             var12 = var12.with(field19154, var11.getOpposite());
-            if (var12.method23443(var5, var6)) {
+            if (var12.isValidPosition(var5, var6)) {
                return var12.with(field19155, Boolean.valueOf(var7.getFluid() == Fluids.WATER));
             }
          }

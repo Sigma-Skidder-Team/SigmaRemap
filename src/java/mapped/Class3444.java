@@ -40,7 +40,7 @@ public abstract class Class3444 extends Block {
    }
 
    @Override
-   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
+   public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
       BlockPos var6 = var3.offset(this.field19256.getOpposite());
       BlockState var7 = var2.getBlockState(var6);
       Block var8 = var7.getBlock();
@@ -49,7 +49,7 @@ public abstract class Class3444 extends Block {
 
    @Override
    public void tick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
-      if (!var1.method23443(var2, var3)) {
+      if (!var1.isValidPosition(var2, var3)) {
          var2.method7179(var3, true);
       }
    }

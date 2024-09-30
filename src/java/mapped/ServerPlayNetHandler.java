@@ -21,12 +21,14 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import net.minecraft.advancements.Advancement;
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.item.BoatEntity;
 import net.minecraft.entity.player.ChatVisibility;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.ServerPlayerEntity;

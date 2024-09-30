@@ -7,6 +7,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.pathfinding.PathType;
+import net.minecraft.stats.Stats;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
@@ -81,7 +82,7 @@ public class Class3460 extends Block {
 
    @Override
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
-      return var2 == Direction.DOWN && !var1.method23443(var4, var5)
+      return var2 == Direction.DOWN && !var1.isValidPosition(var4, var5)
          ? Blocks.AIR.getDefaultState()
          : super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
    }

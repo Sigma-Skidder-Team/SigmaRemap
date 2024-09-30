@@ -2,13 +2,15 @@ package mapped;
 
 import it.unimi.dsi.fastutil.longs.Long2IntOpenHashMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
+import net.minecraft.world.chunk.NibbleArray;
+import net.minecraft.world.lighting.LightDataMap;
 
-public final class Class7587 extends Class7586<Class7587> {
+public final class Class7587 extends LightDataMap<Class7587> {
    private static String[] field32569;
    private int field32570;
    private final Long2IntOpenHashMap field32571;
 
-   public Class7587(Long2ObjectOpenHashMap<Class6785> var1, Long2IntOpenHashMap var2, int var3) {
+   public Class7587(Long2ObjectOpenHashMap<NibbleArray> var1, Long2IntOpenHashMap var2, int var3) {
       super(var1);
       this.field32571 = var2;
       var2.defaultReturnValue(var3);

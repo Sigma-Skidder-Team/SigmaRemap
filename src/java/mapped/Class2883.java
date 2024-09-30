@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableList.Builder;
+import net.minecraft.entity.item.BoatEntity;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.Arrays;

@@ -20,7 +20,7 @@ public class Class204 extends Class203 {
    }
 
    @Override
-   public int method652(long var1) {
+   public int getLevel(long var1) {
       if (!this.field760.method35120(var1)) {
          Class8641 var5 = this.field760.method35121(var1);
          if (var5 != null) {
@@ -32,7 +32,7 @@ public class Class204 extends Class203 {
    }
 
    @Override
-   public void method654(long var1, int var3) {
+   public void setLevel(long var1, int var3) {
       Class8641 var6 = this.field760.method35121(var1);
       int var7 = var6 != null ? var6.method31057() : Class1649.field8951 + 1;
       if (var7 != var3) {
@@ -44,6 +44,6 @@ public class Class204 extends Class203 {
    }
 
    public int method681(int var1) {
-      return this.method676(var1);
+      return this.processUpdates(var1);
    }
 }

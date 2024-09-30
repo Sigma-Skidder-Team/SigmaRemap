@@ -40,16 +40,16 @@ public class Blocks {
    public static final Block POLISHED_ANDESITE = register(
       "polished_andesite", new Block(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.STONE).method26635().method26621(1.5F, 6.0F))
    );
-   public static final Block field36395 = register(
+   public static final Block GRASS_BLOCK = register(
       "grass_block", new Class3473(AbstractBlock.Properties.method26609(Material.field38951).method26624().method26623(0.6F).method26619(SoundType.field36202))
    );
-   public static final Block field36396 = register(
+   public static final Block DIRT = register(
       "dirt", new Block(AbstractBlock.Properties.method26611(Material.field38950, MaterialColor.field30957).method26623(0.5F).method26619(SoundType.field36201))
    );
-   public static final Block field36397 = register(
+   public static final Block COARSE_DIRT = register(
       "coarse_dirt", new Block(AbstractBlock.Properties.method26611(Material.field38950, MaterialColor.field30957).method26623(0.5F).method26619(SoundType.field36201))
    );
-   public static final Block field36398 = register(
+   public static final Block PODZOL = register(
       "podzol", new Class3471(AbstractBlock.Properties.method26611(Material.field38950, MaterialColor.field30981).method26623(0.5F).method26619(SoundType.field36201))
    );
    public static final Block field36399 = register(
@@ -712,7 +712,7 @@ public class Blocks {
    public static final Block ICE = register(
       "ice",
       new Class3377(
-         AbstractBlock.Properties.method26609(Material.field38964)
+         AbstractBlock.Properties.method26609(Material.ICE)
             .method26616(0.98F)
             .method26624()
             .method26623(0.5F)
@@ -1004,7 +1004,7 @@ public class Blocks {
       new Class3474(AbstractBlock.Properties.method26611(Material.field38951, MaterialColor.field30971).method26624().method26623(0.6F).method26619(SoundType.field36202))
    );
    public static final Block LILY_PAD = register(
-      "lily_pad", new Class3494(AbstractBlock.Properties.method26609(Material.PLANTS).method26622().method26619(SoundType.field36203).method26615())
+      "lily_pad", new LilyPadBlock(AbstractBlock.Properties.method26609(Material.PLANTS).method26622().method26619(SoundType.field36203).method26615())
    );
    public static final Block NETHER_BRICKS = register(
       "nether_bricks",
@@ -1930,7 +1930,7 @@ public class Blocks {
    public static final Block field36889 = register(
       "frosted_ice",
       new Class3378(
-         AbstractBlock.Properties.method26609(Material.field38964)
+         AbstractBlock.Properties.method26609(Material.ICE)
             .method26616(0.98F)
             .method26624()
             .method26623(0.5F)
@@ -2417,7 +2417,7 @@ public class Blocks {
    public static final Block field37010 = register(
       "potted_bamboo", new Class3460(field37009, AbstractBlock.Properties.method26609(Material.field38946).method26622().method26615())
    );
-   public static final Block field37011 = register(
+   public static final Block VOID_AIR = register(
       "void_air", new AirBlock(AbstractBlock.Properties.method26609(Material.field38932).method26614().method26626().method26628())
    );
    public static final Block field37012 = register(

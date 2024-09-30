@@ -9,6 +9,7 @@ import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraft.stats.Stats;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
@@ -78,13 +79,13 @@ public class Class3394 extends Block {
 
    @Override
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
-      return var2 == Direction.DOWN && !var1.method23443(var4, var5)
+      return var2 == Direction.DOWN && !var1.isValidPosition(var4, var5)
          ? Blocks.AIR.getDefaultState()
          : super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
    }
 
    @Override
-   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
+   public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
       return var2.getBlockState(var3.down()).getMaterial().isSolid();
    }
 

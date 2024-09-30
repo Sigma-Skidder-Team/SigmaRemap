@@ -1,9 +1,11 @@
 package mapped;
 
+import net.minecraft.util.math.SectionPos;
+
 import java.util.Spliterators.AbstractSpliterator;
 import java.util.function.Consumer;
 
-public final class Class8180 extends AbstractSpliterator<Class2002> {
+public final class Class8180 extends AbstractSpliterator<SectionPos> {
    private static String[] field35177;
    public final Class8893 field35178;
    public final int field35179;
@@ -25,11 +27,11 @@ public final class Class8180 extends AbstractSpliterator<Class2002> {
    }
 
    @Override
-   public boolean tryAdvance(Consumer<? super Class2002> var1) {
+   public boolean tryAdvance(Consumer<? super SectionPos> var1) {
       if (!this.field35178.method32365()) {
          return false;
       } else {
-         var1.accept(new Class2002(this.field35178.method32366(), this.field35178.method32367(), this.field35178.method32368(), null));
+         var1.accept(new SectionPos(this.field35178.method32366(), this.field35178.method32367(), this.field35178.method32368(), null));
          return true;
       }
    }

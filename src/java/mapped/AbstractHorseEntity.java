@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.UnmodifiableIterator;
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -514,7 +515,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
             if (!this.method4938()
                && !this.isBeingRidden()
                && this.rand.nextInt(300) == 0
-               && this.world.getBlockState(this.getPosition().down()).isIn(Blocks.field36395)) {
+               && this.world.getBlockState(this.getPosition().down()).isIn(Blocks.GRASS_BLOCK)) {
                this.method4956(true);
             }
 

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.SectionPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.server.ServerWorld;
 
@@ -27,7 +28,7 @@ public class Class2608 extends Class2595 {
                ServerWorld var3 = (ServerWorld)this.field16860.world;
                BlockPos var4 = this.field16860.getPosition();
                if (var3.method6954(var4, 6)) {
-                  Vector3d var5 = Class8037.method27584(this.field16860, 15, 7, var1 -> (double)(-var3.method6955(Class2002.method8390(var1))));
+                  Vector3d var5 = Class8037.method27584(this.field16860, 15, 7, var1 -> (double)(-var3.method6955(SectionPos.method8390(var1))));
                   this.field16862 = var5 != null ? new BlockPos(var5) : null;
                   return this.field16862 != null;
                } else {

@@ -6,6 +6,7 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeContainer;
 import net.minecraft.world.biome.provider.BiomeProvider;
+import net.minecraft.world.chunk.NibbleArray;
 
 public class Class7660 {
    public static Class9028 method25180(CompoundNBT var0) {
@@ -63,9 +64,9 @@ public class Class7660 {
 
          if (!var9) {
             byte[] var20 = new byte[4096];
-            Class6785 var21 = new Class6785();
-            Class6785 var22 = new Class6785();
-            Class6785 var23 = new Class6785();
+            NibbleArray var21 = new NibbleArray();
+            NibbleArray var22 = new NibbleArray();
+            NibbleArray var23 = new NibbleArray();
 
             for (int var24 = 0; var24 < 16; var24++) {
                for (int var15 = 0; var15 < 16; var15++) {

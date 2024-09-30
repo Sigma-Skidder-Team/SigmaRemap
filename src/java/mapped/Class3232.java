@@ -12,7 +12,7 @@ public abstract class Class3232 extends Class3231 {
 
    @Override
    public VoxelShape method11635(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
-      return VoxelShapes.method27425();
+      return VoxelShapes.empty();
    }
 
    @Override
@@ -21,7 +21,7 @@ public abstract class Class3232 extends Class3231 {
    }
 
    @Override
-   public boolean method11493(BlockState var1, IBlockReader var2, BlockPos var3) {
+   public boolean propagatesSkylightDown(BlockState var1, IBlockReader var2, BlockPos var3) {
       return true;
    }
 }

@@ -48,6 +48,7 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.IBlockDisplayReader;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.LightType;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.resource.IResourceType;

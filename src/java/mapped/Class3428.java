@@ -122,7 +122,7 @@ public class Class3428 extends Block implements IWaterLoggable {
    }
 
    @Override
-   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
+   public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
       return method12085(var2, var3) < 7;
    }
 
@@ -133,7 +133,7 @@ public class Class3428 extends Block implements IWaterLoggable {
       } else {
          return var1.<Integer>get(field19184) != 0 && var1.<Boolean>get(field19186) && var4.method14950(field19183, var3, true)
             ? field19182
-            : VoxelShapes.method27425();
+            : VoxelShapes.empty();
       }
    }
 

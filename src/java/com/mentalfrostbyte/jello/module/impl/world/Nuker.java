@@ -13,6 +13,7 @@ import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.BushBlock;
 import net.minecraft.network.play.client.CAnimateHandPacket;
 import net.minecraft.network.play.client.CPlayerDiggingPacket;
 import net.minecraft.util.Direction;
@@ -133,7 +134,7 @@ public class Nuker extends Module {
 
     private boolean method16266(BlockPos var1) {
         Block var4 = mc.world.getBlockState(var1).getBlock();
-        return mc.world.getBlockState(var1).getMaterial().isReplaceable() || var4 instanceof Class3194;
+        return mc.world.getBlockState(var1).getMaterial().isReplaceable() || var4 instanceof BushBlock;
     }
 
     private List<BlockPos> method16267(float var1) {

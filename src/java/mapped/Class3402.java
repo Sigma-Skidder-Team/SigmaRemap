@@ -58,7 +58,7 @@ public class Class3402 extends Block {
    }
 
    private static VoxelShape method12030(BlockState var0) {
-      VoxelShape var3 = VoxelShapes.method27425();
+      VoxelShape var3 = VoxelShapes.empty();
       if (var0.<Boolean>get(field19064)) {
          var3 = field19070;
       }
@@ -88,7 +88,7 @@ public class Class3402 extends Block {
    }
 
    @Override
-   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
+   public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
       return this.method12031(this.method12035(var1, var2, var3));
    }
 

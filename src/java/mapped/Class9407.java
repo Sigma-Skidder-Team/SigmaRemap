@@ -2176,10 +2176,10 @@ public class Class9407 {
 
    private void method35910() {
       Class7287 var3 = new Class7287()
-         .method22991(Class9588.field44852, Class7287.method23041(Blocks.field36396))
+         .method22991(Class9588.field44852, Class7287.method23041(Blocks.DIRT))
          .method22991(Class9588.field44830, Class7287.method23041(Blocks.FARMLAND));
       Class7287 var4 = new Class7287()
-         .method22991(Class9588.field44852, Class7287.method23041(Blocks.field36396))
+         .method22991(Class9588.field44852, Class7287.method23041(Blocks.DIRT))
          .method22991(Class9588.field44830, Class7287.method23042(Blocks.FARMLAND, "_moist"));
       ResourceLocation var5 = Class9756.field45603.method34805(Blocks.FARMLAND, var3, this.field43643);
       ResourceLocation var6 = Class9756.field45603.method34808(Class7287.method23042(Blocks.FARMLAND, "_moist"), var4, this.field43643);
@@ -2298,25 +2298,25 @@ public class Class9407 {
    }
 
    private void method35919() {
-      ResourceLocation var3 = Class7287.method23041(Blocks.field36396);
+      ResourceLocation var3 = Class7287.method23041(Blocks.DIRT);
       Class7287 var4 = new Class7287()
          .method22991(Class9588.field44829, var3)
          .method22993(Class9588.field44829, Class9588.field44827)
-         .method22991(Class9588.field44830, Class7287.method23042(Blocks.field36395, "_top"))
-         .method22991(Class9588.field44833, Class7287.method23042(Blocks.field36395, "_snow"));
+         .method22991(Class9588.field44830, Class7287.method23042(Blocks.GRASS_BLOCK, "_top"))
+         .method22991(Class9588.field44833, Class7287.method23042(Blocks.GRASS_BLOCK, "_snow"));
       Class5138 var5 = Class5138.method15912()
-         .method15911(Class6891.field29864, Class9756.field45542.method34806(Blocks.field36395, "_snow", var4, this.field43643));
-      this.method35920(Blocks.field36395, Class9060.method33723(Blocks.field36395), var5);
+         .method15911(Class6891.field29864, Class9756.field45542.method34806(Blocks.GRASS_BLOCK, "_snow", var4, this.field43643));
+      this.method35920(Blocks.GRASS_BLOCK, Class9060.method33723(Blocks.GRASS_BLOCK), var5);
       ResourceLocation var6 = Class7524.field32275
          .method25590(Blocks.MYCELIUM)
          .method24561(var1 -> var1.method22991(Class9588.field44829, var3))
          .method24562(Blocks.MYCELIUM, this.field43643);
       this.method35920(Blocks.MYCELIUM, var6, var5);
       ResourceLocation var7 = Class7524.field32275
-         .method25590(Blocks.field36398)
+         .method25590(Blocks.PODZOL)
          .method24561(var1 -> var1.method22991(Class9588.field44829, var3))
-         .method24562(Blocks.field36398, this.field43643);
-      this.method35920(Blocks.field36398, var7, var5);
+         .method24562(Blocks.PODZOL, this.field43643);
+      this.method35920(Blocks.PODZOL, var7, var5);
    }
 
    private void method35920(Block var1, ResourceLocation var2, Class5138 var3) {
@@ -3586,7 +3586,7 @@ public class Class9407 {
    public void method35961() {
       this.method35851(Blocks.AIR);
       this.method35852(Blocks.field37012, Blocks.AIR);
-      this.method35852(Blocks.field37011, Blocks.AIR);
+      this.method35852(Blocks.VOID_AIR, Blocks.AIR);
       this.method35851(Blocks.BEACON);
       this.method35851(Blocks.CACTUS);
       this.method35852(Blocks.field37013, Blocks.WATER);
@@ -3629,7 +3629,7 @@ public class Class9407 {
       this.method35841(Blocks.field37006, Class7524.field32271);
       this.method35841(Blocks.field37147, Class7524.field32271);
       this.method35841(Blocks.CLAY, Class7524.field32271);
-      this.method35841(Blocks.field36397, Class7524.field32271);
+      this.method35841(Blocks.COARSE_DIRT, Class7524.field32271);
       this.method35841(Blocks.field37148, Class7524.field32271);
       this.method35841(Blocks.field36617, Class7524.field32271);
       this.method35841(Blocks.field37123, Class7524.field32271);
@@ -3730,7 +3730,7 @@ public class Class9407 {
       this.method35833(Blocks.BASALT, Class7524.field32273);
       this.method35833(Blocks.POLISHED_BASALT, Class7524.field32273);
       this.method35833(Blocks.field36893, Class7524.field32273);
-      this.method35819(Blocks.field36396);
+      this.method35819(Blocks.DIRT);
       this.method35819(Blocks.SAND);
       this.method35819(Blocks.RED_SAND);
       this.method35818(Blocks.BEDROCK);

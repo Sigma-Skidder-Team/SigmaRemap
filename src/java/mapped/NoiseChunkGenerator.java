@@ -10,6 +10,7 @@ import net.minecraft.client.util.Util;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.SectionPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.biome.Biome;
@@ -403,7 +404,7 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
       int var12 = var10 << 4;
 
       for (Structure var14 : Structure.field18076) {
-         var2.method24340(Class2002.method8391(var8, 0), var14).forEach(var5 -> {
+         var2.method24340(SectionPos.method8391(var8, 0), var14).forEach(var5 -> {
             for (Class4178 var9x : var5.method17111()) {
                if (var9x.method12917(var8, 12)) {
                   if (!(var9x instanceof Class4193)) {

@@ -6,6 +6,7 @@ import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.SectionPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.ISeedReader;
@@ -216,12 +217,12 @@ public abstract class ChunkGenerator {
    }
 
    private void method17826(Class9300<?, ?> var1, DynamicRegistries var2, Class7480 var3, IChunk var4, TemplateManager var5, long var6, ChunkPos var8, Biome var9) {
-      StructureStart var12 = var3.method24341(Class2002.method8391(var4.getPos(), 0), var1.field43174, var4);
+      StructureStart var12 = var3.method24341(SectionPos.method8391(var4.getPos(), 0), var1.field43174, var4);
       int var13 = var12 == null ? 0 : var12.method17123();
       Class8483 var14 = this.field24987.method38381(var1.field43174);
       if (var14 != null) {
          StructureStart var15 = var1.method35098(var2, this, this.field24985, var5, var6, var8, var9, var13, var14);
-         var3.method24342(Class2002.method8391(var4.getPos(), 0), var1.field43174, var15, var4);
+         var3.method24342(SectionPos.method8391(var4.getPos(), 0), var1.field43174, var15, var4);
       }
    }
 
@@ -231,7 +232,7 @@ public abstract class ChunkGenerator {
       int var8 = var3.getPos().z;
       int var9 = var7 << 4;
       int var10 = var8 << 4;
-      Class2002 var11 = Class2002.method8391(var3.getPos(), 0);
+      SectionPos var11 = SectionPos.method8391(var3.getPos(), 0);
 
       for (int var12 = var7 - 8; var12 <= var7 + 8; var12++) {
          for (int var13 = var8 - 8; var13 <= var8 + 8; var13++) {

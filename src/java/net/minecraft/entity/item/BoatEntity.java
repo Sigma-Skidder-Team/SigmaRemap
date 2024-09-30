@@ -1,7 +1,9 @@
-package mapped;
+package net.minecraft.entity.item;
 
 import com.google.common.collect.UnmodifiableIterator;
+import mapped.*;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.LilyPadBlock;
 import net.minecraft.entity.*;
 import net.minecraft.entity.passive.WaterMobEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -492,7 +494,7 @@ public class BoatEntity extends Entity {
                   if (var17 <= 0 || var18 != var7 && var18 != var8 - 1) {
                      var14.method8372(var15, var18, var16);
                      BlockState var19 = this.world.getBlockState(var14);
-                     if (!(var19.getBlock() instanceof Class3494)
+                     if (!(var19.getBlock() instanceof LilyPadBlock)
                         && VoxelShapes.compare(
                            var19.method23414(this.world, var14).withOffset((double)var15, (double)var18, (double)var16), var11, IBooleanFunction.AND
                         )) {

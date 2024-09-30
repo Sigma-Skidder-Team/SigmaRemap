@@ -143,8 +143,8 @@ public class Class1090 extends Class1018 {
    }
 
    @Override
-   public boolean attackEntityFrom(DamageSource var1, float var2) {
-      return !this.isInvulnerableTo(var1) ? super.attackEntityFrom(var1, var2) : false;
+   public boolean attackEntityFrom(DamageSource source, float var2) {
+      return !this.isInvulnerableTo(source) ? super.attackEntityFrom(source, var2) : false;
    }
 
    @Override
@@ -229,7 +229,7 @@ public class Class1090 extends Class1018 {
          }
 
          BlockState var5 = var1.getBlockState(var4.down());
-         if (var5.isIn(Blocks.field36395) || var5.isIn(BlockTags.LEAVES)) {
+         if (var5.isIn(Blocks.GRASS_BLOCK) || var5.isIn(BlockTags.LEAVES)) {
             return true;
          }
       }

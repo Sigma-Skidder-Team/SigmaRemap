@@ -52,7 +52,7 @@ public class Class3404 extends Block implements Class3405 {
             && var1.<Integer>get(field19079) == 0
             && var4.method14952(var2.getFluidState(var3.up()), this.field19080)
          ? field19082
-         : VoxelShapes.method27425();
+         : VoxelShapes.empty();
    }
 
    @Override
@@ -66,7 +66,7 @@ public class Class3404 extends Block implements Class3405 {
    }
 
    @Override
-   public boolean method11493(BlockState var1, IBlockReader var2, BlockPos var3) {
+   public boolean propagatesSkylightDown(BlockState var1, IBlockReader var2, BlockPos var3) {
       return false;
    }
 
@@ -98,7 +98,7 @@ public class Class3404 extends Block implements Class3405 {
 
    @Override
    public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
-      return VoxelShapes.method27425();
+      return VoxelShapes.empty();
    }
 
    @Override

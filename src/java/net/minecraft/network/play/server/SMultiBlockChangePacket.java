@@ -2,13 +2,13 @@ package net.minecraft.network.play.server;
 
 import it.unimi.dsi.fastutil.shorts.ShortIterator;
 import it.unimi.dsi.fastutil.shorts.ShortSet;
-import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.SectionPos;
 import net.minecraft.world.chunk.ChunkSection;
 
 import java.io.IOException;
@@ -16,7 +16,7 @@ import java.util.function.BiConsumer;
 
 public class SMultiBlockChangePacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24641;
-   public Class2002 field24642;
+   public SectionPos field24642;
    public short[] field24643;
    public BlockState[] field24644;
    public boolean field24645;
@@ -24,7 +24,7 @@ public class SMultiBlockChangePacket implements IPacket<IClientPlayNetHandler> {
    public SMultiBlockChangePacket() {
    }
 
-   public SMultiBlockChangePacket(Class2002 var1, ShortSet var2, ChunkSection var3, boolean var4) {
+   public SMultiBlockChangePacket(SectionPos var1, ShortSet var2, ChunkSection var3, boolean var4) {
       this.field24642 = var1;
       this.field24645 = var4;
       this.method17460(var2.size());
@@ -33,7 +33,7 @@ public class SMultiBlockChangePacket implements IPacket<IClientPlayNetHandler> {
       for (ShortIterator var8 = var2.iterator(); var8.hasNext(); var7++) {
          short var9 = (Short)var8.next();
          this.field24643[var7] = var9;
-         this.field24644[var7] = var3.method21852(Class2002.method8399(var9), Class2002.method8400(var9), Class2002.method8401(var9));
+         this.field24644[var7] = var3.method21852(SectionPos.method8399(var9), SectionPos.method8400(var9), SectionPos.method8401(var9));
       }
    }
 
@@ -44,7 +44,7 @@ public class SMultiBlockChangePacket implements IPacket<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24642 = Class2002.method8393(var1.readLong());
+      this.field24642 = SectionPos.method8393(var1.readLong());
       this.field24645 = var1.readBoolean();
       int var4 = var1.readVarInt();
       this.method17460(var4);
@@ -58,7 +58,7 @@ public class SMultiBlockChangePacket implements IPacket<IClientPlayNetHandler> {
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.writeLong(this.field24642.method8425());
+      var1.writeLong(this.field24642.asLong());
       var1.writeBoolean(this.field24645);
       var1.writeVarInt(this.field24643.length);
 

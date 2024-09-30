@@ -77,7 +77,7 @@ public class FenceGateBlock extends HorizontalBlock {
       if (!var1.<Boolean>get(OPEN)) {
          return var1.<Direction>get(HORIZONTAL_FACING).getAxis() != Direction.Axis.Z ? field18494 : field18493;
       } else {
-         return VoxelShapes.method27425();
+         return VoxelShapes.empty();
       }
    }
 

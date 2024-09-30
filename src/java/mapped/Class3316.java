@@ -150,7 +150,7 @@ public class Class3316 extends Class3314 {
                            if ((var42 >> 20 & 1) != 0) {
                               var23.add(Blocks.STONE.getDefaultState().method23394(var1, BlockPos.ZERO), 100);
                            } else {
-                              var23.add(Blocks.field36396.getDefaultState().method23394(var1, BlockPos.ZERO), 10);
+                              var23.add(Blocks.DIRT.getDefaultState().method23394(var1, BlockPos.ZERO), 10);
                            }
 
                            var29 = 100.0;

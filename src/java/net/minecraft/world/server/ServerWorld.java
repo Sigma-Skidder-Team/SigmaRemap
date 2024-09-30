@@ -33,10 +33,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
-import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.ChunkPos;
-import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.*;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.ITextComponent;
@@ -1165,7 +1162,7 @@ public class ServerWorld extends World implements ISeedReader {
    public boolean method6950(int var1, int var2, boolean var3) {
       ForcedChunksSaveData var6 = this.method6945().<ForcedChunksSaveData>method28767(ForcedChunksSaveData::new, "chunks");
       ChunkPos var7 = new ChunkPos(var1, var2);
-      long var8 = var7.method24352();
+      long var8 = var7.asLong();
       boolean var10;
       if (!var3) {
          var10 = var6.getChunks().remove(var8);
@@ -1214,15 +1211,15 @@ public class ServerWorld extends World implements ISeedReader {
       return this.method6954(var1, 1);
    }
 
-   public boolean method6953(Class2002 var1) {
+   public boolean method6953(SectionPos var1) {
       return this.method6952(var1.method8422());
    }
 
    public boolean method6954(BlockPos var1, int var2) {
-      return var2 <= 6 ? this.method6955(Class2002.method8390(var1)) <= var2 : false;
+      return var2 <= 6 ? this.method6955(SectionPos.method8390(var1)) <= var2 : false;
    }
 
-   public int method6955(Class2002 var1) {
+   public int method6955(SectionPos var1) {
       return this.method6951().method6677(var1);
    }
 
@@ -1370,7 +1367,7 @@ public class ServerWorld extends World implements ISeedReader {
    }
 
    @Override
-   public Stream<? extends StructureStart<?>> method6969(Class2002 var1, Structure<?> var2) {
+   public Stream<? extends StructureStart<?>> method6969(SectionPos var1, Structure<?> var2) {
       return this.method6893().method24340(var1, var2);
    }
 

@@ -38,7 +38,7 @@ public class Class3226 extends Class3224 {
 
    @Override
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
-      if (var2 == Direction.DOWN && !var1.method23443(var4, var5)) {
+      if (var2 == Direction.DOWN && !var1.isValidPosition(var4, var5)) {
          return Blocks.AIR.getDefaultState();
       } else {
          this.method11632(var1, var4, var5);

@@ -6,6 +6,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.SectionPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.biome.Biome;
@@ -144,7 +145,7 @@ public abstract class Structure<C extends Class4698> {
                   int var21 = var13 + var11 * var18;
                   ChunkPos var22 = this.method11370(var8, var6, var15, var20, var21);
                   IChunk var23 = var1.getChunk(var22.x, var22.z, ChunkStatus.field42134);
-                  StructureStart var24 = var2.method24341(Class2002.method8391(var23.getPos(), 0), this, var23);
+                  StructureStart var24 = var2.method24341(SectionPos.method8391(var23.getPos(), 0), this, var23);
                   if (var24 != null && var24.method17117()) {
                      if (var5 && var24.method17121()) {
                         var24.method17122();

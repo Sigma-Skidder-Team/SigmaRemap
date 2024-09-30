@@ -5,6 +5,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.SectionPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.server.ServerWorld;
 
@@ -73,9 +74,9 @@ public class Class6983 {
       var0.world.addEntity(var7);
    }
 
-   public static Class2002 method21579(ServerWorld var0, Class2002 var1, int var2) {
+   public static SectionPos method21579(ServerWorld var0, SectionPos var1, int var2) {
       int var5 = var0.method6955(var1);
-      return Class2002.method8427(var1, var2).filter(var2x -> var0.method6955(var2x) < var5).min(Comparator.comparingInt(var0::method6955)).orElse(var1);
+      return SectionPos.method8427(var1, var2).filter(var2x -> var0.method6955(var2x) < var5).min(Comparator.comparingInt(var0::method6955)).orElse(var1);
    }
 
    public static boolean method21580(MobEntity var0, LivingEntity var1, int var2) {

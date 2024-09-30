@@ -491,9 +491,9 @@ public class Class1007 extends MobEntity implements Class1008 {
    }
 
    @Override
-   public boolean attackEntityFrom(DamageSource var1, float var2) {
-      if (var1 instanceof EntityDamageSource && ((EntityDamageSource)var1).getIsThornsDamage()) {
-         this.method4325(this.field5626, var1, var2);
+   public boolean attackEntityFrom(DamageSource source, float var2) {
+      if (source instanceof EntityDamageSource && ((EntityDamageSource) source).getIsThornsDamage()) {
+         this.method4325(this.field5626, source, var2);
       }
 
       return false;

@@ -71,6 +71,6 @@ public class EmptyFluid extends Fluid {
 
    @Override
    public VoxelShape method25068(FluidState var1, IBlockReader var2, BlockPos var3) {
-      return VoxelShapes.method27425();
+      return VoxelShapes.empty();
    }
 }

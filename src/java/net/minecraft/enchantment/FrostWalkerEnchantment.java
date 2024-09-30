@@ -52,7 +52,7 @@ public class FrostWalkerEnchantment extends Enchantment {
                   BlockState var12 = var1.getBlockState(var10);
                   if (var12.getMaterial() == Material.field38941
                      && var12.<Integer>get(Class3404.field19079) == 0
-                     && var6.method23443(var1, var10)
+                     && var6.isValidPosition(var1, var10)
                      && var1.placedBlockCollides(var6, var10, ISelectionContext.method14947())) {
                      var1.setBlockState(var10, var6);
                      var1.method6860().scheduleTick(var10, Blocks.field36889, MathHelper.method37782(var0.getRNG(), 60, 120));

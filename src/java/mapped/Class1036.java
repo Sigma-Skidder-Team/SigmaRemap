@@ -109,11 +109,11 @@ public class Class1036 extends Class1035 {
    }
 
    @Override
-   public boolean attackEntityFrom(DamageSource var1, float var2) {
-      boolean var5 = super.attackEntityFrom(var1, var2);
+   public boolean attackEntityFrom(DamageSource source, float var2) {
+      boolean var5 = super.attackEntityFrom(source, var2);
       if (!this.world.isRemote) {
-         if (var5 && var1.getTrueSource() instanceof LivingEntity) {
-            Class9743.method38204(this, (LivingEntity)var1.getTrueSource());
+         if (var5 && source.getTrueSource() instanceof LivingEntity) {
+            Class9743.method38204(this, (LivingEntity) source.getTrueSource());
          }
 
          return var5;

@@ -31,14 +31,14 @@ public class Class3411 extends Block {
 
    @Override
    public BlockState getStateForPlacement(BlockItemUseContext var1) {
-      return this.getDefaultState().method23443(var1.getWorld(), var1.getPos())
+      return this.getDefaultState().isValidPosition(var1.getWorld(), var1.getPos())
          ? super.getStateForPlacement(var1)
-         : Block.method11538(this.getDefaultState(), Blocks.field36396.getDefaultState(), var1.getWorld(), var1.getPos());
+         : Block.method11538(this.getDefaultState(), Blocks.DIRT.getDefaultState(), var1.getWorld(), var1.getPos());
    }
 
    @Override
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
-      if (var2 == Direction.UP && !var1.method23443(var4, var5)) {
+      if (var2 == Direction.UP && !var1.isValidPosition(var4, var5)) {
          var4.method6860().scheduleTick(var5, this, 1);
       }
 
@@ -51,7 +51,7 @@ public class Class3411 extends Block {
    }
 
    @Override
-   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
+   public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
       BlockState var6 = var2.getBlockState(var3.up());
       return !var6.getMaterial().isSolid() || var6.getBlock() instanceof FenceGateBlock;
    }

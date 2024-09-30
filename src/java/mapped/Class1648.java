@@ -54,7 +54,7 @@ public class Class1648 implements AutoCloseable {
    public void method6532(ChunkPos var1, CompoundNBT var2) {
       this.field8947.method7411(var1, var2);
       if (this.field8949 != null) {
-         this.field8949.method29574(var1.method24352());
+         this.field8949.method29574(var1.asLong());
       }
    }
 

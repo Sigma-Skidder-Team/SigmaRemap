@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityType;
+import net.minecraft.stats.Stats;
 import net.minecraft.util.registry.Registry;
 
 public class Class1277 extends Class1274<Class1169> {

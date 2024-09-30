@@ -43,7 +43,7 @@ public abstract class Class3429 extends Block {
    }
 
    @Override
-   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
+   public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
       return method11547(var2, var3.down());
    }
 

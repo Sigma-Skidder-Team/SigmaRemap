@@ -1,14 +1,15 @@
 package mapped;
 
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.world.lighting.LevelBasedGraph;
 
-public abstract class Class203 extends Class202 {
+public abstract class Class203 extends LevelBasedGraph {
    public Class203(int var1, int var2, int var3) {
       super(var1, var2, var3);
    }
 
    @Override
-   public boolean method650(long var1) {
+   public boolean isRoot(long var1) {
       return var1 == ChunkPos.SENTINEL;
    }
 
@@ -29,7 +30,7 @@ public abstract class Class203 extends Class202 {
    }
 
    @Override
-   public int method651(long var1, long var3, int var5) {
+   public int computeLevel(long var1, long var3, int var5) {
       int var8 = var5;
       ChunkPos var9 = new ChunkPos(var1);
       int var10 = var9.x;
@@ -43,7 +44,7 @@ public abstract class Class203 extends Class202 {
             }
 
             if (var14 != var3) {
-               int var16 = this.method655(var14, var1, this.method652(var14));
+               int var16 = this.getEdgeLevel(var14, var1, this.getLevel(var14));
                if (var8 > var16) {
                   var8 = var16;
                }
@@ -59,7 +60,7 @@ public abstract class Class203 extends Class202 {
    }
 
    @Override
-   public int method655(long var1, long var3, int var5) {
+   public int getEdgeLevel(long var1, long var3, int var5) {
       return var1 != ChunkPos.SENTINEL ? var5 + 1 : this.method679(var3);
    }
 

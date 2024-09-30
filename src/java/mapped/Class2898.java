@@ -92,10 +92,10 @@ public abstract class Class2898<FC extends Class4698> {
    }
 
    public static boolean method11219(Block var0) {
-      return var0 == Blocks.field36396
-         || var0 == Blocks.field36395
-         || var0 == Blocks.field36398
-         || var0 == Blocks.field36397
+      return var0 == Blocks.DIRT
+         || var0 == Blocks.GRASS_BLOCK
+         || var0 == Blocks.PODZOL
+         || var0 == Blocks.COARSE_DIRT
          || var0 == Blocks.MYCELIUM;
    }
 

@@ -7,21 +7,13 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public abstract class Class6443 {
-   public static final int field28296 = 1;
-   public static final int field28297 = 2;
-   public static final int field28298 = 3;
-   public static final int field28299 = 4;
-   public static final int field28300 = 5;
-   public static final int field28301 = 6;
-   public static final int field28302 = 14;
-   public static final int field28303 = 16;
+public abstract class AudioByteManager {
    public int field28304;
    public int field28305;
    public long field28306;
-   private List<Class6443> field28307 = new ArrayList<Class6443>();
+   private final List<AudioByteManager> field28307 = new ArrayList<>();
 
-   public static Class6443 method19559(Class8827 var0) throws IOException {
+   public static AudioByteManager method19559(Class8827 var0) throws IOException {
       int var3 = var0.method31861();
       int var4 = 1;
       int var5 = 0;
@@ -34,23 +26,25 @@ public abstract class Class6443 {
          var4++;
       } while ((var6 & 128) == 128);
 
-      Class6443 var7 = method19560(var3);  // Retrieve or create a Class6443 instance
+      AudioByteManager var7 = method19560(var3);
       var7.field28304 = var3;
       var7.field28305 = var5;
-      var7.field28306 = var0.method31871();  // Store the current offset or position
-      var7.method19555(var0);  // Process the descriptor
+      var7.field28306 = var0.method31871();
+      var7.method19555(var0);
 
-      long var8 = (long)var5 - (var0.method31871() - var7.field28306);  // Calculate remaining bytes
-      if (var8 > 0L) {
-         Logger.getLogger("MP4 Boxes").log(Level.INFO, "Descriptor: bytes left: {0}, offset: {1}", new Object[]{var8, var0.method31871()});
-         var0.method31870(var8);  // Skip remaining bytes
+      long remainingBytes = (long) var5 - (var0.method31871() - var7.field28306);
+
+      if (remainingBytes > 0L) {
+         Logger.getLogger("MP4 Boxes").log(Level.INFO, "Descriptor: bytes left: {0}, offset: {1}", new Object[]{remainingBytes, var0.method31871()});
+            var0.method31870(remainingBytes);  // Skip the remaining bytes in the stream
       }
 
-      var7.field28305 += var4;  // Adjust field length for the descriptor size
+      // Adjust the descriptor length for the size of the parsed descriptor
+      var7.field28305 += var4;
       return var7;
    }
 
-   private static Class6443 method19560(int var0) {
+   private static AudioByteManager method19560(int var0) {
       Object var3;
       switch (var0) {
          case 1:
@@ -84,20 +78,20 @@ public abstract class Class6443 {
             var3 = new Class6447();
       }
 
-      return (Class6443)var3;
+      return (AudioByteManager)var3;
    }
 
    public abstract void method19555(Class8827 var1) throws IOException;
 
    public void method19561(Class8827 var1) throws IOException {
       while ((long)this.field28305 - (var1.method31871() - this.field28306) > 0L) {
-         Class6443 var4 = method19559(var1);
+         AudioByteManager var4 = method19559(var1);
          this.field28307.add(var4);
       }
    }
 
-   public List<Class6443> method19562() {
-      return Collections.<Class6443>unmodifiableList(this.field28307);
+   public List<AudioByteManager> method19562() {
+      return Collections.<AudioByteManager>unmodifiableList(this.field28307);
    }
 
    public int method19563() {

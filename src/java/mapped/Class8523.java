@@ -255,9 +255,9 @@ public class Class8523 {
          new Class7093(
             ImmutableList.of(
                new Class7872(new Class6438(Blocks.field36885), new Class6438(Blocks.WATER), Blocks.field36400.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field36885, 0.1F), Class6435.field28275, Blocks.field36395.getDefaultState()),
-               new Class7872(new Class6438(Blocks.field36395), new Class6438(Blocks.WATER), Blocks.WATER.getDefaultState()),
-               new Class7872(new Class6438(Blocks.field36396), new Class6438(Blocks.WATER), Blocks.WATER.getDefaultState())
+               new Class7872(new Class6439(Blocks.field36885, 0.1F), Class6435.field28275, Blocks.GRASS_BLOCK.getDefaultState()),
+               new Class7872(new Class6438(Blocks.GRASS_BLOCK), new Class6438(Blocks.WATER), Blocks.WATER.getDefaultState()),
+               new Class7872(new Class6438(Blocks.DIRT), new Class6438(Blocks.WATER), Blocks.WATER.getDefaultState())
             )
          )
       )
@@ -268,9 +268,9 @@ public class Class8523 {
          new Class7093(
             ImmutableList.of(
                new Class7872(new Class6438(Blocks.field36885), new Class6438(Blocks.WATER), Blocks.field36404.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field36885, 0.2F), Class6435.field28275, Blocks.field36395.getDefaultState()),
-               new Class7872(new Class6438(Blocks.field36395), new Class6438(Blocks.WATER), Blocks.WATER.getDefaultState()),
-               new Class7872(new Class6438(Blocks.field36396), new Class6438(Blocks.WATER), Blocks.WATER.getDefaultState())
+               new Class7872(new Class6439(Blocks.field36885, 0.2F), Class6435.field28275, Blocks.GRASS_BLOCK.getDefaultState()),
+               new Class7872(new Class6438(Blocks.GRASS_BLOCK), new Class6438(Blocks.WATER), Blocks.WATER.getDefaultState()),
+               new Class7872(new Class6438(Blocks.DIRT), new Class6438(Blocks.WATER), Blocks.WATER.getDefaultState())
             )
          )
       )
@@ -281,9 +281,9 @@ public class Class8523 {
          new Class7093(
             ImmutableList.of(
                new Class7872(new Class6438(Blocks.field36885), new Class6438(Blocks.WATER), Blocks.field36401.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field36885, 0.2F), Class6435.field28275, Blocks.field36395.getDefaultState()),
-               new Class7872(new Class6438(Blocks.field36395), new Class6438(Blocks.WATER), Blocks.WATER.getDefaultState()),
-               new Class7872(new Class6438(Blocks.field36396), new Class6438(Blocks.WATER), Blocks.WATER.getDefaultState())
+               new Class7872(new Class6439(Blocks.field36885, 0.2F), Class6435.field28275, Blocks.GRASS_BLOCK.getDefaultState()),
+               new Class7872(new Class6438(Blocks.GRASS_BLOCK), new Class6438(Blocks.WATER), Blocks.WATER.getDefaultState()),
+               new Class7872(new Class6438(Blocks.DIRT), new Class6438(Blocks.WATER), Blocks.WATER.getDefaultState())
             )
          )
       )

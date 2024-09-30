@@ -63,23 +63,23 @@ public class BlockPos extends Vector3i {
    }
 
    public static long method8327(long var0, int var2, int var3, int var4) {
-      return pack(method8328(var0) + var2, method8329(var0) + var3, method8330(var0) + var4);
+      return pack(unpackX(var0) + var2, unpackY(var0) + var3, unpackZ(var0) + var4);
    }
 
-   public static int method8328(long var0) {
+   public static int unpackX(long var0) {
       return (int)(var0 << 64 - field13040 - field13033 >> 64 - field13033);
    }
 
-   public static int method8329(long var0) {
+   public static int unpackY(long var0) {
       return (int)(var0 << 64 - field13035 >> 64 - field13035);
    }
 
-   public static int method8330(long var0) {
+   public static int unpackZ(long var0) {
       return (int)(var0 << 64 - field13039 - field13034 >> 64 - field13034);
    }
 
    public static BlockPos method8331(long var0) {
-      return new BlockPos(method8328(var0), method8329(var0), method8330(var0));
+      return new BlockPos(unpackX(var0), unpackY(var0), unpackZ(var0));
    }
 
    public long method8332() {
@@ -344,8 +344,8 @@ public class BlockPos extends Vector3i {
          return this.method8372(var1.getX(), var1.getY(), var1.getZ());
       }
 
-      public Mutable method8375(long var1) {
-         return this.method8372(method8328(var1), method8329(var1), method8330(var1));
+      public Mutable setPos(long var1) {
+         return this.method8372(unpackX(var1), unpackY(var1), unpackZ(var1));
       }
 
       public Mutable method8376(Class2321 var1, int var2, int var3, int var4) {

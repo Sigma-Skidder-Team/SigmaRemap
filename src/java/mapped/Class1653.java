@@ -8,6 +8,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.SectionPos;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.chunk.ChunkSection;
 
@@ -30,11 +31,11 @@ public class Class1653 extends Class1652<Class8377> {
    }
 
    public void method6661(BlockPos var1, Class4913 var2) {
-      this.method6645(Class2002.method8390(var1).method8425()).method29352(var1, var2);
+      this.method6645(SectionPos.method8390(var1).asLong()).method29352(var1, var2);
    }
 
    public void method6662(BlockPos var1) {
-      this.method6645(Class2002.method8390(var1).method8425()).method29354(var1);
+      this.method6645(SectionPos.method8390(var1).asLong()).method29354(var1);
    }
 
    public long method6663(Predicate<Class4913> var1, BlockPos var2, int var3, Class2093 var4) {
@@ -42,7 +43,7 @@ public class Class1653 extends Class1652<Class8377> {
    }
 
    public boolean method6664(Class4913 var1, BlockPos var2) {
-      Optional var5 = this.method6645(Class2002.method8390(var2).method8425()).method29357(var2);
+      Optional var5 = this.method6645(SectionPos.method8390(var2).asLong()).method29357(var2);
       return var5.isPresent() && ((Class4913)var5.get()).equals(var1);
    }
 
@@ -62,7 +63,7 @@ public class Class1653 extends Class1652<Class8377> {
    public Stream<Class9343> method6667(Predicate<Class4913> var1, ChunkPos var2, Class2093 var3) {
       return IntStream.range(0, 16)
          .boxed()
-         .<Optional<Class8377>>map(var2x -> this.method6643(Class2002.method8391(var2, var2x).method8425()))
+         .<Optional<Class8377>>map(var2x -> this.method6643(SectionPos.method8391(var2, var2x).asLong()))
          .filter(Optional::isPresent)
          .<Class9343>flatMap(var2x -> var2x.get().method29351(var1, var3));
    }
@@ -97,21 +98,21 @@ public class Class1653 extends Class1652<Class8377> {
    }
 
    public boolean method6674(BlockPos var1) {
-      return this.method6645(Class2002.method8390(var1).method8425()).method29355(var1);
+      return this.method6645(SectionPos.method8390(var1).asLong()).method29355(var1);
    }
 
    public boolean method6675(BlockPos var1, Predicate<Class4913> var2) {
-      return this.method6643(Class2002.method8390(var1).method8425()).<Boolean>map(var2x -> var2x.method29356(var1, var2)).orElse(false);
+      return this.method6643(SectionPos.method8390(var1).asLong()).<Boolean>map(var2x -> var2x.method29356(var1, var2)).orElse(false);
    }
 
    public Optional<Class4913> method6676(BlockPos var1) {
-      Class8377 var4 = this.method6645(Class2002.method8390(var1).method8425());
+      Class8377 var4 = this.method6645(SectionPos.method8390(var1).asLong());
       return var4.method29357(var1);
    }
 
-   public int method6677(Class2002 var1) {
+   public int method6677(SectionPos var1) {
       this.field8988.method726();
-      return this.field8988.method652(var1.method8425());
+      return this.field8988.getLevel(var1.asLong());
    }
 
    private boolean method6678(long var1) {
@@ -137,14 +138,14 @@ public class Class1653 extends Class1652<Class8377> {
    }
 
    public void method6679(ChunkPos var1, ChunkSection var2) {
-      Class2002 var5 = Class2002.method8391(var1, var2.getYLocation() >> 4);
-      Util.<Class8377>acceptOrElse(this.method6643(var5.method8425()), var3 -> var3.method29358(var3x -> {
+      SectionPos var5 = SectionPos.method8391(var1, var2.getYLocation() >> 4);
+      Util.<Class8377>acceptOrElse(this.method6643(var5.asLong()), var3 -> var3.method29358(var3x -> {
             if (method6680(var2)) {
                this.method6681(var2, var5, var3x);
             }
          }), () -> {
          if (method6680(var2)) {
-            Class8377 var5x = this.method6645(var5.method8425());
+            Class8377 var5x = this.method6645(var5.asLong());
             this.method6681(var2, var5, var5x::method29352);
          }
       });
@@ -154,12 +155,12 @@ public class Class1653 extends Class1652<Class8377> {
       return var0.method21869(Class4913.field22772::contains);
    }
 
-   private void method6681(ChunkSection var1, Class2002 var2, BiConsumer<BlockPos, Class4913> var3) {
+   private void method6681(ChunkSection var1, SectionPos var2, BiConsumer<BlockPos, Class4913> var3) {
       var2.method8426()
          .forEach(
             var2x -> {
                BlockState var5 = var1.method21852(
-                  Class2002.method8397(var2x.getX()), Class2002.method8397(var2x.getY()), Class2002.method8397(var2x.getZ())
+                  SectionPos.mask(var2x.getX()), SectionPos.mask(var2x.getY()), SectionPos.mask(var2x.getZ())
                );
                Class4913.method15187(var5).ifPresent(var2xx -> var3.accept(var2x, var2xx));
             }
@@ -167,11 +168,11 @@ public class Class1653 extends Class1652<Class8377> {
    }
 
    public void method6682(IWorldReader var1, BlockPos var2, int var3) {
-      Class2002.method8428(new ChunkPos(var2), Math.floorDiv(var3, 16))
-         .map(var1x -> Pair.of(var1x, this.method6643(var1x.method8425())))
+      SectionPos.method8428(new ChunkPos(var2), Math.floorDiv(var3, 16))
+         .map(var1x -> Pair.of(var1x, this.method6643(var1x.asLong())))
          .filter(var0 -> var0.getSecond().map(Class8377::method29360).orElse(false))
          .map(var0 -> var0.getFirst().method8423())
-         .filter(var1x -> this.field8989.add(var1x.method24352()))
+         .filter(var1x -> this.field8989.add(var1x.asLong()))
          .forEach(var1x -> var1.getChunk(var1x.x, var1x.z, ChunkStatus.field42133));
    }
 

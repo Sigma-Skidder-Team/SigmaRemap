@@ -4,8 +4,8 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Queues;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.ClientMode;
-import com.mentalfrostbyte.jello.event.impl.StopUseItemEvent;
 import com.mentalfrostbyte.jello.event.impl.EventRayTraceResult;
+import com.mentalfrostbyte.jello.event.impl.StopUseItemEvent;
 import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.ClickEvent;
 import com.mojang.authlib.GameProfile;
@@ -40,6 +40,7 @@ import net.minecraft.client.settings.PointOfView;
 import net.minecraft.client.util.Util;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
+import net.minecraft.entity.item.BoatEntity;
 import net.minecraft.entity.item.ItemFrameEntity;
 import net.minecraft.entity.player.ChatVisibility;
 import net.minecraft.entity.player.PlayerEntity;
@@ -66,6 +67,7 @@ import net.minecraft.util.Timer;
 import net.minecraft.util.datafix.codec.DatapackCodec;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.EntityRayTraceResult;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.*;
@@ -1133,13 +1135,10 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       }
    }
 
-   /**
-    * Idk this doesn't match the source code so i cba to do this rn
-    * TODO: Finish this perhaps
-    */
    private void clickMouse() {
       ClickEvent var1 = new ClickEvent(ClickEvent.Button.LEFT);
       Client.getInstance().getEventManager().call(var1);
+
       if (!var1.isCancelled()) {
          if (this.leftClickCounter <= 0) {
             if (this.objectMouseOver == null) {
@@ -1148,32 +1147,32 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
                   this.leftClickCounter = 10;
                }
             } else if (!this.player.isRowingBoat()) {
-               EventRayTraceResult var2 = null;
+               EventRayTraceResult rayTraceEvent = null;
                if (this.objectMouseOver.getType() == RayTraceResult.Type.ENTITY) {
-                  var2 = new EventRayTraceResult(((EntityRayTraceResult)this.objectMouseOver).getEntity(), true);
-                  Client.getInstance().getEventManager().call(var2);
-                  if (var2.isCancelled()) {
+                  rayTraceEvent = new EventRayTraceResult(((EntityRayTraceResult)this.objectMouseOver).getEntity(), true);
+                  Client.getInstance().getEventManager().call(rayTraceEvent);
+
+                  if (rayTraceEvent.isCancelled()) {
                      return;
                   }
                }
 
-
-               switch (Class9158.field42043[this.objectMouseOver.getType().ordinal()]) {
-                  case 1:
+               switch (this.objectMouseOver.getType()) {
+                  case ENTITY:
                      this.playerController.attackEntity(this.player, ((EntityRayTraceResult)this.objectMouseOver).getEntity());
-                     if (var2 != null) {
-                        var2.unhover();
-                        Client.getInstance().getEventManager().call(var2);
+                     if (rayTraceEvent != null) {
+                        rayTraceEvent.unhover();
+                        Client.getInstance().getEventManager().call(rayTraceEvent);
                      }
                      break;
-                  case 2:
-                     BlockRayTraceResult var4 = (BlockRayTraceResult)this.objectMouseOver;
-                     BlockPos var5 = var4.getPos();
-                     if (!this.world.getBlockState(var5).isAir()) {
-                        this.playerController.clickBlock(var5, var4.getFace());
+                  case BLOCK:
+                     BlockRayTraceResult blockraytraceresult = (BlockRayTraceResult)this.objectMouseOver;
+                     BlockPos blockpos = blockraytraceresult.getPos();
+                     if (!this.world.getBlockState(blockpos).isAir()) {
+                        this.playerController.clickBlock(blockpos, blockraytraceresult.getFace());
                         break;
                      }
-                  case 3:
+                  case MISS:
                      if (this.playerController.isNotCreative()) {
                         this.leftClickCounter = 10;
                      }
@@ -1202,8 +1201,8 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
                for (Hand var5 : Hand.values()) {
                   ItemStack var6 = this.player.getHeldItem(var5);
                   if (this.objectMouseOver != null) {
-                     switch (Class9158.field42043[this.objectMouseOver.getType().ordinal()]) {
-                        case 1:
+                     switch (this.objectMouseOver.getType()) {
+                        case ENTITY:
                            EntityRayTraceResult var7 = (EntityRayTraceResult)this.objectMouseOver;
                            Entity var8 = var7.getEntity();
                            ActionResultType var9 = this.playerController.interactWithEntity(this.player, var8, var7, var5);
@@ -1219,7 +1218,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
                               return;
                            }
                            break;
-                        case 2:
+                        case BLOCK:
                            BlockRayTraceResult var10 = (BlockRayTraceResult)this.objectMouseOver;
                            int var11 = var6.getCount();
                            ActionResultType var12 = this.playerController.func_217292_a(this.player, this.world, var5, var10);

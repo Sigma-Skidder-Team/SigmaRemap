@@ -146,8 +146,8 @@ public class SquidEntity extends WaterMobEntity {
    }
 
    @Override
-   public boolean attackEntityFrom(DamageSource var1, float var2) {
-      if (super.attackEntityFrom(var1, var2) && this.method3014() != null) {
+   public boolean attackEntityFrom(DamageSource source, float var2) {
+      if (super.attackEntityFrom(source, var2) && this.method3014() != null) {
          this.method4838();
          return true;
       } else {

@@ -253,15 +253,15 @@ public class WolfEntity extends TameableEntity implements IAngerable {
    }
 
    @Override
-   public boolean attackEntityFrom(DamageSource var1, float var2) {
-      if (!this.isInvulnerableTo(var1)) {
-         Entity var5 = var1.getTrueSource();
+   public boolean attackEntityFrom(DamageSource source, float var2) {
+      if (!this.isInvulnerableTo(source)) {
+         Entity var5 = source.getTrueSource();
          this.method4403(false);
          if (var5 != null && !(var5 instanceof PlayerEntity) && !(var5 instanceof AbstractArrowEntity)) {
             var2 = (var2 + 1.0F) / 2.0F;
          }
 
-         return super.attackEntityFrom(var1, var2);
+         return super.attackEntityFrom(source, var2);
       } else {
          return false;
       }

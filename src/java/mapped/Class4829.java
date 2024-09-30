@@ -37,11 +37,11 @@ public class Class4829 {
    }
 
    private static boolean method14921(IBlockReader var0, Direction var1, float var2, BlockPos var3, BlockState var4) {
-      if (!var4.method23410()) {
+      if (!var4.isSolid()) {
          return false;
       } else {
          VoxelShape var7 = VoxelShapes.create(0.0, 0.0, 0.0, 1.0, (double)var2, 1.0);
-         VoxelShape var8 = var4.method23389(var0, var3);
+         VoxelShape var8 = var4.getRenderShapeTrue(var0, var3);
          return VoxelShapes.method27441(var7, var8, var1);
       }
    }

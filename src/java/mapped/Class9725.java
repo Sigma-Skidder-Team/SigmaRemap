@@ -24,15 +24,18 @@ import net.minecraft.nbt.LongArrayNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.SectionPos;
 import net.minecraft.util.palette.UpgradeData;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.ITickList;
+import net.minecraft.world.LightType;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeContainer;
 import net.minecraft.world.biome.provider.BiomeProvider;
 import net.minecraft.world.chunk.ChunkSection;
 import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.chunk.NibbleArray;
 import net.minecraft.world.gen.feature.structure.StructureStart;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 import net.minecraft.world.server.ServerWorld;
@@ -84,11 +87,11 @@ public class Class9725 {
 
          if (var15) {
             if (var30.contains("BlockLight", 7)) {
-               var21.method606(LightType.BLOCK, Class2002.method8391(var3, var25), new Class6785(var30.getByteArray("BlockLight")), true);
+               var21.method606(LightType.BLOCK, SectionPos.method8391(var3, var25), new NibbleArray(var30.getByteArray("BlockLight")), true);
             }
 
             if (var19 && var30.contains("SkyLight", 7)) {
-               var21.method606(LightType.SKY, Class2002.method8391(var3, var25), new Class6785(var30.getByteArray("SkyLight")), true);
+               var21.method606(LightType.SKY, SectionPos.method8391(var3, var25), new NibbleArray(var30.getByteArray("SkyLight")), true);
             }
          }
       }
@@ -229,8 +232,8 @@ public class Class9725 {
             .filter(var1x -> var1x != null && var1x.getYLocation() >> 4 == var13)
             .findFirst()
             .orElse(Chunk.field9111);
-         Class6785 var15 = var10.getLightEngine(LightType.BLOCK).method642(Class2002.method8391(var4, var13));
-         Class6785 var16 = var10.getLightEngine(LightType.SKY).method642(Class2002.method8391(var4, var13));
+         NibbleArray var15 = var10.getLightEngine(LightType.BLOCK).method642(SectionPos.method8391(var4, var13));
+         NibbleArray var16 = var10.getLightEngine(LightType.SKY).method642(SectionPos.method8391(var4, var13));
          if (var14 != Chunk.field9111 || var15 != null || var16 != null) {
             CompoundNBT var17 = new CompoundNBT();
             var17.method100("Y", (byte)(var13 & 0xFF));

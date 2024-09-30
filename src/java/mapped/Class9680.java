@@ -75,7 +75,7 @@ public class Class9680 {
    private static int[] field45263 = null;
    private static int[] field45264 = null;
    private static int[] field45265 = null;
-   private static final BlockState field45266 = Blocks.field36396.getDefaultState();
+   private static final BlockState field45266 = Blocks.DIRT.getDefaultState();
    private static final BlockState field45267 = Blocks.WATER.getDefaultState();
    public static Random field45268 = new Random();
    private static final Class7443 field45269 = new Class7447();
@@ -556,7 +556,7 @@ public class Class9680 {
       BlockState var8 = var1;
       if (field45230 != null) {
          if (!var0.method30512()) {
-            if (var7 == Blocks.field36395) {
+            if (var7 == Blocks.GRASS_BLOCK) {
                var8 = field45266;
             }
 
@@ -590,7 +590,7 @@ public class Class9680 {
                return -1;
             } else {
                Class7443 var10;
-               if (var7 == Blocks.field36395 || var7 == Blocks.TALL_GRASS || var7 instanceof Class3456) {
+               if (var7 == Blocks.GRASS_BLOCK || var7 == Blocks.TALL_GRASS || var7 instanceof Class3456) {
                   var10 = field45269;
                } else if (!(var7 instanceof Class3456)) {
                   if (!(var7 instanceof Class3465)) {

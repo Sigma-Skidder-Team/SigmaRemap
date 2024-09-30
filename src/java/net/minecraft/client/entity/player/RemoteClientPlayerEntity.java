@@ -28,7 +28,7 @@ public class RemoteClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    @Override
-   public boolean attackEntityFrom(DamageSource var1, float var2) {
+   public boolean attackEntityFrom(DamageSource source, float var2) {
       return true;
    }
 

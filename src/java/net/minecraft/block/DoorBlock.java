@@ -81,7 +81,7 @@ public class DoorBlock extends Block {
                .with(POWERED, var3.<Boolean>get(POWERED))
             : Blocks.AIR.getDefaultState();
       } else {
-         return var9 == DoubleBlockHalf.field210 && var2 == Direction.DOWN && !var1.method23443(var4, var5)
+         return var9 == DoubleBlockHalf.field210 && var2 == Direction.DOWN && !var1.isValidPosition(var4, var5)
             ? Blocks.AIR.getDefaultState()
             : super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
       }
@@ -217,7 +217,7 @@ public class DoorBlock extends Block {
    }
 
    @Override
-   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
+   public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
       BlockPos var6 = var3.down();
       BlockState var7 = var2.getBlockState(var6);
       return var1.get(DOUBLE_BLOCK_HALF) != DoubleBlockHalf.field210 ? var7.isIn(this) : var7.method23454(var2, var6, Direction.UP);

@@ -62,7 +62,7 @@ public class Class7880 {
          Block var5 = var1.getBlock();
          if (var5 == Blocks.SNOW_BLOCK) {
             return false;
-         } else if (!(var5 instanceof Class3194)
+         } else if (!(var5 instanceof BushBlock)
             || !(var5 instanceof Class3456)
                && !(var5 instanceof Class3490)
                && !(var5 instanceof Class3479)

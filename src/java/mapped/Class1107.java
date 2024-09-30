@@ -74,15 +74,15 @@ public class Class1107 extends Class1009 {
    }
 
    @Override
-   public boolean attackEntityFrom(DamageSource var1, float var2) {
-      if (this.isInvulnerableTo(var1)) {
+   public boolean attackEntityFrom(DamageSource source, float var2) {
+      if (this.isInvulnerableTo(source)) {
          return false;
       } else {
-         if ((var1 instanceof EntityDamageSource || var1 == DamageSource.field39006) && this.field6080 != null) {
+         if ((source instanceof EntityDamageSource || source == DamageSource.field39006) && this.field6080 != null) {
             this.field6080.method10958();
          }
 
-         return super.attackEntityFrom(var1, var2);
+         return super.attackEntityFrom(source, var2);
       }
    }
 

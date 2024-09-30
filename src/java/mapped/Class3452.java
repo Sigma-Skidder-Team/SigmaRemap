@@ -47,7 +47,7 @@ public abstract class Class3452 extends Class3444 implements Class3196 {
 
    @Override
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
-      if (var2 == this.field19256.getOpposite() && !var1.method23443(var4, var5)) {
+      if (var2 == this.field19256.getOpposite() && !var1.isValidPosition(var4, var5)) {
          var4.method6860().scheduleTick(var5, this, 1);
       }
 

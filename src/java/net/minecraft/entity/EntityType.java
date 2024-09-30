@@ -2,6 +2,7 @@ package net.minecraft.entity;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.item.BoatEntity;
 import net.minecraft.entity.item.ItemFrameEntity;
 import net.minecraft.entity.passive.WolfEntity;
 import com.google.common.collect.ImmutableSet;

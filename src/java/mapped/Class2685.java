@@ -54,7 +54,7 @@ public class Class2685 extends Class2595 {
          && !var5.isAir()
          && !var5.isIn(Blocks.BEDROCK)
          && var5.method23456(var1, var6)
-         && var3.method23443(var1, var2)
+         && var3.isValidPosition(var1, var2)
          && var1.method7181(this.field17102, AxisAlignedBB.method19657(Vector3d.method11329(var2))).isEmpty();
    }
 }

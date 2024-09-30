@@ -34,8 +34,8 @@ public class Class3455 extends Class3456 implements Class3449 {
    }
 
    @Override
-   public boolean method11490(BlockState var1, IBlockReader var2, BlockPos var3) {
-      return var1.method23454(var2, var3, Direction.UP) && !var1.isIn(Blocks.field36890);
+   public boolean isValidGround(BlockState state, IBlockReader var2, BlockPos var3) {
+      return state.method23454(var2, var3, Direction.UP) && !state.isIn(Blocks.field36890);
    }
 
    @Override
@@ -58,10 +58,10 @@ public class Class3455 extends Class3456 implements Class3449 {
    }
 
    @Override
-   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
+   public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
       if (var1.<DoubleBlockHalf>get(field19274) != DoubleBlockHalf.field209) {
          FluidState var7 = var2.getFluidState(var3);
-         return super.method11492(var1, var2, var3) && var7.method23486(FluidTags.field40469) && var7.method23477() == 8;
+         return super.isValidPosition(var1, var2, var3) && var7.method23486(FluidTags.field40469) && var7.method23477() == 8;
       } else {
          BlockState var6 = var2.getBlockState(var3.down());
          return var6.isIn(this) && var6.<DoubleBlockHalf>get(field19274) == DoubleBlockHalf.field210;

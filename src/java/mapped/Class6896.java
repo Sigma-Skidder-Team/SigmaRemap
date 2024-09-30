@@ -50,13 +50,13 @@ public abstract class Class6896 {
    private static boolean method21068(Class1680 var0, BlockPos var1) {
       return var0.method6815(var1, var0x -> {
          Block var3 = var0x.getBlock();
-         return Class2898.method11219(var3) && !var0x.isIn(Blocks.field36395) && !var0x.isIn(Blocks.MYCELIUM);
+         return Class2898.method11219(var3) && !var0x.isIn(Blocks.GRASS_BLOCK) && !var0x.isIn(Blocks.MYCELIUM);
       });
    }
 
    public static void method21069(Class1679 var0, BlockPos var1) {
       if (!method21068(var0, var1)) {
-         Class2903.method11232(var0, var1, Blocks.field36396.getDefaultState());
+         Class2903.method11232(var0, var1, Blocks.DIRT.getDefaultState());
       }
    }
 

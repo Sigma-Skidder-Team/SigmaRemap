@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.BushBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.state.IntegerProperty;
@@ -15,7 +16,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-public class Class3489 extends Class3194 {
+public class Class3489 extends BushBlock {
    private static String[] field18470;
    public static final IntegerProperty field19354 = BlockStateProperties.field39740;
    private static final VoxelShape[] field19355 = new VoxelShape[]{
@@ -36,8 +37,8 @@ public class Class3489 extends Class3194 {
    }
 
    @Override
-   public boolean method11490(BlockState var1, IBlockReader var2, BlockPos var3) {
-      return var1.isIn(Blocks.SOUL_SAND);
+   public boolean isValidGround(BlockState state, IBlockReader var2, BlockPos var3) {
+      return state.isIn(Blocks.SOUL_SAND);
    }
 
    @Override

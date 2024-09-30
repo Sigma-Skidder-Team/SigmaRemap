@@ -34,7 +34,7 @@ public abstract class Class3247 extends HorizontalBlock {
    }
 
    @Override
-   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
+   public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
       return method11547(var2, var3.down());
    }
 
@@ -70,7 +70,7 @@ public abstract class Class3247 extends HorizontalBlock {
 
    @Override
    public void method11506(BlockState var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
-      if (!var1.method23443(var2, var3)) {
+      if (!var1.isValidPosition(var2, var3)) {
          TileEntity var9 = !this.isTileEntityProvider() ? null : var2.getTileEntity(var3);
          method11555(var1, var2, var3, var9);
          var2.removeBlock(var3, false);

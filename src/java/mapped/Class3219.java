@@ -8,6 +8,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
+import net.minecraft.world.lighting.LightEngine;
 import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
@@ -22,7 +23,7 @@ public class Class3219 extends Block implements Class3196 {
    private static boolean method11609(BlockState var0, IWorldReader var1, BlockPos var2) {
       BlockPos var5 = var2.up();
       BlockState var6 = var1.getBlockState(var5);
-      int var7 = Class200.method649(var1, var0, var2, var6, var5, Direction.UP, var6.getOpacity(var1, var5));
+      int var7 = LightEngine.func_215613_a(var1, var0, var2, var6, var5, Direction.UP, var6.getOpacity(var1, var5));
       return var7 < var1.getMaxLightLevel();
    }
 

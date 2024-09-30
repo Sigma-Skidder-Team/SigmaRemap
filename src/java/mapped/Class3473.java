@@ -63,7 +63,7 @@ public class Class3473 extends Class3472 implements Class3196 {
                var12 = var15.method11254(var2, var10, var14.method26519());
             }
 
-            if (var12.method23443(var1, var10)) {
+            if (var12.isValidPosition(var1, var10)) {
                var1.setBlockState(var10, var12, 3);
             }
          }

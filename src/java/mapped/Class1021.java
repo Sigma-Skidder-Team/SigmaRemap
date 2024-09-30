@@ -90,7 +90,7 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
             BlockPos var8 = new BlockPos(var3, var4, var5);
             if (this.world.getBlockState(var8).isAir()
                && this.world.getBiome(var8).method32503(var8) < 0.8F
-               && var6.method23443(this.world, var8)) {
+               && var6.isValidPosition(this.world, var8)) {
                this.world.setBlockState(var8, var6);
             }
          }

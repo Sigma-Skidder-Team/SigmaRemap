@@ -70,7 +70,7 @@ public class Class3399 extends AbstractFireBlock {
    }
 
    private static VoxelShape method12015(BlockState var0) {
-      VoxelShape var3 = VoxelShapes.method27425();
+      VoxelShape var3 = VoxelShapes.empty();
       if (var0.<Boolean>get(field19043)) {
          var3 = field19045;
       }
@@ -96,7 +96,7 @@ public class Class3399 extends AbstractFireBlock {
 
    @Override
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
-      return !this.method11492(var1, var4, var5) ? Blocks.AIR.getDefaultState() : this.method12021(var4, var5, var1.<Integer>get(field19038));
+      return !this.isValidPosition(var1, var4, var5) ? Blocks.AIR.getDefaultState() : this.method12021(var4, var5, var1.<Integer>get(field19038));
    }
 
    @Override
@@ -129,7 +129,7 @@ public class Class3399 extends AbstractFireBlock {
    }
 
    @Override
-   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
+   public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
       BlockPos var6 = var3.down();
       return var2.getBlockState(var6).method23454(var2, var6, Direction.UP) || this.method12022(var2, var3);
    }
@@ -138,7 +138,7 @@ public class Class3399 extends AbstractFireBlock {
    public void tick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       var2.method6860().scheduleTick(var3, this, method12024(var2.rand));
       if (var2.getGameRules().getBoolean(Class5462.field24223)) {
-         if (!var1.method23443(var2, var3)) {
+         if (!var1.isValidPosition(var2, var3)) {
             var2.removeBlock(var3, false);
          }
 

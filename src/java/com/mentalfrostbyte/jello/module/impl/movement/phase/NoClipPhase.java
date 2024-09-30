@@ -24,7 +24,7 @@ public class NoClipPhase extends Module {
     public void method16581(EventBlockCollision var1) {
         if (this.isEnabled() && mc.world != null) {
             if ((double) var1.getBlockPos().getY() >= mc.player.getPosY()) {
-                var1.setBoxelShape(VoxelShapes.method27425());
+                var1.setBoxelShape(VoxelShapes.empty());
             }
         }
     }

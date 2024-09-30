@@ -74,7 +74,7 @@ public class Class3401 extends Block {
    }
 
    @Override
-   public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
+   public void onEntityCollision(BlockState var1, World var2, BlockPos var3, Entity var4) {
       if (!var4.isPassenger() && !var4.isBeingRidden() && var4.method3367()) {
          var4.setPortal(var3);
       }

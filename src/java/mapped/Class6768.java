@@ -10,12 +10,12 @@ import net.minecraft.world.chunk.IChunk;
 import java.util.Random;
 
 public abstract class Class6768<C extends Class8277> {
-   private static final BlockState field29487 = Blocks.field36396.getDefaultState();
-   private static final BlockState field29488 = Blocks.field36395.getDefaultState();
-   private static final BlockState field29489 = Blocks.field36398.getDefaultState();
+   private static final BlockState field29487 = Blocks.DIRT.getDefaultState();
+   private static final BlockState field29488 = Blocks.GRASS_BLOCK.getDefaultState();
+   private static final BlockState field29489 = Blocks.PODZOL.getDefaultState();
    private static final BlockState field29490 = Blocks.GRAVEL.getDefaultState();
    private static final BlockState field29491 = Blocks.STONE.getDefaultState();
-   private static final BlockState field29492 = Blocks.field36397.getDefaultState();
+   private static final BlockState field29492 = Blocks.COARSE_DIRT.getDefaultState();
    private static final BlockState field29493 = Blocks.SAND.getDefaultState();
    private static final BlockState field29494 = Blocks.RED_SAND.getDefaultState();
    private static final BlockState field29495 = Blocks.field36730.getDefaultState();

@@ -1,10 +1,12 @@
 package mapped;
 
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.item.BoatEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
@@ -43,14 +45,14 @@ public class HoneyBlock extends Class3231 {
    }
 
    @Override
-   public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
+   public void onEntityCollision(BlockState var1, World var2, BlockPos var3, Entity var4) {
       if (this.method11972(var3, var4)) {
          this.method11973(var4, var3);
          this.method11974(var4);
          this.method11975(var2, var4);
       }
 
-      super.method11523(var1, var2, var3, var4);
+      super.onEntityCollision(var1, var2, var3, var4);
    }
 
    private boolean method11972(BlockPos var1, Entity var2) {

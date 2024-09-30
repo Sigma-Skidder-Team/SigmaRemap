@@ -86,7 +86,7 @@ public class Class1672 implements IChunk {
          ChunkSection var5 = this.getSections()[var4 >> 4];
          return !ChunkSection.method21859(var5) ? var5.method21852(var1.getX() & 15, var4 & 15, var1.getZ() & 15) : Blocks.AIR.getDefaultState();
       } else {
-         return Blocks.field37011.getDefaultState();
+         return Blocks.VOID_AIR.getDefaultState();
       }
    }
 
@@ -177,7 +177,7 @@ public class Class1672 implements IChunk {
             return var10;
          }
       } else {
-         return Blocks.field37011.getDefaultState();
+         return Blocks.VOID_AIR.getDefaultState();
       }
    }
 

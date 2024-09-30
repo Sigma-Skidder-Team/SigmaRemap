@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
@@ -7,6 +8,7 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.stats.Stats;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.Hand;
@@ -58,10 +60,10 @@ public abstract class Class1018 extends Class1045 {
    }
 
    @Override
-   public boolean attackEntityFrom(DamageSource var1, float var2) {
-      if (!this.isInvulnerableTo(var1)) {
+   public boolean attackEntityFrom(DamageSource source, float var2) {
+      if (!this.isInvulnerableTo(source)) {
          this.field5702 = 0;
-         return super.attackEntityFrom(var1, var2);
+         return super.attackEntityFrom(source, var2);
       } else {
          return false;
       }
@@ -69,7 +71,7 @@ public abstract class Class1018 extends Class1045 {
 
    @Override
    public float method4339(BlockPos var1, IWorldReader var2) {
-      return !var2.getBlockState(var1.down()).isIn(Blocks.field36395) ? var2.method7009(var1) - 0.5F : 10.0F;
+      return !var2.getBlockState(var1.down()).isIn(Blocks.GRASS_BLOCK) ? var2.method7009(var1) - 0.5F : 10.0F;
    }
 
    @Override
@@ -94,7 +96,7 @@ public abstract class Class1018 extends Class1045 {
    }
 
    public static boolean method4500(EntityType<? extends Class1018> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
-      return var1.getBlockState(var3.down()).isIn(Blocks.field36395) && var1.method7021(var3, 0) > 8;
+      return var1.getBlockState(var3.down()).isIn(Blocks.GRASS_BLOCK) && var1.method7021(var3, 0) > 8;
    }
 
    @Override

@@ -6,6 +6,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockDisplayReader;
+import net.minecraft.world.LightType;
 import net.minecraft.world.biome.Biome;
 
 import java.util.Arrays;

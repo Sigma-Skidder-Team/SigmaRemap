@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.SectionPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.server.ServerWorld;
 
@@ -22,13 +23,13 @@ public class Class3688 extends Class3676<Class1042> {
 
    public void method12502(ServerWorld var1, Class1042 var2, long var3) {
       Class1653 var7 = var1.method6951();
-      int var8 = var7.method6677(Class2002.method8390(var2.getPosition()));
+      int var8 = var7.method6677(SectionPos.method8390(var2.getPosition()));
       Vector3d var9 = null;
 
       for (int var10 = 0; var10 < 5; var10++) {
-         Vector3d var11 = Class8037.method27584(var2, 15, 7, var1x -> (double)(-var1.method6955(Class2002.method8390(var1x))));
+         Vector3d var11 = Class8037.method27584(var2, 15, 7, var1x -> (double)(-var1.method6955(SectionPos.method8390(var1x))));
          if (var11 != null) {
-            int var12 = var7.method6677(Class2002.method8390(new BlockPos(var11)));
+            int var12 = var7.method6677(SectionPos.method8390(new BlockPos(var11)));
             if (var12 < var8) {
                var9 = var11;
                break;

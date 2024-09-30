@@ -34,7 +34,7 @@ public class Class3408 extends Block {
 
    @Override
    public void tick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
-      if (!var1.method23443(var2, var3)) {
+      if (!var1.isValidPosition(var2, var3)) {
          var2.method7179(var3, true);
       }
    }
@@ -62,7 +62,7 @@ public class Class3408 extends Block {
 
    @Override
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
-      if (!var1.method23443(var4, var5)) {
+      if (!var1.isValidPosition(var4, var5)) {
          var4.method6860().scheduleTick(var5, this, 1);
       }
 
@@ -70,15 +70,15 @@ public class Class3408 extends Block {
    }
 
    @Override
-   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
+   public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
       BlockState var6 = var2.getBlockState(var3.down());
       if (var6.getBlock() == this) {
          return true;
       } else {
-         if (var6.isIn(Blocks.field36395)
-            || var6.isIn(Blocks.field36396)
-            || var6.isIn(Blocks.field36397)
-            || var6.isIn(Blocks.field36398)
+         if (var6.isIn(Blocks.GRASS_BLOCK)
+            || var6.isIn(Blocks.DIRT)
+            || var6.isIn(Blocks.COARSE_DIRT)
+            || var6.isIn(Blocks.PODZOL)
             || var6.isIn(Blocks.SAND)
             || var6.isIn(Blocks.RED_SAND)) {
             BlockPos var7 = var3.down();

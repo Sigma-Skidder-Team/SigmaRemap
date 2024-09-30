@@ -24,9 +24,9 @@ public final class Class6486 {
    Class6486(BlockState var1) {
       Block var4 = var1.getBlock();
       this.field28438 = var1.method23409(Class1666.field9078, BlockPos.ZERO);
-      this.field28439 = var4.method11493(var1, Class1666.field9078, BlockPos.ZERO);
+      this.field28439 = var4.propagatesSkylightDown(var1, Class1666.field9078, BlockPos.ZERO);
       this.field28440 = var4.method11996(var1, Class1666.field9078, BlockPos.ZERO);
-      if (var1.method23410()) {
+      if (var1.isSolid()) {
          this.field28441 = new VoxelShape[field28436.length];
          VoxelShape var5 = var4.method11503(var1, Class1666.field9078, BlockPos.ZERO);
 

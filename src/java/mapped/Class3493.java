@@ -1,12 +1,9 @@
 package mapped;
 
-import net.minecraft.block.HorizontalBlock;
+import net.minecraft.block.*;
 import net.minecraft.state.DirectionProperty;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.state.StateContainer;
@@ -20,7 +17,7 @@ import net.minecraft.world.IWorld;
 
 import java.util.Map;
 
-public class Class3493 extends Class3194 {
+public class Class3493 extends BushBlock {
    private static String[] field18470;
    public static final DirectionProperty field19361 = HorizontalBlock.HORIZONTAL_FACING;
    private final Class3462 field19362;
@@ -56,8 +53,8 @@ public class Class3493 extends Class3194 {
    }
 
    @Override
-   public boolean method11490(BlockState var1, IBlockReader var2, BlockPos var3) {
-      return var1.isIn(Blocks.FARMLAND);
+   public boolean isValidGround(BlockState state, IBlockReader var2, BlockPos var3) {
+      return state.isIn(Blocks.FARMLAND);
    }
 
    public Item method12188() {

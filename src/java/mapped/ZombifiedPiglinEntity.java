@@ -184,8 +184,8 @@ public class ZombifiedPiglinEntity extends ZombieEntity implements IAngerable {
    }
 
    @Override
-   public boolean attackEntityFrom(DamageSource var1, float var2) {
-      return !this.isInvulnerableTo(var1) ? super.attackEntityFrom(var1, var2) : false;
+   public boolean attackEntityFrom(DamageSource source, float var2) {
+      return !this.isInvulnerableTo(source) ? super.attackEntityFrom(source, var2) : false;
    }
 
    @Override

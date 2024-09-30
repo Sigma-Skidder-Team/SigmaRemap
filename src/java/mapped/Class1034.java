@@ -323,11 +323,11 @@ public class Class1034 extends Class1035 implements Class1023 {
    }
 
    @Override
-   public boolean attackEntityFrom(DamageSource var1, float var2) {
-      boolean var5 = super.attackEntityFrom(var1, var2);
+   public boolean attackEntityFrom(DamageSource source, float var2) {
+      boolean var5 = super.attackEntityFrom(source, var2);
       if (!this.world.isRemote) {
-         if (var5 && var1.getTrueSource() instanceof LivingEntity) {
-            Class4388.method13835(this, (LivingEntity)var1.getTrueSource());
+         if (var5 && source.getTrueSource() instanceof LivingEntity) {
+            Class4388.method13835(this, (LivingEntity) source.getTrueSource());
          }
 
          return var5;

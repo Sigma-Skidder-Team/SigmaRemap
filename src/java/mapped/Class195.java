@@ -7,8 +7,12 @@ import it.unimi.dsi.fastutil.objects.ObjectListIterator;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.SectionPos;
+import net.minecraft.world.LightType;
 import net.minecraft.world.chunk.ChunkSection;
+import net.minecraft.world.chunk.IChunkLightProvider;
 import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.chunk.NibbleArray;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -25,7 +29,7 @@ public class Class195 extends WorldLightManager implements AutoCloseable {
    private volatile int field739 = 5;
    private final AtomicBoolean field740 = new AtomicBoolean();
 
-   public Class195(Class1704 var1, Class1649 var2, boolean var3, Class322<Runnable> var4, Class321<Class6875<Runnable>> var5) {
+   public Class195(IChunkLightProvider var1, Class1649 var2, boolean var3, Class322<Runnable> var4, Class321<Class6875<Runnable>> var5) {
       super(var1, true, var3);
       this.field737 = var2;
       this.field738 = var5;
@@ -37,12 +41,12 @@ public class Class195 extends WorldLightManager implements AutoCloseable {
    }
 
    @Override
-   public int tick(int var1, boolean var2, boolean var3) {
+   public int tick(int toUpdateCount, boolean updateSkyLight, boolean updateBlockLight) {
       throw (UnsupportedOperationException) Util.pauseDevMode(new UnsupportedOperationException("Ran authomatically on a different thread!"));
    }
 
    @Override
-   public void method601(BlockPos var1, int var2) {
+   public void onBlockEmissionIncrease(BlockPos var1, int var2) {
       throw (UnsupportedOperationException) Util.pauseDevMode(new UnsupportedOperationException("Ran authomatically on a different thread!"));
    }
 
@@ -60,24 +64,24 @@ public class Class195 extends WorldLightManager implements AutoCloseable {
          super.method605(var1, false);
 
          for (int var4 = -1; var4 < 17; var4++) {
-            super.method606(LightType.BLOCK, Class2002.method8391(var1, var4), (Class6785)null, true);
-            super.method606(LightType.SKY, Class2002.method8391(var1, var4), (Class6785)null, true);
+            super.method606(LightType.BLOCK, SectionPos.method8391(var1, var4), (NibbleArray)null, true);
+            super.method606(LightType.SKY, SectionPos.method8391(var1, var4), (NibbleArray)null, true);
          }
 
          for (int var5 = 0; var5 < 16; var5++) {
-            super.method604(Class2002.method8391(var1, var5), true);
+            super.updateSectionStatus(SectionPos.method8391(var1, var5), true);
          }
       }, () -> "updateChunkStatus " + var1 + " " + true));
    }
 
    @Override
-   public void method604(Class2002 var1, boolean var2) {
+   public void updateSectionStatus(SectionPos var1, boolean var2) {
       this.method608(
          var1.method8410(),
          var1.method8412(),
          () -> 0,
          Class2044.field13349,
-         Util.method38515(() -> super.method604(var1, var2), () -> "updateSectionStatus " + var1 + " " + var2)
+         Util.method38515(() -> super.updateSectionStatus(var1, var2), () -> "updateSectionStatus " + var1 + " " + var2)
       );
    }
 
@@ -92,7 +96,7 @@ public class Class195 extends WorldLightManager implements AutoCloseable {
    }
 
    @Override
-   public void method606(LightType var1, Class2002 var2, Class6785 var3, boolean var4) {
+   public void method606(LightType var1, SectionPos var2, NibbleArray var3, boolean var4) {
       this.method608(
          var2.method8410(),
          var2.method8412(),
@@ -131,13 +135,13 @@ public class Class195 extends WorldLightManager implements AutoCloseable {
          for (int var7 = 0; var7 < 16; var7++) {
             ChunkSection var8 = var6[var7];
             if (!ChunkSection.method21859(var8)) {
-               super.method604(Class2002.method8391(var5, var7), false);
+               super.updateSectionStatus(SectionPos.method8391(var5, var7), false);
             }
          }
 
          super.method605(var5, true);
          if (!var2) {
-            var1.getLightSources().forEach(var2xx -> super.method601(var2xx, var1.getLightValue(var2xx)));
+            var1.getLightSources().forEach(var2xx -> super.onBlockEmissionIncrease(var2xx, var1.getLightValue(var2xx)));
          }
 
          this.field737.method6555(var5);
@@ -150,7 +154,7 @@ public class Class195 extends WorldLightManager implements AutoCloseable {
    }
 
    public void method611() {
-      if ((!this.field736.isEmpty() || super.method637()) && this.field740.compareAndSet(false, true)) {
+      if ((!this.field736.isEmpty() || super.hasLightWork()) && this.field740.compareAndSet(false, true)) {
          this.field735.method1641(() -> {
             this.method612();
             this.field740.set(false);

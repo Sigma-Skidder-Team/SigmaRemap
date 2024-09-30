@@ -11,7 +11,7 @@ import net.minecraft.world.GameType;
 import java.util.Optional;
 
 public enum Class2150 {
-   field14055(new TranslationTextComponent("gameMode.creative"), "/gamemode creative", new ItemStack(Blocks.field36395)),
+   field14055(new TranslationTextComponent("gameMode.creative"), "/gamemode creative", new ItemStack(Blocks.GRASS_BLOCK)),
    field14056(new TranslationTextComponent("gameMode.survival"), "/gamemode survival", new ItemStack(Items.field37820)),
    field14057(new TranslationTextComponent("gameMode.adventure"), "/gamemode adventure", new ItemStack(Items.field38056)),
    field14058(new TranslationTextComponent("gameMode.spectator"), "/gamemode spectator", new ItemStack(Items.field37979));

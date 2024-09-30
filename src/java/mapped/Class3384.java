@@ -42,8 +42,8 @@ public class Class3384 extends Class3383 {
    }
 
    @Override
-   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
-      return Blocks.WALL_TORCH.method11492(var1, var2, var3);
+   public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
+      return Blocks.WALL_TORCH.isValidPosition(var1, var2, var3);
    }
 
    @Override

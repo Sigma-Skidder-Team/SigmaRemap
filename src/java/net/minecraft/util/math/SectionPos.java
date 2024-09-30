@@ -1,44 +1,42 @@
-package mapped;
+package net.minecraft.util.math;
 
+import mapped.Class8180;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.ChunkPos;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3i;
 
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
-public class Class2002 extends Vector3i {
+public class SectionPos extends Vector3i {
    private static String[] field13048;
 
-   private Class2002(int var1, int var2, int var3) {
+   private SectionPos(int var1, int var2, int var3) {
       super(var1, var2, var3);
    }
 
-   public static Class2002 method8389(int var0, int var1, int var2) {
-      return new Class2002(var0, var1, var2);
+   public static SectionPos method8389(int var0, int var1, int var2) {
+      return new SectionPos(var0, var1, var2);
    }
 
-   public static Class2002 method8390(BlockPos var0) {
-      return new Class2002(method8396(var0.getX()), method8396(var0.getY()), method8396(var0.getZ()));
+   public static SectionPos method8390(BlockPos var0) {
+      return new SectionPos(toChunk(var0.getX()), toChunk(var0.getY()), toChunk(var0.getZ()));
    }
 
-   public static Class2002 method8391(ChunkPos var0, int var1) {
-      return new Class2002(var0.x, var1, var0.z);
+   public static SectionPos method8391(ChunkPos var0, int var1) {
+      return new SectionPos(var0.x, var1, var0.z);
    }
 
-   public static Class2002 method8392(Entity var0) {
-      return new Class2002(
-         method8396(MathHelper.floor(var0.getPosX())),
-         method8396(MathHelper.floor(var0.getPosY())),
-         method8396(MathHelper.floor(var0.getPosZ()))
+   public static SectionPos method8392(Entity var0) {
+      return new SectionPos(
+         toChunk(MathHelper.floor(var0.getPosX())),
+         toChunk(MathHelper.floor(var0.getPosY())),
+         toChunk(MathHelper.floor(var0.getPosZ()))
       );
    }
 
-   public static Class2002 method8393(long var0) {
-      return new Class2002(method8407(var0), method8408(var0), method8409(var0));
+   public static SectionPos method8393(long var0) {
+      return new SectionPos(method8407(var0), method8408(var0), method8409(var0));
    }
 
    public static long method8394(long var0, Direction var2) {
@@ -46,21 +44,21 @@ public class Class2002 extends Vector3i {
    }
 
    public static long method8395(long var0, int var2, int var3, int var4) {
-      return method8424(method8407(var0) + var2, method8408(var0) + var3, method8409(var0) + var4);
+      return asLong(method8407(var0) + var2, method8408(var0) + var3, method8409(var0) + var4);
    }
 
-   public static int method8396(int var0) {
+   public static int toChunk(int var0) {
       return var0 >> 4;
    }
 
-   public static int method8397(int var0) {
+   public static int mask(int var0) {
       return var0 & 15;
    }
 
    public static short method8398(BlockPos var0) {
-      int var3 = method8397(var0.getX());
-      int var4 = method8397(var0.getY());
-      int var5 = method8397(var0.getZ());
+      int var3 = mask(var0.getX());
+      int var4 = mask(var0.getY());
+      int var5 = mask(var0.getZ());
       return (short)(var3 << 8 | var5 << 4 | var4 << 0);
    }
 
@@ -144,11 +142,11 @@ public class Class2002 extends Vector3i {
       return (this.method8412() << 4) + 15;
    }
 
-   public static long method8419(long var0) {
-      return method8424(method8396(BlockPos.method8328(var0)), method8396(BlockPos.method8329(var0)), method8396(BlockPos.method8330(var0)));
+   public static long worldToSection(long var0) {
+      return asLong(toChunk(BlockPos.unpackX(var0)), toChunk(BlockPos.unpackY(var0)), toChunk(BlockPos.unpackZ(var0)));
    }
 
-   public static long method8420(long var0) {
+   public static long toSectionColumnPos(long var0) {
       return var0 & -1048576L;
    }
 
@@ -164,42 +162,42 @@ public class Class2002 extends Vector3i {
       return new ChunkPos(this.method8410(), this.method8412());
    }
 
-   public static long method8424(int var0, int var1, int var2) {
+   public static long asLong(int var0, int var1, int var2) {
       long var5 = 0L;
       var5 = var5 | ((long)var0 & 4194303L) << 42;
       var5 = var5 | ((long)var1 & 1048575L) << 0;
       return var5 | ((long)var2 & 4194303L) << 20;
    }
 
-   public long method8425() {
-      return method8424(this.method8410(), this.method8411(), this.method8412());
+   public long asLong() {
+      return asLong(this.method8410(), this.method8411(), this.method8412());
    }
 
    public Stream<BlockPos> method8426() {
       return BlockPos.method8363(this.method8413(), this.method8414(), this.method8415(), this.method8416(), this.method8417(), this.method8418());
    }
 
-   public static Stream<Class2002> method8427(Class2002 var0, int var1) {
+   public static Stream<SectionPos> method8427(SectionPos var0, int var1) {
       int var4 = var0.method8410();
       int var5 = var0.method8411();
       int var6 = var0.method8412();
       return method8429(var4 - var1, var5 - var1, var6 - var1, var4 + var1, var5 + var1, var6 + var1);
    }
 
-   public static Stream<Class2002> method8428(ChunkPos var0, int var1) {
+   public static Stream<SectionPos> method8428(ChunkPos var0, int var1) {
       int var4 = var0.x;
       int var5 = var0.z;
       return method8429(var4 - var1, 0, var5 - var1, var4 + var1, 15, var5 + var1);
    }
 
-   public static Stream<Class2002> method8429(int var0, int var1, int var2, int var3, int var4, int var5) {
-      return StreamSupport.<Class2002>stream(
+   public static Stream<SectionPos> method8429(int var0, int var1, int var2, int var3, int var4, int var5) {
+      return StreamSupport.<SectionPos>stream(
          new Class8180((long)((var3 - var0 + 1) * (var4 - var1 + 1) * (var5 - var2 + 1)), 64, var0, var1, var2, var3, var4, var5), false
       );
    }
 
    // $VF: synthetic method
-   public Class2002(int var1, int var2, int var3, Class8180 var4) {
+   public SectionPos(int var1, int var2, int var3, Class8180 var4) {
       this(var1, var2, var3);
    }
 }

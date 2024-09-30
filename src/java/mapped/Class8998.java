@@ -5,6 +5,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.network.IPacket;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.SectionPos;
 import net.minecraft.util.math.vector.Vector3d;
 
 import java.util.Collection;
@@ -16,7 +17,7 @@ public class Class8998 {
    private final Class9278 field41147;
    private final Entity field41148;
    private final int field41149;
-   private Class2002 field41150;
+   private SectionPos field41150;
    private final Set<ServerPlayerEntity> field41151;
    public final Class1649 field41152;
 
@@ -26,7 +27,7 @@ public class Class8998 {
       this.field41147 = new Class9278(Class1649.method6633(var1), var2, var4, var5, this::method33239);
       this.field41148 = var2;
       this.field41149 = var3;
-      this.field41150 = Class2002.method8392(var2);
+      this.field41150 = SectionPos.method8392(var2);
    }
 
    @Override
@@ -81,7 +82,7 @@ public class Class8998 {
             boolean var7 = this.field41148.forceSpawn;
             if (!var7) {
                ChunkPos var8 = new ChunkPos(this.field41148.chunkCoordX, this.field41148.chunkCoordZ);
-               Class8641 var9 = this.field41152.method6539(var8.method24352());
+               Class8641 var9 = this.field41152.method6539(var8.asLong());
                if (var9 != null && var9.method31043() != null) {
                   var7 = Class1649.method6635(var8, var1, false) <= Class1649.method6634(this.field41152);
                }
@@ -124,12 +125,12 @@ public class Class8998 {
    }
 
    // $VF: synthetic method
-   public static Class2002 method33248(Class8998 var0) {
+   public static SectionPos method33248(Class8998 var0) {
       return var0.field41150;
    }
 
    // $VF: synthetic method
-   public static Class2002 method33249(Class8998 var0, Class2002 var1) {
+   public static SectionPos method33249(Class8998 var0, SectionPos var1) {
       return var0.field41150 = var1;
    }
 

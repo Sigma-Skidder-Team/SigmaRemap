@@ -4,12 +4,13 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.chunk.IChunkLightProvider;
 import net.minecraft.world.chunk.IChunk;
 
 import java.io.IOException;
 import javax.annotation.Nullable;
 
-public abstract class Class1702 implements Class1704, AutoCloseable {
+public abstract class Class1702 implements IChunkLightProvider, AutoCloseable {
    @Nullable
    public Chunk method7342(int var1, int var2, boolean var3) {
       return (Chunk)this.method7346(var1, var2, ChunkStatus.FULL, var3);
@@ -22,7 +23,7 @@ public abstract class Class1702 implements Class1704, AutoCloseable {
 
    @Nullable
    @Override
-   public IBlockReader method7344(int var1, int var2) {
+   public IBlockReader getChunkForLight(int var1, int var2) {
       return this.method7346(var1, var2, ChunkStatus.field42133, false);
    }
 

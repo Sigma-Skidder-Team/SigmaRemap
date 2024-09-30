@@ -1,6 +1,7 @@
-package mapped;
+package net.minecraft.advancements;
 
 import com.google.common.collect.Maps;
+import mapped.*;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.Map;
@@ -14,8 +15,8 @@ public class CriteriaTriggers {
    public static final Class4910 field44468 = method36999(new Class4910());
    public static final Class4883 field44469 = method36999(new Class4883());
    public static final Class4897 field44470 = method36999(new Class4897());
-   public static final Class4885 field44471 = method36999(new Class4885());
-   public static final Class4909 field44472 = method36999(new Class4909());
+   public static final Class4885 PLAYER_HURT_ENTITY = method36999(new Class4885());
+   public static final Class4909 ENTITY_HURT_PLAYER = method36999(new Class4909());
    public static final Class4912 field44473 = method36999(new Class4912());
    public static final Class4903 field44474 = method36999(new Class4903());
    public static final Class4879 field44475 = method36999(new Class4879());

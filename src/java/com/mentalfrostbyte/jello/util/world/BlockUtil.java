@@ -600,7 +600,7 @@ public class BlockUtil {
    public static boolean method34578(BlockPos var0) {
       if (var0 != null) {
          Block var3 = mc.world.getBlockState(var0).getBlock();
-         return !var3.getDefaultState().method23410() && var3.getDefaultState().getMaterial().isReplaceable()
+         return !var3.getDefaultState().isSolid() && var3.getDefaultState().getMaterial().isReplaceable()
             ? false
             : !(var3 instanceof Class3410) || method34573(mc.world.getBlockState(var0)) != 0;
       } else {

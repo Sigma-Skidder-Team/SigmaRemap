@@ -155,7 +155,7 @@ public abstract class AbstractButtonBlock extends Class3200 {
    }
 
    @Override
-   public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
+   public void onEntityCollision(BlockState var1, World var2, BlockPos var3, Entity var4) {
       if (!var2.isRemote && this.field18527 && !var1.<Boolean>get(field18510)) {
          this.method11524(var1, var2, var3);
       }

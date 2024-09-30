@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.SectionPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.server.ServerWorld;
 
@@ -60,7 +61,7 @@ public class Class2739 extends Class2736 {
 
    @Nullable
    private Vector3d method10949() {
-      Class2002 var3 = this.method10950();
+      SectionPos var3 = this.method10950();
       if (var3 != null) {
          BlockPos var4 = this.method10951(var3);
          return var4 != null ? Class8037.method27586(this.field17258, 10, 7, Vector3d.method11330(var4)) : null;
@@ -70,14 +71,14 @@ public class Class2739 extends Class2736 {
    }
 
    @Nullable
-   private Class2002 method10950() {
+   private SectionPos method10950() {
       ServerWorld var3 = (ServerWorld)this.field17258.world;
-      List var4 = Class2002.method8427(Class2002.method8392(this.field17258), 2).filter(var1 -> var3.method6955(var1) == 0).collect(Collectors.toList());
-      return !var4.isEmpty() ? (Class2002)var4.get(var3.rand.nextInt(var4.size())) : null;
+      List var4 = SectionPos.method8427(SectionPos.method8392(this.field17258), 2).filter(var1 -> var3.method6955(var1) == 0).collect(Collectors.toList());
+      return !var4.isEmpty() ? (SectionPos)var4.get(var3.rand.nextInt(var4.size())) : null;
    }
 
    @Nullable
-   private BlockPos method10951(Class2002 var1) {
+   private BlockPos method10951(SectionPos var1) {
       ServerWorld var4 = (ServerWorld)this.field17258.world;
       Class1653 var5 = var4.method6951();
       List var6 = var5.method6666(var0 -> true, var1.method8422(), 8, Class2093.field13636).<BlockPos>map(Class9343::method35355).collect(Collectors.toList());

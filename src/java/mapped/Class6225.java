@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.dispenser.IBlockSource;
+import net.minecraft.entity.item.BoatEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;

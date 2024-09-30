@@ -119,8 +119,8 @@ public abstract class Class7354 {
    public void method23308(Class5086 var1) {
       Class6444 var4 = var1.method15544();
 
-      for (Class6443 var7 : var4.method19562()) {
-         for (Class6443 var10 : var7.method19562()) {
+      for (AudioByteManager var7 : var4.method19562()) {
+         for (AudioByteManager var10 : var7.method19562()) {
             switch (var10.method19563()) {
                case 5:
                   this.field31480 = (Class6449)var10;

@@ -665,8 +665,8 @@ public class Class4447 implements Class4442 {
          .method30252("###")
          .method30253("has_coal", method14075(Items.field37798))
          .method30255(var0);
-      Class8528.method30248(Blocks.field36397, 4)
-         .method30250('D', Blocks.field36396)
+      Class8528.method30248(Blocks.COARSE_DIRT, 4)
+         .method30250('D', Blocks.DIRT)
          .method30250('G', Blocks.GRAVEL)
          .method30252("DG")
          .method30252("GD")

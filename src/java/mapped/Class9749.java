@@ -82,7 +82,7 @@ public class Class9749 {
       ChunkPos var4 = new ChunkPos(var1.field33332 >> 4, var1.field33333 >> 4);
       ServerWorld var5 = var0.method20172();
       RegistryKey var6 = var5.getDimensionKey();
-      boolean var7 = var5.method6949().contains(var4.method24352());
+      boolean var7 = var5.method6949().contains(var4.asLong());
       if (!var7) {
          throw field45508.create(var4, var6.getLocation());
       } else {
@@ -115,7 +115,7 @@ public class Class9749 {
       RegistryKey<World> var4 = var3.getDimensionKey();
       LongSet var5 = var3.method6949();
       for (long var1 : var5) {
-         var3.method6950(ChunkPos.method24354(var1), ChunkPos.method24355(var1), false);
+         var3.method6950(ChunkPos.getX(var1), ChunkPos.getZ(var1), false);
       }
       var0.method20179(new TranslationTextComponent("commands.forceload.removed.all", var4.getLocation()), true);
       return 0;

@@ -6,6 +6,8 @@ import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.SectionPos;
+import net.minecraft.world.LightType;
 
 public class Class5124 implements Class5119 {
    private static String[] field23304;
@@ -29,13 +31,13 @@ public class Class5124 implements Class5119 {
          int var16 = var11.getLightFor(LightType.SKY, var15);
          float var17 = (float)(15 - var16) / 15.0F * 0.5F + 0.16F;
          int var18 = MathHelper.method37818(var17, 0.9F, 0.9F);
-         long var19 = Class2002.method8419(var15.method8332());
+         long var19 = SectionPos.worldToSection(var15.method8332());
          if (var13.add(var19)) {
             DebugRenderer.method27461(
-               var11.getChunkProvider().getLightManager().method639(LightType.SKY, Class2002.method8393(var19)),
-               (double)(Class2002.method8407(var19) * 16 + 8),
-               (double)(Class2002.method8408(var19) * 16 + 8),
-               (double)(Class2002.method8409(var19) * 16 + 8),
+               var11.getChunkProvider().getLightManager().method639(LightType.SKY, SectionPos.method8393(var19)),
+               (double)(SectionPos.method8407(var19) * 16 + 8),
+               (double)(SectionPos.method8408(var19) * 16 + 8),
+               (double)(SectionPos.method8409(var19) * 16 + 8),
                16711680,
                0.3F
             );

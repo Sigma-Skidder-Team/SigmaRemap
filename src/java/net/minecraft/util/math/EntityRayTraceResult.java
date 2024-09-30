@@ -1,11 +1,11 @@
-package mapped;
+package net.minecraft.util.math;
 
+import mapped.RayTraceResult;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.vector.Vector3d;
 
 public class EntityRayTraceResult extends RayTraceResult {
-   private static String[] field39314;
-   private final Entity field39315;
+    private final Entity field39315;
 
    public EntityRayTraceResult(Entity var1) {
       this(var1, var1.getPositionVec());

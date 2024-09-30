@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.world;
 
 public enum LightType {
    SKY(15),

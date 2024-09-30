@@ -33,7 +33,7 @@ public class BlockColors {
       var2.method29468(Class3456.field19276, Blocks.field36802, Blocks.TALL_GRASS);
       var2.method29466(
          (var0, var1, var2x, var3) -> var1 != null && var2x != null ? Class8527.method30242(var1, var2x) : Class6406.method19509(0.5, 1.0),
-         Blocks.field36395,
+         Blocks.GRASS_BLOCK,
          Blocks.FERN,
          Blocks.GRASS,
          Blocks.field36675

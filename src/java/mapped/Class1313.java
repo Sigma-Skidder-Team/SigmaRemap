@@ -276,14 +276,14 @@ public class Class1313 extends Screen {
    static {
       method6206(
          new TranslationTextComponent("createWorld.customize.preset.classic_flat"),
-         Blocks.field36395,
+         Blocks.GRASS_BLOCK,
          Biomes.PLAINS,
          Arrays.<Structure<?>>asList(Structure.field18073),
          false,
          false,
          false,
-         new Class9537(1, Blocks.field36395),
-         new Class9537(2, Blocks.field36396),
+         new Class9537(1, Blocks.GRASS_BLOCK),
+         new Class9537(2, Blocks.DIRT),
          new Class9537(1, Blocks.BEDROCK)
       );
       method6206(
@@ -294,8 +294,8 @@ public class Class1313 extends Screen {
          true,
          true,
          false,
-         new Class9537(1, Blocks.field36395),
-         new Class9537(5, Blocks.field36396),
+         new Class9537(1, Blocks.GRASS_BLOCK),
+         new Class9537(5, Blocks.DIRT),
          new Class9537(230, Blocks.STONE),
          new Class9537(1, Blocks.BEDROCK)
       );
@@ -309,7 +309,7 @@ public class Class1313 extends Screen {
          false,
          new Class9537(90, Blocks.WATER),
          new Class9537(5, Blocks.SAND),
-         new Class9537(5, Blocks.field36396),
+         new Class9537(5, Blocks.DIRT),
          new Class9537(5, Blocks.STONE),
          new Class9537(1, Blocks.BEDROCK)
       );
@@ -321,8 +321,8 @@ public class Class1313 extends Screen {
          true,
          true,
          true,
-         new Class9537(1, Blocks.field36395),
-         new Class9537(3, Blocks.field36396),
+         new Class9537(1, Blocks.GRASS_BLOCK),
+         new Class9537(3, Blocks.DIRT),
          new Class9537(59, Blocks.STONE),
          new Class9537(1, Blocks.BEDROCK)
       );
@@ -335,8 +335,8 @@ public class Class1313 extends Screen {
          false,
          false,
          new Class9537(1, Blocks.SNOW),
-         new Class9537(1, Blocks.field36395),
-         new Class9537(3, Blocks.field36396),
+         new Class9537(1, Blocks.GRASS_BLOCK),
+         new Class9537(3, Blocks.DIRT),
          new Class9537(59, Blocks.STONE),
          new Class9537(1, Blocks.BEDROCK)
       );
@@ -348,8 +348,8 @@ public class Class1313 extends Screen {
          false,
          false,
          false,
-         new Class9537(1, Blocks.field36395),
-         new Class9537(3, Blocks.field36396),
+         new Class9537(1, Blocks.GRASS_BLOCK),
+         new Class9537(3, Blocks.DIRT),
          new Class9537(2, Blocks.field36399)
       );
       method6206(

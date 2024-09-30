@@ -117,7 +117,7 @@ public abstract class AbstractFireBlock extends Block {
    public abstract boolean method12010(BlockState var1);
 
    @Override
-   public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
+   public void onEntityCollision(BlockState var1, World var2, BlockPos var3, Entity var4) {
       if (!var4.isImmuneToFire()) {
          var4.forceFireTicks(var4.getFireTimer() + 1);
          if (var4.getFireTimer() == 0) {
@@ -127,7 +127,7 @@ public abstract class AbstractFireBlock extends Block {
          var4.attackEntityFrom(DamageSource.field38992, this.field19034);
       }
 
-      super.method11523(var1, var2, var3, var4);
+      super.onEntityCollision(var1, var2, var3, var4);
    }
 
    @Override
@@ -141,7 +141,7 @@ public abstract class AbstractFireBlock extends Block {
             }
          }
 
-         if (!var1.method23443(var2, var3)) {
+         if (!var1.isValidPosition(var2, var3)) {
             var2.removeBlock(var3, false);
          }
       }
@@ -160,7 +160,7 @@ public abstract class AbstractFireBlock extends Block {
 
    public static boolean method12012(World var0, BlockPos var1, Direction var2) {
       BlockState var5 = var0.getBlockState(var1);
-      return !var5.isAir() ? false : method12009(var0, var1).method23443(var0, var1) || method12013(var0, var1, var2);
+      return !var5.isAir() ? false : method12009(var0, var1).isValidPosition(var0, var1) || method12013(var0, var1, var2);
    }
 
    private static boolean method12013(World var0, BlockPos var1, Direction var2) {

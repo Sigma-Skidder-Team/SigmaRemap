@@ -9,8 +9,8 @@ public final class Class7700 {
    private static String[] field32993;
    public static final BlockState field32994 = Blocks.GRASS.getDefaultState();
    public static final BlockState field32995 = Blocks.FERN.getDefaultState();
-   public static final BlockState field32996 = Blocks.field36398.getDefaultState();
-   public static final BlockState field32997 = Blocks.field36397.getDefaultState();
+   public static final BlockState field32996 = Blocks.PODZOL.getDefaultState();
+   public static final BlockState field32997 = Blocks.COARSE_DIRT.getDefaultState();
    public static final BlockState field32998 = Blocks.MYCELIUM.getDefaultState();
    public static final BlockState field32999 = Blocks.SNOW_BLOCK.getDefaultState();
    public static final BlockState field33000 = Blocks.ICE.getDefaultState();
@@ -26,7 +26,7 @@ public final class Class7700 {
    public static final BlockState field33010 = Blocks.field36448.getDefaultState();
    public static final BlockState field33011 = Blocks.field36427.getDefaultState();
    public static final BlockState field33012 = Blocks.field36451.getDefaultState();
-   public static final BlockState field33013 = Blocks.field36395.getDefaultState();
+   public static final BlockState field33013 = Blocks.GRASS_BLOCK.getDefaultState();
    public static final BlockState field33014 = Blocks.field36802.getDefaultState();
    public static final BlockState field33015 = Blocks.TALL_GRASS.getDefaultState();
    public static final BlockState field33016 = Blocks.LILAC.getDefaultState();
@@ -68,7 +68,7 @@ public final class Class7700 {
    public static final FluidState field33046 = Fluids.LAVA.method25049();
    public static final BlockState field33047 = Blocks.WATER.getDefaultState();
    public static final BlockState field33048 = Blocks.LAVA.getDefaultState();
-   public static final BlockState field33049 = Blocks.field36396.getDefaultState();
+   public static final BlockState field33049 = Blocks.DIRT.getDefaultState();
    public static final BlockState field33050 = Blocks.GRAVEL.getDefaultState();
    public static final BlockState field33051 = Blocks.GRANITE.getDefaultState();
    public static final BlockState field33052 = Blocks.DIORITE.getDefaultState();

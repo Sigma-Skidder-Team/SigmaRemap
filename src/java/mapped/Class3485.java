@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.BushBlock;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
@@ -13,7 +14,7 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.Random;
 import java.util.function.Supplier;
 
-public class Class3485 extends Class3194 implements Class3196 {
+public class Class3485 extends BushBlock implements Class3196 {
    private static String[] field18470;
    public static final VoxelShape field19345 = Block.makeCuboidShape(4.0, 0.0, 4.0, 12.0, 9.0, 12.0);
    private final Supplier<Class7909<Class4709, ?>> field19346;
@@ -29,11 +30,11 @@ public class Class3485 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public boolean method11490(BlockState var1, IBlockReader var2, BlockPos var3) {
-      return var1.isIn(BlockTags.field32799)
-         || var1.isIn(Blocks.MYCELIUM)
-         || var1.isIn(Blocks.SOUL_SOIL)
-         || super.method11490(var1, var2, var3);
+   public boolean isValidGround(BlockState state, IBlockReader var2, BlockPos var3) {
+      return state.isIn(BlockTags.field32799)
+         || state.isIn(Blocks.MYCELIUM)
+         || state.isIn(Blocks.SOUL_SOIL)
+         || super.isValidGround(state, var2, var3);
    }
 
    @Override

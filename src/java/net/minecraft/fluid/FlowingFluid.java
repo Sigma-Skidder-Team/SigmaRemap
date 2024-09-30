@@ -104,7 +104,7 @@ public abstract class FlowingFluid extends Fluid {
       FluidState var7 = var1.getFluidState(var2);
       if (!var7.getFluid().method25066(this)) {
          if (var3 != Direction.UP) {
-            return var6.getMaterial() != Material.field38964 ? var6.method23454(var1, var2, var3) : false;
+            return var6.getMaterial() != Material.ICE ? var6.method23454(var1, var2, var3) : false;
          } else {
             return true;
          }
@@ -210,7 +210,7 @@ public abstract class FlowingFluid extends Fluid {
 
       VoxelShape var14 = var4.method23414(var2, var3);
       VoxelShape var12 = var6.method23414(var2, var5);
-      boolean var13 = ! VoxelShapes.method27443(var14, var12, var1);
+      boolean var13 = ! VoxelShapes.doAdjacentCubeSidesFillSquare(var14, var12, var1);
       if (var9 != null) {
          if (var9.size() == 200) {
             var9.removeLastByte();

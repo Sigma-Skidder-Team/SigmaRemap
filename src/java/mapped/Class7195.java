@@ -36,11 +36,11 @@ public abstract class Class7195<C extends Class4729> {
       Blocks.GRANITE,
       Blocks.DIORITE,
       Blocks.ANDESITE,
-      Blocks.field36396,
-      Blocks.field36397,
+      Blocks.DIRT,
+      Blocks.COARSE_DIRT,
       new Block[]{
-         Blocks.field36398,
-         Blocks.field36395,
+         Blocks.PODZOL,
+         Blocks.GRASS_BLOCK,
          Blocks.field36794,
          Blocks.field36730,
          Blocks.field36731,
@@ -178,7 +178,7 @@ public abstract class Class7195<C extends Class4729> {
          var5.method8372(var11, var14, var12);
          BlockState var20 = var1.getBlockState(var5);
          BlockState var21 = var1.getBlockState(var6.method8377(var5, Direction.UP));
-         if (var20.isIn(Blocks.field36395) || var20.isIn(Blocks.MYCELIUM)) {
+         if (var20.isIn(Blocks.GRASS_BLOCK) || var20.isIn(Blocks.MYCELIUM)) {
             var16.setTrue();
          }
 
@@ -187,7 +187,7 @@ public abstract class Class7195<C extends Class4729> {
                var1.setBlockState(var5, field30894, false);
                if (var16.isTrue()) {
                   var7.method8377(var5, Direction.DOWN);
-                  if (var1.getBlockState(var7).isIn(Blocks.field36396)) {
+                  if (var1.getBlockState(var7).isIn(Blocks.DIRT)) {
                      var1.setBlockState(var7, ((Biome)var2.apply(var5)).method32507().method24283().method28934(), false);
                   }
                }

@@ -45,7 +45,7 @@ public class Class2753 extends Class2595 {
                      if (!var3.getGameRules().getBoolean(Class5462.field24224)) {
                         var3.setBlockState(var9, ((Class3442)var11).method12118().getDefaultState(), 3);
                      } else {
-                        var3.method7180(var9, true, this.field17292);
+                        var3.destroyBlock(var9, true, this.field17292);
                      }
 
                      if (var4.nextBoolean()) {

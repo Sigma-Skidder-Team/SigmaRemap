@@ -10,7 +10,9 @@ import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.SectionPos;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.LightType;
 import net.minecraft.world.biome.BiomeContainer;
 import net.minecraft.world.chunk.ChunkSection;
 import org.apache.logging.log4j.LogManager;
@@ -72,7 +74,7 @@ public class Class1705 extends Class1702 {
    }
 
    @Override
-   public IBlockReader method7386() {
+   public IBlockReader getWorld() {
       return this.field9292;
    }
 
@@ -122,7 +124,7 @@ public class Class1705 extends Class1702 {
 
          for (int var18 = 0; var18 < var16.length; var18++) {
             ChunkSection var19 = var16[var18];
-            var17.method604(Class2002.method8389(var1, var18, var2), ChunkSection.method21859(var19));
+            var17.updateSectionStatus(SectionPos.method8389(var1, var18, var2), ChunkSection.method21859(var19));
          }
 
          this.field9292.method6841(var1, var2);
@@ -179,7 +181,7 @@ public class Class1705 extends Class1702 {
    }
 
    @Override
-   public void method7373(LightType var1, Class2002 var2) {
+   public void method7373(LightType var1, SectionPos var2) {
       Minecraft.getInstance().worldRenderer.method906(var2.method8410(), var2.method8411(), var2.method8412());
    }
 

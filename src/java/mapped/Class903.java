@@ -6,6 +6,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.math.EntityRayTraceResult;
 import net.minecraft.world.World;
 
 import java.util.List;

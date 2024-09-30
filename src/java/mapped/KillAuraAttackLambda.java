@@ -10,6 +10,7 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.network.play.client.CUseEntityPacket;
 import net.minecraft.util.Hand;
+import net.minecraft.util.math.EntityRayTraceResult;
 
 /**
  * Decompiler seems to have fucked up, I guess

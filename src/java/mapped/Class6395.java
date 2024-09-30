@@ -32,6 +32,7 @@ import net.minecraft.network.play.server.*;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.scoreboard.ScorePlayerTeam;
 import net.minecraft.scoreboard.Team;
+import net.minecraft.stats.Stats;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;

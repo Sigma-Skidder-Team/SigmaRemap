@@ -18,11 +18,11 @@ public class Class3398 extends AbstractFireBlock {
 
    @Override
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
-      return !this.method11492(var1, var4, var5) ? Blocks.AIR.getDefaultState() : this.getDefaultState();
+      return !this.isValidPosition(var1, var4, var5) ? Blocks.AIR.getDefaultState() : this.getDefaultState();
    }
 
    @Override
-   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
+   public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
       return method12014(var2.getBlockState(var3.down()).getBlock());
    }
 

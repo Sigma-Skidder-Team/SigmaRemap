@@ -38,7 +38,7 @@ public class Class2952 extends Class2898<Class4712> {
 
                for (Direction var19 : Direction.Plane.HORIZONTAL) {
                   BlockPos var20 = var16.offset(var19);
-                  if (var17.method23443(var1, var20)) {
+                  if (var17.isValidPosition(var1, var20)) {
                      var1.setBlockState(var20, var17, 2);
                   }
                }

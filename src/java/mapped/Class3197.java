@@ -67,7 +67,7 @@ public class Class3197 extends HorizontalBlock implements Class3196 {
    }
 
    @Override
-   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
+   public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
       Block var6 = var2.getBlockState(var3.offset(var1.<Direction>get(HORIZONTAL_FACING))).getBlock();
       return var6.isIn(BlockTags.field32756);
    }
@@ -98,7 +98,7 @@ public class Class3197 extends HorizontalBlock implements Class3196 {
       for (Direction var10 : var1.method18349()) {
          if (var10.getAxis().isHorizontal()) {
             var4 = var4.with(HORIZONTAL_FACING, var10);
-            if (var4.method23443(var5, var6)) {
+            if (var4.isValidPosition(var5, var6)) {
                return var4;
             }
          }
@@ -109,7 +109,7 @@ public class Class3197 extends HorizontalBlock implements Class3196 {
 
    @Override
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
-      return var2 == var1.get(HORIZONTAL_FACING) && !var1.method23443(var4, var5)
+      return var2 == var1.get(HORIZONTAL_FACING) && !var1.isValidPosition(var4, var5)
          ? Blocks.AIR.getDefaultState()
          : super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
    }

@@ -23,11 +23,11 @@ public class Class3491 extends Class3490 {
    }
 
    @Override
-   public boolean method11490(BlockState var1, IBlockReader var2, BlockPos var3) {
-      return super.method11490(var1, var2, var3)
-         || var1.isIn(Blocks.NETHERRACK)
-         || var1.isIn(Blocks.SOUL_SAND)
-         || var1.isIn(Blocks.SOUL_SOIL);
+   public boolean isValidGround(BlockState state, IBlockReader var2, BlockPos var3) {
+      return super.isValidGround(state, var2, var3)
+         || state.isIn(Blocks.NETHERRACK)
+         || state.isIn(Blocks.SOUL_SAND)
+         || state.isIn(Blocks.SOUL_SOIL);
    }
 
    @Override
@@ -53,7 +53,7 @@ public class Class3491 extends Class3490 {
    }
 
    @Override
-   public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
+   public void onEntityCollision(BlockState var1, World var2, BlockPos var3, Entity var4) {
       if (!var2.isRemote && var2.method6997() != Difficulty.PEACEFUL && var4 instanceof LivingEntity) {
          LivingEntity var7 = (LivingEntity)var4;
          if (!var7.isInvulnerableTo(DamageSource.field39007)) {

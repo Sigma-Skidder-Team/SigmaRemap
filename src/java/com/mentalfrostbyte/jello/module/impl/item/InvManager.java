@@ -175,7 +175,7 @@ public class InvManager extends Module {
                         var6 -= 5.0F;
                     }
                 } else {
-                    var6 = var5.getDestroySpeed(var0, Blocks.field36396.getDefaultState());
+                    var6 = var5.getDestroySpeed(var0, Blocks.DIRT.getDefaultState());
                     if (var4.toLowerCase().contains("gold")) {
                         var6 -= 5.0F;
                     }

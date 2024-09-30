@@ -174,9 +174,9 @@ public class Class9422 {
             return method36149(var0, var1, var2, var3, var4);
          } else if (var7 instanceof Class3411) {
             return method36150(var0, var1, var2, var3, var4);
-         } else if (var7 == Blocks.field36398) {
+         } else if (var7 == Blocks.PODZOL) {
             return method36151(var0, var1, var2, var3, var4);
-         } else if (var7 != Blocks.field36396) {
+         } else if (var7 != Blocks.DIRT) {
             return !(var7 instanceof Class3473) ? var4 : method36153(var0, var1, var2, var3, var4);
          } else {
             return method36152(var0, var1, var2, var3, var4);
@@ -235,7 +235,7 @@ public class Class9422 {
          if (field43688) {
             BlockPos var9 = var2.down().offset(var3);
             BlockState var10 = var0.getBlockState(var9);
-            if (var10.getBlock() == Blocks.field36398) {
+            if (var10.getBlock() == Blocks.PODZOL) {
                return field43705.method22619(var1, var3, field43715);
             }
          }
@@ -265,7 +265,7 @@ public class Class9422 {
             return field43706.method22619(var1, var3, field43715);
          }
       } else if (!var8) {
-         if (field43685 && method36154(var2.down(), var3, var0) == Blocks.field36395) {
+         if (field43685 && method36154(var2.down(), var3, var0) == Blocks.GRASS_BLOCK) {
             return field43701.method22619(var1, var3, field43715);
          }
       } else if (field43689 && method36154(var2, var3, var0) == Blocks.SNOW) {

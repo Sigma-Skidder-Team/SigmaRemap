@@ -177,7 +177,7 @@ public class Class4189 extends Class4188 {
             this.field20444.field45681,
             this.field20444.field45679,
             this.field20444.field45683,
-            Blocks.field36396.getDefaultState(),
+            Blocks.DIRT.getDefaultState(),
             field20443,
             true
          );

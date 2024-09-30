@@ -184,13 +184,13 @@ public class Class1114 extends Class1113 {
    }
 
    @Override
-   public boolean attackEntityFrom(DamageSource var1, float var2) {
-      if (!this.isInvulnerableTo(var1)) {
+   public boolean attackEntityFrom(DamageSource source, float var2) {
+      if (!this.isInvulnerableTo(source)) {
          if (!this.world.isRemote && this.method5364()) {
             this.method5365(false);
          }
 
-         return super.attackEntityFrom(var1, var2);
+         return super.attackEntityFrom(source, var2);
       } else {
          return false;
       }

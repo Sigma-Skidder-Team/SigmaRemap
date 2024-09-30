@@ -34,6 +34,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.SectionPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextComponent$Serializer;
@@ -171,8 +172,8 @@ public class PacketBuffer extends ByteBuf {
       return this;
    }
 
-   public Class2002 method35709() {
-      return Class2002.method8393(this.readLong());
+   public SectionPos method35709() {
+      return SectionPos.method8393(this.readLong());
    }
 
    public ITextComponent readTextComponent() {

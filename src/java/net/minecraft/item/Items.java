@@ -19,10 +19,10 @@ public class Items {
    public static final Item field37227 = method30154(Blocks.POLISHED_DIORITE, ItemGroup.field31665);
    public static final Item field37228 = method30154(Blocks.ANDESITE, ItemGroup.field31665);
    public static final Item field37229 = method30154(Blocks.POLISHED_ANDESITE, ItemGroup.field31665);
-   public static final Item field37230 = method30154(Blocks.field36395, ItemGroup.field31665);
-   public static final Item field37231 = method30154(Blocks.field36396, ItemGroup.field31665);
-   public static final Item field37232 = method30154(Blocks.field36397, ItemGroup.field31665);
-   public static final Item field37233 = method30154(Blocks.field36398, ItemGroup.field31665);
+   public static final Item field37230 = method30154(Blocks.GRASS_BLOCK, ItemGroup.field31665);
+   public static final Item field37231 = method30154(Blocks.DIRT, ItemGroup.field31665);
+   public static final Item field37232 = method30154(Blocks.COARSE_DIRT, ItemGroup.field31665);
+   public static final Item field37233 = method30154(Blocks.PODZOL, ItemGroup.field31665);
    public static final Item field37234 = method30154(Blocks.field37083, ItemGroup.field31665);
    public static final Item field37235 = method30154(Blocks.field37074, ItemGroup.field31665);
    public static final Item field37236 = method30154(Blocks.field36399, ItemGroup.field31665);

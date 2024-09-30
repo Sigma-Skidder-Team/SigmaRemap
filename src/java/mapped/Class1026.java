@@ -248,12 +248,12 @@ public abstract class Class1026 extends Class1028 {
    }
 
    @Override
-   public boolean attackEntityFrom(DamageSource var1, float var2) {
+   public boolean attackEntityFrom(DamageSource source, float var2) {
       if (this.method4552()) {
          this.method4551().method25415();
       }
 
-      return super.attackEntityFrom(var1, var2);
+      return super.attackEntityFrom(source, var2);
    }
 
    @Nullable

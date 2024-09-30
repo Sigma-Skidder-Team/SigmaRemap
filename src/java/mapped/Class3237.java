@@ -64,7 +64,7 @@ public class Class3237 extends Class3238 {
 
    @Override
    public VoxelShape method11635(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
-      return VoxelShapes.method27425();
+      return VoxelShapes.empty();
    }
 
    @Override

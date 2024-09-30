@@ -40,7 +40,7 @@ public class Class1812 implements AutoCloseable, Class1813 {
    }
 
    public static Class6875<Runnable> method7961(Class8641 var0, Runnable var1) {
-      return method7960(var1, var0.method31056().method24352(), var0::method31058);
+      return method7960(var1, var0.method31056().asLong(), var0::method31058);
    }
 
    public static Class8132 method7962(Runnable var0, long var1, boolean var3) {

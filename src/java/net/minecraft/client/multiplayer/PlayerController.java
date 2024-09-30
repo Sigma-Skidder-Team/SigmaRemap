@@ -18,6 +18,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.EntityRayTraceResult;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.GameType;
@@ -202,7 +203,7 @@ public class PlayerController {
     * player reach distance = 4F
     */
    public float getBlockReachDistance() {
-      return this.currentGameType.isCreative() ? 5.0F : 4.5F;
+      return this.currentGameType.isCreative() ? 5.0F : 3.0F;
    }
 
    public void tick() {

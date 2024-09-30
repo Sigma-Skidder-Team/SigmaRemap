@@ -2,12 +2,13 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.BushBlock;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
 
-public class Class3490 extends Class3194 {
+public class Class3490 extends BushBlock {
    private static String[] field19356;
    public static final VoxelShape field19357 = Block.makeCuboidShape(5.0, 0.0, 5.0, 11.0, 10.0, 11.0);
    private final Effect field19358;

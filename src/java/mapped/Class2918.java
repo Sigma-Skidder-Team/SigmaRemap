@@ -23,7 +23,7 @@ public class Class2918 extends Class2898<Class4715> {
          int var13 = var1.method6736(Heightmap.Type.OCEAN_FLOOR, var4.getX() + var11, var4.getZ() + var12);
          BlockPos var14 = new BlockPos(var4.getX() + var11, var13, var4.getZ() + var12);
          BlockState var15 = Blocks.field37005.getDefaultState().with(Class3195.field18472, Integer.valueOf(var3.nextInt(4) + 1));
-         if (var1.getBlockState(var14).isIn(Blocks.WATER) && var15.method23443(var1, var14)) {
+         if (var1.getBlockState(var14).isIn(Blocks.WATER) && var15.isValidPosition(var1, var14)) {
             var1.setBlockState(var14, var15, 2);
             var8++;
          }

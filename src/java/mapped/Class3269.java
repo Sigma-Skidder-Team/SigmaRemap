@@ -40,14 +40,14 @@ public class Class3269 extends ToolItem {
    );
    public static final Map<Block, BlockState> field18767 = Maps.newHashMap(
       ImmutableMap.of(
-         Blocks.field36395,
+         Blocks.GRASS_BLOCK,
          Blocks.FARMLAND.getDefaultState(),
          Blocks.field36885,
          Blocks.FARMLAND.getDefaultState(),
-         Blocks.field36396,
+         Blocks.DIRT,
          Blocks.FARMLAND.getDefaultState(),
-         Blocks.field36397,
-         Blocks.field36396.getDefaultState()
+         Blocks.COARSE_DIRT,
+         Blocks.DIRT.getDefaultState()
       )
    );
 

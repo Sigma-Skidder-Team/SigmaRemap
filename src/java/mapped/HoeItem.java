@@ -23,11 +23,11 @@ public class HoeItem extends ToolItem {
    private static final Set<Block> field18769 = Sets.newHashSet(
       new Block[]{
          Blocks.CLAY,
-         Blocks.field36396,
-         Blocks.field36397,
-         Blocks.field36398,
+         Blocks.DIRT,
+         Blocks.COARSE_DIRT,
+         Blocks.PODZOL,
          Blocks.FARMLAND,
-         Blocks.field36395,
+         Blocks.GRASS_BLOCK,
          Blocks.GRAVEL,
          Blocks.MYCELIUM,
          Blocks.SAND,
@@ -55,7 +55,7 @@ public class HoeItem extends ToolItem {
          Blocks.SOUL_SOIL
       }
    );
-   public static final Map<Block, BlockState> field18770 = Maps.newHashMap(ImmutableMap.of(Blocks.field36395, Blocks.field36885.getDefaultState()));
+   public static final Map<Block, BlockState> field18770 = Maps.newHashMap(ImmutableMap.of(Blocks.GRASS_BLOCK, Blocks.field36885.getDefaultState()));
 
    public HoeItem(IItemTier var1, float var2, float var3, Properties var4) {
       super(var2, var3, var1, field18769, var4);

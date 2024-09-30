@@ -5,6 +5,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.math.EntityRayTraceResult;
 import net.minecraft.world.World;
 
 public class Class899 extends Class898 {

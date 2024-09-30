@@ -123,7 +123,7 @@ public class Auto32k extends Module {
         BlockState var4 = mc.world.getBlockState(var1);
         BlockState var5 = mc.world.getBlockState(var1.up());
         BlockState var6 = mc.world.getBlockState(var1.method8339(2));
-        return var4.method23410() && var5.isAir() && var6.isAir();
+        return var4.isSolid() && var5.isAir() && var6.isAir();
     }
 
     @Override

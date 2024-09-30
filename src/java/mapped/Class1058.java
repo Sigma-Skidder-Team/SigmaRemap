@@ -185,9 +185,9 @@ public class Class1058 extends Class1056 implements IAngerable {
    }
 
    @Override
-   public boolean attackEntityFrom(DamageSource var1, float var2) {
+   public boolean attackEntityFrom(DamageSource source, float var2) {
       Class2286 var5 = this.method4865();
-      boolean var6 = super.attackEntityFrom(var1, var2);
+      boolean var6 = super.attackEntityFrom(source, var2);
       if (var6 && this.method4865() != var5) {
          this.playSound(SoundEvents.field26701, 1.0F, 1.0F);
       }

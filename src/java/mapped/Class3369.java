@@ -16,6 +16,7 @@ import net.minecraft.state.EnumProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BellAttachment;
 import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraft.stats.Stats;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
@@ -191,20 +192,20 @@ public class Class3369 extends Class3241 {
                && var6.getBlockState(var5.north()).method23454(var6, var5.north(), Direction.SOUTH)
                && var6.getBlockState(var5.south()).method23454(var6, var5.south(), Direction.NORTH);
          BlockState var9 = this.getDefaultState().with(field18943, var4.getOpposite()).with(field18944, !var8 ? BellAttachment.field214 : BellAttachment.field215);
-         if (var9.method23443(var1.getWorld(), var1.getPos())) {
+         if (var9.isValidPosition(var1.getWorld(), var1.getPos())) {
             return var9;
          }
 
          boolean var10 = var6.getBlockState(var5.down()).method23454(var6, var5.down(), Direction.UP);
          var9 = var9.with(field18944, !var10 ? BellAttachment.field213 : BellAttachment.field212);
-         if (var9.method23443(var1.getWorld(), var1.getPos())) {
+         if (var9.isValidPosition(var1.getWorld(), var1.getPos())) {
             return var9;
          }
       } else {
          BlockState var11 = this.getDefaultState()
             .with(field18944, var4 != Direction.DOWN ? BellAttachment.field212 : BellAttachment.field213)
             .with(field18943, var1.getPlacementHorizontalFacing());
-         if (var11.method23443(var1.getWorld(), var5)) {
+         if (var11.isValidPosition(var1.getWorld(), var5)) {
             return var11;
          }
       }
@@ -216,7 +217,7 @@ public class Class3369 extends Class3241 {
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       BellAttachment var9 = var1.<BellAttachment>get(field18944);
       Direction var10 = method11964(var1).getOpposite();
-      if (var10 == var2 && !var1.method23443(var4, var5) && var9 != BellAttachment.field215) {
+      if (var10 == var2 && !var1.isValidPosition(var4, var5) && var9 != BellAttachment.field215) {
          return Blocks.AIR.getDefaultState();
       } else {
          if (var2.getAxis() == var1.<Direction>get(field18943).getAxis()) {
@@ -234,7 +235,7 @@ public class Class3369 extends Class3241 {
    }
 
    @Override
-   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
+   public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
       Direction var6 = method11964(var1).getOpposite();
       return var6 != Direction.UP ? Class3200.method11508(var2, var3, var6) : Block.method11548(var2, var3.up(), Direction.DOWN);
    }

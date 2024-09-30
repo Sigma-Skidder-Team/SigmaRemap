@@ -55,7 +55,7 @@ public class Class3393 extends Class3392 {
 
    @Override
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
-      if (!var1.method23443(var4, var5)) {
+      if (!var1.isValidPosition(var4, var5)) {
          var4.method6860().scheduleTick(var5, this, 1);
          return super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
       } else {
@@ -68,13 +68,13 @@ public class Class3393 extends Class3392 {
 
    @Override
    public void tick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
-      if (!var1.method23443(var2, var3)) {
+      if (!var1.isValidPosition(var2, var3)) {
          var2.method7179(var3, true);
       }
    }
 
    @Override
-   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
+   public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
       BlockState var6 = var2.getBlockState(var3.down());
       boolean var7 = !var2.getBlockState(var3.up()).isAir() && !var6.isAir();
 

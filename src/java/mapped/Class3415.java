@@ -85,7 +85,7 @@ public class Class3415 extends Block implements IWaterLoggable {
             for (WallHeight var28 : field19108.method30474()) {
                for (WallHeight var30 : field19110.method30474()) {
                   for (WallHeight var32 : field19109.method30474()) {
-                     VoxelShape var33 = VoxelShapes.method27425();
+                     VoxelShape var33 = VoxelShapes.empty();
                      var33 = method12053(var33, var26, var17, var21);
                      var33 = method12053(var33, var30, var16, var20);
                      var33 = method12053(var33, var28, var14, var18);
@@ -245,7 +245,7 @@ public class Class3415 extends Block implements IWaterLoggable {
    }
 
    @Override
-   public boolean method11493(BlockState var1, IBlockReader var2, BlockPos var3) {
+   public boolean propagatesSkylightDown(BlockState var1, IBlockReader var2, BlockPos var3) {
       return !var1.<Boolean>get(field19111);
    }
 

@@ -13,7 +13,7 @@ public class Class2839 implements Consumer<Consumer<Advancement>> {
    public void accept(Consumer<Advancement> var1) {
       Advancement var4 = Class7999.method27304()
          .method27308(
-            Blocks.field36395,
+            Blocks.GRASS_BLOCK,
             new TranslationTextComponent("advancements.story.root.title"),
             new TranslationTextComponent("advancements.story.root.description"),
             new ResourceLocation("textures/gui/advancements/backgrounds/stone.png"),

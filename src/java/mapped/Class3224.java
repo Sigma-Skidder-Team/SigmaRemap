@@ -67,13 +67,13 @@ public class Class3224 extends Block implements IWaterLoggable {
          var4.getPendingFluidTicks().scheduleTick(var5, Fluids.WATER, Fluids.WATER.getTickRate(var4));
       }
 
-      return var2 == Direction.DOWN && !this.method11492(var1, var4, var5)
+      return var2 == Direction.DOWN && !this.isValidPosition(var1, var4, var5)
          ? Blocks.AIR.getDefaultState()
          : super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
    }
 
    @Override
-   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
+   public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
       BlockPos var6 = var3.down();
       return var2.getBlockState(var6).method23454(var2, var6, Direction.UP);
    }

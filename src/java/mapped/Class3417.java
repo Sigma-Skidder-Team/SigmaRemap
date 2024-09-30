@@ -33,7 +33,7 @@ public class Class3417 extends Block {
       if (var7 != Direction.UP) {
          BlockPos var8 = var3.offset(var7);
          BlockState var9 = var2.getBlockState(var8);
-         if (!var1.method23410() || !var9.method23454(var2, var8, var7.getOpposite())) {
+         if (!var1.isSolid() || !var9.method23454(var2, var8, var7.getOpposite())) {
             double var10 = (double)var3.getX();
             double var12 = (double)var3.getY();
             double var14 = (double)var3.getZ();

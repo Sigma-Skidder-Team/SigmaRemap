@@ -5,6 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.item.BoatEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.DamageSource;
@@ -140,7 +141,7 @@ public class Class1029 extends Class1026 {
                BlockState var11 = this.world.getBlockState(var10);
                Block var12 = var11.getBlock();
                if (var12 instanceof Class3465) {
-                  var7 = this.world.method7180(var10, true, this) || var7;
+                  var7 = this.world.destroyBlock(var10, true, this) || var7;
                }
             }
 

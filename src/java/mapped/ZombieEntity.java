@@ -232,14 +232,14 @@ public class ZombieEntity extends Class1009 {
    }
 
    @Override
-   public boolean attackEntityFrom(DamageSource var1, float var2) {
-      if (!super.attackEntityFrom(var1, var2)) {
+   public boolean attackEntityFrom(DamageSource source, float var2) {
+      if (!super.attackEntityFrom(source, var2)) {
          return false;
       } else if (this.world instanceof ServerWorld) {
          ServerWorld var5 = (ServerWorld)this.world;
          LivingEntity var6 = this.method4232();
-         if (var6 == null && var1.getTrueSource() instanceof LivingEntity) {
-            var6 = (LivingEntity)var1.getTrueSource();
+         if (var6 == null && source.getTrueSource() instanceof LivingEntity) {
+            var6 = (LivingEntity) source.getTrueSource();
          }
 
          if (var6 != null

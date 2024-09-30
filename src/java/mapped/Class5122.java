@@ -4,23 +4,24 @@ import com.google.common.collect.Sets;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.SectionPos;
 
 import java.util.Set;
 
 public class Class5122 implements Class5119 {
    private static String[] field23299;
-   private final Set<Class2002> field23300 = Sets.newHashSet();
+   private final Set<SectionPos> field23300 = Sets.newHashSet();
 
    @Override
    public void method15814() {
       this.field23300.clear();
    }
 
-   public void method15817(Class2002 var1) {
+   public void method15817(SectionPos var1) {
       this.field23300.add(var1);
    }
 
-   public void method15818(Class2002 var1) {
+   public void method15818(SectionPos var1) {
       this.field23300.remove(var1);
    }
 
@@ -45,7 +46,7 @@ public class Class5122 implements Class5119 {
       });
    }
 
-   private static void method15820(Class2002 var0) {
+   private static void method15820(SectionPos var0) {
       float var3 = 1.0F;
       BlockPos var4 = var0.method8422();
       BlockPos var5 = var4.method8335(-1.0, -1.0, -1.0);

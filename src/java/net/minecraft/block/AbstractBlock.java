@@ -38,7 +38,7 @@ public abstract class AbstractBlock {
       Direction.WEST, Direction.EAST, Direction.NORTH, Direction.SOUTH, Direction.DOWN, Direction.UP
    };
    public final Material field19004;
-   public final boolean field19005;
+   public final boolean canCollide;
    public final float field19006;
    public final boolean field19007;
    public final SoundType field19008;
@@ -51,7 +51,7 @@ public abstract class AbstractBlock {
 
    public AbstractBlock(Properties var1) {
       this.field19004 = Properties.method26643(var1);
-      this.field19005 = Properties.method26644(var1);
+      this.canCollide = Properties.method26644(var1);
       this.field19014 = Properties.method26645(var1);
       this.field19006 = Properties.method26646(var1);
       this.field19007 = Properties.method26647(var1);
@@ -201,7 +201,7 @@ public abstract class AbstractBlock {
 
    @Deprecated
    public VoxelShape method11938(BlockState var1, IBlockReader var2, BlockPos var3) {
-      return VoxelShapes.method27425();
+      return VoxelShapes.empty();
    }
 
    @Deprecated
@@ -220,7 +220,7 @@ public abstract class AbstractBlock {
    }
 
    @Deprecated
-   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
+   public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
       return true;
    }
 
@@ -241,7 +241,7 @@ public abstract class AbstractBlock {
 
    @Deprecated
    public VoxelShape method11502(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
-      return !this.field19005 ? VoxelShapes.method27425() : var1.method23412(var2, var3);
+      return !this.canCollide ? VoxelShapes.empty() : var1.method23412(var2, var3);
    }
 
    @Deprecated
@@ -283,7 +283,7 @@ public abstract class AbstractBlock {
    }
 
    @Deprecated
-   public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
+   public void onEntityCollision(BlockState var1, World var2, BlockPos var3, Entity var4) {
    }
 
    @Deprecated

@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -129,14 +130,14 @@ public class Class906 extends Entity {
       if (!this.field5174 && !this.world.isRemote && this.world.getGameRules().getBoolean(Class5462.field24223)) {
          BlockPos var4 = this.getPosition();
          BlockState var5 = AbstractFireBlock.method12009(this.world, var4);
-         if (this.world.getBlockState(var4).isAir() && var5.method23443(this.world, var4)) {
+         if (this.world.getBlockState(var4).isAir() && var5.isValidPosition(this.world, var4)) {
             this.world.setBlockState(var4, var5);
          }
 
          for (int var6 = 0; var6 < var1; var6++) {
             BlockPos var7 = var4.method8336(this.rand.nextInt(3) - 1, this.rand.nextInt(3) - 1, this.rand.nextInt(3) - 1);
             var5 = AbstractFireBlock.method12009(this.world, var7);
-            if (this.world.getBlockState(var7).isAir() && var5.method23443(this.world, var7)) {
+            if (this.world.getBlockState(var7).isAir() && var5.isValidPosition(this.world, var7)) {
                this.world.setBlockState(var7, var5);
             }
          }

@@ -266,7 +266,7 @@ public class Class1015 extends Class1014 implements Class1016 {
       BlockState var7 = var1.getBlockState(var3.down());
       return (
             var7.isIn(BlockTags.LEAVES)
-               || var7.isIn(Blocks.field36395)
+               || var7.isIn(Blocks.GRASS_BLOCK)
                || var7.isIn(BlockTags.field32751)
                || var7.isIn(Blocks.AIR)
          )
@@ -370,10 +370,10 @@ public class Class1015 extends Class1014 implements Class1016 {
    }
 
    @Override
-   public boolean attackEntityFrom(DamageSource var1, float var2) {
-      if (!this.isInvulnerableTo(var1)) {
+   public boolean attackEntityFrom(DamageSource source, float var2) {
+      if (!this.isInvulnerableTo(source)) {
          this.method4403(false);
-         return super.attackEntityFrom(var1, var2);
+         return super.attackEntityFrom(source, var2);
       } else {
          return false;
       }

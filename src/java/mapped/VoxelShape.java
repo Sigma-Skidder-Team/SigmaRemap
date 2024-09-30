@@ -66,11 +66,11 @@ public abstract class VoxelShape {
             new Class54(this.method19511(Direction.Axis.Y), var3),
             new Class54(this.method19511(Direction.Axis.Z), var5)
          )
-         : VoxelShapes.method27425());
+         : VoxelShapes.empty());
    }
 
    public VoxelShape method19518() {
-      VoxelShape[] var3 = new VoxelShape[]{VoxelShapes.method27425()};
+      VoxelShape[] var3 = new VoxelShape[]{VoxelShapes.empty()};
       this.method19520(
          (var1, var3x, var5, var7, var9, var11) -> var3[0] = VoxelShapes.method27434(
                var3[0], VoxelShapes.create(var1, var3x, var5, var7, var9, var11), IBooleanFunction.field44051

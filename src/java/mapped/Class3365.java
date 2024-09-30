@@ -33,7 +33,7 @@ public class Class3365 extends Class3241 {
    }
 
    @Override
-   public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
+   public void onEntityCollision(BlockState var1, World var2, BlockPos var3, Entity var4) {
       if (var2 instanceof ServerWorld
          && !var4.isPassenger()
          && !var4.isBeingRidden()

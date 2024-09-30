@@ -62,7 +62,7 @@ public class Class3238 extends Block implements IWaterLoggable {
       VoxelShape var17 = VoxelShapes.or(var13, var16);
       VoxelShape var18 = VoxelShapes.or(var14, var15);
       VoxelShape[] var19 = new VoxelShape[]{
-         VoxelShapes.method27425(),
+         VoxelShapes.empty(),
          var14,
          var15,
          var18,
@@ -88,7 +88,7 @@ public class Class3238 extends Block implements IWaterLoggable {
    }
 
    @Override
-   public boolean method11493(BlockState var1, IBlockReader var2, BlockPos var3) {
+   public boolean propagatesSkylightDown(BlockState var1, IBlockReader var2, BlockPos var3) {
       return !var1.<Boolean>get(field18684);
    }
 

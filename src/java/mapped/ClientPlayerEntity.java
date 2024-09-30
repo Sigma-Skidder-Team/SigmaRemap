@@ -11,6 +11,7 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.Pose;
+import net.minecraft.entity.item.BoatEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -87,7 +88,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    @Override
-   public boolean attackEntityFrom(DamageSource var1, float var2) {
+   public boolean attackEntityFrom(DamageSource source, float var2) {
       return false;
    }
 

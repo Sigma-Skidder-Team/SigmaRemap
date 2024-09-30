@@ -23,7 +23,7 @@ public class Class3200 extends HorizontalBlock {
    }
 
    @Override
-   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
+   public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
       return method11508(var2, var3, method11509(var1).getOpposite());
    }
 
@@ -45,7 +45,7 @@ public class Class3200 extends HorizontalBlock {
                .with(HORIZONTAL_FACING, var1.getPlacementHorizontalFacing());
          }
 
-         if (var8.method23443(var1.getWorld(), var1.getPos())) {
+         if (var8.isValidPosition(var1.getWorld(), var1.getPos())) {
             return var8;
          }
       }
@@ -55,7 +55,7 @@ public class Class3200 extends HorizontalBlock {
 
    @Override
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
-      return method11509(var1).getOpposite() == var2 && !var1.method23443(var4, var5)
+      return method11509(var1).getOpposite() == var2 && !var1.isValidPosition(var4, var5)
          ? Blocks.AIR.getDefaultState()
          : super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
    }

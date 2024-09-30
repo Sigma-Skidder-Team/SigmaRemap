@@ -331,13 +331,15 @@ public abstract class World implements IWorld, AutoCloseable {
       return this.getChunkProvider().getLightManager();
    }
 
-   @Override
-   public BlockState getBlockState(BlockPos var1) {
-      if (!isOutsideBuildHeight(var1)) {
-         Chunk var4 = this.getChunk(var1.getX() >> 4, var1.getZ() >> 4);
-         return var4.getBlockState(var1);
-      } else {
-         return Blocks.field37011.getDefaultState();
+   public BlockState getBlockState(BlockPos pos) {
+      if (isOutsideBuildHeight(pos))
+      {
+         return Blocks.VOID_AIR.getDefaultState();
+      }
+      else
+      {
+         Chunk chunk = this.getChunk(pos.getX() >> 4, pos.getZ() >> 4);
+         return chunk.getBlockState(pos);
       }
    }
 

@@ -2,7 +2,7 @@ package mapped;
 
 import java.io.IOException;
 
-public class Class6448 extends Class6443 {
+public class Class6448 extends AudioByteManager {
    private static String[] field28334;
    private boolean field28335;
    private boolean field28336;

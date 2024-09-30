@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.BushBlock;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
@@ -13,7 +14,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-public class Class3193 extends Class3194 implements Class3196 {
+public class Class3193 extends BushBlock implements Class3196 {
    private static String[] field18466;
    public static final IntegerProperty field18467 = BlockStateProperties.field39760;
    public static final VoxelShape field18468 = Block.makeCuboidShape(2.0, 0.0, 2.0, 14.0, 12.0, 14.0);

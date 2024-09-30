@@ -24,9 +24,11 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.SectionPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.WorldGenRegistries;
 import net.minecraft.world.IWorldReader;
+import net.minecraft.world.LightType;
 import net.minecraft.world.chunk.IChunk;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -163,7 +165,7 @@ public final class Biome {
       if (!(this.method32503(var2) >= 0.15F)) {
          if (var2.getY() >= 0 && var2.getY() < 256 && var1.getLightFor(LightType.BLOCK, var2) < 10) {
             BlockState var5 = var1.getBlockState(var2);
-            if (var5.isAir() && Blocks.SNOW.getDefaultState().method23443(var1, var2)) {
+            if (var5.isAir() && Blocks.SNOW.getDefaultState().isValidPosition(var1, var2)) {
                return true;
             }
          }
@@ -193,7 +195,7 @@ public final class Biome {
                int var19 = var17 << 4;
 
                try {
-                  var1.method24340(Class2002.method8390(var7), var15)
+                  var1.method24340(SectionPos.method8390(var7), var15)
                      .forEach(
                         var8 -> var8.method17112(var3, var1, var2, var6, new Class9764(var18, var19, var18 + 15, var19 + 15), new ChunkPos(var16, var17))
                      );

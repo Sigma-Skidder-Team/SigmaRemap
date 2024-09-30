@@ -127,7 +127,7 @@ public class Class8418 {
       for (String var9 : this.field36094) {
          Long2ObjectMap var10 = this.field36091.get(var9);
          if (var10 != null) {
-            long var11 = var2.method24352();
+            long var11 = var2.asLong();
             if (this.field36092.get(field36088.get(var9)).method24621(var11)) {
                CompoundNBT var13 = (CompoundNBT)var10.get(var11);
                if (var13 != null) {

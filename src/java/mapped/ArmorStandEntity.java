@@ -17,6 +17,7 @@ import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.LightType;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -391,31 +392,31 @@ public class ArmorStandEntity extends LivingEntity {
    }
 
    @Override
-   public boolean attackEntityFrom(DamageSource var1, float var2) {
+   public boolean attackEntityFrom(DamageSource source, float var2) {
       if (this.world.isRemote || this.removed) {
          return false;
-      } else if (DamageSource.field39004.equals(var1)) {
+      } else if (DamageSource.field39004.equals(source)) {
          this.remove();
          return false;
-      } else if (this.isInvulnerableTo(var1) || this.field5583 || this.method4203()) {
+      } else if (this.isInvulnerableTo(source) || this.field5583 || this.method4203()) {
          return false;
-      } else if (var1.method31131()) {
-         this.method4194(var1);
+      } else if (source.method31131()) {
+         this.method4194(source);
          this.remove();
          return false;
-      } else if (!DamageSource.field38992.equals(var1)) {
-         if (DamageSource.field38994.equals(var1) && this.getHealth() > 0.5F) {
-            this.method4192(var1, 4.0F);
+      } else if (!DamageSource.field38992.equals(source)) {
+         if (DamageSource.field38994.equals(source) && this.getHealth() > 0.5F) {
+            this.method4192(source, 4.0F);
             return false;
          } else {
-            boolean var5 = var1.getImmediateSource() instanceof AbstractArrowEntity;
-            boolean var6 = var5 && ((AbstractArrowEntity)var1.getImmediateSource()).method3489() > 0;
-            boolean var7 = "player".equals(var1.method31142());
+            boolean var5 = source.getImmediateSource() instanceof AbstractArrowEntity;
+            boolean var6 = var5 && ((AbstractArrowEntity) source.getImmediateSource()).method3489() > 0;
+            boolean var7 = "player".equals(source.method31142());
             if (!var7 && !var5) {
                return false;
-            } else if (var1.getTrueSource() instanceof PlayerEntity && !((PlayerEntity)var1.getTrueSource()).abilities.allowEdit) {
+            } else if (source.getTrueSource() instanceof PlayerEntity && !((PlayerEntity) source.getTrueSource()).abilities.allowEdit) {
                return false;
-            } else if (var1.method31146()) {
+            } else if (source.method31146()) {
                this.method4195();
                this.method4191();
                this.remove();
@@ -426,7 +427,7 @@ public class ArmorStandEntity extends LivingEntity {
                   this.world.setEntityState(this, (byte)32);
                   this.field5584 = var8;
                } else {
-                  this.method4193(var1);
+                  this.method4193(source);
                   this.method4191();
                   this.remove();
                }
@@ -438,7 +439,7 @@ public class ArmorStandEntity extends LivingEntity {
          if (!this.isBurning()) {
             this.setFire(5);
          } else {
-            this.method4192(var1, 0.15F);
+            this.method4192(source, 0.15F);
          }
 
          return false;

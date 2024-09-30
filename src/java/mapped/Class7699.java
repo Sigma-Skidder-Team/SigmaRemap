@@ -15,6 +15,7 @@ import java.util.function.Predicate;
 import java.util.stream.Stream;
 import javax.annotation.Nullable;
 
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
@@ -27,10 +28,12 @@ import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.server.SPlaySoundEffectPacket;
 import net.minecraft.potion.EffectInstance;
+import net.minecraft.stats.Stats;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.SectionPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
@@ -340,9 +343,9 @@ public class Class7699 {
    }
 
    private void method25404() {
-      Stream<Class2002> var3 = Class2002.method8427(Class2002.method8390(this.field32977), 2);
+      Stream<SectionPos> var3 = SectionPos.method8427(SectionPos.method8390(this.field32977), 2);
       var3.filter(this.field32978::method6953)
-         .map(Class2002::method8422)
+         .map(SectionPos::method8422)
          .min(Comparator.comparingDouble(var1 -> var1.method8318(this.field32977)))
          .ifPresent(this::method25429);
    }

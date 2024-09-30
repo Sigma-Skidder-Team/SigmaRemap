@@ -164,8 +164,8 @@ public class Class6412 implements Class6413 {
       field28040.put(1734964334L, Class4984.class);
       field28040.put(1751411826L, Class5007.class);
       field28040.put(1752000612L, Class4991.class);
-      field28040.put(1768975715L, Class4983.class);
-      field28040.put(1768778086L, Class5002.class);
+      field28040.put(1768975715L, IPMPControlBox.class);
+      field28040.put(1768778086L, IPMPControlInfo.class);
       field28040.put(1768517222L, Class4998.class);
       field28040.put(1768842853L, Class5081.class);
       field28040.put(1768714083L, Class4986.class);

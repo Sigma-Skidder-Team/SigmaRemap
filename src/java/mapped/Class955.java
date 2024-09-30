@@ -330,7 +330,7 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
       if (!this.field5363 && this.field5364) {
          var5 = this.field5361.with(Class3435.field19202, Boolean.valueOf(true)).method23414(var1, var2);
       } else {
-         var5 = VoxelShapes.method27425();
+         var5 = VoxelShapes.empty();
       }
 
       Direction var6 = field5365.get();

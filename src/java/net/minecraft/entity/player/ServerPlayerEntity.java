@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.mojang.authlib.GameProfile;
 import com.mojang.datafixers.util.Either;
 import mapped.*;
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.HorizontalBlock;
@@ -26,14 +27,12 @@ import net.minecraft.network.play.server.*;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.scoreboard.ScorePlayerTeam;
 import net.minecraft.scoreboard.Team;
+import net.minecraft.stats.Stats;
 import net.minecraft.tileentity.CommandBlockTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.Direction;
-import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.ChunkPos;
-import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.*;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.*;
 import net.minecraft.util.text.event.HoverEvent;
@@ -79,7 +78,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
    private int field4880;
    private boolean field4881;
    private Vector3d field4882;
-   private Class2002 field4883 = Class2002.method8389(0, 0, 0);
+   private SectionPos field4883 = SectionPos.method8389(0, 0, 0);
    private RegistryKey<World> field4884 = World.OVERWORLD;
    private BlockPos field4885;
    private boolean field4886;
@@ -502,16 +501,16 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
    }
 
    @Override
-   public boolean attackEntityFrom(DamageSource var1, float var2) {
-      if (this.isInvulnerableTo(var1)) {
+   public boolean attackEntityFrom(DamageSource source, float var2) {
+      if (this.isInvulnerableTo(source)) {
          return false;
       } else {
-         boolean var5 = this.field4856.isDedicatedServer() && this.method2743() && "fall".equals(var1.field39022);
-         if (!var5 && this.field4871 > 0 && var1 != DamageSource.field39004) {
+         boolean var5 = this.field4856.isDedicatedServer() && this.method2743() && "fall".equals(source.field39022);
+         if (!var5 && this.field4871 > 0 && source != DamageSource.field39004) {
             return false;
          } else {
-            if (var1 instanceof EntityDamageSource) {
-               Entity var6 = var1.getTrueSource();
+            if (source instanceof EntityDamageSource) {
+               Entity var6 = source.getTrueSource();
                if (var6 instanceof PlayerEntity && !this.method2742((PlayerEntity)var6)) {
                   return false;
                }
@@ -525,7 +524,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
                }
             }
 
-            return super.attackEntityFrom(var1, var2);
+            return super.attackEntityFrom(source, var2);
          }
       }
    }
@@ -1376,11 +1375,11 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
       }
    }
 
-   public Class2002 method2832() {
+   public SectionPos method2832() {
       return this.field4883;
    }
 
-   public void method2833(Class2002 var1) {
+   public void method2833(SectionPos var1) {
       this.field4883 = var1;
    }
 

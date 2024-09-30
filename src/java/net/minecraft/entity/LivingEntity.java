@@ -1,5 +1,6 @@
 package net.minecraft.entity;
 
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -38,6 +39,7 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.*;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.scoreboard.ScorePlayerTeam;
+import net.minecraft.stats.Stats;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.*;
 import net.minecraft.util.Direction;
@@ -882,13 +884,13 @@ public abstract class LivingEntity extends Entity {
    }
 
    @Override
-   public boolean attackEntityFrom(DamageSource var1, float var2) {
-      if (this.isInvulnerableTo(var1)) {
+   public boolean attackEntityFrom(DamageSource source, float var2) {
+      if (this.isInvulnerableTo(source)) {
          return false;
       } else if (!this.world.isRemote) {
          if (this.getShouldBeDead()) {
             return false;
-         } else if (var1.method31141() && this.isPotionActive(Effects.FIRE_RESISTANCE)) {
+         } else if (source.method31141() && this.isPotionActive(Effects.FIRE_RESISTANCE)) {
             return false;
          } else {
             if (this.isSleeping() && !this.world.isRemote) {
@@ -897,20 +899,20 @@ public abstract class LivingEntity extends Entity {
 
             this.field4973 = 0;
             float var5 = var2;
-            if ((var1 == DamageSource.field39008 || var1 == DamageSource.field39009) && !this.getItemStackFromSlot(EquipmentSlotType.HEAD).isEmpty()) {
+            if ((source == DamageSource.field39008 || source == DamageSource.field39009) && !this.getItemStackFromSlot(EquipmentSlotType.HEAD).isEmpty()) {
                this.getItemStackFromSlot(EquipmentSlotType.HEAD)
                   .damageItem((int)(var2 * 4.0F + this.rand.nextFloat() * var2 * 2.0F), this, var0 -> var0.sendBreakAnimation(EquipmentSlotType.HEAD));
                var2 *= 0.75F;
             }
 
             boolean var6 = false;
-            float var7 = 0.0F;
-            if (var2 > 0.0F && this.canBlockDamageSource(var1)) {
+            float f1 = 0.0F;
+            if (var2 > 0.0F && this.canBlockDamageSource(source)) {
                this.method2887(var2);
-               var7 = var2;
+               f1 = var2;
                var2 = 0.0F;
-               if (!var1.method31129()) {
-                  Entity var8 = var1.getImmediateSource();
+               if (!source.method31129()) {
+                  Entity var8 = source.getImmediateSource();
                   if (var8 instanceof LivingEntity) {
                      this.blockUsingShield((LivingEntity)var8);
                   }
@@ -924,7 +926,7 @@ public abstract class LivingEntity extends Entity {
             if (!((float)this.hurtResistantTime > 10.0F)) {
                this.lastDamage = var2;
                this.hurtResistantTime = 20;
-               this.damageEntity(var1, var2);
+               this.damageEntity(source, var2);
                this.maxHurtTime = 10;
                this.hurtTime = this.maxHurtTime;
             } else {
@@ -932,13 +934,13 @@ public abstract class LivingEntity extends Entity {
                   return false;
                }
 
-               this.damageEntity(var1, var2 - this.lastDamage);
+               this.damageEntity(source, var2 - this.lastDamage);
                this.lastDamage = var2;
                var16 = false;
             }
 
             this.attackedAtYaw = 0.0F;
-            Entity var9 = var1.getTrueSource();
+            Entity var9 = source.getTrueSource();
             if (var9 != null) {
                if (var9 instanceof LivingEntity) {
                   this.setRevengeTarget((LivingEntity)var9);
@@ -965,13 +967,13 @@ public abstract class LivingEntity extends Entity {
 
             if (var16) {
                if (!var6) {
-                  if (var1 instanceof EntityDamageSource && ((EntityDamageSource)var1).getIsThornsDamage()) {
+                  if (source instanceof EntityDamageSource && ((EntityDamageSource)source).getIsThornsDamage()) {
                      this.world.setEntityState(this, (byte)33);
                   } else {
                      byte var17;
-                     if (var1 != DamageSource.field38999) {
-                        if (!var1.method31141()) {
-                           if (var1 != DamageSource.field39012) {
+                     if (source != DamageSource.field38999) {
+                        if (!source.method31141()) {
+                           if (source != DamageSource.field39012) {
                               var17 = 2;
                            } else {
                               var17 = 44;
@@ -989,7 +991,7 @@ public abstract class LivingEntity extends Entity {
                   this.world.setEntityState(this, (byte)29);
                }
 
-               if (var1 != DamageSource.field38999 && (!var6 || var2 > 0.0F)) {
+               if (source != DamageSource.field38999 && (!var6 || var2 > 0.0F)) {
                   this.markVelocityChanged();
                }
 
@@ -1010,32 +1012,32 @@ public abstract class LivingEntity extends Entity {
 
             if (!this.getShouldBeDead()) {
                if (var16) {
-                  this.playHurtSound(var1);
+                  this.playHurtSound(source);
                }
-            } else if (!this.checkTotemDeathProtection(var1)) {
+            } else if (!this.checkTotemDeathProtection(source)) {
                SoundEvent var18 = this.getDeathSound();
                if (var16 && var18 != null) {
                   this.playSound(var18, this.getSoundVolume(), this.getSoundPitch());
                }
 
-               this.onDeath(var1);
+               this.onDeath(source);
             }
 
             boolean var19 = !var6 || var2 > 0.0F;
             if (var19) {
-               this.field5006 = var1;
+               this.field5006 = source;
                this.field5007 = this.world.getGameTime();
             }
 
             if (this instanceof ServerPlayerEntity) {
-               CriteriaTriggers.field44472.method15165((ServerPlayerEntity)this, var1, var5, var2, var6);
-               if (var7 > 0.0F && var7 < 3.4028235E37F) {
-                  ((ServerPlayerEntity)this).addStat(Stats.field40131, Math.round(var7 * 10.0F));
+               CriteriaTriggers.ENTITY_HURT_PLAYER.trigger((ServerPlayerEntity)this, source, var5, var2, var6);
+               if (f1 > 0.0F && f1 < 3.4028235E37F) {
+                  ((ServerPlayerEntity)this).addStat(Stats.DAMAGE_BLOCKED_BY_SHIELD, Math.round(f1 * 10.0F));
                }
             }
 
             if (var9 instanceof ServerPlayerEntity) {
-               CriteriaTriggers.field44471.method15093((ServerPlayerEntity)var9, this, var1, var5, var2, var6);
+               CriteriaTriggers.PLAYER_HURT_ENTITY.method15093((ServerPlayerEntity)var9, this, source, var5, var2, var6);
             }
 
             return var19;
@@ -1183,7 +1185,7 @@ public abstract class LivingEntity extends Entity {
             if (this.world.getGameRules().getBoolean(Class5462.field24224)) {
                BlockPos var5 = this.getPosition();
                BlockState var6 = Blocks.WITHER_ROSE.getDefaultState();
-               if (this.world.getBlockState(var5).isAir() && var6.method23443(this.world, var5)) {
+               if (this.world.getBlockState(var5).isAir() && var6.isValidPosition(this.world, var5)) {
                   this.world.setBlockState(var5, var6, 3);
                   var4 = true;
                }
@@ -1888,34 +1890,34 @@ public abstract class LivingEntity extends Entity {
          FluidState var7 = this.world.getFluidState(this.getPosition());
          if (this.isInWater() && this.method2897() && !this.method3107(var7.getFluid())) {
             double var34 = this.getPosY();
-            float var38 = !this.isSprinting() ? this.getWaterSlowDown() : 0.9F;
-            float var39 = 0.02F;
-            float var14 = (float) EnchantmentHelper.method26326(this);
-            if (var14 > 3.0F) {
-               var14 = 3.0F;
+            float f5 = this.isSprinting() ? 0.9F : this.getWaterSlowDown();
+            float f6 = 0.02F;
+            float f7 = (float) EnchantmentHelper.getDepthStriderModifier(this);
+            if (f7 > 3.0F) {
+               f7 = 3.0F;
             }
 
             if (!this.onGround) {
-               var14 *= 0.5F;
+               f7 *= 0.5F;
             }
 
-            if (var14 > 0.0F) {
-               var38 += (0.54600006F - var38) * var14 / 3.0F;
-               var39 += (this.getAIMoveSpeed() - var39) * var14 / 3.0F;
+            if (f7 > 0.0F) {
+               f5 += (0.54600006F - f5) * f7 / 3.0F;
+               f6 += (this.getAIMoveSpeed() - f6) * f7 / 3.0F;
             }
 
             if (this.isPotionActive(Effects.DOLPHINS_GRACE)) {
-               var38 = 0.96F;
+               f5 = 0.96F;
             }
 
-            this.moveRelative(var39, var1);
+            this.moveRelative(f6, var1);
             this.move(MoverType.SELF, this.getMotion());
             Vector3d var15 = this.getMotion();
             if (this.collidedHorizontally && this.isOnLadder()) {
                var15 = new Vector3d(var15.x, 0.2, var15.z);
             }
 
-            this.setMotion(var15.method11347((double)var38, 0.8F, (double)var38));
+            this.setMotion(var15.method11347((double)f5, 0.8F, (double)f5));
             Vector3d var16 = this.method3110(var4, var6, this.getMotion());
             this.setMotion(var16);
             if (this.collidedHorizontally && this.isOffsetPositionInLiquid(var16.x, var16.y + 0.6F - this.getPosY() + var34, var16.z)) {

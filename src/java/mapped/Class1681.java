@@ -14,10 +14,10 @@ public interface Class1681 {
    boolean removeBlock(BlockPos var1, boolean var2);
 
    default boolean method7179(BlockPos var1, boolean var2) {
-      return this.method7180(var1, var2, (Entity)null);
+      return this.destroyBlock(var1, var2, (Entity)null);
    }
 
-   default boolean method7180(BlockPos var1, boolean var2, Entity var3) {
+   default boolean destroyBlock(BlockPos var1, boolean var2, Entity var3) {
       return this.destroyBlock(var1, var2, var3, 512);
    }
 

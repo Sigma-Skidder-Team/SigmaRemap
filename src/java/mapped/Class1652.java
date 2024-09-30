@@ -11,6 +11,7 @@ import net.minecraft.client.util.Util;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.SectionPos;
 import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -43,7 +44,7 @@ public class Class1652<R> implements AutoCloseable {
 
    public void method6641(BooleanSupplier var1) {
       while (!this.field8982.isEmpty() && var1.getAsBoolean()) {
-         ChunkPos var4 = Class2002.method8393(this.field8982.firstLong()).method8423();
+         ChunkPos var4 = SectionPos.method8393(this.field8982.firstLong()).method8423();
          this.method6649(var4);
       }
    }
@@ -54,7 +55,7 @@ public class Class1652<R> implements AutoCloseable {
    }
 
    public Optional<R> method6643(long var1) {
-      Class2002 var5 = Class2002.method8393(var1);
+      SectionPos var5 = SectionPos.method8393(var1);
       if (!this.method6644(var5)) {
          Optional var6 = this.method6642(var1);
          if (var6 == null) {
@@ -73,8 +74,8 @@ public class Class1652<R> implements AutoCloseable {
       }
    }
 
-   public boolean method6644(Class2002 var1) {
-      return World.isYOutOfBounds(Class2002.method8406(var1.method8411()));
+   public boolean method6644(SectionPos var1) {
+      return World.isYOutOfBounds(SectionPos.method8406(var1.method8411()));
    }
 
    public R method6645(long var1) {
@@ -112,7 +113,7 @@ public class Class1652<R> implements AutoCloseable {
          OptionalDynamic<T> var11 = var10.get("Sections");
 
          for (int var12 = 0; var12 < 16; var12++) {
-            long var13 = Class2002.method8391(var1, var12).method8425();
+            long var13 = SectionPos.method8391(var1, var12).asLong();
             Optional<R> var15 = var11.get(Integer.toString(var12))
                .result()
                .flatMap(var3x -> this.field8983.apply(() -> this.method6652(var13)).parse(var3x).resultOrPartial(field8979::error));
@@ -126,7 +127,7 @@ public class Class1652<R> implements AutoCloseable {
          }
       } else {
          for (int var16 = 0; var16 < 16; var16++) {
-            this.field8981.put(Class2002.method8391(var1, var16).method8425(), Optional.empty());
+            this.field8981.put(SectionPos.method8391(var1, var16).asLong(), Optional.empty());
          }
       }
    }
@@ -145,7 +146,7 @@ public class Class1652<R> implements AutoCloseable {
       Map<T, T> var5 = Maps.newHashMap();
 
       for (int var6 = 0; var6 < 16; var6++) {
-         long var7 = Class2002.method8391(var1, var6).method8425();
+         long var7 = SectionPos.method8391(var1, var6).asLong();
          this.field8982.remove(var7);
          Optional<R> var9 = this.field8981.get(var7);
          if (var9 != null && var9.isPresent()) {
@@ -173,7 +174,7 @@ public class Class1652<R> implements AutoCloseable {
       if (var5 != null && var5.isPresent()) {
          this.field8982.add(var1);
       } else {
-         field8979.warn("No data for position: {}", Class2002.method8393(var1));
+         field8979.warn("No data for position: {}", SectionPos.method8393(var1));
       }
    }
 
@@ -184,7 +185,7 @@ public class Class1652<R> implements AutoCloseable {
    public void method6654(ChunkPos var1) {
       if (!this.field8982.isEmpty()) {
          for (int var4 = 0; var4 < 16; var4++) {
-            long var5 = Class2002.method8391(var1, var4).method8425();
+            long var5 = SectionPos.method8391(var1, var4).asLong();
             if (this.field8982.contains(var5)) {
                this.method6649(var1);
                return;

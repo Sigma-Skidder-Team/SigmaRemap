@@ -13,6 +13,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.state.StateContainer;
+import net.minecraft.stats.Stats;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
@@ -152,15 +153,15 @@ public class Block extends AbstractBlock implements IItemProvider {
       if (!var8.isCancelled()) {
          if (!var8.method13971()) {
             if (!var0.method23411(var7, var3)) {
-               if (!var7.method23410()) {
+               if (!var7.isSolid()) {
                   return true;
                } else {
                   Class8570 var9 = new Class8570(var0, var7, var3);
                   Object2ByteLinkedOpenHashMap var10 = field18616.get();
                   byte var11 = var10.getAndMoveToFirst(var9);
                   if (var11 == 127) {
-                     VoxelShape var12 = var0.method23388(var1, var2, var3);
-                     VoxelShape var13 = var7.method23388(var1, var6, var3.getOpposite());
+                     VoxelShape var12 = var0.getFaceOcclusionShape(var1, var2, var3);
+                     VoxelShape var13 = var7.getFaceOcclusionShape(var1, var6, var3.getOpposite());
                      boolean var14 = VoxelShapes.compare(var12, var13, IBooleanFunction.ONLY_FIRST);
                      if (var10.size() == 2048) {
                         var10.removeLastByte();
@@ -201,7 +202,7 @@ public class Block extends AbstractBlock implements IItemProvider {
       return (Boolean)field18611.getUnchecked(var0);
    }
 
-   public boolean method11493(BlockState var1, IBlockReader var2, BlockPos var3) {
+   public boolean propagatesSkylightDown(BlockState var1, IBlockReader var2, BlockPos var3) {
       return !method11550(var1.method23412(var2, var3)) && var1.method23449().isEmpty();
    }
 

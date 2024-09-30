@@ -1,6 +1,7 @@
 package net.minecraft.entity.passive;
 
 import mapped.*;
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;

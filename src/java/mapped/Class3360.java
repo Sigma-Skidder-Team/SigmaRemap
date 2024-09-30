@@ -33,7 +33,7 @@ public class Class3360 extends Class3359 {
    }
 
    @Override
-   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
+   public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
       return var2.getBlockState(var3.down()).getMaterial().isSolid();
    }
 
@@ -50,7 +50,7 @@ public class Class3360 extends Class3359 {
 
    @Override
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
-      return var2 == Direction.DOWN && !var1.method23443(var4, var5)
+      return var2 == Direction.DOWN && !var1.isValidPosition(var4, var5)
          ? Blocks.AIR.getDefaultState()
          : super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
    }

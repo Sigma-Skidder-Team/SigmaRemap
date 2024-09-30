@@ -40,7 +40,7 @@ public class Class9716 {
             BlockState var9 = var1.getBlockState(var8);
             if (!var9.method23495()) {
                if (!var0.method23411(var9, var3)) {
-                  return !var9.method23410() ? true : method38064(var0, var1, var2, var3, var4, var9, var8);
+                  return !var9.isSolid() ? true : method38064(var0, var1, var2, var3, var4, var9, var8);
                } else {
                   return false;
                }
@@ -60,8 +60,8 @@ public class Class9716 {
       Long2ByteLinkedOpenHashMap var11 = var4.method29439();
       byte var12 = var11.getAndMoveToFirst(var9);
       if (var12 == 0) {
-         VoxelShape var13 = var0.method23388(var1, var2, var3);
-         VoxelShape var14 = var5.method23388(var1, var6, var3.getOpposite());
+         VoxelShape var13 = var0.getFaceOcclusionShape(var1, var2, var3);
+         VoxelShape var14 = var5.getFaceOcclusionShape(var1, var6, var3.getOpposite());
          boolean var15 = VoxelShapes.compare(var13, var14, IBooleanFunction.ONLY_FIRST);
          if (var11.size() > 400) {
             var11.removeLastByte();

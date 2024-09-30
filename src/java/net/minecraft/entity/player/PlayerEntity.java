@@ -8,10 +8,12 @@ import com.mentalfrostbyte.jello.event.impl.SafeWalkEvent;
 import com.mojang.authlib.GameProfile;
 import com.mojang.datafixers.util.Either;
 import mapped.*;
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
+import net.minecraft.entity.item.BoatEntity;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.inventory.container.Container;
@@ -30,6 +32,7 @@ import net.minecraft.potion.EffectInstance;
 import net.minecraft.scoreboard.ScorePlayerTeam;
 import net.minecraft.scoreboard.Scoreboard;
 import net.minecraft.scoreboard.Team;
+import net.minecraft.stats.Stats;
 import net.minecraft.tileentity.CommandBlockTileEntity;
 import net.minecraft.tileentity.JigsawTileEntity;
 import net.minecraft.util.*;
@@ -780,15 +783,15 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    @Override
-   public boolean attackEntityFrom(DamageSource var1, float var2) {
-      if (!this.isInvulnerableTo(var1)) {
-         if (this.abilities.disableDamage && !var1.method31135()) {
+   public boolean attackEntityFrom(DamageSource source, float var2) {
+      if (!this.isInvulnerableTo(source)) {
+         if (this.abilities.disableDamage && !source.method31135()) {
             return false;
          } else {
             this.field4973 = 0;
             if (!this.getShouldBeDead()) {
                this.method2949();
-               if (var1.method31111()) {
+               if (source.method31111()) {
                   if (this.world.method6997() == Difficulty.PEACEFUL) {
                      var2 = 0.0F;
                   }
@@ -802,7 +805,7 @@ public abstract class PlayerEntity extends LivingEntity {
                   }
                }
 
-               return var2 != 0.0F ? super.attackEntityFrom(var1, var2) : false;
+               return var2 != 0.0F ? super.attackEntityFrom(source, var2) : false;
             } else {
                return false;
             }

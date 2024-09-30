@@ -56,7 +56,7 @@ public class Class3375 extends Class3373 {
    }
 
    @Override
-   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
+   public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
       return var2.getBlockState(var3.offset(var1.<Direction>get(field18972).getOpposite())).getMaterial().isSolid();
    }
 
@@ -73,7 +73,7 @@ public class Class3375 extends Class3373 {
          if (var12.getAxis().isHorizontal()) {
             Direction var13 = var12.getOpposite();
             var4 = var4.with(field18972, var13);
-            if (var4.method23443(var6, var7)) {
+            if (var4.isValidPosition(var6, var7)) {
                return var4.with(field18966, Boolean.valueOf(var5.getFluid() == Fluids.WATER));
             }
          }
@@ -84,7 +84,7 @@ public class Class3375 extends Class3373 {
 
    @Override
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
-      return var2.getOpposite() == var1.get(field18972) && !var1.method23443(var4, var5)
+      return var2.getOpposite() == var1.get(field18972) && !var1.isValidPosition(var4, var5)
          ? Blocks.AIR.getDefaultState()
          : super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
    }

@@ -39,7 +39,7 @@ public class Class3230 extends Class3229 {
 
    @Override
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
-      if (var2.getOpposite() == var1.<Direction>get(field18669) && !var1.method23443(var4, var5)) {
+      if (var2.getOpposite() == var1.<Direction>get(field18669) && !var1.isValidPosition(var4, var5)) {
          return Blocks.AIR.getDefaultState();
       } else {
          if (var1.<Boolean>get(field18663)) {

@@ -11,6 +11,7 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.EntityRayTraceResult;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;

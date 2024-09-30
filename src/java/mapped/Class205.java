@@ -19,12 +19,12 @@ public class Class205 extends Class203 {
    }
 
    @Override
-   public int method652(long var1) {
+   public int getLevel(long var1) {
       return this.field762.get(var1);
    }
 
    @Override
-   public void method654(long var1, int var3) {
+   public void setLevel(long var1, int var3) {
       byte var6;
       if (var3 <= this.field763) {
          var6 = this.field762.put(var1, (byte)var3);
@@ -49,6 +49,6 @@ public class Class205 extends Class203 {
    }
 
    public void method684() {
-      this.method676(Integer.MAX_VALUE);
+      this.processUpdates(Integer.MAX_VALUE);
    }
 }

@@ -1,7 +1,6 @@
 package net.minecraft.world;
 
 import mapped.WorldLightManager;
-import mapped.LightType;
 import mapped.Class8980;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;

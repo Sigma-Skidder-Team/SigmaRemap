@@ -21,7 +21,7 @@ public class Class8826 {
       }
 
       try {
-         field39791[PathType.field12616.ordinal()] = 3;
+         field39791[PathType.AIR.ordinal()] = 3;
       } catch (NoSuchFieldError var7) {
       }
 

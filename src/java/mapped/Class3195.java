@@ -1,9 +1,6 @@
 package mapped;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.IWaterLoggable;
+import net.minecraft.block.*;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.BlockItemUseContext;
@@ -25,7 +22,7 @@ import net.minecraft.world.server.ServerWorld;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class Class3195 extends Class3194 implements Class3196, IWaterLoggable {
+public class Class3195 extends BushBlock implements Class3196, IWaterLoggable {
    private static String[] field18471;
    public static final IntegerProperty field18472 = BlockStateProperties.field39758;
    public static final BooleanProperty field18473 = BlockStateProperties.WATERLOGGED;
@@ -57,19 +54,19 @@ public class Class3195 extends Class3194 implements Class3196, IWaterLoggable {
    }
 
    @Override
-   public boolean method11490(BlockState var1, IBlockReader var2, BlockPos var3) {
-      return !var1.method23414(var2, var3).method19526(Direction.UP).isEmpty() || var1.method23454(var2, var3, Direction.UP);
+   public boolean isValidGround(BlockState state, IBlockReader var2, BlockPos var3) {
+      return !state.method23414(var2, var3).method19526(Direction.UP).isEmpty() || state.method23454(var2, var3, Direction.UP);
    }
 
    @Override
-   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
+   public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
       BlockPos var6 = var3.down();
-      return this.method11490(var2.getBlockState(var6), var2, var6);
+      return this.isValidGround(var2.getBlockState(var6), var2, var6);
    }
 
    @Override
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
-      if (var1.method23443(var4, var5)) {
+      if (var1.isValidPosition(var4, var5)) {
          if (var1.<Boolean>get(field18473)) {
             var4.getPendingFluidTicks().scheduleTick(var5, Fluids.WATER, Fluids.WATER.getTickRate(var4));
          }

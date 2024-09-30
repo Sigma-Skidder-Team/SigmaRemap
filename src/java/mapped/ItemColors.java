@@ -66,7 +66,7 @@ public class ItemColors {
             BlockState var5x = ((Class3292)var1.getItem()).method11845().getDefaultState();
             return var0.method29465(var5x, (IBlockDisplayReader)null, (BlockPos)null, var2);
          },
-         Blocks.field36395,
+         Blocks.GRASS_BLOCK,
          Blocks.GRASS,
          Blocks.FERN,
          Blocks.VINE,

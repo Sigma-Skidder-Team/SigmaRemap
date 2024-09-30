@@ -56,7 +56,7 @@ public class Class9140 {
          double var5 = field41996.player.getPosY();
          float var7 = method34128();
          float var8 = 0.02F;
-         float var9 = (float) EnchantmentHelper.method26326(field41996.player);
+         float var9 = (float) EnchantmentHelper.getDepthStriderModifier(field41996.player);
          if (var9 > 3.0F) {
             var9 = 3.0F;
          }

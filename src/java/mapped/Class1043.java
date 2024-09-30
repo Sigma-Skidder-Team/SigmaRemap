@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Sets;
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;

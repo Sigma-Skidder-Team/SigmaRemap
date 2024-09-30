@@ -34,7 +34,7 @@ public class Class3220 extends Block {
 
    @Override
    public void tick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
-      if (!var1.method23443(var2, var3)) {
+      if (!var1.isValidPosition(var2, var3)) {
          var2.method7179(var3, true);
       }
    }
@@ -75,7 +75,7 @@ public class Class3220 extends Block {
 
    @Override
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
-      if (!var1.method23443(var4, var5)) {
+      if (!var1.isValidPosition(var4, var5)) {
          var4.method6860().scheduleTick(var5, this, 1);
       }
 
@@ -83,7 +83,7 @@ public class Class3220 extends Block {
    }
 
    @Override
-   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
+   public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
       for (Direction var7 : Direction.Plane.HORIZONTAL) {
          BlockState var8 = var2.getBlockState(var3.offset(var7));
          Material var9 = var8.getMaterial();
@@ -98,7 +98,7 @@ public class Class3220 extends Block {
    }
 
    @Override
-   public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
+   public void onEntityCollision(BlockState var1, World var2, BlockPos var3, Entity var4) {
       var4.attackEntityFrom(DamageSource.field39001, 1.0F);
    }
 

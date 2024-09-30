@@ -37,9 +37,9 @@ public class TrackingChunkStatusListener implements IChunkStatusListener {
       if (this.field31108) {
          this.field31102.method22737(var1, var2);
          if (var2 != null) {
-            this.field31103.put(var1.method24352(), var2);
+            this.field31103.put(var1.asLong(), var2);
          } else {
-            this.field31103.remove(var1.method24352());
+            this.field31103.remove(var1.asLong());
          }
       }
    }

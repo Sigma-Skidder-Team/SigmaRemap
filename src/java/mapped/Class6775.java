@@ -101,9 +101,9 @@ public class Class6775 extends Class6773 {
                            var2.setBlockState(var29, var32, false);
                         }
                      } else if (!var25) {
-                        var2.setBlockState(var29, Blocks.field36395.getDefaultState(), false);
+                        var2.setBlockState(var29, Blocks.GRASS_BLOCK.getDefaultState(), false);
                      } else {
-                        var2.setBlockState(var29, Blocks.field36397.getDefaultState(), false);
+                        var2.setBlockState(var29, Blocks.COARSE_DIRT.getDefaultState(), false);
                      }
                   }
 

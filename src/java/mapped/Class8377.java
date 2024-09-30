@@ -18,6 +18,7 @@ import java.util.stream.Stream;
 
 import net.minecraft.client.util.Util;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.SectionPos;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.util.Supplier;
@@ -70,7 +71,7 @@ public class Class8377 {
    private boolean method29353(Class9343 var1) {
       BlockPos var4 = var1.method35355();
       Class4913 var5 = var1.method35356();
-      short var6 = Class2002.method8398(var4);
+      short var6 = SectionPos.method8398(var4);
       Class9343 var7 = (Class9343)this.field35949.get(var6);
       if (var7 == null) {
          this.field35949.put(var6, var1);
@@ -84,7 +85,7 @@ public class Class8377 {
    }
 
    public void method29354(BlockPos var1) {
-      Class9343 var4 = (Class9343)this.field35949.remove(Class2002.method8398(var1));
+      Class9343 var4 = (Class9343)this.field35949.remove(SectionPos.method8398(var1));
       if (var4 != null) {
          this.field35950.get(var4.method35356()).remove(var4);
          field35948.debug("Removed POI of type {} @ {}", new Supplier[]{var4::method35356, var4::method35355});
@@ -95,7 +96,7 @@ public class Class8377 {
    }
 
    public boolean method29355(BlockPos var1) {
-      Class9343 var4 = (Class9343)this.field35949.get(Class2002.method8398(var1));
+      Class9343 var4 = (Class9343)this.field35949.get(SectionPos.method8398(var1));
       if (var4 != null) {
          boolean var5 = var4.method35352();
          this.field35951.run();
@@ -106,13 +107,13 @@ public class Class8377 {
    }
 
    public boolean method29356(BlockPos var1, Predicate<Class4913> var2) {
-      short var5 = Class2002.method8398(var1);
+      short var5 = SectionPos.method8398(var1);
       Class9343 var6 = (Class9343)this.field35949.get(var5);
       return var6 != null && var2.test(var6.method35356());
    }
 
    public Optional<Class4913> method29357(BlockPos var1) {
-      short var4 = Class2002.method8398(var1);
+      short var4 = SectionPos.method8398(var1);
       Class9343 var5 = (Class9343)this.field35949.get(var4);
       return var5 == null ? Optional.<Class4913>empty() : Optional.<Class4913>of(var5.method35356());
    }
@@ -122,7 +123,7 @@ public class Class8377 {
          Short2ObjectOpenHashMap var4 = new Short2ObjectOpenHashMap(this.field35949);
          this.method29359();
          var1.accept((var2, var3) -> {
-            short var6 = Class2002.method8398(var2);
+            short var6 = SectionPos.method8398(var2);
             Class9343 var7 = (Class9343)var4.computeIfAbsent(var6, var3x -> new Class9343(var2, var3, this.field35951));
             this.method29353(var7);
          });

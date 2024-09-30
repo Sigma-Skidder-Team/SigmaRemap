@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.server.ServerWorld;
 

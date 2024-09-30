@@ -32,6 +32,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import net.minecraft.advancements.Advancement;
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.network.play.server.SSelectAdvancementsTabPacket;

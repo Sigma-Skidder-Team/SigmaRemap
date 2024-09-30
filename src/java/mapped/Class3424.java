@@ -48,13 +48,13 @@ public class Class3424 extends Block implements Class3196 {
    }
 
    @Override
-   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
+   public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
       return var2.getBlockState(var3.down()).isIn(BlockTags.field32787);
    }
 
    @Override
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
-      if (var1.method23443(var4, var5)) {
+      if (var1.isValidPosition(var4, var5)) {
          if (var2 == Direction.UP && var3.isIn(Blocks.field37009)) {
             var4.setBlockState(var5, Blocks.field37009.getDefaultState(), 2);
          }

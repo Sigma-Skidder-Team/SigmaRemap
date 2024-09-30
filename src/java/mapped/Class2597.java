@@ -26,7 +26,7 @@ public class Class2597 extends Class2595 {
    public boolean method10803() {
       if (this.field16823.getRNG().nextInt(!this.field16823.isChild() ? 1000 : 50) == 0) {
          BlockPos var3 = this.field16823.getPosition();
-         return !field16822.test(this.field16824.getBlockState(var3)) ? this.field16824.getBlockState(var3.down()).isIn(Blocks.field36395) : true;
+         return !field16822.test(this.field16824.getBlockState(var3)) ? this.field16824.getBlockState(var3.down()).isIn(Blocks.GRASS_BLOCK) : true;
       } else {
          return false;
       }
@@ -60,10 +60,10 @@ public class Class2597 extends Class2595 {
          BlockPos var3 = this.field16823.getPosition();
          if (!field16822.test(this.field16824.getBlockState(var3))) {
             BlockPos var4 = var3.down();
-            if (this.field16824.getBlockState(var4).isIn(Blocks.field36395)) {
+            if (this.field16824.getBlockState(var4).isIn(Blocks.GRASS_BLOCK)) {
                if (this.field16824.getGameRules().getBoolean(Class5462.field24224)) {
-                  this.field16824.playEvent(2001, var4, Block.getStateId(Blocks.field36395.getDefaultState()));
-                  this.field16824.setBlockState(var4, Blocks.field36396.getDefaultState(), 2);
+                  this.field16824.playEvent(2001, var4, Block.getStateId(Blocks.GRASS_BLOCK.getDefaultState()));
+                  this.field16824.setBlockState(var4, Blocks.DIRT.getDefaultState(), 2);
                }
 
                this.field16823.method4235();

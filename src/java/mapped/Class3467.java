@@ -13,7 +13,7 @@ public class Class3467 extends Block {
    }
 
    @Override
-   public boolean method11493(BlockState var1, IBlockReader var2, BlockPos var3) {
+   public boolean propagatesSkylightDown(BlockState var1, IBlockReader var2, BlockPos var3) {
       return true;
    }
 

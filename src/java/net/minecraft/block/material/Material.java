@@ -93,7 +93,7 @@ public final class Material {
    public static final Material field38961 = Builder.method30894(new Builder(MaterialColor.field30951).notOpaque()).build();
    public static final Material field38962 = Builder.method30894(new Builder(MaterialColor.FOLIAGE).notOpaque()).pushDestroys().build();
    public static final Material field38963 = Builder.method30894(new Builder(MaterialColor.AIR)).build();
-   public static final Material field38964 = Builder.method30894(new Builder(MaterialColor.field30952)).build();
+   public static final Material ICE = Builder.method30894(new Builder(MaterialColor.field30952)).build();
    public static final Material field38965 = Builder.method30894(new Builder(MaterialColor.FOLIAGE)).pushDestroys().build();
    public static final Material field38966 = new Builder(MaterialColor.STONE).build();
    public static final Material field38967 = new Builder(MaterialColor.IRON).build();

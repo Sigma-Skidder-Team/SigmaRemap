@@ -490,9 +490,9 @@ public class Class1097 extends Class1018 {
    }
 
    @Override
-   public boolean attackEntityFrom(DamageSource var1, float var2) {
+   public boolean attackEntityFrom(DamageSource source, float var2) {
       this.method5190(false);
-      return super.attackEntityFrom(var1, var2);
+      return super.attackEntityFrom(source, var2);
    }
 
    @Nullable

@@ -311,10 +311,10 @@ public class Class1105 extends Class1009 {
    }
 
    @Override
-   public boolean attackEntityFrom(DamageSource var1, float var2) {
-      if (!this.method5301() && !var1.method31144() && var1.getImmediateSource() instanceof LivingEntity) {
-         LivingEntity var5 = (LivingEntity)var1.getImmediateSource();
-         if (!var1.method31131()) {
+   public boolean attackEntityFrom(DamageSource source, float var2) {
+      if (!this.method5301() && !source.method31144() && source.getImmediateSource() instanceof LivingEntity) {
+         LivingEntity var5 = (LivingEntity) source.getImmediateSource();
+         if (!source.method31131()) {
             var5.attackEntityFrom(DamageSource.method31125(this), 2.0F);
          }
       }
@@ -323,7 +323,7 @@ public class Class1105 extends Class1009 {
          this.field6076.method10944();
       }
 
-      return super.attackEntityFrom(var1, var2);
+      return super.attackEntityFrom(source, var2);
    }
 
    @Override

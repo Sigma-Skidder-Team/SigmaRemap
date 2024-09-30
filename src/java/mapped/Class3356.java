@@ -80,13 +80,13 @@ public class Class3356 extends Class3241 {
 
    @Override
    public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
-      return VoxelShapes.method27425();
+      return VoxelShapes.empty();
    }
 
    @Override
    public VoxelShape method11502(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       Class955 var7 = this.method11930(var2, var3);
-      return var7 == null ? VoxelShapes.method27425() : var7.method3866(var2, var3);
+      return var7 == null ? VoxelShapes.empty() : var7.method3866(var2, var3);
    }
 
    @Nullable

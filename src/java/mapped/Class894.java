@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.math.EntityRayTraceResult;
 import net.minecraft.world.World;
 
 public class Class894 extends Class890 {
