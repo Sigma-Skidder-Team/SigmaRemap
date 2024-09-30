@@ -11,6 +11,7 @@ import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
+import com.mentalfrostbyte.jello.util.animation.MathHelper;
 import net.minecraft.client.Minecraft;
 import org.apache.commons.lang3.ArrayUtils;
 import org.lwjgl.opengl.GL11;
@@ -140,9 +141,9 @@ public class JelloMainMenuScreen extends Screen {
 
    @Override
    public void draw(float var1) {
-      float var4 = Class8056.method27664(this.field20972.calcPercent(), 0.0F, 1.0F, 1.0F);
+      float var4 = MathHelper.calculateTransition(this.field20972.calcPercent(), 0.0F, 1.0F, 1.0F);
       if (this.field20972.getDirection() == Direction.BACKWARDS) {
-         var4 = Class8056.method27663(this.field20972.calcPercent(), 0.0F, 1.0F, 1.0F);
+         var4 = MathHelper.calculateBackwardTransition(this.field20972.calcPercent(), 0.0F, 1.0F, 1.0F);
       }
 
       float var5 = 0.07F * var4;
@@ -228,7 +229,7 @@ public class JelloMainMenuScreen extends Screen {
             MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4),
             false
          );
-         RenderUtil.method11424(
+         RenderUtil.renderBackgroundBox(
             0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var4 * 0.3F)
          );
 

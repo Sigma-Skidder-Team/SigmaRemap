@@ -124,7 +124,7 @@ public class ActiveMods extends Module {
                     this.field23963.method23937((float) (var7 - var19), (float) var6, var16.getSuffix(), new Color(var9));
                     this.field23964
                             .method23937(
-                                    (float) (var7 - this.field23964.method23942(this.method16856(var16))),
+                                    (float) (var7 - this.field23964.getStringWidth(this.method16856(var16))),
                                     (float) var6 + 1.6F,
                                     this.method16856(var16),
                                     new Color(160, 160, 160)
@@ -192,6 +192,6 @@ public class ActiveMods extends Module {
     private int method16857(Module var1) {
         String var4 = var1.getSuffix();
         String var5 = this.method16856(var1);
-        return this.field23963.method23942(var4) + this.field23964.method23942(var5);
+        return this.field23963.getStringWidth(var4) + this.field23964.getStringWidth(var5);
     }
 }

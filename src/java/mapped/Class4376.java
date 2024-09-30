@@ -79,21 +79,21 @@ public class Class4376 extends PNGIconButton implements Class4238 {
          GL11.glPushMatrix();
          String var13 = this.getTypedText() != null ? this.getTypedText() : this.field20891;
          GL11.glTranslatef(
-            (float)(this.getXA() + this.getWidthA() / 2 - var11.method23942(var13) / 2), (float)(this.getYA() + this.getHeightA() - 40), 0.0F
+            (float)(this.getXA() + this.getWidthA() / 2 - var11.getStringWidth(var13) / 2), (float)(this.getYA() + this.getHeightA() - 40), 0.0F
          );
          GL11.glScalef(var4 / this.method13032(), var4 / this.method13032(), var4 / this.method13032());
          GL11.glAlphaFunc(519, 0.0F);
          RenderUtil.method11454(
-            (1.0F - var4 / this.method13032()) * (float)var11.method23942(var13) / 2.0F + 1.0F - (float)var11.method23942(var13) / 2.0F,
+            (1.0F - var4 / this.method13032()) * (float)var11.getStringWidth(var13) / 2.0F + 1.0F - (float)var11.getStringWidth(var13) / 2.0F,
             (float)var11.method23941(var13) / 3.0F,
-            (float)(var11.method23942(var13) * 2),
+            (float)(var11.getStringWidth(var13) * 2),
             (float)var11.method23941(var13) * 3.0F,
             ResourcesDecrypter.shadowPNG,
             var12 * 0.6F
          );
          RenderUtil.drawString(
             var11,
-            (1.0F - var4 / this.method13032()) * (float)var11.method23942(var13) / 2.0F + 1.0F,
+            (1.0F - var4 / this.method13032()) * (float)var11.getStringWidth(var13) / 2.0F + 1.0F,
             40.0F,
             var13,
             MultiUtilities.applyAlpha(this.method13307().method19405(), var12 * 0.6F)

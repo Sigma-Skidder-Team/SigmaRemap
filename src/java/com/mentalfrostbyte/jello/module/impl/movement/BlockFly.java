@@ -16,6 +16,7 @@ import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
+import com.mentalfrostbyte.jello.util.animation.MathHelper;
 import mapped.*;
 import net.minecraft.block.AbstractButtonBlock;
 import net.minecraft.block.Block;
@@ -391,7 +392,7 @@ public class BlockFly extends ModuleWithModuleSettings {
                 } else {
                     this.method16745(
                             mc.mainWindow.getWidth() / 2,
-                            mc.mainWindow.getHeight() - 138 - (int) (25.0F * Class8056.method27664(this.field23885.calcPercent(), 0.0F, 1.0F, 1.0F)),
+                            mc.mainWindow.getHeight() - 138 - (int) (25.0F * MathHelper.calculateTransition(this.field23885.calcPercent(), 0.0F, 1.0F, 1.0F)),
                             this.field23885.calcPercent()
                     );
                 }
@@ -421,9 +422,9 @@ public class BlockFly extends ModuleWithModuleSettings {
 
     public void method16745(int var1, int var2, float var3) {
         int var6 = 0;
-        int var7 = ResourceRegistry.JelloLightFont18.method23942(this.field23886 + "") + 3;
+        int var7 = ResourceRegistry.JelloLightFont18.getStringWidth(this.field23886 + "") + 3;
         var6 += var7;
-        var6 += ResourceRegistry.JelloLightFont14.method23942("Blocks");
+        var6 += ResourceRegistry.JelloLightFont14.getStringWidth("Blocks");
         int var8 = var6 + 20;
         byte var9 = 32;
         var1 -= var8 / 2;

@@ -106,14 +106,14 @@ public class MainmenuScreen2 extends IconPanel {
       );
       this.addToList(
          this.field21130 = new UITextDisplay(
-            this, "Copyright", 10, this.getHeightA() - 31, var15.method23942(var20), 128, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), var20, var15
+            this, "Copyright", 10, this.getHeightA() - 31, var15.getStringWidth(var20), 128, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), var20, var15
          )
       );
       this.addToList(
          this.field21129 = new UITextDisplay(
             this,
             "Version",
-            this.getWidthA() - var15.method23942(var21) - 9,
+            this.getWidthA() - var15.getStringWidth(var21) - 9,
             this.getHeightA() - 31,
             128,
             128,

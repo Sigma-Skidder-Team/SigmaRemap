@@ -85,7 +85,7 @@ public class Class4251 extends Class4247 {
       this.field20614.draw(var1);
       GL11.glPopMatrix();
       RenderUtil.method11478();
-      RenderUtil.method11424(
+      RenderUtil.renderBackgroundBox(
          (float)(this.xA + this.field20616),
          (float)(this.yA + 0),
          1.0F,
@@ -105,7 +105,7 @@ public class Class4251 extends Class4247 {
       String var7 = Client.getInstance().getWaypointsManager().method29998().replace("/", " - ");
       RenderUtil.drawString(
          ResourceRegistry.JelloLightFont24,
-         (float)(this.xA + this.widthA - ResourceRegistry.JelloLightFont24.method23942(var7) - 10),
+         (float)(this.xA + this.widthA - ResourceRegistry.JelloLightFont24.getStringWidth(var7) - 10),
          (float)((this.icoPanel.getHeightA() - this.heightA) / 2 - 62),
          var7,
          MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F)

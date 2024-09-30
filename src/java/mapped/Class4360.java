@@ -30,7 +30,7 @@ public class Class4360 extends Class4247 {
 
    @Override
    public void draw(float var1) {
-      RenderUtil.method11424((float)this.xA, (float)this.yA, (float)this.widthA, (float)this.heightA, this.field21317);
+      RenderUtil.renderBackgroundBox((float)this.xA, (float)this.yA, (float)this.widthA, (float)this.heightA, this.field21317);
       super.draw(var1);
    }
 

@@ -9,6 +9,7 @@ import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
+import com.mentalfrostbyte.jello.util.animation.MathHelper;
 
 import java.io.File;
 import java.io.IOException;
@@ -160,7 +161,7 @@ public class Class4351 extends Class4278 {
       var1 *= 1.0F - this.animation.calcPercent();
       float var5 = MathUtils.lerp(this.field21265.calcPercent(), 0.28, 1.26, 0.33, 1.04);
       if (this.field21265.getDirection().equals(Direction.BACKWARDS)) {
-         var5 = Class8056.method27663(this.field21265.calcPercent(), 0.0F, 1.0F, 1.0F);
+         var5 = MathHelper.calculateBackwardTransition(this.field21265.calcPercent(), 0.0F, 1.0F, 1.0F);
       }
 
       this.buttonList.method13296(this.field21265.calcPercent() == 1.0F);
@@ -168,7 +169,7 @@ public class Class4351 extends Class4278 {
       this.buttonList.method13284((int)((float)this.field21270 * (1.0F - var5)));
       RenderUtil.method11415(this);
       float var6 = this.method13212() && this.field21265.getDirection().equals(Direction.BACKWARDS) ? 0.03F : 0.0F;
-      RenderUtil.method11424(
+      RenderUtil.renderBackgroundBox(
          (float)this.xA,
          (float)this.yA,
          (float)this.widthA,

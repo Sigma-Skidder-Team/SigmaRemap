@@ -97,7 +97,7 @@ public class CustomResourceLoadProgressGui extends LoadingGui {
       RenderUtil.method11454(
          0.0F, 0.0F, (float) Minecraft.getInstance().mainWindow.getWidth(), (float) Minecraft.getInstance().mainWindow.getHeight(), field6780, var0
       );
-      RenderUtil.method11424(
+      RenderUtil.renderBackgroundBox(
          0.0F, 0.0F, (float) Minecraft.getInstance().mainWindow.getWidth(), (float) Minecraft.getInstance().mainWindow.getHeight(), MultiUtilities.applyAlpha(0, 0.75F)
       );
       short var4 = 455;

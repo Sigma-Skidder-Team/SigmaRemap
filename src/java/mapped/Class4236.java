@@ -107,21 +107,21 @@ public class Class4236 extends PNGIconButton implements Class4238 {
          GL11.glPushMatrix();
          String var14 = this.getTypedText() != null ? this.getTypedText() : this.field20891;
          GL11.glTranslatef(
-            (float)(this.getXA() + this.getWidthA() / 2 - var12.method23942(var14) / 2), (float)(this.getYA() + this.getHeightA() - 40), 0.0F
+            (float)(this.getXA() + this.getWidthA() / 2 - var12.getStringWidth(var14) / 2), (float)(this.getYA() + this.getHeightA() - 40), 0.0F
          );
          GL11.glScalef(var13, var13, var13);
          GL11.glAlphaFunc(519, 0.0F);
          RenderUtil.method11454(
-            (1.0F - var13) * (float)var12.method23942(var14) / 2.0F + 1.0F - (float)var12.method23942(var14) / 2.0F,
+            (1.0F - var13) * (float)var12.getStringWidth(var14) / 2.0F + 1.0F - (float)var12.getStringWidth(var14) / 2.0F,
             (float)var12.method23941(var14) / 3.0F,
-            (float)(var12.method23942(var14) * 2),
+            (float)(var12.getStringWidth(var14) * 2),
             (float)var12.method23941(var14) * 3.0F,
             ResourcesDecrypter.shadowPNG,
             var5 * 0.6F * var1
          );
          RenderUtil.drawString(
             var12,
-            (1.0F - var13) * (float)var12.method23942(var14) / 2.0F + 1.0F,
+            (1.0F - var13) * (float)var12.getStringWidth(var14) / 2.0F + 1.0F,
             40.0F,
             var14,
             MultiUtilities.applyAlpha(this.method13307().method19405(), var5 * 0.6F * var1)

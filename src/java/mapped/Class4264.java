@@ -29,7 +29,7 @@ public class Class4264 extends Class4247 {
    public void draw(float var1) {
       for (int var4 = 0; var4 < this.widthA; var4++) {
          float var5 = (float)var4 / (float)this.widthA;
-         RenderUtil.method11424(
+         RenderUtil.renderBackgroundBox(
             (float)(this.xA + var4),
             (float)this.yA,
             1.0F,

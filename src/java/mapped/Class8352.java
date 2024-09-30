@@ -27,7 +27,7 @@ public class Class8352 {
          if (var2 != 2) {
             if (var2 != 3) {
                if (var2 == 4) {
-                  int var10 = var5 - var0.method23942(var1);
+                  int var10 = var5 - var0.getStringWidth(var1);
                   if (var10 <= 0) {
                      var0.method23937((float)var3, (float)var4, var1, var6);
                   }
@@ -35,10 +35,10 @@ public class Class8352 {
                   return method29271(var0, var1, var3, var4, method29270(var0, var1, var10));
                }
             } else {
-               var0.method23937((float)(var3 + var5 - var0.method23942(var1)), (float)var4, var1, var6);
+               var0.method23937((float)(var3 + var5 - var0.getStringWidth(var1)), (float)var4, var1, var6);
             }
          } else {
-            var0.method23937((float)(var3 + var5 / 2 - var0.method23942(var1) / 2), (float)var4, var1, var6);
+            var0.method23937((float)(var3 + var5 / 2 - var0.getStringWidth(var1) / 2), (float)var4, var1, var6);
          }
       } else {
          var0.method23937((float)var3, (float)var4, var1, var6);
@@ -58,7 +58,7 @@ public class Class8352 {
       }
 
       if (var5 > 0) {
-         var5 = (var2 + var0.method23942(" ") * var5) / var5;
+         var5 = (var2 + var0.getStringWidth(" ") * var5) / var5;
       }
 
       return var5;
@@ -77,7 +77,7 @@ public class Class8352 {
 
          String var10 = var1.substring(var7, var8);
          var0.method23936((float)var9, (float)var3, var10);
-         var9 += var0.method23942(var10) + var4;
+         var9 += var0.getStringWidth(var10) + var4;
          var7 = var8 + 1;
       }
 

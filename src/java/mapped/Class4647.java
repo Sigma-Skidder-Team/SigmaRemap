@@ -2,7 +2,6 @@ package mapped;
 
 // $VF: synthetic class
 public class Class4647 {
-   private static String[] field22174;
    public static final int[] field22175 = new int[Class2071.values().length];
 
    static {

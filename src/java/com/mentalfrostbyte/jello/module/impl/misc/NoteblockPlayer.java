@@ -7,7 +7,6 @@ import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
@@ -265,13 +264,13 @@ public class NoteblockPlayer extends Module {
         GL11.glPushMatrix();
         GL11.glScalef(-0.01F, -0.01F, -0.01F);
         RenderUtil.drawRect(
-                (float) (-var10.method23942(var7) / 2 - 10),
+                (float) (-var10.getStringWidth(var7) / 2 - 10),
                 0.0F,
-                (float) (var10.method23942(var7) / 2 + 10),
+                (float) (var10.getStringWidth(var7) / 2 + 10),
                 (float) (var10.method23952() + 2),
                 MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.4F)
         );
-        GL11.glTranslated(-var10.method23942(var7) / 2, 0.0, 0.0);
+        GL11.glTranslated(-var10.getStringWidth(var7) / 2, 0.0, 0.0);
         RenderUtil.drawString(var10, 0.0F, 0.0F, var7, ClientColors.LIGHT_GREYISH_BLUE.getColor);
         GL11.glPopMatrix();
         GL11.glPopMatrix();

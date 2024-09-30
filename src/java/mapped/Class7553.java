@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class7553 extends Class7554 {
+public class Class7553 extends CategoryDrawPartBackground {
    private static String[] field32390;
    private final String field32391;
    private final int field32392;
@@ -8,16 +8,16 @@ public class Class7553 extends Class7554 {
    public Class7553(String var1, int var2) {
       super(var2);
       this.field32391 = var1;
-      this.field32392 = this.field32394.method23942(var1);
+      this.field32392 = this.fontRenderer.getStringWidth(var1);
    }
 
    @Override
-   public void method24718(float var1) {
+   public void method24718(float partialTicks) {
    }
 
    @Override
-   public int method24719() {
+   public int getWidth() {
       short var3 = 200;
-      return Math.max(super.method24719(), this.field32392 + 14);
+      return Math.max(super.getWidth(), this.field32392 + 14);
    }
 }

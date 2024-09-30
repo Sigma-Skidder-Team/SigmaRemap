@@ -9,6 +9,7 @@ import com.mentalfrostbyte.jello.unmapped.SettingType;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
+import com.mentalfrostbyte.jello.util.animation.MathHelper;
 
 import java.util.HashMap;
 
@@ -193,13 +194,13 @@ public class Class4345 extends Class4339 {
 
    @Override
    public void draw(float var1) {
-      int var4 = Math.round((float)this.getHeightA() * Class8056.method27664(this.field21231.calcPercent(), 0.0F, 1.0F, 1.0F));
+      int var4 = Math.round((float)this.getHeightA() * MathHelper.calculateTransition(this.field21231.calcPercent(), 0.0F, 1.0F, 1.0F));
       if (this.field21231.getDirection() == Direction.BACKWARDS) {
-         var4 = Math.round((float)this.getHeightA() * Class8056.method27663(this.field21231.calcPercent(), 0.0F, 1.0F, 1.0F));
+         var4 = Math.round((float)this.getHeightA() * MathHelper.calculateBackwardTransition(this.field21231.calcPercent(), 0.0F, 1.0F, 1.0F));
       }
 
       RenderUtil.startScissor((float)this.xA, (float)(70 + this.getHeightA() - var4), (float)this.getWidthA(), (float)var4);
-      RenderUtil.method11424((float)this.xA, (float)(70 + this.getHeightA() - var4), (float)this.getWidthA(), (float)var4, -2631721);
+      RenderUtil.renderBackgroundBox((float)this.xA, (float)(70 + this.getHeightA() - var4), (float)this.getWidthA(), (float)var4, -2631721);
       super.draw(var1);
       RenderUtil.endScissor();
    }

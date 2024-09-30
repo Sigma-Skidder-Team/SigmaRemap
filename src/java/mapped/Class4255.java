@@ -29,7 +29,7 @@ public class Class4255 extends Class4247 {
       int var5 = this.getHeightA() / 2 + this.yA;
       RenderUtil.drawString(
          ClassicDecryption.regular25,
-         (float)(this.xA + (this.getWidthA() - ClassicDecryption.regular25.method23942(this.field20912)) / 2),
+         (float)(this.xA + (this.getWidthA() - ClassicDecryption.regular25.getStringWidth(this.field20912)) / 2),
          (float)(this.yA + this.getHeightA() - 50),
          this.field20912,
          !this.method13298() ? -14869219 : -319475

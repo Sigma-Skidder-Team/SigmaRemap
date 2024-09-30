@@ -53,10 +53,10 @@ public class Class4370 extends Class4247 {
 
    @Override
    public void draw(float var1) {
-      RenderUtil.method11424((float)(this.xA + this.widthA), (float)(this.yA + 1), 1.0F, (float)(this.heightA - 2), -8882056);
-      RenderUtil.method11424((float)(this.xA + 1), (float)this.yA, (float)(this.widthA - 1), (float)this.heightA, -8882056);
-      RenderUtil.method11424((float)this.xA, (float)(this.yA + 1), 1.0F, (float)(this.heightA - 2), -6250336);
-      RenderUtil.method11424(
+      RenderUtil.renderBackgroundBox((float)(this.xA + this.widthA), (float)(this.yA + 1), 1.0F, (float)(this.heightA - 2), -8882056);
+      RenderUtil.renderBackgroundBox((float)(this.xA + 1), (float)this.yA, (float)(this.widthA - 1), (float)this.heightA, -8882056);
+      RenderUtil.renderBackgroundBox((float)this.xA, (float)(this.yA + 1), 1.0F, (float)(this.heightA - 2), -6250336);
+      RenderUtil.renderBackgroundBox(
          (float)(this.xA + 1), (float)this.yA, (float)this.widthA * this.field21363 - 1.0F, (float)this.heightA, -6250336
       );
       this.method13696(Math.round((float)this.xA + (float)this.widthA * this.field21363) - 2, this.yA - 3);
@@ -64,15 +64,15 @@ public class Class4370 extends Class4247 {
    }
 
    public void method13696(int var1, int var2) {
-      RenderUtil.method11424((float)(var1 + 1), (float)(var2 + 1), 4.0F, 8.0F, -3618616);
-      RenderUtil.method11424((float)(var1 + 1), (float)(var2 + 1), 1.0F, 1.0F, -4934476);
-      RenderUtil.method11424((float)(var1 + 4), (float)(var2 + 1), 1.0F, 1.0F, -4934476);
-      RenderUtil.method11424((float)(var1 + 1), (float)(var2 + 8), 1.0F, 1.0F, -4934476);
-      RenderUtil.method11424((float)(var1 + 4), (float)(var2 + 8), 1.0F, 1.0F, -4934476);
-      RenderUtil.method11424((float)var1, (float)(var2 + 1), 1.0F, 8.0F, -4934476);
-      RenderUtil.method11424((float)(var1 + 5), (float)(var2 + 1), 1.0F, 8.0F, -4934476);
-      RenderUtil.method11424((float)(var1 + 1), (float)var2, 4.0F, 1.0F, -4934476);
-      RenderUtil.method11424((float)(var1 + 1), (float)(var2 + 9), 4.0F, 1.0F, -4934476);
+      RenderUtil.renderBackgroundBox((float)(var1 + 1), (float)(var2 + 1), 4.0F, 8.0F, -3618616);
+      RenderUtil.renderBackgroundBox((float)(var1 + 1), (float)(var2 + 1), 1.0F, 1.0F, -4934476);
+      RenderUtil.renderBackgroundBox((float)(var1 + 4), (float)(var2 + 1), 1.0F, 1.0F, -4934476);
+      RenderUtil.renderBackgroundBox((float)(var1 + 1), (float)(var2 + 8), 1.0F, 1.0F, -4934476);
+      RenderUtil.renderBackgroundBox((float)(var1 + 4), (float)(var2 + 8), 1.0F, 1.0F, -4934476);
+      RenderUtil.renderBackgroundBox((float)var1, (float)(var2 + 1), 1.0F, 8.0F, -4934476);
+      RenderUtil.renderBackgroundBox((float)(var1 + 5), (float)(var2 + 1), 1.0F, 8.0F, -4934476);
+      RenderUtil.renderBackgroundBox((float)(var1 + 1), (float)var2, 4.0F, 1.0F, -4934476);
+      RenderUtil.renderBackgroundBox((float)(var1 + 1), (float)(var2 + 9), 4.0F, 1.0F, -4934476);
    }
 
    @Override

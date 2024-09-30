@@ -20,7 +20,7 @@ public class Class4272 extends Class4247 {
       super(var1, var2, var3, var4, var5, 0, ColorHelper.field27961, false);
       UIButton blankButton;
       this.addToList(
-         blankButton = new UIButton(this, "blankButton", 25, 0, ResourceRegistry.JelloLightFont20.method23942("Blank"), 30, ColorHelper.field27961, "Blank", ResourceRegistry.JelloLightFont20)
+         blankButton = new UIButton(this, "blankButton", 25, 0, ResourceRegistry.JelloLightFont20.getStringWidth("Blank"), 30, ColorHelper.field27961, "Blank", ResourceRegistry.JelloLightFont20)
       );
       blankButton.doThis((var1x, var2x) -> {
          ConfigButtonOnClickGui var5x = (ConfigButtonOnClickGui)this.getIcoPanel();
@@ -31,9 +31,9 @@ public class Class4272 extends Class4247 {
          var10 = new UIButton(
             this,
             "dupeButton",
-            var5 - 25 - ResourceRegistry.JelloLightFont20.method23942("Duplicate"),
+            var5 - 25 - ResourceRegistry.JelloLightFont20.getStringWidth("Duplicate"),
             0,
-            ResourceRegistry.JelloLightFont20.method23942("Duplicate"),
+            ResourceRegistry.JelloLightFont20.getStringWidth("Duplicate"),
             30,
             ColorHelper.field27961,
             "Duplicate",
@@ -114,7 +114,7 @@ public class Class4272 extends Class4247 {
             MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20703.calcPercent() * var1 * 0.3F)
          );
          RenderUtil.method11415(this);
-         RenderUtil.method11424(
+         RenderUtil.renderBackgroundBox(
             (float)this.xA, (float)this.yA, (float)this.widthA, (float)this.heightA, MultiUtilities.applyAlpha(-723724, var1)
          );
          if (field20706 != null && Class8233.field35347 != null && Class8233.field35347.isEmpty()) {

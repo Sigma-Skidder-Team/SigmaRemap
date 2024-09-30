@@ -148,7 +148,7 @@ public class ShulkerInfo extends Module {
         GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().getYaw(), 0.0F, -1.0F, 0.0F);
         GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().getPitch(), 1.0F, 0.0F, 0.0F);
         GL11.glScalef(-0.009F * var8, -0.009F * var8, -0.009F * var8);
-        GL11.glTranslated(-var11.method23942(var12) / 2, 0.0, 0.0);
+        GL11.glTranslated(-var11.getStringWidth(var12) / 2, 0.0, 0.0);
         List var16 = this.method16678(((ItemEntity) var7).method4124());
         this.method16676(-87, -70, var16, ((ItemEntity) var7).method4124().method32149().getString(), false);
         GL11.glPopMatrix();
@@ -210,7 +210,7 @@ public class ShulkerInfo extends Module {
         RenderSystem.disableLighting();
         GL11.glAlphaFunc(519, 0.0F);
         if (!var5) {
-            RenderUtil.method11424(
+            RenderUtil.renderBackgroundBox(
                     (float) var1,
                     (float) var2,
                     (float) var13,
@@ -233,13 +233,13 @@ public class ShulkerInfo extends Module {
             int var17 = var1 + var8 + var14 % 9 * (var10 + var11);
             RenderSystem.disableLighting();
             if (var14 == this.field23841 && var5) {
-                RenderUtil.method11424((float) var17, (float) var16, (float) var10, (float) var10, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.15F));
+                RenderUtil.renderBackgroundBox((float) var17, (float) var16, (float) var10, (float) var10, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.15F));
             }
 
             RenderUtil.method11479(var15, var17, var16, var10, var10);
             if (var15.count > 1) {
-                int var18 = var10 - ResourceRegistry.JelloLightFont20.method23942("" + var15.count);
-                int var19 = ResourceRegistry.JelloLightFont20.method23942("" + var15.count);
+                int var18 = var10 - ResourceRegistry.JelloLightFont20.getStringWidth("" + var15.count);
+                int var19 = ResourceRegistry.JelloLightFont20.getStringWidth("" + var15.count);
                 GL11.glAlphaFunc(519, 0.0F);
                 RenderSystem.disableLighting();
                 RenderUtil.method11450(
@@ -273,7 +273,7 @@ public class ShulkerInfo extends Module {
 
                 var29 = (int) ((float) var29 * RenderUtil.method11417());
                 int var33 = var32.size();
-                RenderUtil.method11424(
+                RenderUtil.renderBackgroundBox(
                         (float) var27,
                         (float) (var25 + var10),
                         (float) var29 + 9.0F * RenderUtil.method11417(),

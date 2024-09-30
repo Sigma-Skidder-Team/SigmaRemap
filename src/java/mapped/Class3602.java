@@ -15,8 +15,8 @@ public class Class3602 implements Comparator<Module> {
    }
 
    public int compare(Module var1, Module var2) {
-      int var5 = ResourceRegistry.JelloLightFont20.method23942(var1.getName());
-      int var6 = ResourceRegistry.JelloLightFont20.method23942(var2.getName());
+      int var5 = ResourceRegistry.JelloLightFont20.getStringWidth(var1.getName());
+      int var6 = ResourceRegistry.JelloLightFont20.getStringWidth(var2.getName());
       if (var5 <= var6) {
          return var5 != var6 ? 1 : 0;
       } else {

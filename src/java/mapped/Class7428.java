@@ -56,7 +56,7 @@ public class Class7428 implements Class7427 {
    }
 
    @Override
-   public int method23942(String var1) {
+   public int getStringWidth(String var1) {
       return this.field31929 * var1.length();
    }
 

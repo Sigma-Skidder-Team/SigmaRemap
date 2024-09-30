@@ -405,13 +405,13 @@ public class Class8795 {
       GL11.glPushMatrix();
       GL11.glScalef(-0.01F, -0.01F, -0.01F);
       RenderUtil.drawRect(
-         (float)(-var10.method23942(var7) / 2 - 10),
+         (float)(-var10.getStringWidth(var7) / 2 - 10),
          0.0F,
-         (float)(var10.method23942(var7) / 2 + 10),
+         (float)(var10.getStringWidth(var7) / 2 + 10),
          (float)(var10.method23952() + 2),
          MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.1F)
       );
-      GL11.glTranslated((double)(-var10.method23942(var7) / 2), 0.0, 0.0);
+      GL11.glTranslated((double)(-var10.getStringWidth(var7) / 2), 0.0, 0.0);
       RenderUtil.drawString(var10, 0.0F, 0.0F, var7, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F));
       GL11.glPopMatrix();
       GL11.glPopMatrix();

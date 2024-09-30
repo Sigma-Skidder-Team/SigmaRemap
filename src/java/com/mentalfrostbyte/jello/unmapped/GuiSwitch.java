@@ -98,7 +98,7 @@ public class GuiSwitch extends Screen {
             float var7 = MathUtils.lerp(field21069.calcPercent(), 0.16, 0.71, 0.0, 0.99);
             int var8 = (Minecraft.getInstance().mainWindow.getWidth() - 455) / 2;
             int var9 = (int) ((float) ((Minecraft.getInstance().mainWindow.getHeight() - 78) / 2 - 14) - 116.0F * var7);
-            RenderUtil.method11424(
+            RenderUtil.renderBackgroundBox(
                     0.0F,
                     0.0F,
                     (float) Minecraft.getInstance().mainWindow.getWidth(),
@@ -114,7 +114,7 @@ public class GuiSwitch extends Screen {
                     CustomResourceLoadProgressGui.field6780,
                     MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 1.0F - field21069.calcPercent())
             );
-            RenderUtil.method11424(
+            RenderUtil.renderBackgroundBox(
                     0.0F,
                     0.0F,
                     (float) Minecraft.getInstance().mainWindow.getWidth(),

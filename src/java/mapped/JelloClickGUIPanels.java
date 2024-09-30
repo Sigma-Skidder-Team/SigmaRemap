@@ -105,7 +105,7 @@ public class JelloClickGUIPanels extends Class4304 {
          (float)(this.getYA() + 60),
          MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, Math.min(1.0F, var1 * 0.9F * this.field21195))
       );
-      RenderUtil.method11424(
+      RenderUtil.renderBackgroundBox(
          (float)this.getXA(),
          (float)this.getYA() + 60.0F * this.field21195,
          (float)this.getWidthA(),

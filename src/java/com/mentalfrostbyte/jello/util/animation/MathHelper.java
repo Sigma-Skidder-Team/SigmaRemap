@@ -1,14 +1,14 @@
-package mapped;
+package com.mentalfrostbyte.jello.util.animation;
 
-public class Class8056 {
+public class MathHelper {
    private static String[] field34592;
 
-   public static float method27663(float var0, float var1, float var2, float var3) {
+   public static float calculateBackwardTransition(float var0, float var1, float var2, float var3) {
       var0 /= var3;
       return var2 * var0 * var0 * var0 + var1;
    }
 
-   public static float method27664(float var0, float var1, float var2, float var3) {
+   public static float calculateTransition(float var0, float var1, float var2, float var3) {
       var0 /= var3;
       return var2 * (var0 * var0 * --var0 + 1.0F) + var1;
    }

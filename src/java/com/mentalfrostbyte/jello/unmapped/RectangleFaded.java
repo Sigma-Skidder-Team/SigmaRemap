@@ -44,7 +44,7 @@ public class RectangleFaded extends ButtonPanel {
         );
         RenderUtil.endScissor();
         if (this.field20591) {
-            RenderUtil.method11424(
+            RenderUtil.renderBackgroundBox(
                     (float) this.getXA(),
                     (float) this.getYA() - var4 * 3.0F,
                     (float) this.getWidthA(),

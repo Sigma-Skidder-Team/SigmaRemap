@@ -18,7 +18,7 @@ public class Class4284 extends Class4278 {
       if (this.getWidthA() != 0) {
          this.method13225();
          float var4 = 1.0F - Math.min(1.0F, Math.max((float)this.getWidthA() / (float)this.field20768, 0.0F));
-         RenderUtil.method11424(
+         RenderUtil.renderBackgroundBox(
             (float)this.xA, (float)this.yA, (float)this.field20768, (float)this.heightA, MultiUtilities.applyAlpha(-3254955, var1)
          );
          super.draw(var1 * (1.0F - var4));

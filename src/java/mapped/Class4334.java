@@ -50,7 +50,7 @@ public class Class4334 extends Class4333 {
       this.addToList(this.field21157 = new Class4255(this, "world", 24, 358, 170, 130, "World", field21179, field21180));
       this.addToList(this.field21155 = new Class4255(this, "player", 201, 58, 170, 130, "Player", field21171, field21172));
       this.addToList(this.field21156 = new Class4255(this, "visuals", 201, 208, 170, 130, "Visuals", field21175, field21176));
-      this.addToList(this.field21154 = new Class4255(this, "other", 201, 358, 170, 130, "Others", field21169, field21170));
+      this.addToList(this.field21154 = new Class4255(this, "others", 201, 358, 170, 130, "Others", field21169, field21170));
       Class4361 var7;
       this.addToList(var7 = new Class4361(this, "exit", this.getWidthA() - 41, 9));
       var7.doThis((var0, var1x) -> Minecraft.getInstance().displayGuiScreen(null));

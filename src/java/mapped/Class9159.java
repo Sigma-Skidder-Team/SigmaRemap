@@ -21,6 +21,6 @@ public class Class9159 {
    }
 
    public int method34193() {
-      return this.field42047.length != 1 ? 225 : Class4346.method13574().method23942(this.field42047[0]) + 20;
+      return this.field42047.length != 1 ? 225 : Class4346.method13574().getStringWidth(this.field42047[0]) + 20;
    }
 }

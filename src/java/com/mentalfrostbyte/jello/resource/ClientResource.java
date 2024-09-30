@@ -188,7 +188,7 @@ public class ClientResource implements Class7427 {
     }
 
     @Override
-    public int method23942(String var1) {
+    public int getStringWidth(String var1) {
         int var4 = 0;
         Class8246 var5 = null;
         char var6 = '\u0000';

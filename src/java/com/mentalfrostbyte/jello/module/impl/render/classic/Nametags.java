@@ -40,12 +40,12 @@ public class Nametags extends Module {
                 if (!var8.isInvisible()) {
                     Vector2f var9 = (Vector2f) var7.getValue();
                     String var10 = var8.getName().getUnformattedComponentText();
-                    int var11 = ClassicDecryption.bold16.method23942(var10) + 8;
+                    int var11 = ClassicDecryption.bold16.getStringWidth(var10) + 8;
                     int var12 = Math.round(var9.field37220);
                     int var13 = Math.round(var9.field37221);
                     GL11.glPushMatrix();
                     GL11.glTranslatef((float) (-var11 / 2), (float) (-var4), 0.0F);
-                    RenderUtil.method11424((float) var12, (float) var13, (float) var11, 20.0F, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F));
+                    RenderUtil.renderBackgroundBox((float) var12, (float) var13, (float) var11, 20.0F, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F));
                     RenderUtil.drawString(
                             ClassicDecryption.bold16, (float) (var12 + 3), (float) var13, var10, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F)
                     );

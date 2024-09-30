@@ -75,7 +75,7 @@ public class TargetHUD extends Module {
         }
         if (this.entity != null) {
             this.field23684 = (this.getBooleanValueFromSettingName("Head") ? 100 : 0)
-                    + Math.max(95, ResourceRegistry.JelloLightFont20.method23942(this.entity.getName().getString()))
+                    + Math.max(95, ResourceRegistry.JelloLightFont20.getStringWidth(this.entity.getName().getString()))
                     + (this.getBooleanValueFromSettingName("Armor") ? 80 : 0)
                     + 20;
             String var4 = this.getStringSettingValueByName("Position");
@@ -106,7 +106,7 @@ public class TargetHUD extends Module {
     public void method16474(EventRender var1) {
         if (this.entity != null) {
             this.field23684 = (this.getBooleanValueFromSettingName("Head") ? 100 : 0)
-                    + Math.max(95, ResourceRegistry.JelloLightFont20.method23942(this.entity.getName().getString()))
+                    + Math.max(95, ResourceRegistry.JelloLightFont20.getStringWidth(this.entity.getName().getString()))
                     + (this.getBooleanValueFromSettingName("Armor") ? 80 : 0)
                     + 20;
             String var4 = this.getStringSettingValueByName("Position");

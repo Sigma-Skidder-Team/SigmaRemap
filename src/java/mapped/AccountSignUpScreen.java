@@ -27,7 +27,7 @@ public class AccountSignUpScreen extends Class4247 {
             "Register",
             228,
             43,
-            ResourceRegistry.JelloMediumFont40.method23942("New Account"),
+            ResourceRegistry.JelloMediumFont40.getStringWidth("New Account"),
             50,
             new ColorHelper(ClientColors.DEEP_TEAL.getColor, ClientColors.DEEP_TEAL.getColor, ClientColors.DEEP_TEAL.getColor, -7631989),
             "New Account",
@@ -36,12 +36,12 @@ public class AccountSignUpScreen extends Class4247 {
       );
       this.addToList(
          this.registerButton = new UIButton(
-            this, "RegisterButton", 468, 291, ResourceRegistry.JelloLightFont25.method23942("Register"), 70, ColorHelper.field27961, "Register", ResourceRegistry.JelloLightFont25
+            this, "RegisterButton", 468, 291, ResourceRegistry.JelloLightFont25.getStringWidth("Register"), 70, ColorHelper.field27961, "Register", ResourceRegistry.JelloLightFont25
          )
       );
       this.addToList(
          this.loginButton = new UIButton(
-            this, "LoginButton", 98, 333, ResourceRegistry.JelloLightFont14.method23942("Login"), 14, ColorHelper.field27961, "Login", ResourceRegistry.JelloLightFont14
+            this, "LoginButton", 98, 333, ResourceRegistry.JelloLightFont14.getStringWidth("Login"), 14, ColorHelper.field27961, "Login", ResourceRegistry.JelloLightFont14
          )
       );
       this.addToList(this.loadingBox = new UILoadingCircle(this, "loading", 530, 314, 30, 30));
@@ -80,7 +80,7 @@ public class AccountSignUpScreen extends Class4247 {
       if (var7 != null) {
          this.captchaBox.setEnabled(var7.method36702());
          if (var7.method36702()) {
-            RenderUtil.method11424(
+            RenderUtil.renderBackgroundBox(
                (float)(this.xA + var6), (float)(this.yA + var5), 114.0F, 40.0F, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.04F)
             );
          }

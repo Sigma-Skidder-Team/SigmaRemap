@@ -48,7 +48,7 @@ public class ClassicMainScreen extends Screen {
         this.addToList(this.field21103 = new Class4337(this, "group", (this.getWidthA() - var13) / 2, this.getHeightA() / 2 - 230, var13, var14));
         this.addToList(
                 this.field21095 = new UITextDisplay(
-                        this, "Copyright", 10, 8, var9.method23942(var11), 140, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), var11, ResourceRegistry.JelloLightFont18
+                        this, "Copyright", 10, 8, var9.getStringWidth(var11), 140, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), var11, ResourceRegistry.JelloLightFont18
                 )
         );
         ColorHelper var15 = new ColorHelper(MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F));
@@ -58,12 +58,12 @@ public class ClassicMainScreen extends Screen {
         var16.add("Omikron");
         Collections.shuffle(var16);
         String var17 = "by " + var16.get(0) + ", " + var16.get(1);
-        this.addToList(new UITextDisplay(this, "names", 130, 9, var9.method23942(var11), 140, var15, var17, ClassicDecryption.regular17));
+        this.addToList(new UITextDisplay(this, "names", 130, 9, var9.getStringWidth(var11), 140, var15, var17, ClassicDecryption.regular17));
         this.addToList(
                 this.field21094 = new UITextDisplay(
                         this,
                         "Version",
-                        this.getWidthA() - var9.method23942(var12) - 9,
+                        this.getWidthA() - var9.getStringWidth(var12) - 9,
                         this.getHeightA() - 31,
                         114,
                         140,

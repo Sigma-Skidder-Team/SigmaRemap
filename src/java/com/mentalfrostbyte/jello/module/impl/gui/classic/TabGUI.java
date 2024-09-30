@@ -16,6 +16,7 @@ import com.mentalfrostbyte.jello.settings.Setting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
+import com.mentalfrostbyte.jello.util.animation.MathHelper;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 
@@ -24,12 +25,12 @@ import java.util.Iterator;
 import java.util.List;
 
 public class TabGUI extends Module {
-   public static final Animation field23380 = new Animation(200, 200, Direction.BACKWARDS);
-   public Animation field23381 = new Animation(500, 0, Direction.BACKWARDS);
-   private Animation field23382 = new Animation(300, 300, Direction.BACKWARDS);
-   private List<ModuleCategory> field23383 = new ArrayList<ModuleCategory>();
+   public static final Animation animationProgress = new Animation(200, 200, Direction.BACKWARDS);
+   public Animation secondAnimationProgress = new Animation(500, 0, Direction.BACKWARDS);
+   private Animation firstAnimationProgress = new Animation(300, 300, Direction.BACKWARDS);
+   private List<ModuleCategory> categories = new ArrayList<ModuleCategory>();
    private int field23384 = 0;
-   private static List<Class7554> field23385 = new ArrayList<Class7554>();
+   private static List<CategoryDrawPart> categoryDrawParts = new ArrayList<>();
 
    public TabGUI() {
       super(ModuleCategory.GUI, "TabGUI", "Manage mods without opening the ClickGUI");
@@ -37,119 +38,115 @@ public class TabGUI extends Module {
 
    @Override
    public void initialize() {
-      this.field23383.add(ModuleCategory.COMBAT);
-      this.field23383.add(ModuleCategory.PLAYER);
-      this.field23383.add(ModuleCategory.MOVEMENT);
-      this.field23383.add(ModuleCategory.RENDER);
-      this.field23383.add(ModuleCategory.WORLD);
-      this.field23383.add(ModuleCategory.MISC);
-      ArrayList var3 = new ArrayList();
+      this.categories.add(ModuleCategory.COMBAT);
+      this.categories.add(ModuleCategory.PLAYER);
+      this.categories.add(ModuleCategory.MOVEMENT);
+      this.categories.add(ModuleCategory.RENDER);
+      this.categories.add(ModuleCategory.WORLD);
+      this.categories.add(ModuleCategory.MISC);
+      ArrayList<String> categoryList = new ArrayList<>();
 
-      for (ModuleCategory var5 : this.field23383) {
-         var3.add(var5.getName());
+      for (ModuleCategory category : this.categories) {
+         categoryList.add(category.getName());
       }
 
-      field23385.add(0, new Class7555(var3, 0));
+      categoryDrawParts.add(0, new CategoryDrawPart(categoryList, 0));
    }
 
    @EventTarget
-   private void method15954(EventKeyPress var1) {
+   private void method15954(EventKeyPress event) {
       if (this.isEnabled()) {
-         Class2071 var4 = method15960(var1.getKey());
+         Class2071 var4 = method15960(event.getKey());
          if (var4 != null) {
-            field23380.changeDirection(Direction.FORWARDS);
+            animationProgress.changeDirection(Direction.FORWARDS);
             this.field23384 = 80;
-            int var5 = this.method15969();
-            Class7554 var6 = field23385.get(var5 - 1);
-            if (var4 != Class2071.field13494 && (!this.method15971() && var4 != Class2071.field13492 || var5 != 3)) {
-               this.field23381 = new Animation(500, 200, Direction.BACKWARDS);
+            int categoryState = this.getCurrentCategoryState();
+            CategoryDrawPart category = categoryDrawParts.get(categoryState - 1);
+            if (var4 != Class2071.field13494 && (!this.method15971() && var4 != Class2071.field13492 || categoryState != 3)) {
+               this.secondAnimationProgress = new Animation(500, 200, Direction.BACKWARDS);
             }
 
             switch (Class4647.field22175[var4.ordinal()]) {
                case 1:
-                  if (var5 == 3 && this.method15971()) {
+                  if (categoryState == 3 && this.method15971()) {
                      this.method15970(false);
-                  } else if (var5 > 1) {
-                     if (field23385.get(field23385.size() - 1).method24723()) {
-                        field23385.remove(field23385.size() - 1);
+                  } else if (categoryState > 1) {
+                     if (categoryDrawParts.get(categoryDrawParts.size() - 1).isExpanded()) {
+                        categoryDrawParts.remove(categoryDrawParts.size() - 1);
                      }
 
-                     var6.method24722();
+                     category.expand();
                   }
                   break;
                case 2:
-                  if (var5 == 3 && this.method15971()) {
-                     this.method15955(true);
-                  } else if (var6 instanceof Class7555) {
-                     Class7555 var14 = (Class7555)var6;
-                     var14.method24731();
+                  if (categoryState == 3 && this.method15971()) {
+                     this.onSettingChange(true);
+                  } else if (category != null) {
+                      category.method24731();
                   }
                   break;
                case 3:
-                  if (var5 == 3 && this.method15971()) {
-                     this.method15955(false);
-                  } else if (var6 instanceof Class7555) {
-                     Class7555 var13 = (Class7555)var6;
-                     var13.method24730();
+                  if (categoryState == 3 && this.method15971()) {
+                     this.onSettingChange(false);
+                  } else if (category != null) {
+                      category.method24730();
                   }
                   break;
                case 4:
-                  if (var5 == 1) {
-                     Class7555 var11 = (Class7555)var6;
-                     this.method15962(this.field23383.get(var11.field32402));
-                  } else if (var5 == 2 && var6 instanceof Class7555) {
-                     Class7555 var12 = (Class7555)field23385.get(0);
-                     Class7555 var15 = (Class7555)var6;
-                     ModuleCategory var16 = this.field23383.get(var12.field32402);
-                     Module var17 = Client.getInstance().getModuleManager().getModulesByCategory(var16).get(var15.field32402);
-                     this.method15963(var17);
-                  } else if (var5 == 3) {
+                  if (categoryState == 1) {
+                     this.method15962(this.categories.get(category.index));
+                  } else if (categoryState == 2 && category != null) {
+                     CategoryDrawPart drawPart = categoryDrawParts.get(0);
+                     ModuleCategory modCategory = this.categories.get(drawPart.index);
+                     Module module = Client.getInstance().getModuleManager().getModulesByCategory(modCategory).get(category.index);
+                     this.method15963(module);
+                  } else if (categoryState == 3) {
                      this.method15970(true);
                   }
                   break;
                case 5:
-                  if (var5 == 2 && var6 instanceof Class7555) {
-                     Class7555 var7 = (Class7555)field23385.get(0);
-                     Class7555 var8 = (Class7555)var6;
-                     ModuleCategory var9 = this.field23383.get(var7.field32402);
-                     Module var10 = Client.getInstance().getModuleManager().getModulesByCategory(var9).get(var8.field32402);
-                     var10.setEnabled(!var10.isEnabled());
+                  if (categoryState == 2 && category != null) {
+                     CategoryDrawPart drawPart = categoryDrawParts.get(0);
+                     ModuleCategory modCat = this.categories.get(drawPart.index);
+                     Module mod = Client.getInstance().getModuleManager().getModulesByCategory(modCat).get(category.index);
+                     mod.setEnabled(!mod.isEnabled());
                   }
+                  break;
             }
          }
       }
    }
 
-   private void method15955(boolean var1) {
-      Class7555 var4 = (Class7555)field23385.get(0);
-      Class7555 var5 = (Class7555)field23385.get(1);
-      Class7555 var6 = (Class7555)field23385.get(2);
-      ModuleCategory var7 = this.field23383.get(var4.field32402);
-      Module var8 = Client.getInstance().getModuleManager().getModulesByCategory(var7).get(var5.field32402);
-      Setting var9 = this.method15968(var8).get(var6.field32402);
-      if (!(var9 instanceof ModeSetting)) {
-         if (!(var9 instanceof BooleanSetting)) {
-            if (var9 instanceof NumberSetting) {
-               NumberSetting var10 = (NumberSetting)var9;
-               Object var11 = var10.getCurrentValue();
-               if (var11 instanceof Float) {
-                  Float var12 = (Float)var10.getCurrentValue();
+   private void onSettingChange(boolean var1) {
+      CategoryDrawPart categoryIndex = categoryDrawParts.get(0);
+      CategoryDrawPart moduleIndex = categoryDrawParts.get(1);
+      CategoryDrawPart settingIndex = categoryDrawParts.get(2);
+      ModuleCategory category = this.categories.get(categoryIndex.index);
+      Module var8 = Client.getInstance().getModuleManager().getModulesByCategory(category).get(moduleIndex.index);
+      Setting<?> setting = this.getModuleSettings(var8).get(settingIndex.index);
+      if (!(setting instanceof ModeSetting)) {
+         if (!(setting instanceof BooleanSetting)) {
+            if (setting instanceof NumberSetting) {
+               NumberSetting<?> numberSetting = (NumberSetting<?>)setting;
+               Object obj = numberSetting.getCurrentValue();
+               if (obj != null) {
+                  Float value = numberSetting.getCurrentValue();
                   if (var1) {
-                     var12 = var12 - var10.getStep();
+                     value = value - numberSetting.getStep();
                   } else {
-                     var12 = var12 + var10.getStep();
+                     value = value + numberSetting.getStep();
                   }
 
-                  var12 = Math.min(Math.max(var12, var10.getMin()), var10.getMax());
-                  var10.setCurrentValue(var12);
+                  value = Math.min(Math.max(value, numberSetting.getMin()), numberSetting.getMax());
+                  numberSetting.setCurrentValue(value);
                }
             }
          } else {
-            BooleanSetting var13 = (BooleanSetting)var9;
-            var13.setCurrentValue(Boolean.valueOf(!var13.getCurrentValue()));
+            BooleanSetting var13 = (BooleanSetting)setting;
+            var13.setCurrentValue(!var13.getCurrentValue());
          }
       } else {
-         ModeSetting var14 = (ModeSetting)var9;
+         ModeSetting var14 = (ModeSetting)setting;
          int var15 = var14.getModeIndex();
          if (!var1) {
             var15--;
@@ -168,15 +165,15 @@ public class TabGUI extends Module {
          var14.setModeByIndex(var15);
       }
 
-      var6.method24728(this.method15967(var8));
+      settingIndex.method24728(this.method15967(var8));
    }
 
    @EventTarget
    private void method15956(TickEvent var1) {
       if (this.isEnabled()) {
          if (this.field23384 <= 0) {
-            field23380.changeDirection(Direction.BACKWARDS);
-            this.field23381.changeDirection(Direction.BACKWARDS);
+            animationProgress.changeDirection(Direction.BACKWARDS);
+            this.secondAnimationProgress.changeDirection(Direction.BACKWARDS);
          } else {
             this.field23384--;
          }
@@ -191,22 +188,22 @@ public class TabGUI extends Module {
             if (!Minecraft.getInstance().gameSettings.hideGUI) {
                this.method15958();
 
-               for (Class7554 var5 : field23385) {
-                  var5.method24726((float)(0.5 + (double)field23380.calcPercent() * 0.5));
+               for (CategoryDrawPartBackground var5 : categoryDrawParts) {
+                  var5.method24726((float)(0.5 + (double) animationProgress.calcPercent() * 0.5));
                }
 
-               this.method15959((float)(0.5 + (double)field23380.calcPercent() * 0.5));
-               RenderUtil.method11424(12.0F, 30.0F, 90.0F, 1.0F, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+               this.drawCategories((float)(0.5 + (double) animationProgress.calcPercent() * 0.5));
+               RenderUtil.renderBackgroundBox(12.0F, 30.0F, 90.0F, 1.0F, ClientColors.LIGHT_GREYISH_BLUE.getColor);
             }
          }
       }
    }
 
    private void method15958() {
-      if (field23385.size() >= 2) {
-         Class7555 var3 = (Class7555)field23385.get(1);
-         Class7555 var4 = (Class7555)field23385.get(0);
-         ModuleCategory var5 = this.field23383.get(var4.field32402);
+      if (categoryDrawParts.size() >= 2) {
+         CategoryDrawPart var3 = categoryDrawParts.get(1);
+         CategoryDrawPart var4 = categoryDrawParts.get(0);
+         ModuleCategory var5 = this.categories.get(var4.index);
          int var6 = 0;
 
          for (Module var8 : Client.getInstance().getModuleManager().getModulesByCategory(var5)) {
@@ -215,53 +212,53 @@ public class TabGUI extends Module {
       }
    }
 
-   private void method15959(float var1) {
-      int var4 = this.method15969();
-      if (var4 == 2 || var4 == 3) {
-         Class7555 var5 = (Class7555)field23385.get(0);
-         Class7555 var6 = (Class7555)field23385.get(1);
-         Class7555 var7 = var4 != 3 ? null : (Class7555)field23385.get(2);
-         Class7555 var8 = var6;
-         if (var7 != null) {
-            var8 = var7;
+   private void drawCategories(float partialTicks) {
+      int drawState = this.getCurrentCategoryState();
+      if (drawState == 2 || drawState == 3) {
+         CategoryDrawPart firstCategoryPart = categoryDrawParts.get(0);
+         CategoryDrawPart secondCategoryPart = categoryDrawParts.get(1);
+         CategoryDrawPart thirdCategoryPart = drawState != 3 ? null : categoryDrawParts.get(2);
+         CategoryDrawPart activeCategoryPart = secondCategoryPart;
+         if (thirdCategoryPart != null) {
+            activeCategoryPart = thirdCategoryPart;
          }
 
-         if (var8.method24732() && field23380.getDirection() == Direction.FORWARDS) {
-            if (this.method15969() == field23385.size()) {
-               this.field23381.changeDirection(Direction.FORWARDS);
-            } else if (field23385.get(field23385.size() - 1).method24724()) {
-               this.field23381.changeDirection(Direction.FORWARDS);
+         if (activeCategoryPart.isAnimating() && animationProgress.getDirection() == Direction.FORWARDS) {
+            if (this.getCurrentCategoryState() == categoryDrawParts.size()) {
+               this.secondAnimationProgress.changeDirection(Direction.FORWARDS);
+            } else if (categoryDrawParts.get(categoryDrawParts.size() - 1).method24724()) {
+               this.secondAnimationProgress.changeDirection(Direction.FORWARDS);
             }
          }
 
-         ModuleCategory var9 = this.field23383.get(var5.field32402);
-         Module var10 = Client.getInstance().getModuleManager().getModulesByCategory(var9).get(var6.field32402);
-         String var11 = var10.getDescription();
-         if (var4 == 3) {
-            Setting var12 = this.method15968(var10).get(var7.field32402);
-            var11 = var12.getDescription();
+         ModuleCategory currentCategory = this.categories.get(firstCategoryPart.index);
+         Module currentModule = Client.getInstance().getModuleManager().getModulesByCategory(currentCategory).get(secondCategoryPart.index);
+         String description = currentModule.getDescription();
+         if (drawState == 3) {
+            Setting<?> currentSetting = this.getModuleSettings(currentModule).get(thirdCategoryPart.index);
+            description = currentSetting.getDescription();
          }
 
-         float var17 = Class8056.method27664(this.field23382.calcPercent(), 0.0F, 1.0F, 1.0F) * field23380.calcPercent();
-         if (this.field23382.getDirection() == Direction.BACKWARDS) {
-            var17 = Class8056.method27663(this.field23382.calcPercent(), 0.0F, 1.0F, 1.0F);
+         float animationProgressValue = MathHelper.calculateTransition(this.firstAnimationProgress.calcPercent(), 0.0F, 1.0F, 1.0F) * animationProgress.calcPercent();
+         if (this.firstAnimationProgress.getDirection() == Direction.BACKWARDS) {
+            animationProgressValue = MathHelper.calculateBackwardTransition(this.firstAnimationProgress.calcPercent(), 0.0F, 1.0F, 1.0F);
          }
 
-         RenderUtil.method11435(
-            (float)var8.method24720() + (float)var8.method24719() + 14.0F * var17,
-            (float)var8.method24721() + 16.0F + (float)(25 * var8.field32402),
-            24.0F * var17,
-            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.6F),
-            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.6F)
+         RenderUtil.renderCategoryBox(
+            (float)activeCategoryPart.getStartX() + (float)activeCategoryPart.getWidth() + 14.0F * animationProgressValue,
+            (float)activeCategoryPart.getStartY() + 16.0F + (float)(25 * activeCategoryPart.index),
+            24.0F * animationProgressValue,
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, partialTicks * 0.6F),
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, partialTicks * 0.6F)
          );
-         int var13 = var8.method24720() + var8.method24719() + 4 + Math.round(var17 * 28.0F);
-         int var14 = var8.method24721() + 25 * var8.field32402 + 4;
-         int var15 = var8.field32394.method23942(var11) + 8;
-         float var16 = Class8056.method27664(this.field23381.calcPercent(), 0.0F, 1.0F, 1.0F);
-         RenderUtil.method11424((float)var13, (float)var14, (float)var15 * var16, 25.0F, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.6F));
-         RenderUtil.startScissor((float)var13, (float)var14, (float)var15 * var16, 25.0F);
+         int descriptionX = activeCategoryPart.getStartX() + activeCategoryPart.getWidth() + 4 + Math.round(animationProgressValue * 28.0F);
+         int descriptionY = activeCategoryPart.getStartY() + 25 * activeCategoryPart.index + 4;
+         int descriptionWidth = activeCategoryPart.fontRenderer.getStringWidth(description) + 8;
+         float secondAnimationValue = MathHelper.calculateTransition(this.secondAnimationProgress.calcPercent(), 0.0F, 1.0F, 1.0F);
+         RenderUtil.renderBackgroundBox((float)descriptionX, (float)descriptionY, (float)descriptionWidth * secondAnimationValue, 25.0F, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, partialTicks * 0.6F));
+         RenderUtil.startScissor((float)descriptionX, (float)descriptionY, (float)descriptionWidth * secondAnimationValue, 25.0F);
          RenderUtil.drawString(
-            var8.field32394, (float)(var13 + 4), (float)(var14 + 2), var11, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, Math.min(1.0F, var1 * 1.7F))
+            activeCategoryPart.fontRenderer, (float)(descriptionX + 4), (float)(descriptionY + 2), description, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, Math.min(1.0F, partialTicks * 1.7F))
          );
          RenderUtil.endScissor();
       }
@@ -292,7 +289,7 @@ public class TabGUI extends Module {
       int var3 = 0;
 
       for (int var4 = 0; var4 < var0; var4++) {
-         var3 += field23385.get(var4).method24719();
+         var3 += categoryDrawParts.get(var4).getWidth();
       }
 
       return 4 + var3 + 5 * var0;
@@ -306,22 +303,22 @@ public class TabGUI extends Module {
       }
 
       this.method15964(1);
-      field23385.add(1, new Class7555(var4, 1));
+      categoryDrawParts.add(1, new CategoryDrawPart(var4, 1));
    }
 
    public void method15963(Module var1) {
       List var4 = this.method15967(var1);
       if (var4.size() != 0) {
          this.method15964(2);
-         field23385.add(2, new Class7555(var4, 2));
+         categoryDrawParts.add(2, new CategoryDrawPart(var4, 2));
       }
    }
 
    public void method15964(int var1) {
-      Iterator var4 = field23385.iterator();
+      Iterator var4 = categoryDrawParts.iterator();
 
       while (var4.hasNext()) {
-         if (((Class7554)var4.next()).field32395 >= var1) {
+         if (((CategoryDrawPartBackground)var4.next()).field32395 >= var1) {
             var4.remove();
          }
       }
@@ -329,27 +326,27 @@ public class TabGUI extends Module {
 
    @Override
    public void onDisable() {
-      field23380.changeDirection(Direction.BACKWARDS);
+      animationProgress.changeDirection(Direction.BACKWARDS);
       this.field23384 = 0;
    }
 
    @Override
    public void onEnable() {
-      field23380.changeDirection(Direction.FORWARDS);
+      animationProgress.changeDirection(Direction.FORWARDS);
       this.field23384 = 40;
    }
 
    public List<String> method15967(Module var1) {
       ArrayList var4 = new ArrayList();
 
-      for (Setting var6 : this.method15968(var1)) {
+      for (Setting var6 : this.getModuleSettings(var1)) {
          var4.add(var6.getName() + " " + var6.getCurrentValue());
       }
 
       return var4;
    }
 
-   public List<Setting> method15968(Module var1) {
+   public List<Setting> getModuleSettings(Module var1) {
       ArrayList var4 = new ArrayList<Setting>(var1.getSettingMap().values());
       if (var1 instanceof ModuleWithModuleSettings) {
          ModuleWithModuleSettings var5 = (ModuleWithModuleSettings)var1;
@@ -371,10 +368,10 @@ public class TabGUI extends Module {
       return var4;
    }
 
-   private int method15969() {
-      Class7554 var3 = field23385.get(field23385.size() - 1);
-      int var4 = field23385.size();
-      if (var3.method24723()) {
+   private int getCurrentCategoryState() {
+      CategoryDrawPartBackground var3 = categoryDrawParts.get(categoryDrawParts.size() - 1);
+      int var4 = categoryDrawParts.size();
+      if (var3.isExpanded()) {
          var4--;
       }
 
@@ -382,10 +379,10 @@ public class TabGUI extends Module {
    }
 
    private void method15970(boolean var1) {
-      this.field23382.changeDirection(!var1 ? Direction.BACKWARDS : Direction.FORWARDS);
+      this.firstAnimationProgress.changeDirection(!var1 ? Direction.BACKWARDS : Direction.FORWARDS);
    }
 
    private boolean method15971() {
-      return this.field23382.getDirection() == Direction.FORWARDS;
+      return this.firstAnimationProgress.getDirection() == Direction.FORWARDS;
    }
 }

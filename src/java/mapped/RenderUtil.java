@@ -166,7 +166,7 @@ public class RenderUtil {
       GL11.glScalef(var0, var1, var2);
    }
 
-   public static void method11424(float var0, float var1, float var2, float var3, int var4) {
+   public static void renderBackgroundBox(float var0, float var1, float var2, float var3, int var4) {
       drawRect(var0, var1, var0 + var2, var1 + var3, var4);
    }
 
@@ -359,7 +359,7 @@ public class RenderUtil {
       RenderSystem.disableBlend();
    }
 
-   public static void method11435(float var0, float var1, float var2, int var3, int var4) {
+   public static void renderCategoryBox(float var0, float var1, float var2, int var3, int var4) {
       RenderSystem.color4f(0.0F, 0.0F, 0.0F, 1.0F);
       GL11.glColor4f(0.0F, 0.0F, 0.0F, 0.0F);
       Tessellator var7 = Tessellator.getInstance();
@@ -440,10 +440,10 @@ public class RenderUtil {
       int var11 = 0;
       switch (Class7820.field33554[var5.ordinal()]) {
          case 1:
-            var10 = -var0.method23942(var3) / 2;
+            var10 = -var0.getStringWidth(var3) / 2;
             break;
          case 2:
-            var10 = -var0.method23942(var3);
+            var10 = -var0.getStringWidth(var3);
       }
 
       switch (Class7820.field33554[var6.ordinal()]) {
@@ -522,10 +522,10 @@ public class RenderUtil {
       int var11 = 0;
       switch (Class7820.field33554[var5.ordinal()]) {
          case 1:
-            var10 = -var0.method23942(var3) / 2;
+            var10 = -var0.getStringWidth(var3) / 2;
             break;
          case 2:
-            var10 = -var0.method23942(var3);
+            var10 = -var0.getStringWidth(var3);
       }
 
       switch (Class7820.field33554[var6.ordinal()]) {

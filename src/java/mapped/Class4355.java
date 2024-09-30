@@ -50,7 +50,7 @@ public class Class4355 extends Class4247 {
 
    @Override
    public void draw(float var1) {
-      RenderUtil.method11424(
+      RenderUtil.renderBackgroundBox(
          (float)this.xA,
          (float)this.yA,
          (float)this.widthA,
@@ -74,13 +74,13 @@ public class Class4355 extends Class4247 {
       byte var4 = 27;
       int var5 = this.widthA - 43;
       float var6 = !this.method13216() ? 0.2F : 0.4F;
-      RenderUtil.method11424(
+      RenderUtil.renderBackgroundBox(
          (float)(this.xA + var5), (float)(this.yA + var4), 20.0F, 2.0F, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var6)
       );
-      RenderUtil.method11424(
+      RenderUtil.renderBackgroundBox(
          (float)(this.xA + var5), (float)(this.yA + var4 + 5), 20.0F, 2.0F, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var6)
       );
-      RenderUtil.method11424(
+      RenderUtil.renderBackgroundBox(
          (float)(this.xA + var5), (float)(this.yA + var4 + 10), 20.0F, 2.0F, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var6)
       );
       RenderUtil.method11438(

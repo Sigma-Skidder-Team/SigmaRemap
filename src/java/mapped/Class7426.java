@@ -309,7 +309,7 @@ public class Class7426 implements Class7427 {
    }
 
    @Override
-   public int method23942(String var1) {
+   public int getStringWidth(String var1) {
       Class9685 var4 = null;
       if (this.field31919) {
          var4 = (Class9685)this.field31926.get(var1);

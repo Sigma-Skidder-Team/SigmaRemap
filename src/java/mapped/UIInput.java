@@ -343,7 +343,7 @@ public class UIInput extends Class4278 {
       RenderUtil.method11421(this.getXA(), this.getYA(), this.getXA() + this.widthA, this.getYA() + this.heightA, true);
       int var7 = this.xA + 4;
       int var8 = this.widthA - 4;
-      float var9 = (float)var7 + this.field20746 + (float)this.font.method23942(var6.substring(0, this.field20749));
+      float var9 = (float)var7 + this.field20746 + (float)this.font.getStringWidth(var6.substring(0, this.field20749));
       if (this.method13297()) {
          RenderUtil.drawRect(
             var9 + (float)(var6.isEmpty() ? 0 : -1),
@@ -352,7 +352,7 @@ public class UIInput extends Class4278 {
             (float)(this.yA + this.heightA / 2 + this.font.method23941(var6) / 2 - 1),
             MultiUtilities.applyAlpha(this.textColor.getTextColor(), !var5 ? 0.1F * var1 : 0.8F)
          );
-         float var10 = (float)(var7 + this.font.method23942(var6.substring(0, this.field20749))) + this.field20747;
+         float var10 = (float)(var7 + this.font.getStringWidth(var6.substring(0, this.field20749))) + this.field20747;
          if (var10 < (float)var7) {
             this.field20747 += (float)var7 - var10;
             this.field20747 = this.field20747 - Math.min((float)var8, this.field20747);
@@ -366,8 +366,8 @@ public class UIInput extends Class4278 {
       this.field20746 = this.field20746 + (this.field20747 - this.field20746) / 2.0F;
       this.field20750 = Math.min(Math.max(0, this.field20750), var6.length());
       this.field20751 = Math.min(Math.max(0, this.field20751), var6.length());
-      float var14 = (float)var7 + this.field20746 + (float)this.font.method23942(var6.substring(0, this.field20750));
-      float var11 = (float)var7 + this.field20746 + (float)this.font.method23942(var6.substring(0, this.field20751));
+      float var14 = (float)var7 + this.field20746 + (float)this.font.getStringWidth(var6.substring(0, this.field20750));
+      float var11 = (float)var7 + this.field20746 + (float)this.font.getStringWidth(var6.substring(0, this.field20751));
       RenderUtil.drawRect(
          var14,
          (float)(this.yA + this.heightA / 2 - this.font.method23941(var6) / 2),

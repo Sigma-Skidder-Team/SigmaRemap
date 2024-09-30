@@ -94,7 +94,7 @@ public class Compass extends Module {
             if (var8.length() != 1) {
                 RenderUtil.drawString(
                         ResourceRegistry.JelloLightFont25,
-                        (float) (var1 + (var3 - ResourceRegistry.JelloLightFont25.method23942(var8)) / 2),
+                        (float) (var1 + (var3 - ResourceRegistry.JelloLightFont25.getStringWidth(var8)) / 2),
                         (float) (var2 + 20),
                         var8,
                         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5)
@@ -102,7 +102,7 @@ public class Compass extends Module {
             } else {
                 RenderUtil.drawString(
                         ResourceRegistry.JelloMediumFont40,
-                        (float) (var1 + (var3 - ResourceRegistry.JelloMediumFont40.method23942(var8)) / 2),
+                        (float) (var1 + (var3 - ResourceRegistry.JelloMediumFont40.getStringWidth(var8)) / 2),
                         (float) (var2 + 10),
                         var8,
                         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5)
@@ -118,7 +118,7 @@ public class Compass extends Module {
             );
             RenderUtil.drawString(
                     ResourceRegistry.JelloLightFont18,
-                    (float) (var1 + (var3 - ResourceRegistry.JelloLightFont18.method23942(var8)) / 2),
+                    (float) (var1 + (var3 - ResourceRegistry.JelloLightFont18.getStringWidth(var8)) / 2),
                     (float) (var2 + 40),
                     var8,
                     MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5)

@@ -60,7 +60,7 @@ public class Cords extends Module {
                         byte var6 = 85;
                         int var7 = var1.method13960();
                         short var8 = 150;
-                        float var9 = (float) ResourceRegistry.JelloLightFont18.method23942(var5);
+                        float var9 = (float) ResourceRegistry.JelloLightFont18.getStringWidth(var5);
                         float var10 = Math.min(1.0F, (float) var8 / var9);
                         if (this.field23756.getDirection() != Direction.FORWARDS) {
                             var10 *= 0.9F + QuadraticEasing.easeInQuad(Math.min(1.0F, this.field23756.calcPercent() * 8.0F), 0.0F, 1.0F, 1.0F) * 0.1F;

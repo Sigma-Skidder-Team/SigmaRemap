@@ -28,7 +28,7 @@ public class Class4333 extends IconPanel {
          (float)(this.method13272() + this.getHeightA()) - var6
       );
       if (var4 != 0.0F) {
-         RenderUtil.method11424(
+         RenderUtil.renderBackgroundBox(
             (float)this.xA, (float)this.yA, (float)this.widthA, (float)this.heightA, MultiUtilities.applyAlpha(-2500135, 0.9F)
          );
       } else {
@@ -46,7 +46,7 @@ public class Class4333 extends IconPanel {
       if (!this.field20891.equals("Sigma")) {
          RenderUtil.drawString(
             var7,
-            (float)this.xA + (float)(this.getWidthA() - var7.method23942(this.field20891)) / 2.0F,
+            (float)this.xA + (float)(this.getWidthA() - var7.getStringWidth(this.field20891)) / 2.0F,
             (float)(this.yA + 18),
             this.field20891,
             -16777216
@@ -54,7 +54,7 @@ public class Class4333 extends IconPanel {
       } else {
          RenderUtil.drawString(
             var7,
-            (float)this.xA + (float)(this.getWidthA() - var7.method23942(this.field20891)) / 2.0F,
+            (float)this.xA + (float)(this.getWidthA() - var7.getStringWidth(this.field20891)) / 2.0F,
             (float)(this.yA + 10),
             this.field20891,
             -13619152

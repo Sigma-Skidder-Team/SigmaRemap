@@ -40,7 +40,7 @@ public class Class4359 extends Class4247 {
       }
 
       if (var4 == 0 && !this.field21314.method24319()) {
-         RenderUtil.method11424(
+         RenderUtil.renderBackgroundBox(
             (float)this.getXA(),
             (float)this.getYA(),
             (float)this.getWidthA(),
@@ -48,21 +48,21 @@ public class Class4359 extends Class4247 {
             MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.43F * var1)
          );
       } else {
-         RenderUtil.method11424(
+         RenderUtil.renderBackgroundBox(
             (float)this.getXA(),
             (float)this.getYA(),
             (float)this.getWidthA(),
             (float)this.getHeightA(),
             MultiUtilities.applyAlpha(ClientColors.MID_GREY.getColor, 0.075F)
          );
-         RenderUtil.method11424(
+         RenderUtil.renderBackgroundBox(
             (float)this.getXA() + (float)this.getWidthA() * var9,
             (float)this.getYA(),
             (float)this.getWidthA() * (1.0F - var9),
             (float)this.getHeightA(),
             MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.43F * var1)
          );
-         RenderUtil.method11424(
+         RenderUtil.renderBackgroundBox(
             (float)this.getXA(),
             (float)this.getYA(),
             (float)this.getWidthA() * var8,

@@ -79,8 +79,8 @@ public class Class8906 {
       int var8 = -1;
 
       for (int var9 = 0; var9 <= var0.length(); var9++) {
-         int var10 = var1.method23942(var0.substring(0, Math.max(var9 - 1, 0)));
-         int var11 = var1.method23942(var0.substring(0, var9));
+         int var10 = var1.getStringWidth(var0.substring(0, Math.max(var9 - 1, 0)));
+         int var11 = var1.getStringWidth(var0.substring(0, var9));
          if ((float)var11 > (float)var3 - var2 - var4) {
             var7 = var10;
             var8 = var11;
@@ -88,14 +88,14 @@ public class Class8906 {
          }
       }
 
-      if ((float)var3 - var2 - var4 >= (float)var1.method23942(var0)) {
-         var8 = var1.method23942(var0);
+      if ((float)var3 - var2 - var4 >= (float)var1.getStringWidth(var0)) {
+         var8 = var1.getStringWidth(var0);
       }
 
       int var12 = !(Math.abs((float)var3 - var2 - var4 - (float)var7) < Math.abs((float)var3 - var2 - var4 - (float)var8)) ? var8 : var7;
 
       for (int var13 = 0; var13 < var0.length(); var13++) {
-         if (var1.method23942(var0.substring(0, var13)) == var12) {
+         if (var1.getStringWidth(var0.substring(0, var13)) == var12) {
             var12 = var13;
             break;
          }

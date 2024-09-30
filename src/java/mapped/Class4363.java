@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
+import com.mentalfrostbyte.jello.util.animation.MathHelper;
 import org.lwjgl.opengl.GL11;
 
 import java.util.HashMap;
@@ -145,7 +146,7 @@ public class Class4363 extends Class4247 {
    }
 
    private int method13648() {
-      float var3 = Class8056.method27664(this.field21330.calcPercent(), 0.0F, 1.0F, 1.0F);
+      float var3 = MathHelper.calculateTransition(this.field21330.calcPercent(), 0.0F, 1.0F, 1.0F);
       if (this.field21330.getDirection() != Direction.FORWARDS) {
          var3 = QuadraticEasing.easeInQuad(this.field21330.calcPercent(), 0.0F, 1.0F, 1.0F);
       }

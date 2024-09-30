@@ -11,6 +11,7 @@ import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
+import com.mentalfrostbyte.jello.util.animation.MathHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;
 import totalcross.json.JSONObject;
@@ -250,7 +251,7 @@ public class JelloClickGUI extends Screen {
       if (this.field20949 != null) {
          float var8 = EasingFunctions.easeOutBack(this.field20949.animation.calcPercent(), 0.0F, 1.0F, 1.0F);
          if (this.field20949.animation.getDirection() == Direction.BACKWARDS) {
-            var8 = Class8056.method27663(this.field20949.animation.calcPercent(), 0.0F, 1.0F, 1.0F);
+            var8 = MathHelper.calculateBackwardTransition(this.field20949.animation.calcPercent(), 0.0F, 1.0F, 1.0F);
          }
 
          var7 -= this.field20949.animation.calcPercent() * 0.1F;
@@ -261,7 +262,7 @@ public class JelloClickGUI extends Screen {
          String var12 = Client.getInstance().getModuleManager().getConfigurationManager().getCurrentConfig().getName;
          RenderUtil.drawString(
             ResourceRegistry.JelloLightFont20,
-            (float)(this.widthA - ResourceRegistry.JelloLightFont20.method23942(var12) - 80),
+            (float)(this.widthA - ResourceRegistry.JelloLightFont20.getStringWidth(var12) - 80),
             (float)(this.heightA - 47),
             var12,
             MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F * Math.max(0.0F, Math.min(1.0F, var4)))

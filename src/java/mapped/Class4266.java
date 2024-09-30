@@ -150,7 +150,7 @@ public class Class4266 extends Class4247 {
                "+",
                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)
             );
-            RenderUtil.method11424(
+            RenderUtil.renderBackgroundBox(
                (float)(this.xA + 16), (float)(this.yA + 65), 8.0F, 2.0F, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)
             );
          }

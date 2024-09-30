@@ -27,7 +27,7 @@ public class LoginScreen extends Class4247 {
                   "Login",
                   228,
                   43,
-                  ResourceRegistry.JelloMediumFont40.method23942("Login"),
+                  ResourceRegistry.JelloMediumFont40.getStringWidth("Login"),
                   50,
                   new ColorHelper(ClientColors.DEEP_TEAL.getColor, ClientColors.DEEP_TEAL.getColor, ClientColors.DEEP_TEAL.getColor, -7631989),
                   "Login",
@@ -36,12 +36,12 @@ public class LoginScreen extends Class4247 {
       );
       this.addToList(
          this.loginButton = new UIButton(
-            this, "LoginButton", 468, 238, ResourceRegistry.JelloLightFont25.method23942("Login"), 70, ColorHelper.field27961, "Login", ResourceRegistry.JelloLightFont25
+            this, "LoginButton", 468, 238, ResourceRegistry.JelloLightFont25.getStringWidth("Login"), 70, ColorHelper.field27961, "Login", ResourceRegistry.JelloLightFont25
          )
       );
       this.addToList(
          this.registerButton = new UIButton(
-            this, "RegisterButton", 88, 250, ResourceRegistry.JelloLightFont14.method23942("Register"), 14, ColorHelper.field27961, "Register", ResourceRegistry.JelloLightFont14
+            this, "RegisterButton", 88, 250, ResourceRegistry.JelloLightFont14.getStringWidth("Register"), 14, ColorHelper.field27961, "Register", ResourceRegistry.JelloLightFont14
          )
       );
       this.addToList(
@@ -50,7 +50,7 @@ public class LoginScreen extends Class4247 {
             "ForgotButton",
             60,
             275,
-            ResourceRegistry.JelloLightFont14.method23942("Forgot password?"),
+            ResourceRegistry.JelloLightFont14.getStringWidth("Forgot password?"),
             14,
             ColorHelper.field27961,
             "Forgot password?",
@@ -90,7 +90,7 @@ public class LoginScreen extends Class4247 {
       if (var5 != null) {
          this.field21355.setEnabled(var5.method36702());
          if (var5.method36702()) {
-            RenderUtil.method11424(
+            RenderUtil.renderBackgroundBox(
                (float)(this.xA + 330), (float)(this.yA + 255), 114.0F, 40.0F, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.04F)
             );
          }

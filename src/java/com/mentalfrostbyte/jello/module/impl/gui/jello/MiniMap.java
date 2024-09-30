@@ -158,7 +158,7 @@ public class MiniMap extends Module {
                             String var5 = "^";
                             ClientResource var6 = ResourceRegistry.JelloMediumFont20;
                             float var7 = 1.5F;
-                            RenderUtil.method11424((float) this.field23711, (float) this.field23712, (float) this.field23710, (float) this.field23709, -7687425);
+                            RenderUtil.renderBackgroundBox((float) this.field23711, (float) this.field23712, (float) this.field23710, (float) this.field23709, -7687425);
                             GL11.glPushMatrix();
                             float var8 = (float) (this.field23710 / this.field23715);
                             float var9 = (float) ((double) (var8 * var7) * this.field23718);

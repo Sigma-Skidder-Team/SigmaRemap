@@ -48,7 +48,7 @@ public class Class4283 extends Class4278 {
       GL11.glRotated(1.0 * Math.abs(var4 * var6), var6, var4, 0.0);
       GL11.glTranslatef((float)(-this.xA - this.widthA / 2), (float)(-this.yA - this.heightA / 2), 0.0F);
       GL11.glDisable(2929);
-      RenderUtil.method11424((float)this.xA, (float)this.yA, (float)this.widthA, (float)this.heightA, ClientColors.PALE_YELLOW.getColor);
+      RenderUtil.renderBackgroundBox((float)this.xA, (float)this.yA, (float)this.widthA, (float)this.heightA, ClientColors.PALE_YELLOW.getColor);
       GL11.glPopMatrix();
       super.draw(var1);
    }

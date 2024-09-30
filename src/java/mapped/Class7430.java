@@ -21,7 +21,7 @@ public class Class7430 extends ClientResource {
    }
 
    @Override
-   public int method23942(String var1) {
+   public int getStringWidth(String var1) {
       return this.field31946.fontRenderer.getStringWidth(var1) * this.field31945;
    }
 
