@@ -61,7 +61,7 @@ public class HypixelSpeed extends Module {
     public void method16037(EventUpdate var1) {
         if (mc.player.onGround) {
             if (!Client.getInstance().getModuleManager().getModuleByClass(Criticals.class).isEnabled2()
-                    || KillAura.target == null && KillAura.field23949 == null
+                    || KillAura.target == null && KillAura.timedEntityIdk == null
                     || this.field23418 != Class2094.field13641) {
                 this.field23417 = 0.0;
             } else if (var1.isPre()) {

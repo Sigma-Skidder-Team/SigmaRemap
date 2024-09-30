@@ -50,15 +50,13 @@ public class ModuleManager {
         this.moduleMap.remove(var1);
     }
 
-    private void method14654() {
+    private void sortBySuffixAndRegisterEvents() {
         this.modules.sort(Comparator.comparing(Module::getSuffix));
 
-        for (Module var4 : this.modules) {
-            Client.getInstance().getEventManager().register(var4);
-            this.moduleMap.put(var4.getClass(), var4);
+        for (Module mod : this.modules) {
+            Client.getInstance().getEventManager().register(mod);
+            this.moduleMap.put(mod.getClass(), mod);
         }
-
-        Class6715.field29434 = true;
     }
 
     public void register(ClientMode var1) {
@@ -210,8 +208,7 @@ public class ModuleManager {
         this.register(new DebugSpeed());
         this.register(new AutoMiner());
 
-        new Class8329();
-        this.method14654();
+        this.sortBySuffixAndRegisterEvents();
     }
 
     public JSONObject load(JSONObject json) {

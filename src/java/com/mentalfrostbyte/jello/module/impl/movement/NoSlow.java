@@ -29,10 +29,10 @@ public class NoSlow extends Module {
     @EventTarget
     private void method16234(EventUpdate var1) {
         if (this.isEnabled()) {
-            boolean var4 = Client.getInstance().getModuleManager().getModuleByClass(KillAura.class).isEnabled2();
+            boolean auraEnabled = Client.getInstance().getModuleManager().getModuleByClass(KillAura.class).isEnabled2();
             boolean var5 = mc.player.getHeldItemMainhand() != null && mc.player.getHeldItemMainhand().getItem() instanceof SwordItem;
             if (!var1.isPre()) {
-                if (var5 && mc.gameSettings.keyBindUseItem.isKeyDown() && !this.field23540 && !var4 && this.getStringSettingValueByName("Mode").equals("NCP")) {
+                if (var5 && mc.gameSettings.keyBindUseItem.isKeyDown() && !this.field23540 && !auraEnabled && this.getStringSettingValueByName("Mode").equals("NCP")) {
                     MultiUtilities.block();
                     this.field23540 = true;
                 } else if (!var5 && this.field23540) {
@@ -42,7 +42,7 @@ public class NoSlow extends Module {
                 if (this.field23540 && !mc.gameSettings.keyBindUseItem.isKeyDown()) {
                     this.field23540 = false;
                 }
-            } else if (this.field23540 && mc.gameSettings.keyBindUseItem.isKeyDown() && !var4) {
+            } else if (this.field23540 && mc.gameSettings.keyBindUseItem.isKeyDown() && !auraEnabled) {
                 if (var5) {
                     MultiUtilities.unblock();
                 }

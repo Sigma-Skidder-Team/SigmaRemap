@@ -26,7 +26,7 @@ public class KillAuraAttackLambda implements Runnable {
    @Override
    public void run() {
       boolean var3 = (float)Math.round((float)Math.random() * 100.0F) <= this.killauraModule.getNumberValueBySettingName("Hit Chance");
-      float var4 = Math.max(KillAura.mc.player.getDistance(KillAura.field23949.getEntity()), this.killauraModule.getNumberValueBySettingName("Range"));
+      float var4 = Math.max(KillAura.mc.player.getDistance(KillAura.timedEntityIdk.getEntity()), this.killauraModule.getNumberValueBySettingName("Range"));
       EntityRayTraceResult var5;
       if (!this.killauraModule.getStringSettingValueByName("Attack Mode").equals("Pre")) {
          var5 = MultiUtilities.method17712(

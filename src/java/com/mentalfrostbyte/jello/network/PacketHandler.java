@@ -23,20 +23,10 @@ public class PacketHandler {
     @Handler
     private void method35031(boolean var1, Class7232 var2, boolean var3, boolean var4) {
         if (!thing) {
-
-            while (!Class6715.field29434) {
-                try {
-                    Thread.sleep(999L);
-                } catch (InterruptedException interruptedException) {
-                    throw new RuntimeException(interruptedException);
-                }
-            }
-
             thing = true;
 
             if (var2 instanceof Class7234) {
                 for (Object object : Class6715.field29433) {
-                    boolean var10 = false;
 
                     for (Class declaredMethods = object.getClass(); declaredMethods != null; declaredMethods = declaredMethods.getSuperclass()) {
                         for (Method method : declaredMethods.getDeclaredMethods()) {
