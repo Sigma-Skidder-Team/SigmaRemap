@@ -45,11 +45,11 @@ public class OldHitting extends Module {
         if (this.isEnabled() || mc.gameSettings.keyBindUseItem.isKeyDown()) {
             if (var1.isPre()) {
                 boolean var4 = mc.player.getHeldItemMainhand() != null && mc.player.getHeldItemMainhand().getItem() instanceof SwordItem;
-                boolean var5 = Client.getInstance().getModuleManager().getModuleByClass(KillAura.class).isEnabled();
+                boolean auraEnabled = Client.getInstance().getModuleManager().getModuleByClass(KillAura.class).isEnabled();
                 boolean var6 = true;
                 if (!mc.player.isSneaking()
                         && mc.objectMouseOver.getType() == RayTraceResult.Type.BLOCK
-                        && !var5) {
+                        && !auraEnabled) {
                     BlockRayTraceResult var7 = (BlockRayTraceResult) mc.objectMouseOver;
                     BlockPos var8 = var7.getPos();
                     Block var9 = mc.world.getBlockState(var8).getBlock();
@@ -84,7 +84,9 @@ public class OldHitting extends Module {
                     }
                 }
 
-                field23408 = mc.gameSettings.keyBindUseItem.isKeyDown() && var4 && var6 && var6 || (var5 && KillAura.target != null);
+                //MY DUMB "FIX" - MARK
+                boolean isAutoBlockNone = Client.getInstance().getModuleManager().getModuleByClass(KillAura.class).getStringSettingValueByName("Autoblock Mode").equals("None");
+                field23408 = mc.gameSettings.keyBindUseItem.isKeyDown() && var4 && var6 && var6 || (auraEnabled && KillAura.target != null && !isAutoBlockNone);
                 /*
                 if (!field23408) {
                     if (ViaVersionLoader.entites.contains(mc.player)) {
@@ -97,7 +99,7 @@ public class OldHitting extends Module {
 
                 if (field23408 && !this.field23409) {
                     this.field23409 = !this.field23409;
-                    if (!var5) {
+                    if (!auraEnabled) {
                         MultiUtilities.block();
                     }
                 } else if (!field23408 && this.field23409) {
