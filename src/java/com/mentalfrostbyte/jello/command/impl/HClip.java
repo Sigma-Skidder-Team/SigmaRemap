@@ -19,7 +19,7 @@ public class HClip extends Command {
       if (var2.length != 0) {
          if (var2.length <= 1) {
             if (var2[0].method30895() != Class2193.field14336) {
-               throw new CommandException("Invalid distance \"" + var2[0].method30899() + "\"");
+               throw new CommandException("Invalid distance \"" + var2[0].getArguments() + "\"");
             } else {
                float var6 = (float)Math.toRadians((double)(mc.player.rotationYaw + 90.0F));
                double var7 = (double) MathHelper.cos(var6) * var2[0].method30896();

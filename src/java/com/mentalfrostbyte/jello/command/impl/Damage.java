@@ -20,7 +20,7 @@ public class Damage extends Command {
       } else if (var2.length > 1) {
          throw new CommandException("Too many arguments");
       } else if (var2[0].method30895() != Class2193.field14336) {
-         throw new CommandException("Invalid heart damage amount \"" + var2[0].method30899() + "\"");
+         throw new CommandException("Invalid heart damage amount \"" + var2[0].getArguments() + "\"");
       } else {
          for (int var6 = 0; (double)var6 < 80.0 + 40.0 * (var2[0].method30896() - 0.5); var6++) {
             mc.getConnection()

@@ -31,18 +31,18 @@ public class Config extends Command {
    }
 
    @Override
-   public void run(String var1, ChatCommandArguments[] var2, Class6669 var3) throws CommandException {
-      if (var2.length == 0) {
+   public void run(String var1, ChatCommandArguments[] args, Class6669 var3) throws CommandException {
+      if (args.length == 0) {
          throw new CommandException();
-      } else if (var2.length <= 2) {
-         if (var2[0].method30895() != Class2193.field14335) {
+      } else if (args.length <= 2) {
+         if (args[0].method30895() != Class2193.field14335) {
             throw new CommandException();
          } else {
-            String var6 = var2[0].method30899().toLowerCase();
-            if (!var6.equalsIgnoreCase("load")) {
-               if (!this.field25714.contains(var6)) {
-                  if (!this.field25715.contains(var6)) {
-                     if (!var6.equalsIgnoreCase("list")) {
+            String action = args[0].getArguments().toLowerCase();
+            if (!action.equalsIgnoreCase("load")) {
+               if (!this.field25714.contains(action)) {
+                  if (!this.field25715.contains(action)) {
+                     if (!action.equalsIgnoreCase("list")) {
                         throw new CommandException();
                      }
 
@@ -54,8 +54,8 @@ public class Config extends Command {
                            var3.send((!var9 ? "" : "§n") + var8.field31263);
                         }
                      }
-                  } else if (var2.length != 1) {
-                     String var10 = var2[1].method30899().toLowerCase();
+                  } else if (args.length != 1) {
+                     String var10 = args[1].getArguments().toLowerCase();
                      if (!Client.getInstance().getModuleManager().method14667().method20765(var10)) {
                         var3.send(this.method18342() + " not found!");
                      } else {
@@ -64,8 +64,8 @@ public class Config extends Command {
                   } else {
                      var3.send("Usage : .config remove <name>");
                   }
-               } else if (var2.length != 1) {
-                  String var11 = var2[1].method30899().toLowerCase();
+               } else if (args.length != 1) {
+                  String var11 = args[1].getArguments().toLowerCase();
                   Class7286 var13 = Client.getInstance().getModuleManager().method14667().method20770();
                   var13.field31262 = Client.getInstance().getModuleManager().method14657(new JSONObject());
                   Client.getInstance().getModuleManager().method14667().method20765(var11);
@@ -74,8 +74,8 @@ public class Config extends Command {
                } else {
                   var3.send("Usage : .config save <name>");
                }
-            } else if (var2.length != 1) {
-               String var12 = var2[1].method30899().toLowerCase();
+            } else if (args.length != 1) {
+               String var12 = args[1].getArguments().toLowerCase();
                Class7286 var14 = Client.getInstance().getModuleManager().method14667().method20766(var12);
                if (var14 == null) {
                   var3.send(this.method18342() + " not found!");

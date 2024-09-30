@@ -22,7 +22,7 @@ public class Enemy extends Command {
       if (var2.length == 0) {
          throw new CommandException();
       } else if (var2[0].method30895() == Class2193.field14335) {
-         String var6 = var2[0].method30899();
+         String var6 = var2[0].getArguments();
          String var7 = var6.toLowerCase();
          switch (var7) {
             case "add":
@@ -30,16 +30,16 @@ public class Enemy extends Command {
                   var3.send("Usage : .enemy add <name>");
                } else {
                   Pattern var14 = Pattern.compile("[a-zA-Z0-9_]{2,16}");
-                  boolean var15 = var14.matcher(var2[1].method30899()).matches();
+                  boolean var15 = var14.matcher(var2[1].getArguments()).matches();
                   if (var15) {
-                     boolean var16 = Client.getInstance().getFriendManager().method27002(var2[1].method30899());
+                     boolean var16 = Client.getInstance().getFriendManager().method27002(var2[1].getArguments());
                      if (!var16) {
-                        var3.send("\"" + var2[1].method30899() + "\" is already your enemy.");
+                        var3.send("\"" + var2[1].getArguments() + "\" is already your enemy.");
                      } else {
-                        var3.send("\"" + var2[1].method30899() + "\" is now your enemy.");
+                        var3.send("\"" + var2[1].getArguments() + "\" is now your enemy.");
                      }
                   } else {
-                     var3.send("Invalid name \"" + var2[1].method30899() + "\"");
+                     var3.send("Invalid name \"" + var2[1].getArguments() + "\"");
                   }
                }
                break;
@@ -47,11 +47,11 @@ public class Enemy extends Command {
                if (var2.length != 2) {
                   var3.send("Usage : .enemy remove <name>");
                } else {
-                  boolean var13 = Client.getInstance().getFriendManager().method27006(var2[1].method30899());
+                  boolean var13 = Client.getInstance().getFriendManager().method27006(var2[1].getArguments());
                   if (!var13) {
-                     var3.send("\"" + var2[1].method30899() + "\" is not your enemy.");
+                     var3.send("\"" + var2[1].getArguments() + "\" is not your enemy.");
                   } else {
-                     var3.send("\"" + var2[1].method30899() + "\" is no longer your enemy.");
+                     var3.send("\"" + var2[1].getArguments() + "\" is no longer your enemy.");
                   }
                }
                break;

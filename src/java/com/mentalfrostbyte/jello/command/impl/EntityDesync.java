@@ -23,8 +23,8 @@ public class EntityDesync extends Command {
             if (var2[0].method30895() != Class2193.field14335) {
                throw new CommandException();
             } else {
-               if (!var2[0].method30899().startsWith("d")) {
-                  if (!var2[0].method30899().startsWith("m") && !var2[0].method30899().startsWith("r")) {
+               if (!var2[0].getArguments().startsWith("d")) {
+                  if (!var2[0].getArguments().startsWith("m") && !var2[0].getArguments().startsWith("r")) {
                      throw new CommandException();
                   }
 

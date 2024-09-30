@@ -41,7 +41,7 @@ public class ChatCommandArguments {
       }
    }
 
-   public String method30899() {
+   public String getArguments() {
       return this.arguments;
    }
 }

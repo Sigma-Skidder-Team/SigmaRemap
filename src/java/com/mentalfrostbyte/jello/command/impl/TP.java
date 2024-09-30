@@ -29,7 +29,7 @@ public class TP extends Command {
          throw new CommandException("Too many arguments");
       } else if (!mc.player.onGround && MultiUtilities.isHypixel()) {
          throw new CommandException("Use this command on ground");
-      } else if (var2[0].method30899().equalsIgnoreCase(mc.getSession().username)) {
+      } else if (var2[0].getArguments().equalsIgnoreCase(mc.getSession().username)) {
          throw new CommandException("You can not tp to yourself");
       } else {
          this.field25710.entity = null;
@@ -37,7 +37,7 @@ public class TP extends Command {
          var6.sort(new Class3596(this));
 
          for (Entity var8 : var6) {
-            if (var8.getName().getString().equalsIgnoreCase(var2[0].method30899())) {
+            if (var8.getName().getString().equalsIgnoreCase(var2[0].getArguments())) {
                this.field25710.entity = var8;
                break;
             }
@@ -61,7 +61,7 @@ public class TP extends Command {
                this.field25710.timer.start();
             }
          } else {
-            throw new CommandException("Could not find entity with name \"" + var2[0].method30899() + "\"");
+            throw new CommandException("Could not find entity with name \"" + var2[0].getArguments() + "\"");
          }
       }
    }

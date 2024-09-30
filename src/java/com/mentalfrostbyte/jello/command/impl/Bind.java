@@ -34,28 +34,28 @@ public class Bind extends Command {
                   throw new CommandException("Too many arguments");
                }
             } else {
-               var6 = this.method18330(var2[0].method30899());
+               var6 = this.method18330(var2[0].getArguments());
                if (var6 == null || var2[0].method30895() != Class2193.field14335) {
-                  throw new CommandException("Module " + var2[0].method30899() + " not found");
+                  throw new CommandException("Module " + var2[0].getArguments() + " not found");
                }
 
-               int var14 = this.method18329(var2[1].method30899().toLowerCase());
+               int var14 = this.method18329(var2[1].getArguments().toLowerCase());
                if (var14 == -2) {
-                  throw new CommandException("Key " + var2[1].method30899() + " not found");
+                  throw new CommandException("Key " + var2[1].getArguments() + " not found");
                }
 
                if (var14 != -1) {
                   Client.getInstance().getModuleManager().method14668().method13725(var14, (Module)var6);
-                  var3.send("Key " + var2[1].method30899() + " was set for module " + ((Module)var6).getSuffix());
+                  var3.send("Key " + var2[1].getArguments() + " was set for module " + ((Module)var6).getSuffix());
                } else {
                   Client.getInstance().getModuleManager().method14668().method13727(var6);
                   var3.send("Keybind was reset for module " + ((Module)var6).getSuffix());
                }
             }
          } else {
-            var6 = this.method18330(var2[0].method30899());
+            var6 = this.method18330(var2[0].getArguments());
             if (var6 == null || var2[0].method30895() != Class2193.field14335) {
-               throw new CommandException("Module " + var2[0].method30899() + " not found");
+               throw new CommandException("Module " + var2[0].getArguments() + " not found");
             }
 
             String var7 = "key.keyboard.";

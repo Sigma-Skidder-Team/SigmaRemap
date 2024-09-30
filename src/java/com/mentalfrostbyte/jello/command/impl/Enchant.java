@@ -24,7 +24,7 @@ public class Enchant extends Command {
                ItemStack var7 = mc.player.getHeldItemMainhand().copy();
 
                for (ResourceLocation var9 : Registry.ENCHANTMENT.method9190()) {
-                  if (var2[0].method30899().equals(var9.getPath())) {
+                  if (var2[0].getArguments().equals(var9.getPath())) {
                      var6 = Registry.ENCHANTMENT.getOrDefault(var9);
                   }
                }
@@ -32,9 +32,9 @@ public class Enchant extends Command {
                if (var6 != null) {
                   var7.method32162(var6, var2[1].method30898());
                   mc.getConnection().sendPacket(new CCreativeInventoryActionPacket(36 + mc.player.inventory.currentItem, var7));
-                  var3.send("Requested server to apply " + var2[0].method30899() + " " + var2[1].method30898());
+                  var3.send("Requested server to apply " + var2[0].getArguments() + " " + var2[1].method30898());
                } else {
-                  throw new CommandException("Unknown enchant '" + var2[0].method30899() + "");
+                  throw new CommandException("Unknown enchant '" + var2[0].getArguments() + "");
                }
             } else {
                throw new CommandException("Creative mode only!");
