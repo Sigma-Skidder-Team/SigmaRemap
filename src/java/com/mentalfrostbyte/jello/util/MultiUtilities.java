@@ -1,6 +1,7 @@
 package com.mentalfrostbyte.jello.util;
 
 import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.jello.module.impl.combat.Criticals;
 import com.mentalfrostbyte.jello.module.impl.combat.Teams;
 import com.mentalfrostbyte.jello.module.impl.player.Blink;
 import com.mentalfrostbyte.jello.resource.ClientResource;
@@ -11,13 +12,12 @@ import com.mojang.authlib.yggdrasil.YggdrasilUserAuthentication;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ServerData;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.network.play.client.CChatMessagePacket;
-import net.minecraft.network.play.client.CPlayerDiggingPacket;
-import net.minecraft.network.play.client.CPlayerPacket;
-import net.minecraft.network.play.client.CPlayerTryUseItemPacket;
+import net.minecraft.network.play.client.*;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ResourceLocation;
@@ -661,12 +661,22 @@ public class MultiUtilities {
          return;
       }
 
-      /*
+      boolean isOnePointEight = false;
 
+      if (isOnePointEight && swing) {
+         mc.player.swingArm(Hand.MAIN_HAND);
+      }
 
+      mc.getConnection().getNetworkManager().sendNoEventPacket(new CUseEntityPacket(var0, mc.player.isSneaking()));
 
+      boolean canSwing = (double) mc.player.getCooledAttackStrength(0.5F) > 0.9 || isOnePointEight;
 
-       */
+      mc.player.resetCooldown();
+      if (!isOnePointEight && swing) {
+         mc.player.swingArm(Hand.MAIN_HAND);
+      }
+
+      mc.playerController.attackEntity(mc.player, var0);
    }
 
    public static String method17736(int var0) {
