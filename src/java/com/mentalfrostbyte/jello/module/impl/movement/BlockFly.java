@@ -426,7 +426,7 @@ public class BlockFly extends ModuleWithModuleSettings {
         var6 += var7;
         var6 += ResourceRegistry.JelloLightFont14.getStringWidth("Blocks");
         int var8 = var6 + 20;
-        byte var9 = 32;
+        int var9 = 32;
         var1 -= var8 / 2;
         GL11.glPushMatrix();
         RenderUtil.method11465(var1, var2, var8, var9, MultiUtilities.applyAlpha(-15461356, 0.8F * var3));

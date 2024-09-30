@@ -8,85 +8,85 @@ import net.minecraft.network.IPacket;
 import java.io.IOException;
 
 public class SPlayerAbilitiesPacket implements IPacket<IClientPlayNetHandler> {
-   private boolean field24846;
-   private boolean field24847;
-   private boolean field24848;
-   private boolean field24849;
-   private float field24850;
-   private float field24851;
+   private boolean invulnerable;
+   private boolean flying;
+   private boolean allowFlying;
+   private boolean creativeMode;
+   private float flySpeed;
+   private float walkSpeed;
 
    public SPlayerAbilitiesPacket() {
    }
 
    public SPlayerAbilitiesPacket(PlayerAbilities var1) {
-      this.field24846 = var1.disableDamage;
-      this.field24847 = var1.isFlying;
-      this.field24848 = var1.allowFlying;
-      this.field24849 = var1.isCreativeMode;
-      this.field24850 = var1.getFlySpeed();
-      this.field24851 = var1.getWalkSpeed();
+      this.invulnerable = var1.disableDamage;
+      this.flying = var1.isFlying;
+      this.allowFlying = var1.allowFlying;
+      this.creativeMode = var1.isCreativeMode;
+      this.flySpeed = var1.getFlySpeed();
+      this.walkSpeed = var1.getWalkSpeed();
    }
 
    @Override
    public void readPacketData(PacketBuffer buf) throws IOException {
         byte b0 = buf.readByte();
-        this.field24846  = (b0 & 1) != 0;
-        this.field24847  = (b0 & 2) != 0;
-        this.field24848  = (b0 & 4) != 0;
-        this.field24849 = (b0 & 8) != 0;
-        this.field24850  = buf.readFloat();
-        this.field24851  = buf.readFloat();
+        this.invulnerable = (b0 & 1) != 0;
+        this.flying = (b0 & 2) != 0;
+        this.allowFlying = (b0 & 4) != 0;
+        this.creativeMode = (b0 & 8) != 0;
+        this.flySpeed = buf.readFloat();
+        this.walkSpeed = buf.readFloat();
    }
 
    @Override
-   public void writePacketData(PacketBuffer var1) throws IOException {
-      byte var4 = 0;
-      if (this.field24846) {
-         var4 = (byte)(var4 | 1);
+   public void writePacketData(PacketBuffer buf) throws IOException {
+      byte b0 = 0;
+      if (this.invulnerable) {
+         b0 = (byte)(b0 | 1);
       }
 
-      if (this.field24847) {
-         var4 = (byte)(var4 | 2);
+      if (this.flying) {
+         b0 = (byte)(b0 | 2);
       }
 
-      if (this.field24848) {
-         var4 = (byte)(var4 | 4);
+      if (this.allowFlying) {
+         b0 = (byte)(b0 | 4);
       }
 
-      if (this.field24849) {
-         var4 = (byte)(var4 | 8);
+      if (this.creativeMode) {
+         b0 = (byte)(b0 | 8);
       }
 
-      var1.writeByte(var4);
-      var1.writeFloat(this.field24850);
-      var1.writeFloat(this.field24851);
+      buf.writeByte(b0);
+      buf.writeFloat(this.flySpeed);
+      buf.writeFloat(this.walkSpeed);
    }
 
-   public void processPacket(IClientPlayNetHandler var1) {
-      var1.handlePlayerAbilities(this);
+   public void processPacket(IClientPlayNetHandler vahandlerr1) {
+      vahandlerr1.handlePlayerAbilities(this);
    }
 
-   public boolean method17602() {
-      return this.field24846;
+   public boolean isInvulnerable() {
+      return this.invulnerable;
    }
 
-   public boolean method17603() {
-      return this.field24847;
+   public boolean isFlying() {
+      return this.flying;
    }
 
-   public boolean method17604() {
-      return this.field24848;
+   public boolean isAllowFlying() {
+      return this.allowFlying;
    }
 
-   public boolean method17605() {
-      return this.field24849;
+   public boolean isCreativeMode() {
+      return this.creativeMode;
    }
 
-   public float method17606() {
-      return this.field24850;
+   public float getFlySpeed() {
+      return this.flySpeed;
    }
 
-   public float method17607() {
-      return this.field24851;
+   public float getWalkSpeed() {
+      return this.walkSpeed;
    }
 }

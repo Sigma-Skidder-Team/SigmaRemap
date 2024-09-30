@@ -73,9 +73,9 @@ public class Class3623 extends Class3624 {
    }
 
    public final ITextComponent method12271() {
-      return TextComponentUtils.wrapWithSquareBrackets(this.method12290())
+      return TextComponentUtils.wrapWithSquareBrackets(this.getName())
          .modifyStyle(
-            var1 -> var1.setFormatting(this.method12292().method9069())
+            var1 -> var1.setFormatting(this.getColor().method9069())
                   .setHoverEvent(new HoverEvent(HoverEvent$Action.SHOW_TEXT, new StringTextComponent(this.method12262().toString())))
                   .setInsertion(this.method12262().toString())
          );
@@ -139,11 +139,11 @@ public class Class3623 extends Class3624 {
       var3.putBoolean("Visible", this.method12286());
       var3.putInt("Value", this.field19627);
       var3.putInt("Max", this.field19628);
-      var3.method109("Color", this.method12292().method9070());
-      var3.method109("Overlay", this.method12293().method9067());
-      var3.putBoolean("DarkenScreen", this.method12294());
-      var3.putBoolean("PlayBossMusic", this.method12295());
-      var3.putBoolean("CreateWorldFog", this.method12296());
+      var3.method109("Color", this.getColor().method9070());
+      var3.method109("Overlay", this.getOverlay().method9067());
+      var3.putBoolean("DarkenScreen", this.shouldDarkenSky());
+      var3.putBoolean("PlayBossMusic", this.shouldPlayEndBossMusic());
+      var3.putBoolean("CreateWorldFog", this.shouldCreateFog());
       ListNBT var4 = new ListNBT();
 
       for (UUID var6 : this.field19626) {

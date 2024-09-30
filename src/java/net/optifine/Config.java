@@ -380,7 +380,6 @@ public class Config {
 
    public static void method26795() {
       method26936();
-      byte var2 = 8;
       if (!isSingleProcessor()) {
          field34159.setPriority(10);
          method26796("Server thread", 5);

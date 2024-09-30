@@ -40,8 +40,8 @@ public class DVDSimulator extends Module {
         if (this.isEnabled() && mc.player != null && mc.world != null) {
             int var4 = mc.mainWindow.getHeight();
             int var5 = mc.mainWindow.getWidth();
-            byte var6 = 2;
-            if (!(this.field23722 <= (float) var6)) {
+            float var6 = 2;
+            if (!(this.field23722 <= var6)) {
                 if (this.field23722 + (float) this.field23725.field41840 > (float) var4) {
                     this.field23724 = -1.0F;
                     this.method16513();
@@ -51,7 +51,7 @@ public class DVDSimulator extends Module {
                 this.method16513();
             }
 
-            if (!(this.field23721 <= (float) var6)) {
+            if (!(this.field23721 <= var6)) {
                 if (this.field23721 + (float) this.field23725.field41839 > (float) var5) {
                     this.field23723 = -1.0F;
                     this.method16513();
@@ -61,8 +61,8 @@ public class DVDSimulator extends Module {
                 this.method16513();
             }
 
-            this.field23721 = this.field23721 + this.field23723 * (float) var6;
-            this.field23722 = this.field23722 + this.field23724 * (float) var6;
+            this.field23721 = this.field23721 + this.field23723 * var6;
+            this.field23722 = this.field23722 + this.field23724 * var6;
             RenderUtil.drawImage(
                     this.field23721,
                     this.field23722,

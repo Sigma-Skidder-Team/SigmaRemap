@@ -22,8 +22,8 @@ public class AutoClicker extends Module {
         if (this.isEnabled()) {
             this.field23548++;
             Random var4 = new Random();
-            byte var5 = 2;
-            byte var6 = 4;
+            int var5 = 2;
+            int var6 = 4;
             int var7 = var4.nextInt(var6 - var5) + var5;
             if (mc.gameSettings.keyBindAttack.isKeyDown() && this.field23548 >= var7) {
                 mc.player.swingArm(Hand.MAIN_HAND);

@@ -78,12 +78,12 @@ public class AutoMiner extends Module {
       ArrayList var4 = new ArrayList();
       int var5 = var1.x * 16;
       int var6 = var1.z * 16;
-      byte var7 = 1;
+      float var7 = 1;
       int var8 = var5 + 15;
       int var9 = var6 + 15;
-      short var10 = 255;
+      float var10 = 255;
 
-      for (float var11 = (float)var7; var11 <= (float)var10 && !(var11 > 100.0F); var11++) {
+      for (float var11 = var7; var11 <= var10 && !(var11 > 100.0F); var11++) {
          for (float var12 = (float)var5; var12 <= (float)var8; var12++) {
             for (float var13 = (float)var6; var13 <= (float)var9; var13++) {
                BlockPos var14 = new BlockPos((double)var12, (double)var11, (double)var13);

@@ -152,7 +152,7 @@ public class ScorePlayerTeam extends Team {
    }
 
    public int method28588() {
-      byte var3 = 0;
+      int var3 = 0;
       if (this.method28578()) {
          var3 |= 1;
       }

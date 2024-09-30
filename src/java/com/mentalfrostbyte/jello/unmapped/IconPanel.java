@@ -144,8 +144,7 @@ public class IconPanel implements IGuiEventListener {
         this.field20925 = var1;
         this.field20908 = this.method13289() && this.method13229(var1, var2);
 
-        for (int var5 = 0; var5 < this.field20915.size(); var5++) {
-            Runnable var6 = this.field20915.get(var5);
+        for (Runnable var6 : this.field20915) {
             if (var6 != null) {
                 var6.run();
             }

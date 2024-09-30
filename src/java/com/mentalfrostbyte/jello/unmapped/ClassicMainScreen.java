@@ -34,10 +34,7 @@ public class ClassicMainScreen extends Screen {
         this.field21100 = new Animation(175, 325);
         this.field21100.changeDirection(Direction.FORWARDS);
         this.field21101.changeDirection(Direction.BACKWARDS);
-        boolean var3 = false;
-        boolean var4 = false;
         ClientResource var9 = ClassicDecryption.regular20;
-        boolean var10 = false;
         String var11 = "© Sigma Prod";
         StringBuilder var10000 = new StringBuilder().append("Sigma ");
         Client.getInstance();
@@ -53,7 +50,7 @@ public class ClassicMainScreen extends Screen {
         );
         ColorHelper var15 = new ColorHelper(MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F));
         var15.method19410(MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F));
-        ArrayList var16 = new ArrayList();
+        ArrayList<String> var16 = new ArrayList<>();
         var16.add("LeakedPvP");
         var16.add("Omikron");
         Collections.shuffle(var16);

@@ -65,15 +65,15 @@ public class NameProtect extends Module {
 
             if (var4 instanceof SUpdateBossInfoPacket) {
                 SUpdateBossInfoPacket var12 = (SUpdateBossInfoPacket) var4;
-                if (var12.method17207() == null) {
+                if (var12.getName() == null) {
                     return;
                 }
 
-                String var16 = var12.method17207().getString();
+                String var16 = var12.getName().getString();
                 if (var16.contains(mc.getSession().getUsername())) {
                     var16 = var16.replaceAll(mc.getSession().getUsername(), this.getStringSettingValueByName("Username"));
                     StringTextComponent var20 = new StringTextComponent(var16);
-                    var12.field24289 = var20;
+                    var12.name = var20;
                 }
             }
 

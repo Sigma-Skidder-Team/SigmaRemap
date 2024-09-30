@@ -619,10 +619,10 @@ public class MultiUtilities {
 
    public static List<BlockPos> method17731(Entity var0) {
       ArrayList var3 = new ArrayList();
-      byte var4 = 1;
+      float var4 = 1;
 
-      for (float var5 = (float)(-var4); var5 <= (float)var4; var5++) {
-         for (float var6 = (float)(-var4); var6 <= (float)var4; var6++) {
+      for (float var5 = -var4; var5 <= var4; var5++) {
+         for (float var6 = -var4; var6 <= var4; var6++) {
             BlockPos var7 = new BlockPos(var0.getPosX() + (double)var5, var0.getPosY() - 1.0, var0.getPosZ() + (double)var6);
             var3.add(var7);
          }

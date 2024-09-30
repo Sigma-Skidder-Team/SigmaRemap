@@ -114,7 +114,6 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
       PlayerInventory var18 = this.mc.player.inventory;
       ItemStack var19 = !this.field4737.isEmpty() ? this.field4737 : var18.getItemStack();
       if (!var19.isEmpty()) {
-         byte var20 = 8;
          int var22 = !this.field4737.isEmpty() ? 16 : 8;
          String var15 = null;
          if (!this.field4737.isEmpty() && this.field4736) {

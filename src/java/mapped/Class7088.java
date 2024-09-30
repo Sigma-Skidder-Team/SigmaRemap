@@ -315,7 +315,7 @@ public class Class7088 {
    }
 
    private static int method22024(Class6619 var0, Class3623 var1, Class2303 var2) throws CommandSyntaxException {
-      if (!var1.method12292().equals(var2)) {
+      if (!var1.getColor().equals(var2)) {
          var1.method12279(var2);
          var0.method20179(new TranslationTextComponent("commands.bossbar.set.color.success", var1.method12271()), true);
          return 0;
@@ -325,7 +325,7 @@ public class Class7088 {
    }
 
    private static int method22025(Class6619 var0, Class3623 var1, Class2300 var2) throws CommandSyntaxException {
-      if (!var1.method12293().equals(var2)) {
+      if (!var1.getOverlay().equals(var2)) {
          var1.method12280(var2);
          var0.method20179(new TranslationTextComponent("commands.bossbar.set.style.success", var1.method12271()), true);
          return 0;
@@ -336,7 +336,7 @@ public class Class7088 {
 
    private static int method22026(Class6619 var0, Class3623 var1, ITextComponent var2) throws CommandSyntaxException {
       IFormattableTextComponent var5 = TextComponentUtils.func_240645_a_(var0, var2, (Entity)null, 0);
-      if (!var1.method12290().equals(var5)) {
+      if (!var1.getName().equals(var5)) {
          var1.method12284(var5);
          var0.method20179(new TranslationTextComponent("commands.bossbar.set.name.success", var1.method12271()), true);
          return 0;

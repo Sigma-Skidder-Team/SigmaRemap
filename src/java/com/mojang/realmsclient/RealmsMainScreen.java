@@ -608,9 +608,7 @@ public class RealmsMainScreen extends RealmsScreen {
       if (this.field4287 && !this.field4288 && this.method2012()) {
          this.mc.getTextureManager().bindTexture(field4240);
          RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-         byte var10 = 8;
-         byte var8 = 8;
-         byte var9 = 0;
+         float var9 = 0;
          if ((Util.milliTime() / 800L & 1L) == 1L) {
             var9 = 8;
          }
@@ -620,7 +618,7 @@ public class RealmsMainScreen extends RealmsScreen {
             this.field4303.field6477 + this.field4303.method5740() - 8 - 4,
             this.field4303.field6478 + this.field4303.method5728() / 2 - 4,
             0.0F,
-            (float)var9,
+                 var9,
             8,
             8,
             8,
@@ -680,8 +678,6 @@ public class RealmsMainScreen extends RealmsScreen {
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 0.7F);
       RenderSystem.enableBlend();
       this.mc.getTextureManager().bindTexture(field4238);
-      boolean var10 = false;
-      byte var9 = 32;
       AbstractGui.method5699(var1, 0, 32, 0.0F, 0.0F, this.width, this.height - 40 - 32, 310, 166);
       RenderSystem.disableBlend();
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
@@ -753,10 +749,10 @@ public class RealmsMainScreen extends RealmsScreen {
    }
 
    private boolean method2045(double var1, double var3) {
-      int var7 = this.width / 2 + 50;
-      int var8 = this.width / 2 + 66;
-      byte var9 = 11;
-      byte var10 = 23;
+      double var7 = (double) this.width / 2 + 50;
+      double var8 = (double) this.width / 2 + 66;
+      double var9 = 11;
+      double var10 = 23;
       if (this.field4282 != 0) {
          var7 -= 3;
          var8 += 3;
@@ -764,7 +760,7 @@ public class RealmsMainScreen extends RealmsScreen {
          var10 += 5;
       }
 
-      return (double)var7 <= var1 && var1 <= (double)var8 && (double)var9 <= var3 && var3 <= (double)var10;
+      return var7 <= var1 && var1 <= var8 && var9 <= var3 && var3 <= var10;
    }
 
    public void method2046(RealmsServer var1, Screen var2) {
@@ -877,7 +873,7 @@ public class RealmsMainScreen extends RealmsScreen {
 
    public void method2055(MatrixStack var1, List<ITextComponent> var2, int var3, int var4) {
       if (!var2.isEmpty()) {
-         byte var7 = 0;
+         int var7 = 0;
          int var8 = 0;
 
          for (ITextComponent var10 : var2) {

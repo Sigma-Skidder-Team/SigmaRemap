@@ -15,8 +15,6 @@ public class ChestScreen extends ContainerScreen<ChestContainer> implements IHas
    public ChestScreen(ChestContainer var1, PlayerInventory var2, ITextComponent var3) {
       super(var1, var2, var3);
       this.passEvents = false;
-      short var6 = 222;
-      byte var7 = 114;
       this.inventoryRows = var1.method18165();
       this.ySize = 114 + this.inventoryRows * 18;
       this.playerInventoryTitleY = this.ySize - 94;

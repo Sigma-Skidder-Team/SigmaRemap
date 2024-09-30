@@ -21,11 +21,11 @@ public abstract class Class3625 {
       this.field19635 = 1.0F;
    }
 
-   public UUID method12289() {
+   public UUID getUniqueId() {
       return this.field19633;
    }
 
-   public ITextComponent method12290() {
+   public ITextComponent getName() {
       return this.field19634;
    }
 
@@ -33,7 +33,7 @@ public abstract class Class3625 {
       this.field19634 = var1;
    }
 
-   public float method12291() {
+   public float getPercent() {
       return this.field19635;
    }
 
@@ -41,7 +41,7 @@ public abstract class Class3625 {
       this.field19635 = var1;
    }
 
-   public Class2303 method12292() {
+   public Class2303 getColor() {
       return this.field19636;
    }
 
@@ -49,7 +49,7 @@ public abstract class Class3625 {
       this.field19636 = var1;
    }
 
-   public Class2300 method12293() {
+   public Class2300 getOverlay() {
       return this.field19637;
    }
 
@@ -57,7 +57,7 @@ public abstract class Class3625 {
       this.field19637 = var1;
    }
 
-   public boolean method12294() {
+   public boolean shouldDarkenSky() {
       return this.field19638;
    }
 
@@ -66,7 +66,7 @@ public abstract class Class3625 {
       return this;
    }
 
-   public boolean method12295() {
+   public boolean shouldPlayEndBossMusic() {
       return this.field19639;
    }
 
@@ -80,7 +80,7 @@ public abstract class Class3625 {
       return this;
    }
 
-   public boolean method12296() {
+   public boolean shouldCreateFog() {
       return this.field19640;
    }
 }

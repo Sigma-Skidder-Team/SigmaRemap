@@ -128,11 +128,10 @@ public class ActiveMods extends Module {
             }
 
             if (!Minecraft.getInstance().gameSettings.hideGUI) {
-                byte var20 = 10;
-                byte var21 = 1;
+                int var20 = 10;
+                float var21 = 1;
                 int var6 = Minecraft.getInstance().mainWindow.getWidth();
                 ClientResource var8 = this.field23616;
-                byte var9 = -1;
                 int var7 = var20 - 4;
                 if (this.field23616 == ResourceRegistry.JelloLightFont14) {
                     var20 -= 3;
@@ -142,7 +141,7 @@ public class ActiveMods extends Module {
                     var7 = (int) ((double) (mc.ingameGUI.field6726.debugInfoRight.size() * 9) * mc.mainWindow.getGuiScaleFactor() + 7.0);
                 }
 
-                byte var10 = 0;
+                int var10 = 0;
                 int var11 = MultiUtilities.applyAlpha(-1, 0.95F);
 
                 for (Module var13 : this.field23612) {
@@ -175,7 +174,7 @@ public class ActiveMods extends Module {
                             (float) var6 - (float) var8.getStringWidth(var22) * 1.5F - (float) var20 - 20.0F,
                             (float) (var7 - 20),
                             (float) var8.getStringWidth(var22) * 3.0F,
-                            (float) (var8.method23952() + var21 + 40),
+                            var8.method23952() + var21 + 40,
                             ResourcesDecrypter.shadowPNG,
                             MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.36F * var15 * var19)
                     );

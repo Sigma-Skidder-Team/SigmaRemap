@@ -65,7 +65,7 @@ public class ActiveMods extends Module {
 
             int var6 = -2;
             int var7 = Minecraft.getInstance().mainWindow.getWidth() - 2;
-            byte var8 = -2;
+            int var8 = -2;
             int var9 = new java.awt.Color(0, 192, 255, 255).getRGB();
             int var10 = new java.awt.Color(0, 192, 255, 255).getRGB();
             int var11 = -7;
@@ -75,8 +75,6 @@ public class ActiveMods extends Module {
                 Animation var15 = (Animation) var14.getValue();
                 Module var16 = (Module) var14.getKey();
                 if (var16.isEnabled() || var15.calcPercent() != 1.0F && !var4.equalsIgnoreCase("None")) {
-                    boolean var17 = true;
-                    boolean var18 = true;
                     var9 = java.awt.Color.HSBtoRGB(var12, 1.0F, 1.0F);
                     var10 = java.awt.Color.HSBtoRGB(var12, 1.0F, 1.0F);
                     int var19 = this.method16857(var16);

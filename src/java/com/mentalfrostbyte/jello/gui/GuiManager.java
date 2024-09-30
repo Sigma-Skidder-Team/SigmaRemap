@@ -237,7 +237,7 @@ public class GuiManager {
             GL11.glDisable(2896);
             int var3 = 0;
             int var4 = 0;
-            short var5 = 170;
+            int var5 = 170;
 
             if (Minecraft.getInstance().gameSettings.showDebugInfo) {
                 var3 = Minecraft.getInstance().mainWindow.getWidth() / 2 - var5 / 2;

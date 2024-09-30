@@ -113,7 +113,7 @@ public class ElytraFly extends Module {
     @EventTarget
     private void method16223(EventUpdate var1) {
         if (this.isEnabled()) {
-            byte var4 = 65;
+            int var4 = 65;
             if (this.field23533 != var4 - 1) {
                 if (this.field23533 <= 0 && mc.player.isJumping) {
                     this.field23533 = var4;

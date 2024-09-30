@@ -24,8 +24,8 @@ public class Compass extends Module {
     private void method16657(EventRender var1) {
         if (this.isEnabled() && mc.player != null) {
             if (! Minecraft.getInstance().gameSettings.hideGUI) {
-                byte var4 = 5;
-                byte var5 = 60;
+                int var4 = 5;
+                int var5 = 60;
                 int var6 = !Minecraft.getInstance().gameSettings.showDebugInfo ? 0 : 60;
                 List<Integer> var7 = this.method16660((int) this.method16662(mc.player.rotationYaw), var4);
                 int var8 = (Integer) var7.get(var4);

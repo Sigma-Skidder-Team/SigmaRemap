@@ -32,8 +32,8 @@ public class Nametags extends Module {
     @EventTarget
     public void method16147(EventRender2D var1) {
         if (this.isEnabled()) {
-            byte var4 = 20;
-            byte var5 = 32;
+            int var4 = 20;
+            int var5 = 32;
 
             for (Entry var7 : this.field23493.entrySet()) {
                 PlayerEntity var8 = (PlayerEntity) var7.getKey();
@@ -44,7 +44,7 @@ public class Nametags extends Module {
                     int var12 = Math.round(var9.field37220);
                     int var13 = Math.round(var9.field37221);
                     GL11.glPushMatrix();
-                    GL11.glTranslatef((float) (-var11 / 2), (float) (-var4), 0.0F);
+                    GL11.glTranslatef((float) (-var11 / 2), -var4, 0.0F);
                     RenderUtil.renderBackgroundBox((float) var12, (float) var13, (float) var11, 20.0F, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F));
                     RenderUtil.drawString(
                             ClassicDecryption.bold16, (float) (var12 + 3), (float) var13, var10, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F)
@@ -55,14 +55,12 @@ public class Nametags extends Module {
                     if (var14.size() != 0) {
                         int var15 = var5 * var14.size();
                         GL11.glPushMatrix();
-                        GL11.glTranslatef((float) (-var15 / 2), (float) (-var4 - var5 - 2), 0.0F);
+                        GL11.glTranslatef((float) (-var15 / 2), -var4 - var5 - 2, 0.0F);
 
                         for (int var16 = 0; var16 < var14.size(); var16++) {
                             int var17 = var12 + var16 * var5;
                             ItemStack var18 = (ItemStack) var14.get(var16);
-                            int var19 = var17 + 6;
                             ListNBT var20 = var18.method32147();
-                            int var21 = var13 - Math.max(0, var20.size() - 4) * 8 - 2;
 
                             for (int var22 = 0; var22 < var20.size(); var22++) {
                                 CompoundNBT var23 = var20.method153(var22);

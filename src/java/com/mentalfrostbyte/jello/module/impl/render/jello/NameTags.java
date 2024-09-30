@@ -353,7 +353,6 @@ public class NameTags extends Module {
         int var17 = 51 + var15 + var13 * 2;
         int var18 = 85 + var13 * 2;
         GL11.glTranslated(-var17 / 2, -var18 / 2, 0.0);
-        byte var19 = 40;
         RenderUtil.drawRect(0.0F, 0.0F, (float) var17, (float) var18, this.field24008);
         RenderUtil.drawRoundedRect(0.0F, 0.0F, (float) var17, (float) var18, 20.0F, 0.5F);
         RenderUtil.drawString(var6, var13, (float) (var13 - 5), "Furnace", ClientColors.LIGHT_GREYISH_BLUE.getColor);

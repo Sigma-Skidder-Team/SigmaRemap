@@ -31,7 +31,7 @@ public class Class1267 extends AbstractGui {
             RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
             this.field6709.getTextureManager().bindTexture(field6708);
             this.method5954(var1, var8, var5, var7);
-            ITextComponent var9 = var7.method12290();
+            ITextComponent var9 = var7.getName();
             int var10 = this.field6709.fontRenderer.method38821(var9);
             int var11 = var4 / 2 - var10 / 2;
             int var12 = var5 - 9;
@@ -45,31 +45,31 @@ public class Class1267 extends AbstractGui {
    }
 
    private void method5954(MatrixStack var1, int var2, int var3, Class3625 var4) {
-      this.blit(var1, var2, var3, 0, var4.method12292().ordinal() * 5 * 2, 182, 5);
-      if (var4.method12293() != Class2300.field15703) {
-         this.blit(var1, var2, var3, 0, 80 + (var4.method12293().ordinal() - 1) * 5 * 2, 182, 5);
+      this.blit(var1, var2, var3, 0, var4.getColor().ordinal() * 5 * 2, 182, 5);
+      if (var4.getOverlay() != Class2300.field15703) {
+         this.blit(var1, var2, var3, 0, 80 + (var4.getOverlay().ordinal() - 1) * 5 * 2, 182, 5);
       }
 
-      int var7 = (int)(var4.method12291() * 183.0F);
+      int var7 = (int)(var4.getPercent() * 183.0F);
       if (var7 > 0) {
-         this.blit(var1, var2, var3, 0, var4.method12292().ordinal() * 5 * 2 + 5, var7, 5);
-         if (var4.method12293() != Class2300.field15703) {
-            this.blit(var1, var2, var3, 0, 80 + (var4.method12293().ordinal() - 1) * 5 * 2 + 5, var7, 5);
+         this.blit(var1, var2, var3, 0, var4.getColor().ordinal() * 5 * 2 + 5, var7, 5);
+         if (var4.getOverlay() != Class2300.field15703) {
+            this.blit(var1, var2, var3, 0, 80 + (var4.getOverlay().ordinal() - 1) * 5 * 2 + 5, var7, 5);
          }
       }
    }
 
    public void method5955(SUpdateBossInfoPacket var1) {
-      if (var1.method17206() != Class2151.field14064) {
-         if (var1.method17206() != Class2151.field14065) {
-            if (this.field6710.get(var1.method17205()) != null) {
-               this.field6710.get(var1.method17205()).method12297(var1);
+      if (var1.getOperation() != SUpdateBossInfoPacket.Operation.ADD) {
+         if (var1.getOperation() != SUpdateBossInfoPacket.Operation.REMOVE) {
+            if (this.field6710.get(var1.getUniqueId()) != null) {
+               this.field6710.get(var1.getUniqueId()).method12297(var1);
             }
          } else {
-            this.field6710.remove(var1.method17205());
+            this.field6710.remove(var1.getUniqueId());
          }
       } else {
-         this.field6710.put(var1.method17205(), new Class3626(var1));
+         this.field6710.put(var1.getUniqueId(), new Class3626(var1));
       }
    }
 
@@ -80,7 +80,7 @@ public class Class1267 extends AbstractGui {
    public boolean shouldPlayEndBossMusic() {
       if (!this.field6710.isEmpty()) {
          for (Class3625 var4 : this.field6710.values()) {
-            if (var4.method12295()) {
+            if (var4.shouldPlayEndBossMusic()) {
                return true;
             }
          }
@@ -92,7 +92,7 @@ public class Class1267 extends AbstractGui {
    public boolean method5958() {
       if (!this.field6710.isEmpty()) {
          for (Class3625 var4 : this.field6710.values()) {
-            if (var4.method12294()) {
+            if (var4.shouldDarkenSky()) {
                return true;
             }
          }
@@ -104,7 +104,7 @@ public class Class1267 extends AbstractGui {
    public boolean method5959() {
       if (!this.field6710.isEmpty()) {
          for (Class3625 var4 : this.field6710.values()) {
-            if (var4.method12296()) {
+            if (var4.shouldCreateFog()) {
                return true;
             }
          }

@@ -349,12 +349,12 @@ public class BlockUtil {
 
    public static List<BlockPos> method34563() {
       ArrayList var2 = new ArrayList();
-      byte var3 = 90;
-      byte var4 = 10;
+      float var3 = 90;
+      float var4 = 10;
 
-      for (float var5 = (float)(-var3); var5 <= (float)var3; var5++) {
-         for (float var6 = (float)(-var4); var6 <= (float)var4; var6++) {
-            for (float var7 = (float)(-var4); var7 <= (float)var4; var7++) {
+      for (float var5 = -var3; var5 <= var3; var5++) {
+         for (float var6 = -var4; var6 <= var4; var6++) {
+            for (float var7 = -var4; var7 <= var4; var7++) {
                BlockPos var8 = new BlockPos(
                   mc.player.getPosX() + (double)var6,
                   mc.player.getPosY() + (double)var5,

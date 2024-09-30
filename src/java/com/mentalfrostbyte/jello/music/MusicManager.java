@@ -223,7 +223,7 @@ public class MusicManager {
 
                     RenderUtil.method11478();
                     double var9 = 0.0;
-                    short var16 = 4750;
+                    float var16 = 4750;
 
                     for (int var17 = 0; var17 < 3; var17++) {
                         var9 = Math.max(var9, Math.sqrt(this.field32165.get(var17)) - 1000.0);

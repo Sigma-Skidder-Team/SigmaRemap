@@ -57,7 +57,7 @@ public class Cords extends Module {
                                 + mc.player.getPosition().getY()
                                 + " "
                                 + mc.player.getPosition().getZ();
-                        byte var6 = 85;
+                        float var6 = 85;
                         int var7 = var1.method13960();
                         short var8 = 150;
                         float var9 = (float) ResourceRegistry.JelloLightFont18.getStringWidth(var5);
@@ -71,7 +71,7 @@ public class Cords extends Module {
                         GL11.glPushMatrix();
                         GL11.glTranslatef(var6, (float) (var7 + 10), 0.0F);
                         GL11.glScalef(var10, var10, 1.0F);
-                        GL11.glTranslatef((float) (-var6), (float) (-var7 - 10), 0.0F);
+                        GL11.glTranslatef(-var6, (float) (-var7 - 10), 0.0F);
                         RenderUtil.method11440(
                                 ResourceRegistry.JelloLightFont18_1,
                                 var6,

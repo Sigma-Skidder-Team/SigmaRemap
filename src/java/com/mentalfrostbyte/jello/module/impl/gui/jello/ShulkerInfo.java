@@ -180,9 +180,8 @@ public class ShulkerInfo extends Module {
                     GL11.glTranslatef(0.0F, 0.0F, 1000.0F);
                     GL11.glScalef(1.0F / RenderUtil.method11417(), 1.0F / RenderUtil.method11417(), 0.0F);
                     int var9 = Math.round(16.0F * RenderUtil.method11417());
-                    byte var10 = 1;
-                    byte var11 = 12;
-                    int var12 = ResourceRegistry.JelloLightFont25.method23952();
+                    int var10 = 1;
+                    int var11 = 12;
                     int var13 = (int) (mc.mouseHelper.method36738() * (double) GuiManager.portalScaleFactor - (double) (9 * (var9 + var10)) - (double) (var11 * 3));
                     int var14 = (int) (mc.mouseHelper.method36739() * (double) GuiManager.portalScaleFactor - 33.0);
                     this.method16676(var13, var14, var7, var6.method32149().getString(), true);
@@ -201,10 +200,10 @@ public class ShulkerInfo extends Module {
     }
 
     private void method16676(int var1, int var2, List<ItemStack> var3, String var4, boolean var5) {
-        byte var8 = 12;
+        int var8 = 12;
         int var9 = ResourceRegistry.JelloLightFont25.method23952();
         int var10 = Math.round(16.0F * RenderUtil.method11417());
-        byte var11 = 1;
+        int var11 = 1;
         int var12 = (int) Math.ceil((float) var3.size() / 9.0F) * (var10 + var11) + var8 * 2 + var9;
         int var13 = 9 * (var10 + var11) + var8 * 2;
         RenderSystem.disableLighting();

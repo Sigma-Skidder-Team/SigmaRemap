@@ -26,7 +26,7 @@ public class Class3624 extends Class3625 {
    public void method12278(float var1) {
       if (var1 != this.field19635) {
          super.method12278(var1);
-         this.method12285(Class2151.field14066);
+         this.method12285(SUpdateBossInfoPacket.Operation.UPDATE_PCT);
       }
    }
 
@@ -34,7 +34,7 @@ public class Class3624 extends Class3625 {
    public void method12279(Class2303 var1) {
       if (var1 != this.field19636) {
          super.method12279(var1);
-         this.method12285(Class2151.field14068);
+         this.method12285(SUpdateBossInfoPacket.Operation.UPDATE_STYLE);
       }
    }
 
@@ -42,7 +42,7 @@ public class Class3624 extends Class3625 {
    public void method12280(Class2300 var1) {
       if (var1 != this.field19637) {
          super.method12280(var1);
-         this.method12285(Class2151.field14068);
+         this.method12285(SUpdateBossInfoPacket.Operation.UPDATE_STYLE);
       }
    }
 
@@ -50,7 +50,7 @@ public class Class3624 extends Class3625 {
    public Class3625 method12281(boolean var1) {
       if (var1 != this.field19638) {
          super.method12281(var1);
-         this.method12285(Class2151.field14069);
+         this.method12285(SUpdateBossInfoPacket.Operation.UPDATE_PROPERTIES);
       }
 
       return this;
@@ -60,7 +60,7 @@ public class Class3624 extends Class3625 {
    public Class3625 method12282(boolean var1) {
       if (var1 != this.field19639) {
          super.method12282(var1);
-         this.method12285(Class2151.field14069);
+         this.method12285(SUpdateBossInfoPacket.Operation.UPDATE_PROPERTIES);
       }
 
       return this;
@@ -70,7 +70,7 @@ public class Class3624 extends Class3625 {
    public Class3625 method12283(boolean var1) {
       if (var1 != this.field19640) {
          super.method12283(var1);
-         this.method12285(Class2151.field14069);
+         this.method12285(SUpdateBossInfoPacket.Operation.UPDATE_PROPERTIES);
       }
 
       return this;
@@ -80,11 +80,11 @@ public class Class3624 extends Class3625 {
    public void method12284(ITextComponent var1) {
       if (!Objects.equal(var1, this.field19634)) {
          super.method12284(var1);
-         this.method12285(Class2151.field14067);
+         this.method12285(SUpdateBossInfoPacket.Operation.UPDATE_NAME);
       }
    }
 
-   private void method12285(Class2151 var1) {
+   private void method12285(SUpdateBossInfoPacket.Operation var1) {
       if (this.field19632) {
          SUpdateBossInfoPacket var4 = new SUpdateBossInfoPacket(var1, this);
 
@@ -96,13 +96,13 @@ public class Class3624 extends Class3625 {
 
    public void method12263(ServerPlayerEntity var1) {
       if (this.field19630.add(var1) && this.field19632) {
-         var1.field4855.sendPacket(new SUpdateBossInfoPacket(Class2151.field14064, this));
+         var1.field4855.sendPacket(new SUpdateBossInfoPacket(SUpdateBossInfoPacket.Operation.ADD, this));
       }
    }
 
    public void method12265(ServerPlayerEntity var1) {
       if (this.field19630.remove(var1) && this.field19632) {
-         var1.field4855.sendPacket(new SUpdateBossInfoPacket(Class2151.field14065, this));
+         var1.field4855.sendPacket(new SUpdateBossInfoPacket(SUpdateBossInfoPacket.Operation.REMOVE, this));
       }
    }
 
@@ -123,7 +123,7 @@ public class Class3624 extends Class3625 {
          this.field19632 = var1;
 
          for (ServerPlayerEntity var5 : this.field19630) {
-            var5.field4855.sendPacket(new SUpdateBossInfoPacket(!var1 ? Class2151.field14065 : Class2151.field14064, this));
+            var5.field4855.sendPacket(new SUpdateBossInfoPacket(!var1 ? SUpdateBossInfoPacket.Operation.REMOVE : SUpdateBossInfoPacket.Operation.ADD, this));
          }
       }
    }

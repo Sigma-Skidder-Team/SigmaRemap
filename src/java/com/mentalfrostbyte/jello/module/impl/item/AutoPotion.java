@@ -118,8 +118,8 @@ public class AutoPotion extends Module {
     }
 
     public int method16632(int var1) {
-        byte var4 = 0;
-        byte var5 = 0;
+        int var4 = 0;
+        int var5 = 0;
         int var6 = -1;
         int var7 = 0;
 

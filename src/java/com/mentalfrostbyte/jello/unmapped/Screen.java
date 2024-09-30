@@ -5,7 +5,6 @@ import net.minecraft.client.Minecraft;
 
 public abstract class Screen
         extends IconPanel {
-    public static int field20939 = 0;
 
     public Screen(String var1) {
         super(null, var1, 0, 0, Minecraft.getInstance().mainWindow.getWidth(), Minecraft.getInstance().mainWindow.getHeight());

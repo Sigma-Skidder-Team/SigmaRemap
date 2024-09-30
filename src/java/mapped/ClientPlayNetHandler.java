@@ -1564,12 +1564,12 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    public void handlePlayerAbilities(SPlayerAbilitiesPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       ClientPlayerEntity var4 = this.field23272.player;
-      var4.abilities.isFlying = var1.method17603();
-      var4.abilities.isCreativeMode = var1.method17605();
-      var4.abilities.disableDamage = var1.method17602();
-      var4.abilities.allowFlying = var1.method17604();
-      var4.abilities.setFlySpeed(var1.method17606());
-      var4.abilities.setWalkSpeed(var1.method17607());
+      var4.abilities.isFlying = var1.isFlying();
+      var4.abilities.isCreativeMode = var1.isCreativeMode();
+      var4.abilities.disableDamage = var1.isInvulnerable();
+      var4.abilities.allowFlying = var1.isAllowFlying();
+      var4.abilities.setFlySpeed(var1.getFlySpeed());
+      var4.abilities.setWalkSpeed(var1.getWalkSpeed());
    }
 
    @Override

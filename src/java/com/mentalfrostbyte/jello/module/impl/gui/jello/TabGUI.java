@@ -381,8 +381,6 @@ public class TabGUI extends Module {
 
     private void method16600(int var1, int var2, int var3, int var4, Color[] var5, Color[] var6, Color[] var7, float var8) {
         boolean var11 = Client.getInstance().getGuiManager().method33472();
-        Object var12 = null;
-        byte var13 = 20;
         int var14 = MultiUtilities.method17682(var5).getRGB();
         int var15 = MultiUtilities.method17682(var7).getRGB();
         if (var6 != null) {
@@ -404,7 +402,6 @@ public class TabGUI extends Module {
     }
 
     private void method16601() {
-        byte var3 = 3;
         if (!Client.getInstance().getGuiManager().method33472()) {
             if (!Minecraft.getInstance().gameSettings.showDebugInfo) {
                 if (!Minecraft.getInstance().gameSettings.hideGUI) {

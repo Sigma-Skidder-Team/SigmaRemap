@@ -71,7 +71,6 @@ public class Murderer extends Module {
             if (this.field23836) {
                 if (this.getBooleanValueFromSettingName("GUI")) {
                     ClientResource var4 = ResourceRegistry.JelloLightFont20;
-                    byte var5 = -1;
                     int var6 = Minecraft.getInstance().mainWindow.getWidth();
                     int var7 = Minecraft.getInstance().mainWindow.getHeight();
                     if (this.field23835 && this.field23834 != null) {
