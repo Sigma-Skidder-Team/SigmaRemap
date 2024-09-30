@@ -12,6 +12,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.Fluids;
+import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -86,7 +87,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final Class2351<ChunkStatus> field16081 = method9176(field16048, "empty", () -> ChunkStatus.field42133);
    public static final Registry<Class9277<?>> field16082 = method9175(field16049, () -> Class9277.field42660);
    public static final Registry<Class8989<?>> field16083 = method9175(field16050, () -> Class8989.field41001);
-   public static final Registry<ContainerType<?>> MENU = method9175(field16051, () -> ContainerType.field35655);
+   public static final Registry<ContainerType<?>> MENU = method9175(field16051, () -> ContainerType.ANVIL);
    public static final Registry<Class7207<?>> field16085 = method9175(field16052, () -> Class7207.field30935);
    public static final Registry<Class6504<?>> field16086 = method9175(field16053, () -> Class6504.field28471);
    public static final Registry<Attribute> ATTRIBUTE = method9175(field16054, () -> Attributes.LUCK);

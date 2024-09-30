@@ -3,25 +3,26 @@ package mapped;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.screen.inventory.BeaconScreen;
 import net.minecraft.network.play.client.CCloseWindowPacket;
 import net.minecraft.network.play.client.CUpdateBeaconPacket;
 
 public class Class1203 extends Class1202 {
    private static String[] field6502;
-   public final Class872 field6503;
+   public final BeaconScreen field6503;
 
-   public Class1203(Class872 var1, int var2, int var3) {
+   public Class1203(BeaconScreen var1, int var2, int var3) {
       super(var2, var3, 90, 220);
       this.field6503 = var1;
    }
 
    @Override
    public void method5759() {
-      Class872.method2710(this.field6503)
+      BeaconScreen.method2710(this.field6503)
          .getConnection()
-         .sendPacket(new CUpdateBeaconPacket(Effect.getId(Class872.method2708(this.field6503)), Effect.getId(Class872.method2709(this.field6503))));
-      Class872.method2712(this.field6503).player.connection.sendPacket(new CCloseWindowPacket(Class872.method2711(this.field6503).player.openContainer.windowId));
-      Class872.method2713(this.field6503).displayGuiScreen((Screen)null);
+         .sendPacket(new CUpdateBeaconPacket(Effect.getId(BeaconScreen.method2708(this.field6503)), Effect.getId(BeaconScreen.method2709(this.field6503))));
+      BeaconScreen.method2712(this.field6503).player.connection.sendPacket(new CCloseWindowPacket(BeaconScreen.method2711(this.field6503).player.openContainer.windowId));
+      BeaconScreen.method2713(this.field6503).displayGuiScreen((Screen)null);
    }
 
    @Override

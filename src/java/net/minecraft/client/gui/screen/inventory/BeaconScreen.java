@@ -1,9 +1,9 @@
-package mapped;
+package net.minecraft.client.gui.screen.inventory;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
+import mapped.*;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
@@ -14,7 +14,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 import java.util.List;
 
-public class Class872 extends ContainerScreen<Class5821> {
+public class BeaconScreen extends ContainerScreen<Class5821> {
    private static final ResourceLocation field4841 = new ResourceLocation("textures/gui/container/beacon.png");
    private static final ITextComponent field4842 = new TranslationTextComponent("block.minecraft.beacon.primary");
    private static final ITextComponent field4843 = new TranslationTextComponent("block.minecraft.beacon.secondary");
@@ -23,7 +23,7 @@ public class Class872 extends ContainerScreen<Class5821> {
    private Effect field4846;
    private Effect field4847;
 
-   public Class872(Class5821 var1, PlayerInventory var2, ITextComponent var3) {
+   public BeaconScreen(Class5821 var1, PlayerInventory var2, ITextComponent var3) {
       super(var1, var2, var3);
       this.xSize = 230;
       this.ySize = 219;
@@ -134,17 +134,17 @@ public class Class872 extends ContainerScreen<Class5821> {
    }
 
    // $VF: synthetic method
-   public static Effect method2701(Class872 var0, Effect var1) {
+   public static Effect method2701(BeaconScreen var0, Effect var1) {
       return var0.field4846 = var1;
    }
 
    // $VF: synthetic method
-   public static Effect method2702(Class872 var0, Effect var1) {
+   public static Effect method2702(BeaconScreen var0, Effect var1) {
       return var0.field4847 = var1;
    }
 
    // $VF: synthetic method
-   public static boolean method2703(Class872 var0, boolean var1) {
+   public static boolean method2703(BeaconScreen var0, boolean var1) {
       return var0.field4845 = var1;
    }
 
@@ -154,57 +154,57 @@ public class Class872 extends ContainerScreen<Class5821> {
    }
 
    // $VF: synthetic method
-   public static Minecraft method2705(Class872 var0) {
+   public static Minecraft method2705(BeaconScreen var0) {
       return var0.mc;
    }
 
    // $VF: synthetic method
-   public static Minecraft method2706(Class872 var0) {
+   public static Minecraft method2706(BeaconScreen var0) {
       return var0.mc;
    }
 
    // $VF: synthetic method
-   public static Minecraft method2707(Class872 var0) {
+   public static Minecraft method2707(BeaconScreen var0) {
       return var0.mc;
    }
 
    // $VF: synthetic method
-   public static Effect method2708(Class872 var0) {
+   public static Effect method2708(BeaconScreen var0) {
       return var0.field4846;
    }
 
    // $VF: synthetic method
-   public static Effect method2709(Class872 var0) {
+   public static Effect method2709(BeaconScreen var0) {
       return var0.field4847;
    }
 
    // $VF: synthetic method
-   public static Minecraft method2710(Class872 var0) {
+   public static Minecraft method2710(BeaconScreen var0) {
       return var0.mc;
    }
 
    // $VF: synthetic method
-   public static Minecraft method2711(Class872 var0) {
+   public static Minecraft method2711(BeaconScreen var0) {
       return var0.mc;
    }
 
    // $VF: synthetic method
-   public static Minecraft method2712(Class872 var0) {
+   public static Minecraft method2712(BeaconScreen var0) {
       return var0.mc;
    }
 
    // $VF: synthetic method
-   public static Minecraft method2713(Class872 var0) {
+   public static Minecraft method2713(BeaconScreen var0) {
       return var0.mc;
    }
 
    // $VF: synthetic method
-   public static List method2714(Class872 var0) {
+   public static List method2714(BeaconScreen var0) {
       return var0.field4566;
    }
 
    // $VF: synthetic method
-   public static List method2715(Class872 var0) {
+   public static List method2715(BeaconScreen var0) {
       return var0.children;
    }
 }

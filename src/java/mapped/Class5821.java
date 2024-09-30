@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.container.Container;
+import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.ItemStack;
 
 import javax.annotation.Nullable;
@@ -19,7 +20,7 @@ public class Class5821 extends Container {
    }
 
    public Class5821(int var1, IInventory var2, Class8202 var3, IWorldPosCallable var4) {
-      super(ContainerType.field35656, var1);
+      super(ContainerType.BEACON, var1);
       assertIntArraySize(var3, 3);
       this.field25503 = var3;
       this.field25502 = var4;

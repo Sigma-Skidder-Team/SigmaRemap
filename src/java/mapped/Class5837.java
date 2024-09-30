@@ -4,6 +4,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
+import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.IntReferenceHolder;
@@ -26,7 +27,7 @@ public class Class5837 extends Container {
    }
 
    public Class5837(int var1, PlayerInventory var2, IWorldPosCallable var3) {
-      super(ContainerType.field35665, var1);
+      super(ContainerType.LOOM, var1);
       this.field25564 = var3;
       this.field25567 = this.addSlot(new Class5844(this, this.field25572, 0, 13, 26));
       this.field25568 = this.addSlot(new Class5851(this, this.field25572, 1, 33, 26));

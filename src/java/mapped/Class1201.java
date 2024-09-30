@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screen.inventory.BeaconScreen;
 import net.minecraft.util.text.StringTextComponent;
 
 public abstract class Class1201 extends Class1200 {
@@ -14,7 +15,7 @@ public abstract class Class1201 extends Class1200 {
 
    @Override
    public void method5655(MatrixStack var1, int var2, int var3, float var4) {
-      Minecraft.getInstance().getTextureManager().bindTexture(Class872.method2704());
+      Minecraft.getInstance().getTextureManager().bindTexture(BeaconScreen.method2704());
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       short var7 = 219;
       int var8 = 0;

@@ -1,9 +1,11 @@
-package mapped;
+package net.minecraft.client.gui.screen.inventory;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
+import mapped.Class4845;
+import mapped.Class5811;
+import mapped.MinecraftSoundManager;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvents;
@@ -12,14 +14,14 @@ import net.minecraft.util.text.ITextComponent;
 
 import java.util.List;
 
-public class Class864 extends ContainerScreen<Class5811> {
+public class StonecutterScreen extends ContainerScreen<Class5811> {
    private static final ResourceLocation field4796 = new ResourceLocation("textures/gui/container/stonecutter.png");
    private float field4797;
    private boolean field4798;
    private int field4799;
    private boolean field4800;
 
-   public Class864(Class5811 var1, PlayerInventory var2, ITextComponent var3) {
+   public StonecutterScreen(Class5811 var1, PlayerInventory var2, ITextComponent var3) {
       super(var1, var2, var3);
       var1.method18110(this::method2676);
       this.field4724--;

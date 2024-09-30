@@ -6,6 +6,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.inventory.container.Container;
+import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -31,7 +32,7 @@ public class Class5822 extends Container {
    }
 
    public Class5822(int var1, PlayerInventory var2, IWorldPosCallable var3) {
-      super(ContainerType.field35660, var1);
+      super(ContainerType.ENCHANTMENT, var1);
       this.field25506 = var3;
       this.addSlot(new Class5842(this, this.field25505, 0, 15, 47));
       this.addSlot(new Class5865(this, this.field25505, 1, 35, 47));

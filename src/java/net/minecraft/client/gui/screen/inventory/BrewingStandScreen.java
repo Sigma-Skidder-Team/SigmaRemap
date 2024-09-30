@@ -1,18 +1,18 @@
-package mapped;
+package net.minecraft.client.gui.screen.inventory;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
-import net.minecraft.client.gui.screen.inventory.ContainerScreen;
+import mapped.Class5819;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 
-public class Class863 extends ContainerScreen<Class5819> {
+public class BrewingStandScreen extends ContainerScreen<Class5819> {
    private static final ResourceLocation field4794 = new ResourceLocation("textures/gui/container/brewing_stand.png");
    private static final int[] field4795 = new int[]{29, 24, 20, 16, 11, 6, 0};
 
-   public Class863(Class5819 var1, PlayerInventory var2, ITextComponent var3) {
+   public BrewingStandScreen(Class5819 var1, PlayerInventory var2, ITextComponent var3) {
       super(var1, var2, var3);
    }
 

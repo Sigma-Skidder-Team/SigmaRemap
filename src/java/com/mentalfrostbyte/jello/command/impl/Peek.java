@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.command.CommandException;
 import com.mentalfrostbyte.jello.command.CommandManager;
 import com.mentalfrostbyte.jello.command.ChatCommandExecutor;
 import mapped.*;
+import net.minecraft.client.gui.screen.inventory.ShulkerBoxScreen;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -48,7 +49,7 @@ public class Peek extends Command {
 
       Class927 var6 = new Class927(var4.toArray(new ItemStack[0]));
       CommandManager.method30238(
-         () -> mc.displayGuiScreen(new Class873(new Class5814(-1, mc.player.inventory, var6), mc.player.inventory, var0.method32149()))
+         () -> mc.displayGuiScreen(new ShulkerBoxScreen(new Class5814(-1, mc.player.inventory, var6), mc.player.inventory, var0.method32149()))
       );
    }
 

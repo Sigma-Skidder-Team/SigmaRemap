@@ -1,5 +1,9 @@
-package mapped;
+package net.minecraft.client.gui.screen.inventory;
 
+import mapped.Class1121;
+import mapped.Class5818;
+import mapped.Class7502;
+import mapped.Class870;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.IHasContainer;
 import net.minecraft.client.gui.screen.Screen;
@@ -10,11 +14,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class Class869 extends Class870 implements IHasContainer<Class5818> {
+public class LecternScreen extends Class870 implements IHasContainer<Class5818> {
    private final Class5818 field4817;
    private final IContainerListener field4818 = new Class1121(this);
 
-   public Class869(Class5818 var1, PlayerInventory var2, ITextComponent var3) {
+   public LecternScreen(Class5818 var1, PlayerInventory var2, ITextComponent var3) {
       this.field4817 = var1;
    }
 
@@ -93,12 +97,12 @@ public class Class869 extends Class870 implements IHasContainer<Class5818> {
    }
 
    // $VF: synthetic method
-   public static void method2688(Class869 var0) {
+   public static void method2688(LecternScreen var0) {
       var0.method2684();
    }
 
    // $VF: synthetic method
-   public static void method2689(Class869 var0) {
+   public static void method2689(LecternScreen var0) {
       var0.method2685();
    }
 }

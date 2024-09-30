@@ -6,6 +6,7 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
+import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 
@@ -23,7 +24,7 @@ public class Class5815 extends Container {
    }
 
    public Class5815(int var1, PlayerInventory var2, IWorldPosCallable var3) {
-      super(ContainerType.field35662, var1);
+      super(ContainerType.GRINDSTONE, var1);
       this.field25485 = var3;
       this.addSlot(new Class5838(this, this.field25484, 0, 49, 19));
       this.addSlot(new Class5847(this, this.field25484, 1, 49, 40));

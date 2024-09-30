@@ -1,7 +1,10 @@
-package mapped;
+package net.minecraft.client.gui.screen.inventory;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
+import mapped.Class5824;
+import mapped.Class875;
+import mapped.Slot;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.entity.player.PlayerInventory;
@@ -13,12 +16,12 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextProperties;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class Class1124 extends Class875<Class5824> {
+public class AnvilScreen extends Class875<Class5824> {
    private static final ResourceLocation field6158 = new ResourceLocation("textures/gui/container/anvil.png");
    private static final ITextComponent field6159 = new TranslationTextComponent("container.repair.expensive");
    private TextFieldWidget field6160;
 
-   public Class1124(Class5824 var1, PlayerInventory var2, ITextComponent var3) {
+   public AnvilScreen(Class5824 var1, PlayerInventory var2, ITextComponent var3) {
       super(var1, var2, var3, field6158);
       this.field4723 = 60;
    }

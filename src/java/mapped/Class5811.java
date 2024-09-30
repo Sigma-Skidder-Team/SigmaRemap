@@ -5,6 +5,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
+import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IntReferenceHolder;
 import net.minecraft.world.World;
@@ -31,7 +32,7 @@ public class Class5811 extends Container {
    }
 
    public Class5811(int var1, PlayerInventory var2, IWorldPosCallable var3) {
-      super(ContainerType.field35671, var1);
+      super(ContainerType.STONECUTTER, var1);
       this.field25456 = var3;
       this.field25458 = var2.field5444.world;
       this.field25462 = this.addSlot(new Slot(this.field25465, 0, 20, 33));
@@ -117,7 +118,7 @@ public class Class5811 extends Container {
 
    @Override
    public ContainerType<?> getType() {
-      return ContainerType.field35671;
+      return ContainerType.STONECUTTER;
    }
 
    public void method18110(Runnable var1) {

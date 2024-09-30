@@ -5,6 +5,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.inventory.container.Container;
+import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.ItemStack;
 
 public class Class5826 extends Container {
@@ -20,7 +21,7 @@ public class Class5826 extends Container {
    }
 
    public Class5826(int var1, PlayerInventory var2, Class1060 var3) {
-      super(ContainerType.field35666, var1);
+      super(ContainerType.MERCHANT, var1);
       this.field25526 = var3;
       this.field25527 = new Class988(var3);
       this.addSlot(new Slot(this.field25527, 0, 136, 37));

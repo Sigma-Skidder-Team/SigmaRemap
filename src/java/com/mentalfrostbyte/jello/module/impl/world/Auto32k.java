@@ -12,6 +12,7 @@ import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.inventory.container.ClickType;
+import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.network.play.client.*;
@@ -266,7 +267,7 @@ public class Auto32k extends Module {
         if (this.isEnabled()) {
             if (var1.getPacket() instanceof SOpenWindowPacket) {
                 this.field23876 = (SOpenWindowPacket) var1.getPacket();
-                if (this.isEnabled() && this.field23876.method17285() == ContainerType.field35663) {
+                if (this.isEnabled() && this.field23876.method17285() == ContainerType.HOPPER) {
                     var1.setCancelled(true);
                 }
 

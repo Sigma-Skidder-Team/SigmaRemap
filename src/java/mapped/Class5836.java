@@ -4,6 +4,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
+import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 
@@ -18,7 +19,7 @@ public class Class5836 extends Container {
    }
 
    public Class5836(int var1, PlayerInventory var2, IWorldPosCallable var3) {
-      super(ContainerType.field35670, var1);
+      super(ContainerType.CARTOGRAPHY_TABLE, var1);
       this.field25560 = var3;
       this.addSlot(new Class5854(this, this.field25562, 0, 15, 15));
       this.addSlot(new Class5857(this, this.field25562, 1, 15, 52));

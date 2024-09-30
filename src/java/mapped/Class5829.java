@@ -4,6 +4,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.RecipeBookCategory;
@@ -24,7 +25,7 @@ public class Class5829 extends Class5828<Class926> {
    }
 
    public Class5829(int var1, PlayerInventory var2, IWorldPosCallable var3) {
-      super(ContainerType.field35659, var1);
+      super(ContainerType.CRAFTING, var1);
       this.field25537 = var3;
       this.field25538 = var2.field5444;
       this.addSlot(new Class5856(var2.field5444, this.field25535, this.field25536, 0, 124, 35));

@@ -1,8 +1,8 @@
-package mapped;
+package net.minecraft.client.gui.screen.inventory;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
-import net.minecraft.client.gui.screen.inventory.ContainerScreen;
+import mapped.*;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.CSelectTradePacket;
@@ -13,7 +13,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class Class862 extends ContainerScreen<Class5826> {
+public class MerchantScreen extends ContainerScreen<Class5826> {
    private static final ResourceLocation field4786 = new ResourceLocation("textures/gui/container/villager2.png");
    private static final ITextComponent field4787 = new TranslationTextComponent("merchant.trades");
    private static final ITextComponent field4788 = new StringTextComponent(" - ");
@@ -23,7 +23,7 @@ public class Class862 extends ContainerScreen<Class5826> {
    private int field4792;
    private boolean field4793;
 
-   public Class862(Class5826 var1, PlayerInventory var2, ITextComponent var3) {
+   public MerchantScreen(Class5826 var1, PlayerInventory var2, ITextComponent var3) {
       super(var1, var2, var3);
       this.xSize = 276;
       this.field4725 = 107;
@@ -270,22 +270,22 @@ public class Class862 extends ContainerScreen<Class5826> {
    }
 
    // $VF: synthetic method
-   public static int method2668(Class862 var0) {
+   public static int method2668(MerchantScreen var0) {
       return var0.field4792;
    }
 
    // $VF: synthetic method
-   public static void method2669(Class862 var0, MatrixStack var1, ItemStack var2, int var3, int var4) {
+   public static void method2669(MerchantScreen var0, MatrixStack var1, ItemStack var2, int var3, int var4) {
       var0.method2457(var1, var2, var3, var4);
    }
 
    // $VF: synthetic method
-   public static void method2670(Class862 var0, MatrixStack var1, ItemStack var2, int var3, int var4) {
+   public static void method2670(MerchantScreen var0, MatrixStack var1, ItemStack var2, int var3, int var4) {
       var0.method2457(var1, var2, var3, var4);
    }
 
    // $VF: synthetic method
-   public static void method2671(Class862 var0, MatrixStack var1, ItemStack var2, int var3, int var4) {
+   public static void method2671(MerchantScreen var0, MatrixStack var1, ItemStack var2, int var3, int var4) {
       var0.method2457(var1, var2, var3, var4);
    }
 }

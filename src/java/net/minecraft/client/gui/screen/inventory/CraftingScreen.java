@@ -1,20 +1,20 @@
-package mapped;
+package net.minecraft.client.gui.screen.inventory;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
-import net.minecraft.client.gui.screen.inventory.ContainerScreen;
+import mapped.*;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.ClickType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 
-public class Class853 extends ContainerScreen<Class5829> implements Class854 {
+public class CraftingScreen extends ContainerScreen<Class5829> implements Class854 {
    private static final ResourceLocation field4754 = new ResourceLocation("textures/gui/container/crafting_table.png");
    private static final ResourceLocation field4755 = new ResourceLocation("textures/gui/recipe_button.png");
    private final Class1254 field4756 = new Class1254();
    private boolean field4757;
 
-   public Class853(Class5829 var1, PlayerInventory var2, ITextComponent var3) {
+   public CraftingScreen(Class5829 var1, PlayerInventory var2, ITextComponent var3) {
       super(var1, var2, var3);
    }
 

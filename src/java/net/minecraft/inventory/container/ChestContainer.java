@@ -15,35 +15,35 @@ public class ChestContainer extends Container {
    }
 
    public static ChestContainer method18156(int var0, PlayerInventory var1) {
-      return new ChestContainer(ContainerType.field35648, var0, var1, 1);
+      return new ChestContainer(ContainerType.GENERIC_9X1, var0, var1, 1);
    }
 
    public static ChestContainer method18157(int var0, PlayerInventory var1) {
-      return new ChestContainer(ContainerType.field35649, var0, var1, 2);
+      return new ChestContainer(ContainerType.GENERIC_9X2, var0, var1, 2);
    }
 
    public static ChestContainer method18158(int var0, PlayerInventory var1) {
-      return new ChestContainer(ContainerType.field35650, var0, var1, 3);
+      return new ChestContainer(ContainerType.GENERIC_9X3, var0, var1, 3);
    }
 
    public static ChestContainer method18159(int var0, PlayerInventory var1) {
-      return new ChestContainer(ContainerType.field35651, var0, var1, 4);
+      return new ChestContainer(ContainerType.GENERIC_9X4, var0, var1, 4);
    }
 
    public static ChestContainer method18160(int var0, PlayerInventory var1) {
-      return new ChestContainer(ContainerType.field35652, var0, var1, 5);
+      return new ChestContainer(ContainerType.GENERIC_9X5, var0, var1, 5);
    }
 
    public static ChestContainer method18161(int var0, PlayerInventory var1) {
-      return new ChestContainer(ContainerType.field35653, var0, var1, 6);
+      return new ChestContainer(ContainerType.GENERIC_9X6, var0, var1, 6);
    }
 
    public static ChestContainer method18162(int var0, PlayerInventory var1, IInventory var2) {
-      return new ChestContainer(ContainerType.field35650, var0, var1, var2, 3);
+      return new ChestContainer(ContainerType.GENERIC_9X3, var0, var1, var2, 3);
    }
 
    public static ChestContainer method18163(int var0, PlayerInventory var1, IInventory var2) {
-      return new ChestContainer(ContainerType.field35653, var0, var1, var2, 6);
+      return new ChestContainer(ContainerType.GENERIC_9X6, var0, var1, var2, 6);
    }
 
    public ChestContainer(ContainerType<?> var1, int var2, PlayerInventory var3, IInventory var4, int var5) {

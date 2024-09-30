@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screen.inventory.BeaconScreen;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -13,9 +14,9 @@ public class Class1205 extends Class1201 {
    private final TextureAtlasSprite field6507;
    private final boolean field6508;
    private final ITextComponent field6509;
-   public final Class872 field6510;
+   public final BeaconScreen field6510;
 
-   public Class1205(Class872 var1, int var2, int var3, Effect var4, boolean var5) {
+   public Class1205(BeaconScreen var1, int var2, int var3, Effect var4, boolean var5) {
       super(var2, var3);
       this.field6510 = var1;
       this.field6506 = var4;
@@ -37,13 +38,13 @@ public class Class1205 extends Class1201 {
    public void method5759() {
       if (!this.method5761()) {
          if (!this.field6508) {
-            Class872.method2702(this.field6510, this.field6506);
+            BeaconScreen.method2702(this.field6510, this.field6506);
          } else {
-            Class872.method2701(this.field6510, this.field6506);
+            BeaconScreen.method2701(this.field6510, this.field6506);
          }
 
-         Class872.method2714(this.field6510).clear();
-         Class872.method2715(this.field6510).clear();
+         BeaconScreen.method2714(this.field6510).clear();
+         BeaconScreen.method2715(this.field6510).clear();
          this.field6510.init();
          this.field6510.tick();
       }

@@ -4,6 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
@@ -20,7 +21,7 @@ public class Class5825 extends Class5823 {
    }
 
    public Class5825(int var1, PlayerInventory var2, IWorldPosCallable var3) {
-      super(ContainerType.field35668, var1, var2, var3);
+      super(ContainerType.SMITHING, var1, var2, var3);
       this.field25522 = var2.field5444.world;
       this.field25524 = this.field25522.method6816().<IInventory, Class4846>method1031(Class7207.field30941);
    }

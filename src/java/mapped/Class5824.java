@@ -7,6 +7,7 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.tags.BlockTags;
@@ -28,7 +29,7 @@ public class Class5824 extends Class5823 {
    }
 
    public Class5824(int var1, PlayerInventory var2, IWorldPosCallable var3) {
-      super(ContainerType.field35655, var1, var2, var3);
+      super(ContainerType.ANVIL, var1, var2, var3);
       this.trackInt(this.field25520);
    }
 

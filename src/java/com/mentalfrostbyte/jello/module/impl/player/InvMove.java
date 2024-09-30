@@ -10,6 +10,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import mapped.*;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screen.inventory.AnvilScreen;
 import net.minecraft.client.gui.screen.inventory.ChestScreen;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.network.play.client.CEntityActionPacket;
@@ -68,7 +69,7 @@ public class InvMove extends Module {
                     return;
                 }
 
-                if (mc.currentScreen instanceof Class1124) {
+                if (mc.currentScreen instanceof AnvilScreen) {
                     return;
                 }
 

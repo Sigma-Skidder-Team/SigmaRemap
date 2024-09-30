@@ -1,18 +1,18 @@
-package mapped;
+package net.minecraft.client.gui.screen.inventory;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
-import net.minecraft.client.gui.screen.inventory.ContainerScreen;
+import mapped.*;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 
-public class Class852 extends ContainerScreen<Class5836> {
+public class CartographyTableScreen extends ContainerScreen<Class5836> {
    private static final ResourceLocation field4753 = new ResourceLocation("textures/gui/container/cartography_table.png");
 
-   public Class852(Class5836 var1, PlayerInventory var2, ITextComponent var3) {
+   public CartographyTableScreen(Class5836 var1, PlayerInventory var2, ITextComponent var3) {
       super(var1, var2, var3);
       this.field4724 -= 2;
    }

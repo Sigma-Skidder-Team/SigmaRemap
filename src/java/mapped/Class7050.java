@@ -2,8 +2,7 @@ package mapped;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.gui.screen.inventory.ChestScreen;
-import net.minecraft.client.gui.screen.inventory.ContainerScreen;
+import net.minecraft.client.gui.screen.inventory.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -38,15 +37,15 @@ public class Class7050 {
                } else if (!(var3 instanceof InventoryScreen)) {
                   BlockPos var5 = field30439.method23163();
                   if (var5 != null) {
-                     if (var3 instanceof Class1124) {
+                     if (var3 instanceof AnvilScreen) {
                         return method21964(Class2295.field15253, var5, var4, var0, var3);
                      }
 
-                     if (var3 instanceof Class872) {
+                     if (var3 instanceof BeaconScreen) {
                         return method21964(Class2295.field15254, var5, var4, var0, var3);
                      }
 
-                     if (var3 instanceof Class863) {
+                     if (var3 instanceof BrewingStandScreen) {
                         return method21964(Class2295.field15255, var5, var4, var0, var3);
                      }
 
@@ -54,27 +53,27 @@ public class Class7050 {
                         return method21964(Class2295.field15256, var5, var4, var0, var3);
                      }
 
-                     if (var3 instanceof Class853) {
+                     if (var3 instanceof CraftingScreen) {
                         return method21964(Class2295.field15257, var5, var4, var0, var3);
                      }
 
-                     if (var3 instanceof Class874) {
+                     if (var3 instanceof DispenserScreen) {
                         return method21964(Class2295.field15258, var5, var4, var0, var3);
                      }
 
-                     if (var3 instanceof Class871) {
+                     if (var3 instanceof EnchantmentScreen) {
                         return method21964(Class2295.field15259, var5, var4, var0, var3);
                      }
 
-                     if (var3 instanceof Class856) {
+                     if (var3 instanceof FurnaceScreen) {
                         return method21964(Class2295.field15260, var5, var4, var0, var3);
                      }
 
-                     if (var3 instanceof Class866) {
+                     if (var3 instanceof HopperScreen) {
                         return method21964(Class2295.field15261, var5, var4, var0, var3);
                      }
 
-                     if (var3 instanceof Class873) {
+                     if (var3 instanceof ShulkerBoxScreen) {
                         return method21964(Class2295.field15264, var5, var4, var0, var3);
                      }
                   }
@@ -85,7 +84,7 @@ public class Class7050 {
                         return method21965(Class2295.field15262, var6, var4, var0);
                      }
 
-                     if (var3 instanceof Class862) {
+                     if (var3 instanceof MerchantScreen) {
                         return method21965(Class2295.field15263, var6, var4, var0);
                      }
                   }

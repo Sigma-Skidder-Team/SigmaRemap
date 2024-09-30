@@ -30,6 +30,7 @@ import net.minecraft.block.Block;
 import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.RemoteClientPlayerEntity;
+import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.gui.screen.ConfirmScreen;
 import net.minecraft.client.gui.screen.MultiplayerScreen;
 import net.minecraft.client.gui.screen.Screen;
@@ -991,7 +992,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleOpenWindowPacket(SOpenWindowPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      ScreenManager.method24653(var1.method17285(), this.field23272, var1.method17284(), var1.method17286());
+      ScreenManager.openScreen(var1.method17285(), this.field23272, var1.method17284(), var1.method17286());
    }
 
    @Override

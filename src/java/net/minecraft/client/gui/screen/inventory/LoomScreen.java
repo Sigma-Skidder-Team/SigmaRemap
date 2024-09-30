@@ -1,9 +1,9 @@
-package mapped;
+package net.minecraft.client.gui.screen.inventory;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.datafixers.util.Pair;
+import mapped.*;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
@@ -16,7 +16,7 @@ import net.minecraft.util.text.ITextComponent;
 
 import java.util.List;
 
-public class Class865 extends ContainerScreen<Class5837> {
+public class LoomScreen extends ContainerScreen<Class5837> {
    private static final ResourceLocation field4801 = new ResourceLocation("textures/gui/container/loom.png");
    private static final int field4802 = (Class2154.field14124 - Class2154.field14125 - 1 + 4 - 1) / 4;
    private final ModelRenderer field4803;
@@ -31,7 +31,7 @@ public class Class865 extends ContainerScreen<Class5837> {
    private boolean field4812;
    private int field4813 = 1;
 
-   public Class865(Class5837 var1, PlayerInventory var2, ITextComponent var3) {
+   public LoomScreen(Class5837 var1, PlayerInventory var2, ITextComponent var3) {
       super(var1, var2, var3);
       this.field4803 = Class5948.method18477();
       var1.method18245(this::method2678);

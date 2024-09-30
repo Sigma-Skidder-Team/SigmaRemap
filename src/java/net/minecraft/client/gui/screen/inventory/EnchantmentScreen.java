@@ -1,9 +1,9 @@
-package mapped;
+package net.minecraft.client.gui.screen.inventory;
 
 import com.google.common.collect.Lists;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
-import net.minecraft.client.gui.screen.inventory.ContainerScreen;
+import mapped.*;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.player.PlayerInventory;
@@ -15,7 +15,7 @@ import net.minecraft.util.text.*;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Class871 extends ContainerScreen<Class5822> {
+public class EnchantmentScreen extends ContainerScreen<Class5822> {
    private static final ResourceLocation field4829 = new ResourceLocation("textures/gui/container/enchanting_table.png");
    private static final ResourceLocation field4830 = new ResourceLocation("textures/entity/enchanting_table_book.png");
    private static final Class2850 field4831 = new Class2850();
@@ -29,7 +29,7 @@ public class Class871 extends ContainerScreen<Class5822> {
    public float field4839;
    private ItemStack field4840 = ItemStack.EMPTY;
 
-   public Class871(Class5822 var1, PlayerInventory var2, ITextComponent var3) {
+   public EnchantmentScreen(Class5822 var1, PlayerInventory var2, ITextComponent var3) {
       super(var1, var2, var3);
    }
 

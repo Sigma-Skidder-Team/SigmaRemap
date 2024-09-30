@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
+import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.ItemStack;
 
 public class Class5817 extends Container {
@@ -14,7 +15,7 @@ public class Class5817 extends Container {
    }
 
    public Class5817(int var1, PlayerInventory var2, IInventory var3) {
-      super(ContainerType.field35654, var1);
+      super(ContainerType.GENERIC_3X3, var1);
       assertInventorySize(var3, 9);
       this.field25489 = var3;
       var3.openInventory(var2.field5444);

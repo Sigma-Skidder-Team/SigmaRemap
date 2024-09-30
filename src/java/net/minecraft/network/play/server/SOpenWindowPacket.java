@@ -3,7 +3,7 @@ package net.minecraft.network.play.server;
 import java.io.IOException;
 import javax.annotation.Nullable;
 
-import mapped.ContainerType;
+import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.client.network.play.IClientPlayNetHandler;

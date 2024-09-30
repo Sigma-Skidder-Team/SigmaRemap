@@ -18,10 +18,12 @@ import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import com.mojang.blaze3d.systems.RenderSystem;
 import mapped.*;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screen.inventory.FurnaceScreen;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.CClickWindowPacket;
 import net.minecraft.network.play.client.CPlayerTryUseItemOnBlockPacket;
@@ -140,8 +142,8 @@ public class NameTags extends Module {
                     return;
                 }
 
-                if (mc.currentScreen instanceof Class856) {
-                    Class856 var6 = (Class856) mc.currentScreen;
+                if (mc.currentScreen instanceof FurnaceScreen) {
+                    FurnaceScreen var6 = (FurnaceScreen) mc.currentScreen;
                     var5.field30453 = var6.method2628().getSlot(0).getStack();
                     var5.field30454 = new ItemStack(var6.method2628().getSlot(1).getStack().getItem());
                     var5.field30454.count = var6.method2628().getSlot(1).getStack().count;
@@ -156,7 +158,7 @@ public class NameTags extends Module {
         if (this.isEnabled()) {
             if (var1.getPacket() instanceof SOpenWindowPacket) {
                 SOpenWindowPacket var4 = (SOpenWindowPacket) var1.getPacket();
-                if (var4.method17285() != ContainerType.field35661) {
+                if (var4.method17285() != ContainerType.FURNACE) {
                     return;
                 }
 
