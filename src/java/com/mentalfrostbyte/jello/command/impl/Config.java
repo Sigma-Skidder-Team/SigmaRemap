@@ -80,7 +80,6 @@ public class Config extends Command {
                   currentConfig.serializedConfigData = Client.getInstance().getModuleManager().saveCurrentConfigToJSON(new JSONObject());
                   Client.getInstance().getModuleManager().getConfigurationManager().removeConfig(name);
                   Client.getInstance().getModuleManager().getConfigurationManager().saveConfig(new Configuration(name, currentConfig.serializedConfigData));
-                  saveConfigToFile(ogName);
                   user.send("Saved " + this.getConfigOrProfileName());
                } else {
                   user.send("Usage : .config save <name>");

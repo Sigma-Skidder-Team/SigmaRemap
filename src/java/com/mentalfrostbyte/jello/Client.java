@@ -357,6 +357,9 @@ public class Client {
             getInstance().getGuiManager().method33452();
             GLFW.glfwSetWindowTitle(mc.mainWindow.getHandle(), "Classic Sigma 5.0");
             file = new File("Sigma");
+            if (!this.file.exists()) {
+                this.file.mkdirs();
+            }
         }
 
         if (this.moduleManager == null && RandomModuleThread.field8341 != null) {
