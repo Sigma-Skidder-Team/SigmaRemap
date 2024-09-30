@@ -43,7 +43,7 @@ import java.util.Map.Entry;
 public class KillAura extends Module {
     public static boolean field23937 = false;
     public static Entity target;
-    public static TimedEntity field23949;
+    public static TimedEntity timedEntityIdk;
     public static Rotations previousRotations = new Rotations(0.0F, 0.0F);
     public static int field23954;
     public HashMap<Entity, Animation> field23961 = new HashMap<Entity, Animation>();
@@ -126,7 +126,7 @@ public class KillAura extends Module {
     public void onEnable() {
         entities = new ArrayList<>();
         target = null;
-        field23949 = null;
+        timedEntityIdk = null;
         this.field23939 = (int) interactAB.method36819(0);
         this.field23940 = 0;
         this.field23942 = 0;
@@ -150,7 +150,7 @@ public class KillAura extends Module {
     @Override
     public void onDisable() {
         target = null;
-        field23949 = null;
+        timedEntityIdk = null;
         entities = null;
         field23937 = false;
         super.onDisable();
@@ -270,7 +270,7 @@ public class KillAura extends Module {
 
     @EventTarget
     public void on2D(EventRender var1) {
-        if (field23949 != null && !this.getBooleanValueFromSettingName("Silent") && !this.getStringSettingValueByName("Rotation Mode").equals("None")) {
+        if (timedEntityIdk != null && !this.getBooleanValueFromSettingName("Silent") && !this.getStringSettingValueByName("Rotation Mode").equals("None")) {
             float var4 = MathHelper.method37792(this.rotations2.yaw + (this.rotations.yaw - this.rotations2.yaw) * mc.getRenderPartialTicks());
             float var5 = MathHelper.method37792(this.rotations2.pitch + (this.rotations.pitch - this.rotations2.pitch) * mc.getRenderPartialTicks());
             mc.player.rotationYaw = var4;
@@ -359,7 +359,7 @@ public class KillAura extends Module {
         GL11.glEnable(3008);
         GL11.glEnable(3042);
         GL11.glAlphaFunc(519, 0.0F);
-        short var6 = 1800;
+        long var6 = 1800;
         float var7 = (float) (System.currentTimeMillis() % (long) var6) / (float) var6;
         boolean var8 = var7 > 0.5F;
         var7 = !var8 ? var7 * 2.0F : 1.0F - var7 * 2.0F % 1.0F;
@@ -505,7 +505,7 @@ public class KillAura extends Module {
             }
 
             if (var6.isEmpty()) {
-                field23949 = null;
+                timedEntityIdk = null;
                 entities.clear();
                 this.field23939 = (int) interactAB.method36819(0);
                 this.field23940 = 0;
@@ -529,39 +529,39 @@ public class KillAura extends Module {
                 entities = var6;
                 float var12 = RotationHelper.method34148(MultiUtilities.method17751(entities.get(0).getEntity())).yaw;
                 if (!entities.isEmpty() & !mode.equals("Switch")) {
-                    if (field23949 != null && field23949.getEntity() != entities.get(0).getEntity()) {
+                    if (timedEntityIdk != null && timedEntityIdk.getEntity() != entities.get(0).getEntity()) {
                         float var13 = Math.abs(MultiUtilities.method17756(var12, previousRotations.yaw));
                         this.field23956 = var13 * 1.95F / 50.0F;
                         this.field23955 = Math.random();
                     }
 
-                    field23949 = entities.get(0);
+                    timedEntityIdk = entities.get(0);
                 }
 
                 if (!mode.equals("Switch")) {
                     if (!mode.equals("Multi2")) {
                         if (mode.equals("Single")
                                 && !entities.isEmpty()
-                                && (field23949 == null || field23949.getEntity() != entities.get(0).getEntity())) {
-                            field23949 = entities.get(0);
+                                && (timedEntityIdk == null || timedEntityIdk.getEntity() != entities.get(0).getEntity())) {
+                            timedEntityIdk = entities.get(0);
                         }
                     } else {
                         if (this.field23942 >= entities.size()) {
                             this.field23942 = 0;
                         }
 
-                        field23949 = entities.get(this.field23942);
+                        timedEntityIdk = entities.get(this.field23942);
                     }
                 } else if ((
-                        field23949 == null
-                                || field23949.getTimer() == null
-                                || field23949.isExpired()
-                                || !entities.contains(field23949)
-                                || mc.player.getDistance(field23949.getEntity()) > range
+                        timedEntityIdk == null
+                                || timedEntityIdk.getTimer() == null
+                                || timedEntityIdk.isExpired()
+                                || !entities.contains(timedEntityIdk)
+                                || mc.player.getDistance(timedEntityIdk.getEntity()) > range
                 )
                         && !entities.isEmpty()) {
                     if (this.field23942 + 1 < entities.size()) {
-                        if (field23949 != null && !Client.getInstance().getFriendManager().isFriend(entities.get(this.field23942).getEntity())) {
+                        if (timedEntityIdk != null && !Client.getInstance().getFriendManager().isFriend(entities.get(this.field23942).getEntity())) {
                             this.field23942++;
                         }
                     } else {
@@ -572,7 +572,7 @@ public class KillAura extends Module {
                     float var9 = Math.abs(MultiUtilities.method17756(RotationHelper.method34148(var14).yaw, previousRotations.yaw));
                     this.field23956 = var9 * 1.95F / 50.0F;
                     this.field23955 = Math.random();
-                    field23949 = new TimedEntity(
+                    timedEntityIdk = new TimedEntity(
                             entities.get(this.field23942).getEntity(), new ExpirationTimer(!this.getStringSettingValueByName("Rotation Mode").equals("NCP") ? 500L : 270L)
                     );
                 }
@@ -583,11 +583,11 @@ public class KillAura extends Module {
 
                 if (!mode.equals("Multi")) {
                     entities.clear();
-                    entities.add(field23949);
+                    entities.add(timedEntityIdk);
                 }
             }
         } else {
-            field23949 = null;
+            timedEntityIdk = null;
             target = null;
             if (entities != null) {
                 entities.clear();
@@ -607,7 +607,7 @@ public class KillAura extends Module {
     }
 
     private void method16831() {
-        Entity targ = field23949.getEntity();
+        Entity targ = timedEntityIdk.getEntity();
         Rotations newRots = RotationHelper.getRotations(targ, !this.getBooleanValueFromSettingName("Through walls"));
         if (newRots == null) {
             System.out.println("[KillAura] newRots is null??? on line 612");
