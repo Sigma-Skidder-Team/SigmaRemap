@@ -8,13 +8,13 @@ import java.util.List;
 
 public class Class8583 {
    private static String[] field38611;
-   private final Class8827 field38612;
+   private final DataStreamReader field38612;
    private final Class5078 field38613;
    private final List<Class7354> field38614;
    private final Class9011 field38615;
    private final List<Class6399> field38616;
 
-   public Class8583(Class5066 var1, Class8827 var2) {
+   public Class8583(Class5066 var1, DataStreamReader var2) {
       this.field38612 = var2;
       this.field38613 = (Class5078)var1.method15438(1836476516L);
       List var5 = var1.method15440(1953653099L);

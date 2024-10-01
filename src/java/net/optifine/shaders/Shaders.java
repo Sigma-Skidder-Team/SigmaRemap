@@ -756,7 +756,7 @@ public class Shaders {
 
         boolean var2 = false;
         if (Config.isAntialiasing()) {
-            Class7399.method23634("Shaders can not be loaded, Antialiasing is enabled: " + Config.method26891() + "x");
+            Class7399.method23634("Shaders can not be loaded, Antialiasing is enabled: " + Config.getAntialiasingLevel() + "x");
             var2 = true;
         }
 
@@ -1649,7 +1649,7 @@ public class Shaders {
         Class7399.method23634(var2.toString());
     }
 
-    public static void method32991(Minecraft var0) {
+    public static void startup(Minecraft var0) {
         method33140();
         field40591 = var0;
         var0 = Minecraft.getInstance();

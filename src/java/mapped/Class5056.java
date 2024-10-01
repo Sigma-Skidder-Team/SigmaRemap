@@ -10,9 +10,9 @@ public abstract class Class5056 extends Class5041 {
       super(var1);
    }
 
-   public void method15468(Class8827 var1) throws IOException {
-      this.field23059 = var1.method31863(4);
-      this.field23060 = var1.method31861();
+   public void method15468(DataStreamReader var1) throws IOException {
+      this.field23059 = var1.readBits(4);
+      this.field23060 = var1.readInt();
    }
 
    public long method15469() {

@@ -8,97 +8,191 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public abstract class AudioByteManager {
-   public int field28304;
-   public int field28305;
-   public long field28306;
-   private final List<AudioByteManager> field28307 = new ArrayList<>();
+   public int descriptorType;
+   public int descriptorSize;
+   public long descriptorOffset;
+   private final List<AudioByteManager> childDescriptors = new ArrayList<>();
 
-   public static AudioByteManager method19559(Class8827 var0) throws IOException {
-      int var3 = var0.method31861();
-      int var4 = 1;
-      int var5 = 0;
-      int var6;
+   public static AudioByteManager readDescriptor(DataStreamReader reader) throws IOException {
+      int type = reader.readInt();
+      long descriptorLength = 1;
+      int size = 0;
+      int bytesRead;
 
       do {
-         var6 = var0.method31861();
-         var5 <<= 7;
-         var5 |= var6 & 127;
-         var4++;
-      } while ((var6 & 128) == 128);
+         bytesRead = reader.readInt();
+         size <<= 7;
+         size |= bytesRead & 127;
+         descriptorLength++;
+      } while ((bytesRead & 128) == 128);
 
-      AudioByteManager var7 = method19560(var3);
-      var7.field28304 = var3;
-      var7.field28305 = var5;
-      var7.field28306 = var0.method31871();
-      var7.method19555(var0);
+      AudioByteManager descriptor = createDescriptor(type);
+      descriptor.descriptorType = type;
+      descriptor.descriptorSize = size;
+      descriptor.descriptorOffset = reader.getPosition();
+      descriptor.readData(reader);
 
-      long remainingBytes = (long) var5 - (var0.method31871() - var7.field28306);
+      long remainingBytes = (long) size - (reader.getPosition() - descriptor.descriptorOffset);
 
       if (remainingBytes > 0L) {
-         Logger.getLogger("MP4 Boxes").log(Level.INFO, "Descriptor: bytes left: {0}, offset: {1}", new Object[]{remainingBytes, var0.method31871()});
-            var0.method31870(remainingBytes);  // Skip the remaining bytes in the stream
+         Logger.getLogger("MP4 Boxes").log(Level.INFO, "Descriptor: bytes left: {0}, offset: {1}", new Object[]{remainingBytes, reader.getPosition()});
+         reader.skipBytes(remainingBytes);  // Skip the remaining bytes in the stream
       }
 
-      // Adjust the descriptor length for the size of the parsed descriptor
-      var7.field28305 += var4;
-      return var7;
+      descriptor.descriptorSize += (int) descriptorLength;
+      return descriptor;
    }
 
-   private static AudioByteManager method19560(int var0) {
-      Object var3;
-      switch (var0) {
+   private static AudioByteManager createDescriptor(int type) {
+      AudioByteManager descriptor;
+      switch (type) {
          case 1:
-            var3 = new Class6442();
+            descriptor = new AudioDescriptor();
             break;
          case 2:
          case 16:
-            var3 = new Class6445();
+            descriptor = new VideoDescriptor();
             break;
          case 3:
-            var3 = new Class6444();
+            descriptor = new TextDescriptor();
             break;
          case 4:
-            var3 = new Class6446();
+            descriptor = new MetaDescriptor();
             break;
          case 5:
-            var3 = new Class6449();
+            descriptor = new BinaryDataDescriptor();
             break;
-         case 6:
-         case 7:
-         case 8:
-         case 9:
-         case 10:
-         case 11:
-         case 12:
-         case 13:
-         case 14:
-         case 15:
          default:
-            Logger.getLogger("MP4 Boxes").log(Level.INFO, "Unknown descriptor type: {0}", var0);
-            var3 = new Class6447();
+            Logger.getLogger("MP4 Boxes").log(Level.INFO, "Unknown descriptor type: {0}", type);
+            descriptor = new UnknownDescriptor();
       }
 
-      return (AudioByteManager)var3;
+      return descriptor;
    }
 
-   public abstract void method19555(Class8827 var1) throws IOException;
+   public abstract void readData(DataStreamReader reader) throws IOException;
 
-   public void method19561(Class8827 var1) throws IOException {
-      while ((long)this.field28305 - (var1.method31871() - this.field28306) > 0L) {
-         AudioByteManager var4 = method19559(var1);
-         this.field28307.add(var4);
+   public void readChildDescriptors(DataStreamReader reader) throws IOException {
+      while ((long)this.descriptorSize - (reader.getPosition() - this.descriptorOffset) > 0L) {
+         AudioByteManager childDescriptor = readDescriptor(reader);
+         this.childDescriptors.add(childDescriptor);
       }
    }
 
-   public List<AudioByteManager> method19562() {
-      return Collections.<AudioByteManager>unmodifiableList(this.field28307);
+   public List<AudioByteManager> getChildDescriptors() {
+      return Collections.unmodifiableList(this.childDescriptors);
    }
 
-   public int method19563() {
-      return this.field28304;
+   public int getDescriptorType() {
+      return this.descriptorType;
    }
 
-   public int method19564() {
-      return this.field28305;
+   public static class AudioDescriptor extends AudioByteManager {
+      private int audioFormat;
+      private boolean hasAdditionalData;
+      private String additionalData;
+
+      @Override
+      public void readData(DataStreamReader reader) throws IOException {
+         int header = (int) reader.readBits(2);
+         this.audioFormat = header >> 6 & 1023;
+         this.hasAdditionalData = (header >> 5 & 1) == 1;
+         if (this.hasAdditionalData) {
+            this.additionalData = reader.readString(this.descriptorSize - 2);
+         }
+
+         this.readChildDescriptors(reader);
+      }
+   }
+
+   public static class VideoDescriptor extends AudioByteManager {
+      private int videoFormat;
+      private boolean isProtected;
+      private boolean hasAdditionalMetadata;
+      private String metadata;
+      private int width;
+      private int height;
+      private int frameRate;
+      private int bitRate;
+      private int codec;
+
+      @Override
+      public void readData(DataStreamReader reader) throws IOException {
+         int header = (int) reader.readBits(2);
+         this.videoFormat = header >> 6 & 1023;
+         this.isProtected = (header >> 5 & 1) == 1;
+         this.hasAdditionalMetadata = (header >> 4 & 1) == 1;
+         if (!this.isProtected) {
+            this.width = reader.readInt();
+            this.height = reader.readInt();
+            this.frameRate = reader.readInt();
+            this.bitRate = reader.readInt();
+            this.codec = reader.readInt();
+         } else {
+            this.metadata = reader.readString(this.descriptorSize - 2);
+         }
+
+         this.readChildDescriptors(reader);
+      }
+   }
+
+   public static class TextDescriptor extends AudioByteManager {
+      private int languageCode;
+      private boolean isDefault;
+      private String subtitleText;
+
+      @Override
+      public void readData(DataStreamReader reader) throws IOException {
+         this.languageCode = (int) reader.readBits(2);
+         int header = reader.readInt();
+         this.isDefault = (header >> 7 & 1) == 1;
+         if (this.isDefault) {
+            this.subtitleText = reader.readString(header & 31);
+         }
+
+         this.readChildDescriptors(reader);
+      }
+   }
+
+   public static class MetaDescriptor extends AudioByteManager {
+      private int metadataType;
+      private int metadataLength;
+      private int metadataFlags;
+      private boolean isEncrypted;
+      private long encryptionKey;
+      private long initializationVector;
+
+      @Override
+      public void readData(DataStreamReader reader) throws IOException {
+         this.metadataType = reader.readInt();
+         int header = reader.readInt();
+         this.metadataLength = header >> 2 & 63;
+         this.isEncrypted = (header >> 1 & 1) == 1;
+         this.metadataFlags = (int) reader.readBits(3);
+         this.encryptionKey = reader.readBits(4);
+         this.initializationVector = reader.readBits(4);
+         this.readChildDescriptors(reader);
+      }
+   }
+
+   public static class BinaryDataDescriptor extends AudioByteManager {
+      private byte[] binaryData;
+
+      @Override
+      public void readData(DataStreamReader reader) throws IOException {
+         this.binaryData = new byte[this.descriptorSize];
+         reader.readBytes(this.binaryData);
+      }
+
+      public byte[] getBinaryData() {
+         return this.binaryData;
+      }
+   }
+
+   public static class UnknownDescriptor extends AudioByteManager {
+
+      @Override
+      public void readData(DataStreamReader reader) {
+      }
    }
 }

@@ -12,7 +12,7 @@ public class Class4985 extends Class4975 {
    }
 
    @Override
-   public void method15262(Class8827 var1) throws IOException {
+   public void method15262(DataStreamReader var1) throws IOException {
       super.method15262(var1);
       long var4 = -1L;
       if (this.field23026.method15437(1937011578L)) {
@@ -24,7 +24,7 @@ public class Class4985 extends Class4975 {
       this.field22876 = new int[(int)var4];
 
       for (int var6 = 0; (long)var6 < var4; var6++) {
-         byte var7 = (byte)var1.method31861();
+         byte var7 = (byte)var1.readInt();
          this.field22878[var6] = var7 & 3;
          this.field22877[var6] = var7 >> 2 & 3;
          this.field22876[var6] = var7 >> 4 & 3;

@@ -10,13 +10,13 @@ public class Class5027 extends Class5023 {
    }
 
    @Override
-   public void method15262(Class8827 var1) throws IOException {
+   public void method15262(DataStreamReader var1) throws IOException {
       this.method15384(var1);
-      int var4 = var1.method31861();
+      int var4 = var1.readInt();
       this.field22995 = new String[var4];
 
       for (int var5 = 0; var5 < var4; var5++) {
-         int var6 = var1.method31861();
+         int var6 = var1.readInt();
          this.field22995[var5] = var1.method31867(var6);
       }
    }

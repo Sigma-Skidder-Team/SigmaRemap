@@ -13,10 +13,10 @@ public class Class4988 extends Class4975 {
    }
 
    @Override
-   public void method15262(Class8827 var1) throws IOException {
+   public void method15262(DataStreamReader var1) throws IOException {
       super.method15262(var1);
-      this.field22894 = var1.method31863(4);
-      this.field22895 = var1.method31863(4);
+      this.field22894 = var1.readBits(4);
+      this.field22895 = var1.readBits(4);
       this.field22896 = (this.field22851 & 1) != 1 ? null : var1.method31866((int)this.method15430(var1), "UTF-8");
    }
 

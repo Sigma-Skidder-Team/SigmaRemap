@@ -15,16 +15,16 @@ public class Class6412 implements Class6413 {
    private static final Map<Long, Class<? extends Class5041>[]> field28041;
    private static final Map<Long, String[]> field28042;
 
-   public static Class5066 method19535(Class5066 var0, Class8827 var1) throws IOException {
-      long var4 = var1.method31871();
-      long var6 = var1.method31863(4);
-      long var8 = var1.method31863(4);
+   public static Class5066 method19535(Class5066 var0, DataStreamReader var1) throws IOException {
+      long var4 = var1.getPosition();
+      long var6 = var1.readBits(4);
+      long var8 = var1.readBits(4);
       if (var6 == 1L) {
-         var6 = var1.method31863(8);
+         var6 = var1.readBits(8);
       }
 
       if (var8 == 1970628964L) {
-         var1.method31870(16L);
+         var1.skipBytes(16L);
       }
 
       if (var0 != null) {
@@ -35,7 +35,7 @@ public class Class6412 implements Class6413 {
       }
 
       Logger.getLogger("MP4 Boxes").finest(method19538(var8));
-      Class5041 var10 = method19537(var8, var1.method31871());
+      Class5041 var10 = method19537(var8, var1.getPosition());
       var10.method15429(var0, var6, var8, var4);
       var10.method15262(var1);
       Class var11 = var10.getClass();
@@ -43,30 +43,30 @@ public class Class6412 implements Class6413 {
          var10.method15441(var1);
       }
 
-      long var14 = var10.method15433() + var10.method15432() - var1.method31871();
+      long var14 = var10.method15433() + var10.method15432() - var1.getPosition();
       if (var14 > 0L && !(var10 instanceof Class5068) && !(var10 instanceof Class5045) && !(var10 instanceof Class5069)) {
-         field28039.log(Level.INFO, "bytes left after reading box {0}: left: {1}, offset: {2}", new Object[]{method19538(var8), var14, var1.method31871()});
+         field28039.log(Level.INFO, "bytes left after reading box {0}: left: {1}, offset: {2}", new Object[]{method19538(var8), var14, var1.getPosition()});
       } else if (var14 < 0L) {
-         field28039.log(Level.SEVERE, "box {0} overread: {1} bytes, offset: {2}", new Object[]{method19538(var8), -var14, var1.method31871()});
+         field28039.log(Level.SEVERE, "box {0} overread: {1} bytes, offset: {2}", new Object[]{method19538(var8), -var14, var1.getPosition()});
       }
 
       if (var10.method15431() != 1835295092L || var1.method31874()) {
-         var1.method31870(var14);
+         var1.skipBytes(var14);
       }
 
       return var10;
    }
 
-   public static Class5066 method19536(Class8827 var0, Class<? extends Class5041> var1) throws IOException {
-      long var4 = var0.method31871();
-      long var6 = var0.method31863(4);
-      long var8 = var0.method31863(4);
+   public static Class5066 method19536(DataStreamReader var0, Class<? extends Class5041> var1) throws IOException {
+      long var4 = var0.getPosition();
+      long var6 = var0.readBits(4);
+      long var8 = var0.readBits(4);
       if (var6 == 1L) {
-         var6 = var0.method31863(8);
+         var6 = var0.readBits(8);
       }
 
       if (var8 == 1970628964L) {
-         var0.method31870(16L);
+         var0.skipBytes(16L);
       }
 
       Class5041 var10 = null;
@@ -80,8 +80,8 @@ public class Class6412 implements Class6413 {
       if (var10 != null) {
          var10.method15429(null, var6, var8, var4);
          var10.method15262(var0);
-         long var12 = var10.method15433() + var10.method15432() - var0.method31871();
-         var0.method31870(var12);
+         long var12 = var10.method15433() + var10.method15432() - var0.getPosition();
+         var0.skipBytes(var12);
       }
 
       return var10;

@@ -14,15 +14,15 @@ public class Class5035 extends Class4975 {
    }
 
    @Override
-   public void method15262(Class8827 var1) throws IOException {
+   public void method15262(DataStreamReader var1) throws IOException {
       super.method15262(var1);
       int var4 = this.field22850 != 1 ? 4 : 8;
-      this.field23007 = var1.method31863(var4);
-      this.field23008 = var1.method31863(var4);
-      this.field23009 = var1.method31863(4);
-      this.field23010 = Class6170.method19069(var1.method31863(var4));
-      this.field23011 = Class6170.method19068(var1.method31863(2));
-      var1.method31870(2L);
+      this.field23007 = var1.readBits(var4);
+      this.field23008 = var1.readBits(var4);
+      this.field23009 = var1.readBits(4);
+      this.field23010 = Class6170.method19069(var1.readBits(var4));
+      this.field23011 = Class6170.method19068(var1.readBits(2));
+      var1.skipBytes(2L);
    }
 
    public long method15409() {

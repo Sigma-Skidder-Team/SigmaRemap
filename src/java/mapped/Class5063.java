@@ -18,13 +18,13 @@ public class Class5063 extends Class5056 {
    }
 
    @Override
-   public void method15262(Class8827 var1) throws IOException {
-      long var4 = var1.method31863(2);
+   public void method15262(DataStreamReader var1) throws IOException {
+      long var4 = var1.readBits(2);
       this.field23076 = (int)(var4 >> 3 & 8191L);
       this.field23077 = (int)(var4 & 7L);
 
       for (int var6 = 0; var6 < this.field23077; var6++) {
-         var4 = var1.method31863(3);
+         var4 = var1.readBits(3);
          this.field23078[var6] = (int)(var4 >> 22 & 3L);
          this.field23079[var6] = (int)(var4 >> 17 & 31L);
          this.field23080[var6] = (int)(var4 >> 12 & 31L);
@@ -32,7 +32,7 @@ public class Class5063 extends Class5056 {
          this.field23084[var6] = (var4 >> 5 & 1L) == 1L;
          this.field23082[var6] = (int)(var4 >> 1 & 15L);
          if (this.field23082[var6] > 0) {
-            var4 = var4 << 8 | (long)var1.method31861();
+            var4 = var4 << 8 | (long)var1.readInt();
             this.field23083[var6] = (int)(var4 & 511L);
          }
       }

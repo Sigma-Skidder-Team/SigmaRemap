@@ -204,7 +204,7 @@ public class GameSettings {
    public boolean field44685 = false;
    public boolean field44686 = false;
    public double field44687 = 1.0;
-   public int field44688 = 0;
+   public int ofAaLevel = 0;
    public int field44689 = 1;
    public int field44690 = 0;
    public double field44691 = 0.0;
@@ -916,15 +916,15 @@ public class GameSettings {
          }
 
          int[] var5 = new int[]{0, 2, 4, 6, 8, 12, 16};
-         this.field44688 = 0;
+         this.ofAaLevel = 0;
 
          for (int var6 = 0; var6 < var5.length; var6++) {
             if (var4 >= var5[var6]) {
-               this.field44688 = var5[var6];
+               this.ofAaLevel = var5[var6];
             }
          }
 
-         this.field44688 = Config.method26830(this.field44688, 0, 16);
+         this.ofAaLevel = Config.method26830(this.ofAaLevel, 0, 16);
       }
 
       if (var1 == AbstractOption.field25423) {
@@ -957,7 +957,7 @@ public class GameSettings {
       } else if (var1 == AbstractOption.field25386) {
          return this.field44687;
       } else if (var1 == AbstractOption.field25422) {
-         return (double)this.field44688;
+         return (double)this.ofAaLevel;
       } else if (var1 == AbstractOption.field25423) {
          return (double)this.field44689;
       } else if (var1 == AbstractOption.field25376) {
@@ -1002,7 +1002,7 @@ public class GameSettings {
 
       if (var1 == AbstractOption.field25403) {
          this.ofSmoothWorld = !this.ofSmoothWorld;
-         Config.method26795();
+         Config.updateThreadPriorities();
       }
 
       if (var1 == AbstractOption.field25378) {
@@ -1585,11 +1585,11 @@ public class GameSettings {
          }
       } else if (var1 == AbstractOption.field25422) {
          String var10 = "";
-         if (this.field44688 != Config.method26891()) {
+         if (this.ofAaLevel != Config.getAntialiasingLevel()) {
             var10 = " (" + Class8043.method27619("of.general.restart") + ")";
          }
 
-         return this.field44688 == 0 ? var2 + Class8043.method27623() + var10 : var2 + this.field44688 + var10;
+         return this.ofAaLevel == 0 ? var2 + Class8043.method27623() + var10 : var2 + this.ofAaLevel + var10;
       } else if (var1 == AbstractOption.field25423) {
          return this.field44689 == 1 ? var2 + Class8043.method27623() : var2 + this.field44689;
       } else if (var1 == AbstractOption.field25410) {
@@ -1888,8 +1888,8 @@ public class GameSettings {
                }
 
                if (var4[0].equals("ofAaLevel") && var4.length >= 2) {
-                  this.field44688 = Integer.valueOf(var4[1]);
-                  this.field44688 = Config.method26830(this.field44688, 0, 16);
+                  this.ofAaLevel = Integer.valueOf(var4[1]);
+                  this.ofAaLevel = Config.method26830(this.ofAaLevel, 0, 16);
                }
 
                if (var4[0].equals("ofAfLevel") && var4.length >= 2) {
@@ -2068,7 +2068,7 @@ public class GameSettings {
          var1.println("ofChunkUpdates:" + this.field44705);
          var1.println("ofChunkUpdatesDynamic:" + this.field44706);
          var1.println("ofTime:" + this.field44707);
-         var1.println("ofAaLevel:" + this.field44688);
+         var1.println("ofAaLevel:" + this.ofAaLevel);
          var1.println("ofAfLevel:" + this.field44689);
          var1.println("ofProfiler:" + this.field44698);
          var1.println("ofBetterSnow:" + this.field44708);
@@ -2174,7 +2174,7 @@ public class GameSettings {
       this.field44729 = 0;
       this.field44730 = true;
       this.field44687 = 1.0;
-      this.field44688 = 0;
+      this.ofAaLevel = 0;
       this.field44689 = 1;
       this.field44690 = 0;
       this.field44691 = 0.0;

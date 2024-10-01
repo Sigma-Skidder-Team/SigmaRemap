@@ -99,7 +99,9 @@ public class ThumbnailUtil {
         try {
             fullUrl = StringEscapeUtils.unescapeHtml4(URLDecoder.decode(url, StandardCharsets.UTF_8.toString())).trim();
         } catch (Exception exception) {
-            throw new RuntimeException(exception);
+            System.out.println(exception.getMessage());
+            System.out.println(url);
+            return "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
         }
 
         return fullUrl;

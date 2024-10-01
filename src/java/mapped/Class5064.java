@@ -15,8 +15,8 @@ public class Class5064 extends Class5056 {
    }
 
    @Override
-   public void method15262(Class8827 var1) throws IOException {
-      long var4 = var1.method31863(3);
+   public void method15262(DataStreamReader var1) throws IOException {
+      long var4 = var1.readBits(3);
       this.field23085 = (int)(var4 >> 22 & 3L);
       this.field23086 = (int)(var4 >> 17 & 31L);
       this.field23087 = (int)(var4 >> 14 & 7L);

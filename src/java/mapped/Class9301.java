@@ -18,5 +18,5 @@ public abstract class Class9301 {
       return var3;
    }
 
-   public abstract void method35101(Class8827 var1) throws IOException;
+   public abstract void method35101(DataStreamReader var1) throws IOException;
 }

@@ -8,6 +8,6 @@ public class Class5074 extends Class5072 {
    }
 
    @Override
-   public void method15262(Class8827 var1) throws IOException {
+   public void method15262(DataStreamReader var1) throws IOException {
    }
 }

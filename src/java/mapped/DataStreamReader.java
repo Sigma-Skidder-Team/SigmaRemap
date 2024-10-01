@@ -7,7 +7,7 @@ import java.io.RandomAccessFile;
 import java.nio.charset.Charset;
 import java.util.Arrays;
 
-public class Class8827 {
+public class DataStreamReader {
    public static final int field39792 = 255;
    public static final int field39793 = 65535;
    public static final String field39794 = "UTF-8";
@@ -18,20 +18,20 @@ public class Class8827 {
    private int field39799;
    private long field39800;
 
-   public Class8827(InputStream var1) {
+   public DataStreamReader(InputStream var1) {
       this.field39797 = var1;
       this.field39798 = null;
       this.field39799 = -1;
       this.field39800 = 0L;
    }
 
-   public Class8827(RandomAccessFile var1) {
+   public DataStreamReader(RandomAccessFile var1) {
       this.field39798 = var1;
       this.field39797 = null;
       this.field39799 = -1;
    }
 
-   public int method31861() throws IOException {
+   public int readInt() throws IOException {
       int var3 = 0;
       if (this.field39799 < 0) {
          if (this.field39797 == null) {
@@ -85,7 +85,7 @@ public class Class8827 {
       this.field39800 += (long)var6;
    }
 
-   public long method31863(int var1) throws IOException {
+   public long readBits(int var1) throws IOException {
       if (var1 >= 1 && var1 <= 8) {
          byte[] var4 = new byte[var1];
          this.method31862(var4, 0, var1);
@@ -101,17 +101,17 @@ public class Class8827 {
       }
    }
 
-   public void method31864(byte[] var1) throws IOException {
+   public void readBytes(byte[] var1) throws IOException {
       this.method31862(var1, 0, var1.length);
    }
 
-   public String method31865(int var1) throws IOException {
+   public String readString(int var1) throws IOException {
       int var4 = -1;
       int var5 = 0;
 
       char[] var6;
       for (var6 = new char[var1]; var5 < var1; var5++) {
-         var4 = this.method31861();
+         var4 = this.readInt();
          var6[var5] = (char)var4;
       }
 
@@ -143,7 +143,7 @@ public class Class8827 {
       int var7 = 0;
 
       while (var6 < var1 && var7 != -1) {
-         var7 = this.method31861();
+         var7 = this.readInt();
          if (var7 != -1) {
             var5[var6++] = (byte)var7;
          }
@@ -155,7 +155,7 @@ public class Class8827 {
    public double method31869(int var1, int var2) throws IOException {
       int var5 = var1 + var2;
       if (var5 % 8 == 0) {
-         long var6 = this.method31863(var5 / 8);
+         long var6 = this.readBits(var5 / 8);
          double var8 = Math.pow(2.0, (double)var2);
          return (double)var6 / var8;
       } else {
@@ -163,7 +163,7 @@ public class Class8827 {
       }
    }
 
-   public void method31870(long var1) throws IOException {
+   public void skipBytes(long var1) throws IOException {
       long var5 = 0L;
       if (this.field39799 >= 0 && var1 > 0L) {
          this.field39799 = -1;
@@ -183,7 +183,7 @@ public class Class8827 {
       this.field39800 += var5;
    }
 
-   public long method31871() throws IOException {
+   public long getPosition() throws IOException {
       long var3 = -1L;
       if (this.field39797 == null) {
          if (this.field39798 != null) {

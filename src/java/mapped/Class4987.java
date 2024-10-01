@@ -18,19 +18,19 @@ public class Class4987 extends Class4975 {
    }
 
    @Override
-   public void method15262(Class8827 var1) throws IOException {
+   public void method15262(DataStreamReader var1) throws IOException {
       super.method15262(var1);
-      this.field22884 = var1.method31863(4);
-      var1.method31870(1L);
-      this.field22888 = var1.method31861();
-      this.field22889 = var1.method31861();
-      this.field22890 = var1.method31861();
-      this.field22891 = var1.method31861();
-      this.field22892 = var1.method31861();
-      var1.method31870(2L);
-      this.field22885 = var1.method31863(4);
-      this.field22886 = var1.method31863(4);
-      this.field22887 = var1.method31863(4);
+      this.field22884 = var1.readBits(4);
+      var1.skipBytes(1L);
+      this.field22888 = var1.readInt();
+      this.field22889 = var1.readInt();
+      this.field22890 = var1.readInt();
+      this.field22891 = var1.readInt();
+      this.field22892 = var1.readInt();
+      var1.skipBytes(2L);
+      this.field22885 = var1.readBits(4);
+      this.field22886 = var1.readBits(4);
+      this.field22887 = var1.readBits(4);
    }
 
    public long method15299() {

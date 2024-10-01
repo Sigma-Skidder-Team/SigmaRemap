@@ -12,8 +12,8 @@ public class Class4975 extends Class5041 {
    }
 
    @Override
-   public void method15262(Class8827 var1) throws IOException {
-      this.field22850 = var1.method31861();
-      this.field22851 = (int)var1.method31863(3);
+   public void method15262(DataStreamReader var1) throws IOException {
+      this.field22850 = var1.readInt();
+      this.field22851 = (int)var1.readBits(3);
    }
 }

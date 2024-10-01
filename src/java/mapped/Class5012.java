@@ -10,14 +10,14 @@ public class Class5012 extends Class4975 {
    }
 
    @Override
-   public void method15262(Class8827 var1) throws IOException {
+   public void method15262(DataStreamReader var1) throws IOException {
       super.method15262(var1);
       int var4 = this.field23024 != 1668232756L ? 4 : 8;
-      int var5 = (int)var1.method31863(4);
+      int var5 = (int)var1.readBits(4);
       this.field22964 = new long[var5];
 
       for (int var6 = 0; var6 < var5; var6++) {
-         this.field22964[var6] = var1.method31863(var4);
+         this.field22964[var6] = var1.readBits(var4);
       }
    }
 

@@ -13,12 +13,12 @@ public class IPMPControlInfo extends Class4975 {
    }
 
    @Override
-   public void method15262(Class8827 var1) throws IOException {
+   public void method15262(DataStreamReader var1) throws IOException {
       super.method15262(var1);
       this.field22938 = new ArrayList<>();
 
       while (this.method15430(var1) > 0L) {
-         AudioByteManager var4 = Class6442.method19559(var1);
+         AudioByteManager var4 = AudioByteManager.AudioDescriptor.readDescriptor(var1);
          this.field22938.add(var4);
       }
    }

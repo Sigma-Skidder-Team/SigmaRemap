@@ -42,7 +42,7 @@ public class Class9724 {
          var0.addDetail("Render Distance Chunks", "" + Config.method26942());
          var0.addDetail("Mipmaps", "" + Config.method26800());
          var0.addDetail("Anisotropic Filtering", "" + Config.method26889());
-         var0.addDetail("Antialiasing", "" + Config.method26891());
+         var0.addDetail("Antialiasing", "" + Config.getAntialiasingLevel());
          var0.addDetail("Multitexture", "" + Config.method26894());
       }
 

@@ -22,22 +22,22 @@ public class Class5089 extends Class4975 {
    }
 
    @Override
-   public void method15262(Class8827 var1) throws IOException {
+   public void method15262(DataStreamReader var1) throws IOException {
       super.method15262(var1);
       this.field23162 = (this.field22851 & 1) == 1;
       this.field23163 = (this.field22851 & 2) == 2;
       this.field23164 = (this.field22851 & 4) == 4;
       int var4 = this.field22850 != 1 ? 4 : 8;
-      this.field23165 = var1.method31863(var4);
-      this.field23166 = var1.method31863(var4);
-      this.field23168 = (int)var1.method31863(4);
-      var1.method31870(4L);
-      this.field23167 = Class6170.method19069(var1.method31863(var4));
-      var1.method31870(8L);
-      this.field23169 = (int)var1.method31863(2);
-      this.field23170 = (int)var1.method31863(2);
+      this.field23165 = var1.readBits(var4);
+      this.field23166 = var1.readBits(var4);
+      this.field23168 = (int)var1.readBits(4);
+      var1.skipBytes(4L);
+      this.field23167 = Class6170.method19069(var1.readBits(var4));
+      var1.skipBytes(8L);
+      this.field23169 = (int)var1.readBits(2);
+      this.field23170 = (int)var1.readBits(2);
       this.field23171 = var1.method31869(8, 8);
-      var1.method31870(2L);
+      var1.skipBytes(2L);
 
       for (int var5 = 0; var5 < 9; var5++) {
          if (var5 >= 6) {

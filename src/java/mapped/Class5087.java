@@ -12,11 +12,11 @@ public class Class5087 extends Class4975 {
    }
 
    @Override
-   public void method15262(Class8827 var1) throws IOException {
+   public void method15262(DataStreamReader var1) throws IOException {
       super.method15262(var1);
-      this.field23147 = var1.method31863(4);
-      this.field23148 = var1.method31863(4);
-      this.field23149 = var1.method31861();
+      this.field23147 = var1.readBits(4);
+      this.field23148 = var1.readBits(4);
+      this.field23149 = var1.readInt();
    }
 
    public long method15545() {

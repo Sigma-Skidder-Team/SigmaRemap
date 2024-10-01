@@ -24,13 +24,13 @@ public class Class5070 extends Class5041 {
    }
 
    @Override
-   public void method15262(Class8827 var1) throws IOException {
-      this.field23106 = var1.method31865(4);
-      this.field23107 = var1.method31865(4);
+   public void method15262(DataStreamReader var1) throws IOException {
+      this.field23106 = var1.readString(4);
+      this.field23107 = var1.readString(4);
       this.field23108 = new String[(int)this.method15430(var1) / 4];
 
       for (int var4 = 0; var4 < this.field23108.length; var4++) {
-         this.field23108[var4] = var1.method31865(4);
+         this.field23108[var4] = var1.readString(4);
       }
    }
 

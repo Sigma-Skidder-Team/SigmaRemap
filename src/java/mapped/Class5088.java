@@ -21,19 +21,19 @@ public class Class5088 extends Class4975 {
    }
 
    @Override
-   public void method15262(Class8827 var1) throws IOException {
+   public void method15262(DataStreamReader var1) throws IOException {
       super.method15262(var1);
-      this.field23150 = var1.method31863(4);
+      this.field23150 = var1.readBits(4);
       this.field23151 = (this.field22851 & 1) == 1;
-      this.field23157 = !this.field23151 ? 0L : var1.method31863(8);
+      this.field23157 = !this.field23151 ? 0L : var1.readBits(8);
       this.field23152 = (this.field22851 & 2) == 2;
-      this.field23158 = !this.field23152 ? 0L : var1.method31863(4);
+      this.field23158 = !this.field23152 ? 0L : var1.readBits(4);
       this.field23153 = (this.field22851 & 8) == 8;
-      this.field23159 = !this.field23153 ? 0L : var1.method31863(4);
+      this.field23159 = !this.field23153 ? 0L : var1.readBits(4);
       this.field23154 = (this.field22851 & 16) == 16;
-      this.field23160 = !this.field23154 ? 0L : var1.method31863(4);
+      this.field23160 = !this.field23154 ? 0L : var1.readBits(4);
       this.field23155 = (this.field22851 & 32) == 32;
-      this.field23161 = !this.field23155 ? 0L : var1.method31863(4);
+      this.field23161 = !this.field23155 ? 0L : var1.readBits(4);
       this.field23156 = (this.field22851 & 65536) == 65536;
    }
 

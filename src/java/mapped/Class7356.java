@@ -6,7 +6,7 @@ public class Class7356 extends Class7354 {
    private final Class5047 field31488;
    private Class2268 field31489;
 
-   public Class7356(Class5066 var1, Class8827 var2) {
+   public Class7356(Class5066 var1, DataStreamReader var2) {
       super(var1, var2);
       Class5066 var5 = var1.method15438(1835297121L);
       Class5066 var6 = var5.method15438(1835626086L);

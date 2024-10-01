@@ -19,24 +19,24 @@ public class Class4977 extends Class4975 {
    }
 
    @Override
-   public void method15262(Class8827 var1) throws IOException {
+   public void method15262(DataStreamReader var1) throws IOException {
       super.method15262(var1);
-      this.field22852 = (int)var1.method31863(2);
-      this.field22853 = (int)var1.method31863(2);
-      var1.method31870(1L);
-      this.field22854 = var1.method31861();
-      this.field22855 = (int)var1.method31863(2);
-      this.field22856 = (int)var1.method31863(2);
-      this.field22857 = (int)var1.method31863(2);
-      this.field22858 = (int)var1.method31863(2);
+      this.field22852 = (int)var1.readBits(2);
+      this.field22853 = (int)var1.readBits(2);
+      var1.skipBytes(1L);
+      this.field22854 = var1.readInt();
+      this.field22855 = (int)var1.readBits(2);
+      this.field22856 = (int)var1.readBits(2);
+      this.field22857 = (int)var1.readBits(2);
+      this.field22858 = (int)var1.readBits(2);
       this.field22859 = new String(Class8757.method31592(var1.method31868((int)this.method15430(var1), 0)));
-      int var4 = (int)var1.method31863(2);
+      int var4 = (int)var1.readBits(2);
       this.field22860 = new int[var4];
       this.field22861 = new long[var4];
 
       for (int var5 = 0; var5 < var4; var5++) {
-         this.field22860[var5] = (int)var1.method31863(2);
-         this.field22861[var5] = (long)((int)var1.method31863(4));
+         this.field22860[var5] = (int)var1.readBits(2);
+         this.field22861[var5] = (long)((int)var1.readBits(4));
       }
    }
 

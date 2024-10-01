@@ -11,14 +11,14 @@ public class Class5019 extends Class4975 {
    }
 
    @Override
-   public void method15262(Class8827 var1) throws IOException {
+   public void method15262(DataStreamReader var1) throws IOException {
       if (this.field23026.method15431() != 1969517665L) {
          this.method15441(var1);
       } else {
          super.method15262(var1);
-         long var4 = var1.method31863(4);
-         long var6 = var1.method31863(4);
-         this.field22978 = Class6170.method19068(var1.method31863(2));
+         long var4 = var1.readBits(4);
+         long var6 = var1.readBits(4);
+         this.field22978 = Class6170.method19068(var1.readBits(2));
          byte[] var8 = var1.method31868((int)this.method15430(var1), 0);
          this.field22979 = new String(var8, "UTF-8");
       }

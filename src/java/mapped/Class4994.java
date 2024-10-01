@@ -22,17 +22,17 @@ public class Class4994 extends Class4975 {
    }
 
    @Override
-   public void method15262(Class8827 var1) throws IOException {
+   public void method15262(DataStreamReader var1) throws IOException {
       super.method15262(var1);
-      this.field22913 = (int)var1.method31863(4);
+      this.field22913 = (int)var1.readBits(4);
       this.field22914 = (this.field22851 & 1) == 1;
       if (this.field22914) {
-         this.field22916 = var1.method31863(4);
+         this.field22916 = var1.readBits(4);
       }
 
       this.field22915 = (this.field22851 & 4) == 4;
       if (this.field22915) {
-         this.field22917 = var1.method31863(4);
+         this.field22917 = var1.readBits(4);
       }
 
       this.field22918 = (this.field22851 & 256) == 256;
@@ -57,19 +57,19 @@ public class Class4994 extends Class4975 {
 
       for (int var4 = 0; var4 < this.field22913 && this.method15430(var1) > 0L; var4++) {
          if (this.field22918) {
-            this.field22922[var4] = var1.method31863(4);
+            this.field22922[var4] = var1.readBits(4);
          }
 
          if (this.field22919) {
-            this.field22923[var4] = var1.method31863(4);
+            this.field22923[var4] = var1.readBits(4);
          }
 
          if (this.field22920) {
-            this.field22924[var4] = var1.method31863(4);
+            this.field22924[var4] = var1.readBits(4);
          }
 
          if (this.field22921) {
-            this.field22925[var4] = var1.method31863(4);
+            this.field22925[var4] = var1.readBits(4);
          }
       }
    }

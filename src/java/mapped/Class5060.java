@@ -16,28 +16,28 @@ public class Class5060 extends Class5056 {
    }
 
    @Override
-   public void method15262(Class8827 var1) throws IOException {
-      this.field23065 = var1.method31861();
-      this.field23066 = var1.method31861();
-      this.field23069 = (byte)var1.method31861();
-      this.field23067 = var1.method31861();
-      this.field23068 = (var1.method31861() & 3) + 1;
-      int var4 = var1.method31861() & 31;
+   public void method15262(DataStreamReader var1) throws IOException {
+      this.field23065 = var1.readInt();
+      this.field23066 = var1.readInt();
+      this.field23069 = (byte)var1.readInt();
+      this.field23067 = var1.readInt();
+      this.field23068 = (var1.readInt() & 3) + 1;
+      int var4 = var1.readInt() & 31;
       this.field23070 = new byte[var4][];
 
       for (int var5 = 0; var5 < var4; var5++) {
-         int var7 = (int)var1.method31863(2);
+         int var7 = (int)var1.readBits(2);
          this.field23070[var5] = new byte[var7];
-         var1.method31864(this.field23070[var5]);
+         var1.readBytes(this.field23070[var5]);
       }
 
-      int var8 = var1.method31861();
+      int var8 = var1.readInt();
       this.field23071 = new byte[var8][];
 
       for (int var6 = 0; var6 < var8; var6++) {
-         int var9 = (int)var1.method31863(2);
+         int var9 = (int)var1.readBits(2);
          this.field23071[var6] = new byte[var9];
-         var1.method31864(this.field23071[var6]);
+         var1.readBytes(this.field23071[var6]);
       }
    }
 

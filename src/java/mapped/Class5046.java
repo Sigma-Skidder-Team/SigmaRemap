@@ -10,9 +10,9 @@ public abstract class Class5046 extends Class5041 {
    }
 
    @Override
-   public void method15262(Class8827 var1) throws IOException {
-      var1.method31870(6L);
-      this.field23033 = var1.method31863(2);
+   public void method15262(DataStreamReader var1) throws IOException {
+      var1.skipBytes(6L);
+      this.field23033 = var1.readBits(2);
    }
 
    public long method15448() {

@@ -66,11 +66,11 @@ public class Config {
    public static int field34153 = -1;
    public static boolean field34154 = false;
    public static boolean field34155 = false;
-   private static GameSettings field34156 = null;
+   private static GameSettings gameSettings = null;
    private static Minecraft field34157 = Minecraft.getInstance();
    private static boolean field34158 = false;
-   private static Thread field34159 = null;
-   private static int field34160 = 0;
+   private static Thread minecraftThread = null;
+   private static int antialiasingLevel = 0;
    private static int field34161 = 0;
    public static boolean field34162 = false;
    public static boolean field34163 = false;
@@ -113,22 +113,22 @@ public class Config {
    }
 
    public static void method26779(GameSettings var0) {
-      if (field34156 == null) {
-         field34156 = var0;
+      if (gameSettings == null) {
+         gameSettings = var0;
          method26936();
          ReflectorForge.putLaunchBlackboard("optifine.ForgeSplashCompatible", Boolean.TRUE);
-         field34160 = field34156.field44688;
+         antialiasingLevel = gameSettings.ofAaLevel;
       }
    }
 
    public static void method26780() {
-      method26781();
-      field34159 = Thread.currentThread();
-      method26795();
-      Shaders.method32991(Minecraft.getInstance());
+      checkInitialized();
+      minecraftThread = Thread.currentThread();
+      updateThreadPriorities();
+      Shaders.startup(Minecraft.getInstance());
    }
 
-   public static void method26781() {
+   public static void checkInitialized() {
       if (!field34158 && Minecraft.getInstance().getMainWindow() != null) {
          field34158 = true;
          method26782();
@@ -378,16 +378,16 @@ public class Config {
       }
    }
 
-   public static void method26795() {
+   public static void updateThreadPriorities() {
       method26936();
       if (!isSingleProcessor()) {
-         field34159.setPriority(10);
+         minecraftThread.setPriority(10);
          method26796("Server thread", 5);
       } else if (!method26938()) {
-         field34159.setPriority(5);
+         minecraftThread.setPriority(5);
          method26796("Server thread", 5);
       } else {
-         field34159.setPriority(10);
+         minecraftThread.setPriority(10);
          method26796("Server thread", 1);
       }
    }
@@ -415,7 +415,7 @@ public class Config {
    }
 
    public static boolean method26797() {
-      return Thread.currentThread() == field34159;
+      return Thread.currentThread() == minecraftThread;
    }
 
    private static void method26798() {
@@ -424,15 +424,15 @@ public class Config {
    }
 
    public static boolean method26799() {
-      return field34156.field44600 > 0;
+      return gameSettings.field44600 > 0;
    }
 
    public static int method26800() {
-      return field34156.field44600;
+      return gameSettings.field44600;
    }
 
    public static int method26801() {
-      switch (field34156.ofMipmapType) {
+      switch (gameSettings.ofMipmapType) {
          case 0:
             return 9986;
          case 1:
@@ -464,23 +464,23 @@ public class Config {
    }
 
    public static boolean isFogFancy() {
-      return method26785() ? field34156.ofFogType == 2 : false;
+      return method26785() ? gameSettings.ofFogType == 2 : false;
    }
 
    public static boolean isFogFast() {
-      return field34156.ofFogType == 1;
+      return gameSettings.ofFogType == 1;
    }
 
    public static boolean method26806() {
-      return field34156.ofFogType == 3;
+      return gameSettings.ofFogType == 3;
    }
 
    public static boolean method26807() {
-      return field34156.ofFogType != 3;
+      return gameSettings.ofFogType != 3;
    }
 
    public static float method26808() {
-      return field34156.ofFogStart;
+      return gameSettings.ofFogStart;
    }
 
    public static void method26809(String var0) {
@@ -514,50 +514,50 @@ public class Config {
    }
 
    public static int method26816() {
-      return field34156.field44705;
+      return gameSettings.field44705;
    }
 
    public static boolean method26817() {
-      return field34156.field44706;
+      return gameSettings.field44706;
    }
 
    public static boolean method26818() {
-      return field34156.graphicFanciness != GraphicsFanciness.FAST;
+      return gameSettings.graphicFanciness != GraphicsFanciness.FAST;
    }
 
    public static boolean method26819() {
-      return field34156.graphicFanciness == GraphicsFanciness.FABULOUS;
+      return gameSettings.graphicFanciness == GraphicsFanciness.FABULOUS;
    }
 
    public static boolean method26820() {
-      return field34156.field44693 != 0 ? field34156.field44693 == 2 : method26818();
+      return gameSettings.field44693 != 0 ? gameSettings.field44693 == 2 : method26818();
    }
 
    public static boolean method26821() {
-      return field34156.field44693 == 3;
+      return gameSettings.field44693 == 3;
    }
 
    public static boolean method26822() {
-      if (field34156.field44690 == 0) {
+      if (gameSettings.field44690 == 0) {
          if (isShaders() && ! Shaders.field40900.method27390()) {
             return Shaders.field40900.method27392();
          } else {
             return field34164 == 0 ? method26818() : field34164 == 2;
          }
       } else {
-         return field34156.field44690 == 2;
+         return gameSettings.field44690 == 2;
       }
    }
 
    public static boolean method26823() {
-      if (field34156.field44690 == 0) {
+      if (gameSettings.field44690 == 0) {
          if (isShaders() && ! Shaders.field40900.method27390()) {
             return Shaders.field40900.method27393();
          } else {
             return field34164 == 0 ? false : field34164 == 3;
          }
       } else {
-         return field34156.field44690 == 3;
+         return gameSettings.field44690 == 3;
       }
    }
 
@@ -602,19 +602,19 @@ public class Config {
    }
 
    public static boolean method26826() {
-      return field34156.field44692 != 0 ? field34156.field44692 != 1 : method26818();
+      return gameSettings.field44692 != 0 ? gameSettings.field44692 != 1 : method26818();
    }
 
    public static boolean method26827() {
-      return field34156.field44692 == 4;
+      return gameSettings.field44692 == 4;
    }
 
    public static boolean method26828() {
-      return field34156.field44692 != 0 ? field34156.field44692 == 4 : !method26818();
+      return gameSettings.field44692 != 0 ? gameSettings.field44692 == 4 : !method26818();
    }
 
    public static boolean method26829() {
-      return field34156.field44694 != 0 ? field34156.field44694 == 2 : method26818();
+      return gameSettings.field44694 != 0 ? gameSettings.field44694 == 2 : method26818();
    }
 
    public static int method26830(int var0, int var1, int var2) {
@@ -658,71 +658,71 @@ public class Config {
    }
 
    public static boolean method26835() {
-      return field34156.field44731 != 2;
+      return gameSettings.field44731 != 2;
    }
 
    public static boolean method26836() {
-      return field34156.field44731 == 1;
+      return gameSettings.field44731 == 1;
    }
 
    public static boolean method26837() {
-      return field34156.field44734;
+      return gameSettings.field44734;
    }
 
    public static boolean method26838() {
-      return field34156.field44732 != 2;
+      return gameSettings.field44732 != 2;
    }
 
    public static boolean method26839() {
-      return field34156.field44732 == 1;
+      return gameSettings.field44732 == 1;
    }
 
    public static boolean method26840() {
-      return field34156.field44733;
+      return gameSettings.field44733;
    }
 
    public static boolean method26841() {
-      return field34156.field44735;
+      return gameSettings.field44735;
    }
 
    public static boolean method26842() {
-      return field34156.field44736;
+      return gameSettings.field44736;
    }
 
    public static boolean method26843() {
-      return field34156.field44737;
+      return gameSettings.field44737;
    }
 
    public static boolean method26844() {
-      return field34156.field44738;
+      return gameSettings.field44738;
    }
 
    public static boolean method26845() {
-      return field34156.field44739;
+      return gameSettings.field44739;
    }
 
    public static boolean method26846() {
-      return field34156.field44740;
+      return gameSettings.field44740;
    }
 
    public static boolean method26847() {
-      return field34156.field44741;
+      return gameSettings.field44741;
    }
 
    public static boolean method26848() {
-      return field34156.field44742;
+      return gameSettings.field44742;
    }
 
    public static boolean method26849() {
-      return field34156.field44743;
+      return gameSettings.field44743;
    }
 
    public static boolean method26850() {
-      return field34156.field44744;
+      return gameSettings.field44744;
    }
 
    public static float method26851() {
-      return isShaders() && Shaders.field40935 >= 0.0F ? Shaders.field40935 : (float)field34156.field44687;
+      return isShaders() && Shaders.field40935 >= 0.0F ? Shaders.field40935 : (float) gameSettings.field44687;
    }
 
    public static String method26852(List var0) {
@@ -931,23 +931,23 @@ public class Config {
    }
 
    public static boolean method26876() {
-      return field34156.field44695 != 3;
+      return gameSettings.field44695 != 3;
    }
 
    public static boolean method26877() {
-      return field34156.field44695 == 2;
+      return gameSettings.field44695 == 2;
    }
 
    public static boolean method26878() {
-      return field34156.field44700;
+      return gameSettings.field44700;
    }
 
    public static boolean method26879() {
-      return field34156.field44701;
+      return gameSettings.field44701;
    }
 
    public static boolean method26880() {
-      return field34156.field44703;
+      return gameSettings.field44703;
    }
 
    public static boolean method26881() {
@@ -962,12 +962,12 @@ public class Config {
       if (isShaders() && ! Shaders.method33000()) {
          return false;
       } else {
-         return field34156.field44704 != 0 ? field34156.field44704 == 2 : method26818();
+         return gameSettings.field44704 != 0 ? gameSettings.field44704 == 2 : method26818();
       }
    }
 
    public static boolean method26884() {
-      return field34156.field44702;
+      return gameSettings.field44702;
    }
 
    public static void method26885(long var0) {
@@ -975,15 +975,15 @@ public class Config {
    }
 
    public static boolean method26886() {
-      return field34156.field44707 == 1;
+      return gameSettings.field44707 == 1;
    }
 
    public static boolean method26887() {
-      return field34156.field44707 == 0;
+      return gameSettings.field44707 == 0;
    }
 
    public static boolean method26888() {
-      return field34156.field44707 == 2;
+      return gameSettings.field44707 == 2;
    }
 
    public static int method26889() {
@@ -994,20 +994,20 @@ public class Config {
       return method26889() > 1;
    }
 
-   public static int method26891() {
-      return 0;
+   public static int getAntialiasingLevel() {
+      return antialiasingLevel;
    }
 
    public static boolean isAntialiasing() {
-      return method26891() > 0;
+      return getAntialiasingLevel() > 0;
    }
 
    public static boolean method26893() {
-      return method26928().field44688 > 0;
+      return method26928().ofAaLevel > 0;
    }
 
    public static boolean method26894() {
-      return method26889() <= 1 ? method26891() > 0 : true;
+      return method26889() <= 1 ? getAntialiasingLevel() > 0 : true;
    }
 
    public static boolean method26895(int var0, int var1, int var2) {
@@ -1019,11 +1019,11 @@ public class Config {
    }
 
    public static boolean method26897() {
-      return field34156.field44745;
+      return gameSettings.field44745;
    }
 
    public static boolean method26898() {
-      return field34156.field44708;
+      return gameSettings.field44708;
    }
 
    public static int method26899(String var0, int var1) {
@@ -1095,19 +1095,19 @@ public class Config {
    }
 
    public static boolean method26904() {
-      return field34156.field44746;
+      return gameSettings.field44746;
    }
 
    public static boolean method26905() {
-      return field34156.field44747;
+      return gameSettings.field44747;
    }
 
    public static boolean method26906() {
-      return field34156.field44709;
+      return gameSettings.field44709;
    }
 
    public static boolean method26907() {
-      return field34156.field44710;
+      return gameSettings.field44710;
    }
 
    public static void method26908(String var0) {
@@ -1124,51 +1124,51 @@ public class Config {
    }
 
    public static boolean method26909() {
-      return field34156.biomeBlendRadius > 0;
+      return gameSettings.biomeBlendRadius > 0;
    }
 
    public static int method26910() {
-      return field34156.biomeBlendRadius;
+      return gameSettings.biomeBlendRadius;
    }
 
    public static boolean method26911() {
-      return field34156.field44712;
+      return gameSettings.field44712;
    }
 
    public static boolean method26912() {
-      return field34156.field44713;
+      return gameSettings.field44713;
    }
 
    public static boolean method26913() {
-      return field34156.field44711;
+      return gameSettings.field44711;
    }
 
    public static boolean method26914() {
-      return field34156.field44714;
+      return gameSettings.field44714;
    }
 
    public static boolean method26915() {
-      return field34156.field44715 != 3;
+      return gameSettings.field44715 != 3;
    }
 
    public static boolean method26916() {
-      return field34156.field44717;
+      return gameSettings.field44717;
    }
 
    public static boolean method26917() {
-      return field34156.field44718;
+      return gameSettings.field44718;
    }
 
    public static boolean method26918() {
-      return field34156.field44715 == 2;
+      return gameSettings.field44715 == 2;
    }
 
    public static boolean isFastRender() {
-      return field34156.field44720;
+      return gameSettings.field44720;
    }
 
    public static boolean method26920() {
-      return field34156.field44721 != 0 ? field34156.field44721 == 2 : method26818();
+      return gameSettings.field44721 != 0 ? gameSettings.field44721 == 2 : method26818();
    }
 
    public static boolean isShaders() {
@@ -1236,7 +1236,7 @@ public class Config {
    }
 
    public static GameSettings method26928() {
-      return field34156;
+      return gameSettings;
    }
 
    public static String method26929() {
@@ -1322,23 +1322,23 @@ public class Config {
    }
 
    public static boolean method26938() {
-      return field34156.ofSmoothWorld;
+      return gameSettings.ofSmoothWorld;
    }
 
    public static boolean method26939() {
-      return field34156.ofLazyChunkLoading;
+      return gameSettings.ofLazyChunkLoading;
    }
 
    public static boolean method26940() {
-      return field34156.field44722;
+      return gameSettings.field44722;
    }
 
    public static boolean method26941() {
-      return field34156.field44723;
+      return gameSettings.field44723;
    }
 
    public static int method26942() {
-      return field34156 != null ? field34156.renderDistanceChunks : 10;
+      return gameSettings != null ? gameSettings.renderDistanceChunks : 10;
    }
 
    public static boolean equals(Object var0, Object var1) {
@@ -1467,7 +1467,7 @@ public class Config {
    }
 
    public static boolean method26953() {
-      return field34156.field44716;
+      return gameSettings.field44716;
    }
 
    public static void method26954(MatrixStack var0) {
@@ -1599,11 +1599,11 @@ public class Config {
    }
 
    public static boolean isDynamicLights() {
-      return field34156.field44724 != 3;
+      return gameSettings.field44724 != 3;
    }
 
    public static boolean method26971() {
-      return field34156.field44724 == 1;
+      return gameSettings.field44724 == 1;
    }
 
    public static boolean method26972() {
@@ -1615,15 +1615,15 @@ public class Config {
    }
 
    public static boolean method26973() {
-      return field34156.field44725;
+      return gameSettings.field44725;
    }
 
    public static boolean method26974() {
-      return field34156.field44726;
+      return gameSettings.field44726;
    }
 
    public static int method26975() {
-      return field34156.field44728;
+      return gameSettings.field44728;
    }
 
    public static int[] method26976(Integer[] var0) {
@@ -1643,7 +1643,7 @@ public class Config {
    }
 
    public static boolean isRenderRegions() {
-      return field34156.field44685 && GlStateManager.vboRegions;
+      return gameSettings.field44685 && GlStateManager.vboRegions;
    }
 
    public static boolean method26978() {
@@ -1651,7 +1651,7 @@ public class Config {
    }
 
    public static boolean isSmoothFps() {
-      return field34156.ofSmoothFps;
+      return gameSettings.ofSmoothFps;
    }
 
    public static boolean method26980(URI var0) {
@@ -1662,7 +1662,7 @@ public class Config {
    }
 
    public static boolean method26981() {
-      return field34156.field44727;
+      return gameSettings.field44727;
    }
 
    public static String method26982(boolean[] var0, String var1) {

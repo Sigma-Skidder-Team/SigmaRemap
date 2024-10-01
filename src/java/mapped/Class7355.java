@@ -5,7 +5,7 @@ public class Class7355 extends Class7354 {
    private final Class5053 field31484;
    private final Class2268 field31485;
 
-   public Class7355(Class5066 var1, Class8827 var2) {
+   public Class7355(Class5066 var1, DataStreamReader var2) {
       super(var1, var2);
       Class5066 var5 = var1.method15438(1835297121L).method15438(1835626086L);
       this.field31483 = (Class5036)var5.method15438(1986881636L);

@@ -25,11 +25,11 @@ public class Class5041 implements Class5066 {
       this.field23025 = var6;
    }
 
-   public long method15430(Class8827 var1) throws IOException {
-      return this.field23025 + this.field23023 - var1.method31871();
+   public long method15430(DataStreamReader var1) throws IOException {
+      return this.field23025 + this.field23023 - var1.getPosition();
    }
 
-   public void method15262(Class8827 var1) throws IOException {
+   public void method15262(DataStreamReader var1) throws IOException {
    }
 
    @Override
@@ -114,14 +114,14 @@ public class Class5041 implements Class5066 {
       return var5;
    }
 
-   public void method15441(Class8827 var1) throws IOException {
-      while (var1.method31871() < this.field23025 + this.field23023) {
+   public void method15441(DataStreamReader var1) throws IOException {
+      while (var1.getPosition() < this.field23025 + this.field23023) {
          Class5066 var4 = Class6412.method19535(this, var1);
          this.field23027.add(var4);
       }
    }
 
-   public void method15442(Class8827 var1, int var2) throws IOException {
+   public void method15442(DataStreamReader var1, int var2) throws IOException {
       for (int var5 = 0; var5 < var2; var5++) {
          Class5066 var6 = Class6412.method19535(this, var1);
          this.field23027.add(var6);

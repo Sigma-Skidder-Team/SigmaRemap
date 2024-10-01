@@ -10,9 +10,9 @@ public class Class5014 extends Class4975 {
    }
 
    @Override
-   public void method15262(Class8827 var1) throws IOException {
+   public void method15262(DataStreamReader var1) throws IOException {
       super.method15262(var1);
-      this.field22968 = var1.method31865((int)this.method15430(var1));
+      this.field22968 = var1.readString((int)this.method15430(var1));
    }
 
    public String method15371() {

@@ -17,18 +17,18 @@ public class Class4997 extends Class4975 {
    }
 
    @Override
-   public void method15262(Class8827 var1) throws IOException {
+   public void method15262(DataStreamReader var1) throws IOException {
       super.method15262(var1);
-      this.field22929 = var1.method31861();
-      this.field22930 = var1.method31861();
-      this.field22931 = var1.method31863(8);
-      int var4 = (int)var1.method31863(2);
-      int var5 = (int)var1.method31863(2);
-      int var6 = (int)var1.method31863(2);
+      this.field22929 = var1.readInt();
+      this.field22930 = var1.readInt();
+      this.field22931 = var1.readBits(8);
+      int var4 = (int)var1.readBits(2);
+      int var5 = (int)var1.readBits(2);
+      int var6 = (int)var1.readBits(2);
       this.field22932 = new byte[var4];
-      var1.method31864(this.field22932);
+      var1.readBytes(this.field22932);
       this.field22933 = new byte[var5];
-      var1.method31864(this.field22933);
+      var1.readBytes(this.field22933);
       this.field22934 = new HashMap<String, String>();
 
       while (var6 > 0) {

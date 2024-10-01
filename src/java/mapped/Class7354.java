@@ -13,18 +13,18 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public abstract class Class7354 {
-   private final Class8827 field31473;
+   private final DataStreamReader field31473;
    public final Class5089 field31474;
    private final Class5035 field31475;
    private final boolean field31476;
    private final List<Class1994> field31477;
    private URL field31478;
    private int field31479;
-   public Class6449 field31480;
+   public AudioByteManager.BinaryDataDescriptor field31480;
    public Class8307 field31481;
    public Class6399 field31482;
 
-   public Class7354(Class5066 var1, Class8827 var2) {
+   public Class7354(Class5066 var1, DataStreamReader var2) {
       this.field31473 = var2;
       this.field31474 = (Class5089)var1.method15438(1953196132L);
       Class5066 var5 = var1.method15438(1835297121L);
@@ -117,13 +117,13 @@ public abstract class Class7354 {
    }
 
    public void method23308(Class5086 var1) {
-      Class6444 var4 = var1.method15544();
+      AudioByteManager.TextDescriptor var4 = var1.method15544();
 
-      for (AudioByteManager var7 : var4.method19562()) {
-         for (AudioByteManager var10 : var7.method19562()) {
-            switch (var10.method19563()) {
+      for (AudioByteManager var7 : var4.getChildDescriptors()) {
+         for (AudioByteManager var10 : var7.getChildDescriptors()) {
+            switch (var10.getDescriptorType()) {
                case 5:
-                  this.field31480 = (Class6449)var10;
+                  this.field31480 = (AudioByteManager.BinaryDataDescriptor)var10;
             }
          }
       }
@@ -179,7 +179,7 @@ public abstract class Class7354 {
    }
 
    public byte[] method23320() {
-      return this.field31480.method19587();
+      return this.field31480.getBinaryData();
    }
 
    public Class8307 method23321() {
@@ -198,20 +198,20 @@ public abstract class Class7354 {
       Class1994 var3 = null;
       if (this.method23323()) {
          var3 = this.field31477.get(this.field31479);
-         if (var3.method8278() < this.field31473.method31871()) {
+         if (var3.method8278() < this.field31473.getPosition()) {
             this.field31473.method31877();
          }
 
-         long var4 = var3.method8278() - this.field31473.method31871();
+         long var4 = var3.method8278() - this.field31473.getPosition();
          if (var4 > 0L) {
-            this.field31473.method31870(var4);
+            this.field31473.skipBytes(var4);
          } else if (var4 < 0L) {
             if (!this.field31473.method31874()) {
                Logger.getLogger("MP4 API")
                   .log(
                      Level.WARNING,
                      "readNextFrame failed: frame {0} already skipped, offset:{1}, stream:{2}",
-                     new Object[]{this.field31479, var3.method8278(), this.field31473.method31871()}
+                     new Object[]{this.field31479, var3.method8278(), this.field31473.getPosition()}
                   );
                throw new IOException("frame already skipped and no random access");
             }
@@ -222,10 +222,10 @@ public abstract class Class7354 {
          byte[] var6 = new byte[(int)var3.method8279()];
 
          try {
-            this.field31473.method31864(var6);
+            this.field31473.readBytes(var6);
          } catch (EOFException var8) {
             Logger.getLogger("MP4 API")
-               .log(Level.WARNING, "readNextFrame failed: tried to read {0} bytes at {1}", new Long[]{var3.method8279(), this.field31473.method31871()});
+               .log(Level.WARNING, "readNextFrame failed: tried to read {0} bytes at {1}", new Long[]{var3.method8279(), this.field31473.getPosition()});
             throw var8;
          }
 
@@ -262,7 +262,7 @@ public abstract class Class7354 {
          var5 = this.field31477.get(var6++);
 
          try {
-            if (((Class1994)var5).method8278() <= this.field31473.method31871() + this.field31473.method31872()) {
+            if (((Class1994)var5).method8278() <= this.field31473.getPosition() + this.field31473.method31872()) {
                var3 = Math.max(((Class1994)var5).method8280(), var3);
             }
          } catch (IOException var8) {

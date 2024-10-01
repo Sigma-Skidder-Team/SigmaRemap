@@ -12,7 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Class8490 {
-   private final Class8827 field37152;
+   private final DataStreamReader field37152;
    private final List<Class5066> field37153;
    private Class2036 field37154;
    private Class2036 field37155;
@@ -23,13 +23,13 @@ public class Class8490 {
    private Class8583 field37160;
 
    public Class8490(InputStream var1) throws IOException {
-      this.field37152 = new Class8827(var1);
+      this.field37152 = new DataStreamReader(var1);
       this.field37153 = new ArrayList<Class5066>();
       this.method30069();
    }
 
    public Class8490(RandomAccessFile var1) throws IOException {
-      this.field37152 = new Class8827(var1);
+      this.field37152 = new DataStreamReader(var1);
       this.field37153 = new ArrayList<Class5066>();
       this.method30069();
    }

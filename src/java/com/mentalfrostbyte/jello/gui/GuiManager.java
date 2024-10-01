@@ -61,7 +61,7 @@ public class GuiManager {
     private final List<Integer> field41343 = new ArrayList<Integer>();
     private boolean field41349 = true;
     private boolean field41350 = true;
-    private Screen field41352;
+    private Screen screen;
     private GLFWKeyCallback field41353;
     private long field41355;
     private long field41356;
@@ -169,7 +169,7 @@ public class GuiManager {
     }
 
     public void endTick() {
-        if (this.field41352 != null) {
+        if (this.screen != null) {
             this.field41354[0] = Math.max(0, Math.min(Minecraft.getInstance().mainWindow.getWidth(), (int) Minecraft.getInstance().mouseHelper.method36738()));
             this.field41354[1] = Math.max(0, Math.min(Minecraft.getInstance().mainWindow.getHeight(), (int) Minecraft.getInstance().mouseHelper.method36739()));
 
@@ -206,28 +206,28 @@ public class GuiManager {
                 this.field41357 = true;
             }
 
-            if (this.field41352 != null) {
+            if (this.screen != null) {
                 this.field41355 = field41344;
-                this.field41352.method13028(this.field41354[0], this.field41354[1]);
+                this.screen.method13028(this.field41354[0], this.field41354[1]);
             }
         }
     }
 
     public void method33461(int var1) {
-        if (this.field41352 != null) {
-            this.field41352.method13103(var1);
+        if (this.screen != null) {
+            this.screen.method13103(var1);
         }
     }
 
     public void method33462(char var1) {
-        if (this.field41352 != null) {
-            this.field41352.charTyped(var1);
+        if (this.screen != null) {
+            this.screen.charTyped(var1);
         }
     }
 
     public void method33463(int var1) {
-        if (this.field41352 != null) {
-            this.field41352.keyPressed(var1);
+        if (this.screen != null) {
+            this.screen.keyPressed(var1);
         }
     }
 
@@ -262,34 +262,34 @@ public class GuiManager {
             Client.getInstance().getEventManager().call(new EventRender());
         }
 
-        if (this.field41352 != null && Minecraft.getInstance().loadingGui == null) {
-            this.field41352.draw(1.0F);
+        if (this.screen != null && Minecraft.getInstance().loadingGui == null) {
+            this.screen.draw(1.0F);
         }
     }
 
     public void method33465(float var1) {
-        if (this.field41352 != null && Minecraft.getInstance().loadingGui == null) {
-            this.field41352.method13079(var1);
+        if (this.screen != null && Minecraft.getInstance().loadingGui == null) {
+            this.screen.method13079(var1);
         }
     }
 
     public void method33466(int var1, int var2, int var3) {
-        if (this.field41352 != null && Minecraft.getInstance().loadingGui == null) {
-            this.field41352.method13078(var1, var2, var3);
+        if (this.screen != null && Minecraft.getInstance().loadingGui == null) {
+            this.screen.method13078(var1, var2, var3);
         }
     }
 
     public void method33467(int var1, int var2, int var3) {
-        if (this.field41352 != null && Minecraft.getInstance().loadingGui == null) {
-            this.field41352.method13095(var1, var2, var3);
+        if (this.screen != null && Minecraft.getInstance().loadingGui == null) {
+            this.screen.method13095(var1, var2, var3);
         }
     }
 
     public JSONObject method33468(JSONObject var1) {
-        if (this.field41352 != null) {
-            JSONObject var4 = this.field41352.method13160(new JSONObject());
+        if (this.screen != null) {
+            JSONObject var4 = this.screen.method13160(new JSONObject());
             if (var4.method21779() != 0) {
-                var1.put(this.field41352.method13257(), var4);
+                var1.put(this.screen.method13257(), var4);
             }
         }
 
@@ -324,15 +324,15 @@ public class GuiManager {
     }
 
     public void method33476(JSONObject var1) {
-        if (this.field41352 != null) {
+        if (this.screen != null) {
             JSONObject var4 = null;
 
             try {
-                var4 = Client.getInstance().getConfig().getJsonObject(this.field41352.method13257());
+                var4 = Client.getInstance().getConfig().getJsonObject(this.screen.method13257());
             } catch (Exception var9) {
                 var4 = new JSONObject();
             } finally {
-                this.field41352.method13161(var4);
+                this.screen.method13161(var4);
             }
         }
 
@@ -370,11 +370,11 @@ public class GuiManager {
     }
 
     public void onResize() {
-        if (this.field41352 != null) {
+        if (this.screen != null) {
             this.method33468(Client.getInstance().getConfig());
 
             try {
-                this.field41352 = this.field41352.getClass().newInstance();
+                this.screen = this.screen.getClass().newInstance();
             } catch (IllegalAccessException | InstantiationException var4) {
                 var4.printStackTrace();
             }
@@ -393,7 +393,7 @@ public class GuiManager {
     }
 
     public Screen method33480() {
-        return this.field41352;
+        return this.screen;
     }
 
     public void method33481() {
@@ -401,15 +401,15 @@ public class GuiManager {
     }
 
     public void method33482(Screen var1) {
-        if (this.field41352 != null) {
+        if (this.screen != null) {
             this.method33468(Client.getInstance().getConfig());
         }
 
-        this.field41352 = var1;
+        this.screen = var1;
         this.field41356 = field41344;
         this.method33476(Client.getInstance().getConfig());
-        if (this.field41352 != null) {
-            this.field41352.method13028(this.field41354[0], this.field41354[1]);
+        if (this.screen != null) {
+            this.screen.method13028(this.field41354[0], this.field41354[1]);
         }
 
         if (Client.getInstance().getModuleManager() != null) {

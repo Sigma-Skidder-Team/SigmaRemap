@@ -977,7 +977,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
 
       if (this.field835 != var3) {
          Class9387.method35632(this.field835, var3);
-         Config.method26795();
+         Config.updateThreadPriorities();
          this.field837 = 0L;
          this.field838 = 0;
          this.field835 = var3;

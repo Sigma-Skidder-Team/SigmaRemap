@@ -13,12 +13,12 @@ public class Class5076 extends Class4975 {
    }
 
    @Override
-   public void method15262(Class8827 var1) throws IOException {
+   public void method15262(DataStreamReader var1) throws IOException {
       super.method15262(var1);
-      this.field23117 = (var1.method31861() & 1) == 1;
-      this.field23118 = var1.method31861();
-      this.field23119 = (int)var1.method31863(2);
-      this.field23120 = (int)var1.method31863(2);
+      this.field23117 = (var1.readInt() & 1) == 1;
+      this.field23118 = var1.readInt();
+      this.field23119 = (int)var1.readBits(2);
+      this.field23120 = (int)var1.readBits(2);
    }
 
    public boolean method15515() {

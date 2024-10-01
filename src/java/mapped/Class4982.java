@@ -17,12 +17,12 @@ public class Class4982 extends Class4975 {
    }
 
    @Override
-   public void method15262(Class8827 var1) throws IOException {
+   public void method15262(DataStreamReader var1) throws IOException {
       super.method15262(var1);
       this.field22871 = Class2086.method8742(this.field22851);
-      var1.method31870(4L);
+      var1.skipBytes(4L);
       this.field22872 = new byte[(int)this.method15430(var1)];
-      var1.method31864(this.field22872);
+      var1.readBytes(this.field22872);
    }
 
    public Class2086 method15281() {
