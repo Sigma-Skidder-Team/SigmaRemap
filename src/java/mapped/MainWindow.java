@@ -84,7 +84,7 @@ public final class MainWindow implements AutoCloseable {
       GLFW.glfwDefaultWindowHints();
       GuiManager.method33475();
       if (Config.isAntialiasing()) {
-         GLFW.glfwWindowHint(135181, Config.method26891());
+         GLFW.glfwWindowHint(135181, Config.getAntialiasingLevel());
       }
 
       GLFW.glfwWindowHint(139265, 196609);

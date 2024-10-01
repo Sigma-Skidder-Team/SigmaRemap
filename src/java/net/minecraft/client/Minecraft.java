@@ -925,7 +925,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       this.gameRenderer.updateShaderGroupSize(this.mainWindow.getFramebufferWidth(), this.mainWindow.getFramebufferHeight());
       this.mouseHelper.setIgnoreFirstMove();
       framebuffer.unbindFramebuffer();
-      //framebuffer.bindFramebuffer(IS_RUNNING_ON_MAC);
+      framebuffer.bindFramebuffer(IS_RUNNING_ON_MAC);
    }
 
    @Override

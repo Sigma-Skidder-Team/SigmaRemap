@@ -267,6 +267,10 @@ public class Framebuffer {
    }
 
    private void bindFramebufferRaw(boolean setViewportIn) {
+      if (this.framebufferObject <= 0) {
+         return;
+      }
+
       if (GLX.isUsingFBOs())
       {
          RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
@@ -368,6 +372,10 @@ public class Framebuffer {
    }
 
    public void framebufferClear(boolean onMac) {
+      if (this.framebufferObject <= 0) {
+         return;
+      }
+
       RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
       this.bindFramebuffer(true);
       GlStateManager.clearColor(this.framebufferColor[0], this.framebufferColor[1], this.framebufferColor[2], this.framebufferColor[3]);

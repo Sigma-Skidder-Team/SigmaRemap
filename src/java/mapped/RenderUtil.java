@@ -36,6 +36,7 @@ public class RenderUtil {
    private static float field18465 = 1.0F;
 
    public static void method11411(int var0, int var1) {
+      mc.framebuffer.resize(var0, var1, Minecraft.IS_RUNNING_ON_MAC);
    }
 
    public static float method11412(float var0, int var1) {
