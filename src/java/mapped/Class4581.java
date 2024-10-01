@@ -21,7 +21,6 @@ public class Class4581 extends Class4566 {
    @Override
    public int method14499(float var1) {
       int var4 = super.method14499(var1);
-      short var5 = 240;
       int var6 = var4 >> 16 & 0xFF;
       return 240 | var6 << 16;
    }

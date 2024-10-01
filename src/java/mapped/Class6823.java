@@ -24,7 +24,7 @@ public class Class6823 extends Class6819 {
    public void method20786(
            Class1679 var1, Random var2, Class4733 var3, int var4, Class9359 var5, int var6, int var7, Set<BlockPos> var8, int var9, Class9764 var10
    ) {
-      BlockPos var13 = var5.method35437().method8339(var9);
+      BlockPos var13 = var5.method35437().up(var9);
       boolean var14 = var5.method35439();
       if (!var14) {
          this.method20796(var1, var2, var3, var13, var7 + 2, var8, -1, var14, var10);

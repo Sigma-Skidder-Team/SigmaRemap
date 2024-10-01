@@ -18,7 +18,6 @@ public class Class249 extends Class219<Class1019, Class2869<Class1019>> {
          float var15;
          float var16;
          if (var4.method3381() && "jeb_".equals(var4.getName().getUnformattedComponentText())) {
-            byte var24 = 25;
             int var17 = var4.ticksExisted / 25 + var4.getEntityId();
             int var18 = Class112.values().length;
             int var19 = var17 % var18;

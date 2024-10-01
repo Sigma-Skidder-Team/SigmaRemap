@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 
-public class Class4339 extends Class4304 {
+public class Class4339 extends AnimatedIconPanel {
    private boolean field21201;
    private boolean field21202;
    private boolean field21203 = false;

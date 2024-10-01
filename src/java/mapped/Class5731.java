@@ -39,12 +39,10 @@ public class Class5731 extends EntityRenderer<ExperienceOrbEntity> {
       }
 
       int var19 = (int)((MathHelper.sin(var18 + 0.0F) + 1.0F) * 0.5F * 255.0F);
-      short var20 = 255;
       int var21 = (int)((MathHelper.sin(var18 + (float) (Math.PI * 4.0 / 3.0)) + 1.0F) * 0.1F * 255.0F);
       var4.translate(0.0, 0.1F, 0.0);
       var4.rotate(this.field25097.method32230());
       var4.rotate(Vector3f.YP.rotationDegrees(180.0F));
-      float var22 = 0.3F;
       var4.method35292(0.3F, 0.3F, 0.3F);
       IVertexBuilder var23 = var5.method25597(field25142);
       Class8892 var24 = var4.getLast();

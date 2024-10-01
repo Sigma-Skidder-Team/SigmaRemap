@@ -24,7 +24,7 @@ public class Class1267 extends AbstractGui {
    public void method5953(MatrixStack var1) {
       if (!this.field6710.isEmpty()) {
          int var4 = this.field6709.getMainWindow().getScaledWidth();
-         byte var5 = 12;
+         int var5 = 12;
 
          for (Class3626 var7 : this.field6710.values()) {
             int var8 = var4 / 2 - 91;

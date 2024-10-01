@@ -22,8 +22,8 @@ public class Class1209 extends Button {
    public void method5655(MatrixStack var1, int var2, int var3, float var4) {
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       Minecraft.getInstance().getTextureManager().bindTexture(Class870.field4820);
-      byte var7 = 0;
-      short var8 = 192;
+      int var7 = 0;
+      int var8 = 192;
       if (this.method5737()) {
          var7 += 23;
       }

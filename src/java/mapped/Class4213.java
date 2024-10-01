@@ -88,7 +88,7 @@ public abstract class Class4213 extends Class4178 {
             for (int var13 = var5; var13 <= var8; var13++) {
                BlockState var14 = this.method12924(var1, var12, var11, var13, var2);
                if (!field20534.contains(var14.getBlock())) {
-                  if (this.method12921(var11) >= var1.method6776() && var14 != field20533) {
+                  if (this.method12921(var11) >= var1.getSeaLevel() && var14 != field20533) {
                      this.method12923(var1, Blocks.AIR.getDefaultState(), var12, var11, var13, var2);
                   } else {
                      this.method12923(var1, field20533, var12, var11, var13, var2);

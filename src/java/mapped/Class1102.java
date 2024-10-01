@@ -25,7 +25,7 @@ public class Class1102 extends Class1101 {
          return false;
       } else {
          if (var1 instanceof LivingEntity) {
-            byte var4 = 0;
+            int var4 = 0;
             if (this.world.method6997() != Difficulty.NORMAL) {
                if (this.world.method6997() == Difficulty.HARD) {
                   var4 = 15;

@@ -27,17 +27,17 @@ public class Class6606 implements ISpawnWorldInfo {
    }
 
    @Override
-   public int method20029() {
+   public int getSpawnX() {
       return this.field29052;
    }
 
    @Override
-   public int method20030() {
+   public int getSpawnY() {
       return this.field29053;
    }
 
    @Override
-   public int method20031() {
+   public int getSpawnZ() {
       return this.field29054;
    }
 
@@ -85,7 +85,7 @@ public class Class6606 implements ISpawnWorldInfo {
    }
 
    @Override
-   public void method20041(BlockPos var1, float var2) {
+   public void setSpawn(BlockPos var1, float var2) {
       this.field29052 = var1.getX();
       this.field29053 = var1.getY();
       this.field29054 = var1.getZ();

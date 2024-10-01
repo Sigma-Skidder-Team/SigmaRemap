@@ -395,7 +395,6 @@ public final class Class1756 implements Closeable, Flushable {
    }
 
    public boolean method7690() {
-      short var3 = 2000;
       return this.field9518 >= 2000 && this.field9518 >= this.field9517.size();
    }
 

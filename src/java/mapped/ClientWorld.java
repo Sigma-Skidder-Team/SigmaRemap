@@ -39,6 +39,7 @@ import net.minecraft.world.ITickList;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biomes;
+import net.minecraft.world.chunk.ChunkStatus;
 import net.optifine.DynamicLights;
 import net.optifine.Config;
 import net.optifine.reflect.ReflectorForge;
@@ -871,7 +872,7 @@ public class ClientWorld extends World {
    }
 
    public BlockPos method6880() {
-      BlockPos var3 = new BlockPos(this.worldInfo.method20029(), this.worldInfo.method20030(), this.worldInfo.method20031());
+      BlockPos var3 = new BlockPos(this.worldInfo.getSpawnX(), this.worldInfo.getSpawnY(), this.worldInfo.getSpawnZ());
       if (!this.getWorldBorder().contains(var3)) {
          var3 = this.method7006(Heightmap.Type.MOTION_BLOCKING, new BlockPos(this.getWorldBorder().getCenterX(), 0.0, this.getWorldBorder().getCenterZ()));
       }
@@ -884,7 +885,7 @@ public class ClientWorld extends World {
    }
 
    public void method6882(BlockPos var1, float var2) {
-      this.worldInfo.method20041(var1, var2);
+      this.worldInfo.setSpawn(var1, var2);
    }
 
    @Override

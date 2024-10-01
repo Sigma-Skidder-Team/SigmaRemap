@@ -184,8 +184,8 @@ public class Class1265 extends AbstractGui {
    public void method5921(MatrixStack var1, int var2, int var3, int var4, Class6589 var5) {
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       this.field6692.getTextureManager().bindTexture(field6453);
-      boolean var8 = false;
-      byte var9;
+
+      int var9;
       if (var5.method19969() >= 0) {
          if (var5.method19969() >= 150) {
             if (var5.method19969() >= 300) {

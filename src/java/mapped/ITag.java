@@ -25,10 +25,10 @@ public interface ITag<T> {
 
    boolean method24917(T var1);
 
-   List<T> method24918();
+   List<T> getAllElements();
 
    default T method24919(Random var1) {
-      List var4 = this.method24918();
+      List var4 = this.getAllElements();
       return (T)var4.get(var1.nextInt(var4.size()));
    }
 

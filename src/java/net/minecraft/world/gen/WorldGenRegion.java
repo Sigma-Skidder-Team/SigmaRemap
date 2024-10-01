@@ -27,6 +27,7 @@ import net.minecraft.world.ISeedReader;
 import net.minecraft.world.ITickList;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeManager;
+import net.minecraft.world.chunk.ChunkStatus;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.gen.feature.structure.StructureManager;
 import net.minecraft.world.gen.feature.structure.StructureStart;
@@ -322,8 +323,8 @@ public class WorldGenRegion implements ISeedReader {
    }
 
    @Override
-   public int method6776() {
-      return this.field9205.method6776();
+   public int getSeaLevel() {
+      return this.field9205.getSeaLevel();
    }
 
    @Override

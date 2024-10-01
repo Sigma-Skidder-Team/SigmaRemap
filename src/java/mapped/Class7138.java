@@ -35,7 +35,7 @@ public class Class7138 extends Class7139 {
                   for (Direction var9x : Direction.Plane.HORIZONTAL) {
                      if (var2.nextFloat() <= 0.25F) {
                         Direction var10 = var9x.getOpposite();
-                        BlockPos var11 = var5x.method8336(var10.getXOffset(), 0, var10.getZOffset());
+                        BlockPos var11 = var5x.add(var10.getXOffset(), 0, var10.getZOffset());
                         if (Class2898.method11221(var1, var11)) {
                            BlockState var12 = Blocks.COCOA
                               .getDefaultState()

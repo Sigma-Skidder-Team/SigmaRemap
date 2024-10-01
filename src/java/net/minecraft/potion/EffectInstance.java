@@ -277,7 +277,6 @@ public class EffectInstance implements Comparable<EffectInstance> {
    }
 
    public int compareTo(EffectInstance var1) {
-      short var4 = 32147;
       return this.method8628() > 32147 && var1.method8628() > 32147 || this.isAmbient() && var1.isAmbient()
          ? ComparisonChain.start()
             .compare(this.isAmbient(), var1.isAmbient())

@@ -174,7 +174,6 @@ public class Class1254 extends AbstractGui implements Class1190, IGuiEventListen
    private void method5843() {
       int var3 = (this.field6635 - 147) / 2 - this.field6634 - 30;
       int var4 = (this.field6636 - 166) / 2 + 3;
-      byte var5 = 27;
       int var6 = 0;
 
       for (Class1250 var8 : this.field6638) {

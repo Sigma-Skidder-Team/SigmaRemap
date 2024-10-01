@@ -155,7 +155,7 @@ public class SectionPos extends Vector3i {
    }
 
    public BlockPos method8422() {
-      return this.method8421().method8336(8, 8, 8);
+      return this.method8421().add(8, 8, 8);
    }
 
    public ChunkPos method8423() {

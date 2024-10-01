@@ -14,7 +14,7 @@ public class Class6862 implements Class6861<MinecraftServer> {
       FunctionManager var7 = var1.method1397();
       ITag<Class7744> var8 = var7.method22830(this.field29789);
 
-      for (Class7744 var10 : var8.method24918()) {
+      for (Class7744 var10 : var8.getAllElements()) {
          var7.method22825(var10, var7.method22828());
       }
    }

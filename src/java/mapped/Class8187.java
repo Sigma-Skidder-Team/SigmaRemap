@@ -18,7 +18,7 @@ public class Class8187 implements Class8184 {
    public <T> boolean method28480(Function<ResourceLocation, ITag<T>> var1, Function<ResourceLocation, T> var2, Consumer<T> var3) {
       ITag var6 = (ITag)var1.apply(this.field35205);
       if (var6 != null) {
-         var6.method24918().forEach(var3);
+         var6.getAllElements().forEach(var3);
       }
 
       return true;

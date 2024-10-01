@@ -158,7 +158,7 @@ public class LoginAndOutScreen extends Screen {
             (float)this.heightA,
             MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.45F * this.field21093.calcPercent())
          );
-         RenderUtil.method11454(
+         RenderUtil.drawImage(
             (float)(var11 + 20), (float)(var12 + 40), (float)(var8 + 30), (float)(var8 + 30), ResourcesDecrypter.sigmaPNG, this.field21093.calcPercent()
          );
          int var13 = 165;

@@ -33,7 +33,7 @@ public class SigmaClassicAltManager extends Screen {
    private Class2209 field21064 = Class2209.field14448;
    private boolean field21065 = false;
    private SigmaClassicTextBox field21066;
-   private Class4332 field21067;
+   private ClassicAltManager field21067;
    private String status = "§7Idle...";
 
    public SigmaClassicAltManager() {
@@ -73,7 +73,7 @@ public class SigmaClassicAltManager extends Screen {
       this.field21066.method13151(var1 -> this.method13402());
       this.method13403();
       this.addToList(
-         this.field21067 = new Class4332(this, "toolbar", (Minecraft.getInstance().mainWindow.getWidth() - var9) / 2 + 16, this.getHeightA() - 94)
+         this.field21067 = new ClassicAltManager(this, "toolbar", (Minecraft.getInstance().mainWindow.getWidth() - var9) / 2 + 16, this.getHeightA() - 94)
       );
       this.field21067.method13296(false);
    }

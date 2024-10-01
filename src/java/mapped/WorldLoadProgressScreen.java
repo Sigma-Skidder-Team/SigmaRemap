@@ -7,6 +7,7 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.chunk.ChunkStatus;
 
 public class WorldLoadProgressScreen extends Screen {
    private final TrackingChunkStatusListener field7026;
@@ -22,7 +23,7 @@ public class WorldLoadProgressScreen extends Screen {
       var0.put(ChunkStatus.field42139, 7169628);
       var0.put(ChunkStatus.field42140, 3159410);
       var0.put(ChunkStatus.field42141, 2213376);
-      var0.put(ChunkStatus.field42142, 13421772);
+      var0.put(ChunkStatus.LIGHT, 13421772);
       var0.put(ChunkStatus.field42143, 15884384);
       var0.put(ChunkStatus.field42144, 15658734);
       var0.put(ChunkStatus.FULL, 16777215);

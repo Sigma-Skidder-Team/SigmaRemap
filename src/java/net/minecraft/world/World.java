@@ -29,6 +29,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeManager;
+import net.minecraft.world.chunk.ChunkStatus;
 import net.minecraft.world.chunk.IChunk;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -320,7 +321,7 @@ public abstract class World implements IWorld, AutoCloseable {
             var6 = this.getChunk(var2 >> 4, var3 >> 4).getTopBlockY(var1, var2 & 15, var3 & 15) + 1;
          }
       } else {
-         var6 = this.method6776() + 1;
+         var6 = this.getSeaLevel() + 1;
       }
 
       return var6;
@@ -745,7 +746,7 @@ public abstract class World implements IWorld, AutoCloseable {
    }
 
    @Override
-   public int method6776() {
+   public int getSeaLevel() {
       return 63;
    }
 

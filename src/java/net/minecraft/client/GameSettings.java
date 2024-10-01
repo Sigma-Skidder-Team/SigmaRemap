@@ -1124,7 +1124,7 @@ public class GameSettings {
       }
 
       if (var1 == AbstractOption.field25389) {
-         short var3 = 900;
+         int var3 = 900;
          this.field44696 = Math.max(this.field44696 / var3 * var3, var3);
          this.field44696 *= 2;
          if (this.field44696 > 32 * var3) {
@@ -1524,7 +1524,7 @@ public class GameSettings {
       } else if (var1 == AbstractOption.field25388) {
          return this.field44699 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
       } else if (var1 == AbstractOption.field25389) {
-         short var11 = 900;
+         int var11 = 900;
          if (this.field44696 <= var11) {
             return var2 + Class8043.method27619("of.options.save.45s");
          } else if (this.field44696 <= 2 * var11) {

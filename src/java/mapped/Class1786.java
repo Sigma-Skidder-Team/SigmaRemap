@@ -45,11 +45,9 @@ public final class Class1786 implements Closeable {
             this.field9636.method35053(var1.method31380());
          }
 
-         int var4 = 0;
          byte var5 = 4;
          byte var6 = 1;
-         int var7 = 0;
-         this.method7782(var7, var4, var5, var6);
+         this.method7782(0, 0, var5, var6);
          this.field9631.flush();
       } else {
          throw new IOException("closed");
@@ -62,8 +60,8 @@ public final class Class1786 implements Closeable {
          long var6 = this.field9633.method7582();
          int var8 = (int)Math.min((long)(this.field9634 - 4), var6);
          byte var9 = 5;
-         int var10 = var6 != (long)var8 ? 0 : 4;
-         this.method7782(var1, var8 + 4, var9, (byte)var10);
+         byte var10 = (byte) (var6 != (long)var8 ? 0 : 4);
+         this.method7782(var1, var8 + 4, var9, var10);
          this.field9631.method7573(var2 & 2147483647);
          this.field9631.method7540(this.field9633, (long)var8);
          if (var6 > (long)var8) {
@@ -109,10 +107,9 @@ public final class Class1786 implements Closeable {
    public synchronized void method7774(int var1, Class2077 var2) throws IOException {
       if (!this.field9635) {
          if (var2.field13533 != -1) {
-            byte var5 = 4;
             byte var6 = 3;
             byte var7 = 0;
-            this.method7782(var1, var5, var6, var7);
+            this.method7782(var1, 4, var6, var7);
             this.field9631.method7573(var2.field13533);
             this.field9631.flush();
          } else {

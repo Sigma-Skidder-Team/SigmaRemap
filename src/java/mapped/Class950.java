@@ -175,7 +175,7 @@ public class Class950 extends TileEntity implements Class949, ITickableTileEntit
    private void method3821() {
       if (!this.world.isRemote && this.field5344 != null) {
          double var3 = (double)(this.field5342 * 10 + 10);
-         byte var5 = 0;
+         int var5 = 0;
          if (this.field5342 >= 4 && this.field5344 == this.field5345) {
             var5 = 1;
          }

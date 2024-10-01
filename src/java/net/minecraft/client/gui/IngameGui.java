@@ -460,8 +460,6 @@ public class IngameGui extends AbstractGui {
             HandSide var7 = var5.getPrimaryHand().opposite();
             int var8 = this.field6741 / 2;
             int var9 = this.method5702();
-            short var10 = 182;
-            byte var11 = 91;
             this.method5703(-90);
             this.blit(var2, var8 - 91, this.field6742 - 22, 0, 0, 182, 22);
             this.blit(var2, var8 - 91 - 1 + var5.inventory.currentItem * 20, this.field6742 - 22 - 1, 0, 22, 24, 22);
@@ -523,7 +521,6 @@ public class IngameGui extends AbstractGui {
         this.field6716.getProfiler().startSection("jumpBar");
         this.field6716.getTextureManager().bindTexture(AbstractGui.field6453);
         float var5 = this.field6716.player.method5406();
-        short var6 = 182;
         int var7 = (int) (var5 * 183.0F);
         int var8 = this.field6742 - 32 + 3;
         this.blit(var1, var2, var8, 0, 84, 182, 5);
@@ -539,7 +536,6 @@ public class IngameGui extends AbstractGui {
         this.field6716.getTextureManager().bindTexture(AbstractGui.field6453);
         int var5 = this.field6716.player.method2930();
         if (var5 > 0) {
-            short var6 = 182;
             int var7 = (int) (this.field6716.player.field4922 * 183.0F);
             int var8 = this.field6742 - 32 + 3;
             this.blit(var1, var2, var8, 0, 64, 182, 5);

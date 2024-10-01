@@ -48,7 +48,7 @@ public class Class3316 extends Class3314 {
    public static Class7529 method11861(ItemStack var0, World var1) {
       Class7529 var4 = method11860(var0, var1);
       if (var4 == null && var1 instanceof ServerWorld) {
-         var4 = method11863(var0, var1, var1.getWorldInfo().method20029(), var1.getWorldInfo().method20031(), 3, false, false, var1.getDimensionKey());
+         var4 = method11863(var0, var1, var1.getWorldInfo().getSpawnX(), var1.getWorldInfo().getSpawnZ(), 3, false, false, var1.getDimensionKey());
       }
 
       return var4;
@@ -74,9 +74,9 @@ public class Class3316 extends Class3314 {
 
    public void method11865(World var1, Entity var2, Class7529 var3) {
       if (var1.getDimensionKey() == var3.field32318 && var2 instanceof PlayerEntity) {
-         int var6 = 1 << var3.field32321;
-         int var7 = var3.field32316;
-         int var8 = var3.field32317;
+         int var6 = 1 << var3.scale;
+         int var7 = var3.xCenter;
+         int var8 = var3.zCenter;
          int var9 = MathHelper.floor(var2.getPosX() - (double)var7) / var6 + 64;
          int var10 = MathHelper.floor(var2.getPosZ() - (double)var8) / var6 + 64;
          int var11 = 128 / var6;
@@ -182,10 +182,10 @@ public class Class3316 extends Class3314 {
 
                         var15 = var29;
                         if (var17 >= 0 && var18 * var18 + var19 * var19 < var11 * var11 && (!var20 || (var14 + var17 & 1) != 0)) {
-                           byte var47 = var3.field32322[var14 + var17 * 128];
+                           byte var47 = var3.colors[var14 + var17 * 128];
                            byte var48 = (byte)(var46.field31007 * 4 + var44);
                            if (var47 != var48) {
-                              var3.field32322[var14 + var17 * 128] = var48;
+                              var3.colors[var14 + var17 * 128] = var48;
                               var3.method24598(var14, var17);
                               var13 = true;
                            }
@@ -210,9 +210,9 @@ public class Class3316 extends Class3314 {
    public static void method11868(ServerWorld var0, ItemStack var1) {
       Class7529 var4 = method11861(var1, var0);
       if (var4 != null && var0.getDimensionKey() == var4.field32318) {
-         int var5 = 1 << var4.field32321;
-         int var6 = var4.field32316;
-         int var7 = var4.field32317;
+         int var5 = 1 << var4.scale;
+         int var6 = var4.xCenter;
+         int var7 = var4.zCenter;
          Biome[] var8 = new Biome[128 * var5 * 128 * var5];
 
          for (int var9 = 0; var9 < 128 * var5; var9++) {
@@ -298,7 +298,7 @@ public class Class3316 extends Class3314 {
                   }
 
                   if (var14 != MaterialColor.AIR) {
-                     var4.field32322[var15 + var16 * 128] = (byte)(var14.field31007 * 4 + var13);
+                     var4.colors[var15 + var16 * 128] = (byte)(var14.field31007 * 4 + var13);
                      var4.method24598(var15, var16);
                   }
                }
@@ -317,7 +317,7 @@ public class Class3316 extends Class3314 {
                var8.method24594(var9, var1);
             }
 
-            if (!var8.field32323 && (var5 || var3 instanceof PlayerEntity && ((PlayerEntity)var3).getHeldItemOffhand() == var1)) {
+            if (!var8.locked && (var5 || var3 instanceof PlayerEntity && ((PlayerEntity)var3).getHeldItemOffhand() == var1)) {
                this.method11865(var2, var3, var8);
             }
          }
@@ -348,11 +348,11 @@ public class Class3316 extends Class3314 {
          method11863(
             var0,
             var1,
-            var5.field32316,
-            var5.field32317,
-            MathHelper.clamp(var5.field32321 + var2, 0, 4),
-            var5.field32319,
-            var5.field32320,
+            var5.xCenter,
+            var5.zCenter,
+            MathHelper.clamp(var5.scale + var2, 0, 4),
+            var5.trackingPosition,
+            var5.unlimitedTracking,
             var5.field32318
          );
       }
@@ -361,7 +361,7 @@ public class Class3316 extends Class3314 {
    public static void method11870(World var0, ItemStack var1) {
       Class7529 var4 = method11861(var1, var0);
       if (var4 != null) {
-         Class7529 var5 = method11863(var1, var0, 0, 0, var4.field32321, var4.field32319, var4.field32320, var4.field32318);
+         Class7529 var5 = method11863(var1, var0, 0, 0, var4.scale, var4.trackingPosition, var4.unlimitedTracking, var4.field32318);
          var5.method24593(var4);
       }
    }
@@ -369,7 +369,7 @@ public class Class3316 extends Class3314 {
    @Override
    public void method11730(ItemStack var1, World var2, List<ITextComponent> var3, Class2216 var4) {
       Class7529 var7 = var2 != null ? method11861(var1, var2) : null;
-      if (var7 != null && var7.field32323) {
+      if (var7 != null && var7.locked) {
          var3.add(new TranslationTextComponent("filled_map.locked", method11862(var1)).mergeStyle(TextFormatting.GRAY));
       }
 
@@ -378,8 +378,8 @@ public class Class3316 extends Class3314 {
             var3.add(new TranslationTextComponent("filled_map.unknown").mergeStyle(TextFormatting.GRAY));
          } else {
             var3.add(new TranslationTextComponent("filled_map.id", method11862(var1)).mergeStyle(TextFormatting.GRAY));
-            var3.add(new TranslationTextComponent("filled_map.scale", 1 << var7.field32321).mergeStyle(TextFormatting.GRAY));
-            var3.add(new TranslationTextComponent("filled_map.level", var7.field32321, 4).mergeStyle(TextFormatting.GRAY));
+            var3.add(new TranslationTextComponent("filled_map.scale", 1 << var7.scale).mergeStyle(TextFormatting.GRAY));
+            var3.add(new TranslationTextComponent("filled_map.level", var7.scale, 4).mergeStyle(TextFormatting.GRAY));
          }
       }
    }

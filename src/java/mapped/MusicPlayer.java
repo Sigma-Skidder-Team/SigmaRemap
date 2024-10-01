@@ -255,7 +255,7 @@ public class MusicPlayer extends Class4278 {
             }
          } else {
             int var12 = var1 - this.field20880 - (this.icoPanel == null ? 0 : this.icoPanel.method13271());
-            short var14 = 200;
+            int var14 = 200;
             if (var12 + this.getWidthA() > this.icoPanel.getWidthA() + var14 && var1 - this.field20878 > 70) {
                int var15 = var12 - this.getXA() - var14;
                this.setXA((int)((float)this.getXA() + (float)var15 * 0.5F));
@@ -299,17 +299,17 @@ public class MusicPlayer extends Class4278 {
       this.method13193(var1);
       this.method13194(var1);
       this.method13192(var1);
-      byte var4 = 55;
+      float var4 = 55;
       RenderUtil.drawString(
          ResourceRegistry.JelloLightFont40,
-         (float)(var4 + this.getXA()),
+              var4 + this.getXA(),
          (float)(this.getYA() + 20),
          "Jello",
          MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
       RenderUtil.drawString(
          ResourceRegistry.JelloLightFont20,
-         (float)(var4 + this.getXA() + 80),
+              var4 + this.getXA() + 80,
          (float)(this.getYA() + 40),
          "music",
          MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
@@ -417,7 +417,7 @@ public class MusicPlayer extends Class4278 {
    private void method13194(float var1) {
       if (this.field20854.method24324() != null) {
          String[] var4 = this.field20854.method24324().split(" - ");
-         byte var5 = 30;
+         int var5 = 30;
          if (var4.length <= 1) {
             this.method13195(var1, !var4[0].isEmpty() ? var4[0] : "Jello Music", this.field20845 - var5 * 2, 12, 0);
          } else {

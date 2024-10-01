@@ -11,6 +11,7 @@ import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.jigsaw.JigsawOrientation;
 import net.minecraft.world.gen.feature.structure.StructureManager;
 import net.minecraft.world.gen.feature.template.TemplateManager;
@@ -22,12 +23,12 @@ import java.util.function.Supplier;
 
 public class Class7490 extends Class7487 {
    public static final Codec<Class7490> field32190 = RecordCodecBuilder.create(
-      var0 -> var0.group(Class7909.field33883.fieldOf("feature").forGetter(var0x -> var0x.field32191), method24379()).apply(var0, Class7490::new)
+      var0 -> var0.group(ConfiguredFeature.field33883.fieldOf("feature").forGetter(var0x -> var0x.field32191), method24379()).apply(var0, Class7490::new)
    );
-   private final Supplier<Class7909<?, ?>> field32191;
+   private final Supplier<ConfiguredFeature<?, ?>> field32191;
    private final CompoundNBT field32192;
 
-   public Class7490(Supplier<Class7909<?, ?>> var1, Class109 var2) {
+   public Class7490(Supplier<ConfiguredFeature<?, ?>> var1, Class109 var2) {
       super(var2);
       this.field32191 = var1;
       this.field32192 = this.method24414();
@@ -77,7 +78,7 @@ public class Class7490 extends Class7487 {
    public boolean method24376(
            TemplateManager var1, ISeedReader var2, StructureManager var3, ChunkGenerator var4, BlockPos var5, BlockPos var6, Rotation var7, Class9764 var8, Random var9, boolean var10
    ) {
-      return this.field32191.get().method26521(var2, var4, var9, var5);
+      return this.field32191.get().func_242765_a(var2, var4, var9, var5);
    }
 
    @Override

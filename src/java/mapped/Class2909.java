@@ -49,10 +49,10 @@ public class Class2909 extends Class2898<Class4712> {
       }
 
       for (int var11 = 0; var11 < 4; var11++) {
-         this.method11217(var1, var4.method8339(var11), Blocks.BEDROCK.getDefaultState());
+         this.method11217(var1, var4.up(var11), Blocks.BEDROCK.getDefaultState());
       }
 
-      BlockPos var12 = var4.method8339(2);
+      BlockPos var12 = var4.up(2);
 
       for (Direction var14 : Direction.Plane.HORIZONTAL) {
          this.method11217(var1, var12.offset(var14), Blocks.WALL_TORCH.getDefaultState().with(Class3382.field18985, var14));

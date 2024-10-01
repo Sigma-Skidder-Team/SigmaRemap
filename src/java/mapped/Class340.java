@@ -134,7 +134,7 @@ public abstract class Class340 extends Class341 implements Runnable {
          if (this.method1670()) {
             try {
                int var3 = 5;
-               byte var4 = 0;
+               long var4 = 0;
 
                while (!this.field1490.isInterrupted() && var3 != 0) {
                   SelectionKey var5 = null;

@@ -1629,7 +1629,6 @@ public abstract class LivingEntity extends Entity {
             this.playSound(SoundEvents.field27036, 0.8F, 0.8F + this.world.rand.nextFloat() * 0.4F);
             break;
          case 46:
-            short var11 = 128;
 
             for (int var12 = 0; var12 < 128; var12++) {
                double var13 = (double)var12 / 127.0;

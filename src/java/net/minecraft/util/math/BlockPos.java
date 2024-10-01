@@ -103,23 +103,23 @@ public class BlockPos extends Vector3i {
          : new BlockPos((double)this.getX() + var1, (double)this.getY() + var3, (double)this.getZ() + var5);
    }
 
-   public BlockPos method8336(int var1, int var2, int var3) {
+   public BlockPos add(int var1, int var2, int var3) {
       return var1 == 0 && var2 == 0 && var3 == 0 ? this : new BlockPos(this.getX() + var1, this.getY() + var2, this.getZ() + var3);
    }
 
    public BlockPos method8337(Vector3i var1) {
-      return this.method8336(var1.getX(), var1.getY(), var1.getZ());
+      return this.add(var1.getX(), var1.getY(), var1.getZ());
    }
 
    public BlockPos method8338(Vector3i var1) {
-      return this.method8336(-var1.getX(), -var1.getY(), -var1.getZ());
+      return this.add(-var1.getX(), -var1.getY(), -var1.getZ());
    }
 
    public BlockPos up() {
       return this.offset(Direction.UP);
    }
 
-   public BlockPos method8339(int var1) {
+   public BlockPos up(int var1) {
       return this.method8350(Direction.UP, var1);
    }
 
@@ -310,8 +310,8 @@ public class BlockPos extends Vector3i {
       }
 
       @Override
-      public BlockPos method8336(int var1, int var2, int var3) {
-         return super.method8336(var1, var2, var3).toImmutable();
+      public BlockPos add(int var1, int var2, int var3) {
+         return super.add(var1, var2, var3).toImmutable();
       }
 
       @Override

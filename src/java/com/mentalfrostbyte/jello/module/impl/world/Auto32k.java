@@ -122,7 +122,7 @@ public class Auto32k extends Module {
     public boolean method16717(BlockPos var1) {
         BlockState var4 = mc.world.getBlockState(var1);
         BlockState var5 = mc.world.getBlockState(var1.up());
-        BlockState var6 = mc.world.getBlockState(var1.method8339(2));
+        BlockState var6 = mc.world.getBlockState(var1.up(2));
         return var4.isSolid() && var5.isAir() && var6.isAir();
     }
 

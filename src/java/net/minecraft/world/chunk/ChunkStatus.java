@@ -1,16 +1,15 @@
-package mapped;
+package net.minecraft.world.chunk;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.mojang.datafixers.util.Either;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
+import mapped.*;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.chunk.ChunkPrimer;
-import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.gen.WorldGenRegion;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 import net.minecraft.world.server.ServerWorld;
@@ -100,7 +99,7 @@ public class ChunkStatus {
          return CompletableFuture.completedFuture(Either.left(var7));
       }
    );
-   public static final ChunkStatus field42142 = method34291(
+   public static final ChunkStatus LIGHT = method34291(
       "light",
       field42141,
       1,
@@ -110,7 +109,7 @@ public class ChunkStatus {
       (var0, var1, var2, var3, var4, var5) -> method34288(var0, var3, var5)
    );
    public static final ChunkStatus field42143 = method34289(
-      "spawn", field42142, 0, field42131, Class2076.field13524, (var0, var1, var2, var3) -> var1.func_230354_a_(new WorldGenRegion(var0, var2))
+      "spawn", LIGHT, 0, field42131, Class2076.field13524, (var0, var1, var2, var3) -> var1.func_230354_a_(new WorldGenRegion(var0, var2))
    );
    public static final ChunkStatus field42144 = method34289("heightmaps", field42143, 0, field42131, Class2076.field13524, (var0, var1, var2, var3) -> {
    });
@@ -234,7 +233,7 @@ public class ChunkStatus {
       return this.field42151.method21487(this, var1, var2, var3, var4, var5, var6, (IChunk)var6.get(var6.size() / 2));
    }
 
-   public CompletableFuture<Either<IChunk, Class7022>> method34301(
+   public CompletableFuture<Either<IChunk, Class7022>> doLoadingWork(
            ServerWorld var1, TemplateManager var2, Class195 var3, Function<IChunk, CompletableFuture<Either<IChunk, Class7022>>> var4, IChunk var5
    ) {
       return this.field42152.method34754(this, var1, var2, var3, var4, var5);

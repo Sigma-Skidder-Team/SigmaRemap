@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.gen.feature.Features;
 
 public class Class8673 {
    public static final Class9369 field39097 = Class9837.method38884(
@@ -173,8 +174,8 @@ public class Class8673 {
             new ResourceLocation("empty"),
             ImmutableList.of(
                Pair.of(Class7487.method24385("village/desert/desert_lamp_1"), 10),
-               Pair.of(Class7487.method24389(Class9104.field41723), 4),
-               Pair.of(Class7487.method24389(Class9104.field41691), 4),
+               Pair.of(Class7487.method24389(Features.field41723), 4),
+               Pair.of(Class7487.method24389(Features.field41691), 4),
                Pair.of(Class7487.method24384(), 10)
             ),
             Class109.field367
@@ -186,8 +187,8 @@ public class Class8673 {
             new ResourceLocation("empty"),
             ImmutableList.of(
                Pair.of(Class7487.method24386("village/desert/desert_lamp_1", Class8523.field38255), 10),
-               Pair.of(Class7487.method24389(Class9104.field41723), 4),
-               Pair.of(Class7487.method24389(Class9104.field41691), 4),
+               Pair.of(Class7487.method24389(Features.field41723), 4),
+               Pair.of(Class7487.method24389(Features.field41691), 4),
                Pair.of(Class7487.method24384(), 10)
             ),
             Class109.field367

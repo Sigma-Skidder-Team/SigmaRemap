@@ -54,7 +54,7 @@ public final class FluidState extends StateHolder<Fluid, FluidState> {
    public boolean method23478(IBlockReader var1, BlockPos var2) {
       for (int var5 = -1; var5 <= 1; var5++) {
          for (int var6 = -1; var6 <= 1; var6++) {
-            BlockPos var7 = var2.method8336(var5, 0, var6);
+            BlockPos var7 = var2.add(var5, 0, var6);
             FluidState var8 = var1.getFluidState(var7);
             if (!var8.getFluid().method25066(this.getFluid()) && !var1.getBlockState(var7).method23409(var1, var7)) {
                return true;

@@ -85,7 +85,7 @@ public class LoginScreen extends Class4247 {
       super.method13224();
       super.method13225();
       byte var4 = 28;
-      RenderUtil.method11454((float)(this.xA + var4), (float)(this.yA + var4 + 10), 160.0F, 160.0F, ResourcesDecrypter.sigmaPNG, var1);
+      RenderUtil.drawImage((float)(this.xA + var4), (float)(this.yA + var4 + 10), 160.0F, 160.0F, ResourcesDecrypter.sigmaPNG, var1);
       Class9507 var5 = Client.getInstance().getNetworkManager().method30452();
       if (var5 != null) {
          this.field21355.setEnabled(var5.method36702());

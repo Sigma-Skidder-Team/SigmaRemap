@@ -65,7 +65,7 @@ public class Class9803 {
       LoadingCache var5 = method38657(var1, false);
       int var6 = Math.max(Math.max(this.field45826, this.field45825), this.field45824);
 
-      for (BlockPos var8 : BlockPos.method8359(var2, var2.method8336(var6 - 1, var6 - 1, var6 - 1))) {
+      for (BlockPos var8 : BlockPos.method8359(var2, var2.add(var6 - 1, var6 - 1, var6 - 1))) {
          for (Direction var12 : Direction.values()) {
             for (Direction var16 : Direction.values()) {
                if (var16 != var12 && var16 != var12.getOpposite()) {
@@ -90,7 +90,7 @@ public class Class9803 {
          Vector3i var8 = new Vector3i(var1.getXOffset(), var1.getYOffset(), var1.getZOffset());
          Vector3i var9 = new Vector3i(var2.getXOffset(), var2.getYOffset(), var2.getZOffset());
          Vector3i var10 = var8.method8315(var9);
-         return var0.method8336(
+         return var0.add(
             var9.getX() * -var4 + var10.getX() * var3 + var8.getX() * var5,
             var9.getY() * -var4 + var10.getY() * var3 + var8.getY() * var5,
             var9.getZ() * -var4 + var10.getZ() * var3 + var8.getZ() * var5

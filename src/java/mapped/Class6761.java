@@ -203,7 +203,7 @@ public class Class6761 extends Class6762 {
 
             return var9;
          } else {
-            if (var2 < this.field29476.world.method6776() - 10 && var9 != null) {
+            if (var2 < this.field29476.world.getSeaLevel() - 10 && var9 != null) {
                var9.field30858++;
             }
 

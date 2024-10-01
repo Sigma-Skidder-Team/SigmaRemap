@@ -30,7 +30,7 @@ public class Class2732 extends Class2595 {
                var5 = (int)((float)var5 + var7 / Math.abs(var7));
             }
 
-            if (this.field17250.world.getBlockState(this.field17250.getPosition().method8336(var4, -1, var5)).isAir()) {
+            if (this.field17250.world.getBlockState(this.field17250.getPosition().add(var4, -1, var5)).isAir()) {
                return true;
             } else {
                return this.field17250.method5212() && Class1097.method5241(this.field17250).nextInt(60) == 1

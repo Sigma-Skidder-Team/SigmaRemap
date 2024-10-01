@@ -45,7 +45,7 @@ public class Class1037 extends ZombieEntity implements Class1022 {
       this.field5600.addGoal(2, new Class2599(this, 1.0, 40, 10.0F));
       this.field5600.addGoal(2, new Class2655(this, 1.0, false));
       this.field5600.addGoal(5, new Class2629(this, 1.0));
-      this.field5600.addGoal(6, new Class2659(this, 1.0, this.world.method6776()));
+      this.field5600.addGoal(6, new Class2659(this, 1.0, this.world.getSeaLevel()));
       this.field5600.addGoal(7, new Class2736(this, 1.0));
       this.field5601.addGoal(1, new HurtByTargetGoal(this, Class1037.class).method10918(ZombifiedPiglinEntity.class));
       this.field5601.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, 10, true, false, this::method4646));
@@ -77,7 +77,7 @@ public class Class1037 extends ZombieEntity implements Class1022 {
    }
 
    private static boolean method4641(IWorld var0, BlockPos var1) {
-      return var1.getY() < var0.method6776() - 5;
+      return var1.getY() < var0.getSeaLevel() - 5;
    }
 
    @Override

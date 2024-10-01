@@ -745,7 +745,7 @@ public class Class2363 implements Serializable, Cloneable {
          var4[var6++] = 1.0 / var9;
       }
 
-      byte var28 = 0;
+      int var28 = 0;
 
       for (int var27 = 0; var27 < 3; var27++) {
          for (int var23 = 0; var23 < var27; var23++) {
@@ -821,7 +821,7 @@ public class Class2363 implements Serializable, Cloneable {
    }
 
    public static void method9391(double[] var0, int[] var1, double[] var2) {
-      byte var5 = 0;
+      int var5 = 0;
 
       for (int var6 = 0; var6 < 3; var6++) {
          int var7 = var6;

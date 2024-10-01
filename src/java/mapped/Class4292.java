@@ -92,8 +92,8 @@ public class Class4292 extends Class4278 implements Class4293 {
             MultiUtilities.applyAlpha(ClientColors.MID_GREY.getColor, 0.1F * var1)
          );
       } else {
-         RenderUtil.method11454((float)var6, (float)this.yA, (float)var7, 5.0F, ResourcesDecrypter.verticalScrollBarTopPNG, 0.45F * var1);
-         RenderUtil.method11454((float)var6, (float)(this.yA + this.heightA - var4), (float)var7, 5.0F, ResourcesDecrypter.verticalScrollBarBottomPNG, 0.45F * var1);
+         RenderUtil.drawImage((float)var6, (float)this.yA, (float)var7, 5.0F, ResourcesDecrypter.verticalScrollBarTopPNG, 0.45F * var1);
+         RenderUtil.drawImage((float)var6, (float)(this.yA + this.heightA - var4), (float)var7, 5.0F, ResourcesDecrypter.verticalScrollBarBottomPNG, 0.45F * var1);
          RenderUtil.drawRect((float)var6, (float)(this.yA + var4), (float)(var6 + var7), (float)(this.yA + this.heightA - var4), var5);
       }
 

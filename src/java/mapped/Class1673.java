@@ -16,6 +16,7 @@ import net.minecraft.util.palette.UpgradeData;
 import net.minecraft.world.biome.BiomeContainer;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.chunk.ChunkSection;
+import net.minecraft.world.chunk.ChunkStatus;
 import net.minecraft.world.gen.feature.structure.StructureStart;
 
 import javax.annotation.Nullable;

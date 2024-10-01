@@ -23,11 +23,11 @@ public class Class2905 extends Class2898<Class4712> {
       if (!var1.getBlockState(var4).isIn(Blocks.SNOW_BLOCK)) {
          return false;
       } else {
-         var4 = var4.method8339(var3.nextInt(4));
+         var4 = var4.up(var3.nextInt(4));
          int var8 = var3.nextInt(4) + 7;
          int var9 = var8 / 4 + var3.nextInt(2);
          if (var9 > 1 && var3.nextInt(60) == 0) {
-            var4 = var4.method8339(10 + var3.nextInt(30));
+            var4 = var4.up(10 + var3.nextInt(30));
          }
 
          for (int var10 = 0; var10 < var8; var10++) {
@@ -41,17 +41,17 @@ public class Class2905 extends Class2898<Class4712> {
                   float var16 = (float) MathHelper.abs(var15) - 0.25F;
                   if ((var13 == 0 && var15 == 0 || !(var14 * var14 + var16 * var16 > var11 * var11))
                      && (var13 != -var12 && var13 != var12 && var15 != -var12 && var15 != var12 || !(var3.nextFloat() > 0.75F))) {
-                     BlockState var17 = var1.getBlockState(var4.method8336(var13, var10, var15));
+                     BlockState var17 = var1.getBlockState(var4.add(var13, var10, var15));
                      Block var18 = var17.getBlock();
                      if (var17.isAir() || method11219(var18) || var18 == Blocks.SNOW_BLOCK || var18 == Blocks.ICE) {
-                        this.method11217(var1, var4.method8336(var13, var10, var15), Blocks.PACKED_ICE.getDefaultState());
+                        this.method11217(var1, var4.add(var13, var10, var15), Blocks.PACKED_ICE.getDefaultState());
                      }
 
                      if (var10 != 0 && var12 > 1) {
-                        var17 = var1.getBlockState(var4.method8336(var13, -var10, var15));
+                        var17 = var1.getBlockState(var4.add(var13, -var10, var15));
                         var18 = var17.getBlock();
                         if (var17.isAir() || method11219(var18) || var18 == Blocks.SNOW_BLOCK || var18 == Blocks.ICE) {
-                           this.method11217(var1, var4.method8336(var13, -var10, var15), Blocks.PACKED_ICE.getDefaultState());
+                           this.method11217(var1, var4.add(var13, -var10, var15), Blocks.PACKED_ICE.getDefaultState());
                         }
                      }
                   }
@@ -70,7 +70,7 @@ public class Class2905 extends Class2898<Class4712> {
 
          for (int var21 = -var20; var21 <= var20; var21++) {
             for (int var22 = -var20; var22 <= var20; var22++) {
-               BlockPos var23 = var4.method8336(var21, -1, var22);
+               BlockPos var23 = var4.add(var21, -1, var22);
                int var24 = 50;
                if (Math.abs(var21) == 1 && Math.abs(var22) == 1) {
                   var24 = var3.nextInt(5);

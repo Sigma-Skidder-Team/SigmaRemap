@@ -38,14 +38,13 @@ public class Class7020 implements Class7016 {
                for (PlayerEntity var9 : var1.method6870()) {
                   if (!var9.isSpectator()) {
                      BlockPos var10 = var9.getPosition();
-                     if (!var1.method6812().hasSkyLight() || var10.getY() >= var1.method6776() && var1.method7022(var10)) {
+                     if (!var1.method6812().hasSkyLight() || var10.getY() >= var1.getSeaLevel() && var1.method7022(var10)) {
                         Class9755 var11 = var1.method6807(var10);
                         if (var11.method38329(var6.nextFloat() * 3.0F)) {
                            Class8287 var12 = ((ServerPlayerEntity)var9).method2809();
                            int var13 = MathHelper.clamp(var12.method28961(Stats.field40104.method172(Stats.field40108)), 1, Integer.MAX_VALUE);
-                           short var14 = 24000;
                            if (var6.nextInt(var13) >= 72000) {
-                              BlockPos var15 = var10.method8339(20 + var6.nextInt(15)).method8348(-10 + var6.nextInt(21)).method8344(-10 + var6.nextInt(21));
+                              BlockPos var15 = var10.up(20 + var6.nextInt(15)).method8348(-10 + var6.nextInt(21)).method8344(-10 + var6.nextInt(21));
                               BlockState var16 = var1.getBlockState(var15);
                               FluidState var17 = var1.getFluidState(var15);
                               if (Class8170.method28428(var1, var15, var16, var17, EntityType.field41063)) {

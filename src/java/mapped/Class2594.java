@@ -24,13 +24,11 @@ public class Class2594 extends Class2595 {
 
    @Override
    public void method10804() {
-      short var3 = 512;
-      byte var4 = 4;
       Random var5 = Class1088.method5065(this.field16812);
       int var6 = var5.nextInt(1025) - 512;
       int var7 = var5.nextInt(9) - 4;
       int var8 = var5.nextInt(1025) - 512;
-      if ((double)var7 + this.field16812.getPosY() > (double)(this.field16812.world.method6776() - 1)) {
+      if ((double)var7 + this.field16812.getPosY() > (double)(this.field16812.world.getSeaLevel() - 1)) {
          var7 = 0;
       }
 

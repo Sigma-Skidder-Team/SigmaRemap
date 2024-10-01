@@ -16,7 +16,7 @@ public class Class2919 extends Class2898<Class4712> {
    }
 
    public boolean method11213(ISeedReader var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4712 var5) {
-      if (var4.getY() > var1.method6776() - 1) {
+      if (var4.getY() > var1.getSeaLevel() - 1) {
          return false;
       } else if (!var1.getBlockState(var4).isIn(Blocks.WATER) && !var1.getBlockState(var4.down()).isIn(Blocks.WATER)) {
          return false;
@@ -43,7 +43,7 @@ public class Class2919 extends Class2898<Class4712> {
                }
 
                if (var21 >= 1) {
-                  BlockPos var22 = var4.method8336(var3.nextInt(var21) - var3.nextInt(var21), var20, var3.nextInt(var21) - var3.nextInt(var21));
+                  BlockPos var22 = var4.add(var3.nextInt(var21) - var3.nextInt(var21), var20, var3.nextInt(var21) - var3.nextInt(var21));
                   BlockState var13 = var1.getBlockState(var22);
                   if (var13.getMaterial() == Material.field38932
                      || var13.isIn(Blocks.WATER)

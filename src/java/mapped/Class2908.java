@@ -43,7 +43,7 @@ public class Class2908 extends Class2898<Class4738> {
                this.method11217(var1, var17, var5.method14875());
             }
 
-            BlockPos var18 = var17.method8336(var10, 0, var11);
+            BlockPos var18 = var17.add(var10, 0, var11);
             if (method11247(var1, var18, var5)) {
                var8 = true;
                this.method11217(var1, var18, var5.method14874());

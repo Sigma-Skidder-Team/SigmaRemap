@@ -31,7 +31,7 @@ public class Class7609<T> implements ITag<T> {
    }
 
    @Override
-   public List<T> method24918() {
+   public List<T> getAllElements() {
       return this.field32653;
    }
 

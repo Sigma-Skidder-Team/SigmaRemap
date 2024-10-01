@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.gen.feature.Features;
 
 public class Class9835 {
    public static final Class9369 field45935 = Class9837.method38884(
@@ -205,7 +206,7 @@ public class Class9835 {
          new Class9369(
             new ResourceLocation("village/savanna/trees"),
             new ResourceLocation("empty"),
-            ImmutableList.of(Pair.of(Class7487.method24389(Class9104.field41773), 1)),
+            ImmutableList.of(Pair.of(Class7487.method24389(Features.field41773), 1)),
             Class109.field367
          )
       );
@@ -215,9 +216,9 @@ public class Class9835 {
             new ResourceLocation("empty"),
             ImmutableList.of(
                Pair.of(Class7487.method24385("village/savanna/savanna_lamp_post_01"), 4),
-               Pair.of(Class7487.method24389(Class9104.field41773), 4),
-               Pair.of(Class7487.method24389(Class9104.field41691), 4),
-               Pair.of(Class7487.method24389(Class9104.field41692), 1),
+               Pair.of(Class7487.method24389(Features.field41773), 4),
+               Pair.of(Class7487.method24389(Features.field41691), 4),
+               Pair.of(Class7487.method24389(Features.field41692), 1),
                Pair.of(Class7487.method24384(), 4)
             ),
             Class109.field367
@@ -229,9 +230,9 @@ public class Class9835 {
             new ResourceLocation("empty"),
             ImmutableList.of(
                Pair.of(Class7487.method24386("village/savanna/savanna_lamp_post_01", Class8523.field38252), 4),
-               Pair.of(Class7487.method24389(Class9104.field41773), 4),
-               Pair.of(Class7487.method24389(Class9104.field41691), 4),
-               Pair.of(Class7487.method24389(Class9104.field41692), 1),
+               Pair.of(Class7487.method24389(Features.field41773), 4),
+               Pair.of(Class7487.method24389(Features.field41691), 4),
+               Pair.of(Class7487.method24389(Features.field41692), 1),
                Pair.of(Class7487.method24384(), 4)
             ),
             Class109.field367

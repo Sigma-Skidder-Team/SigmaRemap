@@ -72,7 +72,6 @@ public class Class1266 extends AbstractGui {
                      int var27 = (int)(255.0 * var24 * var14);
                      var20++;
                      if (var26 > 3) {
-                        boolean var28 = false;
                         double var29 = (double)(-var21) * var16;
                         var1.push();
                         var1.translate(0.0, 0.0, 50.0);
@@ -121,7 +120,7 @@ public class Class1266 extends AbstractGui {
             }
 
             if (var8) {
-               byte var34 = 9;
+               int var34 = 9;
                RenderSystem.translatef(-3.0F, 0.0F, 0.0F);
                int var36 = var7 * var34 + var7;
                int var37 = var20 * var34 + var20;
@@ -310,14 +309,10 @@ public class Class1266 extends AbstractGui {
    }
 
    public static int method5945(double var0) {
-      short var4 = 320;
-      byte var5 = 40;
       return MathHelper.floor(var0 * 280.0 + 40.0);
    }
 
    public static int method5946(double var0) {
-      short var4 = 180;
-      byte var5 = 20;
       return MathHelper.floor(var0 * 160.0 + 20.0);
    }
 

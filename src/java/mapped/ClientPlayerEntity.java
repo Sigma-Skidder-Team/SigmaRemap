@@ -918,7 +918,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
                         BlockPos var36 = new BlockPos(var35);
 
                         for (int var37 = 1; (float)var37 < var19; var37++) {
-                           BlockPos var38 = var36.method8339(var37);
+                           BlockPos var38 = var36.up(var37);
                            BlockState var39 = this.world.getBlockState(var38);
                            VoxelShape var40;
                            if (!(var40 = var39.getCollisionShape(this.world, var38, var46)).isEmpty()) {

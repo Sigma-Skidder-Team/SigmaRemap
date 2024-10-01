@@ -1,26 +1,25 @@
-package mapped;
+package net.minecraft.world.biome.provider;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.provider.BiomeProvider;
 
 import java.util.List;
 import java.util.function.Supplier;
 
-public class Class1687 extends BiomeProvider {
-   public static final Codec<Class1687> field9178 = RecordCodecBuilder.create(
+public class CheckerboardBiomeProvider extends BiomeProvider {
+   public static final Codec<CheckerboardBiomeProvider> CODEC = RecordCodecBuilder.create(
       var0 -> var0.group(
                Biome.field40310.fieldOf("biomes").forGetter(var0x -> var0x.field9179),
                Codec.intRange(0, 62).fieldOf("scale").orElse(2).forGetter(var0x -> var0x.field9181)
             )
-            .apply(var0, Class1687::new)
+            .apply(var0, CheckerboardBiomeProvider::new)
    );
    private final List<Supplier<Biome>> field9179;
    private final int field9180;
    private final int field9181;
 
-   public Class1687(List<Supplier<Biome>> var1, int var2) {
+   public CheckerboardBiomeProvider(List<Supplier<Biome>> var1, int var2) {
       super(var1.stream());
       this.field9179 = var1;
       this.field9180 = var2 + 2;
@@ -28,12 +27,12 @@ public class Class1687 extends BiomeProvider {
    }
 
    @Override
-   public Codec<? extends BiomeProvider> method7199() {
-      return field9178;
+   public Codec<? extends BiomeProvider> getBiomeProviderCodec() {
+      return CODEC;
    }
 
    @Override
-   public BiomeProvider method7200(long var1) {
+   public BiomeProvider getBiomeProvider(long var1) {
       return this;
    }
 

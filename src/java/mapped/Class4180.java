@@ -92,7 +92,7 @@ public abstract class Class4180 extends Class4178 {
    @Override
    public void method12937(int var1, int var2, int var3) {
       super.method12937(var1, var2, var3);
-      this.field20455 = this.field20455.method8336(var1, var2, var3);
+      this.field20455 = this.field20455.add(var1, var2, var3);
    }
 
    @Override

@@ -40,7 +40,6 @@ public class Class1263 extends AbstractGui implements Class1190, IGuiEventListen
       int var16 = (int)Math.ceil((double)((float)var14 / (float)var15));
       this.field6680 = var3;
       this.field6681 = var4;
-      byte var17 = 25;
       float var18 = (float)(this.field6680 + Math.min(var14, var15) * 25);
       float var19 = (float)(var5 + 50);
       if (var18 > var19) {
@@ -123,10 +122,6 @@ public class Class1263 extends AbstractGui implements Class1190, IGuiEventListen
          int var7 = this.field6678.size() > 16 ? 5 : 4;
          int var8 = Math.min(this.field6678.size(), var7);
          int var9 = MathHelper.ceil((float)this.field6678.size() / (float)var7);
-         byte var10 = 24;
-         byte var11 = 4;
-         byte var12 = 82;
-         short var13 = 208;
          this.method5904(var1, var8, var9, 24, 4, 82, 208);
          RenderSystem.disableBlend();
 

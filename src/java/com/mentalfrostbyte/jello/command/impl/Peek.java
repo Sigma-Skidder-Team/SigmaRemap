@@ -67,7 +67,6 @@ public class Peek extends Command {
                for (int var9 = 0; var9 < var7.size(); var9++) {
                   CompoundNBT var10 = var7.method153(var9);
                   short var11 = var10.getShort("lvl");
-                  short var12 = var10.getShort("id");
                   String var13 = "";
                   CompoundNBT var14 = new CompoundNBT();
                   var14.putShort("lvl", var11);

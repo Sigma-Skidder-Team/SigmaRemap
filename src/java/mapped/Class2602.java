@@ -90,7 +90,7 @@ public class Class2602 extends Class2595 {
             }
          } else {
             BlockPos var7 = this.field16846.getPosition().offset(this.field16846.getHorizontalFacing().getOpposite());
-            var7 = var7.method8336(0, -1, 0);
+            var7 = var7.add(0, -1, 0);
             this.field16845.method4230().method21654((double)var7.getX(), (double)var7.getY(), (double)var7.getZ(), 1.0);
             if (this.field16845.getDistance(this.field16846) < 4.0F) {
                this.field16844 = 0;

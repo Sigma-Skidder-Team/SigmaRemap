@@ -25,7 +25,7 @@ public class Class7017 implements Class7016 {
                Random var7 = var1.rand;
                int var8 = (8 + var7.nextInt(24)) * (!var7.nextBoolean() ? 1 : -1);
                int var9 = (8 + var7.nextInt(24)) * (!var7.nextBoolean() ? 1 : -1);
-               BlockPos var10 = var6.getPosition().method8336(var8, 0, var9);
+               BlockPos var10 = var6.getPosition().add(var8, 0, var9);
                if (var1.method7019(
                   var10.getX() - 10,
                   var10.getY() - 10,

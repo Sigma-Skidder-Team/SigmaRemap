@@ -8,7 +8,7 @@ import net.minecraft.client.Minecraft;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class4304 extends IconPanel implements Class4347 {
+public class AnimatedIconPanel extends IconPanel implements Class4347 {
     public boolean field20876;
    public boolean field20877;
    public int field20878;
@@ -20,27 +20,27 @@ public class Class4304 extends IconPanel implements Class4347 {
    public boolean field20884 = true;
    public boolean field20885 = true;
    public boolean field20886 = false;
-   public final TimerUtil field20887 = new TimerUtil();
+   public final TimerUtil timerUtil = new TimerUtil();
    public int field20888 = 300;
    public int field20889 = 2;
    private final List<Class6751> field20890 = new ArrayList<Class6751>();
 
-   public Class4304(IconPanel var1, String var2, int var3, int var4, int var5, int var6, boolean var7) {
+   public AnimatedIconPanel(IconPanel var1, String var2, int var3, int var4, int var5, int var6, boolean var7) {
       super(var1, var2, var3, var4, var5, var6);
       this.field20876 = var7;
    }
 
-   public Class4304(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, boolean var8) {
+   public AnimatedIconPanel(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, boolean var8) {
       super(var1, var2, var3, var4, var5, var6, var7);
       this.field20876 = var8;
    }
 
-   public Class4304(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, boolean var9) {
+   public AnimatedIconPanel(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, boolean var9) {
       super(var1, var2, var3, var4, var5, var6, var7, var8);
       this.field20876 = var9;
    }
 
-   public Class4304(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, ClientResource var9, boolean var10) {
+   public AnimatedIconPanel(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, ClientResource var9, boolean var10) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, var9);
       this.field20876 = var10;
    }
@@ -67,7 +67,7 @@ public class Class4304 extends IconPanel implements Class4347 {
    public boolean method13078(int var1, int var2, int var3) {
       if (!super.method13078(var1, var2, var3)) {
          if (this.method13214()) {
-            this.field20887.start();
+            this.timerUtil.start();
             this.field20878 = var1;
             this.field20879 = var2;
             this.field20880 = this.field20878 - this.method13271();
@@ -84,8 +84,8 @@ public class Class4304 extends IconPanel implements Class4347 {
    public void method13095(int var1, int var2, int var3) {
       super.method13095(var1, var2, var3);
       if (this.method13214()) {
-         this.field20887.stop();
-         this.field20887.reset();
+         this.timerUtil.stop();
+         this.timerUtil.reset();
       }
 
       this.method13217(false);
@@ -95,7 +95,7 @@ public class Class4304 extends IconPanel implements Class4347 {
    public void method13213(int var1, int var2) {
       boolean var5 = this.field20877;
       if (!this.method13216() && this.method13214()) {
-         boolean var6 = this.field20884 && this.field20887.getElapsedTime() >= (long)this.field20888;
+         boolean var6 = this.field20884 && this.timerUtil.getElapsedTime() >= (long)this.field20888;
          boolean var7 = this.field20885
             && this.field20909
             && (Math.abs(this.field20878 - var1) > this.field20889 || Math.abs(this.field20879 - var2) > this.field20889);
@@ -144,8 +144,8 @@ public class Class4304 extends IconPanel implements Class4347 {
       }
 
       if (this.method13216() && !var5) {
-         this.field20887.stop();
-         this.field20887.reset();
+         this.timerUtil.stop();
+         this.timerUtil.reset();
       }
    }
 
@@ -173,7 +173,7 @@ public class Class4304 extends IconPanel implements Class4347 {
       }
    }
 
-   public Class4304 method13218(Class6751 var1) {
+   public AnimatedIconPanel method13218(Class6751 var1) {
       this.field20890.add(var1);
       return this;
    }

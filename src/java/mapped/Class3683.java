@@ -24,7 +24,7 @@ public class Class3683 extends Class3676<Class1046> {
 
    public void method12502(ServerWorld var1, Class1046 var2, long var3) {
       BlockPos var7 = var2.getPosition();
-      List<BlockPos> var8 = BlockPos.method8360(var7.method8336(-1, -1, -1), var7.method8336(1, 1, 1))
+      List<BlockPos> var8 = BlockPos.method8360(var7.add(-1, -1, -1), var7.add(1, 1, 1))
          .map(BlockPos::toImmutable)
          .collect(Collectors.toList());
       Collections.shuffle(var8);

@@ -17,7 +17,7 @@ public abstract class Class1201 extends Class1200 {
    public void method5655(MatrixStack var1, int var2, int var3, float var4) {
       Minecraft.getInstance().getTextureManager().bindTexture(BeaconScreen.method2704());
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-      short var7 = 219;
+
       int var8 = 0;
       if (this.active) {
          if (!this.field6499) {

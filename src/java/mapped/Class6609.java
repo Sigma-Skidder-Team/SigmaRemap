@@ -18,18 +18,18 @@ public class Class6609 implements IServerWorldInfo {
    }
 
    @Override
-   public int method20029() {
-      return this.field29062.method20029();
+   public int getSpawnX() {
+      return this.field29062.getSpawnX();
    }
 
    @Override
-   public int method20030() {
-      return this.field29062.method20030();
+   public int getSpawnY() {
+      return this.field29062.getSpawnY();
    }
 
    @Override
-   public int method20031() {
-      return this.field29062.method20031();
+   public int getSpawnZ() {
+      return this.field29062.getSpawnZ();
    }
 
    @Override
@@ -111,7 +111,7 @@ public class Class6609 implements IServerWorldInfo {
    }
 
    @Override
-   public void method20041(BlockPos var1, float var2) {
+   public void setSpawn(BlockPos var1, float var2) {
    }
 
    @Override

@@ -28,7 +28,7 @@ public abstract class Texture implements AutoCloseable {
          this.field1126 = var1;
          this.field1127 = var2;
          int var6;
-         short var7;
+         int var7;
          if (!var1) {
             int var5 = Config.method26801();
             var6 = !var2 ? 9728 : var5;

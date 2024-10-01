@@ -38,7 +38,7 @@ public class Class3748<E extends MobEntity> extends Class3676<E> {
 
    private static BlockPos method12707(MobEntity var0, BlockPos var1) {
       Random var4 = var0.world.rand;
-      return var1.method8336(method12708(var4), 0, method12708(var4));
+      return var1.add(method12708(var4), 0, method12708(var4));
    }
 
    private static int method12708(Random var0) {

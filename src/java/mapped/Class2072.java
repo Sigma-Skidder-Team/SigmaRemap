@@ -29,7 +29,6 @@ public enum Class2072 {
    }
 
    public static String method8729(long var0) {
-      short var4 = 1024;
       if (var0 >= 1024L) {
          int var5 = (int)(Math.log((double)var0) / Math.log(1024.0));
          String var6 = "KMGTPE".charAt(var5 - 1) + "";

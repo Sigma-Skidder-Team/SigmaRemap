@@ -16,6 +16,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+import net.minecraft.world.gen.feature.Features;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -175,7 +176,7 @@ public class Class957 extends Class956 implements ITickableTileEntity {
    }
 
    private BlockPos method3878() {
-      BlockPos var3 = method3880(this.world, this.field5374.method8336(0, 2, 0), 5, false);
+      BlockPos var3 = method3880(this.world, this.field5374.add(0, 2, 0), 5, false);
       field5371.debug("Best exit position for portal at {} is {}", this.field5374, var3);
       return var3.up();
    }
@@ -200,12 +201,12 @@ public class Class957 extends Class956 implements ITickableTileEntity {
       } else {
          this.field5374 = new BlockPos(var5.x + 0.5, 75.0, var5.z + 0.5);
          field5371.debug("Failed to find suitable block, settling on {}", this.field5374);
-         Class9104.field41637.method26521(var1, var1.getChunkProvider().method7370(), new Random(this.field5374.method8332()), this.field5374);
+         Features.field41637.func_242765_a(var1, var1.getChunkProvider().getChunkGenerator(), new Random(this.field5374.method8332()), this.field5374);
       }
 
       this.field5374 = method3880(var1, this.field5374, 16, true);
       field5371.debug("Creating portal at {}", this.field5374);
-      this.field5374 = this.field5374.method8339(10);
+      this.field5374 = this.field5374.up(10);
       this.method3883(var1, this.field5374);
       this.markDirty();
    }
@@ -247,7 +248,7 @@ public class Class957 extends Class956 implements ITickableTileEntity {
       for (BlockPos var11 : BlockPos.method8359(var4, var6)) {
          BlockState var12 = var0.getBlockState(var11);
          BlockPos var13 = var11.up();
-         BlockPos var14 = var11.method8339(2);
+         BlockPos var14 = var11.up(2);
          if (var12.isIn(Blocks.field36651) && !var0.getBlockState(var13).method23456(var0, var13) && !var0.getBlockState(var14).method23456(var0, var14)) {
             double var15 = var11.method8320(0.0, 0.0, 0.0, true);
             if (var7 == null || var15 < var8) {
@@ -261,7 +262,7 @@ public class Class957 extends Class956 implements ITickableTileEntity {
    }
 
    private void method3883(ServerWorld var1, BlockPos var2) {
-      Class2898.field17964.method11216(Class4701.method14745(this.getPos(), false)).method26521(var1, var1.getChunkProvider().method7370(), new Random(), var2);
+      Class2898.field17964.method11216(Class4701.method14745(this.getPos(), false)).func_242765_a(var1, var1.getChunkProvider().getChunkGenerator(), new Random(), var2);
    }
 
    @Override

@@ -27,9 +27,9 @@ public class Class6897 extends Class6896 {
       method21069(var1, var4.down());
 
       for (int var10 = 0; var10 < var3; var10++) {
-         method21070(var1, var2, var4.method8339(var10), var5, var6, var7);
+         method21070(var1, var2, var4.up(var10), var5, var6, var7);
       }
 
-      return ImmutableList.of(new Class9359(var4.method8339(var3), 0, false));
+      return ImmutableList.of(new Class9359(var4.up(var3), 0, false));
    }
 }

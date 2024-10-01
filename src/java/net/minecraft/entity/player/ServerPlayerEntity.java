@@ -124,7 +124,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
             int var15 = (var13 + var12 * var14) % var11;
             int var16 = var15 % (var5 * 2 + 1);
             int var17 = var15 / (var5 * 2 + 1);
-            BlockPos var18 = Class6878.method20940(var1, var4.getX() + var16 - var5, var4.getZ() + var17 - var5, false);
+            BlockPos var18 = SpawnLocationHelper.method20940(var1, var4.getX() + var16 - var5, var4.getZ() + var17 - var5, false);
             if (var18 != null) {
                this.moveToBlockPosAndAngles(var18, 0.0F, 0.0F);
                if (var1.hasNoCollisions(this)) {
@@ -411,7 +411,6 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
                new SCombatPacket(this.getCombatTracker(), Class1900.field11157, var5),
                var2 -> {
                   if (!var2.isSuccess()) {
-                     short var5x = 256;
                      String var6x = var5.getStringTruncated(256);
                      TranslationTextComponent var7x = new TranslationTextComponent(
                         "death.attack.message_too_long", new StringTextComponent(var6x).mergeStyle(TextFormatting.YELLOW)
@@ -1162,7 +1161,6 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
             new SChatPacket(var1, var2, var3),
             var4 -> {
                if (!var4.isSuccess() && (var2 == ChatType.GAME_INFO || var2 == ChatType.SYSTEM)) {
-                  short var7 = 256;
                   String var8 = var1.getStringTruncated(256);
                   IFormattableTextComponent var9 = new StringTextComponent(var8).mergeStyle(TextFormatting.YELLOW);
                   this.field4855

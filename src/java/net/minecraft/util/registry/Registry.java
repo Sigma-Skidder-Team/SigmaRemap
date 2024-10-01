@@ -21,7 +21,9 @@ import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.provider.BiomeProvider;
+import net.minecraft.world.chunk.ChunkStatus;
 import net.minecraft.world.gen.carver.ConfiguredCarver;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
 import org.apache.commons.lang3.Validate;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -107,7 +109,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final RegistryKey<Registry<DimensionSettings>> NOISE_SETTINGS_KEY = createKey("worldgen/noise_settings");
    public static final RegistryKey<Registry<Class9319<?>>> field16100 = createKey("worldgen/configured_surface_builder");
    public static final RegistryKey<Registry<ConfiguredCarver<?>>> field16101 = createKey("worldgen/configured_carver");
-   public static final RegistryKey<Registry<Class7909<?, ?>>> field16102 = createKey("worldgen/configured_feature");
+   public static final RegistryKey<Registry<ConfiguredFeature<?, ?>>> field16102 = createKey("worldgen/configured_feature");
    public static final RegistryKey<Registry<StructureFeature<?, ?>>> field16103 = createKey("worldgen/configured_structure_feature");
    public static final RegistryKey<Registry<Class3622>> field16104 = createKey("worldgen/processor_list");
    public static final RegistryKey<Registry<Class9369>> field16105 = createKey("worldgen/template_pool");
@@ -140,7 +142,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final Registry<Class9107<?>> field16132 = method9175(field16122, () -> Class9107.field41831);
    public static final Registry<Class9542<?>> field16133 = method9175(field16123, () -> Class9542.field44429);
    public static final Registry<Class7646<?>> field16134 = method9175(field16124, () -> Class7646.field32820);
-   public static final Registry<Codec<? extends BiomeProvider>> field16135 = method9177(field16125, Lifecycle.stable(), () -> BiomeProvider.field9159);
+   public static final Registry<Codec<? extends BiomeProvider>> BIOME_PROVIDER_CODEC = method9177(field16125, Lifecycle.stable(), () -> BiomeProvider.CODEC);
    public static final Registry<Codec<? extends ChunkGenerator>> CHUNK_GENERATOR_CODEC = method9177(field16126, Lifecycle.stable(), () -> ChunkGenerator.field_235948_a_);
    public static final Registry<Class7525<?>> field16137 = method9175(field16127, () -> Class7525.field32294);
    public static final Registry<Class8325<?>> field16138 = method9175(field16128, () -> Class8325.field35773);

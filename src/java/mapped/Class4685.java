@@ -22,14 +22,14 @@ public class Class4685 extends Class4686 {
 
    @Override
    public void method14695(Consumer<ItemStack> var1, LootContext var2) {
-      this.field22263.method24918().forEach(var1x -> var1.accept(new ItemStack(var1x)));
+      this.field22263.getAllElements().forEach(var1x -> var1.accept(new ItemStack(var1x)));
    }
 
    private boolean method14696(LootContext var1, Consumer<Class6549> var2) {
       if (!this.method14709(var1)) {
          return false;
       } else {
-         for (Item var6 : this.field22263.method24918()) {
+         for (Item var6 : this.field22263.getAllElements()) {
             var2.accept(new Class6551(this, var6));
          }
 

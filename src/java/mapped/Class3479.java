@@ -10,6 +10,8 @@ import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
+import net.minecraft.world.gen.feature.Features;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
@@ -33,7 +35,7 @@ public class Class3479 extends BushBlock implements Class3196 {
          int var7 = 5;
          byte var8 = 4;
 
-         for (BlockPos var10 : BlockPos.method8359(var3.method8336(-4, -1, -4), var3.method8336(4, 1, 4))) {
+         for (BlockPos var10 : BlockPos.method8359(var3.add(-4, -1, -4), var3.add(4, 1, 4))) {
             if (var2.getBlockState(var10).isIn(this)) {
                if (--var7 <= 0) {
                   return;
@@ -41,14 +43,14 @@ public class Class3479 extends BushBlock implements Class3196 {
             }
          }
 
-         BlockPos var11 = var3.method8336(var4.nextInt(3) - 1, var4.nextInt(2) - var4.nextInt(2), var4.nextInt(3) - 1);
+         BlockPos var11 = var3.add(var4.nextInt(3) - 1, var4.nextInt(2) - var4.nextInt(2), var4.nextInt(3) - 1);
 
          for (int var12 = 0; var12 < 4; var12++) {
             if (var2.method7007(var11) && var1.isValidPosition(var2, var11)) {
                var3 = var11;
             }
 
-            var11 = var3.method8336(var4.nextInt(3) - 1, var4.nextInt(2) - var4.nextInt(2), var4.nextInt(3) - 1);
+            var11 = var3.add(var4.nextInt(3) - 1, var4.nextInt(2) - var4.nextInt(2), var4.nextInt(3) - 1);
          }
 
          if (var2.method7007(var11) && var1.isValidPosition(var2, var11)) {
@@ -71,19 +73,19 @@ public class Class3479 extends BushBlock implements Class3196 {
 
    public boolean method12174(ServerWorld var1, BlockPos var2, BlockState var3, Random var4) {
       var1.removeBlock(var2, false);
-      Class7909 var7;
+      ConfiguredFeature var7;
       if (this != Blocks.BROWN_MUSHROOM) {
          if (this != Blocks.RED_MUSHROOM) {
             var1.setBlockState(var2, var3, 3);
             return false;
          }
 
-         var7 = Class9104.field41769;
+         var7 = Features.field41769;
       } else {
-         var7 = Class9104.field41768;
+         var7 = Features.field41768;
       }
 
-      if (!var7.method26521(var1, var1.getChunkProvider().method7370(), var4, var2)) {
+      if (!var7.func_242765_a(var1, var1.getChunkProvider().getChunkGenerator(), var4, var2)) {
          var1.setBlockState(var2, var3, 3);
          return false;
       } else {

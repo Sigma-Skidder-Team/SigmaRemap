@@ -73,7 +73,7 @@ public class AccountSignUpScreen extends Class4247 {
       super.method13224();
       super.method13225();
       byte var4 = 28;
-      RenderUtil.method11454((float)(this.xA + var4), (float)(this.yA + var4 + 10), 160.0F, 160.0F, ResourcesDecrypter.sigmaPNG, var1);
+      RenderUtil.drawImage((float)(this.xA + var4), (float)(this.yA + var4 + 10), 160.0F, 160.0F, ResourcesDecrypter.sigmaPNG, var1);
       short var5 = 305;
       short var6 = 316;
       Class9507 var7 = Client.getInstance().getNetworkManager().method30452();

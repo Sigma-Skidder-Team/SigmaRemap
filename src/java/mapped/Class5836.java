@@ -61,12 +61,12 @@ public class Class5836 extends Container {
          Class7529 var9 = Class3316.method11860(var1, var4);
          if (var9 != null) {
             ItemStack var10;
-            if (var8 == Items.field37899 && !var9.field32323 && var9.field32321 < 4) {
+            if (var8 == Items.field37899 && !var9.locked && var9.scale < 4) {
                var10 = var1.copy();
                var10.setCount(1);
                var10.getOrCreateTag().putInt("map_scale_direction", 1);
                this.detectAndSendChanges();
-            } else if (var8 == Items.field37471 && !var9.field32323) {
+            } else if (var8 == Items.field37471 && !var9.locked) {
                var10 = var1.copy();
                var10.setCount(1);
                var10.getOrCreateTag().putBoolean("map_to_lock", true);

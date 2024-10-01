@@ -108,7 +108,7 @@ public class Class2950 extends Class2898<Class4705> {
          for (int var16 = -var13; var16 < var13; var16++) {
             double var17 = this.method11299(var15, var16, var8, var13, var14, var6);
             if (var17 < 0.0) {
-               BlockPos var19 = var3.method8336(var15, var2, var16);
+               BlockPos var19 = var3.add(var15, var2, var16);
                Block var20 = var4.getBlockState(var19).getBlock();
                if (this.method11303(var20) || var20 == Blocks.SNOW_BLOCK) {
                   if (!var5) {
@@ -149,7 +149,7 @@ public class Class2950 extends Class2898<Class4705> {
          ? this.method11298(var5, var7, BlockPos.ZERO, var8, var2)
          : this.method11299(var5, var7, BlockPos.ZERO, var9, this.method11297(var6, var4, var11), var12);
       if (var18 < 0.0) {
-         BlockPos var20 = var3.method8336(var5, var6, var7);
+         BlockPos var20 = var3.add(var5, var6, var7);
          double var21 = !var10 ? (double)(-6 - var2.nextInt(3)) : -0.5;
          if (var18 > var21 && var2.nextDouble() > 0.9) {
             return;
@@ -232,7 +232,7 @@ public class Class2950 extends Class2898<Class4705> {
       for (int var10 = -var9; var10 <= var9; var10++) {
          for (int var11 = -var9; var11 <= var9; var11++) {
             for (int var12 = 0; var12 <= var4; var12++) {
-               BlockPos var13 = var2.method8336(var10, var12, var11);
+               BlockPos var13 = var2.add(var10, var12, var11);
                Block var14 = var1.getBlockState(var13).getBlock();
                if (this.method11303(var14) || var14 == Blocks.SNOW) {
                   if (this.method11304(var1, var13)) {

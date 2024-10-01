@@ -99,7 +99,7 @@ public class Class9830 {
    private static void method38792(TemplateManager var0, Random var1, Rotation var2, BlockPos var3, Class4711 var4, List<Class4178> var5) {
       int var8 = var3.getX();
       int var9 = var3.getZ();
-      BlockPos var10 = Class8969.method32905(new BlockPos(15, 0, 15), Mirror.field13614, var2, BlockPos.ZERO).method8336(var8, 0, var9);
+      BlockPos var10 = Class8969.method32905(new BlockPos(15, 0, 15), Mirror.field13614, var2, BlockPos.ZERO).add(var8, 0, var9);
       Class9764 var11 = Class9764.method38389(var8, 0, var9, var10.getX(), 0, var10.getZ());
       BlockPos var12 = new BlockPos(Math.min(var8, var10.getX()), 0, Math.min(var9, var10.getZ()));
       List var13 = method38793(var1, var12.getX(), var12.getZ());
@@ -112,7 +112,7 @@ public class Class9830 {
             int var18 = var17.getX();
             int var19 = var17.getZ();
             Rotation var20 = Rotation.randomRotation(var1);
-            BlockPos var21 = Class8969.method32905(new BlockPos(5, 0, 6), Mirror.field13614, var20, BlockPos.ZERO).method8336(var18, 0, var19);
+            BlockPos var21 = Class8969.method32905(new BlockPos(5, 0, 6), Mirror.field13614, var20, BlockPos.ZERO).add(var18, 0, var19);
             Class9764 var22 = Class9764.method38389(var18, 0, var19, var21.getX(), 0, var21.getZ());
             if (!var22.method38390(var11)) {
                method38794(var0, var17, var20, var5, var1, var4, false, 0.8F);

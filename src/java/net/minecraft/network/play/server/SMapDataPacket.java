@@ -107,9 +107,9 @@ public class SMapDataPacket implements IPacket<IClientPlayNetHandler> {
    }
 
    public void method17635(Class7529 var1) {
-      var1.field32321 = this.field24892;
-      var1.field32319 = this.field24893;
-      var1.field32323 = this.field24894;
+      var1.scale = this.field24892;
+      var1.trackingPosition = this.field24893;
+      var1.locked = this.field24894;
       var1.field32327.clear();
 
       for (int var4 = 0; var4 < this.field24895.length; var4++) {
@@ -119,7 +119,7 @@ public class SMapDataPacket implements IPacket<IClientPlayNetHandler> {
 
       for (int var6 = 0; var6 < this.field24898; var6++) {
          for (int var7 = 0; var7 < this.field24899; var7++) {
-            var1.field32322[this.field24896 + var6 + (this.field24897 + var7) * 128] = this.field24900[var6 + var7 * this.field24898];
+            var1.colors[this.field24896 + var6 + (this.field24897 + var7) * 128] = this.field24900[var6 + var7 * this.field24898];
          }
       }
    }

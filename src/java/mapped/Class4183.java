@@ -72,7 +72,7 @@ public class Class4183 extends Class4180 {
             var8.moveToBlockPosAndAngles(var2, 0.0F, 0.0F);
             var8.method4276(var3, var3.method6807(var2), Class2202.field14394, (Class5093)null, (CompoundNBT)null);
             var3.method6995(var8);
-            if (var2.getY() <= var3.method6776()) {
+            if (var2.getY() <= var3.getSeaLevel()) {
                var3.setBlockState(var2, Blocks.WATER.getDefaultState(), 2);
             } else {
                var3.setBlockState(var2, Blocks.AIR.getDefaultState(), 2);

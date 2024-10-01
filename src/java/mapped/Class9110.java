@@ -131,11 +131,11 @@ public class Class9110 {
    }
 
    public boolean method33981() {
-      return this.method33980() && this.method33988(this.method33979().method8339(2));
+      return this.method33980() && this.method33988(this.method33979().up(2));
    }
 
    public boolean method33982() {
-      return this.method33981() && this.method33988(this.method33979().method8339(3));
+      return this.method33981() && this.method33988(this.method33979().up(3));
    }
 
    public boolean method33983() {
@@ -179,8 +179,8 @@ public class Class9110 {
          }
       }
 
-      return field41868.world.getBlockState(this.method33979().method8339(2)).getBlock() instanceof Class3213
-         && !this.field41869.field44283.contains(this.method33979().method8339(2).method8332());
+      return field41868.world.getBlockState(this.method33979().up(2)).getBlock() instanceof Class3213
+         && !this.field41869.field44283.contains(this.method33979().up(2).method8332());
    }
 
    public boolean method33987() {

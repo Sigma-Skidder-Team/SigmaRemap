@@ -737,7 +737,7 @@ public class Class2372 implements Serializable, Cloneable {
          var4[var6++] = 1.0 / var9;
       }
 
-      byte var28 = 0;
+      int var28 = 0;
 
       for (int var27 = 0; var27 < 3; var27++) {
          for (int var23 = 0; var23 < var27; var23++) {

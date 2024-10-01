@@ -43,14 +43,14 @@ public class CartographyTableScreen extends ContainerScreen<Class5836> {
       } else {
          var15 = Class3316.method11860(var13, this.mc.world);
          if (var15 != null) {
-            if (var15.field32323) {
+            if (var15.locked) {
                var14 = true;
                if (var11 || var12) {
                   this.blit(var1, var7 + 35, var8 + 31, this.xSize + 50, 132, 28, 21);
                }
             }
 
-            if (var11 && var15.field32321 >= 4) {
+            if (var11 && var15.scale >= 4) {
                var14 = true;
                this.blit(var1, var7 + 35, var8 + 31, this.xSize + 50, 132, 28, 21);
             }

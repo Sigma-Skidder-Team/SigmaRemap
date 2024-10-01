@@ -8,6 +8,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeManager;
+import net.minecraft.world.chunk.ChunkStatus;
 import net.minecraft.world.chunk.IChunk;
 
 import javax.annotation.Nullable;
@@ -56,7 +57,7 @@ public interface IWorldReader extends IBlockDisplayReader, ICollisionReader, Bio
    boolean isRemote();
 
    @Deprecated
-   int method6776();
+   int getSeaLevel();
 
    DimensionType method6812();
 
@@ -69,8 +70,8 @@ public interface IWorldReader extends IBlockDisplayReader, ICollisionReader, Bio
    }
 
    default boolean method7008(BlockPos var1) {
-      if (var1.getY() < this.method6776()) {
-         BlockPos var4 = new BlockPos(var1.getX(), this.method6776(), var1.getZ());
+      if (var1.getY() < this.getSeaLevel()) {
+         BlockPos var4 = new BlockPos(var1.getX(), this.getSeaLevel(), var1.getZ());
          if (this.method7022(var4)) {
             for (BlockPos var5 = var4.down(); var5.getY() > var1.getY(); var5 = var5.down()) {
                BlockState var6 = this.getBlockState(var5);

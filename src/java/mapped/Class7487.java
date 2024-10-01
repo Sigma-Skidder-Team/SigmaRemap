@@ -9,6 +9,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.IWorld;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.structure.StructureManager;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 
@@ -80,7 +81,7 @@ public abstract class Class7487 {
       return var2 -> new Class7488(Either.left(new ResourceLocation(var0)), () -> var1, var2);
    }
 
-   public static Function<Class109, Class7490> method24389(Class7909<?, ?> var0) {
+   public static Function<Class109, Class7490> method24389(ConfiguredFeature<?, ?> var0) {
       return var1 -> new Class7490(() -> var0, var1);
    }
 

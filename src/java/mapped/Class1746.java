@@ -21,7 +21,7 @@ public class Class1746 implements Class1737 {
          throw new IllegalStateException("closed");
       } else {
          long var7;
-         byte var9;
+         int var9;
          synchronized (this.field9467) {
             while (true) {
                var7 = this.field9467.field40073;

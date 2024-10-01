@@ -24,7 +24,7 @@ public class Class7891 extends Class7882<Class1042> {
       for (int var9 = -4; var9 <= 4; var9++) {
          for (int var10 = -2; var10 <= 2; var10++) {
             for (int var11 = -4; var11 <= 4; var11++) {
-               BlockPos var12 = var6.method8336(var9, var10, var11);
+               BlockPos var12 = var6.add(var9, var10, var11);
                if (var2.method4674().method26571().method29459().contains(var1.getBlockState(var12).getBlock())) {
                   var7.add(Class9378.method35577(var5, var12));
                }

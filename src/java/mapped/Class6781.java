@@ -46,7 +46,7 @@ public class Class6781 extends Class6768<Class8278> {
       int var24 = (int)(var7 / 3.0 + 3.0 + var1.nextDouble() * 0.25);
       BlockPos.Mutable var25 = new BlockPos.Mutable();
       int var26 = -1;
-      BlockState var27 = var14.method28934();
+      BlockState var27 = var14.getTop();
       BlockState var28 = var14.method28935();
 
       for (int var29 = 127; var29 >= 0; var29--) {
@@ -63,7 +63,7 @@ public class Class6781 extends Class6768<Class8278> {
                   boolean var31 = false;
                   if (var24 > 0) {
                      if (var29 >= var17 - 4 && var29 <= var17 + 1) {
-                        var27 = var14.method28934();
+                        var27 = var14.getTop();
                         var28 = var14.method28935();
                         if (var23) {
                            var27 = field29490;

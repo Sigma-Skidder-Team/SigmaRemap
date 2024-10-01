@@ -76,7 +76,7 @@ public class Class3211 extends Block {
                }
             }
 
-            if (var9 && method11592(var2, var7, (Direction)null) && var2.method7007(var3.method8339(2))) {
+            if (var9 && method11592(var2, var7, (Direction)null) && var2.method7007(var3.up(2))) {
                var2.setBlockState(var3, this.field18620.method12004(var2, var3), 2);
                this.method11590(var2, var7, var8);
             } else if (var8 >= 4) {
@@ -186,7 +186,7 @@ public class Class3211 extends Block {
       }
 
       for (int var10 = 0; var10 < var9; var10++) {
-         BlockPos var11 = var1.method8339(var10 + 1);
+         BlockPos var11 = var1.up(var10 + 1);
          if (!method11592(var0, var11, (Direction)null)) {
             return;
          }
@@ -204,7 +204,7 @@ public class Class3211 extends Block {
 
          for (int var12 = 0; var12 < var16; var12++) {
             Direction var13 = Direction.Plane.HORIZONTAL.method247(var2);
-            BlockPos var14 = var1.method8339(var9).offset(var13);
+            BlockPos var14 = var1.up(var9).offset(var13);
             if (Math.abs(var14.getX() - var3.getX()) < var4
                && Math.abs(var14.getZ() - var3.getZ()) < var4
                && var0.method7007(var14)
@@ -219,7 +219,7 @@ public class Class3211 extends Block {
       }
 
       if (!var15) {
-         var0.setBlockState(var1.method8339(var9), Blocks.field36879.getDefaultState().with(field18619, Integer.valueOf(5)), 2);
+         var0.setBlockState(var1.up(var9), Blocks.field36879.getDefaultState().with(field18619, Integer.valueOf(5)), 2);
       }
    }
 

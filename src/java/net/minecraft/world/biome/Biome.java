@@ -32,6 +32,7 @@ import net.minecraft.world.IWorldReader;
 import net.minecraft.world.LightType;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.gen.WorldGenRegion;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.structure.StructureManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -66,7 +67,7 @@ public final class Biome {
       .method9192()
       .collect(Collectors.<Structure<?>, Integer>groupingBy(var0 -> var0.method11364().ordinal()));
    private static final Class7691 field40312 = new Class7691(new SharedSeedRandom(1234L), ImmutableList.of(0));
-   private static final Class7691 field40313 = new Class7691(new SharedSeedRandom(3456L), ImmutableList.of(-2, -1, 0));
+   public static final Class7691 field40313 = new Class7691(new SharedSeedRandom(3456L), ImmutableList.of(-2, -1, 0));
    public static final Class7691 field40314 = new Class7691(new SharedSeedRandom(2345L), ImmutableList.of(0));
    private final Class7035 field40315;
    private final BiomeGenerationSettings field40316;
@@ -184,7 +185,7 @@ public final class Biome {
    }
 
    public void generateFeatures(StructureManager var1, ChunkGenerator var2, WorldGenRegion var3, long var4, SharedSeedRandom var6, BlockPos var7) {
-      List<List<Supplier<Class7909<?, ?>>>> var10 = this.field40316.method24281();
+      List<List<Supplier<ConfiguredFeature<?, ?>>>> var10 = this.field40316.method24281();
       int var11 = Class1993.values().length;
 
       for (int var12 = 0; var12 < var11; var12++) {
@@ -214,11 +215,11 @@ public final class Biome {
 
          if (var10.size() > var12) {
             for (Supplier var25 : var10.get(var12)) {
-               Class7909 var26 = (Class7909)var25.get();
+               ConfiguredFeature var26 = (ConfiguredFeature)var25.get();
                var6.method10372(var4, var13, var12);
 
                try {
-                  var26.method26521(var3, var2, var6, var7);
+                  var26.func_242765_a(var3, var2, var6, var7);
                } catch (Exception var23) {
                   CrashReport var27 = CrashReport.makeCrashReport(var23, "Feature placement");
                   var27.makeCategory("Feature")
@@ -326,10 +327,5 @@ public final class Biome {
    // $VF: synthetic method
    public Biome(Class7035 var1, Class100 var2, float var3, float var4, Class7752 var5, BiomeGenerationSettings var6, Class8835 var7, Class14 var8) {
       this(var1, var2, var3, var4, var5, var6, var7);
-   }
-
-   // $VF: synthetic method
-   public static Class7691 method32549() {
-      return field40313;
    }
 }

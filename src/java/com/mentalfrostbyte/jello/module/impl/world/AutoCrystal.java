@@ -272,8 +272,8 @@ public class AutoCrystal extends Module {
     }
 
     private boolean method16378(BlockPos var1) {
-        BlockPos var4 = var1.method8336(0, 1, 0);
-        BlockPos var5 = var1.method8336(0, 2, 0);
+        BlockPos var4 = var1.add(0, 1, 0);
+        BlockPos var5 = var1.add(0, 2, 0);
         return (
                 mc.world.getBlockState(var1).getBlock() == Blocks.BEDROCK
                         || mc.world.getBlockState(var1).getBlock() == Blocks.field36527

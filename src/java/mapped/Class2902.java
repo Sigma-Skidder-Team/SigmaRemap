@@ -14,7 +14,7 @@ public class Class2902 extends Class2898<Class4701> {
    }
 
    public boolean method11213(ISeedReader var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4701 var5) {
-      for (BlockPos var9 : BlockPos.method8359(var4.method8336(-1, -2, -1), var4.method8336(1, 2, 1))) {
+      for (BlockPos var9 : BlockPos.method8359(var4.add(-1, -2, -1), var4.add(1, 2, 1))) {
          boolean var10 = var9.getX() == var4.getX();
          boolean var11 = var9.getY() == var4.getY();
          boolean var12 = var9.getZ() == var4.getZ();

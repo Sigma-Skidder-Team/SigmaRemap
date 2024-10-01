@@ -31,7 +31,7 @@ public class Class9215 {
       var7.field30488 = "wall_flat";
       Class7085 var8 = new Class7085();
       this.method34524(var3, var7);
-      var8.field30487 = var7.field30487.method8339(8);
+      var8.field30487 = var7.field30487.up(8);
       var8.field30486 = var7.field30486;
       var8.field30488 = "wall_window";
       if (var3.isEmpty()) {
@@ -46,7 +46,7 @@ public class Class9215 {
       this.method34522(var3, var7, var9, Direction.SOUTH, this.field42407, this.field42408, var11, var12);
       this.method34522(var3, var8, var9, Direction.SOUTH, this.field42407, this.field42408, var11, var12);
       Class7085 var13 = new Class7085();
-      var13.field30487 = var7.field30487.method8339(19);
+      var13.field30487 = var7.field30487.up(19);
       var13.field30486 = var7.field30486;
       var13.field30488 = "wall_window";
       boolean var14 = false;
@@ -63,15 +63,15 @@ public class Class9215 {
          }
       }
 
-      this.method34523(var3, var1.method8339(16), var2, var9, var10);
-      this.method34523(var3, var1.method8339(27), var2, var10, (Class8390)null);
+      this.method34523(var3, var1.up(16), var2, var9, var10);
+      this.method34523(var3, var1.up(27), var2, var10, (Class8390)null);
       if (var3.isEmpty()) {
       }
 
       Class6025[] var35 = new Class6025[]{new Class6026(), new Class6024(), new Class6023()};
 
       for (int var36 = 0; var36 < 3; var36++) {
-         BlockPos var17 = var1.method8339(8 * var36 + (var36 != 2 ? 0 : 3));
+         BlockPos var17 = var1.up(8 * var36 + (var36 != 2 ? 0 : 3));
          Class8390 var18 = Class9467.method36509(var4)[var36];
          Class8390 var19 = var36 != 2 ? var9 : var10;
          String var20 = var36 != 0 ? "carpet_south_2" : "carpet_south_1";
@@ -240,7 +240,7 @@ public class Class9215 {
             var10 = var10.method8350(var3.rotate(Direction.EAST), (var9 - this.field42407) * 8);
             boolean var11 = var5 != null && Class9467.method36498(var5, var9, var8);
             if (Class9467.method36498(var4, var9, var8) && !var11) {
-               var1.add(new Class4187(this.field42405, "roof", var10.method8339(3), var3));
+               var1.add(new Class4187(this.field42405, "roof", var10.up(3), var3));
                if (!Class9467.method36498(var4, var9 + 1, var8)) {
                   BlockPos var12 = var10.method8350(var3.rotate(Direction.EAST), 6);
                   var1.add(new Class4187(this.field42405, "roof_front", var12, var3));
@@ -432,7 +432,7 @@ public class Class9215 {
       BlockPos var10 = Class8969.method32908(new BlockPos(1, 0, 0), Mirror.field13614, var8, 7, 7);
       var8 = var8.method250(var3);
       var10 = var10.method8352(var3);
-      BlockPos var11 = var2.method8336(var10.getX(), 0, var10.getZ());
+      BlockPos var11 = var2.add(var10.getX(), 0, var10.getZ());
       var1.add(new Class4187(this.field42405, var9, var11, var8));
    }
 

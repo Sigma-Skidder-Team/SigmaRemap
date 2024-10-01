@@ -135,7 +135,7 @@ public final class Class9777 {
 
                            int var49 = var48 - var43;
                            Class9764 var50 = var42.method38394(0, var49, 0);
-                           BlockPos var51 = var41.method8336(0, var49, 0);
+                           BlockPos var51 = var41.add(0, var49, 0);
                            if (var37 > 0) {
                               int var52 = Math.max(var37 + 1, var50.field45682 - var50.field45679);
                               var50.field45682 = var50.field45679 + var52;

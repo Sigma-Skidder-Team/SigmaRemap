@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.world.biome.provider;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Either;
@@ -6,11 +6,11 @@ import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import mapped.*;
 import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeRegistry;
-import net.minecraft.world.biome.provider.BiomeProvider;
 
 import java.util.Comparator;
 import java.util.List;
@@ -19,9 +19,9 @@ import java.util.Optional;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-public class Class1686 extends BiomeProvider {
+public class NetherBiomeProvider extends BiomeProvider {
    private static final Class6813 field9163 = new Class6813(-7, ImmutableList.of(1.0, 1.0));
-   public static final MapCodec<Class1686> field9164 = RecordCodecBuilder.mapCodec(
+   public static final MapCodec<NetherBiomeProvider> field9164 = RecordCodecBuilder.mapCodec(
       var0 -> var0.group(
                Codec.LONG.fieldOf("seed").forGetter(var0x -> var0x.field9176),
                RecordCodecBuilder.<Pair<Class7150, Supplier<Biome>>>create(
@@ -39,11 +39,11 @@ public class Class1686 extends BiomeProvider {
                Class6813.field29666.fieldOf("altitude_noise").forGetter(var0x -> var0x.field9168),
                Class6813.field29666.fieldOf("weirdness_noise").forGetter(var0x -> var0x.field9169)
             )
-            .apply(var0, Class1686::new)
+            .apply(var0, NetherBiomeProvider::new)
    );
-   public static final Codec<Class1686> field9165 = Codec.mapEither(Class9354.field43409, field9164)
+   public static final Codec<NetherBiomeProvider> CODEC = Codec.mapEither(Class9354.field43409, field9164)
       .xmap(
-         var0 -> (Class1686)var0.map(Class9354::method35416, Function.identity()),
+         var0 -> (NetherBiomeProvider)var0.map(Class9354::method35416, Function.identity()),
          var0 -> var0.method7209().<Either>map(Either::left).orElseGet(() -> Either.right(var0))
       )
       .codec();
@@ -60,15 +60,15 @@ public class Class1686 extends BiomeProvider {
    private final long field9176;
    private final Optional<Pair<Registry<Biome>, NetherBiomeProviderPreset>> field9177;
 
-   public Class1686(long var1, List<Pair<Class7150, Supplier<Biome>>> var3, Optional<Pair<Registry<Biome>, NetherBiomeProviderPreset>> var4) {
+   public NetherBiomeProvider(long var1, List<Pair<Class7150, Supplier<Biome>>> var3, Optional<Pair<Registry<Biome>, NetherBiomeProviderPreset>> var4) {
       this(var1, var3, field9163, field9163, field9163, field9163, var4);
    }
 
-   public Class1686(long var1, List<Pair<Class7150, Supplier<Biome>>> var3, Class6813 var4, Class6813 var5, Class6813 var6, Class6813 var7) {
+   public NetherBiomeProvider(long var1, List<Pair<Class7150, Supplier<Biome>>> var3, Class6813 var4, Class6813 var5, Class6813 var6, Class6813 var7) {
       this(var1, var3, var4, var5, var6, var7, Optional.<Pair<Registry<Biome>, NetherBiomeProviderPreset>>empty());
    }
 
-   private Class1686(
+   private NetherBiomeProvider(
       long var1,
       List<Pair<Class7150, Supplier<Biome>>> var3,
       Class6813 var4,
@@ -93,13 +93,13 @@ public class Class1686 extends BiomeProvider {
    }
 
    @Override
-   public Codec<? extends BiomeProvider> method7199() {
-      return field9165;
+   public Codec<? extends BiomeProvider> getBiomeProviderCodec() {
+      return CODEC;
    }
 
    @Override
-   public BiomeProvider method7200(long var1) {
-      return new Class1686(var1, this.field9174, this.field9166, this.field9167, this.field9168, this.field9169, this.field9177);
+   public BiomeProvider getBiomeProvider(long var1) {
+      return new NetherBiomeProvider(var1, this.field9174, this.field9166, this.field9167, this.field9168, this.field9169, this.field9177);
    }
 
    private Optional<Class9354> method7209() {

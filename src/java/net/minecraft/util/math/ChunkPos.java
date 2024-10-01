@@ -108,7 +108,7 @@ public class ChunkPos {
       return "[" + this.x + ", " + this.z + "]";
    }
 
-   public BlockPos method24364() {
+   public BlockPos asBlockPos() {
       return new BlockPos(this.getX(), 0, this.getZ());
    }
 

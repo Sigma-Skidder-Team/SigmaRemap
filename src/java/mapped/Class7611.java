@@ -36,7 +36,7 @@ public class Class7611<T> implements Class7610<T> {
    }
 
    @Override
-   public List<T> method24918() {
-      return this.method24930().method24918();
+   public List<T> getAllElements() {
+      return this.method24930().getAllElements();
    }
 }

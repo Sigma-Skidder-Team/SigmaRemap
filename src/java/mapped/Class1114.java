@@ -209,7 +209,7 @@ public class Class1114 extends Class1113 {
    }
 
    public static boolean method5366(EntityType<Class1114> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
-      if (var3.getY() < var1.method6776()) {
+      if (var3.getY() < var1.getSeaLevel()) {
          int var7 = var1.method7015(var3);
          int var8 = 4;
          if (!method5367()) {

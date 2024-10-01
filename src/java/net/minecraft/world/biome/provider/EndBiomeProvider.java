@@ -1,17 +1,18 @@
-package mapped;
+package net.minecraft.world.biome.provider;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import mapped.Class8611;
+import mapped.Class8972;
 import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biomes;
-import net.minecraft.world.biome.provider.BiomeProvider;
 
 public class EndBiomeProvider extends BiomeProvider {
-   public static final Codec<EndBiomeProvider> field9191 = RecordCodecBuilder.create(
+   public static final Codec<EndBiomeProvider> CODEC = RecordCodecBuilder.create(
       var0 -> var0.group(
                Class8611.<Biome>method30859(Registry.BIOME_KEY).forGetter(var0x -> var0x.field9193),
                Codec.LONG.fieldOf("seed").stable().forGetter(var0x -> var0x.field9194)
@@ -54,12 +55,12 @@ public class EndBiomeProvider extends BiomeProvider {
    }
 
    @Override
-   public Codec<? extends BiomeProvider> method7199() {
-      return field9191;
+   public Codec<? extends BiomeProvider> getBiomeProviderCodec() {
+      return CODEC;
    }
 
    @Override
-   public BiomeProvider method7200(long var1) {
+   public BiomeProvider getBiomeProvider(long var1) {
       return new EndBiomeProvider(this.field9193, var1, this.field9195, this.field9196, this.field9197, this.field9198, this.field9199);
    }
 

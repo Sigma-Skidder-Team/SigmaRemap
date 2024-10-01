@@ -27,7 +27,7 @@ public class Class2946 extends Class2898<Class4710> {
             int var10 = 0;
 
             for (int var11 = 0; var11 < var4 * var4; var11++) {
-               BlockPos var12 = var2.method8336(
+               BlockPos var12 = var2.add(
                   var1.nextInt(var4) - var1.nextInt(var4), var1.nextInt(var5) - var1.nextInt(var5), var1.nextInt(var4) - var1.nextInt(var4)
                );
                BlockState var13 = var3.field22343.method20424(var1, var12);

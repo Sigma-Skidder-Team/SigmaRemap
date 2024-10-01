@@ -137,7 +137,7 @@ public class TargetHUD extends Module {
             RenderUtil.method11421(var1 - 20, this.field23683 - 20, var1 + 200, this.field23683 + 120, true);
             EntityRendererManager var4 = Minecraft.getInstance().getRenderManager();
             Class5743 var5 = new Class5743(var4);
-            short var6 = 150;
+            float var6 = 150;
             UUID uuidForSkin = this.entity.getUniqueID();
             if (!(this.entity instanceof Class1087)) {
                 if (!(this.entity instanceof ZombieEntity)) {

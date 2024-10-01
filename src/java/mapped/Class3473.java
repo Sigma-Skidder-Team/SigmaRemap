@@ -5,6 +5,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.server.ServerWorld;
 
 import java.util.List;
@@ -37,7 +38,7 @@ public class Class3473 extends Class3472 implements Class3196 {
          BlockPos var10 = var7;
 
          for (int var11 = 0; var11 < var9 / 16; var11++) {
-            var10 = var10.method8336(var2.nextInt(3) - 1, (var2.nextInt(3) - 1) * var2.nextInt(3) / 2, var2.nextInt(3) - 1);
+            var10 = var10.add(var2.nextInt(3) - 1, (var2.nextInt(3) - 1) * var2.nextInt(3) / 2, var2.nextInt(3) - 1);
             if (!var1.getBlockState(var10.down()).isIn(this) || var1.getBlockState(var10).method23456(var1, var10)) {
                continue label61;
             }
@@ -58,7 +59,7 @@ public class Class3473 extends Class3472 implements Class3196 {
                   continue;
                }
 
-               Class7909 var14 = (Class7909)var13.get(0);
+               ConfiguredFeature var14 = (ConfiguredFeature)var13.get(0);
                Class2921 var15 = (Class2921)var14.field33886;
                var12 = var15.method11254(var2, var10, var14.method26519());
             }

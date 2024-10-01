@@ -8,6 +8,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biomes;
+import net.minecraft.world.biome.provider.NetherBiomeProvider;
 
 import java.util.Map;
 import java.util.Optional;
@@ -16,7 +17,7 @@ public class NetherBiomeProviderPreset {
    private static final Map<ResourceLocation, NetherBiomeProviderPreset> field44450 = Maps.newHashMap();
    public static final NetherBiomeProviderPreset DEFAULT_NETHER_PROVIDER_PRESET = new NetherBiomeProviderPreset(
       new ResourceLocation("nether"),
-      (var0, var1, var2) -> new Class1686(var2, ImmutableList.of(
+      (var0, var1, var2) -> new NetherBiomeProvider(var2, ImmutableList.of(
                Pair.of(new Class7150(0.0F, 0.0F, 0.0F, 0.0F, 0.0F), () -> var1.getOrThrow(Biomes.NETHER_WASTES)),
                Pair.of(new Class7150(0.0F, -0.5F, 0.0F, 0.0F, 0.0F), () -> var1.getOrThrow(Biomes.field44196)),
                Pair.of(new Class7150(0.4F, 0.0F, 0.0F, 0.0F, 0.0F), () -> var1.getOrThrow(Biomes.field44197)),
@@ -26,16 +27,16 @@ public class NetherBiomeProviderPreset {
          )
    );
    private final ResourceLocation field44452;
-   private final Function3<NetherBiomeProviderPreset, Registry<Biome>, Long, Class1686> field44453;
+   private final Function3<NetherBiomeProviderPreset, Registry<Biome>, Long, NetherBiomeProvider> field44453;
 
-   public NetherBiomeProviderPreset(ResourceLocation var1, Function3<NetherBiomeProviderPreset, Registry<Biome>, Long, Class1686> var2) {
+   public NetherBiomeProviderPreset(ResourceLocation var1, Function3<NetherBiomeProviderPreset, Registry<Biome>, Long, NetherBiomeProvider> var2) {
       this.field44452 = var1;
       this.field44453 = var2;
       field44450.put(var1, this);
    }
 
-   public Class1686 build(Registry<Biome> var1, long var2) {
-      return (Class1686)this.field44453.apply(this, var1, var2);
+   public NetherBiomeProvider build(Registry<Biome> var1, long var2) {
+      return (NetherBiomeProvider)this.field44453.apply(this, var1, var2);
    }
 
    // $VF: synthetic method

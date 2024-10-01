@@ -83,7 +83,7 @@ public class Class4376 extends PNGIconButton implements Class4238 {
          );
          GL11.glScalef(var4 / this.method13032(), var4 / this.method13032(), var4 / this.method13032());
          GL11.glAlphaFunc(519, 0.0F);
-         RenderUtil.method11454(
+         RenderUtil.drawImage(
             (1.0F - var4 / this.method13032()) * (float)var11.getStringWidth(var13) / 2.0F + 1.0F - (float)var11.getStringWidth(var13) / 2.0F,
             (float)var11.method23941(var13) / 3.0F,
             (float)(var11.getStringWidth(var13) * 2),

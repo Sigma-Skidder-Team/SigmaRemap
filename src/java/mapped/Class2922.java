@@ -21,7 +21,7 @@ public class Class2922 extends Class2921<Class4703> {
    }
 
    public BlockPos method11253(Random var1, BlockPos var2, Class4703 var3) {
-      return var2.method8336(
+      return var2.add(
          var1.nextInt(var3.field22311) - var1.nextInt(var3.field22311),
          var1.nextInt(var3.field22312) - var1.nextInt(var3.field22312),
          var1.nextInt(var3.field22313) - var1.nextInt(var3.field22313)

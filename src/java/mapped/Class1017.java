@@ -138,7 +138,7 @@ public class Class1017 extends Class1018 implements IAngerable, Class1016 {
          this.applyEnchantments(this, var1);
          if (var1 instanceof LivingEntity) {
             ((LivingEntity)var1).method3079(((LivingEntity)var1).method3078() + 1);
-            byte var5 = 0;
+            int var5 = 0;
             if (this.world.method6997() != Difficulty.NORMAL) {
                if (this.world.method6997() == Difficulty.HARD) {
                   var5 = 18;
@@ -194,7 +194,7 @@ public class Class1017 extends Class1018 implements IAngerable, Class1016 {
 
    private void method4420(BlockPos var1) {
       Vector3d var4 = Vector3d.method11330(var1);
-      byte var5 = 0;
+      int var5 = 0;
       BlockPos var6 = this.getPosition();
       int var7 = (int)var4.y - var6.getY();
       if (var7 <= 2) {

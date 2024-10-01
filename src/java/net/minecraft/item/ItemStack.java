@@ -687,7 +687,7 @@ public final class ItemStack {
 
             ITag<Block> var8 = BlockTags.getCollection().get(var5);
             if (var8 != null) {
-               List<Block> var9 = var8.method24918();
+               List<Block> var9 = var8.getAllElements();
                if (!var9.isEmpty()) {
                   return var9.stream()
                      .map(Block::method11565)

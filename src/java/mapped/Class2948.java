@@ -18,6 +18,6 @@ public class Class2948 extends Class2898<Class4736> {
          }
       }
 
-      return var5.field22430.get().method26521(var1, var2, var3, var4);
+      return var5.field22430.get().func_242765_a(var1, var2, var3, var4);
    }
 }

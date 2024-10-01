@@ -36,9 +36,9 @@ public class Class6775 extends Class6773 {
       int var17 = var4 & 15;
       int var18 = var5 & 15;
       BlockState var19 = field29495;
-      Class8277 var20 = var3.getGenerationSettings().method24283();
+      Class8277 var20 = var3.getGenerationSettings().getSurfaceBuilderConfig();
       BlockState var21 = var20.method28935();
-      BlockState var22 = var20.method28934();
+      BlockState var22 = var20.getTop();
       BlockState var23 = var21;
       int var24 = (int)(var7 / 3.0 + 3.0 + var1.nextDouble() * 0.25);
       boolean var25 = Math.cos(var7 / 3.0 * Math.PI) > 0.0;

@@ -83,7 +83,7 @@ public class Class4193 extends Class4178 {
    @Override
    public void method12937(int var1, int var2, int var3) {
       super.method12937(var1, var2, var3);
-      this.field20490 = this.field20490.method8336(var1, var2, var3);
+      this.field20490 = this.field20490.add(var1, var2, var3);
    }
 
    @Override

@@ -25,7 +25,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.chunk.ChunkStatus;
 import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.gen.feature.Features;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.server.TicketType;
 import org.apache.logging.log4j.LogManager;
@@ -349,7 +351,7 @@ public class Class7819 {
 
    private void method26121(BlockPos var1) {
       this.field33538.playEvent(3000, var1, 0);
-      Class9104.field41635.method26521(this.field33538, this.field33538.getChunkProvider().method7370(), new Random(), var1);
+      Features.field41635.func_242765_a(this.field33538, this.field33538.getChunkProvider().getChunkGenerator(), new Random(), var1);
    }
 
    private void method26122(boolean var1) {
@@ -357,12 +359,12 @@ public class Class7819 {
       if (this.field33549 == null) {
          this.field33549 = this.field33538.method7006(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, Class2909.field17994).down();
 
-         while (this.field33538.getBlockState(this.field33549).isIn(Blocks.BEDROCK) && this.field33549.getY() > this.field33538.method6776()) {
+         while (this.field33538.getBlockState(this.field33549).isIn(Blocks.BEDROCK) && this.field33549.getY() > this.field33538.getSeaLevel()) {
             this.field33549 = this.field33549.down();
          }
       }
 
-      var4.method11216(Class4698.field22290).method26521(this.field33538, this.field33538.getChunkProvider().method7370(), new Random(), this.field33549);
+      var4.method11216(Class4698.field22290).func_242765_a(this.field33538, this.field33538.getChunkProvider().getChunkGenerator(), new Random(), this.field33549);
    }
 
    private Class1007 method26123() {
@@ -426,7 +428,7 @@ public class Class7819 {
          }
 
          ArrayList var9 = Lists.newArrayList();
-         BlockPos var5 = var3.method8339(1);
+         BlockPos var5 = var3.up(1);
 
          for (Direction var7 : Direction.Plane.HORIZONTAL) {
             List var8 = this.field33538.<EnderCrystalEntity>getEntitiesWithinAABB(EnderCrystalEntity.class, new AxisAlignedBB(var5.method8350(var7, 2)));

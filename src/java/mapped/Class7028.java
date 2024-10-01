@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.gen.feature.Features;
 
 public class Class7028 {
    public static final Class9369 field30340 = Class9837.method38884(
@@ -180,7 +181,7 @@ public class Class7028 {
          new Class9369(
             new ResourceLocation("village/snowy/trees"),
             new ResourceLocation("empty"),
-            ImmutableList.of(Pair.of(Class7487.method24389(Class9104.field41774), 1)),
+            ImmutableList.of(Pair.of(Class7487.method24389(Features.field41774), 1)),
             Class109.field367
          )
       );
@@ -192,9 +193,9 @@ public class Class7028 {
                Pair.of(Class7487.method24385("village/snowy/snowy_lamp_post_01"), 4),
                Pair.of(Class7487.method24385("village/snowy/snowy_lamp_post_02"), 4),
                Pair.of(Class7487.method24385("village/snowy/snowy_lamp_post_03"), 1),
-               Pair.of(Class7487.method24389(Class9104.field41774), 4),
-               Pair.of(Class7487.method24389(Class9104.field41693), 4),
-               Pair.of(Class7487.method24389(Class9104.field41694), 1),
+               Pair.of(Class7487.method24389(Features.field41774), 4),
+               Pair.of(Class7487.method24389(Features.field41693), 4),
+               Pair.of(Class7487.method24389(Features.field41694), 1),
                Pair.of(Class7487.method24384(), 9)
             ),
             Class109.field367
@@ -208,9 +209,9 @@ public class Class7028 {
                Pair.of(Class7487.method24386("village/snowy/snowy_lamp_post_01", Class8523.field38253), 1),
                Pair.of(Class7487.method24386("village/snowy/snowy_lamp_post_02", Class8523.field38253), 1),
                Pair.of(Class7487.method24386("village/snowy/snowy_lamp_post_03", Class8523.field38253), 1),
-               Pair.of(Class7487.method24389(Class9104.field41774), 4),
-               Pair.of(Class7487.method24389(Class9104.field41693), 4),
-               Pair.of(Class7487.method24389(Class9104.field41694), 4),
+               Pair.of(Class7487.method24389(Features.field41774), 4),
+               Pair.of(Class7487.method24389(Features.field41693), 4),
+               Pair.of(Class7487.method24389(Features.field41694), 4),
                Pair.of(Class7487.method24384(), 7)
             ),
             Class109.field367

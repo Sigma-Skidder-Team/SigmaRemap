@@ -6,6 +6,7 @@ import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.ITickList;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.chunk.storage.ChunkSerializer;
 
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -34,7 +35,7 @@ public class Class6806<T> implements ITickList<T> {
    }
 
    public ListNBT method20737() {
-      return Class9725.method38094(this.field29630);
+      return ChunkSerializer.method38094(this.field29630);
    }
 
    public void method20738(ITickList<T> var1, Function<BlockPos, T> var2) {

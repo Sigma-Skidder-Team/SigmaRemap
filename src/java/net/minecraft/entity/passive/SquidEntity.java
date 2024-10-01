@@ -180,7 +180,7 @@ public class SquidEntity extends WaterMobEntity {
    }
 
    public static boolean method4839(EntityType<SquidEntity> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
-      return var3.getY() > 45 && var3.getY() < var1.method6776();
+      return var3.getY() > 45 && var3.getY() < var1.getSeaLevel();
    }
 
    @Override

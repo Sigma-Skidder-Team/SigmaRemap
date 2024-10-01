@@ -54,7 +54,7 @@ public final class BlockTags {
    public static final Class7610<Block> field32777 = method25114("flower_pots");
    public static final Class7610<Block> field32778 = method25114("enderman_holdable");
    public static final Class7610<Block> field32779 = method25114("ice");
-   public static final Class7610<Block> field32780 = method25114("valid_spawn");
+   public static final Class7610<Block> VALID_SPAWN = method25114("valid_spawn");
    public static final Class7610<Block> field32781 = method25114("impermeable");
    public static final Class7610<Block> field32782 = method25114("underwater_bonemeals");
    public static final Class7610<Block> field32783 = method25114("coral_blocks");

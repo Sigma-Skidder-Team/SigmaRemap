@@ -39,7 +39,7 @@ public class Class3214 extends Class3213 {
 
    private void method11603(BlockState var1, World var2, BlockPos var3) {
       for (int var6 = 0; var6 < 1000; var6++) {
-         BlockPos var7 = var3.method8336(
+         BlockPos var7 = var3.add(
             var2.rand.nextInt(16) - var2.rand.nextInt(16),
             var2.rand.nextInt(8) - var2.rand.nextInt(8),
             var2.rand.nextInt(16) - var2.rand.nextInt(16)

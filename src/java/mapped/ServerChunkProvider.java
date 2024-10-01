@@ -15,6 +15,7 @@ import net.minecraft.util.math.SectionPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.LightType;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.ChunkStatus;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.chunk.listener.IChunkStatusListener;
 import net.minecraft.world.gen.feature.template.TemplateManager;
@@ -75,7 +76,7 @@ public class ServerChunkProvider extends Class1702 {
       File var14 = new File(var13, "data");
       var14.mkdirs();
       this.field9280 = new Class8250(var14, var3);
-      this.field9279 = new ChunkManager(var1, var2, var3, var4, var5, this.field9278, this, this.method7370(), var9, var10, var7, var8);
+      this.field9279 = new ChunkManager(var1, var2, var3, var4, var5, this.field9278, this, this.getChunkGenerator(), var9, var10, var7, var8);
       this.field9277 = this.field9279.method6537();
       this.ticketManager = this.field9279.method6566();
       this.method7357();
@@ -245,7 +246,7 @@ public class ServerChunkProvider extends Class1702 {
                return (IBlockReader)var10.get();
             }
 
-            if (var9 == ChunkStatus.field42142.method34299()) {
+            if (var9 == ChunkStatus.LIGHT.method34299()) {
                return null;
             }
 
@@ -394,7 +395,7 @@ public class ServerChunkProvider extends Class1702 {
       return this.field9278.method1630();
    }
 
-   public ChunkGenerator method7370() {
+   public ChunkGenerator getChunkGenerator() {
       return this.field9274;
    }
 

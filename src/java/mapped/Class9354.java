@@ -7,6 +7,7 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.provider.NetherBiomeProvider;
 
 import java.util.Optional;
 
@@ -48,7 +49,7 @@ public final class Class9354 {
       return this.field43412;
    }
 
-   public Class1686 method35416() {
+   public NetherBiomeProvider method35416() {
       return this.field43410.build(this.field43411, this.field43412);
    }
 }

@@ -17,6 +17,7 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.provider.BiomeProvider;
+import net.minecraft.world.biome.provider.EndBiomeProvider;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.chunk.ChunkSection;
 import net.minecraft.world.chunk.IChunk;
@@ -33,7 +34,7 @@ import java.util.stream.IntStream;
 public final class NoiseChunkGenerator extends ChunkGenerator {
    public static final Codec<NoiseChunkGenerator> field_236079_d_ = RecordCodecBuilder.create(
       var0 -> var0.group(
-               BiomeProvider.field9159.fieldOf("biome_source").forGetter(var0x -> var0x.biomeProvider),
+               BiomeProvider.CODEC.fieldOf("biome_source").forGetter(var0x -> var0x.biomeProvider),
                Codec.LONG.fieldOf("seed").stable().forGetter(var0x -> var0x.field24981),
                DimensionSettings.field43221.fieldOf("settings").forGetter(var0x -> var0x.field24982)
             )
@@ -118,7 +119,7 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
 
    @Override
    public ChunkGenerator func_230349_a_(long var1) {
-      return new NoiseChunkGenerator(this.biomeProvider.method7200(var1), var1, this.field24982);
+      return new NoiseChunkGenerator(this.biomeProvider.getBiomeProvider(var1), var1, this.field24982);
    }
 
    public boolean method17792(long var1, RegistryKey<DimensionSettings> var3) {
@@ -611,7 +612,7 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
       if (!this.field24982.get().method35167()) {
          int var4 = var1.getMainChunkX();
          int var5 = var1.getMainChunkZ();
-         Biome var6 = var1.getBiome(new ChunkPos(var4, var5).method24364());
+         Biome var6 = var1.getBiome(new ChunkPos(var4, var5).asBlockPos());
          SharedSeedRandom var7 = new SharedSeedRandom();
          var7.setDecorationSeed(var1.getSeed(), var4 << 4, var5 << 4);
          Class8170.method28430(var1, var6, var4, var5, var7);

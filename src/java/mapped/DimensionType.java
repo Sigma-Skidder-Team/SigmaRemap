@@ -13,6 +13,7 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.IBiomeMagnifier;
+import net.minecraft.world.biome.provider.EndBiomeProvider;
 
 import java.io.File;
 import java.util.Optional;

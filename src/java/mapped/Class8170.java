@@ -101,7 +101,7 @@ public final class Class8170 {
 
    public static void method28419(EntityClassification var0, ServerWorld var1, IChunk var2, BlockPos var3, Class8145 var4, Class8940 var5) {
       StructureManager var8 = var1.func_241112_a_();
-      ChunkGenerator var9 = var1.getChunkProvider().method7370();
+      ChunkGenerator var9 = var1.getChunkProvider().getChunkGenerator();
       int var10 = var3.getY();
       BlockState var11 = var2.getBlockState(var3);
       if (!var11.method23400(var2, var3)) {

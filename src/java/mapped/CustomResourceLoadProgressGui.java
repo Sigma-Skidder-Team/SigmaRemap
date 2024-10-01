@@ -94,7 +94,7 @@ public class CustomResourceLoadProgressGui extends LoadingGui {
 
       GL11.glEnable(3008);
       GL11.glEnable(3042);
-      RenderUtil.method11454(
+      RenderUtil.drawImage(
          0.0F, 0.0F, (float) Minecraft.getInstance().mainWindow.getWidth(), (float) Minecraft.getInstance().mainWindow.getHeight(), field6780, var0
       );
       RenderUtil.renderBackgroundBox(

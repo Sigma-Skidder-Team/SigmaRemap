@@ -89,7 +89,7 @@ public class SpartanFly extends Module {
                                 BlockRayTraceResult var7 = new BlockRayTraceResult(
                                         mc.player.getPositionVec().add(0.0, -2.0, 0.0),
                                         Direction.UP,
-                                        mc.player.getPosition().method8336(0, -2, 0),
+                                        mc.player.getPosition().add(0, -2, 0),
                                         false
                                 );
                                 CPlayerTryUseItemOnBlockPacket var8 = new CPlayerTryUseItemOnBlockPacket(Hand.MAIN_HAND, var7);

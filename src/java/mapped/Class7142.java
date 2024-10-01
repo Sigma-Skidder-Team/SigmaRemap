@@ -35,7 +35,7 @@ public class Class7142 extends Class7139 {
             int var8 = var7 % 8;
             int var9x = var7 / 8;
             if (var8 == 0 || var8 == 7 || var9x == 0 || var9x == 7) {
-               this.method22280(var1, var2, var3x.method8336(-3 + var8, 0, -3 + var9x));
+               this.method22280(var1, var2, var3x.add(-3 + var8, 0, -3 + var9x));
             }
          }
       });
@@ -45,7 +45,7 @@ public class Class7142 extends Class7139 {
       for (int var6 = -2; var6 <= 2; var6++) {
          for (int var7 = -2; var7 <= 2; var7++) {
             if (Math.abs(var6) != 2 || Math.abs(var7) != 2) {
-               this.method22281(var1, var2, var3.method8336(var6, 0, var7));
+               this.method22281(var1, var2, var3.add(var6, 0, var7));
             }
          }
       }
@@ -53,7 +53,7 @@ public class Class7142 extends Class7139 {
 
    private void method22281(Class1679 var1, Random var2, BlockPos var3) {
       for (int var6 = 2; var6 >= -3; var6--) {
-         BlockPos var7 = var3.method8339(var6);
+         BlockPos var7 = var3.up(var6);
          if (Class2898.method11220(var1, var7)) {
             var1.setBlockState(var7, this.field30703.method20424(var2, var3), 19);
             break;

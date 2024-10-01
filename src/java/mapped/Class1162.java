@@ -45,8 +45,6 @@ public class Class1162 extends Class1161 {
 
    private void method5560(RealmsServer var1, MatrixStack var2, int var3, int var4, int var5, int var6) {
       if (var1.field27447 != Class2261.field14708) {
-         short var9 = 225;
-         byte var10 = 2;
          if (!var1.field27452) {
             if (var1.field27447 != Class2261.field14706) {
                if (RealmsMainScreen.method2129(this.field6317, var1) && var1.field27454 < 7) {
@@ -98,7 +96,6 @@ public class Class1162 extends Class1161 {
             }
 
             int var13 = RealmsMainScreen.method2144(this.field6317).method38821(var24) + 17;
-            byte var14 = 16;
             int var15 = var3 + RealmsMainScreen.method2145(this.field6317).method38821(var23) + 8;
             int var16 = var4 + 13;
             boolean var17 = false;

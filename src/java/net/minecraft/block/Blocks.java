@@ -12,6 +12,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.gen.feature.Features;
 
 import java.util.function.ToIntFunction;
 
@@ -2570,7 +2571,7 @@ public class Blocks {
       "warped_fungus",
       new Class3485(
          AbstractBlock.Properties.method26611(Material.PLANTS, MaterialColor.field30970).method26622().method26614().method26619(SoundType.field36227),
-         () -> Class9104.field41767
+         () -> Features.field41767
       )
    );
    public static final Block field37076 = register(
@@ -2603,7 +2604,7 @@ public class Blocks {
       "crimson_fungus",
       new Class3485(
          AbstractBlock.Properties.method26611(Material.PLANTS, MaterialColor.field30982).method26622().method26614().method26619(SoundType.field36227),
-         () -> Class9104.field41765
+         () -> Features.field41765
       )
    );
    public static final Block field37085 = register(

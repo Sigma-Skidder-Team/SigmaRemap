@@ -13,6 +13,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biomes;
+import net.minecraft.world.biome.provider.SingleBiomeProvider;
 
 public abstract class BiomeGeneratorTypeScreens {
    public static final BiomeGeneratorTypeScreens field_239066_a_ = new Class5974("default");
@@ -75,7 +76,7 @@ public abstract class BiomeGeneratorTypeScreens {
    }
 
    private static DimensionGeneratorSettings method18502(DynamicRegistries var0, DimensionGeneratorSettings var1, BiomeGeneratorTypeScreens var2, Biome var3) {
-      Class1688 var6 = new Class1688(var3);
+      SingleBiomeProvider var6 = new SingleBiomeProvider(var3);
       MutableRegistry var7 = var0.<DimensionType>getRegistry(Registry.DIMENSION_TYPE_KEY);
       MutableRegistry var8 = var0.<DimensionSettings>getRegistry(Registry.NOISE_SETTINGS_KEY);
       Supplier var9;

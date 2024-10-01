@@ -999,7 +999,6 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       RenderSystem.disableTexture();
       Tessellator var5 = Tessellator.getInstance();
       BufferBuilder var6 = var5.getBuffer();
-      short var7 = 160;
       int var8 = this.mainWindow.getFramebufferWidth() - 160 - 10;
       int var9 = this.mainWindow.getFramebufferHeight() - 320;
       RenderSystem.enableBlend();

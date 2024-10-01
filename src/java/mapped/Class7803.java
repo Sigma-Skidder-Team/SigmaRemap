@@ -56,14 +56,14 @@ public class Class7803 {
 
    public static AxisAlignedBB method26052(Class964 var0) {
       BlockPos var3 = var0.getPos();
-      BlockPos var4 = var3.method8337(var0.method3942().method8336(-1, -1, -1));
+      BlockPos var4 = var3.method8337(var0.method3942().add(-1, -1, -1));
       BlockPos var5 = Class8969.method32905(var4, Mirror.field13614, var0.method3946(), var3);
       return new AxisAlignedBB(var3, var5);
    }
 
    public static Class9764 method26053(Class964 var0) {
       BlockPos var3 = var0.getPos();
-      BlockPos var4 = var3.method8337(var0.method3942().method8336(-1, -1, -1));
+      BlockPos var4 = var3.method8337(var0.method3942().add(-1, -1, -1));
       BlockPos var5 = Class8969.method32905(var4, Mirror.field13614, var0.method3946(), var3);
       return new Class9764(var3, var5);
    }
@@ -73,7 +73,7 @@ public class Class7803 {
       var3.setBlockState(var6, Blocks.COMMAND_BLOCK.getDefaultState());
       CommandBlockTileEntity var7 = (CommandBlockTileEntity)var3.getTileEntity(var6);
       var7.method4009().method3562("test runthis");
-      BlockPos var8 = Class8969.method32905(var6.method8336(0, 0, -1), Mirror.field13614, var2, var6);
+      BlockPos var8 = Class8969.method32905(var6.add(0, 0, -1), Mirror.field13614, var2, var6);
       var3.setBlockState(var8, Blocks.STONE_BUTTON.getDefaultState().rotate(var2));
    }
 
@@ -100,12 +100,12 @@ public class Class7803 {
                   throw new IllegalArgumentException("Invalid rotation: " + var2);
                }
 
-               var10 = var1.method8336(0, 0, var8.getX() - 1);
+               var10 = var1.add(0, 0, var8.getX() - 1);
             } else {
-               var10 = var1.method8336(var8.getX() - 1, 0, var8.getZ() - 1);
+               var10 = var1.add(var8.getX() - 1, 0, var8.getZ() - 1);
             }
          } else {
-            var10 = var1.method8336(var8.getZ() - 1, 0, 0);
+            var10 = var1.add(var8.getZ() - 1, 0, 0);
          }
       } else {
          var10 = var1;
@@ -146,7 +146,7 @@ public class Class7803 {
    }
 
    public static Class9764 method26059(BlockPos var0, BlockPos var1, Rotation var2) {
-      BlockPos var5 = var0.method8337(var1).method8336(-1, -1, -1);
+      BlockPos var5 = var0.method8337(var1).add(-1, -1, -1);
       BlockPos var6 = Class8969.method32905(var5, Mirror.field13614, var2, var0);
       Class9764 var7 = Class9764.method38389(var0.getX(), var0.getY(), var0.getZ(), var6.getX(), var6.getY(), var6.getZ());
       int var8 = Math.min(var7.field45678, var7.field45681);
@@ -245,10 +245,10 @@ public class Class7803 {
       if (!(var6 instanceof Class9733)) {
          if (var1.getY() != var0 - 1) {
             if (var1.getY() < var0 - 1) {
-               var5 = var2.getBiome(var1).getGenerationSettings().method24283().method28935();
+               var5 = var2.getBiome(var1).getGenerationSettings().getSurfaceBuilderConfig().method28935();
             }
          } else {
-            var5 = var2.getBiome(var1).getGenerationSettings().method24283().method28934();
+            var5 = var2.getBiome(var1).getGenerationSettings().getSurfaceBuilderConfig().getTop();
          }
       } else {
          BlockState[] var7 = var6.method38130();

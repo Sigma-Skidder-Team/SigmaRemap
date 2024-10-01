@@ -26,7 +26,7 @@ public class Class1695 implements AutoCloseable {
       for (int var3 = 0; var3 < 128; var3++) {
          for (int var4 = 0; var4 < 128; var4++) {
             int var5 = var4 + var3 * 128;
-            int var6 = this.field9231.field32322[var5] & 255;
+            int var6 = this.field9231.colors[var5] & 255;
             if (var6 / 4 != 0) {
                this.field9232.method1141().method7890(var4, var3, MaterialColor.field30946[var6 / 4].method22640(var6 & 3));
             } else {

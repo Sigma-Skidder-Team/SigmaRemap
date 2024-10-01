@@ -90,10 +90,9 @@ public class Class362 extends Thread {
 
                Class6747 var39 = (Class6747)var6.method10423(var38, var35);
                short[] var40 = var39.method20563();
-               byte var41 = 0;
                int var42 = var39.method20564();
                if (Sound.method10540(this.field1599) != null) {
-                  Sound.method10540(this.field1599).write(Sound.method10547(this.field1599, var40, var41, var42), 0, var42 * 2);
+                  Sound.method10540(this.field1599).write(Sound.method10547(this.field1599, var40, 0, var42), 0, var42 * 2);
                }
 
                var35.method10441();

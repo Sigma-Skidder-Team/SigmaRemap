@@ -39,6 +39,7 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.storage.AnvilSaveConverter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -355,7 +356,7 @@ public class SaveFormat {
 
       public boolean method7996(Class1339 var1) {
          this.method7993();
-         return Class9251.method34798(this, var1);
+         return AnvilSaveConverter.convertRegions(this, var1);
       }
 
       @Nullable

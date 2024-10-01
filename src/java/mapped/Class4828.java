@@ -18,7 +18,7 @@ public class Class4828 implements Class4826 {
    public Collection<ItemStack> method14917() {
       ArrayList var3 = Lists.newArrayList();
 
-      for (Item var5 : this.field22600.method24918()) {
+      for (Item var5 : this.field22600.getAllElements()) {
          var3.add(new ItemStack(var5));
       }
 

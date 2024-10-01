@@ -44,7 +44,7 @@ public class UIButton extends Class4247 {
                   : (this.textColor.method19413() != Class2218.field14491 ? this.getHeightA() / 2 : this.getHeightA())
             );
          int var7 = this.getFont().getStringWidth(this.getTypedText());
-         byte var8 = 18;
+         float var8 = 18;
          float var9 = (float)Math.pow((double)this.field20711.calcPercent(), 3.0);
          RenderUtil.method11440(
             this.getFont(),
@@ -57,9 +57,9 @@ public class UIButton extends Class4247 {
          );
          RenderUtil.drawRect(
             (float)var5 - (float)(var7 / 2) * var9,
-            (float)(var6 + var8),
+                 var6 + var8,
             (float)var5 + (float)(var7 / 2) * var9,
-            (float)(var6 + var8 + 2),
+                 var6 + var8 + 2,
             MultiUtilities.applyAlpha(var4, var1 * MultiUtilities.method17710(var4))
          );
          super.draw(var1);

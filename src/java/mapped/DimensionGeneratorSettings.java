@@ -23,6 +23,7 @@ import java.util.function.Supplier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.provider.OverworldBiomeProvider;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -91,7 +92,7 @@ public class DimensionGeneratorSettings {
    }
 
    public static NoiseChunkGenerator method26258(Registry<Biome> var0, Registry<DimensionSettings> var1, long var2) {
-      return new NoiseChunkGenerator(new Class1689(var2, false, false, var0), var2, () -> var1.getOrThrow(DimensionSettings.field43230));
+      return new NoiseChunkGenerator(new OverworldBiomeProvider(var2, false, false, var0), var2, () -> var1.getOrThrow(DimensionSettings.field43230));
    }
 
    public long method26259() {
@@ -220,14 +221,14 @@ public class DimensionGeneratorSettings {
                var10,
                var7,
                false,
-               method26262(var14, var17, new NoiseChunkGenerator(new Class1689(var10, false, false, var15), var10, () -> var16.getOrThrow(DimensionSettings.field43231)))
+               method26262(var14, var17, new NoiseChunkGenerator(new OverworldBiomeProvider(var10, false, false, var15), var10, () -> var16.getOrThrow(DimensionSettings.field43231)))
             );
          case "largebiomes":
             return new DimensionGeneratorSettings(
                var10,
                var7,
                false,
-               method26262(var14, var17, new NoiseChunkGenerator(new Class1689(var10, false, true, var15), var10, () -> var16.getOrThrow(DimensionSettings.field43230)))
+               method26262(var14, var17, new NoiseChunkGenerator(new OverworldBiomeProvider(var10, false, true, var15), var10, () -> var16.getOrThrow(DimensionSettings.field43230)))
             );
          default:
             return new DimensionGeneratorSettings(var10, var7, false, method26262(var14, var17, method26258(var15, var16, var10)));

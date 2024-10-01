@@ -5,7 +5,6 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.module.PremiumModule;
 import mapped.Class5968;
 import net.minecraft.client.Minecraft;
 
@@ -55,12 +54,12 @@ public class MusicParticles extends Module {
     @EventTarget
     private void method16463(EventRender var1) {
         if (this.isEnabled() && mc.player != null) {
-            if (Client.getInstance().getMusicManager().method24319() && Client.getInstance().getMusicManager().field32163.size() != 0) {
+            if (Client.getInstance().getMusicManager().method24319() && !Client.getInstance().getMusicManager().field32163.isEmpty()) {
                 long var4 = System.nanoTime() - this.field23676;
                 float var6 = Math.min(10.0F, Math.max(0.0F, (float) var4 / 1.810361E7F));
                 double var7 = 0.0;
-                short var9 = 4750;
-                if (Client.getInstance().getMusicManager().field32165.size() == 0) {
+                double var9 = 4750;
+                if (Client.getInstance().getMusicManager().field32165.isEmpty()) {
                     return;
                 }
 
@@ -100,7 +99,7 @@ public class MusicParticles extends Module {
     }
 
     private void method16465(float var1) {
-        Iterator var4 = this.field23677.iterator();
+        Iterator<Class5968> var4 = this.field23677.iterator();
 
         while (var4.hasNext()) {
             Class5968 var5 = (Class5968) var4.next();

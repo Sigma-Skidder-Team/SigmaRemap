@@ -80,7 +80,7 @@ public class Class3336 extends Item {
                BlockState var8 = Blocks.SEAGRASS.getDefaultState();
 
                for (int var9 = 0; var9 < var6 / 16; var9++) {
-                  var7 = var7.method8336(field18735.nextInt(3) - 1, (field18735.nextInt(3) - 1) * field18735.nextInt(3) / 2, field18735.nextInt(3) - 1);
+                  var7 = var7.add(field18735.nextInt(3) - 1, (field18735.nextInt(3) - 1) * field18735.nextInt(3) / 2, field18735.nextInt(3) - 1);
                   if (var1.getBlockState(var7).method23456(var1, var7)) {
                      continue label110;
                   }

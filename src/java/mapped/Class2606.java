@@ -60,7 +60,7 @@ public class Class2606 extends Class2605 {
       }
 
       if (Class1110.method5339(this.field16851).y > this.field16851.getPosY()
-         && !this.field16851.world.method7007(this.field16851.getPosition().method8339(1))) {
+         && !this.field16851.world.method7007(this.field16851.getPosition().up(1))) {
          this.field16855 = Math.min(-1.0F, this.field16855);
          this.method10813();
       }

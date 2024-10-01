@@ -28,6 +28,7 @@ import net.minecraft.util.datafix.codec.DatapackCodec;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.listener.LoggingChunkStatusListener;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -135,7 +136,7 @@ public class Class8958 {
          var31.saveLevel(var19, (IServerConfiguration)var39);
          IServerConfiguration var45 = var39;
          DedicatedServer var46 = MinecraftServer.<DedicatedServer>func_240784_a_(var16x -> {
-            DedicatedServer var19x = new DedicatedServer(var16x, var19, var31, var34, var37, var45, var21, DataFixesManager.getDataFixer(), var26, var27, var28, Class7244::new);
+            DedicatedServer var19x = new DedicatedServer(var16x, var19, var31, var34, var37, var45, var21, DataFixesManager.getDataFixer(), var26, var27, var28, LoggingChunkStatusListener::new);
             var19x.method1333((String)var18.valueOf(var12));
             var19x.method1331((Integer)var18.valueOf(var15));
             var19x.method1343(var18.has(var6));

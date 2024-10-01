@@ -34,8 +34,6 @@ public class Class4343 extends Class4339 implements Class4342 {
    private int method13531(IconPanel panel, Setting setting, int var3, int var4, int var5) {
       switch (Class8666.field39049[setting.getSettingType().ordinal()]) {
          case 1:
-            byte var21 = 24;
-            byte var29 = 24;
             UITextDisplay var37 = new UITextDisplay(panel, setting.getName() + "lbl", var3, var4, this.field21222, 24, UITextDisplay.field20778, setting.getName());
             UICheckBox var45 = new UICheckBox(panel, setting.getName() + "checkbox", panel.getWidthA() - 24 - var5, var4 + 6, 24, 24);
             this.field21223.put(var37, setting);
@@ -52,8 +50,6 @@ public class Class4343 extends Class4339 implements Class4342 {
             var4 += 24 + var5;
             break;
          case 2:
-            byte var20 = 126;
-            byte var28 = 24;
             UITextDisplay var36 = new UITextDisplay(panel, setting.getName() + "lbl", var3, var4, this.field21222, 24, UITextDisplay.field20778, setting.getName());
             this.field21223.put(var36, setting);
             NumberSetting numbaSetting = (NumberSetting)setting;
@@ -86,8 +82,8 @@ public class Class4343 extends Class4339 implements Class4342 {
             var4 += 24 + var5;
             break;
          case 3:
-            byte var19 = 114;
-            byte var27 = 27;
+            int var19 = 114;
+            int var27 = 27;
             UITextDisplay var43;
             this.addToList(
                var43 = new UITextDisplay(panel, setting.getName() + "lbl", var3, var4, this.field21222, var27, UITextDisplay.field20778, setting.getName())
@@ -116,8 +112,6 @@ public class Class4343 extends Class4339 implements Class4342 {
             var4 += var27 + var5;
             break;
          case 4:
-            byte var18 = 123;
-            byte var26 = 27;
             UITextDisplay var34 = new UITextDisplay(panel, setting.getName() + "lbl", var3, var4 + 2, this.field21222, 27, UITextDisplay.field20778, setting.getName());
             Class4363 var42 = new Class4363(
                panel,
@@ -160,8 +154,6 @@ public class Class4343 extends Class4339 implements Class4342 {
             var4 += var17.getHeightA() + var5;
             break;
          case 7:
-            byte var16 = 123;
-            byte var24 = 27;
             UITextDisplay var32 = new UITextDisplay(panel, setting.getName() + "lbl", var3, var4, this.field21222, 27, UITextDisplay.field20778, setting.getName());
             Class4377 var40 = new Class4377(
                panel, setting.getName() + "btn", panel.getWidthA() - var5, var4 + 6, 123, 27, ((TextBoxSetting)setting).getOptions(), (Integer)setting.getCurrentValue()
@@ -179,8 +171,6 @@ public class Class4343 extends Class4339 implements Class4342 {
             var4 += 27 + var5;
             break;
          case 8:
-            short var15 = 175;
-            short var23 = 200;
             UITextDisplay var31 = new UITextDisplay(panel, setting.getName() + "lbl", var3, var4, this.field21222, 200, UITextDisplay.field20778, setting.getName());
             Class4258 var39 = new Class4258(
                panel,
@@ -200,8 +190,6 @@ public class Class4343 extends Class4339 implements Class4342 {
             var4 += 200 + var5;
             break;
          case 9:
-            short var14 = 160;
-            byte var22 = 114;
             ColorSetting var30 = (ColorSetting)setting;
             UITextDisplay var38 = new UITextDisplay(panel, setting.getName() + "lbl", var3, var4, this.field21222, 24, UITextDisplay.field20778, setting.getName());
             Class4252 var46 = new Class4252(
@@ -221,8 +209,6 @@ public class Class4343 extends Class4339 implements Class4342 {
             var4 += 114 + var5 - 10;
             break;
          case 10:
-            short var8 = 150;
-            short var9 = 150;
             SpeedRampSetting.SpeedRamp var10 = (SpeedRampSetting.SpeedRamp)setting.getCurrentValue();
             UITextDisplay var11 = new UITextDisplay(panel, setting.getName() + "lbl", var3, var4, this.field21222, 24, UITextDisplay.field20778, setting.getName());
             Class4250 var12 = new Class4250(
@@ -255,7 +241,6 @@ public class Class4343 extends Class4339 implements Class4342 {
    }
 
    private void method13511() {
-      byte var3 = 20;
       int var4 = 20;
 
       for (Setting var6 : this.field21219.getSettingMap().values()) {

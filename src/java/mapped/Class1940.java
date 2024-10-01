@@ -34,7 +34,7 @@ public enum Class1940 {
    field12606 {
       @Override
       public void method8204(ServerWorld var1, Class7819 var2, List<EnderCrystalEntity> var3, int var4, BlockPos var5) {
-         byte var8 = 40;
+
          boolean var9 = var4 % 40 == 0;
          boolean var10 = var4 % 40 == 39;
          if (var9 || var10) {
@@ -47,7 +47,6 @@ public enum Class1940 {
             } else {
                Class9648 var13 = (Class9648)var11.get(var12);
                if (!var9) {
-                  byte var14 = 10;
 
                   for (BlockPos var16 : BlockPos.method8359(
                           new BlockPos(var13.method37626() - 10, var13.method37629() - 10, var13.method37627() - 10),
@@ -67,7 +66,7 @@ public enum Class1940 {
                   Class4707 var18 = new Class4707(true, ImmutableList.of(var13), new BlockPos(0, 128, 0));
                   Class2898.field17962
                           .method11216(var18)
-                          .method26521(var1, var1.getChunkProvider().method7370(), new Random(), new BlockPos(var13.method37626(), 45, var13.method37627()));
+                          .func_242765_a(var1, var1.getChunkProvider().getChunkGenerator(), new Random(), new BlockPos(var13.method37626(), 45, var13.method37627()));
                } else {
                   for (EnderCrystalEntity var19 : var3) {
                      var19.method4142(new BlockPos(var13.method37626(), var13.method37629() + 1, var13.method37627()));

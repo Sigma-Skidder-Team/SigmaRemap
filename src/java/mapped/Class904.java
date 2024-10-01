@@ -383,7 +383,7 @@ public class Class904 extends ProjectileEntity {
       Class2331 var4 = Class2331.field15949;
 
       for (int var5 = -1; var5 <= 2; var5++) {
-         Class2331 var6 = this.method3539(var1.method8336(-2, var5, -2), var1.method8336(2, var5, 2));
+         Class2331 var6 = this.method3539(var1.add(-2, var5, -2), var1.add(2, var5, 2));
          switch (Class8935.field40425[var6.ordinal()]) {
             case 1:
                return false;

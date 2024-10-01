@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.world.gen.feature.Features;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
+
 import java.util.Random;
 import javax.annotation.Nullable;
 
@@ -8,13 +11,13 @@ public class Class7663 extends Class7661 {
 
    @Nullable
    @Override
-   public Class7909<Class4733, ?> method25186(Random var1, boolean var2) {
+   public ConfiguredFeature<Class4733, ?> method25186(Random var1, boolean var2) {
       return null;
    }
 
    @Nullable
    @Override
-   public Class7909<Class4733, ?> method25183(Random var1) {
-      return Class9104.field41771;
+   public ConfiguredFeature<Class4733, ?> method25183(Random var1) {
+      return Features.field41771;
    }
 }

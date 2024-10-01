@@ -69,9 +69,9 @@ public class Class6771 extends Class6768<Class8278> {
 
       int var25 = var4 & 15;
       int var26 = var5 & 15;
-      Class8277 var27 = var3.getGenerationSettings().method24283();
+      Class8277 var27 = var3.getGenerationSettings().getSurfaceBuilderConfig();
       BlockState var28 = var27.method28935();
-      BlockState var29 = var27.method28934();
+      BlockState var29 = var27.getTop();
       BlockState var30 = var28;
       BlockState var31 = var29;
       int var32 = (int)(var7 / 3.0 + 3.0 + var1.nextDouble() * 0.25);

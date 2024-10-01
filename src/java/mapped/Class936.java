@@ -264,7 +264,7 @@ public class Class936 extends Class939 implements Class937, ITickableTileEntity 
             if (var9 && var1 instanceof Class936) {
                Class936 var13 = (Class936)var1;
                if (!var13.method3723()) {
-                  byte var14 = 0;
+                  int var14 = 0;
                   if (var0 instanceof Class936) {
                      Class936 var12 = (Class936)var0;
                      if (var13.field5295 >= var12.field5295) {

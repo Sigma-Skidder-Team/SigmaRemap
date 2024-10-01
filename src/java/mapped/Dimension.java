@@ -8,6 +8,8 @@ import com.mojang.serialization.Lifecycle;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.biome.provider.NetherBiomeProvider;
+import net.minecraft.world.biome.provider.EndBiomeProvider;
 
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
@@ -88,8 +90,8 @@ public final class Dimension {
                return false;
             } else if (!var10.method17792(var0, DimensionSettings.field_242737_f)) {
                return false;
-            } else if (var9.getBiomeProvider() instanceof Class1686) {
-               Class1686 var11 = (Class1686)var9.getBiomeProvider();
+            } else if (var9.getBiomeProvider() instanceof NetherBiomeProvider) {
+               NetherBiomeProvider var11 = (NetherBiomeProvider)var9.getBiomeProvider();
                if (!var11.method7210(var0)) {
                   return false;
                } else if (var10.getBiomeProvider() instanceof EndBiomeProvider) {

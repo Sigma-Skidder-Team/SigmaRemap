@@ -53,7 +53,7 @@ public class Class892 extends Class890 {
       super.method3464(var1);
       if (!this.world.isRemote) {
          if (this.rand.nextInt(8) == 0) {
-            byte var4 = 1;
+            int var4 = 1;
             if (this.rand.nextInt(32) == 0) {
                var4 = 4;
             }

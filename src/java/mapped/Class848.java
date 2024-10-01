@@ -37,12 +37,11 @@ public class Class848 extends Class838 {
 
    @Override
    public void init() {
-      byte var3 = 100;
-      int var4 = 0;
-      byte var5 = 30;
-      byte var6 = 20;
-      byte var7 = 120;
-      byte var8 = 20;
+      int var3 = 100;
+      int var5 = 30;
+      int var6 = 20;
+      int var7 = 120;
+      int var8 = 20;
       int var9 = Shaders.method32969(this.field4697, 2);
       Class6679[] var10 = Shaders.method32968(this.field4697);
       if (var10 != null) {
@@ -57,7 +56,7 @@ public class Class848 extends Class838 {
                int var14 = var12 % var9;
                int var15 = var12 / var9;
                int var16 = Math.min(this.width / var9, 200);
-               var4 = (this.width - var16 * var9) / 2;
+               int var4 = (this.width - var16 * var9) / 2;
                int var17 = var14 * var16 + 5 + var4;
                int var18 = var5 + var15 * var6;
                int var19 = var16 - 10;

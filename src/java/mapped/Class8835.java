@@ -34,7 +34,7 @@ public class Class8835 {
                   .fieldOf("spawners")
                   .forGetter(var0x -> var0x.field39902),
                Codec.simpleMap(Registry.ENTITY_TYPE, Class7763.field33334, Registry.ENTITY_TYPE).fieldOf("spawn_costs").forGetter(var0x -> var0x.field39903),
-               Codec.BOOL.fieldOf("player_spawn_friendly").orElse(false).forGetter(Class8835::method31971)
+               Codec.BOOL.fieldOf("player_spawn_friendly").orElse(false).forGetter(Class8835::isValidSpawnBiomeForPlayer)
             )
             .apply(var0, Class8835::new)
    );
@@ -63,7 +63,7 @@ public class Class8835 {
       return this.field39901;
    }
 
-   public boolean method31971() {
+   public boolean isValidSpawnBiomeForPlayer() {
       return this.field39904;
    }
 }

@@ -76,7 +76,7 @@ public class Class5454 extends StructureStart<Class4726> {
       Rotation var14 = Util.<Rotation>getRandomObject(Rotation.values(), this.field24201);
       Mirror var15 = !(this.field24201.nextFloat() < 0.5F) ? Mirror.field13616 : Mirror.field13614;
       BlockPos var16 = new BlockPos(var13.method32886().getX() / 2, 0, var13.method32886().getZ() / 2);
-      BlockPos var17 = new ChunkPos(var4, var5).method24364();
+      BlockPos var17 = new ChunkPos(var4, var5).asBlockPos();
       Class9764 var18 = var13.method32910(var17, var14, var16, var15);
       Vector3i var19 = var18.method38401();
       int var20 = var19.getX();

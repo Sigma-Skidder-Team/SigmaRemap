@@ -16,9 +16,9 @@ public class Class6282 extends Class6273<Class4718> {
       if (var1.nextInt(14) != 0) {
          return Stream.<BlockPos>empty();
       } else {
-         var6 = Stream.<BlockPos>concat(var6, Stream.of(var3.method8336(var1.nextInt(16), 55 + var1.nextInt(16), var1.nextInt(16))));
+         var6 = Stream.<BlockPos>concat(var6, Stream.of(var3.add(var1.nextInt(16), 55 + var1.nextInt(16), var1.nextInt(16))));
          if (var1.nextInt(4) == 0) {
-            var6 = Stream.<BlockPos>concat(var6, Stream.of(var3.method8336(var1.nextInt(16), 55 + var1.nextInt(16), var1.nextInt(16))));
+            var6 = Stream.<BlockPos>concat(var6, Stream.of(var3.add(var1.nextInt(16), 55 + var1.nextInt(16), var1.nextInt(16))));
          }
 
          return var6;

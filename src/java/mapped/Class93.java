@@ -21,7 +21,7 @@ public enum Class93 implements IStringSerializable {
       @Override
       public float method271(BlockPos class1999, float f) {
          double d;
-         double d2 = Biome.method32549().method25315((double)class1999.getX() * 0.05, (double)class1999.getZ() * 0.05, false) * 7.0;
+         double d2 = Biome.field40313.method25315((double)class1999.getX() * 0.05, (double)class1999.getZ() * 0.05, false) * 7.0;
          double d3 = d2 + (d = Biome.field40314.method25315((double)class1999.getX() * 0.2, (double)class1999.getZ() * 0.2, false));
          if (!(d3 < 0.3)) {
             return f;

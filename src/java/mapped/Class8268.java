@@ -141,7 +141,7 @@ public class Class8268 {
       if (this.field35551 != null && !this.field35551.getPath().isEmpty()) {
          ITag<Block> var6 = var2.get(this.field35551);
          if (var6 != null) {
-            for (Block var8 : var6.method24918()) {
+            for (Block var8 : var6.getAllElements()) {
                for (Property var10 : var8.getStateContainer().method35395()) {
                   if (!this.field35546.containsKey(var10.method30472()) && var10.method30472().startsWith(var5)) {
                      var1.suggest(var10.method30472() + '=');
@@ -169,7 +169,7 @@ public class Class8268 {
          if (this.field35551 != null) {
             ITag<Block> var4 = var1.get(this.field35551);
             if (var4 != null) {
-               for (Block var6 : var4.method24918()) {
+               for (Block var6 : var4.getAllElements()) {
                   if (var6.isTileEntityProvider()) {
                      return true;
                   }
@@ -218,7 +218,7 @@ public class Class8268 {
       if (this.field35551 != null && !this.field35551.getPath().isEmpty()) {
          ITag<Block> var7 = var2.get(this.field35551);
          if (var7 != null) {
-            for (Block var9 : var7.method24918()) {
+            for (Block var9 : var7.getAllElements()) {
                Property var10 = var9.getStateContainer().method35396(var3);
                if (var10 != null) {
                   method28849(var1, var10);
@@ -251,7 +251,7 @@ public class Class8268 {
             boolean var6 = false;
             boolean var7 = false;
 
-            for (Block var9 : var5.method24918()) {
+            for (Block var9 : var5.getAllElements()) {
                var6 |= !var9.getStateContainer().method35395().isEmpty();
                var7 |= var9.isTileEntityProvider();
                if (var6 && var7) {

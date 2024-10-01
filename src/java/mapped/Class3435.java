@@ -177,7 +177,7 @@ public class Class3435 extends Class3433 {
             if (!this.field19209) {
                var2.removeBlock(var3.offset(var8), false);
             } else {
-               BlockPos var11 = var3.method8336(var8.getXOffset() * 2, var8.getYOffset() * 2, var8.getZOffset() * 2);
+               BlockPos var11 = var3.add(var8.getXOffset() * 2, var8.getYOffset() * 2, var8.getZOffset() * 2);
                BlockState var12 = var2.getBlockState(var11);
                boolean var13 = false;
                if (var12.isIn(Blocks.MOVING_PISTON)) {

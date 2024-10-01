@@ -18,7 +18,7 @@ public class Class4314 extends Screen {
    public Class4314(Account var1) {
       super("Alt Manager");
       this.method13300(false);
-      short var4 = 400;
+      int var4 = 400;
       int var5 = 114;
       int var6 = (this.getWidthA() - var4) / 2;
       this.addToList(this.field21027 = new SigmaClassicTextBox(this, "username", var6, var5, var4, 45, SigmaClassicTextBox.field20741, "", "New name", ResourceRegistry.field38868));

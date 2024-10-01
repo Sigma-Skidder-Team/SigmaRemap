@@ -46,10 +46,7 @@ public class Class3746 extends Class3676<Class1042> {
                   Vector3d var9 = null;
                   int var10 = 0;
 
-                  for (short var11 = 1000;
-                     var10 < 1000 && (var9 == null || this.method12703(var2, Class9378.method35577(var1.getDimensionKey(), new BlockPos(var9))));
-                     var10++
-                  ) {
+                  for (; var10 < 1000 && (var9 == null || this.method12703(var2, Class9378.method35577(var1.getDimensionKey(), new BlockPos(var9)))); var10++) {
                      var9 = Class8037.method27587(var2, 15, 7, Vector3d.method11330(var6.method35579()));
                   }
 

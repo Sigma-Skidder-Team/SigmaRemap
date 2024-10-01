@@ -38,8 +38,8 @@ public class Class4335 extends Class4333 {
    private void method13485(Module var1) {
       int var4 = this.field21182 % 3;
       int var5 = (int)Math.floor((double)((float)this.field21182 / 3.0F));
-      short var6 = 170;
-      byte var7 = 80;
+      int var6 = 170;
+      int var7 = 80;
       this.addToList(new Class4368(this, var1.getName(), 40 + var6 * var4, 72 + var7 * var5, var6, var7, var1));
       this.field21182++;
    }

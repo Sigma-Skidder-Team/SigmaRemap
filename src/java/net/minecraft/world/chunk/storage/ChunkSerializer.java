@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.world.chunk.storage;
 
 import com.google.common.collect.Maps;
 import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
@@ -14,6 +14,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Map.Entry;
 
+import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -33,21 +34,18 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeContainer;
 import net.minecraft.world.biome.provider.BiomeProvider;
-import net.minecraft.world.chunk.ChunkPrimer;
-import net.minecraft.world.chunk.ChunkSection;
-import net.minecraft.world.chunk.IChunk;
-import net.minecraft.world.chunk.NibbleArray;
+import net.minecraft.world.chunk.*;
 import net.minecraft.world.gen.feature.structure.StructureStart;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Class9725 {
+public class ChunkSerializer {
    private static final Logger field45421 = LogManager.getLogger();
 
    public static ChunkPrimer method38087(ServerWorld var0, TemplateManager var1, Class1653 var2, ChunkPos var3, CompoundNBT var4) {
-      ChunkGenerator var7 = var0.getChunkProvider().method7370();
+      ChunkGenerator var7 = var0.getChunkProvider().getChunkGenerator();
       BiomeProvider var8 = var7.getBiomeProvider();
       CompoundNBT var9 = var4.getCompound("Level");
       ChunkPos var10 = new ChunkPos(var9.getInt("xPos"), var9.getInt("zPos"));
@@ -98,7 +96,7 @@ public class Class9725 {
       }
 
       long var23 = var9.getLong("InhabitedTime");
-      Class2076 var40 = method38089(var4);
+      Class2076 var40 = getChunkStatus(var4);
       Object var43;
       if (var40 != Class2076.field13525) {
          ChunkPrimer var26 = new ChunkPrimer(var3, var12, var18, var13, var14);
@@ -110,7 +108,7 @@ public class Class9725 {
             var26.method7119(var21);
          }
 
-         if (!var15 && var26.getStatus().method34306(ChunkStatus.field42142)) {
+         if (!var15 && var26.getStatus().method34306(ChunkStatus.LIGHT)) {
             for (BlockPos var29 : BlockPos.method8364(var3.getX(), 0, var3.getZ(), var3.method24358(), 255, var3.method24359())) {
                if (((IChunk)var43).getBlockState(var29).getLightValue() != 0) {
                   var26.method7105(var29);
@@ -341,7 +339,7 @@ public class Class9725 {
       return var5;
    }
 
-   public static Class2076 method38089(CompoundNBT var0) {
+   public static Class2076 getChunkStatus(CompoundNBT var0) {
       if (var0 != null) {
          ChunkStatus var3 = ChunkStatus.method34304(var0.getCompound("Level").getString("Status"));
          if (var3 != null) {

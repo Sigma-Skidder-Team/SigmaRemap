@@ -115,7 +115,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    }
 
    private static void method3642(Map<Item, Integer> var0, ITag<Item> var1, int var2) {
-      for (Item var6 : var1.method24918()) {
+      for (Item var6 : var1.getAllElements()) {
          if (!method3641(var6)) {
             var0.put(var6, var2);
          }

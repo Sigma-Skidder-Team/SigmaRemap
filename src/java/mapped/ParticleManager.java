@@ -247,16 +247,18 @@ public class ParticleManager implements Class268 {
          this.world.getProfiler().endSection();
       });
       if (!this.particleEmitters.isEmpty()) {
-         ArrayList var3 = Lists.newArrayList();
+         List<EmitterParticle> emitterParticles = Lists.newArrayList();
 
-         for (EmitterParticle var5 : this.particleEmitters) {
-            var5.method14500();
-            if (!var5.method14522()) {
-               var3.add(var5);
+         for (EmitterParticle particle : this.particleEmitters) {
+            if (particle != null) {
+               particle.method14500();
+               if (!particle.method14522()) {
+                  emitterParticles.add(particle);
+               }
             }
          }
 
-         this.particleEmitters.removeAll(var3);
+         this.particleEmitters.removeAll(emitterParticles);
       }
 
       Class4587 var6;

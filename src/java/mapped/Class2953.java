@@ -25,7 +25,7 @@ public class Class2953 extends Class2898<Class4712> {
             var1.setBlockState(var4, Blocks.field36587.getDefaultState(), 2);
 
             for (int var9 = 0; var9 < 1500; var9++) {
-               BlockPos var10 = var4.method8336(var3.nextInt(8) - var3.nextInt(8), -var3.nextInt(12), var3.nextInt(8) - var3.nextInt(8));
+               BlockPos var10 = var4.add(var3.nextInt(8) - var3.nextInt(8), -var3.nextInt(12), var3.nextInt(8) - var3.nextInt(8));
                if (var1.getBlockState(var10).isAir()) {
                   int var11 = 0;
 

@@ -27,7 +27,7 @@ public class Class5124 implements Class5119 {
       BlockPos var12 = new BlockPos(var3, var5, var7);
       LongOpenHashSet var13 = new LongOpenHashSet();
 
-      for (BlockPos var15 : BlockPos.method8359(var12.method8336(-10, -10, -10), var12.method8336(10, 10, 10))) {
+      for (BlockPos var15 : BlockPos.method8359(var12.add(-10, -10, -10), var12.add(10, 10, 10))) {
          int var16 = var11.getLightFor(LightType.SKY, var15);
          float var17 = (float)(15 - var16) / 15.0F * 0.5F + 0.16F;
          int var18 = MathHelper.method37818(var17, 0.9F, 0.9F);

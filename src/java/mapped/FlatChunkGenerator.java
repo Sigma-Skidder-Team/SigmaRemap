@@ -6,6 +6,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
+import net.minecraft.world.biome.provider.SingleBiomeProvider;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.gen.WorldGenRegion;
 import net.minecraft.world.gen.feature.structure.StructureManager;
@@ -17,7 +18,7 @@ public class FlatChunkGenerator extends ChunkGenerator {
    private final Class9733 field24999;
 
    public FlatChunkGenerator(Class9733 var1) {
-      super(new Class1688(var1.method38125()), new Class1688(var1.method38127()), var1.method38126(), 0L);
+      super(new SingleBiomeProvider(var1.method38125()), new SingleBiomeProvider(var1.method38127()), var1.method38126(), 0L);
       this.field24999 = var1;
    }
 

@@ -71,29 +71,29 @@ public class Class5822 extends Container {
 
                for (int var7 = -1; var7 <= 1; var7++) {
                   for (int var8 = -1; var8 <= 1; var8++) {
-                     if ((var7 != 0 || var8 != 0) && var2.method7007(var3.method8336(var8, 0, var7)) && var2.method7007(var3.method8336(var8, 1, var7))) {
-                        if (var2.getBlockState(var3.method8336(var8 * 2, 0, var7 * 2)).isIn(Blocks.field36525)) {
+                     if ((var7 != 0 || var8 != 0) && var2.method7007(var3.add(var8, 0, var7)) && var2.method7007(var3.add(var8, 1, var7))) {
+                        if (var2.getBlockState(var3.add(var8 * 2, 0, var7 * 2)).isIn(Blocks.field36525)) {
                            var6++;
                         }
 
-                        if (var2.getBlockState(var3.method8336(var8 * 2, 1, var7 * 2)).isIn(Blocks.field36525)) {
+                        if (var2.getBlockState(var3.add(var8 * 2, 1, var7 * 2)).isIn(Blocks.field36525)) {
                            var6++;
                         }
 
                         if (var8 != 0 && var7 != 0) {
-                           if (var2.getBlockState(var3.method8336(var8 * 2, 0, var7)).isIn(Blocks.field36525)) {
+                           if (var2.getBlockState(var3.add(var8 * 2, 0, var7)).isIn(Blocks.field36525)) {
                               var6++;
                            }
 
-                           if (var2.getBlockState(var3.method8336(var8 * 2, 1, var7)).isIn(Blocks.field36525)) {
+                           if (var2.getBlockState(var3.add(var8 * 2, 1, var7)).isIn(Blocks.field36525)) {
                               var6++;
                            }
 
-                           if (var2.getBlockState(var3.method8336(var8, 0, var7 * 2)).isIn(Blocks.field36525)) {
+                           if (var2.getBlockState(var3.add(var8, 0, var7 * 2)).isIn(Blocks.field36525)) {
                               var6++;
                            }
 
-                           if (var2.getBlockState(var3.method8336(var8, 1, var7 * 2)).isIn(Blocks.field36525)) {
+                           if (var2.getBlockState(var3.add(var8, 1, var7 * 2)).isIn(Blocks.field36525)) {
                               var6++;
                            }
                         }

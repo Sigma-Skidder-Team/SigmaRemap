@@ -153,7 +153,7 @@ public class Class3418 extends Block implements Class3196 {
    public boolean method11486(IBlockReader var1, BlockPos var2, BlockState var3, boolean var4) {
       int var7 = this.method12066(var1, var2);
       int var8 = this.method12067(var1, var2);
-      return var7 + var8 + 1 < 16 && var1.getBlockState(var2.method8339(var7)).<Integer>get(field19127) != 1;
+      return var7 + var8 + 1 < 16 && var1.getBlockState(var2.up(var7)).<Integer>get(field19127) != 1;
    }
 
    @Override
@@ -169,7 +169,7 @@ public class Class3418 extends Block implements Class3196 {
       int var10 = 1 + var2.nextInt(2);
 
       for (int var11 = 0; var11 < var10; var11++) {
-         BlockPos var12 = var3.method8339(var7);
+         BlockPos var12 = var3.up(var7);
          BlockState var13 = var1.getBlockState(var12);
          if (var9 >= 16 || var13.<Integer>get(field19127) == 1 || !var1.method7007(var12.up())) {
             return;
@@ -215,7 +215,7 @@ public class Class3418 extends Block implements Class3196 {
    public int method12066(IBlockReader var1, BlockPos var2) {
       int var5 = 0;
 
-      while (var5 < 16 && var1.getBlockState(var2.method8339(var5 + 1)).isIn(Blocks.field37009)) {
+      while (var5 < 16 && var1.getBlockState(var2.up(var5 + 1)).isIn(Blocks.field37009)) {
          var5++;
       }
 

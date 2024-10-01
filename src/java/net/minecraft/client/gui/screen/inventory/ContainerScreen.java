@@ -87,8 +87,6 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       RenderSystem.enableRescaleNormal();
       this.field4729 = null;
-      short var9 = 240;
-      short var10 = 240;
       RenderSystem.method27905(33986, 240.0F, 240.0F);
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
 

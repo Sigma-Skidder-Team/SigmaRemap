@@ -190,7 +190,6 @@ public abstract class Class1298 extends FocusableGui implements Class1190 {
          RenderSystem.disableAlphaTest();
          RenderSystem.shadeModel(7425);
          RenderSystem.disableTexture();
-         byte var14 = 4;
          var10.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR);
          var10.pos((double)this.field6876, (double)(this.field6873 + 4), 0.0).tex(0.0F, 1.0F).color(0, 0, 0, 0).endVertex();
          var10.pos((double)this.field6875, (double)(this.field6873 + 4), 0.0).tex(1.0F, 1.0F).color(0, 0, 0, 0).endVertex();

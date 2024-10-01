@@ -1,12 +1,12 @@
 package net.minecraft.world.chunk.listener;
 
 import net.minecraft.util.math.ChunkPos;
-import mapped.ChunkStatus;
+import net.minecraft.world.chunk.ChunkStatus;
 
 public interface IChunkStatusListener {
-   void method22736(ChunkPos var1);
+   void start(ChunkPos var1);
 
-   void method22737(ChunkPos var1, ChunkStatus var2);
+   void statusChanged(ChunkPos var1, ChunkStatus var2);
 
    void stop();
 }

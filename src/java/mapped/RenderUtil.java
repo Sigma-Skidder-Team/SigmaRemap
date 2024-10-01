@@ -742,8 +742,8 @@ public class RenderUtil {
       }
    }
 
-   public static void method11454(float var0, float var1, float var2, float var3, Texture var4, float var5) {
-      drawImage(var0, var1, var2, var3, var4, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5));
+   public static void drawImage(float x, float y, float var2, float var3, Texture tex, float alphaValue) {
+      drawImage(x, y, var2, var3, tex, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, alphaValue));
    }
 
    public static void method11455(float var0, float var1, float var2, float var3, Texture var4) {

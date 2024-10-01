@@ -109,7 +109,7 @@ public class Class959 extends TileEntity implements ITickableTileEntity {
       for (int var3 = -1; var3 <= 1; var3++) {
          for (int var4 = -1; var4 <= 1; var4++) {
             for (int var5 = -1; var5 <= 1; var5++) {
-               BlockPos var6 = this.pos.method8336(var3, var4, var5);
+               BlockPos var6 = this.pos.add(var3, var4, var5);
                if (!this.world.method7013(var6)) {
                   return false;
                }
@@ -125,7 +125,7 @@ public class Class959 extends TileEntity implements ITickableTileEntity {
                int var8 = Math.abs(var17);
                if ((var18 > 1 || var7 > 1 || var8 > 1)
                   && (var15 == 0 && (var7 == 2 || var8 == 2) || var16 == 0 && (var18 == 2 || var8 == 2) || var17 == 0 && (var18 == 2 || var7 == 2))) {
-                  BlockPos var9 = this.pos.method8336(var15, var16, var17);
+                  BlockPos var9 = this.pos.add(var15, var16, var17);
                   BlockState var10 = this.world.getBlockState(var9);
 
                   for (Block var14 : field5381) {

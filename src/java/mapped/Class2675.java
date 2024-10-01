@@ -48,7 +48,7 @@ public class Class2675 extends Class2672 {
       for (int var4 = 0; var4 < 3; var4++) {
          BlockPos var5 = this.field17067
             .getPosition()
-            .method8336(-2 + Class1032.method4605(this.field17067).nextInt(5), 1, -2 + Class1032.method4606(this.field17067).nextInt(5));
+            .add(-2 + Class1032.method4605(this.field17067).nextInt(5), 1, -2 + Class1032.method4606(this.field17067).nextInt(5));
          Class1100 var6 = EntityType.field41097.create(this.field17067.world);
          var6.moveToBlockPosAndAngles(var5, 0.0F, 0.0F);
          var6.method4276(var3, this.field17067.world.method6807(var5), Class2202.field14396, (Class5093)null, (CompoundNBT)null);

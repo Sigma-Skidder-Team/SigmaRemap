@@ -7,6 +7,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
 
 import java.util.Random;
 
@@ -63,22 +64,22 @@ public abstract class Class2898<FC extends Class4698> {
    public static final Class2898<Class4706> field17985 = method11214("simple_random_selector", new Class2897(Class4706.field22323));
    public static final Class2898<Class4702> field17986 = method11214("random_boolean_selector", new Class2942(Class4702.field22302));
    public static final Class2898<Class4713> field17987 = method11214("decorated", new Class2934(Class4713.field22351));
-   private final Codec<Class7909<FC, Class2898<FC>>> field17988;
+   private final Codec<ConfiguredFeature<FC, Class2898<FC>>> field17988;
 
    private static <C extends Class4698, F extends Class2898<C>> F method11214(String var0, F var1) {
       return Registry.<F>register(Registry.field16112, var0, (F)var1);
    }
 
    public Class2898(Codec<FC> var1) {
-      this.field17988 = var1.fieldOf("config").xmap(var1x -> new Class7909<>(this, var1x), var0 -> var0.field33887).codec();
+      this.field17988 = var1.fieldOf("config").xmap(var1x -> new ConfiguredFeature<>(this, var1x), var0 -> var0.field33887).codec();
    }
 
-   public Codec<Class7909<FC, Class2898<FC>>> method11215() {
+   public Codec<ConfiguredFeature<FC, Class2898<FC>>> method11215() {
       return this.field17988;
    }
 
-   public Class7909<FC, ?> method11216(FC var1) {
-      return new Class7909<FC, Class2898<FC>>(this, (FC)var1);
+   public ConfiguredFeature<FC, ?> method11216(FC var1) {
+      return new ConfiguredFeature<FC, Class2898<FC>>(this, (FC)var1);
    }
 
    public void method11217(Class1681 var1, BlockPos var2, BlockState var3) {

@@ -37,11 +37,11 @@ public class Class6900 extends Class6899 {
          for (int var15 = 0; var15 < 5; var15++) {
             var13 = (int)(1.5F + MathHelper.cos(var12) * (float)var15);
             var14 = (int)(1.5F + MathHelper.sin(var12) * (float)var15);
-            BlockPos var16 = var4.method8336(var13, var11 - 3 + var15 / 2, var14);
+            BlockPos var16 = var4.add(var13, var11 - 3 + var15 / 2, var14);
             method21070(var1, var2, var16, var5, var6, var7);
          }
 
-         var10.add(new Class9359(var4.method8336(var13, var11, var14), -2, false));
+         var10.add(new Class9359(var4.add(var13, var11, var14), -2, false));
       }
 
       return var10;

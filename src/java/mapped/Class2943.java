@@ -70,12 +70,12 @@ public class Class2943 extends Class2898<Class4705> {
                               || var35 > 0 && var8[(var39 * 16 + var34) * 8 + (var35 - 1)]
                         );
                      if (var36) {
-                        Material var37 = var1.getBlockState(var4.method8336(var39, var35, var34)).getMaterial();
+                        Material var37 = var1.getBlockState(var4.add(var39, var35, var34)).getMaterial();
                         if (var35 >= 4 && var37.isLiquid()) {
                            return false;
                         }
 
-                        if (var35 < 4 && !var37.isSolid() && var1.getBlockState(var4.method8336(var39, var35, var34)) != var5.field22322) {
+                        if (var35 < 4 && !var37.isSolid() && var1.getBlockState(var4.add(var39, var35, var34)) != var5.field22322) {
                            return false;
                         }
                      }
@@ -87,7 +87,7 @@ public class Class2943 extends Class2898<Class4705> {
                for (int var44 = 0; var44 < 16; var44++) {
                   for (int var48 = 0; var48 < 8; var48++) {
                      if (var8[(var40 * 16 + var44) * 8 + var48]) {
-                        var1.setBlockState(var4.method8336(var40, var48, var44), var48 < 4 ? var5.field22322 : field18006, 2);
+                        var1.setBlockState(var4.add(var40, var48, var44), var48 < 4 ? var5.field22322 : field18006, 2);
                      }
                   }
                }
@@ -97,11 +97,11 @@ public class Class2943 extends Class2898<Class4705> {
                for (int var45 = 0; var45 < 16; var45++) {
                   for (int var49 = 4; var49 < 8; var49++) {
                      if (var8[(var41 * 16 + var45) * 8 + var49]) {
-                        BlockPos var52 = var4.method8336(var41, var49 - 1, var45);
+                        BlockPos var52 = var4.add(var41, var49 - 1, var45);
                         if (method11219(var1.getBlockState(var52).getBlock())
-                           && var1.getLightFor(LightType.SKY, var4.method8336(var41, var49, var45)) > 0) {
+                           && var1.getLightFor(LightType.SKY, var4.add(var41, var49, var45)) > 0) {
                            Biome var55 = var1.getBiome(var52);
-                           if (!var55.getGenerationSettings().method24283().method28934().isIn(Blocks.MYCELIUM)) {
+                           if (!var55.getGenerationSettings().getSurfaceBuilderConfig().getTop().isIn(Blocks.MYCELIUM)) {
                               var1.setBlockState(var52, Blocks.GRASS_BLOCK.getDefaultState(), 2);
                            } else {
                               var1.setBlockState(var52, Blocks.MYCELIUM.getDefaultState(), 2);
@@ -125,8 +125,8 @@ public class Class2943 extends Class2898<Class4705> {
                                  || var50 < 7 && var8[(var42 * 16 + var46) * 8 + var50 + 1]
                                  || var50 > 0 && var8[(var42 * 16 + var46) * 8 + (var50 - 1)]
                            );
-                        if (var53 && (var50 < 4 || var3.nextInt(2) != 0) && var1.getBlockState(var4.method8336(var42, var50, var46)).getMaterial().isSolid()) {
-                           var1.setBlockState(var4.method8336(var42, var50, var46), Blocks.STONE.getDefaultState(), 2);
+                        if (var53 && (var50 < 4 || var3.nextInt(2) != 0) && var1.getBlockState(var4.add(var42, var50, var46)).getMaterial().isSolid()) {
+                           var1.setBlockState(var4.add(var42, var50, var46), Blocks.STONE.getDefaultState(), 2);
                         }
                      }
                   }
@@ -137,7 +137,7 @@ public class Class2943 extends Class2898<Class4705> {
                for (int var43 = 0; var43 < 16; var43++) {
                   for (int var47 = 0; var47 < 16; var47++) {
                      byte var51 = 4;
-                     BlockPos var54 = var4.method8336(var43, 4, var47);
+                     BlockPos var54 = var4.add(var43, 4, var47);
                      if (var1.getBiome(var54).method32505(var1, var54, false)) {
                         var1.setBlockState(var54, Blocks.ICE.getDefaultState(), 2);
                      }

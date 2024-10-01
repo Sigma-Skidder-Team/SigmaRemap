@@ -31,7 +31,7 @@ public class Class2678 extends Class2595 {
       }
 
       for (int var4 = 0; var4 < 3; var4++) {
-         BlockPos var5 = var3.method8336(
+         BlockPos var5 = var3.add(
             Class1100.method5284(this.field17074).nextInt(15) - 7,
             Class1100.method5285(this.field17074).nextInt(11) - 5,
             Class1100.method5286(this.field17074).nextInt(15) - 7

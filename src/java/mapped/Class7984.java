@@ -60,9 +60,9 @@ public interface Class7984<T> {
 
       for (Entry<ResourceLocation, ITag<T>> var7 : var5.entrySet()) {
          var1.writeResourceLocation((ResourceLocation)var7.getKey());
-         var1.writeVarInt(((ITag)var7.getValue()).method24918().size());
+         var1.writeVarInt(((ITag)var7.getValue()).getAllElements().size());
 
-         for (Object var9 : ((ITag)var7.getValue()).method24918()) {
+         for (Object var9 : ((ITag)var7.getValue()).getAllElements()) {
             var1.writeVarInt(var2.getId((T) var9));
          }
       }

@@ -19,6 +19,8 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeGenerationSettings;
 import net.minecraft.world.biome.Biomes;
+import net.minecraft.world.gen.feature.Features;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.structure.StructureFeatures;
 import net.minecraft.world.gen.settings.DimensionStructuresSettings;
 import net.minecraft.world.gen.settings.StructureSpreadSettings;
@@ -132,8 +134,8 @@ public class Class9733 {
       BiomeGenerationSettings var4 = var3.getGenerationSettings();
       Class7935 var5 = new Class7935().method26689(var4.method24282());
       if (this.field45452) {
-         var5.method26690(Class1993.field12999, Class9104.field41673);
-         var5.method26690(Class1993.field12999, Class9104.field41674);
+         var5.method26690(Class1993.field12999, Features.field41673);
+         var5.method26690(Class1993.field12999, Features.field41674);
       }
 
       for (Entry var7 : this.field45446.method38380().entrySet()) {
@@ -142,7 +144,7 @@ public class Class9733 {
 
       boolean var11 = (!this.field45450 || this.field45445.method9182(var3).equals(Optional.<RegistryKey<Biome>>of(Biomes.field44172))) && this.field45451;
       if (var11) {
-         List<List<Supplier<Class7909<?, ?>>>> var12 = var4.method24281();
+         List<List<Supplier<ConfiguredFeature<?, ?>>>> var12 = var4.method24281();
 
          for (int var8 = 0; var8 < var12.size(); var8++) {
             if (var8 != Class1993.field13001.ordinal() && var8 != Class1993.field13002.ordinal()) {

@@ -80,7 +80,7 @@ public class Class2723<T extends Class1028> extends Class2595 {
       Random var3 = this.field17212.getRNG();
       BlockPos var4 = this.field17212
          .world
-         .method7006(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, this.field17212.getPosition().method8336(-8 + var3.nextInt(16), 0, -8 + var3.nextInt(16)));
+         .method7006(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, this.field17212.getPosition().add(-8 + var3.nextInt(16), 0, -8 + var3.nextInt(16)));
       return this.field17212.method4230().method21654((double)var4.getX(), (double)var4.getY(), (double)var4.getZ(), this.field17213);
    }
 }

@@ -189,7 +189,7 @@ public abstract class Class7195<C extends Class4729> {
                if (var16.isTrue()) {
                   var7.method8377(var5, Direction.DOWN);
                   if (var1.getBlockState(var7).isIn(Blocks.DIRT)) {
-                     var1.setBlockState(var7, ((Biome)var2.apply(var5)).getGenerationSettings().method24283().method28934(), false);
+                     var1.setBlockState(var7, ((Biome)var2.apply(var5)).getGenerationSettings().getSurfaceBuilderConfig().getTop(), false);
                   }
                }
             } else {

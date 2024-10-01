@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.gen.feature.Features;
 
 public class Class8481 {
    public static final Class9369 field36359 = Class9837.method38884(
@@ -179,11 +180,11 @@ public class Class8481 {
                Pair.of(Class7487.method24385("village/taiga/taiga_decoration_4"), 1),
                Pair.of(Class7487.method24385("village/taiga/taiga_decoration_5"), 2),
                Pair.of(Class7487.method24385("village/taiga/taiga_decoration_6"), 1),
-               Pair.of(Class7487.method24389(Class9104.field41774), 4),
-               Pair.of(Class7487.method24389(Class9104.field41775), 4),
-               Pair.of(Class7487.method24389(Class9104.field41695), 2),
-               Pair.of(Class7487.method24389(Class9104.field41703), 4),
-               Pair.of(Class7487.method24389(Class9104.field41704), 1),
+               Pair.of(Class7487.method24389(Features.field41774), 4),
+               Pair.of(Class7487.method24389(Features.field41775), 4),
+               Pair.of(Class7487.method24389(Features.field41695), 2),
+               Pair.of(Class7487.method24389(Features.field41703), 4),
+               Pair.of(Class7487.method24389(Features.field41704), 1),
                new Pair[]{Pair.of(Class7487.method24384(), 4)}
             ),
             Class109.field367
@@ -198,11 +199,11 @@ public class Class8481 {
                Pair.of(Class7487.method24385("village/taiga/taiga_decoration_2"), 1),
                Pair.of(Class7487.method24385("village/taiga/taiga_decoration_3"), 1),
                Pair.of(Class7487.method24385("village/taiga/taiga_decoration_4"), 1),
-               Pair.of(Class7487.method24389(Class9104.field41774), 4),
-               Pair.of(Class7487.method24389(Class9104.field41775), 4),
-               Pair.of(Class7487.method24389(Class9104.field41695), 2),
-               Pair.of(Class7487.method24389(Class9104.field41703), 4),
-               Pair.of(Class7487.method24389(Class9104.field41704), 1),
+               Pair.of(Class7487.method24389(Features.field41774), 4),
+               Pair.of(Class7487.method24389(Features.field41775), 4),
+               Pair.of(Class7487.method24389(Features.field41695), 2),
+               Pair.of(Class7487.method24389(Features.field41703), 4),
+               Pair.of(Class7487.method24389(Features.field41704), 1),
                Pair.of(Class7487.method24384(), 4)
             ),
             Class109.field367

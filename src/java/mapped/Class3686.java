@@ -38,7 +38,7 @@ public class Class3686 extends Class3676<LivingEntity> {
       BlockPos var6 = var2.getPosition();
 
       for (int var7 = 0; var7 < 10; var7++) {
-         BlockPos var8 = var6.method8336(var5.nextInt(20) - 10, var5.nextInt(6) - 3, var5.nextInt(20) - 10);
+         BlockPos var8 = var6.add(var5.nextInt(20) - 10, var5.nextInt(6) - 3, var5.nextInt(20) - 10);
          if (method12533(var1, var2, var8)) {
             return Vector3d.method11330(var8);
          }

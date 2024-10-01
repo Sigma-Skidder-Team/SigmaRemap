@@ -34,11 +34,11 @@ public class Class8541 {
             ? null
             : new SMapDataPacket(
                Class3316.method11862(var1),
-               this.field38398.field32321,
-               this.field38398.field32319,
-               this.field38398.field32323,
+               this.field38398.scale,
+               this.field38398.trackingPosition,
+               this.field38398.locked,
                this.field38398.field32327.values(),
-               this.field38398.field32322,
+               this.field38398.colors,
                0,
                0,
                0,
@@ -48,11 +48,11 @@ public class Class8541 {
          this.field38391 = false;
          return new SMapDataPacket(
             Class3316.method11862(var1),
-            this.field38398.field32321,
-            this.field38398.field32319,
-            this.field38398.field32323,
+            this.field38398.scale,
+            this.field38398.trackingPosition,
+            this.field38398.locked,
             this.field38398.field32327.values(),
-            this.field38398.field32322,
+            this.field38398.colors,
             this.field38392,
             this.field38393,
             this.field38394 + 1 - this.field38392,

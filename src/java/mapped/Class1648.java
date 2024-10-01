@@ -22,7 +22,7 @@ public class Class1648 implements AutoCloseable {
 
    public CompoundNBT method6529(RegistryKey<World> var1, Supplier<Class8250> var2, CompoundNBT var3) {
       int var6 = method6530(var3);
-      short var7 = 1493;
+
       if (var6 < 1493) {
          var3 = Class8354.method29290(this.field8948, Class2108.field13750, var3, var6, 1493);
          if (var3.getCompound("Level").getBoolean("hasLegacyStructureData")) {

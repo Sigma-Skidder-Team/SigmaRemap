@@ -49,7 +49,7 @@ public class Class6772 extends Class6768<Class8278> {
 
       for (int var30 = 127; var30 >= 0; var30--) {
          var27.setPos(var18, var30, var19);
-         BlockState var31 = var14.method28934();
+         BlockState var31 = var14.getTop();
          BlockState var32 = var2.getBlockState(var27);
          if (!var32.isAir()) {
             if (var32.isIn(var9.getBlock())) {

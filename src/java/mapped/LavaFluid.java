@@ -71,7 +71,7 @@ public abstract class LavaFluid extends FlowingFluid {
          int var7 = var4.nextInt(3);
          if (var7 <= 0) {
             for (int var8 = 0; var8 < 3; var8++) {
-               BlockPos var9 = var2.method8336(var4.nextInt(3) - 1, 0, var4.nextInt(3) - 1);
+               BlockPos var9 = var2.add(var4.nextInt(3) - 1, 0, var4.nextInt(3) - 1);
                if (!var1.method6763(var9)) {
                   return;
                }
@@ -84,7 +84,7 @@ public abstract class LavaFluid extends FlowingFluid {
             BlockPos var11 = var2;
 
             for (int var12 = 0; var12 < var7; var12++) {
-               var11 = var11.method8336(var4.nextInt(3) - 1, 1, var4.nextInt(3) - 1);
+               var11 = var11.add(var4.nextInt(3) - 1, 1, var4.nextInt(3) - 1);
                if (!var1.method6763(var11)) {
                   return;
                }

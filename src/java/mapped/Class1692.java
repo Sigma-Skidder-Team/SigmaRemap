@@ -104,8 +104,8 @@ public class Class1692 implements AutoCloseable {
          int var6 = method7254(var4);
          int var7 = var6 * 4096;
          ByteBuffer var8 = ByteBuffer.allocate(var7);
-         this.field9218.read(var8, (long)(var5 * 4096));
-         ((Buffer)var8).flip();
+         this.field9218.read(var8, var5 * 4096L);
+         var8.flip();
          if (var8.remaining() >= 5) {
             int var9 = var8.getInt();
             byte var10 = var8.get();

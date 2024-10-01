@@ -40,7 +40,7 @@ public class Class3193 extends BushBlock implements Class3196 {
 
    public void method11485(ServerWorld var1, BlockPos var2, BlockState var3, Random var4) {
       if (var3.<Integer>get(field18467) != 0) {
-         this.field18469.method25182(var1, var1.getChunkProvider().method7370(), var2, var3, var4);
+         this.field18469.method25182(var1, var1.getChunkProvider().getChunkGenerator(), var2, var3, var4);
       } else {
          var1.setBlockState(var2, var3.method23459(field18467), 4);
       }

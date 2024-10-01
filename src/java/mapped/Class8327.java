@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.gen.feature.Features;
 
 public class Class8327 {
    public static final Class9369 field35787 = Class9837.method38884(
@@ -193,7 +194,7 @@ public class Class8327 {
          new Class9369(
             new ResourceLocation("village/plains/trees"),
             new ResourceLocation("empty"),
-            ImmutableList.of(Pair.of(Class7487.method24389(Class9104.field41770), 1)),
+            ImmutableList.of(Pair.of(Class7487.method24389(Features.field41770), 1)),
             Class109.field367
          )
       );
@@ -203,9 +204,9 @@ public class Class8327 {
             new ResourceLocation("empty"),
             ImmutableList.of(
                Pair.of(Class7487.method24385("village/plains/plains_lamp_1"), 2),
-               Pair.of(Class7487.method24389(Class9104.field41770), 1),
-               Pair.of(Class7487.method24389(Class9104.field41800), 1),
-               Pair.of(Class7487.method24389(Class9104.field41691), 1),
+               Pair.of(Class7487.method24389(Features.field41770), 1),
+               Pair.of(Class7487.method24389(Features.field41800), 1),
+               Pair.of(Class7487.method24389(Features.field41691), 1),
                Pair.of(Class7487.method24384(), 2)
             ),
             Class109.field367
@@ -217,9 +218,9 @@ public class Class8327 {
             new ResourceLocation("empty"),
             ImmutableList.of(
                Pair.of(Class7487.method24386("village/plains/plains_lamp_1", Class8523.field38251), 1),
-               Pair.of(Class7487.method24389(Class9104.field41770), 1),
-               Pair.of(Class7487.method24389(Class9104.field41800), 1),
-               Pair.of(Class7487.method24389(Class9104.field41691), 1),
+               Pair.of(Class7487.method24389(Features.field41770), 1),
+               Pair.of(Class7487.method24389(Features.field41800), 1),
+               Pair.of(Class7487.method24389(Features.field41691), 1),
                Pair.of(Class7487.method24384(), 2)
             ),
             Class109.field367

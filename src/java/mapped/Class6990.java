@@ -116,7 +116,7 @@ public abstract class Class6990 {
                   float var7 = (float)this.field30243.getAttributeValue(Attributes.field42106);
                   BlockPos var8 = !var3 ? this.field30243.getPosition() : this.field30243.getPosition().up();
                   int var9 = (int)(var7 + (float)var2);
-                  Class1667 var10 = new Class1667(this.field30244, var8.method8336(-var9, -var9, -var9), var8.method8336(var9, var9, var9));
+                  Class1667 var10 = new Class1667(this.field30244, var8.add(-var9, -var9, -var9), var8.add(var9, var9, var9));
                   Class8238 var11 = this.field30261.method37250(var10, this.field30243, var1, var7, var4, this.field30260);
                   this.field30244.getProfiler().endSection();
                   if (var11 != null && var11.method28712() != null) {

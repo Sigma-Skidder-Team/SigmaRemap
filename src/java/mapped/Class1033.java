@@ -82,8 +82,6 @@ public class Class1033 extends Class1031 implements Class1022 {
 
          if (this.hurtTime == 1 || this.ticksExisted % 1200 == 0) {
             this.field5739 = 3;
-            float var6 = -6.0F;
-            byte var4 = 13;
 
             for (int var5 = 0; var5 < 4; var5++) {
                this.field5740[0][var5] = this.field5740[1][var5];

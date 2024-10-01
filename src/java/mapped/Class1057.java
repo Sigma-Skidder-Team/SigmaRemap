@@ -284,7 +284,7 @@ public class Class1057 extends Class1056 implements Class1008 {
          BlockPos var3 = this.getPosition();
 
          for (int var4 = 0; var4 < 5; var4++) {
-            BlockPos var5 = var3.method8336(8 - this.rand.nextInt(17), 8 - this.rand.nextInt(17), 8 - this.rand.nextInt(17));
+            BlockPos var5 = var3.add(8 - this.rand.nextInt(17), 8 - this.rand.nextInt(17), 8 - this.rand.nextInt(17));
             if (var5.getY() > 0
                && this.world.method7007(var5)
                && this.world.getWorldBorder().contains(var5)

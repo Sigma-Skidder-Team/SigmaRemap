@@ -218,7 +218,7 @@ public class MusicManager {
 
                     RenderUtil.method11477(Class2329.field15940);
                     if (this.field32151 != null && this.field32153 != null) {
-                        RenderUtil.method11454(0.0F, 0.0F, (float) field32143.mainWindow.getWidth(), (float) field32143.mainWindow.getHeight(), this.field32153, 0.4F);
+                        RenderUtil.drawImage(0.0F, 0.0F, (float) field32143.mainWindow.getWidth(), (float) field32143.mainWindow.getHeight(), this.field32153, 0.4F);
                     }
 
                     RenderUtil.method11478();

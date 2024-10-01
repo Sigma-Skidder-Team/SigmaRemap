@@ -48,7 +48,7 @@ public class Class8969 {
 
    public void method32889(World var1, BlockPos var2, BlockPos var3, boolean var4, Block var5) {
       if (var3.getX() >= 1 && var3.getY() >= 1 && var3.getZ() >= 1) {
-         BlockPos var8 = var2.method8337(var3).method8336(-1, -1, -1);
+         BlockPos var8 = var2.method8337(var3).add(-1, -1, -1);
          ArrayList var9 = Lists.newArrayList();
          ArrayList var10 = Lists.newArrayList();
          ArrayList var11 = Lists.newArrayList();
@@ -86,7 +86,7 @@ public class Class8969 {
          if (!var4) {
             this.field40546.clear();
          } else {
-            this.method32892(var1, var12, var13.method8336(1, 1, 1));
+            this.method32892(var1, var12, var13.add(1, 1, 1));
          }
       }
    }
@@ -477,16 +477,16 @@ public class Class8969 {
       BlockPos var9 = var0;
       switch (Class9051.field41436[var2.ordinal()]) {
          case 1:
-            var9 = var0.method8336(var8, 0, var3 - var7);
+            var9 = var0.add(var8, 0, var3 - var7);
             break;
          case 2:
-            var9 = var0.method8336(var4 - var8, 0, var7);
+            var9 = var0.add(var4 - var8, 0, var7);
             break;
          case 3:
-            var9 = var0.method8336(var3 - var7, 0, var4 - var8);
+            var9 = var0.add(var3 - var7, 0, var4 - var8);
             break;
          case 4:
-            var9 = var0.method8336(var7, 0, var8);
+            var9 = var0.add(var7, 0, var8);
       }
 
       return var9;

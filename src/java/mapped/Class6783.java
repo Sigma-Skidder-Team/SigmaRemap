@@ -28,7 +28,7 @@ public class Class6783 extends Class6768<Class8278> {
       long var12,
       Class8278 var14
    ) {
-      this.method20667(var1, var2, var3, var4, var5, var6, var7, var9, var10, var14.method28934(), var14.method28935(), var14.method28936(), var11);
+      this.method20667(var1, var2, var3, var4, var5, var6, var7, var9, var10, var14.getTop(), var14.method28935(), var14.method28936(), var11);
    }
 
    public void method20667(

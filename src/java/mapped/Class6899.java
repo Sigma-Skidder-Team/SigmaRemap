@@ -40,7 +40,7 @@ public class Class6899 extends Class6896 {
          }
       }
 
-      return ImmutableList.of(new Class9359(var4.method8339(var3), 0, true));
+      return ImmutableList.of(new Class9359(var4.up(var3), 0, true));
    }
 
    private static void method21084(

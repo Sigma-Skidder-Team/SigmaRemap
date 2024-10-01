@@ -21,7 +21,7 @@ public class Class4326 extends Screen {
    public Class4326() {
       super("Alt Manager");
       this.method13300(false);
-      short var3 = 400;
+      int var3 = 400;
       int var4 = 114;
       int var5 = (this.getWidthA() - var3) / 2;
       this.addToList(

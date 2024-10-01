@@ -45,12 +45,10 @@ public class Class4345 extends Class4339 {
             var4 += 18 + var5;
             break;
          case 2:
-            short var17 = 240;
-            byte var21 = 4;
             NumberSetting var25 = (NumberSetting)var2;
             Class4370 var13 = new Class4370(var1, var2.getName() + "slider", var3, var4 + 31, 240, 4);
             var13.method13304(Float.toString((Float)var2.getCurrentValue()));
-            var8.method13304(var2.getName() + ": " + Float.toString((Float)var2.getCurrentValue()));
+            var8.method13304(var2.getName() + ": " + (Float) var2.getCurrentValue());
             var13.method13699(Class4277.method13134(var25.getMin(), var25.getMax(), (Float)var25.getCurrentValue()), false);
             int var14 = var25.getDecimalPlaces();
             var25.addObserver(
@@ -59,7 +57,7 @@ public class Class4345 extends Class4339 {
                      != (Float)var5x.getCurrentValue()) {
                      var13.method13304(Float.toString((Float)var5x.getCurrentValue()));
                      var13.method13699(Class4370.method13693(var25.getMin(), var25.getMax(), (Float)var5x.getCurrentValue()), false);
-                     var8.method13304(var2.getName() + ": " + Float.toString((Float)var2.getCurrentValue()));
+                     var8.method13304(var2.getName() + ": " + (Float) var2.getCurrentValue());
                   }
                }
             );
@@ -71,7 +69,7 @@ public class Class4345 extends Class4339 {
                   var2.setCurrentValue(var9x);
                }
 
-               var8.method13304(var2.getName() + ": " + Float.toString((Float)var2.getCurrentValue()));
+               var8.method13304(var2.getName() + ": " + (Float) var2.getCurrentValue());
             });
             var1.addToList(var13);
             var4 += 54;
@@ -104,8 +102,6 @@ public class Class4345 extends Class4339 {
             var4 += var20 + var5;
             break;
          case 4:
-            int var15 = 80;
-            int var19 = 20;
             Class4366 var23 = new Class4366(
                var1, var2.getName() + "btn", var3, var4 + 27, 80, 20, ((ModeSetting)var2).getAvailableModes(), ((ModeSetting)var2).getModeIndex()
             );
@@ -119,8 +115,6 @@ public class Class4345 extends Class4339 {
             var4 += 65;
             break;
          case 5:
-            byte var10 = 123;
-            byte var11 = 27;
             Class4377 var12 = new Class4377(
                var1, var2.getName() + "btn", var1.getWidthA() - var5, var4 + 6, 123, 27, ((TextBoxSetting)var2).getOptions(), (Integer)var2.getCurrentValue()
             );
@@ -146,8 +140,6 @@ public class Class4345 extends Class4339 {
          this, "settingsname", 12, 2, this.widthA, 20, UITextDisplay.field20778, this.field21229.getSuffix() + " Settings", this.field21230
       );
       this.addToList(var3);
-      byte var4 = 20;
-      byte var5 = 30;
       int var6 = 35;
 
       for (Setting var8 : this.field21229.getSettingMap().values()) {

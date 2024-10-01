@@ -530,14 +530,14 @@ public class Class1007 extends MobEntity implements Class1008 {
       }
 
       boolean var6 = this.world.getGameRules().getBoolean(Class5462.field24227);
-      short var7 = 500;
+      float var7 = 500;
       if (this.field5638 != null && !this.field5638.method26127()) {
          var7 = 12000;
       }
 
       if (!this.world.isRemote) {
          if (this.field5635 > 150 && this.field5635 % 5 == 0 && var6) {
-            this.method4327(MathHelper.floor((float)var7 * 0.08F));
+            this.method4327(MathHelper.floor(var7 * 0.08F));
          }
 
          if (this.field5635 == 1 && !this.isSilent()) {
@@ -550,7 +550,7 @@ public class Class1007 extends MobEntity implements Class1008 {
       this.renderYawOffset = this.rotationYaw;
       if (this.field5635 == 200 && !this.world.isRemote) {
          if (var6) {
-            this.method4327(MathHelper.floor((float)var7 * 0.2F));
+            this.method4327(MathHelper.floor(var7 * 0.2F));
          }
 
          if (this.field5638 != null) {
@@ -572,7 +572,7 @@ public class Class1007 extends MobEntity implements Class1008 {
    public int method4328() {
       if (this.field5642[0] == null) {
          for (int var3 = 0; var3 < 24; var3++) {
-            byte var4 = 5;
+            int var4 = 5;
             int var6;
             int var7;
             if (var3 >= 12) {
@@ -592,7 +592,7 @@ public class Class1007 extends MobEntity implements Class1008 {
             }
 
             int var9 = Math.max(
-               this.world.method6776() + 10, this.world.method7006(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, new BlockPos(var6, 0, var7)).getY() + var4
+               this.world.getSeaLevel() + 10, this.world.method7006(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, new BlockPos(var6, 0, var7)).getY() + var4
             );
             this.field5642[var3] = new Class7176(var6, var9, var7);
          }
@@ -630,7 +630,7 @@ public class Class1007 extends MobEntity implements Class1008 {
       float var9 = 10000.0F;
       int var10 = 0;
       Class7176 var11 = new Class7176(MathHelper.floor(var1), MathHelper.floor(var3), MathHelper.floor(var5));
-      byte var12 = 0;
+      int var12 = 0;
       if (this.field5638 == null || this.field5638.method26125() == 0) {
          var12 = 12;
       }
@@ -668,7 +668,7 @@ public class Class1007 extends MobEntity implements Class1008 {
       this.field5644.method31191();
       this.field5644.method31190(var15);
       Class7176 var8 = var15;
-      byte var9 = 0;
+      int var9 = 0;
       if (this.field5638 == null || this.field5638.method26125() == 0) {
          var9 = 12;
       }

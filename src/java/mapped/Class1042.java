@@ -848,7 +848,6 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
 
    @Nullable
    private BlockPos method4719(BlockPos var1, double var2, double var4) {
-      byte var8 = 6;
       BlockPos var9 = var1.method8335(var2, 6.0, var4);
       BlockState var10 = this.world.getBlockState(var9);
 

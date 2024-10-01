@@ -138,7 +138,7 @@ public class Class1088 extends Class1018 {
    }
 
    public static boolean method5053(EntityType<Class1088> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
-      return var3.getY() < var1.method6776() + 4 && Class3441.method12114(var1, var3) && var1.method7021(var3, 0) > 8;
+      return var3.getY() < var1.getSeaLevel() + 4 && Class3441.method12114(var1, var3) && var1.method7021(var3, 0) > 8;
    }
 
    @Override

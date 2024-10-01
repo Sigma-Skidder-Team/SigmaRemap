@@ -393,7 +393,7 @@ public class Class4829 {
       float var7 = 0.0F;
 
       for (int var8 = 0; var8 < 4; var8++) {
-         BlockPos var9 = var2.method8336(-(var8 & 1), 0, -(var8 >> 1 & 1));
+         BlockPos var9 = var2.add(-(var8 & 1), 0, -(var8 >> 1 & 1));
          if (var1.getFluidState(var9.up()).getFluid().method25066(var3)) {
             return 1.0F;
          }

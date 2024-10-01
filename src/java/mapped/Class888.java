@@ -41,7 +41,7 @@ public class Class888 extends ProjectileEntity implements Class889 {
       super(EntityType.field41032, var1);
       this.field5123 = 0;
       this.setPosition(var2, var4, var6);
-      byte var11 = 1;
+      int var11 = 1;
       if (!var8.isEmpty() && var8.method32141()) {
          this.dataManager.method35446(field5120, var8.copy());
          var11 += var8.method32144("Fireworks").getByte("Flight");

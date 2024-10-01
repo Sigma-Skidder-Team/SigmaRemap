@@ -1,26 +1,29 @@
-package mapped;
+package net.minecraft.world.biome.provider;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.Lifecycle;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import mapped.Class7345;
+import mapped.Class8611;
+import mapped.Class9320;
+import mapped.RegistryKey;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biomes;
-import net.minecraft.world.biome.provider.BiomeProvider;
 
 import java.util.List;
 import java.util.function.Supplier;
 
-public class Class1689 extends BiomeProvider {
-   public static final Codec<Class1689> field9184 = RecordCodecBuilder.create(
+public class OverworldBiomeProvider extends BiomeProvider {
+   public static final Codec<OverworldBiomeProvider> CODEC = RecordCodecBuilder.create(
       var0 -> var0.group(
                Codec.LONG.fieldOf("seed").stable().forGetter(var0x -> var0x.field9187),
                Codec.BOOL.optionalFieldOf("legacy_biome_init_layer", false, Lifecycle.stable()).forGetter(var0x -> var0x.field9188),
                Codec.BOOL.fieldOf("large_biomes").orElse(false).stable().forGetter(var0x -> var0x.field9189),
                Class8611.<Biome>method30859(Registry.BIOME_KEY).forGetter(var0x -> var0x.field9190)
             )
-            .apply(var0, var0.stable(Class1689::new))
+            .apply(var0, var0.stable(OverworldBiomeProvider::new))
    );
    private final Class7345 field9185;
    private static final List<RegistryKey<Biome>> field9186 = ImmutableList.of(
@@ -98,7 +101,7 @@ public class Class1689 extends BiomeProvider {
    private final boolean field9189;
    private final Registry<Biome> field9190;
 
-   public Class1689(long var1, boolean var3, boolean var4, Registry<Biome> var5) {
+   public OverworldBiomeProvider(long var1, boolean var3, boolean var4, Registry<Biome> var5) {
       super(field9186.stream().<Supplier<Biome>>map(var1x -> () -> var5.getOrThrow((RegistryKey<Biome>)var1x)));
       this.field9187 = var1;
       this.field9188 = var3;
@@ -108,13 +111,13 @@ public class Class1689 extends BiomeProvider {
    }
 
    @Override
-   public Codec<? extends BiomeProvider> method7199() {
-      return field9184;
+   public Codec<? extends BiomeProvider> getBiomeProviderCodec() {
+      return CODEC;
    }
 
    @Override
-   public BiomeProvider method7200(long var1) {
-      return new Class1689(var1, this.field9188, this.field9189, this.field9190);
+   public BiomeProvider getBiomeProvider(long var1) {
+      return new OverworldBiomeProvider(var1, this.field9188, this.field9189, this.field9190);
    }
 
    @Override

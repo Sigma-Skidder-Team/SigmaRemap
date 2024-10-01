@@ -116,7 +116,7 @@ public abstract class Class1028 extends Class1009 {
    }
 
    public void method4578() {
-      this.field5724 = this.getPosition().method8336(-500 + this.rand.nextInt(1000), 0, -500 + this.rand.nextInt(1000));
+      this.field5724 = this.getPosition().add(-500 + this.rand.nextInt(1000), 0, -500 + this.rand.nextInt(1000));
       this.field5726 = true;
    }
 

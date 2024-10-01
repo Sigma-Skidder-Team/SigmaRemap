@@ -72,11 +72,10 @@ public class Class816 extends RealmsScreen {
 
    private void method2322(MatrixStack var1, int var2, int var3) {
       int var6 = this.field4440;
-      byte var7 = 24;
       int var8 = this.height / 4 + 48;
       int var9 = this.width / 2 + 80;
       int var10 = var8 + 48 + 2;
-      byte var11 = 0;
+      int var11 = 0;
       if (field4444) {
          this.mc.getTextureManager().bindTexture(field4438);
          RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
@@ -97,7 +96,7 @@ public class Class816 extends RealmsScreen {
       if (field4442) {
          this.mc.getTextureManager().bindTexture(field4437);
          RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-         byte var12 = 0;
+         float var12 = 0;
          if ((Util.milliTime() / 800L & 1L) == 1L) {
             var12 = 8;
          }

@@ -46,7 +46,7 @@ public class Class4853 extends Class4852 {
          if (!var5.isEmpty()) {
             Class7529 var8 = Class3316.method11861(var5, var2);
             if (var8 != null) {
-               return !this.method14997(var8) ? var8.field32321 < 4 : false;
+               return !this.method14997(var8) ? var8.scale < 4 : false;
             } else {
                return false;
             }

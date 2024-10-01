@@ -50,7 +50,7 @@ public class Class2907 extends Class2898<Class4712> {
             for (int var16 = -3; var16 < 4; var16++) {
                int var17 = MathHelper.abs(var15) * MathHelper.abs(var16);
                if (var3.nextInt(10) < 10 - var17) {
-                  var14.method8374(var8.method8336(var15, 0, var16));
+                  var14.method8374(var8.add(var15, 0, var16));
                   int var18 = 3;
 
                   while (var1.method7007(var9.method8377(var14, Direction.DOWN))) {

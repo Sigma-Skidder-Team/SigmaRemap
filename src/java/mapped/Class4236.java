@@ -11,8 +11,6 @@ import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
 public class Class4236 extends PNGIconButton implements Class4238 {
-   private static String[] field20573;
-   public float field20576;
    public boolean field20577 = false;
    public Animation field20578 = new Animation(160, 140, Direction.BACKWARDS);
 
@@ -72,12 +70,12 @@ public class Class4236 extends PNGIconButton implements Class4238 {
       int var8 = this.getXA() - (var6 - this.getWidthA()) / 2;
       int var9 = (int)((double)(this.getYA() - (var7 - this.getHeightA()) / 2) - (double)((float)(this.getHeightA() / 2) * var5) * 0.2);
       float[] var10 = MultiUtilities.method17701(this.method13025().getWidth(), this.method13025().getHeight(), (float)var6, (float)var7);
-      byte var11 = 85;
+      float var11 = 85;
       RenderUtil.drawImage(
-         (float)var8 + var10[0] - (float)var11,
-         (float)var9 + var10[1] - (float)var11,
-         var10[2] + (float)(var11 * 2),
-         var10[3] + (float)(var11 * 2),
+         (float)var8 + var10[0] - var11,
+         (float)var9 + var10[1] - var11,
+         var10[2] + (var11 * 2),
+         var10[3] + (var11 * 2),
          ResourcesDecrypter.shadowPNG,
          MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20578.calcPercent() * 0.7F * var1)
       );
@@ -101,27 +99,27 @@ public class Class4236 extends PNGIconButton implements Class4238 {
          );
       }
 
-      ClientResource var12 = this.getFont();
+      ClientResource font = this.getFont();
       float var13 = 0.8F + var5 * 0.2F;
       if (var5 > 0.0F) {
          GL11.glPushMatrix();
          String var14 = this.getTypedText() != null ? this.getTypedText() : this.field20891;
          GL11.glTranslatef(
-            (float)(this.getXA() + this.getWidthA() / 2 - var12.getStringWidth(var14) / 2), (float)(this.getYA() + this.getHeightA() - 40), 0.0F
+            (float)(this.getXA() + this.getWidthA() / 2 - font.getStringWidth(var14) / 2), (float)(this.getYA() + this.getHeightA() - 40), 0.0F
          );
          GL11.glScalef(var13, var13, var13);
          GL11.glAlphaFunc(519, 0.0F);
-         RenderUtil.method11454(
-            (1.0F - var13) * (float)var12.getStringWidth(var14) / 2.0F + 1.0F - (float)var12.getStringWidth(var14) / 2.0F,
-            (float)var12.method23941(var14) / 3.0F,
-            (float)(var12.getStringWidth(var14) * 2),
-            (float)var12.method23941(var14) * 3.0F,
+         RenderUtil.drawImage(
+            (1.0F - var13) * (float)font.getStringWidth(var14) / 2.0F + 1.0F - (float)font.getStringWidth(var14) / 2.0F,
+            (float)font.method23941(var14) / 3.0F,
+            (float)(font.getStringWidth(var14) * 2),
+            (float)font.method23941(var14) * 3.0F,
             ResourcesDecrypter.shadowPNG,
             var5 * 0.6F * var1
          );
          RenderUtil.drawString(
-            var12,
-            (1.0F - var13) * (float)var12.getStringWidth(var14) / 2.0F + 1.0F,
+            font,
+            (1.0F - var13) * (float)font.getStringWidth(var14) / 2.0F + 1.0F,
             40.0F,
             var14,
             MultiUtilities.applyAlpha(this.method13307().method19405(), var5 * 0.6F * var1)

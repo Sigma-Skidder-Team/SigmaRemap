@@ -128,7 +128,6 @@ public class Class828 extends Screen {
          this.method2498();
       }));
       int var3 = (this.width - 192) / 2;
-      byte var4 = 2;
       this.field4590 = this.<Class1209>addButton(new Class1209(var3 + 116, 159, true, var1 -> this.method2497(), true));
       this.field4591 = this.<Class1209>addButton(new Class1209(var3 + 43, 159, false, var1 -> this.method2496(), true));
       this.method2498();
@@ -372,7 +371,6 @@ public class Class828 extends Screen {
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       this.mc.getTextureManager().bindTexture(Class870.field4820);
       int var7 = (this.width - 192) / 2;
-      byte var8 = 2;
       this.blit(var1, var7, 2, 0, 0, 192, 192);
       if (!this.field4581) {
          int var9 = this.font.method38821(this.field4598);

@@ -45,6 +45,7 @@ import net.minecraft.world.ISeedReader;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkSection;
+import net.minecraft.world.chunk.ChunkStatus;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.chunk.listener.IChunkStatusListener;
 import net.minecraft.world.gen.feature.structure.StructureManager;
@@ -157,7 +158,7 @@ public class ServerWorld extends World implements ISeedReader {
 
    @Override
    public Biome method6871(int var1, int var2, int var3) {
-      return this.getChunkProvider().method7370().getBiomeProvider().getNoiseBiome(var1, var2, var3);
+      return this.getChunkProvider().getChunkGenerator().getBiomeProvider().getNoiseBiome(var1, var2, var3);
    }
 
    public StructureManager func_241112_a_() {
@@ -451,7 +452,7 @@ public class ServerWorld extends World implements ISeedReader {
       List var6 = this.<LivingEntity>getEntitiesInAABBexcluding(LivingEntity.class, var5, var1x -> var1x != null && var1x.isAlive() && this.method7022(var1x.getPosition()));
       if (var6.isEmpty()) {
          if (var4.getY() == -1) {
-            var4 = var4.method8339(2);
+            var4 = var4.up(2);
          }
 
          return var4;
@@ -1085,15 +1086,15 @@ public class ServerWorld extends World implements ISeedReader {
 
    @Nullable
    public BlockPos method6943(Structure<?> var1, BlockPos var2, int var3, boolean var4) {
-      return this.field9045.func_240793_aU_().getDimensionGeneratorSettings().method26260() ? this.getChunkProvider().method7370().func_235956_a_(this, var1, var2, var3, var4) : null;
+      return this.field9045.func_240793_aU_().getDimensionGeneratorSettings().method26260() ? this.getChunkProvider().getChunkGenerator().func_235956_a_(this, var1, var2, var3, var4) : null;
    }
 
    @Nullable
    public BlockPos method6944(Biome var1, BlockPos var2, int var3, int var4) {
       return this.getChunkProvider()
-         .method7370()
+         .getChunkGenerator()
          .getBiomeProvider()
-         .method7204(var2.getX(), var2.getY(), var2.getZ(), var3, var4, var1x -> var1x == var1, this.rand, true);
+         .findBiomePosition(var2.getX(), var2.getY(), var2.getZ(), var3, var4, var1x -> var1x == var1, this.rand, true);
    }
 
    @Override
@@ -1137,15 +1138,15 @@ public class ServerWorld extends World implements ISeedReader {
    }
 
    public void method6946(BlockPos var1, float var2) {
-      ChunkPos var5 = new ChunkPos(new BlockPos(this.worldInfo.method20029(), 0, this.worldInfo.method20031()));
-      this.worldInfo.method20041(var1, var2);
+      ChunkPos var5 = new ChunkPos(new BlockPos(this.worldInfo.getSpawnX(), 0, this.worldInfo.getSpawnZ()));
+      this.worldInfo.setSpawn(var1, var2);
       this.getChunkProvider().releaseTicket(TicketType.field38480, var5, 11, Class2341.field16010);
       this.getChunkProvider().registerTicket(TicketType.field38480, new ChunkPos(var1), 11, Class2341.field16010);
       this.getServer().getPlayerList().method19456(new SWorldSpawnChangedPacket(var1, var2));
    }
 
    public BlockPos method6947() {
-      BlockPos var3 = new BlockPos(this.worldInfo.method20029(), this.worldInfo.method20030(), this.worldInfo.method20031());
+      BlockPos var3 = new BlockPos(this.worldInfo.getSpawnX(), this.worldInfo.getSpawnY(), this.worldInfo.getSpawnZ());
       if (!this.getWorldBorder().contains(var3)) {
          var3 = this.method7006(Heightmap.Type.MOTION_BLOCKING, new BlockPos(this.getWorldBorder().getCenterX(), 0.0, this.getWorldBorder().getCenterZ()));
       }

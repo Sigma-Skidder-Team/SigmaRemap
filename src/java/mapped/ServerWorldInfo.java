@@ -271,17 +271,17 @@ public class ServerWorldInfo implements IServerWorldInfo, IServerConfiguration {
    }
 
    @Override
-   public int method20029() {
+   public int getSpawnX() {
       return this.field29067;
    }
 
    @Override
-   public int method20030() {
+   public int getSpawnY() {
       return this.field29068;
    }
 
    @Override
-   public int method20031() {
+   public int getSpawnZ() {
       return this.field29069;
    }
 
@@ -353,7 +353,7 @@ public class ServerWorldInfo implements IServerWorldInfo, IServerConfiguration {
    }
 
    @Override
-   public void method20041(BlockPos var1, float var2) {
+   public void setSpawn(BlockPos var1, float var2) {
       this.field29067 = var1.getX();
       this.field29068 = var1.getY();
       this.field29069 = var1.getZ();

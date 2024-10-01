@@ -46,7 +46,7 @@ public class Class1251 extends Widget implements Class1253<Class120> {
    public void method5655(MatrixStack var1, int var2, int var3, float var4) {
       RenderSystem.enableAlphaTest();
       Class1263.method5908(this.field6627).getTextureManager().bindTexture(Class1263.method5907());
-      short var7 = 152;
+      int var7 = 152;
       if (!this.field6625) {
          var7 += 26;
       }
@@ -60,7 +60,6 @@ public class Class1251 extends Widget implements Class1253<Class120> {
 
       for (Class8834 var10 : this.field6626) {
          RenderSystem.pushMatrix();
-         float var11 = 0.42F;
          int var12 = (int)((float)(this.field6477 + var10.field39895) / 0.42F - 3.0F);
          int var13 = (int)((float)(this.field6478 + var10.field39896) / 0.42F - 3.0F);
          RenderSystem.scalef(0.42F, 0.42F, 1.0F);

@@ -5,6 +5,7 @@ import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.gen.feature.Features;
 import net.minecraft.world.gen.feature.structure.StructureFeatures;
 
 public class BiomeMaker {
@@ -39,7 +40,7 @@ public class BiomeMaker {
       Class8468.method29778(var7);
       Class8468.method29779(var7);
       Class8468.method29783(var7);
-      var7.method26690(Class1993.field13006, !var3 ? Class9104.field41821 : Class9104.field41820);
+      var7.method26690(Class1993.field13006, !var3 ? Features.field41821 : Features.field41820);
       Class8468.method29816(var7);
       Class8468.method29815(var7);
       Class8468.method29821(var7);
@@ -348,7 +349,7 @@ public class BiomeMaker {
       Class8468.method29777(var4);
       Class8468.method29820(var4);
       if (isSunflowerVariant) {
-         var4.method26690(Class1993.field13006, Class9104.field41701);
+         var4.method26690(Class1993.field13006, Features.field41701);
       }
 
       Class8468.method29778(var4);
@@ -356,14 +357,14 @@ public class BiomeMaker {
       Class8468.method29783(var4);
       Class8468.method29813(var4);
       if (isSunflowerVariant) {
-         var4.method26690(Class1993.field13006, Class9104.field41729);
+         var4.method26690(Class1993.field13006, Features.field41729);
       }
 
       Class8468.method29821(var4);
       if (!isSunflowerVariant) {
          Class8468.method29822(var4);
       } else {
-         var4.method26690(Class1993.field13006, Class9104.field41702);
+         var4.method26690(Class1993.field13006, Features.field41702);
       }
 
       Class8468.method29832(var4);
@@ -413,7 +414,7 @@ public class BiomeMaker {
    }
 
    public static Biome method36079() {
-      Class7935 var2 = new Class7935().method26688(Class9109.field41845).method26690(Class1993.field13002, Class9104.field41633);
+      Class7935 var2 = new Class7935().method26688(Class9109.field41845).method26690(Class1993.field13002, Features.field41633);
       return method36077(var2);
    }
 
@@ -426,13 +427,13 @@ public class BiomeMaker {
       Class7935 var2 = new Class7935()
          .method26688(Class9109.field41845)
          .method26693(StructureFeatures.field43850)
-         .method26690(Class1993.field13002, Class9104.field41634)
-         .method26690(Class1993.field13006, Class9104.field41636);
+         .method26690(Class1993.field13002, Features.field41634)
+         .method26690(Class1993.field13006, Features.field41636);
       return method36077(var2);
    }
 
    public static Biome method36082() {
-      Class7935 var2 = new Class7935().method26688(Class9109.field41845).method26690(Class1993.field12998, Class9104.field41638);
+      Class7935 var2 = new Class7935().method26688(Class9109.field41845).method26690(Class1993.field12998, Features.field41638);
       return method36077(var2);
    }
 
@@ -667,7 +668,7 @@ public class BiomeMaker {
       var3.method35249(EntityClassification.field627, new MobSpawnInfoSpawners(EntityType.field41073, 15, 1, 5));
       boolean var4 = !var0;
       Class7935 var5 = method36093(Class9109.field41850, var0, false, var4);
-      var5.method26690(Class1993.field13006, !var0 ? Class9104.field41652 : Class9104.field41653);
+      var5.method26690(Class1993.field13006, !var0 ? Features.field41652 : Features.field41653);
       Class8468.method29830(var5);
       Class8468.method29829(var5);
       Class8468.method29835(var5);
@@ -679,7 +680,7 @@ public class BiomeMaker {
       Class8468.method29841(var3, 1, 4, 10);
       var3.method35249(EntityClassification.field626, new MobSpawnInfoSpawners(EntityType.field41018, 1, 1, 2));
       Class7935 var4 = method36093(Class9109.field41850, var0, false, true);
-      var4.method26690(Class1993.field13006, !var0 ? Class9104.field41654 : Class9104.field41656);
+      var4.method26690(Class1993.field13006, !var0 ? Features.field41654 : Features.field41656);
       Class8468.method29830(var4);
       Class8468.method29829(var4);
       Class8468.method29835(var4);
@@ -698,7 +699,7 @@ public class BiomeMaker {
          .method35249(EntityClassification.field627, new MobSpawnInfoSpawners(EntityType.field41095, 25, 8, 8))
          .method35249(EntityClassification.field626, new MobSpawnInfoSpawners(EntityType.field41018, 2, 1, 2));
       Class7935 var4 = method36093(Class9109.field41857, var0, true, false);
-      var4.method26690(Class1993.field13006, !var0 ? Class9104.field41658 : Class9104.field41659);
+      var4.method26690(Class1993.field13006, !var0 ? Features.field41658 : Features.field41659);
       if (var0) {
          Class8468.method29830(var4);
       }
@@ -712,9 +713,9 @@ public class BiomeMaker {
       Class9328 var2 = new Class9328().method35249(EntityClassification.field627, new MobSpawnInfoSpawners(EntityType.field41070, 15, 1, 3));
       Class8468.method29842(var2, 10, 4);
       Class7935 var3 = method36093(Class9109.field41848, false, true, false)
-         .method26690(Class1993.field13006, Class9104.field41807)
-         .method26690(Class1993.field13006, Class9104.field41658)
-         .method26690(Class1993.field13006, Class9104.field41660);
+         .method26690(Class1993.field13006, Features.field41807)
+         .method26690(Class1993.field13006, Features.field41658)
+         .method26690(Class1993.field13006, Features.field41660);
       Class8468.method29835(var3);
       return method36092(var2, 4445678, 270131, false, var3);
    }
@@ -723,7 +724,7 @@ public class BiomeMaker {
       Class9328 var2 = new Class9328();
       Class8468.method29842(var2, 5, 1);
       var2.method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41021, 5, 1, 1));
-      Class7935 var3 = method36093(Class9109.field41848, true, true, false).method26690(Class1993.field13006, Class9104.field41659);
+      Class7935 var3 = method36093(Class9109.field41848, true, true, false).method26690(Class1993.field13006, Features.field41659);
       Class8468.method29830(var3);
       Class8468.method29835(var3);
       return method36092(var2, 4445678, 270131, true, var3);
@@ -792,7 +793,7 @@ public class BiomeMaker {
       if (!var2) {
          Class8468.method29809(var6);
       } else {
-         var6.method26690(Class1993.field13006, Class9104.field41803);
+         var6.method26690(Class1993.field13006, Features.field41803);
       }
 
       Class8468.method29778(var6);
@@ -803,8 +804,8 @@ public class BiomeMaker {
          Class8468.method29816(var6);
          Class8468.method29810(var6);
       } else {
-         var6.method26690(Class1993.field13006, Class9104.field41808);
-         var6.method26690(Class1993.field13006, Class9104.field41798);
+         var6.method26690(Class1993.field13006, Features.field41808);
+         var6.method26690(Class1993.field13006, Features.field41798);
          Class8468.method29818(var6);
       }
 
@@ -926,7 +927,7 @@ public class BiomeMaker {
       Class8468.method29773(var6);
       Class8468.method29775(var6);
       Class8468.method29777(var6);
-      var6.method26690(Class1993.field13006, !var2 ? Class9104.field41805 : Class9104.field41806);
+      var6.method26690(Class1993.field13006, !var2 ? Features.field41805 : Features.field41806);
       Class8468.method29809(var6);
       Class8468.method29778(var6);
       Class8468.method29779(var6);
@@ -986,7 +987,7 @@ public class BiomeMaker {
       Class8468.method29826(var6);
       Class8468.method29832(var6);
       if (!var2) {
-         var6.method26690(Class1993.field13006, Class9104.field41657);
+         var6.method26690(Class1993.field13006, Features.field41657);
       } else {
          Class8468.method29828(var6);
       }
@@ -1033,8 +1034,8 @@ public class BiomeMaker {
       Class8468.method29775(var7);
       Class8468.method29777(var7);
       if (var2) {
-         var7.method26690(Class1993.field13002, Class9104.field41661);
-         var7.method26690(Class1993.field13002, Class9104.field41662);
+         var7.method26690(Class1993.field13002, Features.field41661);
+         var7.method26690(Class1993.field13002, Features.field41662);
       }
 
       Class8468.method29778(var7);
@@ -1090,7 +1091,7 @@ public class BiomeMaker {
       Class8468.method29822(var8);
       Class8468.method29832(var8);
       if (!var4) {
-         var8.method26690(Class1993.field13006, Class9104.field41655);
+         var8.method26690(Class1993.field13006, Features.field41655);
       }
 
       Class8468.method29835(var8);
@@ -1167,7 +1168,7 @@ public class BiomeMaker {
 
    public static Biome method36110() {
       Class7935 var2 = new Class7935().method26688(Class9109.field41856);
-      var2.method26690(Class1993.field13007, Class9104.field41680);
+      var2.method26690(Class1993.field13007, Features.field41680);
       return new Class9684()
          .method37911(Class87.field223)
          .method37912(Class100.field274)
@@ -1204,17 +1205,17 @@ public class BiomeMaker {
          .method26693(StructureFeatures.field43848)
          .method26693(StructureFeatures.field43852)
          .method26692(GenerationStageCarving.field259, Class7827.field33611)
-         .method26690(Class1993.field13006, Class9104.field41685);
+         .method26690(Class1993.field13006, Features.field41685);
       Class8468.method29821(var3);
-      var3.method26690(Class1993.field13005, Class9104.field41689)
-         .method26690(Class1993.field13005, Class9104.field41696)
-         .method26690(Class1993.field13005, Class9104.field41697)
-         .method26690(Class1993.field13005, Class9104.field41644)
-         .method26690(Class1993.field13005, Class9104.field41645)
-         .method26690(Class1993.field13005, Class9104.field41730)
-         .method26690(Class1993.field13005, Class9104.field41731)
-         .method26690(Class1993.field13005, Class9104.field41740)
-         .method26690(Class1993.field13005, Class9104.field41687);
+      var3.method26690(Class1993.field13005, Features.field41689)
+         .method26690(Class1993.field13005, Features.field41696)
+         .method26690(Class1993.field13005, Features.field41697)
+         .method26690(Class1993.field13005, Features.field41644)
+         .method26690(Class1993.field13005, Features.field41645)
+         .method26690(Class1993.field13005, Features.field41730)
+         .method26690(Class1993.field13005, Features.field41731)
+         .method26690(Class1993.field13005, Features.field41740)
+         .method26690(Class1993.field13005, Features.field41687);
       Class8468.method29836(var3);
       return new Class9684()
          .method37911(Class87.field223)
@@ -1260,17 +1261,17 @@ public class BiomeMaker {
          .method26693(StructureFeatures.field43864)
          .method26693(StructureFeatures.field43852)
          .method26692(GenerationStageCarving.field259, Class7827.field33611)
-         .method26690(Class1993.field13006, Class9104.field41685)
-         .method26690(Class1993.field13000, Class9104.field41651)
-         .method26690(Class1993.field13005, Class9104.field41689)
-         .method26690(Class1993.field13005, Class9104.field41644)
-         .method26690(Class1993.field13005, Class9104.field41645)
-         .method26690(Class1993.field13005, Class9104.field41700)
-         .method26690(Class1993.field13005, Class9104.field41696)
-         .method26690(Class1993.field13005, Class9104.field41697)
-         .method26690(Class1993.field13005, Class9104.field41740)
-         .method26690(Class1993.field13005, Class9104.field41687)
-         .method26690(Class1993.field13005, Class9104.field41741);
+         .method26690(Class1993.field13006, Features.field41685)
+         .method26690(Class1993.field13000, Features.field41651)
+         .method26690(Class1993.field13005, Features.field41689)
+         .method26690(Class1993.field13005, Features.field41644)
+         .method26690(Class1993.field13005, Features.field41645)
+         .method26690(Class1993.field13005, Features.field41700)
+         .method26690(Class1993.field13005, Features.field41696)
+         .method26690(Class1993.field13005, Features.field41697)
+         .method26690(Class1993.field13005, Features.field41740)
+         .method26690(Class1993.field13005, Features.field41687)
+         .method26690(Class1993.field13005, Features.field41741);
       Class8468.method29836(var7);
       return new Class9684()
          .method37911(Class87.field223)
@@ -1308,23 +1309,23 @@ public class BiomeMaker {
          .method26693(StructureFeatures.field43864)
          .method26692(GenerationStageCarving.field259, Class7827.field33611)
          .method26693(StructureFeatures.field43848)
-         .method26690(Class1993.field13002, Class9104.field41639)
-         .method26690(Class1993.field13006, Class9104.field41684)
-         .method26690(Class1993.field13002, Class9104.field41640)
-         .method26690(Class1993.field13002, Class9104.field41641)
-         .method26690(Class1993.field13005, Class9104.field41642)
-         .method26690(Class1993.field13005, Class9104.field41643)
-         .method26690(Class1993.field13005, Class9104.field41686)
-         .method26690(Class1993.field13005, Class9104.field41696)
-         .method26690(Class1993.field13005, Class9104.field41697)
-         .method26690(Class1993.field13005, Class9104.field41644)
-         .method26690(Class1993.field13005, Class9104.field41645)
-         .method26690(Class1993.field13005, Class9104.field41730)
-         .method26690(Class1993.field13005, Class9104.field41731)
-         .method26690(Class1993.field13005, Class9104.field41740)
-         .method26690(Class1993.field13005, Class9104.field41688)
-         .method26690(Class1993.field13005, Class9104.field41742)
-         .method26690(Class1993.field13005, Class9104.field41743);
+         .method26690(Class1993.field13002, Features.field41639)
+         .method26690(Class1993.field13006, Features.field41684)
+         .method26690(Class1993.field13002, Features.field41640)
+         .method26690(Class1993.field13002, Features.field41641)
+         .method26690(Class1993.field13005, Features.field41642)
+         .method26690(Class1993.field13005, Features.field41643)
+         .method26690(Class1993.field13005, Features.field41686)
+         .method26690(Class1993.field13005, Features.field41696)
+         .method26690(Class1993.field13005, Features.field41697)
+         .method26690(Class1993.field13005, Features.field41644)
+         .method26690(Class1993.field13005, Features.field41645)
+         .method26690(Class1993.field13005, Features.field41730)
+         .method26690(Class1993.field13005, Features.field41731)
+         .method26690(Class1993.field13005, Features.field41740)
+         .method26690(Class1993.field13005, Features.field41688)
+         .method26690(Class1993.field13005, Features.field41742)
+         .method26690(Class1993.field13005, Features.field41743);
       Class8468.method29837(var3);
       return new Class9684()
          .method37911(Class87.field223)
@@ -1364,17 +1365,17 @@ public class BiomeMaker {
          .method26692(GenerationStageCarving.field259, Class7827.field33611)
          .method26693(StructureFeatures.field43848)
          .method26693(StructureFeatures.field43852)
-         .method26690(Class1993.field13006, Class9104.field41685);
+         .method26690(Class1993.field13006, Features.field41685);
       Class8468.method29821(var3);
-      var3.method26690(Class1993.field13005, Class9104.field41689)
-         .method26690(Class1993.field13005, Class9104.field41696)
-         .method26690(Class1993.field13005, Class9104.field41644)
-         .method26690(Class1993.field13005, Class9104.field41645)
-         .method26690(Class1993.field13005, Class9104.field41740)
-         .method26690(Class1993.field13005, Class9104.field41687)
-         .method26690(Class1993.field13006, Class9104.field41650)
-         .method26690(Class1993.field13006, Class9104.field41764)
-         .method26690(Class1993.field13006, Class9104.field41646);
+      var3.method26690(Class1993.field13005, Features.field41689)
+         .method26690(Class1993.field13005, Features.field41696)
+         .method26690(Class1993.field13005, Features.field41644)
+         .method26690(Class1993.field13005, Features.field41645)
+         .method26690(Class1993.field13005, Features.field41740)
+         .method26690(Class1993.field13005, Features.field41687)
+         .method26690(Class1993.field13006, Features.field41650)
+         .method26690(Class1993.field13006, Features.field41764)
+         .method26690(Class1993.field13006, Features.field41646);
       Class8468.method29836(var3);
       return new Class9684()
          .method37911(Class87.field223)
@@ -1413,19 +1414,19 @@ public class BiomeMaker {
          .method26693(StructureFeatures.field43852)
          .method26693(StructureFeatures.field43864)
          .method26692(GenerationStageCarving.field259, Class7827.field33611)
-         .method26690(Class1993.field13006, Class9104.field41685);
+         .method26690(Class1993.field13006, Features.field41685);
       Class8468.method29821(var3);
-      var3.method26690(Class1993.field13005, Class9104.field41689)
-         .method26690(Class1993.field13005, Class9104.field41696)
-         .method26690(Class1993.field13005, Class9104.field41697)
-         .method26690(Class1993.field13005, Class9104.field41644)
-         .method26690(Class1993.field13005, Class9104.field41645)
-         .method26690(Class1993.field13005, Class9104.field41740)
-         .method26690(Class1993.field13005, Class9104.field41687)
-         .method26690(Class1993.field13006, Class9104.field41766)
-         .method26690(Class1993.field13006, Class9104.field41647)
-         .method26690(Class1993.field13006, Class9104.field41648)
-         .method26690(Class1993.field13006, Class9104.field41649);
+      var3.method26690(Class1993.field13005, Features.field41689)
+         .method26690(Class1993.field13005, Features.field41696)
+         .method26690(Class1993.field13005, Features.field41697)
+         .method26690(Class1993.field13005, Features.field41644)
+         .method26690(Class1993.field13005, Features.field41645)
+         .method26690(Class1993.field13005, Features.field41740)
+         .method26690(Class1993.field13005, Features.field41687)
+         .method26690(Class1993.field13006, Features.field41766)
+         .method26690(Class1993.field13006, Features.field41647)
+         .method26690(Class1993.field13006, Features.field41648)
+         .method26690(Class1993.field13006, Features.field41649);
       Class8468.method29836(var3);
       return new Class9684()
          .method37911(Class87.field223)

@@ -386,7 +386,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
          for (int var8 = 0; var8 < var7; var8++) {
             int var9 = var3.nextInt(21) - 10;
             int var10 = var3.nextInt(21) - 10;
-            BlockPos var11 = var4.method7006(Heightmap.Type.MOTION_BLOCKING, var5.method8336(var9, 0, var10)).down();
+            BlockPos var11 = var4.method7006(Heightmap.Type.MOTION_BLOCKING, var5.add(var9, 0, var10)).down();
             Biome var12 = var4.getBiome(var11);
             if (var11.getY() > 0
                && var11.getY() <= var5.getY() + 10
@@ -966,7 +966,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
                   }
                }
 
-               var56.sort(Comparator.comparingDouble(var1x -> var13.distanceSq(var1x.field30281.method27718().method8336(8, 8, 8))));
+               var56.sort(Comparator.comparingDouble(var1x -> var13.distanceSq(var1x.field30281.method27718().add(8, 8, 8))));
                var41.addAll(var56);
             }
          }

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.world.chunk.ChunkStatus;
 import net.minecraft.world.chunk.listener.IChunkStatusListener;
 
 import java.util.concurrent.Executor;
@@ -15,13 +16,13 @@ public class ChainedChunkStatusListener implements IChunkStatusListener {
    }
 
    @Override
-   public void method22736(ChunkPos var1) {
-      this.field31095.method1641(() -> this.field31094.method22736(var1));
+   public void start(ChunkPos var1) {
+      this.field31095.method1641(() -> this.field31094.start(var1));
    }
 
    @Override
-   public void method22737(ChunkPos var1, ChunkStatus var2) {
-      this.field31095.method1641(() -> this.field31094.method22737(var1, var2));
+   public void statusChanged(ChunkPos var1, ChunkStatus var2) {
+      this.field31095.method1641(() -> this.field31094.statusChanged(var1, var2));
    }
 
    @Override

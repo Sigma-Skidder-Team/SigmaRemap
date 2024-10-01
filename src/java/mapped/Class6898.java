@@ -39,7 +39,7 @@ public class Class6898 extends Class6896 {
       int var16 = var4.getY() + var12;
       int var17 = var11 - 5;
       List<Class8765> var18 = Lists.newArrayList();
-      var18.add(new Class8765(var4.method8339(var17), var16));
+      var18.add(new Class8765(var4.up(var17), var16));
 
       for (; var17 >= 0; var17--) {
          float var19 = this.method21082(var11, var17);
@@ -51,7 +51,7 @@ public class Class6898 extends Class6896 {
                double var27 = var23 * Math.sin(var25) + 0.5;
                double var29 = var23 * Math.cos(var25) + 0.5;
                BlockPos var31 = var4.method8335(var27, (double)(var17 - 1), var29);
-               BlockPos var32 = var31.method8339(5);
+               BlockPos var32 = var31.up(5);
                if (this.method21077(var1, var2, var31, var32, false, var5, var6, var7)) {
                   int var33 = var4.getX() - var31.getX();
                   int var34 = var4.getZ() - var31.getZ();
@@ -66,7 +66,7 @@ public class Class6898 extends Class6896 {
          }
       }
 
-      this.method21077(var1, var2, var4, var4.method8339(var12), true, var5, var6, var7);
+      this.method21077(var1, var2, var4, var4.up(var12), true, var5, var6, var7);
       this.method21081(var1, var2, var11, var4, var18, var5, var6, var7);
       ArrayList var40 = Lists.newArrayList();
 
@@ -83,7 +83,7 @@ public class Class6898 extends Class6896 {
       if (!var5 && Objects.equals(var3, var4)) {
          return true;
       } else {
-         BlockPos var11 = var4.method8336(-var3.getX(), -var3.getY(), -var3.getZ());
+         BlockPos var11 = var4.add(-var3.getX(), -var3.getY(), -var3.getZ());
          int var12 = this.method21078(var11);
          float var13 = (float)var11.getX() / (float)var12;
          float var14 = (float)var11.getY() / (float)var12;

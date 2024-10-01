@@ -82,7 +82,7 @@ public class VolumeSlider extends Class4247 {
       this.field21372 = Math.min(Math.max(var1, 0.0F), 1.0F);
    }
 
-   public Class4304 method13709(Class6649 var1) {
+   public AnimatedIconPanel method13709(Class6649 var1) {
       this.field21374.add(var1);
       return this;
    }

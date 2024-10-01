@@ -7,7 +7,7 @@ import net.minecraft.client.Minecraft;
 
 import java.util.Random;
 
-public class Class4332 extends IconPanel {
+public class ClassicAltManager extends IconPanel {
    public Class4300 field21140;
    public Class4300 field21141;
    public Class4300 field21142;
@@ -18,12 +18,12 @@ public class Class4332 extends IconPanel {
    public Class4300 field21147;
    public Class4300 field21148;
 
-   public Class4332(IconPanel var1, String var2, int var3, int var4) {
+   public ClassicAltManager(IconPanel var1, String var2, int var3, int var4) {
       super(var1, var2, var3, var4, 760, 87);
       this.addToList(this.field21140 = new Class4300(this, "reload", 0, 0, 120, 40, "Reload", ClientColors.DEEP_TEAL.getColor));
       this.addToList(this.field21141 = new Class4300(this, "back", 0, 48, 120, 40, "Back", ClientColors.DEEP_TEAL.getColor));
-      short var7 = 200;
-      short var8 = 146;
+      int var7 = 200;
+      int var8 = 146;
       int var9 = this.getWidthA() - 625;
       this.addToList(this.field21142 = new Class4300(this, "login", var9, 0, var7, 40, "Login", ClientColors.DEEP_TEAL.getColor));
       this.addToList(this.field21145 = new Class4300(this, "direct", var9 + var7 + 16, 0, var7, 40, "Direct Login", ClientColors.DEEP_TEAL.getColor));

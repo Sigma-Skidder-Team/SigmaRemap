@@ -140,7 +140,6 @@ public abstract class Screen extends FocusableGui implements IScreen, Class1190 
          }
 
          var1.push();
-         short var14 = 400;
          Tessellator var15 = Tessellator.getInstance();
          BufferBuilder var16 = var15.getBuffer();
          var16.begin(7, DefaultVertexFormats.POSITION_COLOR);

@@ -6,7 +6,6 @@ import com.mentalfrostbyte.jello.util.MultiUtilities;
 import org.lwjgl.opengl.GL11;
 
 public class PNGIconButton extends ButtonPanel {
-   private static String[] field20573;
    public static final ColorHelper field20574 = new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor, MultiUtilities.method17691(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.1F));
    public Texture field20575;
 

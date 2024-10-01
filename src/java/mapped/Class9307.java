@@ -19,6 +19,7 @@ import javax.annotation.Nullable;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.SectionPos;
+import net.minecraft.world.chunk.ChunkStatus;
 import net.minecraft.world.server.ChunkManager;
 import net.minecraft.world.server.Ticket;
 import net.minecraft.world.server.TicketType;

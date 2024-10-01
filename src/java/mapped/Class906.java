@@ -135,7 +135,7 @@ public class Class906 extends Entity {
          }
 
          for (int var6 = 0; var6 < var1; var6++) {
-            BlockPos var7 = var4.method8336(this.rand.nextInt(3) - 1, this.rand.nextInt(3) - 1, this.rand.nextInt(3) - 1);
+            BlockPos var7 = var4.add(this.rand.nextInt(3) - 1, this.rand.nextInt(3) - 1, this.rand.nextInt(3) - 1);
             var5 = AbstractFireBlock.method12009(this.world, var7);
             if (this.world.getBlockState(var7).isAir() && var5.isValidPosition(this.world, var7)) {
                this.world.setBlockState(var7, var5);

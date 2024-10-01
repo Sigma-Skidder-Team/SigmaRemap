@@ -25,7 +25,7 @@ public class Class6821 extends Class6819 {
            Class1679 var1, Random var2, Class4733 var3, int var4, Class9359 var5, int var6, int var7, Set<BlockPos> var8, int var9, Class9764 var10
    ) {
       boolean var13 = var5.method35439();
-      BlockPos var14 = var5.method35437().method8339(var9);
+      BlockPos var14 = var5.method35437().up(var9);
       this.method20796(var1, var2, var3, var14, var7 + var5.method35438(), var8, -1 - var6, var13, var10);
       this.method20796(var1, var2, var3, var14, var7 - 1, var8, -var6, var13, var10);
       this.method20796(var1, var2, var3, var14, var7 + var5.method35438() - 1, var8, 0, var13, var10);

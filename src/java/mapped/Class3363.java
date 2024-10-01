@@ -50,9 +50,9 @@ public class Class3363 extends Class3241 {
 
             if (var4.nextInt(16) == 0) {
                for (int var9 = 0; var9 <= 1; var9++) {
-                  BlockPos var10 = var3.method8336(var7, var9, var8);
+                  BlockPos var10 = var3.add(var7, var9, var8);
                   if (var2.getBlockState(var10).isIn(Blocks.field36525)) {
-                     if (!var2.method7007(var3.method8336(var7 / 2, 0, var8 / 2))) {
+                     if (!var2.method7007(var3.add(var7 / 2, 0, var8 / 2))) {
                         break;
                      }
 

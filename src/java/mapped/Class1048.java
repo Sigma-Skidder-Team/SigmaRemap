@@ -294,7 +294,7 @@ public class Class1048 extends WaterMobEntity {
    }
 
    public static boolean method4784(EntityType<Class1048> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
-      if (var3.getY() > 45 && var3.getY() < var1.method6776()) {
+      if (var3.getY() > 45 && var3.getY() < var1.getSeaLevel()) {
          Optional var7 = var1.method7178(var3);
          return (
                !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Biomes.OCEAN))

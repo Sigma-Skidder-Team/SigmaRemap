@@ -38,7 +38,7 @@ public class Class2753 extends Class2595 {
          for (int var6 = 0; var6 <= 5 && var6 >= -5; var6 = (var6 > 0 ? 0 : 1) - var6) {
             for (int var7 = 0; var7 <= 10 && var7 >= -10; var7 = (var7 > 0 ? 0 : 1) - var7) {
                for (int var8 = 0; var8 <= 10 && var8 >= -10; var8 = (var8 > 0 ? 0 : 1) - var8) {
-                  BlockPos var9 = var5.method8336(var7, var6, var8);
+                  BlockPos var9 = var5.add(var7, var6, var8);
                   BlockState var10 = var3.getBlockState(var9);
                   Block var11 = var10.getBlock();
                   if (var11 instanceof Class3442) {

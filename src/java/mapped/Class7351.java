@@ -21,7 +21,7 @@ public class Class7351 implements Class7352 {
    @Override
    public Collection<Class7744> method23305(CommandContext<Class6619> var1) throws CommandSyntaxException {
       ITag var4 = Class7566.method24774(var1, this.field31468);
-      return var4.method24918();
+      return var4.getAllElements();
    }
 
    @Override

@@ -1216,7 +1216,7 @@ public class Class2362 implements Serializable, Cloneable {
          var6[var8++] = 1.0 / var12;
       }
 
-      byte var10 = 0;
+      int var10 = 0;
 
       for (int var26 = 0; var26 < var0; var26++) {
          for (int var23 = 0; var23 < var26; var23++) {

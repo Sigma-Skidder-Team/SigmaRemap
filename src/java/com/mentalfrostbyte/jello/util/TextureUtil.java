@@ -21,7 +21,7 @@ public class TextureUtil {
 
     public static Texture method32935(String var0, BufferedImage var1, int var2, int var3, int var4, int var5) throws IOException {
         Class6958 var8 = new Class6958();
-        short var9 = 0;
+        int var9 = 0;
         int var10 = InternalTextureLoader.method35789();
         TextureImpl var11 = new TextureImpl(var0, var2, var10);
         Renderer.get().method18381(3553);

@@ -46,8 +46,8 @@ public class Class1677 implements IBlockDisplayReader {
          return null;
       } else {
          boolean var15 = true;
-         BlockPos var16 = var1.method8336(-1, -1, -1);
-         BlockPos var14 = var2.method8336(1, 1, 1);
+         BlockPos var16 = var1.add(-1, -1, -1);
+         BlockPos var14 = var2.add(1, 1, 1);
          return new Class1677(var0, var7, var8, var11, var16, var14);
       }
    }

@@ -10,6 +10,8 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeRegistry;
 import net.minecraft.world.gen.carver.ConfiguredCarver;
+import net.minecraft.world.gen.feature.Features;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.structure.StructureFeatures;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -23,7 +25,7 @@ public class WorldGenRegistries {
    public static final Registry<? extends Registry<?>> field29423 = field29422;
    public static final Registry<Class9319<?>> field29424 = method20493(Registry.field16100, () -> Class9109.field41856);
    public static final Registry<ConfiguredCarver<?>> field29425 = method20493(Registry.field16101, () -> Class7827.field33606);
-   public static final Registry<Class7909<?, ?>> field29426 = method20493(Registry.field16102, () -> Class9104.field41770);
+   public static final Registry<ConfiguredFeature<?, ?>> field29426 = method20493(Registry.field16102, () -> Features.field41770);
    public static final Registry<StructureFeature<?, ?>> field29427 = method20493(Registry.field16103, () -> StructureFeatures.field43835);
    public static final Registry<Class3622> field29428 = method20493(Registry.field16104, () -> Class8523.field38251);
    public static final Registry<Class9369> field29429 = method20493(Registry.field16105, Class9837::method38885);

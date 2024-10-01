@@ -38,7 +38,7 @@ public class FunctionManager {
       this.method22824(this.field31185, field31179);
       if (this.field31186) {
          this.field31186 = false;
-         List var3 = this.field31187.method1179().method27132(field31180).method24918();
+         List var3 = this.field31187.method1179().method27132(field31180).getAllElements();
          this.method22824(var3, field31180);
       }
    }
@@ -108,7 +108,7 @@ public class FunctionManager {
 
    private void method22827(Class301 var1) {
       this.field31185.clear();
-      this.field31185.addAll(var1.method1179().method27132(field31179).method24918());
+      this.field31185.addAll(var1.method1179().method27132(field31179).getAllElements());
       this.field31186 = true;
    }
 

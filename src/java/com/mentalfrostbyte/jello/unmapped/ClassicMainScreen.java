@@ -40,8 +40,8 @@ public class ClassicMainScreen extends Screen {
         Client.getInstance();
         String var12 = var10000.append(Client.VERSION).append(" for Minecraft 1.8 to ").append("1.16.4").toString();
         this.addToList(this.field21102 = new ClassicParticleEngine(this, "particles"));
-        short var13 = 480;
-        short var14 = 480;
+        int var13 = 480;
+        int var14 = 480;
         this.addToList(this.field21103 = new Class4337(this, "group", (this.getWidthA() - var13) / 2, this.getHeightA() / 2 - 230, var13, var14));
         this.addToList(
                 this.field21095 = new UITextDisplay(

@@ -39,7 +39,7 @@ public class Class2929 extends Class2898<Class4712> {
       for (int var18 = var10; var18 <= var11; var18++) {
          for (int var19 = -1; var19 <= 4; var19++) {
             for (int var20 = var15; var20 <= var16; var20++) {
-               BlockPos var21 = var4.method8336(var18, var19, var20);
+               BlockPos var21 = var4.add(var18, var19, var20);
                Material var22 = var1.getBlockState(var21).getMaterial();
                boolean var23 = var22.isSolid();
                if (var19 == -1 && !var23) {
@@ -64,7 +64,7 @@ public class Class2929 extends Class2898<Class4712> {
          for (int var27 = var10; var27 <= var11; var27++) {
             for (int var30 = 3; var30 >= -1; var30--) {
                for (int var32 = var15; var32 <= var16; var32++) {
-                  BlockPos var34 = var4.method8336(var27, var30, var32);
+                  BlockPos var34 = var4.add(var27, var30, var32);
                   BlockState var36 = var1.getBlockState(var34);
                   if (var27 != var10 && var30 != -1 && var32 != var15 && var27 != var11 && var30 != 4 && var32 != var16) {
                      if (!var36.isIn(Blocks.CHEST) && !var36.isIn(Blocks.field36532)) {

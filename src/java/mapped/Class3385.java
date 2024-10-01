@@ -23,7 +23,7 @@ public class Class3385 extends Block implements Class3196 {
       if (!var1.getBlockState(var2.up()).method23386(var1, var2)) {
          return false;
       } else {
-         for (BlockPos var8 : BlockPos.method8359(var2.method8336(-1, -1, -1), var2.method8336(1, 1, 1))) {
+         for (BlockPos var8 : BlockPos.method8359(var2.add(-1, -1, -1), var2.add(1, 1, 1))) {
             if (var1.getBlockState(var8).isIn(BlockTags.field32799)) {
                return true;
             }
@@ -43,7 +43,7 @@ public class Class3385 extends Block implements Class3196 {
       boolean var7 = false;
       boolean var8 = false;
 
-      for (BlockPos var10 : BlockPos.method8359(var3.method8336(-1, -1, -1), var3.method8336(1, 1, 1))) {
+      for (BlockPos var10 : BlockPos.method8359(var3.add(-1, -1, -1), var3.add(1, 1, 1))) {
          BlockState var11 = var1.getBlockState(var10);
          if (var11.isIn(Blocks.field37074)) {
             var8 = true;

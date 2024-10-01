@@ -153,7 +153,7 @@ public class Class1030 extends Class1025 {
    public void method4545(int var1, boolean var2) {
       ItemStack var5 = new ItemStack(Items.field37823);
       Class7699 var6 = this.method4551();
-      byte var7 = 1;
+      int var7 = 1;
       if (var1 > var6.method25435(Difficulty.NORMAL)) {
          var7 = 2;
       }
@@ -161,7 +161,7 @@ public class Class1030 extends Class1025 {
       boolean var8 = this.rand.nextFloat() <= var6.method25436();
       if (var8) {
          HashMap var9 = Maps.newHashMap();
-         var9.put(Enchantments.SHARPNESS, Integer.valueOf(var7));
+         var9.put(Enchantments.SHARPNESS, var7);
          EnchantmentHelper.method26314(var9, var5);
       }
 

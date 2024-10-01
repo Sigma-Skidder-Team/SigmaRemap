@@ -20,7 +20,7 @@ public class Class2923 extends Class2898<Class4710> {
          int var8 = 2 + var3.nextInt(2);
          int var9 = 2 + var3.nextInt(2);
 
-         for (BlockPos var11 : BlockPos.method8359(var4.method8336(-var8, 0, -var9), var4.method8336(var8, 1, var9))) {
+         for (BlockPos var11 : BlockPos.method8359(var4.add(-var8, 0, -var9), var4.add(var8, 1, var9))) {
             int var12 = var4.getX() - var11.getX();
             int var13 = var4.getZ() - var11.getZ();
             if (!((float)(var12 * var12 + var13 * var13) <= var3.nextFloat() * 10.0F - var3.nextFloat() * 6.0F)) {

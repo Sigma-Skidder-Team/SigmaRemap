@@ -69,7 +69,7 @@ public class Class902 extends Class901 {
          }
 
          if (var6 && var4 instanceof LivingEntity) {
-            byte var8 = 0;
+            int var8 = 0;
             if (this.world.method6997() != Difficulty.NORMAL) {
                if (this.world.method6997() == Difficulty.HARD) {
                   var8 = 40;

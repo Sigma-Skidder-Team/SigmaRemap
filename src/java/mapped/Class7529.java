@@ -25,14 +25,14 @@ import org.apache.logging.log4j.Logger;
 
 public class Class7529 extends Class7530 {
    private static final Logger field32315 = LogManager.getLogger();
-   public int field32316;
-   public int field32317;
+   public int xCenter;
+   public int zCenter;
    public RegistryKey<World> field32318;
-   public boolean field32319;
-   public boolean field32320;
-   public byte field32321;
-   public byte[] field32322 = new byte[16384];
-   public boolean field32323;
+   public boolean trackingPosition;
+   public boolean unlimitedTracking;
+   public byte scale;
+   public byte[] colors = new byte[16384];
+   public boolean locked;
    public final List<Class8541> field32324 = Lists.newArrayList();
    private final Map<PlayerEntity, Class8541> field32325 = Maps.newHashMap();
    private final Map<String, Class7468> field32326 = Maps.newHashMap();
@@ -44,11 +44,11 @@ public class Class7529 extends Class7530 {
    }
 
    public void method24589(int var1, int var2, int var3, boolean var4, boolean var5, RegistryKey<World> var6) {
-      this.field32321 = (byte)var3;
-      this.method24590((double)var1, (double)var2, this.field32321);
+      this.scale = (byte)var3;
+      this.method24590((double)var1, (double)var2, this.scale);
       this.field32318 = var6;
-      this.field32319 = var4;
-      this.field32320 = var5;
+      this.trackingPosition = var4;
+      this.unlimitedTracking = var5;
       this.method24605();
    }
 
@@ -56,8 +56,8 @@ public class Class7529 extends Class7530 {
       int var8 = 128 * (1 << var5);
       int var9 = MathHelper.floor((var1 + 64.0) / (double)var8);
       int var10 = MathHelper.floor((var3 + 64.0) / (double)var8);
-      this.field32316 = var9 * var8 + var8 / 2 - 64;
-      this.field32317 = var10 * var8 + var8 / 2 - 64;
+      this.xCenter = var9 * var8 + var8 / 2 - 64;
+      this.zCenter = var10 * var8 + var8 / 2 - 64;
    }
 
    @Override
@@ -65,15 +65,15 @@ public class Class7529 extends Class7530 {
       this.field32318 = (RegistryKey<World>) DimensionType.decodeWorldKey(new Dynamic(NBTDynamicOps.INSTANCE, var1.method116("dimension")))
          .resultOrPartial(field32315::error)
          .orElseThrow(() -> new IllegalArgumentException("Invalid map dimension: " + var1.method116("dimension")));
-      this.field32316 = var1.getInt("xCenter");
-      this.field32317 = var1.getInt("zCenter");
-      this.field32321 = (byte) MathHelper.clamp(var1.getByte("scale"), 0, 4);
-      this.field32319 = !var1.contains("trackingPosition", 1) || var1.getBoolean("trackingPosition");
-      this.field32320 = var1.getBoolean("unlimitedTracking");
-      this.field32323 = var1.getBoolean("locked");
-      this.field32322 = var1.getByteArray("colors");
-      if (this.field32322.length != 16384) {
-         this.field32322 = new byte[16384];
+      this.xCenter = var1.getInt("xCenter");
+      this.zCenter = var1.getInt("zCenter");
+      this.scale = (byte) MathHelper.clamp(var1.getByte("scale"), 0, 4);
+      this.trackingPosition = !var1.contains("trackingPosition", 1) || var1.getBoolean("trackingPosition");
+      this.unlimitedTracking = var1.getBoolean("unlimitedTracking");
+      this.locked = var1.getBoolean("locked");
+      this.colors = var1.getByteArray("colors");
+      if (this.colors.length != 16384) {
+         this.colors = new byte[16384];
       }
 
       ListNBT var4 = var1.method131("banners", 10);
@@ -115,13 +115,13 @@ public class Class7529 extends Class7530 {
          .encodeStart(NBTDynamicOps.INSTANCE, this.field32318.getLocation())
          .resultOrPartial(field32315::error)
          .ifPresent(var1x -> var1.put("dimension", var1x));
-      var1.putInt("xCenter", this.field32316);
-      var1.putInt("zCenter", this.field32317);
-      var1.method100("scale", this.field32321);
-      var1.method110("colors", this.field32322);
-      var1.putBoolean("trackingPosition", this.field32319);
-      var1.putBoolean("unlimitedTracking", this.field32320);
-      var1.putBoolean("locked", this.field32323);
+      var1.putInt("xCenter", this.xCenter);
+      var1.putInt("zCenter", this.zCenter);
+      var1.method100("scale", this.scale);
+      var1.method110("colors", this.colors);
+      var1.putBoolean("trackingPosition", this.trackingPosition);
+      var1.putBoolean("unlimitedTracking", this.unlimitedTracking);
+      var1.putBoolean("locked", this.locked);
       ListNBT var4 = new ListNBT();
 
       for (Class7468 var6 : this.field32326.values()) {
@@ -140,12 +140,12 @@ public class Class7529 extends Class7530 {
    }
 
    public void method24593(Class7529 var1) {
-      this.field32323 = true;
-      this.field32316 = var1.field32316;
-      this.field32317 = var1.field32317;
+      this.locked = true;
+      this.xCenter = var1.xCenter;
+      this.zCenter = var1.zCenter;
       this.field32326.putAll(var1.field32326);
       this.field32327.putAll(var1.field32327);
-      System.arraycopy(var1.field32322, 0, this.field32322, 0, var1.field32322.length);
+      System.arraycopy(var1.colors, 0, this.colors, 0, var1.colors.length);
       this.method24605();
    }
 
@@ -164,7 +164,7 @@ public class Class7529 extends Class7530 {
          Class8541 var6 = this.field32324.get(var9);
          String var7 = var6.field38390.getName().getString();
          if (!var6.field38390.removed && (var6.field38390.inventory.method4058(var2) || var2.method32165())) {
-            if (!var2.method32165() && var6.field38390.world.getDimensionKey() == this.field32318 && this.field32319) {
+            if (!var2.method32165() && var6.field38390.world.getDimensionKey() == this.field32318 && this.trackingPosition) {
                this.method24596(
                   MapDecorationType.PLAYER,
                   var6.field38390.world,
@@ -182,7 +182,7 @@ public class Class7529 extends Class7530 {
          }
       }
 
-      if (var2.method32165() && this.field32319) {
+      if (var2.method32165() && this.trackingPosition) {
          ItemFrameEntity var10 = var2.method32167();
          BlockPos var12 = var10.method4085();
          Class6674 var14 = this.field32328.get(Class6674.method20355(var12));
@@ -247,12 +247,11 @@ public class Class7529 extends Class7530 {
    }
 
    private void method24596(MapDecorationType var1, IWorld var2, String var3, double var4, double var6, double var8, ITextComponent var10) {
-      int var13 = 1 << this.field32321;
-      float var14 = (float)(var4 - (double)this.field32316) / (float)var13;
-      float var15 = (float)(var6 - (double)this.field32317) / (float)var13;
+      int var13 = 1 << this.scale;
+      float var14 = (float)(var4 - (double)this.xCenter) / (float)var13;
+      float var15 = (float)(var6 - (double)this.zCenter) / (float)var13;
       byte var16 = (byte)((int)((double)(var14 * 2.0F) + 0.5));
       byte var17 = (byte)((int)((double)(var15 * 2.0F) + 0.5));
-      byte var18 = 63;
       byte var20;
       if (var14 >= -63.0F && var15 >= -63.0F && var14 <= 63.0F && var15 <= 63.0F) {
          var8 += !(var8 < 0.0) ? 8.0 : -8.0;
@@ -267,11 +266,10 @@ public class Class7529 extends Class7530 {
             return;
          }
 
-         short var19 = 320;
          if (Math.abs(var14) < 320.0F && Math.abs(var15) < 320.0F) {
             var1 = MapDecorationType.PLAYER_OFF_MAP;
          } else {
-            if (!this.field32320) {
+            if (!this.unlimitedTracking) {
                this.field32327.remove(var3);
                return;
             }
@@ -328,10 +326,10 @@ public class Class7529 extends Class7530 {
    public void method24600(IWorld var1, BlockPos var2) {
       double var5 = (double)var2.getX() + 0.5;
       double var7 = (double)var2.getZ() + 0.5;
-      int var9 = 1 << this.field32321;
-      double var10 = (var5 - (double)this.field32316) / (double)var9;
-      double var12 = (var7 - (double)this.field32317) / (double)var9;
-      byte var14 = 63;
+      int var9 = 1 << this.scale;
+      double var10 = (var5 - (double)this.xCenter) / (double)var9;
+      double var12 = (var7 - (double)this.zCenter) / (double)var9;
+
       boolean var15 = false;
       if (var10 >= -63.0 && var12 >= -63.0 && var10 <= 63.0 && var12 <= 63.0) {
          Class7468 var16 = Class7468.method24184(var1, var2);

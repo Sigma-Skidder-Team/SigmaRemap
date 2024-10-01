@@ -149,7 +149,7 @@ public class MineplexFly extends Module {
                     }
 
                     Vector3d var6 = new Vector3d(0.475 + Math.random() * 0.05, 1.0, 0.475 + Math.random() * 0.05);
-                    BlockPos var7 = new BlockPos(mc.player.getPosition()).method8336(0, -1, 0);
+                    BlockPos var7 = new BlockPos(mc.player.getPosition()).add(0, -1, 0);
                     BlockRayTraceResult var8 = new BlockRayTraceResult(var6, Direction.UP, var7, false);
                     CPlayerTryUseItemOnBlockPacket var9 = new CPlayerTryUseItemOnBlockPacket(Hand.MAIN_HAND, var8);
                     mc.getConnection().sendPacket(var9);

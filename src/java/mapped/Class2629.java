@@ -17,7 +17,7 @@ public class Class2629 extends Class2628 {
       return super.method10803()
          && !this.field16939.world.method6740()
          && this.field16939.isInWater()
-         && this.field16939.getPosY() >= (double)(this.field16939.world.method6776() - 3);
+         && this.field16939.getPosY() >= (double)(this.field16939.world.getSeaLevel() - 3);
    }
 
    @Override

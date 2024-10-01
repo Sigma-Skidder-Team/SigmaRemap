@@ -15,6 +15,7 @@ import mapped.*;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.world.gen.carver.ConfiguredCarver;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -31,7 +32,7 @@ public class BiomeGenerationSettings {
                   )
                   .fieldOf("carvers")
                   .forGetter(var0x -> var0x.field32139),
-               Class7909.field33884
+               ConfiguredFeature.field33884
                   .promotePartial(Util.func_240982_a_("Feature: ", field32135::error))
                   .listOf()
                   .fieldOf("features")
@@ -45,14 +46,14 @@ public class BiomeGenerationSettings {
    );
    private final Supplier<Class9319<?>> field32138;
    private final Map<GenerationStageCarving, List<Supplier<ConfiguredCarver<?>>>> field32139;
-   private final List<List<Supplier<Class7909<?, ?>>>> field32140;
+   private final List<List<Supplier<ConfiguredFeature<?, ?>>>> field32140;
    private final List<Supplier<StructureFeature<?, ?>>> field32141;
-   private final List<Class7909<?, ?>> field32142;
+   private final List<ConfiguredFeature<?, ?>> field32142;
 
    public BiomeGenerationSettings(
            Supplier<Class9319<?>> var1,
            Map<GenerationStageCarving, List<Supplier<ConfiguredCarver<?>>>> var2,
-           List<List<Supplier<Class7909<?, ?>>>> var3,
+           List<List<Supplier<ConfiguredFeature<?, ?>>>> var3,
            List<Supplier<StructureFeature<?, ?>>> var4
    ) {
       this.field32138 = var1;
@@ -62,7 +63,7 @@ public class BiomeGenerationSettings {
       this.field32142 = var3.stream()
          .flatMap(Collection::stream)
          .map(Supplier::get)
-         .<Class7909<?, ?>>flatMap(Class7909::method26522)
+         .<ConfiguredFeature<?, ?>>flatMap(ConfiguredFeature::method26522)
          .filter(var0 -> var0.field33886 == Class2898.field17938)
          .collect(ImmutableList.toImmutableList());
    }
@@ -85,11 +86,11 @@ public class BiomeGenerationSettings {
       );
    }
 
-   public List<Class7909<?, ?>> method24280() {
+   public List<ConfiguredFeature<?, ?>> method24280() {
       return this.field32142;
    }
 
-   public List<List<Supplier<Class7909<?, ?>>>> method24281() {
+   public List<List<Supplier<ConfiguredFeature<?, ?>>>> method24281() {
       return this.field32140;
    }
 
@@ -97,7 +98,7 @@ public class BiomeGenerationSettings {
       return this.field32138;
    }
 
-   public Class8277 method24283() {
+   public Class8277 getSurfaceBuilderConfig() {
       return this.field32138.get().method35211();
    }
 }

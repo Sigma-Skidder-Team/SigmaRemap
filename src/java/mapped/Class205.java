@@ -25,7 +25,7 @@ public class Class205 extends Class203 {
 
    @Override
    public void setLevel(long var1, int var3) {
-      byte var6;
+      int var6;
       if (var3 <= this.field763) {
          var6 = this.field762.put(var1, (byte)var3);
       } else {

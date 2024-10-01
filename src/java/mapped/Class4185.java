@@ -23,7 +23,7 @@ public class Class4185 extends Class4180 {
       super(Class7792.field33459, 0);
       this.field20471 = var2;
       BlockPos var8 = (BlockPos)Class3191.method11408().get(var2);
-      this.field20455 = var3.method8336(var8.getX(), var8.getY() - var5, var8.getZ());
+      this.field20455 = var3.add(var8.getX(), var8.getY() - var5, var8.getZ());
       this.field20472 = var4;
       this.method12964(var1);
    }
@@ -74,7 +74,7 @@ public class Class4185 extends Class4180 {
       BlockPos var12 = this.field20455.method8337(Class8969.method32896(var10, new BlockPos(3 - var11.getX(), 0, 0 - var11.getZ())));
       int var13 = var1.method6736(Heightmap.Type.WORLD_SURFACE_WG, var12.getX(), var12.getZ());
       BlockPos var14 = this.field20455;
-      this.field20455 = this.field20455.method8336(0, var13 - 90 - 1, 0);
+      this.field20455 = this.field20455.add(0, var13 - 90 - 1, 0);
       boolean var15 = super.method12896(var1, var2, var3, var4, var5, var6, var7);
       if (this.field20471.equals(Class3191.method11410())) {
          BlockPos var16 = this.field20455.method8337(Class8969.method32896(var10, new BlockPos(3, 0, 5)));

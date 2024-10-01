@@ -56,8 +56,8 @@ public class MusicPlayerInstance implements Runnable {
             for (int var5 = 0; var5 < this.thubmnail.youtubeVideos.size(); var5++) {
                YoutubeVideoData var6 = this.thubmnail.youtubeVideos.get(var5);
                Class4286 var7 = null;
-               byte var8 = 65;
-               byte var9 = 10;
+               int var8 = 65;
+               int var9 = 10;
                if (!var4.method13231(this.thubmnail.id)) {
                   var4.addToList(
                      var7 = new Class4286(

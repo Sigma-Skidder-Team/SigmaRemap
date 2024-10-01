@@ -1,5 +1,7 @@
-package mapped;
+package net.minecraft.entity.player;
 
+import mapped.Chunk;
+import mapped.Heightmap;
 import net.minecraft.block.BlockState;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.math.BlockPos;
@@ -9,7 +11,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 
-public class Class6878 {
+public class SpawnLocationHelper {
    private static String[] field29818;
 
    @Nullable
@@ -17,12 +19,12 @@ public class Class6878 {
       BlockPos.Mutable var6 = new BlockPos.Mutable(var1, 0, var2);
       Biome var7 = var0.getBiome(var6);
       boolean var8 = var0.method6812().getHasCeiling();
-      BlockState var9 = var7.getGenerationSettings().method24283().method28934();
-      if (var3 && !var9.getBlock().isIn(BlockTags.field32780)) {
+      BlockState var9 = var7.getGenerationSettings().getSurfaceBuilderConfig().getTop();
+      if (var3 && !var9.getBlock().isIn(BlockTags.VALID_SPAWN)) {
          return null;
       } else {
          Chunk var10 = var0.getChunk(var1 >> 4, var2 >> 4);
-         int var11 = !var8 ? var10.getTopBlockY(Heightmap.Type.MOTION_BLOCKING, var1 & 15, var2 & 15) : var0.getChunkProvider().method7370().getGroundHeight();
+         int var11 = !var8 ? var10.getTopBlockY(Heightmap.Type.MOTION_BLOCKING, var1 & 15, var2 & 15) : var0.getChunkProvider().getChunkGenerator().getGroundHeight();
          if (var11 < 0) {
             return null;
          } else {
@@ -49,7 +51,7 @@ public class Class6878 {
    }
 
    @Nullable
-   public static BlockPos method20941(ServerWorld var0, ChunkPos var1, boolean var2) {
+   public static BlockPos func_241094_a_(ServerWorld var0, ChunkPos var1, boolean var2) {
       for (int var5 = var1.getX(); var5 <= var1.method24358(); var5++) {
          for (int var6 = var1.getZ(); var6 <= var1.method24359(); var6++) {
             BlockPos var7 = method20940(var0, var5, var6, var2);

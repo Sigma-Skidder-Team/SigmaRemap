@@ -63,12 +63,12 @@ public class Class1199 extends Widget {
 
       Minecraft var7 = Minecraft.getInstance();
       var7.getTextureManager().bindTexture(field6491);
-      byte var8 = 29;
+      int var8 = 29;
       if (!this.field6495.method34890()) {
          var8 += 25;
       }
 
-      short var9 = 206;
+      int var9 = 206;
       if (this.field6495.method34893(this.field6494.method21370(this.field6493)).size() > 1) {
          var9 += 25;
       }

@@ -29,7 +29,7 @@ public class Class5118 implements Class5119 {
       RenderSystem.depthMask(false);
       BlockPos var12 = new BlockPos(var3, var5, var7);
 
-      for (BlockPos var14 : BlockPos.method8359(var12.method8336(-6, -6, -6), var12.method8336(6, 6, 6))) {
+      for (BlockPos var14 : BlockPos.method8359(var12.add(-6, -6, -6), var12.add(6, 6, 6))) {
          BlockState var15 = var11.getBlockState(var14);
          if (!var15.isIn(Blocks.AIR)) {
             VoxelShape var16 = var15.method23412(var11, var14);

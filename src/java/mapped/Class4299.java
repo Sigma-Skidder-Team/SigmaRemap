@@ -32,21 +32,21 @@ public class Class4299 extends Class4278 {
    }
 
    private void method13184() {
-      short var3 = 2200;
-      byte var4 = 2;
+      long var3 = 2200;
+      long var4 = 2;
       if (this.field20834.isEmpty()) {
-         this.field20834.put(System.currentTimeMillis() + (long)(var3 * 2), 0.25 + Math.random() * 0.5);
+         this.field20834.put(System.currentTimeMillis() + (var3 * 2), 0.25 + Math.random() * 0.5);
       }
 
-      for (long var5 = this.field20834.lastKey(); var5 < System.currentTimeMillis() + (long)(var3 * var4); var5 = this.field20834.lastKey()) {
-         this.field20834.put(var5 + (long)var3, 0.25 + Math.random() * 0.5);
+      for (long var5 = this.field20834.lastKey(); var5 < System.currentTimeMillis() + (var3 * var4); var5 = this.field20834.lastKey()) {
+         this.field20834.put(var5 + var3, 0.25 + Math.random() * 0.5);
       }
 
       Iterator var7 = this.field20834.entrySet().iterator();
 
       while (var7.hasNext()) {
          Entry var8 = (Entry)var7.next();
-         if ((Long)var8.getKey() < System.currentTimeMillis() - (long)(var3 * 2)) {
+         if ((Long)var8.getKey() < System.currentTimeMillis() - (var3 * 2)) {
             var7.remove();
          }
       }
@@ -73,8 +73,8 @@ public class Class4299 extends Class4278 {
       float var5 = 0.026F * var16;
       this.field20835 = Math.max(Math.min(1.0F, this.field20835 + this.field20836 - var5), 0.0F);
       this.field20836 = Math.max(-var5, this.field20836 * 0.965F);
-      byte var6 = 100;
-      short var7 = 2200;
+      float var6 = 100;
+      float var7 = 2200;
       int var8 = this.heightA - 112;
 
       for (Entry var10 : this.field20834.entrySet()) {
@@ -101,13 +101,10 @@ public class Class4299 extends Class4278 {
             float var14 = (float)(var6 - 24) / (float)var8;
             boolean var15 = (double)this.field20835 < (Double)var10.getValue() - (double)(var14 / 2.0F)
                || (double)this.field20835 > (Double)var10.getValue() + (double)(var14 / 2.0F);
-            if (var15) {
-            }
          }
       }
 
-      short var17 = 3400;
-      float var18 = (float)(System.currentTimeMillis() % (long)var17) / (float)var17;
+      float var18 = (float)(System.currentTimeMillis() % (long)3400) / 3400;
 
       for (int var19 = 0; var19 < 4; var19++) {
          RenderUtil.method11455((float)(this.xA + 288 * var19) - 288.0F * var18, (float)(this.yA + var8), 288.0F, 112.0F, this.field20830);

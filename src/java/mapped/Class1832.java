@@ -12,9 +12,6 @@ public enum Class1832 implements Class1833, Class1827 {
       if (!Class9320.method35218(var8)) {
          return var8;
       } else {
-         byte var10 = 8;
-         byte var11 = 4;
-
          for (int var12 = -8; var12 <= 8; var12 += 4) {
             for (int var13 = -8; var13 <= 8; var13 += 4) {
                int var14 = var2.method26471(this.method8075(var4 + var12), this.method8076(var5 + var13));

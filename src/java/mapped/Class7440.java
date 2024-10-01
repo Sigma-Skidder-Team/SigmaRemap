@@ -77,12 +77,12 @@ public class Class7440 {
       BlockPos var6 = new BlockPos(-1, -1, -1);
       BlockPos var7 = Class8969.method32905(var5.method8337(var6), Mirror.field13614, var0.method28821(), var5);
       var4.setBlockState(var7, Blocks.BEACON.getDefaultState().rotate(var0.method28821()));
-      BlockPos var8 = var7.method8336(0, 1, 0);
+      BlockPos var8 = var7.add(0, 1, 0);
       var4.setBlockState(var8, var1.getDefaultState());
 
       for (int var9 = -1; var9 <= 1; var9++) {
          for (int var10 = -1; var10 <= 1; var10++) {
-            BlockPos var11 = var7.method8336(var9, -1, var10);
+            BlockPos var11 = var7.add(var9, -1, var10);
             var4.setBlockState(var11, Blocks.field36522.getDefaultState());
          }
       }
@@ -128,8 +128,8 @@ public class Class7440 {
 
    public static void method24040(ServerWorld var0, BlockPos var1, Class7879 var2, int var3) {
       var2.method26416();
-      BlockPos var6 = var1.method8336(-var3, 0, -var3);
-      BlockPos var7 = var1.method8336(var3, 0, var3);
+      BlockPos var6 = var1.add(-var3, 0, -var3);
+      BlockPos var7 = var1.add(var3, 0, var3);
       BlockPos.method8360(var6, var7).filter(var1x -> var0.getBlockState(var1x).isIn(Blocks.field37113)).forEach(var1x -> {
          Class964 var4 = (Class964)var0.getTileEntity(var1x);
          BlockPos var5 = var4.getPos();

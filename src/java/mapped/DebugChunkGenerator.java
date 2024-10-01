@@ -12,6 +12,7 @@ import net.minecraft.world.IWorld;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeManager;
 import net.minecraft.world.biome.Biomes;
+import net.minecraft.world.biome.provider.SingleBiomeProvider;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.gen.WorldGenRegion;
 import net.minecraft.world.gen.feature.structure.StructureManager;
@@ -37,7 +38,7 @@ public class DebugChunkGenerator extends ChunkGenerator {
    private final Registry<Biome> field24997;
 
    public DebugChunkGenerator(Registry<Biome> var1) {
-      super(new Class1688(var1.getOrThrow(Biomes.PLAINS)), new DimensionStructuresSettings(false));
+      super(new SingleBiomeProvider(var1.getOrThrow(Biomes.PLAINS)), new DimensionStructuresSettings(false));
       this.field24997 = var1;
    }
 

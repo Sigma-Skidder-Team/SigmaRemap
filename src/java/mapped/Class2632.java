@@ -9,6 +9,7 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.ChunkStatus;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.server.ServerWorld;
 
@@ -160,6 +161,6 @@ public class Class2632 extends Class2628 {
          ? false
          : var5.getBlockState(var2).isIn(this.field16945)
             && var5.getBlockState(var2.up()).isAir()
-            && var5.getBlockState(var2.method8339(2)).isAir();
+            && var5.getBlockState(var2.up(2)).isAir();
    }
 }

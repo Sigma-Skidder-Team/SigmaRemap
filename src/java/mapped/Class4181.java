@@ -76,7 +76,7 @@ public class Class4181 extends Class4180 {
       Heightmap.Type var13 = !this.field20457 ? Heightmap.Type.OCEAN_FLOOR_WG : Heightmap.Type.WORLD_SURFACE_WG;
       int var14 = var12.getX() * var12.getZ();
       if (var14 != 0) {
-         BlockPos var15 = this.field20455.method8336(var12.getX() - 1, 0, var12.getZ() - 1);
+         BlockPos var15 = this.field20455.add(var12.getX() - 1, 0, var12.getZ() - 1);
 
          for (BlockPos var17 : BlockPos.method8359(this.field20455, var15)) {
             int var18 = var1.method6736(var13, var17.getX(), var17.getZ());

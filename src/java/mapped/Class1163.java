@@ -27,7 +27,7 @@ public class Class1163 extends Class1161 {
 
    private void method5563(MatrixStack var1, int var2, int var3, int var4, int var5, int var6) {
       int var9 = var4 + 8;
-      byte var10 = 0;
+      int var10 = 0;
       boolean var11 = false;
       if (var3 <= var5 && var5 <= (int) RealmsMainScreen.method2156(this.field6319).method6044() && var4 <= var6 && var6 <= var4 + 32) {
          var11 = true;

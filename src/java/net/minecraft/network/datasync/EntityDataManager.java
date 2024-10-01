@@ -205,16 +205,16 @@ public class EntityDataManager {
 
    @Nullable
    public static List<DataEntry<?>> readEntries(PacketBuffer var0) throws IOException {
-      ArrayList var3 = null;
+      List<DataEntry<?>> var3 = null;
 
-      short var4;
+      int var4;
       while ((var4 = var0.readUnsignedByte()) != 255) {
          if (var3 == null) {
             var3 = Lists.newArrayList();
          }
 
          int var5 = var0.readVarInt();
-         Class6466 var6 = DataSerializers.method25805(var5);
+         Class6466<?> var6 = DataSerializers.method25805(var5);
          if (var6 == null) {
             throw new DecoderException("Unknown serializer type " + var5);
          }

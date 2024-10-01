@@ -6,6 +6,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import net.minecraft.world.biome.BiomeGenerationSettings;
 import net.minecraft.world.gen.carver.ConfiguredCarver;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
 
 import java.util.Collection;
 import java.util.List;
@@ -17,7 +18,7 @@ import java.util.function.Supplier;
 public class Class7935 {
    private Optional<Supplier<Class9319<?>>> field34020 = Optional.<Supplier<Class9319<?>>>empty();
    private final Map<GenerationStageCarving, List<Supplier<ConfiguredCarver<?>>>> field34021 = Maps.newLinkedHashMap();
-   private final List<List<Supplier<Class7909<?, ?>>>> field34022 = Lists.newArrayList();
+   private final List<List<Supplier<ConfiguredFeature<?, ?>>>> field34022 = Lists.newArrayList();
    private final List<Supplier<StructureFeature<?, ?>>> field34023 = Lists.newArrayList();
 
    public Class7935 method26688(Class9319<?> var1) {
@@ -29,11 +30,11 @@ public class Class7935 {
       return this;
    }
 
-   public Class7935 method26690(Class1993 var1, Class7909<?, ?> var2) {
+   public Class7935 method26690(Class1993 var1, ConfiguredFeature<?, ?> var2) {
       return this.method26691(var1.ordinal(), () -> var2);
    }
 
-   public Class7935 method26691(int var1, Supplier<Class7909<?, ?>> var2) {
+   public Class7935 method26691(int var1, Supplier<ConfiguredFeature<?, ?>> var2) {
       this.method26694(var1);
       this.field34022.get(var1).add(var2);
       return this;

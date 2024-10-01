@@ -109,7 +109,7 @@ public class Class3221 extends Block {
    }
 
    private static boolean method11612(IWorldReader var0, BlockPos var1) {
-      for (BlockPos var5 : BlockPos.method8359(var1.method8336(-4, 0, -4), var1.method8336(4, 1, 4))) {
+      for (BlockPos var5 : BlockPos.method8359(var1.add(-4, 0, -4), var1.add(4, 1, 4))) {
          if (var0.getFluidState(var5).method23486(FluidTags.field40469)) {
             return true;
          }

@@ -73,7 +73,7 @@ public class Class2608 extends Class2595 {
       Random var3 = this.field16860.getRNG();
       BlockPos var4 = this.field16860
          .world
-         .method7006(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, this.field16860.getPosition().method8336(-8 + var3.nextInt(16), 0, -8 + var3.nextInt(16)));
+         .method7006(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, this.field16860.getPosition().add(-8 + var3.nextInt(16), 0, -8 + var3.nextInt(16)));
       this.field16860.method4230().method21654((double)var4.getX(), (double)var4.getY(), (double)var4.getZ(), 1.0);
    }
 }

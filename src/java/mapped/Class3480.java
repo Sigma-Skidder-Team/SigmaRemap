@@ -109,7 +109,7 @@ public class Class3480 extends BushBlock implements Class3196 {
       for (int var7 = -1; var7 <= 1; var7++) {
          for (int var8 = -1; var8 <= 1; var8++) {
             float var9 = 0.0F;
-            BlockState var10 = var1.getBlockState(var6.method8336(var7, 0, var8));
+            BlockState var10 = var1.getBlockState(var6.add(var7, 0, var8));
             if (var10.isIn(Blocks.FARMLAND)) {
                var9 = 1.0F;
                if (var10.<Integer>get(Class3221.field18644) > 0) {

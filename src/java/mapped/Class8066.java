@@ -15,6 +15,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.ChunkStatus;
 import net.optifine.Config;
 
 import java.util.HashSet;
@@ -348,8 +349,8 @@ public class Class8066 {
    }
 
    private Class1664 method27737(BlockPos var1) {
-      BlockPos var4 = var1.method8336(-1, -1, -1);
-      BlockPos var5 = var1.method8336(16, 16, 16);
+      BlockPos var4 = var1.add(-1, -1, -1);
+      BlockPos var5 = var1.add(16, 16, 16);
       Class1677 var6 = this.method27738(Class9016.method33344(this.field34637), var4, var5, 1);
       return new Class1664(var6, var4, var5, 1);
    }

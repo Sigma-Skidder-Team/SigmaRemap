@@ -13,8 +13,6 @@ public class Class2880<T extends Class1058> extends Class2803<T> {
    private final ModelRenderer field17861;
 
    public Class2880() {
-      short var3 = 128;
-      short var4 = 128;
       this.field17856 = new ModelRenderer(this).setTextureSize(128, 128);
       this.field17856.setRotationPoint(0.0F, -7.0F, -2.0F);
       this.field17856.method22671(0, 0).addBox(-4.0F, -12.0F, -5.5F, 8.0F, 10.0F, 8.0F, 0.0F);

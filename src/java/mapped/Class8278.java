@@ -24,7 +24,7 @@ public class Class8278 implements Class8277 {
    }
 
    @Override
-   public BlockState method28934() {
+   public BlockState getTop() {
       return this.field35570;
    }
 

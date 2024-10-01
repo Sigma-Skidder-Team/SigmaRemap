@@ -43,11 +43,11 @@ public class Class842 extends Class838 {
          Shaders.method32948();
       }
 
-      byte var3 = 120;
-      byte var4 = 20;
+      int var3 = 120;
+      int var4 = 20;
       int var5 = this.width - var3 - 10;
-      byte var6 = 30;
-      byte var7 = 20;
+      int var6 = 30;
+      int var7 = 20;
       int var8 = this.width - var3 - 20;
       this.field4645 = new Class1299(this, var8, this.height, var6, this.height - 50, 16);
       this.children.add(this.field4645);

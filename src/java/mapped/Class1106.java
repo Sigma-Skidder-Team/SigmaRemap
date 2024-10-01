@@ -56,7 +56,6 @@ public class Class1106 extends Class1105 {
    @Override
    public void updateAITasks() {
       super.updateAITasks();
-      short var3 = 1200;
       if ((this.ticksExisted + this.getEntityId()) % 1200 == 0) {
          Effect var4 = Effects.MINING_FATIGUE;
          List<ServerPlayerEntity> var5 = ((ServerWorld)this.world).method6914(var1 -> this.getDistanceSq(var1) < 2500.0 && var1.interactionManager.method33865());

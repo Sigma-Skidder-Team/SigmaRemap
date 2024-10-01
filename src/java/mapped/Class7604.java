@@ -29,8 +29,6 @@ public class Class7604 implements Class7601 {
          List<Class9125> var8 = var2.method5915().fontRenderer.trimStringToWidth(var7.method34934(), 125);
          int var9 = var7.method34938() != Class1965.field12815 ? 16776960 : 16746751;
          if (var8.size() != 1) {
-            short var10 = 1500;
-            float var11 = 300.0F;
             if (var3 >= 1500L) {
                int var12 = MathHelper.floor(MathHelper.clamp((float)(var3 - 1500L) / 300.0F, 0.0F, 1.0F) * 252.0F) << 24 | 67108864;
                int var13 = this.method24899() / 2 - var8.size() * 9 / 2;

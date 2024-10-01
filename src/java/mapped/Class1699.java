@@ -164,7 +164,6 @@ public class Class1699 implements AutoCloseable {
                   var11.method25284(this.method7324(0.75F, 0.75F, 0.75F), 0.04F);
                   var11.method25274(0.0F, 1.0F);
                   var11.method25272(255.0F);
-                  short var30 = 255;
                   int var21 = (int)var11.method25269();
                   int var22 = (int)var11.method25270();
                   int var23 = (int)var11.method25271();

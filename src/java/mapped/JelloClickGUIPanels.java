@@ -11,7 +11,7 @@ import org.lwjgl.opengl.GL11;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JelloClickGUIPanels extends Class4304 {
+public class JelloClickGUIPanels extends AnimatedIconPanel {
    public final ModuleCategory category;
    public Class4341 field21194;
    public float field21195;

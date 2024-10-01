@@ -40,7 +40,7 @@ public abstract class Class3472 extends Class3471 {
             BlockState var7 = this.getDefaultState();
 
             for (int var8 = 0; var8 < 4; var8++) {
-               BlockPos var9 = var3.method8336(var4.nextInt(3) - 1, var4.nextInt(5) - 3, var4.nextInt(3) - 1);
+               BlockPos var9 = var3.add(var4.nextInt(3) - 1, var4.nextInt(5) - 3, var4.nextInt(3) - 1);
                if (var2.getBlockState(var9).isIn(Blocks.DIRT) && method12161(var7, var2, var9)) {
                   var2.setBlockState(var9, var7.with(field19323, Boolean.valueOf(var2.getBlockState(var9.up()).isIn(Blocks.SNOW))));
                }

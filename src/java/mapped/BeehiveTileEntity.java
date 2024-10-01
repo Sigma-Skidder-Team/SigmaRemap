@@ -38,7 +38,7 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
       if (this.world == null) {
          return false;
       } else {
-         for (BlockPos var4 : BlockPos.method8359(this.pos.method8336(-1, -1, -1), this.pos.method8336(1, 1, 1))) {
+         for (BlockPos var4 : BlockPos.method8359(this.pos.add(-1, -1, -1), this.pos.add(1, 1, 1))) {
             if (this.world.getBlockState(var4).getBlock() instanceof Class3399) {
                return true;
             }

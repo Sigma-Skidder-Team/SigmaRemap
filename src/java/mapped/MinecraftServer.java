@@ -19,6 +19,7 @@ import net.minecraft.crash.CrashReport;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.entity.player.SpawnLocationHelper;
 import net.minecraft.network.play.server.SServerDifficultyPacket;
 import net.minecraft.network.play.server.SUpdateTimePacket;
 import net.minecraft.resources.ResourcePackInfo;
@@ -45,6 +46,8 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeManager;
 import net.minecraft.world.biome.provider.BiomeProvider;
 import net.minecraft.world.chunk.listener.IChunkStatusListener;
+import net.minecraft.world.gen.feature.Features;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.server.TicketType;
@@ -246,7 +249,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       var18.method24557(var4.method20069());
       if (!var4.method20070()) {
          try {
-            method1282(var16, var4, var5.method26261(), var6, true);
+            func_240786_a_(var16, var4, var5.method26261(), var6, true);
             var4.method20071(true);
             if (var6) {
                this.func_240778_a_(this.field_240768_i_);
@@ -284,61 +287,80 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       }
    }
 
-   private static void method1282(ServerWorld var0, IServerWorldInfo var1, boolean var2, boolean var3, boolean var4) {
-      ChunkGenerator var7 = var0.getChunkProvider().method7370();
-      if (var4) {
-         if (!var3) {
-            BiomeProvider var8 = var7.getBiomeProvider();
-            Random var9 = new Random(var0.getSeed());
-            BlockPos var10 = var8.findBiomePosition(0, var0.method6776(), 0, 256, var0x -> var0x.getMobSpawnInfo().method31971(), var9);
-            ChunkPos var11 = var10 != null ? new ChunkPos(var10) : new ChunkPos(0, 0);
-            if (var10 == null) {
-               LOGGER.warn("Unable to find spawn biome");
+   private static void func_240786_a_(ServerWorld p_240786_0_, IServerWorldInfo p_240786_1_, boolean hasBonusChest, boolean p_240786_3_, boolean p_240786_4_) {
+      ChunkGenerator chunkgenerator = p_240786_0_.getChunkProvider().getChunkGenerator();
+
+      if (!p_240786_4_)
+      {
+         p_240786_1_.setSpawn(BlockPos.ZERO.up(chunkgenerator.getGroundHeight()), 0.0F);
+      }
+      else if (p_240786_3_)
+      {
+         p_240786_1_.setSpawn(BlockPos.ZERO.up(), 0.0F);
+      }
+      else
+      {
+         BiomeProvider biomeprovider = chunkgenerator.getBiomeProvider();
+         Random random = new Random(p_240786_0_.getSeed());
+         BlockPos blockpos = biomeprovider.findBiomePosition(0, p_240786_0_.getSeaLevel(), 0, 256, (p_244265_0_) ->
+         {
+            return p_244265_0_.getMobSpawnInfo().isValidSpawnBiomeForPlayer();
+         }, random);
+         ChunkPos chunkpos = blockpos == null ? new ChunkPos(0, 0) : new ChunkPos(blockpos);
+
+         if (blockpos == null)
+         {
+            LOGGER.warn("Unable to find spawn biome");
+         }
+
+         boolean flag = false;
+
+         for (Block block : BlockTags.VALID_SPAWN.getAllElements())
+         {
+            if (biomeprovider.getSurfaceBlocks().contains(block.getDefaultState()))
+            {
+               flag = true;
+               break;
             }
+         }
 
-            boolean var12 = false;
+         p_240786_1_.setSpawn(chunkpos.asBlockPos().add(8, chunkgenerator.getGroundHeight(), 8), 0.0F);
+         int i1 = 0;
+         int j1 = 0;
+         int i = 0;
+         int j = -1;
+         int k = 32;
 
-            for (Block var14 : BlockTags.field32780.method24918()) {
-               if (var8.method7206().contains(var14.getDefaultState())) {
-                  var12 = true;
+         for (int l = 0; l < 1024; ++l)
+         {
+            if (i1 > -16 && i1 <= 16 && j1 > -16 && j1 <= 16)
+            {
+               BlockPos blockpos1 = SpawnLocationHelper.func_241094_a_(p_240786_0_, new ChunkPos(chunkpos.x + i1, chunkpos.z + j1), flag);
+
+               if (blockpos1 != null)
+               {
+                  System.out.println("p_240786_1_.setSpawn(blockpos1, 0.0F)");
+                  p_240786_1_.setSpawn(blockpos1, 0.0F);
                   break;
                }
             }
 
-            var1.method20041(var11.method24364().method8336(8, var7.getGroundHeight(), 8), 0.0F);
-            int var20 = 0;
-            int var21 = 0;
-            int var15 = 0;
-            int var16 = -1;
-
-            for (int var18 = 0; var18 < 1024; var18++) {
-               if (var20 > -16 && var20 <= 16 && var21 > -16 && var21 <= 16) {
-                  BlockPos var19 = Class6878.method20941(var0, new ChunkPos(var11.x + var20, var11.z + var21), var12);
-                  if (var19 != null) {
-                     var1.method20041(var19, 0.0F);
-                     break;
-                  }
-               }
-
-               if (var20 == var21 || var20 < 0 && var20 == -var21 || var20 > 0 && var20 == 1 - var21) {
-                  int var23 = var15;
-                  var15 = -var16;
-                  var16 = var23;
-               }
-
-               var20 += var15;
-               var21 += var16;
+            if (i1 == j1 || i1 < 0 && i1 == -j1 || i1 > 0 && i1 == 1 - j1)
+            {
+               int k1 = i;
+               i = -j;
+               j = k1;
             }
 
-            if (var2) {
-               Class7909 var22 = Class9104.field41679;
-               var22.method26521(var0, var7, var0.rand, new BlockPos(var1.method20029(), var1.method20030(), var1.method20031()));
-            }
-         } else {
-            var1.method20041(BlockPos.ZERO.up(), 0.0F);
+            i1 += i;
+            j1 += j;
          }
-      } else {
-         var1.method20041(BlockPos.ZERO.method8339(var7.getGroundHeight()), 0.0F);
+
+         if (hasBonusChest)
+         {
+            ConfiguredFeature <? , ? > configuredfeature = Features.BONUS_CHEST;
+            configuredfeature.func_242765_a(p_240786_0_, chunkgenerator, p_240786_0_.rand, new BlockPos(p_240786_1_.getSpawnX(), p_240786_1_.getSpawnY(), p_240786_1_.getSpawnZ()));
+         }
       }
    }
 
@@ -357,7 +379,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       ServerWorld var4 = this.method1317();
       LOGGER.info("Preparing start region for dimension {}", var4.getDimensionKey().getLocation());
       BlockPos var5 = var4.method6947();
-      var1.method22736(new ChunkPos(var5));
+      var1.start(new ChunkPos(var5));
       ServerChunkProvider var6 = var4.getChunkProvider();
       var6.getLightManager().func_215598_a(500);
       this.serverTime = Util.milliTime();

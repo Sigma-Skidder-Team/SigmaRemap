@@ -1,7 +1,7 @@
 package net.minecraft.world.gen.feature.structure;
 
 import com.mojang.datafixers.DataFixUtils;
-import mapped.ChunkStatus;
+import net.minecraft.world.chunk.ChunkStatus;
 import mapped.DimensionGeneratorSettings;
 import mapped.Structure;
 import net.minecraft.util.math.BlockPos;

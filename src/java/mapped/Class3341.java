@@ -42,15 +42,15 @@ public class Class3341 extends Item {
          var4.playEvent(1503, var5, 0);
          Class9086 var8 = Class3400.method12029().method38656(var4, var5);
          if (var8 != null) {
-            BlockPos var9 = var8.method33878().method8336(-3, 0, -3);
+            BlockPos var9 = var8.method33878().add(-3, 0, -3);
 
             for (int var10 = 0; var10 < 3; var10++) {
                for (int var11 = 0; var11 < 3; var11++) {
-                  var4.setBlockState(var9.method8336(var10, 0, var11), Blocks.field36649.getDefaultState(), 2);
+                  var4.setBlockState(var9.add(var10, 0, var11), Blocks.field36649.getDefaultState(), 2);
                }
             }
 
-            var4.method6801(1038, var9.method8336(1, 0, 1), 0);
+            var4.method6801(1038, var9.add(1, 0, 1), 0);
          }
 
          return ActionResultType.field14819;
@@ -66,7 +66,7 @@ public class Class3341 extends Item {
       } else {
          var2.setActiveHand(var3);
          if (var1 instanceof ServerWorld) {
-            BlockPos var8 = ((ServerWorld)var1).getChunkProvider().method7370().func_235956_a_((ServerWorld)var1, Structure.STRONGHOLD, var2.getPosition(), 100, false);
+            BlockPos var8 = ((ServerWorld)var1).getChunkProvider().getChunkGenerator().func_235956_a_((ServerWorld)var1, Structure.STRONGHOLD, var2.getPosition(), 100, false);
             if (var8 != null) {
                Class897 var9 = new Class897(var1, var2.getPosX(), var2.getPosYHeight(0.5), var2.getPosZ());
                var9.method3522(var6);

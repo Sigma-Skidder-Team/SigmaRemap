@@ -63,16 +63,14 @@ public class Class1269 extends AbstractGui implements Class1270 {
             + this.field6744.fontRenderer.getStringWidth(" ");
 
          for (Class9113 var12 : this.field6745) {
-            short var13 = 255;
             ITextComponent var14 = var12.method33993();
             Vector3d var15 = var12.method33995().subtract(var4).method11333();
             double var16 = -var7.dotProduct(var15);
             double var18 = -var5.dotProduct(var15);
             boolean var20 = var18 > 0.5;
             int var21 = var9 / 2;
-            byte var22 = 9;
+            int var22 = 9;
             int var23 = var22 / 2;
-            float var24 = 1.0F;
             int var25 = this.field6744.fontRenderer.method38821(var14);
             int var26 = MathHelper.floor(MathHelper.method37779(255.0, 75.0, (double)((float)(Util.milliTime() - var12.method33994()) / 3000.0F)));
             int var27 = var26 << 16 | var26 << 8 | var26;

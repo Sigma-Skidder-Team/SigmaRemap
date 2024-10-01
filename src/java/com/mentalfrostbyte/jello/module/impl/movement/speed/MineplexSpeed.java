@@ -105,7 +105,7 @@ public class MineplexSpeed extends Module {
                 }
 
                 Vector3d var7 = new Vector3d(0.475 + Math.random() * 0.05, 1.0, 0.475 + Math.random() * 0.05);
-                BlockPos var8 = new BlockPos(mc.player.getPosition()).method8336(0, -1, 0);
+                BlockPos var8 = new BlockPos(mc.player.getPosition()).add(0, -1, 0);
                 BlockRayTraceResult var9 = new BlockRayTraceResult(var7, Direction.UP, var8, false);
                 CPlayerTryUseItemOnBlockPacket var10 = new CPlayerTryUseItemOnBlockPacket(Hand.MAIN_HAND, var9);
                 mc.getConnection().sendPacket(var10);
