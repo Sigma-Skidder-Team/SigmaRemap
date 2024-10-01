@@ -138,7 +138,12 @@ public class Framebuffer {
       }
       else
       {
-         this.framebufferObject = GlStateManager.genFramebuffers();
+         int thing = GlStateManager.genFramebuffers();
+         if (thing == 1) {
+            this.framebufferObject = 7;
+         } else {
+            this.framebufferObject = thing;
+         }
          this.framebufferTexture = TextureUtil.generateTextureId();
 
          if (this.useDepth)
@@ -268,6 +273,7 @@ public class Framebuffer {
 
    private void bindFramebufferRaw(boolean setViewportIn) {
       if (this.framebufferObject <= 0) {
+         resize(this.framebufferWidth, this.framebufferHeight, Minecraft.IS_RUNNING_ON_MAC);
          return;
       }
 

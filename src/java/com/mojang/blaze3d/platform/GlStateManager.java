@@ -585,18 +585,18 @@ public class GlStateManager {
 
    public static int getFrameBufferAttachmentParam() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
-      switch (Class9579.field44781[fboMode.ordinal()]) {
-         case 1:
+      switch (fboMode) {
+         case BASE:
             if (GL30.glGetFramebufferAttachmentParameteri(36160, 36096, 36048) == 5890) {
                return GL30.glGetFramebufferAttachmentParameteri(36160, 36096, 36049);
             }
             break;
-         case 2:
+         case ARB:
             if (ARBFramebufferObject.glGetFramebufferAttachmentParameteri(36160, 36096, 36048) == 5890) {
                return ARBFramebufferObject.glGetFramebufferAttachmentParameteri(36160, 36096, 36049);
             }
             break;
-         case 3:
+         case EXT:
             if (EXTFramebufferObject.glGetFramebufferAttachmentParameteriEXT(36160, 36096, 36048) == 5890) {
                return EXTFramebufferObject.glGetFramebufferAttachmentParameteriEXT(36160, 36096, 36049);
             }
@@ -607,38 +607,37 @@ public class GlStateManager {
 
    public static void blitFramebuffer(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
-      switch (Class9579.field44782[supportType.ordinal()]) {
-         case 1:
+      switch (supportType) {
+         case BASE:
             GL30.glBlitFramebuffer(var0, var1, var2, var3, var4, var5, var6, var7, var8, var9);
             break;
-         case 2:
+         case EXT:
             EXTFramebufferBlit.glBlitFramebufferEXT(var0, var1, var2, var3, var4, var5, var6, var7, var8, var9);
-         case 3:
       }
    }
 
    public static void deleteFramebuffers(int var0) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
-      switch (Class9579.field44781[fboMode.ordinal()]) {
-         case 1:
+      switch (fboMode) {
+         case BASE:
             GL30.glDeleteFramebuffers(var0);
             break;
-         case 2:
+         case ARB:
             ARBFramebufferObject.glDeleteFramebuffers(var0);
             break;
-         case 3:
+         case EXT:
             EXTFramebufferObject.glDeleteFramebuffersEXT(var0);
       }
    }
 
    public static int genFramebuffers() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
-      switch (Class9579.field44781[fboMode.ordinal()]) {
-         case 1:
+      switch (fboMode) {
+         case BASE:
             return GL30.glGenFramebuffers();
-         case 2:
+         case ARB:
             return ARBFramebufferObject.glGenFramebuffers();
-         case 3:
+         case EXT:
             return EXTFramebufferObject.glGenFramebuffersEXT();
          default:
             return -1;
@@ -647,12 +646,12 @@ public class GlStateManager {
 
    public static int checkFramebufferStatus(int var0) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
-      switch (Class9579.field44781[fboMode.ordinal()]) {
-         case 1:
+      switch (fboMode) {
+         case BASE:
             return GL30.glCheckFramebufferStatus(var0);
-         case 2:
+         case ARB:
             return ARBFramebufferObject.glCheckFramebufferStatus(var0);
-         case 3:
+         case EXT:
             return EXTFramebufferObject.glCheckFramebufferStatusEXT(var0);
          default:
             return -1;
@@ -661,14 +660,14 @@ public class GlStateManager {
 
    public static void framebufferTexture2D(int var0, int var1, int var2, int var3, int var4) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
-      switch (Class9579.field44781[fboMode.ordinal()]) {
-         case 1:
+      switch (fboMode) {
+         case BASE:
             GL30.glFramebufferTexture2D(var0, var1, var2, var3, var4);
             break;
-         case 2:
+         case ARB:
             ARBFramebufferObject.glFramebufferTexture2D(var0, var1, var2, var3, var4);
             break;
-         case 3:
+         case EXT:
             EXTFramebufferObject.glFramebufferTexture2DEXT(var0, var1, var2, var3, var4);
       }
    }
