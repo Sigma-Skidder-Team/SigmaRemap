@@ -413,7 +413,7 @@ public class GuiManager {
         }
 
         if (Client.getInstance().getModuleManager() != null) {
-            Client.getInstance().getModuleManager().method14668().method13734(null);
+            Client.getInstance().getModuleManager().getMacOSTouchBar().method13734(null);
         }
     }
 

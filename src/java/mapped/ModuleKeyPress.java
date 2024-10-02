@@ -18,7 +18,7 @@ public class ModuleKeyPress {
    public static void press(int key) {
       if (Client.getInstance().getClientMode() != ClientMode.NOADDONS) {
          if (key != -1) {
-            for (Class7957 var5 : Client.getInstance().getModuleManager().method14668().method13733(key)) {
+            for (Class7957 var5 : Client.getInstance().getModuleManager().getMacOSTouchBar().method13733(key)) {
                if (var5 != null && var5.method27052()) {
                   switch (Class8614.field38740[var5.method27055().ordinal()]) {
                      case 1:

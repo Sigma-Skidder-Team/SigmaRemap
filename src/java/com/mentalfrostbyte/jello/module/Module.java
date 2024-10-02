@@ -245,7 +245,7 @@ public abstract class Module {
             }
         }
 
-        Client.getInstance().getModuleManager().method14668().method13737(this);
+        Client.getInstance().getModuleManager().getMacOSTouchBar().method13737(this);
     }
 
     public void setEnabledBasic(boolean enabled) {
@@ -291,7 +291,7 @@ public abstract class Module {
             }
         }
 
-        Client.getInstance().getModuleManager().method14668().method13737(this);
+        Client.getInstance().getModuleManager().getMacOSTouchBar().method13737(this);
     }
 
     public void toggle() {

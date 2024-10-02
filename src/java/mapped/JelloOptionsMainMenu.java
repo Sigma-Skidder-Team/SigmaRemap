@@ -45,7 +45,7 @@ public class JelloOptionsMainMenu extends IconPanel {
          MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.4F * var1)
       );
       String var5 = "Click GUI is currently bound to: "
-         + MultiUtilities.method17736(Client.getInstance().getModuleManager().method14668().method13728(ClickGui.class))
+         + MultiUtilities.method17736(Client.getInstance().getModuleManager().getMacOSTouchBar().method13728(ClickGui.class))
          + " Key";
       RenderUtil.drawString(
          ResourceRegistry.JelloLightFont20,

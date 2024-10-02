@@ -21,13 +21,13 @@ import totalcross.json.JSONObject;
 
 import java.util.*;
 
-public class Class4378 {
-   public JTouchBar field21386;
+public class MacOSTouchBar {
+   public JTouchBar touchBar;
    private LinkedHashSet<Class7957> field21387 = new LinkedHashSet<Class7957>();
    public boolean field21388 = false;
    public HashMap<Module, TouchBarButton> field21389 = new HashMap<Module, TouchBarButton>();
 
-   public Class4378() {
+   public MacOSTouchBar() {
       Client.getInstance().getEventManager().register(this);
       if (FileUtil.field25727) {
          this.field21387.add(new Class7957(344, ClickGui.class));
@@ -42,14 +42,14 @@ public class Class4378 {
       this.method13727(var2);
       Class7957 var5 = new Class7957(var1, var2);
       this.field21387.add(var5);
-      this.method13736();
+      this.displayKeybindsInfo();
    }
 
    public void method13726(int var1, Class<? extends Screen> var2) {
       this.method13727(var2);
       Class7957 var5 = new Class7957(var1, var2);
       this.field21387.add(var5);
-      this.method13736();
+      this.displayKeybindsInfo();
    }
 
    public void method13727(Object var1) {
@@ -141,13 +141,13 @@ public class Class4378 {
    @EventTarget
    public void method13734(TickEvent var1) {
       if (Minecraft.getInstance().world == null && this.field21388) {
-         this.method13738();
+         this.init();
       } else if (Minecraft.getInstance().world != null && !this.field21388) {
-         this.method13736();
+         this.displayKeybindsInfo();
       }
    }
 
-   public boolean method13735() {
+   public boolean isValidMacOS() {
       return Minecraft.IS_RUNNING_ON_MAC
          && Client.getInstance().getClientMode() == ClientMode.JELLO
          && (
@@ -159,29 +159,29 @@ public class Class4378 {
          );
    }
 
-   public void method13736() {
-      if (this.method13735()) {
-         if (this.field21386 != null) {
-            this.field21386.hide(GLFWNativeCocoa.glfwGetCocoaWindow(Minecraft.getInstance().mainWindow.getHandle()));
+   public void displayKeybindsInfo() {
+      if (this.isValidMacOS()) {
+         if (this.touchBar != null) {
+            this.touchBar.hide(GLFWNativeCocoa.glfwGetCocoaWindow(Minecraft.getInstance().mainWindow.getHandle()));
          }
 
-         this.field21386 = new JTouchBar();
-         this.field21386.setCustomizationIdentifier("JelloTouch");
+         this.touchBar = new JTouchBar();
+         this.touchBar.setCustomizationIdentifier("JelloTouch");
          this.method13739();
-         if (this.field21386.getItems().size() == 0) {
+         if (this.touchBar.getItems().isEmpty()) {
             TouchBarTextField var3 = new TouchBarTextField();
             var3.setStringValue(" Jello for Sigma 5.0   -   Open the keybind manager to add keybinds here!");
-            this.field21386.addItem(new TouchBarItem("Jello", var3, true));
+            this.touchBar.addItem(new TouchBarItem("Jello", var3, true));
          }
 
-         this.field21386.show(GLFWNativeCocoa.glfwGetCocoaWindow(Minecraft.getInstance().mainWindow.getHandle()));
+         this.touchBar.show(GLFWNativeCocoa.glfwGetCocoaWindow(Minecraft.getInstance().mainWindow.getHandle()));
          this.field21388 = true;
       }
    }
 
    public void method13737(Module var1) {
-      if (this.field21386 != null) {
-         for (TouchBarItem var5 : this.field21386.getItems()) {
+      if (this.touchBar != null) {
+         for (TouchBarItem var5 : this.touchBar.getItems()) {
             if (var5.getView() instanceof TouchBarButton && var1.getName().equals(var5.getIdentifier())) {
                ((TouchBarButton)var5.getView()).setBezelColor(this.method13740(var1));
                new Thread(() -> {
@@ -196,24 +196,24 @@ public class Class4378 {
       }
    }
 
-   public void method13738() {
-      if (this.method13735()) {
-         if (this.field21386 != null) {
-            this.field21386.hide(GLFWNativeCocoa.glfwGetCocoaWindow(Minecraft.getInstance().mainWindow.getHandle()));
+   public void init() {
+      if (this.isValidMacOS()) {
+         if (this.touchBar != null) {
+            this.touchBar.hide(GLFWNativeCocoa.glfwGetCocoaWindow(Minecraft.getInstance().mainWindow.getHandle()));
          }
 
-         this.field21386 = new JTouchBar();
-         this.field21386.setCustomizationIdentifier("JelloTouch");
-         TouchBarTextField var3 = new TouchBarTextField();
-         var3.setStringValue(" Jello for Sigma 5.0   -   © SIGMA Prod");
-         this.field21386.addItem(new TouchBarItem("Jello", var3, true));
-         this.field21386.show(GLFWNativeCocoa.glfwGetCocoaWindow(Minecraft.getInstance().mainWindow.getHandle()));
+         this.touchBar = new JTouchBar();
+         this.touchBar.setCustomizationIdentifier("JelloTouch");
+         TouchBarTextField textField = new TouchBarTextField();
+         textField.setStringValue(" Jello for Sigma 5.0   -   © SIGMA Prod");
+         this.touchBar.addItem(new TouchBarItem("Jello", textField, true));
+         this.touchBar.show(GLFWNativeCocoa.glfwGetCocoaWindow(Minecraft.getInstance().mainWindow.getHandle()));
          this.field21388 = false;
       }
    }
 
    public void method13739() {
-      this.field21386.getItems().clear();
+      this.touchBar.getItems().clear();
       this.field21389.clear();
 
       for (Class7957 var4 : this.field21387) {
@@ -224,7 +224,7 @@ public class Class4378 {
             var5.setType(TouchBarButton$ButtonType.TOGGLE);
             var5.setAction(new Class2544(this, var4));
             this.field21389.put(var4.method27058(), var5);
-            this.field21386.addItem(new TouchBarItem(var4.method27058().getName(), var5, true));
+            this.touchBar.addItem(new TouchBarItem(var4.method27058().getName(), var5, true));
          }
       }
    }

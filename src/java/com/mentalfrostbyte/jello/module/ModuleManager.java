@@ -34,7 +34,7 @@ import java.util.*;
 public class ModuleManager {
     private final Map<Class<? extends Module>, Module> moduleMap = new LinkedHashMap<>();
     private Class6814 profile;
-    private Class4378 field22248;
+    private MacOSTouchBar macOSTouchBar;
     private List<Module> modules;
 
     private void createModules() {
@@ -323,18 +323,18 @@ public class ModuleManager {
         }
 
         this.profile = new Class6814();
-        this.field22248 = new Class4378();
+        this.macOSTouchBar = new MacOSTouchBar();
 
         try {
             this.profile.loadProfile(var4);
-            this.field22248.method13732(var1);
+            this.macOSTouchBar.method13732(var1);
         } catch (IOException var6) {
             Client.getInstance().getLogger().error("Could not load profiles!");
             var6.printStackTrace();
             throw new RuntimeException("sorry m8");
         }
 
-        this.field22248.method13738();
+        this.macOSTouchBar.init();
     }
 
     public void method14660(JSONObject var1) {
@@ -343,7 +343,7 @@ public class ModuleManager {
 
         try {
             this.profile.saveAndReplaceConfigs();
-            this.field22248.method13731(var1);
+            this.macOSTouchBar.method13731(var1);
         } catch (IOException var5) {
             var5.printStackTrace();
             Client.getInstance().getLogger().warn("Unable to save mod profiles...");
@@ -394,7 +394,7 @@ public class ModuleManager {
         return this.profile;
     }
 
-    public Class4378 method14668() {
-        return this.field22248;
+    public MacOSTouchBar getMacOSTouchBar() {
+        return this.macOSTouchBar;
     }
 }

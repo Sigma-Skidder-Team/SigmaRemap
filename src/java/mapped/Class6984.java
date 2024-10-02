@@ -27,15 +27,15 @@ public class Class6984 {
 
    public void method21598(int var1) {
       if (this.field30212 == null) {
-         Client.getInstance().getModuleManager().method14668().method13726(var1, this.field30213);
+         Client.getInstance().getModuleManager().getMacOSTouchBar().method13726(var1, this.field30213);
       } else {
-         Client.getInstance().getModuleManager().method14668().method13725(var1, this.field30212);
+         Client.getInstance().getModuleManager().getMacOSTouchBar().method13725(var1, this.field30212);
       }
    }
 
    public int method21599() {
       return this.field30212 == null
-         ? Client.getInstance().getModuleManager().method14668().method13728(this.field30213)
-         : Client.getInstance().getModuleManager().method14668().method13729(this.field30212);
+         ? Client.getInstance().getModuleManager().getMacOSTouchBar().method13728(this.field30213)
+         : Client.getInstance().getModuleManager().getMacOSTouchBar().method13729(this.field30212);
    }
 }

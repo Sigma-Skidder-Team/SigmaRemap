@@ -54,7 +54,6 @@ public class Class1782 extends InputStream {
       } else {
          while (this.field9619 < this.field9620 || this.field9618.method7704().length <= this.field9620) {
             try {
-               Thread.sleep(100L);
                if (this.field9621) {
                   return -1;
                }
@@ -80,7 +79,6 @@ public class Class1782 extends InputStream {
    public int read(byte[] var1, int var2, int var3) throws IOException {
       while (this.field9619 < this.field9620 + var3) {
          try {
-            Thread.sleep(100L);
             if (this.field9621) {
                return -1;
             }
