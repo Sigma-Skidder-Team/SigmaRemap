@@ -350,16 +350,11 @@ public class Client {
             if (mode == ClientMode.JELLO) {
                 this.initRPC();
                 GLFW.glfwSetWindowTitle(mc.mainWindow.getHandle(), "Jello for Sigma 5.0");
-                file = new File("sigma5");
             }
         } else {
             ClassicDecryption.init();
             getInstance().getGuiManager().method33452();
             GLFW.glfwSetWindowTitle(mc.mainWindow.getHandle(), "Classic Sigma 5.0");
-            file = new File("Sigma");
-            if (!this.file.exists()) {
-                this.file.mkdirs();
-            }
         }
 
         if (this.moduleManager == null && RandomModuleThread.field8341 != null) {

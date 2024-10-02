@@ -18,18 +18,8 @@ public class Class6814 {
    private final List<Configuration> savedConfigs = new ArrayList<>();
    private Configuration currentConfigs;
 
-   private static String configFolder;
-   private static String configFileExtension;
-
-   static {
-      if (Client.getInstance().getClientMode().equals(ClientMode.CLASSIC)) {
-         configFolder = "/Configs/";
-         configFileExtension = ".config";
-      } else {
-         configFolder = "/profiles/";
-         configFileExtension = ".profile";
-      }
-   }
+   private static final String configFolder = "/profiles/";
+   private static final String configFileExtension = ".profile";
 
    public void saveConfig(Configuration config) {
        try {

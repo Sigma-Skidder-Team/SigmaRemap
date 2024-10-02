@@ -20,22 +20,15 @@ import totalcross.json.JSONException2;
 import totalcross.json.JSONObject;
 
 public class Config extends Command {
-   private String configFolder;
-   private String configFileExtension;
+   private static final String configFolder = "/profiles/";
+   private static final String configFileExtension = ".profile";
+
    private final ArrayList<String> saveCommands = new ArrayList<String>(Arrays.asList("add", "create", "new", "save"));
    private final ArrayList<String> deleteCommands = new ArrayList<String>(Arrays.asList("remove", "delete", "del", "rem"));
 
    public Config() {
       super("config", "Manage configs", "configs", "profiles", "profile");
       this.registerSubCommands("load", "save", "remove", "list");
-
-      if (Client.getInstance().getClientMode().equals(ClientMode.CLASSIC)) {
-         configFolder = "/Configs/";
-         configFileExtension = ".config";
-      } else {
-         configFolder = "/profiles/";
-         configFileExtension = ".profile";
-      }
    }
 
    @Override
