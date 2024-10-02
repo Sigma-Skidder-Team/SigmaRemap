@@ -137,7 +137,12 @@ public class MainmenuScreen2 extends IconPanel {
       this.field21133.doThis((var1x, var2x) -> {
          ((JelloMainMenuScreen)this.getIcoPanel()).method13341();
          new Thread(() -> {
-            Minecraft.getInstance().shutdown();
+             try {
+                 Thread.sleep(2000L);
+                 Minecraft.getInstance().shutdown();
+             } catch (InterruptedException e) {
+                 Minecraft.getInstance().shutdown();
+             }
          }).start();
       });
       this.addToList(this.loginButton = new Class4365(this, "Account", 0, var19, 0, var18, "Log in"));

@@ -140,7 +140,7 @@ public class Framebuffer {
       {
          int thing = GlStateManager.genFramebuffers();
          if (thing == 1) {
-            this.framebufferObject = 7;
+            return;
          } else {
             this.framebufferObject = thing;
          }
