@@ -230,6 +230,8 @@ public class BlockFlySmoothMode extends Module {
                 if (this.field23970 != 999.0F) {
                     var1.setPitch(this.field23970);
                     var1.setYaw(this.field23969);
+                    mc.player.rotationYawHead = var1.getYaw();
+                    mc.player.renderYawOffset = var1.getYaw();
                 }
 
                 if (mc.player.rotationYaw != var1.getPitch() && mc.player.rotationPitch != var1.getYaw()) {

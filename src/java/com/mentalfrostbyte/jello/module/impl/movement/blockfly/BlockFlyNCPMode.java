@@ -245,15 +245,20 @@ public class BlockFlyNCPMode extends Module {
                         this.field23921 = var12[1];
                         var1.setPitch(this.field23922);
                         var1.setYaw(this.field23921);
+                        mc.player.rotationYawHead = var1.getYaw();
+                        mc.player.renderYawOffset = var1.getYaw();
                     }
                 } else {
                     if (this.getBooleanValueFromSettingName("KeepRotations") && this.field23921 != 999.0F) {
                         var1.setPitch(this.field23922);
                         var1.setYaw(this.field23921);
+                        mc.player.rotationYawHead = var1.getYaw();
+                        mc.player.renderYawOffset = var1.getYaw();
                     }
 
                     this.field23923 = null;
                 }
+
 
                 if (mc.player.rotationYaw != var1.getPitch() && mc.player.rotationPitch != var1.getYaw()) {
                     this.field23925 = 0;

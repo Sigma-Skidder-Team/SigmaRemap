@@ -256,6 +256,8 @@ public class BlockFlyAACMode extends Module {
 
                 var1.setYaw(this.field23521);
                 var1.setPitch(this.field23520);
+                mc.player.rotationYawHead = var1.getYaw();
+                mc.player.renderYawOffset = var1.getYaw();
             }
         }
     }

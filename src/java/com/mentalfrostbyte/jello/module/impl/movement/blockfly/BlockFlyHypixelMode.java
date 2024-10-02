@@ -252,11 +252,15 @@ public class BlockFlyHypixelMode extends Module {
                             this.field23466 = var13[1];
                             var1.setPitch(this.field23467);
                             var1.setYaw(this.field23466);
+                            mc.player.rotationYawHead = var1.getYaw();
+                            mc.player.renderYawOffset = var1.getYaw();
                         }
                     } else {
                         if (this.getBooleanValueFromSettingName("KeepRotations") && this.field23466 != 999.0F) {
                             var1.setPitch(mc.player.rotationYaw + 1.0F);
                             var1.setYaw(90.0F);
+                            mc.player.rotationYawHead = var1.getYaw();
+                            mc.player.renderYawOffset = var1.getYaw();
                         }
 
                         this.field23468 = null;
