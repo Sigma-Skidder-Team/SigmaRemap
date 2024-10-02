@@ -140,9 +140,9 @@ public class Class8958 {
          IServerConfiguration var45 = var39;
          DedicatedServer var46 = MinecraftServer.<DedicatedServer>func_240784_a_(var16x -> {
             DedicatedServer var19x = new DedicatedServer(var16x, var19, var31, var34, var37, var45, var21, DataFixesManager.getDataFixer(), var26, var27, var28, LoggingChunkStatusListener::new);
-            var19x.method1333((String)var18.valueOf(var12));
+            var19x.setServerOwner((String)var18.valueOf(var12));
             var19x.setServerPort((Integer)var18.valueOf(var15));
-            var19x.method1343(var18.has(var6));
+            var19x.setDemo(var18.has(var6));
             var19x.method1314((String)var18.valueOf(var16));
             boolean var20x = !var18.has(var4) && !var18.valuesOf(var17).contains("nogui");
             if (var20x && !GraphicsEnvironment.isHeadless()) {

@@ -1,17 +1,21 @@
-package mapped;
+package net.minecraft.server.integrated;
 
 import com.mojang.authlib.GameProfile;
 import java.net.SocketAddress;
 
+import mapped.Class6395;
+import mapped.Class8716;
+import mapped.DynamicRegistriesImpl;
+import mapped.IntegratedServer;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class Class6396 extends Class6395 {
+public class IntegratedPlayerList extends Class6395 {
    private CompoundNBT field28007;
 
-   public Class6396(IntegratedServer var1, DynamicRegistriesImpl var2, Class8716 var3) {
+   public IntegratedPlayerList(IntegratedServer var1, DynamicRegistriesImpl var2, Class8716 var3) {
       super(var1, var2, var3, 8);
       this.method19487(10);
    }

@@ -557,7 +557,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
                this.method1428(var51);
                this.profiler.startTick();
                this.profiler.startSection("tick");
-               this.method1310(this::method1298);
+               this.method1310(this::isAheadOfTime);
                this.profiler.endStartSection("nextTickWait");
                this.isRunningScheduledTasks = true;
                this.runTasksUntil = Math.max(Util.milliTime() + 50L, this.serverTime);
@@ -601,13 +601,13 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       }
    }
 
-   private boolean method1298() {
-      return this.method1628() || Util.milliTime() < (!this.isRunningScheduledTasks ? this.serverTime : this.runTasksUntil);
+   private boolean isAheadOfTime() {
+      return this.isTaskRunning() || Util.milliTime() < (!this.isRunningScheduledTasks ? this.serverTime : this.runTasksUntil);
    }
 
    public void runScheduledTasks() {
       this.drainTasks();
-      this.driveUntil(() -> !this.method1298());
+      this.driveUntil(() -> !this.isAheadOfTime());
    }
 
    public Class567 wrapTask(Runnable var1) {
@@ -615,7 +615,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    }
 
    public boolean canRun(Class567 var1) {
-      return var1.method1895() + 3 < this.tickCounter || this.method1298();
+      return var1.method1895() + 3 < this.tickCounter || this.isAheadOfTime();
    }
 
    @Override
@@ -629,7 +629,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       if (super.method1302()) {
          return true;
       } else {
-         if (this.method1298()) {
+         if (this.isAheadOfTime()) {
             for (ServerWorld var4 : this.method1320()) {
                if (var4.getChunkProvider().method7362()) {
                   return true;
@@ -888,7 +888,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       return this.serverOwner;
    }
 
-   public void method1333(String var1) {
+   public void setServerOwner(String var1) {
       this.serverOwner = var1;
    }
 
@@ -942,7 +942,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       return this.isDemo;
    }
 
-   public void method1343(boolean var1) {
+   public void setDemo(boolean var1) {
       this.isDemo = var1;
    }
 

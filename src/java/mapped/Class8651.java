@@ -111,8 +111,9 @@ public class Class8651 {
    @Nullable
    public static ArgumentType<?> method31100(PacketBuffer var0) {
       ResourceLocation var3 = var0.readResourceLocation();
-      Class8678 var4 = method31097(var3);
+      Class8678<?> var4 = method31097(var3);
       if (var4 != null) {
+         System.out.println(var3);
          return var4.field39147.method10795(var0);
       } else {
          field38986.error("Could not deserialize {}", var3);

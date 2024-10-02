@@ -9,10 +9,10 @@ public abstract class RecursiveEventLoop<R extends Runnable> extends Class318<R>
 
    @Override
    public boolean method1390() {
-      return this.method1628() || super.method1390();
+      return this.isTaskRunning() || super.method1390();
    }
 
-   public boolean method1628() {
+   public boolean isTaskRunning() {
       return this.field1376 != 0;
    }
 

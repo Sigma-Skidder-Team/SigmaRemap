@@ -40,7 +40,7 @@ public class Class319 extends Class318<Runnable> {
    }
 
    @Override
-   public void method1640() {
+   public void threadYieldPark() {
       LockSupport.park("waiting for tasks");
    }
 

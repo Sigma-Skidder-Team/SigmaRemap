@@ -115,7 +115,7 @@ public abstract class Class318<R extends Runnable> implements Class321<R>, Execu
       try {
          while (!var1.getAsBoolean()) {
             if (!this.method1302()) {
-               this.method1640();
+               this.threadYieldPark();
             }
          }
       } finally {
@@ -123,7 +123,7 @@ public abstract class Class318<R extends Runnable> implements Class321<R>, Execu
       }
    }
 
-   public void method1640() {
+   public void threadYieldPark() {
       Thread.yield();
       LockSupport.parkNanos("waiting for tasks", 100000L);
    }
