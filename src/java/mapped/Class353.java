@@ -18,7 +18,7 @@ public class Class353 extends Thread {
 
       try {
          Class1992 var4 = var3.method14554();
-         if (var4 != Class1992.field12994) {
+         if (var4 != Class1992.COMPATIBLE) {
             return;
          }
       } catch (RealmsServiceException var5) {

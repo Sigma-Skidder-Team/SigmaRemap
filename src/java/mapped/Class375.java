@@ -19,13 +19,8 @@ public class Class375 extends Thread {
 
       try {
          Class1992 var4 = var3.method14554();
-         if (var4 == Class1992.field12995) {
-            RealmsMainScreen.field4268 = new Class809(RealmsMainScreen.method2079(this.field1629), true);
-            RealmsMainScreen.method2080(this.field1629).execute(() -> RealmsMainScreen.method2090(this.field1629).displayGuiScreen(RealmsMainScreen.field4268));
-            return;
-         }
 
-         if (var4 == Class1992.field12996) {
+         if (var4 == Class1992.OTHER) {
             RealmsMainScreen.field4268 = new Class809(RealmsMainScreen.method2079(this.field1629), false);
             RealmsMainScreen.method2081(this.field1629).execute(() -> RealmsMainScreen.method2089(this.field1629).displayGuiScreen(RealmsMainScreen.field4268));
             return;

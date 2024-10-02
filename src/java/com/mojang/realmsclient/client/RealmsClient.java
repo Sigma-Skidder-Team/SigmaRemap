@@ -110,7 +110,7 @@ public class RealmsClient {
 
    public Class1992 method14554() throws RealmsServiceException {
       String var3 = this.method14584("mco/client/compatible");
-      String var4 = this.method14586(Class6754.method20599(var3));
+      String var4 = "COMPATIBLE";
 
       try {
          return Class1992.valueOf(var4);
