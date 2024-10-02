@@ -15,7 +15,7 @@ public class Class5744 extends Class5651<Class1099, BipedModel<Class1099>> {
    }
 
    public void method17857(Class1099 var1, MatrixStack var2, float var3) {
-      var2.method35292(this.field25168, this.field25168, this.field25168);
+      var2.scale(this.field25168, this.field25168, this.field25168);
    }
 
    public ResourceLocation method17843(Class1099 var1) {

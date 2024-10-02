@@ -63,6 +63,7 @@ import net.minecraft.realms.RealmsScreen;
 import net.minecraft.scoreboard.ScorePlayerTeam;
 import net.minecraft.scoreboard.Scoreboard;
 import net.minecraft.scoreboard.Team;
+import net.minecraft.tileentity.BannerTileEntity;
 import net.minecraft.tileentity.CommandBlockTileEntity;
 import net.minecraft.tileentity.JigsawTileEntity;
 import net.minecraft.tileentity.TileEntity;
@@ -1088,7 +1089,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          || var7
          || var6 == 3 && var5 instanceof Class950
          || var6 == 4 && var5 instanceof SkullTileEntity
-         || var6 == 6 && var5 instanceof Class958
+         || var6 == 6 && var5 instanceof BannerTileEntity
          || var6 == 7 && var5 instanceof Class964
          || var6 == 8 && var5 instanceof Class957
          || var6 == 9 && var5 instanceof Class954

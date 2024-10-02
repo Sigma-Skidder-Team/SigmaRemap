@@ -134,7 +134,7 @@ public class SCommandListPacket implements IPacket<IClientPlayNetHandler> {
    }
 
    private static void method17657(PacketBuffer var0, CommandNode<Class6618> var1, Map<CommandNode<Class6618>, Integer> var2) {
-      byte var5 = 0;
+      int var5 = 0;
       if (var1.getRedirect() != null) {
          var5 = (byte)(var5 | 8);
       }

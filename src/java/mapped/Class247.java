@@ -17,7 +17,7 @@ public class Class247<T extends LivingEntity> extends Class219<T, Class2826<T>> 
          this.field903.setLivingAnimations((T)var4, var5, var6, var7);
          this.field903.setRotationAngles((T)var4, var5, var6, var8, var9, var10);
          IVertexBuilder var13 = var2.method25597(RenderType.getEntityTranslucent(this.method826((T)var4)));
-         this.field903.method11016(var1, var13, var3, LivingRenderer.method17883(var4, 0.0F), 1.0F, 1.0F, 1.0F, 1.0F);
+         this.field903.render(var1, var13, var3, LivingRenderer.method17883(var4, 0.0F), 1.0F, 1.0F, 1.0F, 1.0F);
       }
    }
 }

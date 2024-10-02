@@ -1,12 +1,12 @@
-package mapped;
+package net.minecraft.tileentity;
 
 import com.google.common.collect.Lists;
 import com.mojang.datafixers.util.Pair;
+import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextComponent$Serializer;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -16,18 +16,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
 
-public class Class958 extends TileEntity implements INameable {
+public class BannerTileEntity extends TileEntity implements INameable {
    private ITextComponent field5376;
    private Class112 field5377 = Class112.field386;
    private ListNBT field5378;
    private boolean field5379;
    private List<Pair<Class2154, Class112>> field5380;
 
-   public Class958() {
+   public BannerTileEntity() {
       super(TileEntityType.field21439);
    }
 
-   public Class958(Class112 var1) {
+   public BannerTileEntity(Class112 var1) {
       this();
       this.field5377 = var1;
    }
@@ -116,13 +116,13 @@ public class Class958 extends TileEntity implements INameable {
 
    public List<Pair<Class2154, Class112>> method3890() {
       if (this.field5380 == null && this.field5379) {
-         this.field5380 = method3891(this.method3894(this::getBlockState), this.field5378);
+         this.field5380 = getPatternColorData(this.method3894(this::getBlockState), this.field5378);
       }
 
       return this.field5380;
    }
 
-   public static List<Pair<Class2154, Class112>> method3891(Class112 var0, ListNBT var1) {
+   public static List<Pair<Class2154, Class112>> getPatternColorData(Class112 var0, ListNBT var1) {
       ArrayList var4 = Lists.newArrayList();
       var4.add(Pair.of(Class2154.field14082, var0));
       if (var1 != null) {

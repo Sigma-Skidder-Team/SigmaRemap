@@ -34,19 +34,19 @@ public class Class5718 extends EntityRenderer<Class1007> {
       var4.rotate(Vector3f.YP.rotationDegrees(-var9));
       var4.rotate(Vector3f.XP.rotationDegrees(var10 * 10.0F));
       var4.translate(0.0, 0.0, 1.0);
-      var4.method35292(-1.0F, -1.0F, 1.0F);
+      var4.scale(-1.0F, -1.0F, 1.0F);
       var4.translate(0.0, -1.501F, 0.0);
       boolean var11 = var1.hurtTime > 0;
       this.field25115.setLivingAnimations(var1, 0.0F, 0.0F, var3);
       if (var1.field5635 <= 0) {
          IVertexBuilder var12 = var5.method25597(field25110);
-         this.field25115.method11016(var4, var12, var6, OverlayTexture.method731(0.0F, var11), 1.0F, 1.0F, 1.0F, 1.0F);
+         this.field25115.render(var4, var12, var6, OverlayTexture.method731(0.0F, var11), 1.0F, 1.0F, 1.0F, 1.0F);
       } else {
          float var22 = (float)var1.field5635 / 200.0F;
          IVertexBuilder var13 = var5.method25597(RenderType.method14324(field25107, var22));
-         this.field25115.method11016(var4, var13, var6, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+         this.field25115.render(var4, var13, var6, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
          IVertexBuilder var14 = var5.method25597(field25111);
-         this.field25115.method11016(var4, var14, var6, OverlayTexture.method731(0.0F, var11), 1.0F, 1.0F, 1.0F, 1.0F);
+         this.field25115.render(var4, var14, var6, OverlayTexture.method731(0.0F, var11), 1.0F, 1.0F, 1.0F, 1.0F);
       }
 
       IVertexBuilder var23 = var5.method25597(field25112);
@@ -55,7 +55,7 @@ public class Class5718 extends EntityRenderer<Class1007> {
       }
 
       Config.method26874().field1020 = true;
-      this.field25115.method11016(var4, var23, var6, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+      this.field25115.render(var4, var23, var6, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
       Config.method26874().field1020 = false;
       if (Config.isShaders()) {
          Shaders.method33082();

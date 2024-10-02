@@ -1,22 +1,22 @@
-package mapped;
+package net.minecraft.item;
 
 import java.util.List;
 
+import mapped.*;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
 
-public class Class3334 extends Item {
-   public Class3334(Properties var1) {
+public class ShieldItem extends Item {
+   public ShieldItem(Properties var1) {
       super(var1);
       Class3357.method11931(this, ArmorItem.DISPENSER_BEHAVIOR);
    }
 
    @Override
    public String method11720(ItemStack var1) {
-      return var1.method32145("BlockEntityTag") == null ? super.method11720(var1) : this.getTranslationKey() + '.' + method11882(var1).method310();
+      return var1.method32145("BlockEntityTag") == null ? super.method11720(var1) : this.getTranslationKey() + '.' + getColor(var1).method310();
    }
 
    @Override
@@ -46,7 +46,7 @@ public class Class3334 extends Item {
       return Class5985.field26071.method24917(var2.getItem()) || super.method11699(var1, var2);
    }
 
-   public static Class112 method11882(ItemStack var0) {
+   public static Class112 getColor(ItemStack var0) {
       return Class112.method315(var0.method32144("BlockEntityTag").getInt("Base"));
    }
 }

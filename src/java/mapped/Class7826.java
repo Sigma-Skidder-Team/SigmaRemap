@@ -53,7 +53,7 @@ public class Class7826 {
    }
 
    public IVertexBuilder method26201(Class7733 var1, Function<ResourceLocation, RenderType> var2, boolean var3) {
-      return this.getSprite().method7474(ItemRenderer.method786(var1, this.method26199(var2), true, var3));
+      return this.getSprite().method7474(ItemRenderer.getEntityGlintVertexBuilder(var1, this.method26199(var2), true, var3));
    }
 
    @Override

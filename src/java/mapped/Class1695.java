@@ -55,7 +55,7 @@ public class Class1695 implements AutoCloseable {
             var1.push();
             var1.translate((double)(0.0F + (float)var14.method27127() / 2.0F + 64.0F), (double)(0.0F + (float)var14.method27128() / 2.0F + 64.0F), -0.02F);
             var1.rotate(Vector3f.ZP.rotationDegrees((float)(var14.method27129() * 360) / 16.0F));
-            var1.method35292(4.0F, 4.0F, 3.0F);
+            var1.scale(4.0F, 4.0F, 3.0F);
             var1.translate(-0.125, 0.125, 0.0);
             byte var15 = var14.method27125();
             float var16 = (float)(var15 % 16 + 0) / 16.0F;
@@ -97,7 +97,7 @@ public class Class1695 implements AutoCloseable {
                   (double)(0.0F + (float)var14.method27128() / 2.0F + 64.0F + 4.0F),
                   -0.025F
                );
-               var1.method35292(var26, var26, 1.0F);
+               var1.scale(var26, var26, 1.0F);
                var1.translate(0.0, 0.0, -0.1F);
                var23.method38812(var24, 0.0F, 0.0F, -1, false, var1.getLast().getMatrix(), var2, false, Integer.MIN_VALUE, var4);
                var1.pop();

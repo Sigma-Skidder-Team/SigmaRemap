@@ -20,7 +20,7 @@ public class Class5720 extends EntityRenderer<Class903> {
 
    public void render(Class903 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       var4.push();
-      var4.method35292(2.0F, 2.0F, 2.0F);
+      var4.scale(2.0F, 2.0F, 2.0F);
       var4.rotate(this.field25097.method32230());
       var4.rotate(Vector3f.YP.rotationDegrees(180.0F));
       Class8892 var9 = var4.getLast();

@@ -23,7 +23,7 @@ public class Class5733 extends Class5732<Class993> {
          var10 *= var10;
          var10 *= var10;
          float var11 = 1.0F + var10 * 0.3F;
-         var4.method35292(var11, var11, var11);
+         var4.scale(var11, var11, var11);
       }
 
       method17916(var3, var4, var5, var6, var9 > -1 && var9 / 5 % 2 == 0);

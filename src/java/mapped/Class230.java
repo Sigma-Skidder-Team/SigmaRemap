@@ -20,7 +20,7 @@ public class Class230 extends Class219<Class1058, Class2880<Class1058>> {
          var1.translate(-1.1875, 1.0625, -0.9375);
          var1.translate(0.5, 0.5, 0.5);
          float var14 = 0.5F;
-         var1.method35292(0.5F, 0.5F, 0.5F);
+         var1.scale(0.5F, 0.5F, 0.5F);
          var1.rotate(Vector3f.XP.rotationDegrees(-90.0F));
          var1.translate(-0.5, -0.5, -0.5);
          Minecraft.getInstance().getBlockRendererDispatcher().method814(Blocks.POPPY.getDefaultState(), var1, var2, var3, OverlayTexture.NO_OVERLAY);

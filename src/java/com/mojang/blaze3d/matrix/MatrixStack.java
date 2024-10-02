@@ -27,7 +27,7 @@ public class MatrixStack {
       Class8892.method32363(var9).method35521((float)var1, (float)var3, (float)var5);
    }
 
-   public void method35292(float var1, float var2, float var3) {
+   public void scale(float var1, float var2, float var3) {
       Class8892 var6 = this.field43311.getLast();
       Class8892.method32363(var6).method35522(var1, var2, var3);
       if (var1 == var2 && var2 == var3) {

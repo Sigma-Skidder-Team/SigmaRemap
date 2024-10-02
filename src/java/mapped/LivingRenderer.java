@@ -113,7 +113,7 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
 
          float var34 = this.method17871((T)var1, var3);
          this.method17842((T)var1, var4, var34, var9, var3);
-         var4.method35292(-1.0F, -1.0F, 1.0F);
+         var4.scale(-1.0F, -1.0F, 1.0F);
          this.method17857((T)var1, var4, var3);
          var4.translate(0.0, -1.501F, 0.0);
          float var35 = 0.0F;
@@ -164,7 +164,7 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
             }
 
             int var25 = method17883(var1, var24);
-            this.field25086.method11016(var4, var23, var6, var25, 1.0F, 1.0F, 1.0F, (!var20 ? 1.0F : 0.15F) * this.field25096);
+            this.field25086.render(var4, var23, var6, var25, 1.0F, 1.0F, 1.0F, (!var20 ? 1.0F : 0.15F) * this.field25096);
          }
 
          if (!var1.isSpectator() && var33.method13954()) {

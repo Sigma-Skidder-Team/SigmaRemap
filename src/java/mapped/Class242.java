@@ -22,7 +22,7 @@ public class Class242<T extends LivingEntity, M extends Class2827<T> & IHasArm> 
          if (this.method825().field17602) {
             float var16 = 0.5F;
             var1.translate(0.0, 0.75, 0.0);
-            var1.method35292(0.5F, 0.5F, 0.5F);
+            var1.scale(0.5F, 0.5F, 0.5F);
          }
 
          this.method838(var4, var15, ItemCameraTransformsTransformType.THIRD_PERSON_RIGHT_HAND, HandSide.RIGHT, var1, var2, var3);
@@ -39,7 +39,7 @@ public class Class242<T extends LivingEntity, M extends Class2827<T> & IHasArm> 
          var5.rotate(Vector3f.YP.rotationDegrees(180.0F));
          boolean var10 = var4 == HandSide.LEFT;
          var5.translate((double)((float)(!var10 ? 1 : -1) / 16.0F), 0.125, -0.625);
-         Minecraft.getInstance().getFirstPersonRenderer().method37580(var1, var2, var3, var10, var5, var6, var7);
+         Minecraft.getInstance().getFirstPersonRenderer().renderItemSide(var1, var2, var3, var10, var5, var6, var7);
          var5.pop();
       }
    }

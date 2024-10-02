@@ -21,7 +21,7 @@ public class Class5737 extends EntityRenderer<PaintingEntity> {
       var4.rotate(Vector3f.YP.rotationDegrees(180.0F - var2));
       Class9078 var9 = var1.field5496;
       float var10 = 0.0625F;
-      var4.method35292(0.0625F, 0.0625F, 0.0625F);
+      var4.scale(0.0625F, 0.0625F, 0.0625F);
       IVertexBuilder var11 = var5.method25597(RenderType.getEntitySolid(this.method17843(var1)));
       PaintingSpriteUploader var12 = Minecraft.getInstance().getPaintingSpriteUploader();
       this.method17919(var4, var11, var1, var9.method33825(), var9.method33826(), var12.method1020(var9), var12.method1021());

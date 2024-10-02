@@ -1,12 +1,13 @@
-package mapped;
+package net.minecraft.client.shader;
 
 import com.mojang.blaze3d.platform.GLX;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
+import mapped.BufferBuilder;
+import mapped.Tessellator;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.TextureUtil;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
-import net.minecraft.client.shader.FramebufferConstants;
 import net.optifine.reflect.ReflectorForge;
 
 import java.nio.IntBuffer;

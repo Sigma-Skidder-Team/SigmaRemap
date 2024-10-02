@@ -7,7 +7,7 @@ import net.minecraft.util.HandSide;
 
 public class EventHandAnimation extends CancellableEvent {
     private final boolean field21504;
-    private boolean field21505;
+    private boolean blocking;
     private final float field21506;
     private final float field21507;
     private final HandSide field21508;
@@ -21,7 +21,7 @@ public class EventHandAnimation extends CancellableEvent {
         this.field21508 = var4;
         this.field21509 = var5;
         this.field21510 = var6;
-        this.field21505 = true;
+        this.blocking = true;
     }
 
     public float method13924() {
@@ -48,11 +48,11 @@ public class EventHandAnimation extends CancellableEvent {
         return this.field21510;
     }
 
-    public boolean method13930() {
-        return this.field21505;
+    public boolean isBlocking() {
+        return this.blocking;
     }
 
-    public void method13931(boolean var1) {
-        this.field21505 = var1;
+    public void renderBlocking(boolean var1) {
+        this.blocking = var1;
     }
 }

@@ -42,11 +42,11 @@ public class Class5725 extends EntityRenderer<BoatEntity> {
          var4.rotate(new Quaternion(new Vector3f(1.0F, 0.0F, 1.0F), var1.method4168(var3), true));
       }
 
-      var4.method35292(-1.0F, -1.0F, 1.0F);
+      var4.scale(-1.0F, -1.0F, 1.0F);
       var4.rotate(Vector3f.YP.rotationDegrees(90.0F));
       this.field25132.setRotationAngles(var1, var3, 0.0F, -0.1F, 0.0F, 0.0F);
       IVertexBuilder var12 = var5.method25597(this.field25132.method11028(this.method17843(var1)));
-      this.field25132.method11016(var4, var12, var6, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+      this.field25132.render(var4, var12, var6, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
       if (!var1.canSwim()) {
          IVertexBuilder var13 = var5.method25597(RenderType.method14328());
          this.field25132.method11199().render(var4, var13, var6, OverlayTexture.NO_OVERLAY);

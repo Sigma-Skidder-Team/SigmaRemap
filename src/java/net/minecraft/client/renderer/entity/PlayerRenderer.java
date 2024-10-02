@@ -126,7 +126,7 @@ public class PlayerRenderer extends LivingRenderer<AbstractClientPlayerEntity, P
 
    public void method17857(AbstractClientPlayerEntity var1, MatrixStack var2, float var3) {
       float var6 = 0.9375F;
-      var2.method35292(0.9375F, 0.9375F, 0.9375F);
+      var2.scale(0.9375F, 0.9375F, 0.9375F);
    }
 
    public void method17893(AbstractClientPlayerEntity var1, ITextComponent var2, MatrixStack var3, Class7733 var4, int var5) {

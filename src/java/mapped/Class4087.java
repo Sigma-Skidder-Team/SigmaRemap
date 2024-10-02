@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.renderer.tileentity.BannerTileEntityRenderer;
 import net.optifine.Config;
 
 public class Class4087 extends Class4057 {
@@ -39,9 +40,9 @@ public class Class4087 extends Class4057 {
    public Class9492 method12825(Class2828 var1, float var2) {
       TileEntityRendererDispatcher var5 = TileEntityRendererDispatcher.instance;
       Object var6 = var5.method27968(TileEntityType.field21439);
-      if (var6 instanceof Class5948) {
+      if (var6 instanceof BannerTileEntityRenderer) {
          if (((Class5942)var6).method18463() == null) {
-            var6 = new Class5948(var5);
+            var6 = new BannerTileEntityRenderer(var5);
          }
 
          if (var1 instanceof Class2852) {

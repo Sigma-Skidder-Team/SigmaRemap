@@ -26,6 +26,6 @@ public class Class5692 extends Class5651<Class1042, Class2802<Class1042>> {
          this.shadowSize = 0.25F;
       }
 
-      var2.method35292(var6, var6, var6);
+      var2.scale(var6, var6, var6);
    }
 }

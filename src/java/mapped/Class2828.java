@@ -27,5 +27,5 @@ public abstract class Class2828 implements Consumer<ModelRenderer> {
       return var4;
    }
 
-   public abstract void method11016(MatrixStack var1, IVertexBuilder var2, int var3, int var4, float var5, float var6, float var7, float var8);
+   public abstract void render(MatrixStack var1, IVertexBuilder var2, int var3, int var4, float var5, float var6, float var7, float var8);
 }

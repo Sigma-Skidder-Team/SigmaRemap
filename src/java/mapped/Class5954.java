@@ -33,9 +33,9 @@ public class Class5954 extends Class5942<Class940> {
       var3.push();
       var3.translate(0.5, 0.5, 0.5);
       float var12 = 0.9995F;
-      var3.method35292(0.9995F, 0.9995F, 0.9995F);
+      var3.scale(0.9995F, 0.9995F, 0.9995F);
       var3.rotate(var9.method532());
-      var3.method35292(1.0F, -1.0F, -1.0F);
+      var3.scale(1.0F, -1.0F, -1.0F);
       var3.translate(0.0, -1.0, 0.0);
       IVertexBuilder var13 = var11.method26200(var4, RenderType::getEntityCutoutNoCull);
       this.field25966.method11202().render(var3, var13, var5, var6);

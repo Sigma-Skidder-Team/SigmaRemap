@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.BannerTileEntity;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
@@ -30,7 +31,7 @@ public class Class4861 extends Class4837 {
                var5 = var11.method11849();
             }
 
-            int var12 = Class958.method3889(var9);
+            int var12 = BannerTileEntity.method3889(var9);
             if (var12 > 6) {
                return false;
             }
@@ -58,7 +59,7 @@ public class Class4861 extends Class4837 {
       for (int var4 = 0; var4 < var1.getSizeInventory(); var4++) {
          ItemStack var5 = var1.getStackInSlot(var4);
          if (!var5.isEmpty()) {
-            int var6 = Class958.method3889(var5);
+            int var6 = BannerTileEntity.method3889(var5);
             if (var6 > 0 && var6 <= 6) {
                ItemStack var7 = var5.copy();
                var7.setCount(1);
@@ -77,7 +78,7 @@ public class Class4861 extends Class4837 {
          ItemStack var6 = var1.getStackInSlot(var5);
          if (!var6.isEmpty()) {
             if (!var6.getItem().method11723()) {
-               if (var6.method32141() && Class958.method3889(var6) > 0) {
+               if (var6.method32141() && BannerTileEntity.method3889(var6) > 0) {
                   ItemStack var7 = var6.copy();
                   var7.setCount(1);
                   var4.set(var5, var7);

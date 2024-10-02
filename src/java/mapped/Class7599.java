@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.tileentity.BannerTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
@@ -50,7 +51,7 @@ public class Class7599 {
 
    public static boolean method24893(TileEntity var0, ITextComponent var1) {
       if (!(var0 instanceof Class932)) {
-         if (!(var0 instanceof Class958)) {
+         if (!(var0 instanceof BannerTileEntity)) {
             if (!(var0 instanceof Class934)) {
                if (!(var0 instanceof Class950)) {
                   return false;
@@ -63,7 +64,7 @@ public class Class7599 {
                return true;
             }
          } else {
-            ((Class958)var0).method3888(var1);
+            ((BannerTileEntity)var0).method3888(var1);
             return true;
          }
       } else {

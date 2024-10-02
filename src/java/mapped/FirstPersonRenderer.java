@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.base.MoreObjects;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.EventHandAnimation;
+import com.mentalfrostbyte.jello.module.impl.player.OldHitting;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
@@ -11,6 +12,7 @@ import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ShieldItem;
 import net.minecraft.util.Hand;
 import net.minecraft.util.HandSide;
 import net.minecraft.util.ResourceLocation;
@@ -23,7 +25,7 @@ import java.util.Objects;
 public class FirstPersonRenderer {
    private static final RenderType field45076 = RenderType.method14339(new ResourceLocation("textures/map/map_background.png"));
    private static final RenderType field45077 = RenderType.method14339(new ResourceLocation("textures/map/map_background_checkerboard.png"));
-   private final Minecraft field45078;
+   private final Minecraft mc;
    private ItemStack field45079 = ItemStack.EMPTY;
    private ItemStack field45080 = ItemStack.EMPTY;
    private float field45081;
@@ -34,12 +36,12 @@ public class FirstPersonRenderer {
    private final ItemRenderer field45086;
 
    public FirstPersonRenderer(Minecraft var1) {
-      this.field45078 = var1;
+      this.mc = var1;
       this.field45085 = var1.getRenderManager();
       this.field45086 = var1.getItemRenderer();
    }
 
-   public void method37580(LivingEntity var1, ItemStack var2, ItemCameraTransformsTransformType var3, boolean var4, MatrixStack var5, Class7733 var6, int var7) {
+   public void renderItemSide(LivingEntity var1, ItemStack var2, ItemCameraTransformsTransformType var3, boolean var4, MatrixStack var5, Class7733 var6, int var7) {
       Class7992.method27282(var4);
       if (!var2.isEmpty()) {
          this.field45086.method790(var1, var2, var3, var4, var5, var6, var1.world, var7, OverlayTexture.NO_OVERLAY);
@@ -55,8 +57,8 @@ public class FirstPersonRenderer {
    }
 
    private void method37582(MatrixStack var1, Class7733 var2, int var3, HandSide var4) {
-      this.field45078.getTextureManager().bindTexture(this.field45078.player.method5371());
-      PlayerRenderer var7 = (PlayerRenderer)this.field45085.<AbstractClientPlayerEntity>getRenderer(this.field45078.player);
+      this.mc.getTextureManager().bindTexture(this.mc.player.method5371());
+      PlayerRenderer var7 = (PlayerRenderer)this.field45085.<AbstractClientPlayerEntity>getRenderer(this.mc.player);
       var1.push();
       float var8 = var4 != HandSide.RIGHT ? -1.0F : 1.0F;
       var1.rotate(Vector3f.YP.rotationDegrees(92.0F));
@@ -64,9 +66,9 @@ public class FirstPersonRenderer {
       var1.rotate(Vector3f.ZP.rotationDegrees(var8 * -41.0F));
       var1.translate((double)(var8 * 0.3F), -1.1F, 0.45F);
       if (var4 != HandSide.RIGHT) {
-         var7.method17891(var1, var2, var3, this.field45078.player);
+         var7.method17891(var1, var2, var3, this.mc.player);
       } else {
-         var7.method17890(var1, var2, var3, this.field45078.player);
+         var7.method17890(var1, var2, var3, this.mc.player);
       }
 
       var1.pop();
@@ -75,7 +77,7 @@ public class FirstPersonRenderer {
    private void method37583(MatrixStack var1, Class7733 var2, int var3, float var4, HandSide var5, float var6, ItemStack var7) {
       float var10 = var5 != HandSide.RIGHT ? -1.0F : 1.0F;
       var1.translate((double)(var10 * 0.125F), -0.125, 0.0);
-      if (!this.field45078.player.isInvisible()) {
+      if (!this.mc.player.isInvisible()) {
          var1.push();
          var1.rotate(Vector3f.ZP.rotationDegrees(var10 * 10.0F));
          this.method37586(var1, var2, var3, var4, var6, var5);
@@ -104,7 +106,7 @@ public class FirstPersonRenderer {
       float var12 = this.method37581(var4);
       var1.translate(0.0, (double)(0.04F + var5 * -1.2F + var12 * -0.5F), -0.72F);
       var1.rotate(Vector3f.XP.rotationDegrees(var12 * -85.0F));
-      if (!this.field45078.player.isInvisible()) {
+      if (!this.mc.player.isInvisible()) {
          var1.push();
          var1.rotate(Vector3f.YP.rotationDegrees(90.0F));
          this.method37582(var1, var2, var3, HandSide.RIGHT);
@@ -114,17 +116,17 @@ public class FirstPersonRenderer {
 
       float var13 = MathHelper.sin(var9 * (float) Math.PI);
       var1.rotate(Vector3f.XP.rotationDegrees(var13 * 20.0F));
-      var1.method35292(2.0F, 2.0F, 2.0F);
+      var1.scale(2.0F, 2.0F, 2.0F);
       this.method37585(var1, var2, var3, this.field45079);
    }
 
    private void method37585(MatrixStack var1, Class7733 var2, int var3, ItemStack var4) {
       var1.rotate(Vector3f.YP.rotationDegrees(180.0F));
       var1.rotate(Vector3f.ZP.rotationDegrees(180.0F));
-      var1.method35292(0.38F, 0.38F, 0.38F);
+      var1.scale(0.38F, 0.38F, 0.38F);
       var1.translate(-0.5, -0.5, 0.0);
-      var1.method35292(0.0078125F, 0.0078125F, 0.0078125F);
-      Class7529 var7 = Class3316.method11861(var4, this.field45078.world);
+      var1.scale(0.0078125F, 0.0078125F, 0.0078125F);
+      Class7529 var7 = Class3316.method11861(var4, this.mc.world);
       IVertexBuilder var8 = var2.method25597(var7 != null ? field45077 : field45076);
       Matrix4f var9 = var1.getLast().getMatrix();
       var8.pos(var9, -7.0F, 135.0F, 0.0F).color(255, 255, 255, 255).tex(0.0F, 1.0F).method17034(var3).endVertex();
@@ -132,7 +134,7 @@ public class FirstPersonRenderer {
       var8.pos(var9, 135.0F, -7.0F, 0.0F).color(255, 255, 255, 255).tex(1.0F, 0.0F).method17034(var3).endVertex();
       var8.pos(var9, -7.0F, -7.0F, 0.0F).color(255, 255, 255, 255).tex(0.0F, 0.0F).method17034(var3).endVertex();
       if (var7 != null) {
-         this.field45078.gameRenderer.method756().method593(var1, var2, var7, false, var3);
+         this.mc.gameRenderer.method756().method593(var1, var2, var7, false, var3);
       }
    }
 
@@ -149,8 +151,8 @@ public class FirstPersonRenderer {
       float var16 = MathHelper.sin(var11 * (float) Math.PI);
       var1.rotate(Vector3f.YP.rotationDegrees(var10 * var16 * 70.0F));
       var1.rotate(Vector3f.ZP.rotationDegrees(var10 * var15 * -20.0F));
-      ClientPlayerEntity var17 = this.field45078.player;
-      this.field45078.getTextureManager().bindTexture(var17.method5371());
+      ClientPlayerEntity var17 = this.mc.player;
+      this.mc.getTextureManager().bindTexture(var17.method5371());
       var1.translate((double)(var10 * -1.0F), 3.6F, 3.5);
       var1.rotate(Vector3f.ZP.rotationDegrees(var10 * 120.0F));
       var1.rotate(Vector3f.XP.rotationDegrees(200.0F));
@@ -164,9 +166,9 @@ public class FirstPersonRenderer {
       }
    }
 
-   private void method37587(MatrixStack var1, float var2, HandSide var3, ItemStack var4) {
-      float var7 = (float)this.field45078.player.getItemInUseCount() - var2 + 1.0F;
-      float var8 = var7 / (float)var4.method32137();
+   private void transformEatFirstPerson(MatrixStack var1, float var2, HandSide var3, ItemStack var4) {
+      float var7 = (float)this.mc.player.getItemInUseCount() - var2 + 1.0F;
+      float var8 = var7 / (float)var4.getUseDuration();
       if (var8 < 0.8F) {
          float var9 = MathHelper.method37771(MathHelper.cos(var7 / 4.0F * (float) Math.PI) * 0.1F);
          var1.translate(0.0, (double)var9, 0.0);
@@ -180,7 +182,7 @@ public class FirstPersonRenderer {
       var1.rotate(Vector3f.ZP.rotationDegrees((float)var10 * var11 * 30.0F));
    }
 
-   private void method37588(MatrixStack var1, HandSide var2, float var3) {
+   private void transformFirstPerson(MatrixStack var1, HandSide var2, float var3) {
       int var6 = var2 != HandSide.RIGHT ? -1 : 1;
       float var7 = MathHelper.sin(var3 * var3 * (float) Math.PI);
       var1.rotate(Vector3f.YP.rotationDegrees((float)var6 * (45.0F + var7 * -20.0F)));
@@ -190,7 +192,7 @@ public class FirstPersonRenderer {
       var1.rotate(Vector3f.YP.rotationDegrees((float)var6 * -45.0F));
    }
 
-   private void method37589(MatrixStack var1, HandSide var2, float var3) {
+   private void transformSideFirstPerson(MatrixStack var1, HandSide var2, float var3) {
       int var6 = var2 != HandSide.RIGHT ? -1 : 1;
       var1.translate((double)((float)var6 * 0.56F), (double)(-0.52F + var3 * -0.6F), -0.72F);
    }
@@ -254,33 +256,33 @@ public class FirstPersonRenderer {
    }
 
    private void method37591(
-           AbstractClientPlayerEntity var1, float var2, float var3, Hand var4, float var5, ItemStack var6, float var7, MatrixStack var8, Class7733 var9, int var10
+           AbstractClientPlayerEntity var1, float var2, float var3, Hand var4, float swingProgress, ItemStack var6, float equippedProgress, MatrixStack matrixStackIn, Class7733 var9, int var10
    ) {
       if (!Config.isShaders() || ! Shaders.method33153(var4)) {
          boolean var13 = var4 == Hand.MAIN_HAND;
-         HandSide var14 = var13 ? var1.getPrimaryHand() : var1.getPrimaryHand().opposite();
-         var8.push();
+         HandSide handside = var13 ? var1.getPrimaryHand() : var1.getPrimaryHand().opposite();
+         matrixStackIn.push();
          if (var6.isEmpty()) {
             if (var13 && !var1.isInvisible()) {
-               this.method37586(var8, var9, var10, var7, var5, var14);
+               this.method37586(matrixStackIn, var9, var10, equippedProgress, swingProgress, handside);
             }
          } else if (var6.getItem() instanceof Class3316) {
             if (var13 && this.field45080.isEmpty()) {
-               this.method37584(var8, var9, var10, var3, var7, var5);
+               this.method37584(matrixStackIn, var9, var10, var3, equippedProgress, swingProgress);
             } else {
-               this.method37583(var8, var9, var10, var7, var14, var5, var6);
+               this.method37583(matrixStackIn, var9, var10, equippedProgress, handside, swingProgress, var6);
             }
          } else if (var6.getItem() instanceof CrossbowItem) {
-            boolean var25 = CrossbowItem.isCharged(var6);
-            boolean var27 = var14 == HandSide.RIGHT;
-            int var30 = var27 ? 1 : -1;
+            boolean flag1 = CrossbowItem.isCharged(var6);
+            boolean flag2 = handside == HandSide.RIGHT;
+            int i = flag2 ? 1 : -1;
             if (var1.isHandActive() && var1.getItemInUseCount() > 0 && var1.getActiveHand() == var4) {
-               this.method37589(var8, var14, var7);
-               var8.translate((double)((float)var30 * -0.4785682F), -0.094387F, 0.05731531F);
-               var8.rotate(Vector3f.XP.rotationDegrees(-11.935F));
-               var8.rotate(Vector3f.YP.rotationDegrees((float)var30 * 65.3F));
-               var8.rotate(Vector3f.ZP.rotationDegrees((float)var30 * -9.785F));
-               float var33 = (float)var6.method32137() - ((float)this.field45078.player.getItemInUseCount() - var2 + 1.0F);
+               this.transformSideFirstPerson(matrixStackIn, handside, equippedProgress);
+               matrixStackIn.translate((double)((float)i * -0.4785682F), -0.094387F, 0.05731531F);
+               matrixStackIn.rotate(Vector3f.XP.rotationDegrees(-11.935F));
+               matrixStackIn.rotate(Vector3f.YP.rotationDegrees((float)i * 65.3F));
+               matrixStackIn.rotate(Vector3f.ZP.rotationDegrees((float)i * -9.785F));
+               float var33 = (float)var6.getUseDuration() - ((float)this.mc.player.getItemInUseCount() - var2 + 1.0F);
                float var37 = var33 / (float) CrossbowItem.method11767(var6);
                if (var37 > 1.0F) {
                   var37 = 1.0F;
@@ -290,127 +292,129 @@ public class FirstPersonRenderer {
                   float var41 = MathHelper.sin((var33 - 0.1F) * 1.3F);
                   float var43 = var37 - 0.1F;
                   float var45 = var41 * var43;
-                  var8.translate((double)(var45 * 0.0F), (double)(var45 * 0.004F), (double)(var45 * 0.0F));
+                  matrixStackIn.translate((double)(var45 * 0.0F), (double)(var45 * 0.004F), (double)(var45 * 0.0F));
                }
 
-               var8.translate((double)(var37 * 0.0F), (double)(var37 * 0.0F), (double)(var37 * 0.04F));
-               var8.method35292(1.0F, 1.0F, 1.0F + var37 * 0.2F);
-               var8.rotate(Vector3f.field32899.rotationDegrees((float)var30 * 45.0F));
+               matrixStackIn.translate((double)(var37 * 0.0F), (double)(var37 * 0.0F), (double)(var37 * 0.04F));
+               matrixStackIn.scale(1.0F, 1.0F, 1.0F + var37 * 0.2F);
+               matrixStackIn.rotate(Vector3f.YN.rotationDegrees((float)i * 45.0F));
             } else {
-               float var32 = -0.4F * MathHelper.sin(MathHelper.sqrt(var5) * (float) Math.PI);
-               float var36 = 0.2F * MathHelper.sin(MathHelper.sqrt(var5) * (float) (Math.PI * 2));
-               float var40 = -0.2F * MathHelper.sin(var5 * (float) Math.PI);
-               var8.translate((double)((float)var30 * var32), (double)var36, (double)var40);
-               this.method37589(var8, var14, var7);
-               this.method37588(var8, var14, var5);
-               if (var25 && var5 < 0.001F) {
-                  var8.translate((double)((float)var30 * -0.641864F), 0.0, 0.0);
-                  var8.rotate(Vector3f.YP.rotationDegrees((float)var30 * 10.0F));
+               float var32 = -0.4F * MathHelper.sin(MathHelper.sqrt(swingProgress) * (float) Math.PI);
+               float var36 = 0.2F * MathHelper.sin(MathHelper.sqrt(swingProgress) * (float) (Math.PI * 2));
+               float var40 = -0.2F * MathHelper.sin(swingProgress * (float) Math.PI);
+               matrixStackIn.translate((double)((float)i * var32), (double)var36, (double)var40);
+               this.transformSideFirstPerson(matrixStackIn, handside, equippedProgress);
+               this.transformFirstPerson(matrixStackIn, handside, swingProgress);
+               if (flag1 && swingProgress < 0.001F) {
+                  matrixStackIn.translate((double)((float)i * -0.641864F), 0.0, 0.0);
+                  matrixStackIn.rotate(Vector3f.YP.rotationDegrees((float)i * 10.0F));
                }
             }
 
-            this.method37580(var1, var6, var27 ? ItemCameraTransformsTransformType.FIRST_PERSON_RIGHT_HAND : ItemCameraTransformsTransformType.FIRST_PERSON_LEFT_HAND, !var27, var8, var9, var10);
+            this.renderItemSide(var1, var6, flag2 ? ItemCameraTransformsTransformType.FIRST_PERSON_RIGHT_HAND : ItemCameraTransformsTransformType.FIRST_PERSON_LEFT_HAND, !flag2, matrixStackIn, var9, var10);
          } else {
-            boolean var15 = var14 == HandSide.RIGHT;
-            EventHandAnimation var16 = new EventHandAnimation(true, var5, var7, var14, var6, var8);
+            boolean flag2 = handside == HandSide.RIGHT;
+            EventHandAnimation eventHandAnimation = new EventHandAnimation(true, swingProgress, equippedProgress, handside, var6, matrixStackIn);
 
             if (var1.isHandActive() && var1.getItemInUseCount() > 0 && var1.getActiveHand() == var4) {
-               int var29 = var15 ? 1 : -1;
+               int i = flag2 ? 1 : -1;
                switch (Class6063.field26304[var6.getUseAction().ordinal()]) {
                   case 1:
-                     this.method37589(var8, var14, var7);
+                     this.transformSideFirstPerson(matrixStackIn, handside, equippedProgress);
                      break;
                   case 2:
                   case 3:
-                     this.method37587(var8, var2, var14, var6);
-                     this.method37589(var8, var14, var7);
+                     this.transformEatFirstPerson(matrixStackIn, var2, handside, var6);
+                     this.transformSideFirstPerson(matrixStackIn, handside, equippedProgress);
                      break;
                   case 4:
-                     this.method37589(var8, var14, var7);
+                     this.transformSideFirstPerson(matrixStackIn, handside, equippedProgress);
                      break;
                   case 5:
-                     this.method37589(var8, var14, var7);
-                     var8.translate((double)((float)var29 * -0.2785682F), 0.18344387F, 0.15731531F);
-                     var8.rotate(Vector3f.XP.rotationDegrees(-13.935F));
-                     var8.rotate(Vector3f.YP.rotationDegrees((float)var29 * 35.3F));
-                     var8.rotate(Vector3f.ZP.rotationDegrees((float)var29 * -9.785F));
-                     float var31 = (float)var6.method32137() - ((float)this.field45078.player.getItemInUseCount() - var2 + 1.0F);
-                     float var34 = var31 / 20.0F;
-                     var34 = (var34 * var34 + var34 * 2.0F) / 3.0F;
-                     if (var34 > 1.0F) {
-                        var34 = 1.0F;
+                     this.transformSideFirstPerson(matrixStackIn, handside, equippedProgress);
+                     matrixStackIn.translate((double)((float)i * -0.2785682F), 0.18344387F, 0.15731531F);
+                     matrixStackIn.rotate(Vector3f.XP.rotationDegrees(-13.935F));
+                     matrixStackIn.rotate(Vector3f.YP.rotationDegrees((float)i * 35.3F));
+                     matrixStackIn.rotate(Vector3f.ZP.rotationDegrees((float)i * -9.785F));
+                     float f8 = (float)var6.getUseDuration() - ((float)this.mc.player.getItemInUseCount() - var2 + 1.0F);
+                     float f11 = f8 / 20.0F;
+                     f11 = (f11 * f11 + f11 * 2.0F) / 3.0F;
+                     if (f11 > 1.0F) {
+                        f11 = 1.0F;
                      }
 
-                     if (var34 > 0.1F) {
-                        float var39 = MathHelper.sin((var31 - 0.1F) * 1.3F);
-                        float var42 = var34 - 0.1F;
-                        float var44 = var39 * var42;
-                        var8.translate((double)(var44 * 0.0F), (double)(var44 * 0.004F), (double)(var44 * 0.0F));
+                     if (f11 > 0.1F) {
+                        float f14 = MathHelper.sin((f8 - 0.1F) * 1.3F);
+                        float f17 = f11 - 0.1F;
+                        float f19 = f14 * f17;
+                        matrixStackIn.translate((double)(f19 * 0.0F), (double)(f19 * 0.004F), (double)(f19 * 0.0F));
                      }
 
-                     var8.translate((double)(var34 * 0.0F), (double)(var34 * 0.0F), (double)(var34 * 0.04F));
-                     var8.method35292(1.0F, 1.0F, 1.0F + var34 * 0.2F);
-                     var8.rotate(Vector3f.field32899.rotationDegrees((float)var29 * 45.0F));
+                     matrixStackIn.translate((double)(f11 * 0.0F), (double)(f11 * 0.0F), (double)(f11 * 0.04F));
+                     matrixStackIn.scale(1.0F, 1.0F, 1.0F + f11 * 0.2F);
+                     matrixStackIn.rotate(Vector3f.YN.rotationDegrees((float)i * 45.0F));
                      break;
                   case 6:
-                     this.method37589(var8, var14, var7);
-                     var8.translate((double)((float)var29 * -0.5F), 0.7F, 0.1F);
-                     var8.rotate(Vector3f.XP.rotationDegrees(-55.0F));
-                     var8.rotate(Vector3f.YP.rotationDegrees((float)var29 * 35.3F));
-                     var8.rotate(Vector3f.ZP.rotationDegrees((float)var29 * -9.785F));
-                     float var38 = (float)var6.method32137() - ((float)this.field45078.player.getItemInUseCount() - var2 + 1.0F);
-                     float var21 = var38 / 10.0F;
-                     if (var21 > 1.0F) {
-                        var21 = 1.0F;
+                     this.transformSideFirstPerson(matrixStackIn, handside, equippedProgress);
+                     matrixStackIn.translate((double)((float)i * -0.5F), 0.7F, 0.1F);
+                     matrixStackIn.rotate(Vector3f.XP.rotationDegrees(-55.0F));
+                     matrixStackIn.rotate(Vector3f.YP.rotationDegrees((float)i * 35.3F));
+                     matrixStackIn.rotate(Vector3f.ZP.rotationDegrees((float)i * -9.785F));
+                     float f13 = (float)var6.getUseDuration() - ((float)this.mc.player.getItemInUseCount() - var2 + 1.0F);
+                     float f16 = f13 / 10.0F;
+                     if (f16 > 1.0F) {
+                        f16 = 1.0F;
                      }
 
-                     if (var21 > 0.1F) {
-                        float var22 = MathHelper.sin((var38 - 0.1F) * 1.3F);
-                        float var23 = var21 - 0.1F;
-                        float var24 = var22 * var23;
-                        var8.translate((double)(var24 * 0.0F), (double)(var24 * 0.004F), (double)(var24 * 0.0F));
+                     if (f16 > 0.1F) {
+                        float f18 = MathHelper.sin((f13 - 0.1F) * 1.3F);
+                        float f20 = f16 - 0.1F;
+                        float f5 = f18 * f20;
+                        matrixStackIn.translate((double)(f5 * 0.0F), (double)(f5 * 0.004F), (double)(f5 * 0.0F));
                      }
 
-                     var8.translate(0.0, 0.0, (double)(var21 * 0.2F));
-                     var8.method35292(1.0F, 1.0F, 1.0F + var21 * 0.2F);
-                     var8.rotate(Vector3f.field32899.rotationDegrees((float)var29 * 45.0F));
+                     matrixStackIn.translate(0.0, 0.0, (double)(f16 * 0.2F));
+                     matrixStackIn.scale(1.0F, 1.0F, 1.0F + f16 * 0.2F);
+                     matrixStackIn.rotate(Vector3f.YN.rotationDegrees((float)i * 45.0F));
                }
             } else if (var1.isSpinAttacking()) {
-               this.method37589(var8, var14, var7);
-               int var17 = var15 ? 1 : -1;
-               var8.translate((double)((float)var17 * -0.4F), 0.8F, 0.3F);
-               var8.rotate(Vector3f.YP.rotationDegrees((float)var17 * 65.0F));
-               var8.rotate(Vector3f.ZP.rotationDegrees((float)var17 * -85.0F));
+               this.transformSideFirstPerson(matrixStackIn, handside, equippedProgress);
+               int i = flag2 ? 1 : -1;
+               matrixStackIn.translate((double)((float)i * -0.4F), 0.8F, 0.3F);
+               matrixStackIn.rotate(Vector3f.YP.rotationDegrees((float)i * 65.0F));
+               matrixStackIn.rotate(Vector3f.ZP.rotationDegrees((float)i * -85.0F));
             } else {
-               Client.getInstance().getEventManager().call(var16);
+               Client.getInstance().getEventManager().call(eventHandAnimation);
 
-               if (!var16.isCancelled()) {
-                  float var28 = -0.4F * MathHelper.sin(MathHelper.sqrt(var5) * (float) Math.PI);
-                  float var18 = 0.2F * MathHelper.sin(MathHelper.sqrt(var5) * (float) (Math.PI * 2));
-                  float var19 = -0.2F * MathHelper.sin(var5 * (float) Math.PI);
-                  int var20 = var15 ? 1 : -1;
-                  var8.translate((double)((float)var20 * var28), (double)var18, (double)var19);
-                  this.method37589(var8, var14, var7);
-                  this.method37588(var8, var14, var5);
+               if (!eventHandAnimation.isCancelled()) {
+                  float var28 = -0.4F * MathHelper.sin(MathHelper.sqrt(swingProgress) * (float) Math.PI);
+                  float var18 = 0.2F * MathHelper.sin(MathHelper.sqrt(swingProgress) * (float) (Math.PI * 2));
+                  float var19 = -0.2F * MathHelper.sin(swingProgress * (float) Math.PI);
+                  int var20 = flag2 ? 1 : -1;
+                  matrixStackIn.translate((double)((float)var20 * var28), (double)var18, (double)var19);
+                  this.transformSideFirstPerson(matrixStackIn, handside, equippedProgress);
+                  this.transformFirstPerson(matrixStackIn, handside, swingProgress);
                }
             }
 
-            if (var16 == null || var16.method13930()) {
-               this.method37580(var1, var6, var15 ? ItemCameraTransformsTransformType.FIRST_PERSON_RIGHT_HAND : ItemCameraTransformsTransformType.FIRST_PERSON_LEFT_HAND, !var15, var8, var9, var10);
+            if (eventHandAnimation.isBlocking()) {
+               if (var6.getItem() instanceof ShieldItem && Client.getInstance().getModuleManager().getModuleByClass(OldHitting.class).enabled)
+                  return;
+               this.renderItemSide(var1, var6, flag2 ? ItemCameraTransformsTransformType.FIRST_PERSON_RIGHT_HAND : ItemCameraTransformsTransformType.FIRST_PERSON_LEFT_HAND, !flag2, matrixStackIn, var9, var10);
             }
 
-            var16 = new EventHandAnimation(false, var5, var7, var14, var6, var8);
-            Client.getInstance().getEventManager().call(var16);
+            eventHandAnimation = new EventHandAnimation(false, swingProgress, equippedProgress, handside, var6, matrixStackIn);
+            Client.getInstance().getEventManager().call(eventHandAnimation);
          }
 
-         var8.pop();
+         matrixStackIn.pop();
       }
    }
 
    public void method37592() {
       this.field45082 = this.field45081;
       this.field45084 = this.field45083;
-      ClientPlayerEntity var3 = this.field45078.player;
+      ClientPlayerEntity var3 = this.mc.player;
       ItemStack var4 = var3.getHeldItemMainhand();
       ItemStack var5 = var3.getHeldItemOffhand();
       if (ItemStack.areItemStacksEqual(this.field45079, var4)) {

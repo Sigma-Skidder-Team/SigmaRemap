@@ -89,7 +89,7 @@ public class BipedArmorLayer<T extends LivingEntity, M extends BipedModel<T>, A 
 
    private void method846(MatrixStack var1, Class7733 var2, int var3, boolean var4, A var5, float var6, float var7, float var8, ResourceLocation var9) {
       IVertexBuilder var12 = ItemRenderer.method782(var2, RenderType.method14308(var9), false, var4);
-      var5.method11016(var1, var12, var3, OverlayTexture.NO_OVERLAY, var6, var7, var8, 1.0F);
+      var5.render(var1, var12, var3, OverlayTexture.NO_OVERLAY, var6, var7, var8, 1.0F);
    }
 
    private A method847(EquipmentSlotType var1) {

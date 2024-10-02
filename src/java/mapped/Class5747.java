@@ -21,7 +21,7 @@ public class Class5747 extends Class5651<Class1098, Class2861<Class1098>> {
 
    public void method17857(Class1098 var1, MatrixStack var2, float var3) {
       super.method17857(var1, var2, var3);
-      var2.method35292(0.8F, 0.8F, 0.8F);
+      var2.scale(0.8F, 0.8F, 0.8F);
    }
 
    public void method17842(Class1098 var1, MatrixStack var2, float var3, float var4, float var5) {

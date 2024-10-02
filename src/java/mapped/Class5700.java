@@ -15,7 +15,7 @@ public class Class5700 extends Class5651<Class1096, Class2871<Class1096>> {
    }
 
    public void method17857(Class1096 var1, MatrixStack var2, float var3) {
-      var2.method35292(1.2F, 1.2F, 1.2F);
+      var2.scale(1.2F, 1.2F, 1.2F);
       super.method17857(var1, var2, var3);
    }
 }

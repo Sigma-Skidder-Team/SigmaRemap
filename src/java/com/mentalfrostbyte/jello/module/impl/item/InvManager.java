@@ -16,10 +16,7 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.inventory.container.ClickType;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.item.SwordItem;
-import net.minecraft.item.ToolItem;
+import net.minecraft.item.*;
 import net.minecraft.network.play.client.CClientStatusPacket;
 import net.minecraft.network.play.client.CCloseWindowPacket;
 
@@ -298,7 +295,7 @@ public class InvManager extends Module {
             return false;
         } else if (slot == field23654 && method16431(mc.player.container.getSlot(slot).getStack())) {
             return false;
-        } else if (var5 instanceof Class3334 && this.getBooleanValueFromSettingName("Auto Shield")) {
+        } else if (var5 instanceof ShieldItem && this.getBooleanValueFromSettingName("Auto Shield")) {
             return false;
         } else if (this.getStringSettingValueByName("Tools").equals("Throw")
                 || (
@@ -487,7 +484,7 @@ public class InvManager extends Module {
         if (!mc.player.container.getSlot(45).getHasStack()) {
             for (int hotbarSlot = 9; hotbarSlot < 45; hotbarSlot++) {
                 ItemStack var5 = mc.player.container.getSlot(hotbarSlot).getStack();
-                if (var5.getItem() instanceof Class3334) {
+                if (var5.getItem() instanceof ShieldItem) {
                     this.sendOpenInventoryPacket(fakeInvSetting);
                     this.timer.reset();
                     InvManagerUtils.fixedClick(mc.player.container.windowId, hotbarSlot, 0, ClickType.PICKUP, mc.player, true);

@@ -60,10 +60,10 @@ public class Class5952 extends Class5942<SkullTileEntity> {
          var5.translate(0.5, 0.0, 0.5);
       }
 
-      var5.method35292(-1.0F, -1.0F, 1.0F);
+      var5.scale(-1.0F, -1.0F, 1.0F);
       IVertexBuilder var12 = var6.method25597(method18483(var2, var3));
       var10.method11174(var4, var1, 0.0F);
-      var10.method11016(var5, var12, var7, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+      var10.render(var5, var12, var7, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
       var5.pop();
    }
 

@@ -101,7 +101,6 @@ public class MerchantScreen extends ContainerScreen<Class5826> {
          method5697(var1, var2 + 136, var3 + 16, this.method5702(), 0.0F, 186.0F, 102, 5, 256, 512);
          int var9 = Class7921.method26576(var7);
          if (var8 >= var9 && Class7921.method26578(var7)) {
-            byte var10 = 100;
             float var11 = 100.0F / (float)(Class7921.method26577(var7) - var9);
             int var12 = Math.min(MathHelper.floor(var11 * (float)(var8 - var9)), 100);
             method5697(var1, var2 + 136, var3 + 16, this.method5702(), 0.0F, 191.0F, var12 + 1, 5, 256, 512);
@@ -121,7 +120,6 @@ public class MerchantScreen extends ContainerScreen<Class5826> {
       } else {
          int var8 = 139 - (27 + (var7 - 1) * 139 / var7);
          int var9 = 1 + var8 / var7 + 139 / var7;
-         byte var10 = 113;
          int var11 = Math.min(113, this.field4792 * var9);
          if (this.field4792 == var7 - 1) {
             var11 = 113;

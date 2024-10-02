@@ -29,7 +29,7 @@ public class ItemTransformVec3f {
          int var8 = !var1 ? 1 : -1;
          var2.translate((double)((float)var8 * this.field29590.method25269()), (double)this.field29590.method25270(), (double)this.field29590.method25271());
          var2.rotate(new Quaternion(var5, var6, var7, true));
-         var2.method35292(this.field29591.method25269(), this.field29591.method25270(), this.field29591.method25271());
+         var2.scale(this.field29591.method25269(), this.field29591.method25270(), this.field29591.method25271());
       }
    }
 

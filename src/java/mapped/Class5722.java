@@ -22,13 +22,13 @@ public class Class5722 extends EntityRenderer<Class915> {
 
          var4.push();
          var4.rotate(Vector3f.YP.rotationDegrees(90.0F - var1.rotationYaw));
-         var4.method35292(-var10, -var10, var10);
+         var4.scale(-var10, -var10, var10);
          float var11 = 0.03125F;
          var4.translate(0.0, -0.626F, 0.0);
-         var4.method35292(0.5F, 0.5F, 0.5F);
+         var4.scale(0.5F, 0.5F, 0.5F);
          this.field25121.setRotationAngles(var1, var9, 0.0F, 0.0F, var1.rotationYaw, var1.rotationPitch);
          IVertexBuilder var12 = var5.method25597(this.field25121.method11028(field25120));
-         this.field25121.method11016(var4, var12, var6, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+         this.field25121.render(var4, var12, var6, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
          var4.pop();
          super.render(var1, var2, var3, var4, var5, var6);
       }

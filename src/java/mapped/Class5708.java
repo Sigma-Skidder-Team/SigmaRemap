@@ -22,6 +22,6 @@ public class Class5708 extends Class5651<Class1027, Class2891<Class1027>> {
 
    public void method17857(Class1027 var1, MatrixStack var2, float var3) {
       float var6 = 0.9375F;
-      var2.method35292(0.9375F, 0.9375F, 0.9375F);
+      var2.scale(0.9375F, 0.9375F, 0.9375F);
    }
 }

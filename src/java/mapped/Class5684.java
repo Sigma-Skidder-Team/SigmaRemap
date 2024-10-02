@@ -19,6 +19,6 @@ public class Class5684 extends Class5651<Class1112, Class2817<Class1112>> {
       float var6 = 1.0F;
       float var7 = 4.5F;
       float var8 = 4.5F;
-      var2.method35292(4.5F, 4.5F, 4.5F);
+      var2.scale(4.5F, 4.5F, 4.5F);
    }
 }

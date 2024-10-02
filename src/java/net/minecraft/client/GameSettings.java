@@ -27,6 +27,7 @@ import mapped.*;
 import net.minecraft.client.settings.NarratorStatus;
 import net.minecraft.client.settings.ParticleStatus;
 import net.minecraft.client.settings.PointOfView;
+import net.minecraft.client.shader.Framebuffer;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.player.ChatVisibility;
 import net.minecraft.nbt.CompoundNBT;

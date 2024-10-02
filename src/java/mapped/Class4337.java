@@ -62,10 +62,8 @@ public class Class4337 extends IconPanel {
    }
 
    private int method13497(int var1) {
-      byte var4 = 122;
-      short var5 = 140;
-      byte var6 = 4;
-      byte var7 = -6;
+      int var6 = 4;
+      int var7 = -6;
       int var8 = 122 * var6 + var6 * var7;
       if (var1 < var6) {
          return this.getWidthA() / 2 - var8 / 2 + var1 * 122 + var1 * var7 - 12;

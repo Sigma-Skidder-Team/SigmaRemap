@@ -374,7 +374,7 @@ public final class ItemStack {
       this.getItem().method11725(this, var1, var2);
    }
 
-   public int method32137() {
+   public int getUseDuration() {
       return this.getItem().method11728(this);
    }
 

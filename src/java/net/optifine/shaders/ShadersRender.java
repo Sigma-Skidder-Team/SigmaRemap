@@ -471,7 +471,6 @@ public class ShadersRender {
    }
 
    public static void method17166() {
-      byte var2 = 16;
       GL20.glVertexAttribPointer(Shaders.field40671, 2, 5126, false, 64, 36L);
       GL20.glVertexAttribPointer(Shaders.field40672, 4, 5122, false, 64, 44L);
       GL20.glVertexAttribPointer(Shaders.field40670, 3, 5122, false, 64, 52L);
@@ -479,15 +478,6 @@ public class ShadersRender {
 
    public static void method17167() {
       Shaders.method33021(Shaders.field40829);
-   }
-
-   public static void method17168() {
-   }
-
-   public static void method17169() {
-   }
-
-   public static void method17170() {
    }
 
    public static void method17171() {

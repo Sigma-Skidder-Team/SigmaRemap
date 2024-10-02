@@ -5,10 +5,12 @@ import com.mojang.datafixers.util.Pair;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.client.renderer.tileentity.BannerTileEntityRenderer;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.tileentity.BannerTileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.MathHelper;
@@ -33,7 +35,7 @@ public class LoomScreen extends ContainerScreen<Class5837> {
 
    public LoomScreen(Class5837 var1, PlayerInventory var2, ITextComponent var3) {
       super(var1, var2, var3);
-      this.field4803 = Class5948.method18477();
+      this.field4803 = BannerTileEntityRenderer.method18477();
       var1.method18245(this::method2678);
       this.field4724 -= 2;
    }
@@ -74,13 +76,13 @@ public class LoomScreen extends ContainerScreen<Class5837> {
          Class7735 var14 = this.mc.getRenderTypeBuffers().getBufferSource();
          var1.push();
          var1.translate((double)(var7 + 139), (double)(var8 + 52), 0.0);
-         var1.method35292(24.0F, -24.0F, 1.0F);
+         var1.scale(24.0F, -24.0F, 1.0F);
          var1.translate(0.5, 0.5, 0.5);
          float var15 = 0.6666667F;
-         var1.method35292(0.6666667F, -0.6666667F, -0.6666667F);
+         var1.scale(0.6666667F, -0.6666667F, -0.6666667F);
          this.field4803.rotateAngleX = 0.0F;
          this.field4803.rotationPointY = -32.0F;
-         Class5948.method18478(var1, var14, 15728880, OverlayTexture.NO_OVERLAY, this.field4803, ModelBakery.field40513, true, this.field4804);
+         BannerTileEntityRenderer.method18478(var1, var14, 15728880, OverlayTexture.NO_OVERLAY, this.field4803, ModelBakery.field40513, true, this.field4804);
          var1.pop();
          var14.method25602();
       } else if (this.field4810) {
@@ -134,16 +136,16 @@ public class LoomScreen extends ContainerScreen<Class5837> {
       MatrixStack var9 = new MatrixStack();
       var9.push();
       var9.translate((double)((float)var2 + 0.5F), (double)(var3 + 16), 0.0);
-      var9.method35292(6.0F, -6.0F, 1.0F);
+      var9.scale(6.0F, -6.0F, 1.0F);
       var9.translate(0.5, 0.5, 0.0);
       var9.translate(0.5, 0.5, 0.5);
       float var10 = 0.6666667F;
-      var9.method35292(0.6666667F, -0.6666667F, -0.6666667F);
+      var9.scale(0.6666667F, -0.6666667F, -0.6666667F);
       Class7735 var11 = this.mc.getRenderTypeBuffers().getBufferSource();
       this.field4803.rotateAngleX = 0.0F;
       this.field4803.rotationPointY = -32.0F;
-      List var12 = Class958.method3891(Class112.field393, Class958.method3886(var6));
-      Class5948.method18478(var9, var11, 15728880, OverlayTexture.NO_OVERLAY, this.field4803, ModelBakery.field40513, true, var12);
+      List var12 = BannerTileEntity.getPatternColorData(Class112.field393, BannerTileEntity.method3886(var6));
+      BannerTileEntityRenderer.method18478(var9, var11, 15728880, OverlayTexture.NO_OVERLAY, this.field4803, ModelBakery.field40513, true, var12);
       var9.pop();
       var11.method25602();
    }
@@ -217,7 +219,7 @@ public class LoomScreen extends ContainerScreen<Class5837> {
    private void method2678() {
       ItemStack var3 = this.field4727.method18250().getStack();
       if (!var3.isEmpty()) {
-         this.field4804 = Class958.method3891(((Class3301)var3.getItem()).method11849(), Class958.method3886(var3));
+         this.field4804 = BannerTileEntity.getPatternColorData(((Class3301)var3.getItem()).method11849(), BannerTileEntity.method3886(var3));
       } else {
          this.field4804 = null;
       }

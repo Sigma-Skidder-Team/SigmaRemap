@@ -32,7 +32,7 @@ public abstract class Class5727<T extends AbstractArrowEntity> extends EntityRen
       }
 
       var4.rotate(Vector3f.XP.rotationDegrees(45.0F));
-      var4.method35292(0.05625F, 0.05625F, 0.05625F);
+      var4.scale(0.05625F, 0.05625F, 0.05625F);
       var4.translate(-4.0, 0.0, 0.0);
       IVertexBuilder var25 = var5.method25597(RenderType.getEntityCutout(this.method17843((T)var1)));
       Class8892 var21 = var4.getLast();

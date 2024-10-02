@@ -11,7 +11,7 @@ public class Class5659 extends Class5658 {
    }
 
    public void method17857(Class1105 var1, MatrixStack var2, float var3) {
-      var2.method35292(Class1106.field6078, Class1106.field6078, Class1106.field6078);
+      var2.scale(Class1106.field6078, Class1106.field6078, Class1106.field6078);
    }
 
    @Override

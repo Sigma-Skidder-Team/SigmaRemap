@@ -98,7 +98,7 @@ public class InventoryScreen extends Class860<PlayerContainer> implements Class8
       RenderSystem.scalef(1.0F, 1.0F, -1.0F);
       MatrixStack var10 = new MatrixStack();
       var10.translate(0.0, 0.0, 1000.0);
-      var10.method35292((float)var2, (float)var2, (float)var2);
+      var10.scale((float)var2, (float)var2, (float)var2);
       Quaternion var11 = Vector3f.ZP.rotationDegrees(180.0F);
       Quaternion var12 = Vector3f.XP.rotationDegrees(var9 * 20.0F);
       var11.method31182(var12);

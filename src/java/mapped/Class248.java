@@ -24,7 +24,7 @@ public class Class248 extends Class219<Class1074, Class2856<Class1074>> {
       ResourceLocation var13 = field904.get(var4.method4996());
       if (var13 != null && !var4.isInvisible()) {
          IVertexBuilder var14 = var2.method25597(RenderType.getEntityTranslucent(var13));
-         this.method825().method11016(var1, var14, var3, LivingRenderer.method17883(var4, 0.0F), 1.0F, 1.0F, 1.0F, 1.0F);
+         this.method825().render(var1, var14, var3, LivingRenderer.method17883(var4, 0.0F), 1.0F, 1.0F, 1.0F, 1.0F);
       }
    }
 }

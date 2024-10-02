@@ -88,7 +88,8 @@ public class ItemRenderer implements IResourceManagerReloadListener {
    }
 
    public void method781(ItemStack var1, ItemCameraTransformsTransformType var2, boolean var3, MatrixStack var4, Class7733 var5, int var6, int var7, IBakedModel var8) {
-      if (!var1.isEmpty()) {
+      boolean skibidi = false;
+         if (!var1.isEmpty()) {
          var4.push();
          boolean var11 = var2 == ItemCameraTransformsTransformType.GUI || var2 == ItemCameraTransformsTransformType.GROUND || var2 == ItemCameraTransformsTransformType.FIXED;
          if (var1.getItem() == Items.field38144 && var11) {
@@ -137,7 +138,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
                } else if (!var16) {
                   var14 = method785(var5, var17, true, var1.method32159());
                } else {
-                  var14 = method786(var5, var17, true, var1.method32159());
+                  var14 = getEntityGlintVertexBuilder(var5, var17, true, var1.method32159());
                }
 
                if (Config.method26953()) {
@@ -212,7 +213,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
       }
    }
 
-   public static IVertexBuilder method786(Class7733 var0, RenderType var1, boolean var2, boolean var3) {
+   public static IVertexBuilder getEntityGlintVertexBuilder(Class7733 var0, RenderType var1, boolean var2, boolean var3) {
       if (Shaders.isShadowPass) {
          var3 = false;
       }

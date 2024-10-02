@@ -73,31 +73,31 @@ public class Class2854<T extends Class1066> extends Class2827<T> {
    }
 
    @Override
-   public void method11016(MatrixStack var1, IVertexBuilder var2, int var3, int var4, float var5, float var6, float var7, float var8) {
+   public void render(MatrixStack var1, IVertexBuilder var2, int var3, int var4, float var5, float var6, float var7, float var8) {
       if (!this.field17602) {
          ImmutableList.of(
                this.field17677, this.field17678, this.field17679, this.field17680, this.field17681, this.field17682, this.field17683, this.field17684
             )
-            .forEach(var8x -> var8x.method22681(var1, var2, var3, var4, var5, var6, var7, var8));
+            .forEach(var8x -> var8x.render(var1, var2, var3, var4, var5, var6, var7, var8));
       } else {
          float var11 = 2.0F;
          var1.push();
          float var12 = 0.7F;
-         var1.method35292(0.71428573F, 0.64935064F, 0.7936508F);
+         var1.scale(0.71428573F, 0.64935064F, 0.7936508F);
          var1.translate(0.0, 1.3125, 0.22F);
-         this.field17677.method22681(var1, var2, var3, var4, var5, var6, var7, var8);
+         this.field17677.render(var1, var2, var3, var4, var5, var6, var7, var8);
          var1.pop();
          var1.push();
          float var13 = 1.1F;
-         var1.method35292(0.625F, 0.45454544F, 0.45454544F);
+         var1.scale(0.625F, 0.45454544F, 0.45454544F);
          var1.translate(0.0, 2.0625, 0.0);
-         this.field17678.method22681(var1, var2, var3, var4, var5, var6, var7, var8);
+         this.field17678.render(var1, var2, var3, var4, var5, var6, var7, var8);
          var1.pop();
          var1.push();
-         var1.method35292(0.45454544F, 0.41322312F, 0.45454544F);
+         var1.scale(0.45454544F, 0.41322312F, 0.45454544F);
          var1.translate(0.0, 2.0625, 0.0);
          ImmutableList.of(this.field17679, this.field17680, this.field17681, this.field17682, this.field17683, this.field17684)
-            .forEach(var8x -> var8x.method22681(var1, var2, var3, var4, var5, var6, var7, var8));
+            .forEach(var8x -> var8x.render(var1, var2, var3, var4, var5, var6, var7, var8));
          var1.pop();
       }
    }

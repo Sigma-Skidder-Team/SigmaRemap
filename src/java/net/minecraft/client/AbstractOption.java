@@ -11,6 +11,7 @@ import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.client.renderer.GPUWarning;
 import net.minecraft.client.settings.NarratorStatus;
 import net.minecraft.client.settings.ParticleStatus;
+import net.minecraft.client.shader.Framebuffer;
 import net.minecraft.entity.player.ChatVisibility;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.*;

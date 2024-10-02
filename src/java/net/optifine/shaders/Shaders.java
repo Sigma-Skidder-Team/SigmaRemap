@@ -986,7 +986,7 @@ public class Shaders {
 
     private static Class6627 method32960(int var0, String var1) {
         String var2 = var1.trim();
-        byte var3 = 0;
+        int var3 = 0;
         if (var2.startsWith("minecraft:textures/")) {
             var2 = Class9402.method35774(var2, ".png");
             if (var2.endsWith("_n.png")) {
@@ -1980,7 +1980,7 @@ public class Shaders {
     }
 
     private static int method33008(Class7906 var0, String var1, int var2) {
-        byte var3 = 0;
+        int var3 = 0;
         if (var2 >= var1.length()) {
             return var3;
         } else {
@@ -4269,7 +4269,7 @@ public class Shaders {
 
     public static void method33104(MatrixStack var0) {
         if ((double) field40864 != 1.0) {
-            var0.method35292(1.0F, 1.0F, field40864);
+            var0.scale(1.0F, 1.0F, field40864);
         }
     }
 

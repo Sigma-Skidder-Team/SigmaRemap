@@ -5,6 +5,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.client.renderer.tileentity.BannerTileEntityRenderer;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.tileentity.TileEntity;
@@ -38,7 +39,7 @@ public class TileEntityRendererDispatcher {
       this.method27959(TileEntityType.field21441, new Class5958(this));
       this.method27959(TileEntityType.field21434, new Class5946(this));
       this.method27959(TileEntityType.field21435, new Class5952(this));
-      this.method27959(TileEntityType.field21439, new Class5948(this));
+      this.method27959(TileEntityType.field21439, new BannerTileEntityRenderer(this));
       this.method27959(TileEntityType.field21440, new Class5941(this));
       this.method27959(TileEntityType.field21443, new Class5954(new Class2887(), this));
       this.method27959(TileEntityType.field21444, new Class5950(this));

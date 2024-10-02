@@ -4,6 +4,7 @@ import java.util.Objects;
 import javax.annotation.Nullable;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.tileentity.BannerTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.IFormattableTextComponent;
@@ -32,10 +33,10 @@ public class Class7468 {
    @Nullable
    public static Class7468 method24184(IBlockReader var0, BlockPos var1) {
       TileEntity var4 = var0.getTileEntity(var1);
-      if (!(var4 instanceof Class958)) {
+      if (!(var4 instanceof BannerTileEntity)) {
          return null;
       } else {
-         Class958 var5 = (Class958)var4;
+         BannerTileEntity var5 = (BannerTileEntity)var4;
          Class112 var6 = var5.method3894(() -> var0.getBlockState(var1));
          ITextComponent var7 = !var5.method3381() ? null : var5.method3380();
          return new Class7468(var1, var6, var7);

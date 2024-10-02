@@ -43,7 +43,7 @@ public class Class262<T extends Class1086> extends Class219<T, Class2870<T>> {
          var1.push();
          var1.translate(0.2F, -0.35F, 0.5);
          var1.rotate(Vector3f.YP.rotationDegrees(-48.0F));
-         var1.method35292(-1.0F, -1.0F, 1.0F);
+         var1.scale(-1.0F, -1.0F, 1.0F);
          var1.translate(-0.5, -0.5, -0.5);
          if (var15 == null) {
             var13.method814(var14, var1, var2, var3, var17);
@@ -57,7 +57,7 @@ public class Class262<T extends Class1086> extends Class219<T, Class2870<T>> {
          var1.rotate(Vector3f.YP.rotationDegrees(42.0F));
          var1.translate(0.1F, 0.0, -0.6F);
          var1.rotate(Vector3f.YP.rotationDegrees(-48.0F));
-         var1.method35292(-1.0F, -1.0F, 1.0F);
+         var1.scale(-1.0F, -1.0F, 1.0F);
          var1.translate(-0.5, -0.5, -0.5);
          if (var15 == null) {
             var13.method814(var14, var1, var2, var3, var17);
@@ -70,7 +70,7 @@ public class Class262<T extends Class1086> extends Class219<T, Class2870<T>> {
          this.method825().method11191().translateRotate(var1);
          var1.translate(0.0, -0.7F, -0.2F);
          var1.rotate(Vector3f.YP.rotationDegrees(-78.0F));
-         var1.method35292(-1.0F, -1.0F, 1.0F);
+         var1.scale(-1.0F, -1.0F, 1.0F);
          var1.translate(-0.5, -0.5, -0.5);
          if (var15 == null) {
             var13.method814(var14, var1, var2, var3, var17);

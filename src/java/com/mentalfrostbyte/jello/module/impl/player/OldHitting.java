@@ -17,6 +17,7 @@ import mapped.*;
 import net.minecraft.block.*;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Items;
+import net.minecraft.item.ShieldItem;
 import net.minecraft.item.SwordItem;
 import net.minecraft.network.play.server.SEntityEquipmentPacket;
 import net.minecraft.util.HandSide;
@@ -135,10 +136,10 @@ public class OldHitting extends Module {
         //JelloPortal.getCurrentVersion() == ViaVerList._1_8_x*
         if (this.isEnabled() || mc.gameSettings.keyBindUseItem.isKeyDown()) {
             float var4 = event.method13924();
-            if (event.method13926() && event.getHand() == HandSide.LEFT && event.getItemStack().getItem() instanceof Class3334) {
-                event.method13931(false);
+            if (event.method13926() && event.getHand() == HandSide.LEFT && event.getItemStack().getItem() instanceof ShieldItem) {
+                event.renderBlocking(false);
             } else if (event.getHand() != HandSide.LEFT || !field23408) {
-                if (field23408 && event.method13926()) {
+                if (field23408 && event.method13926() && this.isEnabled()) {
                     event.setCancelled(true);
                     switch (this.getStringSettingValueByName("Animation")) {
                         case "Vanilla":
@@ -192,7 +193,7 @@ public class OldHitting extends Module {
         this.rotate(var7 * -69.0F, 1.0F, 0.0F, 0.0F, var3);
         this.rotate(-80.0F, 1.0F, 0.0F, 0.0F, var3);
         float var8 = 1.2F;
-        var3.method35292(var8, var8, var8);
+        var3.scale(var8, var8, var8);
     }
 
     private void method16025(float var1, float var2, MatrixStack var3) {
@@ -207,7 +208,7 @@ public class OldHitting extends Module {
         this.rotate(var7 * 109.0F, 1.0F, 0.0F, 0.0F, var3);
         this.rotate(-90.0F, 1.0F, 0.0F, 0.0F, var3);
         float var8 = 1.2F;
-        var3.method35292(var8, var8, var8);
+        var3.scale(var8, var8, var8);
     }
 
     private void method16026(float var1, float var2, MatrixStack var3) {
@@ -222,7 +223,7 @@ public class OldHitting extends Module {
         this.rotate(var7 * -69.0F, 1.0F, 0.0F, 0.0F, var3);
         this.rotate(-80.0F, 1.0F, 0.0F, 0.0F, var3);
         float var8 = 1.2F;
-        var3.method35292(var8, var8, var8);
+        var3.scale(var8, var8, var8);
     }
 
     private void method16027(float var1, float var2, MatrixStack var3) {
@@ -236,7 +237,7 @@ public class OldHitting extends Module {
         this.rotate(-9.0F, 0.0F, 0.0F, 1.0F, var3);
         var3.translate(0.0, 3.2F, 0.0);
         this.rotate(-80.0F, 1.0F, 0.0F, 0.0F, var3);
-        var3.method35292(2.7F, 2.7F, 2.7F);
+        var3.scale(2.7F, 2.7F, 2.7F);
     }
 
     private void method16028(float var1, float var2, MatrixStack var3) {
@@ -248,7 +249,7 @@ public class OldHitting extends Module {
         this.rotate(-80.0F, 1.0F, 0.0F, 0.0F, var3);
         this.rotate(-var6 * 10.0F, 1.0F, -2.0F, 3.0F, var3);
         float var7 = 1.2F;
-        var3.method35292(var7, var7, var7);
+        var3.scale(var7, var7, var7);
     }
 
     private void method16029(float var1, float var2, MatrixStack var3) {
@@ -260,7 +261,7 @@ public class OldHitting extends Module {
         this.rotate(-80.0F, 1.0F, 0.0F, 0.0F, var3);
         this.rotate(-var6 * 20.0F, 1.0F, 0.0F, 0.0F, var3);
         float var7 = 1.2F;
-        var3.method35292(var7, var7, var7);
+        var3.scale(var7, var7, var7);
     }
 
     private void method16030(float var1, float var2, MatrixStack var3) {
@@ -275,7 +276,7 @@ public class OldHitting extends Module {
         this.rotate(var7 * -69.0F, 1.0F, 0.0F, 0.0F, var3);
         this.rotate(-80.0F, 1.0F, 0.0F, 0.0F, var3);
         float var8 = 1.2F;
-        var3.method35292(var8, var8, var8);
+        var3.scale(var8, var8, var8);
     }
 
     private void method16031(float var1, float var2, MatrixStack var3) {
@@ -286,7 +287,7 @@ public class OldHitting extends Module {
         float var6 = MathHelper.sin(MathHelper.sqrt(var2) * (float) Math.PI);
         this.rotate(-80.0F, 1.0F, 0.0F, 0.0F, var3);
         float var7 = 1.2F - var6 * 0.3F;
-        var3.method35292(var7, var7, var7);
+        var3.scale(var7, var7, var7);
     }
 
     private void method16032(float var1, float var2, MatrixStack var3) {
@@ -307,6 +308,6 @@ public class OldHitting extends Module {
         this.rotate(-10.0F, 0.0F, 0.0F, 1.0F, var3);
         this.rotate(-80.0F, 1.0F, 0.0F, 0.0F, var3);
         float var7 = 1.2F;
-        var3.method35292(var7, var7, var7);
+        var3.scale(var7, var7, var7);
     }
 }

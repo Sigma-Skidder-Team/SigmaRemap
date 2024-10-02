@@ -58,7 +58,7 @@ public class Class5956 extends Class5942<Class959> {
          var3.pop();
          var3.push();
          var3.translate(0.5, 0.5, 0.5);
-         var3.method35292(0.875F, 0.875F, 0.875F);
+         var3.scale(0.875F, 0.875F, 0.875F);
          var3.rotate(Vector3f.XP.rotationDegrees(180.0F));
          var3.rotate(Vector3f.ZP.rotationDegrees(180.0F));
          this.field25975.render(var3, var14, var5, var6);
@@ -66,13 +66,13 @@ public class Class5956 extends Class5942<Class959> {
          ActiveRenderInfo var15 = this.field25928.field34748;
          var3.push();
          var3.translate(0.5, (double)(0.3F + var11 * 0.2F), 0.5);
-         var3.method35292(0.5F, 0.5F, 0.5F);
+         var3.scale(0.5F, 0.5F, 0.5F);
          float var16 = -var15.getYaw();
          var3.rotate(Vector3f.YP.rotationDegrees(var16));
          var3.rotate(Vector3f.XP.rotationDegrees(var15.getPitch()));
          var3.rotate(Vector3f.ZP.rotationDegrees(180.0F));
          float var17 = 1.3333334F;
-         var3.method35292(1.3333334F, 1.3333334F, 1.3333334F);
+         var3.scale(1.3333334F, 1.3333334F, 1.3333334F);
          this.field25974.render(var3, (!var1.method3904() ? field25973 : field25972).method26200(var4, RenderType::getEntityCutoutNoCull), var5, var6);
          var3.pop();
       } else {

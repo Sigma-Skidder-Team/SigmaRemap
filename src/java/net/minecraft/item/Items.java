@@ -1361,7 +1361,7 @@ public class Items {
    public static final Item field38116 = method30157("spectral_arrow", new Class3310(new Item.Properties().method17779(ItemGroup.field31673)));
    public static final Item field38117 = method30157("tipped_arrow", new Class3309(new Item.Properties().method17779(ItemGroup.field31673)));
    public static final Item field38118 = method30157("lingering_potion", new Class3325(new Item.Properties().method17775(1).method17779(ItemGroup.field31674)));
-   public static final Item field38119 = method30157("shield", new Class3334(new Item.Properties().method17777(336).method17779(ItemGroup.field31673)));
+   public static final Item field38119 = method30157("shield", new ShieldItem(new Item.Properties().method17777(336).method17779(ItemGroup.field31673)));
    public static final Item field38120 = method30157(
       "elytra", new Class3256(new Item.Properties().method17777(432).method17779(ItemGroup.field31668).method17780(Class1978.field12886))
    );

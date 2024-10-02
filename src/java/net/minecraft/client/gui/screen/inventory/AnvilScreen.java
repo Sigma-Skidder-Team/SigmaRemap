@@ -105,7 +105,6 @@ public class AnvilScreen extends Class875<Class5824> {
 
          if (var8 != null) {
             int var9 = this.xSize - 8 - this.font.method38821((ITextProperties)var8) - 2;
-            byte var10 = 69;
             fill(var1, var9 - 2, 67, this.xSize - 8, 79, 1325400064);
             this.font.method38803(var1, (ITextComponent)var8, (float)var9, 69.0F, var7);
          }

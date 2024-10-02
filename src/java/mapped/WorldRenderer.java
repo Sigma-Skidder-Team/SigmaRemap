@@ -21,6 +21,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.settings.ParticleStatus;
+import net.minecraft.client.shader.Framebuffer;
 import net.minecraft.client.shader.ShaderGroup;
 import net.minecraft.client.util.Util;
 import net.minecraft.crash.CrashReport;
@@ -2274,7 +2275,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
 
             this.field940.bindTexture(field933);
             var1.push();
-            var1.method35292(12.0F, 1.0F, 12.0F);
+            var1.scale(12.0F, 1.0F, 12.0F);
             var1.translate((double)(-var22), (double)var23, (double)(-var24));
             if (this.field953 != null) {
                this.field953.method7302();

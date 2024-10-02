@@ -355,7 +355,7 @@ public class EntityRendererManager {
       TextureAtlasSprite var7 = ModelBakery.LOCATION_FIRE_1.getSprite();
       var1.push();
       float var8 = var3.getWidth() * 1.4F;
-      var1.method35292(var8, var8, var8);
+      var1.scale(var8, var8, var8);
       float var9 = 0.5F;
       float var10 = 0.0F;
       float var11 = var3.getHeight() / var8;

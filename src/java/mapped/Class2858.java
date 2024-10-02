@@ -15,7 +15,7 @@ public abstract class Class2858<E extends Entity> extends AgeableModel<E> {
    }
 
    @Override
-   public void method11016(MatrixStack var1, IVertexBuilder var2, int var3, int var4, float var5, float var6, float var7, float var8) {
-      super.method11016(var1, var2, var3, var4, this.field17708 * var5, this.field17709 * var6, this.field17710 * var7, var8);
+   public void render(MatrixStack var1, IVertexBuilder var2, int var3, int var4, float var5, float var6, float var7, float var8) {
+      super.render(var1, var2, var3, var4, this.field17708 * var5, this.field17709 * var6, this.field17710 * var7, var8);
    }
 }

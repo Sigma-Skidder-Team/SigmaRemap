@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.BannerTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
@@ -23,15 +24,15 @@ public abstract class Class3359 extends Class3241 {
 
    @Override
    public TileEntity method11646(IBlockReader var1) {
-      return new Class958(this.field18904);
+      return new BannerTileEntity(this.field18904);
    }
 
    @Override
    public void method11563(World var1, BlockPos var2, BlockState var3, LivingEntity var4, ItemStack var5) {
       if (var5.method32152()) {
          TileEntity var8 = var1.getTileEntity(var2);
-         if (var8 instanceof Class958) {
-            ((Class958)var8).method3888(var5.method32149());
+         if (var8 instanceof BannerTileEntity) {
+            ((BannerTileEntity)var8).method3888(var5.method32149());
          }
       }
    }
@@ -39,7 +40,7 @@ public abstract class Class3359 extends Class3241 {
    @Override
    public ItemStack getItem(IBlockReader var1, BlockPos var2, BlockState var3) {
       TileEntity var6 = var1.getTileEntity(var2);
-      return !(var6 instanceof Class958) ? super.getItem(var1, var2, var3) : ((Class958)var6).method3893(var3);
+      return !(var6 instanceof BannerTileEntity) ? super.getItem(var1, var2, var3) : ((BannerTileEntity)var6).method3893(var3);
    }
 
    public Class112 method11936() {

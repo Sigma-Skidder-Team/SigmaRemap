@@ -74,14 +74,14 @@ public class Class2873<T extends Class1088> extends Class2866<T> {
    }
 
    @Override
-   public void method11016(MatrixStack var1, IVertexBuilder var2, int var3, int var4, float var5, float var6, float var7, float var8) {
+   public void render(MatrixStack var1, IVertexBuilder var2, int var3, int var4, float var5, float var6, float var7, float var8) {
       boolean var11 = this.field17787.showModel;
       if (var11) {
          var1.push();
          var1.translate(0.0, -0.08F, 0.0);
       }
 
-      super.method11016(var1, var2, var3, var4, var5, var6, var7, var8);
+      super.render(var1, var2, var3, var4, var5, var6, var7, var8);
       if (var11) {
          var1.pop();
       }

@@ -207,7 +207,7 @@ public class TargetHUD extends Module {
             RenderSystem.scalef(1.0F, 1.0F, -1.0F);
             MatrixStack var10 = new MatrixStack();
             var10.translate(0.0, 0.0, 1500.0);
-            var10.method35292(var6, var6, var6);
+            var10.scale(var6, var6, var6);
             Quaternion var11 = Vector3f.ZP.rotationDegrees(180.0F);
             var10.rotate(var11);
             var4.method32215(false);

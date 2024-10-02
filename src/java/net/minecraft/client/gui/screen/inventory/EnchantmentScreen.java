@@ -78,7 +78,7 @@ public class EnchantmentScreen extends ContainerScreen<Class5822> {
       var10.method32362().method32824();
       var1.translate(0.0, 3.3F, 1984.0);
       float var11 = 5.0F;
-      var1.method35292(5.0F, 5.0F, 5.0F);
+      var1.scale(5.0F, 5.0F, 5.0F);
       var1.rotate(Vector3f.ZP.rotationDegrees(180.0F));
       var1.rotate(Vector3f.XP.rotationDegrees(20.0F));
       float var12 = MathHelper.lerp(var2, this.field4839, this.field4838);
@@ -110,7 +110,7 @@ public class EnchantmentScreen extends ContainerScreen<Class5822> {
       field4831.method11177(0.0F, var14, var15, var12);
       Class7735 var16 = Class7733.method25595(Tessellator.getInstance().getBuffer());
       IVertexBuilder var17 = var16.method25597(field4831.method11028(field4830));
-      field4831.method11016(var1, var17, 15728880, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+      field4831.render(var1, var17, 15728880, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
       var16.method25602();
       var1.pop();
       RenderSystem.matrixMode(5889);

@@ -132,10 +132,10 @@ public class ModelRenderer {
    }
 
    public void render(MatrixStack var1, IVertexBuilder var2, int var3, int var4) {
-      this.method22681(var1, var2, var3, var4, 1.0F, 1.0F, 1.0F, 1.0F);
+      this.render(var1, var2, var3, var4, 1.0F, 1.0F, 1.0F, 1.0F);
    }
 
-   public void method22681(MatrixStack var1, IVertexBuilder var2, int var3, int var4, float var5, float var6, float var7, float var8) {
+   public void render(MatrixStack var1, IVertexBuilder var2, int var3, int var4, float var5, float var6, float var7, float var8) {
       if (this.showModel && (!this.field31040.isEmpty() || !this.field31041.isEmpty() || !this.field31042.isEmpty())) {
          RenderType var11 = null;
          Class7735 var12 = null;
@@ -162,7 +162,7 @@ public class ModelRenderer {
 
          for (int var14 = 0; var14 < var13; var14++) {
             ModelRenderer var15 = (ModelRenderer)this.field31041.get(var14);
-            var15.method22681(var1, var2, var3, var4, var5, var6, var7, var8);
+            var15.render(var1, var2, var3, var4, var5, var6, var7, var8);
          }
 
          int var17 = this.field31042.size();

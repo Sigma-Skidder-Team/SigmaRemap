@@ -4,6 +4,7 @@ import com.mojang.datafixers.types.Type;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
+import net.minecraft.tileentity.BannerTileEntity;
 import net.minecraft.tileentity.CommandBlockTileEntity;
 import net.minecraft.tileentity.JigsawTileEntity;
 import net.minecraft.tileentity.TileEntity;
@@ -76,10 +77,10 @@ public class TileEntityType<T extends TileEntity> {
    public static final TileEntityType<Class961> field21436 = method13794("daylight_detector", Class9785.<Class961>method38569(Class961::new, Blocks.field36720));
    public static final TileEntityType<Class936> field21437 = method13794("hopper", Class9785.<Class936>method38569(Class936::new, Blocks.HOPPER));
    public static final TileEntityType<Class963> field21438 = method13794("comparator", Class9785.<Class963>method38569(Class963::new, Blocks.COMPARATOR));
-   public static final TileEntityType<Class958> field21439 = method13794(
+   public static final TileEntityType<BannerTileEntity> field21439 = method13794(
       "banner",
-      Class9785.<Class958>method38569(
-         Class958::new,
+      Class9785.<BannerTileEntity>method38569(
+         BannerTileEntity::new,
          Blocks.field36803,
          Blocks.field36804,
          Blocks.field36805,

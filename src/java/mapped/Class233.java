@@ -34,7 +34,7 @@ public class Class233<T extends LivingEntity, M extends PlayerModel<T>> extends 
       float var17 = 0.0625F;
       float var18 = 0.03125F;
       var1.rotate(Vector3f.XP.rotationDegrees(45.0F));
-      var1.method35292(0.03125F, 0.03125F, 0.03125F);
+      var1.scale(0.03125F, 0.03125F, 0.03125F);
       var1.translate(2.5, 0.0, 0.0);
       IVertexBuilder var19 = var2.method25597(RenderType.getEntityCutoutNoCull(field879));
 

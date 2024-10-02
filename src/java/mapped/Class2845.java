@@ -20,8 +20,8 @@ public class Class2845 extends Class2844 {
    }
 
    @Override
-   public void method11016(MatrixStack var1, IVertexBuilder var2, int var3, int var4, float var5, float var6, float var7, float var8) {
-      super.method11016(var1, var2, var3, var4, var5, var6, var7, var8);
-      this.field17645.method22681(var1, var2, var3, var4, var5, var6, var7, var8);
+   public void render(MatrixStack var1, IVertexBuilder var2, int var3, int var4, float var5, float var6, float var7, float var8) {
+      super.render(var1, var2, var3, var4, var5, var6, var7, var8);
+      this.field17645.render(var1, var2, var3, var4, var5, var6, var7, var8);
    }
 }

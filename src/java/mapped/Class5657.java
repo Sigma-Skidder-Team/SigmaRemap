@@ -22,7 +22,7 @@ public class Class5657 extends Class5651<Class1070, Class2888<Class1070>> {
       if (!var1.isChild()) {
          this.shadowSize = 0.5F;
       } else {
-         var2.method35292(0.5F, 0.5F, 0.5F);
+         var2.scale(0.5F, 0.5F, 0.5F);
          this.shadowSize = 0.25F;
       }
    }

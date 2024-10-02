@@ -57,7 +57,7 @@ public class Class9065 {
       method33750(new ResourceLocation("custom_model_data"), (var0, var1, var2) -> !var0.method32141() ? 0.0F : (float)var0.method32142().getInt("CustomModelData"));
       method33751(Items.BOW, new ResourceLocation("pull"), (var0, var1, var2) -> {
          if (var2 != null) {
-            return var2.getActiveItemStack() == var0 ? (float)(var0.method32137() - var2.getItemInUseCount()) / 20.0F : 0.0F;
+            return var2.getActiveItemStack() == var0 ? (float)(var0.getUseDuration() - var2.getItemInUseCount()) / 20.0F : 0.0F;
          } else {
             return 0.0F;
          }
@@ -69,7 +69,7 @@ public class Class9065 {
       method33751(Items.field37905, new ResourceLocation("angle"), new Class8178());
       method33751(Items.CROSSBOW, new ResourceLocation("pull"), (var0, var1, var2) -> {
          if (var2 != null) {
-            return ! CrossbowItem.isCharged(var0) ? (float)(var0.method32137() - var2.getItemInUseCount()) / (float) CrossbowItem.method11767(var0) : 0.0F;
+            return ! CrossbowItem.isCharged(var0) ? (float)(var0.getUseDuration() - var2.getItemInUseCount()) / (float) CrossbowItem.method11767(var0) : 0.0F;
          } else {
             return 0.0F;
          }

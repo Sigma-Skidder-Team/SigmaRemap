@@ -11,7 +11,7 @@ public abstract class Class5685<T extends AbstractHorseEntity, M extends Class28
    }
 
    public void method17857(T var1, MatrixStack var2, float var3) {
-      var2.method35292(this.field25052, this.field25052, this.field25052);
+      var2.scale(this.field25052, this.field25052, this.field25052);
       super.method17857((T)var1, var2, var3);
    }
 }

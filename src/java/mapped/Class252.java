@@ -25,7 +25,7 @@ public class Class252 extends Class219<AbstractClientPlayerEntity, PlayerModel<A
             var1.rotate(Vector3f.XP.rotationDegrees(-var17));
             var1.rotate(Vector3f.YP.rotationDegrees(-var16));
             float var18 = 1.3333334F;
-            var1.method35292(1.3333334F, 1.3333334F, 1.3333334F);
+            var1.scale(1.3333334F, 1.3333334F, 1.3333334F);
             this.method825().renderEars(var1, var13, var3, var14);
             var1.pop();
          }

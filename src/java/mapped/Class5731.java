@@ -43,7 +43,7 @@ public class Class5731 extends EntityRenderer<ExperienceOrbEntity> {
       var4.translate(0.0, 0.1F, 0.0);
       var4.rotate(this.field25097.method32230());
       var4.rotate(Vector3f.YP.rotationDegrees(180.0F));
-      var4.method35292(0.3F, 0.3F, 0.3F);
+      var4.scale(0.3F, 0.3F, 0.3F);
       IVertexBuilder var23 = var5.method25597(field25142);
       Class8892 var24 = var4.getLast();
       Matrix4f var25 = var24.getMatrix();

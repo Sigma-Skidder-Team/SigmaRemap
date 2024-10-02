@@ -73,14 +73,14 @@ public class Class5736 extends EntityRenderer<ItemFrameEntity> {
          var4.rotate(Vector3f.ZP.rotationDegrees((float)var21 * 360.0F / 8.0F));
          if (!Reflector.postForgeBusEvent(Reflector.field42988, var1, this, var4, var5, var6)) {
             if (!var20) {
-               var4.method35292(0.5F, 0.5F, 0.5F);
+               var4.scale(0.5F, 0.5F, 0.5F);
                if (this.method17917(var1)) {
                   this.field25156.renderItem(var19, ItemCameraTransformsTransformType.FIXED, var6, OverlayTexture.NO_OVERLAY, var4, var5);
                }
             } else {
                var4.rotate(Vector3f.ZP.rotationDegrees(180.0F));
                float var17 = 0.0078125F;
-               var4.method35292(0.0078125F, 0.0078125F, 0.0078125F);
+               var4.scale(0.0078125F, 0.0078125F, 0.0078125F);
                var4.translate(-64.0, -64.0, 0.0);
                Class7529 var18 = ReflectorForge.method37048(var19, var1.world);
                var4.translate(0.0, 0.0, -1.0);

@@ -25,7 +25,7 @@ public class Class5738 extends EntityRenderer<Class904> {
       if (var9 != null) {
          var4.push();
          var4.push();
-         var4.method35292(0.5F, 0.5F, 0.5F);
+         var4.scale(0.5F, 0.5F, 0.5F);
          var4.rotate(this.field25097.method32230());
          var4.rotate(Vector3f.YP.rotationDegrees(180.0F));
          Class8892 var10 = var4.getLast();

@@ -100,7 +100,7 @@ public class Class831 extends Screen {
       var1.push();
       var1.translate((double)(this.width / 2), 0.0, 50.0);
       float var7 = 93.75F;
-      var1.method35292(93.75F, -93.75F, 93.75F);
+      var1.scale(93.75F, -93.75F, 93.75F);
       var1.translate(0.0, -1.3125, 0.0);
       BlockState var8 = this.field4611.getBlockState();
       boolean var9 = var8.getBlock() instanceof Class3374;
@@ -111,7 +111,7 @@ public class Class831 extends Screen {
       boolean var10 = this.field4612 / 6 % 2 == 0;
       float var11 = 0.6666667F;
       var1.push();
-      var1.method35292(0.6666667F, -0.6666667F, -0.6666667F);
+      var1.scale(0.6666667F, -0.6666667F, -0.6666667F);
       Class7735 var12 = this.mc.getRenderTypeBuffers().getBufferSource();
       Class7826 var13 = Class5947.method18473(var8.getBlock());
       IVertexBuilder var14 = var13.method26200(var12, this.field4610::method11028);
@@ -123,7 +123,7 @@ public class Class831 extends Screen {
       var1.pop();
       float var15 = 0.010416667F;
       var1.translate(0.0, 0.33333334F, 0.046666667F);
-      var1.method35292(0.010416667F, -0.010416667F, 0.010416667F);
+      var1.scale(0.010416667F, -0.010416667F, 0.010416667F);
       int var16 = this.field4611.method3844().method314();
       int var17 = this.field4614.method33849();
       int var18 = this.field4614.method33851();

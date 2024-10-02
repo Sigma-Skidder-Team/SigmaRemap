@@ -519,7 +519,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
 
       if (this.field821 != 1.0F) {
          var6.translate((double)this.field822, (double)(-this.field823), 0.0);
-         var6.method35292(this.field821, this.field821, 1.0F);
+         var6.scale(this.field821, this.field821, 1.0F);
       }
 
       var6.getLast()
@@ -808,7 +808,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
          f1 *= f1;
          Vector3f vector3f = new Vector3f(0.0F, MathHelper.SQRT_2 / 2.0F, MathHelper.SQRT_2 / 2.0F);
          matrixstack.rotate(vector3f.rotationDegrees(((float)this.rendererUpdateCount + partialTicks) * (float)i));
-         matrixstack.method35292(1.0F / f1, 1.0F, 1.0F);
+         matrixstack.scale(1.0F / f1, 1.0F, 1.0F);
          float f2 = -((float)this.rendererUpdateCount + partialTicks) * (float)i;
          matrixstack.rotate(vector3f.rotationDegrees(f2));
       }
@@ -1099,7 +1099,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
             -50.0
          );
          float var15 = 50.0F + 175.0F * MathHelper.sin(var11);
-         var14.method35292(var15, -var15, var15);
+         var14.scale(var15, -var15, var15);
          var14.rotate(Vector3f.YP.rotationDegrees(900.0F * MathHelper.method37771(MathHelper.sin(var11))));
          var14.rotate(Vector3f.XP.rotationDegrees(6.0F * MathHelper.cos(var7 * 8.0F)));
          var14.rotate(Vector3f.ZP.rotationDegrees(6.0F * MathHelper.cos(var7 * 8.0F)));

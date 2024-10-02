@@ -20,7 +20,7 @@ public class Class5698 extends Class5651<Class1081, Class2890<Class1081>> {
       var6 *= var6;
       float var8 = (1.0F + var6 * 0.4F) * var7;
       float var9 = (1.0F + var6 * 0.1F) / var7;
-      var2.method35292(var8, var9, var8);
+      var2.scale(var8, var9, var8);
    }
 
    public float method17879(Class1081 var1, float var2) {

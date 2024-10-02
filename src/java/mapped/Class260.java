@@ -19,7 +19,7 @@ public class Class260 extends Class219<Class1021, Class2878<Class1021>> {
          float var13 = 0.625F;
          var1.translate(0.0, -0.34375, 0.0);
          var1.rotate(Vector3f.YP.rotationDegrees(180.0F));
-         var1.method35292(0.625F, -0.625F, -0.625F);
+         var1.scale(0.625F, -0.625F, -0.625F);
          ItemStack var14 = new ItemStack(Blocks.field36589);
          Minecraft.getInstance()
             .getItemRenderer()

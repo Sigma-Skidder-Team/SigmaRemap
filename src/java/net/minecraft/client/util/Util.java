@@ -381,7 +381,6 @@ public class Util {
    }
 
    public static void method38527(Path var0, Path var1, Path var2) {
-      byte var5 = 10;
       if ((!Files.exists(var0) || method38525(10, "create backup " + var2, method38521(var2), method38520(var0, var2), method38523(var2)))
          && method38525(10, "remove old " + var0, method38521(var0), method38522(var0))
          && !method38525(10, "replace " + var0 + " with " + var1, method38520(var1, var0), method38523(var0))) {

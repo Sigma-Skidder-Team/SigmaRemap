@@ -2707,7 +2707,7 @@ public abstract class LivingEntity extends Entity {
       int var3 = this.getItemInUseCount();
       Class9427 var4 = this.activeItemStack.getItem().method11745();
       boolean var5 = var4 != null && var4.method36161();
-      var5 |= var3 <= this.activeItemStack.method32137() - 7;
+      var5 |= var3 <= this.activeItemStack.getUseDuration() - 7;
       return var5 && var3 % 4 == 0;
    }
 
@@ -2735,7 +2735,7 @@ public abstract class LivingEntity extends Entity {
       ItemStack var4 = this.getHeldItem(var1);
       if (!var4.isEmpty() && !this.isHandActive()) {
          this.activeItemStack = var4;
-         this.activeItemStackUseCount = var4.method32137();
+         this.activeItemStackUseCount = var4.getUseDuration();
          if (!this.world.isRemote) {
             this.setLivingFlag(1, true);
             this.setLivingFlag(2, var1 == Hand.OFF_HAND);
@@ -2751,7 +2751,7 @@ public abstract class LivingEntity extends Entity {
             if (this.isHandActive() && this.activeItemStack.isEmpty()) {
                this.activeItemStack = this.getHeldItem(this.getActiveHand());
                if (!this.activeItemStack.isEmpty()) {
-                  this.activeItemStackUseCount = this.activeItemStack.method32137();
+                  this.activeItemStackUseCount = this.activeItemStack.getUseDuration();
                }
             } else if (!this.isHandActive() && !this.activeItemStack.isEmpty()) {
                this.activeItemStack = ItemStack.EMPTY;
@@ -2835,7 +2835,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    public int getItemInUseMaxCount() {
-      return !this.isHandActive() ? 0 : this.activeItemStack.method32137() - this.getItemInUseCount();
+      return !this.isHandActive() ? 0 : this.activeItemStack.getUseDuration() - this.getItemInUseCount();
    }
 
    public void stopActiveHand() {

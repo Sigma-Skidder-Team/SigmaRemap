@@ -70,17 +70,17 @@ public class Class5732<T extends AbstractMinecartEntity> extends EntityRenderer<
       if (var27.getRenderType() != BlockRenderType.field9885) {
          var4.push();
          float var28 = 0.75F;
-         var4.method35292(0.75F, 0.75F, 0.75F);
+         var4.scale(0.75F, 0.75F, 0.75F);
          var4.translate(-0.5, (double)((float)(var33 - 8) / 16.0F), 0.5);
          var4.rotate(Vector3f.YP.rotationDegrees(90.0F));
          this.method17915((T)var1, var3, var27, var4, var5, var6);
          var4.pop();
       }
 
-      var4.method35292(-1.0F, -1.0F, 1.0F);
+      var4.scale(-1.0F, -1.0F, 1.0F);
       this.field25144.setRotationAngles((T)var1, 0.0F, 0.0F, -0.1F, 0.0F, 0.0F);
       IVertexBuilder var34 = var5.method25597(this.field25144.method11028(this.method17843((T)var1)));
-      this.field25144.method11016(var4, var34, var6, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+      this.field25144.render(var4, var34, var6, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
       var4.pop();
    }
 

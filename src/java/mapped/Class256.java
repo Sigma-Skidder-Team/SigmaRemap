@@ -25,7 +25,7 @@ public class Class256 extends Class219<Class1097, Class2867<Class1097>> {
 
          var1.push();
          var1.translate(0.1F, (double)var15, (double)var14);
-         Minecraft.getInstance().getFirstPersonRenderer().method37580(var4, var13, ItemCameraTransformsTransformType.GROUND, false, var1, var2, var3);
+         Minecraft.getInstance().getFirstPersonRenderer().renderItemSide(var4, var13, ItemCameraTransformsTransformType.GROUND, false, var1, var2, var3);
          var1.pop();
       }
    }

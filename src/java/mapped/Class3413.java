@@ -13,6 +13,7 @@ import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.stats.Stats;
+import net.minecraft.tileentity.BannerTileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvents;
@@ -97,10 +98,10 @@ public class Class3413 extends Block {
                      }
 
                      if (var10 > 0 && var11 instanceof Class3301) {
-                        if (Class958.method3889(var9) > 0 && !var2.isRemote) {
+                        if (BannerTileEntity.method3889(var9) > 0 && !var2.isRemote) {
                            ItemStack var16 = var9.copy();
                            var16.setCount(1);
-                           Class958.method3892(var16);
+                           BannerTileEntity.method3892(var16);
                            var4.method2911(Stats.field40145);
                            if (!var4.abilities.isCreativeMode) {
                               var9.shrink(1);

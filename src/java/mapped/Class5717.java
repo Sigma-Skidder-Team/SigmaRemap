@@ -20,7 +20,7 @@ public class Class5717 extends EntityRenderer<Class883> {
       var4.rotate(Vector3f.ZP.rotationDegrees(MathHelper.lerp(var3, var1.prevRotationPitch, var1.rotationPitch)));
       this.field25105.setRotationAngles(var1, var3, 0.0F, -0.1F, 0.0F, 0.0F);
       IVertexBuilder var9 = var5.method25597(this.field25105.method11028(field25104));
-      this.field25105.method11016(var4, var9, var6, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+      this.field25105.render(var4, var9, var6, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
       var4.pop();
       super.render(var1, var2, var3, var4, var5, var6);
    }

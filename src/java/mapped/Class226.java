@@ -19,7 +19,7 @@ public abstract class Class226<T extends Entity, M extends Class2827<T>> extends
       }
 
       Config.method26874().field1020 = true;
-      this.method825().method11016(var1, var13, 15728640, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+      this.method825().render(var1, var13, 15728640, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
       Config.method26874().field1020 = false;
       if (Config.isShaders()) {
          Shaders.method33082();

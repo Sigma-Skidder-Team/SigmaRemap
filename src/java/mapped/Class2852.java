@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.client.renderer.tileentity.BannerTileEntityRenderer;
 import net.optifine.Config;
 
 public class Class2852 extends Class2828 {
@@ -11,7 +12,7 @@ public class Class2852 extends Class2828 {
    public Class2852() {
       super(RenderType::getEntityCutoutNoCull);
       TileEntityRendererDispatcher var3 = TileEntityRendererDispatcher.instance;
-      Class5948 var4 = new Class5948(var3);
+      BannerTileEntityRenderer var4 = new BannerTileEntityRenderer(var3);
       this.field17670 = (ModelRenderer) Reflector.field43153.method36565(var4, 0);
       this.field17671 = (ModelRenderer) Reflector.field43153.method36565(var4, 1);
       this.field17672 = (ModelRenderer) Reflector.field43153.method36565(var4, 2);
@@ -30,6 +31,6 @@ public class Class2852 extends Class2828 {
    }
 
    @Override
-   public void method11016(MatrixStack var1, IVertexBuilder var2, int var3, int var4, float var5, float var6, float var7, float var8) {
+   public void render(MatrixStack var1, IVertexBuilder var2, int var3, int var4, float var5, float var6, float var7, float var8) {
    }
 }

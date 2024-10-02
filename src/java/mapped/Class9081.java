@@ -273,9 +273,9 @@ public class Class9081 {
             int var8 = var3.method32117();
             Class6794 var9 = var3.method32110(var2, var1, var4);
             ItemStack var10 = (ItemStack)var9.method20695();
-            if (var10 == var3 && var10.getCount() == var7 && var10.method32137() <= 0 && var10.method32117() == var8) {
+            if (var10 == var3 && var10.getCount() == var7 && var10.getUseDuration() <= 0 && var10.method32117() == var8) {
                return var9.method20694();
-            } else if (var9.method20694() == ActionResultType.FAIL && var10.method32137() > 0 && !var1.isHandActive()) {
+            } else if (var9.method20694() == ActionResultType.FAIL && var10.getUseDuration() > 0 && !var1.isHandActive()) {
                return var9.method20694();
             } else {
                var1.setHeldItem(var4, var10);

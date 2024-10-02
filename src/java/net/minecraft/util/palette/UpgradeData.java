@@ -68,8 +68,6 @@ public class UpgradeData {
       World var4 = var0.method7144();
       if (var0.getUpgradeData().field40390.remove(var1)) {
          Set var5 = var1.method8262();
-         boolean var6 = false;
-         byte var7 = 15;
          boolean var8 = var5.contains(Direction.EAST);
          boolean var9 = var5.contains(Direction.WEST);
          boolean var10 = var5.contains(Direction.SOUTH);

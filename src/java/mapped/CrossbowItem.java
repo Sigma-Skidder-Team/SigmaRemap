@@ -295,7 +295,7 @@ public class CrossbowItem extends Class3262 implements IVanishable {
          int var7 = EnchantmentHelper.getEnchantmentLevel(Enchantments.QUICK_CHARGE, var3);
          SoundEvent var8 = this.method11768(var7);
          SoundEvent var9 = var7 != 0 ? null : SoundEvents.field26489;
-         float var10 = (float)(var3.method32137() - var4) / (float)method11767(var3);
+         float var10 = (float)(var3.getUseDuration() - var4) / (float)method11767(var3);
          if (var10 < 0.2F) {
             this.field18746 = false;
             this.field18747 = false;

@@ -270,14 +270,14 @@ public class MouseHelper {
 
          this.field44298 = 0.0;
          this.field44299 = 0.0;
-         byte var19 = 1;
+         double var19 = 1;
          if (this.field44285.gameSettings.field44618) {
             var19 = -1;
          }
 
          this.field44285.getTutorial().method37024(var11, var13);
          if (this.field44285.player != null) {
-            this.field44285.player.rotateTowards(var11, var13 * (double)var19);
+            this.field44285.player.rotateTowards(var11, var13 * var19);
          }
       } else {
          this.field44298 = 0.0;

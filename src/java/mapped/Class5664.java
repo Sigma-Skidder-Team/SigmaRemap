@@ -12,7 +12,7 @@ public class Class5664 extends Class5663 {
 
    public void method17857(ZombieEntity var1, MatrixStack var2, float var3) {
       float var6 = 1.0625F;
-      var2.method35292(1.0625F, 1.0625F, 1.0625F);
+      var2.scale(1.0625F, 1.0625F, 1.0625F);
       super.method17857(var1, var2, var3);
    }
 

@@ -18,7 +18,7 @@ public class Class257 extends Class219<Class1095, Class2864<Class1095>> {
       var1.push();
       if (var14) {
          float var15 = 0.75F;
-         var1.method35292(0.75F, 0.75F, 0.75F);
+         var1.scale(0.75F, 0.75F, 0.75F);
          var1.translate(0.0, 0.5, 0.209375F);
       }
 
@@ -49,7 +49,7 @@ public class Class257 extends Class219<Class1095, Class2864<Class1095>> {
       }
 
       ItemStack var16 = var4.getItemStackFromSlot(EquipmentSlotType.MAINHAND);
-      Minecraft.getInstance().getFirstPersonRenderer().method37580(var4, var16, ItemCameraTransformsTransformType.GROUND, false, var1, var2, var3);
+      Minecraft.getInstance().getFirstPersonRenderer().renderItemSide(var4, var16, ItemCameraTransformsTransformType.GROUND, false, var1, var2, var3);
       var1.pop();
    }
 }

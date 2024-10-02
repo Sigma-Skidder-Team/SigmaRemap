@@ -47,7 +47,7 @@ public class Class220<T extends LivingEntity, M extends Class2827<T>> extends Cl
          this.method825().copyModelAttributesTo(this.field865);
          this.field865.setRotationAngles((T)var4, var5, var6, var8, var9, var10);
          IVertexBuilder var16 = ItemRenderer.method782(var2, RenderType.method14308(var14), false, var13.method32159());
-         this.field865.method11016(var1, var16, var3, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+         this.field865.render(var1, var16, var3, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
          var1.pop();
       }
    }

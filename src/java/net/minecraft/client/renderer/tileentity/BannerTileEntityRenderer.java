@@ -1,21 +1,23 @@
-package mapped;
+package net.minecraft.client.renderer.tileentity;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.datafixers.util.Pair;
+import mapped.*;
 import net.minecraft.block.BlockState;
+import net.minecraft.tileentity.BannerTileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.List;
 
-public class Class5948 extends Class5942<Class958> {
+public class BannerTileEntityRenderer extends Class5942<BannerTileEntity> {
    private static String[] field25940;
    private final ModelRenderer field25941 = method18477();
    private final ModelRenderer field25942 = new ModelRenderer(64, 64, 44, 0);
    private final ModelRenderer field25943;
 
-   public Class5948(TileEntityRendererDispatcher var1) {
+   public BannerTileEntityRenderer(TileEntityRendererDispatcher var1) {
       super(var1);
       this.field25942.addBox(-1.0F, -30.0F, -1.0F, 2.0F, 42.0F, 2.0F, 0.0F);
       this.field25943 = new ModelRenderer(64, 64, 0, 42);
@@ -28,7 +30,7 @@ public class Class5948 extends Class5942<Class958> {
       return var2;
    }
 
-   public void method18462(Class958 var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
+   public void method18462(BannerTileEntity var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
       List var9 = var1.method3890();
       if (var9 != null) {
          float var10 = 0.6666667F;
@@ -57,7 +59,7 @@ public class Class5948 extends Class5942<Class958> {
          }
 
          var3.push();
-         var3.method35292(0.6666667F, -0.6666667F, -0.6666667F);
+         var3.scale(0.6666667F, -0.6666667F, -0.6666667F);
          IVertexBuilder var17 = ModelBakery.field40513.method26200(var4, RenderType::getEntitySolid);
          this.field25942.render(var3, var17, var5, var6);
          this.field25943.render(var3, var17, var5, var6);
@@ -74,10 +76,10 @@ public class Class5948 extends Class5942<Class958> {
    public static void method18478(
            MatrixStack var0, Class7733 var1, int var2, int var3, ModelRenderer var4, Class7826 var5, boolean var6, List<Pair<Class2154, Class112>> var7
    ) {
-      method18479(var0, var1, var2, var3, var4, var5, var6, var7, false);
+      func_241717_a_(var0, var1, var2, var3, var4, var5, var6, var7, false);
    }
 
-   public static void method18479(
+   public static void func_241717_a_(
            MatrixStack var0, Class7733 var1, int var2, int var3, ModelRenderer var4, Class7826 var5, boolean var6, List<Pair<Class2154, Class112>> var7, boolean var8
    ) {
       var4.render(var0, var5.method26201(var1, RenderType::getEntitySolid, var8), var2, var3);
@@ -86,7 +88,7 @@ public class Class5948 extends Class5942<Class958> {
          Pair var12 = (Pair)var7.get(var11);
          float[] var13 = ((Class112)var12.getSecond()).method311();
          Class7826 var14 = new Class7826(!var6 ? Class8624.field38769 : Class8624.field38768, ((Class2154)var12.getFirst()).method8869(var6));
-         var4.method22681(var0, var14.method26200(var1, RenderType::method14322), var2, var3, var13[0], var13[1], var13[2], 1.0F);
+         var4.render(var0, var14.method26200(var1, RenderType::method14322), var2, var3, var13[0], var13[1], var13[2], 1.0F);
       }
    }
 }

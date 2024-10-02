@@ -42,7 +42,7 @@ public abstract class Class219<T extends Entity, M extends Class2827<T>> {
            Class2827<T> var0, ResourceLocation var1, MatrixStack var2, Class7733 var3, int var4, T var5, float var6, float var7, float var8
    ) {
       IVertexBuilder var11 = var3.method25597(RenderType.getEntityCutoutNoCull(var1));
-      var0.method11016(var2, var11, var4, LivingRenderer.method17883(var5, 0.0F), var6, var7, var8, 1.0F);
+      var0.render(var2, var11, var4, LivingRenderer.method17883(var5, 0.0F), var6, var7, var8, 1.0F);
    }
 
    public M method825() {

@@ -44,7 +44,7 @@ public class CUpdateCommandBlockPacket implements IPacket<IServerPlayNetHandler>
       var1.writeBlockPos(this.pos);
       var1.writeString(this.command);
       var1.writeEnumValue(this.mode);
-      byte var4 = 0;
+      int var4 = 0;
       if (this.trackOutput) {
          var4 |= 1;
       }

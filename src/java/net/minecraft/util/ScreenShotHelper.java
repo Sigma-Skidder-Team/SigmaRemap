@@ -10,7 +10,7 @@ import com.mojang.blaze3d.platform.GLX;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.renderer.texture.NativeImage;
-import mapped.Framebuffer;
+import net.minecraft.client.shader.Framebuffer;
 import mapped.MainWindow;
 import mapped.Reflector;
 import net.minecraft.client.GameSettings;

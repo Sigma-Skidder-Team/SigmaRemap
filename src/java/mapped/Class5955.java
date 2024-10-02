@@ -27,7 +27,7 @@ public class Class5955 extends Class5942<Class945> {
             var3.rotate(Vector3f.YP.rotationDegrees(var14));
             var3.rotate(Vector3f.XP.rotationDegrees(90.0F));
             var3.translate(-0.3125, -0.3125, 0.0);
-            var3.method35292(0.375F, 0.375F, 0.375F);
+            var3.scale(0.375F, 0.375F, 0.375F);
             Minecraft.getInstance().getItemRenderer().renderItem(var12, ItemCameraTransformsTransformType.FIXED, var5, var6, var3, var4);
             var3.pop();
          }

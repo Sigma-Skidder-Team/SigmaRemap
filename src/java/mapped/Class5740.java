@@ -22,7 +22,7 @@ public class Class5740 extends EntityRenderer<Class1004> {
          var9 *= var9;
          var9 *= var9;
          float var10 = 1.0F + var9 * 0.3F;
-         var4.method35292(var10, var10, var10);
+         var4.scale(var10, var10, var10);
       }
 
       var4.rotate(Vector3f.YP.rotationDegrees(-90.0F));

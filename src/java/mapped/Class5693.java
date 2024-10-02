@@ -29,6 +29,6 @@ public class Class5693 extends Class5651<WitherEntity, Class2881<WitherEntity>> 
          var6 -= ((float)var7 - var3) / 220.0F * 0.5F;
       }
 
-      var2.method35292(var6, var6, var6);
+      var2.scale(var6, var6, var6);
    }
 }

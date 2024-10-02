@@ -18,8 +18,8 @@ public class Class5716 extends EntityRenderer<Class886> {
       var4.push();
       var4.rotate(Vector3f.YP.rotationDegrees(MathHelper.lerp(var3, var1.prevRotationYaw, var1.rotationYaw) - 90.0F));
       var4.rotate(Vector3f.ZP.rotationDegrees(MathHelper.lerp(var3, var1.prevRotationPitch, var1.rotationPitch) + 90.0F));
-      IVertexBuilder var9 = ItemRenderer.method786(var5, this.field25103.method11028(this.method17843(var1)), false, var1.method3496());
-      this.field25103.method11016(var4, var9, var6, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+      IVertexBuilder var9 = ItemRenderer.getEntityGlintVertexBuilder(var5, this.field25103.method11028(this.method17843(var1)), false, var1.method3496());
+      this.field25103.render(var4, var9, var6, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
       var4.pop();
       super.render(var1, var2, var3, var4, var5, var6);
    }

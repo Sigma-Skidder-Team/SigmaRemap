@@ -37,6 +37,7 @@ import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.resources.DownloadingPackFinder;
 import net.minecraft.client.settings.PointOfView;
+import net.minecraft.client.shader.Framebuffer;
 import net.minecraft.client.util.Util;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;

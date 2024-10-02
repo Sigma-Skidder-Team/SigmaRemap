@@ -212,10 +212,10 @@ public class PacketBuffer extends ByteBuf {
       long var3 = 0L;
       int var5 = 0;
 
-      byte var6;
+      long var6;
       do {
          var6 = this.readByte();
-         var3 |= (long)(var6 & 127) << var5++ * 7;
+         var3 |= (var6 & 127) << var5++ * 7;
          if (var5 > 10) {
             throw new RuntimeException("VarLong too big");
          }

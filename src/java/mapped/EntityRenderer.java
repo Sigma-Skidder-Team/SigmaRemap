@@ -103,7 +103,7 @@ public abstract class EntityRenderer<T extends Entity> {
          var3.push();
          var3.translate(0.0, (double)var12, 0.0);
          var3.rotate(this.field25097.method32230());
-         var3.method35292(-0.025F, -0.025F, 0.025F);
+         var3.scale(-0.025F, -0.025F, 0.025F);
          Matrix4f var14 = var3.getLast().getMatrix();
          float var15 = Minecraft.getInstance().gameSettings.method37139(0.25F);
          int var16 = (int)(var15 * 255.0F) << 24;

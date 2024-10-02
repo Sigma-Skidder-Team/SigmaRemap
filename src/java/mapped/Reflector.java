@@ -14,6 +14,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.renderer.ActiveRenderInfo;
+import net.minecraft.client.renderer.tileentity.BannerTileEntityRenderer;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
@@ -444,7 +445,7 @@ public class Reflector {
    public static Class6633 field43149 = new Class6633(field43147, Class2810.class);
    public static Class6636 field43150 = new Class6636(Class5734.class);
    public static Class6633 field43151 = new Class6633(field43150, Class2844.class);
-   public static Class6636 field43152 = new Class6636(Class5948.class);
+   public static Class6636 field43152 = new Class6636(BannerTileEntityRenderer.class);
    public static Class9475 field43153 = new Class9475(field43152, ModelRenderer.class, 3);
    public static Class6636 field43154 = new Class6636(Class5950.class);
    public static Class6633 field43155 = new Class6633(field43154, ModelRenderer.class, 0);

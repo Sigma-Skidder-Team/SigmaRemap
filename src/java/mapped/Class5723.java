@@ -32,7 +32,7 @@ public class Class5723 extends EntityRenderer<EnderCrystalEntity> {
       float var10 = ((float)var1.field5523 + var3) * 3.0F;
       IVertexBuilder var11 = var5.method25597(field25123);
       var4.push();
-      var4.method35292(2.0F, 2.0F, 2.0F);
+      var4.scale(2.0F, 2.0F, 2.0F);
       var4.translate(0.0, -0.5, 0.0);
       int var12 = OverlayTexture.NO_OVERLAY;
       if (var1.method4145()) {
@@ -44,11 +44,11 @@ public class Class5723 extends EntityRenderer<EnderCrystalEntity> {
       var4.rotate(new Quaternion(new Vector3f(field25124, 0.0F, field25124), 60.0F, true));
       this.field25126.render(var4, var11, var6, var12);
       float var13 = 0.875F;
-      var4.method35292(0.875F, 0.875F, 0.875F);
+      var4.scale(0.875F, 0.875F, 0.875F);
       var4.rotate(new Quaternion(new Vector3f(field25124, 0.0F, field25124), 60.0F, true));
       var4.rotate(Vector3f.YP.rotationDegrees(var10));
       this.field25126.render(var4, var11, var6, var12);
-      var4.method35292(0.875F, 0.875F, 0.875F);
+      var4.scale(0.875F, 0.875F, 0.875F);
       var4.rotate(new Quaternion(new Vector3f(field25124, 0.0F, field25124), 60.0F, true));
       var4.rotate(Vector3f.YP.rotationDegrees(var10));
       this.field25125.render(var4, var11, var6, var12);

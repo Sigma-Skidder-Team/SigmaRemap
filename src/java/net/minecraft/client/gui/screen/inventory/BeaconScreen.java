@@ -64,7 +64,6 @@ public class BeaconScreen extends ContainerScreen<Class5821> {
             }
          }
 
-         byte var10 = 3;
          int var11 = Class950.field5338[3].length + 1;
          int var12 = var11 * 22 + (var11 - 1) * 2;
 

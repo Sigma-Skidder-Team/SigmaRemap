@@ -338,7 +338,6 @@ public class IngameGui extends AbstractGui {
                 RenderSystem.popMatrix();
             } else {
                 RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.ONE_MINUS_DST_COLOR, DestFactor.field12933, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
-                byte var5 = 15;
                 this.blit(var1, (this.field6741 - 15) / 2, (this.field6742 - 15) / 2, 0, 0, 15, 15);
                 if (this.field6716.gameSettings.field44603 == Class2207.field14426) {
                     float var6 = this.field6716.player.getCooledAttackStrength(0.0F);
@@ -404,7 +403,7 @@ public class IngameGui extends AbstractGui {
 
                 if (var10.method8632()) {
                     int var12 = this.field6741;
-                    byte var13 = 1;
+                    int var13 = 1;
                     if (this.field6716.isDemo()) {
                         var13 += 15;
                     }
@@ -434,7 +433,7 @@ public class IngameGui extends AbstractGui {
 
                     TextureAtlasSprite var20 = var7.method1022(var11);
                     int var16 = var12;
-                    byte var17 = var13;
+                    int var17 = var13;
                     float var18 = var14;
                     var8.add(() -> {
                         this.field6716.getTextureManager().bindTexture(var20.getAtlasTexture().getTextureLocation());
@@ -653,7 +652,6 @@ public class IngameGui extends AbstractGui {
 
         int var28 = var6.size() * 9;
         int var29 = this.field6742 / 2 + var28 / 3;
-        byte var30 = 3;
         int var31 = this.field6741 - var11 - 3;
         int var17 = 0;
         int var18 = this.field6716.gameSettings.method37140(0.3F);
@@ -778,7 +776,7 @@ public class IngameGui extends AbstractGui {
             this.field6716.getProfiler().endStartSection("health");
 
             for (int var33 = MathHelper.ceil((var15 + (float) var16) / 2.0F) - 1; var33 >= 0; var33--) {
-                byte var35 = 16;
+                int var35 = 16;
                 if (!var4.isPotionActive(Effects.POISON)) {
                     if (var4.isPotionActive(Effects.WITHER)) {
                         var35 += 72;
@@ -787,7 +785,7 @@ public class IngameGui extends AbstractGui {
                     var35 += 36;
                 }
 
-                byte var26 = 0;
+                int var26 = 0;
                 if (var6) {
                     var26 = 1;
                 }
@@ -803,7 +801,7 @@ public class IngameGui extends AbstractGui {
                     var29 -= 2;
                 }
 
-                byte var30 = 0;
+                int var30 = 0;
                 if (var4.world.getWorldInfo().isHardcore()) {
                     var30 = 5;
                 }
@@ -843,8 +841,8 @@ public class IngameGui extends AbstractGui {
 
                 for (int var37 = 0; var37 < 10; var37++) {
                     int var39 = var14;
-                    byte var41 = 16;
-                    byte var43 = 0;
+                    int var41 = 16;
+                    int var43 = 0;
                     if (var4.isPotionActive(Effects.HUNGER)) {
                         var41 += 36;
                         var43 = 13;
@@ -900,15 +898,14 @@ public class IngameGui extends AbstractGui {
                 int var7 = this.field6742 - 39;
                 int var8 = this.field6741 / 2 + 91;
                 int var9 = var7;
-                byte var10 = 0;
+                int var10 = 0;
 
-                for (boolean var11 = false; var5 > 0; var10 += 20) {
+                for (; var5 > 0; var10 += 20) {
                     int var12 = Math.min(var5, 10);
                     var5 -= var12;
 
                     for (int var13 = 0; var13 < var12; var13++) {
-                        byte var14 = 52;
-                        byte var15 = 0;
+                        int var15 = 0;
                         int var16 = var8 - var13 * 8 - 9;
                         this.blit(var1, var16, var9, 52 + var15 * 9, 9, 9, 9);
                         if (var13 * 2 + 1 + var10 < var6) {

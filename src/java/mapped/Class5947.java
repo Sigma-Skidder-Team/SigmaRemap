@@ -41,7 +41,7 @@ public class Class5947 extends Class5942<Class954> {
       }
 
       var3.push();
-      var3.method35292(0.6666667F, -0.6666667F, -0.6666667F);
+      var3.scale(0.6666667F, -0.6666667F, -0.6666667F);
       Class7826 var27 = method18473(var9.getBlock());
       IVertexBuilder var12 = var27.method26200(var4, this.field25938::method11028);
       this.field25938.field17650.render(var3, var12, var5, var6);
@@ -51,7 +51,7 @@ public class Class5947 extends Class5942<Class954> {
          FontRenderer var13 = this.field25928.method27967();
          float var14 = 0.010416667F;
          var3.translate(0.0, 0.33333334F, 0.046666667F);
-         var3.method35292(0.010416667F, -0.010416667F, 0.010416667F);
+         var3.scale(0.010416667F, -0.010416667F, 0.010416667F);
          int var15 = var1.method3844().method314();
          if (Config.method26911()) {
             var15 = Class9680.method37900(var15);

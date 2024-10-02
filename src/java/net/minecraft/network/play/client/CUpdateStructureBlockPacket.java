@@ -101,7 +101,7 @@ public class CUpdateStructureBlockPacket implements IPacket<IServerPlayNetHandle
       var1.writeString(this.field_210399_i);
       var1.writeFloat(this.integrity);
       var1.method35719(this.seed);
-      byte var4 = 0;
+      int var4 = 0;
       if (this.field_210400_j) {
          var4 |= 1;
       }

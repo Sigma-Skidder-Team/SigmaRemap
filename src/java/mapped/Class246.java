@@ -14,11 +14,11 @@ public class Class246 extends Class219<Class1057, Class2887<Class1057>> {
    public void method820(MatrixStack var1, Class7733 var2, int var3, Class1057 var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       var1.push();
       var1.translate(0.0, 1.0, 0.0);
-      var1.method35292(-1.0F, -1.0F, 1.0F);
+      var1.scale(-1.0F, -1.0F, 1.0F);
       Quaternion var13 = var4.method4848().getOpposite().method532();
       var13.method31184();
       var1.rotate(var13);
-      var1.method35292(-1.0F, -1.0F, 1.0F);
+      var1.scale(-1.0F, -1.0F, 1.0F);
       var1.translate(0.0, -1.0, 0.0);
       Class112 var14 = var4.method4857();
       ResourceLocation var15 = var14 != null ? Class5683.field25049[var14.method309()] : Class5683.field25048;

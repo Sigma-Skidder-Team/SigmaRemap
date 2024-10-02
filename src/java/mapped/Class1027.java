@@ -116,7 +116,7 @@ public class Class1027 extends Class1026 implements Class1022 {
 
             if (var7 != null) {
                this.setItemStackToSlot(EquipmentSlotType.MAINHAND, Class9741.method38187(new ItemStack(Items.field37971), var7));
-               this.field5721 = this.getHeldItemMainhand().method32137();
+               this.field5721 = this.getHeldItemMainhand().getUseDuration();
                this.method4567(true);
                if (!this.isSilent()) {
                   this.world
