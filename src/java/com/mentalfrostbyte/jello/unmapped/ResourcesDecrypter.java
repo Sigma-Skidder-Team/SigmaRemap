@@ -172,86 +172,54 @@ public class ResourcesDecrypter {
         panoramaPNG = createScaledAndProcessedTexture1("com/mentalfrostbyte/gui/resources/" + getPanoramaPNG(), 0.25F, 30);
     }
 
-    public static Texture loadTexture(String var0) {
+    public static Texture loadTexture(String filePath) {
         try {
-            String var3 = var0.substring(var0.lastIndexOf(".") + 1).toUpperCase();
-            return loadTexture(var0, var3);
-        } catch (Exception var4) {
-            var4.printStackTrace();
-            Client.getInstance()
-                    .getLogger()
-                    .error(
-                            "Unable to load texture "
-                                    + var0
-                                    + ". Please make sure it is a valid path and has a valid extension or load it directly from the load(name, type) function."
-                    );
-            throw var4;
+            String extension = filePath.substring(filePath.lastIndexOf(".") + 1).toUpperCase();
+            return loadTexture(filePath, extension);
+        } catch (Exception e) {
+            e.printStackTrace();
+            Client.getInstance().getLogger().error(
+                    "Unable to load texture " + filePath +
+                            ". Please make sure it is a valid path and has a valid extension."
+            );
+            throw e;
         }
     }
 
-    public static Texture loadTexture(String var0, String var1) {
+    public static Texture loadTexture(String filePath, String fileType) {
         try {
-            return TextureLoader.getTexture(var1, readInputStream(var0));
-        } catch (IOException var24) {
-            try (InputStream var5 = readInputStream(var0)) {
-                byte[] var7 = new byte[8];
-                var5.read(var7);
-                StringBuilder var8 = new StringBuilder();
-
-                for (int var12 : var7) {
-                    var8.append(" ").append(var12);
+            return TextureLoader.getTexture(fileType, readInputStream(filePath));
+        } catch (IOException e) {
+            try (InputStream inputStream = readInputStream(filePath)) {
+                byte[] header = new byte[8];
+                inputStream.read(header);
+                StringBuilder headerInfo = new StringBuilder();
+                for (int value : header) {
+                    headerInfo.append(" ").append(value);
                 }
-
-                throw new IllegalStateException("Unable to load texture " + var0 + " header" + var8);
-            } catch (IOException var23) {
-                throw new IllegalStateException("Unable to load texture " + var0);
+                throw new IllegalStateException("Unable to load texture " + filePath + " header: " + headerInfo);
+            } catch (IOException ex) {
+                throw new IllegalStateException("Unable to load texture " + filePath, ex);
             }
         }
     }
 
     public static InputStream readInputStream(String fileName) {
         try {
-            String sha1HexResult = DigestUtils.sha1Hex(fileName);
+            // The file path within the Minecraft assets folder
+            String assetPath = "assets/minecraft/" + fileName;
 
-            System.out.println(fileName + " : " + sha1HexResult);
-
-            String encryptedFileName = sha1HexResult + ".bmp";
-
-            InputStream resourceStream = Client.getInstance().getClass().getClassLoader().getResourceAsStream(encryptedFileName);
+            // Attempt to load the resource directly from the classpath
+            InputStream resourceStream = Client.getInstance().getClass().getClassLoader().getResourceAsStream(assetPath);
 
             if (resourceStream != null) {
-                Path lol = Paths.get("lol");
-                if (!Files.exists(lol)) {
-                    Files.createDirectory(lol);
-                }
-
-                File outputFile = new File("lol", fileName);
-                outputFile.getParentFile().mkdirs();
-
-                try (OutputStream fileOutputStream = Files.newOutputStream(outputFile.toPath());
-                     ByteArrayOutputStream decryptedOutputStream = new ByteArrayOutputStream()) {
-
-                    byte[] buffer = new byte[4096];
-                    int bytesRead;
-                    int xorIndex = 0;
-
-                    while ((bytesRead = resourceStream.read(buffer)) != -1) {
-                        for (int i = 0; i < bytesRead; i++) {
-                            buffer[i] ^= xorKey[xorIndex++ % xorKey.length];
-                        }
-                        decryptedOutputStream.write(buffer, 0, bytesRead);
-                    }
-
-                    decryptedOutputStream.writeTo(fileOutputStream);
-                    System.out.println("Decrypted file saved to: " + outputFile.getAbsolutePath());
-                    return new ByteArrayInputStream(decryptedOutputStream.toByteArray());
-                }
+                return resourceStream;
             } else {
-                return Client.getInstance().getClass().getClassLoader().getResourceAsStream(fileName);
+                throw new IllegalStateException("Resource not found: " + assetPath);
             }
-        } catch (IOException e) {
+        } catch (Exception e) {
             throw new IllegalStateException(
-                    "Unable to process " + fileName + ". Error during decryption or resource loading.", e
+                    "Unable to load resource " + fileName + ". Error during resource loading.", e
             );
         }
     }

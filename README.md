@@ -6,24 +6,24 @@ Sigma 5.0 remapping project
 
 
 ### [!] Latest fixes/improvements
-We have fixed many features already, 
+We have fixed many features already,
 - music player (featured playlists & search functionality);
-- stairs hitbox/collision bug;
 - removed viaversion and the bugs that came with it;
+- shield rendering when sword blocking;
+- stairs hitbox/collision bug;
+- removed resource decrypted;
 - 4.5 reach on survival;
 - classic mode visuals;
+- white screen issue;
 - profiles/configs;
-- discord rpc and more. 
+- discord rpc. 
 
 ### [!] TO-DO
-1. Fix white screen with framebuffers;
-2. Fix singleplayer;
-3. Main menu, animation and gui flickering;
-4. Packet issues on some servers (instant disconnect/kicks);
-4. Shield on OldHitting;
-5. Port all premium modules to regular modules;
-6. Client sided rotations;
-7. Add back ViaVersion/Jello Portal.
+1. Fix singleplayer;
+2. Main menu, animation and gui flickering;
+3. Packet issues on some servers (instant disconnect/kicks);
+4. Port all premium modules to regular modules;
+5. Add back ViaVersion/Jello Portal.
 
 ### :D
 

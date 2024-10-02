@@ -364,6 +364,7 @@ public class Client {
             this.moduleManager.method14658();
         }
 
+        ResourcesDecrypter.decrypt();
        // System.gc();
     }
 }
