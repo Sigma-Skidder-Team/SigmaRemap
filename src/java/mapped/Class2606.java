@@ -74,7 +74,7 @@ public class Class2606 extends Class2605 {
       this.field16853 = this.field16853 + this.field16856 * 15.0F * (float) (Math.PI / 180.0);
       Class1110.method5351(
          this.field16851,
-         Vector3d.method11329(Class1110.method5349(this.field16851))
+         Vector3d.copy(Class1110.method5349(this.field16851))
             .add(
                (double)(this.field16854 * MathHelper.cos(this.field16853)),
                (double)(-4.0F + this.field16855),

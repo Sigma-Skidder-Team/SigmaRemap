@@ -10,6 +10,9 @@ import com.mojang.brigadier.suggestion.SuggestionsBuilder;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.concurrent.CompletableFuture;
+
+import net.minecraft.command.CommandSource;
+import net.minecraft.scoreboard.ServerScoreboard;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class9263 implements ArgumentType<String> {
@@ -28,9 +31,9 @@ public class Class9263 implements ArgumentType<String> {
       return new Class9263();
    }
 
-   public static Class8375 method34861(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
+   public static Class8375 method34861(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
       String var4 = (String)var0.getArgument(var1, String.class);
-      Class6887 var5 = ((Class6619)var0.getSource()).method20177().method1409();
+      ServerScoreboard var5 = ((CommandSource)var0.getSource()).method20177().method1409();
       Class8375 var6 = var5.method20976(var4);
       if (var6 != null) {
          return var6;
@@ -39,7 +42,7 @@ public class Class9263 implements ArgumentType<String> {
       }
    }
 
-   public static Class8375 method34862(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
+   public static Class8375 method34862(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
       Class8375 var4 = method34861(var0, var1);
       if (!var4.method29337().method33281()) {
          return var4;
@@ -58,7 +61,7 @@ public class Class9263 implements ArgumentType<String> {
    }
 
    public <S> CompletableFuture<Suggestions> listSuggestions(CommandContext<S> var1, SuggestionsBuilder var2) {
-      if (!(var1.getSource() instanceof Class6619)) {
+      if (!(var1.getSource() instanceof CommandSource)) {
          if (!(var1.getSource() instanceof Class6618)) {
             return Suggestions.empty();
          } else {
@@ -66,7 +69,7 @@ public class Class9263 implements ArgumentType<String> {
             return var5.method20130((CommandContext<Class6618>) var1, var2);
          }
       } else {
-         return Class6618.method20147(((Class6619)var1.getSource()).method20177().method1409().method20983(), var2);
+         return Class6618.method20147(((CommandSource)var1.getSource()).method20177().method1409().method20983(), var2);
       }
    }
 

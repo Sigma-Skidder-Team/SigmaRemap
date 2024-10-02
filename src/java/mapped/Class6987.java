@@ -12,6 +12,7 @@ import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import com.mojang.brigadier.suggestion.SuggestionProvider;
 import java.util.UUID;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.attributes.Attribute;
@@ -21,7 +22,7 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class6987 {
-   private static final SuggestionProvider<Class6619> field30228 = (var0, var1) -> Class6618.method20141(Registry.ATTRIBUTE.method9190(), var1);
+   private static final SuggestionProvider<CommandSource> field30228 = (var0, var1) -> Class6618.method20141(Registry.ATTRIBUTE.method9190(), var1);
    private static final DynamicCommandExceptionType field30229 = new DynamicCommandExceptionType(
       var0 -> new TranslationTextComponent("commands.attribute.failed.entity", var0)
    );
@@ -35,7 +36,7 @@ public class Class6987 {
       (var0, var1, var2) -> new TranslationTextComponent("commands.attribute.failed.modifier_already_present", var2, var1, var0)
    );
 
-   public static void method21610(CommandDispatcher<Class6619> var0) {
+   public static void method21610(CommandDispatcher<CommandSource> var0) {
       var0.register(
          (LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("attribute").requires(var0x -> var0x.method20129(2)))
             .then(
@@ -47,7 +48,7 @@ public class Class6987 {
                                  ((LiteralArgumentBuilder)Class6099.method18839("get")
                                        .executes(
                                           var0x -> method21614(
-                                                (Class6619)var0x.getSource(),
+                                                (CommandSource)var0x.getSource(),
                                                 Class8700.method31346(var0x, "target"),
                                                 Class8303.method29035(var0x, "attribute"),
                                                 1.0
@@ -57,7 +58,7 @@ public class Class6987 {
                                        Class6099.method18840("scale", DoubleArgumentType.doubleArg())
                                           .executes(
                                              var0x -> method21614(
-                                                   (Class6619)var0x.getSource(),
+                                                   (CommandSource)var0x.getSource(),
                                                    Class8700.method31346(var0x, "target"),
                                                    Class8303.method29035(var0x, "attribute"),
                                                    DoubleArgumentType.getDouble(var0x, "scale")
@@ -73,7 +74,7 @@ public class Class6987 {
                                              Class6099.method18840("value", DoubleArgumentType.doubleArg())
                                                 .executes(
                                                    var0x -> method21617(
-                                                         (Class6619)var0x.getSource(),
+                                                         (CommandSource)var0x.getSource(),
                                                          Class8700.method31346(var0x, "target"),
                                                          Class8303.method29035(var0x, "attribute"),
                                                          DoubleArgumentType.getDouble(var0x, "value")
@@ -85,7 +86,7 @@ public class Class6987 {
                                     ((LiteralArgumentBuilder)Class6099.method18839("get")
                                           .executes(
                                              var0x -> method21615(
-                                                   (Class6619)var0x.getSource(),
+                                                   (CommandSource)var0x.getSource(),
                                                    Class8700.method31346(var0x, "target"),
                                                    Class8303.method29035(var0x, "attribute"),
                                                    1.0
@@ -95,7 +96,7 @@ public class Class6987 {
                                           Class6099.method18840("scale", DoubleArgumentType.doubleArg())
                                              .executes(
                                                 var0x -> method21615(
-                                                      (Class6619)var0x.getSource(),
+                                                      (CommandSource)var0x.getSource(),
                                                       Class8700.method31346(var0x, "target"),
                                                       Class8303.method29035(var0x, "attribute"),
                                                       DoubleArgumentType.getDouble(var0x, "scale")
@@ -120,7 +121,7 @@ public class Class6987 {
                                                                      Class6099.method18839("add")
                                                                         .executes(
                                                                            var0x -> method21618(
-                                                                                 (Class6619)var0x.getSource(),
+                                                                                 (CommandSource)var0x.getSource(),
                                                                                  Class8700.method31346(var0x, "target"),
                                                                                  Class8303.method29035(var0x, "attribute"),
                                                                                  Class9728.method38109(var0x, "uuid"),
@@ -134,7 +135,7 @@ public class Class6987 {
                                                                   Class6099.method18839("multiply")
                                                                      .executes(
                                                                         var0x -> method21618(
-                                                                              (Class6619)var0x.getSource(),
+                                                                              (CommandSource)var0x.getSource(),
                                                                               Class8700.method31346(var0x, "target"),
                                                                               Class8303.method29035(var0x, "attribute"),
                                                                               Class9728.method38109(var0x, "uuid"),
@@ -148,7 +149,7 @@ public class Class6987 {
                                                                Class6099.method18839("multiply_base")
                                                                   .executes(
                                                                      var0x -> method21618(
-                                                                           (Class6619)var0x.getSource(),
+                                                                           (CommandSource)var0x.getSource(),
                                                                            Class8700.method31346(var0x, "target"),
                                                                            Class8303.method29035(var0x, "attribute"),
                                                                            Class9728.method38109(var0x, "uuid"),
@@ -168,7 +169,7 @@ public class Class6987 {
                                           Class6099.method18840("uuid", Class9728.method38110())
                                              .executes(
                                                 var0x -> method21619(
-                                                      (Class6619)var0x.getSource(),
+                                                      (CommandSource)var0x.getSource(),
                                                       Class8700.method31346(var0x, "target"),
                                                       Class8303.method29035(var0x, "attribute"),
                                                       Class9728.method38109(var0x, "uuid")
@@ -184,7 +185,7 @@ public class Class6987 {
                                              ((RequiredArgumentBuilder)Class6099.method18840("uuid", Class9728.method38110())
                                                    .executes(
                                                       var0x -> method21616(
-                                                            (Class6619)var0x.getSource(),
+                                                            (CommandSource)var0x.getSource(),
                                                             Class8700.method31346(var0x, "target"),
                                                             Class8303.method29035(var0x, "attribute"),
                                                             Class9728.method38109(var0x, "uuid"),
@@ -195,7 +196,7 @@ public class Class6987 {
                                                    Class6099.method18840("scale", DoubleArgumentType.doubleArg())
                                                       .executes(
                                                          var0x -> method21616(
-                                                               (Class6619)var0x.getSource(),
+                                                               (CommandSource)var0x.getSource(),
                                                                Class8700.method31346(var0x, "target"),
                                                                Class8303.method29035(var0x, "attribute"),
                                                                Class9728.method38109(var0x, "uuid"),
@@ -238,7 +239,7 @@ public class Class6987 {
       }
    }
 
-   private static int method21614(Class6619 var0, Entity var1, Attribute var2, double var3) throws CommandSyntaxException {
+   private static int method21614(CommandSource var0, Entity var1, Attribute var2, double var3) throws CommandSyntaxException {
       LivingEntity var7 = method21613(var1, var2);
       double var8 = var7.getAttributeValue(var2);
       var0.method20179(
@@ -247,7 +248,7 @@ public class Class6987 {
       return (int)(var8 * var3);
    }
 
-   private static int method21615(Class6619 var0, Entity var1, Attribute var2, double var3) throws CommandSyntaxException {
+   private static int method21615(CommandSource var0, Entity var1, Attribute var2, double var3) throws CommandSyntaxException {
       LivingEntity var7 = method21613(var1, var2);
       double var8 = var7.method3087(var2);
       var0.method20179(
@@ -257,7 +258,7 @@ public class Class6987 {
       return (int)(var8 * var3);
    }
 
-   private static int method21616(Class6619 var0, Entity var1, Attribute var2, UUID var3, double var4) throws CommandSyntaxException {
+   private static int method21616(CommandSource var0, Entity var1, Attribute var2, UUID var3, double var4) throws CommandSyntaxException {
       LivingEntity var8 = method21613(var1, var2);
       AttributeModifierManager var9 = var8.getAttributeManager();
       if (var9.method33382(var2, var3)) {
@@ -274,7 +275,7 @@ public class Class6987 {
       }
    }
 
-   private static int method21617(Class6619 var0, Entity var1, Attribute var2, double var3) throws CommandSyntaxException {
+   private static int method21617(CommandSource var0, Entity var1, Attribute var2, double var3) throws CommandSyntaxException {
       method21611(var1, var2).method38661(var3);
       var0.method20179(
          new TranslationTextComponent("commands.attribute.base_value.set.success", new TranslationTextComponent(var2.method15032()), var1.getName(), var3),
@@ -283,7 +284,7 @@ public class Class6987 {
       return 1;
    }
 
-   private static int method21618(Class6619 var0, Entity var1, Attribute var2, UUID var3, String var4, double var5, AttributeModifier.Operation var7) throws CommandSyntaxException {
+   private static int method21618(CommandSource var0, Entity var1, Attribute var2, UUID var3, String var4, double var5, AttributeModifier.Operation var7) throws CommandSyntaxException {
       ModifiableAttributeInstance var10 = method21611(var1, var2);
       AttributeModifier var11 = new AttributeModifier(var3, var4, var5, var7);
       if (!var10.method38665(var11)) {
@@ -298,7 +299,7 @@ public class Class6987 {
       }
    }
 
-   private static int method21619(Class6619 var0, Entity var1, Attribute var2, UUID var3) throws CommandSyntaxException {
+   private static int method21619(CommandSource var0, Entity var1, Attribute var2, UUID var3) throws CommandSyntaxException {
       ModifiableAttributeInstance var6 = method21611(var1, var2);
       if (!var6.method38672(var3)) {
          throw field30231.create(var1.getName(), new TranslationTextComponent(var2.method15032()), var3);

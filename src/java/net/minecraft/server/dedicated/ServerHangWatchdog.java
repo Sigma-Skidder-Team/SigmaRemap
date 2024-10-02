@@ -1,9 +1,14 @@
-package mapped;
+package net.minecraft.server.dedicated;
 
 import com.google.common.collect.Streams;
+import mapped.Bootstrap;
+import mapped.Class1616;
+import mapped.Class7464;
+import mapped.DedicatedServer;
 import net.minecraft.client.util.Util;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
+import net.minecraft.world.GameRules;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -17,19 +22,19 @@ import java.util.Locale;
 import java.util.Timer;
 import java.util.stream.Collectors;
 
-public class Class1470 implements Runnable {
+public class ServerHangWatchdog implements Runnable {
    private static final Logger field7907 = LogManager.getLogger();
    private final DedicatedServer field7908;
    private final long field7909;
 
-   public Class1470(DedicatedServer var1) {
+   public ServerHangWatchdog(DedicatedServer var1) {
       this.field7908 = var1;
-      this.field7909 = var1.method6507();
+      this.field7909 = var1.getMaxTickTime();
    }
 
    @Override
    public void run() {
-      while (this.field7908.method1295()) {
+      while (this.field7908.isServerRunning()) {
          long var3 = this.field7908.getServerTime();
          long var5 = Util.milliTime();
          long var7 = var5 - var3;
@@ -59,7 +64,7 @@ public class Class1470 implements Runnable {
             CrashReportCategory var19 = var18.makeCategory("Thread Dump");
             var19.addDetail("Threads", var11);
             CrashReportCategory var20 = var18.makeCategory("Performance stats");
-            var20.addDetail("Random tick rate", () -> this.field7908.func_240793_aU_().method20046().<Class7464>method17128(Class5462.field24235).toString());
+            var20.addDetail("Random tick rate", () -> this.field7908.func_240793_aU_().method20046().<Class7464>get(GameRules.field24235).toString());
             var20.addDetail(
                "Level stats",
                () -> Streams.stream(this.field7908.method1320())

@@ -28,13 +28,13 @@ public class Class365 extends Thread {
       try {
          ServerLoginNetHandler.method15606(
             this.field1603,
-            ServerLoginNetHandler.method15607(this.field1603).method1384().hasJoinedServer(new GameProfile((UUID)null, var3.getName()), this.field1602, this.method1831())
+            ServerLoginNetHandler.method15607(this.field1603).getMinecraftSessionService().hasJoinedServer(new GameProfile((UUID)null, var3.getName()), this.field1602, this.method1831())
          );
          if (ServerLoginNetHandler.method15605(this.field1603) != null) {
             ServerLoginNetHandler.method15608()
                .info("UUID of player {} is {}", ServerLoginNetHandler.method15605(this.field1603).getName(), ServerLoginNetHandler.method15605(this.field1603).getId());
             ServerLoginNetHandler.method15609(this.field1603, Class2241.field14666);
-         } else if (ServerLoginNetHandler.method15607(this.field1603).method1334()) {
+         } else if (ServerLoginNetHandler.method15607(this.field1603).isSinglePlayer()) {
             ServerLoginNetHandler.method15608().warn("Failed to verify username but will let them in anyway!");
             ServerLoginNetHandler.method15606(this.field1603, this.field1603.method15603(var3));
             ServerLoginNetHandler.method15609(this.field1603, Class2241.field14666);
@@ -43,7 +43,7 @@ public class Class365 extends Thread {
             ServerLoginNetHandler.method15608().error("Username '{}' tried to join with an invalid session", var3.getName());
          }
       } catch (AuthenticationUnavailableException var5) {
-         if (ServerLoginNetHandler.method15607(this.field1603).method1334()) {
+         if (ServerLoginNetHandler.method15607(this.field1603).isSinglePlayer()) {
             ServerLoginNetHandler.method15608().warn("Authentication servers are down but will let them in anyway!");
             ServerLoginNetHandler.method15606(this.field1603, this.field1603.method15603(var3));
             ServerLoginNetHandler.method15609(this.field1603, Class2241.field14666);

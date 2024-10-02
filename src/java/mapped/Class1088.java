@@ -17,6 +17,7 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
@@ -266,7 +267,7 @@ public class Class1088 extends Class1018 {
    @Override
    public void method4679() {
       super.method4679();
-      if (!this.isChild() && this.world.getGameRules().getBoolean(Class5462.field24227)) {
+      if (!this.isChild() && this.world.getGameRules().getBoolean(GameRules.field24227)) {
          this.entityDropItem(Items.field37793, 1);
       }
    }

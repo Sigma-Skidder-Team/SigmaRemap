@@ -11,6 +11,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.concurrent.CompletableFuture;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
@@ -26,7 +27,7 @@ public class Class9534 implements ArgumentType<Enchantment> {
       return new Class9534();
    }
 
-   public static Enchantment method36863(CommandContext<Class6619> var0, String var1) {
+   public static Enchantment method36863(CommandContext<CommandSource> var0, String var1) {
       return (Enchantment)var0.getArgument(var1, Enchantment.class);
    }
 

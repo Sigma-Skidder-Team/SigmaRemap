@@ -10,6 +10,7 @@ import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.Collection;
 import java.util.HashSet;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.text.TextComponentUtils;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -18,7 +19,7 @@ public class Class8615 {
    private static final SimpleCommandExceptionType field38741 = new SimpleCommandExceptionType(new TranslationTextComponent("commands.tag.add.failed"));
    private static final SimpleCommandExceptionType field38742 = new SimpleCommandExceptionType(new TranslationTextComponent("commands.tag.remove.failed"));
 
-   public static void method30863(CommandDispatcher<Class6619> var0) {
+   public static void method30863(CommandDispatcher<CommandSource> var0) {
       var0.register(
          (LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("tag").requires(var0x -> var0x.method20129(2)))
             .then(
@@ -29,7 +30,7 @@ public class Class8615 {
                                  Class6099.method18840("name", StringArgumentType.word())
                                     .executes(
                                        var0x -> method30865(
-                                             (Class6619)var0x.getSource(), Class8700.method31348(var0x, "targets"), StringArgumentType.getString(var0x, "name")
+                                             (CommandSource)var0x.getSource(), Class8700.method31348(var0x, "targets"), StringArgumentType.getString(var0x, "name")
                                           )
                                     )
                               )
@@ -41,12 +42,12 @@ public class Class8615 {
                                  .suggests((var0x, var1) -> Class6618.method20147(method30864(Class8700.method31348(var0x, "targets")), var1))
                                  .executes(
                                     var0x -> method30866(
-                                          (Class6619)var0x.getSource(), Class8700.method31348(var0x, "targets"), StringArgumentType.getString(var0x, "name")
+                                          (CommandSource)var0x.getSource(), Class8700.method31348(var0x, "targets"), StringArgumentType.getString(var0x, "name")
                                        )
                                  )
                            )
                      ))
-                  .then(Class6099.method18839("list").executes(var0x -> method30867((Class6619)var0x.getSource(), Class8700.method31348(var0x, "targets"))))
+                  .then(Class6099.method18839("list").executes(var0x -> method30867((CommandSource)var0x.getSource(), Class8700.method31348(var0x, "targets"))))
             )
       );
    }
@@ -61,7 +62,7 @@ public class Class8615 {
       return var3;
    }
 
-   private static int method30865(Class6619 var0, Collection<? extends Entity> var1, String var2) throws CommandSyntaxException {
+   private static int method30865(CommandSource var0, Collection<? extends Entity> var1, String var2) throws CommandSyntaxException {
       int var5 = 0;
 
       for (Entity var7 : var1) {
@@ -83,7 +84,7 @@ public class Class8615 {
       }
    }
 
-   private static int method30866(Class6619 var0, Collection<? extends Entity> var1, String var2) throws CommandSyntaxException {
+   private static int method30866(CommandSource var0, Collection<? extends Entity> var1, String var2) throws CommandSyntaxException {
       int var5 = 0;
 
       for (Entity var7 : var1) {
@@ -105,7 +106,7 @@ public class Class8615 {
       }
    }
 
-   private static int method30867(Class6619 var0, Collection<? extends Entity> var1) {
+   private static int method30867(CommandSource var0, Collection<? extends Entity> var1) {
       HashSet var4 = Sets.newHashSet();
 
       for (Entity var6 : var1) {

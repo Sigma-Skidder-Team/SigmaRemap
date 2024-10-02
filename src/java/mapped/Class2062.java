@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Maps;
 import net.minecraft.client.util.Util;
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.vector.Vector3d;
 
@@ -36,7 +37,7 @@ public enum Class2062 {
       return this.field13445.apply(var1.getPositionVec(), var1);
    }
 
-   public Vector3d method8712(Class6619 var1) {
+   public Vector3d method8712(CommandSource var1) {
       Entity var4 = var1.method20173();
       return var4 != null ? this.field13445.apply(var1.method20171(), var4) : var1.method20171();
    }

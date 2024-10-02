@@ -19,7 +19,7 @@ public class Class839 extends Class838 {
       AbstractOption.field25403,
       AbstractOption.field25400,
       AbstractOption.field25401,
-      AbstractOption.field25429
+      AbstractOption.LAZY_CHUNK_LOADING
    };
    private Class9046 field4635 = new Class9046(this, new Class7548());
 

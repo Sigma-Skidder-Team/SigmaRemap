@@ -15,6 +15,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
@@ -30,17 +31,17 @@ public class Class8456 {
       .findFirst()
       .orElse((FileSystemProvider)null);
 
-   public static void method29738(CommandDispatcher<Class6619> var0) {
+   public static void method29738(CommandDispatcher<CommandSource> var0) {
       var0.register(
          (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("debug")
                      .requires(var0x -> var0x.method20129(3)))
-                  .then(Class6099.method18839("start").executes(var0x -> method29739((Class6619)var0x.getSource()))))
-               .then(Class6099.method18839("stop").executes(var0x -> method29740((Class6619)var0x.getSource()))))
-            .then(Class6099.method18839("report").executes(var0x -> method29741((Class6619)var0x.getSource())))
+                  .then(Class6099.method18839("start").executes(var0x -> method29739((CommandSource)var0x.getSource()))))
+               .then(Class6099.method18839("stop").executes(var0x -> method29740((CommandSource)var0x.getSource()))))
+            .then(Class6099.method18839("report").executes(var0x -> method29741((CommandSource)var0x.getSource())))
       );
    }
 
-   private static int method29739(Class6619 var0) throws CommandSyntaxException {
+   private static int method29739(CommandSource var0) throws CommandSyntaxException {
       MinecraftServer var3 = var0.method20177();
       if (!var3.method1430()) {
          var3.method1431();
@@ -51,7 +52,7 @@ public class Class8456 {
       }
    }
 
-   private static int method29740(Class6619 var0) throws CommandSyntaxException {
+   private static int method29740(CommandSource var0) throws CommandSyntaxException {
       MinecraftServer var3 = var0.method20177();
       if (var3.method1430()) {
          IProfileResult var4 = var3.method1432();
@@ -69,7 +70,7 @@ public class Class8456 {
       }
    }
 
-   private static int method29741(Class6619 var0) {
+   private static int method29741(CommandSource var0) {
       MinecraftServer var3 = var0.method20177();
       String var4 = "debug-report-" + new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss").format(new Date());
 

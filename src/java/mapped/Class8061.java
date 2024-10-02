@@ -9,6 +9,7 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.Collection;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.util.math.vector.Vector3d;
@@ -18,35 +19,35 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class Class8061 {
    private static final SimpleCommandExceptionType field34601 = new SimpleCommandExceptionType(new TranslationTextComponent("commands.particle.failed"));
 
-   public static void method27671(CommandDispatcher<Class6619> var0) {
+   public static void method27671(CommandDispatcher<CommandSource> var0) {
       var0.register(
          (LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("particle").requires(var0x -> var0x.method20129(2)))
             .then(
                ((RequiredArgumentBuilder)Class6099.method18840("name", Class8050.method27648())
                      .executes(
                         var0x -> method27672(
-                              (Class6619)var0x.getSource(),
+                              (CommandSource)var0x.getSource(),
                               Class8050.method27649(var0x, "name"),
-                              ((Class6619)var0x.getSource()).method20171(),
+                              ((CommandSource)var0x.getSource()).method20171(),
                               Vector3d.ZERO,
                               0.0F,
                               0,
                               false,
-                              ((Class6619)var0x.getSource()).method20177().getPlayerList().getPlayers()
+                              ((CommandSource)var0x.getSource()).method20177().getPlayerList().getPlayers()
                            )
                      ))
                   .then(
                      ((RequiredArgumentBuilder)Class6099.method18840("pos", Class6851.method20857())
                            .executes(
                               var0x -> method27672(
-                                    (Class6619)var0x.getSource(),
+                                    (CommandSource)var0x.getSource(),
                                     Class8050.method27649(var0x, "name"),
                                     Class6851.method20859(var0x, "pos"),
                                     Vector3d.ZERO,
                                     0.0F,
                                     0,
                                     false,
-                                    ((Class6619)var0x.getSource()).method20177().getPlayerList().getPlayers()
+                                    ((CommandSource)var0x.getSource()).method20177().getPlayerList().getPlayers()
                                  )
                            ))
                         .then(
@@ -57,35 +58,35 @@ public class Class8061 {
                                        ((RequiredArgumentBuilder)((RequiredArgumentBuilder)Class6099.method18840("count", IntegerArgumentType.integer(0))
                                                 .executes(
                                                    var0x -> method27672(
-                                                         (Class6619)var0x.getSource(),
+                                                         (CommandSource)var0x.getSource(),
                                                          Class8050.method27649(var0x, "name"),
                                                          Class6851.method20859(var0x, "pos"),
                                                          Class6851.method20859(var0x, "delta"),
                                                          FloatArgumentType.getFloat(var0x, "speed"),
                                                          IntegerArgumentType.getInteger(var0x, "count"),
                                                          false,
-                                                         ((Class6619)var0x.getSource()).method20177().getPlayerList().getPlayers()
+                                                         ((CommandSource)var0x.getSource()).method20177().getPlayerList().getPlayers()
                                                       )
                                                 ))
                                              .then(
                                                 ((LiteralArgumentBuilder)Class6099.method18839("force")
                                                       .executes(
                                                          var0x -> method27672(
-                                                               (Class6619)var0x.getSource(),
+                                                               (CommandSource)var0x.getSource(),
                                                                Class8050.method27649(var0x, "name"),
                                                                Class6851.method20859(var0x, "pos"),
                                                                Class6851.method20859(var0x, "delta"),
                                                                FloatArgumentType.getFloat(var0x, "speed"),
                                                                IntegerArgumentType.getInteger(var0x, "count"),
                                                                true,
-                                                               ((Class6619)var0x.getSource()).method20177().getPlayerList().getPlayers()
+                                                               ((CommandSource)var0x.getSource()).method20177().getPlayerList().getPlayers()
                                                             )
                                                       ))
                                                    .then(
                                                       Class6099.method18840("viewers", Class8700.method31353())
                                                          .executes(
                                                             var0x -> method27672(
-                                                                  (Class6619)var0x.getSource(),
+                                                                  (CommandSource)var0x.getSource(),
                                                                   Class8050.method27649(var0x, "name"),
                                                                   Class6851.method20859(var0x, "pos"),
                                                                   Class6851.method20859(var0x, "delta"),
@@ -101,21 +102,21 @@ public class Class8061 {
                                              ((LiteralArgumentBuilder)Class6099.method18839("normal")
                                                    .executes(
                                                       var0x -> method27672(
-                                                            (Class6619)var0x.getSource(),
+                                                            (CommandSource)var0x.getSource(),
                                                             Class8050.method27649(var0x, "name"),
                                                             Class6851.method20859(var0x, "pos"),
                                                             Class6851.method20859(var0x, "delta"),
                                                             FloatArgumentType.getFloat(var0x, "speed"),
                                                             IntegerArgumentType.getInteger(var0x, "count"),
                                                             false,
-                                                            ((Class6619)var0x.getSource()).method20177().getPlayerList().getPlayers()
+                                                            ((CommandSource)var0x.getSource()).method20177().getPlayerList().getPlayers()
                                                          )
                                                    ))
                                                 .then(
                                                    Class6099.method18840("viewers", Class8700.method31353())
                                                       .executes(
                                                          var0x -> method27672(
-                                                               (Class6619)var0x.getSource(),
+                                                               (CommandSource)var0x.getSource(),
                                                                Class8050.method27649(var0x, "name"),
                                                                Class6851.method20859(var0x, "pos"),
                                                                Class6851.method20859(var0x, "delta"),
@@ -135,7 +136,7 @@ public class Class8061 {
       );
    }
 
-   private static int method27672(Class6619 var0, IParticleData var1, Vector3d var2, Vector3d var3, float var4, int var5, boolean var6, Collection<ServerPlayerEntity> var7) throws CommandSyntaxException {
+   private static int method27672(CommandSource var0, IParticleData var1, Vector3d var2, Vector3d var3, float var4, int var5, boolean var6, Collection<ServerPlayerEntity> var7) throws CommandSyntaxException {
       int var10 = 0;
 
       for (ServerPlayerEntity var12 : var7) {

@@ -6,6 +6,7 @@ import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.GameRules;
 
 import java.util.List;
 import java.util.Optional;
@@ -13,14 +14,14 @@ import java.util.Set;
 import java.util.function.Consumer;
 
 public class Class1127 extends Screen {
-   private final Consumer<Optional<Class5462>> field6166;
+   private final Consumer<Optional<GameRules>> field6166;
    private Class1294 field6167;
    private final Set<Class1180> field6168 = Sets.newHashSet();
    private Button field6169;
    private List<Class9125> field6170;
-   private final Class5462 field6171;
+   private final GameRules field6171;
 
-   public Class1127(Class5462 var1, Consumer<Optional<Class5462>> var2) {
+   public Class1127(GameRules var1, Consumer<Optional<GameRules>> var2) {
       super(new TranslationTextComponent("editGamerule.title"));
       this.field6171 = var1;
       this.field6166 = var2;
@@ -34,12 +35,12 @@ public class Class1127 extends Screen {
       this.children.add(this.field6167);
       this.<Button>addButton(
          new Button(
-            this.width / 2 - 155 + 160, this.height - 29, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.field6166.accept(Optional.<Class5462>empty())
+            this.width / 2 - 155 + 160, this.height - 29, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.field6166.accept(Optional.<GameRules>empty())
          )
       );
       this.field6169 = this.<Button>addButton(
          new Button(
-            this.width / 2 - 155, this.height - 29, 150, 20, DialogTexts.field30658, var1 -> this.field6166.accept(Optional.<Class5462>of(this.field6171))
+            this.width / 2 - 155, this.height - 29, 150, 20, DialogTexts.field30658, var1 -> this.field6166.accept(Optional.<GameRules>of(this.field6171))
          )
       );
    }
@@ -51,7 +52,7 @@ public class Class1127 extends Screen {
 
    @Override
    public void method1945() {
-      this.field6166.accept(Optional.<Class5462>empty());
+      this.field6166.accept(Optional.<GameRules>empty());
    }
 
    @Override

@@ -3,7 +3,9 @@ package net.minecraft.util.text;
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import mapped.*;
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.Entity;
+import net.minecraft.scoreboard.ServerScoreboard;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -40,7 +42,7 @@ public class ScoreTextComponent extends TextComponent implements ITargetedTextCo
       return this.objective;
    }
 
-   private String func_240705_a_(Class6619 p_240705_1_) throws CommandSyntaxException {
+   private String func_240705_a_(CommandSource p_240705_1_) throws CommandSyntaxException {
       if (this.selector != null) {
          List var4 = this.selector.method29617(p_240705_1_);
          if (!var4.isEmpty()) {
@@ -55,10 +57,10 @@ public class ScoreTextComponent extends TextComponent implements ITargetedTextCo
       return this.name;
    }
 
-   private String func_240706_a_(String p_240706_1_, Class6619 p_240706_2_) {
+   private String func_240706_a_(String p_240706_1_, CommandSource p_240706_2_) {
       MinecraftServer scoreboard = p_240706_2_.method20177();
       if (scoreboard != null) {
-         Class6887 scoreobjective = scoreboard.method1409();
+         ServerScoreboard scoreobjective = scoreboard.method1409();
          Class8375 score = scoreobjective.method20976(this.objective);
          if (scoreobjective.method20979(p_240706_1_, score)) {
             Class9411 var8 = scoreobjective.method20980(p_240706_1_, score);
@@ -74,7 +76,7 @@ public class ScoreTextComponent extends TextComponent implements ITargetedTextCo
    }
 
    @Override
-   public IFormattableTextComponent func_230535_a_(Class6619 p_230535_1_, Entity p_230535_2_, int p_230535_3_) throws CommandSyntaxException {
+   public IFormattableTextComponent func_230535_a_(CommandSource p_230535_1_, Entity p_230535_2_, int p_230535_3_) throws CommandSyntaxException {
       if (p_230535_1_ == null) {
          return new StringTextComponent("");
       } else {

@@ -16,6 +16,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.FenceGateBlock;
 import net.minecraft.block.material.PushReaction;
 import net.minecraft.client.Minecraft;
+import net.minecraft.command.CommandSource;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -48,6 +49,7 @@ import net.minecraft.util.text.event.ClickEvent;
 import net.minecraft.util.text.event.HoverEvent;
 import net.minecraft.util.text.event.HoverEvent$Action;
 import net.minecraft.util.text.event.HoverEvent$EntityHover;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
@@ -2154,7 +2156,7 @@ public abstract class Entity implements INameable, ICommandSource {
       } else {
          BlockPos var6;
          if (!var5) {
-            var6 = var1.method7006(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, var1.method6947());
+            var6 = var1.method7006(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, var1.getSpawnPoint());
          } else {
             var6 = ServerWorld.field9038;
          }
@@ -2599,8 +2601,8 @@ public abstract class Entity implements INameable, ICommandSource {
       return 1;
    }
 
-   public Class6619 getCommandSource() {
-      return new Class6619(
+   public CommandSource getCommandSource() {
+      return new CommandSource(
          this,
          this.getPositionVec(),
          this.getPitchYaw(),
@@ -2623,7 +2625,7 @@ public abstract class Entity implements INameable, ICommandSource {
 
    @Override
    public boolean method1405() {
-      return this.world.getGameRules().getBoolean(Class5462.field24236);
+      return this.world.getGameRules().getBoolean(GameRules.field24236);
    }
 
    @Override

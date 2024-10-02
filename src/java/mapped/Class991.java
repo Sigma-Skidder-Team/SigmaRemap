@@ -9,6 +9,7 @@ import net.minecraft.inventory.container.Container;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 
 public class Class991 extends Class919 {
@@ -25,7 +26,7 @@ public class Class991 extends Class919 {
    @Override
    public void method3586(DamageSource var1) {
       super.method3586(var1);
-      if (this.world.getGameRules().getBoolean(Class5462.field24229)) {
+      if (this.world.getGameRules().getBoolean(GameRules.field24229)) {
          this.entityDropItem(Blocks.CHEST);
       }
    }

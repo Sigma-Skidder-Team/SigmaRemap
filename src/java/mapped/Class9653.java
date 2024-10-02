@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.Objects;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -31,8 +32,8 @@ import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.server.ServerWorld;
 
 public class Class9653 {
-   public static final SuggestionProvider<Class6619> field45128 = (var0, var1) -> {
-      Class284 var4 = ((Class6619)var0.getSource()).method20177().method1411();
+   public static final SuggestionProvider<CommandSource> field45128 = (var0, var1) -> {
+      Class284 var4 = ((CommandSource)var0.getSource()).method20177().method1411();
       return Class6618.method20141(var4.method1061(), var1);
    };
    private static final DynamicCommandExceptionType field45129 = new DynamicCommandExceptionType(
@@ -42,7 +43,7 @@ public class Class9653 {
       var0 -> new TranslationTextComponent("commands.drop.no_loot_table", var0)
    );
 
-   public static void method37658(CommandDispatcher<Class6619> var0) {
+   public static void method37658(CommandDispatcher<CommandSource> var0) {
       var0.register(
          method37659(
             Class6099.method18839("loot").requires(var0x -> var0x.method20129(2)),
@@ -83,7 +84,7 @@ public class Class9653 {
                                                       var1x,
                                                       Class8303.method29036(var1x, "loot_table"),
                                                       Class6849.method20827(var1x, "pos"),
-                                                      method37671((Class6619)var1x.getSource(), EquipmentSlotType.MAINHAND),
+                                                      method37671((CommandSource)var1x.getSource(), EquipmentSlotType.MAINHAND),
                                                       var1
                                                    )
                                              )
@@ -95,7 +96,7 @@ public class Class9653 {
                                                    var1x,
                                                    Class8303.method29036(var1x, "loot_table"),
                                                    Class6849.method20827(var1x, "pos"),
-                                                   method37671((Class6619)var1x.getSource(), EquipmentSlotType.OFFHAND),
+                                                   method37671((CommandSource)var1x.getSource(), EquipmentSlotType.OFFHAND),
                                                    var1
                                                 )
                                           )
@@ -137,7 +138,7 @@ public class Class9653 {
                                           var1x -> method37672(
                                                 var1x,
                                                 Class6849.method20827(var1x, "pos"),
-                                                method37671((Class6619)var1x.getSource(), EquipmentSlotType.MAINHAND),
+                                                method37671((CommandSource)var1x.getSource(), EquipmentSlotType.MAINHAND),
                                                 var1
                                              )
                                        )
@@ -146,7 +147,7 @@ public class Class9653 {
                                  Class6099.method18839("offhand")
                                     .executes(
                                        var1x -> method37672(
-                                             var1x, Class6849.method20827(var1x, "pos"), method37671((Class6619)var1x.getSource(), EquipmentSlotType.OFFHAND), var1
+                                             var1x, Class6849.method20827(var1x, "pos"), method37671((CommandSource)var1x.getSource(), EquipmentSlotType.OFFHAND), var1
                                           )
                                     )
                               )
@@ -156,7 +157,7 @@ public class Class9653 {
       );
    }
 
-   private static <T extends ArgumentBuilder<Class6619, T>> T method37659(T var0, Class8236 var1) {
+   private static <T extends ArgumentBuilder<CommandSource, T>> T method37659(T var0, Class8236 var1) {
       return (T)var0.then(
             ((LiteralArgumentBuilder)Class6099.method18839("replace")
                   .then(
@@ -193,7 +194,7 @@ public class Class9653 {
                               var1.method28672(
                                     Class6099.method18840("slot", Class4914.method15195()),
                                     (var0x, var1x, var2) -> method37663(
-                                          (Class6619)var0x.getSource(),
+                                          (CommandSource)var0x.getSource(),
                                           Class6849.method20827(var0x, "targetPos"),
                                           Class4914.method15196(var0x, "slot"),
                                           var1x.size(),
@@ -205,7 +206,7 @@ public class Class9653 {
                                     var1.method28672(
                                        Class6099.method18840("count", IntegerArgumentType.integer(0)),
                                        (var0x, var1x, var2) -> method37663(
-                                             (Class6619)var0x.getSource(),
+                                             (CommandSource)var0x.getSource(),
                                              Class6849.method20827(var0x, "targetPos"),
                                              IntegerArgumentType.getInteger(var0x, "slot"),
                                              IntegerArgumentType.getInteger(var0x, "count"),
@@ -223,7 +224,7 @@ public class Class9653 {
                .then(
                   var1.method28672(
                      Class6099.method18840("targetPos", Class6849.method20826()),
-                     (var0x, var1x, var2) -> method37661((Class6619)var0x.getSource(), Class6849.method20827(var0x, "targetPos"), var1x, var2)
+                     (var0x, var1x, var2) -> method37661((CommandSource)var0x.getSource(), Class6849.method20827(var0x, "targetPos"), var1x, var2)
                   )
                )
          )
@@ -241,13 +242,13 @@ public class Class9653 {
                .then(
                   var1.method28672(
                      Class6099.method18840("targetPos", Class6851.method20857()),
-                     (var0x, var1x, var2) -> method37668((Class6619)var0x.getSource(), Class6851.method20859(var0x, "targetPos"), var1x, var2)
+                     (var0x, var1x, var2) -> method37668((CommandSource)var0x.getSource(), Class6851.method20859(var0x, "targetPos"), var1x, var2)
                   )
                )
          );
    }
 
-   private static IInventory method37660(Class6619 var0, BlockPos var1) throws CommandSyntaxException {
+   private static IInventory method37660(CommandSource var0, BlockPos var1) throws CommandSyntaxException {
       TileEntity var4 = var0.method20172().getTileEntity(var1);
       if (var4 instanceof IInventory) {
          return (IInventory)var4;
@@ -256,7 +257,7 @@ public class Class9653 {
       }
    }
 
-   private static int method37661(Class6619 var0, BlockPos var1, List<ItemStack> var2, Class7946 var3) throws CommandSyntaxException {
+   private static int method37661(CommandSource var0, BlockPos var1, List<ItemStack> var2, Class7946 var3) throws CommandSyntaxException {
       IInventory var6 = method37660(var0, var1);
       ArrayList var7 = Lists.newArrayListWithCapacity(var2.size());
 
@@ -296,7 +297,7 @@ public class Class9653 {
       return var4;
    }
 
-   private static int method37663(Class6619 var0, BlockPos var1, int var2, int var3, List<ItemStack> var4, Class7946 var5) throws CommandSyntaxException {
+   private static int method37663(CommandSource var0, BlockPos var1, int var2, int var3, List<ItemStack> var4, Class7946 var5) throws CommandSyntaxException {
       IInventory var8 = method37660(var0, var1);
       int var9 = var8.getSizeInventory();
       if (var2 >= 0 && var2 < var9) {
@@ -367,7 +368,7 @@ public class Class9653 {
       return var7.size();
    }
 
-   private static int method37668(Class6619 var0, Vector3d var1, List<ItemStack> var2, Class7946 var3) throws CommandSyntaxException {
+   private static int method37668(CommandSource var0, Vector3d var1, List<ItemStack> var2, Class7946 var3) throws CommandSyntaxException {
       ServerWorld var6 = var0.method20172();
       var2.forEach(var2x -> {
          ItemEntity var5 = new ItemEntity(var6, var1.x, var1.y, var1.z, var2x.copy());
@@ -378,7 +379,7 @@ public class Class9653 {
       return var2.size();
    }
 
-   private static void method37669(Class6619 var0, List<ItemStack> var1) {
+   private static void method37669(CommandSource var0, List<ItemStack> var1) {
       if (var1.size() != 1) {
          var0.method20179(new TranslationTextComponent("commands.drop.success.multiple", var1.size()), false);
       } else {
@@ -387,7 +388,7 @@ public class Class9653 {
       }
    }
 
-   private static void method37670(Class6619 var0, List<ItemStack> var1, ResourceLocation var2) {
+   private static void method37670(CommandSource var0, List<ItemStack> var1, ResourceLocation var2) {
       if (var1.size() != 1) {
          var0.method20179(new TranslationTextComponent("commands.drop.success.multiple_with_table", var1.size(), var2), false);
       } else {
@@ -396,7 +397,7 @@ public class Class9653 {
       }
    }
 
-   private static ItemStack method37671(Class6619 var0, EquipmentSlotType var1) throws CommandSyntaxException {
+   private static ItemStack method37671(CommandSource var0, EquipmentSlotType var1) throws CommandSyntaxException {
       Entity var4 = var0.method20174();
       if (!(var4 instanceof LivingEntity)) {
          throw field45129.create(var4.getDisplayName());
@@ -405,8 +406,8 @@ public class Class9653 {
       }
    }
 
-   private static int method37672(CommandContext<Class6619> var0, BlockPos var1, ItemStack var2, Class8914 var3) throws CommandSyntaxException {
-      Class6619 var6 = (Class6619)var0.getSource();
+   private static int method37672(CommandContext<CommandSource> var0, BlockPos var1, ItemStack var2, Class8914 var3) throws CommandSyntaxException {
+      CommandSource var6 = (CommandSource)var0.getSource();
       ServerWorld var7 = var6.method20172();
       BlockState var8 = var7.getBlockState(var1);
       TileEntity var9 = var7.getTileEntity(var1);
@@ -420,10 +421,10 @@ public class Class9653 {
       return var3.method32583(var0, var11, var2x -> method37670(var6, var2x, var8.getBlock().method11999()));
    }
 
-   private static int method37673(CommandContext<Class6619> var0, Entity var1, Class8914 var2) throws CommandSyntaxException {
+   private static int method37673(CommandContext<CommandSource> var0, Entity var1, Class8914 var2) throws CommandSyntaxException {
       if (var1 instanceof LivingEntity) {
          ResourceLocation var5 = ((LivingEntity)var1).getLootTableResourceLocation();
-         Class6619 var6 = (Class6619)var0.getSource();
+         CommandSource var6 = (CommandSource)var0.getSource();
          Class9464 var7 = new Class9464(var6.method20172());
          Entity var8 = var6.method20173();
          if (var8 instanceof PlayerEntity) {
@@ -443,16 +444,16 @@ public class Class9653 {
       }
    }
 
-   private static int method37674(CommandContext<Class6619> var0, ResourceLocation var1, Class8914 var2) throws CommandSyntaxException {
-      Class6619 var5 = (Class6619)var0.getSource();
+   private static int method37674(CommandContext<CommandSource> var0, ResourceLocation var1, Class8914 var2) throws CommandSyntaxException {
+      CommandSource var5 = (CommandSource)var0.getSource();
       Class9464 var6 = new Class9464(var5.method20172())
          .method36455(Class9525.field44330, var5.method20173())
          .method36454(Class9525.field44335, var5.method20171());
       return method37676(var0, var1, var6.method36460(Class8524.field38282), var2);
    }
 
-   private static int method37675(CommandContext<Class6619> var0, ResourceLocation var1, BlockPos var2, ItemStack var3, Class8914 var4) throws CommandSyntaxException {
-      Class6619 var7 = (Class6619)var0.getSource();
+   private static int method37675(CommandContext<CommandSource> var0, ResourceLocation var1, BlockPos var2, ItemStack var3, Class8914 var4) throws CommandSyntaxException {
+      CommandSource var7 = (CommandSource)var0.getSource();
       LootContext var8 = new Class9464(var7.method20172())
          .method36454(Class9525.field44335, Vector3d.method11328(var2))
          .method36454(Class9525.field44338, var3)
@@ -461,8 +462,8 @@ public class Class9653 {
       return method37676(var0, var1, var8, var4);
    }
 
-   private static int method37676(CommandContext<Class6619> var0, ResourceLocation var1, LootContext var2, Class8914 var3) throws CommandSyntaxException {
-      Class6619 var6 = (Class6619)var0.getSource();
+   private static int method37676(CommandContext<CommandSource> var0, ResourceLocation var1, LootContext var2, Class8914 var3) throws CommandSyntaxException {
+      CommandSource var6 = (CommandSource)var0.getSource();
       Class7318 var7 = var6.method20177().method1411().method1058(var1);
       List var8 = var7.method23182(var2);
       return var3.method32583(var0, var8, var1x -> method37669(var6, var1x));

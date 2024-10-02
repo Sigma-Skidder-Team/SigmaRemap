@@ -8,6 +8,7 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.Items;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.EntityRayTraceResult;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -66,7 +67,7 @@ public class Class895 extends Class890 {
          } else {
             ServerPlayerEntity var7 = (ServerPlayerEntity)var4;
             if (var7.field4855.getNetworkManager().isChannelOpen() && var7.world == this.world && !var7.isSleeping()) {
-               if (this.rand.nextFloat() < 0.05F && this.world.getGameRules().getBoolean(Class5462.field24226)) {
+               if (this.rand.nextFloat() < 0.05F && this.world.getGameRules().getBoolean(GameRules.field24226)) {
                   Class1104 var6 = EntityType.field41026.create(this.world);
                   var6.method5298(true);
                   var6.setLocationAndAngles(var4.getPosX(), var4.getPosY(), var4.getPosZ(), var4.rotationYaw, var4.rotationPitch);

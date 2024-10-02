@@ -17,6 +17,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -148,7 +149,7 @@ public class Class3441 extends Block {
       if (var2 instanceof Class1088 || var2 instanceof Class1114) {
          return false;
       } else {
-         return !(var2 instanceof LivingEntity) ? false : var2 instanceof PlayerEntity || var1.getGameRules().getBoolean(Class5462.field24224);
+         return !(var2 instanceof LivingEntity) ? false : var2 instanceof PlayerEntity || var1.getGameRules().getBoolean(GameRules.field24224);
       }
    }
 }

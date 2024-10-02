@@ -12,6 +12,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.concurrent.CompletableFuture;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -23,8 +24,8 @@ public class Class8693 implements ArgumentType<Class7329> {
       return new Class8693();
    }
 
-   public static Class7760 method31320(CommandContext<Class6619> var0, String var1) {
-      BlockPos var4 = ((Class7329)var0.getArgument(var1, Class7329.class)).method23230((Class6619)var0.getSource());
+   public static Class7760 method31320(CommandContext<CommandSource> var0, String var1) {
+      BlockPos var4 = ((Class7329)var0.getArgument(var1, Class7329.class)).method23230((CommandSource)var0.getSource());
       return new Class7760(var4.getX(), var4.getZ());
    }
 

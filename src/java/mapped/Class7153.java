@@ -5,23 +5,25 @@ import com.mojang.brigadier.suggestion.SuggestionProvider;
 import java.util.Locale;
 import java.util.function.Function;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.storage.CommandStorage;
 
 public class Class7153 implements Class7151 {
-   private static final SuggestionProvider<Class6619> field30727 = (var0, var1) -> Class6618.method20143(method22318(var0).method32750(), var1);
+   private static final SuggestionProvider<CommandSource> field30727 = (var0, var1) -> Class6618.method20143(method22318(var0).method32750(), var1);
    public static final Function<String, Class8196> field30728 = var0 -> new Class8198(var0);
-   private final Class8962 field30729;
+   private final CommandStorage field30729;
    private final ResourceLocation field30730;
 
-   private static Class8962 method22318(CommandContext<Class6619> var0) {
-      return ((Class6619)var0.getSource()).method20177().method1410();
+   private static CommandStorage method22318(CommandContext<CommandSource> var0) {
+      return ((CommandSource)var0.getSource()).method20177().method1410();
    }
 
-   private Class7153(Class8962 var1, ResourceLocation var2) {
+   private Class7153(CommandStorage var1, ResourceLocation var2) {
       this.field30729 = var1;
       this.field30730 = var2;
    }
@@ -52,12 +54,12 @@ public class Class7153 implements Class7151 {
    }
 
    // $VF: synthetic method
-   public static Class8962 method22321(CommandContext var0) {
+   public static CommandStorage method22321(CommandContext var0) {
       return method22318(var0);
    }
 
    // $VF: synthetic method
-   public Class7153(Class8962 var1, ResourceLocation var2, Class8198 var3) {
+   public Class7153(CommandStorage var1, ResourceLocation var2, Class8198 var3) {
       this(var1, var2);
    }
 

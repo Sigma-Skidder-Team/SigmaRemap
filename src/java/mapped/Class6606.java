@@ -3,11 +3,12 @@ package mapped;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.GameRules;
 
 public class Class6606 implements ISpawnWorldInfo {
    private static String[] field29048;
    private final boolean field29049;
-   private final Class5462 field29050;
+   private final GameRules field29050;
    private final boolean field29051;
    private int field29052;
    private int field29053;
@@ -23,7 +24,7 @@ public class Class6606 implements ISpawnWorldInfo {
       this.field29059 = var1;
       this.field29049 = var2;
       this.field29051 = var3;
-      this.field29050 = new Class5462();
+      this.field29050 = new GameRules();
    }
 
    @Override
@@ -113,7 +114,7 @@ public class Class6606 implements ISpawnWorldInfo {
    }
 
    @Override
-   public Class5462 method20046() {
+   public GameRules method20046() {
       return this.field29050;
    }
 

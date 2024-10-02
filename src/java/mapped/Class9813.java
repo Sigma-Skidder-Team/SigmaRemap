@@ -14,6 +14,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.resources.ResourcePackInfo;
 import net.minecraft.resources.ResourcePackList;
 import net.minecraft.util.text.TextComponentUtils;
@@ -29,16 +30,16 @@ public class Class9813 {
    private static final DynamicCommandExceptionType field45861 = new DynamicCommandExceptionType(
       var0 -> new TranslationTextComponent("commands.datapack.disable.failed", var0)
    );
-   private static final SuggestionProvider<Class6619> field45862 = (var0, var1) -> Class6618.method20148(
-         ((Class6619)var0.getSource()).method20177().method1402().func_232621_d_().stream().<String>map(StringArgumentType::escapeIfRequired), var1
+   private static final SuggestionProvider<CommandSource> field45862 = (var0, var1) -> Class6618.method20148(
+         ((CommandSource)var0.getSource()).method20177().method1402().func_232621_d_().stream().<String>map(StringArgumentType::escapeIfRequired), var1
       );
-   private static final SuggestionProvider<Class6619> field45863 = (var0, var1) -> {
-      ResourcePackList var4 = ((Class6619)var0.getSource()).method20177().method1402();
+   private static final SuggestionProvider<CommandSource> field45863 = (var0, var1) -> {
+      ResourcePackList var4 = ((CommandSource)var0.getSource()).method20177().method1402();
       Collection var5 = var4.func_232621_d_();
       return Class6618.method20148(var4.method1267().stream().filter(var1x -> !var5.contains(var1x)).<String>map(StringArgumentType::escapeIfRequired), var1);
    };
 
-   public static void method38700(CommandDispatcher<Class6619> var0) {
+   public static void method38700(CommandDispatcher<CommandSource> var0) {
       var0.register(
          (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("datapack")
                      .requires(var0x -> var0x.method20129(2)))
@@ -51,7 +52,7 @@ public class Class9813 {
                                           .suggests(field45863)
                                           .executes(
                                              var0x -> method38701(
-                                                   (Class6619)var0x.getSource(),
+                                                   (CommandSource)var0x.getSource(),
                                                    method38706(var0x, "name", true),
                                                    (var0xx, var1) -> var1.method7954().method8249(var0xx, var1, var0xxx -> var0xxx, false)
                                                 )
@@ -63,7 +64,7 @@ public class Class9813 {
                                                    .suggests(field45862)
                                                    .executes(
                                                       var0x -> method38701(
-                                                            (Class6619)var0x.getSource(),
+                                                            (CommandSource)var0x.getSource(),
                                                             method38706(var0x, "name", true),
                                                             (var1, var2) -> var1.add(var1.indexOf(method38706(var0x, "existing", false)) + 1, var2)
                                                          )
@@ -77,7 +78,7 @@ public class Class9813 {
                                                 .suggests(field45862)
                                                 .executes(
                                                    var0x -> method38701(
-                                                         (Class6619)var0x.getSource(),
+                                                         (CommandSource)var0x.getSource(),
                                                          method38706(var0x, "name", true),
                                                          (var1, var2) -> var1.add(var1.indexOf(method38706(var0x, "existing", false)), var2)
                                                       )
@@ -86,13 +87,13 @@ public class Class9813 {
                                     ))
                                  .then(
                                     Class6099.method18839("last")
-                                       .executes(var0x -> method38701((Class6619)var0x.getSource(), method38706(var0x, "name", true), List::add))
+                                       .executes(var0x -> method38701((CommandSource)var0x.getSource(), method38706(var0x, "name", true), List::add))
                                  ))
                               .then(
                                  Class6099.method18839("first")
                                     .executes(
                                        var0x -> method38701(
-                                             (Class6619)var0x.getSource(), method38706(var0x, "name", true), (var0xx, var1) -> var0xx.add(0, var1)
+                                             (CommandSource)var0x.getSource(), method38706(var0x, "name", true), (var0xx, var1) -> var0xx.add(0, var1)
                                           )
                                     )
                               )
@@ -103,18 +104,18 @@ public class Class9813 {
                      .then(
                         Class6099.method18840("name", StringArgumentType.string())
                            .suggests(field45862)
-                           .executes(var0x -> method38702((Class6619)var0x.getSource(), method38706(var0x, "name", false)))
+                           .executes(var0x -> method38702((CommandSource)var0x.getSource(), method38706(var0x, "name", false)))
                      )
                ))
             .then(
-               ((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("list").executes(var0x -> method38703((Class6619)var0x.getSource())))
-                     .then(Class6099.method18839("available").executes(var0x -> method38704((Class6619)var0x.getSource()))))
-                  .then(Class6099.method18839("enabled").executes(var0x -> method38705((Class6619)var0x.getSource())))
+               ((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("list").executes(var0x -> method38703((CommandSource)var0x.getSource())))
+                     .then(Class6099.method18839("available").executes(var0x -> method38704((CommandSource)var0x.getSource()))))
+                  .then(Class6099.method18839("enabled").executes(var0x -> method38705((CommandSource)var0x.getSource())))
             )
       );
    }
 
-   private static int method38701(Class6619 var0, ResourcePackInfo var1, Class8750 var2) throws CommandSyntaxException {
+   private static int method38701(CommandSource var0, ResourcePackInfo var1, Class8750 var2) throws CommandSyntaxException {
       ResourcePackList var5 = var0.method20177().method1402();
       ArrayList<ResourcePackInfo> var6 = Lists.newArrayList(var5.getEnabledPacks());
       var2.method31568(var6, var1);
@@ -123,7 +124,7 @@ public class Class9813 {
       return var6.size();
    }
 
-   private static int method38702(Class6619 var0, ResourcePackInfo var1) {
+   private static int method38702(CommandSource var0, ResourcePackInfo var1) {
       ResourcePackList var4 = var0.method20177().method1402();
       ArrayList<ResourcePackInfo> var5 = Lists.newArrayList(var4.getEnabledPacks());
       var5.remove(var1);
@@ -132,11 +133,11 @@ public class Class9813 {
       return var5.size();
    }
 
-   private static int method38703(Class6619 var0) {
+   private static int method38703(CommandSource var0) {
       return method38705(var0) + method38704(var0);
    }
 
-   private static int method38704(Class6619 var0) {
+   private static int method38704(CommandSource var0) {
       ResourcePackList var3 = var0.method20177().method1402();
       var3.reloadPacksFromFinders();
       Collection<ResourcePackInfo> var4 = var3.getEnabledPacks();
@@ -156,7 +157,7 @@ public class Class9813 {
       return var6.size();
    }
 
-   private static int method38705(Class6619 var0) {
+   private static int method38705(CommandSource var0) {
       ResourcePackList var3 = var0.method20177().method1402();
       var3.reloadPacksFromFinders();
       Collection<ResourcePackInfo> var4 = var3.getEnabledPacks();
@@ -174,9 +175,9 @@ public class Class9813 {
       return var4.size();
    }
 
-   private static ResourcePackInfo method38706(CommandContext<Class6619> var0, String var1, boolean var2) throws CommandSyntaxException {
+   private static ResourcePackInfo method38706(CommandContext<CommandSource> var0, String var1, boolean var2) throws CommandSyntaxException {
       String var5 = StringArgumentType.getString(var0, var1);
-      ResourcePackList var6 = ((Class6619)var0.getSource()).method20177().method1402();
+      ResourcePackList var6 = ((CommandSource)var0.getSource()).method20177().method1402();
       ResourcePackInfo var7 = var6.getPackInfo(var5);
       if (var7 != null) {
          boolean var8 = var6.getEnabledPacks().contains(var7);

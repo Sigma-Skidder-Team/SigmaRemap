@@ -106,7 +106,7 @@ public class MiniMap extends Module {
 
                 while (var11.hasNext()) {
                     Class8444 var12 = (Class8444) var11.next();
-                    int var7 = var12.field36184.getPos().method24365(new ChunkPos(mc.player.chunkCoordX, mc.player.chunkCoordZ));
+                    int var7 = var12.field36184.getPos().getChessboardDistance(new ChunkPos(mc.player.chunkCoordX, mc.player.chunkCoordZ));
                     if (var7 > 7) {
                         var11.remove();
                     }

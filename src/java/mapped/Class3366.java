@@ -29,6 +29,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
@@ -234,7 +235,7 @@ public class Class3366 extends Class3241 {
 
    @Override
    public void onBlockHarvested(World var1, BlockPos var2, BlockState var3, PlayerEntity var4) {
-      if (!var1.isRemote && var4.isCreative() && var1.getGameRules().getBoolean(Class5462.field24228)) {
+      if (!var1.isRemote && var4.isCreative() && var1.getGameRules().getBoolean(GameRules.field24228)) {
          TileEntity var7 = var1.getTileEntity(var2);
          if (var7 instanceof BeehiveTileEntity) {
             BeehiveTileEntity var8 = (BeehiveTileEntity)var7;

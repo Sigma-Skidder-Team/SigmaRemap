@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.GameType;
 import net.minecraft.world.storage.IServerWorldInfo;
 
@@ -131,7 +132,7 @@ public class Class6609 implements IServerWorldInfo {
    }
 
    @Override
-   public void method20073(GameType var1) {
+   public void setGameType(GameType var1) {
    }
 
    @Override
@@ -154,7 +155,7 @@ public class Class6609 implements IServerWorldInfo {
    }
 
    @Override
-   public Class5462 method20046() {
+   public GameRules method20046() {
       return this.field29061.method20046();
    }
 

@@ -1,17 +1,19 @@
-package mapped;
+package net.minecraft.world.storage;
 
 import com.google.common.collect.Maps;
+import mapped.Class7534;
+import mapped.Class8250;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.Map;
 import java.util.stream.Stream;
 
-public class Class8962 {
+public class CommandStorage {
    private final Map<String, Class7534> field40484 = Maps.newHashMap();
    private final Class8250 field40485;
 
-   public Class8962(Class8250 var1) {
+   public CommandStorage(Class8250 var1) {
       this.field40485 = var1;
    }
 

@@ -10,6 +10,7 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.Collection;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.potion.EffectInstance;
@@ -24,20 +25,20 @@ public class Class9548 {
       new TranslationTextComponent("commands.effect.clear.specific.failed")
    );
 
-   public static void method36984(CommandDispatcher<Class6619> var0) {
+   public static void method36984(CommandDispatcher<CommandSource> var0) {
       var0.register(
          (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("effect").requires(var0x -> var0x.method20129(2)))
                .then(
                   ((LiteralArgumentBuilder)Class6099.method18839("clear")
-                        .executes(var0x -> method36986((Class6619)var0x.getSource(), ImmutableList.of(((Class6619)var0x.getSource()).method20174()))))
+                        .executes(var0x -> method36986((CommandSource)var0x.getSource(), ImmutableList.of(((CommandSource)var0x.getSource()).method20174()))))
                      .then(
                         ((RequiredArgumentBuilder)Class6099.method18840("targets", Class8700.method31347())
-                              .executes(var0x -> method36986((Class6619)var0x.getSource(), Class8700.method31348(var0x, "targets"))))
+                              .executes(var0x -> method36986((CommandSource)var0x.getSource(), Class8700.method31348(var0x, "targets"))))
                            .then(
                               Class6099.method18840("effect", Class9468.method36510())
                                  .executes(
                                     var0x -> method36987(
-                                          (Class6619)var0x.getSource(), Class8700.method31348(var0x, "targets"), Class9468.method36511(var0x, "effect")
+                                          (CommandSource)var0x.getSource(), Class8700.method31348(var0x, "targets"), Class9468.method36511(var0x, "effect")
                                        )
                                  )
                            )
@@ -51,7 +52,7 @@ public class Class9548 {
                            ((RequiredArgumentBuilder)Class6099.method18840("effect", Class9468.method36510())
                                  .executes(
                                     var0x -> method36985(
-                                          (Class6619)var0x.getSource(),
+                                          (CommandSource)var0x.getSource(),
                                           Class8700.method31348(var0x, "targets"),
                                           Class9468.method36511(var0x, "effect"),
                                           (Integer)null,
@@ -63,7 +64,7 @@ public class Class9548 {
                                  ((RequiredArgumentBuilder)Class6099.method18840("seconds", IntegerArgumentType.integer(1, 1000000))
                                        .executes(
                                           var0x -> method36985(
-                                                (Class6619)var0x.getSource(),
+                                                (CommandSource)var0x.getSource(),
                                                 Class8700.method31348(var0x, "targets"),
                                                 Class9468.method36511(var0x, "effect"),
                                                 IntegerArgumentType.getInteger(var0x, "seconds"),
@@ -75,7 +76,7 @@ public class Class9548 {
                                        ((RequiredArgumentBuilder)Class6099.method18840("amplifier", IntegerArgumentType.integer(0, 255))
                                              .executes(
                                                 var0x -> method36985(
-                                                      (Class6619)var0x.getSource(),
+                                                      (CommandSource)var0x.getSource(),
                                                       Class8700.method31348(var0x, "targets"),
                                                       Class9468.method36511(var0x, "effect"),
                                                       IntegerArgumentType.getInteger(var0x, "seconds"),
@@ -87,7 +88,7 @@ public class Class9548 {
                                              Class6099.method18840("hideParticles", BoolArgumentType.bool())
                                                 .executes(
                                                    var0x -> method36985(
-                                                         (Class6619)var0x.getSource(),
+                                                         (CommandSource)var0x.getSource(),
                                                          Class8700.method31348(var0x, "targets"),
                                                          Class9468.method36511(var0x, "effect"),
                                                          IntegerArgumentType.getInteger(var0x, "seconds"),
@@ -104,7 +105,7 @@ public class Class9548 {
       );
    }
 
-   private static int method36985(Class6619 var0, Collection<? extends Entity> var1, Effect var2, Integer var3, int var4, boolean var5) throws CommandSyntaxException {
+   private static int method36985(CommandSource var0, Collection<? extends Entity> var1, Effect var2, Integer var3, int var4, boolean var5) throws CommandSyntaxException {
       int var8 = 0;
       int var9;
       if (var3 == null) {
@@ -146,7 +147,7 @@ public class Class9548 {
       }
    }
 
-   private static int method36986(Class6619 var0, Collection<? extends Entity> var1) throws CommandSyntaxException {
+   private static int method36986(CommandSource var0, Collection<? extends Entity> var1) throws CommandSyntaxException {
       int var4 = 0;
 
       for (Entity var6 : var1) {
@@ -170,7 +171,7 @@ public class Class9548 {
       }
    }
 
-   private static int method36987(Class6619 var0, Collection<? extends Entity> var1, Effect var2) throws CommandSyntaxException {
+   private static int method36987(CommandSource var0, Collection<? extends Entity> var1, Effect var2) throws CommandSyntaxException {
       int var5 = 0;
 
       for (Entity var7 : var1) {

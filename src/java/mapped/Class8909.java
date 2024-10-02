@@ -7,6 +7,7 @@ import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import java.util.Collection;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -14,7 +15,7 @@ import net.minecraft.util.SoundEvents;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class8909 {
-   public static void method32551(CommandDispatcher<Class6619> var0) {
+   public static void method32551(CommandDispatcher<CommandSource> var0) {
       var0.register(
          (LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("give").requires(var0x -> var0x.method20129(2)))
             .then(
@@ -23,14 +24,14 @@ public class Class8909 {
                      ((RequiredArgumentBuilder)Class6099.method18840("item", Class8722.method31481())
                            .executes(
                               var0x -> method32552(
-                                    (Class6619)var0x.getSource(), Class8722.method31482(var0x, "item"), Class8700.method31354(var0x, "targets"), 1
+                                    (CommandSource)var0x.getSource(), Class8722.method31482(var0x, "item"), Class8700.method31354(var0x, "targets"), 1
                                  )
                            ))
                         .then(
                            Class6099.method18840("count", IntegerArgumentType.integer(1))
                               .executes(
                                  var0x -> method32552(
-                                       (Class6619)var0x.getSource(),
+                                       (CommandSource)var0x.getSource(),
                                        Class8722.method31482(var0x, "item"),
                                        Class8700.method31354(var0x, "targets"),
                                        IntegerArgumentType.getInteger(var0x, "count")
@@ -42,7 +43,7 @@ public class Class8909 {
       );
    }
 
-   private static int method32552(Class6619 var0, Class176 var1, Collection<ServerPlayerEntity> var2, int var3) throws CommandSyntaxException {
+   private static int method32552(CommandSource var0, Class176 var1, Collection<ServerPlayerEntity> var2, int var3) throws CommandSyntaxException {
       for (ServerPlayerEntity var7 : var2) {
          int var8 = var3;
 

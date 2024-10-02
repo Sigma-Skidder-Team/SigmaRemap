@@ -59,7 +59,7 @@ public class Class443 extends Class440 {
                      String var23 = Class8414.method29542(this.field2008, var5, var4);
 
                      try {
-                        this.method1887(var7, this.field2010.method6509(var23));
+                        this.method1887(var7, this.field2010.handleRConCommand(var23));
                      } catch (Exception var16) {
                         this.method1887(var7, "Error executing: " + var23 + " (" + var16.getMessage() + ")");
                      }

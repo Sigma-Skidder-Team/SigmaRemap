@@ -2,6 +2,8 @@ package mapped;
 
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import javax.annotation.Nullable;
+
+import net.minecraft.command.CommandSource;
 import net.minecraft.util.text.ITextComponent;
 
 public class Class9373 {
@@ -25,7 +27,7 @@ public class Class9373 {
    }
 
    @Nullable
-   public ITextComponent method35557(Class6619 var1) throws CommandSyntaxException {
+   public ITextComponent method35557(CommandSource var1) throws CommandSyntaxException {
       return Class8429.method29623(this.field43505.method29617(var1));
    }
 }

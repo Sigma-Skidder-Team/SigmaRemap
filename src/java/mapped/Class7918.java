@@ -7,6 +7,8 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.Arrays;
 import java.util.Collection;
+
+import net.minecraft.command.CommandSource;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class7918 implements ArgumentType<Class7329> {
@@ -17,7 +19,7 @@ public class Class7918 implements ArgumentType<Class7329> {
       return new Class7918();
    }
 
-   public static Class7329 method26559(CommandContext<Class6619> var0, String var1) {
+   public static Class7329 method26559(CommandContext<CommandSource> var0, String var1) {
       return (Class7329)var0.getArgument(var1, Class7329.class);
    }
 

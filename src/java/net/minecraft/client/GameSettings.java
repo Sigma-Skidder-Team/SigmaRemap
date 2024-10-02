@@ -1275,7 +1275,7 @@ public class GameSettings {
          this.field44659.worldRenderer.loadRenderers();
       }
 
-      if (var1 == AbstractOption.field25429) {
+      if (var1 == AbstractOption.LAZY_CHUNK_LOADING) {
          this.ofLazyChunkLoading = !this.ofLazyChunkLoading;
       }
 
@@ -1625,7 +1625,7 @@ public class GameSettings {
          } else {
             return this.field44721 == 2 ? var2 + Class8043.method27625() : var2 + Class8043.method27626();
          }
-      } else if (var1 == AbstractOption.field25429) {
+      } else if (var1 == AbstractOption.LAZY_CHUNK_LOADING) {
          return this.ofLazyChunkLoading ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
       } else if (var1 == AbstractOption.field25441) {
          return this.field44685 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();

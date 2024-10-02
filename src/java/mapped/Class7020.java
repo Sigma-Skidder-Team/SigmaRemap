@@ -9,6 +9,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
@@ -21,7 +22,7 @@ public class Class7020 implements Class7016 {
    public int method21742(ServerWorld var1, boolean var2, boolean var3) {
       if (!var2) {
          return 0;
-      } else if (!var1.getGameRules().getBoolean(Class5462.field24247)) {
+      } else if (!var1.getGameRules().getBoolean(GameRules.field24247)) {
          return 0;
       } else {
          Random var6 = var1.rand;

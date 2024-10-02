@@ -7,6 +7,7 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.function.Predicate;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.CachedBlockInfo;
 import net.minecraft.util.math.BlockPos;
@@ -16,7 +17,7 @@ import net.minecraft.world.server.ServerWorld;
 public class Class8686 {
    private static final SimpleCommandExceptionType field39214 = new SimpleCommandExceptionType(new TranslationTextComponent("commands.setblock.failed"));
 
-   public static void method31294(CommandDispatcher<Class6619> var0) {
+   public static void method31294(CommandDispatcher<CommandSource> var0) {
       var0.register(
          (LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("setblock").requires(var0x -> var0x.method20129(2)))
             .then(
@@ -25,7 +26,7 @@ public class Class8686 {
                      ((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder)Class6099.method18840("block", Class7971.method27103())
                                  .executes(
                                     var0x -> method31295(
-                                          (Class6619)var0x.getSource(),
+                                          (CommandSource)var0x.getSource(),
                                           Class6849.method20827(var0x, "pos"),
                                           Class7971.method27104(var0x, "block"),
                                           Class2047.field13361,
@@ -36,7 +37,7 @@ public class Class8686 {
                                  Class6099.method18839("destroy")
                                     .executes(
                                        var0x -> method31295(
-                                             (Class6619)var0x.getSource(),
+                                             (CommandSource)var0x.getSource(),
                                              Class6849.method20827(var0x, "pos"),
                                              Class7971.method27104(var0x, "block"),
                                              Class2047.field13362,
@@ -48,7 +49,7 @@ public class Class8686 {
                               Class6099.method18839("keep")
                                  .executes(
                                     var0x -> method31295(
-                                          (Class6619)var0x.getSource(),
+                                          (CommandSource)var0x.getSource(),
                                           Class6849.method20827(var0x, "pos"),
                                           Class7971.method27104(var0x, "block"),
                                           Class2047.field13361,
@@ -60,7 +61,7 @@ public class Class8686 {
                            Class6099.method18839("replace")
                               .executes(
                                  var0x -> method31295(
-                                       (Class6619)var0x.getSource(),
+                                       (CommandSource)var0x.getSource(),
                                        Class6849.method20827(var0x, "pos"),
                                        Class7971.method27104(var0x, "block"),
                                        Class2047.field13361,
@@ -73,7 +74,7 @@ public class Class8686 {
       );
    }
 
-   private static int method31295(Class6619 var0, BlockPos var1, Class164 var2, Class2047 var3, Predicate<CachedBlockInfo> var4) throws CommandSyntaxException {
+   private static int method31295(CommandSource var0, BlockPos var1, Class164 var2, Class2047 var3, Predicate<CachedBlockInfo> var4) throws CommandSyntaxException {
       ServerWorld var7 = var0.method20172();
       if (var4 != null && !var4.test(new CachedBlockInfo(var7, var1, true))) {
          throw field39214.create();

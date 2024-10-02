@@ -133,7 +133,7 @@ public final class ItemStack {
 
    public boolean isEmpty() {
       if (this != EMPTY) {
-         return this.getItem() != null && this.getItem() != Items.field37222 ? this.count <= 0 : true;
+         return this.getItem() != null && this.getItem() != Items.AIR ? this.count <= 0 : true;
       } else {
          return true;
       }
@@ -148,7 +148,7 @@ public final class ItemStack {
    }
 
    public Item getItem() {
-      return !this.isEmpty ? this.item : Items.field37222;
+      return !this.isEmpty ? this.item : Items.AIR;
    }
 
    public ActionResultType onItemUse(ItemUseContext var1) {

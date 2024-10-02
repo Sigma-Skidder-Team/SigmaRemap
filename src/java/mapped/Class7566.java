@@ -10,6 +10,7 @@ import com.mojang.datafixers.util.Pair;
 import java.util.Arrays;
 import java.util.Collection;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -37,12 +38,12 @@ public class Class7566 implements ArgumentType<Class7352> {
       }
    }
 
-   private static Class7744 method24767(CommandContext<Class6619> var0, ResourceLocation var1) throws CommandSyntaxException {
-      return ((Class6619)var0.getSource()).method20177().method1397().method22829(var1).orElseThrow(() -> field32499.create(var1.toString()));
+   private static Class7744 method24767(CommandContext<CommandSource> var0, ResourceLocation var1) throws CommandSyntaxException {
+      return ((CommandSource)var0.getSource()).method20177().method1397().method22829(var1).orElseThrow(() -> field32499.create(var1.toString()));
    }
 
-   private static ITag<Class7744> method24768(CommandContext<Class6619> var0, ResourceLocation var1) throws CommandSyntaxException {
-      ITag var4 = ((Class6619)var0.getSource()).method20177().method1397().method22830(var1);
+   private static ITag<Class7744> method24768(CommandContext<CommandSource> var0, ResourceLocation var1) throws CommandSyntaxException {
+      ITag var4 = ((CommandSource)var0.getSource()).method20177().method1397().method22830(var1);
       if (var4 != null) {
          return var4;
       } else {
@@ -50,11 +51,11 @@ public class Class7566 implements ArgumentType<Class7352> {
       }
    }
 
-   public static Collection<Class7744> method24769(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
+   public static Collection<Class7744> method24769(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
       return ((Class7352)var0.getArgument(var1, Class7352.class)).method23305(var0);
    }
 
-   public static Pair<ResourceLocation, Either<Class7744, ITag<Class7744>>> method24770(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
+   public static Pair<ResourceLocation, Either<Class7744, ITag<Class7744>>> method24770(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
       return ((Class7352)var0.getArgument(var1, Class7352.class)).method23306(var0);
    }
 

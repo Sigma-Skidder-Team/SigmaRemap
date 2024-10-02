@@ -9,6 +9,7 @@ import mapped.*;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.client.renderer.GPUWarning;
+import net.minecraft.client.settings.IteratableOption;
 import net.minecraft.client.settings.NarratorStatus;
 import net.minecraft.client.settings.ParticleStatus;
 import net.minecraft.client.shader.Framebuffer;
@@ -16,6 +17,7 @@ import net.minecraft.entity.player.ChatVisibility;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.*;
 import net.optifine.Config;
+import net.optifine.config.IteratableOptionOF;
 
 public abstract class AbstractOption {
    public static final Class5807 field25315 = new Class5807("options.biomeBlendRadius", 0.0, 7.0, 1.0F, var0 -> (double)var0.biomeBlendRadius, (var0, var1) -> {
@@ -214,16 +216,16 @@ public abstract class AbstractOption {
          Minecraft.getInstance().ingameGUI.getChatGUI().method5933();
       }, (var0, var1) -> var1.method17953(var1.method18083(var1.getValue(var0)))
    );
-   public static final Class5804 field25337 = new Class5804("options.ao", (var0, var1) -> {
+   public static final IteratableOption field25337 = new IteratableOption("options.ao", (var0, var1) -> {
       var0.ambientOcclusionStatus = AmbientOcclusionStatus.method9117(var0.ambientOcclusionStatus.method9115() + var1);
       Minecraft.getInstance().worldRenderer.loadRenderers();
    }, (var0, var1) -> var1.method17955(new TranslationTextComponent(var0.ambientOcclusionStatus.method9116())));
-   public static final Class5804 field25338 = new Class5804(
+   public static final IteratableOption field25338 = new IteratableOption(
       "options.attackIndicator",
       (var0, var1) -> var0.field44603 = Class2207.method8924(var0.field44603.method8922() + var1),
       (var0, var1) -> var1.method17955(new TranslationTextComponent(var0.field44603.method8923()))
    );
-   public static final Class5804 field25339 = new Class5804(
+   public static final IteratableOption field25339 = new IteratableOption(
       "options.chat.visibility",
       (var0, var1) -> var0.chatVisibility = ChatVisibility.getValue((var0.chatVisibility.getId() + var1) % 3),
       (var0, var1) -> var1.method17955(new TranslationTextComponent(var0.chatVisibility.getResourceKey()))
@@ -233,7 +235,7 @@ public abstract class AbstractOption {
       "options.graphics.fabulous.tooltip", new TranslationTextComponent("options.graphics.fabulous").mergeStyle(TextFormatting.ITALIC)
    );
    private static final ITextComponent FANCY_GRAPHICS = new TranslationTextComponent("options.graphics.fancy.tooltip");
-   public static final Class5804 field25343 = new Class5804("options.graphics", (var0, var1) -> {
+   public static final IteratableOption field25343 = new IteratableOption("options.graphics", (var0, var1) -> {
       Minecraft minecraft = Minecraft.getInstance();
       GPUWarning gpuwarning = minecraft.getGPUWarning();
       if (var0.graphicFanciness == GraphicsFanciness.FANCY && gpuwarning.method975()) {
@@ -262,17 +264,17 @@ public abstract class AbstractOption {
       IFormattableTextComponent var4 = new TranslationTextComponent(var0.graphicFanciness.func_238164_b_());
       return var0.graphicFanciness == GraphicsFanciness.FABULOUS ? var1.method17955(var4.mergeStyle(TextFormatting.ITALIC)) : var1.method17955(var4);
    });
-   public static final Class5804 field25344 = new Class5804(
+   public static final IteratableOption field25344 = new IteratableOption(
       "options.guiScale",
       (var0, var1) -> var0.guiScale = MathHelper.normalizeAngle(
             var0.guiScale + var1, Minecraft.getInstance().getMainWindow().calcGuiScale(0, Minecraft.getInstance().getForceUnicodeFont()) + 1
          ),
       (var0, var1) -> var0.guiScale != 0 ? var1.method17956(var0.guiScale) : var1.method17955(new TranslationTextComponent("options.guiScale.auto"))
    );
-   public static final Class5804 field25345 = new Class5804(
+   public static final IteratableOption field25345 = new IteratableOption(
       "options.mainHand", (var0, var1) -> var0.field44591 = var0.field44591.opposite(), (var0, var1) -> var1.method17955(var0.field44591.method8921())
    );
-   public static final Class5804 field25346 = new Class5804(
+   public static final IteratableOption field25346 = new IteratableOption(
       "options.narrator",
       (var0, var1) -> {
          if (!NarratorChatListener.INSTANCE.method20405()) {
@@ -287,12 +289,12 @@ public abstract class AbstractOption {
             ? var1.method17955(new TranslationTextComponent("options.narrator.notavailable"))
             : var1.method17955(var0.narrator.method8190())
    );
-   public static final Class5804 field25347 = new Class5804(
+   public static final IteratableOption field25347 = new IteratableOption(
       "options.particles",
       (var0, var1) -> var0.particles = ParticleStatus.method9053(var0.particles.method9052() + var1),
       (var0, var1) -> var1.method17955(new TranslationTextComponent(var0.particles.method9051()))
    );
-   public static final Class5804 field25348 = new Class5804("options.renderClouds", (var0, var1) -> {
+   public static final IteratableOption field25348 = new IteratableOption("options.renderClouds", (var0, var1) -> {
       var0.cloudOption = CloudOption.method8175(var0.cloudOption.method8173() + var1);
       if (Minecraft.isFabulousGraphicsEnabled()) {
          Framebuffer var4 = Minecraft.getInstance().worldRenderer.method951();
@@ -301,7 +303,7 @@ public abstract class AbstractOption {
          }
       }
    }, (var0, var1) -> var1.method17955(new TranslationTextComponent(var0.cloudOption.method8174())));
-   public static final Class5804 field25349 = new Class5804(
+   public static final IteratableOption field25349 = new IteratableOption(
       "options.accessibility.text_background",
       (var0, var1) -> var0.field44624 = !var0.field44624,
       (var0, var1) -> var1.method17955(
@@ -342,12 +344,12 @@ public abstract class AbstractOption {
 
       return false;
    }, (var0, var1) -> var0.field44622 = var1);
-   public static final Class5804 field25366 = new Class5804(
+   public static final IteratableOption field25366 = new IteratableOption(
       "key.sneak",
       (var0, var1) -> var0.field44628 = !var0.field44628,
       (var0, var1) -> var1.method17955(new TranslationTextComponent(!var0.field44628 ? "options.key.hold" : "options.key.toggle"))
    );
-   public static final Class5804 field25367 = new Class5804(
+   public static final IteratableOption field25367 = new IteratableOption(
       "key.sprint",
       (var0, var1) -> var0.field44629 = !var0.field44629,
       (var0, var1) -> var1.method17955(new TranslationTextComponent(!var0.field44629 ? "options.key.hold" : "options.key.toggle"))
@@ -365,78 +367,78 @@ public abstract class AbstractOption {
    private final ITextComponent field25371;
    private Optional<List<Class9125>> field25372 = Optional.<List<Class9125>>empty();
    private final String field25373;
-   public static final Class5804 field25374 = new Class5803("of.options.FOG_FANCY");
-   public static final Class5804 field25375 = new Class5803("of.options.FOG_START");
+   public static final IteratableOption field25374 = new IteratableOptionOF("of.options.FOG_FANCY");
+   public static final IteratableOption field25375 = new IteratableOptionOF("of.options.FOG_START");
    public static final Class5807 field25376 = new Class5809("of.options.MIPMAP_TYPE", 0.0, 3.0, 1.0F);
-   public static final Class5804 field25377 = new Class5803("of.options.SMOOTH_FPS");
-   public static final Class5804 field25378 = new Class5803("of.options.CLOUDS");
+   public static final IteratableOption field25377 = new IteratableOptionOF("of.options.SMOOTH_FPS");
+   public static final IteratableOption field25378 = new IteratableOptionOF("of.options.CLOUDS");
    public static final Class5807 field25379 = new Class5809("of.options.CLOUD_HEIGHT");
-   public static final Class5804 field25380 = new Class5803("of.options.TREES");
-   public static final Class5804 field25381 = new Class5803("of.options.RAIN");
-   public static final Class5804 field25382 = new Class5803("of.options.ANIMATED_WATER");
-   public static final Class5804 field25383 = new Class5803("of.options.ANIMATED_LAVA");
-   public static final Class5804 field25384 = new Class5803("of.options.ANIMATED_FIRE");
-   public static final Class5804 field25385 = new Class5803("of.options.ANIMATED_PORTAL");
+   public static final IteratableOption field25380 = new IteratableOptionOF("of.options.TREES");
+   public static final IteratableOption field25381 = new IteratableOptionOF("of.options.RAIN");
+   public static final IteratableOption field25382 = new IteratableOptionOF("of.options.ANIMATED_WATER");
+   public static final IteratableOption field25383 = new IteratableOptionOF("of.options.ANIMATED_LAVA");
+   public static final IteratableOption field25384 = new IteratableOptionOF("of.options.ANIMATED_FIRE");
+   public static final IteratableOption field25385 = new IteratableOptionOF("of.options.ANIMATED_PORTAL");
    public static final Class5807 field25386 = new Class5809("of.options.AO_LEVEL");
-   public static final Class5804 field25387 = new Class5803("of.options.LAGOMETER");
-   public static final Class5804 field25388 = new Class5803("of.options.SHOW_FPS");
-   public static final Class5804 field25389 = new Class5803("of.options.AUTOSAVE_TICKS");
-   public static final Class5804 field25390 = new Class5803("of.options.BETTER_GRASS");
-   public static final Class5804 field25391 = new Class5803("of.options.ANIMATED_REDSTONE");
-   public static final Class5804 field25392 = new Class5803("of.options.ANIMATED_EXPLOSION");
-   public static final Class5804 field25393 = new Class5803("of.options.ANIMATED_FLAME");
-   public static final Class5804 field25394 = new Class5803("of.options.ANIMATED_SMOKE");
-   public static final Class5804 field25395 = new Class5803("of.options.WEATHER");
-   public static final Class5804 field25396 = new Class5803("of.options.SKY");
-   public static final Class5804 field25397 = new Class5803("of.options.STARS");
-   public static final Class5804 field25398 = new Class5803("of.options.SUN_MOON");
-   public static final Class5804 field25399 = new Class5803("of.options.VIGNETTE");
-   public static final Class5804 field25400 = new Class5803("of.options.CHUNK_UPDATES");
-   public static final Class5804 field25401 = new Class5803("of.options.CHUNK_UPDATES_DYNAMIC");
-   public static final Class5804 field25402 = new Class5803("of.options.TIME");
-   public static final Class5804 field25403 = new Class5803("of.options.SMOOTH_WORLD");
-   public static final Class5804 field25404 = new Class5803("of.options.VOID_PARTICLES");
-   public static final Class5804 field25405 = new Class5803("of.options.WATER_PARTICLES");
-   public static final Class5804 field25406 = new Class5803("of.options.RAIN_SPLASH");
-   public static final Class5804 field25407 = new Class5803("of.options.PORTAL_PARTICLES");
-   public static final Class5804 field25408 = new Class5803("of.options.POTION_PARTICLES");
-   public static final Class5804 field25409 = new Class5803("of.options.FIREWORK_PARTICLES");
-   public static final Class5804 field25410 = new Class5803("of.options.PROFILER");
-   public static final Class5804 field25411 = new Class5803("of.options.DRIPPING_WATER_LAVA");
-   public static final Class5804 field25412 = new Class5803("of.options.BETTER_SNOW");
-   public static final Class5804 field25413 = new Class5803("of.options.ANIMATED_TERRAIN");
-   public static final Class5804 field25414 = new Class5803("of.options.SWAMP_COLORS");
-   public static final Class5804 field25415 = new Class5803("of.options.RANDOM_ENTITIES");
-   public static final Class5804 field25416 = new Class5803("of.options.SMOOTH_BIOMES");
-   public static final Class5804 field25417 = new Class5803("of.options.CUSTOM_FONTS");
-   public static final Class5804 field25418 = new Class5803("of.options.CUSTOM_COLORS");
-   public static final Class5804 field25419 = new Class5803("of.options.SHOW_CAPES");
-   public static final Class5804 field25420 = new Class5803("of.options.CONNECTED_TEXTURES");
-   public static final Class5804 field25421 = new Class5803("of.options.CUSTOM_ITEMS");
+   public static final IteratableOption field25387 = new IteratableOptionOF("of.options.LAGOMETER");
+   public static final IteratableOption field25388 = new IteratableOptionOF("of.options.SHOW_FPS");
+   public static final IteratableOption field25389 = new IteratableOptionOF("of.options.AUTOSAVE_TICKS");
+   public static final IteratableOption field25390 = new IteratableOptionOF("of.options.BETTER_GRASS");
+   public static final IteratableOption field25391 = new IteratableOptionOF("of.options.ANIMATED_REDSTONE");
+   public static final IteratableOption field25392 = new IteratableOptionOF("of.options.ANIMATED_EXPLOSION");
+   public static final IteratableOption field25393 = new IteratableOptionOF("of.options.ANIMATED_FLAME");
+   public static final IteratableOption field25394 = new IteratableOptionOF("of.options.ANIMATED_SMOKE");
+   public static final IteratableOption field25395 = new IteratableOptionOF("of.options.WEATHER");
+   public static final IteratableOption field25396 = new IteratableOptionOF("of.options.SKY");
+   public static final IteratableOption field25397 = new IteratableOptionOF("of.options.STARS");
+   public static final IteratableOption field25398 = new IteratableOptionOF("of.options.SUN_MOON");
+   public static final IteratableOption field25399 = new IteratableOptionOF("of.options.VIGNETTE");
+   public static final IteratableOption field25400 = new IteratableOptionOF("of.options.CHUNK_UPDATES");
+   public static final IteratableOption field25401 = new IteratableOptionOF("of.options.CHUNK_UPDATES_DYNAMIC");
+   public static final IteratableOption field25402 = new IteratableOptionOF("of.options.TIME");
+   public static final IteratableOption field25403 = new IteratableOptionOF("of.options.SMOOTH_WORLD");
+   public static final IteratableOption field25404 = new IteratableOptionOF("of.options.VOID_PARTICLES");
+   public static final IteratableOption field25405 = new IteratableOptionOF("of.options.WATER_PARTICLES");
+   public static final IteratableOption field25406 = new IteratableOptionOF("of.options.RAIN_SPLASH");
+   public static final IteratableOption field25407 = new IteratableOptionOF("of.options.PORTAL_PARTICLES");
+   public static final IteratableOption field25408 = new IteratableOptionOF("of.options.POTION_PARTICLES");
+   public static final IteratableOption field25409 = new IteratableOptionOF("of.options.FIREWORK_PARTICLES");
+   public static final IteratableOption field25410 = new IteratableOptionOF("of.options.PROFILER");
+   public static final IteratableOption field25411 = new IteratableOptionOF("of.options.DRIPPING_WATER_LAVA");
+   public static final IteratableOption field25412 = new IteratableOptionOF("of.options.BETTER_SNOW");
+   public static final IteratableOption field25413 = new IteratableOptionOF("of.options.ANIMATED_TERRAIN");
+   public static final IteratableOption field25414 = new IteratableOptionOF("of.options.SWAMP_COLORS");
+   public static final IteratableOption field25415 = new IteratableOptionOF("of.options.RANDOM_ENTITIES");
+   public static final IteratableOption field25416 = new IteratableOptionOF("of.options.SMOOTH_BIOMES");
+   public static final IteratableOption field25417 = new IteratableOptionOF("of.options.CUSTOM_FONTS");
+   public static final IteratableOption field25418 = new IteratableOptionOF("of.options.CUSTOM_COLORS");
+   public static final IteratableOption field25419 = new IteratableOptionOF("of.options.SHOW_CAPES");
+   public static final IteratableOption field25420 = new IteratableOptionOF("of.options.CONNECTED_TEXTURES");
+   public static final IteratableOption field25421 = new IteratableOptionOF("of.options.CUSTOM_ITEMS");
    public static final Class5807 field25422 = new Class5809("of.options.AA_LEVEL", 0.0, 16.0, 1.0F);
    public static final Class5807 field25423 = new Class5809("of.options.AF_LEVEL", 1.0, 16.0, 1.0F);
-   public static final Class5804 field25424 = new Class5803("of.options.ANIMATED_TEXTURES");
-   public static final Class5804 field25425 = new Class5803("of.options.NATURAL_TEXTURES");
-   public static final Class5804 field25426 = new Class5803("of.options.EMISSIVE_TEXTURES");
-   public static final Class5804 field25427 = new Class5803("of.options.HELD_ITEM_TOOLTIPS");
-   public static final Class5804 field25428 = new Class5803("of.options.DROPPED_ITEMS");
-   public static final Class5804 field25429 = new Class5803("of.options.LAZY_CHUNK_LOADING");
-   public static final Class5804 field25430 = new Class5803("of.options.CUSTOM_SKY");
-   public static final Class5804 field25431 = new Class5803("of.options.FAST_MATH");
-   public static final Class5804 field25432 = new Class5803("of.options.FAST_RENDER");
-   public static final Class5804 field25433 = new Class5803("of.options.TRANSLUCENT_BLOCKS");
-   public static final Class5804 field25434 = new Class5803("of.options.DYNAMIC_FOV");
-   public static final Class5804 field25435 = new Class5803("of.options.DYNAMIC_LIGHTS");
-   public static final Class5804 field25436 = new Class5803("of.options.ALTERNATE_BLOCKS");
-   public static final Class5804 field25437 = new Class5803("of.options.CUSTOM_ENTITY_MODELS");
-   public static final Class5804 field25438 = new Class5803("of.options.ADVANCED_TOOLTIPS");
-   public static final Class5804 field25439 = new Class5803("of.options.SCREENSHOT_SIZE");
-   public static final Class5804 field25440 = new Class5803("of.options.CUSTOM_GUIS");
-   public static final Class5804 field25441 = new Class5803("of.options.RENDER_REGIONS");
-   public static final Class5804 field25442 = new Class5803("of.options.SHOW_GL_ERRORS");
-   public static final Class5804 field25443 = new Class5803("of.options.SMART_ANIMATIONS");
-   public static final Class5804 field25444 = new Class5803("of.options.CHAT_BACKGROUND");
-   public static final Class5804 field25445 = new Class5803("of.options.CHAT_SHADOW");
+   public static final IteratableOption field25424 = new IteratableOptionOF("of.options.ANIMATED_TEXTURES");
+   public static final IteratableOption field25425 = new IteratableOptionOF("of.options.NATURAL_TEXTURES");
+   public static final IteratableOption field25426 = new IteratableOptionOF("of.options.EMISSIVE_TEXTURES");
+   public static final IteratableOption field25427 = new IteratableOptionOF("of.options.HELD_ITEM_TOOLTIPS");
+   public static final IteratableOption field25428 = new IteratableOptionOF("of.options.DROPPED_ITEMS");
+   public static final IteratableOption LAZY_CHUNK_LOADING = new IteratableOptionOF("of.options.LAZY_CHUNK_LOADING");
+   public static final IteratableOption field25430 = new IteratableOptionOF("of.options.CUSTOM_SKY");
+   public static final IteratableOption field25431 = new IteratableOptionOF("of.options.FAST_MATH");
+   public static final IteratableOption field25432 = new IteratableOptionOF("of.options.FAST_RENDER");
+   public static final IteratableOption field25433 = new IteratableOptionOF("of.options.TRANSLUCENT_BLOCKS");
+   public static final IteratableOption field25434 = new IteratableOptionOF("of.options.DYNAMIC_FOV");
+   public static final IteratableOption field25435 = new IteratableOptionOF("of.options.DYNAMIC_LIGHTS");
+   public static final IteratableOption field25436 = new IteratableOptionOF("of.options.ALTERNATE_BLOCKS");
+   public static final IteratableOption field25437 = new IteratableOptionOF("of.options.CUSTOM_ENTITY_MODELS");
+   public static final IteratableOption field25438 = new IteratableOptionOF("of.options.ADVANCED_TOOLTIPS");
+   public static final IteratableOption field25439 = new IteratableOptionOF("of.options.SCREENSHOT_SIZE");
+   public static final IteratableOption field25440 = new IteratableOptionOF("of.options.CUSTOM_GUIS");
+   public static final IteratableOption field25441 = new IteratableOptionOF("of.options.RENDER_REGIONS");
+   public static final IteratableOption field25442 = new IteratableOptionOF("of.options.SHOW_GL_ERRORS");
+   public static final IteratableOption field25443 = new IteratableOptionOF("of.options.SMART_ANIMATIONS");
+   public static final IteratableOption field25444 = new IteratableOptionOF("of.options.CHAT_BACKGROUND");
+   public static final IteratableOption field25445 = new IteratableOptionOF("of.options.CHAT_SHADOW");
 
    public AbstractOption(String var1) {
       this.field25371 = new TranslationTextComponent(var1);

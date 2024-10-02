@@ -26,6 +26,7 @@ import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceContext;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 
 import java.util.List;
@@ -126,7 +127,7 @@ public class Class907 extends Entity {
 
             if (!this.onGround && !var6) {
                if (!this.world.isRemote && (this.field5177 > 100 && (var18.getY() < 1 || var18.getY() > 256) || this.field5177 > 600)) {
-                  if (this.field5178 && this.world.getGameRules().getBoolean(Class5462.field24229)) {
+                  if (this.field5178 && this.world.getGameRules().getBoolean(GameRules.field24229)) {
                      this.entityDropItem(var3);
                   }
 
@@ -151,7 +152,7 @@ public class Class907 extends Entity {
                         }
 
                         if (!this.world.setBlockState(var18, this.field5176, 3)) {
-                           if (this.field5178 && this.world.getGameRules().getBoolean(Class5462.field24229)) {
+                           if (this.field5178 && this.world.getGameRules().getBoolean(GameRules.field24229)) {
                               this.entityDropItem(var3);
                            }
                         } else {
@@ -176,7 +177,7 @@ public class Class907 extends Entity {
                               }
                            }
                         }
-                     } else if (this.field5178 && this.world.getGameRules().getBoolean(Class5462.field24229)) {
+                     } else if (this.field5178 && this.world.getGameRules().getBoolean(GameRules.field24229)) {
                         this.entityDropItem(var3);
                      }
                   }

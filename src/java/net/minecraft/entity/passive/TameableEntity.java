@@ -14,6 +14,7 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.scoreboard.Team;
 import net.minecraft.util.DamageSource;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -55,7 +56,7 @@ public abstract class TameableEntity extends Class1018 {
          var4 = var1.method105("Owner");
       } else {
          String var5 = var1.getString("Owner");
-         var4 = Class9061.method33732(this.method3396(), var5);
+         var4 = PreYggdrasilConverter.method33732(this.method3396(), var5);
       }
 
       if (var4 != null) {
@@ -204,7 +205,7 @@ public abstract class TameableEntity extends Class1018 {
 
    @Override
    public void onDeath(DamageSource var1) {
-      if (!this.world.isRemote && this.world.getGameRules().getBoolean(Class5462.field24234) && this.method4400() instanceof ServerPlayerEntity) {
+      if (!this.world.isRemote && this.world.getGameRules().getBoolean(GameRules.field24234) && this.method4400() instanceof ServerPlayerEntity) {
          this.method4400().sendMessage(this.getCombatTracker().method27600(), Util.DUMMY_UUID);
       }
 

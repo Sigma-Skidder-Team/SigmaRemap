@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.IAngerable;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.world.GameRules;
 
 import java.util.List;
 
@@ -19,7 +20,7 @@ public class ResetAngerGoal<T extends MobEntity & IAngerable> extends Class2595 
 
    @Override
    public boolean method10803() {
-      return this.field17378.world.getGameRules().getBoolean(Class5462.field24255) && this.method10967();
+      return this.field17378.world.getGameRules().getBoolean(GameRules.field24255) && this.method10967();
    }
 
    private boolean method10967() {

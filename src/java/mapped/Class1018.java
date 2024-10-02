@@ -13,6 +13,7 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
@@ -217,7 +218,7 @@ public abstract class Class1018 extends Class1045 {
          var5.setLocationAndAngles(this.getPosX(), this.getPosY(), this.getPosZ(), 0.0F, 0.0F);
          var1.method6995(var5);
          var1.setEntityState(this, (byte)18);
-         if (var1.getGameRules().getBoolean(Class5462.field24227)) {
+         if (var1.getGameRules().getBoolean(GameRules.field24227)) {
             var1.addEntity(new ExperienceOrbEntity(var1, this.getPosX(), this.getPosY(), this.getPosZ(), this.getRNG().nextInt(7) + 1));
          }
       }

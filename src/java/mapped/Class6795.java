@@ -10,6 +10,7 @@ import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.Collection;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
@@ -32,7 +33,7 @@ public class Class6795 {
    );
    private static final SimpleCommandExceptionType field29602 = new SimpleCommandExceptionType(new TranslationTextComponent("commands.enchant.failed"));
 
-   public static void method20701(CommandDispatcher<Class6619> var0) {
+   public static void method20701(CommandDispatcher<CommandSource> var0) {
       var0.register(
          (LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("enchant").requires(var0x -> var0x.method20129(2)))
             .then(
@@ -41,14 +42,14 @@ public class Class6795 {
                      ((RequiredArgumentBuilder)Class6099.method18840("enchantment", Class9534.method36862())
                            .executes(
                               var0x -> method20702(
-                                    (Class6619)var0x.getSource(), Class8700.method31348(var0x, "targets"), Class9534.method36863(var0x, "enchantment"), 1
+                                    (CommandSource)var0x.getSource(), Class8700.method31348(var0x, "targets"), Class9534.method36863(var0x, "enchantment"), 1
                                  )
                            ))
                         .then(
                            Class6099.method18840("level", IntegerArgumentType.integer(0))
                               .executes(
                                  var0x -> method20702(
-                                       (Class6619)var0x.getSource(),
+                                       (CommandSource)var0x.getSource(),
                                        Class8700.method31348(var0x, "targets"),
                                        Class9534.method36863(var0x, "enchantment"),
                                        IntegerArgumentType.getInteger(var0x, "level")
@@ -60,7 +61,7 @@ public class Class6795 {
       );
    }
 
-   private static int method20702(Class6619 var0, Collection<? extends Entity> var1, Enchantment var2, int var3) throws CommandSyntaxException {
+   private static int method20702(CommandSource var0, Collection<? extends Entity> var1, Enchantment var2, int var3) throws CommandSyntaxException {
       if (var3 > var2.method18809()) {
          throw field29601.create(var3, var2.method18809());
       } else {

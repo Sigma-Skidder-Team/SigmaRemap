@@ -4,6 +4,7 @@ import com.google.common.base.Joiner;
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import mapped.*;
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.Entity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
@@ -38,7 +39,7 @@ public abstract class NBTTextComponent extends TextComponent implements ITargete
       this.field_218678_b = p_i50782_3_;
    }
 
-   public abstract Stream<CompoundNBT> func_218673_a(Class6619 var1) throws CommandSyntaxException;
+   public abstract Stream<CompoundNBT> func_218673_a(CommandSource var1) throws CommandSyntaxException;
 
    public String func_218676_i() {
       return this.field_218679_c;
@@ -49,7 +50,7 @@ public abstract class NBTTextComponent extends TextComponent implements ITargete
    }
 
    @Override
-   public IFormattableTextComponent func_230535_a_(Class6619 p_230535_1_, Entity p_230535_2_, int p_230535_3_) throws CommandSyntaxException {
+   public IFormattableTextComponent func_230535_a_(CommandSource p_230535_1_, Entity p_230535_2_, int p_230535_3_) throws CommandSyntaxException {
       if (p_230535_1_ != null && this.field_218680_d != null) {
          Stream<String> var6 = this.func_218673_a(p_230535_1_).<INBT>flatMap(p_218675_1_ -> {
             try {

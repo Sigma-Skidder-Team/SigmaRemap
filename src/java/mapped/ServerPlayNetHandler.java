@@ -25,6 +25,7 @@ import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
+import net.minecraft.command.CommandSource;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.Entity;
@@ -60,6 +61,7 @@ import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.util.text.filter.IChatFilter;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.GameType;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
@@ -209,7 +211,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    public void disconnect(ITextComponent var1) {
       this.netManager.sendPacket(new SDisconnectPacket(var1), var2 -> this.netManager.closeChannel(var1));
       this.netManager.disableAutoRead();
-      this.server.method1635(this.netManager::handleDisconnection);
+      this.server.runImmediately(this.netManager::handleDisconnection);
    }
 
    private <T> void method15659(T var1, Consumer<T> var2, BiFunction<IChatFilter, T, CompletableFuture<Optional<T>>> var3) {
@@ -390,7 +392,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
          var4.skip();
       }
 
-      ParseResults<Class6619> var5 = this.server.getCommandManager().method18842().parse(var4, this.player.getCommandSource());
+      ParseResults<CommandSource> var5 = this.server.getCommandManager().method18842().parse(var4, this.player.getCommandSource());
       this.server
          .getCommandManager()
          .method18842()
@@ -739,7 +741,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
                      }
 
                      if (!this.player.method2821()
-                        && (!this.player.getServerWorld().getGameRules().getBoolean(Class5462.field24240) || !this.player.isElytraFlying())) {
+                        && (!this.player.getServerWorld().getGameRules().getBoolean(GameRules.field24240) || !this.player.isElytraFlying())) {
                         float var32 = !this.player.isElytraFlying() ? 100.0F : 300.0F;
                         if (var29 - var27 > (double)(var32 * (float)var31) && !this.method15657()) {
                            LOGGER.warn("{} moved too quickly! {},{},{}", this.player.getName().getString(), var21, var23, var25);
@@ -1215,7 +1217,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
                this.player = this.server.getPlayerList().func_232644_a_(this.player, false);
                if (this.server.method1287()) {
                   this.player.method2799(GameType.SPECTATOR);
-                  this.player.getServerWorld().getGameRules().<Class7466>method17128(Class5462.field24238).method24175(false, this.server);
+                  this.player.getServerWorld().getGameRules().<Class7466>get(GameRules.field24238).set(false, this.server);
                }
             }
             break;

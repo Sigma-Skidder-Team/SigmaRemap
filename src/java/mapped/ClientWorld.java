@@ -34,6 +34,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.GameType;
 import net.minecraft.world.ITickList;
 import net.minecraft.world.World;
@@ -113,7 +114,7 @@ public class ClientWorld extends World {
 
    private void method6832() {
       this.method6833(this.worldInfo.method20033() + 1L);
-      if (this.worldInfo.method20046().getBoolean(Class5462.field24232)) {
+      if (this.worldInfo.method20046().getBoolean(GameRules.field24232)) {
          this.method6834(this.worldInfo.method20034() + 1L);
       }
    }
@@ -124,10 +125,10 @@ public class ClientWorld extends World {
 
    public void method6834(long var1) {
       if (var1 >= 0L) {
-         this.getGameRules().<Class7466>method17128(Class5462.field24232).method24175(true, (MinecraftServer)null);
+         this.getGameRules().<Class7466>get(GameRules.field24232).set(true, (MinecraftServer)null);
       } else {
          var1 = -var1;
-         this.getGameRules().<Class7466>method17128(Class5462.field24232).method24175(false, (MinecraftServer)null);
+         this.getGameRules().<Class7466>get(GameRules.field24232).set(false, (MinecraftServer)null);
       }
 
       this.field9028.method20040(var1);

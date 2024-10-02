@@ -16,6 +16,7 @@ import java.util.HashSet;
 import java.util.Locale;
 import java.util.Random;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.scoreboard.Team;
@@ -31,7 +32,7 @@ public class Class9271 {
       (var0, var1, var2, var3) -> new TranslationTextComponent("commands.spreadplayers.failed.entities", var0, var1, var2, var3)
    );
 
-   public static void method34922(CommandDispatcher<Class6619> var0) {
+   public static void method34922(CommandDispatcher<CommandSource> var0) {
       var0.register(
          (LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("spreadplayers").requires(var0x -> var0x.method20129(2)))
             .then(
@@ -46,7 +47,7 @@ public class Class9271 {
                                           Class6099.method18840("targets", Class8700.method31347())
                                              .executes(
                                                 var0x -> method34923(
-                                                      (Class6619)var0x.getSource(),
+                                                      (CommandSource)var0x.getSource(),
                                                       Class7347.method23293(var0x, "center"),
                                                       FloatArgumentType.getFloat(var0x, "spreadDistance"),
                                                       FloatArgumentType.getFloat(var0x, "maxRange"),
@@ -67,7 +68,7 @@ public class Class9271 {
                                                    Class6099.method18840("targets", Class8700.method31347())
                                                       .executes(
                                                          var0x -> method34923(
-                                                               (Class6619)var0x.getSource(),
+                                                               (CommandSource)var0x.getSource(),
                                                                Class7347.method23293(var0x, "center"),
                                                                FloatArgumentType.getFloat(var0x, "spreadDistance"),
                                                                FloatArgumentType.getFloat(var0x, "maxRange"),
@@ -86,7 +87,7 @@ public class Class9271 {
       );
    }
 
-   private static int method34923(Class6619 var0, Vector2f var1, float var2, float var3, int var4, boolean var5, Collection<? extends Entity> var6) throws CommandSyntaxException {
+   private static int method34923(CommandSource var0, Vector2f var1, float var2, float var3, int var4, boolean var5, Collection<? extends Entity> var6) throws CommandSyntaxException {
       Random var9 = new Random();
       double var10 = (double)(var1.field37220 - var3);
       double var12 = (double)(var1.field37221 - var3);

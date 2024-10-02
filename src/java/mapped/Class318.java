@@ -64,7 +64,7 @@ public abstract class Class318<R extends Runnable> implements Class321<R>, Execu
       }
    }
 
-   public void method1635(Runnable var1) {
+   public void runImmediately(Runnable var1) {
       if (this.isOnExecutionThread()) {
          var1.run();
       } else {

@@ -11,16 +11,17 @@ import java.util.Collection;
 import java.util.List;
 
 import net.minecraft.advancements.Advancement;
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class7848 {
-   private static final SuggestionProvider<Class6619> field33657 = (var0, var1) -> {
+   private static final SuggestionProvider<CommandSource> field33657 = (var0, var1) -> {
       Collection<Advancement> var4 = var0.getSource().method20177().method1396().method1066();
       return Class6618.method20143(var4.stream().map(Advancement::getId), var1);
    };
 
-   public static void method26285(CommandDispatcher<Class6619> var0) {
+   public static void method26285(CommandDispatcher<CommandSource> var0) {
       var0.register(
          (LiteralArgumentBuilder) ((LiteralArgumentBuilder)Class6099.method18839("advancement").requires(var0x -> var0x.method20129(2)))
                .then(
@@ -36,7 +37,7 @@ public class Class7848 {
                                                       .suggests(field33657)
                                                       .executes(
                                                          var0x -> method26286(
-                                                               (Class6619)var0x.getSource(),
+                                                               (CommandSource)var0x.getSource(),
                                                                Class8700.method31354(var0x, "targets"),
                                                                Class2289.field15224,
                                                                method26288(Class8303.method29032(var0x, "advancement"), Class2028.field13162)
@@ -51,7 +52,7 @@ public class Class7848 {
                                                          )
                                                          .executes(
                                                             var0x -> method26287(
-                                                                  (Class6619)var0x.getSource(),
+                                                                  (CommandSource)var0x.getSource(),
                                                                   Class8700.method31354(var0x, "targets"),
                                                                   Class2289.field15224,
                                                                   Class8303.method29032(var0x, "advancement"),
@@ -68,7 +69,7 @@ public class Class7848 {
                                                 .suggests(field33657)
                                                 .executes(
                                                    var0x -> method26286(
-                                                         (Class6619)var0x.getSource(),
+                                                         (CommandSource)var0x.getSource(),
                                                          Class8700.method31354(var0x, "targets"),
                                                          Class2289.field15224,
                                                          method26288(Class8303.method29032(var0x, "advancement"), Class2028.field13164)
@@ -83,7 +84,7 @@ public class Class7848 {
                                              .suggests(field33657)
                                              .executes(
                                                 var0x -> method26286(
-                                                      (Class6619)var0x.getSource(),
+                                                      (CommandSource)var0x.getSource(),
                                                       Class8700.method31354(var0x, "targets"),
                                                       Class2289.field15224,
                                                       method26288(Class8303.method29032(var0x, "advancement"), Class2028.field13165)
@@ -98,7 +99,7 @@ public class Class7848 {
                                           .suggests(field33657)
                                           .executes(
                                              var0x -> method26286(
-                                                   (Class6619)var0x.getSource(),
+                                                   (CommandSource)var0x.getSource(),
                                                    Class8700.method31354(var0x, "targets"),
                                                    Class2289.field15224,
                                                    method26288(Class8303.method29032(var0x, "advancement"), Class2028.field13163)
@@ -110,10 +111,10 @@ public class Class7848 {
                               Class6099.method18839("everything")
                                  .executes(
                                     var0x -> method26286(
-                                          (Class6619)var0x.getSource(),
+                                          (CommandSource)var0x.getSource(),
                                           Class8700.method31354(var0x, "targets"),
                                           Class2289.field15224,
-                                          ((Class6619)var0x.getSource()).method20177().method1396().method1066()
+                                          ((CommandSource)var0x.getSource()).method20177().method1396().method1066()
                                        )
                                  )
                            )
@@ -132,7 +133,7 @@ public class Class7848 {
                                                    .suggests(field33657)
                                                    .executes(
                                                       var0x -> method26286(
-                                                            (Class6619)var0x.getSource(),
+                                                            (CommandSource)var0x.getSource(),
                                                             Class8700.method31354(var0x, "targets"),
                                                             Class2289.field15225,
                                                             method26288(Class8303.method29032(var0x, "advancement"), Class2028.field13162)
@@ -147,7 +148,7 @@ public class Class7848 {
                                                       )
                                                       .executes(
                                                          var0x -> method26287(
-                                                               (Class6619)var0x.getSource(),
+                                                               (CommandSource)var0x.getSource(),
                                                                Class8700.method31354(var0x, "targets"),
                                                                Class2289.field15225,
                                                                Class8303.method29032(var0x, "advancement"),
@@ -164,7 +165,7 @@ public class Class7848 {
                                              .suggests(field33657)
                                              .executes(
                                                 var0x -> method26286(
-                                                      (Class6619)var0x.getSource(),
+                                                      (CommandSource)var0x.getSource(),
                                                       Class8700.method31354(var0x, "targets"),
                                                       Class2289.field15225,
                                                       method26288(Class8303.method29032(var0x, "advancement"), Class2028.field13164)
@@ -179,7 +180,7 @@ public class Class7848 {
                                           .suggests(field33657)
                                           .executes(
                                              var0x -> method26286(
-                                                   (Class6619)var0x.getSource(),
+                                                   (CommandSource)var0x.getSource(),
                                                    Class8700.method31354(var0x, "targets"),
                                                    Class2289.field15225,
                                                    method26288(Class8303.method29032(var0x, "advancement"), Class2028.field13165)
@@ -194,7 +195,7 @@ public class Class7848 {
                                        .suggests(field33657)
                                        .executes(
                                           var0x -> method26286(
-                                                (Class6619)var0x.getSource(),
+                                                (CommandSource)var0x.getSource(),
                                                 Class8700.method31354(var0x, "targets"),
                                                 Class2289.field15225,
                                                 method26288(Class8303.method29032(var0x, "advancement"), Class2028.field13163)
@@ -206,10 +207,10 @@ public class Class7848 {
                            Class6099.method18839("everything")
                               .executes(
                                  var0x -> method26286(
-                                       (Class6619)var0x.getSource(),
+                                       (CommandSource)var0x.getSource(),
                                        Class8700.method31354(var0x, "targets"),
                                        Class2289.field15225,
-                                       ((Class6619)var0x.getSource()).method20177().method1396().method1066()
+                                       ((CommandSource)var0x.getSource()).method20177().method1396().method1066()
                                     )
                               )
                         )
@@ -218,7 +219,7 @@ public class Class7848 {
       );
    }
 
-   private static int method26286(Class6619 var0, Collection<ServerPlayerEntity> var1, Class2289 var2, Collection<Advancement> var3) {
+   private static int method26286(CommandSource var0, Collection<ServerPlayerEntity> var1, Class2289 var2, Collection<Advancement> var3) {
       int var6 = 0;
 
       for (ServerPlayerEntity var8 : var1) {
@@ -269,7 +270,7 @@ public class Class7848 {
       }
    }
 
-   private static int method26287(Class6619 var0, Collection<ServerPlayerEntity> var1, Class2289 var2, Advancement var3, String var4) {
+   private static int method26287(CommandSource var0, Collection<ServerPlayerEntity> var1, Class2289 var2, Advancement var3, String var4) {
       int var7 = 0;
       if (var3.method27030().containsKey(var4)) {
          for (ServerPlayerEntity var9 : var1) {

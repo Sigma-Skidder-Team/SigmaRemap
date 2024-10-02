@@ -2,7 +2,7 @@ package mapped;
 
 public class Vector2f {
    private static String[] field37211;
-   public static final Vector2f field37212 = new Vector2f(0.0F, 0.0F);
+   public static final Vector2f ZERO = new Vector2f(0.0F, 0.0F);
    public static final Vector2f field37213 = new Vector2f(1.0F, 1.0F);
    public static final Vector2f field37214 = new Vector2f(1.0F, 0.0F);
    public static final Vector2f field37215 = new Vector2f(-1.0F, 0.0F);

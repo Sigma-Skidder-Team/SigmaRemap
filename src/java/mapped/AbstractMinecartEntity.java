@@ -29,6 +29,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.math.vector.Vector3i;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -240,7 +241,7 @@ public abstract class AbstractMinecartEntity extends Entity {
 
    public void method3586(DamageSource var1) {
       this.remove();
-      if (this.world.getGameRules().getBoolean(Class5462.field24229)) {
+      if (this.world.getGameRules().getBoolean(GameRules.field24229)) {
          ItemStack var4 = new ItemStack(Items.MINECART);
          if (this.method3381()) {
             var4.method32150(this.method3380());

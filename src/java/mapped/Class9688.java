@@ -3,9 +3,10 @@ package mapped;
 import com.google.common.collect.Lists;
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import java.util.ArrayList;
+
 import java.util.List;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 
@@ -19,7 +20,7 @@ public class Class9688 {
       this.field45300 = var2;
    }
 
-   public ITextComponent method37928(Class6619 var1, boolean var2) throws CommandSyntaxException {
+   public ITextComponent method37928(CommandSource var1, boolean var2) throws CommandSyntaxException {
       if (this.field45300.length != 0 && var2) {
          StringTextComponent var5 = new StringTextComponent(this.field45299.substring(0, this.field45300[0].method35555()));
          int var6 = this.field45300[0].method35555();

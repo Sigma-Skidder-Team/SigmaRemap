@@ -8,6 +8,7 @@ import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import java.util.Arrays;
 import java.util.Collection;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
@@ -21,7 +22,7 @@ public class Class7822 implements ArgumentType<ResourceLocation> {
       return new Class7822();
    }
 
-   public static ResourceLocation method26156(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
+   public static ResourceLocation method26156(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
       return method26157((ResourceLocation)var0.getArgument(var1, ResourceLocation.class));
    }
 

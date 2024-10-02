@@ -19,6 +19,7 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -366,7 +367,7 @@ public class Class1034 extends Class1035 implements Class1023 {
 
    @Override
    public boolean method4253(ItemStack var1) {
-      return this.world.getGameRules().getBoolean(Class5462.field24224) && this.method4280() && Class4388.method13826(this, var1);
+      return this.world.getGameRules().getBoolean(GameRules.field24224) && this.method4280() && Class4388.method13826(this, var1);
    }
 
    public boolean method4627(ItemStack var1) {

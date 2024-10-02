@@ -19,8 +19,8 @@ public class Class372 extends Thread {
 
       String var4;
       try {
-         while (!this.field1625.method1366() && this.field1625.method1295() && (var4 = var3.readLine()) != null) {
-            this.field1625.method6499(var4, this.field1625.method1404());
+         while (!this.field1625.isServerStopped() && this.field1625.isServerRunning() && (var4 = var3.readLine()) != null) {
+            this.field1625.handleConsoleInput(var4, this.field1625.getCommandSource());
          }
       } catch (IOException var6) {
          DedicatedServer.method1453().error("Exception handling console input", var6);

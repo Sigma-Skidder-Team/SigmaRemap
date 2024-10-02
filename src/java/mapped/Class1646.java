@@ -1,7 +1,7 @@
 package mapped;
 
 public interface Class1646 {
-   Class9437 method6498();
+   ServerProperties method6498();
 
    String method6501();
 
@@ -17,9 +17,9 @@ public interface Class1646 {
 
    String[] method1324();
 
-   String method6511();
+   String func_230542_k__();
 
    String method6508();
 
-   String method6509(String var1);
+   String handleRConCommand(String var1);
 }

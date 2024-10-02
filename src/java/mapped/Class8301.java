@@ -22,7 +22,7 @@ public final class Class8301 implements ProfileLookupCallback {
    }
 
    public void onProfileLookupSucceeded(GameProfile var1) {
-      this.field35688.method1386().method31790(var1);
+      this.field35688.getPlayerProfileCache().method31790(var1);
       UUID var4 = var1.getId();
       if (var4 != null) {
          this.method29028(this.field35689, this.method29029(var1), var4.toString());
@@ -32,7 +32,7 @@ public final class Class8301 implements ProfileLookupCallback {
    }
 
    public void onProfileLookupFailed(GameProfile var1, Exception var2) {
-      Class9061.method33743().warn("Could not lookup user uuid for {}", var1.getName(), var2);
+      PreYggdrasilConverter.method33743().warn("Could not lookup user uuid for {}", var1.getName(), var2);
       if (!(var2 instanceof ProfileNotFoundException)) {
          throw new Class2502("Could not request user " + var1.getName() + " from backend systems", var2, null);
       } else {
@@ -44,7 +44,7 @@ public final class Class8301 implements ProfileLookupCallback {
    private void method29028(File var1, String var2, String var3) {
       File var6 = new File(this.field35691, var2 + ".dat");
       File var7 = new File(var1, var3 + ".dat");
-      Class9061.method33745(var1);
+      PreYggdrasilConverter.method33745(var1);
       if (!var6.renameTo(var7)) {
          throw new Class2502("Could not convert file for " + var2, null);
       }

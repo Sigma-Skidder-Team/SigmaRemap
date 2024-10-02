@@ -1,6 +1,7 @@
-package mapped;
+package net.minecraft.network.rcon;
 
 import com.google.common.collect.Maps;
+import mapped.*;
 import net.minecraft.client.util.Util;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -10,7 +11,7 @@ import java.io.IOException;
 import java.net.*;
 import java.util.Map;
 
-public class Class442 extends Class440 {
+public class QueryThread extends Class440 {
    private static final Logger field1990 = LogManager.getLogger();
    private long field1991;
    private final int field1992;
@@ -27,7 +28,7 @@ public class Class442 extends Class440 {
    private long field2003;
    private final Class1646 field2004;
 
-   private Class442(Class1646 var1, int var2) {
+   private QueryThread(Class1646 var1, int var2) {
       super("Query Listener");
       this.field2004 = var1;
       this.field1992 = var2;
@@ -35,7 +36,7 @@ public class Class442 extends Class440 {
       this.field1993 = var1.method6502();
       this.field1995 = var1.method6503();
       this.field1994 = var1.method1323();
-      this.field1996 = var1.method6511();
+      this.field1996 = var1.func_230542_k__();
       this.field2003 = 0L;
       this.field1999 = "0.0.0.0";
       if (!this.field2000.isEmpty() && !this.field1999.equals(this.field2000)) {
@@ -56,10 +57,10 @@ public class Class442 extends Class440 {
    }
 
    @Nullable
-   public static Class442 method1874(Class1646 var0) {
+   public static QueryThread func_242129_a(Class1646 var0) {
       int var3 = var0.method6498().field43803;
       if (0 < var3 && 65535 >= var3) {
-         Class442 var4 = new Class442(var0, var3);
+         QueryThread var4 = new QueryThread(var0, var3);
          return var4.method1867() ? var4 : null;
       } else {
          field1990.warn("Invalid query port {} found in server.properties (queries disabled)", var3);

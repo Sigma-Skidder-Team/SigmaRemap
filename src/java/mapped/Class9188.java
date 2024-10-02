@@ -10,6 +10,8 @@ import com.mojang.brigadier.suggestion.SuggestionsBuilder;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.concurrent.CompletableFuture;
+
+import net.minecraft.command.CommandSource;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class9188 implements ArgumentType<Class2062> {
@@ -18,7 +20,7 @@ public class Class9188 implements ArgumentType<Class2062> {
       var0 -> new TranslationTextComponent("argument.anchor.invalid", var0)
    );
 
-   public static Class2062 method34387(CommandContext<Class6619> var0, String var1) {
+   public static Class2062 method34387(CommandContext<CommandSource> var0, String var1) {
       return (Class2062)var0.getArgument(var1, Class2062.class);
    }
 

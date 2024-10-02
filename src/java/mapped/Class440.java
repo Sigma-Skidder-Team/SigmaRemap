@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.util.DefaultWithNameUncaughtExceptionHandler;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -20,7 +21,7 @@ public abstract class Class440 implements Runnable {
       if (!this.field1982) {
          this.field1982 = true;
          this.field1984 = new Thread(this, this.field1983 + " #" + field1981.incrementAndGet());
-         this.field1984.setUncaughtExceptionHandler(new Class6031(field1980));
+         this.field1984.setUncaughtExceptionHandler(new DefaultWithNameUncaughtExceptionHandler(field1980));
          this.field1984.start();
          field1980.info("Thread {} started", this.field1983);
          return true;

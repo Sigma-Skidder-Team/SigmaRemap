@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import net.minecraft.command.CommandSource;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 
@@ -20,7 +21,7 @@ public class Class7330 implements Class7329 {
    }
 
    @Override
-   public Vector3d method23228(Class6619 var1) {
+   public Vector3d method23228(CommandSource var1) {
       Vector2f var4 = var1.method20176();
       Vector3d var5 = var1.method20178().method8712(var1);
       float var6 = MathHelper.cos((var4.field37221 + 90.0F) * (float) (Math.PI / 180.0));
@@ -39,8 +40,8 @@ public class Class7330 implements Class7329 {
    }
 
    @Override
-   public Vector2f method23229(Class6619 var1) {
-      return Vector2f.field37212;
+   public Vector2f method23229(CommandSource var1) {
+      return Vector2f.ZERO;
    }
 
    @Override

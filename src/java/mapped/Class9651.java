@@ -11,6 +11,7 @@ import java.util.Collections;
 import java.util.EnumSet;
 import java.util.Set;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -28,7 +29,7 @@ public class Class9651 {
       new TranslationTextComponent("commands.teleport.invalidPosition")
    );
 
-   public static void method37644(CommandDispatcher<Class6619> var0) {
+   public static void method37644(CommandDispatcher<CommandSource> var0) {
       LiteralCommandNode var3 = var0.register(
          (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("teleport")
                      .requires(var0x -> var0x.method20129(2)))
@@ -38,9 +39,9 @@ public class Class9651 {
                               ((RequiredArgumentBuilder)((RequiredArgumentBuilder)Class6099.method18840("location", Class6851.method20857())
                                        .executes(
                                           var0x -> method37646(
-                                                (Class6619)var0x.getSource(),
+                                                (CommandSource)var0x.getSource(),
                                                 Class8700.method31348(var0x, "targets"),
-                                                ((Class6619)var0x.getSource()).method20172(),
+                                                ((CommandSource)var0x.getSource()).method20172(),
                                                 Class6851.method20860(var0x, "location"),
                                                 (Class7329)null,
                                                 (Class8502)null
@@ -50,9 +51,9 @@ public class Class9651 {
                                        Class6099.method18840("rotation", Class7918.method26558())
                                           .executes(
                                              var0x -> method37646(
-                                                   (Class6619)var0x.getSource(),
+                                                   (CommandSource)var0x.getSource(),
                                                    Class8700.method31348(var0x, "targets"),
-                                                   ((Class6619)var0x.getSource()).method20172(),
+                                                   ((CommandSource)var0x.getSource()).method20172(),
                                                    Class6851.method20860(var0x, "location"),
                                                    Class7918.method26559(var0x, "rotation"),
                                                    (Class8502)null
@@ -67,9 +68,9 @@ public class Class9651 {
                                                    ((RequiredArgumentBuilder)Class6099.method18840("facingEntity", Class8700.method31345())
                                                          .executes(
                                                             var0x -> method37646(
-                                                                  (Class6619)var0x.getSource(),
+                                                                  (CommandSource)var0x.getSource(),
                                                                   Class8700.method31348(var0x, "targets"),
-                                                                  ((Class6619)var0x.getSource()).method20172(),
+                                                                  ((CommandSource)var0x.getSource()).method20172(),
                                                                   Class6851.method20860(var0x, "location"),
                                                                   (Class7329)null,
                                                                   new Class8502(Class8700.method31346(var0x, "facingEntity"), Class2062.field13441)
@@ -79,9 +80,9 @@ public class Class9651 {
                                                          Class6099.method18840("facingAnchor", Class9188.method34388())
                                                             .executes(
                                                                var0x -> method37646(
-                                                                     (Class6619)var0x.getSource(),
+                                                                     (CommandSource)var0x.getSource(),
                                                                      Class8700.method31348(var0x, "targets"),
-                                                                     ((Class6619)var0x.getSource()).method20172(),
+                                                                     ((CommandSource)var0x.getSource()).method20172(),
                                                                      Class6851.method20860(var0x, "location"),
                                                                      (Class7329)null,
                                                                      new Class8502(
@@ -97,9 +98,9 @@ public class Class9651 {
                                           Class6099.method18840("facingLocation", Class6851.method20857())
                                              .executes(
                                                 var0x -> method37646(
-                                                      (Class6619)var0x.getSource(),
+                                                      (CommandSource)var0x.getSource(),
                                                       Class8700.method31348(var0x, "targets"),
-                                                      ((Class6619)var0x.getSource()).method20172(),
+                                                      ((CommandSource)var0x.getSource()).method20172(),
                                                       Class6851.method20860(var0x, "location"),
                                                       (Class7329)null,
                                                       new Class8502(Class6851.method20859(var0x, "facingLocation"))
@@ -112,7 +113,7 @@ public class Class9651 {
                            Class6099.method18840("destination", Class8700.method31345())
                               .executes(
                                  var0x -> method37645(
-                                       (Class6619)var0x.getSource(), Class8700.method31348(var0x, "targets"), Class8700.method31346(var0x, "destination")
+                                       (CommandSource)var0x.getSource(), Class8700.method31348(var0x, "targets"), Class8700.method31346(var0x, "destination")
                                     )
                               )
                         )
@@ -121,9 +122,9 @@ public class Class9651 {
                   Class6099.method18840("location", Class6851.method20857())
                      .executes(
                         var0x -> method37646(
-                              (Class6619)var0x.getSource(),
-                              Collections.singleton(((Class6619)var0x.getSource()).method20174()),
-                              ((Class6619)var0x.getSource()).method20172(),
+                              (CommandSource)var0x.getSource(),
+                              Collections.singleton(((CommandSource)var0x.getSource()).method20174()),
+                              ((CommandSource)var0x.getSource()).method20172(),
                               Class6851.method20860(var0x, "location"),
                               Class7331.method23238(),
                               (Class8502)null
@@ -134,8 +135,8 @@ public class Class9651 {
                Class6099.method18840("destination", Class8700.method31345())
                   .executes(
                      var0x -> method37645(
-                           (Class6619)var0x.getSource(),
-                           Collections.singleton(((Class6619)var0x.getSource()).method20174()),
+                           (CommandSource)var0x.getSource(),
+                           Collections.singleton(((CommandSource)var0x.getSource()).method20174()),
                            Class8700.method31346(var0x, "destination")
                         )
                   )
@@ -144,7 +145,7 @@ public class Class9651 {
       var0.register((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("tp").requires(var0x -> var0x.method20129(2))).redirect(var3));
    }
 
-   private static int method37645(Class6619 var0, Collection<? extends Entity> var1, Entity var2) throws CommandSyntaxException {
+   private static int method37645(CommandSource var0, Collection<? extends Entity> var1, Entity var2) throws CommandSyntaxException {
       for (Entity var6 : var1) {
          method37647(
             var0,
@@ -171,7 +172,7 @@ public class Class9651 {
       return var1.size();
    }
 
-   private static int method37646(Class6619 var0, Collection<? extends Entity> var1, ServerWorld var2, Class7329 var3, Class7329 var4, Class8502 var5) throws CommandSyntaxException {
+   private static int method37646(CommandSource var0, Collection<? extends Entity> var1, ServerWorld var2, Class7329 var3, Class7329 var4, Class8502 var5) throws CommandSyntaxException {
       Vector3d var8 = var3.method23228(var0);
       Vector2f var9 = var4 != null ? var4.method23229(var0) : null;
       EnumSet var10 = EnumSet.<Flags>noneOf(Flags.class);
@@ -225,7 +226,7 @@ public class Class9651 {
    }
 
    private static void method37647(
-           Class6619 var0, Entity var1, ServerWorld var2, double var3, double var5, double var7, Set<Flags> var9, float var10, float var11, Class8502 var12
+           CommandSource var0, Entity var1, ServerWorld var2, double var3, double var5, double var7, Set<Flags> var9, float var10, float var11, Class8502 var12
    ) throws CommandSyntaxException {
       BlockPos var15 = new BlockPos(var3, var5, var7);
       if (World.isInvalidPosition(var15)) {

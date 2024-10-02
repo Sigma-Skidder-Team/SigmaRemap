@@ -8,6 +8,7 @@ import java.util.UUID;
 import java.util.function.Consumer;
 
 import net.minecraft.client.util.Util;
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.text.ITextComponent;
@@ -15,7 +16,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class7508 {
-   public static void method24477(CommandDispatcher<Class6619> var0) {
+   public static void method24477(CommandDispatcher<CommandSource> var0) {
       LiteralCommandNode var3 = var0.register(
          (LiteralArgumentBuilder)Class6099.method18839("msg")
             .then(
@@ -23,7 +24,7 @@ public class Class7508 {
                   .then(
                      Class6099.method18840("message", Class7026.method21755())
                         .executes(
-                           var0x -> method24478((Class6619)var0x.getSource(), Class8700.method31354(var0x, "targets"), Class7026.method21756(var0x, "message"))
+                           var0x -> method24478((CommandSource)var0x.getSource(), Class8700.method31354(var0x, "targets"), Class7026.method21756(var0x, "message"))
                         )
                   )
             )
@@ -32,7 +33,7 @@ public class Class7508 {
       var0.register((LiteralArgumentBuilder)Class6099.method18839("w").redirect(var3));
    }
 
-   private static int method24478(Class6619 var0, Collection<ServerPlayerEntity> var1, ITextComponent var2) {
+   private static int method24478(CommandSource var0, Collection<ServerPlayerEntity> var1, ITextComponent var2) {
       UUID var5 = var0.method20173() != null ? var0.method20173().getUniqueID() : Util.DUMMY_UUID;
       Entity var6 = var0.method20173();
       Consumer var7;

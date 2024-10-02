@@ -38,6 +38,7 @@ import net.minecraft.util.text.*;
 import net.minecraft.util.text.event.HoverEvent;
 import net.minecraft.util.text.event.HoverEvent$Action;
 import net.minecraft.util.text.filter.IChatFilter;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.GameType;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeManager;
@@ -90,7 +91,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
    public boolean queuedEndExit;
 
    public ServerPlayerEntity(MinecraftServer var1, ServerWorld var2, GameProfile var3, Class9081 var4) {
-      super(var2, var2.method6947(), var2.method6948(), var3);
+      super(var2, var2.getSpawnPoint(), var2.method6948(), var3);
       var4.field41571 = this;
       this.interactionManager = var4;
       this.field4856 = var1;
@@ -102,7 +103,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
    }
 
    private void method2721(ServerWorld var1) {
-      BlockPos var4 = var1.method6947();
+      BlockPos var4 = var1.getSpawnPoint();
       if (var1.method6812().hasSkyLight() && var1.getServer().func_240793_aU_().method20067() != GameType.field11104) {
          int var5 = Math.max(0, this.field4856.method1395(var1));
          int var6 = MathHelper.floor(var1.getWorldBorder().method24528((double)var4.getX(), (double)var4.getZ()));
@@ -401,7 +402,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
 
    @Override
    public void onDeath(DamageSource var1) {
-      boolean var4 = this.world.getGameRules().getBoolean(Class5462.field24234);
+      boolean var4 = this.world.getGameRules().getBoolean(GameRules.field24234);
       if (!var4) {
          this.field4855.sendPacket(new SCombatPacket(this.getCombatTracker(), Class1900.field11157));
       } else {
@@ -434,7 +435,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
       }
 
       this.method2949();
-      if (this.world.getGameRules().getBoolean(Class5462.field24254)) {
+      if (this.world.getGameRules().getBoolean(GameRules.field24254)) {
          this.method2738();
       }
 
@@ -1030,7 +1031,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
 
    public void method2789(ServerPlayerEntity var1, boolean var2) {
       if (!var2) {
-         if (this.world.getGameRules().getBoolean(Class5462.field24225) || var1.isSpectator()) {
+         if (this.world.getGameRules().getBoolean(GameRules.field24225) || var1.isSpectator()) {
             this.inventory.method4060(var1.inventory);
             this.field4920 = var1.field4920;
             this.field4921 = var1.field4921;

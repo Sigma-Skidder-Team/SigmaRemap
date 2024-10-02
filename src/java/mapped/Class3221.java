@@ -15,10 +15,7 @@ import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
-import net.minecraft.world.IBlockReader;
-import net.minecraft.world.IWorld;
-import net.minecraft.world.IWorldReader;
-import net.minecraft.world.World;
+import net.minecraft.world.*;
 import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
@@ -91,7 +88,7 @@ public class Class3221 extends Block {
       if (!var1.isRemote
          && var1.rand.nextFloat() < var4 - 0.5F
          && var3 instanceof LivingEntity
-         && (var3 instanceof PlayerEntity || var1.getGameRules().getBoolean(Class5462.field24224))
+         && (var3 instanceof PlayerEntity || var1.getGameRules().getBoolean(GameRules.field24224))
          && var3.getWidth() * var3.getWidth() * var3.getHeight() > 0.512F) {
          method11610(var1.getBlockState(var2), var1, var2);
       }

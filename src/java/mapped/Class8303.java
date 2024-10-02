@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 import net.minecraft.advancements.Advancement;
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
@@ -32,9 +33,9 @@ public class Class8303 implements ArgumentType<ResourceLocation> {
       return new Class8303();
    }
 
-   public static Advancement method29032(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
+   public static Advancement method29032(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
       ResourceLocation var4 = (ResourceLocation)var0.getArgument(var1, ResourceLocation.class);
-      Advancement var5 = ((Class6619)var0.getSource()).method20177().method1396().method1065(var4);
+      Advancement var5 = ((CommandSource)var0.getSource()).method20177().method1396().method1065(var4);
       if (var5 != null) {
          return var5;
       } else {
@@ -42,15 +43,15 @@ public class Class8303 implements ArgumentType<ResourceLocation> {
       }
    }
 
-   public static IRecipe<?> method29033(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
-      Class282 var4 = ((Class6619)var0.getSource()).method20177().method1407();
+   public static IRecipe<?> method29033(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
+      Class282 var4 = ((CommandSource)var0.getSource()).method20177().method1407();
       ResourceLocation var5 = (ResourceLocation)var0.getArgument(var1, ResourceLocation.class);
       return (IRecipe<?>)var4.method1035(var5).orElseThrow(() -> field35695.create(var5));
    }
 
-   public static ILootCondition method29034(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
+   public static ILootCondition method29034(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
       ResourceLocation var4 = (ResourceLocation)var0.getArgument(var1, ResourceLocation.class);
-      Class283 var5 = ((Class6619)var0.getSource()).method20177().method1412();
+      Class283 var5 = ((CommandSource)var0.getSource()).method20177().method1412();
       ILootCondition var6 = var5.method1052(var4);
       if (var6 != null) {
          return var6;
@@ -59,12 +60,12 @@ public class Class8303 implements ArgumentType<ResourceLocation> {
       }
    }
 
-   public static Attribute method29035(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
+   public static Attribute method29035(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
       ResourceLocation var4 = (ResourceLocation)var0.getArgument(var1, ResourceLocation.class);
       return Registry.ATTRIBUTE.method9187(var4).orElseThrow(() -> field35697.create(var4));
    }
 
-   public static ResourceLocation method29036(CommandContext<Class6619> var0, String var1) {
+   public static ResourceLocation method29036(CommandContext<CommandSource> var0, String var1) {
       return (ResourceLocation)var0.getArgument(var1, ResourceLocation.class);
    }
 

@@ -612,7 +612,7 @@ public class Chunk implements IChunk {
    @Override
    public Stream<BlockPos> getLightSources() {
       return StreamSupport.<BlockPos>stream(
-            BlockPos.method8364(this.field9132.getX(), 0, this.field9132.getZ(), this.field9132.method24358(), 255, this.field9132.method24359())
+            BlockPos.method8364(this.field9132.getX(), 0, this.field9132.getZ(), this.field9132.getXEnd(), 255, this.field9132.getZEnd())
                .spliterator(),
             false
          )

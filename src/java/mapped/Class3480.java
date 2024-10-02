@@ -14,6 +14,7 @@ import net.minecraft.util.IItemProvider;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
@@ -153,7 +154,7 @@ public class Class3480 extends BushBlock implements Class3196 {
 
    @Override
    public void onEntityCollision(BlockState var1, World var2, BlockPos var3, Entity var4) {
-      if (var4 instanceof Class1029 && var2.getGameRules().getBoolean(Class5462.field24224)) {
+      if (var4 instanceof Class1029 && var2.getGameRules().getBoolean(GameRules.field24224)) {
          var2.destroyBlock(var3, true, var4);
       }
 

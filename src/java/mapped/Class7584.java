@@ -12,6 +12,7 @@ import java.util.Collection;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Predicate;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -31,7 +32,7 @@ public class Class7584 implements ArgumentType<Class9041> {
       if (var4.method38353() == null) {
          ResourceLocation var6 = var4.method38355();
          return var2 -> {
-            ITag var5x = ((Class6619)var2.getSource()).method20177().method1408().method32658().get(var6);
+            ITag var5x = ((CommandSource)var2.getSource()).method20177().method1408().method32658().get(var6);
             if (var5x != null) {
                return new Class175(var5x, var4.method38354());
             } else {
@@ -44,7 +45,7 @@ public class Class7584 implements ArgumentType<Class9041> {
       }
    }
 
-   public static Predicate<ItemStack> method24823(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
+   public static Predicate<ItemStack> method24823(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
       return ((Class9041)var0.getArgument(var1, Class9041.class)).method33539(var0);
    }
 

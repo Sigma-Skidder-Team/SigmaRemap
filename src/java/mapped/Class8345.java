@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -22,17 +23,17 @@ public class Class8345 {
    private static final SimpleCommandExceptionType field35871 = new SimpleCommandExceptionType(new TranslationTextComponent("commands.banip.invalid"));
    private static final SimpleCommandExceptionType field35872 = new SimpleCommandExceptionType(new TranslationTextComponent("commands.banip.failed"));
 
-   public static void method29252(CommandDispatcher<Class6619> var0) {
+   public static void method29252(CommandDispatcher<CommandSource> var0) {
       var0.register(
          (LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("ban-ip").requires(var0x -> var0x.method20129(3)))
             .then(
                ((RequiredArgumentBuilder)Class6099.method18840("target", StringArgumentType.word())
-                     .executes(var0x -> method29253((Class6619)var0x.getSource(), StringArgumentType.getString(var0x, "target"), (ITextComponent)null)))
+                     .executes(var0x -> method29253((CommandSource)var0x.getSource(), StringArgumentType.getString(var0x, "target"), (ITextComponent)null)))
                   .then(
                      Class6099.method18840("reason", Class7026.method21755())
                         .executes(
                            var0x -> method29253(
-                                 (Class6619)var0x.getSource(), StringArgumentType.getString(var0x, "target"), Class7026.method21756(var0x, "reason")
+                                 (CommandSource)var0x.getSource(), StringArgumentType.getString(var0x, "target"), Class7026.method21756(var0x, "reason")
                               )
                         )
                   )
@@ -40,7 +41,7 @@ public class Class8345 {
       );
    }
 
-   private static int method29253(Class6619 var0, String var1, ITextComponent var2) throws CommandSyntaxException {
+   private static int method29253(CommandSource var0, String var1, ITextComponent var2) throws CommandSyntaxException {
       Matcher var5 = field35870.matcher(var1);
       if (!var5.matches()) {
          ServerPlayerEntity var6 = var0.method20177().getPlayerList().method19465(var1);
@@ -54,7 +55,7 @@ public class Class8345 {
       }
    }
 
-   private static int method29254(Class6619 var0, String var1, ITextComponent var2) throws CommandSyntaxException {
+   private static int method29254(CommandSource var0, String var1, ITextComponent var2) throws CommandSyntaxException {
       Class4532 var5 = var0.method20177().getPlayerList().method19462();
       if (var5.method14450(var1)) {
          throw field35872.create();

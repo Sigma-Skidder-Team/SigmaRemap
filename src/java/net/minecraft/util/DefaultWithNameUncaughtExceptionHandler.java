@@ -1,12 +1,12 @@
-package mapped;
+package net.minecraft.util;
 
 import java.lang.Thread.UncaughtExceptionHandler;
 import org.apache.logging.log4j.Logger;
 
-public class Class6031 implements UncaughtExceptionHandler {
+public class DefaultWithNameUncaughtExceptionHandler implements UncaughtExceptionHandler {
    private final Logger field26229;
 
-   public Class6031(Logger var1) {
+   public DefaultWithNameUncaughtExceptionHandler(Logger var1) {
       this.field26229 = var1;
    }
 

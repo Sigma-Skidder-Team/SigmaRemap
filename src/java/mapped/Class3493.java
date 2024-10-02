@@ -59,7 +59,7 @@ public class Class3493 extends BushBlock {
 
    public Item method12188() {
       if (this.field19362 != Blocks.PUMPKIN) {
-         return this.field19362 != Blocks.MELON ? Items.field37222 : Items.field37960;
+         return this.field19362 != Blocks.MELON ? Items.AIR : Items.field37960;
       } else {
          return Items.field37959;
       }

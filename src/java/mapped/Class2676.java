@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
+import net.minecraft.world.GameRules;
 
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class Class2676 extends Class2672 {
       if (this.field17070.method4232() == null) {
          if (!this.field17070.method4594()) {
             if (this.field17070.ticksExisted >= this.field17058) {
-               if (this.field17070.world.getGameRules().getBoolean(Class5462.field24224)) {
+               if (this.field17070.world.getGameRules().getBoolean(GameRules.field24224)) {
                   List var3 = this.field17070
                      .world
                      .<Class1019>method7195(Class1019.class, this.field17069, this.field17070, this.field17070.getBoundingBox().grow(16.0, 4.0, 16.0));

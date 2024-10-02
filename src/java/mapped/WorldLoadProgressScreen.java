@@ -8,6 +8,7 @@ import net.minecraft.client.util.Util;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.chunk.ChunkStatus;
+import net.minecraft.world.chunk.listener.TrackingChunkStatusListener;
 
 public class WorldLoadProgressScreen extends Screen {
    private final TrackingChunkStatusListener field7026;
@@ -47,7 +48,7 @@ public class WorldLoadProgressScreen extends Screen {
    @Override
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.renderBackground(var1);
-      String var7 = MathHelper.clamp(this.field7026.method22745(), 0, 100) + "%";
+      String var7 = MathHelper.clamp(this.field7026.getPercentDone(), 0, 100) + "%";
       long var8 = Util.milliTime();
       if (var8 - this.field7027 > 2000L) {
          this.field7027 = var8;
@@ -63,9 +64,9 @@ public class WorldLoadProgressScreen extends Screen {
 
    public static void method6319(MatrixStack var0, TrackingChunkStatusListener var1, int var2, int var3, int var4, int var5) {
       int var8 = var4 + var5;
-      int var9 = var1.method22743();
+      int var9 = var1.getDiameter();
       int var10 = var9 * var8 - var5;
-      int var11 = var1.method22744();
+      int var11 = var1.func_219523_d();
       int var12 = var11 * var8 - var5;
       int var13 = var2 - var12 / 2;
       int var14 = var3 - var12 / 2;
@@ -79,7 +80,7 @@ public class WorldLoadProgressScreen extends Screen {
 
       for (int var17 = 0; var17 < var11; var17++) {
          for (int var18 = 0; var18 < var11; var18++) {
-            ChunkStatus var19 = var1.method22746(var17, var18);
+            ChunkStatus var19 = var1.getStatus(var17, var18);
             int var20 = var13 + var17 * var8;
             int var21 = var14 + var18 * var8;
             fill(var0, var20, var21, var20 + var4, var21 + var4, field7028.getInt(var19) | 0xFF000000);

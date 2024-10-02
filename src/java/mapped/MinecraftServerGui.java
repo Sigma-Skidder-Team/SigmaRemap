@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import com.mojang.util.QueueLogAppender;
+import net.minecraft.util.DefaultUncaughtExceptionHandler;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -87,7 +88,7 @@ public class MinecraftServerGui extends JComponent {
       var6.addActionListener(var2 -> {
          String var5x = var6.getText().trim();
          if (!var5x.isEmpty()) {
-            this.server.method6499(var5x, this.server.method1404());
+            this.server.handleConsoleInput(var5x, this.server.getCommandSource());
          }
 
          var6.setText("");
@@ -102,7 +103,7 @@ public class MinecraftServerGui extends JComponent {
             this.method10558(var4, var5, var5x);
          }
       });
-      this.field16654.setUncaughtExceptionHandler(new Class6030(LOGGER));
+      this.field16654.setUncaughtExceptionHandler(new DefaultUncaughtExceptionHandler(LOGGER));
       this.field16654.setDaemon(true);
       return var3;
    }

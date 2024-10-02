@@ -14,12 +14,12 @@ public final class Class9148 implements ProfileLookupCallback {
    }
 
    public void onProfileLookupSucceeded(GameProfile var1) {
-      this.field42026.method1386().method31790(var1);
+      this.field42026.getPlayerProfileCache().method31790(var1);
       this.field42027.method14436(new Class6790(var1, this.field42026.method1288(), false));
    }
 
    public void onProfileLookupFailed(GameProfile var1, Exception var2) {
-      Class9061.method33743().warn("Could not lookup oplist entry for {}", var1.getName(), var2);
+      PreYggdrasilConverter.method33743().warn("Could not lookup oplist entry for {}", var1.getName(), var2);
       if (!(var2 instanceof ProfileNotFoundException)) {
          throw new Class2502("Could not request user " + var1.getName() + " from backend systems", var2, null);
       }

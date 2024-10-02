@@ -12,6 +12,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.concurrent.CompletableFuture;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -28,8 +29,8 @@ public class Class7347 implements ArgumentType<Class7329> {
       return new Class7347(true);
    }
 
-   public static Vector2f method23293(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
-      Vector3d var4 = ((Class7329)var0.getArgument(var1, Class7329.class)).method23228((Class6619)var0.getSource());
+   public static Vector2f method23293(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
+      Vector3d var4 = ((Class7329)var0.getArgument(var1, Class7329.class)).method23228((CommandSource)var0.getSource());
       return new Vector2f((float)var4.x, (float)var4.z);
    }
 

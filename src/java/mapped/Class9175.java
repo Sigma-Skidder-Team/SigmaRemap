@@ -7,6 +7,7 @@ import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import com.mojang.brigadier.tree.LiteralCommandNode;
 import java.util.List;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.scoreboard.ScorePlayerTeam;
@@ -25,18 +26,18 @@ public class Class9175 {
       .setClickEvent(new ClickEvent(ClickEvent$Action.SUGGEST_COMMAND, "/teammsg "));
    private static final SimpleCommandExceptionType field42129 = new SimpleCommandExceptionType(new TranslationTextComponent("commands.teammsg.failed.noteam"));
 
-   public static void method34285(CommandDispatcher<Class6619> var0) {
+   public static void method34285(CommandDispatcher<CommandSource> var0) {
       LiteralCommandNode var3 = var0.register(
          (LiteralArgumentBuilder)Class6099.method18839("teammsg")
             .then(
                Class6099.method18840("message", Class7026.method21755())
-                  .executes(var0x -> method34286((Class6619)var0x.getSource(), Class7026.method21756(var0x, "message")))
+                  .executes(var0x -> method34286((CommandSource)var0x.getSource(), Class7026.method21756(var0x, "message")))
             )
       );
       var0.register((LiteralArgumentBuilder)Class6099.method18839("tm").redirect(var3));
    }
 
-   private static int method34286(Class6619 var0, ITextComponent var1) throws CommandSyntaxException {
+   private static int method34286(CommandSource var0, ITextComponent var1) throws CommandSyntaxException {
       Entity var4 = var0.method20174();
       ScorePlayerTeam var5 = (ScorePlayerTeam)var4.getTeam();
       if (var5 != null) {

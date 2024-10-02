@@ -5,6 +5,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.server.ServerWorld;
 
@@ -18,7 +19,7 @@ public class Class7018 implements Class7016 {
    public int method21742(ServerWorld var1, boolean var2, boolean var3) {
       if (!var2) {
          return 0;
-      } else if (var1.getGameRules().getBoolean(Class5462.field24252)) {
+      } else if (var1.getGameRules().getBoolean(GameRules.field24252)) {
          Random var6 = var1.rand;
          this.field30320--;
          if (this.field30320 > 0) {

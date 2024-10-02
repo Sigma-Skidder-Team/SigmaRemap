@@ -22,7 +22,7 @@ public class Class1174 extends Class1155<Class1174> {
          .get(Class1324.method6302(this.field6359.field6849).method38129().size() - var2 - 1);
       BlockState var14 = var13.method36906();
       Item var15 = var14.getBlock().method11581();
-      if (var15 == Items.field37222) {
+      if (var15 == Items.AIR) {
          if (!var14.isIn(Blocks.WATER)) {
             if (var14.isIn(Blocks.LAVA)) {
                var15 = Items.LAVA_BUCKET;

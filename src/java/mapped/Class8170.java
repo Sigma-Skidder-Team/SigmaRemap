@@ -167,7 +167,7 @@ public final class Class8170 {
 
    private static boolean method28420(ServerWorld var0, IChunk var1, BlockPos.Mutable var2, double var3) {
       if (!(var3 <= 576.0)) {
-         if (var0.method6947().method8317(new Vector3d((double)var2.getX() + 0.5, (double)var2.getY(), (double)var2.getZ() + 0.5), 24.0)) {
+         if (var0.getSpawnPoint().method8317(new Vector3d((double)var2.getX() + 0.5, (double)var2.getY(), (double)var2.getZ() + 0.5), 24.0)) {
             return false;
          } else {
             ChunkPos var7 = new ChunkPos(var2);

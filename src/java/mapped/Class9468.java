@@ -11,6 +11,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.concurrent.CompletableFuture;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -25,7 +26,7 @@ public class Class9468 implements ArgumentType<Effect> {
       return new Class9468();
    }
 
-   public static Effect method36511(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
+   public static Effect method36511(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
       return (Effect)var0.getArgument(var1, Effect.class);
    }
 

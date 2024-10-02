@@ -32,8 +32,9 @@ public class ChunkPos {
       return asLong(this.x, this.z);
    }
 
-   public static long asLong(int var0, int var1) {
-      return (long)var0 & 4294967295L | ((long)var1 & 4294967295L) << 32;
+   public static long asLong(int x, int z)
+   {
+      return (long)x & 4294967295L | ((long)z & 4294967295L) << 32;
    }
 
    public static int getX(long var0) {
@@ -79,27 +80,27 @@ public class ChunkPos {
       return this.z << 4;
    }
 
-   public int method24358() {
+   public int getXEnd() {
       return (this.x << 4) + 15;
    }
 
-   public int method24359() {
+   public int getZEnd() {
       return (this.z << 4) + 15;
    }
 
-   public int method24360() {
+   public int getRegionCoordX() {
       return this.x >> 5;
    }
 
-   public int method24361() {
+   public int getRegionCoordZ() {
       return this.z >> 5;
    }
 
-   public int method24362() {
+   public int getRegionPositionX() {
       return this.x & 31;
    }
 
-   public int method24363() {
+   public int getRegionPositionZ() {
       return this.z & 31;
    }
 
@@ -112,11 +113,11 @@ public class ChunkPos {
       return new BlockPos(this.getX(), 0, this.getZ());
    }
 
-   public int method24365(ChunkPos var1) {
+   public int getChessboardDistance(ChunkPos var1) {
       return Math.max(Math.abs(this.x - var1.x), Math.abs(this.z - var1.z));
    }
 
-   public static Stream<ChunkPos> method24366(ChunkPos var0, int var1) {
+   public static Stream<ChunkPos> getAllInBox(ChunkPos var0, int var1) {
       return getAllInBox(new ChunkPos(var0.x - var1, var0.z - var1), new ChunkPos(var0.x + var1, var0.z + var1));
    }
 

@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
@@ -17,17 +18,17 @@ public class Class914 implements ICommandSource {
       this.field5206 = var1;
    }
 
-   public void method3578() {
+   public void resetLog() {
       this.field5205.setLength(0);
    }
 
-   public String method3579() {
+   public String getLogContents() {
       return this.field5205.toString();
    }
 
-   public Class6619 method3580() {
-      ServerWorld var3 = this.field5206.method1317();
-      return new Class6619(this, Vector3d.method11329(var3.method6947()), Vector2f.field37212, var3, 4, "Rcon", field5204, this.field5206, (Entity)null);
+   public CommandSource getCommandSource() {
+      ServerWorld var3 = this.field5206.func_241755_D_();
+      return new CommandSource(this, Vector3d.copy(var3.getSpawnPoint()), Vector2f.ZERO, var3, 4, "Rcon", field5204, this.field5206, (Entity)null);
    }
 
    @Override

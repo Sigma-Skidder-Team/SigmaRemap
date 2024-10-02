@@ -8,6 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.IWorldReader;
 
 public class Class2636 extends Class2628 {
@@ -52,7 +53,7 @@ public class Class2636 extends Class2628 {
    }
 
    public void method10845() {
-      if (this.field16957.world.getGameRules().getBoolean(Class5462.field24224)) {
+      if (this.field16957.world.getGameRules().getBoolean(GameRules.field24224)) {
          BlockState var3 = this.field16957.world.getBlockState(this.field16933);
          if (var3.isIn(Blocks.field37069)) {
             int var4 = var3.<Integer>get(Class3484.field19342);

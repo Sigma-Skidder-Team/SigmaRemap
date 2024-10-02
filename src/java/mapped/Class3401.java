@@ -19,6 +19,7 @@ import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
@@ -48,7 +49,7 @@ public class Class3401 extends Block {
 
    @Override
    public void randomTick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
-      if (var2.method6812().isNatural() && var2.getGameRules().getBoolean(Class5462.field24226) && var4.nextInt(2000) < var2.method6997().getId()) {
+      if (var2.method6812().isNatural() && var2.getGameRules().getBoolean(GameRules.field24226) && var4.nextInt(2000) < var2.method6997().getId()) {
          while (var2.getBlockState(var3).isIn(this)) {
             var3 = var3.down();
          }

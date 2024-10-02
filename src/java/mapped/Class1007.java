@@ -21,6 +21,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
@@ -436,7 +437,7 @@ public class Class1007 extends MobEntity implements Class1008 {
                BlockState var16 = this.world.getBlockState(var15);
                Block var17 = var16.getBlock();
                if (!var16.isAir() && var16.getMaterial() != Material.field38945) {
-                  if (this.world.getGameRules().getBoolean(Class5462.field24224) && !BlockTags.field32791.method24917(var17)) {
+                  if (this.world.getGameRules().getBoolean(GameRules.field24224) && !BlockTags.field32791.method24917(var17)) {
                      var11 = this.world.removeBlock(var15, false) || var11;
                   } else {
                      var10 = true;
@@ -529,7 +530,7 @@ public class Class1007 extends MobEntity implements Class1008 {
             );
       }
 
-      boolean var6 = this.world.getGameRules().getBoolean(Class5462.field24227);
+      boolean var6 = this.world.getGameRules().getBoolean(GameRules.field24227);
       float var7 = 500;
       if (this.field5638 != null && !this.field5638.method26127()) {
          var7 = 12000;

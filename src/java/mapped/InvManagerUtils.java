@@ -389,7 +389,7 @@ public class InvManagerUtils {
    }
 
    public static boolean method25876(ItemStack var0) {
-      return var0 != null && !var0.getItem().equals(Items.field37222);
+      return var0 != null && !var0.getItem().equals(Items.AIR);
    }
 
    public static List<ItemStack> method25877(PlayerEntity var0) {

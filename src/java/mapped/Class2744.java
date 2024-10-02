@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 
 import java.util.EnumSet;
@@ -23,7 +24,7 @@ public class Class2744 extends Class2736 {
       if (this.field17258.method4232() == null) {
          if (this.field17258.method4230().method21664()) {
             Random var3 = this.field17258.getRNG();
-            if (this.field17258.world.getGameRules().getBoolean(Class5462.field24224) && var3.nextInt(10) == 0) {
+            if (this.field17258.world.getGameRules().getBoolean(GameRules.field24224) && var3.nextInt(10) == 0) {
                this.field17271 = Direction.getRandomDirection(var3);
                BlockPos var4 = new BlockPos(this.field17258.getPosX(), this.field17258.getPosY() + 0.5, this.field17258.getPosZ())
                   .offset(this.field17271);

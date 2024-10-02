@@ -31,7 +31,9 @@ import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.play.server.*;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.scoreboard.ScorePlayerTeam;
+import net.minecraft.scoreboard.ServerScoreboard;
 import net.minecraft.scoreboard.Team;
+import net.minecraft.server.management.PlayerProfileCache;
 import net.minecraft.stats.Stats;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.SoundEvents;
@@ -42,6 +44,7 @@ import net.minecraft.util.text.ChatType;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.GameType;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeManager;
@@ -83,7 +86,7 @@ public abstract class Class6395 {
 
    public void method19445(NetworkManager var1, ServerPlayerEntity var2) {
       GameProfile var5 = var2.getGameProfile();
-      PlayerProfileCache var6 = this.field27990.method1386();
+      PlayerProfileCache var6 = this.field27990.getPlayerProfileCache();
       GameProfile var7 = var6.method31793(var5.getId());
       String var8 = var7 != null ? var7.getName() : var5.getName();
       var6.method31790(var5);
@@ -97,7 +100,7 @@ public abstract class Class6395 {
          var12 = var11;
       } else {
          field27988.warn("Unknown respawn dimension {}, defaulting to overworld", var10);
-         var12 = this.field27990.method1317();
+         var12 = this.field27990.func_241755_D_();
       }
 
       var2.setWorld(var12);
@@ -119,9 +122,9 @@ public abstract class Class6395 {
       Class6612 var14 = var12.getWorldInfo();
       this.method19481(var2, (ServerPlayerEntity)null, var12);
       ServerPlayNetHandler var15 = new ServerPlayNetHandler(this.field27990, var1, var2);
-      Class5462 var16 = var12.getGameRules();
-      boolean var17 = var16.getBoolean(Class5462.field24248);
-      boolean var18 = var16.getBoolean(Class5462.field24237);
+      GameRules var16 = var12.getGameRules();
+      boolean var17 = var16.getBoolean(GameRules.field24248);
+      boolean var18 = var16.getBoolean(GameRules.field24237);
       var15.sendPacket(
          new SJoinGamePacket(
             var2.getEntityId(),
@@ -216,7 +219,7 @@ public abstract class Class6395 {
       var2.method2729();
    }
 
-   public void method19446(Class6887 var1, ServerPlayerEntity var2) {
+   public void method19446(ServerScoreboard var1, ServerPlayerEntity var2) {
       HashSet var5 = Sets.newHashSet();
 
       for (ScorePlayerTeam var7 : var1.method20997()) {
@@ -353,7 +356,7 @@ public abstract class Class6395 {
          var8.field4855.disconnect(new TranslationTextComponent("multiplayer.disconnect.duplicate_login"));
       }
 
-      ServerWorld var11 = this.field27990.method1317();
+      ServerWorld var11 = this.field27990.func_241755_D_();
       Object var12;
       if (!this.field27990.method1342()) {
          var12 = new Class9081(var11);
@@ -378,7 +381,7 @@ public abstract class Class6395 {
          var9 = Optional.empty();
       }
 
-      ServerWorld var10 = var8 != null && var9.isPresent() ? var8 : this.field27990.method1317();
+      ServerWorld var10 = var8 != null && var9.isPresent() ? var8 : this.field27990.func_241755_D_();
       Object var11;
       if (!this.field27990.method1342()) {
          var11 = new Class9081(var10);
@@ -438,7 +441,7 @@ public abstract class Class6395 {
             )
          );
       var12.field4855.method15668(var12.getPosX(), var12.getPosY(), var12.getPosZ(), var12.rotationYaw, var12.rotationPitch);
-      var12.field4855.sendPacket(new SWorldSpawnChangedPacket(var10.method6947(), var10.method6948()));
+      var12.field4855.sendPacket(new SWorldSpawnChangedPacket(var10.getSpawnPoint(), var10.method6948()));
       var12.field4855.sendPacket(new SServerDifficultyPacket(var21.method20047(), var21.method20048()));
       var12.field4855.sendPacket(new SSetExperiencePacket(var12.field4922, var12.field4921, var12.field4920));
       this.method19472(var12, var10);
@@ -626,10 +629,10 @@ public abstract class Class6395 {
    }
 
    public void method19472(ServerPlayerEntity var1, ServerWorld var2) {
-      WorldBorder var5 = this.field27990.method1317().getWorldBorder();
+      WorldBorder var5 = this.field27990.func_241755_D_().getWorldBorder();
       var1.field4855.sendPacket(new SWorldBorderPacket(var5, Class1864.field10036));
-      var1.field4855.sendPacket(new SUpdateTimePacket(var2.getGameTime(), var2.method6784(), var2.getGameRules().getBoolean(Class5462.field24232)));
-      var1.field4855.sendPacket(new SWorldSpawnChangedPacket(var2.method6947(), var2.method6948()));
+      var1.field4855.sendPacket(new SUpdateTimePacket(var2.getGameTime(), var2.method6784(), var2.getGameRules().getBoolean(GameRules.field24232)));
+      var1.field4855.sendPacket(new SWorldSpawnChangedPacket(var2.getSpawnPoint(), var2.method6948()));
       if (var2.method6795()) {
          var1.field4855.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24561, 0.0F));
          var1.field4855.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24567, var2.method6792(1.0F)));

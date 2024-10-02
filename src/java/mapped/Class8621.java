@@ -8,6 +8,7 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.Collection;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.network.play.server.SPlaySoundPacket;
 import net.minecraft.util.ResourceLocation;
@@ -18,7 +19,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class Class8621 {
    private static final SimpleCommandExceptionType field38754 = new SimpleCommandExceptionType(new TranslationTextComponent("commands.playsound.failed"));
 
-   public static void method30876(CommandDispatcher<Class6619> var0) {
+   public static void method30876(CommandDispatcher<CommandSource> var0) {
       RequiredArgumentBuilder var3 = Class6099.method18840("sound", Class8303.method29031()).suggests(Class9222.field42455);
 
       for (Class2266 var7 : Class2266.values()) {
@@ -28,17 +29,17 @@ public class Class8621 {
       var0.register((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("playsound").requires(var0x -> var0x.method20129(2))).then(var3));
    }
 
-   private static LiteralArgumentBuilder<Class6619> method30877(Class2266 var0) {
-      return (LiteralArgumentBuilder<Class6619>)Class6099.method18839(var0.method8995())
+   private static LiteralArgumentBuilder<CommandSource> method30877(Class2266 var0) {
+      return (LiteralArgumentBuilder<CommandSource>)Class6099.method18839(var0.method8995())
          .then(
             ((RequiredArgumentBuilder)Class6099.method18840("targets", Class8700.method31353())
                   .executes(
                      var1 -> method30878(
-                           (Class6619)var1.getSource(),
+                           (CommandSource)var1.getSource(),
                            Class8700.method31354(var1, "targets"),
                            Class8303.method29036(var1, "sound"),
                            var0,
-                           ((Class6619)var1.getSource()).method20171(),
+                           ((CommandSource)var1.getSource()).method20171(),
                            1.0F,
                            1.0F,
                            0.0F
@@ -48,7 +49,7 @@ public class Class8621 {
                   ((RequiredArgumentBuilder)Class6099.method18840("pos", Class6851.method20857())
                         .executes(
                            var1 -> method30878(
-                                 (Class6619)var1.getSource(),
+                                 (CommandSource)var1.getSource(),
                                  Class8700.method31354(var1, "targets"),
                                  Class8303.method29036(var1, "sound"),
                                  var0,
@@ -62,7 +63,7 @@ public class Class8621 {
                         ((RequiredArgumentBuilder)Class6099.method18840("volume", FloatArgumentType.floatArg(0.0F))
                               .executes(
                                  var1 -> method30878(
-                                       (Class6619)var1.getSource(),
+                                       (CommandSource)var1.getSource(),
                                        Class8700.method31354(var1, "targets"),
                                        Class8303.method29036(var1, "sound"),
                                        var0,
@@ -76,7 +77,7 @@ public class Class8621 {
                               ((RequiredArgumentBuilder)Class6099.method18840("pitch", FloatArgumentType.floatArg(0.0F, 2.0F))
                                     .executes(
                                        var1 -> method30878(
-                                             (Class6619)var1.getSource(),
+                                             (CommandSource)var1.getSource(),
                                              Class8700.method31354(var1, "targets"),
                                              Class8303.method29036(var1, "sound"),
                                              var0,
@@ -90,7 +91,7 @@ public class Class8621 {
                                     Class6099.method18840("minVolume", FloatArgumentType.floatArg(0.0F, 1.0F))
                                        .executes(
                                           var1 -> method30878(
-                                                (Class6619)var1.getSource(),
+                                                (CommandSource)var1.getSource(),
                                                 Class8700.method31354(var1, "targets"),
                                                 Class8303.method29036(var1, "sound"),
                                                 var0,
@@ -107,7 +108,7 @@ public class Class8621 {
          );
    }
 
-   private static int method30878(Class6619 var0, Collection<ServerPlayerEntity> var1, ResourceLocation var2, Class2266 var3, Vector3d var4, float var5, float var6, float var7) throws CommandSyntaxException {
+   private static int method30878(CommandSource var0, Collection<ServerPlayerEntity> var1, ResourceLocation var2, Class2266 var3, Vector3d var4, float var5, float var6, float var7) throws CommandSyntaxException {
       double var10 = Math.pow(!(var5 > 1.0F) ? 16.0 : (double)(var5 * 16.0F), 2.0);
       int var12 = 0;
 

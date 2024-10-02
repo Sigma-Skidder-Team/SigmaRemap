@@ -9,6 +9,7 @@ import com.mojang.brigadier.exceptions.Dynamic2CommandExceptionType;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.command.CommandSource;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.CachedBlockInfo;
@@ -28,7 +29,7 @@ public class Class6450 {
     private static final SimpleCommandExceptionType field28362 = new SimpleCommandExceptionType(new TranslationTextComponent("commands.clone.failed"));
     public static final Predicate<CachedBlockInfo> field28363 = var0 -> !var0.method37548().isAir();
 
-    public static void method19588(CommandDispatcher<Class6619> var0) {
+    public static void method19588(CommandDispatcher<CommandSource> var0) {
         var0.register(
                 (LiteralArgumentBuilder) ((LiteralArgumentBuilder) Class6099.method18839("clone").requires(var0x -> var0x.method20129(2)))
                         .then(
@@ -41,7 +42,7 @@ public class Class6450 {
                                                                         )
                                                                         .executes(
                                                                                 var0x -> method19589(
-                                                                                        (Class6619) var0x.getSource(),
+                                                                                        (CommandSource) var0x.getSource(),
                                                                                         Class6849.method20827(var0x, "begin"),
                                                                                         Class6849.method20827(var0x, "end"),
                                                                                         Class6849.method20827(var0x, "destination"),
@@ -53,7 +54,7 @@ public class Class6450 {
                                                                                 ((LiteralArgumentBuilder) ((LiteralArgumentBuilder) ((LiteralArgumentBuilder) Class6099.method18839("replace")
                                                                                         .executes(
                                                                                                 var0x -> method19589(
-                                                                                                        (Class6619) var0x.getSource(),
+                                                                                                        (CommandSource) var0x.getSource(),
                                                                                                         Class6849.method20827(var0x, "begin"),
                                                                                                         Class6849.method20827(var0x, "end"),
                                                                                                         Class6849.method20827(var0x, "destination"),
@@ -65,7 +66,7 @@ public class Class6450 {
                                                                                                 Class6099.method18839("force")
                                                                                                         .executes(
                                                                                                                 var0x -> method19589(
-                                                                                                                        (Class6619) var0x.getSource(),
+                                                                                                                        (CommandSource) var0x.getSource(),
                                                                                                                         Class6849.method20827(var0x, "begin"),
                                                                                                                         Class6849.method20827(var0x, "end"),
                                                                                                                         Class6849.method20827(var0x, "destination"),
@@ -78,7 +79,7 @@ public class Class6450 {
                                                                                                 Class6099.method18839("move")
                                                                                                         .executes(
                                                                                                                 var0x -> method19589(
-                                                                                                                        (Class6619) var0x.getSource(),
+                                                                                                                        (CommandSource) var0x.getSource(),
                                                                                                                         Class6849.method20827(var0x, "begin"),
                                                                                                                         Class6849.method20827(var0x, "end"),
                                                                                                                         Class6849.method20827(var0x, "destination"),
@@ -91,7 +92,7 @@ public class Class6450 {
                                                                                                 Class6099.method18839("normal")
                                                                                                         .executes(
                                                                                                                 var0x -> method19589(
-                                                                                                                        (Class6619) var0x.getSource(),
+                                                                                                                        (CommandSource) var0x.getSource(),
                                                                                                                         Class6849.method20827(var0x, "begin"),
                                                                                                                         Class6849.method20827(var0x, "end"),
                                                                                                                         Class6849.method20827(var0x, "destination"),
@@ -105,7 +106,7 @@ public class Class6450 {
                                                                                 ((LiteralArgumentBuilder) ((LiteralArgumentBuilder) ((LiteralArgumentBuilder) Class6099.method18839("masked")
                                                                                         .executes(
                                                                                                 var0x -> method19589(
-                                                                                                        (Class6619) var0x.getSource(),
+                                                                                                        (CommandSource) var0x.getSource(),
                                                                                                         Class6849.method20827(var0x, "begin"),
                                                                                                         Class6849.method20827(var0x, "end"),
                                                                                                         Class6849.method20827(var0x, "destination"),
@@ -117,7 +118,7 @@ public class Class6450 {
                                                                                                 Class6099.method18839("force")
                                                                                                         .executes(
                                                                                                                 var0x -> method19589(
-                                                                                                                        (Class6619) var0x.getSource(),
+                                                                                                                        (CommandSource) var0x.getSource(),
                                                                                                                         Class6849.method20827(var0x, "begin"),
                                                                                                                         Class6849.method20827(var0x, "end"),
                                                                                                                         Class6849.method20827(var0x, "destination"),
@@ -130,7 +131,7 @@ public class Class6450 {
                                                                                                 Class6099.method18839("move")
                                                                                                         .executes(
                                                                                                                 var0x -> method19589(
-                                                                                                                        (Class6619) var0x.getSource(),
+                                                                                                                        (CommandSource) var0x.getSource(),
                                                                                                                         Class6849.method20827(var0x, "begin"),
                                                                                                                         Class6849.method20827(var0x, "end"),
                                                                                                                         Class6849.method20827(var0x, "destination"),
@@ -143,7 +144,7 @@ public class Class6450 {
                                                                                                 Class6099.method18839("normal")
                                                                                                         .executes(
                                                                                                                 var0x -> method19589(
-                                                                                                                        (Class6619) var0x.getSource(),
+                                                                                                                        (CommandSource) var0x.getSource(),
                                                                                                                         Class6849.method20827(var0x, "begin"),
                                                                                                                         Class6849.method20827(var0x, "end"),
                                                                                                                         Class6849.method20827(var0x, "destination"),
@@ -161,7 +162,7 @@ public class Class6450 {
                                                                                                         )
                                                                                                         .executes(
                                                                                                                 var0x -> method19589(
-                                                                                                                        (Class6619) var0x.getSource(),
+                                                                                                                        (CommandSource) var0x.getSource(),
                                                                                                                         Class6849.method20827(var0x, "begin"),
                                                                                                                         Class6849.method20827(var0x, "end"),
                                                                                                                         Class6849.method20827(var0x, "destination"),
@@ -173,7 +174,7 @@ public class Class6450 {
                                                                                                                 Class6099.method18839("force")
                                                                                                                         .executes(
                                                                                                                                 var0x -> method19589(
-                                                                                                                                        (Class6619) var0x.getSource(),
+                                                                                                                                        (CommandSource) var0x.getSource(),
                                                                                                                                         Class6849.method20827(var0x, "begin"),
                                                                                                                                         Class6849.method20827(var0x, "end"),
                                                                                                                                         Class6849.method20827(var0x, "destination"),
@@ -186,7 +187,7 @@ public class Class6450 {
                                                                                                                 Class6099.method18839("move")
                                                                                                                         .executes(
                                                                                                                                 var0x -> method19589(
-                                                                                                                                        (Class6619) var0x.getSource(),
+                                                                                                                                        (CommandSource) var0x.getSource(),
                                                                                                                                         Class6849.method20827(var0x, "begin"),
                                                                                                                                         Class6849.method20827(var0x, "end"),
                                                                                                                                         Class6849.method20827(var0x, "destination"),
@@ -199,7 +200,7 @@ public class Class6450 {
                                                                                                                 Class6099.method18839("normal")
                                                                                                                         .executes(
                                                                                                                                 var0x -> method19589(
-                                                                                                                                        (Class6619) var0x.getSource(),
+                                                                                                                                        (CommandSource) var0x.getSource(),
                                                                                                                                         Class6849.method20827(var0x, "begin"),
                                                                                                                                         Class6849.method20827(var0x, "end"),
                                                                                                                                         Class6849.method20827(var0x, "destination"),
@@ -216,7 +217,7 @@ public class Class6450 {
         );
     }
 
-    private static int method19589(Class6619 var0, BlockPos var1, BlockPos var2, BlockPos var3, Predicate<CachedBlockInfo> var4, Class2109 var5) throws CommandSyntaxException {
+    private static int method19589(CommandSource var0, BlockPos var1, BlockPos var2, BlockPos var3, Predicate<CachedBlockInfo> var4, Class2109 var5) throws CommandSyntaxException {
         Class9764 var8 = new Class9764(var1, var2);
         BlockPos var9 = var3.method8337(var8.method38397());
         Class9764 var10 = new Class9764(var3, var9);

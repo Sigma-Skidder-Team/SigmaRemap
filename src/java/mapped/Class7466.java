@@ -2,6 +2,8 @@ package mapped;
 
 import com.mojang.brigadier.arguments.BoolArgumentType;
 import com.mojang.brigadier.context.CommandContext;
+import net.minecraft.command.CommandSource;
+
 import java.util.function.BiConsumer;
 
 public class Class7466 extends Class7465<Class7466> {
@@ -22,7 +24,7 @@ public class Class7466 extends Class7465<Class7466> {
    }
 
    @Override
-   public void method24154(CommandContext<Class6619> var1, String var2) {
+   public void method24154(CommandContext<CommandSource> var1, String var2) {
       this.field32103 = BoolArgumentType.getBool(var1, var2);
    }
 
@@ -30,7 +32,7 @@ public class Class7466 extends Class7465<Class7466> {
       return this.field32103;
    }
 
-   public void method24175(boolean var1, MinecraftServer var2) {
+   public void set(boolean var1, MinecraftServer var2) {
       this.field32103 = var1;
       this.method24171(var2);
    }

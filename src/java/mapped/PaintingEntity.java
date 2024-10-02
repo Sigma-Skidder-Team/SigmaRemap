@@ -13,6 +13,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 
 import java.util.ArrayList;
@@ -91,7 +92,7 @@ public class PaintingEntity extends Class995 {
 
    @Override
    public void method4083(Entity var1) {
-      if (this.world.getGameRules().getBoolean(Class5462.field24229)) {
+      if (this.world.getGameRules().getBoolean(GameRules.field24229)) {
          this.playSound(SoundEvents.field26867, 1.0F, 1.0F);
          if (var1 instanceof PlayerEntity) {
             PlayerEntity var4 = (PlayerEntity)var1;

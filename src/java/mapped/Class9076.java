@@ -7,6 +7,8 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.Arrays;
 import java.util.Collection;
+
+import net.minecraft.command.CommandSource;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class9076 implements ArgumentType<Class9580> {
@@ -17,8 +19,8 @@ public class Class9076 implements ArgumentType<Class9580> {
       return new Class9076();
    }
 
-   public static float method33817(CommandContext<Class6619> var0, String var1) {
-      return ((Class9580)var0.getArgument(var1, Class9580.class)).method37196((Class6619)var0.getSource());
+   public static float method33817(CommandContext<CommandSource> var0, String var1) {
+      return ((Class9580)var0.getArgument(var1, Class9580.class)).method37196((CommandSource)var0.getSource());
    }
 
    public Class9580 parse(StringReader var1) throws CommandSyntaxException {

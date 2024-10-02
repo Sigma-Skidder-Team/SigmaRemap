@@ -10,6 +10,8 @@ import com.mojang.brigadier.suggestion.SuggestionsBuilder;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.concurrent.CompletableFuture;
+
+import net.minecraft.command.CommandSource;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -26,7 +28,7 @@ public class Class7561 implements ArgumentType<TextFormatting> {
       return new Class7561();
    }
 
-   public static TextFormatting method24748(CommandContext<Class6619> var0, String var1) {
+   public static TextFormatting method24748(CommandContext<CommandSource> var0, String var1) {
       return (TextFormatting)var0.getArgument(var1, TextFormatting.class);
    }
 

@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
@@ -21,7 +22,7 @@ public class Class2634 extends Class2628 {
    @Override
    public boolean method10803() {
       if (this.field16930 <= 0) {
-         if (!this.field16950.world.getGameRules().getBoolean(Class5462.field24224)) {
+         if (!this.field16950.world.getGameRules().getBoolean(GameRules.field24224)) {
             return false;
          }
 

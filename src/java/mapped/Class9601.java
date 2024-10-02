@@ -17,7 +17,9 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.CompletableFuture;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.scoreboard.Scoreboard;
+import net.minecraft.scoreboard.ServerScoreboard;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextComponentUtils;
@@ -43,12 +45,12 @@ public class Class9601 {
       (var0, var1) -> new TranslationTextComponent("commands.scoreboard.players.get.null", var0, var1)
    );
 
-   public static void method37271(CommandDispatcher<Class6619> var0) {
+   public static void method37271(CommandDispatcher<CommandSource> var0) {
       var0.register(
          (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("scoreboard").requires(var0x -> var0x.method20129(2)))
                .then(
                   ((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("objectives")
-                                 .then(Class6099.method18839("list").executes(var0x -> method37290((Class6619)var0x.getSource()))))
+                                 .then(Class6099.method18839("list").executes(var0x -> method37290((CommandSource)var0x.getSource()))))
                               .then(
                                  Class6099.method18839("add")
                                     .then(
@@ -57,7 +59,7 @@ public class Class9601 {
                                              ((RequiredArgumentBuilder)Class6099.method18840("criteria", Class8371.method29322())
                                                    .executes(
                                                       var0x -> method37289(
-                                                            (Class6619)var0x.getSource(),
+                                                            (CommandSource)var0x.getSource(),
                                                             StringArgumentType.getString(var0x, "objective"),
                                                             Class8371.method29323(var0x, "criteria"),
                                                             new StringTextComponent(StringArgumentType.getString(var0x, "objective"))
@@ -67,7 +69,7 @@ public class Class9601 {
                                                    Class6099.method18840("displayName", Class8010.method27395())
                                                       .executes(
                                                          var0x -> method37289(
-                                                               (Class6619)var0x.getSource(),
+                                                               (CommandSource)var0x.getSource(),
                                                                StringArgumentType.getString(var0x, "objective"),
                                                                Class8371.method29323(var0x, "criteria"),
                                                                Class8010.method27394(var0x, "displayName")
@@ -87,7 +89,7 @@ public class Class9601 {
                                                    Class6099.method18840("displayName", Class8010.method27395())
                                                       .executes(
                                                          var0x -> method37286(
-                                                               (Class6619)var0x.getSource(),
+                                                               (CommandSource)var0x.getSource(),
                                                                Class9263.method34861(var0x, "objective"),
                                                                Class8010.method27394(var0x, "displayName")
                                                             )
@@ -101,19 +103,19 @@ public class Class9601 {
                            Class6099.method18839("remove")
                               .then(
                                  Class6099.method18840("objective", Class9263.method34860())
-                                    .executes(var0x -> method37288((Class6619)var0x.getSource(), Class9263.method34861(var0x, "objective")))
+                                    .executes(var0x -> method37288((CommandSource)var0x.getSource(), Class9263.method34861(var0x, "objective")))
                               )
                         ))
                      .then(
                         Class6099.method18839("setdisplay")
                            .then(
                               ((RequiredArgumentBuilder)Class6099.method18840("slot", Class9639.method37566())
-                                    .executes(var0x -> method37284((Class6619)var0x.getSource(), Class9639.method37567(var0x, "slot"))))
+                                    .executes(var0x -> method37284((CommandSource)var0x.getSource(), Class9639.method37567(var0x, "slot"))))
                                  .then(
                                     Class6099.method18840("objective", Class9263.method34860())
                                        .executes(
                                           var0x -> method37285(
-                                                (Class6619)var0x.getSource(), Class9639.method37567(var0x, "slot"), Class9263.method34861(var0x, "objective")
+                                                (CommandSource)var0x.getSource(), Class9639.method37567(var0x, "slot"), Class9263.method34861(var0x, "objective")
                                              )
                                        )
                                  )
@@ -125,11 +127,11 @@ public class Class9601 {
                                           "players"
                                        )
                                        .then(
-                                          ((LiteralArgumentBuilder)Class6099.method18839("list").executes(var0x -> method37282((Class6619)var0x.getSource())))
+                                          ((LiteralArgumentBuilder)Class6099.method18839("list").executes(var0x -> method37282((CommandSource)var0x.getSource())))
                                              .then(
                                                 Class6099.method18840("target", Class7591.method24862())
                                                    .suggests(Class7591.field32590)
-                                                   .executes(var0x -> method37283((Class6619)var0x.getSource(), Class7591.method24858(var0x, "target")))
+                                                   .executes(var0x -> method37283((CommandSource)var0x.getSource(), Class7591.method24858(var0x, "target")))
                                              )
                                        ))
                                     .then(
@@ -143,7 +145,7 @@ public class Class9601 {
                                                          Class6099.method18840("score", IntegerArgumentType.integer())
                                                             .executes(
                                                                var0x -> method37279(
-                                                                     (Class6619)var0x.getSource(),
+                                                                     (CommandSource)var0x.getSource(),
                                                                      Class7591.method24860(var0x, "targets"),
                                                                      Class9263.method34862(var0x, "objective"),
                                                                      IntegerArgumentType.getInteger(var0x, "score")
@@ -162,7 +164,7 @@ public class Class9601 {
                                                 Class6099.method18840("objective", Class9263.method34860())
                                                    .executes(
                                                       var0x -> method37274(
-                                                            (Class6619)var0x.getSource(),
+                                                            (CommandSource)var0x.getSource(),
                                                             Class7591.method24858(var0x, "target"),
                                                             Class9263.method34861(var0x, "objective")
                                                          )
@@ -181,7 +183,7 @@ public class Class9601 {
                                                    Class6099.method18840("score", IntegerArgumentType.integer(0))
                                                       .executes(
                                                          var0x -> method37280(
-                                                               (Class6619)var0x.getSource(),
+                                                               (CommandSource)var0x.getSource(),
                                                                Class7591.method24860(var0x, "targets"),
                                                                Class9263.method34862(var0x, "objective"),
                                                                IntegerArgumentType.getInteger(var0x, "score")
@@ -202,7 +204,7 @@ public class Class9601 {
                                                 Class6099.method18840("score", IntegerArgumentType.integer(0))
                                                    .executes(
                                                       var0x -> method37281(
-                                                            (Class6619)var0x.getSource(),
+                                                            (CommandSource)var0x.getSource(),
                                                             Class7591.method24860(var0x, "targets"),
                                                             Class9263.method34862(var0x, "objective"),
                                                             IntegerArgumentType.getInteger(var0x, "score")
@@ -217,12 +219,12 @@ public class Class9601 {
                               .then(
                                  ((RequiredArgumentBuilder)Class6099.method18840("targets", Class7591.method24863())
                                        .suggests(Class7591.field32590)
-                                       .executes(var0x -> method37277((Class6619)var0x.getSource(), Class7591.method24860(var0x, "targets"))))
+                                       .executes(var0x -> method37277((CommandSource)var0x.getSource(), Class7591.method24860(var0x, "targets"))))
                                     .then(
                                        Class6099.method18840("objective", Class9263.method34860())
                                           .executes(
                                              var0x -> method37278(
-                                                   (Class6619)var0x.getSource(),
+                                                   (CommandSource)var0x.getSource(),
                                                    Class7591.method24860(var0x, "targets"),
                                                    Class9263.method34861(var0x, "objective")
                                                 )
@@ -237,10 +239,10 @@ public class Class9601 {
                                  .suggests(Class7591.field32590)
                                  .then(
                                     Class6099.method18840("objective", Class9263.method34860())
-                                       .suggests((var0x, var1) -> method37273((Class6619)var0x.getSource(), Class7591.method24860(var0x, "targets"), var1))
+                                       .suggests((var0x, var1) -> method37273((CommandSource)var0x.getSource(), Class7591.method24860(var0x, "targets"), var1))
                                        .executes(
                                           var0x -> method37276(
-                                                (Class6619)var0x.getSource(),
+                                                (CommandSource)var0x.getSource(),
                                                 Class7591.method24860(var0x, "targets"),
                                                 Class9263.method34861(var0x, "objective")
                                              )
@@ -264,7 +266,7 @@ public class Class9601 {
                                                    Class6099.method18840("sourceObjective", Class9263.method34860())
                                                       .executes(
                                                          var0x -> method37275(
-                                                               (Class6619)var0x.getSource(),
+                                                               (CommandSource)var0x.getSource(),
                                                                Class7591.method24860(var0x, "targets"),
                                                                Class9263.method34862(var0x, "targetObjective"),
                                                                Class6888.method21029(var0x, "operation"),
@@ -282,21 +284,21 @@ public class Class9601 {
       );
    }
 
-   private static LiteralArgumentBuilder<Class6619> method37272() {
+   private static LiteralArgumentBuilder<CommandSource> method37272() {
       LiteralArgumentBuilder var2 = Class6099.method18839("rendertype");
 
       for (Class2316 var6 : Class2316.values()) {
          var2.then(
-            Class6099.method18839(var6.method9088()).executes(var1 -> method37287((Class6619)var1.getSource(), Class9263.method34861(var1, "objective"), var6))
+            Class6099.method18839(var6.method9088()).executes(var1 -> method37287((CommandSource)var1.getSource(), Class9263.method34861(var1, "objective"), var6))
          );
       }
 
       return var2;
    }
 
-   private static CompletableFuture<Suggestions> method37273(Class6619 var0, Collection<String> var1, SuggestionsBuilder var2) {
+   private static CompletableFuture<Suggestions> method37273(CommandSource var0, Collection<String> var1, SuggestionsBuilder var2) {
       ArrayList var5 = Lists.newArrayList();
-      Class6887 var6 = var0.method20177().method1409();
+      ServerScoreboard var6 = var0.method20177().method1409();
 
       for (Class8375 var8 : var6.method20982()) {
          if (var8.method29337() == Class9008.field41190) {
@@ -318,8 +320,8 @@ public class Class9601 {
       return Class6618.method20147(var5, var2);
    }
 
-   private static int method37274(Class6619 var0, String var1, Class8375 var2) throws CommandSyntaxException {
-      Class6887 var5 = var0.method20177().method1409();
+   private static int method37274(CommandSource var0, String var1, Class8375 var2) throws CommandSyntaxException {
+      ServerScoreboard var5 = var0.method20177().method1409();
       if (var5.method20979(var1, var2)) {
          Class9411 var6 = var5.method20980(var1, var2);
          var0.method20179(new TranslationTextComponent("commands.scoreboard.players.get.success", var1, var6.method36050(), var2.method29340()), false);
@@ -329,8 +331,8 @@ public class Class9601 {
       }
    }
 
-   private static int method37275(Class6619 var0, Collection<String> var1, Class8375 var2, Class8420 var3, Collection<String> var4, Class8375 var5) throws CommandSyntaxException {
-      Class6887 var8 = var0.method20177().method1409();
+   private static int method37275(CommandSource var0, Collection<String> var1, Class8375 var2, Class8420 var3, Collection<String> var4, Class8375 var5) throws CommandSyntaxException {
+      ServerScoreboard var8 = var0.method20177().method1409();
       int var9 = 0;
 
       for (String var11 : var1) {
@@ -355,9 +357,9 @@ public class Class9601 {
       return var9;
    }
 
-   private static int method37276(Class6619 var0, Collection<String> var1, Class8375 var2) throws CommandSyntaxException {
+   private static int method37276(CommandSource var0, Collection<String> var1, Class8375 var2) throws CommandSyntaxException {
       if (var2.method29337() == Class9008.field41190) {
-         Class6887 var5 = var0.method20177().method1409();
+         ServerScoreboard var5 = var0.method20177().method1409();
          int var6 = 0;
 
          for (String var8 : var1) {
@@ -386,8 +388,8 @@ public class Class9601 {
       }
    }
 
-   private static int method37277(Class6619 var0, Collection<String> var1) {
-      Class6887 var4 = var0.method20177().method1409();
+   private static int method37277(CommandSource var0, Collection<String> var1) {
+      ServerScoreboard var4 = var0.method20177().method1409();
 
       for (String var6 : var1) {
          var4.method20985(var6, (Class8375)null);
@@ -402,8 +404,8 @@ public class Class9601 {
       return var1.size();
    }
 
-   private static int method37278(Class6619 var0, Collection<String> var1, Class8375 var2) {
-      Class6887 var5 = var0.method20177().method1409();
+   private static int method37278(CommandSource var0, Collection<String> var1, Class8375 var2) {
+      ServerScoreboard var5 = var0.method20177().method1409();
 
       for (String var7 : var1) {
          var5.method20985(var7, var2);
@@ -418,8 +420,8 @@ public class Class9601 {
       return var1.size();
    }
 
-   private static int method37279(Class6619 var0, Collection<String> var1, Class8375 var2, int var3) {
-      Class6887 var6 = var0.method20177().method1409();
+   private static int method37279(CommandSource var0, Collection<String> var1, Class8375 var2, int var3) {
+      ServerScoreboard var6 = var0.method20177().method1409();
 
       for (String var8 : var1) {
          Class9411 var9 = var6.method20980(var8, var2);
@@ -437,8 +439,8 @@ public class Class9601 {
       return var3 * var1.size();
    }
 
-   private static int method37280(Class6619 var0, Collection<String> var1, Class8375 var2, int var3) {
-      Class6887 var6 = var0.method20177().method1409();
+   private static int method37280(CommandSource var0, Collection<String> var1, Class8375 var2, int var3) {
+      ServerScoreboard var6 = var0.method20177().method1409();
       int var7 = 0;
 
       for (String var9 : var1) {
@@ -458,8 +460,8 @@ public class Class9601 {
       return var7;
    }
 
-   private static int method37281(Class6619 var0, Collection<String> var1, Class8375 var2, int var3) {
-      Class6887 var6 = var0.method20177().method1409();
+   private static int method37281(CommandSource var0, Collection<String> var1, Class8375 var2, int var3) {
+      ServerScoreboard var6 = var0.method20177().method1409();
       int var7 = 0;
 
       for (String var9 : var1) {
@@ -479,7 +481,7 @@ public class Class9601 {
       return var7;
    }
 
-   private static int method37282(Class6619 var0) {
+   private static int method37282(CommandSource var0) {
       Collection var3 = var0.method20177().method1409().method20984();
       if (!var3.isEmpty()) {
          var0.method20179(
@@ -492,7 +494,7 @@ public class Class9601 {
       return var3.size();
    }
 
-   private static int method37283(Class6619 var0, String var1) {
+   private static int method37283(CommandSource var0, String var1) {
       Map<Class8375, Class9411> var4 = var0.method20177().method1409().method20986(var1);
       if (!var4.isEmpty()) {
          var0.method20179(new TranslationTextComponent("commands.scoreboard.players.list.entity.success", var1, var4.size()), false);
@@ -512,8 +514,8 @@ public class Class9601 {
       return var4.size();
    }
 
-   private static int method37284(Class6619 var0, int var1) throws CommandSyntaxException {
-      Class6887 var4 = var0.method20177().method1409();
+   private static int method37284(CommandSource var0, int var1) throws CommandSyntaxException {
+      ServerScoreboard var4 = var0.method20177().method1409();
       if (var4.method20989(var1) != null) {
          var4.method20988(var1, (Class8375)null);
          var0.method20179(new TranslationTextComponent("commands.scoreboard.objectives.display.cleared", Scoreboard.method21010()[var1]), true);
@@ -523,8 +525,8 @@ public class Class9601 {
       }
    }
 
-   private static int method37285(Class6619 var0, int var1, Class8375 var2) throws CommandSyntaxException {
-      Class6887 var5 = var0.method20177().method1409();
+   private static int method37285(CommandSource var0, int var1, Class8375 var2) throws CommandSyntaxException {
+      ServerScoreboard var5 = var0.method20177().method1409();
       if (var5.method20989(var1) != var2) {
          var5.method20988(var1, var2);
          var0.method20179(new TranslationTextComponent("commands.scoreboard.objectives.display.set", Scoreboard.method21010()[var1], var2.method29338()), true);
@@ -534,7 +536,7 @@ public class Class9601 {
       }
    }
 
-   private static int method37286(Class6619 var0, Class8375 var1, ITextComponent var2) {
+   private static int method37286(CommandSource var0, Class8375 var1, ITextComponent var2) {
       if (!var1.method29338().equals(var2)) {
          var1.method29341(var2);
          var0.method20179(new TranslationTextComponent("commands.scoreboard.objectives.modify.displayname", var1.method29336(), var1.method29340()), true);
@@ -543,7 +545,7 @@ public class Class9601 {
       return 0;
    }
 
-   private static int method37287(Class6619 var0, Class8375 var1, Class2316 var2) {
+   private static int method37287(CommandSource var0, Class8375 var1, Class2316 var2) {
       if (var1.method29342() != var2) {
          var1.method29343(var2);
          var0.method20179(new TranslationTextComponent("commands.scoreboard.objectives.modify.rendertype", var1.method29340()), true);
@@ -552,15 +554,15 @@ public class Class9601 {
       return 0;
    }
 
-   private static int method37288(Class6619 var0, Class8375 var1) {
-      Class6887 var4 = var0.method20177().method1409();
+   private static int method37288(CommandSource var0, Class8375 var1) {
+      ServerScoreboard var4 = var0.method20177().method1409();
       var4.method20987(var1);
       var0.method20179(new TranslationTextComponent("commands.scoreboard.objectives.remove.success", var1.method29340()), true);
       return var4.method20982().size();
    }
 
-   private static int method37289(Class6619 var0, String var1, Class9008 var2, ITextComponent var3) throws CommandSyntaxException {
-      Class6887 var6 = var0.method20177().method1409();
+   private static int method37289(CommandSource var0, String var1, Class9008 var2, ITextComponent var3) throws CommandSyntaxException {
+      ServerScoreboard var6 = var0.method20177().method1409();
       if (var6.method20976(var1) == null) {
          if (var1.length() <= 16) {
             var6.method20977(var1, var2, var3, var2.method33282());
@@ -575,7 +577,7 @@ public class Class9601 {
       }
    }
 
-   private static int method37290(Class6619 var0) {
+   private static int method37290(CommandSource var0) {
       Collection var3 = var0.method20177().method1409().method20982();
       if (!var3.isEmpty()) {
          var0.method20179(

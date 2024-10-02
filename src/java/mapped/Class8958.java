@@ -23,10 +23,13 @@ import joptsimple.OptionSpecBuilder;
 import net.minecraft.client.util.Util;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.resources.ResourcePackList;
+import net.minecraft.server.management.PlayerProfileCache;
+import net.minecraft.util.DefaultUncaughtExceptionHandler;
 import net.minecraft.util.WorldOptimizer;
 import net.minecraft.util.datafix.codec.DatapackCodec;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.listener.LoggingChunkStatusListener;
 import org.apache.logging.log4j.LogManager;
@@ -84,7 +87,7 @@ public class Class8958 {
          MinecraftSessionService var26 = var25.createMinecraftSessionService();
          GameProfileRepository var27 = var25.createProfileRepository();
          PlayerProfileCache var28 = new PlayerProfileCache(var27, new File(var24, MinecraftServer.USER_CACHE_FILE.getName()));
-         String var29 = (String)Optional.<Object>ofNullable(var18.valueOf(var14)).orElse(var21.method20779().field43798);
+         String var29 = (String)Optional.<Object>ofNullable(var18.valueOf(var14)).orElse(var21.getProperties().field43798);
          SaveFormat var30 = SaveFormat.method38455(var24.toPath());
          SaveFormat.LevelSave var31 = var30.getLevelSave(var29);
          MinecraftServer.func_240777_a_(var31);
@@ -97,7 +100,7 @@ public class Class8958 {
          ResourcePackList var34 = new ResourcePackList(new ServerPackFinder(), new FolderPackFinder(var31.resolveFilePath(FolderName.DATAPACKS).toFile(), IPackNameDecorator.WORLD));
          DatapackCodec var35 = MinecraftServer.func_240772_a_(var34, var32 == null ? DatapackCodec.VANILLA_CODEC : var32, var33);
          CompletableFuture var36 = DataPackRegistries.func_240961_a_(
-            var34.func_232623_f_(), Commands.DEDICATED, var21.method20779().field43817, Util.getServerExecutor(), Runnable::run
+            var34.func_232623_f_(), Commands.DEDICATED, var21.getProperties().field43817, Util.getServerExecutor(), Runnable::run
          );
 
          DataPackRegistries var37;
@@ -121,8 +124,8 @@ public class Class8958 {
                var40 = MinecraftServer.field1210;
                var41 = DimensionGeneratorSettings.method26256(var19);
             } else {
-               Class9437 var42 = var21.method20779();
-               var40 = new WorldSettings(var42.field43798, var42.field43797, var42.field43809, var42.field43796, false, new Class5462(), var35);
+               ServerProperties var42 = var21.getProperties();
+               var40 = new WorldSettings(var42.field43798, var42.gamemode, var42.field43809, var42.field43796, false, new GameRules(), var35);
                var41 = var18.has(var7) ? var42.field43833.method26270() : var42.field43833;
             }
 
@@ -138,7 +141,7 @@ public class Class8958 {
          DedicatedServer var46 = MinecraftServer.<DedicatedServer>func_240784_a_(var16x -> {
             DedicatedServer var19x = new DedicatedServer(var16x, var19, var31, var34, var37, var45, var21, DataFixesManager.getDataFixer(), var26, var27, var28, LoggingChunkStatusListener::new);
             var19x.method1333((String)var18.valueOf(var12));
-            var19x.method1331((Integer)var18.valueOf(var15));
+            var19x.setServerPort((Integer)var18.valueOf(var15));
             var19x.method1343(var18.has(var6));
             var19x.method1314((String)var18.valueOf(var16));
             boolean var20x = !var18.has(var4) && !var18.valuesOf(var17).contains("nogui");
@@ -149,7 +152,7 @@ public class Class8958 {
             return var19x;
          });
          Class374 var47 = new Class374("Server Shutdown Thread", var46);
-         var47.setUncaughtExceptionHandler(new Class6030(field40474));
+         var47.setUncaughtExceptionHandler(new DefaultUncaughtExceptionHandler(field40474));
          Runtime.getRuntime().addShutdownHook(var47);
       } catch (Exception var44) {
          field40474.fatal("Failed to start the minecraft server", var44);

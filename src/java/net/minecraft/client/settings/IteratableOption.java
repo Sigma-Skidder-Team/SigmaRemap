@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.client.settings;
 
 import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
@@ -9,11 +9,11 @@ import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.client.gui.widget.button.OptionButton;
 import net.minecraft.util.text.ITextComponent;
 
-public class Class5804 extends AbstractOption {
+public class IteratableOption extends AbstractOption {
    public BiConsumer<GameSettings, Integer> field25313;
-   public BiFunction<GameSettings, Class5804, ITextComponent> field25314;
+   public BiFunction<GameSettings, IteratableOption, ITextComponent> field25314;
 
-   public Class5804(String var1, BiConsumer<GameSettings, Integer> var2, BiFunction<GameSettings, Class5804, ITextComponent> var3) {
+   public IteratableOption(String var1, BiConsumer<GameSettings, Integer> var2, BiFunction<GameSettings, IteratableOption, ITextComponent> var3) {
       super(var1);
       this.field25313 = var2;
       this.field25314 = var3;

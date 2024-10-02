@@ -13,6 +13,7 @@ import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -127,7 +128,7 @@ public class Class906 extends Entity {
    }
 
    private void method3551(int var1) {
-      if (!this.field5174 && !this.world.isRemote && this.world.getGameRules().getBoolean(Class5462.field24223)) {
+      if (!this.field5174 && !this.world.isRemote && this.world.getGameRules().getBoolean(GameRules.field24223)) {
          BlockPos var4 = this.getPosition();
          BlockState var5 = AbstractFireBlock.method12009(this.world, var4);
          if (this.world.getBlockState(var4).isAir() && var5.isValidPosition(this.world, var4)) {

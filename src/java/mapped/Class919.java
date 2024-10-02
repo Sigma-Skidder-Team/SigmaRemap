@@ -10,6 +10,7 @@ import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.*;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -32,7 +33,7 @@ public abstract class Class919 extends AbstractMinecartEntity implements IInvent
    @Override
    public void method3586(DamageSource var1) {
       super.method3586(var1);
-      if (this.world.getGameRules().getBoolean(Class5462.field24229)) {
+      if (this.world.getGameRules().getBoolean(GameRules.field24229)) {
          Class7236.method22722(this.world, this, this);
          if (!this.world.isRemote) {
             Entity var4 = var1.getImmediateSource();

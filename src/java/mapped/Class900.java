@@ -7,6 +7,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.EntityRayTraceResult;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 
 public class Class900 extends Class898 {
@@ -50,7 +51,7 @@ public class Class900 extends Class898 {
       super.method3466(var1);
       if (!this.world.isRemote) {
          Entity var4 = this.method3460();
-         if (var4 == null || !(var4 instanceof MobEntity) || this.world.getGameRules().getBoolean(Class5462.field24224)) {
+         if (var4 == null || !(var4 instanceof MobEntity) || this.world.getGameRules().getBoolean(GameRules.field24224)) {
             BlockPos var5 = var1.getPos().offset(var1.getFace());
             if (this.world.method7007(var5)) {
                this.world.setBlockState(var5, AbstractFireBlock.method12009(this.world, var5));

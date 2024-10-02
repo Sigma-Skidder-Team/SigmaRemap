@@ -70,7 +70,7 @@ public interface IServerWorldInfo extends ISpawnWorldInfo {
 
    boolean method20072();
 
-   void method20073(GameType var1);
+   void setGameType(GameType var1);
 
    Class8559<MinecraftServer> method20074();
 

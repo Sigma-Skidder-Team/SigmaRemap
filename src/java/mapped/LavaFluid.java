@@ -12,10 +12,7 @@ import net.minecraft.state.StateContainer;
 import net.minecraft.util.Direction;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockReader;
-import net.minecraft.world.IWorld;
-import net.minecraft.world.IWorldReader;
-import net.minecraft.world.World;
+import net.minecraft.world.*;
 
 import java.util.Random;
 import javax.annotation.Nullable;
@@ -67,7 +64,7 @@ public abstract class LavaFluid extends FlowingFluid {
 
    @Override
    public void method25053(World var1, BlockPos var2, FluidState var3, Random var4) {
-      if (var1.getGameRules().getBoolean(Class5462.field24223)) {
+      if (var1.getGameRules().getBoolean(GameRules.field24223)) {
          int var7 = var4.nextInt(3);
          if (var7 <= 0) {
             for (int var8 = 0; var8 < 3; var8++) {

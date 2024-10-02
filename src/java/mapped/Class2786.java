@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.stats.Stats;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.server.ServerWorld;
 
 public class Class2786 extends Class2785 {
@@ -52,7 +53,7 @@ public class Class2786 extends Class2785 {
          var4.setLocationAndAngles(this.field17407.getPosX(), this.field17407.getPosY(), this.field17407.getPosZ(), 0.0F, 0.0F);
          var3.method6995(var4);
          this.field17409.setEntityState(this.field17407, (byte)18);
-         if (this.field17409.getGameRules().getBoolean(Class5462.field24227)) {
+         if (this.field17409.getGameRules().getBoolean(GameRules.field24227)) {
             this.field17409
                .addEntity(
                   new ExperienceOrbEntity(

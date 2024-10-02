@@ -69,7 +69,7 @@ public class AutoSoup extends Module {
                 }
             } else if (var4.equals("OpenInv") && !(mc.currentScreen instanceof InventoryScreen)) {
                 this.field23432 = false;
-            } else if (this.method16063(Items.field37222) != 0) {
+            } else if (this.method16063(Items.AIR) != 0) {
                 this.method16060();
             } else {
                 this.field23432 = false;
@@ -130,7 +130,7 @@ public class AutoSoup extends Module {
                 }
 
                 this.field23429++;
-                if (this.method16063(Items.field37222) != 0) {
+                if (this.method16063(Items.AIR) != 0) {
                     if (!var4 || var3 <= 0) {
                         continue;
                     }
@@ -222,7 +222,7 @@ public class AutoSoup extends Module {
                 }
 
                 var4 = InvManagerUtils.method25866(13);
-                if (var4.getItem() == Items.field37222) {
+                if (var4.getItem() == Items.AIR) {
                     for (int var13 = 36; var13 < 45; var13++) {
                         if (mc.player.container.getSlot(var13).getStack().getItem() == Items.field37836) {
                             InvManagerUtils.moveItemToHotbar(13, var13 - 36);
@@ -233,7 +233,7 @@ public class AutoSoup extends Module {
 
                 for (int var14 = 9; var14 < 36; var14++) {
                     var4 = InvManagerUtils.method25866(var14);
-                    if (var4.getItem() == Items.field37222) {
+                    if (var4.getItem() == Items.AIR) {
                         for (int var6 = 36; var6 < 45; var6++) {
                             if (mc.player.container.getSlot(var6).getStack().getItem() == Items.field37836) {
                                 InvManagerUtils.moveItemToHotbar(var14, var6 - 36);

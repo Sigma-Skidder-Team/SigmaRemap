@@ -16,6 +16,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -133,7 +134,7 @@ public abstract class Class1026 extends Class1028 {
 
                var12 = MathHelper.clamp(var12, 0, 4);
                EffectInstance var10 = new EffectInstance(Effects.BAD_OMEN, 120000, var12, false, false, true);
-               if (!this.world.getGameRules().getBoolean(Class5462.field24246)) {
+               if (!this.world.getGameRules().getBoolean(GameRules.field24246)) {
                   var7.addPotionEffect(var10);
                }
             }

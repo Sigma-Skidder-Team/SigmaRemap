@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.math.vector.Vector3d;
@@ -22,7 +23,7 @@ public class Class8502 {
       this.field37184 = null;
    }
 
-   public void method30092(Class6619 var1, Entity var2) {
+   public void method30092(CommandSource var1, Entity var2) {
       if (this.field37183 == null) {
          var2.lookAt(var1.method20178(), this.field37182);
       } else if (!(var2 instanceof ServerPlayerEntity)) {

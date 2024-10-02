@@ -5,6 +5,7 @@ import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.datafix.codec.DatapackCodec;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.GameType;
 import net.minecraft.world.storage.IServerWorldInfo;
 
@@ -61,7 +62,7 @@ public interface IServerConfiguration {
 
    GameType method20067();
 
-   void method20073(GameType var1);
+   void setGameType(GameType var1);
 
    boolean method20072();
 
@@ -73,7 +74,7 @@ public interface IServerConfiguration {
 
    void method20086(boolean var1);
 
-   Class5462 method20046();
+   GameRules method20046();
 
    CompoundNBT method20083();
 

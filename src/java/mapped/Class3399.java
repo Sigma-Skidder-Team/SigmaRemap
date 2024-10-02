@@ -15,10 +15,7 @@ import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
-import net.minecraft.world.IBlockReader;
-import net.minecraft.world.IWorld;
-import net.minecraft.world.IWorldReader;
-import net.minecraft.world.World;
+import net.minecraft.world.*;
 import net.minecraft.world.server.ServerWorld;
 
 import java.util.Map;
@@ -137,7 +134,7 @@ public class Class3399 extends AbstractFireBlock {
    @Override
    public void tick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       var2.method6860().scheduleTick(var3, this, method12024(var2.rand));
-      if (var2.getGameRules().getBoolean(Class5462.field24223)) {
+      if (var2.getGameRules().getBoolean(GameRules.field24223)) {
          if (!var1.isValidPosition(var2, var3)) {
             var2.removeBlock(var3, false);
          }

@@ -18,6 +18,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.scoreboard.ServerScoreboard;
 import net.minecraft.scoreboard.Team;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
@@ -331,7 +332,7 @@ public class Class9748 {
             var3.expect('}');
             if (!var4.isEmpty()) {
                var0.method30278(var1 -> {
-                  Class6887 var4x = var1.method3396().method1409();
+                  ServerScoreboard var4x = var1.method3396().method1409();
                   String var5x = var1.method2956();
 
                   for (Entry var7 : var4.entrySet()) {

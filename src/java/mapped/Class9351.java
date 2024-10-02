@@ -19,22 +19,22 @@ public final class Class9351 implements ProfileLookupCallback {
    }
 
    public void onProfileLookupSucceeded(GameProfile var1) {
-      this.field43403.method1386().method31790(var1);
+      this.field43403.getPlayerProfileCache().method31790(var1);
       String[] var4 = (String[])this.field43404.get(var1.getName().toLowerCase(Locale.ROOT));
       if (var4 != null) {
-         Date var5 = var4.length <= 1 ? null : Class9061.method33744(var4[1], (Date)null);
+         Date var5 = var4.length <= 1 ? null : PreYggdrasilConverter.method33744(var4[1], (Date)null);
          String var6 = var4.length <= 2 ? null : var4[2];
-         Date var7 = var4.length <= 3 ? null : Class9061.method33744(var4[3], (Date)null);
+         Date var7 = var4.length <= 3 ? null : PreYggdrasilConverter.method33744(var4[3], (Date)null);
          String var8 = var4.length <= 4 ? null : var4[4];
          this.field43405.method14436(new Class6786(var1, var5, var6, var7, var8));
       } else {
-         Class9061.method33743().warn("Could not convert user banlist entry for {}", var1.getName());
+         PreYggdrasilConverter.method33743().warn("Could not convert user banlist entry for {}", var1.getName());
          throw new Class2502("Profile not in the conversionlist", null);
       }
    }
 
    public void onProfileLookupFailed(GameProfile var1, Exception var2) {
-      Class9061.method33743().warn("Could not lookup user banlist entry for {}", var1.getName(), var2);
+      PreYggdrasilConverter.method33743().warn("Could not lookup user banlist entry for {}", var1.getName(), var2);
       if (!(var2 instanceof ProfileNotFoundException)) {
          throw new Class2502("Could not request user " + var1.getName() + " from backend systems", var2, null);
       }

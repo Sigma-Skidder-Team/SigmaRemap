@@ -11,6 +11,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.biome.Biome;
@@ -41,14 +42,14 @@ public class Class7019 implements Class7016 {
 
    @Override
    public int method21742(ServerWorld var1, boolean var2, boolean var3) {
-      if (var1.getGameRules().getBoolean(Class5462.field24253)) {
+      if (var1.getGameRules().getBoolean(GameRules.field24253)) {
          if (--this.field30324 <= 0) {
             this.field30324 = 1200;
             this.field30325 -= 1200;
             this.field30323.method20063(this.field30325);
             if (this.field30325 <= 0) {
                this.field30325 = 24000;
-               if (var1.getGameRules().getBoolean(Class5462.field24226)) {
+               if (var1.getGameRules().getBoolean(GameRules.field24226)) {
                   int var6 = this.field30326;
                   this.field30326 = MathHelper.clamp(this.field30326 + 25, 25, 75);
                   this.field30323.method20065(this.field30326);

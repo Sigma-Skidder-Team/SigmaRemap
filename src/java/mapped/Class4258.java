@@ -46,7 +46,7 @@ public class Class4258 extends Class4247 {
          var5.add(new Class3292(Blocks.field36649, new Item.Properties().method17779(ItemGroup.field31669)));
 
          for (Item var13 : method13070(var5, var1)) {
-            if (var13 != Items.field37222 && (!this.field20644 || var13 instanceof Class3292)) {
+            if (var13 != Items.AIR && (!this.field20644 || var13 instanceof Class3292)) {
                ResourceLocation var8 = Registry.ITEM.getKey(var13);
                String var9;
                if (var13 instanceof Class3292 && var8.getPath().equals("air")) {

@@ -855,7 +855,7 @@ public abstract class World implements IWorld, AutoCloseable {
       return this.worldInfo;
    }
 
-   public Class5462 getGameRules() {
+   public GameRules getGameRules() {
       return this.worldInfo.method20046();
    }
 

@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableSet;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
@@ -37,7 +38,7 @@ public class Class132 extends Class128 {
       if (var1 != null) {
          Entity var4 = var0.method26081(var1.method8717());
          if (var4 != null) {
-            Class6619 var5 = var4.getCommandSource().method20163(2);
+            CommandSource var5 = var4.getCommandSource().method20163(2);
             return var2 -> {
                try {
                   return TextComponentUtils.func_240645_a_(var5, var2, var4, 0);

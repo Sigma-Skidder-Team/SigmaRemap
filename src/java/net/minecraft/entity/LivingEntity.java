@@ -48,6 +48,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceContext;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -1182,7 +1183,7 @@ public abstract class LivingEntity extends Entity {
       if (!this.world.isRemote) {
          boolean var4 = false;
          if (var1 instanceof WitherEntity) {
-            if (this.world.getGameRules().getBoolean(Class5462.field24224)) {
+            if (this.world.getGameRules().getBoolean(GameRules.field24224)) {
                BlockPos var5 = this.getPosition();
                BlockState var6 = Blocks.WITHER_ROSE.getDefaultState();
                if (this.world.getBlockState(var5).isAir() && var6.isValidPosition(this.world, var5)) {
@@ -1209,7 +1210,7 @@ public abstract class LivingEntity extends Entity {
       }
 
       boolean var6 = this.field4971 > 0;
-      if (this.method3010() && this.world.getGameRules().getBoolean(Class5462.field24227)) {
+      if (this.method3010() && this.world.getGameRules().getBoolean(GameRules.field24227)) {
          this.dropLoot(var1, var6);
          this.dropSpecialItems(var1, var5, var6);
       }
@@ -1223,7 +1224,7 @@ public abstract class LivingEntity extends Entity {
 
    public void dropExperience() {
       if (!this.world.isRemote
-         && (this.isPlayer() || this.field4971 > 0 && this.canDropLoot() && this.world.getGameRules().getBoolean(Class5462.field24227))) {
+         && (this.isPlayer() || this.field4971 > 0 && this.canDropLoot() && this.world.getGameRules().getBoolean(GameRules.field24227))) {
          int var3 = this.getExperiencePoints(this.attackingPlayer);
 
          while (var3 > 0) {
@@ -2476,7 +2477,7 @@ public abstract class LivingEntity extends Entity {
    public void collideWithNearbyEntities() {
       List var3 = this.world.getEntitiesInAABBexcluding(this, this.getBoundingBox(), Class8088.method27981(this));
       if (!var3.isEmpty()) {
-         int var4 = this.world.getGameRules().method17136(Class5462.field24241);
+         int var4 = this.world.getGameRules().method17136(GameRules.field24241);
          if (var4 > 0 && var3.size() > var4 - 1 && this.rand.nextInt(4) == 0) {
             int var5 = 0;
 

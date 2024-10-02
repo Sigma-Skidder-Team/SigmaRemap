@@ -12,6 +12,7 @@ import net.minecraft.client.multiplayer.ServerList;
 import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.client.renderer.texture.NativeImage;
 import net.minecraft.client.util.Util;
+import net.minecraft.util.DefaultUncaughtExceptionHandler;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.*;
 import org.apache.commons.lang3.Validate;
@@ -28,7 +29,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 public class ServerSelectionList extends Class1274<ServerSelectionList.Entry> {
    private static final Logger field6820 = LogManager.getLogger();
    private static final ThreadPoolExecutor field6821 = new ScheduledThreadPoolExecutor(
-      5, new ThreadFactoryBuilder().setNameFormat("Server Pinger #%d").setDaemon(true).setUncaughtExceptionHandler(new Class6030(field6820)).build()
+      5, new ThreadFactoryBuilder().setNameFormat("Server Pinger #%d").setDaemon(true).setUncaughtExceptionHandler(new DefaultUncaughtExceptionHandler(field6820)).build()
    );
    private static final ResourceLocation field6822 = new ResourceLocation("textures/misc/unknown_server.png");
    private static final ResourceLocation field6823 = new ResourceLocation("textures/gui/server_selection.png");

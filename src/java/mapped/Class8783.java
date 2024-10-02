@@ -13,7 +13,7 @@ public class Class8783 {
       return this.field39513;
    }
 
-   public void method31701(ITextComponent var1) {
+   public void setServerDescription(ITextComponent var1) {
       this.field39513 = var1;
    }
 
@@ -29,7 +29,7 @@ public class Class8783 {
       return this.field39515;
    }
 
-   public void method31705(Class9226 var1) {
+   public void setVersion(Class9226 var1) {
       this.field39515 = var1;
    }
 

@@ -5,6 +5,7 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.server.ServerWorld;
 
 import java.util.List;
@@ -16,7 +17,7 @@ public class Class7017 implements Class7016 {
 
    @Override
    public int method21742(ServerWorld var1, boolean var2, boolean var3) {
-      if (var3 && var1.getGameRules().getBoolean(Class5462.field24226)) {
+      if (var3 && var1.getGameRules().getBoolean(GameRules.field24226)) {
          this.field30318--;
          if (this.field30318 <= 0) {
             this.field30318 = 1200;

@@ -13,6 +13,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.concurrent.CompletableFuture;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -29,7 +30,7 @@ public class Class8371 implements ArgumentType<Class9008> {
       return new Class8371();
    }
 
-   public static Class9008 method29323(CommandContext<Class6619> var0, String var1) {
+   public static Class9008 method29323(CommandContext<CommandSource> var0, String var1) {
       return (Class9008)var0.getArgument(var1, Class9008.class);
    }
 

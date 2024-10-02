@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.command;
 
 import com.google.common.collect.Lists;
 import com.mojang.brigadier.ResultConsumer;
@@ -14,6 +14,7 @@ import java.util.function.BinaryOperator;
 import java.util.stream.Stream;
 import javax.annotation.Nullable;
 
+import mapped.*;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -26,10 +27,11 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
-public class Class6619 implements Class6618 {
+public class CommandSource implements Class6618 {
    public static final SimpleCommandExceptionType field29122 = new SimpleCommandExceptionType(new TranslationTextComponent("permissions.requires.player"));
    public static final SimpleCommandExceptionType field29123 = new SimpleCommandExceptionType(new TranslationTextComponent("permissions.requires.entity"));
    private final ICommandSource field29124;
@@ -41,16 +43,16 @@ public class Class6619 implements Class6618 {
    private final MinecraftServer field29130;
    private final boolean field29131;
    private final Entity field29132;
-   private final ResultConsumer<Class6619> field29133;
+   private final ResultConsumer<CommandSource> field29133;
    private final Class2062 field29134;
    private final Vector2f field29135;
 
-   public Class6619(ICommandSource var1, Vector3d var2, Vector2f var3, ServerWorld var4, int var5, String var6, ITextComponent var7, MinecraftServer var8, Entity var9) {
+   public CommandSource(ICommandSource var1, Vector3d var2, Vector2f var3, ServerWorld var4, int var5, String var6, ITextComponent var7, MinecraftServer var8, Entity var9) {
       this(var1, var2, var3, var4, var5, var6, var7, var8, var9, false, (var0, var1x, var2x) -> {
       }, Class2062.field13441);
    }
 
-   public Class6619(
+   public CommandSource(
       ICommandSource var1,
       Vector3d var2,
       Vector2f var3,
@@ -61,7 +63,7 @@ public class Class6619 implements Class6618 {
       MinecraftServer var8,
       Entity var9,
       boolean var10,
-      ResultConsumer<Class6619> var11,
+      ResultConsumer<CommandSource> var11,
       Class2062 var12
    ) {
       this.field29124 = var1;
@@ -78,9 +80,9 @@ public class Class6619 implements Class6618 {
       this.field29135 = var3;
    }
 
-   public Class6619 method20157(Entity var1) {
+   public CommandSource method20157(Entity var1) {
       return this.field29132 != var1
-         ? new Class6619(
+         ? new CommandSource(
             this.field29124,
             this.field29125,
             this.field29135,
@@ -97,9 +99,9 @@ public class Class6619 implements Class6618 {
          : this;
    }
 
-   public Class6619 method20158(Vector3d var1) {
+   public CommandSource method20158(Vector3d var1) {
       return !this.field29125.equals(var1)
-         ? new Class6619(
+         ? new CommandSource(
             this.field29124,
             var1,
             this.field29135,
@@ -116,9 +118,9 @@ public class Class6619 implements Class6618 {
          : this;
    }
 
-   public Class6619 method20159(Vector2f var1) {
+   public CommandSource method20159(Vector2f var1) {
       return !this.field29135.equals(var1)
-         ? new Class6619(
+         ? new CommandSource(
             this.field29124,
             this.field29125,
             var1,
@@ -135,9 +137,9 @@ public class Class6619 implements Class6618 {
          : this;
    }
 
-   public Class6619 method20160(ResultConsumer<Class6619> var1) {
+   public CommandSource method20160(ResultConsumer<CommandSource> var1) {
       return !this.field29133.equals(var1)
-         ? new Class6619(
+         ? new CommandSource(
             this.field29124,
             this.field29125,
             this.field29135,
@@ -154,14 +156,14 @@ public class Class6619 implements Class6618 {
          : this;
    }
 
-   public Class6619 method20161(ResultConsumer<Class6619> var1, BinaryOperator<ResultConsumer<Class6619>> var2) {
+   public CommandSource method20161(ResultConsumer<CommandSource> var1, BinaryOperator<ResultConsumer<CommandSource>> var2) {
       ResultConsumer var5 = var2.apply(this.field29133, var1);
       return this.method20160(var5);
    }
 
-   public Class6619 method20162() {
+   public CommandSource method20162() {
       return !this.field29131
-         ? new Class6619(
+         ? new CommandSource(
             this.field29124,
             this.field29125,
             this.field29135,
@@ -178,9 +180,9 @@ public class Class6619 implements Class6618 {
          : this;
    }
 
-   public Class6619 method20163(int var1) {
+   public CommandSource method20163(int var1) {
       return var1 != this.field29127
-         ? new Class6619(
+         ? new CommandSource(
             this.field29124,
             this.field29125,
             this.field29135,
@@ -197,9 +199,9 @@ public class Class6619 implements Class6618 {
          : this;
    }
 
-   public Class6619 method20164(int var1) {
+   public CommandSource method20164(int var1) {
       return var1 > this.field29127
-         ? new Class6619(
+         ? new CommandSource(
             this.field29124,
             this.field29125,
             this.field29135,
@@ -216,9 +218,9 @@ public class Class6619 implements Class6618 {
          : this;
    }
 
-   public Class6619 method20165(Class2062 var1) {
+   public CommandSource method20165(Class2062 var1) {
       return var1 != this.field29134
-         ? new Class6619(
+         ? new CommandSource(
             this.field29124,
             this.field29125,
             this.field29135,
@@ -235,11 +237,11 @@ public class Class6619 implements Class6618 {
          : this;
    }
 
-   public Class6619 method20166(ServerWorld var1) {
+   public CommandSource method20166(ServerWorld var1) {
       if (var1 != this.field29126) {
          double var4 = DimensionType.getCoordinateDifference(this.field29126.method6812(), var1.method6812());
          Vector3d var6 = new Vector3d(this.field29125.x * var4, this.field29125.y, this.field29125.z * var4);
-         return new Class6619(
+         return new CommandSource(
             this.field29124,
             var6,
             this.field29135,
@@ -258,11 +260,11 @@ public class Class6619 implements Class6618 {
       }
    }
 
-   public Class6619 method20167(Entity var1, Class2062 var2) throws CommandSyntaxException {
+   public CommandSource method20167(Entity var1, Class2062 var2) throws CommandSyntaxException {
       return this.method20168(var2.method8711(var1));
    }
 
-   public Class6619 method20168(Vector3d var1) throws CommandSyntaxException {
+   public CommandSource method20168(Vector3d var1) throws CommandSyntaxException {
       Vector3d var4 = this.field29134.method8712(this);
       double var5 = var1.x - var4.x;
       double var7 = var1.y - var4.y;
@@ -340,7 +342,7 @@ public class Class6619 implements Class6618 {
    private void method20180(ITextComponent var1) {
       IFormattableTextComponent var4 = new TranslationTextComponent("chat.type.admin", this.method20169(), var1)
          .mergeStyle(new TextFormatting[]{TextFormatting.GRAY, TextFormatting.ITALIC});
-      if (this.field29130.method1413().getBoolean(Class5462.field24236)) {
+      if (this.field29130.getGameRules().getBoolean(GameRules.field24236)) {
          for (ServerPlayerEntity var6 : this.field29130.getPlayerList().getPlayers()) {
             if (var6 != this.field29124 && this.field29130.getPlayerList().canSendCommands(var6.getGameProfile())) {
                var6.sendMessage(var4, Util.DUMMY_UUID);
@@ -348,7 +350,7 @@ public class Class6619 implements Class6618 {
          }
       }
 
-      if (this.field29124 != this.field29130 && this.field29130.method1413().getBoolean(Class5462.field24233)) {
+      if (this.field29124 != this.field29130 && this.field29130.getGameRules().getBoolean(GameRules.field24233)) {
          this.field29130.sendMessage(var4, Util.DUMMY_UUID);
       }
    }
@@ -359,7 +361,7 @@ public class Class6619 implements Class6618 {
       }
    }
 
-   public void method20182(CommandContext<Class6619> var1, boolean var2, int var3) {
+   public void method20182(CommandContext<CommandSource> var1, boolean var2, int var3) {
       if (this.field29133 != null) {
          this.field29133.onCommandComplete(var1, var2, var3);
       }

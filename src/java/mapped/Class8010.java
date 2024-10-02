@@ -8,6 +8,8 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import java.util.Arrays;
 import java.util.Collection;
+
+import net.minecraft.command.CommandSource;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextComponent$Serializer;
@@ -22,7 +24,7 @@ public class Class8010 implements ArgumentType<ITextComponent> {
    private Class8010() {
    }
 
-   public static ITextComponent method27394(CommandContext<Class6619> var0, String var1) {
+   public static ITextComponent method27394(CommandContext<CommandSource> var0, String var1) {
       return (ITextComponent)var0.getArgument(var1, ITextComponent.class);
    }
 

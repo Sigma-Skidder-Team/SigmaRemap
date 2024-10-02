@@ -12,6 +12,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -44,10 +45,10 @@ public class Class9082 implements ArgumentType<ResourceLocation> {
       return new Class9082();
    }
 
-   public static ServerWorld method33873(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
+   public static ServerWorld method33873(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
       ResourceLocation var4 = (ResourceLocation)var0.getArgument(var1, ResourceLocation.class);
       RegistryKey var5 = RegistryKey.<World>getOrCreateKey(Registry.WORLD_KEY, var4);
-      ServerWorld var6 = ((Class6619)var0.getSource()).method20177().method1318(var5);
+      ServerWorld var6 = ((CommandSource)var0.getSource()).method20177().method1318(var5);
       if (var6 != null) {
          return var6;
       } else {

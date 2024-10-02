@@ -70,7 +70,7 @@ public class Class1282 extends Class1274<Class1171> {
          }
       }
 
-      var5.remove(Items.field37222);
+      var5.remove(Items.AIR);
       this.field6842 = Lists.newArrayList(var5);
 
       for (int var12 = 0; var12 < this.field6842.size(); var12++) {

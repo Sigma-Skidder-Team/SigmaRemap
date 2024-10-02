@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.server.management;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
@@ -35,6 +35,8 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Stream;
 import javax.annotation.Nullable;
 
+import mapped.Class8461;
+import mapped.Class9731;
 import net.minecraft.entity.player.PlayerEntity;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -98,7 +100,7 @@ public class PlayerProfileCache {
       Date var5 = var4.getTime();
       Class9731 var6 = new Class9731(var1, var5, null);
       this.method31786(var6);
-      this.method31796();
+      this.save();
    }
 
    private long method31791() {
@@ -130,7 +132,7 @@ public class PlayerProfileCache {
       }
 
       if (var6) {
-         this.method31796();
+         this.save();
       }
 
       return var7;
@@ -175,7 +177,7 @@ public class PlayerProfileCache {
       return var3;
    }
 
-   public void method31796() {
+   public void save() {
       JsonArray var3 = new JsonArray();
       DateFormat var4 = method31794();
       this.method31797(1000).forEach(var2 -> var3.add(method31798(var2, var4)));

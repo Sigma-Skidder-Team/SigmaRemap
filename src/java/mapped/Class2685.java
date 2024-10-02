@@ -7,6 +7,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -22,7 +23,7 @@ public class Class2685 extends Class2595 {
    @Override
    public boolean method10803() {
       if (this.field17102.method4357() != null) {
-         return this.field17102.world.getGameRules().getBoolean(Class5462.field24224) ? this.field17102.getRNG().nextInt(2000) == 0 : false;
+         return this.field17102.world.getGameRules().getBoolean(GameRules.field24224) ? this.field17102.getRNG().nextInt(2000) == 0 : false;
       } else {
          return false;
       }
@@ -55,6 +56,6 @@ public class Class2685 extends Class2595 {
          && !var5.isIn(Blocks.BEDROCK)
          && var5.method23456(var1, var6)
          && var3.isValidPosition(var1, var2)
-         && var1.method7181(this.field17102, AxisAlignedBB.method19657(Vector3d.method11329(var2))).isEmpty();
+         && var1.method7181(this.field17102, AxisAlignedBB.method19657(Vector3d.copy(var2))).isEmpty();
    }
 }

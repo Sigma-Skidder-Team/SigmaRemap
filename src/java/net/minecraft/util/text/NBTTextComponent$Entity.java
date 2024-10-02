@@ -3,6 +3,7 @@ package net.minecraft.util.text;
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import mapped.*;
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.Entity;
 import net.minecraft.nbt.CompoundNBT;
 
@@ -46,7 +47,7 @@ public class NBTTextComponent$Entity extends NBTTextComponent {
    }
 
    @Override
-   public Stream<CompoundNBT> func_218673_a(Class6619 p_218673_1_) throws CommandSyntaxException {
+   public Stream<CompoundNBT> func_218673_a(CommandSource p_218673_1_) throws CommandSyntaxException {
       if (this.field_218689_f != null) {
          List<? extends Entity> var4 = this.field_218689_f.method29617(p_218673_1_);
          return var4.stream().map(Class8811::method31813);

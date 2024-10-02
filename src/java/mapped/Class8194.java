@@ -8,6 +8,7 @@ import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.Collection;
 import java.util.Collections;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -16,7 +17,7 @@ public class Class8194 {
    private static final SimpleCommandExceptionType field35220 = new SimpleCommandExceptionType(new TranslationTextComponent("commands.recipe.give.failed"));
    private static final SimpleCommandExceptionType field35221 = new SimpleCommandExceptionType(new TranslationTextComponent("commands.recipe.take.failed"));
 
-   public static void method28495(CommandDispatcher<Class6619> var0) {
+   public static void method28495(CommandDispatcher<CommandSource> var0) {
       var0.register(
          (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("recipe").requires(var0x -> var0x.method20129(2)))
                .then(
@@ -28,7 +29,7 @@ public class Class8194 {
                                     .suggests(Class9222.field42454)
                                     .executes(
                                        var0x -> method28496(
-                                             (Class6619)var0x.getSource(),
+                                             (CommandSource)var0x.getSource(),
                                              Class8700.method31354(var0x, "targets"),
                                              Collections.<IRecipe<?>>singleton(Class8303.method29033(var0x, "recipe"))
                                           )
@@ -38,9 +39,9 @@ public class Class8194 {
                               Class6099.method18839("*")
                                  .executes(
                                     var0x -> method28496(
-                                          (Class6619)var0x.getSource(),
+                                          (CommandSource)var0x.getSource(),
                                           Class8700.method31354(var0x, "targets"),
-                                          ((Class6619)var0x.getSource()).method20177().method1407().method1036()
+                                          ((CommandSource)var0x.getSource()).method20177().method1407().method1036()
                                        )
                                  )
                            )
@@ -55,7 +56,7 @@ public class Class8194 {
                                  .suggests(Class9222.field42454)
                                  .executes(
                                     var0x -> method28497(
-                                          (Class6619)var0x.getSource(),
+                                          (CommandSource)var0x.getSource(),
                                           Class8700.method31354(var0x, "targets"),
                                           Collections.<IRecipe<?>>singleton(Class8303.method29033(var0x, "recipe"))
                                        )
@@ -65,9 +66,9 @@ public class Class8194 {
                            Class6099.method18839("*")
                               .executes(
                                  var0x -> method28497(
-                                       (Class6619)var0x.getSource(),
+                                       (CommandSource)var0x.getSource(),
                                        Class8700.method31354(var0x, "targets"),
-                                       ((Class6619)var0x.getSource()).method20177().method1407().method1036()
+                                       ((CommandSource)var0x.getSource()).method20177().method1407().method1036()
                                     )
                               )
                         )
@@ -76,7 +77,7 @@ public class Class8194 {
       );
    }
 
-   private static int method28496(Class6619 var0, Collection<ServerPlayerEntity> var1, Collection<IRecipe<?>> var2) throws CommandSyntaxException {
+   private static int method28496(CommandSource var0, Collection<ServerPlayerEntity> var1, Collection<IRecipe<?>> var2) throws CommandSyntaxException {
       int var5 = 0;
 
       for (ServerPlayerEntity var7 : var1) {
@@ -98,7 +99,7 @@ public class Class8194 {
       }
    }
 
-   private static int method28497(Class6619 var0, Collection<ServerPlayerEntity> var1, Collection<IRecipe<?>> var2) throws CommandSyntaxException {
+   private static int method28497(CommandSource var0, Collection<ServerPlayerEntity> var1, Collection<IRecipe<?>> var2) throws CommandSyntaxException {
       int var5 = 0;
 
       for (ServerPlayerEntity var7 : var1) {

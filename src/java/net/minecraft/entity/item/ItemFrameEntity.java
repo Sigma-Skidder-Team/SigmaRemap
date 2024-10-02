@@ -20,6 +20,7 @@ import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import org.apache.commons.lang3.Validate;
 import org.apache.logging.log4j.LogManager;
@@ -194,7 +195,7 @@ public class ItemFrameEntity extends Class995 {
       if (!this.field5495) {
          ItemStack var5 = this.method4090();
          this.method4091(ItemStack.EMPTY);
-         if (this.world.getGameRules().getBoolean(Class5462.field24229)) {
+         if (this.world.getGameRules().getBoolean(GameRules.field24229)) {
             if (var1 instanceof PlayerEntity) {
                PlayerEntity var6 = (PlayerEntity)var1;
                if (var6.abilities.isCreativeMode) {

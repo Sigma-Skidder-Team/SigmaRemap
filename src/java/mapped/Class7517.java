@@ -11,6 +11,7 @@ import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import com.mojang.brigadier.suggestion.SuggestionProvider;
 import com.mojang.datafixers.util.Either;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.command.CommandSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -19,11 +20,11 @@ public class Class7517 {
    private static final DynamicCommandExceptionType field32248 = new DynamicCommandExceptionType(
       var0 -> new TranslationTextComponent("commands.schedule.cleared.failure", var0)
    );
-   private static final SuggestionProvider<Class6619> field32249 = (var0, var1) -> Class6618.method20147(
-         ((Class6619)var0.getSource()).method20177().func_240793_aU_().method20098().method20074().method30537(), var1
+   private static final SuggestionProvider<CommandSource> field32249 = (var0, var1) -> Class6618.method20147(
+         ((CommandSource)var0.getSource()).method20177().func_240793_aU_().method20098().method20074().method30537(), var1
       );
 
-   public static void method24504(CommandDispatcher<Class6619> var0) {
+   public static void method24504(CommandDispatcher<CommandSource> var0) {
       var0.register(
          (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("schedule").requires(var0x -> var0x.method20129(2)))
                .then(
@@ -35,7 +36,7 @@ public class Class7517 {
                               ((RequiredArgumentBuilder)((RequiredArgumentBuilder)Class6099.method18840("time", Class8127.method28154())
                                        .executes(
                                           var0x -> method24505(
-                                                (Class6619)var0x.getSource(),
+                                                (CommandSource)var0x.getSource(),
                                                 Class7566.method24770(var0x, "function"),
                                                 IntegerArgumentType.getInteger(var0x, "time"),
                                                 true
@@ -45,7 +46,7 @@ public class Class7517 {
                                        Class6099.method18839("append")
                                           .executes(
                                              var0x -> method24505(
-                                                   (Class6619)var0x.getSource(),
+                                                   (CommandSource)var0x.getSource(),
                                                    Class7566.method24770(var0x, "function"),
                                                    IntegerArgumentType.getInteger(var0x, "time"),
                                                    false
@@ -56,7 +57,7 @@ public class Class7517 {
                                     Class6099.method18839("replace")
                                        .executes(
                                           var0x -> method24505(
-                                                (Class6619)var0x.getSource(),
+                                                (CommandSource)var0x.getSource(),
                                                 Class7566.method24770(var0x, "function"),
                                                 IntegerArgumentType.getInteger(var0x, "time"),
                                                 true
@@ -71,13 +72,13 @@ public class Class7517 {
                   .then(
                      Class6099.method18840("function", StringArgumentType.greedyString())
                         .suggests(field32249)
-                        .executes(var0x -> method24506((Class6619)var0x.getSource(), StringArgumentType.getString(var0x, "function")))
+                        .executes(var0x -> method24506((CommandSource)var0x.getSource(), StringArgumentType.getString(var0x, "function")))
                   )
             )
       );
    }
 
-   private static int method24505(Class6619 var0, Pair<ResourceLocation, Either<Class7744, ITag<Class7744>>> var1, int var2, boolean var3) throws CommandSyntaxException {
+   private static int method24505(CommandSource var0, Pair<ResourceLocation, Either<Class7744, ITag<Class7744>>> var1, int var2, boolean var3) throws CommandSyntaxException {
       if (var2 != 0) {
          long var6 = var0.method20172().getGameTime() + (long)var2;
          ResourceLocation var8 = (ResourceLocation)var1.getFirst();
@@ -105,7 +106,7 @@ public class Class7517 {
       }
    }
 
-   private static int method24506(Class6619 var0, String var1) throws CommandSyntaxException {
+   private static int method24506(CommandSource var0, String var1) throws CommandSyntaxException {
       int var4 = var0.method20177().func_240793_aU_().method20098().method20074().method30536(var1);
       if (var4 != 0) {
          var0.method20179(new TranslationTextComponent("commands.schedule.cleared.success", var4, var1), true);

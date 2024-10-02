@@ -4,7 +4,7 @@ import com.google.common.collect.Lists;
 import com.mojang.authlib.GameProfile;
 import com.mojang.brigadier.Message;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import mapped.Class6619;
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.text.event.HoverEvent;
 import net.minecraft.util.text.event.HoverEvent$Action;
@@ -27,7 +27,7 @@ public class TextComponentUtils {
       }
    }
 
-   public static IFormattableTextComponent func_240645_a_(Class6619 p_240645_0_, ITextComponent p_240645_1_, Entity p_240645_2_, int p_240645_3_) throws CommandSyntaxException {
+   public static IFormattableTextComponent func_240645_a_(CommandSource p_240645_0_, ITextComponent p_240645_1_, Entity p_240645_2_, int p_240645_3_) throws CommandSyntaxException {
       if (p_240645_3_ > 100) {
          return p_240645_1_.deepCopy();
       } else {
@@ -43,7 +43,7 @@ public class TextComponentUtils {
       }
    }
 
-   private static Style func_240646_a_(Class6619 p_240646_0_, Style p_240646_1_, Entity p_240646_2_, int p_240646_3_) throws CommandSyntaxException {
+   private static Style func_240646_a_(CommandSource p_240646_0_, Style p_240646_1_, Entity p_240646_2_, int p_240646_3_) throws CommandSyntaxException {
       HoverEvent itextcomponent = p_240646_1_.getHoverEvent();
       if (itextcomponent != null) {
          ITextComponent hoverevent1 = itextcomponent.<ITextComponent>getParameter(HoverEvent$Action.SHOW_TEXT);

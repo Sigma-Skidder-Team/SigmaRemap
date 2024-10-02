@@ -19,6 +19,7 @@ import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 
 import net.minecraft.client.util.Util;
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.network.play.server.SCommandListPacket;
 import net.minecraft.util.text.IFormattableTextComponent;
@@ -35,7 +36,7 @@ import org.apache.logging.log4j.Logger;
 
 public class Class6099 {
    private static final Logger field27344 = LogManager.getLogger();
-   private final CommandDispatcher<Class6619> field27345 = new CommandDispatcher();
+   private final CommandDispatcher<CommandSource> field27345 = new CommandDispatcher();
 
    public Class6099(Commands var1) {
       Class7848.method26285(this.field27345);
@@ -123,10 +124,10 @@ public class Class6099 {
                   "Ambiguity between arguments {} and {} with inputs: {}", this.field27345.getPath(var2), this.field27345.getPath(var3), var4
                )
          );
-      this.field27345.setConsumer((var0, var1x, var2) -> ((Class6619)var0.getSource()).method20182(var0, var1x, var2));
+      this.field27345.setConsumer((var0, var1x, var2) -> ((CommandSource)var0.getSource()).method20182(var0, var1x, var2));
    }
 
-   public int handleCommand(Class6619 var1, String var2) {
+   public int handleCommand(CommandSource var1, String var2) {
       StringReader var5 = new StringReader(var2);
       if (var5.canRead() && var5.peek() == '/') {
          var5.skip();
@@ -203,7 +204,7 @@ public class Class6099 {
       var1.field4855.sendPacket(new SCommandListPacket(var5));
    }
 
-   private void method18838(CommandNode<Class6619> var1, CommandNode<Class6618> var2, Class6619 var3, Map<CommandNode<Class6619>, CommandNode<Class6618>> var4) {
+   private void method18838(CommandNode<CommandSource> var1, CommandNode<Class6618> var2, CommandSource var3, Map<CommandNode<CommandSource>, CommandNode<Class6618>> var4) {
       for (CommandNode var8 : var1.getChildren()) {
          if (var8.canUse(var3)) {
             ArgumentBuilder var9 = var8.createBuilder();
@@ -233,11 +234,11 @@ public class Class6099 {
       }
    }
 
-   public static LiteralArgumentBuilder<Class6619> method18839(String var0) {
+   public static LiteralArgumentBuilder<CommandSource> method18839(String var0) {
       return LiteralArgumentBuilder.literal(var0);
    }
 
-   public static <T> RequiredArgumentBuilder<Class6619, T> method18840(String var0, ArgumentType<T> var1) {
+   public static <T> RequiredArgumentBuilder<CommandSource, T> method18840(String var0, ArgumentType<T> var1) {
       return RequiredArgumentBuilder.argument(var0, var1);
    }
 
@@ -252,7 +253,7 @@ public class Class6099 {
       };
    }
 
-   public CommandDispatcher<Class6619> method18842() {
+   public CommandDispatcher<CommandSource> method18842() {
       return this.field27345;
    }
 
@@ -272,7 +273,7 @@ public class Class6099 {
    }
 
    public static void method18844() {
-      RootCommandNode<Class6619> var2 = new Class6099(Commands.field13575).method18842().getRoot();
+      RootCommandNode<CommandSource> var2 = new Class6099(Commands.field13575).method18842().getRoot();
       Set<ArgumentType<?>> var3 = Class8651.method31104(var2);
       Set<ArgumentType<?>> var4 = var3.stream().filter(var0 -> !Class8651.method31103(var0)).collect(Collectors.toSet());
       if (!var4.isEmpty()) {

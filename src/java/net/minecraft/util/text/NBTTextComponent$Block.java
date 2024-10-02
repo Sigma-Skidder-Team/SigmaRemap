@@ -3,6 +3,7 @@ package net.minecraft.util.text;
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import mapped.*;
+import net.minecraft.command.CommandSource;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
@@ -47,7 +48,7 @@ public class NBTTextComponent$Block extends NBTTextComponent {
    }
 
    @Override
-   public Stream<CompoundNBT> func_218673_a(Class6619 p_218673_1_) {
+   public Stream<CompoundNBT> func_218673_a(CommandSource p_218673_1_) {
       if (this.field_218685_f != null) {
          ServerWorld blockpos = p_218673_1_.method20172();
          BlockPos tileentity = this.field_218685_f.method23230(p_218673_1_);

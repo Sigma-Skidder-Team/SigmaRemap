@@ -10,7 +10,7 @@ public class Class2565 implements JsonDeserializer<Class8783>, JsonSerializer<Cl
       JsonObject var6 = JSONUtils.method32781(var1, "status");
       Class8783 var7 = new Class8783();
       if (var6.has("description")) {
-         var7.method31701((ITextComponent)var3.deserialize(var6.get("description"), ITextComponent.class));
+         var7.setServerDescription((ITextComponent)var3.deserialize(var6.get("description"), ITextComponent.class));
       }
 
       if (var6.has("players")) {
@@ -18,7 +18,7 @@ public class Class2565 implements JsonDeserializer<Class8783>, JsonSerializer<Cl
       }
 
       if (var6.has("version")) {
-         var7.method31705((Class9226)var3.deserialize(var6.get("version"), Class9226.class));
+         var7.setVersion((Class9226)var3.deserialize(var6.get("version"), Class9226.class));
       }
 
       if (var6.has("favicon")) {

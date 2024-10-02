@@ -46,7 +46,7 @@ public class Class2947 extends Class2898<Class4712> {
       Class8969 var11 = var10.method31603(field18024[var9]);
       Class8969 var12 = var10.method31603(field18025[var9]);
       ChunkPos var13 = new ChunkPos(var4);
-      Class9764 var14 = new Class9764(var13.getX(), 0, var13.getZ(), var13.method24358(), 256, var13.method24359());
+      Class9764 var14 = new Class9764(var13.getX(), 0, var13.getZ(), var13.getXEnd(), 256, var13.getZEnd());
       Class9463 var15 = new Class9463().method36426(var8).method36430(var14).method36431(var3).method36434(Class7095.field30528);
       BlockPos var16 = var11.method32904(var8);
       int var17 = var3.nextInt(16 - var16.getX());

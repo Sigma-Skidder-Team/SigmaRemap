@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
@@ -78,7 +79,7 @@ public class Class948 extends TileEntity implements IClearable, Class949 {
       return var1;
    }
 
-   private Class6619 method3814(PlayerEntity var1) {
+   private CommandSource method3814(PlayerEntity var1) {
       String var4;
       Object var5;
       if (var1 != null) {
@@ -90,8 +91,8 @@ public class Class948 extends TileEntity implements IClearable, Class949 {
       }
 
       Vector3d var6 = Vector3d.method11328(this.pos);
-      return new Class6619(
-         ICommandSource.field5189, var6, Vector2f.field37212, (ServerWorld)this.world, 2, var4, (ITextComponent)var5, this.world.getServer(), var1
+      return new CommandSource(
+         ICommandSource.field5189, var6, Vector2f.ZERO, (ServerWorld)this.world, 2, var4, (ITextComponent)var5, this.world.getServer(), var1
       );
    }
 

@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.util.math.MathHelper;
 
 public final class Class9580 {
@@ -12,7 +13,7 @@ public final class Class9580 {
       this.field44786 = var2;
    }
 
-   public float method37196(Class6619 var1) {
+   public float method37196(CommandSource var1) {
       return MathHelper.method37792(!this.field44786 ? this.field44785 : this.field44785 + var1.method20176().field37221);
    }
 }

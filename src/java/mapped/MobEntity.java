@@ -24,10 +24,7 @@ import net.minecraft.network.play.server.SMountEntityPacket;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.world.Difficulty;
-import net.minecraft.world.IWorld;
-import net.minecraft.world.IWorldReader;
-import net.minecraft.world.World;
+import net.minecraft.world.*;
 import net.minecraft.world.server.ServerWorld;
 import net.optifine.Config;
 import net.optifine.reflect.ReflectorForge;
@@ -471,7 +468,7 @@ public abstract class MobEntity extends LivingEntity {
    public void livingTick() {
       super.livingTick();
       this.world.getProfiler().startSection("looting");
-      boolean var3 = this.world.getGameRules().getBoolean(Class5462.field24224);
+      boolean var3 = this.world.getGameRules().getBoolean(GameRules.field24224);
       if (Reflector.field42847.exists()) {
          var3 = Reflector.callBoolean(Reflector.field42847, this.world, this);
       }

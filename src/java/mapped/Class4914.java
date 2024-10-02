@@ -14,6 +14,7 @@ import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
 import net.minecraft.client.util.Util;
+import net.minecraft.command.CommandSource;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -61,7 +62,7 @@ public class Class4914 implements ArgumentType<Integer> {
       return new Class4914();
    }
 
-   public static int method15196(CommandContext<Class6619> var0, String var1) {
+   public static int method15196(CommandContext<CommandSource> var0, String var1) {
       return (Integer)var0.getArgument(var1, Integer.class);
    }
 

@@ -12,6 +12,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
@@ -74,7 +75,7 @@ public class Class993 extends AbstractMinecartEntity {
       double var4 = horizontalMag(this.getMotion());
       if (!var1.method31141() && !var1.method31131() && !(var4 >= 0.01F)) {
          super.method3586(var1);
-         if (!var1.method31131() && this.world.getGameRules().getBoolean(Class5462.field24229)) {
+         if (!var1.method31131() && this.world.getGameRules().getBoolean(GameRules.field24229)) {
             this.entityDropItem(Blocks.TNT);
          }
       } else if (this.field5480 < 0) {

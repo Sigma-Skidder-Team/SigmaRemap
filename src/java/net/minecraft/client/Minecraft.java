@@ -55,6 +55,8 @@ import net.minecraft.network.play.client.CPlayerDiggingPacket;
 import net.minecraft.resources.ResourcePackInfo;
 import net.minecraft.resources.ResourcePackList;
 import net.minecraft.resources.data.PackMetadataSection;
+import net.minecraft.server.management.PlayerProfileCache;
+import net.minecraft.tileentity.SkullTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.client.gui.DialogTexts;
@@ -73,6 +75,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.*;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.listener.TrackingChunkStatusListener;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -194,7 +197,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
    public boolean shouldTranslate = true;
    private volatile boolean running = true;
    private CrashReport crashReporter;
-   private static int debugFps;
+   private static int debugFPS;
    public String debug = "";
    public boolean debugWireframe;
    public boolean debugChunkPath;
@@ -763,29 +766,38 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
    private void runGameLoop(boolean renderWorldIn) {
       this.mainWindow.setRenderPhase("Pre render");
       long i = Util.nanoTime();
+
       if (this.mainWindow.shouldClose()) {
          this.shutdown();
       }
 
-      if (this.futureRefreshResources != null && !(this.loadingGui instanceof ResourceLoadProgressGui)) {
+      if (this.futureRefreshResources != null && !(this.loadingGui instanceof ResourceLoadProgressGui))
+      {
          CompletableFuture<Void> completablefuture = this.futureRefreshResources;
          this.futureRefreshResources = null;
-         this.reloadResources().thenRun(() -> completablefuture.complete(null));
+         this.reloadResources().thenRun(() ->
+         {
+            completablefuture.complete((Void)null);
+         });
       }
 
       Runnable runnable;
-      while ((runnable = this.queueChunkTracking.poll()) != null) {
+
+      while ((runnable = this.queueChunkTracking.poll()) != null)
+      {
          runnable.run();
       }
 
-      if (renderWorldIn) {
+      if (renderWorldIn)
+      {
          int j = this.timer.getPartialTicks(Util.milliTime());
          this.profiler.startSection("scheduledExecutables");
          this.drainTasks();
          this.profiler.endSection();
          this.profiler.startSection("tick");
 
-         for (int k = 0; k < Math.min(10, j); k++) {
+         for (int k = 0; k < Math.min(10, j); ++k)
+         {
             this.profiler.func_230035_c_("clientTick");
             this.runTick();
          }
@@ -807,7 +819,9 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       RenderSystem.enableTexture();
       RenderSystem.enableCull();
       this.profiler.endSection();
-      if (!this.skipRenderWorld) {
+
+      if (!this.skipRenderWorld)
+      {
          this.profiler.endStartSection("gameRenderer");
          this.gameRenderer.updateCameraAndRender(this.isGamePaused ? this.renderPartialTicksPaused : this.timer.renderPartialTicks, i, renderWorldIn);
          this.profiler.endStartSection("toasts");
@@ -815,7 +829,8 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
          this.profiler.endSection();
       }
 
-      if (this.profilerResult != null) {
+      if (this.profilerResult != null)
+      {
          this.profiler.startSection("fpsPie");
          this.func_238183_a_(new MatrixStack(), this.profilerResult);
          this.profiler.endSection();
@@ -829,49 +844,49 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       RenderSystem.popMatrix();
       this.profiler.endStartSection("updateDisplay");
       this.mainWindow.flipFrame();
-      int var10 = this.getFramerateLimit();
-      if ((double)var10 < AbstractOption.FRAMERATE_LIMIT.getMaxValue()) {
-         RenderSystem.limitDisplayFPS(var10);
+      int i1 = this.getFramerateLimit();
+
+      if ((double)i1 < AbstractOption.FRAMERATE_LIMIT.getMaxValue())
+      {
+         RenderSystem.limitDisplayFPS(i1);
       }
 
       this.profiler.endStartSection("yield");
       Thread.yield();
       this.profiler.endSection();
       this.mainWindow.setRenderPhase("Post render");
-      this.fpsCounter++;
-      boolean var11 = this.isSingleplayer()
-         && (this.currentScreen != null && this.currentScreen.isPauseScreen() || this.loadingGui != null && this.loadingGui.isPauseScreen())
-         && !this.integratedServer.getPublic();
-      if (this.isGamePaused != var11) {
-         if (this.isGamePaused) {
+      ++this.fpsCounter;
+      boolean flag = this.isSingleplayer() && (this.currentScreen != null && this.currentScreen.isPauseScreen() || this.loadingGui != null && this.loadingGui.isPauseScreen()) && !this.integratedServer.getPublic();
+
+      if (this.isGamePaused != flag)
+      {
+         if (this.isGamePaused)
+         {
             this.renderPartialTicksPaused = this.timer.renderPartialTicks;
-         } else {
+         }
+         else
+         {
             this.timer.renderPartialTicks = this.renderPartialTicksPaused;
          }
 
-         this.isGamePaused = var11;
+         this.isGamePaused = flag;
       }
 
-      long var7 = Util.nanoTime();
-      this.frameTimer.addFrame(var7 - this.startNanoTime);
-      this.startNanoTime = var7;
+      long l = Util.nanoTime();
+      this.frameTimer.addFrame(l - this.startNanoTime);
+      this.startNanoTime = l;
       this.profiler.startSection("fpsUpdate");
 
-      while (Util.milliTime() >= this.debugUpdateTime + 1000L) {
-         debugFps = this.fpsCounter;
-         this.debug = String.format(
-            "%d fps T: %s%s%s%s B: %d",
-                 debugFps,
-            (double)this.gameSettings.framerateLimit == AbstractOption.FRAMERATE_LIMIT.getMaxValue() ? "inf" : this.gameSettings.framerateLimit,
-            this.gameSettings.vsync ? " vsync" : "",
-            this.gameSettings.graphicFanciness.toString(),
-            this.gameSettings.cloudOption == CloudOption.OFF ? "" : (this.gameSettings.cloudOption == CloudOption.FAST ? " fast-clouds" : " fancy-clouds"),
-            this.gameSettings.biomeBlendRadius
-         );
+      while (Util.milliTime() >= this.debugUpdateTime + 1000L)
+      {
+         debugFPS = this.fpsCounter;
+         this.debug = String.format("%d fps T: %s%s%s%s B: %d", debugFPS, (double)this.gameSettings.framerateLimit == AbstractOption.FRAMERATE_LIMIT.getMaxValue() ? "inf" : this.gameSettings.framerateLimit, this.gameSettings.vsync ? " vsync" : "", this.gameSettings.graphicFanciness.toString(), this.gameSettings.cloudOption == CloudOption.OFF ? "" : (this.gameSettings.cloudOption == CloudOption.FAST ? " fast-clouds" : " fancy-clouds"), this.gameSettings.biomeBlendRadius);
          this.debugUpdateTime += 1000L;
          this.fpsCounter = 0;
          this.snooper.addMemoryStatsToSnooper();
-         if (!this.snooper.isSnooperRunning()) {
+
+         if (!this.snooper.isSnooperRunning())
+         {
             this.snooper.start();
          }
       }
@@ -1605,19 +1620,36 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
          try {
             var7.saveLevel(var2, var9);
             var8.getDataPackRegistries().updateTags();
-            YggdrasilAuthenticationService var12 = new YggdrasilAuthenticationService(this.proxy);
-            MinecraftSessionService var23 = var12.createMinecraftSessionService();
-            GameProfileRepository var25 = var12.createProfileRepository();
-            PlayerProfileCache var15 = new PlayerProfileCache(var25, new File(this.gameDir, MinecraftServer.USER_CACHE_FILE.getName()));
-            SkullTileEntity.setProfileCache(var15);
-            SkullTileEntity.setSessionService(var23);
+            YggdrasilAuthenticationService yggdrasilauthenticationservice = new YggdrasilAuthenticationService(this.proxy);
+            MinecraftSessionService minecraftsessionservice = yggdrasilauthenticationservice.createMinecraftSessionService();
+            GameProfileRepository gameprofilerepository = yggdrasilauthenticationservice.createProfileRepository();
+            PlayerProfileCache playerprofilecache = new PlayerProfileCache(gameprofilerepository, new File(this.gameDir, MinecraftServer.USER_CACHE_FILE.getName()));
+            SkullTileEntity.setProfileCache(playerprofilecache);
+            SkullTileEntity.setSessionService(minecraftsessionservice);
             PlayerProfileCache.setOnlineMode(false);
-            this.integratedServer = MinecraftServer.<IntegratedServer>func_240784_a_(
-               var8x -> new IntegratedServer(var8x, this, var2, var7, var8.getResourcePacks(), var8.getDataPackRegistries(), var9, var23, var25, var15, var1xx -> {
-                     TrackingChunkStatusListener var2xx = new TrackingChunkStatusListener(var1xx + 0);
-                     var2xx.startTracking();
-                     this.refChunkStatusListener.set(var2xx);
-                     return new ChainedChunkStatusListener(var2xx, this.queueChunkTracking::add);
+
+            if (yggdrasilauthenticationservice == null) {
+               System.out.println("yggdrasilauthenticationservice is null");
+            }
+
+            if (minecraftsessionservice == null) {
+               System.out.println("minecraftsessionservice is null");
+            }
+
+            if (gameprofilerepository == null) {
+               System.out.println("gameprofilerepository is null");
+            }
+
+            if (playerprofilecache == null) {
+               System.out.println("playerprofilecache is null");
+            }
+
+            this.integratedServer = MinecraftServer.func_240784_a_(
+               var8x -> new IntegratedServer(var8x, this, var2, var7, var8.getResourcePacks(), var8.getDataPackRegistries(), var9, minecraftsessionservice, gameprofilerepository, playerprofilecache, radius -> {
+                     TrackingChunkStatusListener refChunkStatusListener = new TrackingChunkStatusListener(radius + 0);
+                     refChunkStatusListener.startTracking();
+                     this.refChunkStatusListener.set(refChunkStatusListener);
+                     return new ChainedChunkStatusListener(refChunkStatusListener, this.queueChunkTracking::add);
                   })
             );
             this.integratedServerIsRunning = true;
@@ -1633,13 +1665,21 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
             Thread.yield();
          }
 
-         WorldLoadProgressScreen var22 = new WorldLoadProgressScreen(this.refChunkStatusListener.get());
-         this.displayGuiScreen(var22);
+         WorldLoadProgressScreen worldloadprogressscreen = new WorldLoadProgressScreen(this.refChunkStatusListener.get());
+         this.displayGuiScreen(worldloadprogressscreen);
          this.profiler.startSection("waitForServer");
 
-         while (!this.integratedServer.method1372()) {
-            var22.tick();
+         while (!this.integratedServer.serverIsInRunLoop()) {
+            worldloadprogressscreen.tick();
             this.runGameLoop(false);
+
+            try
+            {
+               Thread.sleep(16L);
+            }
+            catch (InterruptedException interruptedexception)
+            {
+            }
 
             if (this.crashReporter != null) {
                displayCrashReport(this.crashReporter);
@@ -2062,7 +2102,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
 
    @Override
    public void fillSnooper(Snooper snooper) {
-      snooper.addClientStat("fps", debugFps);
+      snooper.addClientStat("fps", debugFPS);
       snooper.addClientStat("vsync_enabled", this.gameSettings.vsync);
       snooper.addClientStat("display_frequency", this.mainWindow.getRefreshRate());
       snooper.addClientStat("display_type", this.mainWindow.isFullscreen() ? "fullscreen" : "windowed");
@@ -2425,7 +2465,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
    }
 
    public static int getFps() {
-      return debugFps;
+      return debugFPS;
    }
 
 

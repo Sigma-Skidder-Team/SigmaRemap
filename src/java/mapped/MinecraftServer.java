@@ -15,6 +15,7 @@ import io.netty.buffer.Unpooled;
 import it.unimi.dsi.fastutil.longs.LongIterator;
 import net.minecraft.block.Block;
 import net.minecraft.client.util.Util;
+import net.minecraft.command.CommandSource;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -24,6 +25,8 @@ import net.minecraft.network.play.server.SServerDifficultyPacket;
 import net.minecraft.network.play.server.SUpdateTimePacket;
 import net.minecraft.resources.ResourcePackInfo;
 import net.minecraft.resources.ResourcePackList;
+import net.minecraft.scoreboard.ServerScoreboard;
+import net.minecraft.server.management.PlayerProfileCache;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.CryptException;
 import net.minecraft.util.CryptManager;
@@ -38,10 +41,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.util.text.filter.IChatFilter;
-import net.minecraft.world.Difficulty;
-import net.minecraft.world.ForcedChunksSaveData;
-import net.minecraft.world.GameType;
-import net.minecraft.world.World;
+import net.minecraft.world.*;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeManager;
 import net.minecraft.world.biome.provider.BiomeProvider;
@@ -51,6 +51,7 @@ import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.server.TicketType;
+import net.minecraft.world.storage.CommandStorage;
 import net.minecraft.world.storage.IServerWorldInfo;
 import org.apache.commons.lang3.Validate;
 import org.apache.logging.log4j.LogManager;
@@ -86,57 +87,58 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    private static final Logger LOGGER = LogManager.getLogger();
    public static final File USER_CACHE_FILE = new File("usercache.json");
    public static final WorldSettings field1210 = new WorldSettings(
-      "Demo World", GameType.field11102, false, Difficulty.NORMAL, false, new Class5462(), DatapackCodec.VANILLA_CODEC
+      "Demo World", GameType.field11102, false, Difficulty.NORMAL, false, new GameRules(), DatapackCodec.VANILLA_CODEC
    );
    public final SaveFormat.LevelSave field1211;
-   public final Class8716 field1212;
+   public final Class8716 playerDataManager;
    private final Snooper field1213 = new Snooper("server", this, Util.milliTime());
    private final List<Runnable> field1214 = Lists.newArrayList();
    private final TimeTracker field1215 = new TimeTracker(Util.nanoTimeSupplier, this::method1375);
-   private IProfiler field1216 = EmptyProfiler.INSTANCE;
+   private IProfiler profiler = EmptyProfiler.INSTANCE;
    private final Class9021 field1217;
    private final Class8216 field1218;
-   private final Class8783 field1219 = new Class8783();
+   private final Class8783 statusResponse = new Class8783();
    private final Random field1220 = new Random();
    private final DataFixer field1221;
    private String field1222;
    private int field1223 = -1;
-   public final DynamicRegistriesImpl field1224;
+   public final DynamicRegistriesImpl field_240767_f_;
    private final Map<RegistryKey<World>, ServerWorld> worlds = Maps.newLinkedHashMap();
    private Class6395 field1226;
-   private volatile boolean field1227 = true;
-   private boolean field1228;
-   private int field1229;
-   public final Proxy field1230;
-   private boolean field1231;
-   private boolean field1232;
-   private boolean field1233;
-   private boolean field1234;
-   private String field1235;
-   private int field1236;
-   private int field1237;
+   private volatile boolean serverRunning = true;
+   private boolean serverStopped;
+   private int tickCounter;
+   public final Proxy serverProxy;
+   private boolean onlineMode;
+   private boolean preventProxyConnections;
+   private boolean pvpEnabled;
+   private boolean allowFlight;
+   @Nullable
+   private String motd;
+   private int buildLimit;
+   private int maxPlayerIdleMinutes;
    public final long[] tickTimeArray = new long[100];
    private KeyPair serverKeyPair;
-   private String field1240;
-   private boolean field1241;
-   private String field1242 = "";
-   private String field1243 = "";
-   private volatile boolean field1244;
-   private long field1245;
-   private boolean field1246;
-   private boolean field1247;
-   private final MinecraftSessionService field1248;
-   private final GameProfileRepository field1249;
-   private final PlayerProfileCache field1250;
-   private long field1251;
-   private final Thread field1252;
+   private String serverOwner;
+   private boolean isDemo;
+   private String resourcePackUrl = "";
+   private String resourcePackHash = "";
+   private volatile boolean serverIsRunning;
+   private long timeOfLastWarning;
+   private boolean startProfiling;
+   private boolean isGamemodeForced;
+   private final MinecraftSessionService sessionService;
+   private final GameProfileRepository profileRepo;
+   private final PlayerProfileCache profileCache;
+   private long nanoTimeSinceStatusRefresh;
+   private final Thread serverThread;
    private long serverTime = Util.milliTime();
-   private long field1254;
-   private boolean field1255;
-   private boolean field1256;
+   private long runTasksUntil;
+   private boolean isRunningScheduledTasks;
+   private boolean worldIconSet;
    private final ResourcePackList resourcePacks;
-   private final Class6887 field1258 = new Class6887(this);
-   private Class8962 field1259;
+   private final ServerScoreboard field1258 = new ServerScoreboard(this);
+   private CommandStorage field1259;
    private final Class8426 field1260 = new Class8426();
    private final FunctionManager functionManager;
    private final FrameTimer field1262 = new FrameTimer();
@@ -173,22 +175,22 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       Class8216 var12
    ) {
       super("Server");
-      this.field1224 = var2;
+      this.field_240767_f_ = var2;
       this.field_240768_i_ = var4;
-      this.field1230 = var6;
+      this.serverProxy = var6;
       this.resourcePacks = var5;
       this.resourceManager = var8;
-      this.field1248 = var9;
-      this.field1249 = var10;
-      this.field1250 = var11;
+      this.sessionService = var9;
+      this.profileRepo = var10;
+      this.profileCache = var11;
       this.field1217 = new Class9021(this);
       this.field1218 = var12;
       this.field1211 = var3;
-      this.field1212 = var3.method7994();
+      this.playerDataManager = var3.method7994();
       this.field1221 = var7;
       this.functionManager = new FunctionManager(this, var8.getFunctionReloader());
       this.field_240765_ak_ = new TemplateManager(var8.getResourceManager(), var3, var7);
-      this.field1252 = var1;
+      this.serverThread = var1;
       this.backgroundExecutor = Util.getServerExecutor();
    }
 
@@ -198,7 +200,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       this.method1409().method21021(new Class1415(var4));
    }
 
-   public abstract boolean init() throws IOException;
+   public abstract boolean    init() throws IOException;
 
    public static void func_240777_a_(SaveFormat.LevelSave var0) {
       if (var0.method7995()) {
@@ -231,9 +233,9 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       DimensionType var14;
       Object var15;
       if (var13 == null) {
-         var14 = this.field1224.method32454().getOrThrow(DimensionType.OVERWORLD);
+         var14 = this.field_240767_f_.method32454().getOrThrow(DimensionType.OVERWORLD);
          var15 = DimensionGeneratorSettings.method26258(
-            this.field1224.<Biome>getRegistry(Registry.BIOME_KEY), this.field1224.<DimensionSettings>getRegistry(Registry.NOISE_SETTINGS_KEY), new Random().nextLong()
+            this.field_240767_f_.<Biome>getRegistry(Registry.BIOME_KEY), this.field_240767_f_.<DimensionSettings>getRegistry(Registry.NOISE_SETTINGS_KEY), new Random().nextLong()
          );
       } else {
          var14 = var13.method36412();
@@ -244,7 +246,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       this.worlds.put(World.OVERWORLD, var16);
       Class8250 var17 = var16.method6945();
       this.method1276(var17);
-      this.field1259 = new Class8962(var17);
+      this.field1259 = new CommandStorage(var17);
       WorldBorder var18 = var16.getWorldBorder();
       var18.method24557(var4.method20069());
       if (!var4.method20070()) {
@@ -372,13 +374,13 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       var4.method20055(false);
       var4.method20061(1000000000);
       var4.method20076(6000L);
-      var4.method20073(GameType.SPECTATOR);
+      var4.setGameType(GameType.SPECTATOR);
    }
 
    private void loadInitialChunks(IChunkStatusListener var1) {
-      ServerWorld var4 = this.method1317();
+      ServerWorld var4 = this.func_241755_D_();
       LOGGER.info("Preparing start region for dimension {}", var4.getDimensionKey().getLocation());
-      BlockPos var5 = var4.method6947();
+      BlockPos var5 = var4.getSpawnPoint();
       var1.start(new ChunkPos(var5));
       ServerChunkProvider var6 = var4.getChunkProvider();
       var6.getLightManager().func_215598_a(500);
@@ -419,7 +421,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
          String var4 = this.field1211.method7990();
 
          try {
-            this.method1346("level://" + URLEncoder.encode(var4, StandardCharsets.UTF_8.toString()) + "/resources.zip", "");
+            this.setResourcePack("level://" + URLEncoder.encode(var4, StandardCharsets.UTF_8.toString()) + "/resources.zip", "");
          } catch (UnsupportedEncodingException var6) {
             LOGGER.warn("Something went wrong url encoding {}", var4);
          }
@@ -452,11 +454,11 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
          var6 = true;
       }
 
-      ServerWorld var9 = this.method1317();
+      ServerWorld var9 = this.func_241755_D_();
       IServerWorldInfo var10 = this.field_240768_i_.method20098();
       var10.method20068(var9.getWorldBorder().method24556());
       this.field_240768_i_.method20094(this.method1414().method29605());
-      this.field1211.method8001(this.field1224, this.field_240768_i_, this.getPlayerList().method19479());
+      this.field1211.method8001(this.field_240767_f_, this.field_240768_i_, this.getPlayerList().method19479());
       return var6;
    }
 
@@ -510,23 +512,23 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       }
    }
 
-   public String method1293() {
+   public String getServerHostname() {
       return this.field1222;
    }
 
-   public void method1294(String var1) {
+   public void setHostname(String var1) {
       this.field1222 = var1;
    }
 
-   public boolean method1295() {
-      return this.field1227;
+   public boolean isServerRunning() {
+      return this.serverRunning;
    }
 
    public void initiateShutdown(boolean var1) {
-      this.field1227 = false;
+      this.serverRunning = false;
       if (var1) {
          try {
-            this.field1252.join();
+            this.serverThread.join();
          } catch (InterruptedException var5) {
             LOGGER.error("Error while shutting down", var5);
          }
@@ -537,33 +539,33 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       try {
          if (this.init()) {
             this.serverTime = Util.milliTime();
-            this.field1219.method31701(new StringTextComponent(this.field1235));
-            this.field1219.method31705(new Class9226(SharedConstants.getVersion().getName(), SharedConstants.getVersion().getProtocolVersion()));
-            this.method1304(this.field1219);
+            this.statusResponse.setServerDescription(new StringTextComponent(this.motd));
+            this.statusResponse.setVersion(new Class9226(SharedConstants.getVersion().getName(), SharedConstants.getVersion().getProtocolVersion()));
+            this.applyServerIconToResponse(this.statusResponse);
 
-            while (this.field1227) {
-               long var3 = Util.milliTime() - this.serverTime;
-               if (var3 > 2000L && this.serverTime - this.field1245 >= 15000L) {
-                  long var5 = var3 / 50L;
-                  LOGGER.warn("Can't keep up! Is the server overloaded? Running {}ms or {} ticks behind", var3, var5);
-                  this.serverTime += var5 * 50L;
-                  this.field1245 = this.serverTime;
+            while (this.serverRunning) {
+               long i = Util.milliTime() - this.serverTime;
+               if (i > 2000L && this.serverTime - this.timeOfLastWarning >= 15000L) {
+                  long j = i / 50L;
+                  LOGGER.warn("Can't keep up! Is the server overloaded? Running {}ms or {} ticks behind", i, j);
+                  this.serverTime += j * 50L;
+                  this.timeOfLastWarning = this.serverTime;
                }
 
                this.serverTime += 50L;
                LongTickDetector var51 = LongTickDetector.method36636("Server");
                this.method1428(var51);
-               this.field1216.startTick();
-               this.field1216.startSection("tick");
+               this.profiler.startTick();
+               this.profiler.startSection("tick");
                this.method1310(this::method1298);
-               this.field1216.endStartSection("nextTickWait");
-               this.field1255 = true;
-               this.field1254 = Math.max(Util.milliTime() + 50L, this.serverTime);
+               this.profiler.endStartSection("nextTickWait");
+               this.isRunningScheduledTasks = true;
+               this.runTasksUntil = Math.max(Util.milliTime() + 50L, this.serverTime);
                this.runScheduledTasks();
-               this.field1216.endSection();
-               this.field1216.endTick();
+               this.profiler.endSection();
+               this.profiler.endTick();
                this.method1429(var51);
-               this.field1244 = true;
+               this.serverIsRunning = true;
             }
          } else {
             this.method1308((CrashReport)null);
@@ -589,7 +591,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
          this.method1308(var10);
       } finally {
          try {
-            this.field1228 = true;
+            this.serverStopped = true;
             this.method1292();
          } catch (Throwable var47) {
             LOGGER.error("Exception stopping the server", var47);
@@ -600,7 +602,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    }
 
    private boolean method1298() {
-      return this.method1628() || Util.milliTime() < (!this.field1255 ? this.serverTime : this.field1254);
+      return this.method1628() || Util.milliTime() < (!this.isRunningScheduledTasks ? this.serverTime : this.runTasksUntil);
    }
 
    public void runScheduledTasks() {
@@ -609,17 +611,17 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    }
 
    public Class567 wrapTask(Runnable var1) {
-      return new Class567(this.field1229, var1);
+      return new Class567(this.tickCounter, var1);
    }
 
    public boolean canRun(Class567 var1) {
-      return var1.method1895() + 3 < this.field1229 || this.method1298();
+      return var1.method1895() + 3 < this.tickCounter || this.method1298();
    }
 
    @Override
    public boolean method1302() {
       boolean var3 = this.method1303();
-      this.field1255 = var3;
+      this.isRunningScheduledTasks = var3;
       return var3;
    }
 
@@ -644,7 +646,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       super.run(var1);
    }
 
-   private void method1304(Class8783 var1) {
+   private void applyServerIconToResponse(Class8783 var1) {
       File var4 = this.method1316("server-icon.png");
       if (!var4.exists()) {
          var4 = this.field1211.method8002();
@@ -669,8 +671,8 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    }
 
    public boolean method1305() {
-      this.field1256 = this.field1256 || this.method1306().isFile();
-      return this.field1256;
+      this.worldIconSet = this.worldIconSet || this.method1306().isFile();
+      return this.worldIconSet;
    }
 
    public File method1306() {
@@ -689,11 +691,11 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
 
    public void method1310(BooleanSupplier var1) {
       long var4 = Util.nanoTime();
-      this.field1229++;
+      this.tickCounter++;
       this.method1311(var1);
-      if (var4 - this.field1251 >= 5000000000L) {
-         this.field1251 = var4;
-         this.field1219.method31703(new Class9762(this.method1323(), this.method1322()));
+      if (var4 - this.nanoTimeSinceStatusRefresh >= 5000000000L) {
+         this.nanoTimeSinceStatusRefresh = var4;
+         this.statusResponse.method31703(new Class9762(this.method1323(), this.method1322()));
          GameProfile[] var10 = new GameProfile[Math.min(this.method1322(), 12)];
          int var11 = MathHelper.method37782(this.field1220, 0, this.method1322() - var10.length);
 
@@ -702,51 +704,51 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
          }
 
          Collections.shuffle(Arrays.<GameProfile>asList(var10));
-         this.field1219.method31702().method38379(var10);
+         this.statusResponse.method31702().method38379(var10);
       }
 
-      if (this.field1229 % 6000 == 0) {
+      if (this.tickCounter % 6000 == 0) {
          LOGGER.debug("Autosave started");
-         this.field1216.startSection("save");
+         this.profiler.startSection("save");
          this.field1226.saveAllPlayerData();
          this.method1291(true, false, false);
-         this.field1216.endSection();
+         this.profiler.endSection();
          LOGGER.debug("Autosave finished");
       }
 
-      this.field1216.startSection("snooper");
-      if (!this.field1213.isSnooperRunning() && this.field1229 > 100) {
+      this.profiler.startSection("snooper");
+      if (!this.field1213.isSnooperRunning() && this.tickCounter > 100) {
          this.field1213.start();
       }
 
-      if (this.field1229 % 6000 == 0) {
+      if (this.tickCounter % 6000 == 0) {
          this.field1213.addMemoryStatsToSnooper();
       }
 
-      this.field1216.endSection();
-      this.field1216.startSection("tallying");
-      long var6 = this.tickTimeArray[this.field1229 % 100] = Util.nanoTime() - var4;
+      this.profiler.endSection();
+      this.profiler.startSection("tallying");
+      long var6 = this.tickTimeArray[this.tickCounter % 100] = Util.nanoTime() - var4;
       this.field1264 = this.field1264 * 0.8F + (float)var6 / 1000000.0F * 0.19999999F;
       long var8 = Util.nanoTime();
       this.field1262.addFrame(var8 - var4);
-      this.field1216.endSection();
+      this.profiler.endSection();
    }
 
    public void method1311(BooleanSupplier var1) {
-      this.field1216.startSection("commandFunctions");
+      this.profiler.startSection("commandFunctions");
       this.method1397().method22823();
-      this.field1216.endStartSection("levels");
+      this.profiler.endStartSection("levels");
 
       for (ServerWorld var5 : this.method1320()) {
-         this.field1216.method22504(() -> var5 + " " + var5.getDimensionKey().getLocation());
-         if (this.field1229 % 20 == 0) {
-            this.field1216.startSection("timeSync");
+         this.profiler.method22504(() -> var5 + " " + var5.getDimensionKey().getLocation());
+         if (this.tickCounter % 20 == 0) {
+            this.profiler.startSection("timeSync");
             this.field1226
-               .method19457(new SUpdateTimePacket(var5.getGameTime(), var5.method6784(), var5.getGameRules().getBoolean(Class5462.field24232)), var5.getDimensionKey());
-            this.field1216.endSection();
+               .method19457(new SUpdateTimePacket(var5.getGameTime(), var5.method6784(), var5.getGameRules().getBoolean(GameRules.field24232)), var5.getDimensionKey());
+            this.profiler.endSection();
          }
 
-         this.field1216.startSection("tick");
+         this.profiler.startSection("tick");
 
          try {
             var5.method6894(var1);
@@ -756,25 +758,25 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
             throw new ReportedException(var7);
          }
 
-         this.field1216.endSection();
-         this.field1216.endSection();
+         this.profiler.endSection();
+         this.profiler.endSection();
       }
 
-      this.field1216.endStartSection("connection");
+      this.profiler.endStartSection("connection");
       this.getNetworkSystem().method33401();
-      this.field1216.endStartSection("players");
+      this.profiler.endStartSection("players");
       this.field1226.method19455();
       if (SharedConstants.developmentMode) {
          Class7879.field33820.method26417();
       }
 
-      this.field1216.endStartSection("server gui refresh");
+      this.profiler.endStartSection("server gui refresh");
 
       for (int var9 = 0; var9 < this.field1214.size(); var9++) {
          this.field1214.get(var9).run();
       }
 
-      this.field1216.endSection();
+      this.profiler.endSection();
    }
 
    public boolean method1312() {
@@ -790,14 +792,14 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    }
 
    public boolean isThreadAlive() {
-      return !this.field1252.isAlive();
+      return !this.serverThread.isAlive();
    }
 
    public File method1316(String var1) {
       return new File(this.method1307(), var1);
    }
 
-   public final ServerWorld method1317() {
+   public final ServerWorld func_241755_D_() {
       return this.worlds.get(World.OVERWORLD);
    }
 
@@ -874,24 +876,24 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       return this.serverKeyPair;
    }
 
-   public int method1330() {
+   public int getServerPort() {
       return this.field1223;
    }
 
-   public void method1331(int var1) {
+   public void setServerPort(int var1) {
       this.field1223 = var1;
    }
 
    public String getServerOwner() {
-      return this.field1240;
+      return this.serverOwner;
    }
 
    public void method1333(String var1) {
-      this.field1240 = var1;
+      this.serverOwner = var1;
    }
 
-   public boolean method1334() {
-      return this.field1240 != null;
+   public boolean isSinglePlayer() {
+      return this.serverOwner != null;
    }
 
    public void func_244801_P() {
@@ -937,24 +939,24 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    }
 
    public boolean method1342() {
-      return this.field1241;
+      return this.isDemo;
    }
 
    public void method1343(boolean var1) {
-      this.field1241 = var1;
+      this.isDemo = var1;
    }
 
    public String method1344() {
-      return this.field1242;
+      return this.resourcePackUrl;
    }
 
    public String method1345() {
-      return this.field1243;
+      return this.resourcePackHash;
    }
 
-   public void method1346(String var1, String var2) {
-      this.field1242 = var1;
-      this.field1243 = var2;
+   public void setResourcePack(String var1, String var2) {
+      this.resourcePackUrl = var1;
+      this.resourcePackHash = var2;
    }
 
    @Override
@@ -964,10 +966,10 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       if (this.field1226 != null) {
          var1.addClientStat("players_current", this.method1322());
          var1.addClientStat("players_max", this.method1323());
-         var1.addClientStat("players_seen", this.field1212.method31443().length);
+         var1.addClientStat("players_seen", this.playerDataManager.method31443().length);
       }
 
-      var1.addClientStat("uses_auth", this.field1231);
+      var1.addClientStat("uses_auth", this.onlineMode);
       var1.addClientStat("gui_state", !this.method1373() ? "disabled" : "enabled");
       var1.addClientStat("run_time", (Util.milliTime() - var1.getMinecraftStartTimeMillis()) / 60L * 1000L);
       var1.addClientStat("avg_tick_ms", (int)(MathHelper.method37785(this.tickTimeArray) * 1.0E-6));
@@ -979,7 +981,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
             var1.addClientStat("world[" + var4 + "][mode]", this.field_240768_i_.method20067());
             var1.addClientStat("world[" + var4 + "][difficulty]", var6.method6997());
             var1.addClientStat("world[" + var4 + "][hardcore]", this.field_240768_i_.isHardcore());
-            var1.addClientStat("world[" + var4 + "][height]", this.field1236);
+            var1.addClientStat("world[" + var4 + "][height]", this.buildLimit);
             var1.addClientStat("world[" + var4 + "][chunks_loaded]", var6.getChunkProvider().method7371());
             var4++;
          }
@@ -992,20 +994,20 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
 
    public abstract int method1349();
 
-   public boolean method1350() {
-      return this.field1231;
+   public boolean isServerInOnlineMode() {
+      return this.onlineMode;
    }
 
    public void setOnlineMode(boolean var1) {
-      this.field1231 = var1;
+      this.onlineMode = var1;
    }
 
    public boolean method1352() {
-      return this.field1232;
+      return this.preventProxyConnections;
    }
 
-   public void method1353(boolean var1) {
-      this.field1232 = var1;
+   public void setPreventProxyConnections(boolean var1) {
+      this.preventProxyConnections = var1;
    }
 
    public boolean method1354() {
@@ -1019,55 +1021,55 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    public abstract boolean method1356();
 
    public boolean method1357() {
-      return this.field1233;
+      return this.pvpEnabled;
    }
 
    public void setAllowPvp(boolean var1) {
-      this.field1233 = var1;
+      this.pvpEnabled = var1;
    }
 
    public boolean method1359() {
-      return this.field1234;
+      return this.allowFlight;
    }
 
    public void setAllowFlight(boolean var1) {
-      this.field1234 = var1;
+      this.allowFlight = var1;
    }
 
    public abstract boolean method1361();
 
    public String method1362() {
-      return this.field1235;
+      return this.motd;
    }
 
    public void setMOTD(String var1) {
-      this.field1235 = var1;
+      this.motd = var1;
    }
 
    public int method1364() {
-      return this.field1236;
+      return this.buildLimit;
    }
 
-   public void method1365(int var1) {
-      this.field1236 = var1;
+   public void setBuildLimit(int var1) {
+      this.buildLimit = var1;
    }
 
-   public boolean method1366() {
-      return this.field1228;
+   public boolean isServerStopped() {
+      return this.serverStopped;
    }
 
    public Class6395 getPlayerList() {
       return this.field1226;
    }
 
-   public void method1368(Class6395 var1) {
+   public void setPlayerList(Class6395 var1) {
       this.field1226 = var1;
    }
 
    public abstract boolean getPublic();
 
    public void method1370(GameType var1) {
-      this.field_240768_i_.method20073(var1);
+      this.field_240768_i_.setGameType(var1);
    }
 
    @Nullable
@@ -1075,8 +1077,8 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       return this.field1217;
    }
 
-   public boolean method1372() {
-      return this.field1244;
+   public boolean serverIsInRunLoop() {
+      return this.serverIsRunning;
    }
 
    public boolean method1373() {
@@ -1086,7 +1088,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    public abstract boolean method1374(GameType var1, boolean var2, int var3);
 
    public int method1375() {
-      return this.field1229;
+      return this.tickCounter;
    }
 
    public Snooper getSnooper() {
@@ -1101,12 +1103,12 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       return false;
    }
 
-   public void method1379(boolean var1) {
-      this.field1247 = var1;
+   public void setForceGamemode(boolean var1) {
+      this.isGamemodeForced = var1;
    }
 
    public boolean method1380() {
-      return this.field1247;
+      return this.isGamemodeForced;
    }
 
    public boolean method1381() {
@@ -1114,31 +1116,31 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    }
 
    public int method1382() {
-      return this.field1237;
+      return this.maxPlayerIdleMinutes;
    }
 
-   public void method1383(int var1) {
-      this.field1237 = var1;
+   public void setPlayerIdleTimeout(int var1) {
+      this.maxPlayerIdleMinutes = var1;
    }
 
-   public MinecraftSessionService method1384() {
-      return this.field1248;
+   public MinecraftSessionService getMinecraftSessionService() {
+      return this.sessionService;
    }
 
    public GameProfileRepository method1385() {
-      return this.field1249;
+      return this.profileRepo;
    }
 
-   public PlayerProfileCache method1386() {
-      return this.field1250;
+   public PlayerProfileCache getPlayerProfileCache() {
+      return this.profileCache;
    }
 
    public Class8783 method1387() {
-      return this.field1219;
+      return this.statusResponse;
    }
 
    public void method1388() {
-      this.field1251 = 0L;
+      this.nanoTimeSinceStatusRefresh = 0L;
    }
 
    public int method1389() {
@@ -1147,12 +1149,12 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
 
    @Override
    public boolean method1390() {
-      return super.method1390() && !this.method1366();
+      return super.method1390() && !this.isServerStopped();
    }
 
    @Override
    public Thread getExecutionThread() {
-      return this.field1252;
+      return this.serverThread;
    }
 
    public int getNetworkCompressionThreshold() {
@@ -1168,7 +1170,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    }
 
    public int method1395(ServerWorld var1) {
-      return var1 == null ? 10 : var1.getGameRules().method17136(Class5462.field24239);
+      return var1 == null ? 10 : var1.getGameRules().method17136(GameRules.field24239);
    }
 
    public AdvancementManager method1396() {
@@ -1249,7 +1251,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       return new DatapackCodec(var4, var5);
    }
 
-   public void method1401(Class6619 var1) {
+   public void method1401(CommandSource var1) {
       if (this.method1415()) {
          Class6395 var4 = var1.method20177().getPlayerList();
          Class4531 var5 = var4.method19468();
@@ -1270,19 +1272,10 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       return this.resourceManager.method7335();
    }
 
-   public Class6619 method1404() {
-      ServerWorld var3 = this.method1317();
-      return new Class6619(
-         this,
-         var3 != null ? Vector3d.method11329(var3.method6947()) : Vector3d.ZERO,
-         Vector2f.field37212,
-         var3,
-         4,
-         "Server",
-         new StringTextComponent("Server"),
-         this,
-         (Entity)null
-      );
+   public CommandSource getCommandSource()
+   {
+      ServerWorld serverworld = this.func_241755_D_();
+      return new CommandSource(this, serverworld == null ? Vector3d.ZERO : Vector3d.copy(serverworld.getSpawnPoint()), Vector2f.ZERO, serverworld, 4, "Server", new StringTextComponent("Server"), this, (Entity)null);
    }
 
    @Override
@@ -1303,11 +1296,11 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       return this.resourceManager.method7333();
    }
 
-   public Class6887 method1409() {
+   public ServerScoreboard method1409() {
       return this.field1258;
    }
 
-   public Class8962 method1410() {
+   public CommandStorage method1410() {
       if (this.field1259 != null) {
          return this.field1259;
       } else {
@@ -1323,8 +1316,8 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       return this.resourceManager.method7331();
    }
 
-   public Class5462 method1413() {
-      return this.method1317().getGameRules();
+   public GameRules getGameRules() {
+      return this.func_241755_D_().getGameRules();
    }
 
    public Class8426 method1414() {
@@ -1335,7 +1328,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       return this.field1263;
    }
 
-   public void method1416(boolean var1) {
+   public void setWhitelistEnabled(boolean var1) {
       this.field1263 = var1;
    }
 
@@ -1350,7 +1343,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
          Class6790 var4 = this.getPlayerList().method19470().method14437(var1);
          if (var4 == null) {
             if (!this.method1421(var1)) {
-               if (!this.method1334()) {
+               if (!this.isSinglePlayer()) {
                   return this.method1288();
                } else {
                   return !this.getPlayerList().method19491() ? 0 : 4;
@@ -1369,7 +1362,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    }
 
    public IProfiler method1420() {
-      return this.field1216;
+      return this.profiler;
    }
 
    public abstract boolean method1421(GameProfile var1);
@@ -1412,8 +1405,8 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    private void method1425(Path var1) throws IOException {
       try (BufferedWriter var4 = Files.newBufferedWriter(var1)) {
          List<String> var6 = Lists.newArrayList();
-         Class5462 var7 = this.method1413();
-         Class5462.method17131(new Class7568(this, var6, var7));
+         GameRules var7 = this.getGameRules();
+         GameRules.method17131(new Class7568(this, var6, var7));
 
          for (String var9 : var6) {
             var4.write(var9);
@@ -1447,12 +1440,12 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    }
 
    private void method1428(LongTickDetector var1) {
-      if (this.field1246) {
-         this.field1246 = false;
+      if (this.startProfiling) {
+         this.startProfiling = false;
          this.field1215.func_233507_c_();
       }
 
-      this.field1216 = LongTickDetector.func_233523_a_(this.field1215.func_233508_d_(), var1);
+      this.profiler = LongTickDetector.func_233523_a_(this.field1215.func_233508_d_(), var1);
    }
 
    private void method1429(LongTickDetector var1) {
@@ -1460,7 +1453,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
          var1.func_233525_b_();
       }
 
-      this.field1216 = this.field1215.func_233508_d_();
+      this.profiler = this.field1215.func_233508_d_();
    }
 
    public boolean method1430() {
@@ -1468,7 +1461,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    }
 
    public void method1431() {
-      this.field1246 = true;
+      this.startProfiling = true;
    }
 
    public IProfileResult method1432() {
@@ -1494,7 +1487,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    }
 
    public DynamicRegistries method1437() {
-      return this.field1224;
+      return this.field_240767_f_;
    }
 
    @Nullable

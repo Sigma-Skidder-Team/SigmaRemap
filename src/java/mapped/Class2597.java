@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 
 import java.util.EnumSet;
@@ -61,7 +62,7 @@ public class Class2597 extends Class2595 {
          if (!field16822.test(this.field16824.getBlockState(var3))) {
             BlockPos var4 = var3.down();
             if (this.field16824.getBlockState(var4).isIn(Blocks.GRASS_BLOCK)) {
-               if (this.field16824.getGameRules().getBoolean(Class5462.field24224)) {
+               if (this.field16824.getGameRules().getBoolean(GameRules.field24224)) {
                   this.field16824.playEvent(2001, var4, Block.getStateId(Blocks.GRASS_BLOCK.getDefaultState()));
                   this.field16824.setBlockState(var4, Blocks.DIRT.getDefaultState(), 2);
                }
@@ -69,7 +70,7 @@ public class Class2597 extends Class2595 {
                this.field16823.method4235();
             }
          } else {
-            if (this.field16824.getGameRules().getBoolean(Class5462.field24224)) {
+            if (this.field16824.getGameRules().getBoolean(GameRules.field24224)) {
                this.field16824.method7179(var3, false);
             }
 

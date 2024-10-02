@@ -10,6 +10,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.function.Predicate;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -22,29 +23,29 @@ public class Class8284 {
       var0 -> new TranslationTextComponent("clear.failed.multiple", var0)
    );
 
-   public static void method28947(CommandDispatcher<Class6619> var0) {
+   public static void method28947(CommandDispatcher<CommandSource> var0) {
       var0.register(
          (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("clear").requires(var0x -> var0x.method20129(2)))
                .executes(
                   var0x -> method28948(
-                        (Class6619)var0x.getSource(), Collections.<ServerPlayerEntity>singleton(((Class6619)var0x.getSource()).method20175()), var0xx -> true, -1
+                        (CommandSource)var0x.getSource(), Collections.<ServerPlayerEntity>singleton(((CommandSource)var0x.getSource()).method20175()), var0xx -> true, -1
                      )
                ))
             .then(
                ((RequiredArgumentBuilder)Class6099.method18840("targets", Class8700.method31353())
-                     .executes(var0x -> method28948((Class6619)var0x.getSource(), Class8700.method31354(var0x, "targets"), var0xx -> true, -1)))
+                     .executes(var0x -> method28948((CommandSource)var0x.getSource(), Class8700.method31354(var0x, "targets"), var0xx -> true, -1)))
                   .then(
                      ((RequiredArgumentBuilder)Class6099.method18840("item", Class7584.method24822())
                            .executes(
                               var0x -> method28948(
-                                    (Class6619)var0x.getSource(), Class8700.method31354(var0x, "targets"), Class7584.method24823(var0x, "item"), -1
+                                    (CommandSource)var0x.getSource(), Class8700.method31354(var0x, "targets"), Class7584.method24823(var0x, "item"), -1
                                  )
                            ))
                         .then(
                            Class6099.method18840("maxCount", IntegerArgumentType.integer(0))
                               .executes(
                                  var0x -> method28948(
-                                       (Class6619)var0x.getSource(),
+                                       (CommandSource)var0x.getSource(),
                                        Class8700.method31354(var0x, "targets"),
                                        Class7584.method24823(var0x, "item"),
                                        IntegerArgumentType.getInteger(var0x, "maxCount")
@@ -56,7 +57,7 @@ public class Class8284 {
       );
    }
 
-   private static int method28948(Class6619 var0, Collection<ServerPlayerEntity> var1, Predicate<ItemStack> var2, int var3) throws CommandSyntaxException {
+   private static int method28948(CommandSource var0, Collection<ServerPlayerEntity> var1, Predicate<ItemStack> var2, int var3) throws CommandSyntaxException {
       int var6 = 0;
 
       for (ServerPlayerEntity var8 : var1) {

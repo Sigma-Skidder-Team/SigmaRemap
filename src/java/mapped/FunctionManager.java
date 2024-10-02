@@ -2,7 +2,9 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import com.mojang.brigadier.CommandDispatcher;
+import net.minecraft.command.CommandSource;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.GameRules;
 
 import java.util.ArrayDeque;
 import java.util.Collection;
@@ -27,10 +29,10 @@ public class FunctionManager {
    }
 
    public int method22821() {
-      return this.field31181.method1413().method17136(Class5462.field24244);
+      return this.field31181.getGameRules().method17136(GameRules.field24244);
    }
 
-   public CommandDispatcher<Class6619> method22822() {
+   public CommandDispatcher<CommandSource> method22822() {
       return this.field31181.getCommandManager().method18842();
    }
 
@@ -53,7 +55,7 @@ public class FunctionManager {
       this.field31181.method1420().endSection();
    }
 
-   public int method22825(Class7744 var1, Class6619 var2) {
+   public int method22825(Class7744 var1, CommandSource var2) {
       int var5 = this.method22821();
       if (this.field31182) {
          if (this.field31183.size() + this.field31184.size() < var5) {
@@ -112,8 +114,8 @@ public class FunctionManager {
       this.field31186 = true;
    }
 
-   public Class6619 method22828() {
-      return this.field31181.method1404().method20163(2).method20162();
+   public CommandSource method22828() {
+      return this.field31181.getCommandSource().method20163(2).method20162();
    }
 
    public Optional<Class7744> method22829(ResourceLocation var1) {

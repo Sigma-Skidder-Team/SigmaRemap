@@ -109,7 +109,7 @@ public class ChunkSerializer {
          }
 
          if (!var15 && var26.getStatus().method34306(ChunkStatus.LIGHT)) {
-            for (BlockPos var29 : BlockPos.method8364(var3.getX(), 0, var3.getZ(), var3.method24358(), 255, var3.method24359())) {
+            for (BlockPos var29 : BlockPos.method8364(var3.getX(), 0, var3.getZ(), var3.getXEnd(), 255, var3.getZEnd())) {
                if (((IChunk)var43).getBlockState(var29).getLightValue() != 0) {
                   var26.method7105(var29);
                }
@@ -426,7 +426,7 @@ public class ChunkSerializer {
       for (String var7 : var5.method97()) {
          var4.put(Structure.field_236365_a_.get(var7.toLowerCase(Locale.ROOT)), new LongOpenHashSet(Arrays.stream(var5.getLongArray(var7)).filter(var2 -> {
             ChunkPos var6 = new ChunkPos(var2);
-            if (var6.method24365(var0) <= 8) {
+            if (var6.getChessboardDistance(var0) <= 8) {
                return true;
             } else {
                field45421.warn("Found invalid structure reference [ {} @ {} ] for chunk {}.", var7, var6, var0);

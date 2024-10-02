@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.Entity;
 
 import java.util.ArrayList;
@@ -18,7 +19,7 @@ public class Class8986 implements Class8985 {
    }
 
    @Override
-   public Collection<String> method33188(Class6619 var1, Supplier<Collection<String>> var2) throws CommandSyntaxException {
+   public Collection<String> method33188(CommandSource var1, Supplier<Collection<String>> var2) throws CommandSyntaxException {
       List<? extends Entity> var5 = this.field40997.method29617(var1);
       if (var5.isEmpty()) {
          throw Class8700.field39263.create();

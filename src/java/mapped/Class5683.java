@@ -37,8 +37,8 @@ public class Class5683 extends Class5651<Class1057, Class2887<Class1057>> {
    public boolean method17854(Class1057 var1, Class7647 var2, double var3, double var5, double var7) {
       if (!super.method17854(var1, var2, var3, var5, var7)) {
          if (var1.method4854() > 0 && var1.method4856()) {
-            Vector3d var11 = Vector3d.method11329(var1.method4849());
-            Vector3d var12 = Vector3d.method11329(var1.method4855());
+            Vector3d var11 = Vector3d.copy(var1.method4849());
+            Vector3d var12 = Vector3d.copy(var1.method4855());
             if (var2.method25122(new AxisAlignedBB(var12.x, var12.y, var12.z, var11.x, var11.y, var11.z))) {
                return true;
             }

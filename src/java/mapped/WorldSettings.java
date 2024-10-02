@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.serialization.Dynamic;
 import net.minecraft.util.datafix.codec.DatapackCodec;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.GameType;
 
 public final class WorldSettings {
@@ -11,10 +12,10 @@ public final class WorldSettings {
    private final boolean field40270;
    private final Difficulty field40271;
    private final boolean field40272;
-   private final Class5462 field40273;
+   private final GameRules field40273;
    private final DatapackCodec field40274;
 
-   public WorldSettings(String var1, GameType var2, boolean var3, Difficulty var4, boolean var5, Class5462 var6, DatapackCodec var7) {
+   public WorldSettings(String var1, GameType var2, boolean var3, Difficulty var4, boolean var5, GameRules var6, DatapackCodec var7) {
       this.field40268 = var1;
       this.field40269 = var2;
       this.field40270 = var3;
@@ -32,7 +33,7 @@ public final class WorldSettings {
          var0.get("hardcore").asBoolean(false),
          var0.get("Difficulty").asNumber().map(var0x -> Difficulty.byId(var0x.byteValue())).result().orElse(Difficulty.NORMAL),
          var0.get("allowCommands").asBoolean(var4 == GameType.field11103),
-         new Class5462(var0.get("GameRules")),
+         new GameRules(var0.get("GameRules")),
          var1
       );
    }
@@ -57,7 +58,7 @@ public final class WorldSettings {
       return this.field40272;
    }
 
-   public Class5462 method32431() {
+   public GameRules method32431() {
       return this.field40273;
    }
 

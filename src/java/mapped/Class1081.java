@@ -12,6 +12,7 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.util.*;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -208,7 +209,7 @@ public class Class1081 extends Class1009 implements Class1080 {
 
    private void method5022() {
       if (!this.world.isRemote) {
-         Class2141 var3 = !this.world.getGameRules().getBoolean(Class5462.field24224) ? Class2141.field14014 : Class2141.field14016;
+         Class2141 var3 = !this.world.getGameRules().getBoolean(GameRules.field24224) ? Class2141.field14014 : Class2141.field14016;
          float var4 = !this.method5016() ? 1.0F : 2.0F;
          this.dead = true;
          this.world.method6755(this, this.getPosX(), this.getPosY(), this.getPosZ(), (float)this.field5944 * var4, var3);

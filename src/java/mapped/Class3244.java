@@ -26,6 +26,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
@@ -207,7 +208,7 @@ public class Class3244 extends Class3241 implements IWaterLoggable {
    public void method11595(World var1, BlockState var2, BlockRayTraceResult var3, ProjectileEntity var4) {
       if (!var1.isRemote && var4.isBurning()) {
          Entity var7 = var4.method3460();
-         boolean var8 = var7 == null || var7 instanceof PlayerEntity || var1.getGameRules().getBoolean(Class5462.field24224);
+         boolean var8 = var7 == null || var7 instanceof PlayerEntity || var1.getGameRules().getBoolean(GameRules.field24224);
          if (var8 && !var2.<Boolean>get(field18698) && !var2.<Boolean>get(field18700)) {
             BlockPos var9 = var3.getPos();
             var1.setBlockState(var9, var2.with(BlockStateProperties.field39699, Boolean.valueOf(true)), 11);

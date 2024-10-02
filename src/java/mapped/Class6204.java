@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Lists;
 import com.mojang.authlib.GameProfile;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.player.ServerPlayerEntity;
 
 import java.util.Collection;
@@ -17,7 +18,7 @@ public class Class6204 implements Class6205 {
    }
 
    @Override
-   public Collection<GameProfile> method19110(Class6619 var1) throws CommandSyntaxException {
+   public Collection<GameProfile> method19110(CommandSource var1) throws CommandSyntaxException {
       List<ServerPlayerEntity> var4 = this.field27687.method29620(var1);
       if (var4.isEmpty()) {
          throw Class8700.field39264.create();

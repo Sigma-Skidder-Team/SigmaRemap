@@ -18,6 +18,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -140,7 +141,7 @@ public class CommandBlockBlock extends Class3241 {
 
          if (!var1.isRemote) {
             if (var5.method32145("BlockEntityTag") == null) {
-               var10.method3570(var1.getGameRules().getBoolean(Class5462.field24236));
+               var10.method3570(var1.getGameRules().getBoolean(GameRules.field24236));
                var9.method4013(this == Blocks.field36888);
             }
 
@@ -179,8 +180,8 @@ public class CommandBlockBlock extends Class3241 {
 
    private static void method11928(World var0, BlockPos var1, Direction var2) {
       BlockPos.Mutable var5 = var1.method8354();
-      Class5462 var6 = var0.getGameRules();
-      int var7 = var6.method17136(Class5462.field24244);
+      GameRules var6 = var0.getGameRules();
+      int var7 = var6.method17136(GameRules.field24244);
 
       while (var7-- > 0) {
          var5.method8379(var2);
@@ -219,7 +220,7 @@ public class CommandBlockBlock extends Class3241 {
       }
 
       if (var7 <= 0) {
-         int var13 = Math.max(var6.method17136(Class5462.field24244), 0);
+         int var13 = Math.max(var6.method17136(GameRules.field24244), 0);
          field18892.warn("Command Block chain tried to execute more than {} steps!", var13);
       }
    }

@@ -56,7 +56,7 @@ public class Item implements IItemProvider {
 
    @Deprecated
    public static Item method11703(Block var0) {
-      return field18732.getOrDefault(var0, Items.field37222);
+      return field18732.getOrDefault(var0, Items.AIR);
    }
 
    public Item(Properties var1) {

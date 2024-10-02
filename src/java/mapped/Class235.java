@@ -7,6 +7,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.tileentity.SkullTileEntity;
 import net.minecraft.util.Direction;
 import org.apache.commons.lang3.StringUtils;
 

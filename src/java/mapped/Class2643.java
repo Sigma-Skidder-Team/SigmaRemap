@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.GameRules;
 
 import java.util.function.Predicate;
 
@@ -29,7 +30,7 @@ public class Class2643 extends Class2642 {
    @Override
    public boolean method10803() {
       if (super.method10803()) {
-         return !this.field16974.world.getGameRules().getBoolean(Class5462.field24224)
+         return !this.field16974.world.getGameRules().getBoolean(GameRules.field24224)
             ? false
             : this.method10853(this.field16974.world.method6997()) && !this.method10850();
       } else {

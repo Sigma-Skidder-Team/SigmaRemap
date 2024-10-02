@@ -12,6 +12,7 @@ import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -28,7 +29,7 @@ public class Class9195 {
       (var0, var1) -> new TranslationTextComponent("commands.replaceitem.entity.failed", var0, var1)
    );
 
-   public static void method34454(CommandDispatcher<Class6619> var0) {
+   public static void method34454(CommandDispatcher<CommandSource> var0) {
       var0.register(
          (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("replaceitem").requires(var0x -> var0x.method20129(2)))
                .then(
@@ -41,7 +42,7 @@ public class Class9195 {
                                     ((RequiredArgumentBuilder)Class6099.method18840("item", Class8722.method31481())
                                           .executes(
                                              var0x -> method34455(
-                                                   (Class6619)var0x.getSource(),
+                                                   (CommandSource)var0x.getSource(),
                                                    Class6849.method20827(var0x, "pos"),
                                                    Class4914.method15196(var0x, "slot"),
                                                    Class8722.method31482(var0x, "item").method503(1, false)
@@ -51,7 +52,7 @@ public class Class9195 {
                                           Class6099.method18840("count", IntegerArgumentType.integer(1, 64))
                                              .executes(
                                                 var0x -> method34455(
-                                                      (Class6619)var0x.getSource(),
+                                                      (CommandSource)var0x.getSource(),
                                                       Class6849.method20827(var0x, "pos"),
                                                       Class4914.method15196(var0x, "slot"),
                                                       Class8722.method31482(var0x, "item").method503(IntegerArgumentType.getInteger(var0x, "count"), true)
@@ -72,7 +73,7 @@ public class Class9195 {
                                  ((RequiredArgumentBuilder)Class6099.method18840("item", Class8722.method31481())
                                        .executes(
                                           var0x -> method34456(
-                                                (Class6619)var0x.getSource(),
+                                                (CommandSource)var0x.getSource(),
                                                 Class8700.method31348(var0x, "targets"),
                                                 Class4914.method15196(var0x, "slot"),
                                                 Class8722.method31482(var0x, "item").method503(1, false)
@@ -82,7 +83,7 @@ public class Class9195 {
                                        Class6099.method18840("count", IntegerArgumentType.integer(1, 64))
                                           .executes(
                                              var0x -> method34456(
-                                                   (Class6619)var0x.getSource(),
+                                                   (CommandSource)var0x.getSource(),
                                                    Class8700.method31348(var0x, "targets"),
                                                    Class4914.method15196(var0x, "slot"),
                                                    Class8722.method31482(var0x, "item").method503(IntegerArgumentType.getInteger(var0x, "count"), true)
@@ -96,7 +97,7 @@ public class Class9195 {
       );
    }
 
-   private static int method34455(Class6619 var0, BlockPos var1, int var2, ItemStack var3) throws CommandSyntaxException {
+   private static int method34455(CommandSource var0, BlockPos var1, int var2, ItemStack var3) throws CommandSyntaxException {
       TileEntity var6 = var0.method20172().getTileEntity(var1);
       if (var6 instanceof IInventory) {
          IInventory var7 = (IInventory)var6;
@@ -115,7 +116,7 @@ public class Class9195 {
       }
    }
 
-   private static int method34456(Class6619 var0, Collection<? extends Entity> var1, int var2, ItemStack var3) throws CommandSyntaxException {
+   private static int method34456(CommandSource var0, Collection<? extends Entity> var1, int var2, ItemStack var3) throws CommandSyntaxException {
       ArrayList var6 = Lists.newArrayListWithCapacity(var1.size());
 
       for (Entity var8 : var1) {

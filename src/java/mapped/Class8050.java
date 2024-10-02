@@ -11,6 +11,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.concurrent.CompletableFuture;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
@@ -24,7 +25,7 @@ public class Class8050 implements ArgumentType<IParticleData> {
       return new Class8050();
    }
 
-   public static IParticleData method27649(CommandContext<Class6619> var0, String var1) {
+   public static IParticleData method27649(CommandContext<CommandSource> var0, String var1) {
       return (IParticleData)var0.getArgument(var1, IParticleData.class);
    }
 

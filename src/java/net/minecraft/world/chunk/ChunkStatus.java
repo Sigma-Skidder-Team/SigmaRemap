@@ -191,7 +191,7 @@ public class ChunkStatus {
       }
    }
 
-   public static int method34295() {
+   public static int maxDistance() {
       return field42146.size();
    }
 

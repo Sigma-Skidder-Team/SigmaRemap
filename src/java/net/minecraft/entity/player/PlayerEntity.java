@@ -47,6 +47,7 @@ import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.event.ClickEvent;
 import net.minecraft.util.text.event.ClickEvent$Action;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.GameType;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -445,7 +446,7 @@ public abstract class PlayerEntity extends LivingEntity {
          this.field4907--;
       }
 
-      if (this.world.method6997() == Difficulty.PEACEFUL && this.world.getGameRules().getBoolean(Class5462.field24231)) {
+      if (this.world.method6997() == Difficulty.PEACEFUL && this.world.getGameRules().getBoolean(GameRules.field24231)) {
          if (this.getHealth() < this.method3075() && this.ticksExisted % 20 == 0) {
             this.heal(1.0F);
          }
@@ -567,7 +568,7 @@ public abstract class PlayerEntity extends LivingEntity {
    @Override
    public void dropInventory() {
       super.dropInventory();
-      if (!this.world.getGameRules().getBoolean(Class5462.field24225)) {
+      if (!this.world.getGameRules().getBoolean(GameRules.field24225)) {
          this.method2878();
          this.inventory.method4054();
       }
@@ -770,12 +771,12 @@ public abstract class PlayerEntity extends LivingEntity {
       if (!super.isInvulnerableTo(var1)) {
          if (var1 != DamageSource.field38999) {
             if (var1 != DamageSource.field39002) {
-               return !var1.method31141() ? false : !this.world.getGameRules().getBoolean(Class5462.field24251);
+               return !var1.method31141() ? false : !this.world.getGameRules().getBoolean(GameRules.field24251);
             } else {
-               return !this.world.getGameRules().getBoolean(Class5462.field24250);
+               return !this.world.getGameRules().getBoolean(GameRules.field24250);
             }
          } else {
-            return !this.world.getGameRules().getBoolean(Class5462.field24249);
+            return !this.world.getGameRules().getBoolean(GameRules.field24249);
          }
       } else {
          return true;
@@ -1662,7 +1663,7 @@ public abstract class PlayerEntity extends LivingEntity {
 
    @Override
    public int getExperiencePoints(PlayerEntity var1) {
-      if (!this.world.getGameRules().getBoolean(Class5462.field24225) && !this.isSpectator()) {
+      if (!this.world.getGameRules().getBoolean(GameRules.field24225) && !this.isSpectator()) {
          int var4 = this.field4920 * 7;
          return var4 <= 100 ? var4 : 100;
       } else {

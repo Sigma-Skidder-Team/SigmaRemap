@@ -1,12 +1,14 @@
 package mapped;
 
+import net.minecraft.server.dedicated.ServerHangWatchdog;
+
 import java.util.TimerTask;
 
 public class Class1616 extends TimerTask {
    private static String[] field8756;
-   public final Class1470 field8757;
+   public final ServerHangWatchdog field8757;
 
-   public Class1616(Class1470 var1) {
+   public Class1616(ServerHangWatchdog var1) {
       this.field8757 = var1;
    }
 

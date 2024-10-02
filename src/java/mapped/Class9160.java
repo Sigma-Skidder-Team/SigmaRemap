@@ -6,19 +6,20 @@ import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import java.util.Collection;
 import java.util.Collections;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class9160 {
-   public static void method34194(CommandDispatcher<Class6619> var0) {
+   public static void method34194(CommandDispatcher<CommandSource> var0) {
       var0.register(
          (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("spawnpoint").requires(var0x -> var0x.method20129(2)))
                .executes(
                   var0x -> method34195(
-                        (Class6619)var0x.getSource(),
-                        Collections.<ServerPlayerEntity>singleton(((Class6619)var0x.getSource()).method20175()),
-                        new BlockPos(((Class6619)var0x.getSource()).method20171()),
+                        (CommandSource)var0x.getSource(),
+                        Collections.<ServerPlayerEntity>singleton(((CommandSource)var0x.getSource()).method20175()),
+                        new BlockPos(((CommandSource)var0x.getSource()).method20171()),
                         0.0F
                      )
                ))
@@ -26,9 +27,9 @@ public class Class9160 {
                ((RequiredArgumentBuilder)Class6099.method18840("targets", Class8700.method31353())
                      .executes(
                         var0x -> method34195(
-                              (Class6619)var0x.getSource(),
+                              (CommandSource)var0x.getSource(),
                               Class8700.method31354(var0x, "targets"),
-                              new BlockPos(((Class6619)var0x.getSource()).method20171()),
+                              new BlockPos(((CommandSource)var0x.getSource()).method20171()),
                               0.0F
                            )
                      ))
@@ -36,14 +37,14 @@ public class Class9160 {
                      ((RequiredArgumentBuilder)Class6099.method18840("pos", Class6849.method20826())
                            .executes(
                               var0x -> method34195(
-                                    (Class6619)var0x.getSource(), Class8700.method31354(var0x, "targets"), Class6849.method20828(var0x, "pos"), 0.0F
+                                    (CommandSource)var0x.getSource(), Class8700.method31354(var0x, "targets"), Class6849.method20828(var0x, "pos"), 0.0F
                                  )
                            ))
                         .then(
                            Class6099.method18840("angle", Class9076.method33816())
                               .executes(
                                  var0x -> method34195(
-                                       (Class6619)var0x.getSource(),
+                                       (CommandSource)var0x.getSource(),
                                        Class8700.method31354(var0x, "targets"),
                                        Class6849.method20828(var0x, "pos"),
                                        Class9076.method33817(var0x, "angle")
@@ -55,7 +56,7 @@ public class Class9160 {
       );
    }
 
-   private static int method34195(Class6619 var0, Collection<ServerPlayerEntity> var1, BlockPos var2, float var3) {
+   private static int method34195(CommandSource var0, Collection<ServerPlayerEntity> var1, BlockPos var2, float var3) {
       RegistryKey var6 = var0.method20172().getDimensionKey();
 
       for (ServerPlayerEntity var8 : var1) {

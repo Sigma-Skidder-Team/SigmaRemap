@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.stats.Stats;
+import net.minecraft.world.GameRules;
 
 import java.util.Random;
 
@@ -36,7 +37,7 @@ public class Class2787 extends Class2785 {
       this.field17407.method4508();
       this.field17410.method4508();
       Random var4 = this.field17407.getRNG();
-      if (this.field17409.getGameRules().getBoolean(Class5462.field24227)) {
+      if (this.field17409.getGameRules().getBoolean(GameRules.field24227)) {
          this.field17409
             .addEntity(
                new ExperienceOrbEntity(this.field17409, this.field17407.getPosX(), this.field17407.getPosY(), this.field17407.getPosZ(), var4.nextInt(7) + 1)

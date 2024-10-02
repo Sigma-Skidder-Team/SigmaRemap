@@ -54,7 +54,7 @@ public class Class9407 {
 
    private void method35808(Block var1) {
       Item var4 = var1.method11581();
-      if (var4 != Items.field37222) {
+      if (var4 != Items.AIR) {
          Class9756.field45623.method34808(Class9060.method33724(var4), Class7287.method23039(var1), this.field43643);
       }
    }

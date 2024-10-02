@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.command.CommandSource;
+
 import java.util.ArrayDeque;
 
 public class Class6798 implements Class6797 {
@@ -10,7 +12,7 @@ public class Class6798 implements Class6797 {
    }
 
    @Override
-   public void method20710(FunctionManager var1, Class6619 var2, ArrayDeque<Class7159> var3, int var4) {
+   public void method20710(FunctionManager var1, CommandSource var2, ArrayDeque<Class7159> var3, int var4) {
       this.field29605.method34115(var1).ifPresent(var4x -> {
          Class6797[] var7 = var4x.method25653();
          int var8 = var4 - var3.size();

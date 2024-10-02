@@ -26,10 +26,7 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
-import net.minecraft.world.IBlockReader;
-import net.minecraft.world.IWorld;
-import net.minecraft.world.IWorldReader;
-import net.minecraft.world.World;
+import net.minecraft.world.*;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -253,7 +250,7 @@ public class Block extends AbstractBlock implements IItemProvider {
    }
 
    public static void method11557(World var0, BlockPos var1, ItemStack var2) {
-      if (!var0.isRemote && !var2.isEmpty() && var0.getGameRules().getBoolean(Class5462.field24228)) {
+      if (!var0.isRemote && !var2.isEmpty() && var0.getGameRules().getBoolean(GameRules.field24228)) {
          float var5 = 0.5F;
          double var6 = (double)(var0.rand.nextFloat() * 0.5F) + 0.25;
          double var8 = (double)(var0.rand.nextFloat() * 0.5F) + 0.25;
@@ -265,7 +262,7 @@ public class Block extends AbstractBlock implements IItemProvider {
    }
 
    public void method11558(ServerWorld var1, BlockPos var2, int var3) {
-      if (var1.getGameRules().getBoolean(Class5462.field24228)) {
+      if (var1.getGameRules().getBoolean(GameRules.field24228)) {
          while (var3 > 0) {
             int var6 = ExperienceOrbEntity.getXPSplit(var3);
             var3 -= var6;

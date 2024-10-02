@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.server.ServerWorld;
 
 import java.util.function.BiPredicate;
@@ -42,7 +43,7 @@ public class Class3705 extends Class3676<LivingEntity> {
       }
 
       var2.getBrain().method21407(Class8830.field39856, var7.getPosition(), (long)this.field19767);
-      if (var7.getType() != EntityType.PLAYER || var1.getGameRules().getBoolean(Class5462.field24254)) {
+      if (var7.getType() != EntityType.PLAYER || var1.getGameRules().getBoolean(GameRules.field24254)) {
          var2.getBrain().method21405(Class8830.field39826);
          var2.getBrain().method21405(Class8830.field39849);
       }

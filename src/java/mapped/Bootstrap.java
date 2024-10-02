@@ -12,6 +12,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.LanguageMap;
+import net.minecraft.world.GameRules;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -54,7 +55,7 @@ public class Bootstrap {
 
    private static void method25568(Set<String> var0) {
       LanguageMap var3 = LanguageMap.getInstance();
-      Class5462.method17131(new Class7569(var3, var0));
+      GameRules.method17131(new Class7569(var3, var0));
    }
 
    public static Set<String> method25569() {

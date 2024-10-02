@@ -4,6 +4,7 @@ import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.Entity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
@@ -182,11 +183,11 @@ public class CommandBlockTileEntity extends TileEntity {
       }
 
       @Override
-      public Class6619 method3574() {
-         return new Class6619(
+      public CommandSource method3574() {
+         return new CommandSource(
             this,
             Vector3d.method11328(this.field5203.pos),
-            Vector2f.field37212,
+            Vector2f.ZERO,
             this.method3567(),
             2,
             this.method3565().getString(),

@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -23,7 +24,7 @@ public interface Class923 {
    }
 
    default boolean method3639(World var1, ServerPlayerEntity var2, IRecipe<?> var3) {
-      if (!var3.method14965() && var1.getGameRules().getBoolean(Class5462.field24243) && !var2.method2810().method21360(var3)) {
+      if (!var3.method14965() && var1.getGameRules().getBoolean(GameRules.field24243) && !var2.method2810().method21360(var3)) {
          return false;
       } else {
          this.method3636(var3);

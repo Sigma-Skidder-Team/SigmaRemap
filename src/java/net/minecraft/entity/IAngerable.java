@@ -1,7 +1,7 @@
 package net.minecraft.entity;
 
 import mapped.MobEntity;
-import mapped.Class5462;
+import net.minecraft.world.GameRules;
 import mapped.Class8088;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
@@ -81,7 +81,7 @@ public interface IAngerable {
    }
 
    default boolean method4368(World var1) {
-      return var1.getGameRules().getBoolean(Class5462.field24255) && this.method4369() && this.method4350() == null;
+      return var1.getGameRules().getBoolean(GameRules.field24255) && this.method4369() && this.method4350() == null;
    }
 
    default boolean method4369() {
@@ -89,7 +89,7 @@ public interface IAngerable {
    }
 
    default void method4370(PlayerEntity var1) {
-      if (var1.world.getGameRules().getBoolean(Class5462.field24254) && var1.getUniqueID().equals(this.method4350())) {
+      if (var1.world.getGameRules().getBoolean(GameRules.field24254) && var1.getUniqueID().equals(this.method4350())) {
          this.method4372();
       }
    }

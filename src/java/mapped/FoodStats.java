@@ -5,6 +5,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.GameRules;
 
 public class FoodStats {
    private int field45071 = 20;
@@ -43,7 +44,7 @@ public class FoodStats {
          }
       }
 
-      boolean var5 = var1.world.getGameRules().getBoolean(Class5462.field24231);
+      boolean var5 = var1.world.getGameRules().getBoolean(GameRules.field24231);
       if (var5 && this.field45072 > 0.0F && var1.method2934() && this.field45071 >= 20) {
          this.field45074++;
          if (this.field45074 >= 10) {

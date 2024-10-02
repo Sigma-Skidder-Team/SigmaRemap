@@ -13,6 +13,7 @@ import com.mojang.brigadier.suggestion.SuggestionProvider;
 import java.util.Collection;
 import java.util.Collections;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -53,11 +54,11 @@ public class Class7088 {
    private static final SimpleCommandExceptionType field30506 = new SimpleCommandExceptionType(
       new TranslationTextComponent("commands.bossbar.set.visibility.unchanged.visible")
    );
-   public static final SuggestionProvider<Class6619> field30507 = (var0, var1) -> Class6618.method20141(
-         ((Class6619)var0.getSource()).method20177().method1414().method29603(), var1
+   public static final SuggestionProvider<CommandSource> field30507 = (var0, var1) -> Class6618.method20141(
+         ((CommandSource)var0.getSource()).method20177().method1414().method29603(), var1
       );
 
-   public static void method22016(CommandDispatcher<Class6619> var0) {
+   public static void method22016(CommandDispatcher<CommandSource> var0) {
       var0.register(
          (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839(
                               "bossbar"
@@ -71,7 +72,7 @@ public class Class7088 {
                                        Class6099.method18840("name", Class8010.method27395())
                                           .executes(
                                              var0x -> method22029(
-                                                   (Class6619)var0x.getSource(), Class8303.method29036(var0x, "id"), Class8010.method27394(var0x, "name")
+                                                   (CommandSource)var0x.getSource(), Class8303.method29036(var0x, "id"), Class8010.method27394(var0x, "name")
                                                 )
                                           )
                                     )
@@ -82,10 +83,10 @@ public class Class7088 {
                            .then(
                               Class6099.method18840("id", Class8303.method29031())
                                  .suggests(field30507)
-                                 .executes(var0x -> method22030((Class6619)var0x.getSource(), method22031(var0x)))
+                                 .executes(var0x -> method22030((CommandSource)var0x.getSource(), method22031(var0x)))
                            )
                      ))
-                  .then(Class6099.method18839("list").executes(var0x -> method22028((Class6619)var0x.getSource()))))
+                  .then(Class6099.method18839("list").executes(var0x -> method22028((CommandSource)var0x.getSource()))))
                .then(
                   Class6099.method18839("set")
                      .then(
@@ -99,7 +100,7 @@ public class Class7088 {
                                                       Class6099.method18840("name", Class8010.method27395())
                                                          .executes(
                                                             var0x -> method22026(
-                                                                  (Class6619)var0x.getSource(), method22031(var0x), Class8010.method27394(var0x, "name")
+                                                                  (CommandSource)var0x.getSource(), method22031(var0x), Class8010.method27394(var0x, "name")
                                                                )
                                                          )
                                                    )
@@ -112,7 +113,7 @@ public class Class7088 {
                                                                      Class6099.method18839("pink")
                                                                         .executes(
                                                                            var0x -> method22024(
-                                                                                 (Class6619)var0x.getSource(), method22031(var0x), Class2303.field15720
+                                                                                 (CommandSource)var0x.getSource(), method22031(var0x), Class2303.field15720
                                                                               )
                                                                         )
                                                                   ))
@@ -120,7 +121,7 @@ public class Class7088 {
                                                                   Class6099.method18839("blue")
                                                                      .executes(
                                                                         var0x -> method22024(
-                                                                              (Class6619)var0x.getSource(), method22031(var0x), Class2303.field15721
+                                                                              (CommandSource)var0x.getSource(), method22031(var0x), Class2303.field15721
                                                                            )
                                                                      )
                                                                ))
@@ -128,29 +129,29 @@ public class Class7088 {
                                                                Class6099.method18839("red")
                                                                   .executes(
                                                                      var0x -> method22024(
-                                                                           (Class6619)var0x.getSource(), method22031(var0x), Class2303.field15722
+                                                                           (CommandSource)var0x.getSource(), method22031(var0x), Class2303.field15722
                                                                         )
                                                                   )
                                                             ))
                                                          .then(
                                                             Class6099.method18839("green")
                                                                .executes(
-                                                                  var0x -> method22024((Class6619)var0x.getSource(), method22031(var0x), Class2303.field15723)
+                                                                  var0x -> method22024((CommandSource)var0x.getSource(), method22031(var0x), Class2303.field15723)
                                                                )
                                                          ))
                                                       .then(
                                                          Class6099.method18839("yellow")
                                                             .executes(
-                                                               var0x -> method22024((Class6619)var0x.getSource(), method22031(var0x), Class2303.field15724)
+                                                               var0x -> method22024((CommandSource)var0x.getSource(), method22031(var0x), Class2303.field15724)
                                                             )
                                                       ))
                                                    .then(
                                                       Class6099.method18839("purple")
-                                                         .executes(var0x -> method22024((Class6619)var0x.getSource(), method22031(var0x), Class2303.field15725))
+                                                         .executes(var0x -> method22024((CommandSource)var0x.getSource(), method22031(var0x), Class2303.field15725))
                                                    ))
                                                 .then(
                                                    Class6099.method18839("white")
-                                                      .executes(var0x -> method22024((Class6619)var0x.getSource(), method22031(var0x), Class2303.field15726))
+                                                      .executes(var0x -> method22024((CommandSource)var0x.getSource(), method22031(var0x), Class2303.field15726))
                                                 )
                                           ))
                                        .then(
@@ -160,26 +161,26 @@ public class Class7088 {
                                                          .then(
                                                             Class6099.method18839("progress")
                                                                .executes(
-                                                                  var0x -> method22025((Class6619)var0x.getSource(), method22031(var0x), Class2300.field15703)
+                                                                  var0x -> method22025((CommandSource)var0x.getSource(), method22031(var0x), Class2300.field15703)
                                                                )
                                                          ))
                                                       .then(
                                                          Class6099.method18839("notched_6")
                                                             .executes(
-                                                               var0x -> method22025((Class6619)var0x.getSource(), method22031(var0x), Class2300.field15704)
+                                                               var0x -> method22025((CommandSource)var0x.getSource(), method22031(var0x), Class2300.field15704)
                                                             )
                                                       ))
                                                    .then(
                                                       Class6099.method18839("notched_10")
-                                                         .executes(var0x -> method22025((Class6619)var0x.getSource(), method22031(var0x), Class2300.field15705))
+                                                         .executes(var0x -> method22025((CommandSource)var0x.getSource(), method22031(var0x), Class2300.field15705))
                                                    ))
                                                 .then(
                                                    Class6099.method18839("notched_12")
-                                                      .executes(var0x -> method22025((Class6619)var0x.getSource(), method22031(var0x), Class2300.field15706))
+                                                      .executes(var0x -> method22025((CommandSource)var0x.getSource(), method22031(var0x), Class2300.field15706))
                                                 ))
                                              .then(
                                                 Class6099.method18839("notched_20")
-                                                   .executes(var0x -> method22025((Class6619)var0x.getSource(), method22031(var0x), Class2300.field15707))
+                                                   .executes(var0x -> method22025((CommandSource)var0x.getSource(), method22031(var0x), Class2300.field15707))
                                              )
                                        ))
                                     .then(
@@ -188,7 +189,7 @@ public class Class7088 {
                                              Class6099.method18840("value", IntegerArgumentType.integer(0))
                                                 .executes(
                                                    var0x -> method22022(
-                                                         (Class6619)var0x.getSource(), method22031(var0x), IntegerArgumentType.getInteger(var0x, "value")
+                                                         (CommandSource)var0x.getSource(), method22031(var0x), IntegerArgumentType.getInteger(var0x, "value")
                                                       )
                                                 )
                                           )
@@ -199,7 +200,7 @@ public class Class7088 {
                                           Class6099.method18840("max", IntegerArgumentType.integer(1))
                                              .executes(
                                                 var0x -> method22023(
-                                                      (Class6619)var0x.getSource(), method22031(var0x), IntegerArgumentType.getInteger(var0x, "max")
+                                                      (CommandSource)var0x.getSource(), method22031(var0x), IntegerArgumentType.getInteger(var0x, "max")
                                                    )
                                              )
                                        )
@@ -209,17 +210,17 @@ public class Class7088 {
                                     .then(
                                        Class6099.method18840("visible", BoolArgumentType.bool())
                                           .executes(
-                                             var0x -> method22021((Class6619)var0x.getSource(), method22031(var0x), BoolArgumentType.getBool(var0x, "visible"))
+                                             var0x -> method22021((CommandSource)var0x.getSource(), method22031(var0x), BoolArgumentType.getBool(var0x, "visible"))
                                           )
                                     )
                               ))
                            .then(
                               ((LiteralArgumentBuilder)Class6099.method18839("players")
-                                    .executes(var0x -> method22027((Class6619)var0x.getSource(), method22031(var0x), Collections.<ServerPlayerEntity>emptyList())))
+                                    .executes(var0x -> method22027((CommandSource)var0x.getSource(), method22031(var0x), Collections.<ServerPlayerEntity>emptyList())))
                                  .then(
                                     Class6099.method18840("targets", Class8700.method31353())
                                        .executes(
-                                          var0x -> method22027((Class6619)var0x.getSource(), method22031(var0x), Class8700.method31350(var0x, "targets"))
+                                          var0x -> method22027((CommandSource)var0x.getSource(), method22031(var0x), Class8700.method31350(var0x, "targets"))
                                        )
                                  )
                            )
@@ -230,26 +231,26 @@ public class Class7088 {
                   .then(
                      ((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder)Class6099.method18840("id", Class8303.method29031())
                                  .suggests(field30507)
-                                 .then(Class6099.method18839("value").executes(var0x -> method22017((Class6619)var0x.getSource(), method22031(var0x)))))
-                              .then(Class6099.method18839("max").executes(var0x -> method22018((Class6619)var0x.getSource(), method22031(var0x)))))
-                           .then(Class6099.method18839("visible").executes(var0x -> method22019((Class6619)var0x.getSource(), method22031(var0x)))))
-                        .then(Class6099.method18839("players").executes(var0x -> method22020((Class6619)var0x.getSource(), method22031(var0x))))
+                                 .then(Class6099.method18839("value").executes(var0x -> method22017((CommandSource)var0x.getSource(), method22031(var0x)))))
+                              .then(Class6099.method18839("max").executes(var0x -> method22018((CommandSource)var0x.getSource(), method22031(var0x)))))
+                           .then(Class6099.method18839("visible").executes(var0x -> method22019((CommandSource)var0x.getSource(), method22031(var0x)))))
+                        .then(Class6099.method18839("players").executes(var0x -> method22020((CommandSource)var0x.getSource(), method22031(var0x))))
                   )
             )
       );
    }
 
-   private static int method22017(Class6619 var0, Class3623 var1) {
+   private static int method22017(CommandSource var0, Class3623 var1) {
       var0.method20179(new TranslationTextComponent("commands.bossbar.get.value", var1.method12271(), var1.method12267()), true);
       return var1.method12267();
    }
 
-   private static int method22018(Class6619 var0, Class3623 var1) {
+   private static int method22018(CommandSource var0, Class3623 var1) {
       var0.method20179(new TranslationTextComponent("commands.bossbar.get.max", var1.method12271(), var1.method12268()), true);
       return var1.method12268();
    }
 
-   private static int method22019(Class6619 var0, Class3623 var1) {
+   private static int method22019(CommandSource var0, Class3623 var1) {
       if (!var1.method12286()) {
          var0.method20179(new TranslationTextComponent("commands.bossbar.get.visible.hidden", var1.method12271()), true);
          return 0;
@@ -259,7 +260,7 @@ public class Class7088 {
       }
    }
 
-   private static int method22020(Class6619 var0, Class3623 var1) {
+   private static int method22020(CommandSource var0, Class3623 var1) {
       if (!var1.method12288().isEmpty()) {
          var0.method20179(
             new TranslationTextComponent(
@@ -277,7 +278,7 @@ public class Class7088 {
       return var1.method12288().size();
    }
 
-   private static int method22021(Class6619 var0, Class3623 var1, boolean var2) throws CommandSyntaxException {
+   private static int method22021(CommandSource var0, Class3623 var1, boolean var2) throws CommandSyntaxException {
       if (var1.method12286() != var2) {
          var1.method12287(var2);
          if (!var2) {
@@ -294,7 +295,7 @@ public class Class7088 {
       }
    }
 
-   private static int method22022(Class6619 var0, Class3623 var1, int var2) throws CommandSyntaxException {
+   private static int method22022(CommandSource var0, Class3623 var1, int var2) throws CommandSyntaxException {
       if (var1.method12267() != var2) {
          var1.method12269(var2);
          var0.method20179(new TranslationTextComponent("commands.bossbar.set.value.success", var1.method12271(), var2), true);
@@ -304,7 +305,7 @@ public class Class7088 {
       }
    }
 
-   private static int method22023(Class6619 var0, Class3623 var1, int var2) throws CommandSyntaxException {
+   private static int method22023(CommandSource var0, Class3623 var1, int var2) throws CommandSyntaxException {
       if (var1.method12268() != var2) {
          var1.method12270(var2);
          var0.method20179(new TranslationTextComponent("commands.bossbar.set.max.success", var1.method12271(), var2), true);
@@ -314,7 +315,7 @@ public class Class7088 {
       }
    }
 
-   private static int method22024(Class6619 var0, Class3623 var1, Class2303 var2) throws CommandSyntaxException {
+   private static int method22024(CommandSource var0, Class3623 var1, Class2303 var2) throws CommandSyntaxException {
       if (!var1.getColor().equals(var2)) {
          var1.method12279(var2);
          var0.method20179(new TranslationTextComponent("commands.bossbar.set.color.success", var1.method12271()), true);
@@ -324,7 +325,7 @@ public class Class7088 {
       }
    }
 
-   private static int method22025(Class6619 var0, Class3623 var1, Class2300 var2) throws CommandSyntaxException {
+   private static int method22025(CommandSource var0, Class3623 var1, Class2300 var2) throws CommandSyntaxException {
       if (!var1.getOverlay().equals(var2)) {
          var1.method12280(var2);
          var0.method20179(new TranslationTextComponent("commands.bossbar.set.style.success", var1.method12271()), true);
@@ -334,7 +335,7 @@ public class Class7088 {
       }
    }
 
-   private static int method22026(Class6619 var0, Class3623 var1, ITextComponent var2) throws CommandSyntaxException {
+   private static int method22026(CommandSource var0, Class3623 var1, ITextComponent var2) throws CommandSyntaxException {
       IFormattableTextComponent var5 = TextComponentUtils.func_240645_a_(var0, var2, (Entity)null, 0);
       if (!var1.getName().equals(var5)) {
          var1.method12284(var5);
@@ -345,7 +346,7 @@ public class Class7088 {
       }
    }
 
-   private static int method22027(Class6619 var0, Class3623 var1, Collection<ServerPlayerEntity> var2) throws CommandSyntaxException {
+   private static int method22027(CommandSource var0, Class3623 var1, Collection<ServerPlayerEntity> var2) throws CommandSyntaxException {
       boolean var5 = var1.method12272(var2);
       if (var5) {
          if (!var1.method12288().isEmpty()) {
@@ -365,7 +366,7 @@ public class Class7088 {
       }
    }
 
-   private static int method22028(Class6619 var0) {
+   private static int method22028(CommandSource var0) {
       Collection var3 = var0.method20177().method1414().method29604();
       if (!var3.isEmpty()) {
          var0.method20179(
@@ -379,7 +380,7 @@ public class Class7088 {
       return var3.size();
    }
 
-   private static int method22029(Class6619 var0, ResourceLocation var1, ITextComponent var2) throws CommandSyntaxException {
+   private static int method22029(CommandSource var0, ResourceLocation var1, ITextComponent var2) throws CommandSyntaxException {
       Class8426 var5 = var0.method20177().method1414();
       if (var5.method29600(var1) == null) {
          Class3623 var6 = var5.method29601(var1, TextComponentUtils.func_240645_a_(var0, var2, (Entity)null, 0));
@@ -390,7 +391,7 @@ public class Class7088 {
       }
    }
 
-   private static int method22030(Class6619 var0, Class3623 var1) {
+   private static int method22030(CommandSource var0, Class3623 var1) {
       Class8426 var4 = var0.method20177().method1414();
       var1.method12266();
       var4.method29602(var1);
@@ -398,9 +399,9 @@ public class Class7088 {
       return var4.method29604().size();
    }
 
-   public static Class3623 method22031(CommandContext<Class6619> var0) throws CommandSyntaxException {
+   public static Class3623 method22031(CommandContext<CommandSource> var0) throws CommandSyntaxException {
       ResourceLocation var3 = Class8303.method29036(var0, "id");
-      Class3623 var4 = ((Class6619)var0.getSource()).method20177().method1414().method29600(var3);
+      Class3623 var4 = ((CommandSource)var0.getSource()).method20177().method1414().method29600(var3);
       if (var4 != null) {
          return var4;
       } else {

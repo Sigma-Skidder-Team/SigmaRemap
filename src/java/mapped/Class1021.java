@@ -17,6 +17,7 @@ import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -77,7 +78,7 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
             this.attackEntityFrom(DamageSource.field38994, 1.0F);
          }
 
-         if (!this.world.getGameRules().getBoolean(Class5462.field24224)) {
+         if (!this.world.getGameRules().getBoolean(GameRules.field24224)) {
             return;
          }
 

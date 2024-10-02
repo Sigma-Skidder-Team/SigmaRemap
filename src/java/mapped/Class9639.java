@@ -11,6 +11,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.concurrent.CompletableFuture;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.scoreboard.Scoreboard;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -27,7 +28,7 @@ public class Class9639 implements ArgumentType<Integer> {
       return new Class9639();
    }
 
-   public static int method37567(CommandContext<Class6619> var0, String var1) {
+   public static int method37567(CommandContext<CommandSource> var0, String var1) {
       return (Integer)var0.getArgument(var1, Integer.class);
    }
 

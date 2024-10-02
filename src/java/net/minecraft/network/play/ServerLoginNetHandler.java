@@ -20,6 +20,7 @@ import net.minecraft.network.login.server.SEncryptionRequestPacket;
 import net.minecraft.network.login.server.SLoginSuccessPacket;
 import net.minecraft.util.CryptException;
 import net.minecraft.util.CryptManager;
+import net.minecraft.util.DefaultUncaughtExceptionHandler;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.commons.lang3.Validate;
@@ -118,7 +119,7 @@ public class ServerLoginNetHandler implements Class5108 {
    public void method15596(CLoginStartPacket var1) {
       Validate.validState(this.field23217 == Class2241.field14662, "Unexpected hello packet", new Object[0]);
       this.field23219 = var1.method17302();
-      if (this.field23215.method1350() && !this.field23216.isLocalChannel()) {
+      if (this.field23215.isServerInOnlineMode() && !this.field23216.isLocalChannel()) {
          this.field23217 = Class2241.field14663;
          this.field23216.sendPacket(new SEncryptionRequestPacket("", this.field23215.method1329().getPublic().getEncoded(), this.field23214));
       } else {
@@ -148,7 +149,7 @@ public class ServerLoginNetHandler implements Class5108 {
       }
 
       Class365 var9 = new Class365(this, "ChatCommandExecutor Authenticator #" + field23211.incrementAndGet(), var7);
-      var9.setUncaughtExceptionHandler(new Class6030(field23212));
+      var9.setUncaughtExceptionHandler(new DefaultUncaughtExceptionHandler(field23212));
       var9.start();
    }
 

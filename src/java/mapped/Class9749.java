@@ -8,6 +8,7 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.Dynamic2CommandExceptionType;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import it.unimi.dsi.fastutil.longs.LongSet;
+import net.minecraft.command.CommandSource;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
@@ -25,7 +26,7 @@ public class Class9749 {
       new TranslationTextComponent("commands.forceload.removed.failure")
    );
 
-   public static void method38286(CommandDispatcher<Class6619> var0) {
+   public static void method38286(CommandDispatcher<CommandSource> var0) {
       var0.register(
          (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("forceload")
                      .requires(var0x -> var0x.method20129(2)))
@@ -35,14 +36,14 @@ public class Class9749 {
                            ((RequiredArgumentBuilder)Class6099.method18840("from", Class8693.method31319())
                                  .executes(
                                     var0x -> method38290(
-                                          (Class6619)var0x.getSource(), Class8693.method31320(var0x, "from"), Class8693.method31320(var0x, "from"), true
+                                          (CommandSource)var0x.getSource(), Class8693.method31320(var0x, "from"), Class8693.method31320(var0x, "from"), true
                                        )
                                  ))
                               .then(
                                  Class6099.method18840("to", Class8693.method31319())
                                     .executes(
                                        var0x -> method38290(
-                                             (Class6619)var0x.getSource(), Class8693.method31320(var0x, "from"), Class8693.method31320(var0x, "to"), true
+                                             (CommandSource)var0x.getSource(), Class8693.method31320(var0x, "from"), Class8693.method31320(var0x, "to"), true
                                           )
                                     )
                               )
@@ -54,31 +55,31 @@ public class Class9749 {
                            ((RequiredArgumentBuilder)Class6099.method18840("from", Class8693.method31319())
                                  .executes(
                                     var0x -> method38290(
-                                          (Class6619)var0x.getSource(), Class8693.method31320(var0x, "from"), Class8693.method31320(var0x, "from"), false
+                                          (CommandSource)var0x.getSource(), Class8693.method31320(var0x, "from"), Class8693.method31320(var0x, "from"), false
                                        )
                                  ))
                               .then(
                                  Class6099.method18840("to", Class8693.method31319())
                                     .executes(
                                        var0x -> method38290(
-                                             (Class6619)var0x.getSource(), Class8693.method31320(var0x, "from"), Class8693.method31320(var0x, "to"), false
+                                             (CommandSource)var0x.getSource(), Class8693.method31320(var0x, "from"), Class8693.method31320(var0x, "to"), false
                                           )
                                     )
                               )
                         ))
-                     .then(Class6099.method18839("all").executes(var0x -> method38289((Class6619)var0x.getSource())))
+                     .then(Class6099.method18839("all").executes(var0x -> method38289((CommandSource)var0x.getSource())))
                ))
             .then(
-               ((LiteralArgumentBuilder)Class6099.method18839("query").executes(var0x -> method38288((Class6619)var0x.getSource())))
+               ((LiteralArgumentBuilder)Class6099.method18839("query").executes(var0x -> method38288((CommandSource)var0x.getSource())))
                   .then(
                      Class6099.method18840("pos", Class8693.method31319())
-                        .executes(var0x -> method38287((Class6619)var0x.getSource(), Class8693.method31320(var0x, "pos")))
+                        .executes(var0x -> method38287((CommandSource)var0x.getSource(), Class8693.method31320(var0x, "pos")))
                   )
             )
       );
    }
 
-   private static int method38287(Class6619 var0, Class7760 var1) throws CommandSyntaxException {
+   private static int method38287(CommandSource var0, Class7760 var1) throws CommandSyntaxException {
       ChunkPos var4 = new ChunkPos(var1.field33332 >> 4, var1.field33333 >> 4);
       ServerWorld var5 = var0.method20172();
       RegistryKey var6 = var5.getDimensionKey();
@@ -91,7 +92,7 @@ public class Class9749 {
       }
    }
 
-   private static int method38288(Class6619 var0) {
+   private static int method38288(CommandSource var0) {
       ServerWorld var3 = var0.method20172();
       RegistryKey var4 = var3.getDimensionKey();
       LongSet var5 = var3.method6949();
@@ -110,7 +111,7 @@ public class Class9749 {
       return var6;
    }
 
-   private static int method38289(Class6619 var0) {
+   private static int method38289(CommandSource var0) {
       ServerWorld var3 = var0.method20172();
       RegistryKey<World> var4 = var3.getDimensionKey();
       LongSet var5 = var3.method6949();
@@ -121,7 +122,7 @@ public class Class9749 {
       return 0;
    }
 
-   private static int method38290(Class6619 var0, Class7760 var1, Class7760 var2, boolean var3) throws CommandSyntaxException {
+   private static int method38290(CommandSource var0, Class7760 var1, Class7760 var2, boolean var3) throws CommandSyntaxException {
       int var6 = Math.min(var1.field33332, var2.field33332);
       int var7 = Math.min(var1.field33333, var2.field33333);
       int var8 = Math.max(var1.field33332, var2.field33332);

@@ -12,6 +12,8 @@ import java.util.Collection;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Stream;
+
+import net.minecraft.command.CommandSource;
 import net.minecraft.util.text.StringTextComponent;
 
 public class Class9418 implements ArgumentType<Class4871> {
@@ -32,7 +34,7 @@ public class Class9418 implements ArgumentType<Class4871> {
       return new Class9418();
    }
 
-   public static Class4871 method36139(CommandContext<Class6619> var0, String var1) {
+   public static Class4871 method36139(CommandContext<CommandSource> var0, String var1) {
       return (Class4871)var0.getArgument(var1, Class4871.class);
    }
 

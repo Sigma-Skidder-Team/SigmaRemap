@@ -10,6 +10,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 
 import java.util.List;
@@ -120,7 +121,7 @@ public class Class938 extends Class919 implements Class937 {
    @Override
    public void method3586(DamageSource var1) {
       super.method3586(var1);
-      if (this.world.getGameRules().getBoolean(Class5462.field24229)) {
+      if (this.world.getGameRules().getBoolean(GameRules.field24229)) {
          this.entityDropItem(Blocks.HOPPER);
       }
    }

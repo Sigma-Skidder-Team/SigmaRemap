@@ -2,7 +2,7 @@ package net.minecraft.util.text;
 
 import com.google.common.collect.Lists;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import mapped.Class6619;
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.Entity;
 
 import java.util.Arrays;
@@ -144,7 +144,7 @@ public class TranslationTextComponent extends TextComponent implements ITargeted
    }
 
    @Override
-   public IFormattableTextComponent func_230535_a_(Class6619 p_230535_1_, Entity p_230535_2_, int p_230535_3_) throws CommandSyntaxException {
+   public IFormattableTextComponent func_230535_a_(CommandSource p_230535_1_, Entity p_230535_2_, int p_230535_3_) throws CommandSyntaxException {
       Object[] i = new Object[this.formatArgs.length];
 
       for (int object = 0; object < i.length; object++) {

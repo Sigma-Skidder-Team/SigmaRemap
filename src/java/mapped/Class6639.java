@@ -17,6 +17,8 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executors;
+
+import net.minecraft.util.DefaultUncaughtExceptionHandler;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
@@ -27,7 +29,7 @@ public class Class6639 {
    private static final Logger field29186 = LogManager.getLogger();
    public static final ListeningExecutorService field29187 = MoreExecutors.listeningDecorator(
       Executors.newCachedThreadPool(
-         new ThreadFactoryBuilder().setDaemon(true).setUncaughtExceptionHandler(new Class6030(field29186)).setNameFormat("Downloader %d").build()
+         new ThreadFactoryBuilder().setDaemon(true).setUncaughtExceptionHandler(new DefaultUncaughtExceptionHandler(field29186)).setNameFormat("Downloader %d").build()
       )
    );
 

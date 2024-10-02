@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.util.DefaultUncaughtExceptionHandler;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -23,7 +24,7 @@ public class Class384 extends Thread {
       this.field1646 = var1;
       this.field1649 = var2;
       this.setDaemon(true);
-      this.setUncaughtExceptionHandler(new Class6030(field1645));
+      this.setUncaughtExceptionHandler(new DefaultUncaughtExceptionHandler(field1645));
       this.field1647 = new DatagramSocket();
    }
 

@@ -6,6 +6,8 @@ import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.Collection;
+
+import net.minecraft.command.CommandSource;
 import net.minecraft.util.text.TextComponentUtils;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -15,22 +17,22 @@ public class Class7676 {
    private static final SimpleCommandExceptionType field32886 = new SimpleCommandExceptionType(new TranslationTextComponent("commands.whitelist.add.failed"));
    private static final SimpleCommandExceptionType field32887 = new SimpleCommandExceptionType(new TranslationTextComponent("commands.whitelist.remove.failed"));
 
-   public static void method25217(CommandDispatcher<Class6619> var0) {
+   public static void method25217(CommandDispatcher<CommandSource> var0) {
       var0.register(
          (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839(
                                  "whitelist"
                               )
                               .requires(var0x -> var0x.method20129(3)))
-                           .then(Class6099.method18839("on").executes(var0x -> method25221((Class6619)var0x.getSource()))))
-                        .then(Class6099.method18839("off").executes(var0x -> method25222((Class6619)var0x.getSource()))))
-                     .then(Class6099.method18839("list").executes(var0x -> method25223((Class6619)var0x.getSource()))))
+                           .then(Class6099.method18839("on").executes(var0x -> method25221((CommandSource)var0x.getSource()))))
+                        .then(Class6099.method18839("off").executes(var0x -> method25222((CommandSource)var0x.getSource()))))
+                     .then(Class6099.method18839("list").executes(var0x -> method25223((CommandSource)var0x.getSource()))))
                   .then(
                      Class6099.method18839("add")
                         .then(
                            Class6099.method18840("targets", Class7713.method25483())
                               .suggests(
                                  (var0x, var1) -> {
-                                    Class6395 var4 = ((Class6619)var0x.getSource()).method20177().getPlayerList();
+                                    Class6395 var4 = ((CommandSource)var0x.getSource()).method20177().getPlayerList();
                                     return Class6618.method20148(
                                        var4.getPlayers()
                                           .stream()
@@ -40,29 +42,29 @@ public class Class7676 {
                                     );
                                  }
                               )
-                              .executes(var0x -> method25219((Class6619)var0x.getSource(), Class7713.method25482(var0x, "targets")))
+                              .executes(var0x -> method25219((CommandSource)var0x.getSource(), Class7713.method25482(var0x, "targets")))
                         )
                   ))
                .then(
                   Class6099.method18839("remove")
                      .then(
                         Class6099.method18840("targets", Class7713.method25483())
-                           .suggests((var0x, var1) -> Class6618.method20149(((Class6619)var0x.getSource()).method20177().getPlayerList().method19469(), var1))
-                           .executes(var0x -> method25220((Class6619)var0x.getSource(), Class7713.method25482(var0x, "targets")))
+                           .suggests((var0x, var1) -> Class6618.method20149(((CommandSource)var0x.getSource()).method20177().getPlayerList().method19469(), var1))
+                           .executes(var0x -> method25220((CommandSource)var0x.getSource(), Class7713.method25482(var0x, "targets")))
                      )
                ))
-            .then(Class6099.method18839("reload").executes(var0x -> method25218((Class6619)var0x.getSource())))
+            .then(Class6099.method18839("reload").executes(var0x -> method25218((CommandSource)var0x.getSource())))
       );
    }
 
-   private static int method25218(Class6619 var0) {
+   private static int method25218(CommandSource var0) {
       var0.method20177().getPlayerList().method19432();
       var0.method20179(new TranslationTextComponent("commands.whitelist.reloaded"), true);
       var0.method20177().method1401(var0);
       return 1;
    }
 
-   private static int method25219(Class6619 var0, Collection<GameProfile> var1) throws CommandSyntaxException {
+   private static int method25219(CommandSource var0, Collection<GameProfile> var1) throws CommandSyntaxException {
       Class4531 var4 = var0.method20177().getPlayerList().method19468();
       int var5 = 0;
 
@@ -82,7 +84,7 @@ public class Class7676 {
       }
    }
 
-   private static int method25220(Class6619 var0, Collection<GameProfile> var1) throws CommandSyntaxException {
+   private static int method25220(CommandSource var0, Collection<GameProfile> var1) throws CommandSyntaxException {
       Class4531 var4 = var0.method20177().getPlayerList().method19468();
       int var5 = 0;
 
@@ -103,7 +105,7 @@ public class Class7676 {
       }
    }
 
-   private static int method25221(Class6619 var0) throws CommandSyntaxException {
+   private static int method25221(CommandSource var0) throws CommandSyntaxException {
       Class6395 var3 = var0.method20177().getPlayerList();
       if (!var3.method19476()) {
          var3.method19429(true);
@@ -115,7 +117,7 @@ public class Class7676 {
       }
    }
 
-   private static int method25222(Class6619 var0) throws CommandSyntaxException {
+   private static int method25222(CommandSource var0) throws CommandSyntaxException {
       Class6395 var3 = var0.method20177().getPlayerList();
       if (var3.method19476()) {
          var3.method19429(false);
@@ -126,7 +128,7 @@ public class Class7676 {
       }
    }
 
-   private static int method25223(Class6619 var0) {
+   private static int method25223(CommandSource var0) {
       String[] var3 = var0.method20177().getPlayerList().method19469();
       if (var3.length != 0) {
          var0.method20179(new TranslationTextComponent("commands.whitelist.list", var3.length, String.join(", ", var3)), false);

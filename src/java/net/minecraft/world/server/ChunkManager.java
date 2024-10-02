@@ -27,6 +27,7 @@ import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.SectionPos;
 import net.minecraft.util.palette.UpgradeData;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.chunk.ChunkStatus;
@@ -56,7 +57,7 @@ import java.util.stream.Stream;
 
 public class ChunkManager extends Class1648 implements Class1650 {
    private static final Logger field8950 = LogManager.getLogger();
-   public static final int MAX_LOADED_LEVEL = 33 + ChunkStatus.method34295();
+   public static final int MAX_LOADED_LEVEL = 33 + ChunkStatus.maxDistance();
    private final Long2ObjectLinkedOpenHashMap<Class8641> field8952 = new Long2ObjectLinkedOpenHashMap();
    private volatile Long2ObjectLinkedOpenHashMap<Class8641> field8953 = this.field8952.clone();
    private final Long2ObjectLinkedOpenHashMap<Class8641> field8954 = new Long2ObjectLinkedOpenHashMap();
@@ -774,7 +775,7 @@ public class ChunkManager extends Class1648 implements Class1650 {
    }
 
    private boolean method6572(ServerPlayerEntity var1) {
-      return var1.isSpectator() && !this.world.getGameRules().getBoolean(Class5462.field24238);
+      return var1.isSpectator() && !this.world.getGameRules().getBoolean(GameRules.field24238);
    }
 
    public void method6573(ServerPlayerEntity var1, boolean var2) {

@@ -45,7 +45,7 @@ public class Class9021 {
       this.field41278 = true;
    }
 
-   public void method33398(InetAddress var1, int var2) throws IOException {
+   public void addEndpoint(InetAddress var1, int var2) throws IOException {
       synchronized (this.field41279) {
          Class<? extends ServerSocketChannel> var6;
          LazyValue var7;

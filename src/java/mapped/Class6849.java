@@ -12,6 +12,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.concurrent.CompletableFuture;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.server.ServerWorld;
@@ -25,10 +26,10 @@ public class Class6849 implements ArgumentType<Class7329> {
       return new Class6849();
    }
 
-   public static BlockPos method20827(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
-      BlockPos var4 = ((Class7329)var0.getArgument(var1, Class7329.class)).method23230((Class6619)var0.getSource());
-      if (((Class6619)var0.getSource()).method20172().isBlockLoaded(var4)) {
-         ((Class6619)var0.getSource()).method20172();
+   public static BlockPos method20827(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
+      BlockPos var4 = ((Class7329)var0.getArgument(var1, Class7329.class)).method23230((CommandSource)var0.getSource());
+      if (((CommandSource)var0.getSource()).method20172().isBlockLoaded(var4)) {
+         ((CommandSource)var0.getSource()).method20172();
          if (ServerWorld.isValid(var4)) {
             return var4;
          } else {
@@ -39,8 +40,8 @@ public class Class6849 implements ArgumentType<Class7329> {
       }
    }
 
-   public static BlockPos method20828(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
-      return ((Class7329)var0.getArgument(var1, Class7329.class)).method23230((Class6619)var0.getSource());
+   public static BlockPos method20828(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
+      return ((Class7329)var0.getArgument(var1, Class7329.class)).method23230((CommandSource)var0.getSource());
    }
 
    public Class7329 parse(StringReader var1) throws CommandSyntaxException {

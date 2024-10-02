@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -42,7 +43,7 @@ public class Class2753 extends Class2595 {
                   BlockState var10 = var3.getBlockState(var9);
                   Block var11 = var10.getBlock();
                   if (var11 instanceof Class3442) {
-                     if (!var3.getGameRules().getBoolean(Class5462.field24224)) {
+                     if (!var3.getGameRules().getBoolean(GameRules.field24224)) {
                         var3.setBlockState(var9, ((Class3442)var11).method12118().getDefaultState(), 3);
                      } else {
                         var3.destroyBlock(var9, true, this.field17292);

@@ -1,6 +1,10 @@
-package mapped;
+package net.minecraft.network.rcon;
 
 import com.google.common.collect.Lists;
+import mapped.Class1646;
+import mapped.Class440;
+import mapped.Class443;
+import mapped.ServerProperties;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -12,14 +16,14 @@ import java.net.Socket;
 import java.net.SocketTimeoutException;
 import java.util.List;
 
-public class Class441 extends Class440 {
+public class MainThread extends Class440 {
    private static final Logger field1985 = LogManager.getLogger();
    private final ServerSocket field1986;
    private final String field1987;
    private final List<Class443> field1988 = Lists.newArrayList();
    private final Class1646 field1989;
 
-   private Class441(Class1646 var1, ServerSocket var2, String var3) {
+   private MainThread(Class1646 var1, ServerSocket var2, String var3) {
       super("RCON Listener");
       this.field1989 = var1;
       this.field1986 = var2;
@@ -54,8 +58,8 @@ public class Class441 extends Class440 {
    }
 
    @Nullable
-   public static Class441 method1871(Class1646 var0) {
-      Class9437 var3 = var0.method6498();
+   public static MainThread func_242130_a(Class1646 var0) {
+      ServerProperties var3 = var0.method6498();
       String var4 = var0.method6501();
       if (var4.isEmpty()) {
          var4 = "0.0.0.0";
@@ -71,7 +75,7 @@ public class Class441 extends Class440 {
             try {
                ServerSocket var7 = new ServerSocket(var5, 0, InetAddress.getByName(var4));
                var7.setSoTimeout(500);
-               Class441 var8 = new Class441(var0, var7, var6);
+               MainThread var8 = new MainThread(var0, var7, var6);
                if (!var8.method1867()) {
                   return null;
                } else {

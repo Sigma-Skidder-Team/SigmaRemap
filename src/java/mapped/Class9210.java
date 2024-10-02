@@ -10,6 +10,8 @@ import com.mojang.brigadier.suggestion.SuggestionsBuilder;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.concurrent.CompletableFuture;
+
+import net.minecraft.command.CommandSource;
 import net.minecraft.util.text.StringTextComponent;
 
 public class Class9210 implements ArgumentType<String> {
@@ -29,7 +31,7 @@ public class Class9210 implements ArgumentType<String> {
       return new Class9210();
    }
 
-   public static String method34511(CommandContext<Class6619> var0, String var1) {
+   public static String method34511(CommandContext<CommandSource> var0, String var1) {
       return (String)var0.getArgument(var1, String.class);
    }
 

@@ -1,14 +1,15 @@
-package mapped;
+package net.minecraft.tileentity;
 
 import com.google.common.collect.Iterables;
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.minecraft.MinecraftSessionService;
 import com.mojang.authlib.properties.Property;
+import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
-import net.minecraft.tileentity.TileEntity;
+import net.minecraft.server.management.PlayerProfileCache;
 
 import javax.annotation.Nullable;
 import java.util.UUID;

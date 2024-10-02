@@ -20,6 +20,7 @@ import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -245,7 +246,7 @@ public class ZombieEntity extends Class1009 {
          if (var6 != null
             && this.world.method6997() == Difficulty.HARD
             && (double)this.rand.nextFloat() < this.getAttributeValue(Attributes.field42116)
-            && this.world.getGameRules().getBoolean(Class5462.field24226)) {
+            && this.world.getGameRules().getBoolean(GameRules.field24226)) {
             int var7 = MathHelper.floor(this.getPosX());
             int var8 = MathHelper.floor(this.getPosY());
             int var9 = MathHelper.floor(this.getPosZ());

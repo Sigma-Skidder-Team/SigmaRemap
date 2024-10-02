@@ -1,28 +1,30 @@
-package mapped;
+package net.minecraft.scoreboard;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
+import mapped.Class2073;
+import mapped.Class8375;
+import mapped.Class9411;
+import mapped.MinecraftServer;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.server.SUpdateScorePacket;
 import net.minecraft.network.play.server.STeamsPacket;
 import net.minecraft.network.play.server.SDisplayObjectivePacket;
 import net.minecraft.network.play.server.SScoreboardObjectivePacket;
-import net.minecraft.scoreboard.ScorePlayerTeam;
-import net.minecraft.scoreboard.Scoreboard;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
-public class Class6887 extends Scoreboard {
+public class ServerScoreboard extends Scoreboard {
    private static String[] field29847;
    private final MinecraftServer field29848;
    private final Set<Class8375> field29849 = Sets.newHashSet();
    private Runnable[] field29850 = new Runnable[0];
 
-   public Class6887(MinecraftServer var1) {
+   public ServerScoreboard(MinecraftServer var1) {
       this.field29848 = var1;
    }
 

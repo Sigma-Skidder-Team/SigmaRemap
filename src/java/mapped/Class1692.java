@@ -315,7 +315,7 @@ public class Class1692 implements AutoCloseable {
    }
 
    private static int method7266(ChunkPos var0) {
-      return var0.method24362() + var0.method24363() * 32;
+      return var0.getRegionPositionX() + var0.getRegionPositionZ() * 32;
    }
 
    @Override

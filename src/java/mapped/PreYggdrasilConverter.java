@@ -24,7 +24,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Class9061 {
+public class PreYggdrasilConverter {
    private static final Logger field41470 = LogManager.getLogger();
    public static final File field41471 = new File("banned-ips.txt");
    public static final File field41472 = new File("banned-players.txt");
@@ -47,7 +47,7 @@ public class Class9061 {
 
    private static void method33727(MinecraftServer var0, Collection<String> var1, ProfileLookupCallback var2) {
       String[] var5 = var1.stream().filter(var0x -> !Class9001.method33256(var0x)).<String>toArray(String[]::new);
-      if (!var0.method1350()) {
+      if (!var0.isServerInOnlineMode()) {
          for (String var9 : var5) {
             UUID var10 = PlayerEntity.method2960(new GameProfile((UUID)null, var9));
             GameProfile var11 = new GameProfile(var10, var9);
@@ -188,10 +188,10 @@ public class Class9061 {
    @Nullable
    public static UUID method33732(MinecraftServer var0, String var1) {
       if (!Class9001.method33256(var1) && var1.length() <= 16) {
-         GameProfile var4 = var0.method1386().method31792(var1);
+         GameProfile var4 = var0.getPlayerProfileCache().method31792(var1);
          if (var4 != null && var4.getId() != null) {
             return var4.getId();
-         } else if (!var0.method1334() && var0.method1350()) {
+         } else if (!var0.isSinglePlayer() && var0.isServerInOnlineMode()) {
             ArrayList var5 = Lists.newArrayList();
             Class8858 var6 = new Class8858(var0, var5);
             method33727(var0, Lists.newArrayList(new String[]{var1}), var6);
@@ -250,7 +250,7 @@ public class Class9061 {
       }
    }
 
-   public static boolean method33735(MinecraftServer var0) {
+   public static boolean func_219587_e(MinecraftServer var0) {
       boolean var3 = method33736();
       return var3 && method33737(var0);
    }

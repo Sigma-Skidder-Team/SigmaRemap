@@ -11,6 +11,7 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.resources.DefaultPlayerSkin;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.tileentity.SkullTileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 

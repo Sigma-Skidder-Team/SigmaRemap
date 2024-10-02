@@ -21,6 +21,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -134,7 +135,7 @@ public class BoatEntity extends Entity {
          this.markVelocityChanged();
          boolean var5 = var1.getTrueSource() instanceof PlayerEntity && ((PlayerEntity)var1.getTrueSource()).abilities.isCreativeMode;
          if (var5 || this.method4163() > 40.0F) {
-            if (!var5 && this.world.getGameRules().getBoolean(Class5462.field24229)) {
+            if (!var5 && this.world.getGameRules().getBoolean(GameRules.field24229)) {
                this.entityDropItem(this.getItemBoat());
             }
 
@@ -776,7 +777,7 @@ public class BoatEntity extends Entity {
                this.onLivingFall(this.fallDistance, 1.0F);
                if (!this.world.isRemote && !this.removed) {
                   this.remove();
-                  if (this.world.getGameRules().getBoolean(Class5462.field24229)) {
+                  if (this.world.getGameRules().getBoolean(GameRules.field24229)) {
                      for (int var8 = 0; var8 < 3; var8++) {
                         this.entityDropItem(this.method4172().method8762());
                      }

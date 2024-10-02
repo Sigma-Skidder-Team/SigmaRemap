@@ -11,7 +11,7 @@ import net.minecraft.util.SoundEvents;
 import net.minecraft.util.registry.Registry;
 
 public class Items {
-   public static final Item field37222 = method30156(Blocks.AIR, new Class3280(Blocks.AIR, new Item.Properties()));
+   public static final Item AIR = method30156(Blocks.AIR, new Class3280(Blocks.AIR, new Item.Properties()));
    public static final Item field37223 = method30154(Blocks.STONE, ItemGroup.field31665);
    public static final Item field37224 = method30154(Blocks.GRANITE, ItemGroup.field31665);
    public static final Item field37225 = method30154(Blocks.POLISHED_GRANITE, ItemGroup.field31665);

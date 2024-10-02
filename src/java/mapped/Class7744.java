@@ -5,6 +5,7 @@ import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.ParseResults;
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import net.minecraft.command.CommandSource;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.List;
@@ -26,7 +27,7 @@ public class Class7744 {
       return this.field33250;
    }
 
-   public static Class7744 method25654(ResourceLocation var0, CommandDispatcher<Class6619> var1, Class6619 var2, List<String> var3) {
+   public static Class7744 method25654(ResourceLocation var0, CommandDispatcher<CommandSource> var1, CommandSource var2, List<String> var3) {
       List<Class6797> var6 = Lists.newArrayListWithCapacity(var3.size());
 
       for (int var7 = 0; var7 < var3.size(); var7++) {

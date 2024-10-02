@@ -12,6 +12,7 @@ import java.util.Collection;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Predicate;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.CachedBlockInfo;
 import net.minecraft.util.ResourceLocation;
@@ -47,8 +48,8 @@ public class Class7505 implements ArgumentType<Class8439> {
       }
    }
 
-   public static Predicate<CachedBlockInfo> method24465(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
-      return ((Class8439)var0.getArgument(var1, Class8439.class)).method29657(((Class6619)var0.getSource()).method20177().method1408());
+   public static Predicate<CachedBlockInfo> method24465(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
+      return ((Class8439)var0.getArgument(var1, Class8439.class)).method29657(((CommandSource)var0.getSource()).method20177().method1408());
    }
 
    public <S> CompletableFuture<Suggestions> listSuggestions(CommandContext<S> var1, SuggestionsBuilder var2) {

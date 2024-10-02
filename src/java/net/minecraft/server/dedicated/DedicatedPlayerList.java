@@ -1,16 +1,18 @@
-package mapped;
+package net.minecraft.server.dedicated;
 
 import com.mojang.authlib.GameProfile;
 import java.io.IOException;
+
+import mapped.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Class6394 extends Class6395 {
+public class DedicatedPlayerList extends Class6395 {
    private static final Logger field27983 = LogManager.getLogger();
 
-   public Class6394(DedicatedServer var1, DynamicRegistriesImpl var2, Class8716 var3) {
+   public DedicatedPlayerList(DedicatedServer var1, DynamicRegistriesImpl var2, Class8716 var3) {
       super(var1, var2, var3, var1.method6498().field43821);
-      Class9437 var6 = var1.method6498();
+      ServerProperties var6 = var1.method6498();
       this.method19487(var6.field43820);
       super.method19429((Boolean)var6.field43832.get());
       this.method19436();

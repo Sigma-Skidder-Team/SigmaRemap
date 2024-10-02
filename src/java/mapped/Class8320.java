@@ -13,6 +13,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.function.Predicate;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -28,7 +29,7 @@ public class Class8320 implements ArgumentType<Class9670> {
       return new Class8320();
    }
 
-   public static Class9670 method29129(CommandContext<Class6619> var0, String var1) {
+   public static Class9670 method29129(CommandContext<CommandSource> var0, String var1) {
       return (Class9670)var0.getArgument(var1, Class9670.class);
    }
 

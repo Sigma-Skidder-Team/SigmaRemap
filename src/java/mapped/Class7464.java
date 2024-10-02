@@ -2,6 +2,9 @@ package mapped;
 
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.context.CommandContext;
+import net.minecraft.command.CommandSource;
+import net.minecraft.world.GameRules;
+
 import java.util.function.BiConsumer;
 
 public class Class7464 extends Class7465<Class7464> {
@@ -22,7 +25,7 @@ public class Class7464 extends Class7465<Class7464> {
    }
 
    @Override
-   public void method24154(CommandContext<Class6619> var1, String var2) {
+   public void method24154(CommandContext<CommandSource> var1, String var2) {
       this.field32100 = IntegerArgumentType.getInteger(var1, var2);
    }
 
@@ -54,7 +57,7 @@ public class Class7464 extends Class7465<Class7464> {
          try {
             return Integer.parseInt(var0);
          } catch (NumberFormatException var4) {
-            Class5462.method17146().warn("Failed to parse integer {}", var0);
+            GameRules.method17146().warn("Failed to parse integer {}", var0);
          }
       }
 

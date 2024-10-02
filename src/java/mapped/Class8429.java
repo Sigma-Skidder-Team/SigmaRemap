@@ -10,6 +10,7 @@ import java.util.function.BiConsumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -81,13 +82,13 @@ public class Class8429 {
       return this.field36111;
    }
 
-   private void method29615(Class6619 var1) throws CommandSyntaxException {
+   private void method29615(CommandSource var1) throws CommandSyntaxException {
       if (this.field36121 && !var1.method20129(2)) {
          throw Class8700.field39265.create();
       }
    }
 
-   public Entity method29616(Class6619 var1) throws CommandSyntaxException {
+   public Entity method29616(CommandSource var1) throws CommandSyntaxException {
       this.method29615(var1);
       List var4 = this.method29617(var1);
       if (!var4.isEmpty()) {
@@ -101,7 +102,7 @@ public class Class8429 {
       }
    }
 
-   public List<? extends Entity> method29617(Class6619 var1) throws CommandSyntaxException {
+   public List<? extends Entity> method29617(CommandSource var1) throws CommandSyntaxException {
       this.method29615(var1);
       if (!this.field36110) {
          return this.method29620(var1);
@@ -147,7 +148,7 @@ public class Class8429 {
       }
    }
 
-   public ServerPlayerEntity method29619(Class6619 var1) throws CommandSyntaxException {
+   public ServerPlayerEntity method29619(CommandSource var1) throws CommandSyntaxException {
       this.method29615(var1);
       List var4 = this.method29620(var1);
       if (var4.size() == 1) {
@@ -157,7 +158,7 @@ public class Class8429 {
       }
    }
 
-   public List<ServerPlayerEntity> method29620(Class6619 var1) throws CommandSyntaxException {
+   public List<ServerPlayerEntity> method29620(CommandSource var1) throws CommandSyntaxException {
       this.method29615(var1);
       if (this.field36118 != null) {
          ServerPlayerEntity var10 = var1.method20177().getPlayerList().method19465(this.field36118);

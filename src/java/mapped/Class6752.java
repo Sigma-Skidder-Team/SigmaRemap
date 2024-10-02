@@ -6,19 +6,21 @@ import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.Collection;
+
+import net.minecraft.command.CommandSource;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class6752 {
    private static final SimpleCommandExceptionType field29459 = new SimpleCommandExceptionType(new TranslationTextComponent("commands.op.failed"));
 
-   public static void method20581(CommandDispatcher<Class6619> var0) {
+   public static void method20581(CommandDispatcher<CommandSource> var0) {
       var0.register(
          (LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("op").requires(var0x -> var0x.method20129(3)))
             .then(
                Class6099.method18840("targets", Class7713.method25483())
                   .suggests(
                      (var0x, var1) -> {
-                        Class6395 var4 = ((Class6619)var0x.getSource()).method20177().getPlayerList();
+                        Class6395 var4 = ((CommandSource)var0x.getSource()).method20177().getPlayerList();
                         return Class6618.method20148(
                            var4.getPlayers()
                               .stream()
@@ -28,12 +30,12 @@ public class Class6752 {
                         );
                      }
                   )
-                  .executes(var0x -> method20582((Class6619)var0x.getSource(), Class7713.method25482(var0x, "targets")))
+                  .executes(var0x -> method20582((CommandSource)var0x.getSource(), Class7713.method25482(var0x, "targets")))
             )
       );
    }
 
-   private static int method20582(Class6619 var0, Collection<GameProfile> var1) throws CommandSyntaxException {
+   private static int method20582(CommandSource var0, Collection<GameProfile> var1) throws CommandSyntaxException {
       Class6395 var4 = var0.method20177().getPlayerList();
       int var5 = 0;
 

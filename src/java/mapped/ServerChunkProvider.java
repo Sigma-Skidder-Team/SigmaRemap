@@ -12,6 +12,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.SectionPos;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.LightType;
 import net.minecraft.world.World;
@@ -333,10 +334,10 @@ public class ServerChunkProvider extends Class1702 {
       this.field9281 = var3;
       Class6612 var7 = this.field9275.getWorldInfo();
       boolean var8 = this.field9275.isDebug();
-      boolean var9 = this.field9275.getGameRules().getBoolean(Class5462.field24226);
+      boolean var9 = this.field9275.getGameRules().getBoolean(GameRules.field24226);
       if (!var8) {
          this.field9275.getProfiler().startSection("pollingChunks");
-         int var10 = this.field9275.getGameRules().method17136(Class5462.field24235);
+         int var10 = this.field9275.getGameRules().method17136(GameRules.field24235);
          boolean var11 = var7.method20033() % 400L == 0L;
          this.field9275.getProfiler().startSection("naturalSpawnCount");
          int var12 = this.ticketManager.method35138();

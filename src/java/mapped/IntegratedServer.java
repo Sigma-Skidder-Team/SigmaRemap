@@ -8,6 +8,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.resources.ResourcePackList;
+import net.minecraft.server.management.PlayerProfileCache;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.GameType;
 import net.minecraft.world.World;
@@ -51,8 +52,8 @@ public class IntegratedServer extends MinecraftServer {
       super(var1, var3, var4, var7, var5, var2.getProxy(), var2.getDataFixer(), var6, var8, var9, var10, var11);
       this.method1333(var2.getSession().getUsername());
       this.method1343(var2.isDemo());
-      this.method1365(256);
-      this.method1368(new Class6396(this, this.field1224, this.field1212));
+      this.setBuildLimit(256);
+      this.setPlayerList(new Class6396(this, this.field_240767_f_, this.playerDataManager));
       this.field8920 = var2;
    }
 
@@ -164,7 +165,7 @@ public class IntegratedServer extends MinecraftServer {
    @Override
    public boolean method1374(GameType var1, boolean var2, int var3) {
       try {
-         this.getNetworkSystem().method33398((InetAddress)null, var3);
+         this.getNetworkSystem().addEndpoint((InetAddress)null, var3);
          field1208.info("Started serving on {}", var3);
          this.field1223 = var3;
          this.field8922 = new Class384(this.method1362(), var3 + "");
@@ -195,8 +196,8 @@ public class IntegratedServer extends MinecraftServer {
 
    @Override
    public void initiateShutdown(boolean var1) {
-      if (!Reflector.field42967.method20245() || this.method1295()) {
-         this.method1635(() -> {
+      if (!Reflector.field42967.method20245() || this.isServerRunning()) {
+         this.runImmediately(() -> {
             for (ServerPlayerEntity var4 : Lists.newArrayList(this.getPlayerList().getPlayers())) {
                if (!var4.getUniqueID().equals(this.field8923)) {
                   this.getPlayerList().method19450(var4);
@@ -218,7 +219,7 @@ public class IntegratedServer extends MinecraftServer {
    }
 
    @Override
-   public int method1330() {
+   public int getServerPort() {
       return this.field1223;
    }
 

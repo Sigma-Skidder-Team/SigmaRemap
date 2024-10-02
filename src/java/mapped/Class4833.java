@@ -14,7 +14,7 @@ import java.util.function.Predicate;
 
 public class Class4833 implements ISelectionContext {
    private static String[] field22606;
-   public static final ISelectionContext field22607 = new Class4834(false, -Double.MAX_VALUE, Items.field37222, var0 -> false);
+   public static final ISelectionContext field22607 = new Class4834(false, -Double.MAX_VALUE, Items.AIR, var0 -> false);
    private final boolean field22608;
    private final double field22609;
    private final Item field22610;
@@ -32,7 +32,7 @@ public class Class4833 implements ISelectionContext {
       this(
          var1.method3335(),
          var1.getPosY(),
-         !(var1 instanceof LivingEntity) ? Items.field37222 : ((LivingEntity)var1).getHeldItemMainhand().getItem(),
+         !(var1 instanceof LivingEntity) ? Items.AIR : ((LivingEntity)var1).getHeldItemMainhand().getItem(),
          !(var1 instanceof LivingEntity) ? var0 -> false : ((LivingEntity)var1)::method3107
       );
    }

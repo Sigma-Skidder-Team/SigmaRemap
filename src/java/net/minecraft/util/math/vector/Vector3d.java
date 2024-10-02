@@ -23,7 +23,7 @@ public class Vector3d implements Class2955 {
       return new Vector3d((double)var0.getX() + 0.5, (double)var0.getY() + 0.5, (double)var0.getZ() + 0.5);
    }
 
-   public static Vector3d method11329(Vector3i var0) {
+   public static Vector3d copy(Vector3i var0) {
       return new Vector3d((double)var0.getX(), (double)var0.getY(), (double)var0.getZ());
    }
 

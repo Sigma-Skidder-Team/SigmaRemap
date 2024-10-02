@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.DefaultUncaughtExceptionHandler;
+
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.InetAddress;
@@ -16,7 +18,7 @@ public class LanServerFindThread extends Thread {
       super("LanServerDetector #" + Class6643.method20279().incrementAndGet());
       this.field1622 = var1;
       this.setDaemon(true);
-      this.setUncaughtExceptionHandler(new Class6030(Class6643.method20280()));
+      this.setUncaughtExceptionHandler(new DefaultUncaughtExceptionHandler(Class6643.method20280()));
       this.field1624 = new MulticastSocket(4445);
       this.field1623 = InetAddress.getByName("224.0.2.60");
       this.field1624.setSoTimeout(5000);

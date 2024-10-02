@@ -23,6 +23,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 
 import java.util.List;
@@ -274,7 +275,7 @@ public class WitherEntity extends Class1009 implements Class1080, Class1022 {
 
          if (this.field5934 > 0) {
             this.field5934--;
-            if (this.field5934 == 0 && this.world.getGameRules().getBoolean(Class5462.field24224)) {
+            if (this.field5934 == 0 && this.world.getGameRules().getBoolean(GameRules.field24224)) {
                int var21 = MathHelper.floor(this.getPosY());
                int var24 = MathHelper.floor(this.getPosX());
                int var28 = MathHelper.floor(this.getPosZ());
@@ -309,7 +310,7 @@ public class WitherEntity extends Class1009 implements Class1080, Class1022 {
       } else {
          int var22 = this.method5012() - 1;
          if (var22 <= 0) {
-            Class2141 var25 = !this.world.getGameRules().getBoolean(Class5462.field24224) ? Class2141.field14014 : Class2141.field14016;
+            Class2141 var25 = !this.world.getGameRules().getBoolean(GameRules.field24224) ? Class2141.field14014 : Class2141.field14016;
             this.world.method6756(this, this.getPosX(), this.getPosYEye(), this.getPosZ(), 7.0F, false, var25);
             if (!this.isSilent()) {
                this.world.method6801(1023, this.getPosition(), 0);

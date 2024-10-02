@@ -16,7 +16,7 @@ public class EmptyFluid extends Fluid {
 
    @Override
    public Item method25050() {
-      return Items.field37222;
+      return Items.AIR;
    }
 
    @Override

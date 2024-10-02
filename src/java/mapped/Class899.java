@@ -6,6 +6,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.EntityRayTraceResult;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 
 public class Class899 extends Class898 {
@@ -27,7 +28,7 @@ public class Class899 extends Class898 {
    public void method3464(RayTraceResult var1) {
       super.method3464(var1);
       if (!this.world.isRemote) {
-         boolean var4 = this.world.getGameRules().getBoolean(Class5462.field24224);
+         boolean var4 = this.world.getGameRules().getBoolean(GameRules.field24224);
          this.world
             .method6756(
                (Entity)null,

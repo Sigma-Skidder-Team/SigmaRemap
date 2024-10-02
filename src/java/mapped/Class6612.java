@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.GameRules;
 
 public interface Class6612 {
    int getSpawnX();
@@ -24,7 +25,7 @@ public interface Class6612 {
 
    boolean isHardcore();
 
-   Class5462 method20046();
+   GameRules method20046();
 
    Difficulty method20047();
 

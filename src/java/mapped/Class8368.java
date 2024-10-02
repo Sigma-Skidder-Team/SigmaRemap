@@ -23,7 +23,7 @@ public class Class8368 {
 
    public Class8368(Class6850 var0, int var1, int var2, int var3, List<Suggestion> var4, boolean var5) {
       this.field35928 = var0;
-      this.field35925 = Vector2f.field37212;
+      this.field35925 = Vector2f.ZERO;
       int var9 = var1 - 1;
       int var10 = !Class6850.method20846(var0) ? var2 : var2 - 3 - Math.min(var4.size(), Class6850.method20847(var0)) * 12;
       this.field35920 = new Class9518(var9, var10, var3 + 1, Math.min(var4.size(), Class6850.method20847(var0)) * 12);

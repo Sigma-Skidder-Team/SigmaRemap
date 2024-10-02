@@ -4,6 +4,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.world.GameRules;
 
 import java.util.EnumSet;
 import java.util.Iterator;
@@ -28,7 +29,7 @@ public class HurtByTargetGoal extends Class2699 {
       int var3 = this.field17153.method3015();
       LivingEntity var4 = this.field17153.method3014();
       if (var3 != this.field17181 && var4 != null) {
-         if (var4.getType() == EntityType.PLAYER && this.field17153.world.getGameRules().getBoolean(Class5462.field24255)) {
+         if (var4.getType() == EntityType.PLAYER && this.field17153.world.getGameRules().getBoolean(GameRules.field24255)) {
             return false;
          } else {
             for (Class var8 : this.field17182) {

@@ -95,7 +95,7 @@ public class DownloadingPackFinder implements IPackFinder {
             WorkingScreen var9 = new WorkingScreen();
             Map var10 = getPackDownloadRequestProperties();
             Minecraft var11 = Minecraft.getInstance();
-            var11.method1635(() -> var11.displayGuiScreen(var9));
+            var11.runImmediately(() -> var11.displayGuiScreen(var9));
             var8 = Class6639.method20256(var7, var1, var10, 104857600, var9, var11.getProxy());
          }
 

@@ -17,6 +17,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.GameType;
 import org.apache.commons.lang3.mutable.MutableObject;
 import org.apache.logging.log4j.LogManager;
@@ -65,7 +66,7 @@ public class CreateWorldScreen extends Screen {
    private ITextComponent field7088;
    private ITextComponent field7089;
    private String field7090;
-   private Class5462 field7091 = new Class5462();
+   private GameRules field7091 = new GameRules();
    public final WorldOptionsScreen field7092;
 
    public CreateWorldScreen(Screen var1, WorldSettings var2, DimensionGeneratorSettings var3, Path var4, DatapackCodec var5, DynamicRegistriesImpl var6) {
@@ -227,8 +228,8 @@ public class CreateWorldScreen extends Screen {
          DimensionGeneratorSettings var3 = this.field7092.method5785(this.field7076);
          WorldSettings var5;
          if (var3.method26267()) {
-            Class5462 var4 = new Class5462();
-            var4.<Class7466>method17128(Class5462.field24232).method24175(false, (MinecraftServer)null);
+            GameRules var4 = new GameRules();
+            var4.<Class7466>get(GameRules.field24232).set(false, (MinecraftServer)null);
             var5 = new WorldSettings(this.field7068.getText().trim(), GameType.SPECTATOR, false, Difficulty.PEACEFUL, true, var4, DatapackCodec.VANILLA_CODEC);
          } else {
             var5 = new WorldSettings(

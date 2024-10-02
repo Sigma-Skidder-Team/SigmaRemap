@@ -5,6 +5,7 @@ import com.google.common.collect.ImmutableMap.Builder;
 import com.google.common.collect.Maps;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.command.CommandSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.StringTextComponent;
@@ -27,7 +28,7 @@ public class Class301 implements Class268 {
    private final Class9768<Class7744> field1163 = new Class9768<Class7744>(this::method1177, "tags/functions", "function");
    private volatile Class7984<Class7744> field1164 = Class7984.<Class7744>method27141();
    private final int field1165;
-   private final CommandDispatcher<Class6619> field1166;
+   private final CommandDispatcher<CommandSource> field1166;
 
    public Optional<Class7744> method1177(ResourceLocation var1) {
       return Optional.<Class7744>ofNullable(this.field1162.get(var1));
@@ -45,7 +46,7 @@ public class Class301 implements Class268 {
       return this.field1164.method27132(var1);
    }
 
-   public Class301(int var1, CommandDispatcher<Class6619> var2) {
+   public Class301(int var1, CommandDispatcher<CommandSource> var2) {
       this.field1165 = var1;
       this.field1166 = var2;
    }
@@ -59,10 +60,10 @@ public class Class301 implements Class268 {
          .thenCompose(
             var3x -> {
                Map<ResourceLocation, CompletableFuture<Class7744>> var6x = Maps.newHashMap();
-               Class6619 var7 = new Class6619(
+               CommandSource var7 = new CommandSource(
                   ICommandSource.field5189,
                   Vector3d.ZERO,
-                  Vector2f.field37212,
+                  Vector2f.ZERO,
                        null,
                   this.field1165,
                   "",

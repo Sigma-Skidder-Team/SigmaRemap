@@ -6,6 +6,7 @@ import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.suggestion.Suggestions;
 import com.mojang.brigadier.suggestion.SuggestionsBuilder;
+import net.minecraft.command.CommandSource;
 import net.minecraft.tags.BlockTags;
 
 import java.util.Arrays;
@@ -24,7 +25,7 @@ public class Class7971 implements ArgumentType<Class164> {
       return new Class164(var4.method28837(), var4.method28836().keySet(), var4.method28838());
    }
 
-   public static Class164 method27104(CommandContext<Class6619> var0, String var1) {
+   public static Class164 method27104(CommandContext<CommandSource> var0, String var1) {
       return (Class164)var0.getArgument(var1, Class164.class);
    }
 

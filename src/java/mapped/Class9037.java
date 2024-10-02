@@ -22,6 +22,7 @@ import java.util.stream.Collectors;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
+import net.minecraft.command.CommandSource;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.CompressedStreamTools;
 import net.minecraft.network.DebugPacketSender;
@@ -44,28 +45,28 @@ import net.minecraft.world.server.ServerWorld;
 import org.apache.commons.io.IOUtils;
 
 public class Class9037 {
-   public static void method33489(CommandDispatcher<Class6619> var0) {
+   public static void method33489(CommandDispatcher<CommandSource> var0) {
       var0.register(
          (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839(
                                              "test"
                                           )
-                                          .then(Class6099.method18839("runthis").executes(var0x -> method33492((Class6619)var0x.getSource()))))
-                                       .then(Class6099.method18839("runthese").executes(var0x -> method33493((Class6619)var0x.getSource()))))
+                                          .then(Class6099.method18839("runthis").executes(var0x -> method33492((CommandSource)var0x.getSource()))))
+                                       .then(Class6099.method18839("runthese").executes(var0x -> method33493((CommandSource)var0x.getSource()))))
                                     .then(
                                        ((LiteralArgumentBuilder)Class6099.method18839("runfailed")
-                                             .executes(var0x -> method33501((Class6619)var0x.getSource(), false, 0, 8)))
+                                             .executes(var0x -> method33501((CommandSource)var0x.getSource(), false, 0, 8)))
                                           .then(
                                              ((RequiredArgumentBuilder)Class6099.method18840("onlyRequiredTests", BoolArgumentType.bool())
                                                    .executes(
                                                       var0x -> method33501(
-                                                            (Class6619)var0x.getSource(), BoolArgumentType.getBool(var0x, "onlyRequiredTests"), 0, 8
+                                                            (CommandSource)var0x.getSource(), BoolArgumentType.getBool(var0x, "onlyRequiredTests"), 0, 8
                                                          )
                                                    ))
                                                 .then(
                                                    ((RequiredArgumentBuilder)Class6099.method18840("rotationSteps", IntegerArgumentType.integer())
                                                          .executes(
                                                             var0x -> method33501(
-                                                                  (Class6619)var0x.getSource(),
+                                                                  (CommandSource)var0x.getSource(),
                                                                   BoolArgumentType.getBool(var0x, "onlyRequiredTests"),
                                                                   IntegerArgumentType.getInteger(var0x, "rotationSteps"),
                                                                   8
@@ -75,7 +76,7 @@ public class Class9037 {
                                                          Class6099.method18840("testsPerRow", IntegerArgumentType.integer())
                                                             .executes(
                                                                var0x -> method33501(
-                                                                     (Class6619)var0x.getSource(),
+                                                                     (CommandSource)var0x.getSource(),
                                                                      BoolArgumentType.getBool(var0x, "onlyRequiredTests"),
                                                                      IntegerArgumentType.getInteger(var0x, "rotationSteps"),
                                                                      IntegerArgumentType.getInteger(var0x, "testsPerRow")
@@ -89,12 +90,12 @@ public class Class9037 {
                                     Class6099.method18839("run")
                                        .then(
                                           ((RequiredArgumentBuilder)Class6099.method18840("testName", Class9418.method36138())
-                                                .executes(var0x -> method33497((Class6619)var0x.getSource(), Class9418.method36139(var0x, "testName"), 0)))
+                                                .executes(var0x -> method33497((CommandSource)var0x.getSource(), Class9418.method36139(var0x, "testName"), 0)))
                                              .then(
                                                 Class6099.method18840("rotationSteps", IntegerArgumentType.integer())
                                                    .executes(
                                                       var0x -> method33497(
-                                                            (Class6619)var0x.getSource(),
+                                                            (CommandSource)var0x.getSource(),
                                                             Class9418.method36139(var0x, "testName"),
                                                             IntegerArgumentType.getInteger(var0x, "rotationSteps")
                                                          )
@@ -104,17 +105,17 @@ public class Class9037 {
                                  ))
                               .then(
                                  ((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("runall")
-                                          .executes(var0x -> method33499((Class6619)var0x.getSource(), 0, 8)))
+                                          .executes(var0x -> method33499((CommandSource)var0x.getSource(), 0, 8)))
                                        .then(
                                           ((RequiredArgumentBuilder)Class6099.method18840("testClassName", Class9210.method34510())
                                                 .executes(
-                                                   var0x -> method33500((Class6619)var0x.getSource(), Class9210.method34511(var0x, "testClassName"), 0, 8)
+                                                   var0x -> method33500((CommandSource)var0x.getSource(), Class9210.method34511(var0x, "testClassName"), 0, 8)
                                                 ))
                                              .then(
                                                 ((RequiredArgumentBuilder)Class6099.method18840("rotationSteps", IntegerArgumentType.integer())
                                                       .executes(
                                                          var0x -> method33500(
-                                                               (Class6619)var0x.getSource(),
+                                                               (CommandSource)var0x.getSource(),
                                                                Class9210.method34511(var0x, "testClassName"),
                                                                IntegerArgumentType.getInteger(var0x, "rotationSteps"),
                                                                8
@@ -124,7 +125,7 @@ public class Class9037 {
                                                       Class6099.method18840("testsPerRow", IntegerArgumentType.integer())
                                                          .executes(
                                                             var0x -> method33500(
-                                                                  (Class6619)var0x.getSource(),
+                                                                  (CommandSource)var0x.getSource(),
                                                                   Class9210.method34511(var0x, "testClassName"),
                                                                   IntegerArgumentType.getInteger(var0x, "rotationSteps"),
                                                                   IntegerArgumentType.getInteger(var0x, "testsPerRow")
@@ -136,13 +137,13 @@ public class Class9037 {
                                     .then(
                                        ((RequiredArgumentBuilder)Class6099.method18840("rotationSteps", IntegerArgumentType.integer())
                                              .executes(
-                                                var0x -> method33499((Class6619)var0x.getSource(), IntegerArgumentType.getInteger(var0x, "rotationSteps"), 8)
+                                                var0x -> method33499((CommandSource)var0x.getSource(), IntegerArgumentType.getInteger(var0x, "rotationSteps"), 8)
                                              ))
                                           .then(
                                              Class6099.method18840("testsPerRow", IntegerArgumentType.integer())
                                                 .executes(
                                                    var0x -> method33499(
-                                                         (Class6619)var0x.getSource(),
+                                                         (CommandSource)var0x.getSource(),
                                                          IntegerArgumentType.getInteger(var0x, "rotationSteps"),
                                                          IntegerArgumentType.getInteger(var0x, "testsPerRow")
                                                       )
@@ -154,34 +155,34 @@ public class Class9037 {
                               Class6099.method18839("export")
                                  .then(
                                     Class6099.method18840("testName", StringArgumentType.word())
-                                       .executes(var0x -> method33505((Class6619)var0x.getSource(), StringArgumentType.getString(var0x, "testName")))
+                                       .executes(var0x -> method33505((CommandSource)var0x.getSource(), StringArgumentType.getString(var0x, "testName")))
                                  )
                            ))
-                        .then(Class6099.method18839("exportthis").executes(var0x -> method33504((Class6619)var0x.getSource()))))
+                        .then(Class6099.method18839("exportthis").executes(var0x -> method33504((CommandSource)var0x.getSource()))))
                      .then(
                         Class6099.method18839("import")
                            .then(
                               Class6099.method18840("testName", StringArgumentType.word())
-                                 .executes(var0x -> method33506((Class6619)var0x.getSource(), StringArgumentType.getString(var0x, "testName")))
+                                 .executes(var0x -> method33506((CommandSource)var0x.getSource(), StringArgumentType.getString(var0x, "testName")))
                            )
                      ))
                   .then(
-                     ((LiteralArgumentBuilder)Class6099.method18839("pos").executes(var0x -> method33491((Class6619)var0x.getSource(), "pos")))
+                     ((LiteralArgumentBuilder)Class6099.method18839("pos").executes(var0x -> method33491((CommandSource)var0x.getSource(), "pos")))
                         .then(
                            Class6099.method18840("var", StringArgumentType.word())
-                              .executes(var0x -> method33491((Class6619)var0x.getSource(), StringArgumentType.getString(var0x, "var")))
+                              .executes(var0x -> method33491((CommandSource)var0x.getSource(), StringArgumentType.getString(var0x, "var")))
                         )
                   ))
                .then(
                   Class6099.method18839("create")
                      .then(
                         ((RequiredArgumentBuilder)Class6099.method18840("testName", StringArgumentType.word())
-                              .executes(var0x -> method33490((Class6619)var0x.getSource(), StringArgumentType.getString(var0x, "testName"), 5, 5, 5)))
+                              .executes(var0x -> method33490((CommandSource)var0x.getSource(), StringArgumentType.getString(var0x, "testName"), 5, 5, 5)))
                            .then(
                               ((RequiredArgumentBuilder)Class6099.method18840("width", IntegerArgumentType.integer())
                                     .executes(
                                        var0x -> method33490(
-                                             (Class6619)var0x.getSource(),
+                                             (CommandSource)var0x.getSource(),
                                              StringArgumentType.getString(var0x, "testName"),
                                              IntegerArgumentType.getInteger(var0x, "width"),
                                              IntegerArgumentType.getInteger(var0x, "width"),
@@ -194,7 +195,7 @@ public class Class9037 {
                                           Class6099.method18840("depth", IntegerArgumentType.integer())
                                              .executes(
                                                 var0x -> method33490(
-                                                      (Class6619)var0x.getSource(),
+                                                      (CommandSource)var0x.getSource(),
                                                       StringArgumentType.getString(var0x, "testName"),
                                                       IntegerArgumentType.getInteger(var0x, "width"),
                                                       IntegerArgumentType.getInteger(var0x, "height"),
@@ -207,16 +208,16 @@ public class Class9037 {
                      )
                ))
             .then(
-               ((LiteralArgumentBuilder)Class6099.method18839("clearall").executes(var0x -> method33496((Class6619)var0x.getSource(), 200)))
+               ((LiteralArgumentBuilder)Class6099.method18839("clearall").executes(var0x -> method33496((CommandSource)var0x.getSource(), 200)))
                   .then(
                      Class6099.method18840("radius", IntegerArgumentType.integer())
-                        .executes(var0x -> method33496((Class6619)var0x.getSource(), IntegerArgumentType.getInteger(var0x, "radius")))
+                        .executes(var0x -> method33496((CommandSource)var0x.getSource(), IntegerArgumentType.getInteger(var0x, "radius")))
                   )
             )
       );
    }
 
-   private static int method33490(Class6619 var0, String var1, int var2, int var3, int var4) {
+   private static int method33490(CommandSource var0, String var1, int var2, int var3, int var4) {
       if (var2 <= 48 && var3 <= 48 && var4 <= 48) {
          ServerWorld var7 = var0.method20172();
          BlockPos var8 = new BlockPos(var0.method20171());
@@ -239,7 +240,7 @@ public class Class9037 {
       }
    }
 
-   private static int method33491(Class6619 var0, String var1) throws CommandSyntaxException {
+   private static int method33491(CommandSource var0, String var1) throws CommandSyntaxException {
       BlockRayTraceResult var4 = (BlockRayTraceResult)var0.method20175().pick(10.0, 1.0F, false);
       BlockPos var5 = var4.getPos();
       ServerWorld var6 = var0.method20172();
@@ -270,7 +271,7 @@ public class Class9037 {
       }
    }
 
-   private static int method33492(Class6619 var0) {
+   private static int method33492(CommandSource var0) {
       BlockPos var3 = new BlockPos(var0.method20171());
       ServerWorld var4 = var0.method20172();
       BlockPos var5 = Class7803.method26061(var3, 15, var4);
@@ -284,7 +285,7 @@ public class Class9037 {
       }
    }
 
-   private static int method33493(Class6619 var0) {
+   private static int method33493(CommandSource var0) {
       BlockPos var3 = new BlockPos(var0.method20171());
       ServerWorld var4 = var0.method20172();
       Collection<BlockPos> var5 = Class7803.method26062(var3, 200, var4);
@@ -331,7 +332,7 @@ public class Class9037 {
       }
    }
 
-   private static int method33496(Class6619 var0, int var1) {
+   private static int method33496(CommandSource var0, int var1) {
       ServerWorld var4 = var0.method20172();
       Class7440.method24038(var4);
       BlockPos var5 = new BlockPos(
@@ -343,7 +344,7 @@ public class Class9037 {
       return 1;
    }
 
-   private static int method33497(Class6619 var0, Class4871 var1, int var2) {
+   private static int method33497(CommandSource var0, Class4871 var1, int var2) {
       ServerWorld var5 = var0.method20172();
       BlockPos var6 = new BlockPos(var0.method20171());
       int var7 = var0.method20172().method7006(Heightmap.Type.WORLD_SURFACE, var6).getY();
@@ -363,7 +364,7 @@ public class Class9037 {
       }
    }
 
-   private static int method33499(Class6619 var0, int var1, int var2) {
+   private static int method33499(CommandSource var0, int var1, int var2) {
       Class7440.method24038(var0.method20172());
       Collection var5 = Class7936.method26704();
       method33503(var0, "Running all " + var5.size() + " tests...");
@@ -372,7 +373,7 @@ public class Class9037 {
       return 1;
    }
 
-   private static int method33500(Class6619 var0, String var1, int var2, int var3) {
+   private static int method33500(CommandSource var0, String var1, int var2, int var3) {
       Collection var6 = Class7936.method26703(var1);
       Class7440.method24038(var0.method20172());
       method33503(var0, "Running " + var6.size() + " tests from " + var1 + "...");
@@ -381,7 +382,7 @@ public class Class9037 {
       return 1;
    }
 
-   private static int method33501(Class6619 var0, boolean var1, int var2, int var3) {
+   private static int method33501(CommandSource var0, boolean var1, int var2, int var3) {
       Collection var6;
       if (!var1) {
          var6 = Class7936.method26711();
@@ -400,7 +401,7 @@ public class Class9037 {
       }
    }
 
-   private static void method33502(Class6619 var0, Collection<Class4871> var1, int var2, int var3) {
+   private static void method33502(CommandSource var0, Collection<Class4871> var1, int var2, int var3) {
       BlockPos var6 = new BlockPos(var0.method20171());
       BlockPos var7 = new BlockPos(var6.getX(), var0.method20172().method7006(Heightmap.Type.WORLD_SURFACE, var6).getY(), var6.getZ() + 3);
       ServerWorld var8 = var0.method20172();
@@ -411,11 +412,11 @@ public class Class9037 {
       var11.method36671(var0x -> Class7936.method26712(var0x.method28822()));
    }
 
-   private static void method33503(Class6619 var0, String var1) {
+   private static void method33503(CommandSource var0, String var1) {
       var0.method20179(new StringTextComponent(var1), false);
    }
 
-   private static int method33504(Class6619 var0) {
+   private static int method33504(CommandSource var0) {
       BlockPos var3 = new BlockPos(var0.method20171());
       ServerWorld var4 = var0.method20172();
       BlockPos var5 = Class7803.method26061(var3, 15, var4);
@@ -429,7 +430,7 @@ public class Class9037 {
       }
    }
 
-   private static int method33505(Class6619 var0, String var1) {
+   private static int method33505(CommandSource var0, String var1) {
       Path var4 = Paths.get(Class7803.field33501);
       ResourceLocation var5 = new ResourceLocation("minecraft", var1);
       Path var6 = var0.method20172().method6938().method31611(var5, ".nbt");
@@ -451,7 +452,7 @@ public class Class9037 {
       }
    }
 
-   private static int method33506(Class6619 var0, String var1) {
+   private static int method33506(CommandSource var0, String var1) {
       Path var4 = Paths.get(Class7803.field33501, var1 + ".snbt");
       ResourceLocation var5 = new ResourceLocation("minecraft", var1);
       Path var6 = var0.method20172().method6938().method31611(var5, ".nbt");

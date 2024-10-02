@@ -12,6 +12,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.DefaultUncaughtExceptionHandler;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -113,7 +114,7 @@ public class Main {
          new Class7199(var52, var53)
       );
       Class386 var56 = new Class386("Client Shutdown Thread");
-      var56.setUncaughtExceptionHandler(new Class6030(LOGGER));
+      var56.setUncaughtExceptionHandler(new DefaultUncaughtExceptionHandler(LOGGER));
       Runtime.getRuntime().addShutdownHook(var56);
       new Class9536();
 

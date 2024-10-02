@@ -757,7 +757,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       UUID var5;
       if (!var1.method106("Owner")) {
          String var4 = var1.getString("Owner");
-         var5 = Class9061.method33732(this.method3396(), var4);
+         var5 = PreYggdrasilConverter.method33732(this.method3396(), var4);
       } else {
          var5 = var1.method105("Owner");
       }

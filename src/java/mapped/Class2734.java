@@ -8,6 +8,7 @@ import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceContext;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -23,7 +24,7 @@ public class Class2734 extends Class2595 {
    @Override
    public boolean method10803() {
       if (this.field17254.method4357() == null) {
-         return this.field17254.world.getGameRules().getBoolean(Class5462.field24224) ? this.field17254.getRNG().nextInt(20) == 0 : false;
+         return this.field17254.world.getGameRules().getBoolean(GameRules.field24224) ? this.field17254.getRNG().nextInt(20) == 0 : false;
       } else {
          return false;
       }

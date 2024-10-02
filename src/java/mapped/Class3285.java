@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
@@ -88,7 +89,7 @@ public class Class3285 extends Item {
       return Class6794.<ItemStack>method20700(var6, var1.isRemote());
    }
 
-   public static boolean method11820(ItemStack var0, Class6619 var1, PlayerEntity var2) {
+   public static boolean method11820(ItemStack var0, CommandSource var1, PlayerEntity var2) {
       CompoundNBT var5 = var0.method32142();
       if (var5 != null && !var5.getBoolean("resolved")) {
          var5.putBoolean("resolved", true);

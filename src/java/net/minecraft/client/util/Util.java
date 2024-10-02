@@ -10,6 +10,7 @@ import com.mojang.serialization.DataResult;
 import it.unimi.dsi.fastutil.Hash.Strategy;
 import mapped.*;
 import net.minecraft.state.Property;
+import net.minecraft.util.DefaultUncaughtExceptionHandler;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
@@ -425,7 +426,7 @@ public class Util {
    public static void method38531() {
       Class371 var2 = new Class371("Timer hack thread");
       var2.setDaemon(true);
-      var2.setUncaughtExceptionHandler(new Class6030(field45725));
+      var2.setUncaughtExceptionHandler(new DefaultUncaughtExceptionHandler(field45725));
       var2.start();
    }
 

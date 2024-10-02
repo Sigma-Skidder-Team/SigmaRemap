@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.server.ServerWorld;
 
@@ -32,8 +33,8 @@ public class Class912 extends CommandBlockLogic {
    }
 
    @Override
-   public Class6619 method3574() {
-      return new Class6619(
+   public CommandSource method3574() {
+      return new CommandSource(
          this,
          this.field5201.getPositionVec(),
          this.field5201.getPitchYaw(),

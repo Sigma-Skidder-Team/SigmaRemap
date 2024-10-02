@@ -13,6 +13,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -39,15 +40,15 @@ public class Class8700 implements ArgumentType<Class8429> {
       return new Class8700(true, false);
    }
 
-   public static Entity method31346(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
-      return ((Class8429)var0.getArgument(var1, Class8429.class)).method29616((Class6619)var0.getSource());
+   public static Entity method31346(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
+      return ((Class8429)var0.getArgument(var1, Class8429.class)).method29616((CommandSource)var0.getSource());
    }
 
    public static Class8700 method31347() {
       return new Class8700(false, false);
    }
 
-   public static Collection<? extends Entity> method31348(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
+   public static Collection<? extends Entity> method31348(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
       Collection var4 = method31349(var0, var1);
       if (!var4.isEmpty()) {
          return var4;
@@ -56,28 +57,28 @@ public class Class8700 implements ArgumentType<Class8429> {
       }
    }
 
-   public static Collection<? extends Entity> method31349(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
-      return ((Class8429)var0.getArgument(var1, Class8429.class)).method29617((Class6619)var0.getSource());
+   public static Collection<? extends Entity> method31349(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
+      return ((Class8429)var0.getArgument(var1, Class8429.class)).method29617((CommandSource)var0.getSource());
    }
 
-   public static Collection<ServerPlayerEntity> method31350(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
-      return ((Class8429)var0.getArgument(var1, Class8429.class)).method29620((Class6619)var0.getSource());
+   public static Collection<ServerPlayerEntity> method31350(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
+      return ((Class8429)var0.getArgument(var1, Class8429.class)).method29620((CommandSource)var0.getSource());
    }
 
    public static Class8700 method31351() {
       return new Class8700(true, true);
    }
 
-   public static ServerPlayerEntity method31352(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
-      return ((Class8429)var0.getArgument(var1, Class8429.class)).method29619((Class6619)var0.getSource());
+   public static ServerPlayerEntity method31352(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
+      return ((Class8429)var0.getArgument(var1, Class8429.class)).method29619((CommandSource)var0.getSource());
    }
 
    public static Class8700 method31353() {
       return new Class8700(false, true);
    }
 
-   public static Collection<ServerPlayerEntity> method31354(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
-      List var4 = ((Class8429)var0.getArgument(var1, Class8429.class)).method29620((Class6619)var0.getSource());
+   public static Collection<ServerPlayerEntity> method31354(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
+      List var4 = ((Class8429)var0.getArgument(var1, Class8429.class)).method29620((CommandSource)var0.getSource());
       if (!var4.isEmpty()) {
          return var4;
       } else {

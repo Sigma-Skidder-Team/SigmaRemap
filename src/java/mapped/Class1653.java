@@ -50,7 +50,7 @@ public class Class1653 extends Class1652<Class8377> {
 
    public Stream<Class9343> method6665(Predicate<Class4913> var1, BlockPos var2, int var3, Class2093 var4) {
       int var7 = Math.floorDiv(var3, 16) + 1;
-      return ChunkPos.method24366(new ChunkPos(var2), var7).<Class9343>flatMap(var3x -> this.method6667(var1, var3x, var4)).filter(var2x -> {
+      return ChunkPos.getAllInBox(new ChunkPos(var2), var7).<Class9343>flatMap(var3x -> this.method6667(var1, var3x, var4)).filter(var2x -> {
          BlockPos var5 = var2x.method35355();
          return Math.abs(var5.getX() - var2.getX()) <= var3 && Math.abs(var5.getZ() - var2.getZ()) <= var3;
       });

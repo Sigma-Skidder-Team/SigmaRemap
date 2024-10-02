@@ -2,7 +2,7 @@ package net.minecraft.util.text;
 
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import mapped.Class6619;
+import net.minecraft.command.CommandSource;
 import mapped.Class8429;
 import mapped.Class8533;
 import net.minecraft.entity.Entity;
@@ -33,7 +33,7 @@ public class SelectorTextComponent extends TextComponent implements ITargetedTex
    }
 
    @Override
-   public IFormattableTextComponent func_230535_a_(Class6619 p_230535_1_, Entity p_230535_2_, int p_230535_3_) throws CommandSyntaxException {
+   public IFormattableTextComponent func_230535_a_(CommandSource p_230535_1_, Entity p_230535_2_, int p_230535_3_) throws CommandSyntaxException {
       return (IFormattableTextComponent)(p_230535_1_ != null && this.field_197670_d != null
          ? Class8429.method29623(this.field_197670_d.method29617(p_230535_1_))
          : new StringTextComponent(""));

@@ -12,14 +12,16 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.concurrent.CompletableFuture;
+
+import net.minecraft.command.CommandSource;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class7713 implements ArgumentType<Class6205> {
    private static final Collection<String> field33104 = Arrays.<String>asList("Player", "0123", "dd12be42-52a9-4a91-a8a1-11c01849e498", "@e");
    public static final SimpleCommandExceptionType field33105 = new SimpleCommandExceptionType(new TranslationTextComponent("argument.player.unknown"));
 
-   public static Collection<GameProfile> method25482(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
-      return ((Class6205)var0.getArgument(var1, Class6205.class)).method19110((Class6619)var0.getSource());
+   public static Collection<GameProfile> method25482(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
+      return ((Class6205)var0.getArgument(var1, Class6205.class)).method19110((CommandSource)var0.getSource());
    }
 
    public static Class7713 method25483() {
@@ -44,7 +46,7 @@ public class Class7713 implements ArgumentType<Class6205> {
 
          String var5 = var1.getString().substring(var4, var1.getCursor());
          return var1x -> {
-            GameProfile var4x = var1x.method20177().method1386().method31792(var5);
+            GameProfile var4x = var1x.method20177().getPlayerProfileCache().method31792(var5);
             if (var4x != null) {
                return Collections.<GameProfile>singleton(var4x);
             } else {

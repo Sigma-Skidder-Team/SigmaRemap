@@ -11,6 +11,7 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tileentity.SkullTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.CachedBlockInfo;
 import net.minecraft.util.Direction;

@@ -5,6 +5,7 @@ import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
@@ -20,7 +21,7 @@ public class Class8002 {
    private static final SimpleCommandExceptionType field34404 = new SimpleCommandExceptionType(new TranslationTextComponent("commands.summon.failed.uuid"));
    private static final SimpleCommandExceptionType field34405 = new SimpleCommandExceptionType(new TranslationTextComponent("commands.summon.invalidPosition"));
 
-   public static void method27335(CommandDispatcher<Class6619> var0) {
+   public static void method27335(CommandDispatcher<CommandSource> var0) {
       var0.register(
          (LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("summon").requires(var0x -> var0x.method20129(2)))
             .then(
@@ -28,9 +29,9 @@ public class Class8002 {
                      .suggests(Class9222.field42457)
                      .executes(
                         var0x -> method27336(
-                              (Class6619)var0x.getSource(),
+                              (CommandSource)var0x.getSource(),
                               Class7822.method26156(var0x, "entity"),
-                              ((Class6619)var0x.getSource()).method20171(),
+                              ((CommandSource)var0x.getSource()).method20171(),
                               new CompoundNBT(),
                               true
                            )
@@ -39,7 +40,7 @@ public class Class8002 {
                      ((RequiredArgumentBuilder)Class6099.method18840("pos", Class6851.method20857())
                            .executes(
                               var0x -> method27336(
-                                    (Class6619)var0x.getSource(),
+                                    (CommandSource)var0x.getSource(),
                                     Class7822.method26156(var0x, "entity"),
                                     Class6851.method20859(var0x, "pos"),
                                     new CompoundNBT(),
@@ -50,7 +51,7 @@ public class Class8002 {
                            Class6099.method18840("nbt", Class9770.method38432())
                               .executes(
                                  var0x -> method27336(
-                                       (Class6619)var0x.getSource(),
+                                       (CommandSource)var0x.getSource(),
                                        Class7822.method26156(var0x, "entity"),
                                        Class6851.method20859(var0x, "pos"),
                                        Class9770.method38433(var0x, "nbt"),
@@ -63,7 +64,7 @@ public class Class8002 {
       );
    }
 
-   private static int method27336(Class6619 var0, ResourceLocation var1, Vector3d var2, CompoundNBT var3, boolean var4) throws CommandSyntaxException {
+   private static int method27336(CommandSource var0, ResourceLocation var1, Vector3d var2, CompoundNBT var3, boolean var4) throws CommandSyntaxException {
       BlockPos var7 = new BlockPos(var2);
       if (World.isInvalidPosition(var7)) {
          CompoundNBT var8 = var3.method79();

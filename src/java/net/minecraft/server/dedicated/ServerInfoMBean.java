@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.server.dedicated;
 
 import java.lang.management.ManagementFactory;
 import java.util.Arrays;
@@ -22,10 +22,13 @@ import javax.management.MBeanRegistrationException;
 import javax.management.MalformedObjectNameException;
 import javax.management.NotCompliantMBeanException;
 import javax.management.ObjectName;
+
+import mapped.Class9401;
+import mapped.MinecraftServer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public final class Class9126 implements DynamicMBean {
+public final class ServerInfoMBean implements DynamicMBean {
    private static final Logger field41931 = LogManager.getLogger();
    private final MinecraftServer field41932;
    private final MBeanInfo field41933;
@@ -35,7 +38,7 @@ public final class Class9126 implements DynamicMBean {
       )
       .collect(Collectors.toMap(var0 -> Class9401.method35742(var0), Function.<Class9401>identity()));
 
-   private Class9126(MinecraftServer var1) {
+   private ServerInfoMBean(MinecraftServer var1) {
       this.field41932 = var1;
       MBeanAttributeInfo[] var4 = this.field41934
          .values()
@@ -43,7 +46,7 @@ public final class Class9126 implements DynamicMBean {
          .<MBeanAttributeInfo>map(var0 -> Class9401.method35743(var0))
          .<MBeanAttributeInfo>toArray(MBeanAttributeInfo[]::new);
       this.field41933 = new MBeanInfo(
-         Class9126.class.getSimpleName(),
+         ServerInfoMBean.class.getSimpleName(),
          "metrics for dedicated server",
          var4,
          (MBeanConstructorInfo[])null,
@@ -52,9 +55,9 @@ public final class Class9126 implements DynamicMBean {
       );
    }
 
-   public static void method34052(MinecraftServer var0) {
+   public static void func_233490_a_(MinecraftServer var0) {
       try {
-         ManagementFactory.getPlatformMBeanServer().registerMBean(new Class9126(var0), new ObjectName("net.minecraft.server:type=Server"));
+         ManagementFactory.getPlatformMBeanServer().registerMBean(new ServerInfoMBean(var0), new ObjectName("net.minecraft.server:type=Server"));
       } catch (MBeanRegistrationException | NotCompliantMBeanException | MalformedObjectNameException | InstanceAlreadyExistsException var4) {
          field41931.warn("Failed to initialise server as JMX bean", var4);
       }

@@ -15,6 +15,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
@@ -126,7 +127,7 @@ public class Class1029 extends Class1026 {
             this.getAttribute(Attributes.MOVEMENT_SPEED).method38661(0.0);
          }
 
-         if (this.collidedHorizontally && this.world.getGameRules().getBoolean(Class5462.field24224)) {
+         if (this.collidedHorizontally && this.world.getGameRules().getBoolean(GameRules.field24224)) {
             boolean var7 = false;
             AxisAlignedBB var8 = this.getBoundingBox().method19664(0.2);
 

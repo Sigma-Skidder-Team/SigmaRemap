@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.block.BlockState;
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -133,13 +134,13 @@ public class Class954 extends TileEntity {
       return true;
    }
 
-   public Class6619 method3843(ServerPlayerEntity var1) {
+   public CommandSource method3843(ServerPlayerEntity var1) {
       String var4 = var1 != null ? var1.getName().getString() : "Sign";
       Object var5 = var1 != null ? var1.getDisplayName() : new StringTextComponent("Sign");
-      return new Class6619(
+      return new CommandSource(
          ICommandSource.field5189,
          Vector3d.method11328(this.pos),
-         Vector2f.field37212,
+         Vector2f.ZERO,
          (ServerWorld)this.world,
          2,
          var4,

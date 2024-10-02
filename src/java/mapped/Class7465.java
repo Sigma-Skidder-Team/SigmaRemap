@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.brigadier.context.CommandContext;
+import net.minecraft.command.CommandSource;
 
 public abstract class Class7465<T extends Class7465<T>> {
    public final Class7989<T> field32101;
@@ -9,11 +10,11 @@ public abstract class Class7465<T extends Class7465<T>> {
       this.field32101 = var1;
    }
 
-   public abstract void method24154(CommandContext<Class6619> var1, String var2);
+   public abstract void method24154(CommandContext<CommandSource> var1, String var2);
 
-   public void method24170(CommandContext<Class6619> var1, String var2) {
+   public void method24170(CommandContext<CommandSource> var1, String var2) {
       this.method24154(var1, var2);
-      this.method24171(((Class6619)var1.getSource()).method20177());
+      this.method24171(((CommandSource)var1.getSource()).method20177());
    }
 
    public void method24171(MinecraftServer var1) {

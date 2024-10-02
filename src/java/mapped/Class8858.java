@@ -14,11 +14,11 @@ public final class Class8858 implements ProfileLookupCallback {
    }
 
    public void onProfileLookupSucceeded(GameProfile var1) {
-      this.field40045.method1386().method31790(var1);
+      this.field40045.getPlayerProfileCache().method31790(var1);
       this.field40046.add(var1);
    }
 
    public void onProfileLookupFailed(GameProfile var1, Exception var2) {
-      Class9061.method33743().warn("Could not lookup user whitelist entry for {}", var1.getName(), var2);
+      PreYggdrasilConverter.method33743().warn("Could not lookup user whitelist entry for {}", var1.getName(), var2);
    }
 }

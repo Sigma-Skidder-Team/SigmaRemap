@@ -17,6 +17,7 @@ import net.minecraft.item.Items;
 import net.minecraft.item.ShieldItem;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.BannerTileEntity;
+import net.minecraft.tileentity.SkullTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import org.apache.commons.lang3.StringUtils;

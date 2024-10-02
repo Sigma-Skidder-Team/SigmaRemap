@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.player.PlayerEntity;
@@ -9,6 +10,7 @@ import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextComponent$Serializer;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -110,7 +112,7 @@ public abstract class CommandBlockLogic implements ICommandSource {
          if (var4.method1361() && !Class9001.method33256(this.field5198)) {
             try {
                this.field5197 = null;
-               Class6619 var5 = this.method3574().method20160((var1x, var2, var3) -> {
+               CommandSource var5 = this.method3574().method20160((var1x, var2, var3) -> {
                   if (var2) {
                      this.field5195++;
                   }
@@ -185,11 +187,11 @@ public abstract class CommandBlockLogic implements ICommandSource {
 
    public abstract Vector3d method3573();
 
-   public abstract Class6619 method3574();
+   public abstract CommandSource method3574();
 
    @Override
    public boolean method1405() {
-      return this.method3567().getGameRules().getBoolean(Class5462.field24236) && this.field5196;
+      return this.method3567().getGameRules().getBoolean(GameRules.field24236) && this.field5196;
    }
 
    @Override
@@ -199,6 +201,6 @@ public abstract class CommandBlockLogic implements ICommandSource {
 
    @Override
    public boolean method3425() {
-      return this.method3567().getGameRules().getBoolean(Class5462.field24230);
+      return this.method3567().getGameRules().getBoolean(GameRules.field24230);
    }
 }

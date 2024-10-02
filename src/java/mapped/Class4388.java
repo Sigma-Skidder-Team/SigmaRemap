@@ -12,6 +12,7 @@ import net.minecraft.item.Items;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.server.ServerWorld;
 
 import java.util.*;
@@ -428,7 +429,7 @@ public class Class4388 {
    public static void method13832(PlayerEntity var0, boolean var1) {
       List<Class1034> var4 = var0.world.getEntitiesWithinAABB(Class1034.class, var0.getBoundingBox().method19664(16.0));
       var4.stream().filter(Class4388::method13865).filter(var2 -> !var1 || Class6983.method21583(var2, var0)).forEach(var1x -> {
-         if (!var1x.world.getGameRules().getBoolean(Class5462.field24255)) {
+         if (!var1x.world.getGameRules().getBoolean(GameRules.field24255)) {
             method13849(var1x, var0);
          } else {
             method13850(var1x, var0);
@@ -490,7 +491,7 @@ public class Class4388 {
 
    public static void method13836(Class1035 var0, LivingEntity var1) {
       if (!var0.getBrain().method21430(Activity.field40232) && method13871(var1) && !Class6983.method21582(var0, var1, 4.0)) {
-         if (var1.getType() == EntityType.PLAYER && var0.world.getGameRules().getBoolean(Class5462.field24255)) {
+         if (var1.getType() == EntityType.PLAYER && var0.world.getGameRules().getBoolean(GameRules.field24255)) {
             method13850(var0, var1);
             method13847(var0);
          } else {
@@ -592,7 +593,7 @@ public class Class4388 {
             method13861(var0);
          }
 
-         if (var1.getType() == EntityType.PLAYER && var0.world.getGameRules().getBoolean(Class5462.field24255)) {
+         if (var1.getType() == EntityType.PLAYER && var0.world.getGameRules().getBoolean(GameRules.field24255)) {
             var0.getBrain().method21407(Class8830.field39850, true, 600L);
          }
       }

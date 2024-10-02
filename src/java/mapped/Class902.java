@@ -13,6 +13,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.EntityRayTraceResult;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
@@ -89,7 +90,7 @@ public class Class902 extends Class901 {
    public void method3464(RayTraceResult var1) {
       super.method3464(var1);
       if (!this.world.isRemote) {
-         Class2141 var4 = !this.world.getGameRules().getBoolean(Class5462.field24224) ? Class2141.field14014 : Class2141.field14016;
+         Class2141 var4 = !this.world.getGameRules().getBoolean(GameRules.field24224) ? Class2141.field14014 : Class2141.field14016;
          this.world.method6756(this, this.getPosX(), this.getPosY(), this.getPosZ(), 1.0F, false, var4);
          this.remove();
       }

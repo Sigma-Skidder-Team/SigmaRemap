@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.world;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
@@ -7,6 +7,7 @@ import java.util.Comparator;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import mapped.*;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.server.SEntityStatusPacket;
@@ -14,7 +15,7 @@ import net.minecraft.network.play.server.SChangeGameStatePacket;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Class5462 {
+public class GameRules {
    private static final Logger field24221 = LogManager.getLogger();
    private static final Map<Class9221<?>, Class7989<?>> field24222 = Maps.newTreeMap(
       Comparator.<Class9221, String>comparing(var0 -> Class9221.method34675(var0))
@@ -47,7 +48,7 @@ public class Class5462 {
    public static final Class9221<Class7466> field24242 = method17127("doWeatherCycle", Class2155.field14135, Class7466.method24178(true));
    public static final Class9221<Class7466> field24243 = method17127("doLimitedCrafting", Class2155.field14131, Class7466.method24178(false));
    public static final Class9221<Class7464> field24244 = method17127("maxCommandChainLength", Class2155.field14137, Class7464.method24169(65536));
-   public static final Class9221<Class7466> field24245 = method17127("announceAdvancements", Class2155.field14136, Class7466.method24178(true));
+   public static final Class9221<Class7466> ANNOUNCE_ADVANCEMENTS = method17127("announceAdvancements", Class2155.field14136, Class7466.method24178(true));
    public static final Class9221<Class7466> field24246 = method17127("disableRaids", Class2155.field14132, Class7466.method24178(false));
    public static final Class9221<Class7466> field24247 = method17127("doInsomnia", Class2155.field14133, Class7466.method24178(true));
    public static final Class9221<Class7466> field24248 = method17127("doImmediateRespawn", Class2155.field14131, Class7466.method24179(false, (var0, var1) -> {
@@ -74,20 +75,20 @@ public class Class5462 {
       }
    }
 
-   public Class5462(DynamicLike<?> var1) {
+   public GameRules(DynamicLike<?> var1) {
       this();
       this.method17130(var1);
    }
 
-   public Class5462() {
+   public GameRules() {
       this.field24256 = field24222.entrySet().stream().collect(ImmutableMap.toImmutableMap(Entry::getKey, var0 -> ((Class7989)var0.getValue()).method27159()));
    }
 
-   private Class5462(Map<Class9221<?>, Class7465<?>> var1) {
+   private GameRules(Map<Class9221<?>, Class7465<?>> var1) {
       this.field24256 = var1;
    }
 
-   public <T extends Class7465<T>> T method17128(Class9221<T> var1) {
+   public <T extends Class7465<T>> T get(Class9221<T> var1) {
       return (T)this.field24256.get(var1);
    }
 
@@ -101,8 +102,8 @@ public class Class5462 {
       this.field24256.forEach((var1x, var2) -> var1.get(Class9221.method34675(var1x)).asString().result().ifPresent(var2::method24157));
    }
 
-   public Class5462 clone() {
-      return new Class5462(
+   public GameRules clone() {
+      return new GameRules(
          this.field24256.entrySet().stream().collect(ImmutableMap.toImmutableMap(Entry::getKey, var0 -> ((Class7465)var0.getValue()).method24165()))
       );
    }
@@ -116,21 +117,21 @@ public class Class5462 {
       var2.method27160(var0, (Class9221) var1);
    }
 
-   public void method17133(Class5462 var1, MinecraftServer var2) {
+   public void method17133(GameRules var1, MinecraftServer var2) {
       var1.field24256.keySet().forEach(var3 -> this.method17134((Class9221<?>)var3, var1, var2));
    }
 
-   private <T extends Class7465<T>> void method17134(Class9221<T> var1, Class5462 var2, MinecraftServer var3) {
-      T var6 = var2.method17128(var1);
-      this.method17128(var1).method24164(var6, var3);
+   private <T extends Class7465<T>> void method17134(Class9221<T> var1, GameRules var2, MinecraftServer var3) {
+      T var6 = var2.get(var1);
+      this.get(var1).method24164(var6, var3);
    }
 
    public boolean getBoolean(Class9221<Class7466> var1) {
-      return this.<Class7466>method17128(var1).method24174();
+      return this.<Class7466>get(var1).method24174();
    }
 
    public int method17136(Class9221<Class7464> var1) {
-      return this.<Class7464>method17128(var1).method24155();
+      return this.<Class7464>get(var1).method24155();
    }
 
    // $VF: synthetic method

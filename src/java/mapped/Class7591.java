@@ -11,10 +11,12 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Set;
 import java.util.function.Supplier;
+
+import net.minecraft.command.CommandSource;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class7591 implements ArgumentType<Class8985> {
-   public static final SuggestionProvider<Class6619> field32590 = (var0, var1) -> {
+   public static final SuggestionProvider<CommandSource> field32590 = (var0, var1) -> {
       StringReader var4 = new StringReader(var1.getInput());
       var4.setCursor(var1.getStart());
       Class8533 var5 = new Class8533(var4);
@@ -34,20 +36,20 @@ public class Class7591 implements ArgumentType<Class8985> {
       this.field32593 = var1;
    }
 
-   public static String method24858(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
+   public static String method24858(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
       return method24859(var0, var1).iterator().next();
    }
 
-   public static Collection<String> method24859(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
+   public static Collection<String> method24859(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
       return method24861(var0, var1, Collections::emptyList);
    }
 
-   public static Collection<String> method24860(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
-      return method24861(var0, var1, ((Class6619)var0.getSource()).method20177().method1409()::method20984);
+   public static Collection<String> method24860(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
+      return method24861(var0, var1, ((CommandSource)var0.getSource()).method20177().method1409()::method20984);
    }
 
-   public static Collection<String> method24861(CommandContext<Class6619> var0, String var1, Supplier<Collection<String>> var2) throws CommandSyntaxException {
-      Collection var5 = ((Class8985)var0.getArgument(var1, Class8985.class)).method33188((Class6619)var0.getSource(), var2);
+   public static Collection<String> method24861(CommandContext<CommandSource> var0, String var1, Supplier<Collection<String>> var2) throws CommandSyntaxException {
+      Collection var5 = ((Class8985)var0.getArgument(var1, Class8985.class)).method33188((CommandSource)var0.getSource(), var2);
       if (!var5.isEmpty()) {
          return var5;
       } else {

@@ -9,6 +9,7 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.Locale;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -38,7 +39,7 @@ public class Class8243 {
       new TranslationTextComponent("commands.worldborder.damage.amount.failed")
    );
 
-   public static void method28741(CommandDispatcher<Class6619> var0) {
+   public static void method28741(CommandDispatcher<CommandSource> var0) {
       var0.register(
          (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839(
                                  "worldborder"
@@ -50,8 +51,8 @@ public class Class8243 {
                                     ((RequiredArgumentBuilder)Class6099.method18840("distance", FloatArgumentType.floatArg(-6.0E7F, 6.0E7F))
                                           .executes(
                                              var0x -> method28748(
-                                                   (Class6619)var0x.getSource(),
-                                                   ((Class6619)var0x.getSource()).method20172().getWorldBorder().method24537()
+                                                   (CommandSource)var0x.getSource(),
+                                                   ((CommandSource)var0x.getSource()).method20172().getWorldBorder().method24537()
                                                       + (double)FloatArgumentType.getFloat(var0x, "distance"),
                                                    0L
                                                 )
@@ -60,10 +61,10 @@ public class Class8243 {
                                           Class6099.method18840("time", IntegerArgumentType.integer(0))
                                              .executes(
                                                 var0x -> method28748(
-                                                      (Class6619)var0x.getSource(),
-                                                      ((Class6619)var0x.getSource()).method20172().getWorldBorder().method24537()
+                                                      (CommandSource)var0x.getSource(),
+                                                      ((CommandSource)var0x.getSource()).method20172().getWorldBorder().method24537()
                                                          + (double)FloatArgumentType.getFloat(var0x, "distance"),
-                                                      ((Class6619)var0x.getSource()).method20172().getWorldBorder().method24538()
+                                                      ((CommandSource)var0x.getSource()).method20172().getWorldBorder().method24538()
                                                          + (long)IntegerArgumentType.getInteger(var0x, "time") * 1000L
                                                    )
                                              )
@@ -74,12 +75,12 @@ public class Class8243 {
                            Class6099.method18839("set")
                               .then(
                                  ((RequiredArgumentBuilder)Class6099.method18840("distance", FloatArgumentType.floatArg(-6.0E7F, 6.0E7F))
-                                       .executes(var0x -> method28748((Class6619)var0x.getSource(), (double)FloatArgumentType.getFloat(var0x, "distance"), 0L)))
+                                       .executes(var0x -> method28748((CommandSource)var0x.getSource(), (double)FloatArgumentType.getFloat(var0x, "distance"), 0L)))
                                     .then(
                                        Class6099.method18840("time", IntegerArgumentType.integer(0))
                                           .executes(
                                              var0x -> method28748(
-                                                   (Class6619)var0x.getSource(),
+                                                   (CommandSource)var0x.getSource(),
                                                    (double)FloatArgumentType.getFloat(var0x, "distance"),
                                                    (long)IntegerArgumentType.getInteger(var0x, "time") * 1000L
                                                 )
@@ -91,7 +92,7 @@ public class Class8243 {
                         Class6099.method18839("center")
                            .then(
                               Class6099.method18840("pos", Class7347.method23292())
-                                 .executes(var0x -> method28747((Class6619)var0x.getSource(), Class7347.method23293(var0x, "pos")))
+                                 .executes(var0x -> method28747((CommandSource)var0x.getSource(), Class7347.method23293(var0x, "pos")))
                            )
                      ))
                   .then(
@@ -100,39 +101,39 @@ public class Class8243 {
                               Class6099.method18839("amount")
                                  .then(
                                     Class6099.method18840("damagePerBlock", FloatArgumentType.floatArg(0.0F))
-                                       .executes(var0x -> method28743((Class6619)var0x.getSource(), FloatArgumentType.getFloat(var0x, "damagePerBlock")))
+                                       .executes(var0x -> method28743((CommandSource)var0x.getSource(), FloatArgumentType.getFloat(var0x, "damagePerBlock")))
                                  )
                            ))
                         .then(
                            Class6099.method18839("buffer")
                               .then(
                                  Class6099.method18840("distance", FloatArgumentType.floatArg(0.0F))
-                                    .executes(var0x -> method28742((Class6619)var0x.getSource(), FloatArgumentType.getFloat(var0x, "distance")))
+                                    .executes(var0x -> method28742((CommandSource)var0x.getSource(), FloatArgumentType.getFloat(var0x, "distance")))
                               )
                         )
                   ))
-               .then(Class6099.method18839("get").executes(var0x -> method28746((Class6619)var0x.getSource()))))
+               .then(Class6099.method18839("get").executes(var0x -> method28746((CommandSource)var0x.getSource()))))
             .then(
                ((LiteralArgumentBuilder)Class6099.method18839("warning")
                      .then(
                         Class6099.method18839("distance")
                            .then(
                               Class6099.method18840("distance", IntegerArgumentType.integer(0))
-                                 .executes(var0x -> method28745((Class6619)var0x.getSource(), IntegerArgumentType.getInteger(var0x, "distance")))
+                                 .executes(var0x -> method28745((CommandSource)var0x.getSource(), IntegerArgumentType.getInteger(var0x, "distance")))
                            )
                      ))
                   .then(
                      Class6099.method18839("time")
                         .then(
                            Class6099.method18840("time", IntegerArgumentType.integer(0))
-                              .executes(var0x -> method28744((Class6619)var0x.getSource(), IntegerArgumentType.getInteger(var0x, "time")))
+                              .executes(var0x -> method28744((CommandSource)var0x.getSource(), IntegerArgumentType.getInteger(var0x, "time")))
                         )
                   )
             )
       );
    }
 
-   private static int method28742(Class6619 var0, float var1) throws CommandSyntaxException {
+   private static int method28742(CommandSource var0, float var1) throws CommandSyntaxException {
       WorldBorder var4 = var0.method20172().getWorldBorder();
       if (var4.method24546() != (double)var1) {
          var4.method24547((double)var1);
@@ -143,7 +144,7 @@ public class Class8243 {
       }
    }
 
-   private static int method28743(Class6619 var0, float var1) throws CommandSyntaxException {
+   private static int method28743(CommandSource var0, float var1) throws CommandSyntaxException {
       WorldBorder var4 = var0.method20172().getWorldBorder();
       if (var4.method24548() != (double)var1) {
          var4.method24549((double)var1);
@@ -154,7 +155,7 @@ public class Class8243 {
       }
    }
 
-   private static int method28744(Class6619 var0, int var1) throws CommandSyntaxException {
+   private static int method28744(CommandSource var0, int var1) throws CommandSyntaxException {
       WorldBorder var4 = var0.method20172().getWorldBorder();
       if (var4.method24551() != var1) {
          var4.method24552(var1);
@@ -165,7 +166,7 @@ public class Class8243 {
       }
    }
 
-   private static int method28745(Class6619 var0, int var1) throws CommandSyntaxException {
+   private static int method28745(CommandSource var0, int var1) throws CommandSyntaxException {
       WorldBorder var4 = var0.method20172().getWorldBorder();
       if (var4.method24553() != var1) {
          var4.method24554(var1);
@@ -176,13 +177,13 @@ public class Class8243 {
       }
    }
 
-   private static int method28746(Class6619 var0) {
+   private static int method28746(CommandSource var0) {
       double var3 = var0.method20172().getWorldBorder().method24537();
       var0.method20179(new TranslationTextComponent("commands.worldborder.get", String.format(Locale.ROOT, "%.0f", var3)), false);
       return MathHelper.floor(var3 + 0.5);
    }
 
-   private static int method28747(Class6619 var0, Vector2f var1) throws CommandSyntaxException {
+   private static int method28747(CommandSource var0, Vector2f var1) throws CommandSyntaxException {
       WorldBorder var4 = var0.method20172().getWorldBorder();
       if (var4.getCenterX() == (double)var1.field37220 && var4.getCenterZ() == (double)var1.field37221) {
          throw field35415.create();
@@ -198,7 +199,7 @@ public class Class8243 {
       }
    }
 
-   private static int method28748(Class6619 var0, double var1, long var3) throws CommandSyntaxException {
+   private static int method28748(CommandSource var0, double var1, long var3) throws CommandSyntaxException {
       WorldBorder var7 = var0.method20172().getWorldBorder();
       double var8 = var7.method24537();
       if (var8 != var1) {

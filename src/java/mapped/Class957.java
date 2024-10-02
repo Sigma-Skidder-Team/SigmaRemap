@@ -241,7 +241,7 @@ public class Class957 extends Class956 implements ITickableTileEntity {
       ChunkPos var3 = var0.getPos();
       BlockPos var4 = new BlockPos(var3.getX(), 30, var3.getZ());
       int var5 = var0.getTopFilledSegment() + 16 - 1;
-      BlockPos var6 = new BlockPos(var3.method24358(), var5, var3.method24359());
+      BlockPos var6 = new BlockPos(var3.getXEnd(), var5, var3.getZEnd());
       BlockPos var7 = null;
       double var8 = 0.0;
 

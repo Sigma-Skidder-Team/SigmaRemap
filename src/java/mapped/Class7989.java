@@ -2,6 +2,8 @@ package mapped;
 
 import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
+import net.minecraft.command.CommandSource;
+
 import java.util.function.BiConsumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -20,7 +22,7 @@ public class Class7989<T extends Class7465<T>> {
       this.field34320 = var4;
    }
 
-   public RequiredArgumentBuilder<Class6619, ?> method27158(String var1) {
+   public RequiredArgumentBuilder<CommandSource, ?> method27158(String var1) {
       return Class6099.method18840(var1, (ArgumentType<T>)this.field34317.get());
    }
 

@@ -9,6 +9,7 @@ import net.minecraft.network.play.server.SEntityStatusPacket;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.server.ServerWorld;
 
 import java.util.Iterator;
@@ -40,7 +41,7 @@ public class Class7531 extends Class7530 {
 
       while (var3.hasNext()) {
          Class7699 var4 = (Class7699)var3.next();
-         if (this.field32333.getGameRules().getBoolean(Class5462.field24246)) {
+         if (this.field32333.getGameRules().getBoolean(GameRules.field24246)) {
             var4.method25402();
          }
 
@@ -69,7 +70,7 @@ public class Class7531 extends Class7530 {
    public Class7699 method24613(ServerPlayerEntity var1) {
       if (var1.isSpectator()) {
          return null;
-      } else if (this.field32333.getGameRules().getBoolean(Class5462.field24246)) {
+      } else if (this.field32333.getGameRules().getBoolean(GameRules.field24246)) {
          return null;
       } else {
          DimensionType var4 = var1.world.method6812();

@@ -10,6 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
@@ -27,7 +28,7 @@ public class Class3749 extends Class3676<Class1042> {
    }
 
    public boolean method12508(ServerWorld var1, Class1042 var2) {
-      if (!var1.getGameRules().getBoolean(Class5462.field24224)) {
+      if (!var1.getGameRules().getBoolean(GameRules.field24224)) {
          return false;
       } else if (var2.method4674().method26571() != Class8395.field36016) {
          return false;

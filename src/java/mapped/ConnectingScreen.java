@@ -8,6 +8,7 @@ import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.client.util.Util;
 import net.minecraft.network.NetworkManager;
+import net.minecraft.util.DefaultUncaughtExceptionHandler;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
@@ -45,7 +46,7 @@ public class ConnectingScreen extends Screen {
    private void method6219(String var1, int var2) {
       field6935.info("Connecting to {}, {}", var1, var2);
       Class381 var5 = new Class381(this, "Server Connector #" + field6934.incrementAndGet(), var1, var2);
-      var5.setUncaughtExceptionHandler(new Class6030(field6935));
+      var5.setUncaughtExceptionHandler(new DefaultUncaughtExceptionHandler(field6935));
       var5.start();
    }
 

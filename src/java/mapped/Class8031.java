@@ -14,6 +14,7 @@ import java.util.function.Predicate;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.command.CommandSource;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.state.Property;
 import net.minecraft.tileentity.TileEntity;
@@ -29,7 +30,7 @@ public class Class8031 {
    private static final Class164 field34512 = new Class164(Blocks.AIR.getDefaultState(), Collections.<Property<?>>emptySet(), (CompoundNBT)null);
    private static final SimpleCommandExceptionType field34513 = new SimpleCommandExceptionType(new TranslationTextComponent("commands.fill.failed"));
 
-   public static void method27540(CommandDispatcher<Class6619> var0) {
+   public static void method27540(CommandDispatcher<CommandSource> var0) {
       var0.register(
          (LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("fill").requires(var0x -> var0x.method20129(2)))
             .then(
@@ -42,7 +43,7 @@ public class Class8031 {
                                              )
                                              .executes(
                                                 var0x -> method27541(
-                                                      (Class6619)var0x.getSource(),
+                                                      (CommandSource)var0x.getSource(),
                                                       new Class9764(Class6849.method20827(var0x, "from"), Class6849.method20827(var0x, "to")),
                                                       Class7971.method27104(var0x, "block"),
                                                       Class2222.field14510,
@@ -53,7 +54,7 @@ public class Class8031 {
                                              ((LiteralArgumentBuilder)Class6099.method18839("replace")
                                                    .executes(
                                                       var0x -> method27541(
-                                                            (Class6619)var0x.getSource(),
+                                                            (CommandSource)var0x.getSource(),
                                                             new Class9764(Class6849.method20827(var0x, "from"), Class6849.method20827(var0x, "to")),
                                                             Class7971.method27104(var0x, "block"),
                                                             Class2222.field14510,
@@ -64,7 +65,7 @@ public class Class8031 {
                                                    Class6099.method18840("filter", Class7505.method24464())
                                                       .executes(
                                                          var0x -> method27541(
-                                                               (Class6619)var0x.getSource(),
+                                                               (CommandSource)var0x.getSource(),
                                                                new Class9764(Class6849.method20827(var0x, "from"), Class6849.method20827(var0x, "to")),
                                                                Class7971.method27104(var0x, "block"),
                                                                Class2222.field14510,
@@ -77,7 +78,7 @@ public class Class8031 {
                                           Class6099.method18839("keep")
                                              .executes(
                                                 var0x -> method27541(
-                                                      (Class6619)var0x.getSource(),
+                                                      (CommandSource)var0x.getSource(),
                                                       new Class9764(Class6849.method20827(var0x, "from"), Class6849.method20827(var0x, "to")),
                                                       Class7971.method27104(var0x, "block"),
                                                       Class2222.field14510,
@@ -89,7 +90,7 @@ public class Class8031 {
                                        Class6099.method18839("outline")
                                           .executes(
                                              var0x -> method27541(
-                                                   (Class6619)var0x.getSource(),
+                                                   (CommandSource)var0x.getSource(),
                                                    new Class9764(Class6849.method20827(var0x, "from"), Class6849.method20827(var0x, "to")),
                                                    Class7971.method27104(var0x, "block"),
                                                    Class2222.field14511,
@@ -101,7 +102,7 @@ public class Class8031 {
                                     Class6099.method18839("hollow")
                                        .executes(
                                           var0x -> method27541(
-                                                (Class6619)var0x.getSource(),
+                                                (CommandSource)var0x.getSource(),
                                                 new Class9764(Class6849.method20827(var0x, "from"), Class6849.method20827(var0x, "to")),
                                                 Class7971.method27104(var0x, "block"),
                                                 Class2222.field14512,
@@ -113,7 +114,7 @@ public class Class8031 {
                                  Class6099.method18839("destroy")
                                     .executes(
                                        var0x -> method27541(
-                                             (Class6619)var0x.getSource(),
+                                             (CommandSource)var0x.getSource(),
                                              new Class9764(Class6849.method20827(var0x, "from"), Class6849.method20827(var0x, "to")),
                                              Class7971.method27104(var0x, "block"),
                                              Class2222.field14513,
@@ -127,7 +128,7 @@ public class Class8031 {
       );
    }
 
-   private static int method27541(Class6619 var0, Class9764 var1, Class164 var2, Class2222 var3, Predicate<CachedBlockInfo> var4) throws CommandSyntaxException {
+   private static int method27541(CommandSource var0, Class9764 var1, Class164 var2, Class2222 var3, Predicate<CachedBlockInfo> var4) throws CommandSyntaxException {
       int var7 = var1.method38398() * var1.method38399() * var1.method38400();
       if (var7 > 32768) {
          throw field34511.create(32768, var7);

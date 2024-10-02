@@ -11,6 +11,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.concurrent.CompletableFuture;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -23,7 +24,7 @@ public class Class6888 implements ArgumentType<Class8420> {
       return new Class6888();
    }
 
-   public static Class8420 method21029(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
+   public static Class8420 method21029(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
       return (Class8420)var0.getArgument(var1, Class8420.class);
    }
 

@@ -34,7 +34,7 @@ import java.util.Set;
 
 public class ItemRenderer implements IResourceManagerReloadListener {
    public static final ResourceLocation field845 = new ResourceLocation("textures/misc/enchanted_item_glint.png");
-   private static final Set<Item> field846 = Sets.newHashSet(new Item[]{Items.field37222});
+   private static final Set<Item> field846 = Sets.newHashSet(new Item[]{Items.AIR});
    public float field847;
    private final Class8400 field848;
    private final TextureManager field849;

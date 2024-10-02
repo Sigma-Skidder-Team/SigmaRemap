@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.resources.ResourcePackList;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
@@ -15,7 +16,7 @@ import org.apache.logging.log4j.Logger;
 public class Class9482 {
    private static final Logger field44075 = LogManager.getLogger();
 
-   public static void method36605(Collection<String> var0, Class6619 var1) {
+   public static void method36605(Collection<String> var0, CommandSource var1) {
       var1.method20177().func_240780_a_(var0).exceptionally(var1x -> {
          field44075.warn("Failed to execute reload", var1x);
          var1.method20181(new TranslationTextComponent("commands.reload.failure"));
@@ -37,10 +38,10 @@ public class Class9482 {
       return var5;
    }
 
-   public static void method36607(CommandDispatcher<Class6619> var0) {
+   public static void method36607(CommandDispatcher<CommandSource> var0) {
       var0.register(
          (LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("reload").requires(var0x -> var0x.method20129(2))).executes(var0x -> {
-            Class6619 var3 = (Class6619)var0x.getSource();
+            CommandSource var3 = (CommandSource)var0x.getSource();
             MinecraftServer var4 = var3.method20177();
             ResourcePackList var5 = var4.method1402();
             IServerConfiguration var6 = var4.func_240793_aU_();

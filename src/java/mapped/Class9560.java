@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.EnumSet;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.util.Direction;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -20,7 +21,7 @@ public class Class9560 implements ArgumentType<EnumSet<Direction.Axis>> {
       return new Class9560();
    }
 
-   public static EnumSet<Direction.Axis> method37041(CommandContext<Class6619> var0, String var1) {
+   public static EnumSet<Direction.Axis> method37041(CommandContext<CommandSource> var0, String var1) {
       return (EnumSet<Direction.Axis>)var0.getArgument(var1, EnumSet.class);
    }
 

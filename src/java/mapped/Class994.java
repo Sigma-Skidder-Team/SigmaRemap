@@ -17,6 +17,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 
 public class Class994 extends AbstractMinecartEntity {
@@ -74,7 +75,7 @@ public class Class994 extends AbstractMinecartEntity {
    @Override
    public void method3586(DamageSource var1) {
       super.method3586(var1);
-      if (!var1.method31131() && this.world.getGameRules().getBoolean(Class5462.field24229)) {
+      if (!var1.method31131() && this.world.getGameRules().getBoolean(GameRules.field24229)) {
          this.entityDropItem(Blocks.FURNACE);
       }
    }

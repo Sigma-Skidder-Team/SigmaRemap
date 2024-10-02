@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
 import net.minecraft.nbt.NumberNBT;
@@ -46,7 +47,7 @@ public class Class8158 {
    public static final List<Class8196> field35113 = field35112.stream().<Class8196>map(var0 -> var0.apply("target")).collect(ImmutableList.toImmutableList());
    public static final List<Class8196> field35114 = field35112.stream().<Class8196>map(var0 -> var0.apply("source")).collect(ImmutableList.toImmutableList());
 
-   public static void method28315(CommandDispatcher<Class6619> var0) {
+   public static void method28315(CommandDispatcher<CommandSource> var0) {
       LiteralArgumentBuilder var3 = (LiteralArgumentBuilder)Class6099.method18839("data").requires(var0x -> var0x.method20129(2));
 
       for (Class8196 var5 : field35113) {
@@ -55,24 +56,24 @@ public class Class8158 {
                         Class6099.method18839("merge"),
                         var1 -> var1.then(
                               Class6099.method18840("nbt", Class9770.method38432())
-                                 .executes(var1x -> method28324((Class6619)var1x.getSource(), var5.method28503(var1x), Class9770.method38433(var1x, "nbt")))
+                                 .executes(var1x -> method28324((CommandSource)var1x.getSource(), var5.method28503(var1x), Class9770.method38433(var1x, "nbt")))
                            )
                      )
                   ))
                   .then(
                      var5.method28504(
                         Class6099.method18839("get"),
-                        var1 -> var1.executes(var1x -> method28323((Class6619)var1x.getSource(), var5.method28503(var1x)))
+                        var1 -> var1.executes(var1x -> method28323((CommandSource)var1x.getSource(), var5.method28503(var1x)))
                               .then(
                                  ((RequiredArgumentBuilder)Class6099.method18840("path", Class8320.method29128())
                                        .executes(
-                                          var1x -> method28321((Class6619)var1x.getSource(), var5.method28503(var1x), Class8320.method29129(var1x, "path"))
+                                          var1x -> method28321((CommandSource)var1x.getSource(), var5.method28503(var1x), Class8320.method29129(var1x, "path"))
                                        ))
                                     .then(
                                        Class6099.method18840("scale", DoubleArgumentType.doubleArg())
                                           .executes(
                                              var1x -> method28322(
-                                                   (Class6619)var1x.getSource(),
+                                                   (CommandSource)var1x.getSource(),
                                                    var5.method28503(var1x),
                                                    Class8320.method29129(var1x, "path"),
                                                    DoubleArgumentType.getDouble(var1x, "scale")
@@ -87,7 +88,7 @@ public class Class8158 {
                      Class6099.method18839("remove"),
                      var1 -> var1.then(
                            Class6099.method18840("path", Class8320.method29128())
-                              .executes(var1x -> method28319((Class6619)var1x.getSource(), var5.method28503(var1x), Class8320.method29129(var1x, "path")))
+                              .executes(var1x -> method28319((CommandSource)var1x.getSource(), var5.method28503(var1x), Class8320.method29129(var1x, "path")))
                         )
                   )
                ))
@@ -168,7 +169,7 @@ public class Class8158 {
       return var7;
    }
 
-   private static ArgumentBuilder<Class6619, ?> method28317(BiConsumer<ArgumentBuilder<Class6619, ?>, Class7761> var0) {
+   private static ArgumentBuilder<CommandSource, ?> method28317(BiConsumer<ArgumentBuilder<CommandSource, ?>, Class7761> var0) {
       LiteralArgumentBuilder var3 = Class6099.method18839("modify");
 
       for (Class8196 var5 : field35113) {
@@ -198,21 +199,21 @@ public class Class8158 {
       return var3;
    }
 
-   private static int method28318(CommandContext<Class6619> var0, Class8196 var1, Class7823 var2, List<INBT> var3) throws CommandSyntaxException {
+   private static int method28318(CommandContext<CommandSource> var0, Class8196 var1, Class7823 var2, List<INBT> var3) throws CommandSyntaxException {
       Class7151 var6 = var1.method28503(var0);
       Class9670 var7 = Class8320.method29129(var0, "targetPath");
       CompoundNBT var8 = var6.method22312();
       int var9 = var2.method26160(var0, var8, var7, var3);
       if (var9 != 0) {
          var6.method22311(var8);
-         ((Class6619)var0.getSource()).method20179(var6.method22313(), true);
+         ((CommandSource)var0.getSource()).method20179(var6.method22313(), true);
          return var9;
       } else {
          throw field35105.create();
       }
    }
 
-   private static int method28319(Class6619 var0, Class7151 var1, Class9670 var2) throws CommandSyntaxException {
+   private static int method28319(CommandSource var0, Class7151 var1, Class9670 var2) throws CommandSyntaxException {
       CompoundNBT var5 = var1.method22312();
       int var6 = var2.method37731(var5);
       if (var6 != 0) {
@@ -235,7 +236,7 @@ public class Class8158 {
       }
    }
 
-   private static int method28321(Class6619 var0, Class7151 var1, Class9670 var2) throws CommandSyntaxException {
+   private static int method28321(CommandSource var0, Class7151 var1, Class9670 var2) throws CommandSyntaxException {
       INBT var5 = method28320(var2, var1);
       int var6;
       if (!(var5 instanceof NumberNBT)) {
@@ -260,7 +261,7 @@ public class Class8158 {
       return var6;
    }
 
-   private static int method28322(Class6619 var0, Class7151 var1, Class9670 var2, double var3) throws CommandSyntaxException {
+   private static int method28322(CommandSource var0, Class7151 var1, Class9670 var2, double var3) throws CommandSyntaxException {
       INBT var7 = method28320(var2, var1);
       if (var7 instanceof NumberNBT) {
          int var8 = MathHelper.floor(((NumberNBT)var7).getDouble() * var3);
@@ -271,12 +272,12 @@ public class Class8158 {
       }
    }
 
-   private static int method28323(Class6619 var0, Class7151 var1) throws CommandSyntaxException {
+   private static int method28323(CommandSource var0, Class7151 var1) throws CommandSyntaxException {
       var0.method20179(var1.method22314(var1.method22312()), false);
       return 1;
    }
 
-   private static int method28324(Class6619 var0, Class7151 var1, CompoundNBT var2) throws CommandSyntaxException {
+   private static int method28324(CommandSource var0, Class7151 var1, CompoundNBT var2) throws CommandSyntaxException {
       CompoundNBT var5 = var1.method22312();
       CompoundNBT var6 = var5.method79().method140(var2);
       if (!var5.equals(var6)) {

@@ -19,6 +19,7 @@ import net.minecraft.util.UUIDCodec;
 import net.minecraft.util.datafix.codec.DatapackCodec;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.GameType;
 import net.minecraft.world.storage.IServerWorldInfo;
 import org.apache.logging.log4j.LogManager;
@@ -431,7 +432,7 @@ public class ServerWorldInfo implements IServerWorldInfo, IServerConfiguration {
    }
 
    @Override
-   public void method20073(GameType var1) {
+   public void setGameType(GameType var1) {
       this.field29064 = this.field29064.method32433(var1);
    }
 
@@ -451,7 +452,7 @@ public class ServerWorldInfo implements IServerWorldInfo, IServerConfiguration {
    }
 
    @Override
-   public Class5462 method20046() {
+   public GameRules method20046() {
       return this.field29064.method32431();
    }
 
