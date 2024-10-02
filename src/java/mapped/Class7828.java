@@ -14,7 +14,7 @@ public class Class7828 {
    }
 
    public void method26204() {
-      this.field33613.values().forEach(BufferBuilder::method17071);
+      this.field33613.values().forEach(BufferBuilder::reset);
    }
 
    public void method26205() {

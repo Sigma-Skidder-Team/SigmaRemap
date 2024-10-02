@@ -90,7 +90,7 @@ public class Class4298 extends Class4278 {
          RenderSystem.pushMatrix();
          this.field20824.getRenderManager().method32215(false);
          Class7516.method24503();
-         RenderSystem.method27820();
+         RenderSystem.enableLighting();
          RenderSystem.enableDepthTest();
          GL11.glLightModelfv(2899, new float[]{0.7F, 0.7F, 0.7F, 1.0F});
          if (this.field20824.getRenderManager().info == null) {

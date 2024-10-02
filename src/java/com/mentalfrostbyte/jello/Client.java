@@ -194,7 +194,7 @@ public class Client {
         GL11.glDisable(2912);
         RenderSystem.disableDepthTest();
         RenderSystem.translatef(0.0F, 0.0F, 1000.0F);
-        RenderSystem.method27819(519, 0.0F);
+        RenderSystem.alphaFunc(519, 0.0F);
         RenderSystem.enableBlend();
         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
         GL11.glDisable(2896);
@@ -205,7 +205,7 @@ public class Client {
         RenderSystem.enableCull();
         RenderSystem.disableDepthTest();
         RenderSystem.enableBlend();
-        RenderSystem.method27819(518, 0.1F);
+        RenderSystem.alphaFunc(518, 0.1F);
         GL11.glPopMatrix();
     }
 

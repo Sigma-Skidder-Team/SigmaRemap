@@ -41,7 +41,7 @@ public class Class8087 {
    }
 
    public static void method27973(String var0, Runnable var1) {
-      RenderSystem.method27815();
+      RenderSystem.pushTextureAttributes();
 
       try {
          method27975(var0);

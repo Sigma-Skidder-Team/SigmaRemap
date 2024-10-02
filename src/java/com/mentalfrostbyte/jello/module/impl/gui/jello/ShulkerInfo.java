@@ -190,7 +190,7 @@ public class ShulkerInfo extends Module {
                     RenderSystem.enableCull();
                     RenderSystem.disableDepthTest();
                     RenderSystem.enableBlend();
-                    RenderSystem.method27819(518, 0.1F);
+                    RenderSystem.alphaFunc(518, 0.1F);
                 } else {
                     this.field23841 = -1;
                     this.field23842 = 0.0;
@@ -224,7 +224,7 @@ public class ShulkerInfo extends Module {
         RenderUtil.drawString(
                 ResourceRegistry.JelloLightFont25, (float) (var1 + var8), (float) (var2 + var8 - 3), var4, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)
         );
-        RenderSystem.method27820();
+        RenderSystem.enableLighting();
 
         for (int var14 = 0; var14 < var3.size(); var14++) {
             ItemStack var15 = var3.get(var14);
@@ -251,10 +251,10 @@ public class ShulkerInfo extends Module {
                         false
                 );
                 RenderUtil.drawString(ResourceRegistry.JelloLightFont20, (float) (var17 + var18), (float) (var16 + 13), "" + var15.count, ClientColors.LIGHT_GREYISH_BLUE.getColor);
-                RenderSystem.method27820();
+                RenderSystem.enableLighting();
             }
 
-            RenderSystem.method27820();
+            RenderSystem.enableLighting();
         }
 
         for (int var23 = 0; var23 < var3.size(); var23++) {
@@ -301,7 +301,7 @@ public class ShulkerInfo extends Module {
                 }
 
                 GL11.glPopMatrix();
-                RenderSystem.method27820();
+                RenderSystem.enableLighting();
             }
         }
     }

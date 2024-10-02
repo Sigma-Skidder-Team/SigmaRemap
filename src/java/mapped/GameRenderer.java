@@ -1088,7 +1088,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
          float var13 = this.itemActivationOffY * (float)(var2 / 4);
          RenderSystem.enableAlphaTest();
          RenderSystem.pushMatrix();
-         RenderSystem.method27814();
+         RenderSystem.pushLightingAttributes();
          RenderSystem.enableDepthTest();
          RenderSystem.disableCull();
          MatrixStack var14 = new MatrixStack();

@@ -787,7 +787,7 @@ public class Class7992 {
                GlStateManager.blendFunc(770, 771);
                GlStateManager.color4f(1.0F, 1.0F, 1.0F, 1.0F);
                GlStateManager.matrixMode(5888);
-               GlStateManager.method23698();
+               GlStateManager.enableLighting();
                GlStateManager.depthFunc(515);
                GlStateManager.depthMask(true);
                var8.bindTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
@@ -865,7 +865,7 @@ public class Class7992 {
                GlStateManager.matrixMode(5890);
                GlStateManager.loadIdentity();
                GlStateManager.matrixMode(5888);
-               GlStateManager.method23698();
+               GlStateManager.enableLighting();
                GlStateManager.depthMask(true);
                GlStateManager.depthFunc(515);
                GlStateManager.disableBlend();

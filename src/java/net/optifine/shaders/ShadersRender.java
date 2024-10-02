@@ -214,7 +214,7 @@ public class ShadersRender {
          Shaders.method32984("shadow terrain cutout");
          var8.getTextureManager().getTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE).method1137();
          GlStateManager.shadeModel(7424);
-         GlStateManager.method23697(516, 0.1F);
+         GlStateManager.alphaFunc(516, 0.1F);
          GlStateManager.matrixMode(5888);
          GlStateManager.method23833();
          GlStateManager.method23832();
@@ -295,7 +295,7 @@ public class ShadersRender {
          GlStateManager.method23879();
          GlStateManager.method23787();
          GlStateManager.blendFuncSeparate(770, 771, 1, 0);
-         GlStateManager.method23697(516, 0.1F);
+         GlStateManager.alphaFunc(516, 0.1F);
          if (Shaders.field40804 >= 2) {
             GlStateManager.method23803(33989);
             Shaders.method32984("pre copy shadow depth");
@@ -755,7 +755,7 @@ public class ShadersRender {
                .endVertex();
          }
 
-         GlStateManager.method23698();
+         GlStateManager.enableLighting();
          return true;
       }
    }

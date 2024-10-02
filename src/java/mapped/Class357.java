@@ -15,7 +15,7 @@ public final class Class357 extends Thread {
    @Override
    public void run() {
       try {
-         RenderSystem.method27805(true);
+         RenderSystem.initGameThread(true);
          this.field1585.run();
       } catch (Throwable var4) {
          Main.getLogger().error("Exception in client thread", var4);

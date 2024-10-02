@@ -65,7 +65,7 @@ public class GlAlphaState {
    public void method25216() {
       if (this.field32881) {
          GlStateManager.enableAlphaTest();
-         GlStateManager.method23697(this.field32882, this.field32883);
+         GlStateManager.alphaFunc(this.field32882, this.field32883);
       } else {
          GlStateManager.disableAlphaTest();
       }

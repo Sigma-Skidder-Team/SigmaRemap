@@ -11,7 +11,7 @@ public class Class4511 extends Class4510 {
             RenderSystem.disableAlphaTest();
          } else {
             RenderSystem.enableAlphaTest();
-            RenderSystem.method27819(516, var1);
+            RenderSystem.alphaFunc(516, var1);
          }
       }, () -> {
          RenderSystem.disableAlphaTest();

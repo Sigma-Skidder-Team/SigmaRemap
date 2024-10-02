@@ -11,14 +11,14 @@ public class Class7516 {
    private static final Vector3f field32246 = Util.<Vector3f>make(new Vector3f(-0.2F, -1.0F, 0.7F), Vector3f::method25280);
 
    public static void method24498() {
-      RenderSystem.method27820();
+      RenderSystem.enableLighting();
       RenderSystem.enableColorMaterial();
       RenderSystem.colorMaterial(1032, 5634);
    }
 
    public static void method24499() {
       RenderSystem.disableLighting();
-      RenderSystem.method27823();
+      RenderSystem.disableColorMaterial();
    }
 
    public static void method24500(Matrix4f var0) {

@@ -167,7 +167,6 @@ public class RearView extends Module {
         if (this.isEnabled()) {
             if (framebuffer != null) {
                 if (mc.currentScreen == null || this.getBooleanValueFromSettingName("Show in GUI") || this.visibilityTimer != 0) {
-                    RenderUtil.resetDepthBuffer();
                     RenderSystem.pushMatrix();
                     RenderSystem.clear(16640, false);
                     framebuffer.bindFramebuffer(true);

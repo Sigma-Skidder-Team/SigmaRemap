@@ -138,12 +138,7 @@ public class Framebuffer {
       }
       else
       {
-         int thing = GlStateManager.genFramebuffers();
-         if (thing == 1) {
-            return;
-         } else {
-            this.framebufferObject = thing;
-         }
+          this.framebufferObject = GlStateManager.genFramebuffers();
          this.framebufferTexture = TextureUtil.generateTextureId();
 
          if (this.useDepth)

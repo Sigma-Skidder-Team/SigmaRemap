@@ -1,12 +1,14 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import com.mojang.blaze3d.systems.IRenderCall;
+
 import java.util.List;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class Class9536 {
    private static String[] field44397;
-   private final List<ConcurrentLinkedQueue<Class4504>> field44398 = ImmutableList.of(
+   private final List<ConcurrentLinkedQueue<IRenderCall>> field44398 = ImmutableList.of(
       new ConcurrentLinkedQueue(), new ConcurrentLinkedQueue(), new ConcurrentLinkedQueue(), new ConcurrentLinkedQueue()
    );
    private volatile int field44399;

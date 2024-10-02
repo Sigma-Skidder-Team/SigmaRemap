@@ -87,7 +87,7 @@ public class ResourceLoadProgressGui extends LoadingGui {
       RenderSystem.enableBlend();
       RenderSystem.blendEquation(32774);
       RenderSystem.method27835(770, 1);
-      RenderSystem.method27819(516, 0.0F);
+      RenderSystem.alphaFunc(516, 0.0F);
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, var14);
       boolean var22 = true;
       if (this.field6449 != null) {

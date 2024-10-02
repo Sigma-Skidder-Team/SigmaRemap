@@ -146,7 +146,7 @@ public class Main {
          var58 = null;
 
          try {
-            RenderSystem.method27805(false);
+            RenderSystem.initGameThread(false);
             var57.run();
          } catch (Throwable var69) {
             LOGGER.error("Unhandled game exception", var69);

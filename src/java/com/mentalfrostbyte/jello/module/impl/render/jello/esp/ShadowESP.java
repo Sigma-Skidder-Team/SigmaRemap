@@ -42,7 +42,7 @@ public class ShadowESP extends Module {
                 GL11.glLineWidth(1.0F);
                 this.method16606();
                 this.method16607(Class2191.field14329);
-                RenderSystem.method27819(518, 0.0F);
+                RenderSystem.alphaFunc(518, 0.0F);
                 RenderSystem.enableAlphaTest();
                 GL11.glColor4f(1.0F, 0.0F, 1.0F, 0.1F);
                 GL11.glEnable(3042);
@@ -98,7 +98,7 @@ public class ShadowESP extends Module {
         float var8 = (float) (var4 & 0xFF) / 255.0F;
         GL11.glEnable(2896);
         GL11.glLightModelfv(2899, new float[]{var6, var7, var8, var5});
-        RenderSystem.method27820();
+        RenderSystem.enableLighting();
         if (field23794 == Class2191.field14329) {
             GL11.glEnable(10754);
             GL11.glLineWidth(2.0F);

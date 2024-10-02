@@ -32,7 +32,7 @@ public class BoxOutlineESP extends Module {
                 this.method16508(false);
                 RenderUtil.method11477(Class2329.field15941);
                 GL11.glLineWidth(3.0F);
-                RenderSystem.method27819(518, 0.0F);
+                RenderSystem.alphaFunc(518, 0.0F);
                 RenderSystem.enableAlphaTest();
                 this.method16507();
                 GL11.glColor4f(1.0F, 1.0F, 1.0F, 0.1F);

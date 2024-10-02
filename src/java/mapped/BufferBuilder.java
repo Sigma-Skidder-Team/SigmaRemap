@@ -426,7 +426,7 @@ public class BufferBuilder extends Class5424 implements Class5426 {
       this.field24118 = this.field24118 + var3.method33952() * var3.method33951().method26216();
       ((Buffer)this.field24113).limit(this.field24118);
       if (this.field24115 == this.field24114.size() && this.field24119 == 0) {
-         this.method17071();
+         this.reset();
       }
 
       ByteBuffer var4 = this.field24113.slice();
@@ -452,7 +452,7 @@ public class BufferBuilder extends Class5424 implements Class5426 {
       }
    }
 
-   public void method17071() {
+   public void reset() {
       if (this.field24116 != this.field24118) {
          field24103.warn("Bytes mismatch " + this.field24116 + " " + this.field24118);
       }

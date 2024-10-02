@@ -22,37 +22,37 @@ import java.util.function.Supplier;
 
 public class RenderSystem {
    private static final Logger field34654 = LogManager.getLogger();
-   private static final ConcurrentLinkedQueue<Class4504> field34655 = Queues.newConcurrentLinkedQueue();
+   private static final ConcurrentLinkedQueue<IRenderCall> recordingQueue = Queues.newConcurrentLinkedQueue();
    private static final Tessellator field34656 = new Tessellator();
    public static final float field34657 = 0.1F;
    private static final int field34658 = 1024;
-   private static boolean field34659;
-   private static Thread field34660;
-   private static Thread field34661;
+   private static boolean isReplayingQueue;
+   private static Thread gameThread;
+   private static Thread renderThread;
    private static int field34662 = -1;
-   private static boolean field34663;
-   private static double field34664 = Double.MIN_VALUE;
+   private static boolean isInInit;
+   private static double lastDrawTime = Double.MIN_VALUE;
 
    public static void method27802() {
-      if (field34661 == null && field34660 != Thread.currentThread()) {
-         field34661 = Thread.currentThread();
+      if (renderThread == null && gameThread != Thread.currentThread()) {
+         renderThread = Thread.currentThread();
       } else {
          throw new IllegalStateException("Could not initialize render thread");
       }
    }
 
    public static boolean isOnRenderThread() {
-      return Thread.currentThread() == field34661;
+      return Thread.currentThread() == renderThread;
    }
 
    public static boolean isOnRenderThreadOrInit() {
-      return field34663 || isOnRenderThread();
+      return isInInit || isOnRenderThread();
    }
 
-   public static void method27805(boolean var0) {
-      boolean var3 = field34661 == Thread.currentThread();
-      if (field34660 == null && field34661 != null && var3 != var0) {
-         field34660 = Thread.currentThread();
+   public static void initGameThread(boolean p_initGameThread_0_) {
+      boolean flag = renderThread == Thread.currentThread();
+      if (gameThread == null && renderThread != null && flag != p_initGameThread_0_) {
+         gameThread = Thread.currentThread();
       } else {
          throw new IllegalStateException("Could not initialize tick thread");
       }
@@ -63,11 +63,11 @@ public class RenderSystem {
    }
 
    public static boolean isOnGameThreadOrInit() {
-      return field34663 || isOnGameThread();
+      return isInInit || isOnGameThread();
    }
 
-   public static void assertThread(Supplier<Boolean> var0) {
-      if (!(Boolean)var0.get()) {
+   public static void assertThread(Supplier<Boolean> p_assertThread_0_) {
+      if (!p_assertThread_0_.get()) {
          throw new IllegalStateException("Rendersystem called from wrong thread");
       }
    }
@@ -76,48 +76,49 @@ public class RenderSystem {
       return true;
    }
 
-   public static void recordRenderCall(Class4504 var0) {
-      field34655.add(var0);
+   public static void recordRenderCall(IRenderCall p_recordRenderCall_0_) {
+      recordingQueue.add(p_recordRenderCall_0_);
    }
 
-   public static void flipFrame(long var0) {
+   public static void flipFrame(long p_flipFrame_0_) {
       GLFW.glfwPollEvents();
-      method27812();
-      Tessellator.getInstance().getBuffer().method17071();
-      GLFW.glfwSwapBuffers(var0);
+      replayQueue();
+      Tessellator.getInstance().getBuffer().reset();
+      GLFW.glfwSwapBuffers(p_flipFrame_0_);
       GLFW.glfwPollEvents();
    }
 
-   public static void method27812() {
-      field34659 = true;
+   public static void replayQueue() {
+      isReplayingQueue = true;
 
-      while (!field34655.isEmpty()) {
-         Class4504 var2 = field34655.poll();
-         var2.method14222();
+      while (!recordingQueue.isEmpty()) {
+         IRenderCall irendercall = recordingQueue.poll();
+         irendercall.execute();
       }
 
-      field34659 = false;
+      isReplayingQueue = false;
    }
 
-   public static void limitDisplayFPS(int var0) {
-      double var3 = field34664 + 1.0 / (double)var0;
+   public static void limitDisplayFPS(int p_limitDisplayFPS_0_) {
+      double d0 = lastDrawTime + 1.0D / (double)p_limitDisplayFPS_0_;
+      double d1;
 
-      double var5;
-      for (var5 = GLFW.glfwGetTime(); var5 < var3; var5 = GLFW.glfwGetTime()) {
-         GLFW.glfwWaitEventsTimeout(var3 - var5);
+      for (d1 = GLFW.glfwGetTime(); d1 < d0; d1 = GLFW.glfwGetTime())
+      {
+         GLFW.glfwWaitEventsTimeout(d0 - d1);
       }
 
-      field34664 = var5;
+      lastDrawTime = d1;
    }
 
    @Deprecated
-   public static void method27814() {
+   public static void pushLightingAttributes() {
       assertThread(RenderSystem::isOnGameThread);
       GlStateManager.pushLightingAttributes();
    }
 
    @Deprecated
-   public static void method27815() {
+   public static void pushTextureAttributes() {
       assertThread(RenderSystem::isOnGameThread);
       GlStateManager.pushTextureAttributes();
    }
@@ -141,15 +142,15 @@ public class RenderSystem {
    }
 
    @Deprecated
-   public static void method27819(int var0, float var1) {
+   public static void alphaFunc(int var0, float var1) {
       assertThread(RenderSystem::isOnGameThread);
-      GlStateManager.method23697(var0, var1);
+      GlStateManager.alphaFunc(var0, var1);
    }
 
    @Deprecated
-   public static void method27820() {
+   public static void enableLighting() {
       assertThread(RenderSystem::isOnGameThread);
-      GlStateManager.method23698();
+      GlStateManager.enableLighting();
    }
 
    @Deprecated
@@ -165,9 +166,9 @@ public class RenderSystem {
    }
 
    @Deprecated
-   public static void method27823() {
+   public static void disableColorMaterial() {
       assertThread(RenderSystem::isOnGameThread);
-      GlStateManager.method23702();
+      GlStateManager.disableColorMaterial();
    }
 
    @Deprecated
@@ -620,7 +621,7 @@ public class RenderSystem {
       GlStateManager.enableDepthTest();
       GlStateManager.depthFunc(515);
       GlStateManager.enableAlphaTest();
-      GlStateManager.method23697(516, 0.1F);
+      GlStateManager.alphaFunc(516, 0.1F);
       GlStateManager.matrixMode(5889);
       GlStateManager.loadIdentity();
       GlStateManager.matrixMode(5888);
@@ -773,16 +774,16 @@ public class RenderSystem {
    }
 
    public static void method27934() {
-      field34663 = true;
+      isInInit = true;
    }
 
    public static void method27935() {
-      field34663 = false;
-      if (!field34655.isEmpty()) {
-         method27812();
+      isInInit = false;
+      if (!recordingQueue.isEmpty()) {
+         replayQueue();
       }
 
-      if (!field34655.isEmpty()) {
+      if (!recordingQueue.isEmpty()) {
          throw new IllegalStateException("Recorded to render queue during initialization");
       }
    }
@@ -805,7 +806,7 @@ public class RenderSystem {
    }
 
    public static void method27939() {
-      method27819(516, 0.1F);
+      alphaFunc(516, 0.1F);
    }
 
    @Deprecated

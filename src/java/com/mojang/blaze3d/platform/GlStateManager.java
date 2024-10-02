@@ -115,7 +115,7 @@ public class GlStateManager {
    }
 
    @Deprecated
-   public static void method23697(int var0, float var1) {
+   public static void alphaFunc(int var0, float var1) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
       if (!alphaLock.isLocked()) {
          if (var0 != ALPHA_TEST.field39454 || var1 != ALPHA_TEST.field39455) {
@@ -129,7 +129,7 @@ public class GlStateManager {
    }
 
    @Deprecated
-   public static void method23698() {
+   public static void enableLighting() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       LIGHTING.enable();
    }
@@ -153,7 +153,7 @@ public class GlStateManager {
    }
 
    @Deprecated
-   public static void method23702() {
+   public static void disableColorMaterial() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       COLOR_MATERIAL.field41143.disable();
    }
@@ -1531,7 +1531,7 @@ public class GlStateManager {
    public static void method23873(GlAlphaState var0) {
       if (!alphaLock.isLocked()) {
          ALPHA_TEST.test.method35531(var0.method25213());
-         method23697(var0.method25214(), var0.method25215());
+         alphaFunc(var0.method25214(), var0.method25215());
       } else {
          alphaLockState.method25208(var0);
       }

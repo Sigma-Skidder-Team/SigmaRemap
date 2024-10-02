@@ -49,7 +49,7 @@ public class FillESP extends Module {
         float var7 = (float) (var3 & 0xFF) / 255.0F;
         GL11.glEnable(2896);
         GL11.glLightModelfv(2899, new float[]{var5, var6, var7, var4});
-        RenderSystem.method27820();
+        RenderSystem.enableLighting();
         GL11.glDepthFunc(519);
         GL11.glEnable(2929);
         GL11.glEnable(32823);

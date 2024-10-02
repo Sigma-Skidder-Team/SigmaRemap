@@ -11,7 +11,7 @@ public final class Class6844 implements Class6843 {
       var2.bindTexture(AtlasTexture.field1103);
       RenderSystem.enableBlend();
       RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ONE, DestFactor.field12932);
-      RenderSystem.method27819(516, 0.003921569F);
+      RenderSystem.alphaFunc(516, 0.003921569F);
       var1.begin(7, DefaultVertexFormats.field43340);
    }
 

@@ -3864,7 +3864,7 @@ public class Shaders {
                 field40607 = true;
             }
 
-            GlStateManager.method23698();
+            GlStateManager.enableLighting();
             GlStateManager.enableTexture();
             GlStateManager.enableAlphaTest();
             GlStateManager.enableBlend();
@@ -4095,7 +4095,7 @@ public class Shaders {
         if (field40605 && field40834.method26485() != field40813.method26485()) {
             method33021(field40834);
             GlStateManager.enableAlphaTest();
-            GlStateManager.method23697(516, 0.0F);
+            GlStateManager.alphaFunc(516, 0.0F);
             GlStateManager.blendFunc(770, 771);
         }
     }
