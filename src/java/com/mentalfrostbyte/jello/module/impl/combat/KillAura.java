@@ -507,7 +507,8 @@ public class KillAura extends Module {
 
             if (var6.isEmpty()) {
                 timedEntityIdk = null;
-                entities.clear();
+                if (entities != null)
+                    entities.clear();
                 this.field23939 = (int) interactAB.method36819(0);
                 this.field23940 = 0;
                 field23937 = false;
