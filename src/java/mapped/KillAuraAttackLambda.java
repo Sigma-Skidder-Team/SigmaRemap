@@ -62,39 +62,108 @@ public class KillAuraAttackLambda implements Runnable {
             boolean noSwing = this.killauraModule.getBooleanValueFromSettingName("No swing");
             Minecraft mc = KillAura.mc;
             boolean isOnePointEight = false;
+
             /*
             if (JelloPortal.getCurrentVersion() != null) {
                isOnePointEight = JelloPortal.getCurrentVersion().equals(ViaVerList._1_8_x);
             }
              */
 
-            if (isOnePointEight && !noSwing) {
-               mc.player.swingArm(Hand.MAIN_HAND);
-            }
+            boolean raytrace = this.killauraModule.getBooleanValueFromSettingName("Raytrace");
+            boolean walls = this.killauraModule.getBooleanValueFromSettingName("Through walls");
+            boolean properTrace = MultiUtilities.rayTraceEntity(mc.player, entity);
 
-            mc.getConnection().getNetworkManager().sendNoEventPacket(new CUseEntityPacket(entity, mc.player.isSneaking()));
-            if (EnchantmentHelper.getEnchantmentLevel(Enchantment.getEnchantmentByID(12), mc.player.getHeldItem(Hand.MAIN_HAND)) > 0) {
-               mc.particles.addParticleEmitter(entity, ParticleTypes.field34065);
-            }
+            if (raytrace) {
+               if (properTrace && !walls) {
+                  if (isOnePointEight && !noSwing) {
+                     mc.player.swingArm(Hand.MAIN_HAND);
+                  }
 
-            boolean canSwing = (double) mc.player.getCooledAttackStrength(0.5F) > 0.9 || isOnePointEight;
-            boolean attackable = canSwing
-                    && mc.player.fallDistance > 0.0F
-                    && !mc.player.onGround
-                    && !mc.player.isOnLadder()
-                    && !mc.player.isInWater()
-                    && !mc.player.isPotionActive(Effects.BLINDNESS)
-                    && !mc.player.isPassenger();
-            if (attackable || mc.player.onGround && Client.getInstance().getModuleManager().getModuleByClass(Criticals.class).isEnabled()) {
-               mc.particles.addParticleEmitter(entity, ParticleTypes.CRIT);
-            }
+                  mc.getConnection().getNetworkManager().sendNoEventPacket(new CUseEntityPacket(entity, mc.player.isSneaking()));
+                  if (EnchantmentHelper.getEnchantmentLevel(Enchantment.getEnchantmentByID(12), mc.player.getHeldItem(Hand.MAIN_HAND)) > 0) {
+                     mc.particles.addParticleEmitter(entity, ParticleTypes.field34065);
+                  }
 
-            mc.player.resetCooldown();
-            if (!isOnePointEight && !noSwing) {
-               mc.player.swingArm(Hand.MAIN_HAND);
-            }
+                  boolean canSwing = (double) mc.player.getCooledAttackStrength(0.5F) > 0.9 || isOnePointEight;
+                  boolean attackable = canSwing
+                          && mc.player.fallDistance > 0.0F
+                          && !mc.player.onGround
+                          && !mc.player.isOnLadder()
+                          && !mc.player.isInWater()
+                          && !mc.player.isPotionActive(Effects.BLINDNESS)
+                          && !mc.player.isPassenger();
+                  if (attackable || mc.player.onGround && Client.getInstance().getModuleManager().getModuleByClass(Criticals.class).isEnabled()) {
+                     mc.particles.addParticleEmitter(entity, ParticleTypes.CRIT);
+                  }
 
-            mc.playerController.attackEntity(mc.player, entity);
+                  mc.player.resetCooldown();
+                  if (!isOnePointEight && !noSwing) {
+                     mc.player.swingArm(Hand.MAIN_HAND);
+                  }
+
+                  mc.playerController.attackEntity(mc.player, entity);
+               } else if (!properTrace && !walls) {
+                  KillAura.target = null;
+                  KillAura.entities = null;
+                  KillAura.timedEntityIdk = null;
+               } else if (walls) {
+                  if (isOnePointEight && !noSwing) {
+                     mc.player.swingArm(Hand.MAIN_HAND);
+                  }
+
+                  mc.getConnection().getNetworkManager().sendNoEventPacket(new CUseEntityPacket(entity, mc.player.isSneaking()));
+                  if (EnchantmentHelper.getEnchantmentLevel(Enchantment.getEnchantmentByID(12), mc.player.getHeldItem(Hand.MAIN_HAND)) > 0) {
+                     mc.particles.addParticleEmitter(entity, ParticleTypes.field34065);
+                  }
+
+                  boolean canSwing = (double) mc.player.getCooledAttackStrength(0.5F) > 0.9 || isOnePointEight;
+                  boolean attackable = canSwing
+                          && mc.player.fallDistance > 0.0F
+                          && !mc.player.onGround
+                          && !mc.player.isOnLadder()
+                          && !mc.player.isInWater()
+                          && !mc.player.isPotionActive(Effects.BLINDNESS)
+                          && !mc.player.isPassenger();
+                  if (attackable || mc.player.onGround && Client.getInstance().getModuleManager().getModuleByClass(Criticals.class).isEnabled()) {
+                     mc.particles.addParticleEmitter(entity, ParticleTypes.CRIT);
+                  }
+
+                  mc.player.resetCooldown();
+                  if (!isOnePointEight && !noSwing) {
+                     mc.player.swingArm(Hand.MAIN_HAND);
+                  }
+
+                  mc.playerController.attackEntity(mc.player, entity);
+               }
+            } else {
+               if (isOnePointEight && !noSwing) {
+                  mc.player.swingArm(Hand.MAIN_HAND);
+               }
+
+               mc.getConnection().getNetworkManager().sendNoEventPacket(new CUseEntityPacket(entity, mc.player.isSneaking()));
+               if (EnchantmentHelper.getEnchantmentLevel(Enchantment.getEnchantmentByID(12), mc.player.getHeldItem(Hand.MAIN_HAND)) > 0) {
+                  mc.particles.addParticleEmitter(entity, ParticleTypes.field34065);
+               }
+
+               boolean canSwing = (double) mc.player.getCooledAttackStrength(0.5F) > 0.9 || isOnePointEight;
+               boolean attackable = canSwing
+                       && mc.player.fallDistance > 0.0F
+                       && !mc.player.onGround
+                       && !mc.player.isOnLadder()
+                       && !mc.player.isInWater()
+                       && !mc.player.isPotionActive(Effects.BLINDNESS)
+                       && !mc.player.isPassenger();
+               if (attackable || mc.player.onGround && Client.getInstance().getModuleManager().getModuleByClass(Criticals.class).isEnabled()) {
+                  mc.particles.addParticleEmitter(entity, ParticleTypes.CRIT);
+               }
+
+               mc.player.resetCooldown();
+               if (!isOnePointEight && !noSwing) {
+                  mc.player.swingArm(Hand.MAIN_HAND);
+               }
+
+               mc.playerController.attackEntity(mc.player, entity);
+            }
          }
 
          if (mode.equals("Multi2")) {

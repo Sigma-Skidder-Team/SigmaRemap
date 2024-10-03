@@ -1,7 +1,6 @@
 package com.mentalfrostbyte.jello.util;
 
 import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.module.impl.combat.Criticals;
 import com.mentalfrostbyte.jello.module.impl.combat.Teams;
 import com.mentalfrostbyte.jello.module.impl.player.Blink;
 import com.mentalfrostbyte.jello.resource.ClientResource;
@@ -12,8 +11,6 @@ import com.mojang.authlib.yggdrasil.YggdrasilUserAuthentication;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ServerData;
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -21,10 +18,7 @@ import net.minecraft.network.play.client.*;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.EntityRayTraceResult;
-import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.*;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
@@ -464,8 +458,8 @@ public class MultiUtilities {
       Entity var14 = null;
 
       for (Entity var16 : var0.getEntitiesInAABBexcluding(var1, var4, var5)) {
-         AxisAlignedBB var17 = var16.getBoundingBox().method19664(var8);
-         Optional var18 = var17.method19680(var2, var3);
+         AxisAlignedBB var17 = var16.getBoundingBox().grow(var8);
+         Optional var18 = var17.rayTrace(var2, var3);
          if (!var18.isPresent()) {
             if (method17715(var1.getPositionVec(), var17)) {
                var14 = var16;
@@ -483,6 +477,35 @@ public class MultiUtilities {
       return var14 != null ? new EntityRayTraceResult(var14) : null;
    }
 
+   public static boolean rayTraceEntity(PlayerEntity player, Entity entity) {
+      Minecraft mc = Minecraft.getInstance();
+
+      Vector3d playerEyesPos = player.getEyePosition(1.0F);
+      Vector3d lookDirection = player.getLook(1.0F);
+
+      double reachDistance = mc.playerController.getBlockReachDistance();
+      Vector3d endPos = playerEyesPos.add(lookDirection.x * reachDistance, lookDirection.y * reachDistance, lookDirection.z * reachDistance);
+
+      AxisAlignedBB entityBoundingBox = entity.getBoundingBox().grow(0.3D);
+
+      RayTraceContext context = new RayTraceContext(
+              playerEyesPos,
+              endPos,
+              RayTraceContext.BlockMode.COLLIDER,
+              RayTraceContext.FluidMode.NONE,
+              player
+      );
+      RayTraceResult rayTraceResult = mc.world.rayTraceBlocks(context);
+
+      if (rayTraceResult.getType() == RayTraceResult.Type.MISS) {
+         Optional<Vector3d> hitResult = entityBoundingBox.rayTrace(playerEyesPos, endPos);
+
+         return hitResult.isPresent();
+      }
+
+      return false;
+   }
+
    public static EntityRayTraceResult method17714(Entity var0, float var1, float var2, Predicate<Entity> var3, double var4) {
       double var8 = var4 * var4;
       Entity var10 = null;
@@ -496,7 +519,7 @@ public class MultiUtilities {
       for (Entity var16 : mc.world
          .getEntitiesInAABBexcluding(mc.player, mc.player.getBoundingBox().expand(var13.scale(var8)).grow(1.0, 1.0, 1.0), var3)) {
          AxisAlignedBB var17 = var16.getBoundingBox();
-         Optional var18 = var17.method19680(var12, var14);
+         Optional var18 = var17.rayTrace(var12, var14);
          if (var18.isPresent()) {
             double var19 = var12.squareDistanceTo((Vector3d)var18.get());
             if (var19 < var8 && (var16 == var0 || var0 == null)) {
