@@ -118,7 +118,7 @@ public abstract class Class7574 {
                                  (double)(var4.getY() + 1),
                                  (double)(var4.getZ() + 1)
                               )
-                              .method19664((double)this.field32527)
+                              .grow((double)this.field32527)
                         )
                         .size();
                      if (var25 >= this.field32525) {

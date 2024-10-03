@@ -51,7 +51,7 @@ public class RearView extends Module {
                 List<PlayerEntity> entities = mc.world
                         .getEntitiesInAABBexcluding(
                                 PlayerEntity.class,
-                                mc.player.getBoundingBox().method19664(14.0),
+                                mc.player.getBoundingBox().grow(14.0),
                                 var1x -> var1x.getDistance(mc.player) < 12.0F
                                         && !this.isEntityWithinViewAngle(var1x)
                                         && mc.player != var1x

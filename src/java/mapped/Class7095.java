@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -13,7 +14,7 @@ import javax.annotation.Nullable;
 
 public class Class7095 extends Class7092 {
    public static final Codec<Class7095> field30525 = BlockState.field31585
-      .xmap(Class7377::getBlock, Block::getDefaultState)
+      .xmap(AbstractBlock.AbstractBlockState::getBlock, Block::getDefaultState)
       .listOf()
       .fieldOf("blocks")
       .xmap(Class7095::new, var0 -> var0.field30529)

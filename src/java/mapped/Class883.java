@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -58,7 +59,7 @@ public class Class883 extends ProjectileEntity {
       this.method3468();
       float var11 = 0.99F;
       float var12 = 0.06F;
-      if (!this.world.method7035(this.getBoundingBox()).noneMatch(Class7377::isAir)) {
+      if (!this.world.method7035(this.getBoundingBox()).noneMatch(AbstractBlock.AbstractBlockState::isAir)) {
          if (!this.method3255()) {
             this.setMotion(var3.scale(0.99F));
             if (!this.method3247()) {

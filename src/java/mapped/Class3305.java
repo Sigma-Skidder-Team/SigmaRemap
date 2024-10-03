@@ -34,12 +34,12 @@ public class Class3305 extends Item {
       } else {
          Vector3d var8 = var2.getLook(1.0F);
          double var9 = 5.0;
-         List<Entity> var11 = var1.getEntitiesInAABBexcluding(var2, var2.getBoundingBox().expand(var8.scale(5.0)).method19664(1.0), field18811);
+         List<Entity> var11 = var1.getEntitiesInAABBexcluding(var2, var2.getBoundingBox().expand(var8.scale(5.0)).grow(1.0), field18811);
          if (!var11.isEmpty()) {
             Vector3d var12 = var2.getEyePosition(1.0F);
 
             for (Entity var14 : var11) {
-               AxisAlignedBB var15 = var14.getBoundingBox().method19664((double)var14.getCollisionBorderSize());
+               AxisAlignedBB var15 = var14.getBoundingBox().grow((double)var14.getCollisionBorderSize());
                if (var15.method19673(var12)) {
                   return Class6794.<ItemStack>method20698(var6);
                }
@@ -52,7 +52,7 @@ public class Class3305 extends Item {
             BoatEntity var16 = new BoatEntity(var1, var7.getHitVec().x, var7.getHitVec().y, var7.getHitVec().z);
             var16.method4171(this.field18812);
             var16.rotationYaw = var2.rotationYaw;
-            if (var1.hasNoCollisions(var16, var16.getBoundingBox().method19664(-0.1))) {
+            if (var1.hasNoCollisions(var16, var16.getBoundingBox().grow(-0.1))) {
                if (!var1.isRemote) {
                   var1.addEntity(var16);
                   if (!var2.abilities.isCreativeMode) {

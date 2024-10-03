@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 
@@ -59,7 +60,7 @@ public class Class4703 implements Class4698 {
       this(
          var1,
          var2,
-         var3.stream().<Block>map(Class7377::getBlock).collect(Collectors.<Block>toSet()),
+         var3.stream().<Block>map(AbstractBlock.AbstractBlockState::getBlock).collect(Collectors.<Block>toSet()),
          ImmutableSet.copyOf(var4),
          var5,
          var6,

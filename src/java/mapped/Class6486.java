@@ -21,7 +21,7 @@ public final class Class6486 {
    private final boolean[] field28444;
    public final boolean field28445;
 
-   Class6486(BlockState var1) {
+   public Class6486(BlockState var1) {
       Block var4 = var1.getBlock();
       this.field28438 = var1.method23409(Class1666.field9078, BlockPos.ZERO);
       this.field28439 = var4.propagatesSkylightDown(var1, Class1666.field9078, BlockPos.ZERO);

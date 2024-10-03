@@ -55,7 +55,7 @@ public interface Class1682 {
 
    default Stream<VoxelShape> func_230318_c_(Entity var1, AxisAlignedBB var2, Predicate<Entity> var3) {
       if (!(var2.getAverageEdgeLength() < 1.0E-7)) {
-         AxisAlignedBB var6 = var2.method19664(1.0E-7);
+         AxisAlignedBB var6 = var2.grow(1.0E-7);
          return this.getEntitiesInAABBexcluding(var1, var6, var3.and(var2x -> {
             if (var2x.getBoundingBox().method19670(var6)) {
                if (var1 != null) {

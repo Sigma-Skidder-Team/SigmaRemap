@@ -533,7 +533,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       if (this.method4940() && this.isChild() && !this.method4938()) {
          LivingEntity var3 = this.world
             .<AbstractHorseEntity>method7191(
-               AbstractHorseEntity.class, field5880, this, this.getPosX(), this.getPosY(), this.getPosZ(), this.getBoundingBox().method19664(16.0)
+               AbstractHorseEntity.class, field5880, this, this.getPosX(), this.getPosY(), this.getPosZ(), this.getBoundingBox().grow(16.0)
             );
          if (var3 != null && this.getDistanceSq(var3) > 4.0) {
             this.field5599.method21652(var3, 0);

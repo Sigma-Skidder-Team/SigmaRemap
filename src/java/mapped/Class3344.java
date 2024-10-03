@@ -64,7 +64,7 @@ public class Class3344 extends Class3343 {
                var13.renderYawOffset = var8.method33879().getAxis() != Direction.Axis.X ? 90.0F : 0.0F;
                var13.method5003();
 
-               for (ServerPlayerEntity var12 : var0.<ServerPlayerEntity>getEntitiesWithinAABB(ServerPlayerEntity.class, var13.getBoundingBox().method19664(50.0))) {
+               for (ServerPlayerEntity var12 : var0.<ServerPlayerEntity>getEntitiesWithinAABB(ServerPlayerEntity.class, var13.getBoundingBox().grow(50.0))) {
                   CriteriaTriggers.field44478.method15080(var12, var13);
                }
 

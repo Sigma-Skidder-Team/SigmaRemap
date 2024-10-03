@@ -42,7 +42,7 @@ public abstract class EntityRenderer<T extends Entity> {
          if (var1.ignoreFrustumCheck) {
             return true;
          } else {
-            AxisAlignedBB var11 = var1.getRenderBoundingBox().method19664(0.5);
+            AxisAlignedBB var11 = var1.getRenderBoundingBox().grow(0.5);
             if (var11.method19684() || var11.getAverageEdgeLength() == 0.0) {
                var11 = new AxisAlignedBB(
                   var1.getPosX() - 2.0,

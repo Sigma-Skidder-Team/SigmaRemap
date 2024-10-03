@@ -1,9 +1,8 @@
 package net.minecraft.util.math;
 
-import mapped.Class2272;
-import mapped.Class7377;
 import mapped.VoxelShape;
 import mapped.VoxelShapes;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.fluid.FluidState;
@@ -61,21 +60,24 @@ public class RayTraceContext {
       }
    }
 
-   public enum BlockMode implements Class2272 {
-      field14774(Class7377::getCollisionShape),
-      OUTLINE(Class7377::method23413),
-      field14776(Class7377::method23417);
+   public enum BlockMode implements IVoxelProvider {
+      COLLIDER(AbstractBlock.AbstractBlockState::getCollisionShape),
+      OUTLINE(AbstractBlock.AbstractBlockState::method23413),
+      VISUAL(AbstractBlock.AbstractBlockState::method23417);
 
-      private final Class2272 field14777;
-      private static final BlockMode[] field14778 = new BlockMode[]{field14774, OUTLINE, field14776};
+      private final IVoxelProvider provider;
 
-      private BlockMode(Class2272 var3) {
-         this.field14777 = var3;
+      private BlockMode(IVoxelProvider var3) {
+         this.provider = var3;
       }
 
       @Override
       public VoxelShape method8998(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
-         return this.field14777.method8998(var1, var2, var3, var4);
+         return this.provider.method8998(var1, var2, var3, var4);
       }
+   }
+
+   public static interface IVoxelProvider {
+      VoxelShape method8998(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4);
    }
 }

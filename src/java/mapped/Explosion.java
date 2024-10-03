@@ -101,7 +101,7 @@ public class Explosion {
                   double var22 = MathHelper.lerp((double)var18, var4.minY, var4.maxY);
                   double var24 = MathHelper.lerp((double)var19, var4.minZ, var4.maxZ);
                   Vector3d var26 = new Vector3d(var20 + var11, var22, var24 + var13);
-                  if (var1.world.rayTraceBlocks(new RayTraceContext(var26, var0, RayTraceContext.BlockMode.field14774, RayTraceContext.FluidMode.NONE, var1)).getType()
+                  if (var1.world.rayTraceBlocks(new RayTraceContext(var26, var0, RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, var1)).getType()
                      == RayTraceResult.Type.MISS) {
                      var15++;
                   }

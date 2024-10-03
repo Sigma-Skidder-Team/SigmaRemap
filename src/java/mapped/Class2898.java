@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -105,6 +106,6 @@ public abstract class Class2898<FC extends Class4698> {
    }
 
    public static boolean method11221(Class1680 var0, BlockPos var1) {
-      return var0.method6815(var1, Class7377::isAir);
+      return var0.method6815(var1, AbstractBlock.AbstractBlockState::isAir);
    }
 }

@@ -32,7 +32,7 @@ public class Class2611 extends Class2595 {
    public boolean method10803() {
       List<MobEntity> var3 = this.field16871
          .world
-         .getEntitiesInAABBexcluding(MobEntity.class, this.field16871.getBoundingBox().method19664((double)this.field16879), this.field16872);
+         .getEntitiesInAABBexcluding(MobEntity.class, this.field16871.getBoundingBox().grow((double)this.field16879), this.field16872);
       if (!var3.isEmpty()) {
          for (MobEntity var5 : var3) {
             if (!var5.isInvisible()) {

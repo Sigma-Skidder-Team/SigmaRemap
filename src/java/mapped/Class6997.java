@@ -129,7 +129,7 @@ public class Class6997 extends Class6990 {
    @Override
    public boolean method21671(Vector3d var1, Vector3d var2, int var3, int var4, int var5) {
       Vector3d var8 = new Vector3d(var2.x, var2.y + (double)this.field30243.getHeight() * 0.5, var2.z);
-      return this.field30244.rayTraceBlocks(new RayTraceContext(var1, var8, RayTraceContext.BlockMode.field14774, RayTraceContext.FluidMode.NONE, this.field30243)).getType()
+      return this.field30244.rayTraceBlocks(new RayTraceContext(var1, var8, RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, this.field30243)).getType()
          == RayTraceResult.Type.MISS;
    }
 

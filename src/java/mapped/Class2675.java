@@ -23,7 +23,7 @@ public class Class2675 extends Class2672 {
       if (super.method10803()) {
          int var3 = this.field17067
             .world
-            .<Class1100>method7195(Class1100.class, this.field17066, this.field17067, this.field17067.getBoundingBox().method19664(16.0))
+            .<Class1100>method7195(Class1100.class, this.field17066, this.field17067, this.field17067.getBoundingBox().grow(16.0))
             .size();
          return Class1032.method4604(this.field17067).nextInt(8) + 1 > var3;
       } else {

@@ -97,7 +97,7 @@ public class DebugRenderer {
          Vector3d var4 = var0.getEyePosition(1.0F);
          Vector3d var5 = var0.getLook(1.0F).scale((double)var1);
          Vector3d var6 = var4.add(var5);
-         AxisAlignedBB var7 = var0.getBoundingBox().expand(var5).method19664(1.0);
+         AxisAlignedBB var7 = var0.getBoundingBox().expand(var5).grow(1.0);
          int var8 = var1 * var1;
          Predicate<Entity> var9 = var0x -> !var0x.isSpectator() && var0x.canBeCollidedWith();
          EntityRayTraceResult var10 = ProjectileHelper.rayTraceEntities(var0, var4, var6, var7, var9, (double)var8);
@@ -124,7 +124,7 @@ public class DebugRenderer {
       ActiveRenderInfo var8 = Minecraft.getInstance().gameRenderer.getActiveRenderInfo();
       if (var8.method37510()) {
          Vector3d var9 = var8.getPos().method11345();
-         AxisAlignedBB var10 = new AxisAlignedBB(var0).offset(var9).method19664((double)var1);
+         AxisAlignedBB var10 = new AxisAlignedBB(var0).offset(var9).grow((double)var1);
          method27457(var10, var2, var3, var4, var5);
       }
    }

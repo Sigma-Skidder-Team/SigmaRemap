@@ -171,7 +171,7 @@ public class Class7803 {
    public static Collection<BlockPos> method26062(BlockPos var0, int var1, ServerWorld var2) {
       ArrayList var5 = Lists.newArrayList();
       AxisAlignedBB var6 = new AxisAlignedBB(var0);
-      var6 = var6.method19664((double)var1);
+      var6 = var6.grow((double)var1);
 
       for (int var7 = (int)var6.minX; var7 <= (int)var6.maxX; var7++) {
          for (int var8 = (int)var6.minY; var8 <= (int)var6.maxY; var8++) {
@@ -268,7 +268,7 @@ public class Class7803 {
 
    private static boolean method26067(BlockPos var0, BlockPos var1, ServerWorld var2) {
       Class964 var5 = (Class964)var2.getTileEntity(var0);
-      AxisAlignedBB var6 = method26052(var5).method19664(1.0);
+      AxisAlignedBB var6 = method26052(var5).grow(1.0);
       return var6.method19673(Vector3d.method11328(var1));
    }
 }

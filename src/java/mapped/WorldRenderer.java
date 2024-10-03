@@ -2939,7 +2939,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
    }
 
    private void method910(World var1, BlockPos var2, boolean var3) {
-      for (LivingEntity var5 : var1.<LivingEntity>getEntitiesWithinAABB(LivingEntity.class, new AxisAlignedBB(var2).method19664(3.0))) {
+      for (LivingEntity var5 : var1.<LivingEntity>getEntitiesWithinAABB(LivingEntity.class, new AxisAlignedBB(var2).grow(3.0))) {
          var5.setPartying(var2, var3);
       }
    }

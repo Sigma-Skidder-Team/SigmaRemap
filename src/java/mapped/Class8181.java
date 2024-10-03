@@ -123,7 +123,7 @@ public class Class8181 extends AbstractSpliterator<VoxelShape> {
    }
 
    private static boolean method28476(VoxelShape var0, AxisAlignedBB var1) {
-      return VoxelShapes.compare(var0, VoxelShapes.create(var1.method19664(1.0E-7)), IBooleanFunction.AND);
+      return VoxelShapes.compare(var0, VoxelShapes.create(var1.grow(1.0E-7)), IBooleanFunction.AND);
    }
 
    private static boolean method28477(VoxelShape var0, AxisAlignedBB var1) {

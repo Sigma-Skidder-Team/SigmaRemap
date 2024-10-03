@@ -183,7 +183,7 @@ public class Class1015 extends Class1014 implements Class1016 {
 
    public static boolean method4409(World var0, Entity var1) {
       if (var1.isAlive() && !var1.isSilent() && var0.rand.nextInt(2) == 0) {
-         List var4 = var0.<MobEntity>getEntitiesInAABBexcluding(MobEntity.class, var1.getBoundingBox().method19664(20.0), field5673);
+         List var4 = var0.<MobEntity>getEntitiesInAABBexcluding(MobEntity.class, var1.getBoundingBox().grow(20.0), field5673);
          if (!var4.isEmpty()) {
             MobEntity var5 = (MobEntity)var4.get(var0.rand.nextInt(var4.size()));
             if (!var5.isSilent()) {

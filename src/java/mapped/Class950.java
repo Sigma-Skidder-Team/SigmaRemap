@@ -181,7 +181,7 @@ public class Class950 extends TileEntity implements Class949, ITickableTileEntit
          }
 
          int var6 = (9 + this.field5342 * 2) * 20;
-         AxisAlignedBB var7 = new AxisAlignedBB(this.pos).method19664(var3).expand(0.0, (double)this.world.method7034(), 0.0);
+         AxisAlignedBB var7 = new AxisAlignedBB(this.pos).grow(var3).expand(0.0, (double)this.world.method7034(), 0.0);
          List<PlayerEntity> var8 = this.world.<PlayerEntity>getEntitiesWithinAABB(PlayerEntity.class, var7);
 
          for (PlayerEntity var10 : var8) {

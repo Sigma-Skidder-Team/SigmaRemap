@@ -128,7 +128,7 @@ public enum Class2309 {
 
          BlockRayTraceResult var18 = Projectiles.method16546()
             .world
-            .rayTraceBlocks(new RayTraceContext(var13, var14, RayTraceContext.BlockMode.field14774, RayTraceContext.FluidMode.NONE, Projectiles.method16545().player));
+            .rayTraceBlocks(new RayTraceContext(var13, var14, RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, Projectiles.method16545().player));
          if (var18 != null && var18.getType() != RayTraceResult.Type.MISS) {
             this.field15831 = var18;
             this.field15825 = this.field15831.getHitVec().x;

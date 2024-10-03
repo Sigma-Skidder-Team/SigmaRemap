@@ -151,7 +151,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
          this.field5101 = 0;
          Vector3d var33 = this.getPositionVec();
          Vector3d var34 = var33.add(var4);
-         Object var35 = this.world.rayTraceBlocks(new RayTraceContext(var33, var34, RayTraceContext.BlockMode.field14774, RayTraceContext.FluidMode.NONE, this));
+         Object var35 = this.world.rayTraceBlocks(new RayTraceContext(var33, var34, RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, this));
          if (((RayTraceResult)var35).getType() != RayTraceResult.Type.MISS) {
             var34 = ((RayTraceResult)var35).getHitVec();
          }
@@ -238,7 +238,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
    }
 
    private boolean method3472() {
-      return this.field5100 && this.world.hasNoCollisions(new AxisAlignedBB(this.getPositionVec(), this.getPositionVec()).method19664(0.06));
+      return this.field5100 && this.world.hasNoCollisions(new AxisAlignedBB(this.getPositionVec(), this.getPositionVec()).grow(0.06));
    }
 
    private void method3473() {
@@ -412,7 +412,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
 
    @Nullable
    public EntityRayTraceResult method3479(Vector3d var1, Vector3d var2) {
-      return ProjectileHelper.method36387(this.world, this, var1, var2, this.getBoundingBox().expand(this.getMotion()).method19664(1.0), this::method3467);
+      return ProjectileHelper.method36387(this.world, this, var1, var2, this.getBoundingBox().expand(this.getMotion()).grow(1.0), this::method3467);
    }
 
    @Override

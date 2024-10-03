@@ -1,17 +1,17 @@
 package com.mentalfrostbyte.jello.event.impl;
 
 import com.mentalfrostbyte.jello.event.CancellableEvent;
-import mapped.Class7377;
+import net.minecraft.block.AbstractBlock;
 
 public class EventRenderBlocks extends CancellableEvent {
-    private final Class7377 field21559;
+    private final AbstractBlock.AbstractBlockState field21559;
     private boolean field21560 = false;
 
-    public EventRenderBlocks(Class7377 var1) {
+    public EventRenderBlocks(AbstractBlock.AbstractBlockState var1) {
         this.field21559 = var1;
     }
 
-    public Class7377 method13970() {
+    public AbstractBlock.AbstractBlockState method13970() {
         return this.field21559;
     }
 

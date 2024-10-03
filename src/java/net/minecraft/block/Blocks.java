@@ -2969,7 +2969,7 @@ public class Blocks {
    }
 
    public static void method30025() {
-      Block.field18610.forEach(Class7377::method23382);
+      Block.field18610.forEach(AbstractBlock.AbstractBlockState::method23382);
    }
 
    static {

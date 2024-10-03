@@ -146,7 +146,7 @@ public abstract class VoxelShape {
             return !this.method19524(
                   var7.x - (double)var3.getX(), var7.y - (double)var3.getY(), var7.z - (double)var3.getZ()
                )
-               ? AxisAlignedBB.method19681(this.method19521(), var1, var2, var3)
+               ? AxisAlignedBB.rayTrace(this.method19521(), var1, var2, var3)
                : new BlockRayTraceResult(var7, Direction.getFacingFromVector(var6.x, var6.y, var6.z).getOpposite(), var3, true);
          } else {
             return null;

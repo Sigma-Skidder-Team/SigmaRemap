@@ -23,7 +23,7 @@ public class Class2602 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      List<BoatEntity> var3 = this.field16845.world.getEntitiesWithinAABB(BoatEntity.class, this.field16845.getBoundingBox().method19664(5.0));
+      List<BoatEntity> var3 = this.field16845.world.getEntitiesWithinAABB(BoatEntity.class, this.field16845.getBoundingBox().grow(5.0));
       boolean var4 = false;
 
       for (BoatEntity var6 : var3) {
@@ -54,7 +54,7 @@ public class Class2602 extends Class2595 {
 
    @Override
    public void method10804() {
-      for (BoatEntity var4 : this.field16845.world.<BoatEntity>getEntitiesWithinAABB(BoatEntity.class, this.field16845.getBoundingBox().method19664(5.0))) {
+      for (BoatEntity var4 : this.field16845.world.<BoatEntity>getEntitiesWithinAABB(BoatEntity.class, this.field16845.getBoundingBox().grow(5.0))) {
          if (var4.method3407() != null && var4.method3407() instanceof PlayerEntity) {
             this.field16846 = (PlayerEntity)var4.method3407();
             break;

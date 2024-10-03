@@ -212,13 +212,13 @@ public class Class888 extends ProjectileEntity implements Class889 {
          double var7 = 5.0;
          Vector3d var9 = this.getPositionVec();
 
-         for (LivingEntity var11 : this.world.<LivingEntity>getEntitiesWithinAABB(LivingEntity.class, this.getBoundingBox().method19664(5.0))) {
+         for (LivingEntity var11 : this.world.<LivingEntity>getEntitiesWithinAABB(LivingEntity.class, this.getBoundingBox().grow(5.0))) {
             if (var11 != this.field5125 && !(this.getDistanceSq(var11) > 25.0)) {
                boolean var12 = false;
 
                for (int var13 = 0; var13 < 2; var13++) {
                   Vector3d var14 = new Vector3d(var11.getPosX(), var11.getPosYHeight(0.5 * (double)var13), var11.getPosZ());
-                  BlockRayTraceResult var15 = this.world.rayTraceBlocks(new RayTraceContext(var9, var14, RayTraceContext.BlockMode.field14774, RayTraceContext.FluidMode.NONE, this));
+                  BlockRayTraceResult var15 = this.world.rayTraceBlocks(new RayTraceContext(var9, var14, RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, this));
                   if (var15.getType() == RayTraceResult.Type.MISS) {
                      var12 = true;
                      break;

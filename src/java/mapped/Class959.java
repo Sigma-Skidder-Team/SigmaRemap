@@ -149,7 +149,7 @@ public class Class959 extends TileEntity implements ITickableTileEntity {
       int var6 = this.pos.getY();
       int var7 = this.pos.getZ();
       AxisAlignedBB var8 = new AxisAlignedBB((double)var5, (double)var6, (double)var7, (double)(var5 + 1), (double)(var6 + 1), (double)(var7 + 1))
-         .method19664((double)var4)
+         .grow((double)var4)
          .expand(0.0, (double)this.world.method7034(), 0.0);
       List<PlayerEntity> var9 = this.world.<PlayerEntity>getEntitiesWithinAABB(PlayerEntity.class, var8);
       if (!var9.isEmpty()) {
@@ -220,7 +220,7 @@ public class Class959 extends TileEntity implements ITickableTileEntity {
       int var3 = this.pos.getX();
       int var4 = this.pos.getY();
       int var5 = this.pos.getZ();
-      return new AxisAlignedBB((double)var3, (double)var4, (double)var5, (double)(var3 + 1), (double)(var4 + 1), (double)(var5 + 1)).method19664(8.0);
+      return new AxisAlignedBB((double)var3, (double)var4, (double)var5, (double)(var3 + 1), (double)(var4 + 1), (double)(var5 + 1)).grow(8.0);
    }
 
    @Nullable

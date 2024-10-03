@@ -13,7 +13,7 @@ import net.optifine.Config;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class BlockState extends Class7377 {
+public class BlockState extends AbstractBlock.AbstractBlockState {
    public static final Codec<BlockState> field31585 = method23469(Registry.BLOCK, Block::getDefaultState).stable();
    private int field31586 = -1;
    private int field31587 = -1;

@@ -25,12 +25,12 @@ public final class ProjectileHelper {
       World var5 = var0.world;
       Vector3d var6 = var0.getPositionVec();
       Vector3d var7 = var6.add(var4);
-      Object var8 = var5.rayTraceBlocks(new RayTraceContext(var6, var7, RayTraceContext.BlockMode.field14774, RayTraceContext.FluidMode.NONE, var0));
+      Object var8 = var5.rayTraceBlocks(new RayTraceContext(var6, var7, RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, var0));
       if (((RayTraceResult)var8).getType() != RayTraceResult.Type.MISS) {
          var7 = ((RayTraceResult)var8).getHitVec();
       }
 
-      EntityRayTraceResult var9 = method36387(var5, var0, var6, var7, var0.getBoundingBox().expand(var0.getMotion()).method19664(1.0), var1);
+      EntityRayTraceResult var9 = method36387(var5, var0, var6, var7, var0.getBoundingBox().expand(var0.getMotion()).grow(1.0), var1);
       if (var9 != null) {
          var8 = var9;
       }
@@ -46,8 +46,8 @@ public final class ProjectileHelper {
       Vector3d var13 = null;
 
       for (Entity var15 : var9.getEntitiesInAABBexcluding(var0, var3, var4)) {
-         AxisAlignedBB var16 = var15.getBoundingBox().method19664((double)var15.getCollisionBorderSize());
-         Optional<Vector3d> var17 = var16.method19680(var1, var2);
+         AxisAlignedBB var16 = var15.getBoundingBox().grow((double)var15.getCollisionBorderSize());
+         Optional<Vector3d> var17 = var16.rayTrace(var1, var2);
          if (!var16.method19673(var1)) {
             if (var17.isPresent()) {
                Vector3d var18 = (Vector3d)var17.get();
@@ -79,8 +79,8 @@ public final class ProjectileHelper {
       Entity var10 = null;
 
       for (Entity var12 : var0.getEntitiesInAABBexcluding(var1, var4, var5)) {
-         AxisAlignedBB var13 = var12.getBoundingBox().method19664(0.3F);
-         Optional var14 = var13.method19680(var2, var3);
+         AxisAlignedBB var13 = var12.getBoundingBox().grow(0.3F);
+         Optional var14 = var13.rayTrace(var2, var3);
          if (var14.isPresent()) {
             double var15 = var2.squareDistanceTo((Vector3d)var14.get());
             if (var15 < var8) {

@@ -83,7 +83,7 @@ public class ActiveRenderInfo {
             this.pos.y - (double)this.look.method25270() * var1 + (double)var7,
             this.pos.z - (double)this.look.method25271() * var1 + (double)var8
          );
-         BlockRayTraceResult var11 = this.world.rayTraceBlocks(new RayTraceContext(var9, var10, RayTraceContext.BlockMode.field14776, RayTraceContext.FluidMode.NONE, this.renderViewEntity));
+         BlockRayTraceResult var11 = this.world.rayTraceBlocks(new RayTraceContext(var9, var10, RayTraceContext.BlockMode.VISUAL, RayTraceContext.FluidMode.NONE, this.renderViewEntity));
          if (var11.getType() != RayTraceResult.Type.MISS) {
             double var12 = var11.getHitVec().method11341(this.pos);
             if (var12 < var1 && !Client.getInstance().getModuleManager().getModuleByClass(CameraNoClip.class).isEnabled()) {

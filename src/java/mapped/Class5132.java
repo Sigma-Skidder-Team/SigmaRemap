@@ -47,7 +47,7 @@ public class Class5132 implements Class5119 {
                Integer var28 = (Integer)var26.getValue();
                if (var16.add(var27)) {
                   AxisAlignedBB var29 = new AxisAlignedBB(BlockPos.ZERO)
-                     .method19664(0.002)
+                     .grow(0.002)
                      .shrink(0.0025 * (double)var23)
                      .offset((double)var27.getX(), (double)var27.getY(), (double)var27.getZ())
                      .offset(-var3, -var5, -var7);

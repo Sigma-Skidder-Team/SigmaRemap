@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
@@ -11,7 +12,7 @@ import java.util.Random;
 public class Class6701 extends Class6698 {
    public static final Codec<Class6701> field29335 = BlockState.field31585
       .fieldOf("state")
-      .xmap(Class7377::getBlock, Block::getDefaultState)
+      .xmap(AbstractBlock.AbstractBlockState::getBlock, Block::getDefaultState)
       .xmap(Class6701::new, var0 -> var0.field29336)
       .codec();
    private final Block field29336;

@@ -2594,7 +2594,7 @@ public abstract class LivingEntity extends Entity {
    public boolean canEntityBeSeen(Entity var1) {
       Vector3d var4 = new Vector3d(this.getPosX(), this.getPosYEye(), this.getPosZ());
       Vector3d var5 = new Vector3d(var1.getPosX(), var1.getPosYEye(), var1.getPosZ());
-      return this.world.rayTraceBlocks(new RayTraceContext(var4, var5, RayTraceContext.BlockMode.field14774, RayTraceContext.FluidMode.NONE, this)).getType() == RayTraceResult.Type.MISS;
+      return this.world.rayTraceBlocks(new RayTraceContext(var4, var5, RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, this)).getType() == RayTraceResult.Type.MISS;
    }
 
    @Override

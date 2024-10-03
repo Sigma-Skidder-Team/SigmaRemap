@@ -73,7 +73,7 @@ public class Class2723<T extends Class1028> extends Class2595 {
    private List<Class1028> method10931() {
       return this.field17212
          .world
-         .<Class1028>getEntitiesInAABBexcluding(Class1028.class, this.field17212.getBoundingBox().method19664(16.0), var1 -> var1.method4549() && !var1.isEntityEqual(this.field17212));
+         .<Class1028>getEntitiesInAABBexcluding(Class1028.class, this.field17212.getBoundingBox().grow(16.0), var1 -> var1.method4549() && !var1.isEntityEqual(this.field17212));
    }
 
    private boolean method10932() {

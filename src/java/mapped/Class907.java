@@ -116,7 +116,7 @@ public class Class907 extends Entity {
                BlockRayTraceResult var9 = this.world
                   .rayTraceBlocks(
                      new RayTraceContext(
-                        new Vector3d(this.prevPosX, this.prevPosY, this.prevPosZ), this.getPositionVec(), RayTraceContext.BlockMode.field14774, RayTraceContext.FluidMode.SOURCE_ONLY, this
+                        new Vector3d(this.prevPosX, this.prevPosY, this.prevPosZ), this.getPositionVec(), RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.SOURCE_ONLY, this
                      )
                   );
                if (var9.getType() != RayTraceResult.Type.MISS && this.world.getFluidState(var9.getPos()).method23486(FluidTags.field40469)) {

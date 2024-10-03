@@ -666,7 +666,7 @@ public abstract class AbstractMinecartEntity extends Entity {
    @Override
    public AxisAlignedBB getRenderBoundingBox() {
       AxisAlignedBB var3 = this.getBoundingBox();
-      return !this.method3609() ? var3 : var3.method19664((double)Math.abs(this.method3605()) / 16.0);
+      return !this.method3609() ? var3 : var3.grow((double)Math.abs(this.method3605()) / 16.0);
    }
 
    @Override

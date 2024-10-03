@@ -129,7 +129,7 @@ public class Class1029 extends Class1026 {
 
          if (this.collidedHorizontally && this.world.getGameRules().getBoolean(GameRules.field24224)) {
             boolean var7 = false;
-            AxisAlignedBB var8 = this.getBoundingBox().method19664(0.2);
+            AxisAlignedBB var8 = this.getBoundingBox().grow(0.2);
 
             for (BlockPos var10 : BlockPos.method8364(
                MathHelper.floor(var8.minX),
@@ -214,7 +214,7 @@ public class Class1029 extends Class1026 {
 
    private void method4583() {
       if (this.isAlive()) {
-         for (Entity var4 : this.world.<Entity>getEntitiesInAABBexcluding(LivingEntity.class, this.getBoundingBox().method19664(4.0), field5727)) {
+         for (Entity var4 : this.world.<Entity>getEntitiesInAABBexcluding(LivingEntity.class, this.getBoundingBox().grow(4.0), field5727)) {
             if (!(var4 instanceof Class1025)) {
                var4.attackEntityFrom(DamageSource.method31115(this), 6.0F);
             }

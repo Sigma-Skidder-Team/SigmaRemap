@@ -191,7 +191,7 @@ public class AxisAlignedBB {
       return new AxisAlignedBB(var9, var11, var13, var15, var17, var19);
    }
 
-   public AxisAlignedBB method19664(double var1) {
+   public AxisAlignedBB grow(double var1) {
       return this.grow(var1, var1, var1);
    }
 
@@ -293,10 +293,10 @@ public class AxisAlignedBB {
    }
 
    public AxisAlignedBB shrink(double var1) {
-      return this.method19664(-var1);
+      return this.grow(-var1);
    }
 
-   public Optional<Vector3d> method19680(Vector3d var1, Vector3d var2) {
+   public Optional<Vector3d> rayTrace(Vector3d var1, Vector3d var2) {
       double[] var5 = new double[]{1.0};
       double var6 = var2.x - var1.x;
       double var8 = var2.y - var1.y;
@@ -311,7 +311,7 @@ public class AxisAlignedBB {
    }
 
    @Nullable
-   public static BlockRayTraceResult method19681(Iterable<AxisAlignedBB> var0, Vector3d var1, Vector3d var2, BlockPos var3) {
+   public static BlockRayTraceResult rayTrace(Iterable<AxisAlignedBB> var0, Vector3d var1, Vector3d var2, BlockPos var3) {
       double[] var6 = new double[]{1.0};
       Direction var7 = null;
       double var8 = var2.x - var1.x;

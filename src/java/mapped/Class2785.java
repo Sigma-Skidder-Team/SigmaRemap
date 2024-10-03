@@ -62,7 +62,7 @@ public class Class2785 extends Class2595 {
 
    @Nullable
    private Class1018 method10978() {
-      List<Class1018> var3 = this.field17409.method7195(this.field17408, field17406, this.field17407, this.field17407.getBoundingBox().method19664(8.0));
+      List<Class1018> var3 = this.field17409.method7195(this.field17408, field17406, this.field17407, this.field17407.getBoundingBox().grow(8.0));
       double var4 = Double.MAX_VALUE;
       Class1018 var6 = null;
 

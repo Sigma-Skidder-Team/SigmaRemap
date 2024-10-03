@@ -89,7 +89,7 @@ public class Class966 extends TileEntity implements ITickableTileEntity {
       BlockPos var3 = this.getPos();
       if (this.world.getGameTime() > this.field5415 + 60L || this.field5419 == null) {
          this.field5415 = this.world.getGameTime();
-         AxisAlignedBB var4 = new AxisAlignedBB(var3).method19664(48.0);
+         AxisAlignedBB var4 = new AxisAlignedBB(var3).grow(48.0);
          this.field5419 = this.world.<LivingEntity>getEntitiesWithinAABB(LivingEntity.class, var4);
       }
 

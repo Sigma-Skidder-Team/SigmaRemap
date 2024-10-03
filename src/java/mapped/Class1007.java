@@ -271,8 +271,8 @@ public class Class1007 extends MobEntity implements Class1008 {
                this.method4321(
                   this.world.getEntitiesInAABBexcluding(this, this.field5631.getBoundingBox().grow(4.0, 2.0, 4.0).offset(0.0, -2.0, 0.0), Class8088.field34761)
                );
-               this.method4322(this.world.getEntitiesInAABBexcluding(this, this.field5624.getBoundingBox().method19664(1.0), Class8088.field34761));
-               this.method4322(this.world.getEntitiesInAABBexcluding(this, this.field5625.getBoundingBox().method19664(1.0), Class8088.field34761));
+               this.method4322(this.world.getEntitiesInAABBexcluding(this, this.field5624.getBoundingBox().grow(1.0), Class8088.field34761));
+               this.method4322(this.world.getEntitiesInAABBexcluding(this, this.field5625.getBoundingBox().grow(1.0), Class8088.field34761));
             }
 
             float var35 = MathHelper.sin(this.rotationYaw * (float) (Math.PI / 180.0) - this.field5636 * 0.01F);
@@ -373,7 +373,7 @@ public class Class1007 extends MobEntity implements Class1008 {
       }
 
       if (this.rand.nextInt(10) == 0) {
-         List<EnderCrystalEntity> var3 = this.world.<EnderCrystalEntity>getEntitiesWithinAABB(EnderCrystalEntity.class, this.getBoundingBox().method19664(32.0));
+         List<EnderCrystalEntity> var3 = this.world.<EnderCrystalEntity>getEntitiesWithinAABB(EnderCrystalEntity.class, this.getBoundingBox().grow(32.0));
          EnderCrystalEntity var4 = null;
          double var5 = Double.MAX_VALUE;
 
