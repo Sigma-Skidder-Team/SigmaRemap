@@ -2,8 +2,8 @@ package com.mentalfrostbyte.jello.module.impl.world;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
+import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import mapped.Class8906;
 import mapped.ListNBT;
@@ -16,11 +16,11 @@ import net.minecraft.network.play.client.CCreativeInventoryActionPacket;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.util.Hand;
 
-public class ServerCrasher extends PremiumModule {
+public class ServerCrasher extends Module {
     private int field23695;
 
     public ServerCrasher() {
-        super("ServerCrasher", "Crashes a server", ModuleCategory.WORLD);
+        super(ModuleCategory.WORLD, "ServerCrasher", "Crashes a server");
         this.registerSetting(new ModeSetting("Mode", "Crasher mode", 0, "Flying Enabled", "Vanilla", "Book", "Infinity", "BrainFreeze"));
     }
 

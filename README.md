@@ -11,7 +11,7 @@ We have fixed many features already,
 - removed viaversion and the bugs that came with it;
 - shield rendering when sword blocking;
 - stairs hitbox/collision bug;
-- removed resource decrypted;
+- removed resource decryption;
 - 4.5 reach on survival;
 - classic mode visuals;
 - white screen issue;
@@ -22,8 +22,7 @@ We have fixed many features already,
 1. Fix singleplayer;
 2. Main menu, animation and gui flickering;
 3. Packet issues on some servers (instant disconnect/kicks);
-4. Port all premium modules to regular modules;
-5. Add back ViaVersion/Jello Portal.
+4. Add back ViaVersion/Jello Portal.
 
 ### :D
 

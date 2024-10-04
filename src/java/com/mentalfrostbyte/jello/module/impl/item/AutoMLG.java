@@ -5,8 +5,8 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.priority.LowerPriority;
+import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
@@ -26,14 +26,14 @@ import net.minecraft.util.math.BlockPos;
 import java.util.Iterator;
 import java.util.stream.Stream;
 
-public class AutoMLG extends PremiumModule {
+public class AutoMLG extends Module {
     private static int field23649;
     private int field23647;
     private int field23648;
     private BlockPos field23650;
 
     public AutoMLG() {
-        super("AutoMLG", "Automatically places water when falling", ModuleCategory.ITEM);
+        super(ModuleCategory.ITEM, "AutoMLG", "Automatically places water when falling");
         this.registerSetting(new BooleanSetting("Cubecraft", "Cubecraft bypass", true));
         field23649 = -1;
     }

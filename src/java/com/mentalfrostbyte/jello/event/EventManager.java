@@ -120,8 +120,7 @@ public class EventManager {
                                 var12 = Arrays.copyOf(var12, var12.length + 1);
                                 var12[var12.length - 1] = var13;
                                 this.eventList.put(var11, this.filterByPriority(var12));
-                                var4 = true;
-                            } else if (!var13.method29027()) {
+                            } else if (!var13.getFalse()) { //IF THIS IS SET TO TRUE RENDER MODULES DONT RENDER!!!
                                 Map<Class<? extends Event>, List<MethodWrapper>> var15 = this.field31402.getOrDefault(var5, new HashMap<Class<? extends Event>, List<MethodWrapper>>());
                                 List<MethodWrapper> var16 = var15.computeIfAbsent(var11, k -> new ArrayList<>());
 

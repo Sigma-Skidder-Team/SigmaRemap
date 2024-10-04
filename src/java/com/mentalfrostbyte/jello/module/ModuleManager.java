@@ -289,28 +289,6 @@ public class ModuleManager {
         return obj;
     }
 
-    public void method14658() {
-        long var3 = this.method14661();
-
-        for (Module var6 : this.moduleMap.values()) {
-            for (Setting var8 : var6.getSettingMap().values()) {
-                if (var8.hasPremiumSettings()) {
-                    var3++;
-                }
-
-                if (var6 instanceof ModuleWithModuleSettings) {
-                    for (Module var12 : ((ModuleWithModuleSettings) var6).moduleArray) {
-                        for (Setting var14 : var12.getSettingMap().values()) {
-                            if (var14.hasPremiumSettings()) {
-                                var3++;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
     public void method14659(JSONObject var1) {
         String var4 = null;
 
@@ -349,14 +327,6 @@ public class ModuleManager {
             var5.printStackTrace();
             Client.getInstance().getLogger().warn("Unable to save mod profiles...");
         }
-    }
-
-    public int method14661() {
-        Setting var3 = this.getModuleByClass(Jesus.class).getSettingMap().get("Mode");
-        String var4 = (String) var3.currentValue;
-        var3.setCurrentValue("Dolphin");
-        var3.currentValue = var4;
-        return 0;
     }
 
     public Module getModuleByClass(Class<? extends Module> module) {

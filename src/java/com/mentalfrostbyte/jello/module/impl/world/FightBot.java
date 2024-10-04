@@ -4,8 +4,8 @@ import com.google.common.collect.Lists;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
+import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -13,12 +13,12 @@ import net.minecraft.util.math.vector.Vector3d;
 
 import java.util.List;
 
-public class FightBot extends PremiumModule {
+public class FightBot extends Module {
     public Entity targetEntity;
     public Vector3d targetPosition;
 
     public FightBot() {
-        super("FightBot", "Jello AI Fight Bot", ModuleCategory.WORLD);
+        super(ModuleCategory.WORLD, "FightBot", "Jello AI Fight Bot");
     }
 
     @EventTarget

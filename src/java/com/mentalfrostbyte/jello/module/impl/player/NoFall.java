@@ -23,7 +23,6 @@ public class NoFall extends Module {
         super(ModuleCategory.PLAYER, "NoFall", "Avoid you from getting fall damages");
         this.registerSetting(
                 new ModeSetting("Mode", "Nofall mode", 0, "Vanilla", "Hypixel", "Hypixel2", "AAC", "NCPSpigot", "OldHypixel", "Vanilla Legit")
-                        .setPremiumModes("Hypixel", "Hypixel2")
         );
     }
 
@@ -44,11 +43,9 @@ public class NoFall extends Module {
                     && this.getStringSettingValueByName("Mode").equals("Hypixel")
                     && MultiUtilities.isHypixel()) {
                 double[] var4 = MultiUtilities.method17747();
-                int var5 = var4.length;
                 double var6 = Double.MAX_VALUE;
 
-                for (int var8 = 0; var8 < var5; var8++) {
-                    double var9 = var4[var8];
+                for (double var9 : var4) {
                     double var11 = mc.player.getPosY();
                     double var13 = (double) ((int) (var11 + var1.getY())) - var11 - var1.getY() + var9;
                     double var15 = 0.02;
@@ -99,8 +96,6 @@ public class NoFall extends Module {
                             }
 
                             if (mc.player.getMotion().y < -0.1) {
-                                if (this.field23509 == 0.0) {
-                                }
 
                                 this.field23509 = this.field23509 - mc.player.getMotion().y;
                             }

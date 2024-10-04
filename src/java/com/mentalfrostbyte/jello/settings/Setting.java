@@ -65,13 +65,6 @@ public abstract class Setting<T> {
         }
     }
 
-    public void clearPremiumModes() {
-    }
-
-    public boolean hasPremiumSettings() {
-        return false;
-    }
-
     public T getDefaultValue() {
         return this.defaultValue;
     }

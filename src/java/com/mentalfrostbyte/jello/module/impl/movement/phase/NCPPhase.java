@@ -5,8 +5,8 @@ import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.impl.EventPushBlock;
 import com.mentalfrostbyte.jello.event.impl.EventMove;
+import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.MovementUtils;
@@ -14,13 +14,13 @@ import net.minecraft.network.IPacket;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
-public class NCPPhase extends PremiumModule {
+public class NCPPhase extends Module {
     private boolean field23651;
     private int field23652;
     private int field23653;
 
     public NCPPhase() {
-        super("NCP", "Phase for NCP anticheat", ModuleCategory.MOVEMENT);
+        super(ModuleCategory.MOVEMENT, "NCP", "Phase for NCP anticheat");
         this.registerSetting(new BooleanSetting("Hypixel", "Hypixel bypass", true));
     }
 

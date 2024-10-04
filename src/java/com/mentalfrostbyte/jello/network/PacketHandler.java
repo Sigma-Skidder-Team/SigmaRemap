@@ -56,18 +56,6 @@ public class PacketHandler {
                 Client.getInstance().getEventManager().method23217();
 
                 for (Module var23 : Client.getInstance().getModuleManager().getModuleMap().values()) {
-                    for (Setting var28 : var23.getSettingMap().values()) {
-                        var28.clearPremiumModes();
-                    }
-
-                    if (var23 instanceof ModuleWithModuleSettings) {
-                        for (Module var33 : ((ModuleWithModuleSettings) var23).moduleArray) {
-                            for (Setting var37 : var33.getSettingMap().values()) {
-                                var37.clearPremiumModes();
-                            }
-                        }
-                    }
-
                     if (var23.isEnabled()) {
                         Client.getInstance().getEventManager().subscribe(var23);
                         if (var23 instanceof ModuleWithModuleSettings) {

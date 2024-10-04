@@ -1,7 +1,6 @@
 package com.mentalfrostbyte.jello.event;
 
 import com.mentalfrostbyte.jello.event.priority.Priority;
-import com.mentalfrostbyte.jello.module.impl.movement.phase.NCPPhase;
 import com.mentalfrostbyte.jello.unmapped.Class8733;
 import lol.ReflectionUtils;
 
@@ -16,7 +15,6 @@ public class MethodWrapper {
     private final Class8733 field35684;
     private MethodHandle field35685;
     private final Priority field35686;
-    private final boolean field35687;
 
     public MethodWrapper(Object var1, Class<?> var2, Method var3, Priority var4) {
         this.field35681 = var1;
@@ -31,7 +29,6 @@ public class MethodWrapper {
         }
 
         this.field35686 = var4;
-        this.field35687 = var1.getClass().getSuperclass() == NCPPhase.class.getSuperclass();
     }
 
     public Object getOBjecct() {
@@ -54,8 +51,8 @@ public class MethodWrapper {
         return this.field35686;
     }
 
-    public boolean method29027() {
-        return this.field35687;
+    public boolean getFalse() {
+        return false; //IF THIS IS SET TO TRUE RENDER MODULES DONT RENDER!!!
     }
 
     @Override

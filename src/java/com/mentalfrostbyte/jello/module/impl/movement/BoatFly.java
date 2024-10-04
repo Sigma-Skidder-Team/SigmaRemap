@@ -4,17 +4,17 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.MouseHoverEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.event.impl.EventKeyPress;
+import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.module.PremiumModule;
 import lol.MovementUtils;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import net.minecraft.entity.Entity;
 
-public class BoatFly extends PremiumModule {
+public class BoatFly extends Module {
     public boolean field23643 = false;
 
     public BoatFly() {
-        super("BoatFly", "Fly with a boat", ModuleCategory.MOVEMENT);
+        super(ModuleCategory.MOVEMENT, "BoatFly", "Fly with a boat");
         this.registerSetting(new NumberSetting<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.28F, 10.0F, 0.01F));
     }
 
