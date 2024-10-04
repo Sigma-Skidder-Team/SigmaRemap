@@ -571,7 +571,7 @@ public class GlStateManager {
       switch (fboMode)
       {
          case BASE:
-            GL30.glBindFramebuffer(target, framebufferIn);
+            GL30C.glBindFramebuffer(target, framebufferIn);
             break;
 
          case ARB:
