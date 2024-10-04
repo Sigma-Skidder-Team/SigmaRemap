@@ -163,10 +163,10 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    public void onUpdateWalkingPlayer() {
-      AxisAlignedBB var3 = this.getBoundingBox();
-      EventUpdate var4 = new EventUpdate(this.getPosX(), var3.minY, this.getPosZ(), this.rotationPitch, this.rotationYaw, this.onGround);
-      Client.getInstance().getEventManager().call(var4);
-      if (!var4.isCancelled()) {
+      AxisAlignedBB bounds = this.getBoundingBox();
+      EventUpdate eventItself = new EventUpdate(this.getPosX(), bounds.minY, this.getPosZ(), this.rotationPitch, this.rotationYaw, this.onGround);
+      Client.getInstance().getEventManager().call(eventItself);
+      if (!eventItself.isCancelled()) {
          boolean var5 = this.isSprinting();
          if (var5 != this.field6127) {
             CEntityActionPacket.Action var6 = !var5 ? CEntityActionPacket.Action.STOP_SPRINTING : CEntityActionPacket.Action.START_SPRINTING;
@@ -182,19 +182,19 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          }
 
          if (this.isCurrentViewEntity()) {
-            double var8 = var4.getX();
-            double var10 = var4.getY();
-            double var12 = var4.getZ();
-            float var14 = var4.getYaw();
-            float var15 = var4.getPitch() % 360.0F;
-            boolean var16 = var4.onGround();
+            double var8 = eventItself.getX();
+            double var10 = eventItself.getY();
+            double var12 = eventItself.getZ();
+            float var14 = eventItself.getYaw();
+            float var15 = eventItself.getPitch() % 360.0F;
+            boolean var16 = eventItself.onGround();
             double var17 = var8 - this.field6119;
             double var19 = var10 - this.field6120;
             double var21 = var12 - this.field6121;
             double var23 = (double)(var15 - this.field6122 % 360.0F);
             double var25 = (double)(var14 - this.field6123);
             this.field6128++;
-            boolean var27 = var4.method13907() || var17 * var17 + var19 * var19 + var21 * var21 > 9.0E-4 || this.field6128 >= 20;
+            boolean var27 = eventItself.method13907() || var17 * var17 + var19 * var19 + var21 * var21 > 9.0E-4 || this.field6128 >= 20;
             boolean var28 = var23 != 0.0 || var25 != 0.0;
             if (!this.isPassenger()) {
                if (var27 && var28) {
@@ -232,12 +232,12 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
             this.field6146 = this.field6132.gameSettings.field44610;
          }
 
-         for (Runnable var30 : var4.getRunnableList()) {
+         for (Runnable var30 : eventItself.getRunnableList()) {
             var30.run();
          }
 
-         var4.postUpdate();
-         Client.getInstance().getEventManager().call(var4);
+         eventItself.postUpdate();
+         Client.getInstance().getEventManager().call(eventItself);
       }
    }
 
