@@ -12,6 +12,8 @@ import java.nio.IntBuffer;
 import java.util.HashMap;
 import java.util.Iterator;
 
+import lol.Renderer;
+import lol.SGL;
 import org.lwjgl.BufferUtils;
 
 public class InternalTextureLoader {

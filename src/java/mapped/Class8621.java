@@ -129,7 +129,7 @@ public class Class8621 {
             var24 = var7;
          }
 
-         var14.field4855.sendPacket(new SPlaySoundPacket(var2, var3, var23, var24, var6));
+         var14.connection.sendPacket(new SPlaySoundPacket(var2, var3, var23, var24, var6));
          var12++;
       }
 

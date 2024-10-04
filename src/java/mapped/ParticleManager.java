@@ -65,7 +65,7 @@ public class ParticleManager implements Class268 {
       this.method1192(ParticleTypes.field34079, Class3500::new);
       this.method1192(ParticleTypes.CRIT, Class3563::new);
       this.method1192(ParticleTypes.field34102, Class3507::new);
-      this.method1192(ParticleTypes.field34055, Class3543::new);
+      this.method1192(ParticleTypes.DAMAGE_INDICATOR, Class3543::new);
       this.method1192(ParticleTypes.field34056, Class3545::new);
       this.method1192(ParticleTypes.field34105, Class3503::new);
       this.method1192(ParticleTypes.field34057, Class3538::new);
@@ -76,7 +76,7 @@ public class ParticleManager implements Class268 {
       this.method1192(ParticleTypes.field34062, Class3508::new);
       this.method1192(ParticleTypes.field34063, Class3535::new);
       this.method1191(ParticleTypes.field34064, new Class3551());
-      this.method1192(ParticleTypes.field34065, Class3519::new);
+      this.method1192(ParticleTypes.ENCHANTED_HIT, Class3519::new);
       this.method1192(ParticleTypes.field34066, Class3511::new);
       this.method1192(ParticleTypes.field34067, Class3539::new);
       this.method1192(ParticleTypes.field34068, Class3540::new);

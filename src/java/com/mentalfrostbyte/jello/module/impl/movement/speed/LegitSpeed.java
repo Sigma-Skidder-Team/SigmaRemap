@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import net.minecraft.network.play.server.SEntityVelocityPacket;
-import mapped.MovementUtils;
+import lol.MovementUtils;
 
 public class LegitSpeed extends Module {
     private double field24010;

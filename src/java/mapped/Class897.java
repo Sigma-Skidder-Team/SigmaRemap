@@ -192,7 +192,7 @@ public class Class897 extends Entity implements Class889 {
    }
 
    @Override
-   public boolean method3360() {
+   public boolean canBeAttackedWithItem() {
       return false;
    }
 

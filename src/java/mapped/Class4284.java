@@ -3,6 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
+import lol.ClientColors;
 
 public class Class4284 extends Class4278 {
    private static String[] field20767;

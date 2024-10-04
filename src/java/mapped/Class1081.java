@@ -194,7 +194,7 @@ public class Class1081 extends Class1009 implements Class1080 {
                this.getPosY(),
                this.getPosZ(),
                SoundEvents.field26587,
-               this.method2864(),
+               this.getSoundCategory(),
                1.0F,
                this.rand.nextFloat() * 0.4F + 0.8F
             );

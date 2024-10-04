@@ -270,7 +270,7 @@ public final class ItemStack {
       }
    }
 
-   public void method32122(LivingEntity var1, PlayerEntity var2) {
+   public void hitEntity(LivingEntity var1, PlayerEntity var2) {
       Item var5 = this.getItem();
       if (var5.hitEntity(this, var1, var2)) {
          var2.addStat(Stats.field40098.method172(var5));
@@ -555,7 +555,7 @@ public final class ItemStack {
                   if (var1 != null) {
                      if (var15.getID() == Item.ATTACK_DAMAGE_MODIFIER) {
                         var16 += var1.method3087(Attributes.ATTACK_DAMAGE);
-                        var16 += (double) EnchantmentHelper.method26318(this, CreatureAttribute.field33505);
+                        var16 += (double) EnchantmentHelper.getModifierForCreature(this, CreatureAttribute.UNDEFINED);
                         var18 = true;
                      } else if (var15.getID() == Item.ATTACK_SPEED_MODIFIER) {
                         var16 += var1.method3087(Attributes.ATTACK_SPEED);

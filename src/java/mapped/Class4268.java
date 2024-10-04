@@ -4,6 +4,7 @@ import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
+import lol.ClientColors;
 
 public class Class4268 extends Class4247 {
    public final int field20690;

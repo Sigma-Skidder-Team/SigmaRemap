@@ -4,6 +4,7 @@ import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import com.mentalfrostbyte.jello.util.animation.Direction;
+import lol.ClientColors;
 
 public class Class7312 {
    private Texture field31339;

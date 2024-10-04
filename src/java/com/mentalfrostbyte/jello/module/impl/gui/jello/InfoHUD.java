@@ -10,7 +10,7 @@ import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.ChatScreen;
 import mapped.Class3280;
-import mapped.ClientColors;
+import lol.ClientColors;
 import mapped.RenderUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.ItemStack;

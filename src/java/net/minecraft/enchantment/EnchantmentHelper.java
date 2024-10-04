@@ -116,13 +116,13 @@ public class EnchantmentHelper {
       return var4.intValue();
    }
 
-   public static float method26318(ItemStack var0, CreatureAttribute var1) {
+   public static float getModifierForCreature(ItemStack var0, CreatureAttribute var1) {
       MutableFloat var4 = new MutableFloat();
       method26315((var2, var3) -> var4.add(var2.method18815(var3, var1)), var0);
       return var4.floatValue();
    }
 
-   public static float method26319(LivingEntity var0) {
+   public static float getSweepingDamageRatio(LivingEntity var0) {
       int var3 = method26322(Enchantments.SWEEPING, var0);
       return var3 <= 0 ? 0.0F : SweepingEnchantment.method18828(var3);
    }
@@ -167,11 +167,11 @@ public class EnchantmentHelper {
       }
    }
 
-   public static int method26323(LivingEntity var0) {
+   public static int getKnockbackModifier(LivingEntity var0) {
       return method26322(Enchantments.KNOCKBACK, var0);
    }
 
-   public static int method26324(LivingEntity var0) {
+   public static int getFireAspectModifier(LivingEntity var0) {
       return method26322(Enchantments.FIRE_ASPECT, var0);
    }
 

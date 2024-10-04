@@ -1,4 +1,4 @@
-package mapped;
+package totalcross.json;
 
 import com.google.common.collect.Lists;
 import java.util.List;

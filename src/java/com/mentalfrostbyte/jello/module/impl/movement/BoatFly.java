@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.event.impl.EventKeyPress;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
-import mapped.MovementUtils;
+import lol.MovementUtils;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import net.minecraft.entity.Entity;
 

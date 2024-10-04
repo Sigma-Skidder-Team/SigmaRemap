@@ -1,4 +1,4 @@
-package mapped;
+package lol;
 
 public interface LineStripRenderer {
    boolean method23239();

@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import mapped.MovementUtils;
+import lol.MovementUtils;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 
 public class HypixelHighJump extends Module {

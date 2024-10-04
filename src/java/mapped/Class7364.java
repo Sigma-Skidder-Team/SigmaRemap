@@ -19,7 +19,7 @@ public class Class7364 extends Class7362 {
             this.field31519.getPosY(),
             this.field31519.getPosZ(),
             SoundEvents.field26540,
-            this.field31519.method2864(),
+            this.field31519.getSoundCategory(),
             2.5F,
             0.8F + this.field31519.getRNG().nextFloat() * 0.3F,
             false

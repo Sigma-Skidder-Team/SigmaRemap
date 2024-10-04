@@ -11,7 +11,7 @@ public class Class6348 extends Class6349 {
 
    @Override
    public Vector3d method19299(Vector3d var1, float var2) {
-      return var1.method11347((double)(var2 * 0.94F + 0.06F), (double)(var2 * 0.94F + 0.06F), (double)(var2 * 0.91F + 0.09F));
+      return var1.mul((double)(var2 * 0.94F + 0.06F), (double)(var2 * 0.94F + 0.06F), (double)(var2 * 0.91F + 0.09F));
    }
 
    @Override

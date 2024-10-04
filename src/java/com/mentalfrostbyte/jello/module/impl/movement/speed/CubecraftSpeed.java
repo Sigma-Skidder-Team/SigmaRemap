@@ -13,7 +13,7 @@ import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import mapped.*;
+import lol.MovementUtils;
 
 public class CubecraftSpeed extends Module {
     private int field23618;

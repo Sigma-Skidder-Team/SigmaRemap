@@ -17,6 +17,8 @@ import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import com.mentalfrostbyte.jello.util.animation.MathHelper;
+import lol.ClientColors;
+import lol.MovementUtils;
 import mapped.*;
 import net.minecraft.block.*;
 import net.minecraft.inventory.container.ClickType;

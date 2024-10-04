@@ -4,6 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.Screen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
+import lol.ClientColors;
 import net.minecraft.client.Minecraft;
 
 import java.util.Date;

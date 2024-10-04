@@ -1,17 +1,17 @@
-package mapped;
+package com.mentalfrostbyte.jello.resource;
 
 import java.awt.Font;
 
-import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mojang.blaze3d.matrix.MatrixStack;
+import mapped.Color;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
-public class Class7430 extends ClientResource {
+public class DefaultClientFont extends ClientResource {
    public final int field31945;
    public Minecraft field31946 = Minecraft.getInstance();
 
-   public Class7430(int var1) {
+   public DefaultClientFont(int var1) {
       super(new Font("Arial", 0, var1), false);
       this.field31945 = var1;
    }

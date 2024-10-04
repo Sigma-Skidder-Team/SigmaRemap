@@ -132,14 +132,14 @@ public class Class9081 {
                         field41569.warn("Mismatch in destroy block pos: " + this.field41576 + " " + var1);
                         this.field41570.sendBlockBreakProgress(this.field41571.getEntityId(), this.field41576, -1);
                         this.field41571
-                           .field4855
+                           .connection
                            .sendPacket(
                               new SPlayerDiggingPacket(this.field41576, this.field41570.getBlockState(this.field41576), var2, true, "aborted mismatched destroying")
                            );
                      }
 
                      this.field41570.sendBlockBreakProgress(this.field41571.getEntityId(), var1, -1);
-                     this.field41571.field4855.sendPacket(new SPlayerDiggingPacket(var1, this.field41570.getBlockState(var1), var2, true, "aborted destroying"));
+                     this.field41571.connection.sendPacket(new SPlayerDiggingPacket(var1, this.field41570.getBlockState(var1), var2, true, "aborted destroying"));
                   }
                } else {
                   if (var1.equals(this.field41576)) {
@@ -163,11 +163,11 @@ public class Class9081 {
                      }
                   }
 
-                  this.field41571.field4855.sendPacket(new SPlayerDiggingPacket(var1, this.field41570.getBlockState(var1), var2, true, "stopped destroying"));
+                  this.field41571.connection.sendPacket(new SPlayerDiggingPacket(var1, this.field41570.getBlockState(var1), var2, true, "stopped destroying"));
                }
             } else {
                if (!this.field41570.method6785(this.field41571, var1)) {
-                  this.field41571.field4855.sendPacket(new SPlayerDiggingPacket(var1, this.field41570.getBlockState(var1), var2, false, "may not interact"));
+                  this.field41571.connection.sendPacket(new SPlayerDiggingPacket(var1, this.field41570.getBlockState(var1), var2, false, "may not interact"));
                   return;
                }
 
@@ -177,7 +177,7 @@ public class Class9081 {
                }
 
                if (this.field41571.blockActionRestricted(this.field41570, var1, this.field41572)) {
-                  this.field41571.field4855.sendPacket(new SPlayerDiggingPacket(var1, this.field41570.getBlockState(var1), var2, false, "block action restricted"));
+                  this.field41571.connection.sendPacket(new SPlayerDiggingPacket(var1, this.field41570.getBlockState(var1), var2, false, "block action restricted"));
                   return;
                }
 
@@ -194,7 +194,7 @@ public class Class9081 {
                } else {
                   if (this.field41574) {
                      this.field41571
-                        .field4855
+                        .connection
                         .sendPacket(
                            new SPlayerDiggingPacket(
                               this.field41576,
@@ -210,23 +210,23 @@ public class Class9081 {
                   this.field41576 = var1.toImmutable();
                   int var20 = (int)(var18 * 10.0F);
                   this.field41570.sendBlockBreakProgress(this.field41571.getEntityId(), var1, var20);
-                  this.field41571.field4855.sendPacket(new SPlayerDiggingPacket(var1, this.field41570.getBlockState(var1), var2, true, "actual start of destroying"));
+                  this.field41571.connection.sendPacket(new SPlayerDiggingPacket(var1, this.field41570.getBlockState(var1), var2, true, "actual start of destroying"));
                   this.field41581 = var20;
                }
             }
          } else {
-            this.field41571.field4855.sendPacket(new SPlayerDiggingPacket(var1, this.field41570.getBlockState(var1), var2, false, "too high"));
+            this.field41571.connection.sendPacket(new SPlayerDiggingPacket(var1, this.field41570.getBlockState(var1), var2, false, "too high"));
          }
       } else {
-         this.field41571.field4855.sendPacket(new SPlayerDiggingPacket(var1, this.field41570.getBlockState(var1), var2, false, "too far"));
+         this.field41571.connection.sendPacket(new SPlayerDiggingPacket(var1, this.field41570.getBlockState(var1), var2, false, "too far"));
       }
    }
 
    public void method33869(BlockPos var1, CPlayerDiggingPacket.Action var2, String var3) {
       if (!this.method33870(var1)) {
-         this.field41571.field4855.sendPacket(new SPlayerDiggingPacket(var1, this.field41570.getBlockState(var1), var2, false, var3));
+         this.field41571.connection.sendPacket(new SPlayerDiggingPacket(var1, this.field41570.getBlockState(var1), var2, false, var3));
       } else {
-         this.field41571.field4855.sendPacket(new SPlayerDiggingPacket(var1, this.field41570.getBlockState(var1), var2, true, var3));
+         this.field41571.connection.sendPacket(new SPlayerDiggingPacket(var1, this.field41570.getBlockState(var1), var2, true, var3));
       }
    }
 

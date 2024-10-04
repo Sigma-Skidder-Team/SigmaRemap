@@ -516,7 +516,7 @@ public abstract class LivingEntity extends Entity {
       return this.field4997;
    }
 
-   public void method3020(Entity var1) {
+   public void setLastAttackedEntity(Entity var1) {
       if (!(var1 instanceof LivingEntity)) {
          this.field4996 = null;
       } else {
@@ -1140,7 +1140,7 @@ public abstract class LivingEntity extends Entity {
                   this.getPosY(),
                   this.getPosZ(),
                   SoundEvents.field26713,
-                  this.method2864(),
+                  this.getSoundCategory(),
                   0.8F,
                   0.8F + this.world.rand.nextFloat() * 0.4F,
                   false
@@ -1714,7 +1714,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    public CreatureAttribute getCreatureAttribute() {
-      return CreatureAttribute.field33505;
+      return CreatureAttribute.UNDEFINED;
    }
 
    public ItemStack getHeldItemMainhand() {
@@ -1917,7 +1917,7 @@ public abstract class LivingEntity extends Entity {
                var15 = new Vector3d(var15.x, 0.2, var15.z);
             }
 
-            this.setMotion(var15.method11347((double)f5, 0.8F, (double)f5));
+            this.setMotion(var15.mul((double)f5, 0.8F, (double)f5));
             Vector3d var16 = this.method3110(var4, var6, this.getMotion());
             this.setMotion(var16);
             if (this.collidedHorizontally && this.isOffsetPositionInLiquid(var16.x, var16.y + 0.6F - this.getPosY() + var34, var16.z)) {
@@ -1930,7 +1930,7 @@ public abstract class LivingEntity extends Entity {
             if (!(this.method3427(FluidTags.field40470) <= this.func_233579_cu_())) {
                this.setMotion(this.getMotion().scale(0.5));
             } else {
-               this.setMotion(this.getMotion().method11347(0.5, 0.8F, 0.5));
+               this.setMotion(this.getMotion().mul(0.5, 0.8F, 0.5));
                Vector3d var36 = this.method3110(var4, var6, this.getMotion());
                this.setMotion(var36);
             }
@@ -1995,7 +1995,7 @@ public abstract class LivingEntity extends Entity {
                );
             }
 
-            this.setMotion(var31.method11347(0.99F, 0.98F, 0.99F));
+            this.setMotion(var31.mul(0.99F, 0.98F, 0.99F));
             this.move(MoverType.SELF, this.getMotion());
             if (this.collidedHorizontally && !this.world.isRemote) {
                double var42 = Math.sqrt(horizontalMag(this.getMotion()));
@@ -2087,7 +2087,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    public boolean attackEntityAsMob(Entity var1) {
-      this.method3020(var1);
+      this.setLastAttackedEntity(var1);
       return false;
    }
 

@@ -20,6 +20,7 @@ import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.boss.dragon.EnderDragonPartEntity;
 import net.minecraft.entity.passive.WaterMobEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -322,7 +323,7 @@ public class ServerWorld extends World implements ISeedReader {
             }
 
             var4.startSection("tick");
-            if (!var17.removed && !(var17 instanceof Class908)) {
+            if (!var17.removed && !(var17 instanceof EnderDragonPartEntity)) {
                this.method6754(this::method6907, var17);
             }
 
@@ -822,7 +823,7 @@ public class ServerWorld extends World implements ISeedReader {
 
    public void method6930(Entity var1) {
       if (var1 instanceof Class1007) {
-         for (Class908 var7 : ((Class1007)var1).method4332()) {
+         for (EnderDragonPartEntity var7 : ((Class1007)var1).method4332()) {
             var7.remove();
          }
       }
@@ -844,7 +845,7 @@ public class ServerWorld extends World implements ISeedReader {
       if (!this.field9044) {
          this.field9039.put(var1.getEntityId(), var1);
          if (var1 instanceof Class1007) {
-            for (Class908 var7 : ((Class1007)var1).method4332()) {
+            for (EnderDragonPartEntity var7 : ((Class1007)var1).method4332()) {
                this.field9039.put(var7.getEntityId(), var7);
             }
          }
@@ -890,7 +891,7 @@ public class ServerWorld extends World implements ISeedReader {
             double var10 = (double)var2.getY() - var7.getPosY();
             double var12 = (double)var2.getZ() - var7.getPosZ();
             if (var8 * var8 + var10 * var10 + var12 * var12 < 1024.0) {
-               var7.field4855.sendPacket(new SAnimateBlockBreakPacket(var1, var2, var3));
+               var7.connection.sendPacket(new SAnimateBlockBreakPacket(var1, var2, var3));
             }
          }
       }
@@ -982,7 +983,7 @@ public class ServerWorld extends World implements ISeedReader {
 
       for (ServerPlayerEntity var17 : this.field9042) {
          if (var17.getDistanceNearest(var4, var6, var8) < 4096.0) {
-            var17.field4855.sendPacket(new SExplosionPacket(var4, var6, var8, var10, var15.method25791(), var15.method25788().get(var17)));
+            var17.connection.sendPacket(new SExplosionPacket(var4, var6, var8, var10, var15.method25791(), var15.method25788().get(var17)));
          }
       }
 
@@ -1067,7 +1068,7 @@ public class ServerWorld extends World implements ISeedReader {
          if (!var12.method8317(new Vector3d(var3, var5, var7), !var2 ? 32.0 : 512.0)) {
             return false;
          } else {
-            var1.field4855.sendPacket(var9);
+            var1.connection.sendPacket(var9);
             return true;
          }
       } else {

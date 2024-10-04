@@ -121,7 +121,7 @@ public class Class1010 extends Class1009 implements IAngerable {
       if (this.ticksExisted >= this.field5651 + 400) {
          this.field5651 = this.ticksExisted;
          if (!this.isSilent()) {
-            this.world.method6745(this.getPosX(), this.getPosYEye(), this.getPosZ(), SoundEvents.field26549, this.method2864(), 2.5F, 1.0F, false);
+            this.world.method6745(this.getPosX(), this.getPosYEye(), this.getPosZ(), SoundEvents.field26549, this.getSoundCategory(), 2.5F, 1.0F, false);
          }
       }
    }
@@ -257,7 +257,7 @@ public class Class1010 extends Class1009 implements IAngerable {
       if (var11 && !var12) {
          boolean var13 = this.attemptTeleport(var1, var3, var5, true);
          if (var13 && !this.isSilent()) {
-            this.world.playSound((PlayerEntity)null, this.prevPosX, this.prevPosY, this.prevPosZ, SoundEvents.field26550, this.method2864(), 1.0F, 1.0F);
+            this.world.playSound((PlayerEntity)null, this.prevPosX, this.prevPosY, this.prevPosZ, SoundEvents.field26550, this.getSoundCategory(), 1.0F, 1.0F);
             this.playSound(SoundEvents.field26550, 1.0F, 1.0F);
          }
 

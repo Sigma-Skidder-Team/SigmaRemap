@@ -2,6 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
+import lol.ClientColors;
 import org.lwjgl.opengl.GL11;
 
 public class Class4244 extends ButtonPanel {

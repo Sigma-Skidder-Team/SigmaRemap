@@ -7,6 +7,7 @@ import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
+import lol.ClientColors;
 import org.lwjgl.opengl.GL11;
 
 import java.util.ArrayList;

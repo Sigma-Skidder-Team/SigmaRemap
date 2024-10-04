@@ -1,7 +1,6 @@
 package com.mentalfrostbyte.jello.settings;
 
-import com.mentalfrostbyte.jello.unmapped.SettingType;
-import mapped.Class9792;
+import com.mentalfrostbyte.jello.settings.interfaces.SettingObserver;
 import totalcross.json.JSONObject;
 
 import java.util.ArrayList;
@@ -11,7 +10,7 @@ public abstract class Setting<T> {
     public final SettingType settingType;
     public final String name;
     public final String description;
-    private final List<Class9792> observers = new ArrayList<Class9792>();
+    private final List<SettingObserver> observers = new ArrayList<SettingObserver>();
     public T currentValue;
     public T defaultValue;
 
@@ -34,14 +33,14 @@ public abstract class Setting<T> {
         this.currentValue = this.defaultValue;
     }
 
-    public final Setting<T> addObserver(Class9792 observer) {
+    public final Setting<T> addObserver(SettingObserver observer) {
         this.observers.add(observer);
         return this;
     }
 
     public final void notifyObservers() {
-        for (Class9792 observer : this.observers) {
-            observer.method38603(this);
+        for (SettingObserver observer : this.observers) {
+            observer.observe(this);
         }
     }
 

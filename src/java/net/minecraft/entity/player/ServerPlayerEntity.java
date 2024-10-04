@@ -51,7 +51,7 @@ import java.util.*;
 
 public class ServerPlayerEntity extends PlayerEntity implements IContainerListener {
    private static final Logger field4854 = LogManager.getLogger();
-   public ServerPlayNetHandler field4855;
+   public ServerPlayNetHandler connection;
    public final MinecraftServer field4856;
    public final Class9081 interactionManager;
    private final List<Integer> field4858 = Lists.newLinkedList();
@@ -259,13 +259,13 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
    @Override
    public void method2730() {
       super.method2730();
-      this.field4855.sendPacket(new SCombatPacket(this.getCombatTracker(), Class1900.field11155));
+      this.connection.sendPacket(new SCombatPacket(this.getCombatTracker(), Class1900.field11155));
    }
 
    @Override
    public void sendEndCombat() {
       super.sendEndCombat();
-      this.field4855.sendPacket(new SCombatPacket(this.getCombatTracker(), Class1900.field11156));
+      this.connection.sendPacket(new SCombatPacket(this.getCombatTracker(), Class1900.field11156));
    }
 
    @Override
@@ -303,7 +303,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
             var5.remove();
          }
 
-         this.field4855.sendPacket(new SDestroyEntitiesPacket(var4));
+         this.connection.sendPacket(new SDestroyEntitiesPacket(var4));
       }
 
       Entity var7 = this.method2814();
@@ -338,13 +338,13 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
             if (var7.getItem().method11726()) {
                IPacket var8 = ((Class3314)var7.getItem()).method11858(var7, this.world, this);
                if (var8 != null) {
-                  this.field4855.sendPacket(var8);
+                  this.connection.sendPacket(var8);
                }
             }
          }
 
          if (this.getHealth() != this.field4867 || this.field4868 != this.foodStats.getFoodLevel() || this.foodStats.method37577() == 0.0F != this.field4869) {
-            this.field4855.sendPacket(new SUpdateHealthPacket(this.getHealth(), this.foodStats.getFoodLevel(), this.foodStats.method37577()));
+            this.connection.sendPacket(new SUpdateHealthPacket(this.getHealth(), this.foodStats.getFoodLevel(), this.foodStats.method37577()));
             this.field4867 = this.getHealth();
             this.field4868 = this.foodStats.getFoodLevel();
             this.field4869 = this.foodStats.method37577() == 0.0F;
@@ -382,7 +382,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
 
          if (this.field4921 != this.field4870) {
             this.field4870 = this.field4921;
-            this.field4855.sendPacket(new SSetExperiencePacket(this.field4922, this.field4921, this.field4920));
+            this.connection.sendPacket(new SSetExperiencePacket(this.field4922, this.field4921, this.field4920));
          }
 
          if (this.ticksExisted % 20 == 0) {
@@ -404,10 +404,10 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
    public void onDeath(DamageSource var1) {
       boolean var4 = this.world.getGameRules().getBoolean(GameRules.field24234);
       if (!var4) {
-         this.field4855.sendPacket(new SCombatPacket(this.getCombatTracker(), Class1900.field11157));
+         this.connection.sendPacket(new SCombatPacket(this.getCombatTracker(), Class1900.field11157));
       } else {
          ITextComponent var5 = this.getCombatTracker().method27600();
-         this.field4855
+         this.connection
             .method15672(
                new SCombatPacket(this.getCombatTracker(), Class1900.field11157, var5),
                var2 -> {
@@ -418,7 +418,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
                      );
                      IFormattableTextComponent var8 = new TranslationTextComponent("death.attack.even_more_magic", this.getDisplayName())
                         .modifyStyle(var1xx -> var1xx.setHoverEvent(new HoverEvent(HoverEvent$Action.SHOW_TEXT, var7x)));
-                     this.field4855.sendPacket(new SCombatPacket(this.getCombatTracker(), Class1900.field11157, var8));
+                     this.connection.sendPacket(new SCombatPacket(this.getCombatTracker(), Class1900.field11157, var8));
                   }
                }
             );
@@ -561,14 +561,14 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
          this.getServerWorld().method6934(this);
          if (!this.queuedEndExit) {
             this.queuedEndExit = true;
-            this.field4855.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24564, !this.field4877 ? 1.0F : 0.0F));
+            this.connection.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24564, !this.field4877 ? 1.0F : 0.0F));
             this.field4877 = true;
          }
 
          return this;
       } else {
          Class6612 var6 = var1.getWorldInfo();
-         this.field4855
+         this.connection
             .sendPacket(
                new SRespawnPacket(
                   var1.method6812(),
@@ -581,7 +581,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
                   true
                )
             );
-         this.field4855.sendPacket(new SServerDifficultyPacket(var6.method20047(), var6.method20048()));
+         this.connection.sendPacket(new SServerDifficultyPacket(var6.method20047(), var6.method20048()));
          Class6395 var7 = this.field4856.getPlayerList();
          var7.method19454(this);
          var4.method6934(this);
@@ -604,15 +604,15 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
             var4.getProfiler().endSection();
             this.method2748(var4);
             this.interactionManager.method33871(var1);
-            this.field4855.sendPacket(new SPlayerAbilitiesPacket(this.abilities));
+            this.connection.sendPacket(new SPlayerAbilitiesPacket(this.abilities));
             var7.method19472(this, var1);
             var7.method19473(this);
 
             for (EffectInstance var10 : this.getActivePotionEffects()) {
-               this.field4855.sendPacket(new SPlayEntityEffectPacket(this.getEntityId(), var10));
+               this.connection.sendPacket(new SPlayEntityEffectPacket(this.getEntityId(), var10));
             }
 
-            this.field4855.sendPacket(new SPlaySoundEventPacket(1032, BlockPos.ZERO, 0, false));
+            this.connection.sendPacket(new SPlaySoundEventPacket(1032, BlockPos.ZERO, 0, false));
             this.field4870 = -1;
             this.field4867 = -1.0F;
             this.field4868 = -1;
@@ -677,7 +677,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
       if (var1 != null) {
          SUpdateTileEntityPacket var4 = var1.method3776();
          if (var4 != null) {
-            this.field4855.sendPacket(var4);
+            this.connection.sendPacket(var4);
          }
       }
    }
@@ -765,8 +765,8 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
       }
 
       super.stopSleepInBed(var1, var2);
-      if (this.field4855 != null) {
-         this.field4855.method15668(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
+      if (this.connection != null) {
+         this.connection.method15668(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
       }
    }
 
@@ -775,8 +775,8 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
       Entity var5 = this.getRidingEntity();
       if (super.startRiding(var1, var2)) {
          Entity var6 = this.getRidingEntity();
-         if (var6 != var5 && this.field4855 != null) {
-            this.field4855.method15668(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
+         if (var6 != var5 && this.connection != null) {
+            this.connection.method15668(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
          }
 
          return true;
@@ -790,8 +790,8 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
       Entity var3 = this.getRidingEntity();
       super.stopRiding();
       Entity var4 = this.getRidingEntity();
-      if (var4 != var3 && this.field4855 != null) {
-         this.field4855.method15668(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
+      if (var4 != var3 && this.connection != null) {
+         this.connection.method15668(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
       }
    }
 
@@ -821,7 +821,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
    @Override
    public void method2764(Class954 var1) {
       var1.method3840(this);
-      this.field4855.sendPacket(new SOpenSignMenuPacket(var1.getPos()));
+      this.connection.sendPacket(new SOpenSignMenuPacket(var1.getPos()));
    }
 
    private void method2765() {
@@ -838,7 +838,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
          this.method2765();
          Container var4 = var1.method3627(this.field4889, this.inventory, this);
          if (var4 != null) {
-            this.field4855.sendPacket(new SOpenWindowPacket(var4.windowId, var4.getType(), var1.getDefaultName2()));
+            this.connection.sendPacket(new SOpenWindowPacket(var4.windowId, var4.getType(), var1.getDefaultName2()));
             var4.addListener(this);
             this.openContainer = var4;
             return OptionalInt.of(this.field4889);
@@ -856,7 +856,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
 
    @Override
    public void method2767(int var1, Class46 var2, int var3, int var4, boolean var5, boolean var6) {
-      this.field4855.sendPacket(new SMerchantOffersPacket(var1, var2, var3, var4, var5, var6));
+      this.connection.sendPacket(new SMerchantOffersPacket(var1, var2, var3, var4, var5, var6));
    }
 
    @Override
@@ -866,7 +866,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
       }
 
       this.method2765();
-      this.field4855.sendPacket(new SOpenHorseWindowPacket(this.field4889, var2.getSizeInventory(), var1.getEntityId()));
+      this.connection.sendPacket(new SOpenHorseWindowPacket(this.field4889, var2.getSizeInventory(), var1.getEntityId()));
       this.openContainer = new Class5827(this.field4889, this.inventory, var2, var1);
       this.openContainer.addListener(this);
    }
@@ -879,7 +879,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
             this.openContainer.detectAndSendChanges();
          }
 
-         this.field4855.sendPacket(new SOpenBookWindowPacket(var2));
+         this.connection.sendPacket(new SOpenBookWindowPacket(var2));
       }
    }
 
@@ -897,7 +897,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
          }
 
          if (!this.field4890) {
-            this.field4855.sendPacket(new SSetSlotPacket(var1.windowId, var2, var3));
+            this.connection.sendPacket(new SSetSlotPacket(var1.windowId, var2, var3));
          }
       }
    }
@@ -908,24 +908,24 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
 
    @Override
    public void sendAllContents(Container var1, NonNullList<ItemStack> var2) {
-      this.field4855.sendPacket(new SWindowItemsPacket(var1.windowId, var2));
-      this.field4855.sendPacket(new SSetSlotPacket(-1, -1, this.inventory.getItemStack()));
+      this.connection.sendPacket(new SWindowItemsPacket(var1.windowId, var2));
+      this.connection.sendPacket(new SSetSlotPacket(-1, -1, this.inventory.getItemStack()));
    }
 
    @Override
    public void sendWindowProperty(Container var1, int var2, int var3) {
-      this.field4855.sendPacket(new SWindowPropertyPacket(var1.windowId, var2, var3));
+      this.connection.sendPacket(new SWindowPropertyPacket(var1.windowId, var2, var3));
    }
 
    @Override
    public void method2772() {
-      this.field4855.sendPacket(new SCloseWindowPacket(this.openContainer.windowId));
+      this.connection.sendPacket(new SCloseWindowPacket(this.openContainer.windowId));
       this.method2774();
    }
 
    public void method2773() {
       if (!this.field4890) {
-         this.field4855.sendPacket(new SSetSlotPacket(-1, -1, this.inventory.getItemStack()));
+         this.connection.sendPacket(new SSetSlotPacket(-1, -1, this.inventory.getItemStack()));
       }
    }
 
@@ -1006,13 +1006,13 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
 
    @Override
    public void sendStatusMessage(ITextComponent var1, boolean var2) {
-      this.field4855.sendPacket(new SChatPacket(var1, !var2 ? ChatType.CHAT : ChatType.GAME_INFO, Util.DUMMY_UUID));
+      this.connection.sendPacket(new SChatPacket(var1, !var2 ? ChatType.CHAT : ChatType.GAME_INFO, Util.DUMMY_UUID));
    }
 
    @Override
    public void onItemUseFinish() {
       if (!this.activeItemStack.isEmpty() && this.isHandActive()) {
-         this.field4855.sendPacket(new SEntityStatusPacket(this, (byte)9));
+         this.connection.sendPacket(new SEntityStatusPacket(this, (byte)9));
          super.onItemUseFinish();
       }
    }
@@ -1020,13 +1020,13 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
    @Override
    public void lookAt(Class2062 var1, Vector3d var2) {
       super.lookAt(var1, var2);
-      this.field4855.sendPacket(new SPlayerLookPacket(var1, var2.x, var2.y, var2.z));
+      this.connection.sendPacket(new SPlayerLookPacket(var1, var2.x, var2.y, var2.z));
    }
 
    public void method2788(Class2062 var1, Entity var2, Class2062 var3) {
       Vector3d var6 = var3.method8711(var2);
       super.lookAt(var1, var6);
-      this.field4855.sendPacket(new SPlayerLookPacket(var1, var2, var3));
+      this.connection.sendPacket(new SPlayerLookPacket(var1, var2, var3));
    }
 
    public void method2789(ServerPlayerEntity var1, boolean var2) {
@@ -1066,7 +1066,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
    @Override
    public void onNewPotionEffect(EffectInstance var1) {
       super.onNewPotionEffect(var1);
-      this.field4855.sendPacket(new SPlayEntityEffectPacket(this.getEntityId(), var1));
+      this.connection.sendPacket(new SPlayEntityEffectPacket(this.getEntityId(), var1));
       if (var1.getPotion() == Effects.LEVITATION) {
          this.field4880 = this.ticksExisted;
          this.field4879 = this.getPositionVec();
@@ -1078,14 +1078,14 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
    @Override
    public void onChangedPotionEffect(EffectInstance var1, boolean var2) {
       super.onChangedPotionEffect(var1, var2);
-      this.field4855.sendPacket(new SPlayEntityEffectPacket(this.getEntityId(), var1));
+      this.connection.sendPacket(new SPlayEntityEffectPacket(this.getEntityId(), var1));
       CriteriaTriggers.field44491.method15083(this);
    }
 
    @Override
    public void onFinishedPotionEffect(EffectInstance var1) {
       super.onFinishedPotionEffect(var1);
-      this.field4855.sendPacket(new SRemoveEntityEffectPacket(this.getEntityId(), var1.getPotion()));
+      this.connection.sendPacket(new SRemoveEntityEffectPacket(this.getEntityId(), var1.getPotion()));
       if (var1.getPotion() == Effects.LEVITATION) {
          this.field4879 = null;
       }
@@ -1095,29 +1095,29 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
 
    @Override
    public void setPositionAndUpdate(double var1, double var3, double var5) {
-      this.field4855.method15668(var1, var3, var5, this.rotationYaw, this.rotationPitch);
+      this.connection.method15668(var1, var3, var5, this.rotationYaw, this.rotationPitch);
    }
 
    @Override
    public void moveForced(double var1, double var3, double var5) {
       this.setPositionAndUpdate(var1, var3, var5);
-      this.field4855.method15656();
+      this.connection.method15656();
    }
 
    @Override
-   public void method2795(Entity var1) {
+   public void onCriticalHit(Entity var1) {
       this.getServerWorld().getChunkProvider().sendToAllTracking(this, new SAnimateHandPacket(var1, 4));
    }
 
    @Override
-   public void method2796(Entity var1) {
+   public void onEnchantmentCritical(Entity var1) {
       this.getServerWorld().getChunkProvider().sendToAllTracking(this, new SAnimateHandPacket(var1, 5));
    }
 
    @Override
    public void method2797() {
-      if (this.field4855 != null) {
-         this.field4855.sendPacket(new SPlayerAbilitiesPacket(this.abilities));
+      if (this.connection != null) {
+         this.connection.sendPacket(new SPlayerAbilitiesPacket(this.abilities));
          this.updatePotionMetadata();
       }
    }
@@ -1129,7 +1129,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
    @Override
    public void method2799(GameType var1) {
       this.interactionManager.method33861(var1);
-      this.field4855.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24563, (float)var1.getID()));
+      this.connection.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24563, (float)var1.getID()));
       if (var1 != GameType.SPECTATOR) {
          this.method2815(this);
       } else {
@@ -1157,14 +1157,14 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
    }
 
    public void method2802(ITextComponent var1, ChatType var2, UUID var3) {
-      this.field4855
+      this.connection
          .method15672(
             new SChatPacket(var1, var2, var3),
             var4 -> {
                if (!var4.isSuccess() && (var2 == ChatType.GAME_INFO || var2 == ChatType.SYSTEM)) {
                   String var8 = var1.getStringTruncated(256);
                   IFormattableTextComponent var9 = new StringTextComponent(var8).mergeStyle(TextFormatting.YELLOW);
-                  this.field4855
+                  this.connection
                      .sendPacket(
                         new SChatPacket(
                            new TranslationTextComponent("multiplayer.message_not_delivered", var9).mergeStyle(TextFormatting.RED), ChatType.SYSTEM, var3
@@ -1176,7 +1176,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
    }
 
    public String method2803() {
-      String var3 = this.field4855.netManager.getRemoteAddress().toString();
+      String var3 = this.connection.netManager.getRemoteAddress().toString();
       var3 = var3.substring(var3.indexOf("/") + 1);
       return var3.substring(0, var3.indexOf(":"));
    }
@@ -1193,7 +1193,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
    }
 
    public void method2806(String var1, String var2) {
-      this.field4855.sendPacket(new SSendResourcePackPacket(var1, var2));
+      this.connection.sendPacket(new SSendResourcePackPacket(var1, var2));
    }
 
    @Override
@@ -1217,7 +1217,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
       if (!(var1 instanceof PlayerEntity)) {
          this.field4858.add(var1.getEntityId());
       } else {
-         this.field4855.sendPacket(new SDestroyEntitiesPacket(var1.getEntityId()));
+         this.connection.sendPacket(new SDestroyEntitiesPacket(var1.getEntityId()));
       }
    }
 
@@ -1243,7 +1243,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
       Entity var4 = this.method2814();
       this.field4875 = (Entity)(var1 != null ? var1 : this);
       if (var4 != this.field4875) {
-         this.field4855.sendPacket(new SCameraPacket(this.field4875));
+         this.connection.sendPacket(new SCameraPacket(this.field4875));
          this.setPositionAndUpdate(this.field4875.getPosX(), this.field4875.getPosY(), this.field4875.getPosZ());
       }
    }
@@ -1256,11 +1256,11 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
    }
 
    @Override
-   public void method2817(Entity var1) {
+   public void attackTargetEntityWithCurrentItem(Entity targetEntity) {
       if (this.interactionManager.getGameType() != GameType.SPECTATOR) {
-         super.method2817(var1);
+         super.attackTargetEntityWithCurrentItem(targetEntity);
       } else {
-         this.method2815(var1);
+         this.method2815(targetEntity);
       }
    }
 
@@ -1297,7 +1297,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
       if (var1 != this.world) {
          ServerWorld var12 = this.getServerWorld();
          Class6612 var13 = var1.getWorldInfo();
-         this.field4855
+         this.connection
             .sendPacket(
                new SRespawnPacket(
                   var1.method6812(),
@@ -1310,7 +1310,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
                   true
                )
             );
-         this.field4855.sendPacket(new SServerDifficultyPacket(var13.method20047(), var13.method20048()));
+         this.connection.sendPacket(new SServerDifficultyPacket(var13.method20047(), var13.method20048()));
          this.field4856.getPlayerList().method19454(this);
          var12.method6934(this);
          this.removed = false;
@@ -1318,12 +1318,12 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
          this.setWorld(var1);
          var1.method6919(this);
          this.method2748(var12);
-         this.field4855.method15668(var2, var4, var6, var8, var9);
+         this.connection.method15668(var2, var4, var6, var8, var9);
          this.interactionManager.method33871(var1);
          this.field4856.getPlayerList().method19472(this, var1);
          this.field4856.getPlayerList().method19473(this);
       } else {
-         this.field4855.method15668(var2, var4, var6, var8, var9);
+         this.connection.method15668(var2, var4, var6, var8, var9);
       }
    }
 
@@ -1364,13 +1364,13 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
    }
 
    public void method2830(ChunkPos var1, IPacket<?> var2, IPacket<?> var3) {
-      this.field4855.sendPacket(var3);
-      this.field4855.sendPacket(var2);
+      this.connection.sendPacket(var3);
+      this.connection.sendPacket(var2);
    }
 
    public void method2831(ChunkPos var1) {
       if (this.isAlive()) {
-         this.field4855.sendPacket(new SUnloadChunkPacket(var1.x, var1.z));
+         this.connection.sendPacket(new SUnloadChunkPacket(var1.x, var1.z));
       }
    }
 
@@ -1384,7 +1384,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
 
    @Override
    public void method2834(SoundEvent var1, Class2266 var2, float var3, float var4) {
-      this.field4855.sendPacket(new SPlaySoundEffectPacket(var1, var2, this.getPosX(), this.getPosY(), this.getPosZ(), var3, var4));
+      this.connection.sendPacket(new SPlaySoundEffectPacket(var1, var2, this.getPosX(), this.getPosY(), this.getPosZ(), var3, var4));
    }
 
    @Override

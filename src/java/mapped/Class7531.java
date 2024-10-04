@@ -101,7 +101,7 @@ public class Class7531 extends Class7530 {
             if (var14.method25395()) {
                if (var14.method25400() >= var14.method25399()) {
                   var1.removeEffects(Effects.BAD_OMEN);
-                  var1.field4855.sendPacket(new SEntityStatusPacket(var1, (byte)43));
+                  var1.connection.sendPacket(new SEntityStatusPacket(var1, (byte)43));
                } else {
                   var15 = true;
                }
@@ -115,7 +115,7 @@ public class Class7531 extends Class7530 {
 
             if (var15) {
                var14.method25401(var1);
-               var1.field4855.sendPacket(new SEntityStatusPacket(var1, (byte)43));
+               var1.connection.sendPacket(new SEntityStatusPacket(var1, (byte)43));
                if (!var14.method25390()) {
                   var1.method2911(Stats.field40173);
                   CriteriaTriggers.field44499.method15062(var1);

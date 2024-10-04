@@ -1,4 +1,4 @@
-package mapped;
+package lol;
 
 public enum ClientColors {
    DEEP_TEAL(-16711423),
@@ -22,27 +22,6 @@ public enum ClientColors {
    BRIGHT_PINK(-16724271);
 
    public final int getColor;
-   private static final ClientColors[] CLIENT_COLORS = new ClientColors[]{
-           DEEP_TEAL,
-           DARK_BLUE_GREY,
-           DARK_GREEN,
-           DARK_SLATE_GREY,
-           GREYISH_BLUE,
-           LIGHT_GREYISH_BLUE,
-           DARK_PURPLE,
-           DARK_NAVY_BLUE,
-           MID_GREY,
-           DULL_GREEN,
-           PALE_YELLOW,
-           DARK_OLIVE,
-           PALE_ORANGE,
-           DARK_MAROON,
-           VERY_LIGHT_GREY,
-           DARK_MAUVE,
-           PALE_YELLOW_GREEN,
-           PALE_RED,
-           BRIGHT_PINK
-   };
 
    private ClientColors(int color) {
       this.getColor = color;

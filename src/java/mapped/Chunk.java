@@ -13,6 +13,7 @@ import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.boss.dragon.EnderDragonPartEntity;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
@@ -493,7 +494,7 @@ public class Chunk implements IChunk {
                }
 
                if (var14 instanceof Class1007) {
-                  for (Class908 var18 : ((Class1007)var14).method4332()) {
+                  for (EnderDragonPartEntity var18 : ((Class1007)var14).method4332()) {
                      if (var18 != var1 && var18.getBoundingBox().method19670(var2) && (var4 == null || var4.test(var18))) {
                         var3.add(var18);
                      }

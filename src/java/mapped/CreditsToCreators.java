@@ -4,6 +4,7 @@ import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Screen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
+import lol.ClientColors;
 import net.minecraft.client.Minecraft;
 
 import java.util.ArrayList;

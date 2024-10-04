@@ -20,6 +20,8 @@ import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import com.mojang.blaze3d.systems.RenderSystem;
+import lol.ClientColors;
+import lol.MovementUtils;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
@@ -200,7 +202,7 @@ public class KillAura extends Module {
         if (this.isEnabled() && mc.player != null) {
             if (!event.isPre()) {
                 this.currentitem = mc.player.inventory.currentItem;
-                if (target != null && interactAB.method36817() && this.rotations != null) {
+                if (target != null && interactAB.canBlock() && this.rotations != null) {
                     interactAB.block(target, this.rotations.yaw, this.rotations.pitch);
                 }
             } else {

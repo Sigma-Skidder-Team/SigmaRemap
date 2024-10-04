@@ -126,7 +126,7 @@ public class Class1027 extends Class1026 implements Class1022 {
                         this.getPosY(),
                         this.getPosZ(),
                         SoundEvents.field27236,
-                        this.method2864(),
+                        this.getSoundCategory(),
                         1.0F,
                         0.8F + this.rand.nextFloat() * 0.4F
                      );
@@ -238,7 +238,7 @@ public class Class1027 extends Class1026 implements Class1022 {
                   this.getPosY(),
                   this.getPosZ(),
                   SoundEvents.field27238,
-                  this.method2864(),
+                  this.getSoundCategory(),
                   1.0F,
                   0.8F + this.rand.nextFloat() * 0.4F
                );

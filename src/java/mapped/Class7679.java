@@ -35,7 +35,7 @@ public class Class7679 {
 
    private static int method25265(CommandSource var0, Collection<ServerPlayerEntity> var1, ITextComponent var2) {
       for (ServerPlayerEntity var6 : var1) {
-         var6.field4855.disconnect(var2);
+         var6.connection.disconnect(var2);
          var0.method20179(new TranslationTextComponent("commands.kick.success", var6.getDisplayName(), var2), true);
       }
 

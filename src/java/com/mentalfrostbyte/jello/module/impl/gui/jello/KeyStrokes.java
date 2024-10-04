@@ -11,7 +11,7 @@ import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.BlurEngine;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
-import mapped.ClientColors;
+import lol.ClientColors;
 import mapped.KeyBinding;
 import mapped.RenderUtil;
 import net.minecraft.client.Minecraft;

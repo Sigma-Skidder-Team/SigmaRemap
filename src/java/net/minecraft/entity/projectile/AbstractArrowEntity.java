@@ -245,7 +245,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
       this.field5100 = false;
       Vector3d var3 = this.getMotion();
       this.setMotion(
-         var3.method11347((double)(this.rand.nextFloat() * 0.2F), (double)(this.rand.nextFloat() * 0.2F), (double)(this.rand.nextFloat() * 0.2F))
+         var3.mul((double)(this.rand.nextFloat() * 0.2F), (double)(this.rand.nextFloat() * 0.2F), (double)(this.rand.nextFloat() * 0.2F))
       );
       this.ticksInGround = 0;
    }
@@ -308,7 +308,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
       if (var7 != null) {
          var8 = DamageSource.method31118(this, var7);
          if (var7 instanceof LivingEntity) {
-            ((LivingEntity)var7).method3020(var4);
+            ((LivingEntity)var7).setLastAttackedEntity(var4);
          }
       } else {
          var8 = DamageSource.method31118(this, this);
@@ -344,7 +344,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
             }
 
             if (this.field5106 > 0) {
-               Vector3d var14 = this.getMotion().method11347(1.0, 0.0, 1.0).method11333().scale((double)this.field5106 * 0.6);
+               Vector3d var14 = this.getMotion().mul(1.0, 0.0, 1.0).method11333().scale((double)this.field5106 * 0.6);
                if (var14.lengthSquared() > 0.0) {
                   var13.addVelocity(var14.x, 0.1, var14.z);
                }
@@ -357,7 +357,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
 
             this.method3478(var13);
             if (var7 != null && var13 != var7 && var13 instanceof PlayerEntity && var7 instanceof ServerPlayerEntity && !this.isSilent()) {
-               ((ServerPlayerEntity)var7).field4855.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24566, 0.0F));
+               ((ServerPlayerEntity)var7).connection.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24566, 0.0F));
             }
 
             if (!var4.isAlive() && this.field5109 != null) {
@@ -514,7 +514,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
    }
 
    @Override
-   public boolean method3360() {
+   public boolean canBeAttackedWithItem() {
       return false;
    }
 

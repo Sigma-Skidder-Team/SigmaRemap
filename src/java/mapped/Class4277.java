@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
+import lol.ClientColors;
 
 public class Class4277 extends Class4247 {
    private static String[] field20602;

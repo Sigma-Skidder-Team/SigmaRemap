@@ -2,8 +2,7 @@ package com.mentalfrostbyte.jello.settings;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.notification.Notification;
-import com.mentalfrostbyte.jello.unmapped.SettingType;
-import mapped.CJsonUtils;
+import totalcross.json.CJsonUtils;
 import totalcross.json.JSONObject;
 
 public class BooleanSetting extends Setting<Boolean> {

@@ -111,7 +111,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       this.netManager = var2;
       var2.setNetHandler(this);
       this.player = var3;
-      var3.field4855 = this;
+      var3.connection = this;
       IChatFilter var6 = var3.method2837();
       if (var6 != null) {
          var6.func_244800_a();
@@ -494,10 +494,10 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       this.player.inventory.method4034(var1.method17494());
       this.player
-         .field4855
+         .connection
          .sendPacket(new SSetSlotPacket(-2, this.player.inventory.currentItem, this.player.inventory.getStackInSlot(this.player.inventory.currentItem)));
-      this.player.field4855.sendPacket(new SSetSlotPacket(-2, var1.method17494(), this.player.inventory.getStackInSlot(var1.method17494())));
-      this.player.field4855.sendPacket(new SHeldItemChangePacket(this.player.inventory.currentItem));
+      this.player.connection.sendPacket(new SSetSlotPacket(-2, var1.method17494(), this.player.inventory.getStackInSlot(var1.method17494())));
+      this.player.connection.sendPacket(new SHeldItemChangePacket(this.player.inventory.currentItem));
    }
 
    @Override
@@ -689,7 +689,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
          Entity var4 = this.player.getServerWorld().getEntityByID(var1.method17479());
          if (var4 != null) {
             CompoundNBT var5 = var4.writeWithoutTypeId(new CompoundNBT());
-            this.player.field4855.sendPacket(new SQueryNBTResponsePacket(var1.method17478(), var5));
+            this.player.connection.sendPacket(new SQueryNBTResponsePacket(var1.method17478(), var5));
          }
       }
    }
@@ -700,7 +700,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       if (this.player.method3424(2)) {
          TileEntity var4 = this.player.getServerWorld().getTileEntity(var1.getPosition());
          CompoundNBT var5 = var4 == null ? null : var4.write(new CompoundNBT());
-         this.player.field4855.sendPacket(new SQueryNBTResponsePacket(var1.getTransactionID(), var5));
+         this.player.connection.sendPacket(new SQueryNBTResponsePacket(var1.getTransactionID(), var5));
       }
    }
 
@@ -866,7 +866,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
 
       this.field23249 = this.field23227;
       this.player.setPositionAndRotation(var1, var3, var5, var7, var8);
-      this.player.field4855.sendPacket(new SPlayerPositionLookPacket(var1 - var12, var3 - var14, var5 - var16, var7 - var18, var8 - var19, var9, this.field23248));
+      this.player.connection.sendPacket(new SPlayerPositionLookPacket(var1 - var12, var3 - var14, var5 - var16, var7 - var18, var8 - var19, var9, this.field23248));
    }
 
    @Override
@@ -931,21 +931,21 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       this.player.markPlayerActive();
       if (var8.getY() >= this.server.method1364()) {
          IFormattableTextComponent var10 = new TranslationTextComponent("build.tooHigh", this.server.method1364()).mergeStyle(TextFormatting.RED);
-         this.player.field4855.sendPacket(new SChatPacket(var10, ChatType.GAME_INFO, Util.DUMMY_UUID));
+         this.player.connection.sendPacket(new SChatPacket(var10, ChatType.GAME_INFO, Util.DUMMY_UUID));
       } else if (this.targetPos == null
          && this.player.getDistanceNearest((double)var8.getX() + 0.5, (double)var8.getY() + 0.5, (double)var8.getZ() + 0.5) < 64.0
          && var4.method6785(this.player, var8)) {
          ActionResultType var12 = this.player.interactionManager.method33860(this.player, var4, var6, var5, var7);
          if (var9 == Direction.UP && !var12.isSuccessOrConsume() && var8.getY() >= this.server.method1364() - 1 && method15670(this.player, var6)) {
             IFormattableTextComponent var11 = new TranslationTextComponent("build.tooHigh", this.server.method1364()).mergeStyle(TextFormatting.RED);
-            this.player.field4855.sendPacket(new SChatPacket(var11, ChatType.GAME_INFO, Util.DUMMY_UUID));
+            this.player.connection.sendPacket(new SChatPacket(var11, ChatType.GAME_INFO, Util.DUMMY_UUID));
          } else if (var12.isSuccess()) {
             this.player.swing(var5, true);
          }
       }
 
-      this.player.field4855.sendPacket(new SChangeBlockPacket(var4, var8));
-      this.player.field4855.sendPacket(new SChangeBlockPacket(var4, var8.offset(var9)));
+      this.player.connection.sendPacket(new SChangeBlockPacket(var4, var8));
+      this.player.connection.sendPacket(new SChangeBlockPacket(var4, var8.offset(var9)));
    }
 
    @Override
@@ -1180,7 +1180,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
                         return;
                      }
 
-                     this.player.method2817(entity);
+                     this.player.attackTargetEntityWithCurrentItem(entity);
                   }
                } else {
                   optional = Optional.of(entity.applyPlayerInteraction(this.player, packetIn.getHitVec(), hand));
@@ -1242,7 +1242,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
             ItemStack var4 = this.player.openContainer.slotClick(var1.getSlotId(), var1.getUsedButton(), var1.getClickType(), this.player);
             if (!ItemStack.areItemStacksEqual(var1.getClickedItem(), var4)) {
                this.field23233.put(this.player.openContainer.windowId, var1.getActionNumber());
-               this.player.field4855.sendPacket(new SConfirmTransactionPacket(var1.getWindowId(), var1.getActionNumber(), false));
+               this.player.connection.sendPacket(new SConfirmTransactionPacket(var1.getWindowId(), var1.getActionNumber(), false));
                this.player.openContainer.setCanCraft(this.player, false);
                NonNullList var5 = NonNullList.create();
 
@@ -1253,7 +1253,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
 
                this.player.sendAllContents(this.player.openContainer, var5);
             } else {
-               this.player.field4855.sendPacket(new SConfirmTransactionPacket(var1.getWindowId(), var1.getActionNumber(), true));
+               this.player.connection.sendPacket(new SConfirmTransactionPacket(var1.getWindowId(), var1.getActionNumber(), true));
                this.player.field4890 = true;
                this.player.openContainer.detectAndSendChanges();
                this.player.method2773();

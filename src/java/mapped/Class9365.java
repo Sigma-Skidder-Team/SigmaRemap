@@ -1,5 +1,8 @@
 package mapped;
 
+import lol.Renderer;
+import lol.SGL;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

@@ -464,7 +464,7 @@ public abstract class AbstractMinecartEntity extends Entity {
          if (var38 < 0.03) {
             this.setMotion(Vector3d.ZERO);
          } else {
-            this.setMotion(this.getMotion().method11347(0.5, 0.0, 0.5));
+            this.setMotion(this.getMotion().mul(0.5, 0.0, 0.5));
          }
       }
 
@@ -512,7 +512,7 @@ public abstract class AbstractMinecartEntity extends Entity {
          Vector3d var55 = this.getMotion();
          double var56 = Math.sqrt(horizontalMag(var55));
          if (var56 > 0.0) {
-            this.setMotion(var55.method11347((var56 + var53) / var56, 1.0, (var56 + var53) / var56));
+            this.setMotion(var55.mul((var56 + var53) / var56, 1.0, (var56 + var53) / var56));
          }
 
          this.setPosition(this.getPosX(), var52.y, this.getPosZ());
@@ -565,7 +565,7 @@ public abstract class AbstractMinecartEntity extends Entity {
 
    public void method3593() {
       double var3 = !this.isBeingRidden() ? 0.96 : 0.997;
-      this.setMotion(this.getMotion().method11347(var3, 0.0, var3));
+      this.setMotion(this.getMotion().mul(var3, 0.0, var3));
    }
 
    @Nullable
@@ -730,19 +730,19 @@ public abstract class AbstractMinecartEntity extends Entity {
                Vector3d var20 = this.getMotion();
                Vector3d var21 = var1.getMotion();
                if (((AbstractMinecartEntity)var1).getMinecartType() == MinecartType.FURNACE && this.getMinecartType() != MinecartType.FURNACE) {
-                  this.setMotion(var20.method11347(0.2, 1.0, 0.2));
+                  this.setMotion(var20.mul(0.2, 1.0, 0.2));
                   this.addVelocity(var21.x - var4, 0.0, var21.z - var6);
-                  var1.setMotion(var21.method11347(0.95, 1.0, 0.95));
+                  var1.setMotion(var21.mul(0.95, 1.0, 0.95));
                } else if (((AbstractMinecartEntity)var1).getMinecartType() != MinecartType.FURNACE && this.getMinecartType() == MinecartType.FURNACE) {
-                  var1.setMotion(var21.method11347(0.2, 1.0, 0.2));
+                  var1.setMotion(var21.mul(0.2, 1.0, 0.2));
                   var1.addVelocity(var20.x + var4, 0.0, var20.z + var6);
-                  this.setMotion(var20.method11347(0.95, 1.0, 0.95));
+                  this.setMotion(var20.mul(0.95, 1.0, 0.95));
                } else {
                   double var22 = (var21.x + var20.x) / 2.0;
                   double var24 = (var21.z + var20.z) / 2.0;
-                  this.setMotion(var20.method11347(0.2, 1.0, 0.2));
+                  this.setMotion(var20.mul(0.2, 1.0, 0.2));
                   this.addVelocity(var22 - var4, 0.0, var24 - var6);
-                  var1.setMotion(var21.method11347(0.2, 1.0, 0.2));
+                  var1.setMotion(var21.mul(0.2, 1.0, 0.2));
                   var1.addVelocity(var22 + var4, 0.0, var24 + var6);
                }
             }

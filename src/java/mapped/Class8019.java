@@ -310,7 +310,7 @@ public class Class8019 {
          }
 
          if (this.field34457 || !var4.isEmpty() || !var5.isEmpty() || !var6.isEmpty()) {
-            var1.field4855.sendPacket(new SAdvancementInfoPacket(this.field34457, var5, var6, var4));
+            var1.connection.sendPacket(new SAdvancementInfoPacket(this.field34457, var5, var6, var4));
             this.field34453.clear();
             this.field34454.clear();
          }
@@ -328,7 +328,7 @@ public class Class8019 {
       }
 
       if (var4 != this.field34456) {
-         this.field34455.field4855.sendPacket(new SSelectAdvancementsTabPacket(this.field34456 != null ? this.field34456.getId() : null));
+         this.field34455.connection.sendPacket(new SSelectAdvancementsTabPacket(this.field34456 != null ? this.field34456.getId() : null));
       }
    }
 

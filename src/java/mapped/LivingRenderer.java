@@ -130,7 +130,7 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
             }
          }
 
-         var33.method13942(Class2035.field13213);
+         var33.setState(RenderState.field13213);
          Client.getInstance().getEventManager().call(var33);
          this.field25086.setLivingAnimations((T)var1, var16, var35, var3);
          this.field25086.setRotationAngles((T)var1, var16, var35, var34, var11, var31);
@@ -181,7 +181,7 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
             this.field25088 = null;
          }
 
-         var33.method13942(Class2035.field13214);
+         var33.setState(RenderState.field13214);
          Client.getInstance().getEventManager().call(var33);
          var4.pop();
          super.render((T)var1, var2, var3, var4, var5, var6);

@@ -201,7 +201,7 @@ public class Class6099 {
       RootCommandNode var5 = new RootCommandNode();
       var4.put(this.field27345.getRoot(), var5);
       this.method18838(this.field27345.getRoot(), var5, var1.getCommandSource(), var4);
-      var1.field4855.sendPacket(new SCommandListPacket(var5));
+      var1.connection.sendPacket(new SCommandListPacket(var5));
    }
 
    private void method18838(CommandNode<CommandSource> var1, CommandNode<Class6618> var2, CommandSource var3, Map<CommandNode<CommandSource>, CommandNode<Class6618>> var4) {

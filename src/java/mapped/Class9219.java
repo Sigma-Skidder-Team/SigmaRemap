@@ -7,6 +7,10 @@ import java.nio.FloatBuffer;
 import java.security.AccessController;
 import java.util.ArrayList;
 
+import lol.Class7427;
+import lol.LineStripRenderer;
+import lol.Renderer;
+import lol.SGL;
 import org.lwjgl.BufferUtils;
 
 public class Class9219 {

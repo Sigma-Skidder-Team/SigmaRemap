@@ -71,7 +71,7 @@ public class Class1103 extends Class1009 {
    @Override
    public void livingTick() {
       if (!this.onGround && this.getMotion().y < 0.0) {
-         this.setMotion(this.getMotion().method11347(1.0, 0.6, 1.0));
+         this.setMotion(this.getMotion().mul(1.0, 0.6, 1.0));
       }
 
       if (this.world.isRemote) {
@@ -82,7 +82,7 @@ public class Class1103 extends Class1009 {
                   this.getPosY() + 0.5,
                   this.getPosZ() + 0.5,
                   SoundEvents.field26403,
-                  this.method2864(),
+                  this.getSoundCategory(),
                   1.0F + this.rand.nextFloat(),
                   this.rand.nextFloat() * 0.7F + 0.3F,
                   false

@@ -37,7 +37,7 @@ public class Class5742 extends LivingRenderer<ArmorStandEntity, Class2892> {
 
    @Nullable
    public RenderType method17882(ArmorStandEntity var1, boolean var2, boolean var3, boolean var4) {
-      if (var1.method4203()) {
+      if (var1.hasMarker()) {
          ResourceLocation var7 = this.method17843(var1);
          if (!var3) {
             return !var2 ? null : RenderType.method14311(var7, false);

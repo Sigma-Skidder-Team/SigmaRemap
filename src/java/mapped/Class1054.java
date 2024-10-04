@@ -141,7 +141,7 @@ public class Class1054 extends Class1049 {
       int var4 = this.method4828();
       if (var1 instanceof ServerPlayerEntity && var4 > 0 && var1.attackEntityFrom(DamageSource.method31115(this), (float)(1 + var4))) {
          if (!this.isSilent()) {
-            ((ServerPlayerEntity)var1).field4855.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24569, 0.0F));
+            ((ServerPlayerEntity)var1).connection.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24569, 0.0F));
          }
 
          var1.addPotionEffect(new EffectInstance(Effects.POISON, 60 * var4, 0));

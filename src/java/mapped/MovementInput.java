@@ -1,9 +1,8 @@
 package mapped;
 
 public class MovementInput {
-   private static String[] field43906;
-   public float field43907;
-   public float field43908;
+   public float field43907; //moveStrafe
+   public float field43908; //moveForward
    public boolean field43909;
    public boolean field43910;
    public boolean field43911;

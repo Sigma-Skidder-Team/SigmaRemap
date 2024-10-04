@@ -5,6 +5,7 @@ import com.mentalfrostbyte.jello.unmapped.Screen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
+import lol.ClientColors;
 import net.minecraft.client.Minecraft;
 
 public class SnakeGameScreen extends Screen {

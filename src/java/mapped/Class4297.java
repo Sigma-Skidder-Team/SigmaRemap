@@ -2,6 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
+import lol.ClientColors;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 

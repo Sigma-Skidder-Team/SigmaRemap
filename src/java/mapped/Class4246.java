@@ -5,6 +5,7 @@ import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
+import lol.ClientColors;
 
 public class Class4246 extends ButtonPanel {
    private Class4277 field20600;

@@ -175,7 +175,7 @@ public class Class1015 extends Class1014 implements Class1016 {
       this.field5681 = (float)((double)this.field5681 * 0.9);
       Vector3d var3 = this.getMotion();
       if (!this.onGround && var3.y < 0.0) {
-         this.setMotion(var3.method11347(1.0, 0.6, 1.0));
+         this.setMotion(var3.mul(1.0, 0.6, 1.0));
       }
 
       this.field5677 = this.field5677 + this.field5681 * 2.0F;
@@ -189,7 +189,7 @@ public class Class1015 extends Class1014 implements Class1016 {
             if (!var5.isSilent()) {
                SoundEvent var6 = method4412(var5.getType());
                var0.playSound(
-                  (PlayerEntity)null, var1.getPosX(), var1.getPosY(), var1.getPosZ(), var6, var1.method2864(), 0.7F, method4413(var0.rand)
+                  (PlayerEntity)null, var1.getPosX(), var1.getPosY(), var1.getPosZ(), var6, var1.getSoundCategory(), 0.7F, method4413(var0.rand)
                );
                return true;
             }
@@ -217,7 +217,7 @@ public class Class1015 extends Class1014 implements Class1016 {
                   this.getPosY(),
                   this.getPosZ(),
                   SoundEvents.field26882,
-                  this.method2864(),
+                  this.getSoundCategory(),
                   1.0F,
                   1.0F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F
                );
@@ -250,7 +250,7 @@ public class Class1015 extends Class1014 implements Class1016 {
 
          this.addPotionEffect(new EffectInstance(Effects.POISON, 900));
          if (var1.isCreative() || !this.method3362()) {
-            this.attackEntityFrom(DamageSource.method31117(var1), Float.MAX_VALUE);
+            this.attackEntityFrom(DamageSource.causePlayerDamage(var1), Float.MAX_VALUE);
          }
 
          return ActionResultType.method9002(this.world.isRemote);
@@ -353,7 +353,7 @@ public class Class1015 extends Class1014 implements Class1016 {
    }
 
    @Override
-   public Class2266 method2864() {
+   public Class2266 getSoundCategory() {
       return Class2266.field14734;
    }
 

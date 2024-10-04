@@ -1,7 +1,5 @@
 package com.mentalfrostbyte.jello.settings;
 
-import com.mentalfrostbyte.jello.unmapped.SettingType;
-
 import java.util.List;
 
 public class SubOptionSetting extends SubOptionSetting2 {

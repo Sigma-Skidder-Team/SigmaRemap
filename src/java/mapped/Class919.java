@@ -167,7 +167,7 @@ public abstract class Class919 extends AbstractMinecartEntity implements IInvent
          var3 += (float)var4 * 0.001F;
       }
 
-      this.setMotion(this.getMotion().method11347((double)var3, 0.0, (double)var3));
+      this.setMotion(this.getMotion().mul((double)var3, 0.0, (double)var3));
    }
 
    public void method3624(PlayerEntity var1) {

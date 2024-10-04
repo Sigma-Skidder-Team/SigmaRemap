@@ -108,11 +108,11 @@ public class ItemEntity extends Entity {
                   * 0.98F;
             }
 
-            this.setMotion(this.getMotion().method11347((double)var5, 0.98, (double)var5));
+            this.setMotion(this.getMotion().mul((double)var5, 0.98, (double)var5));
             if (this.onGround) {
                Vector3d var6 = this.getMotion();
                if (var6.y < 0.0) {
-                  this.setMotion(var6.method11347(1.0, -0.5, 1.0));
+                  this.setMotion(var6.mul(1.0, -0.5, 1.0));
                }
             }
          }
@@ -317,7 +317,7 @@ public class ItemEntity extends Entity {
    }
 
    @Override
-   public boolean method3360() {
+   public boolean canBeAttackedWithItem() {
       return false;
    }
 

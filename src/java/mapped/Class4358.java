@@ -8,6 +8,7 @@ import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
+import lol.ClientColors;
 import net.minecraft.client.gui.screen.Screen;
 
 import java.util.ArrayList;

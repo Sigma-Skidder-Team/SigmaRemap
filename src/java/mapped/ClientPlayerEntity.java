@@ -459,7 +459,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
    @Override
    public void playSound(SoundEvent var1, float var2, float var3) {
-      this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), var1, this.method2864(), var2, var3, false);
+      this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), var1, this.getSoundCategory(), var2, var3, false);
    }
 
    @Override
@@ -559,13 +559,13 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    @Override
-   public void method2795(Entity var1) {
+   public void onCriticalHit(Entity var1) {
       this.field6132.particles.addParticleEmitter(var1, ParticleTypes.CRIT);
    }
 
    @Override
-   public void method2796(Entity var1) {
-      this.field6132.particles.addParticleEmitter(var1, ParticleTypes.field34065);
+   public void onEnchantmentCritical(Entity var1) {
+      this.field6132.particles.addParticleEmitter(var1, ParticleTypes.ENCHANTED_HIT);
    }
 
    @Override

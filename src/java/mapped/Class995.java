@@ -132,12 +132,12 @@ public abstract class Class995 extends Entity {
    }
 
    @Override
-   public boolean method3361(Entity var1) {
+   public boolean hitByEntity(Entity var1) {
       if (!(var1 instanceof PlayerEntity)) {
          return false;
       } else {
          PlayerEntity var4 = (PlayerEntity)var1;
-         return this.world.method6785(var4, this.field5488) ? this.attackEntityFrom(DamageSource.method31117(var4), 0.0F) : true;
+         return this.world.method6785(var4, this.field5488) ? this.attackEntityFrom(DamageSource.causePlayerDamage(var4), 0.0F) : true;
       }
    }
 

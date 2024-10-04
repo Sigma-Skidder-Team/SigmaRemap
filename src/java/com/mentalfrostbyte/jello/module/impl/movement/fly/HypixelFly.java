@@ -13,6 +13,7 @@ import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
+import lol.MovementUtils;
 import mapped.*;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.client.CClickWindowPacket;

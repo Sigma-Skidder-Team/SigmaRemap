@@ -262,7 +262,7 @@ public class Class9651 {
             if (var2 != var1.world) {
                ((ServerPlayerEntity)var1).method2824(var2, var3, var5, var7, var10, var11);
             } else {
-               ((ServerPlayerEntity)var1).field4855.method15669(var3, var5, var7, var10, var11, var9);
+               ((ServerPlayerEntity)var1).connection.method15669(var3, var5, var7, var10, var11, var9);
             }
 
             var1.setRotationYawHead(var10);
@@ -273,7 +273,7 @@ public class Class9651 {
          }
 
          if (!(var1 instanceof LivingEntity) || !((LivingEntity)var1).isElytraFlying()) {
-            var1.setMotion(var1.getMotion().method11347(1.0, 0.0, 1.0));
+            var1.setMotion(var1.getMotion().mul(1.0, 0.0, 1.0));
             var1.setOnGround(true);
          }
 

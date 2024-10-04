@@ -49,7 +49,7 @@ public class Class7049 {
       SStopSoundPacket var6 = new SStopSoundPacket(var3, var2);
 
       for (ServerPlayerEntity var8 : var1) {
-         var8.field4855.sendPacket(var6);
+         var8.connection.sendPacket(var6);
       }
 
       if (var2 == null) {

@@ -89,20 +89,20 @@ public class Class3624 extends Class3625 {
          SUpdateBossInfoPacket var4 = new SUpdateBossInfoPacket(var1, this);
 
          for (ServerPlayerEntity var6 : this.field19630) {
-            var6.field4855.sendPacket(var4);
+            var6.connection.sendPacket(var4);
          }
       }
    }
 
    public void method12263(ServerPlayerEntity var1) {
       if (this.field19630.add(var1) && this.field19632) {
-         var1.field4855.sendPacket(new SUpdateBossInfoPacket(SUpdateBossInfoPacket.Operation.ADD, this));
+         var1.connection.sendPacket(new SUpdateBossInfoPacket(SUpdateBossInfoPacket.Operation.ADD, this));
       }
    }
 
    public void method12265(ServerPlayerEntity var1) {
       if (this.field19630.remove(var1) && this.field19632) {
-         var1.field4855.sendPacket(new SUpdateBossInfoPacket(SUpdateBossInfoPacket.Operation.REMOVE, this));
+         var1.connection.sendPacket(new SUpdateBossInfoPacket(SUpdateBossInfoPacket.Operation.REMOVE, this));
       }
    }
 
@@ -123,7 +123,7 @@ public class Class3624 extends Class3625 {
          this.field19632 = var1;
 
          for (ServerPlayerEntity var5 : this.field19630) {
-            var5.field4855.sendPacket(new SUpdateBossInfoPacket(!var1 ? SUpdateBossInfoPacket.Operation.REMOVE : SUpdateBossInfoPacket.Operation.ADD, this));
+            var5.connection.sendPacket(new SUpdateBossInfoPacket(!var1 ? SUpdateBossInfoPacket.Operation.REMOVE : SUpdateBossInfoPacket.Operation.ADD, this));
          }
       }
    }

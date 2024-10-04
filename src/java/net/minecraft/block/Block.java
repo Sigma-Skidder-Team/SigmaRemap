@@ -288,7 +288,7 @@ public class Block extends AbstractBlock implements IItemProvider {
 
    public void method11562(World var1, PlayerEntity var2, BlockPos var3, BlockState var4, TileEntity var5, ItemStack var6) {
       var2.addStat(Stats.field40096.method172(this));
-      var2.method2931(0.005F);
+      var2.addExhaustion(0.005F);
       spawnDrops(var4, var1, var3, var5, var2, var6);
    }
 
@@ -316,7 +316,7 @@ public class Block extends AbstractBlock implements IItemProvider {
    }
 
    public void method11568(IBlockReader var1, Entity var2) {
-      var2.setMotion(var2.getMotion().method11347(1.0, 0.0, 1.0));
+      var2.setMotion(var2.getMotion().mul(1.0, 0.0, 1.0));
    }
 
    public ItemStack getItem(IBlockReader var1, BlockPos var2, BlockState var3) {

@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import mapped.MovementUtils;
+import lol.MovementUtils;
 import net.minecraft.network.play.client.CPlayerPacket;
 
 public class AACStep extends Module {

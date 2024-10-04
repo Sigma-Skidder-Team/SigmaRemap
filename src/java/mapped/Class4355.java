@@ -5,6 +5,7 @@ import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
+import lol.ClientColors;
 import net.minecraft.util.math.vector.Vector3i;
 
 public class Class4355 extends Class4247 {

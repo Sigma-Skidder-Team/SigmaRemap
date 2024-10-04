@@ -1348,11 +1348,11 @@ public abstract class MobEntity extends LivingEntity {
       float var4 = (float)this.getAttributeValue(Attributes.ATTACK_DAMAGE);
       float var5 = (float)this.getAttributeValue(Attributes.field42111);
       if (var1 instanceof LivingEntity) {
-         var4 += EnchantmentHelper.method26318(this.getHeldItemMainhand(), ((LivingEntity)var1).getCreatureAttribute());
-         var5 += (float) EnchantmentHelper.method26323(this);
+         var4 += EnchantmentHelper.getModifierForCreature(this.getHeldItemMainhand(), ((LivingEntity)var1).getCreatureAttribute());
+         var5 += (float) EnchantmentHelper.getKnockbackModifier(this);
       }
 
-      int var6 = EnchantmentHelper.method26324(this);
+      int var6 = EnchantmentHelper.getFireAspectModifier(this);
       if (var6 > 0) {
          var1.setFire(var6 * 4);
       }
@@ -1366,7 +1366,7 @@ public abstract class MobEntity extends LivingEntity {
                   (double) MathHelper.sin(this.rotationYaw * (float) (Math.PI / 180.0)),
                   (double)(-MathHelper.cos(this.rotationYaw * (float) (Math.PI / 180.0)))
                );
-            this.setMotion(this.getMotion().method11347(0.6, 1.0, 0.6));
+            this.setMotion(this.getMotion().mul(0.6, 1.0, 0.6));
          }
 
          if (var1 instanceof PlayerEntity) {
@@ -1375,7 +1375,7 @@ public abstract class MobEntity extends LivingEntity {
          }
 
          this.applyEnchantments(this, var1);
-         this.method3020(var1);
+         this.setLastAttackedEntity(var1);
       }
 
       return var7;

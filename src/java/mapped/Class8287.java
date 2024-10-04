@@ -203,6 +203,6 @@ public class Class8287 extends Class8286 {
          }
       }
 
-      var1.field4855.sendPacket(new SStatisticsPacket(var5));
+      var1.connection.sendPacket(new SStatisticsPacket(var5));
    }
 }

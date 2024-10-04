@@ -548,7 +548,7 @@ public abstract class Entity implements INameable, ICommandSource {
          }
 
          float var20 = this.getSpeedFactor();
-         this.setMotion(this.getMotion().method11347((double)var20, 1.0, (double)var20));
+         this.setMotion(this.getMotion().mul((double)var20, 1.0, (double)var20));
          if (this.world
                .method7004(this.getBoundingBox().shrink(0.001))
                .noneMatch(var0 -> var0.isIn(BlockTags.field32798) || var0.isIn(Blocks.LAVA))
@@ -846,7 +846,7 @@ public abstract class Entity implements INameable, ICommandSource {
 
    public void playSound(SoundEvent var1, float var2, float var3) {
       if (!this.isSilent()) {
-         this.world.playSound((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), var1, this.method2864(), var2, var3);
+         this.world.playSound((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), var1, this.getSoundCategory(), var2, var3);
       }
    }
 
@@ -2034,11 +2034,11 @@ public abstract class Entity implements INameable, ICommandSource {
    public void setRenderYawOffset(float var1) {
    }
 
-   public boolean method3360() {
+   public boolean canBeAttackedWithItem() {
       return true;
    }
 
-   public boolean method3361(Entity var1) {
+   public boolean hitByEntity(Entity var1) {
       return false;
    }
 
@@ -2593,7 +2593,7 @@ public abstract class Entity implements INameable, ICommandSource {
       return PushReaction.field15862;
    }
 
-   public Class2266 method2864() {
+   public Class2266 getSoundCategory() {
       return Class2266.field14734;
    }
 

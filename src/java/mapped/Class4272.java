@@ -8,6 +8,7 @@ import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
+import lol.ClientColors;
 
 public class Class4272 extends Class4247 {
    public Animation field20703 = new Animation(300, 200, Direction.BACKWARDS);

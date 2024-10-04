@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import lol.ClientColors;
 
 import java.util.ArrayList;
 import java.util.List;

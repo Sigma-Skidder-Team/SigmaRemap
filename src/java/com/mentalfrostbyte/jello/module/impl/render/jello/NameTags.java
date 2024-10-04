@@ -16,6 +16,7 @@ import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import com.mojang.blaze3d.systems.RenderSystem;
+import lol.ClientColors;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.inventory.FurnaceScreen;

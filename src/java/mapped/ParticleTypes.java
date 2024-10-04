@@ -15,7 +15,7 @@ public class ParticleTypes {
    public static final Class7435 field34052 = method26742("bubble", false);
    public static final Class7435 field34053 = method26742("cloud", false);
    public static final Class7435 CRIT = method26742("crit", false);
-   public static final Class7435 field34055 = method26742("damage_indicator", true);
+   public static final Class7435 DAMAGE_INDICATOR = method26742("damage_indicator", true);
    public static final Class7435 field34056 = method26742("dragon_breath", false);
    public static final Class7435 field34057 = method26742("dripping_lava", false);
    public static final Class7435 field34058 = method26742("falling_lava", false);
@@ -25,7 +25,7 @@ public class ParticleTypes {
    public static final ParticleType<RedstoneParticleData> field34062 = method26743("dust", RedstoneParticleData.DESERIALIZER, var0 -> RedstoneParticleData.field_239802_b_);
    public static final Class7435 field34063 = method26742("effect", false);
    public static final Class7435 field34064 = method26742("elder_guardian", true);
-   public static final Class7435 field34065 = method26742("enchanted_hit", false);
+   public static final Class7435 ENCHANTED_HIT = method26742("enchanted_hit", false);
    public static final Class7435 field34066 = method26742("enchant", false);
    public static final Class7435 field34067 = method26742("end_rod", false);
    public static final Class7435 field34068 = method26742("entity_effect", false);

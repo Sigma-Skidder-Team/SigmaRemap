@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import mapped.MovementUtils;
+import lol.MovementUtils;
 
 public class SlowHopSpeed extends Module {
     private int field23599;

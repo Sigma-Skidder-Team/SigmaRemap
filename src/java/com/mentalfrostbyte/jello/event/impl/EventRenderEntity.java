@@ -1,6 +1,6 @@
 package com.mentalfrostbyte.jello.event.impl;
 
-import mapped.Class2035;
+import mapped.RenderState;
 import net.minecraft.entity.LivingEntity;
 
 public class EventRenderEntity extends Class4406 {
@@ -12,7 +12,7 @@ public class EventRenderEntity extends Class4406 {
     private final LivingEntity entity;
     private boolean field21533 = true;
     private boolean field21534 = true;
-    private Class2035 field21535;
+    private RenderState state;
 
     public EventRenderEntity(float var1, float var2, float var3, float var4, float var5, LivingEntity var6) {
         this.field21527 = var1;
@@ -21,15 +21,15 @@ public class EventRenderEntity extends Class4406 {
         this.field21530 = var4;
         this.field21531 = var5;
         this.entity = var6;
-        this.field21535 = Class2035.field13212;
+        this.state = RenderState.field13212;
     }
 
-    public void method13942(Class2035 var1) {
-        this.field21535 = var1;
+    public void setState(RenderState state) {
+        this.state = state;
     }
 
-    public Class2035 method13943() {
-        return this.field21535;
+    public RenderState getState() {
+        return this.state;
     }
 
     public float method13944() {

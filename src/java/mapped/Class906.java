@@ -40,7 +40,7 @@ public class Class906 extends Entity {
    }
 
    @Override
-   public Class2266 method2864() {
+   public Class2266 getSoundCategory() {
       return Class2266.field14731;
    }
 

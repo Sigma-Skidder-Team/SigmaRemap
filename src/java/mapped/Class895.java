@@ -66,7 +66,7 @@ public class Class895 extends Class890 {
             }
          } else {
             ServerPlayerEntity var7 = (ServerPlayerEntity)var4;
-            if (var7.field4855.getNetworkManager().isChannelOpen() && var7.world == this.world && !var7.isSleeping()) {
+            if (var7.connection.getNetworkManager().isChannelOpen() && var7.world == this.world && !var7.isSleeping()) {
                if (this.rand.nextFloat() < 0.05F && this.world.getGameRules().getBoolean(GameRules.field24226)) {
                   Class1104 var6 = EntityType.field41026.create(this.world);
                   var6.method5298(true);

@@ -112,9 +112,9 @@ public class ExperienceOrbEntity extends Entity {
          var10 = this.world.getBlockState(new BlockPos(this.getPosX(), this.getPosY() - 1.0, this.getPosZ())).getBlock().method11571() * 0.98F;
       }
 
-      this.setMotion(this.getMotion().method11347((double)var10, 0.98, (double)var10));
+      this.setMotion(this.getMotion().mul((double)var10, 0.98, (double)var10));
       if (this.onGround) {
-         this.setMotion(this.getMotion().method11347(1.0, -0.9, 1.0));
+         this.setMotion(this.getMotion().mul(1.0, -0.9, 1.0));
       }
 
       this.field5555++;
@@ -278,7 +278,7 @@ public class ExperienceOrbEntity extends Entity {
    }
 
    @Override
-   public boolean method3360() {
+   public boolean canBeAttackedWithItem() {
       return false;
    }
 

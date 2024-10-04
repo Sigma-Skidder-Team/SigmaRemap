@@ -60,7 +60,7 @@ public class Class5829 extends Class5828<Class926> {
          }
 
          var4.setInventorySlotContents(0, var8);
-         var7.field4855.sendPacket(new SSetSlotPacket(var0, 0, var8));
+         var7.connection.sendPacket(new SSetSlotPacket(var0, 0, var8));
       }
    }
 

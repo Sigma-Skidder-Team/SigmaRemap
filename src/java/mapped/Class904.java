@@ -82,7 +82,7 @@ public class Class904 extends ProjectileEntity {
       this.setLocationAndAngles(var13, var15, var17, var8, var7);
       Vector3d var19 = new Vector3d((double)(-var10), (double) MathHelper.clamp(-(var12 / var11), -5.0F, 5.0F), (double)(-var9));
       double var20 = var19.length();
-      var19 = var19.method11347(
+      var19 = var19.mul(
          0.6 / var20 + 0.5 + this.rand.nextGaussian() * 0.0045,
          0.6 / var20 + 0.5 + this.rand.nextGaussian() * 0.0045,
          0.6 / var20 + 0.5 + this.rand.nextGaussian() * 0.0045
@@ -201,7 +201,7 @@ public class Class904 extends ProjectileEntity {
                }
 
                if (var7) {
-                  this.setMotion(this.getMotion().method11347(0.3, 0.2, 0.3));
+                  this.setMotion(this.getMotion().mul(0.3, 0.2, 0.3));
                   this.field5160 = Class2152.field14073;
                   return;
                }

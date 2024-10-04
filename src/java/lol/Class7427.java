@@ -1,4 +1,6 @@
-package mapped;
+package lol;
+
+import mapped.Color;
 
 public interface Class7427 {
    int getStringWidth(String var1);

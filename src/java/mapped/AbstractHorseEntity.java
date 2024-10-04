@@ -201,7 +201,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
                   this.getPosY(),
                   this.getPosZ(),
                   var3,
-                  this.method2864(),
+                  this.getSoundCategory(),
                   1.0F,
                   1.0F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F
                );

@@ -1,8 +1,4 @@
-package mapped;
-
-import totalcross.json.JSONArray;
-import totalcross.json.JSONException2;
-import totalcross.json.JSONObject;
+package totalcross.json;
 
 public class CJsonUtils {
 

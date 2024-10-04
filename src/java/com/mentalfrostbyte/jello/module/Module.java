@@ -10,6 +10,7 @@ import com.mentalfrostbyte.jello.settings.SubOptionSetting2;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.SoundEvents;
+import totalcross.json.CJsonUtils;
 import totalcross.json.JSONArray;
 import totalcross.json.JSONException2;
 import totalcross.json.JSONObject;

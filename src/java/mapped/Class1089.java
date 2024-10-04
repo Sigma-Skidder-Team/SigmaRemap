@@ -65,7 +65,7 @@ public class Class1089 extends Class1018 {
       this.field5969 = (float)((double)this.field5969 * 0.9);
       Vector3d var3 = this.getMotion();
       if (!this.onGround && var3.y < 0.0) {
-         this.setMotion(var3.method11347(1.0, 0.6, 1.0));
+         this.setMotion(var3.mul(1.0, 0.6, 1.0));
       }
 
       this.field5965 = this.field5965 + this.field5969 * 2.0F;

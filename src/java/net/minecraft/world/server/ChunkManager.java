@@ -17,6 +17,7 @@ import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.boss.dragon.EnderDragonPartEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
@@ -808,7 +809,7 @@ public class ChunkManager extends Class1648 implements Class1650 {
    private SectionPos method6574(ServerPlayerEntity var1) {
       SectionPos var4 = SectionPos.method8392(var1);
       var1.method2833(var4);
-      var1.field4855.sendPacket(new SUpdateChunkPositionPacket(var4.method8410(), var4.method8412()));
+      var1.connection.sendPacket(new SUpdateChunkPositionPacket(var4.method8410(), var4.method8412()));
       return var4;
    }
 
@@ -902,7 +903,7 @@ public class ChunkManager extends Class1648 implements Class1650 {
    }
 
    public void method6577(Entity var1) {
-      if (!(var1 instanceof Class908)) {
+      if (!(var1 instanceof EnderDragonPartEntity)) {
          EntityType var4 = var1.getType();
          int var5 = var4.method33225() * 16;
          int var6 = var4.method33226();
@@ -1019,13 +1020,13 @@ public class ChunkManager extends Class1648 implements Class1650 {
 
       if (!var6.isEmpty()) {
          for (Entity var13 : var6) {
-            var1.field4855.sendPacket(new SMountEntityPacket(var13, ((MobEntity)var13).method4297()));
+            var1.connection.sendPacket(new SMountEntityPacket(var13, ((MobEntity)var13).method4297()));
          }
       }
 
       if (!var7.isEmpty()) {
          for (Entity var14 : var7) {
-            var1.field4855.sendPacket(new SSetPassengersPacket(var14));
+            var1.connection.sendPacket(new SSetPassengersPacket(var14));
          }
       }
    }

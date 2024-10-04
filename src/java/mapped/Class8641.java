@@ -212,7 +212,7 @@ public class Class8641 {
    }
 
    private void method31052(IPacket<?> var1, boolean var2) {
-      this.field38914.method6576(this.field38907, var2).forEach(var1x -> var1x.field4855.sendPacket(var1));
+      this.field38914.method6576(this.field38907, var2).forEach(var1x -> var1x.connection.sendPacket(var1));
    }
 
    public CompletableFuture<Either<IChunk, Class7022>> method31053(ChunkStatus var1, ChunkManager var2) {

@@ -40,7 +40,7 @@ public class Stats {
    public static final ResourceLocation field40124 = method32294("strider_one_cm", Class8762.field39449);
    public static final ResourceLocation field40125 = method32294("jump", Class8762.field39447);
    public static final ResourceLocation field40126 = method32294("drop", Class8762.field39447);
-   public static final ResourceLocation field40127 = method32294("damage_dealt", Class8762.field39448);
+   public static final ResourceLocation DAMAGE_DEALT = method32294("damage_dealt", Class8762.field39448);
    public static final ResourceLocation field40128 = method32294("damage_dealt_absorbed", Class8762.field39448);
    public static final ResourceLocation field40129 = method32294("damage_dealt_resisted", Class8762.field39448);
    public static final ResourceLocation field40130 = method32294("damage_taken", Class8762.field39448);

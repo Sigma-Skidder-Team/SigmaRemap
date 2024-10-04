@@ -46,7 +46,7 @@ public class Class8508 {
             var0.method20179(new TranslationTextComponent("commands.ban.success", TextComponentUtils.getDisplayName(var8), var9.method20683()), true);
             ServerPlayerEntity var10 = var0.method20177().getPlayerList().method19489(var8.getId());
             if (var10 != null) {
-               var10.field4855.disconnect(new TranslationTextComponent("multiplayer.disconnect.banned"));
+               var10.connection.disconnect(new TranslationTextComponent("multiplayer.disconnect.banned"));
             }
          }
       }

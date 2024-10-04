@@ -2,6 +2,7 @@ package com.mentalfrostbyte.jello.util.world;
 
 import com.google.common.collect.ImmutableList;
 import com.mentalfrostbyte.jello.event.impl.EventUpdate;
+import lol.MovementUtils;
 import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

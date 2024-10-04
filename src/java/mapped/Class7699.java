@@ -428,7 +428,7 @@ public class Class7699 {
          double var12 = var9.x + (double)(13.0F / var11) * (var10.x - var9.x);
          double var14 = var9.z + (double)(13.0F / var11) * (var10.z - var9.z);
          if (var11 <= 64.0F || var6.contains(var8)) {
-            var8.field4855.sendPacket(new SPlaySoundEffectPacket(SoundEvents.field26992, Class2266.field14734, var12, var8.getPosY(), var14, 64.0F, 1.0F));
+            var8.connection.sendPacket(new SPlaySoundEffectPacket(SoundEvents.field26992, Class2266.field14734, var12, var8.getPosY(), var14, 64.0F, 1.0F));
          }
       }
    }

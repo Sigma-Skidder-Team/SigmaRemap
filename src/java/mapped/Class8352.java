@@ -1,5 +1,7 @@
 package mapped;
 
+import lol.Class7427;
+
 public class Class8352 {
    public static void method29264(Class7427 var0, String var1, int var2, int var3) {
       method29269(var0, var1, 1, var2, var3, 0, Color.field16442);

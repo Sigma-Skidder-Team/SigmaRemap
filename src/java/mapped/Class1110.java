@@ -94,7 +94,7 @@ public class Class1110 extends Class1111 implements Class1008 {
                   this.getPosY(),
                   this.getPosZ(),
                   SoundEvents.field26921,
-                  this.method2864(),
+                  this.getSoundCategory(),
                   0.95F + this.rand.nextFloat() * 0.05F,
                   0.95F + this.rand.nextFloat() * 0.05F,
                   false
@@ -162,7 +162,7 @@ public class Class1110 extends Class1111 implements Class1008 {
    }
 
    @Override
-   public Class2266 method2864() {
+   public Class2266 getSoundCategory() {
       return Class2266.field14733;
    }
 

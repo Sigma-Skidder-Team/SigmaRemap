@@ -69,7 +69,7 @@ public class Class8345 {
          }
 
          for (ServerPlayerEntity var9 : var6) {
-            var9.field4855.disconnect(new TranslationTextComponent("multiplayer.disconnect.ip_banned"));
+            var9.connection.disconnect(new TranslationTextComponent("multiplayer.disconnect.ip_banned"));
          }
 
          return var6.size();

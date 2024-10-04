@@ -3,7 +3,7 @@ package com.mentalfrostbyte.jello.event;
 import com.mentalfrostbyte.jello.event.priority.Priority;
 import com.mentalfrostbyte.jello.module.impl.movement.phase.NCPPhase;
 import com.mentalfrostbyte.jello.unmapped.Class8733;
-import mapped.ReflectionUtils;
+import lol.ReflectionUtils;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodHandles;

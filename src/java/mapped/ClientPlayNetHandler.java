@@ -42,6 +42,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
+import net.minecraft.entity.boss.dragon.EnderDragonPartEntity;
 import net.minecraft.entity.item.BoatEntity;
 import net.minecraft.entity.item.ItemFrameEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -753,7 +754,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                   if (var1.method17193() != 2) {
                      if (var1.method17193() != 4) {
                         if (var1.method17193() == 5) {
-                           this.field23272.particles.addParticleEmitter(var4, ParticleTypes.field34065);
+                           this.field23272.particles.addParticleEmitter(var4, ParticleTypes.ENCHANTED_HIT);
                         }
                      } else {
                         this.field23272.particles.addParticleEmitter(var4, ParticleTypes.CRIT);
@@ -792,7 +793,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          var12.renderYawOffset = (float)(var1.method17546() * 360) / 256.0F;
          var12.rotationYawHead = (float)(var1.method17546() * 360) / 256.0F;
          if (var12 instanceof Class1007) {
-            Class908[] var13 = ((Class1007)var12).method4332();
+            EnderDragonPartEntity[] var13 = ((Class1007)var12).method4332();
 
             for (int var14 = 0; var14 < var13.length; var14++) {
                var13[var14].setEntityId(var14 + var1.method17535());
@@ -886,7 +887,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
             } else {
                byte var5 = 40;
                this.field23272.particles.method1196(var4, ParticleTypes.field34097, 30);
-               this.field23273.method6745(var4.getPosX(), var4.getPosY(), var4.getPosZ(), SoundEvents.field27147, var4.method2864(), 1.0F, 1.0F, false);
+               this.field23273.method6745(var4.getPosX(), var4.getPosY(), var4.getPosZ(), SoundEvents.field27147, var4.getSoundCategory(), 1.0F, 1.0F, false);
                if (var4 == this.field23272.player) {
                   this.field23272.gameRenderer.displayItemActivation(method15785(this.field23272.player));
                }

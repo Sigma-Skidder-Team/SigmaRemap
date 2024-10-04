@@ -79,7 +79,7 @@ public class Class1112 extends Class1111 implements Class1008 {
    }
 
    @Override
-   public Class2266 method2864() {
+   public Class2266 getSoundCategory() {
       return Class2266.field14733;
    }
 

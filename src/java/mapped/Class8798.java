@@ -1,5 +1,8 @@
 package mapped;
 
+import lol.Renderer;
+import lol.SGL;
+
 public class Class8798 {
    public static SGL field39623 = Renderer.get();
    private Runnable field39624;

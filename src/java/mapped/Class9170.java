@@ -1,5 +1,8 @@
 package mapped;
 
+import lol.Renderer;
+import lol.SGL;
+
 public class Class9170 {
    public static SGL field42091 = Renderer.get();
    public Class7710 field42092;

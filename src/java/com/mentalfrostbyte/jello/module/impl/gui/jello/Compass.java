@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import mapped.ClientColors;
+import lol.ClientColors;
 import mapped.RenderUtil;
 import net.minecraft.client.Minecraft;
 

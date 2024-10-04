@@ -1,7 +1,6 @@
 package com.mentalfrostbyte.jello.settings;
 
-import com.mentalfrostbyte.jello.unmapped.SettingType;
-import mapped.CJsonUtils;
+import totalcross.json.CJsonUtils;
 import totalcross.json.JSONArray;
 import totalcross.json.JSONObject;
 

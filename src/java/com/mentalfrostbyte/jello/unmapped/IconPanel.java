@@ -5,6 +5,7 @@ import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mojang.blaze3d.platform.GlStateManager;
 import mapped.*;
+import totalcross.json.CJsonUtils;
 import totalcross.json.JSONArray;
 import org.lwjgl.opengl.GL11;
 import totalcross.json.JSONObject;

@@ -10,6 +10,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.*;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
+import lol.ClientColors;
 import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;

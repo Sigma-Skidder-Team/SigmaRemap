@@ -95,7 +95,7 @@ public class Class888 extends ProjectileEntity implements Class889 {
       if (!this.method3507()) {
          if (!this.method3508()) {
             double var9 = !this.collidedHorizontally ? 1.15 : 1.0;
-            this.setMotion(this.getMotion().method11347(var9, 1.0, var9).add(0.0, 0.04, 0.0));
+            this.setMotion(this.getMotion().mul(var9, 1.0, var9).add(0.0, 0.04, 0.0));
          }
 
          Vector3d var3 = this.getMotion();
@@ -304,7 +304,7 @@ public class Class888 extends ProjectileEntity implements Class889 {
    }
 
    @Override
-   public boolean method3360() {
+   public boolean canBeAttackedWithItem() {
       return false;
    }
 

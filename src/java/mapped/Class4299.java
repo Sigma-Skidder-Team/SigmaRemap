@@ -2,6 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import lol.ClientColors;
 import net.minecraft.client.Minecraft;
 
 import java.util.Iterator;

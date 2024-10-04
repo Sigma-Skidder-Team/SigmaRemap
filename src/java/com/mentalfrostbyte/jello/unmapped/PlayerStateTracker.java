@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import net.minecraft.network.play.server.SKeepAlivePacket;
 import net.minecraft.network.play.client.CClickWindowPacket;
-import mapped.MovementUtils;
+import lol.MovementUtils;
 import net.minecraft.client.Minecraft;
 
 public class PlayerStateTracker {

@@ -100,12 +100,12 @@ public class Class994 extends AbstractMinecartEntity {
    public void method3593() {
       double var3 = this.field5483 * this.field5483 + this.field5484 * this.field5484;
       if (!(var3 > 1.0E-7)) {
-         this.setMotion(this.getMotion().method11347(0.98, 0.0, 0.98));
+         this.setMotion(this.getMotion().mul(0.98, 0.0, 0.98));
       } else {
          var3 = (double) MathHelper.sqrt(var3);
          this.field5483 /= var3;
          this.field5484 /= var3;
-         this.setMotion(this.getMotion().method11347(0.8, 0.0, 0.8).add(this.field5483, 0.0, this.field5484));
+         this.setMotion(this.getMotion().mul(0.8, 0.0, 0.8).add(this.field5483, 0.0, this.field5484));
       }
 
       super.method3593();

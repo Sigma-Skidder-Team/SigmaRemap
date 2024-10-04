@@ -10,6 +10,7 @@ import com.mentalfrostbyte.jello.settings.ColorSetting;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mojang.blaze3d.systems.RenderSystem;
+import lol.ClientColors;
 import mapped.*;
 import net.minecraft.entity.Entity;
 import org.lwjgl.opengl.GL11;

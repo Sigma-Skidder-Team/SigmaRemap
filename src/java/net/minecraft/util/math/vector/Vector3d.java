@@ -108,7 +108,7 @@ public class Vector3d implements Class2955 {
    }
 
    public Vector3d scale(double var1) {
-      return this.method11347(var1, var1, var1);
+      return this.mul(var1, var1, var1);
    }
 
    public Vector3d method11345() {
@@ -116,10 +116,10 @@ public class Vector3d implements Class2955 {
    }
 
    public Vector3d method11346(Vector3d var1) {
-      return this.method11347(var1.x, var1.y, var1.z);
+      return this.mul(var1.x, var1.y, var1.z);
    }
 
-   public Vector3d method11347(double var1, double var3, double var5) {
+   public Vector3d mul(double var1, double var3, double var5) {
       return new Vector3d(this.x * var1, this.y * var3, this.z * var5);
    }
 

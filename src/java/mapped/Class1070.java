@@ -384,7 +384,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
                      this.getPosY(),
                      this.getPosZ(),
                      SoundEvents.field27100,
-                     this.method2864(),
+                     this.getSoundCategory(),
                      1.0F,
                      1.0F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F
                   );

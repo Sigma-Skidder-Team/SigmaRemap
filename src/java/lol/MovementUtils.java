@@ -1,8 +1,12 @@
-package mapped;
+package lol;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
+import mapped.Attributes;
+import mapped.Effects;
+import mapped.MovementInput;
+import mapped.RotationHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
 import net.minecraft.network.play.client.CPlayerPacket;

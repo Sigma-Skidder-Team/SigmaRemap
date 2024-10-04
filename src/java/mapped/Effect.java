@@ -43,7 +43,7 @@ public class Effect {
          if (this != Effects.POISON) {
             if (this != Effects.WITHER) {
                if (this == Effects.HUNGER && var1 instanceof PlayerEntity) {
-                  ((PlayerEntity)var1).method2931(0.005F * (float)(var2 + 1));
+                  ((PlayerEntity)var1).addExhaustion(0.005F * (float)(var2 + 1));
                } else if (this == Effects.SATURATION && var1 instanceof PlayerEntity) {
                   if (!var1.world.isRemote) {
                      ((PlayerEntity)var1).getFoodStats().method37569(var2 + 1, 1.0F);

@@ -24,35 +24,59 @@ public class KillAuraAttackLambda implements Runnable {
       this.field1477 = var2;
    }
 
-   @Override
-   public void run() {
-      boolean var3 = (float)Math.round((float)Math.random() * 100.0F) <= this.killauraModule.getNumberValueBySettingName("Hit Chance");
-      float var4 = Math.max(KillAura.mc.player.getDistance(KillAura.timedEntityIdk.getEntity()), this.killauraModule.getNumberValueBySettingName("Range"));
-      EntityRayTraceResult var5;
-      if (!this.killauraModule.getStringSettingValueByName("Attack Mode").equals("Pre")) {
-         var5 = MultiUtilities.method17712(
-            KillAura.getRotations(this.killauraModule).yaw, KillAura.getRotations(this.killauraModule).pitch, var4, (double)this.field1477
-         );
-      } else {
-         double var6 = Math.sqrt(
-            KillAura.mc.player.getMotion().x * KillAura.mc.player.getMotion().x
-               + KillAura.mc.player.getMotion().z * KillAura.mc.player.getMotion().z
-         );
-          var5 = MultiUtilities.method17712(KillAura.getRotations2(this.killauraModule).yaw, KillAura.getRotations2(this.killauraModule).pitch, var4, (double) this.field1477 + var6);
+   private void handleAnimationAndAttack(Minecraft mc, Entity entity, boolean isOnePointEight, boolean noSwing) {
+      if (EnchantmentHelper.getEnchantmentLevel(Enchantment.getEnchantmentByID(12), mc.player.getHeldItem(Hand.MAIN_HAND)) > 0) {
+         mc.particles.addParticleEmitter(entity, ParticleTypes.ENCHANTED_HIT);
       }
 
-      if (KillAura.target != null
-         && KillAura.interactAB.isBlocking()
-         && !this.killauraModule.getStringSettingValueByName("Autoblock Mode").equals("Vanilla")) {
+      boolean canSwing = (double) mc.player.getCooledAttackStrength(0.5F) >= 1.0 || isOnePointEight;
+      boolean attackable = canSwing
+              && mc.player.fallDistance > 0.0F
+              && !mc.player.onGround
+              && !mc.player.isOnLadder()
+              && !mc.player.isInWater()
+              && !mc.player.isPotionActive(Effects.BLINDNESS)
+              && !mc.player.isPassenger();
+
+      if (attackable || mc.player.onGround && Client.getInstance().getModuleManager().getModuleByClass(Criticals.class).isEnabled()) {
+         mc.particles.addParticleEmitter(entity, ParticleTypes.CRIT);
+      }
+
+      mc.playerController.attackEntity(mc.player, entity);
+   }
+
+   @Override
+   public void run() {
+      // Random chance check based on "Hit Chance" setting
+      boolean var3 = (float) Math.round((float) Math.random() * 100.0F) <= this.killauraModule.getNumberValueBySettingName("Hit Chance");
+
+      // Get range based on player distance or "Range" setting
+      float range = Math.max(KillAura.mc.player.getDistance(KillAura.timedEntityIdk.getEntity()), this.killauraModule.getNumberValueBySettingName("Range"));
+
+      EntityRayTraceResult rayTraceResult;
+      if (!this.killauraModule.getStringSettingValueByName("Attack Mode").equals("Pre")) {
+         rayTraceResult = MultiUtilities.method17712(
+                 KillAura.getRotations(this.killauraModule).yaw, KillAura.getRotations(this.killauraModule).pitch, range, (double) this.field1477
+         );
+      } else {
+         double motionSpeed = Math.sqrt(
+                 KillAura.mc.player.getMotion().x * KillAura.mc.player.getMotion().x
+                         + KillAura.mc.player.getMotion().z * KillAura.mc.player.getMotion().z
+         );
+         rayTraceResult = MultiUtilities.method17712(KillAura.getRotations2(this.killauraModule).yaw, KillAura.getRotations2(this.killauraModule).pitch, range, (double) this.field1477 + motionSpeed);
+      }
+
+      // Handle autoblocking mode
+      if (KillAura.target != null && KillAura.interactAB.isBlocking() && !this.killauraModule.getStringSettingValueByName("Autoblock Mode").equals("Vanilla")) {
          KillAura.interactAB.method36816();
       }
 
       String mode = this.killauraModule.getStringSettingValueByName("Mode");
-      if (var3 && (var5 != null || !this.killauraModule.getBooleanValueFromSettingName("Raytrace") || mode.equals("Multi"))) {
+      if (var3 && (rayTraceResult != null || !this.killauraModule.getBooleanValueFromSettingName("Raytrace") || mode.equals("Multi"))) {
          for (TimedEntity timedEnt : KillAura.entities) {
             Entity entity = timedEnt.getEntity();
-            if (var5 != null && this.killauraModule.getBooleanValueFromSettingName("Raytrace") && !mode.equals("Multi")) {
-               entity = var5.getEntity();
+            if (rayTraceResult != null && this.killauraModule.getBooleanValueFromSettingName("Raytrace") && !mode.equals("Multi")) {
+               entity = rayTraceResult.getEntity();
             }
 
             if (entity == null) {
@@ -61,108 +85,41 @@ public class KillAuraAttackLambda implements Runnable {
 
             boolean noSwing = this.killauraModule.getBooleanValueFromSettingName("No swing");
             Minecraft mc = KillAura.mc;
-            boolean isOnePointEight = false;
-
-            /*
-            if (JelloPortal.getCurrentVersion() != null) {
-               isOnePointEight = JelloPortal.getCurrentVersion().equals(ViaVerList._1_8_x);
-            }
-             */
+            boolean isOnePointEight = false; // Potential check for 1.8 version
 
             boolean raytrace = this.killauraModule.getBooleanValueFromSettingName("Raytrace");
             boolean walls = this.killauraModule.getBooleanValueFromSettingName("Through walls");
             boolean properTrace = MultiUtilities.rayTraceEntity(mc.player, entity);
 
+            // Perform INTERACT before animation and attack
             if (raytrace) {
-               if (properTrace && !walls) {
-                  if (isOnePointEight && !noSwing) {
+               if (properTrace && !walls || walls) {
+                  if (!noSwing) {
                      mc.player.swingArm(Hand.MAIN_HAND);
                   }
-
                   mc.getConnection().getNetworkManager().sendNoEventPacket(new CUseEntityPacket(entity, mc.player.isSneaking()));
-                  if (EnchantmentHelper.getEnchantmentLevel(Enchantment.getEnchantmentByID(12), mc.player.getHeldItem(Hand.MAIN_HAND)) > 0) {
-                     mc.particles.addParticleEmitter(entity, ParticleTypes.field34065);
-                  }
 
-                  boolean canSwing = (double) mc.player.getCooledAttackStrength(0.5F) > 0.9 || isOnePointEight;
-                  boolean attackable = canSwing
-                          && mc.player.fallDistance > 0.0F
-                          && !mc.player.onGround
-                          && !mc.player.isOnLadder()
-                          && !mc.player.isInWater()
-                          && !mc.player.isPotionActive(Effects.BLINDNESS)
-                          && !mc.player.isPassenger();
-                  if (attackable || mc.player.onGround && Client.getInstance().getModuleManager().getModuleByClass(Criticals.class).isEnabled()) {
-                     mc.particles.addParticleEmitter(entity, ParticleTypes.CRIT);
-                  }
+                  // Animation and attack after INTERACT
+                  handleAnimationAndAttack(mc, entity, isOnePointEight, noSwing);
 
                   mc.player.resetCooldown();
-                  if (!isOnePointEight && !noSwing) {
-                     mc.player.swingArm(Hand.MAIN_HAND);
-                  }
-
-                  mc.playerController.attackEntity(mc.player, entity);
-               } else if (!properTrace && !walls) {
+               } else {
+                  // Cancel attack if entity isn't valid
                   KillAura.target = null;
                   KillAura.entities = null;
                   KillAura.timedEntityIdk = null;
-               } else if (walls) {
-                  if (isOnePointEight && !noSwing) {
-                     mc.player.swingArm(Hand.MAIN_HAND);
-                  }
-
-                  mc.getConnection().getNetworkManager().sendNoEventPacket(new CUseEntityPacket(entity, mc.player.isSneaking()));
-                  if (EnchantmentHelper.getEnchantmentLevel(Enchantment.getEnchantmentByID(12), mc.player.getHeldItem(Hand.MAIN_HAND)) > 0) {
-                     mc.particles.addParticleEmitter(entity, ParticleTypes.field34065);
-                  }
-
-                  boolean canSwing = (double) mc.player.getCooledAttackStrength(0.5F) > 0.9 || isOnePointEight;
-                  boolean attackable = canSwing
-                          && mc.player.fallDistance > 0.0F
-                          && !mc.player.onGround
-                          && !mc.player.isOnLadder()
-                          && !mc.player.isInWater()
-                          && !mc.player.isPotionActive(Effects.BLINDNESS)
-                          && !mc.player.isPassenger();
-                  if (attackable || mc.player.onGround && Client.getInstance().getModuleManager().getModuleByClass(Criticals.class).isEnabled()) {
-                     mc.particles.addParticleEmitter(entity, ParticleTypes.CRIT);
-                  }
-
-                  mc.player.resetCooldown();
-                  if (!isOnePointEight && !noSwing) {
-                     mc.player.swingArm(Hand.MAIN_HAND);
-                  }
-
-                  mc.playerController.attackEntity(mc.player, entity);
                }
             } else {
-               if (isOnePointEight && !noSwing) {
+               // Non-raytrace handling
+               if (!noSwing) {
                   mc.player.swingArm(Hand.MAIN_HAND);
                }
-
                mc.getConnection().getNetworkManager().sendNoEventPacket(new CUseEntityPacket(entity, mc.player.isSneaking()));
-               if (EnchantmentHelper.getEnchantmentLevel(Enchantment.getEnchantmentByID(12), mc.player.getHeldItem(Hand.MAIN_HAND)) > 0) {
-                  mc.particles.addParticleEmitter(entity, ParticleTypes.field34065);
-               }
 
-               boolean canSwing = (double) mc.player.getCooledAttackStrength(0.5F) > 0.9 || isOnePointEight;
-               boolean attackable = canSwing
-                       && mc.player.fallDistance > 0.0F
-                       && !mc.player.onGround
-                       && !mc.player.isOnLadder()
-                       && !mc.player.isInWater()
-                       && !mc.player.isPotionActive(Effects.BLINDNESS)
-                       && !mc.player.isPassenger();
-               if (attackable || mc.player.onGround && Client.getInstance().getModuleManager().getModuleByClass(Criticals.class).isEnabled()) {
-                  mc.particles.addParticleEmitter(entity, ParticleTypes.CRIT);
-               }
+               // Animation and attack after INTERACT
+               handleAnimationAndAttack(mc, entity, isOnePointEight, noSwing);
 
                mc.player.resetCooldown();
-               if (!isOnePointEight && !noSwing) {
-                  mc.player.swingArm(Hand.MAIN_HAND);
-               }
-
-               mc.playerController.attackEntity(mc.player, entity);
             }
          }
 
@@ -173,9 +130,9 @@ public class KillAuraAttackLambda implements Runnable {
          KillAura.mc.player.swingArm(Hand.MAIN_HAND);
       }
 
-      if (KillAura.target != null && KillAura.interactAB.method36817() && this.killauraModule.getStringSettingValueByName("Autoblock Mode").equals("Basic1")) {
-         KillAura.interactAB
-            .block(KillAura.target, KillAura.getRotations(this.killauraModule).yaw, KillAura.getRotations(this.killauraModule).pitch);
+      // Handle autoblocking
+      if (KillAura.target != null && KillAura.interactAB.canBlock() && this.killauraModule.getStringSettingValueByName("Autoblock Mode").equals("Basic1")) {
+         KillAura.interactAB.block(KillAura.target, KillAura.getRotations(this.killauraModule).yaw, KillAura.getRotations(this.killauraModule).pitch);
       }
    }
 }

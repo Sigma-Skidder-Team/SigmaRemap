@@ -13,6 +13,7 @@ import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
+import lol.ClientColors;
 import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;

@@ -4,6 +4,7 @@ import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
+import lol.ClientColors;
 import org.lwjgl.opengl.GL11;
 
 public class UILoadingCircle extends Class4278 {

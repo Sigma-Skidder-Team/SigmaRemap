@@ -59,7 +59,7 @@ public class Class907 extends Entity {
    }
 
    @Override
-   public boolean method3360() {
+   public boolean canBeAttackedWithItem() {
       return false;
    }
 
@@ -135,7 +135,7 @@ public class Class907 extends Entity {
                }
             } else {
                BlockState var19 = this.world.getBlockState(var18);
-               this.setMotion(this.getMotion().method11347(0.7, -0.5, 0.7));
+               this.setMotion(this.getMotion().mul(0.7, -0.5, 0.7));
                if (!var19.isIn(Blocks.MOVING_PISTON)) {
                   this.remove();
                   if (this.field5179) {

@@ -1,5 +1,7 @@
 package mapped;
 
+import lol.Class7427;
+
 import java.io.UnsupportedEncodingException;
 
 public class Class7428 implements Class7427 {

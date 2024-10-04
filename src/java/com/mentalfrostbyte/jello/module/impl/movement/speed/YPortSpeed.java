@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import mapped.*;
+import lol.MovementUtils;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
 public class YPortSpeed extends Module {

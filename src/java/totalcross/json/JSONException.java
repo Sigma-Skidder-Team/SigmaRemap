@@ -1,7 +1,6 @@
 package totalcross.json;
 
 import com.google.common.collect.Lists;
-import mapped.Class6388;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

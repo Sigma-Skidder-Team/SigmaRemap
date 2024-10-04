@@ -175,7 +175,7 @@ public class BoatEntity extends Entity {
                this.getPosY(),
                this.getPosZ(),
                this.method2860(),
-               this.method2864(),
+               this.getSoundCategory(),
                1.0F,
                0.8F + 0.4F * this.rand.nextFloat(),
                false
@@ -300,7 +300,7 @@ public class BoatEntity extends Entity {
                         this.getPosY(),
                         this.getPosZ() + var8,
                         var4,
-                        this.method2864(),
+                        this.getSoundCategory(),
                         1.0F,
                         0.8F + 0.4F * this.rand.nextFloat()
                      );
@@ -580,7 +580,7 @@ public class BoatEntity extends Entity {
       if (this.field5548 == Class2096.field13659 && this.field5547 != Class2096.field13659 && this.field5547 != Class2096.field13658) {
          this.field5545 = this.getPosYHeight(1.0);
          this.setPosition(this.getPosX(), (double)(this.method4154() - this.getHeight()) + 0.101, this.getPosZ());
-         this.setMotion(this.getMotion().method11347(1.0, 0.0, 1.0));
+         this.setMotion(this.getMotion().mul(1.0, 0.0, 1.0));
          this.field5549 = 0.0;
          this.field5547 = Class2096.field13655;
       } else {

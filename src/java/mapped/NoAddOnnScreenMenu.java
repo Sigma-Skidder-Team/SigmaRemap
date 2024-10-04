@@ -2,6 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mojang.blaze3d.matrix.MatrixStack;
+import lol.ClientColors;
 import org.lwjgl.opengl.GL11;
 
 public class NoAddOnnScreenMenu extends VanillaMainMenuScreen {

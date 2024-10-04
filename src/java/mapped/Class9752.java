@@ -102,7 +102,7 @@ public class Class9752 {
       STitlePacket var4 = new STitlePacket(Class2301.field15714, (ITextComponent)null);
 
       for (ServerPlayerEntity var6 : var1) {
-         var6.field4855.sendPacket(var4);
+         var6.connection.sendPacket(var4);
       }
 
       if (var1.size() != 1) {
@@ -118,7 +118,7 @@ public class Class9752 {
       STitlePacket var4 = new STitlePacket(Class2301.field15715, (ITextComponent)null);
 
       for (ServerPlayerEntity var6 : var1) {
-         var6.field4855.sendPacket(var4);
+         var6.connection.sendPacket(var4);
       }
 
       if (var1.size() != 1) {
@@ -132,7 +132,7 @@ public class Class9752 {
 
    private static int method38312(CommandSource var0, Collection<ServerPlayerEntity> var1, ITextComponent var2, Class2301 var3) throws CommandSyntaxException {
       for (ServerPlayerEntity var7 : var1) {
-         var7.field4855.sendPacket(new STitlePacket(var3, TextComponentUtils.func_240645_a_(var0, var2, var7, 0)));
+         var7.connection.sendPacket(new STitlePacket(var3, TextComponentUtils.func_240645_a_(var0, var2, var7, 0)));
       }
 
       if (var1.size() != 1) {
@@ -153,7 +153,7 @@ public class Class9752 {
       STitlePacket var7 = new STitlePacket(var2, var3, var4);
 
       for (ServerPlayerEntity var9 : var1) {
-         var9.field4855.sendPacket(var7);
+         var9.connection.sendPacket(var7);
       }
 
       if (var1.size() != 1) {

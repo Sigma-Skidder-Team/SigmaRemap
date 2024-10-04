@@ -45,7 +45,7 @@ public class Class3380 extends Class3231 {
       double var6 = Math.abs(var3.getMotion().y);
       if (var6 < 0.1 && !var3.isSteppingCarefully()) {
          double var8 = 0.4 + var6 * 0.2;
-         var3.setMotion(var3.getMotion().method11347(var8, 1.0, var8));
+         var3.setMotion(var3.getMotion().mul(var8, 1.0, var8));
       }
 
       super.onEntityWalk(var1, var2, var3);

@@ -1,5 +1,9 @@
 package mapped;
 
+import lol.Class7427;
+import lol.Renderer;
+import lol.SGL;
+
 import java.awt.Font;
 import java.awt.FontFormatException;
 import java.awt.FontMetrics;

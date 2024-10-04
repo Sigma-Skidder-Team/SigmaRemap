@@ -178,7 +178,7 @@ public class ServerScoreboard extends Scoreboard {
 
       for (ServerPlayerEntity var6 : this.field29848.getPlayerList().getPlayers()) {
          for (IPacket var8 : var4) {
-            var6.field4855.sendPacket(var8);
+            var6.connection.sendPacket(var8);
          }
       }
 
@@ -203,7 +203,7 @@ public class ServerScoreboard extends Scoreboard {
 
       for (ServerPlayerEntity var6 : this.field29848.getPlayerList().getPlayers()) {
          for (IPacket var8 : var4) {
-            var6.field4855.sendPacket(var8);
+            var6.connection.sendPacket(var8);
          }
       }
 

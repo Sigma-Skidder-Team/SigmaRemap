@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import mapped.Class4299;
-import mapped.ClientColors;
+import lol.ClientColors;
 import mapped.EasingFunctions;
 import mapped.RenderUtil;
 import net.minecraft.client.Minecraft;

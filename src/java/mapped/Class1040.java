@@ -163,7 +163,7 @@ public class Class1040 extends ZombieEntity implements Class1041 {
                this.getPosYEye(),
                this.getPosZ(),
                SoundEvents.field27301,
-               this.method2864(),
+               this.getSoundCategory(),
                1.0F + this.rand.nextFloat(),
                this.rand.nextFloat() * 0.7F + 0.3F,
                false

@@ -306,7 +306,7 @@ public class PlayerInventory implements IInventory, INameable {
 
             int var6 = var2.getMaxStackSize() - this.getStackInSlot(var5).getCount();
             if (this.method4046(var5, var2.split(var6))) {
-               ((ServerPlayerEntity)this.field5444).field4855.sendPacket(new SSetSlotPacket(-2, var5, this.getStackInSlot(var5)));
+               ((ServerPlayerEntity)this.field5444).connection.sendPacket(new SSetSlotPacket(-2, var5, this.getStackInSlot(var5)));
             }
          }
       }

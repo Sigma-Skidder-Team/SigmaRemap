@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.event.priority.HigherPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import mapped.MovementUtils;
+import lol.MovementUtils;
 
 public class MinemenSpeed extends Module {
     public MinemenSpeed() {

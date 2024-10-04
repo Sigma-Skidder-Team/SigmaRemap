@@ -13,7 +13,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
 import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import net.minecraft.network.play.server.SEntityVelocityPacket;
-import mapped.MovementUtils;
+import lol.MovementUtils;
 import com.mentalfrostbyte.jello.module.impl.movement.Jesus;
 
 public class TestSpeed extends Module {

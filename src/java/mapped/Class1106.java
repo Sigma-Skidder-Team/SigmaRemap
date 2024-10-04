@@ -62,7 +62,7 @@ public class Class1106 extends Class1105 {
 
          for (ServerPlayerEntity var10 : var5) {
             if (!var10.isPotionActive(var4) || var10.getActivePotionEffect(var4).method8629() < 2 || var10.getActivePotionEffect(var4).method8628() < 1200) {
-               var10.field4855.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24570, !this.isSilent() ? 1.0F : 0.0F));
+               var10.connection.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24570, !this.isSilent() ? 1.0F : 0.0F));
                var10.addPotionEffect(new EffectInstance(var4, 6000, 2));
             }
          }

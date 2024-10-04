@@ -3,10 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import totalcross.json.JSONArray;
-import totalcross.json.JSONException;
-import totalcross.json.JSONException2;
-import totalcross.json.JSONObject;
+import totalcross.json.*;
 
 public class Configuration {
    private JSONObject field31261;

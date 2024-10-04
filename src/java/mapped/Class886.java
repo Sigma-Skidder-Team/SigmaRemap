@@ -116,7 +116,7 @@ public class Class886 extends AbstractArrowEntity {
       float var5 = 8.0F;
       if (var4 instanceof LivingEntity) {
          LivingEntity var6 = (LivingEntity)var4;
-         var5 += EnchantmentHelper.method26318(this.field5113, var6.getCreatureAttribute());
+         var5 += EnchantmentHelper.getModifierForCreature(this.field5113, var6.getCreatureAttribute());
       }
 
       Entity var12 = this.method3460();
@@ -139,7 +139,7 @@ public class Class886 extends AbstractArrowEntity {
          }
       }
 
-      this.setMotion(this.getMotion().method11347(-0.01, -0.1, -0.01));
+      this.setMotion(this.getMotion().mul(-0.01, -0.1, -0.01));
       float var13 = 1.0F;
       if (this.world instanceof ServerWorld && this.world.method6794() && EnchantmentHelper.method26338(this.field5113)) {
          BlockPos var10 = var4.getPosition();

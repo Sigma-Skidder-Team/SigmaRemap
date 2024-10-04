@@ -12,6 +12,7 @@ import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import com.mentalfrostbyte.jello.util.animation.MathHelper;
+import lol.ClientColors;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;
 import totalcross.json.JSONObject;

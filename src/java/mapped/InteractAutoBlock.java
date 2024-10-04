@@ -66,7 +66,7 @@ public class InteractAutoBlock {
       this.setBlocking(false);
    }
 
-   public boolean method36817() {
+   public boolean canBlock() {
       return !this.parent.getStringSettingValueByName("Autoblock Mode").equals("None")
          && this.mc.player.getHeldItemMainhand().getItem() instanceof SwordItem
          && !this.isBlocking();

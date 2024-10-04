@@ -18,6 +18,7 @@ import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.boss.dragon.EnderDragonPartEntity;
 import net.minecraft.entity.item.ItemFrameEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -307,7 +308,7 @@ public class EntityRendererManager {
             double var12 = -MathHelper.lerp((double)var4, var3.lastTickPosY, var3.getPosY());
             double var14 = -MathHelper.lerp((double)var4, var3.lastTickPosZ, var3.getPosZ());
 
-            for (Class908 var19 : ((Class1007)var3).method4332()) {
+            for (EnderDragonPartEntity var19 : ((Class1007)var3).method4332()) {
                var1.push();
                double var20 = var10 + MathHelper.lerp((double)var4, var19.lastTickPosX, var19.getPosX());
                double var22 = var12 + MathHelper.lerp((double)var4, var19.lastTickPosY, var19.getPosY());

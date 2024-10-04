@@ -1,5 +1,6 @@
-package mapped;
+package net.minecraft.entity.boss.dragon;
 
+import mapped.Class1007;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.Pose;
@@ -7,17 +8,17 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.IPacket;
 import net.minecraft.util.DamageSource;
 
-public class Class908 extends Entity {
+public class EnderDragonPartEntity extends Entity {
    private static String[] field5185;
-   public final Class1007 field5186;
+   public final Class1007 dragon;
    public final String field5187;
    private final EntitySize field5188;
 
-   public Class908(Class1007 var1, String var2, float var3, float var4) {
+   public EnderDragonPartEntity(Class1007 var1, String var2, float var3, float var4) {
       super(var1.getType(), var1.world);
       this.field5188 = EntitySize.method32101(var3, var4);
       this.recalculateSize();
-      this.field5186 = var1;
+      this.dragon = var1;
       this.field5187 = var2;
    }
 
@@ -40,12 +41,12 @@ public class Class908 extends Entity {
 
    @Override
    public boolean attackEntityFrom(DamageSource var1, float var2) {
-      return !this.isInvulnerableTo(var1) ? this.field5186.method4325(this, var1, var2) : false;
+      return !this.isInvulnerableTo(var1) ? this.dragon.method4325(this, var1, var2) : false;
    }
 
    @Override
    public boolean isEntityEqual(Entity var1) {
-      return this == var1 || this.field5186 == var1;
+      return this == var1 || this.dragon == var1;
    }
 
    @Override

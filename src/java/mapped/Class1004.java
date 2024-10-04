@@ -57,7 +57,7 @@ public class Class1004 extends Entity {
       this.move(MoverType.SELF, this.getMotion());
       this.setMotion(this.getMotion().scale(0.98));
       if (this.onGround) {
-         this.setMotion(this.getMotion().method11347(0.7, -0.5, 0.7));
+         this.setMotion(this.getMotion().mul(0.7, -0.5, 0.7));
       }
 
       this.field5564--;

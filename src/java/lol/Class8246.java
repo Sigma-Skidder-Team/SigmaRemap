@@ -1,4 +1,4 @@
-package mapped;
+package lol;
 
 import com.mentalfrostbyte.jello.resource.ClientResource;
 

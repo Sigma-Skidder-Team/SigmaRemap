@@ -49,7 +49,7 @@ public class Class3294 extends Class3292 {
                   SChatPacket var13 = new SChatPacket(
                      new TranslationTextComponent("build.tooHigh", var12).mergeStyle(TextFormatting.RED), ChatType.GAME_INFO, Util.DUMMY_UUID
                   );
-                  ((ServerPlayerEntity)var11).field4855.sendPacket(var13);
+                  ((ServerPlayerEntity)var11).connection.sendPacket(var13);
                }
                break;
             }

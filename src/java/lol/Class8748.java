@@ -1,4 +1,4 @@
-package mapped;
+package lol;
 
 public final class Class8748 {
    public static void method31562() {

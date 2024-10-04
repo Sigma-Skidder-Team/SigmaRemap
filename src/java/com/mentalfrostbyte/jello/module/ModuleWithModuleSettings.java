@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.module.util.InDevelopment;
 import com.mentalfrostbyte.jello.settings.Setting;
 import mapped.Class6547;
-import mapped.CJsonUtils;
+import totalcross.json.CJsonUtils;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import totalcross.json.JSONArray;
 import totalcross.json.JSONException2;

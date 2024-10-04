@@ -6,6 +6,8 @@ import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
+import lol.ClientColors;
+import totalcross.json.CJsonUtils;
 import totalcross.json.JSONObject;
 
 public class Class4292 extends Class4278 implements Class4293 {

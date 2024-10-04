@@ -7,6 +7,7 @@ import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
+import lol.ClientColors;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.glfw.GLFW;
 

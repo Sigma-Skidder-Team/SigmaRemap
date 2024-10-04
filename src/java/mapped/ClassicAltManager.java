@@ -3,6 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.account.Account;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import lol.ClientColors;
 import net.minecraft.client.Minecraft;
 
 import java.util.Random;

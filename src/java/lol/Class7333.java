@@ -1,4 +1,4 @@
-package mapped;
+package lol;
 
 public class Class7333 implements LineStripRenderer {
    private static String[] field31419;

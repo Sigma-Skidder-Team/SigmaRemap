@@ -43,14 +43,14 @@ public class Class8998 {
 
    public void method33239(IPacket<?> var1) {
       for (ServerPlayerEntity var5 : this.field41151) {
-         var5.field4855.sendPacket(var1);
+         var5.connection.sendPacket(var1);
       }
    }
 
    public void method33240(IPacket<?> var1) {
       this.method33239(var1);
       if (this.field41148 instanceof ServerPlayerEntity) {
-         ((ServerPlayerEntity)this.field41148).field4855.sendPacket(var1);
+         ((ServerPlayerEntity)this.field41148).connection.sendPacket(var1);
       }
    }
 

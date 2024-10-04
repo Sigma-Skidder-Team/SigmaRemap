@@ -56,7 +56,7 @@ public class DamageSource {
       return new Class8653("mob", var0, var1);
    }
 
-   public static DamageSource method31117(PlayerEntity var0) {
+   public static DamageSource causePlayerDamage(PlayerEntity var0) {
       return new EntityDamageSource("player", var0);
    }
 

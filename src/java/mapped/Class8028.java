@@ -1,5 +1,6 @@
 package mapped;
 
+import lol.Renderer;
 import org.lwjgl.opengl.GL11;
 
 

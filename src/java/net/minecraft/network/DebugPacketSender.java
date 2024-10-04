@@ -84,7 +84,7 @@ public class DebugPacketSender {
       SCustomPayloadPlayPacket var5 = new SCustomPayloadPlayPacket(var2, var1);
 
       for (PlayerEntity var7 : var0.method6970().method6870()) {
-         ((ServerPlayerEntity)var7).field4855.sendPacket(var5);
+         ((ServerPlayerEntity)var7).connection.sendPacket(var5);
       }
    }
 }

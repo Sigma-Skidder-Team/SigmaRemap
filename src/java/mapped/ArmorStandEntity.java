@@ -74,7 +74,7 @@ public class ArmorStandEntity extends LivingEntity {
    }
 
    private boolean method4185() {
-      return !this.method4203() && !this.method3247();
+      return !this.hasMarker() && !this.method3247();
    }
 
    @Override
@@ -204,8 +204,8 @@ public class ArmorStandEntity extends LivingEntity {
       var1.putBoolean("ShowArms", this.method4199());
       var1.putInt("DisabledSlots", this.field5585);
       var1.putBoolean("NoBasePlate", this.method4201());
-      if (this.method4203()) {
-         var1.putBoolean("Marker", this.method4203());
+      if (this.hasMarker()) {
+         var1.putBoolean("Marker", this.hasMarker());
       }
 
       var1.put("Pose", this.method4187());
@@ -309,7 +309,7 @@ public class ArmorStandEntity extends LivingEntity {
    @Override
    public ActionResultType applyPlayerInteraction(PlayerEntity var1, Vector3d var2, Hand var3) {
       ItemStack var6 = var1.getHeldItem(var3);
-      if (this.method4203() || var6.getItem() == Items.field38088) {
+      if (this.hasMarker() || var6.getItem() == Items.field38088) {
          return ActionResultType.field14820;
       } else if (var1.isSpectator()) {
          return ActionResultType.SUCCESS;
@@ -398,7 +398,7 @@ public class ArmorStandEntity extends LivingEntity {
       } else if (DamageSource.field39004.equals(source)) {
          this.remove();
          return false;
-      } else if (this.isInvulnerableTo(source) || this.field5583 || this.method4203()) {
+      } else if (this.isInvulnerableTo(source) || this.field5583 || this.hasMarker()) {
          return false;
       } else if (source.method31131()) {
          this.method4194(source);
@@ -451,7 +451,7 @@ public class ArmorStandEntity extends LivingEntity {
       if (var1 != 32) {
          super.handleStatusUpdate(var1);
       } else if (this.world.isRemote) {
-         this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26359, this.method2864(), 0.3F, 1.0F, false);
+         this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26359, this.getSoundCategory(), 0.3F, 1.0F, false);
          this.field5584 = this.world.getGameTime();
       }
    }
@@ -522,7 +522,7 @@ public class ArmorStandEntity extends LivingEntity {
    }
 
    private void method4195() {
-      this.world.playSound((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26357, this.method2864(), 1.0F, 1.0F);
+      this.world.playSound((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26357, this.getSoundCategory(), 1.0F, 1.0F);
    }
 
    @Override
@@ -539,7 +539,7 @@ public class ArmorStandEntity extends LivingEntity {
 
    @Override
    public double getYOffset() {
-      return !this.method4203() ? 0.1F : 0.0;
+      return !this.hasMarker() ? 0.1F : 0.0;
    }
 
    @Override
@@ -623,7 +623,7 @@ public class ArmorStandEntity extends LivingEntity {
 
    @Override
    public PushReaction method3422() {
-      return !this.method4203() ? super.method3422() : PushReaction.field15865;
+      return !this.hasMarker() ? super.method3422() : PushReaction.field15865;
    }
 
    private void method4196(boolean var1) {
@@ -654,7 +654,7 @@ public class ArmorStandEntity extends LivingEntity {
       this.dataManager.method35446(field5573, this.method4204(this.dataManager.<Byte>method35445(field5573), 16, var1));
    }
 
-   public boolean method4203() {
+   public boolean hasMarker() {
       return (this.dataManager.<Byte>method35445(field5573) & 16) != 0;
    }
 
@@ -724,11 +724,11 @@ public class ArmorStandEntity extends LivingEntity {
 
    @Override
    public boolean canBeCollidedWith() {
-      return super.canBeCollidedWith() && !this.method4203();
+      return super.canBeCollidedWith() && !this.hasMarker();
    }
 
    @Override
-   public boolean method3361(Entity var1) {
+   public boolean hitByEntity(Entity var1) {
       return var1 instanceof PlayerEntity && !this.world.method6785((PlayerEntity)var1, this.getPosition());
    }
 
@@ -767,7 +767,7 @@ public class ArmorStandEntity extends LivingEntity {
    public void notifyDataManagerChange(DataParameter<?> var1) {
       if (field5573.equals(var1)) {
          this.recalculateSize();
-         this.preventEntitySpawning = !this.method4203();
+         this.preventEntitySpawning = !this.hasMarker();
       }
 
       super.notifyDataManagerChange(var1);
@@ -780,7 +780,7 @@ public class ArmorStandEntity extends LivingEntity {
 
    @Override
    public EntitySize getSize(Pose var1) {
-      return this.method4217(this.method4203());
+      return this.method4217(this.hasMarker());
    }
 
    private EntitySize method4217(boolean var1) {
@@ -793,7 +793,7 @@ public class ArmorStandEntity extends LivingEntity {
 
    @Override
    public Vector3d method3287(float var1) {
-      if (!this.method4203()) {
+      if (!this.hasMarker()) {
          return super.method3287(var1);
       } else {
          AxisAlignedBB var4 = this.method4217(false).method32097(this.getPositionVec());

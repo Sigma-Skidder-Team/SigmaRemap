@@ -14,7 +14,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import com.mentalfrostbyte.jello.module.impl.movement.Speed;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import mapped.MovementUtils;
+import lol.MovementUtils;
 import com.mentalfrostbyte.jello.module.impl.movement.Jesus;
 
 public class NCPSpeed extends Module {

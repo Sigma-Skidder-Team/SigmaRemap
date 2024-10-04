@@ -3,6 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
+import lol.ClientColors;
 
 public class PNGButtonChanging extends Class4247 {
    public Class189 field20607;

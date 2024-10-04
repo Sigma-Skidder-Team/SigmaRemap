@@ -3,7 +3,6 @@ package com.mentalfrostbyte.jello.resource;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.ClientMode;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import mapped.Class7430;
 
 import java.awt.*;
 import java.io.InputStream;
@@ -25,7 +24,7 @@ public class ResourceRegistry {
     public static final ClientResource JelloMediumFont25 = getFont("com/mentalfrostbyte/gui/resources/font/helvetica-neue medium.ttf", 0, 25.0F);
     public static final ClientResource JelloMediumFont40 = getFont("com/mentalfrostbyte/gui/resources/font/helvetica-neue medium.ttf", 0, 40.0F);
     public static final ClientResource JelloMediumFont50 = getFont("com/mentalfrostbyte/gui/resources/font/helvetica-neue medium.ttf", 0, 50.0F);
-    public static final Class7430 field38868 = new Class7430(2);
+    public static final DefaultClientFont field38868 = new DefaultClientFont(2);
     public static final ClientResource JelloLightFont18_1 = getFont2("com/mentalfrostbyte/gui/resources/font/helvetica-neue-light.ttf", 0, 18.0F);
     public static final ClientResource JelloMediumFont20_1 = getFont2("com/mentalfrostbyte/gui/resources/font/helvetica-neue medium.ttf", 0, 20.0F);
 

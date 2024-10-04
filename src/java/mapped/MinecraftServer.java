@@ -931,7 +931,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
 
    private void sendDifficultyToPlayer(ServerPlayerEntity var1) {
       Class6612 var4 = var1.getServerWorld().getWorldInfo();
-      var1.field4855.sendPacket(new SServerDifficultyPacket(var4.method20047(), var4.method20048()));
+      var1.connection.sendPacket(new SServerDifficultyPacket(var4.method20047(), var4.method20048()));
    }
 
    public boolean method1341() {
@@ -1258,7 +1258,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
 
          for (ServerPlayerEntity var7 : Lists.newArrayList(var4.getPlayers())) {
             if (!var5.method14448(var7.getGameProfile())) {
-               var7.field4855.disconnect(new TranslationTextComponent("multiplayer.disconnect.not_whitelisted"));
+               var7.connection.disconnect(new TranslationTextComponent("multiplayer.disconnect.not_whitelisted"));
             }
          }
       }

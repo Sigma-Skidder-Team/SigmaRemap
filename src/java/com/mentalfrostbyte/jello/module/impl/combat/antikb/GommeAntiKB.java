@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
-import mapped.MovementUtils;
+import lol.MovementUtils;
 import net.minecraft.network.play.server.SEntityVelocityPacket;
 
 public class GommeAntiKB extends Module {

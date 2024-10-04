@@ -134,7 +134,7 @@ public class Class915 extends Entity {
                   this.getPosY(),
                   this.getPosZ(),
                   SoundEvents.field26563,
-                  this.method2864(),
+                  this.getSoundCategory(),
                   1.0F,
                   this.rand.nextFloat() * 0.2F + 0.85F,
                   false

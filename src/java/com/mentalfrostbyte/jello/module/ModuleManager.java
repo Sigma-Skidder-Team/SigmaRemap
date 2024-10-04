@@ -24,6 +24,7 @@ import com.mentalfrostbyte.jello.module.impl.render.jello.ESP;
 import com.mentalfrostbyte.jello.module.impl.world.*;
 import com.mentalfrostbyte.jello.settings.Setting;
 import mapped.*;
+import totalcross.json.CJsonUtils;
 import totalcross.json.JSONArray;
 import totalcross.json.JSONException2;
 import totalcross.json.JSONObject;

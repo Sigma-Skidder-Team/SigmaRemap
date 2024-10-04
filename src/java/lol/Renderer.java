@@ -1,4 +1,4 @@
-package mapped;
+package lol;
 
 public class Renderer {
    public static final int field35354 = 1;

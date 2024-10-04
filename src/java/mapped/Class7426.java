@@ -1,5 +1,9 @@
 package mapped;
 
+import lol.Class7427;
+import lol.Renderer;
+import lol.SGL;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;

@@ -11,7 +11,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.InvManagerUtils;
-import mapped.MovementUtils;
+import lol.MovementUtils;
 import mapped.RotationHelper;
 import mapped.VoxelShape;
 import net.minecraft.item.ItemStack;

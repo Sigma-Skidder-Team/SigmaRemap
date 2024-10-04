@@ -16,6 +16,7 @@ import com.mentalfrostbyte.jello.util.animation.Direction;
 import com.mojang.authlib.GameProfile;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
+import lol.ClientColors;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;

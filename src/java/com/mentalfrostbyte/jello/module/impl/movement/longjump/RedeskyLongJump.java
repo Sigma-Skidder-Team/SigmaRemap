@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
-import mapped.*;
+import lol.MovementUtils;
 import net.minecraft.util.math.BlockPos;
 
 public class RedeskyLongJump extends Module {

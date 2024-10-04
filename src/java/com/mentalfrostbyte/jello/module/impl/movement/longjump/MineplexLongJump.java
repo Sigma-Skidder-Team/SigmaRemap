@@ -10,7 +10,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
-import mapped.MovementUtils;
+import lol.MovementUtils;
 import net.minecraft.util.math.BlockPos;
 
 public class MineplexLongJump extends Module {

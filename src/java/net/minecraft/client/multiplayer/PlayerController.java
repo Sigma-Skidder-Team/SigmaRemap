@@ -310,7 +310,7 @@ public class PlayerController {
       this.syncCurrentPlayItem();
       this.connection.sendPacket(new CUseEntityPacket(var2, var1.isSneaking()));
       if (this.currentGameType != GameType.SPECTATOR) {
-         var1.method2817(var2);
+         var1.attackTargetEntityWithCurrentItem(var2);
          var1.resetCooldown();
       }
    }

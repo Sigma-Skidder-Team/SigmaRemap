@@ -169,7 +169,7 @@ public abstract class Class6395 {
       this.method19456(new SPlayerListItemPacket(SPlayerListItemPacket.Action.ADD_PLAYER, var2));
 
       for (int var20 = 0; var20 < this.field27991.size(); var20++) {
-         var2.field4855.sendPacket(new SPlayerListItemPacket(SPlayerListItemPacket.Action.ADD_PLAYER, this.field27991.get(var20)));
+         var2.connection.sendPacket(new SPlayerListItemPacket(SPlayerListItemPacket.Action.ADD_PLAYER, this.field27991.get(var20)));
       }
 
       var12.method6921(var2);
@@ -223,14 +223,14 @@ public abstract class Class6395 {
       HashSet var5 = Sets.newHashSet();
 
       for (ScorePlayerTeam var7 : var1.method20997()) {
-         var2.field4855.sendPacket(new STeamsPacket(var7, 0));
+         var2.connection.sendPacket(new STeamsPacket(var7, 0));
       }
 
       for (int var10 = 0; var10 < 19; var10++) {
          Class8375 var11 = var1.method20989(var10);
          if (var11 != null && !var5.contains(var11)) {
             for (IPacket var9 : var1.method21023(var11)) {
-               var2.field4855.sendPacket(var9);
+               var2.connection.sendPacket(var9);
             }
 
             var5.add(var11);
@@ -353,7 +353,7 @@ public abstract class Class6395 {
       }
 
       for (ServerPlayerEntity var8 : var5) {
-         var8.field4855.disconnect(new TranslationTextComponent("multiplayer.disconnect.duplicate_login"));
+         var8.connection.disconnect(new TranslationTextComponent("multiplayer.disconnect.duplicate_login"));
       }
 
       ServerWorld var11 = this.field27990.func_241755_D_();
@@ -390,7 +390,7 @@ public abstract class Class6395 {
       }
 
       ServerPlayerEntity var12 = new ServerPlayerEntity(this.field27990, var10, var1.getGameProfile(), (Class9081)var11);
-      var12.field4855 = var1.field4855;
+      var12.connection = var1.connection;
       var12.method2789(var1, var2);
       var12.setEntityId(var1.getEntityId());
       var12.method2968(var1.getPrimaryHand());
@@ -403,7 +403,7 @@ public abstract class Class6395 {
       boolean var19 = false;
       if (!var9.isPresent()) {
          if (var5 != null) {
-            var12.field4855.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24560, 0.0F));
+            var12.connection.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24560, 0.0F));
          }
       } else {
          BlockState var20 = var10.getBlockState(var5);
@@ -427,7 +427,7 @@ public abstract class Class6395 {
       }
 
       Class6612 var21 = var12.world.getWorldInfo();
-      var12.field4855
+      var12.connection
          .sendPacket(
             new SRespawnPacket(
                var12.world.method6812(),
@@ -440,10 +440,10 @@ public abstract class Class6395 {
                var2
             )
          );
-      var12.field4855.method15668(var12.getPosX(), var12.getPosY(), var12.getPosZ(), var12.rotationYaw, var12.rotationPitch);
-      var12.field4855.sendPacket(new SWorldSpawnChangedPacket(var10.getSpawnPoint(), var10.method6948()));
-      var12.field4855.sendPacket(new SServerDifficultyPacket(var21.method20047(), var21.method20048()));
-      var12.field4855.sendPacket(new SSetExperiencePacket(var12.field4922, var12.field4921, var12.field4920));
+      var12.connection.method15668(var12.getPosX(), var12.getPosY(), var12.getPosZ(), var12.rotationYaw, var12.rotationPitch);
+      var12.connection.sendPacket(new SWorldSpawnChangedPacket(var10.getSpawnPoint(), var10.method6948()));
+      var12.connection.sendPacket(new SServerDifficultyPacket(var21.method20047(), var21.method20048()));
+      var12.connection.sendPacket(new SSetExperiencePacket(var12.field4922, var12.field4921, var12.field4920));
       this.method19472(var12, var10);
       this.method19454(var12);
       var10.method6922(var12);
@@ -452,7 +452,7 @@ public abstract class Class6395 {
       var12.method2729();
       var12.setHealth(var12.getHealth());
       if (var19) {
-         var12.field4855
+         var12.connection
             .sendPacket(
                new SPlaySoundEffectPacket(
                   SoundEvents.field27014, Class2266.field14732, (double)var5.getX(), (double)var5.getY(), (double)var5.getZ(), 1.0F, 1.0F
@@ -478,7 +478,7 @@ public abstract class Class6395 {
 
    public void method19456(IPacket<?> var1) {
       for (int var4 = 0; var4 < this.field27991.size(); var4++) {
-         this.field27991.get(var4).field4855.sendPacket(var1);
+         this.field27991.get(var4).connection.sendPacket(var1);
       }
    }
 
@@ -486,7 +486,7 @@ public abstract class Class6395 {
       for (int var5 = 0; var5 < this.field27991.size(); var5++) {
          ServerPlayerEntity var6 = this.field27991.get(var5);
          if (var6.world.getDimensionKey() == var2) {
-            var6.field4855.sendPacket(var1);
+            var6.connection.sendPacket(var1);
          }
       }
    }
@@ -552,7 +552,7 @@ public abstract class Class6395 {
    }
 
    private void method19463(ServerPlayerEntity var1, int var2) {
-      if (var1.field4855 != null) {
+      if (var1.connection != null) {
          byte var5;
          if (var2 > 0) {
             if (var2 < 4) {
@@ -564,7 +564,7 @@ public abstract class Class6395 {
             var5 = 24;
          }
 
-         var1.field4855.sendPacket(new SEntityStatusPacket(var1, var5));
+         var1.connection.sendPacket(new SEntityStatusPacket(var1, var5));
       }
 
       this.field27990.getCommandManager().method18837(var1);
@@ -597,7 +597,7 @@ public abstract class Class6395 {
             double var18 = var4 - var15.getPosY();
             double var20 = var6 - var15.getPosZ();
             if (var16 * var16 + var18 * var18 + var20 * var20 < var8 * var8) {
-               var15.field4855.sendPacket(var11);
+               var15.connection.sendPacket(var11);
             }
          }
       }
@@ -630,20 +630,20 @@ public abstract class Class6395 {
 
    public void method19472(ServerPlayerEntity var1, ServerWorld var2) {
       WorldBorder var5 = this.field27990.func_241755_D_().getWorldBorder();
-      var1.field4855.sendPacket(new SWorldBorderPacket(var5, Class1864.field10036));
-      var1.field4855.sendPacket(new SUpdateTimePacket(var2.getGameTime(), var2.method6784(), var2.getGameRules().getBoolean(GameRules.field24232)));
-      var1.field4855.sendPacket(new SWorldSpawnChangedPacket(var2.getSpawnPoint(), var2.method6948()));
+      var1.connection.sendPacket(new SWorldBorderPacket(var5, Class1864.field10036));
+      var1.connection.sendPacket(new SUpdateTimePacket(var2.getGameTime(), var2.method6784(), var2.getGameRules().getBoolean(GameRules.field24232)));
+      var1.connection.sendPacket(new SWorldSpawnChangedPacket(var2.getSpawnPoint(), var2.method6948()));
       if (var2.method6795()) {
-         var1.field4855.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24561, 0.0F));
-         var1.field4855.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24567, var2.method6792(1.0F)));
-         var1.field4855.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24568, var2.method6790(1.0F)));
+         var1.connection.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24561, 0.0F));
+         var1.connection.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24567, var2.method6792(1.0F)));
+         var1.connection.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24568, var2.method6790(1.0F)));
       }
    }
 
    public void method19473(ServerPlayerEntity var1) {
       var1.method2771(var1.container);
       var1.method2784();
-      var1.field4855.sendPacket(new SHeldItemChangePacket(var1.inventory.currentItem));
+      var1.connection.sendPacket(new SHeldItemChangePacket(var1.inventory.currentItem));
    }
 
    public int method19474() {
@@ -708,7 +708,7 @@ public abstract class Class6395 {
 
    public void method19483() {
       for (int var3 = 0; var3 < this.field27991.size(); var3++) {
-         this.field27991.get(var3).field4855.disconnect(new TranslationTextComponent("multiplayer.disconnect.server_shutdown"));
+         this.field27991.get(var3).connection.disconnect(new TranslationTextComponent("multiplayer.disconnect.server_shutdown"));
       }
    }
 
@@ -784,7 +784,7 @@ public abstract class Class6395 {
       SUpdateRecipesPacket var6 = new SUpdateRecipesPacket(this.field27990.method1407().method1036());
 
       for (ServerPlayerEntity var5 : this.field27991) {
-         var5.field4855.sendPacket(var6);
+         var5.connection.sendPacket(var6);
          var5.method2810().method21382(var5);
       }
    }

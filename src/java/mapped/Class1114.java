@@ -100,7 +100,7 @@ public class Class1114 extends Class1113 {
    public void tick() {
       super.tick();
       if (!this.method5364()) {
-         this.setMotion(this.getMotion().method11347(1.0, 0.6, 1.0));
+         this.setMotion(this.getMotion().mul(1.0, 0.6, 1.0));
       } else {
          this.setMotion(Vector3d.ZERO);
          this.setRawPosition(this.getPosX(), (double) MathHelper.floor(this.getPosY()) + 1.0 - (double)this.getHeight(), this.getPosZ());

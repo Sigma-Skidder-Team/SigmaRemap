@@ -190,7 +190,7 @@ public class Class1105 extends Class1009 {
                this.field6070 = 2.0F;
                Vector3d var3 = this.getMotion();
                if (var3.y > 0.0 && this.field6075 && !this.isSilent()) {
-                  this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), this.method5307(), this.method2864(), 1.0F, 1.0F, false);
+                  this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), this.method5307(), this.getSoundCategory(), 1.0F, 1.0F, false);
                }
 
                this.field6075 = var3.y < 0.0 && this.world.method6765(this.getPosition().down(), this);

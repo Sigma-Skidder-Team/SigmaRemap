@@ -7,6 +7,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.boss.dragon.EnderDragonPartEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
@@ -37,15 +38,15 @@ public class Class1007 extends MobEntity implements Class1008 {
    private static final Class8522 field5620 = new Class8522().method30203(64.0);
    public final double[][] field5621 = new double[64][3];
    public int field5622 = -1;
-   private final Class908[] field5623;
-   public final Class908 field5624;
-   private final Class908 field5625;
-   private final Class908 field5626;
-   private final Class908 field5627;
-   private final Class908 field5628;
-   private final Class908 field5629;
-   private final Class908 field5630;
-   private final Class908 field5631;
+   private final EnderDragonPartEntity[] field5623;
+   public final EnderDragonPartEntity field5624;
+   private final EnderDragonPartEntity field5625;
+   private final EnderDragonPartEntity field5626;
+   private final EnderDragonPartEntity field5627;
+   private final EnderDragonPartEntity field5628;
+   private final EnderDragonPartEntity field5629;
+   private final EnderDragonPartEntity field5630;
+   private final EnderDragonPartEntity field5631;
    public float field5632;
    public float field5633;
    public boolean field5634;
@@ -62,15 +63,15 @@ public class Class1007 extends MobEntity implements Class1008 {
 
    public Class1007(EntityType<? extends Class1007> var1, World var2) {
       super(EntityType.field41024, var2);
-      this.field5624 = new Class908(this, "head", 1.0F, 1.0F);
-      this.field5625 = new Class908(this, "neck", 3.0F, 3.0F);
-      this.field5626 = new Class908(this, "body", 5.0F, 3.0F);
-      this.field5627 = new Class908(this, "tail", 2.0F, 2.0F);
-      this.field5628 = new Class908(this, "tail", 2.0F, 2.0F);
-      this.field5629 = new Class908(this, "tail", 2.0F, 2.0F);
-      this.field5630 = new Class908(this, "wing", 4.0F, 2.0F);
-      this.field5631 = new Class908(this, "wing", 4.0F, 2.0F);
-      this.field5623 = new Class908[]{
+      this.field5624 = new EnderDragonPartEntity(this, "head", 1.0F, 1.0F);
+      this.field5625 = new EnderDragonPartEntity(this, "neck", 3.0F, 3.0F);
+      this.field5626 = new EnderDragonPartEntity(this, "body", 5.0F, 3.0F);
+      this.field5627 = new EnderDragonPartEntity(this, "tail", 2.0F, 2.0F);
+      this.field5628 = new EnderDragonPartEntity(this, "tail", 2.0F, 2.0F);
+      this.field5629 = new EnderDragonPartEntity(this, "tail", 2.0F, 2.0F);
+      this.field5630 = new EnderDragonPartEntity(this, "wing", 4.0F, 2.0F);
+      this.field5631 = new EnderDragonPartEntity(this, "wing", 4.0F, 2.0F);
+      this.field5623 = new EnderDragonPartEntity[]{
          this.field5624, this.field5625, this.field5626, this.field5627, this.field5628, this.field5629, this.field5630, this.field5631
       };
       this.setHealth(this.method3075());
@@ -128,7 +129,7 @@ public class Class1007 extends MobEntity implements Class1008 {
                      this.getPosY(),
                      this.getPosZ(),
                      SoundEvents.field26539,
-                     this.method2864(),
+                     this.getSoundCategory(),
                      5.0F,
                      0.8F + this.rand.nextFloat() * 0.3F,
                      false
@@ -142,7 +143,7 @@ public class Class1007 extends MobEntity implements Class1008 {
                      this.getPosY(),
                      this.getPosZ(),
                      SoundEvents.field26540,
-                     this.method2864(),
+                     this.getSoundCategory(),
                      2.5F,
                      0.8F + this.rand.nextFloat() * 0.3F,
                      false
@@ -230,7 +231,7 @@ public class Class1007 extends MobEntity implements Class1008 {
 
                   Vector3d var27 = this.getMotion().method11333();
                   double var28 = 0.8 + 0.15 * (var27.dotProduct(var23) + 1.0) / 2.0;
-                  this.setMotion(this.getMotion().method11347(var28, 0.91F, var28));
+                  this.setMotion(this.getMotion().mul(var28, 0.91F, var28));
                }
             } else {
                if (this.newPosRotationIncrements > 0) {
@@ -283,7 +284,7 @@ public class Class1007 extends MobEntity implements Class1008 {
             double[] var55 = this.method4317(5, 1.0F);
 
             for (int var38 = 0; var38 < 3; var38++) {
-               Class908 var39 = null;
+               EnderDragonPartEntity var39 = null;
                if (var38 == 0) {
                   var39 = this.field5627;
                }
@@ -347,7 +348,7 @@ public class Class1007 extends MobEntity implements Class1008 {
       }
    }
 
-   private void method4318(Class908 var1, double var2, double var4, double var6) {
+   private void method4318(EnderDragonPartEntity var1, double var2, double var4, double var6) {
       var1.setPosition(this.getPosX() + var2, this.getPosY() + var4, this.getPosZ() + var6);
    }
 
@@ -457,7 +458,7 @@ public class Class1007 extends MobEntity implements Class1008 {
       return var10;
    }
 
-   public boolean method4325(Class908 var1, DamageSource var2, float var3) {
+   public boolean method4325(EnderDragonPartEntity var1, DamageSource var2, float var3) {
       if (this.field5639.method32672().method23368() == Class9598.field44905) {
          return false;
       } else {
@@ -764,7 +765,7 @@ public class Class1007 extends MobEntity implements Class1008 {
    public void method3447() {
    }
 
-   public Class908[] method4332() {
+   public EnderDragonPartEntity[] method4332() {
       return this.field5623;
    }
 
@@ -774,7 +775,7 @@ public class Class1007 extends MobEntity implements Class1008 {
    }
 
    @Override
-   public Class2266 method2864() {
+   public Class2266 getSoundCategory() {
       return Class2266.field14733;
    }
 

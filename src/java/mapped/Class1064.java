@@ -198,7 +198,7 @@ public class Class1064 extends Class1066 implements Class1022 {
                   this.getPosY(),
                   this.getPosZ(),
                   this.method4894(),
-                  this.method2864(),
+                  this.getSoundCategory(),
                   1.0F,
                   1.0F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F
                );
@@ -376,7 +376,7 @@ public class Class1064 extends Class1066 implements Class1022 {
                this.getPosY(),
                this.getPosZ(),
                SoundEvents.field26740,
-               this.method2864(),
+               this.getSoundCategory(),
                1.0F,
                1.0F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F
             );
