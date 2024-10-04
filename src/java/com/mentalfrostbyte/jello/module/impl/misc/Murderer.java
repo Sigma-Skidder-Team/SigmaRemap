@@ -10,7 +10,7 @@ import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mojang.datafixers.util.Pair;
 import mapped.RenderUtil;
-import mapped.Texture;
+import lol.Texture;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;

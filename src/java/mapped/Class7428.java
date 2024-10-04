@@ -1,6 +1,7 @@
 package mapped;
 
 import lol.Class7427;
+import lol.Log;
 
 import java.io.UnsupportedEncodingException;
 

@@ -1,8 +1,6 @@
 package mapped;
 
-import lol.LineStripRenderer;
-import lol.Renderer;
-import lol.SGL;
+import lol.*;
 
 public final class Class9247 {
     private static SGL field42549 = Renderer.get();

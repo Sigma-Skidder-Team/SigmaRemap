@@ -3,17 +3,13 @@ package com.mentalfrostbyte.jello.unmapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.util.ImageUtil;
 import com.mentalfrostbyte.jello.util.TextureUtil;
-import mapped.Texture;
+import lol.Texture;
 import mapped.TextureLoader;
-import org.apache.commons.codec.digest.DigestUtils;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 public class ResourcesDecrypter {
     public static final String field32485 = "com/mentalfrostbyte/gui/resources/";

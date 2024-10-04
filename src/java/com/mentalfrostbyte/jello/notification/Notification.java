@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.notification;
 
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
-import mapped.Texture;
+import lol.Texture;
 
 import java.awt.*;
 

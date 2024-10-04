@@ -1,4 +1,4 @@
-package mapped;
+package lol;
 
 import java.awt.Color;
 import java.awt.Graphics2D;

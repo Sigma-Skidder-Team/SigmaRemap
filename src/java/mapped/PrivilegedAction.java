@@ -1,5 +1,8 @@
 package mapped;
 
+import lol.ImageDataFactory;
+import lol.Log;
+
 public final class PrivilegedAction implements java.security.PrivilegedAction {
    @Override
    public Object run() {

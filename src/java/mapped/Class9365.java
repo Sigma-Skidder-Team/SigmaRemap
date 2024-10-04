@@ -1,7 +1,9 @@
 package mapped;
 
+import lol.Log;
 import lol.Renderer;
 import lol.SGL;
+import lol.TextureImpl;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

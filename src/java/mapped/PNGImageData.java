@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
+
+import lol.LoadableImageData;
 import org.lwjgl.BufferUtils;
 
 public class PNGImageData implements LoadableImageData {

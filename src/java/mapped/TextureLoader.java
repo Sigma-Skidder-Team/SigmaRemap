@@ -1,5 +1,8 @@
 package mapped;
 
+import lol.InternalTextureLoader;
+import lol.Texture;
+
 import java.io.IOException;
 import java.io.InputStream;
 

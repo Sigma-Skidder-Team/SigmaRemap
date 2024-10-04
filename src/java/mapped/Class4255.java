@@ -2,6 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import lol.ClientColors;
+import lol.Texture;
 import org.lwjgl.opengl.GL11;
 
 public class Class4255 extends Class4247 {

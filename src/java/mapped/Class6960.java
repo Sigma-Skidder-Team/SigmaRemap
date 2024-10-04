@@ -7,6 +7,8 @@ import java.io.InputStream;
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+
+import lol.LoadableImageData;
 import org.lwjgl.BufferUtils;
 
 public class Class6960 implements LoadableImageData {

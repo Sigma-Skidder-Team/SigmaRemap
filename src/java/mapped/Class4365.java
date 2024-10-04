@@ -7,6 +7,7 @@ import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
+import lol.Texture;
 import net.minecraft.client.Minecraft;
 
 public class Class4365 extends Class4247 {

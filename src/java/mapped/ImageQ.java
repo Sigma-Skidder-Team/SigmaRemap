@@ -3,6 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
+import lol.Texture;
 
 public class ImageQ extends Class4278 {
    private static String[] field20736;

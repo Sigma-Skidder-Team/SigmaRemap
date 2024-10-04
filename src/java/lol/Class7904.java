@@ -1,4 +1,4 @@
-package mapped;
+package lol;
 
 import java.io.InputStream;
 import java.net.URL;

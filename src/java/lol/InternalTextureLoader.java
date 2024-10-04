@@ -1,4 +1,4 @@
-package mapped;
+package lol;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -12,8 +12,7 @@ import java.nio.IntBuffer;
 import java.util.HashMap;
 import java.util.Iterator;
 
-import lol.Renderer;
-import lol.SGL;
+import mapped.*;
 import org.lwjgl.BufferUtils;
 
 public class InternalTextureLoader {

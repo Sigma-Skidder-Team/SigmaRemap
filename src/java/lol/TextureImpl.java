@@ -1,12 +1,10 @@
-package mapped;
+package lol;
 
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.IntBuffer;
 
-import lol.Renderer;
-import lol.SGL;
 import org.lwjgl.BufferUtils;
 
 public class TextureImpl implements Texture {

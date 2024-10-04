@@ -1,5 +1,7 @@
 package mapped;
 
+import lol.Texture;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;

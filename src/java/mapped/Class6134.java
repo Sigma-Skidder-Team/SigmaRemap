@@ -1,5 +1,7 @@
 package mapped;
 
+import lol.Log;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

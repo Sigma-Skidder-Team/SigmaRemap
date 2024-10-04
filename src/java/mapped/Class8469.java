@@ -1,5 +1,8 @@
 package mapped;
 
+import lol.Log;
+import lol.ResourceLoader;
+
 import java.io.InputStream;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;

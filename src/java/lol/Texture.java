@@ -1,4 +1,4 @@
-package mapped;
+package lol;
 
 public interface Texture {
    boolean hasAlpha();

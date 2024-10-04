@@ -2,6 +2,7 @@ package mapped;
 
 import lol.Renderer;
 import lol.SGL;
+import lol.TextureImpl;
 
 import java.awt.AlphaComposite;
 import java.awt.Graphics2D;

@@ -1,5 +1,8 @@
 package mapped;
 
+import lol.Log;
+import lol.ResourceLoader;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.HashMap;

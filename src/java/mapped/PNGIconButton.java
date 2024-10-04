@@ -4,6 +4,7 @@ import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
+import lol.Texture;
 import org.lwjgl.opengl.GL11;
 
 public class PNGIconButton extends ButtonPanel {

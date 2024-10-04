@@ -1,7 +1,6 @@
 package com.mentalfrostbyte.jello.util;
 
-import lol.Renderer;
-import mapped.*;
+import lol.*;
 import org.lwjgl.opengl.GL11;
 
 import java.awt.*;

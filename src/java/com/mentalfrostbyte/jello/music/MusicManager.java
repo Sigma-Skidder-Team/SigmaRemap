@@ -20,6 +20,7 @@ import com.sapher.youtubedl.YoutubeDLResponse;
 import com.sun.jna.platform.win32.Advapi32Util;
 import com.sun.jna.platform.win32.WinReg;
 import lol.ClientColors;
+import lol.Texture;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;

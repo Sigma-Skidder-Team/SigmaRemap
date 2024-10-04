@@ -3,6 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import lol.Texture;
 
 public class ClassicDecryption {
    public static final String unused1 = "com/mentalfrostbyte/gui/resources/font/SF-UI-Display-Regular.ttf";

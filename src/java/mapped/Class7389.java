@@ -1,5 +1,7 @@
 package mapped;
 
+import lol.Log;
+
 import java.util.ArrayList;
 
 public class Class7389 implements Renderable {

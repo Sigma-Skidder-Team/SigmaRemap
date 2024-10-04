@@ -1,5 +1,7 @@
 package mapped;
 
+import lol.Log;
+
 import java.security.PrivilegedAction;
 
 public final class Class2540 implements PrivilegedAction {

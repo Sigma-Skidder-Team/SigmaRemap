@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.zip.GZIPInputStream;
 
+import lol.Log;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;

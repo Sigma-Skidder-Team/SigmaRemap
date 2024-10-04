@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.network;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.util.TextureUtil;
-import mapped.Texture;
+import lol.Texture;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;

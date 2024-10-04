@@ -7,6 +7,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mojang.blaze3d.systems.RenderSystem;
 import lol.ClientColors;
+import lol.TextureImpl;
 import mapped.*;
 import net.minecraft.tileentity.TileEntity;
 import org.lwjgl.opengl.GL11;

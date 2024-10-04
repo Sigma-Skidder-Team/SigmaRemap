@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import lol.ClientColors;
+import lol.Texture;
 import org.lwjgl.opengl.GL11;
 
 public class Class4254 extends Class4247 {

@@ -1,5 +1,8 @@
 package mapped;
 
+import lol.ImageData;
+import lol.LoadableImageData;
+
 import java.nio.ByteBuffer;
 
 public class Class6956 implements ImageData {

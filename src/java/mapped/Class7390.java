@@ -5,8 +5,7 @@ import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
 
-import lol.Renderer;
-import lol.SGL;
+import lol.*;
 import org.lwjgl.BufferUtils;
 
 

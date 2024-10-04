@@ -1,4 +1,9 @@
-package mapped;
+package lol;
+
+import mapped.Class6959;
+import mapped.Class6960;
+import mapped.PNGImageData;
+import mapped.PrivilegedAction;
 
 import java.security.AccessController;
 

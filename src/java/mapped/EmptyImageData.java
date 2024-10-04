@@ -1,6 +1,9 @@
 package mapped;
 
 import java.nio.ByteBuffer;
+
+import lol.ImageData;
+import lol.InternalTextureLoader;
 import org.lwjgl.BufferUtils;
 
 public class EmptyImageData implements ImageData {

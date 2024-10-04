@@ -2,6 +2,8 @@ package mapped;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+
+import lol.ImageData;
 import org.lwjgl.BufferUtils;
 
 public class ImageBuffer implements ImageData {

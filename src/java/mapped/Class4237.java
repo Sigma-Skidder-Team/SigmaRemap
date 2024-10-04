@@ -2,6 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import lol.Texture;
 
 public class Class4237 extends Class4236 {
    private static String[] field20579;

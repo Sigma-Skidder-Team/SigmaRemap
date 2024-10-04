@@ -3,6 +3,9 @@ package mapped;
 import java.nio.Buffer;
 import java.nio.IntBuffer;
 
+import lol.InternalTextureLoader;
+import lol.Log;
+import lol.Texture;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.EXTFramebufferObject;
 import org.lwjgl.opengl.GL11;

@@ -2,6 +2,7 @@ package mapped;
 
 import lol.Renderer;
 import lol.SGL;
+import lol.TextureImpl;
 
 public class Class4536 {
    public static SGL field21855 = Renderer.get();

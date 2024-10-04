@@ -4,6 +4,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ClassicScreenk;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import lol.Texture;
 import net.minecraft.client.Minecraft;
 
 import java.util.ArrayList;

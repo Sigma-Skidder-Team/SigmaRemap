@@ -2,8 +2,7 @@ package mapped;
 
 
 
-import lol.Renderer;
-import lol.SGL;
+import lol.*;
 
 import java.io.IOException;
 import java.io.InputStream;

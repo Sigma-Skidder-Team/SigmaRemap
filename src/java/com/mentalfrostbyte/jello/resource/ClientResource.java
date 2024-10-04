@@ -4,7 +4,6 @@ import com.mentalfrostbyte.jello.util.ImageUtil;
 import com.mentalfrostbyte.jello.util.TextureUtil;
 import lol.*;
 import mapped.Color;
-import mapped.*;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
