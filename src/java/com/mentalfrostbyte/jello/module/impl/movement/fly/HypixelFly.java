@@ -4,7 +4,6 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.*;
 import com.mentalfrostbyte.jello.event.priority.HigestPriority;
-import com.mentalfrostbyte.jello.event.priority.LowestPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.world.Timer;
@@ -12,11 +11,9 @@ import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import lol.MovementUtils;
 import mapped.*;
 import net.minecraft.network.IPacket;
-import net.minecraft.network.play.client.CClickWindowPacket;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
@@ -26,7 +23,7 @@ import java.util.List;
 
 public class HypixelFly extends Module {
     private double flySpeed;
-    private float newTimerSPeed;
+    private float duration;
     private boolean grounded;
     private int field23563;
 
@@ -42,10 +39,10 @@ public class HypixelFly extends Module {
     @Override
     public void onEnable() {
         String var3 = this.getStringSettingValueByName("Mode");
-        this.newTimerSPeed = 1.0F;
+        this.duration = 1.0F;
         this.field23563 = -1;
         if (mc.player.onGround || MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
-            this.newTimerSPeed = this.getNumberValueBySettingName("Timer Boost");
+            this.duration = this.getNumberValueBySettingName("Timer Boost");
         }
 
         if (mc.player.onGround) {
@@ -76,7 +73,7 @@ public class HypixelFly extends Module {
     public void onDisable() {
         double var3 = MovementUtils.getSpeed();
         MovementUtils.strafe(var3 * 0.7);
-        this.newTimerSPeed = 1.0F;
+        this.duration = 1.0F;
         mc.timer.timerSpeed = 1.0F;
         this.field23563 = -1;
     }
@@ -112,14 +109,14 @@ public class HypixelFly extends Module {
     @EventTarget
     public void onMove(EventMove event) {
         String curMode = this.getStringSettingValueByName("Mode");
-        float timerBoostVal = this.getNumberValueBySettingName("Timer Boost");
-        this.newTimerSPeed = (float) ((double) this.newTimerSPeed - 0.01);
-        if (this.newTimerSPeed < timerBoostVal - this.getNumberValueBySettingName("Timer Duration") || this.newTimerSPeed < 1.0F) {
-            this.newTimerSPeed = 1.0F;
+        float boost = this.getNumberValueBySettingName("Timer Boost");
+        this.duration = (float) ((double) this.duration - 0.01);
+        if (this.duration < boost - this.getNumberValueBySettingName("Timer Duration") || this.duration < 1.0F) {
+            this.duration = 1.0F;
         }
 
         if (!Client.getInstance().getModuleManager().getModuleByClass(Timer.class).isEnabled()) {
-            mc.timer.timerSpeed = this.newTimerSPeed;
+            mc.timer.timerSpeed = this.duration;
         }
 
         if (this.grounded) {
