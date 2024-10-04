@@ -139,7 +139,7 @@ public class OldHitting extends Module {
             if (event.method13926() && event.getHand() == HandSide.LEFT && event.getItemStack().getItem() instanceof ShieldItem) {
                 event.renderBlocking(false);
             } else if (event.getHand() != HandSide.LEFT || !field23408) {
-                if (field23408 && event.method13926() && this.isEnabled()) {
+                if (field23408 && event.method13926() && this.isEnabled() && event.getItemStack().getItem() instanceof SwordItem) {
                     event.setCancelled(true);
                     switch (this.getStringSettingValueByName("Animation")) {
                         case "Vanilla":
