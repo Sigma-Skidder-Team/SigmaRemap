@@ -96,7 +96,6 @@ public class NoFall extends Module {
                             }
 
                             if (mc.player.getMotion().y < -0.1) {
-
                                 this.field23509 = this.field23509 - mc.player.getMotion().y;
                             }
 
