@@ -26,7 +26,7 @@ public class ConnectingScreen extends Screen {
    private long field6940 = -1L;
 
    public ConnectingScreen(Screen var1, Minecraft var2, ServerData var3) {
-      super(NarratorChatListener.field29300);
+      super(NarratorChatListener.EMPTY);
       this.mc = var2;
       this.field6938 = var1;
       Class9375 var6 = Class9375.method35574(var3.serverIP);
@@ -36,7 +36,7 @@ public class ConnectingScreen extends Screen {
    }
 
    public ConnectingScreen(Screen var1, Minecraft var2, String var3, int var4) {
-      super(NarratorChatListener.field29300);
+      super(NarratorChatListener.EMPTY);
       this.mc = var2;
       this.field6938 = var1;
       var2.unloadWorld();

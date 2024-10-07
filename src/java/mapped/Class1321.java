@@ -32,7 +32,7 @@ public class Class1321 extends Screen {
    private JigsawTileEntity.OrientationType field6992;
 
    public Class1321(JigsawTileEntity var1) {
-      super(NarratorChatListener.field29300);
+      super(NarratorChatListener.EMPTY);
       this.field6983 = var1;
    }
 

@@ -389,13 +389,13 @@ public class ChunkManager extends Class1648 implements Class1650 {
 
    public CompletableFuture<Either<IChunk, Class7022>> method6550(Class8641 var1, ChunkStatus var2) {
       ChunkPos var5 = var1.method31056();
-      if (var2 != ChunkStatus.field42133) {
+      if (var2 != ChunkStatus.EMPTY) {
          CompletableFuture<Either<IChunk, Class7022>> var6 = var1.method31053(var2.method34299(), this);
          return var6.<Either<IChunk, Class7022>>thenComposeAsync(var4 -> {
             Optional var7 = var4.left();
             if (var7.isPresent()) {
                if (var2 == ChunkStatus.LIGHT) {
-                  this.field8968.registerWithLevel(TicketType.field38484, var5, 33 + ChunkStatus.method34296(ChunkStatus.field42141), var5);
+                  this.field8968.registerWithLevel(TicketType.field38484, var5, 33 + ChunkStatus.method34296(ChunkStatus.FEATURES), var5);
                }
 
                IChunk var8 = (IChunk)var7.get();
@@ -497,7 +497,7 @@ public class ChunkManager extends Class1648 implements Class1650 {
       this.field8958
          .method1641(
             Util.method38515(
-               () -> this.field8968.releaseWithLevel(TicketType.field38484, var1, 33 + ChunkStatus.method34296(ChunkStatus.field42141), var1),
+               () -> this.field8968.releaseWithLevel(TicketType.field38484, var1, 33 + ChunkStatus.method34296(ChunkStatus.FEATURES), var1),
                () -> "release light ticket " + var1
             )
          );
@@ -608,7 +608,7 @@ public class ChunkManager extends Class1648 implements Class1650 {
                   return false;
                }
 
-               if (var5 == ChunkStatus.field42133 && var1.getStructureStarts().values().stream().noneMatch(StructureStart::method17117)) {
+               if (var5 == ChunkStatus.EMPTY && var1.getStructureStarts().values().stream().noneMatch(StructureStart::method17117)) {
                   return false;
                }
             }

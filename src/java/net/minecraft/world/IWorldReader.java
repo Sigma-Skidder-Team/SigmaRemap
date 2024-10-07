@@ -48,7 +48,7 @@ public interface IWorldReader extends IBlockDisplayReader, ICollisionReader, Bio
 
    @Override
    default Biome getNoiseBiome(int var1, int var2, int var3) {
-      IChunk var6 = this.getChunk(var1 >> 2, var3 >> 2, ChunkStatus.field42136, false);
+      IChunk var6 = this.getChunk(var1 >> 2, var3 >> 2, ChunkStatus.BIOMES, false);
       return var6 != null && var6.getBiomes() != null ? var6.getBiomes().getNoiseBiome(var1, var2, var3) : this.method6871(var1, var2, var3);
    }
 
@@ -113,7 +113,7 @@ public interface IWorldReader extends IBlockDisplayReader, ICollisionReader, Bio
    @Nullable
    @Override
    default IBlockReader getBlockReader(int var1, int var2) {
-      return this.getChunk(var1, var2, ChunkStatus.field42133, false);
+      return this.getChunk(var1, var2, ChunkStatus.EMPTY, false);
    }
 
    default boolean method7013(BlockPos var1) {

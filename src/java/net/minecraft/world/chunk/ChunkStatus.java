@@ -31,10 +31,10 @@ public class ChunkStatus {
 
       return CompletableFuture.completedFuture(Either.left(var5));
    };
-   public static final ChunkStatus field42133 = method34289("empty", (ChunkStatus)null, -1, field42130, Class2076.field13524, (var0, var1, var2, var3) -> {
+   public static final ChunkStatus EMPTY = method34289("empty", (ChunkStatus)null, -1, field42130, Class2076.field13524, (var0, var1, var2, var3) -> {
    });
-   public static final ChunkStatus field42134 = method34290(
-      "structure_starts", field42133, 0, field42130, Class2076.field13524, (var0, var1, var2, var3, var4, var5, var6, var7) -> {
+   public static final ChunkStatus STRUCTURE_STARTS = method34290(
+      "structure_starts", EMPTY, 0, field42130, Class2076.field13524, (var0, var1, var2, var3, var4, var5, var6, var7) -> {
          if (!var7.getStatus().method34306(var0)) {
             if (var1.getServer().func_240793_aU_().getDimensionGeneratorSettings().method26260()) {
                var2.func_242707_a(var1.func_241828_r(), var1.func_241112_a_(), var7, var3, var1.getSeed());
@@ -48,45 +48,45 @@ public class ChunkStatus {
          return CompletableFuture.completedFuture(Either.left(var7));
       }
    );
-   public static final ChunkStatus field42135 = method34289(
-      "structure_references", field42134, 8, field42130, Class2076.field13524, (var0, var1, var2, var3) -> {
+   public static final ChunkStatus STRUCTURE_REFERENCES = method34289(
+      "structure_references", STRUCTURE_STARTS, 8, field42130, Class2076.field13524, (var0, var1, var2, var3) -> {
          WorldGenRegion var6 = new WorldGenRegion(var0, var2);
          var1.func_235953_a_(var6, var0.func_241112_a_().method24339(var6), var3);
       }
    );
-   public static final ChunkStatus field42136 = method34289(
+   public static final ChunkStatus BIOMES = method34289(
       "biomes",
-      field42135,
+           STRUCTURE_REFERENCES,
       0,
       field42130,
       Class2076.field13524,
       (var0, var1, var2, var3) -> var1.func_242706_a(var0.func_241828_r().<Biome>getRegistry(Registry.BIOME_KEY), var3)
    );
-   public static final ChunkStatus field42137 = method34289("noise", field42136, 8, field42130, Class2076.field13524, (var0, var1, var2, var3) -> {
+   public static final ChunkStatus NOISE = method34289("noise", BIOMES, 8, field42130, Class2076.field13524, (var0, var1, var2, var3) -> {
       WorldGenRegion var6 = new WorldGenRegion(var0, var2);
       var1.func_230352_b_(var6, var0.func_241112_a_().method24339(var6), var3);
    });
-   public static final ChunkStatus field42138 = method34289(
-      "surface", field42137, 0, field42130, Class2076.field13524, (var0, var1, var2, var3) -> var1.generateSurface(new WorldGenRegion(var0, var2), var3)
+   public static final ChunkStatus SURFACE = method34289(
+      "surface", NOISE, 0, field42130, Class2076.field13524, (var0, var1, var2, var3) -> var1.generateSurface(new WorldGenRegion(var0, var2), var3)
    );
-   public static final ChunkStatus field42139 = method34289(
+   public static final ChunkStatus CARVERS = method34289(
       "carvers",
-      field42138,
+           SURFACE,
       0,
       field42130,
       Class2076.field13524,
       (var0, var1, var2, var3) -> var1.func_230350_a_(var0.getSeed(), var0.getBiomeManager(), var3, GenerationStageCarving.field259)
    );
-   public static final ChunkStatus field42140 = method34289(
+   public static final ChunkStatus LIQUID_CARVERS = method34289(
       "liquid_carvers",
-      field42139,
+           CARVERS,
       0,
       field42131,
       Class2076.field13524,
       (var0, var1, var2, var3) -> var1.func_230350_a_(var0.getSeed(), var0.getBiomeManager(), var3, GenerationStageCarving.field260)
    );
-   public static final ChunkStatus field42141 = method34290(
-      "features", field42140, 8, field42131, Class2076.field13524, (var0, var1, var2, var3, var4, var5, var6, var7) -> {
+   public static final ChunkStatus FEATURES = method34290(
+      "features", LIQUID_CARVERS, 8, field42131, Class2076.field13524, (var0, var1, var2, var3, var4, var5, var6, var7) -> {
          ChunkPrimer var10 = (ChunkPrimer)var7;
          var10.method7119(var4);
          if (!var7.getStatus().method34306(var0)) {
@@ -101,21 +101,21 @@ public class ChunkStatus {
    );
    public static final ChunkStatus LIGHT = method34291(
       "light",
-      field42141,
+           FEATURES,
       1,
       field42131,
       Class2076.field13524,
       (var0, var1, var2, var3, var4, var5, var6, var7) -> method34288(var0, var4, var7),
       (var0, var1, var2, var3, var4, var5) -> method34288(var0, var3, var5)
    );
-   public static final ChunkStatus field42143 = method34289(
+   public static final ChunkStatus SPAWN = method34289(
       "spawn", LIGHT, 0, field42131, Class2076.field13524, (var0, var1, var2, var3) -> var1.func_230354_a_(new WorldGenRegion(var0, var2))
    );
-   public static final ChunkStatus field42144 = method34289("heightmaps", field42143, 0, field42131, Class2076.field13524, (var0, var1, var2, var3) -> {
+   public static final ChunkStatus HEIGHTMAPS = method34289("heightmaps", SPAWN, 0, field42131, Class2076.field13524, (var0, var1, var2, var3) -> {
    });
    public static final ChunkStatus FULL = method34291(
       "full",
-      field42144,
+           HEIGHTMAPS,
       0,
       field42131,
       Class2076.field13525,
@@ -123,7 +123,7 @@ public class ChunkStatus {
       (var0, var1, var2, var3, var4, var5) -> var4.apply(var5)
    );
    private static final List<ChunkStatus> field42146 = ImmutableList.of(
-           FULL, field42141, field42140, field42134, field42134, field42134, field42134, field42134, field42134, field42134, field42134
+           FULL, FEATURES, LIQUID_CARVERS, STRUCTURE_STARTS, STRUCTURE_STARTS, STRUCTURE_STARTS, STRUCTURE_STARTS, STRUCTURE_STARTS, STRUCTURE_STARTS, STRUCTURE_STARTS, STRUCTURE_STARTS
    );
    private static final IntList field42147 = Util.<IntList>make(new IntArrayList(method34292().size()), var0 -> {
       int var3 = 0;
@@ -187,7 +187,7 @@ public class ChunkStatus {
       if (var0 < field42146.size()) {
          return var0 >= 0 ? field42146.get(var0) : FULL;
       } else {
-         return field42133;
+         return EMPTY;
       }
    }
 

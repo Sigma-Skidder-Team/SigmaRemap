@@ -28,7 +28,7 @@ public class Class1318 extends Screen {
    private final List<Class1198> field6970 = Lists.newArrayList();
 
    public Class1318() {
-      super(NarratorChatListener.field29300);
+      super(NarratorChatListener.EMPTY);
       this.field6965 = Class2150.method8860(this.method6256());
    }
 

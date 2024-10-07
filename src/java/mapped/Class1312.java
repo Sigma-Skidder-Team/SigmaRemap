@@ -10,7 +10,7 @@ public class Class1312 extends Screen {
    private Class7156 field6924 = Class8703.method31387();
 
    public Class1312() {
-      super(NarratorChatListener.field29300);
+      super(NarratorChatListener.EMPTY);
    }
 
    @Override

@@ -39,7 +39,7 @@ public class Class870 extends Screen {
    }
 
    private Class870(Class7502 var1, boolean var2) {
-      super(NarratorChatListener.field29300);
+      super(NarratorChatListener.EMPTY);
       this.field4821 = var1;
       this.field4828 = var2;
    }

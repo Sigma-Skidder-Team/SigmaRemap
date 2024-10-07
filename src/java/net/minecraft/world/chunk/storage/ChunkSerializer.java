@@ -104,7 +104,7 @@ public class ChunkSerializer {
          var43 = var26;
          var26.setInhabitedTime(var23);
          var26.method7111(ChunkStatus.method34304(var9.getString("Status")));
-         if (var26.getStatus().method34306(ChunkStatus.field42141)) {
+         if (var26.getStatus().method34306(ChunkStatus.FEATURES)) {
             var26.method7119(var21);
          }
 

@@ -174,7 +174,7 @@ public class Class1653 extends Class1652<Class8377> {
          .filter(var0 -> var0.getSecond().map(Class8377::method29360).orElse(false))
          .map(var0 -> var0.getFirst().method8423())
          .filter(var1x -> this.field8989.add(var1x.asLong()))
-         .forEach(var1x -> var1.getChunk(var1x.x, var1x.z, ChunkStatus.field42133));
+         .forEach(var1x -> var1.getChunk(var1x.x, var1x.z, ChunkStatus.EMPTY));
    }
 
    // $VF: synthetic method

@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 public abstract class RealmsScreen extends Screen {
    public RealmsScreen() {
-      super(NarratorChatListener.field29300);
+      super(NarratorChatListener.EMPTY);
    }
 
    public static int method1929(int var0) {

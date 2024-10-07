@@ -37,10 +37,10 @@ public abstract class AbstractGui {
    }
 
    public static void fill(MatrixStack var0, int var1, int var2, int var3, int var4, int var5) {
-      method5687(var0.getLast().getMatrix(), var1, var2, var3, var4, var5);
+      fill(var0.getLast().getMatrix(), var1, var2, var3, var4, var5);
    }
 
-   private static void method5687(Matrix4f var0, int var1, int var2, int var3, int var4, int var5) {
+   private static void fill(Matrix4f var0, int var1, int var2, int var3, int var4, int var5) {
       if (var1 < var3) {
          int var8 = var1;
          var1 = var3;

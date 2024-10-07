@@ -38,7 +38,7 @@ public class ChunkPrimer implements IChunk {
    private BiomeContainer field9091;
    private volatile WorldLightManager field9092;
    private final Map<Heightmap.Type, Heightmap> field9093 = Maps.newEnumMap(Heightmap.Type.class);
-   private volatile ChunkStatus field9094 = ChunkStatus.field42133;
+   private volatile ChunkStatus field9094 = ChunkStatus.EMPTY;
    private final Map<BlockPos, TileEntity> field9095 = Maps.newHashMap();
    private final Map<BlockPos, CompoundNBT> field9096 = Maps.newHashMap();
    private final ChunkSection[] field9097 = new ChunkSection[16];
@@ -139,7 +139,7 @@ public class ChunkPrimer implements IChunk {
 
             ChunkSection var9 = this.method7106(var7 >> 4);
             BlockState var10 = var9.method21856(var6 & 15, var7 & 15, var8 & 15, var2);
-            if (this.field9094.method34306(ChunkStatus.field42141)
+            if (this.field9094.method34306(ChunkStatus.FEATURES)
                && var2 != var10
                && (
                   var2.getOpacity(this, var1) != var10.getOpacity(this, var1)

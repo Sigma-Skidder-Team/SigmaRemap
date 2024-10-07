@@ -38,7 +38,7 @@ public class WinGameScreen extends Screen {
    private float field7131 = 0.5F;
 
    public WinGameScreen(boolean var1, Runnable var2) {
-      super(NarratorChatListener.field29300);
+      super(NarratorChatListener.EMPTY);
       this.field7125 = var1;
       this.field7126 = var2;
       if (!var1) {

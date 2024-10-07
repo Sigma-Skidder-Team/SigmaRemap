@@ -13,7 +13,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class NarratorChatListener implements Class6687 {
-   public static final ITextComponent field29300 = StringTextComponent.EMPTY;
+   public static final ITextComponent EMPTY = StringTextComponent.EMPTY;
    private static final Logger field29301 = LogManager.getLogger();
    public static final NarratorChatListener INSTANCE = new NarratorChatListener();
    private final Narrator field29303 = Narrator.getNarrator();

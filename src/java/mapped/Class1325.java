@@ -23,7 +23,7 @@ public abstract class Class1325 extends Screen {
    private Class6850 field7016;
 
    public Class1325() {
-      super(NarratorChatListener.field29300);
+      super(NarratorChatListener.EMPTY);
    }
 
    @Override

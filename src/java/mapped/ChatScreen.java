@@ -16,7 +16,7 @@ public class ChatScreen extends Screen {
    private Class6850 field7050;
 
    public ChatScreen(String var1) {
-      super(NarratorChatListener.field29300);
+      super(NarratorChatListener.EMPTY);
       this.field7049 = var1;
    }
 

@@ -128,7 +128,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
    public final FontRenderer fontRenderer;
    public final GameRenderer gameRenderer;
    public final DebugRenderer debugRenderer;
-   private final AtomicReference<TrackingChunkStatusListener> refChunkStatusListener = new AtomicReference<TrackingChunkStatusListener>();
+   private final AtomicReference<TrackingChunkStatusListener> refChunkStatusListener = new AtomicReference<>();
    public final IngameGui ingameGUI;
    public final GameSettings gameSettings;
    private final CreativeSettings creativeSettings;
@@ -244,12 +244,6 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
          s = null;
          i = 0;
       }
-
-      /*
-      if (System.getProperty("java.version").contains("74")) { // Wtf even is this supposed to be
-         this.shutdown();
-      }
-       */
 
       KeybindTextComponent.func_240696_a_(KeyBinding::getDisplayString);
       this.dataFixer = DataFixesManager.getDataFixer();
@@ -655,10 +649,6 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
    private void openChatScreen(String defaultText) {
       if (!this.isIntegratedServerRunning() && !this.isChatEnabled())
       {
-         if (this.player != null)
-         {
-            //this.player.sendMessage((new TranslationTextComponent("chat.cannotSend")).mergeStyle(TextFormatting.RED), Util.DUMMY_UUID);
-         }
          this.displayGuiScreen(new ChatScreen(defaultText));
       }
       else
@@ -1648,9 +1638,15 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
                      TrackingChunkStatusListener refChunkStatusListener = new TrackingChunkStatusListener(radius + 0);
                      refChunkStatusListener.startTracking();
                      this.refChunkStatusListener.set(refChunkStatusListener);
+
+                     System.out.println("[LINE1648] are we doing something? yes");
+                     System.out.println(var8x.getName());
                      return new ChainedChunkStatusListener(refChunkStatusListener, this.queueChunkTracking::add);
                   })
             );
+            if (this.integratedServer == null) {
+               System.out.println("INTEGRATED SERVER IS NULL");
+            }
             this.integratedServerIsRunning = true;
          } catch (Throwable var19) {
             CrashReport var13 = CrashReport.makeCrashReport(var19, "Starting integrated server");
@@ -1687,13 +1683,16 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
          }
 
          this.profiler.endSection();
-         SocketAddress var24 = this.integratedServer.getNetworkSystem().addLocalEndpoint();
-         NetworkManager var26 = NetworkManager.provideLocalClient(var24);
-         var26.setNetHandler(new ClientLoginNetHandler(var26, this, null, var0 -> {}));
-         var26.sendPacket(new CHandshakePacket(var24.toString(), 0, ProtocolType.LOGIN));
-         var26.sendPacket(new CLoginStartPacket(this.getSession().getProfile()));
-         this.networkManager = var26;
+         SocketAddress socketaddress = this.integratedServer.getNetworkSystem().addLocalEndpoint();
+         NetworkManager networkmanager = NetworkManager.provideLocalClient(socketaddress);
+         networkmanager.setNetHandler(new ClientLoginNetHandler(networkmanager, this, null, var0 -> {}));
+         networkmanager.sendPacket(new CHandshakePacket(socketaddress.toString(), 0, ProtocolType.LOGIN));
+         networkmanager.sendPacket(new CLoginStartPacket(this.getSession().getProfile()));
+         this.networkManager = networkmanager;
+         System.out.println(networkmanager == null ? " yes I am null" : "no I am not");
+         System.out.println(this.integratedServer.getNetworkSystem().addLocalEndpoint() == null ? " yes I am null x2" : "no I am notx2");
       } else {
+         System.out.println("[LINE1688] wtf?");
          this.deleteWorld(var6, var1, var10, () -> this.loadWorld(var1, var2, var3, var4, var5, WorldSelectionType.NONE));
          var8.close();
 

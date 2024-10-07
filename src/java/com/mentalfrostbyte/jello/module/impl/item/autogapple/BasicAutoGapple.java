@@ -52,6 +52,7 @@ public class BasicAutoGapple extends Module {
                 if (event.getKey() == hotbarKey.inputMappingsInput.keyCode && keyIndex - 1 != mc.player.inventory.currentItem) {
                     this.currentGappleSlot = -1;
                     this.tickCounter = 0;
+                    break;
                 }
             }
         }
@@ -98,7 +99,7 @@ public class BasicAutoGapple extends Module {
     @EventTarget
     public void onReceivePacket(ReceivePacketEvent event) {
         if (this.isEnabled() && this.currentGappleSlot > 1) {
-            IPacket packet = event.getPacket();
+            IPacket<?> packet = event.getPacket();
             if (packet instanceof SEntityMetadataPacket) {
                 SEntityMetadataPacket metadataPacket = (SEntityMetadataPacket) packet;
                 if (metadataPacket.getEntityId() == mc.player.getEntityId()) {

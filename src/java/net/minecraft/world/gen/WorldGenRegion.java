@@ -85,7 +85,7 @@ public class WorldGenRegion implements ISeedReader {
 
    @Override
    public IChunk getChunk(int var1, int var2) {
-      return this.getChunk(var1, var2, ChunkStatus.field42133);
+      return this.getChunk(var1, var2, ChunkStatus.EMPTY);
    }
 
    @Nullable

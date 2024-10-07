@@ -25,7 +25,7 @@ public class AdvancementsScreen extends Screen implements Class1131 {
    private boolean field6187;
 
    public AdvancementsScreen(Class8730 var1) {
-      super(NarratorChatListener.field29300);
+      super(NarratorChatListener.EMPTY);
       this.field6184 = var1;
    }
 

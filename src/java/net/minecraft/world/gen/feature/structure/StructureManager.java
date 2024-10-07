@@ -33,11 +33,11 @@ public class StructureManager {
 
    public Stream<? extends StructureStart<?>> method24340(SectionPos var1, Structure<?> var2) {
       return this.field32171
-         .getChunk(var1.method8410(), var1.method8412(), ChunkStatus.field42135)
+         .getChunk(var1.method8410(), var1.method8412(), ChunkStatus.STRUCTURE_REFERENCES)
          .method7099(var2)
          .stream()
          .<SectionPos>map(var0 -> SectionPos.from(new ChunkPos(var0), 0))
-         .<StructureStart<?>>map(var2x -> this.method24341(var2x, var2, this.field32171.getChunk(var2x.method8410(), var2x.method8412(), ChunkStatus.field42134)))
+         .<StructureStart<?>>map(var2x -> this.method24341(var2x, var2, this.field32171.getChunk(var2x.method8410(), var2x.method8412(), ChunkStatus.STRUCTURE_STARTS)))
          .filter(var0 -> var0 != null && var0.method17117());
    }
 

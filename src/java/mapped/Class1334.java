@@ -19,7 +19,7 @@ public class Class1334 extends Screen {
    private Class5991 field7059 = Class5991.field26162;
 
    public Class1334(Screen var1) {
-      super(NarratorChatListener.field29300);
+      super(NarratorChatListener.EMPTY);
       this.field7053 = var1;
    }
 

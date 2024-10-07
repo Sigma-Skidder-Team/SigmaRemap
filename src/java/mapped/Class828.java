@@ -58,7 +58,7 @@ public class Class828 extends Screen {
    private final ITextComponent field4599;
 
    public Class828(PlayerEntity var1, ItemStack var2, Hand var3) {
-      super(NarratorChatListener.field29300);
+      super(NarratorChatListener.EMPTY);
       this.field4578 = var1;
       this.field4579 = var2;
       this.field4596 = var3;

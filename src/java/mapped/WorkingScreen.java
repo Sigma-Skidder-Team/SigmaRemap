@@ -14,7 +14,7 @@ public class WorkingScreen extends Screen implements Class1339 {
    private Class7156 field7111 = Class8703.method31387();
 
    public WorkingScreen() {
-      super(NarratorChatListener.field29300);
+      super(NarratorChatListener.EMPTY);
    }
 
    @Override

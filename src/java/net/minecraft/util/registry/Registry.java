@@ -88,7 +88,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final Registry<TileEntityType<?>> field16078 = method9175(field16045, () -> TileEntityType.field21421);
    public static final Class2351<Class9078> field16079 = method9176(field16046, "kebab", () -> Class9078.field41530);
    public static final Registry<ResourceLocation> field16080 = method9175(field16047, () -> Stats.field40125);
-   public static final Class2351<ChunkStatus> field16081 = method9176(field16048, "empty", () -> ChunkStatus.field42133);
+   public static final Class2351<ChunkStatus> field16081 = method9176(field16048, "empty", () -> ChunkStatus.EMPTY);
    public static final Registry<Class9277<?>> field16082 = method9175(field16049, () -> Class9277.field42660);
    public static final Registry<Class8989<?>> field16083 = method9175(field16050, () -> Class8989.field41001);
    public static final Registry<ContainerType<?>> MENU = method9175(field16051, () -> ContainerType.ANVIL);

@@ -25,7 +25,7 @@ public abstract class Class1702 implements IChunkLightProvider, AutoCloseable {
    @Nullable
    @Override
    public IBlockReader getChunkForLight(int var1, int var2) {
-      return this.method7346(var1, var2, ChunkStatus.field42133, false);
+      return this.method7346(var1, var2, ChunkStatus.EMPTY, false);
    }
 
    public boolean method7345(int var1, int var2) {
