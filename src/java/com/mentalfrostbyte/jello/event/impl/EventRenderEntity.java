@@ -6,8 +6,8 @@ import net.minecraft.entity.LivingEntity;
 public class EventRenderEntity extends Class4406 {
     private float field21527;
     private float field21528;
-    private float field21529;
-    private float field21530;
+    private float yaw;
+    private float pitch;
     private final float field21531;
     private final LivingEntity entity;
     private boolean field21533 = true;
@@ -17,8 +17,8 @@ public class EventRenderEntity extends Class4406 {
     public EventRenderEntity(float var1, float var2, float var3, float var4, float var5, LivingEntity var6) {
         this.field21527 = var1;
         this.field21528 = var2;
-        this.field21529 = var3;
-        this.field21530 = var4;
+        this.yaw = var3;
+        this.pitch = var4;
         this.field21531 = var5;
         this.entity = var6;
         this.state = RenderState.field13212;
@@ -40,12 +40,12 @@ public class EventRenderEntity extends Class4406 {
         return this.field21528;
     }
 
-    public float method13946() {
-        return this.field21529;
+    public float getYaw() {
+        return this.yaw;
     }
 
-    public float method13947() {
-        return this.field21530;
+    public float getPitch() {
+        return this.pitch;
     }
 
     public float method13948() {
@@ -61,11 +61,11 @@ public class EventRenderEntity extends Class4406 {
     }
 
     public void method13951(float var1) {
-        this.field21529 = var1;
+        this.yaw = var1;
     }
 
     public void method13952(float var1) {
-        this.field21530 = var1;
+        this.pitch = var1;
     }
 
     public LivingEntity method13953() {

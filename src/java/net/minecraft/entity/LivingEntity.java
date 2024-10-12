@@ -353,7 +353,7 @@ public abstract class LivingEntity extends Entity {
       this.prevRotationPitch = this.rotationPitch;
       this.world.getProfiler().endSection();
 
-      if(this == Minecraft.getInstance().player && Rots.rotating) {
+      if(this.equals(Minecraft.getInstance().player) && Rots.rotating) {
          this.prevRotationYawHead = Rots.yaw;
          Rots.prevPitch = Rots.pitch;
       }

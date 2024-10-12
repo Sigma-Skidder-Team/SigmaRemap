@@ -176,7 +176,7 @@ public class BlockFlyHypixelMode extends Module {
                     this.field23473.method16736();
                     if (this.field23468 != null) {
                         BlockRayTraceResult var20 = new BlockRayTraceResult(
-                                method16116(this.field23468.field33646, this.field23468.field33647), this.field23468.field33647, this.field23468.field33646, false
+                                method16116(this.field23468.blockpos, this.field23468.facing), this.field23468.facing, this.field23468.blockpos, false
                         );
                         int var21 = mc.player.inventory.currentItem;
                         if (!this.access().getStringSettingValueByName("ItemSpoof").equals("None")) {
@@ -236,12 +236,12 @@ public class BlockFlyHypixelMode extends Module {
                         Class7843 var12 = BlockUtil.method34575(var11, !this.field23474 && this.getBooleanValueFromSettingName("Downwards"));
                         this.field23468 = var12;
                         if (var12 != null) {
-                            float[] var13 = BlockUtil.method34542(this.field23468.field33646, this.field23468.field33647);
-                            if ((double) var12.field33646.field13028 - mc.player.getPosY() < 0.0) {
+                            float[] var13 = BlockUtil.getRotationsToBlock(this.field23468.blockpos, this.field23468.facing);
+                            if ((double) var12.blockpos.field13028 - mc.player.getPosY() < 0.0) {
                                 double var14 = mc.player.getPosX()
-                                        - ((double) var12.field33646.field13027 + 0.5 + (double) var12.field33647.getXOffset() / 2.0);
+                                        - ((double) var12.blockpos.field13027 + 0.5 + (double) var12.facing.getXOffset() / 2.0);
                                 double var16 = mc.player.getPosZ()
-                                        - ((double) var12.field33646.field13029 + 0.5 + (double) var12.field33647.getZOffset() / 2.0);
+                                        - ((double) var12.blockpos.field13029 + 0.5 + (double) var12.facing.getZOffset() / 2.0);
                                 double var18 = Math.sqrt(var14 * var14 + var16 * var16);
                                 if (var18 < 2.0) {
                                     var13[0] = mc.player.rotationYaw + 1.0F;

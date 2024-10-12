@@ -1,5 +1,6 @@
 package net.minecraft.network.play.server;
 
+import com.mentalfrostbyte.jello.util.Rots;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.math.vector.Vector3d;
@@ -159,8 +160,14 @@ public class SEntityPacket implements IPacket<IClientPlayNetHandler> {
          var1.writeShort(this.posX);
          var1.writeShort(this.posY);
          var1.writeShort(this.posZ);
-         var1.writeByte(this.yaw);
-         var1.writeByte(this.pitch);
+         if (Rots.rotating) {
+            var1.writeByte((int) Rots.yaw);
+            var1.writeByte((int) Rots.pitch);
+         } else {
+            var1.writeByte(this.yaw);
+            var1.writeByte(this.pitch);
+         }
+
          var1.writeBoolean(this.onGround);
       }
    }

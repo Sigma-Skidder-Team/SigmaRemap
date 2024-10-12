@@ -100,7 +100,7 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
 
          float pitch = MathHelper.lerp(var3, entity.prevRotationPitch, entity.rotationPitch);
          if (entity.equals(Minecraft.getInstance().player) && Rots.rotating)
-            pitch = Rots.prevPitch + (Rots.pitch - Rots.prevPitch) * renderPartialTicks;
+            pitch = Rots.prevPitch + (Rots.pitch - Rots.prevPitch) * var3;
          EventRenderEntity renderEntityEvent = new EventRenderEntity(f, f1, headYaw, pitch, var3, entity);
          Client.getInstance().getEventManager().call(renderEntityEvent);
          if (renderEntityEvent.isCancelled()) {
@@ -109,8 +109,8 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
          }
 
          f = renderEntityEvent.method13944();
-         headYaw = renderEntityEvent.method13946();
-         pitch = renderEntityEvent.method13947();
+         headYaw = renderEntityEvent.getYaw();
+         pitch = renderEntityEvent.getPitch();
          if (entity.getPose() == Pose.field13621) {
             Direction var14 = entity.getBedDirection();
             if (var14 != null) {
