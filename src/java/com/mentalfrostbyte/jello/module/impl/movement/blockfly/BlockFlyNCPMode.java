@@ -293,7 +293,7 @@ public class BlockFlyNCPMode extends Module {
             String var4 = this.getStringSettingValueByName("Speed Mode");
             switch (var4) {
                 case "Jump":
-                    if (mc.player.onGround && MultiUtilities.method17686() && !mc.player.isSneaking() && !this.field23929) {
+                    if (mc.player.onGround && MultiUtilities.method17686() && !mc.player.isServerSneakState() && !this.field23929) {
                         this.field23930 = false;
                         mc.player.jump();
                         ((Speed) Client.getInstance().getModuleManager().getModuleByClass(Speed.class)).method16764();
@@ -314,7 +314,7 @@ public class BlockFlyNCPMode extends Module {
                     if (mc.gameSettings.keyBindJump.isKeyDown()) {
                         mc.timer.timerSpeed = 1.0F;
                     } else if (mc.player.onGround) {
-                        if (MultiUtilities.method17686() && !mc.player.isSneaking() && !this.field23929) {
+                        if (MultiUtilities.method17686() && !mc.player.isServerSneakState() && !this.field23929) {
                             var1.setY(1.01);
                         }
                     } else if (this.field23926 == 1) {

@@ -24,7 +24,7 @@ public class Class4053 extends Class4051 {
       if (var6 instanceof Class5749) {
          if (((EntityRenderer)var6).method17898() == null) {
             Class5749 var7 = new Class5749(var5);
-            var7.field25086 = new Class2869<Class1019>();
+            var7.mainModel = new Class2869<Class1019>();
             var7.shadowSize = 0.7F;
             var6 = var7;
          }

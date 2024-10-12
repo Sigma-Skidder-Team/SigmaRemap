@@ -45,8 +45,8 @@ public class SkeletonESP extends Module {
                 GL11.glTranslated(var8, var10, var12);
                 float var14 = var2.prevRenderYawOffset + (var2.renderYawOffset - var2.prevRenderYawOffset) * mc.getRenderPartialTicks();
                 GL11.glRotatef(-var14, 0.0F, 1.0F, 0.0F);
-                GL11.glTranslated(0.0, 0.0, !var2.isSneaking() ? 0.0 : -0.235);
-                float var15 = !var2.isSneaking() ? 0.75F : 0.6F;
+                GL11.glTranslated(0.0, 0.0, !var2.isServerSneakState() ? 0.0 : -0.235);
+                float var15 = !var2.isServerSneakState() ? 0.75F : 0.6F;
                 GL11.glPushMatrix();
                 GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
                 GL11.glTranslated(-0.125, (double) var15, 0.0);
@@ -87,10 +87,10 @@ public class SkeletonESP extends Module {
                 GL11.glVertex3d(0.0, (double) (-var15), 0.0);
                 GL11.glEnd();
                 GL11.glPopMatrix();
-                GL11.glTranslated(0.0, 0.0, !var2.isSneaking() ? 0.0 : 0.25);
+                GL11.glTranslated(0.0, 0.0, !var2.isServerSneakState() ? 0.0 : 0.25);
                 GL11.glPushMatrix();
                 GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-                GL11.glTranslated(0.0, !var2.isSneaking() ? 0.0 : -0.05, !var2.isSneaking() ? 0.0 : -0.01725);
+                GL11.glTranslated(0.0, !var2.isServerSneakState() ? 0.0 : -0.05, !var2.isServerSneakState() ? 0.0 : -0.01725);
                 GL11.glPushMatrix();
                 GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
                 GL11.glTranslated(-0.375, (double) var15 + 0.55, 0.0);
@@ -144,8 +144,8 @@ public class SkeletonESP extends Module {
                 GL11.glEnd();
                 GL11.glPopMatrix();
                 GL11.glPopMatrix();
-                GL11.glRotatef(!var2.isSneaking() ? 0.0F : 25.0F, 1.0F, 0.0F, 0.0F);
-                GL11.glTranslated(0.0, !var2.isSneaking() ? 0.0 : -0.16175, !var2.isSneaking() ? 0.0 : -0.48025);
+                GL11.glRotatef(!var2.isServerSneakState() ? 0.0F : 25.0F, 1.0F, 0.0F, 0.0F);
+                GL11.glTranslated(0.0, !var2.isServerSneakState() ? 0.0 : -0.16175, !var2.isServerSneakState() ? 0.0 : -0.48025);
                 GL11.glPushMatrix();
                 GL11.glTranslated(0.0, (double) var15, 0.0);
                 GL11.glBegin(3);

@@ -294,7 +294,7 @@ public abstract class Entity implements INameable, ICommandSource {
       this.setPosition(this.positionVec.x, this.positionVec.y, this.positionVec.z);
    }
 
-   public void rotateTowards(double var1, double var3) {
+   public void setAngles(double var1, double var3) {
       double var7 = var3 * 0.15;
       double var9 = var1 * 0.15;
       this.rotationPitch = (float)((double)this.rotationPitch + var7);
@@ -1233,7 +1233,7 @@ public abstract class Entity implements INameable, ICommandSource {
       }
    }
 
-   public final Vector3d getLook(float var1) {
+   public Vector3d getLook(float var1) {
       return this.getVectorForRotation(this.getPitch(var1), this.getYaw(var1));
    }
 
@@ -1637,7 +1637,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public boolean canBeRidden(Entity var1) {
-      return !this.isSneaking() && this.rideCooldown <= 0;
+      return !this.isServerSneakState() && this.rideCooldown <= 0;
    }
 
    public boolean isPoseClear(Pose var1) {
@@ -1809,24 +1809,24 @@ public abstract class Entity implements INameable, ICommandSource {
       this.setFlag(1, var1);
    }
 
-   public boolean isSneaking() {
+   public boolean isServerSneakState() {
       return this.getFlag(1);
    }
 
    public boolean isSteppingCarefully() {
-      return this.isSneaking();
+      return this.isServerSneakState();
    }
 
    public boolean method3333() {
-      return this.isSneaking();
+      return this.isServerSneakState();
    }
 
    public boolean isDiscrete() {
-      return this.isSneaking();
+      return this.isServerSneakState();
    }
 
    public boolean method3335() {
-      return this.isSneaking();
+      return this.isServerSneakState();
    }
 
    public boolean isCrouching() {

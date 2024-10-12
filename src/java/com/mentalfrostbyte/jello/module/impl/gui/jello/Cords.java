@@ -35,7 +35,7 @@ public class Cords extends Module {
                 this.field23755--;
             }
 
-            boolean var4 = MovementUtils.isMoving() || mc.player.isJumping || mc.player.isSneaking();
+            boolean var4 = MovementUtils.isMoving() || mc.player.isJumping || mc.player.isServerSneakState();
             if (!var4) {
                 if (this.field23756.calcPercent() == 1.0F && this.field23756.getDirection() == Direction.FORWARDS) {
                     this.field23756.changeDirection(Direction.BACKWARDS);

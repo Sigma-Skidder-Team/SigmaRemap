@@ -18,12 +18,12 @@ public class Class5655 extends Class5651<Class1052, Class2827<Class1052>> {
       return var1.method4827();
    }
 
-   public void render(Class1052 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
-      Object var9 = var1.method4824() != 0 ? this.field25009 : this.field25008;
-      this.field25086 = (Class2827<Class1052>)var9;
-      float[] var10 = var1.method4820();
+   public void render(Class1052 entity, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+      Object var9 = entity.method4824() != 0 ? this.field25009 : this.field25008;
+      this.mainModel = (Class2827<Class1052>)var9;
+      float[] var10 = entity.method4820();
       ((Class2808)var9).method11018(var10[0], var10[1], var10[2]);
-      super.render(var1, var2, var3, var4, var5, var6);
+      super.render(entity, var2, var3, var4, var5, var6);
       ((Class2808)var9).method11018(1.0F, 1.0F, 1.0F);
    }
 

@@ -19,7 +19,7 @@ public class Class9451 extends MovementInput {
       this.field43908 = this.field43909 != this.field43910 ? (!this.field43909 ? -1.0F : 1.0F) : 0.0F;
       this.field43907 = this.field43911 != this.field43912 ? (!this.field43911 ? -1.0F : 1.0F) : 0.0F;
       this.field43913 = this.field43905.keyBindJump.isKeyDown();
-      this.field43914 = this.field43905.keyBindSneak.isKeyDown();
+      this.sneak = this.field43905.keyBindSneak.isKeyDown();
       if (var1) {
          this.field43907 = (float)((double)this.field43907 * 0.3);
          this.field43908 = (float)((double)this.field43908 * 0.3);

@@ -97,7 +97,7 @@ public class KillAuraAttackLambda implements Runnable {
                   if (!noSwing) {
                      mc.player.swingArm(Hand.MAIN_HAND);
                   }
-                  mc.getConnection().getNetworkManager().sendNoEventPacket(new CUseEntityPacket(entity, mc.player.isSneaking()));
+                  mc.getConnection().getNetworkManager().sendNoEventPacket(new CUseEntityPacket(entity, mc.player.isServerSneakState()));
 
                   // Animation and attack after INTERACT
                   handleAnimationAndAttack(mc, entity, isOnePointEight, noSwing);
@@ -114,7 +114,7 @@ public class KillAuraAttackLambda implements Runnable {
                if (!noSwing) {
                   mc.player.swingArm(Hand.MAIN_HAND);
                }
-               mc.getConnection().getNetworkManager().sendNoEventPacket(new CUseEntityPacket(entity, mc.player.isSneaking()));
+               mc.getConnection().getNetworkManager().sendNoEventPacket(new CUseEntityPacket(entity, mc.player.isServerSneakState()));
 
                // Animation and attack after INTERACT
                handleAnimationAndAttack(mc, entity, isOnePointEight, noSwing);

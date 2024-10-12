@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.EventRenderEntity;
 import com.mentalfrostbyte.jello.event.impl.EventRenderNameTag;
+import com.mentalfrostbyte.jello.util.Rots;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.OverlayTexture;
@@ -26,21 +27,21 @@ import java.util.List;
 
 public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827<T>> extends EntityRenderer<T> implements Class5714<T, M> {
    private static final Logger field25085 = LogManager.getLogger();
-   public M field25086;
+   public M mainModel;
    public final List<Class219<T, M>> field25087 = Lists.newArrayList();
-   public LivingEntity field25088;
-   public float field25089;
-   public float field25090;
-   public float field25091;
-   public float field25092;
-   public float field25093;
-   public float field25094;
+   public LivingEntity renderEntity;
+   public float renderLimbSwing;
+   public float renderLimbSwingAmount;
+   public float renderAgeInTicks;
+   public float renderHeadYaw;
+   public float renderHeadPitch;
+   public float renderPartialTicks;
    public static final boolean field25095 = Boolean.getBoolean("animate.model.living");
    public float field25096 = 1.0F;
 
    public LivingRenderer(EntityRendererManager var1, M var2, float var3) {
       super(var1);
-      this.field25086 = (M)var2;
+      this.mainModel = (M)var2;
       this.shadowSize = var3;
    }
 
@@ -50,31 +51,37 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
 
    @Override
    public M getEntityModel() {
-      return this.field25086;
+      return this.mainModel;
    }
 
-   public void render(T var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
-      if (!Reflector.field42990.exists() || !Reflector.postForgeBusEvent(Reflector.field42990, var1, this, var3, var4, var5, var6)) {
+   public void render(T entity, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+      if (!Reflector.field42990.exists() || !Reflector.postForgeBusEvent(Reflector.field42990, entity, this, var3, var4, var5, var6)) {
          if (field25095) {
-            var1.field4960 = 1.0F;
+            entity.field4960 = 1.0F;
          }
 
          var4.push();
-         this.field25086.swingProgress = this.method17885((T)var1, var3);
-         this.field25086.isSitting = var1.isPassenger();
+         this.mainModel.swingProgress = this.method17885((T)entity, var3);
+         this.mainModel.isSitting = entity.isPassenger();
          if (Reflector.field42838.exists()) {
-            this.field25086.isSitting = var1.isPassenger() && var1.getRidingEntity() != null && Reflector.method35064(var1.getRidingEntity(), Reflector.field42838);
+            this.mainModel.isSitting = entity.isPassenger() && entity.getRidingEntity() != null && Reflector.method35064(entity.getRidingEntity(), Reflector.field42838);
          }
 
-         this.field25086.field17602 = var1.isChild();
-         float var9 = MathHelper.method37827(var3, var1.prevRenderYawOffset, var1.renderYawOffset);
-         float var10 = MathHelper.method37827(var3, var1.prevRotationYawHead, var1.rotationYawHead);
-         float var11 = var10 - var9;
-         if (this.field25086.isSitting && var1.getRidingEntity() instanceof LivingEntity) {
-            LivingEntity var12 = (LivingEntity)var1.getRidingEntity();
-            var9 = MathHelper.method37827(var3, var12.prevRenderYawOffset, var12.renderYawOffset);
-            var11 = var10 - var9;
-            float var13 = MathHelper.method37792(var11);
+         this.mainModel.field17602 = entity.isChild();
+
+         float yaw = entity.rotationYawHead;
+         if(entity.equals(Minecraft.getInstance().player) && Rots.rotating) {
+            yaw = Rots.yaw;
+         }
+
+         float f = MathHelper.interpolateRotation(var3, entity.prevRenderYawOffset, entity.renderYawOffset);
+         float f1 = MathHelper.interpolateRotation(var3, entity.prevRotationYawHead, yaw);
+         float headYaw = f1 - f;
+         if (this.mainModel.isSitting && entity.getRidingEntity() instanceof LivingEntity) {
+            LivingEntity var12 = (LivingEntity)entity.getRidingEntity();
+            f = MathHelper.interpolateRotation(var3, var12.prevRenderYawOffset, var12.renderYawOffset);
+            headYaw = f1 - f;
+            float var13 = MathHelper.method37792(headYaw);
             if (var13 < -85.0F) {
                var13 = -85.0F;
             }
@@ -83,78 +90,79 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
                var13 = 85.0F;
             }
 
-            var9 = var10 - var13;
+            f = f1 - var13;
             if (var13 * var13 > 2500.0F) {
-               var9 += var13 * 0.2F;
+               f += var13 * 0.2F;
             }
 
-            var11 = var10 - var9;
+            headYaw = f1 - f;
          }
 
-         float var31 = MathHelper.lerp(var3, var1.prevRotationPitch, var1.rotationPitch);
-         EventRenderEntity var33 = new EventRenderEntity(var9, var10, var11, var31, var3, var1);
-         Client.getInstance().getEventManager().call(var33);
-         if (var33.isCancelled()) {
+         float pitch = MathHelper.lerp(var3, entity.prevRotationPitch, entity.rotationPitch);
+         if (entity.equals(Minecraft.getInstance().player) && Rots.rotating)
+            pitch = Rots.prevPitch + (Rots.pitch - Rots.prevPitch) * renderPartialTicks;
+         EventRenderEntity renderEntityEvent = new EventRenderEntity(f, f1, headYaw, pitch, var3, entity);
+         Client.getInstance().getEventManager().call(renderEntityEvent);
+         if (renderEntityEvent.isCancelled()) {
             var4.pop();
             return;
          }
 
-         var9 = var33.method13944();
-         var10 = var33.method13945();
-         var11 = var33.method13946();
-         var31 = var33.method13947();
-         if (var1.getPose() == Pose.field13621) {
-            Direction var14 = var1.getBedDirection();
+         f = renderEntityEvent.method13944();
+         headYaw = renderEntityEvent.method13946();
+         pitch = renderEntityEvent.method13947();
+         if (entity.getPose() == Pose.field13621) {
+            Direction var14 = entity.getBedDirection();
             if (var14 != null) {
-               float var15 = var1.getEyeHeight(Pose.STANDING) - 0.1F;
+               float var15 = entity.getEyeHeight(Pose.STANDING) - 0.1F;
                var4.translate((double)((float)(-var14.getXOffset()) * var15), 0.0, (double)((float)(-var14.getZOffset()) * var15));
             }
          }
 
-         float var34 = this.method17871((T)var1, var3);
-         this.method17842((T)var1, var4, var34, var9, var3);
+         float idk = this.method17871((T)entity, var3);
+         this.method17842((T)entity, var4, idk, f, var3);
          var4.scale(-1.0F, -1.0F, 1.0F);
-         this.method17857((T)var1, var4, var3);
+         this.method17857((T)entity, var4, var3);
          var4.translate(0.0, -1.501F, 0.0);
-         float var35 = 0.0F;
-         float var16 = 0.0F;
-         if (!var1.isPassenger() && var1.isAlive()) {
-            var35 = MathHelper.lerp(var3, var1.prevLimbSwingAmount, var1.field4960);
-            var16 = var1.field4961 - var1.field4960 * (1.0F - var3);
-            if (var1.isChild()) {
-               var16 *= 3.0F;
+         float f8 = 0.0F;
+         float f5 = 0.0F;
+         if (!entity.isPassenger() && entity.isAlive()) {
+            f8 = MathHelper.lerp(var3, entity.prevLimbSwingAmount, entity.field4960);
+            f5 = entity.field4961 - entity.field4960 * (1.0F - var3);
+            if (entity.isChild()) {
+               f5 *= 3.0F;
             }
 
-            if (var35 > 1.0F) {
-               var35 = 1.0F;
+            if (f8 > 1.0F) {
+               f8 = 1.0F;
             }
          }
 
-         var33.setState(RenderState.field13213);
-         Client.getInstance().getEventManager().call(var33);
-         this.field25086.setLivingAnimations((T)var1, var16, var35, var3);
-         this.field25086.setRotationAngles((T)var1, var16, var35, var34, var11, var31);
+         renderEntityEvent.setState(RenderState.field13213);
+         Client.getInstance().getEventManager().call(renderEntityEvent);
+         this.mainModel.setLivingAnimations((T)entity, f5, f8, var3);
+         this.mainModel.setRotationAngles((T)entity, f5, f8, idk, headYaw, pitch);
          if (CustomEntityModels.isActive()) {
-            this.field25088 = var1;
-            this.field25089 = var16;
-            this.field25090 = var35;
-            this.field25091 = var34;
-            this.field25092 = var11;
-            this.field25093 = var31;
-            this.field25094 = var3;
+            this.renderEntity = entity;
+            this.renderLimbSwing = f5;
+            this.renderLimbSwingAmount = f8;
+            this.renderAgeInTicks = idk;
+            this.renderHeadYaw = headYaw;
+            this.renderHeadPitch = pitch;
+            this.renderPartialTicks = var3;
          }
 
          boolean var17 = Config.isShaders();
          Minecraft var18 = Minecraft.getInstance();
-         boolean var19 = this.method17869((T)var1);
-         boolean var20 = !var19 && !var1.isInvisibleToPlayer(var18.player);
-         boolean var21 = var18.isEntityGlowing(var1);
-         RenderType var22 = this.method17882((T)var1, var19, var20, var21);
+         boolean var19 = this.method17869((T)entity);
+         boolean var20 = !var19 && !entity.isInvisibleToPlayer(var18.player);
+         boolean var21 = var18.isEntityGlowing(entity);
+         RenderType var22 = this.method17882((T)entity, var19, var20, var21);
          if (var22 != null) {
             IVertexBuilder var23 = var5.method25597(var22);
-            float var24 = this.method17879((T)var1, var3);
+            float var24 = this.method17879((T)entity, var3);
             if (var17) {
-               if (var1.hurtTime > 0 || var1.deathTime > 0) {
+               if (entity.hurtTime > 0 || entity.deathTime > 0) {
                   Shaders.method33086(1.0F, 0.0F, 0.0F, 0.3F);
                }
 
@@ -163,13 +171,13 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
                }
             }
 
-            int var25 = method17883(var1, var24);
-            this.field25086.render(var4, var23, var6, var25, 1.0F, 1.0F, 1.0F, (!var20 ? 1.0F : 0.15F) * this.field25096);
+            int var25 = method17883(entity, var24);
+            this.mainModel.render(var4, var23, var6, var25, 1.0F, 1.0F, 1.0F, (!var20 ? 1.0F : 0.15F) * this.field25096);
          }
 
-         if (!var1.isSpectator() && var33.method13954()) {
+         if (!entity.isSpectator() && renderEntityEvent.method13954()) {
             for (Class219 var37 : this.field25087) {
-               var37.method820(var4, var5, var6, var1, var16, var35, var3, var34, var11, var31);
+               var37.method820(var4, var5, var6, entity, f5, f8, var3, idk, headYaw, pitch);
             }
          }
 
@@ -178,15 +186,15 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
          }
 
          if (CustomEntityModels.isActive()) {
-            this.field25088 = null;
+            this.renderEntity = null;
          }
 
-         var33.setState(RenderState.field13214);
-         Client.getInstance().getEventManager().call(var33);
+         renderEntityEvent.setState(RenderState.field13214);
+         Client.getInstance().getEventManager().call(renderEntityEvent);
          var4.pop();
-         super.render((T)var1, var2, var3, var4, var5, var6);
+         super.render((T)entity, var2, var3, var4, var5, var6);
          if (Reflector.field42992.exists()) {
-            Reflector.postForgeBusEvent(Reflector.field42992, var1, this, var3, var4, var5, var6);
+            Reflector.postForgeBusEvent(Reflector.field42992, entity, this, var3, var4, var5, var6);
          }
       }
    }
@@ -201,12 +209,12 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
       if (!var3) {
          if (!var2) {
             if (var1.isGlowing() && !Config.method26860().worldRenderer.isRenderEntityOutlines()) {
-               return this.field25086.method11028(var7);
+               return this.mainModel.method11028(var7);
             } else {
                return !var4 ? null : RenderType.method14329(var7);
             }
          } else {
-            return this.field25086.method11028(var7);
+            return this.mainModel.method11028(var7);
          }
       } else {
          return RenderType.method14315(var7);

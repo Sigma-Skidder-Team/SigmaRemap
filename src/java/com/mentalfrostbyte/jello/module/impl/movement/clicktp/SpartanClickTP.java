@@ -40,7 +40,7 @@ public class SpartanClickTP extends Module {
 
     @EventTarget
     private void method16104(ClickEvent var1) {
-        if (this.isEnabled() && (mc.player.isSneaking() || !this.access().getBooleanValueFromSettingName("Sneak"))) {
+        if (this.isEnabled() && (mc.player.isServerSneakState() || !this.access().getBooleanValueFromSettingName("Sneak"))) {
             if (var1.getButton() == ClickEvent.Button.RIGHT) {
                 BlockRayTraceResult var4 = BlockUtil.rayTrace(
                         mc.player.rotationYaw, mc.player.rotationPitch, this.access().getNumberValueBySettingName("Maximum range")

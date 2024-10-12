@@ -308,7 +308,7 @@ public class PlayerController {
 
    public void attackEntity(PlayerEntity var1, Entity var2) {
       this.syncCurrentPlayItem();
-      this.connection.sendPacket(new CUseEntityPacket(var2, var1.isSneaking()));
+      this.connection.sendPacket(new CUseEntityPacket(var2, var1.isServerSneakState()));
       if (this.currentGameType != GameType.SPECTATOR) {
          var1.attackTargetEntityWithCurrentItem(var2);
          var1.resetCooldown();
@@ -317,14 +317,14 @@ public class PlayerController {
 
    public ActionResultType interactWithEntity(PlayerEntity var1, Entity var2, Hand var3) {
       this.syncCurrentPlayItem();
-      this.connection.sendPacket(new CUseEntityPacket(var2, var3, var1.isSneaking()));
+      this.connection.sendPacket(new CUseEntityPacket(var2, var3, var1.isServerSneakState()));
       return this.currentGameType != GameType.SPECTATOR ? var1.interactOn(var2, var3) : ActionResultType.field14820;
    }
 
    public ActionResultType interactWithEntity(PlayerEntity var1, Entity var2, EntityRayTraceResult var3, Hand var4) {
       this.syncCurrentPlayItem();
       Vector3d var7 = var3.getHitVec().method11337(var2.getPosX(), var2.getPosY(), var2.getPosZ());
-      this.connection.sendPacket(new CUseEntityPacket(var2, var4, var7, var1.isSneaking()));
+      this.connection.sendPacket(new CUseEntityPacket(var2, var4, var7, var1.isServerSneakState()));
       return this.currentGameType != GameType.SPECTATOR ? var2.applyPlayerInteraction(var1, var7, var4) : ActionResultType.field14820;
    }
 

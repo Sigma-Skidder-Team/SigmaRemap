@@ -334,7 +334,7 @@ public abstract class AbstractOption {
          var4.forceUnicodeFont(var1);
       }
    });
-   public static final Class5806 field25361 = new Class5806("options.invertMouse", var0 -> var0.field44618, (var0, var1) -> var0.field44618 = var1);
+   public static final Class5806 field25361 = new Class5806("options.invertMouse", var0 -> var0.invertMouse, (var0, var1) -> var0.invertMouse = var1);
    public static final Class5806 REALMS_NOTIFICATIONS = new Class5806("options.realmsNotifications", var0 -> var0.field44620, (var0, var1) -> var0.field44620 = var1);
    public static final Class5806 field25363 = new Class5806("options.reducedDebugInfo", var0 -> var0.reducedDebugInfo, (var0, var1) -> var0.reducedDebugInfo = var1);
    public static final Class5806 field25364 = new Class5806("options.showSubtitles", var0 -> var0.showSubtitles, (var0, var1) -> var0.showSubtitles = var1);

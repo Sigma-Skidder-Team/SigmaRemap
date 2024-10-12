@@ -12,9 +12,9 @@ public class Class5675 extends Class5651<Class1108, Class2826<Class1108>> {
       this.addLayer(new Class247<Class1108>(this));
    }
 
-   public void render(Class1108 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
-      this.shadowSize = 0.25F * (float)var1.method5319();
-      super.render(var1, var2, var3, var4, var5, var6);
+   public void render(Class1108 entity, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+      this.shadowSize = 0.25F * (float) entity.method5319();
+      super.render(entity, var2, var3, var4, var5, var6);
    }
 
    public void method17857(Class1108 var1, MatrixStack var2, float var3) {

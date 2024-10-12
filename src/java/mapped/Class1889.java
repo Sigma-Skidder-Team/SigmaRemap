@@ -64,17 +64,17 @@ public enum Class1889 implements Class1884 {
             LivingRenderer var4 = (LivingRenderer)var3;
             switch (Class7313.field31355[this.ordinal()]) {
                case 12:
-                  return var4.field25089;
+                  return var4.renderLimbSwing;
                case 13:
-                  return var4.field25090;
+                  return var4.renderLimbSwingAmount;
                case 14:
-                  return var4.field25091;
+                  return var4.renderAgeInTicks;
                case 15:
-                  return var4.field25092;
+                  return var4.renderHeadYaw;
                case 16:
-                  return var4.field25093;
+                  return var4.renderHeadPitch;
                default:
-                  LivingEntity var5 = var4.field25088;
+                  LivingEntity var5 = var4.renderEntity;
                   if (var5 == null) {
                      return 0.0F;
                   }
@@ -101,7 +101,7 @@ public enum Class1889 implements Class1884 {
                      case 10:
                         return (float)var5.method3015();
                      case 11:
-                        return var5.getSwingProgress(var4.field25094);
+                        return var5.getSwingProgress(var4.renderPartialTicks);
                   }
             }
          }

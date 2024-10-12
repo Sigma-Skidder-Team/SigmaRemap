@@ -225,15 +225,15 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    public boolean method2851() {
-      return this.isSneaking();
+      return this.isServerSneakState();
    }
 
    public boolean method2852() {
-      return this.isSneaking();
+      return this.isServerSneakState();
    }
 
    public boolean method2853() {
-      return this.isSneaking();
+      return this.isServerSneakState();
    }
 
    public boolean method2854() {
@@ -302,7 +302,7 @@ public abstract class PlayerEntity extends LivingEntity {
             if (!this.isSleeping()) {
                if (!this.isSwimming()) {
                   if (!this.isSpinAttacking()) {
-                     if (this.isSneaking() && !this.abilities.isFlying) {
+                     if (this.isServerSneakState() && !this.abilities.isFlying) {
                         var3 = Pose.field13624;
                      } else {
                         var3 = Pose.STANDING;

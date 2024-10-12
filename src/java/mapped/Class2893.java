@@ -57,7 +57,7 @@ public class Class2893 extends Class2892 {
 
    public void setLivingAnimations(ArmorStandEntity var1, float var2, float var3, float var4) {
       this.field17917.rotateAngleX = 0.0F;
-      this.field17917.rotateAngleY = (float) (Math.PI / 180.0) * -MathHelper.method37827(var4, var1.prevRotationYaw, var1.rotationYaw);
+      this.field17917.rotateAngleY = (float) (Math.PI / 180.0) * -MathHelper.interpolateRotation(var4, var1.prevRotationYaw, var1.rotationYaw);
       this.field17917.rotateAngleZ = 0.0F;
    }
 

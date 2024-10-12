@@ -937,7 +937,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       this.field23273.method6857();
       String var12 = var6.method5395();
       this.field23272.renderViewEntity = null;
-      ClientPlayerEntity var13 = this.field23272.playerController.func_239167_a_(this.field23273, var6.method5396(), var6.method5397(), var6.isSneaking(), var6.isSprinting());
+      ClientPlayerEntity var13 = this.field23272.playerController.func_239167_a_(this.field23273, var6.method5396(), var6.method5397(), var6.isServerSneakState(), var6.isSprinting());
       var13.setEntityId(var7);
       this.field23272.player = var13;
       if (var4 != var6.world.getDimensionKey()) {

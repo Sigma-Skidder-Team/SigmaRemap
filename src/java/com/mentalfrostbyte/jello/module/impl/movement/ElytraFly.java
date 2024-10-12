@@ -37,7 +37,7 @@ public class ElytraFly extends Module {
             mc.gameSettings.keyBindSneak.pressed = false;
             if (!(mc.player.getMotion().y < 0.08) || mc.player.onGround) {
                 mc.player.setFlag(7, false);
-                if (mc.player.isSneaking()) {
+                if (mc.player.isServerSneakState()) {
                     this.setEnabled(false);
                 }
             } else if (!mc.player.isElytraFlying()) {
@@ -52,7 +52,7 @@ public class ElytraFly extends Module {
         if (this.isEnabled()) {
             double var4 = MovementUtils.getSpeed();
             boolean var6 = MultiUtilities.method17686();
-            if (!this.getBooleanValueFromSettingName("NCP") && mc.player.isSneaking()) {
+            if (!this.getBooleanValueFromSettingName("NCP") && mc.player.isServerSneakState()) {
                 var4 *= 2.5;
             }
 
@@ -80,7 +80,7 @@ public class ElytraFly extends Module {
             int var7 = GLFW.glfwGetKey(mc.mainWindow.getHandle(), mc.gameSettings.keyBindSneak.inputMappingsInput.keyCode);
             if (var7 == 1 && this.getBooleanValueFromSettingName("NCP")) {
                 var1.setY(-0.9F);
-            } else if (!mc.player.isSneaking()) {
+            } else if (!mc.player.isServerSneakState()) {
                 if (mc.player.isJumping && !this.getBooleanValueFromSettingName("NCP")) {
                     var1.setY(1.4F);
                 }
