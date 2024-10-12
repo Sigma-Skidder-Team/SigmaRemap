@@ -689,7 +689,7 @@ public class MusicManager {
                 try {
                     File var4 = new File(Client.getInstance().getFile() + "/music/yt-dlp.exe");
                     CloseableHttpClient var5 = HttpClients.createDefault();
-                    CloseableHttpResponse var6 = var5.execute(new HttpGet("https://github.com/yt-dlp/yt-dlp/releases/download/2024.09.27/yt-dlp.exe"));
+                    CloseableHttpResponse var6 = var5.execute(new HttpGet("https://github.com/yt-dlp/yt-dlp/releases/download/2024.10.07/yt-dlp.exe"));
                     Throwable var7 = null;
 
                     try {
@@ -722,7 +722,7 @@ public class MusicManager {
                 try {
                     File var100 = new File(Client.getInstance().getFile() + "/music/yt-dlp");
                     CloseableHttpClient var101 = HttpClients.createDefault();
-                    CloseableHttpResponse var102 = var101.execute(new HttpGet("https://github.com/yt-dlp/yt-dlp/releases/download/2024.09.27/yt-dlp"));
+                    CloseableHttpResponse var102 = var101.execute(new HttpGet("https://github.com/yt-dlp/yt-dlp/releases/download/2024.10.07/yt-dlp"));
                     Throwable var103 = null;
 
                     try {
