@@ -15,6 +15,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.Speed;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
+import com.mentalfrostbyte.jello.util.Rots;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import lol.MovementUtils;
 import mapped.*;
@@ -28,8 +29,8 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 
 public class BlockFlyHypixelMode extends Module {
-    private float field23466;
-    private float field23467;
+    private float yaw;
+    private float pitch;
     private Class7843 field23468;
     private int field23469 = -1;
     private int field23470;
@@ -85,7 +86,7 @@ public class BlockFlyHypixelMode extends Module {
     @Override
     public void onEnable() {
         this.field23469 = mc.player.inventory.currentItem;
-        this.field23467 = this.field23466 = 999.0F;
+        this.pitch = this.yaw = 999.0F;
         ((BlockFly) this.access()).field23884 = -1;
         if (mc.gameSettings.keyBindSneak.isKeyDown() && this.getBooleanValueFromSettingName("Downwards")) {
             mc.gameSettings.keyBindSneak.pressed = false;
@@ -168,11 +169,11 @@ public class BlockFlyHypixelMode extends Module {
 
     @EventTarget
     @LowerPriority
-    public void method16111(EventUpdate var1) {
+    public void method16111(EventUpdate event) {
         if (this.isEnabled() && this.field23473.method16735() != 0) {
             ModuleWithModuleSettings var4 = (ModuleWithModuleSettings) Client.getInstance().getModuleManager().getModuleByClass(Fly.class);
             if (!var4.isEnabled() || !var4.getStringSettingValueByName("Type").equalsIgnoreCase("Hypixel") || !var4.method16726().getStringSettingValueByName("Bypass").equals("Blink")) {
-                if (!var1.isPre()) {
+                if (!event.isPre()) {
                     this.field23473.method16736();
                     if (this.field23468 != null) {
                         BlockRayTraceResult var20 = new BlockRayTraceResult(
@@ -196,7 +197,7 @@ public class BlockFlyHypixelMode extends Module {
                     }
                 } else {
                     this.field23470++;
-                    var1.method13908(true);
+                    event.method13908(true);
                     this.field23472 = Hand.MAIN_HAND;
                     if (BlockFly.method16733(mc.player.getHeldItem(Hand.OFF_HAND).getItem())
                             && (
@@ -206,9 +207,9 @@ public class BlockFlyHypixelMode extends Module {
                         this.field23472 = Hand.OFF_HAND;
                     }
 
-                    double var5 = var1.getX();
-                    double var7 = var1.getZ();
-                    double var9 = var1.getY();
+                    double var5 = event.getX();
+                    double var7 = event.getZ();
+                    double var9 = event.getY();
                     if (mc.player.getMotion().y < 0.0
                             && mc.player.fallDistance > 1.0F
                             && BlockUtil.rayTrace(0.0F, 90.0F, 3.0F).getType() == RayTraceResult.Type.MISS) {
@@ -236,7 +237,7 @@ public class BlockFlyHypixelMode extends Module {
                         Class7843 var12 = BlockUtil.method34575(var11, !this.field23474 && this.getBooleanValueFromSettingName("Downwards"));
                         this.field23468 = var12;
                         if (var12 != null) {
-                            float[] var13 = BlockUtil.getRotationsToBlock(this.field23468.blockpos, this.field23468.facing);
+                            float[] rots = BlockUtil.getRotationsToBlock(this.field23468.blockpos, this.field23468.facing);
                             if ((double) var12.blockpos.field13028 - mc.player.getPosY() < 0.0) {
                                 double var14 = mc.player.getPosX()
                                         - ((double) var12.blockpos.field13027 + 0.5 + (double) var12.facing.getXOffset() / 2.0);
@@ -244,30 +245,44 @@ public class BlockFlyHypixelMode extends Module {
                                         - ((double) var12.blockpos.field13029 + 0.5 + (double) var12.facing.getZOffset() / 2.0);
                                 double var18 = Math.sqrt(var14 * var14 + var16 * var16);
                                 if (var18 < 2.0) {
-                                    var13[0] = mc.player.rotationYaw + 1.0F;
-                                    var13[1] = 90.0F;
+                                    rots[0] = mc.player.rotationYaw + 1.0F;
+                                    rots[1] = 90.0F;
                                 }
                             }
 
-                            this.field23467 = var13[0];
-                            this.field23466 = var13[1];
-                            var1.setPitch(this.field23467);
-                            var1.setYaw(this.field23466);
-                            mc.player.rotationYawHead = var1.getYaw();
-                            mc.player.renderYawOffset = var1.getYaw();
+                            this.pitch = rots[1];
+                            this.yaw = rots[0];
+                            Rots.rotating = true;
+                            Rots.prevPitch = this.pitch;
+                            Rots.prevYaw = this.yaw;
+                            event.setYaw(this.yaw);
+                            event.setPitch(this.pitch);
+                            Rots.pitch = this.pitch;
+                            Rots.yaw = this.yaw;
+
+                            mc.player.rotationYawHead = this.yaw;
+                            mc.player.renderYawOffset = this.yaw;
+                        } else {
+                            Rots.rotating = false;
                         }
                     } else {
-                        if (this.getBooleanValueFromSettingName("KeepRotations") && this.field23466 != 999.0F) {
-                            var1.setPitch(mc.player.rotationYaw + 1.0F);
-                            var1.setYaw(90.0F);
-                            mc.player.rotationYawHead = var1.getYaw();
-                            mc.player.renderYawOffset = var1.getYaw();
+                        if (this.getBooleanValueFromSettingName("KeepRotations") && this.yaw != 999.0F) {
+                            Rots.rotating = true;
+                            Rots.prevPitch = mc.player.rotationYaw + 1.0F;
+                            Rots.prevYaw = 90.0F;
+                            event.setPitch(mc.player.rotationYaw + 1.0F);
+                            event.setYaw(90.0F);
+                            Rots.pitch = mc.player.rotationYaw + 1.0F;
+                            Rots.yaw = 90.0F;
+
+                            mc.player.rotationYawHead = 90.0F;
+                            mc.player.renderYawOffset = 90.0F;
                         }
 
                         this.field23468 = null;
                     }
 
-                    if (mc.player.rotationYaw != var1.getPitch() && mc.player.rotationPitch != var1.getYaw()) {
+                    if (mc.player.rotationYaw != event.getPitch() && mc.player.rotationPitch != event.getYaw()) {
                         this.field23470 = 0;
                     }
                 }
