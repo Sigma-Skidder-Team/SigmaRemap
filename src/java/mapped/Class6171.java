@@ -8,10 +8,8 @@ import java.net.Proxy;
 import java.net.SocketTimeoutException;
 import java.net.Proxy.Type;
 import java.security.cert.CertificateException;
-import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLHandshakeException;
 import javax.net.ssl.SSLPeerUnverifiedException;
-import javax.net.ssl.SSLSocketFactory;
 
 public final class Class6171 implements Class6172 {
    private static final int field27603 = 20;

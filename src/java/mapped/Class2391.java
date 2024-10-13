@@ -25,7 +25,6 @@ public class Class2391 implements Cloneable, Class2393, Class2392 {
    public final Class1715 field16295;
    public final Class8530 field16296;
    public final SocketFactory field16297;
-   public final HostnameVerifier field16300;
    public final Class8110 field16302;
    public final Class8110 field16303;
    public final Class9457 field16304;
@@ -61,7 +60,6 @@ public class Class2391 implements Cloneable, Class2393, Class2392 {
          var4 = var4 || var6.method30638();
       }
 
-      this.field16300 = var1.field42582;
       this.field16302 = var1.field42584;
       this.field16303 = var1.field42585;
       this.field16304 = var1.field42586;
@@ -73,21 +71,6 @@ public class Class2391 implements Cloneable, Class2393, Class2392 {
       this.field16310 = var1.field42592;
       this.field16311 = var1.field42593;
       this.field16312 = var1.field42594;
-   }
-
-   private X509TrustManager method9800() {
-      try {
-         TrustManagerFactory var3 = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
-         var3.init((KeyStore)null);
-         TrustManager[] var4 = var3.getTrustManagers();
-         if (var4.length == 1 && var4[0] instanceof X509TrustManager) {
-            return (X509TrustManager)var4[0];
-         } else {
-            throw new IllegalStateException("Unexpected default trust managers:" + Arrays.toString((Object[])var4));
-         }
-      } catch (GeneralSecurityException var5) {
-         throw new AssertionError();
-      }
    }
 
    public int method9802() {

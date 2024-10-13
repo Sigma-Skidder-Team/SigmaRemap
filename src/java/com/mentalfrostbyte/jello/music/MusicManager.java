@@ -24,11 +24,6 @@ import lol.Texture;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;
-import org.apache.http.HttpEntity;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
 import org.lwjgl.opengl.GL11;
 import totalcross.json.JSONException;
 import totalcross.json.JSONObject;
@@ -38,11 +33,17 @@ import javax.sound.sampled.*;
 import javax.sound.sampled.FloatControl.Type;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.attribute.PosixFilePermission;
+import java.nio.file.attribute.PosixFilePermissions;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class MusicManager {
     private static final float field32167 = 32768.0F;
@@ -459,7 +460,7 @@ public class MusicManager {
                             } catch (IOException var24) {
                                 if (var24.getMessage() != null && var24.getMessage().contains("403")) {
                                     System.out.println("installing");
-                                    this.method24332();
+                                    this.download();
                                 }
                             } catch (LineUnavailableException var25) {
                                 var25.printStackTrace();
@@ -625,7 +626,7 @@ public class MusicManager {
                 Client.getInstance().getNotificationManager().send(new Notification("Now Playing", "Not available in your region."));
             } else {
                 var9.printStackTrace();
-                this.method24332();
+                this.download();
             }
         } catch (MalformedURLException var10) {
             MultiUtilities.addChatMessage("URL E " + var10.toString());
@@ -682,86 +683,78 @@ public class MusicManager {
 
     public void method24331() {
         Client.getInstance().getLogger().dummyMethod("Updating dependencies threaded");
-        new Thread(() -> this.method24332()).start();
+        new Thread(this::download).start();
     }
 
-    public void method24332() {
+    public void download() {
         if (!this.field32164) {
-            File var3 = new File(Client.getInstance().getFile() + "/music/");
-            var3.mkdirs();
-            Client.getInstance().getLogger().dummyMethod("Updating dependencies");
-            if (Util.getOSType() == OS.WINDOWS) {
-                try {
-                    File var4 = new File(Client.getInstance().getFile() + "/music/yt-dlp.exe");
-                    CloseableHttpClient var5 = HttpClients.createDefault();
-                    CloseableHttpResponse var6 = var5.execute(new HttpGet("https://github.com/yt-dlp/yt-dlp/releases/download/2024.10.07/yt-dlp.exe"));
-                    Throwable var7 = null;
-
-                    try {
-                        HttpEntity var8 = var6.getEntity();
-                        if (var8 != null) {
-                            try (FileOutputStream var9 = new FileOutputStream(var4)) {
-                                var8.writeTo(var9);
-                            }
-                        }
-                    } catch (Throwable var97) {
-                        var7 = var97;
-                        throw var97;
-                    } finally {
-                        if (var6 != null) {
-                            if (var7 != null) {
-                                try {
-                                    var6.close();
-                                } catch (Throwable var88) {
-                                    var7.addSuppressed(var88);
-                                }
-                            } else {
-                                var6.close();
-                            }
-                        }
-                    }
-                } catch (IOException var99) {
-                    var99.printStackTrace();
+            InputStream inputStream = null;
+            try {
+                // Load the yt-dlp file from the JAR resources
+                if (Util.getOSType() == OS.WINDOWS) {
+                    inputStream = getClass().getClassLoader().getResourceAsStream("yt-dlp.exe");
+                } else if (Util.getOSType() == OS.LINUX) {
+                    inputStream = getClass().getClassLoader().getResourceAsStream("yt-dlp_linux");
+                } else if (Util.getOSType() == OS.OSX) {
+                    inputStream = getClass().getClassLoader().getResourceAsStream("yt-dlp_macos");
+                } else {
+                    System.out.println("Failed to extract yt-dlp, because your OS is unsupported.");
+                    return;
                 }
-            } else {
-                try {
-                    File var100 = new File(Client.getInstance().getFile() + "/music/yt-dlp");
-                    CloseableHttpClient var101 = HttpClients.createDefault();
-                    CloseableHttpResponse var102 = var101.execute(new HttpGet("https://github.com/yt-dlp/yt-dlp/releases/download/2024.10.07/yt-dlp"));
-                    Throwable var103 = null;
 
-                    try {
-                        HttpEntity var104 = var102.getEntity();
-                        if (var104 != null) {
-                            try (FileOutputStream var105 = new FileOutputStream(var100)) {
-                                var104.writeTo(var105);
-                            }
-                        }
-                    } catch (Throwable var93) {
-                        var103 = var93;
-                        throw var93;
-                    } finally {
-                        if (var102 != null) {
-                            if (var103 != null) {
-                                try {
-                                    var102.close();
-                                } catch (Throwable var86) {
-                                    var103.addSuppressed(var86);
-                                }
-                            } else {
-                                var102.close();
-                            }
-                        }
+                if (inputStream == null) {
+                    System.out.println("Failed to find yt-dlp resource in the JAR.");
+                    return;
+                }
+
+                File musicDir = new File(Client.getInstance().getFile() + "/music/");
+                musicDir.mkdirs();  // Create the music directory if it doesn't exist
+
+                Client.getInstance().getLogger().dummyMethod("Updating dependencies");
+
+                String fileName = Util.getOSType() == OS.WINDOWS ? "yt-dlp.exe"
+                        : Util.getOSType() == OS.LINUX ? "yt-dlp_linux"
+                        : "yt-dlp_macos";
+                File targetFile = new File(Client.getInstance().getFile() + "/music/" + fileName);
+
+                try (FileOutputStream outputStream = new FileOutputStream(targetFile)) {
+                    // Buffer for reading input stream data
+                    byte[] buffer = new byte[4096];
+                    int bytesRead;
+
+                    // Read from the input stream and write to the target file
+                    while ((bytesRead = inputStream.read(buffer)) != -1) {
+                        outputStream.write(buffer, 0, bytesRead);
                     }
-                } catch (IOException var95) {
-                    var95.printStackTrace();
+
+                    System.out.println("Extraction completed: " + targetFile.getName());
+
+                    // If not on Windows, set execute permissions
+                    if (Util.getOSType() != OS.WINDOWS) {
+                        Set<PosixFilePermission> permissions = PosixFilePermissions.fromString("rwxr-xr-x");
+                        Files.setPosixFilePermissions(Paths.get(targetFile.getAbsolutePath()), permissions);
+                    }
+
+                } catch (IOException e) {
+                    System.out.println("Failed to extract the file: " + fileName);
+                    System.out.println(e.getMessage());
+                }
+
+                this.field32164 = true;  // Mark the extraction as completed
+            } catch (Exception e) {
+                System.out.println("Failed: " + e.getMessage());
+            } finally {
+                if (inputStream != null) {
+                    try {
+                        inputStream.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
-
-            System.out.println("done");
-            this.field32164 = true;
         }
     }
+
 
     public String method24333() {
         String var3 = Client.getInstance().getFile().getAbsolutePath() + "/music/yt-dlp";

@@ -5,11 +5,8 @@ import java.net.ProxySelector;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 import javax.net.SocketFactory;
 import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.SSLSocketFactory;
-import javax.net.ssl.X509TrustManager;
 
 public final class Class9260 {
    public Class7281 field42568;
@@ -24,7 +21,6 @@ public final class Class9260 {
    public Class1715 field42577;
    public Class8530 field42578;
    public SocketFactory field42579;
-   public HostnameVerifier field42582;
    public Class8110 field42584;
    public Class8110 field42585;
    public Class9457 field42586;
@@ -45,7 +41,6 @@ public final class Class9260 {
       this.field42575 = ProxySelector.getDefault();
       this.field42576 = Class9520.field44322;
       this.field42579 = SocketFactory.getDefault();
-      this.field42582 = Class9005.field41167;
       this.field42584 = Class8110.field34864;
       this.field42585 = Class8110.field34864;
       this.field42586 = new Class9457();
@@ -72,7 +67,6 @@ public final class Class9260 {
       this.field42578 = var1.field16296;
       this.field42577 = var1.field16295;
       this.field42579 = var1.field16297;
-      this.field42582 = var1.field16300;
       this.field42584 = var1.field16302;
       this.field42585 = var1.field16303;
       this.field42586 = var1.field16304;

@@ -44,7 +44,6 @@ public final class Class6173 implements Class6172 {
       }
 
       Class1797 var14 = var11.method34977(var8)
-         .method34981(var6.method17932().method22818())
          .method34992(var9)
          .method34993(System.currentTimeMillis())
          .method34994();

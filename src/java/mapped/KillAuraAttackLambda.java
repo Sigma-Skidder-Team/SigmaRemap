@@ -24,7 +24,7 @@ public class KillAuraAttackLambda implements Runnable {
       this.field1477 = var2;
    }
 
-   private void handleAnimationAndAttack(Minecraft mc, Entity entity, boolean isOnePointEight, boolean noSwing) {
+   private void handleAnimationAndAttack(Minecraft mc, Entity entity, boolean isOnePointEight) {
       if (EnchantmentHelper.getEnchantmentLevel(Enchantment.getEnchantmentByID(12), mc.player.getHeldItem(Hand.MAIN_HAND)) > 0) {
          mc.particles.addParticleEmitter(entity, ParticleTypes.ENCHANTED_HIT);
       }
@@ -91,35 +91,31 @@ public class KillAuraAttackLambda implements Runnable {
             boolean walls = this.killauraModule.getBooleanValueFromSettingName("Through walls");
             boolean properTrace = MultiUtilities.rayTraceEntity(mc.player, entity);
 
-            // Perform INTERACT before animation and attack
             if (raytrace) {
                if (properTrace && !walls || walls) {
+                  handleAnimationAndAttack(mc, entity, isOnePointEight);
+                  mc.player.resetCooldown();
+
                   if (!noSwing) {
                      mc.player.swingArm(Hand.MAIN_HAND);
                   }
+
                   mc.getConnection().getNetworkManager().sendNoEventPacket(new CUseEntityPacket(entity, mc.player.isSneaking()));
-
-                  // Animation and attack after INTERACT
-                  handleAnimationAndAttack(mc, entity, isOnePointEight, noSwing);
-
-                  mc.player.resetCooldown();
                } else {
-                  // Cancel attack if entity isn't valid
                   KillAura.target = null;
                   KillAura.entities = null;
                   KillAura.timedEntityIdk = null;
                }
             } else {
                // Non-raytrace handling
+               handleAnimationAndAttack(mc, entity, isOnePointEight);
+               mc.player.resetCooldown();
+
                if (!noSwing) {
                   mc.player.swingArm(Hand.MAIN_HAND);
                }
+
                mc.getConnection().getNetworkManager().sendNoEventPacket(new CUseEntityPacket(entity, mc.player.isSneaking()));
-
-               // Animation and attack after INTERACT
-               handleAnimationAndAttack(mc, entity, isOnePointEight, noSwing);
-
-               mc.player.resetCooldown();
             }
          }
 

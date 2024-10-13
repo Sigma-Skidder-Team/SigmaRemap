@@ -19,7 +19,6 @@ public final class Class9161 {
    private final int field42055;
    private final String field42056;
    private final Class9371 field42057;
-   private final Class6027 field42058;
    private final long field42059;
    private final long field42060;
 
@@ -65,9 +64,6 @@ public final class Class9161 {
             List var15 = this.method34203(var4);
             List var16 = this.method34203(var4);
             Class2034 var17 = !var4.method7583() ? Class2034.method8676(var4.method7617()) : Class2034.field13209;
-            this.field42058 = Class6027.method18658(var17, var14, var15, var16);
-         } else {
-            this.field42058 = null;
          }
       } finally {
          var1.close();
@@ -82,7 +78,6 @@ public final class Class9161 {
       this.field42055 = var1.method7846();
       this.field42056 = var1.method7848();
       this.field42057 = var1.method7853();
-      this.field42058 = var1.method7849();
       this.field42059 = var1.method7863();
       this.field42060 = var1.method7864();
    }
@@ -110,10 +105,6 @@ public final class Class9161 {
       var4.method7565(field42050).method7565(": ").method7577(this.field42060).method7570(10);
       if (this.method34202()) {
          var4.method7570(10);
-         var4.method7565(this.field42058.method18660().method34494()).method7570(10);
-         this.method34204(var4, this.field42058.method18661());
-         this.method34204(var4, this.field42058.method18663());
-         var4.method7565(this.field42058.method18659().method8678()).method7570(10);
       }
 
       var4.close();
@@ -146,21 +137,6 @@ public final class Class9161 {
       }
    }
 
-   private void method34204(Class1733 var1, List<Certificate> var2) throws IOException {
-      try {
-         var1.method7577((long)var2.size()).method7570(10);
-         int var5 = 0;
-
-         for (int var6 = var2.size(); var5 < var6; var5++) {
-            byte[] var7 = ((Certificate)var2.get(var5)).getEncoded();
-            String var8 = Class2003.method8430(var7).method8437();
-            var1.method7565(var8).method7570(10);
-         }
-      } catch (CertificateEncodingException var9) {
-         throw new IOException(var9.getMessage());
-      }
-   }
-
    public boolean method34205(Class8223 var1, Class1797 var2) {
       return this.field42051.equals(var1.method28612().toString())
          && this.field42053.equals(var1.method28613())
@@ -178,7 +154,6 @@ public final class Class9161 {
          .method34980(this.field42056)
          .method34985(this.field42057)
          .method34986(new Class1795(var1, var4, var5))
-         .method34981(this.field42058)
          .method34992(this.field42059)
          .method34993(this.field42060)
          .method34994();

@@ -2,29 +2,21 @@ package mapped;
 
 import java.io.IOException;
 import java.lang.ref.Reference;
-import java.net.ConnectException;
 import java.net.ProtocolException;
 import java.net.Proxy;
 import java.net.Socket;
 import java.net.SocketException;
 import java.net.SocketTimeoutException;
-import java.net.UnknownServiceException;
 import java.net.Proxy.Type;
-import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import javax.net.ssl.SSLPeerUnverifiedException;
-import javax.net.ssl.SSLSocket;
-import javax.net.ssl.SSLSocketFactory;
 
 public final class Class7263 extends Class7264 implements Class7266 {
-   private static final String field31153 = "throw with null exception";
    private final Class9457 field31154;
    private final Class7723 field31155;
    private Socket field31156;
    private Socket field31157;
-   private Class6027 field31158;
    private Class2201 field31159;
    private Class1767 field31160;
    private Class1735 field31161;
@@ -52,8 +44,6 @@ public final class Class7263 extends Class7264 implements Class7266 {
          throw new IllegalStateException("already connected");
       } else {
          Class2503 var7 = null;
-         List var8 = this.field31155.method25539().method19054();
-         Class8349 var9 = new Class8349(var8);
 
          while (true) {
             try {
@@ -63,7 +53,6 @@ public final class Class7263 extends Class7264 implements Class7266 {
                   this.method22803(var1, var2);
                }
 
-               this.method22804(var9);
                break;
             } catch (IOException var13) {
                Class9474.method36536(this.field31157);
@@ -72,17 +61,12 @@ public final class Class7263 extends Class7264 implements Class7266 {
                this.field31156 = null;
                this.field31161 = null;
                this.field31162 = null;
-               this.field31158 = null;
                this.field31159 = null;
                this.field31160 = null;
                if (var7 == null) {
                   var7 = new Class2503(var13);
                } else {
                   var7.method10485(var13);
-               }
-
-               if (!var4 || !var9.method29261(var13)) {
-                  throw var7;
                }
             }
          }
@@ -132,7 +116,7 @@ public final class Class7263 extends Class7264 implements Class7266 {
       }
    }
 
-   private void method22804(Class8349 var1) throws IOException {
+   private void method22804() throws IOException {
       this.field31159 = Class2201.field14386;
       this.field31157 = this.field31156;
    }
@@ -217,13 +201,7 @@ public final class Class7263 extends Class7264 implements Class7266 {
    }
 
    public boolean method22809(Class7284 var1) {
-      if (var1.method22943() == this.field31155.method25539().method19049().method22943()) {
-         return var1.method22942().equals(this.field31155.method25539().method19049().method22942())
-            ? true
-            : this.field31158 != null && Class9005.field41167.verify(var1.method22942(), (X509Certificate)this.field31158.method18661().get(0));
-      } else {
-         return false;
-      }
+       return var1.method22943() == this.field31155.method25539().method19049().method22943();
    }
 
    public Class7932 method22810(Class2391 var1, Class5751 var2) throws SocketException {
@@ -300,11 +278,6 @@ public final class Class7263 extends Class7264 implements Class7266 {
       }
    }
 
-   @Override
-   public Class6027 method22818() {
-      return this.field31158;
-   }
-
    public boolean method22819() {
       return this.field31160 != null;
    }
@@ -324,8 +297,6 @@ public final class Class7263 extends Class7264 implements Class7266 {
          + this.field31155.method25540()
          + " hostAddress="
          + this.field31155.method25541()
-         + " cipherSuite="
-         + (this.field31158 == null ? "none" : this.field31158.method18660())
          + " protocol="
          + this.field31159
          + '}';

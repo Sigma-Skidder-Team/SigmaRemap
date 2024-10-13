@@ -5,7 +5,6 @@ public class Class9279 {
    public Class2201 field42685;
    public int field42686 = -1;
    public String field42687;
-   public Class6027 field42688;
    public Class9192 field42689;
    public Class1793 field42690;
    public Class1797 field42691;
@@ -23,7 +22,6 @@ public class Class9279 {
       this.field42685 = var1.field9683;
       this.field42686 = var1.field9684;
       this.field42687 = var1.field9685;
-      this.field42688 = var1.field9686;
       this.field42689 = var1.field9687.method35550();
       this.field42690 = var1.field9688;
       this.field42691 = var1.field9689;
@@ -53,11 +51,6 @@ public class Class9279 {
       return this;
    }
 
-   public Class9279 method34981(Class6027 var1) {
-      this.field42688 = var1;
-      return this;
-   }
-
    public Class9279 method34982(String var1, String var2) {
       this.field42689.method34439(var1, var2);
       return this;
@@ -65,11 +58,6 @@ public class Class9279 {
 
    public Class9279 method34983(String var1, String var2) {
       this.field42689.method34436(var1, var2);
-      return this;
-   }
-
-   public Class9279 method34984(String var1) {
-      this.field42689.method34438(var1);
       return this;
    }
 

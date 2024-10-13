@@ -11,7 +11,6 @@ public final class Class1797 implements Closeable {
    public final Class2201 field9683;
    public final int field9684;
    public final String field9685;
-   public final Class6027 field9686;
    public final Class9371 field9687;
    public final Class1793 field9688;
    public final Class1797 field9689;
@@ -26,7 +25,6 @@ public final class Class1797 implements Closeable {
       this.field9683 = var1.field42685;
       this.field9684 = var1.field42686;
       this.field9685 = var1.field42687;
-      this.field9686 = var1.field42688;
       this.field9687 = var1.field42689.method34442();
       this.field9688 = var1.field42690;
       this.field9689 = var1.field42691;
@@ -54,10 +52,6 @@ public final class Class1797 implements Closeable {
 
    public String method7848() {
       return this.field9685;
-   }
-
-   public Class6027 method7849() {
-      return this.field9686;
    }
 
    public List<String> method7850(String var1) {

@@ -62,7 +62,7 @@ public class Class8687 {
 
    private Class9660 method31303() {
       if (this.field39217 != null) {
-         if (this.field39216.method28621() && this.field39217.method7849() == null) {
+         if (this.field39216.method28621()) {
             return new Class9660(this.field39216, null);
          } else if (Class9660.method37711(this.field39217, this.field39216)) {
             Class7319 var3 = this.field39216.method28620();
