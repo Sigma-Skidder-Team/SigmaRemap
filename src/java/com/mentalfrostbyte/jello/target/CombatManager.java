@@ -22,7 +22,7 @@ public class CombatManager {
         Client.getInstance().getEventManager().register(this);
     }
 
-    public boolean isValidTarget(Entity var1) {
+    public boolean isTargetABot(Entity var1) {
         return this.bots.contains(var1);
     }
 

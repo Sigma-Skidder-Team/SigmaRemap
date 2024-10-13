@@ -16,7 +16,6 @@ import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.entity.Entity;
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.HttpClients;
-import totalcross.json.JSONException;
 import totalcross.json.JSONObject;
 
 import java.io.IOException;
@@ -93,7 +92,7 @@ public class CombatTracker {
             while (var5.hasNext()) {
                 AbstractClientPlayerEntity var6 = var5.next();
                 if (this.field36053.contains(var6.getUniqueID())
-                        || Client.getInstance().getCombatManager().isValidTarget(var6)
+                        || Client.getInstance().getCombatManager().isTargetABot(var6)
                         || var6.getName().getUnformattedComponentText().equals("")) {
                     var5.remove();
                 }

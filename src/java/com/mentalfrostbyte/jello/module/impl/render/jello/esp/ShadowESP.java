@@ -179,7 +179,7 @@ public class ShadowESP extends Module {
         if (var1 instanceof LivingEntity) {
             if (var1 instanceof PlayerEntity) {
                 if (!(var1 instanceof ClientPlayerEntity)) {
-                    return !var1.isInvisible() && !Client.getInstance().getCombatManager().isValidTarget(var1);
+                    return !var1.isInvisible() && !Client.getInstance().getCombatManager().isTargetABot(var1);
                 } else {
                     return false;
                 }

@@ -536,7 +536,7 @@ public class KillAura extends Module {
                 this.field23946 = -1;
             } else {
                 if (this.field23957 == -1.0F) {
-                    float var7 = RotationHelper.method34148(MultiUtilities.method17751(((TimedEntity) var6.get(0)).getEntity())).yaw;
+                    float var7 = RotationHelper.getRotationsToVector(MultiUtilities.method17751(((TimedEntity) var6.get(0)).getEntity())).yaw;
                     float var8 = Math.abs(MultiUtilities.method17756(var7, previousRotations.yaw));
                     this.field23956 = var8 * 1.95F / 50.0F;
                     this.field23957++;
@@ -544,7 +544,7 @@ public class KillAura extends Module {
                 }
 
                 entities = var6;
-                float var12 = RotationHelper.method34148(MultiUtilities.method17751(entities.get(0).getEntity())).yaw;
+                float var12 = RotationHelper.getRotationsToVector(MultiUtilities.method17751(entities.get(0).getEntity())).yaw;
                 if (!entities.isEmpty() & !mode.equals("Switch")) {
                     if (timedEntityIdk != null && timedEntityIdk.getEntity() != entities.get(0).getEntity()) {
                         float var13 = Math.abs(MultiUtilities.method17756(var12, previousRotations.yaw));
@@ -586,7 +586,7 @@ public class KillAura extends Module {
                     }
 
                     Vector3d var14 = MultiUtilities.method17751(entities.get(this.field23942).getEntity());
-                    float var9 = Math.abs(MultiUtilities.method17756(RotationHelper.method34148(var14).yaw, previousRotations.yaw));
+                    float var9 = Math.abs(MultiUtilities.method17756(RotationHelper.getRotationsToVector(var14).yaw, previousRotations.yaw));
                     this.field23956 = var9 * 1.95F / 50.0F;
                     this.field23955 = Math.random();
                     timedEntityIdk = new TimedEntity(

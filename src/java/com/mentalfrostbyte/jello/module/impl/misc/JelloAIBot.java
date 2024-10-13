@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import com.mentalfrostbyte.jello.module.impl.world.FightBot;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
@@ -29,7 +30,14 @@ public class JelloAIBot extends Module {
     }
 
     @Override
+    public void onEnable() {
+        Client.getInstance().getModuleManager().getModuleByClass(FightBot.class).setEnabled(true);
+        super.onEnable();
+    }
+
+    @Override
     public void onDisable() {
+        Client.getInstance().getModuleManager().getModuleByClass(FightBot.class).setEnabled(false);
         Client.getInstance().method19950().method31738();
         this.field23515 = null;
     }
@@ -41,7 +49,7 @@ public class JelloAIBot extends Module {
 
         while (var4.hasNext()) {
             Entity var5 = (Entity) var4.next();
-            if (!(var5 instanceof PlayerEntity) || Client.getInstance().getCombatManager().isValidTarget(var5) || !MultiUtilities.isAboveBounds(var5, 2.0F)) {
+            if (!(var5 instanceof PlayerEntity) || Client.getInstance().getCombatManager().isTargetABot(var5) || !MultiUtilities.isAboveBounds(var5, 2.0F)) {
                 var4.remove();
             }
         }

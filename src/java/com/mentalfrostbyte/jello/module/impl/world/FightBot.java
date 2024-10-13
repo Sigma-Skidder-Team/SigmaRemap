@@ -45,7 +45,7 @@ public class FightBot extends Module {
         List<Entity> entities = Lists.newArrayList(mc.world.getEntities());
         entities.remove(mc.player);
 
-        entities.removeIf(entity -> !(entity instanceof PlayerEntity) || !Client.getInstance().getCombatManager().isValidTarget(entity));
+        entities.removeIf(entity -> !(entity instanceof PlayerEntity) || !Client.getInstance().getCombatManager().isTargetABot(entity));
 
         List<Entity> validTargets = BlockUtil.getVisibleEntities(entities);
         return validTargets.size() <= 1 ? validTargets : validTargets.subList(0, Math.min(3, validTargets.size() - 1));
