@@ -20,3 +20,6 @@ run/
 .idea
 libraries/desktop.ini
 *.iml
+/.settings
+.project
+.classpath
