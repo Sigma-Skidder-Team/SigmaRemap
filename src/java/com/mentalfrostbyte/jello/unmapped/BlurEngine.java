@@ -21,7 +21,7 @@ import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
 public class BlurEngine {
-   private static Minecraft mc = Minecraft.getInstance();
+   private static final Minecraft mc = Minecraft.getInstance();
    private static ShaderGroup blurShader;
    public static Framebuffer frameBuff;
    public static Framebuffer frameBuff2;
@@ -50,7 +50,7 @@ public class BlurEngine {
 
    @EventTarget
    @LowestPriority
-   public void method29973(Render3DEvent var1) {
+   public void on3DRender(Render3DEvent event) {
       if (Client.getInstance().getGuiManager().method33472() && frameBuffWidth < screenWidth && frameBuffHeight < screenHeight) {
          if (frameBuff == null) {
             try {

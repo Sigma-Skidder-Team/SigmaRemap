@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MathUtils {
-    public static final double field38711 = 0.1F;
     private final double field38710;
 
     public MathUtils(double var1) {
