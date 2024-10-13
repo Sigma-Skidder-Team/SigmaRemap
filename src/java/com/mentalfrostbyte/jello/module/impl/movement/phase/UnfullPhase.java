@@ -26,11 +26,11 @@ public class UnfullPhase extends Module {
                 MultiUtilities.setPlayerYMotion(-2.0);
             }
 
-            if (mc.player.getPosY() > (double) this.field23843 && mc.player.isJumping && !mc.player.isServerSneakState()) {
+            if (mc.player.getPosY() > (double) this.field23843 && mc.player.isJumping && !mc.player.isSneaking()) {
                 this.field23843++;
             }
 
-            if (mc.player.getPosY() % 1.0 == 0.0 && mc.player.isServerSneakState()) {
+            if (mc.player.getPosY() % 1.0 == 0.0 && mc.player.isSneaking()) {
                 this.field23843--;
             }
         }

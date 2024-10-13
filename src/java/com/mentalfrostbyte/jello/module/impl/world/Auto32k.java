@@ -239,13 +239,13 @@ public class Auto32k extends Module {
                                 if (var9 == ActionResultType.SUCCESS) {
                                     this.field23873++;
                                     mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, CEntityActionPacket.Action.PRESS_SHIFT_KEY));
-                                    mc.player.movementInput.sneak = true;
+                                    mc.player.movementInput.field43914 = true;
                                     mc.player.inventory.currentItem = this.field23872;
                                     Vector3d var10 = BlockUtil.method34572(Direction.UP, this.field23870.up());
                                     BlockRayTraceResult var11 = new BlockRayTraceResult(var10, Direction.UP, this.field23870.up(), false);
                                     mc.playerController.func_217292_a(mc.player, mc.world, Hand.MAIN_HAND, var11);
                                     mc.player.swingArm(Hand.MAIN_HAND);
-                                    mc.player.movementInput.sneak = false;
+                                    mc.player.movementInput.field43914 = false;
                                     mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, CEntityActionPacket.Action.RELEASE_SHIFT_KEY));
                                     mc.playerController.func_217292_a(mc.player, mc.world, Hand.MAIN_HAND, var11);
                                 }

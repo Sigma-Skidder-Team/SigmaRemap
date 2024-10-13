@@ -48,7 +48,7 @@ public class Jesus extends Module {
                   >= mc.player.getPosY() - (double)(mc.player.getPosY() % 0.5 != 0.0 ? 0.0F : 0.5F)
             )) {
                if (!this.method16951(mc.player.boundingBox)) {
-                  if (!mc.player.isServerSneakState()) {
+                  if (!mc.player.isSneaking()) {
                      if (!(mc.player.fallDistance > 10.0F)) {
                         BlockState var4 = mc.world.getBlockState(var1.getBlockPos());
                         int var5 = var4.method23449().method23477();
@@ -97,7 +97,7 @@ public class Jesus extends Module {
    @LowerPriority
    public void method16947(EventMove var1) {
       if (this.isEnabled() && mc.world != null && !AutoMLG.method16421()) {
-         if (this.method16951(mc.player.boundingBox) && !mc.player.isServerSneakState()) {
+         if (this.method16951(mc.player.boundingBox) && !mc.player.isSneaking()) {
             BlockState var4 = mc.world.getBlockState(mc.player.getPosition());
             if (var4 != null && !var4.method23449().isEmpty()) {
                double var5 = (double)var4.method23449().method23476();
@@ -126,7 +126,7 @@ public class Jesus extends Module {
                   if (MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
                      this.field24016 = 0;
                   } else {
-                     if (mc.player.isServerSneakState() || mc.player.collidedVertically) {
+                     if (mc.player.isSneaking() || mc.player.collidedVertically) {
                         this.field24016 = 0;
                         return;
                      }
@@ -138,7 +138,7 @@ public class Jesus extends Module {
 
                      double var14 = this.method16954((double)this.field24016);
                      if (var14 != -999.0) {
-                        mc.player.lastReportedPosY = 0.0;
+                        mc.player.field6120 = 0.0;
                         var1.setY(var14);
                      }
                   }

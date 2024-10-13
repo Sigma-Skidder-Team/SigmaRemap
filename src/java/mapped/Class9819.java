@@ -127,7 +127,7 @@ public class Class9819 {
             Client.getInstance().getNotificationManager().send(new Notification("Teleport", "Target lost"));
             this.field45878 = 0;
             this.entity = null;
-         } else if (!this.mc.player.isServerSneakState()) {
+         } else if (!this.mc.player.isSneaking()) {
             double posY = this.entity.getPosY() - this.entity.lastTickPosY;
             if (posY < -2.0 && MultiUtilities.method17763(this.entity) && this.entity.getPosY() - this.mc.player.getPosY() < -10.0) {
                this.field45878 = 0;

@@ -96,7 +96,7 @@ public class GameSettings {
    public boolean vsync = true;
    public boolean entityShadows = true;
    public boolean forceUnicodeFont;
-   public boolean invertMouse;
+   public boolean field44618;
    public boolean field44619;
    public boolean field44620 = true;
    public boolean reducedDebugInfo;

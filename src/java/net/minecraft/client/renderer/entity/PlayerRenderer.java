@@ -35,9 +35,9 @@ public class PlayerRenderer extends LivingRenderer<AbstractClientPlayerEntity, P
       this.addLayer(new Class233<>(this));
    }
 
-   public void render(AbstractClientPlayerEntity entity, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
-      this.setModelVisibilities(entity);
-      super.render(entity, var2, var3, var4, var5, var6);
+   public void render(AbstractClientPlayerEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+      this.setModelVisibilities(var1);
+      super.render(var1, var2, var3, var4, var5, var6);
    }
 
    public Vector3d getRenderOffset(AbstractClientPlayerEntity var1, float var2) {
@@ -149,11 +149,11 @@ public class PlayerRenderer extends LivingRenderer<AbstractClientPlayerEntity, P
    }
 
    public void method17890(MatrixStack var1, Class7733 var2, int var3, AbstractClientPlayerEntity var4) {
-      this.method17892(var1, var2, var3, var4, this.mainModel.bipedRightArm, this.mainModel.bipedRightArmwear);
+      this.method17892(var1, var2, var3, var4, this.field25086.bipedRightArm, this.field25086.bipedRightArmwear);
    }
 
    public void method17891(MatrixStack var1, Class7733 var2, int var3, AbstractClientPlayerEntity var4) {
-      this.method17892(var1, var2, var3, var4, this.mainModel.bipedLeftArm, this.mainModel.bipedLeftArmwear);
+      this.method17892(var1, var2, var3, var4, this.field25086.bipedLeftArm, this.field25086.bipedLeftArmwear);
    }
 
    private void method17892(MatrixStack var1, Class7733 var2, int var3, AbstractClientPlayerEntity var4, ModelRenderer var5, ModelRenderer var6) {

@@ -512,7 +512,7 @@ public class MathHelper {
       }
    }
 
-   public static float interpolateRotation(float var0, float var1, float var2) {
+   public static float method37827(float var0, float var1, float var2) {
       return var1 + var0 * method37792(var2 - var1);
    }
 

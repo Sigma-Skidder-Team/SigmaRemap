@@ -691,7 +691,7 @@ public class MultiUtilities {
          mc.player.swingArm(Hand.MAIN_HAND);
       }
 
-      mc.getConnection().getNetworkManager().sendNoEventPacket(new CUseEntityPacket(var0, mc.player.isServerSneakState()));
+      mc.getConnection().getNetworkManager().sendNoEventPacket(new CUseEntityPacket(var0, mc.player.isSneaking()));
 
       boolean canSwing = (double) mc.player.getCooledAttackStrength(0.5F) > 0.9 || isOnePointEight;
 

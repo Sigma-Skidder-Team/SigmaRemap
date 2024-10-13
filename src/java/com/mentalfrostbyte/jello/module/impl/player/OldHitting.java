@@ -48,7 +48,7 @@ public class OldHitting extends Module {
                 boolean var4 = mc.player.getHeldItemMainhand() != null && mc.player.getHeldItemMainhand().getItem() instanceof SwordItem;
                 boolean auraEnabled = Client.getInstance().getModuleManager().getModuleByClass(KillAura.class).isEnabled();
                 boolean var6 = true;
-                if (!mc.player.isServerSneakState()
+                if (!mc.player.isSneaking()
                         && mc.objectMouseOver.getType() == RayTraceResult.Type.BLOCK
                         && !auraEnabled) {
                     BlockRayTraceResult var7 = (BlockRayTraceResult) mc.objectMouseOver;

@@ -36,7 +36,7 @@ public class NoClipPhase extends Module {
             if (mc.player.ticksExisted % 2 == 0) {
                 if (mc.player.onGround) {
                     if (!mc.player.isJumping) {
-                        if (mc.player.isServerSneakState()) {
+                        if (mc.player.isSneaking()) {
                             mc.player
                                     .setPosition(mc.player.getPosX(), mc.player.getPosY() - 1.0, mc.player.getPosZ());
                         }

@@ -27,11 +27,11 @@ public abstract class Class5651<T extends MobEntity, M extends Class2827<T>> ext
       }
    }
 
-   public void render(T entity, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
-      super.render((T) entity, var2, var3, var4, var5, var6);
-      Entity var9 = entity.method4297();
+   public void render(T var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+      super.render((T)var1, var2, var3, var4, var5, var6);
+      Entity var9 = var1.method4297();
       if (var9 != null) {
-         this.method17847((T) entity, var3, var4, var5, var9);
+         this.method17847((T)var1, var3, var4, var5, var9);
       }
    }
 

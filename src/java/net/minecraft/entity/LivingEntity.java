@@ -1,10 +1,8 @@
 package net.minecraft.entity;
 
-import com.mentalfrostbyte.jello.util.Rots;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.client.Minecraft;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.enchantment.FrostWalkerEnchantment;
@@ -352,11 +350,6 @@ public abstract class LivingEntity extends Entity {
       this.prevRotationYaw = this.rotationYaw;
       this.prevRotationPitch = this.rotationPitch;
       this.world.getProfiler().endSection();
-
-      if(this == Minecraft.getInstance().player && Rots.rotating) {
-         this.prevRotationYawHead = Rots.yaw;
-         Rots.prevPitch = Rots.pitch;
-      }
    }
 
    public boolean getMovementSpeed() {
@@ -2876,7 +2869,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    public boolean hasStoppedClimbing() {
-      return this.isServerSneakState();
+      return this.isSneaking();
    }
 
    public boolean isElytraFlying() {

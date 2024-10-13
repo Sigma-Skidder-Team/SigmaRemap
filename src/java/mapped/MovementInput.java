@@ -8,7 +8,7 @@ public class MovementInput {
    public boolean field43911;
    public boolean field43912;
    public boolean field43913;
-   public boolean sneak;
+   public boolean field43914;
 
    public void method36336(boolean var1) {
    }

@@ -29,7 +29,7 @@ public class MovementUtils {
          var4 = (float)((double)var4 - 0.03000002 * (double)(mc.player.getActivePotionEffect(Effects.SPEED).method8629() + 1));
       }
 
-      if (mc.player.isServerSneakState()) {
+      if (mc.player.isSneaking()) {
          var2 *= 0.25;
       }
 
@@ -42,7 +42,7 @@ public class MovementUtils {
 
    public static double method37076() {
       double var2 = 0.2873 + (double)method37078() * 0.057;
-      if (mc.player.isServerSneakState()) {
+      if (mc.player.isSneaking()) {
          var2 *= 0.25;
       }
 
@@ -51,7 +51,7 @@ public class MovementUtils {
 
    public static double method37077() {
       double var2 = 0.2873;
-      if (mc.player.isServerSneakState()) {
+      if (mc.player.isSneaking()) {
          var2 *= 0.25;
       }
 

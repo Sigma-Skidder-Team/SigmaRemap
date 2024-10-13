@@ -59,7 +59,7 @@ public class Class4109 extends Class4057 {
    public Class9492 method12825(Class2828 var1, float var2) {
       EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Class5693 var6 = new Class5693(var5);
-      var6.mainModel = (Class2881<WitherEntity>)var1;
+      var6.field25086 = (Class2881<WitherEntity>)var1;
       var6.shadowSize = var2;
       return (Class9492)var6;
    }

@@ -18,15 +18,15 @@ public class Class5690 extends Class5651<WolfEntity, Class2859<WolfEntity>> {
       return var1.method4380();
    }
 
-   public void render(WolfEntity entity, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
-      if (entity.method4375()) {
-         float var9 = entity.method4376(var3);
-         this.mainModel.method11190(var9, var9, var9);
+   public void render(WolfEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+      if (var1.method4375()) {
+         float var9 = var1.method4376(var3);
+         this.field25086.method11190(var9, var9, var9);
       }
 
-      super.render(entity, var2, var3, var4, var5, var6);
-      if (entity.method4375()) {
-         this.mainModel.method11190(1.0F, 1.0F, 1.0F);
+      super.render(var1, var2, var3, var4, var5, var6);
+      if (var1.method4375()) {
+         this.field25086.method11190(1.0F, 1.0F, 1.0F);
       }
    }
 

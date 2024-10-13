@@ -56,7 +56,7 @@ public enum Class1890 implements Class1876 {
       } else {
          if (var3 instanceof LivingRenderer) {
             LivingRenderer var4 = (LivingRenderer)var3;
-            LivingEntity var5 = var4.renderEntity;
+            LivingEntity var5 = var4.field25088;
             if (var5 == null) {
                return false;
             }

@@ -25,7 +25,7 @@ public class Class5743<T extends Entity> extends LivingRenderer<AbstractClientPl
    }
 
    public void method17924(AbstractClientPlayerEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6, float var7, float var8) {
-      BipedModel var11 = this.mainModel;
+      BipedModel var11 = this.field25086;
       var11.setVisible(false);
       var11.bipedHead.showModel = true;
       float var12 = var1.rotationYawHead;

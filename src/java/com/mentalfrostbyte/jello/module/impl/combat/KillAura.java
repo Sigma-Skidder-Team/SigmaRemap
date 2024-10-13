@@ -17,7 +17,6 @@ import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.unmapped.MathUtils;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.Rots;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -135,9 +134,9 @@ public class KillAura extends Module {
         this.field23940 = 0;
         this.field23942 = 0;
         field23954 = 0;
-        previousRotations = new Rotations(mc.player.rotationYaw, mc.player.rotationPitch);
-        this.rotations2 = new Rotations(mc.player.lastReportedPitch, mc.player.lastReportedYaw);
+        this.rotations2 = new Rotations(mc.player.field6122, mc.player.field6123);
         this.rotations = new Rotations(mc.player.rotationYaw, mc.player.rotationPitch);
+        previousRotations = new Rotations(mc.player.rotationYaw, mc.player.rotationPitch);
         this.field23957 = -1.0F;
         interactAB.setBlocking(mc.player.getHeldItem(Hand.MAIN_HAND).getItem() instanceof SwordItem && mc.gameSettings.keyBindUseItem.isKeyDown());
         this.field23959 = false;
@@ -153,7 +152,6 @@ public class KillAura extends Module {
 
     @Override
     public void onDisable() {
-        Rots.rotating = false;
         target = null;
         timedEntityIdk = null;
         entities = null;
@@ -201,10 +199,6 @@ public class KillAura extends Module {
     @EventTarget
     @LowestPriority
     public void onUpdate(EventUpdate event) {
-        if (target == null) {
-            Rots.rotating = false;
-        }
-
         if (this.isEnabled() && mc.player != null) {
             if (!event.isPre()) {
                 this.currentitem = mc.player.inventory.currentItem;
@@ -242,22 +236,14 @@ public class KillAura extends Module {
                         this.method16828(event, var5.method16726().getStringSettingValueByName("Mode"), var5.method16726().getBooleanValueFromSettingName("Avoid Fall Damage"));
                     }
 
-                    this.setRots();
-
-                    if (target != null) {
-                        Rots.rotating = true;
-
-                        Rots.prevPitch = rotations.pitch;
-                        Rots.prevYaw = rotations.yaw;
-                        event.setYaw(rotations.yaw);
-                        event.setPitch(rotations.pitch);
-                        Rots.pitch = rotations.pitch;
-                        Rots.yaw = rotations.yaw;
-
-                        mc.player.rotationYawHead = rotations.yaw;
-                        mc.player.renderYawOffset = rotations.yaw;
+                    this.method16831();
+                    if (event.getPitch() - mc.player.rotationYaw != 0.0F) {
+                        this.rotations.yaw = event.getPitch();
+                        this.rotations.pitch = event.getYaw();
                     }
 
+                    event.setPitch(this.rotations.yaw);
+                    event.setYaw(this.rotations.pitch);
                     boolean var6 = interactAB.method36821(this.field23939);
                     float cooldown19 = !((double) mc.player.method2973() < 1.26) && this.getBooleanValueFromSettingName("Cooldown") ? mc.player.getCooledAttackStrength(0.0F) : 1.0F;
                     boolean var8 = field23954 == 0 && var6 && cooldown19 >= 1.0F;
@@ -624,7 +610,7 @@ public class KillAura extends Module {
         }
     }
 
-    private void setRots() {
+    private void method16831() {
         Entity targ = timedEntityIdk.getEntity();
         Rotations newRots = RotationHelper.getRotations(targ, !this.getBooleanValueFromSettingName("Through walls"));
         if (newRots == null) {
@@ -792,6 +778,9 @@ public class KillAura extends Module {
                     previousRotations.pitch = this.rotations.pitch;
                 }
         }
+
+        mc.player.rotationYawHead = this.rotations.yaw;
+        mc.player.renderYawOffset = this.rotations.yaw;
     }
 
     private double method16832(double var1, double var3) {

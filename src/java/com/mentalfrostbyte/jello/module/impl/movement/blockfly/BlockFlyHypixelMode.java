@@ -300,7 +300,7 @@ public class BlockFlyHypixelMode extends Module {
             String var4 = this.getStringSettingValueByName("Speed Mode");
             switch (var4) {
                 case "Jump":
-                    if (mc.player.onGround && MultiUtilities.method17686() && !mc.player.isServerSneakState() && !this.field23474) {
+                    if (mc.player.onGround && MultiUtilities.method17686() && !mc.player.isSneaking() && !this.field23474) {
                         this.field23475 = false;
                         mc.player.jump();
                         ((Speed) Client.getInstance().getModuleManager().getModuleByClass(Speed.class)).method16764();
@@ -321,7 +321,7 @@ public class BlockFlyHypixelMode extends Module {
                     if (mc.gameSettings.keyBindJump.isKeyDown()) {
                         mc.timer.timerSpeed = 1.0F;
                     } else if (mc.player.onGround) {
-                        if (MultiUtilities.method17686() && !mc.player.isServerSneakState() && !this.field23474) {
+                        if (MultiUtilities.method17686() && !mc.player.isSneaking() && !this.field23474) {
                             var1.setY(1.00000000000001);
                         }
                     } else if (this.field23471 == 1) {
