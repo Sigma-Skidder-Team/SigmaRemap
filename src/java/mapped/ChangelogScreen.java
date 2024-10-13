@@ -15,7 +15,11 @@ import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClients;
 import totalcross.json.JSONArray;
+import totalcross.json.JSONException;
 
+import java.awt.*;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -89,21 +93,249 @@ public class ChangelogScreen extends IconPanel {
       if (cachedChangelog != null) {
          return cachedChangelog;
       } else {
-         try {
-            HttpGet request = new HttpGet("https://sigma-web-alpha.vercel.app/api/changelog.php");
-            try (CloseableHttpResponse response = HttpClients.createDefault().execute(request)) {
-               HttpEntity entity = response.getEntity();
-               if (entity != null) {
-                  try (InputStream inputStream = entity.getContent()) {
-                     String jsonString = IOUtils.toString(inputStream, "UTF-8");
-                     cachedChangelog = new JSONArray(jsonString);
-                  }
-               }
-            }
-         } catch (IOException e) {
-            throw new RuntimeException(e);
-         }
-         return cachedChangelog;
+         String jsonString = getChanges();
+          try {
+              cachedChangelog = new JSONArray(jsonString);
+          } catch (JSONException e) {
+              throw new RuntimeException(e);
+          }
+          return cachedChangelog;
       }
    }
+
+   private String getChanges() {
+      return "[\n" +
+              "    {\n" +
+              "        \"title\": \"5.0.0 Beta 15 (1.16.4) Update\",\n" +
+              "        \"changes\": [\n" +
+              "            \"Added AI FightBot module (untested)\",\n" +
+              "            \"Added JelloAIBot module (kind of broken)\",\n" +
+              "            \"Added StaffRepealer for hypixel\",\n" +
+              "            \"Added back VClip module\",\n" +
+              "            \"Added HitSounds module (empty class)\",\n" +
+              "            \"Added NoServerInfo module that hides scoreboard (broken)\",\n" +
+              "            \"Added Murderer module to detect the murderer in mm\",\n" +
+              "            \"Added ItemPhysics module (empty class)\",\n" +
+              "            \"Added Streaming module to hide yourself when streaming\",\n" +
+              "            \"Added JelloEdit for schematics\",\n" +
+              "            \"Added AutoClicker module\",\n" +
+              "            \"Added back Dumper module to dump server commands & plugins (broken)\",\n" +
+              "            \"Added back Skeleton ESP to ESP (broken)\",\n" +
+              "            \"Added back Minemen AntiKnockBack\",\n" +
+              "            \"Added back Cubecraft & Cubecraft2 fly (patched)\",\n" +
+              "            \"Added back Mineplex HighJump (got patched on b2)\",\n" +
+              "            \"Added back Viper Disabler (untested)\",\n" +
+              "            \"Added back VeltPvP Disabler (untested)\",\n" +
+              "            \"Added back Minemen Criticals (untested)\",\n" +
+              "            \"Added back NickNameDetector that detects custom nicks (untested)\",\n" +
+              "            \"Added back Legit WTap\",\n" +
+              "            \"Added back AGC Fly (untested)\",\n" +
+              "            \"Added back TargetHUD module (doesn't render)\",\n" +
+              "            \"Added back Info HUD module that shows stuff about the player\",\n" +
+              "            \"Added back PacketDumper module (untested)\",\n" +
+              "            \"Added back DebugSpeed module to debug the player speed (untested)\",\n" +
+              "            \"Added back AutoMiner module (untested)\"\n" +
+              "        ]\n" +
+              "    },\n" +
+              "    {\n" +
+              "        \"title\": \"5.0.0 Beta 14 (1.16.4) Update\",\n" +
+              "        \"changes\": [\n" +
+              "            \"Added New Cubecraft Fly\",\n" +
+              "            \"Added Bypass mode to Hypixel Fly\",\n" +
+              "            \"Added New Hypixel BlockFly\",\n" +
+              "            \"Added Hypixel Packet Criticals\",\n" +
+              "            \"Added New bypassing Hypixel Fast Fly\",\n" +
+              "            \"Added AutoTool Inv option\",\n" +
+              "            \"Improved Cubecraft2 Fly (Up & Down for 1.9+ users)\",\n" +
+              "            \"Improved NCP Step Added vanilla phase\",\n" +
+              "            \"Improved spiders & phases\",\n" +
+              "            \"Renamed Cubecraft Tower to 'Vanilla' (no longer bypasses)\",\n" +
+              "            \"Fixed Nameprotect rendering\",\n" +
+              "            \"Fixed an Optifine bug which prevents blocks from rendering\",\n" +
+              "            \"Fixed Music Player\",\n" +
+              "            \"Fixed AltManager skins\",\n" +
+              "            \"Removed Cubecraft speed mode from BlockFly (no longer bypasses)\",\n" +
+              "            \"Removed Old Hypixel fastfly\"\n" +
+              "        ]\n" +
+              "    },\n" +
+              "    {\n" +
+              "        \"title\": \"5.0.0 Beta 13 (1.16.1) Update\",\n" +
+              "        \"changes\": [\n" +
+              "            \"Added Animals & Monsters option to KillAura\",\n" +
+              "            \"Added Aura option to AAC4 Criticals\",\n" +
+              "            \"Added Redesky longjump\",\n" +
+              "            \"Fixed bugs\",\n" +
+              "            \"Updated Redesky config\"\n" +
+              "        ]\n" +
+              "    },\n" +
+              "    {\n" +
+              "        \"title\": \"5.0.0 Beta 12 (1.16.1) Update\",\n" +
+              "        \"changes\": [\n" +
+              "            \"Fixed bugs\",\n" +
+              "            \"Fixed XRay\",\n" +
+              "            \"Fixed baninfo for minemen\",\n" +
+              "            \"Added Optifine\",\n" +
+              "            \"Added Gomme Spider Step\",\n" +
+              "            \"Added Auto Disable option to ClickTP\",\n" +
+              "            \"Added silent option to KillAura\",\n" +
+              "            \"Improved pingspoof disabler\",\n" +
+              "            \"Improved gommeSpeed\",\n" +
+              "            \"Improved Jump Spider\",\n" +
+              "            \"Improved KillAura (raytrace & reach)\",\n" +
+              "            \"Removed Shaders\"\n" +
+              "        ]\n" +
+              "    },\n" +
+              "    {\n" +
+              "        \"title\": \"5.0.0 Beta 10/11 (1.16.1) Update\",\n" +
+              "        \"changes\": [\n" +
+              "            \"Fixed Music Player\",\n" +
+              "            \"Fixed FakeForge\",\n" +
+              "            \"Fixed a Jello Portal Issue\"\n" +
+              "        ]\n" +
+              "    },\n" +
+              "    {\n" +
+              "        \"title\": \"5.0.0 Beta 9 (1.16.1) Update\",\n" +
+              "        \"changes\": [\n" +
+              "            \"Added the best exit button ever\",\n" +
+              "            \"Added speed option to BoatFly\",\n" +
+              "            \"Added an option to hide date & server from hypixel scoreboard in GamePlay\",\n" +
+              "            \"Added Hypixel2 NoFall\",\n" +
+              "            \"Added InvBypass for null & pingspoof disabler\",\n" +
+              "            \"Added LockView KillAura rotation\",\n" +
+              "            \"Added NCP Step Timer\",\n" +
+              "            \"Added Friend Accept in Hypixel GamePlay\",\n" +
+              "            \"Added TargetStrafe void option\",\n" +
+              "            \"Improved TargetStrafe\",\n" +
+              "            \"Improved Vanilla Fly Speed\",\n" +
+              "            \"Improved Hypixel speed\",\n" +
+              "            \"Improved Omegacraft Fly\",\n" +
+              "            \"Fixed Spartan Fly\",\n" +
+              "            \"Fixed Realms & Alt Manager compatibility\",\n" +
+              "            \"Fixed a Jello Portal crash issue\"\n" +
+              "        ]\n" +
+              "    },\n" +
+              "    {\n" +
+              "        \"title\": \"5.0.0 Beta 8 (1.16.1) Update\",\n" +
+              "        \"changes\": [\n" +
+              "            \"Updated to 1.16.1\",\n" +
+              "            \"Fixed bugs\"\n" +
+              "        ]\n" +
+              "    },\n" +
+              "    {\n" +
+              "        \"title\": \"5.0.0 Beta 7 (1.16) Update\",\n" +
+              "        \"changes\": [\n" +
+              "            \"Updated to 1.16\",\n" +
+              "            \"Removed Optifine\",\n" +
+              "            \"Added Ancient Debris to Xray\",\n" +
+              "            \"Fixed Music Player Bugs\",\n" +
+              "            \"Fixed Music Player Spectrum getting darker\",\n" +
+              "            \"Fixed Invisible block glitches\"\n" +
+              "        ]\n" +
+              "    },\n" +
+              "    {\n" +
+              "        \"title\": \"5.0.0 Beta 6 Update\",\n" +
+              "        \"changes\": [\n" +
+              "            \"Improved Client inner workings\",\n" +
+              "            \"Improved Jello Maps terrain scanning\",\n" +
+              "            \"Added FPSBooster\",\n" +
+              "            \"Added shader support\",\n" +
+              "            \"Added Basic Realms support\",\n" +
+              "            \"Added Legit Nofall (Suggested by u/Cweepaw on Reddit)\",\n" +
+              "            \"Added Vanilla ESP back\",\n" +
+              "            \"Added Elytra Equipping to AutoArmor\",\n" +
+              "            \"Added Hypixel High Longjump mode\",\n" +
+              "            \"Added New Classic/Jello Switch GUI\",\n" +
+              "            \"Added Weird 'Ninja' AutoBlock Animation\",\n" +
+              "            \"Fixed Cords not hiding in F3/F1\",\n" +
+              "            \"Fixed Music Player Skipping\",\n" +
+              "            \"Fixed Music Player Windows Issues\",\n" +
+              "            \"Fixed Hypixel Flies (Special thanks to Pepa_Pig58 and Carlos)\",\n" +
+              "            \"Fixed Hypixel AutoL\",\n" +
+              "            \"Fixed a Main Menu GUI memory leak\",\n" +
+              "            \"Fixed a Jello Portal memory leak\",\n" +
+              "            \"Fixed a Texture leak\",\n" +
+              "            \"Removed AGC Fly (Patched)\",\n" +
+              "            \"Updated Optifine\"\n" +
+              "        ]\n" +
+              "    },\n" +
+              "    {\n" +
+              "        \"title\": \"5.0.0 Beta 5 Update\",\n" +
+              "        \"changes\": [\n" +
+              "            \"Added Ninja & Random TargetStrafe\",\n" +
+              "            \"Added Cubecraft2 fly (up & down)\",\n" +
+              "            \"Added Egg to Nuker\",\n" +
+              "            \"Added Jartex Gameplay Mods\",\n" +
+              "            \"Added Pingspoof option to TP Disabler\",\n" +
+              "            \"Added FakeLag\",\n" +
+              "            \"Added Ghostly Disabler\",\n" +
+              "            \"Added Advanced AutoSoup\",\n" +
+              "            \"Added Spartan Fly Ground Spoof Option\",\n" +
+              "            \"Added Delay to Speed Autopot\",\n" +
+              "            \"Made PingSpoof go up to 10k Ping\",\n" +
+              "            \"Fixed KillAura Raytrace\",\n" +
+              "            \"Fixed Nametags Issues\",\n" +
+              "            \"Fixed Minor MusicPlayer Issues\",\n" +
+              "            \"Fixed ChangeLog Spacing\",\n" +
+              "            \"Improved Hypixel Gameplay\",\n" +
+              "            \"Improved ChestStealer Aura\"\n" +
+              "        ]\n" +
+              "    },\n" +
+              "    {\n" +
+              "        \"title\": \"5.0.0 Beta 4 Update\",\n" +
+              "        \"changes\": [\n" +
+              "            \"Added Mineplex Fly\",\n" +
+              "            \"Added Vanilla Fly Kick Bypass\",\n" +
+              "            \"Added Music Player Repeat Options\",\n" +
+              "            \"Added Rollback NoteBlockPlayer Music\",\n" +
+              "            \"Improved Hypixel Speed\",\n" +
+              "            \"Fixed Cubecraft Gameplay\",\n" +
+              "            \"Fixed Funcraft Gameplay\",\n" +
+              "            \"Fixed Hypixel BlockFly\",\n" +
+              "            \"Fixed a Pasting issue\",\n" +
+              "            \"Fixed Ban Info for spanish servers\"\n" +
+              "        ]\n" +
+              "    },\n" +
+              "    {\n" +
+              "        \"title\": \"5.0.0 Beta 3 Update\",\n" +
+              "        \"changes\": [\n" +
+              "            \"Fixed minimap memory leaks\",\n" +
+              "            \"Fixed Hypixel BlockFly (New mode)\",\n" +
+              "            \"Fixed Hypixel Fly\",\n" +
+              "            \"Fixed Hypixel HighJump\",\n" +
+              "            \"Fixed Hypixel LongJump with Nofall\",\n" +
+              "            \"Fixed Hypixel AntiVoid\",\n" +
+              "            \"Fixed Hypixel Speed without Auto Jump\",\n" +
+              "            \"Fixed sword managing for 1.8\",\n" +
+              "            \"Fixed Explosion crashes\",\n" +
+              "            \"Fixed some issues with the music player\",\n" +
+              "            \"Updated Optifine (pre13)\",\n" +
+              "            \"Fixed 1.8 movement\",\n" +
+              "            \"Fixed 1.9 - 1.12 swim mechanics\",\n" +
+              "            \"Added old AAC Speed (HiiveMC)\"\n" +
+              "        ]\n" +
+              "    },\n" +
+              "    {\n" +
+              "        \"title\": \"5.0.0 Beta 2 Update\",\n" +
+              "        \"changes\": [\n" +
+              "            \"Fixed Hypixel Nofall\",\n" +
+              "            \"Added Angle BowAimbot sort mode\",\n" +
+              "            \"Added fight option with autopot\",\n" +
+              "            \"Added blockfly slow speed\",\n" +
+              "            \"Added Discord RPC\",\n" +
+              "            \"Removed Mineplex Highjump (patched)\",\n" +
+              "            \"Removed agc autoblock (patched?)\",\n" +
+              "            \"Fixed explosions with antikb\",\n" +
+              "            \"Improved AntiVoid for hypixel\",\n" +
+              "            \"Optimisations...\"\n" +
+              "        ]\n" +
+              "    },\n" +
+              "    {\n" +
+              "        \"title\": \"5.0.0 Update\",\n" +
+              "        \"changes\": [\n" +
+              "            \"[Error] Cannot render changelog: More than 1000 changes are trying to be displayed at the same time. Are the developers insane ?\"\n" +
+              "        ]\n" +
+              "    }\n" +
+              "]";
+   }
+
 }
