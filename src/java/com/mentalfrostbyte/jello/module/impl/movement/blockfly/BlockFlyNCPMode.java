@@ -259,7 +259,6 @@ public class BlockFlyNCPMode extends Module {
                 } else {
                     if (this.getBooleanValueFromSettingName("KeepRotations") && this.pitch != 999.0F) {
                         Rots.rotating = true;
-                        Rots.rotating = true;
                         Rots.prevYaw = this.yaw;
                         Rots.prevPitch = this.pitch;
                         event.setYaw(this.yaw);
