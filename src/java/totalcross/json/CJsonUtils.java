@@ -69,10 +69,9 @@ public class CJsonUtils {
    public static JSONArray getJSONArrayOrNull(JSONObject jsonObject, String key) {
       try {
          return jsonObject.getJSONArray(key);
-      } catch (JSONException2 e) {
+      } catch (JSONException2 | JSONException e) {
+         System.out.println("xD " + e + " - key: " + key   );
          return null;
-      } catch (JSONException e) {
-         throw new RuntimeException(e);
       }
    }
 }
