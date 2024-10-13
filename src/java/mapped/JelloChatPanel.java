@@ -14,13 +14,12 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.Map.Entry;
 
-public class Class4312 extends Screen {
-   private static Minecraft field20992 = Minecraft.getInstance();
-   private static float field20993;
+public class JelloChatPanel extends Screen {
+   private static final Minecraft mc = Minecraft.getInstance();
    private float field20994;
    private Class4269 field20995;
-   private Class4339 field20996;
-   private Class4267 field20997;
+   private Class4339 navBa;
+   private ChatViewBox chatViewBox;
    private int field20998 = 20;
    private int field20999 = 642;
    private int field21000 = 410;
@@ -29,15 +28,11 @@ public class Class4312 extends Screen {
    public boolean field21003 = true;
    private Texture field21004;
 
-   public Class4312() {
+   public JelloChatPanel() {
       super("JelloChat");
+      this.addToList(this.field20995 = new Class4269(this, "input", this.field20998, this.getHeightA() - this.field21001 - this.field20998, this.field20999, this.field21001));
       this.addToList(
-         this.field20995 = new Class4269(
-            this, "input", this.field20998, this.getHeightA() - this.field21001 - this.field20998, this.field20999, this.field21001
-         )
-      );
-      this.addToList(
-         this.field20996 = new Class4339(
+         this.navBa = new Class4339(
             this,
             "navbar",
             this.field20998,
@@ -47,7 +42,7 @@ public class Class4312 extends Screen {
          )
       );
       this.addToList(
-         this.field20997 = new Class4267(
+         this.chatViewBox = new ChatViewBox(
             this,
             "chatView",
             this.field20998 + this.field21002,
@@ -59,16 +54,17 @@ public class Class4312 extends Screen {
       int var3 = 55;
       System.out.println("loading");
 
+
       for (Entry var5 : Client.getInstance().getNetworkManager().field38429.method29510().entrySet()) {
          System.out.println("added " + ((Class8433)var5.getValue()).field36143);
-         this.field20996
+         this.navBa
             .addToList(
                new Class4273(
-                  this.field20996,
-                  ((Class8433)var5.getValue()).field36142 + "_" + this.field20996.method13241().size(),
+                  this.navBa,
+                  ((Class8433)var5.getValue()).field36142 + "_" + this.navBa.method13241().size(),
                   0,
                   0,
-                  this.field20996.getWidthA(),
+                  this.navBa.getWidthA(),
                   var3,
                   ((Class8433)var5.getValue()).field36141,
                   ((Class8433)var5.getValue()).field36144
@@ -91,14 +87,14 @@ public class Class4312 extends Screen {
    }
 
    public void method13359(String var1) {
-      this.field20997.method13100(var1);
+      this.chatViewBox.method13100(var1);
    }
 
    @Override
    public void keyPressed(int var1) {
       super.keyPressed(var1);
       if (var1 == 256) {
-         field20992.displayGuiScreen(null);
+         mc.displayGuiScreen(null);
       }
    }
 

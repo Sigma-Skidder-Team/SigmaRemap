@@ -34,7 +34,7 @@ public class Class4269 extends Class4247 {
    public void keyPressed(int var1) {
       super.keyPressed(var1);
       if (var1 == 257) {
-         ((Class4312)this.getIcoPanel()).method13359(this.field20694.getTypedText());
+         ((JelloChatPanel)this.getIcoPanel()).method13359(this.field20694.getTypedText());
          Client.getInstance().getNetworkManager().field38429.method29515("SF4FSERFERF", this.field20694.getTypedText());
          this.field20694.method13304("");
          this.field20694.method13145(true);
