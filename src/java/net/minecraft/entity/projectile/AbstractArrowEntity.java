@@ -60,6 +60,10 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
    public AbstractArrowEntity(EntityType<? extends AbstractArrowEntity> var1, LivingEntity var2, World var3) {
       this(var1, var2.getPosX(), var2.getPosYEye() - 0.1F, var2.getPosZ(), var3);
       this.setShooter(var2);
+      if (var2 == Minecraft.getInstance().player && Rots.rotating) {
+         rotationYaw = Rots.yaw;
+         rotationPitch = Rots.pitch;
+      }
       if (var2 instanceof PlayerEntity) {
          this.pickupStatus = AbstractArrowEntityPickupStatus.ALLOWED;
       }

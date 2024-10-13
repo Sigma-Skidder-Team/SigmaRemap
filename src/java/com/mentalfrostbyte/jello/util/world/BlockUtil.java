@@ -91,11 +91,11 @@ public class BlockUtil {
       };
    }
 
-   public static float[] getRotationsToBlock(BlockPos blockpos, Direction direction) {
+   public static float[] method34542(BlockPos var0, Direction var1) {
       float var4 = 0.0F;
       float var5 = 0.0F;
       float var6 = 0.0F;
-      switch (Class4438.field21590[direction.ordinal()]) {
+      switch (Class4438.field21590[var1.ordinal()]) {
          case 1:
             var4 += 0.49F;
             break;
@@ -114,12 +114,12 @@ public class BlockUtil {
             var6++;
       }
 
-      double var7 = (double)blockpos.getX() + 0.5 - Minecraft.getInstance().player.getPosX() + (double)var4;
-      double var9 = (double)blockpos.getY()
+      double var7 = (double)var0.getX() + 0.5 - Minecraft.getInstance().player.getPosX() + (double)var4;
+      double var9 = (double)var0.getY()
          - 0.02
          - (Minecraft.getInstance().player.getPosY() + (double) Minecraft.getInstance().player.getEyeHeight())
          + (double)var6;
-      double var11 = (double)blockpos.getZ() + 0.5 - Minecraft.getInstance().player.getPosZ() + (double)var5;
+      double var11 = (double)var0.getZ() + 0.5 - Minecraft.getInstance().player.getPosZ() + (double)var5;
       double var13 = (double) MathHelper.sqrt(var7 * var7 + var11 * var11);
       float var15 = (float)(Math.atan2(var11, var7) * 180.0 / Math.PI) - 90.0F;
       float var16 = (float)(-(Math.atan2(var9, var13) * 180.0 / Math.PI));
@@ -611,12 +611,12 @@ public class BlockUtil {
 
    public static float[] method34579(float var0, float var1, Class7843 var2) {
       BlockRayTraceResult var5 = rayTrace(var0, var1, mc.playerController.getBlockReachDistance());
-      if (var5 != null && var5.getPos().equals(var2.blockpos)) {
+      if (var5 != null && var5.getPos().equals(var2.field33646)) {
          return new float[]{var0, var1};
       } else {
-         float var6 = method34541(var2.blockpos)[0];
+         float var6 = method34541(var2.field33646)[0];
          Vector3d var7 = new Vector3d(
-            (double)var2.blockpos.getX() + 0.5, (double)var2.blockpos.getY() + 0.5, (double)var2.blockpos.getZ() + 0.5
+            (double)var2.field33646.getX() + 0.5, (double)var2.field33646.getY() + 0.5, (double)var2.field33646.getZ() + 0.5
          );
          float var8 = (var6 + 90.0F) * (float) (Math.PI / 180.0);
          double var9 = (double)(-MathHelper.sin(var8)) / 2.1;
@@ -629,7 +629,7 @@ public class BlockUtil {
          var9 = (double)(-MathHelper.sin(var8)) / 2.1;
          var11 = (double) MathHelper.cos(var8) / 2.1;
          var7 = new Vector3d(
-            (double)var2.blockpos.getX() + 0.5, (double)var2.blockpos.getY() + 0.5, (double)var2.blockpos.getZ() + 0.5
+            (double)var2.field33646.getX() + 0.5, (double)var2.field33646.getY() + 0.5, (double)var2.field33646.getZ() + 0.5
          );
          var7 = var7.add(var9, 0.0, var11);
          float[] var16 = RotationHelper.method34144(var7.x, var7.z, var7.y);

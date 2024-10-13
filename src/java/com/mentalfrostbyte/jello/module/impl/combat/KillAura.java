@@ -256,8 +256,6 @@ public class KillAura extends Module {
 
                         mc.player.rotationYawHead = rotations.yaw;
                         mc.player.renderYawOffset = rotations.yaw;
-                    } else {
-                        Rots.rotating = false;
                     }
 
                     boolean var6 = interactAB.method36821(this.field23939);

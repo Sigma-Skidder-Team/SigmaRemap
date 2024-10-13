@@ -119,9 +119,9 @@ public class NoteblockPlayer extends Module {
                                         if ((var6.method28780() != 3 && this.method16414(var8) == 0 || var8.method19640() == var6.method28780())
                                                 && Class2121.method8807(var8.field28402) == (float) (var6.method28782() - 33)
                                                 && Math.sqrt(mc.player.getPosition().distanceSq(var8.field28401)) < (double) mc.playerController.getBlockReachDistance()) {
-                                            float[] var9 = BlockUtil.getRotationsToBlock(var8.field28401, Direction.UP);
+                                            float[] var9 = BlockUtil.method34542(var8.field28401, Direction.UP);
                                             if ((double) var8.field28401.getY() > mc.player.getPosY() + 1.0) {
-                                                var9 = BlockUtil.getRotationsToBlock(var8.field28401, Direction.DOWN);
+                                                var9 = BlockUtil.method34542(var8.field28401, Direction.DOWN);
                                             }
 
                                             mc.getConnection().sendPacket(new CPlayerPacket.RotationPacket(var9[0], var9[1], mc.player.onGround));
@@ -155,7 +155,7 @@ public class NoteblockPlayer extends Module {
     public boolean method16407(List<Class6463> var1) {
         for (Class6463 var5 : var1) {
             if (var5.field28402 == -1.0F && Math.sqrt(mc.player.getPosition().distanceSq(var5.field28401)) < (double) mc.playerController.getBlockReachDistance()) {
-                float[] var6 = BlockUtil.getRotationsToBlock(var5.field28401, Direction.UP);
+                float[] var6 = BlockUtil.method34542(var5.field28401, Direction.UP);
                 mc.getConnection().sendPacket(new CPlayerPacket.RotationPacket(var6[0], var6[1], mc.player.onGround));
                 mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.START_DESTROY_BLOCK, var5.field28401, Direction.UP));
                 this.field23642.clear();
@@ -172,7 +172,7 @@ public class NoteblockPlayer extends Module {
             if (this.method16411(var5.field28402, var5.field28403)
                     && Math.sqrt(mc.player.getPosition().distanceSq(var5.field28401)) < (double) mc.playerController.getBlockReachDistance()) {
                 if (0 == 0) {
-                    float[] var6 = BlockUtil.getRotationsToBlock(var5.field28401, Direction.UP);
+                    float[] var6 = BlockUtil.method34542(var5.field28401, Direction.UP);
                     mc.player.swingArm(Hand.MAIN_HAND);
                     mc.getConnection().sendPacket(new CPlayerPacket.RotationPacket(var6[0], var6[1], mc.player.onGround));
                     mc.getConnection()

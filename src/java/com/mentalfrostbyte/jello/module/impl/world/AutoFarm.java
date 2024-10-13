@@ -31,14 +31,14 @@ public class AutoFarm extends Module {
                             ItemStack var14 = mc.player.getHeldItem(Hand.MAIN_HAND);
                             if (var14 != null && var14.getItem() instanceof Class3321) {
                                 if (var6.<Integer>get(BlockStateProperties.field39742) != 7) {
-                                    float[] var18 = BlockUtil.getRotationsToBlock(var5, Direction.DOWN);
+                                    float[] var18 = BlockUtil.method34542(var5, Direction.DOWN);
                                     var1.setPitch(var18[0]);
                                     var1.setYaw(var18[1]);
                                     var1.attackPost(new Class1358(this, var18));
                                     return;
                                 }
                             } else if (var6.<Integer>get(BlockStateProperties.field39742) == 7) {
-                                float[] var17 = BlockUtil.getRotationsToBlock(var5, Direction.DOWN);
+                                float[] var17 = BlockUtil.method34542(var5, Direction.DOWN);
                                 var1.setPitch(var17[0]);
                                 var1.setYaw(var17[1]);
                                 var1.attackPost(new Class532(this, var5));
@@ -93,7 +93,7 @@ public class AutoFarm extends Module {
                             }
 
                             if (var16 != -1 && var13.getBlock() instanceof AirBlock) {
-                                float[] var20 = BlockUtil.getRotationsToBlock(var5, Direction.UP);
+                                float[] var20 = BlockUtil.method34542(var5, Direction.UP);
                                 var1.setPitch(var20[0]);
                                 var1.setYaw(var20[1]);
                                 var1.attackPost(new Class649(this, var16, var20));

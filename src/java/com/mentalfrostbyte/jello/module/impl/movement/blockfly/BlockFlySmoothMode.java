@@ -13,7 +13,6 @@ import com.mentalfrostbyte.jello.module.impl.movement.SafeWalk;
 import com.mentalfrostbyte.jello.module.impl.movement.Speed;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.Rots;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import lol.MovementUtils;
 import mapped.*;
@@ -28,8 +27,8 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 
 public class BlockFlySmoothMode extends Module {
-    private float yaw;
-    private float pitch;
+    private float field23969;
+    private float field23970;
     private Class7843 field23971;
     private int field23972 = -1;
     private int field23973;
@@ -84,7 +83,7 @@ public class BlockFlySmoothMode extends Module {
     @Override
     public void onEnable() {
         this.field23972 = mc.player.inventory.currentItem;
-        this.pitch = this.yaw = 999.0F;
+        this.field23970 = this.field23969 = 999.0F;
         ((BlockFly) this.access()).field23884 = -1;
         this.field23979 = -1.0;
         this.field23978 = false;
@@ -136,13 +135,13 @@ public class BlockFlySmoothMode extends Module {
 
     @EventTarget
     @LowerPriority
-    public void method16886(EventUpdate event) {
+    public void method16886(EventUpdate var1) {
         if (this.isEnabled() && this.field23976.method16735() != 0) {
-            if (!event.isPre()) {
-                if (this.pitch != 999.0F) {
+            if (!var1.isPre()) {
+                if (this.field23970 != 999.0F) {
                     this.field23976.method16736();
                     if (this.field23971 != null) {
-                        BlockRayTraceResult var13 = BlockUtil.method34568(this.yaw, this.pitch, 5.0F, event);
+                        BlockRayTraceResult var13 = BlockUtil.method34568(this.field23970, this.field23969, 5.0F, var1);
                         if (var13.getType() == RayTraceResult.Type.MISS) {
                             return;
                         }
@@ -177,7 +176,7 @@ public class BlockFlySmoothMode extends Module {
             } else {
                 this.field23973++;
                 this.field23980--;
-                event.method13908(true);
+                var1.method13908(true);
                 this.field23975 = Hand.MAIN_HAND;
                 if (BlockFly.method16733(mc.player.getHeldItem(Hand.OFF_HAND).getItem())
                         && (
@@ -187,9 +186,9 @@ public class BlockFlySmoothMode extends Module {
                     this.field23975 = Hand.OFF_HAND;
                 }
 
-                double var4 = event.getX();
-                double var6 = event.getZ();
-                double var8 = event.getY();
+                double var4 = var1.getX();
+                double var6 = var1.getZ();
+                double var8 = var1.getY();
                 if (!mc.player.collidedHorizontally && !mc.gameSettings.keyBindJump.pressed) {
                     double[] var10 = this.method16891();
                     var4 = var10[0];
@@ -220,33 +219,23 @@ public class BlockFlySmoothMode extends Module {
                 if (!BlockUtil.method34578(var18) && this.field23976.method16739(this.field23975) && this.field23980 <= 0) {
                     Class7843 var11 = BlockUtil.method34575(var18, false);
                     this.field23971 = var11;
-                    float[] rots = BlockUtil.method34565();
-                    if (var11 != null && rots != null) {
-                        this.pitch = rots[1];
-                        this.yaw = rots[0];
-                    } else {
-                        Rots.rotating = false;
+                    float[] var12 = BlockUtil.method34565();
+                    if (var11 != null && var12 != null) {
+                        this.field23970 = var12[0];
+                        this.field23969 = var12[1];
                     }
                 } else {
                     this.field23971 = null;
                 }
 
-                if (this.pitch != 999.0F) {
-                    Rots.rotating = true;
-                    Rots.prevPitch = this.pitch;
-                    Rots.prevYaw = this.yaw;
-                    event.setYaw(this.yaw);
-                    event.setPitch(this.pitch);
-                    Rots.pitch = this.pitch;
-                    Rots.yaw = this.yaw;
-
-                    mc.player.rotationYawHead = event.getYaw();
-                    mc.player.renderYawOffset = event.getYaw();
-                } else {
-                    Rots.rotating = false;
+                if (this.field23970 != 999.0F) {
+                    var1.setPitch(this.field23970);
+                    var1.setYaw(this.field23969);
+                    mc.player.rotationYawHead = var1.getYaw();
+                    mc.player.renderYawOffset = var1.getYaw();
                 }
 
-                if (mc.player.rotationYaw != event.getPitch() && mc.player.rotationPitch != event.getYaw()) {
+                if (mc.player.rotationYaw != var1.getPitch() && mc.player.rotationPitch != var1.getYaw()) {
                     this.field23973 = 0;
                 }
             }
