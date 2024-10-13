@@ -136,7 +136,7 @@ public abstract class Module {
                 JSONObject  var6 = var4.getJSONObject(var5);
                 String   var7 = CJsonUtils.getStringOrDefault(var6, "name", null);
 
-                for (Setting var9 : this.settingMap.values()) {
+                for (Setting<?> var9 : this.settingMap.values()) {
                     if (var9.getName().equals(var7)) {
                         try {
                             var9.loadCurrentValueFromJSONObject(var6);

@@ -28,7 +28,7 @@ public abstract class SubOptionSetting2 extends Setting<Boolean> {
             JSONObject settingObject = array.getJSONObject(i);
             String settingName = CJsonUtils.getStringOrDefault(settingObject, "name", null);
 
-            for (Setting setting : this.getSubSettings()) {
+            for (Setting<?> setting : this.getSubSettings()) {
                if (setting.getName().equals(settingName)) {
                   setting.loadCurrentValueFromJSONObject(settingObject);
                   break;
