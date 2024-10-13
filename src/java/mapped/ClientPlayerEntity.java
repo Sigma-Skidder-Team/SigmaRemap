@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.impl.EventSlowDown;
+import com.mentalfrostbyte.jello.util.Rots;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
@@ -122,13 +123,13 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    @Override
-   public float getPitch(float var1) {
+   public float getPitch(float partialTicks) {
       return this.rotationPitch;
    }
 
    @Override
-   public float getYaw(float var1) {
-      return !this.isPassenger() ? this.rotationYaw : super.getYaw(var1);
+   public float getYaw(float partialTicks) {
+      return !this.isPassenger() ? this.rotationYaw : super.getYaw(partialTicks);
    }
 
    @Override
@@ -239,6 +240,22 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          eventItself.postUpdate();
          Client.getInstance().getEventManager().call(eventItself);
       }
+   }
+
+   @Override
+   public Vector3d getLookVec() {
+      return this.getLook(1.0F);
+   }
+
+   /**
+    * interpolated look vector
+    */
+   @Override
+   public Vector3d getLook(float partialTicks) {
+      if (Rots.rotating)
+         return getVectorForRotation(Rots.pitch, Rots.yaw);
+      else
+         return getVectorForRotation(rotationPitch, rotationYaw);
    }
 
    @Override

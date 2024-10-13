@@ -17,6 +17,7 @@ import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.unmapped.MathUtils;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
+import com.mentalfrostbyte.jello.util.Rots;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -152,6 +153,7 @@ public class KillAura extends Module {
 
     @Override
     public void onDisable() {
+        Rots.rotating = false;
         target = null;
         timedEntityIdk = null;
         entities = null;
@@ -242,12 +244,18 @@ public class KillAura extends Module {
                         this.rotations.pitch = event.getPitch();
                     }
 
-                    event.setYaw(this.rotations.yaw);
-                    event.setPitch(this.rotations.pitch);
+                    if (target != null) {
+                        Rots.rotating = true;
+                        Rots.prevYaw = this.rotations.yaw;
+                        Rots.prevPitch = this.rotations.pitch;
+                        event.setYaw(this.rotations.yaw);
+                        event.setPitch(this.rotations.pitch);
+                        Rots.yaw = this.rotations.yaw;
+                        Rots.pitch = this.rotations.pitch;
 
-
-                    mc.player.rotationYawHead = event.getYaw();
-                    mc.player.renderYawOffset = event.getYaw();
+                        mc.player.rotationYawHead = event.getYaw();
+                        mc.player.renderYawOffset = event.getYaw();
+                    }
 
                     boolean var6 = interactAB.method36821(this.field23939);
                     float cooldown19 = !((double) mc.player.method2973() < 1.26) && this.getBooleanValueFromSettingName("Cooldown") ? mc.player.getCooledAttackStrength(0.0F) : 1.0F;

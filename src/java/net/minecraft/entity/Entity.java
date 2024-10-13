@@ -1233,26 +1233,38 @@ public abstract class Entity implements INameable, ICommandSource {
       }
    }
 
-   public final Vector3d getLook(float var1) {
-      return this.getVectorForRotation(this.getPitch(var1), this.getYaw(var1));
+   /**
+    * interpolated look vector
+    */
+   public Vector3d getLook(float partialTicks)
+   {
+      return this.getVectorForRotation(this.getPitch(partialTicks), this.getYaw(partialTicks));
    }
 
-   public float getPitch(float var1) {
-      return var1 != 1.0F ? MathHelper.lerp(var1, this.prevRotationPitch, this.rotationPitch) : this.rotationPitch;
+   /**
+    * Gets the current pitch of the entity.
+    */
+   public float getPitch(float partialTicks)
+   {
+      return partialTicks == 1.0F ? this.rotationPitch : MathHelper.lerp(partialTicks, this.prevRotationPitch, this.rotationPitch);
    }
 
-   public float getYaw(float var1) {
-      return var1 != 1.0F ? MathHelper.lerp(var1, this.prevRotationYaw, this.rotationYaw) : this.rotationYaw;
+   /**
+    * Gets the current yaw of the entity
+    */
+   public float getYaw(float partialTicks)
+   {
+      return partialTicks == 1.0F ? this.rotationYaw : MathHelper.lerp(partialTicks, this.prevRotationYaw, this.rotationYaw);
    }
 
-   public final Vector3d getVectorForRotation(float var1, float var2) {
-      float var5 = var1 * (float) (Math.PI / 180.0);
-      float var6 = -var2 * (float) (Math.PI / 180.0);
-      float var7 = MathHelper.cos(var6);
-      float var8 = MathHelper.sin(var6);
-      float var9 = MathHelper.cos(var5);
-      float var10 = MathHelper.sin(var5);
-      return new Vector3d((double)(var8 * var9), (double)(-var10), (double)(var7 * var9));
+   public final Vector3d getVectorForRotation(float pitch, float yaw) {
+      float f = pitch * ((float)Math.PI / 180F);
+      float f1 = -yaw * ((float)Math.PI / 180F);
+      float f2 = MathHelper.cos(f1);
+      float f3 = MathHelper.sin(f1);
+      float f4 = MathHelper.cos(f);
+      float f5 = MathHelper.sin(f);
+      return new Vector3d((double)(f3 * f4), (double)(-f5), (double)(f2 * f4));
    }
 
    public final Vector3d getUpVector(float var1) {

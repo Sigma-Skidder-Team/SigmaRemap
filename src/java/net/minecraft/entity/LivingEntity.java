@@ -1,8 +1,10 @@
 package net.minecraft.entity;
 
+import com.mentalfrostbyte.jello.util.Rots;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.Minecraft;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.enchantment.FrostWalkerEnchantment;
@@ -349,6 +351,12 @@ public abstract class LivingEntity extends Entity {
       this.prevRotationYawHead = this.rotationYawHead;
       this.prevRotationYaw = this.rotationYaw;
       this.prevRotationPitch = this.rotationPitch;
+
+      if(this == Minecraft.getInstance().player && Rots.rotating) {
+         this.prevRotationYawHead = Rots.yaw;
+         this.prevRotationPitch = Rots.pitch;
+      }
+
       this.world.getProfiler().endSection();
    }
 
@@ -2598,8 +2606,8 @@ public abstract class LivingEntity extends Entity {
    }
 
    @Override
-   public float getYaw(float var1) {
-      return var1 != 1.0F ? MathHelper.lerp(var1, this.prevRotationYawHead, this.rotationYawHead) : this.rotationYawHead;
+   public float getYaw(float partialTicks) {
+      return partialTicks != 1.0F ? MathHelper.lerp(partialTicks, this.prevRotationYawHead, this.rotationYawHead) : this.rotationYawHead;
    }
 
    public float getSwingProgress(float var1) {
