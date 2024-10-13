@@ -35,9 +35,9 @@ public class PlayerRenderer extends LivingRenderer<AbstractClientPlayerEntity, P
       this.addLayer(new Class233<>(this));
    }
 
-   public void render(AbstractClientPlayerEntity entityIn, float var2, float var3, MatrixStack matrixStackIn, Class7733 var5, int var6) {
+   public void render(AbstractClientPlayerEntity entityIn, float var2, float partialTicks, MatrixStack matrixStackIn, Class7733 var5, int var6) {
       this.setModelVisibilities(entityIn);
-      super.render(entityIn, var2, var3, matrixStackIn, var5, var6);
+      super.render(entityIn, var2, partialTicks, matrixStackIn, var5, var6);
    }
 
    public Vector3d getRenderOffset(AbstractClientPlayerEntity var1, float var2) {

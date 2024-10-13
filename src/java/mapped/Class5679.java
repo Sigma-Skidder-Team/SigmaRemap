@@ -18,12 +18,12 @@ public class Class5679 extends Class5676<Class1033> {
       return field25044;
    }
 
-   public void render(Class1033 entityIn, float var2, float var3, MatrixStack matrixStackIn, Class7733 var5, int var6) {
+   public void render(Class1033 entityIn, float var2, float partialTicks, MatrixStack matrixStackIn, Class7733 var5, int var6) {
       if (!entityIn.isInvisible()) {
-         super.render(entityIn, var2, var3, matrixStackIn, var5, var6);
+         super.render(entityIn, var2, partialTicks, matrixStackIn, var5, var6);
       } else {
-         Vector3d[] var9 = entityIn.method4611(var3);
-         float var10 = this.method17871(entityIn, var3);
+         Vector3d[] var9 = entityIn.method4611(partialTicks);
+         float var10 = this.method17871(entityIn, partialTicks);
 
          for (int var11 = 0; var11 < var9.length; var11++) {
             matrixStackIn.push();
@@ -32,7 +32,7 @@ public class Class5679 extends Class5676<Class1033> {
                var9[var11].y + (double) MathHelper.cos((float)var11 + var10 * 0.75F) * 0.0125,
                var9[var11].z + (double) MathHelper.cos((float)var11 + var10 * 0.7F) * 0.025
             );
-            super.render(entityIn, var2, var3, matrixStackIn, var5, var6);
+            super.render(entityIn, var2, partialTicks, matrixStackIn, var5, var6);
             matrixStackIn.pop();
          }
       }

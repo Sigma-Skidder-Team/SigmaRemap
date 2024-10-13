@@ -48,18 +48,18 @@ public class Class5658 extends Class5651<Class1105, Class2820> {
       return new Vector3d(var7, var9, var11);
    }
 
-   public void render(Class1105 entityIn, float var2, float var3, MatrixStack matrixStackIn, Class7733 var5, int var6) {
-      super.render(entityIn, var2, var3, matrixStackIn, var5, var6);
+   public void render(Class1105 entityIn, float var2, float partialTicks, MatrixStack matrixStackIn, Class7733 var5, int var6) {
+      super.render(entityIn, var2, partialTicks, matrixStackIn, var5, var6);
       LivingEntity var9 = entityIn.method5306();
       if (var9 != null) {
-         float var10 = entityIn.method5310(var3);
-         float var11 = (float) entityIn.world.getGameTime() + var3;
+         float var10 = entityIn.method5310(partialTicks);
+         float var11 = (float) entityIn.world.getGameTime() + partialTicks;
          float var12 = var11 * 0.5F % 1.0F;
          float var13 = entityIn.getEyeHeight();
          matrixStackIn.push();
          matrixStackIn.translate(0.0, (double)var13, 0.0);
-         Vector3d var14 = this.method17861(var9, (double)var9.getHeight() * 0.5, var3);
-         Vector3d var15 = this.method17861(entityIn, (double)var13, var3);
+         Vector3d var14 = this.method17861(var9, (double)var9.getHeight() * 0.5, partialTicks);
+         Vector3d var15 = this.method17861(entityIn, (double)var13, partialTicks);
          Vector3d var16 = var14.subtract(var15);
          float var17 = (float)(var16.length() + 1.0);
          var16 = var16.method11333();

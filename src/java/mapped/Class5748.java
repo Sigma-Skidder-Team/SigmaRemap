@@ -20,7 +20,7 @@ public class Class5748 extends Class5651<Class1054, Class2827<Class1054>> {
       return field25172;
    }
 
-   public void render(Class1054 entityIn, float var2, float var3, MatrixStack matrixStackIn, Class7733 var5, int var6) {
+   public void render(Class1054 entityIn, float var2, float partialTicks, MatrixStack matrixStackIn, Class7733 var5, int var6) {
       int var9 = entityIn.method4828();
       if (var9 != this.field25173) {
          if (var9 != 0) {
@@ -36,7 +36,7 @@ public class Class5748 extends Class5651<Class1054, Class2827<Class1054>> {
 
       this.field25173 = var9;
       this.shadowSize = 0.1F + 0.1F * (float)var9;
-      super.render(entityIn, var2, var3, matrixStackIn, var5, var6);
+      super.render(entityIn, var2, partialTicks, matrixStackIn, var5, var6);
    }
 
    public void method17842(Class1054 var1, MatrixStack var2, float var3, float var4, float var5) {

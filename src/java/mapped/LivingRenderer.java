@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.EventRenderEntity;
 import com.mentalfrostbyte.jello.event.impl.EventRenderNameTag;
+import com.mentalfrostbyte.jello.util.Rots;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.OverlayTexture;
@@ -53,26 +54,32 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
       return this.entityModel;
    }
 
-   public void render(T entityIn, float var2, float var3, MatrixStack matrixStackIn, Class7733 var5, int var6) {
-      if (!Reflector.field42990.exists() || !Reflector.postForgeBusEvent(Reflector.field42990, entityIn, this, var3, matrixStackIn, var5, var6)) {
+   public void render(T entityIn, float var2, float partialTicks, MatrixStack matrixStackIn, Class7733 var5, int var6) {
+      if (!Reflector.field42990.exists() || !Reflector.postForgeBusEvent(Reflector.field42990, entityIn, this, partialTicks, matrixStackIn, var5, var6)) {
          if (animateModelLiving) {
             entityIn.limbSwingAmount = 1.0F;
          }
 
          matrixStackIn.push();
-         this.entityModel.swingProgress = this.getSwingProgress((T)entityIn, var3);
+         this.entityModel.swingProgress = this.getSwingProgress((T)entityIn, partialTicks);
          this.entityModel.isSitting = entityIn.isPassenger();
          if (Reflector.IForgeEntity_shouldRiderSit.exists()) {
             this.entityModel.isSitting = entityIn.isPassenger() && entityIn.getRidingEntity() != null && Reflector.method35064(entityIn.getRidingEntity(), Reflector.IForgeEntity_shouldRiderSit);
          }
 
          this.entityModel.isChild = entityIn.isChild();
-         float f = MathHelper.interpolateAngle(var3, entityIn.prevRenderYawOffset, entityIn.renderYawOffset);
-         float f1 = MathHelper.interpolateAngle(var3, entityIn.prevRotationYawHead, entityIn.rotationYawHead);
+
+         float yaw = entityIn.rotationYawHead;
+         if(entityIn.equals(Minecraft.getInstance().player) && Rots.rotating) {
+            yaw = Rots.yaw;
+         }
+
+         float f = MathHelper.interpolateAngle(partialTicks, entityIn.prevRenderYawOffset, entityIn.renderYawOffset);
+         float f1 = MathHelper.interpolateAngle(partialTicks, entityIn.prevRotationYawHead, yaw);
          float f2 = f1 - f;
          if (this.entityModel.isSitting && entityIn.getRidingEntity() instanceof LivingEntity) {
             LivingEntity livingentity = (LivingEntity)entityIn.getRidingEntity();
-            f = MathHelper.interpolateAngle(var3, livingentity.prevRenderYawOffset, livingentity.renderYawOffset);
+            f = MathHelper.interpolateAngle(partialTicks, livingentity.prevRenderYawOffset, livingentity.renderYawOffset);
             f2 = f1 - f;
             float f3 = MathHelper.wrapDegrees(f2);
             if (f3 < -85.0F) {
@@ -91,8 +98,12 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
             f2 = f1 - f;
          }
 
-         float f7 = MathHelper.lerp(var3, entityIn.prevRotationPitch, entityIn.rotationPitch);
-         EventRenderEntity var33 = new EventRenderEntity(f, f1, f2, f7, var3, entityIn);
+         float f7 = MathHelper.lerp(partialTicks, entityIn.prevRotationPitch, entityIn.rotationPitch);
+
+         if (entityIn.equals(Minecraft.getInstance().player) && Rots.rotating)
+            f7 = MathHelper.lerp(partialTicks, Rots.prevPitch, Rots.pitch);
+
+         EventRenderEntity var33 = new EventRenderEntity(f, f1, f2, f7, partialTicks, entityIn);
          Client.getInstance().getEventManager().call(var33);
          if (var33.isCancelled()) {
             matrixStackIn.pop();
@@ -111,16 +122,16 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
             }
          }
 
-         float var34 = this.method17871((T)entityIn, var3);
-         this.method17842((T)entityIn, matrixStackIn, var34, f, var3);
+         float var34 = this.method17871((T)entityIn, partialTicks);
+         this.method17842((T)entityIn, matrixStackIn, var34, f, partialTicks);
          matrixStackIn.scale(-1.0F, -1.0F, 1.0F);
-         this.method17857((T)entityIn, matrixStackIn, var3);
+         this.method17857((T)entityIn, matrixStackIn, partialTicks);
          matrixStackIn.translate(0.0, -1.501F, 0.0);
          float var35 = 0.0F;
          float var16 = 0.0F;
          if (!entityIn.isPassenger() && entityIn.isAlive()) {
-            var35 = MathHelper.lerp(var3, entityIn.prevLimbSwingAmount, entityIn.limbSwingAmount);
-            var16 = entityIn.field4961 - entityIn.limbSwingAmount * (1.0F - var3);
+            var35 = MathHelper.lerp(partialTicks, entityIn.prevLimbSwingAmount, entityIn.limbSwingAmount);
+            var16 = entityIn.field4961 - entityIn.limbSwingAmount * (1.0F - partialTicks);
             if (entityIn.isChild()) {
                var16 *= 3.0F;
             }
@@ -132,7 +143,7 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
 
          var33.setState(RenderState.field13213);
          Client.getInstance().getEventManager().call(var33);
-         this.entityModel.setLivingAnimations((T)entityIn, var16, var35, var3);
+         this.entityModel.setLivingAnimations((T)entityIn, var16, var35, partialTicks);
          this.entityModel.setRotationAngles((T)entityIn, var16, var35, var34, f2, f7);
          if (CustomEntityModels.isActive()) {
             this.field25088 = entityIn;
@@ -141,7 +152,7 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
             this.field25091 = var34;
             this.field25092 = f2;
             this.field25093 = f7;
-            this.field25094 = var3;
+            this.field25094 = partialTicks;
          }
 
          boolean var17 = Config.isShaders();
@@ -152,7 +163,7 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
          RenderType var22 = this.method17882((T)entityIn, var19, var20, var21);
          if (var22 != null) {
             IVertexBuilder var23 = var5.method25597(var22);
-            float var24 = this.method17879((T)entityIn, var3);
+            float var24 = this.method17879((T)entityIn, partialTicks);
             if (var17) {
                if (entityIn.hurtTime > 0 || entityIn.deathTime > 0) {
                   Shaders.method33086(1.0F, 0.0F, 0.0F, 0.3F);
@@ -169,7 +180,7 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
 
          if (!entityIn.isSpectator() && var33.method13954()) {
             for (Class219 var37 : this.field25087) {
-               var37.method820(matrixStackIn, var5, var6, entityIn, var16, var35, var3, var34, f2, f7);
+               var37.method820(matrixStackIn, var5, var6, entityIn, var16, var35, partialTicks, var34, f2, f7);
             }
          }
 
@@ -184,9 +195,9 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
          var33.setState(RenderState.field13214);
          Client.getInstance().getEventManager().call(var33);
          matrixStackIn.pop();
-         super.render((T)entityIn, var2, var3, matrixStackIn, var5, var6);
+         super.render((T)entityIn, var2, partialTicks, matrixStackIn, var5, var6);
          if (Reflector.field42992.exists()) {
-            Reflector.postForgeBusEvent(Reflector.field42992, entityIn, this, var3, matrixStackIn, var5, var6);
+            Reflector.postForgeBusEvent(Reflector.field42992, entityIn, this, partialTicks, matrixStackIn, var5, var6);
          }
       }
    }
