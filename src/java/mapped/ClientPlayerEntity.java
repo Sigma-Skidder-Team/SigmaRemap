@@ -259,10 +259,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
     */
    @Override
    public Vector3d getLook(float partialTicks) {
-      if (Rots.rotating)
-         return getVectorForRotation(Rots.pitch, Rots.yaw);
-      else
-         return getVectorForRotation(rotationPitch, rotationYaw);
+      return getVectorForRotation(Rots.pitch, Rots.yaw);
    }
 
 
