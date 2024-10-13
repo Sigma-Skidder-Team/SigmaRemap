@@ -70,7 +70,7 @@ public class CJsonUtils {
       try {
          return jsonObject.getJSONArray(key);
       } catch (JSONException2 | JSONException e) {
-         System.out.println("xD " + e + " - key: " + key   );
+         System.out.println(e + " - key: " + key   );
          return null;
       }
    }
