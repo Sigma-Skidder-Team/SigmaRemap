@@ -4,32 +4,42 @@ Sigma 5.0 remapping project
 ## Thanks
 - This entire project could only be possible by the help of **@kitten_12333** himself who deobfuscated sigma 5.0 to be readable enough.
 
-
 ### [!] Latest fixes/improvements
 We have fixed many features already,
 - music player (featured playlists & search functionality);
 - removed viaversion and the bugs that came with it;
+- all modules that had rotations broken were fixed;
 - shield rendering when sword blocking;
 - stairs hitbox/collision bug;
 - removed resource decryption;
 - 4.5 reach on survival;
 - classic mode visuals;
-- white screen issue;
 - profiles/configs;
 - discord rpc. 
 
 ### [!] TO-DO
 1. Fix singleplayer;
-2. Main menu, animation and gui flickering;
-3. Packet issues on some servers (instant disconnect/kicks);
-4. Add back ViaVersion/Jello Portal.
-
-### :D
+2. Fix white screen (framebuffer);
+3. Main menu, animation and gui flickering;
+4. Packet issues on some servers (instant disconnect/kicks);
+5. Add back ViaVersion/Jello Portal.
 
 ### Contributors
 - [Richy](https://github.com/richylotl)
 - [lamzvam](https://github.com/lamzvam)
 - [StormingMoon](https://github.com/StormingMoon)
+
+### How to make a runnable jar for the minecraft launcher?
+1. Clone this repo and open it in intellij;
+2. Set up the project (libraries, natives);
+3. Open the project structure with ``Ctrl + Alt + Shift + S``;
+4. Find and click on the ``Artifacts`` tab;
+5. Press ``+`` -> ``JAR`` -> ``Empty``;
+6. In the ``Available Elements`` tab, right-click on ``Libraries`` -> ``Extract into Output Root``;
+7. In the same tab, right-click on your ``compile output`` icon -> ``Put into Output Root``
+8. Give your artifact a name (optional);
+9. Close the project structure window and find the ``Build`` tab -> ``Build artifacts`` and double-click on your created artifact;
+10. This jar will be then compiled in your project's directory``/out/artifacts/artifact name/artifact name.jar``
 
 ### Images
 - Version selector: ![image](https://i.imgur.com/01L5QsL.png)
