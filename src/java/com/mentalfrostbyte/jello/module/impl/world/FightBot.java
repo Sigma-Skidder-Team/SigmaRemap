@@ -26,7 +26,7 @@ public class FightBot extends Module {
         if (this.isEnabled()) {
             this.updateTarget();
             if (this.targetEntity != null) {
-
+                
             }
         }
     }

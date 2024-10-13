@@ -102,12 +102,10 @@ public class AutoCrystal extends Module {
         }
     }
 
-    private static void method16383() {
-        if (field23631) {
-            field23629 = mc.player.rotationYaw;
-            field23630 = mc.player.rotationPitch;
-            field23631 = false;
-        }
+    @Override
+    public void onDisable() {
+        Rots.rotating = false;
+        super.onDisable();
     }
 
     // $VF: synthetic method
