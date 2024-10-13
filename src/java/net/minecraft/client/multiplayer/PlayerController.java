@@ -203,7 +203,7 @@ public class PlayerController {
     * player reach distance = 4F
     */
    public float getBlockReachDistance() {
-      return this.currentGameType.isCreative() ? 5.0F : 3.0F;
+      return this.currentGameType.isCreative() ? 5.0F : 4.5F;
    }
 
    public void tick() {
