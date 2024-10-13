@@ -183,7 +183,7 @@ public class RotationHelper {
       return new Rotations(var3[0], var3[1]);
    }
 
-   public static Rotations method34148(Vector3d var0) {
+   public static Rotations getRotationsToVector(Vector3d var0) {
       float[] var3 = method34145(mc.player.getPositionVec().add(0.0, (double) mc.player.getEyeHeight(), 0.0), var0);
       return new Rotations(var3[0], var3[1]);
    }
@@ -273,7 +273,7 @@ public class RotationHelper {
 
          return null;
       } else {
-         return method34148(var4);
+         return getRotationsToVector(var4);
       }
    }
 
