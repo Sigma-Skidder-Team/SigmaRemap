@@ -45,7 +45,7 @@ public class RedeemKeyScreen extends IconPanel {
                var4x.method36706(this.field21138.getTypedText());
             }
 
-            this.field21135 = Client.getInstance().getNetworkManager().method30451(var9.getTypedText(), Client.getInstance().getNetworkManager().method30452());
+            this.field21135 = Client.getInstance().getNetworkManager().redeemPremium(var9.getTypedText(), Client.getInstance().getNetworkManager().method30452());
             if (this.field21135 == null) {
                this.field21135 = "";
             }

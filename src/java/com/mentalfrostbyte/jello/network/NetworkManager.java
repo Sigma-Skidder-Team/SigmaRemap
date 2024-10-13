@@ -20,12 +20,9 @@ public class NetworkManager {
         this.field38429 = new CombatTracker(this);
     }
 
-    public String method30447(String var1, String var2, Class9507 var3) {
-        NetworkManager.premium = true;
+    public String newAccount(String var1, String var2, Class9507 var3) {
+        NetworkManager.premium = false;
         this.account = getNewAccount(var1);
-        Client.getInstance().getDRPC().smallImageKey = "premium";
-        Client.getInstance().getDRPC().smallImageText = "Premium";
-        DiscordRPC.INSTANCE.Discord_UpdatePresence(Client.getInstance().getDRPC());
         return null;
     }
 
@@ -33,8 +30,13 @@ public class NetworkManager {
         return "register #1";
     }
 
-    public String method30451(String var1, Class9507 var2) {
-        return "register #2";
+    public String redeemPremium(String var1, Class9507 var2) {
+        NetworkManager.premium = true;
+
+        Client.getInstance().getDRPC().smallImageKey = "premium";
+        Client.getInstance().getDRPC().smallImageText = "Premium";
+        DiscordRPC.INSTANCE.Discord_UpdatePresence(Client.getInstance().getDRPC());
+        return "Redeemed premium successfully!";
     }
 
     public Class9507 method30452() {
