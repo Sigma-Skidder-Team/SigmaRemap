@@ -10,8 +10,8 @@ import java.util.Collections;
 import java.util.List;
 
 public final class Class9161 {
-   private static final String field42049 = Class7596.method24879().method24880() + "-Sent-Millis";
-   private static final String field42050 = Class7596.method24879().method24880() + "-Received-Millis";
+   private static final String field42049 = "-Sent-Millis";
+   private static final String field42050 = "-Received-Millis";
    private final String field42051;
    private final Class9371 field42052;
    private final String field42053;

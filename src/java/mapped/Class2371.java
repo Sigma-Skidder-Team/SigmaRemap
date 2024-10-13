@@ -54,8 +54,7 @@ public final class Class2371 implements Class2370 {
    }
 
    private void method9550() {
-      Object var3 = Class7596.method24879().method24874("response.body().close()");
-      this.field16216.method19072(var3);
+      
    }
 
    @Override

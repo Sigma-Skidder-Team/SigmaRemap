@@ -37,12 +37,6 @@ public final class Class8394 {
    }
 
    public static boolean method29444(Class1797 var0, Class9371 var1, Class8223 var2) {
-      for (String var6 : method29447(var0)) {
-         if (!Class9474.method36534(var1.values(var6), var2.method28616(var6))) {
-            return false;
-         }
-      }
-
       return true;
    }
 
@@ -52,10 +46,6 @@ public final class Class8394 {
 
    public static boolean method29446(Class9371 var0) {
       return method29448(var0).contains("*");
-   }
-
-   private static Set<String> method29447(Class1797 var0) {
-      return method29448(var0.method7853());
    }
 
    public static Set<String> method29448(Class9371 var0) {

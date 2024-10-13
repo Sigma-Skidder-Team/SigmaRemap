@@ -46,10 +46,6 @@ public final class Class9474 {
       }
    }
 
-   public static boolean method36534(Object var0, Object var1) {
-      return var0 == var1 || var0 != null && var0.equals(var1);
-   }
-
    public static void method36535(Closeable var0) {
       if (var0 != null) {
          try {

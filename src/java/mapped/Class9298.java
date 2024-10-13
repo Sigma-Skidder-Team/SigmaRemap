@@ -99,33 +99,9 @@ public final class Class9298 {
          if (var11 != null) {
             var10 = var11 + 1;
             if (var10 > 1 && var10 < 8) {
-               if (!Class9474.method36534(Class9739.field45480[var10 - 1].field35887, var8)) {
-                  if (Class9474.method36534(Class9739.field45480[var10].field35887, var8)) {
-                     var9 = var10 + 1;
-                  }
-               } else {
-                  var9 = var10;
-               }
+               var9 = var10;
             }
          }
-
-         if (var9 == -1) {
-            int var12 = this.field42756 + 1;
-
-            for (int var13 = this.field42755.length; var12 < var13; var12++) {
-               if (Class9474.method36534(this.field42755[var12].field35886, var7)) {
-                  if (Class9474.method36534(this.field42755[var12].field35887, var8)) {
-                     var9 = var12 - this.field42756 + Class9739.field45480.length;
-                     break;
-                  }
-
-                  if (var10 == -1) {
-                     var10 = var12 - this.field42756 + Class9739.field45480.length;
-                  }
-               }
-            }
-         }
-
          if (var9 == -1) {
             if (var10 != -1) {
                if (var7.method8466(Class8350.field35880) && !Class8350.field35885.equals(var7)) {

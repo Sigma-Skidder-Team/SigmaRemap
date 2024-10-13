@@ -54,16 +54,6 @@ public final class Class7263 extends Class7264 implements Class7266 {
          Class2503 var7 = null;
          List var8 = this.field31155.method25539().method19054();
          Class8349 var9 = new Class8349(var8);
-         if (this.field31155.method25539().method19057() == null) {
-            if (!var8.contains(Class8574.field38548)) {
-               throw new Class2503(new UnknownServiceException("CLEARTEXT communication not enabled for client"));
-            }
-
-            String var10 = this.field31155.method25539().method19049().method22942();
-            if (!Class7596.method24879().method24876(var10)) {
-               throw new Class2503(new UnknownServiceException("CLEARTEXT communication to " + var10 + " not permitted by network security policy"));
-            }
-         }
 
          while (true) {
             try {
@@ -133,14 +123,6 @@ public final class Class7263 extends Class7264 implements Class7266 {
       this.field31156.setSoTimeout(var2);
 
       try {
-         Class7596.method24879().method24869(this.field31156, this.field31155.method25541(), var1);
-      } catch (ConnectException var9) {
-         ConnectException var8 = new ConnectException("Failed to connect to " + this.field31155.method25541());
-         var8.initCause(var9);
-         throw var8;
-      }
-
-      try {
          this.field31161 = Class7001.method21696(Class7001.method21709(this.field31156));
          this.field31162 = Class7001.method21697(Class7001.method21700(this.field31156));
       } catch (NullPointerException var10) {
@@ -151,74 +133,8 @@ public final class Class7263 extends Class7264 implements Class7266 {
    }
 
    private void method22804(Class8349 var1) throws IOException {
-      if (this.field31155.method25539().method19057() != null) {
-         this.method22805(var1);
-         if (this.field31159 == Class2201.field14388) {
-            this.field31157.setSoTimeout(0);
-            this.field31160 = new Class9227(true)
-               .method34707(this.field31157, this.field31155.method25539().method19049().method22942(), this.field31161, this.field31162)
-               .method34708(this)
-               .method34710();
-            this.field31160.method7725();
-         }
-      } else {
-         this.field31159 = Class2201.field14386;
-         this.field31157 = this.field31156;
-      }
-   }
-
-   private void method22805(Class8349 var1) throws IOException {
-      Class6165 var4 = this.field31155.method25539();
-      SSLSocketFactory var5 = var4.method19057();
-      boolean var6 = false;
-      SSLSocket var7 = null;
-
-      try {
-         var7 = (SSLSocket)var5.createSocket(this.field31156, var4.method19049().method22942(), var4.method19049().method22943(), true);
-         Class8574 var8 = var1.method29260(var7);
-         if (var8.method30641()) {
-            Class7596.method24879().method24871(var7, var4.method19049().method22942(), var4.method19053());
-         }
-
-         var7.startHandshake();
-         Class6027 var9 = Class6027.method18657(var7.getSession());
-         if (!var4.method19058().verify(var4.method19049().method22942(), var7.getSession())) {
-            X509Certificate var16 = (X509Certificate)var9.method18661().get(0);
-            throw new SSLPeerUnverifiedException(
-               "Hostname "
-                  + var4.method19049().method22942()
-                  + " not verified:\n    certificate: "
-                  + Class8388.method29389(var16)
-                  + "\n    DN: "
-                  + var16.getSubjectDN().getName()
-                  + "\n    subjectAltNames: "
-                  + Class9005.method33270(var16)
-            );
-         }
-
-         var4.method19059().method29385(var4.method19049().method22942(), var9.method18661());
-         String var10 = var8.method30641() ? Class7596.method24879().method24872(var7) : null;
-         this.field31157 = var7;
-         this.field31161 = Class7001.method21696(Class7001.method21709(this.field31157));
-         this.field31162 = Class7001.method21697(Class7001.method21700(this.field31157));
-         this.field31158 = var9;
-         this.field31159 = var10 != null ? Class2201.method8918(var10) : Class2201.field14386;
-         var6 = true;
-      } catch (AssertionError var14) {
-         if (Class9474.method36547(var14)) {
-            throw new IOException(var14);
-         }
-
-         throw var14;
-      } finally {
-         if (var7 != null) {
-            Class7596.method24879().method24881(var7);
-         }
-
-         if (!var6) {
-            Class9474.method36536(var7);
-         }
-      }
+      this.field31159 = Class2201.field14386;
+      this.field31157 = this.field31156;
    }
 
    private Class8223 method22806(int var1, int var2, Class8223 var3, Class7284 var4) throws IOException {
@@ -290,17 +206,10 @@ public final class Class7263 extends Class7264 implements Class7266 {
             return false;
          } else if (!this.field31155.method25541().equals(var2.method25541())) {
             return false;
-         } else if (var2.method25539().method19058() != Class9005.field41167) {
-            return false;
          } else if (!this.method22809(var1.method19049())) {
             return false;
          } else {
-            try {
-               var1.method19059().method29385(var1.method19049().method22942(), this.method22818().method18661());
-               return true;
-            } catch (SSLPeerUnverifiedException var6) {
-               return false;
-            }
+            return false;
          }
       } else {
          return false;

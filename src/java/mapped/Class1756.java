@@ -81,8 +81,6 @@ public final class Class1756 implements Closeable, Flushable {
                this.field9520 = true;
                return;
             } catch (IOException var8) {
-               Class7596.method24879().method24873(5, "DiskLruCache " + this.field9508 + " is corrupt: " + var8.getMessage() + ", removing", var8);
-
                try {
                   this.method7696();
                } finally {

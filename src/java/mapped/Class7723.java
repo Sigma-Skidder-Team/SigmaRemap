@@ -40,7 +40,7 @@ public final class Class7723 {
    }
 
    public boolean method25542() {
-      return this.field33157.field27588 != null && this.field33158.type() == Type.HTTP;
+      return this.field33158.type() == Type.HTTP;
    }
 
    @Override

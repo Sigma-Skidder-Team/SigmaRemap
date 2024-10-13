@@ -39,7 +39,7 @@ public final class Class1568 extends Class1555 {
          }
       } catch (IOException var8) {
          if (var3) {
-            Class7596.method24879().method24873(4, "Callback failure for " + this.field8482.method9552(), var8);
+            //Class7596.method24879().method24873(4, "Callback failure for " + this.field8482.method9552(), var8);
          } else {
             this.field8481.method13023(this.field8482, var8);
          }

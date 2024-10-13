@@ -17,25 +17,19 @@ public final class Class6165 {
    public final List<Class8574> field27585;
    public final ProxySelector field27586;
    public final Proxy field27587;
-   public final SSLSocketFactory field27588;
-   public final HostnameVerifier field27589;
-   public final Class8388 field27590;
 
    public Class6165(
       String var1,
       int var2,
       Class7004 var3,
       SocketFactory var4,
-      SSLSocketFactory var5,
-      HostnameVerifier var6,
-      Class8388 var7,
       Class8110 var8,
       Proxy var9,
       List<Class2201> var10,
       List<Class8574> var11,
       ProxySelector var12
    ) {
-      this.field27580 = new Class7477().method24232(var5 == null ? "http" : "https").method24237(var1).method24238(var2).method24261();
+      this.field27580 = new Class7477().method24232("https").method24237(var1).method24238(var2).method24261();
       if (var3 != null) {
          this.field27581 = var3;
          if (var4 != null) {
@@ -49,9 +43,6 @@ public final class Class6165 {
                      if (var12 != null) {
                         this.field27586 = var12;
                         this.field27587 = var9;
-                        this.field27588 = var5;
-                        this.field27589 = var6;
-                        this.field27590 = var7;
                      } else {
                         throw new NullPointerException("proxySelector == null");
                      }
@@ -105,39 +96,9 @@ public final class Class6165 {
       return this.field27587;
    }
 
-   @Nullable
-   public SSLSocketFactory method19057() {
-      return this.field27588;
-   }
-
-   @Nullable
-   public HostnameVerifier method19058() {
-      return this.field27589;
-   }
-
-   @Nullable
-   public Class8388 method19059() {
-      return this.field27590;
-   }
-
    @Override
    public boolean equals(Object var1) {
       return var1 instanceof Class6165 && this.field27580.equals(((Class6165)var1).field27580) && this.method19060((Class6165)var1);
-   }
-
-   @Override
-   public int hashCode() {
-      int var3 = 17;
-      var3 = 31 * var3 + this.field27580.hashCode();
-      var3 = 31 * var3 + this.field27581.hashCode();
-      var3 = 31 * var3 + this.field27583.hashCode();
-      var3 = 31 * var3 + this.field27584.hashCode();
-      var3 = 31 * var3 + this.field27585.hashCode();
-      var3 = 31 * var3 + this.field27586.hashCode();
-      var3 = 31 * var3 + (this.field27587 == null ? 0 : this.field27587.hashCode());
-      var3 = 31 * var3 + (this.field27588 == null ? 0 : this.field27588.hashCode());
-      var3 = 31 * var3 + (this.field27589 == null ? 0 : this.field27589.hashCode());
-      return 31 * var3 + (this.field27590 == null ? 0 : this.field27590.hashCode());
    }
 
    public boolean method19060(Class6165 var1) {
@@ -146,10 +107,6 @@ public final class Class6165 {
          && this.field27584.equals(var1.field27584)
          && this.field27585.equals(var1.field27585)
          && this.field27586.equals(var1.field27586)
-         && Class9474.method36534(this.field27587, var1.field27587)
-         && Class9474.method36534(this.field27588, var1.field27588)
-         && Class9474.method36534(this.field27589, var1.field27589)
-         && Class9474.method36534(this.field27590, var1.field27590)
          && this.method19049().method22943() == var1.method19049().method22943();
    }
 

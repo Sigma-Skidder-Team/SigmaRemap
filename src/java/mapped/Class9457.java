@@ -177,7 +177,6 @@ public final class Class9457 {
          if (var8.get() == null) {
             Class2 var9 = (Class2)var8;
             String var10 = "A connection to " + var1.method22812().method25539().method19049() + " was leaked. Did you forget to close a response body?";
-            Class7596.method24879().method24875(var10, var9.field2);
             var6.remove(var7);
             var1.field31163 = true;
             if (var6.isEmpty()) {

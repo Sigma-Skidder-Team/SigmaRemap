@@ -222,7 +222,6 @@ public final class Class8003 {
             var4 = new byte[var8];
             var6.method7624(var4);
          } catch (IOException var15) {
-            Class7596.method24879().method24873(5, "Failed to read public suffix list", var15);
             var3 = null;
             var4 = null;
          } finally {

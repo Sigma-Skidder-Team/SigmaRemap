@@ -25,10 +25,7 @@ public class Class2391 implements Cloneable, Class2393, Class2392 {
    public final Class1715 field16295;
    public final Class8530 field16296;
    public final SocketFactory field16297;
-   public final SSLSocketFactory field16298;
-   public final Class7658 field16299;
    public final HostnameVerifier field16300;
-   public final Class8388 field16301;
    public final Class8110 field16302;
    public final Class8110 field16303;
    public final Class9457 field16304;
@@ -64,17 +61,7 @@ public class Class2391 implements Cloneable, Class2393, Class2392 {
          var4 = var4 || var6.method30638();
       }
 
-      if (var1.field42580 == null && var4) {
-         X509TrustManager var7 = this.method9800();
-         this.field16298 = this.method9801(var7);
-         this.field16299 = Class7658.method25178(var7);
-      } else {
-         this.field16298 = var1.field42580;
-         this.field16299 = var1.field42581;
-      }
-
       this.field16300 = var1.field42582;
-      this.field16301 = var1.field42583.method29388(this.field16299);
       this.field16302 = var1.field42584;
       this.field16303 = var1.field42585;
       this.field16304 = var1.field42586;
@@ -98,16 +85,6 @@ public class Class2391 implements Cloneable, Class2393, Class2392 {
          } else {
             throw new IllegalStateException("Unexpected default trust managers:" + Arrays.toString((Object[])var4));
          }
-      } catch (GeneralSecurityException var5) {
-         throw new AssertionError();
-      }
-   }
-
-   private SSLSocketFactory method9801(X509TrustManager var1) {
-      try {
-         SSLContext var4 = SSLContext.getInstance("TLS");
-         var4.init(null, new TrustManager[]{var1}, null);
-         return var4.getSocketFactory();
       } catch (GeneralSecurityException var5) {
          throw new AssertionError();
       }
@@ -155,18 +132,6 @@ public class Class2391 implements Cloneable, Class2393, Class2392 {
 
    public SocketFactory method9812() {
       return this.field16297;
-   }
-
-   public SSLSocketFactory method9813() {
-      return this.field16298;
-   }
-
-   public HostnameVerifier method9814() {
-      return this.field16300;
-   }
-
-   public Class8388 method9815() {
-      return this.field16301;
    }
 
    public Class8110 method9816() {

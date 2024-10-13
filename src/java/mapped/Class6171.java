@@ -122,13 +122,8 @@ public final class Class6171 implements Class6172 {
    }
 
    private Class6165 method19075(Class7284 var1) {
-      SSLSocketFactory var4 = null;
-      HostnameVerifier var5 = null;
-      Class8388 var6 = null;
       if (var1.method22937()) {
-         var4 = this.field27604.method9813();
-         var5 = this.field27604.method9814();
-         var6 = this.field27604.method9815();
+
       }
 
       return new Class6165(
@@ -136,9 +131,6 @@ public final class Class6171 implements Class6172 {
          var1.method22943(),
          this.field27604.method9811(),
          this.field27604.method9812(),
-         var4,
-         var5,
-         var6,
          this.field27604.method9817(),
          this.field27604.method9806(),
          this.field27604.method9823(),
