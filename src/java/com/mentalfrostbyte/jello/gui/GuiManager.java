@@ -390,8 +390,6 @@ public class GuiManager {
                     Minecraft.getInstance().mainWindow.getFramebufferHeight() / Minecraft.getInstance().mainWindow.getHeight()
             );
         }
-
-        RenderUtil.method11411(Minecraft.getInstance().mainWindow.getWidth(), Minecraft.getInstance().mainWindow.getHeight());
     }
 
     public Screen method33480() {
