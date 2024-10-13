@@ -784,9 +784,8 @@ public class JSONArray implements Iterable<Object> {
    public JSONArray put(int index, Object value) {
        try {
            JSONObject.testValidity(value);
-          throw new JSONException("JSONArray[" + index + "] not found.");
-       } catch (JSONException e) {
-          e.printStackTrace();
+           System.out.println("JSONArray[" + index + "] not found.");
+       } catch (JSONException ignored) {
        }
       if (index < 0) {
       }
