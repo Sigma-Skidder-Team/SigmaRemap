@@ -10,6 +10,9 @@ We have fixed many features already,
 - removed viaversion and the bugs that came with it;
 - all modules that had rotations broken were fixed;
 - shield rendering when sword blocking;
+- recovered old and new changelogs; 
+- switched lwjgl 3.2.2 to 3.3.4;
+- made premium more authentic;
 - stairs hitbox/collision bug;
 - removed resource decryption;
 - 4.5 reach on survival;
@@ -25,6 +28,7 @@ We have fixed many features already,
 5. Add back ViaVersion/Jello Portal.
 
 ### Contributors
+- [Gato](https://github.com/gatov2)
 - [Richy](https://github.com/richylotl)
 - [lamzvam](https://github.com/lamzvam)
 - [StormingMoon](https://github.com/StormingMoon)
