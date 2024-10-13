@@ -12,6 +12,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.SafeWalk;
 import com.mentalfrostbyte.jello.module.impl.movement.speed.AACSpeed;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
+import com.mentalfrostbyte.jello.util.Rots;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import lol.MovementUtils;
 import mapped.*;
@@ -30,8 +31,8 @@ import net.minecraft.util.math.BlockRayTraceResult;
 import java.util.List;
 
 public class BlockFlyAACMode extends Module {
-    private float field23520;
-    private float field23521;
+    private float yaw;
+    private float pitch;
     private int field23522 = 0;
     private int field23523 = 0;
     private int field23524;
@@ -46,8 +47,8 @@ public class BlockFlyAACMode extends Module {
     @Override
     public void onEnable() {
         this.field23523 = mc.player.inventory.currentItem;
-        this.field23520 = mc.player.rotationYaw;
-        this.field23521 = mc.player.rotationPitch;
+        this.yaw = mc.player.rotationYaw;
+        this.pitch = mc.player.rotationPitch;
         this.field23522 = (int) mc.player.getPosY();
         this.field23525 = -1;
         ((BlockFly) this.access()).field23884 = -1;
@@ -219,9 +220,9 @@ public class BlockFlyAACMode extends Module {
 
     @EventTarget
     @LowestPriority
-    private void method16210(EventUpdate var1) {
+    private void method16210(EventUpdate event) {
         if (this.isEnabled()) {
-            if (!var1.isPre()) {
+            if (!event.isPre()) {
                 if (MovementUtils.isMoving() && mc.player.onGround && this.getBooleanValueFromSettingName("Haphe (AACAP)") && !mc.player.isJumping) {
                     mc.player.jump();
                 }
@@ -247,18 +248,24 @@ public class BlockFlyAACMode extends Module {
                 List var7 = this.method16208(Blocks.STONE, var6);
                 if (!var7.isEmpty()) {
                     PositionFacing var8 = (PositionFacing) var7.get(var7.size() - 1);
-                    BlockRayTraceResult var9 = BlockUtil.rayTrace(this.field23520, this.field23521, 5.0F);
+                    BlockRayTraceResult var9 = BlockUtil.rayTrace(this.yaw, this.pitch, 5.0F);
                     if (!var9.getPos().equals(var8.blockPos) || !var9.getFace().equals(var8.direction)) {
                         float[] var10 = BlockUtil.method34543(var8.blockPos, var8.direction);
-                        this.field23520 = BlockUtil.method34543(var8.blockPos, var8.direction)[0];
-                        this.field23521 = BlockUtil.method34543(var8.blockPos, var8.direction)[1];
+                        this.yaw = var10[0];
+                        this.pitch = var10[1];
                     }
                 }
 
-                var1.setPitch(this.field23521);
-                var1.setYaw(this.field23520);
-                mc.player.rotationYawHead = var1.getPitch();
-                mc.player.renderYawOffset = var1.getPitch();
+                Rots.rotating = true;
+                Rots.prevYaw = this.yaw;
+                Rots.prevPitch = this.pitch;
+                event.setYaw(this.yaw);
+                event.setPitch(this.pitch);
+                Rots.yaw = this.yaw;
+                Rots.pitch = this.pitch;
+
+                mc.player.rotationYawHead = event.getYaw();
+                mc.player.renderYawOffset = event.getYaw();
             }
         }
     }
