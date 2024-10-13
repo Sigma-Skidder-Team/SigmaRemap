@@ -78,6 +78,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.chunk.listener.TrackingChunkStatusListener;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import totalcross.json.JSONException;
 
 import javax.annotation.Nullable;
 import java.io.File;
@@ -107,7 +108,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
    public static final ResourceLocation DEFAULT_FONT_RENDERER_NAME = new ResourceLocation("default");
    public static final ResourceLocation UNIFORM_FONT_RENDERER_NAME = new ResourceLocation("uniform");
    public static final ResourceLocation standardGalacticFontRenderer = new ResourceLocation("alt");
-   private static final CompletableFuture<Class2341> RESOURCE_RELOAD_INIT_TASK = CompletableFuture.<Class2341>completedFuture(Class2341.field16010);
+   private static final CompletableFuture<Unit> RESOURCE_RELOAD_INIT_TASK = CompletableFuture.<Unit>completedFuture(Unit.INSTANCE);
    private static final ITextComponent field_244596_I = new TranslationTextComponent("multiplayer.socialInteractions.not_available");
    private final File fileResourcepacks;
    private final PropertyMap profileProperties;
@@ -678,8 +679,12 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       }
 
       this.currentScreen = guiScreenIn;
-      Client.getInstance().getGuiManager().method33481();
-      if (guiScreenIn != null) {
+       try {
+           Client.getInstance().getGuiManager().method33481();
+       } catch (JSONException e) {
+           throw new RuntimeException(e);
+       }
+       if (guiScreenIn != null) {
          this.mouseHelper.ungrabMouse();
          KeyBinding.unPressAllKeys();
          guiScreenIn.init(this, this.mainWindow.getScaledWidth(), this.mainWindow.getScaledHeight());
@@ -922,7 +927,11 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       this.mainWindow.setGuiScale((double)i);
       if (this.currentScreen != null) {
          this.currentScreen.resize(this, this.mainWindow.getScaledWidth(), this.mainWindow.getScaledHeight());
-         Client.getInstance().getGuiManager().onResize();
+          try {
+              Client.getInstance().getGuiManager().onResize();
+          } catch (JSONException e) {
+              throw new RuntimeException(e);
+          }
       }
 
       Framebuffer framebuffer = this.getFramebuffer();

@@ -135,8 +135,8 @@ public class Class9830 {
    }
 
    private static void method38794(TemplateManager var0, BlockPos var1, Rotation var2, List<Class4178> var3, Random var4, Class4711 var5, boolean var6, float var7) {
-      if (var5.field22345 != Class110.field373) {
-         if (var5.field22345 == Class110.field374) {
+      if (var5.field22345 != Class110.WARM) {
+         if (var5.field22345 == Class110.COLD) {
             ResourceLocation[] var10 = !var6 ? field45915 : field45918;
             ResourceLocation[] var11 = !var6 ? field45916 : field45920;
             ResourceLocation[] var12 = !var6 ? field45917 : field45919;

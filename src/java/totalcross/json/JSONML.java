@@ -1,23 +1,18 @@
-package mapped;
-
-import totalcross.json.JSONArray;
-import totalcross.json.JSONException;
-import totalcross.json.JSONException2;
-import totalcross.json.JSONObject;
+package totalcross.json;
 
 import java.util.Iterator;
 
-public class Class8413 {
-   private static Object method29537(Class7474 var0, boolean var1, JSONArray var2) throws JSONException {
+public class JSONML {
+   private static Object parse(XMLTokener var0, boolean var1, JSONArray var2) throws JSONException {
       Object var5 = null;
       JSONArray var6 = null;
       JSONObject var7 = null;
       Object var8 = null;
 
-      while (var0.method24220()) {
-         Object var9 = var0.method24212();
-         if (var9 == Class9029.field41317) {
-            var9 = var0.method24215();
+      while (var0.more()) {
+         Object var9 = var0.nextContent();
+         if (var9 == XML.LT) {
+            var9 = var0.nextToken();
             if (!(var9 instanceof Character)) {
                if (!(var9 instanceof String)) {
                   throw var0.syntaxError("Bad tagName '" + var9 + "'.");
@@ -42,7 +37,7 @@ public class Class8413 {
 
                while (true) {
                   if (var9 == null) {
-                     var9 = var0.method24215();
+                     var9 = var0.nextToken();
                   }
 
                   if (var9 == null) {
@@ -50,16 +45,16 @@ public class Class8413 {
                   }
 
                   if (!(var9 instanceof String)) {
-                     if (var1 && var7.method21779() > 0) {
+                     if (var1 && var7.length() > 0) {
                         var6.put(var7);
                      }
 
-                     if (var9 != Class9029.field41320) {
-                        if (var9 != Class9029.field41316) {
+                     if (var9 != XML.SLASH) {
+                        if (var9 != XML.GT) {
                            throw var0.syntaxError("Misshaped tag");
                         }
 
-                        var5 = (String)method29537(var0, var1, var6);
+                        var5 = (String) parse(var0, var1, var6);
                         if (var5 != null) {
                            if (!var5.equals(var8)) {
                               throw var0.syntaxError("Mismatched '" + var8 + "' and '" + var5 + "'");
@@ -79,7 +74,7 @@ public class Class8413 {
                            }
                         }
                      } else {
-                        if (var0.method24215() != Class9029.field41316) {
+                        if (var0.nextToken() != XML.GT) {
                            throw var0.syntaxError("Misshaped tag");
                         }
 
@@ -99,24 +94,24 @@ public class Class8413 {
                      throw var0.syntaxError("Reserved attribute.");
                   }
 
-                  var9 = var0.method24215();
-                  if (var9 != Class9029.field41315) {
-                     var7.method21758(var12, "");
+                  var9 = var0.nextToken();
+                  if (var9 != XML.EQ) {
+                     var7.accumulate(var12, "");
                   } else {
-                     var9 = var0.method24215();
+                     var9 = var0.nextToken();
                      if (!(var9 instanceof String)) {
                         throw var0.syntaxError("Missing value");
                      }
 
-                     var7.method21758(var12, Class9029.method33430((String)var9));
+                     var7.accumulate(var12, XML.stringToValue((String)var9));
                      var9 = null;
                   }
                }
             } else {
-               if (var9 == Class9029.field41320) {
-                  var9 = var0.method24215();
+               if (var9 == XML.SLASH) {
+                  var9 = var0.nextToken();
                   if (var9 instanceof String) {
-                     if (var0.method24215() == Class9029.field41316) {
+                     if (var0.nextToken() == XML.GT) {
                         return var9;
                      }
 
@@ -126,40 +121,40 @@ public class Class8413 {
                   throw new JSONException2("Expected a closing name instead of '" + var9 + "'.");
                }
 
-               if (var9 != Class9029.field41314) {
-                  if (var9 != Class9029.field41318) {
+               if (var9 != XML.BANG) {
+                  if (var9 != XML.QUEST) {
                      throw var0.syntaxError("Misshaped tag");
                   }
 
-                  var0.method24216("?>");
+                  var0.skipPast("?>");
                } else {
-                  char var10 = var0.method24221();
+                  char var10 = var0.next();
                   if (var10 == '-') {
-                     if (var0.method24221() != '-') {
+                     if (var0.next() != '-') {
                         var0.back();
                      } else {
-                        var0.method24216("-->");
+                        var0.skipPast("-->");
                      }
                   } else if (var10 == '[') {
-                     var9 = var0.method24215();
-                     if (!var9.equals("CDATA") || var0.method24221() != '[') {
+                     var9 = var0.nextToken();
+                     if (!var9.equals("CDATA") || var0.next() != '[') {
                         throw var0.syntaxError("Expected 'CDATA['");
                      }
 
                      if (var2 != null) {
-                        var2.put(var0.method24211());
+                        var2.put(var0.nextCDATA());
                      }
                   } else {
                      int var11 = 1;
 
                      while (true) {
-                        var9 = var0.method24214();
+                        var9 = var0.nextMeta();
                         if (var9 == null) {
                            throw var0.syntaxError("Missing '>' after '<!'.");
                         }
 
-                        if (var9 != Class9029.field41317) {
-                           if (var9 == Class9029.field41316) {
+                        if (var9 != XML.LT) {
+                           if (var9 == XML.GT) {
                               var11--;
                            }
                         } else {
@@ -174,34 +169,34 @@ public class Class8413 {
                }
             }
          } else if (var2 != null) {
-            var2.put(!(var9 instanceof String) ? var9 : Class9029.method33430((String)var9));
+            var2.put(!(var9 instanceof String) ? var9 : XML.stringToValue((String)var9));
          }
       }
 
       throw var0.syntaxError("Bad XML");
    }
 
-   public static JSONArray method29538(String var0) throws JSONException {
-      return method29539(new Class7474(var0));
+   public static JSONArray toJSONArray(String var0) throws JSONException {
+      return toJSONArray(new XMLTokener(var0));
    }
 
-   public static JSONArray method29539(Class7474 var0) throws JSONException {
-      return (JSONArray)method29537(var0, true, null);
+   public static JSONArray toJSONArray(XMLTokener var0) throws JSONException {
+      return (JSONArray) parse(var0, true, null);
    }
 
-   public static JSONObject method29540(Class7474 var0) throws JSONException {
-      return (JSONObject)method29537(var0, false, null);
+   public static JSONObject toJSONObject(XMLTokener var0) throws JSONException {
+      return (JSONObject) parse(var0, false, null);
    }
 
-   public static JSONObject method29541(String var0) throws JSONException {
-      return method29540(new Class7474(var0));
+   public static JSONObject toJSONObject(String var0) throws JSONException {
+      return toJSONObject(new XMLTokener(var0));
    }
 
    public static String toString(JSONArray var0) throws JSONException {
       StringBuilder var3 = new StringBuilder();
       String var4 = var0.getString(0);
-      Class9029.method33428(var4);
-      var4 = Class9029.method33427(var4);
+      XML.noSpace(var4);
+      var4 = XML.escape(var4);
       var3.append('<');
       var3.append(var4);
       Object var5 = var0.opt(1);
@@ -211,18 +206,18 @@ public class Class8413 {
       } else {
          var6 = 2;
          JSONObject var7 = (JSONObject)var5;
-         Iterator var8 = var7.method21777();
+         Iterator var8 = var7.keys();
 
          while (var8.hasNext()) {
             String var10 = (String)var8.next();
-            Class9029.method33428(var10);
-            String var11 = var7.method21797(var10);
+            XML.noSpace(var10);
+            String var11 = var7.optString(var10);
             if (var11 != null) {
                var3.append(' ');
-               var3.append(Class9029.method33427(var10));
+               var3.append(XML.escape(var10));
                var3.append('=');
                var3.append('"');
-               var3.append(Class9029.method33427(var11));
+               var3.append(XML.escape(var11));
                var3.append('"');
             }
          }
@@ -247,7 +242,7 @@ public class Class8413 {
                      var3.append(toString((JSONObject)var5));
                   }
                } else {
-                  var3.append(Class9029.method33427(var5.toString()));
+                  var3.append(XML.escape(var5.toString()));
                }
             }
          } while (var6 < var9);
@@ -266,33 +261,33 @@ public class Class8413 {
 
    public static String toString(JSONObject var0) throws JSONException {
       StringBuilder var3 = new StringBuilder();
-      String var4 = var0.method21797("tagName");
+      String var4 = var0.optString("tagName");
       if (var4 == null) {
-         return Class9029.method33427(var0.toString());
+         return XML.escape(var0.toString());
       } else {
-         Class9029.method33428(var4);
-         var4 = Class9029.method33427(var4);
+         XML.noSpace(var4);
+         var4 = XML.escape(var4);
          var3.append('<');
          var3.append(var4);
-         Iterator var5 = var0.method21777();
+         Iterator var5 = var0.keys();
 
          while (var5.hasNext()) {
             String var9 = (String)var5.next();
             if (!"tagName".equals(var9) && !"childNodes".equals(var9)) {
-               Class9029.method33428(var9);
-               String var10 = var0.method21797(var9);
+               XML.noSpace(var9);
+               String var10 = var0.optString(var9);
                if (var10 != null) {
                   var3.append(' ');
-                  var3.append(Class9029.method33427(var9));
+                  var3.append(XML.escape(var9));
                   var3.append('=');
                   var3.append('"');
-                  var3.append(Class9029.method33427(var10));
+                  var3.append(XML.escape(var10));
                   var3.append('"');
                }
             }
          }
 
-         JSONArray var6 = var0.method21793("childNodes");
+         JSONArray var6 = var0.optJSONArray("childNodes");
          if (var6 != null) {
             var3.append('>');
             int var7 = var6.length();
@@ -311,7 +306,7 @@ public class Class8413 {
                         var3.append(toString((JSONObject)var11));
                      }
                   } else {
-                     var3.append(Class9029.method33427(var11.toString()));
+                     var3.append(XML.escape(var11.toString()));
                   }
                }
             }

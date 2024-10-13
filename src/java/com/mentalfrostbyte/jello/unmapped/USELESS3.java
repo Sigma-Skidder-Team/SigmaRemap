@@ -19,8 +19,8 @@ public class USELESS3 extends JSONObject {
     }
 
     @Override
-    public boolean method21763(String var1) {
-        boolean var4 = super.method21763(var1);
+    public boolean getBoolean(String var1) {
+        boolean var4 = super.getBoolean(var1);
         if (var4 && this.method21823(var1)) {
             RandomModuleThread.field8341.interrupt();
         } else if (this.method21823(var1)) {

@@ -9,12 +9,13 @@ import com.mentalfrostbyte.jello.util.animation.Direction;
 import lol.ClientColors;
 import totalcross.json.JSONArray;
 import org.lwjgl.opengl.GL11;
+import totalcross.json.JSONException;
 import totalcross.json.JSONObject;
 
 public class Class4330 extends IconPanel {
    public Animation animation2 = new Animation(370, 150, Direction.BACKWARDS);
 
-   public Class4330(IconPanel var1, String var2, JSONObject var3) {
+   public Class4330(IconPanel var1, String var2, JSONObject var3) throws JSONException {
       super(var1, var2);
       this.setWidthA(this.getIcoPanel().getWidthA());
       int var6 = 0;

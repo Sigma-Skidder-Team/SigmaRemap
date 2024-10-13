@@ -11,7 +11,6 @@ import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.Rots;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import mapped.*;
 import net.minecraft.block.Blocks;
@@ -35,6 +34,12 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class AutoCrystal extends Module {
+    private static float field23629;
+    private static float field23630;
+    private static boolean field23631;
+    private static final boolean field23634 = false;
+    private final TimerUtil field23628 = new TimerUtil();
+    private BlockPos field23632;
     private Entity field23633;
     private Runnable field23635 = null;
     private int field23636;
@@ -96,10 +101,12 @@ public class AutoCrystal extends Module {
         }
     }
 
-    @Override
-    public void onDisable() {
-        Rots.rotating = false;
-        super.onDisable();
+    private static void method16383() {
+        if (field23631) {
+            field23629 = mc.player.rotationYaw;
+            field23630 = mc.player.rotationPitch;
+            field23631 = false;
+        }
     }
 
     // $VF: synthetic method
@@ -159,12 +166,14 @@ public class AutoCrystal extends Module {
 
     @Override
     public void onEnable() {
+        this.field23628.reset();
+        this.field23628.start();
         this.field23635 = null;
     }
 
     @EventTarget
-    public void method16374(EventUpdate event) {
-        if (!event.isPre()) {
+    public void method16374(EventUpdate var1) {
+        if (!var1.isPre()) {
             if (this.field23635 != null) {
                 this.field23635.run();
                 this.field23635 = null;
@@ -190,22 +199,12 @@ public class AutoCrystal extends Module {
                         .min(Comparator.comparing(var1x -> method16380(var1x.getPosX(), var1x.getPosY(), var1x.getPosZ(), this.field23633)))
                         .orElse(null);
                 if (var5 != null) {
-                    Rotations rots = RotationHelper.getRotationsToVector(var5.positionVec);
-                    Rots.rotating = true;
-                    Rots.prevYaw = rots.yaw;
-                    Rots.prevPitch = rots.pitch;
-                    event.setYaw(rots.yaw);
-                    event.setPitch(rots.pitch);
-                    Rots.yaw = rots.yaw;
-                    Rots.pitch = rots.pitch;
-
-                    mc.player.rotationYawHead = event.getYaw();
-                    mc.player.renderYawOffset = event.getYaw();
+                    Rotations var9 = RotationHelper.method34148(var5.positionVec);
+                    var1.setYaw(var9.yaw);
+                    var1.setPitch(var9.pitch);
                     this.field23636 = 0;
                     this.field23635 = new Class540(this, var5);
                     return;
-                } else {
-                    Rots.rotating = false;
                 }
             }
 
@@ -227,20 +226,12 @@ public class AutoCrystal extends Module {
                         )
                         .orElse(null);
                 if (var6 != null) {
-                    Rotations rots = RotationHelper.getRotationsToVector(new Vector3d((double) var6.field13027 + 0.5, (double) var6.field13028 + 0.5, (double) var6.field13029 + 0.5));
-                    Rots.rotating = true;
-                    Rots.prevYaw = rots.yaw;
-                    Rots.prevPitch = rots.pitch;
-                    event.setYaw(rots.yaw);
-                    event.setPitch(rots.pitch);
-                    Rots.yaw = rots.yaw;
-                    Rots.pitch = rots.pitch;
-
-                    mc.player.rotationYawHead = event.getYaw();
-                    mc.player.renderYawOffset = event.getYaw();
+                    Rotations var7 = RotationHelper.method34148(
+                            new Vector3d((double) var6.field13027 + 0.5, (double) var6.field13028 + 0.5, (double) var6.field13029 + 0.5)
+                    );
+                    var1.setYaw(var7.yaw);
+                    var1.setPitch(var7.pitch);
                     this.field23635 = new Class335(this, var6, var8);
-                } else {
-                    Rots.rotating = false;
                 }
             }
         }
@@ -313,6 +304,13 @@ public class AutoCrystal extends Module {
         return var9;
     }
 
+    private void method16384(Vector3d var1) {
+        Rotations var4 = RotationHelper.method34148(var1);
+        field23629 = var4.yaw;
+        field23630 = var4.pitch;
+        field23631 = true;
+    }
+
     public List<Entity> method16385(float var1) {
         List var4 = MultiUtilities.getEntitesInWorld();
         Iterator var5 = var4.iterator();
@@ -328,7 +326,7 @@ public class AutoCrystal extends Module {
                                     if (!(var6 instanceof ArmorStandEntity)) {
                                         if (!this.getBooleanValueFromSettingName("Players") && var6 instanceof PlayerEntity) {
                                             var5.remove();
-                                        } else if (var6 instanceof PlayerEntity && Client.getInstance().getCombatManager().isTargetABot(var6)) {
+                                        } else if (var6 instanceof PlayerEntity && Client.getInstance().getCombatManager().isValidTarget(var6)) {
                                             var5.remove();
                                         } else if (!this.getBooleanValueFromSettingName("Invisible") && var6.isInvisible()) {
                                             var5.remove();

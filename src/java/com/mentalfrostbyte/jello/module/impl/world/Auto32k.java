@@ -8,7 +8,6 @@ import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.Rots;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import lol.ClientColors;
 import mapped.*;
@@ -130,8 +129,6 @@ public class Auto32k extends Module {
 
     @Override
     public void onDisable() {
-        Rots.rotating = false;
-        super.onDisable();
     }
 
     @EventTarget
@@ -222,26 +219,17 @@ public class Auto32k extends Module {
     }
 
     @EventTarget
-    private void method16720(EventUpdate event) {
+    private void method16720(EventUpdate var1) {
         if (this.isEnabled()) {
             if (this.field23871 != -1) {
                 if (this.field23872 != -1) {
                     if (this.field23870 != null) {
                         if (this.field23873 != 0) {
                             if (this.field23873 == 1) {
-                                float yaw = BlockUtil.method34543(this.field23870.up(), Direction.UP)[0];
-                                float pitch = BlockUtil.method34543(this.field23870.up(), Direction.UP)[1];
-                                Rots.rotating = true;
-                                Rots.prevYaw = yaw;
-                                Rots.prevPitch = pitch;
-                                event.setYaw(yaw);
-                                event.setPitch(pitch);
-                                Rots.yaw = yaw;
-                                Rots.pitch = pitch;
-
-                                mc.player.rotationYawHead = event.getYaw();
-                                mc.player.renderYawOffset = event.getYaw();
-
+                                float var4 = BlockUtil.method34543(this.field23870.up(), Direction.UP)[0];
+                                float var5 = BlockUtil.method34543(this.field23870.up(), Direction.UP)[1];
+                                var1.setYaw(var4);
+                                var1.setPitch(var5);
                                 int var6 = mc.player.inventory.currentItem;
                                 mc.player.inventory.currentItem = this.field23871;
                                 Vector3d var7 = BlockUtil.method34572(Direction.UP, this.field23870);
@@ -263,22 +251,12 @@ public class Auto32k extends Module {
                                 }
                             }
                         } else {
-                            float yaw = BlockUtil.method34543(this.field23870, Direction.UP)[0];
-                            float pitch = BlockUtil.method34543(this.field23870, Direction.UP)[1];
-                            Rots.rotating = true;
-                            Rots.prevYaw = yaw;
-                            Rots.prevPitch = pitch;
-                            event.setYaw(yaw);
-                            event.setPitch(pitch);
-                            Rots.yaw = yaw;
-                            Rots.pitch = pitch;
-
-                            mc.player.rotationYawHead = event.getYaw();
-                            mc.player.renderYawOffset = event.getYaw();
+                            float var12 = BlockUtil.method34543(this.field23870, Direction.UP)[0];
+                            float var13 = BlockUtil.method34543(this.field23870, Direction.UP)[1];
+                            var1.setYaw(var12);
+                            var1.setPitch(var13);
                             this.field23873++;
                         }
-                    } else {
-                        Rots.rotating = false;
                     }
                 }
             }

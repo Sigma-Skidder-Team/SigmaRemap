@@ -291,10 +291,10 @@ public class MultiUtilities {
          String var14 = new String(Base64.decodeBase64(var8));
          JSONObject var15 = new JSONObject(var14);
          if (var15.has("textures")) {
-            JSONObject var16 = var15.getJsonObject("textures");
+            JSONObject var16 = var15.getJSONObject("textures");
             System.out.println("tex");
             if (var16.has("SKIN")) {
-               var3 = var16.getJsonObject("SKIN").getString("url");
+               var3 = var16.getJSONObject("SKIN").getString("url");
             }
          }
 
@@ -1011,7 +1011,7 @@ public class MultiUtilities {
                return false;
             } else if (!var1 && var0 instanceof PlayerEntity) {
                return false;
-            } else if (var0 instanceof PlayerEntity && Client.getInstance().getCombatManager().isTargetABot(var0)) {
+            } else if (var0 instanceof PlayerEntity && Client.getInstance().getCombatManager().isValidTarget(var0)) {
                return false;
             } else if (!var3 && var0.isInvisible()) {
                return false;

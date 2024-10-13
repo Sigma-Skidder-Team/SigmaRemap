@@ -124,7 +124,7 @@ public class Class9281 {
          }
 
          Object2BooleanOpenHashMap var17 = new Object2BooleanOpenHashMap();
-         JsonObject var18 = JSONUtils.getJsonObject(var3, "recipes", new JsonObject());
+         JsonObject var18 = JSONUtils.getJSONObject(var3, "recipes", new JsonObject());
 
          for (Entry var21 : var18.entrySet()) {
             ResourceLocation var23 = new ResourceLocation((String)var21.getKey());
@@ -133,7 +133,7 @@ public class Class9281 {
          }
 
          HashMap var20 = Maps.newHashMap();
-         JsonObject var22 = JSONUtils.getJsonObject(var3, "advancements", new JsonObject());
+         JsonObject var22 = JSONUtils.getJSONObject(var3, "advancements", new JsonObject());
 
          for (Entry var26 : var22.entrySet()) {
             ResourceLocation var27 = new ResourceLocation((String)var26.getKey());

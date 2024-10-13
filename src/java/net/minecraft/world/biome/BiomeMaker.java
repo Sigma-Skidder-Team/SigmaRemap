@@ -31,7 +31,7 @@ public class BiomeMaker {
 
       Class7935 var7 = new Class7935().method26688(Class9109.field41849);
       Class8468.method29771(var7);
-      var7.method26693(StructureFeatures.field43858);
+      var7.method26693(StructureFeatures.RUINED_PORTAL);
       Class8468.method29773(var7);
       Class8468.method29775(var7);
       Class8468.method29777(var7);
@@ -75,7 +75,7 @@ public class BiomeMaker {
       Class8468.method29840(var5);
       Class7935 var6 = new Class7935().method26688(Class9109.field41850);
       Class8468.method29771(var6);
-      var6.method26693(StructureFeatures.field43858);
+      var6.method26693(StructureFeatures.RUINED_PORTAL);
       Class8468.method29773(var6);
       Class8468.method29775(var6);
       Class8468.method29777(var6);
@@ -174,11 +174,11 @@ public class BiomeMaker {
    private static Biome method36073(float var0, float var1, float var2, boolean var3, boolean var4, boolean var5, Class9328 var6) {
       Class7935 var9 = new Class7935().method26688(Class9109.field41850);
       if (!var4 && !var5) {
-         var9.method26693(StructureFeatures.field43838);
+         var9.method26693(StructureFeatures.JUNGLE_PYRAMID);
       }
 
       Class8468.method29771(var9);
-      var9.method26693(StructureFeatures.field43860);
+      var9.method26693(StructureFeatures.RUINED_PORTAL_JUNGLE);
       Class8468.method29773(var9);
       Class8468.method29775(var9);
       Class8468.method29777(var9);
@@ -234,7 +234,7 @@ public class BiomeMaker {
       Class8468.method29840(var6);
       Class7935 var7 = new Class7935().method26688(var2);
       Class8468.method29771(var7);
-      var7.method26693(StructureFeatures.field43862);
+      var7.method26693(StructureFeatures.RUINED_PORTAL_MOUNTAIN);
       Class8468.method29773(var7);
       Class8468.method29775(var7);
       Class8468.method29777(var7);
@@ -281,12 +281,12 @@ public class BiomeMaker {
       Class8468.method29845(var7);
       Class7935 var8 = new Class7935().method26688(Class9109.field41844);
       if (var2) {
-         var8.method26693(StructureFeatures.field43854);
-         var8.method26693(StructureFeatures.field43834);
+         var8.method26693(StructureFeatures.VILLAGE_DESERT);
+         var8.method26693(StructureFeatures.PILLAGER_OUTPOST);
       }
 
       if (var3) {
-         var8.method26693(StructureFeatures.field43839);
+         var8.method26693(StructureFeatures.DESERT_PYRAMID);
       }
 
       if (var4) {
@@ -294,7 +294,7 @@ public class BiomeMaker {
       }
 
       Class8468.method29771(var8);
-      var8.method26693(StructureFeatures.field43859);
+      var8.method26693(StructureFeatures.RUINED_PORTAL_DESERT);
       Class8468.method29773(var8);
       Class8468.method29776(var8);
       Class8468.method29777(var8);
@@ -339,11 +339,11 @@ public class BiomeMaker {
 
       Class7935 var4 = new Class7935().method26688(Class9109.field41850);
       if (!isSunflowerVariant) {
-         var4.method26693(StructureFeatures.field43853).method26693(StructureFeatures.field43834);
+         var4.method26693(StructureFeatures.VILLAGE_PLAINS).method26693(StructureFeatures.PILLAGER_OUTPOST);
       }
 
       Class8468.method29771(var4);
-      var4.method26693(StructureFeatures.field43858);
+      var4.method26693(StructureFeatures.RUINED_PORTAL);
       Class8468.method29773(var4);
       Class8468.method29775(var4);
       Class8468.method29777(var4);
@@ -419,14 +419,14 @@ public class BiomeMaker {
    }
 
    public static Biome method36080() {
-      Class7935 var2 = new Class7935().method26688(Class9109.field41845).method26693(StructureFeatures.field43850);
+      Class7935 var2 = new Class7935().method26688(Class9109.field41845).method26693(StructureFeatures.END_CITY);
       return method36077(var2);
    }
 
    public static Biome method36081() {
       Class7935 var2 = new Class7935()
          .method26688(Class9109.field41845)
-         .method26693(StructureFeatures.field43850)
+         .method26693(StructureFeatures.END_CITY)
          .method26690(Class1993.field13002, Features.field41634)
          .method26690(Class1993.field13006, Features.field41636);
       return method36077(var2);
@@ -442,7 +442,7 @@ public class BiomeMaker {
       Class8468.method29847(var4);
       Class7935 var5 = new Class7935().method26688(Class9109.field41854);
       Class8468.method29771(var5);
-      var5.method26693(StructureFeatures.field43858);
+      var5.method26693(StructureFeatures.RUINED_PORTAL);
       Class8468.method29773(var5);
       Class8468.method29775(var5);
       Class8468.method29777(var5);
@@ -478,11 +478,11 @@ public class BiomeMaker {
    private static Biome method36084(float var0, float var1, float var2, boolean var3, boolean var4, Class9328 var5) {
       Class7935 var8 = new Class7935().method26688(!var4 ? Class9109.field41850 : Class9109.field41858);
       if (!var3 && !var4) {
-         var8.method26693(StructureFeatures.field43855).method26693(StructureFeatures.field43834);
+         var8.method26693(StructureFeatures.VILLAGE_SAVANNA).method26693(StructureFeatures.PILLAGER_OUTPOST);
       }
 
       Class8468.method29771(var8);
-      var8.method26693(!var3 ? StructureFeatures.field43858 : StructureFeatures.field43862);
+      var8.method26693(!var3 ? StructureFeatures.RUINED_PORTAL : StructureFeatures.RUINED_PORTAL_MOUNTAIN);
       Class8468.method29773(var8);
       Class8468.method29775(var8);
       Class8468.method29777(var8);
@@ -553,7 +553,7 @@ public class BiomeMaker {
       Class8468.method29840(var7);
       Class7935 var8 = new Class7935().method26688(var0);
       Class8468.method29770(var8);
-      var8.method26693(!var3 ? StructureFeatures.field43858 : StructureFeatures.field43862);
+      var8.method26693(!var3 ? StructureFeatures.RUINED_PORTAL : StructureFeatures.RUINED_PORTAL_MOUNTAIN);
       Class8468.method29773(var8);
       Class8468.method29775(var8);
       Class8468.method29777(var8);
@@ -629,24 +629,24 @@ public class BiomeMaker {
 
    private static Class7935 method36093(Class9319<Class8278> var0, boolean var1, boolean var2, boolean var3) {
       Class7935 var6 = new Class7935().method26688(var0);
-      StructureFeature var7 = !var2 ? StructureFeatures.field43846 : StructureFeatures.field43847;
+      StructureFeature var7 = !var2 ? StructureFeatures.OCEAN_RUIN_COLD : StructureFeatures.OCEAN_RUIN_WARM;
       if (!var3) {
          var6.method26693(var7);
          if (var1) {
-            var6.method26693(StructureFeatures.field43845);
+            var6.method26693(StructureFeatures.MONUMENT);
          }
 
          Class8468.method29772(var6);
       } else {
          if (var1) {
-            var6.method26693(StructureFeatures.field43845);
+            var6.method26693(StructureFeatures.MONUMENT);
          }
 
          Class8468.method29772(var6);
          var6.method26693(var7);
       }
 
-      var6.method26693(StructureFeatures.field43863);
+      var6.method26693(StructureFeatures.RUINED_PORTAL_OCEAN);
       Class8468.method29774(var6);
       Class8468.method29775(var6);
       Class8468.method29777(var6);
@@ -739,13 +739,13 @@ public class BiomeMaker {
       var3.method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41021, 5, 1, 1));
       float var4 = !var0 ? 0.0F : 0.5F;
       Class7935 var5 = new Class7935().method26688(Class9109.field41847);
-      var5.method26693(StructureFeatures.field43846);
+      var5.method26693(StructureFeatures.OCEAN_RUIN_COLD);
       if (var0) {
-         var5.method26693(StructureFeatures.field43845);
+         var5.method26693(StructureFeatures.MONUMENT);
       }
 
       Class8468.method29772(var5);
-      var5.method26693(StructureFeatures.field43863);
+      var5.method26693(StructureFeatures.RUINED_PORTAL_OCEAN);
       Class8468.method29774(var5);
       Class8468.method29775(var5);
       Class8468.method29833(var5);
@@ -786,7 +786,7 @@ public class BiomeMaker {
    private static Biome method36100(float var0, float var1, boolean var2, Class9328 var3) {
       Class7935 var6 = new Class7935().method26688(Class9109.field41850);
       Class8468.method29771(var6);
-      var6.method26693(StructureFeatures.field43858);
+      var6.method26693(StructureFeatures.RUINED_PORTAL);
       Class8468.method29773(var6);
       Class8468.method29775(var6);
       Class8468.method29777(var6);
@@ -865,16 +865,16 @@ public class BiomeMaker {
       float var9 = !var2 ? 0.25F : -0.5F;
       Class7935 var10 = new Class7935().method26688(Class9109.field41850);
       if (var4) {
-         var10.method26693(StructureFeatures.field43857);
-         var10.method26693(StructureFeatures.field43834);
+         var10.method26693(StructureFeatures.VILLAGE_TAIGA);
+         var10.method26693(StructureFeatures.PILLAGER_OUTPOST);
       }
 
       if (var5) {
-         var10.method26693(StructureFeatures.field43840);
+         var10.method26693(StructureFeatures.IGLOO);
       }
 
       Class8468.method29771(var10);
-      var10.method26693(!var3 ? StructureFeatures.field43858 : StructureFeatures.field43862);
+      var10.method26693(!var3 ? StructureFeatures.RUINED_PORTAL : StructureFeatures.RUINED_PORTAL_MOUNTAIN);
       Class8468.method29773(var10);
       Class8468.method29775(var10);
       Class8468.method29777(var10);
@@ -921,9 +921,9 @@ public class BiomeMaker {
       Class8468.method29838(var5);
       Class8468.method29840(var5);
       Class7935 var6 = new Class7935().method26688(Class9109.field41850);
-      var6.method26693(StructureFeatures.field43837);
+      var6.method26693(StructureFeatures.MANSION);
       Class8468.method29771(var6);
-      var6.method26693(StructureFeatures.field43858);
+      var6.method26693(StructureFeatures.RUINED_PORTAL);
       Class8468.method29773(var6);
       Class8468.method29775(var6);
       Class8468.method29777(var6);
@@ -967,11 +967,11 @@ public class BiomeMaker {
       var5.method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41080, 1, 1, 1));
       Class7935 var6 = new Class7935().method26688(Class9109.field41861);
       if (!var2) {
-         var6.method26693(StructureFeatures.field43843);
+         var6.method26693(StructureFeatures.SWAMP_HUT);
       }
 
-      var6.method26693(StructureFeatures.field43835);
-      var6.method26693(StructureFeatures.field43861);
+      var6.method26693(StructureFeatures.MINESHAFT);
+      var6.method26693(StructureFeatures.RUINED_PORTAL_SWAMP);
       Class8468.method29773(var6);
       if (!var2) {
          Class8468.method29828(var6);
@@ -1021,15 +1021,15 @@ public class BiomeMaker {
       Class8468.method29844(var6);
       Class7935 var7 = new Class7935().method26688(!var2 ? Class9109.field41850 : Class9109.field41852);
       if (!var2 && !var3) {
-         var7.method26693(StructureFeatures.field43856).method26693(StructureFeatures.field43840);
+         var7.method26693(StructureFeatures.VILLAGE_SNOWY).method26693(StructureFeatures.IGLOO);
       }
 
       Class8468.method29771(var7);
       if (!var2 && !var3) {
-         var7.method26693(StructureFeatures.field43834);
+         var7.method26693(StructureFeatures.PILLAGER_OUTPOST);
       }
 
-      var7.method26693(!var3 ? StructureFeatures.field43858 : StructureFeatures.field43862);
+      var7.method26693(!var3 ? StructureFeatures.RUINED_PORTAL : StructureFeatures.RUINED_PORTAL_MOUNTAIN);
       Class8468.method29773(var7);
       Class8468.method29775(var7);
       Class8468.method29777(var7);
@@ -1076,8 +1076,8 @@ public class BiomeMaker {
       Class8468.method29840(var7);
       var7.method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41021, !var4 ? 100 : 1, 1, 1));
       Class7935 var8 = new Class7935().method26688(Class9109.field41850);
-      var8.method26693(StructureFeatures.field43835);
-      var8.method26693(StructureFeatures.field43858);
+      var8.method26693(StructureFeatures.MINESHAFT);
+      var8.method26693(StructureFeatures.RUINED_PORTAL);
       Class8468.method29773(var8);
       Class8468.method29775(var8);
       Class8468.method29777(var8);
@@ -1125,14 +1125,14 @@ public class BiomeMaker {
       Class8468.method29840(var9);
       Class7935 var10 = new Class7935().method26688(!var6 ? Class9109.field41844 : Class9109.field41860);
       if (!var6) {
-         var10.method26693(StructureFeatures.field43835);
-         var10.method26693(StructureFeatures.field43851);
-         var10.method26693(StructureFeatures.field43842);
+         var10.method26693(StructureFeatures.MINESHAFT);
+         var10.method26693(StructureFeatures.BURIED_TREASURE);
+         var10.method26693(StructureFeatures.SHIPWRECK_BEACHED);
       } else {
          Class8468.method29771(var10);
       }
 
-      var10.method26693(!var6 ? StructureFeatures.field43858 : StructureFeatures.field43862);
+      var10.method26693(!var6 ? StructureFeatures.RUINED_PORTAL : StructureFeatures.RUINED_PORTAL_MOUNTAIN);
       Class8468.method29773(var10);
       Class8468.method29775(var10);
       Class8468.method29777(var10);
@@ -1201,9 +1201,9 @@ public class BiomeMaker {
          .method35253();
       Class7935 var3 = new Class7935()
          .method26688(Class9109.field41855)
-         .method26693(StructureFeatures.field43864)
-         .method26693(StructureFeatures.field43848)
-         .method26693(StructureFeatures.field43852)
+         .method26693(StructureFeatures.RUINED_PORTAL_NETHER)
+         .method26693(StructureFeatures.FORTRESS)
+         .method26693(StructureFeatures.BASTION_REMNANT)
          .method26692(GenerationStageCarving.field259, Class7827.field33611)
          .method26690(Class1993.field13006, Features.field41685);
       Class8468.method29821(var3);
@@ -1256,10 +1256,10 @@ public class BiomeMaker {
          .method35253();
       Class7935 var7 = new Class7935()
          .method26688(Class9109.field41859)
-         .method26693(StructureFeatures.field43848)
-         .method26693(StructureFeatures.field43849)
-         .method26693(StructureFeatures.field43864)
-         .method26693(StructureFeatures.field43852)
+         .method26693(StructureFeatures.FORTRESS)
+         .method26693(StructureFeatures.NETHER_FOSSIL)
+         .method26693(StructureFeatures.RUINED_PORTAL_NETHER)
+         .method26693(StructureFeatures.BASTION_REMNANT)
          .method26692(GenerationStageCarving.field259, Class7827.field33611)
          .method26690(Class1993.field13006, Features.field41685)
          .method26690(Class1993.field13000, Features.field41651)
@@ -1306,9 +1306,9 @@ public class BiomeMaker {
          .method35253();
       Class7935 var3 = new Class7935()
          .method26688(Class9109.field41842)
-         .method26693(StructureFeatures.field43864)
+         .method26693(StructureFeatures.RUINED_PORTAL_NETHER)
          .method26692(GenerationStageCarving.field259, Class7827.field33611)
-         .method26693(StructureFeatures.field43848)
+         .method26693(StructureFeatures.FORTRESS)
          .method26690(Class1993.field13002, Features.field41639)
          .method26690(Class1993.field13006, Features.field41684)
          .method26690(Class1993.field13002, Features.field41640)
@@ -1361,10 +1361,10 @@ public class BiomeMaker {
          .method35253();
       Class7935 var3 = new Class7935()
          .method26688(Class9109.field41843)
-         .method26693(StructureFeatures.field43864)
+         .method26693(StructureFeatures.RUINED_PORTAL_NETHER)
          .method26692(GenerationStageCarving.field259, Class7827.field33611)
-         .method26693(StructureFeatures.field43848)
-         .method26693(StructureFeatures.field43852)
+         .method26693(StructureFeatures.FORTRESS)
+         .method26693(StructureFeatures.BASTION_REMNANT)
          .method26690(Class1993.field13006, Features.field41685);
       Class8468.method29821(var3);
       var3.method26690(Class1993.field13005, Features.field41689)
@@ -1410,9 +1410,9 @@ public class BiomeMaker {
          .method35253();
       Class7935 var3 = new Class7935()
          .method26688(Class9109.field41862)
-         .method26693(StructureFeatures.field43848)
-         .method26693(StructureFeatures.field43852)
-         .method26693(StructureFeatures.field43864)
+         .method26693(StructureFeatures.FORTRESS)
+         .method26693(StructureFeatures.BASTION_REMNANT)
+         .method26693(StructureFeatures.RUINED_PORTAL_NETHER)
          .method26692(GenerationStageCarving.field259, Class7827.field33611)
          .method26690(Class1993.field13006, Features.field41685);
       Class8468.method29821(var3);

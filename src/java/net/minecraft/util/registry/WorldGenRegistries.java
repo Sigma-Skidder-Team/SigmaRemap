@@ -26,7 +26,7 @@ public class WorldGenRegistries {
    public static final Registry<Class9319<?>> field29424 = method20493(Registry.field16100, () -> Class9109.field41856);
    public static final Registry<ConfiguredCarver<?>> field29425 = method20493(Registry.field16101, () -> Class7827.field33606);
    public static final Registry<ConfiguredFeature<?, ?>> field29426 = method20493(Registry.field16102, () -> Features.field41770);
-   public static final Registry<StructureFeature<?, ?>> field29427 = method20493(Registry.field16103, () -> StructureFeatures.field43835);
+   public static final Registry<StructureFeature<?, ?>> field29427 = method20493(Registry.field16103, () -> StructureFeatures.MINESHAFT);
    public static final Registry<Class3622> field29428 = method20493(Registry.field16104, () -> Class8523.field38251);
    public static final Registry<Class9369> field29429 = method20493(Registry.field16105, Class9837::method38885);
    public static final Registry<Biome> BIOME = method20493(Registry.BIOME_KEY, () -> BiomeRegistry.PLAINS);

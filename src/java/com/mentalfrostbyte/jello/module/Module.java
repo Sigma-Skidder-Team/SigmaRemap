@@ -10,10 +10,7 @@ import com.mentalfrostbyte.jello.settings.SubOptionSetting2;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.SoundEvents;
-import totalcross.json.CJsonUtils;
-import totalcross.json.JSONArray;
-import totalcross.json.JSONException2;
-import totalcross.json.JSONObject;
+import totalcross.json.*;
 
 import java.util.*;
 
@@ -127,12 +124,12 @@ public abstract class Module {
         }
     }
 
-    public JSONObject initialize(JSONObject var1) {
+    public JSONObject initialize(JSONObject var1) throws JSONException {
         JSONArray var4 = CJsonUtils.getJSONArrayOrNull(var1, "options");
 
-        this.enabled = var1.method21763("enabled");
+        this.enabled = var1.getBoolean("enabled");
 
-        this.allowed = var1.method21763("allowed");
+        this.allowed = var1.getBoolean("allowed");
 
         if (var4 != null) {
             for (int var5 = 0; var5 < var4.length(); var5++) {
@@ -164,8 +161,8 @@ public abstract class Module {
     public JSONObject buildUpModuleData(JSONObject obj) {
         try {
             obj.put("name", this.getName());
-            obj.method21800("enabled", this.enabled);
-            obj.method21800("allowed", this.isAllowed());
+            obj.put("enabled", this.enabled);
+            obj.put("allowed", this.isAllowed());
             JSONArray jsonArray = new JSONArray();
 
             for (Setting<?> s : this.settingMap.values()) {

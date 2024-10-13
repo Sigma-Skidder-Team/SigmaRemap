@@ -16,6 +16,7 @@ import javax.annotation.Nullable;
 
 import net.minecraft.client.util.Util;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.Unit;
 import net.minecraft.util.math.ChunkPos;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -129,7 +130,7 @@ public class Class1707 implements AutoCloseable {
    @Override
    public void close() throws IOException {
       if (this.field9302.compareAndSet(false, true)) {
-         CompletableFuture var3 = this.field9303.method1646(var0 -> new Class497(Class2262.field14710.ordinal(), () -> var0.method1641(Class2341.field16010)));
+         CompletableFuture var3 = this.field9303.method1646(var0 -> new Class497(Class2262.field14710.ordinal(), () -> var0.method1641(Unit.INSTANCE)));
 
          try {
             var3.join();

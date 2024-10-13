@@ -395,7 +395,7 @@ public class ChunkManager extends Class1648 implements Class1650 {
             Optional var7 = var4.left();
             if (var7.isPresent()) {
                if (var2 == ChunkStatus.LIGHT) {
-                  this.field8968.registerWithLevel(TicketType.field38484, var5, 33 + ChunkStatus.method34296(ChunkStatus.FEATURES), var5);
+                  this.field8968.registerWithLevel(TicketType.LIGHT, var5, 33 + ChunkStatus.method34296(ChunkStatus.FEATURES), var5);
                }
 
                IChunk var8 = (IChunk)var7.get();
@@ -497,7 +497,7 @@ public class ChunkManager extends Class1648 implements Class1650 {
       this.field8958
          .method1641(
             Util.method38515(
-               () -> this.field8968.releaseWithLevel(TicketType.field38484, var1, 33 + ChunkStatus.method34296(ChunkStatus.FEATURES), var1),
+               () -> this.field8968.releaseWithLevel(TicketType.LIGHT, var1, 33 + ChunkStatus.method34296(ChunkStatus.FEATURES), var1),
                () -> "release light ticket " + var1
             )
          );

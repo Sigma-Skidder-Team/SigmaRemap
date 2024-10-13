@@ -1,6 +1,7 @@
 package com.mentalfrostbyte.jello.settings;
 
 import com.mentalfrostbyte.jello.settings.interfaces.SettingObserver;
+import totalcross.json.JSONException;
 import totalcross.json.JSONObject;
 
 import java.util.ArrayList;
@@ -21,7 +22,7 @@ public abstract class Setting<T> {
         this.description = description;
     }
 
-    public abstract JSONObject loadCurrentValueFromJSONObject(JSONObject jsonObject);
+    public abstract JSONObject loadCurrentValueFromJSONObject(JSONObject jsonObject) throws JSONException;
 
     public JSONObject buildUpSettingData(JSONObject jsonObject) {
         jsonObject.put("name", this.getName());

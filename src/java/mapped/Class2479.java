@@ -1,5 +1,6 @@
 package mapped;
 
+// i think this is something yaml
 public class Class2479 extends Class2478 {
    private static final long field16568 = -9119388488683035101L;
    private String field16569;

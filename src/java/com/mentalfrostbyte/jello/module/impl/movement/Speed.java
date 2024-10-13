@@ -39,7 +39,7 @@ public class Speed extends ModuleWithModuleSettings {
         field23893 = 0;
     }
 
-    @EventTarget
+    @EventTarget    
     public void method16762(TickEvent var1) {
         field23893++;
     }

@@ -206,7 +206,7 @@ public class ServerChunkProvider extends Class1702 {
       int var10 = 33 + ChunkStatus.method34296(var3);
       Class8641 var11 = this.method7354(var8);
       if (var4) {
-         this.ticketManager.registerWithLevel(TicketType.field38487, var7, var10, var7);
+         this.ticketManager.registerWithLevel(TicketType.UNKNOWN, var7, var10, var7);
          if (this.method7360(var11, var10)) {
             IProfiler var12 = this.field9275.getProfiler();
             var12.startSection("chunkLoad");

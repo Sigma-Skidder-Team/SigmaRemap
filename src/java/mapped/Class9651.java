@@ -253,7 +253,7 @@ public class Class9651 {
             }
          } else {
             ChunkPos var19 = new ChunkPos(new BlockPos(var3, var5, var7));
-            var2.getChunkProvider().registerTicket(TicketType.field38486, var19, 1, var1.getEntityId());
+            var2.getChunkProvider().registerTicket(TicketType.POST_TELEPORT, var19, 1, var1.getEntityId());
             var1.stopRiding();
             if (((ServerPlayerEntity)var1).isSleeping()) {
                ((ServerPlayerEntity)var1).stopSleepInBed(true, true);

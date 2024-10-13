@@ -1,9 +1,11 @@
 package mapped;
 
+import net.minecraft.util.Unit;
+
 import java.util.concurrent.CompletableFuture;
 
 public interface Class8335 {
-   CompletableFuture<Class2341> method29223();
+   CompletableFuture<Unit> method29223();
 
    float method29224();
 

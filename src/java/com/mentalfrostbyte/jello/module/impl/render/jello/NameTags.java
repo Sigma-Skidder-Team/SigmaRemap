@@ -121,7 +121,7 @@ public class NameTags extends Module {
                         && var7 != Freecam.field23814
                         && var7 != Blink.clientPlayerEntity
                         && !var7.isInvisible()
-                        && !Client.getInstance().getCombatManager().isTargetABot(var7)) {
+                        && !Client.getInstance().getCombatManager().isValidTarget(var7)) {
                     this.field24005.add(var7);
                 }
             }

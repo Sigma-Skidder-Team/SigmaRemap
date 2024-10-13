@@ -31,6 +31,7 @@ import org.lwjgl.stb.STBImage;
 import org.lwjgl.system.MemoryStack;
 import org.lwjgl.system.MemoryUtil;
 import org.lwjgl.util.tinyfd.TinyFileDialogs;
+import totalcross.json.JSONException;
 
 public final class MainWindow implements AutoCloseable {
    private static final Logger LOGGER = LogManager.getLogger();
@@ -318,7 +319,11 @@ public final class MainWindow implements AutoCloseable {
             this.framebufferWidth = framebufferWidth;
             this.framebufferHeight = framebufferHeight;
             if (this.getFramebufferWidth() != var7 || this.getFramebufferHeight() != var8) {
-               this.mc.updateWindowSize();
+                try {
+                    this.mc.updateWindowSize();
+                } catch (JSONException e) {
+                    throw new RuntimeException(e);
+                }
             }
          }
       }
@@ -336,7 +341,11 @@ public final class MainWindow implements AutoCloseable {
    private void onWindowSizeUpdate(long windowPointer, int windowWidthIn, int windowHeightIn) {
       this.width = windowWidthIn;
       this.height = windowHeightIn;
-      Client.getInstance().getGuiManager().onResize();
+       try {
+           Client.getInstance().getGuiManager().onResize();
+       } catch (JSONException e) {
+           throw new RuntimeException(e);
+       }
    }
 
    private void onWindowFocusUpdate(long windowPointer, boolean hasFocus) {
@@ -385,7 +394,11 @@ public final class MainWindow implements AutoCloseable {
       if (this.fullscreen && this.videoModeChanged) {
          this.videoModeChanged = false;
          this.updateVideoMode();
-         this.mc.updateWindowSize();
+          try {
+              this.mc.updateWindowSize();
+          } catch (JSONException e) {
+              throw new RuntimeException(e);
+          }
       }
    }
 

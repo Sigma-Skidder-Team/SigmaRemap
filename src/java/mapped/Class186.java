@@ -14,11 +14,11 @@ public enum Class186 {
       Biomes.TAIGA_HILLS,
       Biomes.TAIGA_MOUNTAINS,
       Biomes.GIANT_TREE_TAIGA,
-      Biomes.field44186,
+      Biomes.GIANT_SPRUCE_TAIGA,
       Biomes.GIANT_TREE_TAIGA_HILLS,
-      Biomes.field44187
+      Biomes.GIANT_SPRUCE_TAIGA_HILLS
    ),
-   field692(1, "snow", Biomes.SNOWY_TAIGA, Biomes.SNOWY_TAIGA_HILLS, Biomes.field44185);
+   field692(1, "snow", Biomes.SNOWY_TAIGA, Biomes.SNOWY_TAIGA_HILLS, Biomes.SNOWY_TAIGA_MOUNTAINS);
 
    private static final Class186[] field693 = Arrays.<Class186>stream(values())
       .sorted(Comparator.comparingInt(Class186::method568))

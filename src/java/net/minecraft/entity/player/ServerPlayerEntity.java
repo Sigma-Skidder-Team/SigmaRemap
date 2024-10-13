@@ -689,7 +689,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
    }
 
    @Override
-   public Either<Class2104, Class2341> method2752(BlockPos var1) {
+   public Either<Class2104, Unit> method2752(BlockPos var1) {
       Direction var4 = this.world.getBlockState(var1).<Direction>get(HorizontalBlock.HORIZONTAL_FACING);
       if (this.isSleeping() || !this.isAlive()) {
          return Either.left(Class2104.field13718);

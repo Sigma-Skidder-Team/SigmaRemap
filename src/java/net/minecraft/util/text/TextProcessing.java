@@ -2,13 +2,13 @@ package net.minecraft.util.text;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.TextReplaceEvent;
-import mapped.Class2341;
+import net.minecraft.util.Unit;
 import mapped.Class2545;
 
 import java.util.Optional;
 
 public class TextProcessing {
-   private static final Optional<Object> field_238336_a_ = Optional.<Object>of(Class2341.field16010);
+   private static final Optional<Object> field_238336_a_ = Optional.<Object>of(Unit.INSTANCE);
 
    private static boolean func_238344_a_(Style p_238344_0_, Class2545 p_238344_1_, int p_238344_2_, char p_238344_3_) {
       return Character.isSurrogate(p_238344_3_)

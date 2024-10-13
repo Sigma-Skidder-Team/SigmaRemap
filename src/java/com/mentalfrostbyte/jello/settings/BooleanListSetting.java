@@ -2,6 +2,7 @@ package com.mentalfrostbyte.jello.settings;
 
 import totalcross.json.CJsonUtils;
 import totalcross.json.JSONArray;
+import totalcross.json.JSONException;
 import totalcross.json.JSONObject;
 
 import java.util.ArrayList;
@@ -19,8 +20,12 @@ public class BooleanListSetting extends Setting<List<String>> {
    @Override
    public JSONObject buildUpSettingData(JSONObject jsonObject) {
       jsonObject.put("name", this.getName());
-      jsonObject.put("value", new JSONArray(this.currentValue.toArray()));
-      return jsonObject;
+       try {
+           jsonObject.put("value", new JSONArray(this.currentValue.toArray()));
+       } catch (JSONException e) {
+           throw new RuntimeException(e);
+       }
+       return jsonObject;
    }
 
    @Override
@@ -29,7 +34,11 @@ public class BooleanListSetting extends Setting<List<String>> {
       this.currentValue = new ArrayList<>();
       if (jsonArray != null) {
          for (int i = 0; i < jsonArray.length(); i++) {
-            this.currentValue.add(jsonArray.getString(i));
+             try {
+                 this.currentValue.add(jsonArray.getString(i));
+             } catch (JSONException e) {
+                 throw new RuntimeException(e);
+             }
          }
       }
 

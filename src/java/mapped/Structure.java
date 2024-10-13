@@ -32,7 +32,7 @@ public abstract class Structure<C extends Class4698> {
    private static final Map<Structure<?>, Class1993> field18056 = com.google.common.collect.Maps.newHashMap();
    private static final Logger field18057 = LogManager.getLogger();
    public static final Structure<Class4700> PILLAGER_OUTPOST = method11363("Pillager_Outpost", new Class2968(Class4700.field22296), Class1993.field13002);
-   public static final Structure<Class4735> MINESHAFT = method11363("Mineshaft", new Class2972(Class4735.field22425), Class1993.field13001);
+   public static final Structure<MineshaftConfig> MINESHAFT = method11363("Mineshaft", new Class2972(MineshaftConfig.field22425), Class1993.field13001);
    public static final Structure<Class4712> MANSION = method11363("Mansion", new Class2976(Class4712.field22349), Class1993.field13002);
    public static final Structure<Class4712> JUNGLE_PYRAMID = method11363("Jungle_Pyramid", new Class2977(Class4712.field22349), Class1993.field13002);
    public static final Structure<Class4712> DESERT_PYRAMID = method11363("Desert_Pyramid", new Class2975(Class4712.field22349), Class1993.field13002);
@@ -128,7 +128,7 @@ public abstract class Structure<C extends Class4698> {
    }
 
    public StructureFeature<C, ? extends Structure<C>> method11368(C var1) {
-      return new StructureFeature(this, (C)var1);
+      return new StructureFeature<>(this, var1);
    }
 
    @Nullable

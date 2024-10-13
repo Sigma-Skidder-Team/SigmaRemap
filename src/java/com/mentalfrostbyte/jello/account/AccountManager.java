@@ -7,6 +7,7 @@ import fr.litarvan.openauth.microsoft.MicrosoftAuthenticationException;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import totalcross.json.JSONArray;
+import totalcross.json.JSONException;
 import totalcross.json.JSONException2;
 import totalcross.json.JSONObject;
 

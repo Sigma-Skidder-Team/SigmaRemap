@@ -121,7 +121,7 @@ public class FillESP extends Module {
     private boolean method16138(Entity var1) {
         if (var1 instanceof LivingEntity) {
             if (var1 instanceof PlayerEntity) {
-                return !(var1 instanceof ClientPlayerEntity) && !Client.getInstance().getCombatManager().isTargetABot(var1);
+                return !(var1 instanceof ClientPlayerEntity) && !Client.getInstance().getCombatManager().isValidTarget(var1);
             } else {
                 return false;
             }

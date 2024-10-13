@@ -33,10 +33,7 @@ import net.minecraft.network.play.server.*;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.scoreboard.ServerScoreboard;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.Direction;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.*;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.registry.Registry;
@@ -132,7 +129,7 @@ public class ServerWorld extends World implements ISeedReader {
          var1.getPlayerList().method19478(),
          var1.method1434(),
          var7,
-         () -> var1.func_241755_D_().method6945()
+         () -> var1.getServerWorld().method6945()
       );
       this.field9050 = new Class3634(this);
       this.method6766();
@@ -1127,24 +1124,24 @@ public class ServerWorld extends World implements ISeedReader {
    @Nullable
    @Override
    public Class7529 method6798(String var1) {
-      return this.getServer().func_241755_D_().method6945().<Class7529>method28768(() -> new Class7529(var1), var1);
+      return this.getServer().getServerWorld().method6945().<Class7529>method28768(() -> new Class7529(var1), var1);
    }
 
    @Override
    public void method6799(Class7529 var1) {
-      this.getServer().func_241755_D_().method6945().method28770(var1);
+      this.getServer().getServerWorld().method6945().method28770(var1);
    }
 
    @Override
    public int method6800() {
-      return this.getServer().func_241755_D_().method6945().<Class7532>method28767(Class7532::new, "idcounts").method24618();
+      return this.getServer().getServerWorld().method6945().<Class7532>method28767(Class7532::new, "idcounts").method24618();
    }
 
    public void method6946(BlockPos var1, float var2) {
       ChunkPos var5 = new ChunkPos(new BlockPos(this.worldInfo.getSpawnX(), 0, this.worldInfo.getSpawnZ()));
       this.worldInfo.setSpawn(var1, var2);
-      this.getChunkProvider().releaseTicket(TicketType.field38480, var5, 11, Class2341.field16010);
-      this.getChunkProvider().registerTicket(TicketType.field38480, new ChunkPos(var1), 11, Class2341.field16010);
+      this.getChunkProvider().releaseTicket(TicketType.START, var5, 11, Unit.INSTANCE);
+      this.getChunkProvider().registerTicket(TicketType.START, new ChunkPos(var1), 11, Unit.INSTANCE);
       this.getServer().getPlayerList().method19456(new SWorldSpawnChangedPacket(var1, var2));
    }
 

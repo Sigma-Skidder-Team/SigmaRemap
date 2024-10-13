@@ -14,10 +14,10 @@ public class Class2834 implements Consumer<BiConsumer<ResourceLocation, Class588
    public static final Class7519 field17619 = Class155.method467(Class8912.method32576().method32577(Biomes.JUNGLE));
    public static final Class7519 field17620 = Class155.method467(Class8912.method32576().method32577(Biomes.JUNGLE_HILLS));
    public static final Class7519 field17621 = Class155.method467(Class8912.method32576().method32577(Biomes.JUNGLE_EDGE));
-   public static final Class7519 field17622 = Class155.method467(Class8912.method32576().method32577(Biomes.field44194));
-   public static final Class7519 field17623 = Class155.method467(Class8912.method32576().method32577(Biomes.field44180));
-   public static final Class7519 field17624 = Class155.method467(Class8912.method32576().method32577(Biomes.field44181));
-   public static final Class7519 field17625 = Class155.method467(Class8912.method32576().method32577(Biomes.field44195));
+   public static final Class7519 field17622 = Class155.method467(Class8912.method32576().method32577(Biomes.BAMBOO_JUNGLE));
+   public static final Class7519 field17623 = Class155.method467(Class8912.method32576().method32577(Biomes.MODIFIED_JUNGLE));
+   public static final Class7519 field17624 = Class155.method467(Class8912.method32576().method32577(Biomes.MODIFIED_JUNGLE_EDGE));
+   public static final Class7519 field17625 = Class155.method467(Class8912.method32576().method32577(Biomes.BAMBOO_JUNGLE_HILLS));
 
    public void accept(BiConsumer<ResourceLocation, Class5888> var1) {
       var1.accept(

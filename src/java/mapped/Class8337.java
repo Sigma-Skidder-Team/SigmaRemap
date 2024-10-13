@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import net.minecraft.client.util.Util;
+import net.minecraft.util.Unit;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +15,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class Class8337<S> implements Class8335 {
    private static String[] field35843;
    public final IResourceManager field35844;
-   public final CompletableFuture<Class2341> field35845 = new CompletableFuture<Class2341>();
+   public final CompletableFuture<Unit> field35845 = new CompletableFuture<Unit>();
    public final CompletableFuture<List<S>> field35846;
    private final Set<Class268> field35847;
    private final int field35848;
@@ -23,7 +24,7 @@ public class Class8337<S> implements Class8335 {
    private final AtomicInteger field35851 = new AtomicInteger();
    private final AtomicInteger field35852 = new AtomicInteger();
 
-   public static Class8337<Void> method29228(IResourceManager var0, List<Class268> var1, Executor var2, Executor var3, CompletableFuture<Class2341> var4) {
+   public static Class8337<Void> method29228(IResourceManager var0, List<Class268> var1, Executor var2, Executor var3, CompletableFuture<Unit> var4) {
       return new Class8337<Void>(
          var2,
          var3,
@@ -34,7 +35,7 @@ public class Class8337<S> implements Class8335 {
       );
    }
 
-   public Class8337(Executor var1, Executor var2, IResourceManager var3, List<Class268> var4, Class9663<S> var5, CompletableFuture<Class2341> var6) {
+   public Class8337(Executor var1, Executor var2, IResourceManager var3, List<Class268> var4, Class9663<S> var5, CompletableFuture<Unit> var6) {
       this.field35844 = var3;
       this.field35848 = var4.size();
       this.field35851.incrementAndGet();
@@ -65,8 +66,8 @@ public class Class8337<S> implements Class8335 {
    }
 
    @Override
-   public CompletableFuture<Class2341> method29223() {
-      return this.field35846.<Class2341>thenApply(var0 -> Class2341.field16010);
+   public CompletableFuture<Unit> method29223() {
+      return this.field35846.<Unit>thenApply(var0 -> Unit.INSTANCE);
    }
 
    @Override

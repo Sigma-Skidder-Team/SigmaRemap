@@ -8,6 +8,7 @@ import net.minecraft.network.login.server.SDisconnectLoginPacket;
 import net.minecraft.network.login.server.SLoginSuccessPacket;
 import net.minecraft.network.play.server.SDisconnectPacket;
 import net.minecraft.network.play.server.SChatPacket;
+import totalcross.json.JSONException;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,7 +21,7 @@ public class BanListener {
     public Minecraft field38719 = Minecraft.getInstance();
 
     @EventTarget
-    private void method30840(ReceivePacketEvent var1) {
+    private void method30840(ReceivePacketEvent var1) throws JSONException {
         if (this.field38719.getCurrentServerData() != null) {
             if (var1.getPacket() instanceof SChatPacket) {
                 SChatPacket var4 = (SChatPacket) var1.getPacket();

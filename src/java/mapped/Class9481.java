@@ -25,7 +25,7 @@ public class Class9481 {
 
       this.field44071 = var1.getString("sid");
       this.field44072 = var6;
-      this.field44073 = var1.method21770("pingInterval");
-      this.field44074 = var1.method21770("pingTimeout");
+      this.field44073 = var1.getLong("pingInterval");
+      this.field44074 = var1.getLong("pingTimeout");
    }
 }

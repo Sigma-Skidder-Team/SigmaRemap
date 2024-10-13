@@ -14,6 +14,7 @@ import net.minecraft.client.gui.screen.MultiplayerScreen;
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.glfw.GLFWKeyCallback;
 import org.lwjgl.opengl.GL11;
+import totalcross.json.JSONException;
 import totalcross.json.JSONObject;
 
 import java.awt.Color;
@@ -123,7 +124,7 @@ public class GuiManager {
             try {
                 JSONObject var2 = FileUtil.readFile(new File(Client.getInstance().getFile() + "/config.json"));
                 if (var2.has("hidpicocoa")) {
-                    field41351 = var2.method21763("hidpicocoa");
+                    field41351 = var2.getBoolean("hidpicocoa");
                 }
 
                 GLFW.glfwWindowHint(143361, field41351 ? 1 : 0);
@@ -289,14 +290,14 @@ public class GuiManager {
     public JSONObject method33468(JSONObject var1) {
         if (this.screen != null) {
             JSONObject var4 = this.screen.method13160(new JSONObject());
-            if (var4.method21779() != 0) {
+            if (var4.length() != 0) {
                 var1.put(this.screen.method13257(), var4);
             }
         }
 
-        var1.method21800("guiBlur", this.field41349);
-        var1.method21800("hqIngameBlur", this.field41350);
-        var1.method21800("hidpicocoa", field41351);
+        var1.put("guiBlur", this.field41349);
+        var1.put("hqIngameBlur", this.field41350);
+        var1.put("hidpicocoa", field41351);
         return var1;
     }
 
@@ -329,7 +330,7 @@ public class GuiManager {
             JSONObject var4 = null;
 
             try {
-                var4 = Client.getInstance().getConfig().getJsonObject(this.screen.method13257());
+                var4 = Client.getInstance().getConfig().getJSONObject(this.screen.method13257());
             } catch (Exception var9) {
                 var4 = new JSONObject();
             } finally {
@@ -338,11 +339,11 @@ public class GuiManager {
         }
 
         if (var1.has("guiBlur")) {
-            this.field41349 = var1.method21763("guiBlur");
+            this.field41349 = var1.getBoolean("guiBlur");
         }
 
         if (var1.has("hqIngameBlur")) {
-            this.field41350 = var1.method21763("hqIngameBlur");
+            this.field41350 = var1.getBoolean("hqIngameBlur");
         }
     }
 
@@ -370,7 +371,7 @@ public class GuiManager {
         }
     }
 
-    public void onResize() {
+    public void onResize() throws JSONException {
         if (this.screen != null) {
             this.method33468(Client.getInstance().getConfig());
 
@@ -397,7 +398,7 @@ public class GuiManager {
         return this.screen;
     }
 
-    public void method33481() {
+    public void method33481() throws JSONException {
         this.method33482(handleScreen(Minecraft.getInstance().currentScreen));
     }
 

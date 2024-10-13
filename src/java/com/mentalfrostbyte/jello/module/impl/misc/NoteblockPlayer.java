@@ -2,19 +2,22 @@ package com.mentalfrostbyte.jello.module.impl.misc;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import com.mentalfrostbyte.jello.resource.ClientResource;
+import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.Rots;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
+import lol.ClientColors;
 import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
+import net.minecraft.network.play.client.CAnimateHandPacket;
 import net.minecraft.network.play.client.CPlayerDiggingPacket;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.network.play.client.CPlayerTryUseItemOnBlockPacket;
@@ -41,7 +44,7 @@ public class NoteblockPlayer extends Module {
         super(ModuleCategory.MISC, "NoteblockPlayer", "Plays noteblocks! Needs NBS files in sigma5/nbs");
         File var3 = new File(Client.getInstance().getFile() + "/nbs");
         if (var3.exists()) {
-            this.field23640 = new ArrayList<>(Arrays.asList(var3.list()));
+            this.field23640 = new ArrayList<String>(Arrays.asList(var3.list()));
 
             for (int var4 = 0; var4 < this.field23640.size(); var4++) {
                 if (this.field23640.get(var4).startsWith(".")) {
@@ -84,22 +87,21 @@ public class NoteblockPlayer extends Module {
         GL11.glDisable(3042);
     }
 
-    @Override
-    public void onDisable() {
-        Rots.rotating = false;
-        super.onDisable();
+    // $VF: synthetic method
+    public static Minecraft method16415() {
+        return mc;
     }
 
     @EventTarget
-    private void method16405(EventUpdate var1) {
+    private void method16405(TickEvent var1) {
         if (this.isEnabled()) {
             if (this.field23639 != null) {
                 if (mc.playerController.isInCreativeMode()) {
                     MultiUtilities.addChatMessage("§cNoteBlockPlayer isn't available in creative mode!");
                     this.setEnabled(false);
                 } else {
-                    if (!this.method16407(this.field23641, var1) && mc.player.ticksExisted % 4 == 0) {
-                        this.method16408(this.field23641, var1);
+                    if (!this.method16407(this.field23641) && mc.player.ticksExisted % 4 == 0) {
+                        this.method16408(this.field23641);
                     }
 
                     if (this.method16406(this.field23641)) {
@@ -109,8 +111,6 @@ public class NoteblockPlayer extends Module {
                             }
 
                             this.field23642.clear();
-
-                            Rots.rotating = true;
 
                             for (Class9616 var5 : this.field23639.method9950().values()) {
                                 Class8255 var6 = var5.method37433(this.field23638);
@@ -124,18 +124,9 @@ public class NoteblockPlayer extends Module {
                                                 var9 = BlockUtil.method34542(var8.field28401, Direction.DOWN);
                                             }
 
-                                            Rots.prevYaw = var9[0];
-                                            Rots.prevPitch = var9[1];
-                                            var1.setYaw(var9[0]);
-                                            var1.setPitch(var9[1]);
-                                            Rots.yaw = var9[0];
-                                            Rots.pitch = var9[1];
-
-                                            mc.player.rotationYawHead = var9[0];
-                                            mc.player.renderYawOffset = var9[0];
-
+                                            mc.getConnection().sendPacket(new CPlayerPacket.RotationPacket(var9[0], var9[1], mc.player.onGround));
                                             mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.START_DESTROY_BLOCK, var8.field28401, Direction.UP));
-                                            mc.player.swingArm(Hand.MAIN_HAND);
+                                            mc.getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
                                             this.field23642.add(var8.field28401);
                                         }
                                     }
@@ -161,22 +152,12 @@ public class NoteblockPlayer extends Module {
         return true;
     }
 
-    public boolean method16407(List<Class6463> var1, EventUpdate event) {
+    public boolean method16407(List<Class6463> var1) {
         for (Class6463 var5 : var1) {
             if (var5.field28402 == -1.0F && Math.sqrt(mc.player.getPosition().distanceSq(var5.field28401)) < (double) mc.playerController.getBlockReachDistance()) {
                 float[] var6 = BlockUtil.method34542(var5.field28401, Direction.UP);
-                Rots.rotating = true;
-                Rots.prevYaw = var6[0];
-                Rots.prevPitch = var6[1];
-                event.setYaw(var6[0]);
-                event.setPitch(var6[1]);
-                Rots.yaw = var6[0];
-                Rots.pitch = var6[1];
-
-                mc.player.rotationYawHead = var6[0];
-                mc.player.renderYawOffset = var6[0];
+                mc.getConnection().sendPacket(new CPlayerPacket.RotationPacket(var6[0], var6[1], mc.player.onGround));
                 mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.START_DESTROY_BLOCK, var5.field28401, Direction.UP));
-                mc.player.swingArm(Hand.MAIN_HAND);
                 this.field23642.clear();
                 this.field23642.add(var5.field28401);
                 return true;
@@ -186,84 +167,34 @@ public class NoteblockPlayer extends Module {
         return false;
     }
 
-    public void method16407(List<Class6463> var1) {
-        for (Class6463 var5 : var1) {
-            if (var5.field28402 == -1.0F && Math.sqrt(mc.player.getPosition().distanceSq(var5.field28401)) < (double) mc.playerController.getBlockReachDistance()) {
-                float[] var6 = BlockUtil.method34542(var5.field28401, Direction.UP);
-                Rots.rotating = true;
-                Rots.prevYaw = var6[0];
-                Rots.prevPitch = var6[1];
-                mc.getConnection().sendPacket(new CPlayerPacket.RotationPacket(var6[0], var6[1], mc.player.onGround));
-                Rots.yaw = var6[0];
-                Rots.pitch = var6[1];
-
-                mc.player.rotationYawHead = var6[0];
-                mc.player.renderYawOffset = var6[0];
-                mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.START_DESTROY_BLOCK, var5.field28401, Direction.UP));
-                mc.player.swingArm(Hand.MAIN_HAND);
-                this.field23642.clear();
-                this.field23642.add(var5.field28401);
-                return;
-            }
-        }
-
-    }
-
-    public void method16408(List<Class6463> var1) {
+    public boolean method16408(List<Class6463> var1) {
         for (Class6463 var5 : var1) {
             if (this.method16411(var5.field28402, var5.field28403)
                     && Math.sqrt(mc.player.getPosition().distanceSq(var5.field28401)) < (double) mc.playerController.getBlockReachDistance()) {
-                float[] var6 = BlockUtil.method34542(var5.field28401, Direction.UP);
-                mc.player.swingArm(Hand.MAIN_HAND);
-                Rots.rotating = true;
-                Rots.prevYaw = var6[0];
-                Rots.prevPitch = var6[1];
-                mc.getConnection().sendPacket(new CPlayerPacket.RotationPacket(var6[0], var6[1], mc.player.onGround));
-                Rots.yaw = var6[0];
-                Rots.pitch = var6[1];
+                if (0 == 0) {
+                    float[] var6 = BlockUtil.method34542(var5.field28401, Direction.UP);
+                    mc.player.swingArm(Hand.MAIN_HAND);
+                    mc.getConnection().sendPacket(new CPlayerPacket.RotationPacket(var6[0], var6[1], mc.player.onGround));
+                    mc.getConnection()
+                            .sendPacket(new CPlayerTryUseItemOnBlockPacket(Hand.MAIN_HAND, BlockUtil.rayTrace(var6[0], var6[1], mc.playerController.getBlockReachDistance() + 1.0F)));
+                    this.field23642.clear();
+                    this.field23642.add(var5.field28401);
+                }
 
-                mc.player.rotationYawHead = var6[0];
-                mc.player.renderYawOffset = var6[0];
-                mc.getConnection().sendPacket(new CPlayerTryUseItemOnBlockPacket(Hand.MAIN_HAND, BlockUtil.rayTrace(var6[0], var6[1], mc.playerController.getBlockReachDistance() + 1.0F)));
-                this.field23642.clear();
-                this.field23642.add(var5.field28401);
-
-                return;
+                return true;
             }
         }
 
-    }
-
-    public void method16408(List<Class6463> var1, EventUpdate event) {
-        for (Class6463 var5 : var1) {
-            if (this.method16411(var5.field28402, var5.field28403)
-                    && Math.sqrt(mc.player.getPosition().distanceSq(var5.field28401)) < (double) mc.playerController.getBlockReachDistance()) {
-                float[] var6 = BlockUtil.method34542(var5.field28401, Direction.UP);
-                mc.player.swingArm(Hand.MAIN_HAND);
-                Rots.rotating = true;
-                Rots.prevYaw = var6[0];
-                Rots.prevPitch = var6[1];
-                event.setYaw(var6[0]);
-                event.setPitch(var6[1]);
-                Rots.yaw = var6[0];
-                Rots.pitch = var6[1];
-
-                mc.player.rotationYawHead = var6[0];
-                mc.player.renderYawOffset = var6[0];
-                mc.getConnection().sendPacket(new CPlayerTryUseItemOnBlockPacket(Hand.MAIN_HAND, BlockUtil.rayTrace(var6[0], var6[1], mc.playerController.getBlockReachDistance() + 1.0F)));
-                this.field23642.clear();
-                this.field23642.add(var5.field28401);
-
-                return;
-            }
-        }
-
+        return false;
     }
 
     @EventTarget
     private void method16409(Render3DEvent var1) {
         if (this.isEnabled()) {
             if (this.field23641 != null) {
+                for (Class6463 var5 : this.field23641) {
+                }
+
                 for (BlockPos var7 : this.field23642) {
                     method16410(var7);
                 }
@@ -312,6 +243,43 @@ public class NoteblockPlayer extends Module {
                 }
             }
         }
+    }
+
+    public void method16413(double var1, double var3, double var5, String var7) {
+        GL11.glBlendFunc(770, 771);
+        GL11.glEnable(3042);
+        GL11.glEnable(2848);
+        GL11.glDisable(3553);
+        GL11.glDisable(2929);
+        GL11.glDepthMask(false);
+        GL11.glPushMatrix();
+        GL11.glTranslated(
+                var1 - mc.gameRenderer.getActiveRenderInfo().getPos().getX() + 0.5,
+                var3 - mc.gameRenderer.getActiveRenderInfo().getPos().getY() + 1.0,
+                var5 - mc.gameRenderer.getActiveRenderInfo().getPos().getZ() + 0.5
+        );
+        GL11.glAlphaFunc(519, 0.0F);
+        GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().getYaw(), 0.0F, -1.0F, 0.0F);
+        GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().getPitch(), 1.0F, 0.0F, 0.0F);
+        ClientResource var10 = ResourceRegistry.JelloLightFont25;
+        GL11.glPushMatrix();
+        GL11.glScalef(-0.01F, -0.01F, -0.01F);
+        RenderUtil.drawRect(
+                (float) (-var10.getStringWidth(var7) / 2 - 10),
+                0.0F,
+                (float) (var10.getStringWidth(var7) / 2 + 10),
+                (float) (var10.method23952() + 2),
+                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.4F)
+        );
+        GL11.glTranslated(-var10.getStringWidth(var7) / 2, 0.0, 0.0);
+        RenderUtil.drawString(var10, 0.0F, 0.0F, var7, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+        GL11.glPopMatrix();
+        GL11.glPopMatrix();
+        GL11.glEnable(3553);
+        GL11.glEnable(2929);
+        GL11.glDisable(2848);
+        GL11.glDepthMask(true);
+        GL11.glDisable(3042);
     }
 
     @Override
@@ -372,55 +340,5 @@ public class NoteblockPlayer extends Module {
         }
 
         return var4.getOrDefault(var1.field28403, 0);
-    }
-
-    public static class Class6463 {
-        public BlockPos field28401;
-       public float field28402 = -1.0F;
-       public NoteBlockInstrument field28403;
-
-       public Class6463(BlockPos var1) {
-          this.field28401 = var1;
-          this.field28403 = NoteBlockInstrument.method300(mc.world.getBlockState(var1.down()));
-       }
-
-       public int method19640() {
-          switch (Class7303.field31300[this.field28403.ordinal()]) {
-             case 1:
-                return 0;
-             case 2:
-                return 1;
-             case 3:
-                return 2;
-             case 4:
-                return 3;
-             case 5:
-                return 4;
-             case 6:
-                return 5;
-             case 7:
-                return 6;
-             case 8:
-                return 7;
-             case 9:
-                return 8;
-             case 10:
-                return 9;
-             case 11:
-                return 10;
-             case 12:
-                return 11;
-             case 13:
-                return 12;
-             case 14:
-                return 13;
-             case 15:
-                return 14;
-             case 16:
-                return 15;
-             default:
-                return 0;
-          }
-       }
     }
 }

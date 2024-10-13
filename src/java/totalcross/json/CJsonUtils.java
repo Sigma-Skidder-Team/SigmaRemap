@@ -2,9 +2,9 @@ package totalcross.json;
 
 public class CJsonUtils {
 
-    public static boolean getBooleanOrDefault(JSONObject jsonObject, String key, boolean defaultValue) {
+   public static boolean getBooleanOrDefault(JSONObject jsonObject, String key, boolean defaultValue) {
       try {
-         return jsonObject.method21763(key);
+         return jsonObject.getBoolean(key);
       } catch (JSONException2 e) {
          return defaultValue;
       }
@@ -12,40 +12,40 @@ public class CJsonUtils {
 
    public static byte getByteOrDefault(JSONObject jsonObject, String key, byte defaultValue) {
       try {
-         return (byte)jsonObject.method21767(key);
-      } catch (JSONException2 e) {
+         return (byte)jsonObject.getInt(key);
+      } catch (JSONException2 | JSONException e) {
          return defaultValue;
       }
    }
 
    public static int getIntOrDefault(JSONObject jsonObject, String key, int defaultValue) {
       try {
-         return jsonObject.method21767(key);
-      } catch (JSONException2 e) {
+         return jsonObject.getInt(key);
+      } catch (JSONException2 | JSONException e) {
          return defaultValue;
       }
    }
 
    public static long getLongOrDefault(JSONObject jsonObject, String key, long defaultValue) {
       try {
-         return jsonObject.method21770(key);
-      } catch (JSONException2 e) {
+         return jsonObject.getLong(key);
+      } catch (JSONException2 | JSONException e) {
          return defaultValue;
       }
    }
 
    public static float getFloatOrDefault(JSONObject jsonObject, String key, float defaultValue) {
       try {
-         return (float)jsonObject.method21766(key);
-      } catch (JSONException2 e) {
+         return (float)jsonObject.getDouble(key);
+      } catch (JSONException2 | JSONException e) {
          return defaultValue;
       }
    }
 
    public static double getDoubleOrDefault(JSONObject jsonObject, String key, double defaultValue) {
       try {
-         return jsonObject.method21766(key);
-      } catch (JSONException2 e) {
+         return jsonObject.getDouble(key);
+      } catch (JSONException2 | JSONException e) {
          return defaultValue;
       }
    }
@@ -53,15 +53,15 @@ public class CJsonUtils {
    public static String getStringOrDefault(JSONObject jsonObject, String key, String defaultValue) {
       try {
          return jsonObject.getString(key);
-      } catch (JSONException2 e) {
+      } catch (JSONException2 | JSONException e) {
          return defaultValue;
       }
    }
 
    public static JSONObject getJSONObjectOrNull(JSONObject jsonObject, String key) {
       try {
-         return jsonObject.getJsonObject(key);
-      } catch (JSONException2 e) {
+         return jsonObject.getJSONObject(key);
+      } catch (JSONException2 | JSONException e) {
          return null;
       }
    }
@@ -71,6 +71,8 @@ public class CJsonUtils {
          return jsonObject.getJSONArray(key);
       } catch (JSONException2 e) {
          return null;
+      } catch (JSONException e) {
+         throw new RuntimeException(e);
       }
    }
 }

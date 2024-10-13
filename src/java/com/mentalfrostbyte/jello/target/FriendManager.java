@@ -8,6 +8,7 @@ import totalcross.json.JSONArray;
 import net.minecraft.entity.Entity;
 import mapped.Class8906;
 import net.minecraft.client.Minecraft;
+import totalcross.json.JSONException;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -19,11 +20,15 @@ public class FriendManager {
 
     public void method26995() {
         Client.getInstance().getEventManager().register(this);
-        this.method27011();
+        try {
+            this.method27011();
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @EventTarget
-    private void method26996(EventKeyPress var1) {
+    private void method26996(EventKeyPress var1) throws JSONException {
         if (var1.getKey() == this.field34179.gameSettings.keyBindPickBlock.inputMappingsInput.keyCode
                 && this.field34179.pointedEntity != null
                 && this.field34179.pointedEntity.getName() != null) {
@@ -126,14 +131,14 @@ public class FriendManager {
     }
 
     public void method27009() {
-        Client.getInstance().getConfig().method21801("friends", this.field34176);
+        Client.getInstance().getConfig().put("friends", this.field34176);
     }
 
     public void method27010() {
-        Client.getInstance().getConfig().method21801("enemies", this.friends);
+        Client.getInstance().getConfig().put("enemies", this.friends);
     }
 
-    private void method27011() {
+    private void method27011() throws JSONException {
         if (Client.getInstance().getConfig().has("friends")) {
             JSONArray var3 = Client.getInstance().getConfig().getJSONArray("friends");
             if (var3 != null) {

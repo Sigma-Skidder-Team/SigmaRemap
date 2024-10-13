@@ -37,7 +37,7 @@ public class ThumbnailUtil {
         if (htmlContent.startsWith("[")) {
             try {
                 JSONArray jsonArray = new JSONArray(htmlContent);
-                htmlContent = jsonArray.getJSONObject(1).getJsonObject("body").getString("content");
+                htmlContent = jsonArray.getJSONObject(1).getJSONObject("body").getString("content");
             } catch (Exception exception) {
                 throw new RuntimeException(exception);
             }
@@ -66,7 +66,7 @@ public class ThumbnailUtil {
         if (htmlContent.startsWith("[")) {
             try {
                 JSONArray jsonArray = new JSONArray(htmlContent);
-                htmlContent = jsonArray.getJSONObject(1).getJsonObject("body").getString("content");
+                htmlContent = jsonArray.getJSONObject(1).getJSONObject("body").getString("content");
             } catch (Exception exception) {
                 throw new RuntimeException(exception);
             }

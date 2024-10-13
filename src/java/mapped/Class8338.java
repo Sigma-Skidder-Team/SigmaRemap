@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 
 import net.minecraft.client.util.Util;
+import net.minecraft.util.Unit;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -15,7 +16,7 @@ public class Class8338 extends Class8337<Class8921> {
    private static final Logger field35853 = LogManager.getLogger();
    private final Stopwatch field35854 = Stopwatch.createUnstarted();
 
-   public Class8338(IResourceManager var1, List<Class268> var2, Executor var3, Executor var4, CompletableFuture<Class2341> var5) {
+   public Class8338(IResourceManager var1, List<Class268> var2, Executor var3, Executor var4, CompletableFuture<Unit> var5) {
       super(var3, var4, var1, var2, (var1x, var2x, var3x, var4x, var5x) -> {
          AtomicLong var8 = new AtomicLong();
          AtomicLong var9 = new AtomicLong();

@@ -1296,10 +1296,10 @@ public abstract class PlayerEntity extends LivingEntity {
       return this.field4926;
    }
 
-   public Either<Class2104, Class2341> method2752(BlockPos var1) {
+   public Either<Class2104, Unit> method2752(BlockPos var1) {
       this.startSleeping(var1);
       this.field4917 = 0;
-      return Either.right(Class2341.field16010);
+      return Either.right(Unit.INSTANCE);
    }
 
    public void stopSleepInBed(boolean var1, boolean var2) {

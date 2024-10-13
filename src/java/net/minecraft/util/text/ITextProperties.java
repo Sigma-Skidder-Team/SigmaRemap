@@ -1,13 +1,13 @@
 package net.minecraft.util.text;
 
 import com.google.common.collect.ImmutableList;
-import mapped.Class2341;
+import net.minecraft.util.Unit;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface ITextProperties {
-   Optional<Class2341> field_240650_b_ = Optional.<Class2341>of(Class2341.field16010);
+   Optional<Unit> field_240650_b_ = Optional.<Unit>of(Unit.INSTANCE);
    ITextProperties field_240651_c_ = new ITextProperties$1();
 
    <T> Optional<T> func_230438_a_(ITextProperties$ITextAcceptor<T> var1);

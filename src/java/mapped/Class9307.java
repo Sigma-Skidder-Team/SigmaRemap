@@ -97,7 +97,7 @@ public abstract class Class9307 {
 
             while (var6.hasNext()) {
                long var7 = var6.nextLong();
-               if (this.getTicketSet(var7).stream().anyMatch(var0 -> var0.method8484() == TicketType.field38482)) {
+               if (this.getTicketSet(var7).stream().anyMatch(var0 -> var0.method8484() == TicketType.PLAYER)) {
                   Class8641 var9 = var1.method6538(var7);
                   if (var9 == null) {
                      throw new IllegalStateException();

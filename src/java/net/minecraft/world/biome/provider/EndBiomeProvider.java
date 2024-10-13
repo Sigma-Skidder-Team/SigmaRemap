@@ -33,10 +33,10 @@ public class EndBiomeProvider extends BiomeProvider {
          var1,
          var2,
          var1.getOrThrow(Biomes.THE_END),
-         var1.getOrThrow(Biomes.field44163),
-         var1.getOrThrow(Biomes.field44162),
-         var1.getOrThrow(Biomes.field44161),
-         var1.getOrThrow(Biomes.field44164)
+         var1.getOrThrow(Biomes.END_HIGHLANDS),
+         var1.getOrThrow(Biomes.END_MIDLANDS),
+         var1.getOrThrow(Biomes.SMALL_END_ISLANDS),
+         var1.getOrThrow(Biomes.END_BARRENS)
       );
    }
 

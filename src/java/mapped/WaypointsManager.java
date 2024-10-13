@@ -32,6 +32,7 @@ import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
 import totalcross.json.JSONArray;
 import org.lwjgl.BufferUtils;
+import totalcross.json.JSONException;
 import totalcross.json.JSONException2;
 import totalcross.json.JSONObject;
 

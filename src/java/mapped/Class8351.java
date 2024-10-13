@@ -1,5 +1,6 @@
 package mapped;
 
+import totalcross.json.JSONException;
 import totalcross.json.JSONObject;
 
 public class Class8351 {
@@ -27,21 +28,21 @@ public class Class8351 {
       this.field35894 = false;
    }
 
-   public Class8351(JSONObject var1) {
+   public Class8351(JSONObject var1) throws JSONException {
       if (var1.has("name")) {
          this.field35889 = var1.getString("name");
       }
 
       if (var1.has("color")) {
-         this.field35892 = var1.method21767("color");
+         this.field35892 = var1.getInt("color");
       }
 
       if (var1.has("x")) {
-         this.field35890 = var1.method21767("x");
+         this.field35890 = var1.getInt("x");
       }
 
       if (var1.has("z")) {
-         this.field35891 = var1.method21767("z");
+         this.field35891 = var1.getInt("z");
       }
 
       this.field35894 = true;

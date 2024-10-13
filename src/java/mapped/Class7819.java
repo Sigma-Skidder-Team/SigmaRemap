@@ -20,6 +20,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.CachedBlockInfo;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
+import net.minecraft.util.Unit;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
@@ -129,9 +130,9 @@ public class Class7819 {
       }
 
       if (this.field33537.method12288().isEmpty()) {
-         this.field33538.getChunkProvider().releaseTicket(TicketType.field38481, new ChunkPos(0, 0), 9, Class2341.field16010);
+         this.field33538.getChunkProvider().releaseTicket(TicketType.DRAGON, new ChunkPos(0, 0), 9, Unit.INSTANCE);
       } else {
-         this.field33538.getChunkProvider().registerTicket(TicketType.field38481, new ChunkPos(0, 0), 9, Class2341.field16010);
+         this.field33538.getChunkProvider().registerTicket(TicketType.DRAGON, new ChunkPos(0, 0), 9, Unit.INSTANCE);
          boolean var3 = this.method26116();
          if (this.field33548 && var3) {
             this.method26111();

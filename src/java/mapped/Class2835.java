@@ -16,7 +16,7 @@ import net.minecraft.world.biome.Biomes;
 
 public class Class2835 implements Consumer<Consumer<Advancement>> {
    private static final List<RegistryKey<Biome>> field17626 = ImmutableList.of(
-      Biomes.NETHER_WASTES, Biomes.field44196, Biomes.field44198, Biomes.field44197, Biomes.field44199
+      Biomes.NETHER_WASTES, Biomes.SOUL_SAND_VALLEY, Biomes.WARPED_FOREST, Biomes.CRIMSON_FOREST, Biomes.BASALT_DELTAS
    );
    private static final Class9587 field17627 = Class9587.method37222(
       Class123.method357(

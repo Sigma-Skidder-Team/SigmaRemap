@@ -249,13 +249,13 @@ public class BlockUtil {
       return var0;
    }
 
-   public static List<Entity> getVisibleEntities(List<Entity> entityList) {
-      entityList.sort(new Class3576());
-      return entityList;
+   public static List<Entity> getVisibleEntities(List<Entity> var0) {
+      Collections.sort(var0, new Class3576());
+      return var0;
    }
 
    public static List<PlayerEntity> method34549(List<PlayerEntity> var0) {
-      var0.sort(new Class3583());
+      Collections.sort(var0, new Class3583());
       return var0;
    }
 

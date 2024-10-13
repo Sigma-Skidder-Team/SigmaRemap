@@ -21,6 +21,10 @@ public class JSONException extends IOException {
       this.field16536 = var1;
    }
 
+   public JSONException(Exception e) {
+       throw new JSONException2(e);
+   }
+
    public void method10462(String var1) {
       Class6388.method19418(this.field16535.get(0), var1);
    }

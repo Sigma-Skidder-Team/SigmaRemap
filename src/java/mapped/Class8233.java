@@ -7,6 +7,7 @@ import java.util.List;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.module.Module;
+import totalcross.json.JSONException;
 import totalcross.json.JSONObject;
 
 public class Class8233 {
@@ -36,16 +37,21 @@ public class Class8233 {
       }
    }
 
-   public JSONObject getJsonObject(String var1) {
+   public JSONObject getJSONObject(String var1) {
       return new JSONObject();
    }
 
    public Configuration method28657(Configuration var1, String var2) {
       Configuration var5 = new Configuration(var2, var1);
-      var5.method22988();
-      Configuration var6 = new Configuration("settings", this.getJsonObject(var2).getJsonObject("modConfig"));
+      Configuration var6 = null;
+       try {
+          var5.method22988();
+          var6 = new Configuration("settings", this.getJSONObject(var2).getJSONObject("modConfig"));
+       } catch (JSONException e) {
+           throw new RuntimeException(e);
+       }
 
-      for (Module var8 : Client.getInstance().getModuleManager().getModuleMap().values()) {
+       for (Module var8 : Client.getInstance().getModuleManager().getModuleMap().values()) {
          JSONObject var9 = var6.method22990(var8);
          if (var9 != null) {
             var5.method22989(var9, var8);

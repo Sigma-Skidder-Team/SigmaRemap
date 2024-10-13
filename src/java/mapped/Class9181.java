@@ -31,7 +31,7 @@ public class Class9181 {
       ResourceLocation var4 = new ResourceLocation(JSONUtils.getString(var0, "trigger"));
       Class4907 var5 = CriteriaTriggers.method37000(var4);
       if (var5 != null) {
-         Class4477 var6 = var5.method15054(JSONUtils.getJsonObject(var0, "conditions", new JsonObject()), var1);
+         Class4477 var6 = var5.method15054(JSONUtils.getJSONObject(var0, "conditions", new JsonObject()), var1);
          return new Class9181(var6);
       } else {
          throw new JsonSyntaxException("Invalid criterion trigger: " + var4);

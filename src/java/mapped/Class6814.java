@@ -11,6 +11,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.ClientMode;
 import com.mentalfrostbyte.jello.unmapped.RandomModuleThread;
 import org.apache.commons.io.IOUtils;
+import totalcross.json.JSONException;
 import totalcross.json.JSONException2;
 import totalcross.json.JSONObject;
 
@@ -152,18 +153,18 @@ public class Class6814 {
    public void loadConfig(Configuration var1) {
       Client.getInstance().saveClientData();
       RandomModuleThread.field8343 = new HashMap<>();
-      if (Client.getInstance().getClientMode() != ClientMode.CLASSIC) {
-         this.currentConfigs.serializedConfigData = Client.getInstance().getModuleManager().saveCurrentConfigToJSON(new JSONObject());
-         this.currentConfigs = var1;
-         Client.getInstance().getConfig().put("profile", var1.getName);
-         Client.getInstance().getModuleManager().load(var1.serializedConfigData);
-         Client.getInstance().saveClientData();
-      } else {
-         this.currentConfigs.serializedConfigData = var1.method22986();
-         Client.getInstance().getConfig().put("profile", "Classic");
-         Client.getInstance().getModuleManager().load(var1.serializedConfigData);
-         Client.getInstance().saveClientData();
-      }
+       if (Client.getInstance().getClientMode() != ClientMode.CLASSIC) {
+          this.currentConfigs.serializedConfigData = Client.getInstance().getModuleManager().saveCurrentConfigToJSON(new JSONObject());
+          this.currentConfigs = var1;
+          Client.getInstance().getConfig().put("profile", var1.getName);
+          Client.getInstance().getModuleManager().load(var1.serializedConfigData);
+          Client.getInstance().saveClientData();
+       } else {
+          this.currentConfigs.serializedConfigData = var1.method22986();
+          Client.getInstance().getConfig().put("profile", "Classic");
+          Client.getInstance().getModuleManager().load(var1.serializedConfigData);
+          Client.getInstance().saveClientData();
+       }
    }
 
    public List<Configuration> getAllConfigs() {

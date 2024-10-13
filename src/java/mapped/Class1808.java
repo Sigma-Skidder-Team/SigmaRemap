@@ -108,7 +108,7 @@ public class Class1808 implements Class1809, AutoCloseable {
             }
          }
 
-         this.field9755 = method7932(JSONUtils.getJsonObject(var7, "blend", (JsonObject)null));
+         this.field9755 = method7932(JSONUtils.getJSONObject(var7, "blend", (JsonObject)null));
          this.field9758 = method7931(var1, Class1853.field9872, var29);
          this.field9759 = method7931(var1, Class1853.field9873, var30);
          this.field9752 = Class8692.method31317();

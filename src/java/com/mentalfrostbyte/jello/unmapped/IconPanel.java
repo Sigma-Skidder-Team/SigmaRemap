@@ -8,6 +8,7 @@ import mapped.*;
 import totalcross.json.CJsonUtils;
 import totalcross.json.JSONArray;
 import org.lwjgl.opengl.GL11;
+import totalcross.json.JSONException;
 import totalcross.json.JSONObject;
 
 import java.util.ArrayList;
@@ -504,7 +505,7 @@ public class IconPanel implements IGuiEventListener {
         for (IconPanel var6 : this.field20893) {
             if (var6.method13299()) {
                 JSONObject var7 = var6.method13160(new JSONObject());
-                if (var7.method21779() > 0) {
+                if (var7.length() > 0) {
                     var4.put(var7);
                 }
             }
@@ -514,7 +515,7 @@ public class IconPanel implements IGuiEventListener {
         return var1;
     }
 
-    public void method13161(JSONObject var1) {
+    public void method13161(JSONObject var1){
         if (this.method13299()) {
             this.xA = CJsonUtils.getIntOrDefault(var1, "x", this.xA);
             this.yA = CJsonUtils.getIntOrDefault(var1, "y", this.yA);
@@ -524,12 +525,17 @@ public class IconPanel implements IGuiEventListener {
             }
 
             JSONArray var4 = CJsonUtils.getJSONArrayOrNull(var1, "children");
-            Iterator<String> var5 = var1.method21778().iterator();
+            Iterator<String> var5 = var1.keySet().iterator();
             if (var4 != null) {
                 List<IconPanel> var6 = new ArrayList<>(this.field20893);
 
                 for (int var7 = 0; var7 < var4.length(); var7++) {
-                    JSONObject var8 = var4.getJSONObject(var7);
+                    JSONObject var8 = null;
+                    try {
+                        var8 = var4.getJSONObject(var7);
+                    } catch (JSONException e) {
+                        throw new RuntimeException(e);
+                    }
                     String var9 = CJsonUtils.getStringOrDefault(var8, "id", null);
                     int var10 = CJsonUtils.getIntOrDefault(var8, "index", -1);
 

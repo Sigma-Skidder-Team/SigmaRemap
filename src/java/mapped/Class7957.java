@@ -3,6 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.module.Module;
 import net.minecraft.client.gui.screen.Screen;
+import totalcross.json.JSONException;
 import totalcross.json.JSONObject;
 
 public class Class7957 {
@@ -25,43 +26,47 @@ public class Class7957 {
 
    public void method27050(JSONObject var1) {
       if (var1.has("target")) {
-         if (var1.has("key")) {
-            this.field34204 = var1.method21767("key");
-         }
-
-         if (var1.has("type")) {
-            String var4 = var1.getString("type");
-            switch (var4) {
-               case "mod":
-                  for (Module var7 : Client.getInstance().getModuleManager().getModuleMap().values()) {
-                     if (var1.getString("target").equals(var7.getName())) {
-                        this.field34205 = var7;
-                     }
-                  }
-               case "screen":
-                  Class var8 = Client.getInstance().getGuiManager().method33477(var1.getString("target"));
-                  if (var8 != null) {
-                     this.field34205 = var8;
-                  }
+         try {
+            if (var1.has("key")) {
+               this.field34204 = var1.getInt("key");
             }
+
+            if (var1.has("type")) {
+               String var4 = var1.getString("type");
+               switch (var4) {
+                  case "mod":
+                     for (Module var7 : Client.getInstance().getModuleManager().getModuleMap().values()) {
+                        if (var1.getString("target").equals(var7.getName())) {
+                           this.field34205 = var7;
+                        }
+                     }
+                  case "screen":
+                     Class var8 = Client.getInstance().getGuiManager().method33477(var1.getString("target"));
+                     if (var8 != null) {
+                        this.field34205 = var8;
+                     }
+               }
+            }
+         } catch (JSONException e) {
+            throw new RuntimeException(e);
          }
       }
    }
 
    public JSONObject method27051() {
       JSONObject var3 = new JSONObject();
-      switch (Class8251.field35450[this.method27055().ordinal()]) {
-         case 1:
-            var3.put("type", "mod");
-            var3.put("target", ((Module)this.field34205).getName());
-            break;
-         case 2:
-            var3.put("type", "screen");
-            var3.put("target", Client.getInstance().getGuiManager().method33478((Class<? extends Screen>)this.field34205));
-      }
+       switch (Class8251.field35450[this.method27055().ordinal()]) {
+          case 1:
+             var3.put("type", "mod");
+             var3.put("target", ((Module)this.field34205).getName());
+             break;
+          case 2:
+             var3.put("type", "screen");
+             var3.put("target", Client.getInstance().getGuiManager().method33478((Class<? extends Screen>)this.field34205));
+       }
 
-      var3.put("key", this.field34204);
-      return var3;
+       var3.put("key", this.field34204);
+       return var3;
    }
 
    public boolean method27052() {

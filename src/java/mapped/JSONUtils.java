@@ -198,7 +198,7 @@ public class JSONUtils {
       }
    }
 
-   public static JsonObject getJsonObject(JsonObject var0, String var1, JsonObject var2) {
+   public static JsonObject getJSONObject(JsonObject var0, String var1, JsonObject var2) {
       return !var0.has(var1) ? var2 : method32781(var0.get(var1), var1);
    }
 

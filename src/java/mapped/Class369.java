@@ -12,6 +12,7 @@ public class Class369 extends Thread {
    private InputStream field1618;
    private StringBuffer field1619;
    private final Class8954 field1620;
+   // rat
    private Pattern field1621 = Pattern.compile("\\[download\\]\\s+(?<percent>\\d+\\.\\d)% .* ETA (?<minutes>\\d+):(?<seconds>\\d+)");
 
    public Class369(StringBuffer var1, InputStream var2, Class8954 var3) {

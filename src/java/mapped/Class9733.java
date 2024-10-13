@@ -45,22 +45,22 @@ public class Class9733 {
       )
       .stable();
    private static final Map<Structure<?>, StructureFeature<?, ?>> field45444 = Util.<Map<Structure<?>, StructureFeature<?, ?>>>make(Maps.newHashMap(), var0 -> {
-      var0.put(Structure.MINESHAFT, StructureFeatures.field43835);
-      var0.put(Structure.field18073, StructureFeatures.field43853);
-      var0.put(Structure.STRONGHOLD, StructureFeatures.field_244145_k);
-      var0.put(Structure.SWAMP_HUT, StructureFeatures.field43843);
-      var0.put(Structure.DESERT_PYRAMID, StructureFeatures.field43839);
-      var0.put(Structure.JUNGLE_PYRAMID, StructureFeatures.field43838);
-      var0.put(Structure.IGLOO, StructureFeatures.field43840);
-      var0.put(Structure.field18069, StructureFeatures.field43846);
-      var0.put(Structure.SHIPWRECK, StructureFeatures.field43841);
-      var0.put(Structure.MONUMENT, StructureFeatures.field43845);
-      var0.put(Structure.field18071, StructureFeatures.field43850);
-      var0.put(Structure.MANSION, StructureFeatures.field43837);
-      var0.put(Structure.field18070, StructureFeatures.field43848);
-      var0.put(Structure.PILLAGER_OUTPOST, StructureFeatures.field43834);
-      var0.put(Structure.RUINED_PORTAL, StructureFeatures.field43858);
-      var0.put(Structure.field18075, StructureFeatures.field43852);
+      var0.put(Structure.MINESHAFT, StructureFeatures.MINESHAFT);
+      var0.put(Structure.field18073, StructureFeatures.VILLAGE_PLAINS);
+      var0.put(Structure.STRONGHOLD, StructureFeatures.STRONGHOLD);
+      var0.put(Structure.SWAMP_HUT, StructureFeatures.SWAMP_HUT);
+      var0.put(Structure.DESERT_PYRAMID, StructureFeatures.DESERT_PYRAMID);
+      var0.put(Structure.JUNGLE_PYRAMID, StructureFeatures.JUNGLE_PYRAMID);
+      var0.put(Structure.IGLOO, StructureFeatures.IGLOO);
+      var0.put(Structure.field18069, StructureFeatures.OCEAN_RUIN_COLD);
+      var0.put(Structure.SHIPWRECK, StructureFeatures.SHIPWRECK);
+      var0.put(Structure.MONUMENT, StructureFeatures.MONUMENT);
+      var0.put(Structure.field18071, StructureFeatures.END_CITY);
+      var0.put(Structure.MANSION, StructureFeatures.MANSION);
+      var0.put(Structure.field18070, StructureFeatures.FORTRESS);
+      var0.put(Structure.PILLAGER_OUTPOST, StructureFeatures.PILLAGER_OUTPOST);
+      var0.put(Structure.RUINED_PORTAL, StructureFeatures.RUINED_PORTAL);
+      var0.put(Structure.field18075, StructureFeatures.BASTION_REMNANT);
    });
    private final Registry<Biome> field45445;
    private final DimensionStructuresSettings field45446;
@@ -142,7 +142,7 @@ public class Class9733 {
          var5.method26693(var4.method24279(field45444.get(var7.getKey())));
       }
 
-      boolean var11 = (!this.field45450 || this.field45445.method9182(var3).equals(Optional.<RegistryKey<Biome>>of(Biomes.field44172))) && this.field45451;
+      boolean var11 = (!this.field45450 || this.field45445.method9182(var3).equals(Optional.<RegistryKey<Biome>>of(Biomes.THE_VOID))) && this.field45451;
       if (var11) {
          List<List<Supplier<ConfiguredFeature<?, ?>>>> var12 = var4.method24281();
 

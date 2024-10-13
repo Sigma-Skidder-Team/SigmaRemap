@@ -192,7 +192,7 @@ public class Class8576 {
    public static Class8576 method30653(JsonElement var0) {
       if (var0 != null && !var0.isJsonNull()) {
          JsonObject var3 = JSONUtils.method32781(var0, "location");
-         JsonObject var4 = JSONUtils.getJsonObject(var3, "position", new JsonObject());
+         JsonObject var4 = JSONUtils.getJSONObject(var3, "position", new JsonObject());
          Class8841 var5 = Class8841.method32025(var4.get("x"));
          Class8841 var6 = Class8841.method32025(var4.get("y"));
          Class8841 var7 = Class8841.method32025(var4.get("z"));

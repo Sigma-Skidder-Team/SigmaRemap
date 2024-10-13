@@ -22,12 +22,8 @@ import com.mentalfrostbyte.jello.module.impl.render.classic.*;
 import com.mentalfrostbyte.jello.module.impl.render.jello.*;
 import com.mentalfrostbyte.jello.module.impl.render.jello.ESP;
 import com.mentalfrostbyte.jello.module.impl.world.*;
-import com.mentalfrostbyte.jello.settings.Setting;
 import mapped.*;
-import totalcross.json.CJsonUtils;
-import totalcross.json.JSONArray;
-import totalcross.json.JSONException2;
-import totalcross.json.JSONObject;
+import totalcross.json.*;
 
 import java.io.IOException;
 import java.util.*;
@@ -226,7 +222,12 @@ public class ModuleManager {
 
         if (array != null) {
             for (int var15 = 0; var15 < array.length(); var15++) {
-                JSONObject moduleObject = array.getJSONObject(var15);
+                JSONObject moduleObject = null;
+                try {
+                    moduleObject = array.getJSONObject(var15);
+                } catch (JSONException e) {
+                    throw new RuntimeException(e);
+                }
                 String moduleName = null;
 
                 try {
@@ -239,7 +240,7 @@ public class ModuleManager {
                     if (module.getName().equals(moduleName)) {
                         try {
                             module.initialize(moduleObject);
-                        } catch (JSONException2 var12) {
+                        } catch (JSONException2 | JSONException var12) {
                             Client.getInstance()
                                     .getLogger()
                                     .warn("Could not initialize mod " + module.getName() + " from config. All settings for this mod have been erased.");
@@ -294,8 +295,7 @@ public class ModuleManager {
 
         try {
             var4 = var1.getString("profile");
-        } catch (JSONException2 var7) {
-        }
+        } catch (JSONException ignored) {}
 
         if (Client.getInstance().getClientMode() == ClientMode.CLASSIC) {
             var4 = "Classic";

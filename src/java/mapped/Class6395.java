@@ -100,7 +100,7 @@ public abstract class Class6395 {
          var12 = var11;
       } else {
          field27988.warn("Unknown respawn dimension {}, defaulting to overworld", var10);
-         var12 = this.field27990.func_241755_D_();
+         var12 = this.field27990.getServerWorld();
       }
 
       var2.setWorld(var12);
@@ -356,7 +356,7 @@ public abstract class Class6395 {
          var8.connection.disconnect(new TranslationTextComponent("multiplayer.disconnect.duplicate_login"));
       }
 
-      ServerWorld var11 = this.field27990.func_241755_D_();
+      ServerWorld var11 = this.field27990.getServerWorld();
       Object var12;
       if (!this.field27990.method1342()) {
          var12 = new Class9081(var11);
@@ -381,7 +381,7 @@ public abstract class Class6395 {
          var9 = Optional.empty();
       }
 
-      ServerWorld var10 = var8 != null && var9.isPresent() ? var8 : this.field27990.func_241755_D_();
+      ServerWorld var10 = var8 != null && var9.isPresent() ? var8 : this.field27990.getServerWorld();
       Object var11;
       if (!this.field27990.method1342()) {
          var11 = new Class9081(var10);
@@ -629,7 +629,7 @@ public abstract class Class6395 {
    }
 
    public void method19472(ServerPlayerEntity var1, ServerWorld var2) {
-      WorldBorder var5 = this.field27990.func_241755_D_().getWorldBorder();
+      WorldBorder var5 = this.field27990.getServerWorld().getWorldBorder();
       var1.connection.sendPacket(new SWorldBorderPacket(var5, Class1864.field10036));
       var1.connection.sendPacket(new SUpdateTimePacket(var2.getGameTime(), var2.method6784(), var2.getGameRules().getBoolean(GameRules.field24232)));
       var1.connection.sendPacket(new SWorldSpawnChangedPacket(var2.getSpawnPoint(), var2.method6948()));

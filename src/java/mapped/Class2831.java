@@ -51,14 +51,14 @@ public class Class2831 implements Consumer<Consumer<Advancement>> {
          Biomes.BIRCH_FOREST,
          Biomes.MUSHROOM_FIELDS,
          Biomes.WOODED_MOUNTAINS,
-         Biomes.field44165,
-         Biomes.field44166,
-         Biomes.field44167,
-         Biomes.field44169,
-         Biomes.field44170,
-         Biomes.field44171,
-         Biomes.field44194,
-         Biomes.field44195
+         Biomes.WARM_OCEAN,
+         Biomes.LUKEWARM_OCEAN,
+         Biomes.COLD_OCEAN,
+         Biomes.DEEP_LUKEWARM_OCEAN,
+         Biomes.DEEP_COLD_OCEAN,
+         Biomes.DEEP_FROZEN_OCEAN,
+         Biomes.BAMBOO_JUNGLE,
+         Biomes.BAMBOO_JUNGLE_HILLS
       }
    );
    private static final EntityType<?>[] field17611 = new EntityType[]{

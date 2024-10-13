@@ -61,7 +61,7 @@ public class Session {
 
       public static Session.Type setSessionType(String sessionTypeIn)
       {
-         return (Session.Type)SESSION_TYPES.get(sessionTypeIn.toLowerCase());
+         return SESSION_TYPES.get(sessionTypeIn.toLowerCase());
       }
 
       static {

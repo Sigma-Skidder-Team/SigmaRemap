@@ -2,6 +2,7 @@ package com.mentalfrostbyte.jello.account;
 
 import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.client.multiplayer.ServerList;
+import totalcross.json.JSONException;
 import totalcross.json.JSONObject;
 import net.minecraft.client.Minecraft;
 
@@ -17,13 +18,13 @@ public class Ban {
         this.field39611 = var2;
     }
 
-    public Ban(JSONObject var1) {
+    public Ban(JSONObject var1) throws JSONException {
         Calendar var4 = Calendar.getInstance();
         long var5 = 0L;
-        if (!(var1.getObjectOrThrow("until") instanceof Integer)) {
-            var5 = (Long) var1.getObjectOrThrow("until");
+        if (!(var1.get("until") instanceof Integer)) {
+            var5 = (Long) var1.get("until");
         } else {
-            var5 = ((Integer) var1.getObjectOrThrow("until")).longValue();
+            var5 = ((Integer) var1.get("until")).longValue();
         }
 
         if (var5 == 1L) {

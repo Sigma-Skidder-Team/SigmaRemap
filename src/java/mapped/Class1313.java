@@ -382,7 +382,7 @@ public class Class1313 extends Screen {
       method6206(
          new TranslationTextComponent("createWorld.customize.preset.the_void"),
          Blocks.field36765,
-         Biomes.field44172,
+         Biomes.THE_VOID,
          Collections.<Structure<?>>emptyList(),
          false,
          true,

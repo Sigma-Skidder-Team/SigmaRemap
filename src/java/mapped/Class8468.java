@@ -9,18 +9,18 @@ public class Class8468 {
    private static String[] field36289;
 
    public static void method29770(Class7935 var0) {
-      var0.method26693(StructureFeatures.field43836);
-      var0.method26693(StructureFeatures.field_244145_k);
+      var0.method26693(StructureFeatures.MINESHAFT_MESA);
+      var0.method26693(StructureFeatures.STRONGHOLD);
    }
 
    public static void method29771(Class7935 var0) {
-      var0.method26693(StructureFeatures.field43835);
-      var0.method26693(StructureFeatures.field_244145_k);
+      var0.method26693(StructureFeatures.MINESHAFT);
+      var0.method26693(StructureFeatures.STRONGHOLD);
    }
 
    public static void method29772(Class7935 var0) {
-      var0.method26693(StructureFeatures.field43835);
-      var0.method26693(StructureFeatures.field43841);
+      var0.method26693(StructureFeatures.MINESHAFT);
+      var0.method26693(StructureFeatures.SHIPWRECK);
    }
 
    public static void method29773(Class7935 var0) {

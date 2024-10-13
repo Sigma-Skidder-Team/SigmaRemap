@@ -27,7 +27,7 @@ public class Class914 implements ICommandSource {
    }
 
    public CommandSource getCommandSource() {
-      ServerWorld var3 = this.field5206.func_241755_D_();
+      ServerWorld var3 = this.field5206.getServerWorld();
       return new CommandSource(this, Vector3d.copy(var3.getSpawnPoint()), Vector2f.ZERO, var3, 4, "Rcon", field5204, this.field5206, (Entity)null);
    }
 

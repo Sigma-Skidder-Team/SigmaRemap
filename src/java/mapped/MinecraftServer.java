@@ -31,6 +31,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.CryptException;
 import net.minecraft.util.CryptManager;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.Unit;
 import net.minecraft.util.datafix.codec.DatapackCodec;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
@@ -377,17 +378,17 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       var4.setGameType(GameType.SPECTATOR);
    }
 
-   private void loadInitialChunks(IChunkStatusListener var1) {
-      ServerWorld var4 = this.func_241755_D_();
-      LOGGER.info("Preparing start region for dimension {}", var4.getDimensionKey().getLocation());
-      BlockPos var5 = var4.getSpawnPoint();
-      var1.start(new ChunkPos(var5));
-      ServerChunkProvider var6 = var4.getChunkProvider();
-      var6.getLightManager().func_215598_a(500);
+   private void loadInitialChunks(IChunkStatusListener listener) {
+      ServerWorld world = this.getServerWorld();
+      LOGGER.info("Preparing start region for dimension {}", world.getDimensionKey().getLocation());
+      BlockPos spawnPoint = world.getSpawnPoint();
+      listener.start(new ChunkPos(spawnPoint));
+      ServerChunkProvider serverChunkProvider = world.getChunkProvider();
+      serverChunkProvider.getLightManager().func_215598_a(500);
       this.serverTime = Util.milliTime();
-      var6.registerTicket(TicketType.field38480, new ChunkPos(var5), 11, Class2341.field16010);
+      serverChunkProvider.registerTicket(TicketType.START, new ChunkPos(spawnPoint), 11, Unit.INSTANCE);
 
-      while (var6.getLoadedChunksCount() != 441) {
+      while (serverChunkProvider.getLoadedChunksCount() != 441) {
          this.serverTime = Util.milliTime() + 10L;
          this.runScheduledTasks();
       }
@@ -410,8 +411,8 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
 
       this.serverTime = Util.milliTime() + 10L;
       this.runScheduledTasks();
-      var1.stop();
-      var6.getLightManager().func_215598_a(5);
+      listener.stop();
+      serverChunkProvider.getLightManager().func_215598_a(5);
       this.func_240794_aZ_();
    }
 
@@ -454,7 +455,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
          var6 = true;
       }
 
-      ServerWorld var9 = this.func_241755_D_();
+      ServerWorld var9 = this.getServerWorld();
       IServerWorldInfo var10 = this.field_240768_i_.method20098();
       var10.method20068(var9.getWorldBorder().method24556());
       this.field_240768_i_.method20094(this.method1414().method29605());
@@ -799,7 +800,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       return new File(this.method1307(), var1);
    }
 
-   public final ServerWorld func_241755_D_() {
+   public final ServerWorld getServerWorld() {
       return this.worlds.get(World.OVERWORLD);
    }
 
@@ -1274,7 +1275,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
 
    public CommandSource getCommandSource()
    {
-      ServerWorld serverworld = this.func_241755_D_();
+      ServerWorld serverworld = this.getServerWorld();
       return new CommandSource(this, serverworld == null ? Vector3d.ZERO : Vector3d.copy(serverworld.getSpawnPoint()), Vector2f.ZERO, serverworld, 4, "Server", new StringTextComponent("Server"), this, (Entity)null);
    }
 
@@ -1317,7 +1318,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    }
 
    public GameRules getGameRules() {
-      return this.func_241755_D_().getGameRules();
+      return this.getServerWorld().getGameRules();
    }
 
    public Class8426 method1414() {

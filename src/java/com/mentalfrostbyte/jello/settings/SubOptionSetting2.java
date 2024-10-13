@@ -2,6 +2,7 @@ package com.mentalfrostbyte.jello.settings;
 
 import totalcross.json.CJsonUtils;
 import totalcross.json.JSONArray;
+import totalcross.json.JSONException;
 import totalcross.json.JSONObject;
 
 import java.util.Arrays;
@@ -20,7 +21,7 @@ public abstract class SubOptionSetting2 extends Setting<Boolean> {
    }
 
    @Override
-   public JSONObject loadCurrentValueFromJSONObject(JSONObject jsonObject) {
+   public JSONObject loadCurrentValueFromJSONObject(JSONObject jsonObject) throws JSONException {
       JSONArray array = CJsonUtils.getJSONArrayOrNull(jsonObject, this.getName());
       if (array != null) {
          for (int i = 0; i < array.length(); i++) {

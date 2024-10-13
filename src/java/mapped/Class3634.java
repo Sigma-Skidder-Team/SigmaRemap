@@ -32,7 +32,7 @@ public class Class3634 {
       return var7.<TeleportationRepositioner>map(
          var1x -> {
             BlockPos var4 = var1x.method35355();
-            this.field19668.getChunkProvider().registerTicket(TicketType.field38485, new ChunkPos(var4), 3, var4);
+            this.field19668.getChunkProvider().registerTicket(TicketType.PORTAL, new ChunkPos(var4), 3, var4);
             BlockState var5x = this.field19668.getBlockState(var4);
             return Class7215.method22658(
                var4, var5x.<Direction.Axis>get(BlockStateProperties.field39712), 21, Direction.Axis.Y, 21, var2x -> this.field19668.getBlockState(var2x) == var5x

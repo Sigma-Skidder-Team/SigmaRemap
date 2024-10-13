@@ -4,11 +4,8 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.module.util.InDevelopment;
 import com.mentalfrostbyte.jello.settings.Setting;
 import mapped.Class6547;
-import totalcross.json.CJsonUtils;
+import totalcross.json.*;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
-import totalcross.json.JSONArray;
-import totalcross.json.JSONException2;
-import totalcross.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -93,7 +90,7 @@ public class ModuleWithModuleSettings extends Module {
     }
 
     @Override
-    public JSONObject initialize(JSONObject var1) {
+    public JSONObject initialize(JSONObject var1) throws JSONException {
         JSONObject var4 = CJsonUtils.getJSONObjectOrNull(var1, "sub-options");
         if (var4 != null) {
             for (Module var8 : this.moduleArray) {
@@ -111,6 +108,8 @@ public class ModuleWithModuleSettings extends Module {
                                     Client.getInstance()
                                             .getLogger()
                                             .warn("Could not initialize settings of " + var8.getName() + "." + var14.getName() + " from config.");
+                                } catch (JSONException e) {
+                                    throw new RuntimeException(e);
                                 }
                                 break;
                             }

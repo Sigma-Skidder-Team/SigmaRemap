@@ -1,6 +1,7 @@
 package mapped;
 
 import totalcross.json.JSONArray;
+import totalcross.json.JSONException;
 import totalcross.json.JSONException2;
 import totalcross.json.JSONObject;
 
@@ -32,7 +33,7 @@ public class Class8020 {
          JSONObject var13 = new JSONObject();
 
          try {
-            var13.method21800("_placeholder", true);
+            var13.put("_placeholder", true);
             var13.put("num", var1.size());
          } catch (JSONException2 var9) {
             field34460.log(Level.WARNING, "An error occured while putting data to JSONObject", (Throwable)var9);
@@ -48,8 +49,8 @@ public class Class8020 {
 
          for (int var16 = 0; var16 < var15; var16++) {
             try {
-               var12.method9165(var16, method27422(var14.get(var16), var1));
-            } catch (JSONException2 var10) {
+               var12.put(var16, method27422(var14.get(var16), var1));
+            } catch (JSONException2 | JSONException var10) {
                field34460.log(Level.WARNING, "An error occured while putting packet data to JSONObject", (Throwable)var10);
                return null;
             }
@@ -61,14 +62,14 @@ public class Class8020 {
       } else {
          JSONObject var4 = new JSONObject();
          JSONObject var5 = (JSONObject)var0;
-         Iterator var6 = var5.method21777();
+         Iterator var6 = var5.keys();
 
          while (var6.hasNext()) {
             String var7 = (String)var6.next();
 
             try {
-               var4.put(var7, method27422(var5.getObjectOrThrow(var7), var1));
-            } catch (JSONException2 var11) {
+               var4.put(var7, method27422(var5.get(var7), var1));
+            } catch (JSONException2 | JSONException var11) {
                field34460.log(Level.WARNING, "An error occured while putting data to JSONObject", (Throwable)var11);
                return null;
             }
@@ -91,8 +92,8 @@ public class Class8020 {
 
          for (int var13 = 0; var13 < var12; var13++) {
             try {
-               var10.method9165(var13, method27424(var10.get(var13), var1));
-            } catch (JSONException2 var8) {
+               var10.put(var13, method27424(var10.get(var13), var1));
+            } catch (JSONException2 | JSONException var8) {
                field34460.log(Level.WARNING, "An error occured while putting packet data to JSONObject", (Throwable)var8);
                return null;
             }
@@ -103,18 +104,18 @@ public class Class8020 {
          return var0;
       } else {
          JSONObject var4 = (JSONObject)var0;
-         if (var4.method21785("_placeholder")) {
-            int var11 = var4.method21792("num", -1);
+         if (var4.has("_placeholder")) {
+            int var11 = var4.optInt("num", -1);
             return var11 >= 0 && var11 < var1.length ? var1[var11] : null;
          } else {
-            Iterator var5 = var4.method21777();
+            Iterator var5 = var4.keys();
 
             while (var5.hasNext()) {
                String var6 = (String)var5.next();
 
                try {
-                  var4.put(var6, method27424(var4.getObjectOrThrow(var6), var1));
-               } catch (JSONException2 var9) {
+                  var4.put(var6, method27424(var4.get(var6), var1));
+               } catch (JSONException2 | JSONException var9) {
                   field34460.log(Level.WARNING, "An error occured while putting data to JSONObject", (Throwable)var9);
                   return null;
                }

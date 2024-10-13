@@ -2,6 +2,7 @@ package com.mentalfrostbyte.jello.settings;
 
 import totalcross.json.CJsonUtils;
 import totalcross.json.JSONArray;
+import totalcross.json.JSONException;
 import totalcross.json.JSONObject;
 
 public class SpeedRampSetting extends Setting<SpeedRampSetting.SpeedRamp> {
@@ -10,7 +11,7 @@ public class SpeedRampSetting extends Setting<SpeedRampSetting.SpeedRamp> {
     }
 
     @Override
-    public JSONObject loadCurrentValueFromJSONObject(JSONObject jsonObject) {
+    public JSONObject loadCurrentValueFromJSONObject(JSONObject jsonObject) throws JSONException {
         this.currentValue = new SpeedRamp(CJsonUtils.getJSONArrayOrNull(jsonObject, "value"));
         return jsonObject;
     }
@@ -54,7 +55,7 @@ public class SpeedRampSetting extends Setting<SpeedRampSetting.SpeedRamp> {
             this.maxValue = max;
         }
 
-        public SpeedRamp(JSONArray jsonArray) {
+        public SpeedRamp(JSONArray jsonArray) throws JSONException {
             this.startValue = Float.parseFloat(jsonArray.getString(0));
             this.middleValue = Float.parseFloat(jsonArray.getString(1));
             this.endValue = Float.parseFloat(jsonArray.getString(2));
@@ -63,10 +64,10 @@ public class SpeedRampSetting extends Setting<SpeedRampSetting.SpeedRamp> {
 
         public JSONArray toJSONArray() {
             JSONArray jsonArray = new JSONArray();
-            jsonArray.method9165(0, Float.toString(this.startValue));
-            jsonArray.method9165(1, Float.toString(this.middleValue));
-            jsonArray.method9165(2, Float.toString(this.endValue));
-            jsonArray.method9165(3, Float.toString(this.maxValue));
+            jsonArray.put(0, Float.toString(this.startValue));
+            jsonArray.put(1, Float.toString(this.middleValue));
+            jsonArray.put(2, Float.toString(this.endValue));
+            jsonArray.put(3, Float.toString(this.maxValue));
             return jsonArray;
         }
 

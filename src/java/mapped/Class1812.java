@@ -16,13 +16,14 @@ import java.util.stream.Stream;
 
 import com.mojang.datafixers.util.Either;
 import net.minecraft.client.util.Util;
+import net.minecraft.util.Unit;
 import net.minecraft.util.math.ChunkPos;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class Class1812 implements AutoCloseable, Class1813 {
    private static final Logger field9775 = LogManager.getLogger();
-   private final Map<Class321<?>, Class8572<? extends Function<Class321<Class2341>, ?>>> field9776;
+   private final Map<Class321<?>, Class8572<? extends Function<Class321<Unit>, ?>>> field9776;
    private final Set<Class321<?>> field9777;
    private final Class322<Class497> field9778;
 
@@ -35,7 +36,7 @@ public class Class1812 implements AutoCloseable, Class1813 {
    public static Class6875<Runnable> method7960(Runnable var0, long var1, IntSupplier var3) {
       return new Class6875<>((p_219072_1_) -> () -> {
          var0.run();
-         p_219072_1_.method1641(Class2341.field16010);
+         p_219072_1_.method1641(Unit.INSTANCE);
       }, var1, var3);
    }
 
@@ -94,9 +95,9 @@ public class Class1812 implements AutoCloseable, Class1813 {
       }));
    }
 
-   private <T> void method7967(Class321<T> var1, Function<Class321<Class2341>, T> var2, long var3, IntSupplier var5, boolean var6) {
+   private <T> void method7967(Class321<T> var1, Function<Class321<Unit>, T> var2, long var3, IntSupplier var5, boolean var6) {
       this.field9778.method1641(new Class497(2, () -> {
-         Class8572<Function<Class321<Class2341>, T>> var9 = this.method7969(var1);
+         Class8572<Function<Class321<Unit>, T>> var9 = this.method7969(var1);
          int var10 = var5.getAsInt();
          var9.method30626(Optional.of(var2), var3, var10);
          if (var6) {
@@ -109,13 +110,13 @@ public class Class1812 implements AutoCloseable, Class1813 {
       }));
    }
 
-   private <T> void method7968(Class8572<Function<Class321<Class2341>, T>> var1, Class321<T> var2) {
+   private <T> void method7968(Class8572<Function<Class321<Unit>, T>> var1, Class321<T> var2) {
       this.field9778.method1641(new Class497(3, () -> {
-         Stream<Either<Function<Class321<Class2341>, T>, Runnable>> var5 = var1.method30629();
+         Stream<Either<Function<Class321<Unit>, T>, Runnable>> var5 = var1.method30629();
          if (var5 != null) {
             Util.gather(var5.map(var1xx -> var1xx.map(var2::method1646, var0x -> {
                   var0x.run();
-                  return CompletableFuture.completedFuture(Class2341.field16010);
+                  return CompletableFuture.completedFuture(Unit.INSTANCE);
                })).collect(Collectors.toList())).thenAccept(var3 -> this.method7968(var1, var2));
          } else {
             this.field9777.add(var2);
@@ -123,7 +124,7 @@ public class Class1812 implements AutoCloseable, Class1813 {
       }));
    }
 
-   private <T> Class8572<Function<Class321<Class2341>, T>> method7969(Class321<T> var1) {
+   private <T> Class8572<Function<Class321<Unit>, T>> method7969(Class321<T> var1) {
       Class8572 var4 = this.field9776.get(var1);
       if (var4 != null) {
          return var4;

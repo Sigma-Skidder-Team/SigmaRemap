@@ -17,6 +17,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.Screen;
 import totalcross.json.JSONArray;
 import org.lwjgl.glfw.GLFWNativeCocoa;
+import totalcross.json.JSONException;
 import totalcross.json.JSONObject;
 
 import java.util.*;
@@ -96,7 +97,7 @@ public class MacOSTouchBar {
       }
    }
 
-   public JSONObject method13731(JSONObject var1) {
+   public JSONObject method13731(JSONObject var1) throws JSONException {
       JSONArray var4 = new JSONArray();
 
       for (Class7957 var6 : this.field21387) {
@@ -109,7 +110,7 @@ public class MacOSTouchBar {
       return var1;
    }
 
-   public void method13732(JSONObject var1) {
+   public void method13732(JSONObject var1) throws JSONException {
       if (var1.has("keybinds")) {
          JSONArray var4 = var1.getJSONArray("keybinds");
 

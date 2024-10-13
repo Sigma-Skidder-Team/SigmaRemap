@@ -24,15 +24,15 @@ public class Configuration {
    }
 
    public Configuration method22984(JSONObject var1) throws JSONException {
-      this.serializedConfigData = var1.getJsonObject("modConfig");
+      this.serializedConfigData = var1.getJSONObject("modConfig");
       this.getName = var1.getString("name");
       return this;
    }
 
    public JSONObject method22985(JSONObject var1) {
-      var1.put("modConfig", this.serializedConfigData);
-      var1.put("name", this.getName);
-      return var1;
+       var1.put("modConfig", this.serializedConfigData);
+       var1.put("name", this.getName);
+       return var1;
    }
 
    public JSONObject method22986() {
@@ -43,7 +43,7 @@ public class Configuration {
       return new Configuration(var1, this.serializedConfigData);
    }
 
-   public void method22988() {
+   public void method22988() throws JSONException {
       JSONArray var3 = null;
 
       try {
@@ -82,22 +82,22 @@ public class Configuration {
       boolean var6 = false;
       if (var5 != null) {
          for (int var7 = 0; var7 < var5.length(); var7++) {
-            JSONObject var8 = var5.getJSONObject(var7);
             String var9 = null;
 
             try {
+               JSONObject var8 = var5.getJSONObject(var7);
                var9 = CJsonUtils.getStringOrDefault(var8, "name", null);
-            } catch (JSONException2 var11) {
+               if (var2.getName().equals(var9)) {
+                  if (var2.getAdjustedCategoryBasedOnClientMode() != ModuleCategory.GUI && var2.getAdjustedCategoryBasedOnClientMode() != ModuleCategory.RENDER) {
+                     var5.put(var7, var1);
+                  }
+
+                  var6 = true;
+               }
+            } catch (JSONException var11) {
                Client.getInstance().getLogger().warn("Invalid name in mod list config");
             }
 
-            if (var2.getName().equals(var9)) {
-               if (var2.getAdjustedCategoryBasedOnClientMode() != ModuleCategory.GUI && var2.getAdjustedCategoryBasedOnClientMode() != ModuleCategory.RENDER) {
-                  var5.method9165(var7, var1);
-               }
-
-               var6 = true;
-            }
          }
       }
 
@@ -116,8 +116,13 @@ public class Configuration {
 
       if (var4 != null) {
          for (int var5 = 0; var5 < var4.length(); var5++) {
-            JSONObject var6 = var4.getJSONObject(var5);
-            String var7 = null;
+             JSONObject var6 = null;
+             try {
+                 var6 = var4.getJSONObject(var5);
+             } catch (JSONException e) {
+                 throw new RuntimeException(e);
+             }
+             String var7 = null;
 
             try {
                var7 = CJsonUtils.getStringOrDefault(var6, "name", null);

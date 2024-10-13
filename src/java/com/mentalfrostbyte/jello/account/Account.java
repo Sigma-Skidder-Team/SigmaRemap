@@ -13,6 +13,7 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.codec.binary.Base64OutputStream;
 import org.apache.commons.io.output.ByteArrayOutputStream;
 import totalcross.json.JSONArray;
+import totalcross.json.JSONException;
 import totalcross.json.JSONObject;
 
 import javax.imageio.ImageIO;
@@ -67,7 +68,7 @@ public class Account {
         this(var1, var2, null, null);
     }
 
-    public Account(JSONObject var1) {
+    public Account(JSONObject var1) throws JSONException {
         if (var1.has("email")) {
             this.email = var1.getString("email");
         }
@@ -91,17 +92,17 @@ public class Account {
         }
 
         if (var1.has("dateAdded")) {
-            this.dateAdded = var1.method21770("dateAdded");
+            this.dateAdded = var1.getLong("dateAdded");
         } else {
             this.dateAdded = System.currentTimeMillis();
         }
 
         if (var1.has("lastUsed")) {
-            this.lastUsed = var1.method21770("lastUsed");
+            this.lastUsed = var1.getLong("lastUsed");
         }
 
         if (var1.has("useCount")) {
-            this.useCount = var1.method21767("useCount");
+            this.useCount = var1.getInt("useCount");
         }
 
         if (var1.has("skin")) {

@@ -30,6 +30,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.lwjgl.opengl.GL11;
+import totalcross.json.JSONException;
 import totalcross.json.JSONObject;
 
 import javax.imageio.ImageIO;
@@ -116,9 +117,13 @@ public class MusicManager {
         return var5;
     }
 
-    public void method24293() {
+    public void method24293(){
         Client.getInstance().getEventManager().register(this);
-        this.method24295();
+        try {
+            this.method24295();
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
         if (!this.method24330()) {
             this.method24331();
         }
@@ -129,25 +134,25 @@ public class MusicManager {
     public void method24294() {
         JSONObject var3 = new JSONObject();
         var3.put("volume", this.field32146);
-        var3.method21800("spectrum", this.field32161);
+        var3.put("spectrum", this.field32161);
         var3.put("repeat", this.field32162.field719);
         Client.getInstance().getConfig().put("music", var3);
     }
 
-    private void method24295() {
+    private void method24295() throws JSONException {
         if (Client.getInstance().getConfig().has("music")) {
-            JSONObject var3 = Client.getInstance().getConfig().getJsonObject("music");
+            JSONObject var3 = Client.getInstance().getConfig().getJSONObject("music");
             if (var3 != null) {
                 if (var3.has("volume")) {
-                    this.field32146 = Math.max(0, Math.min(100, var3.method21767("volume")));
+                    this.field32146 = Math.max(0, Math.min(100, var3.getInt("volume")));
                 }
 
                 if (var3.has("spectrum")) {
-                    this.field32161 = var3.method21763("spectrum");
+                    this.field32161 = var3.getBoolean("spectrum");
                 }
 
                 if (var3.has("repeat")) {
-                    this.field32162 = Class189.method578(var3.method21767("repeat"));
+                    this.field32162 = Class189.method578(var3.getInt("repeat"));
                 }
             }
         }

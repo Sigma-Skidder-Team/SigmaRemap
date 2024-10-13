@@ -229,7 +229,7 @@ public abstract class ChunkGenerator {
    public void func_242707_a(DynamicRegistries var1, StructureManager var2, IChunk var3, TemplateManager var4, long var5) {
       ChunkPos chunkpos = var3.getPos();
       Biome biome = this.biomeProvider.getNoiseBiome((chunkpos.x << 2) + 2, 0, (chunkpos.z << 2) + 2);
-      this.func_242705_a(StructureFeatures.field_244145_k, var1, var2, var3, var4, var5, chunkpos, biome);
+      this.func_242705_a(StructureFeatures.STRONGHOLD, var1, var2, var3, var4, var5, chunkpos, biome);
 
       for (Supplier < StructureFeature <? , ? >> var12 : biome.getGenerationSettings().getStructures()) {
          this.func_242705_a(var12.get(), var1, var2, var3, var4, var5, chunkpos, biome);
