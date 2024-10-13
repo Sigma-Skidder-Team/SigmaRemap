@@ -60,7 +60,7 @@ public class HypixelAutoGapple extends Module {
             if (this.firePotionSlot >= 0 && this.currentTickCounter >= 0) {
                 this.currentTickCounter++;
                 if (this.currentTickCounter == 2) {
-                    event.setYaw(event.getYaw() + 1.0F);
+                    event.setPitch(event.getPitch() + 1.0F);
                 }
 
                 if (this.currentTickCounter != 1) {

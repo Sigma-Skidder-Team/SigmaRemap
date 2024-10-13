@@ -190,8 +190,8 @@ public class AutoPotion extends Module {
                 mc.playerController.syncCurrentPlayItem();
                 if (!this.getBooleanValueFromSettingName("Instant")) {
                     this.field23811 = 1;
-                    var1.setPitch(var9[0]);
-                    var1.setYaw(var9[1]);
+                    var1.setYaw(var9[0]);
+                    var1.setPitch(var9[1]);
                 } else {
                     mc.getConnection().sendPacket(new CPlayerPacket.RotationPacket(var9[0], var9[1], !var8 && mc.player.onGround));
                     mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.MAIN_HAND));

@@ -57,7 +57,7 @@ public class Freecam extends Module {
                 this.onEnable();
             }
 
-            mc.player.field6123 = mc.player.rotationPitch;
+            mc.player.rotPitch = mc.player.rotationPitch;
             AxisAlignedBB var4 = mc.player.boundingBox;
             field23814.setPosition((var4.minX + var4.maxX) / 2.0, var4.minY, (var4.minZ + var4.maxZ) / 2.0);
             double var5 = this.field23818 + (this.field23815 - this.field23818) * (double) var1.partialTicks;
@@ -234,10 +234,10 @@ public class Freecam extends Module {
     @EventTarget
     public void method16646(EventUpdate var1) {
         if (this.isEnabled() && var1.isPre()) {
-            var1.setPitch(this.field23821 % 360.0F);
-            var1.setYaw(this.field23822);
-            mc.player.field6122 = this.field23821;
-            mc.player.field6123 = this.field23822;
+            var1.setYaw(this.field23821 % 360.0F);
+            var1.setPitch(this.field23822);
+            mc.player.rotYaw = this.field23821;
+            mc.player.rotPitch = this.field23822;
             float[] var4 = MovementUtils.method37084(this.field23825, this.field23824);
             float var5 = var4[1];
             float var6 = var4[2];

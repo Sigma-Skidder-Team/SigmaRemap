@@ -107,8 +107,8 @@ public class CakeEater extends Module {
                         float[] var6 = RotationHelper.method34144(
                                 (double) field23588.getX() + 0.5, (double) field23588.getZ() + 0.5, field23588.getY()
                         );
-                        var1.setPitch(var6[0]);
-                        var1.setYaw(var6[1]);
+                        var1.setYaw(var6[0]);
+                        var1.setPitch(var6[1]);
                     }
                 }
             }

@@ -282,23 +282,23 @@ public class Class8795 {
 
                Direction var13 = BlockUtil.method34580(this.field39616);
                float[] var11 = BlockUtil.method34542(this.field39616, var13);
-               var1.setPitch(var11[0]);
-               var1.setYaw(var11[1]);
+               var1.setYaw(var11[0]);
+               var1.setPitch(var11[1]);
                this.mc.player.swingArm(Hand.MAIN_HAND);
                this.mc.playerController.onPlayerDamageBlock(this.field39616, BlockUtil.method34580(this.field39616));
             } else {
                this.field39616 = (BlockPos)var4.get(0);
                Direction var14 = BlockUtil.method34580(this.field39616);
                float[] var15 = BlockUtil.method34542(this.field39616, var14);
-               var1.setPitch(var15[0]);
-               var1.setYaw(var15[1]);
+               var1.setYaw(var15[0]);
+               var1.setPitch(var15[1]);
                EventKeyPress var12 = new EventKeyPress(0, false, this.field39616);
                Client.getInstance().getEventManager().call(var12);
             }
 
             if (var6.field44279 != Class2317.field15876) {
-               this.field39615 = var1.getYaw();
-               this.field39614 = var1.getPitch();
+               this.field39615 = var1.getPitch();
+               this.field39614 = var1.getYaw();
             }
          }
       }

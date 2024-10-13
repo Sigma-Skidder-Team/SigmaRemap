@@ -228,8 +228,8 @@ public class Auto32k extends Module {
                             if (this.field23873 == 1) {
                                 float var4 = BlockUtil.method34543(this.field23870.up(), Direction.UP)[0];
                                 float var5 = BlockUtil.method34543(this.field23870.up(), Direction.UP)[1];
-                                var1.setPitch(var4);
-                                var1.setYaw(var5);
+                                var1.setYaw(var4);
+                                var1.setPitch(var5);
                                 int var6 = mc.player.inventory.currentItem;
                                 mc.player.inventory.currentItem = this.field23871;
                                 Vector3d var7 = BlockUtil.method34572(Direction.UP, this.field23870);
@@ -253,8 +253,8 @@ public class Auto32k extends Module {
                         } else {
                             float var12 = BlockUtil.method34543(this.field23870, Direction.UP)[0];
                             float var13 = BlockUtil.method34543(this.field23870, Direction.UP)[1];
-                            var1.setPitch(var12);
-                            var1.setYaw(var13);
+                            var1.setYaw(var12);
+                            var1.setPitch(var13);
                             this.field23873++;
                         }
                     }

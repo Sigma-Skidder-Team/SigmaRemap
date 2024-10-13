@@ -44,8 +44,8 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    public double field6119;
    public double field6120;
    public double field6121;
-   public float field6122;
-   public float field6123;
+   public float rotYaw;
+   public float rotPitch;
    public boolean field6124;
    private boolean field6125;
    private boolean field6126;
@@ -185,47 +185,47 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
             double var8 = eventItself.getX();
             double var10 = eventItself.getY();
             double var12 = eventItself.getZ();
-            float var14 = eventItself.getYaw();
-            float var15 = eventItself.getPitch() % 360.0F;
+            float eventItselfPitch = eventItself.getPitch();
+            float eventItselfYaw = eventItself.getYaw() % 360.0F;
             boolean var16 = eventItself.onGround();
             double var17 = var8 - this.field6119;
             double var19 = var10 - this.field6120;
             double var21 = var12 - this.field6121;
-            double var23 = (double)(var15 - this.field6122 % 360.0F);
-            double var25 = (double)(var14 - this.field6123);
+            double fixatedYaw = (double)(eventItselfYaw - this.rotYaw % 360.0F);
+            double fixedatedPitch = (double)(eventItselfPitch - this.rotPitch);
             this.field6128++;
-            boolean var27 = eventItself.method13907() || var17 * var17 + var19 * var19 + var21 * var21 > 9.0E-4 || this.field6128 >= 20;
-            boolean var28 = var23 != 0.0 || var25 != 0.0;
+            boolean isMoving = eventItself.isMoving() || var17 * var17 + var19 * var19 + var21 * var21 > 9.0E-4 || this.field6128 >= 20;
+            boolean isLooking = fixatedYaw != 0.0 || fixedatedPitch != 0.0;
             if (!this.isPassenger()) {
-               if (var27 && var28) {
-                  this.connection.sendPacket(new CPlayerPacket.PositionRotationPacket(var8, var10, var12, var15, var14, var16));
-               } else if (!var27) {
-                  if (!var28) {
+               if (isMoving && isLooking) {
+                  this.connection.sendPacket(new CPlayerPacket.PositionRotationPacket(var8, var10, var12, eventItselfYaw, eventItselfPitch, var16));
+               } else if (!isMoving) {
+                  if (!isLooking) {
                      if (this.field6124 != this.onGround) {
                         this.connection.sendPacket(new CPlayerPacket(var16));
                      }
                   } else {
-                     this.connection.sendPacket(new CPlayerPacket.RotationPacket(var15, var14, var16));
+                     this.connection.sendPacket(new CPlayerPacket.RotationPacket(eventItselfYaw, eventItselfPitch, var16));
                   }
                } else {
                   this.connection.sendPacket(new CPlayerPacket.PositionPacket(var8, var10, var12, var16));
                }
             } else {
                Vector3d var29 = this.getMotion();
-               this.connection.sendPacket(new CPlayerPacket.PositionRotationPacket(var29.x, -999.0, var29.z, var15, var14, var16));
-               var27 = false;
+               this.connection.sendPacket(new CPlayerPacket.PositionRotationPacket(var29.x, -999.0, var29.z, eventItselfYaw, eventItselfPitch, var16));
+               isMoving = false;
             }
 
-            if (var27) {
+            if (isMoving) {
                this.field6119 = var8;
                this.field6120 = var10;
                this.field6121 = var12;
                this.field6128 = 0;
             }
 
-            if (var28) {
-               this.field6122 = var15;
-               this.field6123 = var14;
+            if (isLooking) {
+               this.rotYaw = eventItselfYaw;
+               this.rotPitch = eventItselfPitch;
             }
 
             this.field6124 = this.onGround;

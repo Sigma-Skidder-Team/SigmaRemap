@@ -200,8 +200,8 @@ public class AutoCrystal extends Module {
                         .orElse(null);
                 if (var5 != null) {
                     Rotations var9 = RotationHelper.method34148(var5.positionVec);
-                    var1.setPitch(var9.yaw);
-                    var1.setYaw(var9.pitch);
+                    var1.setYaw(var9.yaw);
+                    var1.setPitch(var9.pitch);
                     this.field23636 = 0;
                     this.field23635 = new Class540(this, var5);
                     return;
@@ -229,8 +229,8 @@ public class AutoCrystal extends Module {
                     Rotations var7 = RotationHelper.method34148(
                             new Vector3d((double) var6.field13027 + 0.5, (double) var6.field13028 + 0.5, (double) var6.field13029 + 0.5)
                     );
-                    var1.setPitch(var7.yaw);
-                    var1.setYaw(var7.pitch);
+                    var1.setYaw(var7.yaw);
+                    var1.setPitch(var7.pitch);
                     this.field23635 = new Class335(this, var6, var8);
                 }
             }

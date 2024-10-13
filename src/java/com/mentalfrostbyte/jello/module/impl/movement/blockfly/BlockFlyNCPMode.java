@@ -244,24 +244,24 @@ public class BlockFlyNCPMode extends Module {
                         float[] var12 = BlockUtil.method34542(this.field23923.field33646, this.field23923.field33647);
                         this.field23922 = var12[0];
                         this.field23921 = var12[1];
-                        var1.setPitch(this.field23922);
-                        var1.setYaw(this.field23921);
-                        mc.player.rotationYawHead = var1.getYaw();
-                        mc.player.renderYawOffset = var1.getYaw();
+                        var1.setYaw(this.field23922);
+                        var1.setPitch(this.field23921);
+                        mc.player.rotationYawHead = var1.getPitch();
+                        mc.player.renderYawOffset = var1.getPitch();
                     }
                 } else {
                     if (this.getBooleanValueFromSettingName("KeepRotations") && this.field23921 != 999.0F) {
-                        var1.setPitch(this.field23922);
-                        var1.setYaw(this.field23921);
-                        mc.player.rotationYawHead = var1.getYaw();
-                        mc.player.renderYawOffset = var1.getYaw();
+                        var1.setYaw(this.field23922);
+                        var1.setPitch(this.field23921);
+                        mc.player.rotationYawHead = var1.getPitch();
+                        mc.player.renderYawOffset = var1.getPitch();
                     }
 
                     this.field23923 = null;
                 }
 
 
-                if (mc.player.rotationYaw != var1.getPitch() && mc.player.rotationPitch != var1.getYaw()) {
+                if (mc.player.rotationYaw != var1.getYaw() && mc.player.rotationPitch != var1.getPitch()) {
                     this.field23925 = 0;
                 }
             }

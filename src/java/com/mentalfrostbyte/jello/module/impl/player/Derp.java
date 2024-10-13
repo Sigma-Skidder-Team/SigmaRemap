@@ -46,8 +46,8 @@ public class Derp extends Module {
             String var6 = this.getStringSettingValueByName("Rotation Mode");
             switch (var6) {
                 case "Random":
-                    var1.setPitch(this.field23434.nextFloat() * 360.0F);
-                    var1.setYaw(this.field23434.nextFloat() * 180.0F - 90.0F);
+                    var1.setYaw(this.field23434.nextFloat() * 360.0F);
+                    var1.setPitch(this.field23434.nextFloat() * 180.0F - 90.0F);
                     break;
                 case "Spin":
                     this.field23437 += 20;
@@ -56,7 +56,7 @@ public class Derp extends Module {
                         this.field23437 -= 360;
                     }
 
-                    var1.setPitch((float) this.field23437 + this.field23434.nextFloat());
+                    var1.setYaw((float) this.field23437 + this.field23434.nextFloat());
             }
         }
     }

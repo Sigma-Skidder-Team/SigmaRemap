@@ -108,8 +108,8 @@ public class ChestStealer extends Module {
                                 && var12.getPos().getZ() == var7.getPos().getZ()) {
                             this.field23625 = var7;
                             float[] var13 = RotationHelper.method34144((double) var9 + 0.5, (double) var11 + 0.5, (double) var10 + 0.35);
-                            var1.setPitch(var13[0]);
-                            var1.setYaw(var13[1]);
+                            var1.setYaw(var13[0]);
+                            var1.setPitch(var13[1]);
                             var14 = true;
                         }
                     }

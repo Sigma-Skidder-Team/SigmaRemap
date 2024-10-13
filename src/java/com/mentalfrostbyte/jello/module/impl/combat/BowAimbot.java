@@ -51,8 +51,8 @@ public class BowAimbot extends Module {
 
             if (!this.field23754.isEmpty() && this.getBooleanValueFromSettingName("Silent")) {
                 float[] var4 = RotationHelper.method34146((LivingEntity) this.field23754.get(0));
-                var1.setPitch(var4[0]);
-                var1.setYaw(var4[1]);
+                var1.setYaw(var4[0]);
+                var1.setPitch(var4[1]);
             }
         }
     }

@@ -14,8 +14,8 @@ public class EventUpdate extends CancellableEvent {
     private double x;
     private double y;
     private double z;
-    private float yaw;
     private float pitch;
+    private float yaw;
     private boolean ground;
     private boolean field21495;
     private final List<Runnable> runnables = new ArrayList<>();
@@ -24,8 +24,8 @@ public class EventUpdate extends CancellableEvent {
         this.x = var1;
         this.y = var3;
         this.z = var5;
-        this.yaw = var7;
-        this.pitch = var8;
+        this.pitch = var7;
+        this.yaw = var8;
         this.ground = var9;
         this.pre = true;
         this.field21495 = false;
@@ -34,12 +34,12 @@ public class EventUpdate extends CancellableEvent {
     public void postUpdate() {
         field21498 = prevPitch;
         field21499 = prevYaw;
-        prevPitch = this.pitch;
-        prevYaw = this.yaw;
+        prevPitch = this.yaw;
+        prevYaw = this.pitch;
         this.pre = false;
     }
 
-    public boolean method13907() {
+    public boolean isMoving() {
         return this.field21495;
     }
 
@@ -71,20 +71,20 @@ public class EventUpdate extends CancellableEvent {
         this.z = var1;
     }
 
-    public float getYaw() {
-        return this.yaw;
-    }
-
-    public void setYaw(float var1) {
-        this.yaw = var1;
-    }
-
     public float getPitch() {
         return this.pitch;
     }
 
     public void setPitch(float var1) {
         this.pitch = var1;
+    }
+
+    public float getYaw() {
+        return this.yaw;
+    }
+
+    public void setYaw(float var1) {
+        this.yaw = var1;
     }
 
     public boolean onGround() {

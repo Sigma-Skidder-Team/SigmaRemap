@@ -134,7 +134,7 @@ public class KillAura extends Module {
         this.field23940 = 0;
         this.field23942 = 0;
         field23954 = 0;
-        this.rotations2 = new Rotations(mc.player.field6122, mc.player.field6123);
+        this.rotations2 = new Rotations(mc.player.rotYaw, mc.player.rotPitch);
         this.rotations = new Rotations(mc.player.rotationYaw, mc.player.rotationPitch);
         previousRotations = new Rotations(mc.player.rotationYaw, mc.player.rotationPitch);
         this.field23957 = -1.0F;
@@ -237,13 +237,18 @@ public class KillAura extends Module {
                     }
 
                     this.method16831();
-                    if (event.getPitch() - mc.player.rotationYaw != 0.0F) {
-                        this.rotations.yaw = event.getPitch();
-                        this.rotations.pitch = event.getYaw();
+                    if (event.getYaw() - mc.player.rotationYaw != 0.0F) {
+                        this.rotations.yaw = event.getYaw();
+                        this.rotations.pitch = event.getPitch();
                     }
 
-                    event.setPitch(this.rotations.yaw);
-                    event.setYaw(this.rotations.pitch);
+                    event.setYaw(this.rotations.yaw);
+                    event.setPitch(this.rotations.pitch);
+
+
+                    mc.player.rotationYawHead = event.getYaw();
+                    mc.player.renderYawOffset = event.getYaw();
+
                     boolean var6 = interactAB.method36821(this.field23939);
                     float cooldown19 = !((double) mc.player.method2973() < 1.26) && this.getBooleanValueFromSettingName("Cooldown") ? mc.player.getCooledAttackStrength(0.0F) : 1.0F;
                     boolean var8 = field23954 == 0 && var6 && cooldown19 >= 1.0F;
@@ -778,9 +783,6 @@ public class KillAura extends Module {
                     previousRotations.pitch = this.rotations.pitch;
                 }
         }
-
-        mc.player.rotationYawHead = this.rotations.yaw;
-        mc.player.renderYawOffset = this.rotations.yaw;
     }
 
     private double method16832(double var1, double var3) {

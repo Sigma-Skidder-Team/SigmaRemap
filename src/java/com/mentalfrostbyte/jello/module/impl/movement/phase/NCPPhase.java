@@ -52,7 +52,7 @@ public class NCPPhase extends Module {
                         mc.player.setPosition(var4, var6 - 1.0, var8);
                         event.setY(var6 - 1.0);
                         event.method13908(true);
-                        event.setPitch(event.getPitch() + 10.0F);
+                        event.setYaw(event.getYaw() + 10.0F);
                         MultiUtilities.setPlayerYMotion(0.0);
                     } else if (mc.player.getPosY() == (double) ((int) mc.player.getPosY())) {
                         mc.player.setPosition(var4, var6 - 0.3, var8);
@@ -64,8 +64,8 @@ public class NCPPhase extends Module {
                 this.field23653++;
                 float var10 = (float) Math.sin(this.field23653) * 5.0F;
                 float var11 = (float) Math.cos(this.field23653) * 5.0F;
-                event.setPitch(event.getPitch() + var10);
-                event.setYaw(event.getYaw() + var11);
+                event.setYaw(event.getYaw() + var10);
+                event.setPitch(event.getPitch() + var11);
             } else if (this.field23652 < 0) {
                 return;
             }

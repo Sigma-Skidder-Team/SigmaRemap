@@ -110,8 +110,8 @@ public class BowFly extends Module {
                         var6 = 90.0F;
                     }
 
-                    var1.setYaw(var6);
-                    var1.setPitch(var5);
+                    var1.setPitch(var6);
+                    var1.setYaw(var5);
                     if (mc.player.onGround && mc.player.collidedVertically) {
                         mc.player.jump();
                     } else if (!(mc.player.getMotion().y < 0.0)) {

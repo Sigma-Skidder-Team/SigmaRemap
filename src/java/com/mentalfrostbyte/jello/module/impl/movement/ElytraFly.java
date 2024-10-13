@@ -134,7 +134,7 @@ public class ElytraFly extends Module {
             }
 
             if (this.field23533 > 0) {
-                var1.setYaw(-90.0F);
+                var1.setPitch(-90.0F);
             }
 
             if (!mc.player.isJumping) {

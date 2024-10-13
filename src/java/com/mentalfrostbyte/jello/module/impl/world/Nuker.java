@@ -70,8 +70,8 @@ public class Nuker extends Module {
                     float[] var4 = RotationHelper.method34144(
                             (double) this.field23566.getX(), (double) this.field23566.getZ(), (double) this.field23566.getY()
                     );
-                    var1.setPitch(var4[0]);
-                    var1.setYaw(var4[1]);
+                    var1.setYaw(var4[0]);
+                    var1.setPitch(var4[1]);
                     EventKeyPress var5 = new EventKeyPress(0, false, this.field23566);
                     Client.getInstance().getEventManager().call(var5);
                     mc.playerController.onPlayerDamageBlock(this.field23566, BlockUtil.method34580(this.field23566));
@@ -85,8 +85,8 @@ public class Nuker extends Module {
                     float[] var6 = RotationHelper.method34144(
                             (double) this.field23566.getX() + 0.5, (double) this.field23566.getZ(), (double) this.field23566.getY() + 0.5
                     );
-                    var1.setPitch(var6[0]);
-                    var1.setYaw(var6[1]);
+                    var1.setYaw(var6[0]);
+                    var1.setPitch(var6[1]);
                     EventKeyPress var8 = new EventKeyPress(0, false, this.field23566);
                     Client.getInstance().getEventManager().call(var8);
                     mc.playerController.onPlayerDamageBlock(this.field23566, BlockUtil.method34580(this.field23566));

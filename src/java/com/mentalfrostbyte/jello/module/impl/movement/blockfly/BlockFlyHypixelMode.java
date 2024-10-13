@@ -251,23 +251,23 @@ public class BlockFlyHypixelMode extends Module {
 
                             this.field23467 = var13[0];
                             this.field23466 = var13[1];
-                            var1.setPitch(this.field23467);
-                            var1.setYaw(this.field23466);
-                            mc.player.rotationYawHead = var1.getYaw();
-                            mc.player.renderYawOffset = var1.getYaw();
+                            var1.setYaw(this.field23467);
+                            var1.setPitch(this.field23466);
+                            mc.player.rotationYawHead = var1.getPitch();
+                            mc.player.renderYawOffset = var1.getPitch();
                         }
                     } else {
                         if (this.getBooleanValueFromSettingName("KeepRotations") && this.field23466 != 999.0F) {
-                            var1.setPitch(mc.player.rotationYaw + 1.0F);
-                            var1.setYaw(90.0F);
-                            mc.player.rotationYawHead = var1.getYaw();
-                            mc.player.renderYawOffset = var1.getYaw();
+                            var1.setYaw(mc.player.rotationYaw + 1.0F);
+                            var1.setPitch(90.0F);
+                            mc.player.rotationYawHead = var1.getPitch();
+                            mc.player.renderYawOffset = var1.getPitch();
                         }
 
                         this.field23468 = null;
                     }
 
-                    if (mc.player.rotationYaw != var1.getPitch() && mc.player.rotationPitch != var1.getYaw()) {
+                    if (mc.player.rotationYaw != var1.getYaw() && mc.player.rotationPitch != var1.getPitch()) {
                         this.field23470 = 0;
                     }
                 }
