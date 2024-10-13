@@ -19,7 +19,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class JelloAIBot extends Module {
-    public Entity field23513;
+    public static Entity targetEntity;
     public Vector3d field23514;
     public Thread field23515;
     public boolean field23516 = false;
@@ -59,7 +59,7 @@ public class JelloAIBot extends Module {
     }
 
     public boolean method16194() {
-        return this.field23513 == null || this.field23513.positionVec.method11341(this.field23514) > 6.0;
+        return this.targetEntity == null || this.targetEntity.positionVec.method11341(this.field23514) > 6.0;
     }
 
     @EventTarget
@@ -68,7 +68,7 @@ public class JelloAIBot extends Module {
             if (mc.player.ticksExisted % 14 == 0) {
                 Entity var4 = this.method16193();
                 if (this.field23515 == null
-                        && (this.field23512 == null || this.field23512.isEmpty() || (var4 != this.field23513 || this.method16194()) && var4 != null)) {
+                        && (this.field23512 == null || this.field23512.isEmpty() || (var4 != this.targetEntity || this.method16194()) && var4 != null)) {
                     this.field23515 = new Thread(() -> {
                         MultiUtilities.addChatMessage("calc");
                         this.field23516 = true;
@@ -76,8 +76,8 @@ public class JelloAIBot extends Module {
                         try {
                             Class9823 var4x = new Class9823();
                             Class9510 var5 = new Class9510(new Class9110(mc.player.getPosition()));
-                            Class7860 var6 = new Class7860(this.field23513 = var4);
-                            this.field23514 = this.field23513.positionVec;
+                            Class7860 var6 = new Class7860(this.targetEntity = var4);
+                            this.field23514 = this.targetEntity.positionVec;
                             Class7267 var7 = new Class7267(var5, var6);
                             var7.field31173 = true;
                             var7.field31176 = 310;

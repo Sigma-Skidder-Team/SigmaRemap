@@ -10,6 +10,7 @@ import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
+import com.mentalfrostbyte.jello.util.Rots;
 import mapped.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -37,12 +38,13 @@ public class BowAimbot extends Module {
 
     @Override
     public void onDisable() {
+        Rots.rotating = false;
         this.field23754.clear();
     }
 
     @EventTarget
-    private void method16569(EventUpdate var1) {
-        if (this.isEnabled() && var1.isPre()) {
+    private void method16569(EventUpdate event) {
+        if (this.isEnabled() && event.isPre()) {
             if (!(mc.player.getActiveItemStack().getItem() instanceof BowItem)) {
                 this.field23754.clear();
             } else {
@@ -50,9 +52,19 @@ public class BowAimbot extends Module {
             }
 
             if (!this.field23754.isEmpty() && this.getBooleanValueFromSettingName("Silent")) {
-                float[] var4 = RotationHelper.method34146((LivingEntity) this.field23754.get(0));
-                var1.setYaw(var4[0]);
-                var1.setPitch(var4[1]);
+                float[] rots = RotationHelper.method34146((LivingEntity) this.field23754.get(0));
+                Rots.rotating = true;
+                Rots.prevYaw = rots[0];
+                Rots.prevPitch = rots[1];
+                event.setYaw(rots[0]);
+                event.setPitch(rots[1]);
+                Rots.yaw = rots[0];
+                Rots.pitch = rots[1];
+
+                mc.player.rotationYawHead = event.getYaw();
+                mc.player.renderYawOffset = event.getYaw();
+            } else {
+                Rots.rotating = false;
             }
         }
     }
