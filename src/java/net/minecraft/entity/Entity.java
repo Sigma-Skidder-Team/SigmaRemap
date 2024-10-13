@@ -2450,7 +2450,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public float getRotatedYaw(Rotation var1) {
-      float var4 = MathHelper.method37792(this.rotationYaw);
+      float var4 = MathHelper.wrapDegrees(this.rotationYaw);
       switch (Class9228.field42477[var1.ordinal()]) {
          case 1:
             return var4 + 180.0F;
@@ -2464,7 +2464,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public float getMirroredYaw(Mirror var1) {
-      float var4 = MathHelper.method37792(this.rotationYaw);
+      float var4 = MathHelper.wrapDegrees(this.rotationYaw);
       switch (Class9228.field42478[var1.ordinal()]) {
          case 1:
             return -var4;
@@ -2656,8 +2656,8 @@ public abstract class Entity implements INameable, ICommandSource {
       double var8 = var2.y - var5.y;
       double var10 = var2.z - var5.z;
       double var12 = (double) MathHelper.sqrt(var6 * var6 + var10 * var10);
-      this.rotationPitch = MathHelper.method37792((float)(-(MathHelper.method37814(var8, var12) * 180.0F / (float)Math.PI)));
-      this.rotationYaw = MathHelper.method37792((float)(MathHelper.method37814(var10, var6) * 180.0F / (float)Math.PI) - 90.0F);
+      this.rotationPitch = MathHelper.wrapDegrees((float)(-(MathHelper.method37814(var8, var12) * 180.0F / (float)Math.PI)));
+      this.rotationYaw = MathHelper.wrapDegrees((float)(MathHelper.method37814(var10, var6) * 180.0F / (float)Math.PI) - 90.0F);
       this.setRotationYawHead(this.rotationYaw);
       this.prevRotationPitch = this.rotationPitch;
       this.prevRotationYaw = this.rotationYaw;

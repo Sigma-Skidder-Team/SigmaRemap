@@ -374,7 +374,7 @@ public class WitherEntity extends Class1009 implements Class1080, Class1022 {
    }
 
    private float method5007(float var1, float var2, float var3) {
-      float var6 = MathHelper.method37792(var2 - var1);
+      float var6 = MathHelper.wrapDegrees(var2 - var1);
       if (var6 > var3) {
          var6 = var3;
       }

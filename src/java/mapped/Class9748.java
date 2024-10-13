@@ -126,13 +126,13 @@ public class Class9748 {
          }, var0 -> var0.method30299() == null, new TranslationTextComponent("argument.entity.options.dz.description"));
          method38218(
             "x_rotation",
-            var0 -> var0.method30285(Class9795.method38632(var0.method30277(), true, MathHelper::method37792)),
+            var0 -> var0.method30285(Class9795.method38632(var0.method30277(), true, MathHelper::wrapDegrees)),
             var0 -> var0.method30284() == Class9795.field45809,
             new TranslationTextComponent("argument.entity.options.x_rotation.description")
          );
          method38218(
             "y_rotation",
-            var0 -> var0.method30287(Class9795.method38632(var0.method30277(), true, MathHelper::method37792)),
+            var0 -> var0.method30287(Class9795.method38632(var0.method30277(), true, MathHelper::wrapDegrees)),
             var0 -> var0.method30286() == Class9795.field45809,
             new TranslationTextComponent("argument.entity.options.y_rotation.description")
          );

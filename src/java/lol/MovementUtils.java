@@ -270,7 +270,7 @@ public class MovementUtils {
       if (!(var8 > var5)) {
          var4 = var3;
       } else {
-         var4 += !(MathHelper.method37792(var3 - var4) > 0.0F) ? -var5 : var5;
+         var4 += !(MathHelper.wrapDegrees(var3 - var4) > 0.0F) ? -var5 : var5;
       }
 
       float var9 = (var4 - 90.0F) * (float) (Math.PI / 180.0);
@@ -286,7 +286,7 @@ public class MovementUtils {
       if (!(var7 > var4)) {
          var3 = var2;
       } else {
-         var3 += !(MathHelper.method37792(var2 - var3) > 0.0F) ? -var4 : var4;
+         var3 += !(MathHelper.wrapDegrees(var2 - var3) > 0.0F) ? -var4 : var4;
       }
 
       float var8 = (var3 - 90.0F) * (float) (Math.PI / 180.0);

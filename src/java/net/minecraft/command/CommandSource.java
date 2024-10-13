@@ -270,8 +270,8 @@ public class CommandSource implements Class6618 {
       double var7 = var1.y - var4.y;
       double var9 = var1.z - var4.z;
       double var11 = (double) MathHelper.sqrt(var5 * var5 + var9 * var9);
-      float var13 = MathHelper.method37792((float)(-(MathHelper.method37814(var7, var11) * 180.0F / (float)Math.PI)));
-      float var14 = MathHelper.method37792((float)(MathHelper.method37814(var9, var5) * 180.0F / (float)Math.PI) - 90.0F);
+      float var13 = MathHelper.wrapDegrees((float)(-(MathHelper.method37814(var7, var11) * 180.0F / (float)Math.PI)));
+      float var14 = MathHelper.wrapDegrees((float)(MathHelper.method37814(var9, var5) * 180.0F / (float)Math.PI) - 90.0F);
       return this.method20159(new Vector2f(var13, var14));
    }
 

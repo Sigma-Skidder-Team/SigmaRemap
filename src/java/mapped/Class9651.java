@@ -231,8 +231,8 @@ public class Class9651 {
       BlockPos var15 = new BlockPos(var3, var5, var7);
       if (World.isInvalidPosition(var15)) {
          if (!(var1 instanceof ServerPlayerEntity)) {
-            float var16 = MathHelper.method37792(var10);
-            float var17 = MathHelper.method37792(var11);
+            float var16 = MathHelper.wrapDegrees(var10);
+            float var17 = MathHelper.wrapDegrees(var11);
             var17 = MathHelper.clamp(var17, -90.0F, 90.0F);
             if (var2 != var1.world) {
                var1.detach();

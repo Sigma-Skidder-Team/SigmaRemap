@@ -38,7 +38,7 @@ public abstract class AgeableModel<E extends Entity> extends Class2827<E> {
 
    @Override
    public void render(MatrixStack var1, IVertexBuilder var2, int var3, int var4, float var5, float var6, float var7, float var8) {
-      if (!this.field17602) {
+      if (!this.isChild) {
          this.getHeadParts().forEach(var8x -> var8x.render(var1, var2, var3, var4, var5, var6, var7, var8));
          this.getBodyParts().forEach(var8x -> var8x.render(var1, var2, var3, var4, var5, var6, var7, var8));
       } else {

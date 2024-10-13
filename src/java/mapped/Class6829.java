@@ -134,7 +134,7 @@ public class Class6829 {
    }
 
    public float method20816(float var1, float var2, float var3) {
-      float var6 = MathHelper.method37792(var2 - var1);
+      float var6 = MathHelper.wrapDegrees(var2 - var1);
       if (var6 > var3) {
          var6 = var3;
       }

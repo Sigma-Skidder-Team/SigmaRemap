@@ -100,7 +100,7 @@ public class Test extends Module {
             var11 = Math.toDegrees(-Math.atan(var7 / var9));
         }
 
-        return MathHelper.method37792(-(var0 - (float) var11));
+        return MathHelper.wrapDegrees(-(var0 - (float) var11));
     }
 
     public static float method16565(float var0, Entity var1, double var2) {
@@ -109,14 +109,14 @@ public class Test extends Module {
         double var10 = var2 - 2.2 + (double) var1.getEyeHeight() - mc.player.getPosY();
         double var12 = MathHelper.sqrt(var6 * var6 + var8 * var8);
         double var14 = -Math.toDegrees(Math.atan(var10 / var12));
-        return -MathHelper.method37792(var0 - (float) var14) - 2.5F;
+        return -MathHelper.wrapDegrees(var0 - (float) var14) - 2.5F;
     }
 
     @Override
     public void onEnable() {
         this.field23739 = 0.0;
         this.field23751 = new Animation(1000, 100000, Direction.FORWARDS);
-        this.field23745 = MathHelper.method37792(mc.player.rotationYaw);
+        this.field23745 = MathHelper.wrapDegrees(mc.player.rotationYaw);
         this.field23745 = 39.0F;
         this.field23746 = mc.player.rotationPitch;
         double var3 = mc.player.getPosX();

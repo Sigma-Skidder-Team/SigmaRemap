@@ -152,8 +152,8 @@ public class MultiUtilities {
       float var16 = (float)(Math.atan2(var12, var8) * 180.0 / Math.PI) - 90.0F;
       float var17 = (float)(-(Math.atan2(var10, var14) * 180.0 / Math.PI));
       return new float[]{
-         mc.player.rotationYaw + MathHelper.method37792(var16 - mc.player.rotationYaw),
-         mc.player.rotationPitch + MathHelper.method37792(var17 - mc.player.rotationPitch)
+         mc.player.rotationYaw + MathHelper.wrapDegrees(var16 - mc.player.rotationYaw),
+         mc.player.rotationPitch + MathHelper.wrapDegrees(var17 - mc.player.rotationPitch)
       };
    }
 
@@ -354,7 +354,7 @@ public class MultiUtilities {
    }
 
    public static float method17702(float var0, float var1, float var2) {
-      float var5 = MathHelper.method37792(var1 - var0);
+      float var5 = MathHelper.wrapDegrees(var1 - var0);
       if (var5 > var2) {
          var5 = var2;
       }
@@ -1075,7 +1075,7 @@ public class MultiUtilities {
    }
 
    public static float method17753(float var0) {
-      float var3 = MathHelper.method37792(mc.player.rotationYaw);
+      float var3 = MathHelper.wrapDegrees(mc.player.rotationYaw);
       float var4 = 180.0F;
       float var5 = 0.0F;
       MovementInput var6 = mc.player.movementInput;
@@ -1111,7 +1111,7 @@ public class MultiUtilities {
          float var10 = MathHelper.method37794(var0 + var9, var3);
          if (Math.abs(var10) < Math.abs(var4)) {
             var4 = var10;
-            var5 = MathHelper.method37792(var0 + var9);
+            var5 = MathHelper.wrapDegrees(var0 + var9);
          }
       }
 

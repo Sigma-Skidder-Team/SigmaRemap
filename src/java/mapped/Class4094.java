@@ -69,7 +69,7 @@ public class Class4094 extends Class4057 {
       IReloadableResourceManager var5 = (IReloadableResourceManager) Minecraft.getInstance().getResourceManager();
       EntityRendererManager var6 = Minecraft.getInstance().getRenderManager();
       Class5692 var7 = new Class5692(var6, var5);
-      var7.field25086 = (Class2802<Class1042>)var1;
+      var7.entityModel = (Class2802<Class1042>)var1;
       var7.shadowSize = var2;
       return (Class9492)var7;
    }

@@ -457,7 +457,7 @@ public class EntityType<T extends Entity> {
             (double)var5.getX() + 0.5,
             (double)var5.getY() + var12,
             (double)var5.getZ() + 0.5,
-            MathHelper.method37792(var1.rand.nextFloat() * 360.0F),
+            MathHelper.wrapDegrees(var1.rand.nextFloat() * 360.0F),
             0.0F
          );
          if (var11 instanceof MobEntity) {

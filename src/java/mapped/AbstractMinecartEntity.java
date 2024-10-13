@@ -321,7 +321,7 @@ public abstract class AbstractMinecartEntity extends Entity {
             }
          }
 
-         double var20 = (double) MathHelper.method37792(this.rotationYaw - this.prevRotationYaw);
+         double var20 = (double) MathHelper.wrapDegrees(this.rotationYaw - this.prevRotationYaw);
          if (var20 < -170.0 || var20 >= 170.0) {
             this.rotationYaw += 180.0F;
             this.field5220 = !this.field5220;

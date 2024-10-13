@@ -18,9 +18,9 @@ public class Class5746 extends Class5651<Class1058, Class2880<Class1058>> {
 
    public void method17842(Class1058 var1, MatrixStack var2, float var3, float var4, float var5) {
       super.method17842(var1, var2, var3, var4, var5);
-      if (!((double)var1.field4960 < 0.01)) {
+      if (!((double)var1.limbSwingAmount < 0.01)) {
          float var8 = 13.0F;
-         float var9 = var1.field4961 - var1.field4960 * (1.0F - var5) + 6.0F;
+         float var9 = var1.field4961 - var1.limbSwingAmount * (1.0F - var5) + 6.0F;
          float var10 = (Math.abs(var9 % 13.0F - 6.5F) - 3.25F) / 3.25F;
          var2.rotate(Vector3f.ZP.rotationDegrees(6.5F * var10));
       }

@@ -332,7 +332,7 @@ public class DebugOverlayGui extends AbstractGui {
          );
          var16.add(
             String.format(
-               Locale.ROOT, "Facing: %s (%s) (%.1f / %.1f)", var11, var12, MathHelper.method37792(var10.rotationYaw), MathHelper.method37792(var10.rotationPitch)
+               Locale.ROOT, "Facing: %s (%s) (%.1f / %.1f)", var11, var12, MathHelper.wrapDegrees(var10.rotationYaw), MathHelper.wrapDegrees(var10.rotationPitch)
             )
          );
          if (this.mc.world != null) {

@@ -11,9 +11,9 @@ public class Class5708 extends Class5651<Class1027, Class2891<Class1027>> {
       this.addLayer(new Class240<Class1027>(this));
    }
 
-   public void render(Class1027 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
-      this.field25086.method11207(!var1.getHeldItemMainhand().isEmpty());
-      super.render(var1, var2, var3, var4, var5, var6);
+   public void render(Class1027 entityIn, float var2, float var3, MatrixStack matrixStackIn, Class7733 var5, int var6) {
+      this.entityModel.method11207(!entityIn.getHeldItemMainhand().isEmpty());
+      super.render(entityIn, var2, var3, matrixStackIn, var5, var6);
    }
 
    public ResourceLocation method17843(Class1027 var1) {

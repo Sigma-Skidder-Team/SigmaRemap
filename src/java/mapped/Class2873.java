@@ -70,7 +70,7 @@ public class Class2873<T extends Class1088> extends Class2866<T> {
          this.field17775.rotateAngleX = 0.0F;
       }
 
-      this.field17787.showModel = !this.field17602 && var1.method5045();
+      this.field17787.showModel = !this.isChild && var1.method5045();
    }
 
    @Override

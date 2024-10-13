@@ -88,7 +88,7 @@ public abstract class LivingEntity extends Entity {
    public float swingProgress;
    public int ticksSinceLastSwing;
    public float prevLimbSwingAmount;
-   public float field4960;
+   public float limbSwingAmount;
    public float field4961;
    public final int field4962 = 20;
    public final float field4963;
@@ -930,7 +930,7 @@ public abstract class LivingEntity extends Entity {
                var6 = true;
             }
 
-            this.field4960 = 1.5F;
+            this.limbSwingAmount = 1.5F;
             boolean var16 = true;
             if (!((float)this.hurtResistantTime > 10.0F)) {
                this.lastDamage = var2;
@@ -1553,7 +1553,7 @@ public abstract class LivingEntity extends Entity {
             boolean var5 = var1 == 36;
             boolean var6 = var1 == 37;
             boolean var7 = var1 == 44;
-            this.field4960 = 1.5F;
+            this.limbSwingAmount = 1.5F;
             this.hurtResistantTime = 20;
             this.maxHurtTime = 10;
             this.hurtTime = this.maxHurtTime;
@@ -2025,7 +2025,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    public void func_233629_a_(LivingEntity var1, boolean var2) {
-      var1.prevLimbSwingAmount = var1.field4960;
+      var1.prevLimbSwingAmount = var1.limbSwingAmount;
       double var5 = var1.getPosX() - var1.prevPosX;
       double var7 = !var2 ? 0.0 : var1.getPosY() - var1.prevPosY;
       double var9 = var1.getPosZ() - var1.prevPosZ;
@@ -2034,8 +2034,8 @@ public abstract class LivingEntity extends Entity {
          var11 = 1.0F;
       }
 
-      var1.field4960 = var1.field4960 + (var11 - var1.field4960) * 0.4F;
-      var1.field4961 = var1.field4961 + var1.field4960;
+      var1.limbSwingAmount = var1.limbSwingAmount + (var11 - var1.limbSwingAmount) * 0.4F;
+      var1.field4961 = var1.field4961 + var1.limbSwingAmount;
    }
 
    public Vector3d method3109(Vector3d var1, float var2) {
@@ -2158,7 +2158,7 @@ public abstract class LivingEntity extends Entity {
          var10 = 1.0F;
          var9 = (float)Math.sqrt((double)var7) * 3.0F;
          float var14 = (float) MathHelper.method37814(var5, var3) * (180.0F / (float)Math.PI) - 90.0F;
-         float var15 = MathHelper.method37771(MathHelper.method37792(this.rotationYaw) - var14);
+         float var15 = MathHelper.method37771(MathHelper.wrapDegrees(this.rotationYaw) - var14);
          if (95.0F < var15 && var15 < 265.0F) {
             var8 = var14 - 180.0F;
          } else {
@@ -2320,9 +2320,9 @@ public abstract class LivingEntity extends Entity {
    }
 
    public float updateDistance(float var1, float var2) {
-      float var5 = MathHelper.method37792(var1 - this.renderYawOffset);
+      float var5 = MathHelper.wrapDegrees(var1 - this.renderYawOffset);
       this.renderYawOffset += var5 * 0.3F;
-      float var6 = MathHelper.method37792(this.rotationYaw - this.renderYawOffset);
+      float var6 = MathHelper.wrapDegrees(this.rotationYaw - this.renderYawOffset);
       boolean var7 = var6 < -90.0F || var6 >= 90.0F;
       if (var6 < -75.0F) {
          var6 = -75.0F;

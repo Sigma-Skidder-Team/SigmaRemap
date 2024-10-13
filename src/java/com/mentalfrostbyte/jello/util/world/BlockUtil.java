@@ -55,9 +55,9 @@ public class BlockUtil {
       float var11 = (float)(Math.atan2(var7, var3) * 180.0 / Math.PI) - 90.0F;
       float var12 = (float)(-(Math.atan2(var5, var9) * 180.0 / Math.PI));
       Minecraft.getInstance().player.rotationYaw = Minecraft.getInstance().player.rotationYaw
-         + MathHelper.method37792(var11 - Minecraft.getInstance().player.rotationYaw);
+         + MathHelper.wrapDegrees(var11 - Minecraft.getInstance().player.rotationYaw);
       Minecraft.getInstance().player.rotationPitch = Minecraft.getInstance().player.rotationPitch
-         + MathHelper.method37792(var12 - Minecraft.getInstance().player.rotationPitch);
+         + MathHelper.wrapDegrees(var12 - Minecraft.getInstance().player.rotationPitch);
    }
 
    public static void method34540(BlockPos var0) {
@@ -71,8 +71,8 @@ public class BlockUtil {
          .getConnection()
          .sendPacket(
             new CPlayerPacket.RotationPacket(
-               Minecraft.getInstance().player.rotationYaw + MathHelper.method37792(var11 - Minecraft.getInstance().player.rotationYaw),
-               Minecraft.getInstance().player.rotationPitch + MathHelper.method37792(var12 - Minecraft.getInstance().player.rotationPitch),
+               Minecraft.getInstance().player.rotationYaw + MathHelper.wrapDegrees(var11 - Minecraft.getInstance().player.rotationYaw),
+               Minecraft.getInstance().player.rotationPitch + MathHelper.wrapDegrees(var12 - Minecraft.getInstance().player.rotationPitch),
                Minecraft.getInstance().player.onGround
             )
          );
@@ -86,8 +86,8 @@ public class BlockUtil {
       float var11 = (float)(Math.atan2(var7, var3) * 180.0 / Math.PI) - 90.0F;
       float var12 = (float)(-(Math.atan2(var5, var9) * 180.0 / Math.PI));
       return new float[]{
-         Minecraft.getInstance().player.rotationYaw + MathHelper.method37792(var11 - Minecraft.getInstance().player.rotationYaw),
-         Minecraft.getInstance().player.rotationPitch + MathHelper.method37792(var12 - Minecraft.getInstance().player.rotationPitch)
+         Minecraft.getInstance().player.rotationYaw + MathHelper.wrapDegrees(var11 - Minecraft.getInstance().player.rotationYaw),
+         Minecraft.getInstance().player.rotationPitch + MathHelper.wrapDegrees(var12 - Minecraft.getInstance().player.rotationPitch)
       };
    }
 
@@ -124,8 +124,8 @@ public class BlockUtil {
       float var15 = (float)(Math.atan2(var11, var7) * 180.0 / Math.PI) - 90.0F;
       float var16 = (float)(-(Math.atan2(var9, var13) * 180.0 / Math.PI));
       return new float[]{
-         Minecraft.getInstance().player.rotationYaw + MathHelper.method37792(var15 - Minecraft.getInstance().player.rotationYaw),
-         Minecraft.getInstance().player.rotationPitch + MathHelper.method37792(var16 - Minecraft.getInstance().player.rotationPitch)
+         Minecraft.getInstance().player.rotationYaw + MathHelper.wrapDegrees(var15 - Minecraft.getInstance().player.rotationYaw),
+         Minecraft.getInstance().player.rotationPitch + MathHelper.wrapDegrees(var16 - Minecraft.getInstance().player.rotationPitch)
       };
    }
 
@@ -178,8 +178,8 @@ public class BlockUtil {
       float var15 = (float)(Math.atan2(var11, var7) * 180.0 / Math.PI) - 90.0F;
       float var16 = (float)(-(Math.atan2(var9, var13) * 180.0 / Math.PI));
       return new float[]{
-         Minecraft.getInstance().player.rotationYaw + MathHelper.method37792(var15 - Minecraft.getInstance().player.rotationYaw),
-         Minecraft.getInstance().player.rotationPitch + MathHelper.method37792(var16 - Minecraft.getInstance().player.rotationPitch)
+         Minecraft.getInstance().player.rotationYaw + MathHelper.wrapDegrees(var15 - Minecraft.getInstance().player.rotationYaw),
+         Minecraft.getInstance().player.rotationPitch + MathHelper.wrapDegrees(var16 - Minecraft.getInstance().player.rotationPitch)
       };
    }
 
@@ -391,8 +391,8 @@ public class BlockUtil {
          float var17 = (float)(Math.atan2(var13, var9) * 180.0 / Math.PI) - 90.0F;
          float var18 = (float)(-(Math.atan2(var11, var15) * 180.0 / Math.PI));
          return new float[]{
-            Minecraft.getInstance().player.rotationYaw + MathHelper.method37792(var17 - Minecraft.getInstance().player.rotationYaw),
-            Minecraft.getInstance().player.rotationPitch + MathHelper.method37792(var18 - Minecraft.getInstance().player.rotationPitch)
+            Minecraft.getInstance().player.rotationYaw + MathHelper.wrapDegrees(var17 - Minecraft.getInstance().player.rotationYaw),
+            Minecraft.getInstance().player.rotationPitch + MathHelper.wrapDegrees(var18 - Minecraft.getInstance().player.rotationPitch)
          };
       } else {
          return null;
@@ -635,15 +635,15 @@ public class BlockUtil {
          float[] var16 = RotationHelper.method34144(var7.x, var7.z, var7.y);
          float var17 = var16[0];
          float var18 = var16[1];
-         float var19 = Math.abs(RotationHelper.method34142(MathHelper.method37792(var0), MathHelper.method37792(var14)));
-         float var20 = Math.abs(RotationHelper.method34142(MathHelper.method37792(var0), MathHelper.method37792(var17)));
+         float var19 = Math.abs(RotationHelper.method34142(MathHelper.wrapDegrees(var0), MathHelper.wrapDegrees(var14)));
+         float var20 = Math.abs(RotationHelper.method34142(MathHelper.wrapDegrees(var0), MathHelper.wrapDegrees(var17)));
          return !(var19 < var20) ? new float[]{var17, var18} : new float[]{var14, var15};
       }
    }
 
    public static Direction method34580(BlockPos var0) {
       Direction var3 = Direction.UP;
-      float var4 = MathHelper.method37792(method34581(var0, Direction.UP)[0]);
+      float var4 = MathHelper.wrapDegrees(method34581(var0, Direction.UP)[0]);
       if (var4 >= 45.0F && var4 <= 135.0F) {
          var3 = Direction.EAST;
       } else if ((!(var4 >= 135.0F) || !(var4 <= 180.0F)) && (!(var4 <= -135.0F) || !(var4 >= -180.0F))) {
@@ -656,7 +656,7 @@ public class BlockUtil {
          var3 = Direction.SOUTH;
       }
 
-      if (MathHelper.method37792(method34581(var0, Direction.UP)[1]) > 75.0F || MathHelper.method37792(method34581(var0, Direction.UP)[1]) < -75.0F) {
+      if (MathHelper.wrapDegrees(method34581(var0, Direction.UP)[1]) > 75.0F || MathHelper.wrapDegrees(method34581(var0, Direction.UP)[1]) < -75.0F) {
          var3 = Direction.UP;
       }
 

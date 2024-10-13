@@ -74,7 +74,7 @@ public class Class2854<T extends Class1066> extends Class2827<T> {
 
    @Override
    public void render(MatrixStack var1, IVertexBuilder var2, int var3, int var4, float var5, float var6, float var7, float var8) {
-      if (!this.field17602) {
+      if (!this.isChild) {
          ImmutableList.of(
                this.field17677, this.field17678, this.field17679, this.field17680, this.field17681, this.field17682, this.field17683, this.field17684
             )

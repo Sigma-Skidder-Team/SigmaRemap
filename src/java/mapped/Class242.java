@@ -19,7 +19,7 @@ public class Class242<T extends LivingEntity, M extends Class2827<T> & IHasArm> 
       ItemStack var15 = !var13 ? var4.getHeldItemOffhand() : var4.getHeldItemMainhand();
       if (!var14.isEmpty() || !var15.isEmpty()) {
          var1.push();
-         if (this.method825().field17602) {
+         if (this.method825().isChild) {
             float var16 = 0.5F;
             var1.translate(0.0, 0.75, 0.0);
             var1.scale(0.5F, 0.5F, 0.5F);

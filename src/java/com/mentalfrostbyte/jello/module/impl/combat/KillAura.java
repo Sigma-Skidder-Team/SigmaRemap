@@ -287,8 +287,8 @@ public class KillAura extends Module {
     @EventTarget
     public void on2D(EventRender var1) {
         if (timedEntityIdk != null && !this.getBooleanValueFromSettingName("Silent") && !this.getStringSettingValueByName("Rotation Mode").equals("None")) {
-            float var4 = MathHelper.method37792(this.rotations2.yaw + (this.rotations.yaw - this.rotations2.yaw) * mc.getRenderPartialTicks());
-            float var5 = MathHelper.method37792(this.rotations2.pitch + (this.rotations.pitch - this.rotations2.pitch) * mc.getRenderPartialTicks());
+            float var4 = MathHelper.wrapDegrees(this.rotations2.yaw + (this.rotations.yaw - this.rotations2.yaw) * mc.getRenderPartialTicks());
+            float var5 = MathHelper.wrapDegrees(this.rotations2.pitch + (this.rotations.pitch - this.rotations2.pitch) * mc.getRenderPartialTicks());
             mc.player.rotationYaw = var4;
             mc.player.rotationPitch = var5;
         }

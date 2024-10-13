@@ -718,7 +718,7 @@ public abstract class MobEntity extends LivingEntity {
    }
 
    private float method4263(float var1, float var2, float var3) {
-      float var6 = MathHelper.method37792(var2 - var1);
+      float var6 = MathHelper.wrapDegrees(var2 - var1);
       if (var6 > var3) {
          var6 = var3;
       }

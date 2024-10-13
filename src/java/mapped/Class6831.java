@@ -32,8 +32,8 @@ public class Class6831 extends Class6829 {
       double var10 = (double) MathHelper.sqrt(var3 * var3 + var5 * var5 + var4 * var4);
       float var12 = this.field29717.rotationYaw;
       float var13 = (float) MathHelper.method37814((double)var5, (double)var3);
-      float var14 = MathHelper.method37792(this.field29717.rotationYaw + 90.0F);
-      float var15 = MathHelper.method37792(var13 * (180.0F / (float)Math.PI));
+      float var14 = MathHelper.wrapDegrees(this.field29717.rotationYaw + 90.0F);
+      float var15 = MathHelper.wrapDegrees(var13 * (180.0F / (float)Math.PI));
       this.field29717.rotationYaw = MathHelper.method37798(var14, var15, 4.0F) - 90.0F;
       this.field29717.renderYawOffset = this.field29717.rotationYaw;
       if (!(MathHelper.method37795(var12, this.field29717.rotationYaw) < 3.0F)) {

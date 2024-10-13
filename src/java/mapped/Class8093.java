@@ -25,7 +25,7 @@ public class Class8093 extends Class8092 {
          this.field34812.rotationPitch = this.method28049(this.field34812.rotationPitch, this.method28047() + 10.0F, this.field34814);
       }
 
-      float var3 = MathHelper.method37792(this.field34812.rotationYawHead - this.field34812.renderYawOffset);
+      float var3 = MathHelper.wrapDegrees(this.field34812.rotationYawHead - this.field34812.renderYawOffset);
       if (!(var3 < (float)(-this.field34820))) {
          if (var3 > (float)this.field34820) {
             this.field34812.renderYawOffset += 4.0F;

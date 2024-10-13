@@ -56,7 +56,7 @@ public class Class2871<T extends Class1096> extends Class2866<T> {
       this.field17777.rotationPointY = this.field17776.rotationPointY;
       this.field17777.rotationPointZ = this.field17776.rotationPointZ;
       this.field17777.rotateAngleX -= var10 * (float) Math.PI * 0.45F;
-      if (!this.field17602) {
+      if (!this.isChild) {
          this.field17772.rotationPointY = 10.0F * var11 - 14.0F * var10;
          this.field17772.rotationPointZ = -16.0F * var11 - 3.0F * var10;
       } else {

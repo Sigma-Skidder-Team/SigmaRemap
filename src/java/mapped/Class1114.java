@@ -136,7 +136,7 @@ public class Class1114 extends Class1113 {
          );
          this.setMotion(var13);
          float var14 = (float)(MathHelper.method37814(var13.z, var13.x) * 180.0F / (float)Math.PI) - 90.0F;
-         float var15 = MathHelper.method37792(var14 - this.rotationYaw);
+         float var15 = MathHelper.wrapDegrees(var14 - this.rotationYaw);
          this.moveForward = 0.5F;
          this.rotationYaw += var15;
          if (this.rand.nextInt(100) == 0 && this.world.getBlockState(var4).method23400(this.world, var4)) {

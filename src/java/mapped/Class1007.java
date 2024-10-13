@@ -169,7 +169,7 @@ public class Class1007 extends MobEntity implements Class1008 {
             this.field5633 += 0.1F;
          }
 
-         this.rotationYaw = MathHelper.method37792(this.rotationYaw);
+         this.rotationYaw = MathHelper.wrapDegrees(this.rotationYaw);
          if (!this.method4305()) {
             if (this.field5622 < 0) {
                for (int var5 = 0; var5 < this.field5621.length; var5++) {
@@ -205,7 +205,7 @@ public class Class1007 extends MobEntity implements Class1008 {
                   }
 
                   this.setMotion(this.getMotion().add(0.0, var11 * 0.01, 0.0));
-                  this.rotationYaw = MathHelper.method37792(this.rotationYaw);
+                  this.rotationYaw = MathHelper.wrapDegrees(this.rotationYaw);
                   double var20 = MathHelper.clamp(
                      MathHelper.wrapDegrees(180.0 - MathHelper.method37814(var9, var13) * 180.0F / (float)Math.PI - (double)this.rotationYaw), -50.0, 50.0
                   );

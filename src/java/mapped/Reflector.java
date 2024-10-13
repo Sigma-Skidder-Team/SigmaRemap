@@ -117,7 +117,7 @@ public class Reflector {
    public static Class6631 field42835 = new Class6631(field42834, "canUpdate", new Class[0]);
    public static Class6631 field42836 = new Class6631(field42834, "onAddedToWorld");
    public static Class6631 IForgeEntity_onRemovedFromWorld = new Class6631(field42834, "onRemovedFromWorld");
-   public static Class6631 field42838 = new Class6631(field42834, "shouldRiderSit");
+   public static Class6631 IForgeEntity_shouldRiderSit = new Class6631(field42834, "shouldRiderSit");
    public static Class6636 field42839 = new Class6636("net.minecraftforge.fluids.FluidAttributes");
    public static Class6631 field42840 = new Class6631(field42839, "getColor", new Class[]{IBlockDisplayReader.class, BlockPos.class});
    public static Class6636 field42841 = new Class6636(EntityType.class);

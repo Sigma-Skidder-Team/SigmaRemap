@@ -284,7 +284,7 @@ public class BlockFlySmoothMode extends Module {
                     break;
                 case "Cubecraft":
                     double var6 = 0.2;
-                    float var8 = this.method16894(MathHelper.method37792(mc.player.rotationYaw));
+                    float var8 = this.method16894(MathHelper.wrapDegrees(mc.player.rotationYaw));
                     if (mc.gameSettings.keyBindJump.isKeyDown()) {
                         mc.timer.timerSpeed = 1.0F;
                     } else if (mc.player.onGround) {

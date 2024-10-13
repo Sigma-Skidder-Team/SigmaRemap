@@ -26,7 +26,7 @@ import java.util.List;
 
 public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827<T>> extends EntityRenderer<T> implements Class5714<T, M> {
    private static final Logger field25085 = LogManager.getLogger();
-   public M field25086;
+   public M entityModel;
    public final List<Class219<T, M>> field25087 = Lists.newArrayList();
    public LivingEntity field25088;
    public float field25089;
@@ -35,12 +35,12 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
    public float field25092;
    public float field25093;
    public float field25094;
-   public static final boolean field25095 = Boolean.getBoolean("animate.model.living");
+   public static final boolean animateModelLiving = Boolean.getBoolean("animate.model.living");
    public float field25096 = 1.0F;
 
    public LivingRenderer(EntityRendererManager var1, M var2, float var3) {
       super(var1);
-      this.field25086 = (M)var2;
+      this.entityModel = (M)var2;
       this.shadowSize = var3;
    }
 
@@ -50,78 +50,78 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
 
    @Override
    public M getEntityModel() {
-      return this.field25086;
+      return this.entityModel;
    }
 
-   public void render(T var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
-      if (!Reflector.field42990.exists() || !Reflector.postForgeBusEvent(Reflector.field42990, var1, this, var3, var4, var5, var6)) {
-         if (field25095) {
-            var1.field4960 = 1.0F;
+   public void render(T entityIn, float var2, float var3, MatrixStack matrixStackIn, Class7733 var5, int var6) {
+      if (!Reflector.field42990.exists() || !Reflector.postForgeBusEvent(Reflector.field42990, entityIn, this, var3, matrixStackIn, var5, var6)) {
+         if (animateModelLiving) {
+            entityIn.limbSwingAmount = 1.0F;
          }
 
-         var4.push();
-         this.field25086.swingProgress = this.method17885((T)var1, var3);
-         this.field25086.isSitting = var1.isPassenger();
-         if (Reflector.field42838.exists()) {
-            this.field25086.isSitting = var1.isPassenger() && var1.getRidingEntity() != null && Reflector.method35064(var1.getRidingEntity(), Reflector.field42838);
+         matrixStackIn.push();
+         this.entityModel.swingProgress = this.getSwingProgress((T)entityIn, var3);
+         this.entityModel.isSitting = entityIn.isPassenger();
+         if (Reflector.IForgeEntity_shouldRiderSit.exists()) {
+            this.entityModel.isSitting = entityIn.isPassenger() && entityIn.getRidingEntity() != null && Reflector.method35064(entityIn.getRidingEntity(), Reflector.IForgeEntity_shouldRiderSit);
          }
 
-         this.field25086.field17602 = var1.isChild();
-         float var9 = MathHelper.method37827(var3, var1.prevRenderYawOffset, var1.renderYawOffset);
-         float var10 = MathHelper.method37827(var3, var1.prevRotationYawHead, var1.rotationYawHead);
-         float var11 = var10 - var9;
-         if (this.field25086.isSitting && var1.getRidingEntity() instanceof LivingEntity) {
-            LivingEntity var12 = (LivingEntity)var1.getRidingEntity();
-            var9 = MathHelper.method37827(var3, var12.prevRenderYawOffset, var12.renderYawOffset);
-            var11 = var10 - var9;
-            float var13 = MathHelper.method37792(var11);
-            if (var13 < -85.0F) {
-               var13 = -85.0F;
+         this.entityModel.isChild = entityIn.isChild();
+         float f = MathHelper.interpolateAngle(var3, entityIn.prevRenderYawOffset, entityIn.renderYawOffset);
+         float f1 = MathHelper.interpolateAngle(var3, entityIn.prevRotationYawHead, entityIn.rotationYawHead);
+         float f2 = f1 - f;
+         if (this.entityModel.isSitting && entityIn.getRidingEntity() instanceof LivingEntity) {
+            LivingEntity livingentity = (LivingEntity)entityIn.getRidingEntity();
+            f = MathHelper.interpolateAngle(var3, livingentity.prevRenderYawOffset, livingentity.renderYawOffset);
+            f2 = f1 - f;
+            float f3 = MathHelper.wrapDegrees(f2);
+            if (f3 < -85.0F) {
+               f3 = -85.0F;
             }
 
-            if (var13 >= 85.0F) {
-               var13 = 85.0F;
+            if (f3 >= 85.0F) {
+               f3 = 85.0F;
             }
 
-            var9 = var10 - var13;
-            if (var13 * var13 > 2500.0F) {
-               var9 += var13 * 0.2F;
+            f = f1 - f3;
+            if (f3 * f3 > 2500.0F) {
+               f += f3 * 0.2F;
             }
 
-            var11 = var10 - var9;
+            f2 = f1 - f;
          }
 
-         float var31 = MathHelper.lerp(var3, var1.prevRotationPitch, var1.rotationPitch);
-         EventRenderEntity var33 = new EventRenderEntity(var9, var10, var11, var31, var3, var1);
+         float f7 = MathHelper.lerp(var3, entityIn.prevRotationPitch, entityIn.rotationPitch);
+         EventRenderEntity var33 = new EventRenderEntity(f, f1, f2, f7, var3, entityIn);
          Client.getInstance().getEventManager().call(var33);
          if (var33.isCancelled()) {
-            var4.pop();
+            matrixStackIn.pop();
             return;
          }
 
-         var9 = var33.method13944();
-         var10 = var33.method13945();
-         var11 = var33.method13946();
-         var31 = var33.method13947();
-         if (var1.getPose() == Pose.field13621) {
-            Direction var14 = var1.getBedDirection();
+         f = var33.method13944();
+         f1 = var33.method13945();
+         f2 = var33.method13946();
+         f7 = var33.method13947();
+         if (entityIn.getPose() == Pose.field13621) {
+            Direction var14 = entityIn.getBedDirection();
             if (var14 != null) {
-               float var15 = var1.getEyeHeight(Pose.STANDING) - 0.1F;
-               var4.translate((double)((float)(-var14.getXOffset()) * var15), 0.0, (double)((float)(-var14.getZOffset()) * var15));
+               float var15 = entityIn.getEyeHeight(Pose.STANDING) - 0.1F;
+               matrixStackIn.translate((double)((float)(-var14.getXOffset()) * var15), 0.0, (double)((float)(-var14.getZOffset()) * var15));
             }
          }
 
-         float var34 = this.method17871((T)var1, var3);
-         this.method17842((T)var1, var4, var34, var9, var3);
-         var4.scale(-1.0F, -1.0F, 1.0F);
-         this.method17857((T)var1, var4, var3);
-         var4.translate(0.0, -1.501F, 0.0);
+         float var34 = this.method17871((T)entityIn, var3);
+         this.method17842((T)entityIn, matrixStackIn, var34, f, var3);
+         matrixStackIn.scale(-1.0F, -1.0F, 1.0F);
+         this.method17857((T)entityIn, matrixStackIn, var3);
+         matrixStackIn.translate(0.0, -1.501F, 0.0);
          float var35 = 0.0F;
          float var16 = 0.0F;
-         if (!var1.isPassenger() && var1.isAlive()) {
-            var35 = MathHelper.lerp(var3, var1.prevLimbSwingAmount, var1.field4960);
-            var16 = var1.field4961 - var1.field4960 * (1.0F - var3);
-            if (var1.isChild()) {
+         if (!entityIn.isPassenger() && entityIn.isAlive()) {
+            var35 = MathHelper.lerp(var3, entityIn.prevLimbSwingAmount, entityIn.limbSwingAmount);
+            var16 = entityIn.field4961 - entityIn.limbSwingAmount * (1.0F - var3);
+            if (entityIn.isChild()) {
                var16 *= 3.0F;
             }
 
@@ -132,29 +132,29 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
 
          var33.setState(RenderState.field13213);
          Client.getInstance().getEventManager().call(var33);
-         this.field25086.setLivingAnimations((T)var1, var16, var35, var3);
-         this.field25086.setRotationAngles((T)var1, var16, var35, var34, var11, var31);
+         this.entityModel.setLivingAnimations((T)entityIn, var16, var35, var3);
+         this.entityModel.setRotationAngles((T)entityIn, var16, var35, var34, f2, f7);
          if (CustomEntityModels.isActive()) {
-            this.field25088 = var1;
+            this.field25088 = entityIn;
             this.field25089 = var16;
             this.field25090 = var35;
             this.field25091 = var34;
-            this.field25092 = var11;
-            this.field25093 = var31;
+            this.field25092 = f2;
+            this.field25093 = f7;
             this.field25094 = var3;
          }
 
          boolean var17 = Config.isShaders();
          Minecraft var18 = Minecraft.getInstance();
-         boolean var19 = this.method17869((T)var1);
-         boolean var20 = !var19 && !var1.isInvisibleToPlayer(var18.player);
-         boolean var21 = var18.isEntityGlowing(var1);
-         RenderType var22 = this.method17882((T)var1, var19, var20, var21);
+         boolean var19 = this.method17869((T)entityIn);
+         boolean var20 = !var19 && !entityIn.isInvisibleToPlayer(var18.player);
+         boolean var21 = var18.isEntityGlowing(entityIn);
+         RenderType var22 = this.method17882((T)entityIn, var19, var20, var21);
          if (var22 != null) {
             IVertexBuilder var23 = var5.method25597(var22);
-            float var24 = this.method17879((T)var1, var3);
+            float var24 = this.method17879((T)entityIn, var3);
             if (var17) {
-               if (var1.hurtTime > 0 || var1.deathTime > 0) {
+               if (entityIn.hurtTime > 0 || entityIn.deathTime > 0) {
                   Shaders.method33086(1.0F, 0.0F, 0.0F, 0.3F);
                }
 
@@ -163,13 +163,13 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
                }
             }
 
-            int var25 = method17883(var1, var24);
-            this.field25086.render(var4, var23, var6, var25, 1.0F, 1.0F, 1.0F, (!var20 ? 1.0F : 0.15F) * this.field25096);
+            int var25 = method17883(entityIn, var24);
+            this.entityModel.render(matrixStackIn, var23, var6, var25, 1.0F, 1.0F, 1.0F, (!var20 ? 1.0F : 0.15F) * this.field25096);
          }
 
-         if (!var1.isSpectator() && var33.method13954()) {
+         if (!entityIn.isSpectator() && var33.method13954()) {
             for (Class219 var37 : this.field25087) {
-               var37.method820(var4, var5, var6, var1, var16, var35, var3, var34, var11, var31);
+               var37.method820(matrixStackIn, var5, var6, entityIn, var16, var35, var3, var34, f2, f7);
             }
          }
 
@@ -183,10 +183,10 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
 
          var33.setState(RenderState.field13214);
          Client.getInstance().getEventManager().call(var33);
-         var4.pop();
-         super.render((T)var1, var2, var3, var4, var5, var6);
+         matrixStackIn.pop();
+         super.render((T)entityIn, var2, var3, matrixStackIn, var5, var6);
          if (Reflector.field42992.exists()) {
-            Reflector.postForgeBusEvent(Reflector.field42992, var1, this, var3, var4, var5, var6);
+            Reflector.postForgeBusEvent(Reflector.field42992, entityIn, this, var3, matrixStackIn, var5, var6);
          }
       }
    }
@@ -201,12 +201,12 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
       if (!var3) {
          if (!var2) {
             if (var1.isGlowing() && !Config.method26860().worldRenderer.isRenderEntityOutlines()) {
-               return this.field25086.method11028(var7);
+               return this.entityModel.method11028(var7);
             } else {
                return !var4 ? null : RenderType.method14329(var7);
             }
          } else {
-            return this.field25086.method11028(var7);
+            return this.entityModel.method11028(var7);
          }
       } else {
          return RenderType.method14315(var7);
@@ -284,7 +284,7 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
       }
    }
 
-   public float method17885(T var1, float var2) {
+   public float getSwingProgress(T var1, float var2) {
       return var1.getSwingProgress(var2);
    }
 

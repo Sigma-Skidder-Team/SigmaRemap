@@ -90,7 +90,7 @@ public class Class2876<T extends Class1094> extends Class2827<T> {
 
    @Override
    public void render(MatrixStack var1, IVertexBuilder var2, int var3, int var4, float var5, float var6, float var7, float var8) {
-      if (!this.field17602) {
+      if (!this.isChild) {
          var1.push();
          var1.scale(0.6F, 0.6F, 0.6F);
          var1.translate(0.0, 1.0, 0.0);

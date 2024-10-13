@@ -243,7 +243,7 @@ public abstract class Class995 extends Entity {
          }
       }
 
-      float var4 = MathHelper.method37792(this.rotationYaw);
+      float var4 = MathHelper.wrapDegrees(this.rotationYaw);
       switch (Class9399.field43617[var1.ordinal()]) {
          case 1:
             return var4 + 180.0F;

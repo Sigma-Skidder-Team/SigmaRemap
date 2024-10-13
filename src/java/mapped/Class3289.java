@@ -45,7 +45,7 @@ public class Class3289 extends Item {
                }
 
                var11.method6995(var12);
-               float var13 = (float) MathHelper.floor((MathHelper.method37792(var1.method18352() - 180.0F) + 22.5F) / 45.0F) * 45.0F;
+               float var13 = (float) MathHelper.floor((MathHelper.wrapDegrees(var1.method18352() - 180.0F) + 22.5F) / 45.0F) * 45.0F;
                var12.setLocationAndAngles(var12.getPosX(), var12.getPosY(), var12.getPosZ(), var13, 0.0F);
                this.method11828(var12, var5.rand);
                var5.addEntity(var12);

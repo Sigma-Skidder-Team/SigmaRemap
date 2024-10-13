@@ -98,7 +98,7 @@ public class Class4298 extends Class4278 {
             this.field20824.getRenderManager().info = new ActiveRenderInfo();
          }
 
-         this.field20828.field4960 = var10 * 0.5F;
+         this.field20828.limbSwingAmount = var10 * 0.5F;
          InventoryScreen.drawEntityOnScreen(0, 390, 160, 0.0F, 0.0F, this.field20828);
          this.field20824.getRenderManager().method32215(true);
          RenderSystem.popMatrix();

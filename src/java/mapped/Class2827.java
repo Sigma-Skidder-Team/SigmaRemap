@@ -8,7 +8,7 @@ import java.util.function.Function;
 public abstract class Class2827<T extends Entity> extends Class2828 {
    public float swingProgress;
    public boolean isSitting;
-   public boolean field17602 = true;
+   public boolean isChild = true;
 
    public Class2827() {
       this(RenderType::getEntityCutoutNoCull);
@@ -26,6 +26,6 @@ public abstract class Class2827<T extends Entity> extends Class2828 {
    public void copyModelAttributesTo(Class2827<T> var1) {
       var1.swingProgress = this.swingProgress;
       var1.isSitting = this.isSitting;
-      var1.field17602 = this.field17602;
+      var1.isChild = this.isChild;
    }
 }

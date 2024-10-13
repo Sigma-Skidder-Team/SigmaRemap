@@ -33,7 +33,7 @@ public class Class6836 extends Class6829 {
             } else {
                this.field29723.setAIMoveSpeed(var12 * 0.02F);
                float var13 = -((float)(MathHelper.method37814(var5, (double) MathHelper.sqrt(var3 * var3 + var7 * var7)) * 180.0F / (float)Math.PI));
-               var13 = MathHelper.clamp(MathHelper.method37792(var13), -85.0F, 85.0F);
+               var13 = MathHelper.clamp(MathHelper.wrapDegrees(var13), -85.0F, 85.0F);
                this.field29723.rotationPitch = this.method20816(this.field29723.rotationPitch, var13, 5.0F);
                float var14 = MathHelper.cos(this.field29723.rotationPitch * (float) (Math.PI / 180.0));
                float var15 = MathHelper.sin(this.field29723.rotationPitch * (float) (Math.PI / 180.0));

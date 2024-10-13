@@ -199,7 +199,7 @@ public class MathHelper {
       return var3;
    }
 
-   public static float method37792(float var0) {
+   public static float wrapDegrees(float var0) {
       float var3 = var0 % 360.0F;
       if (var3 >= 180.0F) {
          var3 -= 360.0F;
@@ -226,7 +226,7 @@ public class MathHelper {
    }
 
    public static float method37794(float var0, float var1) {
-      return method37792(var1 - var0);
+      return wrapDegrees(var1 - var0);
    }
 
    public static float method37795(float var0, float var1) {
@@ -512,8 +512,8 @@ public class MathHelper {
       }
    }
 
-   public static float method37827(float var0, float var1, float var2) {
-      return var1 + var0 * method37792(var2 - var1);
+   public static float interpolateAngle(float var0, float var1, float var2) {
+      return var1 + var0 * wrapDegrees(var2 - var1);
    }
 
    @Deprecated

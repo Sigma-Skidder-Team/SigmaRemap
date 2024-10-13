@@ -20,7 +20,7 @@ public class RotationHelper {
    public static long field42015;
 
    public static float calculate(float var0, float var1, float var2) {
-      float var5 = MathHelper.method37792(var1 - var0);
+      float var5 = MathHelper.wrapDegrees(var1 - var0);
       if (var5 > var2) {
          var5 = var2;
       }
@@ -293,11 +293,11 @@ public class RotationHelper {
          var11 = Math.toDegrees(-Math.atan(var7 / var9));
       }
 
-      return MathHelper.method37792(-(var0 - (float)var11));
+      return MathHelper.wrapDegrees(-(var0 - (float)var11));
    }
 
    public static float method34152(float var0, float var1) {
-      return MathHelper.method37792(-(var0 - var1));
+      return MathHelper.wrapDegrees(-(var0 - var1));
    }
 
    private double method34153(double var1, double var3) {
@@ -310,6 +310,6 @@ public class RotationHelper {
       double var10 = var2 - 2.2 + (double)var1.getEyeHeight() - mc.player.getPosY();
       double var12 = (double) MathHelper.sqrt(var6 * var6 + var8 * var8);
       double var14 = -Math.toDegrees(Math.atan(var10 / var12));
-      return -MathHelper.method37792(var0 - (float)var14) - 2.5F;
+      return -MathHelper.wrapDegrees(var0 - (float)var14) - 2.5F;
    }
 }

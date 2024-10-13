@@ -83,7 +83,7 @@ public class Class2864<T extends Class1095> extends AgeableModel<T> {
                this.field17750.setRotationPoint(-1.0F, 10.0F, -0.25F);
                this.field17750.rotateAngleX = 0.0F;
                this.field17750.rotateAngleY = 0.0F;
-               if (this.field17602) {
+               if (this.isChild) {
                   this.field17750.setRotationPoint(-1.0F, 13.0F, -3.75F);
                }
 
@@ -98,7 +98,7 @@ public class Class2864<T extends Class1095> extends AgeableModel<T> {
             this.field17754.rotateAngleZ = (float) (-Math.PI / 2);
             this.field17754.setRotationPoint(0.0F, 21.0F, -6.0F);
             this.field17759.rotateAngleX = (float) (-Math.PI * 5.0 / 6.0);
-            if (this.field17602) {
+            if (this.isChild) {
                this.field17759.rotateAngleX = -2.1816616F;
                this.field17754.setRotationPoint(0.0F, 21.0F, -2.0F);
             }

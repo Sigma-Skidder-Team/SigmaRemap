@@ -720,7 +720,7 @@ public class BoatEntity extends Entity {
 
    public void method4160(Entity var1) {
       var1.setRenderYawOffset(this.rotationYaw);
-      float var4 = MathHelper.method37792(var1.rotationYaw - this.rotationYaw);
+      float var4 = MathHelper.wrapDegrees(var1.rotationYaw - this.rotationYaw);
       float var5 = MathHelper.clamp(var4, -105.0F, 105.0F);
       var1.prevRotationYaw += var5 - var4;
       var1.rotationYaw += var5 - var4;
