@@ -14,6 +14,7 @@ import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
+import com.mentalfrostbyte.jello.util.Rots;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import com.mentalfrostbyte.jello.util.animation.MathHelper;
@@ -373,6 +374,7 @@ public class BlockFly extends ModuleWithModuleSettings {
 
     @Override
     public void onDisable() {
+        Rots.rotating = false;
         this.field23885.changeDirection(Direction.BACKWARDS);
         super.onDisable();
     }

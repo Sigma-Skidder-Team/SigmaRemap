@@ -15,6 +15,7 @@ import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
+import com.mentalfrostbyte.jello.util.Rots;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import lol.MovementUtils;
 import mapped.*;
@@ -28,8 +29,8 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 
 public class BlockFlyNCPMode extends Module {
-    private float field23921;
-    private float field23922;
+    private float pitch;
+    private float yaw;
     private Class7843 field23923;
     private int field23924 = -1;
     private int field23925;
@@ -86,7 +87,7 @@ public class BlockFlyNCPMode extends Module {
     @Override
     public void onEnable() {
         this.field23924 = mc.player.inventory.currentItem;
-        this.field23922 = this.field23921 = 999.0F;
+        this.yaw = this.pitch = 999.0F;
         ((BlockFly) this.access()).field23884 = -1;
         if (mc.gameSettings.keyBindSneak.isKeyDown() && this.getBooleanValueFromSettingName("Downwards")) {
             mc.gameSettings.keyBindSneak.pressed = false;
@@ -169,9 +170,9 @@ public class BlockFlyNCPMode extends Module {
 
     @EventTarget
     @LowerPriority
-    public void method16808(EventUpdate var1) {
+    public void method16808(EventUpdate event) {
         if (this.isEnabled() && this.field23928.method16735() != 0) {
-            if (!var1.isPre()) {
+            if (!event.isPre()) {
                 this.field23928.method16736();
                 if (this.field23923 != null) {
                     BlockRayTraceResult var13 = new BlockRayTraceResult(
@@ -195,7 +196,7 @@ public class BlockFlyNCPMode extends Module {
                 }
             } else {
                 this.field23925++;
-                var1.method13908(true);
+                event.method13908(true);
                 this.field23927 = Hand.MAIN_HAND;
                 if (BlockFly.method16733(mc.player.getHeldItem(Hand.OFF_HAND).getItem())
                         && (
@@ -205,9 +206,9 @@ public class BlockFlyNCPMode extends Module {
                     this.field23927 = Hand.OFF_HAND;
                 }
 
-                double var4 = var1.getX();
-                double var6 = var1.getZ();
-                double var8 = var1.getY();
+                double var4 = event.getX();
+                double var6 = event.getZ();
+                double var8 = event.getY();
                 if (!mc.player.collidedHorizontally && !mc.gameSettings.keyBindJump.pressed) {
                     double[] var10 = this.method16813();
                     var4 = var10[0];
@@ -242,26 +243,39 @@ public class BlockFlyNCPMode extends Module {
                     this.field23923 = var11;
                     if (var11 != null) {
                         float[] var12 = BlockUtil.method34542(this.field23923.field33646, this.field23923.field33647);
-                        this.field23922 = var12[0];
-                        this.field23921 = var12[1];
-                        var1.setYaw(this.field23922);
-                        var1.setPitch(this.field23921);
-                        mc.player.rotationYawHead = var1.getPitch();
-                        mc.player.renderYawOffset = var1.getPitch();
+                        this.yaw = var12[0];
+                        this.pitch = var12[1];
+                        Rots.rotating = true;
+                        Rots.prevYaw = this.yaw;
+                        Rots.prevPitch = this.pitch;
+                        event.setYaw(this.yaw);
+                        event.setPitch(this.pitch);
+                        Rots.yaw = this.yaw;
+                        Rots.pitch = this.pitch;
+
+                        mc.player.rotationYawHead = event.getYaw();
+                        mc.player.renderYawOffset = event.getYaw();
                     }
                 } else {
-                    if (this.getBooleanValueFromSettingName("KeepRotations") && this.field23921 != 999.0F) {
-                        var1.setYaw(this.field23922);
-                        var1.setPitch(this.field23921);
-                        mc.player.rotationYawHead = var1.getPitch();
-                        mc.player.renderYawOffset = var1.getPitch();
+                    if (this.getBooleanValueFromSettingName("KeepRotations") && this.pitch != 999.0F) {
+                        Rots.rotating = true;
+                        Rots.rotating = true;
+                        Rots.prevYaw = this.yaw;
+                        Rots.prevPitch = this.pitch;
+                        event.setYaw(this.yaw);
+                        event.setPitch(this.pitch);
+                        Rots.yaw = this.yaw;
+                        Rots.pitch = this.pitch;
+
+                        mc.player.rotationYawHead = event.getYaw();
+                        mc.player.renderYawOffset = event.getYaw();
                     }
 
                     this.field23923 = null;
                 }
 
 
-                if (mc.player.rotationYaw != var1.getYaw() && mc.player.rotationPitch != var1.getPitch()) {
+                if (mc.player.rotationYaw != event.getYaw() && mc.player.rotationPitch != event.getPitch()) {
                     this.field23925 = 0;
                 }
             }
