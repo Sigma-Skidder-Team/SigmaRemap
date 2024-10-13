@@ -55,7 +55,7 @@ public class RearView extends Module {
                                 var1x -> var1x.getDistance(mc.player) < 12.0F
                                         && !this.isEntityWithinViewAngle(var1x)
                                         && mc.player != var1x
-                                        && !Client.getInstance().getCombatManager().isValidTarget(var1x)
+                                        && !Client.getInstance().getCombatManager().isTargetABot(var1x)
                         );
                 if (entities.isEmpty()) {
                     if (this.visibilityTimer > 0) {

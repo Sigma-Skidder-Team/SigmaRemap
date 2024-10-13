@@ -39,7 +39,7 @@ public class Tracers extends Module {
                         && var5.isAlive()
                         && var5.boundingBox.getAverageEdgeLength() > 0.8
                         && var5.ticksExisted > 30
-                        && !Client.getInstance().getCombatManager().isValidTarget(var5)) {
+                        && !Client.getInstance().getCombatManager().isTargetABot(var5)) {
                     this.method16522(var5);
                 }
             }

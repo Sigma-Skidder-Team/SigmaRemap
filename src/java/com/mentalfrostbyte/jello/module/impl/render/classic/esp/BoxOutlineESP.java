@@ -56,7 +56,7 @@ public class BoxOutlineESP extends Module {
                             (var1, var2) -> {
                                 boolean var5 = MultiUtilities.method17744(var2) == Class2258.field14690 && this.access().getBooleanValueFromSettingName("Show Players");
                                 boolean var6 = !var2.isInvisible() || this.access().getBooleanValueFromSettingName("Show Invisibles");
-                                if (!Client.getInstance().getCombatManager().isValidTarget(var2) && var5 && var6 && var2 != mc.player) {
+                                if (!Client.getInstance().getCombatManager().isTargetABot(var2) && var5 && var6 && var2 != mc.player) {
                                     double var7 = Class9647.method37623(var2).field43722;
                                     double var9 = Class9647.method37623(var2).field43723;
                                     double var11 = Class9647.method37623(var2).field43724;
@@ -86,7 +86,7 @@ public class BoxOutlineESP extends Module {
 
     private void method16508(boolean var1) {
         for (Entity var5 : mc.world.getEntities()) {
-            if (!Client.getInstance().getCombatManager().isValidTarget(var5)) {
+            if (!Client.getInstance().getCombatManager().isTargetABot(var5)) {
                 boolean var6 = MultiUtilities.method17744(var5) == Class2258.field14690 && this.access().getBooleanValueFromSettingName("Show Players");
                 boolean var7 = MultiUtilities.method17744(var5) == Class2258.field14689 && this.access().getBooleanValueFromSettingName("Show Mobs");
                 boolean var8 = MultiUtilities.method17744(var5) == Class2258.field14691 && this.access().getBooleanValueFromSettingName("Show Passives");

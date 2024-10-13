@@ -306,12 +306,12 @@ public class PlayerController {
       return new ClientPlayerEntity(this.mc, var1, this.connection, var2, var3, var4, var5);
    }
 
-   public void attackEntity(PlayerEntity var1, Entity var2) {
+   public void attackEntity(PlayerEntity player, Entity target) {
       this.syncCurrentPlayItem();
-      this.connection.sendPacket(new CUseEntityPacket(var2, var1.isSneaking()));
+      this.connection.sendPacket(new CUseEntityPacket(target, player.isSneaking()));
       if (this.currentGameType != GameType.SPECTATOR) {
-         var1.attackTargetEntityWithCurrentItem(var2);
-         var1.resetCooldown();
+         player.attackTargetEntityWithCurrentItem(target);
+         player.resetCooldown();
       }
    }
 

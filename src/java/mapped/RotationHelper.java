@@ -199,20 +199,20 @@ public class RotationHelper {
       return var6;
    }
 
-   public static Rotations getRotations(Entity var0, boolean var1) {
-      Vector3d var4 = MultiUtilities.method17751(var0);
-      if (var1 && !raytraceVector(var4)) {
+   public static Rotations getRotations(Entity targetIn, boolean throughWalls) {
+      Vector3d var4 = MultiUtilities.method17751(targetIn);
+      if (throughWalls && !raytraceVector(var4)) {
          for (int var5 = -1; var5 < 2; var5++) {
             double var6 = (double)var5;
             if (var5 != -1) {
-               var6 *= var0.boundingBox.method19677();
+               var6 *= targetIn.boundingBox.method19677();
             } else {
-               var6 = (double)(var0.getEyeHeight() - 0.02F);
+               var6 = (double)(targetIn.getEyeHeight() - 0.02F);
             }
 
-            double xPos = var0.getPosX();
-            double zPos = var0.getPosZ();
-            double yPos = var0.getPosY() + var6 + 0.05;
+            double xPos = targetIn.getPosX();
+            double zPos = targetIn.getPosZ();
+            double yPos = targetIn.getPosY() + var6 + 0.05;
             double playerxPos = xPos - mc.player.getPosX();
             double playeryPos = yPos - (double) mc.player.getEyeHeight() - 0.02F - mc.player.getPosY();
             double playerzPos = zPos - mc.player.getPosZ();
@@ -225,11 +225,11 @@ public class RotationHelper {
             }
 
             for (int var25 = -1; var25 < 2; var25 += 2) {
-               xPos = var0.getPosX() + (var0.getPosX() - var0.lastTickPosX) * (double) mc.getRenderPartialTicks();
-               zPos = var0.getPosZ() + (var0.getPosZ() - var0.lastTickPosZ) * (double) mc.getRenderPartialTicks();
-               yPos = var0.getPosY() + 0.05 + (var0.getPosY() - var0.lastTickPosY) * (double) mc.getRenderPartialTicks() + var6;
-               double var26 = var0.boundingBox.method19676() / 2.5 * (double)var25;
-               double var28 = var0.boundingBox.method19678() / 2.5 * (double)var25;
+               xPos = targetIn.getPosX() + (targetIn.getPosX() - targetIn.lastTickPosX) * (double) mc.getRenderPartialTicks();
+               zPos = targetIn.getPosZ() + (targetIn.getPosZ() - targetIn.lastTickPosZ) * (double) mc.getRenderPartialTicks();
+               yPos = targetIn.getPosY() + 0.05 + (targetIn.getPosY() - targetIn.lastTickPosY) * (double) mc.getRenderPartialTicks() + var6;
+               double var26 = targetIn.boundingBox.method19676() / 2.5 * (double)var25;
+               double var28 = targetIn.boundingBox.method19678() / 2.5 * (double)var25;
                if (!(mc.player.getPosX() < xPos + var26)) {
                   if (mc.player.getPosX() > xPos + var26) {
                      if (!(mc.player.getPosZ() < zPos - var28)) {

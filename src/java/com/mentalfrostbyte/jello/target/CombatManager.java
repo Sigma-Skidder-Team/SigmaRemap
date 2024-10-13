@@ -22,8 +22,8 @@ public class CombatManager {
         Client.getInstance().getEventManager().register(this);
     }
 
-    public boolean isValidTarget(Entity var1) {
-        return this.bots.contains(var1);
+    public boolean isTargetABot(Entity target) {
+        return this.bots.contains(target);
     }
 
     public void method29347() {

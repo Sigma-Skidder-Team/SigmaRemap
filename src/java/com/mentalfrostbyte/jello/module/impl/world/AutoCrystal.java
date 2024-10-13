@@ -35,12 +35,6 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class AutoCrystal extends Module {
-    private static float field23629;
-    private static float field23630;
-    private static boolean field23631;
-    private static final boolean field23634 = false;
-    private final TimerUtil field23628 = new TimerUtil();
-    private BlockPos field23632;
     private Entity field23633;
     private Runnable field23635 = null;
     private int field23636;
@@ -165,8 +159,6 @@ public class AutoCrystal extends Module {
 
     @Override
     public void onEnable() {
-        this.field23628.reset();
-        this.field23628.start();
         this.field23635 = null;
     }
 
@@ -321,13 +313,6 @@ public class AutoCrystal extends Module {
         return var9;
     }
 
-    private void method16384(Vector3d var1) {
-        Rotations var4 = RotationHelper.getRotationsToVector(var1);
-        field23629 = var4.yaw;
-        field23630 = var4.pitch;
-        field23631 = true;
-    }
-
     public List<Entity> method16385(float var1) {
         List var4 = MultiUtilities.getEntitesInWorld();
         Iterator var5 = var4.iterator();
@@ -343,7 +328,7 @@ public class AutoCrystal extends Module {
                                     if (!(var6 instanceof ArmorStandEntity)) {
                                         if (!this.getBooleanValueFromSettingName("Players") && var6 instanceof PlayerEntity) {
                                             var5.remove();
-                                        } else if (var6 instanceof PlayerEntity && Client.getInstance().getCombatManager().isValidTarget(var6)) {
+                                        } else if (var6 instanceof PlayerEntity && Client.getInstance().getCombatManager().isTargetABot(var6)) {
                                             var5.remove();
                                         } else if (!this.getBooleanValueFromSettingName("Invisible") && var6.isInvisible()) {
                                             var5.remove();

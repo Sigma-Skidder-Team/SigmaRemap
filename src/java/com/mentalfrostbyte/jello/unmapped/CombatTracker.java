@@ -92,7 +92,7 @@ public class CombatTracker {
             while (var5.hasNext()) {
                 AbstractClientPlayerEntity var6 = var5.next();
                 if (this.field36053.contains(var6.getUniqueID())
-                        || Client.getInstance().getCombatManager().isValidTarget(var6)
+                        || Client.getInstance().getCombatManager().isTargetABot(var6)
                         || var6.getName().getUnformattedComponentText().equals("")) {
                     var5.remove();
                 }
