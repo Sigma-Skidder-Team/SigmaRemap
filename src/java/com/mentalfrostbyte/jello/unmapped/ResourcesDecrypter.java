@@ -12,7 +12,6 @@ import java.awt.image.BufferedImage;
 import java.io.*;
 
 public class ResourcesDecrypter {
-    public static final String field32485 = "com/mentalfrostbyte/gui/resources/";
     public static Texture multiplayerPNG;
     public static Texture optionsPNG;
     public static Texture singleplayerPNG;
@@ -84,7 +83,6 @@ public class ResourcesDecrypter {
     public static Texture youtubePNG;
     public static Texture guildedPNG;
     public static Texture redditPNG;
-    private static final byte[] xorKey = new byte[]{89, -73, -35, -84, 17, -87, -79, -44};
 
     public static void decrypt() {
         multiplayerPNG = loadTexture("com/mentalfrostbyte/gui/resources/jello/icons/multiplayer.png");
@@ -157,14 +155,6 @@ public class ResourcesDecrypter {
         guildedPNG = loadTexture("com/mentalfrostbyte/gui/resources/loading/guilded.png");
         redditPNG = loadTexture("com/mentalfrostbyte/gui/resources/loading/reddit.png");
         dvdPNG = loadTexture("com/mentalfrostbyte/gui/resources/jello/dvd.png");
-        readInputStream("com/mentalfrostbyte/gui/resources/audio/activate.mp3");
-        readInputStream("com/mentalfrostbyte/gui/resources/audio/deactivate.mp3");
-        readInputStream("com/mentalfrostbyte/gui/resources/audio/click.mp3");
-        readInputStream("com/mentalfrostbyte/gui/resources/audio/error.mp3");
-        readInputStream("com/mentalfrostbyte/gui/resources/audio/pop.mp3");
-        readInputStream("com/mentalfrostbyte/gui/resources/audio/connect.mp3");
-        readInputStream("com/mentalfrostbyte/gui/resources/audio/switch.mp3");
-        readInputStream("com/mentalfrostbyte/gui/resources/audio/clicksound.mp3");
         panoramaPNG = createScaledAndProcessedTexture1("com/mentalfrostbyte/gui/resources/" + getPanoramaPNG(), 0.25F, 30);
     }
 
@@ -173,7 +163,6 @@ public class ResourcesDecrypter {
             String extension = filePath.substring(filePath.lastIndexOf(".") + 1).toUpperCase();
             return loadTexture(filePath, extension);
         } catch (Exception e) {
-            e.printStackTrace();
             Client.getInstance().getLogger().error(
                     "Unable to load texture " + filePath +
                             ". Please make sure it is a valid path and has a valid extension."

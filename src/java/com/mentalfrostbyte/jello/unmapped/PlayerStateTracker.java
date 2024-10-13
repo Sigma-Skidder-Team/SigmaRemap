@@ -21,7 +21,7 @@ public class PlayerStateTracker {
    private float ping = 1.0F;
    private Minecraft mc = Minecraft.getInstance();
 
-   public void REGISSTER() {
+   public void init() {
       Client.getInstance().getEventManager().register(this);
    }
 

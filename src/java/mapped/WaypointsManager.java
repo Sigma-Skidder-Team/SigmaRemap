@@ -32,7 +32,6 @@ import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
 import totalcross.json.JSONArray;
 import org.lwjgl.BufferUtils;
-import totalcross.json.JSONException;
 import totalcross.json.JSONException2;
 import totalcross.json.JSONObject;
 
@@ -50,7 +49,7 @@ public class WaypointsManager {
    public HashMap<Long, ByteBuffer> field36375 = new HashMap<Long, ByteBuffer>();
    public ByteBuffer field36376 = BufferUtils.createByteBuffer(this.field36370 * 16 * this.field36370 * 16 * 3);
 
-   public void register() {
+   public void init() {
       Client.getInstance().getEventManager().register(this);
       int var3 = -7687425;
 

@@ -30,7 +30,7 @@ public class Class8795 {
    private boolean field39617 = true;
    public Class9510 field39618 = null;
 
-   public void method31737() {
+   public void init() {
       Client.getInstance().getEventManager().register(this);
    }
 

@@ -117,7 +117,7 @@ public class MusicManager {
         return var5;
     }
 
-    public void method24293(){
+    public void init(){
         Client.getInstance().getEventManager().register(this);
         try {
             this.method24295();

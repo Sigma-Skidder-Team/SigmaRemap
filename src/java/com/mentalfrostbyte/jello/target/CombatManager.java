@@ -18,7 +18,7 @@ public class CombatManager {
     public Class7249 antiBot;
     public List<Entity> bots = new CopyOnWriteArrayList<Entity>();
 
-    public void method29345() {
+    public void init() {
         Client.getInstance().getEventManager().register(this);
     }
 

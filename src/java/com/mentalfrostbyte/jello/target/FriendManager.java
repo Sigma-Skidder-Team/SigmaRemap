@@ -18,7 +18,7 @@ public class FriendManager {
     public List<String> friends = new CopyOnWriteArrayList<>();
     private final Minecraft field34179 = Minecraft.getInstance();
 
-    public void method26995() {
+    public void init() {
         Client.getInstance().getEventManager().register(this);
         try {
             this.method27011();

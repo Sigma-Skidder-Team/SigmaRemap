@@ -4,17 +4,14 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import net.minecraft.network.play.server.SSetSlotPacket;
-import net.minecraft.client.Minecraft;
 
 import java.util.Date;
 import java.util.HashMap;
 
 public class SlotChangeTracker {
-   private static String[] field41139;
-   private Minecraft field41140 = Minecraft.getInstance();
    private HashMap<Integer, Date> field41141 = new HashMap<Integer, Date>();
 
-   public void method33236() {
+   public void init() {
       Client.getInstance().getEventManager().register(this);
    }
 
