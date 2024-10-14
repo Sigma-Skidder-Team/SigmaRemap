@@ -32,7 +32,7 @@ public class Class1291 extends Class1286<Class1177> {
       if (var5 == 0 && var3 >= (double)this.field6787 && var3 <= (double)this.field6788) {
          int var8 = this.field6785 / 2 - 150;
          if (Class804.method2001(this.field6855) != null) {
-            Util.getOSType().method8181(Class804.method2001(this.field6855));
+            Util.getOSType().openLink(Class804.method2001(this.field6855));
          }
 
          int var9 = (int)Math.floor(var3 - (double)this.field6787) - this.field6795 + (int)this.method6044() - 4;

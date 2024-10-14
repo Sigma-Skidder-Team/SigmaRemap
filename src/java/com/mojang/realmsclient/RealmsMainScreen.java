@@ -255,7 +255,7 @@ public class RealmsMainScreen extends RealmsScreen {
       this.field4303 = this.<Button>addButton(
          new Button(this.width / 2 + 52, this.method2043() + 137 - 20, 98, 20, new TranslationTextComponent("mco.selectServer.trial"), var1 -> {
             if (this.field4287 && !this.field4288) {
-               Util.getOSType().method8181("https://aka.ms/startjavarealmstrial");
+               Util.getOSType().openLink("https://aka.ms/startjavarealmstrial");
                this.mc.displayGuiScreen(this.field4272);
             }
          })
@@ -267,7 +267,7 @@ public class RealmsMainScreen extends RealmsScreen {
             98,
             20,
             new TranslationTextComponent("mco.selectServer.buy"),
-            var0 -> Util.getOSType().method8181("https://aka.ms/BuyJavaRealms")
+            var0 -> Util.getOSType().openLink("https://aka.ms/BuyJavaRealms")
          )
       );
       RealmsServer var3 = this.method2034(this.field4274);
@@ -452,7 +452,7 @@ public class RealmsMainScreen extends RealmsScreen {
             + "&ref="
             + (!var3.field27453 ? "expiredRealm" : "expiredTrial");
          this.mc.keyboardListener.method36350(var4);
-         Util.getOSType().method8181(var4);
+         Util.getOSType().openLink(var4);
       }
    }
 

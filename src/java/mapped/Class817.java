@@ -88,7 +88,7 @@ public class Class817 extends RealmsScreen {
          return super.mouseClicked(var1, var3, var5);
       } else {
          this.mc.keyboardListener.method36350("https://aka.ms/MinecraftRealmsTerms");
-         Util.getOSType().method8181("https://aka.ms/MinecraftRealmsTerms");
+         Util.getOSType().openLink("https://aka.ms/MinecraftRealmsTerms");
          return true;
       }
    }

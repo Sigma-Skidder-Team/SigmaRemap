@@ -15,7 +15,7 @@ public class Class1224 extends Button {
       this.field6569 = var1;
       this.field6513 = var1x -> {
          if (RealmsMainScreen.method2115(this.field6569) != null) {
-            Util.getOSType().method8181(RealmsMainScreen.method2115(this.field6569));
+            Util.getOSType().openLink(RealmsMainScreen.method2115(this.field6569));
             if (RealmsMainScreen.method2113(this.field6569)) {
                Class6113 var4 = Class8068.method27770();
                var4.field27379 = false;

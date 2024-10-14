@@ -78,7 +78,7 @@ public class Class804 extends RealmsScreen {
    @Override
    public boolean mouseClicked(double var1, double var3, int var5) {
       if (this.field4214 && this.field4212 != null) {
-         Util.getOSType().method8181("https://www.minecraft.net/realms/adventure-maps-in-1-9");
+         Util.getOSType().openLink("https://www.minecraft.net/realms/adventure-maps-in-1-9");
          return true;
       } else {
          return super.mouseClicked(var1, var3, var5);
@@ -180,7 +180,7 @@ public class Class804 extends RealmsScreen {
       if (this.method1966()) {
          Class6130 var3 = this.method1962();
          if (!"".equals(var3.field27470)) {
-            Util.getOSType().method8181(var3.field27470);
+            Util.getOSType().openLink(var3.field27470);
          }
       }
    }
@@ -189,7 +189,7 @@ public class Class804 extends RealmsScreen {
       if (this.method1966()) {
          Class6130 var3 = this.method1962();
          if (!"".equals(var3.field27468)) {
-            Util.getOSType().method8181(var3.field27468);
+            Util.getOSType().openLink(var3.field27468);
          }
       }
    }

@@ -40,7 +40,7 @@ public class AccessibilityScreen extends Class1140 {
             new TranslationTextComponent("options.accessibility.link"),
             var1 -> this.mc.displayGuiScreen(new Class830(var1x -> {
                   if (var1x) {
-                     Util.getOSType().method8181("https://aka.ms/MinecraftJavaAccessibility");
+                     Util.getOSType().openLink("https://aka.ms/MinecraftJavaAccessibility");
                   }
 
                   this.mc.displayGuiScreen(this);

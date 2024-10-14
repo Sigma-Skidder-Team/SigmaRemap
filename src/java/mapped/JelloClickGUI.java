@@ -86,30 +86,30 @@ public class JelloClickGUI extends Screen {
    }
 
    public boolean method13314() {
-      if (Client.getInstance().getMusicManager().method24334() && Client.getInstance().getMusicManager().method24335()) {
+      if (Client.getInstance().getMusicManager().hasPython() && Client.getInstance().getMusicManager().hasVCRedist()) {
          return false;
       } else if (this.field20950 == null) {
          this.method13222(() -> {
             List<MiniAlert> var3 = new ArrayList();
             var3.add(new MiniAlert(AlertType.HEADER, "Music", 40));
             var3.add(new MiniAlert(AlertType.FIRSTLINE, "Jello Music requires:", 20));
-            if (!Client.getInstance().getMusicManager().method24334()) {
+            if (!Client.getInstance().getMusicManager().hasPython()) {
                var3.add(new MiniAlert(AlertType.FIRSTLINE, "- Python 3.12.5", 30));
             }
 
-            if (!Client.getInstance().getMusicManager().method24335()) {
+            if (!Client.getInstance().getMusicManager().hasVCRedist()) {
                var3.add(new MiniAlert(AlertType.FIRSTLINE, "- Visual C++ 2010 x86", 30));
             }
 
             var3.add(new MiniAlert(AlertType.BUTTON, "Download", 55));
             this.method13233(this.field20950 = new AlertPanel(this, "music", true, "Dependencies.", var3.toArray(new MiniAlert[0])));
             this.field20950.method13036(var0 -> {
-               if (!Client.getInstance().getMusicManager().method24334()) {
-                  Util.getOSType().method8181("https://www.python.org/ftp/python/3.12.5/python-3.12.5-macos11.pkg");
+               if (!Client.getInstance().getMusicManager().hasPython()) {
+                  Util.getOSType().openLink("https://www.python.org/ftp/python/3.12.5/python-3.12.5-macos11.pkg");
                }
 
-               if (!Client.getInstance().getMusicManager().method24335()) {
-                  Util.getOSType().method8181("https://www.microsoft.com/en-US/Download/confirmation.aspx?id=26999");
+               if (!Client.getInstance().getMusicManager().hasVCRedist()) {
+                  Util.getOSType().openLink("https://www.microsoft.com/en-US/Download/confirmation.aspx?id=26999");
                }
             });
             this.field20950.method13604(var1 -> new Thread(() -> {

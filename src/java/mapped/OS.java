@@ -15,9 +15,7 @@ public enum OS {
    OSX,
    UNKNOWN;
 
-   private static final OS[] field11208 = new OS[]{LINUX, SOLARIS, WINDOWS, OSX, UNKNOWN};
-
-   private OS() {
+   OS() {
    }
 
    public void openURL(URL url) {
@@ -65,16 +63,7 @@ public enum OS {
       }
    }
 
-   public String[] method8180(URL var1) {
-      String var4 = var1.toString();
-      if ("file".equals(var1.getProtocol())) {
-         var4 = var4.replace("file:", "file://");
-      }
-
-      return new String[]{"xdg-open", var4};
-   }
-
-   public void method8181(String var1) {
+   public void openLink(String var1) {
       try {
          this.openURL(new URI(var1).toURL());
       } catch (URISyntaxException | MalformedURLException | IllegalArgumentException var5) {

@@ -62,7 +62,7 @@ public class IngameMenuScreen extends Screen {
             new TranslationTextComponent("menu.sendFeedback"),
             var2 -> this.mc.displayGuiScreen(new Class830(var2x -> {
                   if (var2x) {
-                     Util.getOSType().method8181(var5);
+                     Util.getOSType().openLink(var5);
                   }
 
                   this.mc.displayGuiScreen(this);
@@ -78,7 +78,7 @@ public class IngameMenuScreen extends Screen {
             new TranslationTextComponent("menu.reportBugs"),
             var1 -> this.mc.displayGuiScreen(new Class830(var1x -> {
                   if (var1x) {
-                     Util.getOSType().method8181("https://aka.ms/snapshotbugs?ref=game");
+                     Util.getOSType().openLink("https://aka.ms/snapshotbugs?ref=game");
                   }
 
                   this.mc.displayGuiScreen(this);

@@ -23,7 +23,7 @@ public class Class1308 extends Screen {
       this.<Button>addButton(
          new Button(this.width / 2 - 116, this.height / 2 + 62 + -16, 114, 20, new TranslationTextComponent("demo.help.buy"), var0 -> {
             var0.active = false;
-            Util.getOSType().method8181("http://www.minecraft.net/store?source=demo");
+            Util.getOSType().openLink("http://www.minecraft.net/store?source=demo");
          })
       );
       this.<Button>addButton(

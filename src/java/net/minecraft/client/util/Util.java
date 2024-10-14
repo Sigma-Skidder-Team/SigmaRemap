@@ -456,9 +456,7 @@ public class Util {
       return field45725;
    }
 
-   // $VF: synthetic method
-   public static Exception method38543(Exception var0) {
+   public static void method38543(Exception var0) {
       field45726 = var0;
-      return var0;
    }
 }

@@ -100,7 +100,7 @@ public class SocialInteractionsScreen extends Screen {
       this.field6233 = this.<Button>addButton(new Button(var5 - var3 + 1, 45, var3, 20, field6218, var1 -> this.method5486(Class2332.field15953)));
       this.field6234 = this.<Button>addButton(new Button(var8, var7, var6, 20, field6226, var1 -> this.mc.displayGuiScreen(new Class830(var1x -> {
             if (var1x) {
-               Util.getOSType().method8181("https://aka.ms/javablocking");
+               Util.getOSType().openLink("https://aka.ms/javablocking");
             }
 
             this.mc.displayGuiScreen(this);

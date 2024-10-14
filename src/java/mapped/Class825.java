@@ -63,7 +63,7 @@ public class Class825 extends RealmsScreen {
                   + "&profileId="
                   + this.mc.getSession().getPlayerID();
                this.mc.keyboardListener.method36350(var4);
-               Util.getOSType().method8181(var4);
+               Util.getOSType().openLink(var4);
             }
          )
       );

@@ -78,7 +78,7 @@ public class LoginScreen extends Class4247 {
          LoginAndOutScreen var5x = (LoginAndOutScreen)this.getIcoPanel();
          var5x.method13422();
       });
-      this.forgotButton.doThis((var0, var1x) -> Util.getOSType().method8181("https://sigma-web-alpha.vercel.app/"));
+      this.forgotButton.doThis((var0, var1x) -> Util.getOSType().openLink("https://sigma-web-alpha.vercel.app/"));
    }
 
    @Override

@@ -132,7 +132,7 @@ public class Class842 extends Class838 {
 
                      if (var14) {
                         Config.method26810("Opening via system class!");
-                        Util.getOSType().method8181("file://" + Shaders.field40892.getAbsolutePath());
+                        Util.getOSType().openLink("file://" + Shaders.field40892.getAbsolutePath());
                      }
                      break;
                   case 202:

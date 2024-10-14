@@ -28,12 +28,12 @@ public class Class820 extends RealmsScreen {
       int var7 = (int)((double)this.font.method38821(var6) * 1.2);
       this.<Button>addButton(
          new Button(
-            this.width / 2 - var7 / 2, method1929(11), var7, 20, var6, var0 -> Util.getOSType().method8181("https://aka.ms/MinecraftGDPR")
+            this.width / 2 - var7 / 2, method1929(11), var7, 20, var6, var0 -> Util.getOSType().openLink("https://aka.ms/MinecraftGDPR")
          )
       );
       this.<Button>addButton(
          new Button(
-            this.width / 2 - (var5 + 5), method1929(13), var5, 20, var3, var0 -> Util.getOSType().method8181("https://aka.ms/UpdateMojangAccount")
+            this.width / 2 - (var5 + 5), method1929(13), var5, 20, var3, var0 -> Util.getOSType().openLink("https://aka.ms/UpdateMojangAccount")
          )
       );
       this.<Button>addButton(new Button(this.width / 2 + 5, method1929(13), var5, 20, var4, var1 -> this.mc.displayGuiScreen(this.field4474)));
