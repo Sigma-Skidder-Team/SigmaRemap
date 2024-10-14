@@ -647,6 +647,10 @@ public class MusicManager {
         File var3 = new File(Client.getInstance().getFile() + "/music/yt-dlp");
         if (Util.getOSType() == OS.WINDOWS) {
             var3 = new File(Client.getInstance().getFile() + "/music/yt-dlp.exe");
+        } else if (Util.getOSType() == OS.LINUX) {
+            var3 = new File(Client.getInstance().getFile() + "/music/yt-dlp_linux");
+        } else if (Util.getOSType() == OS.OSX) {
+            var3 = new File(Client.getInstance().getFile() + "/music/yt-dlp_macos");
         }
 
         return var3.exists();
@@ -679,7 +683,7 @@ public class MusicManager {
                         fileOutputStream.write(dataBuffer, 0, bytesRead);
                     }
                     finished = true;
-                    System.out.println("Finished download yt-dlp");
+                    System.out.println("Finished downloading yt-dlp");
                 } catch (IOException e) {
                     System.out.println(e.getMessage());
                     finished = false;
@@ -691,84 +695,15 @@ public class MusicManager {
         }
     }
 
-    /*
-    public void extract() {
-        if (!this.finished) {
-            InputStream inputStream = null;
-            try {
-                // Load the yt-dlp file from the JAR resources
-                if (Util.getOSType() == OS.WINDOWS) {
-                    inputStream = getClass().getClassLoader().getResourceAsStream("yt-dlp.exe");
-                } else if (Util.getOSType() == OS.LINUX) {
-                    inputStream = getClass().getClassLoader().getResourceAsStream("yt-dlp_linux");
-                } else if (Util.getOSType() == OS.OSX) {
-                    inputStream = getClass().getClassLoader().getResourceAsStream("yt-dlp_macos");
-                } else {
-                    System.out.println("Failed to extract yt-dlp, because your OS is unsupported.");
-                    return;
-                }
-
-                if (inputStream == null) {
-                    System.out.println("Failed to find yt-dlp resource in the JAR.");
-                    return;
-                }
-
-                File musicDir = new File(Client.getInstance().getFile() + "/music/");
-                musicDir.mkdirs();  // Create the music directory if it doesn't exist
-
-                Client.getInstance().getLogger().dummyMethod("Updating dependencies");
-
-                String fileName = Util.getOSType() == OS.WINDOWS ? "yt-dlp.exe"
-                        : Util.getOSType() == OS.LINUX ? "yt-dlp_linux"
-                        : "yt-dlp_macos";
-                File targetFile = new File(Client.getInstance().getFile() + "/music/" + fileName);
-
-                try (FileOutputStream outputStream = new FileOutputStream(targetFile)) {
-                    // Buffer for reading input stream data
-                    byte[] buffer = new byte[4096];
-                    int bytesRead;
-
-                    // Read from the input stream and write to the target file
-                    while ((bytesRead = inputStream.read(buffer)) != -1) {
-                        outputStream.write(buffer, 0, bytesRead);
-                    }
-
-                    System.out.println("Extraction completed: " + targetFile.getName());
-
-                    // If not on Windows, set execute permissions
-                    if (Util.getOSType() != OS.WINDOWS) {
-                        Set<PosixFilePermission> permissions = PosixFilePermissions.fromString("rwxr-xr-x");
-                        Files.setPosixFilePermissions(Paths.get(targetFile.getAbsolutePath()), permissions);
-                    }
-
-                } catch (IOException e) {
-                    System.out.println("Failed to extract the file: " + fileName);
-                    System.out.println(e.getMessage());
-                }
-
-                this.finished = true;  // Mark the extraction as completed
-            } catch (Exception e) {
-                System.out.println("Failed: " + e.getMessage());
-            } finally {
-                if (inputStream != null) {
-                    try {
-                        inputStream.close();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        }
-    }
-     */
-
     public String method24333() {
-        String var3 = Client.getInstance().getFile().getAbsolutePath() + "/music/yt-dlp";
+        String fileName =
+        Util.getOSType() == OS.WINDOWS ? "yt-dlp.exe"
+        : Util.getOSType() == OS.LINUX ? "yt-dlp_linux"
+                                       : "yt-dlp_macos";
+        String var3 = Client.getInstance().getFile().getAbsolutePath() + "/music/" + fileName;
         if (Util.getOSType() != OS.WINDOWS) {
             File var4 = new File(var3);
             var4.setExecutable(true);
-        } else {
-            var3 = var3 + ".exe";
         }
 
         return var3;
