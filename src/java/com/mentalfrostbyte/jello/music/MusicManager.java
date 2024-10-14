@@ -33,17 +33,11 @@ import javax.sound.sampled.*;
 import javax.sound.sampled.FloatControl.Type;
 import java.awt.image.BufferedImage;
 import java.io.*;
-import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.attribute.PosixFilePermission;
-import java.nio.file.attribute.PosixFilePermissions;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 public class MusicManager {
     private static final float field32167 = 32768.0F;
@@ -57,12 +51,10 @@ public class MusicManager {
     private MusicPlayerVideo field32145;
     private int field32146 = 50;
     private long field32147 = -1L;
-    private final Thread field32148 = new Thread();
     private Texture field32151;
     private BufferedImage field32152;
     private Texture field32153;
     private boolean field32154 = false;
-    private boolean field32155;
     private transient volatile Thread field32156 = null;
     private int field32157;
     private long field32158 = 0L;
@@ -165,9 +157,9 @@ public class MusicManager {
             if (this.field32144 && this.field32163.size() != 0) {
                 double[] var4 = this.field32163.get(0);
                 if (this.field32165.isEmpty()) {
-                    for (int var5 = 0; var5 < var4.length; var5++) {
+                    for (double v : var4) {
                         if (this.field32165.size() < 1024) {
-                            this.field32165.add(var4[var5]);
+                            this.field32165.add(v);
                         }
                     }
                 }
@@ -182,24 +174,21 @@ public class MusicManager {
                         this.field32165.set(var6, 0.0);
                     }
                 }
-
-                if (this.field32165.isEmpty()) {
-                }
             }
         }
     }
 
     @EventTarget
     private void method24297(EventRender2D var1) {
-        if (this.field32144 && this.field32163.size() != 0 && this.field32161) {
+        if (this.field32144 && !this.field32163.isEmpty() && this.field32161) {
             this.method24298();
         }
     }
 
     private void method24298() {
-        if (this.field32163.size() != 0) {
+        if (!this.field32163.isEmpty()) {
             if (this.field32151 != null) {
-                if (this.field32165.size() != 0) {
+                if (!this.field32165.isEmpty()) {
                     float var3 = 114.0F;
                     float var4 = (float) Math.ceil((float) field32143.mainWindow.getWidth() / var3);
 
@@ -324,16 +313,11 @@ public class MusicManager {
         }
 
         if (!this.field32154) {
-            this.method24301(this.field32160);
+            this.method24301();
         }
     }
 
-    public YoutubeVideoData method24300() {
-        int var3 = 0;
-        return var3 >= this.field32145.youtubeVideos.size() ? null : this.field32145.youtubeVideos.get(var3);
-    }
-
-    private void method24301(YoutubeVideoData var1) {
+    private void method24301() {
         if (this.field32160 != null) {
             this.field32163.clear();
             new Thread(() -> this.method24309(this.field32160)).start();
@@ -387,7 +371,7 @@ public class MusicManager {
                                     Class1782 var9 = new Class1782(var8, new Class8808(this));
                                     Class8490 var10 = new Class8490(var9);
                                     Class8583 var11 = var10.method30073();
-                                    List var12 = var11.method30672();
+                                    List<Class7354> var12 = var11.method30672();
                                     if (var12.isEmpty()) {
                                         Client.getClientLogger().dummyMethod("No content");
                                     }
@@ -454,8 +438,6 @@ public class MusicManager {
 
                                     this.field32166.close();
                                     var9.close();
-                                } else {
-                                    Thread.sleep(1000L);
                                 }
                             } catch (IOException var24) {
                                 if (var24.getMessage() != null && var24.getMessage().contains("403")) {
@@ -464,9 +446,6 @@ public class MusicManager {
                                 }
                             } catch (LineUnavailableException var25) {
                                 var25.printStackTrace();
-                            } catch (InterruptedException var26) {
-                                var26.printStackTrace();
-                                break;
                             }
 
                             if (this.field32162 == Class189.field718) {
@@ -477,7 +456,7 @@ public class MusicManager {
                                 return;
                             }
 
-                            if (var4 < -1 || var4 >= this.field32145.youtubeVideos.size()) {
+                            if (var4 >= this.field32145.youtubeVideos.size()) {
                                 var4 = 0;
                             }
                         }
@@ -584,16 +563,8 @@ public class MusicManager {
         this.method24302();
     }
 
-    public boolean method24318() {
-        return true;
-    }
-
     public boolean method24319() {
         return this.field32144;
-    }
-
-    public URL method24320() {
-        return null;
     }
 
     public long method24321() {
@@ -662,7 +633,7 @@ public class MusicManager {
                 var6.setValue(false);
                 var5.setValue((float) (Math.log((double) var2 / 100.0) / Math.log(10.0) * 20.0));
             }
-        } catch (Exception var7) {
+        } catch (Exception ignored) {
         }
     }
 
@@ -700,29 +671,18 @@ public class MusicManager {
                 File targetFile = new File(Client.getInstance().getFile() + "/music/" + fileName);
 
                 String urlString = "https://github.com/yt-dlp/yt-dlp/releases/download/2024.10.07/" + fileName;
-                try {
-                    URL url = new URL(urlString);
-                    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-                    connection.setRequestMethod("GET");
-                    connection.setConnectTimeout(10000);
-                    connection.setReadTimeout(10000);
-
-                    try (InputStream in = connection.getInputStream();
-                         FileOutputStream out = new FileOutputStream(targetFile)) {
-
-                        byte[] buffer = new byte[4096];
-                        int bytesRead;
-
-                        while ((bytesRead = in.read(buffer)) != -1) {
-                            out.write(buffer, 0, bytesRead);
-                        }
-
-                        this.finished = true;
-                        System.out.println("Download complete: " + targetFile.getAbsolutePath());
+                try (BufferedInputStream in = new BufferedInputStream(new URL(urlString).openStream());
+                     FileOutputStream fileOutputStream = new FileOutputStream(targetFile)) {
+                    byte[] dataBuffer = new byte[1024];
+                    int bytesRead;
+                    while ((bytesRead = in.read(dataBuffer, 0, 1024)) != -1) {
+                        fileOutputStream.write(dataBuffer, 0, bytesRead);
                     }
+                    finished = true;
+                    System.out.println("Finished download yt-dlp");
                 } catch (IOException e) {
-                    System.err.println("Failed to download file: " + e.getMessage());
-                    this.finished = false;
+                    System.out.println(e.getMessage());
+                    finished = false;
                 }
             } else {
                 System.out.println("Failed to extract yt-dlp, because your OS is unsupported.");
@@ -814,30 +774,30 @@ public class MusicManager {
         return var3;
     }
 
-    public boolean method24334() {
+    public boolean hasPython() {
         if (Util.getOSType() == OS.WINDOWS) {
             return true;
         } else {
             File var3 = new File("/usr/local/bin/python");
             if (var3.exists()) {
-                Process var4 = null;
+                Process var4;
 
                 try {
                     var4 = new ProcessBuilder("/usr/local/bin/python", "-V").start();
                     InputStream var5 = var4.getErrorStream();
                     InputStreamReader var6 = new InputStreamReader(var5);
-                    BufferedReader var7 = new BufferedReader(var6);
+                    BufferedReader bufferedReader = new BufferedReader(var6);
 
-                    String var8;
+                    String version;
                     try {
-                        while ((var8 = var7.readLine()) != null) {
-                            if (var8.contains("3.12.5")) {
+                        while ((version = bufferedReader.readLine()) != null) {
+                            if (version.contains("3.12.5")) {
                                 return true;
                             }
                         }
-                    } catch (IOException var10) {
+                    } catch (IOException ignored) {
                     }
-                } catch (IOException var11) {
+                } catch (IOException ignored) {
                 }
             }
 
@@ -845,7 +805,7 @@ public class MusicManager {
         }
     }
 
-    public boolean method24335() {
+    public boolean hasVCRedist() {
         if (Util.getOSType() != OS.WINDOWS) {
             return true;
         } else {
@@ -856,13 +816,13 @@ public class MusicManager {
                         WinReg.HKEY_LOCAL_MACHINE, "SOFTWARE\\WOW6432Node\\Microsoft\\VisualStudio\\10.0\\VC\\VCRedist\\x86", "Installed"
                 )
                         == 1;
-            } catch (RuntimeException var5) {
+            } catch (RuntimeException ignored) {
             }
 
             try {
                 var3 = var3
                         || Advapi32Util.registryGetIntValue(WinReg.HKEY_LOCAL_MACHINE, "SOFTWARE\\Microsoft\\VisualStudio\\10.0\\VC\\VCRedist\\x86", "Installed") == 1;
-            } catch (RuntimeException var6) {
+            } catch (RuntimeException ignored) {
             }
 
             return var3;
