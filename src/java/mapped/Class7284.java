@@ -387,11 +387,6 @@ public final class Class7284 {
       return this.field31257;
    }
 
-   @Nullable
-   public String method22970() {
-      return !Class9474.method36558(this.field31252) ? Class8003.method27342().method27343(this.field31252) : null;
-   }
-
    public static String method22971(String var0, boolean var1) {
       return method22973(var0, 0, var0.length(), var1);
    }

@@ -69,43 +69,6 @@ public final class Class9454 {
       return this.field43927;
    }
 
-   public boolean method36366() {
-      return this.field43933;
-   }
-
-   public long method36367() {
-      return this.field43928;
-   }
-
-   public boolean method36368() {
-      return this.field43934;
-   }
-
-   public String method36369() {
-      return this.field43929;
-   }
-
-   public String method36370() {
-      return this.field43930;
-   }
-
-   public boolean method36371() {
-      return this.field43932;
-   }
-
-   public boolean method36372() {
-      return this.field43931;
-   }
-
-   public boolean method36373(Class7284 var1) {
-      boolean var4 = !this.field43934 ? method36374(var1.method22942(), this.field43929) : var1.method22942().equals(this.field43929);
-      if (var4) {
-         return method36375(var1, this.field43930) ? !this.field43931 || var1.method22937() : false;
-      } else {
-         return false;
-      }
-   }
-
    private static boolean method36374(String var0, String var1) {
       return !var0.equals(var1) ? var0.endsWith(var1) && var0.charAt(var0.length() - var1.length() - 1) == '.' && !Class9474.method36558(var0) : true;
    }
@@ -118,9 +81,7 @@ public final class Class9454 {
                return true;
             }
 
-            if (var4.charAt(var1.length()) == '/') {
-               return true;
-            }
+             return var4.charAt(var1.length()) == '/';
          }
 
          return false;
@@ -210,7 +171,7 @@ public final class Class9454 {
                   return null;
                }
 
-               if (var33.length() != var16.length() && Class8003.method27342().method27343(var16) == null) {
+               if (var33.length() != var16.length()) {
                   return null;
                } else {
                   if (var17 == null || !var17.startsWith("/")) {
@@ -394,37 +355,5 @@ public final class Class9454 {
       }
 
       return var4.toString();
-   }
-
-   @Override
-   public boolean equals(Object var1) {
-      if (!(var1 instanceof Class9454)) {
-         return false;
-      } else {
-         Class9454 var4 = (Class9454)var1;
-         return var4.field43926.equals(this.field43926)
-            && var4.field43927.equals(this.field43927)
-            && var4.field43929.equals(this.field43929)
-            && var4.field43930.equals(this.field43930)
-            && var4.field43928 == this.field43928
-            && var4.field43931 == this.field43931
-            && var4.field43932 == this.field43932
-            && var4.field43933 == this.field43933
-            && var4.field43934 == this.field43934;
-      }
-   }
-
-   @Override
-   public int hashCode() {
-      int var3 = 17;
-      var3 = 31 * var3 + this.field43926.hashCode();
-      var3 = 31 * var3 + this.field43927.hashCode();
-      var3 = 31 * var3 + this.field43929.hashCode();
-      var3 = 31 * var3 + this.field43930.hashCode();
-      var3 = 31 * var3 + (int)(this.field43928 ^ this.field43928 >>> 32);
-      var3 = 31 * var3 + (!this.field43931 ? 1 : 0);
-      var3 = 31 * var3 + (!this.field43932 ? 1 : 0);
-      var3 = 31 * var3 + (!this.field43933 ? 1 : 0);
-      return 31 * var3 + (!this.field43934 ? 1 : 0);
    }
 }
