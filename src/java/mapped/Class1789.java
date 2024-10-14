@@ -7,7 +7,6 @@ import java.nio.channels.SocketChannel;
 
 @Deprecated
 public class Class1789 implements Class1788 {
-   private static String[] field9644;
    private final ByteChannel field9645;
 
    @Deprecated

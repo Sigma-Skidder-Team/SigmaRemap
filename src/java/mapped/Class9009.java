@@ -15,7 +15,6 @@ import java.util.NoSuchElementException;
 
 public final class Class9009 {
    private final Class6165 field41205;
-   private final Class8743 field41206;
    private Proxy field41207;
    private InetSocketAddress field41208;
    private List<Proxy> field41209 = Collections.<Proxy>emptyList();
@@ -24,9 +23,8 @@ public final class Class9009 {
    private int field41212;
    private final List<Class7723> field41213 = new ArrayList<Class7723>();
 
-   public Class9009(Class6165 var1, Class8743 var2) {
+   public Class9009(Class6165 var1) {
       this.field41205 = var1;
-      this.field41206 = var2;
       this.method33287(var1.method19049(), var1.method19056());
    }
 
@@ -49,20 +47,14 @@ public final class Class9009 {
 
       this.field41208 = this.method33293();
       Class7723 var3 = new Class7723(this.field41205, this.field41207, this.field41208);
-      if (!this.field41206.method31546(var3)) {
-         return var3;
-      } else {
-         this.field41213.add(var3);
-         return this.method33285();
-      }
+      this.field41213.add(var3);
+      return this.method33285();
    }
 
    public void method33286(Class7723 var1, IOException var2) {
       if (var1.method25540().type() != Type.DIRECT && this.field41205.method19055() != null) {
          this.field41205.method19055().connectFailed(this.field41205.method19049().method22935(), var1.method25540().address(), var2);
       }
-
-      this.field41206.method31544(var1);
    }
 
    private void method33287(Class7284 var1, Proxy var2) {

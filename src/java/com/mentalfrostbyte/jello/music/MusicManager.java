@@ -70,7 +70,7 @@ public class MusicManager {
     private YoutubeVideoData field32160;
     private boolean field32161 = true;
     private Class189 field32162 = Class189.field717;
-    private boolean field32164 = false;
+    private boolean finished = false;
     private double field32168;
     private boolean field32169 = false;
     private double field32170 = 0.0;
@@ -129,7 +129,7 @@ public class MusicManager {
             this.method24331();
         }
 
-        this.field32164 = false;
+        this.finished = false;
     }
 
     public void method24294() {
@@ -687,7 +687,53 @@ public class MusicManager {
     }
 
     public void download() {
-        if (!this.field32164) {
+        if (!this.finished) {
+            if (Util.isOSSupported()) {
+                File musicDir = new File(Client.getInstance().getFile() + "/music/");
+                musicDir.mkdirs();
+
+                String fileName =
+                        Util.getOSType() == OS.WINDOWS ? "yt-dlp.exe"
+                        : Util.getOSType() == OS.LINUX ? "yt-dlp_linux"
+                                                       : "yt-dlp_macos";
+
+                File targetFile = new File(Client.getInstance().getFile() + "/music/" + fileName);
+
+                String urlString = "https://github.com/yt-dlp/yt-dlp/releases/download/2024.10.07/" + fileName;
+                try {
+                    URL url = new URL(urlString);
+                    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                    connection.setRequestMethod("GET");
+                    connection.setConnectTimeout(10000);
+                    connection.setReadTimeout(10000);
+
+                    try (InputStream in = connection.getInputStream();
+                         FileOutputStream out = new FileOutputStream(targetFile)) {
+
+                        byte[] buffer = new byte[4096];
+                        int bytesRead;
+
+                        while ((bytesRead = in.read(buffer)) != -1) {
+                            out.write(buffer, 0, bytesRead);
+                        }
+
+                        this.finished = true;
+                        System.out.println("Download complete: " + targetFile.getAbsolutePath());
+                    }
+                } catch (IOException e) {
+                    System.err.println("Failed to download file: " + e.getMessage());
+                    this.finished = false;
+                }
+            } else {
+                System.out.println("Failed to extract yt-dlp, because your OS is unsupported.");
+                finished = false;
+            }
+        }
+    }
+
+    /*
+    public void extract() {
+        if (!this.finished) {
             InputStream inputStream = null;
             try {
                 // Load the yt-dlp file from the JAR resources
@@ -740,7 +786,7 @@ public class MusicManager {
                     System.out.println(e.getMessage());
                 }
 
-                this.field32164 = true;  // Mark the extraction as completed
+                this.finished = true;  // Mark the extraction as completed
             } catch (Exception e) {
                 System.out.println("Failed: " + e.getMessage());
             } finally {
@@ -754,7 +800,7 @@ public class MusicManager {
             }
         }
     }
-
+     */
 
     public String method24333() {
         String var3 = Client.getInstance().getFile().getAbsolutePath() + "/music/yt-dlp";

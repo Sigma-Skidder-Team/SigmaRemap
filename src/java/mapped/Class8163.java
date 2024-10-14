@@ -4,7 +4,6 @@ import net.minecraft.entity.ai.attributes.AttributeModifier;
 
 // $VF: synthetic class
 public class Class8163 {
-   private static String[] field35136;
    public static final int[] field35137 = new int[AttributeModifier.Operation.values().length];
 
    static {

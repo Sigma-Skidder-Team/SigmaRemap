@@ -8,9 +8,7 @@ public class Class8687 {
    public final Class8223 field39216;
    public final Class1797 field39217;
    private Date field39218;
-   private String field39219;
    private Date field39220;
-   private String field39221;
    private Date field39222;
    private long field39223;
    private long field39224;
@@ -42,14 +40,12 @@ public class Class8687 {
                      }
                   } else {
                      this.field39220 = Class9240.method34752(var11);
-                     this.field39221 = var11;
                   }
                } else {
                   this.field39222 = Class9240.method34752(var11);
                }
             } else {
                this.field39218 = Class9240.method34752(var11);
-               this.field39219 = var11;
             }
          }
       }
@@ -97,27 +93,16 @@ public class Class8687 {
 
                   return new Class9660(null, var19.method34994());
                } else {
-                  String var13;
-                  String var16;
                   if (this.field39225 == null) {
                      if (this.field39220 == null) {
                         if (this.field39218 == null) {
                            return new Class9660(this.field39216, null);
                         }
 
-                        var13 = "If-Modified-Since";
-                        var16 = this.field39219;
-                     } else {
-                        var13 = "If-Modified-Since";
-                        var16 = this.field39221;
                      }
-                  } else {
-                     var13 = "If-None-Match";
-                     var16 = this.field39225;
                   }
 
                   Class9192 var17 = this.field39216.method28614().method35550();
-                  Class6605.field29047.method20015(var17, var13, var16);
                   Class8223 var18 = this.field39216.method28619().method25241(var17.method34442()).method25252();
                   return new Class9660(var18, this.field39217);
                }

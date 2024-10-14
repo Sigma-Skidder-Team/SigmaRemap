@@ -50,7 +50,7 @@ public final class Class6174 implements Class6172 {
          if (var9 != null) {
             if (var10.method7846() == 304) {
                Class1797 var17 = var9.method7856()
-                  .method34985(method19082(var9.method7853(), var10.method7853()))
+                  .method34985(method19082())
                   .method34992(var10.method7863())
                   .method34993(var10.method7864())
                   .method34988(method19080(var9))
@@ -104,38 +104,10 @@ public final class Class6174 implements Class6172 {
       }
    }
 
-   private static Class9371 method19082(Class9371 var0, Class9371 var1) {
+   private static Class9371 method19082() {
       Class9192 var4 = new Class9192();
-      int var5 = 0;
-
-      for (int var6 = var0.method35546(); var5 < var6; var5++) {
-         String var7 = var0.method35547(var5);
-         String var8 = var0.method35548(var5);
-         if ((!"Warning".equalsIgnoreCase(var7) || !var8.startsWith("1")) && (!method19083(var7) || var1.method35544(var7) == null)) {
-            Class6605.field29047.method20015(var4, var7, var8);
-         }
-      }
-
-      var5 = 0;
-
-      for (int var10 = var1.method35546(); var5 < var10; var5++) {
-         String var11 = var1.method35547(var5);
-         if (!"Content-Length".equalsIgnoreCase(var11) && method19083(var11)) {
-            Class6605.field29047.method20015(var4, var11, var1.method35548(var5));
-         }
-      }
-
       return var4.method34442();
    }
 
-   public static boolean method19083(String var0) {
-      return !"Connection".equalsIgnoreCase(var0)
-         && !"Keep-Alive".equalsIgnoreCase(var0)
-         && !"Proxy-Authenticate".equalsIgnoreCase(var0)
-         && !"Proxy-Authorization".equalsIgnoreCase(var0)
-         && !"TE".equalsIgnoreCase(var0)
-         && !"Trailers".equalsIgnoreCase(var0)
-         && !"Transfer-Encoding".equalsIgnoreCase(var0)
-         && !"Upgrade".equalsIgnoreCase(var0);
-   }
+
 }

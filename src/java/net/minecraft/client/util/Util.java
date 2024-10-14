@@ -173,6 +173,14 @@ public class Util {
       return var4;
    }
 
+   public static boolean isOSSupported() {
+      if (Util.getOSType() == OS.WINDOWS) {
+         return true;
+      } else if (Util.getOSType() == OS.LINUX) {
+         return true;
+      } else return Util.getOSType() == OS.OSX;
+   }
+
    public static OS getOSType() {
       String var2 = System.getProperty("os.name").toLowerCase(Locale.ROOT);
       if (!var2.contains("win")) {
