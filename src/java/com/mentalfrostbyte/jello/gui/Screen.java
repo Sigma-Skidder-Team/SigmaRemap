@@ -1,4 +1,4 @@
-package com.mentalfrostbyte.jello.gui.screens;
+package com.mentalfrostbyte.jello.gui;
 
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import totalcross.json.JSONObject;

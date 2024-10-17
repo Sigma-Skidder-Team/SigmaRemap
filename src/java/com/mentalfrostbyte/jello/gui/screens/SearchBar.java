@@ -1,5 +1,6 @@
 package com.mentalfrostbyte.jello.gui.screens;
 
+import com.mentalfrostbyte.jello.gui.Screen;
 import mapped.Class4257;
 import net.minecraft.client.Minecraft;
 
