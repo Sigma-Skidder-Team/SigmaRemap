@@ -152,9 +152,7 @@ public abstract class Class5 implements Serializable, Cloneable {
       try {
          Class5 var4 = (Class5)var1;
          return this.field8 == var4.field8 && this.field9 == var4.field9 && this.field10 == var4.field10;
-      } catch (NullPointerException var5) {
-         return false;
-      } catch (ClassCastException var6) {
+      } catch (NullPointerException | ClassCastException var5) {
          return false;
       }
    }
