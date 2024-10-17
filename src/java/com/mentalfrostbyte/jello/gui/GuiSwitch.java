@@ -1,7 +1,8 @@
-package com.mentalfrostbyte.jello.unmapped;
+package com.mentalfrostbyte.jello.gui;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.ClientMode;
+import com.mentalfrostbyte.jello.unmapped.*;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
