@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.gui.screens.Class4325;
+import com.mentalfrostbyte.jello.gui.screens.JelloInGameOptions;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
@@ -20,9 +20,9 @@ public class JelloOptionsMainMenu extends IconPanel {
       this.addToList(var11 = new UIButton(this, "openGui", var5 / 2, var6 - 80, 300, 38, var9, "Open Jello's Click GUI", ResourceRegistry.JelloLightFont24));
       UIButton var12;
       this.addToList(var12 = new UIButton(this, "credits", var5 / 2 - 100, var6 - 280, 200, 38, var9, "Credits", ResourceRegistry.JelloLightFont18));
-      var10.doThis((var0, var1x) -> Class4325.method13438(new Class1144(new StringTextComponent("Keybind Manager"))));
-      var11.doThis((var0, var1x) -> Class4325.method13438(new ClickGui(new StringTextComponent("Click GUI"))));
-      var12.doThis((var0, var1x) -> Class4325.method13438(new Class1133(new StringTextComponent("GuiCredits"))));
+      var10.doThis((var0, var1x) -> JelloInGameOptions.method13438(new Class1144(new StringTextComponent("Keybind Manager"))));
+      var11.doThis((var0, var1x) -> JelloInGameOptions.method13438(new ClickGui(new StringTextComponent("Click GUI"))));
+      var12.doThis((var0, var1x) -> JelloInGameOptions.method13438(new Class1133(new StringTextComponent("GuiCredits"))));
       UICheckBox var13;
       this.addToList(var13 = new UICheckBox(this, "guiBlurCheckBox", var5 / 2 - 70, var6 - 220, 25, 25));
       var13.method13705(Client.getInstance().getGuiManager().method33470(), false);

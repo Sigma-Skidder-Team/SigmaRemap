@@ -44,7 +44,7 @@ public class GuiManager {
         field41337.put(Snake.class, SnakeGameScreen.class);
         field41337.put(Bird.class, BirdGameScreen.class);
         field41337.put(SpotLight.class, SearchBar.class);
-        field41337.put(Class1309.class, Class4325.class);
+        field41337.put(Class1309.class, JelloInGameOptions.class);
         field41337.put(Class1133.class, CreditsToCreators.class);
         field41338.put(ClickGui.class, "Click GUI");
         field41338.put(Class1144.class, "Keybind Manager");

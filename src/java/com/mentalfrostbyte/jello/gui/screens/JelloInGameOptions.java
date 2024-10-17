@@ -12,7 +12,7 @@ import mapped.RenderUtil;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
-public class Class4325 extends Screen {
+public class JelloInGameOptions extends Screen {
    private int field21109 = 0;
    private int field21110 = 0;
    private boolean field21111 = true;
@@ -21,8 +21,10 @@ public class Class4325 extends Screen {
    private JelloOptionsMainMenu field21114;
    public static net.minecraft.client.gui.screen.Screen field21115 = null;
 
-   public Class4325() {
+   public JelloInGameOptions() {
       super("options");
+
+
       this.method13300(false);
       int var3 = Math.max((int)((float)this.heightA * 0.8F), 420);
       int var4 = (int)((float)this.widthA * 0.8F);

@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.account.Account;
 import com.mentalfrostbyte.jello.gui.screens.ClassicDirectLogin;
-import com.mentalfrostbyte.jello.gui.screens.Class4314;
+import com.mentalfrostbyte.jello.gui.screens.ClassicEditAlt;
 import com.mentalfrostbyte.jello.gui.screens.ClassicAddAlt;
 import com.mentalfrostbyte.jello.gui.screens.SigmaClassicAltManager;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
@@ -54,7 +54,7 @@ public class ClassicAltManager extends IconPanel {
       this.field21146.doThis((var1x, var2x) -> {
          Class4349 var5 = var10.method13406();
          if (var5 != null) {
-            Client.getInstance().getGuiManager().method33482(new Class4314(var5.field21249));
+            Client.getInstance().getGuiManager().method33482(new ClassicEditAlt(var5.field21249));
          }
       });
       this.field21147.doThis((var0, var1x) -> Client.getInstance().getGuiManager().method33482(new ClassicAddAlt()));

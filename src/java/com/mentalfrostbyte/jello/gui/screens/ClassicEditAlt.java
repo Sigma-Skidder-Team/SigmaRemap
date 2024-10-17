@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
 import mapped.*;
 
-public class Class4314 extends Screen {
+public class ClassicEditAlt extends Screen {
    public SigmaClassicTextBox field21027;
    public SigmaClassicTextBox field21028;
    public Class4300 field21029;
@@ -16,8 +16,9 @@ public class Class4314 extends Screen {
    public AccountManager field21031 = Client.getInstance().getAccountManager();
    private String field21032 = "§7Waiting...";
 
-   public Class4314(Account var1) {
+   public ClassicEditAlt(Account var1) {
       super("Alt Manager");
+
       this.method13300(false);
       int var4 = 400;
       int var5 = 114;
