@@ -1,5 +1,7 @@
 package mapped;
 
+import com.mentalfrostbyte.jello.gui.screens.JelloKeyboardScreen;
+
 public class Class1533 implements Runnable {
    public final JelloKeyboardScreen field8318;
    public final JelloKeyboardScreen field8319;

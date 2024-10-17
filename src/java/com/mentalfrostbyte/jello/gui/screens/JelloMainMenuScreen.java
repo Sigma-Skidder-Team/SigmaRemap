@@ -1,4 +1,4 @@
-package mapped;
+package com.mentalfrostbyte.jello.gui.screens;
 
 import club.minnced.discord.rpc.DiscordRPC;
 import com.mentalfrostbyte.jello.Client;
@@ -6,7 +6,6 @@ import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.network.NetworkManager;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.unmapped.Screen;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
@@ -14,6 +13,7 @@ import com.mentalfrostbyte.jello.util.animation.Direction;
 import com.mentalfrostbyte.jello.util.animation.MathHelper;
 import lol.ClientColors;
 import lol.Texture;
+import mapped.*;
 import net.minecraft.client.Minecraft;
 import org.apache.commons.lang3.ArrayUtils;
 import org.lwjgl.opengl.GL11;

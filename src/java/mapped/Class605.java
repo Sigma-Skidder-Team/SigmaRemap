@@ -1,5 +1,6 @@
 package mapped;
 
+import com.mentalfrostbyte.jello.gui.screens.JelloMaps;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 
 public class Class605 implements Runnable {

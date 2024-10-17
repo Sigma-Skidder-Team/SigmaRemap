@@ -1,5 +1,6 @@
 package mapped;
 
+import com.mentalfrostbyte.jello.gui.screens.JelloMaps;
 import net.minecraft.util.math.vector.Vector3i;
 
 public class Class774 implements Runnable {

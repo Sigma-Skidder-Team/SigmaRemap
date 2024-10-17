@@ -1,36 +1,35 @@
-package com.mentalfrostbyte.jello.gui;
+package com.mentalfrostbyte.jello.gui.screens;
 
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Screen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
-import mapped.Class4299;
 import lol.ClientColors;
+import mapped.Class4297;
 import mapped.EasingFunctions;
 import mapped.RenderUtil;
 import net.minecraft.client.Minecraft;
 
-public class BirdGameScreen extends Screen {
+public class SnakeGameScreen extends Screen {
    public Minecraft field21044 = Minecraft.getInstance();
    public TimerUtil field21045 = new TimerUtil();
-   public Class4299 field21046;
+   public Class4297 field21046;
    public Animation field21047;
-   public int field21048 = 0;
+   public int field21048;
    public int field21049 = 14;
 
-   public BirdGameScreen() {
-      super("BirdGameScreen");
+   public SnakeGameScreen() {
+      super("SnakeGameScreen");
       this.method13300(false);
       this.field21045.start();
       this.field21047 = new Animation(200, 0);
       MultiUtilities.method17739();
-      int var3 = 48;
-      int var4 = 27;
-      int var5 = 14;
+      byte var3 = 48;
+      byte var4 = 27;
+      byte var5 = 14;
       int var6 = var3 * var5;
       int var7 = var4 * var5;
-      this.addToList(this.field21046 = new Class4299(this, "bird", (this.widthA - var6) / 2, (this.getHeightA() - var7) / 2 + 30, var3, 27, var5));
+      this.addToList(this.field21046 = new Class4297(this, "snake", (this.widthA - var6) / 2, (this.getHeightA() - var7) / 2 + 30, var3, 27, var5));
    }
 
    @Override
@@ -66,9 +65,9 @@ public class BirdGameScreen extends Screen {
       super.draw(var1);
       int var6 = (this.widthA - this.field21046.getWidthA()) / 2;
       int var7 = (this.heightA - this.field21046.getHeightA()) / 2;
-      RenderUtil.drawString(ResourceRegistry.JelloMediumFont40, (float)var6, (float)(var7 - 60), "Bird", ClientColors.LIGHT_GREYISH_BLUE.getColor);
+      RenderUtil.drawString(ResourceRegistry.JelloMediumFont40, (float)var6, (float)(var7 - 60), "Snake", ClientColors.LIGHT_GREYISH_BLUE.getColor);
       this.field21048 = Math.max(this.field21046.method13179(), this.field21048);
-      String var8 = "Max: " + this.field21048 + "   |   Score: 0";
+      String var8 = "Max: " + this.field21048 + "   |   Score: " + this.field21046.method13179();
       RenderUtil.drawString(
          ResourceRegistry.JelloLightFont20,
          (float)(var6 + this.field21046.getWidthA() - ResourceRegistry.JelloLightFont20.getStringWidth(var8)),

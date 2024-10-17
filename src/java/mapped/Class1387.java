@@ -1,5 +1,7 @@
 package mapped;
 
+import com.mentalfrostbyte.jello.gui.screens.SigmaClassicAltManager;
+
 public class Class1387 implements Runnable {
    private static String[] field7411;
    public final SigmaClassicAltManager field7412;

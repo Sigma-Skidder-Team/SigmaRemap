@@ -1,14 +1,14 @@
-package mapped;
+package com.mentalfrostbyte.jello.gui.screens;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.unmapped.Screen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
 import lol.Texture;
+import mapped.*;
 import net.minecraft.client.Minecraft;
 
 import java.util.ArrayList;

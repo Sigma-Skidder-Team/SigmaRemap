@@ -3,6 +3,7 @@ package com.mentalfrostbyte.jello.gui;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.ClientMode;
 import com.mentalfrostbyte.jello.event.impl.EventRender;
+import com.mentalfrostbyte.jello.gui.screens.*;
 import com.mentalfrostbyte.jello.module.impl.gui.classic.TabGUI;
 import com.mentalfrostbyte.jello.unmapped.*;
 import com.mentalfrostbyte.jello.util.FileUtil;
@@ -108,10 +109,8 @@ public class GuiManager {
         } else {
             try {
                 return field41337.get(var0.getClass()).newInstance();
-            } catch (InstantiationException var4) {
+            } catch (InstantiationException | IllegalAccessException var4) {
                 var4.printStackTrace();
-            } catch (IllegalAccessException var5) {
-                var5.printStackTrace();
             }
 
             return null;

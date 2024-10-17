@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.account.Account;
+import com.mentalfrostbyte.jello.gui.screens.AltManagerScreen;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import net.minecraft.client.Minecraft;
 

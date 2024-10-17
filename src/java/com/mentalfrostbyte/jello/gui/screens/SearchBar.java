@@ -1,6 +1,6 @@
-package mapped;
+package com.mentalfrostbyte.jello.gui.screens;
 
-import com.mentalfrostbyte.jello.unmapped.Screen;
+import mapped.Class4257;
 import net.minecraft.client.Minecraft;
 
 public class SearchBar extends Screen {

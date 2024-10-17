@@ -1,11 +1,13 @@
-package mapped;
+package com.mentalfrostbyte.jello.gui.screens;
 
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Screen;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
+import mapped.EasingFunctions;
+import mapped.RenderUtil;
+import mapped.VanillaMainMenuScreen;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 

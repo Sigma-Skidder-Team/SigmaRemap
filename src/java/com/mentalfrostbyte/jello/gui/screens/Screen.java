@@ -1,5 +1,6 @@
-package com.mentalfrostbyte.jello.unmapped;
+package com.mentalfrostbyte.jello.gui.screens;
 
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import totalcross.json.JSONObject;
 import net.minecraft.client.Minecraft;
 

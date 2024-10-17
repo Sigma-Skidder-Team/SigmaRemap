@@ -1,16 +1,16 @@
-package mapped;
+package com.mentalfrostbyte.jello.gui.screens;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.account.Account;
 import com.mentalfrostbyte.jello.account.AccountManager;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Screen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
+import mapped.*;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.glfw.GLFW;
 
-public class Class4326 extends Screen {
+public class ClassicAddAlt extends Screen {
    public SigmaClassicTextBox field21116;
    public SigmaClassicTextBox field21117;
    public Class4300 field21118;
@@ -19,7 +19,7 @@ public class Class4326 extends Screen {
    public AccountManager field21121 = Client.getInstance().getAccountManager();
    private String field21122 = "§7Idle...";
 
-   public Class4326() {
+   public ClassicAddAlt() {
       super("Alt Manager");
       this.method13300(false);
       int var3 = 400;

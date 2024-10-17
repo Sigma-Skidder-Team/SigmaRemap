@@ -2,10 +2,13 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.gui.GuiManager;
+import com.mentalfrostbyte.jello.gui.screens.AltManagerScreen;
+import com.mentalfrostbyte.jello.gui.screens.JelloMainMenuScreen;
+import com.mentalfrostbyte.jello.gui.screens.LoginAndOutScreen;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.unmapped.Screen;
+import com.mentalfrostbyte.jello.gui.screens.Screen;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;

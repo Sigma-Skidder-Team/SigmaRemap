@@ -2,6 +2,10 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.account.Account;
+import com.mentalfrostbyte.jello.gui.screens.ClassicDirectLogin;
+import com.mentalfrostbyte.jello.gui.screens.Class4314;
+import com.mentalfrostbyte.jello.gui.screens.ClassicAddAlt;
+import com.mentalfrostbyte.jello.gui.screens.SigmaClassicAltManager;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import lol.ClientColors;
 import net.minecraft.client.Minecraft;
@@ -53,8 +57,8 @@ public class ClassicAltManager extends IconPanel {
             Client.getInstance().getGuiManager().method33482(new Class4314(var5.field21249));
          }
       });
-      this.field21147.doThis((var0, var1x) -> Client.getInstance().getGuiManager().method33482(new Class4326()));
-      this.field21145.doThis((var0, var1x) -> Client.getInstance().getGuiManager().method33482(new Class4311()));
+      this.field21147.doThis((var0, var1x) -> Client.getInstance().getGuiManager().method33482(new ClassicAddAlt()));
+      this.field21145.doThis((var0, var1x) -> Client.getInstance().getGuiManager().method33482(new ClassicDirectLogin()));
    }
 
    @Override

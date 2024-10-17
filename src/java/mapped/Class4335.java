@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.unmapped.ClassicScreenk;
+import com.mentalfrostbyte.jello.gui.screens.ClassicScreenk;
 
 public class Class4335 extends Class4333 {
    public Class4345 field21181;
