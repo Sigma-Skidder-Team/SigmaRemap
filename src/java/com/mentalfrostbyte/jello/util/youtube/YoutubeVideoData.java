@@ -1,4 +1,4 @@
-package com.mentalfrostbyte.jello.unmapped;
+package com.mentalfrostbyte.jello.util.youtube;
 
 public class YoutubeVideoData {
     public String videoId;

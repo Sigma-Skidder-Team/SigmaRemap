@@ -15,7 +15,7 @@ import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ColorSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
-import com.mentalfrostbyte.jello.unmapped.MathUtils;
+import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.Rots;
 import com.mentalfrostbyte.jello.util.animation.Animation;

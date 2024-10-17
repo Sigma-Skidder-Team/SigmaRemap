@@ -4,8 +4,8 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.music.MusicManager;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ThumbnailUtil;
-import com.mentalfrostbyte.jello.unmapped.YoutubeJPGThumbnail;
-import com.mentalfrostbyte.jello.unmapped.YoutubeVideoData;
+import com.mentalfrostbyte.jello.util.youtube.YoutubeJPGThumbnail;
+import com.mentalfrostbyte.jello.util.youtube.YoutubeVideoData;
 
 import java.util.ArrayList;
 

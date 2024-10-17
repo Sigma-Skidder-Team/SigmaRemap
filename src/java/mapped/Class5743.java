@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.MathUtils;
+import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mojang.authlib.minecraft.MinecraftProfileTexture.Type;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;

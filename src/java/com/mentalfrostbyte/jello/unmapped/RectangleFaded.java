@@ -1,6 +1,7 @@
 package com.mentalfrostbyte.jello.unmapped;
 
 import com.mentalfrostbyte.jello.gui.GuiSwitch;
+import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;

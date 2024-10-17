@@ -1,9 +1,10 @@
 package com.mentalfrostbyte.jello.unmapped;
 
-import mapped.YoutubeType;
+import com.mentalfrostbyte.jello.util.youtube.YoutubeJPGThumbnail;
+import com.mentalfrostbyte.jello.util.youtube.YoutubeVideoData;
+import com.mentalfrostbyte.jello.util.youtube.YoutubeType;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class MusicPlayerVideo {

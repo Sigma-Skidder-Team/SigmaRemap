@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.unmapped.YoutubeVideoData;
+import com.mentalfrostbyte.jello.util.youtube.YoutubeVideoData;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ImageUtil;

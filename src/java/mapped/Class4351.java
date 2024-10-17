@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.unmapped.MathUtils;
+import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;

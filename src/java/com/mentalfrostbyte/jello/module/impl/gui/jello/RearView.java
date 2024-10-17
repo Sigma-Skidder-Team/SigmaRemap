@@ -10,7 +10,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
-import com.mentalfrostbyte.jello.unmapped.MathUtils;
+import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import com.mojang.blaze3d.matrix.MatrixStack;

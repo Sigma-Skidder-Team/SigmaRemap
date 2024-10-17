@@ -1,5 +1,6 @@
 package com.mentalfrostbyte.jello.unmapped;
 
+import com.mentalfrostbyte.jello.util.youtube.YoutubeJPGThumbnail;
 import org.apache.http.ParseException;
 import totalcross.json.JSONArray;
 import org.apache.commons.lang3.StringEscapeUtils;
@@ -16,7 +17,6 @@ import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 

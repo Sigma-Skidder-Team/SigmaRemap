@@ -1,4 +1,4 @@
-package mapped;
+package com.mentalfrostbyte.jello.util.youtube;
 
 public enum YoutubeType {
    PLAYLIST,

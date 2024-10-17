@@ -4,24 +4,13 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.unmapped.MathUtils;
+import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import lol.ClientColors;
-import org.apache.commons.io.IOUtils;
-import org.apache.http.HttpEntity;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.HttpClients;
 import totalcross.json.JSONArray;
 import totalcross.json.JSONException;
-
-import java.awt.*;
-import java.awt.datatransfer.Clipboard;
-import java.awt.datatransfer.StringSelection;
-import java.io.IOException;
-import java.io.InputStream;
 
 public class ChangelogScreen extends IconPanel {
    public Animation animation = new Animation(380, 200, Direction.BACKWARDS);

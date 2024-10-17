@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.YoutubeVideoData;
+import com.mentalfrostbyte.jello.util.youtube.YoutubeVideoData;
 import com.mentalfrostbyte.jello.unmapped.MusicPlayerVideo;
 
 public class MusicPlayerInstance implements Runnable {
