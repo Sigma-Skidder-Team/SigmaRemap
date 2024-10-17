@@ -12,6 +12,7 @@ We have fixed many features already,
 - shield rendering when sword blocking;
 - recovered old and new changelogs; 
 - switched lwjgl 3.2.2 to 3.3.4;
+- framebuffer white screen bug;
 - made premium more authentic;
 - stairs hitbox/collision bug;
 - removed resource decryption;
@@ -22,10 +23,9 @@ We have fixed many features already,
 
 ### [!] TO-DO
 1. Fix singleplayer;
-2. Fix white screen (framebuffer);
-3. Main menu, animation and gui flickering;
-4. Packet issues on some servers (instant disconnect/kicks);
-5. Add back ViaVersion/Jello Portal.
+3. Packet issues on some servers (instant disconnect/kicks);
+2. Main menu, animation and gui flickering;
+4. Add back ViaVersion/Jello Portal.
 
 ### Contributors
 - [Gato](https://github.com/gatov2)

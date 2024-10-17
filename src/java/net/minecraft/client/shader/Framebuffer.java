@@ -233,10 +233,7 @@ public class Framebuffer {
    public void bindFramebuffer(boolean setViewportIn) {
       if (!RenderSystem.isOnRenderThread())
       {
-         RenderSystem.recordRenderCall(() ->
-         {
-            this.bindFramebufferRaw(setViewportIn);
-         });
+         RenderSystem.recordRenderCall(() -> this.bindFramebufferRaw(setViewportIn));
       }
       else
       {
@@ -246,11 +243,72 @@ public class Framebuffer {
 
    private void bindFramebufferRaw(boolean setViewportIn) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
-      GlStateManager.bindFramebuffer(FramebufferConstants.GL_FRAMEBUFFER, this.framebufferObject);
 
       if (setViewportIn)
       {
          GlStateManager.viewport(0, 0, this.framebufferWidth, this.framebufferHeight);
+      }
+
+      if (framebufferObject != -1)
+      {
+         GlStateManager.bindFramebuffer(FramebufferConstants.GL_FRAMEBUFFER, this.framebufferObject);
+      }
+      else
+      {
+         Framebuffer framebuffer = Minecraft.getInstance().getFramebuffer();
+         framebuffer.resizeCustom();
+      }
+   }
+
+   public void resizeCustom() {
+      if (!RenderSystem.isOnRenderThread())
+      {
+         RenderSystem.recordRenderCall(this::resizeRawCustom);
+      }
+      else
+      {
+         this.resizeRawCustom();
+      }
+   }
+
+   private void resizeRawCustom() {
+      RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
+      GlStateManager.enableDepthTest();
+      if (this.framebufferObject >= 0)
+      {
+         this.deleteFramebuffer();
+      }
+
+      this.createBuffersCustom();
+   }
+
+   public void createBuffersCustom() {
+      RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
+
+      this.framebufferObject = GlStateManager.genFramebuffers();
+      this.framebufferTexture = TextureUtil.generateTextureId();
+
+      if (this.useDepth)
+      {
+         this.depthBuffer = TextureUtil.generateTextureId();
+         GlStateManager.bindTexture(this.depthBuffer);
+         GlStateManager.texParameter(3553, 10241, 9728);
+         GlStateManager.texParameter(3553, 10240, 9728);
+         GlStateManager.texParameter(3553, 10242, 10496);
+         GlStateManager.texParameter(3553, 10243, 10496);
+         GlStateManager.texParameter(3553, 34892, 0);
+         GlStateManager.texImage2D(3553, 0, 6402, this.framebufferTextureWidth, this.framebufferTextureHeight, 0, 6402, 5126, (IntBuffer)null);
+      }
+
+      this.setFramebufferFilter(9728);
+      GlStateManager.bindTexture(this.framebufferTexture);
+      GlStateManager.texImage2D(3553, 0, 32856, this.framebufferTextureWidth, this.framebufferTextureHeight, 0, 6408, 5121, (IntBuffer)null);
+      GlStateManager.bindFramebuffer(FramebufferConstants.GL_FRAMEBUFFER, this.framebufferObject);
+      GlStateManager.framebufferTexture2D(FramebufferConstants.GL_FRAMEBUFFER, FramebufferConstants.GL_COLOR_ATTACHMENT0, 3553, this.framebufferTexture, 0);
+
+      if (this.useDepth)
+      {
+         GlStateManager.framebufferTexture2D(FramebufferConstants.GL_FRAMEBUFFER, FramebufferConstants.GL_DEPTH_ATTACHMENT, 3553, this.depthBuffer, 0);
       }
    }
 
