@@ -1,4 +1,4 @@
-package com.mentalfrostbyte.jello.unmapped;
+package com.mentalfrostbyte.jello.util.tracker;
 
 import com.google.gson.JsonArray;
 import com.mentalfrostbyte.jello.Client;
@@ -6,6 +6,8 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.network.Class8930;
 import com.mentalfrostbyte.jello.network.NetworkManager;
+import com.mentalfrostbyte.jello.unmapped.Class8433;
+import com.mentalfrostbyte.jello.unmapped.RandomModuleThread;
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.exceptions.AuthenticationException;
 import com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService;

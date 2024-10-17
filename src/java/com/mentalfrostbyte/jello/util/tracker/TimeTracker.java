@@ -1,4 +1,6 @@
-package mapped;
+package com.mentalfrostbyte.jello.util.tracker;
+
+import mapped.*;
 
 import java.util.function.IntSupplier;
 import java.util.function.LongSupplier;

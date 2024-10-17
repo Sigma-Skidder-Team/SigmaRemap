@@ -1,6 +1,6 @@
 package com.mentalfrostbyte.jello.network;
 
-import com.mentalfrostbyte.jello.unmapped.CombatTracker;
+import com.mentalfrostbyte.jello.util.tracker.CombatTracker;
 import mapped.Class8499;
 import net.minecraft.client.Minecraft;
 
