@@ -1,4 +1,4 @@
-package com.mentalfrostbyte.jello.unmapped;
+package com.mentalfrostbyte.jello.util.render.blur;
 
 import com.google.gson.JsonSyntaxException;
 import java.io.IOException;

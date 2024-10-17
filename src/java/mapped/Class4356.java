@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.util.animation.Direction;
+import com.mentalfrostbyte.jello.util.render.animation.Direction;
 
 import java.util.ArrayList;
 import java.util.List;

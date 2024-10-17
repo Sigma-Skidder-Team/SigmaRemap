@@ -1,9 +1,9 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.animation.Animation;
+import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
-import com.mentalfrostbyte.jello.util.animation.Direction;
+import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import lol.ClientColors;
 import lol.Texture;
 

@@ -1,8 +1,8 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.util.animation.Animation;
-import com.mentalfrostbyte.jello.util.animation.Direction;
+import com.mentalfrostbyte.jello.util.render.animation.Animation;
+import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import org.lwjgl.opengl.GL11;
 
 public class Class4364 extends Class4247 {

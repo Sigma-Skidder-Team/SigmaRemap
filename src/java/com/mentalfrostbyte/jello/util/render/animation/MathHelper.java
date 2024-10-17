@@ -1,4 +1,4 @@
-package com.mentalfrostbyte.jello.util.animation;
+package com.mentalfrostbyte.jello.util.render.animation;
 
 public class MathHelper {
    private static String[] field34592;

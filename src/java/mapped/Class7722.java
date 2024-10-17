@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.util.animation.Direction;
+import com.mentalfrostbyte.jello.util.render.animation.Direction;
 
 // $VF: synthetic class
 public class Class7722 {

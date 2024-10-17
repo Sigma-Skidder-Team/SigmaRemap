@@ -2,9 +2,9 @@ package mapped;
 
 import com.mentalfrostbyte.jello.module.impl.gui.classic.TabGUI;
 import com.mentalfrostbyte.jello.resource.ClientResource;
-import com.mentalfrostbyte.jello.util.animation.Animation;
-import com.mentalfrostbyte.jello.util.animation.Direction;
-import com.mentalfrostbyte.jello.util.animation.MathHelper;
+import com.mentalfrostbyte.jello.util.render.animation.Animation;
+import com.mentalfrostbyte.jello.util.render.animation.Direction;
+import com.mentalfrostbyte.jello.util.render.animation.MathHelper;
 
 public class CategoryDrawPartBackground {
    public final ClientResource fontRenderer;

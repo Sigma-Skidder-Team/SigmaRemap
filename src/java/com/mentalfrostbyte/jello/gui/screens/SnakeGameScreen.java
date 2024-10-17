@@ -3,7 +3,7 @@ package com.mentalfrostbyte.jello.gui.screens;
 import com.mentalfrostbyte.jello.gui.Screen;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.animation.Animation;
+import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import lol.ClientColors;
 import mapped.Class4297;

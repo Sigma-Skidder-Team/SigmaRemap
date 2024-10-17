@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.module.impl.gui.jello.TabGUI;
-import com.mentalfrostbyte.jello.util.animation.Animation;
+import com.mentalfrostbyte.jello.util.render.animation.Animation;
 
 public class Class8224 {
    private static String[] field35321;

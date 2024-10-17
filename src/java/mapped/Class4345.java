@@ -7,9 +7,9 @@ import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.settings.*;
 import com.mentalfrostbyte.jello.settings.SettingType;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.util.animation.Animation;
-import com.mentalfrostbyte.jello.util.animation.Direction;
-import com.mentalfrostbyte.jello.util.animation.MathHelper;
+import com.mentalfrostbyte.jello.util.render.animation.Animation;
+import com.mentalfrostbyte.jello.util.render.animation.Direction;
+import com.mentalfrostbyte.jello.util.render.animation.MathHelper;
 
 import java.util.HashMap;
 

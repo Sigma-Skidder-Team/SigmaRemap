@@ -1,8 +1,8 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.util.animation.Animation;
-import com.mentalfrostbyte.jello.util.animation.Direction;
+import com.mentalfrostbyte.jello.util.render.animation.Animation;
+import com.mentalfrostbyte.jello.util.render.animation.Direction;
 
 public class Class4361 extends Class4247 {
    private static String[] field21320;

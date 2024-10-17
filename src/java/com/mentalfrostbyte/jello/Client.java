@@ -20,6 +20,7 @@ import com.mentalfrostbyte.jello.target.CombatManager;
 import com.mentalfrostbyte.jello.target.FriendManager;
 import com.mentalfrostbyte.jello.unmapped.*;
 import com.mentalfrostbyte.jello.util.FileUtil;
+import com.mentalfrostbyte.jello.util.render.blur.BlurEngine;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import lol.Texture;

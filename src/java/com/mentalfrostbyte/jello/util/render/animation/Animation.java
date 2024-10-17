@@ -1,4 +1,4 @@
-package com.mentalfrostbyte.jello.util.animation;
+package com.mentalfrostbyte.jello.util.render.animation;
 
 import java.util.Date;
 

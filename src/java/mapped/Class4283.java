@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.util.animation.Animation;
+import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import lol.ClientColors;
 import lol.Texture;
 import net.minecraft.client.Minecraft;

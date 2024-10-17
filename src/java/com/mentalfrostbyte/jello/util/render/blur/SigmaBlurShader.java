@@ -1,6 +1,9 @@
-package mapped;
+package com.mentalfrostbyte.jello.util.render.blur;
 
-import com.mentalfrostbyte.jello.unmapped.BlurEngine;
+import mapped.IResourceManager;
+import mapped.IResourcePack;
+import mapped.JSonShader;
+import mapped.JelloBlurJSON;
 import net.minecraft.util.ResourceLocation;
 
 import java.io.IOException;
