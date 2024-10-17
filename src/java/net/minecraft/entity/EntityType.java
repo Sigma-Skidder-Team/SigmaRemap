@@ -40,342 +40,342 @@ import org.apache.logging.log4j.Logger;
 public class EntityType<T extends Entity> {
    private static final Logger LOGGER = LogManager.getLogger();
 
-   public static final EntityType<Class999> AREA_EFFECT_CLOUD = method33197(
+   public static final EntityType<Class999> AREA_EFFECT_CLOUD = register(
       "area_effect_cloud",
-      Class8878.<Class999>method32299(Class999::new, EntityClassification.field628).method32304().method32301(6.0F, 0.5F).method32307(10).method32308(Integer.MAX_VALUE)
+      Builder.<Class999>create(Class999::new, EntityClassification.MISC).immuneToFire().size(6.0F, 0.5F).trackingRange(10).method32308(Integer.MAX_VALUE)
    );
-   public static final EntityType<ArmorStandEntity> ARMOR_STAND = method33197(
-      "armor_stand", Class8878.<ArmorStandEntity>method32299(ArmorStandEntity::new, EntityClassification.field628).method32301(0.5F, 1.975F).method32307(10)
+   public static final EntityType<ArmorStandEntity> ARMOR_STAND = register(
+      "armor_stand", Builder.<ArmorStandEntity>create(ArmorStandEntity::new, EntityClassification.MISC).size(0.5F, 1.975F).trackingRange(10)
    );
-   public static final EntityType<Class887> ARROW = method33197(
-      "arrow", Class8878.<Class887>method32299(Class887::new, EntityClassification.field628).method32301(0.5F, 0.5F).method32307(4).method32308(20)
+   public static final EntityType<Class887> ARROW = register(
+      "arrow", Builder.<Class887>create(Class887::new, EntityClassification.MISC).size(0.5F, 0.5F).trackingRange(4).method32308(20)
    );
-   public static final EntityType<Class1114> BAT = method33197(
-      "bat", Class8878.<Class1114>method32299(Class1114::new, EntityClassification.field625).method32301(0.5F, 0.9F).method32307(5)
+   public static final EntityType<Class1114> BAT = register(
+      "bat", Builder.<Class1114>create(Class1114::new, EntityClassification.AMBIENT).size(0.5F, 0.9F).trackingRange(5)
    );
-   public static final EntityType<Class1017> BEE = method33197(
-      "bee", Class8878.<Class1017>method32299(Class1017::new, EntityClassification.field624).method32301(0.7F, 0.6F).method32307(8)
+   public static final EntityType<Class1017> BEE = register(
+      "bee", Builder.<Class1017>create(Class1017::new, EntityClassification.CREATURE).size(0.7F, 0.6F).trackingRange(8)
    );
-   public static final EntityType<Class1103> BLAZE = method33197(
-      "blaze", Class8878.<Class1103>method32299(Class1103::new, EntityClassification.field623).method32304().method32301(0.6F, 1.8F).method32307(8)
+   public static final EntityType<Class1103> BLAZE = register(
+      "blaze", Builder.<Class1103>create(Class1103::new, EntityClassification.MONSTER).immuneToFire().size(0.6F, 1.8F).trackingRange(8)
    );
-   public static final EntityType<BoatEntity> BOAT = method33197(
-      "boat", Class8878.<BoatEntity>method32299(BoatEntity::new, EntityClassification.field628).method32301(1.375F, 0.5625F).method32307(10)
+   public static final EntityType<BoatEntity> BOAT = register(
+      "boat", Builder.<BoatEntity>create(BoatEntity::new, EntityClassification.MISC).size(1.375F, 0.5625F).trackingRange(10)
    );
-   public static final EntityType<Class1098> CAT = method33197(
-      "cat", Class8878.<Class1098>method32299(Class1098::new, EntityClassification.field624).method32301(0.6F, 0.7F).method32307(8)
+   public static final EntityType<Class1098> CAT = register(
+      "cat", Builder.<Class1098>create(Class1098::new, EntityClassification.CREATURE).size(0.6F, 0.7F).trackingRange(8)
    );
-   public static final EntityType<Class1102> CAVE_SPIDER = method33197(
-      "cave_spider", Class8878.<Class1102>method32299(Class1102::new, EntityClassification.field623).method32301(0.7F, 0.5F).method32307(8)
+   public static final EntityType<Class1102> CAVE_SPIDER = register(
+      "cave_spider", Builder.<Class1102>create(Class1102::new, EntityClassification.MONSTER).size(0.7F, 0.5F).trackingRange(8)
    );
-   public static final EntityType<Class1089> CHICKEN = method33197(
-      "chicken", Class8878.<Class1089>method32299(Class1089::new, EntityClassification.field624).method32301(0.4F, 0.7F).method32307(10)
+   public static final EntityType<Class1089> CHICKEN = register(
+      "chicken", Builder.<Class1089>create(Class1089::new, EntityClassification.CREATURE).size(0.4F, 0.7F).trackingRange(10)
    );
-   public static final EntityType<Class1051> COD = method33197(
-      "cod", Class8878.<Class1051>method32299(Class1051::new, EntityClassification.field627).method32301(0.5F, 0.3F).method32307(4)
+   public static final EntityType<Class1051> COD = register(
+      "cod", Builder.<Class1051>create(Class1051::new, EntityClassification.WATER_AMBIENT).size(0.5F, 0.3F).trackingRange(4)
    );
-   public static final EntityType<Class1087> COW = method33197(
-      "cow", Class8878.<Class1087>method32299(Class1087::new, EntityClassification.field624).method32301(0.9F, 1.4F).method32307(10)
+   public static final EntityType<Class1087> COW = register(
+      "cow", Builder.<Class1087>create(Class1087::new, EntityClassification.CREATURE).size(0.9F, 1.4F).trackingRange(10)
    );
-   public static final EntityType<Class1081> CREEPER = method33197(
-      "creeper", Class8878.<Class1081>method32299(Class1081::new, EntityClassification.field623).method32301(0.6F, 1.7F).method32307(8)
+   public static final EntityType<Class1081> CREEPER = register(
+      "creeper", Builder.<Class1081>create(Class1081::new, EntityClassification.MONSTER).size(0.6F, 1.7F).trackingRange(8)
    );
-   public static final EntityType<Class1048> DOLPHIN = method33197(
-      "dolphin", Class8878.<Class1048>method32299(Class1048::new, EntityClassification.field626).method32301(0.9F, 0.6F)
+   public static final EntityType<Class1048> DOLPHIN = register(
+      "dolphin", Builder.<Class1048>create(Class1048::new, EntityClassification.WATER_CREATURE).size(0.9F, 0.6F)
    );
-   public static final EntityType<Class1067> DONKEY = method33197(
-      "donkey", Class8878.<Class1067>method32299(Class1067::new, EntityClassification.field624).method32301(1.3964844F, 1.5F).method32307(10)
+   public static final EntityType<Class1067> DONKEY = register(
+      "donkey", Builder.<Class1067>create(Class1067::new, EntityClassification.CREATURE).size(1.3964844F, 1.5F).trackingRange(10)
    );
-   public static final EntityType<Class903> DRAGON_FIREBALL = method33197(
-      "dragon_fireball", Class8878.<Class903>method32299(Class903::new, EntityClassification.field628).method32301(1.0F, 1.0F).method32307(4).method32308(10)
+   public static final EntityType<Class903> DRAGON_FIREBALL = register(
+      "dragon_fireball", Builder.<Class903>create(Class903::new, EntityClassification.MISC).size(1.0F, 1.0F).trackingRange(4).method32308(10)
    );
-   public static final EntityType<Class1037> DROWNED = method33197(
-      "drowned", Class8878.<Class1037>method32299(Class1037::new, EntityClassification.field623).method32301(0.6F, 1.95F).method32307(8)
+   public static final EntityType<Class1037> DROWNED = register(
+      "drowned", Builder.<Class1037>create(Class1037::new, EntityClassification.MONSTER).size(0.6F, 1.95F).trackingRange(8)
    );
-   public static final EntityType<Class1106> ELDER_GUARDIAN = method33197(
-      "elder_guardian", Class8878.<Class1106>method32299(Class1106::new, EntityClassification.field623).method32301(1.9975F, 1.9975F).method32307(10)
+   public static final EntityType<Class1106> ELDER_GUARDIAN = register(
+      "elder_guardian", Builder.<Class1106>create(Class1106::new, EntityClassification.MONSTER).size(1.9975F, 1.9975F).trackingRange(10)
    );
-   public static final EntityType<EnderCrystalEntity> field41023 = method33197(
-      "end_crystal", Class8878.<EnderCrystalEntity>method32299(EnderCrystalEntity::new, EntityClassification.field628).method32301(2.0F, 2.0F).method32307(16).method32308(Integer.MAX_VALUE)
+   public static final EntityType<EnderCrystalEntity> field41023 = register(
+      "end_crystal", Builder.<EnderCrystalEntity>create(EnderCrystalEntity::new, EntityClassification.MISC).size(2.0F, 2.0F).trackingRange(16).method32308(Integer.MAX_VALUE)
    );
-   public static final EntityType<Class1007> field41024 = method33197(
-      "ender_dragon", Class8878.<Class1007>method32299(Class1007::new, EntityClassification.field623).method32304().method32301(16.0F, 8.0F).method32307(10)
+   public static final EntityType<Class1007> field41024 = register(
+      "ender_dragon", Builder.<Class1007>create(Class1007::new, EntityClassification.MONSTER).immuneToFire().size(16.0F, 8.0F).trackingRange(10)
    );
-   public static final EntityType<EndermanEntity> field41025 = method33197(
-      "enderman", Class8878.<EndermanEntity>method32299(EndermanEntity::new, EntityClassification.field623).method32301(0.6F, 2.9F).method32307(8)
+   public static final EntityType<EndermanEntity> field41025 = register(
+      "enderman", Builder.<EndermanEntity>create(EndermanEntity::new, EntityClassification.MONSTER).size(0.6F, 2.9F).trackingRange(8)
    );
-   public static final EntityType<Class1104> field41026 = method33197(
-      "endermite", Class8878.<Class1104>method32299(Class1104::new, EntityClassification.field623).method32301(0.4F, 0.3F).method32307(8)
+   public static final EntityType<Class1104> field41026 = register(
+      "endermite", Builder.<Class1104>create(Class1104::new, EntityClassification.MONSTER).size(0.4F, 0.3F).trackingRange(8)
    );
-   public static final EntityType<Class1032> field41027 = method33197(
-      "evoker", Class8878.<Class1032>method32299(Class1032::new, EntityClassification.field623).method32301(0.6F, 1.95F).method32307(8)
+   public static final EntityType<Class1032> field41027 = register(
+      "evoker", Builder.<Class1032>create(Class1032::new, EntityClassification.MONSTER).size(0.6F, 1.95F).trackingRange(8)
    );
-   public static final EntityType<Class915> field41028 = method33197(
-      "evoker_fangs", Class8878.<Class915>method32299(Class915::new, EntityClassification.field628).method32301(0.5F, 0.8F).method32307(6).method32308(2)
+   public static final EntityType<Class915> field41028 = register(
+      "evoker_fangs", Builder.<Class915>create(Class915::new, EntityClassification.MISC).size(0.5F, 0.8F).trackingRange(6).method32308(2)
    );
-   public static final EntityType<ExperienceOrbEntity> field41029 = method33197(
-      "experience_orb", Class8878.<ExperienceOrbEntity>method32299(ExperienceOrbEntity::new, EntityClassification.field628).method32301(0.5F, 0.5F).method32307(6).method32308(20)
+   public static final EntityType<ExperienceOrbEntity> field41029 = register(
+      "experience_orb", Builder.<ExperienceOrbEntity>create(ExperienceOrbEntity::new, EntityClassification.MISC).size(0.5F, 0.5F).trackingRange(6).method32308(20)
    );
-   public static final EntityType<Class897> field41030 = method33197(
-      "eye_of_ender", Class8878.<Class897>method32299(Class897::new, EntityClassification.field628).method32301(0.25F, 0.25F).method32307(4).method32308(4)
+   public static final EntityType<Class897> field41030 = register(
+      "eye_of_ender", Builder.<Class897>create(Class897::new, EntityClassification.MISC).size(0.25F, 0.25F).trackingRange(4).method32308(4)
    );
-   public static final EntityType<Class907> field41031 = method33197(
-      "falling_block", Class8878.<Class907>method32299(Class907::new, EntityClassification.field628).method32301(0.98F, 0.98F).method32307(10).method32308(20)
+   public static final EntityType<Class907> field41031 = register(
+      "falling_block", Builder.<Class907>create(Class907::new, EntityClassification.MISC).size(0.98F, 0.98F).trackingRange(10).method32308(20)
    );
-   public static final EntityType<Class888> field41032 = method33197(
-      "firework_rocket", Class8878.<Class888>method32299(Class888::new, EntityClassification.field628).method32301(0.25F, 0.25F).method32307(4).method32308(10)
+   public static final EntityType<Class888> field41032 = register(
+      "firework_rocket", Builder.<Class888>create(Class888::new, EntityClassification.MISC).size(0.25F, 0.25F).trackingRange(4).method32308(10)
    );
-   public static final EntityType<Class1095> FOX = method33197(
-      "fox", Class8878.<Class1095>method32299(Class1095::new, EntityClassification.field624).method32301(0.6F, 0.7F).method32307(8).method32305(Blocks.field37069)
+   public static final EntityType<Class1095> FOX = register(
+      "fox", Builder.<Class1095>create(Class1095::new, EntityClassification.CREATURE).size(0.6F, 0.7F).trackingRange(8).method32305(Blocks.field37069)
    );
-   public static final EntityType<Class1112> GHAST = method33197(
-      "ghast", Class8878.<Class1112>method32299(Class1112::new, EntityClassification.field623).method32304().method32301(4.0F, 4.0F).method32307(10)
+   public static final EntityType<Class1112> GHAST = register(
+      "ghast", Builder.<Class1112>create(Class1112::new, EntityClassification.MONSTER).immuneToFire().size(4.0F, 4.0F).trackingRange(10)
    );
-   public static final EntityType<Class1099> GIANT = method33197(
-      "giant", Class8878.<Class1099>method32299(Class1099::new, EntityClassification.field623).method32301(3.6F, 12.0F).method32307(10)
+   public static final EntityType<Class1099> GIANT = register(
+      "giant", Builder.<Class1099>create(Class1099::new, EntityClassification.MONSTER).size(3.6F, 12.0F).trackingRange(10)
    );
-   public static final EntityType<Class1105> GUARDIAN = method33197(
-      "guardian", Class8878.<Class1105>method32299(Class1105::new, EntityClassification.field623).method32301(0.85F, 0.85F).method32307(8)
+   public static final EntityType<Class1105> GUARDIAN = register(
+      "guardian", Builder.<Class1105>create(Class1105::new, EntityClassification.MONSTER).size(0.85F, 0.85F).trackingRange(8)
    );
-   public static final EntityType<Class1091> HOGLIN = method33197(
-      "hoglin", Class8878.<Class1091>method32299(Class1091::new, EntityClassification.field623).method32301(1.3964844F, 1.4F).method32307(8)
+   public static final EntityType<Class1091> HOGLIN = register(
+      "hoglin", Builder.<Class1091>create(Class1091::new, EntityClassification.MONSTER).size(1.3964844F, 1.4F).trackingRange(8)
    );
-   public static final EntityType<Class1074> HORSE = method33197(
-      "horse", Class8878.<Class1074>method32299(Class1074::new, EntityClassification.field624).method32301(1.3964844F, 1.6F).method32307(10)
+   public static final EntityType<Class1074> HORSE = register(
+      "horse", Builder.<Class1074>create(Class1074::new, EntityClassification.CREATURE).size(1.3964844F, 1.6F).trackingRange(10)
    );
-   public static final EntityType<Class1039> HUSK = method33197(
-      "husk", Class8878.<Class1039>method32299(Class1039::new, EntityClassification.field623).method32301(0.6F, 1.95F).method32307(8)
+   public static final EntityType<Class1039> HUSK = register(
+      "husk", Builder.<Class1039>create(Class1039::new, EntityClassification.MONSTER).size(0.6F, 1.95F).trackingRange(8)
    );
-   public static final EntityType<Class1033> ILLUSIONER = method33197(
-      "illusioner", Class8878.<Class1033>method32299(Class1033::new, EntityClassification.field623).method32301(0.6F, 1.95F).method32307(8)
+   public static final EntityType<Class1033> ILLUSIONER = register(
+      "illusioner", Builder.<Class1033>create(Class1033::new, EntityClassification.MONSTER).size(0.6F, 1.95F).trackingRange(8)
    );
-   public static final EntityType<Class1058> IRON_GOLEM = method33197(
-      "iron_golem", Class8878.<Class1058>method32299(Class1058::new, EntityClassification.field628).method32301(1.4F, 2.7F).method32307(10)
+   public static final EntityType<Class1058> IRON_GOLEM = register(
+      "iron_golem", Builder.<Class1058>create(Class1058::new, EntityClassification.MISC).size(1.4F, 2.7F).trackingRange(10)
    );
-   public static final EntityType<ItemEntity> ITEM = method33197(
-      "item", Class8878.<ItemEntity>method32299(ItemEntity::new, EntityClassification.field628).method32301(0.25F, 0.25F).method32307(6).method32308(20)
+   public static final EntityType<ItemEntity> ITEM = register(
+      "item", Builder.<ItemEntity>create(ItemEntity::new, EntityClassification.MISC).size(0.25F, 0.25F).trackingRange(6).method32308(20)
    );
-   public static final EntityType<ItemFrameEntity> ITEM_FRAME = method33197(
-      "item_frame", Class8878.<ItemFrameEntity>method32299(ItemFrameEntity::new, EntityClassification.field628).method32301(0.5F, 0.5F).method32307(10).method32308(Integer.MAX_VALUE)
+   public static final EntityType<ItemFrameEntity> ITEM_FRAME = register(
+      "item_frame", Builder.<ItemFrameEntity>create(ItemFrameEntity::new, EntityClassification.MISC).size(0.5F, 0.5F).trackingRange(10).method32308(Integer.MAX_VALUE)
    );
-   public static final EntityType<Class899> FIREBALL = method33197(
-      "fireball", Class8878.<Class899>method32299(Class899::new, EntityClassification.field628).method32301(1.0F, 1.0F).method32307(4).method32308(10)
+   public static final EntityType<Class899> FIREBALL = register(
+      "fireball", Builder.<Class899>create(Class899::new, EntityClassification.MISC).size(1.0F, 1.0F).trackingRange(4).method32308(10)
    );
-   public static final EntityType<LeashKnotEntity> LEASH_KNOT = method33197(
+   public static final EntityType<LeashKnotEntity> LEASH_KNOT = register(
       "leash_knot",
-      Class8878.<LeashKnotEntity>method32299(LeashKnotEntity::new, EntityClassification.field628).method32303().method32301(0.5F, 0.5F).method32307(10).method32308(Integer.MAX_VALUE)
+      Builder.<LeashKnotEntity>create(LeashKnotEntity::new, EntityClassification.MISC).method32303().size(0.5F, 0.5F).trackingRange(10).method32308(Integer.MAX_VALUE)
    );
-   public static final EntityType<Class906> LIGHTNING_BOLT = method33197(
+   public static final EntityType<Class906> LIGHTNING_BOLT = register(
       "lightning_bolt",
-      Class8878.<Class906>method32299(Class906::new, EntityClassification.field628).method32303().method32301(0.0F, 0.0F).method32307(16).method32308(Integer.MAX_VALUE)
+      Builder.<Class906>create(Class906::new, EntityClassification.MISC).method32303().size(0.0F, 0.0F).trackingRange(16).method32308(Integer.MAX_VALUE)
    );
-   public static final EntityType<Class1064> LLAMA = method33197(
-      "llama", Class8878.<Class1064>method32299(Class1064::new, EntityClassification.field624).method32301(0.9F, 1.87F).method32307(10)
+   public static final EntityType<Class1064> LLAMA = register(
+      "llama", Builder.<Class1064>create(Class1064::new, EntityClassification.CREATURE).size(0.9F, 1.87F).trackingRange(10)
    );
-   public static final EntityType<Class883> LLAMA_SPIT = method33197(
-      "llama_spit", Class8878.<Class883>method32299(Class883::new, EntityClassification.field628).method32301(0.25F, 0.25F).method32307(4).method32308(10)
+   public static final EntityType<Class883> LLAMA_SPIT = register(
+      "llama_spit", Builder.<Class883>create(Class883::new, EntityClassification.MISC).size(0.25F, 0.25F).trackingRange(4).method32308(10)
    );
-   public static final EntityType<Class1109> MAGMA_CUBE = method33197(
-      "magma_cube", Class8878.<Class1109>method32299(Class1109::new, EntityClassification.field623).method32304().method32301(2.04F, 2.04F).method32307(8)
+   public static final EntityType<Class1109> MAGMA_CUBE = register(
+      "magma_cube", Builder.<Class1109>create(Class1109::new, EntityClassification.MONSTER).immuneToFire().size(2.04F, 2.04F).trackingRange(8)
    );
-   public static final EntityType<Class917> MINECART = method33197(
-      "minecart", Class8878.<Class917>method32299(Class917::new, EntityClassification.field628).method32301(0.98F, 0.7F).method32307(8)
+   public static final EntityType<Class917> MINECART = register(
+      "minecart", Builder.<Class917>create(Class917::new, EntityClassification.MISC).size(0.98F, 0.7F).trackingRange(8)
    );
-   public static final EntityType<Class991> CHEST_MINECART = method33197(
-      "chest_minecart", Class8878.<Class991>method32299(Class991::new, EntityClassification.field628).method32301(0.98F, 0.7F).method32307(8)
+   public static final EntityType<Class991> CHEST_MINECART = register(
+      "chest_minecart", Builder.<Class991>create(Class991::new, EntityClassification.MISC).size(0.98F, 0.7F).trackingRange(8)
    );
-   public static final EntityType<Class918> COMMAND_BLOCK_MINECART = method33197(
-      "command_block_minecart", Class8878.<Class918>method32299(Class918::new, EntityClassification.field628).method32301(0.98F, 0.7F).method32307(8)
+   public static final EntityType<Class918> COMMAND_BLOCK_MINECART = register(
+      "command_block_minecart", Builder.<Class918>create(Class918::new, EntityClassification.MISC).size(0.98F, 0.7F).trackingRange(8)
    );
-   public static final EntityType<Class994> FURNACE_MINECART = method33197(
-      "furnace_minecart", Class8878.<Class994>method32299(Class994::new, EntityClassification.field628).method32301(0.98F, 0.7F).method32307(8)
+   public static final EntityType<Class994> FURNACE_MINECART = register(
+      "furnace_minecart", Builder.<Class994>create(Class994::new, EntityClassification.MISC).size(0.98F, 0.7F).trackingRange(8)
    );
-   public static final EntityType<Class938> HOPPER_MINECART = method33197(
-      "hopper_minecart", Class8878.<Class938>method32299(Class938::new, EntityClassification.field628).method32301(0.98F, 0.7F).method32307(8)
+   public static final EntityType<Class938> HOPPER_MINECART = register(
+      "hopper_minecart", Builder.<Class938>create(Class938::new, EntityClassification.MISC).size(0.98F, 0.7F).trackingRange(8)
    );
-   public static final EntityType<Class992> SPAWNER_MINECART = method33197(
-      "spawner_minecart", Class8878.<Class992>method32299(Class992::new, EntityClassification.field628).method32301(0.98F, 0.7F).method32307(8)
+   public static final EntityType<Class992> SPAWNER_MINECART = register(
+      "spawner_minecart", Builder.<Class992>create(Class992::new, EntityClassification.MISC).size(0.98F, 0.7F).trackingRange(8)
    );
-   public static final EntityType<Class993> TNT_MINECART = method33197(
-      "tnt_minecart", Class8878.<Class993>method32299(Class993::new, EntityClassification.field628).method32301(0.98F, 0.7F).method32307(8)
+   public static final EntityType<Class993> TNT_MINECART = register(
+      "tnt_minecart", Builder.<Class993>create(Class993::new, EntityClassification.MISC).size(0.98F, 0.7F).trackingRange(8)
    );
-   public static final EntityType<Class1078> MULE = method33197(
-      "mule", Class8878.<Class1078>method32299(Class1078::new, EntityClassification.field624).method32301(1.3964844F, 1.6F).method32307(8)
+   public static final EntityType<Class1078> MULE = register(
+      "mule", Builder.<Class1078>create(Class1078::new, EntityClassification.CREATURE).size(1.3964844F, 1.6F).trackingRange(8)
    );
-   public static final EntityType<Class1086> MOOSHROOM = method33197(
-      "mooshroom", Class8878.<Class1086>method32299(Class1086::new, EntityClassification.field624).method32301(0.9F, 1.4F).method32307(10)
+   public static final EntityType<Class1086> MOOSHROOM = register(
+      "mooshroom", Builder.<Class1086>create(Class1086::new, EntityClassification.CREATURE).size(0.9F, 1.4F).trackingRange(10)
    );
-   public static final EntityType<Class1090> OCELOT = method33197(
-      "ocelot", Class8878.<Class1090>method32299(Class1090::new, EntityClassification.field624).method32301(0.6F, 0.7F).method32307(10)
+   public static final EntityType<Class1090> OCELOT = register(
+      "ocelot", Builder.<Class1090>create(Class1090::new, EntityClassification.CREATURE).size(0.6F, 0.7F).trackingRange(10)
    );
-   public static final EntityType<PaintingEntity> PAINTING = method33197(
-      "painting", Class8878.<PaintingEntity>method32299(PaintingEntity::new, EntityClassification.field628).method32301(0.5F, 0.5F).method32307(10).method32308(Integer.MAX_VALUE)
+   public static final EntityType<PaintingEntity> PAINTING = register(
+      "painting", Builder.<PaintingEntity>create(PaintingEntity::new, EntityClassification.MISC).size(0.5F, 0.5F).trackingRange(10).method32308(Integer.MAX_VALUE)
    );
-   public static final EntityType<Class1097> PANDA = method33197(
-      "panda", Class8878.<Class1097>method32299(Class1097::new, EntityClassification.field624).method32301(1.3F, 1.25F).method32307(10)
+   public static final EntityType<Class1097> PANDA = register(
+      "panda", Builder.<Class1097>create(Class1097::new, EntityClassification.CREATURE).size(1.3F, 1.25F).trackingRange(10)
    );
-   public static final EntityType<Class1015> PARROT = method33197(
-      "parrot", Class8878.<Class1015>method32299(Class1015::new, EntityClassification.field624).method32301(0.5F, 0.9F).method32307(8)
+   public static final EntityType<Class1015> PARROT = register(
+      "parrot", Builder.<Class1015>create(Class1015::new, EntityClassification.CREATURE).size(0.5F, 0.9F).trackingRange(8)
    );
-   public static final EntityType<Class1110> PHANTOM = method33197(
-      "phantom", Class8878.<Class1110>method32299(Class1110::new, EntityClassification.field623).method32301(0.9F, 0.5F).method32307(8)
+   public static final EntityType<Class1110> PHANTOM = register(
+      "phantom", Builder.<Class1110>create(Class1110::new, EntityClassification.MONSTER).size(0.9F, 0.5F).trackingRange(8)
    );
-   public static final EntityType<Class1072> PIG = method33197(
-      "pig", Class8878.<Class1072>method32299(Class1072::new, EntityClassification.field624).method32301(0.9F, 0.9F).method32307(10)
+   public static final EntityType<Class1072> PIG = register(
+      "pig", Builder.<Class1072>create(Class1072::new, EntityClassification.CREATURE).size(0.9F, 0.9F).trackingRange(10)
    );
-   public static final EntityType<Class1034> PIGLIN = method33197(
-      "piglin", Class8878.<Class1034>method32299(Class1034::new, EntityClassification.field623).method32301(0.6F, 1.95F).method32307(8)
+   public static final EntityType<Class1034> PIGLIN = register(
+      "piglin", Builder.<Class1034>create(Class1034::new, EntityClassification.MONSTER).size(0.6F, 1.95F).trackingRange(8)
    );
-   public static final EntityType<Class1036> PIGLIN_BRUTE = method33197(
-      "piglin_brute", Class8878.<Class1036>method32299(Class1036::new, EntityClassification.field623).method32301(0.6F, 1.95F).method32307(8)
+   public static final EntityType<Class1036> PIGLIN_BRUTE = register(
+      "piglin_brute", Builder.<Class1036>create(Class1036::new, EntityClassification.MONSTER).size(0.6F, 1.95F).trackingRange(8)
    );
-   public static final EntityType<Class1024> PILLAGER = method33197(
-      "pillager", Class8878.<Class1024>method32299(Class1024::new, EntityClassification.field623).method32306().method32301(0.6F, 1.95F).method32307(8)
+   public static final EntityType<Class1024> PILLAGER = register(
+      "pillager", Builder.<Class1024>create(Class1024::new, EntityClassification.MONSTER).method32306().size(0.6F, 1.95F).trackingRange(8)
    );
-   public static final EntityType<Class1096> POLAR_BEAR = method33197(
-      "polar_bear", Class8878.<Class1096>method32299(Class1096::new, EntityClassification.field624).method32301(1.4F, 1.4F).method32307(10)
+   public static final EntityType<Class1096> POLAR_BEAR = register(
+      "polar_bear", Builder.<Class1096>create(Class1096::new, EntityClassification.CREATURE).size(1.4F, 1.4F).trackingRange(10)
    );
-   public static final EntityType<Class1004> TNT = method33197(
-      "tnt", Class8878.<Class1004>method32299(Class1004::new, EntityClassification.field628).method32304().method32301(0.98F, 0.98F).method32307(10).method32308(10)
+   public static final EntityType<Class1004> TNT = register(
+      "tnt", Builder.<Class1004>create(Class1004::new, EntityClassification.MISC).immuneToFire().size(0.98F, 0.98F).trackingRange(10).method32308(10)
    );
-   public static final EntityType<Class1054> PUFFERFISH = method33197(
-      "pufferfish", Class8878.<Class1054>method32299(Class1054::new, EntityClassification.field627).method32301(0.7F, 0.7F).method32307(4)
+   public static final EntityType<Class1054> PUFFERFISH = register(
+      "pufferfish", Builder.<Class1054>create(Class1054::new, EntityClassification.WATER_AMBIENT).size(0.7F, 0.7F).trackingRange(4)
    );
-   public static final EntityType<Class1094> RABBIT = method33197(
-      "rabbit", Class8878.<Class1094>method32299(Class1094::new, EntityClassification.field624).method32301(0.4F, 0.5F).method32307(8)
+   public static final EntityType<Class1094> RABBIT = register(
+      "rabbit", Builder.<Class1094>create(Class1094::new, EntityClassification.CREATURE).size(0.4F, 0.5F).trackingRange(8)
    );
-   public static final EntityType<Class1029> RAVAGER = method33197(
-      "ravager", Class8878.<Class1029>method32299(Class1029::new, EntityClassification.field623).method32301(1.95F, 2.2F).method32307(10)
+   public static final EntityType<Class1029> RAVAGER = register(
+      "ravager", Builder.<Class1029>create(Class1029::new, EntityClassification.MONSTER).size(1.95F, 2.2F).trackingRange(10)
    );
-   public static final EntityType<SalmonEntity> SALMON = method33197(
-      "salmon", Class8878.<SalmonEntity>method32299(SalmonEntity::new, EntityClassification.field627).method32301(0.7F, 0.4F).method32307(4)
+   public static final EntityType<SalmonEntity> SALMON = register(
+      "salmon", Builder.<SalmonEntity>create(SalmonEntity::new, EntityClassification.WATER_AMBIENT).size(0.7F, 0.4F).trackingRange(4)
    );
-   public static final EntityType<Class1019> SHEEP = method33197(
-      "sheep", Class8878.<Class1019>method32299(Class1019::new, EntityClassification.field624).method32301(0.9F, 1.3F).method32307(10)
+   public static final EntityType<Class1019> SHEEP = register(
+      "sheep", Builder.<Class1019>create(Class1019::new, EntityClassification.CREATURE).size(0.9F, 1.3F).trackingRange(10)
    );
-   public static final EntityType<Class1057> SHULKER = method33197(
-      "shulker", Class8878.<Class1057>method32299(Class1057::new, EntityClassification.field623).method32304().method32306().method32301(1.0F, 1.0F).method32307(10)
+   public static final EntityType<Class1057> SHULKER = register(
+      "shulker", Builder.<Class1057>create(Class1057::new, EntityClassification.MONSTER).immuneToFire().method32306().size(1.0F, 1.0F).trackingRange(10)
    );
-   public static final EntityType<Class905> SHULKER_BULLET = method33197(
-      "shulker_bullet", Class8878.<Class905>method32299(Class905::new, EntityClassification.field628).method32301(0.3125F, 0.3125F).method32307(8)
+   public static final EntityType<Class905> SHULKER_BULLET = register(
+      "shulker_bullet", Builder.<Class905>create(Class905::new, EntityClassification.MISC).size(0.3125F, 0.3125F).trackingRange(8)
    );
-   public static final EntityType<Class1107> SILVERFISH = method33197(
-      "silverfish", Class8878.<Class1107>method32299(Class1107::new, EntityClassification.field623).method32301(0.4F, 0.3F).method32307(8)
+   public static final EntityType<Class1107> SILVERFISH = register(
+      "silverfish", Builder.<Class1107>create(Class1107::new, EntityClassification.MONSTER).size(0.4F, 0.3F).trackingRange(8)
    );
-   public static final EntityType<Class1085> SKELETON = method33197(
-      "skeleton", Class8878.<Class1085>method32299(Class1085::new, EntityClassification.field623).method32301(0.6F, 1.99F).method32307(8)
+   public static final EntityType<Class1085> SKELETON = register(
+      "skeleton", Builder.<Class1085>create(Class1085::new, EntityClassification.MONSTER).size(0.6F, 1.99F).trackingRange(8)
    );
-   public static final EntityType<Class1076> SKELETON_HORSE = method33197(
-      "skeleton_horse", Class8878.<Class1076>method32299(Class1076::new, EntityClassification.field624).method32301(1.3964844F, 1.6F).method32307(10)
+   public static final EntityType<Class1076> SKELETON_HORSE = register(
+      "skeleton_horse", Builder.<Class1076>create(Class1076::new, EntityClassification.CREATURE).size(1.3964844F, 1.6F).trackingRange(10)
    );
-   public static final EntityType<Class1108> SLIME = method33197(
-      "slime", Class8878.<Class1108>method32299(Class1108::new, EntityClassification.field623).method32301(2.04F, 2.04F).method32307(10)
+   public static final EntityType<Class1108> SLIME = register(
+      "slime", Builder.<Class1108>create(Class1108::new, EntityClassification.MONSTER).size(2.04F, 2.04F).trackingRange(10)
    );
-   public static final EntityType<Class900> SMALL_FIREBALL = method33197(
-      "small_fireball", Class8878.<Class900>method32299(Class900::new, EntityClassification.field628).method32301(0.3125F, 0.3125F).method32307(4).method32308(10)
+   public static final EntityType<Class900> SMALL_FIREBALL = register(
+      "small_fireball", Builder.<Class900>create(Class900::new, EntityClassification.MISC).size(0.3125F, 0.3125F).trackingRange(4).method32308(10)
    );
-   public static final EntityType<Class1021> SNOW_GOLEM = method33197(
-      "snow_golem", Class8878.<Class1021>method32299(Class1021::new, EntityClassification.field628).method32301(0.7F, 1.9F).method32307(8)
+   public static final EntityType<Class1021> SNOW_GOLEM = register(
+      "snow_golem", Builder.<Class1021>create(Class1021::new, EntityClassification.MISC).size(0.7F, 1.9F).trackingRange(8)
    );
-   public static final EntityType<Class894> SNOWBALL = method33197(
-      "snowball", Class8878.<Class894>method32299(Class894::new, EntityClassification.field628).method32301(0.25F, 0.25F).method32307(4).method32308(10)
+   public static final EntityType<Class894> SNOWBALL = register(
+      "snowball", Builder.<Class894>create(Class894::new, EntityClassification.MISC).size(0.25F, 0.25F).trackingRange(4).method32308(10)
    );
-   public static final EntityType<Class885> SPECTRAL_ARROW = method33197(
-      "spectral_arrow", Class8878.<Class885>method32299(Class885::new, EntityClassification.field628).method32301(0.5F, 0.5F).method32307(4).method32308(20)
+   public static final EntityType<Class885> SPECTRAL_ARROW = register(
+      "spectral_arrow", Builder.<Class885>create(Class885::new, EntityClassification.MISC).size(0.5F, 0.5F).trackingRange(4).method32308(20)
    );
-   public static final EntityType<Class1101> SPIDER = method33197(
-      "spider", Class8878.<Class1101>method32299(Class1101::new, EntityClassification.field623).method32301(1.4F, 0.9F).method32307(8)
+   public static final EntityType<Class1101> SPIDER = register(
+      "spider", Builder.<Class1101>create(Class1101::new, EntityClassification.MONSTER).size(1.4F, 0.9F).trackingRange(8)
    );
-   public static final EntityType<SquidEntity> SQUID = method33197(
-      "squid", Class8878.<SquidEntity>method32299(SquidEntity::new, EntityClassification.field626).method32301(0.8F, 0.8F).method32307(8)
+   public static final EntityType<SquidEntity> SQUID = register(
+      "squid", Builder.<SquidEntity>create(SquidEntity::new, EntityClassification.WATER_CREATURE).size(0.8F, 0.8F).trackingRange(8)
    );
-   public static final EntityType<Class1083> STRAY = method33197(
-      "stray", Class8878.<Class1083>method32299(Class1083::new, EntityClassification.field623).method32301(0.6F, 1.99F).method32307(8)
+   public static final EntityType<Class1083> STRAY = register(
+      "stray", Builder.<Class1083>create(Class1083::new, EntityClassification.MONSTER).size(0.6F, 1.99F).trackingRange(8)
    );
-   public static final EntityType<Class1070> STRIDER = method33197(
-      "strider", Class8878.<Class1070>method32299(Class1070::new, EntityClassification.field624).method32304().method32301(0.9F, 1.7F).method32307(10)
+   public static final EntityType<Class1070> STRIDER = register(
+      "strider", Builder.<Class1070>create(Class1070::new, EntityClassification.CREATURE).immuneToFire().size(0.9F, 1.7F).trackingRange(10)
    );
-   public static final EntityType<Class892> EGG = method33197(
-      "egg", Class8878.<Class892>method32299(Class892::new, EntityClassification.field628).method32301(0.25F, 0.25F).method32307(4).method32308(10)
+   public static final EntityType<Class892> EGG = register(
+      "egg", Builder.<Class892>create(Class892::new, EntityClassification.MISC).size(0.25F, 0.25F).trackingRange(4).method32308(10)
    );
-   public static final EntityType<Class895> ENDER_PEARL = method33197(
-      "ender_pearl", Class8878.<Class895>method32299(Class895::new, EntityClassification.field628).method32301(0.25F, 0.25F).method32307(4).method32308(10)
+   public static final EntityType<Class895> ENDER_PEARL = register(
+      "ender_pearl", Builder.<Class895>create(Class895::new, EntityClassification.MISC).size(0.25F, 0.25F).trackingRange(4).method32308(10)
    );
-   public static final EntityType<Class891> EXPERIENCE_BOTTLE = method33197(
-      "experience_bottle", Class8878.<Class891>method32299(Class891::new, EntityClassification.field628).method32301(0.25F, 0.25F).method32307(4).method32308(10)
+   public static final EntityType<Class891> EXPERIENCE_BOTTLE = register(
+      "experience_bottle", Builder.<Class891>create(Class891::new, EntityClassification.MISC).size(0.25F, 0.25F).trackingRange(4).method32308(10)
    );
-   public static final EntityType<Class896> POTION = method33197(
-      "potion", Class8878.<Class896>method32299(Class896::new, EntityClassification.field628).method32301(0.25F, 0.25F).method32307(4).method32308(10)
+   public static final EntityType<Class896> POTION = register(
+      "potion", Builder.<Class896>create(Class896::new, EntityClassification.MISC).size(0.25F, 0.25F).trackingRange(4).method32308(10)
    );
-   public static final EntityType<Class886> TRIDENT = method33197(
-      "trident", Class8878.<Class886>method32299(Class886::new, EntityClassification.field628).method32301(0.5F, 0.5F).method32307(4).method32308(20)
+   public static final EntityType<Class886> TRIDENT = register(
+      "trident", Builder.<Class886>create(Class886::new, EntityClassification.MISC).size(0.5F, 0.5F).trackingRange(4).method32308(20)
    );
-   public static final EntityType<Class1065> TRADER_LLAMA = method33197(
-      "trader_llama", Class8878.<Class1065>method32299(Class1065::new, EntityClassification.field624).method32301(0.9F, 1.87F).method32307(10)
+   public static final EntityType<Class1065> TRADER_LLAMA = register(
+      "trader_llama", Builder.<Class1065>create(Class1065::new, EntityClassification.CREATURE).size(0.9F, 1.87F).trackingRange(10)
    );
-   public static final EntityType<Class1052> TROPICAL_FISH = method33197(
-      "tropical_fish", Class8878.<Class1052>method32299(Class1052::new, EntityClassification.field627).method32301(0.5F, 0.4F).method32307(4)
+   public static final EntityType<Class1052> TROPICAL_FISH = register(
+      "tropical_fish", Builder.<Class1052>create(Class1052::new, EntityClassification.WATER_AMBIENT).size(0.5F, 0.4F).trackingRange(4)
    );
-   public static final EntityType<Class1088> TURTLE = method33197(
-      "turtle", Class8878.<Class1088>method32299(Class1088::new, EntityClassification.field624).method32301(1.2F, 0.4F).method32307(10)
+   public static final EntityType<Class1088> TURTLE = register(
+      "turtle", Builder.<Class1088>create(Class1088::new, EntityClassification.CREATURE).size(1.2F, 0.4F).trackingRange(10)
    );
-   public static final EntityType<Class1100> VEX = method33197(
-      "vex", Class8878.<Class1100>method32299(Class1100::new, EntityClassification.field623).method32304().method32301(0.4F, 0.8F).method32307(8)
+   public static final EntityType<Class1100> VEX = register(
+      "vex", Builder.<Class1100>create(Class1100::new, EntityClassification.MONSTER).immuneToFire().size(0.4F, 0.8F).trackingRange(8)
    );
-   public static final EntityType<Class1042> VILLAGER = method33197(
-      "villager", Class8878.<Class1042>method32299(Class1042::new, EntityClassification.field628).method32301(0.6F, 1.95F).method32307(10)
+   public static final EntityType<Class1042> VILLAGER = register(
+      "villager", Builder.<Class1042>create(Class1042::new, EntityClassification.MISC).size(0.6F, 1.95F).trackingRange(10)
    );
-   public static final EntityType<Class1030> VINDICATOR = method33197(
-      "vindicator", Class8878.<Class1030>method32299(Class1030::new, EntityClassification.field623).method32301(0.6F, 1.95F).method32307(8)
+   public static final EntityType<Class1030> VINDICATOR = register(
+      "vindicator", Builder.<Class1030>create(Class1030::new, EntityClassification.MONSTER).size(0.6F, 1.95F).trackingRange(8)
    );
-   public static final EntityType<Class1044> WANDERING_TRADER = method33197(
-      "wandering_trader", Class8878.<Class1044>method32299(Class1044::new, EntityClassification.field624).method32301(0.6F, 1.95F).method32307(10)
+   public static final EntityType<Class1044> WANDERING_TRADER = register(
+      "wandering_trader", Builder.<Class1044>create(Class1044::new, EntityClassification.CREATURE).size(0.6F, 1.95F).trackingRange(10)
    );
-   public static final EntityType<Class1027> WITCH = method33197(
-      "witch", Class8878.<Class1027>method32299(Class1027::new, EntityClassification.field623).method32301(0.6F, 1.95F).method32307(8)
+   public static final EntityType<Class1027> WITCH = register(
+      "witch", Builder.<Class1027>create(Class1027::new, EntityClassification.MONSTER).size(0.6F, 1.95F).trackingRange(8)
    );
-   public static final EntityType<WitherEntity> WITHER = method33197(
+   public static final EntityType<WitherEntity> WITHER = register(
       "wither",
-      Class8878.<WitherEntity>method32299(WitherEntity::new, EntityClassification.field623)
-         .method32304()
+      Builder.<WitherEntity>create(WitherEntity::new, EntityClassification.MONSTER)
+         .immuneToFire()
          .method32305(Blocks.WITHER_ROSE)
-         .method32301(0.9F, 3.5F)
-         .method32307(10)
+         .size(0.9F, 3.5F)
+         .trackingRange(10)
    );
-   public static final EntityType<Class1084> WITHER_SKELETON = method33197(
+   public static final EntityType<Class1084> WITHER_SKELETON = register(
       "wither_skeleton",
-      Class8878.<Class1084>method32299(Class1084::new, EntityClassification.field623)
-         .method32304()
+      Builder.<Class1084>create(Class1084::new, EntityClassification.MONSTER)
+         .immuneToFire()
          .method32305(Blocks.WITHER_ROSE)
-         .method32301(0.7F, 2.4F)
-         .method32307(8)
+         .size(0.7F, 2.4F)
+         .trackingRange(8)
    );
-   public static final EntityType<Class902> WITHER_SKULL = method33197(
-      "wither_skull", Class8878.<Class902>method32299(Class902::new, EntityClassification.field628).method32301(0.3125F, 0.3125F).method32307(4).method32308(10)
+   public static final EntityType<Class902> WITHER_SKULL = register(
+      "wither_skull", Builder.<Class902>create(Class902::new, EntityClassification.MISC).size(0.3125F, 0.3125F).trackingRange(4).method32308(10)
    );
-   public static final EntityType<WolfEntity> WOLF = method33197(
-      "wolf", Class8878.<WolfEntity>method32299(WolfEntity::new, EntityClassification.field624).method32301(0.6F, 0.85F).method32307(10)
+   public static final EntityType<WolfEntity> WOLF = register(
+      "wolf", Builder.<WolfEntity>create(WolfEntity::new, EntityClassification.CREATURE).size(0.6F, 0.85F).trackingRange(10)
    );
-   public static final EntityType<Class1093> ZOGLIN = method33197(
-      "zoglin", Class8878.<Class1093>method32299(Class1093::new, EntityClassification.field623).method32304().method32301(1.3964844F, 1.4F).method32307(8)
+   public static final EntityType<Class1093> ZOGLIN = register(
+      "zoglin", Builder.<Class1093>create(Class1093::new, EntityClassification.MONSTER).immuneToFire().size(1.3964844F, 1.4F).trackingRange(8)
    );
-   public static final EntityType<ZombieEntity> ZOMBIE = method33197(
-      "zombie", Class8878.<ZombieEntity>method32299(ZombieEntity::new, EntityClassification.field623).method32301(0.6F, 1.95F).method32307(8)
+   public static final EntityType<ZombieEntity> ZOMBIE = register(
+      "zombie", Builder.<ZombieEntity>create(ZombieEntity::new, EntityClassification.MONSTER).size(0.6F, 1.95F).trackingRange(8)
    );
-   public static final EntityType<Class1075> ZOMBIE_HORSE = method33197(
-      "zombie_horse", Class8878.<Class1075>method32299(Class1075::new, EntityClassification.field624).method32301(1.3964844F, 1.6F).method32307(10)
+   public static final EntityType<Class1075> ZOMBIE_HORSE = register(
+      "zombie_horse", Builder.<Class1075>create(Class1075::new, EntityClassification.CREATURE).size(1.3964844F, 1.6F).trackingRange(10)
    );
-   public static final EntityType<Class1040> ZOMBIE_VILLAGER = method33197(
-      "zombie_villager", Class8878.<Class1040>method32299(Class1040::new, EntityClassification.field623).method32301(0.6F, 1.95F).method32307(8)
+   public static final EntityType<Class1040> ZOMBIE_VILLAGER = register(
+      "zombie_villager", Builder.<Class1040>create(Class1040::new, EntityClassification.MONSTER).size(0.6F, 1.95F).trackingRange(8)
    );
-   public static final EntityType<ZombifiedPiglinEntity> ZOMBIFIED_PIGLIN = method33197(
-      "zombified_piglin", Class8878.<ZombifiedPiglinEntity>method32299(ZombifiedPiglinEntity::new, EntityClassification.field623).method32304().method32301(0.6F, 1.95F).method32307(8)
+   public static final EntityType<ZombifiedPiglinEntity> ZOMBIFIED_PIGLIN = register(
+      "zombified_piglin", Builder.<ZombifiedPiglinEntity>create(ZombifiedPiglinEntity::new, EntityClassification.MONSTER).immuneToFire().size(0.6F, 1.95F).trackingRange(8)
    );
-   public static final EntityType<PlayerEntity> PLAYER = method33197(
-      "player", Class8878.<PlayerEntity>method32300(EntityClassification.field628).method32303().method32302().method32301(0.6F, 1.8F).method32307(32).method32308(2)
+   public static final EntityType<PlayerEntity> PLAYER = register(
+      "player", Builder.<PlayerEntity>method32300(EntityClassification.MISC).method32303().method32302().size(0.6F, 1.8F).trackingRange(32).method32308(2)
    );
-   public static final EntityType<Class904> FISHING_BOBBER = method33197(
-      "fishing_bobber", Class8878.<Class904>method32300(EntityClassification.field628).method32303().method32302().method32301(0.25F, 0.25F).method32307(4).method32308(5)
+   public static final EntityType<Class904> FISHING_BOBBER = register(
+      "fishing_bobber", Builder.<Class904>method32300(EntityClassification.MISC).method32303().method32302().size(0.25F, 0.25F).trackingRange(4).method32308(5)
    );
    private final Class9283<T> field41113;
    private final EntityClassification field41114;
@@ -391,7 +391,7 @@ public class EntityType<T extends Entity> {
    private ResourceLocation field41124;
    private final EntitySize field41125;
 
-   private static <T extends Entity> EntityType<T> method33197(String var0, Class8878<T> var1) {
+   private static <T extends Entity> EntityType<T> register(String var0, Builder<T> var1) {
       return Registry.<EntityType<T>>register(Registry.ENTITY_TYPE, var0, var1.method32309(var0));
    }
 
@@ -662,5 +662,92 @@ public class EntityType<T extends Entity> {
 
    public boolean method33228(ITag<EntityType<?>> var1) {
       return var1.method24917(this);
+   }
+
+   public static class Builder<T extends Entity> {
+      private static String[] field40180;
+      private final Class9283<T> field40181;
+      private final EntityClassification field40182;
+      private ImmutableSet<Block> field40183 = ImmutableSet.of();
+      private boolean field40184 = true;
+      private boolean field40185 = true;
+      private boolean field40186;
+      private boolean field40187;
+      private int field40188 = 5;
+      private int field40189 = 3;
+      private EntitySize field40190 = EntitySize.method32101(0.6F, 1.8F);
+
+      private Builder(Class9283<T> var1, EntityClassification var2) {
+         this.field40181 = var1;
+         this.field40182 = var2;
+         this.field40187 = var2 == EntityClassification.CREATURE || var2 == EntityClassification.MISC;
+      }
+
+      public static <T extends Entity> Builder<T> create(Class9283<T> var0, EntityClassification var1) {
+         return new Builder<T>(var0, var1);
+      }
+
+      public static <T extends Entity> Builder<T> method32300(EntityClassification var0) {
+         return new Builder<T>((var0x, var1) -> null, var0);
+      }
+
+      public Builder<T> size(float var1, float var2) {
+         this.field40190 = EntitySize.method32101(var1, var2);
+         return this;
+      }
+
+      public Builder<T> method32302() {
+         this.field40185 = false;
+         return this;
+      }
+
+      public Builder<T> method32303() {
+         this.field40184 = false;
+         return this;
+      }
+
+      public Builder<T> immuneToFire() {
+         this.field40186 = true;
+         return this;
+      }
+
+      public Builder<T> method32305(Block... var1) {
+         this.field40183 = ImmutableSet.copyOf(var1);
+         return this;
+      }
+
+      public Builder<T> method32306() {
+         this.field40187 = true;
+         return this;
+      }
+
+      public Builder<T> trackingRange(int var1) {
+         this.field40188 = var1;
+         return this;
+      }
+
+      public Builder<T> method32308(int var1) {
+         this.field40189 = var1;
+         return this;
+      }
+
+      public EntityType<T> method32309(String var1) {
+         if (this.field40184) {
+            Util.method38500(TypeReferences.field35390, var1);
+         }
+
+         return new EntityType<T>(
+            this.field40181,
+            this.field40182,
+            this.field40184,
+            this.field40185,
+            this.field40186,
+            this.field40187,
+            this.field40183,
+            this.field40190,
+            this.field40188,
+            this.field40189
+         );
+      }
    }
 }

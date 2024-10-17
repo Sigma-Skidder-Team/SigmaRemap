@@ -22,7 +22,7 @@ public class MobSpawnInfoSpawners extends Class6691 {
 
    public MobSpawnInfoSpawners(EntityType<?> var1, int var2, int var3, int var4) {
       super(var2);
-      this.field29311 = var1.method33209() != EntityClassification.field628 ? var1 : EntityType.PIG;
+      this.field29311 = var1.method33209() != EntityClassification.MISC ? var1 : EntityType.PIG;
       this.field29312 = var3;
       this.field29313 = var4;
    }

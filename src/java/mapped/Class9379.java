@@ -229,10 +229,10 @@ public class Class9379 {
                Pair.of(new Class3738(EntityType.CAT, 8.0F), 8),
                Pair.of(new Class3738(EntityType.VILLAGER, 8.0F), 2),
                Pair.of(new Class3738(EntityType.PLAYER, 8.0F), 2),
-               Pair.of(new Class3738(EntityClassification.field624, 8.0F), 1),
-               Pair.of(new Class3738(EntityClassification.field626, 8.0F), 1),
-               Pair.of(new Class3738(EntityClassification.field627, 8.0F), 1),
-               Pair.of(new Class3738(EntityClassification.field623, 8.0F), 1),
+               Pair.of(new Class3738(EntityClassification.CREATURE, 8.0F), 1),
+               Pair.of(new Class3738(EntityClassification.WATER_CREATURE, 8.0F), 1),
+               Pair.of(new Class3738(EntityClassification.WATER_AMBIENT, 8.0F), 1),
+               Pair.of(new Class3738(EntityClassification.MONSTER, 8.0F), 1),
                Pair.of(new Class3675(30, 60), 2)
             )
          )

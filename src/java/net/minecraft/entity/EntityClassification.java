@@ -8,12 +8,12 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public enum EntityClassification implements IStringSerializable {
-   field623("monster", 70, false, false, 128),
-   field624("creature", 10, true, true, 128),
-   field625("ambient", 15, true, false, 128),
-   field626("water_creature", 5, true, false, 128),
-   field627("water_ambient", 20, true, false, 64),
-   field628("misc", -1, true, true, 128);
+   MONSTER("monster", 70, false, false, 128),
+   CREATURE("creature", 10, true, true, 128),
+   AMBIENT("ambient", 15, true, false, 128),
+   WATER_CREATURE("water_creature", 5, true, false, 128),
+   WATER_AMBIENT("water_ambient", 20, true, false, 64),
+   MISC("misc", -1, true, true, 128);
 
    public static final Codec<EntityClassification> field629 = IStringSerializable.<EntityClassification>method258(EntityClassification::values, EntityClassification::method518);
    private static final Map<String, EntityClassification> field630 = Arrays.<EntityClassification>stream(values())
@@ -24,7 +24,7 @@ public enum EntityClassification implements IStringSerializable {
    private final String field634;
    private final int field635 = 32;
    private final int field636;
-   private static final EntityClassification[] field637 = new EntityClassification[]{field623, field624, field625, field626, field627, field628};
+   private static final EntityClassification[] field637 = new EntityClassification[]{MONSTER, CREATURE, AMBIENT, WATER_CREATURE, WATER_AMBIENT, MISC};
 
    private EntityClassification(String var3, int var4, boolean var5, boolean var6, int var7) {
       this.field634 = var3;

@@ -37,7 +37,7 @@ public final class Class8170 {
    private static final Logger field35149 = LogManager.getLogger();
    private static final int field35150 = (int)Math.pow(17.0, 2.0);
    private static final EntityClassification[] field35151 = Stream.<EntityClassification>of(EntityClassification.values())
-      .filter(var0 -> var0 != EntityClassification.field628)
+      .filter(var0 -> var0 != EntityClassification.MISC)
       .<EntityClassification>toArray(EntityClassification[]::new);
 
    public static Class7307 method28415(int var0, Iterable<Entity> var1, Class8629 var2) {
@@ -53,7 +53,7 @@ public final class Class8170 {
          }
 
          EntityClassification var11 = var8.getType().method33209();
-         if (var11 != EntityClassification.field628) {
+         if (var11 != EntityClassification.MISC) {
             BlockPos var12 = var8.getPosition();
             long var13 = ChunkPos.asLong(var12.getX() >> 4, var12.getZ() >> 4);
             var2.method30928(var13, var5x -> {
@@ -180,7 +180,7 @@ public final class Class8170 {
 
    private static boolean method28421(ServerWorld var0, EntityClassification var1, StructureManager var2, ChunkGenerator var3, MobSpawnInfoSpawners var4, BlockPos.Mutable var5, double var6) {
       EntityType var10 = var4.field29311;
-      if (var10.method33209() != EntityClassification.field628) {
+      if (var10.method33209() != EntityClassification.MISC) {
          if (!var10.method33208() && var6 > (double)(var10.method33209().method522() * var10.method33209().method522())) {
             return false;
          } else if (var10.method33206() && method28425(var0, var2, var3, var1, var4, var5)) {
@@ -224,7 +224,7 @@ public final class Class8170 {
    @Nullable
    private static MobSpawnInfoSpawners method28424(ServerWorld var0, StructureManager var1, ChunkGenerator var2, EntityClassification var3, Random var4, BlockPos var5) {
       Biome var8 = var0.getBiome(var5);
-      if (var3 == EntityClassification.field627 && var8.getCategory() == Class100.RIVER && var4.nextFloat() < 0.98F) {
+      if (var3 == EntityClassification.WATER_AMBIENT && var8.getCategory() == Class100.RIVER && var4.nextFloat() < 0.98F) {
          return null;
       } else {
          List var9 = method28426(var0, var1, var2, var3, var5, var8);
@@ -237,7 +237,7 @@ public final class Class8170 {
    }
 
    private static List<MobSpawnInfoSpawners> method28426(ServerWorld var0, StructureManager var1, ChunkGenerator var2, EntityClassification var3, BlockPos var4, Biome var5) {
-      return var3 == EntityClassification.field623
+      return var3 == EntityClassification.MONSTER
             && var0.getBlockState(var4.down()).getBlock() == Blocks.NETHER_BRICKS
             && var1.method24345(var4, false, Structure.field18070).method17117()
          ? Structure.field18070.method11374()
@@ -298,7 +298,7 @@ public final class Class8170 {
 
    public static void method28430(Class1659 var0, Biome var1, int var2, int var3, Random var4) {
       Class8835 var7 = var1.getMobSpawnInfo();
-      List var8 = var7.getSpawners(EntityClassification.field624);
+      List var8 = var7.getSpawners(EntityClassification.CREATURE);
       if (!var8.isEmpty()) {
          int var9 = var2 << 4;
          int var10 = var3 << 4;

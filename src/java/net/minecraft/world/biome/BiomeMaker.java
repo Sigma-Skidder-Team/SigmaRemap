@@ -19,9 +19,9 @@ public class BiomeMaker {
    public static Biome makeGiantTaigaBiome(float var0, float var1, float var2, boolean var3) {
       Class9328 var6 = new Class9328();
       Class8468.method29838(var6);
-      var6.method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.WOLF, 8, 4, 4));
-      var6.method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.RABBIT, 4, 2, 3));
-      var6.method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.FOX, 8, 2, 4));
+      var6.method35249(EntityClassification.CREATURE, new MobSpawnInfoSpawners(EntityType.WOLF, 8, 4, 4));
+      var6.method35249(EntityClassification.CREATURE, new MobSpawnInfoSpawners(EntityType.RABBIT, 4, 2, 3));
+      var6.method35249(EntityClassification.CREATURE, new MobSpawnInfoSpawners(EntityType.FOX, 8, 2, 4));
       if (!var3) {
          Class8468.method29839(var6);
          Class8468.method29846(var6, 100, 25, 100);
@@ -135,8 +135,8 @@ public class BiomeMaker {
    public static Biome method36067() {
       Class9328 var2 = new Class9328();
       Class8468.method29848(var2);
-      var2.method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.PARROT, 10, 1, 1))
-         .method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.OCELOT, 2, 1, 1));
+      var2.method35249(EntityClassification.CREATURE, new MobSpawnInfoSpawners(EntityType.PARROT, 10, 1, 1))
+         .method35249(EntityClassification.MONSTER, new MobSpawnInfoSpawners(EntityType.OCELOT, 2, 1, 1));
       return method36073(0.2F, 0.4F, 0.9F, false, false, true, var2);
    }
 
@@ -155,9 +155,9 @@ public class BiomeMaker {
    private static Biome method36071(float var0, float var1, int var2, int var3, int var4) {
       Class9328 var7 = new Class9328();
       Class8468.method29848(var7);
-      var7.method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.PARROT, var2, 1, var3))
-         .method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.OCELOT, 2, 1, var4))
-         .method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.PANDA, 1, 1, 2));
+      var7.method35249(EntityClassification.CREATURE, new MobSpawnInfoSpawners(EntityType.PARROT, var2, 1, var3))
+         .method35249(EntityClassification.MONSTER, new MobSpawnInfoSpawners(EntityType.OCELOT, 2, 1, var4))
+         .method35249(EntityClassification.CREATURE, new MobSpawnInfoSpawners(EntityType.PANDA, 1, 1, 2));
       var7.method35252();
       return method36073(var0, var1, 0.9F, false, false, false, var7);
    }
@@ -165,9 +165,9 @@ public class BiomeMaker {
    private static Biome method36072(float var0, float var1, int var2, int var3) {
       Class9328 var6 = new Class9328();
       Class8468.method29848(var6);
-      var6.method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.PARROT, var2, 1, var3))
-         .method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.PANDA, 80, 1, 2))
-         .method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.OCELOT, 2, 1, 1));
+      var6.method35249(EntityClassification.CREATURE, new MobSpawnInfoSpawners(EntityType.PARROT, var2, 1, var3))
+         .method35249(EntityClassification.CREATURE, new MobSpawnInfoSpawners(EntityType.PANDA, 80, 1, 2))
+         .method35249(EntityClassification.MONSTER, new MobSpawnInfoSpawners(EntityType.OCELOT, 2, 1, 1));
       return method36073(var0, var1, 0.9F, true, false, false, var6);
    }
 
@@ -230,7 +230,7 @@ public class BiomeMaker {
    public static Biome method36074(float var0, float var1, Class9319<Class8278> var2, boolean var3) {
       Class9328 var6 = new Class9328();
       Class8468.method29838(var6);
-      var6.method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.LLAMA, 5, 4, 6));
+      var6.method35249(EntityClassification.CREATURE, new MobSpawnInfoSpawners(EntityType.LLAMA, 5, 4, 6));
       Class8468.method29840(var6);
       Class7935 var7 = new Class7935().method26688(var2);
       Class8468.method29771(var7);
@@ -536,15 +536,15 @@ public class BiomeMaker {
    private static Class9328 method36086() {
       Class9328 var2 = new Class9328();
       Class8468.method29838(var2);
-      var2.method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.HORSE, 1, 2, 6))
-         .method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.DONKEY, 1, 1, 1));
+      var2.method35249(EntityClassification.CREATURE, new MobSpawnInfoSpawners(EntityType.HORSE, 1, 2, 6))
+         .method35249(EntityClassification.CREATURE, new MobSpawnInfoSpawners(EntityType.DONKEY, 1, 1, 1));
       Class8468.method29840(var2);
       return var2;
    }
 
    public static Biome method36087() {
       Class9328 var2 = method36086();
-      var2.method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.LLAMA, 8, 4, 4));
+      var2.method35249(EntityClassification.CREATURE, new MobSpawnInfoSpawners(EntityType.LLAMA, 8, 4, 4));
       return method36084(1.5F, 0.025F, 1.0F, true, false, var2);
    }
 
@@ -665,7 +665,7 @@ public class BiomeMaker {
    public static Biome method36094(boolean var0) {
       Class9328 var3 = new Class9328();
       Class8468.method29841(var3, 3, 4, 15);
-      var3.method35249(EntityClassification.field627, new MobSpawnInfoSpawners(EntityType.SALMON, 15, 1, 5));
+      var3.method35249(EntityClassification.WATER_AMBIENT, new MobSpawnInfoSpawners(EntityType.SALMON, 15, 1, 5));
       boolean var4 = !var0;
       Class7935 var5 = method36093(Class9109.field41850, var0, false, var4);
       var5.method26690(Class1993.field13006, !var0 ? Features.field41652 : Features.field41653);
@@ -678,7 +678,7 @@ public class BiomeMaker {
    public static Biome method36095(boolean var0) {
       Class9328 var3 = new Class9328();
       Class8468.method29841(var3, 1, 4, 10);
-      var3.method35249(EntityClassification.field626, new MobSpawnInfoSpawners(EntityType.DOLPHIN, 1, 1, 2));
+      var3.method35249(EntityClassification.WATER_CREATURE, new MobSpawnInfoSpawners(EntityType.DOLPHIN, 1, 1, 2));
       Class7935 var4 = method36093(Class9109.field41850, var0, false, true);
       var4.method26690(Class1993.field13006, !var0 ? Features.field41654 : Features.field41656);
       Class8468.method29830(var4);
@@ -695,9 +695,9 @@ public class BiomeMaker {
          Class8468.method29841(var3, 8, 4, 8);
       }
 
-      var3.method35249(EntityClassification.field627, new MobSpawnInfoSpawners(EntityType.PUFFERFISH, 5, 1, 3))
-         .method35249(EntityClassification.field627, new MobSpawnInfoSpawners(EntityType.TROPICAL_FISH, 25, 8, 8))
-         .method35249(EntityClassification.field626, new MobSpawnInfoSpawners(EntityType.DOLPHIN, 2, 1, 2));
+      var3.method35249(EntityClassification.WATER_AMBIENT, new MobSpawnInfoSpawners(EntityType.PUFFERFISH, 5, 1, 3))
+         .method35249(EntityClassification.WATER_AMBIENT, new MobSpawnInfoSpawners(EntityType.TROPICAL_FISH, 25, 8, 8))
+         .method35249(EntityClassification.WATER_CREATURE, new MobSpawnInfoSpawners(EntityType.DOLPHIN, 2, 1, 2));
       Class7935 var4 = method36093(Class9109.field41857, var0, true, false);
       var4.method26690(Class1993.field13006, !var0 ? Features.field41658 : Features.field41659);
       if (var0) {
@@ -710,7 +710,7 @@ public class BiomeMaker {
    }
 
    public static Biome method36097() {
-      Class9328 var2 = new Class9328().method35249(EntityClassification.field627, new MobSpawnInfoSpawners(EntityType.PUFFERFISH, 15, 1, 3));
+      Class9328 var2 = new Class9328().method35249(EntityClassification.WATER_AMBIENT, new MobSpawnInfoSpawners(EntityType.PUFFERFISH, 15, 1, 3));
       Class8468.method29842(var2, 10, 4);
       Class7935 var3 = method36093(Class9109.field41848, false, true, false)
          .method26690(Class1993.field13006, Features.field41807)
@@ -723,7 +723,7 @@ public class BiomeMaker {
    public static Biome method36098() {
       Class9328 var2 = new Class9328();
       Class8468.method29842(var2, 5, 1);
-      var2.method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.DROWNED, 5, 1, 1));
+      var2.method35249(EntityClassification.MONSTER, new MobSpawnInfoSpawners(EntityType.DROWNED, 5, 1, 1));
       Class7935 var3 = method36093(Class9109.field41848, true, true, false).method26690(Class1993.field13006, Features.field41659);
       Class8468.method29830(var3);
       Class8468.method29835(var3);
@@ -732,11 +732,11 @@ public class BiomeMaker {
 
    public static Biome method36099(boolean var0) {
       Class9328 var3 = new Class9328()
-         .method35249(EntityClassification.field626, new MobSpawnInfoSpawners(EntityType.SQUID, 1, 1, 4))
-         .method35249(EntityClassification.field627, new MobSpawnInfoSpawners(EntityType.SALMON, 15, 1, 5))
-         .method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.POLAR_BEAR, 1, 1, 2));
+         .method35249(EntityClassification.WATER_CREATURE, new MobSpawnInfoSpawners(EntityType.SQUID, 1, 1, 4))
+         .method35249(EntityClassification.WATER_AMBIENT, new MobSpawnInfoSpawners(EntityType.SALMON, 15, 1, 5))
+         .method35249(EntityClassification.CREATURE, new MobSpawnInfoSpawners(EntityType.POLAR_BEAR, 1, 1, 2));
       Class8468.method29840(var3);
-      var3.method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.DROWNED, 5, 1, 1));
+      var3.method35249(EntityClassification.MONSTER, new MobSpawnInfoSpawners(EntityType.DROWNED, 5, 1, 1));
       float var4 = !var0 ? 0.0F : 0.5F;
       Class7935 var5 = new Class7935().method26688(Class9109.field41847);
       var5.method26693(StructureFeatures.OCEAN_RUIN_COLD);
@@ -842,21 +842,21 @@ public class BiomeMaker {
    }
 
    public static Biome method36102(float var0, float var1) {
-      Class9328 var4 = method36101().method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.WOLF, 5, 4, 4)).method35252();
+      Class9328 var4 = method36101().method35249(EntityClassification.CREATURE, new MobSpawnInfoSpawners(EntityType.WOLF, 5, 4, 4)).method35252();
       return method36100(var0, var1, false, var4);
    }
 
    public static Biome method36103() {
-      Class9328 var2 = method36101().method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.RABBIT, 4, 2, 3));
+      Class9328 var2 = method36101().method35249(EntityClassification.CREATURE, new MobSpawnInfoSpawners(EntityType.RABBIT, 4, 2, 3));
       return method36100(0.1F, 0.4F, true, var2);
    }
 
    public static Biome method36104(float var0, float var1, boolean var2, boolean var3, boolean var4, boolean var5) {
       Class9328 var8 = new Class9328();
       Class8468.method29838(var8);
-      var8.method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.WOLF, 8, 4, 4))
-         .method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.RABBIT, 4, 2, 3))
-         .method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.FOX, 8, 2, 4));
+      var8.method35249(EntityClassification.CREATURE, new MobSpawnInfoSpawners(EntityType.WOLF, 8, 4, 4))
+         .method35249(EntityClassification.CREATURE, new MobSpawnInfoSpawners(EntityType.RABBIT, 4, 2, 3))
+         .method35249(EntityClassification.CREATURE, new MobSpawnInfoSpawners(EntityType.FOX, 8, 2, 4));
       if (!var2 && !var3) {
          var8.method35252();
       }
@@ -964,7 +964,7 @@ public class BiomeMaker {
       Class9328 var5 = new Class9328();
       Class8468.method29838(var5);
       Class8468.method29840(var5);
-      var5.method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.SLIME, 1, 1, 1));
+      var5.method35249(EntityClassification.MONSTER, new MobSpawnInfoSpawners(EntityType.SLIME, 1, 1, 1));
       Class7935 var6 = new Class7935().method26688(Class9109.field41861);
       if (!var2) {
          var6.method26693(StructureFeatures.SWAMP_HUT);
@@ -1071,10 +1071,10 @@ public class BiomeMaker {
 
    public static Biome method36108(float var0, float var1, float var2, int var3, boolean var4) {
       Class9328 var7 = new Class9328()
-         .method35249(EntityClassification.field626, new MobSpawnInfoSpawners(EntityType.SQUID, 2, 1, 4))
-         .method35249(EntityClassification.field627, new MobSpawnInfoSpawners(EntityType.SALMON, 5, 1, 5));
+         .method35249(EntityClassification.WATER_CREATURE, new MobSpawnInfoSpawners(EntityType.SQUID, 2, 1, 4))
+         .method35249(EntityClassification.WATER_AMBIENT, new MobSpawnInfoSpawners(EntityType.SALMON, 5, 1, 5));
       Class8468.method29840(var7);
-      var7.method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.DROWNED, !var4 ? 100 : 1, 1, 1));
+      var7.method35249(EntityClassification.MONSTER, new MobSpawnInfoSpawners(EntityType.DROWNED, !var4 ? 100 : 1, 1, 1));
       Class7935 var8 = new Class7935().method26688(Class9109.field41850);
       var8.method26693(StructureFeatures.MINESHAFT);
       var8.method26693(StructureFeatures.RUINED_PORTAL);
@@ -1119,7 +1119,7 @@ public class BiomeMaker {
    public static Biome method36109(float var0, float var1, float var2, float var3, int var4, boolean var5, boolean var6) {
       Class9328 var9 = new Class9328();
       if (!var6 && !var5) {
-         var9.method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.TURTLE, 5, 2, 5));
+         var9.method35249(EntityClassification.CREATURE, new MobSpawnInfoSpawners(EntityType.TURTLE, 5, 2, 5));
       }
 
       Class8468.method29840(var9);
@@ -1192,12 +1192,12 @@ public class BiomeMaker {
 
    public static Biome method36111() {
       Class8835 var2 = new Class9328()
-         .method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.GHAST, 50, 4, 4))
-         .method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.ZOMBIFIED_PIGLIN, 100, 4, 4))
-         .method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.MAGMA_CUBE, 2, 4, 4))
-         .method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41025, 1, 4, 4))
-         .method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.PIGLIN, 15, 4, 4))
-         .method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.STRIDER, 60, 1, 2))
+         .method35249(EntityClassification.MONSTER, new MobSpawnInfoSpawners(EntityType.GHAST, 50, 4, 4))
+         .method35249(EntityClassification.MONSTER, new MobSpawnInfoSpawners(EntityType.ZOMBIFIED_PIGLIN, 100, 4, 4))
+         .method35249(EntityClassification.MONSTER, new MobSpawnInfoSpawners(EntityType.MAGMA_CUBE, 2, 4, 4))
+         .method35249(EntityClassification.MONSTER, new MobSpawnInfoSpawners(EntityType.field41025, 1, 4, 4))
+         .method35249(EntityClassification.MONSTER, new MobSpawnInfoSpawners(EntityType.PIGLIN, 15, 4, 4))
+         .method35249(EntityClassification.CREATURE, new MobSpawnInfoSpawners(EntityType.STRIDER, 60, 1, 2))
          .method35253();
       Class7935 var3 = new Class7935()
          .method26688(Class9109.field41855)
@@ -1245,10 +1245,10 @@ public class BiomeMaker {
       double var2 = 0.7;
       double var4 = 0.15;
       Class8835 var6 = new Class9328()
-         .method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.SKELETON, 20, 5, 5))
-         .method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.GHAST, 50, 4, 4))
-         .method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41025, 1, 4, 4))
-         .method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.STRIDER, 60, 1, 2))
+         .method35249(EntityClassification.MONSTER, new MobSpawnInfoSpawners(EntityType.SKELETON, 20, 5, 5))
+         .method35249(EntityClassification.MONSTER, new MobSpawnInfoSpawners(EntityType.GHAST, 50, 4, 4))
+         .method35249(EntityClassification.MONSTER, new MobSpawnInfoSpawners(EntityType.field41025, 1, 4, 4))
+         .method35249(EntityClassification.CREATURE, new MobSpawnInfoSpawners(EntityType.STRIDER, 60, 1, 2))
          .method35250(EntityType.SKELETON, 0.7, 0.15)
          .method35250(EntityType.GHAST, 0.7, 0.15)
          .method35250(EntityType.field41025, 0.7, 0.15)
@@ -1300,9 +1300,9 @@ public class BiomeMaker {
 
    public static Biome method36113() {
       Class8835 var2 = new Class9328()
-         .method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.GHAST, 40, 1, 1))
-         .method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.MAGMA_CUBE, 100, 2, 5))
-         .method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.STRIDER, 60, 1, 2))
+         .method35249(EntityClassification.MONSTER, new MobSpawnInfoSpawners(EntityType.GHAST, 40, 1, 1))
+         .method35249(EntityClassification.MONSTER, new MobSpawnInfoSpawners(EntityType.MAGMA_CUBE, 100, 2, 5))
+         .method35249(EntityClassification.CREATURE, new MobSpawnInfoSpawners(EntityType.STRIDER, 60, 1, 2))
          .method35253();
       Class7935 var3 = new Class7935()
          .method26688(Class9109.field41842)
@@ -1354,10 +1354,10 @@ public class BiomeMaker {
 
    public static Biome method36114() {
       Class8835 var2 = new Class9328()
-         .method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.ZOMBIFIED_PIGLIN, 1, 2, 4))
-         .method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.HOGLIN, 9, 3, 4))
-         .method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.PIGLIN, 5, 3, 4))
-         .method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.STRIDER, 60, 1, 2))
+         .method35249(EntityClassification.MONSTER, new MobSpawnInfoSpawners(EntityType.ZOMBIFIED_PIGLIN, 1, 2, 4))
+         .method35249(EntityClassification.MONSTER, new MobSpawnInfoSpawners(EntityType.HOGLIN, 9, 3, 4))
+         .method35249(EntityClassification.MONSTER, new MobSpawnInfoSpawners(EntityType.PIGLIN, 5, 3, 4))
+         .method35249(EntityClassification.CREATURE, new MobSpawnInfoSpawners(EntityType.STRIDER, 60, 1, 2))
          .method35253();
       Class7935 var3 = new Class7935()
          .method26688(Class9109.field41843)
@@ -1404,8 +1404,8 @@ public class BiomeMaker {
 
    public static Biome method36115() {
       Class8835 var2 = new Class9328()
-         .method35249(EntityClassification.field623, new MobSpawnInfoSpawners(EntityType.field41025, 1, 4, 4))
-         .method35249(EntityClassification.field624, new MobSpawnInfoSpawners(EntityType.STRIDER, 60, 1, 2))
+         .method35249(EntityClassification.MONSTER, new MobSpawnInfoSpawners(EntityType.field41025, 1, 4, 4))
+         .method35249(EntityClassification.CREATURE, new MobSpawnInfoSpawners(EntityType.STRIDER, 60, 1, 2))
          .method35250(EntityType.field41025, 1.0, 0.12)
          .method35253();
       Class7935 var3 = new Class7935()

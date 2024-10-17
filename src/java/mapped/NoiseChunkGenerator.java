@@ -581,16 +581,16 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
    @Override
    public List<MobSpawnInfoSpawners> func_230353_a_(Biome var1, StructureManager var2, EntityClassification var3, BlockPos var4) {
       if (var2.method24345(var4, true, Structure.SWAMP_HUT).method17117()) {
-         if (var3 == EntityClassification.field623) {
+         if (var3 == EntityClassification.MONSTER) {
             return Structure.SWAMP_HUT.method11374();
          }
 
-         if (var3 == EntityClassification.field624) {
+         if (var3 == EntityClassification.CREATURE) {
             return Structure.SWAMP_HUT.method11375();
          }
       }
 
-      if (var3 == EntityClassification.field623) {
+      if (var3 == EntityClassification.MONSTER) {
          if (var2.method24345(var4, false, Structure.PILLAGER_OUTPOST).method17117()) {
             return Structure.PILLAGER_OUTPOST.method11374();
          }

@@ -1038,7 +1038,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
 
       for (EntityType var6 : Registry.ENTITY_TYPE) {
          ResourceLocation var7 = var6.method33212();
-         if (!field17613.contains(var6) && var6.method33209() == EntityClassification.field628) {
+         if (!field17613.contains(var6) && var6.method33209() == EntityClassification.MISC) {
             if (var7 != Class8793.field39533 && this.field17614.remove(var7) != null) {
                throw new IllegalStateException(
                   String.format("Weird loottable '%s' for '%s', not a LivingEntity so should not have loot", var7, Registry.ENTITY_TYPE.getKey(var6))
