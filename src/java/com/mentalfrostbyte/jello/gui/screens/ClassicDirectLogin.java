@@ -1,16 +1,18 @@
-package mapped;
+package com.mentalfrostbyte.jello.gui.screens;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.account.Account;
 import com.mentalfrostbyte.jello.account.AccountManager;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Screen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
+import mapped.*;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.glfw.GLFW;
 
-public class Class4311 extends Screen {
+import java.util.Objects;
+
+public class ClassicDirectLogin extends Screen {
    public SigmaClassicTextBox field20985;
    public SigmaClassicTextBox field20986;
    public Class4300 field20987;
@@ -19,7 +21,7 @@ public class Class4311 extends Screen {
    public AccountManager field20990 = Client.getInstance().getAccountManager();
    private String field20991 = "§7Idle...";
 
-   public Class4311() {
+   public ClassicDirectLogin() {
       super("Alt Manager");
       this.method13300(false);
       int var3 = 400;
@@ -53,18 +55,17 @@ public class Class4311 extends Screen {
       this.field20989.doThis((var1, var2) -> {
          String var5x = "";
 
-         try {
-            var5x = GLFW.glfwGetClipboardString(Minecraft.getInstance().mainWindow.getHandle());
-         } catch (Exception var7x) {
+         var5x = GLFW.glfwGetClipboardString(Minecraft.getInstance().mainWindow.getHandle()) == null ? "" : GLFW.glfwGetClipboardString(Minecraft.getInstance().mainWindow.getHandle());
+
+         if (var5x.equalsIgnoreCase("")) {
+            return;
          }
 
-         if (var5x != "" && var5x.contains(":")) {
+         if (var5x.contains(":")) {
             String[] var6x = var5x.split(":");
-            if (var6x.length == 2) {
-               this.field20985.method13304(var6x[0].replace("\n", ""));
-               this.field20986.method13304(var6x[1].replace("\n", ""));
-            }
-         }
+            this.field20985.method13304(var6x[0]);
+            this.field20986.method13304(var6x[1]);
+         } else this.field20991 = "§cPlease copy a valid username:password format to clipboard";
       });
    }
 
