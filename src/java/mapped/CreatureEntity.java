@@ -9,22 +9,22 @@ import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
-public abstract class Class1046 extends MobEntity {
-   public Class1046(EntityType<? extends Class1046> var1, World var2) {
+public abstract class CreatureEntity extends MobEntity {
+   public CreatureEntity(EntityType<? extends CreatureEntity> var1, World var2) {
       super(var1, var2);
    }
 
-   public float method4771(BlockPos var1) {
-      return this.method4339(var1, this.world);
+   public float getBlockPathWeight(BlockPos var1) {
+      return this.getBlockPathWeight(var1, this.world);
    }
 
-   public float method4339(BlockPos var1, IWorldReader var2) {
+   public float getBlockPathWeight(BlockPos var1, IWorldReader var2) {
       return 0.0F;
    }
 
    @Override
    public boolean method4265(IWorld var1, Class2202 var2) {
-      return this.method4339(this.getPosition(), var1) >= 0.0F;
+      return this.getBlockPathWeight(this.getPosition(), var1) >= 0.0F;
    }
 
    public boolean method4772() {

@@ -12,11 +12,11 @@ import java.util.List;
 
 public class Class2973 extends Structure<Class4712> {
    private static final List<MobSpawnInfoSpawners> field18086 = ImmutableList.of(
-      new MobSpawnInfoSpawners(EntityType.field41010, 10, 2, 3),
-      new MobSpawnInfoSpawners(EntityType.field41110, 5, 4, 4),
-      new MobSpawnInfoSpawners(EntityType.field41103, 8, 5, 5),
-      new MobSpawnInfoSpawners(EntityType.field41078, 2, 5, 5),
-      new MobSpawnInfoSpawners(EntityType.field41049, 3, 4, 4)
+      new MobSpawnInfoSpawners(EntityType.BLAZE, 10, 2, 3),
+      new MobSpawnInfoSpawners(EntityType.ZOMBIFIED_PIGLIN, 5, 4, 4),
+      new MobSpawnInfoSpawners(EntityType.WITHER_SKELETON, 8, 5, 5),
+      new MobSpawnInfoSpawners(EntityType.SKELETON, 2, 5, 5),
+      new MobSpawnInfoSpawners(EntityType.MAGMA_CUBE, 3, 4, 4)
    );
 
    public Class2973(Codec<Class4712> var1) {

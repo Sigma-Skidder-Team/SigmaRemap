@@ -41,7 +41,7 @@ public class ItemEntity extends Entity {
    }
 
    public ItemEntity(World var1, double var2, double var4, double var6) {
-      this(EntityType.field41042, var1);
+      this(EntityType.ITEM, var1);
       this.setPosition(var2, var4, var6);
       this.rotationYaw = this.rand.nextFloat() * 360.0F;
       this.setMotion(this.rand.nextDouble() * 0.2 - 0.1, 0.2, this.rand.nextDouble() * 0.2 - 0.1);

@@ -6,7 +6,7 @@ import net.optifine.Config;
 
 public class Class4120 extends Class4117 {
    public Class4120() {
-      super(EntityType.field41097, "vex", 0.3F);
+      super(EntityType.VEX, "vex", 0.3F);
    }
 
    @Override

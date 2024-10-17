@@ -24,7 +24,7 @@ public class Class2780 extends Class2595 {
       if (!this.field17382.method4296() && !this.field17382.method4914()) {
          List<Entity> var3 = this.field17382.world.getEntitiesInAABBexcluding(this.field17382, this.field17382.getBoundingBox().grow(9.0, 4.0, 9.0), var0 -> {
             EntityType var3x = var0.getType();
-            return var3x == EntityType.field41047 || var3x == EntityType.field41094;
+            return var3x == EntityType.LLAMA || var3x == EntityType.TRADER_LLAMA;
          });
          Class1064 var4 = null;
          double var5 = Double.MAX_VALUE;

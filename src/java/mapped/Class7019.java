@@ -94,7 +94,7 @@ public class Class7019 implements Class7016 {
                   return false;
                }
 
-               Class1044 var11 = EntityType.field41100
+               Class1044 var11 = EntityType.WANDERING_TRADER
                   .method33201(var1, (CompoundNBT)null, (ITextComponent)null, (PlayerEntity)null, var10, Class2202.field14398, false, false);
                if (var11 != null) {
                   for (int var12 = 0; var12 < 2; var12++) {
@@ -119,7 +119,7 @@ public class Class7019 implements Class7016 {
    private void method21751(ServerWorld var1, Class1044 var2, int var3) {
       BlockPos var6 = this.method21752(var1, var2.getPosition(), var3);
       if (var6 != null) {
-         Class1065 var7 = EntityType.field41094.method33201(var1, (CompoundNBT)null, (ITextComponent)null, (PlayerEntity)null, var6, Class2202.field14398, false, false);
+         Class1065 var7 = EntityType.TRADER_LLAMA.method33201(var1, (CompoundNBT)null, (ITextComponent)null, (PlayerEntity)null, var6, Class2202.field14398, false, false);
          if (var7 != null) {
             var7.method4298(var2, true);
          }
@@ -135,7 +135,7 @@ public class Class7019 implements Class7016 {
          int var9 = var2.getZ() + this.field30322.nextInt(var3 * 2) - var3;
          int var10 = var1.method6736(Heightmap.Type.WORLD_SURFACE, var8, var9);
          BlockPos var11 = new BlockPos(var8, var10, var9);
-         if (Class8170.method28429(Class2068.field13472, var1, var11, EntityType.field41100)) {
+         if (Class8170.method28429(Class2068.field13472, var1, var11, EntityType.WANDERING_TRADER)) {
             var6 = var11;
             break;
          }

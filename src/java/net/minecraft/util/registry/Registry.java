@@ -10,6 +10,7 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.attributes.Attribute;
+import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.inventory.container.ContainerType;
@@ -81,7 +82,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final Registry<Effect> EFFECTS = method9175(field16038, () -> Effects.LUCK);
    public static final Class2351<Block> BLOCK = method9176(field16039, "air", () -> Blocks.AIR);
    public static final Registry<Enchantment> ENCHANTMENT = method9175(field16040, () -> Enchantments.FORTUNE);
-   public static final Class2351<EntityType<?>> ENTITY_TYPE = method9176(field16041, "pig", () -> EntityType.field41064);
+   public static final Class2351<EntityType<?>> ENTITY_TYPE = method9176(field16041, "pig", () -> EntityType.PIG);
    public static final Class2351<Item> ITEM = method9176(field16042, "air", () -> Items.AIR);
    public static final Class2351<Class8812> field16076 = method9176(field16043, "empty", () -> Class8137.field34976);
    public static final Registry<ParticleType<?>> PARTICLE_TYPE = method9175(field16044, () -> ParticleTypes.field34051);

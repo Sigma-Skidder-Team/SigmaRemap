@@ -8,9 +8,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.enchantment.FrostWalkerEnchantment;
-import net.minecraft.entity.ai.attributes.Attribute;
-import net.minecraft.entity.ai.attributes.AttributeModifier;
-import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
+import net.minecraft.entity.ai.attributes.*;
 import net.minecraft.entity.passive.WolfEntity;
 import com.google.common.base.Objects;
 import com.google.common.collect.ImmutableList;
@@ -143,7 +141,7 @@ public abstract class LivingEntity extends Entity {
 
    public LivingEntity(EntityType<? extends LivingEntity> var1, World var2) {
       super(var1, var2);
-      this.attributes = new AttributeModifierManager(Class9614.method37375(var1));
+      this.attributes = new AttributeModifierManager(GlobalEntityTypeAttributes.method37375(var1));
       this.setHealth(this.method3075());
       this.preventEntitySpawning = true;
       this.field4964 = (float)((Math.random() + 1.0) * 0.01F);
@@ -188,13 +186,13 @@ public abstract class LivingEntity extends Entity {
       this.dataManager.register(field4940, Optional.<BlockPos>empty());
    }
 
-   public static Class7037 method2997() {
-      return Class9767.method38416()
-         .method21848(Attributes.field42105)
-         .method21848(Attributes.field42107)
+   public static MutableAttribute method2997() {
+      return AttributeModifierMap.method38416()
+         .method21848(Attributes.MAX_HEALTH)
+         .method21848(Attributes.KNOCKBACK_RESISTANCE)
          .method21848(Attributes.MOVEMENT_SPEED)
-         .method21848(Attributes.field42113)
-         .method21848(Attributes.field42114);
+         .method21848(Attributes.ARMOR)
+         .method21848(Attributes.ARMOR_TOUGHNESS);
    }
 
    @Override
@@ -400,7 +398,7 @@ public abstract class LivingEntity extends Entity {
 
    public void method3003() {
       ModifiableAttributeInstance var3 = this.getAttribute(Attributes.MOVEMENT_SPEED);
-      if (var3 != null && var3.method38664(SOUL_SPEED_BOOT_ID) != null) {
+      if (var3 != null && var3.getModifier(SOUL_SPEED_BOOT_ID) != null) {
          var3.method38671(SOUL_SPEED_BOOT_ID);
       }
    }
@@ -414,7 +412,7 @@ public abstract class LivingEntity extends Entity {
                return;
             }
 
-            var4.method38667(new AttributeModifier(SOUL_SPEED_BOOT_ID, "Soul speed boost", (double)(0.03F * (1.0F + (float)var3 * 0.35F)), AttributeModifier.Operation.ADDITION));
+            var4.applyNonPersistentModifier(new AttributeModifier(SOUL_SPEED_BOOT_ID, "Soul speed boost", (double)(0.03F * (1.0F + (float)var3 * 0.35F)), AttributeModifier.Operation.ADDITION));
             if (this.getRNG().nextFloat() < 0.04F) {
                ItemStack var5 = this.getItemStackFromSlot(EquipmentSlotType.FEET);
                var5.damageItem(1, this, var0 -> var0.sendBreakAnimation(EquipmentSlotType.FEET));
@@ -565,7 +563,7 @@ public abstract class LivingEntity extends Entity {
       var1.putInt("HurtByTimestamp", this.field4995);
       var1.putShort("DeathTime", (short)this.deathTime);
       var1.putFloat("AbsorptionAmount", this.getAbsorptionAmount());
-      var1.put("Attributes", this.getAttributeManager().method33389());
+      var1.put("Attributes", this.getAttributeManager().serialize());
       if (!this.field4944.isEmpty()) {
          ListNBT var4 = new ListNBT();
 
@@ -590,7 +588,7 @@ public abstract class LivingEntity extends Entity {
    public void readAdditional(CompoundNBT var1) {
       this.setAbsorptionAmount(var1.getFloat("AbsorptionAmount"));
       if (var1.contains("Attributes", 9) && this.world != null && !this.world.isRemote) {
-         this.getAttributeManager().method33390(var1.method131("Attributes", 10));
+         this.getAttributeManager().deserialize(var1.method131("Attributes", 10));
       }
 
       if (var1.contains("ActiveEffects", 9)) {
@@ -723,9 +721,9 @@ public abstract class LivingEntity extends Entity {
          ItemStack var9 = this.getItemStackFromSlot(EquipmentSlotType.HEAD);
          Item var7 = var9.getItem();
          EntityType var8 = var1.getType();
-         if (var8 == EntityType.field41078 && var7 == Items.field38058
-            || var8 == EntityType.field41107 && var7 == Items.field38061
-            || var8 == EntityType.field41017 && var7 == Items.field38062) {
+         if (var8 == EntityType.SKELETON && var7 == Items.field38058
+            || var8 == EntityType.ZOMBIE && var7 == Items.field38061
+            || var8 == EntityType.CREEPER && var7 == Items.field38062) {
             var4 *= 0.5;
          }
       }
@@ -1273,7 +1271,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    public void applyKnockback(float var1, double var2, double var4) {
-      var1 = (float)((double)var1 * (1.0 - this.getAttributeValue(Attributes.field42107)));
+      var1 = (float)((double)var1 * (1.0 - this.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE)));
       if (!(var1 <= 0.0F)) {
          this.isAirBorne = true;
          Vector3d var8 = this.getMotion();
@@ -1402,7 +1400,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    public int method3070() {
-      return MathHelper.floor(this.getAttributeValue(Attributes.field42113));
+      return MathHelper.floor(this.getAttributeValue(Attributes.ARMOR));
    }
 
    public void method2886(DamageSource var1, float var2) {
@@ -1414,7 +1412,7 @@ public abstract class LivingEntity extends Entity {
    public float applyArmorCalculations(DamageSource var1, float var2) {
       if (!var1.isUnblockable()) {
          this.method2886(var1, var2);
-         var2 = Class8913.method32581(var2, (float)this.method3070(), (float)this.getAttributeValue(Attributes.field42114));
+         var2 = Class8913.method32581(var2, (float)this.method3070(), (float)this.getAttributeValue(Attributes.ARMOR_TOUGHNESS));
       }
 
       return var2;
@@ -1493,7 +1491,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    public final float method3075() {
-      return (float)this.getAttributeValue(Attributes.field42105);
+      return (float)this.getAttributeValue(Attributes.MAX_HEALTH);
    }
 
    public final int method3076() {
@@ -1714,7 +1712,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    public double method3087(Attribute var1) {
-      return this.getAttributeManager().method33384(var1);
+      return this.getAttributeManager().getAttributeBaseValue(var1);
    }
 
    public AttributeModifierManager getAttributeManager() {
@@ -1797,12 +1795,12 @@ public abstract class LivingEntity extends Entity {
    public void setSprinting(boolean var1) {
       super.setSprinting(var1);
       ModifiableAttributeInstance var4 = this.getAttribute(Attributes.MOVEMENT_SPEED);
-      if (var4.method38664(SPRINTING_SPEED_BOOST_ID) != null) {
-         var4.method38670(SPRINTING_SPEED_BOOST);
+      if (var4.getModifier(SPRINTING_SPEED_BOOST_ID) != null) {
+         var4.removeModifier(SPRINTING_SPEED_BOOST);
       }
 
       if (var1) {
-         var4.method38667(SPRINTING_SPEED_BOOST);
+         var4.applyNonPersistentModifier(SPRINTING_SPEED_BOOST);
       }
    }
 
@@ -2260,11 +2258,11 @@ public abstract class LivingEntity extends Entity {
 
             var3.put(var7, var9);
             if (!var8.isEmpty()) {
-               this.getAttributeManager().method33386(var8.method32171(var7));
+               this.getAttributeManager().removeModifiers(var8.method32171(var7));
             }
 
             if (!var9.isEmpty()) {
-               this.getAttributeManager().method33387(var9.method32171(var7));
+               this.getAttributeManager().reapplyModifiers(var9.method32171(var7));
             }
          }
       }
@@ -2635,7 +2633,7 @@ public abstract class LivingEntity extends Entity {
 
    @Override
    public void markVelocityChanged() {
-      this.velocityChanged = this.rand.nextDouble() >= this.getAttributeValue(Attributes.field42107);
+      this.velocityChanged = this.rand.nextDouble() >= this.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE);
    }
 
    @Override
@@ -2928,8 +2926,8 @@ public abstract class LivingEntity extends Entity {
             var20.setEntityState(this, (byte)46);
          }
 
-         if (this instanceof Class1046) {
-            ((Class1046)this).method4230().method21666();
+         if (this instanceof CreatureEntity) {
+            ((CreatureEntity)this).method4230().method21666();
          }
 
          return true;

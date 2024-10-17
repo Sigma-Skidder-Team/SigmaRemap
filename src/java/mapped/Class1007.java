@@ -7,7 +7,10 @@ import net.minecraft.block.material.Material;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.entity.boss.dragon.EnderDragonPartEntity;
+import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
@@ -32,7 +35,7 @@ import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class1007 extends MobEntity implements Class1008 {
+public class Class1007 extends MobEntity implements IMob {
    private static final Logger field5618 = LogManager.getLogger();
    public static final DataParameter<Integer> field5619 = EntityDataManager.<Integer>createKey(Class1007.class, DataSerializers.VARINT);
    private static final Class8522 field5620 = new Class8522().method30203(64.0);
@@ -86,8 +89,8 @@ public class Class1007 extends MobEntity implements Class1008 {
       this.field5639 = new Class8942(this);
    }
 
-   public static Class7037 method2997() {
-      return MobEntity.method4220().method21849(Attributes.field42105, 200.0);
+   public static MutableAttribute method2997() {
+      return MobEntity.method4220().method21849(Attributes.MAX_HEALTH, 200.0);
    }
 
    @Override

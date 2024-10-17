@@ -137,7 +137,7 @@ public class Class4204 extends Class4194 {
             var1.setBlockState(var27, Blocks.field36532.getDefaultState(), 2);
             TileEntity var21 = var1.getTileEntity(var27);
             if (var21 instanceof Class960) {
-               ((Class960)var21).method3911().method24790(EntityType.field41077);
+               ((Class960)var21).method3911().method24790(EntityType.SILVERFISH);
             }
          }
       }

@@ -1,6 +1,9 @@
 package mapped;
 
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
+import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.passive.WolfEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
@@ -54,7 +57,7 @@ public class Class1094 extends Class1018 {
       this.field5600.addGoal(3, new Class2680(this, 1.0, Class120.method339(Items.field38052, Items.field38057, Blocks.DANDELION), false));
       this.field5600.addGoal(4, new Class2772<PlayerEntity>(this, PlayerEntity.class, 8.0F, 2.2, 2.2));
       this.field5600.addGoal(4, new Class2772<WolfEntity>(this, WolfEntity.class, 10.0F, 2.2, 2.2));
-      this.field5600.addGoal(4, new Class2772<Class1009>(this, Class1009.class, 4.0F, 2.2, 2.2));
+      this.field5600.addGoal(4, new Class2772<MonsterEntity>(this, MonsterEntity.class, 4.0F, 2.2, 2.2));
       this.field5600.addGoal(5, new Class2634(this));
       this.field5600.addGoal(6, new WaterAvoidingRandomWalkingGoal(this, 0.6));
       this.field5600.addGoal(11, new Class2612(this, PlayerEntity.class, 10.0F));
@@ -215,8 +218,8 @@ public class Class1094 extends Class1018 {
       }
    }
 
-   public static Class7037 method5111() {
-      return MobEntity.method4220().method21849(Attributes.field42105, 3.0).method21849(Attributes.MOVEMENT_SPEED, 0.3F);
+   public static MutableAttribute method5111() {
+      return MobEntity.method4220().method21849(Attributes.MAX_HEALTH, 3.0).method21849(Attributes.MOVEMENT_SPEED, 0.3F);
    }
 
    @Override
@@ -302,7 +305,7 @@ public class Class1094 extends Class1018 {
 
    public void method5115(int var1) {
       if (var1 == 99) {
-         this.getAttribute(Attributes.field42113).method38661(8.0);
+         this.getAttribute(Attributes.ARMOR).method38661(8.0);
          this.field5600.addGoal(4, new Class2648(this));
          this.field5601.addGoal(1, new HurtByTargetGoal(this).method10918());
          this.field5601.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));

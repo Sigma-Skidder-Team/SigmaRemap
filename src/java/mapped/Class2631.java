@@ -29,7 +29,7 @@ public class Class2631 extends Class2628 {
    }
 
    @Override
-   public int method10833(Class1046 var1) {
+   public int method10833(CreatureEntity var1) {
       return 40;
    }
 

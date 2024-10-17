@@ -10,7 +10,7 @@ public class Class4105 extends Class4057 {
    private static Map<String, Integer> field20395 = null;
 
    public Class4105() {
-      super(EntityType.field41063, "phantom", 0.75F);
+      super(EntityType.PHANTOM, "phantom", 0.75F);
    }
 
    @Override

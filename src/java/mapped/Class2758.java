@@ -1,12 +1,13 @@
 package mapped;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.projectile.ProjectileHelper;
 import net.minecraft.item.Items;
 
 import java.util.EnumSet;
 
-public class Class2758<T extends Class1009 & Class1022> extends Class2595 {
+public class Class2758<T extends MonsterEntity & Class1022> extends Class2595 {
    private static String[] field17303;
    private final T field17304;
    private final double field17305;

@@ -6,7 +6,7 @@ import net.optifine.Config;
 
 public class Class4111 extends Class4057 {
    public Class4111() {
-      super(EntityType.field41095, "tropical_fish_a", 0.2F);
+      super(EntityType.TROPICAL_FISH, "tropical_fish_a", 0.2F);
    }
 
    @Override
@@ -48,7 +48,7 @@ public class Class4111 extends Class4057 {
    @Override
    public Class9492 method12825(Class2828 var1, float var2) {
       EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
-      Object var6 = var5.method32232().get(EntityType.field41095);
+      Object var6 = var5.method32232().get(EntityType.TROPICAL_FISH);
       if (var6 instanceof Class5655) {
          if (((EntityRenderer)var6).method17898() == null) {
             Class5655 var7 = new Class5655(var5);

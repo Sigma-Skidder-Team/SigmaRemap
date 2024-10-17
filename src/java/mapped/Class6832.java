@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.util.math.MathHelper;
 
 public class Class6832 extends Class6829 {
@@ -39,7 +40,7 @@ public class Class6832 extends Class6829 {
          this.field29707.rotationYaw = this.method20816(this.field29707.rotationYaw, var11, 90.0F);
          float var12;
          if (!this.field29707.isOnGround()) {
-            var12 = (float)(this.field29711 * this.field29707.getAttributeValue(Attributes.field42109));
+            var12 = (float)(this.field29711 * this.field29707.getAttributeValue(Attributes.FLYING_SPEED));
          } else {
             var12 = (float)(this.field29711 * this.field29707.getAttributeValue(Attributes.MOVEMENT_SPEED));
          }

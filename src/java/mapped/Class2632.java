@@ -19,7 +19,7 @@ public class Class2632 extends Class2628 {
    private final MobEntity field16946;
    private int field16947;
 
-   public Class2632(Block var1, Class1046 var2, double var3, int var5) {
+   public Class2632(Block var1, CreatureEntity var2, double var3, int var5) {
       super(var2, var3, 24, var5);
       this.field16945 = var1;
       this.field16946 = var2;

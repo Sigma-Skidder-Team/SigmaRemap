@@ -18,11 +18,11 @@ public class Class900 extends Class898 {
    }
 
    public Class900(World var1, LivingEntity var2, double var3, double var5, double var7) {
-      super(EntityType.field41081, var2, var3, var5, var7, var1);
+      super(EntityType.SMALL_FIREBALL, var2, var3, var5, var7, var1);
    }
 
    public Class900(World var1, double var2, double var4, double var6, double var8, double var10, double var12) {
-      super(EntityType.field41081, var2, var4, var6, var8, var10, var12, var1);
+      super(EntityType.SMALL_FIREBALL, var2, var4, var6, var8, var10, var12, var1);
    }
 
    @Override

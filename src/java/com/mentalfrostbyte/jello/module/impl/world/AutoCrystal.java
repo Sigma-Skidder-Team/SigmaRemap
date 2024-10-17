@@ -18,6 +18,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -79,11 +80,11 @@ public class AutoCrystal extends Module {
 
     public static float method16382(LivingEntity var0, float var1, Explosion var2) {
         if (!(var0 instanceof PlayerEntity)) {
-            return Class8913.method32581(var1, (float) var0.method3070(), (float) var0.getAttributeValue(Attributes.field42114));
+            return Class8913.method32581(var1, (float) var0.method3070(), (float) var0.getAttributeValue(Attributes.ARMOR_TOUGHNESS));
         } else {
             PlayerEntity var5 = (PlayerEntity) var0;
             DamageSource var6 = DamageSource.method31126(var2);
-            var1 = Class8913.method32581(var1, (float) var5.method3070(), (float) var5.getAttributeValue(Attributes.field42114));
+            var1 = Class8913.method32581(var1, (float) var5.method3070(), (float) var5.getAttributeValue(Attributes.ARMOR_TOUGHNESS));
             int var7 = EnchantmentHelper.method26317(var5.getArmorInventoryList(), var6);
             float var8 = MathHelper.clamp((float) var7, 0.0F, 20.0F);
             var1 *= 1.0F - var8 / 25.0F;

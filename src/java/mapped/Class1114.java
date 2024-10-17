@@ -5,6 +5,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
@@ -79,8 +81,8 @@ public class Class1114 extends Class1113 {
    public void collideWithNearbyEntities() {
    }
 
-   public static Class7037 method5363() {
-      return MobEntity.method4220().method21849(Attributes.field42105, 6.0);
+   public static MutableAttribute method5363() {
+      return MobEntity.method4220().method21849(Attributes.MAX_HEALTH, 6.0);
    }
 
    public boolean method5364() {

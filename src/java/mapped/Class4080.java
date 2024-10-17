@@ -6,7 +6,7 @@ import net.optifine.Config;
 
 public class Class4080 extends Class4057 {
    public Class4080() {
-      super(EntityType.field41077, "silverfish", 0.3F);
+      super(EntityType.SILVERFISH, "silverfish", 0.3F);
    }
 
    @Override

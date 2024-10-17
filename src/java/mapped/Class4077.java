@@ -5,7 +5,7 @@ import net.minecraft.entity.EntityType;
 
 public class Class4077 extends Class4076 {
    public Class4077() {
-      super(EntityType.field41013, "cave_spider", 0.7F);
+      super(EntityType.CAVE_SPIDER, "cave_spider", 0.7F);
    }
 
    @Override

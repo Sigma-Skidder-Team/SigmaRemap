@@ -43,11 +43,11 @@ public class PacketEssentials extends Module {
                 }
             } else {
                 SSpawnObjectPacket var6 = (SSpawnObjectPacket) var1.getPacket();
-                if (var6.method17266() == EntityType.field41006) {
+                if (var6.method17266() == EntityType.ARMOR_STAND) {
                     var1.setCancelled(true);
                 }
 
-                if (var6.method17266() == EntityType.field41035) {
+                if (var6.method17266() == EntityType.GIANT) {
                     var1.setCancelled(true);
                 }
             }

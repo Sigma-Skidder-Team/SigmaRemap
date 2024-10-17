@@ -21,6 +21,7 @@ import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.EffectInstance;
@@ -741,7 +742,7 @@ public class IngameGui extends AbstractGui {
             int var12 = this.field6741 / 2 - 91;
             int var13 = this.field6741 / 2 + 91;
             int var14 = this.field6742 - 39;
-            float var15 = (float) var4.getAttributeValue(Attributes.field42105);
+            float var15 = (float) var4.getAttributeValue(Attributes.MAX_HEALTH);
             int var16 = MathHelper.ceil(var4.getAbsorptionAmount());
             int var17 = MathHelper.ceil((var15 + (float) var16) / 2.0F / 10.0F);
             int var18 = Math.max(10 - (var17 - 2), 3);

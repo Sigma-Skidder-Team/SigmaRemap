@@ -8,6 +8,9 @@ import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
+import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.inventory.EquipmentSlotType;
@@ -52,12 +55,12 @@ public class Class1024 extends Class1025 implements Class1023 {
       this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1058>(this, Class1058.class, true));
    }
 
-   public static Class7037 method4541() {
-      return Class1009.method4343()
+   public static MutableAttribute method4541() {
+      return MonsterEntity.method4343()
          .method21849(Attributes.MOVEMENT_SPEED, 0.35F)
-         .method21849(Attributes.field42105, 24.0)
+         .method21849(Attributes.MAX_HEALTH, 24.0)
          .method21849(Attributes.ATTACK_DAMAGE, 5.0)
-         .method21849(Attributes.field42106, 32.0);
+         .method21849(Attributes.FOLLOW_RANGE, 32.0);
    }
 
    @Override
@@ -129,7 +132,7 @@ public class Class1024 extends Class1025 implements Class1023 {
    }
 
    @Override
-   public float method4339(BlockPos var1, IWorldReader var2) {
+   public float getBlockPathWeight(BlockPos var1, IWorldReader var2) {
       BlockState var5 = var2.getBlockState(var1.down());
       return !var5.isIn(Blocks.GRASS_BLOCK) && !var5.isIn(Blocks.SAND) ? 0.5F - var2.method7009(var1) : 10.0F;
    }

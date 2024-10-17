@@ -30,7 +30,7 @@ public class ModifiableAttributeInstance {
    public ModifiableAttributeInstance(Attribute var1, Consumer<ModifiableAttributeInstance> var2) {
       this.field45827 = var1;
       this.field45834 = var2;
-      this.field45831 = var1.method15028();
+      this.field45831 = var1.getDefaultValue();
    }
 
    public Attribute getAttribute() {
@@ -57,8 +57,8 @@ public class ModifiableAttributeInstance {
    }
 
    @Nullable
-   public AttributeModifier method38664(UUID var1) {
-      return this.field45829.get(var1);
+   public AttributeModifier getModifier(UUID uuid) {
+      return this.field45829.get(uuid);
    }
 
    public boolean method38665(AttributeModifier var1) {
@@ -75,7 +75,7 @@ public class ModifiableAttributeInstance {
       }
    }
 
-   public void method38667(AttributeModifier var1) {
+   public void applyNonPersistentModifier(AttributeModifier var1) {
       this.method38666(var1);
    }
 
@@ -89,24 +89,24 @@ public class ModifiableAttributeInstance {
       this.field45834.accept(this);
    }
 
-   public void method38670(AttributeModifier var1) {
-      this.method38662(var1.getOperation()).remove(var1);
-      this.field45829.remove(var1.getID());
-      this.field45830.remove(var1);
+   public void removeModifier(AttributeModifier attributeModifier) {
+      this.method38662(attributeModifier.getOperation()).remove(attributeModifier);
+      this.field45829.remove(attributeModifier.getID());
+      this.field45830.remove(attributeModifier);
       this.method38669();
    }
 
    public void method38671(UUID var1) {
-      AttributeModifier var4 = this.method38664(var1);
+      AttributeModifier var4 = this.getModifier(var1);
       if (var4 != null) {
-         this.method38670(var4);
+         this.removeModifier(var4);
       }
    }
 
    public boolean method38672(UUID var1) {
-      AttributeModifier var4 = this.method38664(var1);
+      AttributeModifier var4 = this.getModifier(var1);
       if (var4 != null && this.field45830.contains(var4)) {
-         this.method38670(var4);
+         this.removeModifier(var4);
          return true;
       } else {
          return false;
@@ -115,11 +115,11 @@ public class ModifiableAttributeInstance {
 
    public void method38673() {
       for (AttributeModifier var4 : this.getModifierListCopy()) {
-         this.method38670(var4);
+         this.removeModifier(var4);
       }
    }
 
-   public double method38674() {
+   public double getValue() {
       if (this.field45832) {
          this.field45833 = this.method38675();
          this.field45832 = false;
@@ -145,14 +145,14 @@ public class ModifiableAttributeInstance {
          var6 *= 1.0 + var12.getAmount();
       }
 
-      return this.field45827.method15031(var6);
+      return this.field45827.clampValue(var6);
    }
 
    private Collection<AttributeModifier> method38676(AttributeModifier.Operation var1) {
       return this.field45828.getOrDefault(var1, Collections.<AttributeModifier>emptySet());
    }
 
-   public void method38677(ModifiableAttributeInstance var1) {
+   public void copyValuesFromInstance(ModifiableAttributeInstance var1) {
       this.field45831 = var1.field45831;
       this.field45829.clear();
       this.field45829.putAll(var1.field45829);
@@ -163,7 +163,7 @@ public class ModifiableAttributeInstance {
       this.method38669();
    }
 
-   public CompoundNBT method38678() {
+   public CompoundNBT writeInstances() {
       CompoundNBT var3 = new CompoundNBT();
       var3.method109("Name", Registry.ATTRIBUTE.getKey(this.field45827).toString());
       var3.method108("Base", this.field45831);

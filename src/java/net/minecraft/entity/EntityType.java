@@ -4,6 +4,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.item.BoatEntity;
 import net.minecraft.entity.item.ItemFrameEntity;
+import net.minecraft.entity.monster.EndermanEntity;
+import net.minecraft.entity.monster.ZombieEntity;
 import net.minecraft.entity.passive.WolfEntity;
 import com.google.common.collect.ImmutableSet;
 import java.util.Optional;
@@ -36,60 +38,61 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class EntityType<T extends Entity> {
-   private static final Logger field41004 = LogManager.getLogger();
-   public static final EntityType<Class999> field41005 = method33197(
+   private static final Logger LOGGER = LogManager.getLogger();
+
+   public static final EntityType<Class999> AREA_EFFECT_CLOUD = method33197(
       "area_effect_cloud",
       Class8878.<Class999>method32299(Class999::new, EntityClassification.field628).method32304().method32301(6.0F, 0.5F).method32307(10).method32308(Integer.MAX_VALUE)
    );
-   public static final EntityType<ArmorStandEntity> field41006 = method33197(
+   public static final EntityType<ArmorStandEntity> ARMOR_STAND = method33197(
       "armor_stand", Class8878.<ArmorStandEntity>method32299(ArmorStandEntity::new, EntityClassification.field628).method32301(0.5F, 1.975F).method32307(10)
    );
-   public static final EntityType<Class887> field41007 = method33197(
+   public static final EntityType<Class887> ARROW = method33197(
       "arrow", Class8878.<Class887>method32299(Class887::new, EntityClassification.field628).method32301(0.5F, 0.5F).method32307(4).method32308(20)
    );
-   public static final EntityType<Class1114> field41008 = method33197(
+   public static final EntityType<Class1114> BAT = method33197(
       "bat", Class8878.<Class1114>method32299(Class1114::new, EntityClassification.field625).method32301(0.5F, 0.9F).method32307(5)
    );
-   public static final EntityType<Class1017> field41009 = method33197(
+   public static final EntityType<Class1017> BEE = method33197(
       "bee", Class8878.<Class1017>method32299(Class1017::new, EntityClassification.field624).method32301(0.7F, 0.6F).method32307(8)
    );
-   public static final EntityType<Class1103> field41010 = method33197(
+   public static final EntityType<Class1103> BLAZE = method33197(
       "blaze", Class8878.<Class1103>method32299(Class1103::new, EntityClassification.field623).method32304().method32301(0.6F, 1.8F).method32307(8)
    );
-   public static final EntityType<BoatEntity> field41011 = method33197(
+   public static final EntityType<BoatEntity> BOAT = method33197(
       "boat", Class8878.<BoatEntity>method32299(BoatEntity::new, EntityClassification.field628).method32301(1.375F, 0.5625F).method32307(10)
    );
-   public static final EntityType<Class1098> field41012 = method33197(
+   public static final EntityType<Class1098> CAT = method33197(
       "cat", Class8878.<Class1098>method32299(Class1098::new, EntityClassification.field624).method32301(0.6F, 0.7F).method32307(8)
    );
-   public static final EntityType<Class1102> field41013 = method33197(
+   public static final EntityType<Class1102> CAVE_SPIDER = method33197(
       "cave_spider", Class8878.<Class1102>method32299(Class1102::new, EntityClassification.field623).method32301(0.7F, 0.5F).method32307(8)
    );
-   public static final EntityType<Class1089> field41014 = method33197(
+   public static final EntityType<Class1089> CHICKEN = method33197(
       "chicken", Class8878.<Class1089>method32299(Class1089::new, EntityClassification.field624).method32301(0.4F, 0.7F).method32307(10)
    );
-   public static final EntityType<Class1051> field41015 = method33197(
+   public static final EntityType<Class1051> COD = method33197(
       "cod", Class8878.<Class1051>method32299(Class1051::new, EntityClassification.field627).method32301(0.5F, 0.3F).method32307(4)
    );
-   public static final EntityType<Class1087> field41016 = method33197(
+   public static final EntityType<Class1087> COW = method33197(
       "cow", Class8878.<Class1087>method32299(Class1087::new, EntityClassification.field624).method32301(0.9F, 1.4F).method32307(10)
    );
-   public static final EntityType<Class1081> field41017 = method33197(
+   public static final EntityType<Class1081> CREEPER = method33197(
       "creeper", Class8878.<Class1081>method32299(Class1081::new, EntityClassification.field623).method32301(0.6F, 1.7F).method32307(8)
    );
-   public static final EntityType<Class1048> field41018 = method33197(
+   public static final EntityType<Class1048> DOLPHIN = method33197(
       "dolphin", Class8878.<Class1048>method32299(Class1048::new, EntityClassification.field626).method32301(0.9F, 0.6F)
    );
-   public static final EntityType<Class1067> field41019 = method33197(
+   public static final EntityType<Class1067> DONKEY = method33197(
       "donkey", Class8878.<Class1067>method32299(Class1067::new, EntityClassification.field624).method32301(1.3964844F, 1.5F).method32307(10)
    );
-   public static final EntityType<Class903> field41020 = method33197(
+   public static final EntityType<Class903> DRAGON_FIREBALL = method33197(
       "dragon_fireball", Class8878.<Class903>method32299(Class903::new, EntityClassification.field628).method32301(1.0F, 1.0F).method32307(4).method32308(10)
    );
-   public static final EntityType<Class1037> field41021 = method33197(
+   public static final EntityType<Class1037> DROWNED = method33197(
       "drowned", Class8878.<Class1037>method32299(Class1037::new, EntityClassification.field623).method32301(0.6F, 1.95F).method32307(8)
    );
-   public static final EntityType<Class1106> field41022 = method33197(
+   public static final EntityType<Class1106> ELDER_GUARDIAN = method33197(
       "elder_guardian", Class8878.<Class1106>method32299(Class1106::new, EntityClassification.field623).method32301(1.9975F, 1.9975F).method32307(10)
    );
    public static final EntityType<EnderCrystalEntity> field41023 = method33197(
@@ -98,8 +101,8 @@ public class EntityType<T extends Entity> {
    public static final EntityType<Class1007> field41024 = method33197(
       "ender_dragon", Class8878.<Class1007>method32299(Class1007::new, EntityClassification.field623).method32304().method32301(16.0F, 8.0F).method32307(10)
    );
-   public static final EntityType<Class1010> field41025 = method33197(
-      "enderman", Class8878.<Class1010>method32299(Class1010::new, EntityClassification.field623).method32301(0.6F, 2.9F).method32307(8)
+   public static final EntityType<EndermanEntity> field41025 = method33197(
+      "enderman", Class8878.<EndermanEntity>method32299(EndermanEntity::new, EntityClassification.field623).method32301(0.6F, 2.9F).method32307(8)
    );
    public static final EntityType<Class1104> field41026 = method33197(
       "endermite", Class8878.<Class1104>method32299(Class1104::new, EntityClassification.field623).method32301(0.4F, 0.3F).method32307(8)
@@ -125,213 +128,213 @@ public class EntityType<T extends Entity> {
    public static final EntityType<Class1095> FOX = method33197(
       "fox", Class8878.<Class1095>method32299(Class1095::new, EntityClassification.field624).method32301(0.6F, 0.7F).method32307(8).method32305(Blocks.field37069)
    );
-   public static final EntityType<Class1112> field41034 = method33197(
+   public static final EntityType<Class1112> GHAST = method33197(
       "ghast", Class8878.<Class1112>method32299(Class1112::new, EntityClassification.field623).method32304().method32301(4.0F, 4.0F).method32307(10)
    );
-   public static final EntityType<Class1099> field41035 = method33197(
+   public static final EntityType<Class1099> GIANT = method33197(
       "giant", Class8878.<Class1099>method32299(Class1099::new, EntityClassification.field623).method32301(3.6F, 12.0F).method32307(10)
    );
-   public static final EntityType<Class1105> field41036 = method33197(
+   public static final EntityType<Class1105> GUARDIAN = method33197(
       "guardian", Class8878.<Class1105>method32299(Class1105::new, EntityClassification.field623).method32301(0.85F, 0.85F).method32307(8)
    );
-   public static final EntityType<Class1091> field41037 = method33197(
+   public static final EntityType<Class1091> HOGLIN = method33197(
       "hoglin", Class8878.<Class1091>method32299(Class1091::new, EntityClassification.field623).method32301(1.3964844F, 1.4F).method32307(8)
    );
-   public static final EntityType<Class1074> field41038 = method33197(
+   public static final EntityType<Class1074> HORSE = method33197(
       "horse", Class8878.<Class1074>method32299(Class1074::new, EntityClassification.field624).method32301(1.3964844F, 1.6F).method32307(10)
    );
-   public static final EntityType<Class1039> field41039 = method33197(
+   public static final EntityType<Class1039> HUSK = method33197(
       "husk", Class8878.<Class1039>method32299(Class1039::new, EntityClassification.field623).method32301(0.6F, 1.95F).method32307(8)
    );
-   public static final EntityType<Class1033> field41040 = method33197(
+   public static final EntityType<Class1033> ILLUSIONER = method33197(
       "illusioner", Class8878.<Class1033>method32299(Class1033::new, EntityClassification.field623).method32301(0.6F, 1.95F).method32307(8)
    );
-   public static final EntityType<Class1058> field41041 = method33197(
+   public static final EntityType<Class1058> IRON_GOLEM = method33197(
       "iron_golem", Class8878.<Class1058>method32299(Class1058::new, EntityClassification.field628).method32301(1.4F, 2.7F).method32307(10)
    );
-   public static final EntityType<ItemEntity> field41042 = method33197(
+   public static final EntityType<ItemEntity> ITEM = method33197(
       "item", Class8878.<ItemEntity>method32299(ItemEntity::new, EntityClassification.field628).method32301(0.25F, 0.25F).method32307(6).method32308(20)
    );
-   public static final EntityType<ItemFrameEntity> field41043 = method33197(
+   public static final EntityType<ItemFrameEntity> ITEM_FRAME = method33197(
       "item_frame", Class8878.<ItemFrameEntity>method32299(ItemFrameEntity::new, EntityClassification.field628).method32301(0.5F, 0.5F).method32307(10).method32308(Integer.MAX_VALUE)
    );
-   public static final EntityType<Class899> field41044 = method33197(
+   public static final EntityType<Class899> FIREBALL = method33197(
       "fireball", Class8878.<Class899>method32299(Class899::new, EntityClassification.field628).method32301(1.0F, 1.0F).method32307(4).method32308(10)
    );
-   public static final EntityType<LeashKnotEntity> field41045 = method33197(
+   public static final EntityType<LeashKnotEntity> LEASH_KNOT = method33197(
       "leash_knot",
       Class8878.<LeashKnotEntity>method32299(LeashKnotEntity::new, EntityClassification.field628).method32303().method32301(0.5F, 0.5F).method32307(10).method32308(Integer.MAX_VALUE)
    );
-   public static final EntityType<Class906> field41046 = method33197(
+   public static final EntityType<Class906> LIGHTNING_BOLT = method33197(
       "lightning_bolt",
       Class8878.<Class906>method32299(Class906::new, EntityClassification.field628).method32303().method32301(0.0F, 0.0F).method32307(16).method32308(Integer.MAX_VALUE)
    );
-   public static final EntityType<Class1064> field41047 = method33197(
+   public static final EntityType<Class1064> LLAMA = method33197(
       "llama", Class8878.<Class1064>method32299(Class1064::new, EntityClassification.field624).method32301(0.9F, 1.87F).method32307(10)
    );
-   public static final EntityType<Class883> field41048 = method33197(
+   public static final EntityType<Class883> LLAMA_SPIT = method33197(
       "llama_spit", Class8878.<Class883>method32299(Class883::new, EntityClassification.field628).method32301(0.25F, 0.25F).method32307(4).method32308(10)
    );
-   public static final EntityType<Class1109> field41049 = method33197(
+   public static final EntityType<Class1109> MAGMA_CUBE = method33197(
       "magma_cube", Class8878.<Class1109>method32299(Class1109::new, EntityClassification.field623).method32304().method32301(2.04F, 2.04F).method32307(8)
    );
-   public static final EntityType<Class917> field41050 = method33197(
+   public static final EntityType<Class917> MINECART = method33197(
       "minecart", Class8878.<Class917>method32299(Class917::new, EntityClassification.field628).method32301(0.98F, 0.7F).method32307(8)
    );
-   public static final EntityType<Class991> field41051 = method33197(
+   public static final EntityType<Class991> CHEST_MINECART = method33197(
       "chest_minecart", Class8878.<Class991>method32299(Class991::new, EntityClassification.field628).method32301(0.98F, 0.7F).method32307(8)
    );
-   public static final EntityType<Class918> field41052 = method33197(
+   public static final EntityType<Class918> COMMAND_BLOCK_MINECART = method33197(
       "command_block_minecart", Class8878.<Class918>method32299(Class918::new, EntityClassification.field628).method32301(0.98F, 0.7F).method32307(8)
    );
-   public static final EntityType<Class994> field41053 = method33197(
+   public static final EntityType<Class994> FURNACE_MINECART = method33197(
       "furnace_minecart", Class8878.<Class994>method32299(Class994::new, EntityClassification.field628).method32301(0.98F, 0.7F).method32307(8)
    );
-   public static final EntityType<Class938> field41054 = method33197(
+   public static final EntityType<Class938> HOPPER_MINECART = method33197(
       "hopper_minecart", Class8878.<Class938>method32299(Class938::new, EntityClassification.field628).method32301(0.98F, 0.7F).method32307(8)
    );
-   public static final EntityType<Class992> field41055 = method33197(
+   public static final EntityType<Class992> SPAWNER_MINECART = method33197(
       "spawner_minecart", Class8878.<Class992>method32299(Class992::new, EntityClassification.field628).method32301(0.98F, 0.7F).method32307(8)
    );
-   public static final EntityType<Class993> field41056 = method33197(
+   public static final EntityType<Class993> TNT_MINECART = method33197(
       "tnt_minecart", Class8878.<Class993>method32299(Class993::new, EntityClassification.field628).method32301(0.98F, 0.7F).method32307(8)
    );
-   public static final EntityType<Class1078> field41057 = method33197(
+   public static final EntityType<Class1078> MULE = method33197(
       "mule", Class8878.<Class1078>method32299(Class1078::new, EntityClassification.field624).method32301(1.3964844F, 1.6F).method32307(8)
    );
-   public static final EntityType<Class1086> field41058 = method33197(
+   public static final EntityType<Class1086> MOOSHROOM = method33197(
       "mooshroom", Class8878.<Class1086>method32299(Class1086::new, EntityClassification.field624).method32301(0.9F, 1.4F).method32307(10)
    );
-   public static final EntityType<Class1090> field41059 = method33197(
+   public static final EntityType<Class1090> OCELOT = method33197(
       "ocelot", Class8878.<Class1090>method32299(Class1090::new, EntityClassification.field624).method32301(0.6F, 0.7F).method32307(10)
    );
-   public static final EntityType<PaintingEntity> field41060 = method33197(
+   public static final EntityType<PaintingEntity> PAINTING = method33197(
       "painting", Class8878.<PaintingEntity>method32299(PaintingEntity::new, EntityClassification.field628).method32301(0.5F, 0.5F).method32307(10).method32308(Integer.MAX_VALUE)
    );
-   public static final EntityType<Class1097> field41061 = method33197(
+   public static final EntityType<Class1097> PANDA = method33197(
       "panda", Class8878.<Class1097>method32299(Class1097::new, EntityClassification.field624).method32301(1.3F, 1.25F).method32307(10)
    );
-   public static final EntityType<Class1015> field41062 = method33197(
+   public static final EntityType<Class1015> PARROT = method33197(
       "parrot", Class8878.<Class1015>method32299(Class1015::new, EntityClassification.field624).method32301(0.5F, 0.9F).method32307(8)
    );
-   public static final EntityType<Class1110> field41063 = method33197(
+   public static final EntityType<Class1110> PHANTOM = method33197(
       "phantom", Class8878.<Class1110>method32299(Class1110::new, EntityClassification.field623).method32301(0.9F, 0.5F).method32307(8)
    );
-   public static final EntityType<Class1072> field41064 = method33197(
+   public static final EntityType<Class1072> PIG = method33197(
       "pig", Class8878.<Class1072>method32299(Class1072::new, EntityClassification.field624).method32301(0.9F, 0.9F).method32307(10)
    );
-   public static final EntityType<Class1034> field41065 = method33197(
+   public static final EntityType<Class1034> PIGLIN = method33197(
       "piglin", Class8878.<Class1034>method32299(Class1034::new, EntityClassification.field623).method32301(0.6F, 1.95F).method32307(8)
    );
-   public static final EntityType<Class1036> field41066 = method33197(
+   public static final EntityType<Class1036> PIGLIN_BRUTE = method33197(
       "piglin_brute", Class8878.<Class1036>method32299(Class1036::new, EntityClassification.field623).method32301(0.6F, 1.95F).method32307(8)
    );
-   public static final EntityType<Class1024> field41067 = method33197(
+   public static final EntityType<Class1024> PILLAGER = method33197(
       "pillager", Class8878.<Class1024>method32299(Class1024::new, EntityClassification.field623).method32306().method32301(0.6F, 1.95F).method32307(8)
    );
-   public static final EntityType<Class1096> field41068 = method33197(
+   public static final EntityType<Class1096> POLAR_BEAR = method33197(
       "polar_bear", Class8878.<Class1096>method32299(Class1096::new, EntityClassification.field624).method32301(1.4F, 1.4F).method32307(10)
    );
-   public static final EntityType<Class1004> field41069 = method33197(
+   public static final EntityType<Class1004> TNT = method33197(
       "tnt", Class8878.<Class1004>method32299(Class1004::new, EntityClassification.field628).method32304().method32301(0.98F, 0.98F).method32307(10).method32308(10)
    );
-   public static final EntityType<Class1054> field41070 = method33197(
+   public static final EntityType<Class1054> PUFFERFISH = method33197(
       "pufferfish", Class8878.<Class1054>method32299(Class1054::new, EntityClassification.field627).method32301(0.7F, 0.7F).method32307(4)
    );
    public static final EntityType<Class1094> RABBIT = method33197(
       "rabbit", Class8878.<Class1094>method32299(Class1094::new, EntityClassification.field624).method32301(0.4F, 0.5F).method32307(8)
    );
-   public static final EntityType<Class1029> field41072 = method33197(
+   public static final EntityType<Class1029> RAVAGER = method33197(
       "ravager", Class8878.<Class1029>method32299(Class1029::new, EntityClassification.field623).method32301(1.95F, 2.2F).method32307(10)
    );
-   public static final EntityType<SalmonEntity> field41073 = method33197(
+   public static final EntityType<SalmonEntity> SALMON = method33197(
       "salmon", Class8878.<SalmonEntity>method32299(SalmonEntity::new, EntityClassification.field627).method32301(0.7F, 0.4F).method32307(4)
    );
    public static final EntityType<Class1019> SHEEP = method33197(
       "sheep", Class8878.<Class1019>method32299(Class1019::new, EntityClassification.field624).method32301(0.9F, 1.3F).method32307(10)
    );
-   public static final EntityType<Class1057> field41075 = method33197(
+   public static final EntityType<Class1057> SHULKER = method33197(
       "shulker", Class8878.<Class1057>method32299(Class1057::new, EntityClassification.field623).method32304().method32306().method32301(1.0F, 1.0F).method32307(10)
    );
-   public static final EntityType<Class905> field41076 = method33197(
+   public static final EntityType<Class905> SHULKER_BULLET = method33197(
       "shulker_bullet", Class8878.<Class905>method32299(Class905::new, EntityClassification.field628).method32301(0.3125F, 0.3125F).method32307(8)
    );
-   public static final EntityType<Class1107> field41077 = method33197(
+   public static final EntityType<Class1107> SILVERFISH = method33197(
       "silverfish", Class8878.<Class1107>method32299(Class1107::new, EntityClassification.field623).method32301(0.4F, 0.3F).method32307(8)
    );
-   public static final EntityType<Class1085> field41078 = method33197(
+   public static final EntityType<Class1085> SKELETON = method33197(
       "skeleton", Class8878.<Class1085>method32299(Class1085::new, EntityClassification.field623).method32301(0.6F, 1.99F).method32307(8)
    );
-   public static final EntityType<Class1076> field41079 = method33197(
+   public static final EntityType<Class1076> SKELETON_HORSE = method33197(
       "skeleton_horse", Class8878.<Class1076>method32299(Class1076::new, EntityClassification.field624).method32301(1.3964844F, 1.6F).method32307(10)
    );
-   public static final EntityType<Class1108> field41080 = method33197(
+   public static final EntityType<Class1108> SLIME = method33197(
       "slime", Class8878.<Class1108>method32299(Class1108::new, EntityClassification.field623).method32301(2.04F, 2.04F).method32307(10)
    );
-   public static final EntityType<Class900> field41081 = method33197(
+   public static final EntityType<Class900> SMALL_FIREBALL = method33197(
       "small_fireball", Class8878.<Class900>method32299(Class900::new, EntityClassification.field628).method32301(0.3125F, 0.3125F).method32307(4).method32308(10)
    );
-   public static final EntityType<Class1021> field41082 = method33197(
+   public static final EntityType<Class1021> SNOW_GOLEM = method33197(
       "snow_golem", Class8878.<Class1021>method32299(Class1021::new, EntityClassification.field628).method32301(0.7F, 1.9F).method32307(8)
    );
-   public static final EntityType<Class894> field41083 = method33197(
+   public static final EntityType<Class894> SNOWBALL = method33197(
       "snowball", Class8878.<Class894>method32299(Class894::new, EntityClassification.field628).method32301(0.25F, 0.25F).method32307(4).method32308(10)
    );
-   public static final EntityType<Class885> field41084 = method33197(
+   public static final EntityType<Class885> SPECTRAL_ARROW = method33197(
       "spectral_arrow", Class8878.<Class885>method32299(Class885::new, EntityClassification.field628).method32301(0.5F, 0.5F).method32307(4).method32308(20)
    );
-   public static final EntityType<Class1101> field41085 = method33197(
+   public static final EntityType<Class1101> SPIDER = method33197(
       "spider", Class8878.<Class1101>method32299(Class1101::new, EntityClassification.field623).method32301(1.4F, 0.9F).method32307(8)
    );
-   public static final EntityType<SquidEntity> field41086 = method33197(
+   public static final EntityType<SquidEntity> SQUID = method33197(
       "squid", Class8878.<SquidEntity>method32299(SquidEntity::new, EntityClassification.field626).method32301(0.8F, 0.8F).method32307(8)
    );
-   public static final EntityType<Class1083> field41087 = method33197(
+   public static final EntityType<Class1083> STRAY = method33197(
       "stray", Class8878.<Class1083>method32299(Class1083::new, EntityClassification.field623).method32301(0.6F, 1.99F).method32307(8)
    );
-   public static final EntityType<Class1070> field41088 = method33197(
+   public static final EntityType<Class1070> STRIDER = method33197(
       "strider", Class8878.<Class1070>method32299(Class1070::new, EntityClassification.field624).method32304().method32301(0.9F, 1.7F).method32307(10)
    );
-   public static final EntityType<Class892> field41089 = method33197(
+   public static final EntityType<Class892> EGG = method33197(
       "egg", Class8878.<Class892>method32299(Class892::new, EntityClassification.field628).method32301(0.25F, 0.25F).method32307(4).method32308(10)
    );
-   public static final EntityType<Class895> field41090 = method33197(
+   public static final EntityType<Class895> ENDER_PEARL = method33197(
       "ender_pearl", Class8878.<Class895>method32299(Class895::new, EntityClassification.field628).method32301(0.25F, 0.25F).method32307(4).method32308(10)
    );
-   public static final EntityType<Class891> field41091 = method33197(
+   public static final EntityType<Class891> EXPERIENCE_BOTTLE = method33197(
       "experience_bottle", Class8878.<Class891>method32299(Class891::new, EntityClassification.field628).method32301(0.25F, 0.25F).method32307(4).method32308(10)
    );
-   public static final EntityType<Class896> field41092 = method33197(
+   public static final EntityType<Class896> POTION = method33197(
       "potion", Class8878.<Class896>method32299(Class896::new, EntityClassification.field628).method32301(0.25F, 0.25F).method32307(4).method32308(10)
    );
-   public static final EntityType<Class886> field41093 = method33197(
+   public static final EntityType<Class886> TRIDENT = method33197(
       "trident", Class8878.<Class886>method32299(Class886::new, EntityClassification.field628).method32301(0.5F, 0.5F).method32307(4).method32308(20)
    );
-   public static final EntityType<Class1065> field41094 = method33197(
+   public static final EntityType<Class1065> TRADER_LLAMA = method33197(
       "trader_llama", Class8878.<Class1065>method32299(Class1065::new, EntityClassification.field624).method32301(0.9F, 1.87F).method32307(10)
    );
-   public static final EntityType<Class1052> field41095 = method33197(
+   public static final EntityType<Class1052> TROPICAL_FISH = method33197(
       "tropical_fish", Class8878.<Class1052>method32299(Class1052::new, EntityClassification.field627).method32301(0.5F, 0.4F).method32307(4)
    );
-   public static final EntityType<Class1088> field41096 = method33197(
+   public static final EntityType<Class1088> TURTLE = method33197(
       "turtle", Class8878.<Class1088>method32299(Class1088::new, EntityClassification.field624).method32301(1.2F, 0.4F).method32307(10)
    );
-   public static final EntityType<Class1100> field41097 = method33197(
+   public static final EntityType<Class1100> VEX = method33197(
       "vex", Class8878.<Class1100>method32299(Class1100::new, EntityClassification.field623).method32304().method32301(0.4F, 0.8F).method32307(8)
    );
-   public static final EntityType<Class1042> field41098 = method33197(
+   public static final EntityType<Class1042> VILLAGER = method33197(
       "villager", Class8878.<Class1042>method32299(Class1042::new, EntityClassification.field628).method32301(0.6F, 1.95F).method32307(10)
    );
-   public static final EntityType<Class1030> field41099 = method33197(
+   public static final EntityType<Class1030> VINDICATOR = method33197(
       "vindicator", Class8878.<Class1030>method32299(Class1030::new, EntityClassification.field623).method32301(0.6F, 1.95F).method32307(8)
    );
-   public static final EntityType<Class1044> field41100 = method33197(
+   public static final EntityType<Class1044> WANDERING_TRADER = method33197(
       "wandering_trader", Class8878.<Class1044>method32299(Class1044::new, EntityClassification.field624).method32301(0.6F, 1.95F).method32307(10)
    );
-   public static final EntityType<Class1027> field41101 = method33197(
+   public static final EntityType<Class1027> WITCH = method33197(
       "witch", Class8878.<Class1027>method32299(Class1027::new, EntityClassification.field623).method32301(0.6F, 1.95F).method32307(8)
    );
-   public static final EntityType<WitherEntity> field41102 = method33197(
+   public static final EntityType<WitherEntity> WITHER = method33197(
       "wither",
       Class8878.<WitherEntity>method32299(WitherEntity::new, EntityClassification.field623)
          .method32304()
@@ -339,7 +342,7 @@ public class EntityType<T extends Entity> {
          .method32301(0.9F, 3.5F)
          .method32307(10)
    );
-   public static final EntityType<Class1084> field41103 = method33197(
+   public static final EntityType<Class1084> WITHER_SKELETON = method33197(
       "wither_skeleton",
       Class8878.<Class1084>method32299(Class1084::new, EntityClassification.field623)
          .method32304()
@@ -347,31 +350,31 @@ public class EntityType<T extends Entity> {
          .method32301(0.7F, 2.4F)
          .method32307(8)
    );
-   public static final EntityType<Class902> field41104 = method33197(
+   public static final EntityType<Class902> WITHER_SKULL = method33197(
       "wither_skull", Class8878.<Class902>method32299(Class902::new, EntityClassification.field628).method32301(0.3125F, 0.3125F).method32307(4).method32308(10)
    );
-   public static final EntityType<WolfEntity> field41105 = method33197(
+   public static final EntityType<WolfEntity> WOLF = method33197(
       "wolf", Class8878.<WolfEntity>method32299(WolfEntity::new, EntityClassification.field624).method32301(0.6F, 0.85F).method32307(10)
    );
-   public static final EntityType<Class1093> field41106 = method33197(
+   public static final EntityType<Class1093> ZOGLIN = method33197(
       "zoglin", Class8878.<Class1093>method32299(Class1093::new, EntityClassification.field623).method32304().method32301(1.3964844F, 1.4F).method32307(8)
    );
-   public static final EntityType<ZombieEntity> field41107 = method33197(
+   public static final EntityType<ZombieEntity> ZOMBIE = method33197(
       "zombie", Class8878.<ZombieEntity>method32299(ZombieEntity::new, EntityClassification.field623).method32301(0.6F, 1.95F).method32307(8)
    );
-   public static final EntityType<Class1075> field41108 = method33197(
+   public static final EntityType<Class1075> ZOMBIE_HORSE = method33197(
       "zombie_horse", Class8878.<Class1075>method32299(Class1075::new, EntityClassification.field624).method32301(1.3964844F, 1.6F).method32307(10)
    );
-   public static final EntityType<Class1040> field41109 = method33197(
+   public static final EntityType<Class1040> ZOMBIE_VILLAGER = method33197(
       "zombie_villager", Class8878.<Class1040>method32299(Class1040::new, EntityClassification.field623).method32301(0.6F, 1.95F).method32307(8)
    );
-   public static final EntityType<ZombifiedPiglinEntity> field41110 = method33197(
+   public static final EntityType<ZombifiedPiglinEntity> ZOMBIFIED_PIGLIN = method33197(
       "zombified_piglin", Class8878.<ZombifiedPiglinEntity>method32299(ZombifiedPiglinEntity::new, EntityClassification.field623).method32304().method32301(0.6F, 1.95F).method32307(8)
    );
    public static final EntityType<PlayerEntity> PLAYER = method33197(
       "player", Class8878.<PlayerEntity>method32300(EntityClassification.field628).method32303().method32302().method32301(0.6F, 1.8F).method32307(32).method32308(2)
    );
-   public static final EntityType<Class904> field41112 = method33197(
+   public static final EntityType<Class904> FISHING_BOBBER = method33197(
       "fishing_bobber", Class8878.<Class904>method32300(EntityClassification.field628).method32303().method32302().method32301(0.25F, 0.25F).method32307(4).method32308(5)
    );
    private final Class9283<T> field41113;
@@ -574,7 +577,7 @@ public class EntityType<T extends Entity> {
       return Util.<Entity>acceptOrElse(
          method33222(var0).<Entity>map(var1x -> var1x.create(var1)),
          var1x -> var1x.read(var0),
-         () -> field41004.warn("Skipping Entity with id {}", var0.getString("id"))
+         () -> LOGGER.warn("Skipping Entity with id {}", var0.getString("id"))
       );
    }
 
@@ -632,7 +635,7 @@ public class EntityType<T extends Entity> {
       try {
          return method33217(var0, var1);
       } catch (RuntimeException var5) {
-         field41004.warn("Exception loading entity: ", var5);
+         LOGGER.warn("Exception loading entity: ", var5);
          return Optional.<Entity>empty();
       }
    }
@@ -647,12 +650,12 @@ public class EntityType<T extends Entity> {
 
    public boolean method33227() {
       return this != PLAYER
-         && this != field41048
-         && this != field41102
-         && this != field41008
-         && this != field41043
-         && this != field41045
-         && this != field41060
+         && this != LLAMA_SPIT
+         && this != WITHER
+         && this != BAT
+         && this != ITEM_FRAME
+         && this != LEASH_KNOT
+         && this != PAINTING
          && this != field41023
          && this != field41028;
    }

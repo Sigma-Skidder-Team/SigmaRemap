@@ -22,6 +22,8 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.monster.EndermanEntity;
+import net.minecraft.entity.monster.ZombieEntity;
 import net.minecraft.entity.passive.SquidEntity;
 import net.minecraft.entity.passive.WolfEntity;
 import net.minecraft.entity.passive.fish.SalmonEntity;
@@ -142,7 +144,7 @@ public class TargetHUD extends Module {
             UUID uuidForSkin = this.entity.getUniqueID();
             if (!(this.entity instanceof Class1087)) {
                 if (!(this.entity instanceof ZombieEntity)) {
-                    if (!(this.entity instanceof Class1010)) {
+                    if (!(this.entity instanceof EndermanEntity)) {
                         if (!(this.entity instanceof Class1085)) {
                             if (!(this.entity instanceof Class1085)) {
                                 if (!(this.entity instanceof Class1081)) {

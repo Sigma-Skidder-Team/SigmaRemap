@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 public class Class2739 extends Class2736 {
    private static String[] field17257;
 
-   public Class2739(Class1046 var1, double var2) {
+   public Class2739(CreatureEntity var1, double var2) {
       super(var1, var2, 240, false);
    }
 
@@ -49,7 +49,7 @@ public class Class2739 extends Class2736 {
    @Nullable
    private Vector3d method10948() {
       ServerWorld var3 = (ServerWorld)this.field17258.world;
-      List var4 = var3.<Class1042>method6771(EntityType.field41098, this.field17258.getBoundingBox().grow(32.0), this::method10952);
+      List var4 = var3.<Class1042>method6771(EntityType.VILLAGER, this.field17258.getBoundingBox().grow(32.0), this::method10952);
       if (!var4.isEmpty()) {
          Class1042 var5 = (Class1042)var4.get(this.field17258.world.rand.nextInt(var4.size()));
          Vector3d var6 = var5.getPositionVec();

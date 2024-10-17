@@ -48,12 +48,12 @@ public class Class7020 implements Class7016 {
                               BlockPos var15 = var10.up(20 + var6.nextInt(15)).method8348(-10 + var6.nextInt(21)).method8344(-10 + var6.nextInt(21));
                               BlockState var16 = var1.getBlockState(var15);
                               FluidState var17 = var1.getFluidState(var15);
-                              if (Class8170.method28428(var1, var15, var16, var17, EntityType.field41063)) {
+                              if (Class8170.method28428(var1, var15, var16, var17, EntityType.PHANTOM)) {
                                  Class5093 var18 = null;
                                  int var19 = 1 + var6.nextInt(var11.method38327().getId() + 1);
 
                                  for (int var20 = 0; var20 < var19; var20++) {
-                                    Class1110 var21 = EntityType.field41063.create(var1);
+                                    Class1110 var21 = EntityType.PHANTOM.create(var1);
                                     var21.moveToBlockPosAndAngles(var15, 0.0F, 0.0F);
                                     var18 = var21.method4276(var1, var11, Class2202.field14391, var18, (CompoundNBT)null);
                                     var1.method6995(var21);

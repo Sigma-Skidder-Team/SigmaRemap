@@ -7,6 +7,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.monster.ZombieEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
@@ -172,7 +173,7 @@ public class Class1040 extends ZombieEntity implements Class1041 {
    }
 
    private void method4669(ServerWorld var1) {
-      Class1042 var4 = this.<Class1042>method4292(EntityType.field41098, false);
+      Class1042 var4 = this.<Class1042>method4292(EntityType.VILLAGER, false);
 
       for (EquipmentSlotType var8 : EquipmentSlotType.values()) {
          ItemStack var9 = this.getItemStackFromSlot(var8);

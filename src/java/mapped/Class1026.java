@@ -70,7 +70,7 @@ public abstract class Class1026 extends Class1028 {
          if (this.method4547()) {
             if (var3 != null) {
                LivingEntity var4 = this.method4232();
-               if (var4 != null && (var4.getType() == EntityType.PLAYER || var4.getType() == EntityType.field41041)) {
+               if (var4 != null && (var4.getType() == EntityType.PLAYER || var4.getType() == EntityType.IRON_GOLEM)) {
                   this.field4973 = 0;
                }
             } else if (this.world.getGameTime() % 20L == 0L) {
@@ -260,7 +260,7 @@ public abstract class Class1026 extends Class1028 {
    @Nullable
    @Override
    public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
-      this.method4548(this.getType() != EntityType.field41101 || var3 != Class2202.field14391);
+      this.method4548(this.getType() != EntityType.WITCH || var3 != Class2202.field14391);
       return super.method4276(var1, var2, var3, var4, var5);
    }
 

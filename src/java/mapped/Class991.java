@@ -20,7 +20,7 @@ public class Class991 extends Class919 {
    }
 
    public Class991(World var1, double var2, double var4, double var6) {
-      super(EntityType.field41051, var2, var4, var6, var1);
+      super(EntityType.CHEST_MINECART, var2, var4, var6, var1);
    }
 
    @Override

@@ -5,9 +5,9 @@ import net.minecraft.util.math.MathHelper;
 
 public class Class2763 extends Class2595 {
    private static String[] field17330;
-   private final Class1046 field17331;
+   private final CreatureEntity field17331;
 
-   public Class2763(Class1046 var1) {
+   public Class2763(CreatureEntity var1) {
       this.field17331 = var1;
    }
 

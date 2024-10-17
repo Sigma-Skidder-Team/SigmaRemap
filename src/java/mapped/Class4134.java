@@ -7,7 +7,7 @@ import net.optifine.Config;
 
 public class Class4134 extends Class4057 {
    public Class4134() {
-      super(EntityType.field41086, "squid", 0.7F);
+      super(EntityType.SQUID, "squid", 0.7F);
    }
 
    @Override

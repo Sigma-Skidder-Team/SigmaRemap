@@ -52,8 +52,8 @@ public class Class9743 {
       return new Class3693<Class1036>(
          ImmutableList.of(
             Pair.of(new Class3738(EntityType.PLAYER, 8.0F), 1),
-            Pair.of(new Class3738(EntityType.field41065, 8.0F), 1),
-            Pair.of(new Class3738(EntityType.field41066, 8.0F), 1),
+            Pair.of(new Class3738(EntityType.PIGLIN, 8.0F), 1),
+            Pair.of(new Class3738(EntityType.PIGLIN_BRUTE, 8.0F), 1),
             Pair.of(new Class3738(8.0F), 1),
             Pair.of(new Class3675(30, 60), 1)
          )
@@ -64,8 +64,8 @@ public class Class9743 {
       return new Class3693<Class1036>(
          ImmutableList.of(
             Pair.of(new Class3718(0.6F), 2),
-            Pair.of(Class3696.<LivingEntity>method12551(EntityType.field41065, 8, Class8830.field39828, 0.6F, 2), 2),
-            Pair.of(Class3696.<LivingEntity>method12551(EntityType.field41066, 8, Class8830.field39828, 0.6F, 2), 2),
+            Pair.of(Class3696.<LivingEntity>method12551(EntityType.PIGLIN, 8, Class8830.field39828, 0.6F, 2), 2),
+            Pair.of(Class3696.<LivingEntity>method12551(EntityType.PIGLIN_BRUTE, 8, Class8830.field39828, 0.6F, 2), 2),
             Pair.of(new Class3700(Class8830.field39813, 0.6F, 2, 100), 2),
             Pair.of(new Class3726(Class8830.field39813, 0.6F, 5), 2),
             Pair.of(new Class3675(30, 60), 1)

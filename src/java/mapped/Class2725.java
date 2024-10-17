@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.passive.TameableEntity;
+import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorldReader;
 
@@ -69,15 +70,15 @@ public class Class2725 extends Class2595 {
    @Override
    public void method10804() {
       this.field17225 = 0;
-      this.field17228 = this.field17220.method4223(Class2163.field14191);
-      this.field17220.method4224(Class2163.field14191, 0.0F);
+      this.field17228 = this.field17220.method4223(PathNodeType.WATER);
+      this.field17220.method4224(PathNodeType.WATER, 0.0F);
    }
 
    @Override
    public void method10807() {
       this.field17221 = null;
       this.field17224.method21666();
-      this.field17220.method4224(Class2163.field14191, this.field17228);
+      this.field17220.method4224(PathNodeType.WATER, this.field17228);
    }
 
    @Override
@@ -122,8 +123,8 @@ public class Class2725 extends Class2595 {
    }
 
    private boolean method10936(BlockPos var1) {
-      Class2163 var4 = Class6762.method20633(this.field17222, var1.method8354());
-      if (var4 == Class2163.field14186) {
+      PathNodeType var4 = Class6762.method20633(this.field17222, var1.method8354());
+      if (var4 == PathNodeType.WALKABLE) {
          BlockState var5 = this.field17222.getBlockState(var1.down());
          if (!this.field17229 && var5.getBlock() instanceof Class3465) {
             return false;

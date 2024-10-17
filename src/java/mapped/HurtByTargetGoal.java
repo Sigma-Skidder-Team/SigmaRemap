@@ -18,7 +18,7 @@ public class HurtByTargetGoal extends Class2699 {
    private final Class<?>[] field17182;
    private Class<?>[] field17183;
 
-   public HurtByTargetGoal(Class1046 var1, Class<?>... var2) {
+   public HurtByTargetGoal(CreatureEntity var1, Class<?>... var2) {
       super(var1, true);
       this.field17182 = var2;
       this.method10809(EnumSet.<Class2240>of(Class2240.field14660));

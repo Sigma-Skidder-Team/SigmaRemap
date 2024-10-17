@@ -5,6 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.network.DebugPacketSender;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -42,7 +43,7 @@ public abstract class Class6990 {
    public Class6990(MobEntity var1, World var2) {
       this.field30243 = var1;
       this.field30244 = var2;
-      int var5 = MathHelper.floor(var1.getAttributeValue(Attributes.field42106) * 16.0);
+      int var5 = MathHelper.floor(var1.getAttributeValue(Attributes.FOLLOW_RANGE) * 16.0);
       this.field30261 = this.method21644(var5);
    }
 
@@ -113,7 +114,7 @@ public abstract class Class6990 {
                   return this.field30245;
                } else {
                   this.field30244.getProfiler().startSection("pathfind");
-                  float var7 = (float)this.field30243.getAttributeValue(Attributes.field42106);
+                  float var7 = (float)this.field30243.getAttributeValue(Attributes.FOLLOW_RANGE);
                   BlockPos var8 = !var3 ? this.field30243.getPosition() : this.field30243.getPosition().up();
                   int var9 = (int)(var7 + (float)var2);
                   Class1667 var10 = new Class1667(this.field30244, var8.add(-var9, -var9, -var9), var8.add(var9, var9, var9));

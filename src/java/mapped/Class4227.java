@@ -112,7 +112,7 @@ public class Class4227 extends Class4167 {
             var1.setBlockState(var12, Blocks.field36532.getDefaultState(), 2);
             TileEntity var13 = var1.getTileEntity(var12);
             if (var13 instanceof Class960) {
-               ((Class960)var13).method3911().method24790(EntityType.field41010);
+               ((Class960)var13).method3911().method24790(EntityType.BLAZE);
             }
          }
       }

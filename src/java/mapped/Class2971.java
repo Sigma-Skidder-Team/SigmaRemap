@@ -11,7 +11,7 @@ import net.minecraft.world.biome.provider.BiomeProvider;
 import java.util.List;
 
 public class Class2971 extends Structure<Class4712> {
-   private static final List<MobSpawnInfoSpawners> field18085 = ImmutableList.of(new MobSpawnInfoSpawners(EntityType.field41036, 1, 2, 4));
+   private static final List<MobSpawnInfoSpawners> field18085 = ImmutableList.of(new MobSpawnInfoSpawners(EntityType.GUARDIAN, 1, 2, 4));
 
    public Class2971(Codec<Class4712> var1) {
       super(var1);

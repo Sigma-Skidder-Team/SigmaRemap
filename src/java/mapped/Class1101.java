@@ -5,6 +5,9 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
+import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
@@ -21,7 +24,7 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
-public class Class1101 extends Class1009 {
+public class Class1101 extends MonsterEntity {
    private static String[] field6056;
    private static final DataParameter<Byte> field6057 = EntityDataManager.<Byte>createKey(Class1101.class, DataSerializers.field33390);
 
@@ -66,8 +69,8 @@ public class Class1101 extends Class1009 {
       }
    }
 
-   public static Class7037 method5288() {
-      return Class1009.method4343().method21849(Attributes.field42105, 16.0).method21849(Attributes.MOVEMENT_SPEED, 0.3F);
+   public static MutableAttribute method5288() {
+      return MonsterEntity.method4343().method21849(Attributes.MAX_HEALTH, 16.0).method21849(Attributes.MOVEMENT_SPEED, 0.3F);
    }
 
    @Override
@@ -132,7 +135,7 @@ public class Class1101 extends Class1009 {
    public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
       var4 = super.method4276(var1, var2, var3, var4, var5);
       if (var1.method6814().nextInt(100) == 0) {
-         Class1085 var8 = EntityType.field41078.create(this.world);
+         Class1085 var8 = EntityType.SKELETON.create(this.world);
          var8.setLocationAndAngles(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, 0.0F);
          var8.method4276(var1, var2, var3, (Class5093)null, (CompoundNBT)null);
          var8.method3311(this);

@@ -36,7 +36,7 @@ public class Class1086 extends Class1087 implements Class1020 {
    }
 
    @Override
-   public float method4339(BlockPos var1, IWorldReader var2) {
+   public float getBlockPathWeight(BlockPos var1, IWorldReader var2) {
       return !var2.getBlockState(var1.down()).isIn(Blocks.MYCELIUM) ? var2.method7009(var1) - 0.5F : 10.0F;
    }
 
@@ -149,7 +149,7 @@ public class Class1086 extends Class1087 implements Class1020 {
       if (!this.world.isRemote()) {
          ((ServerWorld)this.world).spawnParticle(ParticleTypes.field34070, this.getPosX(), this.getPosYHeight(0.5), this.getPosZ(), 1, 0.0, 0.0, 0.0, 0.0);
          this.remove();
-         Class1087 var4 = EntityType.field41016.create(this.world);
+         Class1087 var4 = EntityType.COW.create(this.world);
          var4.setLocationAndAngles(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
          var4.setHealth(this.getHealth());
          var4.renderYawOffset = this.renderYawOffset;
@@ -230,7 +230,7 @@ public class Class1086 extends Class1087 implements Class1020 {
    }
 
    public Class1086 method4389(ServerWorld var1, Class1045 var2) {
-      Class1086 var5 = EntityType.field41058.create(var1);
+      Class1086 var5 = EntityType.MOOSHROOM.create(var1);
       var5.method5036(this.method5038((Class1086)var2));
       return var5;
    }

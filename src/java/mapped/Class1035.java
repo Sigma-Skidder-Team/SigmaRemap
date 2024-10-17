@@ -2,19 +2,21 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.item.TieredItem;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.DebugPacketSender;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 
-public abstract class Class1035 extends Class1009 {
+public abstract class Class1035 extends MonsterEntity {
    public static final DataParameter<Boolean> field5750 = EntityDataManager.<Boolean>createKey(Class1035.class, DataSerializers.field33398);
    public int field5751 = 0;
 
@@ -22,8 +24,8 @@ public abstract class Class1035 extends Class1009 {
       super(var1, var2);
       this.method4281(true);
       this.method4631();
-      this.method4224(Class2163.field14195, 16.0F);
-      this.method4224(Class2163.field14196, -1.0F);
+      this.method4224(PathNodeType.DANGER_FIRE, 16.0F);
+      this.method4224(PathNodeType.DAMAGE_FIRE, -1.0F);
    }
 
    private void method4631() {
@@ -90,7 +92,7 @@ public abstract class Class1035 extends Class1009 {
    }
 
    public void method4619(ServerWorld var1) {
-      ZombifiedPiglinEntity var4 = this.<ZombifiedPiglinEntity>method4292(EntityType.field41110, true);
+      ZombifiedPiglinEntity var4 = this.<ZombifiedPiglinEntity>method4292(EntityType.ZOMBIFIED_PIGLIN, true);
       if (var4 != null) {
          var4.addPotionEffect(new EffectInstance(Effects.NAUSEA, 200, 0));
       }

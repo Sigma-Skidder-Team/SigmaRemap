@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 public class Class4127 extends Class4117 {
    public Class4127() {
-      super(EntityType.field41065, "piglin", 0.5F);
+      super(EntityType.PIGLIN, "piglin", 0.5F);
    }
 
    public Class4127(EntityType var1, String var2, float var3) {

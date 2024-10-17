@@ -2,17 +2,21 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
+import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 
-public class Class1103 extends Class1009 {
+public class Class1103 extends MonsterEntity {
    private static String[] field6059;
    private float field6060 = 0.5F;
    private int field6061;
@@ -20,10 +24,10 @@ public class Class1103 extends Class1009 {
 
    public Class1103(EntityType<? extends Class1103> var1, World var2) {
       super(var1, var2);
-      this.method4224(Class2163.field14191, -1.0F);
-      this.method4224(Class2163.field14190, 8.0F);
-      this.method4224(Class2163.field14195, 0.0F);
-      this.method4224(Class2163.field14196, 0.0F);
+      this.method4224(PathNodeType.WATER, -1.0F);
+      this.method4224(PathNodeType.LAVA, 8.0F);
+      this.method4224(PathNodeType.DANGER_FIRE, 0.0F);
+      this.method4224(PathNodeType.DAMAGE_FIRE, 0.0F);
       this.field5594 = 10;
    }
 
@@ -38,8 +42,8 @@ public class Class1103 extends Class1009 {
       this.field5601.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
    }
 
-   public static Class7037 method5292() {
-      return Class1009.method4343().method21849(Attributes.ATTACK_DAMAGE, 6.0).method21849(Attributes.MOVEMENT_SPEED, 0.23F).method21849(Attributes.field42106, 48.0);
+   public static MutableAttribute method5292() {
+      return MonsterEntity.method4343().method21849(Attributes.ATTACK_DAMAGE, 6.0).method21849(Attributes.MOVEMENT_SPEED, 0.23F).method21849(Attributes.FOLLOW_RANGE, 48.0);
    }
 
    @Override

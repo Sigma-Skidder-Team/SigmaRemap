@@ -13,21 +13,21 @@ public class Class4453 extends Class4441<EntityType<?>> {
 
    @Override
    public void method14010() {
-      this.method14014(Class8613.field38734).method31560(EntityType.field41078, EntityType.field41087, EntityType.field41103);
+      this.method14014(Class8613.field38734).method31560(EntityType.SKELETON, EntityType.STRAY, EntityType.WITHER_SKELETON);
       this.method14014(Class8613.field38735)
-         .method31560(EntityType.field41027, EntityType.field41067, EntityType.field41072, EntityType.field41099, EntityType.field41040, EntityType.field41101);
-      this.method14014(Class8613.field38736).method31558(EntityType.field41009);
-      this.method14014(Class8613.field38737).method31560(EntityType.field41007, EntityType.field41084);
+         .method31560(EntityType.field41027, EntityType.PILLAGER, EntityType.RAVAGER, EntityType.VINDICATOR, EntityType.ILLUSIONER, EntityType.WITCH);
+      this.method14014(Class8613.field38736).method31558(EntityType.BEE);
+      this.method14014(Class8613.field38737).method31560(EntityType.ARROW, EntityType.SPECTRAL_ARROW);
       this.method14014(Class8613.field38738)
          .method31559(Class8613.field38737)
          .method31560(
-            EntityType.field41083,
-            EntityType.field41044,
-            EntityType.field41081,
-            EntityType.field41089,
-            EntityType.field41093,
-            EntityType.field41020,
-            EntityType.field41104
+            EntityType.SNOWBALL,
+            EntityType.FIREBALL,
+            EntityType.SMALL_FIREBALL,
+            EntityType.EGG,
+            EntityType.TRIDENT,
+            EntityType.DRAGON_FIREBALL,
+            EntityType.WITHER_SKULL
          );
    }
 

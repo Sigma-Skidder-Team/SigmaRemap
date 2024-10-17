@@ -5,7 +5,7 @@ import net.minecraft.entity.EntityType;
 
 public class Class4098 extends Class4057 {
    public Class4098() {
-      super(EntityType.field41015, "cod", 0.3F);
+      super(EntityType.COD, "cod", 0.3F);
    }
 
    @Override

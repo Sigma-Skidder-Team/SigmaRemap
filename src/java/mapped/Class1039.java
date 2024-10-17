@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.monster.ZombieEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.EffectInstance;
@@ -68,7 +69,7 @@ public class Class1039 extends ZombieEntity {
 
    @Override
    public void method4658() {
-      this.method4659(EntityType.field41107);
+      this.method4659(EntityType.ZOMBIE);
       if (!this.isSilent()) {
          this.world.method6869((PlayerEntity)null, 1041, this.getPosition(), 0);
       }

@@ -12,7 +12,7 @@ import net.minecraft.world.gen.settings.StructureSeparationSettings;
 import java.util.List;
 
 public class Class2968 extends Class2967 {
-   private static final List<MobSpawnInfoSpawners> field18084 = ImmutableList.of(new MobSpawnInfoSpawners(EntityType.field41067, 1, 1, 1));
+   private static final List<MobSpawnInfoSpawners> field18084 = ImmutableList.of(new MobSpawnInfoSpawners(EntityType.PILLAGER, 1, 1, 1));
 
    public Class2968(Codec<Class4700> var1) {
       super(var1, 0, true, true);

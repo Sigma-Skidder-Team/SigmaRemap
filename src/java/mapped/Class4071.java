@@ -12,7 +12,7 @@ public class Class4071 extends Class4057 {
    private static Map<String, Integer> field20393 = method12834();
 
    public Class4071() {
-      super(EntityType.field41038, "horse", 0.75F);
+      super(EntityType.HORSE, "horse", 0.75F);
    }
 
    public Class4071(EntityType var1, String var2, float var3) {

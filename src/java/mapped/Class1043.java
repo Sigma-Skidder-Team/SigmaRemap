@@ -14,6 +14,7 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.particles.IParticleData;
+import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
@@ -33,8 +34,8 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
 
    public Class1043(EntityType<? extends Class1043> var1, World var2) {
       super(var1, var2);
-      this.method4224(Class2163.field14195, 16.0F);
-      this.method4224(Class2163.field14196, -1.0F);
+      this.method4224(PathNodeType.DANGER_FIRE, 16.0F);
+      this.method4224(PathNodeType.DAMAGE_FIRE, -1.0F);
    }
 
    @Override

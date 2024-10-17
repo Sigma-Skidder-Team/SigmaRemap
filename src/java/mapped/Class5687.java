@@ -10,7 +10,7 @@ import java.util.Map;
 public class Class5687<T extends Class1066> extends Class5685<T, Class2857<T>> {
    private static final Map<EntityType<?>, ResourceLocation> field25054 = Maps.newHashMap(
       ImmutableMap.of(
-         EntityType.field41019, new ResourceLocation("textures/entity/horse/donkey.png"), EntityType.field41057, new ResourceLocation("textures/entity/horse/mule.png")
+         EntityType.DONKEY, new ResourceLocation("textures/entity/horse/donkey.png"), EntityType.MULE, new ResourceLocation("textures/entity/horse/mule.png")
       )
    );
 

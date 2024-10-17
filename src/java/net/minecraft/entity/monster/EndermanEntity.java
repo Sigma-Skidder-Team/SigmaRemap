@@ -1,16 +1,20 @@
-package mapped;
+package net.minecraft.entity.monster;
 
+import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.util.*;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -23,12 +27,12 @@ import java.util.Optional;
 import java.util.UUID;
 import java.util.function.Predicate;
 
-public class Class1010 extends Class1009 implements IAngerable {
+public class EndermanEntity extends MonsterEntity implements IAngerable {
    private static final UUID field5645 = UUID.fromString("020E0DFB-87AE-4653-9556-831010E291A0");
    private static final AttributeModifier field5646 = new AttributeModifier(field5645, "Attacking speed boost", 0.15F, AttributeModifier.Operation.ADDITION);
-   private static final DataParameter<Optional<BlockState>> field5647 = EntityDataManager.<Optional<BlockState>>createKey(Class1010.class, DataSerializers.field33397);
-   private static final DataParameter<Boolean> field5648 = EntityDataManager.<Boolean>createKey(Class1010.class, DataSerializers.field33398);
-   private static final DataParameter<Boolean> field5649 = EntityDataManager.<Boolean>createKey(Class1010.class, DataSerializers.field33398);
+   private static final DataParameter<Optional<BlockState>> field5647 = EntityDataManager.<Optional<BlockState>>createKey(EndermanEntity.class, DataSerializers.field33397);
+   private static final DataParameter<Boolean> field5648 = EntityDataManager.<Boolean>createKey(EndermanEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5649 = EntityDataManager.<Boolean>createKey(EndermanEntity.class, DataSerializers.field33398);
    private static final Predicate<LivingEntity> field5650 = var0 -> var0 instanceof Class1104 && ((Class1104)var0).method5297();
    private int field5651 = Integer.MIN_VALUE;
    private int field5652;
@@ -36,10 +40,10 @@ public class Class1010 extends Class1009 implements IAngerable {
    private int field5654;
    private UUID field5655;
 
-   public Class1010(EntityType<? extends Class1010> var1, World var2) {
+   public EndermanEntity(EntityType<? extends EndermanEntity> var1, World var2) {
       super(var1, var2);
       this.stepHeight = 1.0F;
-      this.method4224(Class2163.field14191, -1.0F);
+      this.method4224(PathNodeType.WATER, -1.0F);
    }
 
    @Override
@@ -55,15 +59,15 @@ public class Class1010 extends Class1009 implements IAngerable {
       this.field5601.addGoal(1, new Class2710(this, this::method4367));
       this.field5601.addGoal(2, new HurtByTargetGoal(this));
       this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1104>(this, Class1104.class, 10, true, false, field5650));
-      this.field5601.addGoal(4, new ResetAngerGoal<Class1010>(this, false));
+      this.field5601.addGoal(4, new ResetAngerGoal<EndermanEntity>(this, false));
    }
 
-   public static Class7037 method4345() {
-      return Class1009.method4343()
-         .method21849(Attributes.field42105, 40.0)
+   public static MutableAttribute method4345() {
+      return MonsterEntity.method4343()
+         .method21849(Attributes.MAX_HEALTH, 40.0)
          .method21849(Attributes.MOVEMENT_SPEED, 0.3F)
          .method21849(Attributes.ATTACK_DAMAGE, 7.0)
-         .method21849(Attributes.field42106, 64.0);
+         .method21849(Attributes.FOLLOW_RANGE, 64.0);
    }
 
    @Override
@@ -74,13 +78,13 @@ public class Class1010 extends Class1009 implements IAngerable {
          this.field5652 = this.ticksExisted;
          this.dataManager.method35446(field5648, true);
          if (!var4.method38665(field5646)) {
-            var4.method38667(field5646);
+            var4.applyNonPersistentModifier(field5646);
          }
       } else {
          this.field5652 = 0;
          this.dataManager.method35446(field5648, false);
          this.dataManager.method35446(field5649, false);
-         var4.method38670(field5646);
+         var4.removeModifier(field5646);
       }
    }
 
@@ -340,12 +344,12 @@ public class Class1010 extends Class1009 implements IAngerable {
    }
 
    // $VF: synthetic method
-   public static boolean method4362(Class1010 var0, PlayerEntity var1) {
+   public static boolean method4362(EndermanEntity var0, PlayerEntity var1) {
       return var0.method4352(var1);
    }
 
    // $VF: synthetic method
-   public static boolean method4363(Class1010 var0, Entity var1) {
+   public static boolean method4363(EndermanEntity var0, Entity var1) {
       return var0.method4354(var1);
    }
 }

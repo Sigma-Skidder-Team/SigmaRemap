@@ -10,7 +10,7 @@ public class Class4089 extends Class4057 {
    private static Map<String, Integer> field20394 = null;
 
    public Class4089() {
-      super(EntityType.field41059, "ocelot", 0.4F);
+      super(EntityType.OCELOT, "ocelot", 0.4F);
    }
 
    public Class4089(EntityType var1, String var2, float var3) {

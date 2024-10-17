@@ -6,7 +6,7 @@ import net.optifine.Config;
 
 public class Class4137 extends Class4135 {
    public Class4137() {
-      super(EntityType.field41056, "tnt_minecart", 0.5F);
+      super(EntityType.TNT_MINECART, "tnt_minecart", 0.5F);
    }
 
    @Override

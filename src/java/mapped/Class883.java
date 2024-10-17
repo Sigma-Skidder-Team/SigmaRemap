@@ -23,7 +23,7 @@ public class Class883 extends ProjectileEntity {
    }
 
    public Class883(World var1, Class1064 var2) {
-      this(EntityType.field41048, var1);
+      this(EntityType.LLAMA_SPIT, var1);
       super.setShooter(var2);
       this.setPosition(
          var2.getPosX() - (double)(var2.getWidth() + 1.0F) * 0.5 * (double) MathHelper.sin(var2.renderYawOffset * (float) (Math.PI / 180.0)),
@@ -33,7 +33,7 @@ public class Class883 extends ProjectileEntity {
    }
 
    public Class883(World var1, double var2, double var4, double var6, double var8, double var10, double var12) {
-      this(EntityType.field41048, var1);
+      this(EntityType.LLAMA_SPIT, var1);
       this.setPosition(var2, var4, var6);
 
       for (int var16 = 0; var16 < 7; var16++) {

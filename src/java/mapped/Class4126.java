@@ -5,7 +5,7 @@ import net.minecraft.entity.EntityType;
 
 public class Class4126 extends Class4124 {
    public Class4126() {
-      super(EntityType.field41021, "drowned", 0.5F);
+      super(EntityType.DROWNED, "drowned", 0.5F);
    }
 
    @Override

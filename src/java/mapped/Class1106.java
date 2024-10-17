@@ -1,6 +1,8 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.network.play.server.SChangeGameStatePacket;
 import net.minecraft.potion.EffectInstance;
@@ -14,7 +16,7 @@ import java.util.List;
 
 public class Class1106 extends Class1105 {
    private static String[] field6077;
-   public static final float field6078 = EntityType.field41022.method33213() / EntityType.field41036.method33213();
+   public static final float field6078 = EntityType.ELDER_GUARDIAN.method33213() / EntityType.GUARDIAN.method33213();
 
    public Class1106(EntityType<? extends Class1106> var1, World var2) {
       super(var1, var2);
@@ -24,8 +26,8 @@ public class Class1106 extends Class1105 {
       }
    }
 
-   public static Class7037 method5314() {
-      return Class1105.method5300().method21849(Attributes.MOVEMENT_SPEED, 0.3F).method21849(Attributes.ATTACK_DAMAGE, 8.0).method21849(Attributes.field42105, 80.0);
+   public static MutableAttribute method5314() {
+      return Class1105.method5300().method21849(Attributes.MOVEMENT_SPEED, 0.3F).method21849(Attributes.ATTACK_DAMAGE, 8.0).method21849(Attributes.MAX_HEALTH, 80.0);
    }
 
    @Override

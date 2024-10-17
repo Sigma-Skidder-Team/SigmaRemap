@@ -1,13 +1,11 @@
-package mapped;
+package net.minecraft.entity.ai.attributes;
 
 import com.google.common.collect.Maps;
-import net.minecraft.entity.ai.attributes.Attribute;
-import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
 import net.minecraft.util.registry.Registry;
 
 import java.util.Map;
 
-public class Class7037 {
+public class MutableAttribute {
    private final Map<Attribute, ModifiableAttributeInstance> field30365 = Maps.newHashMap();
    private boolean field30366;
 
@@ -21,19 +19,19 @@ public class Class7037 {
       return var4;
    }
 
-   public Class7037 method21848(Attribute var1) {
+   public MutableAttribute method21848(Attribute var1) {
       this.method21847(var1);
       return this;
    }
 
-   public Class7037 method21849(Attribute var1, double var2) {
+   public MutableAttribute method21849(Attribute var1, double var2) {
       ModifiableAttributeInstance var6 = this.method21847(var1);
       var6.method38661(var2);
       return this;
    }
 
-   public Class9767 method21850() {
+   public AttributeModifierMap method21850() {
       this.field30366 = true;
-      return new Class9767(this.field30365);
+      return new AttributeModifierMap(this.field30365);
    }
 }

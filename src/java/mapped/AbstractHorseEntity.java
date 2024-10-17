@@ -6,6 +6,8 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
@@ -275,7 +277,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    public double method4949() {
-      return this.getAttributeValue(Attributes.field42117);
+      return this.getAttributeValue(Attributes.HORSE_JUMP_STRENGTH);
    }
 
    @Nullable
@@ -343,8 +345,8 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       this.playSound(SoundEvents.field26673, var1.getVolume() * 0.15F, var1.method29711());
    }
 
-   public static Class7037 method4951() {
-      return MobEntity.method4220().method21848(Attributes.field42117).method21849(Attributes.field42105, 53.0).method21849(Attributes.MOVEMENT_SPEED, 0.225F);
+   public static MutableAttribute method4951() {
+      return MobEntity.method4220().method21848(Attributes.HORSE_JUMP_STRENGTH).method21849(Attributes.MAX_HEALTH, 53.0).method21849(Attributes.MOVEMENT_SPEED, 0.225F);
    }
 
    @Override
@@ -792,10 +794,10 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    public void method4962(Class1045 var1, AbstractHorseEntity var2) {
-      double var5 = this.method3087(Attributes.field42105) + var1.method3087(Attributes.field42105) + (double)this.method4971();
-      var2.getAttribute(Attributes.field42105).method38661(var5 / 3.0);
-      double var7 = this.method3087(Attributes.field42117) + var1.method3087(Attributes.field42117) + this.method4972();
-      var2.getAttribute(Attributes.field42117).method38661(var7 / 3.0);
+      double var5 = this.method3087(Attributes.MAX_HEALTH) + var1.method3087(Attributes.MAX_HEALTH) + (double)this.method4971();
+      var2.getAttribute(Attributes.MAX_HEALTH).method38661(var5 / 3.0);
+      double var7 = this.method3087(Attributes.HORSE_JUMP_STRENGTH) + var1.method3087(Attributes.HORSE_JUMP_STRENGTH) + this.method4972();
+      var2.getAttribute(Attributes.HORSE_JUMP_STRENGTH).method38661(var7 / 3.0);
       double var9 = this.method3087(Attributes.MOVEMENT_SPEED) + var1.method3087(Attributes.MOVEMENT_SPEED) + this.method4973();
       var2.getAttribute(Attributes.MOVEMENT_SPEED).method38661(var9 / 3.0);
    }

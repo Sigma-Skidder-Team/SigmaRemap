@@ -13,7 +13,7 @@ import java.util.Optional;
 import java.util.function.BooleanSupplier;
 
 public class Class2686 extends Class2595 {
-   public final Class1046 field17103;
+   public final CreatureEntity field17103;
    private final double field17104;
    private Class8238 field17105;
    private BlockPos field17106;
@@ -22,7 +22,7 @@ public class Class2686 extends Class2595 {
    private final int field17109;
    private final BooleanSupplier field17110;
 
-   public Class2686(Class1046 var1, double var2, boolean var4, int var5, BooleanSupplier var6) {
+   public Class2686(CreatureEntity var1, double var2, boolean var4, int var5, BooleanSupplier var6) {
       this.field17103 = var1;
       this.field17104 = var2;
       this.field17107 = var4;

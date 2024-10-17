@@ -22,7 +22,7 @@ public class Class1065 extends Class1064 {
 
    @Override
    public Class1064 method4908() {
-      return EntityType.field41094.create(this.world);
+      return EntityType.TRADER_LLAMA.create(this.world);
    }
 
    @Override

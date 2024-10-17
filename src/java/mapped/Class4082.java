@@ -6,7 +6,7 @@ import net.optifine.Config;
 
 public class Class4082 extends Class4057 {
    public Class4082() {
-      super(EntityType.field41070, "puffer_fish_small", 0.2F);
+      super(EntityType.PUFFERFISH, "puffer_fish_small", 0.2F);
    }
 
    @Override
@@ -52,7 +52,7 @@ public class Class4082 extends Class4057 {
    @Override
    public Class9492 method12825(Class2828 var1, float var2) {
       EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
-      Object var6 = var5.method32232().get(EntityType.field41070);
+      Object var6 = var5.method32232().get(EntityType.PUFFERFISH);
       if (var6 instanceof Class5748) {
          if (((EntityRenderer)var6).method17898() == null) {
             Class5748 var7 = new Class5748(var5);

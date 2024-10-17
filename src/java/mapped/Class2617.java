@@ -4,9 +4,9 @@ import net.minecraft.inventory.EquipmentSlotType;
 
 public class Class2617 extends Class2595 {
    private static String[] field16891;
-   private final Class1046 field16892;
+   private final CreatureEntity field16892;
 
-   public Class2617(Class1046 var1) {
+   public Class2617(CreatureEntity var1) {
       this.field16892 = var1;
    }
 

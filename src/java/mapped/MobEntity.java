@@ -7,7 +7,11 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.entity.item.BoatEntity;
+import net.minecraft.entity.monster.IMob;
+import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.inventory.EquipmentSlotType;
@@ -21,6 +25,7 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SMountEntityPacket;
+import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -51,7 +56,7 @@ public abstract class MobEntity extends LivingEntity {
    public final float[] field5607 = new float[4];
    private boolean field5608;
    private boolean field5609;
-   private final Map<Class2163, Float> field5610 = Maps.newEnumMap(Class2163.class);
+   private final Map<PathNodeType, Float> field5610 = Maps.newEnumMap(PathNodeType.class);
    private ResourceLocation field5611;
    private long field5612;
    private Entity field5613;
@@ -80,8 +85,8 @@ public abstract class MobEntity extends LivingEntity {
    public void method4219() {
    }
 
-   public static Class7037 method4220() {
-      return LivingEntity.method2997().method21849(Attributes.field42106, 16.0).method21848(Attributes.field42111);
+   public static MutableAttribute method4220() {
+      return LivingEntity.method2997().method21849(Attributes.FOLLOW_RANGE, 16.0).method21848(Attributes.ATTACK_KNOCKBACK);
    }
 
    public Class6990 method4221(World var1) {
@@ -92,7 +97,7 @@ public abstract class MobEntity extends LivingEntity {
       return false;
    }
 
-   public float method4223(Class2163 var1) {
+   public float method4223(PathNodeType var1) {
       MobEntity var4;
       if (this.getRidingEntity() instanceof MobEntity && ((MobEntity)this.getRidingEntity()).method4222()) {
          var4 = (MobEntity)this.getRidingEntity();
@@ -101,15 +106,15 @@ public abstract class MobEntity extends LivingEntity {
       }
 
       Float var5 = var4.field5610.get(var1);
-      return var5 != null ? var5 : var1.method8884();
+      return var5 != null ? var5 : var1.getPriority();
    }
 
-   public void method4224(Class2163 var1, float var2) {
+   public void method4224(PathNodeType var1, float var2) {
       this.field5610.put(var1, var2);
    }
 
-   public boolean method4225(Class2163 var1) {
-      return var1 != Class2163.field14195 && var1 != Class2163.field14197 && var1 != Class2163.field14199 && var1 != Class2163.field14187;
+   public boolean method4225(PathNodeType var1) {
+      return var1 != PathNodeType.DANGER_FIRE && var1 != PathNodeType.DANGER_CACTUS && var1 != PathNodeType.DANGER_OTHER && var1 != PathNodeType.WALKABLE_DOOR;
    }
 
    public Class7395 method4226() {
@@ -158,7 +163,7 @@ public abstract class MobEntity extends LivingEntity {
 
    @Override
    public boolean canAttack(EntityType<?> var1) {
-      return var1 != EntityType.field41034;
+      return var1 != EntityType.GHAST;
    }
 
    public boolean method4234(Class3262 var1) {
@@ -980,7 +985,7 @@ public abstract class MobEntity extends LivingEntity {
 
    @Nullable
    public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
-      this.getAttribute(Attributes.field42106).method38668(new AttributeModifier("Random spawn bonus", this.rand.nextGaussian() * 0.05, AttributeModifier.Operation.field13353));
+      this.getAttribute(Attributes.FOLLOW_RANGE).method38668(new AttributeModifier("Random spawn bonus", this.rand.nextGaussian() * 0.05, AttributeModifier.Operation.field13353));
       if (!(this.rand.nextFloat() < 0.05F)) {
          this.method4303(false);
       } else {
@@ -1179,7 +1184,7 @@ public abstract class MobEntity extends LivingEntity {
    }
 
    public boolean method4295(PlayerEntity var1) {
-      return !this.method4296() && !(this instanceof Class1008);
+      return !this.method4296() && !(this instanceof IMob);
    }
 
    public boolean method4296() {
@@ -1346,7 +1351,7 @@ public abstract class MobEntity extends LivingEntity {
    @Override
    public boolean attackEntityAsMob(Entity var1) {
       float var4 = (float)this.getAttributeValue(Attributes.ATTACK_DAMAGE);
-      float var5 = (float)this.getAttributeValue(Attributes.field42111);
+      float var5 = (float)this.getAttributeValue(Attributes.ATTACK_KNOCKBACK);
       if (var1 instanceof LivingEntity) {
          var4 += EnchantmentHelper.getModifierForCreature(this.getHeldItemMainhand(), ((LivingEntity)var1).getCreatureAttribute());
          var5 += (float) EnchantmentHelper.getKnockbackModifier(this);
@@ -1466,7 +1471,7 @@ public abstract class MobEntity extends LivingEntity {
 
    private void method4313() {
       this.field4973++;
-      if (this instanceof Class1009) {
+      if (this instanceof MonsterEntity) {
          float var3 = this.getBrightness();
          if (var3 > 0.5F) {
             this.field4973 += 2;

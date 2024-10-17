@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.pathfinding.PathNodeType;
+
 import java.util.EnumSet;
 import java.util.List;
 import java.util.function.Predicate;
@@ -55,15 +57,15 @@ public class Class2611 extends Class2595 {
    @Override
    public void method10804() {
       this.field16876 = 0;
-      this.field16878 = this.field16871.method4223(Class2163.field14191);
-      this.field16871.method4224(Class2163.field14191, 0.0F);
+      this.field16878 = this.field16871.method4223(PathNodeType.WATER);
+      this.field16871.method4224(PathNodeType.WATER, 0.0F);
    }
 
    @Override
    public void method10807() {
       this.field16873 = null;
       this.field16875.method21666();
-      this.field16871.method4224(Class2163.field14191, this.field16878);
+      this.field16871.method4224(PathNodeType.WATER, this.field16878);
    }
 
    @Override

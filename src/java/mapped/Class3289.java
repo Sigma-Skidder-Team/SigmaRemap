@@ -34,11 +34,11 @@ public class Class3289 extends Item {
          BlockPos var7 = var6.getPos();
          ItemStack var8 = var1.method18357();
          Vector3d var9 = Vector3d.method11330(var7);
-         AxisAlignedBB var10 = EntityType.field41006.getSize().method32098(var9.getX(), var9.getY(), var9.getZ());
+         AxisAlignedBB var10 = EntityType.ARMOR_STAND.getSize().method32098(var9.getX(), var9.getY(), var9.getZ());
          if (var5.method7054((Entity)null, var10, var0 -> true) && var5.method7181((Entity)null, var10).isEmpty()) {
             if (var5 instanceof ServerWorld) {
                ServerWorld var11 = (ServerWorld)var5;
-               ArmorStandEntity var12 = EntityType.field41006
+               ArmorStandEntity var12 = EntityType.ARMOR_STAND
                   .method33202(var11, var8.method32142(), (ITextComponent)null, var1.method18358(), var7, Class2202.field14403, true, true);
                if (var12 == null) {
                   return ActionResultType.FAIL;

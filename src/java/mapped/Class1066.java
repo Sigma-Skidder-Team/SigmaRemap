@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -24,7 +26,7 @@ public abstract class Class1066 extends AbstractHorseEntity {
 
    @Override
    public void method4925() {
-      this.getAttribute(Attributes.field42105).method38661((double)this.method4971());
+      this.getAttribute(Attributes.MAX_HEALTH).method38661((double)this.method4971());
    }
 
    @Override
@@ -33,8 +35,8 @@ public abstract class Class1066 extends AbstractHorseEntity {
       this.dataManager.register(field5877, false);
    }
 
-   public static Class7037 method4926() {
-      return method4951().method21849(Attributes.MOVEMENT_SPEED, 0.175F).method21849(Attributes.field42117, 0.5);
+   public static MutableAttribute method4926() {
+      return method4951().method21849(Attributes.MOVEMENT_SPEED, 0.175F).method21849(Attributes.HORSE_JUMP_STRENGTH, 0.5);
    }
 
    public boolean method4927() {

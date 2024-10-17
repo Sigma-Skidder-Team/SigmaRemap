@@ -5,7 +5,7 @@ import net.minecraft.entity.EntityType;
 
 public class Class4076 extends Class4057 {
    public Class4076() {
-      super(EntityType.field41085, "spider", 1.0F);
+      super(EntityType.SPIDER, "spider", 1.0F);
    }
 
    public Class4076(EntityType var1, String var2, float var3) {

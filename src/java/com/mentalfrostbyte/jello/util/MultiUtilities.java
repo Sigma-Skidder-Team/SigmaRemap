@@ -14,6 +14,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.play.client.*;
 import net.minecraft.util.Direction;
@@ -876,7 +877,7 @@ public class MultiUtilities {
    public static Class2258 method17744(Entity var0) {
       if (var0 instanceof LivingEntity) {
          if (!(var0 instanceof PlayerEntity)) {
-            return !(var0 instanceof MobEntity) && !(var0 instanceof Class1009) && !(var0 instanceof Class1108) && !(var0 instanceof Class1111)
+            return !(var0 instanceof MobEntity) && !(var0 instanceof MonsterEntity) && !(var0 instanceof Class1108) && !(var0 instanceof Class1111)
                ? Class2258.field14691
                : Class2258.field14689;
          } else {

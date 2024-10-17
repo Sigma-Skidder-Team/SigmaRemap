@@ -32,7 +32,7 @@ public class Class994 extends AbstractMinecartEntity {
    }
 
    public Class994(World var1, double var2, double var4, double var6) {
-      super(EntityType.field41053, var1, var2, var4, var6);
+      super(EntityType.FURNACE_MINECART, var1, var2, var4, var6);
    }
 
    @Override

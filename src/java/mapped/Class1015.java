@@ -10,6 +10,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -17,6 +19,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.*;
@@ -40,39 +43,39 @@ public class Class1015 extends Class1014 implements Class1016 {
       new Item[]{Items.field37841, Items.field37960, Items.field37959, Items.field38112}
    );
    private static final Map<EntityType<?>, SoundEvent> field5676 = Util.<Map<EntityType<?>, SoundEvent>>make(Maps.newHashMap(), var0 -> {
-      var0.put(EntityType.field41010, SoundEvents.field26885);
-      var0.put(EntityType.field41013, SoundEvents.field26907);
-      var0.put(EntityType.field41017, SoundEvents.field26886);
-      var0.put(EntityType.field41021, SoundEvents.field26887);
-      var0.put(EntityType.field41022, SoundEvents.field26888);
+      var0.put(EntityType.BLAZE, SoundEvents.field26885);
+      var0.put(EntityType.CAVE_SPIDER, SoundEvents.field26907);
+      var0.put(EntityType.CREEPER, SoundEvents.field26886);
+      var0.put(EntityType.DROWNED, SoundEvents.field26887);
+      var0.put(EntityType.ELDER_GUARDIAN, SoundEvents.field26888);
       var0.put(EntityType.field41024, SoundEvents.field26889);
       var0.put(EntityType.field41026, SoundEvents.field26890);
       var0.put(EntityType.field41027, SoundEvents.field26891);
-      var0.put(EntityType.field41034, SoundEvents.field26892);
-      var0.put(EntityType.field41036, SoundEvents.field26893);
-      var0.put(EntityType.field41037, SoundEvents.field26894);
-      var0.put(EntityType.field41039, SoundEvents.field26895);
-      var0.put(EntityType.field41040, SoundEvents.field26896);
-      var0.put(EntityType.field41049, SoundEvents.field26897);
-      var0.put(EntityType.field41063, SoundEvents.field26898);
-      var0.put(EntityType.field41065, SoundEvents.field26899);
-      var0.put(EntityType.field41066, SoundEvents.field26900);
-      var0.put(EntityType.field41067, SoundEvents.field26901);
-      var0.put(EntityType.field41072, SoundEvents.field26902);
-      var0.put(EntityType.field41075, SoundEvents.field26903);
-      var0.put(EntityType.field41077, SoundEvents.field26904);
-      var0.put(EntityType.field41078, SoundEvents.field26905);
-      var0.put(EntityType.field41080, SoundEvents.field26906);
-      var0.put(EntityType.field41085, SoundEvents.field26907);
-      var0.put(EntityType.field41087, SoundEvents.field26908);
-      var0.put(EntityType.field41097, SoundEvents.field26909);
-      var0.put(EntityType.field41099, SoundEvents.field26910);
-      var0.put(EntityType.field41101, SoundEvents.field26911);
-      var0.put(EntityType.field41102, SoundEvents.field26912);
-      var0.put(EntityType.field41103, SoundEvents.field26913);
-      var0.put(EntityType.field41106, SoundEvents.field26914);
-      var0.put(EntityType.field41107, SoundEvents.field26915);
-      var0.put(EntityType.field41109, SoundEvents.field26916);
+      var0.put(EntityType.GHAST, SoundEvents.field26892);
+      var0.put(EntityType.GUARDIAN, SoundEvents.field26893);
+      var0.put(EntityType.HOGLIN, SoundEvents.field26894);
+      var0.put(EntityType.HUSK, SoundEvents.field26895);
+      var0.put(EntityType.ILLUSIONER, SoundEvents.field26896);
+      var0.put(EntityType.MAGMA_CUBE, SoundEvents.field26897);
+      var0.put(EntityType.PHANTOM, SoundEvents.field26898);
+      var0.put(EntityType.PIGLIN, SoundEvents.field26899);
+      var0.put(EntityType.PIGLIN_BRUTE, SoundEvents.field26900);
+      var0.put(EntityType.PILLAGER, SoundEvents.field26901);
+      var0.put(EntityType.RAVAGER, SoundEvents.field26902);
+      var0.put(EntityType.SHULKER, SoundEvents.field26903);
+      var0.put(EntityType.SILVERFISH, SoundEvents.field26904);
+      var0.put(EntityType.SKELETON, SoundEvents.field26905);
+      var0.put(EntityType.SLIME, SoundEvents.field26906);
+      var0.put(EntityType.SPIDER, SoundEvents.field26907);
+      var0.put(EntityType.STRAY, SoundEvents.field26908);
+      var0.put(EntityType.VEX, SoundEvents.field26909);
+      var0.put(EntityType.VINDICATOR, SoundEvents.field26910);
+      var0.put(EntityType.WITCH, SoundEvents.field26911);
+      var0.put(EntityType.WITHER, SoundEvents.field26912);
+      var0.put(EntityType.WITHER_SKELETON, SoundEvents.field26913);
+      var0.put(EntityType.ZOGLIN, SoundEvents.field26914);
+      var0.put(EntityType.ZOMBIE, SoundEvents.field26915);
+      var0.put(EntityType.ZOMBIE_VILLAGER, SoundEvents.field26916);
    });
    public float field5677;
    public float field5678;
@@ -85,9 +88,9 @@ public class Class1015 extends Class1014 implements Class1016 {
    public Class1015(EntityType<? extends Class1015> var1, World var2) {
       super(var1, var2);
       this.field5596 = new Class6832(this, 10, false);
-      this.method4224(Class2163.field14195, -1.0F);
-      this.method4224(Class2163.field14196, -1.0F);
-      this.method4224(Class2163.field14207, -1.0F);
+      this.method4224(PathNodeType.DANGER_FIRE, -1.0F);
+      this.method4224(PathNodeType.DAMAGE_FIRE, -1.0F);
+      this.method4224(PathNodeType.COCOA, -1.0F);
    }
 
    @Nullable
@@ -118,8 +121,8 @@ public class Class1015 extends Class1014 implements Class1016 {
       this.field5600.addGoal(3, new Class2611(this, 1.0, 3.0F, 7.0F));
    }
 
-   public static Class7037 method4406() {
-      return MobEntity.method4220().method21849(Attributes.field42105, 6.0).method21849(Attributes.field42109, 0.4F).method21849(Attributes.MOVEMENT_SPEED, 0.2F);
+   public static MutableAttribute method4406() {
+      return MobEntity.method4220().method21849(Attributes.MAX_HEALTH, 6.0).method21849(Attributes.FLYING_SPEED, 0.4F).method21849(Attributes.MOVEMENT_SPEED, 0.2F);
    }
 
    @Override

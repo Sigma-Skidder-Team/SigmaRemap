@@ -386,14 +386,14 @@ public class ServerWorld extends World implements ISeedReader {
             Class9755 var11 = this.method6807(var10);
             boolean var12 = this.getGameRules().getBoolean(GameRules.field24226) && this.rand.nextDouble() < (double)var11.method38328() * 0.01;
             if (var12) {
-               Class1076 var13 = EntityType.field41079.create(this);
+               Class1076 var13 = EntityType.SKELETON_HORSE.create(this);
                var13.method5001(true);
                var13.method4770(0);
                var13.setPosition((double)var10.getX(), (double)var10.getY(), (double)var10.getZ());
                this.addEntity(var13);
             }
 
-            Class906 var25 = EntityType.field41046.create(this);
+            Class906 var25 = EntityType.LIGHTNING_BOLT.create(this);
             var25.moveForced(Vector3d.method11330(var10));
             var25.method3549(var12);
             this.addEntity(var25);

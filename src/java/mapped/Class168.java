@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.player.PlayerEntity;
 
@@ -17,7 +18,7 @@ public class Class168 implements Predicate<LivingEntity> {
    public boolean test(LivingEntity var1) {
       if (var1 instanceof Class1095) {
          return false;
-      } else if (var1 instanceof Class1089 || var1 instanceof Class1094 || var1 instanceof Class1009) {
+      } else if (var1 instanceof Class1089 || var1 instanceof Class1094 || var1 instanceof MonsterEntity) {
          return true;
       } else if (var1 instanceof TameableEntity) {
          return !((TameableEntity)var1).method4393();

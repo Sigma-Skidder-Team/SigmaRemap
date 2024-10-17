@@ -4,6 +4,8 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -31,8 +33,8 @@ public class Class1087 extends Class1018 {
       this.field5600.addGoal(7, new Class2668(this));
    }
 
-   public static Class7037 method5040() {
-      return MobEntity.method4220().method21849(Attributes.field42105, 10.0).method21849(Attributes.MOVEMENT_SPEED, 0.2F);
+   public static MutableAttribute method5040() {
+      return MobEntity.method4220().method21849(Attributes.MAX_HEALTH, 10.0).method21849(Attributes.MOVEMENT_SPEED, 0.2F);
    }
 
    @Override
@@ -74,7 +76,7 @@ public class Class1087 extends Class1018 {
    }
 
    public Class1087 method4389(ServerWorld var1, Class1045 var2) {
-      return EntityType.field41016.create(var1);
+      return EntityType.COW.create(var1);
    }
 
    @Override

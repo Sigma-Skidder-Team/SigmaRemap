@@ -14,6 +14,7 @@ import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.IAngerable;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.IContainerListener;
@@ -705,8 +706,8 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
                double var8 = 5.0;
                Vector3d var10 = Vector3d.method11330(var1);
                List var11 = this.world
-                  .<Class1009>getEntitiesInAABBexcluding(
-                     Class1009.class,
+                  .<MonsterEntity>getEntitiesInAABBexcluding(
+                     MonsterEntity.class,
                      new AxisAlignedBB(
                         var10.getX() - 8.0,
                         var10.getY() - 5.0,

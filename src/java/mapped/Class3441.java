@@ -6,6 +6,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.monster.ZombieEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
@@ -82,7 +83,7 @@ public class Class3441 extends Block {
 
             for (int var8 = 0; var8 < var1.<Integer>get(field19244); var8++) {
                var2.playEvent(2001, var3, Block.getStateId(var1));
-               Class1088 var9 = EntityType.field41096.create(var2);
+               Class1088 var9 = EntityType.TURTLE.create(var2);
                var9.method4770(-24000);
                var9.method5041(var3);
                var9.setLocationAndAngles((double)var3.getX() + 0.3 + (double)var8 * 0.2, (double)var3.getY(), (double)var3.getZ() + 0.3, 0.0F, 0.0F);

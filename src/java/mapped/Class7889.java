@@ -28,7 +28,7 @@ public class Class7889 extends Class7882<LivingEntity> {
    }
 
    private boolean method26454(LivingEntity var1) {
-      return var1.getType() == EntityType.field41098 && var1.isChild();
+      return var1.getType() == EntityType.VILLAGER && var1.isChild();
    }
 
    private List<LivingEntity> method26455(LivingEntity var1) {

@@ -54,8 +54,8 @@ public class Class3401 extends Block {
             var3 = var3.down();
          }
 
-         if (var2.getBlockState(var3).method23385(var2, var3, EntityType.field41110)) {
-            Entity var7 = EntityType.field41110
+         if (var2.getBlockState(var3).method23385(var2, var3, EntityType.ZOMBIFIED_PIGLIN)) {
+            Entity var7 = EntityType.ZOMBIFIED_PIGLIN
                .method33201(var2, (CompoundNBT)null, (ITextComponent)null, (PlayerEntity)null, var3.up(), Class2202.field14394, false, false);
             if (var7 != null) {
                var7.method3218();

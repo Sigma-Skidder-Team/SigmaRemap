@@ -25,7 +25,7 @@ public class Class938 extends Class919 implements Class937 {
    }
 
    public Class938(World var1, double var2, double var4, double var6) {
-      super(EntityType.field41054, var2, var4, var6, var1);
+      super(EntityType.HOPPER_MINECART, var2, var4, var6, var1);
    }
 
    @Override

@@ -1,23 +1,24 @@
 package mapped;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.monster.EndermanEntity;
 import net.minecraft.entity.player.PlayerEntity;
 
 import java.util.function.Predicate;
 
 public class Class2710 extends NearestAttackableTargetGoal<PlayerEntity> {
    private static String[] field17187;
-   private final Class1010 field17192;
+   private final EndermanEntity field17192;
    private PlayerEntity field17193;
    private int field17194;
    private int field17195;
    private final Class8522 field17196;
    private final Class8522 field17197 = new Class8522().method30206();
 
-   public Class2710(Class1010 var1, Predicate<LivingEntity> var2) {
+   public Class2710(EndermanEntity var1, Predicate<LivingEntity> var2) {
       super(var1, PlayerEntity.class, 10, false, false, var2);
       this.field17192 = var1;
-      this.field17196 = new Class8522().method30203(this.method10914()).method30209(var1x -> Class1010.method4362(var1, (PlayerEntity)var1x));
+      this.field17196 = new Class8522().method30203(this.method10914()).method30209(var1x -> EndermanEntity.method4362(var1, (PlayerEntity)var1x));
    }
 
    @Override
@@ -42,7 +43,7 @@ public class Class2710 extends NearestAttackableTargetGoal<PlayerEntity> {
    @Override
    public boolean method10806() {
       if (this.field17193 != null) {
-         if (Class1010.method4362(this.field17192, this.field17193)) {
+         if (EndermanEntity.method4362(this.field17192, this.field17193)) {
             this.field17192.method4262(this.field17193, 10.0F, 10.0F);
             return true;
          } else {
@@ -61,8 +62,8 @@ public class Class2710 extends NearestAttackableTargetGoal<PlayerEntity> {
 
       if (this.field17193 == null) {
          if (this.field17190 != null && !this.field17192.isPassenger()) {
-            if (!Class1010.method4362(this.field17192, (PlayerEntity)this.field17190)) {
-               if (this.field17190.getDistanceSq(this.field17192) > 256.0 && this.field17195++ >= 30 && Class1010.method4363(this.field17192, this.field17190)) {
+            if (!EndermanEntity.method4362(this.field17192, (PlayerEntity)this.field17190)) {
+               if (this.field17190.getDistanceSq(this.field17192) > 256.0 && this.field17195++ >= 30 && EndermanEntity.method4363(this.field17192, this.field17190)) {
                   this.field17195 = 0;
                }
             } else {

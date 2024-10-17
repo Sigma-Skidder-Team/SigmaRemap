@@ -1,10 +1,13 @@
-package mapped;
+package net.minecraft.entity.monster;
 
+import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
@@ -32,7 +35,7 @@ import java.util.Random;
 import java.util.UUID;
 import java.util.function.Predicate;
 
-public class ZombieEntity extends Class1009 {
+public class ZombieEntity extends MonsterEntity {
    private static final UUID field5758 = UUID.fromString("B9766B59-9566-4402-BC1F-2EE2A276D836");
    private static final AttributeModifier field5759 = new AttributeModifier(field5758, "Baby speed boost", 0.5, AttributeModifier.Operation.field13353);
    private static final DataParameter<Boolean> field5760 = EntityDataManager.<Boolean>createKey(ZombieEntity.class, DataSerializers.field33398);
@@ -49,7 +52,7 @@ public class ZombieEntity extends Class1009 {
    }
 
    public ZombieEntity(World var1) {
-      this(EntityType.field41107, var1);
+      this(EntityType.ZOMBIE, var1);
    }
 
    @Override
@@ -71,13 +74,13 @@ public class ZombieEntity extends Class1009 {
       this.field5601.addGoal(5, new NearestAttackableTargetGoal<Class1088>(this, Class1088.class, 10, true, false, Class1088.field5963));
    }
 
-   public static Class7037 method4653() {
-      return Class1009.method4343()
-         .method21849(Attributes.field42106, 35.0)
+   public static MutableAttribute method4653() {
+      return MonsterEntity.method4343()
+         .method21849(Attributes.FOLLOW_RANGE, 35.0)
          .method21849(Attributes.MOVEMENT_SPEED, 0.23F)
          .method21849(Attributes.ATTACK_DAMAGE, 3.0)
-         .method21849(Attributes.field42113, 2.0)
-         .method21848(Attributes.field42116);
+         .method21849(Attributes.ARMOR, 2.0)
+         .method21848(Attributes.ZOMBIE_SPAWN_REINFORCEMENTS);
    }
 
    @Override
@@ -136,9 +139,9 @@ public class ZombieEntity extends Class1009 {
       this.getDataManager().method35446(field5760, var1);
       if (this.world != null && !this.world.isRemote) {
          ModifiableAttributeInstance var4 = this.getAttribute(Attributes.MOVEMENT_SPEED);
-         var4.method38670(field5759);
+         var4.removeModifier(field5759);
          if (var1) {
-            var4.method38667(field5759);
+            var4.applyNonPersistentModifier(field5759);
          }
       }
    }
@@ -214,7 +217,7 @@ public class ZombieEntity extends Class1009 {
    }
 
    public void method4658() {
-      this.method4659(EntityType.field41021);
+      this.method4659(EntityType.DROWNED);
       if (!this.isSilent()) {
          this.world.method6869((PlayerEntity)null, 1040, this.getPosition(), 0);
       }
@@ -245,7 +248,7 @@ public class ZombieEntity extends Class1009 {
 
          if (var6 != null
             && this.world.method6997() == Difficulty.HARD
-            && (double)this.rand.nextFloat() < this.getAttributeValue(Attributes.field42116)
+            && (double)this.rand.nextFloat() < this.getAttributeValue(Attributes.ZOMBIE_SPAWN_REINFORCEMENTS)
             && this.world.getGameRules().getBoolean(GameRules.field24226)) {
             int var7 = MathHelper.floor(this.getPosX());
             int var8 = MathHelper.floor(this.getPosY());
@@ -269,8 +272,8 @@ public class ZombieEntity extends Class1009 {
                      var10.method4233(var6);
                      var10.method4276(var5, this.world.method6807(var10.getPosition()), Class2202.field14400, (Class5093)null, (CompoundNBT)null);
                      var5.method6995(var10);
-                     this.getAttribute(Attributes.field42116).method38668(new AttributeModifier("Zombie reinforcement caller charge", -0.05F, AttributeModifier.Operation.ADDITION));
-                     var10.getAttribute(Attributes.field42116).method38668(new AttributeModifier("Zombie reinforcement callee charge", -0.05F, AttributeModifier.Operation.ADDITION));
+                     this.getAttribute(Attributes.ZOMBIE_SPAWN_REINFORCEMENTS).method38668(new AttributeModifier("Zombie reinforcement caller charge", -0.05F, AttributeModifier.Operation.ADDITION));
+                     var10.getAttribute(Attributes.ZOMBIE_SPAWN_REINFORCEMENTS).method38668(new AttributeModifier("Zombie reinforcement callee charge", -0.05F, AttributeModifier.Operation.ADDITION));
                      break;
                   }
                }
@@ -367,7 +370,7 @@ public class ZombieEntity extends Class1009 {
          }
 
          Class1042 var5 = (Class1042)var2;
-         Class1040 var6 = var5.<Class1040>method4292(EntityType.field41109, false);
+         Class1040 var6 = var5.<Class1040>method4292(EntityType.ZOMBIE_VILLAGER, false);
          var6.method4276(var1, var1.method6807(var6.getPosition()), Class2202.field14399, new Class5096(false, true), (CompoundNBT)null);
          var6.method4673(var5.method4674());
          var6.method4672((INBT)var5.method4724().method25528(NBTDynamicOps.INSTANCE).getValue());
@@ -406,7 +409,7 @@ public class ZombieEntity extends Class1009 {
             if (var9.field23190) {
                if (!((double)var1.method6814().nextFloat() < 0.05)) {
                   if ((double)var1.method6814().nextFloat() < 0.05) {
-                     Class1089 var10 = EntityType.field41014.create(this.world);
+                     Class1089 var10 = EntityType.CHICKEN.create(this.world);
                      var10.setLocationAndAngles(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, 0.0F);
                      var10.method4276(var1, var2, Class2202.field14397, (Class5093)null, (CompoundNBT)null);
                      var10.method5071(true);
@@ -449,22 +452,22 @@ public class ZombieEntity extends Class1009 {
 
    public void method4662(float var1) {
       this.method4663();
-      this.getAttribute(Attributes.field42107).method38668(new AttributeModifier("Random spawn bonus", this.rand.nextDouble() * 0.05F, AttributeModifier.Operation.ADDITION));
+      this.getAttribute(Attributes.KNOCKBACK_RESISTANCE).method38668(new AttributeModifier("Random spawn bonus", this.rand.nextDouble() * 0.05F, AttributeModifier.Operation.ADDITION));
       double var4 = this.rand.nextDouble() * 1.5 * (double)var1;
       if (var4 > 1.0) {
-         this.getAttribute(Attributes.field42106).method38668(new AttributeModifier("Random zombie-spawn bonus", var4, AttributeModifier.Operation.MULTIPLY_TOTAL));
+         this.getAttribute(Attributes.FOLLOW_RANGE).method38668(new AttributeModifier("Random zombie-spawn bonus", var4, AttributeModifier.Operation.MULTIPLY_TOTAL));
       }
 
       if (this.rand.nextFloat() < var1 * 0.05F) {
-         this.getAttribute(Attributes.field42116)
+         this.getAttribute(Attributes.ZOMBIE_SPAWN_REINFORCEMENTS)
             .method38668(new AttributeModifier("Leader zombie bonus", this.rand.nextDouble() * 0.25 + 0.5, AttributeModifier.Operation.ADDITION));
-         this.getAttribute(Attributes.field42105).method38668(new AttributeModifier("Leader zombie bonus", this.rand.nextDouble() * 3.0 + 1.0, AttributeModifier.Operation.MULTIPLY_TOTAL));
+         this.getAttribute(Attributes.MAX_HEALTH).method38668(new AttributeModifier("Leader zombie bonus", this.rand.nextDouble() * 3.0 + 1.0, AttributeModifier.Operation.MULTIPLY_TOTAL));
          this.method4656(this.method4642());
       }
    }
 
    public void method4663() {
-      this.getAttribute(Attributes.field42116).method38661(this.rand.nextDouble() * 0.1F);
+      this.getAttribute(Attributes.ZOMBIE_SPAWN_REINFORCEMENTS).method38661(this.rand.nextDouble() * 0.1F);
    }
 
    @Override

@@ -11,14 +11,14 @@ import java.util.Random;
 
 public class Class2640 extends Class2595 {
    private static String[] field16965;
-   public final Class1046 field16966;
+   public final CreatureEntity field16966;
    private double field16967;
    private double field16968;
    private double field16969;
    private final double field16970;
    private final World field16971;
 
-   public Class2640(Class1046 var1, double var2) {
+   public Class2640(CreatureEntity var1, double var2) {
       this.field16966 = var1;
       this.field16970 = var2;
       this.field16971 = var1.world;
@@ -75,7 +75,7 @@ public class Class2640 extends Class2595 {
 
       for (int var5 = 0; var5 < 10; var5++) {
          BlockPos var6 = var4.add(var3.nextInt(20) - 10, var3.nextInt(6) - 3, var3.nextInt(20) - 10);
-         if (!this.field16971.method7022(var6) && this.field16966.method4771(var6) < 0.0F) {
+         if (!this.field16971.method7022(var6) && this.field16966.getBlockPathWeight(var6) < 0.0F) {
             return Vector3d.method11330(var6);
          }
       }

@@ -453,18 +453,18 @@ public class Class7699 {
             }
 
             this.method25414(var5, var15, var1, false);
-            if (Class2127.method8809(var11) == EntityType.field41072) {
+            if (Class2127.method8809(var11) == EntityType.RAVAGER) {
                Class1026 var16 = null;
                if (var5 != this.method25435(Difficulty.NORMAL)) {
                   if (var5 >= this.method25435(Difficulty.HARD)) {
                      if (var13 != 0) {
-                        var16 = EntityType.field41099.create(this.field32978);
+                        var16 = EntityType.VINDICATOR.create(this.field32978);
                      } else {
                         var16 = EntityType.field41027.create(this.field32978);
                      }
                   }
                } else {
-                  var16 = EntityType.field41067.create(this.field32978);
+                  var16 = EntityType.PILLAGER.create(this.field32978);
                }
 
                var13++;
@@ -595,7 +595,7 @@ public class Class7699 {
                )
             && this.field32978.getChunkProvider().method7352(new ChunkPos(var6))
             && (
-               Class8170.method28429(Class2068.field13472, this.field32978, var6, EntityType.field41072)
+               Class8170.method28429(Class2068.field13472, this.field32978, var6, EntityType.RAVAGER)
                   || this.field32978.getBlockState(var6.down()).isIn(Blocks.SNOW) && this.field32978.getBlockState(var6).isAir()
             )) {
             return var6;

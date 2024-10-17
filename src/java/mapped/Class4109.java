@@ -6,7 +6,7 @@ import net.optifine.Config;
 
 public class Class4109 extends Class4057 {
    public Class4109() {
-      super(EntityType.field41102, "wither", 0.5F);
+      super(EntityType.WITHER, "wither", 0.5F);
    }
 
    @Override

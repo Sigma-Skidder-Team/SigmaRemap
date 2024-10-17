@@ -10,11 +10,11 @@ import java.util.Random;
 
 public class Class2608 extends Class2595 {
    private static String[] field16859;
-   private final Class1046 field16860;
+   private final CreatureEntity field16860;
    private final int field16861;
    private BlockPos field16862;
 
-   public Class2608(Class1046 var1, int var2) {
+   public Class2608(CreatureEntity var1, int var2) {
       this.field16860 = var1;
       this.field16861 = var2;
       this.method10809(EnumSet.<Class2240>of(Class2240.field14657));

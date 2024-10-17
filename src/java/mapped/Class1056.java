@@ -7,7 +7,7 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
-public abstract class Class1056 extends Class1046 {
+public abstract class Class1056 extends CreatureEntity {
    public Class1056(EntityType<? extends Class1056> var1, World var2) {
       super(var1, var2);
    }

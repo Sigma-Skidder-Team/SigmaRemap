@@ -6,7 +6,7 @@ import net.optifine.Config;
 
 public class Class4050 extends Class4051 {
    public Class4050() {
-      super(EntityType.field41096, "turtle", 0.7F);
+      super(EntityType.TURTLE, "turtle", 0.7F);
    }
 
    @Override

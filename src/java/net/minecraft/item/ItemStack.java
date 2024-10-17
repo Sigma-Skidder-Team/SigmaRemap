@@ -30,6 +30,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.item.ItemFrameEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -566,7 +567,7 @@ public final class ItemStack {
                   double var19;
                   if (var15.getOperation() == AttributeModifier.Operation.field13353 || var15.getOperation() == AttributeModifier.Operation.MULTIPLY_TOTAL) {
                      var19 = var16 * 100.0;
-                  } else if (((Attribute)var14.getKey()).equals(Attributes.field42107)) {
+                  } else if (((Attribute)var14.getKey()).equals(Attributes.KNOCKBACK_RESISTANCE)) {
                      var19 = var16 * 10.0;
                   } else {
                      var19 = var16;
@@ -579,7 +580,7 @@ public final class ItemStack {
                               new TranslationTextComponent(
                                  "attribute.modifier.equals." + var15.getOperation().getId(),
                                  field39974.format(var19),
-                                 new TranslationTextComponent(((Attribute)var14.getKey()).method15032())
+                                 new TranslationTextComponent(((Attribute)var14.getKey()).getAttributeName())
                               )
                            )
                            .mergeStyle(TextFormatting.DARK_GREEN)
@@ -589,7 +590,7 @@ public final class ItemStack {
                         new TranslationTextComponent(
                               "attribute.modifier.plus." + var15.getOperation().getId(),
                               field39974.format(var19),
-                              new TranslationTextComponent(((Attribute)var14.getKey()).method15032())
+                              new TranslationTextComponent(((Attribute)var14.getKey()).getAttributeName())
                            )
                            .mergeStyle(TextFormatting.BLUE)
                      );
@@ -599,7 +600,7 @@ public final class ItemStack {
                         new TranslationTextComponent(
                               "attribute.modifier.take." + var15.getOperation().getId(),
                               field39974.format(var19),
-                              new TranslationTextComponent(((Attribute)var14.getKey()).method15032())
+                              new TranslationTextComponent(((Attribute)var14.getKey()).getAttributeName())
                            )
                            .mergeStyle(TextFormatting.RED)
                      );

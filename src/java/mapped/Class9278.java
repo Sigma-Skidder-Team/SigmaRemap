@@ -207,7 +207,7 @@ public class Class9278 {
 
       boolean var5 = this.field42670;
       if (this.field42668 instanceof LivingEntity) {
-         Collection var6 = ((LivingEntity)this.field42668).getAttributeManager().method33379();
+         Collection var6 = ((LivingEntity)this.field42668).getAttributeManager().getWatchedInstances();
          if (!var6.isEmpty()) {
             var1.accept(new SEntityPropertiesPacket(this.field42668.getEntityId(), var6));
          }
@@ -268,7 +268,7 @@ public class Class9278 {
       }
 
       if (this.field42668 instanceof LivingEntity) {
-         Set var4 = ((LivingEntity)this.field42668).getAttributeManager().method33378();
+         Set var4 = ((LivingEntity)this.field42668).getAttributeManager().getInstanceSet();
          if (!var4.isEmpty()) {
             this.method34976(new SEntityPropertiesPacket(this.field42668.getEntityId(), var4));
          }

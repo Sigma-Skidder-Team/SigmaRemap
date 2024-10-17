@@ -5,7 +5,7 @@ import net.minecraft.entity.EntityType;
 
 public class Class4061 extends Class4060 {
    public Class4061() {
-      super(EntityType.field41040, "illusioner", 0.5F, new String[]{"illusion_illager"});
+      super(EntityType.ILLUSIONER, "illusioner", 0.5F, new String[]{"illusion_illager"});
    }
 
    @Override

@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -19,17 +20,17 @@ public class Class6761 extends Class6762 {
    @Override
    public void method20613(Class1667 var1, MobEntity var2) {
       super.method20613(var1, var2);
-      var2.method4224(Class2163.field14191, 0.0F);
-      this.field29469 = var2.method4223(Class2163.field14186);
-      var2.method4224(Class2163.field14186, 6.0F);
-      this.field29470 = var2.method4223(Class2163.field14192);
-      var2.method4224(Class2163.field14192, 4.0F);
+      var2.method4224(PathNodeType.WATER, 0.0F);
+      this.field29469 = var2.method4223(PathNodeType.WALKABLE);
+      var2.method4224(PathNodeType.WALKABLE, 6.0F);
+      this.field29470 = var2.method4223(PathNodeType.WATER_BORDER);
+      var2.method4224(PathNodeType.WATER_BORDER, 4.0F);
    }
 
    @Override
    public void method20614() {
-      this.field29476.method4224(Class2163.field14186, this.field29469);
-      this.field29476.method4224(Class2163.field14192, this.field29470);
+      this.field29476.method4224(PathNodeType.WALKABLE, this.field29469);
+      this.field29476.method4224(PathNodeType.WATER_BORDER, this.field29470);
       super.method20614();
    }
 
@@ -83,10 +84,10 @@ public class Class6761 extends Class6762 {
          var1[var5++] = var15;
       }
 
-      boolean var16 = var13 == null || var13.field30859 == Class2163.field14185 || var13.field30858 != 0.0F;
-      boolean var17 = var10 == null || var10.field30859 == Class2163.field14185 || var10.field30858 != 0.0F;
-      boolean var18 = var12 == null || var12.field30859 == Class2163.field14185 || var12.field30858 != 0.0F;
-      boolean var19 = var11 == null || var11.field30859 == Class2163.field14185 || var11.field30858 != 0.0F;
+      boolean var16 = var13 == null || var13.field30859 == PathNodeType.OPEN || var13.field30858 != 0.0F;
+      boolean var17 = var10 == null || var10.field30859 == PathNodeType.OPEN || var10.field30858 != 0.0F;
+      boolean var18 = var12 == null || var12.field30859 == PathNodeType.OPEN || var12.field30858 != 0.0F;
+      boolean var19 = var11 == null || var11.field30859 == PathNodeType.OPEN || var11.field30858 != 0.0F;
       if (var16 && var19) {
          Class7176 var20 = this.method20619(var2.field30847 - 1, var2.field30848, var2.field30849 - 1, 1, var8);
          if (var20 != null && !var20.field30856) {
@@ -134,7 +135,7 @@ public class Class6761 extends Class6762 {
       BlockPos var10 = new BlockPos(var1, var2, var3);
       double var11 = this.method20618(var10);
       if (!(var11 - var5 > 1.125)) {
-         Class2163 var13 = this.method20629(this.field29475, var1, var2, var3, this.field29476, this.field29478, this.field29479, this.field29480, false, false);
+         PathNodeType var13 = this.method20629(this.field29475, var1, var2, var3, this.field29476, this.field29478, this.field29479, this.field29480, false, false);
          float var14 = this.field29476.method4223(var13);
          double var15 = (double)this.field29476.getWidth() / 2.0;
          if (var14 >= 0.0F) {
@@ -143,12 +144,12 @@ public class Class6761 extends Class6762 {
             var9.field30858 = Math.max(var9.field30858, var14);
          }
 
-         if (var13 != Class2163.field14191 && var13 != Class2163.field14186) {
-            if (var9 == null && var4 > 0 && var13 != Class2163.field14189 && var13 != Class2163.field14194 && var13 != Class2163.field14188) {
+         if (var13 != PathNodeType.WATER && var13 != PathNodeType.WALKABLE) {
+            if (var9 == null && var4 > 0 && var13 != PathNodeType.FENCE && var13 != PathNodeType.UNPASSABLE_RAIL && var13 != PathNodeType.TRAPDOOR) {
                var9 = this.method20619(var1, var2 + 1, var3, var4 - 1, var5);
             }
 
-            if (var13 == Class2163.field14185) {
+            if (var13 == PathNodeType.OPEN) {
                AxisAlignedBB var17 = new AxisAlignedBB(
                   (double)var1 - var15 + 0.5,
                   (double)var2 + 0.001,
@@ -161,26 +162,26 @@ public class Class6761 extends Class6762 {
                   return null;
                }
 
-               Class2163 var18 = this.method20629(
+               PathNodeType var18 = this.method20629(
                   this.field29475, var1, var2 - 1, var3, this.field29476, this.field29478, this.field29479, this.field29480, false, false
                );
-               if (var18 == Class2163.field14184) {
+               if (var18 == PathNodeType.BLOCKED) {
                   var9 = this.method20641(var1, var2, var3);
-                  var9.field30859 = Class2163.field14186;
+                  var9.field30859 = PathNodeType.WALKABLE;
                   var9.field30858 = Math.max(var9.field30858, var14);
                   return var9;
                }
 
-               if (var18 == Class2163.field14191) {
+               if (var18 == PathNodeType.WATER) {
                   var9 = this.method20641(var1, var2, var3);
-                  var9.field30859 = Class2163.field14191;
+                  var9.field30859 = PathNodeType.WATER;
                   var9.field30858 = Math.max(var9.field30858, var14);
                   return var9;
                }
 
                int var19 = 0;
 
-               while (var2 > 0 && var13 == Class2163.field14185) {
+               while (var2 > 0 && var13 == PathNodeType.OPEN) {
                   var2--;
                   if (var19++ >= this.field29476.getMaxFallHeight()) {
                      return null;
@@ -188,7 +189,7 @@ public class Class6761 extends Class6762 {
 
                   var13 = this.method20629(this.field29475, var1, var2, var3, this.field29476, this.field29478, this.field29479, this.field29480, false, false);
                   var14 = this.field29476.method4223(var13);
-                  if (var13 != Class2163.field14185 && var14 >= 0.0F) {
+                  if (var13 != PathNodeType.OPEN && var14 >= 0.0F) {
                      var9 = this.method20641(var1, var2, var3);
                      var9.field30859 = var13;
                      var9.field30858 = Math.max(var9.field30858, var14);
@@ -215,65 +216,65 @@ public class Class6761 extends Class6762 {
    }
 
    @Override
-   public Class2163 method20620(IBlockReader var1, boolean var2, boolean var3, BlockPos var4, Class2163 var5) {
-      if (var5 == Class2163.field14193
+   public PathNodeType method20620(IBlockReader var1, boolean var2, boolean var3, BlockPos var4, PathNodeType var5) {
+      if (var5 == PathNodeType.RAIL
          && !(var1.getBlockState(var4).getBlock() instanceof Class3429)
          && !(var1.getBlockState(var4.down()).getBlock() instanceof Class3429)) {
-         var5 = Class2163.field14194;
+         var5 = PathNodeType.UNPASSABLE_RAIL;
       }
 
-      if (var5 == Class2163.field14201 || var5 == Class2163.field14202 || var5 == Class2163.field14203) {
-         var5 = Class2163.field14184;
+      if (var5 == PathNodeType.DOOR_OPEN || var5 == PathNodeType.DOOR_WOOD_CLOSED || var5 == PathNodeType.DOOR_IRON_CLOSED) {
+         var5 = PathNodeType.BLOCKED;
       }
 
-      if (var5 == Class2163.field14205) {
-         var5 = Class2163.field14184;
+      if (var5 == PathNodeType.LEAVES) {
+         var5 = PathNodeType.BLOCKED;
       }
 
       return var5;
    }
 
    @Override
-   public Class2163 method20621(IBlockReader var1, int var2, int var3, int var4) {
+   public PathNodeType method20621(IBlockReader var1, int var2, int var3, int var4) {
       BlockPos.Mutable var7 = new BlockPos.Mutable();
-      Class2163 var8 = method20635(var1, var7.setPos(var2, var3, var4));
-      if (var8 != Class2163.field14191) {
-         if (var8 == Class2163.field14185 && var3 >= 1) {
+      PathNodeType var8 = method20635(var1, var7.setPos(var2, var3, var4));
+      if (var8 != PathNodeType.WATER) {
+         if (var8 == PathNodeType.OPEN && var3 >= 1) {
             BlockState var14 = var1.getBlockState(new BlockPos(var2, var3 - 1, var4));
-            Class2163 var15 = method20635(var1, var7.setPos(var2, var3 - 1, var4));
-            if (var15 != Class2163.field14186 && var15 != Class2163.field14185 && var15 != Class2163.field14190) {
-               var8 = Class2163.field14186;
+            PathNodeType var15 = method20635(var1, var7.setPos(var2, var3 - 1, var4));
+            if (var15 != PathNodeType.WALKABLE && var15 != PathNodeType.OPEN && var15 != PathNodeType.LAVA) {
+               var8 = PathNodeType.WALKABLE;
             } else {
-               var8 = Class2163.field14185;
+               var8 = PathNodeType.OPEN;
             }
 
-            if (var15 == Class2163.field14196 || var14.isIn(Blocks.field36890) || var14.isIn(BlockTags.field32809)) {
-               var8 = Class2163.field14196;
+            if (var15 == PathNodeType.DAMAGE_FIRE || var14.isIn(Blocks.field36890) || var14.isIn(BlockTags.field32809)) {
+               var8 = PathNodeType.DAMAGE_FIRE;
             }
 
-            if (var15 == Class2163.field14198) {
-               var8 = Class2163.field14198;
+            if (var15 == PathNodeType.DAMAGE_CACTUS) {
+               var8 = PathNodeType.DAMAGE_CACTUS;
             }
 
-            if (var15 == Class2163.field14200) {
-               var8 = Class2163.field14200;
+            if (var15 == PathNodeType.DAMAGE_OTHER) {
+               var8 = PathNodeType.DAMAGE_OTHER;
             }
          }
 
-         if (var8 == Class2163.field14186) {
+         if (var8 == PathNodeType.WALKABLE) {
             var8 = method20634(var1, var7.setPos(var2, var3, var4), var8);
          }
 
          return var8;
       } else {
          for (Direction var12 : Direction.values()) {
-            Class2163 var13 = method20635(var1, var7.setPos(var2, var3, var4).method8379(var12));
-            if (var13 == Class2163.field14184) {
-               return Class2163.field14192;
+            PathNodeType var13 = method20635(var1, var7.setPos(var2, var3, var4).method8379(var12));
+            if (var13 == PathNodeType.BLOCKED) {
+               return PathNodeType.WATER_BORDER;
             }
          }
 
-         return Class2163.field14191;
+         return PathNodeType.WATER;
       }
    }
 }

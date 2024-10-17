@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.monster.ZombieEntity;
+
 public class ZombieAttackGoal extends Class2647 {
    private static String[] field16989;
    private final ZombieEntity field17006;

@@ -10,7 +10,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 
-public abstract class Class1045 extends Class1046 {
+public abstract class Class1045 extends CreatureEntity {
    private static final DataParameter<Boolean> field5800 = EntityDataManager.<Boolean>createKey(Class1045.class, DataSerializers.field33398);
    public int field5801;
    public int field5802;

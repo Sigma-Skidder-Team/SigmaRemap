@@ -37,14 +37,14 @@ public class Class886 extends AbstractArrowEntity {
    }
 
    public Class886(World var1, LivingEntity var2, ItemStack var3) {
-      super(EntityType.field41093, var2, var1);
+      super(EntityType.TRIDENT, var2, var1);
       this.field5113 = var3.copy();
       this.dataManager.method35446(field5111, (byte) EnchantmentHelper.method26336(var3));
       this.dataManager.method35446(field5112, var3.method32159());
    }
 
    public Class886(World var1, double var2, double var4, double var6) {
-      super(EntityType.field41093, var2, var4, var6, var1);
+      super(EntityType.TRIDENT, var2, var4, var6, var1);
    }
 
    @Override
@@ -144,7 +144,7 @@ public class Class886 extends AbstractArrowEntity {
       if (this.world instanceof ServerWorld && this.world.method6794() && EnchantmentHelper.method26338(this.field5113)) {
          BlockPos var10 = var4.getPosition();
          if (this.world.method7022(var10)) {
-            Class906 var11 = EntityType.field41046.create(this.world);
+            Class906 var11 = EntityType.LIGHTNING_BOLT.create(this.world);
             var11.moveForced(Vector3d.method11330(var10));
             var11.method3550(!(var12 instanceof ServerPlayerEntity) ? null : (ServerPlayerEntity)var12);
             this.world.addEntity(var11);

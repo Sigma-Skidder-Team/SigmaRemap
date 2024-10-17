@@ -5,6 +5,8 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -12,6 +14,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
@@ -39,7 +42,7 @@ public class Class1088 extends Class1018 {
 
    public Class1088(EntityType<? extends Class1088> var1, World var2) {
       super(var1, var2);
-      this.method4224(Class2163.field14191, 0.0F);
+      this.method4224(PathNodeType.WATER, 0.0F);
       this.field5596 = new Class6838(this);
       this.stepHeight = 1.0F;
    }
@@ -155,8 +158,8 @@ public class Class1088 extends Class1018 {
       this.field5600.addGoal(9, new Class2743(this, 1.0, 100));
    }
 
-   public static Class7037 method5054() {
-      return MobEntity.method4220().method21849(Attributes.field42105, 30.0).method21849(Attributes.MOVEMENT_SPEED, 0.25);
+   public static MutableAttribute method5054() {
+      return MobEntity.method4220().method21849(Attributes.MAX_HEALTH, 30.0).method21849(Attributes.MOVEMENT_SPEED, 0.25);
    }
 
    @Override
@@ -236,7 +239,7 @@ public class Class1088 extends Class1018 {
    @Nullable
    @Override
    public Class1045 method4389(ServerWorld var1, Class1045 var2) {
-      return EntityType.field41096.create(var1);
+      return EntityType.TURTLE.create(var1);
    }
 
    @Override
@@ -245,7 +248,7 @@ public class Class1088 extends Class1018 {
    }
 
    @Override
-   public float method4339(BlockPos var1, IWorldReader var2) {
+   public float getBlockPathWeight(BlockPos var1, IWorldReader var2) {
       if (!this.method5049() && var2.getFluidState(var1).method23486(FluidTags.field40469)) {
          return 10.0F;
       } else {

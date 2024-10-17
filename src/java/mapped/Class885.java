@@ -17,11 +17,11 @@ public class Class885 extends AbstractArrowEntity {
    }
 
    public Class885(World var1, LivingEntity var2) {
-      super(EntityType.field41084, var2, var1);
+      super(EntityType.SPECTRAL_ARROW, var2, var1);
    }
 
    public Class885(World var1, double var2, double var4, double var6) {
-      super(EntityType.field41084, var2, var4, var6, var1);
+      super(EntityType.SPECTRAL_ARROW, var2, var4, var6, var1);
    }
 
    @Override

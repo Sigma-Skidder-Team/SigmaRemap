@@ -22,11 +22,11 @@ public class Class895 extends Class890 {
    }
 
    public Class895(World var1, LivingEntity var2) {
-      super(EntityType.field41090, var2, var1);
+      super(EntityType.ENDER_PEARL, var2, var1);
    }
 
    public Class895(World var1, double var2, double var4, double var6) {
-      super(EntityType.field41090, var2, var4, var6, var1);
+      super(EntityType.ENDER_PEARL, var2, var4, var6, var1);
    }
 
    @Override

@@ -8,7 +8,7 @@ import java.util.Iterator;
 
 public class Class4068 extends Class4057 {
    public Class4068() {
-      super(EntityType.field41034, "ghast", 0.5F);
+      super(EntityType.GHAST, "ghast", 0.5F);
    }
 
    @Override

@@ -9,6 +9,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
@@ -65,10 +66,10 @@ public class ArmorItem extends Item implements Class3255 {
       Class3357.method11931(this, DISPENSER_BEHAVIOR);
       Builder var6 = ImmutableMultimap.builder();
       UUID var7 = ARMOR_MODIFIERS[var2.getIndex()];
-      var6.put(Attributes.field42113, new AttributeModifier(var7, "Armor modifier", (double)this.damageReduceAmount, AttributeModifier.Operation.ADDITION));
-      var6.put(Attributes.field42114, new AttributeModifier(var7, "Armor toughness", (double)this.toughness, AttributeModifier.Operation.ADDITION));
+      var6.put(Attributes.ARMOR, new AttributeModifier(var7, "Armor modifier", (double)this.damageReduceAmount, AttributeModifier.Operation.ADDITION));
+      var6.put(Attributes.ARMOR_TOUGHNESS, new AttributeModifier(var7, "Armor toughness", (double)this.toughness, AttributeModifier.Operation.ADDITION));
       if (var1 == Class2114.field13779) {
-         var6.put(Attributes.field42107, new AttributeModifier(var7, "Armor knockback resistance", (double)this.knockbackResistance, AttributeModifier.Operation.ADDITION));
+         var6.put(Attributes.KNOCKBACK_RESISTANCE, new AttributeModifier(var7, "Armor knockback resistance", (double)this.knockbackResistance, AttributeModifier.Operation.ADDITION));
       }
 
       this.field_234656_m_ = var6.build();

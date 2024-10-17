@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -125,7 +127,7 @@ public class Class6829 {
                   MathHelper.floor(this.field29707.getPosY()),
                   MathHelper.floor(this.field29707.getPosZ() + (double)var2)
                )
-               != Class2163.field14186) {
+               != PathNodeType.WALKABLE) {
             return false;
          }
       }

@@ -8,11 +8,11 @@ public class WaterAvoidingRandomWalkingGoal extends Class2736 {
    private static String[] field17257;
    public final float field17266;
 
-   public WaterAvoidingRandomWalkingGoal(Class1046 var1, double var2) {
+   public WaterAvoidingRandomWalkingGoal(CreatureEntity var1, double var2) {
       this(var1, var2, 0.001F);
    }
 
-   public WaterAvoidingRandomWalkingGoal(Class1046 var1, double var2, float var4) {
+   public WaterAvoidingRandomWalkingGoal(CreatureEntity var1, double var2, float var4) {
       super(var1, var2);
       this.field17266 = var4;
    }

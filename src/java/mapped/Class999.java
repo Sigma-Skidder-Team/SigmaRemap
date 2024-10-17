@@ -51,7 +51,7 @@ public class Class999 extends Entity {
    }
 
    public Class999(World var1, double var2, double var4, double var6) {
-      this(EntityType.field41005, var1);
+      this(EntityType.AREA_EFFECT_CLOUD, var1);
       this.setPosition(var2, var4, var6);
    }
 

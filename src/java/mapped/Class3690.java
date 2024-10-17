@@ -8,7 +8,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.function.Function;
 
-public class Class3690<T> extends Class3676<Class1046> {
+public class Class3690<T> extends Class3676<CreatureEntity> {
    private static String[] field19713;
    private final Class8830<T> field19714;
    private final float field19715;
@@ -31,15 +31,15 @@ public class Class3690<T> extends Class3676<Class1046> {
       return new Class3690<>(var0, var1, var2, var3, Entity::getPositionVec);
    }
 
-   public boolean method12508(ServerWorld var1, Class1046 var2) {
+   public boolean method12508(ServerWorld var1, CreatureEntity var2) {
       return !this.method12541(var2) ? var2.getPositionVec().method11340(this.method12540(var2), (double)this.field19716) : false;
    }
 
-   private Vector3d method12540(Class1046 var1) {
+   private Vector3d method12540(CreatureEntity var1) {
       return this.field19717.apply(var1.getBrain().<T>method21410(this.field19714).get());
    }
 
-   private boolean method12541(Class1046 var1) {
+   private boolean method12541(CreatureEntity var1) {
       if (var1.getBrain().method21404(Class8830.field39824)) {
          Class8999 var4 = var1.getBrain().<Class8999>method21410(Class8830.field39824).get();
          if (var4.method33252() == this.field19715) {
@@ -54,11 +54,11 @@ public class Class3690<T> extends Class3676<Class1046> {
       }
    }
 
-   public void method12502(ServerWorld var1, Class1046 var2, long var3) {
+   public void method12502(ServerWorld var1, CreatureEntity var2, long var3) {
       method12542(var2, this.method12540(var2), this.field19715);
    }
 
-   private static void method12542(Class1046 var0, Vector3d var1, float var2) {
+   private static void method12542(CreatureEntity var0, Vector3d var1, float var2) {
       for (int var5 = 0; var5 < 10; var5++) {
          Vector3d var6 = Class8037.method27591(var0, 16, 7, var1);
          if (var6 != null) {

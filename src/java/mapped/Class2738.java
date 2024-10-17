@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 public class Class2738 extends WaterAvoidingRandomWalkingGoal {
    private static String[] field17267;
 
-   public Class2738(Class1046 var1, double var2) {
+   public Class2738(CreatureEntity var1, double var2) {
       super(var1, var2);
    }
 

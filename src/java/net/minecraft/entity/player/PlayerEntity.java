@@ -13,6 +13,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.entity.boss.dragon.EnderDragonPartEntity;
 import net.minecraft.entity.item.BoatEntity;
 import net.minecraft.entity.passive.TameableEntity;
@@ -131,7 +133,7 @@ public abstract class PlayerEntity extends LivingEntity {
       }
    }
 
-   public static Class7037 method2849() {
+   public static MutableAttribute method2849() {
       return LivingEntity.method2997()
          .method21849(Attributes.ATTACK_DAMAGE, 1.0)
          .method21849(Attributes.MOVEMENT_SPEED, 0.1F)
@@ -503,7 +505,7 @@ public abstract class PlayerEntity extends LivingEntity {
       if (var1 != null && (!var1.contains("Silent") || !var1.getBoolean("Silent")) && this.world.rand.nextInt(200) == 0) {
          String var4 = var1.getString("id");
          EntityType.method33199(var4)
-            .filter(var0 -> var0 == EntityType.field41062)
+            .filter(var0 -> var0 == EntityType.PARROT)
             .ifPresent(
                var1x -> {
                   if (!Class1015.method4409(this.world, this)) {

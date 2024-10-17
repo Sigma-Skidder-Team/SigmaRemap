@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
@@ -10,6 +12,7 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.particles.IParticleData;
+import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tileentity.TileEntity;
@@ -50,11 +53,11 @@ public class Class1017 extends Class1018 implements IAngerable, Class1016 {
       super(var1, var2);
       this.field5596 = new Class6832(this, 20, true);
       this.field5595 = new Class8094(this, this);
-      this.method4224(Class2163.field14195, -1.0F);
-      this.method4224(Class2163.field14191, -1.0F);
-      this.method4224(Class2163.field14192, 16.0F);
-      this.method4224(Class2163.field14207, -1.0F);
-      this.method4224(Class2163.field14189, -1.0F);
+      this.method4224(PathNodeType.DANGER_FIRE, -1.0F);
+      this.method4224(PathNodeType.WATER, -1.0F);
+      this.method4224(PathNodeType.WATER_BORDER, 16.0F);
+      this.method4224(PathNodeType.COCOA, -1.0F);
+      this.method4224(PathNodeType.FENCE, -1.0F);
    }
 
    @Override
@@ -65,7 +68,7 @@ public class Class1017 extends Class1018 implements IAngerable, Class1016 {
    }
 
    @Override
-   public float method4339(BlockPos var1, IWorldReader var2) {
+   public float getBlockPathWeight(BlockPos var1, IWorldReader var2) {
       return !var2.getBlockState(var1).isAir() ? 0.0F : 10.0F;
    }
 
@@ -439,13 +442,13 @@ public class Class1017 extends Class1018 implements IAngerable, Class1016 {
       return (this.dataManager.<Byte>method35445(field5684) & var1) != 0;
    }
 
-   public static Class7037 method4447() {
+   public static MutableAttribute method4447() {
       return MobEntity.method4220()
-         .method21849(Attributes.field42105, 10.0)
-         .method21849(Attributes.field42109, 0.6F)
+         .method21849(Attributes.MAX_HEALTH, 10.0)
+         .method21849(Attributes.FLYING_SPEED, 0.6F)
          .method21849(Attributes.MOVEMENT_SPEED, 0.3F)
          .method21849(Attributes.ATTACK_DAMAGE, 2.0)
-         .method21849(Attributes.field42106, 48.0);
+         .method21849(Attributes.FOLLOW_RANGE, 48.0);
    }
 
    @Override
@@ -491,7 +494,7 @@ public class Class1017 extends Class1018 implements IAngerable, Class1016 {
    }
 
    public Class1017 method4389(ServerWorld var1, Class1045 var2) {
-      return EntityType.field41009.create(var1);
+      return EntityType.BEE.create(var1);
    }
 
    @Override

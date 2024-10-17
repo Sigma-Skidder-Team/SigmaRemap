@@ -1,6 +1,9 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
+import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.util.DamageSource;
@@ -23,8 +26,8 @@ public class Class1109 extends Class1108 {
       super(var1, var2);
    }
 
-   public static Class7037 method5334() {
-      return Class1009.method4343().method21849(Attributes.MOVEMENT_SPEED, 0.2F);
+   public static MutableAttribute method5334() {
+      return MonsterEntity.method4343().method21849(Attributes.MOVEMENT_SPEED, 0.2F);
    }
 
    public static boolean method5335(EntityType<Class1109> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
@@ -39,7 +42,7 @@ public class Class1109 extends Class1108 {
    @Override
    public void method5318(int var1, boolean var2) {
       super.method5318(var1, var2);
-      this.getAttribute(Attributes.field42113).method38661((double)(var1 * 3));
+      this.getAttribute(Attributes.ARMOR).method38661((double)(var1 * 3));
    }
 
    @Override

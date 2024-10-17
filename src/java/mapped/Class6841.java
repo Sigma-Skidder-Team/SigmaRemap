@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.ai.attributes.Attributes;
+
 public class Class6841 extends Class6829 {
    private static String[] field29706;
    private float field29730;

@@ -1,6 +1,9 @@
 package mapped;
 
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
+import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.passive.WolfEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
@@ -25,7 +28,7 @@ import javax.annotation.Nullable;
 import java.time.LocalDate;
 import java.time.temporal.ChronoField;
 
-public abstract class Class1082 extends Class1009 implements Class1022 {
+public abstract class Class1082 extends MonsterEntity implements Class1022 {
    private final Class2758<Class1082> field5946 = new Class2758<Class1082>(this, 1.0, 20, 15.0F);
    private final Class2647 field5947 = new Class2652(this, this, 1.2, false);
 
@@ -48,8 +51,8 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
       this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1088>(this, Class1088.class, 10, true, false, Class1088.field5963));
    }
 
-   public static Class7037 method5029() {
-      return Class1009.method4343().method21849(Attributes.MOVEMENT_SPEED, 0.25);
+   public static MutableAttribute method5029() {
+      return MonsterEntity.method4343().method21849(Attributes.MOVEMENT_SPEED, 0.25);
    }
 
    @Override
@@ -92,8 +95,8 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
    @Override
    public void updateRidden() {
       super.updateRidden();
-      if (this.getRidingEntity() instanceof Class1046) {
-         Class1046 var3 = (Class1046)this.getRidingEntity();
+      if (this.getRidingEntity() instanceof CreatureEntity) {
+         CreatureEntity var3 = (CreatureEntity)this.getRidingEntity();
          this.renderYawOffset = var3.renderYawOffset;
       }
    }

@@ -13,11 +13,11 @@ import java.util.List;
 public class Class2602 extends Class2595 {
    private static String[] field16843;
    private int field16844;
-   private final Class1046 field16845;
+   private final CreatureEntity field16845;
    private PlayerEntity field16846;
    private Class1987 field16847;
 
-   public Class2602(Class1046 var1) {
+   public Class2602(CreatureEntity var1) {
       this.field16845 = var1;
    }
 

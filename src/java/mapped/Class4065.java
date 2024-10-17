@@ -5,7 +5,7 @@ import net.minecraft.entity.EntityType;
 
 public class Class4065 extends Class4057 {
    public Class4065() {
-      super(EntityType.field41008, "bat", 0.25F);
+      super(EntityType.BAT, "bat", 0.25F);
    }
 
    @Override

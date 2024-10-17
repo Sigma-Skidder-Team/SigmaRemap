@@ -293,7 +293,7 @@ public class Class4191 extends Class4188 {
                   var1.setBlockState(var22, Blocks.field36532.getDefaultState(), 2);
                   TileEntity var23 = var1.getTileEntity(var22);
                   if (var23 instanceof Class960) {
-                     ((Class960)var23).method3911().method24790(EntityType.field41013);
+                     ((Class960)var23).method3911().method24790(EntityType.CAVE_SPIDER);
                   }
                }
             }

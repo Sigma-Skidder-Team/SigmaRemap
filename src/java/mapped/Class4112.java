@@ -6,7 +6,7 @@ import net.minecraft.entity.passive.fish.SalmonEntity;
 
 public class Class4112 extends Class4057 {
    public Class4112() {
-      super(EntityType.field41073, "salmon", 0.3F);
+      super(EntityType.SALMON, "salmon", 0.3F);
    }
 
    @Override

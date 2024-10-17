@@ -6,7 +6,7 @@ import net.optifine.Config;
 
 public class Class4103 extends Class4057 {
    public Class4103() {
-      super(EntityType.field41045, "lead_knot", 0.0F);
+      super(EntityType.LEASH_KNOT, "lead_knot", 0.0F);
    }
 
    @Override

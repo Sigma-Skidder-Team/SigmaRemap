@@ -2,11 +2,13 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.monster.ZombieEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
@@ -34,7 +36,7 @@ public class Class1037 extends ZombieEntity implements Class1022 {
       super(var1, var2);
       this.stepHeight = 1.0F;
       this.field5596 = new Class6835(this);
-      this.method4224(Class2163.field14191, 0.0F);
+      this.method4224(PathNodeType.WATER, 0.0F);
       this.field5756 = new Class6997(this, var2);
       this.field5757 = new Class6991(this, var2);
    }

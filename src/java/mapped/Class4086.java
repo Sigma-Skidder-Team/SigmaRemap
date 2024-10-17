@@ -6,7 +6,7 @@ import net.optifine.Config;
 
 public class Class4086 extends Class4057 {
    public Class4086() {
-      super(EntityType.field41076, "shulker_bullet", 0.0F);
+      super(EntityType.SHULKER_BULLET, "shulker_bullet", 0.0F);
    }
 
    @Override

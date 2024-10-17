@@ -33,7 +33,7 @@ public class ArmorStandEntity extends LivingEntity {
    private static final Class7087 field5569 = new Class7087(-1.0F, 0.0F, -1.0F);
    private static final Class7087 field5570 = new Class7087(1.0F, 0.0F, 1.0F);
    private static final EntitySize field5571 = new EntitySize(0.0F, 0.0F, true);
-   private static final EntitySize field5572 = EntityType.field41006.getSize().method32099(0.5F);
+   private static final EntitySize field5572 = EntityType.ARMOR_STAND.getSize().method32099(0.5F);
    public static final DataParameter<Byte> field5573 = EntityDataManager.<Byte>createKey(ArmorStandEntity.class, DataSerializers.field33390);
    public static final DataParameter<Class7087> field5574 = EntityDataManager.<Class7087>createKey(ArmorStandEntity.class, DataSerializers.field33400);
    public static final DataParameter<Class7087> field5575 = EntityDataManager.<Class7087>createKey(ArmorStandEntity.class, DataSerializers.field33400);
@@ -60,7 +60,7 @@ public class ArmorStandEntity extends LivingEntity {
    }
 
    public ArmorStandEntity(World var1, double var2, double var4, double var6) {
-      this(EntityType.field41006, var1);
+      this(EntityType.ARMOR_STAND, var1);
       this.setPosition(var2, var4, var6);
    }
 

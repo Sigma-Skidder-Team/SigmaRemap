@@ -3,6 +3,9 @@ package mapped;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
+import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.entity.projectile.ProjectileHelper;
@@ -51,8 +54,8 @@ public class Class1033 extends Class1031 implements Class1022 {
       this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1058>(this, Class1058.class, false).method10917(300));
    }
 
-   public static Class7037 method4610() {
-      return Class1009.method4343().method21849(Attributes.MOVEMENT_SPEED, 0.5).method21849(Attributes.field42106, 18.0).method21849(Attributes.field42105, 32.0);
+   public static MutableAttribute method4610() {
+      return MonsterEntity.method4343().method21849(Attributes.MOVEMENT_SPEED, 0.5).method21849(Attributes.FOLLOW_RANGE, 18.0).method21849(Attributes.MAX_HEALTH, 32.0);
    }
 
    @Override

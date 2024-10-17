@@ -5,6 +5,9 @@ import net.minecraft.entity.IAngerable;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
+import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemStack;
@@ -49,7 +52,7 @@ public class Class1058 extends Class1056 implements IAngerable {
       this.field5601.addGoal(2, new HurtByTargetGoal(this));
       this.field5601.addGoal(3, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, 10, true, false, this::method4367));
       this.field5601
-         .addGoal(3, new NearestAttackableTargetGoal<MobEntity>(this, MobEntity.class, 5, false, false, var0 -> var0 instanceof Class1008 && !(var0 instanceof Class1081)));
+         .addGoal(3, new NearestAttackableTargetGoal<MobEntity>(this, MobEntity.class, 5, false, false, var0 -> var0 instanceof IMob && !(var0 instanceof Class1081)));
       this.field5601.addGoal(4, new ResetAngerGoal<Class1058>(this, false));
    }
 
@@ -59,11 +62,11 @@ public class Class1058 extends Class1056 implements IAngerable {
       this.dataManager.register(field5849, (byte)0);
    }
 
-   public static Class7037 method4863() {
+   public static MutableAttribute method4863() {
       return MobEntity.method4220()
-         .method21849(Attributes.field42105, 100.0)
+         .method21849(Attributes.MAX_HEALTH, 100.0)
          .method21849(Attributes.MOVEMENT_SPEED, 0.25)
-         .method21849(Attributes.field42107, 1.0)
+         .method21849(Attributes.KNOCKBACK_RESISTANCE, 1.0)
          .method21849(Attributes.ATTACK_DAMAGE, 15.0);
    }
 
@@ -74,7 +77,7 @@ public class Class1058 extends Class1056 implements IAngerable {
 
    @Override
    public void collideWithEntity(Entity var1) {
-      if (var1 instanceof Class1008 && !(var1 instanceof Class1081) && this.getRNG().nextInt(20) == 0) {
+      if (var1 instanceof IMob && !(var1 instanceof Class1081) && this.getRNG().nextInt(20) == 0) {
          this.method4233((LivingEntity)var1);
       }
 
@@ -121,7 +124,7 @@ public class Class1058 extends Class1056 implements IAngerable {
       if (this.method4869() && var1 == EntityType.PLAYER) {
          return false;
       } else {
-         return var1 != EntityType.field41017 ? super.canAttack(var1) : false;
+         return var1 != EntityType.CREEPER ? super.canAttack(var1) : false;
       }
    }
 
@@ -302,12 +305,12 @@ public class Class1058 extends Class1056 implements IAngerable {
          for (int var7 = 1; var7 < 3; var7++) {
             BlockPos var8 = var4.up(var7);
             BlockState var9 = var1.getBlockState(var8);
-            if (!Class8170.method28428(var1, var8, var9, var9.method23449(), EntityType.field41041)) {
+            if (!Class8170.method28428(var1, var8, var9, var9.method23449(), EntityType.IRON_GOLEM)) {
                return false;
             }
          }
 
-         return Class8170.method28428(var1, var4, var1.getBlockState(var4), Fluids.EMPTY.method25049(), EntityType.field41041) && var1.checkNoEntityCollision(this);
+         return Class8170.method28428(var1, var4, var1.getBlockState(var4), Fluids.EMPTY.method25049(), EntityType.IRON_GOLEM) && var1.checkNoEntityCollision(this);
       }
    }
 

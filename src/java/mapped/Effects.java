@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.util.registry.Registry;
 
 public class Effects {
@@ -51,7 +52,7 @@ public class Effects {
    public static final Effect HEALTH_BOOST = register(
       21,
       "health_boost",
-      new Class7149(EffectType.BENEFICIAL, 16284963).addAttributesModifier(Attributes.field42105, "5D6F0BA2-1186-46AC-B896-C61C5CEE99CC", 4.0, AttributeModifier.Operation.ADDITION)
+      new Class7149(EffectType.BENEFICIAL, 16284963).addAttributesModifier(Attributes.MAX_HEALTH, "5D6F0BA2-1186-46AC-B896-C61C5CEE99CC", 4.0, AttributeModifier.Operation.ADDITION)
    );
    public static final Effect ABSORPTION = register(22, "absorption", new Class7145(EffectType.BENEFICIAL, 2445989));
    public static final Effect SATURATION = register(23, "saturation", new Class7146(EffectType.BENEFICIAL, 16262179));

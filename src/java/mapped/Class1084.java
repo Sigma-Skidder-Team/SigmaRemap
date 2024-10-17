@@ -1,11 +1,13 @@
 package mapped;
 
 import net.minecraft.entity.*;
+import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
@@ -19,7 +21,7 @@ public class Class1084 extends Class1082 {
 
    public Class1084(EntityType<? extends Class1084> var1, World var2) {
       super(var1, var2);
-      this.method4224(Class2163.field14190, 8.0F);
+      this.method4224(PathNodeType.LAVA, 8.0F);
    }
 
    @Override

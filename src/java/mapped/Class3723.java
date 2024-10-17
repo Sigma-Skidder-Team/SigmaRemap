@@ -72,10 +72,10 @@ public class Class3723 extends Class3676<Class1042> {
 
    private boolean method12616(Class1042 var1) {
       Brain<Class1042> var4 = var1.getBrain();
-      Optional<Class1045> var5 = var4.method21410(Class8830.field39829).filter(var0 -> var0.getType() == EntityType.field41098);
+      Optional<Class1045> var5 = var4.method21410(Class8830.field39829).filter(var0 -> var0.getType() == EntityType.VILLAGER);
       return !var5.isPresent()
          ? false
-         : Class6983.method21571(var4, Class8830.field39829, EntityType.field41098) && var1.method4700() && ((Class1045)var5.get()).method4700();
+         : Class6983.method21571(var4, Class8830.field39829, EntityType.VILLAGER) && var1.method4700() && ((Class1045)var5.get()).method4700();
    }
 
    private Optional<BlockPos> method12617(ServerWorld var1, Class1042 var2) {

@@ -41,6 +41,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.ai.attributes.AttributeModifierManager;
 import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
 import net.minecraft.entity.boss.dragon.EnderDragonPartEntity;
 import net.minecraft.entity.item.BoatEntity;
@@ -187,45 +188,45 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       double var8 = var1.method17260();
       EntityType var10 = var1.method17266();
       Object var11;
-      if (var10 != EntityType.field41051) {
-         if (var10 != EntityType.field41053) {
-            if (var10 != EntityType.field41056) {
-               if (var10 != EntityType.field41055) {
-                  if (var10 != EntityType.field41054) {
-                     if (var10 != EntityType.field41052) {
-                        if (var10 != EntityType.field41050) {
-                           if (var10 != EntityType.field41112) {
-                              if (var10 != EntityType.field41007) {
-                                 if (var10 != EntityType.field41084) {
-                                    if (var10 != EntityType.field41093) {
-                                       if (var10 != EntityType.field41083) {
-                                          if (var10 != EntityType.field41048) {
-                                             if (var10 != EntityType.field41043) {
-                                                if (var10 != EntityType.field41045) {
-                                                   if (var10 != EntityType.field41090) {
+      if (var10 != EntityType.CHEST_MINECART) {
+         if (var10 != EntityType.FURNACE_MINECART) {
+            if (var10 != EntityType.TNT_MINECART) {
+               if (var10 != EntityType.SPAWNER_MINECART) {
+                  if (var10 != EntityType.HOPPER_MINECART) {
+                     if (var10 != EntityType.COMMAND_BLOCK_MINECART) {
+                        if (var10 != EntityType.MINECART) {
+                           if (var10 != EntityType.FISHING_BOBBER) {
+                              if (var10 != EntityType.ARROW) {
+                                 if (var10 != EntityType.SPECTRAL_ARROW) {
+                                    if (var10 != EntityType.TRIDENT) {
+                                       if (var10 != EntityType.SNOWBALL) {
+                                          if (var10 != EntityType.LLAMA_SPIT) {
+                                             if (var10 != EntityType.ITEM_FRAME) {
+                                                if (var10 != EntityType.LEASH_KNOT) {
+                                                   if (var10 != EntityType.ENDER_PEARL) {
                                                       if (var10 != EntityType.field41030) {
                                                          if (var10 != EntityType.field41032) {
-                                                            if (var10 != EntityType.field41044) {
-                                                               if (var10 != EntityType.field41020) {
-                                                                  if (var10 != EntityType.field41081) {
-                                                                     if (var10 != EntityType.field41104) {
-                                                                        if (var10 != EntityType.field41076) {
-                                                                           if (var10 != EntityType.field41089) {
+                                                            if (var10 != EntityType.FIREBALL) {
+                                                               if (var10 != EntityType.DRAGON_FIREBALL) {
+                                                                  if (var10 != EntityType.SMALL_FIREBALL) {
+                                                                     if (var10 != EntityType.WITHER_SKULL) {
+                                                                        if (var10 != EntityType.SHULKER_BULLET) {
+                                                                           if (var10 != EntityType.EGG) {
                                                                               if (var10 != EntityType.field41028) {
-                                                                                 if (var10 != EntityType.field41092) {
-                                                                                    if (var10 != EntityType.field41091) {
-                                                                                       if (var10 != EntityType.field41011) {
-                                                                                          if (var10 != EntityType.field41069) {
-                                                                                             if (var10 != EntityType.field41006) {
+                                                                                 if (var10 != EntityType.POTION) {
+                                                                                    if (var10 != EntityType.EXPERIENCE_BOTTLE) {
+                                                                                       if (var10 != EntityType.BOAT) {
+                                                                                          if (var10 != EntityType.TNT) {
+                                                                                             if (var10 != EntityType.ARMOR_STAND) {
                                                                                                 if (var10 != EntityType.field41023) {
-                                                                                                   if (var10 != EntityType.field41042) {
+                                                                                                   if (var10 != EntityType.ITEM) {
                                                                                                       if (var10 != EntityType.field41031) {
-                                                                                                         if (var10 != EntityType.field41005) {
-                                                                                                            if (var10 != EntityType.field41046) {
+                                                                                                         if (var10 != EntityType.AREA_EFFECT_CLOUD) {
+                                                                                                            if (var10 != EntityType.LIGHTNING_BOLT) {
                                                                                                                var11 = null;
                                                                                                             } else {
                                                                                                                var11 = new Class906(
-                                                                                                                  EntityType.field41046, this.field23273
+                                                                                                                  EntityType.LIGHTNING_BOLT, this.field23273
                                                                                                                );
                                                                                                             }
                                                                                                          } else {
@@ -947,7 +948,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       this.field23272.renderViewEntity = var13;
       var13.getDataManager().method35454(var6.getDataManager().getAll());
       if (var1.method17439()) {
-         var13.getAttributeManager().method33388(var6.getAttributeManager());
+         var13.getAttributeManager().refreshOnRespawn(var6.getAttributeManager());
       }
 
       var13.preparePlayerToSpawn();
@@ -2123,7 +2124,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                var8.method38673();
 
                for (AttributeModifier var10 : var7.getModifiers()) {
-                  var8.method38667(var10);
+                  var8.applyNonPersistentModifier(var10);
                }
             } else {
                field23267.warn("Entity {} does not have attribute {}", var4, Registry.ATTRIBUTE.getKey(var7.func_240834_a_()));

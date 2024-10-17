@@ -1,6 +1,8 @@
 package mapped;
 
 import net.minecraft.entity.*;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.world.Difficulty;
@@ -15,8 +17,8 @@ public class Class1102 extends Class1101 {
       super(var1, var2);
    }
 
-   public static Class7037 method5291() {
-      return Class1101.method5288().method21849(Attributes.field42105, 12.0);
+   public static MutableAttribute method5291() {
+      return Class1101.method5288().method21849(Attributes.MAX_HEALTH, 12.0);
    }
 
    @Override

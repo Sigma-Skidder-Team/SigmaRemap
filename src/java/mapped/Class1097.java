@@ -4,6 +4,9 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
+import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
@@ -194,7 +197,7 @@ public class Class1097 extends Class1018 {
    @Nullable
    @Override
    public Class1045 method4389(ServerWorld var1, Class1045 var2) {
-      Class1097 var5 = EntityType.field41061.create(var1);
+      Class1097 var5 = EntityType.PANDA.create(var1);
       if (var2 instanceof Class1097) {
          var5.method5225(this, (Class1097)var2);
       }
@@ -211,7 +214,7 @@ public class Class1097 extends Class1018 {
       this.field5600.addGoal(3, new Class2649(this, 1.2F, true));
       this.field5600.addGoal(4, new Class2680(this, 1.0, Class120.method339(Blocks.field37009.method11581()), false));
       this.field5600.addGoal(6, new Class2771<PlayerEntity>(this, PlayerEntity.class, 8.0F, 2.0, 2.0));
-      this.field5600.addGoal(6, new Class2771<Class1009>(this, Class1009.class, 4.0F, 2.0, 2.0));
+      this.field5600.addGoal(6, new Class2771<MonsterEntity>(this, MonsterEntity.class, 4.0F, 2.0, 2.0));
       this.field5600.addGoal(7, new Class2623(this));
       this.field5600.addGoal(8, new Class2689(this));
       this.field5600.addGoal(8, new Class2769(this));
@@ -224,7 +227,7 @@ public class Class1097 extends Class1018 {
       this.field5601.addGoal(1, new Class2706(this).method10918(new Class[0]));
    }
 
-   public static Class7037 method5208() {
+   public static MutableAttribute method5208() {
       return MobEntity.method4220().method21849(Attributes.MOVEMENT_SPEED, 0.15F).method21849(Attributes.ATTACK_DAMAGE, 6.0);
    }
 
@@ -541,7 +544,7 @@ public class Class1097 extends Class1018 {
 
    public void method5227() {
       if (this.method5213()) {
-         this.getAttribute(Attributes.field42105).method38661(10.0);
+         this.getAttribute(Attributes.MAX_HEALTH).method38661(10.0);
       }
 
       if (this.method5210()) {

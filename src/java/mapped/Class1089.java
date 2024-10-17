@@ -2,10 +2,13 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
@@ -27,7 +30,7 @@ public class Class1089 extends Class1018 {
 
    public Class1089(EntityType<? extends Class1089> var1, World var2) {
       super(var1, var2);
-      this.method4224(Class2163.field14191, 0.0F);
+      this.method4224(PathNodeType.WATER, 0.0F);
    }
 
    @Override
@@ -47,8 +50,8 @@ public class Class1089 extends Class1018 {
       return !this.isChild() ? var2.field39969 * 0.92F : var2.field39969 * 0.85F;
    }
 
-   public static Class7037 method5069() {
-      return MobEntity.method4220().method21849(Attributes.field42105, 4.0).method21849(Attributes.MOVEMENT_SPEED, 0.25);
+   public static MutableAttribute method5069() {
+      return MobEntity.method4220().method21849(Attributes.MAX_HEALTH, 4.0).method21849(Attributes.MOVEMENT_SPEED, 0.25);
    }
 
    @Override
@@ -102,7 +105,7 @@ public class Class1089 extends Class1018 {
    }
 
    public Class1089 method4389(ServerWorld var1, Class1045 var2) {
-      return EntityType.field41014.create(var1);
+      return EntityType.CHICKEN.create(var1);
    }
 
    @Override

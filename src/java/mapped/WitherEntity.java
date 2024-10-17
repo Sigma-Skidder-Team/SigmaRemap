@@ -5,6 +5,9 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
+import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
@@ -29,7 +32,7 @@ import net.minecraft.world.World;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class WitherEntity extends Class1009 implements Class1080, Class1022 {
+public class WitherEntity extends MonsterEntity implements Class1080, Class1022 {
    private static final DataParameter<Integer> field5923 = EntityDataManager.<Integer>createKey(WitherEntity.class, DataSerializers.VARINT);
    private static final DataParameter<Integer> field5924 = EntityDataManager.<Integer>createKey(WitherEntity.class, DataSerializers.VARINT);
    private static final DataParameter<Integer> field5925 = EntityDataManager.<Integer>createKey(WitherEntity.class, DataSerializers.VARINT);
@@ -479,12 +482,12 @@ public class WitherEntity extends Class1009 implements Class1080, Class1022 {
       return false;
    }
 
-   public static Class7037 method2997() {
-      return Class1009.method4343()
-         .method21849(Attributes.field42105, 300.0)
+   public static MutableAttribute method2997() {
+      return MonsterEntity.method4343()
+         .method21849(Attributes.MAX_HEALTH, 300.0)
          .method21849(Attributes.MOVEMENT_SPEED, 0.6F)
-         .method21849(Attributes.field42106, 40.0)
-         .method21849(Attributes.field42113, 4.0);
+         .method21849(Attributes.FOLLOW_RANGE, 40.0)
+         .method21849(Attributes.ARMOR, 4.0);
    }
 
    public float method5010(int var1) {

@@ -53,6 +53,6 @@ public class Class1078 extends Class1066 {
 
    @Override
    public Class1045 method4389(ServerWorld var1, Class1045 var2) {
-      return EntityType.field41057.create(var1);
+      return EntityType.MULE.create(var1);
    }
 }

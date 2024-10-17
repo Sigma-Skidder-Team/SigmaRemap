@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.collect.Maps;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.*;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -189,8 +191,8 @@ public class Class1098 extends TameableEntity {
       return SoundEvents.field26435;
    }
 
-   public static Class7037 method5259() {
-      return MobEntity.method4220().method21849(Attributes.field42105, 10.0).method21849(Attributes.MOVEMENT_SPEED, 0.3F).method21849(Attributes.ATTACK_DAMAGE, 3.0);
+   public static MutableAttribute method5259() {
+      return MobEntity.method4220().method21849(Attributes.MAX_HEALTH, 10.0).method21849(Attributes.MOVEMENT_SPEED, 0.3F).method21849(Attributes.ATTACK_DAMAGE, 3.0);
    }
 
    @Override
@@ -269,7 +271,7 @@ public class Class1098 extends TameableEntity {
    }
 
    public Class1098 method4389(ServerWorld var1, Class1045 var2) {
-      Class1098 var5 = EntityType.field41012.create(var1);
+      Class1098 var5 = EntityType.CAT.create(var1);
       if (var2 instanceof Class1098) {
          if (!this.rand.nextBoolean()) {
             var5.method5251(((Class1098)var2).method5250());

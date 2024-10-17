@@ -3,6 +3,9 @@ package mapped;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
+import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
@@ -18,7 +21,7 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class Class1112 extends Class1111 implements Class1008 {
+public class Class1112 extends Class1111 implements IMob {
    private static final DataParameter<Boolean> field6091 = EntityDataManager.<Boolean>createKey(Class1112.class, DataSerializers.field33398);
    private int field6092 = 1;
 
@@ -74,8 +77,8 @@ public class Class1112 extends Class1111 implements Class1008 {
       this.dataManager.register(field6091, false);
    }
 
-   public static Class7037 method5360() {
-      return MobEntity.method4220().method21849(Attributes.field42105, 10.0).method21849(Attributes.field42106, 100.0);
+   public static MutableAttribute method5360() {
+      return MobEntity.method4220().method21849(Attributes.MAX_HEALTH, 10.0).method21849(Attributes.FOLLOW_RANGE, 100.0);
    }
 
    @Override

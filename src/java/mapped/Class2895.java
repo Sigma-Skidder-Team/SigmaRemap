@@ -50,7 +50,7 @@ public class Class2895<T extends MobEntity> extends PlayerModel<T> {
       this.field17928.rotateAngleZ = (float) (-Math.PI / 6) - MathHelper.cos(var10 * 1.2F) * var11;
       this.field17929.rotateAngleZ = (float) (Math.PI / 6) + MathHelper.cos(var10) * var11;
       if (!(var1 instanceof Class1035)) {
-         if (var1.getType() == EntityType.field41110) {
+         if (var1.getType() == EntityType.ZOMBIFIED_PIGLIN) {
             ModelHelper.method27109(this.bipedLeftArm, this.bipedRightArm, var1.method4307(), this.swingProgress, var4);
          }
       } else {

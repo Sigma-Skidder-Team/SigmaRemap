@@ -6,7 +6,7 @@ import net.optifine.Config;
 
 public class Class4140 extends Class4057 {
    public Class4140() {
-      super(EntityType.field41104, "wither_skull", 0.0F);
+      super(EntityType.WITHER_SKULL, "wither_skull", 0.0F);
    }
 
    @Override

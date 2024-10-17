@@ -27,7 +27,7 @@ public class PaintingEntity extends Class995 {
    }
 
    public PaintingEntity(World var1, BlockPos var2, Direction var3) {
-      super(EntityType.field41060, var1, var2);
+      super(EntityType.PAINTING, var1, var2);
       ArrayList var6 = Lists.newArrayList();
       int var7 = 0;
 

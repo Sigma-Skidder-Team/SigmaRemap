@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.monster.EndermanEntity;
 
 public class Class4131 extends Class4117 {
    public Class4131() {
@@ -17,7 +18,7 @@ public class Class4131 extends Class4117 {
    public Class9492 method12825(Class2828 var1, float var2) {
       EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Class5674 var6 = new Class5674(var5);
-      var6.entityModel = (Class2799<Class1010>)var1;
+      var6.entityModel = (Class2799<EndermanEntity>)var1;
       var6.shadowSize = var2;
       return (Class9492)var6;
    }

@@ -5,6 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
@@ -173,7 +174,7 @@ public class Class959 extends TileEntity implements ITickableTileEntity {
                this.field5387 = null;
             }
          } else {
-            List var5 = this.world.<LivingEntity>getEntitiesInAABBexcluding(LivingEntity.class, this.method3900(), var0 -> var0 instanceof Class1008 && var0.method3253());
+            List var5 = this.world.<LivingEntity>getEntitiesInAABBexcluding(LivingEntity.class, this.method3900(), var0 -> var0 instanceof IMob && var0.method3253());
             if (!var5.isEmpty()) {
                this.field5387 = (LivingEntity)var5.get(this.world.rand.nextInt(var5.size()));
             }

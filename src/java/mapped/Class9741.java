@@ -202,7 +202,7 @@ public class Class9741 {
                      new TranslationTextComponent(
                            "attribute.modifier.take." + var22.getOperation().getId(),
                            ItemStack.field39974.format(var18),
-                           new TranslationTextComponent(((Attribute)var21.getFirst()).method15032())
+                           new TranslationTextComponent(((Attribute)var21.getFirst()).getAttributeName())
                         )
                         .mergeStyle(TextFormatting.RED)
                   );
@@ -212,7 +212,7 @@ public class Class9741 {
                   new TranslationTextComponent(
                         "attribute.modifier.plus." + var22.getOperation().getId(),
                         ItemStack.field39974.format(var18),
-                        new TranslationTextComponent(((Attribute)var21.getFirst()).method15032())
+                        new TranslationTextComponent(((Attribute)var21.getFirst()).getAttributeName())
                      )
                      .mergeStyle(TextFormatting.BLUE)
                );

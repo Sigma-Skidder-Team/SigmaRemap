@@ -17,7 +17,7 @@ public abstract class Class2692 extends Class2595 {
 
    public boolean method10910() {
       BlockPos var3 = new BlockPos(this.field17133.getPosX(), this.field17133.getBoundingBox().maxY, this.field17133.getPosZ());
-      return !this.field17133.world.method7022(var3) && this.field17133.method4771(var3) >= 0.0F;
+      return !this.field17133.world.method7022(var3) && this.field17133.getBlockPathWeight(var3) >= 0.0F;
    }
 
    public boolean method10911() {

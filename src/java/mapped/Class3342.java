@@ -58,7 +58,7 @@ public class Class3342 extends HorizontalBlock implements Class3255 {
             }
 
             BlockPos var12 = var5.method33881(1, 2, 0).method37551();
-            Class1058 var15 = EntityType.field41041.create(var1);
+            Class1058 var15 = EntityType.IRON_GOLEM.create(var1);
             var15.method4870(true);
             var15.setLocationAndAngles((double)var12.getX() + 0.5, (double)var12.getY() + 0.05, (double)var12.getZ() + 0.5, 0.0F, 0.0F);
             var1.addEntity(var15);
@@ -81,7 +81,7 @@ public class Class3342 extends HorizontalBlock implements Class3255 {
             var1.playEvent(2001, var16.method37551(), Block.getStateId(var16.method37548()));
          }
 
-         Class1021 var14 = EntityType.field41082.create(var1);
+         Class1021 var14 = EntityType.SNOW_GOLEM.create(var1);
          BlockPos var17 = var5.method33881(0, 2, 0).method37551();
          var14.setLocationAndAngles((double)var17.getX() + 0.5, (double)var17.getY() + 0.05, (double)var17.getZ() + 0.5, 0.0F, 0.0F);
          var1.addEntity(var14);

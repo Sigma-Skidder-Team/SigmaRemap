@@ -7,6 +7,10 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
+import net.minecraft.entity.monster.IMob;
+import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -26,7 +30,7 @@ import net.minecraft.world.server.ServerWorld;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class Class1091 extends Class1018 implements Class1008, Class1092 {
+public class Class1091 extends Class1018 implements IMob, Class1092 {
    private static final DataParameter<Boolean> field5976 = EntityDataManager.<Boolean>createKey(Class1091.class, DataSerializers.field33398);
    private int field5977;
    private int field5978 = 0;
@@ -59,12 +63,12 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
       return !this.method4296();
    }
 
-   public static Class7037 method5080() {
-      return Class1009.method4343()
-         .method21849(Attributes.field42105, 40.0)
+   public static MutableAttribute method5080() {
+      return MonsterEntity.method4343()
+         .method21849(Attributes.MAX_HEALTH, 40.0)
          .method21849(Attributes.MOVEMENT_SPEED, 0.3F)
-         .method21849(Attributes.field42107, 0.6F)
-         .method21849(Attributes.field42111, 1.0)
+         .method21849(Attributes.KNOCKBACK_RESISTANCE, 0.6F)
+         .method21849(Attributes.ATTACK_KNOCKBACK, 1.0)
          .method21849(Attributes.ATTACK_DAMAGE, 6.0);
    }
 
@@ -174,7 +178,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    }
 
    @Override
-   public float method4339(BlockPos var1, IWorldReader var2) {
+   public float getBlockPathWeight(BlockPos var1, IWorldReader var2) {
       if (!Class9069.method33790(this, var1)) {
          return !var2.getBlockState(var1.down()).isIn(Blocks.field37083) ? 0.0F : 10.0F;
       } else {
@@ -223,7 +227,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    }
 
    private void method5083(ServerWorld var1) {
-      Class1093 var4 = this.<Class1093>method4292(EntityType.field41106, true);
+      Class1093 var4 = this.<Class1093>method4292(EntityType.ZOGLIN, true);
       if (var4 != null) {
          var4.addPotionEffect(new EffectInstance(Effects.NAUSEA, 200, 0));
       }
@@ -288,7 +292,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    @Nullable
    @Override
    public Class1045 method4389(ServerWorld var1, Class1045 var2) {
-      Class1091 var5 = EntityType.field41037.create(var1);
+      Class1091 var5 = EntityType.HOGLIN.create(var1);
       if (var5 != null) {
          var5.method4278();
       }

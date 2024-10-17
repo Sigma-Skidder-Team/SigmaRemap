@@ -22,7 +22,7 @@ import java.util.function.Consumer;
 public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class5888>> {
    private static final Class7552 field17612 = Class7552.method24700().method24709(Class8265.method28830().method28831(true).method28833());
    private static final Set<EntityType<?>> field17613 = ImmutableSet.of(
-      EntityType.PLAYER, EntityType.field41006, EntityType.field41041, EntityType.field41082, EntityType.field41098
+      EntityType.PLAYER, EntityType.ARMOR_STAND, EntityType.IRON_GOLEM, EntityType.SNOW_GOLEM, EntityType.VILLAGER
    );
    private final Map<ResourceLocation, Class5888> field17614 = Maps.newHashMap();
 
@@ -33,11 +33,11 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
    }
 
    public void accept(BiConsumer<ResourceLocation, Class5888> var1) {
-      this.method11033(EntityType.field41006, Class7318.method23188());
-      this.method11033(EntityType.field41008, Class7318.method23188());
-      this.method11033(EntityType.field41009, Class7318.method23188());
+      this.method11033(EntityType.ARMOR_STAND, Class7318.method23188());
+      this.method11033(EntityType.BAT, Class7318.method23188());
+      this.method11033(EntityType.BEE, Class7318.method23188());
       this.method11033(
-         EntityType.field41010,
+         EntityType.BLAZE,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -51,7 +51,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41012,
+         EntityType.CAT,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -60,7 +60,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41013,
+         EntityType.CAVE_SPIDER,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -83,7 +83,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41014,
+         EntityType.CHICKEN,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -105,7 +105,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41015,
+         EntityType.COD,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -123,7 +123,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41016,
+         EntityType.COW,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -146,7 +146,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41017,
+         EntityType.CREEPER,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -164,7 +164,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41018,
+         EntityType.DOLPHIN,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -178,7 +178,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41019,
+         EntityType.DONKEY,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -191,7 +191,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41021,
+         EntityType.DROWNED,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -211,7 +211,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41022,
+         EntityType.ELDER_GUARDIAN,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -280,7 +280,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
       );
       this.method11033(EntityType.FOX, Class7318.method23188());
       this.method11033(
-         EntityType.field41034,
+         EntityType.GHAST,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -301,9 +301,9 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
                   )
             )
       );
-      this.method11033(EntityType.field41035, Class7318.method23188());
+      this.method11033(EntityType.GIANT, Class7318.method23188());
       this.method11033(
-         EntityType.field41036,
+         EntityType.GUARDIAN,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -335,7 +335,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41038,
+         EntityType.HORSE,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -348,7 +348,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41039,
+         EntityType.HUSK,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -370,7 +370,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41072,
+         EntityType.RAVAGER,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -378,9 +378,9 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
                   .method18291(Class4695.method14724(Items.field37886).method18296(Class140.method420(Class6871.method20919(1))))
             )
       );
-      this.method11033(EntityType.field41040, Class7318.method23188());
+      this.method11033(EntityType.ILLUSIONER, Class7318.method23188());
       this.method11033(
-         EntityType.field41041,
+         EntityType.IRON_GOLEM,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -394,7 +394,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41047,
+         EntityType.LLAMA,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -407,7 +407,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41049,
+         EntityType.MAGMA_CUBE,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -420,7 +420,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41057,
+         EntityType.MULE,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -433,7 +433,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41058,
+         EntityType.MOOSHROOM,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -455,9 +455,9 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
                   )
             )
       );
-      this.method11033(EntityType.field41059, Class7318.method23188());
+      this.method11033(EntityType.OCELOT, Class7318.method23188());
       this.method11033(
-         EntityType.field41061,
+         EntityType.PANDA,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -466,7 +466,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41062,
+         EntityType.PARROT,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -479,7 +479,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41063,
+         EntityType.PHANTOM,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -493,7 +493,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41064,
+         EntityType.PIG,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -506,10 +506,10 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
                   )
             )
       );
-      this.method11033(EntityType.field41067, Class7318.method23188());
+      this.method11033(EntityType.PILLAGER, Class7318.method23188());
       this.method11033(EntityType.PLAYER, Class7318.method23188());
       this.method11033(
-         EntityType.field41068,
+         EntityType.POLAR_BEAR,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -528,7 +528,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41070,
+         EntityType.PUFFERFISH,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -573,7 +573,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41073,
+         EntityType.SALMON,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -621,7 +621,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11034(Class8793.field39575, method11032(Blocks.WHITE_WOOL));
       this.method11034(Class8793.field39579, method11032(Blocks.YELLOW_WOOL));
       this.method11033(
-         EntityType.field41075,
+         EntityType.SHULKER,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -630,9 +630,9 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
                   .method18297(Class124.method363(0.5F, 0.0625F))
             )
       );
-      this.method11033(EntityType.field41077, Class7318.method23188());
+      this.method11033(EntityType.SILVERFISH, Class7318.method23188());
       this.method11033(
-         EntityType.field41078,
+         EntityType.SKELETON,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -654,7 +654,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41079,
+         EntityType.SKELETON_HORSE,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -667,7 +667,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41080,
+         EntityType.SLIME,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -680,7 +680,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41082,
+         EntityType.SNOW_GOLEM,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -689,7 +689,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41085,
+         EntityType.SPIDER,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -712,7 +712,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41086,
+         EntityType.SQUID,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -725,7 +725,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41087,
+         EntityType.STRAY,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -758,7 +758,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41088,
+         EntityType.STRIDER,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -771,7 +771,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41094,
+         EntityType.TRADER_LLAMA,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -784,7 +784,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41095,
+         EntityType.TROPICAL_FISH,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -799,7 +799,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41096,
+         EntityType.TURTLE,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -818,11 +818,11 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
                   .method18297(Class153.method462(Class9714.method38056().method38058(true)))
             )
       );
-      this.method11033(EntityType.field41097, Class7318.method23188());
-      this.method11033(EntityType.field41098, Class7318.method23188());
-      this.method11033(EntityType.field41100, Class7318.method23188());
+      this.method11033(EntityType.VEX, Class7318.method23188());
+      this.method11033(EntityType.VILLAGER, Class7318.method23188());
+      this.method11033(EntityType.WANDERING_TRADER, Class7318.method23188());
       this.method11033(
-         EntityType.field41099,
+         EntityType.VINDICATOR,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -836,7 +836,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41101,
+         EntityType.WITCH,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -879,9 +879,9 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
                   )
             )
       );
-      this.method11033(EntityType.field41102, Class7318.method23188());
+      this.method11033(EntityType.WITHER, Class7318.method23188());
       this.method11033(
-         EntityType.field41103,
+         EntityType.WITHER_SKELETON,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -909,9 +909,9 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
                   .method18297(Class124.method363(0.025F, 0.01F))
             )
       );
-      this.method11033(EntityType.field41105, Class7318.method23188());
+      this.method11033(EntityType.WOLF, Class7318.method23188());
       this.method11033(
-         EntityType.field41106,
+         EntityType.ZOGLIN,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -924,7 +924,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41107,
+         EntityType.ZOMBIE,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -946,7 +946,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41108,
+         EntityType.ZOMBIE_HORSE,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -959,7 +959,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41110,
+         EntityType.ZOMBIFIED_PIGLIN,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -988,7 +988,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41037,
+         EntityType.HOGLIN,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -1010,10 +1010,10 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
                   )
             )
       );
-      this.method11033(EntityType.field41065, Class7318.method23188());
-      this.method11033(EntityType.field41066, Class7318.method23188());
+      this.method11033(EntityType.PIGLIN, Class7318.method23188());
+      this.method11033(EntityType.PIGLIN_BRUTE, Class7318.method23188());
       this.method11033(
-         EntityType.field41109,
+         EntityType.ZOMBIE_VILLAGER,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()

@@ -76,7 +76,7 @@ public class Class4187 extends Class4180 {
                var11 = EntityType.field41027.create(var3.method6970());
                break;
             case "Warrior":
-               var11 = EntityType.field41099.create(var3.method6970());
+               var11 = EntityType.VINDICATOR.create(var3.method6970());
                break;
             default:
                return;

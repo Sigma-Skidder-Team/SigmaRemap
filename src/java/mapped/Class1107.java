@@ -4,6 +4,9 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
+import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
@@ -15,7 +18,7 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class Class1107 extends Class1009 {
+public class Class1107 extends MonsterEntity {
    private static String[] field6079;
    private Class2753 field6080;
 
@@ -44,8 +47,8 @@ public class Class1107 extends Class1009 {
       return 0.13F;
    }
 
-   public static Class7037 method5316() {
-      return Class1009.method4343().method21849(Attributes.field42105, 8.0).method21849(Attributes.MOVEMENT_SPEED, 0.25).method21849(Attributes.ATTACK_DAMAGE, 1.0);
+   public static MutableAttribute method5316() {
+      return MonsterEntity.method4343().method21849(Attributes.MAX_HEALTH, 8.0).method21849(Attributes.MOVEMENT_SPEED, 0.25).method21849(Attributes.ATTACK_DAMAGE, 1.0);
    }
 
    @Override
@@ -99,8 +102,8 @@ public class Class1107 extends Class1009 {
    }
 
    @Override
-   public float method4339(BlockPos var1, IWorldReader var2) {
-      return !Class3442.method12119(var2.getBlockState(var1.down())) ? super.method4339(var1, var2) : 10.0F;
+   public float getBlockPathWeight(BlockPos var1, IWorldReader var2) {
+      return !Class3442.method12119(var2.getBlockState(var1.down())) ? super.getBlockPathWeight(var1, var2) : 10.0F;
    }
 
    public static boolean method5317(EntityType<Class1107> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {

@@ -29,7 +29,7 @@ public class Class3689 extends Class3676<LivingEntity> {
       if (var1.getGameTime() - this.field19712 < 20L) {
          return false;
       } else {
-         Class1046 var5 = (Class1046)var2;
+         CreatureEntity var5 = (CreatureEntity)var2;
          Class1653 var6 = var1.method6951();
          Optional var7 = var6.method6671(Class4913.field22766.method15182(), var2.getPosition(), 48, Class2093.field13637);
          return var7.isPresent() && !(((BlockPos)var7.get()).distanceSq(var5.getPosition()) <= 4.0);
@@ -40,7 +40,7 @@ public class Class3689 extends Class3676<LivingEntity> {
    public void method12502(ServerWorld var1, LivingEntity var2, long var3) {
       this.field19711 = 0;
       this.field19712 = var1.getGameTime() + (long)var1.method6814().nextInt(20);
-      Class1046 var7 = (Class1046)var2;
+      CreatureEntity var7 = (CreatureEntity)var2;
       Class1653 var8 = var1.method6951();
       Predicate<BlockPos> var9 = var1x -> {
          long var4 = var1x.method8332();

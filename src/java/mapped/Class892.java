@@ -15,11 +15,11 @@ public class Class892 extends Class890 {
    }
 
    public Class892(World var1, LivingEntity var2) {
-      super(EntityType.field41089, var2, var1);
+      super(EntityType.EGG, var2, var1);
    }
 
    public Class892(World var1, double var2, double var4, double var6) {
-      super(EntityType.field41089, var2, var4, var6, var1);
+      super(EntityType.EGG, var2, var4, var6, var1);
    }
 
    @Override
@@ -59,7 +59,7 @@ public class Class892 extends Class890 {
             }
 
             for (int var5 = 0; var5 < var4; var5++) {
-               Class1089 var6 = EntityType.field41014.create(this.world);
+               Class1089 var6 = EntityType.CHICKEN.create(this.world);
                var6.method4770(-24000);
                var6.setLocationAndAngles(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, 0.0F);
                this.world.addEntity(var6);

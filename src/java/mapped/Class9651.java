@@ -277,8 +277,8 @@ public class Class9651 {
             var1.setOnGround(true);
          }
 
-         if (var1 instanceof Class1046) {
-            ((Class1046)var1).method4230().method21666();
+         if (var1 instanceof CreatureEntity) {
+            ((CreatureEntity)var1).method4230().method21666();
          }
       } else {
          throw field45127.create();

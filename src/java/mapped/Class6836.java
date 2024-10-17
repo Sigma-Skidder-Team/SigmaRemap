@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.util.math.MathHelper;
 
 public class Class6836 extends Class6829 {

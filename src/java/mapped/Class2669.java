@@ -27,7 +27,7 @@ public class Class2669 extends Class2595 {
       this.field17046.method5001(false);
       this.field17046.method4936(true);
       this.field17046.method4770(0);
-      Class906 var5 = EntityType.field41046.create(var3);
+      Class906 var5 = EntityType.LIGHTNING_BOLT.create(var3);
       var5.moveForced(this.field17046.getPosX(), this.field17046.getPosY(), this.field17046.getPosZ());
       var5.method3549(true);
       var3.addEntity(var5);
@@ -45,7 +45,7 @@ public class Class2669 extends Class2595 {
    }
 
    private AbstractHorseEntity method10886(Class9755 var1) {
-      Class1076 var4 = EntityType.field41079.create(this.field17046.world);
+      Class1076 var4 = EntityType.SKELETON_HORSE.create(this.field17046.world);
       var4.method4276((ServerWorld)this.field17046.world, var1, Class2202.field14401, (Class5093)null, (CompoundNBT)null);
       var4.setPosition(this.field17046.getPosX(), this.field17046.getPosY(), this.field17046.getPosZ());
       var4.hurtResistantTime = 60;
@@ -56,7 +56,7 @@ public class Class2669 extends Class2595 {
    }
 
    private Class1085 method10887(Class9755 var1, AbstractHorseEntity var2) {
-      Class1085 var5 = EntityType.field41078.create(var2.world);
+      Class1085 var5 = EntityType.SKELETON.create(var2.world);
       var5.method4276((ServerWorld)var2.world, var1, Class2202.field14401, (Class5093)null, (CompoundNBT)null);
       var5.setPosition(var2.getPosX(), var2.getPosY(), var2.getPosZ());
       var5.hurtResistantTime = 60;

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.MathHelper;
 
@@ -108,6 +109,6 @@ public class Class2783 extends Class2595 {
    }
 
    private double method10973() {
-      return this.field17396.getAttributeValue(Attributes.field42106);
+      return this.field17396.getAttributeValue(Attributes.FOLLOW_RANGE);
    }
 }

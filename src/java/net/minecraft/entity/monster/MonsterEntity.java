@@ -1,6 +1,9 @@
-package mapped;
+package net.minecraft.entity.monster;
 
+import mapped.*;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -13,8 +16,8 @@ import net.minecraft.world.*;
 import java.util.Random;
 import java.util.function.Predicate;
 
-public abstract class Class1009 extends Class1046 implements Class1008 {
-   public Class1009(EntityType<? extends Class1009> var1, World var2) {
+public abstract class MonsterEntity extends CreatureEntity implements IMob {
+   public MonsterEntity(EntityType<? extends MonsterEntity> var1, World var2) {
       super(var1, var2);
       this.field5594 = 5;
    }
@@ -74,7 +77,7 @@ public abstract class Class1009 extends Class1046 implements Class1008 {
    }
 
    @Override
-   public float method4339(BlockPos var1, IWorldReader var2) {
+   public float getBlockPathWeight(BlockPos var1, IWorldReader var2) {
       return 0.5F - var2.method7009(var1);
    }
 
@@ -87,15 +90,15 @@ public abstract class Class1009 extends Class1046 implements Class1008 {
       }
    }
 
-   public static boolean method4341(EntityType<? extends Class1009> var0, Class1659 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method4341(EntityType<? extends MonsterEntity> var0, Class1659 var1, Class2202 var2, BlockPos var3, Random var4) {
       return var1.method6997() != Difficulty.PEACEFUL && method4340(var1, var3, var4) && method4264(var0, var1, var2, var3, var4);
    }
 
-   public static boolean method4342(EntityType<? extends Class1009> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method4342(EntityType<? extends MonsterEntity> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
       return var1.method6997() != Difficulty.PEACEFUL && method4264(var0, var1, var2, var3, var4);
    }
 
-   public static Class7037 method4343() {
+   public static MutableAttribute method4343() {
       return MobEntity.method4220().method21848(Attributes.ATTACK_DAMAGE);
    }
 

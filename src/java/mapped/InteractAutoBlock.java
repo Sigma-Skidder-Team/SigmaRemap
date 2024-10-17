@@ -10,6 +10,7 @@ import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.SwordItem;
 import net.minecraft.network.play.client.CUseEntityPacket;
@@ -184,7 +185,7 @@ public class InteractAutoBlock {
             entities.remove();
          } else if (!this.parent.getBooleanValueFromSettingName("Animals") && (ent instanceof Class1018 || ent instanceof Class1042)) {
             entities.remove();
-         } else if (!this.parent.getBooleanValueFromSettingName("Monsters") && ent instanceof Class1009) {
+         } else if (!this.parent.getBooleanValueFromSettingName("Monsters") && ent instanceof MonsterEntity) {
             entities.remove();
          } else if (this.mc.player.getRidingEntity() != null && this.mc.player.getRidingEntity().equals(ent)) {
             entities.remove();

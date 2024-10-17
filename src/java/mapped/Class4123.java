@@ -2,10 +2,11 @@ package mapped;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.monster.ZombieEntity;
 
 public class Class4123 extends Class4117 {
    public Class4123() {
-      super(EntityType.field41039, "husk", 0.5F);
+      super(EntityType.HUSK, "husk", 0.5F);
    }
 
    @Override

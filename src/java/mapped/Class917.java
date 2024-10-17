@@ -14,7 +14,7 @@ public class Class917 extends AbstractMinecartEntity {
    }
 
    public Class917(World var1, double var2, double var4, double var6) {
-      super(EntityType.field41050, var1, var2, var4, var6);
+      super(EntityType.MINECART, var1, var2, var4, var6);
    }
 
    @Override

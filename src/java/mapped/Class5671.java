@@ -8,11 +8,11 @@ import java.util.Map;
 
 public class Class5671 extends Class5661<MobEntity, Class2895<MobEntity>> {
    private static final Map<EntityType<?>, ResourceLocation> field25036 = ImmutableMap.of(
-      EntityType.field41065,
+      EntityType.PIGLIN,
       new ResourceLocation("textures/entity/piglin/piglin.png"),
-      EntityType.field41110,
+      EntityType.ZOMBIFIED_PIGLIN,
       new ResourceLocation("textures/entity/piglin/zombified_piglin.png"),
-      EntityType.field41066,
+      EntityType.PIGLIN_BRUTE,
       new ResourceLocation("textures/entity/piglin/piglin_brute.png")
    );
 

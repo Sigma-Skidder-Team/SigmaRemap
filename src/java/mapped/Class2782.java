@@ -7,7 +7,7 @@ import java.util.EnumSet;
 
 public class Class2782 extends Class2595 {
    private static String[] field17387;
-   private final Class1046 field17388;
+   private final CreatureEntity field17388;
    private LivingEntity field17389;
    private double field17390;
    private double field17391;
@@ -15,7 +15,7 @@ public class Class2782 extends Class2595 {
    private final double field17393;
    private final float field17394;
 
-   public Class2782(Class1046 var1, double var2, float var4) {
+   public Class2782(CreatureEntity var1, double var2, float var4) {
       this.field17388 = var1;
       this.field17393 = var2;
       this.field17394 = var4;

@@ -1,10 +1,14 @@
 package mapped;
 
 import net.minecraft.entity.*;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
+import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
@@ -20,7 +24,7 @@ import javax.annotation.Nullable;
 import java.util.EnumSet;
 import java.util.Random;
 
-public class Class1105 extends Class1009 {
+public class Class1105 extends MonsterEntity {
    private static String[] field6065;
    private static final DataParameter<Boolean> field6066 = EntityDataManager.<Boolean>createKey(Class1105.class, DataSerializers.field33398);
    private static final DataParameter<Integer> field6067 = EntityDataManager.<Integer>createKey(Class1105.class, DataSerializers.VARINT);
@@ -37,7 +41,7 @@ public class Class1105 extends Class1009 {
    public Class1105(EntityType<? extends Class1105> var1, World var2) {
       super(var1, var2);
       this.field5594 = 10;
-      this.method4224(Class2163.field14191, 0.0F);
+      this.method4224(PathNodeType.WATER, 0.0F);
       this.field5596 = new Class6828(this);
       this.field6068 = this.rand.nextFloat();
       this.field6069 = this.field6068;
@@ -58,12 +62,12 @@ public class Class1105 extends Class1009 {
       this.field5601.addGoal(1, new NearestAttackableTargetGoal<LivingEntity>(this, LivingEntity.class, 10, true, false, new Class121(this)));
    }
 
-   public static Class7037 method5300() {
-      return Class1009.method4343()
+   public static MutableAttribute method5300() {
+      return MonsterEntity.method4343()
          .method21849(Attributes.ATTACK_DAMAGE, 6.0)
          .method21849(Attributes.MOVEMENT_SPEED, 0.5)
-         .method21849(Attributes.field42106, 16.0)
-         .method21849(Attributes.field42105, 30.0);
+         .method21849(Attributes.FOLLOW_RANGE, 16.0)
+         .method21849(Attributes.MAX_HEALTH, 30.0);
    }
 
    @Override
@@ -169,8 +173,8 @@ public class Class1105 extends Class1009 {
    }
 
    @Override
-   public float method4339(BlockPos var1, IWorldReader var2) {
-      return !var2.getFluidState(var1).method23486(FluidTags.field40469) ? super.method4339(var1, var2) : 10.0F + var2.method7009(var1) - 0.5F;
+   public float getBlockPathWeight(BlockPos var1, IWorldReader var2) {
+      return !var2.getFluidState(var1).method23486(FluidTags.field40469) ? super.getBlockPathWeight(var1, var2) : 10.0F + var2.method7009(var1) - 0.5F;
    }
 
    @Override

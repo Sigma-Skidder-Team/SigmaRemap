@@ -5,7 +5,10 @@ import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
+import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
@@ -41,7 +44,7 @@ public class Class1027 extends Class1026 implements Class1022 {
    public void method4219() {
       super.method4219();
       this.field5722 = new Class2712<Class1026>(
-         this, Class1026.class, true, var1 -> var1 != null && this.method4552() && var1.getType() != EntityType.field41101
+         this, Class1026.class, true, var1 -> var1 != null && this.method4552() && var1.getType() != EntityType.WITCH
       );
       this.field5723 = new Class2711<PlayerEntity>(this, PlayerEntity.class, 10, true, false, (Predicate<LivingEntity>)null);
       this.field5600.addGoal(1, new Class2603(this));
@@ -83,8 +86,8 @@ public class Class1027 extends Class1026 implements Class1022 {
       return this.getDataManager().<Boolean>method35445(field5720);
    }
 
-   public static Class7037 method4569() {
-      return Class1009.method4343().method21849(Attributes.field42105, 26.0).method21849(Attributes.MOVEMENT_SPEED, 0.25);
+   public static MutableAttribute method4569() {
+      return MonsterEntity.method4343().method21849(Attributes.MAX_HEALTH, 26.0).method21849(Attributes.MOVEMENT_SPEED, 0.25);
    }
 
    @Override
@@ -133,8 +136,8 @@ public class Class1027 extends Class1026 implements Class1022 {
                }
 
                ModifiableAttributeInstance var8 = this.getAttribute(Attributes.MOVEMENT_SPEED);
-               var8.method38670(field5719);
-               var8.method38667(field5719);
+               var8.removeModifier(field5719);
+               var8.applyNonPersistentModifier(field5719);
             }
          } else if (this.field5721-- <= 0) {
             this.method4567(false);
@@ -149,7 +152,7 @@ public class Class1027 extends Class1026 implements Class1022 {
                }
             }
 
-            this.getAttribute(Attributes.MOVEMENT_SPEED).method38670(field5719);
+            this.getAttribute(Attributes.MOVEMENT_SPEED).removeModifier(field5719);
          }
 
          if (this.rand.nextFloat() < 7.5E-4F) {

@@ -32,8 +32,8 @@ public class Class3312 extends Item {
       } else {
          World var9 = var1.getWorld();
          Object var10;
-         if (this.field18822 != EntityType.field41060) {
-            if (this.field18822 != EntityType.field41043) {
+         if (this.field18822 != EntityType.PAINTING) {
+            if (this.field18822 != EntityType.ITEM_FRAME) {
                return ActionResultType.method9002(var9.isRemote);
             }
 

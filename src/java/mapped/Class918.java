@@ -25,7 +25,7 @@ public class Class918 extends AbstractMinecartEntity {
    }
 
    public Class918(World var1, double var2, double var4, double var6) {
-      super(EntityType.field41052, var1, var2, var4, var6);
+      super(EntityType.COMMAND_BLOCK_MINECART, var1, var2, var4, var6);
    }
 
    @Override

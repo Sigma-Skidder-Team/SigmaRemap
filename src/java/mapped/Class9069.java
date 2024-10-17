@@ -40,10 +40,10 @@ public class Class9069 {
          10,
          ImmutableList.<Class3676<? super Class1091>>of(
             new Class3709(Class8830.field39870, 200),
-            new Class3736(EntityType.field41037, 0.6F),
+            new Class3736(EntityType.HOGLIN, 0.6F),
             Class3690.method12538(Class8830.field39870, 1.0F, 8, true),
             new Class3733<>(Class9069::method33789),
-            new Class3740<>(Class1091::method5084, (Class3676<? super Class1046>)Class3690.method12539(Class8830.field39864, 0.4F, 8, false)),
+            new Class3740<>(Class1091::method5084, (Class3676<? super CreatureEntity>)Class3690.method12539(Class8830.field39864, 0.4F, 8, false)),
             new Class3702<LivingEntity>(new Class3738(8.0F), RangedInteger.method29318(30, 60)),
             new Class3682(field41501, 0.6F),
             method33783()
@@ -57,7 +57,7 @@ public class Class9069 {
          10,
               ImmutableList.<Class3676<? super Class1091>>of(
             new Class3709(Class8830.field39870, 200),
-            new Class3736(EntityType.field41037, 0.6F),
+            new Class3736(EntityType.HOGLIN, 0.6F),
             new Class3720(1.0F),
             new Class3740<>(Class1091::method5084, new Class3684(40)),
             new Class3740<>(Class1045::isChild, new Class3684(15)),
@@ -100,7 +100,7 @@ public class Class9069 {
 
    public static void method33785(Class1091 var0, LivingEntity var1) {
       if (!var0.isChild()) {
-         if (var1.getType() == EntityType.field41065 && method33792(var0)) {
+         if (var1.getType() == EntityType.PIGLIN && method33792(var0)) {
             method33788(var0, var1);
             method33786(var0, var1);
          } else {
@@ -161,9 +161,9 @@ public class Class9069 {
    }
 
    private static void method33794(Class1091 var0, LivingEntity var1) {
-      if ((!var0.getBrain().method21430(Activity.field40232) || var1.getType() != EntityType.field41065)
+      if ((!var0.getBrain().method21430(Activity.field40232) || var1.getType() != EntityType.PIGLIN)
          && Class8088.field34762.test(var1)
-         && var1.getType() != EntityType.field41037
+         && var1.getType() != EntityType.HOGLIN
          && !Class6983.method21582(var0, var1, 4.0)) {
          method33795(var0, var1);
          method33796(var0, var1);

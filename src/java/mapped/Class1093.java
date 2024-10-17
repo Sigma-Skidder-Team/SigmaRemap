@@ -8,6 +8,10 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
+import net.minecraft.entity.monster.IMob;
+import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.DebugPacketSender;
@@ -25,7 +29,7 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.List;
 import java.util.Optional;
 
-public class Class1093 extends Class1009 implements Class1008, Class1092 {
+public class Class1093 extends MonsterEntity implements IMob, Class1092 {
    private static final DataParameter<Boolean> field5982 = EntityDataManager.<Boolean>createKey(Class1093.class, DataSerializers.field33398);
    private int field5983;
    public static final ImmutableList<? extends Class7963<? extends Class7882<? super Class1093>>> field5984 = ImmutableList.of(
@@ -103,7 +107,7 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
 
    private static boolean method5097(LivingEntity var0) {
       EntityType var3 = var0.getType();
-      return var3 != EntityType.field41106 && var3 != EntityType.field41017 && Class8088.field34762.test(var0);
+      return var3 != EntityType.ZOGLIN && var3 != EntityType.CREEPER && Class8088.field34762.test(var0);
    }
 
    @Override
@@ -120,12 +124,12 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
       }
    }
 
-   public static Class7037 method5098() {
-      return Class1009.method4343()
-         .method21849(Attributes.field42105, 40.0)
+   public static MutableAttribute method5098() {
+      return MonsterEntity.method4343()
+         .method21849(Attributes.MAX_HEALTH, 40.0)
          .method21849(Attributes.MOVEMENT_SPEED, 0.3F)
-         .method21849(Attributes.field42107, 0.6F)
-         .method21849(Attributes.field42111, 1.0)
+         .method21849(Attributes.KNOCKBACK_RESISTANCE, 0.6F)
+         .method21849(Attributes.ATTACK_KNOCKBACK, 1.0)
          .method21849(Attributes.ATTACK_DAMAGE, 6.0);
    }
 

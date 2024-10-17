@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.monster.ZombieEntity;
+
 public class Class2800<T extends ZombieEntity> extends BipedModel<T> implements Class2801 {
    private static String[] field17431;
    private ModelRenderer field17445;

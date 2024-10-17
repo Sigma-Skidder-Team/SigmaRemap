@@ -29,7 +29,7 @@ public class LeashKnotEntity extends Class995 {
    }
 
    public LeashKnotEntity(World var1, BlockPos var2) {
-      super(EntityType.field41045, var1, var2);
+      super(EntityType.LEASH_KNOT, var1, var2);
       this.setPosition((double)var2.getX() + 0.5, (double)var2.getY() + 0.5, (double)var2.getZ() + 0.5);
       float var5 = 0.125F;
       float var6 = 0.1875F;

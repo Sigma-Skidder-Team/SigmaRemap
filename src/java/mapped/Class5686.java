@@ -10,9 +10,9 @@ import java.util.Map;
 public class Class5686 extends Class5685<AbstractHorseEntity, Class2856<AbstractHorseEntity>> {
    private static final Map<EntityType<?>, ResourceLocation> field25053 = Maps.newHashMap(
       ImmutableMap.of(
-         EntityType.field41108,
+         EntityType.ZOMBIE_HORSE,
          new ResourceLocation("textures/entity/horse/horse_zombie.png"),
-         EntityType.field41079,
+         EntityType.SKELETON_HORSE,
          new ResourceLocation("textures/entity/horse/horse_skeleton.png")
       )
    );

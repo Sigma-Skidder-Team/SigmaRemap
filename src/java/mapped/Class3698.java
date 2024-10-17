@@ -13,7 +13,7 @@ import java.util.Set;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-public class Class3698 extends Class3676<Class1046> {
+public class Class3698 extends Class3676<CreatureEntity> {
    private static String[] field19740;
    private final Class4913 field19741;
    private final Class8830<Class9378> field19742;
@@ -44,7 +44,7 @@ public class Class3698 extends Class3676<Class1046> {
       return var4.build();
    }
 
-   public boolean method12508(ServerWorld var1, Class1046 var2) {
+   public boolean method12508(ServerWorld var1, CreatureEntity var2) {
       if (this.field19743 && var2.isChild()) {
          return false;
       } else if (this.field19745 != 0L) {
@@ -55,7 +55,7 @@ public class Class3698 extends Class3676<Class1046> {
       }
    }
 
-   public void method12502(ServerWorld var1, Class1046 var2, long var3) {
+   public void method12502(ServerWorld var1, CreatureEntity var2, long var3) {
       this.field19745 = var3 + 20L + (long)var1.method6814().nextInt(20);
       Class1653 var7 = var1.method6951();
       this.field19746.long2ObjectEntrySet().removeIf(var2x -> !((Class8341)var2x.getValue()).method29246(var3));

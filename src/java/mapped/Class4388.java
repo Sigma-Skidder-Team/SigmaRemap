@@ -110,7 +110,7 @@ public class Class4388 {
                  new Class3740<>(var0x -> !var0x.method4623(), new Class3748<>(2, 1.0F)),
                  new Class3740<>(Class1034::method4623, new Class3748<>(4, 0.6F)),
                  new Class3693<>(
-               ImmutableList.of(Pair.of(new Class3738(EntityType.field41065, 8.0F), 1), Pair.of(new Class3718(0.6F, 2, 1), 1), Pair.of(new Class3675(10, 20), 1))
+               ImmutableList.of(Pair.of(new Class3738(EntityType.PIGLIN, 8.0F), 1), Pair.of(new Class3718(0.6F, 2, 1), 1), Pair.of(new Class3675(10, 20), 1))
             )
          ),
          Class8830.field39856
@@ -158,7 +158,7 @@ public class Class4388 {
       return new Class3693<Class1034>(
          ImmutableList.of(
             Pair.of(new Class3738(EntityType.PLAYER, 8.0F), 1),
-            Pair.of(new Class3738(EntityType.field41065, 8.0F), 1),
+            Pair.of(new Class3738(EntityType.PIGLIN, 8.0F), 1),
             Pair.of(new Class3738(8.0F), 1),
             Pair.of(new Class3675(30, 60), 1)
          )
@@ -169,7 +169,7 @@ public class Class4388 {
       return new Class3693<Class1034>(
          ImmutableList.of(
             Pair.of(new Class3718(0.6F), 2),
-            Pair.of(Class3696.<LivingEntity>method12551(EntityType.field41065, 8, Class8830.field39828, 0.6F, 2), 2),
+            Pair.of(Class3696.<LivingEntity>method12551(EntityType.PIGLIN, 8, Class8830.field39828, 0.6F, 2), 2),
             Pair.of(new Class3740<LivingEntity>(Class4388::method13874, new Class3694(0.6F, 3)), 2),
             Pair.of(new Class3675(30, 60), 1)
          )
@@ -347,7 +347,7 @@ public class Class4388 {
    }
 
    private static boolean method13825(LivingEntity var0, LivingEntity var1) {
-      return var1.getType() == EntityType.field41037 ? new Random(var0.world.getGameTime()).nextFloat() < 0.1F : false;
+      return var1.getType() == EntityType.HOGLIN ? new Random(var0.world.getGameTime()).nextFloat() < 0.1F : false;
    }
 
    public static boolean method13826(Class1034 var0, ItemStack var1) {
@@ -474,7 +474,7 @@ public class Class4388 {
             }
          });
          if (!var0.isChild()) {
-            if (var1.getType() == EntityType.field41037 && method13859(var0)) {
+            if (var1.getType() == EntityType.HOGLIN && method13859(var0)) {
                method13860(var0, var1);
                method13855(var0, var1);
             } else {
@@ -571,7 +571,7 @@ public class Class4388 {
 
    public static void method13846(Class1035 var0, LivingEntity var1) {
       method13842(var0).forEach(var1x -> {
-         if (var1.getType() != EntityType.field41037 || var1x.method4618() && ((Class1091)var1).method5089()) {
+         if (var1.getType() != EntityType.HOGLIN || var1x.method4618() && ((Class1091)var1).method5089()) {
             method13851(var1x, var1);
          }
       });
@@ -589,7 +589,7 @@ public class Class4388 {
       if (method13871(var1)) {
          var0.getBrain().method21405(Class8830.field39841);
          var0.getBrain().method21407(Class8830.field39849, var1.getUniqueID(), 600L);
-         if (var1.getType() == EntityType.field41037 && var0.method4618()) {
+         if (var1.getType() == EntityType.HOGLIN && var0.method4618()) {
             method13861(var0);
          }
 
@@ -644,7 +644,7 @@ public class Class4388 {
       if (var3.method21404(Class8830.field39837)) {
          LivingEntity var4 = var3.method21410(Class8830.field39837).get();
          EntityType<?> var5 = var4.getType();
-         if (var5 != EntityType.field41037) {
+         if (var5 != EntityType.HOGLIN) {
             return !method13880(var5) ? false : !var3.method21411(Class8830.field39865, var4);
          } else {
             return method13858(var0);
@@ -750,6 +750,6 @@ public class Class4388 {
    }
 
    public static boolean method13880(EntityType var0) {
-      return var0 == EntityType.field41110 || var0 == EntityType.field41106;
+      return var0 == EntityType.ZOMBIFIED_PIGLIN || var0 == EntityType.ZOGLIN;
    }
 }

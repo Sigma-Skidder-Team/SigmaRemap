@@ -41,13 +41,13 @@ public class Class905 extends ProjectileEntity {
    }
 
    public Class905(World var1, double var2, double var4, double var6, double var8, double var10, double var12) {
-      this(EntityType.field41076, var1);
+      this(EntityType.SHULKER_BULLET, var1);
       this.setLocationAndAngles(var2, var4, var6, this.rotationYaw, this.rotationPitch);
       this.setMotion(var8, var10, var12);
    }
 
    public Class905(World var1, LivingEntity var2, Entity var3, Direction.Axis var4) {
-      this(EntityType.field41076, var1);
+      this(EntityType.SHULKER_BULLET, var1);
       this.setShooter(var2);
       BlockPos var7 = var2.getPosition();
       double var8 = (double)var7.getX() + 0.5;

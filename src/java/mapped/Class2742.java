@@ -10,7 +10,7 @@ import javax.annotation.Nullable;
 public class Class2742 extends Class2736 {
    private static String[] field17269;
 
-   public Class2742(Class1046 var1, double var2, boolean var4) {
+   public Class2742(CreatureEntity var1, double var2, boolean var4) {
       super(var1, var2, 10, var4);
    }
 

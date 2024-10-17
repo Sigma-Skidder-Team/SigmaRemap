@@ -6,7 +6,7 @@ import net.optifine.Config;
 
 public class Class4144 extends Class4057 {
    public Class4144() {
-      super(EntityType.field41036, "guardian", 0.5F);
+      super(EntityType.GUARDIAN, "guardian", 0.5F);
    }
 
    @Override

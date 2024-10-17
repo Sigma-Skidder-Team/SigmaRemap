@@ -4,6 +4,9 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
+import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.nbt.CompoundNBT;
@@ -26,7 +29,7 @@ import java.util.Optional;
 import java.util.Random;
 import java.util.UUID;
 
-public class Class1057 extends Class1056 implements Class1008 {
+public class Class1057 extends Class1056 implements IMob {
    private static final UUID field5839 = UUID.fromString("7E0292F2-9434-48D5-A29F-9583AF7DF27F");
    private static final AttributeModifier field5840 = new AttributeModifier(field5839, "Covered armor bonus", 20.0, AttributeModifier.Operation.ADDITION);
    public static final DataParameter<Direction> field5841 = EntityDataManager.<Direction>createKey(Class1057.class, DataSerializers.field33403);
@@ -95,8 +98,8 @@ public class Class1057 extends Class1056 implements Class1008 {
       this.dataManager.register(field5844, (byte)16);
    }
 
-   public static Class7037 method4843() {
-      return MobEntity.method4220().method21849(Attributes.field42105, 30.0);
+   public static MutableAttribute method4843() {
+      return MobEntity.method4220().method21849(Attributes.MAX_HEALTH, 30.0);
    }
 
    @Override
@@ -388,11 +391,11 @@ public class Class1057 extends Class1056 implements Class1008 {
 
    public void method4852(int var1) {
       if (!this.world.isRemote) {
-         this.getAttribute(Attributes.field42113).method38670(field5840);
+         this.getAttribute(Attributes.ARMOR).removeModifier(field5840);
          if (var1 != 0) {
             this.playSound(SoundEvents.field27052, 1.0F, 1.0F);
          } else {
-            this.getAttribute(Attributes.field42113).method38668(field5840);
+            this.getAttribute(Attributes.ARMOR).method38668(field5840);
             this.playSound(SoundEvents.field27048, 1.0F, 1.0F);
          }
       }

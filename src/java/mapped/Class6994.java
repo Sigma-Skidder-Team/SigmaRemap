@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.Blocks;
+import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -18,8 +19,8 @@ public class Class6994 extends Class6991 {
    }
 
    @Override
-   public boolean method21680(Class2163 var1) {
-      return var1 != Class2163.field14190 && var1 != Class2163.field14196 && var1 != Class2163.field14195 ? super.method21680(var1) : true;
+   public boolean method21680(PathNodeType var1) {
+      return var1 != PathNodeType.LAVA && var1 != PathNodeType.DAMAGE_FIRE && var1 != PathNodeType.DANGER_FIRE ? super.method21680(var1) : true;
    }
 
    @Override

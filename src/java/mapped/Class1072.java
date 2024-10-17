@@ -6,6 +6,8 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
@@ -48,8 +50,8 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
       this.field5600.addGoal(8, new Class2668(this));
    }
 
-   public static Class7037 method4989() {
-      return MobEntity.method4220().method21849(Attributes.field42105, 10.0).method21849(Attributes.MOVEMENT_SPEED, 0.25);
+   public static MutableAttribute method4989() {
+      return MobEntity.method4220().method21849(Attributes.MAX_HEALTH, 10.0).method21849(Attributes.MOVEMENT_SPEED, 0.25);
    }
 
    @Nullable
@@ -200,7 +202,7 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
       if (var1.method6997() == Difficulty.PEACEFUL) {
          super.method3353(var1, var2);
       } else {
-         ZombifiedPiglinEntity var5 = EntityType.field41110.create(var1);
+         ZombifiedPiglinEntity var5 = EntityType.ZOMBIFIED_PIGLIN.create(var1);
          var5.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.field37815));
          var5.setLocationAndAngles(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
          var5.method4302(this.method4305());
@@ -237,7 +239,7 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
    }
 
    public Class1072 method4389(ServerWorld var1, Class1045 var2) {
-      return EntityType.field41064.create(var1);
+      return EntityType.PIG.create(var1);
    }
 
    @Override

@@ -17,6 +17,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.ai.attributes.AttributeModifierManager;
 import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -218,7 +219,7 @@ public class Class6987 {
       if (var4 != null) {
          return var4;
       } else {
-         throw field30230.create(var0.getName(), new TranslationTextComponent(var1.method15032()));
+         throw field30230.create(var0.getName(), new TranslationTextComponent(var1.getAttributeName()));
       }
    }
 
@@ -232,10 +233,10 @@ public class Class6987 {
 
    private static LivingEntity method21613(Entity var0, Attribute var1) throws CommandSyntaxException {
       LivingEntity var4 = method21612(var0);
-      if (var4.getAttributeManager().method33381(var1)) {
+      if (var4.getAttributeManager().hasAttributeInstance(var1)) {
          return var4;
       } else {
-         throw field30230.create(var0.getName(), new TranslationTextComponent(var1.method15032()));
+         throw field30230.create(var0.getName(), new TranslationTextComponent(var1.getAttributeName()));
       }
    }
 
@@ -243,7 +244,7 @@ public class Class6987 {
       LivingEntity var7 = method21613(var1, var2);
       double var8 = var7.getAttributeValue(var2);
       var0.method20179(
-         new TranslationTextComponent("commands.attribute.value.get.success", new TranslationTextComponent(var2.method15032()), var1.getName(), var8), false
+         new TranslationTextComponent("commands.attribute.value.get.success", new TranslationTextComponent(var2.getAttributeName()), var1.getName(), var8), false
       );
       return (int)(var8 * var3);
    }
@@ -252,7 +253,7 @@ public class Class6987 {
       LivingEntity var7 = method21613(var1, var2);
       double var8 = var7.method3087(var2);
       var0.method20179(
-         new TranslationTextComponent("commands.attribute.base_value.get.success", new TranslationTextComponent(var2.method15032()), var1.getName(), var8),
+         new TranslationTextComponent("commands.attribute.base_value.get.success", new TranslationTextComponent(var2.getAttributeName()), var1.getName(), var8),
          false
       );
       return (int)(var8 * var3);
@@ -261,24 +262,24 @@ public class Class6987 {
    private static int method21616(CommandSource var0, Entity var1, Attribute var2, UUID var3, double var4) throws CommandSyntaxException {
       LivingEntity var8 = method21613(var1, var2);
       AttributeModifierManager var9 = var8.getAttributeManager();
-      if (var9.method33382(var2, var3)) {
-         double var10 = var9.method33385(var2, var3);
+      if (var9.hasModifier(var2, var3)) {
+         double var10 = var9.getModifierValue(var2, var3);
          var0.method20179(
             new TranslationTextComponent(
-               "commands.attribute.modifier.value.get.success", var3, new TranslationTextComponent(var2.method15032()), var1.getName(), var10
+               "commands.attribute.modifier.value.get.success", var3, new TranslationTextComponent(var2.getAttributeName()), var1.getName(), var10
             ),
             false
          );
          return (int)(var10 * var4);
       } else {
-         throw field30231.create(var1.getName(), new TranslationTextComponent(var2.method15032()), var3);
+         throw field30231.create(var1.getName(), new TranslationTextComponent(var2.getAttributeName()), var3);
       }
    }
 
    private static int method21617(CommandSource var0, Entity var1, Attribute var2, double var3) throws CommandSyntaxException {
       method21611(var1, var2).method38661(var3);
       var0.method20179(
-         new TranslationTextComponent("commands.attribute.base_value.set.success", new TranslationTextComponent(var2.method15032()), var1.getName(), var3),
+         new TranslationTextComponent("commands.attribute.base_value.set.success", new TranslationTextComponent(var2.getAttributeName()), var1.getName(), var3),
          false
       );
       return 1;
@@ -290,23 +291,23 @@ public class Class6987 {
       if (!var10.method38665(var11)) {
          var10.method38668(var11);
          var0.method20179(
-            new TranslationTextComponent("commands.attribute.modifier.add.success", var3, new TranslationTextComponent(var2.method15032()), var1.getName()),
+            new TranslationTextComponent("commands.attribute.modifier.add.success", var3, new TranslationTextComponent(var2.getAttributeName()), var1.getName()),
             false
          );
          return 1;
       } else {
-         throw field30232.create(var1.getName(), new TranslationTextComponent(var2.method15032()), var3);
+         throw field30232.create(var1.getName(), new TranslationTextComponent(var2.getAttributeName()), var3);
       }
    }
 
    private static int method21619(CommandSource var0, Entity var1, Attribute var2, UUID var3) throws CommandSyntaxException {
       ModifiableAttributeInstance var6 = method21611(var1, var2);
       if (!var6.method38672(var3)) {
-         throw field30231.create(var1.getName(), new TranslationTextComponent(var2.method15032()), var3);
+         throw field30231.create(var1.getName(), new TranslationTextComponent(var2.getAttributeName()), var3);
       } else {
          var0.method20179(
             new TranslationTextComponent(
-               "commands.attribute.modifier.remove.success", var3, new TranslationTextComponent(var2.method15032()), var1.getName()
+               "commands.attribute.modifier.remove.success", var3, new TranslationTextComponent(var2.getAttributeName()), var1.getName()
             ),
             false
          );

@@ -7,7 +7,7 @@ import java.util.EnumSet;
 
 public class Class2736 extends Class2595 {
    private static String[] field17257;
-   public final Class1046 field17258;
+   public final CreatureEntity field17258;
    public double field17259;
    public double field17260;
    public double field17261;
@@ -16,15 +16,15 @@ public class Class2736 extends Class2595 {
    public boolean field17264;
    private boolean field17265;
 
-   public Class2736(Class1046 var1, double var2) {
+   public Class2736(CreatureEntity var1, double var2) {
       this(var1, var2, 120);
    }
 
-   public Class2736(Class1046 var1, double var2, int var4) {
+   public Class2736(CreatureEntity var1, double var2, int var4) {
       this(var1, var2, var4, true);
    }
 
-   public Class2736(Class1046 var1, double var2, int var4, boolean var5) {
+   public Class2736(CreatureEntity var1, double var2, int var4, boolean var5) {
       this.field17258 = var1;
       this.field17262 = var2;
       this.field17263 = var4;

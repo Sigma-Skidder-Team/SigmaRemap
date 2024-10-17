@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 public class Class4075 extends Class4071 {
    public Class4075() {
-      super(EntityType.field41057, "mule", 0.75F);
+      super(EntityType.MULE, "mule", 0.75F);
    }
 
    @Override

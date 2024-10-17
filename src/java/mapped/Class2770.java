@@ -8,7 +8,7 @@ import java.util.function.Predicate;
 
 public class Class2770<T extends LivingEntity> extends Class2595 {
    private static String[] field17348;
-   public final Class1046 field17349;
+   public final CreatureEntity field17349;
    private final double field17350;
    private final double field17351;
    public T field17352;
@@ -20,11 +20,11 @@ public class Class2770<T extends LivingEntity> extends Class2595 {
    public final Predicate<LivingEntity> field17358;
    private final Class8522 field17359;
 
-   public Class2770(Class1046 var1, Class<T> var2, float var3, double var4, double var6) {
+   public Class2770(CreatureEntity var1, Class<T> var2, float var3, double var4, double var6) {
       this(var1, var2, var0 -> true, var3, var4, var6, Class8088.field34761::test);
    }
 
-   public Class2770(Class1046 var1, Class<T> var2, Predicate<LivingEntity> var3, float var4, double var5, double var7, Predicate<LivingEntity> var9) {
+   public Class2770(CreatureEntity var1, Class<T> var2, Predicate<LivingEntity> var3, float var4, double var5, double var7, Predicate<LivingEntity> var9) {
       this.field17349 = var1;
       this.field17356 = var2;
       this.field17357 = var3;
@@ -37,7 +37,7 @@ public class Class2770<T extends LivingEntity> extends Class2595 {
       this.field17359 = new Class8522().method30203((double)var4).method30209(var9.and(var3));
    }
 
-   public Class2770(Class1046 var1, Class<T> var2, float var3, double var4, double var6, Predicate<LivingEntity> var8) {
+   public Class2770(CreatureEntity var1, Class<T> var2, float var3, double var4, double var6, Predicate<LivingEntity> var8) {
       this(var1, var2, var0 -> true, var3, var4, var6, var8);
    }
 

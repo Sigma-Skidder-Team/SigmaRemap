@@ -4,6 +4,8 @@ import mapped.*;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
@@ -44,8 +46,8 @@ public class SquidEntity extends WaterMobEntity {
       this.field5600.addGoal(1, new Class2726(this));
    }
 
-   public static Class7037 method4836() {
-      return MobEntity.method4220().method21849(Attributes.field42105, 10.0);
+   public static MutableAttribute method4836() {
+      return MobEntity.method4220().method21849(Attributes.MAX_HEALTH, 10.0);
    }
 
    @Override

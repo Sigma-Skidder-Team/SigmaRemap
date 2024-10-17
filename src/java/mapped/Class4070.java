@@ -5,7 +5,7 @@ import net.minecraft.entity.EntityType;
 
 public class Class4070 extends Class4057 {
    public Class4070() {
-      super(EntityType.field41062, "parrot", 0.3F);
+      super(EntityType.PARROT, "parrot", 0.3F);
    }
 
    @Override

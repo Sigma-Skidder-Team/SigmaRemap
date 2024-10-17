@@ -4,6 +4,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.entity.passive.WaterMobEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
@@ -129,8 +131,8 @@ public class Class1048 extends WaterMobEntity {
       this.field5601.addGoal(1, new HurtByTargetGoal(this, Class1105.class).method10918());
    }
 
-   public static Class7037 method4782() {
-      return MobEntity.method4220().method21849(Attributes.field42105, 10.0).method21849(Attributes.MOVEMENT_SPEED, 1.2F).method21849(Attributes.ATTACK_DAMAGE, 3.0);
+   public static MutableAttribute method4782() {
+      return MobEntity.method4220().method21849(Attributes.MAX_HEALTH, 10.0).method21849(Attributes.MOVEMENT_SPEED, 1.2F).method21849(Attributes.ATTACK_DAMAGE, 3.0);
    }
 
    @Override

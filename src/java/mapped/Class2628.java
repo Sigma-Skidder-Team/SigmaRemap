@@ -6,7 +6,7 @@ import net.minecraft.world.IWorldReader;
 import java.util.EnumSet;
 
 public abstract class Class2628 extends Class2595 {
-   public final Class1046 field16928;
+   public final CreatureEntity field16928;
    public final double field16929;
    public int field16930;
    public int field16931;
@@ -17,11 +17,11 @@ public abstract class Class2628 extends Class2595 {
    private final int field16936;
    public int field16937;
 
-   public Class2628(Class1046 var1, double var2, int var4) {
+   public Class2628(CreatureEntity var1, double var2, int var4) {
       this(var1, var2, var4, 1);
    }
 
-   public Class2628(Class1046 var1, double var2, int var4, int var5) {
+   public Class2628(CreatureEntity var1, double var2, int var4, int var5) {
       this.field16928 = var1;
       this.field16929 = var2;
       this.field16935 = var4;
@@ -41,7 +41,7 @@ public abstract class Class2628 extends Class2595 {
       }
    }
 
-   public int method10833(Class1046 var1) {
+   public int method10833(CreatureEntity var1) {
       return 200 + var1.getRNG().nextInt(200);
    }
 

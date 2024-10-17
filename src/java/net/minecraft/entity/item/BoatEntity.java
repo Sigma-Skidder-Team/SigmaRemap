@@ -66,7 +66,7 @@ public class BoatEntity extends Entity {
    }
 
    public BoatEntity(World var1, double var2, double var4, double var6) {
-      this(EntityType.field41011, var1);
+      this(EntityType.BOAT, var1);
       this.setPosition(var2, var4, var6);
       this.setMotion(Vector3d.ZERO);
       this.prevPosX = var2;

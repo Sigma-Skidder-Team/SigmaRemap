@@ -1,18 +1,18 @@
 package net.minecraft.entity.passive;
 
-import mapped.Class1046;
+import mapped.CreatureEntity;
 import net.minecraft.world.IWorldReader;
-import mapped.Class2163;
+import net.minecraft.pathfinding.PathNodeType;
 import mapped.CreatureAttribute;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 
-public abstract class WaterMobEntity extends Class1046 {
+public abstract class WaterMobEntity extends CreatureEntity {
    public WaterMobEntity(EntityType<? extends WaterMobEntity> var1, World var2) {
       super(var1, var2);
-      this.method4224(Class2163.field14191, 0.0F);
+      this.method4224(PathNodeType.WATER, 0.0F);
    }
 
    @Override

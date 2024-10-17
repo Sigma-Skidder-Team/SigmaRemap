@@ -62,40 +62,40 @@ public class Class2831 implements Consumer<Consumer<Advancement>> {
       }
    );
    private static final EntityType<?>[] field17611 = new EntityType[]{
-      EntityType.field41010,
-      EntityType.field41013,
-      EntityType.field41017,
-      EntityType.field41021,
-      EntityType.field41022,
+      EntityType.BLAZE,
+      EntityType.CAVE_SPIDER,
+      EntityType.CREEPER,
+      EntityType.DROWNED,
+      EntityType.ELDER_GUARDIAN,
       EntityType.field41024,
       EntityType.field41025,
       EntityType.field41026,
       EntityType.field41027,
-      EntityType.field41034,
-      EntityType.field41036,
-      EntityType.field41037,
-      EntityType.field41039,
-      EntityType.field41049,
-      EntityType.field41063,
-      EntityType.field41065,
-      EntityType.field41066,
-      EntityType.field41067,
-      EntityType.field41072,
-      EntityType.field41075,
-      EntityType.field41077,
-      EntityType.field41078,
-      EntityType.field41080,
-      EntityType.field41085,
-      EntityType.field41087,
-      EntityType.field41097,
-      EntityType.field41099,
-      EntityType.field41101,
-      EntityType.field41103,
-      EntityType.field41102,
-      EntityType.field41106,
-      EntityType.field41109,
-      EntityType.field41107,
-      EntityType.field41110
+      EntityType.GHAST,
+      EntityType.GUARDIAN,
+      EntityType.HOGLIN,
+      EntityType.HUSK,
+      EntityType.MAGMA_CUBE,
+      EntityType.PHANTOM,
+      EntityType.PIGLIN,
+      EntityType.PIGLIN_BRUTE,
+      EntityType.PILLAGER,
+      EntityType.RAVAGER,
+      EntityType.SHULKER,
+      EntityType.SILVERFISH,
+      EntityType.SKELETON,
+      EntityType.SLIME,
+      EntityType.SPIDER,
+      EntityType.STRAY,
+      EntityType.VEX,
+      EntityType.VINDICATOR,
+      EntityType.WITCH,
+      EntityType.WITHER_SKELETON,
+      EntityType.WITHER,
+      EntityType.ZOGLIN,
+      EntityType.ZOMBIE_VILLAGER,
+      EntityType.ZOMBIE,
+      EntityType.ZOMBIFIED_PIGLIN
    };
 
    public void accept(Consumer<Advancement> var1) {
@@ -220,7 +220,7 @@ public class Class2831 implements Consumer<Consumer<Advancement>> {
             "shot_trident",
             Class4469.method14120(
                Class9024.method33410()
-                  .method33412(Class9714.method38056().method38057(true).method38059(Class7552.method24700().method24701(EntityType.field41093)))
+                  .method33412(Class9714.method38056().method38057(true).method38059(Class7552.method24700().method24701(EntityType.TRIDENT)))
             )
          )
          .method27317(var1, "adventure/throw_trident");
@@ -236,7 +236,7 @@ public class Class2831 implements Consumer<Consumer<Advancement>> {
             true,
             false
          )
-         .method27312("struck_villager", Class4493.method14169(Class7552.method24700().method24701(EntityType.field41098).method24717()))
+         .method27312("struck_villager", Class4493.method14169(Class7552.method24700().method24701(EntityType.VILLAGER).method24717()))
          .method27317(var1, "adventure/very_very_frightening");
       Class7999.method27304()
          .method27305(var6)
@@ -250,7 +250,7 @@ public class Class2831 implements Consumer<Consumer<Advancement>> {
             true,
             false
          )
-         .method27312("summoned_golem", Class4456.method14090(Class7552.method24700().method24701(EntityType.field41041)))
+         .method27312("summoned_golem", Class4456.method14090(Class7552.method24700().method24701(EntityType.IRON_GOLEM)))
          .method27317(var1, "adventure/summon_iron_golem");
       Class7999.method27304()
          .method27305(var8)
@@ -268,7 +268,7 @@ public class Class2831 implements Consumer<Consumer<Advancement>> {
          .method27312(
             "killed_skeleton",
             Class4476.method14136(
-               Class7552.method24700().method24701(EntityType.field41078).method24705(Class8884.method32326(Class8841.method32022(50.0F))),
+               Class7552.method24700().method24701(EntityType.SKELETON).method24705(Class8884.method32326(Class8841.method32022(50.0F))),
                Class9714.method38056().method38057(true)
             )
          )
@@ -313,7 +313,7 @@ public class Class2831 implements Consumer<Consumer<Advancement>> {
             true,
             false
          )
-         .method27312("kill_pillager", Class4467.method14115(Class7552.method24700().method24701(EntityType.field41067)))
+         .method27312("kill_pillager", Class4467.method14115(Class7552.method24700().method24701(EntityType.PILLAGER)))
          .method27317(var1, "adventure/whos_the_pillager_now");
       Class7999.method27304()
          .method27305(var10)
@@ -330,7 +330,7 @@ public class Class2831 implements Consumer<Consumer<Advancement>> {
          .method27310(Class9182.method34343(65))
          .method27312(
             "two_birds",
-            Class4467.method14115(Class7552.method24700().method24701(EntityType.field41063), Class7552.method24700().method24701(EntityType.field41063))
+            Class4467.method14115(Class7552.method24700().method24701(EntityType.PHANTOM), Class7552.method24700().method24701(EntityType.PHANTOM))
          )
          .method27317(var1, "adventure/two_birds_one_arrow");
       Class7999.method27304()

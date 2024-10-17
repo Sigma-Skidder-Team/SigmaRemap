@@ -5,7 +5,7 @@ import net.minecraft.entity.EntityType;
 
 public class Class4094 extends Class4057 {
    public Class4094() {
-      super(EntityType.field41098, "villager", 0.5F);
+      super(EntityType.VILLAGER, "villager", 0.5F);
    }
 
    public Class4094(EntityType var1, String var2, float var3) {

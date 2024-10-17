@@ -32,7 +32,7 @@ public class Class7236 {
    }
 
    public static void method22725(World var0, double var1, double var3, double var5, ItemStack var7) {
-      double var10 = (double) EntityType.field41042.method33213();
+      double var10 = (double) EntityType.ITEM.method33213();
       double var12 = 1.0 - var10;
       double var14 = var10 / 2.0;
       double var16 = Math.floor(var1) + field31089.nextDouble() * var12 + var14;

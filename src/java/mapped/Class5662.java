@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.monster.ZombieEntity;
 import net.minecraft.util.ResourceLocation;
 
 public abstract class Class5662<T extends ZombieEntity, M extends Class2794<T>> extends Class5661<T, M> {

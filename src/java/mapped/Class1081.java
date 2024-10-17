@@ -2,6 +2,9 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
+import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -18,7 +21,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Collection;
 
-public class Class1081 extends Class1009 implements Class1080 {
+public class Class1081 extends MonsterEntity implements Class1080 {
    private static final DataParameter<Integer> field5938 = EntityDataManager.<Integer>createKey(Class1081.class, DataSerializers.VARINT);
    private static final DataParameter<Boolean> field5939 = EntityDataManager.<Boolean>createKey(Class1081.class, DataSerializers.field33398);
    private static final DataParameter<Boolean> field5940 = EntityDataManager.<Boolean>createKey(Class1081.class, DataSerializers.field33398);
@@ -46,8 +49,8 @@ public class Class1081 extends Class1009 implements Class1080 {
       this.field5601.addGoal(2, new HurtByTargetGoal(this));
    }
 
-   public static Class7037 method5018() {
-      return Class1009.method4343().method21849(Attributes.MOVEMENT_SPEED, 0.25);
+   public static MutableAttribute method5018() {
+      return MonsterEntity.method4343().method21849(Attributes.MOVEMENT_SPEED, 0.25);
    }
 
    @Override

@@ -3,11 +3,14 @@ package mapped;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
+import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
-public class Class1099 extends Class1009 {
+public class Class1099 extends MonsterEntity {
    private static String[] field6050;
 
    public Class1099(EntityType<? extends Class1099> var1, World var2) {
@@ -19,12 +22,12 @@ public class Class1099 extends Class1009 {
       return 10.440001F;
    }
 
-   public static Class7037 method5268() {
-      return Class1009.method4343().method21849(Attributes.field42105, 100.0).method21849(Attributes.MOVEMENT_SPEED, 0.5).method21849(Attributes.ATTACK_DAMAGE, 50.0);
+   public static MutableAttribute method5268() {
+      return MonsterEntity.method4343().method21849(Attributes.MAX_HEALTH, 100.0).method21849(Attributes.MOVEMENT_SPEED, 0.5).method21849(Attributes.ATTACK_DAMAGE, 50.0);
    }
 
    @Override
-   public float method4339(BlockPos var1, IWorldReader var2) {
+   public float getBlockPathWeight(BlockPos var1, IWorldReader var2) {
       return var2.method7009(var1) - 0.5F;
    }
 }

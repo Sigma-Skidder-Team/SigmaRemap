@@ -24,7 +24,7 @@ public class Class250<T extends PlayerEntity> extends Class219<T, PlayerModel<T>
 
    private void method840(MatrixStack var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, boolean var9) {
       CompoundNBT var12 = !var9 ? var4.method2971() : var4.method2969();
-      EntityType.method33199(var12.getString("id")).filter(var0 -> var0 == EntityType.field41062).ifPresent(var11 -> {
+      EntityType.method33199(var12.getString("id")).filter(var0 -> var0 == EntityType.PARROT).ifPresent(var11 -> {
          Entity var14 = Config.method26874().field1000;
          if (var4 instanceof AbstractClientPlayerEntity) {
             AbstractClientPlayerEntity var15 = (AbstractClientPlayerEntity)var4;

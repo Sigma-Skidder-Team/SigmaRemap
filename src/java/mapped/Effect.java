@@ -11,6 +11,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.ai.attributes.AttributeModifierManager;
 import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.DamageSource;
@@ -145,7 +146,7 @@ public class Effect {
       for (Entry var7 : this.field30707.entrySet()) {
          ModifiableAttributeInstance var8 = var2.createInstanceIfAbsent((Attribute)var7.getKey());
          if (var8 != null) {
-            var8.method38670((AttributeModifier)var7.getValue());
+            var8.removeModifier((AttributeModifier)var7.getValue());
          }
       }
    }
@@ -155,7 +156,7 @@ public class Effect {
          ModifiableAttributeInstance var8 = var2.createInstanceIfAbsent((Attribute)var7.getKey());
          if (var8 != null) {
             AttributeModifier var9 = (AttributeModifier)var7.getValue();
-            var8.method38670(var9);
+            var8.removeModifier(var9);
             var8.method38668(new AttributeModifier(var9.getID(), this.getName() + " " + var3, this.getAttributeModifierAmount(var3, var9), var9.getOperation()));
          }
       }

@@ -3,7 +3,7 @@ package lol;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import mapped.Attributes;
+import net.minecraft.entity.ai.attributes.Attributes;
 import mapped.Effects;
 import mapped.MovementInput;
 import mapped.RotationHelper;
@@ -20,7 +20,7 @@ public class MovementUtils {
       double var2 = 0.2873;
       float var4 = 1.0F;
       ModifiableAttributeInstance var5 = mc.player.getAttribute(Attributes.MOVEMENT_SPEED);
-      var4 = (float)((double)var4 * ((var5.method38674() / (double) mc.player.abilities.getWalkSpeed() + 1.0) / 2.0));
+      var4 = (float)((double)var4 * ((var5.getValue() / (double) mc.player.abilities.getWalkSpeed() + 1.0) / 2.0));
       if (mc.player.isSprinting()) {
          var4 = (float)((double)var4 - 0.15);
       }

@@ -5,7 +5,7 @@ import net.minecraft.entity.EntityType;
 
 public class Class4093 extends Class4057 {
    public Class4093() {
-      super(EntityType.field41047, "llama", 0.7F);
+      super(EntityType.LLAMA, "llama", 0.7F);
    }
 
    @Override

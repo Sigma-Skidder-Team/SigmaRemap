@@ -38,7 +38,7 @@ public class ItemFrameEntity extends Class995 {
    }
 
    public ItemFrameEntity(World var1, BlockPos var2, net.minecraft.util.Direction var3) {
-      super(EntityType.field41043, var1, var2);
+      super(EntityType.ITEM_FRAME, var1, var2);
       this.method4077(var3);
    }
 

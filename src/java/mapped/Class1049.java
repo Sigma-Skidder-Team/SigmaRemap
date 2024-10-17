@@ -6,6 +6,8 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.entity.passive.WaterMobEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -39,8 +41,8 @@ public abstract class Class1049 extends WaterMobEntity {
       return var2.field39969 * 0.65F;
    }
 
-   public static Class7037 method4791() {
-      return MobEntity.method4220().method21849(Attributes.field42105, 3.0);
+   public static MutableAttribute method4791() {
+      return MobEntity.method4220().method21849(Attributes.MAX_HEALTH, 3.0);
    }
 
    @Override

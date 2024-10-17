@@ -5,7 +5,7 @@ import net.minecraft.entity.EntityType;
 
 public class Class4122 extends Class4117 {
    public Class4122() {
-      super(EntityType.field41078, "skeleton", 0.7F);
+      super(EntityType.SKELETON, "skeleton", 0.7F);
    }
 
    @Override

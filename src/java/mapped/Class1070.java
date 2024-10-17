@@ -7,6 +7,9 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
+import net.minecraft.entity.monster.ZombieEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.inventory.EquipmentSlotType;
@@ -16,6 +19,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.*;
 import net.minecraft.util.Direction;
@@ -47,10 +51,10 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
    public Class1070(EntityType<? extends Class1070> var1, World var2) {
       super(var1, var2);
       this.preventEntitySpawning = true;
-      this.method4224(Class2163.field14191, -1.0F);
-      this.method4224(Class2163.field14190, 0.0F);
-      this.method4224(Class2163.field14195, 0.0F);
-      this.method4224(Class2163.field14196, 0.0F);
+      this.method4224(PathNodeType.WATER, -1.0F);
+      this.method4224(PathNodeType.LAVA, 0.0F);
+      this.method4224(PathNodeType.DANGER_FIRE, 0.0F);
+      this.method4224(PathNodeType.DAMAGE_FIRE, 0.0F);
    }
 
    public static boolean method4976(EntityType<Class1070> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
@@ -299,8 +303,8 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
       }
    }
 
-   public static Class7037 method4986() {
-      return MobEntity.method4220().method21849(Attributes.MOVEMENT_SPEED, 0.175F).method21849(Attributes.field42106, 16.0);
+   public static MutableAttribute method4986() {
+      return MobEntity.method4220().method21849(Attributes.MOVEMENT_SPEED, 0.175F).method21849(Attributes.FOLLOW_RANGE, 16.0);
    }
 
    @Override
@@ -339,7 +343,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
    }
 
    @Override
-   public float method4339(BlockPos var1, IWorldReader var2) {
+   public float getBlockPathWeight(BlockPos var1, IWorldReader var2) {
       if (!var2.getBlockState(var1).method23449().method23486(FluidTags.field40470)) {
          return !this.isInLava() ? 0.0F : Float.NEGATIVE_INFINITY;
       } else {
@@ -348,7 +352,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
    }
 
    public Class1070 method4389(ServerWorld var1, Class1045 var2) {
-      return EntityType.field41088.create(var1);
+      return EntityType.STRIDER.create(var1);
    }
 
    @Override
@@ -412,12 +416,12 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
             if (this.rand.nextInt(10) != 0) {
                var8 = new Class5097(0.5F);
             } else {
-               Class1045 var9 = EntityType.field41088.create(var1.method6970());
+               Class1045 var9 = EntityType.STRIDER.create(var1.method6970());
                var9.method4770(-24000);
                var8 = this.method4987(var1, var2, var9, (Class5093)null);
             }
          } else {
-            MobEntity var10 = EntityType.field41110.create(var1.method6970());
+            MobEntity var10 = EntityType.ZOMBIFIED_PIGLIN.create(var1.method6970());
             var8 = this.method4987(var1, var2, var10, new Class5096(ZombieEntity.method4661(this.rand), false));
             var10.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.field38065));
             this.method4942((Class2266)null);

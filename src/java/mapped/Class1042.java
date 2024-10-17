@@ -11,6 +11,8 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.entity.merchant.villager.VillagerTrades;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -191,8 +193,8 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
       }
    }
 
-   public static Class7037 method2997() {
-      return MobEntity.method4220().method21849(Attributes.MOVEMENT_SPEED, 0.5).method21849(Attributes.field42106, 48.0);
+   public static MutableAttribute method2997() {
+      return MobEntity.method4220().method21849(Attributes.MOVEMENT_SPEED, 0.5).method21849(Attributes.FOLLOW_RANGE, 48.0);
    }
 
    public boolean method4680() {
@@ -698,7 +700,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
          var7 = Class9564.method37068(var1.method7178(this.getPosition()));
       }
 
-      Class1042 var8 = new Class1042(EntityType.field41098, var1, var7);
+      Class1042 var8 = new Class1042(EntityType.VILLAGER, var1, var7);
       var8.method4276(var1, var1.method6807(var8.getPosition()), Class2202.field14395, (Class5093)null, (CompoundNBT)null);
       return var8;
    }
@@ -709,7 +711,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
          super.method3353(var1, var2);
       } else {
          LOGGER.info("Villager {} was struck by lightning {}.", this, var2);
-         Class1027 var5 = EntityType.field41101.create(var1);
+         Class1027 var5 = EntityType.WITCH.create(var1);
          var5.setLocationAndAngles(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
          var5.method4276(var1, var1.method6807(var5.getPosition()), Class2202.field14399, (Class5093)null, (CompoundNBT)null);
          var5.method4302(this.method4305());
@@ -830,7 +832,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
          double var8 = (double)(var1.rand.nextInt(16) - 8);
          BlockPos var10 = this.method4719(var4, var6, var8);
          if (var10 != null) {
-            Class1058 var11 = EntityType.field41041
+            Class1058 var11 = EntityType.IRON_GOLEM
                .method33202(var1, (CompoundNBT)null, (ITextComponent)null, (PlayerEntity)null, var10, Class2202.field14396, false, false);
             if (var11 != null) {
                if (var11.method4265(var1, Class2202.field14396) && var11.method4266(var1)) {

@@ -4,15 +4,16 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.entity.monster.EndermanEntity;
 
-public class Class253 extends Class219<Class1010, Class2799<Class1010>> {
+public class Class253 extends Class219<EndermanEntity, Class2799<EndermanEntity>> {
    private static String[] field909;
 
-   public Class253(Class5714<Class1010, Class2799<Class1010>> var1) {
+   public Class253(Class5714<EndermanEntity, Class2799<EndermanEntity>> var1) {
       super(var1);
    }
 
-   public void method820(MatrixStack var1, Class7733 var2, int var3, Class1010 var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void method820(MatrixStack var1, Class7733 var2, int var3, EndermanEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       BlockState var13 = var4.method4357();
       if (var13 != null) {
          var1.push();

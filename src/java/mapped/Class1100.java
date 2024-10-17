@@ -1,6 +1,9 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
+import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
@@ -19,7 +22,7 @@ import net.minecraft.world.World;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class Class1100 extends Class1009 {
+public class Class1100 extends MonsterEntity {
    public static final DataParameter<Byte> field6051 = EntityDataManager.<Byte>createKey(Class1100.class, DataSerializers.field33390);
    private MobEntity field6052;
    private BlockPos field6053;
@@ -63,8 +66,8 @@ public class Class1100 extends Class1009 {
       this.field5601.addGoal(3, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
    }
 
-   public static Class7037 method5269() {
-      return Class1009.method4343().method21849(Attributes.field42105, 14.0).method21849(Attributes.ATTACK_DAMAGE, 4.0);
+   public static MutableAttribute method5269() {
+      return MonsterEntity.method4343().method21849(Attributes.MAX_HEALTH, 14.0).method21849(Attributes.ATTACK_DAMAGE, 4.0);
    }
 
    @Override

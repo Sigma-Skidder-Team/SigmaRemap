@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.monster.ZombieEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
@@ -11,7 +12,7 @@ public class Class2633 extends Class2632 {
    private static String[] field16944;
    public final ZombieEntity field16948;
 
-   public Class2633(ZombieEntity var1, Class1046 var2, double var3, int var5) {
+   public Class2633(ZombieEntity var1, CreatureEntity var2, double var3, int var5) {
       super(Blocks.field36964, var2, var3, var5);
       this.field16948 = var1;
    }

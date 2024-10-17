@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.pathfinding.PathNodeType;
 
 public class Class7175 extends Class7176 {
    private static String[] field30843;
@@ -36,7 +37,7 @@ public class Class7175 extends Class7176 {
       var3.field30857 = var0.readFloat();
       var3.field30858 = var0.readFloat();
       var3.field30856 = var0.readBoolean();
-      var3.field30859 = Class2163.values()[var0.readInt()];
+      var3.field30859 = PathNodeType.values()[var0.readInt()];
       var3.field30854 = var0.readFloat();
       return var3;
    }

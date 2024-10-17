@@ -5,7 +5,10 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.entity.item.BoatEntity;
+import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.DamageSource;
@@ -58,14 +61,14 @@ public class Class1029 extends Class1026 {
       this.field5600.method20010(Class2240.field14660, var3);
    }
 
-   public static Class7037 method4581() {
-      return Class1009.method4343()
-         .method21849(Attributes.field42105, 100.0)
+   public static MutableAttribute method4581() {
+      return MonsterEntity.method4343()
+         .method21849(Attributes.MAX_HEALTH, 100.0)
          .method21849(Attributes.MOVEMENT_SPEED, 0.3)
-         .method21849(Attributes.field42107, 0.75)
+         .method21849(Attributes.KNOCKBACK_RESISTANCE, 0.75)
          .method21849(Attributes.ATTACK_DAMAGE, 12.0)
-         .method21849(Attributes.field42111, 1.5)
-         .method21849(Attributes.field42106, 32.0);
+         .method21849(Attributes.ATTACK_KNOCKBACK, 1.5)
+         .method21849(Attributes.FOLLOW_RANGE, 32.0);
    }
 
    @Override

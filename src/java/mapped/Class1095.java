@@ -1,6 +1,8 @@
 package mapped;
 
 import net.minecraft.block.Block;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.entity.passive.WolfEntity;
 import com.google.common.collect.Lists;
 import net.minecraft.block.BlockState;
@@ -14,6 +16,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
@@ -56,8 +59,8 @@ public class Class1095 extends Class1018 {
       super(var1, var2);
       this.field5595 = new Class8091(this);
       this.field5596 = new Class6833(this);
-      this.method4224(Class2163.field14199, 0.0F);
-      this.method4224(Class2163.field14200, 0.0F);
+      this.method4224(PathNodeType.DANGER_OTHER, 0.0F);
+      this.method4224(PathNodeType.DAMAGE_OTHER, 0.0F);
       this.method4281(true);
    }
 
@@ -217,11 +220,11 @@ public class Class1095 extends Class1018 {
       }
    }
 
-   public static Class7037 method5123() {
+   public static MutableAttribute method5123() {
       return MobEntity.method4220()
          .method21849(Attributes.MOVEMENT_SPEED, 0.3F)
-         .method21849(Attributes.field42105, 10.0)
-         .method21849(Attributes.field42106, 32.0)
+         .method21849(Attributes.MAX_HEALTH, 10.0)
+         .method21849(Attributes.FOLLOW_RANGE, 32.0)
          .method21849(Attributes.ATTACK_DAMAGE, 2.0);
    }
 

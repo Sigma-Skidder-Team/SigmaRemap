@@ -7,6 +7,8 @@ import net.minecraft.client.util.Util;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.ItemStack;
@@ -101,8 +103,8 @@ public class Class1019 extends Class1018 implements Class1020 {
       super.livingTick();
    }
 
-   public static Class7037 method4512() {
-      return MobEntity.method4220().method21849(Attributes.field42105, 8.0).method21849(Attributes.MOVEMENT_SPEED, 0.23F);
+   public static MutableAttribute method4512() {
+      return MobEntity.method4220().method21849(Attributes.MAX_HEALTH, 8.0).method21849(Attributes.MOVEMENT_SPEED, 0.23F);
    }
 
    @Override

@@ -6,7 +6,7 @@ import net.optifine.Config;
 
 public class Class4136 extends Class4135 {
    public Class4136() {
-      super(EntityType.field41055, "spawner_minecart", 0.5F);
+      super(EntityType.SPAWNER_MINECART, "spawner_minecart", 0.5F);
    }
 
    @Override

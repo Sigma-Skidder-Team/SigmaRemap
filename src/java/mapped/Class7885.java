@@ -33,7 +33,7 @@ public class Class7885 extends Class7882<LivingEntity> {
    public static void method26441(LivingEntity var0) {
       Optional<List<LivingEntity>> var3 = var0.getBrain().<List<LivingEntity>>method21410(Class8830.field39818);
       if (var3.isPresent()) {
-         boolean var4 = var3.get().stream().anyMatch(var0x -> var0x.getType().equals(EntityType.field41041));
+         boolean var4 = var3.get().stream().anyMatch(var0x -> var0x.getType().equals(EntityType.IRON_GOLEM));
          if (var4) {
             method26442(var0);
          }

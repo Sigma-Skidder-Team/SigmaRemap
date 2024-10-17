@@ -20,7 +20,7 @@ public class Class3754 extends Class3676<Class1042> {
    }
 
    public boolean method12508(ServerWorld var1, Class1042 var2) {
-      return Class6983.method21571(var2.getBrain(), Class8830.field39828, EntityType.field41098);
+      return Class6983.method21571(var2.getBrain(), Class8830.field39828, EntityType.VILLAGER);
    }
 
    public boolean method12499(ServerWorld var1, Class1042 var2, long var3) {

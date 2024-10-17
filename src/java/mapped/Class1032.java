@@ -3,6 +3,9 @@ package mapped;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
+import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.DamageSource;
@@ -40,8 +43,8 @@ public class Class1032 extends Class1031 {
       this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1058>(this, Class1058.class, false));
    }
 
-   public static Class7037 method4600() {
-      return Class1009.method4343().method21849(Attributes.MOVEMENT_SPEED, 0.5).method21849(Attributes.field42106, 12.0).method21849(Attributes.field42105, 24.0);
+   public static MutableAttribute method4600() {
+      return MonsterEntity.method4343().method21849(Attributes.MOVEMENT_SPEED, 0.5).method21849(Attributes.FOLLOW_RANGE, 12.0).method21849(Attributes.MAX_HEALTH, 24.0);
    }
 
    @Override

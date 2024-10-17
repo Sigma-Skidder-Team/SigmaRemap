@@ -810,7 +810,7 @@ public class Items {
    public static final Item field37870 = method30157(
       "cooked_porkchop", new Item(new Item.Properties().method17779(ItemGroup.field31671).method17774(Class8672.field39072))
    );
-   public static final Item PAINTING = method30157("painting", new Class3312(EntityType.field41060, new Item.Properties().method17779(ItemGroup.field31666)));
+   public static final Item PAINTING = method30157("painting", new Class3312(EntityType.PAINTING, new Item.Properties().method17779(ItemGroup.field31666)));
    public static final Item GOLDEN_APPLE = method30157(
       "golden_apple", new Item(new Item.Properties().method17779(ItemGroup.field31671).method17780(Class1978.field12887).method17774(Class8672.field39078))
    );
@@ -865,16 +865,16 @@ public class Items {
       "milk_bucket", new Class3274(new Item.Properties().method17778(BUCKET).method17775(1).method17779(ItemGroup.field31669))
    );
    public static final Item field37892 = method30157(
-      "pufferfish_bucket", new Class3288(EntityType.field41070, Fluids.WATER, new Item.Properties().method17775(1).method17779(ItemGroup.field31669))
+      "pufferfish_bucket", new Class3288(EntityType.PUFFERFISH, Fluids.WATER, new Item.Properties().method17775(1).method17779(ItemGroup.field31669))
    );
    public static final Item SALMON_BUCKET = method30157(
-      "salmon_bucket", new Class3288(EntityType.field41073, Fluids.WATER, new Item.Properties().method17775(1).method17779(ItemGroup.field31669))
+      "salmon_bucket", new Class3288(EntityType.SALMON, Fluids.WATER, new Item.Properties().method17775(1).method17779(ItemGroup.field31669))
    );
    public static final Item field37894 = method30157(
-      "cod_bucket", new Class3288(EntityType.field41015, Fluids.WATER, new Item.Properties().method17775(1).method17779(ItemGroup.field31669))
+      "cod_bucket", new Class3288(EntityType.COD, Fluids.WATER, new Item.Properties().method17775(1).method17779(ItemGroup.field31669))
    );
    public static final Item field37895 = method30157(
-      "tropical_fish_bucket", new Class3288(EntityType.field41095, Fluids.WATER, new Item.Properties().method17775(1).method17779(ItemGroup.field31669))
+      "tropical_fish_bucket", new Class3288(EntityType.TROPICAL_FISH, Fluids.WATER, new Item.Properties().method17775(1).method17779(ItemGroup.field31669))
    );
    public static final Item field37896 = method30157("brick", new Item(new Item.Properties().method17779(ItemGroup.field31675)));
    public static final Item field37897 = method30157("clay_ball", new Item(new Item.Properties().method17779(ItemGroup.field31675)));
@@ -998,43 +998,43 @@ public class Items {
    public static final Item field37979 = method30157("ender_eye", new Class3341(new Item.Properties().method17779(ItemGroup.field31669)));
    public static final Item field37980 = method30157("glistering_melon_slice", new Item(new Item.Properties().method17779(ItemGroup.field31674)));
    public static final Item field37981 = method30157(
-      "bat_spawn_egg", new SpawnEggItem(EntityType.field41008, 4996656, 986895, new Item.Properties().method17779(ItemGroup.field31669))
+      "bat_spawn_egg", new SpawnEggItem(EntityType.BAT, 4996656, 986895, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field37982 = method30157(
-      "bee_spawn_egg", new SpawnEggItem(EntityType.field41009, 15582019, 4400155, new Item.Properties().method17779(ItemGroup.field31669))
+      "bee_spawn_egg", new SpawnEggItem(EntityType.BEE, 15582019, 4400155, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field37983 = method30157(
-      "blaze_spawn_egg", new SpawnEggItem(EntityType.field41010, 16167425, 16775294, new Item.Properties().method17779(ItemGroup.field31669))
+      "blaze_spawn_egg", new SpawnEggItem(EntityType.BLAZE, 16167425, 16775294, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field37984 = method30157(
-      "cat_spawn_egg", new SpawnEggItem(EntityType.field41012, 15714446, 9794134, new Item.Properties().method17779(ItemGroup.field31669))
+      "cat_spawn_egg", new SpawnEggItem(EntityType.CAT, 15714446, 9794134, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field37985 = method30157(
-      "cave_spider_spawn_egg", new SpawnEggItem(EntityType.field41013, 803406, 11013646, new Item.Properties().method17779(ItemGroup.field31669))
+      "cave_spider_spawn_egg", new SpawnEggItem(EntityType.CAVE_SPIDER, 803406, 11013646, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field37986 = method30157(
-      "chicken_spawn_egg", new SpawnEggItem(EntityType.field41014, 10592673, 16711680, new Item.Properties().method17779(ItemGroup.field31669))
+      "chicken_spawn_egg", new SpawnEggItem(EntityType.CHICKEN, 10592673, 16711680, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field37987 = method30157(
-      "cod_spawn_egg", new SpawnEggItem(EntityType.field41015, 12691306, 15058059, new Item.Properties().method17779(ItemGroup.field31669))
+      "cod_spawn_egg", new SpawnEggItem(EntityType.COD, 12691306, 15058059, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field37988 = method30157(
-      "cow_spawn_egg", new SpawnEggItem(EntityType.field41016, 4470310, 10592673, new Item.Properties().method17779(ItemGroup.field31669))
+      "cow_spawn_egg", new SpawnEggItem(EntityType.COW, 4470310, 10592673, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field37989 = method30157(
-      "creeper_spawn_egg", new SpawnEggItem(EntityType.field41017, 894731, 0, new Item.Properties().method17779(ItemGroup.field31669))
+      "creeper_spawn_egg", new SpawnEggItem(EntityType.CREEPER, 894731, 0, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field37990 = method30157(
-      "dolphin_spawn_egg", new SpawnEggItem(EntityType.field41018, 2243405, 16382457, new Item.Properties().method17779(ItemGroup.field31669))
+      "dolphin_spawn_egg", new SpawnEggItem(EntityType.DOLPHIN, 2243405, 16382457, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field37991 = method30157(
-      "donkey_spawn_egg", new SpawnEggItem(EntityType.field41019, 5457209, 8811878, new Item.Properties().method17779(ItemGroup.field31669))
+      "donkey_spawn_egg", new SpawnEggItem(EntityType.DONKEY, 5457209, 8811878, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field37992 = method30157(
-      "drowned_spawn_egg", new SpawnEggItem(EntityType.field41021, 9433559, 7969893, new Item.Properties().method17779(ItemGroup.field31669))
+      "drowned_spawn_egg", new SpawnEggItem(EntityType.DROWNED, 9433559, 7969893, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field37993 = method30157(
-      "elder_guardian_spawn_egg", new SpawnEggItem(EntityType.field41022, 13552826, 7632531, new Item.Properties().method17779(ItemGroup.field31669))
+      "elder_guardian_spawn_egg", new SpawnEggItem(EntityType.ELDER_GUARDIAN, 13552826, 7632531, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field37994 = method30157(
       "enderman_spawn_egg", new SpawnEggItem(EntityType.field41025, 1447446, 0, new Item.Properties().method17779(ItemGroup.field31669))
@@ -1049,145 +1049,145 @@ public class Items {
       "fox_spawn_egg", new SpawnEggItem(EntityType.FOX, 14005919, 13396256, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field37998 = method30157(
-      "ghast_spawn_egg", new SpawnEggItem(EntityType.field41034, 16382457, 12369084, new Item.Properties().method17779(ItemGroup.field31669))
+      "ghast_spawn_egg", new SpawnEggItem(EntityType.GHAST, 16382457, 12369084, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field37999 = method30157(
-      "guardian_spawn_egg", new SpawnEggItem(EntityType.field41036, 5931634, 15826224, new Item.Properties().method17779(ItemGroup.field31669))
+      "guardian_spawn_egg", new SpawnEggItem(EntityType.GUARDIAN, 5931634, 15826224, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38000 = method30157(
-      "hoglin_spawn_egg", new SpawnEggItem(EntityType.field41037, 13004373, 6251620, new Item.Properties().method17779(ItemGroup.field31669))
+      "hoglin_spawn_egg", new SpawnEggItem(EntityType.HOGLIN, 13004373, 6251620, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38001 = method30157(
-      "horse_spawn_egg", new SpawnEggItem(EntityType.field41038, 12623485, 15656192, new Item.Properties().method17779(ItemGroup.field31669))
+      "horse_spawn_egg", new SpawnEggItem(EntityType.HORSE, 12623485, 15656192, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38002 = method30157(
-      "husk_spawn_egg", new SpawnEggItem(EntityType.field41039, 7958625, 15125652, new Item.Properties().method17779(ItemGroup.field31669))
+      "husk_spawn_egg", new SpawnEggItem(EntityType.HUSK, 7958625, 15125652, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38003 = method30157(
-      "llama_spawn_egg", new SpawnEggItem(EntityType.field41047, 12623485, 10051392, new Item.Properties().method17779(ItemGroup.field31669))
+      "llama_spawn_egg", new SpawnEggItem(EntityType.LLAMA, 12623485, 10051392, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38004 = method30157(
-      "magma_cube_spawn_egg", new SpawnEggItem(EntityType.field41049, 3407872, 16579584, new Item.Properties().method17779(ItemGroup.field31669))
+      "magma_cube_spawn_egg", new SpawnEggItem(EntityType.MAGMA_CUBE, 3407872, 16579584, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38005 = method30157(
-      "mooshroom_spawn_egg", new SpawnEggItem(EntityType.field41058, 10489616, 12040119, new Item.Properties().method17779(ItemGroup.field31669))
+      "mooshroom_spawn_egg", new SpawnEggItem(EntityType.MOOSHROOM, 10489616, 12040119, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38006 = method30157(
-      "mule_spawn_egg", new SpawnEggItem(EntityType.field41057, 1769984, 5321501, new Item.Properties().method17779(ItemGroup.field31669))
+      "mule_spawn_egg", new SpawnEggItem(EntityType.MULE, 1769984, 5321501, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38007 = method30157(
-      "ocelot_spawn_egg", new SpawnEggItem(EntityType.field41059, 15720061, 5653556, new Item.Properties().method17779(ItemGroup.field31669))
+      "ocelot_spawn_egg", new SpawnEggItem(EntityType.OCELOT, 15720061, 5653556, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38008 = method30157(
-      "panda_spawn_egg", new SpawnEggItem(EntityType.field41061, 15198183, 1776418, new Item.Properties().method17779(ItemGroup.field31669))
+      "panda_spawn_egg", new SpawnEggItem(EntityType.PANDA, 15198183, 1776418, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38009 = method30157(
-      "parrot_spawn_egg", new SpawnEggItem(EntityType.field41062, 894731, 16711680, new Item.Properties().method17779(ItemGroup.field31669))
+      "parrot_spawn_egg", new SpawnEggItem(EntityType.PARROT, 894731, 16711680, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38010 = method30157(
-      "phantom_spawn_egg", new SpawnEggItem(EntityType.field41063, 4411786, 8978176, new Item.Properties().method17779(ItemGroup.field31669))
+      "phantom_spawn_egg", new SpawnEggItem(EntityType.PHANTOM, 4411786, 8978176, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38011 = method30157(
-      "pig_spawn_egg", new SpawnEggItem(EntityType.field41064, 15771042, 14377823, new Item.Properties().method17779(ItemGroup.field31669))
+      "pig_spawn_egg", new SpawnEggItem(EntityType.PIG, 15771042, 14377823, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38012 = method30157(
-      "piglin_spawn_egg", new SpawnEggItem(EntityType.field41065, 10051392, 16380836, new Item.Properties().method17779(ItemGroup.field31669))
+      "piglin_spawn_egg", new SpawnEggItem(EntityType.PIGLIN, 10051392, 16380836, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38013 = method30157(
-      "piglin_brute_spawn_egg", new SpawnEggItem(EntityType.field41066, 5843472, 16380836, new Item.Properties().method17779(ItemGroup.field31669))
+      "piglin_brute_spawn_egg", new SpawnEggItem(EntityType.PIGLIN_BRUTE, 5843472, 16380836, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38014 = method30157(
-      "pillager_spawn_egg", new SpawnEggItem(EntityType.field41067, 5451574, 9804699, new Item.Properties().method17779(ItemGroup.field31669))
+      "pillager_spawn_egg", new SpawnEggItem(EntityType.PILLAGER, 5451574, 9804699, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38015 = method30157(
-      "polar_bear_spawn_egg", new SpawnEggItem(EntityType.field41068, 15921906, 9803152, new Item.Properties().method17779(ItemGroup.field31669))
+      "polar_bear_spawn_egg", new SpawnEggItem(EntityType.POLAR_BEAR, 15921906, 9803152, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38016 = method30157(
-      "pufferfish_spawn_egg", new SpawnEggItem(EntityType.field41070, 16167425, 3654642, new Item.Properties().method17779(ItemGroup.field31669))
+      "pufferfish_spawn_egg", new SpawnEggItem(EntityType.PUFFERFISH, 16167425, 3654642, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38017 = method30157(
       "rabbit_spawn_egg", new SpawnEggItem(EntityType.RABBIT, 10051392, 7555121, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38018 = method30157(
-      "ravager_spawn_egg", new SpawnEggItem(EntityType.field41072, 7697520, 5984329, new Item.Properties().method17779(ItemGroup.field31669))
+      "ravager_spawn_egg", new SpawnEggItem(EntityType.RAVAGER, 7697520, 5984329, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38019 = method30157(
-      "salmon_spawn_egg", new SpawnEggItem(EntityType.field41073, 10489616, 951412, new Item.Properties().method17779(ItemGroup.field31669))
+      "salmon_spawn_egg", new SpawnEggItem(EntityType.SALMON, 10489616, 951412, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38020 = method30157(
       "sheep_spawn_egg", new SpawnEggItem(EntityType.SHEEP, 15198183, 16758197, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38021 = method30157(
-      "shulker_spawn_egg", new SpawnEggItem(EntityType.field41075, 9725844, 5060690, new Item.Properties().method17779(ItemGroup.field31669))
+      "shulker_spawn_egg", new SpawnEggItem(EntityType.SHULKER, 9725844, 5060690, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38022 = method30157(
-      "silverfish_spawn_egg", new SpawnEggItem(EntityType.field41077, 7237230, 3158064, new Item.Properties().method17779(ItemGroup.field31669))
+      "silverfish_spawn_egg", new SpawnEggItem(EntityType.SILVERFISH, 7237230, 3158064, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38023 = method30157(
-      "skeleton_spawn_egg", new SpawnEggItem(EntityType.field41078, 12698049, 4802889, new Item.Properties().method17779(ItemGroup.field31669))
+      "skeleton_spawn_egg", new SpawnEggItem(EntityType.SKELETON, 12698049, 4802889, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38024 = method30157(
-      "skeleton_horse_spawn_egg", new SpawnEggItem(EntityType.field41079, 6842447, 15066584, new Item.Properties().method17779(ItemGroup.field31669))
+      "skeleton_horse_spawn_egg", new SpawnEggItem(EntityType.SKELETON_HORSE, 6842447, 15066584, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38025 = method30157(
-      "slime_spawn_egg", new SpawnEggItem(EntityType.field41080, 5349438, 8306542, new Item.Properties().method17779(ItemGroup.field31669))
+      "slime_spawn_egg", new SpawnEggItem(EntityType.SLIME, 5349438, 8306542, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38026 = method30157(
-      "spider_spawn_egg", new SpawnEggItem(EntityType.field41085, 3419431, 11013646, new Item.Properties().method17779(ItemGroup.field31669))
+      "spider_spawn_egg", new SpawnEggItem(EntityType.SPIDER, 3419431, 11013646, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38027 = method30157(
-      "squid_spawn_egg", new SpawnEggItem(EntityType.field41086, 2243405, 7375001, new Item.Properties().method17779(ItemGroup.field31669))
+      "squid_spawn_egg", new SpawnEggItem(EntityType.SQUID, 2243405, 7375001, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38028 = method30157(
-      "stray_spawn_egg", new SpawnEggItem(EntityType.field41087, 6387319, 14543594, new Item.Properties().method17779(ItemGroup.field31669))
+      "stray_spawn_egg", new SpawnEggItem(EntityType.STRAY, 6387319, 14543594, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38029 = method30157(
-      "strider_spawn_egg", new SpawnEggItem(EntityType.field41088, 10236982, 5065037, new Item.Properties().method17779(ItemGroup.field31669))
+      "strider_spawn_egg", new SpawnEggItem(EntityType.STRIDER, 10236982, 5065037, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38030 = method30157(
-      "trader_llama_spawn_egg", new SpawnEggItem(EntityType.field41094, 15377456, 4547222, new Item.Properties().method17779(ItemGroup.field31669))
+      "trader_llama_spawn_egg", new SpawnEggItem(EntityType.TRADER_LLAMA, 15377456, 4547222, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38031 = method30157(
-      "tropical_fish_spawn_egg", new SpawnEggItem(EntityType.field41095, 15690005, 16775663, new Item.Properties().method17779(ItemGroup.field31669))
+      "tropical_fish_spawn_egg", new SpawnEggItem(EntityType.TROPICAL_FISH, 15690005, 16775663, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38032 = method30157(
-      "turtle_spawn_egg", new SpawnEggItem(EntityType.field41096, 15198183, 44975, new Item.Properties().method17779(ItemGroup.field31669))
+      "turtle_spawn_egg", new SpawnEggItem(EntityType.TURTLE, 15198183, 44975, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38033 = method30157(
-      "vex_spawn_egg", new SpawnEggItem(EntityType.field41097, 8032420, 15265265, new Item.Properties().method17779(ItemGroup.field31669))
+      "vex_spawn_egg", new SpawnEggItem(EntityType.VEX, 8032420, 15265265, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38034 = method30157(
-      "villager_spawn_egg", new SpawnEggItem(EntityType.field41098, 5651507, 12422002, new Item.Properties().method17779(ItemGroup.field31669))
+      "villager_spawn_egg", new SpawnEggItem(EntityType.VILLAGER, 5651507, 12422002, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38035 = method30157(
-      "vindicator_spawn_egg", new SpawnEggItem(EntityType.field41099, 9804699, 2580065, new Item.Properties().method17779(ItemGroup.field31669))
+      "vindicator_spawn_egg", new SpawnEggItem(EntityType.VINDICATOR, 9804699, 2580065, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38036 = method30157(
-      "wandering_trader_spawn_egg", new SpawnEggItem(EntityType.field41100, 4547222, 15377456, new Item.Properties().method17779(ItemGroup.field31669))
+      "wandering_trader_spawn_egg", new SpawnEggItem(EntityType.WANDERING_TRADER, 4547222, 15377456, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38037 = method30157(
-      "witch_spawn_egg", new SpawnEggItem(EntityType.field41101, 3407872, 5349438, new Item.Properties().method17779(ItemGroup.field31669))
+      "witch_spawn_egg", new SpawnEggItem(EntityType.WITCH, 3407872, 5349438, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38038 = method30157(
-      "wither_skeleton_spawn_egg", new SpawnEggItem(EntityType.field41103, 1315860, 4672845, new Item.Properties().method17779(ItemGroup.field31669))
+      "wither_skeleton_spawn_egg", new SpawnEggItem(EntityType.WITHER_SKELETON, 1315860, 4672845, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38039 = method30157(
-      "wolf_spawn_egg", new SpawnEggItem(EntityType.field41105, 14144467, 13545366, new Item.Properties().method17779(ItemGroup.field31669))
+      "wolf_spawn_egg", new SpawnEggItem(EntityType.WOLF, 14144467, 13545366, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38040 = method30157(
-      "zoglin_spawn_egg", new SpawnEggItem(EntityType.field41106, 13004373, 15132390, new Item.Properties().method17779(ItemGroup.field31669))
+      "zoglin_spawn_egg", new SpawnEggItem(EntityType.ZOGLIN, 13004373, 15132390, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38041 = method30157(
-      "zombie_spawn_egg", new SpawnEggItem(EntityType.field41107, 44975, 7969893, new Item.Properties().method17779(ItemGroup.field31669))
+      "zombie_spawn_egg", new SpawnEggItem(EntityType.ZOMBIE, 44975, 7969893, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38042 = method30157(
-      "zombie_horse_spawn_egg", new SpawnEggItem(EntityType.field41108, 3232308, 9945732, new Item.Properties().method17779(ItemGroup.field31669))
+      "zombie_horse_spawn_egg", new SpawnEggItem(EntityType.ZOMBIE_HORSE, 3232308, 9945732, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38043 = method30157(
-      "zombie_villager_spawn_egg", new SpawnEggItem(EntityType.field41109, 5651507, 7969893, new Item.Properties().method17779(ItemGroup.field31669))
+      "zombie_villager_spawn_egg", new SpawnEggItem(EntityType.ZOMBIE_VILLAGER, 5651507, 7969893, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38044 = method30157(
-      "zombified_piglin_spawn_egg", new SpawnEggItem(EntityType.field41110, 15373203, 5009705, new Item.Properties().method17779(ItemGroup.field31669))
+      "zombified_piglin_spawn_egg", new SpawnEggItem(EntityType.ZOMBIFIED_PIGLIN, 15373203, 5009705, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field38045 = method30157(
       "experience_bottle", new Class3304(new Item.Properties().method17779(ItemGroup.field31669).method17780(Class1978.field12886))
@@ -1233,10 +1233,10 @@ public class Items {
       new Class3298(Blocks.DRAGON_HEAD, Blocks.DRAGON_WALL_HEAD, new Item.Properties().method17779(ItemGroup.field31666).method17780(Class1978.field12886))
    );
    public static final Item field38064 = method30157(
-      "carrot_on_a_stick", new Class3317<Class1072>(new Item.Properties().method17777(25).method17779(ItemGroup.field31668), EntityType.field41064, 7)
+      "carrot_on_a_stick", new Class3317<Class1072>(new Item.Properties().method17777(25).method17779(ItemGroup.field31668), EntityType.PIG, 7)
    );
    public static final Item field38065 = method30157(
-      "warped_fungus_on_a_stick", new Class3317<Class1070>(new Item.Properties().method17777(100).method17779(ItemGroup.field31668), EntityType.field41088, 1)
+      "warped_fungus_on_a_stick", new Class3317<Class1070>(new Item.Properties().method17777(100).method17779(ItemGroup.field31668), EntityType.STRIDER, 1)
    );
    public static final Item field38066 = method30157(
       "nether_star", new Class3332(new Item.Properties().method17779(ItemGroup.field31675).method17780(Class1978.field12886))

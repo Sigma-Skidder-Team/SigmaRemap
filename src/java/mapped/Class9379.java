@@ -81,8 +81,8 @@ public class Class9379 {
             new Class3693(
                ImmutableMap.of(Class8830.field39820, Class2217.field14485),
                ImmutableList.of(
-                  Pair.of(Class3696.<LivingEntity>method12551(EntityType.field41098, 8, Class8830.field39828, var0, 2), 2),
-                  Pair.of(Class3696.<LivingEntity>method12551(EntityType.field41012, 8, Class8830.field39828, var0, 2), 1),
+                  Pair.of(Class3696.<LivingEntity>method12551(EntityType.VILLAGER, 8, Class8830.field39828, var0, 2), 2),
+                  Pair.of(Class3696.<LivingEntity>method12551(EntityType.CAT, 8, Class8830.field39828, var0, 2), 1),
                   Pair.of(new Class3712(var0), 1),
                   Pair.of(new Class3694(var0, 2), 1),
                   Pair.of(new Class3730(var0), 2),
@@ -142,12 +142,12 @@ public class Class9379 {
             2,
             new Class3693(
                ImmutableList.of(
-                  Pair.of(Class3696.<LivingEntity>method12551(EntityType.field41098, 8, Class8830.field39828, var1, 2), 2),
+                  Pair.of(Class3696.<LivingEntity>method12551(EntityType.VILLAGER, 8, Class8830.field39828, var1, 2), 2),
                   Pair.of(
-                     new Class3696<Class1042, Class1045>(EntityType.field41098, 8, Class1045::method4700, Class1045::method4700, Class8830.field39829, var1, 2),
+                     new Class3696<Class1042, Class1045>(EntityType.VILLAGER, 8, Class1045::method4700, Class1045::method4700, Class8830.field39829, var1, 2),
                      1
                   ),
-                  Pair.of(Class3696.<LivingEntity>method12551(EntityType.field41012, 8, Class8830.field39828, var1, 2), 1),
+                  Pair.of(Class3696.<LivingEntity>method12551(EntityType.CAT, 8, Class8830.field39828, var1, 2), 1),
                   Pair.of(new Class3712(var1), 1),
                   Pair.of(new Class3694(var1, 2), 1),
                   Pair.of(new Class3730(var1), 1),
@@ -226,8 +226,8 @@ public class Class9379 {
          5,
          new Class3693(
             ImmutableList.of(
-               Pair.of(new Class3738(EntityType.field41012, 8.0F), 8),
-               Pair.of(new Class3738(EntityType.field41098, 8.0F), 2),
+               Pair.of(new Class3738(EntityType.CAT, 8.0F), 8),
+               Pair.of(new Class3738(EntityType.VILLAGER, 8.0F), 2),
                Pair.of(new Class3738(EntityType.PLAYER, 8.0F), 2),
                Pair.of(new Class3738(EntityClassification.field624, 8.0F), 1),
                Pair.of(new Class3738(EntityClassification.field626, 8.0F), 1),
@@ -244,7 +244,7 @@ public class Class9379 {
          5,
          new Class3693(
             ImmutableList.of(
-               Pair.of(new Class3738(EntityType.field41098, 8.0F), 2), Pair.of(new Class3738(EntityType.PLAYER, 8.0F), 2), Pair.of(new Class3675(30, 60), 8)
+               Pair.of(new Class3738(EntityType.VILLAGER, 8.0F), 2), Pair.of(new Class3738(EntityType.PLAYER, 8.0F), 2), Pair.of(new Class3675(30, 60), 8)
             )
          )
       );

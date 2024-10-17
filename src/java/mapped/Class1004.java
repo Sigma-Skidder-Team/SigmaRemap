@@ -22,7 +22,7 @@ public class Class1004 extends Entity {
    }
 
    public Class1004(World var1, double var2, double var4, double var6, LivingEntity var8) {
-      this(EntityType.field41069, var1);
+      this(EntityType.TNT, var1);
       this.setPosition(var2, var4, var6);
       double var11 = var1.rand.nextDouble() * (float) (Math.PI * 2);
       this.setMotion(-Math.sin(var11) * 0.02, 0.2F, -Math.cos(var11) * 0.02);

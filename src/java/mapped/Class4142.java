@@ -6,7 +6,7 @@ import net.optifine.Config;
 
 public class Class4142 extends Class4057 {
    public Class4142() {
-      super(EntityType.field41010, "blaze", 0.5F);
+      super(EntityType.BLAZE, "blaze", 0.5F);
    }
 
    @Override

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.scoreboard.Team;
 import net.minecraft.util.math.MathHelper;
@@ -70,7 +71,7 @@ public abstract class Class2699 extends Class2595 {
    }
 
    public double method10914() {
-      return this.field17153.getAttributeValue(Attributes.field42106);
+      return this.field17153.getAttributeValue(Attributes.FOLLOW_RANGE);
    }
 
    @Override

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.ai.attributes.AttributeModifierManager;
 
 public class Class7149 extends Effect {
    private static String[] field30716;

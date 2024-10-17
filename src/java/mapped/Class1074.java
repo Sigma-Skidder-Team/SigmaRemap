@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
@@ -28,9 +29,9 @@ public class Class1074 extends AbstractHorseEntity {
 
    @Override
    public void method4925() {
-      this.getAttribute(Attributes.field42105).method38661((double)this.method4971());
+      this.getAttribute(Attributes.MAX_HEALTH).method38661((double)this.method4971());
       this.getAttribute(Attributes.MOVEMENT_SPEED).method38661(this.method4973());
-      this.getAttribute(Attributes.field42117).method38661(this.method4972());
+      this.getAttribute(Attributes.HORSE_JUMP_STRENGTH).method38661(this.method4972());
    }
 
    @Override
@@ -103,11 +104,11 @@ public class Class1074 extends AbstractHorseEntity {
    private void method4997(ItemStack var1) {
       this.method4991(var1);
       if (!this.world.isRemote) {
-         this.getAttribute(Attributes.field42113).method38671(field5916);
+         this.getAttribute(Attributes.ARMOR).method38671(field5916);
          if (this.method4900(var1)) {
             int var4 = ((Class3275)var1.getItem()).method11798();
             if (var4 != 0) {
-               this.getAttribute(Attributes.field42113).method38667(new AttributeModifier(field5916, "Horse armor bonus", (double)var4, AttributeModifier.Operation.ADDITION));
+               this.getAttribute(Attributes.ARMOR).applyNonPersistentModifier(new AttributeModifier(field5916, "Horse armor bonus", (double)var4, AttributeModifier.Operation.ADDITION));
             }
          }
       }
@@ -219,7 +220,7 @@ public class Class1074 extends AbstractHorseEntity {
       AbstractHorseEntity var6;
       if (!(var2 instanceof Class1067)) {
          Class1074 var5 = (Class1074)var2;
-         var6 = EntityType.field41038.create(var1);
+         var6 = EntityType.HORSE.create(var1);
          int var7 = this.rand.nextInt(9);
          Class2190 var8;
          if (var7 >= 4) {
@@ -246,7 +247,7 @@ public class Class1074 extends AbstractHorseEntity {
 
          ((Class1074)var6).method4994(var8, var10);
       } else {
-         var6 = EntityType.field41057.create(var1);
+         var6 = EntityType.MULE.create(var1);
       }
 
       this.method4962(var2, var6);

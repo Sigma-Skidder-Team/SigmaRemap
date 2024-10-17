@@ -5,12 +5,16 @@ import net.minecraft.entity.IAngerable;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
+import net.minecraft.entity.monster.ZombieEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -36,7 +40,7 @@ public class ZombifiedPiglinEntity extends ZombieEntity implements IAngerable {
 
    public ZombifiedPiglinEntity(EntityType<? extends ZombifiedPiglinEntity> var1, World var2) {
       super(var1, var2);
-      this.method4224(Class2163.field14190, 8.0F);
+      this.method4224(PathNodeType.LAVA, 8.0F);
    }
 
    @Override
@@ -58,8 +62,8 @@ public class ZombifiedPiglinEntity extends ZombieEntity implements IAngerable {
       this.field5601.addGoal(3, new ResetAngerGoal<ZombifiedPiglinEntity>(this, true));
    }
 
-   public static Class7037 func_234352_eU_() {
-      return ZombieEntity.method4653().method21849(Attributes.field42116, 0.0).method21849(Attributes.MOVEMENT_SPEED, 0.23F).method21849(Attributes.ATTACK_DAMAGE, 5.0);
+   public static MutableAttribute func_234352_eU_() {
+      return ZombieEntity.method4653().method21849(Attributes.ZOMBIE_SPAWN_REINFORCEMENTS, 0.0).method21849(Attributes.MOVEMENT_SPEED, 0.23F).method21849(Attributes.ATTACK_DAMAGE, 5.0);
    }
 
    @Override
@@ -72,11 +76,11 @@ public class ZombifiedPiglinEntity extends ZombieEntity implements IAngerable {
       ModifiableAttributeInstance var3 = this.getAttribute(Attributes.MOVEMENT_SPEED);
       if (!this.method4369()) {
          if (var3.method38665(field5861)) {
-            var3.method38670(field5861);
+            var3.removeModifier(field5861);
          }
       } else {
          if (!this.isChild() && !var3.method38665(field5861)) {
-            var3.method38667(field5861);
+            var3.applyNonPersistentModifier(field5861);
          }
 
          this.method4875();
@@ -116,7 +120,7 @@ public class ZombifiedPiglinEntity extends ZombieEntity implements IAngerable {
    }
 
    private void method4877() {
-      double var3 = this.getAttributeValue(Attributes.field42106);
+      double var3 = this.getAttributeValue(Attributes.FOLLOW_RANGE);
       AxisAlignedBB var5 = AxisAlignedBB.method19657(this.getPositionVec()).grow(var3, 10.0, var3);
       this.world
          .<ZombifiedPiglinEntity>method7183(ZombifiedPiglinEntity.class, var5)
@@ -215,7 +219,7 @@ public class ZombifiedPiglinEntity extends ZombieEntity implements IAngerable {
 
    @Override
    public void method4663() {
-      this.getAttribute(Attributes.field42116).method38661(0.0);
+      this.getAttribute(Attributes.ZOMBIE_SPAWN_REINFORCEMENTS).method38661(0.0);
    }
 
    @Override

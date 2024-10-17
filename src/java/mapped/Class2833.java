@@ -14,24 +14,24 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class2833 implements Consumer<Consumer<Advancement>> {
    private static final EntityType<?>[] field17615 = new EntityType[]{
-      EntityType.field41038,
-      EntityType.field41019,
-      EntityType.field41057,
+      EntityType.HORSE,
+      EntityType.DONKEY,
+      EntityType.MULE,
       EntityType.SHEEP,
-      EntityType.field41016,
-      EntityType.field41058,
-      EntityType.field41064,
-      EntityType.field41014,
-      EntityType.field41105,
-      EntityType.field41059,
+      EntityType.COW,
+      EntityType.MOOSHROOM,
+      EntityType.PIG,
+      EntityType.CHICKEN,
+      EntityType.WOLF,
+      EntityType.OCELOT,
       EntityType.RABBIT,
-      EntityType.field41047,
-      EntityType.field41012,
-      EntityType.field41061,
+      EntityType.LLAMA,
+      EntityType.CAT,
+      EntityType.PANDA,
       EntityType.FOX,
-      EntityType.field41009,
-      EntityType.field41037,
-      EntityType.field41088
+      EntityType.BEE,
+      EntityType.HOGLIN,
+      EntityType.STRIDER
    };
    private static final Item[] field17616 = new Item[]{Items.field37909, Items.field37911, Items.field37912, Items.field37910};
    private static final Item[] field17617 = new Item[]{Items.field37894, Items.field37895, Items.field37892, Items.SALMON_BUCKET};
@@ -281,10 +281,10 @@ public class Class2833 implements Consumer<Consumer<Advancement>> {
       }
 
       var1.method27312(
-         EntityType.method33198(EntityType.field41096).toString(),
+         EntityType.method33198(EntityType.TURTLE).toString(),
          Class4462.method14106(
-            Class7552.method24700().method24701(EntityType.field41096).method24717(),
-            Class7552.method24700().method24701(EntityType.field41096).method24717(),
+            Class7552.method24700().method24701(EntityType.TURTLE).method24717(),
+            Class7552.method24700().method24701(EntityType.TURTLE).method24717(),
             Class6671.field29242
          )
       );

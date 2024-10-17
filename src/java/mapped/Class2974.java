@@ -7,8 +7,8 @@ import net.minecraft.entity.EntityType;
 import java.util.List;
 
 public class Class2974 extends Structure<Class4712> {
-   private static final List<MobSpawnInfoSpawners> field18087 = ImmutableList.of(new MobSpawnInfoSpawners(EntityType.field41101, 1, 1, 1));
-   private static final List<MobSpawnInfoSpawners> field18088 = ImmutableList.of(new MobSpawnInfoSpawners(EntityType.field41012, 1, 1, 1));
+   private static final List<MobSpawnInfoSpawners> field18087 = ImmutableList.of(new MobSpawnInfoSpawners(EntityType.WITCH, 1, 1, 1));
+   private static final List<MobSpawnInfoSpawners> field18088 = ImmutableList.of(new MobSpawnInfoSpawners(EntityType.CAT, 1, 1, 1));
 
    public Class2974(Codec<Class4712> var1) {
       super(var1);

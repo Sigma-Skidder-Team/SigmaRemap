@@ -1,6 +1,8 @@
 package mapped;
 
 import net.minecraft.entity.*;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
@@ -25,7 +27,7 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.Random;
 
-public class Class1108 extends MobEntity implements Class1008 {
+public class Class1108 extends MobEntity implements IMob {
    private static final DataParameter<Integer> field6081 = EntityDataManager.<Integer>createKey(Class1108.class, DataSerializers.VARINT);
    public float field6082;
    public float field6083;
@@ -58,7 +60,7 @@ public class Class1108 extends MobEntity implements Class1008 {
       this.dataManager.method35446(field6081, var1);
       this.recenterBoundingBox();
       this.recalculateSize();
-      this.getAttribute(Attributes.field42105).method38661((double)(var1 * var1));
+      this.getAttribute(Attributes.MAX_HEALTH).method38661((double)(var1 * var1));
       this.getAttribute(Attributes.MOVEMENT_SPEED).method38661((double)(0.2F + 0.1F * (float)var1));
       this.getAttribute(Attributes.ATTACK_DAMAGE).method38661((double)var1);
       if (var2) {

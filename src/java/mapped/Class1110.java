@@ -3,6 +3,8 @@ package mapped;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.monster.IMob;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -17,7 +19,7 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class Class1110 extends Class1111 implements Class1008 {
+public class Class1110 extends Class1111 implements IMob {
    private static final DataParameter<Integer> field6087 = EntityDataManager.<Integer>createKey(Class1110.class, DataSerializers.VARINT);
    private Vector3d field6088 = Vector3d.ZERO;
    private BlockPos field6089 = BlockPos.ZERO;

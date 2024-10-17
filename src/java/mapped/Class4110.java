@@ -10,7 +10,7 @@ public class Class4110 extends Class4057 {
    private static Map<String, Integer> field20396 = null;
 
    public Class4110() {
-      super(EntityType.field41072, "ravager", 1.1F);
+      super(EntityType.RAVAGER, "ravager", 1.1F);
    }
 
    @Override

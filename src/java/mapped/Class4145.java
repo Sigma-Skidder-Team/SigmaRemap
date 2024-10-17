@@ -5,7 +5,7 @@ import net.minecraft.entity.EntityType;
 
 public class Class4145 extends Class4051 {
    public Class4145() {
-      super(EntityType.field41068, "polar_bear", 0.7F);
+      super(EntityType.POLAR_BEAR, "polar_bear", 0.7F);
    }
 
    @Override

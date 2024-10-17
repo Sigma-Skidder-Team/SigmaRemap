@@ -8,6 +8,7 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.DamageSource;
@@ -29,8 +30,8 @@ public abstract class Class1018 extends Class1045 {
 
    public Class1018(EntityType<? extends Class1018> var1, World var2) {
       super(var1, var2);
-      this.method4224(Class2163.field14195, 16.0F);
-      this.method4224(Class2163.field14196, -1.0F);
+      this.method4224(PathNodeType.DANGER_FIRE, 16.0F);
+      this.method4224(PathNodeType.DAMAGE_FIRE, -1.0F);
    }
 
    @Override
@@ -71,7 +72,7 @@ public abstract class Class1018 extends Class1045 {
    }
 
    @Override
-   public float method4339(BlockPos var1, IWorldReader var2) {
+   public float getBlockPathWeight(BlockPos var1, IWorldReader var2) {
       return !var2.getBlockState(var1.down()).isIn(Blocks.GRASS_BLOCK) ? var2.method7009(var1) - 0.5F : 10.0F;
    }
 

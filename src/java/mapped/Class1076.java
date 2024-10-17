@@ -1,6 +1,8 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -20,13 +22,13 @@ public class Class1076 extends AbstractHorseEntity {
       super(var1, var2);
    }
 
-   public static Class7037 method4999() {
-      return method4951().method21849(Attributes.field42105, 15.0).method21849(Attributes.MOVEMENT_SPEED, 0.2F);
+   public static MutableAttribute method4999() {
+      return method4951().method21849(Attributes.MAX_HEALTH, 15.0).method21849(Attributes.MOVEMENT_SPEED, 0.2F);
    }
 
    @Override
    public void method4925() {
-      this.getAttribute(Attributes.field42117).method38661(this.method4972());
+      this.getAttribute(Attributes.HORSE_JUMP_STRENGTH).method38661(this.method4972());
    }
 
    @Override
@@ -149,7 +151,7 @@ public class Class1076 extends AbstractHorseEntity {
    @Nullable
    @Override
    public Class1045 method4389(ServerWorld var1, Class1045 var2) {
-      return EntityType.field41079.create(var1);
+      return EntityType.SKELETON_HORSE.create(var1);
    }
 
    @Override

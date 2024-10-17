@@ -11,14 +11,14 @@ import java.util.Random;
 
 public class Class2670 extends Class2595 {
    private static String[] field17047;
-   private final Class1046 field17048;
+   private final CreatureEntity field17048;
    private double field17049;
    private double field17050;
    private double field17051;
    private final double field17052;
    private final World field17053;
 
-   public Class2670(Class1046 var1, double var2) {
+   public Class2670(CreatureEntity var1, double var2) {
       this.field17048 = var1;
       this.field17052 = var2;
       this.field17053 = var1.world;

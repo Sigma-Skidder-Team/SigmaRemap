@@ -57,7 +57,7 @@ public class Class1067 extends Class1066 {
 
    @Override
    public Class1045 method4389(ServerWorld var1, Class1045 var2) {
-      EntityType var5 = !(var2 instanceof Class1074) ? EntityType.field41019 : EntityType.field41057;
+      EntityType var5 = !(var2 instanceof Class1074) ? EntityType.DONKEY : EntityType.MULE;
       AbstractHorseEntity var6 = (AbstractHorseEntity)var5.create(var1);
       this.method4962(var2, var6);
       return var6;

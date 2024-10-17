@@ -6,6 +6,9 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
+import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -35,11 +38,11 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
       this.field5600.addGoal(2, new WaterAvoidingRandomWalkingGoal(this, 1.0, 1.0000001E-5F));
       this.field5600.addGoal(3, new Class2612(this, PlayerEntity.class, 6.0F));
       this.field5600.addGoal(4, new Class2668(this));
-      this.field5601.addGoal(1, new NearestAttackableTargetGoal<MobEntity>(this, MobEntity.class, 10, true, false, var0 -> var0 instanceof Class1008));
+      this.field5601.addGoal(1, new NearestAttackableTargetGoal<MobEntity>(this, MobEntity.class, 10, true, false, var0 -> var0 instanceof IMob));
    }
 
-   public static Class7037 method4529() {
-      return MobEntity.method4220().method21849(Attributes.field42105, 4.0).method21849(Attributes.MOVEMENT_SPEED, 0.2F);
+   public static MutableAttribute method4529() {
+      return MobEntity.method4220().method21849(Attributes.MAX_HEALTH, 4.0).method21849(Attributes.MOVEMENT_SPEED, 0.2F);
    }
 
    @Override

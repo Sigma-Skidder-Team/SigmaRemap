@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.monster.EndermanEntity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -14,9 +15,9 @@ import java.util.Random;
 
 public class Class2685 extends Class2595 {
    private static String[] field17101;
-   private final Class1010 field17102;
+   private final EndermanEntity field17102;
 
-   public Class2685(Class1010 var1) {
+   public Class2685(EndermanEntity var1) {
       this.field17102 = var1;
    }
 

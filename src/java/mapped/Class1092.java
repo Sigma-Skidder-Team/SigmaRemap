@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.vector.Vector3d;
 
@@ -28,8 +29,8 @@ public interface Class1092 {
    }
 
    static void method5092(LivingEntity var0, LivingEntity var1) {
-      double var4 = var0.getAttributeValue(Attributes.field42111);
-      double var6 = var1.getAttributeValue(Attributes.field42107);
+      double var4 = var0.getAttributeValue(Attributes.ATTACK_KNOCKBACK);
+      double var6 = var1.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE);
       double var8 = var4 - var6;
       if (!(var8 <= 0.0)) {
          double var10 = var1.getPosX() - var0.getPosX();

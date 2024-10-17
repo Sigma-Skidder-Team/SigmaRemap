@@ -719,7 +719,7 @@ public class Blocks {
             .method26623(0.5F)
             .method26619(SoundType.field36206)
             .method26615()
-            .method26629((var0, var1, var2, var3) -> var3 == EntityType.field41068)
+            .method26629((var0, var1, var2, var3) -> var3 == EntityType.POLAR_BEAR)
       )
    );
    public static final Block SNOW_BLOCK = register(
@@ -1937,7 +1937,7 @@ public class Blocks {
             .method26623(0.5F)
             .method26619(SoundType.field36206)
             .method26615()
-            .method26629((var0, var1, var2, var3) -> var3 == EntityType.field41068)
+            .method26629((var0, var1, var2, var3) -> var3 == EntityType.POLAR_BEAR)
       )
    );
    public static final Block field36890 = register(
@@ -2882,7 +2882,7 @@ public class Blocks {
    }
 
    private static Boolean method30014(BlockState var0, IBlockReader var1, BlockPos var2, EntityType<?> var3) {
-      return var3 == EntityType.field41059 || var3 == EntityType.field41062;
+      return var3 == EntityType.OCELOT || var3 == EntityType.PARROT;
    }
 
    private static Class3250 method30015(Class112 var0) {

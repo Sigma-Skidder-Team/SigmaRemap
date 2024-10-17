@@ -4,6 +4,9 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
+import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.DamageSource;
@@ -15,7 +18,7 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class Class1104 extends Class1009 {
+public class Class1104 extends MonsterEntity {
    private int field6063;
    private boolean field6064;
 
@@ -40,8 +43,8 @@ public class Class1104 extends Class1009 {
       return 0.13F;
    }
 
-   public static Class7037 method5296() {
-      return Class1009.method4343().method21849(Attributes.field42105, 8.0).method21849(Attributes.MOVEMENT_SPEED, 0.25).method21849(Attributes.ATTACK_DAMAGE, 2.0);
+   public static MutableAttribute method5296() {
+      return MonsterEntity.method4343().method21849(Attributes.MAX_HEALTH, 8.0).method21849(Attributes.MOVEMENT_SPEED, 0.25).method21849(Attributes.ATTACK_DAMAGE, 2.0);
    }
 
    @Override

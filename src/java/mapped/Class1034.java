@@ -7,7 +7,10 @@ import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
+import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.inventory.EquipmentSlotType;
@@ -140,8 +143,8 @@ public class Class1034 extends Class1035 implements Class1023 {
       }
    }
 
-   public static Class7037 method4614() {
-      return Class1009.method4343().method21849(Attributes.field42105, 16.0).method21849(Attributes.MOVEMENT_SPEED, 0.35F).method21849(Attributes.ATTACK_DAMAGE, 5.0);
+   public static MutableAttribute method4614() {
+      return MonsterEntity.method4343().method21849(Attributes.MAX_HEALTH, 16.0).method21849(Attributes.MOVEMENT_SPEED, 0.35F).method21849(Attributes.ATTACK_DAMAGE, 5.0);
    }
 
    public static boolean method4615(EntityType<Class1034> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
@@ -238,9 +241,9 @@ public class Class1034 extends Class1035 implements Class1023 {
       this.getDataManager().method35446(field5741, var1);
       if (!this.world.isRemote) {
          ModifiableAttributeInstance var4 = this.getAttribute(Attributes.MOVEMENT_SPEED);
-         var4.method38670(field5745);
+         var4.removeModifier(field5745);
          if (var1) {
-            var4.method38667(field5745);
+            var4.applyNonPersistentModifier(field5745);
          }
       }
    }
@@ -403,7 +406,7 @@ public class Class1034 extends Class1035 implements Class1023 {
 
    @Override
    public boolean startRiding(Entity var1, boolean var2) {
-      if (this.isChild() && var1.getType() == EntityType.field41037) {
+      if (this.isChild() && var1.getType() == EntityType.HOGLIN) {
          var1 = this.method4628(var1, 3);
       }
 

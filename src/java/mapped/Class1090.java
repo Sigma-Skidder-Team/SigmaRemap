@@ -5,6 +5,8 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -103,8 +105,8 @@ public class Class1090 extends Class1018 {
       return !this.method5072() && this.ticksExisted > 2400;
    }
 
-   public static Class7037 method5074() {
-      return MobEntity.method4220().method21849(Attributes.field42105, 10.0).method21849(Attributes.MOVEMENT_SPEED, 0.3F).method21849(Attributes.ATTACK_DAMAGE, 3.0);
+   public static MutableAttribute method5074() {
+      return MobEntity.method4220().method21849(Attributes.MAX_HEALTH, 10.0).method21849(Attributes.MOVEMENT_SPEED, 0.3F).method21849(Attributes.ATTACK_DAMAGE, 3.0);
    }
 
    @Override
@@ -208,7 +210,7 @@ public class Class1090 extends Class1018 {
    }
 
    public Class1090 method4389(ServerWorld var1, Class1045 var2) {
-      return EntityType.field41059.create(var1);
+      return EntityType.OCELOT.create(var1);
    }
 
    @Override

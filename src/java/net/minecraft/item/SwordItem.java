@@ -3,7 +3,7 @@ package net.minecraft.item;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.ImmutableMultimap.Builder;
 import com.google.common.collect.Multimap;
-import mapped.Attributes;
+import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.material.Material;

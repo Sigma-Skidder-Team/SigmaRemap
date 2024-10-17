@@ -3,6 +3,8 @@ package net.minecraft.entity.passive;
 import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.item.ItemStack;
@@ -68,8 +70,8 @@ public class WolfEntity extends TameableEntity implements IAngerable {
       this.field5601.addGoal(8, new ResetAngerGoal<WolfEntity>(this, true));
    }
 
-   public static Class7037 method4373() {
-      return MobEntity.method4220().method21849(Attributes.MOVEMENT_SPEED, 0.3F).method21849(Attributes.field42105, 8.0).method21849(Attributes.ATTACK_DAMAGE, 2.0);
+   public static MutableAttribute method4373() {
+      return MobEntity.method4220().method21849(Attributes.MOVEMENT_SPEED, 0.3F).method21849(Attributes.MAX_HEALTH, 8.0).method21849(Attributes.ATTACK_DAMAGE, 2.0);
    }
 
    @Override
@@ -281,9 +283,9 @@ public class WolfEntity extends TameableEntity implements IAngerable {
    public void method4379(boolean var1) {
       super.method4379(var1);
       if (!var1) {
-         this.getAttribute(Attributes.field42105).method38661(8.0);
+         this.getAttribute(Attributes.MAX_HEALTH).method38661(8.0);
       } else {
-         this.getAttribute(Attributes.field42105).method38661(20.0);
+         this.getAttribute(Attributes.MAX_HEALTH).method38661(20.0);
          this.setHealth(20.0F);
       }
 
@@ -423,7 +425,7 @@ public class WolfEntity extends TameableEntity implements IAngerable {
    }
 
    public WolfEntity method4389(ServerWorld var1, Class1045 var2) {
-      WolfEntity var5 = EntityType.field41105.create(var1);
+      WolfEntity var5 = EntityType.WOLF.create(var1);
       UUID var6 = this.method4397();
       if (var6 != null) {
          var5.method4398(var6);

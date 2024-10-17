@@ -7,7 +7,7 @@ import net.optifine.Config;
 
 public class Class4116 extends Class4057 {
    public Class4116() {
-      super(EntityType.field41011, "boat", 0.5F);
+      super(EntityType.BOAT, "boat", 0.5F);
    }
 
    @Override

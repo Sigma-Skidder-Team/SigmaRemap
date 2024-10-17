@@ -6,7 +6,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Optional;
 
-public class Class3718 extends Class3676<Class1046> {
+public class Class3718 extends Class3676<CreatureEntity> {
    private static String[] field19799;
    private final float field19800;
    private final int field19801;
@@ -23,7 +23,7 @@ public class Class3718 extends Class3676<Class1046> {
       this.field19802 = var3;
    }
 
-   public void method12502(ServerWorld var1, Class1046 var2, long var3) {
+   public void method12502(ServerWorld var1, CreatureEntity var2, long var3) {
       Optional<Vector3d> var7 = Optional.<Vector3d>ofNullable(Class8037.method27583(var2, this.field19801, this.field19802));
       var2.getBrain().method21408(Class8830.field39824, var7.map(var1x -> new Class8999(var1x, this.field19800, 0)));
    }

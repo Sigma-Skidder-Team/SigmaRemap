@@ -35,7 +35,7 @@ public class Class3727 extends Class3676<LivingEntity> {
          && var6.isPresent()
          && var1.getDimensionKey() == ((Class9378)var6.get()).method35578()
          && ((Class9378)var6.get()).method35579().method8317(var2.getPositionVec(), 4.0)
-         && var5.method21410(Class8830.field39819).get().stream().anyMatch(var0 -> EntityType.field41098.equals(var0.getType()));
+         && var5.method21410(Class8830.field39819).get().stream().anyMatch(var0 -> EntityType.VILLAGER.equals(var0.getType()));
    }
 
    @Override
@@ -44,7 +44,7 @@ public class Class3727 extends Class3676<LivingEntity> {
       var7.method21410(Class8830.field39819)
          .ifPresent(
             var2x -> var2x.stream()
-                  .filter(var0x -> EntityType.field41098.equals(var0x.getType()))
+                  .filter(var0x -> EntityType.VILLAGER.equals(var0x.getType()))
                   .filter(var1xx -> var1xx.getDistanceSq(var2) <= 32.0)
                   .findFirst()
                   .ifPresent(var1xx -> {

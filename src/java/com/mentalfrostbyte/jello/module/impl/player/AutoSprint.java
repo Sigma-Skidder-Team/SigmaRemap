@@ -11,7 +11,7 @@ import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
 import com.mentalfrostbyte.jello.module.impl.movement.blockfly.BlockFlyAACMode;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
-import mapped.Attributes;
+import net.minecraft.entity.ai.attributes.Attributes;
 import lol.MovementUtils;
 import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
 import net.minecraft.item.Items;

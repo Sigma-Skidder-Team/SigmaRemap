@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.monster.ZombieEntity;
+
 public class Class2794<T extends ZombieEntity> extends Class2795<T> {
    private static String[] field17429;
 

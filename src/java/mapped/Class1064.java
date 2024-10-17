@@ -6,6 +6,8 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -92,8 +94,8 @@ public class Class1064 extends Class1066 implements Class1022 {
       this.field5601.addGoal(2, new Class2717(this));
    }
 
-   public static Class7037 method4888() {
-      return method4926().method21849(Attributes.field42106, 40.0);
+   public static MutableAttribute method4888() {
+      return method4926().method21849(Attributes.FOLLOW_RANGE, 40.0);
    }
 
    @Override
@@ -358,7 +360,7 @@ public class Class1064 extends Class1066 implements Class1022 {
    }
 
    public Class1064 method4908() {
-      return EntityType.field41047.create(this.world);
+      return EntityType.LLAMA.create(this.world);
    }
 
    private void method4909(LivingEntity var1) {

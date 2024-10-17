@@ -5,7 +5,7 @@ import net.minecraft.entity.EntityType;
 
 public class Class4074 extends Class4071 {
    public Class4074() {
-      super(EntityType.field41108, "zombie_horse", 0.75F);
+      super(EntityType.ZOMBIE_HORSE, "zombie_horse", 0.75F);
    }
 
    @Override

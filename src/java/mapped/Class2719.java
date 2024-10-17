@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.monster.IMob;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 
@@ -8,7 +9,7 @@ public class Class2719 extends NearestAttackableTargetGoal<LivingEntity> {
    private static String[] field17187;
 
    public Class2719(Class1057 var1) {
-      super(var1, LivingEntity.class, 10, true, false, var0 -> var0 instanceof Class1008);
+      super(var1, LivingEntity.class, 10, true, false, var0 -> var0 instanceof IMob);
    }
 
    @Override

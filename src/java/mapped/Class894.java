@@ -18,11 +18,11 @@ public class Class894 extends Class890 {
    }
 
    public Class894(World var1, LivingEntity var2) {
-      super(EntityType.field41083, var2, var1);
+      super(EntityType.SNOWBALL, var2, var1);
    }
 
    public Class894(World var1, double var2, double var4, double var6) {
-      super(EntityType.field41083, var2, var4, var6, var1);
+      super(EntityType.SNOWBALL, var2, var4, var6, var1);
    }
 
    @Override

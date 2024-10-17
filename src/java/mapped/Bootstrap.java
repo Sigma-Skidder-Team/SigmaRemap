@@ -10,6 +10,7 @@ import net.minecraft.dispenser.IDispenseItemBehavior;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.attributes.Attribute;
+import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.LanguageMap;
 import net.minecraft.world.GameRules;
@@ -60,7 +61,7 @@ public class Bootstrap {
 
    public static Set<String> method25569() {
       TreeSet var2 = new TreeSet();
-      method25567(Registry.ATTRIBUTE, Attribute::method15032, var2);
+      method25567(Registry.ATTRIBUTE, Attribute::getAttributeName, var2);
       method25567(Registry.ENTITY_TYPE, EntityType::method33210, var2);
       method25567(Registry.EFFECTS, Effect::getName, var2);
       method25567(Registry.ITEM, Item::getTranslationKey, var2);
@@ -78,7 +79,7 @@ public class Bootstrap {
             Class6099.method18844();
          }
 
-         Class9614.method37377();
+         GlobalEntityTypeAttributes.method37377();
       } else {
          throw new IllegalArgumentException("Not bootstrapped");
       }

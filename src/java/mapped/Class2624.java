@@ -1,16 +1,17 @@
 package mapped;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.monster.EndermanEntity;
 import net.minecraft.entity.player.PlayerEntity;
 
 import java.util.EnumSet;
 
 public class Class2624 extends Class2595 {
    private static String[] field16918;
-   private final Class1010 field16919;
+   private final EndermanEntity field16919;
    private LivingEntity field16920;
 
-   public Class2624(Class1010 var1) {
+   public Class2624(EndermanEntity var1) {
       this.field16919 = var1;
       this.method10809(EnumSet.<Class2240>of(Class2240.field14659, Class2240.field14657));
    }
@@ -20,7 +21,7 @@ public class Class2624 extends Class2595 {
       this.field16920 = this.field16919.method4232();
       if (this.field16920 instanceof PlayerEntity) {
          double var3 = this.field16920.getDistanceSq(this.field16919);
-         return !(var3 > 256.0) ? Class1010.method4362(this.field16919, (PlayerEntity)this.field16920) : false;
+         return !(var3 > 256.0) ? EndermanEntity.method4362(this.field16919, (PlayerEntity)this.field16920) : false;
       } else {
          return false;
       }

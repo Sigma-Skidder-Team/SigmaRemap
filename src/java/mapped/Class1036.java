@@ -5,6 +5,9 @@ import com.mojang.serialization.Dynamic;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.MutableAttribute;
+import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -51,8 +54,8 @@ public class Class1036 extends Class1035 {
       this.field5594 = 20;
    }
 
-   public static Class7037 method4637() {
-      return Class1009.method4343().method21849(Attributes.field42105, 50.0).method21849(Attributes.MOVEMENT_SPEED, 0.35F).method21849(Attributes.ATTACK_DAMAGE, 7.0);
+   public static MutableAttribute method4637() {
+      return MonsterEntity.method4343().method21849(Attributes.MAX_HEALTH, 50.0).method21849(Attributes.MOVEMENT_SPEED, 0.35F).method21849(Attributes.ATTACK_DAMAGE, 7.0);
    }
 
    @Nullable

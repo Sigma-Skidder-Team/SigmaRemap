@@ -11,7 +11,7 @@ public class Class3313 extends Class3312 {
    private static String[] field18823;
 
    public Class3313(Properties var1) {
-      super(EntityType.field41043, var1);
+      super(EntityType.ITEM_FRAME, var1);
    }
 
    @Override

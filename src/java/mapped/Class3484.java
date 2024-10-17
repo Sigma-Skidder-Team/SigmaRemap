@@ -66,7 +66,7 @@ public class Class3484 extends BushBlock implements Class3196 {
 
    @Override
    public void onEntityCollision(BlockState var1, World var2, BlockPos var3, Entity var4) {
-      if (var4 instanceof LivingEntity && var4.getType() != EntityType.FOX && var4.getType() != EntityType.field41009) {
+      if (var4 instanceof LivingEntity && var4.getType() != EntityType.FOX && var4.getType() != EntityType.BEE) {
          var4.setMotionMultiplier(var1, new Vector3d(0.8F, 0.75, 0.8F));
          if (!var2.isRemote && var1.<Integer>get(field19342) > 0 && (var4.lastTickPosX != var4.getPosX() || var4.lastTickPosZ != var4.getPosZ())) {
             double var7 = Math.abs(var4.getPosX() - var4.lastTickPosX);

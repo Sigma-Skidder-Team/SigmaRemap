@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.IAngerable;
+import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.GameRules;
 
@@ -41,7 +42,7 @@ public class ResetAngerGoal<T extends MobEntity & IAngerable> extends Class2595 
    }
 
    private List<MobEntity> method10968() {
-      double var3 = this.field17378.getAttributeValue(Attributes.field42106);
+      double var3 = this.field17378.getAttributeValue(Attributes.FOLLOW_RANGE);
       AxisAlignedBB var5 = AxisAlignedBB.method19657(this.field17378.getPositionVec()).grow(var3, 10.0, var3);
       return this.field17378.world.<MobEntity>method7183((Class<? extends MobEntity>)this.field17378.getClass(), var5);
    }

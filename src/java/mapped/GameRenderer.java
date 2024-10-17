@@ -24,6 +24,7 @@ import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.ItemFrameEntity;
+import net.minecraft.entity.monster.EndermanEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileHelper;
 import net.minecraft.fluid.FluidState;
@@ -167,7 +168,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
       this.shaderGroup = null;
       if (!(var1 instanceof Class1081)) {
          if (!(var1 instanceof Class1101)) {
-            if (!(var1 instanceof Class1010)) {
+            if (!(var1 instanceof EndermanEntity)) {
                if (Reflector.field42880.exists()) {
                   Reflector.method35062(Reflector.field42880, var1, this);
                }

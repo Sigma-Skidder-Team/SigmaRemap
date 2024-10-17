@@ -52,7 +52,7 @@ public class Class904 extends ProjectileEntity {
    private final int field5162;
 
    private Class904(World var1, PlayerEntity var2, int var3, int var4) {
-      super(EntityType.field41112, var1);
+      super(EntityType.FISHING_BOBBER, var1);
       this.ignoreFrustumCheck = true;
       this.setShooter(var2);
       var2.field4930 = this;

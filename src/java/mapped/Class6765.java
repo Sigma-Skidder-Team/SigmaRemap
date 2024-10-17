@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.fluid.FluidState;
+import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.pathfinding.PathType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -53,33 +54,33 @@ public class Class6765 extends Class6764 {
    }
 
    @Override
-   public Class2163 method20629(IBlockReader var1, int var2, int var3, int var4, MobEntity var5, int var6, int var7, int var8, boolean var9, boolean var10) {
+   public PathNodeType method20629(IBlockReader var1, int var2, int var3, int var4, MobEntity var5, int var6, int var7, int var8, boolean var9, boolean var10) {
       return this.method20621(var1, var2, var3, var4);
    }
 
    @Override
-   public Class2163 method20621(IBlockReader var1, int var2, int var3, int var4) {
+   public PathNodeType method20621(IBlockReader var1, int var2, int var3, int var4) {
       BlockPos var7 = new BlockPos(var2, var3, var4);
       FluidState var8 = var1.getFluidState(var7);
       BlockState var9 = var1.getBlockState(var7);
       if (var8.isEmpty() && var9.method23440(var1, var7.down(), PathType.field12615) && var9.isAir()) {
-         return Class2163.field14204;
+         return PathNodeType.BREACH;
       } else {
-         return var8.method23486(FluidTags.field40469) && var9.method23440(var1, var7, PathType.field12615) ? Class2163.field14191 : Class2163.field14184;
+         return var8.method23486(FluidTags.field40469) && var9.method23440(var1, var7, PathType.field12615) ? PathNodeType.WATER : PathNodeType.BLOCKED;
       }
    }
 
    @Nullable
    private Class7176 method20651(int var1, int var2, int var3) {
-      Class2163 var6 = this.method20652(var1, var2, var3);
-      return (!this.field29485 || var6 != Class2163.field14204) && var6 != Class2163.field14191 ? null : this.method20641(var1, var2, var3);
+      PathNodeType var6 = this.method20652(var1, var2, var3);
+      return (!this.field29485 || var6 != PathNodeType.BREACH) && var6 != PathNodeType.WATER ? null : this.method20641(var1, var2, var3);
    }
 
    @Nullable
    @Override
    public Class7176 method20641(int var1, int var2, int var3) {
       Class7176 var6 = null;
-      Class2163 var7 = this.method20621(this.field29476.world, var1, var2, var3);
+      PathNodeType var7 = this.method20621(this.field29476.world, var1, var2, var3);
       float var8 = this.field29476.method4223(var7);
       if (var8 >= 0.0F) {
          var6 = super.method20641(var1, var2, var3);
@@ -90,10 +91,10 @@ public class Class6765 extends Class6764 {
          }
       }
 
-      return var7 != Class2163.field14185 ? var6 : var6;
+      return var7 != PathNodeType.OPEN ? var6 : var6;
    }
 
-   private Class2163 method20652(int var1, int var2, int var3) {
+   private PathNodeType method20652(int var1, int var2, int var3) {
       BlockPos.Mutable var6 = new BlockPos.Mutable();
 
       for (int var7 = var1; var7 < var1 + this.field29478; var7++) {
@@ -102,17 +103,17 @@ public class Class6765 extends Class6764 {
                FluidState var10 = this.field29475.getFluidState(var6.setPos(var7, var8, var9));
                BlockState var11 = this.field29475.getBlockState(var6.setPos(var7, var8, var9));
                if (var10.isEmpty() && var11.method23440(this.field29475, var6.down(), PathType.field12615) && var11.isAir()) {
-                  return Class2163.field14204;
+                  return PathNodeType.BREACH;
                }
 
                if (!var10.method23486(FluidTags.field40469)) {
-                  return Class2163.field14184;
+                  return PathNodeType.BLOCKED;
                }
             }
          }
       }
 
       BlockState var12 = this.field29475.getBlockState(var6);
-      return !var12.method23440(this.field29475, var6, PathType.field12615) ? Class2163.field14184 : Class2163.field14191;
+      return !var12.method23440(this.field29475, var6, PathType.field12615) ? PathNodeType.BLOCKED : PathNodeType.WATER;
    }
 }

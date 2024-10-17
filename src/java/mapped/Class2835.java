@@ -79,8 +79,8 @@ public class Class2835 implements Consumer<Consumer<Advancement>> {
          .method27312(
             "killed_ghast",
             Class4476.method14136(
-               Class7552.method24700().method24701(EntityType.field41034),
-               Class9714.method38056().method38057(true).method38059(Class7552.method24700().method24701(EntityType.field41044))
+               Class7552.method24700().method24701(EntityType.GHAST),
+               Class9714.method38056().method38057(true).method38059(Class7552.method24700().method24701(EntityType.FIREBALL))
             )
          )
          .method27317(var1, "nether/return_to_sender");
@@ -128,7 +128,7 @@ public class Class2835 implements Consumer<Consumer<Advancement>> {
          .method27310(Class9182.method34343(100))
          .method27312(
             "killed_ghast",
-            Class4476.method14134(Class7552.method24700().method24701(EntityType.field41034).method24706(Class8576.method30648(World.OVERWORLD)))
+            Class4476.method14134(Class7552.method24700().method24701(EntityType.GHAST).method24706(Class8576.method30648(World.OVERWORLD)))
          )
          .method27317(var1, "nether/uneasy_alliance");
       Advancement var7 = Class7999.method27304()
@@ -157,7 +157,7 @@ public class Class2835 implements Consumer<Consumer<Advancement>> {
             true,
             false
          )
-         .method27312("summoned", Class4456.method14090(Class7552.method24700().method24701(EntityType.field41102)))
+         .method27312("summoned", Class4456.method14090(Class7552.method24700().method24701(EntityType.WITHER)))
          .method27317(var1, "nether/summon_wither");
       Advancement var9 = Class7999.method27304()
          .method27305(var6)
@@ -398,7 +398,7 @@ public class Class2835 implements Consumer<Consumer<Advancement>> {
          .method27312(
             "used_warped_fungus_on_a_stick",
             Class4484.method14149(
-               Class9587.method37226(Class7552.method24700().method24713(Class7552.method24700().method24701(EntityType.field41088).method24717()).method24717()),
+               Class9587.method37226(Class7552.method24700().method24713(Class7552.method24700().method24701(EntityType.STRIDER).method24717()).method24717()),
                Class9735.method38146().method38147(Items.field38065).method38151(),
                Class8840.field39936
             )
@@ -469,7 +469,7 @@ public class Class2835 implements Consumer<Consumer<Advancement>> {
                field17627,
                Class9735.method38146().method38148(Class5985.field26109),
                Class9587.method37226(
-                  Class7552.method24700().method24701(EntityType.field41065).method24709(Class8265.method28830().method28832(false).method28833()).method24717()
+                  Class7552.method24700().method24701(EntityType.PIGLIN).method24709(Class8265.method28830().method28832(false).method28833()).method24717()
                )
             )
          )
@@ -479,7 +479,7 @@ public class Class2835 implements Consumer<Consumer<Advancement>> {
                field17627,
                Class9735.method38146().method38147(Class4388.field21458),
                Class9587.method37226(
-                  Class7552.method24700().method24701(EntityType.field41065).method24709(Class8265.method28830().method28832(false).method28833()).method24717()
+                  Class7552.method24700().method24701(EntityType.PIGLIN).method24709(Class8265.method28830().method28832(false).method28833()).method24717()
                )
             )
          )

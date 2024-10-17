@@ -52,7 +52,7 @@ public class Class3344 extends Class3343 {
                   }
                }
 
-               WitherEntity var13 = EntityType.field41102.create(var0);
+               WitherEntity var13 = EntityType.WITHER.create(var0);
                BlockPos var14 = var8.method33881(1, 2, 0).method37551();
                var13.setLocationAndAngles(
                   (double)var14.getX() + 0.5,

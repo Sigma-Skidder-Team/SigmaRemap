@@ -60,7 +60,7 @@ public class Class4186 extends Class4180 {
                var3.addEntity(var8);
             }
          } else {
-            Class1057 var9 = EntityType.field41075.create(var3.method6970());
+            Class1057 var9 = EntityType.SHULKER.create(var3.method6970());
             var9.setPosition((double)var2.getX() + 0.5, (double)var2.getY() + 0.5, (double)var2.getZ() + 0.5);
             var9.method4850(var2);
             var3.addEntity(var9);

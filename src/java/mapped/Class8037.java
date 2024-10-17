@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
@@ -11,69 +12,69 @@ import javax.annotation.Nullable;
 
 public class Class8037 {
    @Nullable
-   public static Vector3d method27581(Class1046 var0, int var1, int var2) {
-      return method27592(var0, var1, var2, 0, (Vector3d)null, true, (float) (Math.PI / 2), var0::method4771, false, 0, 0, true);
+   public static Vector3d method27581(CreatureEntity var0, int var1, int var2) {
+      return method27592(var0, var1, var2, 0, (Vector3d)null, true, (float) (Math.PI / 2), var0::getBlockPathWeight, false, 0, 0, true);
    }
 
    @Nullable
-   public static Vector3d method27582(Class1046 var0, int var1, int var2, int var3, Vector3d var4, double var5) {
-      return method27592(var0, var1, var2, var3, var4, true, var5, var0::method4771, true, 0, 0, false);
+   public static Vector3d method27582(CreatureEntity var0, int var1, int var2, int var3, Vector3d var4, double var5) {
+      return method27592(var0, var1, var2, var3, var4, true, var5, var0::getBlockPathWeight, true, 0, 0, false);
    }
 
    @Nullable
-   public static Vector3d method27583(Class1046 var0, int var1, int var2) {
-      return method27584(var0, var1, var2, var0::method4771);
+   public static Vector3d method27583(CreatureEntity var0, int var1, int var2) {
+      return method27584(var0, var1, var2, var0::getBlockPathWeight);
    }
 
    @Nullable
-   public static Vector3d method27584(Class1046 var0, int var1, int var2, ToDoubleFunction<BlockPos> var3) {
+   public static Vector3d method27584(CreatureEntity var0, int var1, int var2, ToDoubleFunction<BlockPos> var3) {
       return method27592(var0, var1, var2, 0, (Vector3d)null, false, 0.0, var3, true, 0, 0, true);
    }
 
    @Nullable
-   public static Vector3d method27585(Class1046 var0, int var1, int var2, Vector3d var3, float var4, int var5, int var6) {
-      return method27592(var0, var1, var2, 0, var3, false, (double)var4, var0::method4771, true, var5, var6, true);
+   public static Vector3d method27585(CreatureEntity var0, int var1, int var2, Vector3d var3, float var4, int var5, int var6) {
+      return method27592(var0, var1, var2, 0, var3, false, (double)var4, var0::getBlockPathWeight, true, var5, var6, true);
    }
 
    @Nullable
-   public static Vector3d method27586(Class1046 var0, int var1, int var2, Vector3d var3) {
+   public static Vector3d method27586(CreatureEntity var0, int var1, int var2, Vector3d var3) {
       Vector3d var6 = var3.method11337(var0.getPosX(), var0.getPosY(), var0.getPosZ());
-      return method27592(var0, var1, var2, 0, var6, false, (float) (Math.PI / 2), var0::method4771, true, 0, 0, true);
+      return method27592(var0, var1, var2, 0, var6, false, (float) (Math.PI / 2), var0::getBlockPathWeight, true, 0, 0, true);
    }
 
    @Nullable
-   public static Vector3d method27587(Class1046 var0, int var1, int var2, Vector3d var3) {
+   public static Vector3d method27587(CreatureEntity var0, int var1, int var2, Vector3d var3) {
       Vector3d var6 = var3.method11337(var0.getPosX(), var0.getPosY(), var0.getPosZ());
-      return method27592(var0, var1, var2, 0, var6, true, (float) (Math.PI / 2), var0::method4771, false, 0, 0, true);
+      return method27592(var0, var1, var2, 0, var6, true, (float) (Math.PI / 2), var0::getBlockPathWeight, false, 0, 0, true);
    }
 
    @Nullable
-   public static Vector3d method27588(Class1046 var0, int var1, int var2, Vector3d var3, double var4) {
+   public static Vector3d method27588(CreatureEntity var0, int var1, int var2, Vector3d var3, double var4) {
       Vector3d var8 = var3.method11337(var0.getPosX(), var0.getPosY(), var0.getPosZ());
-      return method27592(var0, var1, var2, 0, var8, true, var4, var0::method4771, false, 0, 0, true);
+      return method27592(var0, var1, var2, 0, var8, true, var4, var0::getBlockPathWeight, false, 0, 0, true);
    }
 
    @Nullable
-   public static Vector3d method27589(Class1046 var0, int var1, int var2, int var3, Vector3d var4, double var5) {
+   public static Vector3d method27589(CreatureEntity var0, int var1, int var2, int var3, Vector3d var4, double var5) {
       Vector3d var9 = var4.method11337(var0.getPosX(), var0.getPosY(), var0.getPosZ());
-      return method27592(var0, var1, var2, var3, var9, false, var5, var0::method4771, true, 0, 0, false);
+      return method27592(var0, var1, var2, var3, var9, false, var5, var0::getBlockPathWeight, true, 0, 0, false);
    }
 
    @Nullable
-   public static Vector3d method27590(Class1046 var0, int var1, int var2, Vector3d var3) {
+   public static Vector3d method27590(CreatureEntity var0, int var1, int var2, Vector3d var3) {
       Vector3d var6 = var0.getPositionVec().subtract(var3);
-      return method27592(var0, var1, var2, 0, var6, true, (float) (Math.PI / 2), var0::method4771, false, 0, 0, true);
+      return method27592(var0, var1, var2, 0, var6, true, (float) (Math.PI / 2), var0::getBlockPathWeight, false, 0, 0, true);
    }
 
    @Nullable
-   public static Vector3d method27591(Class1046 var0, int var1, int var2, Vector3d var3) {
+   public static Vector3d method27591(CreatureEntity var0, int var1, int var2, Vector3d var3) {
       Vector3d var6 = var0.getPositionVec().subtract(var3);
-      return method27592(var0, var1, var2, 0, var6, false, (float) (Math.PI / 2), var0::method4771, true, 0, 0, true);
+      return method27592(var0, var1, var2, 0, var6, false, (float) (Math.PI / 2), var0::getBlockPathWeight, true, 0, 0, true);
    }
 
    @Nullable
    private static Vector3d method27592(
-      Class1046 var0,
+      CreatureEntity var0,
       int var1,
       int var2,
       int var3,
@@ -135,7 +136,7 @@ public class Class8037 {
                }
 
                if (var5 || !var0.world.getFluidState(var31).method23486(FluidTags.field40469)) {
-                  Class2163 var28 = Class6762.method20633(var0.world, var31.method8354());
+                  PathNodeType var28 = Class6762.method20633(var0.world, var31.method8354());
                   if (var0.method4223(var28) == 0.0F) {
                      double var29 = var8.applyAsDouble(var31);
                      if (var29 > var19) {

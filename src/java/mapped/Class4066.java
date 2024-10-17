@@ -5,7 +5,7 @@ import net.minecraft.entity.EntityType;
 
 public class Class4066 extends Class4057 {
    public Class4066() {
-      super(EntityType.field41041, "iron_golem", 0.5F);
+      super(EntityType.IRON_GOLEM, "iron_golem", 0.5F);
    }
 
    @Override

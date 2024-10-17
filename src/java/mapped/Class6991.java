@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
+import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.pathfinding.PathType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -182,7 +183,7 @@ public class Class6991 extends Class6990 {
                double var18 = (double)var16 + 0.5 - var7.x;
                double var20 = (double)var17 + 0.5 - var7.z;
                if (!(var18 * var8 + var20 * var10 < 0.0)) {
-                  Class2163 var22 = this.field30257.method20629(this.field30244, var16, var2 - 1, var17, this.field30243, var4, var5, var6, true, true);
+                  PathNodeType var22 = this.field30257.method20629(this.field30244, var16, var2 - 1, var17, this.field30243, var4, var5, var6, true, true);
                   if (!this.method21680(var22)) {
                      return false;
                   }
@@ -190,7 +191,7 @@ public class Class6991 extends Class6990 {
                   var22 = this.field30257.method20629(this.field30244, var16, var2, var17, this.field30243, var4, var5, var6, true, true);
                   float var23 = this.field30243.method4223(var22);
                   if (!(var23 < 0.0F) && !(var23 >= 8.0F)) {
-                     if (var22 != Class2163.field14196 && var22 != Class2163.field14195 && var22 != Class2163.field14200) {
+                     if (var22 != PathNodeType.DAMAGE_FIRE && var22 != PathNodeType.DANGER_FIRE && var22 != PathNodeType.DAMAGE_OTHER) {
                         continue;
                      }
 
@@ -206,9 +207,9 @@ public class Class6991 extends Class6990 {
       }
    }
 
-   public boolean method21680(Class2163 var1) {
-      if (var1 != Class2163.field14191) {
-         return var1 != Class2163.field14190 ? var1 != Class2163.field14185 : false;
+   public boolean method21680(PathNodeType var1) {
+      if (var1 != PathNodeType.WATER) {
+         return var1 != PathNodeType.LAVA ? var1 != PathNodeType.OPEN : false;
       } else {
          return false;
       }
