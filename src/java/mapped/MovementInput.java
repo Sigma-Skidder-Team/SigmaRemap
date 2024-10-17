@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.vector.Vector2f;
+
 public class MovementInput {
    public float field43907; //moveStrafe
    public float field43908; //moveForward

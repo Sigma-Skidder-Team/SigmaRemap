@@ -1,7 +1,7 @@
 package net.minecraft.client.renderer.model;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
-import mapped.Vector3f;
+import net.minecraft.util.math.vector.Vector3f;
 import net.minecraft.util.math.vector.Quaternion;
 
 public class ItemTransformVec3f {

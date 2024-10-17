@@ -12,6 +12,7 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import mapped.*;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.vector.Vector3f;
 import net.minecraft.util.text.CharacterManager;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextProperties;

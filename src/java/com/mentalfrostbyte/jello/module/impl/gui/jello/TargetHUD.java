@@ -29,6 +29,7 @@ import net.minecraft.entity.passive.WolfEntity;
 import net.minecraft.entity.passive.fish.SalmonEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.vector.Quaternion;
+import net.minecraft.util.math.vector.Vector3f;
 import org.lwjgl.opengl.GL11;
 
 import java.awt.Color;

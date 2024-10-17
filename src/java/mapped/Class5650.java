@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.vector.Vector3f;
 
 public class Class5650 extends Class5651<Class1095, Class2864<Class1095>> {
    private static final ResourceLocation field25000 = new ResourceLocation("textures/entity/fox/fox.png");

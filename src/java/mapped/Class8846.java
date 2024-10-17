@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.util.math.vector.Matrix3f;
 import net.minecraft.util.math.vector.Quaternion;
+import net.minecraft.util.math.vector.Vector3f;
 
 import java.util.Random;
 

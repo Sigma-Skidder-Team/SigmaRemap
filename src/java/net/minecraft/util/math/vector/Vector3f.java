@@ -1,10 +1,7 @@
-package mapped;
+package net.minecraft.util.math.vector;
 
 import it.unimi.dsi.fastutil.floats.Float2FloatFunction;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.vector.Matrix3f;
-import net.minecraft.util.math.vector.Quaternion;
-import net.minecraft.util.math.vector.Vector3d;
 
 public final class Vector3f {
    public static Vector3f field32897 = new Vector3f(-1.0F, 0.0F, 0.0F);

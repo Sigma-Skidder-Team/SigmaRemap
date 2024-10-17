@@ -7,6 +7,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Matrix3f;
+import net.minecraft.util.math.vector.Vector3f;
 
 public class Class233<T extends LivingEntity, M extends PlayerModel<T>> extends Class231<T, M> {
    private static final ResourceLocation field879 = new ResourceLocation("textures/entity/bee/bee_stinger.png");

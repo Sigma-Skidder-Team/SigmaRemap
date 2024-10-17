@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.util.Util;
+import net.minecraft.util.math.vector.Vector3f;
 
 public class Class7516 {
    private static String[] field32242;

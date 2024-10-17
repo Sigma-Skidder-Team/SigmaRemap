@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.vector.Vector3f;
+
 public class Class8161 {
    private static String[] field35117;
    public final Vector3f field35118;

@@ -4,6 +4,7 @@ import com.google.common.collect.Maps;
 import com.google.gson.*;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.vector.Vector3f;
 
 import javax.annotation.Nullable;
 import java.lang.reflect.Type;

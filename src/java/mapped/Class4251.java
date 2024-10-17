@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
 import net.minecraft.util.math.vector.Vector3i;
+import net.minecraft.util.math.vector.Vector3m;
 import org.lwjgl.opengl.GL11;
 
 import java.util.ArrayList;

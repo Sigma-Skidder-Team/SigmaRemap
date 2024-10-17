@@ -9,6 +9,7 @@ import net.minecraft.client.renderer.texture.NativeImage;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3f;
 import net.optifine.Config;
 import net.optifine.shaders.Shaders;
 

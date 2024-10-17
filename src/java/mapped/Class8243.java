@@ -11,6 +11,7 @@ import java.util.Locale;
 
 import net.minecraft.command.CommandSource;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.vector.Vector2f;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class8243 {

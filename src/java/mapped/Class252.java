@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.vector.Vector3f;
 
 public class Class252 extends Class219<AbstractClientPlayerEntity, PlayerModel<AbstractClientPlayerEntity>> {
    public Class252(Class5714<AbstractClientPlayerEntity, PlayerModel<AbstractClientPlayerEntity>> var1) {

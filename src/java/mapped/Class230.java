@@ -4,6 +4,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.util.math.vector.Vector3f;
 
 public class Class230 extends Class219<Class1058, Class2880<Class1058>> {
    private static String[] field875;

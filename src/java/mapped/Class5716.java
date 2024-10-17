@@ -5,6 +5,7 @@ import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.vector.Vector3f;
 
 public class Class5716 extends EntityRenderer<Class886> {
    public static final ResourceLocation field25102 = new ResourceLocation("textures/entity/trident.png");

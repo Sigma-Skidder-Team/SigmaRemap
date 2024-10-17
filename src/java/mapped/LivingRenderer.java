@@ -15,6 +15,7 @@ import net.minecraft.scoreboard.Team;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.vector.Vector3f;
 import net.minecraft.util.text.TextFormatting;
 import net.optifine.Config;
 import net.optifine.entity.model.CustomEntityModels;

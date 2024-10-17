@@ -5,6 +5,7 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Matrix3f;
+import net.minecraft.util.math.vector.Vector3f;
 
 public class Class5720 extends EntityRenderer<Class903> {
    private static final ResourceLocation field25117 = new ResourceLocation("textures/entity/enderdragon/dragon_fireball.png");

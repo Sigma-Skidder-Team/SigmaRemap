@@ -6,6 +6,7 @@ import net.minecraft.entity.item.BoatEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Quaternion;
+import net.minecraft.util.math.vector.Vector3f;
 
 public class Class5725 extends EntityRenderer<BoatEntity> {
    private static final ResourceLocation[] field25131 = new ResourceLocation[]{

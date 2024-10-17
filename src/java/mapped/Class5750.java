@@ -4,6 +4,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.entity.passive.fish.SalmonEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.vector.Vector3f;
 
 public class Class5750 extends Class5651<SalmonEntity, Class2816<SalmonEntity>> {
    private static final ResourceLocation field25178 = new ResourceLocation("textures/entity/fish/salmon.png");

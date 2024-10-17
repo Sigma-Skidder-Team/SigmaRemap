@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.vector.Matrix3f;
+import net.minecraft.util.math.vector.Vector3f;
 
 public class Class5427 extends Class5424 {
    private static String[] field24143;

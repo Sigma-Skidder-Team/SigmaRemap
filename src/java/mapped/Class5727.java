@@ -5,6 +5,7 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Matrix3f;
+import net.minecraft.util.math.vector.Vector3f;
 
 public abstract class Class5727<T extends AbstractArrowEntity> extends EntityRenderer<T> {
    public Class5727(EntityRendererManager var1) {

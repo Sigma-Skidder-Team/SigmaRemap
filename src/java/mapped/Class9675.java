@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.util.math.vector.Vector3f;
 import org.lwjgl.openal.AL10;
 
 public class Class9675 {

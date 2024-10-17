@@ -5,6 +5,7 @@ import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Quaternion;
+import net.minecraft.util.math.vector.Vector3f;
 
 public class Class5956 extends Class5942<Class959> {
    public static final Class7826 field25968 = new Class7826(AtlasTexture.LOCATION_BLOCKS_TEXTURE, new ResourceLocation("entity/conduit/base"));

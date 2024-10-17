@@ -5,6 +5,7 @@ import mapped.*;
 import net.minecraft.client.renderer.GLAllocation;
 import net.minecraft.client.shader.FramebufferConstants;
 import net.minecraft.client.util.LWJGLMemoryUntracker;
+import net.minecraft.util.math.vector.Vector3f;
 import net.optifine.Config;
 import net.optifine.render.GlAlphaState;
 import net.optifine.render.GlBlendState;

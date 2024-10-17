@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.util.math.vector;
 
 public class Vector2f {
    private static String[] field37211;

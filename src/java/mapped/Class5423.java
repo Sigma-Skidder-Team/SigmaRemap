@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.vector.Vector3f;
+
 public class Class5423 implements IVertexBuilder {
    private final IVertexBuilder field24106;
    private final IVertexBuilder field24107;

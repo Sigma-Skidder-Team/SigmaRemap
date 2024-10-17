@@ -8,6 +8,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Matrix3f;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.util.math.vector.Vector3f;
 
 public class Class5658 extends Class5651<Class1105, Class2820> {
    private static final ResourceLocation field25020 = new ResourceLocation("textures/entity/guardian.png");

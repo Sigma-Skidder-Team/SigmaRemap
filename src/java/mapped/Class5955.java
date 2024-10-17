@@ -5,6 +5,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.math.vector.Vector3f;
 
 public class Class5955 extends Class5942<Class945> {
    private static String[] field25967;

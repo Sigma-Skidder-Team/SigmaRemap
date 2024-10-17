@@ -4,6 +4,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.vector.Vector3f;
 
 public class Class261<T extends LivingEntity> extends Class219<T, PlayerModel<T>> {
    public static final ResourceLocation field921 = new ResourceLocation("textures/entity/trident_riptide.png");

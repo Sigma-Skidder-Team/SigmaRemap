@@ -4,6 +4,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.util.math.vector.Vector3f;
 
 public class Class240<T extends LivingEntity> extends Class239<T, Class2891<T>> {
    private static String[] field893;

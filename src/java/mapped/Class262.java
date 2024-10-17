@@ -7,6 +7,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.vector.Vector3f;
 import net.optifine.Config;
 
 public class Class262<T extends Class1086> extends Class219<T, Class2870<T>> {

@@ -8,6 +8,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Matrix3f;
+import net.minecraft.util.math.vector.Vector3f;
 
 public class Class5737 extends EntityRenderer<PaintingEntity> {
    private static String[] field25158;

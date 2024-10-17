@@ -7,6 +7,7 @@ import java.util.function.Supplier;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.vector.Quaternion;
+import net.minecraft.util.math.vector.Vector3f;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

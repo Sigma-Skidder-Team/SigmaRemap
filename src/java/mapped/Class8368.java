@@ -8,6 +8,7 @@ import java.util.List;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.vector.Vector2f;
 import net.minecraft.util.text.TextComponentUtils;
 
 public class Class8368 {

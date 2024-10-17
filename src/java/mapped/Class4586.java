@@ -4,6 +4,7 @@ import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Quaternion;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.util.math.vector.Vector3f;
 
 public abstract class Class4586 extends Class4587 {
    public float field22035 = 0.1F * (this.field22054.nextFloat() * 0.5F + 0.5F) * 2.0F;

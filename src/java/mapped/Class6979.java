@@ -7,6 +7,7 @@ import javax.annotation.Nullable;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.math.vector.Matrix3f;
 import net.minecraft.util.math.vector.Quaternion;
+import net.minecraft.util.math.vector.Vector3f;
 import org.apache.commons.lang3.tuple.Triple;
 
 public final class Class6979 {

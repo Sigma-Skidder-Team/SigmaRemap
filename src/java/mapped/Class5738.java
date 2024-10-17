@@ -11,6 +11,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Matrix3f;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.util.math.vector.Vector3f;
 
 public class Class5738 extends EntityRenderer<Class904> {
    private static final ResourceLocation field25159 = new ResourceLocation("textures/entity/fishing_hook.png");

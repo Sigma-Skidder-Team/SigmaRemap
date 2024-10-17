@@ -5,6 +5,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.HandSide;
+import net.minecraft.util.math.vector.Vector3f;
 
 public class Class242<T extends LivingEntity, M extends Class2827<T> & IHasArm> extends Class219<T, M> {
    private static String[] field897;

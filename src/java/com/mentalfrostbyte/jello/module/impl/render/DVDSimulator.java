@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import mapped.Vector2f;
+import net.minecraft.util.math.vector.Vector2f;
 import mapped.Class9108;
 import mapped.RenderUtil;
 

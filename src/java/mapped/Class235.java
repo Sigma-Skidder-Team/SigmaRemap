@@ -9,6 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.SkullTileEntity;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.vector.Vector3f;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.UUID;

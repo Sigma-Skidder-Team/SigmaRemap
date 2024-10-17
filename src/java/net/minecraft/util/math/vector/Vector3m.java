@@ -1,4 +1,6 @@
-package mapped;
+package net.minecraft.util.math.vector;
+
+import mapped.Class8828;
 
 public class Vector3m implements Comparable<Vector3m> {
    public final double x;

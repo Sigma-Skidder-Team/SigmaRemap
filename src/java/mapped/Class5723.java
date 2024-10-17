@@ -6,6 +6,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Quaternion;
+import net.minecraft.util.math.vector.Vector3f;
 
 public class Class5723 extends EntityRenderer<EnderCrystalEntity> {
    private static final ResourceLocation field25122 = new ResourceLocation("textures/entity/end_crystal/end_crystal.png");

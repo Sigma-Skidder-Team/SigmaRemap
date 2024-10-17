@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.math.vector.Quaternion;
+import net.minecraft.util.math.vector.Vector3f;
 
 import java.nio.FloatBuffer;
 import java.util.Random;

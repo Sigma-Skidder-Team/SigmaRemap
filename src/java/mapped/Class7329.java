@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.command.CommandSource;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector2f;
 import net.minecraft.util.math.vector.Vector3d;
 
 public interface Class7329 {

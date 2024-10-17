@@ -7,6 +7,7 @@ import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.command.CommandSource;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.vector.Vector2f;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.StringTextComponent;
 import org.apache.commons.io.IOUtils;

@@ -1,6 +1,8 @@
 package mapped;
 
 import java.util.ArrayList;
+
+import net.minecraft.util.math.vector.Vector2f;
 import org.lwjgl.opengl.ARBShaderObjects;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL20;

@@ -4,7 +4,6 @@ import com.mojang.datafixers.util.Pair;
 import java.util.Random;
 
 import mapped.Matrix4f;
-import mapped.Vector3f;
 import net.minecraft.util.math.MathHelper;
 import org.apache.commons.lang3.tuple.Triple;
 

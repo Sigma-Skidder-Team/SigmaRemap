@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.vector.Vector3f;
 
 public class Class5722 extends EntityRenderer<Class915> {
    private static final ResourceLocation field25120 = new ResourceLocation("textures/entity/illager/evoker_fangs.png");

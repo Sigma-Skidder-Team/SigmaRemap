@@ -5,6 +5,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Matrix3f;
+import net.minecraft.util.math.vector.Vector3f;
 import net.minecraft.util.math.vector.Vector3i;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

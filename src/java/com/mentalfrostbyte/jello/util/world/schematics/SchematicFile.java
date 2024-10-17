@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.util.world.schematics;
 
 import mapped.DataPacket;
-import mapped.Vector3m;
+import net.minecraft.util.math.vector.Vector3m;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.CompressedStreamTools;
 

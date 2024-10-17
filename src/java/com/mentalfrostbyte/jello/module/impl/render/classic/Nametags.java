@@ -14,6 +14,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.vector.Vector2f;
 import net.minecraft.util.registry.Registry;
 import org.lwjgl.opengl.GL11;
 

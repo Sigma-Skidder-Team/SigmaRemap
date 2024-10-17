@@ -1,7 +1,6 @@
 package net.minecraft.util.math.vector;
 
 import net.minecraft.util.math.MathHelper;
-import mapped.Vector3f;
 
 public final class Quaternion {
    public static final Quaternion field39030 = new Quaternion(0.0F, 0.0F, 0.0F, 1.0F);

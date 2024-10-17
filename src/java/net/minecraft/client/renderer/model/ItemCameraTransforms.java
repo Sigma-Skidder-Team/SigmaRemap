@@ -3,7 +3,7 @@ package net.minecraft.client.renderer.model;
 import com.google.gson.*;
 import mapped.ItemCameraTransformsTransformType;
 import mapped.JSONUtils;
-import mapped.Vector3f;
+import net.minecraft.util.math.vector.Vector3f;
 
 import java.lang.reflect.Type;
 

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.vector.Vector3m;
+
 public class Class8828 {
    public final double field39805;
    public final double field39806;

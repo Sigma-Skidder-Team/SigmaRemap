@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.vector.Vector3m;
+
 public class DataPacket {
    private short shortValue;
    private byte byteValue;

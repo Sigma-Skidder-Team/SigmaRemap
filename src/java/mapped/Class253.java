@@ -5,6 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.entity.monster.EndermanEntity;
+import net.minecraft.util.math.vector.Vector3f;
 
 public class Class253 extends Class219<EndermanEntity, Class2799<EndermanEntity>> {
    private static String[] field909;

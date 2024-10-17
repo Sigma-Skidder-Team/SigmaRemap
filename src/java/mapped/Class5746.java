@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.vector.Vector3f;
 
 public class Class5746 extends Class5651<Class1058, Class2880<Class1058>> {
    private static final ResourceLocation field25170 = new ResourceLocation("textures/entity/iron_golem/iron_golem.png");
