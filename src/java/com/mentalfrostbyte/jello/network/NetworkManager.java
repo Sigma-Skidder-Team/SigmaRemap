@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.network;
 
 import club.minnced.discord.rpc.DiscordRPC;
 import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.unmapped.CombatTracker;
+import com.mentalfrostbyte.jello.util.tracker.CombatTracker;
 
 public class NetworkManager {
     public static boolean premium = false;

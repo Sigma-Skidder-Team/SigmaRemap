@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.CombatTracker;
+import com.mentalfrostbyte.jello.util.tracker.CombatTracker;
 import io.socket.emitter.Emitter;
 import totalcross.json.JSONException;
 import totalcross.json.JSONObject;
