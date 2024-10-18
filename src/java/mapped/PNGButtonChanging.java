@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
 
@@ -29,7 +29,7 @@ public class PNGButtonChanging extends Class4247 {
          (float)this.yA,
          (float)(this.widthA * 3),
          (float)this.heightA,
-         ResourcesDecrypter.repeatPNG,
+         ResourceList.repeatPNG,
          MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.35F)
       );
       RenderUtil.endScissor();

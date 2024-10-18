@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.account;
 
 import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.TextureUtil;
 import fr.litarvan.openauth.microsoft.MicrosoftAuthResult;
@@ -218,7 +218,7 @@ public class Account {
             }
         }
 
-        return this.skinTexture != null ? this.skinTexture : ResourcesDecrypter.skinPNG;
+        return this.skinTexture != null ? this.skinTexture : ResourceList.skinPNG;
     }
 
     @Override

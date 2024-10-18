@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.youtube.YoutubeVideoData;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ImageUtil;
 import com.mentalfrostbyte.jello.util.TextureUtil;
@@ -138,9 +138,9 @@ public class Class4286 extends Class4278 {
             var1
          );
          if (this.field20775 == null && this.field20773 == null) {
-            RenderUtil.drawImage(var5, var6, var7, var8, ResourcesDecrypter.artworkPNG, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * (1.0F - var4)));
+            RenderUtil.drawImage(var5, var6, var7, var8, ResourceList.artworkPNG, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * (1.0F - var4)));
             if (this.field20776 != null) {
-               RenderUtil.drawImage(var5, var6, var7, var8, ResourcesDecrypter.artworkPNG, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1));
+               RenderUtil.drawImage(var5, var6, var7, var8, ResourceList.artworkPNG, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1));
             }
          } else {
             if (this.field20775 == null) {
@@ -186,7 +186,7 @@ public class Class4286 extends Class4278 {
             (float)(this.getYA() + this.getWidthA() / 2) - (float)(var9 / 2) * var10,
             (float)var9 * var10,
             (float)var9 * var10,
-            ResourcesDecrypter.playIconPNG,
+            ResourceList.playIconPNG,
             MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1)
          );
          ClientResource var11 = ResourceRegistry.JelloLightFont12;

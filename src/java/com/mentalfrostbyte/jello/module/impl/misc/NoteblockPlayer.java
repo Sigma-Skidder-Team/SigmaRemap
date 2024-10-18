@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.Rots;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
@@ -320,7 +320,7 @@ public class NoteblockPlayer extends Module {
             if (this.field23640.isEmpty()) {
                 MultiUtilities.addChatMessage("§cNo Song available! Place NBS formated files in sigma5/nbs and restart the client to try again!");
                 MultiUtilities.addChatMessage("§cPlaying the only integrated demo song!");
-                this.field23639 = Class8471.method29870(ResourcesDecrypter.readInputStream("com/mentalfrostbyte/gui/resources/music/rememberthis.nbs"));
+                this.field23639 = Class8471.method29870(ResourceList.readInputStream("com/mentalfrostbyte/gui/resources/music/rememberthis.nbs"));
                 if (this.field23639 == null) {
                     MultiUtilities.addChatMessage("§cError loading included song, wtf!");
                     this.setEnabled(false);

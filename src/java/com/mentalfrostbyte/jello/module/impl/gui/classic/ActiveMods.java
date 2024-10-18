@@ -9,6 +9,7 @@ import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.Setting;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -48,8 +49,8 @@ public class ActiveMods extends Module {
 
     private void method16853() {
         this.field23962.clear();
-        this.field23963 = ClassicDecryption.bold18;
-        this.field23964 = ClassicDecryption.bold16;
+        this.field23963 = ResourceList.bold18;
+        this.field23964 = ResourceList.bold16;
         this.field23962 = new TreeMap<Module, Animation>(new Class3598(this));
     }
 

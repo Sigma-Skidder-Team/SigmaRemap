@@ -2,6 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
 
@@ -25,21 +26,21 @@ public class Class4368 extends Class4247 {
    @Override
    public void draw(float var1) {
       RenderUtil.drawString(
-         ClassicDecryption.regular17,
+              ResourceList.regular17,
          (float)(this.xA + 10),
          (float)(this.yA + 8),
          this.field21351.getSuffix(),
          MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, !this.field21351.isEnabled() ? 0.5F : 0.9F)
       );
       RenderUtil.drawString(
-         ClassicDecryption.regular15,
+              ResourceList.regular15,
          (float)(this.xA + 15),
          (float)(this.yA + 33),
          "Bind",
          MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 1.0F)
       );
       RenderUtil.drawString(
-         ClassicDecryption.regular15,
+              ResourceList.regular15,
          (float)(this.xA + 15),
          (float)(this.yA + 52),
          MultiUtilities.method17736(this.field21351.parseSettingValueToIntBySettingName("Keybind")),
@@ -47,7 +48,7 @@ public class Class4368 extends Class4247 {
       );
       if (this.field21351.getSettingMap().size() > 1) {
          RenderUtil.drawString(
-            ClassicDecryption.regular12,
+                 ResourceList.regular12,
             (float)(this.xA + 84),
             (float)(this.yA + 34),
             "Settings",

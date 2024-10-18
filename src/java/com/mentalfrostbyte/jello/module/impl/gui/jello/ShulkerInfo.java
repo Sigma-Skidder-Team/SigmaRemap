@@ -11,7 +11,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.PositionUtils;
 import com.mojang.blaze3d.matrix.MatrixStack;
@@ -249,7 +249,7 @@ public class ShulkerInfo extends Module {
                         (float) (var16 + 7),
                         (float) (40 + var19),
                         40.0F,
-                        ResourcesDecrypter.shadowPNG,
+                        ResourceList.shadowPNG,
                         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.7F),
                         false
                 );

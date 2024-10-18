@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.music.MusicManager;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
 
@@ -71,7 +71,7 @@ public class Class4359 extends Class4247 {
             MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * var1)
          );
          if (var8 != 0.0F) {
-            RenderUtil.method11455((float)this.getXA() + (float)this.getWidthA() * var8, (float)this.getYA(), 5.0F, 5.0F, ResourcesDecrypter.shadowRightPNG);
+            RenderUtil.method11455((float)this.getXA() + (float)this.getWidthA() * var8, (float)this.getYA(), 5.0F, 5.0F, ResourceList.shadowRightPNG);
          }
       }
    }

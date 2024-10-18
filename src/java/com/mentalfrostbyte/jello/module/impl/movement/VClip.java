@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.ClickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import net.minecraft.network.play.client.CChatMessagePacket;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.util.math.MathHelper;
@@ -109,7 +109,7 @@ public class VClip extends Module {
                     );
             mc.player
                     .setPosition(mc.player.getPosX(), mc.player.getPosY() + (double) var1, mc.player.getPosZ());
-            Client.getInstance().getNotificationManager().send(new Notification("Successfuly VCliped", var1 + " Blocks", 2000, ResourcesDecrypter.directionIconPNG));
+            Client.getInstance().getNotificationManager().send(new Notification("Successfuly VCliped", var1 + " Blocks", 2000, ResourceList.directionIconPNG));
         }
     }
 }

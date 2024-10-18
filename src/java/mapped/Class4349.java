@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.account.Account;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
 import lol.Texture;
@@ -112,7 +112,7 @@ public class Class4349 extends Class4278 {
                (float)this.yA + (float)(26 * this.heightA) / 100.0F,
                18.0F * this.field21252 * (float)this.heightA / 100.0F,
                (float)(47 * this.heightA) / 100.0F,
-               ResourcesDecrypter.selectPNG,
+               ResourceList.selectPNG,
                !this.method13212() ? ClientColors.LIGHT_GREYISH_BLUE.getColor : this.field21258
             );
          }
@@ -131,7 +131,7 @@ public class Class4349 extends Class4278 {
          (float)this.yA,
          100.0F,
          100.0F,
-         ResourcesDecrypter.cerclePNG,
+         ResourceList.cerclePNG,
          !this.method13212() ? ClientColors.LIGHT_GREYISH_BLUE.getColor : this.field21258
       );
    }
@@ -143,7 +143,7 @@ public class Class4349 extends Class4278 {
       }
 
       RenderUtil.method11440(
-         ResourceRegistry.field38868,
+         ResourceRegistry.DefaultClientFont,
          (float)(this.xA + this.widthA / 2),
          (float)(this.yA + 20),
          var3,
@@ -152,7 +152,7 @@ public class Class4349 extends Class4278 {
          Class2218.field14492
       );
       RenderUtil.method11440(
-         ResourceRegistry.field38868,
+         ResourceRegistry.DefaultClientFont,
          (float)(this.xA + this.widthA / 2),
          (float)(this.yA + 18),
          var3,
@@ -162,7 +162,7 @@ public class Class4349 extends Class4278 {
       );
       if (!this.field21249.isEmailAValidEmailFormat()) {
          RenderUtil.method11441(
-            ResourceRegistry.field38868,
+            ResourceRegistry.DefaultClientFont,
             (float)(this.xA + this.widthA / 2),
             (float)(this.yA + 32),
             this.field21249.getPassword().replaceAll(".", "*"),
@@ -173,7 +173,7 @@ public class Class4349 extends Class4278 {
          );
       } else {
          RenderUtil.method11441(
-            ResourceRegistry.field38868,
+            ResourceRegistry.DefaultClientFont,
             (float)(this.xA + this.widthA / 2),
             (float)(this.yA + 29),
             "Cracked",

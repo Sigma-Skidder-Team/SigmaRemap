@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
 import net.minecraft.client.Minecraft;
@@ -161,7 +161,7 @@ public class Class4259 extends Class4247 {
             (float)(this.yA + Math.round(var20 * var21 / 16.0F) + this.heightA / 2 - 42),
             32.0F,
             46.0F,
-            ResourcesDecrypter.waypointPNG,
+            ResourceList.waypointPNG,
             var16.field35892
          );
       }

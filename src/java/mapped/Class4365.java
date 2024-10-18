@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.network.Account;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
 import lol.Texture;
@@ -31,7 +31,7 @@ public class Class4365 extends Class4247 {
    public void draw(float var1) {
       this.account = Client.getInstance().getNetworkManager().account;
       String var4 = "Log in";
-      Texture var5 = ResourcesDecrypter.accountPNG;
+      Texture var5 = ResourceList.accountPNG;
       if (this.account != null) {
          var4 = this.account.username;
       }

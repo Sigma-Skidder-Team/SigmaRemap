@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
@@ -140,7 +140,7 @@ public class AutoMiner extends Module {
 
             if (!var14 && mc.player.onGround && !Client.getInstance().method19950().method31742() && this.field23454 == null) {
                List<BlockPos> var15 = this.method16081();
-               Client.getInstance().getNotificationManager().send(new Notification("AutoMiner", "Computing...", ResourcesDecrypter.directionIconPNG));
+               Client.getInstance().getNotificationManager().send(new Notification("AutoMiner", "Computing...", ResourceList.directionIconPNG));
                this.field23454 = new Thread(
                   () -> {
                      boolean var4x = false;
@@ -166,7 +166,7 @@ public class AutoMiner extends Module {
                                     new Notification(
                                        "AutoMiner",
                                        "Solved in " + var13x.size() + " steps! (" + this.field23453.field45900 + ":" + var11x + ")",
-                                       ResourcesDecrypter.directionIconPNG
+                                       ResourceList.directionIconPNG
                                     )
                                  );
                               var4x = true;
@@ -181,7 +181,7 @@ public class AutoMiner extends Module {
                         if (!var4x) {
                            Client.getInstance()
                               .getNotificationManager()
-                              .send(new Notification("AutoMiner", "Could not fin any safe path. (" + var15.size() + ")", ResourcesDecrypter.directionIconPNG));
+                              .send(new Notification("AutoMiner", "Could not fin any safe path. (" + var15.size() + ")", ResourceList.directionIconPNG));
                            Thread.sleep(1000L);
                         }
                      } catch (InterruptedException var14x) {
@@ -201,7 +201,7 @@ public class AutoMiner extends Module {
 
                Client.getInstance()
                   .getNotificationManager()
-                  .send(new Notification("AutoMiner", "Computing... (" + this.field23453.field45900 + ")", ResourcesDecrypter.directionIconPNG));
+                  .send(new Notification("AutoMiner", "Computing... (" + this.field23453.field45900 + ")", ResourceList.directionIconPNG));
             }
          }
       }

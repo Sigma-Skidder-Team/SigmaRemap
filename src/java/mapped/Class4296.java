@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.account.Account;
 import com.mentalfrostbyte.jello.account.Ban;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
 import net.minecraft.client.Minecraft;
@@ -70,7 +70,7 @@ public class Class4296 extends Class4278 {
             (float)((Minecraft.getInstance().mainWindow.getHeight() - var4 * 342 / 460) / 2 - 60),
             (float)var4,
             (float)(var4 * 342 / 460),
-            ResourcesDecrypter.imgPNG
+            ResourceList.imgPNG
          );
       }
 

@@ -3,7 +3,7 @@ package com.mentalfrostbyte.jello.gui.screens;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.gui.Screen;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
@@ -33,7 +33,7 @@ public class LoginAndOutScreen extends Screen {
    public LoginAndOutScreen() {
       super("Credits");
       this.method13300(false);
-      this.field21087 = ResourcesDecrypter.createScaledAndProcessedTexture2("com/mentalfrostbyte/gui/resources/background/panorama5.png", 0.075F, 8);
+      this.field21087 = ResourceList.createScaledAndProcessedTexture2("com/mentalfrostbyte/gui/resources/background/panorama5.png", 0.075F, 8);
       this.addToList(
          this.field21088 = new LoginScreen(
             this,
@@ -110,7 +110,7 @@ public class LoginAndOutScreen extends Screen {
 
    @Override
    public void draw(float var1) {
-      ResourcesDecrypter.cancelIconPNG.bind();
+      ResourceList.cancelIconPNG.bind();
       this.field21085 = Math.max(0.0F, Math.min(this.field21085 + 0.075F, 1.0F));
       if (this.field21092) {
          this.field21093.changeDirection(Direction.FORWARDS);
@@ -162,7 +162,7 @@ public class LoginAndOutScreen extends Screen {
             MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.45F * this.field21093.calcPercent())
          );
          RenderUtil.drawImage(
-            (float)(var11 + 20), (float)(var12 + 40), (float)(var8 + 30), (float)(var8 + 30), ResourcesDecrypter.sigmaPNG, this.field21093.calcPercent()
+            (float)(var11 + 20), (float)(var12 + 40), (float)(var8 + 30), (float)(var8 + 30), ResourceList.sigmaPNG, this.field21093.calcPercent()
          );
          int var13 = 165;
          int var14 = 54;

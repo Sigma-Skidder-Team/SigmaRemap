@@ -7,6 +7,7 @@ import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.settings.*;
 import com.mentalfrostbyte.jello.settings.SettingType;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.render.animation.MathHelper;
@@ -15,7 +16,7 @@ import java.util.HashMap;
 
 public class Class4345 extends Class4339 {
    private Module field21229;
-   public ClientResource field21230 = ClassicDecryption.regular20;
+   public ClientResource field21230 = ResourceList.regular20;
    public Animation field21231 = new Animation(150, 150);
    public HashMap<Module, CustomGuiScreen> field21232 = new HashMap<Module, CustomGuiScreen>();
 
@@ -89,7 +90,7 @@ public class Class4345 extends Class4339 {
                   UIInput.field20741,
                   (String)var2.getCurrentValue(),
                   var2.getName(),
-                  ResourceRegistry.field38868
+                  ResourceRegistry.DefaultClientFont
                )
             );
             var24.setFont(ResourceRegistry.JelloLightFont18);

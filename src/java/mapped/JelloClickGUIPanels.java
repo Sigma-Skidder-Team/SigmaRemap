@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
 import org.lwjgl.opengl.GL11;
@@ -140,7 +140,7 @@ public class JelloClickGUIPanels extends AnimatedIconPanel {
             (float)(this.getYA() + 60),
             (float)this.getWidthA(),
             18.0F,
-            ResourcesDecrypter.shadowBottomPNG,
+            ResourceList.shadowBottomPNG,
             MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * this.field21195 * 0.5F)
          );
       }

@@ -12,7 +12,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.blockfly.*;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.Rots;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
@@ -405,14 +405,14 @@ public class BlockFly extends ModuleWithModuleSettings {
         var3 = (float) (0.5 + 0.5 * (double) var3);
         GL11.glAlphaFunc(518, 0.1F);
         RenderUtil.drawString(
-                ClassicDecryption.medium17,
+                ResourceList.medium17,
                 (float) (var1 + 10),
                 (float) (var2 + 5),
                 this.field23886 + " Blocks",
                 MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var3 * 0.3F)
         );
         RenderUtil.drawString(
-                ClassicDecryption.medium17,
+                ResourceList.medium17,
                 (float) (var1 + 10),
                 (float) (var2 + 4),
                 this.field23886 + " Blocks",
@@ -443,7 +443,7 @@ public class BlockFly extends ModuleWithModuleSettings {
         GL11.glTranslatef((float) var1, (float) var2, 0.0F);
         GL11.glRotatef(90.0F, 0.0F, 0.0F, 1.0F);
         GL11.glTranslatef((float) (-var1), (float) (-var2), 0.0F);
-        RenderUtil.drawImage((float) var1, (float) var2, 9.0F, 23.0F, ResourcesDecrypter.selectPNG, MultiUtilities.applyAlpha(-15461356, 0.8F * var3));
+        RenderUtil.drawImage((float) var1, (float) var2, 9.0F, 23.0F, ResourceList.selectPNG, MultiUtilities.applyAlpha(-15461356, 0.8F * var3));
         GL11.glPopMatrix();
         GL11.glPopMatrix();
     }

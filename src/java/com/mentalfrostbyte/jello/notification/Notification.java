@@ -1,6 +1,6 @@
 package com.mentalfrostbyte.jello.notification;
 
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import lol.Texture;
 
@@ -31,7 +31,7 @@ public class Notification {
     }
 
     public Notification(String var1, String var2, int var3) {
-        this(var1, var2, var3, ResourcesDecrypter.infoIconPNG);
+        this(var1, var2, var3, ResourceList.infoIconPNG);
     }
 
     public Notification(String var1, String var2) {

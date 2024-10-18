@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.gui.Screen;
 import com.mentalfrostbyte.jello.network.NetworkManager;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
@@ -82,7 +82,7 @@ public class JelloMainMenuScreen extends Screen {
       this.method13300(false);
       field20965 = System.nanoTime();
       if (field20976 == null) {
-         field20976 = ResourcesDecrypter.createScaledAndProcessedTexture2("com/mentalfrostbyte/gui/resources/background/panorama5.png", 0.075F, 8);
+         field20976 = ResourceList.createScaledAndProcessedTexture2("com/mentalfrostbyte/gui/resources/background/panorama5.png", 0.075F, 8);
       }
 
       this.field20974.changeDirection(Direction.BACKWARDS);
@@ -193,14 +193,14 @@ public class JelloMainMenuScreen extends Screen {
             (float)this.field20966,
             (float)(this.getWidthA() * 2 + var17),
             (float)(this.getHeightA() + 114),
-            ResourcesDecrypter.backgroundPNG
+            ResourceList.backgroundPNG
          );
          RenderUtil.method11455(
             (float)this.field20967 - (float)var18 * var12,
             (float)this.field20966,
             (float)(this.getWidthA() * 2 + var18),
             (float)(this.getHeightA() + 114),
-            ResourcesDecrypter.middlePNG
+            ResourceList.middlePNG
          );
 
          for (CustomGuiScreen var21 : this.field20977) {
@@ -214,13 +214,13 @@ public class JelloMainMenuScreen extends Screen {
             (float)this.field20966,
             (float)(this.getWidthA() * 2 + var19),
             (float)(this.getHeightA() + 114),
-            ResourcesDecrypter.foregroundPNG
+            ResourceList.foregroundPNG
          );
-         Texture var26 = ResourcesDecrypter.logoLargePNG;
+         Texture var26 = ResourceList.logoLargePNG;
          int var28 = var26.getImageWidth();
          int var22 = var26.getImageHeight();
          if (GuiManager.portalScaleFactor > 1.0F) {
-            var26 = ResourcesDecrypter.logoLarge2xPNG;
+            var26 = ResourceList.logoLarge2xPNG;
          }
 
          RenderUtil.method11450(

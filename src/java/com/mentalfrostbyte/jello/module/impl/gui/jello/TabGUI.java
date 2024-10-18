@@ -11,7 +11,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.util.render.blur.BlurEngine;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.Class8224;
 import lol.ClientColors;
@@ -266,10 +266,10 @@ public class TabGUI extends Module {
                 var10 + this.field23779 + this.field23778 <= var3 ? (float) (var10 + var2 + this.field23778 - 10) : (float) (var2 + var3 - 10),
                 (float) var4,
                 14.0F,
-                ResourcesDecrypter.shadowTopPNG,
+                ResourceList.shadowTopPNG,
                 this.field23791
         );
-        RenderUtil.drawImage((float) var1, var10 >= 0 ? (float) (var10 + var2) : (float) var2, (float) var4, 14.0F, ResourcesDecrypter.shadowBottomPNG, this.field23791);
+        RenderUtil.drawImage((float) var1, var10 >= 0 ? (float) (var10 + var2) : (float) var2, (float) var4, 14.0F, ResourceList.shadowBottomPNG, this.field23791);
         RenderUtil.drawPortalBackground(
                 var1,
                 var10 >= 0 ? var10 + var2 : var2,

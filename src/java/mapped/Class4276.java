@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import lol.ClientColors;
@@ -121,7 +121,7 @@ public class Class4276 extends Class4247 {
          (float)this.yA + (float)((this.widthA - 47) / 2) * (!this.field20725 ? 1.0F : -1.58F),
          18.0F,
          47.0F,
-         ResourcesDecrypter.selectPNG,
+         ResourceList.selectPNG,
          var6
       );
       GL11.glPopMatrix();

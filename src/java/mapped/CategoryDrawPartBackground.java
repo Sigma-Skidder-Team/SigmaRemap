@@ -2,6 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.module.impl.gui.classic.TabGUI;
 import com.mentalfrostbyte.jello.resource.ClientResource;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.render.animation.MathHelper;
@@ -13,7 +14,7 @@ public class CategoryDrawPartBackground {
    public Animation field32398 = new Animation(300, 300);
 
    public CategoryDrawPartBackground(int var1) {
-      this.fontRenderer = ClassicDecryption.bold16;
+      this.fontRenderer = ResourceList.bold16;
       this.field32395 = var1;
    }
 

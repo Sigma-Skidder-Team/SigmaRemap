@@ -4,6 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.gui.Screen;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
@@ -36,7 +37,7 @@ public class ClassicMainScreen extends Screen {
         this.field21100 = new Animation(175, 325);
         this.field21100.changeDirection(Direction.FORWARDS);
         this.field21101.changeDirection(Direction.BACKWARDS);
-        ClientResource var9 = ClassicDecryption.regular20;
+        ClientResource var9 = ResourceList.regular20;
         String var11 = "© Sigma Prod";
         StringBuilder var10000 = new StringBuilder().append("Sigma ");
         Client.getInstance();
@@ -57,7 +58,7 @@ public class ClassicMainScreen extends Screen {
         var16.add("Omikron");
         Collections.shuffle(var16);
         String var17 = "by " + var16.get(0) + ", " + var16.get(1);
-        this.addToList(new UITextDisplay(this, "names", 130, 9, var9.getStringWidth(var11), 140, var15, var17, ClassicDecryption.regular17));
+        this.addToList(new UITextDisplay(this, "names", 130, 9, var9.getStringWidth(var11), 140, var15, var17, ResourceList.regular17));
         this.addToList(
                 this.field21094 = new UITextDisplay(
                         this,
@@ -133,7 +134,7 @@ public class ClassicMainScreen extends Screen {
                 (int) ((float) (-this.getHeightA() / 100) + this.field21105 / 100.0F) - var4,
                 0.0
         );
-        RenderUtil.method11455(-10.0F, -10.0F, (float) (this.getWidthA() + 20), (float) (this.getHeightA() + 20), ClassicDecryption.mainmenubackground);
+        RenderUtil.method11455(-10.0F, -10.0F, (float) (this.getWidthA() + 20), (float) (this.getHeightA() + 20), ResourceList.mainmenubackground);
         GL11.glPopMatrix();
         this.field21103
                 .method13286(

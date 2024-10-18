@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
 import net.minecraft.client.Minecraft;
@@ -54,11 +54,11 @@ public class Class4257 extends Class4247 {
          (float)(this.yA + 20),
          20.0F,
          20.0F,
-         ResourcesDecrypter.searchPNG,
+         ResourceList.searchPNG,
          MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F)
       );
-      ArrayList var5 = this.method13064();
-      if (var5.size() > 0 && this.method13067(this.field20640, ((Module)var5.get(0)).getName())) {
+      ArrayList<Module> var5 = this.method13064();
+      if (!var5.isEmpty() && this.method13067(this.field20640, ((Module)var5.get(0)).getName())) {
          String var6 = ((Module)var5.get(0)).getName();
          String var7 = this.field20640
             + ((Module)var5.get(0)).getName().substring(this.field20640.length(), var6.length())
@@ -76,8 +76,8 @@ public class Class4257 extends Class4247 {
    }
 
    public ArrayList<Module> method13064() {
-      ArrayList var3 = new ArrayList();
-      if (this.field20640 != null && this.field20640.length() != 0) {
+      ArrayList<Module> var3 = new ArrayList<>();
+      if (this.field20640 != null && !this.field20640.isEmpty()) {
          for (Module var5 : Client.getInstance().getModuleManager().getModuleMap().values()) {
             if (this.method13067(this.field20640, var5.getName())) {
                var3.add(var5);

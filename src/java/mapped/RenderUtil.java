@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -991,22 +991,22 @@ public class RenderUtil {
    public static void drawRoundedRect(float var0, float var1, float var2, float var3, float var4, float var5) {
       GL11.glAlphaFunc(519, 0.0F);
       int var8 = MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5);
-      drawImage(var0 - var4, var1 - var4, var4, var4, ResourcesDecrypter.shadowCorner1PNG, var8);
-      drawImage(var0 + var2, var1 - var4, var4, var4, ResourcesDecrypter.shadowCorner2PNG, var8);
-      drawImage(var0 - var4, var1 + var3, var4, var4, ResourcesDecrypter.shadowCorner3PNG, var8);
-      drawImage(var0 + var2, var1 + var3, var4, var4, ResourcesDecrypter.shadowCorner4PNG, var8);
-      method11450(var0 - var4, var1, var4, var3, ResourcesDecrypter.shadowLeftPNG, var8, false);
-      method11450(var0 + var2, var1, var4, var3, ResourcesDecrypter.shadowRightPNG, var8, false);
-      method11450(var0, var1 - var4, var2, var4, ResourcesDecrypter.shadowTopPNG, var8, false);
-      method11450(var0, var1 + var3, var2, var4, ResourcesDecrypter.shadowBottomPNG, var8, false);
+      drawImage(var0 - var4, var1 - var4, var4, var4, ResourceList.shadowCorner1PNG, var8);
+      drawImage(var0 + var2, var1 - var4, var4, var4, ResourceList.shadowCorner2PNG, var8);
+      drawImage(var0 - var4, var1 + var3, var4, var4, ResourceList.shadowCorner3PNG, var8);
+      drawImage(var0 + var2, var1 + var3, var4, var4, ResourceList.shadowCorner4PNG, var8);
+      method11450(var0 - var4, var1, var4, var3, ResourceList.shadowLeftPNG, var8, false);
+      method11450(var0 + var2, var1, var4, var3, ResourceList.shadowRightPNG, var8, false);
+      method11450(var0, var1 - var4, var2, var4, ResourceList.shadowTopPNG, var8, false);
+      method11450(var0, var1 + var3, var2, var4, ResourceList.shadowBottomPNG, var8, false);
    }
 
    public static void method11464(float var0, float var1, float var2, float var3, float var4, float var5) {
       int var8 = MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5);
-      method11450(var0, var1, var4, var3, ResourcesDecrypter.shadowRightPNG, var8, false);
-      method11450(var0 + var2 - var4, var1, var4, var3, ResourcesDecrypter.shadowLeftPNG, var8, false);
-      method11450(var0, var1, var2, var4, ResourcesDecrypter.shadowBottomPNG, var8, false);
-      method11450(var0, var1 + var3 - var4, var2, var4, ResourcesDecrypter.shadowTopPNG, var8, false);
+      method11450(var0, var1, var4, var3, ResourceList.shadowRightPNG, var8, false);
+      method11450(var0 + var2 - var4, var1, var4, var3, ResourceList.shadowLeftPNG, var8, false);
+      method11450(var0, var1, var2, var4, ResourceList.shadowBottomPNG, var8, false);
+      method11450(var0, var1 + var3 - var4, var2, var4, ResourceList.shadowTopPNG, var8, false);
    }
 
    public static void method11465(int var0, int var1, int var2, int var3, int var4) {
@@ -1018,29 +1018,29 @@ public class RenderUtil {
       byte var10 = 10;
       int var11 = var9 - var10;
       drawRect((float)(var0 + var10), (float)(var1 + var10), (float)(var0 + var2 - var10), (float)(var1 + var3 - var10), var4);
-      drawImage((float)(var0 - var11), (float)(var1 - var11), (float)var9, (float)var9, ResourcesDecrypter.floatingCornerPNG, var4);
+      drawImage((float)(var0 - var11), (float)(var1 - var11), (float)var9, (float)var9, ResourceList.floatingCornerPNG, var4);
       GL11.glPushMatrix();
       GL11.glTranslatef((float)(var0 + var2 - var9 / 2), (float)(var1 + var9 / 2), 0.0F);
       GL11.glRotatef(90.0F, 0.0F, 0.0F, 1.0F);
       GL11.glTranslatef((float)(-var0 - var2 - var9 / 2), (float)(-var1 - var9 / 2), 0.0F);
-      drawImage((float)(var0 + var2 - var11), (float)(var1 - var11), (float)var9, (float)var9, ResourcesDecrypter.floatingCornerPNG, var4);
+      drawImage((float)(var0 + var2 - var11), (float)(var1 - var11), (float)var9, (float)var9, ResourceList.floatingCornerPNG, var4);
       GL11.glPopMatrix();
       GL11.glPushMatrix();
       GL11.glTranslatef((float)(var0 + var2 - var9 / 2), (float)(var1 + var3 + var9 / 2), 0.0F);
       GL11.glRotatef(180.0F, 0.0F, 0.0F, 1.0F);
       GL11.glTranslatef((float)(-var0 - var2 - var9 / 2), (float)(-var1 - var3 - var9 / 2), 0.0F);
-      drawImage((float)(var0 + var2 - var11), (float)(var1 + var10 + var3), (float)var9, (float)var9, ResourcesDecrypter.floatingCornerPNG, var4);
+      drawImage((float)(var0 + var2 - var11), (float)(var1 + var10 + var3), (float)var9, (float)var9, ResourceList.floatingCornerPNG, var4);
       GL11.glPopMatrix();
       GL11.glPushMatrix();
       GL11.glTranslatef((float)(var0 - var9 / 2), (float)(var1 + var3 + var9 / 2), 0.0F);
       GL11.glRotatef(270.0F, 0.0F, 0.0F, 1.0F);
       GL11.glTranslatef((float)(-var0 - var9 / 2), (float)(-var1 - var3 - var9 / 2), 0.0F);
-      drawImage((float)(var0 + var10), (float)(var1 + var10 + var3), (float)var9, (float)var9, ResourcesDecrypter.floatingCornerPNG, var4);
+      drawImage((float)(var0 + var10), (float)(var1 + var10 + var3), (float)var9, (float)var9, ResourceList.floatingCornerPNG, var4);
       GL11.glPopMatrix();
       drawPortalBackground(var5 - var9, var6 + var10, var5 - var11 + var9, var6 - var10 + var3);
 
       for (int var12 = 0; var12 < var3; var12 += var9) {
-         drawImage((float)(var0 - var11), (float)(var1 + var10 + var12), (float)var9, (float)var9, ResourcesDecrypter.floatingBorderPNG, var4);
+         drawImage((float)(var0 - var11), (float)(var1 + var10 + var12), (float)var9, (float)var9, ResourceList.floatingBorderPNG, var4);
       }
 
       endScissor();
@@ -1051,7 +1051,7 @@ public class RenderUtil {
          GL11.glTranslatef((float)(var0 + var9 / 2), (float)(var1 + var9 / 2), 0.0F);
          GL11.glRotatef(90.0F, 0.0F, 0.0F, 1.0F);
          GL11.glTranslatef((float)(-var0 - var9 / 2), (float)(-var1 - var9 / 2), 0.0F);
-         drawImage((float)(var0 - var11), (float)(var1 - var10 - var13), (float)var9, (float)var9, ResourcesDecrypter.floatingBorderPNG, var4);
+         drawImage((float)(var0 - var11), (float)(var1 - var10 - var13), (float)var9, (float)var9, ResourceList.floatingBorderPNG, var4);
          GL11.glPopMatrix();
       }
 
@@ -1063,7 +1063,7 @@ public class RenderUtil {
          GL11.glTranslatef((float)(var0 + var9 / 2), (float)(var1 + var9 / 2), 0.0F);
          GL11.glRotatef(180.0F, 0.0F, 0.0F, 1.0F);
          GL11.glTranslatef((float)(-var0 - var9 / 2), (float)(-var1 - var9 / 2), 0.0F);
-         drawImage((float)(var0 - var2 + var10), (float)(var1 - var10 - var14), (float)var9, (float)var9, ResourcesDecrypter.floatingBorderPNG, var4);
+         drawImage((float)(var0 - var2 + var10), (float)(var1 - var10 - var14), (float)var9, (float)var9, ResourceList.floatingBorderPNG, var4);
          GL11.glPopMatrix();
       }
 
@@ -1075,7 +1075,7 @@ public class RenderUtil {
          GL11.glTranslatef((float)(var0 + var9 / 2), (float)(var1 + var9 / 2), 0.0F);
          GL11.glRotatef(270.0F, 0.0F, 0.0F, 1.0F);
          GL11.glTranslatef((float)(-var0 - var9 / 2), (float)(-var1 - var9 / 2), 0.0F);
-         drawImage((float)(var0 - var3 + var10), (float)(var1 + var10 + var15), (float)var9, (float)var9, ResourcesDecrypter.floatingBorderPNG, var4);
+         drawImage((float)(var0 - var3 + var10), (float)(var1 + var10 + var15), (float)var9, (float)var9, ResourceList.floatingBorderPNG, var4);
          GL11.glPopMatrix();
       }
 
@@ -1087,29 +1087,29 @@ public class RenderUtil {
       byte var8 = 10;
       int var9 = var7 - var8;
       drawRect((float)(var0 + var8), (float)(var1 + var8), (float)(var0 + var2 - var8), (float)(var1 + var3 - var8), var4);
-      drawImage((float)(var0 - var9), (float)(var1 - var9), (float)var7, (float)var7, ResourcesDecrypter.floatingCornerPNG, var4);
+      drawImage((float)(var0 - var9), (float)(var1 - var9), (float)var7, (float)var7, ResourceList.floatingCornerPNG, var4);
       GL11.glPushMatrix();
       GL11.glTranslatef((float)(var0 + var2 - var7 / 2), (float)(var1 + var7 / 2), 0.0F);
       GL11.glRotatef(90.0F, 0.0F, 0.0F, 1.0F);
       GL11.glTranslatef((float)(-var0 - var2 - var7 / 2), (float)(-var1 - var7 / 2), 0.0F);
-      drawImage((float)(var0 + var2 - var9), (float)(var1 - var9), (float)var7, (float)var7, ResourcesDecrypter.floatingCornerPNG, var4);
+      drawImage((float)(var0 + var2 - var9), (float)(var1 - var9), (float)var7, (float)var7, ResourceList.floatingCornerPNG, var4);
       GL11.glPopMatrix();
       GL11.glPushMatrix();
       GL11.glTranslatef((float)(var0 + var2 - var7 / 2), (float)(var1 + var3 + var7 / 2), 0.0F);
       GL11.glRotatef(180.0F, 0.0F, 0.0F, 1.0F);
       GL11.glTranslatef((float)(-var0 - var2 - var7 / 2), (float)(-var1 - var3 - var7 / 2), 0.0F);
-      drawImage((float)(var0 + var2 - var9), (float)(var1 + var8 + var3), (float)var7, (float)var7, ResourcesDecrypter.floatingCornerPNG, var4);
+      drawImage((float)(var0 + var2 - var9), (float)(var1 + var8 + var3), (float)var7, (float)var7, ResourceList.floatingCornerPNG, var4);
       GL11.glPopMatrix();
       GL11.glPushMatrix();
       GL11.glTranslatef((float)(var0 - var7 / 2), (float)(var1 + var3 + var7 / 2), 0.0F);
       GL11.glRotatef(270.0F, 0.0F, 0.0F, 1.0F);
       GL11.glTranslatef((float)(-var0 - var7 / 2), (float)(-var1 - var3 - var7 / 2), 0.0F);
-      drawImage((float)(var0 + var8), (float)(var1 + var8 + var3), (float)var7, (float)var7, ResourcesDecrypter.floatingCornerPNG, var4);
+      drawImage((float)(var0 + var8), (float)(var1 + var8 + var3), (float)var7, (float)var7, ResourceList.floatingCornerPNG, var4);
       GL11.glPopMatrix();
       method11421(var0 - var7, var1 + var8, var0 - var9 + var7, var1 - var8 + var3, true);
 
       for (int var10 = 0; var10 < var3; var10 += var7) {
-         drawImage((float)(var0 - var9), (float)(var1 + var8 + var10) - 0.4F, (float)var7, (float)var7 + 0.4F, ResourcesDecrypter.floatingBorderPNG, var4);
+         drawImage((float)(var0 - var9), (float)(var1 + var8 + var10) - 0.4F, (float)var7, (float)var7 + 0.4F, ResourceList.floatingBorderPNG, var4);
       }
 
       endScissor();
@@ -1120,7 +1120,7 @@ public class RenderUtil {
          GL11.glTranslatef((float)(var0 + var7 / 2), (float)(var1 + var7 / 2), 0.0F);
          GL11.glRotatef(90.0F, 0.0F, 0.0F, 1.0F);
          GL11.glTranslatef((float)(-var0 - var7 / 2), (float)(-var1 - var7 / 2), 0.0F);
-         drawImage((float)(var0 - var9), (float)(var1 - var8 - var11) - 0.4F, (float)var7, (float)var7 + 0.4F, ResourcesDecrypter.floatingBorderPNG, var4);
+         drawImage((float)(var0 - var9), (float)(var1 - var8 - var11) - 0.4F, (float)var7, (float)var7 + 0.4F, ResourceList.floatingBorderPNG, var4);
          GL11.glPopMatrix();
       }
 
@@ -1132,7 +1132,7 @@ public class RenderUtil {
          GL11.glTranslatef((float)(var0 + var7 / 2), (float)(var1 + var7 / 2), 0.0F);
          GL11.glRotatef(180.0F, 0.0F, 0.0F, 1.0F);
          GL11.glTranslatef((float)(-var0 - var7 / 2), (float)(-var1 - var7 / 2), 0.0F);
-         drawImage((float)(var0 - var2 + var8), (float)(var1 - var8 - var12) - 0.4F, (float)var7, (float)var7 + 0.4F, ResourcesDecrypter.floatingBorderPNG, var4);
+         drawImage((float)(var0 - var2 + var8), (float)(var1 - var8 - var12) - 0.4F, (float)var7, (float)var7 + 0.4F, ResourceList.floatingBorderPNG, var4);
          GL11.glPopMatrix();
       }
 
@@ -1144,7 +1144,7 @@ public class RenderUtil {
          GL11.glTranslatef((float)(var0 + var7 / 2), (float)(var1 + var7 / 2), 0.0F);
          GL11.glRotatef(270.0F, 0.0F, 0.0F, 1.0F);
          GL11.glTranslatef((float)(-var0 - var7 / 2), (float)(-var1 - var7 / 2), 0.0F);
-         drawImage((float)(var0 - var3 + var8), (float)(var1 + var8 + var13) - 0.4F, (float)var7, (float)var7 + 0.4F, ResourcesDecrypter.floatingBorderPNG, var4);
+         drawImage((float)(var0 - var3 + var8), (float)(var1 + var8 + var13) - 0.4F, (float)var7, (float)var7 + 0.4F, ResourceList.floatingBorderPNG, var4);
          GL11.glPopMatrix();
       }
 

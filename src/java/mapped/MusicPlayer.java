@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.youtube.YoutubeType;
 import com.mentalfrostbyte.jello.util.youtube.YoutubeVideoData;
 import com.mentalfrostbyte.jello.unmapped.MusicPlayerVideo;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ImageUtil;
 import com.mentalfrostbyte.jello.util.TextureUtil;
@@ -121,25 +121,25 @@ public class MusicPlayer extends Class4278 {
       this.pngButtons
          .addToList(
             this.play = new PNGIconButton(
-               this.pngButtons, "play", var15, 27, 38, 38, ResourcesDecrypter.playPNG, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), null
+               this.pngButtons, "play", var15, 27, 38, 38, ResourceList.playPNG, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), null
             )
          );
       this.pngButtons
          .addToList(
             this.pause = new PNGIconButton(
-               this.pngButtons, "pause", var15, 27, 38, 38, ResourcesDecrypter.pausePNG, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), null
+               this.pngButtons, "pause", var15, 27, 38, 38, ResourceList.pausePNG, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), null
             )
          );
       this.pngButtons
          .addToList(
             this.forwards = new PNGIconButton(
-               this.pngButtons, "forwards", var15 + 114, 23, 46, 46, ResourcesDecrypter.forwardsPNG, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), null
+               this.pngButtons, "forwards", var15 + 114, 23, 46, 46, ResourceList.forwardsPNG, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), null
             )
          );
       this.pngButtons
          .addToList(
             this.backwards = new PNGIconButton(
-               this.pngButtons, "backwards", var15 - 114, 23, 46, 46, ResourcesDecrypter.backwardsPNG, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), null
+               this.pngButtons, "backwards", var15 - 114, 23, 46, 46, ResourceList.backwardsPNG, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), null
             )
          );
       this.pngButtons.addToList(this.volumeSlider = new VolumeSlider(this.pngButtons, "volume", this.getWidthA() - this.field20845 - 19, 14, 4, 40));
@@ -387,7 +387,7 @@ public class MusicPlayer extends Class4278 {
             (float)(this.getYA() + this.getHeightA() - this.field20848),
             (float)this.getWidthA(),
             (float)this.field20848,
-            ResourcesDecrypter.bgPNG,
+            ResourceList.bgPNG,
             MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * var1)
          );
          RenderUtil.drawRect(
@@ -409,7 +409,7 @@ public class MusicPlayer extends Class4278 {
             (float)(this.getYA() + this.getHeightA() - 170),
             114.0F,
             114.0F,
-            ResourcesDecrypter.artworkPNG,
+            ResourceList.artworkPNG,
             MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
          );
          RenderUtil.drawRoundedRect(
@@ -528,7 +528,7 @@ public class MusicPlayer extends Class4278 {
          (float)this.field20847,
          (float)(this.getWidthA() - this.field20845),
          20.0F,
-         ResourcesDecrypter.shadowBottomPNG,
+         ResourceList.shadowBottomPNG,
          MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1 * 0.5F)
       );
       this.field20863 = this.field20852.method13513();

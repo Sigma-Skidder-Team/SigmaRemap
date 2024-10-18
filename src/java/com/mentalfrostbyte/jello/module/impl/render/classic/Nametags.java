@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.EventRenderNameTag;
 import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.PositionUtils;
 import lol.ClientColors;
@@ -38,14 +39,14 @@ public class Nametags extends Module {
                 if (!player.isInvisible()) {
                     Vector2f vec = entry.getValue();
                     String name = player.getName().getUnformattedComponentText();
-                    int width = ClassicDecryption.bold16.getStringWidth(name) + 8;
+                    int width = ResourceList.bold16.getStringWidth(name) + 8;
                     int x = Math.round(vec.x);
                     int y = Math.round(vec.y);
                     GL11.glPushMatrix();
                     GL11.glTranslatef((float) (-width / 2), -nameBoxHeight, 0.0F);
                     RenderUtil.renderBackgroundBox((float) x, (float) y, (float) width, 20.0F, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F));
-                    RenderUtil.drawString(ClassicDecryption.bold16, (float) (x + 3), (float) y, name, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F));
-                    RenderUtil.drawString(ClassicDecryption.bold16, (float) (x + 3), (float) (y - 1), name, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+                    RenderUtil.drawString(ResourceList.bold16, (float) (x + 3), (float) y, name, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F));
+                    RenderUtil.drawString(ResourceList.bold16, (float) (x + 3), (float) (y - 1), name, ClientColors.LIGHT_GREYISH_BLUE.getColor);
                     GL11.glPopMatrix();
                     List<ItemStack> validStacks = InvManagerUtils.getValidStacks(player);
                     if (!validStacks.isEmpty()) {

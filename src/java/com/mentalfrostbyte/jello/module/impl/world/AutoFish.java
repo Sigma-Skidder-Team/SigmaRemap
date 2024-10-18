@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import mapped.Class3259;
 import net.minecraft.network.play.client.CPlayerTryUseItemPacket;
 import net.minecraft.network.play.server.SPlaySoundEffectPacket;
@@ -35,7 +35,7 @@ public class AutoFish extends Module {
 
                         mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.MAIN_HAND));
                         mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.MAIN_HAND));
-                        Client.getInstance().getNotificationManager().send(new Notification("AutoFish", "We catched something!", ResourcesDecrypter.doneIconPNG));
+                        Client.getInstance().getNotificationManager().send(new Notification("AutoFish", "We catched something!", ResourceList.doneIconPNG));
                     }
                 }
             }

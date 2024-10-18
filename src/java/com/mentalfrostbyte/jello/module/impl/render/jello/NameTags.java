@@ -12,7 +12,7 @@ import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.unmapped.Class8433;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.PositionUtils;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
@@ -45,11 +45,11 @@ public class NameTags extends Module {
     private static final HashMap<String, Texture> field24003 = new HashMap<>();
 
     static {
-        field24003.put("Tomygaims", ResourcesDecrypter.tomyPNG);
-        field24003.put("Andro24", ResourcesDecrypter.androPNG);
-        field24003.put("Gretorm", ResourcesDecrypter.lpPNG);
-        field24003.put("Flyinqq", ResourcesDecrypter.codyPNG);
-        field24003.put("cxbot", ResourcesDecrypter.cxPNG);
+        field24003.put("Tomygaims", ResourceList.tomyPNG);
+        field24003.put("Andro24", ResourceList.androPNG);
+        field24003.put("Gretorm", ResourceList.lpPNG);
+        field24003.put("Flyinqq", ResourceList.codyPNG);
+        field24003.put("cxbot", ResourceList.cxPNG);
     }
 
     public int field24008 = MultiUtilities.applyAlpha(MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 75.0F), 0.5F);
@@ -399,7 +399,7 @@ public class NameTags extends Module {
             } else {
                 int var22 = Color.getHSBColor((float) (System.currentTimeMillis() % 10000L) / 10000.0F, 0.5F, 1.0F).getRGB();
                 RenderUtil.drawImage((float) (-var21 - 10 - 31), -25.0F, (float) (var12.method23952() + 27), (float) (var12.method23952() + 27), field24003.get(var13), MultiUtilities.applyAlpha(var22, 0.7F));
-                RenderUtil.drawImage((float) (-var21 - 10 - 31 + var12.method23952() + 27), -25.0F, 14.0F, (float) (var12.method23952() + 27), ResourcesDecrypter.shadowRightPNG, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F));
+                RenderUtil.drawImage((float) (-var21 - 10 - 31 + var12.method23952() + 27), -25.0F, 14.0F, (float) (var12.method23952() + 27), ResourceList.shadowRightPNG, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F));
                 RenderUtil.drawRoundedRect((float) (-var21 - 10 - 31), -25.0F, (float) (var21 * 2 + 20 + 31 + 27), (float) (var12.method23952() + 27), 20.0F, 0.5F);
                 GL11.glTranslatef(27.0F, 0.0F, 0.0F);
             }

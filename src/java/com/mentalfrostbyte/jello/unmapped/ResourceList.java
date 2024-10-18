@@ -1,6 +1,8 @@
 package com.mentalfrostbyte.jello.unmapped;
 
 import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.jello.resource.ClientResource;
+import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.util.ImageUtil;
 import com.mentalfrostbyte.jello.util.TextureUtil;
 import lol.Texture;
@@ -11,7 +13,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
 
-public class ResourcesDecrypter {
+public class ResourceList {
     public static Texture multiplayerPNG = loadTexture("com/mentalfrostbyte/gui/resources/jello/icons/multiplayer.png");
     public static Texture optionsPNG = loadTexture("com/mentalfrostbyte/gui/resources/jello/icons/options.png");
     public static Texture singleplayerPNG = loadTexture("com/mentalfrostbyte/gui/resources/jello/icons/singleplayer.png");
@@ -82,6 +84,28 @@ public class ResourcesDecrypter {
     public static Texture guildedPNG = loadTexture("com/mentalfrostbyte/gui/resources/loading/guilded.png");
     public static Texture redditPNG = loadTexture("com/mentalfrostbyte/gui/resources/loading/reddit.png");
     public static Texture panoramaPNG = createScaledAndProcessedTexture1("com/mentalfrostbyte/gui/resources/background/panorama5.png", 0.25F, 30);;
+
+    public static Texture singlePlayer = loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/singleplayer.png");;
+    public static Texture multiplayer = loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/multiplayer.png");
+    public static Texture options = loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/options.png");
+    public static Texture language = loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/language.png");
+    public static Texture accounts = loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/accounts.png");
+    public static Texture exit = loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/exit.png");
+    public static Texture mainmenubackground = loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/mainmenubackground.png");
+    public static Texture big = loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/big.png");
+    public static Texture agora = loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/agora.png");
+    public static Texture checkbox = loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/checkbox.png");
+    public static ClientResource regular28 = ResourceRegistry.getFont("com/mentalfrostbyte/gui/resources/font/SF-UI-Display-Regular.ttf", 0, 28.0F);
+    public static ClientResource regular25 = ResourceRegistry.getFont("com/mentalfrostbyte/gui/resources/font/SF-UI-Display-Regular.ttf", 0, 25.0F);
+    public static ClientResource regular20 = ResourceRegistry.getFont("com/mentalfrostbyte/gui/resources/font/SF-UI-Display-Regular.ttf", 0, 20.0F);
+    public static ClientResource regular17 = ResourceRegistry.getFont("com/mentalfrostbyte/gui/resources/font/SF-UI-Display-Regular.ttf", 0, 17.0F);
+    public static ClientResource regular15 = ResourceRegistry.getFont("com/mentalfrostbyte/gui/resources/font/SF-UI-Display-Regular.ttf", 0, 15.0F);
+    public static ClientResource regular12 = ResourceRegistry.getFont("com/mentalfrostbyte/gui/resources/font/SF-UI-Display-Regular.ttf", 0, 12.0F);
+    public static ClientResource bold22 = ResourceRegistry.getFont("com/mentalfrostbyte/gui/resources/font/SF-UI-Display-Bold.ttf", 0, 22.0F);
+    public static ClientResource bold18 = ResourceRegistry.getFont("com/mentalfrostbyte/gui/resources/font/SF-UI-Display-Bold.ttf", 0, 18.0F);
+    public static ClientResource bold16 = ResourceRegistry.getFont("com/mentalfrostbyte/gui/resources/font/SF-UI-Display-Bold.ttf", 0, 16.0F);
+    public static ClientResource bold14 = ResourceRegistry.getFont("com/mentalfrostbyte/gui/resources/font/SF-UI-Display-Bold.ttf", 0, 14.0F);
+    public static ClientResource medium17 = ResourceRegistry.getFont("com/mentalfrostbyte/gui/resources/font/SF-UI-Display-Medium.ttf", 0, 17.0F);
 
     public static Texture loadTexture(String filePath) {
         try {

@@ -32,9 +32,9 @@ public class GuiSwitch extends Screen {
         RectangleFaded var9 = null;
         RectangleFaded var10 = null;
         RectangleFaded var11 = null;
-        this.addToList(var9 = new RectangleFaded(this, "pb", var7, var8, var3, var5, ResourcesDecrypter.noaddonsPNG));
-        this.addToList(var11 = new RectangleFaded(this, "pb2", var7, var5 + var8 + 9, var4, var6, ResourcesDecrypter.sigmaLigmaPNG));
-        this.addToList(var10 = new RectangleFaded(this, "pb3", var7 + var4 + 9, var5 + var8 + 9, var4, var6, ResourcesDecrypter.jelloPNG));
+        this.addToList(var9 = new RectangleFaded(this, "pb", var7, var8, var3, var5, ResourceList.noaddonsPNG));
+        this.addToList(var11 = new RectangleFaded(this, "pb2", var7, var5 + var8 + 9, var4, var6, ResourceList.sigmaLigmaPNG));
+        this.addToList(var10 = new RectangleFaded(this, "pb3", var7 + var4 + 9, var5 + var8 + 9, var4, var6, ResourceList.jelloPNG));
         var9.doThis((var0, var1) -> {
             Client.getInstance().setupClient(ClientMode.NOADDONS);
             Minecraft.getInstance().displayGuiScreen(new VanillaMainMenuScreen());
@@ -49,11 +49,11 @@ public class GuiSwitch extends Screen {
         });
         CustomGuiScreen var12 = new CustomGuiScreen(this, "socialbtns", (this.getWidthA() - 174) / 2, this.getHeightA() - 70, 174, 34);
         ImageQ var13;
-        var12.addToList(var13 = new ImageQ(var12, "youtube", 0, 0, 65, 34, ResourcesDecrypter.youtubePNG));
+        var12.addToList(var13 = new ImageQ(var12, "youtube", 0, 0, 65, 34, ResourceList.youtubePNG));
         ImageQ var14;
-        var12.addToList(var14 = new ImageQ(var12, "reddit", 85, 0, 36, 34, ResourcesDecrypter.redditPNG));
+        var12.addToList(var14 = new ImageQ(var12, "reddit", 85, 0, 36, 34, ResourceList.redditPNG));
         ImageQ var15;
-        var12.addToList(var15 = new ImageQ(var12, "guilded", 142, 0, 32, 34, ResourcesDecrypter.guildedPNG));
+        var12.addToList(var15 = new ImageQ(var12, "guilded", 142, 0, 32, 34, ResourceList.guildedPNG));
         var13.doThis((var0, var1) -> {
             try {
                 Util.getOSType().openURL(new URL("https://www.youtube.com/@sigmaclient2950"));

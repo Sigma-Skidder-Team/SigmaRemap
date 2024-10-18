@@ -2,6 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.settings.Setting;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 
 public class Class4248 extends Class4247 {
     public final Setting setting;
@@ -20,6 +21,6 @@ public class Class4248 extends Class4247 {
          (float)(this.getYA() + this.getHeightA()),
          -3618616
       );
-      RenderUtil.drawString(ClassicDecryption.regular17, (float)(this.getXA() + 5), (float)(this.getYA() - 2), this.setting.getDescription(), -14540254);
+      RenderUtil.drawString(ResourceList.regular17, (float)(this.getXA() + 5), (float)(this.getYA() - 2), this.setting.getDescription(), -14540254);
    }
 }

@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.ClientMode;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
 
@@ -84,8 +84,8 @@ public class Class4288 extends Class4278 {
             MultiUtilities.applyAlpha(ClientColors.MID_GREY.getColor, 1.0F * var1)
          );
       } else {
-         RenderUtil.drawImage((float)var5, (float)this.yA, (float)var6, (float)var4, ResourcesDecrypter.verticalScrollBarTopPNG, var1);
-         RenderUtil.drawImage((float)var5, (float)(this.yA + this.heightA - var4), (float)var6, (float)var4, ResourcesDecrypter.verticalScrollBarBottomPNG, var1);
+         RenderUtil.drawImage((float)var5, (float)this.yA, (float)var6, (float)var4, ResourceList.verticalScrollBarTopPNG, var1);
+         RenderUtil.drawImage((float)var5, (float)(this.yA + this.heightA - var4), (float)var6, (float)var4, ResourceList.verticalScrollBarBottomPNG, var1);
          RenderUtil.drawRect(
             (float)var5,
             (float)(this.yA + var4),

@@ -10,7 +10,7 @@ import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
@@ -176,7 +176,7 @@ public class ActiveMods extends Module {
                             (float) (var7 - 20),
                             (float) var8.getStringWidth(var22) * 3.0F,
                             var8.method23952() + var21 + 40,
-                            ResourcesDecrypter.shadowPNG,
+                            ResourceList.shadowPNG,
                             MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.36F * var15 * var19)
                     );
                     RenderUtil.drawString(

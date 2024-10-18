@@ -20,7 +20,7 @@ public class Class4300 extends Class4278 {
 
    @Override
    public void draw(float var1) {
-      this.setFont(ResourceRegistry.field38868);
+      this.setFont(ResourceRegistry.DefaultClientFont);
       RenderUtil.drawRect(
          (float)this.xA,
          (float)this.yA,
@@ -37,7 +37,7 @@ public class Class4300 extends Class4278 {
          MultiUtilities.applyAlpha(this.field20839, 0.2F)
       );
       RenderUtil.method11440(
-         ResourceRegistry.field38868,
+         ResourceRegistry.DefaultClientFont,
          (float)(this.getXA() + this.getWidthA() / 2),
          (float)(this.getYA() + this.getHeightA() / 2),
          this.field20912,

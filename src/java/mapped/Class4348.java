@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.account.Ban;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ImageUtil;
 import com.mentalfrostbyte.jello.util.TextureUtil;
@@ -127,8 +127,8 @@ public class Class4348 extends Class4278 {
          if (this.field21244 != null) {
             this.method13576();
             this.method13577();
-            ResourcesDecrypter.shoutIconPNG.bind();
-            ResourcesDecrypter.shoutIconPNG.bind();
+            ResourceList.shoutIconPNG.bind();
+            ResourceList.shoutIconPNG.bind();
             super.draw(var1);
          }
       }
@@ -158,8 +158,8 @@ public class Class4348 extends Class4278 {
       }
 
       GL11.glPopMatrix();
-      ResourcesDecrypter.shoutIconPNG.bind();
-      ResourcesDecrypter.shoutIconPNG.bind();
+      ResourceList.shoutIconPNG.bind();
+      ResourceList.shoutIconPNG.bind();
    }
 
    public void method13577() {

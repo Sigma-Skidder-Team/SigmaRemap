@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MathUtils;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
@@ -78,7 +78,7 @@ public class Class4236 extends PNGIconButton implements Class4238 {
          (float)var9 + var10[1] - var11,
          var10[2] + (var11 * 2),
          var10[3] + (var11 * 2),
-         ResourcesDecrypter.shadowPNG,
+         ResourceList.shadowPNG,
          MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20578.calcPercent() * 0.7F * var1)
       );
       RenderUtil.drawImage(
@@ -116,7 +116,7 @@ public class Class4236 extends PNGIconButton implements Class4238 {
             (float)font.method23941(var14) / 3.0F,
             (float)(font.getStringWidth(var14) * 2),
             (float)font.method23941(var14) * 3.0F,
-            ResourcesDecrypter.shadowPNG,
+            ResourceList.shadowPNG,
             var5 * 0.6F * var1
          );
          RenderUtil.drawString(

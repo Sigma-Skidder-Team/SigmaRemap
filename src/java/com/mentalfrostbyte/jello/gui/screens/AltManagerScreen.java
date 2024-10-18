@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.gui.Screen;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MathUtils;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ImageUtil;
 import com.mentalfrostbyte.jello.util.TextureUtil;
@@ -436,7 +436,7 @@ public class AltManagerScreen extends Screen {
 
       float var5 = var4 - this.field21006;
       float var6 = (float)(var3 - this.field21005);
-      RenderUtil.method11455((float)this.field21005, this.field21006, (float)(this.getWidthA() * 2), (float)(this.getHeightA() + 114), ResourcesDecrypter.panoramaPNG);
+      RenderUtil.method11455((float)this.field21005, this.field21006, (float)(this.getWidthA() * 2), (float)(this.getHeightA() + 114), ResourceList.panoramaPNG);
       float var7 = 0.5F;
       if (var4 != this.field21006) {
          this.field21006 += var5 * var7;

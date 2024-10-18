@@ -3,7 +3,7 @@ package com.mentalfrostbyte.jello.gui.screens;
 import com.mentalfrostbyte.jello.gui.Screen;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
 import mapped.EasingFunctions;
@@ -26,8 +26,8 @@ public class CreditsScreen extends Screen {
    @Override
    public void draw(float var1) {
       super.draw(var1);
-      int var4 = ResourcesDecrypter.mentalfrostbytePNG.getImageWidth();
-      int var5 = ResourcesDecrypter.mentalfrostbytePNG.getImageHeight();
+      int var4 = ResourceList.mentalfrostbytePNG.getImageWidth();
+      int var5 = ResourceList.mentalfrostbytePNG.getImageHeight();
       var4 = Math.min(var4, (int)((float) Minecraft.getInstance().mainWindow.getHeight() / 1.65F));
       var5 = Math.min(var5, (int)((float) Minecraft.getInstance().mainWindow.getHeight() / 1.65F));
       this.method13416();
@@ -56,7 +56,7 @@ public class CreditsScreen extends Screen {
          ),
          (float)var4 - (float)var4 * (this.field21072 - 1.0F) * this.field21072,
          (float)var5 - (float)var5 * (this.field21072 - 1.0F) * this.field21072,
-         ResourcesDecrypter.mentalfrostbytePNG,
+         ResourceList.mentalfrostbytePNG,
          MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, Math.min(1.0F, this.field21072))
       );
       if (!((double)this.field21072 < 0.986)) {
@@ -86,7 +86,7 @@ public class CreditsScreen extends Screen {
       float var5 = var4 - (float)this.field21073;
       float var6 = (float)(var3 - this.field21074);
       RenderUtil.method11455(
-         (float)this.field21074, (float)this.field21073, (float)(this.getWidthA() * 2), (float)(this.getHeightA() + 114), ResourcesDecrypter.panoramaPNG
+         (float)this.field21074, (float)this.field21073, (float)(this.getWidthA() * 2), (float)(this.getHeightA() + 114), ResourceList.panoramaPNG
       );
       float var7 = 0.5F;
       if (var4 != (float)this.field21073) {

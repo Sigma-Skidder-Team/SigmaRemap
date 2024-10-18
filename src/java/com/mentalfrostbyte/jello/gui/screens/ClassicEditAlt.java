@@ -5,6 +5,7 @@ import com.mentalfrostbyte.jello.account.Account;
 import com.mentalfrostbyte.jello.account.AccountManager;
 import com.mentalfrostbyte.jello.gui.Screen;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
 import mapped.*;
@@ -24,9 +25,9 @@ public class ClassicEditAlt extends Screen {
       int var4 = 400;
       int var5 = 114;
       int var6 = (this.getWidthA() - var4) / 2;
-      this.addToList(this.field21027 = new SigmaClassicTextBox(this, "username", var6, var5, var4, 45, SigmaClassicTextBox.field20741, "", "New name", ResourceRegistry.field38868));
+      this.addToList(this.field21027 = new SigmaClassicTextBox(this, "username", var6, var5, var4, 45, SigmaClassicTextBox.field20741, "", "New name", ResourceRegistry.DefaultClientFont));
       var5 += 80;
-      this.addToList(this.field21028 = new SigmaClassicTextBox(this, "password", var6, var5, var4, 45, SigmaClassicTextBox.field20741, "", "New password", ResourceRegistry.field38868));
+      this.addToList(this.field21028 = new SigmaClassicTextBox(this, "password", var6, var5, var4, 45, SigmaClassicTextBox.field20741, "", "New password", ResourceRegistry.DefaultClientFont));
       var5 += 190;
       this.addToList(this.field21029 = new Class4300(this, "edit", var6, var5, var4, 40, "Edit", ClientColors.MID_GREY.getColor));
       var5 += 50;
@@ -50,14 +51,14 @@ public class ClassicEditAlt extends Screen {
 
    @Override
    public void draw(float var1) {
-      RenderUtil.method11455(0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), ClassicDecryption.mainmenubackground);
+      RenderUtil.method11455(0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), ResourceList.mainmenubackground);
       RenderUtil.drawRect(0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), MultiUtilities.applyAlpha(ClientColors.PALE_RED.getColor, 0.1F));
       RenderUtil.drawRect(0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.95F));
       RenderUtil.method11440(
-         ResourceRegistry.field38868, (float)(this.getWidthA() / 2), 20.0F, "Edit Alt", ClientColors.LIGHT_GREYISH_BLUE.getColor, Class2218.field14492, Class2218.field14488
+         ResourceRegistry.DefaultClientFont, (float)(this.getWidthA() / 2), 20.0F, "Edit Alt", ClientColors.LIGHT_GREYISH_BLUE.getColor, Class2218.field14492, Class2218.field14488
       );
       RenderUtil.method11441(
-         ResourceRegistry.field38868,
+         ResourceRegistry.DefaultClientFont,
          (float)(this.getWidthA() / 2),
          40.0F,
          this.field21032,

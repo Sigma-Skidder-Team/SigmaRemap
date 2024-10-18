@@ -5,6 +5,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.gui.screens.ClassicScreenk;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 
 public class Class4335 extends Class4333 {
    public Class4345 field21181;
@@ -60,7 +61,7 @@ public class Class4335 extends Class4333 {
          for (CustomGuiScreen var5 : this.method13241()) {
             if (var5 instanceof Class4368 && this.field21149.calcPercent() == 1.0F && var5.method13114(this.getHeightO(), this.getWidthO())) {
                Class4368 var6 = (Class4368)var5;
-               RenderUtil.drawString(ClassicDecryption.regular17, 20.0F, (float)(this.getHeightA() - 26), var6.field21351.getDescription(), -14540254);
+               RenderUtil.drawString(ResourceList.regular17, 20.0F, (float)(this.getHeightA() - 26), var6.field21351.getDescription(), -14540254);
                RenderUtil.startScissor(5.0F, (float)(this.getHeightA() - 27), 12.0F, 24.0F);
                RenderUtil.method11455(5.0F, (float)(this.getHeightA() - 27), 24.0F, 24.0F, Class4334.field21177);
                RenderUtil.endScissor();

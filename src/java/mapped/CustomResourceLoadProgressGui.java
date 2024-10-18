@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import lol.ClientColors;
@@ -39,9 +39,9 @@ public class CustomResourceLoadProgressGui extends LoadingGui {
    }
 
    public static void method6014() {
-      field6778 = ResourcesDecrypter.loadTexture("com/mentalfrostbyte/gui/resources/sigma/logo.png");
-      field6779 = ResourcesDecrypter.loadTexture("com/mentalfrostbyte/gui/resources/loading/back.png");
-      field6780 = ResourcesDecrypter.createScaledAndProcessedTexture2("com/mentalfrostbyte/gui/resources/loading/back.png", 0.25F, 25);
+      field6778 = ResourceList.loadTexture("com/mentalfrostbyte/gui/resources/sigma/logo.png");
+      field6779 = ResourceList.loadTexture("com/mentalfrostbyte/gui/resources/loading/back.png");
+      field6780 = ResourceList.createScaledAndProcessedTexture2("com/mentalfrostbyte/gui/resources/loading/back.png", 0.25F, 25);
    }
 
    @Override

@@ -4,6 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.gui.screens.SigmaClassicAltManager;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.gui.Screen;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.LanguageScreen;
 import net.minecraft.client.gui.screen.OptionsScreen;
@@ -22,15 +23,15 @@ public class Class4337 extends CustomGuiScreen {
    public Class4337(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6);
       int var9 = 0;
-      this.addToList(this.field21186 = new Class4254(this, "Singleplayer", this.method13497(var9++), this.method13496(), 114, 140, ClassicDecryption.singlePlayer));
-      this.addToList(this.field21191 = new Class4254(this, "Multiplayer", this.method13497(var9++), this.method13496(), 114, 140, ClassicDecryption.multiplayer));
-      this.addToList(this.field21189 = new Class4254(this, "Options", this.method13497(var9++), this.method13496(), 114, 140, ClassicDecryption.options));
-      this.addToList(this.field21188 = new Class4254(this, "Language", this.method13497(var9++), this.method13496(), 114, 140, ClassicDecryption.language));
+      this.addToList(this.field21186 = new Class4254(this, "Singleplayer", this.method13497(var9++), this.method13496(), 114, 140, ResourceList.singlePlayer));
+      this.addToList(this.field21191 = new Class4254(this, "Multiplayer", this.method13497(var9++), this.method13496(), 114, 140, ResourceList.multiplayer));
+      this.addToList(this.field21189 = new Class4254(this, "Options", this.method13497(var9++), this.method13496(), 114, 140, ResourceList.options));
+      this.addToList(this.field21188 = new Class4254(this, "Language", this.method13497(var9++), this.method13496(), 114, 140, ResourceList.language));
       this.addToList(
-         this.field21190 = new Class4254(this, "Accounts", this.method13497(var9++), this.method13496() + 140 + 10, 114, 140, ClassicDecryption.accounts)
+         this.field21190 = new Class4254(this, "Accounts", this.method13497(var9++), this.method13496() + 140 + 10, 114, 140, ResourceList.accounts)
       );
-      this.addToList(this.field21192 = new Class4254(this, "Agora", this.method13497(var9++), this.method13496() + 140 + 10, 114, 140, ClassicDecryption.agora));
-      this.addToList(this.field21187 = new Class4254(this, "Exit", this.method13497(var9++), this.method13496() + 140 + 10, 114, 140, ClassicDecryption.exit));
+      this.addToList(this.field21192 = new Class4254(this, "Agora", this.method13497(var9++), this.method13496() + 140 + 10, 114, 140, ResourceList.agora));
+      this.addToList(this.field21187 = new Class4254(this, "Exit", this.method13497(var9++), this.method13496() + 140 + 10, 114, 140, ResourceList.exit));
       this.field21186.doThis((var1x, var2x) -> this.method13493(new WorldSelectionScreen(Minecraft.getInstance().currentScreen)));
       this.field21191.doThis((var1x, var2x) -> this.method13493(new JelloPortalScreen(Minecraft.getInstance().currentScreen)));
       this.field21189.doThis((var1x, var2x) -> this.method13493(new OptionsScreen(Minecraft.getInstance().currentScreen, Minecraft.getInstance().gameSettings)));
@@ -80,7 +81,7 @@ public class Class4337 extends CustomGuiScreen {
    @Override
    public void draw(float var1) {
       this.method13225();
-      RenderUtil.method11455((float)(this.xA + (this.getWidthA() - 300) / 2), (float)(this.yA + 30), 300.0F, 97.0F, ClassicDecryption.big);
+      RenderUtil.method11455((float)(this.xA + (this.getWidthA() - 300) / 2), (float)(this.yA + 30), 300.0F, 97.0F, ResourceList.big);
       super.draw(var1);
    }
 }

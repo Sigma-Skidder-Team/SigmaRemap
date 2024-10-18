@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
 
@@ -24,7 +24,7 @@ public class Class4284 extends Class4278 {
          );
          super.draw(var1 * (1.0F - var4));
          RenderUtil.drawImage(
-            0.0F, 0.0F, 20.0F, (float)this.heightA, ResourcesDecrypter.shadowRightPNG, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1)
+            0.0F, 0.0F, 20.0F, (float)this.heightA, ResourceList.shadowRightPNG, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1)
          );
       }
    }

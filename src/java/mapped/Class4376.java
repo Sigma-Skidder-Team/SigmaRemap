@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
@@ -90,7 +90,7 @@ public class Class4376 extends PNGIconButton implements Class4238 {
             (float)var11.method23941(var13) / 3.0F,
             (float)(var11.getStringWidth(var13) * 2),
             (float)var11.method23941(var13) * 3.0F,
-            ResourcesDecrypter.shadowPNG,
+            ResourceList.shadowPNG,
             var12 * 0.6F
          );
          RenderUtil.drawString(

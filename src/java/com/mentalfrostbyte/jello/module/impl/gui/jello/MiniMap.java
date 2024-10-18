@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import lol.ClientColors;
 import lol.MovementUtils;
 import mapped.*;
@@ -171,10 +171,10 @@ public class MiniMap extends Module {
                             float var11 = (float) this.field23710 * var7;
                             float var12 = (float) this.field23709 * var7;
                             RenderUtil.drawPortalBackground(this.field23711, this.field23712, this.field23711 + this.field23710, this.field23712 + this.field23709);
-                            RenderUtil.method11455(0.0F, 0.0F, 0.0F, 0.0F, ResourcesDecrypter.shoutIconPNG);
+                            RenderUtil.method11455(0.0F, 0.0F, 0.0F, 0.0F, ResourceList.shoutIconPNG);
                             float var13 = -var11 / 2.0F + (float) (this.field23710 / 2) + var9;
                             float var14 = -var12 / 2.0F + (float) (this.field23709 / 2) + var10;
-                            RenderUtil.method11455(0.0F, 0.0F, 0.0F, 0.0F, ResourcesDecrypter.gingerbreadIconPNG);
+                            RenderUtil.method11455(0.0F, 0.0F, 0.0F, 0.0F, ResourceList.gingerbreadIconPNG);
                             RenderUtil.method11453(
                                     var13,
                                     var14,

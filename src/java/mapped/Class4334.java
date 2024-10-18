@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.gui.screens.ClassicScreenk;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import lol.Texture;
 import net.minecraft.client.Minecraft;
 
@@ -67,29 +67,29 @@ public class Class4334 extends Class4333 {
 
    public static void method13477() {
       if (field21158 == null) {
-         field21158 = ResourcesDecrypter.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/colors.png");
-         field21159 = ResourcesDecrypter.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/colors2.png");
-         field21160 = ResourcesDecrypter.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/combat.png");
-         field21161 = ResourcesDecrypter.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/combat2.png");
-         field21162 = ResourcesDecrypter.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/downarrow.png");
-         field21163 = ResourcesDecrypter.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/gear.png");
-         field21164 = ResourcesDecrypter.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/gear2.png");
-         field21165 = ResourcesDecrypter.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/movement.png");
-         field21166 = ResourcesDecrypter.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/movement2.png");
-         field21167 = ResourcesDecrypter.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/msgo.png");
-         field21168 = ResourcesDecrypter.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/msgo2.png");
-         field21169 = ResourcesDecrypter.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/others.png");
-         field21170 = ResourcesDecrypter.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/others2.png");
-         field21171 = ResourcesDecrypter.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/player.png");
-         field21172 = ResourcesDecrypter.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/player2.png");
-         field21173 = ResourcesDecrypter.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/uparrow.png");
-         field21174 = ResourcesDecrypter.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/uparrow2.png");
-         field21175 = ResourcesDecrypter.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/visuals.png");
-         field21176 = ResourcesDecrypter.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/visuals2.png");
-         field21177 = ResourcesDecrypter.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/xmark.png");
-         field21178 = ResourcesDecrypter.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/xmark2.png");
-         field21179 = ResourcesDecrypter.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/world.png");
-         field21180 = ResourcesDecrypter.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/world2.png");
+         field21158 = ResourceList.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/colors.png");
+         field21159 = ResourceList.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/colors2.png");
+         field21160 = ResourceList.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/combat.png");
+         field21161 = ResourceList.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/combat2.png");
+         field21162 = ResourceList.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/downarrow.png");
+         field21163 = ResourceList.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/gear.png");
+         field21164 = ResourceList.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/gear2.png");
+         field21165 = ResourceList.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/movement.png");
+         field21166 = ResourceList.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/movement2.png");
+         field21167 = ResourceList.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/msgo.png");
+         field21168 = ResourceList.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/msgo2.png");
+         field21169 = ResourceList.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/others.png");
+         field21170 = ResourceList.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/others2.png");
+         field21171 = ResourceList.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/player.png");
+         field21172 = ResourceList.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/player2.png");
+         field21173 = ResourceList.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/uparrow.png");
+         field21174 = ResourceList.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/uparrow2.png");
+         field21175 = ResourceList.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/visuals.png");
+         field21176 = ResourceList.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/visuals2.png");
+         field21177 = ResourceList.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/xmark.png");
+         field21178 = ResourceList.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/xmark2.png");
+         field21179 = ResourceList.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/world.png");
+         field21180 = ResourceList.loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/world2.png");
       }
    }
 

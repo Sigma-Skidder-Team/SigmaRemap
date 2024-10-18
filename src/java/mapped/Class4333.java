@@ -2,6 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
@@ -42,7 +43,7 @@ public class Class4333 extends CustomGuiScreen {
          );
       }
 
-      ClientResource var7 = !this.field20891.equals("Sigma") ? ClassicDecryption.regular25 : ClassicDecryption.regular28;
+      ClientResource var7 = !this.field20891.equals("Sigma") ? ResourceList.regular25 : ResourceList.regular28;
       if (!this.field20891.equals("Sigma")) {
          RenderUtil.drawString(
             var7,

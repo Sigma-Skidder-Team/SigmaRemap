@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.util.math.vector.Vector2f;
 import mapped.Class9108;
@@ -68,7 +68,7 @@ public class DVDSimulator extends Module {
                     this.field23722,
                     (float) this.field23725.field41839,
                     (float) this.field23725.field41840,
-                    ResourcesDecrypter.dvdPNG,
+                    ResourceList.dvdPNG,
                     MultiUtilities.applyAlpha(this.field23726, 0.8F)
             );
         }

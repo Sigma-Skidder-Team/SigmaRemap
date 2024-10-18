@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.account.Account;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
@@ -78,7 +78,7 @@ public class Class4294 extends Class4278 {
                      (float)var5 + (float)(26 * var6) / 100.0F,
                      18.0F * this.field20803.calcPercent() * (float)var6 / 100.0F,
                      (float)(47 * var6) / 100.0F,
-                     ResourcesDecrypter.selectPNG,
+                     ResourceList.selectPNG,
                      !this.method13212() ? ClientColors.LIGHT_GREYISH_BLUE.getColor : this.field20808
                   );
                }
@@ -102,7 +102,7 @@ public class Class4294 extends Class4278 {
          (float)this.yA,
          100.0F,
          100.0F,
-         ResourcesDecrypter.cerclePNG,
+         ResourceList.cerclePNG,
          !this.method13212() ? ClientColors.LIGHT_GREYISH_BLUE.getColor : this.field20808
       );
    }
@@ -154,7 +154,7 @@ public class Class4294 extends Class4278 {
          (float)(this.yA + 42),
          17.0F,
          17.0F,
-         ResourcesDecrypter.errorsPNG,
+         ResourceList.errorsPNG,
          MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5 * var1)
       );
       RenderUtil.drawImage(
@@ -162,7 +162,7 @@ public class Class4294 extends Class4278 {
          (float)(this.yA + 45),
          17.0F,
          13.0F,
-         ResourcesDecrypter.activePNG,
+         ResourceList.activePNG,
          MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20804 * var1)
       );
    }

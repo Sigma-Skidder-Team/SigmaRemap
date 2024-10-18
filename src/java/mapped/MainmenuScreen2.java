@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.gui.Screen;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
 import lol.Texture;
@@ -57,7 +57,7 @@ public class MainmenuScreen2 extends CustomGuiScreen {
             this.method13448(),
             128,
             128,
-            ResourcesDecrypter.singleplayerPNG,
+            ResourceList.singleplayerPNG,
             new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor)
          )
       );
@@ -69,7 +69,7 @@ public class MainmenuScreen2 extends CustomGuiScreen {
             this.method13448(),
             128,
             128,
-            ResourcesDecrypter.multiplayerPNG,
+            ResourceList.multiplayerPNG,
             new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor)
          )
       );
@@ -81,7 +81,7 @@ public class MainmenuScreen2 extends CustomGuiScreen {
             this.method13448(),
             128,
             128,
-            ResourcesDecrypter.shopPNG,
+            ResourceList.shopPNG,
             new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor)
          )
       );
@@ -93,7 +93,7 @@ public class MainmenuScreen2 extends CustomGuiScreen {
             this.method13448(),
             128,
             128,
-            ResourcesDecrypter.optionsPNG,
+            ResourceList.optionsPNG,
             new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor)
          )
       );
@@ -105,7 +105,7 @@ public class MainmenuScreen2 extends CustomGuiScreen {
             this.method13448(),
             128,
             128,
-            ResourcesDecrypter.altPNG,
+            ResourceList.altPNG,
             new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor)
          )
       );
@@ -188,11 +188,11 @@ public class MainmenuScreen2 extends CustomGuiScreen {
    @Override
    public void draw(float var1) {
       this.method13224();
-      Texture largeLogo = ResourcesDecrypter.logoLargePNG;
+      Texture largeLogo = ResourceList.logoLargePNG;
       int imageWidth = largeLogo.getImageWidth();
       int imageHeight = largeLogo.getImageHeight();
       if (GuiManager.portalScaleFactor > 1.0F) {
-         largeLogo = ResourcesDecrypter.logoLarge2xPNG;
+         largeLogo = ResourceList.logoLarge2xPNG;
       }
 
       RenderUtil.drawImage(
@@ -200,7 +200,7 @@ public class MainmenuScreen2 extends CustomGuiScreen {
          (float)(this.getHeightA() / 2 - imageHeight),
          (float)imageWidth,
          (float)imageHeight,
-         ResourcesDecrypter.logoLargePNG,
+         ResourceList.logoLargePNG,
          MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
       super.draw(var1);

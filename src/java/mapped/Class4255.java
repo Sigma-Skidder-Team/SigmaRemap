@@ -1,12 +1,12 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import lol.ClientColors;
 import lol.Texture;
 import org.lwjgl.opengl.GL11;
 
 public class Class4255 extends Class4247 {
-   private static String[] field20632;
    public Texture field20633;
    public Texture field20634;
 
@@ -27,11 +27,10 @@ public class Class4255 extends Class4247 {
          !this.method13298() ? this.field20633 : this.field20634,
          ClientColors.LIGHT_GREYISH_BLUE.getColor
       );
-      int var4 = this.getWidthA() / 2 + this.xA;
-      int var5 = this.getHeightA() / 2 + this.yA;
+
       RenderUtil.drawString(
-         ClassicDecryption.regular25,
-         (float)(this.xA + (this.getWidthA() - ClassicDecryption.regular25.getStringWidth(this.field20912)) / 2),
+              ResourceList.regular25,
+         (float)(this.xA + (this.getWidthA() - ResourceList.regular25.getStringWidth(this.field20912)) / 2),
          (float)(this.yA + this.getHeightA() - 50),
          this.field20912,
          !this.method13298() ? -14869219 : -319475

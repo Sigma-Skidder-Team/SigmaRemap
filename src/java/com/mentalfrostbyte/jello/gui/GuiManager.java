@@ -247,16 +247,16 @@ public class GuiManager {
                 float var7 = 0.5F + TabGUI.animationProgress.calcPercent() * 0.5F;
                 GL11.glAlphaFunc(516, 0.1F);
                 RenderUtil.renderBackgroundBox(4.0F, 2.0F, 106.0F, 28.0F, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.6F * var7));
-                RenderUtil.drawString(ClassicDecryption.bold22, 9.0F, 2.0F, "Sigma", MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F * var7));
+                RenderUtil.drawString(ResourceList.bold22, 9.0F, 2.0F, "Sigma", MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F * var7));
                 RenderUtil.drawString(
-                        ClassicDecryption.bold22, 8.0F, 1.0F, "Sigma", MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, Math.min(1.0F, var7 * 1.2F))
+                        ResourceList.bold22, 8.0F, 1.0F, "Sigma", MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, Math.min(1.0F, var7 * 1.2F))
                 );
                 int var8 = Color.getHSBColor((float) (System.currentTimeMillis() % 4000L) / 4000.0F, 1.0F, 1.0F).getRGB();
-                RenderUtil.drawString(ClassicDecryption.bold14, 73.0F, 2.0F, "5.0.0", MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F));
-                RenderUtil.drawString(ClassicDecryption.bold14, 72.0F, 1.0F, "5.0.0", MultiUtilities.applyAlpha(var8, Math.min(1.0F, var7 * 1.4F)));
+                RenderUtil.drawString(ResourceList.bold14, 73.0F, 2.0F, "5.0.0", MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F));
+                RenderUtil.drawString(ResourceList.bold14, 72.0F, 1.0F, "5.0.0", MultiUtilities.applyAlpha(var8, Math.min(1.0F, var7 * 1.4F)));
             } else {
                 GL11.glAlphaFunc(519, 0.0F);
-                RenderUtil.method11455((float) var3, var4, 170.0F, 104.0F, !(portalScaleFactor > 1.0F) ? ResourcesDecrypter.jelloWatermarkPNG : ResourcesDecrypter.jelloWatermark2xPNG);
+                RenderUtil.method11455((float) var3, var4, 170.0F, 104.0F, !(portalScaleFactor > 1.0F) ? ResourceList.jelloWatermarkPNG : ResourceList.jelloWatermark2xPNG);
             }
 
             Client.getInstance().getEventManager().call(new EventRender());

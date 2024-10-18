@@ -17,7 +17,7 @@ public class SigmaClassicTextBox extends UIInput {
 
    @Override
    public void draw(float var1) {
-      this.setFont(ResourceRegistry.field38868);
+      this.setFont(ResourceRegistry.DefaultClientFont);
       RenderUtil.drawRect(
          (float)this.xA,
          (float)this.yA,

@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.sound;
 
 import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.advanced.AdvancedPlayer;
 
@@ -20,7 +20,7 @@ public class SoundManager {
             Client.getInstance().getLogger().warn("Invalid audio file attempted to be played: " + url);
         } else {
             try {
-                InputStream audioStream = ResourcesDecrypter.readInputStream("com/mentalfrostbyte/gui/resources/audio/" + url + fileType);
+                InputStream audioStream = ResourceList.readInputStream("com/mentalfrostbyte/gui/resources/audio/" + url + fileType);
 
                 AdvancedPlayer player = new AdvancedPlayer(audioStream);
                 new Thread(() -> {

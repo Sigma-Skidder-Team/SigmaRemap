@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import lol.ClientColors;
@@ -32,7 +32,7 @@ public class UILoadingCircle extends Class4278 {
             (float)this.yA,
             (float)this.widthA,
             (float)this.heightA,
-            ResourcesDecrypter.loadingIndicatorPNG,
+            ResourceList.loadingIndicatorPNG,
             MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, this.field20770 * var1)
          );
          GL11.glPopMatrix();

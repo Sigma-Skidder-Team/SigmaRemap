@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import lol.ClientColors;
@@ -31,7 +31,7 @@ public class PathFinder extends Module {
         if (this.field23491 != null && this.field23492 != null) {
             Client.getInstance()
                     .getNotificationManager()
-                    .send(new Notification("AutoMiner", "Computing... (" + this.field23492.field45900 + ")", ResourcesDecrypter.directionIconPNG));
+                    .send(new Notification("AutoMiner", "Computing... (" + this.field23492.field45900 + ")", ResourceList.directionIconPNG));
         }
     }
 

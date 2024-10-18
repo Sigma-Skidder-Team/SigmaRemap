@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import lol.ClientColors;
 import lol.Texture;
 import net.minecraft.client.Minecraft;
@@ -23,11 +23,11 @@ public class Class4299 extends Class4278 {
 
    public Class4299(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, int var7) {
       super(var1, var2, var3, var4, 700, 512, false);
-      this.field20829 = ResourcesDecrypter.loadTexture("com/mentalfrostbyte/gui/resources/games/bg.png");
-      this.field20830 = ResourcesDecrypter.loadTexture("com/mentalfrostbyte/gui/resources/games/fg.png");
-      this.field20831 = ResourcesDecrypter.loadTexture("com/mentalfrostbyte/gui/resources/games/pipe.png");
-      this.field20832 = ResourcesDecrypter.loadTexture("com/mentalfrostbyte/gui/resources/games/pipe2.png");
-      this.field20833 = ResourcesDecrypter.loadTexture("com/mentalfrostbyte/gui/resources/games/bird.png");
+      this.field20829 = ResourceList.loadTexture("com/mentalfrostbyte/gui/resources/games/bg.png");
+      this.field20830 = ResourceList.loadTexture("com/mentalfrostbyte/gui/resources/games/fg.png");
+      this.field20831 = ResourceList.loadTexture("com/mentalfrostbyte/gui/resources/games/pipe.png");
+      this.field20832 = ResourceList.loadTexture("com/mentalfrostbyte/gui/resources/games/pipe2.png");
+      this.field20833 = ResourceList.loadTexture("com/mentalfrostbyte/gui/resources/games/bird.png");
    }
 
    private void method13183() {

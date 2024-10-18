@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
 
@@ -23,7 +24,7 @@ public class Class4366 extends Class4247 {
 
    private void method13663() {
       this.method13241().clear();
-      this.font = ClassicDecryption.regular15;
+      this.font = ResourceList.regular15;
       ButtonPanel var3;
       this.addToList(var3 = new ButtonPanel(this, "dropdownButton", 0, 0, this.getHeightA(), this.getHeightA(), this.textColor));
       var3.setSize((var1, var2) -> {
@@ -53,7 +54,7 @@ public class Class4366 extends Class4247 {
                   Class2218.field14492
                ),
                var5,
-               ClassicDecryption.regular12
+                    ResourceList.regular12
             )
          );
          var6.method13034(8);

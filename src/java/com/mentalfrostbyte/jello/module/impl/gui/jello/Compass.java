@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
 import mapped.RenderUtil;
@@ -40,7 +40,7 @@ public class Compass extends Module {
                         -40.0F,
                         (float) (var4 * var5 * 2) * 1.5F,
                         (float) (220 + var6),
-                        ResourcesDecrypter.shadowPNG,
+                        ResourceList.shadowPNG,
                         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.25F)
                 );
                 int var12 = 0;

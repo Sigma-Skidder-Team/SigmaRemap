@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.ColorSetting;
-import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.PositionUtils;
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -73,11 +73,11 @@ public class BoxOutlineESP extends Module {
                                             -var2.getHeight() * 5.5F,
                                             var2.getWidth() * 44.0F,
                                             var2.getHeight() * 21.0F,
-                                            ResourcesDecrypter.shadowPNG,
+                                            ResourceList.shadowPNG,
                                             this.field23719,
                                             false
                                     );
-                                    ResourcesDecrypter.shoutIconPNG.bind();
+                                    ResourceList.shoutIconPNG.bind();
                                     GL11.glPopMatrix();
                                 }
                             }
