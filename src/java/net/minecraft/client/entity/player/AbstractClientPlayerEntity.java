@@ -138,33 +138,34 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
       return var3 != null ? var3.method19972() : DefaultPlayerSkin.getSkinType(this.getUniqueID());
    }
 
-   public float method5378() {
-      float var3 = 1.0F;
+   public float getFOVModifier() {
+      float f = 1.0F;
+
       if (this.abilities.isFlying) {
-         var3 *= 1.1F;
+         f *= 1.1F;
       }
 
-      var3 = (float)((double)var3 * ((this.getAttributeValue(Attributes.MOVEMENT_SPEED) / (double)this.abilities.getWalkSpeed() + 1.0) / 2.0));
-      if (this.abilities.getWalkSpeed() == 0.0F || Float.isNaN(var3) || Float.isInfinite(var3)) {
-         var3 = 1.0F;
+      f = (float)((double)f * ((this.getAttributeValue(Attributes.MOVEMENT_SPEED) / (double)this.abilities.getWalkSpeed() + 1.0) / 2.0));
+
+      if (this.abilities.getWalkSpeed() == 0.0F || Float.isNaN(f) || Float.isInfinite(f)) {
+         f = 1.0F;
       }
 
       if (this.isHandActive() && this.getActiveItemStack().getItem() instanceof BowItem) {
-         int var4 = this.getItemInUseMaxCount();
-         float var5 = (float)var4 / 20.0F;
-         if (!(var5 > 1.0F)) {
-            var5 *= var5;
+         float f1 = (float)this.getItemInUseMaxCount() / 20.0F;
+         if (!(f1 > 1.0F)) {
+            f1 *= f1;
          } else {
-            var5 = 1.0F;
+            f1 = 1.0F;
          }
 
-         var3 *= 1.0F - var5 * 0.15F;
+         f *= 1.0F - f1 * 0.15F;
       }
 
-      float var7 = !Reflector.field42878.exists() ? var3 : Reflector.method35059(Reflector.field42878, this, var3);
-      Class4423 var9 = new Class4423(var7);
-      Client.getInstance().getEventManager().call(var9);
-      return var9.field21557;
+      float fov = Reflector.ForgeHooksClient_getOffsetFOV.exists() ? Reflector.callFloat(Reflector.ForgeHooksClient_getOffsetFOV, this, f) : f;
+      Class4423 eventSomething = new Class4423(fov);
+      Client.getInstance().getEventManager().call(eventSomething);
+      return eventSomething.field21557;
    }
 
    public String method5379() {

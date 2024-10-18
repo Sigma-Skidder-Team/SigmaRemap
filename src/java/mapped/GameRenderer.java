@@ -332,7 +332,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
       float var3 = 1.0F;
       if (this.mc.getRenderViewEntity() instanceof AbstractClientPlayerEntity) {
          AbstractClientPlayerEntity var4 = (AbstractClientPlayerEntity)this.mc.getRenderViewEntity();
-         var3 = var4.method5378();
+         var3 = var4.getFOVModifier();
       }
 
       this.field811 = this.field810;

@@ -71,7 +71,7 @@ public class Class1118 extends AbstractClientPlayerEntity {
    }
 
    @Override
-   public float method5378() {
+   public float getFOVModifier() {
       return 0.0F;
    }
 }

@@ -45,18 +45,18 @@ public class Account {
     private Texture skinTexture;
     private Thread skinUpdateThread;
 
-    public Account(String var1, String var2, ArrayList<Ban> var3, String var4) {
-        this.email = var1;
-        this.password = var2;
+    public Account(String email, String password, ArrayList<Ban> bans, String knownName) {
+        this.email = email;
+        this.password = password;
         this.dateAdded = System.currentTimeMillis();
         this.lastUsed = 0L;
         this.useCount = 0;
-        if (var3 != null) {
-            this.bans = var3;
+        if (bans != null) {
+            this.bans = bans;
         }
 
-        if (var4 != null) {
-            this.knownName = var4;
+        if (knownName != null) {
+            this.knownName = knownName;
         }
     }
 

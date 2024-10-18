@@ -95,7 +95,7 @@ public class Class6631 implements Class6632 {
    }
 
    public float method20220(Object... var1) {
-      return Reflector.method35059(this, var1);
+      return Reflector.callFloat(this, var1);
    }
 
    public double method20221(Object... var1) {
@@ -119,7 +119,7 @@ public class Class6631 implements Class6632 {
    }
 
    public float method20226(Object var1) {
-      return Reflector.method35059(this, var1);
+      return Reflector.callFloat(this, var1);
    }
 
    public double method20227(Object var1) {

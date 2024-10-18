@@ -226,7 +226,7 @@ public class FogRenderer {
       Entity var8 = var0.getRenderViewEntity();
       float var9 = -1.0F;
       if (Reflector.field42876.exists()) {
-         var9 = Reflector.method35059(Reflector.field42876, var1, var0, var4, 0.1F);
+         var9 = Reflector.callFloat(Reflector.field42876, var1, var0, var4, 0.1F);
       }
 
       if (!(var9 >= 0.0F)) {

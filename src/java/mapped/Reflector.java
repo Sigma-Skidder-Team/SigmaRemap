@@ -163,7 +163,7 @@ public class Reflector {
    public static Class6631 field42875 = new Class6631(field42864, "getFluidSprites");
    public static Class6631 field42876 = new Class6631(field42864, "getFogDensity");
    public static Class6631 field42877 = new Class6631(field42864, "getFOVModifier");
-   public static Class6631 field42878 = new Class6631(field42864, "getOffsetFOV");
+   public static Class6631 ForgeHooksClient_getOffsetFOV = new Class6631(field42864, "getOffsetFOV");
    public static Class6631 field42879 = new Class6631(field42864, "isNameplateInRenderDistance");
    public static Class6631 field42880 = new Class6631(field42864, "loadEntityShader");
    public static Class6631 ForgeHooksClient_onCameraSetup = new Class6631(field42864, "onCameraSetup");
@@ -524,7 +524,7 @@ public class Reflector {
       }
    }
 
-   public static float method35059(Class6631 var0, Object... var1) {
+   public static float callFloat(Class6631 var0, Object... var1) {
       try {
          Method var4 = var0.method20213();
          if (var4 == null) {
