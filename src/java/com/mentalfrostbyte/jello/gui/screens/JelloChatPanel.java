@@ -18,39 +18,39 @@ import java.util.Map.Entry;
 public class JelloChatPanel extends Screen {
    private static final Minecraft mc = Minecraft.getInstance();
    private float field20994;
-   private Class4269 field20995;
-   private Class4339 navBa;
-   private ChatViewBox chatViewBox;
-   private int field20998 = 20;
+   private final Class4269 field20995;
+   private final ChatViewBox chatViewBox;
+   private final int field20998 = 20;
    private int field20999 = 642;
-   private int field21000 = 410;
-   private int field21001 = 55;
-   private int field21002 = 200;
+   private final int field21000 = 410;
+   private final int field21001 = 55;
+   private final int field21002 = 200;
    public boolean field21003 = true;
    private Texture field21004;
 
    public JelloChatPanel() {
       super("JelloChat");
       this.addToList(this.field20995 = new Class4269(this, "input", this.field20998, this.getHeightA() - this.field21001 - this.field20998, this.field20999, this.field21001));
+      Class4339 navBa;
       this.addToList(
-         this.navBa = new Class4339(
-            this,
-            "navbar",
-            this.field20998,
-            this.getHeightA() - this.field21001 - this.field20998 * 2 - this.field21000 + 80,
-            this.field21002,
-            this.field21000 - 90
-         )
+              navBa = new Class4339(
+                      this,
+                      "navbar",
+                      this.field20998,
+                      this.getHeightA() - this.field21001 - this.field20998 * 2 - this.field21000 + 80,
+                      this.field21002,
+                      this.field21000 - 90
+              )
       );
       this.addToList(
-         this.chatViewBox = new ChatViewBox(
-            this,
-            "chatView",
-            this.field20998 + this.field21002,
-            this.getHeightA() - this.field21001 - this.field20998 * 2 - this.field21000,
-            this.field20999 - this.field21002,
-            this.field21000
-         )
+              this.chatViewBox = new ChatViewBox(
+                      this,
+                      "chatView",
+                      this.field20998 + this.field21002,
+                      this.getHeightA() - this.field21001 - this.field20998 * 2 - this.field21000,
+                      this.field20999 - this.field21002,
+                      this.field21000
+              )
       );
       int var3 = 55;
       System.out.println("loading");
@@ -58,19 +58,18 @@ public class JelloChatPanel extends Screen {
 
       for (Entry var5 : Client.getInstance().getNetworkManager().field38429.method29510().entrySet()) {
          System.out.println("added " + ((Class8433)var5.getValue()).field36143);
-         this.navBa
-            .addToList(
-               new Class4273(
-                  this.navBa,
-                  ((Class8433)var5.getValue()).field36142 + "_" + this.navBa.method13241().size(),
-                  0,
-                  0,
-                  this.navBa.getWidthA(),
-                  var3,
-                  ((Class8433)var5.getValue()).field36141,
-                  ((Class8433)var5.getValue()).field36144
-               )
-            );
+         navBa
+                 .addToList(
+                         new Class4273(
+                                 navBa,
+                                 ((Class8433)var5.getValue()).field36142 + "_" + navBa.method13241().size(),
+                                 0,
+                                 0,
+                                 navBa.getWidthA(),
+                                 var3,
+                                 ((Class8433)var5.getValue()).field36141
+                         )
+                 );
       }
    }
 
@@ -126,12 +125,12 @@ public class JelloChatPanel extends Screen {
       RenderUtil.method11471((float)var7, (float)var8, (float)var9, (float)var10, 10.0F);
       if (this.field21004 != null) {
          RenderUtil.drawImage(
-            (float)var7, (float)var8, (float)this.field21002, (float)var10, this.field21004, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+                 (float)var7, (float)var8, (float)this.field21002, (float)var10, this.field21004, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
          );
       }
 
       RenderUtil.drawRect(
-         (float)var7, (float)var8, (float)(var7 + this.field21002), (float)(var8 + 80), MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.14F)
+              (float)var7, (float)var8, (float)(var7 + this.field21002), (float)(var8 + 80), MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.14F)
       );
       RenderUtil.method11478();
       RenderUtil.drawPortalBackground(var7 + this.field21002, var8 - this.field20998, var7 + var9 + this.field20998, var8 + var10 + this.field20998);
@@ -140,11 +139,11 @@ public class JelloChatPanel extends Screen {
       RenderUtil.drawPortalBackground(var7 - this.field20998, var8 - this.field20998, var7 + this.field21002, var8 + var10 + this.field20998);
       RenderUtil.method11467(var7, var8, var9, var10, MultiUtilities.applyAlpha(-2236963, var1 * 0.75F));
       RenderUtil.drawRect(
-         (float)(var7 + this.field21002 - 1),
-         (float)var8,
-         (float)(var7 + this.field21002),
-         (float)(var8 + var10),
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.05F)
+              (float)(var7 + this.field21002 - 1),
+              (float)var8,
+              (float)(var7 + this.field21002),
+              (float)(var8 + var10),
+              MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.05F)
       );
       RenderUtil.endScissor();
       super.draw(var1);
