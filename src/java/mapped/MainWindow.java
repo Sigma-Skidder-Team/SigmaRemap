@@ -172,6 +172,10 @@ public final class MainWindow implements AutoCloseable {
    }
 
    public void setWindowIcon(InputStream var1, InputStream var2) {
+      if (Util.getOSType() == OS.LINUX) {
+         return;
+      }
+
       RenderSystem.assertThread(RenderSystem::isInInitPhase);
 
       try {
@@ -210,9 +214,9 @@ public final class MainWindow implements AutoCloseable {
             var10.height(var8.get(0));
             var10.pixels(var12);
             var10.position(0);
-            if (Util.getOSType() != OS.LINUX)
-               GLFW.glfwSetWindowIcon(this.handle, var10);
 
+
+            GLFW.glfwSetWindowIcon(this.handle, var10);
             STBImage.stbi_image_free(var11);
             STBImage.stbi_image_free(var12);
          } catch (Throwable var21) {
