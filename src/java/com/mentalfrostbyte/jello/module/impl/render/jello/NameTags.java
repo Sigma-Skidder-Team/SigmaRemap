@@ -21,7 +21,6 @@ import lol.ClientColors;
 import lol.Texture;
 import lol.TextureImpl;
 import mapped.*;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.inventory.FurnaceScreen;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -29,7 +28,6 @@ import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.RecipeManager;
 import net.minecraft.network.play.client.CClickWindowPacket;
 import net.minecraft.network.play.client.CPlayerTryUseItemOnBlockPacket;
 import net.minecraft.network.play.server.SOpenWindowPacket;
@@ -44,9 +42,7 @@ import java.util.*;
 import java.util.Map.Entry;
 
 public class NameTags extends Module {
-    public static NameTags field24004;
-    private static final RecipeManager field24002 = new RecipeManager();
-    private static final HashMap<String, Texture> field24003 = new HashMap<String, Texture>();
+    private static final HashMap<String, Texture> field24003 = new HashMap<>();
 
     static {
         field24003.put("Tomygaims", ResourcesDecrypter.tomyPNG);
@@ -57,11 +53,11 @@ public class NameTags extends Module {
     }
 
     public int field24008 = MultiUtilities.applyAlpha(MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 75.0F), 0.5F);
-    private final HashMap<BlockPos, Class7070> field24000 = new HashMap<BlockPos, Class7070>();
+    private final HashMap<BlockPos, Class7070> field24000 = new HashMap<>();
     private BlockPos field24001;
-    private final List<Entity> field24005 = new ArrayList<Entity>();
+    private final List<Entity> entities = new ArrayList<>();
     private boolean field24006 = false;
-    private final HashMap<UUID, String> field24007 = new HashMap<UUID, String>();
+    private final HashMap<UUID, String> field24007 = new HashMap<>();
 
     public NameTags() {
         super(ModuleCategory.RENDER, "NameTags", "Render better name tags");
@@ -69,54 +65,28 @@ public class NameTags extends Module {
         this.registerSetting(new BooleanSetting("Furnaces", "Shows furnaces info once open", true));
         this.registerSetting(new BooleanSetting("Mob Owners", "Shows mob owners", true));
         this.method16005(false);
-        field24004 = this;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16936() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static RecipeManager method16937() {
-        return field24002;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16938() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16939() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16940() {
-        return mc;
     }
 
     @EventTarget
-    private void method16926(TickEvent var1) {
+    private void onTick(TickEvent event) {
         if (this.isEnabled()) {
             this.field24006 = this.getBooleanValueFromSettingName("Furnaces");
             if (!this.field24006) {
                 this.field24000.clear();
             } else {
-                Iterator var4 = this.field24000.entrySet().iterator();
+                Iterator<Entry<BlockPos, Class7070>> var4 = this.field24000.entrySet().iterator();
 
                 while (var4.hasNext()) {
-                    Entry var5 = (Entry) var4.next();
-                    if (!(mc.world.getBlockState((BlockPos) var5.getKey()).getBlock() instanceof Class3353)) {
+                    Entry<BlockPos, Class7070> var5 = var4.next();
+                    if (!(mc.world.getBlockState(var5.getKey()).getBlock() instanceof Class3353)) {
                         var4.remove();
                     }
 
-                    ((Class7070) var5.getValue()).method21984();
+                    var5.getValue().method21984();
                 }
             }
 
-            this.field24005.clear();
+            this.entities.clear();
 
             for (Entity var7 : BlockUtil.method34549(MultiUtilities.method17680())) {
                 if (var7 != mc.player
@@ -124,24 +94,24 @@ public class NameTags extends Module {
                         && var7 != Blink.clientPlayerEntity
                         && !var7.isInvisible()
                         && !Client.getInstance().getCombatManager().isTargetABot(var7)) {
-                    this.field24005.add(var7);
+                    this.entities.add(var7);
                 }
             }
         }
     }
 
     @EventTarget
-    private void method16927(SendPacketEvent var1) {
+    private void onSendPacket(SendPacketEvent event) {
         if (this.isEnabled()) {
-            if (var1.getPacket() instanceof CPlayerTryUseItemOnBlockPacket) {
-                CPlayerTryUseItemOnBlockPacket var4 = (CPlayerTryUseItemOnBlockPacket) var1.getPacket();
+            if (event.getPacket() instanceof CPlayerTryUseItemOnBlockPacket) {
+                CPlayerTryUseItemOnBlockPacket var4 = (CPlayerTryUseItemOnBlockPacket) event.getPacket();
                 if (mc.world.getBlockState(var4.func_218794_c().getPos()).getBlock() instanceof Class3353) {
                     this.field24001 = var4.func_218794_c().getPos();
                 }
             }
 
-            if (var1.getPacket() instanceof CClickWindowPacket) {
-                CClickWindowPacket var7 = (CClickWindowPacket) var1.getPacket();
+            if (event.getPacket() instanceof CClickWindowPacket) {
+                CClickWindowPacket var7 = (CClickWindowPacket) event.getPacket();
                 Class7070 var5 = this.method16929(var7.getWindowId());
                 if (var5 == null) {
                     return;
@@ -159,64 +129,64 @@ public class NameTags extends Module {
     }
 
     @EventTarget
-    private void method16928(ReceivePacketEvent var1) {
+    private void onReceivePacket(ReceivePacketEvent event) {
         if (this.isEnabled()) {
-            if (var1.getPacket() instanceof SOpenWindowPacket) {
-                SOpenWindowPacket var4 = (SOpenWindowPacket) var1.getPacket();
-                if (var4.method17285() != ContainerType.FURNACE) {
+            if (event.getPacket() instanceof SOpenWindowPacket) {
+                SOpenWindowPacket sOpenWindowPacket = (SOpenWindowPacket) event.getPacket();
+                if (sOpenWindowPacket.method17285() != ContainerType.FURNACE) {
                     return;
                 }
 
-                this.field24000.put(this.field24001, new Class7070(var4.method17284()));
+                this.field24000.put(this.field24001, new Class7070(sOpenWindowPacket.method17284()));
             }
 
-            if (var1.getPacket() instanceof SSetSlotPacket) {
-                SSetSlotPacket var6 = (SSetSlotPacket) var1.getPacket();
-                Class7070 var5 = this.method16929(var6.method17303());
+            if (event.getPacket() instanceof SSetSlotPacket) {
+                SSetSlotPacket sSetSlotPacket = (SSetSlotPacket) event.getPacket();
+                Class7070 var5 = this.method16929(sSetSlotPacket.method17303());
                 if (var5 == null) {
                     return;
                 }
 
-                if (var6.method17304() == 0) {
-                    var5.field30453 = new ItemStack(var6.method17305().getItem());
-                    var5.field30453.count = var6.method17305().count;
-                } else if (var6.method17304() == 1) {
-                    var5.field30454 = new ItemStack(var6.method17305().getItem());
-                    var5.field30454.count = var6.method17305().count;
-                } else if (var6.method17304() == 2) {
-                    var5.field30455 = new ItemStack(var6.method17305().getItem());
-                    var5.field30455.count = var6.method17305().count;
+                if (sSetSlotPacket.method17304() == 0) {
+                    var5.field30453 = new ItemStack(sSetSlotPacket.method17305().getItem());
+                    var5.field30453.count = sSetSlotPacket.method17305().count;
+                } else if (sSetSlotPacket.method17304() == 1) {
+                    var5.field30454 = new ItemStack(sSetSlotPacket.method17305().getItem());
+                    var5.field30454.count = sSetSlotPacket.method17305().count;
+                } else if (sSetSlotPacket.method17304() == 2) {
+                    var5.field30455 = new ItemStack(sSetSlotPacket.method17305().getItem());
+                    var5.field30455.count = sSetSlotPacket.method17305().count;
                 }
             }
 
-            if (var1.getPacket() instanceof SWindowPropertyPacket) {
-                SWindowPropertyPacket var7 = (SWindowPropertyPacket) var1.getPacket();
-                Class7070 var8 = this.method16929(var7.method17239());
+            if (event.getPacket() instanceof SWindowPropertyPacket) {
+                SWindowPropertyPacket sWindowPropertyPacket = (SWindowPropertyPacket) event.getPacket();
+                Class7070 var8 = this.method16929(sWindowPropertyPacket.method17239());
                 if (var8 == null) {
                     return;
                 }
 
-                switch (var7.method17240()) {
+                switch (sWindowPropertyPacket.method17240()) {
                     case 0:
-                        var8.field30452 = var7.method17241();
+                        var8.field30452 = sWindowPropertyPacket.method17241();
                         break;
                     case 1:
-                        var8.field30451 = var7.method17241();
+                        var8.field30451 = sWindowPropertyPacket.method17241();
                         break;
                     case 2:
-                        var8.field30450 = (float) var7.method17241();
+                        var8.field30450 = (float) sWindowPropertyPacket.method17241();
                         break;
                     case 3:
-                        var8.field30449 = (float) var7.method17241();
+                        var8.field30449 = (float) sWindowPropertyPacket.method17241();
                 }
             }
         }
     }
 
     private Class7070 method16929(int var1) {
-        for (Entry var5 : this.field24000.entrySet()) {
-            if (((Class7070) var5.getValue()).field30448 == var1) {
-                return (Class7070) var5.getValue();
+        for (Entry<BlockPos, Class7070> var5 : this.field24000.entrySet()) {
+            if (var5.getValue().field30448 == var1) {
+                return var5.getValue();
             }
         }
 
@@ -224,31 +194,31 @@ public class NameTags extends Module {
     }
 
     @EventTarget
-    public void method16930(Render3DEvent var1) {
+    public void on3D(Render3DEvent event) {
         if (this.isEnabled()) {
             RenderSystem.glMultiTexCoord2f(33986, 240.0F, 240.0F);
-            boolean var4 = this.getBooleanValueFromSettingName("Magnify");
+            boolean shouldMagnify = this.getBooleanValueFromSettingName("Magnify");
 
-            for (Entity var6 : this.field24005) {
-                float var7 = 1.0F;
-                if (var4) {
-                    var7 = (float) Math.max(1.0, Math.sqrt(PositionUtils.calculateDistanceSquared(var6) / 30.0));
+            for (Entity entity : this.entities) {
+                float scale = 1.0F;
+                if (shouldMagnify) {
+                    scale = (float) Math.max(1.0, Math.sqrt(PositionUtils.calculateDistanceSquared(entity) / 30.0));
                 }
 
-                this.method16933(
-                        PositionUtils.getEntityPosition(var6).x,
-                        PositionUtils.getEntityPosition(var6).y + (double) var6.getHeight(),
-                        PositionUtils.getEntityPosition(var6).z,
-                        var6,
-                        var7,
+                this.drawNametag(
+                        PositionUtils.getEntityPosition(entity).x,
+                        PositionUtils.getEntityPosition(entity).y + (double) entity.getHeight(),
+                        PositionUtils.getEntityPosition(entity).z,
+                        entity,
+                        scale,
                         null
                 );
-                var6.getDataManager().method35446(Entity.CUSTOM_NAME_VISIBLE, false);
+                entity.getDataManager().method35446(Entity.CUSTOM_NAME_VISIBLE, false);
             }
 
             for (Entry var11 : this.field24000.entrySet()) {
                 float var13 = 1.0F;
-                if (var4) {
+                if (shouldMagnify) {
                     var13 = (float) Math.max(0.8F, Math.sqrt(PositionUtils.calculateDistanceSquared((BlockPos) var11.getKey()) / 30.0));
                 }
 
@@ -282,7 +252,7 @@ public class NameTags extends Module {
                                     var8 = (float) Math.max(1.0, Math.sqrt(PositionUtils.calculateDistanceSquared(var12) / 30.0));
                                 }
 
-                                this.method16933(
+                                this.drawNametag(
                                         PositionUtils.getEntityPosition(var12).x,
                                         PositionUtils.getEntityPosition(var12).y + (double) var12.getHeight(),
                                         PositionUtils.getEntityPosition(var12).z,
@@ -388,7 +358,7 @@ public class NameTags extends Module {
         GL11.glDisable(3042);
     }
 
-    public void method16933(double var1, double var3, double var5, Entity var7, float var8, String var9) {
+    public void drawNametag(double x, double y, double z, Entity var7, float var8, String var9) {
         ClientResource var12 = ResourceRegistry.JelloLightFont25;
         String var13 = var9 == null ? var7.getName().getString().replaceAll("§.", "") : var9;
         if (Client.getInstance().getModuleManager().getModuleByClass(NameProtect.class).isEnabled() && var13.equals(mc.getSession().getUsername())) {
@@ -396,9 +366,9 @@ public class NameTags extends Module {
         }
 
         if (var13.length() != 0) {
-            float var14 = (float) (var1 - mc.gameRenderer.getActiveRenderInfo().getPos().getX());
-            float var15 = (float) (var3 - mc.gameRenderer.getActiveRenderInfo().getPos().getY());
-            float var16 = (float) (var5 - mc.gameRenderer.getActiveRenderInfo().getPos().getZ());
+            float var14 = (float) (x - mc.gameRenderer.getActiveRenderInfo().getPos().getX());
+            float var15 = (float) (y - mc.gameRenderer.getActiveRenderInfo().getPos().getY());
+            float var16 = (float) (z - mc.gameRenderer.getActiveRenderInfo().getPos().getZ());
             GL11.glBlendFunc(770, 771);
             GL11.glEnable(3042);
             GL11.glEnable(2848);
@@ -422,42 +392,20 @@ public class NameTags extends Module {
                 var19 = MultiUtilities.applyAlpha(-16171506, 0.5F);
             }
 
-            int var20 = MultiUtilities.applyAlpha(
-                    !(var7 instanceof PlayerEntity) ? ClientColors.LIGHT_GREYISH_BLUE.getColor : new Color(Class8781.method31663((PlayerEntity) var7)).getRGB(), 0.5F
-            );
+            int var20 = MultiUtilities.applyAlpha(!(var7 instanceof PlayerEntity) ? ClientColors.LIGHT_GREYISH_BLUE.getColor : new Color(Class8781.method31663((PlayerEntity) var7)).getRGB(), 0.5F);
             int var21 = var12.getStringWidth(var13) / 2;
             if (!field24003.containsKey(var13)) {
                 RenderUtil.drawRoundedRect((float) (-var21 - 10), -25.0F, (float) (var21 * 2 + 20), (float) (var12.method23952() + 27), 20.0F, 0.5F);
             } else {
                 int var22 = Color.getHSBColor((float) (System.currentTimeMillis() % 10000L) / 10000.0F, 0.5F, 1.0F).getRGB();
-                RenderUtil.drawImage(
-                        (float) (-var21 - 10 - 31),
-                        -25.0F,
-                        (float) (var12.method23952() + 27),
-                        (float) (var12.method23952() + 27),
-                        field24003.get(var13),
-                        MultiUtilities.applyAlpha(var22, 0.7F)
-                );
-                RenderUtil.drawImage(
-                        (float) (-var21 - 10 - 31 + var12.method23952() + 27),
-                        -25.0F,
-                        14.0F,
-                        (float) (var12.method23952() + 27),
-                        ResourcesDecrypter.shadowRightPNG,
-                        MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F)
-                );
+                RenderUtil.drawImage((float) (-var21 - 10 - 31), -25.0F, (float) (var12.method23952() + 27), (float) (var12.method23952() + 27), field24003.get(var13), MultiUtilities.applyAlpha(var22, 0.7F));
+                RenderUtil.drawImage((float) (-var21 - 10 - 31 + var12.method23952() + 27), -25.0F, 14.0F, (float) (var12.method23952() + 27), ResourcesDecrypter.shadowRightPNG, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F));
                 RenderUtil.drawRoundedRect((float) (-var21 - 10 - 31), -25.0F, (float) (var21 * 2 + 20 + 31 + 27), (float) (var12.method23952() + 27), 20.0F, 0.5F);
                 GL11.glTranslatef(27.0F, 0.0F, 0.0F);
             }
 
             RenderUtil.drawRect((float) (-var21 - 10), -25.0F, (float) (var21 + 10), (float) (var12.method23952() + 2), var19);
-            RenderUtil.drawRect(
-                    (float) (-var21 - 10),
-                    (float) (var12.method23952() - 1) - (float) ((LivingEntity) var7).hurtTime / 3.0F,
-                    Math.min((float) (var21 * 2 + 20) * (var18 - 0.5F), (float) (var21 + 10)),
-                    (float) (var12.method23952() + 2),
-                    var20
-            );
+            RenderUtil.drawRect((float) (-var21 - 10), (float) (var12.method23952() - 1) - (float) ((LivingEntity) var7).hurtTime / 3.0F, Math.min((float) (var21 * 2 + 20) * (var18 - 0.5F), (float) (var21 + 10)), (float) (var12.method23952() + 2), var20);
             GL11.glPushMatrix();
             GL11.glTranslated(-var12.getStringWidth(var13) / 2, 0.0, 0.0);
             int var26 = ResourceRegistry.JelloLightFont14.getStringWidth("Health: 20.0");
