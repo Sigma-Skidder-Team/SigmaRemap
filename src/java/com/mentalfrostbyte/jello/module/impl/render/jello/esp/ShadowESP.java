@@ -10,6 +10,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.ColorSetting;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
+import com.mentalfrostbyte.jello.util.render.PositionUtils;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -64,9 +65,9 @@ public class ShadowESP extends Module {
                 .forEach(
                         (var2, var3x) -> {
                             if (this.method16611(var3x)) {
-                                double var6 = Class9647.method37623(var3x).field43722;
-                                double var8 = Class9647.method37623(var3x).field43723;
-                                double var10 = Class9647.method37623(var3x).field43724;
+                                double var6 = PositionUtils.getRelativePosition(var3x).x;
+                                double var8 = PositionUtils.getRelativePosition(var3x).y;
+                                double var10 = PositionUtils.getRelativePosition(var3x).z;
                                 GL11.glPushMatrix();
                                 GL11.glAlphaFunc(519, 0.0F);
                                 GL11.glTranslated(var6, var8, var10);
@@ -170,7 +171,7 @@ public class ShadowESP extends Module {
 
     @EventTarget
     public void method16610(EventRenderNameTag var1) {
-        if (this.isEnabled() && field23794 != Class2191.field14327 && var1.method13987() instanceof PlayerEntity) {
+        if (this.isEnabled() && field23794 != Class2191.field14327 && var1.getEntity() instanceof PlayerEntity) {
             var1.setCancelled(true);
         }
     }

@@ -388,20 +388,20 @@ public class InvManagerUtils {
       return true;
    }
 
-   public static boolean method25876(ItemStack var0) {
+   public static boolean isItemStackValid(ItemStack var0) {
       return var0 != null && !var0.getItem().equals(Items.AIR);
    }
 
-   public static List<ItemStack> method25877(PlayerEntity var0) {
-      ArrayList var3 = new ArrayList();
+   public static List<ItemStack> getValidStacks(PlayerEntity player) {
+      ArrayList<ItemStack> stacks = new ArrayList<>();
 
-      for (Slot var5 : var0.container.inventorySlots) {
-         if (method25876(var5.getStack())) {
-            var3.add(var5.getStack());
+      for (Slot slot : player.container.inventorySlots) {
+         if (isItemStackValid(slot.getStack())) {
+            stacks.add(slot.getStack());
          }
       }
 
-      return var3;
+      return stacks;
    }
 
    public static int method25878(Item var0) {

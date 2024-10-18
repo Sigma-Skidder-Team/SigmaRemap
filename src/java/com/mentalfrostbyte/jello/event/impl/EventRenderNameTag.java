@@ -10,7 +10,7 @@ public class EventRenderNameTag extends CancellableEvent {
         this.field21580 = var1;
     }
 
-    public Entity method13987() {
+    public Entity getEntity() {
         return this.field21580;
     }
 }

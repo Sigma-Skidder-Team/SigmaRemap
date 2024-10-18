@@ -186,13 +186,13 @@ public class Class8243 {
 
    private static int method28747(CommandSource var0, Vector2f var1) throws CommandSyntaxException {
       WorldBorder var4 = var0.method20172().getWorldBorder();
-      if (var4.getCenterX() == (double)var1.field37220 && var4.getCenterZ() == (double)var1.field37221) {
+      if (var4.getCenterX() == (double)var1.x && var4.getCenterZ() == (double)var1.y) {
          throw field35415.create();
       } else {
-         var4.method24536((double)var1.field37220, (double)var1.field37221);
+         var4.method24536((double)var1.x, (double)var1.y);
          var0.method20179(
             new TranslationTextComponent(
-               "commands.worldborder.center.success", String.format(Locale.ROOT, "%.2f", var1.field37220), String.format("%.2f", var1.field37221)
+               "commands.worldborder.center.success", String.format(Locale.ROOT, "%.2f", var1.x), String.format("%.2f", var1.y)
             ),
             true
          );

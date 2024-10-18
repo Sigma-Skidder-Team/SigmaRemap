@@ -25,12 +25,12 @@ public class Class7330 implements Class7329 {
    public Vector3d method23228(CommandSource var1) {
       Vector2f var4 = var1.method20176();
       Vector3d var5 = var1.method20178().method8712(var1);
-      float var6 = MathHelper.cos((var4.field37221 + 90.0F) * (float) (Math.PI / 180.0));
-      float var7 = MathHelper.sin((var4.field37221 + 90.0F) * (float) (Math.PI / 180.0));
-      float var8 = MathHelper.cos(-var4.field37220 * (float) (Math.PI / 180.0));
-      float var9 = MathHelper.sin(-var4.field37220 * (float) (Math.PI / 180.0));
-      float var10 = MathHelper.cos((-var4.field37220 + 90.0F) * (float) (Math.PI / 180.0));
-      float var11 = MathHelper.sin((-var4.field37220 + 90.0F) * (float) (Math.PI / 180.0));
+      float var6 = MathHelper.cos((var4.y + 90.0F) * (float) (Math.PI / 180.0));
+      float var7 = MathHelper.sin((var4.y + 90.0F) * (float) (Math.PI / 180.0));
+      float var8 = MathHelper.cos(-var4.x * (float) (Math.PI / 180.0));
+      float var9 = MathHelper.sin(-var4.x * (float) (Math.PI / 180.0));
+      float var10 = MathHelper.cos((-var4.x + 90.0F) * (float) (Math.PI / 180.0));
+      float var11 = MathHelper.sin((-var4.x + 90.0F) * (float) (Math.PI / 180.0));
       Vector3d var12 = new Vector3d((double)(var6 * var8), (double)var9, (double)(var7 * var8));
       Vector3d var13 = new Vector3d((double)(var6 * var10), (double)var11, (double)(var7 * var10));
       Vector3d var14 = var12.method11335(var13).scale(-1.0);

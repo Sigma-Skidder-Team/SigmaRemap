@@ -11,6 +11,7 @@ import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
+import com.mentalfrostbyte.jello.util.render.PositionUtils;
 import com.mojang.blaze3d.systems.RenderSystem;
 import lol.ClientColors;
 import lol.TextureImpl;
@@ -121,7 +122,7 @@ public class Waypoints extends Module {
                 BlockPos var6 = new BlockPos(
                         var5.field35890 - (var5.field35890 <= 0 ? 1 : 0), var5.field35893, var5.field35891 - (var5.field35891 <= 0 ? 1 : 0)
                 );
-                double var7 = Math.sqrt(Class9647.method37621(var6));
+                double var7 = Math.sqrt(PositionUtils.calculateDistanceSquared(var6));
                 if (!(var7 > 300.0)) {
                     if (mc.world.getChunk(var6) != null && var5.field35894) {
                         int var9 = var6.getX() % 16;
@@ -156,7 +157,7 @@ public class Waypoints extends Module {
                     }
 
                     float var12 = 1.0F;
-                    var12 = (float) Math.max(1.0, Math.sqrt(Class9647.method37621(var6) / 30.0));
+                    var12 = (float) Math.max(1.0, Math.sqrt(PositionUtils.calculateDistanceSquared(var6) / 30.0));
                     this.method16283(var14, var13, var15, var5.field35889, var5.field35892, var12);
                 }
             }

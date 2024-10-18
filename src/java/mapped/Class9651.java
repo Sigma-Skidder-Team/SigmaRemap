@@ -204,7 +204,7 @@ public class Class9651 {
 
       for (Entity var12 : var1) {
          if (var4 != null) {
-            method37647(var0, var12, var2, var8.x, var8.y, var8.z, var10, var9.field37221, var9.field37220, var5);
+            method37647(var0, var12, var2, var8.x, var8.y, var8.z, var10, var9.y, var9.x, var5);
          } else {
             method37647(var0, var12, var2, var8.x, var8.y, var8.z, var10, var12.rotationYaw, var12.rotationPitch, var5);
          }

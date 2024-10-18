@@ -96,7 +96,7 @@ public class FillESP extends Module {
 
     @EventTarget
     public void method16135(EventRenderNameTag var1) {
-        if (this.isEnabled() && this.field23481 && var1.method13987() instanceof PlayerEntity) {
+        if (this.isEnabled() && this.field23481 && var1.getEntity() instanceof PlayerEntity) {
             var1.setCancelled(true);
         }
     }

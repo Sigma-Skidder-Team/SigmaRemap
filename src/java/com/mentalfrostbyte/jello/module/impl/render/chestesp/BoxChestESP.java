@@ -5,6 +5,7 @@ import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
+import com.mentalfrostbyte.jello.util.render.PositionUtils;
 import com.mojang.blaze3d.systems.RenderSystem;
 import lol.TextureImpl;
 import mapped.*;
@@ -37,9 +38,9 @@ public class BoxChestESP extends Module {
             boolean var9 = var7 instanceof Class943 && this.access().getBooleanValueFromSettingName("Show Ender Chests");
             boolean var10 = var7 instanceof Class970 && this.access().getBooleanValueFromSettingName("Show Trapped Chests");
             if (var8 || var9 || var10) {
-                double var11 = Class9647.method37624(var7.getPos()).field43722;
-                double var13 = Class9647.method37624(var7.getPos()).field43723;
-                double var15 = Class9647.method37624(var7.getPos()).field43724;
+                double var11 = PositionUtils.getRelativePosition(var7.getPos()).x;
+                double var13 = PositionUtils.getRelativePosition(var7.getPos()).y;
+                double var15 = PositionUtils.getRelativePosition(var7.getPos()).z;
                 GL11.glDisable(2929);
                 GL11.glEnable(3042);
                 int var17 = var3;

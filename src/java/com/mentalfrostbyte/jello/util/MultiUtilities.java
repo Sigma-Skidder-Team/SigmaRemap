@@ -515,35 +515,44 @@ public class MultiUtilities {
       }
    }
 
-   public static boolean method17737(float var0, float var1, float var2, FloatBuffer var3, FloatBuffer var4, IntBuffer var5, FloatBuffer var6) {
-      float[] var9 = field24951;
-      float[] var10 = field24952;
-      var9[0] = var0;
-      var9[1] = var1;
-      var9[2] = var2;
-      var9[3] = 1.0F;
-      method17738(var3, var9, var10);
-      method17738(var4, var10, var9);
-      if ((double)var9[3] != 0.0) {
-         var9[3] = 1.0F / var9[3] * 0.5F;
-         var9[0] = var9[0] * var9[3] + 0.5F;
-         var9[1] = var9[1] * var9[3] + 0.5F;
-         var9[2] = var9[2] * var9[3] + 0.5F;
-         var6.put(0, var9[0] * (float)var5.get(var5.position() + 2) + (float)var5.get(var5.position() + 0));
-         var6.put(1, var9[1] * (float)var5.get(var5.position() + 3) + (float)var5.get(var5.position() + 1));
-         var6.put(2, var9[2]);
+   public static boolean projectToScreen(float x, float y, float z, FloatBuffer modelMatrix, FloatBuffer projectionMatrix, IntBuffer viewport, FloatBuffer screenCoords) {
+      float[] inVector = field24951;
+      float[] outVector = field24952;
+
+      // Load input coordinates into the vector
+      inVector[0] = x;
+      inVector[1] = y;
+      inVector[2] = z;
+      inVector[3] = 1.0F;
+
+      // Apply the model and projection transformations
+      transformVector(modelMatrix, inVector, outVector);
+      transformVector(projectionMatrix, outVector, inVector);
+
+      // Perform perspective division if the w-component is non-zero
+      if ((double) inVector[3] != 0.0) {
+         inVector[3] = 1.0F / inVector[3] * 0.5F;
+         inVector[0] = inVector[0] * inVector[3] + 0.5F;
+         inVector[1] = inVector[1] * inVector[3] + 0.5F;
+         inVector[2] = inVector[2] * inVector[3] + 0.5F;
+
+         // Map to screen coordinates using the viewport
+         screenCoords.put(0, inVector[0] * (float) viewport.get(viewport.position() + 2) + (float) viewport.get(viewport.position() + 0));
+         screenCoords.put(1, inVector[1] * (float) viewport.get(viewport.position() + 3) + (float) viewport.get(viewport.position() + 1));
+         screenCoords.put(2, inVector[2]);
+
          return true;
       } else {
          return false;
       }
    }
 
-   private static void method17738(FloatBuffer var0, float[] var1, float[] var2) {
-      for (int var5 = 0; var5 < 4; var5++) {
-         var2[var5] = var1[0] * var0.get(var0.position() + var5)
-            + var1[1] * var0.get(var0.position() + 4 + var5)
-            + var1[2] * var0.get(var0.position() + 8 + var5)
-            + var1[3] * var0.get(var0.position() + 12 + var5);
+   private static void transformVector(FloatBuffer matrixBuffer, float[] inputVector, float[] outputVector) {
+      for (int i = 0; i < 4; i++) {
+         outputVector[i] = inputVector[0] * matrixBuffer.get(matrixBuffer.position() + i)
+                 + inputVector[1] * matrixBuffer.get(matrixBuffer.position() + 4 + i)
+                 + inputVector[2] * matrixBuffer.get(matrixBuffer.position() + 8 + i)
+                 + inputVector[3] * matrixBuffer.get(matrixBuffer.position() + 12 + i);
       }
    }
 

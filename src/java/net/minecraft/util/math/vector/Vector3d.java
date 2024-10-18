@@ -192,7 +192,7 @@ public class Vector3d implements Class2955 {
    }
 
    public static Vector3d method11353(Vector2f var0) {
-      return method11354(var0.field37220, var0.field37221);
+      return method11354(var0.x, var0.y);
    }
 
    public static Vector3d method11354(float var0, float var1) {

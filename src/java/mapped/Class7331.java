@@ -29,7 +29,7 @@ public class Class7331 implements Class7329 {
    @Override
    public Vector2f method23229(CommandSource var1) {
       Vector2f var4 = var1.method20176();
-      return new Vector2f((float)this.field31416.method31754((double)var4.field37220), (float)this.field31417.method31754((double)var4.field37221));
+      return new Vector2f((float)this.field31416.method31754((double)var4.x), (float)this.field31417.method31754((double)var4.y));
    }
 
    @Override

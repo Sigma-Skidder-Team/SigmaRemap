@@ -14,6 +14,7 @@ import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.unmapped.Class8433;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
+import com.mentalfrostbyte.jello.util.render.PositionUtils;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import com.mojang.blaze3d.systems.RenderSystem;
 import lol.ClientColors;
@@ -231,13 +232,13 @@ public class NameTags extends Module {
             for (Entity var6 : this.field24005) {
                 float var7 = 1.0F;
                 if (var4) {
-                    var7 = (float) Math.max(1.0, Math.sqrt(Class9647.method37620(var6) / 30.0));
+                    var7 = (float) Math.max(1.0, Math.sqrt(PositionUtils.calculateDistanceSquared(var6) / 30.0));
                 }
 
                 this.method16933(
-                        Class9647.method37622(var6).field43722,
-                        Class9647.method37622(var6).field43723 + (double) var6.getHeight(),
-                        Class9647.method37622(var6).field43724,
+                        PositionUtils.getEntityPosition(var6).x,
+                        PositionUtils.getEntityPosition(var6).y + (double) var6.getHeight(),
+                        PositionUtils.getEntityPosition(var6).z,
                         var6,
                         var7,
                         null
@@ -248,7 +249,7 @@ public class NameTags extends Module {
             for (Entry var11 : this.field24000.entrySet()) {
                 float var13 = 1.0F;
                 if (var4) {
-                    var13 = (float) Math.max(0.8F, Math.sqrt(Class9647.method37621((BlockPos) var11.getKey()) / 30.0));
+                    var13 = (float) Math.max(0.8F, Math.sqrt(PositionUtils.calculateDistanceSquared((BlockPos) var11.getKey()) / 30.0));
                 }
 
                 this.method16932((BlockPos) var11.getKey(), (Class7070) var11.getValue(), var13);
@@ -278,13 +279,13 @@ public class NameTags extends Module {
                             if (this.field24007.get(var14) != null) {
                                 float var8 = 1.0F;
                                 if (this.getBooleanValueFromSettingName("Magnify")) {
-                                    var8 = (float) Math.max(1.0, Math.sqrt(Class9647.method37620(var12) / 30.0));
+                                    var8 = (float) Math.max(1.0, Math.sqrt(PositionUtils.calculateDistanceSquared(var12) / 30.0));
                                 }
 
                                 this.method16933(
-                                        Class9647.method37622(var12).field43722,
-                                        Class9647.method37622(var12).field43723 + (double) var12.getHeight(),
-                                        Class9647.method37622(var12).field43724,
+                                        PositionUtils.getEntityPosition(var12).x,
+                                        PositionUtils.getEntityPosition(var12).y + (double) var12.getHeight(),
+                                        PositionUtils.getEntityPosition(var12).z,
                                         var12,
                                         var8,
                                         this.field24007.get(var14)
@@ -485,7 +486,7 @@ public class NameTags extends Module {
 
     @EventTarget
     public void method16934(EventRenderNameTag var1) {
-        if (this.isEnabled() && var1.method13987() instanceof PlayerEntity) {
+        if (this.isEnabled() && var1.getEntity() instanceof PlayerEntity) {
             var1.setCancelled(true);
         }
     }

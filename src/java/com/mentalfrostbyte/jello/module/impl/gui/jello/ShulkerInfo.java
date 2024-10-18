@@ -13,6 +13,7 @@ import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
+import com.mentalfrostbyte.jello.util.render.PositionUtils;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 import lol.ClientColors;
@@ -64,16 +65,16 @@ public class ShulkerInfo extends Module {
                     }
 
                     this.method16674(
-                            Class9647.method37622(var5).field43722,
-                            Class9647.method37622(var5).field43723 + (double) var5.getHeight(),
-                            Class9647.method37622(var5).field43724,
+                            PositionUtils.getEntityPosition(var5).x,
+                            PositionUtils.getEntityPosition(var5).y + (double) var5.getHeight(),
+                            PositionUtils.getEntityPosition(var5).z,
                             var5,
                             0.8F
                     );
                     if (this.method16672(var6)) {
-                        double var7 = Class9647.method37622(var5).field43722 - mc.gameRenderer.getActiveRenderInfo().getPos().getX();
-                        double var9 = Class9647.method37622(var5).field43723 - mc.gameRenderer.getActiveRenderInfo().getPos().getY();
-                        double var11 = Class9647.method37622(var5).field43724 - mc.gameRenderer.getActiveRenderInfo().getPos().getZ();
+                        double var7 = PositionUtils.getEntityPosition(var5).x - mc.gameRenderer.getActiveRenderInfo().getPos().getX();
+                        double var9 = PositionUtils.getEntityPosition(var5).y - mc.gameRenderer.getActiveRenderInfo().getPos().getY();
+                        double var11 = PositionUtils.getEntityPosition(var5).z - mc.gameRenderer.getActiveRenderInfo().getPos().getZ();
                         float var13 = 0.3F;
                         GL11.glEnable(3042);
                         GL11.glAlphaFunc(516, 0.0F);
@@ -114,7 +115,7 @@ public class ShulkerInfo extends Module {
         if (mc.player.getDistance(var1) > 5.0F) {
             return false;
         } else {
-            float var4 = (float) Math.sqrt(6.0 / Class9647.method37620(var1));
+            float var4 = (float) Math.sqrt(6.0 / PositionUtils.calculateDistanceSquared(var1));
             float var5 = 10.0F * var4;
             double var6 = var1.getPosX() - mc.player.getPosX();
             double var8 = var1.getPosY() - mc.player.getPosY() - (double) mc.player.getHeight() + 0.4F;

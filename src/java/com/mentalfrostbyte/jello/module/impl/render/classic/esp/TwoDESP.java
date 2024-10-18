@@ -228,8 +228,8 @@ public class TwoDESP extends Module {
                 double var15 = var12.lastTickPosX + (var12.getPosX() + 10.0 - (var12.lastTickPosX + 10.0)) * (double) var9 - var3;
                 double var17 = var12.lastTickPosZ + (var12.getPosZ() + 10.0 - (var12.lastTickPosZ + 10.0)) * (double) var9 - var7;
                 var13 += (double) var12.getHeight() + 0.2;
-                double[] var19 = RenderUtil.method11482(var15, var13, var17);
-                double var20 = Math.abs(RenderUtil.method11482(var15, var13 + 1.0, var17)[1] - RenderUtil.method11482(var15, var13, var17)[1]);
+                double[] var19 = RenderUtil.worldToScreen(var15, var13, var17);
+                double var20 = Math.abs(RenderUtil.worldToScreen(var15, var13 + 1.0, var17)[1] - RenderUtil.worldToScreen(var15, var13, var17)[1]);
                 if (!field23730 && var19 == null) {
                     throw new AssertionError();
                 }
@@ -240,10 +240,10 @@ public class TwoDESP extends Module {
                     field23729.put(
                             var12,
                             new double[]{
-                                    RenderUtil.method11482(var15, var13, var17)[0],
-                                    RenderUtil.method11482(var15, var13, var17)[1],
+                                    RenderUtil.worldToScreen(var15, var13, var17)[0],
+                                    RenderUtil.worldToScreen(var15, var13, var17)[1],
                                     var20,
-                                    RenderUtil.method11482(var15, var13, var17)[2]
+                                    RenderUtil.worldToScreen(var15, var13, var17)[2]
                             }
                     );
                 }

@@ -885,8 +885,8 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          float var9 = (float)var7.lengthSquared();
          if (var9 <= 0.001F) {
             Vector2f var10 = this.movementInput.method36337();
-            float var11 = var8 * var10.field37220;
-            float var12 = var8 * var10.field37221;
+            float var11 = var8 * var10.x;
+            float var12 = var8 * var10.y;
             float var13 = MathHelper.sin(this.rotationYaw * (float) (Math.PI / 180.0));
             float var14 = MathHelper.cos(this.rotationYaw * (float) (Math.PI / 180.0));
             var7 = new Vector3d((double)(var11 * var14 - var12 * var13), var7.y, (double)(var12 * var14 + var11 * var13));
@@ -984,7 +984,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
    private boolean method5414() {
       Vector2f var3 = this.movementInput.method36337();
-      return var3.field37220 != 0.0F || var3.field37221 != 0.0F;
+      return var3.x != 0.0F || var3.y != 0.0F;
    }
 
    private boolean method5415() {

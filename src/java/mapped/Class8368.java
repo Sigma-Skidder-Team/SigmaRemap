@@ -39,7 +39,7 @@ public class Class8368 {
       boolean var8 = this.field35923 > 0;
       boolean var9 = this.field35922.size() > this.field35923 + var6;
       boolean var10 = var8 || var9;
-      boolean var11 = this.field35925.field37220 != (float)var2 || this.field35925.field37221 != (float)var3;
+      boolean var11 = this.field35925.x != (float)var2 || this.field35925.y != (float)var3;
       if (var11) {
          this.field35925 = new Vector2f((float)var2, (float)var3);
       }

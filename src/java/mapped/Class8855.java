@@ -49,7 +49,7 @@ public class Class8855 {
    }
 
    public Class6895<Vector2f> method32241(String var1, Vector2f var2) {
-      Class6895 var5 = new Class6895<Vector2f>(this, var2, var1, (var0, var1x) -> GL20.glUniform2f(var0, var1x.field37220, var1x.field37221));
+      Class6895 var5 = new Class6895<Vector2f>(this, var2, var1, (var0, var1x) -> GL20.glUniform2f(var0, var1x.x, var1x.y));
       this.field40040.add(var5);
       return var5;
    }

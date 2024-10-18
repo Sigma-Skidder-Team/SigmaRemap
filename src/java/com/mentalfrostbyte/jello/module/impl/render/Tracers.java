@@ -8,8 +8,8 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.ColorSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
+import com.mentalfrostbyte.jello.util.render.PositionUtils;
 import lol.ClientColors;
-import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.vector.Vector3d;
@@ -53,9 +53,9 @@ public class Tracers extends Module {
     }
 
     public void method16522(Entity var1) {
-        double var4 = Class9647.method37623(var1).field43722;
-        double var6 = Class9647.method37623(var1).field43723 + (double) (var1.getHeight() / 2.0F);
-        double var8 = Class9647.method37623(var1).field43724;
+        double var4 = PositionUtils.getRelativePosition(var1).x;
+        double var6 = PositionUtils.getRelativePosition(var1).y + (double) (var1.getHeight() / 2.0F);
+        double var8 = PositionUtils.getRelativePosition(var1).z;
         Vector3d var10 = new Vector3d(0.0, 0.0, 10.0)
                 .method11350(-((float) Math.toRadians(Minecraft.getInstance().player.rotationPitch)))
                 .method11351(-((float) Math.toRadians(Minecraft.getInstance().player.rotationYaw)));

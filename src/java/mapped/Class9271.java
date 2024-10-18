@@ -90,10 +90,10 @@ public class Class9271 {
 
    private static int method34923(CommandSource var0, Vector2f var1, float var2, float var3, int var4, boolean var5, Collection<? extends Entity> var6) throws CommandSyntaxException {
       Random var9 = new Random();
-      double var10 = (double)(var1.field37220 - var3);
-      double var12 = (double)(var1.field37221 - var3);
-      double var14 = (double)(var1.field37220 + var3);
-      double var16 = (double)(var1.field37221 + var3);
+      double var10 = (double)(var1.x - var3);
+      double var12 = (double)(var1.y - var3);
+      double var14 = (double)(var1.x + var3);
+      double var16 = (double)(var1.y + var3);
       Class9169[] var18 = method34927(var9, !var5 ? var6.size() : method34924(var6), var10, var12, var14, var16);
       method34925(var1, (double)var2, var0.method20172(), var9, var10, var12, var14, var16, var4, var18, var5);
       double var19 = method34926(var6, var0.method20172(), var18, var4, var5);
@@ -101,8 +101,8 @@ public class Class9271 {
          new TranslationTextComponent(
             "commands.spreadplayers.success." + (!var5 ? "entities" : "teams"),
             var18.length,
-            var1.field37220,
-            var1.field37221,
+            var1.x,
+            var1.y,
             String.format(Locale.ROOT, "%.2f", var19)
          ),
          true
@@ -198,9 +198,9 @@ public class Class9271 {
 
       if (var21 >= 10000) {
          if (!var15) {
-            throw field42645.create(var14.length, var0.field37220, var0.field37221, String.format(Locale.ROOT, "%.2f", var19));
+            throw field42645.create(var14.length, var0.x, var0.y, String.format(Locale.ROOT, "%.2f", var19));
          } else {
-            throw field42644.create(var14.length, var0.field37220, var0.field37221, String.format(Locale.ROOT, "%.2f", var19));
+            throw field42644.create(var14.length, var0.x, var0.y, String.format(Locale.ROOT, "%.2f", var19));
          }
       }
    }

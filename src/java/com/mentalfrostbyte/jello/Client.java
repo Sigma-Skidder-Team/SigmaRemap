@@ -354,7 +354,6 @@ public class Client {
                 GLFW.glfwSetWindowTitle(mc.mainWindow.getHandle(), "Jello for Sigma 5.0");
             }
         } else {
-            ClassicDecryption.init();
             getInstance().getGuiManager().method33452();
             GLFW.glfwSetWindowTitle(mc.mainWindow.getHandle(), "Classic Sigma 5.0");
         }

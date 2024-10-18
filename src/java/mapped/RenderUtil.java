@@ -1299,21 +1299,27 @@ public class RenderUtil {
       return new java.awt.Color(var5.get(0) * 2, var5.get(1) * 2, var5.get(2) * 2, 1);
    }
 
-   public static double[] method11482(double var0, double var2, double var4) {
-      FloatBuffer var8 = BufferUtils.createFloatBuffer(3);
-      IntBuffer var9 = BufferUtils.createIntBuffer(16);
-      FloatBuffer var10 = BufferUtils.createFloatBuffer(16);
-      FloatBuffer var11 = BufferUtils.createFloatBuffer(16);
-      GL11.glGetFloatv(2982, var10);
-      GL11.glGetFloatv(2983, var11);
-      GL11.glGetIntegerv(2978, var9);
-      boolean var12 = MultiUtilities.method17737((float)var0, (float)var2, (float)var4, var10, var11, var9, var8);
-      return !var12
-         ? null
-         : new double[]{
-            (double)(var8.get(0) / GuiManager.portalScaleFactor),
-            (double)(((float) mc.framebuffer.framebufferHeight - var8.get(1)) / GuiManager.portalScaleFactor),
-            (double)var8.get(2)
-         };
+   public static double[] worldToScreen(double x, double y, double z) {
+      FloatBuffer screenCoords = BufferUtils.createFloatBuffer(3);
+      IntBuffer viewport = BufferUtils.createIntBuffer(16);
+      FloatBuffer modelViewMatrix = BufferUtils.createFloatBuffer(16);
+      FloatBuffer projectionMatrix = BufferUtils.createFloatBuffer(16);
+
+      // Get the current OpenGL matrices and viewport
+      GL11.glGetFloatv(GL11.GL_MODELVIEW_MATRIX, modelViewMatrix);
+      GL11.glGetFloatv(GL11.GL_PROJECTION_MATRIX, projectionMatrix);
+      GL11.glGetIntegerv(GL11.GL_VIEWPORT, viewport);
+
+      // Project the world coordinates to screen coordinates
+      boolean isSuccessful = MultiUtilities.projectToScreen((float) x, (float) y, (float) z, modelViewMatrix, projectionMatrix, viewport, screenCoords);
+
+      // Return the screen coordinates if successful, otherwise return null
+      return !isSuccessful
+              ? null
+              : new double[] {
+              (double) (screenCoords.get(0) / GuiManager.portalScaleFactor),
+              (double) (((float) mc.framebuffer.framebufferHeight - screenCoords.get(1)) / GuiManager.portalScaleFactor),
+              (double) screenCoords.get(2)
+      };
    }
 }
