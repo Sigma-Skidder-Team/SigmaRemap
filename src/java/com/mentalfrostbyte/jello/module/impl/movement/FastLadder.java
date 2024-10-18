@@ -15,16 +15,16 @@ public class FastLadder extends Module {
     }
 
     @EventTarget
-    private void method16217(EventMove var1) {
+    private void EventMove(EventMove event) {
         if (this.isEnabled() && mc.player.isOnLadder()) {
-            boolean var4 = /*JelloPortal.getCurrentVersionApplied() >= ViaVerList._1_9.getVersionNumber() ||*/ mc.getCurrentServerData() == null;
-            if (!mc.player.collidedHorizontally && (!mc.player.isJumping || !var4)) {
+            boolean ViaVer = /*JelloPortal.getCurrentVersionApplied() >= ViaVerList._1_9.getVersionNumber() ||*/ mc.getCurrentServerData() == null;
+            if (!mc.player.collidedHorizontally && (!mc.player.isJumping || !ViaVer)) {
                 if (this.getStringSettingValueByName("Down mode").equals("OnSneak") && mc.gameSettings.keyBindSneak.isKeyDown()
                         || this.getStringSettingValueByName("Down mode").equals("Always")) {
-                    var1.setY(-this.getNumberValueBySettingName("Motion"));
+                    event.setY(-this.getNumberValueBySettingName("Motion"));
                 }
             } else {
-                var1.setY(this.getNumberValueBySettingName("Motion"));
+                event.setY(this.getNumberValueBySettingName("Motion"));
             }
         }
     }
