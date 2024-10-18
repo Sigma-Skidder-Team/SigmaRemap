@@ -17,7 +17,6 @@ import java.util.Iterator;
 import java.util.List;
 
 public class NotificationManager {
-    private static String[] field39917;
     public Minecraft field39918 = Minecraft.getInstance();
     private List<Notification> field39919 = new ArrayList<Notification>();
     private int field39920 = 20;

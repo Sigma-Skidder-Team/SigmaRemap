@@ -42,7 +42,7 @@ public class ResourcesDecrypter {
     public static Texture particlePNG = loadTexture("com/mentalfrostbyte/gui/resources/music/particle.png");
     public static Texture repeatPNG = loadTexture("com/mentalfrostbyte/gui/resources/music/repeat.png");
     public static Texture playIconPNG = loadTexture("com/mentalfrostbyte/gui/resources/notifications/play-icon.png");
-    public static Texture infoIconPNG = loadTexture("com/mentalfrostbyte/gui/resources/notifications/play-icon.png");
+    public static Texture infoIconPNG = loadTexture("com/mentalfrostbyte/gui/resources/notifications/info-icon.png");
     public static Texture shoutIconPNG = loadTexture("com/mentalfrostbyte/gui/resources/notifications/shout-icon.png");
     public static Texture alertIconPNG = loadTexture("com/mentalfrostbyte/gui/resources/notifications/alert-icon.png");
     public static Texture directionIconPNG = loadTexture("com/mentalfrostbyte/gui/resources/notifications/direction-icon.png");
