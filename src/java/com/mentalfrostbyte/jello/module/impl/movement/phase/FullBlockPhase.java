@@ -15,18 +15,18 @@ public class FullBlockPhase extends Module {
     }
 
     @EventTarget
-    private void method16491(EventUpdate var1) {
+    private void EventUpdate(EventUpdate event) {
         if (this.isEnabled() && MultiUtilities.method17761()) {
-            var1.method13908(true);
+            event.method13908(true);
         }
     }
 
     @EventTarget
-    private void method16492(EventMove var1) {
+    private void EventMove(EventMove event) {
         if (this.isEnabled()) {
             if (!MultiUtilities.method17761()) {
                 if (mc.player.collidedHorizontally) {
-                    MovementUtils.setSpeed(var1, 0.0);
+                    MovementUtils.setSpeed(event, 0.0);
                     MovementUtils.method37095(1.1920931E-8);
                 }
             } else {
@@ -36,9 +36,9 @@ public class FullBlockPhase extends Module {
     }
 
     @EventTarget
-    private void method16493(EventPushBlock var1) {
+    private void EventPushBlock(EventPushBlock event) {
         if (this.isEnabled()) {
-            var1.setCancelled(true);
+            event.setCancelled(true);
         }
     }
 }
