@@ -55,7 +55,7 @@ public class KillAuraAttackLambda implements Runnable {
 
       EntityRayTraceResult rayTraceResult;
       if (!this.killauraModule.getStringSettingValueByName("Attack Mode").equals("Pre")) {
-         rayTraceResult = MultiUtilities.method17712(
+         rayTraceResult = MultiUtilities.rayTraceFromPlayer(
                  KillAura.getRotations(this.killauraModule).yaw, KillAura.getRotations(this.killauraModule).pitch, range, (double) this.field1477
          );
       } else {
@@ -63,7 +63,7 @@ public class KillAuraAttackLambda implements Runnable {
                  KillAura.mc.player.getMotion().x * KillAura.mc.player.getMotion().x
                          + KillAura.mc.player.getMotion().z * KillAura.mc.player.getMotion().z
          );
-         rayTraceResult = MultiUtilities.method17712(KillAura.getRotations2(this.killauraModule).yaw, KillAura.getRotations2(this.killauraModule).pitch, range, (double) this.field1477 + motionSpeed);
+         rayTraceResult = MultiUtilities.rayTraceFromPlayer(KillAura.getRotations2(this.killauraModule).yaw, KillAura.getRotations2(this.killauraModule).pitch, range, (double) this.field1477 + motionSpeed);
       }
 
       // Handle autoblocking mode

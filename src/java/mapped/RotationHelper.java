@@ -94,7 +94,7 @@ public class RotationHelper {
    }
 
    public static float[] method34141(LivingEntity var0, double var1, double var3, double var5, float var7) {
-      Entity var10 = MultiUtilities.method17711(field42013, field42014, var7, 0.0);
+      Entity var10 = MultiUtilities.getEntityFromRayTrace(field42013, field42014, var7, 0.0);
       if (var10 == null) {
          if (field42015 <= new Date().getTime() - 500L) {
             double var11 = Math.sin((double)(System.currentTimeMillis() - 500L) / 521.0) * 0.2;

@@ -272,57 +272,63 @@ public class MultiUtilities {
       return (float)(var0 >> 24 & 0xFF) / 255.0F;
    }
 
-   public static Entity method17711(float var0, float var1, float var2, double var3) {
-      EntityRayTraceResult var7 = method17712(var0, var1, var2, var3);
-      return var7 == null ? null : var7.getEntity();
+   public static Entity getEntityFromRayTrace(float yaw, float pitch, float reachDistanceModifier, double boundingBoxExpansion) {
+      EntityRayTraceResult rayTraceResult = rayTraceFromPlayer(yaw, pitch, reachDistanceModifier, boundingBoxExpansion);
+      return rayTraceResult == null ? null : rayTraceResult.getEntity();
    }
 
-   public static EntityRayTraceResult method17712(float var0, float var1, float var2, double var3) {
-      Vector3d var7 = new Vector3d(
-         mc.player.getPosX(), mc.player.getPosY() + (double) mc.player.getEyeHeight(), mc.player.getPosZ()
+   public static EntityRayTraceResult rayTraceFromPlayer(float yaw, float pitch, float reachDistanceModifier, double boundingBoxExpansion) {
+      Vector3d playerEyesPos = new Vector3d(
+              mc.player.getPosX(), mc.player.getPosY() + (double) mc.player.getEyeHeight(), mc.player.getPosZ()
       );
-      Entity var8 = mc.getRenderViewEntity();
-      if (var8 != null && mc.world != null) {
-         double var9 = (double) mc.playerController.getBlockReachDistance();
-         if (var2 != 0.0F) {
-            var9 = (double)var2;
+      Entity renderViewEntity = mc.getRenderViewEntity();
+
+      if (renderViewEntity != null && mc.world != null) {
+         double reachDistance = (double) mc.playerController.getBlockReachDistance();
+         if (reachDistanceModifier != 0.0F) {
+            reachDistance = (double) reachDistanceModifier;
          }
 
-         Vector3d var11 = method17721(var1, var0);
-         Vector3d var12 = var7.add(var11.x * var9, var11.y * var9, var11.z * var9);
-          AxisAlignedBB var14 = var8.getBoundingBox().expand(var11.scale(var9)).grow(1.0, 1.0, 1.0);
-         return method17713(
-            mc.world, var8, var7, var12, var14, var0x -> var0x instanceof LivingEntity || var0x instanceof Class907, (double)(var2 * var2), var3
+         Vector3d lookVector = getLookVector(pitch, yaw);
+         Vector3d rayEndPos = playerEyesPos.add(lookVector.x * reachDistance, lookVector.y * reachDistance, lookVector.z * reachDistance);
+         AxisAlignedBB searchBox = renderViewEntity.getBoundingBox().expand(lookVector.scale(reachDistance)).grow(1.0, 1.0, 1.0);
+
+         return traceEntityRay(
+                 mc.world, renderViewEntity, playerEyesPos, rayEndPos, searchBox,
+                 entity -> entity instanceof LivingEntity || entity instanceof Class907,
+                 (double) (reachDistanceModifier * reachDistanceModifier), boundingBoxExpansion
          );
       } else {
          return null;
       }
    }
 
-   public static EntityRayTraceResult method17713(
-           World var0, Entity var1, Vector3d var2, Vector3d var3, AxisAlignedBB var4, Predicate<Entity> var5, double var6, double var8
+   public static EntityRayTraceResult traceEntityRay(
+           World world, Entity sourceEntity, Vector3d startPos, Vector3d endPos, AxisAlignedBB searchBox,
+           Predicate<Entity> entityFilter, double maxDistance, double boundingBoxExpansion
    ) {
-      double var12 = var6;
-      Entity var14 = null;
+      double closestDistance = maxDistance;
+      Entity closestEntity = null;
 
-      for (Entity var16 : var0.getEntitiesInAABBexcluding(var1, var4, var5)) {
-         AxisAlignedBB var17 = var16.getBoundingBox().grow(var8);
-         Optional<Vector3d> var18 = var17.rayTrace(var2, var3);
-         if (!var18.isPresent()) {
-            if (method17715(var1.getPositionVec(), var17)) {
-               var14 = var16;
+      for (Entity entity : world.getEntitiesInAABBexcluding(sourceEntity, searchBox, entityFilter)) {
+         AxisAlignedBB expandedBox = entity.getBoundingBox().grow(boundingBoxExpansion);
+         Optional<Vector3d> hitResult = expandedBox.rayTrace(startPos, endPos);
+
+         if (!hitResult.isPresent()) {
+            if (method17715(sourceEntity.getPositionVec(), expandedBox)) {
+               closestEntity = entity;
                break;
             }
          } else {
-            double var19 = var2.squareDistanceTo(var18.get());
-            if (var19 < var12) {
-               var14 = var16;
-               var12 = var19;
+            double distanceToHit = startPos.squareDistanceTo(hitResult.get());
+            if (distanceToHit < closestDistance) {
+               closestEntity = entity;
+               closestDistance = distanceToHit;
             }
          }
       }
 
-      return var14 != null ? new EntityRayTraceResult(var14) : null;
+      return closestEntity != null ? new EntityRayTraceResult(closestEntity) : null;
    }
 
    public static boolean rayTraceEntity(PlayerEntity player, Entity entity) {
@@ -361,7 +367,7 @@ public class MultiUtilities {
       Vector3d var12 = new Vector3d(
          mc.player.getPosX(), mc.player.getPosY() + (double) mc.player.getEyeHeight(), mc.player.getPosZ()
       );
-      Vector3d var13 = method17721(var2, var1);
+      Vector3d var13 = getLookVector(var2, var1);
       Vector3d var14 = var12.add(var13.x * var8, var13.y * var8, var13.z * var8);
 
       for (Entity var16 : mc.world
@@ -401,7 +407,7 @@ public class MultiUtilities {
       return mc.getIntegratedServer() == null && mc.getCurrentServerData() != null && mc.getCurrentServerData().serverIP.toLowerCase().contains("cubecraft.net");
    }
 
-   public static Vector3d method17721(float var0, float var1) {
+   public static Vector3d getLookVector(float var0, float var1) {
       float var4 = var0 * (float) (Math.PI / 180.0);
       float var5 = -var1 * (float) (Math.PI / 180.0);
       float var6 = MathHelper.cos(var5);

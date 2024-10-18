@@ -650,7 +650,7 @@ public class KillAura extends Module {
                     this.rotations.yaw += var31;
                     this.field23958 = var31;
                 } else if (Math.abs(var5) > 10.0F) {
-                    Entity var27 = MultiUtilities.method17711(
+                    Entity var27 = MultiUtilities.getEntityFromRayTrace(
                             this.rotations.pitch, this.rotations.yaw, this.getNumberValueBySettingName("Range"), this.getNumberValueBySettingName("Hit box expand")
                     );
                     double var11 = var27 == null ? 13.4 : 1.4;
@@ -678,7 +678,7 @@ public class KillAura extends Module {
                     this.rotations.pitch = (float) ((double) this.rotations.pitch + (double) var6 * 0.81 + this.method16832(-2.0, 2.0));
                 }
 
-                Entity var28 = MultiUtilities.method17711(
+                Entity var28 = MultiUtilities.getEntityFromRayTrace(
                         this.rotations2.pitch, this.rotations2.yaw, this.getNumberValueBySettingName("Range"), this.getNumberValueBySettingName("Hit box expand")
                 );
                 if (var28 != null && (double) this.field23947 > this.method16832(2.0, 5.0)) {

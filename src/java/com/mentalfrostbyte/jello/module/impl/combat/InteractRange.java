@@ -21,7 +21,7 @@ public class InteractRange extends Module {
     @EventTarget
     private void method16684(ClickEvent var1) {
         if (this.isEnabled()) {
-            Entity var4 = MultiUtilities.method17711(mc.player.rotationYaw, mc.player.rotationPitch, this.getNumberValueBySettingName("Range"), 0.0);
+            Entity var4 = MultiUtilities.getEntityFromRayTrace(mc.player.rotationYaw, mc.player.rotationPitch, this.getNumberValueBySettingName("Range"), 0.0);
             BlockRayTraceResult var5 = BlockUtil.rayTrace(mc.player.rotationYaw, mc.player.rotationPitch, this.getNumberValueBySettingName("Range"));
             if (var4 != null && mc.objectMouseOver.getType() == RayTraceResult.Type.MISS) {
                 mc.objectMouseOver = new EntityRayTraceResult(var4);
