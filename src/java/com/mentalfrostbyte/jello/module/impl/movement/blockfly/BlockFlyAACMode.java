@@ -138,10 +138,10 @@ public class BlockFlyAACMode extends Module {
     }
 
     @EventTarget
-    private void method16206(Class4423 var1) {
+    private void method16206(EventFOV var1) {
         if (this.isEnabled() && mc.world != null && mc.player != null) {
             if (this.getBooleanValueFromSettingName("Haphe (AACAP)") && MovementUtils.isMoving() && !mc.player.isSprinting()) {
-                var1.field21557 *= 1.14F;
+                var1.fovModifier *= 1.14F;
             }
         }
     }

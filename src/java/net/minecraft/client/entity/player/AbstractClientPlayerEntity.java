@@ -2,7 +2,7 @@ package net.minecraft.client.entity.player;
 
 import com.google.common.hash.Hashing;
 import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.event.impl.Class4423;
+import com.mentalfrostbyte.jello.event.impl.EventFOV;
 import com.mojang.authlib.GameProfile;
 import mapped.*;
 import net.minecraft.client.Minecraft;
@@ -138,7 +138,7 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
       return var3 != null ? var3.method19972() : DefaultPlayerSkin.getSkinType(this.getUniqueID());
    }
 
-   public float getFOVModifier() {
+   public float getFovModifier() {
       float f = 1.0F;
 
       if (this.abilities.isFlying) {
@@ -163,9 +163,9 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
       }
 
       float fov = Reflector.ForgeHooksClient_getOffsetFOV.exists() ? Reflector.callFloat(Reflector.ForgeHooksClient_getOffsetFOV, this, f) : f;
-      Class4423 eventSomething = new Class4423(fov);
+      EventFOV eventSomething = new EventFOV(fov);
       Client.getInstance().getEventManager().call(eventSomething);
-      return eventSomething.field21557;
+      return eventSomething.fovModifier;
    }
 
    public String method5379() {

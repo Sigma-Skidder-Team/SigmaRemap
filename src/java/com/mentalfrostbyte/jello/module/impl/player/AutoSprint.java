@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module.impl.player;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4423;
+import com.mentalfrostbyte.jello.event.impl.EventFOV;
 import com.mentalfrostbyte.jello.event.impl.EventRayTraceResult;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
@@ -37,7 +37,7 @@ public class AutoSprint extends Module {
     }
 
     @EventTarget
-    public void sigma(Class4423 event) {
+    public void sigma(EventFOV event) {
         if (this.isEnabled()
                 && !(mc.player.moveForward <= 0.0F)
                 && (!mc.player.isHandActive() || mc.player.getActiveItemStack().getItem() != Items.BOW)
@@ -47,7 +47,7 @@ public class AutoSprint extends Module {
                     (getAttribute.getBaseValue() + 0.03F + (double) (0.015F * (float) MovementUtils.method37078())) / (double) mc.player.abilities.getWalkSpeed() + 1.0
             )
                     / 2.0F;
-            event.field21557 = BlockFly;
+            event.fovModifier = BlockFly;
         }
     }
 
