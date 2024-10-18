@@ -19,19 +19,19 @@ public class FastEat extends Module {
    }
 
    @EventTarget
-   public void method16976(TickEvent var1) {
+   public void TickEvent(TickEvent event) {
       if (this.isEnabled() && mc.player != null) {
          if (mc.player.isHandActive()) {
-            ItemStack var4 = mc.player.getActiveItemStack();
-            if (var4 != null
-               && (var4.getUseAction() == UseAction.field13708 || var4.getUseAction() == UseAction.field13707)
+            ItemStack itemStack= mc.player.getActiveItemStack();
+            if (itemStack != null
+               && (itemStack.getUseAction() == UseAction.field13708 || itemStack.getUseAction() == UseAction.field13707)
                && (float) mc.player.getItemInUseCount() < this.getNumberValueBySettingName("Speed") * 32.0F) {
-               String var5 = this.getStringSettingValueByName("Mode");
-               switch (var5) {
+               String mode = this.getStringSettingValueByName("Mode");
+               switch (mode) {
                   case "Basic":
-                     int var7 = mc.player.getItemInUseCount() + 2;
+                     int x = mc.player.getItemInUseCount() + 2;
 
-                     for (int var8 = 0; var8 < var7; var8++) {
+                     for (int i = 0; i < x; i++) {
                         mc.getConnection().sendPacket(new CPlayerPacket(mc.player.onGround));
                         mc.player.stopActiveHand();
                      }
