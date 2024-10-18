@@ -12,7 +12,7 @@ import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 
 public class NoSlow extends Module {
-    private boolean field23540;
+    private boolean isBlocking;
 
     public NoSlow() {
         super(ModuleCategory.MOVEMENT, "NoSlow", "Stops slowdown when using an item");
@@ -20,35 +20,45 @@ public class NoSlow extends Module {
     }
 
     @EventTarget
-    private void method16233(EventSlowDown var1) {
+    private void onSlowDown(EventSlowDown event) {
         if (this.isEnabled()) {
-            var1.setCancelled(true);
+            event.setCancelled(true);
         }
     }
 
     @EventTarget
-    private void method16234(EventUpdate var1) {
-        if (this.isEnabled()) {
-            boolean auraEnabled = Client.getInstance().getModuleManager().getModuleByClass(KillAura.class).isEnabled2();
-            boolean var5 = mc.player.getHeldItemMainhand() != null && mc.player.getHeldItemMainhand().getItem() instanceof SwordItem;
-            if (!var1.isPre()) {
-                if (var5 && mc.gameSettings.keyBindUseItem.isKeyDown() && !this.field23540 && !auraEnabled && this.getStringSettingValueByName("Mode").equals("NCP")) {
-                    MultiUtilities.block();
-                    this.field23540 = true;
-                } else if (!var5 && this.field23540) {
-                    this.field23540 = false;
-                }
-            } else if (!this.getStringSettingValueByName("Mode").equals("NCP")) {
-                if (this.field23540 && !mc.gameSettings.keyBindUseItem.isKeyDown()) {
-                    this.field23540 = false;
-                }
-            } else if (this.field23540 && mc.gameSettings.keyBindUseItem.isKeyDown() && !auraEnabled) {
-                if (var5) {
-                    MultiUtilities.unblock();
-                }
+    private void onUpdate(EventUpdate event) {
+        if (!this.isEnabled()) return;
 
-                this.field23540 = false;
+        boolean auraEnabled = Client.getInstance().getModuleManager().getModuleByClass(KillAura.class).isEnabled2();
+        boolean isSwordEquipped = mc.player.getHeldItemMainhand() != null && mc.player.getHeldItemMainhand().getItem() instanceof SwordItem;
+
+        if (!event.isPre()) {
+            if (isSwordEquipped && mc.gameSettings.keyBindUseItem.isKeyDown() && !isBlocking && !auraEnabled && isModeNCP()) {
+                MultiUtilities.block();
+                isBlocking = true;
+            } else if (!isSwordEquipped && isBlocking) {
+                isBlocking = false;
             }
+        } else {
+            handlePreEvent(isSwordEquipped, auraEnabled);
+        }
+    }
+
+    private boolean isModeNCP() {
+        return this.getStringSettingValueByName("Mode").equals("NCP");
+    }
+
+    private void handlePreEvent(boolean isSwordEquipped, boolean auraEnabled) {
+        if (!isModeNCP()) {
+            if (isBlocking && !mc.gameSettings.keyBindUseItem.isKeyDown()) {
+                isBlocking = false;
+            }
+        } else if (isBlocking && mc.gameSettings.keyBindUseItem.isKeyDown() && !auraEnabled) {
+            if (isSwordEquipped) {
+                MultiUtilities.unblock();
+            }
+            isBlocking = false;
         }
     }
 }
