@@ -6,14 +6,13 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 
 public class AutoRespawn extends Module {
-    public int field23812 = 30;
 
     public AutoRespawn() {
         super(ModuleCategory.PLAYER, "AutoRespawn", "Respawns for you");
     }
 
-    @EventTarget
-    public void method16635(TickEvent var1) {
+    @EventTarget 
+    public void TickEvent(TickEvent event) {
         if (this.isEnabled()) {
             if (!mc.player.isAlive()) {
                 mc.player.respawnPlayer();
