@@ -12,10 +12,10 @@ import net.minecraft.util.Hand;
 import java.util.Random;
 
 public class Derp extends Module {
-    private Random field23434 = new Random();
-    private boolean field23435;
-    private int field23436;
-    private int field23437;
+    private Random random = new Random();
+    private boolean releaseShift;
+    private int hitCounter;
+    private int spinCounter;
 
     public Derp() {
         super(ModuleCategory.PLAYER, "Derp", "Spazzes around");
@@ -25,44 +25,44 @@ public class Derp extends Module {
     }
 
     @EventTarget
-    public void method16065(EventUpdate var1) {
-        if (this.isEnabled() && var1.isPre()) {
+    public void onUpdate(EventUpdate event) { // meh
+        if (this.isEnabled() && event.isPre()) {
             if (this.getBooleanValueFromSettingName("Sneak")) {
-                if (this.field23435) {
+                if (this.releaseShift) {
                     mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, CEntityActionPacket.Action.RELEASE_SHIFT_KEY));
                 } else {
                     mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, CEntityActionPacket.Action.PRESS_SHIFT_KEY));
                 }
             }
 
-            this.field23435 = !this.field23435;
-            this.field23436++;
-            if (this.getBooleanValueFromSettingName("Hit") && this.field23436 > this.field23434.nextInt(5) + 3) {
-                this.field23436 = 0;
-                Hand var4 = Hand.values()[this.field23434.nextInt(1)];
-                mc.player.swingArm(var4);
+            this.releaseShift = !this.releaseShift;
+            this.hitCounter++;
+            if (this.getBooleanValueFromSettingName("Hit") && this.hitCounter > this.random.nextInt(5) + 3) {
+                this.hitCounter = 0;
+                Hand hand = Hand.values()[this.random.nextInt(1)];
+                mc.player.swingArm(hand);
             }
 
-            String var6 = this.getStringSettingValueByName("Rotation Mode");
-            switch (var6) {
+            String rotationMode = this.getStringSettingValueByName("Rotation Mode");
+            switch (rotationMode) {
                 case "Random":
-                    var1.setYaw(this.field23434.nextFloat() * 360.0F);
-                    var1.setPitch(this.field23434.nextFloat() * 180.0F - 90.0F);
+                    event.setYaw(this.random.nextFloat() * 360.0F);
+                    event.setPitch(this.random.nextFloat() * 180.0F - 90.0F);
                     break;
                 case "Spin":
-                    this.field23437 += 20;
+                    this.spinCounter += 20;
 
-                    while (this.field23437 > 360) {
-                        this.field23437 -= 360;
+                    while (this.spinCounter > 360) {
+                        this.spinCounter -= 360;
                     }
 
-                    var1.setYaw((float) this.field23437 + this.field23434.nextFloat());
+                    event.setYaw((float) this.spinCounter + this.random.nextFloat());
             }
         }
     }
 
     @Override
     public void onEnable() {
-        this.field23437 = (int) mc.player.rotationYaw;
+        this.spinCounter = (int) mc.player.rotationYaw;
     }
 }
