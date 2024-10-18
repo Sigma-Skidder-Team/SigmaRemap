@@ -11,7 +11,7 @@ public class FastBreak extends Module {
     }
 
     @EventTarget
-    private void method16107(TickEvent var1) {
+    private void TickEvent(TickEvent event) {
         if (this.isEnabled()) {
             if (mc.playerController.field31362 > 0.7F) {
                 mc.playerController.field31362 = 1.0F;
