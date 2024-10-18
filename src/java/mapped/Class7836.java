@@ -42,7 +42,7 @@ public class Class7836<T> implements Class7833<T> {
 
    @Override
    public int method26245() {
-      return PacketBuffer.method35695(0);
+      return PacketBuffer.getVarIntSize(0);
    }
 
    @Override

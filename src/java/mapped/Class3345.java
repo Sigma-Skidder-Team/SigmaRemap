@@ -26,7 +26,7 @@ public class Class3345 extends Class3343 {
          SkullTileEntity var9 = (SkullTileEntity)var8;
          GameProfile var10 = null;
          if (var5.method32141()) {
-            CompoundNBT var11 = var5.method32142();
+            CompoundNBT var11 = var5.getTag();
             if (!var11.contains("SkullOwner", 10)) {
                if (var11.contains("SkullOwner", 8) && !StringUtils.isBlank(var11.getString("SkullOwner"))) {
                   var10 = new GameProfile((UUID)null, var11.getString("SkullOwner"));

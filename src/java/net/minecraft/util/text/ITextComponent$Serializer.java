@@ -230,7 +230,7 @@ public class ITextComponent$Serializer implements JsonDeserializer<IFormattableT
    }
 
    @Nullable
-   public static IFormattableTextComponent func_240643_a_(String p_240643_0_) {
+   public static IFormattableTextComponent getComponentFromJson(String p_240643_0_) {
       return JSONUtils.<IFormattableTextComponent>method32793(GSON, p_240643_0_, IFormattableTextComponent.class, false);
    }
 

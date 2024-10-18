@@ -30,6 +30,6 @@ public class Class3588 implements Comparator<Item> {
 
       return var6 != var7
          ? this.field19533.field6845 * Integer.compare(var6, var7)
-         : this.field19533.field6845 * Integer.compare(Item.method11701(var1), Item.method11701(var2));
+         : this.field19533.field6845 * Integer.compare(Item.getIdFromItem(var1), Item.getIdFromItem(var2));
    }
 }

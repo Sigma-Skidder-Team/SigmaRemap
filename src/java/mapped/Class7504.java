@@ -16,7 +16,7 @@ public class Class7504 implements Class7502 {
    }
 
    private static List<String> method24463(ItemStack var0) {
-      CompoundNBT var3 = var0.method32142();
+      CompoundNBT var3 = var0.getTag();
       return (List<String>)(var3 == null ? ImmutableList.of() : Class870.method2696(var3));
    }
 

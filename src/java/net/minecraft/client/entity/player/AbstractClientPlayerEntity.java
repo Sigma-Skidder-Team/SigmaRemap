@@ -80,7 +80,7 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
 
    public ResourceLocation method5371() {
       NetworkPlayerInfo var3 = this.method5369();
-      return var3 != null ? var3.method19973() : DefaultPlayerSkin.method22637(this.getUniqueID());
+      return var3 != null ? var3.method19973() : DefaultPlayerSkin.getDefaultSkin(this.getUniqueID());
    }
 
    @Nullable
@@ -119,7 +119,7 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
          var5 = new DownloadingTexture(
             (File)null,
             String.format("http://skins.minecraft.net/MinecraftSkins/%s.png", Class9001.method33255(var1)),
-            DefaultPlayerSkin.method22637(method2961(var1)),
+            DefaultPlayerSkin.getDefaultSkin(method2961(var1)),
             true,
             (Runnable)null
          );
@@ -135,7 +135,7 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
 
    public String method5377() {
       NetworkPlayerInfo var3 = this.method5369();
-      return var3 != null ? var3.method19972() : DefaultPlayerSkin.method22638(this.getUniqueID());
+      return var3 != null ? var3.method19972() : DefaultPlayerSkin.getSkinType(this.getUniqueID());
    }
 
    public float method5378() {

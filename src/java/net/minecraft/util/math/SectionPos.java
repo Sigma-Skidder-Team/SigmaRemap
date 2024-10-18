@@ -35,7 +35,7 @@ public class SectionPos extends Vector3i {
       );
    }
 
-   public static SectionPos method8393(long var0) {
+   public static SectionPos from(long var0) {
       return new SectionPos(method8407(var0), method8408(var0), method8409(var0));
    }
 

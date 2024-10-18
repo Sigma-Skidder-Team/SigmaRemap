@@ -2969,7 +2969,7 @@ public class Blocks {
    }
 
    public static void method30025() {
-      Block.field18610.forEach(AbstractBlock.AbstractBlockState::method23382);
+      Block.BLOCK_STATE_IDS.forEach(AbstractBlock.AbstractBlockState::method23382);
    }
 
    static {
@@ -2978,7 +2978,7 @@ public class Blocks {
 
          while (var8.hasNext()) {
             BlockState var9 = (BlockState)var8.next();
-            Block.field18610.add(var9);
+            Block.BLOCK_STATE_IDS.add(var9);
          }
 
          var7.method11999();

@@ -64,7 +64,7 @@ public final class Class1696 implements AutoCloseable {
       Class1692 var5 = this.method7295(var1);
 
       try (DataOutputStream var6 = var5.method7258(var1)) {
-         CompressedStreamTools.method31773(var2, var6);
+         CompressedStreamTools.write(var2, var6);
       }
    }
 

@@ -1462,7 +1462,7 @@ public abstract class Entity implements INameable, ICommandSource {
                String var13 = var1.getString("CustomName");
 
                try {
-                  this.method3379(ITextComponent$Serializer.func_240643_a_(var13));
+                  this.method3379(ITextComponent$Serializer.getComponentFromJson(var13));
                } catch (Exception var16) {
                   LOGGER.warn("Failed to parse entity custom name {}", var13, var16);
                }

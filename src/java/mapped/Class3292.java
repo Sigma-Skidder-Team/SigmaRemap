@@ -100,7 +100,7 @@ public class Class3292 extends Item {
 
    private BlockState method11839(BlockPos var1, World var2, ItemStack var3, BlockState var4) {
       BlockState var7 = var4;
-      CompoundNBT var8 = var3.method32142();
+      CompoundNBT var8 = var3.getTag();
       if (var8 != null) {
          CompoundNBT var9 = var8.getCompound("BlockStateTag");
          StateContainer var10 = var4.getBlock().getStateContainer();

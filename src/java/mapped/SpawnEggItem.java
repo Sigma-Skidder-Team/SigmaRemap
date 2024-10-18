@@ -55,7 +55,7 @@ public class SpawnEggItem extends Item {
             TileEntity var9 = var4.getTileEntity(var6);
             if (var9 instanceof Class960) {
                Class7574 var13 = ((Class960)var9).method3911();
-               EntityType var11 = this.method11855(var5.method32142());
+               EntityType var11 = this.method11855(var5.getTag());
                var13.method24790(var11);
                var9.markDirty();
                var4.notifyBlockUpdate(var6, var8, var8, 3);
@@ -71,7 +71,7 @@ public class SpawnEggItem extends Item {
             var12 = var6;
          }
 
-         EntityType var10 = this.method11855(var5.method32142());
+         EntityType var10 = this.method11855(var5.getTag());
          if (var10.method33200(
                (ServerWorld)var4, var5, var1.method18358(), var12, Class2202.field14403, true, !Objects.equals(var6, var12) && var7 == Direction.UP
             )
@@ -93,7 +93,7 @@ public class SpawnEggItem extends Item {
             BlockPos var9 = var8.getPos();
             if (var1.getBlockState(var9).getBlock() instanceof FlowingFluidBlock) {
                if (var1.method6785(var2, var9) && var2.method2936(var9, var8.getFace(), var6)) {
-                  EntityType var10 = this.method11855(var6.method32142());
+                  EntityType var10 = this.method11855(var6.getTag());
                   if (var10.method33200((ServerWorld)var1, var6, var2, var9, Class2202.field14403, false, false) != null) {
                      if (!var2.abilities.isCreativeMode) {
                         var6.shrink(1);
@@ -147,7 +147,7 @@ public class SpawnEggItem extends Item {
    }
 
    public Optional<MobEntity> method11856(PlayerEntity var1, MobEntity var2, EntityType<? extends MobEntity> var3, ServerWorld var4, Vector3d var5, ItemStack var6) {
-      if (this.method11851(var6.method32142(), var3)) {
+      if (this.method11851(var6.getTag(), var3)) {
          Object var9;
          if (!(var2 instanceof Class1045)) {
             var9 = (MobEntity)var3.create(var4);

@@ -186,7 +186,7 @@ public class Class9346 {
          }
 
          return ItemStack.areItemStacksEqual(var5, var2)
-            && (!var2.method32141() || var5.method32141() && Class8354.method29280(var2.method32142(), var5.method32142(), false));
+            && (!var2.method32141() || var5.method32141() && Class8354.method29280(var2.getTag(), var5.getTag(), false));
       }
    }
 

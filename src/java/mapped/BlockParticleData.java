@@ -23,7 +23,7 @@ public class BlockParticleData implements IParticleData {
 
    @Override
    public void write(PacketBuffer var1) {
-      var1.writeVarInt(Block.field18610.getId(this.field32012));
+      var1.writeVarInt(Block.BLOCK_STATE_IDS.getId(this.field32012));
    }
 
    @Override

@@ -113,7 +113,7 @@ public class Class9272 {
             if (var0.has("nbt")) {
                try {
                   CompoundNBT var5 = Class7671.method25188(JSONUtils.method32762(var0.get("nbt"), "nbt"));
-                  var4.method32148(var5);
+                  var4.setTag(var5);
                } catch (CommandSyntaxException var6) {
                   throw new JsonSyntaxException("Invalid nbt tag: " + var6.getMessage());
                }
@@ -185,7 +185,7 @@ public class Class9272 {
       JsonObject var3 = new JsonObject();
       var3.addProperty("item", Registry.ITEM.getKey(this.field42648.getItem()).toString());
       if (this.field42648.method32141()) {
-         var3.addProperty("nbt", this.field42648.method32142().toString());
+         var3.addProperty("nbt", this.field42648.getTag().toString());
       }
 
       return var3;

@@ -34,7 +34,7 @@ public class Class6726 extends Class6717 {
 
             if (var6 == null) {
                try {
-                  var6 = ITextComponent$Serializer.func_240643_a_(var5);
+                  var6 = ITextComponent$Serializer.getComponentFromJson(var5);
                } catch (JsonParseException var9) {
                }
             }

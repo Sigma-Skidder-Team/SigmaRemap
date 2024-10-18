@@ -236,7 +236,7 @@ public class Class950 extends TileEntity implements Class949, ITickableTileEntit
       this.field5344 = method3825(var2.getInt("Primary"));
       this.field5345 = method3825(var2.getInt("Secondary"));
       if (var2.contains("CustomName", 8)) {
-         this.field5346 = ITextComponent$Serializer.func_240643_a_(var2.getString("CustomName"));
+         this.field5346 = ITextComponent$Serializer.getComponentFromJson(var2.getString("CustomName"));
       }
 
       this.field5347 = Class7969.method27093(var2);

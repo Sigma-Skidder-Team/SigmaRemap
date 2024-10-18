@@ -109,7 +109,7 @@ public class ClientChunkProvider extends AbstractChunkProvider {
             boolean flag = false;
             if (chunk instanceof ChunkOF) {
                ChunkOF chunkof = (ChunkOF)chunk;
-               Object object = packetIn.method35738("ChunkDataOF");
+               Object object = packetIn.getCustomData("ChunkDataOF");
                if (object instanceof ChunkDataOF) {
                   ChunkDataOF chunkdataof = (ChunkDataOF)object;
                   chunkof.setChunkDataOF(chunkdataof);

@@ -168,7 +168,7 @@ public class Class8090 {
             String var8 = var6[var7];
             Item var9 = this.method27999(var8);
             if (var9 != null) {
-               int var10 = Item.method11701(var9);
+               int var10 = Item.getIdFromItem(var9);
                if (var10 >= 0) {
                   var5.add(new Integer(var10));
                } else {
@@ -522,7 +522,7 @@ public class Class8090 {
          return false;
       } else if (this.field34770 != 0) {
          if (this.field34770 == 4 && this.field34771 == null) {
-            this.field34771 = new int[]{Item.method11701(Items.field38120)};
+            this.field34771 = new int[]{Item.getIdFromItem(Items.field38120)};
          }
 
          if (this.field34770 == 1 || this.field34770 == 3 || this.field34770 == 4) {
@@ -554,7 +554,7 @@ public class Class8090 {
    private int[] method28015() {
       Item var3 = this.method27999(this.field34768);
       if (var3 != null) {
-         int var4 = Item.method11701(var3);
+         int var4 = Item.getIdFromItem(var3);
          return var4 >= 0 ? new int[]{var4} : null;
       } else {
          return null;
@@ -689,7 +689,7 @@ public class Class8090 {
 
    private String[] method28025() {
       if (this.field34770 == 1 && this.field34771.length == 1) {
-         Item var3 = Item.method11702(this.field34771[0]);
+         Item var3 = Item.getItemById(this.field34771[0]);
          boolean var4 = var3 == Items.field37971 || var3 == Items.field38115 || var3 == Items.field38118;
          if (var4 && this.field34776 != null && this.field34776.method36839() > 0) {
             Class7589 var12 = this.field34776.method36840(0);

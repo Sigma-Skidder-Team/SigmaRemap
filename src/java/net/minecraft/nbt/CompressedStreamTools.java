@@ -47,7 +47,7 @@ public class CompressedStreamTools {
 
    public static void writeCompressed(CompoundNBT var0, OutputStream var1) throws IOException {
       try (DataOutputStream var4 = new DataOutputStream(new BufferedOutputStream(new GZIPOutputStream(var1)))) {
-         method31773(var0, var4);
+         write(var0, var4);
       }
    }
 
@@ -56,7 +56,7 @@ public class CompressedStreamTools {
          FileOutputStream var4 = new FileOutputStream(var1);
          DataOutputStream var6 = new DataOutputStream(var4);
       ) {
-         method31773(var0, var6);
+         write(var0, var6);
       }
    }
 
@@ -90,7 +90,7 @@ public class CompressedStreamTools {
       }
    }
 
-   public static void method31773(CompoundNBT var0, DataOutput var1) throws IOException {
+   public static void write(CompoundNBT var0, DataOutput var1) throws IOException {
       writeTag(var0, var1);
    }
 

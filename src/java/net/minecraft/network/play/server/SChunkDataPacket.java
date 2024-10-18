@@ -80,9 +80,9 @@ public class SChunkDataPacket implements IPacket<IClientPlayNetHandler> {
       this.field24515 = var1.readInt();
       this.field24521 = var1.readBoolean();
       this.field24516 = var1.readVarInt();
-      this.field24517 = var1.method35721();
+      this.field24517 = var1.readCompoundTag();
       if (this.field24521) {
-         this.field24518 = var1.method35703(BiomeContainer.field9154);
+         this.field24518 = var1.readVarIntArray(BiomeContainer.field9154);
       }
 
       int var4 = var1.readVarInt();
@@ -95,7 +95,7 @@ public class SChunkDataPacket implements IPacket<IClientPlayNetHandler> {
          this.field24520 = Lists.newArrayList();
 
          for (int var6 = 0; var6 < var5; var6++) {
-            this.field24520.add(var1.method35721());
+            this.field24520.add(var1.readCompoundTag());
          }
       }
    }
@@ -106,9 +106,9 @@ public class SChunkDataPacket implements IPacket<IClientPlayNetHandler> {
       var1.writeInt(this.field24515);
       var1.writeBoolean(this.field24521);
       var1.writeVarInt(this.field24516);
-      var1.method35720(this.field24517);
+      var1.writeCompoundTag(this.field24517);
       if (this.field24518 != null) {
-         var1.method35701(this.field24518);
+         var1.writeVarIntArray(this.field24518);
       }
 
       var1.writeVarInt(this.field24519.length);
@@ -116,7 +116,7 @@ public class SChunkDataPacket implements IPacket<IClientPlayNetHandler> {
       var1.writeVarInt(this.field24520.size());
 
       for (CompoundNBT var5 : this.field24520) {
-         var1.method35720(var5);
+         var1.writeCompoundTag(var5);
       }
    }
 

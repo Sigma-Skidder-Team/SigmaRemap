@@ -26,13 +26,13 @@ public class Class176 implements Predicate<ItemStack> {
    }
 
    public boolean test(ItemStack var1) {
-      return var1.getItem() == this.field563 && Class8354.method29280(this.field564, var1.method32142(), true);
+      return var1.getItem() == this.field563 && Class8354.method29280(this.field564, var1.getTag(), true);
    }
 
    public ItemStack method503(int var1, boolean var2) throws CommandSyntaxException {
       ItemStack var5 = new ItemStack(this.field563, var1);
       if (this.field564 != null) {
-         var5.method32148(this.field564);
+         var5.setTag(this.field564);
       }
 
       if (var2 && var1 > var5.getMaxStackSize()) {

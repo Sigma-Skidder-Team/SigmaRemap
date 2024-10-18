@@ -323,7 +323,7 @@ public class Class9653 {
       return var0.getItem() == var1.getItem()
          && var0.method32117() == var1.method32117()
          && var0.getCount() <= var0.getMaxStackSize()
-         && Objects.equals(var0.method32142(), var1.method32142());
+         && Objects.equals(var0.getTag(), var1.getTag());
    }
 
    private static int method37665(Collection<ServerPlayerEntity> var0, List<ItemStack> var1, Class7946 var2) throws CommandSyntaxException {

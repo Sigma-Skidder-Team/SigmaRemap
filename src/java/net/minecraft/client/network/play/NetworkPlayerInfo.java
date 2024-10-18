@@ -62,12 +62,12 @@ public class NetworkPlayerInfo {
    }
 
    public String method19972() {
-      return this.field29008 != null ? this.field29008 : DefaultPlayerSkin.method22638(this.field29003.getId());
+      return this.field29008 != null ? this.field29008 : DefaultPlayerSkin.getSkinType(this.field29003.getId());
    }
 
    public ResourceLocation method19973() {
       this.method19977();
-      return (ResourceLocation)MoreObjects.firstNonNull(this.field29004.get(Type.SKIN), DefaultPlayerSkin.method22637(this.field29003.getId()));
+      return (ResourceLocation)MoreObjects.firstNonNull(this.field29004.get(Type.SKIN), DefaultPlayerSkin.getDefaultSkin(this.field29003.getId()));
    }
 
    @Nullable

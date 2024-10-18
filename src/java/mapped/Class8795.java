@@ -254,7 +254,7 @@ public class Class8795 {
             }
 
             for (long var8 : var6.field44281) {
-               BlockPos var10 = BlockPos.method8331(var8);
+               BlockPos var10 = BlockPos.fromLong(var8);
                if (this.mc.player.getPositionVec().method11343((double)var10.getX(), (double)var10.getY(), (double)var10.getZ()) < 9.0
                   && !Class9110.method33985(var10)
                   && !this.mc.world.getBlockState(var10).isAir()) {
@@ -356,7 +356,7 @@ public class Class8795 {
                GL11.glDisable(2929);
 
                for (Long var8 : this.field39613.get(0).field44283) {
-                  BlockPos var9 = BlockPos.method8331(var8);
+                  BlockPos var9 = BlockPos.fromLong(var8);
                   if (!this.mc.world.getBlockState(var9).isAir()) {
                      double var10 = (double)var9.getX() - this.mc.gameRenderer.getActiveRenderInfo().getPos().getX();
                      double var12 = (double)var9.getY() - this.mc.gameRenderer.getActiveRenderInfo().getPos().getY();
@@ -367,7 +367,7 @@ public class Class8795 {
                }
 
                for (Long var20 : this.field39613.get(0).field44284) {
-                  BlockPos var21 = BlockPos.method8331(var20);
+                  BlockPos var21 = BlockPos.fromLong(var20);
                   if (this.mc.world.getBlockState(var21).isAir()) {
                      double var22 = (double)var21.getX() - this.mc.gameRenderer.getActiveRenderInfo().getPos().getX();
                      double var23 = (double)var21.getY() - this.mc.gameRenderer.getActiveRenderInfo().getPos().getY();

@@ -46,7 +46,7 @@ public class HoverEvent$EntityHover {
    public static HoverEvent$EntityHover deserialize(ITextComponent component) {
       try {
          CompoundNBT itextcomponent = Class7671.method25188(component.getString());
-         IFormattableTextComponent entitytype = ITextComponent$Serializer.func_240643_a_(itextcomponent.getString("name"));
+         IFormattableTextComponent entitytype = ITextComponent$Serializer.getComponentFromJson(itextcomponent.getString("name"));
          EntityType uuid = Registry.ENTITY_TYPE.getOrDefault(new ResourceLocation(itextcomponent.getString("type")));
          UUID var6 = UUID.fromString(itextcomponent.getString("id"));
          return new HoverEvent$EntityHover(uuid, var6, entitytype);

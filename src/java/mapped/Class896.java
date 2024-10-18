@@ -154,7 +154,7 @@ public class Class896 extends Class890 implements Class889 {
          var5.method4101(new EffectInstance(var8));
       }
 
-      CompoundNBT var9 = var1.method32142();
+      CompoundNBT var9 = var1.getTag();
       if (var9 != null && var9.contains("CustomPotionColor", 99)) {
          var5.method4103(var9.getInt("CustomPotionColor"));
       }

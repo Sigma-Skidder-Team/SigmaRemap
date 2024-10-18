@@ -625,7 +625,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    public void processEditBook(CEditBookPacket var1) {
       ItemStack var4 = var1.getStack();
       if (var4.getItem() == Items.field38047) {
-         CompoundNBT var5 = var4.method32142();
+         CompoundNBT var5 = var4.getTag();
          if (Class3291.method11833(var5)) {
             ArrayList var6 = Lists.newArrayList();
             boolean var7 = var1.shouldUpdateAll();
@@ -662,9 +662,9 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       ItemStack var6 = this.player.inventory.getStackInSlot(var3);
       if (var6.getItem() == Items.field38047) {
          ItemStack var7 = new ItemStack(Items.field38048);
-         CompoundNBT var8 = var6.method32142();
+         CompoundNBT var8 = var6.getTag();
          if (var8 != null) {
-            var7.method32148(var8.method79());
+            var7.setTag(var8.method79());
          }
 
          var7.setTagInfo("author", StringNBT.valueOf(this.player.getName().getString()));

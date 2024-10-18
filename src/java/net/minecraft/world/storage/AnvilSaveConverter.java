@@ -120,7 +120,7 @@ public class AnvilSaveConverter {
                   Class7660.method25181(var0, var118, var21, var3);
 
                   try (DataOutputStream var22 = var12.method7258(var16)) {
-                     CompressedStreamTools.method31773(var19, var22);
+                     CompressedStreamTools.write(var19, var22);
                   }
                }
             }

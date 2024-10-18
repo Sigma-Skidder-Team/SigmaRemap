@@ -25,7 +25,7 @@ public class Class3258 extends Item {
    @Override
    public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = var2.getHeldItem(var3);
-      CompoundNBT var7 = var6.method32142();
+      CompoundNBT var7 = var6.getTag();
       if (!var2.abilities.isCreativeMode) {
          var2.setHeldItem(var3, ItemStack.EMPTY);
       }

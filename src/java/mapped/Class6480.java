@@ -7,11 +7,11 @@ public final class Class6480 implements Class6466<CompoundNBT> {
    private static String[] field28427;
 
    public void method19646(PacketBuffer var1, CompoundNBT var2) {
-      var1.method35720(var2);
+      var1.writeCompoundTag(var2);
    }
 
    public CompoundNBT method19645(PacketBuffer var1) {
-      return var1.method35721();
+      return var1.readCompoundTag();
    }
 
    public CompoundNBT method19644(CompoundNBT var1) {

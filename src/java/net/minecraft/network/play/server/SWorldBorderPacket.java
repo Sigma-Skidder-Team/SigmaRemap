@@ -46,7 +46,7 @@ public class SWorldBorderPacket implements IPacket<IClientPlayNetHandler> {
          case 2:
             this.field24310 = var1.readDouble();
             this.field24309 = var1.readDouble();
-            this.field24311 = var1.method35715();
+            this.field24311 = var1.readVarLong();
             break;
          case 3:
             this.field24307 = var1.readDouble();
@@ -63,7 +63,7 @@ public class SWorldBorderPacket implements IPacket<IClientPlayNetHandler> {
             this.field24308 = var1.readDouble();
             this.field24310 = var1.readDouble();
             this.field24309 = var1.readDouble();
-            this.field24311 = var1.method35715();
+            this.field24311 = var1.readVarLong();
             this.field24306 = var1.readVarInt();
             this.field24313 = var1.readVarInt();
             this.field24312 = var1.readVarInt();
@@ -80,7 +80,7 @@ public class SWorldBorderPacket implements IPacket<IClientPlayNetHandler> {
          case 2:
             var1.writeDouble(this.field24310);
             var1.writeDouble(this.field24309);
-            var1.method35719(this.field24311);
+            var1.writeVarLong(this.field24311);
             break;
          case 3:
             var1.writeDouble(this.field24307);
@@ -97,7 +97,7 @@ public class SWorldBorderPacket implements IPacket<IClientPlayNetHandler> {
             var1.writeDouble(this.field24308);
             var1.writeDouble(this.field24310);
             var1.writeDouble(this.field24309);
-            var1.method35719(this.field24311);
+            var1.writeVarLong(this.field24311);
             var1.writeVarInt(this.field24306);
             var1.writeVarInt(this.field24313);
             var1.writeVarInt(this.field24312);

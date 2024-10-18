@@ -47,7 +47,7 @@ public class Class5724 extends EntityRenderer<ItemEntity> {
    public void render(ItemEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       var4.push();
       ItemStack var9 = var1.method4124();
-      int var10 = !var9.isEmpty() ? Item.method11701(var9.getItem()) + var9.method32117() : 187;
+      int var10 = !var9.isEmpty() ? Item.getIdFromItem(var9.getItem()) + var9.method32117() : 187;
       this.field25130.setSeed((long)var10);
       IBakedModel var11 = this.field25129.method788(var9, var1.world, (LivingEntity)null);
       boolean var12 = var11.method22621();

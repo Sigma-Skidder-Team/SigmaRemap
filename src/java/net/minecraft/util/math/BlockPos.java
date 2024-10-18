@@ -78,7 +78,7 @@ public class BlockPos extends Vector3i {
       return (int)(var0 << 64 - field13039 - field13034 >> 64 - field13034);
    }
 
-   public static BlockPos method8331(long var0) {
+   public static BlockPos fromLong(long var0) {
       return new BlockPos(unpackX(var0), unpackY(var0), unpackZ(var0));
    }
 

@@ -363,7 +363,7 @@ public abstract class SectionLightStorage<M extends LightDataMap<M>> extends Cla
 
          while (var6.hasNext()) {
             long var4 = var6.nextLong();
-            this.field771.markLightChanged(this.field770, SectionPos.method8393(var4));
+            this.field771.markLightChanged(this.field770, SectionPos.from(var4));
          }
 
          this.field778.clear();

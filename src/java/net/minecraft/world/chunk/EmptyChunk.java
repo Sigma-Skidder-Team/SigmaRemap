@@ -26,7 +26,6 @@ import java.util.List;
 import java.util.function.Predicate;
 
 public class EmptyChunk extends Chunk {
-   private static String[] field9134;
    private static final Biome[] field9135 = Util.<Biome[]>make(
       new Biome[BiomeContainer.field9154], var0 -> Arrays.fill(var0, BiomeRegistry.PLAINS)
    );

@@ -62,7 +62,7 @@ public class Class828 extends Screen {
       this.field4578 = var1;
       this.field4579 = var2;
       this.field4596 = var3;
-      CompoundNBT var6 = var2.method32142();
+      CompoundNBT var6 = var2.getTag();
       if (var6 != null) {
          ListNBT var7 = var6.method131("pages", 8).method79();
 

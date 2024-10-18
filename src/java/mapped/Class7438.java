@@ -27,7 +27,7 @@ public class Class7438 implements IParticleData {
 
    @Override
    public String getParameters() {
-      return Registry.PARTICLE_TYPE.getKey(this.getType()) + " " + new Class176(this.field32009.getItem(), this.field32009.method32142()).method504();
+      return Registry.PARTICLE_TYPE.getKey(this.getType()) + " " + new Class176(this.field32009.getItem(), this.field32009.getTag()).method504();
    }
 
    @Override

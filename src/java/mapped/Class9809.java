@@ -127,7 +127,7 @@ public class Class9809 {
          } else {
             GameProfile var18 = null;
             if (var1.method32141()) {
-               CompoundNBT var16 = var1.method32142();
+               CompoundNBT var16 = var1.getTag();
                if (!var16.contains("SkullOwner", 10)) {
                   if (var16.contains("SkullOwner", 8) && !StringUtils.isBlank(var16.getString("SkullOwner"))) {
                      GameProfile var19 = new GameProfile((UUID)null, var16.getString("SkullOwner"));

@@ -11,7 +11,7 @@ public class Class8627 {
       boolean var3 = true;
 
       for (long var5 : var0.field44281) {
-         BlockPos var7 = BlockPos.method8331(var5);
+         BlockPos var7 = BlockPos.fromLong(var5);
          if (!field38807.world.getBlockState(var7).isAir()) {
             var3 = false;
             break;

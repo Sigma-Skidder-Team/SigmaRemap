@@ -90,7 +90,7 @@ public class Class3354 extends Class3241 {
    public BlockState getStateForPlacement(BlockItemUseContext var1) {
       World var4 = var1.getWorld();
       ItemStack var5 = var1.method18357();
-      CompoundNBT var6 = var5.method32142();
+      CompoundNBT var6 = var5.getTag();
       PlayerEntity var7 = var1.method18358();
       boolean var8 = false;
       if (!var4.isRemote && var7 != null && var6 != null && var7.canUseCommandBlock() && var6.contains("BlockEntityTag")) {

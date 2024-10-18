@@ -22,13 +22,13 @@ public class SCooldownPacket implements IPacket<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24722 = Item.method11702(var1.readVarInt());
+      this.field24722 = Item.getItemById(var1.readVarInt());
       this.field24723 = var1.readVarInt();
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.writeVarInt(Item.method11701(this.field24722));
+      var1.writeVarInt(Item.getIdFromItem(this.field24722));
       var1.writeVarInt(this.field24723);
    }
 

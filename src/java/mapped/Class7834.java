@@ -78,10 +78,10 @@ public class Class7834<T> implements Class7833<T> {
 
    @Override
    public int method26245() {
-      int var3 = PacketBuffer.method35695(this.method26247());
+      int var3 = PacketBuffer.getVarIntSize(this.method26247());
 
       for (int var4 = 0; var4 < this.method26247(); var4++) {
-         var3 += PacketBuffer.method35695(this.field33626.getId(this.field33627.getByValue(var4)));
+         var3 += PacketBuffer.getVarIntSize(this.field33626.getId(this.field33627.getByValue(var4)));
       }
 
       return var3;

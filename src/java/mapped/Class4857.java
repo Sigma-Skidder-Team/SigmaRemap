@@ -63,9 +63,9 @@ public class Class4857 extends Class4837 {
 
       if (!var5.isEmpty() && var5.method32141() && var4 >= 1 && Class3285.method11818(var5) < 2) {
          ItemStack var8 = new ItemStack(Items.field38048, var4);
-         CompoundNBT var9 = var5.method32142().method79();
+         CompoundNBT var9 = var5.getTag().method79();
          var9.putInt("generation", Class3285.method11818(var5) + 1);
-         var8.method32148(var9);
+         var8.setTag(var9);
          return var8;
       } else {
          return ItemStack.EMPTY;

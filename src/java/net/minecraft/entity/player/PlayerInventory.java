@@ -186,7 +186,7 @@ public class PlayerInventory implements IInventory, INameable {
       if (var7.isEmpty()) {
          var7 = new ItemStack(var5, 0);
          if (var2.method32141()) {
-            var7.method32148(var2.method32142().method79());
+            var7.setTag(var2.getTag().method79());
          }
 
          this.setInventorySlotContents(var1, var7);
@@ -283,7 +283,7 @@ public class PlayerInventory implements IInventory, INameable {
          } catch (Throwable var8) {
             CrashReport var6 = CrashReport.makeCrashReport(var8, "Adding item to inventory");
             CrashReportCategory var7 = var6.makeCategory("Item being added");
-            var7.addDetail("Item ID", Item.method11701(var2.getItem()));
+            var7.addDetail("Item ID", Item.getIdFromItem(var2.getItem()));
             var7.addDetail("Item data", var2.method32117());
             var7.addDetail("Item name", () -> var2.method32149().getString());
             throw new ReportedException(var6);

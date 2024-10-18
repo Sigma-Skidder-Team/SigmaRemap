@@ -62,7 +62,7 @@ public abstract class CommandBlockLogic implements ICommandSource {
       this.field5198 = var1.getString("Command");
       this.field5195 = var1.getInt("SuccessCount");
       if (var1.contains("CustomName", 8)) {
-         this.method3566(ITextComponent$Serializer.func_240643_a_(var1.getString("CustomName")));
+         this.method3566(ITextComponent$Serializer.getComponentFromJson(var1.getString("CustomName")));
       }
 
       if (var1.contains("TrackOutput", 1)) {
@@ -71,7 +71,7 @@ public abstract class CommandBlockLogic implements ICommandSource {
 
       if (var1.contains("LastOutput", 8) && this.field5196) {
          try {
-            this.field5197 = ITextComponent$Serializer.func_240643_a_(var1.getString("LastOutput"));
+            this.field5197 = ITextComponent$Serializer.getComponentFromJson(var1.getString("LastOutput"));
          } catch (Throwable var5) {
             this.field5197 = new StringTextComponent(var5.getMessage());
          }

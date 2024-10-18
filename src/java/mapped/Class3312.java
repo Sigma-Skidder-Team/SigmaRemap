@@ -42,7 +42,7 @@ public class Class3312 extends Item {
             var10 = new PaintingEntity(var9, var6, var5);
          }
 
-         CompoundNBT var11 = var8.method32142();
+         CompoundNBT var11 = var8.getTag();
          if (var11 != null) {
             EntityType.method33204(var9, var7, (Entity)var10, var11);
          }

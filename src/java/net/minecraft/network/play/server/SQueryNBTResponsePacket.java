@@ -24,13 +24,13 @@ public class SQueryNBTResponsePacket implements IPacket<IClientPlayNetHandler> {
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24457 = var1.readVarInt();
-      this.field24458 = var1.method35721();
+      this.field24458 = var1.readCompoundTag();
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
       var1.writeVarInt(this.field24457);
-      var1.method35720(this.field24458);
+      var1.writeCompoundTag(this.field24458);
    }
 
    public void processPacket(IClientPlayNetHandler var1) {

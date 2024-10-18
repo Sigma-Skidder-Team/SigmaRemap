@@ -61,7 +61,7 @@ public class Class887 extends AbstractArrowEntity {
    }
 
    public static int method3498(ItemStack var0) {
-      CompoundNBT var3 = var0.method32142();
+      CompoundNBT var3 = var0.getTag();
       return var3 != null && var3.contains("CustomPotionColor", 99) ? var3.getInt("CustomPotionColor") : -1;
    }
 

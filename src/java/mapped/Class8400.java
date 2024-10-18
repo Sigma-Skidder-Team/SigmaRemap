@@ -41,7 +41,7 @@ public class Class8400 {
    }
 
    private static int method29494(Item var0) {
-      return Item.method11701(var0);
+      return Item.getIdFromItem(var0);
    }
 
    public void method29495(Item var1, Class1997 var2) {

@@ -55,7 +55,7 @@ public class Class235<T extends LivingEntity, M extends Class2827<T> & IHasHead>
 
             GameProfile var22 = null;
             if (var13.method32141()) {
-               CompoundNBT var18 = var13.method32142();
+               CompoundNBT var18 = var13.getTag();
                if (!var18.contains("SkullOwner", 10)) {
                   if (var18.contains("SkullOwner", 8)) {
                      String var19 = var18.getString("SkullOwner");

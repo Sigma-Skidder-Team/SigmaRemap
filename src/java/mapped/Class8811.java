@@ -20,7 +20,7 @@ public class Class8811 {
    }
 
    public boolean method31808(ItemStack var1) {
-      return this != field39645 ? this.method31810(var1.method32142()) : true;
+      return this != field39645 ? this.method31810(var1.getTag()) : true;
    }
 
    public boolean method31809(Entity var1) {

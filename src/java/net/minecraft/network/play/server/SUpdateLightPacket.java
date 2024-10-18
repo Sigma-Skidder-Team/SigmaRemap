@@ -107,7 +107,7 @@ public class SUpdateLightPacket implements IPacket<IClientPlayNetHandler> {
 
       for (int var4 = 0; var4 < 18; var4++) {
          if ((this.field24500 & 1 << var4) != 0) {
-            this.field24504.add(var1.method35700(2048));
+            this.field24504.add(var1.readByteArray(2048));
          }
       }
 
@@ -115,7 +115,7 @@ public class SUpdateLightPacket implements IPacket<IClientPlayNetHandler> {
 
       for (int var5 = 0; var5 < 18; var5++) {
          if ((this.field24501 & 1 << var5) != 0) {
-            this.field24505.add(var1.method35700(2048));
+            this.field24505.add(var1.readByteArray(2048));
          }
       }
    }

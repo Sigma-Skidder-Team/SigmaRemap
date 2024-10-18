@@ -38,7 +38,7 @@ public class Class9599 {
    public void method37267(PacketBuffer var1) {
       var1.writeBoolean(this.field44911 != null);
       if (this.field44911 != null) {
-         var1.method35734(this.field44911);
+         var1.writeTime(this.field44911);
       }
    }
 
@@ -49,7 +49,7 @@ public class Class9599 {
    public static Class9599 method37269(PacketBuffer var0) {
       Class9599 var3 = new Class9599();
       if (var0.readBoolean()) {
-         var3.field44911 = var0.method35733();
+         var3.field44911 = var0.readTime();
       }
 
       return var3;

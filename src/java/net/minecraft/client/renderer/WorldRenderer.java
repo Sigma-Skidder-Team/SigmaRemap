@@ -1415,7 +1415,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
 
       while (var63.hasNext()) {
          Entry var68 = (Entry)var63.next();
-         BlockPos var74 = BlockPos.method8331(var68.getLongKey());
+         BlockPos var74 = BlockPos.fromLong(var68.getLongKey());
          double var79 = (double)var74.getX() - var12;
          double var87 = (double)var74.getY() - var14;
          double var90 = (double)var74.getZ() - var16;
@@ -3144,11 +3144,11 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
             this.world.method6858(var3, SoundEvents.field26582, Class2266.field14732, 0.5F, 2.6F + (var5.nextFloat() - var5.nextFloat()) * 0.8F, false);
             break;
          case 1010:
-            if (Item.method11702(var4) instanceof Class3283) {
+            if (Item.getItemById(var4) instanceof Class3283) {
                if (Reflector.field42969.method20245()) {
-                  this.method909(((Class3283) Item.method11702(var4)).method11815(), var3, (Class3283) Item.method11702(var4));
+                  this.method909(((Class3283) Item.getItemById(var4)).method11815(), var3, (Class3283) Item.getItemById(var4));
                } else {
-                  this.method908(((Class3283) Item.method11702(var4)).method11815(), var3);
+                  this.method908(((Class3283) Item.getItemById(var4)).method11815(), var3);
                }
             } else {
                this.method908((SoundEvent)null, var3);

@@ -42,7 +42,7 @@ public class SRespawnPacket implements IPacket<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24615 = var1.<Supplier<DimensionType>>method35696(DimensionType.DIMENSION_TYPE_CODEC).get();
+      this.field24615 = var1.<Supplier<DimensionType>>func_240628_a_(DimensionType.DIMENSION_TYPE_CODEC).get();
       this.field24616 = RegistryKey.<World>getOrCreateKey(Registry.WORLD_KEY, var1.readResourceLocation());
       this.field24617 = var1.readLong();
       this.field24618 = GameType.getByID(var1.readUnsignedByte());
@@ -54,7 +54,7 @@ public class SRespawnPacket implements IPacket<IClientPlayNetHandler> {
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.method35697(DimensionType.DIMENSION_TYPE_CODEC, () -> this.field24615);
+      var1.func_240629_a_(DimensionType.DIMENSION_TYPE_CODEC, () -> this.field24615);
       var1.writeResourceLocation(this.field24616.getLocation());
       var1.writeLong(this.field24617);
       var1.writeByte(this.field24618.getID());

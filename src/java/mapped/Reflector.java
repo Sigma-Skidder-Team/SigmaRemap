@@ -208,10 +208,10 @@ public class Reflector {
    public static Class6636 field42920 = new Class6636("net.minecraftforge.common.extensions.IForgeItemStack");
    public static Class6631 field42921 = new Class6631(field42920, "canDisableShield");
    public static Class6631 field42922 = new Class6631(field42920, "getEquipmentSlot");
-   public static Class6631 field42923 = new Class6631(field42920, "getShareTag");
+   public static Class6631 IForgeItemStack_getShareTag = new Class6631(field42920, "getShareTag");
    public static Class6631 field42924 = new Class6631(field42920, "getHighlightTip");
    public static Class6631 field42925 = new Class6631(field42920, "isShield");
-   public static Class6631 field42926 = new Class6631(field42920, "readShareTag");
+   public static Class6631 IForgeItemStack_readShareTag = new Class6631(field42920, "readShareTag");
    public static Class6636 field42927 = new Class6636("net.minecraftforge.fml.ForgeI18n");
    public static Class6631 field42928 = new Class6631(field42927, "loadLanguageData");
    public static Class6636 field42929 = new Class6636(KeyBinding.class);

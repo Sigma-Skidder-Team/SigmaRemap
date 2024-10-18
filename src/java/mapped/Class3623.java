@@ -155,7 +155,7 @@ public class Class3623 extends Class3624 {
    }
 
    public static Class3623 method12274(CompoundNBT var0, ResourceLocation var1) {
-      Class3623 var4 = new Class3623(var1, ITextComponent$Serializer.func_240643_a_(var0.getString("Name")));
+      Class3623 var4 = new Class3623(var1, ITextComponent$Serializer.getComponentFromJson(var0.getString("Name")));
       var4.method12287(var0.getBoolean("Visible"));
       var4.method12269(var0.getInt("Value"));
       var4.method12270(var0.getInt("Max"));

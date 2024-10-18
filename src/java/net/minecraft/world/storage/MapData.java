@@ -204,7 +204,7 @@ public class MapData extends Class7530 {
          this.field32328.put(var8.method20354(), var8);
       }
 
-      CompoundNBT var11 = var2.method32142();
+      CompoundNBT var11 = var2.getTag();
       if (var11 != null && var11.contains("Decorations", 9)) {
          ListNBT var13 = var11.method131("Decorations", 10);
 
@@ -227,8 +227,8 @@ public class MapData extends Class7530 {
 
    public static void method24595(ItemStack var0, BlockPos var1, String var2, MapDecorationType var3) {
       ListNBT var6;
-      if (var0.method32141() && var0.method32142().contains("Decorations", 9)) {
-         var6 = var0.method32142().method131("Decorations", 10);
+      if (var0.method32141() && var0.getTag().contains("Decorations", 9)) {
+         var6 = var0.getTag().method131("Decorations", 10);
       } else {
          var6 = new ListNBT();
          var0.setTagInfo("Decorations", var6);

@@ -38,7 +38,7 @@ public class Class8809 extends DataFix {
 
                         if (var4 == null) {
                            try {
-                              var4 = ITextComponent$Serializer.func_240643_a_(var3);
+                              var4 = ITextComponent$Serializer.getComponentFromJson(var3);
                            } catch (JsonParseException var7) {
                            }
                         }

@@ -34,7 +34,7 @@ public class Class3317<T extends Entity & Class1071> extends Item {
                }
 
                ItemStack var9 = new ItemStack(Items.field37906);
-               var9.method32148(var6.method32142());
+               var9.setTag(var6.getTag());
                return Class6794.<ItemStack>method20696(var9);
             }
          }

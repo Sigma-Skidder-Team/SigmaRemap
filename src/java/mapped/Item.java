@@ -46,11 +46,11 @@ public class Item implements IItemProvider {
    private String field18742;
    private final Class9427 field18743;
 
-   public static int method11701(Item var0) {
+   public static int getIdFromItem(Item var0) {
       return var0 != null ? Registry.ITEM.getId(var0) : 0;
    }
 
-   public static Item method11702(int var0) {
+   public static Item getItemById(int var0) {
       return Registry.ITEM.getByValue(var0);
    }
 
@@ -164,7 +164,7 @@ public class Item implements IItemProvider {
       return this.getTranslationKey();
    }
 
-   public boolean method11721() {
+   public boolean shouldSyncTag() {
       return true;
    }
 

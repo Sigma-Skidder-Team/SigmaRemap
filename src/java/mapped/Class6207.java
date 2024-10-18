@@ -70,7 +70,7 @@ public class Class6207 {
    }
 
    public static ItemStack method19127(int var0) {
-      return var0 != 0 ? new ItemStack(Item.method11702(var0)) : ItemStack.EMPTY;
+      return var0 != 0 ? new ItemStack(Item.getItemById(var0)) : ItemStack.EMPTY;
    }
 
    public void method19128() {

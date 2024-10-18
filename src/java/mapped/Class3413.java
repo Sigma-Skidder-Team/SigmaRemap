@@ -127,7 +127,7 @@ public class Class3413 extends Block {
                         if (var15 instanceof Class3368 && !var2.isRemote()) {
                            ItemStack var13 = new ItemStack(Blocks.field36896, 1);
                            if (var9.method32141()) {
-                              var13.method32148(var9.method32142().method79());
+                              var13.setTag(var9.getTag().method79());
                            }
 
                            var4.setHeldItem(var5, var13);

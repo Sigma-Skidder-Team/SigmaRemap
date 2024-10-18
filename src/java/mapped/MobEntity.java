@@ -588,8 +588,8 @@ public abstract class MobEntity extends LivingEntity {
    public boolean method4251(ItemStack var1, ItemStack var2) {
       if (var1.method32117() >= var2.method32117() && (!var1.method32141() || var2.method32141())) {
          return var1.method32141() && var2.method32141()
-            ? var1.method32142().method97().stream().anyMatch(var0 -> !var0.equals("Damage"))
-               && !var2.method32142().method97().stream().anyMatch(var0 -> !var0.equals("Damage"))
+            ? var1.getTag().method97().stream().anyMatch(var0 -> !var0.equals("Damage"))
+               && !var2.getTag().method97().stream().anyMatch(var0 -> !var0.equals("Damage"))
             : false;
       } else {
          return true;

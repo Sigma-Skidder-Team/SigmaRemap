@@ -21,7 +21,7 @@ public class SkullItem extends Class3298 {
    public ITextComponent method11731(ItemStack var1) {
       if (var1.getItem() == Items.field38060 && var1.method32141()) {
          String var4 = null;
-         CompoundNBT var5 = var1.method32142();
+         CompoundNBT var5 = var1.getTag();
          if (!var5.contains("SkullOwner", 8)) {
             if (var5.contains("SkullOwner", 10)) {
                CompoundNBT var6 = var5.getCompound("SkullOwner");

@@ -58,9 +58,9 @@ public class Class137 extends Class128 {
          }
 
          var5 = new CompoundNBT();
-         var1.method32148(var5);
+         var1.setTag(var5);
       } else {
-         var5 = var1.method32142();
+         var5 = var1.getTag();
       }
 
       CompoundNBT var6;

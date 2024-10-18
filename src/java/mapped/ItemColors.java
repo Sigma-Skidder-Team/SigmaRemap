@@ -91,7 +91,7 @@ public class ItemColors {
 
    public void method33259(Class7216 var1, IItemProvider... var2) {
       for (IItemProvider var8 : var2) {
-         this.field41160.method9268(var1, Item.method11701(var8.asItem()));
+         this.field41160.method9268(var1, Item.getIdFromItem(var8.asItem()));
       }
    }
 }

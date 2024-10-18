@@ -19,7 +19,7 @@ public class Class7501 implements Class7502 {
    }
 
    private static List<String> method24458(ItemStack var0) {
-      CompoundNBT var3 = var0.method32142();
+      CompoundNBT var3 = var0.getTag();
       return (List<String>)(var3 != null && Class3285.method11817(var3)
          ? Class870.method2696(var3)
          : ImmutableList.of(ITextComponent$Serializer.toJson(new TranslationTextComponent("book.invalid.tag").mergeStyle(TextFormatting.DARK_RED))));
@@ -35,7 +35,7 @@ public class Class7501 implements Class7502 {
       String var4 = this.field32222.get(var1);
 
       try {
-         IFormattableTextComponent var5 = ITextComponent$Serializer.func_240643_a_(var4);
+         IFormattableTextComponent var5 = ITextComponent$Serializer.getComponentFromJson(var4);
          if (var5 != null) {
             return var5;
          }

@@ -52,7 +52,7 @@ public class Class7535 extends Class7530 {
          }
 
          ScorePlayerTeam var7 = this.field32341.method20991(var6);
-         IFormattableTextComponent var8 = ITextComponent$Serializer.func_240643_a_(var5.getString("DisplayName"));
+         IFormattableTextComponent var8 = ITextComponent$Serializer.getComponentFromJson(var5.getString("DisplayName"));
          if (var8 != null) {
             var7.method28570(var8);
          }
@@ -70,14 +70,14 @@ public class Class7535 extends Class7530 {
          }
 
          if (var5.contains("MemberNamePrefix", 8)) {
-            IFormattableTextComponent var9 = ITextComponent$Serializer.func_240643_a_(var5.getString("MemberNamePrefix"));
+            IFormattableTextComponent var9 = ITextComponent$Serializer.getComponentFromJson(var5.getString("MemberNamePrefix"));
             if (var9 != null) {
                var7.method28571(var9);
             }
          }
 
          if (var5.contains("MemberNameSuffix", 8)) {
-            IFormattableTextComponent var10 = ITextComponent$Serializer.func_240643_a_(var5.getString("MemberNameSuffix"));
+            IFormattableTextComponent var10 = ITextComponent$Serializer.getComponentFromJson(var5.getString("MemberNameSuffix"));
             if (var10 != null) {
                var7.method28573(var10);
             }
@@ -133,7 +133,7 @@ public class Class7535 extends Class7530 {
                var5x = var5x.substring(0, 16);
             }
 
-            IFormattableTextComponent var6 = ITextComponent$Serializer.func_240643_a_(var5.getString("DisplayName"));
+            IFormattableTextComponent var6 = ITextComponent$Serializer.getComponentFromJson(var5.getString("DisplayName"));
             Class2316 var7 = Class2316.method9089(var5.getString("RenderType"));
             this.field32341.method20977(var5x, var2, var6, var7);
          });

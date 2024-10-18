@@ -139,7 +139,7 @@ public class CrossbowItem extends Class3262 implements IVanishable {
    }
 
    public static boolean isCharged(ItemStack var0) {
-      CompoundNBT var3 = var0.method32142();
+      CompoundNBT var3 = var0.getTag();
       return var3 != null && var3.getBoolean("Charged");
    }
 
@@ -165,7 +165,7 @@ public class CrossbowItem extends Class3262 implements IVanishable {
 
    private static List<ItemStack> method11758(ItemStack var0) {
       ArrayList var3 = Lists.newArrayList();
-      CompoundNBT var4 = var0.method32142();
+      CompoundNBT var4 = var0.getTag();
       if (var4 != null && var4.contains("ChargedProjectiles", 9)) {
          ListNBT var5 = var4.method131("ChargedProjectiles", 10);
          if (var5 != null) {
@@ -180,7 +180,7 @@ public class CrossbowItem extends Class3262 implements IVanishable {
    }
 
    private static void method11759(ItemStack var0) {
-      CompoundNBT var3 = var0.method32142();
+      CompoundNBT var3 = var0.getTag();
       if (var3 != null) {
          ListNBT var4 = var3.method131("ChargedProjectiles", 9);
          var4.clear();

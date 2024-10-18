@@ -35,7 +35,7 @@ public class Class5124 implements Class5119 {
          long var19 = SectionPos.worldToSection(var15.toLong());
          if (var13.add(var19)) {
             DebugRenderer.method27461(
-               var11.getChunkProvider().getLightManager().method639(LightType.SKY, SectionPos.method8393(var19)),
+               var11.getChunkProvider().getLightManager().method639(LightType.SKY, SectionPos.from(var19)),
                (double)(SectionPos.method8407(var19) * 16 + 8),
                (double)(SectionPos.method8408(var19) * 16 + 8),
                (double)(SectionPos.method8409(var19) * 16 + 8),

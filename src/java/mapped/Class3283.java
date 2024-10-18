@@ -40,7 +40,7 @@ public class Class3283 extends Item {
          ItemStack var7 = var1.method18357();
          if (!var4.isRemote) {
             ((Class3364) Blocks.JUKEBOX).method11941(var4, var5, var6, var7);
-            var4.method6869((PlayerEntity)null, 1010, var5, Item.method11701(this));
+            var4.method6869((PlayerEntity)null, 1010, var5, Item.getIdFromItem(this));
             var7.shrink(1);
             PlayerEntity var8 = var1.method18358();
             if (var8 != null) {

@@ -16,6 +16,6 @@ public class Class175 implements Predicate<ItemStack> {
    }
 
    public boolean test(ItemStack var1) {
-      return this.field560.method24917(var1.getItem()) && Class8354.method29280(this.field561, var1.method32142(), true);
+      return this.field560.method24917(var1.getItem()) && Class8354.method29280(this.field561, var1.getTag(), true);
    }
 }

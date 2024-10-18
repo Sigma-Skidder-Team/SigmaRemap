@@ -44,15 +44,15 @@ public class SMultiBlockChangePacket implements IPacket<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24642 = SectionPos.method8393(var1.readLong());
+      this.field24642 = SectionPos.from(var1.readLong());
       this.field24645 = var1.readBoolean();
       int var4 = var1.readVarInt();
       this.method17460(var4);
 
       for (int var5 = 0; var5 < this.field24643.length; var5++) {
-         long var6 = var1.method35715();
+         long var6 = var1.readVarLong();
          this.field24643[var5] = (short)((int)(var6 & 4095L));
-         this.field24644[var5] = Block.field18610.getByValue((int)(var6 >>> 12));
+         this.field24644[var5] = Block.BLOCK_STATE_IDS.getByValue((int)(var6 >>> 12));
       }
    }
 
@@ -63,7 +63,7 @@ public class SMultiBlockChangePacket implements IPacket<IClientPlayNetHandler> {
       var1.writeVarInt(this.field24643.length);
 
       for (int var4 = 0; var4 < this.field24643.length; var4++) {
-         var1.method35719((long)(Block.getStateId(this.field24644[var4]) << 12 | this.field24643[var4]));
+         var1.writeVarLong((long)(Block.getStateId(this.field24644[var4]) << 12 | this.field24643[var4]));
       }
    }
 

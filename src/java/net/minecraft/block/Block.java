@@ -38,7 +38,7 @@ import java.util.stream.Stream;
 
 public class Block extends AbstractBlock implements IItemProvider {
    public static final Logger LOGGER = LogManager.getLogger();
-   public static final ObjectIntIdentityMap<BlockState> field18610 = new ObjectIntIdentityMap<BlockState>();
+   public static final ObjectIntIdentityMap<BlockState> BLOCK_STATE_IDS = new ObjectIntIdentityMap<BlockState>();
    private static final LoadingCache<VoxelShape, Boolean> field18611 = CacheBuilder.newBuilder().maximumSize(512L).weakKeys().build(new Class4562());
    public final StateContainer<Block, BlockState> stateContainer;
    private BlockState field18613;
@@ -54,7 +54,7 @@ public class Block extends AbstractBlock implements IItemProvider {
 
    public static int getStateId(BlockState var0) {
       if (var0 != null) {
-         int var3 = field18610.getId(var0);
+         int var3 = BLOCK_STATE_IDS.getId(var0);
          return var3 != -1 ? var3 : 0;
       } else {
          return 0;
@@ -62,7 +62,7 @@ public class Block extends AbstractBlock implements IItemProvider {
    }
 
    public static BlockState method11536(int var0) {
-      BlockState var3 = field18610.getByValue(var0);
+      BlockState var3 = BLOCK_STATE_IDS.getByValue(var0);
       return var3 != null ? var3 : Blocks.AIR.getDefaultState();
    }
 

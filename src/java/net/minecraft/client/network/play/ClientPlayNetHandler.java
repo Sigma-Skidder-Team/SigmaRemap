@@ -1760,7 +1760,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
             Class8238 var8 = Class8238.method28711(var5);
             this.field23272.debugRenderer.field34466.method15902(var6, var8, var7);
          } else if (SCustomPayloadPlayPacket.field24539.equals(var4)) {
-            long var9 = var5.method35715();
+            long var9 = var5.readVarLong();
             BlockPos var62 = var5.readBlockPos();
             ((Class5132)this.field23272.debugRenderer.field34471).method15869(var9, var62);
          } else if (SCustomPayloadPlayPacket.field24540.equals(var4)) {
@@ -1795,17 +1795,17 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
             int var44 = var5.readInt();
 
             for (int var54 = 0; var54 < var44; var54++) {
-               this.field23272.debugRenderer.field34479.method15817(var5.method35709());
+               this.field23272.debugRenderer.field34479.method15817(var5.readSectionPos());
             }
 
             int var55 = var5.readInt();
 
             for (int var65 = 0; var65 < var55; var65++) {
-               this.field23272.debugRenderer.field34479.method15818(var5.method35709());
+               this.field23272.debugRenderer.field34479.method15818(var5.readSectionPos());
             }
          } else if (SCustomPayloadPlayPacket.field24544.equals(var4)) {
             BlockPos var45 = var5.readBlockPos();
-            String var56 = var5.method35727();
+            String var56 = var5.readString();
             int var66 = var5.readInt();
             Class9321 var74 = new Class9321(var45, var56, var66);
             this.field23272.debugRenderer.field34478.method15871(var74);
@@ -1846,12 +1846,12 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
             Class2959 var83 = new Class2959(var71, var16, var18);
             UUID var85 = var5.readUniqueId();
             int var20 = var5.readInt();
-            String var21 = var5.method35727();
-            String var22 = var5.method35727();
+            String var21 = var5.readString();
+            String var22 = var5.readString();
             int var23 = var5.readInt();
             float var24 = var5.readFloat();
             float var25 = var5.readFloat();
-            String var26 = var5.method35727();
+            String var26 = var5.readString();
             boolean var27 = var5.readBoolean();
             Class8238 var28;
             if (var27) {
@@ -1865,21 +1865,21 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
             int var31 = var5.readInt();
 
             for (int var32 = 0; var32 < var31; var32++) {
-               String var33 = var5.method35727();
+               String var33 = var5.readString();
                var30.field40373.add(var33);
             }
 
             int var103 = var5.readInt();
 
             for (int var105 = 0; var105 < var103; var105++) {
-               String var34 = var5.method35727();
+               String var34 = var5.readString();
                var30.field40374.add(var34);
             }
 
             int var106 = var5.readInt();
 
             for (int var107 = 0; var107 < var106; var107++) {
-               String var35 = var5.method35727();
+               String var35 = var5.readString();
                var30.field40375.add(var35);
             }
 
@@ -1900,7 +1900,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
             int var112 = var5.readInt();
 
             for (int var113 = 0; var113 < var112; var113++) {
-               String var38 = var5.method35727();
+               String var38 = var5.readString();
                var30.field40376.add(var38);
             }
 
@@ -1935,7 +1935,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
             int var98 = var5.readInt();
 
             for (int var99 = 0; var99 < var98; var99++) {
-               String var101 = var5.method35727();
+               String var101 = var5.readString();
                var97.field30226.add(var101);
             }
 
@@ -1949,7 +1949,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
             this.field23272.debugRenderer.field34480.method15825(var97);
          } else if (SCustomPayloadPlayPacket.field24550.equals(var4)) {
             BlockPos var50 = var5.readBlockPos();
-            String var60 = var5.method35727();
+            String var60 = var5.readString();
             int var69 = var5.readInt();
             int var76 = var5.readInt();
             boolean var80 = var5.readBoolean();
@@ -1960,7 +1960,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          } else if (SCustomPayloadPlayPacket.field24551.equals(var4)) {
             BlockPos var51 = var5.readBlockPos();
             int var61 = var5.readInt();
-            String var70 = var5.method35727();
+            String var70 = var5.readString();
             int var77 = var5.readInt();
             this.field23272.debugRenderer.field34483.method15907(var51, var61, var70, var77);
          } else {

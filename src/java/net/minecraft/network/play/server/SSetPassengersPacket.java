@@ -29,13 +29,13 @@ public class SSetPassengersPacket implements IPacket<IClientPlayNetHandler> {
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24354 = var1.readVarInt();
-      this.field24355 = var1.method35702();
+      this.field24355 = var1.readVarIntArray();
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
       var1.writeVarInt(this.field24354);
-      var1.method35701(this.field24355);
+      var1.writeVarIntArray(this.field24355);
    }
 
    public void processPacket(IClientPlayNetHandler var1) {

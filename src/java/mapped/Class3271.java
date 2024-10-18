@@ -25,7 +25,7 @@ public class Class3271 extends Item implements IVanishable {
    }
 
    public static boolean method11789(ItemStack var0) {
-      CompoundNBT var3 = var0.method32142();
+      CompoundNBT var3 = var0.getTag();
       return var3 != null && (var3.contains("LodestoneDimension") || var3.contains("LodestonePos"));
    }
 
@@ -69,8 +69,8 @@ public class Class3271 extends Item implements IVanishable {
          boolean var8 = !var6.abilities.isCreativeMode && var7.getCount() == 1;
          if (!var8) {
             ItemStack var9 = new ItemStack(Items.field37905, 1);
-            CompoundNBT var10 = !var7.method32141() ? new CompoundNBT() : var7.method32142().method79();
-            var9.method32148(var10);
+            CompoundNBT var10 = !var7.method32141() ? new CompoundNBT() : var7.getTag().method79();
+            var9.setTag(var10);
             if (!var6.abilities.isCreativeMode) {
                var7.shrink(1);
             }

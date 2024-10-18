@@ -81,8 +81,8 @@ public class SJoinGamePacket implements IPacket<IClientPlayNetHandler> {
          this.field24411.add(RegistryKey.<World>getOrCreateKey(Registry.WORLD_KEY, var1.readResourceLocation()));
       }
 
-      this.field24412 = var1.<DynamicRegistriesImpl>method35696(DynamicRegistriesImpl.field40301);
-      this.field24413 = var1.<Supplier<DimensionType>>method35696(DimensionType.DIMENSION_TYPE_CODEC).get();
+      this.field24412 = var1.<DynamicRegistriesImpl>func_240628_a_(DynamicRegistriesImpl.field40301);
+      this.field24413 = var1.<Supplier<DimensionType>>func_240628_a_(DimensionType.DIMENSION_TYPE_CODEC).get();
       this.field24414 = RegistryKey.<World>getOrCreateKey(Registry.WORLD_KEY, var1.readResourceLocation());
       this.field24407 = var1.readLong();
       this.field24415 = var1.readVarInt();
@@ -105,8 +105,8 @@ public class SJoinGamePacket implements IPacket<IClientPlayNetHandler> {
          var1.writeResourceLocation(var5.getLocation());
       }
 
-      var1.method35697(DynamicRegistriesImpl.field40301, this.field24412);
-      var1.method35697(DimensionType.DIMENSION_TYPE_CODEC, () -> this.field24413);
+      var1.func_240629_a_(DynamicRegistriesImpl.field40301, this.field24412);
+      var1.func_240629_a_(DimensionType.DIMENSION_TYPE_CODEC, () -> this.field24413);
       var1.writeResourceLocation(this.field24414.getLocation());
       var1.writeLong(this.field24407);
       var1.writeVarInt(this.field24415);

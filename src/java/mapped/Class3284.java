@@ -26,7 +26,7 @@ public class Class3284 extends Item {
    @Override
    public ItemStack onItemUseFinish(ItemStack var1, World var2, LivingEntity var3) {
       ItemStack var6 = super.onItemUseFinish(var1, var2, var3);
-      CompoundNBT var7 = var1.method32142();
+      CompoundNBT var7 = var1.getTag();
       if (var7 != null && var7.contains("Effects", 9)) {
          ListNBT var8 = var7.method131("Effects", 10);
 

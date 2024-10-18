@@ -84,7 +84,7 @@ public class BannerTileEntity extends TileEntity implements INameable {
    public void read(BlockState var1, CompoundNBT var2) {
       super.read(var1, var2);
       if (var2.contains("CustomName", 8)) {
-         this.field5376 = ITextComponent$Serializer.func_240643_a_(var2.getString("CustomName"));
+         this.field5376 = ITextComponent$Serializer.getComponentFromJson(var2.getString("CustomName"));
       }
 
       if (!this.method3770()) {

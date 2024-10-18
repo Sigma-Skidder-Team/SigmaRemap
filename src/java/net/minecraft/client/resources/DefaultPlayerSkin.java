@@ -5,22 +5,25 @@ import net.minecraft.util.ResourceLocation;
 import java.util.UUID;
 
 public class DefaultPlayerSkin {
-   private static final ResourceLocation field30944 = new ResourceLocation("textures/entity/steve.png");
-   private static final ResourceLocation field30945 = new ResourceLocation("textures/entity/alex.png");
+   private static final ResourceLocation TEXTURE_STEVE = new ResourceLocation("textures/entity/steve.png");
+   private static final ResourceLocation TEXTURE_ALEX = new ResourceLocation("textures/entity/alex.png");
 
    public static ResourceLocation getDefaultSkinLegacy() {
-      return field30944;
+      return TEXTURE_STEVE;
    }
 
-   public static ResourceLocation method22637(UUID var0) {
-      return !method22639(var0) ? field30944 : field30945;
+   public static ResourceLocation getDefaultSkin(UUID playerUUID)
+   {
+      return isSlimSkin(playerUUID) ? TEXTURE_ALEX : TEXTURE_STEVE;
    }
 
-   public static String method22638(UUID var0) {
-      return !method22639(var0) ? "default" : "slim";
+   public static String getSkinType(UUID playerUUID)
+   {
+      return isSlimSkin(playerUUID) ? "slim" : "default";
    }
 
-   private static boolean method22639(UUID var0) {
-      return (var0.hashCode() & 1) == 1;
+   private static boolean isSlimSkin(UUID playerUUID)
+   {
+      return (playerUUID.hashCode() & 1) == 1;
    }
 }

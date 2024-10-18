@@ -90,7 +90,7 @@ public final class ItemStack {
 
    private ItemStack(IItemProvider var1, int var2, Optional<CompoundNBT> var3) {
       this(var1, var2);
-      var3.ifPresent(this::method32148);
+      var3.ifPresent(this::setTag);
    }
 
    public ItemStack(IItemProvider var1, int var2) {
@@ -202,7 +202,7 @@ public final class ItemStack {
 
    public boolean method32115() {
       if (!this.isEmpty && this.getItem().getMaxDamage() > 0) {
-         CompoundNBT var3 = this.method32142();
+         CompoundNBT var3 = this.getTag();
          return var3 == null || !var3.getBoolean("Unbreakable");
       } else {
          return false;
@@ -396,13 +396,13 @@ public final class ItemStack {
    }
 
    @Nullable
-   public CompoundNBT method32142() {
+   public CompoundNBT getTag() {
       return this.tag;
    }
 
    public CompoundNBT getOrCreateTag() {
       if (this.tag == null) {
-         this.method32148(new CompoundNBT());
+         this.setTag(new CompoundNBT());
       }
 
       return this.tag;
@@ -436,7 +436,7 @@ public final class ItemStack {
       return this.tag == null ? new ListNBT() : this.tag.method131("Enchantments", 10);
    }
 
-   public void method32148(CompoundNBT var1) {
+   public void setTag(CompoundNBT var1) {
       this.tag = var1;
       if (this.getItem().isDamageable()) {
          this.method32118(this.method32117());
@@ -447,7 +447,7 @@ public final class ItemStack {
       CompoundNBT var3 = this.method32145("display");
       if (var3 != null && var3.contains("Name", 8)) {
          try {
-            IFormattableTextComponent var4 = ITextComponent$Serializer.func_240643_a_(var3.getString("Name"));
+            IFormattableTextComponent var4 = ITextComponent$Serializer.getComponentFromJson(var3.getString("Name"));
             if (var4 != null) {
                return var4;
             }
@@ -530,7 +530,7 @@ public final class ItemStack {
                   String var11 = var9.method160(var10);
 
                   try {
-                     IFormattableTextComponent var12 = ITextComponent$Serializer.func_240643_a_(var11);
+                     IFormattableTextComponent var12 = ITextComponent$Serializer.getComponentFromJson(var11);
                      if (var12 != null) {
                         var5.add(TextComponentUtils.func_240648_a_(var12, LORE_STYLE));
                      }

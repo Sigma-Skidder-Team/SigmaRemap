@@ -524,7 +524,7 @@ public class Class7992 {
             return null;
          } else {
             Item var4 = var0.getItem();
-            int var5 = Item.method11701(var4);
+            int var5 = Item.getIdFromItem(var4);
             if (var5 >= 0 && var5 < field34350.length) {
                Class8090[] var6 = field34350[var5];
                if (var6 != null) {
@@ -611,7 +611,7 @@ public class Class7992 {
          }
 
          if (var0.field34782 != null) {
-            CompoundNBT var13 = var1.method32142();
+            CompoundNBT var13 = var1.getTag();
 
             for (int var15 = 0; var15 < var0.field34782.length; var15++) {
                Class7305 var17 = var0.field34782[var15];
@@ -641,7 +641,7 @@ public class Class7992 {
    }
 
    private static int method27275(ItemStack var0) {
-      CompoundNBT var3 = var0.method32142();
+      CompoundNBT var3 = var0.getTag();
       if (var3 != null) {
          String var4 = var3.getString("Potion");
          if (var4 != null && !var4.equals("")) {

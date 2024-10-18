@@ -144,7 +144,7 @@ public class Class8556<T> implements Class8555<T> {
       }
 
       this.field38453.method26243(var1);
-      var1.method35705(this.field38452.method25763());
+      var1.readLongArray(this.field38452.method25763());
       this.method30491();
    }
 
@@ -152,7 +152,7 @@ public class Class8556<T> implements Class8555<T> {
       this.method30490();
       var1.writeByte(this.field38454);
       this.field38453.method26244(var1);
-      var1.method35704(this.field38452.method25763());
+      var1.writeLongArray(this.field38452.method25763());
       this.method30491();
    }
 
@@ -220,7 +220,7 @@ public class Class8556<T> implements Class8555<T> {
    }
 
    public int method30504() {
-      return 1 + this.field38453.method26245() + PacketBuffer.method35695(this.field38452.method25764()) + this.field38452.method25763().length * 8;
+      return 1 + this.field38453.method26245() + PacketBuffer.getVarIntSize(this.field38452.method25764()) + this.field38452.method25763().length * 8;
    }
 
    public boolean method30505(Predicate<T> var1) {

@@ -48,7 +48,7 @@ public class ItemUseContext {
    }
 
    public boolean method18356() {
-      return this.field25723.method31425();
+      return this.field25723.isInside();
    }
 
    public ItemStack method18357() {

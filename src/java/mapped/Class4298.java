@@ -2,6 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.account.Account;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.util.TextureUtil;
 import com.mojang.authlib.GameProfile;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -20,6 +21,7 @@ import net.minecraft.world.GameType;
 import net.minecraft.world.World;
 import org.lwjgl.opengl.GL11;
 
+import java.io.IOException;
 import java.util.UUID;
 
 public class Class4298 extends Class4278 {
@@ -81,8 +83,13 @@ public class Class4298 extends Class4278 {
          this.entity.setUniqueId(uid);
          float var10 = (float)(System.currentTimeMillis() % 1750L) / 278.52115F;
          var10 = (float)Math.sin((double)var10);
+         float var11 = (float)(System.currentTimeMillis() % 14000L) / 2228.1692F;
+         var11 = (float)Math.sin((double)var11);
+         float var12 = (float)(System.currentTimeMillis() % 30000L) / 4774.648F;
+         var12 = (float)Math.sin((double)var12);
          new PlayerModel(0.0F, false);
          new PlayerRenderer(this.mc.getRenderManager());
+         Class7735 var15 = Minecraft.getInstance().getRenderTypeBuffers().getBufferSource();
          new MatrixStack();
          RenderSystem.pushMatrix();
          this.mc.getRenderManager().setRenderShadow(false);
@@ -105,6 +112,15 @@ public class Class4298 extends Class4278 {
          RenderSystem.disableTexture();
          RenderSystem.activeTexture(33984);
          GL11.glDisable(2929);
+         if (this.account.method34228() != null) {
+            Object var17 = null;
+
+            try {
+               var17 = TextureUtil.method32933("sf", this.account.method34228());
+            } catch (IOException var19) {
+               var19.printStackTrace();
+            }
+         }
       }
    }
 

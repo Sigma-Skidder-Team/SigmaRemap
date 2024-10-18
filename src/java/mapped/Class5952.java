@@ -74,7 +74,7 @@ public class Class5952 extends Class5942<SkullTileEntity> {
          Minecraft var5 = Minecraft.getInstance();
          Map var6 = var5.getSkinManager().loadSkinFromCache(var1);
          return !var6.containsKey(Type.SKIN)
-            ? RenderType.getEntityCutoutNoCull(DefaultPlayerSkin.method22637(PlayerEntity.method2960(var1)))
+            ? RenderType.getEntityCutoutNoCull(DefaultPlayerSkin.getDefaultSkin(PlayerEntity.method2960(var1)))
             : RenderType.getEntityTranslucent(var5.getSkinManager().method38344((MinecraftProfileTexture)var6.get(Type.SKIN), Type.SKIN));
       } else {
          return RenderType.method14314(var4);

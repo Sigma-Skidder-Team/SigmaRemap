@@ -26,7 +26,7 @@ public abstract class Class932 extends TileEntity implements IInventory, Class94
       super.read(var1, var2);
       this.field5279 = Class7969.method27093(var2);
       if (var2.contains("CustomName", 8)) {
-         this.field5280 = ITextComponent$Serializer.func_240643_a_(var2.getString("CustomName"));
+         this.field5280 = ITextComponent$Serializer.getComponentFromJson(var2.getString("CustomName"));
       }
    }
 

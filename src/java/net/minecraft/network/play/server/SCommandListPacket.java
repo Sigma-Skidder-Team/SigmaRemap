@@ -106,7 +106,7 @@ public class SCommandListPacket implements IPacket<IClientPlayNetHandler> {
 
    private static Class8125 method17655(PacketBuffer var0) {
       byte var3 = var0.readByte();
-      int[] var4 = var0.method35702();
+      int[] var4 = var0.readVarIntArray();
       int bruhZero = 0;
       ArgumentBuilder var6 = method17656(var0, var3);
       return new Class8125(var6, var3, bruhZero, var4);

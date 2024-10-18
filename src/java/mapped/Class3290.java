@@ -28,7 +28,7 @@ public class Class3290 extends Item {
    }
 
    public static ListNBT method11830(ItemStack var0) {
-      CompoundNBT var3 = var0.method32142();
+      CompoundNBT var3 = var0.getTag();
       return var3 == null ? new ListNBT() : var3.method131("StoredEnchantments", 10);
    }
 

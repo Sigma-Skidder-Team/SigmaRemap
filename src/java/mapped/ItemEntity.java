@@ -196,7 +196,7 @@ public class ItemEntity extends Entity {
       if (var1.getItem() != var0.getItem()) {
          return false;
       } else if (var1.getCount() + var0.getCount() <= var1.getMaxStackSize()) {
-         return var1.method32141() ^ var0.method32141() ? false : !var1.method32141() || var1.method32142().equals(var0.method32142());
+         return var1.method32141() ^ var0.method32141() ? false : !var1.method32141() || var1.getTag().equals(var0.getTag());
       } else {
          return false;
       }

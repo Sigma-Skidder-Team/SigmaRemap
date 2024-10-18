@@ -153,9 +153,9 @@ public class Class5822 extends Container {
                boolean var12 = var5.getItem() == Items.field37900;
                if (var12) {
                   var10 = new ItemStack(Items.field38070);
-                  CompoundNBT var13 = var5.method32142();
+                  CompoundNBT var13 = var5.getTag();
                   if (var13 != null) {
-                     var10.method32148(var13.method79());
+                     var10.setTag(var13.method79());
                   }
 
                   this.field25505.setInventorySlotContents(0, var10);

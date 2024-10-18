@@ -27,7 +27,7 @@ public class Class7229 implements Class7222 {
       Minecraft var4 = Minecraft.getInstance();
       Map var5 = var4.getSkinManager().loadSkinFromCache(var1);
       if (!var5.containsKey(Type.SKIN)) {
-         this.field31071 = DefaultPlayerSkin.method22637(PlayerEntity.method2960(var1));
+         this.field31071 = DefaultPlayerSkin.getDefaultSkin(PlayerEntity.method2960(var1));
       } else {
          this.field31071 = var4.getSkinManager().method38344((MinecraftProfileTexture)var5.get(Type.SKIN), Type.SKIN);
       }

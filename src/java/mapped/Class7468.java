@@ -26,7 +26,7 @@ public class Class7468 {
    public static Class7468 method24183(CompoundNBT var0) {
       BlockPos var3 = Class8354.method29283(var0.getCompound("Pos"));
       Class112 var4 = Class112.method316(var0.getString("Color"), Class112.field386);
-      IFormattableTextComponent var5 = !var0.contains("Name") ? null : ITextComponent$Serializer.func_240643_a_(var0.getString("Name"));
+      IFormattableTextComponent var5 = !var0.contains("Name") ? null : ITextComponent$Serializer.getComponentFromJson(var0.getString("Name"));
       return new Class7468(var3, var4, var5);
    }
 

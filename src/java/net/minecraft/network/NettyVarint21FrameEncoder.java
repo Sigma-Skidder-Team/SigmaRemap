@@ -9,7 +9,7 @@ import io.netty.handler.codec.MessageToByteEncoder;
 public class NettyVarint21FrameEncoder extends MessageToByteEncoder<ByteBuf> {
    public void encode(ChannelHandlerContext var1, ByteBuf var2, ByteBuf var3) throws Exception {
       int var6 = var2.readableBytes();
-      int var7 = PacketBuffer.method35695(var6);
+      int var7 = PacketBuffer.getVarIntSize(var6);
       if (var7 <= 3) {
          PacketBuffer var8 = new PacketBuffer(var3);
          var8.ensureWritable(var7 + var6);

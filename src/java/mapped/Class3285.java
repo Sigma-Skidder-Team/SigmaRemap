@@ -35,18 +35,18 @@ public class Class3285 extends Item {
    }
 
    public static int method11818(ItemStack var0) {
-      return var0.method32142().getInt("generation");
+      return var0.getTag().getInt("generation");
    }
 
    public static int method11819(ItemStack var0) {
-      CompoundNBT var3 = var0.method32142();
+      CompoundNBT var3 = var0.getTag();
       return var3 == null ? 0 : var3.method131("pages", 8).size();
    }
 
    @Override
    public ITextComponent method11731(ItemStack var1) {
       if (var1.method32141()) {
-         CompoundNBT var4 = var1.method32142();
+         CompoundNBT var4 = var1.getTag();
          String var5 = var4.getString("title");
          if (!Class9001.method33256(var5)) {
             return new StringTextComponent(var5);
@@ -59,7 +59,7 @@ public class Class3285 extends Item {
    @Override
    public void method11730(ItemStack var1, World var2, List<ITextComponent> var3, Class2216 var4) {
       if (var1.method32141()) {
-         CompoundNBT var7 = var1.method32142();
+         CompoundNBT var7 = var1.getTag();
          String var8 = var7.getString("author");
          if (!Class9001.method33256(var8)) {
             var3.add(new TranslationTextComponent("book.byAuthor", var8).mergeStyle(TextFormatting.GRAY));
@@ -90,7 +90,7 @@ public class Class3285 extends Item {
    }
 
    public static boolean method11820(ItemStack var0, CommandSource var1, PlayerEntity var2) {
-      CompoundNBT var5 = var0.method32142();
+      CompoundNBT var5 = var0.getTag();
       if (var5 != null && !var5.getBoolean("resolved")) {
          var5.putBoolean("resolved", true);
          if (!method11817(var5)) {

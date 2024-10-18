@@ -29,9 +29,9 @@ public class Class4846 implements IRecipe<IInventory> {
    @Override
    public ItemStack method14962(IInventory var1) {
       ItemStack var4 = this.field22628.copy();
-      CompoundNBT var5 = var1.getStackInSlot(0).method32142();
+      CompoundNBT var5 = var1.getStackInSlot(0).getTag();
       if (var5 != null) {
-         var4.method32148(var5.method79());
+         var4.setTag(var5.method79());
       }
 
       return var4;

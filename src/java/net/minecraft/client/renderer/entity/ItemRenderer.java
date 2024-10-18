@@ -353,7 +353,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
             var9.addDetail("Item Type", () -> String.valueOf(var2.getItem()));
             var9.addDetail("Registry Name", () -> String.valueOf(Reflector.call(var2.getItem(), Reflector.field42938)));
             var9.addDetail("Item Damage", () -> String.valueOf(var2.method32117()));
-            var9.addDetail("Item NBT", () -> String.valueOf(var2.method32142()));
+            var9.addDetail("Item NBT", () -> String.valueOf(var2.getTag()));
             var9.addDetail("Item Foil", () -> String.valueOf(var2.method32159()));
             throw new ReportedException(var8);
          }

@@ -26,7 +26,7 @@ public class Class9741 {
    private static final IFormattableTextComponent field45485 = new TranslationTextComponent("effect.none").mergeStyle(TextFormatting.GRAY);
 
    public static List<EffectInstance> method38176(ItemStack var0) {
-      return method38178(var0.method32142());
+      return method38178(var0.getTag());
    }
 
    public static List<EffectInstance> method38177(Class8812 var0, Collection<EffectInstance> var1) {
@@ -44,7 +44,7 @@ public class Class9741 {
    }
 
    public static List<EffectInstance> method38179(ItemStack var0) {
-      return method38180(var0.method32142());
+      return method38180(var0.getTag());
    }
 
    public static List<EffectInstance> method38180(CompoundNBT var0) {
@@ -68,7 +68,7 @@ public class Class9741 {
    }
 
    public static int method38182(ItemStack var0) {
-      CompoundNBT var3 = var0.method32142();
+      CompoundNBT var3 = var0.getTag();
       if (var3 != null && var3.contains("CustomPotionColor", 99)) {
          return var3.getInt("CustomPotionColor");
       } else {
@@ -117,7 +117,7 @@ public class Class9741 {
    }
 
    public static Class8812 method38185(ItemStack var0) {
-      return method38186(var0.method32142());
+      return method38186(var0.getTag());
    }
 
    public static Class8812 method38186(CompoundNBT var0) {

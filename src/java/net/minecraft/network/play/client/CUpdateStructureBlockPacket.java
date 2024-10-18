@@ -77,7 +77,7 @@ public class CUpdateStructureBlockPacket implements IPacket<IServerPlayNetHandle
       this.rotation = buf.readEnumValue(Rotation.class);
       this.field_210399_i = buf.readString(12);
       this.integrity = MathHelper.clamp(buf.readFloat(), 0.0F, 1.0F);
-      this.seed = buf.method35715();
+      this.seed = buf.readVarLong();
       int k = buf.readByte();
       this.field_210400_j = (k & 1) != 0;
       this.field_210401_k = (k & 2) != 0;
@@ -100,7 +100,7 @@ public class CUpdateStructureBlockPacket implements IPacket<IServerPlayNetHandle
       var1.writeEnumValue(this.rotation);
       var1.writeString(this.field_210399_i);
       var1.writeFloat(this.integrity);
-      var1.method35719(this.seed);
+      var1.writeVarLong(this.seed);
       int var4 = 0;
       if (this.field_210400_j) {
          var4 |= 1;

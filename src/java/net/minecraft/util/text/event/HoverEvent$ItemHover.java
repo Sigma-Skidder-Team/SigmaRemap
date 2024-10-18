@@ -26,7 +26,7 @@ public class HoverEvent$ItemHover {
    }
 
    public HoverEvent$ItemHover(ItemStack stack) {
-      this(stack.getItem(), stack.getCount(), stack.method32142() != null ? stack.method32142().method79() : null);
+      this(stack.getItem(), stack.getCount(), stack.getTag() != null ? stack.getTag().method79() : null);
    }
 
    @Override
@@ -52,7 +52,7 @@ public class HoverEvent$ItemHover {
       if (this.stack == null) {
          this.stack = new ItemStack(this.item, this.count);
          if (this.tag != null) {
-            this.stack.method32148(this.tag);
+            this.stack.setTag(this.tag);
          }
       }
 

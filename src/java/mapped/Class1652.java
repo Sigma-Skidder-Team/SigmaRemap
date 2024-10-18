@@ -44,7 +44,7 @@ public class Class1652<R> implements AutoCloseable {
 
    public void method6641(BooleanSupplier var1) {
       while (!this.field8982.isEmpty() && var1.getAsBoolean()) {
-         ChunkPos var4 = SectionPos.method8393(this.field8982.firstLong()).method8423();
+         ChunkPos var4 = SectionPos.from(this.field8982.firstLong()).method8423();
          this.method6649(var4);
       }
    }
@@ -55,7 +55,7 @@ public class Class1652<R> implements AutoCloseable {
    }
 
    public Optional<R> method6643(long var1) {
-      SectionPos var5 = SectionPos.method8393(var1);
+      SectionPos var5 = SectionPos.from(var1);
       if (!this.method6644(var5)) {
          Optional var6 = this.method6642(var1);
          if (var6 == null) {
@@ -174,7 +174,7 @@ public class Class1652<R> implements AutoCloseable {
       if (var5 != null && var5.isPresent()) {
          this.field8982.add(var1);
       } else {
-         field8979.warn("No data for position: {}", SectionPos.method8393(var1));
+         field8979.warn("No data for position: {}", SectionPos.from(var1));
       }
    }
 

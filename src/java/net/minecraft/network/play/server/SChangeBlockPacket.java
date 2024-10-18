@@ -30,7 +30,7 @@ public class SChangeBlockPacket implements IPacket<IClientPlayNetHandler> {
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24887 = var1.readBlockPos();
-      this.field24888 = Block.field18610.getByValue(var1.readVarInt());
+      this.field24888 = Block.BLOCK_STATE_IDS.getByValue(var1.readVarInt());
    }
 
    @Override

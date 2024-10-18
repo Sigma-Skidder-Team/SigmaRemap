@@ -430,7 +430,7 @@ public class EntityType<T extends Entity> {
    @Nullable
    public Entity method33200(ServerWorld var1, ItemStack var2, PlayerEntity var3, BlockPos var4, Class2202 var5, boolean var6, boolean var7) {
       return this.method33201(
-         var1, var2 != null ? var2.method32142() : null, var2 != null && var2.method32152() ? var2.method32149() : null, var3, var4, var5, var6, var7
+         var1, var2 != null ? var2.getTag() : null, var2 != null && var2.method32152() ? var2.method32149() : null, var3, var4, var5, var6, var7
       );
    }
 

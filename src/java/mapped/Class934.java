@@ -44,7 +44,7 @@ public class Class934 extends TileEntity implements INameable, ITickableTileEnti
    public void read(BlockState var1, CompoundNBT var2) {
       super.read(var1, var2);
       if (var2.contains("CustomName", 8)) {
-         this.field5292 = ITextComponent$Serializer.func_240643_a_(var2.getString("CustomName"));
+         this.field5292 = ITextComponent$Serializer.getComponentFromJson(var2.getString("CustomName"));
       }
    }
 

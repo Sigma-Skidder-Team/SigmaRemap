@@ -34,8 +34,8 @@ public class Peek extends Command {
 
    public static void method18337(ItemStack var0) {
       CompoundNBT var3 = new CompoundNBT();
-      if (var0.method32142() != null) {
-         var3 = var0.method32142().method79();
+      if (var0.getTag() != null) {
+         var3 = var0.getTag().method79();
       }
 
       NonNullList<ItemStack> var4 = NonNullList.method68(27, new ItemStack(Items.AIR));

@@ -1035,7 +1035,7 @@ public class Class9680 {
       if (field45259 == null && field45260 == null) {
          return var3;
       } else {
-         EntityType var6 = var0.method11855(var1.method32142());
+         EntityType var6 = var0.method11855(var1.getTag());
          if (var6 != null) {
             int var7 = Registry.ENTITY_TYPE.getId(var6);
             if (var7 >= 0) {

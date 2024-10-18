@@ -52,7 +52,7 @@ public class Class8087 {
    }
 
    private static void method27974(UUID var0) {
-      Minecraft.getInstance().getTextureManager().bindTexture(DefaultPlayerSkin.method22637(var0));
+      Minecraft.getInstance().getTextureManager().bindTexture(DefaultPlayerSkin.getDefaultSkin(var0));
    }
 
    private static void method27975(String var0) {

@@ -48,7 +48,7 @@ public class BlockRayTraceResult extends RayTraceResult {
       return !this.field39320 ? Type.BLOCK : Type.MISS;
    }
 
-   public boolean method31425() {
+   public boolean isInside() {
       return this.field39321;
    }
 }

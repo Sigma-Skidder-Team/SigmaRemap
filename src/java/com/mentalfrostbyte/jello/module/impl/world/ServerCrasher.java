@@ -83,7 +83,7 @@ public class ServerCrasher extends Module {
                         var18.method109("title", "Sigma");
                         var18.put("pages", var17);
                         var16.setTagInfo("pages", var17);
-                        var16.method32148(var18);
+                        var16.setTag(var18);
 
                         for (int var28 = 0; var28 < 100; var28++) {
                             try {
