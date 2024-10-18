@@ -256,7 +256,7 @@ public class Account {
         if (!this.getKnownUUID().contains("steve") && this.skinUpdateThread == null) {
             this.skinUpdateThread = new Thread(() -> {
                 try {
-                    this.skin = ImageIO.read(new URL(MultiUtilities.method17699(this.getKnownUUID().replaceAll("-", ""))));
+                    this.skin = ImageIO.read(new URL(MultiUtilities.getSkinUrlByID(this.getKnownUUID().replaceAll("-", ""))));
                 } catch (Exception var4) {
                     var4.printStackTrace();
                 }
