@@ -1,10 +1,12 @@
-package mapped;
+package net.optifine;
 
-public class Class8870 {
+import mapped.Class8889;
+
+public class ChunkDataOF {
    private static String[] field40062;
    private Class8889[] field40063;
 
-   public Class8870(Class8889[] var1) {
+   public ChunkDataOF(Class8889[] var1) {
       this.field40063 = var1;
    }
 

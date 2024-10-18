@@ -13,6 +13,7 @@ import net.minecraft.world.chunk.ChunkSection;
 import net.minecraft.world.chunk.IChunkLightProvider;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.chunk.NibbleArray;
+import net.minecraft.world.lighting.WorldLightManager;
 import net.minecraft.world.server.ChunkManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -62,7 +63,7 @@ public class Class195 extends WorldLightManager implements AutoCloseable {
    public void method603(ChunkPos var1) {
       this.method608(var1.x, var1.z, () -> 0, Class2044.field13349, Util.method38515(() -> {
          super.method609(var1, false);
-         super.method605(var1, false);
+         super.enableLightSources(var1, false);
 
          for (int var4 = -1; var4 < 17; var4++) {
             super.method606(LightType.BLOCK, SectionPos.from(var1, var4), (NibbleArray)null, true);
@@ -78,8 +79,8 @@ public class Class195 extends WorldLightManager implements AutoCloseable {
    @Override
    public void updateSectionStatus(SectionPos var1, boolean var2) {
       this.method608(
-         var1.method8410(),
-         var1.method8412(),
+         var1.getSectionX(),
+         var1.getSectionZ(),
          () -> 0,
          Class2044.field13349,
          Util.method38515(() -> super.updateSectionStatus(var1, var2), () -> "updateSectionStatus " + var1 + " " + var2)
@@ -87,20 +88,20 @@ public class Class195 extends WorldLightManager implements AutoCloseable {
    }
 
    @Override
-   public void method605(ChunkPos var1, boolean var2) {
+   public void enableLightSources(ChunkPos var1, boolean var2) {
       this.method607(
          var1.x,
          var1.z,
          Class2044.field13349,
-         Util.method38515(() -> super.method605(var1, var2), () -> "enableLight " + var1 + " " + var2)
+         Util.method38515(() -> super.enableLightSources(var1, var2), () -> "enableLight " + var1 + " " + var2)
       );
    }
 
    @Override
    public void method606(LightType var1, SectionPos var2, NibbleArray var3, boolean var4) {
       this.method608(
-         var2.method8410(),
-         var2.method8412(),
+         var2.getSectionX(),
+         var2.getSectionZ(),
          () -> 0,
          Class2044.field13349,
          Util.method38515(() -> super.method606(var1, var2, var3, var4), () -> "queueData " + var2)
@@ -135,12 +136,12 @@ public class Class195 extends WorldLightManager implements AutoCloseable {
 
          for (int var7 = 0; var7 < 16; var7++) {
             ChunkSection var8 = var6[var7];
-            if (!ChunkSection.method21859(var8)) {
+            if (!ChunkSection.isEmpty(var8)) {
                super.updateSectionStatus(SectionPos.from(var5, var7), false);
             }
          }
 
-         super.method605(var5, true);
+         super.enableLightSources(var5, true);
          if (!var2) {
             var1.getLightSources().forEach(var2xx -> super.onBlockEmissionIncrease(var2xx, var1.getLightValue(var2xx)));
          }

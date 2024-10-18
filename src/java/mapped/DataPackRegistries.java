@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.item.crafting.RecipeManager;
 import net.minecraft.util.Unit;
 
 import java.util.List;
@@ -11,7 +12,7 @@ public class DataPackRegistries implements AutoCloseable {
    private static final CompletableFuture<Unit> field9263 = CompletableFuture.<Unit>completedFuture(Unit.INSTANCE);
    private final IReloadableResourceManager field9264 = new SimpleReloadableResourceManager(ResourcePackType.SERVER_DATA);
    private final Class6099 field9265;
-   private final Class282 field9266 = new Class282();
+   private final RecipeManager field9266 = new RecipeManager();
    private final Class286 field9267 = new Class286();
    private final Class283 field9268 = new Class283();
    private final Class284 field9269 = new Class284(this.field9268);
@@ -45,7 +46,7 @@ public class DataPackRegistries implements AutoCloseable {
       return this.field9267.method1068();
    }
 
-   public Class282 method7334() {
+   public RecipeManager method7334() {
       return this.field9266;
    }
 

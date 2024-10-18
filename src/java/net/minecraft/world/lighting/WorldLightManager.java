@@ -1,13 +1,15 @@
-package mapped;
+package net.minecraft.world.lighting;
 
+import mapped.Class197;
+import mapped.Class199;
+import mapped.Class201;
+import mapped.Class212;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.SectionPos;
 import net.minecraft.world.LightType;
 import net.minecraft.world.chunk.IChunkLightProvider;
 import net.minecraft.world.chunk.NibbleArray;
-import net.minecraft.world.lighting.IWorldLightListener;
-import net.minecraft.world.lighting.LightEngine;
 
 public class WorldLightManager implements Class197 {
    private final LightEngine<?, ?> blockLight;
@@ -69,7 +71,7 @@ public class WorldLightManager implements Class197 {
       }
    }
 
-   public void method605(ChunkPos var1, boolean var2) {
+   public void enableLightSources(ChunkPos var1, boolean var2) {
       if (this.blockLight != null) {
          this.blockLight.func_215620_a(var1, var2);
       }

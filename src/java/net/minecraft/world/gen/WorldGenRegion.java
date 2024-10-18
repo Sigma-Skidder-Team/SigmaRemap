@@ -27,10 +27,12 @@ import net.minecraft.world.ISeedReader;
 import net.minecraft.world.ITickList;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeManager;
+import net.minecraft.world.chunk.AbstractChunkProvider;
 import net.minecraft.world.chunk.ChunkStatus;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.gen.feature.structure.StructureManager;
 import net.minecraft.world.gen.feature.structure.StructureStart;
+import net.minecraft.world.lighting.WorldLightManager;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -65,8 +67,8 @@ public class WorldGenRegion implements ISeedReader {
          this.field9206 = var1.getSeed();
          this.field9207 = var1.getWorldInfo();
          this.field9208 = var1.method6814();
-         this.field9209 = var1.method6812();
-         this.field9212 = new BiomeManager(this, BiomeManager.getHashedSeed(this.field9206), var1.method6812().getMagnifier());
+         this.field9209 = var1.getDimensionType();
+         this.field9212 = new BiomeManager(this, BiomeManager.getHashedSeed(this.field9206), var1.getDimensionType().getMagnifier());
          this.field9213 = ((IChunk)var2.get(0)).getPos();
          this.field9214 = ((IChunk)var2.get(var2.size() - 1)).getPos();
          this.field9215 = var1.func_241112_a_().method24339(this);
@@ -92,7 +94,7 @@ public class WorldGenRegion implements ISeedReader {
    @Override
    public IChunk getChunk(int var1, int var2, ChunkStatus var3, boolean var4) {
       IChunk var7;
-      if (!this.method6843(var1, var2)) {
+      if (!this.chunkExists(var1, var2)) {
          var7 = null;
       } else {
          int var8 = var1 - this.field9213.x;
@@ -123,7 +125,7 @@ public class WorldGenRegion implements ISeedReader {
    }
 
    @Override
-   public boolean method6843(int var1, int var2) {
+   public boolean chunkExists(int var1, int var2) {
       return var1 >= this.field9213.x && var1 <= this.field9214.x && var2 >= this.field9213.z && var2 <= this.field9214.z;
    }
 
@@ -295,7 +297,7 @@ public class WorldGenRegion implements ISeedReader {
 
    @Override
    public Class9755 method6807(BlockPos var1) {
-      if (this.method6843(var1.getX() >> 4, var1.getZ() >> 4)) {
+      if (this.chunkExists(var1.getX() >> 4, var1.getZ() >> 4)) {
          return new Class9755(this.field9205.method6997(), this.field9205.method6784(), 0L, this.field9205.method7000());
       } else {
          throw new RuntimeException("We are asking a region for a chunk out of bound");
@@ -303,7 +305,7 @@ public class WorldGenRegion implements ISeedReader {
    }
 
    @Override
-   public Class1702 getChunkProvider() {
+   public AbstractChunkProvider getChunkProvider() {
       return this.field9205.getChunkProvider();
    }
 
@@ -350,7 +352,7 @@ public class WorldGenRegion implements ISeedReader {
    }
 
    @Override
-   public DimensionType method6812() {
+   public DimensionType getDimensionType() {
       return this.field9209;
    }
 

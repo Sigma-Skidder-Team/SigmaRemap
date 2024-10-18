@@ -7,13 +7,13 @@ import net.minecraft.util.text.TranslationTextComponent;
 public enum GameType {
    field11101(-1, ""),
    field11102(0, "survival"),
-   field11103(1, "creative"),
+   CREATIVE(1, "creative"),
    field11104(2, "adventure"),
    SPECTATOR(3, "spectator");
 
    private final int field11106;
    private final String field11107;
-   private static final GameType[] field11108 = new GameType[]{field11101, field11102, field11103, field11104, SPECTATOR};
+   private static final GameType[] field11108 = new GameType[]{field11101, field11102, CREATIVE, field11104, SPECTATOR};
 
    private GameType(int var3, String var4) {
       this.field11106 = var3;
@@ -33,7 +33,7 @@ public enum GameType {
    }
 
    public void method8155(PlayerAbilities var1) {
-      if (this != field11103) {
+      if (this != CREATIVE) {
          if (this != SPECTATOR) {
             var1.allowFlying = false;
             var1.isCreativeMode = false;
@@ -59,7 +59,7 @@ public enum GameType {
    }
 
    public boolean isCreative() {
-      return this == field11103;
+      return this == CREATIVE;
    }
 
    public boolean method8158() {

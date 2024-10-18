@@ -113,7 +113,7 @@ public class Class9694 {
    public static Object method37955(Object var0, Class var1, Class var2) {
       Class6633 var5 = method37959(var1, var2);
       if (var5 != null) {
-         return var5.exists() ? Reflector.method35072(var0, var5) : null;
+         return var5.exists() ? Reflector.getFieldValue(var0, var5) : null;
       } else {
          return null;
       }
@@ -122,7 +122,7 @@ public class Class9694 {
    public static Object method37956(Object var0, Class var1, Class var2, int var3) {
       Class6633 var6 = method37960(var1, var2, var3);
       if (var6 != null) {
-         return var6.exists() ? Reflector.method35072(var0, var6) : null;
+         return var6.exists() ? Reflector.getFieldValue(var0, var6) : null;
       } else {
          return null;
       }

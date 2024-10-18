@@ -31,7 +31,7 @@ public class Class7020 implements Class7016 {
             return 0;
          } else {
             this.field30328 = this.field30328 + (60 + var6.nextInt(60)) * 20;
-            if (var1.method6808() < 5 && var1.method6812().hasSkyLight()) {
+            if (var1.method6808() < 5 && var1.getDimensionType().hasSkyLight()) {
                return 0;
             } else {
                int var7 = 0;
@@ -39,7 +39,7 @@ public class Class7020 implements Class7016 {
                for (PlayerEntity var9 : var1.method6870()) {
                   if (!var9.isSpectator()) {
                      BlockPos var10 = var9.getPosition();
-                     if (!var1.method6812().hasSkyLight() || var10.getY() >= var1.getSeaLevel() && var1.method7022(var10)) {
+                     if (!var1.getDimensionType().hasSkyLight() || var10.getY() >= var1.getSeaLevel() && var1.method7022(var10)) {
                         Class9755 var11 = var1.method6807(var10);
                         if (var11.method38329(var6.nextFloat() * 3.0F)) {
                            Class8287 var12 = ((ServerPlayerEntity)var9).method2809();

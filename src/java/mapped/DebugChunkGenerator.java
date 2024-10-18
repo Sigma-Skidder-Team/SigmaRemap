@@ -34,7 +34,7 @@ public class DebugChunkGenerator extends ChunkGenerator {
    private static final int GRID_WIDTH = MathHelper.ceil(MathHelper.sqrt((float) ALL_VALID_STATES.size()));
    private static final int GRID_HEIGHT = MathHelper.ceil((float) ALL_VALID_STATES.size() / (float) GRID_WIDTH);
    public static final BlockState AIR = Blocks.AIR.getDefaultState();
-   public static final BlockState field24996 = Blocks.field36765.getDefaultState();
+   public static final BlockState field24996 = Blocks.BARRIER.getDefaultState();
    private final Registry<Biome> field24997;
 
    public DebugChunkGenerator(Registry<Biome> var1) {

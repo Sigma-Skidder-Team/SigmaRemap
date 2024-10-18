@@ -88,7 +88,7 @@ public abstract class Class1035 extends MonsterEntity {
    }
 
    public boolean method4634() {
-      return !this.world.method6812().isPiglinSafe() && !this.method4633() && !this.method4305();
+      return !this.world.getDimensionType().isPiglinSafe() && !this.method4633() && !this.method4305();
    }
 
    public void method4619(ServerWorld var1) {

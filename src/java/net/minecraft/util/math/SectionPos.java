@@ -15,7 +15,7 @@ public class SectionPos extends Vector3i {
       super(var1, var2, var3);
    }
 
-   public static SectionPos method8389(int var0, int var1, int var2) {
+   public static SectionPos of(int var0, int var1, int var2) {
       return new SectionPos(var0, var1, var2);
    }
 
@@ -106,40 +106,40 @@ public class SectionPos extends Vector3i {
       return (int)(var0 << 22 >> 42);
    }
 
-   public int method8410() {
+   public int getSectionX() {
       return this.getX();
    }
 
-   public int method8411() {
+   public int getSectionY() {
       return this.getY();
    }
 
-   public int method8412() {
+   public int getSectionZ() {
       return this.getZ();
    }
 
    public int method8413() {
-      return this.method8410() << 4;
+      return this.getSectionX() << 4;
    }
 
    public int method8414() {
-      return this.method8411() << 4;
+      return this.getSectionY() << 4;
    }
 
    public int method8415() {
-      return this.method8412() << 4;
+      return this.getSectionZ() << 4;
    }
 
    public int method8416() {
-      return (this.method8410() << 4) + 15;
+      return (this.getSectionX() << 4) + 15;
    }
 
    public int method8417() {
-      return (this.method8411() << 4) + 15;
+      return (this.getSectionY() << 4) + 15;
    }
 
    public int method8418() {
-      return (this.method8412() << 4) + 15;
+      return (this.getSectionZ() << 4) + 15;
    }
 
    public static long worldToSection(long var0) {
@@ -151,7 +151,7 @@ public class SectionPos extends Vector3i {
    }
 
    public BlockPos method8421() {
-      return new BlockPos(method8406(this.method8410()), method8406(this.method8411()), method8406(this.method8412()));
+      return new BlockPos(method8406(this.getSectionX()), method8406(this.getSectionY()), method8406(this.getSectionZ()));
    }
 
    public BlockPos method8422() {
@@ -159,7 +159,7 @@ public class SectionPos extends Vector3i {
    }
 
    public ChunkPos method8423() {
-      return new ChunkPos(this.method8410(), this.method8412());
+      return new ChunkPos(this.getSectionX(), this.getSectionZ());
    }
 
    public static long asLong(int var0, int var1, int var2) {
@@ -170,7 +170,7 @@ public class SectionPos extends Vector3i {
    }
 
    public long asLong() {
-      return asLong(this.method8410(), this.method8411(), this.method8412());
+      return asLong(this.getSectionX(), this.getSectionY(), this.getSectionZ());
    }
 
    public Stream<BlockPos> method8426() {
@@ -178,9 +178,9 @@ public class SectionPos extends Vector3i {
    }
 
    public static Stream<SectionPos> method8427(SectionPos var0, int var1) {
-      int var4 = var0.method8410();
-      int var5 = var0.method8411();
-      int var6 = var0.method8412();
+      int var4 = var0.getSectionX();
+      int var5 = var0.getSectionY();
+      int var6 = var0.getSectionZ();
       return method8429(var4 - var1, var5 - var1, var6 - var1, var4 + var1, var5 + var1, var6 + var1);
    }
 

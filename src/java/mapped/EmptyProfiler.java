@@ -22,7 +22,7 @@ public class EmptyProfiler implements Class7166 {
    }
 
    @Override
-   public void method22504(Supplier<String> var1) {
+   public void startSection(Supplier<String> var1) {
    }
 
    @Override

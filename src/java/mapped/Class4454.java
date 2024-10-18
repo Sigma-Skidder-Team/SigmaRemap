@@ -460,7 +460,7 @@ public class Class4454 extends Class4441<Block> {
       this.method14014(BlockTags.field32771).method31559(BlockTags.field32743).method31558(Blocks.NETHER_BRICK_FENCE);
       this.method14014(BlockTags.field32791)
          .method31560(
-            Blocks.field36765,
+            Blocks.BARRIER,
             Blocks.BEDROCK,
             Blocks.field36649,
             Blocks.field36650,
@@ -479,7 +479,7 @@ public class Class4454 extends Class4441<Block> {
          );
       this.method14014(BlockTags.field32792)
          .method31560(
-            Blocks.field36765,
+            Blocks.BARRIER,
             Blocks.BEDROCK,
             Blocks.field36649,
             Blocks.field36650,

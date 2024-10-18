@@ -133,7 +133,7 @@ public class Class1699 implements AutoCloseable {
                   float var16 = var15 * ((var15 * 0.6F + 0.4F) * 0.6F + 0.4F);
                   float var17 = var15 * (var15 * var15 * 0.6F + 0.4F);
                   var11.method25275(var15, var16, var17);
-                  if (!var4.method6830().method19306()) {
+                  if (!var4.func_239132_a_().method19306()) {
                      Vector3f var18 = this.method7325(var9);
                      var18.method25272(var14);
                      var11.method25277(var18);
@@ -185,7 +185,7 @@ public class Class1699 implements AutoCloseable {
    }
 
    private float method7320(World var1, int var2) {
-      return var1.method6812().getAmbientLight(var2);
+      return var1.getDimensionType().getAmbientLight(var2);
    }
 
    public static int method7321(int var0, int var1) {

@@ -23,7 +23,7 @@ public class Class5825 extends Class5823 {
    public Class5825(int var1, PlayerInventory var2, IWorldPosCallable var3) {
       super(ContainerType.SMITHING, var1, var2, var3);
       this.field25522 = var2.field5444.world;
-      this.field25524 = this.field25522.method6816().<IInventory, Class4846>method1031(Class7207.field30941);
+      this.field25524 = this.field25522.getRecipeManager().<IInventory, Class4846>method1031(Class7207.field30941);
    }
 
    @Override
@@ -54,7 +54,7 @@ public class Class5825 extends Class5823 {
 
    @Override
    public void method18192() {
-      List var3 = this.field25522.method6816().<IInventory, Class4846>method1032(Class7207.field30941, this.field25513, this.field25522);
+      List var3 = this.field25522.getRecipeManager().<IInventory, Class4846>method1032(Class7207.field30941, this.field25513, this.field25522);
       if (!var3.isEmpty()) {
          this.field25523 = (Class4846)var3.get(0);
          ItemStack var4 = this.field25523.method14962(this.field25513);

@@ -20,7 +20,7 @@ public interface IWorldReader extends IBlockDisplayReader, ICollisionReader, Bio
    IChunk getChunk(int var1, int var2, ChunkStatus var3, boolean var4);
 
    @Deprecated
-   boolean method6843(int var1, int var2);
+   boolean chunkExists(int var1, int var2);
 
    int method6736(Heightmap.Type var1, int var2, int var3);
 
@@ -60,7 +60,7 @@ public interface IWorldReader extends IBlockDisplayReader, ICollisionReader, Bio
    @Deprecated
    int getSeaLevel();
 
-   DimensionType method6812();
+   DimensionType getDimensionType();
 
    default BlockPos method7006(Heightmap.Type var1, BlockPos var2) {
       return new BlockPos(var2.getX(), this.method6736(var1, var2.getX(), var2.getZ()), var2.getZ());
@@ -92,7 +92,7 @@ public interface IWorldReader extends IBlockDisplayReader, ICollisionReader, Bio
 
    @Deprecated
    default float method7009(BlockPos var1) {
-      return this.method6812().getAmbientLight(this.method7015(var1));
+      return this.getDimensionType().getAmbientLight(this.method7015(var1));
    }
 
    default int method7010(BlockPos var1, Direction var2) {
@@ -156,7 +156,7 @@ public interface IWorldReader extends IBlockDisplayReader, ICollisionReader, Bio
 
    @Deprecated
    default boolean isBlockLoaded(BlockPos var1) {
-      return this.method6843(var1.getX() >> 4, var1.getZ() >> 4);
+      return this.chunkExists(var1.getX() >> 4, var1.getZ() >> 4);
    }
 
    @Deprecated
@@ -174,7 +174,7 @@ public interface IWorldReader extends IBlockDisplayReader, ICollisionReader, Bio
 
          for (int var9 = var1; var9 <= var4; var9++) {
             for (int var10 = var3; var10 <= var6; var10++) {
-               if (!this.method6843(var9, var10)) {
+               if (!this.chunkExists(var9, var10)) {
                   return false;
                }
             }

@@ -17,7 +17,7 @@ public class VanillaESP extends Module {
     @EventTarget
     public void method16625(TickEvent var1) {
         if (this.isEnabled()) {
-            for (Entity var5 : mc.world.getEntities()) {
+            for (Entity var5 : mc.world.getAllEntities()) {
                 if (!Client.getInstance().getCombatManager().isTargetABot(var5)) {
                     boolean var6 = MultiUtilities.method17744(var5) == Class2258.field14690 && this.access().getBooleanValueFromSettingName("Show Players");
                     boolean var7 = MultiUtilities.method17744(var5) == Class2258.field14689 && this.access().getBooleanValueFromSettingName("Show Mobs");
@@ -31,7 +31,7 @@ public class VanillaESP extends Module {
 
     @Override
     public void onDisable() {
-        for (Entity var4 : mc.world.getEntities()) {
+        for (Entity var4 : mc.world.getAllEntities()) {
             var4.setGlowing(false);
         }
     }

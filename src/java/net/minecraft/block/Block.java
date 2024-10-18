@@ -37,13 +37,13 @@ import java.util.Random;
 import java.util.stream.Stream;
 
 public class Block extends AbstractBlock implements IItemProvider {
-   public static final Logger field18609 = LogManager.getLogger();
+   public static final Logger LOGGER = LogManager.getLogger();
    public static final ObjectIntIdentityMap<BlockState> field18610 = new ObjectIntIdentityMap<BlockState>();
    private static final LoadingCache<VoxelShape, Boolean> field18611 = CacheBuilder.newBuilder().maximumSize(512L).weakKeys().build(new Class4562());
    public final StateContainer<Block, BlockState> stateContainer;
    private BlockState field18613;
    private String field18614;
-   private Item field18615;
+   private Item item;
    private static final ThreadLocal<Object2ByteLinkedOpenHashMap<Class8570>> field18616 = ThreadLocal.<Object2ByteLinkedOpenHashMap<Class8570>>withInitial(
       () -> {
          Class2360 var2 = new Class2360(2048, 0.25F);
@@ -130,7 +130,7 @@ public class Block extends AbstractBlock implements IItemProvider {
 
    public static boolean method11545(Block var0) {
       return var0 instanceof Class3465
-         || var0 == Blocks.field36765
+         || var0 == Blocks.BARRIER
          || var0 == Blocks.field36589
          || var0 == Blocks.field36590
          || var0 == Blocks.MELON
@@ -372,13 +372,12 @@ public class Block extends AbstractBlock implements IItemProvider {
       return this.field19008;
    }
 
-   @Override
-   public Item method11581() {
-      if (this.field18615 == null) {
-         this.field18615 = Item.method11703(this);
+   public Item asItem() {
+      if (this.item == null) {
+         this.item = Item.getItemFromBlock(this);
       }
 
-      return this.field18615;
+      return this.item;
    }
 
    public boolean method11582() {

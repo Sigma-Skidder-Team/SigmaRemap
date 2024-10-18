@@ -20,7 +20,7 @@ public class Class9243 {
       }
 
       try {
-         field42532[GameType.field11103.ordinal()] = 3;
+         field42532[GameType.CREATIVE.ordinal()] = 3;
       } catch (NoSuchFieldError var7) {
       }
 

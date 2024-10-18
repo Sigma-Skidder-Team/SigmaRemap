@@ -140,7 +140,7 @@ public class Class3399 extends AbstractFireBlock {
          }
 
          BlockState var7 = var2.getBlockState(var3.down());
-         boolean var8 = var7.isIn(var2.method6812().isInfiniBurn());
+         boolean var8 = var7.isIn(var2.getDimensionType().isInfiniBurn());
          int var9 = var1.<Integer>get(field19038);
          if (!var8 && var2.method6795() && this.method12017(var2, var3) && var4.nextFloat() < 0.2F + (float)var9 * 0.03F) {
             var2.removeBlock(var3, false);

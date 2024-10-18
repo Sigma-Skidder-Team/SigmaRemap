@@ -1,20 +1,19 @@
-package mapped;
+package net.minecraft.world.chunk;
 
+import mapped.Chunk;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.IBlockReader;
-import net.minecraft.world.chunk.ChunkStatus;
-import net.minecraft.world.chunk.IChunkLightProvider;
-import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.lighting.WorldLightManager;
 
 import java.io.IOException;
 import javax.annotation.Nullable;
 
-public abstract class Class1702 implements IChunkLightProvider, AutoCloseable {
+public abstract class AbstractChunkProvider implements IChunkLightProvider, AutoCloseable {
    @Nullable
    public Chunk method7342(int var1, int var2, boolean var3) {
-      return (Chunk)this.method7346(var1, var2, ChunkStatus.FULL, var3);
+      return (Chunk)this.getChunk(var1, var2, ChunkStatus.FULL, var3);
    }
 
    @Nullable
@@ -25,17 +24,17 @@ public abstract class Class1702 implements IChunkLightProvider, AutoCloseable {
    @Nullable
    @Override
    public IBlockReader getChunkForLight(int var1, int var2) {
-      return this.method7346(var1, var2, ChunkStatus.EMPTY, false);
+      return this.getChunk(var1, var2, ChunkStatus.EMPTY, false);
    }
 
-   public boolean method7345(int var1, int var2) {
-      return this.method7346(var1, var2, ChunkStatus.FULL, false) != null;
+   public boolean chunkExists(int var1, int var2) {
+      return this.getChunk(var1, var2, ChunkStatus.FULL, false) != null;
    }
 
    @Nullable
-   public abstract IChunk method7346(int var1, int var2, ChunkStatus var3, boolean var4);
+   public abstract IChunk getChunk(int var1, int var2, ChunkStatus var3, boolean var4);
 
-   public abstract String method7347();
+   public abstract String makeString();
 
    @Override
    public void close() throws IOException {
@@ -49,15 +48,15 @@ public abstract class Class1702 implements IChunkLightProvider, AutoCloseable {
    public void forceChunk(ChunkPos var1, boolean var2) {
    }
 
-   public boolean method7351(Entity var1) {
+   public boolean isChunkLoaded(Entity var1) {
       return true;
    }
 
-   public boolean method7352(ChunkPos var1) {
+   public boolean isChunkLoaded(ChunkPos var1) {
       return true;
    }
 
-   public boolean method7353(BlockPos var1) {
+   public boolean canTick(BlockPos var1) {
       return true;
    }
 }

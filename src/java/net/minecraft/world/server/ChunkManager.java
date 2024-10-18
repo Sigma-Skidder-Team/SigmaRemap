@@ -112,7 +112,7 @@ public class ChunkManager extends Class1648 implements Class1650 {
       this.field8964 = new Class1812(ImmutableList.of(var15, var16, var17), var5, Integer.MAX_VALUE);
       this.field8965 = this.field8964.<Runnable>method7963(var15, false);
       this.field8966 = this.field8964.<Runnable>method7963(var16, false);
-      this.lightManager = new Class195(var7, this, this.world.method6812().hasSkyLight(), var17, this.field8964.<Runnable>method7963(var17, false));
+      this.lightManager = new Class195(var7, this, this.world.getDimensionType().hasSkyLight(), var17, this.field8964.<Runnable>method7963(var17, false));
       this.field8968 = new Class9306(this, var5, var6);
       this.field8960 = var10;
       this.field8961 = new Class1653(new File(this.field8971, "poi"), var3, var12);
@@ -135,8 +135,8 @@ public class ChunkManager extends Class1648 implements Class1650 {
          var6 = MathHelper.floor(var1.getPosZ() / 16.0);
       } else {
          SectionPos var7 = var1.method2832();
-         var5 = var7.method8410();
-         var6 = var7.method8412();
+         var5 = var7.getSectionX();
+         var6 = var7.getSectionZ();
       }
 
       return method6536(var0, var5, var6);
@@ -351,9 +351,9 @@ public class ChunkManager extends Class1648 implements Class1650 {
          if (var8 == var6) {
             if (this.field8954.remove(var1, var3) && var5 != null) {
                if (var5 instanceof Chunk) {
-                  ((Chunk)var5).method7143(false);
-                  if (Reflector.field42777.exists()) {
-                     Reflector.postForgeBusEvent(Reflector.field42777, var5);
+                  ((Chunk)var5).setLoaded(false);
+                  if (Reflector.ChunkEvent_Unload_Constructor.exists()) {
+                     Reflector.postForgeBusEvent(Reflector.ChunkEvent_Unload_Constructor, var5);
                   }
                }
 
@@ -531,8 +531,8 @@ public class ChunkManager extends Class1648 implements Class1650 {
             var6.method7153(() -> Class8641.method31063(var1.method31057()));
             var6.method7136();
             if (this.field8955.add(var5x.asLong())) {
-               var6.method7143(true);
-               this.world.method6752(var6.method7145().values());
+               var6.setLoaded(true);
+               this.world.method6752(var6.getTileEntityMap().values());
               List<Entity> var7 = null;
                Class51<Entity>[] var8 = var6.method7146();
                int var9 = var8.length;
@@ -553,8 +553,8 @@ public class ChunkManager extends Class1648 implements Class1650 {
                   var7.forEach(var6::removeEntity);
                }
 
-               if (Reflector.field42775.exists()) {
-                  Reflector.postForgeBusEvent(Reflector.field42775, var6);
+               if (Reflector.ChunkEvent_Load_Constructor.exists()) {
+                  Reflector.postForgeBusEvent(Reflector.ChunkEvent_Load_Constructor, var6);
                }
             }
 
@@ -746,7 +746,7 @@ public class ChunkManager extends Class1648 implements Class1650 {
                    this.field8968.method35136(var6.getLongKey()),
                    !this.method6571(var7),
                    var10.<Integer>map(var0 -> Stream.<Class51<Entity>>of(var0.method7146()).mapToInt(Class51::size).sum()).orElse(0),
-                   var10.<Integer>map(var0 -> var0.method7145().size()).orElse(0)
+                   var10.<Integer>map(var0 -> var0.getTileEntityMap().size()).orElse(0)
            );
        }
    }
@@ -809,7 +809,7 @@ public class ChunkManager extends Class1648 implements Class1650 {
    private SectionPos method6574(ServerPlayerEntity var1) {
       SectionPos var4 = SectionPos.method8392(var1);
       var1.method2833(var4);
-      var1.connection.sendPacket(new SUpdateChunkPositionPacket(var4.method8410(), var4.method8412()));
+      var1.connection.sendPacket(new SUpdateChunkPositionPacket(var4.getSectionX(), var4.getSectionZ()));
       return var4;
    }
 
@@ -857,8 +857,8 @@ public class ChunkManager extends Class1648 implements Class1650 {
          }
       }
 
-      int var15 = var6.method8410();
-      int var16 = var6.method8412();
+      int var15 = var6.getSectionX();
+      int var16 = var6.getSectionZ();
       if (Math.abs(var15 - var26) <= this.field8976 * 2 && Math.abs(var16 - var27) <= this.field8976 * 2) {
          int var29 = Math.min(var26, var15) - this.field8976;
          int var31 = Math.min(var27, var16) - this.field8976;

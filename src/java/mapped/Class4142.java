@@ -19,13 +19,13 @@ public class Class4142 extends Class4057 {
       if (var1 instanceof Class2886) {
          Class2886 var5 = (Class2886)var1;
          if (var2.equals("head")) {
-            return (ModelRenderer) Reflector.method35072(var5, Reflector.field43028);
+            return (ModelRenderer) Reflector.getFieldValue(var5, Reflector.field43028);
          } else {
             String var6 = "stick";
             if (!var2.startsWith(var6)) {
                return null;
             } else {
-               ModelRenderer[] var7 = (ModelRenderer[]) Reflector.method35072(var5, Reflector.field43029);
+               ModelRenderer[] var7 = (ModelRenderer[]) Reflector.getFieldValue(var5, Reflector.field43029);
                if (var7 == null) {
                   return null;
                } else {

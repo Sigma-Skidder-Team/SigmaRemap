@@ -81,7 +81,7 @@ public abstract class Class3445 extends Class3444 implements Class3196 {
    @Override
    public boolean method11497(BlockState var1, BlockItemUseContext var2) {
       boolean var5 = super.method11497(var1, var2);
-      return var5 && var2.method18357().getItem() == this.method12124().method11581() ? false : var5;
+      return var5 && var2.method18357().getItem() == this.method12124().asItem() ? false : var5;
    }
 
    @Override

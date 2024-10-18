@@ -42,7 +42,7 @@ public class FogRenderer {
             BiomeManager var14 = var2.getBiomeManager();
             Vector3d var15 = var0.getPos().method11337(2.0, 2.0, 2.0).scale(0.25);
             Vector3d var16 = Class8430.method29626(
-               var15, (var3x, var4x, var5) -> var2.method6830().method19299(Vector3d.unpack(var14.getBiomeAtPosition(var3x, var4x, var5).getFogColor()), var13)
+               var15, (var3x, var4x, var5) -> var2.func_239132_a_().method19299(Vector3d.unpack(var14.getBiomeAtPosition(var3x, var4x, var5).getFogColor()), var13)
             );
             var16 = Class9680.method37876(var16, var2, var0.getRenderViewEntity(), var1);
             field40348 = (float)var16.getX();
@@ -57,7 +57,7 @@ public class FogRenderer {
                }
 
                if (var21 > 0.0F) {
-                  float[] var22 = var2.method6830().method19302(var2.method7001(var1), var1);
+                  float[] var22 = var2.func_239132_a_().func_230492_a_(var2.method7001(var1), var1);
                   if (var22 != null) {
                      var21 *= var22[3];
                      field40348 = field40348 * (1.0F - var21) + var22[0] * var21;

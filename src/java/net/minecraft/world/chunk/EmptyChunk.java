@@ -1,5 +1,8 @@
-package mapped;
+package net.minecraft.world.chunk;
 
+import mapped.Chunk;
+import mapped.ChunkHolderLocationType;
+import mapped.Class2206;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
@@ -15,19 +18,20 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeContainer;
 import net.minecraft.world.biome.BiomeRegistry;
+import net.minecraft.world.lighting.WorldLightManager;
 
 import javax.annotation.Nullable;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class Class1675 extends Chunk {
+public class EmptyChunk extends Chunk {
    private static String[] field9134;
    private static final Biome[] field9135 = Util.<Biome[]>make(
       new Biome[BiomeContainer.field9154], var0 -> Arrays.fill(var0, BiomeRegistry.PLAINS)
    );
 
-   public Class1675(World var1, ChunkPos var2) {
+   public EmptyChunk(World var1, ChunkPos var2) {
       super(var1, var2, new BiomeContainer(var1.func_241828_r().<Biome>getRegistry(Registry.BIOME_KEY), field9135));
    }
 
@@ -67,7 +71,7 @@ public class Class1675 extends Chunk {
    }
 
    @Override
-   public void method7133(Entity var1, int var2) {
+   public void removeEntityAtIndex(Entity var1, int var2) {
    }
 
    @Nullable

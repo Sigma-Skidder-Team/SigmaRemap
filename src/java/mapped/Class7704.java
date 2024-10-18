@@ -60,7 +60,7 @@ public class Class7704 {
          Map<ResourceLocation, Set<Float>> var3 = new LinkedHashMap();
 
          for (Class7781 var5 : var0) {
-            Map<ResourceLocation, Float> var6 = (Map<ResourceLocation, Float>) Reflector.method35072(var5, Reflector.field43013);
+            Map<ResourceLocation, Float> var6 = (Map<ResourceLocation, Float>) Reflector.getFieldValue(var5, Reflector.field43013);
 
             for (ResourceLocation var8 : var6.keySet()) {
                Float var9 = var6.get(var8);

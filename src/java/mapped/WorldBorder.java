@@ -195,7 +195,7 @@ public class WorldBorder {
       }
    }
 
-   public void method24555() {
+   public void tick() {
       this.field32266 = this.field32266.tick();
    }
 

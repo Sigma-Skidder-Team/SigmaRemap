@@ -32,7 +32,7 @@ public class Blink extends Module {
         clientPlayerEntity.inventory = mc.player.inventory;
         clientPlayerEntity.setPositionAndRotation(this.vector.x, this.vector.y, this.vector.z, this.yaw, this.pitch);
         clientPlayerEntity.rotationYawHead = mc.player.rotationYawHead;
-        mc.world.method6846(-1, clientPlayerEntity);
+        mc.world.addEntity(-1, clientPlayerEntity);
     }
 
     @Override

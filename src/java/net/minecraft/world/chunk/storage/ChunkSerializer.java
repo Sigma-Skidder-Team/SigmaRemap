@@ -37,6 +37,7 @@ import net.minecraft.world.biome.provider.BiomeProvider;
 import net.minecraft.world.chunk.*;
 import net.minecraft.world.gen.feature.structure.StructureStart;
 import net.minecraft.world.gen.feature.template.TemplateManager;
+import net.minecraft.world.lighting.WorldLightManager;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -63,7 +64,7 @@ public class ChunkSerializer {
       ListNBT var16 = var9.method131("Sections", 10);
       byte var17 = 16;
       ChunkSection[] var18 = new ChunkSection[16];
-      boolean var19 = var0.method6812().hasSkyLight();
+      boolean var19 = var0.getDimensionType().hasSkyLight();
       ServerChunkProvider var20 = var0.getChunkProvider();
       WorldLightManager var21 = var20.getLightManager();
       if (var15) {

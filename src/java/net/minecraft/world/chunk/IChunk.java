@@ -40,7 +40,7 @@ public interface IChunk extends IBlockReader, IStructureReader {
 
       for (int var4 = var3.length - 1; var4 >= 0; var4--) {
          ChunkSection var5 = var3[var4];
-         if (!ChunkSection.method21859(var5)) {
+         if (!ChunkSection.isEmpty(var5)) {
             return var5;
          }
       }
@@ -83,7 +83,7 @@ public interface IChunk extends IBlockReader, IStructureReader {
       }
 
       for (int var5 = var1; var5 <= var2; var5 += 16) {
-         if (!ChunkSection.method21859(this.getSections()[var5 >> 4])) {
+         if (!ChunkSection.isEmpty(this.getSections()[var5 >> 4])) {
             return false;
          }
       }

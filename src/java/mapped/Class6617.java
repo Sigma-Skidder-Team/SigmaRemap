@@ -64,7 +64,7 @@ public class Class6617 implements Class6618 {
 
    @Override
    public Stream<ResourceLocation> method20128() {
-      return this.field29118.method15783().method1037();
+      return this.field29118.getRecipeManager().method1037();
    }
 
    @Override

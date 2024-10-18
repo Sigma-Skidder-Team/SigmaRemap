@@ -46,7 +46,7 @@ public class Class9772 {
    public static String[] method38440(IResourcePack var0, String[] var1, String[] var2, String[] var3) {
       if (!(var0 instanceof VanillaPack)) {
          if (var0 instanceof LegacyResourcePackWrapper) {
-            IResourcePack var6 = (IResourcePack) Reflector.method35072(var0, Reflector.field43015);
+            IResourcePack var6 = (IResourcePack) Reflector.getFieldValue(var0, Reflector.field43015);
             if (var6 == null) {
                Config.method26811("LegacyResourcePackWrapper base resource pack not found: " + var0);
                return new String[0];
@@ -56,7 +56,7 @@ public class Class9772 {
          }
 
          if (var0 instanceof LegacyResourcePackWrapperV4) {
-            IResourcePack var8 = (IResourcePack) Reflector.method35072(var0, Reflector.field43017);
+            IResourcePack var8 = (IResourcePack) Reflector.getFieldValue(var0, Reflector.field43017);
             if (var8 == null) {
                Config.method26811("LegacyResourcePackWrapperV4 base resource pack not found: " + var0);
                return new String[0];

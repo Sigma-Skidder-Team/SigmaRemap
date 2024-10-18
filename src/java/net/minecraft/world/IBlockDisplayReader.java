@@ -1,6 +1,6 @@
 package net.minecraft.world;
 
-import mapped.WorldLightManager;
+import net.minecraft.world.lighting.WorldLightManager;
 import net.minecraft.world.level.ColorResolver;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;

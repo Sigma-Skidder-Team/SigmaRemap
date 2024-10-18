@@ -218,7 +218,7 @@ public class Class1313 extends Screen {
    private static void method6206(
            ITextComponent var0, IItemProvider var1, RegistryKey<Biome> var2, List<Structure<?>> var3, boolean var4, boolean var5, boolean var6, Class9537... var7
    ) {
-      field6926.add(new Class5966(var1.method11581(), var0, var6x -> {
+      field6926.add(new Class5966(var1.asItem(), var0, var6x -> {
          HashMap var9 = Maps.newHashMap();
 
          for (Structure var11 : var3) {
@@ -381,7 +381,7 @@ public class Class1313 extends Screen {
       );
       method6206(
          new TranslationTextComponent("createWorld.customize.preset.the_void"),
-         Blocks.field36765,
+         Blocks.BARRIER,
          Biomes.THE_VOID,
          Collections.<Structure<?>>emptyList(),
          false,

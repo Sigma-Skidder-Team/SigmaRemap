@@ -27,6 +27,7 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
+import net.minecraft.item.crafting.RecipeManager;
 import net.minecraft.network.DebugPacketSender;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.server.*;
@@ -133,16 +134,16 @@ public class ServerWorld extends World implements ISeedReader {
          () -> var1.getServerWorld().method6945()
       );
       this.field9050 = new Class3634(this);
-      this.method6766();
-      this.method6768();
+      this.calculateInitialSkylight();
+      this.calculateInitialWeather();
       this.getWorldBorder().method24544(var1.method1389());
-      this.field9054 = this.method6945().<Class7531>method28767(() -> new Class7531(this), Class7531.method24615(this.method6812()));
+      this.field9054 = this.method6945().<Class7531>method28767(() -> new Class7531(this), Class7531.method24615(this.getDimensionType()));
       if (!var1.isSinglePlayer()) {
          var4.setGameType(var1.method1286());
       }
 
       this.field9059 = new StructureManager(this, var1.func_240793_aU_().getDimensionGeneratorSettings());
-      if (!this.method6812().doesHasDragonFight()) {
+      if (!this.getDimensionType().doesHasDragonFight()) {
          this.field9058 = null;
       } else {
          this.field9058 = new Class7819(this, var1.func_240793_aU_().getDimensionGeneratorSettings().method26259(), var1.func_240793_aU_().method20089());
@@ -170,10 +171,10 @@ public class ServerWorld extends World implements ISeedReader {
       IProfiler var4 = this.getProfiler();
       this.field9056 = true;
       var4.startSection("world border");
-      this.getWorldBorder().method24555();
+      this.getWorldBorder().tick();
       var4.endStartSection("weather");
       boolean var5 = this.method6795();
-      if (this.method6812().hasSkyLight()) {
+      if (this.getDimensionType().hasSkyLight()) {
          if (this.getGameRules().getBoolean(GameRules.field24242)) {
             int var6 = this.field9046.method20060();
             int var7 = this.field9046.method20059();
@@ -254,8 +255,8 @@ public class ServerWorld extends World implements ISeedReader {
 
       if (this.field9048 && this.field9042.stream().noneMatch(var0 -> !var0.isSpectator() && !var0.method2909())) {
          this.field9048 = false;
-         if (this.getGameRules().getBoolean(GameRules.field24232)) {
-            long var11 = this.worldInfo.method20034() + 24000L;
+         if (this.getGameRules().getBoolean(GameRules.DO_DAYLIGHT_CYCLE)) {
+            long var11 = this.worldInfo.getDayTime() + 24000L;
             this.method6896(var11 - var11 % 24000L);
          }
 
@@ -265,7 +266,7 @@ public class ServerWorld extends World implements ISeedReader {
          }
       }
 
-      this.method6766();
+      this.calculateInitialSkylight();
       this.method6895();
       var4.endStartSection("chunkSource");
       this.getChunkProvider().method7366(var1);
@@ -322,7 +323,7 @@ public class ServerWorld extends World implements ISeedReader {
 
             var4.startSection("tick");
             if (!var17.removed && !(var17 instanceof EnderDragonPartEntity)) {
-               this.method6754(this::method6907, var17);
+               this.guardEntityTick(this::method6907, var17);
             }
 
             var4.endSection();
@@ -343,7 +344,7 @@ public class ServerWorld extends World implements ISeedReader {
             this.method6931(var19);
          }
 
-         this.method6753();
+         this.tickBlockEntities();
       }
 
       var4.endSection();
@@ -351,11 +352,11 @@ public class ServerWorld extends World implements ISeedReader {
 
    public void method6895() {
       if (this.field9060) {
-         long var3 = this.worldInfo.method20033() + 1L;
+         long var3 = this.worldInfo.getGameTime() + 1L;
          this.field9046.method20075(var3);
          this.field9046.method20074().run(this.field9045, var3);
-         if (this.worldInfo.method20046().getBoolean(GameRules.field24232)) {
-            this.method6896(this.worldInfo.method20034() + 1L);
+         if (this.worldInfo.getGameRulesInstance().getBoolean(GameRules.DO_DAYLIGHT_CYCLE)) {
+            this.method6896(this.worldInfo.getDayTime() + 1L);
          }
       }
    }
@@ -516,7 +517,7 @@ public class ServerWorld extends World implements ISeedReader {
    }
 
    public void method6907(Entity var1) {
-      if (!(var1 instanceof PlayerEntity) && !this.getChunkProvider().method7351(var1)) {
+      if (!(var1 instanceof PlayerEntity) && !this.getChunkProvider().isChunkLoaded(var1)) {
          this.method6909(var1);
       } else {
          var1.setLocationAndAngles(var1.getPosX(), var1.getPosY(), var1.getPosZ());
@@ -525,7 +526,7 @@ public class ServerWorld extends World implements ISeedReader {
          if (var1.addedToChunk) {
             var1.ticksExisted++;
             IProfiler var4 = this.getProfiler();
-            var4.method22504(() -> Registry.ENTITY_TYPE.getKey(var1.getType()).toString());
+            var4.startSection(() -> Registry.ENTITY_TYPE.getKey(var1.getType()).toString());
             var4.func_230035_c_("tickNonPassenger");
             var1.tick();
             var4.endSection();
@@ -543,14 +544,14 @@ public class ServerWorld extends World implements ISeedReader {
    public void method6908(Entity var1, Entity var2) {
       if (var2.removed || var2.getRidingEntity() != var1) {
          var2.stopRiding();
-      } else if (var2 instanceof PlayerEntity || this.getChunkProvider().method7351(var2)) {
+      } else if (var2 instanceof PlayerEntity || this.getChunkProvider().isChunkLoaded(var2)) {
          var2.setLocationAndAngles(var2.getPosX(), var2.getPosY(), var2.getPosZ());
          var2.prevRotationYaw = var2.rotationYaw;
          var2.prevRotationPitch = var2.rotationPitch;
          if (var2.addedToChunk) {
             var2.ticksExisted++;
             IProfiler var5 = this.getProfiler();
-            var5.method22504(() -> Registry.ENTITY_TYPE.getKey(var2.getType()).toString());
+            var5.startSection(() -> Registry.ENTITY_TYPE.getKey(var2.getType()).toString());
             var5.func_230035_c_("tickPassenger");
             var2.updateRidden();
             var5.endSection();
@@ -566,17 +567,17 @@ public class ServerWorld extends World implements ISeedReader {
    }
 
    public void method6909(Entity var1) {
-      if (var1.method3406()) {
+      if (var1.func_233578_ci_()) {
          this.getProfiler().startSection("chunkCheck");
          int var4 = MathHelper.floor(var1.getPosX() / 16.0);
          int var5 = MathHelper.floor(var1.getPosY() / 16.0);
          int var6 = MathHelper.floor(var1.getPosZ() / 16.0);
          if (!var1.addedToChunk || var1.chunkCoordX != var4 || var1.chunkCoordY != var5 || var1.chunkCoordZ != var6) {
-            if (var1.addedToChunk && this.method6843(var1.chunkCoordX, var1.chunkCoordZ)) {
-               this.getChunk(var1.chunkCoordX, var1.chunkCoordZ).method7133(var1, var1.chunkCoordY);
+            if (var1.addedToChunk && this.chunkExists(var1.chunkCoordX, var1.chunkCoordZ)) {
+               this.getChunk(var1.chunkCoordX, var1.chunkCoordZ).removeEntityAtIndex(var1, var1.chunkCoordY);
             }
 
-            if (!var1.method3405() && !this.method6843(var4, var6)) {
+            if (!var1.func_233577_ch_() && !this.chunkExists(var4, var6)) {
                if (var1.addedToChunk) {
                   field8997.warn("Entity {} left loaded chunk area", var1);
                }
@@ -628,7 +629,7 @@ public class ServerWorld extends World implements ISeedReader {
       while (var7.hasNext()) {
          Entity var8 = (Entity)var7.next();
          if ((var1 == null || var8.getType() == var1)
-            && var6.method7345(MathHelper.floor(var8.getPosX()) >> 4, MathHelper.floor(var8.getPosZ()) >> 4)
+            && var6.chunkExists(MathHelper.floor(var8.getPosX()) >> 4, MathHelper.floor(var8.getPosZ()) >> 4)
             && var2.test(var8)) {
             var5.add(var8);
          }
@@ -801,7 +802,7 @@ public class ServerWorld extends World implements ISeedReader {
    }
 
    public void method6929(Chunk var1) {
-      this.tileEntitiesToBeRemoved.addAll(var1.method7145().values());
+      this.tileEntitiesToBeRemoved.addAll(var1.getTileEntityMap().values());
       Class51<Entity>[] var4 = var1.method7146();
       int var5 = var4.length;
 
@@ -1099,7 +1100,7 @@ public class ServerWorld extends World implements ISeedReader {
    }
 
    @Override
-   public Class282 method6816() {
+   public RecipeManager getRecipeManager() {
       return this.field9045.method1407();
    }
 

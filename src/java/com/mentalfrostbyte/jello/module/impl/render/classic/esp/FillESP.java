@@ -62,7 +62,7 @@ public class FillESP extends Module {
         GL11.glEnable(2896);
         GL11.glPolygonOffset(-30000.0F, 1.0F);
 
-        for (Entity var9 : mc.world.getEntities()) {
+        for (Entity var9 : mc.world.getAllEntities()) {
             if (this.method16138(var9)) {
                 GL11.glPushMatrix();
                 Vector3d var10 = mc.gameRenderer.getActiveRenderInfo().getPos();

@@ -253,7 +253,7 @@ public class Class7699 {
                } else {
                   boolean var5 = this.field32992.isPresent();
                   boolean var6 = !var5 && this.field32987 % 5 == 0;
-                  if (var5 && !this.field32978.getChunkProvider().method7352(new ChunkPos(this.field32992.get()))) {
+                  if (var5 && !this.field32978.getChunkProvider().isChunkLoaded(new ChunkPos(this.field32992.get()))) {
                      var6 = true;
                   }
 
@@ -593,7 +593,7 @@ public class Class7699 {
                   var6.getY() + 10,
                   var6.getZ() + 10
                )
-            && this.field32978.getChunkProvider().method7352(new ChunkPos(var6))
+            && this.field32978.getChunkProvider().isChunkLoaded(new ChunkPos(var6))
             && (
                Class8170.method28429(Class2068.field13472, this.field32978, var6, EntityType.RAVAGER)
                   || this.field32978.getBlockState(var6.down()).isIn(Blocks.SNOW) && this.field32978.getBlockState(var6).isAir()

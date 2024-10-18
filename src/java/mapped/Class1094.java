@@ -276,7 +276,7 @@ public class Class1094 extends Class1018 {
    }
 
    private boolean method5113(Item var1) {
-      return var1 == Items.field38052 || var1 == Items.field38057 || var1 == Blocks.DANDELION.method11581();
+      return var1 == Items.field38052 || var1 == Items.field38057 || var1 == Blocks.DANDELION.asItem();
    }
 
    public Class1094 method4389(ServerWorld var1, Class1045 var2) {

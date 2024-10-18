@@ -25,7 +25,7 @@ public class Class9735 {
    }
 
    public Class9735 method38147(IItemProvider var1) {
-      this.field45461 = var1.method11581();
+      this.field45461 = var1.asItem();
       return this;
    }
 

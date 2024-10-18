@@ -19,7 +19,7 @@ public class Weather extends Module {
         this.registerSetting(new BooleanSetting("Custom time", "Set the world time", true));
         this.registerSetting(new NumberSetting<Float>("Time", "Time to set the world to", 12000.0F, Float.class, 0.0F, 24000.0F, 1.0F).addObserver(var1 -> {
             if (this.getBooleanValueFromSettingName("Custom time") && this.isEnabled()) {
-                mc.world.method6834(-((long) this.getNumberValueBySettingName("Time")));
+                mc.world.setDayTime(-((long) this.getNumberValueBySettingName("Time")));
             }
         }));
         this.registerSetting(new BooleanSetting("Disable rain", "Disable rain", true));
@@ -36,7 +36,7 @@ public class Weather extends Module {
             this.field23539 = true;
         }
 
-        mc.world.method6834((long) this.getNumberValueBySettingName("Time"));
+        mc.world.setDayTime((long) this.getNumberValueBySettingName("Time"));
     }
 
     @EventTarget

@@ -1,7 +1,6 @@
 package net.minecraft.network.play.server;
 
 import com.google.common.collect.Lists;
-import mapped.*;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
@@ -9,6 +8,7 @@ import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.SectionPos;
 import net.minecraft.world.LightType;
 import net.minecraft.world.chunk.NibbleArray;
+import net.minecraft.world.lighting.WorldLightManager;
 
 import java.io.IOException;
 import java.util.List;

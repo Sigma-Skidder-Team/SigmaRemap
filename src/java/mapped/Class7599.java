@@ -43,7 +43,7 @@ public class Class7599 {
 
    public static ITextComponent method24892(TileEntity var0) {
       if (!(var0 instanceof INameable)) {
-         return !(var0 instanceof Class950) ? null : (ITextComponent) Reflector.method35072(var0, Reflector.field43159);
+         return !(var0 instanceof Class950) ? null : (ITextComponent) Reflector.getFieldValue(var0, Reflector.field43159);
       } else {
          return ((INameable)var0).method3380();
       }

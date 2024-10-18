@@ -12,6 +12,8 @@ import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.ICollisionReader;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.AbstractChunkProvider;
+import net.minecraft.world.chunk.EmptyChunk;
 import net.minecraft.world.chunk.IChunk;
 
 import javax.annotation.Nullable;
@@ -33,7 +35,7 @@ public class Class1667 implements IBlockReader, ICollisionReader {
       int var6 = var3.getX() >> 4;
       int var7 = var3.getZ() >> 4;
       this.field9083 = new IChunk[var6 - this.field9081 + 1][var7 - this.field9082 + 1];
-      Class1702 var8 = var1.getChunkProvider();
+      AbstractChunkProvider var8 = var1.getChunkProvider();
       this.field9084 = true;
 
       for (int var9 = this.field9081; var9 <= var6; var9++) {
@@ -62,9 +64,9 @@ public class Class1667 implements IBlockReader, ICollisionReader {
       int var6 = var2 - this.field9082;
       if (var5 >= 0 && var5 < this.field9083.length && var6 >= 0 && var6 < this.field9083[var5].length) {
          IChunk var7 = this.field9083[var5][var6];
-         return (IChunk)(var7 == null ? new Class1675(this.field9085, new ChunkPos(var1, var2)) : var7);
+         return (IChunk)(var7 == null ? new EmptyChunk(this.field9085, new ChunkPos(var1, var2)) : var7);
       } else {
-         return new Class1675(this.field9085, new ChunkPos(var1, var2));
+         return new EmptyChunk(this.field9085, new ChunkPos(var1, var2));
       }
    }
 

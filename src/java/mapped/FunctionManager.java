@@ -46,7 +46,7 @@ public class FunctionManager {
    }
 
    private void method22824(Collection<Class7744> var1, ResourceLocation var2) {
-      this.field31181.method1420().method22504(var2::toString);
+      this.field31181.method1420().startSection(var2::toString);
 
       for (Class7744 var6 : var1) {
          this.method22825(var6, this.method22828());
@@ -81,7 +81,7 @@ public class FunctionManager {
 
                try {
                   Class7159 var17 = this.field31183.removeFirst();
-                  this.field31181.method1420().method22504(var17::toString);
+                  this.field31181.method1420().startSection(var17::toString);
                   var17.method22399(this.field31183, var5);
                   if (!this.field31184.isEmpty()) {
                      Lists.reverse(this.field31184).forEach(this.field31183::addFirst);

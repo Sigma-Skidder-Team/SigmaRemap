@@ -130,7 +130,7 @@ public class Class3475 extends Block implements Class3476 {
    }
 
    private static void method12163(float var0, IItemProvider var1) {
-      field19327.put(var1.method11581(), var0);
+      field19327.put(var1.asItem(), var0);
    }
 
    public Class3475(Properties var1) {

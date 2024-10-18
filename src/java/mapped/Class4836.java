@@ -22,9 +22,9 @@ public class Class4836 extends Class4837 {
       for (int var9 = 0; var9 < var1.getSizeInventory(); var9++) {
          ItemStack var10 = var1.getStackInSlot(var9);
          if (!var10.isEmpty()) {
-            if (var10.getItem() == Blocks.BROWN_MUSHROOM.method11581() && !var7) {
+            if (var10.getItem() == Blocks.BROWN_MUSHROOM.asItem() && !var7) {
                var7 = true;
-            } else if (var10.getItem() == Blocks.RED_MUSHROOM.method11581() && !var6) {
+            } else if (var10.getItem() == Blocks.RED_MUSHROOM.asItem() && !var6) {
                var6 = true;
             } else if (var10.getItem().method11743(Class5985.field26103) && !var5) {
                var5 = true;

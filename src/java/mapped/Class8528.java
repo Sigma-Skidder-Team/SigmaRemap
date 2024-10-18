@@ -24,7 +24,7 @@ public class Class8528 {
    private String field38310;
 
    public Class8528(IItemProvider var1, int var2) {
-      this.field38305 = var1.method11581();
+      this.field38305 = var1.asItem();
       this.field38306 = var2;
    }
 

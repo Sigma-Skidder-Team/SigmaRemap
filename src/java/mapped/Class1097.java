@@ -48,7 +48,7 @@ public class Class1097 extends Class1018 {
    private Class2616 field6034;
    private static final Predicate<ItemEntity> field6035 = var0 -> {
       Item var3 = var0.method4124().getItem();
-      return (var3 == Blocks.field37009.method11581() || var3 == Blocks.field36591.method11581()) && var0.isAlive() && !var0.method4135();
+      return (var3 == Blocks.field37009.asItem() || var3 == Blocks.field36591.asItem()) && var0.isAlive() && !var0.method4135();
    };
 
    public Class1097(EntityType<? extends Class1097> var1, World var2) {
@@ -212,7 +212,7 @@ public class Class1097 extends Class1018 {
       this.field5600.addGoal(2, new Class2748(this, 2.0));
       this.field5600.addGoal(2, new Class2788(this, this, 1.0));
       this.field5600.addGoal(3, new Class2649(this, 1.2F, true));
-      this.field5600.addGoal(4, new Class2680(this, 1.0, Class120.method339(Blocks.field37009.method11581()), false));
+      this.field5600.addGoal(4, new Class2680(this, 1.0, Class120.method339(Blocks.field37009.asItem()), false));
       this.field5600.addGoal(6, new Class2771<PlayerEntity>(this, PlayerEntity.class, 8.0F, 2.0, 2.0));
       this.field5600.addGoal(6, new Class2771<MonsterEntity>(this, MonsterEntity.class, 4.0F, 2.0, 2.0));
       this.field5600.addGoal(7, new Class2623(this));
@@ -622,11 +622,11 @@ public class Class1097 extends Class1018 {
 
    @Override
    public boolean method4381(ItemStack var1) {
-      return var1.getItem() == Blocks.field37009.method11581();
+      return var1.getItem() == Blocks.field37009.asItem();
    }
 
    private boolean method5229(ItemStack var1) {
-      return this.method4381(var1) || var1.getItem() == Blocks.field36591.method11581();
+      return this.method4381(var1) || var1.getItem() == Blocks.field36591.asItem();
    }
 
    @Nullable

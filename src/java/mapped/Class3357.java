@@ -37,7 +37,7 @@ public class Class3357 extends Class3241 {
    );
 
    public static void method11931(IItemProvider var0, IDispenseItemBehavior var1) {
-      field18901.put(var0.method11581(), var1);
+      field18901.put(var0.asItem(), var1);
    }
 
    public Class3357(Properties var1) {

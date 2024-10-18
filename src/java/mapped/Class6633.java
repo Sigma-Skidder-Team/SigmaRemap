@@ -46,11 +46,11 @@ public class Class6633 implements Class6632 {
    }
 
    public Object method20234() {
-      return Reflector.method35072(null, this);
+      return Reflector.getFieldValue(null, this);
    }
 
    public Object method20235(Object var1) {
-      return Reflector.method35072(var1, this);
+      return Reflector.getFieldValue(var1, this);
    }
 
    public void method20236(Object var1) {

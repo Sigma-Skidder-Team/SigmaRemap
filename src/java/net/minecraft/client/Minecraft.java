@@ -1391,7 +1391,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
          this.profiler.endStartSection("animateTick");
          if (!this.isGamePaused && this.world != null) {
             this.world
-               .method6852(
+               .animateTick(
                   MathHelper.floor(this.player.getPosX()),
                   MathHelper.floor(this.player.getPosY()),
                   MathHelper.floor(this.player.getPosZ())
@@ -1653,7 +1653,6 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
                      this.refChunkStatusListener.set(refChunkStatusListener);
 
                      System.out.println("[LINE1648] are we doing something? yes");
-                     System.out.println(var8x.getName());
                      return new ChainedChunkStatusListener(refChunkStatusListener, this.queueChunkTracking::add);
                   })
             );

@@ -16,6 +16,7 @@ import net.minecraft.world.GameRules;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.LightType;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.AbstractChunkProvider;
 import net.minecraft.world.chunk.ChunkStatus;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.chunk.listener.IChunkStatusListener;
@@ -39,7 +40,7 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 import javax.annotation.Nullable;
 
-public class ServerChunkProvider extends Class1702 {
+public class ServerChunkProvider extends AbstractChunkProvider {
    private static final List<ChunkStatus> field9272 = ChunkStatus.method34292();
    private final Class9307 ticketManager;
    private final ChunkGenerator field9274;
@@ -110,9 +111,9 @@ public class ServerChunkProvider extends Class1702 {
 
    @Nullable
    @Override
-   public IChunk method7346(int var1, int var2, ChunkStatus var3, boolean var4) {
+   public IChunk getChunk(int var1, int var2, ChunkStatus var3, boolean var4) {
       if (Thread.currentThread() != this.field9276) {
-         return CompletableFuture.<IChunk>supplyAsync(() -> this.method7346(var1, var2, var3, var4), this.field9278).join();
+         return CompletableFuture.<IChunk>supplyAsync(() -> this.getChunk(var1, var2, var3, var4), this.field9278).join();
       } else {
          IProfiler var7 = this.field9275.getProfiler();
          var7.func_230035_c_("getChunk");
@@ -227,7 +228,7 @@ public class ServerChunkProvider extends Class1702 {
    }
 
    @Override
-   public boolean method7345(int var1, int var2) {
+   public boolean chunkExists(int var1, int var2) {
       Class8641 var5 = this.method7354(new ChunkPos(var1, var2).asLong());
       int var6 = 33 + ChunkStatus.method34296(ChunkStatus.FULL);
       return !this.method7360(var5, var6);
@@ -278,18 +279,18 @@ public class ServerChunkProvider extends Class1702 {
    }
 
    @Override
-   public boolean method7351(Entity var1) {
+   public boolean isChunkLoaded(Entity var1) {
       long var4 = ChunkPos.asLong(MathHelper.floor(var1.getPosX()) >> 4, MathHelper.floor(var1.getPosZ()) >> 4);
       return this.method7364(var4, Class8641::method31041);
    }
 
    @Override
-   public boolean method7352(ChunkPos var1) {
+   public boolean isChunkLoaded(ChunkPos var1) {
       return this.method7364(var1.asLong(), Class8641::method31041);
    }
 
    @Override
-   public boolean method7353(BlockPos var1) {
+   public boolean canTick(BlockPos var1) {
       long var4 = ChunkPos.asLong(var1.getX() >> 4, var1.getZ() >> 4);
       return this.method7364(var4, Class8641::method31040);
    }
@@ -338,7 +339,7 @@ public class ServerChunkProvider extends Class1702 {
       if (!var8) {
          this.field9275.getProfiler().startSection("pollingChunks");
          int var10 = this.field9275.getGameRules().method17136(GameRules.field24235);
-         boolean var11 = var7.method20033() % 400L == 0L;
+         boolean var11 = var7.getGameTime() % 400L == 0L;
          this.field9275.getProfiler().startSection("naturalSpawnCount");
          int var12 = this.ticketManager.method35138();
          Class7307 var13 = Class8170.method28415(var12, this.field9275.method6965(), this::method7368);
@@ -387,7 +388,7 @@ public class ServerChunkProvider extends Class1702 {
    }
 
    @Override
-   public String method7347() {
+   public String makeString() {
       return "ServerChunkCache: " + this.method7371();
    }
 
@@ -414,11 +415,11 @@ public class ServerChunkProvider extends Class1702 {
    }
 
    @Override
-   public void method7373(LightType var1, SectionPos var2) {
+   public void markLightChanged(LightType var1, SectionPos var2) {
       this.field9278.execute(() -> {
          Class8641 var5 = this.method7354(var2.method8423().asLong());
          if (var5 != null) {
-            var5.method31048(var1, var2.method8411());
+            var5.method31048(var1, var2.getSectionY());
          }
       });
    }

@@ -1,12 +1,12 @@
-package mapped;
+package net.minecraft.item.crafting;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableMap.Builder;
 import com.google.common.collect.Maps;
 import com.google.gson.*;
+import mapped.*;
 import net.minecraft.client.util.Util;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
@@ -19,13 +19,13 @@ import java.util.Map.Entry;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Class282 extends Class281 {
+public class RecipeManager extends Class281 {
    private static final Gson field1074 = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
    private static final Logger field1075 = LogManager.getLogger();
    private Map<Class7207<?>, Map<ResourceLocation, IRecipe<?>>> field1076 = ImmutableMap.of();
    private boolean field1077;
 
-   public Class282() {
+   public RecipeManager() {
       super(field1074, "recipes");
    }
 

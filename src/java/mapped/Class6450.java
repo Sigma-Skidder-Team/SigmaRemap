@@ -268,7 +268,7 @@ public class Class6450 {
                         for (BlockPos var30 : var16) {
                             TileEntity var33 = var12.getTileEntity(var30);
                             IClearable.method3802(var33);
-                            var12.setBlockState(var30, Blocks.field36765.getDefaultState(), 2);
+                            var12.setBlockState(var30, Blocks.BARRIER.getDefaultState(), 2);
                         }
 
                         for (BlockPos var31 : var16) {
@@ -285,7 +285,7 @@ public class Class6450 {
                     for (Class6202 var36 : var32) {
                         TileEntity var40 = var12.getTileEntity(var36.field27679);
                         IClearable.method3802(var40);
-                        var12.setBlockState(var36.field27679, Blocks.field36765.getDefaultState(), 2);
+                        var12.setBlockState(var36.field27679, Blocks.BARRIER.getDefaultState(), 2);
                     }
 
                     int var35 = 0;

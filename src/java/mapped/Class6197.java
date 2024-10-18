@@ -104,7 +104,7 @@ public class Class6197 implements Class6196 {
    @Override
    public void method19104(ItemStack var1) {
       for (Block var5 : field27645) {
-         if (var1.getItem() == var5.method11581()) {
+         if (var1.getItem() == var5.asItem()) {
             this.field27648.method37034(Class2200.field14380);
             return;
          }

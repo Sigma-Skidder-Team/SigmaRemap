@@ -85,7 +85,7 @@ public class BoxOutlineESP extends Module {
     }
 
     private void method16508(boolean var1) {
-        for (Entity var5 : mc.world.getEntities()) {
+        for (Entity var5 : mc.world.getAllEntities()) {
             if (!Client.getInstance().getCombatManager().isTargetABot(var5)) {
                 boolean var6 = MultiUtilities.method17744(var5) == Class2258.field14690 && this.access().getBooleanValueFromSettingName("Show Players");
                 boolean var7 = MultiUtilities.method17744(var5) == Class2258.field14689 && this.access().getBooleanValueFromSettingName("Show Mobs");

@@ -2765,7 +2765,7 @@ public class Class4447 implements Class4442 {
       Class5625.method17666(Class120.method339(Items.field38109), Items.field38110, 0.1F, 200)
          .method17667("has_chorus_fruit", method14075(Items.field38109))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.field36420.method11581()), Items.field37798, 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.field36420.asItem()), Items.field37798, 0.1F, 200)
          .method17667("has_coal_ore", method14075(Blocks.field36420))
          .method17669(var0, "coal_from_smelting");
       Class5625.method17666(Class120.method339(Items.field37961), Items.field37962, 0.35F, 200)
@@ -2792,25 +2792,25 @@ public class Class4447 implements Class4442 {
       Class5625.method17666(Class120.method339(Items.field38077), Items.field38078, 0.35F, 200)
          .method17667("has_rabbit", method14075(Items.field38077))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.field36536.method11581()), Items.field37800, 1.0F, 200)
+      Class5625.method17666(Class120.method339(Blocks.field36536.asItem()), Items.field37800, 1.0F, 200)
          .method17667("has_diamond_ore", method14075(Blocks.field36536))
          .method17669(var0, "diamond_from_smelting");
-      Class5625.method17666(Class120.method339(Blocks.field36455.method11581()), Items.field37917, 0.2F, 200)
+      Class5625.method17666(Class120.method339(Blocks.field36455.asItem()), Items.field37917, 0.2F, 200)
          .method17667("has_lapis_ore", method14075(Blocks.field36455))
          .method17669(var0, "lapis_from_smelting");
-      Class5625.method17666(Class120.method339(Blocks.EMERALD_ORE.method11581()), Items.field38049, 1.0F, 200)
+      Class5625.method17666(Class120.method339(Blocks.EMERALD_ORE.asItem()), Items.field38049, 1.0F, 200)
          .method17667("has_emerald_ore", method14075(Blocks.EMERALD_ORE))
          .method17669(var0, "emerald_from_smelting");
-      Class5625.method17666(Class120.method342(Class5985.field26095), Blocks.field36454.method11581(), 0.1F, 200)
+      Class5625.method17666(Class120.method342(Class5985.field26095), Blocks.field36454.asItem(), 0.1F, 200)
          .method17667("has_sand", method14076(Class5985.field26095))
          .method17668(var0);
       Class5625.method17666(Class120.method342(Class5985.field26110), Items.field37802, 1.0F, 200)
          .method17667("has_gold_ore", method14076(Class5985.field26110))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.field37005.method11581()), Items.field37923, 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.field37005.asItem()), Items.field37923, 0.1F, 200)
          .method17667("has_sea_pickle", method14075(Blocks.field37005))
          .method17669(var0, "lime_dye_from_smelting");
-      Class5625.method17666(Class120.method339(Blocks.CACTUS.method11581()), Items.field37931, 1.0F, 200)
+      Class5625.method17666(Class120.method339(Blocks.CACTUS.asItem()), Items.field37931, 1.0F, 200)
          .method17667("has_cactus", method14075(Blocks.CACTUS))
          .method17668(var0);
       Class5625.method17666(
@@ -2877,10 +2877,10 @@ public class Class4447 implements Class4442 {
          .method17667("has_chainmail_leggings", method14075(Items.field37850))
          .method17667("has_chainmail_boots", method14075(Items.field37851))
          .method17669(var0, "iron_nugget_from_smelting");
-      Class5625.method17666(Class120.method339(Blocks.field36419.method11581()), Items.field37801, 0.7F, 200)
-         .method17667("has_iron_ore", method14075(Blocks.field36419.method11581()))
+      Class5625.method17666(Class120.method339(Blocks.field36419.asItem()), Items.field37801, 0.7F, 200)
+         .method17667("has_iron_ore", method14075(Blocks.field36419.asItem()))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.CLAY), Blocks.field36794.method11581(), 0.35F, 200)
+      Class5625.method17666(Class120.method339(Blocks.CLAY), Blocks.field36794.asItem(), 0.35F, 200)
          .method17667("has_clay_block", method14075(Blocks.CLAY))
          .method17668(var0);
       Class5625.method17666(Class120.method339(Blocks.NETHERRACK), Items.field38071, 0.1F, 200)
@@ -2892,103 +2892,103 @@ public class Class4447 implements Class4442 {
       Class5625.method17666(Class120.method339(Blocks.field36567), Items.REDSTONE_DUST, 0.7F, 200)
          .method17667("has_redstone_ore", method14075(Blocks.field36567))
          .method17669(var0, "redstone_from_smelting");
-      Class5625.method17666(Class120.method339(Blocks.field36453), Blocks.field36452.method11581(), 0.15F, 200)
+      Class5625.method17666(Class120.method339(Blocks.field36453), Blocks.field36452.asItem(), 0.15F, 200)
          .method17667("has_wet_sponge", method14075(Blocks.field36453))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.field36399), Blocks.STONE.method11581(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.field36399), Blocks.STONE.asItem(), 0.1F, 200)
          .method17667("has_cobblestone", method14075(Blocks.field36399))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.STONE), Blocks.field36858.method11581(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.STONE), Blocks.field36858.asItem(), 0.1F, 200)
          .method17667("has_stone", method14075(Blocks.STONE))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.SANDSTONE), Blocks.field36859.method11581(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.SANDSTONE), Blocks.field36859.asItem(), 0.1F, 200)
          .method17667("has_sandstone", method14075(Blocks.SANDSTONE))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.field36835), Blocks.field36861.method11581(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.field36835), Blocks.field36861.asItem(), 0.1F, 200)
          .method17667("has_red_sandstone", method14075(Blocks.field36835))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.field36724), Blocks.field36860.method11581(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.field36724), Blocks.field36860.asItem(), 0.1F, 200)
          .method17667("has_quartz_block", method14075(Blocks.field36724))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.field36615), Blocks.field36617.method11581(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.field36615), Blocks.field36617.asItem(), 0.1F, 200)
          .method17667("has_stone_bricks", method14075(Blocks.field36615))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.field36745), Blocks.field36928.method11581(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.field36745), Blocks.field36928.asItem(), 0.1F, 200)
          .method17667("has_black_terracotta", method14075(Blocks.field36745))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.field36741), Blocks.field36924.method11581(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.field36741), Blocks.field36924.asItem(), 0.1F, 200)
          .method17667("has_blue_terracotta", method14075(Blocks.field36741))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.field36742), Blocks.field36925.method11581(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.field36742), Blocks.field36925.asItem(), 0.1F, 200)
          .method17667("has_brown_terracotta", method14075(Blocks.field36742))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.field36739), Blocks.field36922.method11581(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.field36739), Blocks.field36922.asItem(), 0.1F, 200)
          .method17667("has_cyan_terracotta", method14075(Blocks.field36739))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.field36737), Blocks.field36920.method11581(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.field36737), Blocks.field36920.asItem(), 0.1F, 200)
          .method17667("has_gray_terracotta", method14075(Blocks.field36737))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.field36743), Blocks.field36926.method11581(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.field36743), Blocks.field36926.asItem(), 0.1F, 200)
          .method17667("has_green_terracotta", method14075(Blocks.field36743))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.field36733), Blocks.field36916.method11581(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.field36733), Blocks.field36916.asItem(), 0.1F, 200)
          .method17667("has_light_blue_terracotta", method14075(Blocks.field36733))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.field36738), Blocks.field36921.method11581(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.field36738), Blocks.field36921.asItem(), 0.1F, 200)
          .method17667("has_light_gray_terracotta", method14075(Blocks.field36738))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.field36735), Blocks.field36918.method11581(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.field36735), Blocks.field36918.asItem(), 0.1F, 200)
          .method17667("has_lime_terracotta", method14075(Blocks.field36735))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.field36732), Blocks.field36915.method11581(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.field36732), Blocks.field36915.asItem(), 0.1F, 200)
          .method17667("has_magenta_terracotta", method14075(Blocks.field36732))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.field36731), Blocks.field36914.method11581(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.field36731), Blocks.field36914.asItem(), 0.1F, 200)
          .method17667("has_orange_terracotta", method14075(Blocks.field36731))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.field36736), Blocks.field36919.method11581(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.field36736), Blocks.field36919.asItem(), 0.1F, 200)
          .method17667("has_pink_terracotta", method14075(Blocks.field36736))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.field36740), Blocks.field36923.method11581(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.field36740), Blocks.field36923.asItem(), 0.1F, 200)
          .method17667("has_purple_terracotta", method14075(Blocks.field36740))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.field36744), Blocks.field36927.method11581(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.field36744), Blocks.field36927.asItem(), 0.1F, 200)
          .method17667("has_red_terracotta", method14075(Blocks.field36744))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.field36730), Blocks.field36913.method11581(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.field36730), Blocks.field36913.asItem(), 0.1F, 200)
          .method17667("has_white_terracotta", method14075(Blocks.field36730))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.field36734), Blocks.field36917.method11581(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.field36734), Blocks.field36917.asItem(), 0.1F, 200)
          .method17667("has_yellow_terracotta", method14075(Blocks.field36734))
          .method17668(var0);
       Class5625.method17666(Class120.method339(Blocks.field37122), Items.field37804, 2.0F, 200)
          .method17667("has_ancient_debris", method14075(Blocks.field37122))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.field37135), Blocks.field37136.method11581(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.field37135), Blocks.field37136.asItem(), 0.1F, 200)
          .method17667("has_blackstone_bricks", method14075(Blocks.field37135))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.NETHER_BRICKS), Blocks.field37148.method11581(), 0.1F, 200)
+      Class5625.method17666(Class120.method339(Blocks.NETHER_BRICKS), Blocks.field37148.asItem(), 0.1F, 200)
          .method17667("has_nether_bricks", method14075(Blocks.NETHER_BRICKS))
          .method17668(var0);
-      Class5625.method17665(Class120.method339(Blocks.field36419.method11581()), Items.field37801, 0.7F, 100)
-         .method17667("has_iron_ore", method14075(Blocks.field36419.method11581()))
+      Class5625.method17665(Class120.method339(Blocks.field36419.asItem()), Items.field37801, 0.7F, 100)
+         .method17667("has_iron_ore", method14075(Blocks.field36419.asItem()))
          .method17669(var0, "iron_ingot_from_blasting");
       Class5625.method17665(Class120.method342(Class5985.field26110), Items.field37802, 1.0F, 100)
          .method17667("has_gold_ore", method14076(Class5985.field26110))
          .method17669(var0, "gold_ingot_from_blasting");
-      Class5625.method17665(Class120.method339(Blocks.field36536.method11581()), Items.field37800, 1.0F, 100)
+      Class5625.method17665(Class120.method339(Blocks.field36536.asItem()), Items.field37800, 1.0F, 100)
          .method17667("has_diamond_ore", method14075(Blocks.field36536))
          .method17669(var0, "diamond_from_blasting");
-      Class5625.method17665(Class120.method339(Blocks.field36455.method11581()), Items.field37917, 0.2F, 100)
+      Class5625.method17665(Class120.method339(Blocks.field36455.asItem()), Items.field37917, 0.2F, 100)
          .method17667("has_lapis_ore", method14075(Blocks.field36455))
          .method17669(var0, "lapis_from_blasting");
       Class5625.method17665(Class120.method339(Blocks.field36567), Items.REDSTONE_DUST, 0.7F, 100)
          .method17667("has_redstone_ore", method14075(Blocks.field36567))
          .method17669(var0, "redstone_from_blasting");
-      Class5625.method17665(Class120.method339(Blocks.field36420.method11581()), Items.field37798, 0.1F, 100)
+      Class5625.method17665(Class120.method339(Blocks.field36420.asItem()), Items.field37798, 0.1F, 100)
          .method17667("has_coal_ore", method14075(Blocks.field36420))
          .method17669(var0, "coal_from_blasting");
-      Class5625.method17665(Class120.method339(Blocks.EMERALD_ORE.method11581()), Items.field38049, 1.0F, 100)
+      Class5625.method17665(Class120.method339(Blocks.EMERALD_ORE.asItem()), Items.field38049, 1.0F, 100)
          .method17667("has_emerald_ore", method14075(Blocks.EMERALD_ORE))
          .method17669(var0, "emerald_from_blasting");
       Class5625.method17665(Class120.method339(Blocks.field36722), Items.field38072, 0.2F, 100)
@@ -3440,7 +3440,7 @@ public class Class4447 implements Class4442 {
    private static void method14048(Consumer<Class4664> var0, Item var1, Item var2) {
       Class9828.method38783(Class120.method339(var1), Class120.method339(Items.field37803), var2)
          .method38784("has_netherite_ingot", method14075(Items.field37803))
-         .method38785(var0, Registry.ITEM.getKey(var2.method11581()).getPath() + "_smithing");
+         .method38785(var0, Registry.ITEM.getKey(var2.asItem()).getPath() + "_smithing");
    }
 
    private static void method14049(Consumer<Class4664> var0, IItemProvider var1, ITag<Item> var2) {
@@ -3548,7 +3548,7 @@ public class Class4447 implements Class4442 {
    }
 
    private static void method14061(Consumer<Class4664> var0, IItemProvider var1, IItemProvider var2) {
-      String var5 = Registry.ITEM.getKey(var2.method11581()).getPath();
+      String var5 = Registry.ITEM.getKey(var2.asItem()).getPath();
       Class8528.method30248(var1, 3)
          .method30254("sign")
          .method30250('#', var2)
@@ -3570,7 +3570,7 @@ public class Class4447 implements Class4442 {
    }
 
    private static void method14063(Consumer<Class4664> var0, IItemProvider var1, IItemProvider var2) {
-      String var5 = Registry.ITEM.getKey(var2.method11581()).getPath();
+      String var5 = Registry.ITEM.getKey(var2.asItem()).getPath();
       Class8528.method30248(var1, 3)
          .method30250('#', var2)
          .method30252("##")
@@ -3580,8 +3580,8 @@ public class Class4447 implements Class4442 {
    }
 
    private static void method14064(Consumer<Class4664> var0, IItemProvider var1, IItemProvider var2) {
-      String var5 = Registry.ITEM.getKey(var1.method11581()).getPath();
-      String var6 = Registry.ITEM.getKey(var2.method11581()).getPath();
+      String var5 = Registry.ITEM.getKey(var1.asItem()).getPath();
+      String var6 = Registry.ITEM.getKey(var2.asItem()).getPath();
       Class8528.method30248(var1, 8)
          .method30250('#', Blocks.WHITE_CARPET)
          .method30250('$', var2)
@@ -3595,7 +3595,7 @@ public class Class4447 implements Class4442 {
    }
 
    private static void method14065(Consumer<Class4664> var0, IItemProvider var1, IItemProvider var2) {
-      String var5 = Registry.ITEM.getKey(var2.method11581()).getPath();
+      String var5 = Registry.ITEM.getKey(var2.asItem()).getPath();
       Class8528.method30247(var1)
          .method30250('#', var2)
          .method30249('X', Class5985.field26071)
@@ -3607,7 +3607,7 @@ public class Class4447 implements Class4442 {
    }
 
    private static void method14066(Consumer<Class4664> var0, IItemProvider var1, IItemProvider var2) {
-      String var5 = Registry.ITEM.getKey(var1.method11581()).getPath();
+      String var5 = Registry.ITEM.getKey(var1.asItem()).getPath();
       Class8888.method32341(var1)
          .method32344(Items.field37938)
          .method32344(var2)
@@ -3617,7 +3617,7 @@ public class Class4447 implements Class4442 {
    }
 
    private static void method14067(Consumer<Class4664> var0, IItemProvider var1, IItemProvider var2) {
-      String var5 = Registry.ITEM.getKey(var2.method11581()).getPath();
+      String var5 = Registry.ITEM.getKey(var2.asItem()).getPath();
       Class8528.method30247(var1)
          .method30250('#', var2)
          .method30250('|', Items.field37835)
@@ -3652,8 +3652,8 @@ public class Class4447 implements Class4442 {
    }
 
    private static void method14070(Consumer<Class4664> var0, IItemProvider var1, IItemProvider var2) {
-      String var5 = Registry.ITEM.getKey(var1.method11581()).getPath();
-      String var6 = Registry.ITEM.getKey(var2.method11581()).getPath();
+      String var5 = Registry.ITEM.getKey(var1.asItem()).getPath();
+      String var6 = Registry.ITEM.getKey(var2.asItem()).getPath();
       Class8528.method30248(var1, 8)
          .method30250('#', Blocks.GLASS_PANE)
          .method30250('$', var2)

@@ -139,7 +139,7 @@ public class ReflectorForge {
       if (var0.exists()) {
          Object var4 = Reflector.field42898.method20234();
          if (var4 != null) {
-            Object var5 = Reflector.method35072(var4, var0);
+            Object var5 = Reflector.getFieldValue(var4, var0);
             return var5 != null ? Reflector.method35064(var5, Reflector.field42906) : var1;
          } else {
             return var1;
@@ -153,11 +153,11 @@ public class ReflectorForge {
       if (var0.exists()) {
          Object var4 = Reflector.field42898.method20234();
          if (var4 != null) {
-            Object var5 = Reflector.method35072(var4, var0);
+            Object var5 = Reflector.getFieldValue(var4, var0);
             if (var5 != null) {
                Class5139 var6 = new Class5139(var1);
                Reflector.method35082(var5, Reflector.field42904, var6);
-               Object var7 = Reflector.method35072(var5, Reflector.field42905);
+               Object var7 = Reflector.getFieldValue(var5, Reflector.field42905);
                if (var7 != null) {
                   Reflector.method35082(var7, Reflector.field42902, null);
                }

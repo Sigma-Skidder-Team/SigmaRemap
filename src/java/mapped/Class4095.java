@@ -18,7 +18,7 @@ public class Class4095 extends Class4094 {
    public ModelRenderer method12823(Class2828 var1, String var2) {
       if (var1 instanceof Class2891) {
          Class2891 var5 = (Class2891)var1;
-         return !var2.equals("mole") ? super.method12823(var5, var2) : (ModelRenderer) Reflector.method35072(var5, Reflector.field43127);
+         return !var2.equals("mole") ? super.method12823(var5, var2) : (ModelRenderer) Reflector.getFieldValue(var5, Reflector.field43127);
       } else {
          return null;
       }

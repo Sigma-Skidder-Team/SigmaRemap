@@ -35,6 +35,7 @@ import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.gui.screen.ConfirmScreen;
 import net.minecraft.client.gui.screen.MultiplayerScreen;
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.multiplayer.ClientChunkProvider;
 import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.client.multiplayer.ServerList;
 import net.minecraft.client.world.ClientWorld;
@@ -55,6 +56,7 @@ import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.item.crafting.RecipeManager;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.IPacket;
@@ -84,6 +86,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeContainer;
 import net.minecraft.world.chunk.NibbleArray;
+import net.minecraft.world.lighting.WorldLightManager;
 import net.minecraft.world.storage.MapData;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -106,7 +109,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    private int field23281 = 3;
    private final Random field23282 = new Random();
    private CommandDispatcher<Class6618> field23283 = new CommandDispatcher();
-   private final Class282 field23284 = new Class282();
+   private final RecipeManager field23284 = new RecipeManager();
    private final UUID field23285 = UUID.randomUUID();
    private Set<RegistryKey<World>> field23286;
    public DynamicRegistries field23287 = DynamicRegistries.func_239770_b_();
@@ -128,7 +131,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       this.field23273 = null;
    }
 
-   public Class282 method15783() {
+   public RecipeManager getRecipeManager() {
       return this.field23284;
    }
 
@@ -164,7 +167,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       this.field23272.debugRenderer.method27451();
       this.field23272.player.preparePlayerToSpawn();
       int var10 = var1.method17287();
-      this.field23273.method6845(var10, this.field23272.player);
+      this.field23273.addPlayer(var10, this.field23272.player);
       this.field23272.player.movementInput = new Class9451(this.field23272.gameSettings);
       this.field23272.playerController.setPlayerCapabilities(this.field23272.player);
       this.field23272.renderViewEntity = this.field23272.player;
@@ -402,7 +405,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          ((Entity)var11).rotationYaw = (float)(var1.method17265() * 360) / 256.0F;
          ((Entity)var11).setEntityId(var16);
          ((Entity)var11).setUniqueId(var1.method17257());
-         this.field23273.method6846(var16, (Entity)var11);
+         this.field23273.addEntity(var16, (Entity)var11);
          if (var11 instanceof AbstractMinecartEntity) {
             this.field23272.getSoundHandler().method1000(new Class6345((AbstractMinecartEntity)var11));
          }
@@ -420,7 +423,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       var10.rotationYaw = 0.0F;
       var10.rotationPitch = 0.0F;
       var10.setEntityId(var1.method17353());
-      this.field23273.method6846(var1.method17353(), var10);
+      this.field23273.addEntity(var1.method17353(), var10);
    }
 
    @Override
@@ -429,7 +432,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       PaintingEntity var4 = new PaintingEntity(this.field23273, var1.method17196(), var1.method17197(), var1.method17198());
       var4.setEntityId(var1.method17194());
       var4.setUniqueId(var1.method17195());
-      this.field23273.method6846(var1.method17194(), var4);
+      this.field23273.addEntity(var1.method17194(), var4);
    }
 
    @Override
@@ -465,7 +468,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          var13.setLocationAndAngles(var4, var6, var8);
          var13.setPacketCoordinates(var4, var6, var8);
          var13.setPositionAndRotation(var4, var6, var8, var10, var11);
-         this.field23273.method6845(var12, var13);
+         this.field23273.addPlayer(var12, var13);
       }
    }
 
@@ -625,7 +628,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       BiomeContainer var6 = var1.method17384() != null ? new BiomeContainer(this.field23287.<Biome>getRegistry(Registry.BIOME_KEY), var1.method17384()) : null;
       Chunk var7 = this.field23273
          .getChunkProvider()
-         .method7400(var4, var5, var6, var1.method17374(), var1.method17382(), var1.method17380(), var1.isFullChunk());
+         .loadChunk(var4, var5, var6, var1.method17374(), var1.method17382(), var1.method17380(), var1.isFullChunk());
       if (var7 != null && var1.isFullChunk()) {
          this.field23273.addEntitiesToChunk(var7);
       }
@@ -648,16 +651,16 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       int var4 = var1.method17492();
       int var5 = var1.method17493();
-      Class1705 var6 = this.field23273.getChunkProvider();
-      var6.method7399(var4, var5);
+      ClientChunkProvider var6 = this.field23273.getChunkProvider();
+      var6.unloadChunk(var4, var5);
       WorldLightManager var7 = var6.getLightManager();
 
       for (int var8 = 0; var8 < 16; var8++) {
          this.field23273.method6868(var4, var8, var5);
-         var7.updateSectionStatus(SectionPos.method8389(var4, var8, var5), true);
+         var7.updateSectionStatus(SectionPos.of(var4, var8, var5), true);
       }
 
-      var7.method605(new ChunkPos(var4, var5), false);
+      var7.enableLightSources(new ChunkPos(var4, var5), false);
    }
 
    @Override
@@ -806,7 +809,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          var12.setMotion(
             (double)((float)var1.method17541() / 8000.0F), (double)((float)var1.method17542() / 8000.0F), (double)((float)var1.method17543() / 8000.0F)
          );
-         this.field23273.method6846(var1.method17535(), var12);
+         this.field23273.addEntity(var1.method17535(), var12);
          if (var12 instanceof Class1017) {
             boolean var15 = ((Class1017)var12).method4369();
             Object var16;
@@ -824,14 +827,14 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleTimeUpdate(SUpdateTimePacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      this.field23272.world.method6833(var1.getTotalWorldTime());
-      this.field23272.world.method6834(var1.getWorldTime());
+      this.field23272.world.func_239134_a_(var1.getTotalWorldTime());
+      this.field23272.world.setDayTime(var1.getWorldTime());
    }
 
    @Override
    public void func_230488_a_(SWorldSpawnChangedPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      this.field23272.world.method6882(var1.method17372(), var1.method17373());
+      this.field23272.world.func_239136_a_(var1.method17372(), var1.method17373());
    }
 
    @Override
@@ -952,7 +955,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
       var13.preparePlayerToSpawn();
       var13.method5394(var12);
-      this.field23273.method6845(var7, var13);
+      this.field23273.addPlayer(var7, var13);
       var13.rotationYaw = -180.0F;
       var13.movementInput = new Class9451(this.field23272.gameSettings);
       this.field23272.playerController.setPlayerCapabilities(var13);
@@ -2185,7 +2188,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleChunkPositionPacket(SUpdateChunkPositionPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      this.field23273.getChunkProvider().method7402(var1.method17522(), var1.method17523());
+      this.field23273.getChunkProvider().setCenter(var1.method17522(), var1.method17523());
    }
 
    @Override
@@ -2200,7 +2203,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          boolean var13 = (var5 & 1 << var11) != 0;
          boolean var14 = (var6 & 1 << var11) != 0;
          if (var13 || var14) {
-            var3.method606(var4, SectionPos.method8389(var1, var12, var2), !var13 ? new NibbleArray() : new NibbleArray((byte[])((byte[])var7.next()).clone()), var8);
+            var3.method606(var4, SectionPos.of(var1, var12, var2), !var13 ? new NibbleArray() : new NibbleArray((byte[])((byte[])var7.next()).clone()), var8);
             this.field23273.method6868(var1, var12, var2);
          }
       }

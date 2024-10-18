@@ -5,7 +5,7 @@ import net.minecraft.world.GameType;
 public enum Class2079 {
    field13539("survival", GameType.field11102),
    field13540("hardcore", GameType.field11102),
-   field13541("creative", GameType.field11103),
+   field13541("creative", GameType.CREATIVE),
    field13542("spectator", GameType.SPECTATOR);
 
    private final String field13543;

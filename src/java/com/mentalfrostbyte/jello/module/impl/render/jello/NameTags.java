@@ -28,6 +28,7 @@ import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.RecipeManager;
 import net.minecraft.network.play.client.CClickWindowPacket;
 import net.minecraft.network.play.client.CPlayerTryUseItemOnBlockPacket;
 import net.minecraft.network.play.server.SOpenWindowPacket;
@@ -43,7 +44,7 @@ import java.util.Map.Entry;
 
 public class NameTags extends Module {
     public static NameTags field24004;
-    private static final Class282 field24002 = new Class282();
+    private static final RecipeManager field24002 = new RecipeManager();
     private static final HashMap<String, Texture> field24003 = new HashMap<String, Texture>();
 
     static {
@@ -76,7 +77,7 @@ public class NameTags extends Module {
     }
 
     // $VF: synthetic method
-    public static Class282 method16937() {
+    public static RecipeManager method16937() {
         return field24002;
     }
 
@@ -254,7 +255,7 @@ public class NameTags extends Module {
             }
 
             if (this.getBooleanValueFromSettingName("Mob Owners")) {
-                for (Entity var12 : mc.world.getEntities()) {
+                for (Entity var12 : mc.world.getAllEntities()) {
                     if (var12 == mc.player && (var12 instanceof TameableEntity || var12 instanceof Class1074)) {
                         UUID var14 = !(var12 instanceof TameableEntity) ? ((Class1074) var12).method4933() : ((TameableEntity) var12).method4397();
                         if (var14 != null) {

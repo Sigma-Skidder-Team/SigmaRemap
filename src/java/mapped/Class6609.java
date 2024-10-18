@@ -39,13 +39,13 @@ public class Class6609 implements IServerWorldInfo {
    }
 
    @Override
-   public long method20033() {
-      return this.field29062.method20033();
+   public long getGameTime() {
+      return this.field29062.getGameTime();
    }
 
    @Override
-   public long method20034() {
-      return this.field29062.method20034();
+   public long getDayTime() {
+      return this.field29062.getDayTime();
    }
 
    @Override
@@ -155,8 +155,8 @@ public class Class6609 implements IServerWorldInfo {
    }
 
    @Override
-   public GameRules method20046() {
-      return this.field29061.method20046();
+   public GameRules getGameRulesInstance() {
+      return this.field29061.getGameRulesInstance();
    }
 
    @Override

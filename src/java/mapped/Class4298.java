@@ -75,7 +75,7 @@ public class Class4298 extends Class4278 {
          GameProfile prof = new GameProfile(uid, this.account.getKnownName());
          if (this.entity == null || !this.entity.getDisplayName().getString().equals(this.account.getKnownName())) {
             this.entity = new Class1118(clientWorld, new GameProfile(uid, this.account.getKnownName()));
-            this.entity.playerInfo = new NetworkPlayerInfo(new SPlayerListItemPacket.AddPlayerData(prof, 0, GameType.field11103, this.entity.getDisplayName()));
+            this.entity.playerInfo = new NetworkPlayerInfo(new SPlayerListItemPacket.AddPlayerData(prof, 0, GameType.CREATIVE, this.entity.getDisplayName()));
          }
 
          this.entity.setUniqueId(uid);

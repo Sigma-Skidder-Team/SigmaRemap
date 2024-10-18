@@ -94,7 +94,7 @@ public final class ItemStack {
    }
 
    public ItemStack(IItemProvider var1, int var2) {
-      this.item = var1 != null ? var1.method11581() : null;
+      this.item = var1 != null ? var1.asItem() : null;
       this.count = var2;
       if (this.item != null && this.item.isDamageable()) {
          this.method32118(this.method32117());

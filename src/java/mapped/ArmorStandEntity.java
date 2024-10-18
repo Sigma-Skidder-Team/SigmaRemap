@@ -95,7 +95,7 @@ public class ArmorStandEntity extends LivingEntity {
    }
 
    @Override
-   public Iterable<ItemStack> method2946() {
+   public Iterable<ItemStack> getHeldEquipment() {
       return this.field5581;
    }
 

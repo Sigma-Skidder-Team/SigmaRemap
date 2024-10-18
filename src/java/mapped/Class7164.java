@@ -31,9 +31,9 @@ public final class Class7164 implements IProfiler {
    }
 
    @Override
-   public void method22504(Supplier<String> var1) {
-      this.field30816.method22504(var1);
-      this.field30817.method22504(var1);
+   public void startSection(Supplier<String> var1) {
+      this.field30816.startSection(var1);
+      this.field30817.startSection(var1);
    }
 
    @Override

@@ -773,7 +773,7 @@ public abstract class MobEntity extends LivingEntity {
    }
 
    @Override
-   public Iterable<ItemStack> method2946() {
+   public Iterable<ItemStack> getHeldEquipment() {
       return this.field5604;
    }
 
@@ -889,7 +889,7 @@ public abstract class MobEntity extends LivingEntity {
       }
 
       Item var4 = var0.getItem();
-      if (var4 != Blocks.field36589.method11581() && (!(var4 instanceof Class3292) || !(((Class3292)var4).method11845() instanceof Class3251))) {
+      if (var4 != Blocks.field36589.asItem() && (!(var4 instanceof Class3292) || !(((Class3292)var4).method11845() instanceof Class3251))) {
          if (var4 instanceof ArmorItem) {
             return ((ArmorItem)var4).getType();
          } else if (var4 != Items.field38120) {

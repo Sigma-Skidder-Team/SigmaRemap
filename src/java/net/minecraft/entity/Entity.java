@@ -940,7 +940,7 @@ public abstract class Entity implements INameable, ICommandSource {
    public boolean method3257() {
       this.eyesFluidLevel.clear();
       this.method3258();
-      double var3 = !this.world.method6812().isUltrawarm() ? 0.0023333333333333335 : 0.007;
+      double var3 = !this.world.getDimensionType().isUltrawarm() ? 0.0023333333333333335 : 0.007;
       boolean var5 = this.handleFluidAcceleration(FluidTags.field40470, var3);
       return this.isInWater() || var5;
    }
@@ -1786,7 +1786,7 @@ public abstract class Entity implements INameable, ICommandSource {
    public void performHurtAnimation() {
    }
 
-   public Iterable<ItemStack> method2946() {
+   public Iterable<ItemStack> getHeldEquipment() {
       return EMPTY_EQUIPMENT;
    }
 
@@ -1795,7 +1795,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public Iterable<ItemStack> method3326() {
-      return Iterables.concat(this.method2946(), this.getArmorInventoryList());
+      return Iterables.concat(this.getHeldEquipment(), this.getArmorInventoryList());
    }
 
    public void setItemStackToSlot(EquipmentSlotType var1, ItemStack var2) {
@@ -2146,7 +2146,7 @@ public abstract class Entity implements INameable, ICommandSource {
             double var10 = Math.max(-2.9999872E7, var7.method24531() + 16.0);
             double var12 = Math.min(2.9999872E7, var7.method24532() - 16.0);
             double var14 = Math.min(2.9999872E7, var7.method24533() - 16.0);
-            double var16 = DimensionType.getCoordinateDifference(this.world.method6812(), var1.method6812());
+            double var16 = DimensionType.getCoordinateDifference(this.world.getDimensionType(), var1.getDimensionType());
             BlockPos var18 = new BlockPos(
                MathHelper.clamp(this.getPosX() * var16, var8, var12), this.getPosY(), MathHelper.clamp(this.getPosZ() * var16, var10, var14)
             );
@@ -2480,13 +2480,13 @@ public abstract class Entity implements INameable, ICommandSource {
       return false;
    }
 
-   public boolean method3405() {
+   public boolean func_233577_ch_() {
       boolean var3 = this.isPositionDirty;
       this.isPositionDirty = false;
       return var3;
    }
 
-   public boolean method3406() {
+   public boolean func_233578_ci_() {
       boolean var3 = this.isLoaded;
       this.isLoaded = false;
       return var3;

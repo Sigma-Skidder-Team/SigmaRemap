@@ -206,7 +206,7 @@ public class Class8969 {
                   if (var20.field35532 != null) {
                      TileEntity var24 = var1.getTileEntity(var21);
                      IClearable.method3802(var24);
-                     var1.setBlockState(var21, Blocks.field36765.getDefaultState(), 20);
+                     var1.setBlockState(var21, Blocks.BARRIER.getDefaultState(), 20);
                   }
 
                   if (var1.setBlockState(var21, var23, var6)) {

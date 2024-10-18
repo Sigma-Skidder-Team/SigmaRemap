@@ -1,5 +1,6 @@
-package mapped;
+package net.optifine;
 
+import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.inventory.*;
@@ -8,7 +9,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorldReader;
-import net.optifine.Config;
+import net.optifine.override.PlayerControllerOF;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -17,9 +18,9 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 
-public class Class7050 {
+public class CustomGuis {
    private static Minecraft field30438 = Config.method26860();
-   private static Class7316 field30439 = null;
+   private static PlayerControllerOF field30439 = null;
    private static Class8149[][] field30440 = (Class8149[][])null;
    public static boolean field30441 = method21972();
 
@@ -222,11 +223,11 @@ public class Class7050 {
       }
    }
 
-   public static Class7316 method21970() {
+   public static PlayerControllerOF method21970() {
       return field30439;
    }
 
-   public static void method21971(Class7316 var0) {
+   public static void setPlayerControllerOF(PlayerControllerOF var0) {
       field30439 = var0;
    }
 

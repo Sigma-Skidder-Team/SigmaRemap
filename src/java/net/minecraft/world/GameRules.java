@@ -29,7 +29,7 @@ public class GameRules {
    public static final Class9221<Class7466> field24229 = method17127("doEntityDrops", Class2155.field14134, Class7466.method24178(true));
    public static final Class9221<Class7466> field24230 = method17127("commandBlockOutput", Class2155.field14136, Class7466.method24178(true));
    public static final Class9221<Class7466> field24231 = method17127("naturalRegeneration", Class2155.field14131, Class7466.method24178(true));
-   public static final Class9221<Class7466> field24232 = method17127("doDaylightCycle", Class2155.field14135, Class7466.method24178(true));
+   public static final Class9221<Class7466> DO_DAYLIGHT_CYCLE = method17127("doDaylightCycle", Class2155.field14135, Class7466.method24178(true));
    public static final Class9221<Class7466> field24233 = method17127("logAdminCommands", Class2155.field14136, Class7466.method24178(true));
    public static final Class9221<Class7466> field24234 = method17127("showDeathMessages", Class2155.field14136, Class7466.method24178(true));
    public static final Class9221<Class7464> field24235 = method17127("randomTickSpeed", Class2155.field14135, Class7464.method24169(3));

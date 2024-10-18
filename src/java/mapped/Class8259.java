@@ -127,7 +127,7 @@ public class Class8259 {
       Class7122 var2 = new Class7122();
       Executor var3 = Util.getServerExecutor();
       Minecraft var4 = Minecraft.getInstance();
-      FontResourceManager var5 = (FontResourceManager) Reflector.method35072(var4, Reflector.field43020);
+      FontResourceManager var5 = (FontResourceManager) Reflector.getFieldValue(var4, Reflector.field43020);
       if (var5 != null) {
          var5.getReloadListener().method777(var2, Config.method26862(), EmptyProfiler.INSTANCE, EmptyProfiler.INSTANCE, var3, var4);
       }

@@ -13,6 +13,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
+import net.minecraft.client.multiplayer.ClientChunkProvider;
 import net.minecraft.client.multiplayer.PlayerController;
 import net.minecraft.client.network.play.ClientPlayNetHandler;
 import net.minecraft.client.renderer.WorldRenderer;
@@ -24,12 +25,12 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.RecipeManager;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.IPacket;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.scoreboard.Scoreboard;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
@@ -44,12 +45,15 @@ import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.chunk.ChunkStatus;
 import net.minecraft.world.level.ColorResolver;
 import net.minecraft.world.storage.MapData;
+import net.optifine.CustomGuis;
 import net.optifine.DynamicLights;
 import net.optifine.Config;
+import net.optifine.override.PlayerControllerOF;
 import net.optifine.reflect.ReflectorForge;
 import net.optifine.shaders.Shaders;
 
 import javax.annotation.Nullable;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -74,132 +78,138 @@ public class ClientWorld extends World {
               p_lambda$new$0_0_.put(BiomeColors.WATER_COLOR, new ColorCache());
       }
    );
-   private Class1705 field9036;
-   private boolean field9037 = false;
+   private ClientChunkProvider field_239129_E_;
+   private boolean playerUpdate = false;
 
-   public ClientWorld(
-           ClientPlayNetHandler var1, ClientWorldInfo var2, RegistryKey<World> var3, DimensionType var4, int var5, Supplier<IProfiler> var6, WorldRenderer var7, boolean var8, long var9
-   ) {
-      super(var2, var3, var4, var6, true, var8, var9);
-      this.connection = var1;
-      this.field_239130_d_ = var2;
-      this.worldRenderer = var7;
-      if (var1 != null && var4 != null) {
-         this.field_239131_x_ = DimensionRenderInfo.method19301(var4);
-         this.field9036 = new Class1705(this, var5);
+   public ClientWorld(ClientPlayNetHandler p_i242067_1_, ClientWorldInfo p_i242067_2_, RegistryKey<World> p_i242067_3_, DimensionType p_i242067_4_, int p_i242067_5_, Supplier<IProfiler> p_i242067_6_, WorldRenderer p_i242067_7_, boolean p_i242067_8_, long p_i242067_9_) {
+      super(p_i242067_2_, p_i242067_3_, p_i242067_4_, p_i242067_6_, true, p_i242067_8_, p_i242067_9_);
+      this.connection = p_i242067_1_;
+      this.field_239129_E_ = new ClientChunkProvider(this, p_i242067_5_);
+      this.field_239130_d_ = p_i242067_2_;
+      this.worldRenderer = p_i242067_7_;
+      this.field_239131_x_ = DimensionRenderInfo.func_243495_a(p_i242067_4_);
+
+      this.func_239136_a_(new BlockPos(8, 64, 8), 0.0F);
+      this.calculateInitialSkylight();
+      this.calculateInitialWeather();
+
+      if (Reflector.CapabilityProvider_gatherCapabilities.exists())
+      {
+         Reflector.call(this, Reflector.CapabilityProvider_gatherCapabilities);
       }
 
-      this.method6882(new BlockPos(8, 64, 8), 0.0F);
-      this.method6766();
-      this.method6768();
-      if (Reflector.field42768.exists()) {
-         Reflector.call(this, Reflector.field42768);
-      }
-
-      Reflector.postForgeBusEvent(Reflector.field43004, this);
-      if (this.mc.playerController != null && this.mc.playerController.getClass() == PlayerController.class) {
-         this.mc.playerController = new Class7316(this.mc, this.connection);
-         Class7050.method21971((Class7316)this.mc.playerController);
+      Reflector.postForgeBusEvent(Reflector.WorldEvent_Load_Constructor, this);
+      if (this.mc.playerController != null && this.mc.playerController.getClass() == PlayerController.class)
+      {
+         this.mc.playerController = new PlayerControllerOF(this.mc, this.connection);
+         CustomGuis.setPlayerControllerOF((PlayerControllerOF)this.mc.playerController);
       }
    }
 
-   public DimensionRenderInfo method6830() {
+   public DimensionRenderInfo func_239132_a_() {
       return this.field_239131_x_;
    }
 
    public void tick(BooleanSupplier var1) {
-      this.getWorldBorder().method24555();
-      this.method6832();
+      this.getWorldBorder().tick();
+      this.func_239141_x_();
       this.getProfiler().startSection("blocks");
-      this.field9036.method7401(var1);
+      this.field_239129_E_.tick(var1);
       this.getProfiler().endSection();
    }
 
-   private void method6832() {
-      this.method6833(this.worldInfo.method20033() + 1L);
-      if (this.worldInfo.method20046().getBoolean(GameRules.field24232)) {
-         this.method6834(this.worldInfo.method20034() + 1L);
+   private void func_239141_x_() {
+      this.func_239134_a_(this.worldInfo.getGameTime() + 1L);
+      if (this.worldInfo.getGameRulesInstance().getBoolean(GameRules.DO_DAYLIGHT_CYCLE)) {
+         this.setDayTime(this.worldInfo.getDayTime() + 1L);
       }
    }
 
-   public void method6833(long var1) {
-      this.field_239130_d_.method20039(var1);
+   public void func_239134_a_(long var1) {
+      this.field_239130_d_.setGameTime(var1);
    }
 
-   public void method6834(long var1) {
-      if (var1 >= 0L) {
-         this.getGameRules().<Class7466>get(GameRules.field24232).set(true, (MinecraftServer)null);
-      } else {
-         var1 = -var1;
-         this.getGameRules().<Class7466>get(GameRules.field24232).set(false, (MinecraftServer)null);
+   public void setDayTime(long time) {
+      if (time < 0L)
+      {
+         time = -time;
+         this.getGameRules().get(GameRules.DO_DAYLIGHT_CYCLE).set(false, (MinecraftServer)null);
+      }
+      else
+      {
+         this.getGameRules().get(GameRules.DO_DAYLIGHT_CYCLE).set(true, (MinecraftServer)null);
       }
 
-      this.field_239130_d_.method20040(var1);
+      this.field_239130_d_.setDayTime(time);
    }
 
-   public Iterable<Entity> getEntities() {
+   public Iterable<Entity> getAllEntities() {
       return this.entitiesById.values();
    }
 
    public void tickEntities() {
-      IProfiler var3 = this.getProfiler();
-      var3.startSection("entities");
-      ObjectIterator var4 = this.entitiesById.int2ObjectEntrySet().iterator();
+      IProfiler iprofiler = this.getProfiler();
+      iprofiler.startSection("entities");
+      ObjectIterator<Entry<Entity>> objectiterator = this.entitiesById.int2ObjectEntrySet().iterator();
 
-      while (var4.hasNext()) {
-         Entry var5 = (Entry)var4.next();
-         Entity var6 = (Entity)var5.getValue();
-         if (!var6.isPassenger()) {
-            var3.startSection("tick");
-            if (!var6.removed) {
-               this.method6754(this::method6837, var6);
+      while (objectiterator.hasNext())
+      {
+         Entry<Entity> entry = objectiterator.next();
+         Entity entity = entry.getValue();
+
+         if (!entity.isPassenger()) {
+            iprofiler.startSection("tick");
+            if (!entity.removed) {
+               this.guardEntityTick(this::updateEntity, entity);
             }
 
-            var3.endSection();
-            var3.startSection("remove");
-            if (var6.removed) {
-               var4.remove();
-               this.removeEntity(var6);
+            iprofiler.endSection();
+            iprofiler.startSection("remove");
+
+            if (entity.removed) {
+               objectiterator.remove();
+               this.removeEntity(entity);
             }
 
-            var3.endSection();
+            iprofiler.endSection();
          }
       }
 
-      this.method6753();
-      var3.endSection();
+      this.tickBlockEntities();
+      iprofiler.endSection();
    }
 
-   public void method6837(Entity var1) {
-      if (!(var1 instanceof PlayerEntity) && !this.getChunkProvider().method7351(var1)) {
-         this.method6839(var1);
+   public void updateEntity(Entity entityIn) {
+      if (!(entityIn instanceof PlayerEntity) && !this.getChunkProvider().isChunkLoaded(entityIn)) {
+         this.checkChunk(entityIn);
       } else {
-         var1.setLocationAndAngles(var1.getPosX(), var1.getPosY(), var1.getPosZ());
-         var1.prevRotationYaw = var1.rotationYaw;
-         var1.prevRotationPitch = var1.rotationPitch;
-         if (var1.addedToChunk || var1.isSpectator()) {
-            var1.ticksExisted++;
-            this.getProfiler().method22504(() -> Registry.ENTITY_TYPE.getKey(var1.getType()).toString());
-            if (ReflectorForge.canUpdate(var1)) {
-               var1.tick();
+         entityIn.setLocationAndAngles(entityIn.getPosX(), entityIn.getPosY(), entityIn.getPosZ());
+         entityIn.prevRotationYaw = entityIn.rotationYaw;
+         entityIn.prevRotationPitch = entityIn.rotationPitch;
+
+         if (entityIn.addedToChunk || entityIn.isSpectator()) {
+            entityIn.ticksExisted++;
+            this.getProfiler().startSection(() -> Registry.ENTITY_TYPE.getKey(entityIn.getType()).toString());
+            if (ReflectorForge.canUpdate(entityIn)) {
+               entityIn.tick();
             }
 
             this.getProfiler().endSection();
          }
 
-         this.method6839(var1);
-         if (var1.addedToChunk) {
-            for (Entity var5 : var1.getPassengers()) {
-               this.method6838(var1, var5);
+         this.checkChunk(entityIn);
+         if (entityIn.addedToChunk) {
+            for (Entity entity : entityIn.getPassengers()) {
+               this.updateEntityRidden(entityIn, entity);
             }
          }
       }
    }
 
-   public void method6838(Entity var1, Entity var2) {
+   public void updateEntityRidden(Entity var1, Entity var2) {
       if (var2.removed || var2.getRidingEntity() != var1) {
          var2.stopRiding();
-      } else if (var2 instanceof PlayerEntity || this.getChunkProvider().method7351(var2)) {
+      } else if (var2 instanceof PlayerEntity || this.getChunkProvider().isChunkLoaded(var2)) {
          var2.setLocationAndAngles(var2.getPosX(), var2.getPosY(), var2.getPosZ());
          var2.prevRotationYaw = var2.rotationYaw;
          var2.prevRotationPitch = var2.rotationPitch;
@@ -208,27 +218,27 @@ public class ClientWorld extends World {
             var2.updateRidden();
          }
 
-         this.method6839(var2);
+         this.checkChunk(var2);
          if (var2.addedToChunk) {
             for (Entity var6 : var2.getPassengers()) {
-               this.method6838(var2, var6);
+               this.updateEntityRidden(var2, var6);
             }
          }
       }
    }
 
-   private void method6839(Entity var1) {
-      if (var1.method3406()) {
+   private void checkChunk(Entity var1) {
+      if (var1.func_233578_ci_()) {
          this.getProfiler().startSection("chunkCheck");
          int var4 = MathHelper.floor(var1.getPosX() / 16.0);
          int var5 = MathHelper.floor(var1.getPosY() / 16.0);
          int var6 = MathHelper.floor(var1.getPosZ() / 16.0);
          if (!var1.addedToChunk || var1.chunkCoordX != var4 || var1.chunkCoordY != var5 || var1.chunkCoordZ != var6) {
-            if (var1.addedToChunk && this.method6843(var1.chunkCoordX, var1.chunkCoordZ)) {
-               this.getChunk(var1.chunkCoordX, var1.chunkCoordZ).method7133(var1, var1.chunkCoordY);
+            if (var1.addedToChunk && this.chunkExists(var1.chunkCoordX, var1.chunkCoordZ)) {
+               this.getChunk(var1.chunkCoordX, var1.chunkCoordZ).removeEntityAtIndex(var1, var1.chunkCoordY);
             }
 
-            if (!var1.method3405() && !this.method6843(var4, var6)) {
+            if (!var1.func_233577_ch_() && !this.chunkExists(var4, var6)) {
                if (var1.addedToChunk) {
                   LOGGER.warn("Entity {} left loaded chunk area", var1);
                }
@@ -243,28 +253,31 @@ public class ClientWorld extends World {
       }
    }
 
-   public void method6840(Chunk var1) {
-      List<TileEntity> var4;
-      if (!Reflector.field42944.exists()) {
-         var4 = this.tileEntitiesToBeRemoved;
-      } else {
-         var4 = (List<TileEntity>) Reflector.method35072(this, Reflector.field42944);
+   public void onChunkUnloaded(Chunk chunkIn) {
+      Collection collection;
+
+      if (Reflector.ForgeWorld_tileEntitiesToBeRemoved.exists())
+      {
+         collection = (Collection)Reflector.getFieldValue(this, Reflector.ForgeWorld_tileEntitiesToBeRemoved);
+      }
+      else
+      {
+         collection = this.tileEntitiesToBeRemoved;
       }
 
-      var4.addAll(var1.method7145().values());
-      this.field9036.getLightManager().method605(var1.getPos(), false);
+      collection.addAll(chunkIn.getTileEntityMap().values());
+      this.field_239129_E_.getLightManager().enableLightSources(chunkIn.getPos(), false);
    }
 
-   public void method6841(int var1, int var2) {
-      this.colorCaches.forEach((var2x, var3) -> var3.method32732(var1, var2));
+   public void onChunkLoaded(int var1, int var2) {
+      this.colorCaches.forEach((var2x, var3) -> var3.invalidateChunk(var1, var2));
    }
 
-   public void method6842() {
-      this.colorCaches.forEach((var0, var1) -> var1.method32733());
+   public void clearColorCaches() {
+      this.colorCaches.forEach((var0, var1) -> var1.invalidateAll());
    }
 
-   @Override
-   public boolean method6843(int var1, int var2) {
+   public boolean chunkExists(int var1, int var2) {
       return true;
    }
 
@@ -272,27 +285,28 @@ public class ClientWorld extends World {
       return this.entitiesById.size();
    }
 
-   public void method6845(int var1, AbstractClientPlayerEntity var2) {
-      this.method6847(var1, var2);
+   public void addPlayer(int var1, AbstractClientPlayerEntity var2) {
+      this.addEntityImpl(var1, var2);
       this.players.add(var2);
    }
 
-   public void method6846(int var1, Entity var2) {
-      this.method6847(var1, var2);
+   public void addEntity(int var1, Entity var2) {
+      this.addEntityImpl(var1, var2);
    }
 
-   private void method6847(int var1, Entity var2) {
-      if (!Reflector.field42807.exists() || !Reflector.postForgeBusEvent(Reflector.field42807, var2, this)) {
-         this.removeEntityFromWorld(var1);
-         this.entitiesById.put(var1, var2);
-         this.getChunkProvider()
-            .method7346(MathHelper.floor(var2.getPosX() / 16.0), MathHelper.floor(var2.getPosZ() / 16.0), ChunkStatus.FULL, true)
-            .addEntity(var2);
-         if (Reflector.field42836.exists()) {
-            Reflector.call(var2, Reflector.field42836);
+   private void addEntityImpl(int entityIdIn, Entity entityToSpawn) {
+      if (!Reflector.EntityJoinWorldEvent_Constructor.exists() || !Reflector.postForgeBusEvent(Reflector.EntityJoinWorldEvent_Constructor, entityToSpawn, this))
+      {
+         this.removeEntityFromWorld(entityIdIn);
+         this.entitiesById.put(entityIdIn, entityToSpawn);
+         this.getChunkProvider().getChunk(MathHelper.floor(entityToSpawn.getPosX() / 16.0D), MathHelper.floor(entityToSpawn.getPosZ() / 16.0D), ChunkStatus.FULL, true).addEntity(entityToSpawn);
+
+         if (Reflector.IForgeEntity_onAddedToWorld.exists())
+         {
+            Reflector.call(entityToSpawn, Reflector.IForgeEntity_onAddedToWorld);
          }
 
-         this.method6865(var2);
+         this.onEntityAdded(entityToSpawn);
       }
    }
 
@@ -349,28 +363,33 @@ public class ClientWorld extends World {
       this.connection.getNetworkManager().closeChannel(new TranslationTextComponent("multiplayer.status.quitting"));
    }
 
-   public void method6852(int var1, int var2, int var3) {
-      int var6 = 32;
-      Random var7 = new Random();
-      boolean var8 = false;
-      if (this.mc.playerController.getCurrentGameType() == GameType.field11103) {
-         for (ItemStack var10 : this.mc.player.method2946()) {
-            if (var10.getItem() == Blocks.field36765.method11581()) {
-               var8 = true;
+   public void animateTick(int posX, int posY, int posZ) {
+      int i = 32;
+      Random random = new Random();
+      boolean flag = false;
+
+      if (this.mc.playerController.getCurrentGameType() == GameType.CREATIVE)
+      {
+         for (ItemStack itemstack : this.mc.player.getHeldEquipment())
+         {
+            if (itemstack.getItem() == Blocks.BARRIER.asItem())
+            {
+               flag = true;
                break;
             }
          }
       }
 
-      BlockPos.Mutable var11 = new BlockPos.Mutable();
+      BlockPos.Mutable blockpos$mutable = new BlockPos.Mutable();
 
-      for (int var12 = 0; var12 < 667; var12++) {
-         this.method6853(var1, var2, var3, 16, var7, var8, var11);
-         this.method6853(var1, var2, var3, 32, var7, var8, var11);
+      for (int j = 0; j < 667; ++j)
+      {
+         this.animateTick(posX, posY, posZ, 16, random, flag, blockpos$mutable);
+         this.animateTick(posX, posY, posZ, 32, random, flag, blockpos$mutable);
       }
    }
 
-   public void method6853(int var1, int var2, int var3, int var4, Random var5, boolean var6, BlockPos.Mutable var7) {
+   public void animateTick(int var1, int var2, int var3, int var4, Random var5, boolean var6, BlockPos.Mutable var7) {
       int var10 = var1 + this.rand.nextInt(var4) - this.rand.nextInt(var4);
       int var11 = var2 + this.rand.nextInt(var4) - this.rand.nextInt(var4);
       int var12 = var3 + this.rand.nextInt(var4) - this.rand.nextInt(var4);
@@ -388,7 +407,7 @@ public class ClientWorld extends World {
          }
       }
 
-      if (var6 && var13.isIn(Blocks.field36765)) {
+      if (var6 && var13.isIn(Blocks.BARRIER)) {
          this.addParticle(ParticleTypes.BARRIER, (double)var10 + 0.5, (double)var11 + 0.5, (double)var12 + 0.5, 0.0, 0.0, 0.0);
       }
 
@@ -541,61 +560,55 @@ public class ClientWorld extends World {
       }
    }
 
-   @Override
    public void method6804(double var1, double var3, double var5, double var7, double var9, double var11, CompoundNBT var13) {
       this.mc.particles.method1199(new Class4591(this, var1, var3, var5, var7, var9, var11, this.mc.particles, var13));
    }
 
-   @Override
-   public void method6811(IPacket<?> var1) {
+   public void sendPacketToServer(IPacket<?> var1) {
       this.connection.sendPacket(var1);
    }
 
-   @Override
-   public Class282 method6816() {
-      return this.connection.method15783();
+   public RecipeManager getRecipeManager() {
+      return this.connection.getRecipeManager();
    }
 
    public void method6859(Scoreboard var1) {
       this.scoreboard = var1;
    }
 
-   @Override
    public ITickList<Block> method6860() {
       return Class6804.<Block>method20727();
    }
 
-   @Override
    public ITickList<Fluid> getPendingFluidTicks() {
       return Class6804.<Fluid>method20727();
    }
 
-   public Class1705 getChunkProvider() {
-      return this.field9036;
+   public ClientChunkProvider getChunkProvider() {
+      return this.field_239129_E_;
    }
 
-   @Override
    public boolean setBlockState(BlockPos pos, BlockState newState, int flags) {
-      this.field9037 = this.method6863();
+      this.playerUpdate = this.method6863();
       boolean var6 = super.setBlockState(pos, newState, flags);
-      this.field9037 = false;
+      this.playerUpdate = false;
       return var6;
    }
 
    private boolean method6863() {
-      if (!(this.mc.playerController instanceof Class7316)) {
+      if (!(this.mc.playerController instanceof PlayerControllerOF)) {
          return false;
       } else {
-         Class7316 var3 = (Class7316)this.mc.playerController;
+         PlayerControllerOF var3 = (PlayerControllerOF)this.mc.playerController;
          return var3.method23162();
       }
    }
 
    public boolean method6864() {
-      return this.field9037;
+      return this.playerUpdate;
    }
 
-   public void method6865(Entity var1) {
+   public void onEntityAdded(Entity var1) {
       Class9387.method35629(var1, this);
       if (Config.isDynamicLights()) {
          DynamicLights.method36307(var1, Config.method26874());
@@ -813,7 +826,7 @@ public class ClientWorld extends World {
 
    @Override
    public float method6877(Direction var1, boolean var2) {
-      boolean var5 = this.method6830().method19307();
+      boolean var5 = this.func_239132_a_().method19307();
       boolean var6 = Config.isShaders();
       if (!var2) {
          return var5 ? 0.9F : 1.0F;
@@ -888,7 +901,7 @@ public class ClientWorld extends World {
       return this.worldInfo.method20032();
    }
 
-   public void method6882(BlockPos var1, float var2) {
+   public void func_239136_a_(BlockPos var1, float var2) {
       this.worldInfo.setSpawn(var1, var2);
    }
 
@@ -945,12 +958,12 @@ public class ClientWorld extends World {
       }
 
       @Override
-      public long method20033() {
+      public long getGameTime() {
          return this.field29056;
       }
 
       @Override
-      public long method20034() {
+      public long getDayTime() {
          return this.field29057;
       }
 
@@ -974,11 +987,11 @@ public class ClientWorld extends World {
          this.field29055 = var1;
       }
 
-      public void method20039(long var1) {
+      public void setGameTime(long var1) {
          this.field29056 = var1;
       }
 
-      public void method20040(long var1) {
+      public void setDayTime(long var1) {
          this.field29057 = var1;
       }
 
@@ -1011,7 +1024,7 @@ public class ClientWorld extends World {
       }
 
       @Override
-      public GameRules method20046() {
+      public GameRules getGameRulesInstance() {
          return this.field29050;
       }
 

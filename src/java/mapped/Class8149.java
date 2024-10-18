@@ -17,6 +17,7 @@ import net.minecraft.world.IBlockDisplayReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.biome.Biome;
 import net.optifine.Config;
+import net.optifine.CustomGuis;
 import net.optifine.config.BiomeId;
 
 public class Class8149 {
@@ -321,7 +322,7 @@ public class Class8149 {
       ChestType var7 = !var6.method23462(ChestBlock.TYPE) ? ChestType.field379 : var6.<ChestType>get(ChestBlock.TYPE);
       boolean var8 = var7 == ChestType.field379;
       boolean var9 = var1 instanceof Class970;
-      boolean var10 = Class7050.field30441;
+      boolean var10 = CustomGuis.field30441;
       boolean var11 = false;
       return this.method28268(var8, var9, var10, var11);
    }

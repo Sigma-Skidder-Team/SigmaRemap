@@ -120,7 +120,7 @@ public class IngameGui extends AbstractGui {
 
         Client.getInstance().method19926();
         ItemStack var6 = this.field6716.player.inventory.method4052(3);
-        if (this.field6716.gameSettings.getPointOfView().func_243192_a() && var6.getItem() == Blocks.field36589.method11581()) {
+        if (this.field6716.gameSettings.getPointOfView().func_243192_a() && var6.getItem() == Blocks.field36589.asItem()) {
             this.method5978();
         }
 

@@ -26,7 +26,7 @@ public class Class4080 extends Class4057 {
             if (!var2.startsWith(var11)) {
                return null;
             } else {
-               ModelRenderer[] var12 = (ModelRenderer[]) Reflector.method35072(var5, Reflector.field43105);
+               ModelRenderer[] var12 = (ModelRenderer[]) Reflector.getFieldValue(var5, Reflector.field43105);
                if (var12 == null) {
                   return null;
                } else {
@@ -37,7 +37,7 @@ public class Class4080 extends Class4057 {
                }
             }
          } else {
-            ModelRenderer[] var7 = (ModelRenderer[]) Reflector.method35072(var5, Reflector.field43104);
+            ModelRenderer[] var7 = (ModelRenderer[]) Reflector.getFieldValue(var5, Reflector.field43104);
             if (var7 == null) {
                return null;
             } else {

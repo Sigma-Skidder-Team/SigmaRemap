@@ -37,7 +37,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    private static final Class120 field5881 = Class120.method339(
       Items.field37842,
       Items.field37936,
-      Blocks.field36777.method11581(),
+      Blocks.field36777.asItem(),
       Items.field37795,
       Items.field38057,
       Items.GOLDEN_APPLE,
@@ -395,7 +395,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       Item var9 = var2.getItem();
       if (var9 != Items.field37842) {
          if (var9 != Items.field37936) {
-            if (var9 != Blocks.field36777.method11581()) {
+            if (var9 != Blocks.field36777.asItem()) {
                if (var9 != Items.field37795) {
                   if (var9 != Items.field38057) {
                      if (var9 == Items.GOLDEN_APPLE || var9 == Items.ENCHANTED_GOLDEN_APPLE) {

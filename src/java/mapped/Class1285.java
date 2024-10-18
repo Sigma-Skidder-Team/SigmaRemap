@@ -25,7 +25,7 @@ public class Class1285 extends Class1274<Class1174> {
          Class9537 var4 = Class1324.method6302(this.field6849)
             .method38129()
             .get(Class1324.method6302(this.field6849).method38129().size() - this.getEventListeners().indexOf(var1) - 1);
-         Item var5 = var4.method36906().getBlock().method11581();
+         Item var5 = var4.method36906().getBlock().asItem();
          if (var5 != Items.AIR) {
             NarratorChatListener.INSTANCE.say(new TranslationTextComponent("narrator.select", var5.method11731(new ItemStack(var5))).getString());
          }

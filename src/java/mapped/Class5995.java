@@ -49,7 +49,7 @@ public class Class5995 {
    public static TileEntity method18606(BlockPos var0) {
       ServerWorld var3 = method18604();
       if (var3 != null) {
-         IChunk var4 = var3.getChunkProvider().method7346(var0.getX() >> 4, var0.getZ() >> 4, ChunkStatus.FULL, false);
+         IChunk var4 = var3.getChunkProvider().getChunk(var0.getX() >> 4, var0.getZ() >> 4, ChunkStatus.FULL, false);
          return var4 != null ? var4.getTileEntity(var0) : null;
       } else {
          return null;

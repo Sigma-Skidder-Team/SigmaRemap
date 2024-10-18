@@ -107,7 +107,7 @@ public class Freecam extends Module {
         field23814.prevRotationYawHead = this.field23821;
         field23814.renderYawOffset = this.field23821;
         field23814.prevRenderYawOffset = this.field23821;
-        mc.world.method6846(this.field23823 = (int) (Math.random() * -10000.0), field23814);
+        mc.world.addEntity(this.field23823 = (int) (Math.random() * -10000.0), field23814);
         this.field23826 = mc.gameSettings.keyBindForward.isKeyDown();
         this.field23827 = mc.gameSettings.keyBindBack.isKeyDown();
         this.field23828 = mc.gameSettings.keyBindLeft.isKeyDown();

@@ -21,7 +21,7 @@ public class Class4489 extends Class4457 {
          Class9587.field44822,
          new Class8634(
             (ITag<Item>)null,
-            var0.method11581(),
+            var0.asItem(),
             Class8840.field39936,
             Class8840.field39936,
             Class8605.field38716,

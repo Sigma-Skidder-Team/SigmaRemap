@@ -150,7 +150,7 @@ public class Class1088 extends Class1018 {
       this.field5600.addGoal(0, new Class2751(this, 1.2));
       this.field5600.addGoal(1, new Class2787(this, 1.0));
       this.field5600.addGoal(1, new Class2630(this, 1.0));
-      this.field5600.addGoal(2, new Class2731(this, 1.1, Blocks.SEAGRASS.method11581()));
+      this.field5600.addGoal(2, new Class2731(this, 1.1, Blocks.SEAGRASS.asItem()));
       this.field5600.addGoal(3, new Class2635(this, 1.0));
       this.field5600.addGoal(4, new Class2760(this, 1.0));
       this.field5600.addGoal(7, new Class2594(this, 1.0));
@@ -244,7 +244,7 @@ public class Class1088 extends Class1018 {
 
    @Override
    public boolean method4381(ItemStack var1) {
-      return var1.getItem() == Blocks.SEAGRASS.method11581();
+      return var1.getItem() == Blocks.SEAGRASS.asItem();
    }
 
    @Override

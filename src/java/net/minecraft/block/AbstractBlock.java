@@ -172,7 +172,7 @@ public abstract class AbstractBlock {
 
    @Deprecated
    public boolean method11497(BlockState var1, BlockItemUseContext var2) {
-      return this.field19004.isReplaceable() && (var2.method18357().isEmpty() || var2.method18357().getItem() != this.method11581());
+      return this.field19004.isReplaceable() && (var2.method18357().isEmpty() || var2.method18357().getItem() != this.asItem());
    }
 
    @Deprecated
@@ -317,7 +317,7 @@ public abstract class AbstractBlock {
    public void method11595(World var1, BlockState var2, BlockRayTraceResult var3, ProjectileEntity var4) {
    }
 
-   public abstract Item method11581();
+   public abstract Item asItem();
 
    public abstract Block method11584();
 

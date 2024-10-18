@@ -82,7 +82,7 @@ public class Class3410 extends Block {
    @Override
    public boolean isValidPosition(BlockState var1, IWorldReader var2, BlockPos var3) {
       BlockState var6 = var2.getBlockState(var3.down());
-      if (var6.isIn(Blocks.ICE) || var6.isIn(Blocks.PACKED_ICE) || var6.isIn(Blocks.field36765)) {
+      if (var6.isIn(Blocks.ICE) || var6.isIn(Blocks.PACKED_ICE) || var6.isIn(Blocks.BARRIER)) {
          return false;
       } else {
          return !var6.isIn(Blocks.field37119) && !var6.isIn(Blocks.SOUL_SAND)
@@ -108,7 +108,7 @@ public class Class3410 extends Block {
    @Override
    public boolean method11497(BlockState var1, BlockItemUseContext var2) {
       int var5 = var1.<Integer>get(field19092);
-      if (var2.method18357().getItem() != this.method11581() || var5 >= 8) {
+      if (var2.method18357().getItem() != this.asItem() || var5 >= 8) {
          return var5 == 1;
       } else {
          return !var2.method18347() ? true : var2.getFace() == Direction.UP;

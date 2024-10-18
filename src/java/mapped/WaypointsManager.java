@@ -174,14 +174,14 @@ public class WaypointsManager {
                String var23 = this.field36371;
                int var24 = 0;
 
-               for (int var25 = 0; var25 < this.field36365.world.getChunkProvider().field9291.field39654.length(); var25++) {
-                  Chunk var17 = this.field36365.world.getChunkProvider().field9291.field39654.get(var25);
+               for (int var25 = 0; var25 < this.field36365.world.getChunkProvider().array.chunks.length(); var25++) {
+                  Chunk var17 = this.field36365.world.getChunkProvider().array.chunks.get(var25);
                   if (var17 != null) {
                      boolean var18 = this.field36366.contains(var17.getPos());
                      boolean var19 = this.field36367.contains(var17.getPos());
                      if ((!var18 || var19)
                         && !var17.isEmpty()
-                        && this.field36365.world.getChunkProvider().method7352(var17.getPos())
+                        && this.field36365.world.getChunkProvider().isChunkLoaded(var17.getPos())
                         && this.field36365.world.getDimensionKey() == World.OVERWORLD) {
                         if (!var18) {
                            this.field36366.add(var17.getPos());

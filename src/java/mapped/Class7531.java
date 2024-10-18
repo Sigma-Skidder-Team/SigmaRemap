@@ -25,7 +25,7 @@ public class Class7531 extends Class7530 {
    private int field32335;
 
    public Class7531(ServerWorld var1) {
-      super(method24615(var1.method6812()));
+      super(method24615(var1.getDimensionType()));
       this.field32333 = var1;
       this.field32334 = 1;
       this.method24605();
@@ -62,7 +62,7 @@ public class Class7531 extends Class7530 {
 
    public static boolean method24612(Class1026 var0, Class7699 var1) {
       return var0 != null && var1 != null && var1.method25394() != null
-         ? var0.isAlive() && var0.method4547() && var0.method3021() <= 2400 && var0.world.method6812() == var1.method25394().method6812()
+         ? var0.isAlive() && var0.method4547() && var0.method3021() <= 2400 && var0.world.getDimensionType() == var1.method25394().getDimensionType()
          : false;
    }
 
@@ -73,7 +73,7 @@ public class Class7531 extends Class7530 {
       } else if (this.field32333.getGameRules().getBoolean(GameRules.field24246)) {
          return null;
       } else {
-         DimensionType var4 = var1.world.method6812();
+         DimensionType var4 = var1.world.getDimensionType();
          if (!var4.isHasRaids()) {
             return null;
          } else {

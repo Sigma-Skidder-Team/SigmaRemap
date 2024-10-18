@@ -117,7 +117,7 @@ public class Class3250 extends HorizontalBlock implements Class3245 {
    }
 
    public static boolean method11679(World var0) {
-      return var0.method6812().doesBedWork();
+      return var0.getDimensionType().doesBedWork();
    }
 
    private boolean method11680(World var1, BlockPos var2) {

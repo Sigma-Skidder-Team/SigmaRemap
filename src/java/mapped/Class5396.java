@@ -16,7 +16,7 @@ public class Class5396 implements Class5391 {
    private final float field24059;
 
    public Class5396(IItemProvider var1, int var2, int var3, int var4) {
-      this.field24055 = var1.method11581();
+      this.field24055 = var1.asItem();
       this.field24056 = var2;
       this.field24057 = var3;
       this.field24058 = var4;

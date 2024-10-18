@@ -128,7 +128,7 @@ public abstract class LavaFluid extends FlowingFluid {
 
    @Override
    public int method25087(IWorldReader var1) {
-      return !var1.method6812().isUltrawarm() ? 2 : 4;
+      return !var1.getDimensionType().isUltrawarm() ? 2 : 4;
    }
 
    @Override
@@ -143,7 +143,7 @@ public abstract class LavaFluid extends FlowingFluid {
 
    @Override
    public int method25092(IWorldReader var1) {
-      return !var1.method6812().isUltrawarm() ? 2 : 1;
+      return !var1.getDimensionType().isUltrawarm() ? 2 : 1;
    }
 
    @Override
@@ -153,7 +153,7 @@ public abstract class LavaFluid extends FlowingFluid {
 
    @Override
    public int getTickRate(IWorldReader var1) {
-      return !var1.method6812().isUltrawarm() ? 30 : 10;
+      return !var1.getDimensionType().isUltrawarm() ? 30 : 10;
    }
 
    @Override

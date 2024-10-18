@@ -51,7 +51,7 @@ public class Class945 extends TileEntity implements IClearable, ITickableTileEnt
             if (this.field5330[var3] >= this.field5331[var3]) {
                Class927 var6 = new Class927(var4);
                ItemStack var7 = this.world
-                  .method6816()
+                  .getRecipeManager()
                   .<IInventory, Class4850>method1030(Class7207.field30939, var6, this.world)
                   .<ItemStack>map(var1 -> var1.method14962(var6))
                   .orElse(var4);
@@ -146,7 +146,7 @@ public class Class945 extends TileEntity implements IClearable, ITickableTileEnt
 
    public Optional<Class4850> method3797(ItemStack var1) {
       return !this.field5329.stream().noneMatch(ItemStack::isEmpty)
-         ? this.world.method6816().<IInventory, Class4850>method1030(Class7207.field30939, new Class927(var1), this.world)
+         ? this.world.getRecipeManager().<IInventory, Class4850>method1030(Class7207.field30939, new Class927(var1), this.world)
          : Optional.<Class4850>empty();
    }
 

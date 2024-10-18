@@ -144,7 +144,7 @@ public class Class3389 extends Block {
    }
 
    public static boolean method11988(World var0) {
-      return var0.method6812().doesRespawnAnchorWorks();
+      return var0.getDimensionType().doesRespawnAnchorWorks();
    }
 
    public static void method11989(World var0, BlockPos var1, BlockState var2) {

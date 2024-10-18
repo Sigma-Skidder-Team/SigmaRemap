@@ -100,7 +100,7 @@ public class Class5811 extends Container {
       this.field25457.method15235(-1);
       this.field25463.putStack(ItemStack.EMPTY);
       if (!var2.isEmpty()) {
-         this.field25459 = this.field25458.method6816().<IInventory, Class4845>method1032(Class7207.field30940, var1, this.field25458);
+         this.field25459 = this.field25458.getRecipeManager().<IInventory, Class4845>method1032(Class7207.field30940, var1, this.field25458);
       }
    }
 
@@ -140,7 +140,7 @@ public class Class5811 extends Container {
          var5 = var7.copy();
          if (var2 != 1) {
             if (var2 != 0) {
-               if (!this.field25458.method6816().<IInventory, Class4845>method1030(Class7207.field30940, new Class927(var7), this.field25458).isPresent()) {
+               if (!this.field25458.getRecipeManager().<IInventory, Class4845>method1030(Class7207.field30940, new Class927(var7), this.field25458).isPresent()) {
                   if (var2 >= 2 && var2 < 29) {
                      if (!this.mergeItemStack(var7, 29, 38, false)) {
                         return ItemStack.EMPTY;

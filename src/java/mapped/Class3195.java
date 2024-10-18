@@ -79,7 +79,7 @@ public class Class3195 extends BushBlock implements Class3196, IWaterLoggable {
 
    @Override
    public boolean method11497(BlockState var1, BlockItemUseContext var2) {
-      return var2.method18357().getItem() == this.method11581() && var1.<Integer>get(field18472) < 4 ? true : super.method11497(var1, var2);
+      return var2.method18357().getItem() == this.asItem() && var1.<Integer>get(field18472) < 4 ? true : super.method11497(var1, var2);
    }
 
    @Override

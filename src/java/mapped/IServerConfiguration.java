@@ -74,7 +74,7 @@ public interface IServerConfiguration {
 
    void method20086(boolean var1);
 
-   GameRules method20046();
+   GameRules getGameRulesInstance();
 
    CompoundNBT method20083();
 

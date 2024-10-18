@@ -47,7 +47,7 @@ public class Class3375 extends Class3373 {
 
    @Override
    public String getTranslationKey() {
-      return this.method11581().getTranslationKey();
+      return this.asItem().getTranslationKey();
    }
 
    @Override

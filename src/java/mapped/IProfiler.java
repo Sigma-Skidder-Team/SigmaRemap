@@ -9,7 +9,7 @@ public interface IProfiler {
 
    void startSection(String var1);
 
-   void method22504(Supplier<String> var1);
+   void startSection(Supplier<String> var1);
 
    void endSection();
 

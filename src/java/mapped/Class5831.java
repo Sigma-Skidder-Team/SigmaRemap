@@ -145,7 +145,7 @@ public abstract class Class5831 extends Class5828<IInventory> {
    }
 
    public boolean method18234(ItemStack var1) {
-      return this.field25553.method6816().method1030(this.field25554, new Class927(var1), this.field25553).isPresent();
+      return this.field25553.getRecipeManager().method1030(this.field25554, new Class927(var1), this.field25553).isPresent();
    }
 
    public boolean method18235(ItemStack var1) {

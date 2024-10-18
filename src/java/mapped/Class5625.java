@@ -16,7 +16,7 @@ public class Class5625 {
    private final Class6503<?> field24946;
 
    private Class5625(IItemProvider var1, Class120 var2, float var3, int var4, Class6503<?> var5) {
-      this.field24940 = var1.method11581();
+      this.field24940 = var1.asItem();
       this.field24941 = var2;
       this.field24942 = var3;
       this.field24943 = var4;

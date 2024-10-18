@@ -81,7 +81,7 @@ public class Class3316 extends Class3314 {
          int var9 = MathHelper.floor(var2.getPosX() - (double)var7) / var6 + 64;
          int var10 = MathHelper.floor(var2.getPosZ() - (double)var8) / var6 + 64;
          int var11 = 128 / var6;
-         if (var1.method6812().getHasCeiling()) {
+         if (var1.getDimensionType().getHasCeiling()) {
             var11 /= 2;
          }
 
@@ -109,7 +109,7 @@ public class Class3316 extends Class3314 {
                         int var27 = var22 & 15;
                         int var28 = 0;
                         double var29 = 0.0;
-                        if (!var1.method6812().getHasCeiling()) {
+                        if (!var1.getDimensionType().getHasCeiling()) {
                            BlockPos.Mutable var31 = new BlockPos.Mutable();
                            BlockPos.Mutable var32 = new BlockPos.Mutable();
 

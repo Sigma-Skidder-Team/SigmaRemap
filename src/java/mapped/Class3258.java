@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Lists;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.RecipeManager;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.Hand;
@@ -33,7 +34,7 @@ public class Class3258 extends Item {
          if (!var1.isRemote) {
             ListNBT var8 = var7.method131("Recipes", 8);
             ArrayList var9 = Lists.newArrayList();
-            Class282 var10 = var1.getServer().method1407();
+            RecipeManager var10 = var1.getServer().method1407();
 
             for (int var11 = 0; var11 < var8.size(); var11++) {
                String var12 = var8.method160(var11);

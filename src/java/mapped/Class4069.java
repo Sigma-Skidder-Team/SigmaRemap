@@ -24,7 +24,7 @@ public class Class4069 extends Class4057 {
          if (!var2.startsWith(var6)) {
             return null;
          } else {
-            ModelRenderer[] var7 = (ModelRenderer[]) Reflector.method35072(var5, Reflector.field43043);
+            ModelRenderer[] var7 = (ModelRenderer[]) Reflector.getFieldValue(var5, Reflector.field43043);
             if (var7 == null) {
                return null;
             } else {

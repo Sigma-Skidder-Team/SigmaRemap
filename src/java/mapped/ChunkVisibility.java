@@ -83,7 +83,7 @@ public class ChunkVisibility {
                }
 
                try {
-                  Map<BlockPos, TileEntity> var24 = var16.method7145();
+                  Map<BlockPos, TileEntity> var24 = var16.getTileEntityMap();
                   if (!var24.isEmpty()) {
                      for (BlockPos var20 : var24.keySet()) {
                         int var21 = var20.getY() >> 4;

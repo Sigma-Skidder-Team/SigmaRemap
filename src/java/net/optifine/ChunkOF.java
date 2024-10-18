@@ -1,30 +1,32 @@
-package mapped;
+package net.optifine;
 
+import mapped.Chunk;
+import mapped.Class8889;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeContainer;
 import net.minecraft.world.chunk.ChunkSection;
 
-public class Class1676 extends Chunk {
+public class ChunkOF extends Chunk {
    private static String[] field9136;
-   private Class8870 field9137;
+   private ChunkDataOF field9137;
    private boolean field9138;
    private boolean field9139;
 
-   public Class1676(World var1, ChunkPos var2, BiomeContainer var3) {
+   public ChunkOF(World var1, ChunkPos var2, BiomeContainer var3) {
       super(var1, var2, var3);
    }
 
-   public Class8870 method7166() {
+   public ChunkDataOF method7166() {
       return this.field9137;
    }
 
-   public void method7167(Class8870 var1) {
+   public void setChunkDataOF(ChunkDataOF var1) {
       this.field9137 = var1;
    }
 
-   public static Class8870 method7168(Chunk var0) {
+   public static ChunkDataOF method7168(Chunk var0) {
       Class8889[] var3 = null;
       ChunkSection var4 = var0.getLastExtendedBlockStorage();
       if (var4 != null) {
@@ -43,7 +45,7 @@ public class Class1676 extends Chunk {
          }
       }
 
-      return new Class8870(var3);
+      return new ChunkDataOF(var3);
    }
 
    @Override
@@ -63,9 +65,9 @@ public class Class1676 extends Chunk {
    }
 
    @Override
-   public void method7143(boolean var1) {
+   public void setLoaded(boolean var1) {
       this.field9139 = var1;
-      super.method7143(var1);
+      super.setLoaded(var1);
    }
 
    public boolean method7170() {

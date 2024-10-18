@@ -16,7 +16,7 @@ public class Class9067 {
 
    public Class9067(Class6504<?> var1, Class120 var2, IItemProvider var3, int var4) {
       this.field41494 = var1;
-      this.field41489 = var3.method11581();
+      this.field41489 = var3.asItem();
       this.field41490 = var2;
       this.field41491 = var4;
    }

@@ -78,15 +78,15 @@ public interface IDispenseItemBehavior {
       Class3357.method11931(Items.field38060, var5);
       Class3357.method11931(Items.field38059, new Class6238());
       Class3357.method11931(Blocks.field36589, new Class6235());
-      Class3357.method11931(Blocks.field36896.method11581(), new Class6240());
+      Class3357.method11931(Blocks.field36896.asItem(), new Class6240());
 
       for (Class112 var9 : Class112.values()) {
-         Class3357.method11931(Class3368.method11956(var9).method11581(), new Class6240());
+         Class3357.method11931(Class3368.method11956(var9).asItem(), new Class6240());
       }
 
-      Class3357.method11931(Items.field37972.method11581(), new Class6236());
+      Class3357.method11931(Items.field37972.asItem(), new Class6236());
       Class3357.method11931(Items.field37446, new Class6232());
-      Class3357.method11931(Items.field37956.method11581(), new Class6233());
+      Class3357.method11931(Items.field37956.asItem(), new Class6233());
    }
 
    static void method19201(IBlockSource var0, Entity var1, Direction var2) {

@@ -34,6 +34,7 @@ import net.minecraft.world.chunk.ChunkSection;
 import net.minecraft.world.chunk.ChunkStatus;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.gen.feature.structure.StructureStart;
+import net.minecraft.world.lighting.WorldLightManager;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -195,7 +196,7 @@ public class Chunk implements IChunk {
       if (this.field9116.isDebug()) {
          BlockState var11 = null;
          if (var5 == 60) {
-            var11 = Blocks.field36765.getDefaultState();
+            var11 = Blocks.BARRIER.getDefaultState();
          }
 
          if (var5 == 70) {
@@ -207,7 +208,7 @@ public class Chunk implements IChunk {
          try {
             if (var5 >= 0 && var5 >> 4 < this.field9112.length) {
                ChunkSection var7 = this.field9112[var5 >> 4];
-               if (!ChunkSection.method21859(var7)) {
+               if (!ChunkSection.isEmpty(var7)) {
                   return var7.method21852(var4 & 15, var5 & 15, var6 & 15);
                }
             }
@@ -231,7 +232,7 @@ public class Chunk implements IChunk {
       try {
          if (var2 >= 0 && var2 >> 4 < this.field9112.length) {
             ChunkSection var6 = this.field9112[var2 >> 4];
-            if (!ChunkSection.method21859(var6)) {
+            if (!ChunkSection.isEmpty(var6)) {
                return var6.method21853(var1 & 15, var2 & 15, var3 & 15);
             }
          }
@@ -352,10 +353,10 @@ public class Chunk implements IChunk {
    }
 
    public void removeEntity(Entity var1) {
-      this.method7133(var1, var1.chunkCoordY);
+      this.removeEntityAtIndex(var1, var1.chunkCoordY);
    }
 
-   public void method7133(Entity var1, int var2) {
+   public void removeEntityAtIndex(Entity var1, int var2) {
       if (var2 < 0) {
          var2 = 0;
       }
@@ -544,7 +545,7 @@ public class Chunk implements IChunk {
       return this.field9132;
    }
 
-   public void method7142(BiomeContainer var1, PacketBuffer var2, CompoundNBT var3, int var4) {
+   public void read(BiomeContainer var1, PacketBuffer var2, CompoundNBT var3, int var4) {
       boolean var7 = var1 != null;
       Predicate<BlockPos> var8 = !var7 ? var1x -> (var4 & 1 << (var1x.getY() >> 4)) != 0 : var0 -> true;
       Sets.newHashSet(this.field9119.keySet()).stream().filter(var8).forEach(this.field9116::method6762);
@@ -584,7 +585,7 @@ public class Chunk implements IChunk {
       return this.field9113;
    }
 
-   public void method7143(boolean var1) {
+   public void setLoaded(boolean var1) {
       this.field9115 = var1;
    }
 
@@ -597,7 +598,7 @@ public class Chunk implements IChunk {
       return Collections.<Entry<Heightmap.Type, Heightmap>>unmodifiableSet(this.field9117.entrySet());
    }
 
-   public Map<BlockPos, TileEntity> method7145() {
+   public Map<BlockPos, TileEntity> getTileEntityMap() {
       return this.field9119;
    }
 

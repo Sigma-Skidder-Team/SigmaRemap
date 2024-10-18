@@ -330,7 +330,7 @@ public class Class1019 extends Class1018 implements Class1020 {
       Class112 var6 = ((Class1019)var2).method4517();
       Class926 var7 = method4523(var5, var6);
       return this.world
-         .method6816()
+         .getRecipeManager()
          .<Class926, Class4842>method1030(Class7207.field30935, var7, this.world)
          .<ItemStack>map(var1x -> var1x.method14962(var7))
          .<Item>map(ItemStack::getItem)

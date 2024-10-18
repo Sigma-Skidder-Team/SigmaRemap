@@ -50,7 +50,7 @@ public class Class3428 extends Block implements IWaterLoggable {
 
    @Override
    public VoxelShape getShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
-      if (var4.method14951(var1.getBlock().method11581())) {
+      if (var4.method14951(var1.getBlock().asItem())) {
          return VoxelShapes.method27426();
       } else {
          return !var1.<Boolean>get(field19186) ? field19180 : field19181;
@@ -64,7 +64,7 @@ public class Class3428 extends Block implements IWaterLoggable {
 
    @Override
    public boolean method11497(BlockState var1, BlockItemUseContext var2) {
-      return var2.method18357().getItem() == this.method11581();
+      return var2.method18357().getItem() == this.asItem();
    }
 
    @Override

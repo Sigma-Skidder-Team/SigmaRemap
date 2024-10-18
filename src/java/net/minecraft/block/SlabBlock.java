@@ -78,7 +78,7 @@ public class SlabBlock extends Block implements IWaterLoggable {
    public boolean method11497(BlockState var1, BlockItemUseContext var2) {
       ItemStack var5 = var2.method18357();
       SlabType var6 = var1.<SlabType>get(field18605);
-      if (var6 == SlabType.field220 || var5.getItem() != this.method11581()) {
+      if (var6 == SlabType.field220 || var5.getItem() != this.asItem()) {
          return false;
       } else if (!var2.method18347()) {
          return true;

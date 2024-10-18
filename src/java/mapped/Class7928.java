@@ -31,7 +31,7 @@ public class Class7928 {
 
    public Class7928 method26608(Class9253 var1, Block... var2) {
       for (Block var8 : var2) {
-         var1.method34808(Class9060.method33724(var8.method11581()), Class7287.method23022(var8), Class9407.method35999(this.field33962));
+         var1.method34808(Class9060.method33724(var8.asItem()), Class7287.method23022(var8), Class9407.method35999(this.field33962));
       }
 
       return this.method26606(var2);

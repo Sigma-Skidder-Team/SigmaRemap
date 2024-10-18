@@ -1,5 +1,6 @@
-package mapped;
+package net.optifine.override;
 
+import mapped.ClientPlayerEntity;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.PlayerController;
 import net.minecraft.client.network.play.ClientPlayNetHandler;
@@ -14,13 +15,13 @@ import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.EntityRayTraceResult;
 import net.minecraft.world.World;
 
-public class Class7316 extends PlayerController {
+public class PlayerControllerOF extends PlayerController {
    private static String[] field31370;
    private boolean field31371 = false;
    private BlockPos field31372 = null;
    private Entity field31373 = null;
 
-   public Class7316(Minecraft var1, ClientPlayNetHandler var2) {
+   public PlayerControllerOF(Minecraft var1, ClientPlayNetHandler var2) {
       super(var1, var2);
    }
 

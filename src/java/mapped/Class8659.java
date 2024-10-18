@@ -74,7 +74,7 @@ public class Class8659 {
       ResourceLocation var5 = Class9756.field45566.method34805(var1, this.field39027, Class9407.method35999(this.field39029));
       Class9407.method36001(this.field39029).accept(Class9407.method36000(var1, var5));
       Class9407.method36001(this.field39029).accept(Class9407.method36000(var2, var5));
-      Class9407.method36008(this.field39029, var1.method11581());
+      Class9407.method36008(this.field39029, var1.asItem());
       Class9407.method36009(this.field39029, var2);
       return this;
    }

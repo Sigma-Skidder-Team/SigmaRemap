@@ -22,6 +22,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.SpawnLocationHelper;
+import net.minecraft.item.crafting.RecipeManager;
 import net.minecraft.network.play.server.SServerDifficultyPacket;
 import net.minecraft.network.play.server.SUpdateTimePacket;
 import net.minecraft.resources.ResourcePackInfo;
@@ -743,11 +744,11 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       this.profiler.endStartSection("levels");
 
       for (ServerWorld var5 : this.method1320()) {
-         this.profiler.method22504(() -> var5 + " " + var5.getDimensionKey().getLocation());
+         this.profiler.startSection(() -> var5 + " " + var5.getDimensionKey().getLocation());
          if (this.tickCounter % 20 == 0) {
             this.profiler.startSection("timeSync");
             this.field1226
-               .method19457(new SUpdateTimePacket(var5.getGameTime(), var5.method6784(), var5.getGameRules().getBoolean(GameRules.field24232)), var5.getDimensionKey());
+               .method19457(new SUpdateTimePacket(var5.getGameTime(), var5.method6784(), var5.getGameRules().getBoolean(GameRules.DO_DAYLIGHT_CYCLE)), var5.getDimensionKey());
             this.profiler.endSection();
          }
 
@@ -1291,7 +1292,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       return true;
    }
 
-   public Class282 method1407() {
+   public RecipeManager method1407() {
       return this.resourceManager.method7334();
    }
 

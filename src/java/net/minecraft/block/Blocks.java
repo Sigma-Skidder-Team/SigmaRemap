@@ -1423,7 +1423,7 @@ public class Blocks {
       "slime_block",
       new Class3380(AbstractBlock.Properties.method26611(Material.field38949, MaterialColor.field30948).method26616(0.8F).method26619(SoundType.field36212).method26615())
    );
-   public static final Block field36765 = register(
+   public static final Block BARRIER = register(
       "barrier",
       new Class3467(AbstractBlock.Properties.method26609(Material.BARRIER).method26621(-1.0F, 3600000.8F).method26626().method26615().method26629(Blocks::method30012))
    );

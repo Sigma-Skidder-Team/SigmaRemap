@@ -1760,7 +1760,7 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    @Override
-   public Iterable<ItemStack> method2946() {
+   public Iterable<ItemStack> getHeldEquipment() {
       return Lists.newArrayList(new ItemStack[]{this.getHeldItemMainhand(), this.getHeldItemOffhand()});
    }
 

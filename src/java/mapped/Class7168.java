@@ -53,7 +53,7 @@ public class Class7168 implements Class7166 {
 
    @Override
    public void startTick() {
-      TimeTracker var3 = (TimeTracker) Reflector.method35072(Minecraft.getInstance(), field30842);
+      TimeTracker var3 = (TimeTracker) Reflector.getFieldValue(Minecraft.getInstance(), field30842);
       this.field30833 = var3 != null && var3.func_233508_d_() == this;
       this.field30834 = this.field30833 && Class8578.method30660();
       if (!this.field30830) {
@@ -109,7 +109,7 @@ public class Class7168 implements Class7166 {
    }
 
    @Override
-   public void method22504(java.util.function.Supplier<String> var1) {
+   public void startSection(java.util.function.Supplier<String> var1) {
       this.startSection((String)var1.get());
    }
 
@@ -157,7 +157,7 @@ public class Class7168 implements Class7166 {
    @Override
    public void method22507(java.util.function.Supplier<String> var1) {
       this.endSection();
-      this.method22504(var1);
+      this.startSection(var1);
    }
 
    private Class6706 method22512() {

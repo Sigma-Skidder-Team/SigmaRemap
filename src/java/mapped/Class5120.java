@@ -28,7 +28,7 @@ public class Class5120 implements Class5119 {
    public void method15813(MatrixStack var1, Class7733 var2, double var3, double var5, double var7) {
       ActiveRenderInfo var11 = this.field23291.gameRenderer.getActiveRenderInfo();
       ClientWorld var12 = this.field23291.world;
-      DimensionType var13 = var12.method6812();
+      DimensionType var13 = var12.getDimensionType();
       BlockPos var14 = new BlockPos(var11.getPos().x, 0.0, var11.getPos().z);
       IVertexBuilder var15 = var2.method25597(RenderType.getLines());
       if (this.field23292.containsKey(var13)) {

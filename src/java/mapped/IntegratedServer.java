@@ -301,7 +301,7 @@ public class IntegratedServer extends MinecraftServer {
    }
 
    private void method6494(ServerWorld var1) {
-      if (this.method1286() == GameType.field11103) {
+      if (this.method1286() == GameType.CREATIVE) {
          long var4 = var1.method6784();
          long var6 = var4 % 24000L;
          if (Config.method26886()) {

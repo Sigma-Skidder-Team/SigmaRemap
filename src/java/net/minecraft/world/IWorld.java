@@ -7,13 +7,14 @@ import net.minecraft.fluid.Fluid;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.chunk.AbstractChunkProvider;
 
 import java.util.Random;
 
 public interface IWorld extends Class1678, Class1661 {
    @Override
    default long method6996() {
-      return this.getWorldInfo().method20034();
+      return this.getWorldInfo().getDayTime();
    }
 
    ITickList<Block> method6860();
@@ -28,11 +29,11 @@ public interface IWorld extends Class1678, Class1661 {
       return this.getWorldInfo().method20047();
    }
 
-   Class1702 getChunkProvider();
+   AbstractChunkProvider getChunkProvider();
 
    @Override
-   default boolean method6843(int var1, int var2) {
-      return this.getChunkProvider().method7345(var1, var2);
+   default boolean chunkExists(int var1, int var2) {
+      return this.getChunkProvider().chunkExists(var1, var2);
    }
 
    Random method6814();
@@ -47,7 +48,7 @@ public interface IWorld extends Class1678, Class1661 {
    void method6869(PlayerEntity var1, int var2, BlockPos var3, int var4);
 
    default int method6998() {
-      return this.method6812().getLogicalHeight();
+      return this.getDimensionType().getLogicalHeight();
    }
 
    default void playEvent(int var1, BlockPos var2, int var3) {

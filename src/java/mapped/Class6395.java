@@ -134,7 +134,7 @@ public abstract class Class6395 {
             var14.isHardcore(),
             this.field27990.method1319(),
             this.field28001,
-            var12.method6812(),
+            var12.getDimensionType(),
             var12.getDimensionKey(),
             this.method19475(),
             this.field28003,
@@ -430,7 +430,7 @@ public abstract class Class6395 {
       var12.connection
          .sendPacket(
             new SRespawnPacket(
-               var12.world.method6812(),
+               var12.world.getDimensionType(),
                var12.world.getDimensionKey(),
                BiomeManager.getHashedSeed(var12.getServerWorld().getSeed()),
                var12.interactionManager.getGameType(),
@@ -631,7 +631,7 @@ public abstract class Class6395 {
    public void method19472(ServerPlayerEntity var1, ServerWorld var2) {
       WorldBorder var5 = this.field27990.getServerWorld().getWorldBorder();
       var1.connection.sendPacket(new SWorldBorderPacket(var5, Class1864.field10036));
-      var1.connection.sendPacket(new SUpdateTimePacket(var2.getGameTime(), var2.method6784(), var2.getGameRules().getBoolean(GameRules.field24232)));
+      var1.connection.sendPacket(new SUpdateTimePacket(var2.getGameTime(), var2.method6784(), var2.getGameRules().getBoolean(GameRules.DO_DAYLIGHT_CYCLE)));
       var1.connection.sendPacket(new SWorldSpawnChangedPacket(var2.getSpawnPoint(), var2.method6948()));
       if (var2.method6795()) {
          var1.connection.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24561, 0.0F));

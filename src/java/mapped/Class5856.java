@@ -57,7 +57,7 @@ public class Class5856 extends Slot {
    @Override
    public ItemStack onTake(PlayerEntity var1, ItemStack var2) {
       this.onCrafting(var2);
-      NonNullList var5 = var1.world.method6816().method1034(Class7207.field30935, this.field25613, var1.world);
+      NonNullList var5 = var1.world.getRecipeManager().method1034(Class7207.field30935, this.field25613, var1.world);
 
       for (int var6 = 0; var6 < var5.size(); var6++) {
          ItemStack var7 = this.field25613.getStackInSlot(var6);

@@ -278,7 +278,7 @@ public class Class1091 extends Class1018 implements IMob, Class1092 {
    }
 
    public boolean method5087() {
-      return !this.world.method6812().isPiglinSafe() && !this.method5086() && !this.method4305();
+      return !this.world.getDimensionType().isPiglinSafe() && !this.method5086() && !this.method4305();
    }
 
    private void method5088(boolean var1) {

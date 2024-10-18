@@ -9,6 +9,7 @@ import net.minecraft.world.IBlockDisplayReader;
 import net.minecraft.world.LightType;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.level.ColorResolver;
+import net.minecraft.world.lighting.WorldLightManager;
 
 import java.util.Arrays;
 

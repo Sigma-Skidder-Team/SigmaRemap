@@ -36,8 +36,8 @@ public class Class1318 extends Screen {
       GameType var3 = Minecraft.getInstance().playerController.getCurrentGameType();
       GameType var4 = Minecraft.getInstance().playerController.method23156();
       if (var4 == GameType.field11101) {
-         if (var3 != GameType.field11103) {
-            var4 = GameType.field11103;
+         if (var3 != GameType.CREATIVE) {
+            var4 = GameType.CREATIVE;
          } else {
             var4 = GameType.field11102;
          }

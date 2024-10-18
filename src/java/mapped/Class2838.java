@@ -63,18 +63,18 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
          Blocks.field36897,
          Blocks.field36901
       )
-      .<Item>map(IItemProvider::method11581)
+      .<Item>map(IItemProvider::asItem)
       .collect(ImmutableSet.toImmutableSet());
    private static final float[] field17634 = new float[]{0.05F, 0.0625F, 0.083333336F, 0.1F};
    private static final float[] field17635 = new float[]{0.025F, 0.027777778F, 0.03125F, 0.041666668F, 0.1F};
    private final Map<ResourceLocation, Class5888> field17636 = Maps.newHashMap();
 
    private static <T> T method11059(IItemProvider var0, Class5871<T> var1) {
-      return (T)(field17633.contains(var0.method11581()) ? var1.method18295() : var1.method18296(Class144.method442()));
+      return (T)(field17633.contains(var0.asItem()) ? var1.method18295() : var1.method18296(Class144.method442()));
    }
 
    private static <T> T method11060(IItemProvider var0, Class5875<T> var1) {
-      return (T)(field17633.contains(var0.method11581()) ? var1.method18295() : var1.method18297(Class162.method489()));
+      return (T)(field17633.contains(var0.asItem()) ? var1.method18295() : var1.method18297(Class162.method489()));
    }
 
    private static Class5888 method11061(IItemProvider var0) {

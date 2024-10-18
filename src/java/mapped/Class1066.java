@@ -119,7 +119,7 @@ public abstract class Class1066 extends AbstractHorseEntity {
             return true;
          }
 
-         if (!this.method4927() && var2.getItem() == Blocks.CHEST.method11581()) {
+         if (!this.method4927() && var2.getItem() == Blocks.CHEST.asItem()) {
             this.method4928(true);
             this.method4948();
             return true;
@@ -153,7 +153,7 @@ public abstract class Class1066 extends AbstractHorseEntity {
             return ActionResultType.method9002(this.world.isRemote);
          }
 
-         if (!this.method4927() && var5.getItem() == Blocks.CHEST.method11581()) {
+         if (!this.method4927() && var5.getItem() == Blocks.CHEST.asItem()) {
             this.method4928(true);
             this.method4895();
             if (!var1.abilities.isCreativeMode) {

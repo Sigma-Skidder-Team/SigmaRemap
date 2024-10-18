@@ -21,6 +21,7 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.chunk.ChunkSection;
 import net.minecraft.world.chunk.ChunkStatus;
 import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.lighting.WorldLightManager;
 import net.minecraft.world.server.ChunkManager;
 
 import java.util.List;

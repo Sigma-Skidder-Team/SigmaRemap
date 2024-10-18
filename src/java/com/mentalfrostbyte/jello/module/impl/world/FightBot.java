@@ -7,7 +7,6 @@ import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.misc.JelloAIBot;
-import com.mentalfrostbyte.jello.util.Rots;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.RotationHelper;
@@ -67,7 +66,7 @@ public class FightBot extends Module {
     }
 
     private List<Entity> findEntities() {
-        List<Entity> entities = Lists.newArrayList(mc.world.getEntities());
+        List<Entity> entities = Lists.newArrayList(mc.world.getAllEntities());
         entities.remove(mc.player);
 
         entities.removeIf(entity -> !(entity instanceof PlayerEntity) || !Client.getInstance().getCombatManager().isTargetABot(entity));

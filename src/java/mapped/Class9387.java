@@ -104,7 +104,7 @@ public class Class9387 {
       if (var1 instanceof ClientWorld) {
          ClientWorld var4 = (ClientWorld)var1;
 
-         for (Entity var6 : var4.getEntities()) {
+         for (Entity var6 : var4.getAllEntities()) {
             method35629(var6, var1);
          }
       }

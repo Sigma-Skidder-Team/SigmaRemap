@@ -273,7 +273,7 @@ public class BoatEntity extends Entity {
          this.method4158();
          if (this.world.isRemote) {
             this.method4159();
-            this.world.method6811(new CSteerBoatPacket(this.method4161(0), this.method4161(1)));
+            this.world.sendPacketToServer(new CSteerBoatPacket(this.method4161(0), this.method4161(1)));
          }
 
          this.move(MoverType.SELF, this.getMotion());

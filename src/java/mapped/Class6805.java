@@ -62,7 +62,7 @@ public class Class6805<T> implements ITickList<T> {
                break;
             }
 
-            if (var4.method7353(var6.field35556)) {
+            if (var4.canTick(var6.field35556)) {
                var5.remove();
                this.field29621.remove(var6);
                this.field29624.add(var6);
@@ -74,7 +74,7 @@ public class Class6805<T> implements ITickList<T> {
 
          Class8269 var11;
          while ((var11 = this.field29624.poll()) != null) {
-            if (var4.method7353(var11.field35556)) {
+            if (var4.canTick(var11.field35556)) {
                try {
                   this.field29625.add(var11);
                   this.field29626.accept(var11);

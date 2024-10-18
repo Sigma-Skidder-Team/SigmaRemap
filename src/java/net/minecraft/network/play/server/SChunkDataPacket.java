@@ -14,6 +14,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.biome.BiomeContainer;
 import net.minecraft.world.chunk.ChunkSection;
+import net.optifine.ChunkDataOF;
+import net.optifine.ChunkOF;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -57,7 +59,7 @@ public class SChunkDataPacket implements IPacket<IClientPlayNetHandler> {
       this.field24516 = this.method17376(new PacketBuffer(this.method17375()), var1, var2);
       this.field24520 = Lists.newArrayList();
 
-      for (Entry var14 : var1.method7145().entrySet()) {
+      for (Entry var14 : var1.getTileEntityMap().entrySet()) {
          BlockPos var8 = (BlockPos)var14.getKey();
          TileEntity var9 = (TileEntity)var14.getValue();
          int var10 = var8.getY() >> 4;
@@ -68,7 +70,7 @@ public class SChunkDataPacket implements IPacket<IClientPlayNetHandler> {
       }
 
       this.field24522 = new HashMap<String, Object>();
-      Class8870 var13 = Class1676.method7168(var1);
+      ChunkDataOF var13 = ChunkOF.method7168(var1);
       this.field24522.put("ChunkDataOF", var13);
    }
 

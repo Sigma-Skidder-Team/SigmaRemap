@@ -80,7 +80,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
    private int field4880;
    private boolean field4881;
    private Vector3d field4882;
-   private SectionPos field4883 = SectionPos.method8389(0, 0, 0);
+   private SectionPos field4883 = SectionPos.of(0, 0, 0);
    private RegistryKey<World> field4884 = World.OVERWORLD;
    private BlockPos field4885;
    private boolean field4886;
@@ -105,7 +105,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
 
    private void method2721(ServerWorld var1) {
       BlockPos var4 = var1.getSpawnPoint();
-      if (var1.method6812().hasSkyLight() && var1.getServer().func_240793_aU_().method20067() != GameType.field11104) {
+      if (var1.getDimensionType().hasSkyLight() && var1.getServer().func_240793_aU_().method20067() != GameType.field11104) {
          int var5 = Math.max(0, this.field4856.method1395(var1));
          int var6 = MathHelper.floor(var1.getWorldBorder().method24528((double)var4.getX(), (double)var4.getZ()));
          if (var6 < var5) {
@@ -572,7 +572,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
          this.connection
             .sendPacket(
                new SRespawnPacket(
-                  var1.method6812(),
+                  var1.getDimensionType(),
                   var1.getDimensionKey(),
                   BiomeManager.getHashedSeed(var1.getSeed()),
                   this.interactionManager.getGameType(),
@@ -694,7 +694,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
       Direction var4 = this.world.getBlockState(var1).<Direction>get(HorizontalBlock.HORIZONTAL_FACING);
       if (this.isSleeping() || !this.isAlive()) {
          return Either.left(Class2104.field13718);
-      } else if (!this.world.method6812().isNatural()) {
+      } else if (!this.world.getDimensionType().isNatural()) {
          return Either.left(Class2104.field13714);
       } else if (!this.method2754(var1, var4)) {
          return Either.left(Class2104.field13716);
@@ -1149,7 +1149,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
 
    @Override
    public boolean isCreative() {
-      return this.interactionManager.getGameType() == GameType.field11103;
+      return this.interactionManager.getGameType() == GameType.CREATIVE;
    }
 
    @Override
@@ -1301,7 +1301,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
          this.connection
             .sendPacket(
                new SRespawnPacket(
-                  var1.method6812(),
+                  var1.getDimensionType(),
                   var1.getDimensionKey(),
                   BiomeManager.getHashedSeed(var1.getSeed()),
                   this.interactionManager.getGameType(),

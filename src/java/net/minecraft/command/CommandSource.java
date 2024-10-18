@@ -240,7 +240,7 @@ public class CommandSource implements Class6618 {
 
    public CommandSource method20166(ServerWorld var1) {
       if (var1 != this.field29126) {
-         double var4 = DimensionType.getCoordinateDifference(this.field29126.method6812(), var1.method6812());
+         double var4 = DimensionType.getCoordinateDifference(this.field29126.getDimensionType(), var1.getDimensionType());
          Vector3d var6 = new Vector3d(this.field29125.x * var4, this.field29125.y, this.field29125.z * var4);
          return new CommandSource(
             this.field29124,

@@ -23,6 +23,7 @@ import net.minecraft.util.palette.UpgradeData;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeContainer;
 import net.minecraft.world.gen.feature.structure.StructureStart;
+import net.minecraft.world.lighting.WorldLightManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -83,7 +84,7 @@ public class ChunkPrimer implements IChunk {
       int var4 = var1.getY();
       if (!World.isYOutOfBounds(var4)) {
          ChunkSection var5 = this.getSections()[var4 >> 4];
-         return !ChunkSection.method21859(var5) ? var5.method21852(var1.getX() & 15, var4 & 15, var1.getZ() & 15) : Blocks.AIR.getDefaultState();
+         return !ChunkSection.isEmpty(var5) ? var5.method21852(var1.getX() & 15, var4 & 15, var1.getZ() & 15) : Blocks.AIR.getDefaultState();
       } else {
          return Blocks.VOID_AIR.getDefaultState();
       }
@@ -94,7 +95,7 @@ public class ChunkPrimer implements IChunk {
       int var4 = var1.getY();
       if (!World.isYOutOfBounds(var4)) {
          ChunkSection var5 = this.getSections()[var4 >> 4];
-         return !ChunkSection.method21859(var5) ? var5.method21853(var1.getX() & 15, var4 & 15, var1.getZ() & 15) : Fluids.EMPTY.method25049();
+         return !ChunkSection.isEmpty(var5) ? var5.method21853(var1.getX() & 15, var4 & 15, var1.getZ() & 15) : Fluids.EMPTY.method25049();
       } else {
          return Fluids.EMPTY.method25049();
       }

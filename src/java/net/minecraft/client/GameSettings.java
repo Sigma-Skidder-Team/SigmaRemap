@@ -40,6 +40,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.Difficulty;
+import net.optifine.CustomGuis;
 import net.optifine.DynamicLights;
 import net.optifine.Config;
 import net.optifine.shaders.Shaders;
@@ -1318,7 +1319,7 @@ public class GameSettings {
 
       if (var1 == AbstractOption.field25440) {
          this.field44726 = !this.field44726;
-         Class7050.method21966();
+         CustomGuis.method21966();
       }
 
       if (var1 == AbstractOption.field25442) {

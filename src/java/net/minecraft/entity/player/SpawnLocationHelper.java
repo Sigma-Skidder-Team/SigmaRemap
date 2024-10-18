@@ -18,7 +18,7 @@ public class SpawnLocationHelper {
    public static BlockPos method20940(ServerWorld var0, int var1, int var2, boolean var3) {
       BlockPos.Mutable var6 = new BlockPos.Mutable(var1, 0, var2);
       Biome var7 = var0.getBiome(var6);
-      boolean var8 = var0.method6812().getHasCeiling();
+      boolean var8 = var0.getDimensionType().getHasCeiling();
       BlockState var9 = var7.getGenerationSettings().getSurfaceBuilderConfig().getTop();
       if (var3 && !var9.getBlock().isIn(BlockTags.VALID_SPAWN)) {
          return null;

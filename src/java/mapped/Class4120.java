@@ -16,9 +16,9 @@ public class Class4120 extends Class4117 {
          if (var5 == null) {
             Class2896 var6 = (Class2896)var1;
             if (!var2.equals("left_wing")) {
-               return !var2.equals("right_wing") ? null : (ModelRenderer) Reflector.method35072(var6, Reflector.field43123);
+               return !var2.equals("right_wing") ? null : (ModelRenderer) Reflector.getFieldValue(var6, Reflector.field43123);
             } else {
-               return (ModelRenderer) Reflector.method35072(var6, Reflector.field43122);
+               return (ModelRenderer) Reflector.getFieldValue(var6, Reflector.field43122);
             }
          } else {
             return var5;

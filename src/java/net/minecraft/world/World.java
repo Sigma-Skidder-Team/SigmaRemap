@@ -14,6 +14,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.RecipeManager;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.IPacket;
 import net.minecraft.particles.IParticleData;
@@ -29,8 +30,10 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeManager;
+import net.minecraft.world.chunk.AbstractChunkProvider;
 import net.minecraft.world.chunk.ChunkStatus;
 import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.lighting.WorldLightManager;
 import net.minecraft.world.storage.MapData;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -144,7 +147,7 @@ public abstract class World implements IWorld, AutoCloseable {
 
    @Override
    public IChunk getChunk(int x, int z, ChunkStatus requiredStatus, boolean nonnull) {
-      IChunk var7 = this.getChunkProvider().method7346(x, z, requiredStatus, nonnull);
+      IChunk var7 = this.getChunkProvider().getChunk(x, z, requiredStatus, nonnull);
       if (var7 == null && nonnull) {
          throw new IllegalStateException("Should always be able to create a chunk!");
       } else {
@@ -316,7 +319,7 @@ public abstract class World implements IWorld, AutoCloseable {
    public int method6736(Heightmap.Type var1, int var2, int var3) {
       int var6;
       if (var2 >= -30000000 && var3 >= -30000000 && var2 < 30000000 && var3 < 30000000) {
-         if (!this.method6843(var2 >> 4, var3 >> 4)) {
+         if (!this.chunkExists(var2 >> 4, var3 >> 4)) {
             var6 = 0;
          } else {
             var6 = this.getChunk(var2 >> 4, var3 >> 4).getTopBlockY(var1, var2 & 15, var3 & 15) + 1;
@@ -356,11 +359,11 @@ public abstract class World implements IWorld, AutoCloseable {
    }
 
    public boolean method6740() {
-      return !this.method6812().doesFixedTimeExist() && this.skylightSubtracted < 4;
+      return !this.getDimensionType().doesFixedTimeExist() && this.skylightSubtracted < 4;
    }
 
    public boolean method6741() {
-      return !this.method6812().doesFixedTimeExist() && !this.method6740();
+      return !this.getDimensionType().doesFixedTimeExist() && !this.method6740();
    }
 
    @Override
@@ -425,7 +428,7 @@ public abstract class World implements IWorld, AutoCloseable {
       }
    }
 
-   public void method6753() {
+   public void tickBlockEntities() {
       IProfiler var3 = this.getProfiler();
       var3.startSection("blockEntities");
       if (!this.tileEntitiesToBeRemoved.isEmpty()) {
@@ -441,9 +444,9 @@ public abstract class World implements IWorld, AutoCloseable {
          TileEntity var5 = (TileEntity)var4.next();
          if (!var5.method3778() && var5.method3770()) {
             BlockPos var6 = var5.getPos();
-            if (this.getChunkProvider().method7353(var6) && this.getWorldBorder().contains(var6)) {
+            if (this.getChunkProvider().canTick(var6) && this.getWorldBorder().contains(var6)) {
                try {
-                  var3.method22504(() -> String.valueOf(TileEntityType.method13793(var5.method3786())));
+                  var3.startSection(() -> String.valueOf(TileEntityType.method13793(var5.method3786())));
                   if (var5.method3786().method13796(this.getBlockState(var6).getBlock())) {
                      ((ITickableTileEntity)var5).tick();
                   } else {
@@ -494,7 +497,7 @@ public abstract class World implements IWorld, AutoCloseable {
       var3.endSection();
    }
 
-   public void method6754(Consumer<Entity> var1, Entity var2) {
+   public void guardEntityTick(Consumer<Entity> var1, Entity var2) {
       try {
          var1.accept(var2);
       } catch (Throwable var8) {
@@ -523,7 +526,7 @@ public abstract class World implements IWorld, AutoCloseable {
    }
 
    public String getProviderName() {
-      return this.getChunkProvider().method7347();
+      return this.getChunkProvider().makeString();
    }
 
    @Nullable
@@ -604,7 +607,7 @@ public abstract class World implements IWorld, AutoCloseable {
    }
 
    public boolean method6763(BlockPos var1) {
-      return !isOutsideBuildHeight(var1) ? this.getChunkProvider().method7345(var1.getX() >> 4, var1.getZ() >> 4) : false;
+      return !isOutsideBuildHeight(var1) ? this.getChunkProvider().chunkExists(var1.getX() >> 4, var1.getZ() >> 4) : false;
    }
 
    public boolean method6764(BlockPos var1, Entity var2, Direction var3) {
@@ -620,7 +623,7 @@ public abstract class World implements IWorld, AutoCloseable {
       return this.method6764(var1, var2, Direction.UP);
    }
 
-   public void method6766() {
+   public void calculateInitialSkylight() {
       double var3 = 1.0 - (double)(this.method6792(1.0F) * 5.0F) / 16.0;
       double var5 = 1.0 - (double)(this.method6790(1.0F) * 5.0F) / 16.0;
       double var7 = 0.5 + 2.0 * MathHelper.clamp((double) MathHelper.cos(this.method7001(1.0F) * (float) (Math.PI * 2)), -0.25, 0.25);
@@ -631,7 +634,7 @@ public abstract class World implements IWorld, AutoCloseable {
       this.getChunkProvider().method7349(var1, var2);
    }
 
-   public void method6768() {
+   public void calculateInitialWeather() {
       if (this.worldInfo.method20043()) {
          this.rainingStrength = 1.0F;
          if (this.worldInfo.method20042()) {
@@ -659,7 +662,7 @@ public abstract class World implements IWorld, AutoCloseable {
       int var8 = MathHelper.floor((var2.maxX + 2.0) / 16.0);
       int var9 = MathHelper.floor((var2.minZ - 2.0) / 16.0);
       int var10 = MathHelper.floor((var2.maxZ + 2.0) / 16.0);
-      Class1702 var11 = this.getChunkProvider();
+      AbstractChunkProvider var11 = this.getChunkProvider();
 
       for (int var12 = var7; var12 <= var8; var12++) {
          for (int var13 = var9; var13 <= var10; var13++) {
@@ -701,7 +704,7 @@ public abstract class World implements IWorld, AutoCloseable {
       int var8 = MathHelper.floor((var2.minZ - 2.0) / 16.0);
       int var9 = MathHelper.method37774((var2.maxZ + 2.0) / 16.0);
       ArrayList var10 = Lists.newArrayList();
-      Class1702 var11 = this.getChunkProvider();
+      AbstractChunkProvider var11 = this.getChunkProvider();
 
       for (int var12 = var6; var12 < var7; var12++) {
          for (int var13 = var8; var13 < var9; var13++) {
@@ -723,7 +726,7 @@ public abstract class World implements IWorld, AutoCloseable {
       int var8 = MathHelper.floor((var2.minZ - 2.0) / 16.0);
       int var9 = MathHelper.method37774((var2.maxZ + 2.0) / 16.0);
       ArrayList var10 = Lists.newArrayList();
-      Class1702 var11 = this.getChunkProvider();
+      AbstractChunkProvider var11 = this.getChunkProvider();
 
       for (int var12 = var6; var12 < var7; var12++) {
          for (int var13 = var8; var13 < var9; var13++) {
@@ -833,11 +836,11 @@ public abstract class World implements IWorld, AutoCloseable {
    }
 
    public long getGameTime() {
-      return this.worldInfo.method20033();
+      return this.worldInfo.getGameTime();
    }
 
    public long method6784() {
-      return this.worldInfo.method20034();
+      return this.worldInfo.getDayTime();
    }
 
    public boolean method6785(PlayerEntity var1, BlockPos var2) {
@@ -857,7 +860,7 @@ public abstract class World implements IWorld, AutoCloseable {
    }
 
    public GameRules getGameRules() {
-      return this.worldInfo.method20046();
+      return this.worldInfo.getGameRulesInstance();
    }
 
    public float method6790(float var1) {
@@ -879,7 +882,7 @@ public abstract class World implements IWorld, AutoCloseable {
    }
 
    public boolean method6794() {
-      return this.method6812().hasSkyLight() && !this.method6812().getHasCeiling() ? (double)this.method6790(1.0F) > 0.9 : false;
+      return this.getDimensionType().hasSkyLight() && !this.getDimensionType().getHasCeiling() ? (double)this.method6790(1.0F) > 0.9 : false;
    }
 
    public boolean method6795() {
@@ -919,7 +922,7 @@ public abstract class World implements IWorld, AutoCloseable {
    public CrashReportCategory fillCrashReport(CrashReport var1) {
       CrashReportCategory var4 = var1.method14411("Affected level", 1);
       var4.addDetail("All players", () -> this.method6870().size() + " total; " + this.method6870());
-      var4.addDetail("Chunk stats", this.getChunkProvider()::method7347);
+      var4.addDetail("Chunk stats", this.getChunkProvider()::makeString);
       var4.addDetail("Level dimension", () -> this.getDimensionKey().getLocation().toString());
 
       try {
@@ -983,12 +986,12 @@ public abstract class World implements IWorld, AutoCloseable {
       return this.worldBorder;
    }
 
-   public void method6811(IPacket<?> var1) {
+   public void sendPacketToServer(IPacket<?> var1) {
       throw new UnsupportedOperationException("Can't send packets to server unless you're on the client.");
    }
 
    @Override
-   public DimensionType method6812() {
+   public DimensionType getDimensionType() {
       return this.dimensionType;
    }
 
@@ -1006,7 +1009,7 @@ public abstract class World implements IWorld, AutoCloseable {
       return var2.test(this.getBlockState(var1));
    }
 
-   public abstract Class282 method6816();
+   public abstract RecipeManager getRecipeManager();
 
    public abstract Class8933 method6817();
 

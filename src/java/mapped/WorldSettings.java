@@ -32,7 +32,7 @@ public final class WorldSettings {
          var4,
          var0.get("hardcore").asBoolean(false),
          var0.get("Difficulty").asNumber().map(var0x -> Difficulty.byId(var0x.byteValue())).result().orElse(Difficulty.NORMAL),
-         var0.get("allowCommands").asBoolean(var4 == GameType.field11103),
+         var0.get("allowCommands").asBoolean(var4 == GameType.CREATIVE),
          new GameRules(var0.get("GameRules")),
          var1
       );

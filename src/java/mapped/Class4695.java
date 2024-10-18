@@ -25,7 +25,7 @@ public class Class4695 extends Class4686 {
    }
 
    public static Class5872<?> method14724(IItemProvider var0) {
-      return method14704((var1, var2, var3, var4) -> new Class4695(var0.method11581(), var1, var2, var3, var4));
+      return method14704((var1, var2, var3, var4) -> new Class4695(var0.asItem(), var1, var2, var3, var4));
    }
 
    // $VF: synthetic method

@@ -55,7 +55,7 @@ public class Item implements IItemProvider {
    }
 
    @Deprecated
-   public static Item method11703(Block var0) {
+   public static Item getItemFromBlock(Block var0) {
       return field18732.getOrDefault(var0, Items.AIR);
    }
 
@@ -81,7 +81,7 @@ public class Item implements IItemProvider {
    }
 
    @Override
-   public Item method11581() {
+   public Item asItem() {
       return this;
    }
 

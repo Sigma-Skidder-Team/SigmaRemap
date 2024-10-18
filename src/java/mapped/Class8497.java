@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableMap.Builder;
+import net.minecraft.client.multiplayer.ClientChunkProvider;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.server.ServerWorld;
@@ -21,7 +22,7 @@ public final class Class8497 {
       int var11 = (int)var3 >> 4;
       int var12 = (int)var5 >> 4;
       Builder var13 = ImmutableMap.builder();
-      Class1705 var14 = var9.getChunkProvider();
+      ClientChunkProvider var14 = var9.getChunkProvider();
 
       for (int var15 = var11 - 12; var15 <= var11 + 12; var15++) {
          for (int var16 = var12 - 12; var16 <= var12 + 12; var16++) {

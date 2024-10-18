@@ -66,7 +66,7 @@ public class Class1282 extends Class1274<Class1171> {
          }
 
          if (var14) {
-            var5.add(var13.method11581());
+            var5.add(var13.asItem());
          }
       }
 

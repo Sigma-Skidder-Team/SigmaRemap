@@ -172,7 +172,7 @@ public final class Class8170 {
             return false;
          } else {
             ChunkPos var7 = new ChunkPos(var2);
-            return Objects.equals(var7, var1.getPos()) || var0.getChunkProvider().method7352(var7);
+            return Objects.equals(var7, var1.getPos()) || var0.getChunkProvider().isChunkLoaded(var7);
          }
       } else {
          return false;
@@ -365,7 +365,7 @@ public final class Class8170 {
    private static BlockPos method28431(IWorldReader var0, EntityType<?> var1, int var2, int var3) {
       int var6 = var0.method6736(Class6914.method21121(var1), var2, var3);
       BlockPos.Mutable var7 = new BlockPos.Mutable(var2, var6, var3);
-      if (var0.method6812().getHasCeiling()) {
+      if (var0.getDimensionType().getHasCeiling()) {
          do {
             var7.method8379(Direction.DOWN);
          } while (!var0.getBlockState(var7).isAir());

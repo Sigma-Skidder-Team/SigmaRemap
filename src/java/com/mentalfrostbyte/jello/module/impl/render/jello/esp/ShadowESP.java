@@ -110,7 +110,7 @@ public class ShadowESP extends Module {
             GL11.glEnable(2896);
         }
 
-        for (Entity var10 : mc.world.getEntities()) {
+        for (Entity var10 : mc.world.getAllEntities()) {
             if (this.method16611(var10)) {
                 GL11.glPushMatrix();
                 Vector3d var11 = mc.gameRenderer.getActiveRenderInfo().getPos();

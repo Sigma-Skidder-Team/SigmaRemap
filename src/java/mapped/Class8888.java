@@ -19,7 +19,7 @@ public class Class8888 {
    private String field40214;
 
    public Class8888(IItemProvider var1, int var2) {
-      this.field40210 = var1.method11581();
+      this.field40210 = var1.asItem();
       this.field40211 = var2;
    }
 

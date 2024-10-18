@@ -123,7 +123,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    }
 
    private static void method3643(Map<Item, Integer> var0, IItemProvider var1, int var2) {
-      Item var5 = var1.method11581();
+      Item var5 = var1.asItem();
       if (!method3641(var5)) {
          var0.put(var5, var2);
       } else if (SharedConstants.developmentMode) {
@@ -181,7 +181,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       if (!this.world.isRemote) {
          ItemStack var5 = this.field5247.get(1);
          if (this.method3644() || !var5.isEmpty() && !this.field5247.get(0).isEmpty()) {
-            IRecipe var6 = this.world.method6816().method1030(this.field5254, this, this.world).orElse(null);
+            IRecipe var6 = this.world.getRecipeManager().method1030(this.field5254, this, this.world).orElse(null);
             if (!this.method3644() && this.method3648(var6)) {
                this.field5248 = this.method3650(var5);
                this.field5249 = this.field5248;
@@ -262,7 +262,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
             this.method3636(var1);
          }
 
-         if (var4.getItem() == Blocks.field36453.method11581()
+         if (var4.getItem() == Blocks.field36453.asItem()
             && !this.field5247.get(1).isEmpty()
             && this.field5247.get(1).getItem() == Items.BUCKET) {
             this.field5247.set(1, new ItemStack(Items.WATER_BUCKET));
@@ -282,7 +282,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    }
 
    public int method3651() {
-      return this.world.method6816().method1030(this.field5254, this, this.world).<Integer>map(Class4847::method14977).orElse(200);
+      return this.world.getRecipeManager().method1030(this.field5254, this, this.world).<Integer>map(Class4847::method14977).orElse(200);
    }
 
    public static boolean method3652(ItemStack var0) {
@@ -419,7 +419,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
 
       while (var6.hasNext()) {
          Entry var7 = (Entry)var6.next();
-         var1.method6816().method1035((ResourceLocation)var7.getKey()).ifPresent(var4 -> {
+         var1.getRecipeManager().method1035((ResourceLocation)var7.getKey()).ifPresent(var4 -> {
             var5.add(var4);
             method3658(var1, var2, var7.getIntValue(), ((Class4847)var4).method14976());
          });

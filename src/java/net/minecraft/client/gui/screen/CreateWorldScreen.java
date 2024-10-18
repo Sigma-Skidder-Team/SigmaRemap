@@ -229,7 +229,7 @@ public class CreateWorldScreen extends Screen {
          WorldSettings var5;
          if (var3.method26267()) {
             GameRules var4 = new GameRules();
-            var4.<Class7466>get(GameRules.field24232).set(false, (MinecraftServer)null);
+            var4.<Class7466>get(GameRules.DO_DAYLIGHT_CYCLE).set(false, (MinecraftServer)null);
             var5 = new WorldSettings(this.field7068.getText().trim(), GameType.SPECTATOR, false, Difficulty.PEACEFUL, true, var4, DatapackCodec.VANILLA_CODEC);
          } else {
             var5 = new WorldSettings(

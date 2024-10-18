@@ -33,11 +33,11 @@ public class Class272 extends Class269<Map<ResourceLocation, List<Class1768>>> {
          String var9 = var8.getPath();
          ResourceLocation var10 = new ResourceLocation(var8.getNamespace(), var9.substring("font/".length(), var9.length() - ".json".length()));
          List<Class1768> var11 = var6.computeIfAbsent(var10, var0 -> Lists.newArrayList(new Class1772()));
-         var2.method22504(var10::toString);
+         var2.startSection(var10::toString);
 
          try {
             for (JSonShader var13 : var1.method582(var8)) {
-               var2.method22504(var13::method7765);
+               var2.startSection(var13::method7765);
 
                try (
                        InputStream var14 = var13.getFile();

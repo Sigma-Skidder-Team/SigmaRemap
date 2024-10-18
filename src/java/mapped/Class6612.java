@@ -13,9 +13,9 @@ public interface Class6612 {
 
    float method20032();
 
-   long method20033();
+   long getGameTime();
 
-   long method20034();
+   long getDayTime();
 
    boolean method20042();
 
@@ -25,7 +25,7 @@ public interface Class6612 {
 
    boolean isHardcore();
 
-   GameRules method20046();
+   GameRules getGameRulesInstance();
 
    Difficulty method20047();
 
@@ -33,6 +33,6 @@ public interface Class6612 {
 
    default void method20049(CrashReportCategory var1) {
       var1.addDetail("Level spawn location", () -> CrashReportCategory.method32805(this.getSpawnX(), this.getSpawnY(), this.getSpawnZ()));
-      var1.addDetail("Level time", () -> String.format("%d game time, %d day time", this.method20033(), this.method20034()));
+      var1.addDetail("Level time", () -> String.format("%d game time, %d day time", this.getGameTime(), this.getDayTime()));
    }
 }

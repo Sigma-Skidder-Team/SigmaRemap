@@ -75,7 +75,7 @@ public class Class1652<R> implements AutoCloseable {
    }
 
    public boolean method6644(SectionPos var1) {
-      return World.isYOutOfBounds(SectionPos.method8406(var1.method8411()));
+      return World.isYOutOfBounds(SectionPos.method8406(var1.getSectionY()));
    }
 
    public R method6645(long var1) {

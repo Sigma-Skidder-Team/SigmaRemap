@@ -292,12 +292,12 @@ public class ServerWorldInfo implements IServerWorldInfo, IServerConfiguration {
    }
 
    @Override
-   public long method20033() {
+   public long getGameTime() {
       return this.field29071;
    }
 
    @Override
-   public long method20034() {
+   public long getDayTime() {
       return this.field29072;
    }
 
@@ -452,7 +452,7 @@ public class ServerWorldInfo implements IServerWorldInfo, IServerConfiguration {
    }
 
    @Override
-   public GameRules method20046() {
+   public GameRules getGameRulesInstance() {
       return this.field29064.method32431();
    }
 

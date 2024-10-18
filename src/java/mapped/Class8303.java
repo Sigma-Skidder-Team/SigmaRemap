@@ -12,6 +12,7 @@ import net.minecraft.advancements.Advancement;
 import net.minecraft.command.CommandSource;
 import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.item.crafting.RecipeManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -44,7 +45,7 @@ public class Class8303 implements ArgumentType<ResourceLocation> {
    }
 
    public static IRecipe<?> method29033(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
-      Class282 var4 = ((CommandSource)var0.getSource()).method20177().method1407();
+      RecipeManager var4 = ((CommandSource)var0.getSource()).method20177().method1407();
       ResourceLocation var5 = (ResourceLocation)var0.getArgument(var1, ResourceLocation.class);
       return (IRecipe<?>)var4.method1035(var5).orElseThrow(() -> field35695.create(var5));
    }

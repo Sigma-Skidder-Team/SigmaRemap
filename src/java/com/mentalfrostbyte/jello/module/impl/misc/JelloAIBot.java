@@ -43,7 +43,7 @@ public class JelloAIBot extends Module {
     }
 
     public Entity method16193() {
-        ArrayList var3 = Lists.newArrayList(mc.world.getEntities());
+        ArrayList var3 = Lists.newArrayList(mc.world.getAllEntities());
         var3.remove(mc.player);
         Iterator var4 = var3.iterator();
 

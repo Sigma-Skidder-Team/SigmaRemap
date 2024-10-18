@@ -52,7 +52,7 @@ public class Nuker extends Module {
             this.field23567 = this.method16267(this.getNumberValueBySettingName("Range") / 2.0F);
             if (this.field23567.isEmpty()) {
                 this.field23566 = null;
-            } else if (mc.playerController.getCurrentGameType() != GameType.field11103) {
+            } else if (mc.playerController.getCurrentGameType() != GameType.CREATIVE) {
                 if (this.field23566 != null) {
                     if (mc.world.getBlockState(this.field23566).isAir()
                             || Math.sqrt(

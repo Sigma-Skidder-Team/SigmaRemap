@@ -100,7 +100,7 @@ public class Class3287 extends Item {
          boolean var10 = var7.method23442(this.field18798);
          boolean var11 = var7.isAir() || var10 || var8 instanceof Class3449 && ((Class3449)var8).method11531(var2, var3, var7, this.field18798);
          if (var11) {
-            if (var2.method6812().isUltrawarm() && this.field18798.method25067(FluidTags.field40469)) {
+            if (var2.getDimensionType().isUltrawarm() && this.field18798.method25067(FluidTags.field40469)) {
                int var12 = var3.getX();
                int var13 = var3.getY();
                int var14 = var3.getZ();

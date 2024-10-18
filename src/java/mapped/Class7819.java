@@ -231,7 +231,7 @@ public class Class7819 {
          for (int var4 = -8; var4 <= 8; var4++) {
             Chunk var5 = this.field33538.getChunk(var3, var4);
 
-            for (TileEntity var7 : var5.method7145().values()) {
+            for (TileEntity var7 : var5.getTileEntityMap().values()) {
                if (var7 instanceof Class956) {
                   return true;
                }
@@ -248,7 +248,7 @@ public class Class7819 {
          for (int var4 = -8; var4 <= 8; var4++) {
             Chunk var5 = this.field33538.getChunk(var3, var4);
 
-            for (TileEntity var7 : var5.method7145().values()) {
+            for (TileEntity var7 : var5.getTileEntityMap().values()) {
                if (var7 instanceof Class956) {
                   Class9086 var8 = this.field33540.method38656(this.field33538, var7.getPos());
                   if (var8 != null) {

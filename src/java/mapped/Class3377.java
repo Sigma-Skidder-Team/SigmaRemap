@@ -27,7 +27,7 @@ public class Class3377 extends Class3231 {
    public void method11562(World var1, PlayerEntity var2, BlockPos var3, BlockState var4, TileEntity var5, ItemStack var6) {
       super.method11562(var1, var2, var3, var4, var5, var6);
       if (EnchantmentHelper.getEnchantmentLevel(Enchantments.SILK_TOUCH, var6) == 0) {
-         if (var1.method6812().isUltrawarm()) {
+         if (var1.getDimensionType().isUltrawarm()) {
             var1.removeBlock(var3, false);
             return;
          }
@@ -47,7 +47,7 @@ public class Class3377 extends Class3231 {
    }
 
    public void method11968(BlockState var1, World var2, BlockPos var3) {
-      if (!var2.method6812().isUltrawarm()) {
+      if (!var2.getDimensionType().isUltrawarm()) {
          var2.setBlockState(var3, Blocks.WATER.getDefaultState());
          var2.neighborChanged(var3, Blocks.WATER, var3);
       } else {

@@ -23,6 +23,7 @@ import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.util.ResourceLocation;
 import net.optifine.Config;
+import net.optifine.CustomGuis;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -50,7 +51,7 @@ public class TextureManager implements Class268, Class288, AutoCloseable {
 
    private void method1072(ResourceLocation var1) {
       if (Config.method26974()) {
-         var1 = Class7050.method21963(var1);
+         var1 = CustomGuis.method21963(var1);
       }
 
       Object var4 = this.field1095.get(var1);

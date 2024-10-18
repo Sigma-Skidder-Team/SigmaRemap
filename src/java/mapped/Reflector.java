@@ -49,16 +49,16 @@ public class Reflector {
    public static Class6631 field42765 = new Class6631(field42762, "forEachAboveCopyrightLine");
    public static Class6636 field42766 = new Class6636("net.minecraftforge.common.capabilities.ICapabilityProvider");
    public static Class6636 field42767 = new Class6636("net.minecraftforge.common.capabilities.CapabilityProvider");
-   public static Class6631 field42768 = new Class6631(field42767, "gatherCapabilities", new Class[0]);
+   public static Class6631 CapabilityProvider_gatherCapabilities = new Class6631(field42767, "gatherCapabilities", new Class[0]);
    public static Class6636 field42769 = new Class6636("net.minecraftforge.fml.client.ClientModLoader");
    public static Class6631 field42770 = new Class6631(field42769, "isLoading");
    public static Class6631 field42771 = new Class6631(field42769, "renderProgressText");
    public static Class6636 field42772 = new Class6636("net.minecraftforge.event.world.ChunkDataEvent$Save");
    public static Class6634 field42773 = new Class6634(field42772, new Class[]{IChunk.class, IWorld.class, CompoundNBT.class});
    public static Class6636 field42774 = new Class6636("net.minecraftforge.event.world.ChunkEvent$Load");
-   public static Class6634 field42775 = new Class6634(field42774, new Class[]{IChunk.class});
+   public static Class6634 ChunkEvent_Load_Constructor = new Class6634(field42774, new Class[]{IChunk.class});
    public static Class6636 field42776 = new Class6636("net.minecraftforge.event.world.ChunkEvent$Unload");
-   public static Class6634 field42777 = new Class6634(field42776, new Class[]{IChunk.class});
+   public static Class6634 ChunkEvent_Unload_Constructor = new Class6634(field42776, new Class[]{IChunk.class});
    public static Class6636 field42778 = new Class6636("net.minecraftforge.fml.client.ClientHooks");
    public static Class6631 field42779 = new Class6631(field42778, "trackBrokenTexture");
    public static Class6631 field42780 = new Class6631(field42778, "trackMissingTexture");
@@ -88,7 +88,7 @@ public class Reflector {
    public static Class6636 field42804 = new Class6636("net.minecraftforge.client.event.EntityViewRenderEvent$RenderFogEvent");
    public static Class6634 field42805 = new Class6634(field42804, new Class[]{Class2040.class, ActiveRenderInfo.class, float.class, float.class});
    public static Class6636 field42806 = new Class6636("net.minecraftforge.event.entity.EntityJoinWorldEvent");
-   public static Class6634 field42807 = new Class6634(field42806, new Class[]{Entity.class, World.class});
+   public static Class6634 EntityJoinWorldEvent_Constructor = new Class6634(field42806, new Class[]{Entity.class, World.class});
    public static Class6636 field42808 = new Class6636("net.minecraftforge.eventbus.api.Event");
    public static Class6631 field42809 = new Class6631(field42808, "isCanceled");
    public static Class6631 field42810 = new Class6631(field42808, "getResult");
@@ -117,7 +117,7 @@ public class Reflector {
    public static Class6631 field42833 = new Class6631(field42832, "getAttributes");
    public static Class6636 field42834 = new Class6636("net.minecraftforge.common.extensions.IForgeEntity");
    public static Class6631 field42835 = new Class6631(field42834, "canUpdate", new Class[0]);
-   public static Class6631 field42836 = new Class6631(field42834, "onAddedToWorld");
+   public static Class6631 IForgeEntity_onAddedToWorld = new Class6631(field42834, "onAddedToWorld");
    public static Class6631 IForgeEntity_onRemovedFromWorld = new Class6631(field42834, "onRemovedFromWorld");
    public static Class6631 IForgeEntity_shouldRiderSit = new Class6631(field42834, "shouldRiderSit");
    public static Class6636 field42839 = new Class6636("net.minecraftforge.fluids.FluidAttributes");
@@ -229,7 +229,7 @@ public class Reflector {
    public static Class6631 field42941 = new Class6631(field42939, "canRenderInLayer", new Class[]{FluidState.class, RenderType.class});
    public static Class6636 field42942 = new Class6636("net.minecraftforge.common.extensions.IForgeTileEntity");
    public static Class6631 field42943 = new Class6631(field42942, "getRenderBoundingBox");
-   public static Class6633 field42944 = new Class6633(
+   public static Class6633 ForgeWorld_tileEntitiesToBeRemoved = new Class6633(
       new FieldLocatorTypes(World.class, new Class[]{List.class}, Set.class, new Class[]{Thread.class}, "World.tileEntitiesToBeRemoved")
    );
    public static Class6636 field42945 = new Class6636(DimensionRenderInfo.class);
@@ -297,7 +297,7 @@ public class Reflector {
    public static Class6631 ServerLifecycleHooks_handleServerAboutToStart = new Class6631(field43000, "handleServerAboutToStart");
    public static Class6631 ServerLifecycleHooks_handleServerStarting = new Class6631(field43000, "handleServerStarting");
    public static Class6636 field43003 = new Class6636("net.minecraftforge.event.world.WorldEvent$Load");
-   public static Class6634 field43004 = new Class6634(field43003, new Class[]{IWorld.class});
+   public static Class6634 WorldEvent_Load_Constructor = new Class6634(field43003, new Class[]{IWorld.class});
    private static boolean field43005 = method35096("*** Reflector Vanilla ***");
    public static Class6636 field43006 = new Class6636(ItemEntity.class);
    public static Class6633 field43007 = new Class6633(field43006, DataParameter.class);
@@ -687,10 +687,10 @@ public class Reflector {
    }
 
    public static Object method35071(Class6633 var0) {
-      return method35072(null, var0);
+      return getFieldValue(null, var0);
    }
 
-   public static Object method35072(Object var0, Class6633 var1) {
+   public static Object getFieldValue(Object var0, Class6633 var1) {
       try {
          Field var4 = var1.method20233();
          return var4 == null ? null : var4.get(var0);
@@ -717,7 +717,7 @@ public class Reflector {
 
    public static Object method35075(Object var0, Class9475 var1, int var2) {
       Class6633 var5 = var1.method36564(var2);
-      return var5 != null ? method35072(var0, var5) : null;
+      return var5 != null ? getFieldValue(var0, var5) : null;
    }
 
    public static float method35076(Object var0, Class6633 var1, float var2) {

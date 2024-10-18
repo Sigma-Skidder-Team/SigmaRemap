@@ -57,7 +57,7 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
    @Override
    public boolean isCreative() {
       NetworkPlayerInfo var3 = Minecraft.getInstance().getConnection().method15792(this.getGameProfile().getId());
-      return var3 != null && var3.method19967() == GameType.field11103;
+      return var3 != null && var3.method19967() == GameType.CREATIVE;
    }
 
    public boolean method5368() {

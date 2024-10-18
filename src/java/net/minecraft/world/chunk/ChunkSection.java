@@ -6,6 +6,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.network.PacketBuffer;
+import net.optifine.ChunkDataOF;
 
 import java.util.function.Predicate;
 
@@ -17,7 +18,7 @@ public class ChunkSection {
    private short field30371;
    private short field30372;
    private final Class8556<BlockState> field30373;
-   public static final ThreadLocal<Class8870> field30374 = new ThreadLocal<Class8870>();
+   public static final ThreadLocal<ChunkDataOF> THREAD_CHUNK_DATA_OF = new ThreadLocal<ChunkDataOF>();
 
    public ChunkSection(int var1) {
       this(var1, (short)0, (short)0, (short)0);
@@ -92,7 +93,7 @@ public class ChunkSection {
       return this.field30370 == 0;
    }
 
-   public static boolean method21859(ChunkSection var0) {
+   public static boolean isEmpty(ChunkSection var0) {
       return var0 == Chunk.field9111 || var0.method21858();
    }
 
@@ -113,7 +114,7 @@ public class ChunkSection {
    }
 
    public void method21864() {
-      Class8870 var3 = field30374.get();
+      ChunkDataOF var3 = THREAD_CHUNK_DATA_OF.get();
       if (var3 != null) {
          Class8889[] var4 = var3.method32269();
          if (var4 != null) {

@@ -1,22 +1,24 @@
 package mapped;
 
+import net.optifine.ChunkOF;
+
 public class Class8674 {
    private static String[] field39098;
 
    public static boolean method31216(Chunk var0) {
-      if (!(var0 instanceof Class1676)) {
+      if (!(var0 instanceof ChunkOF)) {
          return true;
       } else {
-         Class1676 var3 = (Class1676)var0;
+         ChunkOF var3 = (ChunkOF)var0;
          return var3.method7169();
       }
    }
 
    public static boolean method31217(Chunk var0) {
-      if (!(var0 instanceof Class1676)) {
+      if (!(var0 instanceof ChunkOF)) {
          return false;
       } else {
-         Class1676 var3 = (Class1676)var0;
+         ChunkOF var3 = (ChunkOF)var0;
          return var3.method7170();
       }
    }

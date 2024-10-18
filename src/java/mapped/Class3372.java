@@ -46,7 +46,7 @@ public class Class3372 extends Class3241 {
    }
 
    public static void method11966(BlockState var0, World var1, BlockPos var2) {
-      if (var1.method6812().hasSkyLight()) {
+      if (var1.getDimensionType().hasSkyLight()) {
          int var5 = var1.getLightFor(LightType.SKY, var2) - var1.method6808();
          float var6 = var1.method6750(1.0F);
          boolean var7 = var0.<Boolean>get(field18964);

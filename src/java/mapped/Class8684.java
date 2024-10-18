@@ -20,6 +20,7 @@ import net.minecraft.client.renderer.texture.Texture;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.optifine.Config;
+import net.optifine.CustomGuis;
 import net.optifine.entity.model.CustomEntityModels;
 import net.optifine.reflect.ReflectorForge;
 import net.optifine.shaders.Shaders;
@@ -201,7 +202,7 @@ public class Class8684 {
          Config.method26824();
          Class9753.method38323();
          Class6695.method20416();
-         Class7050.method21966();
+         CustomGuis.method21966();
          Class262.method853();
          Class8703.method31388();
          Class7031.method21825();

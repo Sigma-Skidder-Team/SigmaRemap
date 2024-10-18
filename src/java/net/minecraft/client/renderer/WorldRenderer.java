@@ -19,12 +19,14 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.AbstractOption;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.multiplayer.ClientChunkProvider;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.settings.ParticleStatus;
 import net.minecraft.client.shader.Framebuffer;
 import net.minecraft.client.shader.ShaderGroup;
 import net.minecraft.client.util.Util;
 import net.minecraft.client.world.ClientWorld;
+import net.minecraft.client.world.DimensionRenderInfo;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.LivingEntity;
@@ -206,7 +208,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
 
    private void method855(Class1699 var1, float var2, double var3, double var5, double var7) {
       if (Reflector.field42948.exists()) {
-         Class8296 var9 = (Class8296) Reflector.call(this.world.method6830(), Reflector.field42948);
+         Class8296 var9 = (Class8296) Reflector.call(this.world.func_239132_a_(), Reflector.field42948);
          if (var9 != null) {
             var9.method28999(this.field955, var2, this.world, this.mc, var1, var3, var5, var7);
             return;
@@ -700,7 +702,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
             this.method859();
          }
 
-         this.world.method6842();
+         this.world.clearColorCaches();
          if (this.field983 == null) {
             this.field983 = new Class9016(this.world, this, Util.getServerExecutor(), this.mc.isJava64bit(), this.renderTypeTextures.method26535());
          } else {
@@ -1148,7 +1150,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
 
       var20.field32828 = Config.isShaders() && ! Shaders.method33005();
       float var22 = var7.method767();
-      boolean var23 = this.mc.world.method6830().method19300(MathHelper.floor(var12), MathHelper.floor(var14))
+      boolean var23 = this.mc.world.func_239132_a_().method19300(MathHelper.floor(var12), MathHelper.floor(var14))
          || this.mc.ingameGUI.getBossOverlay().method5959();
       if ((Config.method26879() || Config.method26880() || Config.method26884()) && ! Shaders.isShadowPass) {
          FogRenderer.method32587(var6, Class2040.field13337, var22, var23, var2);
@@ -1210,7 +1212,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
       }
 
       Class8578.field38579.method31035();
-      if (this.world.method6830().method19307()) {
+      if (this.world.func_239132_a_().method19307()) {
          RenderHelper.setupDiffuseGuiLighting(matrixStackIn.getLast().getMatrix());
       } else {
          RenderHelper.setupLevelDiffuseLighting(matrixStackIn.getLast().getMatrix());
@@ -2006,16 +2008,16 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
 
    public void method888(MatrixStack var1, float var2) {
       if (Reflector.field42947.exists()) {
-         Class9797 var3 = (Class9797) Reflector.call(this.world.method6830(), Reflector.field42947);
+         Class9797 var3 = (Class9797) Reflector.call(this.world.func_239132_a_(), Reflector.field42947);
          if (var3 != null) {
             var3.method38636(this.field955, var2, var1, this.world, this.mc);
             return;
          }
       }
 
-      if (this.mc.world.method6830().method19305() == Class2078.field13537) {
+      if (this.mc.world.func_239132_a_().method19305() == DimensionRenderInfo.FogType.END) {
          this.method887(var1);
-      } else if (this.mc.world.method6830().method19305() == Class2078.field13536) {
+      } else if (this.mc.world.func_239132_a_().method19305() == DimensionRenderInfo.FogType.NORMAL) {
          RenderSystem.disableTexture();
          boolean var20 = Config.isShaders();
          if (var20) {
@@ -2066,7 +2068,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
          RenderSystem.disableAlphaTest();
          RenderSystem.enableBlend();
          RenderSystem.defaultBlendFunc();
-         float[] var9 = this.world.method6830().method19302(this.world.method7001(var2), var2);
+         float[] var9 = this.world.func_239132_a_().func_230492_a_(this.world.method7001(var2), var2);
          if (var9 != null && Config.method26880()) {
             RenderSystem.disableTexture();
             if (var20) {
@@ -2196,7 +2198,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
             var32 = true;
          }
 
-         if (this.world.method6830().method19304()) {
+         if (this.world.func_239132_a_().method19304()) {
             RenderSystem.color3f(var5 * 0.2F + 0.04F, var6 * 0.2F + 0.04F, var7 * 0.6F + 0.1F);
          } else {
             RenderSystem.color3f(var5, var6, var7);
@@ -2211,14 +2213,14 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
    public void method889(MatrixStack var1, float var2, double var3, double var5, double var7) {
       if (!Config.method26823()) {
          if (Reflector.field42946.exists()) {
-            Class8098 var9 = (Class8098) Reflector.call(this.world.method6830(), Reflector.field42946);
+            Class8098 var9 = (Class8098) Reflector.call(this.world.func_239132_a_(), Reflector.field42946);
             if (var9 != null) {
                var9.method28052(this.field955, var2, var1, this.world, this.mc, var3, var5, var7);
                return;
             }
          }
 
-         float var31 = this.world.method6830().method19303();
+         float var31 = this.world.func_239132_a_().method19303();
          if (!Float.isNaN(var31)) {
             if (Config.isShaders()) {
                Shaders.method33076();
@@ -2881,7 +2883,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
       for (int var7 = var3 - 1; var7 <= var6 + 1; var7++) {
          for (int var8 = var1 - 1; var8 <= var4 + 1; var8++) {
             for (int var9 = var2 - 1; var9 <= var5 + 1; var9++) {
-               this.method906(var8 >> 4, var9 >> 4, var7 >> 4);
+               this.markForRerender(var8 >> 4, var9 >> 4, var7 >> 4);
             }
          }
       }
@@ -2897,13 +2899,13 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
       for (int var4 = var3 - 1; var4 <= var3 + 1; var4++) {
          for (int var5 = var1 - 1; var5 <= var1 + 1; var5++) {
             for (int var6 = var2 - 1; var6 <= var2 + 1; var6++) {
-               this.method906(var5, var6, var4);
+               this.markForRerender(var5, var6, var4);
             }
          }
       }
    }
 
-   public void method906(int var1, int var2, int var3) {
+   public void markForRerender(int var1, int var2, int var3) {
       this.method907(var1, var2, var3, false);
    }
 
@@ -3535,8 +3537,8 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
       if (this.world == null) {
          return 0;
       } else {
-         Class1705 var1 = this.world.getChunkProvider();
-         return var1 == null ? 0 : var1.method7405();
+         ClientChunkProvider var1 = this.world.getChunkProvider();
+         return var1 == null ? 0 : var1.getLoadedChunksCount();
       }
    }
 

@@ -37,7 +37,7 @@ public class ColorCache {
       }
    }
 
-   public void method32732(int var1, int var2) {
+   public void invalidateChunk(int var1, int var2) {
       try {
          this.field40483.writeLock().lock();
 
@@ -52,7 +52,7 @@ public class ColorCache {
       }
    }
 
-   public void method32733() {
+   public void invalidateAll() {
       try {
          this.field40483.writeLock().lock();
          this.field40482.clear();
