@@ -33,7 +33,7 @@ public class LoginAndOutScreen extends Screen {
    public LoginAndOutScreen() {
       super("Credits");
       this.method13300(false);
-      this.field21087 = ResourcesDecrypter.createScaledAndProcessedTexture2("com/mentalfrostbyte/gui/resources/" + ResourcesDecrypter.getPanoramaPNG(), 0.075F, 8);
+      this.field21087 = ResourcesDecrypter.createScaledAndProcessedTexture2("com/mentalfrostbyte/gui/resources/background/panorama5.png", 0.075F, 8);
       this.addToList(
          this.field21088 = new LoginScreen(
             this,

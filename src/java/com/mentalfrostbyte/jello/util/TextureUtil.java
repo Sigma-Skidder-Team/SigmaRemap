@@ -3,23 +3,17 @@ package com.mentalfrostbyte.jello.util;
 import lol.*;
 import org.lwjgl.opengl.GL11;
 
-import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 
 public class TextureUtil {
-    private static String[] field40565;
 
     public static Texture method32933(String var0, BufferedImage var1) throws IOException {
         return method32935(var0, var1, 3553, 6408, 9729, 9729);
     }
 
-    public static Texture method32934(String var0, BufferedImage var1, int var2) throws IOException {
-        return method32935(var0, var1, 3553, 6408, var2, var2);
-    }
-
-    public static Texture method32935(String var0, BufferedImage var1, int var2, int var3, int var4, int var5) throws IOException {
+    public static Texture method32935(String var0, BufferedImage var1, int var2, int var3, int var4, int var5) {
         Class6958 var8 = new Class6958();
         int var9 = 0;
         int var10 = InternalTextureLoader.method35789();
@@ -58,10 +52,5 @@ public class TextureUtil {
         GL11.glPixelStorei(3317, 4);
         Renderer.get().method18414(var2, 0, var3, var11.getTextureWidth(), var11.getTextureHeight(), 0, var9, 5121, var13);
         return var11;
-    }
-
-    private static void method32936(BufferedImage var0, int var1, int var2, int var3, int var4, int var5, int var6) {
-        Graphics2D var9 = (Graphics2D) var0.getGraphics();
-        var9.drawImage(var0.getSubimage(var1, var2, var3, var4), var1 + var5, var2 + var6, null);
     }
 }

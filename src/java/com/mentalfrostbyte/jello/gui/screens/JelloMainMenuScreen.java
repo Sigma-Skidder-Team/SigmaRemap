@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.gui.Screen;
 import com.mentalfrostbyte.jello.network.NetworkManager;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
@@ -75,14 +75,14 @@ public class JelloMainMenuScreen extends Screen {
    public static String field20981;
    public static float field20982;
    public AlertPanel field20983;
-   public AlertPanel field20984;
+   public AlertPanel alertPanel;
 
    public JelloMainMenuScreen() {
       super("Main Screen");
       this.method13300(false);
       field20965 = System.nanoTime();
       if (field20976 == null) {
-         field20976 = ResourcesDecrypter.createScaledAndProcessedTexture2("com/mentalfrostbyte/gui/resources/" + ResourcesDecrypter.getPanoramaPNG(), 0.075F, 8);
+         field20976 = ResourcesDecrypter.createScaledAndProcessedTexture2("com/mentalfrostbyte/gui/resources/background/panorama5.png", 0.075F, 8);
       }
 
       this.field20974.changeDirection(Direction.BACKWARDS);
@@ -135,7 +135,7 @@ public class JelloMainMenuScreen extends Screen {
 
    @Override
    public void method13028(int var1, int var2) {
-      for (IconPanel var6 : this.field20977) {
+      for (CustomGuiScreen var6 : this.field20977) {
          var6.method13028(var1, var2);
       }
 
@@ -203,7 +203,7 @@ public class JelloMainMenuScreen extends Screen {
             ResourcesDecrypter.middlePNG
          );
 
-         for (IconPanel var21 : this.field20977) {
+         for (CustomGuiScreen var21 : this.field20977) {
             GL11.glPushMatrix();
             var21.draw(var1);
             GL11.glPopMatrix();
@@ -236,7 +236,7 @@ public class JelloMainMenuScreen extends Screen {
             0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var4 * 0.3F)
          );
 
-         for (IconPanel var24 : this.method13241()) {
+         for (CustomGuiScreen var24 : this.method13241()) {
             if (var24.method13287()) {
                GL11.glPushMatrix();
                if (var24 instanceof ChangelogScreen) {
@@ -299,7 +299,7 @@ public class JelloMainMenuScreen extends Screen {
       }
    }
 
-   public void method13344() {
+   public void warnAgora() {
       if (this.field20983 == null) {
          this.method13222(() -> {
             List<MiniAlert> var3 = new ArrayList<>();
@@ -319,24 +319,25 @@ public class JelloMainMenuScreen extends Screen {
    }
 
    public void logout() {
-      if (this.field20984 == null) {
+      if (this.alertPanel == null) {
          this.method13222(() -> {
-            ArrayList<MiniAlert> var3 = new ArrayList();
-            var3.add(new MiniAlert(AlertType.HEADER, "Logout", 45));
-            var3.add(new MiniAlert(AlertType.FIRSTLINE, "Are you sure?", 35));
-            var3.add(new MiniAlert(AlertType.BUTTON, "Yes", 55));
-            this.method13233(this.field20984 = new AlertPanel(this, "music", true, "Dependencies.", var3.toArray(new MiniAlert[0])));
-            this.field20984.method13604(var1 -> new Thread(() -> {
+            ArrayList<MiniAlert> alert = new ArrayList<>();
+            alert.add(new MiniAlert(AlertType.HEADER, "Logout", 45));
+            alert.add(new MiniAlert(AlertType.FIRSTLINE, "Are you sure?", 35));
+            alert.add(new MiniAlert(AlertType.BUTTON, "Yes", 55));
+            this.method13233(this.alertPanel = new AlertPanel(this, "music", true, "Dependencies.", alert.toArray(new MiniAlert[0])));
+            this.alertPanel.method13604(var1 -> new Thread(() -> {
                 this.method13222(() -> {
-                   this.method13236(this.field20984);
-                   this.field20984 = null;
+                   this.method13236(this.alertPanel);
+                   this.alertPanel = null;
+
+                   NetworkManager.premium = false;
+                   Client.getInstance().getDRPC().smallImageKey = null;
+                   Client.getInstance().getDRPC().smallImageText = null;
+                   DiscordRPC.INSTANCE.Discord_UpdatePresence(Client.getInstance().getDRPC());
                 });
-               NetworkManager.premium = false;
-               Client.getInstance().getDRPC().smallImageKey = null;
-               Client.getInstance().getDRPC().smallImageText = null;
-               DiscordRPC.INSTANCE.Discord_UpdatePresence(Client.getInstance().getDRPC());
             }).start());
-            this.field20984.method13603(true);
+            this.alertPanel.method13603(true);
          });
       }
    }
