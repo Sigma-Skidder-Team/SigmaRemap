@@ -12,7 +12,7 @@ import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
 public class Speed extends ModuleWithModuleSettings {
-    public static int field23893;
+    public static int tickCounter;
 
     public Speed() {
         super(
@@ -36,18 +36,18 @@ public class Speed extends ModuleWithModuleSettings {
                 new TestSpeed()
         );
         this.registerSetting(new BooleanSetting("Lag back checker", "Disable speed when you get lag back", true));
-        field23893 = 0;
+        tickCounter = 0;
     }
 
     @EventTarget    
-    public void method16762(TickEvent var1) {
-        field23893++;
+    public void TickEvent(TickEvent event) {
+        tickCounter++;
     }
 
     @EventTarget
-    public void method16763(ReceivePacketEvent var1) {
-        if (var1.getPacket() instanceof SPlayerPositionLookPacket && mc.player != null) {
-            field23893 = 0;
+    public void RecievePacketEvent(ReceivePacketEvent event) {
+        if (event.getPacket() instanceof SPlayerPositionLookPacket && mc.player != null) {
+            tickCounter = 0;
             if (this.getBooleanValueFromSettingName("Lag back checker") && this.isEnabled() && mc.player.ticksExisted > 2) {
                 Client.getInstance().getNotificationManager().send(new Notification("Speed", "Disabled speed due to lagback."));
                 this.toggle();
@@ -57,8 +57,8 @@ public class Speed extends ModuleWithModuleSettings {
 
     public void method16764() {
         if (this.parentModule instanceof HypixelSpeed) {
-            HypixelSpeed var3 = (HypixelSpeed) this.parentModule;
-            var3.method16044();
+            HypixelSpeed hypixelSpeed = (HypixelSpeed) this.parentModule;
+            hypixelSpeed.method16044();
         }
     }
 }
