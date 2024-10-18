@@ -293,7 +293,7 @@ public class GlStateManager {
       GL14.glBlendEquation(var0);
    }
 
-   public static String method23720(GLCapabilities var0) {
+   public static String init(GLCapabilities var0) {
       RenderSystem.assertThread(RenderSystem::isInInitPhase);
       Config.method26780();
       openGL31 = var0.OpenGL31;
@@ -516,7 +516,7 @@ public class GlStateManager {
       return GL15.glGenBuffers();
    }
 
-   public static void method23747(int var0, int var1) {
+   public static void bindBuffer(int var0, int var1) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
       GL15.glBindBuffer(var0, var1);
    }
@@ -693,7 +693,7 @@ public class GlStateManager {
    }
 
    @Deprecated
-   public static void method23761(int var0, float var1, float var2) {
+   public static void multiTexCoord2f(int var0, float var1, float var2) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL13.glMultiTexCoord2f(var0, var1, var2);
       if (var0 == 33986) {
@@ -731,12 +731,12 @@ public class GlStateManager {
 
    public static void method23767(int var0, int var1) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      method23803(33985);
+      activeTexture(33985);
       enableTexture();
       matrixMode(5890);
       loadIdentity();
       float var4 = 1.0F / (float)(var1 - 1);
-      method23837(var4, var4, var4);
+      scalef(var4, var4, var4);
       matrixMode(5888);
       bindTexture(var0);
       texParameter(3553, 10241, 9728);
@@ -746,14 +746,14 @@ public class GlStateManager {
       method23806(8960, 8704, 34160);
       method23770(34165, 34168, 5890, 5890);
       method23771(7681, 34168);
-      method23803(33984);
+      activeTexture(33984);
    }
 
    public static void method23768() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      method23803(33985);
+      activeTexture(33985);
       method23805();
-      method23803(33984);
+      activeTexture(33984);
    }
 
    private static void method23769(int var0, int var1) {
@@ -780,7 +780,7 @@ public class GlStateManager {
 
    public static void method23772(Vector3f var0, Vector3f var1, Matrix4f var2) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      method23832();
+      pushMatrix();
       loadIdentity();
       method23700(0);
       method23700(1);
@@ -800,7 +800,7 @@ public class GlStateManager {
       shadeModel(7424);
       float var8 = 0.4F;
       lightModel(2899, getBuffer(0.4F, 0.4F, 0.4F, 1.0F));
-      method23833();
+      popMatrix();
    }
 
    public static void method23773(Vector3f var0, Vector3f var1) {
@@ -1049,7 +1049,7 @@ public class GlStateManager {
       }
    }
 
-   public static void method23803(int var0) {
+   public static void activeTexture(int var0) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       if (activeTexture != var0 - 33984) {
          activeTexture = var0 - 33984;
@@ -1083,7 +1083,7 @@ public class GlStateManager {
       GL11.glTexParameteri(var0, var1, var2);
    }
 
-   public static int method23809(int var0, int var1, int var2) {
+   public static int getTexLevelParameter(int var0, int var1, int var2) {
       RenderSystem.assertThread(RenderSystem::isInInitPhase);
       return GL11.glGetTexLevelParameteri(var0, var1, var2);
    }
@@ -1167,7 +1167,7 @@ public class GlStateManager {
    }
 
    @Deprecated
-   public static void method23820() {
+   public static void disableRescaleNormal() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       RESCALE_NORMAL.disable();
    }
@@ -1230,7 +1230,7 @@ public class GlStateManager {
       GL11.glClearColor(var0, var1, var2, var3);
    }
 
-   public static void method23828(int var0) {
+   public static void clearStencil(int var0) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glClearStencil(var0);
    }
@@ -1256,13 +1256,13 @@ public class GlStateManager {
    }
 
    @Deprecated
-   public static void method23832() {
+   public static void pushMatrix() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glPushMatrix();
    }
 
    @Deprecated
-   public static void method23833() {
+   public static void popMatrix() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glPopMatrix();
    }
@@ -1280,19 +1280,19 @@ public class GlStateManager {
    }
 
    @Deprecated
-   public static void method23836(float var0, float var1, float var2, float var3) {
+   public static void rotatef(float var0, float var1, float var2, float var3) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glRotatef(var0, var1, var2, var3);
    }
 
    @Deprecated
-   public static void method23837(float var0, float var1, float var2) {
+   public static void scalef(float var0, float var1, float var2) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glScalef(var0, var1, var2);
    }
 
    @Deprecated
-   public static void method23838(double var0, double var2, double var4) {
+   public static void scaled(double var0, double var2, double var4) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glScaled(var0, var2, var4);
    }
@@ -1304,7 +1304,7 @@ public class GlStateManager {
    }
 
    @Deprecated
-   public static void method23840(double var0, double var2, double var4) {
+   public static void translated(double var0, double var2, double var4) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glTranslated(var0, var2, var4);
    }
@@ -1336,7 +1336,7 @@ public class GlStateManager {
    }
 
    @Deprecated
-   public static void method23844() {
+   public static void clearCurrentColor() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       COLOR.red = -1.0F;
       COLOR.green = -1.0F;
@@ -1399,7 +1399,7 @@ public class GlStateManager {
       GL20.glEnableVertexAttribArray(var0);
    }
 
-   public static void method23854(int var0, int var1, int var2) {
+   public static void drawArrays(int var0, int var1, int var2) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glDrawArrays(var0, var1, var2);
       if (Config.isShaders() && !creatingDisplayList) {
@@ -1415,7 +1415,7 @@ public class GlStateManager {
       }
    }
 
-   public static void method23855(float var0) {
+   public static void lineWidth(float var0) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glLineWidth(var0);
    }
@@ -1450,12 +1450,12 @@ public class GlStateManager {
       return GL11.glGetError();
    }
 
-   public static String method23860(int var0) {
+   public static String getString(int var0) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       return GL11.glGetString(var0);
    }
 
-   public static int method23861(int var0) {
+   public static int getInteger(int var0) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
       return GL11.glGetInteger(var0);
    }

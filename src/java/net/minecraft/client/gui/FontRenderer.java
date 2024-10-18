@@ -89,7 +89,7 @@ public class FontRenderer {
       if (var1 != null) {
          Class7735 var10 = Class7733.method25595(Tessellator.getInstance().getBuffer());
          int var11 = this.method38811(var1, var2, var3, var4, var6, var5, var10, false, 0, 15728880, var7);
-         var10.method25602();
+         var10.finish();
          return var11;
       } else {
          return 0;
@@ -111,13 +111,13 @@ public class FontRenderer {
          }
       }
 
-      var9.method25602();
+      var9.finish();
    }
 
    private int method38809(Class9125 var1, float var2, float var3, int var4, Matrix4f var5, boolean var6) {
       Class7735 var9 = Class7733.method25595(Tessellator.getInstance().getBuffer());
       int var10 = this.method38813(var1, var2, var3, var4, var6, var5, var9, false, 0, 15728880);
-      var9.method25602();
+      var9.finish();
       return var10;
    }
 

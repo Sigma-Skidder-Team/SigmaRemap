@@ -20,7 +20,7 @@ public class Class7604 implements Class7601 {
    @Override
    public Class2139 method24894(MatrixStack var1, ToastGui var2, long var3) {
       var2.method5915().getTextureManager().bindTexture(field32630);
-      RenderSystem.method27890(1.0F, 1.0F, 1.0F);
+      RenderSystem.color3f(1.0F, 1.0F, 1.0F);
       Class9272 var7 = this.field32644.method27027();
       var2.blit(var1, 0, 0, 0, 0, this.method24898(), this.method24899());
       if (var7 == null) {

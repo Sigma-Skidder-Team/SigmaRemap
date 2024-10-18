@@ -43,7 +43,7 @@ public class Class3689 extends Class3676<LivingEntity> {
       CreatureEntity var7 = (CreatureEntity)var2;
       Class1653 var8 = var1.method6951();
       Predicate<BlockPos> var9 = var1x -> {
-         long var4 = var1x.method8332();
+         long var4 = var1x.toLong();
          if (!this.field19710.containsKey(var4)) {
             if (++this.field19711 < 5) {
                this.field19710.put(var4, this.field19712 + 40L);

@@ -7,6 +7,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.server.ServerWorld;
+import net.minecraft.world.storage.MapData;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -52,7 +53,7 @@ public class ExplorationMap extends Class128 {
             if (var7 != null) {
                ItemStack var8 = Class3316.method11859(var6, var7.getX(), var7.getZ(), this.field476, true, true);
                Class3316.method11868(var6, var8);
-               Class7529.method24595(var8, var7, "+", this.field475);
+               MapData.method24595(var8, var7, "+", this.field475);
                var8.method32150(new TranslationTextComponent("filled_map." + this.field474.method11373().toLowerCase(Locale.ROOT)));
                return var8;
             }

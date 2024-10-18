@@ -6,6 +6,8 @@ import lol.MovementUtils;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ServerData;
+import net.minecraft.client.network.play.NetworkPlayerInfo;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.monster.MonsterEntity;
@@ -29,7 +31,6 @@ import totalcross.json.JSONArray;
 import totalcross.json.JSONObject;
 
 import java.awt.Color;
-import java.awt.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -244,7 +245,7 @@ public class MultiUtilities {
    }
 
    public static int method17705() {
-      for (Class6589 var3 : mc.getConnection().method15790()) {
+      for (NetworkPlayerInfo var3 : mc.getConnection().method15790()) {
          if (var3.method19966().getId().equals(mc.player.getUniqueID()) && !mc.isIntegratedServerRunning()) {
             return var3.method19969();
          }

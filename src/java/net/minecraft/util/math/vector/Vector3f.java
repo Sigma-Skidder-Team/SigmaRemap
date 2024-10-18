@@ -110,7 +110,7 @@ public final class Vector3f {
       return this.field32903 * var1.field32903 + this.field32904 * var1.field32904 + this.field32905 * var1.field32905;
    }
 
-   public boolean method25280() {
+   public boolean normalize() {
       float var3 = this.field32903 * this.field32903 + this.field32904 * this.field32904 + this.field32905 * this.field32905;
       if (!((double)var3 < 1.0E-5)) {
          float var4 = MathHelper.method37815(var3);
@@ -146,10 +146,10 @@ public final class Vector3f {
 
    public void method25283(Quaternion var1) {
       Quaternion var4 = new Quaternion(var1);
-      var4.method31182(new Quaternion(this.method25269(), this.method25270(), this.method25271(), 0.0F));
+      var4.multiply(new Quaternion(this.method25269(), this.method25270(), this.method25271(), 0.0F));
       Quaternion var5 = new Quaternion(var1);
-      var5.method31184();
-      var4.method31182(var5);
+      var5.conjugate();
+      var4.multiply(var5);
       this.method25275(var4.method31178(), var4.method31179(), var4.method31180());
    }
 

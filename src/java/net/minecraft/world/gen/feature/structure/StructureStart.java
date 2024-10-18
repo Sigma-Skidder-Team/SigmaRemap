@@ -6,6 +6,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.util.math.vector.Vector3i;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.ISeedReader;
@@ -17,16 +18,16 @@ import java.util.List;
 import java.util.Random;
 
 public abstract class StructureStart<C extends Class4698> {
-   public static final StructureStart<?> field24194 = new Class5443(Structure.MINESHAFT, 0, 0, Class9764.method38386(), 0, 0L);
+   public static final StructureStart<?> field24194 = new Class5443(Structure.MINESHAFT, 0, 0, MutableBoundingBox.method38386(), 0, 0L);
    private final Structure<C> field24195;
    public final List<Class4178> field24196 = Lists.newArrayList();
-   public Class9764 field24197;
+   public MutableBoundingBox field24197;
    private final int field24198;
    private final int field24199;
    private int field24200;
    public final SharedSeedRandom field24201;
 
-   public StructureStart(Structure<C> var1, int var2, int var3, Class9764 var4, int var5, long var6) {
+   public StructureStart(Structure<C> var1, int var2, int var3, MutableBoundingBox var4, int var5, long var6) {
       this.field24195 = var1;
       this.field24198 = var2;
       this.field24199 = var3;
@@ -38,7 +39,7 @@ public abstract class StructureStart<C extends Class4698> {
 
    public abstract void method17109(DynamicRegistries var1, ChunkGenerator var2, TemplateManager var3, int var4, int var5, Biome var6, C var7);
 
-   public Class9764 getBoundingBox() {
+   public MutableBoundingBox getBoundingBox() {
       return this.field24197;
    }
 
@@ -46,10 +47,10 @@ public abstract class StructureStart<C extends Class4698> {
       return this.field24196;
    }
 
-   public void method17112(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6) {
+   public void func_230366_a_(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, MutableBoundingBox var5, ChunkPos var6) {
       synchronized (this.field24196) {
          if (!this.field24196.isEmpty()) {
-            Class9764 var10 = this.field24196.get(0).field20444;
+            MutableBoundingBox var10 = this.field24196.get(0).field20444;
             Vector3i var11 = var10.method38401();
             BlockPos var12 = new BlockPos(var11.getX(), var10.field45679, var11.getZ());
             Iterator var13 = this.field24196.iterator();
@@ -67,7 +68,7 @@ public abstract class StructureStart<C extends Class4698> {
    }
 
    public void method17113() {
-      this.field24197 = Class9764.method38386();
+      this.field24197 = MutableBoundingBox.method38386();
 
       for (Class4178 var4 : this.field24196) {
          this.field24197.method38392(var4.method12915());

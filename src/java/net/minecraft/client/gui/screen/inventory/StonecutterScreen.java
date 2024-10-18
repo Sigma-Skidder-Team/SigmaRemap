@@ -34,7 +34,7 @@ public class StonecutterScreen extends ContainerScreen<Class5811> {
    }
 
    @Override
-   public void method2618(MatrixStack var1, float var2, int var3, int var4) {
+   public void drawGuiContainerBackgroundLayer(MatrixStack var1, float var2, int var3, int var4) {
       this.renderBackground(var1);
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       this.mc.getTextureManager().bindTexture(field4796);

@@ -12,6 +12,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.gen.feature.structure.StructureManager;
@@ -64,7 +65,7 @@ public class Class4183 extends Class4180 {
    }
 
    @Override
-   public void method12944(String var1, BlockPos var2, Class1659 var3, Random var4, Class9764 var5) {
+   public void method12944(String var1, BlockPos var2, Class1659 var3, Random var4, MutableBoundingBox var5) {
       if (!"chest".equals(var1)) {
          if ("drowned".equals(var1)) {
             Class1037 var8 = EntityType.DROWNED.create(var3.method6970());
@@ -92,7 +93,7 @@ public class Class4183 extends Class4180 {
    }
 
    @Override
-   public boolean method12896(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, MutableBoundingBox var5, ChunkPos var6, BlockPos var7) {
       this.field20454.method36433().method36434(new Class7094(this.field20461)).method36434(Class7095.field30528);
       int var10 = var1.method6736(Heightmap.Type.OCEAN_FLOOR_WG, this.field20455.getX(), this.field20455.getZ());
       this.field20455 = new BlockPos(this.field20455.getX(), var10, this.field20455.getZ());

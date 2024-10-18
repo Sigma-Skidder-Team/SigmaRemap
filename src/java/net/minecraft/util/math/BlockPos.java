@@ -82,7 +82,7 @@ public class BlockPos extends Vector3i {
       return new BlockPos(unpackX(var0), unpackY(var0), unpackZ(var0));
    }
 
-   public long method8332() {
+   public long toLong() {
       return pack(this.getX(), this.getY(), this.getZ());
    }
 
@@ -252,7 +252,7 @@ public class BlockPos extends Vector3i {
       return StreamSupport.<BlockPos>stream(method8359(var0, var1).spliterator(), false);
    }
 
-   public static Stream<BlockPos> method8361(Class9764 var0) {
+   public static Stream<BlockPos> method8361(MutableBoundingBox var0) {
       return method8363(
          Math.min(var0.field45678, var0.field45681),
          Math.min(var0.field45679, var0.field45682),

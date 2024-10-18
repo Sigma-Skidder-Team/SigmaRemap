@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Maps;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.storage.MapData;
 
 import javax.annotation.Nullable;
 import java.util.Map;
@@ -17,15 +18,15 @@ public class Class194 implements AutoCloseable {
       this.field732 = var1;
    }
 
-   public void method592(Class7529 var1) {
+   public void method592(MapData var1) {
       Class1695.method7292(this.method594(var1));
    }
 
-   public void method593(MatrixStack var1, Class7733 var2, Class7529 var3, boolean var4, int var5) {
+   public void method593(MatrixStack var1, Class7733 var2, MapData var3, boolean var4, int var5) {
       Class1695.method7293(this.method594(var3), var1, var2, var4, var5);
    }
 
-   private Class1695 method594(Class7529 var1) {
+   private Class1695 method594(MapData var1) {
       Class1695 var4 = this.field733.get(var1.method24608());
       if (var4 == null) {
          var4 = new Class1695(this, var1);
@@ -49,7 +50,7 @@ public class Class194 implements AutoCloseable {
    }
 
    @Nullable
-   public Class7529 method597(Class1695 var1) {
+   public MapData method597(Class1695 var1) {
       return var1 == null ? null : Class1695.method7294(var1);
    }
 

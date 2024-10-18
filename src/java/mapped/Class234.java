@@ -58,12 +58,12 @@ public class Class234 extends Class219<AbstractClientPlayerEntity, PlayerModel<A
 
             float var29 = Config.method26992() * 20.0F;
             var29 = Config.method26832(var29, 0.02F, 1.0F);
-            var4.field6107 = MathHelper.lerp(var29, var4.field6107, 6.0F + var26 / 2.0F + var25);
-            var4.field6109 = MathHelper.lerp(var29, var4.field6109, var27 / 2.0F);
-            var4.field6108 = MathHelper.lerp(var29, var4.field6108, 180.0F - var27 / 2.0F);
-            var1.rotate(Vector3f.XP.rotationDegrees(var4.field6107));
-            var1.rotate(Vector3f.ZP.rotationDegrees(var4.field6109));
-            var1.rotate(Vector3f.YP.rotationDegrees(var4.field6108));
+            var4.capeRotateX = MathHelper.lerp(var29, var4.capeRotateX, 6.0F + var26 / 2.0F + var25);
+            var4.capeRotateZ = MathHelper.lerp(var29, var4.capeRotateZ, var27 / 2.0F);
+            var4.capeRotateY = MathHelper.lerp(var29, var4.capeRotateY, 180.0F - var27 / 2.0F);
+            var1.rotate(Vector3f.XP.rotationDegrees(var4.capeRotateX));
+            var1.rotate(Vector3f.ZP.rotationDegrees(var4.capeRotateZ));
+            var1.rotate(Vector3f.YP.rotationDegrees(var4.capeRotateY));
             IVertexBuilder var30 = var2.method25597(RenderType.getEntitySolid(var4.method5372()));
             this.method825().renderCape(var1, var30, var3, OverlayTexture.NO_OVERLAY);
             var1.pop();

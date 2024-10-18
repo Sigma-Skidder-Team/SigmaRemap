@@ -58,7 +58,7 @@ public enum Class1901 implements Class1902 {
    private Class1901(int var3, int var4) {
       this.field11178 = method8165(var3, var4);
       Quaternion var7 = new Quaternion(new Vector3f(0.0F, 1.0F, 0.0F), (float)(-var4), true);
-      var7.method31182(new Quaternion(new Vector3f(1.0F, 0.0F, 0.0F), (float)(-var3), true));
+      var7.multiply(new Quaternion(new Vector3f(1.0F, 0.0F, 0.0F), (float)(-var3), true));
       Orientation var8 = Orientation.IDENTITY;
 
       for (int var9 = 0; var9 < var4; var9 += 90) {

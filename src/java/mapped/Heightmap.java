@@ -140,7 +140,7 @@ public class Heightmap {
          var0 -> (var0.getMaterial().blocksMovement() || !var0.method23449().isEmpty()) && !(var0.getBlock() instanceof Class3465)
       );
 
-      public static final Codec<Type> field301 = IStringSerializable.<Type>method258(Type::values, Type::method286);
+      public static final Codec<Type> field301 = IStringSerializable.<Type>createEnumCodec(Type::values, Type::method286);
       private final String field302;
       private final Class2029 field303;
       private final Predicate<BlockState> field304;

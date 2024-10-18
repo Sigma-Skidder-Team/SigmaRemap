@@ -4,6 +4,7 @@ import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.item.ItemStack;
 import org.lwjgl.opengl.GL11;
 
@@ -73,9 +74,9 @@ public class Class4295 extends Class4278 {
       );
       GL11.glTranslatef((float)(-this.xA), (float)(-this.yA), 0.0F);
       GL11.glEnable(2929);
-      Class7516.method24498();
+      RenderHelper.enableStandardItemLighting();
       this.field20811.getItemRenderer().method791(this.field20810, this.xA + 1, this.yA + 1);
-      Class7516.method24499();
+      RenderHelper.disableStandardItemLighting();
       GL11.glDisable(2929);
       GL11.glPopMatrix();
    }

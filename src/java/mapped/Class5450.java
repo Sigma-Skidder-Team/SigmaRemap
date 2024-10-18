@@ -5,6 +5,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.structure.StructureManager;
@@ -17,7 +18,7 @@ import java.util.Random;
 public class Class5450 extends StructureStart<Class4712> {
    private static String[] field24208;
 
-   public Class5450(Structure<Class4712> var1, int var2, int var3, Class9764 var4, int var5, long var6) {
+   public Class5450(Structure<Class4712> var1, int var2, int var3, MutableBoundingBox var4, int var5, long var6) {
       super(var1, var2, var3, var4, var5, var6);
    }
 
@@ -55,8 +56,8 @@ public class Class5450 extends StructureStart<Class4712> {
    }
 
    @Override
-   public void method17112(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6) {
-      super.method17112(var1, var2, var3, var4, var5, var6);
+   public void func_230366_a_(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, MutableBoundingBox var5, ChunkPos var6) {
+      super.func_230366_a_(var1, var2, var3, var4, var5, var6);
       int var9 = this.field24197.field45679;
 
       for (int var10 = var5.field45678; var10 <= var5.field45681; var10++) {

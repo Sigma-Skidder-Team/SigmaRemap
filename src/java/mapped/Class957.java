@@ -201,7 +201,7 @@ public class Class957 extends Class956 implements ITickableTileEntity {
       } else {
          this.field5374 = new BlockPos(var5.x + 0.5, 75.0, var5.z + 0.5);
          field5371.debug("Failed to find suitable block, settling on {}", this.field5374);
-         Features.field41637.func_242765_a(var1, var1.getChunkProvider().getChunkGenerator(), new Random(this.field5374.method8332()), this.field5374);
+         Features.field41637.func_242765_a(var1, var1.getChunkProvider().getChunkGenerator(), new Random(this.field5374.toLong()), this.field5374);
       }
 
       this.field5374 = method3880(var1, this.field5374, 16, true);

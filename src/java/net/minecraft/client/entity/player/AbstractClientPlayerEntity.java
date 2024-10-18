@@ -6,9 +6,12 @@ import com.mentalfrostbyte.jello.event.impl.Class4423;
 import com.mojang.authlib.GameProfile;
 import mapped.*;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.network.play.NetworkPlayerInfo;
 import net.minecraft.client.renderer.texture.Texture;
 import net.minecraft.client.resources.DefaultPlayerSkin;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.passive.ShoulderRidingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.GameType;
@@ -18,28 +21,28 @@ import javax.annotation.Nullable;
 import java.io.File;
 
 public abstract class AbstractClientPlayerEntity extends PlayerEntity {
-   public Class6589 field6096;
-   public float field6097;
-   public float field6098;
-   public float field6099;
-   public final ClientWorld field6100;
-   private ResourceLocation field6101 = null;
-   private long field6102 = 0L;
-   private boolean field6103 = false;
-   private String field6104 = null;
-   public Class1014 field6105;
-   public Class1014 field6106;
-   public float field6107;
-   public float field6108;
-   public float field6109;
-   private static final ResourceLocation field6110 = new ResourceLocation("textures/entity/elytra.png");
+   public NetworkPlayerInfo playerInfo;
+   public float rotateElytraX;
+   public float rotateElytraY;
+   public float rotateElytraZ;
+   public final ClientWorld worldClient;
+   private ResourceLocation locationOfCape = null;
+   private long reloadCapeTimeMs = 0L;
+   private boolean elytraOfCape = false;
+   private String nameClear = null;
+   public ShoulderRidingEntity entityShoulderLeft;
+   public ShoulderRidingEntity entityShoulderRight;
+   public float capeRotateX;
+   public float capeRotateY;
+   public float capeRotateZ;
+   private static final ResourceLocation TEXTURE_ELYTRA = new ResourceLocation("textures/entity/elytra.png");
 
    public AbstractClientPlayerEntity(ClientWorld var1, GameProfile var2) {
       super(var1, var1.method6880(), var1.method6881(), var2);
-      this.field6100 = var1;
-      this.field6104 = var2.getName();
-      if (this.field6104 != null && !this.field6104.isEmpty()) {
-         this.field6104 = Class9001.method33255(this.field6104);
+      this.worldClient = var1;
+      this.nameClear = var2.getName();
+      if (this.nameClear != null && !this.nameClear.isEmpty()) {
+         this.nameClear = Class9001.method33255(this.nameClear);
       }
 
       Class7749.method25668(this);
@@ -47,13 +50,13 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
 
    @Override
    public boolean isSpectator() {
-      Class6589 var3 = Minecraft.getInstance().getConnection().method15792(this.getGameProfile().getId());
+      NetworkPlayerInfo var3 = Minecraft.getInstance().getConnection().method15792(this.getGameProfile().getId());
       return var3 != null && var3.method19967() == GameType.SPECTATOR;
    }
 
    @Override
    public boolean isCreative() {
-      Class6589 var3 = Minecraft.getInstance().getConnection().method15792(this.getGameProfile().getId());
+      NetworkPlayerInfo var3 = Minecraft.getInstance().getConnection().method15792(this.getGameProfile().getId());
       return var3 != null && var3.method19967() == GameType.field11103;
    }
 
@@ -62,37 +65,37 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
    }
 
    @Nullable
-   public Class6589 method5369() {
-      if (this.field6096 == null) {
-         this.field6096 = Minecraft.getInstance().getConnection().method15792(this.getUniqueID());
+   public NetworkPlayerInfo method5369() {
+      if (this.playerInfo == null) {
+         this.playerInfo = Minecraft.getInstance().getConnection().method15792(this.getUniqueID());
       }
 
-      return this.field6096;
+      return this.playerInfo;
    }
 
    public boolean method5370() {
-      Class6589 var3 = this.method5369();
+      NetworkPlayerInfo var3 = this.method5369();
       return var3 != null && var3.method19971();
    }
 
    public ResourceLocation method5371() {
-      Class6589 var3 = this.method5369();
+      NetworkPlayerInfo var3 = this.method5369();
       return var3 != null ? var3.method19973() : DefaultPlayerSkin.method22637(this.getUniqueID());
    }
 
    @Nullable
    public ResourceLocation method5372() {
       if (Config.method26914()) {
-         if (this.field6102 != 0L && System.currentTimeMillis() > this.field6102) {
+         if (this.reloadCapeTimeMs != 0L && System.currentTimeMillis() > this.reloadCapeTimeMs) {
             Class8156.method28294(this);
-            this.field6102 = 0L;
+            this.reloadCapeTimeMs = 0L;
          }
 
-         if (this.field6101 == null) {
-            Class6589 var3 = this.method5369();
+         if (this.locationOfCape == null) {
+            NetworkPlayerInfo var3 = this.method5369();
             return var3 != null ? var3.method19974() : null;
          } else {
-            return this.field6101;
+            return this.locationOfCape;
          }
       } else {
          return null;
@@ -105,7 +108,7 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
 
    @Nullable
    public ResourceLocation method5374() {
-      Class6589 var3 = this.method5369();
+      NetworkPlayerInfo var3 = this.method5369();
       return var3 != null ? var3.method19975() : null;
    }
 
@@ -131,7 +134,7 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
    }
 
    public String method5377() {
-      Class6589 var3 = this.method5369();
+      NetworkPlayerInfo var3 = this.method5369();
       return var3 != null ? var3.method19972() : DefaultPlayerSkin.method22638(this.getUniqueID());
    }
 
@@ -165,39 +168,39 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
    }
 
    public String method5379() {
-      return this.field6104;
+      return this.nameClear;
    }
 
    public ResourceLocation method5380() {
-      return this.field6101;
+      return this.locationOfCape;
    }
 
    public void method5381(ResourceLocation var1) {
-      this.field6101 = var1;
+      this.locationOfCape = var1;
    }
 
    public boolean method5382() {
       ResourceLocation var3 = this.method5372();
       if (var3 != null) {
-         return var3 != this.field6101 ? true : this.field6103;
+         return var3 != this.locationOfCape ? true : this.elytraOfCape;
       } else {
          return false;
       }
    }
 
    public void method5383(boolean var1) {
-      this.field6103 = var1;
+      this.elytraOfCape = var1;
    }
 
    public boolean method5384() {
-      return this.field6103;
+      return this.elytraOfCape;
    }
 
    public long method5385() {
-      return this.field6102;
+      return this.reloadCapeTimeMs;
    }
 
    public void method5386(long var1) {
-      this.field6102 = var1;
+      this.reloadCapeTimeMs = var1;
    }
 }

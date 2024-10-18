@@ -64,8 +64,8 @@ public class JelloInGameOptions extends Screen {
    }
 
    private void method13437(float var1) {
-      int var4 = this.method13309() * -1;
-      float var5 = (float)this.method13310() / (float)this.getWidthA() * -114.0F;
+      int var4 = this.getHeightO() * -1;
+      float var5 = (float)this.getWidthO() / (float)this.getWidthA() * -114.0F;
       if (this.field21111) {
          this.field21109 = (int)var5;
          this.field21110 = var4;

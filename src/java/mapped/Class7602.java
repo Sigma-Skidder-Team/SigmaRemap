@@ -30,7 +30,7 @@ public class Class7602 implements Class7601 {
 
       if (!this.field32634.isEmpty()) {
          var2.method5915().getTextureManager().bindTexture(field32630);
-         RenderSystem.method27890(1.0F, 1.0F, 1.0F);
+         RenderSystem.color3f(1.0F, 1.0F, 1.0F);
          var2.blit(var1, 0, 0, 0, 32, this.method24898(), this.method24899());
          var2.method5915().fontRenderer.func_243248_b(var1, field32632, 30.0F, 7.0F, -11534256);
          var2.method5915().fontRenderer.func_243248_b(var1, field32633, 30.0F, 18.0F, -16777216);

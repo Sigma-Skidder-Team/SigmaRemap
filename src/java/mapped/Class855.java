@@ -45,7 +45,7 @@ public abstract class Class855<T extends Class5831> extends ContainerScreen<T> i
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.renderBackground(var1);
       if (this.field4759.method5839() && this.field4760) {
-         this.method2618(var1, var4, var2, var3);
+         this.drawGuiContainerBackgroundLayer(var1, var4, var2, var3);
          this.field4759.render(var1, var2, var3, var4);
       } else {
          this.field4759.render(var1, var2, var3, var4);
@@ -58,7 +58,7 @@ public abstract class Class855<T extends Class5831> extends ContainerScreen<T> i
    }
 
    @Override
-   public void method2618(MatrixStack var1, float var2, int var3, int var4) {
+   public void drawGuiContainerBackgroundLayer(MatrixStack var1, float var2, int var3, int var4) {
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       this.mc.getTextureManager().bindTexture(this.field4761);
       int var7 = this.field4734;

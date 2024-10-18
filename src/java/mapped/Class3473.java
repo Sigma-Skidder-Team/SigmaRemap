@@ -60,7 +60,7 @@ public class Class3473 extends Class3472 implements Class3196 {
                }
 
                ConfiguredFeature var14 = (ConfiguredFeature)var13.get(0);
-               Class2921 var15 = (Class2921)var14.field33886;
+               Class2921 var15 = (Class2921)var14.feature;
                var12 = var15.method11254(var2, var10, var14.method26519());
             }
 

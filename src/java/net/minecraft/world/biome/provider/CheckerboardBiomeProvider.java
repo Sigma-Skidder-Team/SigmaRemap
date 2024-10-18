@@ -10,7 +10,7 @@ import java.util.function.Supplier;
 public class CheckerboardBiomeProvider extends BiomeProvider {
    public static final Codec<CheckerboardBiomeProvider> CODEC = RecordCodecBuilder.create(
       var0 -> var0.group(
-               Biome.field40310.fieldOf("biomes").forGetter(var0x -> var0x.field9179),
+               Biome.BIOMES_CODEC.fieldOf("biomes").forGetter(var0x -> var0x.field9179),
                Codec.intRange(0, 62).fieldOf("scale").orElse(2).forGetter(var0x -> var0x.field9181)
             )
             .apply(var0, CheckerboardBiomeProvider::new)

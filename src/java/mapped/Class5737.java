@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;

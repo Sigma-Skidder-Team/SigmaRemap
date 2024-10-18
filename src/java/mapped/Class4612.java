@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.util.math.MathHelper;
 
 public class Class4612 extends Class4566 {

@@ -168,7 +168,7 @@ public class PacketBuffer extends ByteBuf {
    }
 
    public PacketBuffer writeBlockPos(BlockPos var1) {
-      this.writeLong(var1.method8332());
+      this.writeLong(var1.toLong());
       return this;
    }
 

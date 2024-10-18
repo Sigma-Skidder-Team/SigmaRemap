@@ -8,6 +8,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.util.registry.Registry;
 
 import java.util.List;
@@ -36,15 +37,15 @@ public abstract class Class6896 {
 
    public abstract Class9107<?> method21064();
 
-   public abstract List<Class9359> method21065(Class1679 var1, Random var2, int var3, BlockPos var4, Set<BlockPos> var5, Class9764 var6, Class4733 var7);
+   public abstract List<Class9359> method21065(Class1679 var1, Random var2, int var3, BlockPos var4, Set<BlockPos> var5, MutableBoundingBox var6, Class4733 var7);
 
    public int method21066(Random var1) {
       return this.field29885 + var1.nextInt(this.field29886 + 1) + var1.nextInt(this.field29887 + 1);
    }
 
-   public static void method21067(Class1681 var0, BlockPos var1, BlockState var2, Class9764 var3) {
+   public static void method21067(Class1681 var0, BlockPos var1, BlockState var2, MutableBoundingBox var3) {
       Class2903.method11232(var0, var1, var2);
-      var3.method38392(new Class9764(var1, var1));
+      var3.method38392(new MutableBoundingBox(var1, var1));
    }
 
    private static boolean method21068(Class1680 var0, BlockPos var1) {
@@ -60,7 +61,7 @@ public abstract class Class6896 {
       }
    }
 
-   public static boolean method21070(Class1679 var0, Random var1, BlockPos var2, Set<BlockPos> var3, Class9764 var4, Class4733 var5) {
+   public static boolean method21070(Class1679 var0, Random var1, BlockPos var2, Set<BlockPos> var3, MutableBoundingBox var4, Class4733 var5) {
       if (!Class2903.method11233(var0, var2)) {
          return false;
       } else {
@@ -70,7 +71,7 @@ public abstract class Class6896 {
       }
    }
 
-   public static void method21071(Class1679 var0, Random var1, BlockPos.Mutable var2, Set<BlockPos> var3, Class9764 var4, Class4733 var5) {
+   public static void method21071(Class1679 var0, Random var1, BlockPos.Mutable var2, Set<BlockPos> var3, MutableBoundingBox var4, Class4733 var5) {
       if (Class2903.method11226(var0, var2)) {
          method21070(var0, var1, var2, var3, var4, var5);
       }

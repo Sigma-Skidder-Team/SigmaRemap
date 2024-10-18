@@ -7,7 +7,7 @@ public class PlatformDescriptors {
    private static String[] field41358;
 
    public static String method33485() {
-      return GlStateManager.method23860(7936);
+      return GlStateManager.getString(7936);
    }
 
    public static String getCpuInfo() {
@@ -15,10 +15,10 @@ public class PlatformDescriptors {
    }
 
    public static String method33487() {
-      return GlStateManager.method23860(7937);
+      return GlStateManager.getString(7937);
    }
 
    public static String method33488() {
-      return GlStateManager.method23860(7938);
+      return GlStateManager.getString(7938);
    }
 }

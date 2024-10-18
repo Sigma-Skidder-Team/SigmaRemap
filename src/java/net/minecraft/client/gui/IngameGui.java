@@ -19,6 +19,7 @@ import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.util.Util;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.attributes.Attributes;
@@ -332,10 +333,10 @@ public class IngameGui extends AbstractGui {
                 RenderSystem.pushMatrix();
                 RenderSystem.translatef((float) (this.field6741 / 2), (float) (this.field6742 / 2), (float) this.method5702());
                 ActiveRenderInfo var11 = this.field6716.gameRenderer.getActiveRenderInfo();
-                RenderSystem.method27883(var11.getPitch(), -1.0F, 0.0F, 0.0F);
-                RenderSystem.method27883(var11.getYaw(), 0.0F, 1.0F, 0.0F);
+                RenderSystem.rotatef(var11.getPitch(), -1.0F, 0.0F, 0.0F);
+                RenderSystem.rotatef(var11.getYaw(), 0.0F, 1.0F, 0.0F);
                 RenderSystem.scalef(-1.0F, -1.0F, -1.0F);
-                RenderSystem.method27903(10);
+                RenderSystem.renderCrosshair(10);
                 RenderSystem.popMatrix();
             } else {
                 RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.ONE_MINUS_DST_COLOR, DestFactor.field12933, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
@@ -390,7 +391,7 @@ public class IngameGui extends AbstractGui {
             int var6 = 0;
             PotionSpriteUploader var7 = this.field6716.getPotionSpriteUploader();
             List<Runnable> var8 = Lists.newArrayListWithExpectedSize(var4.size());
-            this.field6716.getTextureManager().bindTexture(ContainerScreen.field4720);
+            this.field6716.getTextureManager().bindTexture(ContainerScreen.INVENTORY_BACKGROUND);
 
             for (EffectInstance var10 : Ordering.natural().reverse().sortedCopy(var4)) {
                 Effect var11 = var10.getPotion();
@@ -399,7 +400,7 @@ public class IngameGui extends AbstractGui {
                         continue;
                     }
 
-                    this.field6716.getTextureManager().bindTexture(ContainerScreen.field4720);
+                    this.field6716.getTextureManager().bindTexture(ContainerScreen.INVENTORY_BACKGROUND);
                 }
 
                 if (var10.method8632()) {
@@ -512,7 +513,7 @@ public class IngameGui extends AbstractGui {
                 }
             }
 
-            RenderSystem.method27868();
+            RenderSystem.disableRescaleNormal();
             RenderSystem.disableBlend();
         }
     }

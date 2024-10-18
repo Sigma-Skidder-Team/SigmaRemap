@@ -14,6 +14,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.CachedBlockInfo;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.server.ServerWorld;
 
@@ -218,9 +219,9 @@ public class Class6450 {
     }
 
     private static int method19589(CommandSource var0, BlockPos var1, BlockPos var2, BlockPos var3, Predicate<CachedBlockInfo> var4, Class2109 var5) throws CommandSyntaxException {
-        Class9764 var8 = new Class9764(var1, var2);
+        MutableBoundingBox var8 = new MutableBoundingBox(var1, var2);
         BlockPos var9 = var3.method8337(var8.method38397());
-        Class9764 var10 = new Class9764(var3, var9);
+        MutableBoundingBox var10 = new MutableBoundingBox(var3, var9);
         if (!var5.method8779() && var10.method38390(var8)) {
             throw field28360.create();
         } else {

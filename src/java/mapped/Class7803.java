@@ -29,6 +29,7 @@ import net.minecraft.util.Rotation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
@@ -61,11 +62,11 @@ public class Class7803 {
       return new AxisAlignedBB(var3, var5);
    }
 
-   public static Class9764 method26053(Class964 var0) {
+   public static MutableBoundingBox method26053(Class964 var0) {
       BlockPos var3 = var0.getPos();
       BlockPos var4 = var3.method8337(var0.method3942().add(-1, -1, -1));
       BlockPos var5 = Class8969.method32905(var4, Mirror.field13614, var0.method3946(), var3);
-      return new Class9764(var3, var5);
+      return new MutableBoundingBox(var3, var5);
    }
 
    public static void method26054(BlockPos var0, BlockPos var1, Rotation var2, ServerWorld var3) {
@@ -78,7 +79,7 @@ public class Class7803 {
    }
 
    public static void method26055(String var0, BlockPos var1, BlockPos var2, Rotation var3, ServerWorld var4) {
-      Class9764 var7 = method26059(var1, var2, var3);
+      MutableBoundingBox var7 = method26059(var1, var2, var3);
       method26058(var7, var1.getY(), var4);
       var4.setBlockState(var1, Blocks.field37113.getDefaultState());
       Class964 var8 = (Class964)var4.getTileEntity(var1);
@@ -91,7 +92,7 @@ public class Class7803 {
 
    public static Class964 method26056(String var0, BlockPos var1, Rotation var2, int var3, ServerWorld var4, boolean var5) {
       BlockPos var8 = method26063(var0, var4).method32886();
-      Class9764 var9 = method26059(var1, var8, var2);
+      MutableBoundingBox var9 = method26059(var1, var8, var2);
       BlockPos var10;
       if (var2 != Rotation.NONE) {
          if (var2 != Rotation.CLOCKWISE_90) {
@@ -131,8 +132,8 @@ public class Class7803 {
       }
    }
 
-   public static void method26058(Class9764 var0, int var1, ServerWorld var2) {
-      Class9764 var5 = new Class9764(
+   public static void method26058(MutableBoundingBox var0, int var1, ServerWorld var2) {
+      MutableBoundingBox var5 = new MutableBoundingBox(
          var0.field45678 - 2, var0.field45679 - 3, var0.field45680 - 3, var0.field45681 + 3, var0.field45682 + 20, var0.field45683 + 3
       );
       BlockPos.method8361(var5).forEach(var2x -> method26066(var1, var2x, var2));
@@ -145,10 +146,10 @@ public class Class7803 {
       var7.forEach(Entity::remove);
    }
 
-   public static Class9764 method26059(BlockPos var0, BlockPos var1, Rotation var2) {
+   public static MutableBoundingBox method26059(BlockPos var0, BlockPos var1, Rotation var2) {
       BlockPos var5 = var0.method8337(var1).add(-1, -1, -1);
       BlockPos var6 = Class8969.method32905(var5, Mirror.field13614, var2, var0);
-      Class9764 var7 = Class9764.method38389(var0.getX(), var0.getY(), var0.getZ(), var6.getX(), var6.getY(), var6.getZ());
+      MutableBoundingBox var7 = MutableBoundingBox.method38389(var0.getX(), var0.getY(), var0.getZ(), var6.getX(), var6.getY(), var6.getZ());
       int var8 = Math.min(var7.field45678, var7.field45681);
       int var9 = Math.min(var7.field45680, var7.field45683);
       BlockPos var10 = new BlockPos(var0.getX() - var8, 0, var0.getZ() - var9);

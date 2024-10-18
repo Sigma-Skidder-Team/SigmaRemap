@@ -10,6 +10,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -69,7 +70,7 @@ public class Class7015 implements Class7016 {
       for (PlayerEntity var5 : var1.method6870()) {
          if (!var5.isSpectator()) {
             BlockPos var6 = var5.getPosition();
-            if (var1.method6952(var6) && var1.getBiome(var6).getCategory() != Class100.field289) {
+            if (var1.method6952(var6) && var1.getBiome(var6).getCategory() != Biome.Category.MUSHROOM) {
                for (int var7 = 0; var7 < 10; var7++) {
                   float var8 = var1.rand.nextFloat() * (float) (Math.PI * 2);
                   this.field30314 = var6.getX() + MathHelper.floor(MathHelper.cos(var8) * 32.0F);

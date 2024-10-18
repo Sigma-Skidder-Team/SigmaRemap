@@ -68,11 +68,11 @@ public abstract class Class2898<FC extends Class4698> {
    private final Codec<ConfiguredFeature<FC, Class2898<FC>>> field17988;
 
    private static <C extends Class4698, F extends Class2898<C>> F method11214(String var0, F var1) {
-      return Registry.<F>register(Registry.field16112, var0, (F)var1);
+      return Registry.<F>register(Registry.FEATURE, var0, (F)var1);
    }
 
    public Class2898(Codec<FC> var1) {
-      this.field17988 = var1.fieldOf("config").xmap(var1x -> new ConfiguredFeature<>(this, var1x), var0 -> var0.field33887).codec();
+      this.field17988 = var1.fieldOf("config").xmap(var1x -> new ConfiguredFeature<>(this, var1x), var0 -> var0.config).codec();
    }
 
    public Codec<ConfiguredFeature<FC, Class2898<FC>>> method11215() {

@@ -35,7 +35,7 @@ public class Class4359 extends Class4247 {
       float var8 = Math.max(0.0F, Math.min((float)var4 / (float)var7, 1.0F));
       float var9 = Math.max(0.0F, Math.min((float)var5 / (float)var7, 1.0F));
       if (this.method13212() && this.method13298() && var5 != 0.0) {
-         int var10 = this.method13309() - this.method13271();
+         int var10 = this.getHeightO() - this.method13271();
          this.field21315 = Math.min(Math.max((float)var10 / (float)this.getWidthA(), 0.0F), var9);
          var8 = this.field21315;
       }

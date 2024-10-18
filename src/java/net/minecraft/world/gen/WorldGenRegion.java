@@ -376,6 +376,6 @@ public class WorldGenRegion implements ISeedReader {
 
    @Override
    public Stream<? extends StructureStart<?>> method6969(SectionPos var1, Structure<?> var2) {
-      return this.field9215.method24340(var1, var2);
+      return this.field9215.func_235011_a_(var1, var2);
    }
 }

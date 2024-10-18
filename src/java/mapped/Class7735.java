@@ -50,7 +50,7 @@ public class Class7735 implements Class7733 {
       return this.field33216.getOrDefault(var1, this.field33215);
    }
 
-   public void method25602() {
+   public void finish() {
       if (!this.field33218.isEmpty()) {
          if (this.field33217 != null) {
             IVertexBuilder var3 = this.method25597(this.field33217);
@@ -94,7 +94,7 @@ public class Class7735 implements Class7733 {
    @Override
    public void method25598() {
       RenderType var3 = this.field33217;
-      this.method25602();
+      this.finish();
       if (var3 != null) {
          this.method25597(var3);
       }

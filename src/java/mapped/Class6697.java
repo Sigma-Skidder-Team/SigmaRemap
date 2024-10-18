@@ -27,7 +27,7 @@ public class Class6697 extends Class6698 {
 
    @Override
    public BlockState method20424(Random var1, BlockPos var2) {
-      double var5 = Biome.field40314.method25315((double)var2.getX() / 200.0, (double)var2.getZ() / 200.0, false);
+      double var5 = Biome.INFO_NOISE.noiseAt((double)var2.getX() / 200.0, (double)var2.getZ() / 200.0, false);
       if (!(var5 < -0.8)) {
          return var1.nextInt(3) <= 0 ? Blocks.DANDELION.getDefaultState() : Util.<BlockState>getRandomObject(field29329, var1);
       } else {

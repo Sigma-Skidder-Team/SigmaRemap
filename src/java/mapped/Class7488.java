@@ -11,6 +11,7 @@ import net.minecraft.state.properties.StructureMode;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.gen.feature.structure.StructureManager;
 import net.minecraft.world.gen.feature.template.TemplateManager;
@@ -84,14 +85,14 @@ public class Class7488 extends Class7487 {
    }
 
    @Override
-   public Class9764 method24375(TemplateManager var1, BlockPos var2, Rotation var3) {
+   public MutableBoundingBox method24375(TemplateManager var1, BlockPos var2, Rotation var3) {
       Class8969 var6 = this.method24407(var1);
       return var6.method32909(new Class9463().method36426(var3), var2);
    }
 
    @Override
    public boolean method24376(
-           TemplateManager var1, ISeedReader var2, StructureManager var3, ChunkGenerator var4, BlockPos var5, BlockPos var6, Rotation var7, Class9764 var8, Random var9, boolean var10
+           TemplateManager var1, ISeedReader var2, StructureManager var3, ChunkGenerator var4, BlockPos var5, BlockPos var6, Rotation var7, MutableBoundingBox var8, Random var9, boolean var10
    ) {
       Class8969 var13 = this.method24407(var1);
       Class9463 var14 = this.method24409(var7, var8, var10);
@@ -106,7 +107,7 @@ public class Class7488 extends Class7487 {
       }
    }
 
-   public Class9463 method24409(Rotation var1, Class9764 var2, boolean var3) {
+   public Class9463 method24409(Rotation var1, MutableBoundingBox var2, boolean var3) {
       Class9463 var6 = new Class9463();
       var6.method36430(var2);
       var6.method36426(var1);

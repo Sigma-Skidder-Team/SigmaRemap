@@ -27,11 +27,11 @@ public class Class2938 extends Class2898<Class4712> {
             var8.setPos(var12, var14, var13);
             var9.method8374(var8).method8380(Direction.DOWN, 1);
             Biome var15 = var1.getBiome(var8);
-            if (var15.method32505(var1, var9, false)) {
+            if (var15.doesWaterFreeze(var1, var9, false)) {
                var1.setBlockState(var9, Blocks.ICE.getDefaultState(), 2);
             }
 
-            if (var15.method32506(var1, var8)) {
+            if (var15.doesSnowGenerate(var1, var8)) {
                var1.setBlockState(var8, Blocks.SNOW.getDefaultState(), 2);
                BlockState var16 = var1.getBlockState(var9);
                if (var16.method23462(Class3471.field19323)) {

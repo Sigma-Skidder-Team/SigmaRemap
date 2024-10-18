@@ -31,7 +31,7 @@ public class StructureManager {
       }
    }
 
-   public Stream<? extends StructureStart<?>> method24340(SectionPos var1, Structure<?> var2) {
+   public Stream<? extends StructureStart<?>> func_235011_a_(SectionPos var1, Structure<?> var2) {
       return this.field32171
          .getChunk(var1.method8410(), var1.method8412(), ChunkStatus.STRUCTURE_REFERENCES)
          .method7099(var2)
@@ -54,13 +54,13 @@ public class StructureManager {
       var5.method7100(var2, var3);
    }
 
-   public boolean method24344() {
+   public boolean func_235005_a_() {
       return this.field32172.method26260();
    }
 
    public StructureStart<?> method24345(BlockPos var1, boolean var2, Structure<?> var3) {
       return (StructureStart<?>)DataFixUtils.orElse(
-         this.method24340(SectionPos.method8390(var1), var3)
+         this.func_235011_a_(SectionPos.from(var1), var3)
             .filter(var1x -> var1x.getBoundingBox().method38396(var1))
             .filter(var2x -> !var2 || var2x.method17111().stream().anyMatch(var1xx -> var1xx.method12915().method38396(var1)))
             .findFirst(),

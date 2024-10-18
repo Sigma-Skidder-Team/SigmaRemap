@@ -186,7 +186,7 @@ public abstract class LightEngine<M extends LightDataMap<M>, S extends SectionLi
 
    @Override
    public int method643(BlockPos var1) {
-      return this.storage.method702(var1.method8332());
+      return this.storage.method702(var1.toLong());
    }
 
    public String method659(long var1) {
@@ -194,7 +194,7 @@ public abstract class LightEngine<M extends LightDataMap<M>, S extends SectionLi
    }
 
    public void checkLight(BlockPos var1) {
-      long var4 = var1.method8332();
+      long var4 = var1.toLong();
       this.scheduleUpdate(var4);
 
       for (Direction var9 : DIRECTIONS) {

@@ -6,6 +6,7 @@ import java.util.Random;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 import org.apache.commons.lang3.mutable.MutableObject;
@@ -34,7 +35,7 @@ public class Class8814 {
       Class9369 var14 = var1.method14743().get();
       Class7487 var15 = var14.method35535(var7);
       Class4193 var16 = var2.method21640(var4, var15, var5, var15.method24383(), var13, var15.method24375(var4, var5, var13));
-      Class9764 var17 = var16.method12915();
+      MutableBoundingBox var17 = var16.method12915();
       int var18 = (var17.field45681 + var17.field45678) / 2;
       int var19 = (var17.field45683 + var17.field45680) / 2;
       int var20;

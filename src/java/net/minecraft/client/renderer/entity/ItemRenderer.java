@@ -9,8 +9,10 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.LivingEntity;
@@ -311,18 +313,18 @@ public class ItemRenderer implements IResourceManagerReloadListener {
       Class7735 var8 = Minecraft.getInstance().getRenderTypeBuffers().getBufferSource();
       boolean var9 = !var4.method22622();
       if (var9) {
-         Class7516.method24502();
+         RenderHelper.setupGuiFlatDiffuseLighting();
       }
 
       this.method781(var1, ItemCameraTransformsTransformType.GUI, false, var7, var8, 15728880, OverlayTexture.NO_OVERLAY, var4);
-      var8.method25602();
+      var8.finish();
       RenderSystem.enableDepthTest();
       if (var9) {
-         Class7516.method24503();
+         RenderHelper.setupGui3DDiffuseLighting();
       }
 
       RenderSystem.disableAlphaTest();
-      RenderSystem.method27868();
+      RenderSystem.disableRescaleNormal();
       RenderSystem.popMatrix();
       field852 = false;
    }
@@ -383,7 +385,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
                0,
                15728880
             );
-            var10.method25602();
+            var10.finish();
          }
 
          if (ReflectorForge.method37046(var2)) {

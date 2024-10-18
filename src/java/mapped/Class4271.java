@@ -129,7 +129,7 @@ public class Class4271 extends Class4247 {
          (float)(this.getXA() + var4 - 6),
          (float)(this.getYA() + var5 - 14),
          ">",
-         MultiUtilities.applyAlpha(this.textColor.method19405(), var1 * 0.7F * (!this.method13114(this.method13309(), this.method13310()) ? 0.5F : 1.0F))
+         MultiUtilities.applyAlpha(this.textColor.method19405(), var1 * 0.7F * (!this.method13114(this.getHeightO(), this.getWidthO()) ? 0.5F : 1.0F))
       );
    }
 

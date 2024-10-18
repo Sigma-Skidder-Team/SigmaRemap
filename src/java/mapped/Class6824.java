@@ -6,6 +6,7 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import com.mojang.serialization.codecs.RecordCodecBuilder.Instance;
 import com.mojang.serialization.codecs.RecordCodecBuilder.Mu;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MutableBoundingBox;
 
 import java.util.Random;
 import java.util.Set;
@@ -30,7 +31,7 @@ public class Class6824 extends Class6819 {
 
    @Override
    public void method20786(
-           Class1679 var1, Random var2, Class4733 var3, int var4, Class9359 var5, int var6, int var7, Set<BlockPos> var8, int var9, Class9764 var10
+           Class1679 var1, Random var2, Class4733 var3, int var4, Class9359 var5, int var6, int var7, Set<BlockPos> var8, int var9, MutableBoundingBox var10
    ) {
       for (int var13 = var9; var13 >= var9 - var6; var13--) {
          int var14 = Math.max(var7 + var5.method35438() - 1 - var13 / 2, 0);

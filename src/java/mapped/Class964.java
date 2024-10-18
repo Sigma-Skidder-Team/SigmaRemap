@@ -16,6 +16,7 @@ import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 import net.minecraft.world.server.ServerWorld;
 
@@ -281,7 +282,7 @@ public class Class964 extends TileEntity {
          List var7 = this.method3961(var5, var6);
          List var8 = this.method3960(var7);
          if (var8.size() >= 1) {
-            Class9764 var9 = this.method3962(var3, var8);
+            MutableBoundingBox var9 = this.method3962(var3, var8);
             if (var9.field45681 - var9.field45678 > 1 && var9.field45682 - var9.field45679 > 1 && var9.field45683 - var9.field45680 > 1) {
                this.field5398 = new BlockPos(
                   var9.field45678 - var3.getX() + 1, var9.field45679 - var3.getY() + 1, var9.field45680 - var3.getZ() + 1
@@ -325,13 +326,13 @@ public class Class964 extends TileEntity {
       return var5;
    }
 
-   private Class9764 method3962(BlockPos var1, List<Class964> var2) {
-      Class9764 var5;
+   private MutableBoundingBox method3962(BlockPos var1, List<Class964> var2) {
+      MutableBoundingBox var5;
       if (var2.size() <= 1) {
-         var5 = new Class9764(var1, var1);
+         var5 = new MutableBoundingBox(var1, var1);
       } else {
          BlockPos var6 = ((Class964)var2.get(0)).getPos();
-         var5 = new Class9764(var6, var6);
+         var5 = new MutableBoundingBox(var6, var6);
       }
 
       for (Class964 var7 : var2) {

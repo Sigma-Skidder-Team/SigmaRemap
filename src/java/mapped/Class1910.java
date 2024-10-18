@@ -183,15 +183,15 @@ public enum Class1910 {
                case 3:
                   BlockPos var9 = Shaders.method33165();
                   Biome var10 = Shaders.method33164().getBiome(var9);
-                  return var10 != null ? (float)var10.method32500().ordinal() : 0.0F;
+                  return var10 != null ? (float)var10.getPrecipitation().ordinal() : 0.0F;
                case 4:
                   BlockPos var11 = Shaders.method33165();
                   Biome var12 = Shaders.method33164().getBiome(var11);
-                  return var12 != null ? var12.method32503(var11) : 0.0F;
+                  return var12 != null ? var12.getTemperature(var11) : 0.0F;
                case 5:
                   BlockPos var13 = Shaders.method33165();
                   Biome var14 = Shaders.method33164().getBiome(var13);
-                  return var14 != null ? var14.method32516() : 0.0F;
+                  return var14 != null ? var14.getDownfall() : 0.0F;
                default:
                   if (this.field11263 instanceof Class3620) {
                      return ((Class3620)this.field11263).method12258();

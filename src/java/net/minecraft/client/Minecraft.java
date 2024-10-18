@@ -27,19 +27,23 @@ import com.mojang.serialization.Lifecycle;
 import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.client.audio.BackgroundMusicSelector;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.gui.screen.ConfirmScreen;
 import net.minecraft.client.gui.screen.MultiplayerScreen;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.multiplayer.PlayerController;
 import net.minecraft.client.multiplayer.ServerData;
+import net.minecraft.client.network.play.ClientPlayNetHandler;
 import net.minecraft.client.renderer.GPUWarning;
+import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.resources.DownloadingPackFinder;
 import net.minecraft.client.settings.PointOfView;
 import net.minecraft.client.shader.Framebuffer;
 import net.minecraft.client.util.Util;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.item.BoatEntity;
@@ -76,6 +80,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.*;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.listener.TrackingChunkStatusListener;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -2237,8 +2242,8 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
          if (this.player.world.getDimensionKey() == World.THE_END) {
             return this.ingameGUI.getBossOverlay().shouldPlayEndBossMusic() ? BackgroundMusicTracks.DRAGON_FIGHT_MUSIC : BackgroundMusicTracks.END_MUSIC;
          } else {
-            Class100 var1 = this.player.world.getBiome(this.player.getPosition()).getCategory();
-            if (!this.musicTicker.isBackgroundMusicPlaying(BackgroundMusicTracks.UNDER_WATER_MUSIC) && (!this.player.canSwim() || var1 != Class100.OCEAN && var1 != Class100.RIVER)) {
+            Biome.Category var1 = this.player.world.getBiome(this.player.getPosition()).getCategory();
+            if (!this.musicTicker.isBackgroundMusicPlaying(BackgroundMusicTracks.UNDER_WATER_MUSIC) && (!this.player.canSwim() || var1 != Biome.Category.OCEAN && var1 != Biome.Category.RIVER)) {
                return this.player.world.getDimensionKey() != World.THE_NETHER
                      && this.player.abilities.isCreativeMode
                      && this.player.abilities.allowFlying

@@ -229,7 +229,7 @@ public class Class1808 implements Class1809, AutoCloseable {
 
       for (int var3 = 0; var3 < this.field9748.size(); var3++) {
          if (this.field9746.get(this.field9747.get(var3)) != null) {
-            GlStateManager.method23803(33984 + var3);
+            GlStateManager.activeTexture(33984 + var3);
             GlStateManager.method23805();
             GlStateManager.bindTexture(0);
          }
@@ -250,7 +250,7 @@ public class Class1808 implements Class1809, AutoCloseable {
          String var4 = this.field9747.get(var3);
          IntSupplier var5 = this.field9746.get(var4);
          if (var5 != null) {
-            RenderSystem.method27860(33984 + var3);
+            RenderSystem.activeTexture(33984 + var3);
             RenderSystem.enableTexture();
             int var6 = var5.getAsInt();
             if (var6 != -1) {

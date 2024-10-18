@@ -6,6 +6,7 @@ import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.minecraft.SocialInteractionsService;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.network.play.NetworkPlayerInfo;
 import net.minecraft.client.util.Util;
 
 import java.util.Map;
@@ -52,7 +53,7 @@ public class FilterManager {
       return this.field45105.getOrDefault(var1, Util.DUMMY_UUID);
    }
 
-   public void method37611(Class6589 var1) {
+   public void method37611(NetworkPlayerInfo var1) {
       GameProfile var4 = var1.method19966();
       if (var4.isComplete()) {
          this.field45105.put(var4.getName(), var4.getId());

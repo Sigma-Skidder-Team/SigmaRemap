@@ -16,7 +16,7 @@ public enum Class107 implements IStringSerializable {
    OCEAN("ocean"),
    NETHER("nether");
 
-   public static final Codec<Class107> field343 = IStringSerializable.<Class107>method258(Class107::values, Class107::method297);
+   public static final Codec<Class107> field343 = IStringSerializable.<Class107>createEnumCodec(Class107::values, Class107::method297);
    private static final Map<String, Class107> field344 = Arrays.<Class107>stream(values())
       .collect(Collectors.toMap(Class107::method296, var0 -> (Class107)var0));
    private final String field345;

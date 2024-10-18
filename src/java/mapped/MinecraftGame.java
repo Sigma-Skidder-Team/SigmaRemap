@@ -9,6 +9,7 @@ import com.mojang.bridge.game.RunningGame;
 import com.mojang.bridge.launcher.Launcher;
 import com.mojang.bridge.launcher.SessionEventListener;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.world.ClientWorld;
 
 import javax.annotation.Nullable;
 

@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.network.play.ClientPlayNetHandler;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.client.CQueryEntityNBTPacket;
 import net.minecraft.network.play.client.CQueryTileEntityNBTPacket;

@@ -14,7 +14,9 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.renderer.ActiveRenderInfo;
+import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.renderer.tileentity.BannerTileEntityRenderer;
+import net.minecraft.client.world.DimensionRenderInfo;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
@@ -230,7 +232,7 @@ public class Reflector {
    public static Class6633 field42944 = new Class6633(
       new FieldLocatorTypes(World.class, new Class[]{List.class}, Set.class, new Class[]{Thread.class}, "World.tileEntitiesToBeRemoved")
    );
-   public static Class6636 field42945 = new Class6636(Class6349.class);
+   public static Class6636 field42945 = new Class6636(DimensionRenderInfo.class);
    public static Class6631 field42946 = field42945.method20249("getCloudRenderHandler");
    public static Class6631 field42947 = field42945.method20249("getSkyRenderHandler");
    public static Class6631 field42948 = field42945.method20249("getWeatherRenderHandler");

@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.IWorld;
 
 import java.util.Random;
@@ -20,9 +21,9 @@ public abstract class Class4209 extends Class4178 {
       this.field20518 = var8;
       this.method12939(Direction.Plane.HORIZONTAL.method247(var2));
       if (this.method12938().getAxis() != Direction.Axis.Z) {
-         this.field20444 = new Class9764(var3, var4, var5, var3 + var8 - 1, var4 + var7 - 1, var5 + var6 - 1);
+         this.field20444 = new MutableBoundingBox(var3, var4, var5, var3 + var8 - 1, var4 + var7 - 1, var5 + var6 - 1);
       } else {
-         this.field20444 = new Class9764(var3, var4, var5, var3 + var6 - 1, var4 + var7 - 1, var5 + var8 - 1);
+         this.field20444 = new MutableBoundingBox(var3, var4, var5, var3 + var6 - 1, var4 + var7 - 1, var5 + var8 - 1);
       }
    }
 
@@ -42,7 +43,7 @@ public abstract class Class4209 extends Class4178 {
       var1.putInt("HPos", this.field20519);
    }
 
-   public boolean method13002(IWorld var1, Class9764 var2, int var3) {
+   public boolean method13002(IWorld var1, MutableBoundingBox var2, int var3) {
       if (this.field20519 >= 0) {
          return true;
       } else {

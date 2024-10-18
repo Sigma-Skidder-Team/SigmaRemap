@@ -19,7 +19,7 @@ public class ConfiguredCarver<WC extends Class4729> {
    private static String[] field29673;
    public static final Codec<ConfiguredCarver<?>> field29674 = Registry.field16110.dispatch(var0 -> var0.field29677, Class7195::method22606);
    public static final Codec<Supplier<ConfiguredCarver<?>>> field29675 = RegistryKeyCodec.create(Registry.field16101, field29674);
-   public static final Codec<List<Supplier<ConfiguredCarver<?>>>> field29676 = RegistryKeyCodec.<ConfiguredCarver<?>>method33672(Registry.field16101, field29674);
+   public static final Codec<List<Supplier<ConfiguredCarver<?>>>> field29676 = RegistryKeyCodec.<ConfiguredCarver<?>>getValueCodecs(Registry.field16101, field29674);
    private final Class7195<WC> field29677;
    private final WC field29678;
 

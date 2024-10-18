@@ -3,6 +3,7 @@ package mapped;
 import it.unimi.dsi.fastutil.longs.Long2FloatLinkedOpenHashMap;
 import it.unimi.dsi.fastutil.longs.Long2IntLinkedOpenHashMap;
 import net.minecraft.block.BlockState;
+import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockDisplayReader;
@@ -10,12 +11,12 @@ import net.minecraft.world.IBlockDisplayReader;
 public class Class7217 {
    private static String[] field31024;
    private boolean field31025;
-   private final Long2IntLinkedOpenHashMap field31026 = Util.<Long2IntLinkedOpenHashMap>method38507(() -> {
+   private final Long2IntLinkedOpenHashMap field31026 = Util.<Long2IntLinkedOpenHashMap>make(() -> {
       Class22 var3 = new Class22(this, 100, 0.25F);
       var3.defaultReturnValue(Integer.MAX_VALUE);
       return var3;
    });
-   private final Long2FloatLinkedOpenHashMap field31027 = Util.<Long2FloatLinkedOpenHashMap>method38507(() -> {
+   private final Long2FloatLinkedOpenHashMap field31027 = Util.<Long2FloatLinkedOpenHashMap>make(() -> {
       Class13 var3 = new Class13(this, 100, 0.25F);
       var3.defaultReturnValue(Float.NaN);
       return var3;
@@ -35,7 +36,7 @@ public class Class7217 {
    }
 
    public int method22664(BlockState var1, IBlockDisplayReader var2, BlockPos var3) {
-      long var6 = var3.method8332();
+      long var6 = var3.toLong();
       if (this.field31025) {
          int var8 = this.field31026.get(var6);
          if (var8 != Integer.MAX_VALUE) {
@@ -56,7 +57,7 @@ public class Class7217 {
    }
 
    public float method22665(BlockState var1, IBlockDisplayReader var2, BlockPos var3) {
-      long var6 = var3.method8332();
+      long var6 = var3.toLong();
       if (this.field31025) {
          float var8 = this.field31027.get(var6);
          if (!Float.isNaN(var8)) {

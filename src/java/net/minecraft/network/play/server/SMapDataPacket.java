@@ -1,6 +1,6 @@
 package net.minecraft.network.play.server;
 
-import mapped.Class7529;
+import net.minecraft.world.storage.MapData;
 import mapped.Class7982;
 import mapped.MapDecorationType;
 import net.minecraft.network.PacketBuffer;
@@ -106,7 +106,7 @@ public class SMapDataPacket implements IPacket<IClientPlayNetHandler> {
       return this.field24891;
    }
 
-   public void method17635(Class7529 var1) {
+   public void method17635(MapData var1) {
       var1.scale = this.field24892;
       var1.trackingPosition = this.field24893;
       var1.locked = this.field24894;

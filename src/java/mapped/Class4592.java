@@ -4,6 +4,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3f;
 
@@ -35,6 +36,6 @@ public class Class4592 extends Class4587 {
       Class7735 var9 = Minecraft.getInstance().getRenderTypeBuffers().getBufferSource();
       IVertexBuilder var10 = var9.method25597(this.field22079);
       this.field22078.render(var8, var10, 15728880, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, var7);
-      var9.method25602();
+      var9.finish();
    }
 }

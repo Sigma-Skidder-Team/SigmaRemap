@@ -18,7 +18,7 @@ public enum Class2270 {
    field14770(5391),
    field14771(5382);
 
-   public final int field14772;
+   public final int opcode;
    private static final Class2270[] field14773 = new Class2270[]{
       field14756,
       field14757,
@@ -39,6 +39,6 @@ public enum Class2270 {
    };
 
    private Class2270(int var3) {
-      this.field14772 = var3;
+      this.opcode = var3;
    }
 }

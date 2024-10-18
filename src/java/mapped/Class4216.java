@@ -4,6 +4,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.gen.feature.structure.StructureManager;
 import net.minecraft.world.gen.feature.template.TemplateManager;
@@ -14,7 +15,7 @@ public class Class4216 extends Class4213 {
    private static String[] field20542;
    private int field20543;
 
-   public Class4216(Direction var1, Class9764 var2, int var3) {
+   public Class4216(Direction var1, MutableBoundingBox var2, int var3) {
       super(Class7792.field33474, var1, var2);
       this.field20543 = var3 & 1;
    }
@@ -24,7 +25,7 @@ public class Class4216 extends Class4213 {
    }
 
    @Override
-   public boolean method12896(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, MutableBoundingBox var5, ChunkPos var6, BlockPos var7) {
       if (this.field20543 != 0) {
          if (this.field20543 == 1) {
             this.method12927(var1, var5, 9, 3, 18, 13, 3, 20, field20529, field20529, false);

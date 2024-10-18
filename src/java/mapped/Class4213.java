@@ -8,6 +8,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.ISeedReader;
 
 import java.util.Set;
@@ -39,7 +40,7 @@ public abstract class Class4213 extends Class4178 {
       super(var1, var2);
    }
 
-   public Class4213(Class7792 var1, Direction var2, Class9764 var3) {
+   public Class4213(Class7792 var1, Direction var2, MutableBoundingBox var3) {
       super(var1, 1);
       this.method12939(var2);
       this.field20444 = var3;
@@ -54,9 +55,9 @@ public abstract class Class4213 extends Class4178 {
       int var12 = var10 / 5 % 5;
       int var13 = var10 / 25;
       if (var3 != Direction.NORTH && var3 != Direction.SOUTH) {
-         this.field20444 = new Class9764(0, 0, 0, var7 * 8 - 1, var6 * 4 - 1, var5 * 8 - 1);
+         this.field20444 = new MutableBoundingBox(0, 0, 0, var7 * 8 - 1, var6 * 4 - 1, var5 * 8 - 1);
       } else {
-         this.field20444 = new Class9764(0, 0, 0, var5 * 8 - 1, var6 * 4 - 1, var7 * 8 - 1);
+         this.field20444 = new MutableBoundingBox(0, 0, 0, var5 * 8 - 1, var6 * 4 - 1, var7 * 8 - 1);
       }
 
       switch (Class9033.field41332[var3.ordinal()]) {
@@ -82,7 +83,7 @@ public abstract class Class4213 extends Class4178 {
    public void method12897(CompoundNBT var1) {
    }
 
-   public void method13005(ISeedReader var1, Class9764 var2, int var3, int var4, int var5, int var6, int var7, int var8) {
+   public void method13005(ISeedReader var1, MutableBoundingBox var2, int var3, int var4, int var5, int var6, int var7, int var8) {
       for (int var11 = var4; var11 <= var7; var11++) {
          for (int var12 = var3; var12 <= var6; var12++) {
             for (int var13 = var5; var13 <= var8; var13++) {
@@ -99,7 +100,7 @@ public abstract class Class4213 extends Class4178 {
       }
    }
 
-   public void method13006(ISeedReader var1, Class9764 var2, int var3, int var4, boolean var5) {
+   public void method13006(ISeedReader var1, MutableBoundingBox var2, int var3, int var4, boolean var5) {
       if (!var5) {
          this.method12927(var1, var2, var3 + 0, 0, var4 + 0, var3 + 8 - 1, 0, var4 + 8 - 1, field20528, field20528, false);
       } else {
@@ -114,7 +115,7 @@ public abstract class Class4213 extends Class4178 {
       }
    }
 
-   public void method13007(ISeedReader var1, Class9764 var2, int var3, int var4, int var5, int var6, int var7, int var8, BlockState var9) {
+   public void method13007(ISeedReader var1, MutableBoundingBox var2, int var3, int var4, int var5, int var6, int var7, int var8, BlockState var9) {
       for (int var12 = var4; var12 <= var7; var12++) {
          for (int var13 = var3; var13 <= var6; var13++) {
             for (int var14 = var5; var14 <= var8; var14++) {
@@ -126,7 +127,7 @@ public abstract class Class4213 extends Class4178 {
       }
    }
 
-   public boolean method13008(Class9764 var1, int var2, int var3, int var4, int var5) {
+   public boolean method13008(MutableBoundingBox var1, int var2, int var3, int var4, int var5) {
       int var8 = this.method12920(var2, var3);
       int var9 = this.method12922(var2, var3);
       int var10 = this.method12920(var4, var5);
@@ -134,7 +135,7 @@ public abstract class Class4213 extends Class4178 {
       return var1.intersectsWith(Math.min(var8, var10), Math.min(var9, var11), Math.max(var8, var10), Math.max(var9, var11));
    }
 
-   public boolean method13009(ISeedReader var1, Class9764 var2, int var3, int var4, int var5) {
+   public boolean method13009(ISeedReader var1, MutableBoundingBox var2, int var3, int var4, int var5) {
       int var8 = this.method12920(var3, var5);
       int var9 = this.method12921(var4);
       int var10 = this.method12922(var3, var5);

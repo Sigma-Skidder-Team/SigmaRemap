@@ -10,8 +10,11 @@ import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.util.ObjectIntIdentityMap;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.FoliageColors;
+import net.minecraft.world.GrassColors;
 import net.minecraft.world.IBlockDisplayReader;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.BiomeColors;
 
 import java.util.Map;
 import java.util.Set;
@@ -25,23 +28,23 @@ public class BlockColors {
       BlockColors var2 = new BlockColors();
       var2.method29466(
          (var0, var1, var2x, var3) -> var1 != null && var2x != null
-               ? Class8527.method30242(var1, var0.get(Class3456.field19276) != DoubleBlockHalf.field209 ? var2x : var2x.down())
+               ? BiomeColors.getGrassColor(var1, var0.get(Class3456.field19276) != DoubleBlockHalf.field209 ? var2x : var2x.down())
                : -1,
          Blocks.field36802,
          Blocks.TALL_GRASS
       );
       var2.method29468(Class3456.field19276, Blocks.field36802, Blocks.TALL_GRASS);
       var2.method29466(
-         (var0, var1, var2x, var3) -> var1 != null && var2x != null ? Class8527.method30242(var1, var2x) : Class6406.method19509(0.5, 1.0),
+         (var0, var1, var2x, var3) -> var1 != null && var2x != null ? BiomeColors.getGrassColor(var1, var2x) : GrassColors.get(0.5, 1.0),
          Blocks.GRASS_BLOCK,
          Blocks.FERN,
          Blocks.GRASS,
          Blocks.field36675
       );
-      var2.method29466((var0, var1, var2x, var3) -> Class9441.method36293(), Blocks.field36447);
-      var2.method29466((var0, var1, var2x, var3) -> Class9441.method36294(), Blocks.field36448);
+      var2.method29466((var0, var1, var2x, var3) -> FoliageColors.method36293(), Blocks.field36447);
+      var2.method29466((var0, var1, var2x, var3) -> FoliageColors.method36294(), Blocks.field36448);
       var2.method29466(
-         (var0, var1, var2x, var3) -> var1 != null && var2x != null ? Class8527.method30243(var1, var2x) : Class9441.method36295(),
+         (var0, var1, var2x, var3) -> var1 != null && var2x != null ? BiomeColors.getFoliageColor(var1, var2x) : FoliageColors.method36295(),
          Blocks.field36446,
          Blocks.field36449,
          Blocks.field36450,
@@ -49,14 +52,14 @@ public class BlockColors {
          Blocks.VINE
       );
       var2.method29466(
-         (var0, var1, var2x, var3) -> var1 != null && var2x != null ? Class8527.method30244(var1, var2x) : -1,
+         (var0, var1, var2x, var3) -> var1 != null && var2x != null ? BiomeColors.getWaterColor(var1, var2x) : -1,
          Blocks.WATER,
          Blocks.field37013,
          Blocks.field36648
       );
       var2.method29466((var0, var1, var2x, var3) -> Class3222.method11629(var0.<Integer>get(Class3222.field18651)), Blocks.REDSTONE_WIRE);
       var2.method29468(Class3222.field18651, Blocks.REDSTONE_WIRE);
-      var2.method29466((var0, var1, var2x, var3) -> var1 != null && var2x != null ? Class8527.method30242(var1, var2x) : -1, Blocks.SUGAR_CANE);
+      var2.method29466((var0, var1, var2x, var3) -> var1 != null && var2x != null ? BiomeColors.getGrassColor(var1, var2x) : -1, Blocks.SUGAR_CANE);
       var2.method29466((var0, var1, var2x, var3) -> 14731036, Blocks.ATTACHED_MELON_STEM, Blocks.ATTACHED_PUMPKIN_STEM);
       var2.method29466((var0, var1, var2x, var3) -> {
          int var6 = var0.<Integer>get(Class3486.field19347);

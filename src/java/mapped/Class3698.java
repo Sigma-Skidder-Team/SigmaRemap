@@ -60,7 +60,7 @@ public class Class3698 extends Class3676<CreatureEntity> {
       Class1653 var7 = var1.method6951();
       this.field19746.long2ObjectEntrySet().removeIf(var2x -> !((Class8341)var2x.getValue()).method29246(var3));
       Predicate<BlockPos> var8 = var3x -> {
-         Class8341 var6 = (Class8341)this.field19746.get(var3x.method8332());
+         Class8341 var6 = (Class8341)this.field19746.get(var3x.toLong());
          if (var6 != null) {
             if (var6.method29247(var3)) {
                var6.method29245(var3);
@@ -85,7 +85,7 @@ public class Class3698 extends Class3676<CreatureEntity> {
          });
       } else {
          for (BlockPos var12 : var9) {
-            this.field19746.computeIfAbsent(var12.method8332(), var3x -> new Class8341(var2.world.rand, var3));
+            this.field19746.computeIfAbsent(var12.toLong(), var3x -> new Class8341(var2.world.rand, var3));
          }
       }
    }

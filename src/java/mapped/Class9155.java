@@ -196,7 +196,7 @@ public class Class9155 {
       var9.method25278(var6);
       Vector3f var10 = var9.method25287();
       var10.method25281(var8);
-      var10.method25280();
+      var10.normalize();
       Direction var11 = null;
       float var12 = 0.0F;
 

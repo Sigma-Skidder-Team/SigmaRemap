@@ -15,7 +15,7 @@ import java.lang.reflect.Type;
 import java.util.Map.Entry;
 
 public class ITextComponent$Serializer implements JsonDeserializer<IFormattableTextComponent>, JsonSerializer<ITextComponent> {
-   private static final Gson GSON = Util.<Gson>method38507(() -> {
+   private static final Gson GSON = Util.<Gson>make(() -> {
       GsonBuilder var2 = new GsonBuilder();
       var2.disableHtmlEscaping();
       var2.registerTypeHierarchyAdapter(ITextComponent.class, new ITextComponent$Serializer());
@@ -23,7 +23,7 @@ public class ITextComponent$Serializer implements JsonDeserializer<IFormattableT
       var2.registerTypeAdapterFactory(new Class9681());
       return var2.create();
    });
-   private static final Field JSON_READER_POS_FIELD = Util.<Field>method38507(() -> {
+   private static final Field JSON_READER_POS_FIELD = Util.<Field>make(() -> {
       try {
          new JsonReader(new StringReader(""));
          Field var2 = JsonReader.class.getDeclaredField("pos");
@@ -33,7 +33,7 @@ public class ITextComponent$Serializer implements JsonDeserializer<IFormattableT
          throw new IllegalStateException("Couldn't get field 'pos' for JsonReader", var3);
       }
    });
-   private static final Field JSON_READER_LINESTART_FIELD = Util.<Field>method38507(() -> {
+   private static final Field JSON_READER_LINESTART_FIELD = Util.<Field>make(() -> {
       try {
          new JsonReader(new StringReader(""));
          Field var2 = JsonReader.class.getDeclaredField("lineStart");

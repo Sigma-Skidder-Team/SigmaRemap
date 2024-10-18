@@ -19,6 +19,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.IBlockDisplayReader;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+import net.minecraft.world.storage.MapData;
 
 public class ReflectorForge {
    public static Object field44532 = Reflector.method35071(Reflector.field42815);
@@ -66,7 +67,7 @@ public class ReflectorForge {
       return !Reflector.field42826.exists() ? var0.getLightValue() : Reflector.method35065(var0, Reflector.field42826, var1, var2);
    }
 
-   public static Class7529 method37048(ItemStack var0, World var1) {
+   public static MapData method37048(ItemStack var0, World var1) {
       if (!Reflector.field42864.method20245()) {
          return Class3316.method11861(var0, var1);
       } else {

@@ -1,7 +1,7 @@
 package net.minecraft.world;
 
 import mapped.WorldLightManager;
-import mapped.Class8980;
+import net.minecraft.world.level.ColorResolver;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 
@@ -10,7 +10,7 @@ public interface IBlockDisplayReader extends IBlockReader {
 
    WorldLightManager method6737();
 
-   int method6878(BlockPos var1, Class8980 var2);
+   int getBlockColor(BlockPos var1, ColorResolver var2);
 
    default int getLightFor(LightType var1, BlockPos var2) {
       return this.method6737().getLightEngine(var1).method643(var2);

@@ -5,6 +5,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.gen.feature.structure.StructureManager;
 import net.minecraft.world.gen.feature.template.TemplateManager;
@@ -25,9 +26,9 @@ public class Class4224 extends Class4213 {
       this.method12939(var4);
       Direction var7 = this.method12938();
       if (var7.getAxis() != Direction.Axis.Z) {
-         this.field20444 = new Class9764(var2, 39, var3, var2 + 58 - 1, 61, var3 + 58 - 1);
+         this.field20444 = new MutableBoundingBox(var2, 39, var3, var2 + 58 - 1, 61, var3 + 58 - 1);
       } else {
-         this.field20444 = new Class9764(var2, 39, var3, var2 + 58 - 1, 61, var3 + 58 - 1);
+         this.field20444 = new MutableBoundingBox(var2, 39, var3, var2 + 58 - 1, 61, var3 + 58 - 1);
       }
 
       List<Class9312> var8 = this.method13010(var1);
@@ -62,13 +63,13 @@ public class Class4224 extends Class4213 {
          var14.method12915().method38393(var18, var17, var19);
       }
 
-      Class9764 var21 = Class9764.method38389(
+      MutableBoundingBox var21 = MutableBoundingBox.method38389(
          this.method12920(1, 1), this.method12921(1), this.method12922(1, 1), this.method12920(23, 21), this.method12921(8), this.method12922(23, 21)
       );
-      Class9764 var22 = Class9764.method38389(
+      MutableBoundingBox var22 = MutableBoundingBox.method38389(
          this.method12920(34, 1), this.method12921(1), this.method12922(34, 1), this.method12920(56, 21), this.method12921(8), this.method12922(56, 21)
       );
-      Class9764 var15 = Class9764.method38389(
+      MutableBoundingBox var15 = MutableBoundingBox.method38389(
          this.method12920(22, 22), this.method12921(13), this.method12922(22, 22), this.method12920(35, 35), this.method12921(17), this.method12922(35, 35)
       );
       int var16 = var1.nextInt();
@@ -198,7 +199,7 @@ public class Class4224 extends Class4213 {
    }
 
    @Override
-   public boolean method12896(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, MutableBoundingBox var5, ChunkPos var6, BlockPos var7) {
       int var10 = Math.max(var1.getSeaLevel(), 64) - this.field20444.field45679;
       this.method13005(var1, var5, 0, 0, 0, 58, var10, 58);
       this.method13011(false, 0, var1, var4, var5);
@@ -252,7 +253,7 @@ public class Class4224 extends Class4213 {
       return true;
    }
 
-   private void method13011(boolean var1, int var2, ISeedReader var3, Random var4, Class9764 var5) {
+   private void method13011(boolean var1, int var2, ISeedReader var3, Random var4, MutableBoundingBox var5) {
       if (this.method13008(var5, var2, 0, var2 + 23, 20)) {
          this.method12927(var3, var5, var2 + 0, 0, 0, var2 + 24, 0, 20, field20528, field20528, false);
          this.method13005(var3, var5, var2 + 0, 1, 0, var2 + 24, 10, 20);
@@ -295,7 +296,7 @@ public class Class4224 extends Class4213 {
       }
    }
 
-   private void method13012(ISeedReader var1, Random var2, Class9764 var3) {
+   private void method13012(ISeedReader var1, Random var2, MutableBoundingBox var3) {
       if (this.method13008(var3, 22, 5, 35, 17)) {
          this.method13005(var1, var3, 25, 0, 0, 32, 8, 20);
 
@@ -315,7 +316,7 @@ public class Class4224 extends Class4213 {
       }
    }
 
-   private void method13013(ISeedReader var1, Random var2, Class9764 var3) {
+   private void method13013(ISeedReader var1, Random var2, MutableBoundingBox var3) {
       if (this.method13008(var3, 15, 20, 42, 21)) {
          this.method12927(var1, var3, 15, 0, 21, 42, 0, 21, field20528, field20528, false);
          this.method13005(var1, var3, 26, 1, 21, 31, 3, 21);
@@ -374,7 +375,7 @@ public class Class4224 extends Class4213 {
       }
    }
 
-   private void method13014(ISeedReader var1, Random var2, Class9764 var3) {
+   private void method13014(ISeedReader var1, Random var2, MutableBoundingBox var3) {
       if (this.method13008(var3, 21, 21, 36, 36)) {
          this.method12927(var1, var3, 21, 0, 22, 36, 0, 36, field20528, field20528, false);
          this.method13005(var1, var3, 21, 1, 22, 36, 23, 36);
@@ -410,7 +411,7 @@ public class Class4224 extends Class4213 {
       }
    }
 
-   private void method13015(ISeedReader var1, Random var2, Class9764 var3) {
+   private void method13015(ISeedReader var1, Random var2, MutableBoundingBox var3) {
       if (this.method13008(var3, 0, 21, 6, 58)) {
          this.method12927(var1, var3, 0, 0, 21, 6, 0, 57, field20528, field20528, false);
          this.method13005(var1, var3, 0, 1, 21, 6, 7, 57);
@@ -462,7 +463,7 @@ public class Class4224 extends Class4213 {
       }
    }
 
-   private void method13016(ISeedReader var1, Random var2, Class9764 var3) {
+   private void method13016(ISeedReader var1, Random var2, MutableBoundingBox var3) {
       if (this.method13008(var3, 7, 21, 13, 50)) {
          this.method12927(var1, var3, 7, 0, 21, 13, 0, 50, field20528, field20528, false);
          this.method13005(var1, var3, 7, 1, 21, 13, 10, 50);
@@ -521,7 +522,7 @@ public class Class4224 extends Class4213 {
       }
    }
 
-   private void method13017(ISeedReader var1, Random var2, Class9764 var3) {
+   private void method13017(ISeedReader var1, Random var2, MutableBoundingBox var3) {
       if (this.method13008(var3, 14, 21, 20, 43)) {
          this.method12927(var1, var3, 14, 0, 21, 20, 0, 43, field20528, field20528, false);
          this.method13005(var1, var3, 14, 1, 22, 20, 14, 43);

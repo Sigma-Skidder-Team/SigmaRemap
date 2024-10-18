@@ -118,7 +118,7 @@ public class Class8087 {
          var14.printStackTrace();
       }
 
-      RenderSystem.method27860(33984);
+      RenderSystem.activeTexture(33984);
       RenderSystem.bindTexture(var5);
       TextureUtil.method30375(var15, var6, var7);
       field34751.put(var0, new Class7275(var1, var5));

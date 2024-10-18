@@ -224,7 +224,7 @@ public class NameTags extends Module {
     @EventTarget
     public void method16930(Render3DEvent var1) {
         if (this.isEnabled()) {
-            RenderSystem.method27905(33986, 240.0F, 240.0F);
+            RenderSystem.glMultiTexCoord2f(33986, 240.0F, 240.0F);
             boolean var4 = this.getBooleanValueFromSettingName("Magnify");
 
             for (Entity var6 : this.field24005) {
@@ -296,7 +296,7 @@ public class NameTags extends Module {
             }
 
             GL11.glDisable(2896);
-            RenderSystem.method27905(33986, 240.0F, 240.0F);
+            RenderSystem.glMultiTexCoord2f(33986, 240.0F, 240.0F);
             TextureImpl.method36180();
             TextureManager var10000 = mc.getTextureManager();
             mc.getTextureManager();

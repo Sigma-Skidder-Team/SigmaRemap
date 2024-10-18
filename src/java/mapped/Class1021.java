@@ -77,7 +77,7 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
          int var3 = MathHelper.floor(this.getPosX());
          int var4 = MathHelper.floor(this.getPosY());
          int var5 = MathHelper.floor(this.getPosZ());
-         if (this.world.getBiome(new BlockPos(var3, 0, var5)).method32503(new BlockPos(var3, var4, var5)) > 1.0F) {
+         if (this.world.getBiome(new BlockPos(var3, 0, var5)).getTemperature(new BlockPos(var3, var4, var5)) > 1.0F) {
             this.attackEntityFrom(DamageSource.field38994, 1.0F);
          }
 
@@ -93,7 +93,7 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
             var5 = MathHelper.floor(this.getPosZ() + (double)((float)(var7 / 2 % 2 * 2 - 1) * 0.25F));
             BlockPos var8 = new BlockPos(var3, var4, var5);
             if (this.world.getBlockState(var8).isAir()
-               && this.world.getBiome(var8).method32503(var8) < 0.8F
+               && this.world.getBiome(var8).getTemperature(var8) < 0.8F
                && var6.isValidPosition(this.world, var8)) {
                this.world.setBlockState(var8, var6);
             }

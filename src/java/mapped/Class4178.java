@@ -14,6 +14,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.ISeedReader;
@@ -27,7 +28,7 @@ import java.util.Set;
 
 public abstract class Class4178 {
    public static final BlockState field20443 = Blocks.field37012.getDefaultState();
-   public Class9764 field20444;
+   public MutableBoundingBox field20444;
    private Direction field20445;
    private Mirror field20446;
    private Rotation field20447;
@@ -55,7 +56,7 @@ public abstract class Class4178 {
    public Class4178(Class7792 var1, CompoundNBT var2) {
       this(var1, var2.getInt("GD"));
       if (var2.contains("BB")) {
-         this.field20444 = new Class9764(var2.getIntArray("BB"));
+         this.field20444 = new MutableBoundingBox(var2.getIntArray("BB"));
       }
 
       int var5 = var2.getInt("O");
@@ -78,9 +79,9 @@ public abstract class Class4178 {
    public void method12894(Class4178 var1, List<Class4178> var2, Random var3) {
    }
 
-   public abstract boolean method12896(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7);
+   public abstract boolean method12896(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, MutableBoundingBox var5, ChunkPos var6, BlockPos var7);
 
-   public Class9764 method12915() {
+   public MutableBoundingBox method12915() {
       return this.field20444;
    }
 
@@ -94,7 +95,7 @@ public abstract class Class4178 {
       return this.field20444.intersectsWith(var5 - var2, var6 - var2, var5 + 15 + var2, var6 + 15 + var2);
    }
 
-   public static Class4178 method12918(List<Class4178> var0, Class9764 var1) {
+   public static Class4178 method12918(List<Class4178> var0, MutableBoundingBox var1) {
       for (Class4178 var5 : var0) {
          if (var5.method12915() != null && var5.method12915().method38390(var1)) {
             return var5;
@@ -104,7 +105,7 @@ public abstract class Class4178 {
       return null;
    }
 
-   public boolean method12919(IBlockReader var1, Class9764 var2) {
+   public boolean method12919(IBlockReader var1, MutableBoundingBox var2) {
       int var5 = Math.max(this.field20444.field45678 - 1, var2.field45678);
       int var6 = Math.max(this.field20444.field45679 - 1, var2.field45679);
       int var7 = Math.max(this.field20444.field45680 - 1, var2.field45680);
@@ -194,7 +195,7 @@ public abstract class Class4178 {
       }
    }
 
-   public void method12923(ISeedReader var1, BlockState var2, int var3, int var4, int var5, Class9764 var6) {
+   public void method12923(ISeedReader var1, BlockState var2, int var3, int var4, int var5, MutableBoundingBox var6) {
       BlockPos var9 = new BlockPos(this.method12920(var3, var5), this.method12921(var4), this.method12922(var3, var5));
       if (var6.method38396(var9)) {
          if (this.field20446 != Mirror.field13614) {
@@ -217,7 +218,7 @@ public abstract class Class4178 {
       }
    }
 
-   public BlockState method12924(IBlockReader var1, int var2, int var3, int var4, Class9764 var5) {
+   public BlockState method12924(IBlockReader var1, int var2, int var3, int var4, MutableBoundingBox var5) {
       int var8 = this.method12920(var2, var4);
       int var9 = this.method12921(var3);
       int var10 = this.method12922(var2, var4);
@@ -225,7 +226,7 @@ public abstract class Class4178 {
       return var5.method38396(var11) ? var1.getBlockState(var11) : Blocks.AIR.getDefaultState();
    }
 
-   public boolean method12925(IWorldReader var1, int var2, int var3, int var4, Class9764 var5) {
+   public boolean method12925(IWorldReader var1, int var2, int var3, int var4, MutableBoundingBox var5) {
       int var8 = this.method12920(var2, var4);
       int var9 = this.method12921(var3 + 1);
       int var10 = this.method12922(var2, var4);
@@ -233,7 +234,7 @@ public abstract class Class4178 {
       return var5.method38396(var11) ? var9 < var1.method6736(Heightmap.Type.OCEAN_FLOOR_WG, var8, var10) : false;
    }
 
-   public void method12926(ISeedReader var1, Class9764 var2, int var3, int var4, int var5, int var6, int var7, int var8) {
+   public void method12926(ISeedReader var1, MutableBoundingBox var2, int var3, int var4, int var5, int var6, int var7, int var8) {
       for (int var11 = var4; var11 <= var7; var11++) {
          for (int var12 = var3; var12 <= var6; var12++) {
             for (int var13 = var5; var13 <= var8; var13++) {
@@ -244,7 +245,7 @@ public abstract class Class4178 {
    }
 
    public void method12927(
-           ISeedReader var1, Class9764 var2, int var3, int var4, int var5, int var6, int var7, int var8, BlockState var9, BlockState var10, boolean var11
+           ISeedReader var1, MutableBoundingBox var2, int var3, int var4, int var5, int var6, int var7, int var8, BlockState var9, BlockState var10, boolean var11
    ) {
       for (int var14 = var4; var14 <= var7; var14++) {
          for (int var15 = var3; var15 <= var6; var15++) {
@@ -262,7 +263,7 @@ public abstract class Class4178 {
    }
 
    public void method12928(
-           ISeedReader var1, Class9764 var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, Random var10, Class8347 var11
+           ISeedReader var1, MutableBoundingBox var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, Random var10, Class8347 var11
    ) {
       for (int var14 = var4; var14 <= var7; var14++) {
          for (int var15 = var3; var15 <= var6; var15++) {
@@ -280,7 +281,7 @@ public abstract class Class4178 {
 
    public void method12929(
       ISeedReader var1,
-      Class9764 var2,
+      MutableBoundingBox var2,
       Random var3,
       float var4,
       int var5,
@@ -311,13 +312,13 @@ public abstract class Class4178 {
       }
    }
 
-   public void method12930(ISeedReader var1, Class9764 var2, Random var3, float var4, int var5, int var6, int var7, BlockState var8) {
+   public void method12930(ISeedReader var1, MutableBoundingBox var2, Random var3, float var4, int var5, int var6, int var7, BlockState var8) {
       if (var3.nextFloat() < var4) {
          this.method12923(var1, var8, var5, var6, var7, var2);
       }
    }
 
-   public void method12931(ISeedReader var1, Class9764 var2, int var3, int var4, int var5, int var6, int var7, int var8, BlockState var9, boolean var10) {
+   public void method12931(ISeedReader var1, MutableBoundingBox var2, int var3, int var4, int var5, int var6, int var7, int var8, BlockState var9, boolean var10) {
       float var13 = (float)(var6 - var3 + 1);
       float var14 = (float)(var7 - var4 + 1);
       float var15 = (float)(var8 - var5 + 1);
@@ -343,7 +344,7 @@ public abstract class Class4178 {
       }
    }
 
-   public void method12932(ISeedReader var1, BlockState var2, int var3, int var4, int var5, Class9764 var6) {
+   public void method12932(ISeedReader var1, BlockState var2, int var3, int var4, int var5, MutableBoundingBox var6) {
       int var9 = this.method12920(var3, var5);
       int var10 = this.method12921(var4);
       int var11 = this.method12922(var3, var5);
@@ -357,7 +358,7 @@ public abstract class Class4178 {
       }
    }
 
-   public boolean method12933(ISeedReader var1, Class9764 var2, Random var3, int var4, int var5, int var6, ResourceLocation var7) {
+   public boolean method12933(ISeedReader var1, MutableBoundingBox var2, Random var3, int var4, int var5, int var6, ResourceLocation var7) {
       BlockPos var10 = new BlockPos(this.method12920(var4, var6), this.method12921(var5), this.method12922(var4, var6));
       return this.method12935(var1, var2, var3, var10, var7, (BlockState)null);
    }
@@ -406,7 +407,7 @@ public abstract class Class4178 {
       }
    }
 
-   public boolean method12935(Class1659 var1, Class9764 var2, Random var3, BlockPos var4, ResourceLocation var5, BlockState var6) {
+   public boolean method12935(Class1659 var1, MutableBoundingBox var2, Random var3, BlockPos var4, ResourceLocation var5, BlockState var6) {
       if (var2.method38396(var4) && !var1.getBlockState(var4).isIn(Blocks.CHEST)) {
          if (var6 == null) {
             var6 = method12934(var1, var4, Blocks.CHEST.getDefaultState());
@@ -424,7 +425,7 @@ public abstract class Class4178 {
       }
    }
 
-   public boolean method12936(ISeedReader var1, Class9764 var2, Random var3, int var4, int var5, int var6, Direction var7, ResourceLocation var8) {
+   public boolean method12936(ISeedReader var1, MutableBoundingBox var2, Random var3, int var4, int var5, int var6, Direction var7, ResourceLocation var8) {
       BlockPos var11 = new BlockPos(this.method12920(var4, var6), this.method12921(var5), this.method12922(var4, var6));
       if (var2.method38396(var11) && !var1.getBlockState(var11).isIn(Blocks.DISPENSER)) {
          this.method12923(var1, Blocks.DISPENSER.getDefaultState().with(Class3357.field18899, var7), var4, var5, var6, var2);

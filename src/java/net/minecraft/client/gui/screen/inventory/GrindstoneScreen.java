@@ -17,13 +17,13 @@ public class GrindstoneScreen extends ContainerScreen<Class5815> {
    @Override
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.renderBackground(var1);
-      this.method2618(var1, var4, var2, var3);
+      this.drawGuiContainerBackgroundLayer(var1, var4, var2, var3);
       super.render(var1, var2, var3, var4);
       this.renderHoveredTooltip(var1, var2, var3);
    }
 
    @Override
-   public void method2618(MatrixStack var1, float var2, int var3, int var4) {
+   public void drawGuiContainerBackgroundLayer(MatrixStack var1, float var2, int var3, int var4) {
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       this.mc.getTextureManager().bindTexture(field6165);
       int var7 = (this.width - this.xSize) / 2;

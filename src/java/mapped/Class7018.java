@@ -56,8 +56,8 @@ public class Class7018 implements Class7016 {
                         return 0;
                      } else {
                         Biome var14 = var1.getBiome(var13);
-                        Class100 var15 = var14.getCategory();
-                        if (var15 == Class100.field289) {
+                        Biome.Category var15 = var14.getCategory();
+                        if (var15 == Biome.Category.MUSHROOM) {
                            return 0;
                         } else {
                            int var16 = 0;

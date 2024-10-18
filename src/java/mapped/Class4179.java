@@ -6,6 +6,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.gen.feature.structure.StructureManager;
 import net.minecraft.world.gen.feature.template.TemplateManager;
@@ -17,7 +18,7 @@ public class Class4179 extends Class4178 {
 
    public Class4179(BlockPos var1) {
       super(Class7792.field33477, 0);
-      this.field20444 = new Class9764(var1.getX(), var1.getY(), var1.getZ(), var1.getX(), var1.getY(), var1.getZ());
+      this.field20444 = new MutableBoundingBox(var1.getX(), var1.getY(), var1.getZ(), var1.getX(), var1.getY(), var1.getZ());
    }
 
    public Class4179(TemplateManager var1, CompoundNBT var2) {
@@ -29,7 +30,7 @@ public class Class4179 extends Class4178 {
    }
 
    @Override
-   public boolean method12896(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, MutableBoundingBox var5, ChunkPos var6, BlockPos var7) {
       int var10 = var1.method6736(Heightmap.Type.OCEAN_FLOOR_WG, this.field20444.field45678, this.field20444.field45680);
       BlockPos.Mutable var11 = new BlockPos.Mutable(this.field20444.field45678, var10, this.field20444.field45680);
 
@@ -57,7 +58,7 @@ public class Class4179 extends Class4178 {
                }
             }
 
-            this.field20444 = new Class9764(
+            this.field20444 = new MutableBoundingBox(
                var11.getX(), var11.getY(), var11.getZ(), var11.getX(), var11.getY(), var11.getZ()
             );
             return this.method12935(var1, var5, var4, var11, Class8793.field39565, (BlockState)null);

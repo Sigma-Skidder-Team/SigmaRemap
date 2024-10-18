@@ -178,8 +178,8 @@ public class LoginAndOutScreen extends Screen {
 
    private void method13425() {
       this.field21086 = Math.max(0.0F, Math.min(this.field21086 + 0.01F, 1.0F));
-      int var3 = this.method13309() * -1;
-      float var4 = (float)this.method13310() / (float)this.getWidthA() * -114.0F;
+      int var3 = this.getHeightO() * -1;
+      float var4 = (float)this.getWidthO() / (float)this.getWidthA() * -114.0F;
       if (this.field21084) {
          this.field21082 = (int)var4;
          this.field21083 = var3;

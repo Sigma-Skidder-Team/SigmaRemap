@@ -156,12 +156,12 @@ public class Class8836 {
       long var6 = this.method31989(var1);
       long var8 = this.method31989(var2);
       long var10 = this.method31989(var3);
-      GlStateManager.method23747(GlStateManager.GL_COPY_READ_BUFFER, this.field39906);
-      GlStateManager.method23747(GlStateManager.GL_COPY_WRITE_BUFFER, this.field39906);
+      GlStateManager.bindBuffer(GlStateManager.GL_COPY_READ_BUFFER, this.field39906);
+      GlStateManager.bindBuffer(GlStateManager.GL_COPY_WRITE_BUFFER, this.field39906);
       GlStateManager.method23887(GlStateManager.GL_COPY_READ_BUFFER, GlStateManager.GL_COPY_WRITE_BUFFER, var6, var8, var10);
       Config.method26908("Copy VBO range");
-      GlStateManager.method23747(GlStateManager.GL_COPY_READ_BUFFER, 0);
-      GlStateManager.method23747(GlStateManager.GL_COPY_WRITE_BUFFER, 0);
+      GlStateManager.bindBuffer(GlStateManager.GL_COPY_READ_BUFFER, 0);
+      GlStateManager.bindBuffer(GlStateManager.GL_COPY_WRITE_BUFFER, 0);
    }
 
    private void method31983(int var1) {
@@ -174,16 +174,16 @@ public class Class8836 {
       long var5 = this.method31989(this.field39907);
       long var7 = this.method31989(var4);
       int var9 = GlStateManager.method23746();
-      GlStateManager.method23747(GlStateManager.GL_ARRAY_BUFFER, var9);
+      GlStateManager.bindBuffer(GlStateManager.GL_ARRAY_BUFFER, var9);
       GlStateManager.method23885(GlStateManager.GL_ARRAY_BUFFER, var7, GlStateManager.GL_STATIC_DRAW);
       Config.method26908("Expand VBO");
-      GlStateManager.method23747(GlStateManager.GL_ARRAY_BUFFER, 0);
-      GlStateManager.method23747(GlStateManager.GL_COPY_READ_BUFFER, this.field39906);
-      GlStateManager.method23747(GlStateManager.GL_COPY_WRITE_BUFFER, var9);
+      GlStateManager.bindBuffer(GlStateManager.GL_ARRAY_BUFFER, 0);
+      GlStateManager.bindBuffer(GlStateManager.GL_COPY_READ_BUFFER, this.field39906);
+      GlStateManager.bindBuffer(GlStateManager.GL_COPY_WRITE_BUFFER, var9);
       GlStateManager.method23887(GlStateManager.GL_COPY_READ_BUFFER, GlStateManager.GL_COPY_WRITE_BUFFER, 0L, 0L, var5);
       Config.method26908("Copy VBO: " + var7);
-      GlStateManager.method23747(GlStateManager.GL_COPY_READ_BUFFER, 0);
-      GlStateManager.method23747(GlStateManager.GL_COPY_WRITE_BUFFER, 0);
+      GlStateManager.bindBuffer(GlStateManager.GL_COPY_READ_BUFFER, 0);
+      GlStateManager.bindBuffer(GlStateManager.GL_COPY_WRITE_BUFFER, 0);
       GlStateManager.method23749(this.field39906);
       this.field39912 = Config.method26984(var4);
       this.field39913 = Config.method26984(var4);
@@ -192,7 +192,7 @@ public class Class8836 {
    }
 
    public void method31984() {
-      GlStateManager.method23747(GlStateManager.GL_ARRAY_BUFFER, this.field39906);
+      GlStateManager.bindBuffer(GlStateManager.GL_ARRAY_BUFFER, this.field39906);
    }
 
    public void method31985(int var1, Class8697 var2) {
@@ -226,7 +226,7 @@ public class Class8836 {
    }
 
    public void method31987() {
-      GlStateManager.method23747(GlStateManager.GL_ARRAY_BUFFER, 0);
+      GlStateManager.bindBuffer(GlStateManager.GL_ARRAY_BUFFER, 0);
    }
 
    public void method31988() {

@@ -18,7 +18,7 @@ public final class Class6979 {
    private Quaternion field30197;
    private Vector3f field30198;
    private Quaternion field30199;
-   private static final Class6979 field30200 = Util.<Class6979>method38507(() -> {
+   private static final Class6979 field30200 = Util.<Class6979>make(() -> {
       Matrix4f var2 = new Matrix4f();
       var2.method35503();
       Class6979 var3 = new Class6979(var2);

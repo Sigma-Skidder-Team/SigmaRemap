@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.world.ClientWorld;
+
 import java.util.Random;
 
 public class Class3567 implements Class3499<Class7435> {

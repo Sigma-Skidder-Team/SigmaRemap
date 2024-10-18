@@ -6,6 +6,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.gen.feature.structure.StructureManager;
 import net.minecraft.world.gen.feature.template.TemplateManager;
@@ -16,7 +17,7 @@ import java.util.Random;
 public class Class4202 extends Class4194 {
    private final boolean field20509;
 
-   public Class4202(int var1, Random var2, Class9764 var3, Direction var4) {
+   public Class4202(int var1, Random var2, MutableBoundingBox var3, Direction var4) {
       super(Class7792.field33448, var1);
       this.method12939(var4);
       this.field20495 = this.method12985(var2);
@@ -36,9 +37,9 @@ public class Class4202 extends Class4194 {
    }
 
    public static Class4202 method12995(List<Class4178> var0, Random var1, int var2, int var3, int var4, Direction var5, int var6) {
-      Class9764 var9 = Class9764.method38388(var2, var3, var4, -4, -1, 0, 14, 11, 15, var5);
+      MutableBoundingBox var9 = MutableBoundingBox.method38388(var2, var3, var4, -4, -1, 0, 14, 11, 15, var5);
       if (!method12989(var9) || Class4178.method12918(var0, var9) != null) {
-         var9 = Class9764.method38388(var2, var3, var4, -4, -1, 0, 14, 6, 15, var5);
+         var9 = MutableBoundingBox.method38388(var2, var3, var4, -4, -1, 0, 14, 6, 15, var5);
          if (!method12989(var9) || Class4178.method12918(var0, var9) != null) {
             return null;
          }
@@ -48,7 +49,7 @@ public class Class4202 extends Class4194 {
    }
 
    @Override
-   public boolean method12896(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, MutableBoundingBox var5, ChunkPos var6, BlockPos var7) {
       byte var10 = 11;
       if (!this.field20509) {
          var10 = 6;

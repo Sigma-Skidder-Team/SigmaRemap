@@ -24,6 +24,7 @@ import java.util.Map;
 import java.util.Set;
 
 import mapped.*;
+import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.settings.NarratorStatus;
 import net.minecraft.client.settings.ParticleStatus;
 import net.minecraft.client.settings.PointOfView;

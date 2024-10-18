@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.serialization.Codec;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.ISeedReader;
 
 import java.util.List;
@@ -20,7 +21,7 @@ public class Class7140 extends Class7139 {
    }
 
    @Override
-   public void method22269(ISeedReader var1, Random var2, List<BlockPos> var3, List<BlockPos> var4, Set<BlockPos> var5, Class9764 var6) {
+   public void method22269(ISeedReader var1, Random var2, List<BlockPos> var3, List<BlockPos> var4, Set<BlockPos> var5, MutableBoundingBox var6) {
       var4.forEach(var5x -> {
          if (var2.nextInt(4) == 0) {
             BlockPos var8 = var5x.west();
@@ -52,7 +53,7 @@ public class Class7140 extends Class7139 {
       });
    }
 
-   private void method22275(Class1679 var1, BlockPos var2, BooleanProperty var3, Set<BlockPos> var4, Class9764 var5) {
+   private void method22275(Class1679 var1, BlockPos var2, BooleanProperty var3, Set<BlockPos> var4, MutableBoundingBox var5) {
       this.method22273(var1, var2, var3, var4, var5);
       int var8 = 4;
 

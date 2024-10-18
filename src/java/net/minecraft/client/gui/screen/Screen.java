@@ -179,7 +179,7 @@ public abstract class Screen extends FocusableGui implements IScreen, Class1190 
             var22 += 10;
          }
 
-         var18.method25602();
+         var18.finish();
          var1.pop();
       }
    }

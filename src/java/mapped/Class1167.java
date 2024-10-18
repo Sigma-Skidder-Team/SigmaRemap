@@ -44,7 +44,7 @@ public class Class1167 extends Class1155<Class1167> {
       this.method5571(var1, var2 + 1, var3 + 1);
       RenderSystem.enableRescaleNormal();
       this.field6332.field6836.field4563.method791(new ItemStack(var4), var2 + 2, var3 + 2);
-      RenderSystem.method27868();
+      RenderSystem.disableRescaleNormal();
    }
 
    private void method5571(MatrixStack var1, int var2, int var3) {

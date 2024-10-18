@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 import mapped.*;
+import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.player.PlayerInventory;
@@ -58,8 +59,8 @@ public class EnchantmentScreen extends ContainerScreen<Class5822> {
    }
 
    @Override
-   public void method2618(MatrixStack var1, float var2, int var3, int var4) {
-      Class7516.method24502();
+   public void drawGuiContainerBackgroundLayer(MatrixStack var1, float var2, int var3, int var4) {
+      RenderHelper.setupGuiFlatDiffuseLighting();
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       this.mc.getTextureManager().bindTexture(field4829);
       int var7 = (this.width - this.xSize) / 2;
@@ -112,13 +113,13 @@ public class EnchantmentScreen extends ContainerScreen<Class5822> {
       Class7735 var16 = Class7733.method25595(Tessellator.getInstance().getBuffer());
       IVertexBuilder var17 = var16.method25597(field4831.method11028(field4830));
       field4831.render(var1, var17, 15728880, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
-      var16.method25602();
+      var16.finish();
       var1.pop();
       RenderSystem.matrixMode(5889);
       RenderSystem.viewport(0, 0, this.mc.getMainWindow().getFramebufferWidth(), this.mc.getMainWindow().getFramebufferHeight());
       RenderSystem.popMatrix();
       RenderSystem.matrixMode(5888);
-      Class7516.method24503();
+      RenderHelper.setupGui3DDiffuseLighting();
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       Class6577.method19915().method19917((long)this.field4727.method18185());
       int var18 = this.field4727.method18184();

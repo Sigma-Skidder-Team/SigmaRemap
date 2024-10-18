@@ -6,6 +6,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.gen.surfacebuilders.ISurfaceBuilderConfig;
 
 import java.util.Random;
 
@@ -19,7 +20,7 @@ public class Class6775 extends Class6773 {
    }
 
    @Override
-   public void method20654(
+   public void buildSurface(
       Random var1,
       IChunk var2,
       Biome var3,
@@ -36,7 +37,7 @@ public class Class6775 extends Class6773 {
       int var17 = var4 & 15;
       int var18 = var5 & 15;
       BlockState var19 = field29495;
-      Class8277 var20 = var3.getGenerationSettings().getSurfaceBuilderConfig();
+      ISurfaceBuilderConfig var20 = var3.getGenerationSettings().getSurfaceBuilderConfig();
       BlockState var21 = var20.method28935();
       BlockState var22 = var20.getTop();
       BlockState var23 = var21;

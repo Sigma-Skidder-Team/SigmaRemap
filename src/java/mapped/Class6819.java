@@ -5,6 +5,7 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder.Instance;
 import com.mojang.serialization.codecs.RecordCodecBuilder.Mu;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.util.registry.Registry;
 
 import java.util.Random;
@@ -29,12 +30,12 @@ public abstract class Class6819 {
 
    public abstract Class5984<?> method20785();
 
-   public void method20793(Class1679 var1, Random var2, Class4733 var3, int var4, Class9359 var5, int var6, int var7, Set<BlockPos> var8, Class9764 var9) {
+   public void method20793(Class1679 var1, Random var2, Class4733 var3, int var4, Class9359 var5, int var6, int var7, Set<BlockPos> var8, MutableBoundingBox var9) {
       this.method20786(var1, var2, var3, var4, var5, var6, var7, var8, this.method20794(var2), var9);
    }
 
    public abstract void method20786(
-           Class1679 var1, Random var2, Class4733 var3, int var4, Class9359 var5, int var6, int var7, Set<BlockPos> var8, int var9, Class9764 var10
+           Class1679 var1, Random var2, Class4733 var3, int var4, Class9359 var5, int var6, int var7, Set<BlockPos> var8, int var9, MutableBoundingBox var10
    );
 
    public abstract int method20788(Random var1, int var2, Class4733 var3);
@@ -63,7 +64,7 @@ public abstract class Class6819 {
       return this.method20789(var1, var9, var3, var10, var5, var6);
    }
 
-   public void method20796(Class1679 var1, Random var2, Class4733 var3, BlockPos var4, int var5, Set<BlockPos> var6, int var7, boolean var8, Class9764 var9) {
+   public void method20796(Class1679 var1, Random var2, Class4733 var3, BlockPos var4, int var5, Set<BlockPos> var6, int var7, boolean var8, MutableBoundingBox var9) {
       int var12 = !var8 ? 0 : 1;
       BlockPos.Mutable var13 = new BlockPos.Mutable();
 
@@ -73,7 +74,7 @@ public abstract class Class6819 {
                var13.method8378(var4, var14, var7, var15);
                if (Class2903.method11233(var1, var13)) {
                   var1.setBlockState(var13, var3.field22412.method20424(var2, var13), 19);
-                  var9.method38392(new Class9764(var13, var13));
+                  var9.method38392(new MutableBoundingBox(var13, var13));
                   var6.add(var13.toImmutable());
                }
             }

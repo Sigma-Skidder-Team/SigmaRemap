@@ -122,6 +122,6 @@ public final class Class201 extends LightEngine<Class7585, Class209> {
    @Override
    public void func_215623_a(BlockPos var1, int var2) {
       this.storage.processAllLevelUpdates();
-      this.method672(Long.MAX_VALUE, var1.method8332(), 15 - var2, true);
+      this.method672(Long.MAX_VALUE, var1.toLong(), 15 - var2, true);
    }
 }

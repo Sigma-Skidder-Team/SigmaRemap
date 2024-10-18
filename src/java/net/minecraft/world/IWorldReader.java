@@ -10,6 +10,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeManager;
 import net.minecraft.world.chunk.ChunkStatus;
 import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.level.ColorResolver;
 
 import javax.annotation.Nullable;
 import java.util.stream.Stream;
@@ -42,7 +43,7 @@ public interface IWorldReader extends IBlockDisplayReader, ICollisionReader, Bio
    }
 
    @Override
-   default int method6878(BlockPos var1, Class8980 var2) {
+   default int getBlockColor(BlockPos var1, ColorResolver var2) {
       return var2.method32943(this.getBiome(var1), (double)var1.getX(), (double)var1.getZ());
    }
 
@@ -116,7 +117,7 @@ public interface IWorldReader extends IBlockDisplayReader, ICollisionReader, Bio
       return this.getChunk(var1, var2, ChunkStatus.EMPTY, false);
    }
 
-   default boolean method7013(BlockPos var1) {
+   default boolean hasWater(BlockPos var1) {
       return this.getFluidState(var1).method23486(FluidTags.field40469);
    }
 

@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Maps;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;

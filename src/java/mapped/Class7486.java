@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.serialization.Codec;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.gen.feature.structure.StructureManager;
 import net.minecraft.world.gen.feature.template.TemplateManager;
@@ -25,13 +26,13 @@ public class Class7486 extends Class7487 {
    }
 
    @Override
-   public Class9764 method24375(TemplateManager var1, BlockPos var2, Rotation var3) {
-      return Class9764.method38386();
+   public MutableBoundingBox method24375(TemplateManager var1, BlockPos var2, Rotation var3) {
+      return MutableBoundingBox.method38386();
    }
 
    @Override
    public boolean method24376(
-           TemplateManager var1, ISeedReader var2, StructureManager var3, ChunkGenerator var4, BlockPos var5, BlockPos var6, Rotation var7, Class9764 var8, Random var9, boolean var10
+           TemplateManager var1, ISeedReader var2, StructureManager var3, ChunkGenerator var4, BlockPos var5, BlockPos var6, Rotation var7, MutableBoundingBox var8, Random var9, boolean var10
    ) {
       return true;
    }

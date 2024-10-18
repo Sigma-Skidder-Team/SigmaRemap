@@ -309,7 +309,7 @@ public class Class8795 {
       if (this.method31743()) {
          int var4 = this.field39613.size() - 1;
          Class9510 var5 = this.field39613.get(var4);
-         if (var5 != null && var5.field44282.contains(var1.getBlockPos().method8332())) {
+         if (var5 != null && var5.field44282.contains(var1.getBlockPos().toLong())) {
             VoxelShape var6 = VoxelShapes.create(0.0, 0.0, 0.0, 1.0, 0.1, 1.0);
             var1.setBoxelShape(var6);
          }

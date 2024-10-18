@@ -45,7 +45,7 @@ public enum Direction implements IStringSerializable {
       .sorted(Comparator.comparingInt(var0 -> var0.horizontalIndex))
       .<Direction>toArray(Direction[]::new);
    private static final Long2ObjectMap<Direction> BY_LONG = Arrays.<Direction>stream(VALUES)
-      .collect(Collectors.toMap(var0 -> new BlockPos(var0.getDirectionVec()).method8332(), var0 -> (Direction)var0, (var0, var1) -> {
+      .collect(Collectors.toMap(var0 -> new BlockPos(var0.getDirectionVec()).toLong(), var0 -> (Direction)var0, (var0, var1) -> {
          throw new IllegalArgumentException("Duplicate keys");
       }, Long2ObjectOpenHashMap::new));
    private static final Direction[] field690 = new Direction[]{DOWN, UP, NORTH, SOUTH, WEST, EAST};
@@ -110,16 +110,16 @@ public enum Direction implements IStringSerializable {
          case 2:
             return Quaternion.field39030.method31189();
          case 3:
-            var3.method31182(Vector3f.ZP.rotationDegrees(180.0F));
+            var3.multiply(Vector3f.ZP.rotationDegrees(180.0F));
             return var3;
          case 4:
             return var3;
          case 5:
-            var3.method31182(Vector3f.ZP.rotationDegrees(90.0F));
+            var3.multiply(Vector3f.ZP.rotationDegrees(90.0F));
             return var3;
          case 6:
          default:
-            var3.method31182(Vector3f.ZP.rotationDegrees(-90.0F));
+            var3.multiply(Vector3f.ZP.rotationDegrees(-90.0F));
             return var3;
       }
    }
@@ -361,7 +361,7 @@ public enum Direction implements IStringSerializable {
       };
 
       private static final Axis[] VALUES = values();
-      public static final Codec<Axis> CODEC = IStringSerializable.<Axis>method258(Axis::values, Axis::method321);
+      public static final Codec<Axis> CODEC = IStringSerializable.<Axis>createEnumCodec(Axis::values, Axis::method321);
       private static final Map<String, Axis> NAME_LOOKUP = Arrays.<Axis>stream(VALUES)
          .collect(Collectors.toMap(Axis::method322, var0 -> (Axis)var0));
       private final String field419;

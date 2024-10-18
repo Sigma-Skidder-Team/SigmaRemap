@@ -256,7 +256,7 @@ public class Class7698 {
       if (var2 != 0) {
          int var7 = var3.method26216();
          if (var7 != 64) {
-            GlStateManager.method23854(var0, var1, var2);
+            GlStateManager.drawArrays(var0, var1, var2);
          } else {
             ((Buffer)var4).position(36);
             GL20.glVertexAttribPointer(Shaders.field40671, 2, 5126, false, var7, var4);
@@ -268,7 +268,7 @@ public class Class7698 {
             GL20.glEnableVertexAttribArray(Shaders.field40671);
             GL20.glEnableVertexAttribArray(Shaders.field40672);
             GL20.glEnableVertexAttribArray(Shaders.field40670);
-            GlStateManager.method23854(var0, var1, var2);
+            GlStateManager.drawArrays(var0, var1, var2);
             GL20.glDisableVertexAttribArray(Shaders.field40671);
             GL20.glDisableVertexAttribArray(Shaders.field40672);
             GL20.glDisableVertexAttribArray(Shaders.field40670);

@@ -8,6 +8,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.particle.EmitterParticle;
 import net.minecraft.client.renderer.ActiveRenderInfo;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.Entity;
@@ -327,9 +328,9 @@ public class ParticleManager implements Class268 {
          RenderSystem.enableDepthTest();
          RenderSystem.method27840();
          if (Reflector.field42864.method20245()) {
-            RenderSystem.method27860(33986);
+            RenderSystem.activeTexture(33986);
             RenderSystem.enableTexture();
-            RenderSystem.method27860(33984);
+            RenderSystem.activeTexture(33984);
          }
       };
       FluidState var10 = var4.method37512();

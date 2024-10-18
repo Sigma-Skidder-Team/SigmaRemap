@@ -28,7 +28,7 @@ public class DispenserScreen extends ContainerScreen<Class5817> {
    }
 
    @Override
-   public void method2618(MatrixStack var1, float var2, int var3, int var4) {
+   public void drawGuiContainerBackgroundLayer(MatrixStack var1, float var2, int var3, int var4) {
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       this.mc.getTextureManager().bindTexture(field4849);
       int var7 = (this.width - this.xSize) / 2;

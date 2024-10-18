@@ -1,6 +1,11 @@
 package mapped;
 
+import net.minecraft.client.audio.BackgroundMusicSelector;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.world.biome.BiomeAmbience;
+import net.minecraft.world.biome.MoodSoundAmbience;
+import net.minecraft.world.biome.ParticleEffectAmbience;
+import net.minecraft.world.biome.SoundAdditionsAmbience;
 
 import java.util.Optional;
 import java.util.OptionalInt;
@@ -12,11 +17,11 @@ public class Class9265 {
    private OptionalInt field42615 = OptionalInt.empty();
    private Optional<Integer> field42616 = Optional.<Integer>empty();
    private Optional<Integer> field42617 = Optional.<Integer>empty();
-   private Class88 field42618 = Class88.field230;
-   private Optional<Class7737> field42619 = Optional.<Class7737>empty();
+   private BiomeAmbience.GrassColorModifier field42618 = BiomeAmbience.GrassColorModifier.field230;
+   private Optional<ParticleEffectAmbience> field42619 = Optional.<ParticleEffectAmbience>empty();
    private Optional<SoundEvent> field42620 = Optional.<SoundEvent>empty();
-   private Optional<Class7959> field42621 = Optional.<Class7959>empty();
-   private Optional<Class8217> field42622 = Optional.<Class8217>empty();
+   private Optional<MoodSoundAmbience> field42621 = Optional.<MoodSoundAmbience>empty();
+   private Optional<SoundAdditionsAmbience> field42622 = Optional.<SoundAdditionsAmbience>empty();
    private Optional<BackgroundMusicSelector> field42623 = Optional.<BackgroundMusicSelector>empty();
 
    public Class9265 method34868(int var1) {
@@ -49,13 +54,13 @@ public class Class9265 {
       return this;
    }
 
-   public Class9265 method34874(Class88 var1) {
+   public Class9265 method34874(BiomeAmbience.GrassColorModifier var1) {
       this.field42618 = var1;
       return this;
    }
 
-   public Class9265 method34875(Class7737 var1) {
-      this.field42619 = Optional.<Class7737>of(var1);
+   public Class9265 method34875(ParticleEffectAmbience var1) {
+      this.field42619 = Optional.<ParticleEffectAmbience>of(var1);
       return this;
    }
 
@@ -64,13 +69,13 @@ public class Class9265 {
       return this;
    }
 
-   public Class9265 method34877(Class7959 var1) {
-      this.field42621 = Optional.<Class7959>of(var1);
+   public Class9265 method34877(MoodSoundAmbience var1) {
+      this.field42621 = Optional.<MoodSoundAmbience>of(var1);
       return this;
    }
 
-   public Class9265 method34878(Class8217 var1) {
-      this.field42622 = Optional.<Class8217>of(var1);
+   public Class9265 method34878(SoundAdditionsAmbience var1) {
+      this.field42622 = Optional.<SoundAdditionsAmbience>of(var1);
       return this;
    }
 
@@ -79,8 +84,8 @@ public class Class9265 {
       return this;
    }
 
-   public Class7752 method34880() {
-      return new Class7752(
+   public BiomeAmbience method34880() {
+      return new BiomeAmbience(
          this.field42612.orElseThrow(() -> new IllegalStateException("Missing 'fog' color.")),
          this.field42613.orElseThrow(() -> new IllegalStateException("Missing 'water' color.")),
          this.field42614.orElseThrow(() -> new IllegalStateException("Missing 'water fog' color.")),

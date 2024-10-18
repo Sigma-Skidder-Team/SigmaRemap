@@ -67,7 +67,7 @@ public class InventoryScreen extends Class860<PlayerContainer> implements Class8
       this.renderBackground(var1);
       this.field4772 = !this.field4768.method5839();
       if (this.field4768.method5839() && this.field4770) {
-         this.method2618(var1, var4, var2, var3);
+         this.drawGuiContainerBackgroundLayer(var1, var4, var2, var3);
          this.field4768.render(var1, var2, var3, var4);
       } else {
          this.field4768.render(var1, var2, var3, var4);
@@ -82,51 +82,54 @@ public class InventoryScreen extends Class860<PlayerContainer> implements Class8
    }
 
    @Override
-   public void method2618(MatrixStack var1, float var2, int var3, int var4) {
+   public void drawGuiContainerBackgroundLayer(MatrixStack var1, float var2, int var3, int var4) {
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-      this.mc.getTextureManager().bindTexture(field4720);
+      this.mc.getTextureManager().bindTexture(INVENTORY_BACKGROUND);
       int var7 = this.field4734;
       int var8 = this.field4735;
       this.blit(var1, var7, var8, 0, 0, this.xSize, this.ySize);
       drawEntityOnScreen(var7 + 51, var8 + 75, 30, (float)(var7 + 51) - this.field4766, (float)(var8 + 75 - 50) - this.field4767, this.mc.player);
    }
 
-   public static void drawEntityOnScreen(int var0, int var1, int var2, float var3, float var4, LivingEntity var5) {
-      float var8 = (float)Math.atan((double)(var3 / 40.0F));
-      float var9 = (float)Math.atan((double)(var4 / 40.0F));
+   public static void drawEntityOnScreen(int posX, int posY, int scale, float mouseX, float mouseY, LivingEntity livingEntity) {
+      float f = (float)Math.atan((double)(mouseX / 40.0F));
+      float f1 = (float)Math.atan((double)(mouseY / 40.0F));
       RenderSystem.pushMatrix();
-      RenderSystem.translatef((float)var0, (float)var1, 1050.0F);
+      RenderSystem.translatef((float)posX, (float)posY, 1050.0F);
       RenderSystem.scalef(1.0F, 1.0F, -1.0F);
-      MatrixStack var10 = new MatrixStack();
-      var10.translate(0.0, 0.0, 1000.0);
-      var10.scale((float)var2, (float)var2, (float)var2);
-      Quaternion var11 = Vector3f.ZP.rotationDegrees(180.0F);
-      Quaternion var12 = Vector3f.XP.rotationDegrees(var9 * 20.0F);
-      var11.method31182(var12);
-      var10.rotate(var11);
-      float var13 = var5.renderYawOffset;
-      float var14 = var5.rotationYaw;
-      float var15 = var5.rotationPitch;
-      float var16 = var5.prevRotationYawHead;
-      float var17 = var5.rotationYawHead;
-      var5.renderYawOffset = 180.0F + var8 * 20.0F;
-      var5.rotationYaw = 180.0F + var8 * 40.0F;
-      var5.rotationPitch = -var9 * 20.0F;
-      var5.rotationYawHead = var5.rotationYaw;
-      var5.prevRotationYawHead = var5.rotationYaw;
-      EntityRendererManager var18 = Minecraft.getInstance().getRenderManager();
-      var12.method31184();
-      var18.method32214(var12);
-      var18.method32215(false);
-      Class7735 var19 = Minecraft.getInstance().getRenderTypeBuffers().getBufferSource();
-      RenderSystem.runAsFancy(() -> var18.renderEntityStatic(var5, 0.0, 0.0, 0.0, 0.0F, 1.0F, var10, var19, 15728880));
-      var19.method25602();
-      var18.method32215(true);
-      var5.renderYawOffset = var13;
-      var5.rotationYaw = var14;
-      var5.rotationPitch = var15;
-      var5.prevRotationYawHead = var16;
-      var5.rotationYawHead = var17;
+      MatrixStack matrixstack = new MatrixStack();
+      matrixstack.translate(0.0D, 0.0D, 1000.0D);
+      matrixstack.scale((float)scale, (float)scale, (float)scale);
+      Quaternion quaternion = Vector3f.ZP.rotationDegrees(180.0F);
+      Quaternion quaternion1 = Vector3f.XP.rotationDegrees(f1 * 20.0F);
+      quaternion.multiply(quaternion1);
+      matrixstack.rotate(quaternion);
+      float f2 = livingEntity.renderYawOffset;
+      float f3 = livingEntity.rotationYaw;
+      float f4 = livingEntity.rotationPitch;
+      float f5 = livingEntity.prevRotationYawHead;
+      float f6 = livingEntity.rotationYawHead;
+      livingEntity.renderYawOffset = 180.0F + f * 20.0F;
+      livingEntity.rotationYaw = 180.0F + f * 40.0F;
+      livingEntity.rotationPitch = -f1 * 20.0F;
+      livingEntity.rotationYawHead = livingEntity.rotationYaw;
+      livingEntity.prevRotationYawHead = livingEntity.rotationYaw;
+      EntityRendererManager entityrenderermanager = Minecraft.getInstance().getRenderManager();
+      quaternion1.conjugate();
+      entityrenderermanager.setCameraOrientation(quaternion1);
+      entityrenderermanager.setRenderShadow(false);
+      Class7735 irendertypebuffer$impl = Minecraft.getInstance().getRenderTypeBuffers().getBufferSource();
+      RenderSystem.runAsFancy(() ->
+      {
+         entityrenderermanager.renderEntityStatic(livingEntity, 0.0D, 0.0D, 0.0D, 0.0F, 1.0F, matrixstack, irendertypebuffer$impl, 15728880);
+      });
+      irendertypebuffer$impl.finish();
+      entityrenderermanager.setRenderShadow(true);
+      livingEntity.renderYawOffset = f2;
+      livingEntity.rotationYaw = f3;
+      livingEntity.rotationPitch = f4;
+      livingEntity.prevRotationYawHead = f5;
+      livingEntity.rotationYawHead = f6;
       RenderSystem.popMatrix();
    }
 

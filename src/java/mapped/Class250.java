@@ -5,6 +5,7 @@ import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.passive.ShoulderRidingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.optifine.Config;
@@ -28,7 +29,7 @@ public class Class250<T extends PlayerEntity> extends Class219<T, PlayerModel<T>
          Entity var14 = Config.method26874().field1000;
          if (var4 instanceof AbstractClientPlayerEntity) {
             AbstractClientPlayerEntity var15 = (AbstractClientPlayerEntity)var4;
-            Class1014 var16 = !var9 ? var15.field6106 : var15.field6105;
+            ShoulderRidingEntity var16 = !var9 ? var15.entityShoulderRight : var15.entityShoulderLeft;
             if (var16 != null) {
                Config.method26874().field1000 = var16;
                if (Config.isShaders()) {

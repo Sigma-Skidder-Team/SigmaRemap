@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.renderer.ActiveRenderInfo;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
@@ -67,7 +68,7 @@ public class Class4593 extends Class4587 {
             var20,
             this.field22085.method32208(this.field22082, var3)
          );
-      var20.method25602();
+      var20.finish();
       if (Config.isShaders()) {
          Shaders.method33080((Entity)null);
          Shaders.method33021(var6);

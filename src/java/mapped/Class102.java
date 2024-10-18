@@ -11,7 +11,7 @@ public enum Class102 implements IStringSerializable {
    field307("normal"),
    field308("mesa");
 
-   public static final Codec<Class102> field309 = IStringSerializable.<Class102>method258(Class102::values, Class102::method292);
+   public static final Codec<Class102> field309 = IStringSerializable.<Class102>createEnumCodec(Class102::values, Class102::method292);
    private static final Map<String, Class102> field310 = Arrays.<Class102>stream(values())
       .collect(Collectors.toMap(Class102::method291, var0 -> (Class102)var0));
    private final String field311;

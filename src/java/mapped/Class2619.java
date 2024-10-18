@@ -1,14 +1,15 @@
 package mapped;
 
+import net.minecraft.entity.passive.ShoulderRidingEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 
 public class Class2619 extends Class2595 {
    private static String[] field16900;
-   private final Class1014 field16901;
+   private final ShoulderRidingEntity field16901;
    private ServerPlayerEntity field16902;
    private boolean field16903;
 
-   public Class2619(Class1014 var1) {
+   public Class2619(ShoulderRidingEntity var1) {
       this.field16901 = var1;
    }
 

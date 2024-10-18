@@ -79,14 +79,14 @@ public class Class8578 {
          long var4 = System.nanoTime();
          GlStateManager.method23883(256);
          GlStateManager.matrixMode(5889);
-         GlStateManager.method23832();
+         GlStateManager.pushMatrix();
          int var6 = field38570.getMainWindow().getFramebufferWidth();
          int var7 = field38570.getMainWindow().getFramebufferHeight();
          GlStateManager.enableColorMaterial();
          GlStateManager.loadIdentity();
          GlStateManager.ortho(0.0, (double)var6, (double)var7, 0.0, 1000.0, 3000.0);
          GlStateManager.matrixMode(5888);
-         GlStateManager.method23832();
+         GlStateManager.pushMatrix();
          GlStateManager.loadIdentity();
          GlStateManager.translatef(0.0F, 0.0F, -2000.0F);
          GL11.glLineWidth(1.0F);
@@ -125,9 +125,9 @@ public class Class8578 {
          field38570.fontRenderer.method38801(var0, "60", 2.0F, (float)(var22 + 1), -8947849);
          field38570.fontRenderer.method38801(var0, "60", 1.0F, (float)var22, -3881788);
          GlStateManager.matrixMode(5889);
-         GlStateManager.method23833();
+         GlStateManager.popMatrix();
          GlStateManager.matrixMode(5888);
-         GlStateManager.method23833();
+         GlStateManager.popMatrix();
          GlStateManager.enableTexture();
          float var31 = 1.0F - (float)((double)(System.currentTimeMillis() - Class8777.method31652()) / 1000.0);
          var31 = Config.method26832(var31, 0.0F, 1.0F);

@@ -20,6 +20,7 @@ import net.minecraft.state.Property;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.CachedBlockInfo;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.server.ServerWorld;
 
@@ -44,7 +45,7 @@ public class Class8031 {
                                              .executes(
                                                 var0x -> method27541(
                                                       (CommandSource)var0x.getSource(),
-                                                      new Class9764(Class6849.method20827(var0x, "from"), Class6849.method20827(var0x, "to")),
+                                                      new MutableBoundingBox(Class6849.method20827(var0x, "from"), Class6849.method20827(var0x, "to")),
                                                       Class7971.method27104(var0x, "block"),
                                                       Class2222.field14510,
                                                       (Predicate<CachedBlockInfo>)null
@@ -55,7 +56,7 @@ public class Class8031 {
                                                    .executes(
                                                       var0x -> method27541(
                                                             (CommandSource)var0x.getSource(),
-                                                            new Class9764(Class6849.method20827(var0x, "from"), Class6849.method20827(var0x, "to")),
+                                                            new MutableBoundingBox(Class6849.method20827(var0x, "from"), Class6849.method20827(var0x, "to")),
                                                             Class7971.method27104(var0x, "block"),
                                                             Class2222.field14510,
                                                             (Predicate<CachedBlockInfo>)null
@@ -66,7 +67,7 @@ public class Class8031 {
                                                       .executes(
                                                          var0x -> method27541(
                                                                (CommandSource)var0x.getSource(),
-                                                               new Class9764(Class6849.method20827(var0x, "from"), Class6849.method20827(var0x, "to")),
+                                                               new MutableBoundingBox(Class6849.method20827(var0x, "from"), Class6849.method20827(var0x, "to")),
                                                                Class7971.method27104(var0x, "block"),
                                                                Class2222.field14510,
                                                                Class7505.method24465(var0x, "filter")
@@ -79,7 +80,7 @@ public class Class8031 {
                                              .executes(
                                                 var0x -> method27541(
                                                       (CommandSource)var0x.getSource(),
-                                                      new Class9764(Class6849.method20827(var0x, "from"), Class6849.method20827(var0x, "to")),
+                                                      new MutableBoundingBox(Class6849.method20827(var0x, "from"), Class6849.method20827(var0x, "to")),
                                                       Class7971.method27104(var0x, "block"),
                                                       Class2222.field14510,
                                                       var0xx -> var0xx.method37550().method7007(var0xx.method37551())
@@ -91,7 +92,7 @@ public class Class8031 {
                                           .executes(
                                              var0x -> method27541(
                                                    (CommandSource)var0x.getSource(),
-                                                   new Class9764(Class6849.method20827(var0x, "from"), Class6849.method20827(var0x, "to")),
+                                                   new MutableBoundingBox(Class6849.method20827(var0x, "from"), Class6849.method20827(var0x, "to")),
                                                    Class7971.method27104(var0x, "block"),
                                                    Class2222.field14511,
                                                    (Predicate<CachedBlockInfo>)null
@@ -103,7 +104,7 @@ public class Class8031 {
                                        .executes(
                                           var0x -> method27541(
                                                 (CommandSource)var0x.getSource(),
-                                                new Class9764(Class6849.method20827(var0x, "from"), Class6849.method20827(var0x, "to")),
+                                                new MutableBoundingBox(Class6849.method20827(var0x, "from"), Class6849.method20827(var0x, "to")),
                                                 Class7971.method27104(var0x, "block"),
                                                 Class2222.field14512,
                                                 (Predicate<CachedBlockInfo>)null
@@ -115,7 +116,7 @@ public class Class8031 {
                                     .executes(
                                        var0x -> method27541(
                                              (CommandSource)var0x.getSource(),
-                                             new Class9764(Class6849.method20827(var0x, "from"), Class6849.method20827(var0x, "to")),
+                                             new MutableBoundingBox(Class6849.method20827(var0x, "from"), Class6849.method20827(var0x, "to")),
                                              Class7971.method27104(var0x, "block"),
                                              Class2222.field14513,
                                              (Predicate<CachedBlockInfo>)null
@@ -128,7 +129,7 @@ public class Class8031 {
       );
    }
 
-   private static int method27541(CommandSource var0, Class9764 var1, Class164 var2, Class2222 var3, Predicate<CachedBlockInfo> var4) throws CommandSyntaxException {
+   private static int method27541(CommandSource var0, MutableBoundingBox var1, Class164 var2, Class2222 var3, Predicate<CachedBlockInfo> var4) throws CommandSyntaxException {
       int var7 = var1.method38398() * var1.method38399() * var1.method38400();
       if (var7 > 32768) {
          throw field34511.create(32768, var7);

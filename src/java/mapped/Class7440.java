@@ -19,6 +19,7 @@ import net.minecraft.network.DebugPacketSender;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.server.ServerWorld;
@@ -133,7 +134,7 @@ public class Class7440 {
       BlockPos.method8360(var6, var7).filter(var1x -> var0.getBlockState(var1x).isIn(Blocks.field37113)).forEach(var1x -> {
          Class964 var4 = (Class964)var0.getTileEntity(var1x);
          BlockPos var5 = var4.getPos();
-         Class9764 var6x = Class7803.method26053(var4);
+         MutableBoundingBox var6x = Class7803.method26053(var4);
          Class7803.method26058(var6x, var5.getY(), var0);
       });
    }

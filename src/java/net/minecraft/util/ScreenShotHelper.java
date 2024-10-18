@@ -56,7 +56,7 @@ public class ScreenShotHelper {
       if (flag) {
          var10.guiScale = var14 * var15;
          var9.method8052(var11 * var15, var12 * var15);
-         GlStateManager.method23832();
+         GlStateManager.pushMatrix();
          GlStateManager.method23883(16640);
          var8.getFramebuffer().bindFramebuffer(true);
          GlStateManager.enableTexture();
@@ -66,7 +66,7 @@ public class ScreenShotHelper {
       NativeImage var17 = createScreenshot(var2, var3, var4);
       if (flag) {
          var8.getFramebuffer().unbindFramebuffer();
-         GlStateManager.method23833();
+         GlStateManager.popMatrix();
          Config.method26928().guiScale = var13;
          var9.method8052(var11, var12);
       }

@@ -7,6 +7,7 @@ import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.world.storage.MapData;
 
 public class Class5836 extends Container {
    private final IWorldPosCallable field25560;
@@ -58,7 +59,7 @@ public class Class5836 extends Container {
    private void method18239(ItemStack var1, ItemStack var2, ItemStack var3) {
       this.field25560.method31716((var4, var5) -> {
          Item var8 = var2.getItem();
-         Class7529 var9 = Class3316.method11860(var1, var4);
+         MapData var9 = Class3316.method11860(var1, var4);
          if (var9 != null) {
             ItemStack var10;
             if (var8 == Items.field37899 && !var9.locked && var9.scale < 4) {

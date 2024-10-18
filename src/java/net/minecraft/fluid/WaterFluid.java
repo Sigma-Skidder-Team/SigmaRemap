@@ -4,6 +4,7 @@ import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.item.Items;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.state.StateContainer;
@@ -87,7 +88,7 @@ public abstract class WaterFluid extends FlowingFluid {
 
    @Override
    public BlockState method25063(FluidState var1) {
-      return Blocks.WATER.getDefaultState().with(Class3404.field19079, Integer.valueOf(method25094(var1)));
+      return Blocks.WATER.getDefaultState().with(FlowingFluidBlock.field19079, Integer.valueOf(method25094(var1)));
    }
 
    @Override

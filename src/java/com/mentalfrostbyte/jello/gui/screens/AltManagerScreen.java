@@ -426,8 +426,8 @@ public class AltManagerScreen extends Screen {
    }
 
    private void drawBackground() {
-      int var3 = this.method13309() * -1;
-      float var4 = (float)this.method13310() / (float)this.getWidthA() * -114.0F;
+      int var3 = this.getHeightO() * -1;
+      float var4 = (float)this.getWidthO() / (float)this.getWidthA() * -114.0F;
       if (this.field21008) {
          this.field21006 = (float)((int)var4);
          this.field21005 = var3;

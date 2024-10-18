@@ -4,6 +4,7 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.client.renderer.texture.NativeImage;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.vector.Vector3f;
 import net.minecraft.world.World;
@@ -51,9 +52,9 @@ public class Class1699 implements AutoCloseable {
    }
 
    public void method7316() {
-      RenderSystem.method27860(33986);
+      RenderSystem.activeTexture(33986);
       RenderSystem.disableTexture();
-      RenderSystem.method27860(33984);
+      RenderSystem.activeTexture(33984);
       if (Config.isShaders()) {
          Shaders.method33127();
       }
@@ -61,7 +62,7 @@ public class Class1699 implements AutoCloseable {
 
    public void method7317() {
       if (this.field9255) {
-         RenderSystem.method27860(33986);
+         RenderSystem.activeTexture(33986);
          RenderSystem.matrixMode(5890);
          RenderSystem.loadIdentity();
          float var3 = 0.00390625F;
@@ -75,7 +76,7 @@ public class Class1699 implements AutoCloseable {
          RenderSystem.method27863(3553, 10243, 33071);
          RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          RenderSystem.enableTexture();
-         RenderSystem.method27860(33984);
+         RenderSystem.activeTexture(33984);
          if (Config.isShaders()) {
             Shaders.method33126();
          }

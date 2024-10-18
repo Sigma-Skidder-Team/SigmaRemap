@@ -6,6 +6,7 @@ import java.util.Map.Entry;
 
 import net.minecraft.advancements.Advancement;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.network.play.ClientPlayNetHandler;
 import net.minecraft.network.play.client.CSeenAdvancementsPacket;
 import net.minecraft.network.play.server.SAdvancementInfoPacket;
 import net.minecraft.util.ResourceLocation;

@@ -16,7 +16,7 @@ public class Class5390 implements Class5391 {
    private final int field24030;
 
    public Class5390(int var1, int var2, int var3, Map<Class9564, Item> var4) {
-      Registry.field16089.method9192().filter(var1x -> !var4.containsKey(var1x)).findAny().ifPresent(var0 -> {
+      Registry.field16089.stream().filter(var1x -> !var4.containsKey(var1x)).findAny().ifPresent(var0 -> {
          throw new IllegalStateException("Missing trade for villager type: " + Registry.field16089.getKey(var0));
       });
       this.field24027 = var4;

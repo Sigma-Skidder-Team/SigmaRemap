@@ -850,11 +850,11 @@ public class CustomGuiScreen implements IGuiEventListener {
         this.textColor = var1;
     }
 
-    public int method13309() {
+    public int getHeightO() {
         return this.field20925;
     }
 
-    public int method13310() {
+    public int getWidthO() {
         return this.field20926;
     }
 

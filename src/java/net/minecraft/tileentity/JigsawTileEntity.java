@@ -10,6 +10,7 @@ import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.gen.feature.structure.StructureManager;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 import net.minecraft.world.server.ServerWorld;
@@ -118,11 +119,11 @@ public class JigsawTileEntity extends TileEntity {
       Class8969 var12 = new Class8969();
       var12.method32889(var1, var10, new BlockPos(1, 1, 1), false, (Block)null);
       Class7488 var13 = new Class7488(var12);
-      Class4193 var14 = new Class4193(var7, var13, var10, 1, Rotation.NONE, new Class9764(var10, var10));
+      Class4193 var14 = new Class4193(var7, var13, var10, 1, Rotation.NONE, new MutableBoundingBox(var10, var10));
       Class8814.method31821(var1.func_241828_r(), var14, var2, Class4193::new, var6, var7, var11, var9);
 
       for (Class4193 var16 : var11) {
-         var16.method12976(var1, var8, var6, var9, Class9764.method38387(), var10, var3);
+         var16.method12976(var1, var8, var6, var9, MutableBoundingBox.method38387(), var10, var3);
       }
    }
 

@@ -6,6 +6,8 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.button.Button;
+import net.minecraft.client.network.play.ClientPlayNetHandler;
+import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.network.play.client.CUpdateSignPacket;
@@ -94,7 +96,7 @@ public class Class831 extends Screen {
 
    @Override
    public void render(MatrixStack var1, int var2, int var3, float var4) {
-      Class7516.method24502();
+      RenderHelper.setupGuiFlatDiffuseLighting();
       this.renderBackground(var1);
       drawCenteredString(var1, this.font, this.title, this.width / 2, 40, 16777215);
       var1.push();
@@ -151,7 +153,7 @@ public class Class831 extends Screen {
          }
       }
 
-      var12.method25602();
+      var12.finish();
 
       for (int var33 = 0; var33 < this.field4615.length; var33++) {
          String var34 = this.field4615[var33];
@@ -173,7 +175,7 @@ public class Class831 extends Screen {
                BufferBuilder var32 = var31.getBuffer();
                RenderSystem.disableTexture();
                RenderSystem.method27857();
-               RenderSystem.method27859(Class2270.field14769);
+               RenderSystem.logicOp(Class2270.field14769);
                var32.begin(7, DefaultVertexFormats.POSITION_COLOR);
                var32.pos(var20, (float)var29, (float)(var19 + 9), 0.0F).color(0, 0, 255, 255).endVertex();
                var32.pos(var20, (float)var30, (float)(var19 + 9), 0.0F).color(0, 0, 255, 255).endVertex();
@@ -188,7 +190,7 @@ public class Class831 extends Screen {
       }
 
       var1.pop();
-      Class7516.method24503();
+      RenderHelper.setupGui3DDiffuseLighting();
       super.render(var1, var2, var3, var4);
    }
 }

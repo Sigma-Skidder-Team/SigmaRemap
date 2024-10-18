@@ -27,6 +27,7 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.MobSpawnInfo;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.gen.feature.structure.StructureManager;
 import net.minecraft.world.server.ServerWorld;
@@ -57,7 +58,7 @@ public final class Class8170 {
             BlockPos var12 = var8.getPosition();
             long var13 = ChunkPos.asLong(var12.getX() >> 4, var12.getZ() >> 4);
             var2.method30928(var13, var5x -> {
-               Class7763 var8x = method28416(var12, var5x).getMobSpawnInfo().method31969(var8.getType());
+               MobSpawnInfo.SpawnCosts var8x = method28416(var12, var5x).getMobSpawnInfo().getSpawnCost(var8.getType());
                if (var8x != null) {
                   var5.method25204(var8.getPosition(), var8x.method25733());
                }
@@ -112,7 +113,7 @@ public final class Class8170 {
             int var15 = var3.getX();
             int var16 = var3.getZ();
             byte var17 = 6;
-            MobSpawnInfoSpawners var18 = null;
+            MobSpawnInfo.Spawners var18 = null;
             Class5093 var19 = null;
             int var20 = MathHelper.ceil(var1.rand.nextFloat() * 4.0F);
             int var21 = 0;
@@ -178,7 +179,7 @@ public final class Class8170 {
       }
    }
 
-   private static boolean method28421(ServerWorld var0, EntityClassification var1, StructureManager var2, ChunkGenerator var3, MobSpawnInfoSpawners var4, BlockPos.Mutable var5, double var6) {
+   private static boolean method28421(ServerWorld var0, EntityClassification var1, StructureManager var2, ChunkGenerator var3, MobSpawnInfo.Spawners var4, BlockPos.Mutable var5, double var6) {
       EntityType var10 = var4.field29311;
       if (var10.method33209() != EntityClassification.MISC) {
          if (!var10.method33208() && var6 > (double)(var10.method33209().method522() * var10.method33209().method522())) {
@@ -222,21 +223,21 @@ public final class Class8170 {
    }
 
    @Nullable
-   private static MobSpawnInfoSpawners method28424(ServerWorld var0, StructureManager var1, ChunkGenerator var2, EntityClassification var3, Random var4, BlockPos var5) {
+   private static MobSpawnInfo.Spawners method28424(ServerWorld var0, StructureManager var1, ChunkGenerator var2, EntityClassification var3, Random var4, BlockPos var5) {
       Biome var8 = var0.getBiome(var5);
-      if (var3 == EntityClassification.WATER_AMBIENT && var8.getCategory() == Class100.RIVER && var4.nextFloat() < 0.98F) {
+      if (var3 == EntityClassification.WATER_AMBIENT && var8.getCategory() == Biome.Category.RIVER && var4.nextFloat() < 0.98F) {
          return null;
       } else {
          List var9 = method28426(var0, var1, var2, var3, var5, var8);
-         return !var9.isEmpty() ? Class8879.<MobSpawnInfoSpawners>method32314(var4, var9) : null;
+         return !var9.isEmpty() ? Class8879.<MobSpawnInfo.Spawners>method32314(var4, var9) : null;
       }
    }
 
-   private static boolean method28425(ServerWorld var0, StructureManager var1, ChunkGenerator var2, EntityClassification var3, MobSpawnInfoSpawners var4, BlockPos var5) {
+   private static boolean method28425(ServerWorld var0, StructureManager var1, ChunkGenerator var2, EntityClassification var3, MobSpawnInfo.Spawners var4, BlockPos var5) {
       return method28426(var0, var1, var2, var3, var5, (Biome)null).contains(var4);
    }
 
-   private static List<MobSpawnInfoSpawners> method28426(ServerWorld var0, StructureManager var1, ChunkGenerator var2, EntityClassification var3, BlockPos var4, Biome var5) {
+   private static List<MobSpawnInfo.Spawners> method28426(ServerWorld var0, StructureManager var1, ChunkGenerator var2, EntityClassification var3, BlockPos var4, Biome var5) {
       return var3 == EntityClassification.MONSTER
             && var0.getBlockState(var4.down()).getBlock() == Blocks.NETHER_BRICKS
             && var1.method24345(var4, false, Structure.field18070).method17117()
@@ -297,14 +298,14 @@ public final class Class8170 {
    }
 
    public static void method28430(Class1659 var0, Biome var1, int var2, int var3, Random var4) {
-      Class8835 var7 = var1.getMobSpawnInfo();
+      MobSpawnInfo var7 = var1.getMobSpawnInfo();
       List var8 = var7.getSpawners(EntityClassification.CREATURE);
       if (!var8.isEmpty()) {
          int var9 = var2 << 4;
          int var10 = var3 << 4;
 
-         while (var4.nextFloat() < var7.method31970()) {
-            MobSpawnInfoSpawners var11 = Class8879.<MobSpawnInfoSpawners>method32314(var4, var8);
+         while (var4.nextFloat() < var7.getCreatureSpawnProbability()) {
+            MobSpawnInfo.Spawners var11 = Class8879.<MobSpawnInfo.Spawners>method32314(var4, var8);
             int var12 = var11.field29312 + var4.nextInt(1 + var11.field29313 - var11.field29312);
             Class5093 var13 = null;
             int var14 = var9 + var4.nextInt(16);

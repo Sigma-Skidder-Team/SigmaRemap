@@ -28,7 +28,7 @@ public class Class3712 extends Class3676<CreatureEntity> {
    public void method12502(ServerWorld var1, CreatureEntity var2, long var3) {
       BlockPos var7 = var2.getPosition();
       if (!var1.method6952(var7)) {
-         SectionPos var8 = SectionPos.method8390(var7);
+         SectionPos var8 = SectionPos.from(var7);
          SectionPos var9 = Class6983.method21579(var1, var8, 2);
          if (var9 == var8) {
             this.method12594(var2);

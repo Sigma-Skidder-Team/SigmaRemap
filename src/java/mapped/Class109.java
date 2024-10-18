@@ -12,7 +12,7 @@ public enum Class109 implements IStringSerializable {
    field366("terrain_matching", ImmutableList.of(new Class7098(Heightmap.Type.WORLD_SURFACE_WG, -1))),
    field367("rigid", ImmutableList.of());
 
-   public static final Codec<Class109> field368 = IStringSerializable.<Class109>method258(Class109::values, Class109::method302);
+   public static final Codec<Class109> field368 = IStringSerializable.<Class109>createEnumCodec(Class109::values, Class109::method302);
    private static final Map<String, Class109> field369 = Arrays.<Class109>stream(values())
       .collect(Collectors.toMap(Class109::method301, var0 -> (Class109)var0));
    private final String field370;

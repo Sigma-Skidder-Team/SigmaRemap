@@ -8,6 +8,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockDisplayReader;
 import net.minecraft.world.LightType;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.level.ColorResolver;
 
 import java.util.Arrays;
 
@@ -173,8 +174,8 @@ public class Class1664 implements IBlockDisplayReader {
    }
 
    @Override
-   public int method6878(BlockPos var1, Class8980 var2) {
-      return this.field9062.method6878(var1, var2);
+   public int getBlockColor(BlockPos var1, ColorResolver var2) {
+      return this.field9062.getBlockColor(var1, var2);
    }
 
    @Override

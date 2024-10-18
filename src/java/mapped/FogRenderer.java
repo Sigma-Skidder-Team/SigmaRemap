@@ -4,6 +4,7 @@ import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.client.util.Util;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.fluid.FluidState;
@@ -41,7 +42,7 @@ public class FogRenderer {
             BiomeManager var14 = var2.getBiomeManager();
             Vector3d var15 = var0.getPos().method11337(2.0, 2.0, 2.0).scale(0.25);
             Vector3d var16 = Class8430.method29626(
-               var15, (var3x, var4x, var5) -> var2.method6830().method19299(Vector3d.unpack(var14.getBiomeAtPosition(var3x, var4x, var5).method32509()), var13)
+               var15, (var3x, var4x, var5) -> var2.method6830().method19299(Vector3d.unpack(var14.getBiomeAtPosition(var3x, var4x, var5).getFogColor()), var13)
             );
             var16 = Class9680.method37876(var16, var2, var0.getRenderViewEntity(), var1);
             field40348 = (float)var16.getX();
@@ -95,7 +96,7 @@ public class FogRenderer {
          }
       } else {
          long var19 = Util.milliTime();
-         int var25 = var2.getBiome(new BlockPos(var0.getPos())).method32521();
+         int var25 = var2.getBiome(new BlockPos(var0.getPos())).getWaterFogColor();
          if (field40353 < 0L) {
             field40351 = var25;
             field40352 = var25;
@@ -207,7 +208,7 @@ public class FogRenderer {
       }
 
       Shaders.method33048(field40348, field40349, field40350, 0.0F);
-      RenderSystem.method27875(field40348, field40349, field40350, 0.0F);
+      RenderSystem.clearColor(field40348, field40349, field40350, 0.0F);
    }
 
    public static void resetFog() {
@@ -269,7 +270,7 @@ public class FogRenderer {
             RenderSystem.method27845(var10);
             RenderSystem.method27846(var11);
             RenderSystem.method27842(Class2135.field13984);
-            RenderSystem.method27904();
+            RenderSystem.setupNvFogDistance();
             if (Reflector.field42883.exists()) {
                Reflector.callVoid(Reflector.field42883, var1, var0, var4, var11);
             }
@@ -280,7 +281,7 @@ public class FogRenderer {
                ClientPlayerEntity var16 = (ClientPlayerEntity)var8;
                var14 -= var16.method5416() * var16.method5416() * 0.03F;
                Biome var17 = var16.world.getBiome(var16.getPosition());
-               if (var17.getCategory() == Class100.field288) {
+               if (var17.getCategory() == Biome.Category.SWAMP) {
                   var14 += 0.005F;
                }
             }

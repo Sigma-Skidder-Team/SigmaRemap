@@ -22,7 +22,7 @@ public class OverlayTexture implements AutoCloseable {
          }
       }
 
-      RenderSystem.method27860(33985);
+      RenderSystem.activeTexture(33985);
       this.field799.method1133();
       RenderSystem.matrixMode(5890);
       RenderSystem.loadIdentity();
@@ -31,7 +31,7 @@ public class OverlayTexture implements AutoCloseable {
       RenderSystem.matrixMode(5888);
       this.field799.method1133();
       var3.method7895(0, 0, 0, 0, 0, var3.method7886(), var3.method7887(), false, true, false, false);
-      RenderSystem.method27860(33984);
+      RenderSystem.activeTexture(33984);
    }
 
    @Override

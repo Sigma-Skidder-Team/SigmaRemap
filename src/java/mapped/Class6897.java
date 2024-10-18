@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MutableBoundingBox;
 
 import java.util.List;
 import java.util.Random;
@@ -23,7 +24,7 @@ public class Class6897 extends Class6896 {
    }
 
    @Override
-   public List<Class9359> method21065(Class1679 var1, Random var2, int var3, BlockPos var4, Set<BlockPos> var5, Class9764 var6, Class4733 var7) {
+   public List<Class9359> method21065(Class1679 var1, Random var2, int var3, BlockPos var4, Set<BlockPos> var5, MutableBoundingBox var6, Class4733 var7) {
       method21069(var1, var4.down());
 
       for (int var10 = 0; var10 < var3; var10++) {

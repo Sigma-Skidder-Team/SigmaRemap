@@ -52,6 +52,7 @@ import net.minecraft.world.gen.feature.structure.StructureManager;
 import net.minecraft.world.gen.feature.structure.StructureStart;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 import net.minecraft.world.storage.IServerWorldInfo;
+import net.minecraft.world.storage.MapData;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -405,15 +406,15 @@ public class ServerWorld extends World implements ISeedReader {
          BlockPos var19 = this.method7006(Heightmap.Type.MOTION_BLOCKING, this.method6818(var7, 0, var8, 15));
          BlockPos var21 = var19.down();
          Biome var23 = this.getBiome(var19);
-         if (var23.method32504(this, var21)) {
+         if (var23.doesWaterFreeze(this, var21)) {
             this.setBlockState(var21, Blocks.ICE.getDefaultState());
          }
 
-         if (var6 && var23.method32506(this, var19)) {
+         if (var6 && var23.doesSnowGenerate(this, var19)) {
             this.setBlockState(var19, Blocks.SNOW.getDefaultState());
          }
 
-         if (var6 && this.getBiome(var21).method32500() == Class87.field224) {
+         if (var6 && this.getBiome(var21).getPrecipitation() == Biome.RainType.RAIN) {
             this.getBlockState(var21).getBlock().method11575(this, var21);
          }
       }
@@ -1123,12 +1124,12 @@ public class ServerWorld extends World implements ISeedReader {
 
    @Nullable
    @Override
-   public Class7529 method6798(String var1) {
-      return this.getServer().getServerWorld().method6945().<Class7529>method28768(() -> new Class7529(var1), var1);
+   public MapData method6798(String var1) {
+      return this.getServer().getServerWorld().method6945().<MapData>method28768(() -> new MapData(var1), var1);
    }
 
    @Override
-   public void method6799(Class7529 var1) {
+   public void method6799(MapData var1) {
       this.getServer().getServerWorld().method6945().method28770(var1);
    }
 
@@ -1220,7 +1221,7 @@ public class ServerWorld extends World implements ISeedReader {
    }
 
    public boolean method6954(BlockPos var1, int var2) {
-      return var2 <= 6 ? this.method6955(SectionPos.method8390(var1)) <= var2 : false;
+      return var2 <= 6 ? this.method6955(SectionPos.from(var1)) <= var2 : false;
    }
 
    public int method6955(SectionPos var1) {
@@ -1331,7 +1332,7 @@ public class ServerWorld extends World implements ISeedReader {
    }
 
    @VisibleForTesting
-   public void method6963(Class9764 var1) {
+   public void method6963(MutableBoundingBox var1) {
       this.field9055.removeIf(var1x -> var1.method38396(var1x.method20740()));
    }
 
@@ -1372,7 +1373,7 @@ public class ServerWorld extends World implements ISeedReader {
 
    @Override
    public Stream<? extends StructureStart<?>> method6969(SectionPos var1, Structure<?> var2) {
-      return this.func_241112_a_().method24340(var1, var2);
+      return this.func_241112_a_().func_235011_a_(var1, var2);
    }
 
    @Override

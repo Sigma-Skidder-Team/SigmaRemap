@@ -7,6 +7,7 @@ import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.MutableBoundingBox;
 
 import java.util.List;
 import java.util.Random;
@@ -18,7 +19,7 @@ public class Class9463 {
    private BlockPos field43964 = BlockPos.ZERO;
    private boolean field43965;
    private ChunkPos field43966;
-   private Class9764 field43967;
+   private MutableBoundingBox field43967;
    private boolean field43968 = true;
    private Random field43969;
    private int field43970;
@@ -68,7 +69,7 @@ public class Class9463 {
       return this;
    }
 
-   public Class9463 method36430(Class9764 var1) {
+   public Class9463 method36430(MutableBoundingBox var1) {
       this.field43967 = var1;
       return this;
    }
@@ -123,7 +124,7 @@ public class Class9463 {
    }
 
    @Nullable
-   public Class9764 method36441() {
+   public MutableBoundingBox method36441() {
       if (this.field43967 == null && this.field43966 != null) {
          this.method36444();
       }
@@ -159,11 +160,11 @@ public class Class9463 {
    }
 
    @Nullable
-   private Class9764 method36447(ChunkPos var1) {
+   private MutableBoundingBox method36447(ChunkPos var1) {
       if (var1 != null) {
          int var4 = var1.x * 16;
          int var5 = var1.z * 16;
-         return new Class9764(var4, 0, var5, var4 + 16 - 1, 255, var5 + 16 - 1);
+         return new MutableBoundingBox(var4, 0, var5, var4 + 16 - 1, 255, var5 + 16 - 1);
       } else {
          return this.field43967;
       }

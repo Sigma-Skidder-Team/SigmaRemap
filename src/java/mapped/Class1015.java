@@ -12,6 +12,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.attributes.MutableAttribute;
+import net.minecraft.entity.passive.ShoulderRidingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -35,7 +36,7 @@ import javax.annotation.Nullable;
 import java.util.*;
 import java.util.function.Predicate;
 
-public class Class1015 extends Class1014 implements Class1016 {
+public class Class1015 extends ShoulderRidingEntity implements Class1016 {
    private static final DataParameter<Integer> field5672 = EntityDataManager.<Integer>createKey(Class1015.class, DataSerializers.VARINT);
    private static final Predicate<MobEntity> field5673 = new Class119();
    private static final Item field5674 = Items.field37954;

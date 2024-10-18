@@ -7,6 +7,7 @@ import com.google.common.collect.Maps;
 import net.minecraft.world.biome.BiomeGenerationSettings;
 import net.minecraft.world.gen.carver.ConfiguredCarver;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
+import net.minecraft.world.gen.surfacebuilders.ConfiguredSurfaceBuilder;
 
 import java.util.Collection;
 import java.util.List;
@@ -16,21 +17,21 @@ import java.util.Map.Entry;
 import java.util.function.Supplier;
 
 public class Class7935 {
-   private Optional<Supplier<Class9319<?>>> field34020 = Optional.<Supplier<Class9319<?>>>empty();
+   private Optional<Supplier<ConfiguredSurfaceBuilder<?>>> field34020 = Optional.<Supplier<ConfiguredSurfaceBuilder<?>>>empty();
    private final Map<GenerationStageCarving, List<Supplier<ConfiguredCarver<?>>>> field34021 = Maps.newLinkedHashMap();
    private final List<List<Supplier<ConfiguredFeature<?, ?>>>> field34022 = Lists.newArrayList();
    private final List<Supplier<StructureFeature<?, ?>>> field34023 = Lists.newArrayList();
 
-   public Class7935 method26688(Class9319<?> var1) {
+   public Class7935 method26688(ConfiguredSurfaceBuilder<?> var1) {
       return this.method26689(() -> var1);
    }
 
-   public Class7935 method26689(Supplier<Class9319<?>> var1) {
-      this.field34020 = Optional.<Supplier<Class9319<?>>>of(var1);
+   public Class7935 method26689(Supplier<ConfiguredSurfaceBuilder<?>> var1) {
+      this.field34020 = Optional.<Supplier<ConfiguredSurfaceBuilder<?>>>of(var1);
       return this;
    }
 
-   public Class7935 method26690(Class1993 var1, ConfiguredFeature<?, ?> var2) {
+   public Class7935 method26690(Decoration var1, ConfiguredFeature<?, ?> var2) {
       return this.method26691(var1.ordinal(), () -> var2);
    }
 

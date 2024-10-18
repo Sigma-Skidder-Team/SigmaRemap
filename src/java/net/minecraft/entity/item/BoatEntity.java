@@ -694,7 +694,7 @@ public class BoatEntity extends Entity {
       double var7 = this.getPosZ() + var4.z;
       BlockPos var9 = new BlockPos(var5, this.getBoundingBox().maxY, var7);
       BlockPos var10 = var9.down();
-      if (!this.world.method7013(var10)) {
+      if (!this.world.hasWater(var10)) {
          double var11 = (double)var9.getY() + this.world.method7039(var9);
          double var13 = (double)var9.getY() + this.world.method7039(var10);
          UnmodifiableIterator var15 = var1.getAvailablePoses().iterator();

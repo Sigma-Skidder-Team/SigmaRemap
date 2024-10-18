@@ -19,7 +19,7 @@ import java.util.function.Predicate;
 public class LegacyResourcePackWrapper implements IResourcePack {
    private final IResourcePack field1177;
    private final Map<ResourceLocation, ResourceLocation> field1178;
-   public static final Map<ResourceLocation, ResourceLocation> NEW_TO_LEGACY_MAP = Util.<Map<ResourceLocation, ResourceLocation>>method38507(() -> {
+   public static final Map<ResourceLocation, ResourceLocation> NEW_TO_LEGACY_MAP = Util.<Map<ResourceLocation, ResourceLocation>>make(() -> {
       Builder<ResourceLocation, ResourceLocation> var2 = ImmutableMap.builder();
       BiConsumer<String, String> var3 = (var1, var2x) -> {
          ResourceLocation var5 = new ResourceLocation(var1);

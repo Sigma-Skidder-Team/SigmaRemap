@@ -115,10 +115,10 @@ public class Class7755 {
 
    public void method25710(Quaternion var1) {
       Quaternion var4 = new Quaternion(var1);
-      var4.method31182(new Quaternion(this.method25701(), this.method25702(), this.method25703(), 0.0F));
+      var4.multiply(new Quaternion(this.method25701(), this.method25702(), this.method25703(), 0.0F));
       Quaternion var5 = new Quaternion(var1);
-      var5.method31184();
-      var4.method31182(var5);
+      var5.conjugate();
+      var4.multiply(var5);
       this.method25706(var4.method31178(), var4.method31179(), var4.method31180(), this.method25704());
    }
 

@@ -4,6 +4,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.datafixers.util.Pair;
 import mapped.*;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.renderer.tileentity.BannerTileEntityRenderer;
 import net.minecraft.entity.player.PlayerInventory;
@@ -47,7 +48,7 @@ public class LoomScreen extends ContainerScreen<Class5837> {
    }
 
    @Override
-   public void method2618(MatrixStack var1, float var2, int var3, int var4) {
+   public void drawGuiContainerBackgroundLayer(MatrixStack var1, float var2, int var3, int var4) {
       this.renderBackground(var1);
       this.mc.getTextureManager().bindTexture(field4801);
       int var7 = this.field4734;
@@ -71,7 +72,7 @@ public class LoomScreen extends ContainerScreen<Class5837> {
 
       int var13 = (int)(41.0F * this.field4811);
       this.blit(var1, var7 + 119, var8 + 13 + var13, 232 + (!this.field4808 ? 12 : 0), 0, 12, 15);
-      Class7516.method24502();
+      RenderHelper.setupGuiFlatDiffuseLighting();
       if (this.field4804 != null && !this.field4810) {
          Class7735 var14 = this.mc.getRenderTypeBuffers().getBufferSource();
          var1.push();
@@ -84,7 +85,7 @@ public class LoomScreen extends ContainerScreen<Class5837> {
          this.field4803.rotationPointY = -32.0F;
          BannerTileEntityRenderer.method18478(var1, var14, 15728880, OverlayTexture.NO_OVERLAY, this.field4803, ModelBakery.field40513, true, this.field4804);
          var1.pop();
-         var14.method25602();
+         var14.finish();
       } else if (this.field4810) {
          this.blit(var1, var7 + var12.field25580 - 2, var8 + var12.field25581 - 2, this.xSize, 17, 17, 16);
       }
@@ -122,7 +123,7 @@ public class LoomScreen extends ContainerScreen<Class5837> {
          }
       }
 
-      Class7516.method24503();
+      RenderHelper.setupGui3DDiffuseLighting();
    }
 
    private void method2677(int var1, int var2, int var3) {
@@ -147,7 +148,7 @@ public class LoomScreen extends ContainerScreen<Class5837> {
       List var12 = BannerTileEntity.getPatternColorData(Class112.field393, BannerTileEntity.method3886(var6));
       BannerTileEntityRenderer.method18478(var9, var11, 15728880, OverlayTexture.NO_OVERLAY, this.field4803, ModelBakery.field40513, true, var12);
       var9.pop();
-      var11.method25602();
+      var11.finish();
    }
 
    @Override

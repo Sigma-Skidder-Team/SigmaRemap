@@ -52,7 +52,7 @@ public class ShadowESP extends Module {
                 GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
                 RenderUtil.method11478();
                 this.method16613();
-                this.field23795.method25602();
+                this.field23795.finish();
             }
         }
     }
@@ -141,7 +141,7 @@ public class ShadowESP extends Module {
         this.field23795.finish(RenderType.getEntityCutoutNoCull(AtlasTexture.LOCATION_BLOCKS_TEXTURE));
         this.field23795.finish(RenderType.getEntitySmoothCutout(AtlasTexture.LOCATION_BLOCKS_TEXTURE));
         this.field23795.finish(RenderType.getLines());
-        this.field23795.method25602();
+        this.field23795.finish();
         if (field23794 == Class2191.field14329) {
             GL11.glPolygonMode(1032, 6914);
             GL11.glDisable(10754);
@@ -211,7 +211,7 @@ public class ShadowESP extends Module {
         GL11.glDisable(2896);
         GL11.glEnable(3553);
         GL11.glEnable(2903);
-        RenderSystem.method27905(33986, 240.0F, 240.0F);
+        RenderSystem.glMultiTexCoord2f(33986, 240.0F, 240.0F);
         TextureImpl.method36180();
         TextureManager var10000 = mc.getTextureManager();
         mc.getTextureManager();

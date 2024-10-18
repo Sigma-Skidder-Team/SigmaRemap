@@ -9,6 +9,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 
 import java.util.Random;
@@ -54,7 +55,7 @@ public class Class4187 extends Class4180 {
    }
 
    @Override
-   public void method12944(String var1, BlockPos var2, Class1659 var3, Random var4, Class9764 var5) {
+   public void method12944(String var1, BlockPos var2, Class1659 var3, Random var4, MutableBoundingBox var5) {
       if (var1.startsWith("Chest")) {
          Rotation var8 = this.field20454.method36437();
          BlockState var9 = Blocks.CHEST.getDefaultState();

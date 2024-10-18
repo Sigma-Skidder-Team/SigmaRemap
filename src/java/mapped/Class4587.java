@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.client.renderer.ActiveRenderInfo;
+import net.minecraft.client.renderer.WorldRenderer;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;

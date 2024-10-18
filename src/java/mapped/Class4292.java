@@ -31,7 +31,7 @@ public class Class4292 extends Class4278 implements Class4293 {
    @Override
    public void method13079(float var1) {
       super.method13079(var1);
-      if (this.icoPanel != null && this.icoPanel.method13228(this.method13309(), this.method13310(), false) || ((Class4339)this.icoPanel).field21208) {
+      if (this.icoPanel != null && this.icoPanel.method13228(this.getHeightO(), this.getWidthO(), false) || ((Class4339)this.icoPanel).field21208) {
          float var4 = (float)((Class4339)this.getIcoPanel()).getButton().getHeightA();
          float var5 = (float)this.getIcoPanel().getHeightA();
          float var6 = (float)this.getHeightA();

@@ -617,7 +617,7 @@ public class CreativeScreen extends Class860<Class5820> {
    }
 
    @Override
-   public void method2618(MatrixStack var1, float var2, int var3, int var4) {
+   public void drawGuiContainerBackgroundLayer(MatrixStack var1, float var2, int var3, int var4) {
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       ItemGroup var7 = ItemGroup.field31664[field4776];
 

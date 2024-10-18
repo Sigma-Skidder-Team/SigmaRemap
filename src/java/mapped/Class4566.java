@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.world.ClientWorld;
+
 public abstract class Class4566 extends Class4586 {
    public TextureAtlasSprite field22004;
 

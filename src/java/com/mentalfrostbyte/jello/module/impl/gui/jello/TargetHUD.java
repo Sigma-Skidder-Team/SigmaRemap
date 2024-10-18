@@ -20,6 +20,7 @@ import lol.ClientColors;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.monster.EndermanEntity;
@@ -214,7 +215,7 @@ public class TargetHUD extends Module {
             var10.scale(var6, var6, var6);
             Quaternion var11 = Vector3f.ZP.rotationDegrees(180.0F);
             var10.rotate(var11);
-            var4.method32215(false);
+            var4.setRenderShadow(false);
             Class7735 var12 = Minecraft.getInstance().getRenderTypeBuffers().getBufferSource();
             RenderSystem.runAsFancy(
                     () -> var5.method17924(
@@ -222,8 +223,8 @@ public class TargetHUD extends Module {
                     )
             );
 
-            var12.method25602();
-            var4.method32215(true);
+            var12.finish();
+            var4.setRenderShadow(true);
             RenderSystem.popMatrix();
             RenderUtil.endScissor();
             GL11.glPopMatrix();

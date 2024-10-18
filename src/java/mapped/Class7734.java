@@ -41,6 +41,6 @@ public class Class7734 implements Class7733 {
    }
 
    public void method25600() {
-      this.field33209.method25602();
+      this.field33209.finish();
    }
 }

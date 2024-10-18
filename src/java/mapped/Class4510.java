@@ -212,7 +212,7 @@ public abstract class Class4510 {
       float var5 = (float)(var3 % 110000L) / 110000.0F;
       float var6 = (float)(var3 % 30000L) / 30000.0F;
       RenderSystem.translatef(-var5, var6, 0.0F);
-      RenderSystem.method27883(10.0F, 0.0F, 0.0F, 1.0F);
+      RenderSystem.rotatef(10.0F, 0.0F, 0.0F, 1.0F);
       RenderSystem.scalef(var0, var0, var0);
       RenderSystem.matrixMode(5888);
    }

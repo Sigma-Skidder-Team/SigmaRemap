@@ -9,6 +9,7 @@ import net.minecraft.tileentity.JigsawTileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
@@ -62,9 +63,9 @@ public class Class7490 extends Class7487 {
    }
 
    @Override
-   public Class9764 method24375(TemplateManager var1, BlockPos var2, Rotation var3) {
+   public MutableBoundingBox method24375(TemplateManager var1, BlockPos var2, Rotation var3) {
       BlockPos var6 = this.method24415(var1, var3);
-      return new Class9764(
+      return new MutableBoundingBox(
          var2.getX(),
          var2.getY(),
          var2.getZ(),
@@ -76,7 +77,7 @@ public class Class7490 extends Class7487 {
 
    @Override
    public boolean method24376(
-           TemplateManager var1, ISeedReader var2, StructureManager var3, ChunkGenerator var4, BlockPos var5, BlockPos var6, Rotation var7, Class9764 var8, Random var9, boolean var10
+           TemplateManager var1, ISeedReader var2, StructureManager var3, ChunkGenerator var4, BlockPos var5, BlockPos var6, Rotation var7, MutableBoundingBox var8, Random var9, boolean var10
    ) {
       return this.field32191.get().func_242765_a(var2, var4, var9, var5);
    }
@@ -88,6 +89,6 @@ public class Class7490 extends Class7487 {
 
    @Override
    public String toString() {
-      return "Feature[" + Registry.field16112.getKey(this.field32191.get().method26518()) + "]";
+      return "Feature[" + Registry.FEATURE.getKey(this.field32191.get().method26518()) + "]";
    }
 }

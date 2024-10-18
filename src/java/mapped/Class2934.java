@@ -25,6 +25,6 @@ public class Class2934 extends Class2898<Class4713> {
 
    @Override
    public String toString() {
-      return String.format("< %s [%s] >", this.getClass().getSimpleName(), Registry.field16112.getKey(this));
+      return String.format("< %s [%s] >", this.getClass().getSimpleName(), Registry.FEATURE.getKey(this));
    }
 }

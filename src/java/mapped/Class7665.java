@@ -19,7 +19,7 @@ public abstract class Class7665 {
       ConfiguredFeature var8 = this.method25186(var5, this.method25187(var1, var3));
       if (var8 != null) {
          var1.setBlockState(var3, Blocks.AIR.getDefaultState(), 4);
-         ((Class4733)var8.field33887).method14849();
+         ((Class4733)var8.config).method14849();
          if (!var8.func_242765_a(var1, var2, var5, var3)) {
             var1.setBlockState(var3, var4, 4);
             return false;

@@ -9,6 +9,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.gen.feature.structure.EndCityPieces;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 
@@ -51,7 +52,7 @@ public class Class4186 extends Class4180 {
    }
 
    @Override
-   public void method12944(String var1, BlockPos var2, Class1659 var3, Random var4, Class9764 var5) {
+   public void method12944(String var1, BlockPos var2, Class1659 var3, Random var4, MutableBoundingBox var5) {
       if (!var1.startsWith("Chest")) {
          if (!var1.startsWith("Sentry")) {
             if (var1.startsWith("Elytra")) {

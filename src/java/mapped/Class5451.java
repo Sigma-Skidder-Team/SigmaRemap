@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.structure.StructureManager;
@@ -14,7 +15,7 @@ public class Class5451 extends StructureStart<Class4712> {
    private static String[] field24209;
    private boolean field24210;
 
-   public Class5451(Structure<Class4712> var1, int var2, int var3, Class9764 var4, int var5, long var6) {
+   public Class5451(Structure<Class4712> var1, int var2, int var3, MutableBoundingBox var4, int var5, long var6) {
       super(var1, var2, var3, var4, var5, var6);
    }
 
@@ -32,12 +33,12 @@ public class Class5451 extends StructureStart<Class4712> {
    }
 
    @Override
-   public void method17112(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6) {
+   public void func_230366_a_(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, MutableBoundingBox var5, ChunkPos var6) {
       if (!this.field24210) {
          this.field24196.clear();
          this.method17126(this.method17118(), this.method17119());
       }
 
-      super.method17112(var1, var2, var3, var4, var5, var6);
+      super.func_230366_a_(var1, var2, var3, var4, var5, var6);
    }
 }

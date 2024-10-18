@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.PlayerController;
+import net.minecraft.client.network.play.ClientPlayNetHandler;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResultType;

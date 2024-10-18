@@ -18,7 +18,7 @@ public enum Class2142 {
       GlStateManager.method23850(32886);
    }, var0 -> {
       GlStateManager.method23851(32886);
-      GlStateManager.method23844();
+      GlStateManager.clearCurrentColor();
    }),
    field14021("UV", (var0, var1, var2, var3, var5) -> {
       GlStateManager.method23760(33984 + var5);

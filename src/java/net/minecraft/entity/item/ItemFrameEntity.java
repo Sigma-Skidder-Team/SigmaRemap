@@ -22,6 +22,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
+import net.minecraft.world.storage.MapData;
 import org.apache.commons.lang3.Validate;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -223,7 +224,7 @@ public class ItemFrameEntity extends Class995 {
 
    private void method4089(ItemStack var1) {
       if (var1.getItem() == Items.field37955) {
-         Class7529 var4 = Class3316.method11861(var1, this.world);
+         MapData var4 = Class3316.method11861(var1, this.world);
          var4.method24602(this.field5488, this.getEntityId());
          var4.method24606(true);
       }

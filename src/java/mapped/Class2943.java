@@ -28,7 +28,7 @@ public class Class2943 extends Class2898<Class4705> {
          return false;
       } else {
          var4 = var4.method8340(4);
-         if (var1.method6969(SectionPos.method8390(var4), Structure.field18073).findAny().isPresent()) {
+         if (var1.method6969(SectionPos.from(var4), Structure.field18073).findAny().isPresent()) {
             return false;
          } else {
             boolean[] var8 = new boolean[2048];
@@ -138,7 +138,7 @@ public class Class2943 extends Class2898<Class4705> {
                   for (int var47 = 0; var47 < 16; var47++) {
                      byte var51 = 4;
                      BlockPos var54 = var4.add(var43, 4, var47);
-                     if (var1.getBiome(var54).method32505(var1, var54, false)) {
+                     if (var1.getBiome(var54).doesWaterFreeze(var1, var54, false)) {
                         var1.setBlockState(var54, Blocks.ICE.getDefaultState(), 2);
                      }
                   }

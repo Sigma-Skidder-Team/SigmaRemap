@@ -5,6 +5,7 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.renderer.ActiveRenderInfo;
+import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.projectile.ProjectileHelper;
@@ -182,7 +183,7 @@ public class DebugRenderer {
          RenderSystem.enableAlphaTest();
          Class7735 var24 = Class7733.method25595(Tessellator.getInstance().getBuffer());
          var16.method38810(var0, var23, 0.0F, var7, false, Class6979.method21542().method21548(), var24, var11, 0, 15728880);
-         var24.method25602();
+         var24.finish();
          RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          RenderSystem.enableDepthTest();
          RenderSystem.popMatrix();

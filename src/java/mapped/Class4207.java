@@ -8,6 +8,7 @@ import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.gen.feature.structure.StructureManager;
 import net.minecraft.world.gen.feature.template.TemplateManager;
@@ -18,7 +19,7 @@ import java.util.Random;
 public class Class4207 extends Class4194 {
    private static String[] field20514;
 
-   public Class4207(int var1, Random var2, Class9764 var3, Direction var4) {
+   public Class4207(int var1, Random var2, MutableBoundingBox var3, Direction var4) {
       super(Class7792.field33450, var1);
       this.method12939(var4);
       this.field20495 = this.method12985(var2);
@@ -35,12 +36,12 @@ public class Class4207 extends Class4194 {
    }
 
    public static Class4207 method13000(List<Class4178> var0, Random var1, int var2, int var3, int var4, Direction var5, int var6) {
-      Class9764 var9 = Class9764.method38388(var2, var3, var4, -1, -1, 0, 9, 5, 11, var5);
+      MutableBoundingBox var9 = MutableBoundingBox.method38388(var2, var3, var4, -1, -1, 0, 9, 5, 11, var5);
       return method12989(var9) && Class4178.method12918(var0, var9) == null ? new Class4207(var6, var1, var9, var5) : null;
    }
 
    @Override
-   public boolean method12896(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, MutableBoundingBox var5, ChunkPos var6, BlockPos var7) {
       this.method12928(var1, var5, 0, 0, 0, 8, 4, 10, true, var4, Class9331.method35288());
       this.method12984(var1, var4, var5, this.field20495, 1, 1, 0);
       this.method12927(var1, var5, 1, 1, 10, 3, 3, 10, field20443, field20443, false);

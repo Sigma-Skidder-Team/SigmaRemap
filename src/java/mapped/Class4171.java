@@ -5,6 +5,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.gen.feature.structure.StructureManager;
 import net.minecraft.world.gen.feature.template.TemplateManager;
@@ -15,7 +16,7 @@ import java.util.Random;
 public class Class4171 extends Class4167 {
    private final int field20433;
 
-   public Class4171(int var1, Random var2, Class9764 var3, Direction var4) {
+   public Class4171(int var1, Random var2, MutableBoundingBox var3, Direction var4) {
       super(Class7792.field33430, var1);
       this.method12939(var4);
       this.field20444 = var3;
@@ -28,7 +29,7 @@ public class Class4171 extends Class4167 {
    }
 
    public static Class4171 method12908(List<Class4178> var0, Random var1, int var2, int var3, int var4, Direction var5, int var6) {
-      Class9764 var9 = Class9764.method38388(var2, var3, var4, -1, -3, 0, 5, 10, 8, var5);
+      MutableBoundingBox var9 = MutableBoundingBox.method38388(var2, var3, var4, -1, -3, 0, 5, 10, 8, var5);
       return method12904(var9) && Class4178.method12918(var0, var9) == null ? new Class4171(var6, var1, var9, var5) : null;
    }
 
@@ -39,7 +40,7 @@ public class Class4171 extends Class4167 {
    }
 
    @Override
-   public boolean method12896(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, MutableBoundingBox var5, ChunkPos var6, BlockPos var7) {
       Random var10 = new Random((long)this.field20433);
 
       for (int var11 = 0; var11 <= 4; var11++) {

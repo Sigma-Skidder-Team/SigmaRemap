@@ -4,8 +4,10 @@ import com.google.common.hash.Hashing;
 import com.mojang.authlib.GameProfile;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
+import net.minecraft.client.network.play.NetworkPlayerInfo;
 import net.minecraft.client.renderer.texture.Texture;
 import net.minecraft.client.resources.DefaultPlayerSkin;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.util.ResourceLocation;
 
 import javax.annotation.Nullable;
@@ -23,7 +25,7 @@ public class Class1118 extends AbstractClientPlayerEntity {
 
    @Override
    public boolean isCreative() {
-      Class6589 var3 = Minecraft.getInstance().getConnection().method15792(this.getGameProfile().getId());
+      NetworkPlayerInfo var3 = Minecraft.getInstance().getConnection().method15792(this.getGameProfile().getId());
       return true;
    }
 
@@ -34,8 +36,8 @@ public class Class1118 extends AbstractClientPlayerEntity {
 
    @Nullable
    @Override
-   public Class6589 method5369() {
-      return this.field6096;
+   public NetworkPlayerInfo method5369() {
+      return this.playerInfo;
    }
 
    @Override
@@ -45,14 +47,14 @@ public class Class1118 extends AbstractClientPlayerEntity {
 
    @Override
    public ResourceLocation method5371() {
-      Class6589 var3 = this.method5369();
+      NetworkPlayerInfo var3 = this.method5369();
       return var3 != null ? var3.method19973() : DefaultPlayerSkin.method22637(this.getUniqueID());
    }
 
    @Nullable
    @Override
    public ResourceLocation method5372() {
-      Class6589 var3 = this.method5369();
+      NetworkPlayerInfo var3 = this.method5369();
       return var3 != null ? var3.method19974() : null;
    }
 
@@ -64,7 +66,7 @@ public class Class1118 extends AbstractClientPlayerEntity {
    @Nullable
    @Override
    public ResourceLocation method5374() {
-      Class6589 var3 = this.method5369();
+      NetworkPlayerInfo var3 = this.method5369();
       return var3 != null ? var3.method19975() : null;
    }
 

@@ -1,6 +1,7 @@
 package mapped;
 
 import it.unimi.dsi.fastutil.ints.Int2IntFunction;
+import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.tileentity.TileEntity;
 
 public class Class6138<S extends TileEntity> implements Class6139<S, Int2IntFunction> {

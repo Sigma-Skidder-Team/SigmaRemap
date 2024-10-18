@@ -9,25 +9,27 @@ import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.gen.PerlinNoiseGenerator;
+import net.minecraft.world.gen.surfacebuilders.ISurfaceBuilderConfig;
 
 import java.util.Random;
 import java.util.stream.IntStream;
 
-public class Class6771 extends Class6768<Class8278> {
+public class Class6771 extends SurfaceBuilder<Class8278> {
    public static final BlockState field29539 = Blocks.PACKED_ICE.getDefaultState();
    public static final BlockState field29540 = Blocks.SNOW_BLOCK.getDefaultState();
    private static final BlockState field29541 = Blocks.AIR.getDefaultState();
    private static final BlockState field29490 = Blocks.GRAVEL.getDefaultState();
    private static final BlockState field29542 = Blocks.ICE.getDefaultState();
-   private Class7691 field29543;
-   private Class7691 field29544;
+   private PerlinNoiseGenerator field29543;
+   private PerlinNoiseGenerator field29544;
    private long field29545;
 
    public Class6771(Codec<Class8278> var1) {
       super(var1);
    }
 
-   public void method20654(
+   public void buildSurface(
       Random var1,
       IChunk var2,
       Biome var3,
@@ -44,11 +46,11 @@ public class Class6771 extends Class6768<Class8278> {
       double var17 = 0.0;
       double var19 = 0.0;
       BlockPos.Mutable var21 = new BlockPos.Mutable();
-      float var22 = var3.method32503(var21.setPos(var4, 63, var5));
-      double var23 = Math.min(Math.abs(var7), this.field29543.method25315((double)var4 * 0.1, (double)var5 * 0.1, false) * 15.0);
+      float var22 = var3.getTemperature(var21.setPos(var4, 63, var5));
+      double var23 = Math.min(Math.abs(var7), this.field29543.noiseAt((double)var4 * 0.1, (double)var5 * 0.1, false) * 15.0);
       if (var23 > 1.8) {
          double var38 = 0.09765625;
-         double var40 = Math.abs(this.field29544.method25315((double)var4 * 0.09765625, (double)var5 * 0.09765625, false));
+         double var40 = Math.abs(this.field29544.noiseAt((double)var4 * 0.09765625, (double)var5 * 0.09765625, false));
          var17 = var23 * var23 * 1.2;
          double var42 = Math.ceil(var40 * 40.0) + 14.0;
          if (var17 > var42) {
@@ -69,7 +71,7 @@ public class Class6771 extends Class6768<Class8278> {
 
       int var25 = var4 & 15;
       int var26 = var5 & 15;
-      Class8277 var27 = var3.getGenerationSettings().getSurfaceBuilderConfig();
+      ISurfaceBuilderConfig var27 = var3.getGenerationSettings().getSurfaceBuilderConfig();
       BlockState var28 = var27.method28935();
       BlockState var29 = var27.getTop();
       BlockState var30 = var28;
@@ -116,7 +118,7 @@ public class Class6771 extends Class6768<Class8278> {
                   }
 
                   if (var37 < var11 && (var31 == null || var31.isAir())) {
-                     if (!(var3.method32503(var21.setPos(var4, var37, var5)) < 0.15F)) {
+                     if (!(var3.getTemperature(var21.setPos(var4, var37, var5)) < 0.15F)) {
                         var31 = var10;
                      } else {
                         var31 = field29542;
@@ -150,8 +152,8 @@ public class Class6771 extends Class6768<Class8278> {
    public void method20658(long var1) {
       if (this.field29545 != var1 || this.field29543 == null || this.field29544 == null) {
          SharedSeedRandom var5 = new SharedSeedRandom(var1);
-         this.field29543 = new Class7691(var5, IntStream.rangeClosed(-3, 0));
-         this.field29544 = new Class7691(var5, ImmutableList.of(0));
+         this.field29543 = new PerlinNoiseGenerator(var5, IntStream.rangeClosed(-3, 0));
+         this.field29544 = new PerlinNoiseGenerator(var5, ImmutableList.of(0));
       }
 
       this.field29545 = var1;

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.MutableBoundingBox;
 
 import java.util.List;
 import java.util.Random;
@@ -12,18 +13,18 @@ public class Class6883 {
       int var10 = var1.nextInt(100);
       if (var10 < 80) {
          if (var10 < 70) {
-            Class9764 var11 = Class4191.method12972(var0, var1, var2, var3, var4, var5);
+            MutableBoundingBox var11 = Class4191.method12972(var0, var1, var2, var3, var4, var5);
             if (var11 != null) {
                return new Class4191(var6, var1, var11, var5, var7);
             }
          } else {
-            Class9764 var12 = Class4192.method12975(var0, var1, var2, var3, var4, var5);
+            MutableBoundingBox var12 = Class4192.method12975(var0, var1, var2, var3, var4, var5);
             if (var12 != null) {
                return new Class4192(var6, var12, var5, var7);
             }
          }
       } else {
-         Class9764 var13 = Class4190.method12970(var0, var1, var2, var3, var4, var5);
+         MutableBoundingBox var13 = Class4190.method12970(var0, var1, var2, var3, var4, var5);
          if (var13 != null) {
             return new Class4190(var6, var13, var5, var7);
          }

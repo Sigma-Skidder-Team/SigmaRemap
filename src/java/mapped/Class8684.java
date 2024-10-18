@@ -478,7 +478,7 @@ public class Class8684 {
       for (int var2 = 65536; var2 > 0; var2 >>= 1) {
          GlStateManager.texImage2D(32868, 0, 6408, var2, var2, 0, 6408, 5121, (IntBuffer)null);
          int var3 = GL11.glGetError();
-         int var4 = GlStateManager.method23809(32868, 0, 4096);
+         int var4 = GlStateManager.getTexLevelParameter(32868, 0, 4096);
          if (var4 != 0) {
             return var2;
          }

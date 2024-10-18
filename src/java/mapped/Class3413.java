@@ -212,7 +212,7 @@ public class Class3413 extends Block {
    @Override
    public void method11575(World var1, BlockPos var2) {
       if (var1.rand.nextInt(20) == 1) {
-         float var5 = var1.getBiome(var2).method32503(var2);
+         float var5 = var1.getBiome(var2).getTemperature(var2);
          if (!(var5 < 0.15F)) {
             BlockState var6 = var1.getBlockState(var2);
             if (var6.<Integer>get(field19100) < 3) {

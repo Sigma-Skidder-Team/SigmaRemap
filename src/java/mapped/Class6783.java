@@ -9,12 +9,12 @@ import net.minecraft.world.chunk.IChunk;
 
 import java.util.Random;
 
-public class Class6783 extends Class6768<Class8278> {
+public class Class6783 extends SurfaceBuilder<Class8278> {
    public Class6783(Codec<Class8278> var1) {
       super(var1);
    }
 
-   public void method20654(
+   public void buildSurface(
       Random var1,
       IChunk var2,
       Biome var3,
@@ -80,7 +80,7 @@ public class Class6783 extends Class6768<Class8278> {
                   }
 
                   if (var24 < var14 && (var17 == null || var17.isAir())) {
-                     if (!(var3.method32503(var19.setPos(var4, var24, var5)) < 0.15F)) {
+                     if (!(var3.getTemperature(var19.setPos(var4, var24, var5)) < 0.15F)) {
                         var17 = var10;
                      } else {
                         var17 = Blocks.ICE.getDefaultState();

@@ -6,6 +6,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.gen.feature.structure.StructureManager;
 import net.minecraft.world.gen.feature.template.TemplateManager;
@@ -14,12 +15,12 @@ import java.util.List;
 import java.util.Random;
 
 public class Class4189 extends Class4188 {
-   private final List<Class9764> field20480 = Lists.newLinkedList();
+   private final List<MutableBoundingBox> field20480 = Lists.newLinkedList();
 
    public Class4189(int var1, Random var2, int var3, int var4, Class102 var5) {
       super(Class7792.field33427, var1, var5);
       this.field20479 = var5;
-      this.field20444 = new Class9764(var3, 50, var4, var3 + 7 + var2.nextInt(6), 54 + var2.nextInt(6), var4 + 7 + var2.nextInt(6));
+      this.field20444 = new MutableBoundingBox(var3, 50, var4, var3 + 7 + var2.nextInt(6), 54 + var2.nextInt(6), var4 + 7 + var2.nextInt(6));
    }
 
    public Class4189(TemplateManager var1, CompoundNBT var2) {
@@ -27,7 +28,7 @@ public class Class4189 extends Class4188 {
       ListNBT var5 = var2.method131("Entrances", 11);
 
       for (int var6 = 0; var6 < var5.size(); var6++) {
-         this.field20480.add(new Class9764(var5.method157(var6)));
+         this.field20480.add(new MutableBoundingBox(var5.method157(var6)));
       }
    }
 
@@ -58,10 +59,10 @@ public class Class4189 extends Class4188 {
             var6
          );
          if (var9 != null) {
-            Class9764 var10 = var9.method12915();
+            MutableBoundingBox var10 = var9.method12915();
             this.field20480
                .add(
-                  new Class9764(
+                  new MutableBoundingBox(
                      var10.field45678, var10.field45679, this.field20444.field45680, var10.field45681, var10.field45682, this.field20444.field45680 + 1
                   )
                );
@@ -89,10 +90,10 @@ public class Class4189 extends Class4188 {
             var6
          );
          if (var18 != null) {
-            Class9764 var21 = var18.method12915();
+            MutableBoundingBox var21 = var18.method12915();
             this.field20480
                .add(
-                  new Class9764(
+                  new MutableBoundingBox(
                      var21.field45678, var21.field45679, this.field20444.field45683 - 1, var21.field45681, var21.field45682, this.field20444.field45683
                   )
                );
@@ -120,10 +121,10 @@ public class Class4189 extends Class4188 {
             var6
          );
          if (var19 != null) {
-            Class9764 var22 = var19.method12915();
+            MutableBoundingBox var22 = var19.method12915();
             this.field20480
                .add(
-                  new Class9764(
+                  new MutableBoundingBox(
                      this.field20444.field45678, var22.field45679, var22.field45680, this.field20444.field45678 + 1, var22.field45682, var22.field45683
                   )
                );
@@ -151,10 +152,10 @@ public class Class4189 extends Class4188 {
             var6
          );
          if (var20 != null) {
-            Class9764 var23 = var20.method12915();
+            MutableBoundingBox var23 = var20.method12915();
             this.field20480
                .add(
-                  new Class9764(
+                  new MutableBoundingBox(
                      this.field20444.field45681 - 1, var23.field45679, var23.field45680, this.field20444.field45681, var23.field45682, var23.field45683
                   )
                );
@@ -165,7 +166,7 @@ public class Class4189 extends Class4188 {
    }
 
    @Override
-   public boolean method12896(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, MutableBoundingBox var5, ChunkPos var6, BlockPos var7) {
       if (this.method12919(var1, var5)) {
          return false;
       } else {
@@ -196,7 +197,7 @@ public class Class4189 extends Class4188 {
             false
          );
 
-         for (Class9764 var11 : this.field20480) {
+         for (MutableBoundingBox var11 : this.field20480) {
             this.method12927(
                var1,
                var5,
@@ -232,7 +233,7 @@ public class Class4189 extends Class4188 {
    public void method12937(int var1, int var2, int var3) {
       super.method12937(var1, var2, var3);
 
-      for (Class9764 var7 : this.field20480) {
+      for (MutableBoundingBox var7 : this.field20480) {
          var7.method38393(var1, var2, var3);
       }
    }
@@ -242,7 +243,7 @@ public class Class4189 extends Class4188 {
       super.method12897(var1);
       ListNBT var4 = new ListNBT();
 
-      for (Class9764 var6 : this.field20480) {
+      for (MutableBoundingBox var6 : this.field20480) {
          var4.add(var6.method38402());
       }
 

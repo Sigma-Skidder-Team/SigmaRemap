@@ -16,15 +16,17 @@ import net.minecraft.client.util.Util;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.world.gen.carver.ConfiguredCarver;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
+import net.minecraft.world.gen.surfacebuilders.ConfiguredSurfaceBuilder;
+import net.minecraft.world.gen.surfacebuilders.ISurfaceBuilderConfig;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class BiomeGenerationSettings {
    public static final Logger field32135 = LogManager.getLogger();
-   public static final BiomeGenerationSettings field32136 = new BiomeGenerationSettings(() -> Class9109.field41856, ImmutableMap.of(), ImmutableList.of(), ImmutableList.of());
-   public static final MapCodec<BiomeGenerationSettings> field32137 = RecordCodecBuilder.mapCodec(
+   public static final BiomeGenerationSettings DEFAULT_SETTINGS = new BiomeGenerationSettings(() -> Class9109.field41856, ImmutableMap.of(), ImmutableList.of(), ImmutableList.of());
+   public static final MapCodec<BiomeGenerationSettings> CODEC = RecordCodecBuilder.mapCodec(
       var0 -> var0.group(
-               Class9319.field43263.fieldOf("surface_builder").forGetter(var0x -> var0x.field32138),
+               ConfiguredSurfaceBuilder.field_244393_b_.fieldOf("surface_builder").forGetter(var0x -> var0x.field32138),
                Codec.simpleMap(
                      GenerationStageCarving.field261,
                      ConfiguredCarver.field29676.promotePartial(Util.func_240982_a_("Carver: ", field32135::error)),
@@ -44,14 +46,14 @@ public class BiomeGenerationSettings {
             )
             .apply(var0, BiomeGenerationSettings::new)
    );
-   private final Supplier<Class9319<?>> field32138;
+   private final Supplier<ConfiguredSurfaceBuilder<?>> field32138;
    private final Map<GenerationStageCarving, List<Supplier<ConfiguredCarver<?>>>> field32139;
    private final List<List<Supplier<ConfiguredFeature<?, ?>>>> field32140;
    private final List<Supplier<StructureFeature<?, ?>>> field32141;
    private final List<ConfiguredFeature<?, ?>> field32142;
 
    public BiomeGenerationSettings(
-           Supplier<Class9319<?>> var1,
+           Supplier<ConfiguredSurfaceBuilder<?>> var1,
            Map<GenerationStageCarving, List<Supplier<ConfiguredCarver<?>>>> var2,
            List<List<Supplier<ConfiguredFeature<?, ?>>>> var3,
            List<Supplier<StructureFeature<?, ?>>> var4
@@ -64,7 +66,7 @@ public class BiomeGenerationSettings {
          .flatMap(Collection::stream)
          .map(Supplier::get)
          .<ConfiguredFeature<?, ?>>flatMap(ConfiguredFeature::method26522)
-         .filter(var0 -> var0.field33886 == Class2898.field17938)
+         .filter(var0 -> var0.feature == Class2898.field17938)
          .collect(ImmutableList.toImmutableList());
    }
 
@@ -90,15 +92,15 @@ public class BiomeGenerationSettings {
       return this.field32142;
    }
 
-   public List<List<Supplier<ConfiguredFeature<?, ?>>>> method24281() {
+   public List<List<Supplier<ConfiguredFeature<?, ?>>>> getFeatures() {
       return this.field32140;
    }
 
-   public Supplier<Class9319<?>> method24282() {
+   public Supplier<ConfiguredSurfaceBuilder<?>> getSurfaceBuilder() {
       return this.field32138;
    }
 
-   public Class8277 getSurfaceBuilderConfig() {
-      return this.field32138.get().method35211();
+   public ISurfaceBuilderConfig getSurfaceBuilderConfig() {
+      return this.field32138.get().getConfig();
    }
 }

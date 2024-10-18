@@ -4,6 +4,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.server.SMapDataPacket;
+import net.minecraft.world.storage.MapData;
 
 import javax.annotation.Nullable;
 
@@ -17,9 +18,9 @@ public class Class8541 {
    private int field38395;
    private int field38396;
    public int field38397;
-   public final Class7529 field38398;
+   public final MapData field38398;
 
-   public Class8541(Class7529 var1, PlayerEntity var2) {
+   public Class8541(MapData var1, PlayerEntity var2) {
       this.field38398 = var1;
       this.field38391 = true;
       this.field38394 = 127;

@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.util.math.BlockPos;
 
 public class Class4577 extends Class4566 {

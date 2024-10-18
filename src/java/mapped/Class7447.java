@@ -14,7 +14,7 @@ public final class Class7447 implements Class7443 {
       Biome var6 = Class9680.method37851(var2, var3);
       return Class9680.method37901() != null && var6 == BiomeUtils.SWAMP
          ? Class9680.method37901().method24070(var6, var3)
-         : var6.method32510((double)var3.getX(), (double)var3.getZ());
+         : var6.getGrassColor((double)var3.getX(), (double)var3.getZ());
    }
 
    @Override

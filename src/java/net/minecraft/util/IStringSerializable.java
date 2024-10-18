@@ -13,7 +13,7 @@ import java.util.function.ToIntFunction;
 public interface IStringSerializable {
    String getString();
 
-   static <E extends Enum<E> & IStringSerializable> Codec<E> method258(Supplier<E[]> var0, Function<? super String, ? extends E> var1) {
+   static <E extends Enum<E> & IStringSerializable> Codec<E> createEnumCodec(Supplier<E[]> var0, Function<? super String, ? extends E> var1) {
       Enum[] var4 = (Enum[])var0.get();
       return method259(Enum::ordinal, var1x -> (E)var4[var1x], var1);
    }

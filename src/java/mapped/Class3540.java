@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.world.ClientWorld;
+
 public class Class3540 implements Class3499<Class7435> {
    private static String[] field19451;
    private final Class8975 field19452;

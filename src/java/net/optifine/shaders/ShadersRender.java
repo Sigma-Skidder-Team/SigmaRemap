@@ -9,6 +9,7 @@ import com.mojang.blaze3d.platform.GlStateManager;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ActiveRenderInfo;
+import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.tileentity.TileEntity;
@@ -202,7 +203,7 @@ public class ShadersRender {
          double var16 = var12.getY();
          double var18 = var12.getZ();
          GlStateManager.matrixMode(5888);
-         GlStateManager.method23832();
+         GlStateManager.pushMatrix();
          GlStateManager.disableAlphaTest();
          var9.method880(Class9025.field41288, var10, var14, var16, var18);
          Shaders.method32984("shadow terrain solid");
@@ -216,8 +217,8 @@ public class ShadersRender {
          GlStateManager.shadeModel(7424);
          GlStateManager.alphaFunc(516, 0.1F);
          GlStateManager.matrixMode(5888);
-         GlStateManager.method23833();
-         GlStateManager.method23832();
+         GlStateManager.popMatrix();
+         GlStateManager.pushMatrix();
          var8.getProfiler().endStartSection("shadow entities");
          WorldRenderer var20 = var8.worldRenderer;
          EntityRendererManager var21 = var8.getRenderManager();
@@ -285,11 +286,11 @@ public class ShadersRender {
          var22.finish(Class8624.method30903());
          var22.finish(Class8624.method30904());
          var22.finish(Class8624.method30905());
-         var22.method25602();
+         var22.finish();
          Shaders.method33093();
          Shaders.method32984("shadow entities");
          GlStateManager.matrixMode(5888);
-         GlStateManager.method23833();
+         GlStateManager.popMatrix();
          GlStateManager.depthMask(true);
          GlStateManager.disableBlend();
          GlStateManager.method23879();
@@ -297,11 +298,11 @@ public class ShadersRender {
          GlStateManager.blendFuncSeparate(770, 771, 1, 0);
          GlStateManager.alphaFunc(516, 0.1F);
          if (Shaders.field40804 >= 2) {
-            GlStateManager.method23803(33989);
+            GlStateManager.activeTexture(33989);
             Shaders.method32984("pre copy shadow depth");
             GL11.glCopyTexSubImage2D(3553, 0, 0, 0, 0, 0, Shaders.field40785, Shaders.field40786);
             Shaders.method32984("copy shadow depth");
-            GlStateManager.method23803(33984);
+            GlStateManager.activeTexture(33984);
          }
 
          GlStateManager.disableBlend();
@@ -330,38 +331,38 @@ public class ShadersRender {
          if (Shaders.field40599) {
             if (Shaders.field40804 >= 1) {
                if (Shaders.field40858[0]) {
-                  GlStateManager.method23803(33988);
+                  GlStateManager.activeTexture(33988);
                   GlStateManager.bindTexture(Shaders.field40975.get(0));
                   GL30.glGenerateMipmap(3553);
                   GL30.glTexParameteri(3553, 10241, ! Shaders.field40859[0] ? 9987 : 9984);
                }
 
                if (Shaders.field40804 >= 2 && Shaders.field40858[1]) {
-                  GlStateManager.method23803(33989);
+                  GlStateManager.activeTexture(33989);
                   GlStateManager.bindTexture(Shaders.field40975.get(1));
                   GL30.glGenerateMipmap(3553);
                   GL30.glTexParameteri(3553, 10241, ! Shaders.field40859[1] ? 9987 : 9984);
                }
 
-               GlStateManager.method23803(33984);
+               GlStateManager.activeTexture(33984);
             }
 
             if (Shaders.field40803 >= 1) {
                if (Shaders.field40860[0]) {
-                  GlStateManager.method23803(33997);
+                  GlStateManager.activeTexture(33997);
                   GlStateManager.bindTexture(Shaders.field40974.get(0));
                   GL30.glGenerateMipmap(3553);
                   GL30.glTexParameteri(3553, 10241, ! Shaders.field40861[0] ? 9987 : 9984);
                }
 
                if (Shaders.field40803 >= 2 && Shaders.field40860[1]) {
-                  GlStateManager.method23803(33998);
+                  GlStateManager.activeTexture(33998);
                   GlStateManager.bindTexture(Shaders.field40974.get(1));
                   GL30.glGenerateMipmap(3553);
                   GL30.glTexParameteri(3553, 10241, ! Shaders.field40861[1] ? 9987 : 9984);
                }
 
-               GlStateManager.method23803(33984);
+               GlStateManager.activeTexture(33984);
             }
          }
 

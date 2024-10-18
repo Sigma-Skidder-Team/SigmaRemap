@@ -53,7 +53,7 @@ public class ShulkerInfo extends Module {
     @EventTarget
     public void method16671(Render3DEvent var1) {
         if (this.isEnabled()) {
-            RenderSystem.method27905(33986, 240.0F, 240.0F);
+            RenderSystem.glMultiTexCoord2f(33986, 240.0F, 240.0F);
 
             for (Entity var5 : MultiUtilities.getEntitesInWorld()) {
                 if (var5 instanceof ItemEntity) {
@@ -102,7 +102,7 @@ public class ShulkerInfo extends Module {
                 }
             }
 
-            RenderSystem.method27905(33986, 240.0F, 240.0F);
+            RenderSystem.glMultiTexCoord2f(33986, 240.0F, 240.0F);
             TextureImpl.method36180();
             TextureManager var10000 = mc.getTextureManager();
             mc.getTextureManager();

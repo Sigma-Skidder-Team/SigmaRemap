@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.FoliageColors;
 
 import java.io.IOException;
 
@@ -16,6 +17,6 @@ public class FoliageColorReloadListener extends Class269<int[]> {
    }
 
    public void method971(int[] var1, IResourceManager var2, IProfiler var3) {
-      Class9441.method36291(var1);
+      FoliageColors.method36291(var1);
    }
 }

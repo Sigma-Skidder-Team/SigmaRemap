@@ -224,11 +224,11 @@ public class Class9336 {
 
    public static void method35311(int var0, int var1) {
       if (Shaders.field40605 && GlStateManager.method23863() == 33984) {
-         GlStateManager.method23803(33985);
+         GlStateManager.activeTexture(33985);
          GlStateManager.bindTexture(var0);
-         GlStateManager.method23803(33987);
+         GlStateManager.activeTexture(33987);
          GlStateManager.bindTexture(var1);
-         GlStateManager.method23803(33984);
+         GlStateManager.activeTexture(33984);
       }
    }
 
@@ -238,11 +238,11 @@ public class Class9336 {
 
    public static void method35313(int var0, int var1, int var2) {
       if (Shaders.field40605 && GlStateManager.method23863() == 33984) {
-         GlStateManager.method23803(33985);
+         GlStateManager.activeTexture(33985);
          GlStateManager.bindTexture(var1);
-         GlStateManager.method23803(33987);
+         GlStateManager.activeTexture(33987);
          GlStateManager.bindTexture(var2);
-         GlStateManager.method23803(33984);
+         GlStateManager.activeTexture(33984);
       }
 
       GlStateManager.bindTexture(var0);
@@ -251,16 +251,16 @@ public class Class9336 {
    public static void method35314(Class9732 var0) {
       if (Shaders.field40605 && GlStateManager.method23863() == 33984) {
          if (Shaders.field40874) {
-            GlStateManager.method23803(33985);
+            GlStateManager.activeTexture(33985);
             GlStateManager.bindTexture(var0.field45440);
          }
 
          if (Shaders.field40875) {
-            GlStateManager.method23803(33987);
+            GlStateManager.activeTexture(33987);
             GlStateManager.bindTexture(var0.field45441);
          }
 
-         GlStateManager.method23803(33984);
+         GlStateManager.activeTexture(33984);
       }
 
       GlStateManager.bindTexture(var0.field45439);
@@ -649,7 +649,7 @@ public class Class9336 {
       GL11.glTexParameteri(3553, 10242, 10497);
       GL11.glTexParameteri(3553, 10243, 10497);
       GL11.glTexSubImage2D(3553, 0, var4, var5, var2, var3, 32993, 33639, var11);
-      GlStateManager.method23803(33984);
+      GlStateManager.activeTexture(33984);
    }
 
    public static ResourceLocation method35332(ResourceLocation var0, String var1) {

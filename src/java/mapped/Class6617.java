@@ -5,6 +5,8 @@ import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.suggestion.Suggestions;
 import com.mojang.brigadier.suggestion.SuggestionsBuilder;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.network.play.ClientPlayNetHandler;
+import net.minecraft.client.network.play.NetworkPlayerInfo;
 import net.minecraft.network.play.client.CTabCompletePacket;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -36,7 +38,7 @@ public class Class6617 implements Class6618 {
    public Collection<String> method20124() {
       ArrayList var3 = Lists.newArrayList();
 
-      for (Class6589 var5 : this.field29118.method15790()) {
+      for (NetworkPlayerInfo var5 : this.field29118.method15790()) {
          var3.add(var5.method19966().getName());
       }
 

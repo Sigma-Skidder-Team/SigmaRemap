@@ -16,6 +16,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
@@ -144,7 +145,7 @@ public class Class8969 {
 
    public List<Class8266> method32894(BlockPos var1, Class9463 var2, Block var3, boolean var4) {
       ArrayList var7 = Lists.newArrayList();
-      Class9764 var8 = var2.method36441();
+      MutableBoundingBox var8 = var2.method36441();
       if (this.field40545.isEmpty()) {
          return Collections.<Class8266>emptyList();
       } else {
@@ -187,7 +188,7 @@ public class Class8969 {
             && this.field40547.getX() >= 1
             && this.field40547.getY() >= 1
             && this.field40547.getZ() >= 1) {
-            Class9764 var10 = var4.method36441();
+            MutableBoundingBox var10 = var4.method36441();
             List<BlockPos> var11 = Lists.newArrayListWithCapacity(!var4.method36445() ? 0 : var9.size());
             List<Pair> var12 = Lists.newArrayListWithCapacity(var9.size());
             int var13 = Integer.MAX_VALUE;
@@ -360,7 +361,7 @@ public class Class8969 {
       return var7;
    }
 
-   private void method32902(Class1659 var1, BlockPos var2, Mirror var3, Rotation var4, BlockPos var5, Class9764 var6, boolean var7) {
+   private void method32902(Class1659 var1, BlockPos var2, Mirror var3, Rotation var4, BlockPos var5, MutableBoundingBox var6, boolean var7) {
       for (Class9559 var11 : this.field40546) {
          BlockPos var12 = method32905(var11.field44528, var3, var4, var5).method8337(var2);
          if (var6 == null || var6.method38396(var12)) {
@@ -492,30 +493,30 @@ public class Class8969 {
       return var9;
    }
 
-   public Class9764 method32909(Class9463 var1, BlockPos var2) {
+   public MutableBoundingBox method32909(Class9463 var1, BlockPos var2) {
       return this.method32910(var2, var1.method36437(), var1.method36438(), var1.method36436());
    }
 
-   public Class9764 method32910(BlockPos var1, Rotation var2, BlockPos var3, Mirror var4) {
+   public MutableBoundingBox method32910(BlockPos var1, Rotation var2, BlockPos var3, Mirror var4) {
       BlockPos var7 = this.method32904(var2);
       int var8 = var3.getX();
       int var9 = var3.getZ();
       int var10 = var7.getX() - 1;
       int var11 = var7.getY() - 1;
       int var12 = var7.getZ() - 1;
-      Class9764 var13 = new Class9764(0, 0, 0, 0, 0, 0);
+      MutableBoundingBox var13 = new MutableBoundingBox(0, 0, 0, 0, 0, 0);
       switch (Class9051.field41436[var2.ordinal()]) {
          case 1:
-            var13 = new Class9764(var8 - var9, 0, var8 + var9 - var12, var8 - var9 + var10, var11, var8 + var9);
+            var13 = new MutableBoundingBox(var8 - var9, 0, var8 + var9 - var12, var8 - var9 + var10, var11, var8 + var9);
             break;
          case 2:
-            var13 = new Class9764(var8 + var9 - var10, 0, var9 - var8, var8 + var9, var11, var9 - var8 + var12);
+            var13 = new MutableBoundingBox(var8 + var9 - var10, 0, var9 - var8, var8 + var9, var11, var9 - var8 + var12);
             break;
          case 3:
-            var13 = new Class9764(var8 + var8 - var10, 0, var9 + var9 - var12, var8 + var8, var11, var9 + var9);
+            var13 = new MutableBoundingBox(var8 + var8 - var10, 0, var9 + var9 - var12, var8 + var8, var11, var9 + var9);
             break;
          case 4:
-            var13 = new Class9764(0, 0, 0, var10, var11, var12);
+            var13 = new MutableBoundingBox(0, 0, 0, var10, var11, var12);
       }
 
       switch (Class9051.field41437[var4.ordinal()]) {
@@ -531,7 +532,7 @@ public class Class8969 {
       return var13;
    }
 
-   private void method32911(Rotation var1, int var2, int var3, Class9764 var4, Direction var5, Direction var6) {
+   private void method32911(Rotation var1, int var2, int var3, MutableBoundingBox var4, Direction var5, Direction var6) {
       BlockPos var9 = BlockPos.ZERO;
       if (var1 == Rotation.CLOCKWISE_90 || var1 == Rotation.COUNTERCLOCKWISE_90) {
          var9 = var9.method8350(var1.rotate(var5), var3);

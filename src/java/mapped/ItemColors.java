@@ -9,6 +9,7 @@ import net.minecraft.util.IItemProvider;
 import net.minecraft.util.ObjectIntIdentityMap;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.GrassColors;
 import net.minecraft.world.IBlockDisplayReader;
 
 public class ItemColors {
@@ -24,7 +25,7 @@ public class ItemColors {
          Items.field37847,
          Items.field38086
       );
-      var3.method33259((var0x, var1) -> Class6406.method19509(0.5, 1.0), Blocks.TALL_GRASS, Blocks.field36802);
+      var3.method33259((var0x, var1) -> GrassColors.get(0.5, 1.0), Blocks.TALL_GRASS, Blocks.field36802);
       var3.method33259((var0x, var1) -> {
          if (var1 != 1) {
             return -1;

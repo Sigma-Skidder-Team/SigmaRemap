@@ -1,7 +1,7 @@
 package net.minecraft.client.particle;
 
 import mapped.Class4588;
-import mapped.ClientWorld;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.Entity;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.util.math.vector.Vector3d;

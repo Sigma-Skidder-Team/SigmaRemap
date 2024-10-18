@@ -108,7 +108,7 @@ public final class Quaternion {
       return this.field39034;
    }
 
-   public void method31182(Quaternion var1) {
+   public void multiply(Quaternion var1) {
       float var4 = this.method31178();
       float var5 = this.method31179();
       float var6 = this.method31180();
@@ -130,7 +130,7 @@ public final class Quaternion {
       this.field39034 *= var1;
    }
 
-   public void method31184() {
+   public void conjugate() {
       this.field39031 = -this.field39031;
       this.field39032 = -this.field39032;
       this.field39033 = -this.field39033;

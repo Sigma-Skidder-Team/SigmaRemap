@@ -13,6 +13,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.math.vector.Vector3f;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.storage.MapData;
 import net.optifine.Config;
 import net.optifine.reflect.ReflectorForge;
 import net.optifine.shaders.Shaders;
@@ -83,7 +84,7 @@ public class Class5736 extends EntityRenderer<ItemFrameEntity> {
                float var17 = 0.0078125F;
                var4.scale(0.0078125F, 0.0078125F, 0.0078125F);
                var4.translate(-64.0, -64.0, 0.0);
-               Class7529 var18 = ReflectorForge.method37048(var19, var1.world);
+               MapData var18 = ReflectorForge.method37048(var19, var1.world);
                var4.translate(0.0, 0.0, -1.0);
                if (var18 != null) {
                   this.field25155.gameRenderer.method756().method593(var4, var5, var18, true, var6);

@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Sets;
 import com.google.common.collect.UnmodifiableIterator;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -294,7 +295,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
    private void method4985() {
       if (this.isInLava()) {
          ISelectionContext var3 = ISelectionContext.forEntity(this);
-         if (var3.method14950(Class3404.field19082, this.getPosition(), true)
+         if (var3.method14950(FlowingFluidBlock.field19082, this.getPosition(), true)
             && !this.world.getFluidState(this.getPosition().up()).method23486(FluidTags.field40470)) {
             this.onGround = true;
          } else {

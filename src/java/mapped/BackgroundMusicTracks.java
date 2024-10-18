@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.audio.BackgroundMusicSelector;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 

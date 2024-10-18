@@ -66,7 +66,7 @@ public class Class1195 extends AbstractGui implements Class1196 {
          this.method5722(var1, var8, this.field6471.getMainWindow().getScaledWidth() / 2 - 90 + var8 * 20 + 2, (float)(var4 + 3), var2, var5.method30461(var8));
       }
 
-      RenderSystem.method27868();
+      RenderSystem.disableRescaleNormal();
       RenderSystem.disableBlend();
    }
 

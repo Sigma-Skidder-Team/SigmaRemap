@@ -107,7 +107,7 @@ public class Class4366 extends Class4247 {
          (float)(this.getYA() + this.getHeightA()),
          ClientColors.DEEP_TEAL.getColor
       );
-      if (this.method13114(this.method13309(), this.method13310()) && this.method13310() - this.method13272() < this.getHeightA()) {
+      if (this.method13114(this.getHeightO(), this.getWidthO()) && this.getWidthO() - this.method13272() < this.getHeightA()) {
          RenderUtil.method11428(
             (float)(this.getXA() + 1),
             (float)(this.getYA() + 1),

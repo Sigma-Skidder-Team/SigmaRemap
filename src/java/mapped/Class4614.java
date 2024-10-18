@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.world.ClientWorld;
+
 public class Class4614 extends Class4613 {
    private static String[] field22126;
 

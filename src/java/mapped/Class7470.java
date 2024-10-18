@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.world.ClientWorld;
 
 public interface Class7470 extends Class7471 {
    @Override

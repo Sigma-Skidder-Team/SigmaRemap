@@ -14,6 +14,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 import org.apache.commons.lang3.mutable.MutableObject;
@@ -45,7 +46,7 @@ public final class Class9777 {
       Class109 var11 = var8.method24382();
       boolean var12 = var11 == Class109.field367;
       MutableObject<VoxelShape> var13 = new MutableObject();
-      Class9764 var14 = var1.method12915();
+      MutableBoundingBox var14 = var1.method12915();
       int var15 = var14.field45679;
 
       label174:
@@ -91,7 +92,7 @@ public final class Class9777 {
 
                   for (Rotation var34 : Rotation.shuffledRotations(this.field45739)) {
                      List<Class8266> var35 = var32.method24374(this.field45737, BlockPos.ZERO, var34, this.field45739);
-                     Class9764 var36 = var32.method24375(this.field45737, BlockPos.ZERO, var34);
+                     MutableBoundingBox var36 = var32.method24375(this.field45737, BlockPos.ZERO, var34);
                      int var37;
                      if (var5 && var36.method38399() <= 16) {
                         var37 = var35.stream().mapToInt(var2x -> {
@@ -116,7 +117,7 @@ public final class Class9777 {
                            BlockPos var41 = new BlockPos(
                               var20.getX() - var40.getX(), var20.getY() - var40.getY(), var20.getZ() - var40.getZ()
                            );
-                           Class9764 var42 = var32.method24375(this.field45737, var41, var34);
+                           MutableBoundingBox var42 = var32.method24375(this.field45737, var41, var34);
                            int var43 = var42.field45679;
                            Class109 var44 = var32.method24382();
                            boolean var45 = var44 == Class109.field367;
@@ -134,7 +135,7 @@ public final class Class9777 {
                            }
 
                            int var49 = var48 - var43;
-                           Class9764 var50 = var42.method38394(0, var49, 0);
+                           MutableBoundingBox var50 = var42.method38394(0, var49, 0);
                            BlockPos var51 = var41.add(0, var49, 0);
                            if (var37 > 0) {
                               int var52 = Math.max(var37 + 1, var50.field45682 - var50.field45679);

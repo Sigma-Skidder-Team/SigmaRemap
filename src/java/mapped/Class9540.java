@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.renderer.texture.NativeImage;
+import net.minecraft.client.world.ClientWorld;
 
 public class Class9540 {
    private static String[] field44420;

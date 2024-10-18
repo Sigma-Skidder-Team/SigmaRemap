@@ -37,7 +37,7 @@ public class Class134 extends Class128 {
       } else {
          boolean var7 = var1.getItem() == Items.field37900;
          List var8 = Registry.ENCHANTMENT
-            .method9192()
+            .stream()
             .filter(Enchantment::method18827)
             .filter(var2x -> var7 || var2x.method18821(var1))
             .collect(Collectors.toList());

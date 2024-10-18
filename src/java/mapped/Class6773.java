@@ -9,12 +9,14 @@ import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.gen.PerlinNoiseGenerator;
+import net.minecraft.world.gen.surfacebuilders.ISurfaceBuilderConfig;
 
 import java.util.Arrays;
 import java.util.Random;
 import java.util.stream.IntStream;
 
-public class Class6773 extends Class6768<Class8278> {
+public class Class6773 extends SurfaceBuilder<Class8278> {
    private static final BlockState field29495 = Blocks.field36730.getDefaultState();
    private static final BlockState field29549 = Blocks.field36731.getDefaultState();
    private static final BlockState field29550 = Blocks.field36794.getDefaultState();
@@ -24,15 +26,15 @@ public class Class6773 extends Class6768<Class8278> {
    private static final BlockState field29554 = Blocks.field36738.getDefaultState();
    public BlockState[] field29555;
    public long field29556;
-   public Class7691 field29557;
-   public Class7691 field29558;
-   public Class7691 field29559;
+   public PerlinNoiseGenerator field29557;
+   public PerlinNoiseGenerator field29558;
+   public PerlinNoiseGenerator field29559;
 
    public Class6773(Codec<Class8278> var1) {
       super(var1);
    }
 
-   public void method20654(
+   public void buildSurface(
       Random var1,
       IChunk var2,
       Biome var3,
@@ -49,7 +51,7 @@ public class Class6773 extends Class6768<Class8278> {
       int var17 = var4 & 15;
       int var18 = var5 & 15;
       BlockState var19 = field29495;
-      Class8277 var20 = var3.getGenerationSettings().getSurfaceBuilderConfig();
+      ISurfaceBuilderConfig var20 = var3.getGenerationSettings().getSurfaceBuilderConfig();
       BlockState var21 = var20.method28935();
       BlockState var22 = var20.getTop();
       BlockState var23 = var21;
@@ -147,8 +149,8 @@ public class Class6773 extends Class6768<Class8278> {
 
       if (this.field29556 != var1 || this.field29557 == null || this.field29558 == null) {
          SharedSeedRandom var5 = new SharedSeedRandom(var1);
-         this.field29557 = new Class7691(var5, IntStream.rangeClosed(-3, 0));
-         this.field29558 = new Class7691(var5, ImmutableList.of(0));
+         this.field29557 = new PerlinNoiseGenerator(var5, IntStream.rangeClosed(-3, 0));
+         this.field29558 = new PerlinNoiseGenerator(var5, ImmutableList.of(0));
       }
 
       this.field29556 = var1;
@@ -158,7 +160,7 @@ public class Class6773 extends Class6768<Class8278> {
       this.field29555 = new BlockState[64];
       Arrays.fill(this.field29555, field29550);
       SharedSeedRandom var5 = new SharedSeedRandom(var1);
-      this.field29559 = new Class7691(var5, ImmutableList.of(0));
+      this.field29559 = new PerlinNoiseGenerator(var5, ImmutableList.of(0));
 
       for (int var14 = 0; var14 < 64; var14++) {
          var14 += var5.nextInt(5) + 1;
@@ -221,7 +223,7 @@ public class Class6773 extends Class6768<Class8278> {
    }
 
    public BlockState method20660(int var1, int var2, int var3) {
-      int var6 = (int)Math.round(this.field29559.method25315((double)var1 / 512.0, (double)var3 / 512.0, false) * 2.0);
+      int var6 = (int)Math.round(this.field29559.noiseAt((double)var1 / 512.0, (double)var3 / 512.0, false) * 2.0);
       return this.field29555[(var2 + var6 + 64) % 64];
    }
 }

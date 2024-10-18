@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.MutableBoundingBox;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -264,7 +265,7 @@ public abstract class Class4167 extends Class4178 {
       return null;
    }
 
-   public static boolean method12904(Class9764 var0) {
+   public static boolean method12904(MutableBoundingBox var0) {
       return var0 != null && var0.field45679 > 10;
    }
 }

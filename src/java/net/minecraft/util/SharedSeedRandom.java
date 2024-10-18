@@ -40,7 +40,7 @@ public class SharedSeedRandom extends Random {
       return var11;
    }
 
-   public long method10372(long var1, int var3, int var4) {
+   public long setFeatureSeed(long var1, int var3, int var4) {
       long var7 = var1 + (long)var3 + (long)(10000 * var4);
       this.setSeed(var7);
       return var7;

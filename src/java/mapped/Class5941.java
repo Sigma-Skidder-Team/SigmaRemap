@@ -4,6 +4,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.state.properties.StructureMode;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;

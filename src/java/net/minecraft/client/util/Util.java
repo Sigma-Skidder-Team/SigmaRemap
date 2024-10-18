@@ -254,7 +254,7 @@ public class Util {
       return (T)var5;
    }
 
-   public static <T> T method38507(Supplier<T> var0) {
+   public static <T> T make(Supplier<T> var0) {
       return (T)var0.get();
    }
 

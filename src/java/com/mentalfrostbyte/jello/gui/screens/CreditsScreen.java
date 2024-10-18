@@ -75,8 +75,8 @@ public class CreditsScreen extends Screen {
    }
 
    private void method13416() {
-      int var3 = this.method13309() * -1;
-      float var4 = (float)this.method13310() / (float)this.getWidthA() * -114.0F;
+      int var3 = this.getHeightO() * -1;
+      float var4 = (float)this.getWidthO() / (float)this.getWidthA() * -114.0F;
       if (this.field21075) {
          this.field21073 = (int)var4;
          this.field21074 = var3;

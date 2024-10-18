@@ -243,7 +243,7 @@ public class Class7720 {
       if (!(var12 < 1.0E-4F)) {
          GlStateManager.bindTexture(this.field33147);
          Class6988.method21638(this.field33134, var12);
-         GlStateManager.method23832();
+         GlStateManager.pushMatrix();
          GlStateManager.multMatrix(var2.getLast().getMatrix());
          if (this.field33135) {
             float var13 = 0.0F;
@@ -254,28 +254,28 @@ public class Class7720 {
                var13 = (float)(var18 % 1.0);
             }
 
-            GlStateManager.method23836(360.0F * (var13 + var4 * this.field33136), this.field33137[0], this.field33137[1], this.field33137[2]);
+            GlStateManager.rotatef(360.0F * (var13 + var4 * this.field33136), this.field33137[0], this.field33137[1], this.field33137[2]);
          }
 
          Tessellator var21 = Tessellator.getInstance();
-         GlStateManager.method23836(90.0F, 1.0F, 0.0F, 0.0F);
-         GlStateManager.method23836(-90.0F, 0.0F, 0.0F, 1.0F);
+         GlStateManager.rotatef(90.0F, 1.0F, 0.0F, 0.0F);
+         GlStateManager.rotatef(-90.0F, 0.0F, 0.0F, 1.0F);
          this.method25518(var21, 4);
-         GlStateManager.method23832();
-         GlStateManager.method23836(90.0F, 1.0F, 0.0F, 0.0F);
+         GlStateManager.pushMatrix();
+         GlStateManager.rotatef(90.0F, 1.0F, 0.0F, 0.0F);
          this.method25518(var21, 1);
-         GlStateManager.method23833();
-         GlStateManager.method23832();
-         GlStateManager.method23836(-90.0F, 1.0F, 0.0F, 0.0F);
+         GlStateManager.popMatrix();
+         GlStateManager.pushMatrix();
+         GlStateManager.rotatef(-90.0F, 1.0F, 0.0F, 0.0F);
          this.method25518(var21, 0);
-         GlStateManager.method23833();
-         GlStateManager.method23836(90.0F, 0.0F, 0.0F, 1.0F);
+         GlStateManager.popMatrix();
+         GlStateManager.rotatef(90.0F, 0.0F, 0.0F, 1.0F);
          this.method25518(var21, 5);
-         GlStateManager.method23836(90.0F, 0.0F, 0.0F, 1.0F);
+         GlStateManager.rotatef(90.0F, 0.0F, 0.0F, 1.0F);
          this.method25518(var21, 2);
-         GlStateManager.method23836(90.0F, 0.0F, 0.0F, 1.0F);
+         GlStateManager.rotatef(90.0F, 0.0F, 0.0F, 1.0F);
          this.method25518(var21, 3);
-         GlStateManager.method23833();
+         GlStateManager.popMatrix();
       }
    }
 

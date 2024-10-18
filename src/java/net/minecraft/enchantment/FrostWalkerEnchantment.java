@@ -1,6 +1,6 @@
 package net.minecraft.enchantment;
 
-import mapped.Class3404;
+import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -51,7 +51,7 @@ public class FrostWalkerEnchantment extends Enchantment {
                if (var11.isAir()) {
                   BlockState var12 = var1.getBlockState(var10);
                   if (var12.getMaterial() == Material.field38941
-                     && var12.<Integer>get(Class3404.field19079) == 0
+                     && var12.<Integer>get(FlowingFluidBlock.field19079) == 0
                      && var6.isValidPosition(var1, var10)
                      && var1.placedBlockCollides(var6, var10, ISelectionContext.method14947())) {
                      var1.setBlockState(var10, var6);

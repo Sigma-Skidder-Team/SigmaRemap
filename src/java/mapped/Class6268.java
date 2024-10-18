@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.biome.Biome;
 import net.optifine.util.BiomeUtils;
 
 import java.util.HashMap;
@@ -41,19 +42,19 @@ public class Class6268 implements Class6267 {
          this.method19237(var7, var9);
       }
 
-      Class100[] var14 = Class100.values();
+      Biome.Category[] var14 = Biome.Category.values();
 
       for (int var16 = 0; var16 < var14.length; var16++) {
-         Class100 var19 = var14[var16];
+         Biome.Category var19 = var14[var16];
          String var21 = "CAT_" + var19.getString().toUpperCase();
          Class1888 var23 = new Class1888((float)var16);
          this.method19237(var21, var23);
       }
 
-      Class87[] var17 = Class87.values();
+      Biome.RainType[] var17 = Biome.RainType.values();
 
       for (int var20 = 0; var20 < var17.length; var20++) {
-         Class87 var22 = var17[var20];
+         Biome.RainType var22 = var17[var20];
          String var24 = "PPT_" + var22.getString().toUpperCase();
          Class1888 var10 = new Class1888((float)var20);
          this.method19237(var24, var10);

@@ -6,6 +6,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.gen.feature.structure.ShipwreckPieces;
 import net.minecraft.world.gen.feature.structure.StructureManager;
@@ -54,7 +55,7 @@ public class Class4181 extends Class4180 {
    }
 
    @Override
-   public void method12944(String var1, BlockPos var2, Class1659 var3, Random var4, Class9764 var5) {
+   public void method12944(String var1, BlockPos var2, Class1659 var3, Random var4, MutableBoundingBox var5) {
       if (!"map_chest".equals(var1)) {
          if (!"treasure_chest".equals(var1)) {
             if ("supply_chest".equals(var1)) {
@@ -69,7 +70,7 @@ public class Class4181 extends Class4180 {
    }
 
    @Override
-   public boolean method12896(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, MutableBoundingBox var5, ChunkPos var6, BlockPos var7) {
       int var10 = 256;
       int var11 = 0;
       BlockPos var12 = this.field20453.method32886();

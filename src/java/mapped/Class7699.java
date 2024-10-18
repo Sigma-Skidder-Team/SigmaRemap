@@ -343,7 +343,7 @@ public class Class7699 {
    }
 
    private void method25404() {
-      Stream<SectionPos> var3 = SectionPos.method8427(SectionPos.method8390(this.field32977), 2);
+      Stream<SectionPos> var3 = SectionPos.method8427(SectionPos.from(this.field32977), 2);
       var3.filter(this.field32978::method6953)
          .map(SectionPos::method8422)
          .min(Comparator.comparingDouble(var1 -> var1.distanceSq(this.field32977)))

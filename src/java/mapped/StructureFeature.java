@@ -16,7 +16,7 @@ import java.util.function.Supplier;
 public class StructureFeature<FC extends Class4698, F extends Structure<FC>> {
    public static final Codec<StructureFeature<?, ?>> field43171 = Registry.STRUCTURE_FEATURE.dispatch(var0 -> var0.field_236268_b_, Structure::method11367);
    public static final Codec<Supplier<StructureFeature<?, ?>>> field43172 = RegistryKeyCodec.create(Registry.field16103, field43171);
-   public static final Codec<List<Supplier<StructureFeature<?, ?>>>> field43173 = RegistryKeyCodec.<StructureFeature<?, ?>>method33672(Registry.field16103, field43171);
+   public static final Codec<List<Supplier<StructureFeature<?, ?>>>> field43173 = RegistryKeyCodec.<StructureFeature<?, ?>>getValueCodecs(Registry.field16103, field43171);
    public final F field_236268_b_;
    public final FC field43175;
 

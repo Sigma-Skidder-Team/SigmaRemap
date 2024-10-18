@@ -10,6 +10,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.ITickList;
 import net.minecraft.world.server.ServerWorld;
 
@@ -104,10 +105,10 @@ public class Class6805<T> implements ITickList<T> {
       int var7 = var6 + 16 + 2;
       int var8 = (var1.z << 4) - 2;
       int var9 = var8 + 16 + 2;
-      return this.method20730(new Class9764(var6, 0, var8, var7, 256, var9), var2, var3);
+      return this.method20730(new MutableBoundingBox(var6, 0, var8, var7, 256, var9), var2, var3);
    }
 
-   public List<Class8269<T>> method20730(Class9764 var1, boolean var2, boolean var3) {
+   public List<Class8269<T>> method20730(MutableBoundingBox var1, boolean var2, boolean var3) {
       List var6 = this.method20731((List<Class8269<T>>)null, this.field29622, var1, var2);
       if (var2 && var6 != null) {
          this.field29621.removeAll(var6);
@@ -122,7 +123,7 @@ public class Class6805<T> implements ITickList<T> {
    }
 
    @Nullable
-   private List<Class8269<T>> method20731(List<Class8269<T>> var1, Collection<Class8269<T>> var2, Class9764 var3, boolean var4) {
+   private List<Class8269<T>> method20731(List<Class8269<T>> var1, Collection<Class8269<T>> var2, MutableBoundingBox var3, boolean var4) {
       Iterator var7 = var2.iterator();
 
       while (var7.hasNext()) {
@@ -147,7 +148,7 @@ public class Class6805<T> implements ITickList<T> {
       return (List<Class8269<T>>)var1;
    }
 
-   public void method20732(Class9764 var1, BlockPos var2) {
+   public void method20732(MutableBoundingBox var1, BlockPos var2) {
       for (Class8269 var6 : this.method20730(var1, false, false)) {
          if (var1.method38396(var6.field35556)) {
             BlockPos var7 = var6.field35556.method8337(var2);

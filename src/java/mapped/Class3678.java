@@ -28,7 +28,7 @@ public class Class3678 extends Class3676<Class1042> {
          MinecraftServer var8 = var1.getServer();
          Optional.<ServerWorld>ofNullable(var8.method1318(var7.method35578()))
             .<Class4913>flatMap(var1x -> var1x.method6951().method6676(var7.method35579()))
-            .<Class8395>flatMap(var0 -> Registry.field16090.method9192().filter(var1x -> var1x.method29457() == var0).findFirst())
+            .<Class8395>flatMap(var0 -> Registry.field16090.stream().filter(var1x -> var1x.method29457() == var0).findFirst())
             .ifPresent(var2x -> {
                var2.method4695(var2.method4674().method26574(var2x));
                var2.method4677(var1);

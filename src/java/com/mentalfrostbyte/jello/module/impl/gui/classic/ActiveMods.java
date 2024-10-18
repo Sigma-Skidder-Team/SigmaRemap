@@ -107,7 +107,7 @@ public class ActiveMods extends Module {
                         }
                     }
 
-                    RenderSystem.method27891();
+                    RenderSystem.clearCurrentColor();
                     RenderSystem.enableBlend();
                     if (var4.equalsIgnoreCase("Slide") || var4.equalsIgnoreCase("Both")) {
                         GL11.glTranslated((float) var19 * QuadraticEasing.easeOutQuad(var15.calcPercent(), 0.0F, 1.0F, 1.0F), 0.0, 0.0);

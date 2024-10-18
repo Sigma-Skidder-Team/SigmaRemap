@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.world.ClientWorld;
+
 import java.util.Random;
 
 public class Class4572 extends Class4566 {

@@ -1,7 +1,10 @@
 package mapped;
 
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
+import net.minecraft.client.renderer.WorldRenderer;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.passive.ShoulderRidingEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.tileentity.TileEntity;
@@ -45,21 +48,21 @@ public class Class9387 {
          EntityDataManager var4 = var0.getDataManager();
          var4.field43438 = var0.getPosition();
          var4.field43437 = var1.getBiome(var4.field43438);
-         if (var0 instanceof Class1014) {
-            Class1014 var5 = (Class1014)var0;
+         if (var0 instanceof ShoulderRidingEntity) {
+            ShoulderRidingEntity var5 = (ShoulderRidingEntity)var0;
             method35631(var5, false);
          }
       }
    }
 
    public static void method35630(Entity var0, World var1) {
-      if (var0 instanceof Class1014) {
-         Class1014 var4 = (Class1014)var0;
+      if (var0 instanceof ShoulderRidingEntity) {
+         ShoulderRidingEntity var4 = (ShoulderRidingEntity)var0;
          method35631(var4, true);
       }
    }
 
-   private static void method35631(Class1014 var0, boolean var1) {
+   private static void method35631(ShoulderRidingEntity var0, boolean var1) {
       Object var4 = var0.method4400();
       if (var4 == null) {
          var4 = Config.method26860().player;
@@ -70,28 +73,28 @@ public class Class9387 {
          UUID var6 = var0.getUniqueID();
          if (!var1) {
             EntityDataManager var7 = var0.getDataManager();
-            if (var5.field6105 != null && Config.equals(var5.field6105.getUniqueID(), var6)) {
-               EntityDataManager var8 = var5.field6105.getDataManager();
+            if (var5.entityShoulderLeft != null && Config.equals(var5.entityShoulderLeft.getUniqueID(), var6)) {
+               EntityDataManager var8 = var5.entityShoulderLeft.getDataManager();
                var7.field43438 = var8.field43438;
                var7.field43437 = var8.field43437;
-               var5.field6105 = null;
+               var5.entityShoulderLeft = null;
             }
 
-            if (var5.field6106 != null && Config.equals(var5.field6106.getUniqueID(), var6)) {
-               EntityDataManager var10 = var5.field6106.getDataManager();
+            if (var5.entityShoulderRight != null && Config.equals(var5.entityShoulderRight.getUniqueID(), var6)) {
+               EntityDataManager var10 = var5.entityShoulderRight.getDataManager();
                var7.field43438 = var10.field43438;
                var7.field43437 = var10.field43437;
-               var5.field6106 = null;
+               var5.entityShoulderRight = null;
             }
          } else {
             CompoundNBT var9 = var5.method2969();
             if (var9 != null && var9.contains("UUID") && Config.equals(var9.method105("UUID"), var6)) {
-               var5.field6105 = var0;
+               var5.entityShoulderLeft = var0;
             }
 
             CompoundNBT var11 = var5.method2971();
             if (var11 != null && var11.contains("UUID") && Config.equals(var11.method105("UUID"), var6)) {
-               var5.field6106 = var0;
+               var5.entityShoulderRight = var0;
             }
          }
       }

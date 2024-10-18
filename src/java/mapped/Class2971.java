@@ -6,12 +6,13 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.MobSpawnInfo;
 import net.minecraft.world.biome.provider.BiomeProvider;
 
 import java.util.List;
 
 public class Class2971 extends Structure<Class4712> {
-   private static final List<MobSpawnInfoSpawners> field18085 = ImmutableList.of(new MobSpawnInfoSpawners(EntityType.GUARDIAN, 1, 2, 4));
+   private static final List<MobSpawnInfo.Spawners> field18085 = ImmutableList.of(new MobSpawnInfo.Spawners(EntityType.GUARDIAN, 1, 2, 4));
 
    public Class2971(Codec<Class4712> var1) {
       super(var1);
@@ -30,7 +31,7 @@ public class Class2971 extends Structure<Class4712> {
       }
 
       for (Biome var16 : var2.method7202(var6 * 16 + 9, var1.func_230356_f_(), var7 * 16 + 9, 29)) {
-         if (var16.getCategory() != Class100.OCEAN && var16.getCategory() != Class100.RIVER) {
+         if (var16.getCategory() != Biome.Category.OCEAN && var16.getCategory() != Biome.Category.RIVER) {
             return false;
          }
       }
@@ -44,7 +45,7 @@ public class Class2971 extends Structure<Class4712> {
    }
 
    @Override
-   public List<MobSpawnInfoSpawners> method11374() {
+   public List<MobSpawnInfo.Spawners> method11374() {
       return field18085;
    }
 }

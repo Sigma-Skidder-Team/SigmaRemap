@@ -32,7 +32,7 @@ public class Class7887 extends Class7882<MobEntity> {
          this.field33838 = var1.getGameTime() + (long)var1.method6814().nextInt(20);
          Class1653 var5 = var1.method6951();
          Predicate<BlockPos> var6 = var1x -> {
-            long var4 = var1x.method8332();
+            long var4 = var1x.toLong();
             if (!this.field33836.containsKey(var4)) {
                if (++this.field33837 < 5) {
                   this.field33836.put(var4, this.field33838 + 40L);

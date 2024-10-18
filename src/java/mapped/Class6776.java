@@ -7,12 +7,12 @@ import net.minecraft.world.chunk.IChunk;
 
 import java.util.Random;
 
-public class Class6776 extends Class6768<Class8278> {
+public class Class6776 extends SurfaceBuilder<Class8278> {
    public Class6776(Codec<Class8278> var1) {
       super(var1);
    }
 
-   public void method20654(
+   public void buildSurface(
       Random var1,
       IChunk var2,
       Biome var3,
@@ -27,11 +27,11 @@ public class Class6776 extends Class6768<Class8278> {
       Class8278 var14
    ) {
       if (var7 < -1.0 || var7 > 2.0) {
-         Class6768.field29523.method20654(var1, var2, var3, var4, var5, var6, var7, var9, var10, var11, var12, Class6768.field29508);
+         SurfaceBuilder.field29523.buildSurface(var1, var2, var3, var4, var5, var6, var7, var9, var10, var11, var12, SurfaceBuilder.field29508);
       } else if (!(var7 > 1.0)) {
-         Class6768.field29523.method20654(var1, var2, var3, var4, var5, var6, var7, var9, var10, var11, var12, Class6768.field29509);
+         SurfaceBuilder.field29523.buildSurface(var1, var2, var3, var4, var5, var6, var7, var9, var10, var11, var12, SurfaceBuilder.field29509);
       } else {
-         Class6768.field29523.method20654(var1, var2, var3, var4, var5, var6, var7, var9, var10, var11, var12, Class6768.field29510);
+         SurfaceBuilder.field29523.buildSurface(var1, var2, var3, var4, var5, var6, var7, var9, var10, var11, var12, SurfaceBuilder.field29510);
       }
    }
 }

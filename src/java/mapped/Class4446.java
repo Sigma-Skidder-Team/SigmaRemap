@@ -51,7 +51,7 @@ public class Class4446 implements Class4442 {
       Consumer<Item> var10 = var8::add;
       new Class9407(var6, var9, var10).method35961();
       new Class7810(var9).method26077();
-      List<Block> var11 = Registry.BLOCK.method9192().filter(var1x -> !var5.containsKey(var1x)).collect(Collectors.toList());
+      List<Block> var11 = Registry.BLOCK.stream().filter(var1x -> !var5.containsKey(var1x)).collect(Collectors.toList());
       if (var11.isEmpty()) {
          Registry.BLOCK.forEach(var2 -> {
             Item var5x = Item.field18732.get(var2);

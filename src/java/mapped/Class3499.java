@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.particles.IParticleData;
 
 import javax.annotation.Nullable;

@@ -26,7 +26,7 @@ public class Class2742 extends Class2736 {
    public Vector3d method10943() {
       ServerWorld var3 = (ServerWorld)this.field17258.world;
       BlockPos var4 = this.field17258.getPosition();
-      SectionPos var5 = SectionPos.method8390(var4);
+      SectionPos var5 = SectionPos.from(var4);
       SectionPos var6 = Class6983.method21579(var3, var5, 2);
       return var6 == var5 ? null : Class8037.method27587(this.field17258, 10, 7, Vector3d.method11330(var6.method8422()));
    }

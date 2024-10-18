@@ -18,6 +18,7 @@ import net.minecraft.util.HandSide;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3f;
+import net.minecraft.world.storage.MapData;
 import net.optifine.Config;
 import net.optifine.shaders.Shaders;
 
@@ -127,7 +128,7 @@ public class FirstPersonRenderer {
       var1.scale(0.38F, 0.38F, 0.38F);
       var1.translate(-0.5, -0.5, 0.0);
       var1.scale(0.0078125F, 0.0078125F, 0.0078125F);
-      Class7529 var7 = Class3316.method11861(var4, this.mc.world);
+      MapData var7 = Class3316.method11861(var4, this.mc.world);
       IVertexBuilder var8 = var2.method25597(var7 != null ? field45077 : field45076);
       Matrix4f var9 = var1.getLast().getMatrix();
       var8.pos(var9, -7.0F, 135.0F, 0.0F).color(255, 255, 255, 255).tex(0.0F, 1.0F).method17034(var3).endVertex();
@@ -253,7 +254,7 @@ public class FirstPersonRenderer {
          }
       }
 
-      var3.method25602();
+      var3.finish();
    }
 
    private void method37591(

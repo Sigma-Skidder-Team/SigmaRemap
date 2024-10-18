@@ -43,7 +43,7 @@ public class Class4370 extends Class4247 {
 
    @Override
    public void method13028(int var1, int var2) {
-      int var5 = this.method13309() - this.method13271();
+      int var5 = this.getHeightO() - this.method13271();
       if (this.field21364) {
          this.method13698((float)var5 / (float)this.getWidthA());
       }

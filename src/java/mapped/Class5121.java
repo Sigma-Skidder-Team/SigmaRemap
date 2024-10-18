@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
 

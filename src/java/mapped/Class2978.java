@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.biome.Biome;
 
@@ -36,10 +37,10 @@ public class Class2978 extends Structure<Class4726> {
    }
 
    private static boolean method11383(BlockPos var0, Biome var1) {
-      return var1.method32503(var0) < 0.15F;
+      return var1.getTemperature(var0) < 0.15F;
    }
 
-   private static int method11384(Random var0, ChunkGenerator var1, Class2219 var2, boolean var3, int var4, int var5, Class9764 var6) {
+   private static int method11384(Random var0, ChunkGenerator var1, Class2219 var2, boolean var3, int var4, int var5, MutableBoundingBox var6) {
       int var9;
       if (var2 != Class2219.field14499) {
          if (var2 != Class2219.field14497) {
@@ -114,7 +115,7 @@ public class Class2978 extends Structure<Class4726> {
    }
 
    // $VF: synthetic method
-   public static int method11390(Random var0, ChunkGenerator var1, Class2219 var2, boolean var3, int var4, int var5, Class9764 var6) {
+   public static int method11390(Random var0, ChunkGenerator var1, Class2219 var2, boolean var3, int var4, int var5, MutableBoundingBox var6) {
       return method11384(var0, var1, var2, var3, var4, var5, var6);
    }
 

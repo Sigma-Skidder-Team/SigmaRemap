@@ -10,6 +10,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;

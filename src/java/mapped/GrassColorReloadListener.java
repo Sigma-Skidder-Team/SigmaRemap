@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.GrassColors;
 
 import java.io.IOException;
 
@@ -16,6 +17,6 @@ public class GrassColorReloadListener extends Class269<int[]> {
    }
 
    public void method971(int[] var1, IResourceManager var2, IProfiler var3) {
-      Class6406.method19508(var1);
+      GrassColors.method19508(var1);
    }
 }

@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.fluid.FlowingFluid;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FluidState;
@@ -132,7 +133,7 @@ public abstract class LavaFluid extends FlowingFluid {
 
    @Override
    public BlockState method25063(FluidState var1) {
-      return Blocks.LAVA.getDefaultState().with(Class3404.field19079, Integer.valueOf(method25094(var1)));
+      return Blocks.LAVA.getDefaultState().with(FlowingFluidBlock.field19079, Integer.valueOf(method25094(var1)));
    }
 
    @Override
@@ -184,7 +185,7 @@ public abstract class LavaFluid extends FlowingFluid {
       if (var4 == Direction.DOWN) {
          FluidState var8 = var1.getFluidState(var2);
          if (this.method25067(FluidTags.field40470) && var8.method23486(FluidTags.field40469)) {
-            if (var3.getBlock() instanceof Class3404) {
+            if (var3.getBlock() instanceof FlowingFluidBlock) {
                var1.setBlockState(var2, Blocks.STONE.getDefaultState(), 3);
             }
 

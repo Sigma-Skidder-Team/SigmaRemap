@@ -60,7 +60,7 @@ public class AtlasTexture extends Texture implements Class288 {
 
    public AtlasTexture(ResourceLocation var1) {
       this.field1107 = var1;
-      this.field1108 = RenderSystem.method27908();
+      this.field1108 = RenderSystem.maxSupportedTextureSize();
       this.field1122 = var1.equals(LOCATION_BLOCKS_TEXTURE);
       this.field1123 = Config.isShaders();
       this.field1124 = Config.method26894();

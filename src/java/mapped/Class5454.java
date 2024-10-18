@@ -6,6 +6,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.util.math.vector.Vector3i;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.structure.StructureStart;
@@ -14,7 +15,7 @@ import net.minecraft.world.gen.feature.template.TemplateManager;
 public class Class5454 extends StructureStart<Class4726> {
    private static String[] field24213;
 
-   public Class5454(Structure<Class4726> var1, int var2, int var3, Class9764 var4, int var5, long var6) {
+   public Class5454(Structure<Class4726> var1, int var2, int var3, MutableBoundingBox var4, int var5, long var6) {
       super(var1, var2, var3, var4, var5, var6);
    }
 
@@ -77,7 +78,7 @@ public class Class5454 extends StructureStart<Class4726> {
       Mirror var15 = !(this.field24201.nextFloat() < 0.5F) ? Mirror.field13616 : Mirror.field13614;
       BlockPos var16 = new BlockPos(var13.method32886().getX() / 2, 0, var13.method32886().getZ() / 2);
       BlockPos var17 = new ChunkPos(var4, var5).asBlockPos();
-      Class9764 var18 = var13.method32910(var17, var14, var16, var15);
+      MutableBoundingBox var18 = var13.method32910(var17, var14, var16, var15);
       Vector3i var19 = var18.method38401();
       int var20 = var19.getX();
       int var21 = var19.getZ();

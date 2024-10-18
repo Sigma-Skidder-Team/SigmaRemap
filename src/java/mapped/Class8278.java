@@ -3,8 +3,9 @@ package mapped;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.block.BlockState;
+import net.minecraft.world.gen.surfacebuilders.ISurfaceBuilderConfig;
 
-public class Class8278 implements Class8277 {
+public class Class8278 implements ISurfaceBuilderConfig {
    public static final Codec<Class8278> field35569 = RecordCodecBuilder.create(
       var0 -> var0.group(
                BlockState.field31585.fieldOf("top_material").forGetter(var0x -> var0x.field35570),

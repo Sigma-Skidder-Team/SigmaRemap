@@ -7,6 +7,8 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.gui.IngameGui;
+import net.minecraft.client.network.play.ClientPlayNetHandler;
+import net.minecraft.client.network.play.NetworkPlayerInfo;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.scoreboard.ScorePlayerTeam;
@@ -21,7 +23,7 @@ import net.minecraft.world.GameType;
 import java.util.List;
 
 public class Class1265 extends AbstractGui {
-   private static final Ordering<Class6589> field6691 = Ordering.from(new Class3590());
+   private static final Ordering<NetworkPlayerInfo> field6691 = Ordering.from(new Class3590());
    private final Minecraft field6692;
    private final IngameGui field6693;
    private ITextComponent field6694;
@@ -34,13 +36,13 @@ public class Class1265 extends AbstractGui {
       this.field6693 = var2;
    }
 
-   public ITextComponent method5917(Class6589 var1) {
+   public ITextComponent method5917(NetworkPlayerInfo var1) {
       return var1.method19979() == null
          ? this.method5918(var1, ScorePlayerTeam.method28577(var1.method19976(), new StringTextComponent(var1.method19966().getName())))
          : this.method5918(var1, var1.method19979().deepCopy());
    }
 
-   private ITextComponent method5918(Class6589 var1, IFormattableTextComponent var2) {
+   private ITextComponent method5918(NetworkPlayerInfo var1, IFormattableTextComponent var2) {
       return var1.method19967() != GameType.SPECTATOR ? var2 : var2.mergeStyle(TextFormatting.ITALIC);
    }
 
@@ -54,11 +56,11 @@ public class Class1265 extends AbstractGui {
 
    public void method5920(MatrixStack var1, int var2, Scoreboard var3, Class8375 var4) {
       ClientPlayNetHandler var7 = this.field6692.player.connection;
-      List<Class6589> var8 = field6691.sortedCopy(var7.method15790());
+      List<NetworkPlayerInfo> var8 = field6691.sortedCopy(var7.method15790());
       int var9 = 0;
       int var10 = 0;
 
-      for (Class6589 var12 : var8) {
+      for (NetworkPlayerInfo var12 : var8) {
          int var13 = this.field6692.fontRenderer.method38821(this.method5917(var12));
          var9 = Math.max(var9, var13);
          if (var4 != null && var4.method29342() != Class2316.field15869) {
@@ -134,7 +136,7 @@ public class Class1265 extends AbstractGui {
          RenderSystem.enableBlend();
          RenderSystem.defaultBlendFunc();
          if (var47 < var8.size()) {
-            Class6589 var28 = (Class6589)var8.get(var47);
+            NetworkPlayerInfo var28 = (NetworkPlayerInfo)var8.get(var47);
             GameProfile var29 = var28.method19966();
             if (var14) {
                PlayerEntity var30 = this.field6692.world.method7196(var29.getId());
@@ -181,7 +183,7 @@ public class Class1265 extends AbstractGui {
       }
    }
 
-   public void method5921(MatrixStack var1, int var2, int var3, int var4, Class6589 var5) {
+   public void method5921(MatrixStack var1, int var2, int var3, int var4, NetworkPlayerInfo var5) {
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       this.field6692.getTextureManager().bindTexture(field6453);
 
@@ -213,7 +215,7 @@ public class Class1265 extends AbstractGui {
       this.method5703(this.method5702() - 100);
    }
 
-   private void method5922(Class8375 var1, int var2, String var3, int var4, int var5, Class6589 var6, MatrixStack var7) {
+   private void method5922(Class8375 var1, int var2, String var3, int var4, int var5, NetworkPlayerInfo var6, MatrixStack var7) {
       int var10 = var1.method29335().method20980(var3, var1).method36050();
       if (var1.method29342() != Class2316.field15869) {
          String var11 = TextFormatting.YELLOW + "" + var10;

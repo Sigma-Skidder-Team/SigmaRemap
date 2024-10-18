@@ -32,11 +32,11 @@ public class Class1653 extends Class1652<Class8377> {
    }
 
    public void method6661(BlockPos var1, Class4913 var2) {
-      this.method6645(SectionPos.method8390(var1).asLong()).method29352(var1, var2);
+      this.method6645(SectionPos.from(var1).asLong()).method29352(var1, var2);
    }
 
    public void method6662(BlockPos var1) {
-      this.method6645(SectionPos.method8390(var1).asLong()).method29354(var1);
+      this.method6645(SectionPos.from(var1).asLong()).method29354(var1);
    }
 
    public long method6663(Predicate<Class4913> var1, BlockPos var2, int var3, Class2093 var4) {
@@ -44,7 +44,7 @@ public class Class1653 extends Class1652<Class8377> {
    }
 
    public boolean method6664(Class4913 var1, BlockPos var2) {
-      Optional var5 = this.method6645(SectionPos.method8390(var2).asLong()).method29357(var2);
+      Optional var5 = this.method6645(SectionPos.from(var2).asLong()).method29357(var2);
       return var5.isPresent() && ((Class4913)var5.get()).equals(var1);
    }
 
@@ -99,15 +99,15 @@ public class Class1653 extends Class1652<Class8377> {
    }
 
    public boolean method6674(BlockPos var1) {
-      return this.method6645(SectionPos.method8390(var1).asLong()).method29355(var1);
+      return this.method6645(SectionPos.from(var1).asLong()).method29355(var1);
    }
 
    public boolean method6675(BlockPos var1, Predicate<Class4913> var2) {
-      return this.method6643(SectionPos.method8390(var1).asLong()).<Boolean>map(var2x -> var2x.method29356(var1, var2)).orElse(false);
+      return this.method6643(SectionPos.from(var1).asLong()).<Boolean>map(var2x -> var2x.method29356(var1, var2)).orElse(false);
    }
 
    public Optional<Class4913> method6676(BlockPos var1) {
-      Class8377 var4 = this.method6645(SectionPos.method8390(var1).asLong());
+      Class8377 var4 = this.method6645(SectionPos.from(var1).asLong());
       return var4.method29357(var1);
    }
 

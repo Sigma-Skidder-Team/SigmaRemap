@@ -8,14 +8,15 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3f;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.storage.MapData;
 
 public class Class1695 implements AutoCloseable {
-   private final Class7529 field9231;
+   private final MapData field9231;
    private final DynamicTexture field9232;
    private final RenderType field9233;
    public final Class194 field9234;
 
-   public Class1695(Class194 var1, Class7529 var2) {
+   public Class1695(Class194 var1, MapData var2) {
       this.field9234 = var1;
       this.field9231 = var2;
       this.field9232 = new DynamicTexture(128, 128, true);
@@ -125,7 +126,7 @@ public class Class1695 implements AutoCloseable {
    }
 
    // $VF: synthetic method
-   public static Class7529 method7294(Class1695 var0) {
+   public static MapData method7294(Class1695 var0) {
       return var0.field9231;
    }
 }

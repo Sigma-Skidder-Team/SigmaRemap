@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;

@@ -1,6 +1,6 @@
 package net.optifine.config;
 
-import mapped.ClientWorld;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;

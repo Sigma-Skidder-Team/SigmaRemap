@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.structure.EndCityPieces;
 import net.minecraft.world.gen.feature.structure.StructureStart;
@@ -10,7 +11,7 @@ import net.minecraft.world.gen.feature.template.TemplateManager;
 public class Class5452 extends StructureStart<Class4712> {
    private static String[] field24211;
 
-   public Class5452(Structure<Class4712> var1, int var2, int var3, Class9764 var4, int var5, long var6) {
+   public Class5452(Structure<Class4712> var1, int var2, int var3, MutableBoundingBox var4, int var5, long var6) {
       super(var1, var2, var3, var4, var5, var6);
    }
 

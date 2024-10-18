@@ -34,6 +34,7 @@ import net.minecraft.scoreboard.ServerScoreboard;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.CachedBlockInfo;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.server.ServerWorld;
 
@@ -637,8 +638,8 @@ public class Class6137 {
    }
 
    private static OptionalInt method18975(ServerWorld var0, BlockPos var1, BlockPos var2, BlockPos var3, boolean var4) throws CommandSyntaxException {
-      Class9764 var7 = new Class9764(var1, var2);
-      Class9764 var8 = new Class9764(var3, var3.method8337(var7.method38397()));
+      MutableBoundingBox var7 = new MutableBoundingBox(var1, var2);
+      MutableBoundingBox var8 = new MutableBoundingBox(var3, var3.method8337(var7.method38397()));
       BlockPos var9 = new BlockPos(var8.field45678 - var7.field45678, var8.field45679 - var7.field45679, var8.field45680 - var7.field45680);
       int var10 = var7.method38398() * var7.method38399() * var7.method38400();
       if (var10 > 32768) {

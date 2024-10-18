@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.util.Direction;
 
 public class Class7002 {

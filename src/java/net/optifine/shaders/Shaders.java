@@ -9,9 +9,11 @@ import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.client.renderer.GLAllocation;
+import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.texture.Texture;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.shader.FramebufferConstants;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.fluid.FluidState;
@@ -1266,7 +1268,7 @@ public class Shaders {
         if (var0 != null) {
             for (int var1 = 0; var1 < var0.length; var1++) {
                 Class6627 var2 = var0[var1];
-                GlStateManager.method23803(33984 + var2.method20208());
+                GlStateManager.activeTexture(33984 + var2.method20208());
                 int var3 = var2.method20207();
                 int var4 = var2.method20209();
                 if (var4 == 3553) {
@@ -3219,9 +3221,9 @@ public class Shaders {
         field40646 = (float) field40644 / 1000.0F;
         field40647 = field40647 + field40646;
         field40647 %= 3600.0F;
-        GlStateManager.method23832();
+        GlStateManager.pushMatrix();
         ShadersRender.method17161(var1, var0, var2);
-        GlStateManager.method23833();
+        GlStateManager.popMatrix();
         ClientWorld var5 = field40591.world;
         if (var5 != null) {
             field40635 = var5.method6784();
@@ -3312,15 +3314,15 @@ public class Shaders {
 
     private static void method33042() {
         if (field40804 >= 1) {
-            GlStateManager.method23803(33988);
+            GlStateManager.activeTexture(33988);
             GlStateManager.bindTexture(field40975.get(0));
             if (field40804 >= 2) {
-                GlStateManager.method23803(33989);
+                GlStateManager.activeTexture(33989);
                 GlStateManager.bindTexture(field40975.get(1));
             }
         }
 
-        GlStateManager.method23803(33984);
+        GlStateManager.activeTexture(33984);
 
         for (int var0 = 0; var0 < field40801; var0++) {
             GlStateManager.bindTexture(field40980.method38905(var0));
@@ -3334,33 +3336,33 @@ public class Shaders {
         GlStateManager.bindTexture(0);
 
         for (int var1 = 0; var1 < 4 && 4 + var1 < field40801; var1++) {
-            GlStateManager.method23803(33991 + var1);
+            GlStateManager.activeTexture(33991 + var1);
             GlStateManager.bindTexture(field40980.method38905(4 + var1));
         }
 
-        GlStateManager.method23803(33990);
+        GlStateManager.activeTexture(33990);
         GlStateManager.bindTexture(field40973.get(0));
         if (field40802 >= 2) {
-            GlStateManager.method23803(33995);
+            GlStateManager.activeTexture(33995);
             GlStateManager.bindTexture(field40973.get(1));
             if (field40802 >= 3) {
-                GlStateManager.method23803(33996);
+                GlStateManager.activeTexture(33996);
                 GlStateManager.bindTexture(field40973.get(2));
             }
         }
 
         for (int var2 = 0; var2 < field40803; var2++) {
-            GlStateManager.method23803(33997 + var2);
+            GlStateManager.activeTexture(33997 + var2);
             GlStateManager.bindTexture(field40974.get(var2));
         }
 
         if (field40947) {
-            GlStateManager.method23803(33984 + field40946.method20208());
+            GlStateManager.activeTexture(33984 + field40946.method20208());
             GlStateManager.bindTexture(field40946.method20207());
         }
 
         method32965(field40920);
-        GlStateManager.method23803(33984);
+        GlStateManager.activeTexture(33984);
     }
 
     public static void checkWorldChanged(ClientWorld var0) {
@@ -3666,13 +3668,13 @@ public class Shaders {
         if (field40599) {
             for (int var0 = 0; var0 < field40801; var0++) {
                 if ((field40853 & 1 << var0) != 0) {
-                    GlStateManager.method23803(33984 + field40949[var0]);
+                    GlStateManager.activeTexture(33984 + field40949[var0]);
                     GL32.glTexParameteri(3553, 10241, 9987);
                     GL32.glGenerateMipmap(3553);
                 }
             }
 
-            GlStateManager.method23803(33984);
+            GlStateManager.activeTexture(33984);
         }
     }
 
@@ -3738,7 +3740,7 @@ public class Shaders {
                     method33020(field40976);
                 }
 
-                GlStateManager.method23803(33984);
+                GlStateManager.activeTexture(33984);
                 field40591.getTextureManager().bindTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
             }
         }
@@ -3783,37 +3785,37 @@ public class Shaders {
             GlStateManager.depthMask(false);
             GlStateManager.disableLighting();
             if (field40804 >= 1) {
-                GlStateManager.method23803(33988);
+                GlStateManager.activeTexture(33988);
                 GlStateManager.bindTexture(field40975.get(0));
                 if (field40804 >= 2) {
-                    GlStateManager.method23803(33989);
+                    GlStateManager.activeTexture(33989);
                     GlStateManager.bindTexture(field40975.get(1));
                 }
             }
 
             for (int var2 = 0; var2 < field40801; var2++) {
-                GlStateManager.method23803(33984 + field40949[var2]);
+                GlStateManager.activeTexture(33984 + field40949[var2]);
                 GlStateManager.bindTexture(field40980.method38905(var2));
             }
 
-            GlStateManager.method23803(33990);
+            GlStateManager.activeTexture(33990);
             GlStateManager.bindTexture(field40973.get(0));
             if (field40802 >= 2) {
-                GlStateManager.method23803(33995);
+                GlStateManager.activeTexture(33995);
                 GlStateManager.bindTexture(field40973.get(1));
                 if (field40802 >= 3) {
-                    GlStateManager.method23803(33996);
+                    GlStateManager.activeTexture(33996);
                     GlStateManager.bindTexture(field40973.get(2));
                 }
             }
 
             for (int var5 = 0; var5 < field40803; var5++) {
-                GlStateManager.method23803(33997 + var5);
+                GlStateManager.activeTexture(33997 + var5);
                 GlStateManager.bindTexture(field40974.get(var5));
             }
 
             if (field40947) {
-                GlStateManager.method23803(33984 + field40946.method20208());
+                GlStateManager.activeTexture(33984 + field40946.method20208());
                 GlStateManager.bindTexture(field40946.method20207());
             }
 
@@ -3823,7 +3825,7 @@ public class Shaders {
                 method32965(field40922);
             }
 
-            GlStateManager.method23803(33984);
+            GlStateManager.activeTexture(33984);
 
             for (int var6 = 0; var6 < field40801; var6++) {
                 EXTFramebufferObject.glFramebufferTexture2DEXT(36160, 36064 + var6, 3553, field40980.method38906(var6), 0);
@@ -3849,13 +3851,13 @@ public class Shaders {
                     for (int var4 = 0; var4 < field40801; var4++) {
                         if (var3.method26496()[var4]) {
                             field40980.method38908(var4);
-                            GlStateManager.method23803(33984 + field40949[var4]);
+                            GlStateManager.activeTexture(33984 + field40949[var4]);
                             GlStateManager.bindTexture(field40980.method38905(var4));
                             EXTFramebufferObject.glFramebufferTexture2DEXT(36160, 36064 + var4, 3553, field40980.method38906(var4), 0);
                         }
                     }
 
-                    GlStateManager.method23803(33984);
+                    GlStateManager.activeTexture(33984);
                 }
             }
 
@@ -3933,7 +3935,7 @@ public class Shaders {
             field40605 = false;
             GlStateManager.colorMask(true, true, true, true);
             method33021(field40813);
-            Class7516.method24499();
+            RenderHelper.disableStandardItemLighting();
             method32984("endRender end");
         }
     }
@@ -3966,7 +3968,7 @@ public class Shaders {
             var13 = -4.0;
         }
 
-        GlStateManager.method23832();
+        GlStateManager.pushMatrix();
         GlStateManager.multMatrix(var0.getLast().getMatrix());
         var1.begin(7, DefaultVertexFormats.field43341);
         var1.pos(var7, var13, var9).endVertex();
@@ -4006,7 +4008,7 @@ public class Shaders {
         var1.pos(var3, var13, var3).endVertex();
         var1.pos(var3, var13, var9).endVertex();
         Tessellator.getInstance().draw();
-        GlStateManager.method23833();
+        GlStateManager.popMatrix();
     }
 
     public static void method33071(MatrixStack var0) {
@@ -4228,19 +4230,19 @@ public class Shaders {
 
     public static void method33100() {
         if (!isShadowPass && field40802 >= 3) {
-            GlStateManager.method23803(33996);
+            GlStateManager.activeTexture(33996);
             GL32.glCopyTexSubImage2D(3553, 0, 0, 0, 0, 0, field40603, field40604);
-            GlStateManager.method23803(33984);
+            GlStateManager.activeTexture(33984);
         }
     }
 
     public static void method33101() {
         if (field40802 >= 2) {
-            GlStateManager.method23803(33995);
+            GlStateManager.activeTexture(33995);
             method32984("pre copy depth");
             GL32.glCopyTexSubImage2D(3553, 0, 0, 0, 0, 0, field40603, field40604);
             method32984("copy depth");
-            GlStateManager.method23803(33984);
+            GlStateManager.activeTexture(33984);
         }
 
         Class9336.method35312(field40856.method1135());

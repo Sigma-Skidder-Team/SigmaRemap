@@ -39,7 +39,7 @@ public class Class5956 extends Class5942<Class959> {
          var3.push();
          var3.translate(0.5, (double)(0.3F + var11 * 0.2F), 0.5);
          Vector3f var12 = new Vector3f(0.5F, 1.0F, 0.5F);
-         var12.method25280();
+         var12.normalize();
          var3.rotate(new Quaternion(var12, var10, true));
          this.field25977.render(var3, field25969.method26200(var4, RenderType::getEntityCutoutNoCull), var5, var6);
          var3.pop();

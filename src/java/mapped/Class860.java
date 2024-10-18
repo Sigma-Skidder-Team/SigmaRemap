@@ -61,7 +61,7 @@ public abstract class Class860<T extends Container> extends ContainerScreen<T> {
    }
 
    private void method2640(MatrixStack var1, int var2, int var3, Iterable<EffectInstance> var4) {
-      this.mc.getTextureManager().bindTexture(field4720);
+      this.mc.getTextureManager().bindTexture(INVENTORY_BACKGROUND);
       int var7 = this.field4735;
 
       for (EffectInstance var9 : var4) {

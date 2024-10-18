@@ -107,11 +107,11 @@ public class Blocks {
       "bedrock", new Block(AbstractBlock.Properties.method26609(Material.field38966).method26621(-1.0F, 3600000.0F).method26626().method26629(Blocks::method30012))
    );
    public static final Block WATER = register(
-      "water", new Class3404(Fluids.WATER, AbstractBlock.Properties.method26609(Material.field38941).method26614().method26623(100.0F).method26626())
+      "water", new FlowingFluidBlock(Fluids.WATER, AbstractBlock.Properties.method26609(Material.field38941).method26614().method26623(100.0F).method26626())
    );
    public static final Block LAVA = register(
       "lava",
-      new Class3404(
+      new FlowingFluidBlock(
          Fluids.LAVA,
          AbstractBlock.Properties.method26609(Material.field38943).method26614().method26624().method26623(100.0F).method26620(var0 -> 15).method26626()
       )

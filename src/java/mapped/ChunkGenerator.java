@@ -14,10 +14,7 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.IWorld;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.BiomeContainer;
-import net.minecraft.world.biome.BiomeGenerationSettings;
-import net.minecraft.world.biome.BiomeManager;
+import net.minecraft.world.biome.*;
 import net.minecraft.world.biome.provider.BiomeProvider;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.chunk.IChunk;
@@ -222,7 +219,7 @@ public abstract class ChunkGenerator {
       return 256;
    }
 
-   public List<MobSpawnInfoSpawners> func_230353_a_(Biome var1, StructureManager var2, EntityClassification var3, BlockPos var4) {
+   public List<MobSpawnInfo.Spawners> func_230353_a_(Biome var1, StructureManager var2, EntityClassification var3, BlockPos var4) {
       return var1.getMobSpawnInfo().getSpawners(var3);
    }
 

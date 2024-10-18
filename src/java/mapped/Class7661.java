@@ -31,7 +31,7 @@ public abstract class Class7661 extends Class7665 {
    public boolean method25184(ServerWorld var1, ChunkGenerator var2, BlockPos var3, BlockState var4, Random var5, int var6, int var7) {
       ConfiguredFeature var10 = this.method25183(var5);
       if (var10 != null) {
-         ((Class4733)var10.field33887).method14849();
+         ((Class4733)var10.config).method14849();
          BlockState var11 = Blocks.AIR.getDefaultState();
          var1.setBlockState(var3.add(var6, 0, var7), var11, 4);
          var1.setBlockState(var3.add(var6 + 1, 0, var7), var11, 4);

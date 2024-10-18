@@ -13,6 +13,7 @@ import net.minecraft.world.gen.carver.ConfiguredCarver;
 import net.minecraft.world.gen.feature.Features;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.structure.StructureFeatures;
+import net.minecraft.world.gen.surfacebuilders.ConfiguredSurfaceBuilder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -23,7 +24,7 @@ public class WorldGenRegistries {
       RegistryKey.<MutableRegistry<?>>getOrCreateRootKey(new ResourceLocation("root")), Lifecycle.experimental()
    );
    public static final Registry<? extends Registry<?>> field29423 = field29422;
-   public static final Registry<Class9319<?>> field29424 = method20493(Registry.field16100, () -> Class9109.field41856);
+   public static final Registry<ConfiguredSurfaceBuilder<?>> field29424 = method20493(Registry.CONFIGURED_SURFACE_BUILDER_KEY, () -> Class9109.field41856);
    public static final Registry<ConfiguredCarver<?>> field29425 = method20493(Registry.field16101, () -> Class7827.field33606);
    public static final Registry<ConfiguredFeature<?, ?>> field29426 = method20493(Registry.field16102, () -> Features.field41770);
    public static final Registry<StructureFeature<?, ?>> field29427 = method20493(Registry.field16103, () -> StructureFeatures.MINESHAFT);

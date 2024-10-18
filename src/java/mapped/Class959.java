@@ -111,7 +111,7 @@ public class Class959 extends TileEntity implements ITickableTileEntity {
          for (int var4 = -1; var4 <= 1; var4++) {
             for (int var5 = -1; var5 <= 1; var5++) {
                BlockPos var6 = this.pos.add(var3, var4, var5);
-               if (!this.world.method7013(var6)) {
+               if (!this.world.hasWater(var6)) {
                   return false;
                }
             }

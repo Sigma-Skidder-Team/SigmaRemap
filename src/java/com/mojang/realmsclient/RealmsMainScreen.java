@@ -951,7 +951,7 @@ public class RealmsMainScreen extends RealmsScreen {
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       RenderSystem.pushMatrix();
       RenderSystem.translatef((float)(this.width / 2 - 25), 20.0F, 0.0F);
-      RenderSystem.method27883(-20.0F, 0.0F, 0.0F, 1.0F);
+      RenderSystem.rotatef(-20.0F, 0.0F, 0.0F, 1.0F);
       RenderSystem.scalef(1.5F, 1.5F, 1.5F);
       this.font.method38801(var1, "LOCAL!", 0.0F, 0.0F, 8388479);
       RenderSystem.popMatrix();
@@ -962,7 +962,7 @@ public class RealmsMainScreen extends RealmsScreen {
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       RenderSystem.pushMatrix();
       RenderSystem.translatef((float)(this.width / 2 - 25), 20.0F, 0.0F);
-      RenderSystem.method27883(-20.0F, 0.0F, 0.0F, 1.0F);
+      RenderSystem.rotatef(-20.0F, 0.0F, 0.0F, 1.0F);
       RenderSystem.scalef(1.5F, 1.5F, 1.5F);
       this.font.method38801(var1, "STAGE!", 0.0F, 0.0F, -256);
       RenderSystem.popMatrix();

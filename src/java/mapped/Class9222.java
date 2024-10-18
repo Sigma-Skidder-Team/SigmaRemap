@@ -29,7 +29,7 @@ public class Class9222 {
    public static final SuggestionProvider<CommandSource> field42457 = method34676(
       new ResourceLocation("summonable_entities"),
       (var0, var1) -> Class6618.method20144(
-            Registry.ENTITY_TYPE.method9192().filter(EntityType::method33206),
+            Registry.ENTITY_TYPE.stream().filter(EntityType::method33206),
             var1,
             EntityType::method33198,
             var0x -> new TranslationTextComponent(Util.makeTranslationKey("entity", EntityType.method33198(var0x)))

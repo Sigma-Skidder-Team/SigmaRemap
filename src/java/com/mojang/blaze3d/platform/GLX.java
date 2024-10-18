@@ -5,7 +5,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.mojang.blaze3d.systems.RenderSystem;
 import mapped.BufferBuilder;
-import mapped.Class7582;
+import net.minecraft.client.renderer.GlDebugTextUtils;
 import mapped.MainWindow;
 import mapped.Tessellator;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
@@ -31,8 +31,8 @@ import java.util.function.Supplier;
 
 public class GLX {
    private static final Logger field35101 = LogManager.getLogger();
-   private static String field35102 = "";
-   private static String field35103;
+   private static String capsString = "";
+   private static String cpuInfo;
    private static final Map<Integer, String> field35104 = make(Maps.newHashMap(), var0 -> {
       var0.put(0, "No error");
       var0.put(1280, "Enum parameter is invalid for this function");
@@ -45,10 +45,10 @@ public class GLX {
       var0.put(1286, "Operation on incomplete framebuffer");
    });
 
-   public static String method28295() {
+   public static String getOpenGLVersionString() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       return GLFW.glfwGetCurrentContext() != 0L
-         ? GlStateManager.method23860(7937) + " GL version " + GlStateManager.method23860(7938) + ", " + GlStateManager.method23860(7936)
+         ? GlStateManager.getString(7937) + " GL version " + GlStateManager.getString(7938) + ", " + GlStateManager.getString(7936)
          : "NO CONTEXT";
    }
 
@@ -63,12 +63,12 @@ public class GLX {
       return var5 != null ? var5.refreshRate() : 0;
    }
 
-   public static String method28297() {
+   public static String _getLWJGLVersion() {
       RenderSystem.assertThread(RenderSystem::isInInitPhase);
       return Version.getVersion();
    }
 
-   public static LongSupplier method28298() {
+   public static LongSupplier _initGlfw() {
       RenderSystem.assertThread(RenderSystem::isInInitPhase);
       MainWindow.method8012((var0, var1) -> {
          throw new IllegalStateException(String.format("GLFW error before init: [0x%X]%s", var0, var1));
@@ -89,7 +89,7 @@ public class GLX {
       }
    }
 
-   public static void method28299(GLFWErrorCallbackI var0) {
+   public static void _setGlfwErrorCallback(GLFWErrorCallbackI var0) {
       RenderSystem.assertThread(RenderSystem::isInInitPhase);
       GLFWErrorCallback var3 = GLFW.glfwSetErrorCallback(var0);
       if (var3 != null) {
@@ -101,7 +101,7 @@ public class GLX {
       return GLFW.glfwWindowShouldClose(var0.getHandle());
    }
 
-   public static void method28301() {
+   public static void _setupNvFogDistance() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       if (GL.getCapabilities().GL_NV_fog_distance) {
          if (Config.isFogFancy()) {
@@ -114,29 +114,29 @@ public class GLX {
       }
    }
 
-   public static void method28302(int var0, boolean var1) {
+   public static void _init(int var0, boolean var1) {
       RenderSystem.assertThread(RenderSystem::isInInitPhase);
-      GLCapabilities var4 = GL.getCapabilities();
-      field35102 = "Using framebuffer using " + GlStateManager.method23720(var4);
+      GLCapabilities glcapabilities = GL.getCapabilities();
+      capsString = "Using framebuffer using " + GlStateManager.init(glcapabilities);
 
       try {
          Processor[] var5 = new SystemInfo().getHardware().getProcessors();
-         field35103 = String.format("%dx %s", var5.length, var5[0]).replaceAll("\\s+", " ");
+         cpuInfo = String.format("%dx %s", var5.length, var5[0]).replaceAll("\\s+", " ");
       } catch (Throwable var6) {
       }
 
-      Class7582.method24820(var0, var1);
+      GlDebugTextUtils.setDebugVerbosity(var0, var1);
    }
 
-   public static String method28303() {
-      return field35102;
+   public static String _getCapsString() {
+      return capsString;
    }
 
    public static String method28304() {
-      return field35103 != null ? field35103 : "<unknown>";
+      return cpuInfo != null ? cpuInfo : "<unknown>";
    }
 
-   public static void method28305(int var0, boolean var1, boolean var2, boolean var3) {
+   public static void _renderCrosshair(int var0, boolean var1, boolean var2, boolean var3) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GlStateManager.method23805();
       GlStateManager.depthMask(false);

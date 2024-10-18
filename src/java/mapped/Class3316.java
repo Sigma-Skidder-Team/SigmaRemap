@@ -27,6 +27,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.server.ServerWorld;
+import net.minecraft.world.storage.MapData;
 
 public class Class3316 extends Class3314 {
    public Class3316(Properties var1) {
@@ -40,13 +41,13 @@ public class Class3316 extends Class3314 {
    }
 
    @Nullable
-   public static Class7529 method11860(ItemStack var0, World var1) {
+   public static MapData method11860(ItemStack var0, World var1) {
       return var1.method6798(method11864(method11862(var0)));
    }
 
    @Nullable
-   public static Class7529 method11861(ItemStack var0, World var1) {
-      Class7529 var4 = method11860(var0, var1);
+   public static MapData method11861(ItemStack var0, World var1) {
+      MapData var4 = method11860(var0, var1);
       if (var4 == null && var1 instanceof ServerWorld) {
          var4 = method11863(var0, var1, var1.getWorldInfo().getSpawnX(), var1.getWorldInfo().getSpawnZ(), 3, false, false, var1.getDimensionKey());
       }
@@ -59,9 +60,9 @@ public class Class3316 extends Class3314 {
       return var3 != null && var3.contains("map", 99) ? var3.getInt("map") : 0;
    }
 
-   private static Class7529 method11863(ItemStack var0, World var1, int var2, int var3, int var4, boolean var5, boolean var6, RegistryKey<World> var7) {
+   private static MapData method11863(ItemStack var0, World var1, int var2, int var3, int var4, boolean var5, boolean var6, RegistryKey<World> var7) {
       int var10 = var1.method6800();
-      Class7529 var11 = new Class7529(method11864(var10));
+      MapData var11 = new MapData(method11864(var10));
       var11.method24589(var2, var3, var4, var5, var6, var7);
       var1.method6799(var11);
       var0.getOrCreateTag().putInt("map", var10);
@@ -72,7 +73,7 @@ public class Class3316 extends Class3314 {
       return "map_" + var0;
    }
 
-   public void method11865(World var1, Entity var2, Class7529 var3) {
+   public void method11865(World var1, Entity var2, MapData var3) {
       if (var1.getDimensionKey() == var3.field32318 && var2 instanceof PlayerEntity) {
          int var6 = 1 << var3.scale;
          int var7 = var3.xCenter;
@@ -204,11 +205,11 @@ public class Class3316 extends Class3314 {
    }
 
    private static boolean method11867(Biome[] var0, int var1, int var2, int var3) {
-      return var0[var2 * var1 + var3 * var1 * 128 * var1].method32515() >= 0.0F;
+      return var0[var2 * var1 + var3 * var1 * 128 * var1].getDepth() >= 0.0F;
    }
 
    public static void method11868(ServerWorld var0, ItemStack var1) {
-      Class7529 var4 = method11861(var1, var0);
+      MapData var4 = method11861(var1, var0);
       if (var4 != null && var0.getDimensionKey() == var4.field32318) {
          int var5 = 1 << var4.scale;
          int var6 = var4.xCenter;
@@ -260,7 +261,7 @@ public class Class3316 extends Class3314 {
 
                   int var13 = 3;
                   MaterialColor var14 = MaterialColor.AIR;
-                  if (!(var11.method32515() < 0.0F)) {
+                  if (!(var11.getDepth() < 0.0F)) {
                      if (var12 > 0) {
                         var14 = MaterialColor.field30973;
                         if (var12 <= 3) {
@@ -310,7 +311,7 @@ public class Class3316 extends Class3314 {
    @Override
    public void method11724(ItemStack var1, World var2, Entity var3, int var4, boolean var5) {
       if (!var2.isRemote) {
-         Class7529 var8 = method11861(var1, var2);
+         MapData var8 = method11861(var1, var2);
          if (var8 != null) {
             if (var3 instanceof PlayerEntity) {
                PlayerEntity var9 = (PlayerEntity)var3;
@@ -343,7 +344,7 @@ public class Class3316 extends Class3314 {
    }
 
    public static void method11869(ItemStack var0, World var1, int var2) {
-      Class7529 var5 = method11861(var0, var1);
+      MapData var5 = method11861(var0, var1);
       if (var5 != null) {
          method11863(
             var0,
@@ -359,16 +360,16 @@ public class Class3316 extends Class3314 {
    }
 
    public static void method11870(World var0, ItemStack var1) {
-      Class7529 var4 = method11861(var1, var0);
+      MapData var4 = method11861(var1, var0);
       if (var4 != null) {
-         Class7529 var5 = method11863(var1, var0, 0, 0, var4.scale, var4.trackingPosition, var4.unlimitedTracking, var4.field32318);
+         MapData var5 = method11863(var1, var0, 0, 0, var4.scale, var4.trackingPosition, var4.unlimitedTracking, var4.field32318);
          var5.method24593(var4);
       }
    }
 
    @Override
    public void method11730(ItemStack var1, World var2, List<ITextComponent> var3, Class2216 var4) {
-      Class7529 var7 = var2 != null ? method11861(var1, var2) : null;
+      MapData var7 = var2 != null ? method11861(var1, var2) : null;
       if (var7 != null && var7.locked) {
          var3.add(new TranslationTextComponent("filled_map.locked", method11862(var1)).mergeStyle(TextFormatting.GRAY));
       }
@@ -401,7 +402,7 @@ public class Class3316 extends Class3314 {
          return super.method11707(var1);
       } else {
          if (!var1.getWorld().isRemote) {
-            Class7529 var5 = method11861(var1.method18357(), var1.getWorld());
+            MapData var5 = method11861(var1.method18357(), var1.getWorld());
             var5.method24600(var1.getWorld(), var1.getPos());
          }
 

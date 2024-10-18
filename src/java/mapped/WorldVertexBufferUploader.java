@@ -32,7 +32,7 @@ public class WorldVertexBufferUploader {
       if (var3 > 0) {
          var2.method26218(MemoryUtil.memAddress(var0));
          if (!Config.isShaders()) {
-            GlStateManager.method23854(var1, 0, var3);
+            GlStateManager.drawArrays(var1, 0, var3);
          } else {
             Class7698.method25387(var1, 0, var3, var2, var0);
          }

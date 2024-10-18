@@ -8,12 +8,12 @@ import net.minecraft.world.chunk.IChunk;
 
 import java.util.Random;
 
-public class Class6770 extends Class6768<Class8278> {
+public class Class6770 extends SurfaceBuilder<Class8278> {
    public Class6770(Codec<Class8278> var1) {
       super(var1);
    }
 
-   public void method20654(
+   public void buildSurface(
       Random var1,
       IChunk var2,
       Biome var3,
@@ -27,7 +27,7 @@ public class Class6770 extends Class6768<Class8278> {
       long var12,
       Class8278 var14
    ) {
-      double var17 = Biome.field40314.method25315((double)var4 * 0.25, (double)var5 * 0.25, false);
+      double var17 = Biome.INFO_NOISE.noiseAt((double)var4 * 0.25, (double)var5 * 0.25, false);
       if (var17 > 0.0) {
          int var19 = var4 & 15;
          int var20 = var5 & 15;
@@ -44,6 +44,6 @@ public class Class6770 extends Class6768<Class8278> {
          }
       }
 
-      Class6768.field29523.method20654(var1, var2, var3, var4, var5, var6, var7, var9, var10, var11, var12, var14);
+      SurfaceBuilder.field29523.buildSurface(var1, var2, var3, var4, var5, var6, var7, var9, var10, var11, var12, var14);
    }
 }

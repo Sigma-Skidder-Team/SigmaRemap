@@ -12,6 +12,7 @@ import lol.ClientColors;
 import lol.Texture;
 import lol.TextureImpl;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.shader.Framebuffer;
@@ -1255,7 +1256,7 @@ public class RenderUtil {
             var0 = new ItemStack(var0.getItem());
          }
 
-         Class7516.method24502();
+         RenderHelper.setupGuiFlatDiffuseLighting();
          GL11.glLightModelfv(2899, new float[]{0.4F, 0.4F, 0.4F, 1.0F});
          RenderSystem.enableColorMaterial();
          RenderSystem.disableLighting();
@@ -1266,11 +1267,11 @@ public class RenderUtil {
          GL11.glDepthFunc(515);
          RenderSystem.popMatrix();
          GL11.glAlphaFunc(519, 0.0F);
-         RenderSystem.method27905(33986, 240.0F, 240.0F);
+         RenderSystem.glMultiTexCoord2f(33986, 240.0F, 240.0F);
          RenderSystem.disableDepthTest();
          TextureImpl.method36180();
          mc.getTextureManager().bindTexture(TextureManager.field1094);
-         Class7516.method24503();
+         RenderHelper.setupGui3DDiffuseLighting();
       }
    }
 

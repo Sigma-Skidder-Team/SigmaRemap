@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
@@ -62,7 +63,7 @@ public class Class3407 extends Block {
                   if (var9 < 6) {
                      var5.add(new Class6793<BlockPos, Integer>(var14, var9 + 1));
                   }
-               } else if (!(var15.getBlock() instanceof Class3404)) {
+               } else if (!(var15.getBlock() instanceof FlowingFluidBlock)) {
                   if (var17 == Material.field38937 || var17 == Material.field38940) {
                      TileEntity var18 = !var15.getBlock().isTileEntityProvider() ? null : var1.getTileEntity(var14);
                      method11555(var15, var1, var14, var18);

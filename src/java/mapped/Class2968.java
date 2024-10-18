@@ -6,20 +6,21 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.MobSpawnInfo;
 import net.minecraft.world.biome.provider.BiomeProvider;
 import net.minecraft.world.gen.settings.StructureSeparationSettings;
 
 import java.util.List;
 
 public class Class2968 extends Class2967 {
-   private static final List<MobSpawnInfoSpawners> field18084 = ImmutableList.of(new MobSpawnInfoSpawners(EntityType.PILLAGER, 1, 1, 1));
+   private static final List<MobSpawnInfo.Spawners> field18084 = ImmutableList.of(new MobSpawnInfo.Spawners(EntityType.PILLAGER, 1, 1, 1));
 
    public Class2968(Codec<Class4700> var1) {
       super(var1, 0, true, true);
    }
 
    @Override
-   public List<MobSpawnInfoSpawners> method11374() {
+   public List<MobSpawnInfo.Spawners> method11374() {
       return field18084;
    }
 

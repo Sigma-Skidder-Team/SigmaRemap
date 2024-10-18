@@ -5,6 +5,7 @@ import com.google.common.collect.Lists;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.network.play.NetworkPlayerInfo;
 
 import java.util.Collection;
 import java.util.List;
@@ -43,7 +44,7 @@ public class Class1297 extends Class1293<Class1185> {
       this.field6866.clear();
 
       for (UUID var7 : var1) {
-         Class6589 var8 = this.field6865.player.connection.method15792(var7);
+         NetworkPlayerInfo var8 = this.field6865.player.connection.method15792(var7);
          if (var8 != null) {
             this.field6866.add(new Class1185(this.field6865, this.field6864, var8.method19966().getId(), var8.method19966().getName(), var8::method19973));
          }
@@ -70,7 +71,7 @@ public class Class1297 extends Class1293<Class1185> {
       return this.field6866.isEmpty();
    }
 
-   public void method6138(Class6589 var1, Class2332 var2) {
+   public void method6138(NetworkPlayerInfo var1, Class2332 var2) {
       UUID var5 = var1.method19966().getId();
 
       for (Class1185 var7 : this.field6866) {

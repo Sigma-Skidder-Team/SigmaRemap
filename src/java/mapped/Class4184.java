@@ -13,6 +13,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.util.math.vector.Vector3i;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.IWorld;
@@ -104,7 +105,7 @@ public class Class4184 extends Class4180 {
    }
 
    @Override
-   public boolean method12896(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, MutableBoundingBox var5, ChunkPos var6, BlockPos var7) {
       if (!var5.method38396(this.field20455)) {
          return true;
       } else {
@@ -129,7 +130,7 @@ public class Class4184 extends Class4180 {
    }
 
    @Override
-   public void method12944(String var1, BlockPos var2, Class1659 var3, Random var4, Class9764 var5) {
+   public void method12944(String var1, BlockPos var2, Class1659 var3, Random var4, MutableBoundingBox var5) {
    }
 
    private void method12951(Random var1, IWorld var2, BlockPos var3) {

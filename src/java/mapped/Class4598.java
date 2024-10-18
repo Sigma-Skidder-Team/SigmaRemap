@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.fluid.Fluid;
 
 public class Class4598 extends Class4594 {

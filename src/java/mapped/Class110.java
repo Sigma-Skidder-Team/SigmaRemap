@@ -12,7 +12,7 @@ public enum Class110 implements IStringSerializable {
    WARM("warm"),
    COLD("cold");
 
-   public static final Codec<Class110> field375 = IStringSerializable.<Class110>method258(Class110::values, Class110::method306);
+   public static final Codec<Class110> field375 = IStringSerializable.<Class110>createEnumCodec(Class110::values, Class110::method306);
    private static final Map<String, Class110> field376 = Arrays.<Class110>stream(values())
       .collect(Collectors.toMap(Class110::method305, var0 -> (Class110)var0));
    private final String field377;

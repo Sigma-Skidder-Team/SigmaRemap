@@ -4,6 +4,7 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Maps;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
@@ -90,7 +91,7 @@ public class SpawnEggItem extends Item {
          if (var1 instanceof ServerWorld) {
             BlockRayTraceResult var8 = var7;
             BlockPos var9 = var8.getPos();
-            if (var1.getBlockState(var9).getBlock() instanceof Class3404) {
+            if (var1.getBlockState(var9).getBlock() instanceof FlowingFluidBlock) {
                if (var1.method6785(var2, var9) && var2.method2936(var9, var8.getFace(), var6)) {
                   EntityType var10 = this.method11855(var6.method32142());
                   if (var10.method33200((ServerWorld)var1, var6, var2, var9, Class2202.field14403, false, false) != null) {

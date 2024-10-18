@@ -155,8 +155,8 @@ public class JelloMainMenuScreen extends Screen {
       long var6 = System.nanoTime() - field20965;
       field20982 = Math.min(10.0F, Math.max(0.0F, (float)var6 / 1.810361E7F / 2.0F));
       field20965 = System.nanoTime();
-      int var8 = -this.method13309();
-      float var9 = (float)this.method13310() / (float)this.getWidthA() * -114.0F;
+      int var8 = -this.getHeightO();
+      float var9 = (float)this.getWidthO() / (float)this.getWidthA() * -114.0F;
       if (this.field20968) {
          this.field20966 = (int)var9;
          this.field20967 = var8;

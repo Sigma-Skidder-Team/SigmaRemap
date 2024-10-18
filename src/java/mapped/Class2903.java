@@ -11,6 +11,7 @@ import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.util.math.vector.Vector3i;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.IWorld;
@@ -60,7 +61,7 @@ public class Class2903 extends Class2898<Class4733> {
       return method11229(var0, var1) || method11231(var0, var1) || method11228(var0, var1);
    }
 
-   private boolean method11234(Class1679 var1, Random var2, BlockPos var3, Set<BlockPos> var4, Set<BlockPos> var5, Class9764 var6, Class4733 var7) {
+   private boolean method11234(Class1679 var1, Random var2, BlockPos var3, Set<BlockPos> var4, Set<BlockPos> var5, MutableBoundingBox var6, Class4733 var7) {
       int var10 = var7.field22416.method21066(var2);
       int var11 = var7.field22415.method20788(var2, var10, var7);
       int var12 = var10 - var11;
@@ -134,7 +135,7 @@ public class Class2903 extends Class2898<Class4733> {
       HashSet var8 = Sets.newHashSet();
       HashSet var9 = Sets.newHashSet();
       HashSet var10 = Sets.newHashSet();
-      Class9764 var11 = Class9764.method38386();
+      MutableBoundingBox var11 = MutableBoundingBox.method38386();
       boolean var12 = this.method11234(var1, var3, var4, var8, var9, var11, var5);
       if (var11.field45678 <= var11.field45681 && var12 && !var8.isEmpty()) {
          if (!var5.field22413.isEmpty()) {
@@ -153,7 +154,7 @@ public class Class2903 extends Class2898<Class4733> {
       }
    }
 
-   private Class7938 method11236(IWorld var1, Class9764 var2, Set<BlockPos> var3, Set<BlockPos> var4) {
+   private Class7938 method11236(IWorld var1, MutableBoundingBox var2, Set<BlockPos> var3, Set<BlockPos> var4) {
       ArrayList var7 = Lists.newArrayList();
       Class7937 var8 = new Class7937(var2.method38398(), var2.method38399(), var2.method38400());
       byte var9 = 6;

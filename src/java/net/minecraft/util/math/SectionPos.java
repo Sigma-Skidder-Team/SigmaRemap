@@ -19,7 +19,7 @@ public class SectionPos extends Vector3i {
       return new SectionPos(var0, var1, var2);
    }
 
-   public static SectionPos method8390(BlockPos var0) {
+   public static SectionPos from(BlockPos var0) {
       return new SectionPos(toChunk(var0.getX()), toChunk(var0.getY()), toChunk(var0.getZ()));
    }
 

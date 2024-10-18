@@ -15,7 +15,7 @@ public enum EntityClassification implements IStringSerializable {
    WATER_AMBIENT("water_ambient", 20, true, false, 64),
    MISC("misc", -1, true, true, 128);
 
-   public static final Codec<EntityClassification> field629 = IStringSerializable.<EntityClassification>method258(EntityClassification::values, EntityClassification::method518);
+   public static final Codec<EntityClassification> field629 = IStringSerializable.<EntityClassification>createEnumCodec(EntityClassification::values, EntityClassification::method518);
    private static final Map<String, EntityClassification> field630 = Arrays.<EntityClassification>stream(values())
       .collect(Collectors.toMap(EntityClassification::method517, var0 -> (EntityClassification)var0));
    private final int field631;

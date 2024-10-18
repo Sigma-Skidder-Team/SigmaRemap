@@ -22,7 +22,7 @@ import javax.annotation.Nullable;
 import java.util.Set;
 
 public abstract class ContainerScreen<T extends Container> extends Screen implements IHasContainer<T> {
-   public static final ResourceLocation field4720 = new ResourceLocation("textures/gui/container/inventory.png");
+   public static final ResourceLocation INVENTORY_BACKGROUND = new ResourceLocation("textures/gui/container/inventory.png");
    public int xSize = 176;
    public int ySize = 166;
    public int field4723;
@@ -78,8 +78,8 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       int var7 = this.field4734;
       int var8 = this.field4735;
-      this.method2618(var1, var4, var2, var3);
-      RenderSystem.method27868();
+      this.drawGuiContainerBackgroundLayer(var1, var4, var2, var3);
+      RenderSystem.disableRescaleNormal();
       RenderSystem.disableDepthTest();
       super.render(var1, var2, var3, var4);
       RenderSystem.pushMatrix();
@@ -87,7 +87,7 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       RenderSystem.enableRescaleNormal();
       this.field4729 = null;
-      RenderSystem.method27905(33986, 240.0F, 240.0F);
+      RenderSystem.glMultiTexCoord2f(33986, 240.0F, 240.0F);
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
 
       for (int var11 = 0; var11 < this.field4727.inventorySlots.size(); var11++) {
@@ -167,7 +167,7 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
       this.font.func_243248_b(var1, this.field4728.getDisplayName(), (float)this.field4725, (float)this.playerInventoryTitleY, 4210752);
    }
 
-   public abstract void method2618(MatrixStack var1, float var2, int var3, int var4);
+   public abstract void drawGuiContainerBackgroundLayer(MatrixStack var1, float var2, int var3, int var4);
 
    private void method2619(MatrixStack var1, Slot var2) {
       int var5 = var2.field25580;

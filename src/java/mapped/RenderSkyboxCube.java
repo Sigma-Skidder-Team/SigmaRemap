@@ -28,7 +28,7 @@ public class RenderSkyboxCube {
       RenderSystem.pushMatrix();
       RenderSystem.loadIdentity();
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-      RenderSystem.method27883(180.0F, 1.0F, 0.0F, 0.0F);
+      RenderSystem.rotatef(180.0F, 1.0F, 0.0F, 0.0F);
       RenderSystem.enableBlend();
       RenderSystem.disableAlphaTest();
       RenderSystem.disableCull();
@@ -42,8 +42,8 @@ public class RenderSkyboxCube {
          float var12 = ((float)(var10 / 2) / 2.0F - 0.5F) / 256.0F;
          float var13 = 0.0F;
          RenderSystem.translatef(var11, var12, 0.0F);
-         RenderSystem.method27883(var2, 1.0F, 0.0F, 0.0F);
-         RenderSystem.method27883(var3, 0.0F, 1.0F, 0.0F);
+         RenderSystem.rotatef(var2, 1.0F, 0.0F, 0.0F);
+         RenderSystem.rotatef(var3, 0.0F, 1.0F, 0.0F);
 
          for (int var14 = 0; var14 < 6; var14++) {
             var1.getTextureManager().bindTexture(this.field32058[var14]);

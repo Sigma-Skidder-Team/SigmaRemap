@@ -12,7 +12,7 @@ public enum GenerationStageCarving implements IStringSerializable {
    field259("air"),
    field260("liquid");
 
-   public static final Codec<GenerationStageCarving> field261 = IStringSerializable.<GenerationStageCarving>method258(GenerationStageCarving::values, GenerationStageCarving::method277);
+   public static final Codec<GenerationStageCarving> field261 = IStringSerializable.<GenerationStageCarving>createEnumCodec(GenerationStageCarving::values, GenerationStageCarving::method277);
    private static final Map<String, GenerationStageCarving> field262 = Arrays.<GenerationStageCarving>stream(values()).collect(Collectors.toMap(GenerationStageCarving::method276, var0 -> (GenerationStageCarving)var0));
    private final String field263;
    private static final GenerationStageCarving[] field264 = new GenerationStageCarving[]{field259, field260};

@@ -335,8 +335,8 @@ public class Class7448 implements Class7443 {
    }
 
    private int method24072(Biome var1, BlockPos var2) {
-      double var5 = (double) MathHelper.clamp(var1.method32503(var2), 0.0F, 1.0F);
-      double var7 = (double) MathHelper.clamp(var1.method32516(), 0.0F, 1.0F);
+      double var5 = (double) MathHelper.clamp(var1.getTemperature(var2), 0.0F, 1.0F);
+      double var7 = (double) MathHelper.clamp(var1.getDownfall(), 0.0F, 1.0F);
       var7 *= var5;
       int var9 = (int)((1.0 - var5) * (double)(this.field32030 - 1));
       int var10 = (int)((1.0 - var7) * (double)(this.field32031 - 1));

@@ -5,6 +5,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.network.play.ClientPlayNetHandler;
 import net.minecraft.network.play.client.CSeenAdvancementsPacket;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;

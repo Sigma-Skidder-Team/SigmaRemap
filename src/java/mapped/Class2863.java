@@ -59,12 +59,12 @@ public class Class2863<T extends LivingEntity> extends AgeableModel<T> {
          this.field17748.rotateAngleY = var12;
       } else {
          AbstractClientPlayerEntity var16 = (AbstractClientPlayerEntity)var1;
-         var16.field6097 = (float)((double)var16.field6097 + (double)(var9 - var16.field6097) * 0.1);
-         var16.field6098 = (float)((double)var16.field6098 + (double)(var12 - var16.field6098) * 0.1);
-         var16.field6099 = (float)((double)var16.field6099 + (double)(var10 - var16.field6099) * 0.1);
-         this.field17748.rotateAngleX = var16.field6097;
-         this.field17748.rotateAngleY = var16.field6098;
-         this.field17748.rotateAngleZ = var16.field6099;
+         var16.rotateElytraX = (float)((double)var16.rotateElytraX + (double)(var9 - var16.rotateElytraX) * 0.1);
+         var16.rotateElytraY = (float)((double)var16.rotateElytraY + (double)(var12 - var16.rotateElytraY) * 0.1);
+         var16.rotateElytraZ = (float)((double)var16.rotateElytraZ + (double)(var10 - var16.rotateElytraZ) * 0.1);
+         this.field17748.rotateAngleX = var16.rotateElytraX;
+         this.field17748.rotateAngleY = var16.rotateElytraY;
+         this.field17748.rotateAngleZ = var16.rotateElytraZ;
       }
 
       this.field17747.rotationPointX = -this.field17748.rotationPointX;

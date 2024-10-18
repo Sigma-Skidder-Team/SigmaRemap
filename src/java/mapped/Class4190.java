@@ -5,6 +5,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.gen.feature.structure.StructureManager;
 import net.minecraft.world.gen.feature.template.TemplateManager;
@@ -29,15 +30,15 @@ public class Class4190 extends Class4188 {
       var1.putInt("D", this.field20481.getHorizontalIndex());
    }
 
-   public Class4190(int var1, Class9764 var2, Direction var3, Class102 var4) {
+   public Class4190(int var1, MutableBoundingBox var2, Direction var3, Class102 var4) {
       super(Class7792.field33426, var1, var4);
       this.field20481 = var3;
       this.field20444 = var2;
       this.field20482 = var2.method38399() > 3;
    }
 
-   public static Class9764 method12970(List<Class4178> var0, Random var1, int var2, int var3, int var4, Direction var5) {
-      Class9764 var8 = new Class9764(var2, var3, var4, var2, var3 + 3 - 1, var4);
+   public static MutableBoundingBox method12970(List<Class4178> var0, Random var1, int var2, int var3, int var4, Direction var5) {
+      MutableBoundingBox var8 = new MutableBoundingBox(var2, var3, var4, var2, var3 + 3 - 1, var4);
       if (var1.nextInt(4) == 0) {
          var8.field45682 += 4;
       }
@@ -146,7 +147,7 @@ public class Class4190 extends Class4188 {
    }
 
    @Override
-   public boolean method12896(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, MutableBoundingBox var5, ChunkPos var6, BlockPos var7) {
       if (this.method12919(var1, var5)) {
          return false;
       } else {
@@ -264,7 +265,7 @@ public class Class4190 extends Class4188 {
       }
    }
 
-   private void method12971(ISeedReader var1, Class9764 var2, int var3, int var4, int var5, int var6) {
+   private void method12971(ISeedReader var1, MutableBoundingBox var2, int var3, int var4, int var5, int var6) {
       if (!this.method12924(var1, var3, var6 + 1, var5, var2).isAir()) {
          this.method12927(var1, var2, var3, var4, var5, var3, var6, var5, this.method12967(), field20443, false);
       }

@@ -8,6 +8,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.gen.feature.structure.StructureManager;
 import net.minecraft.world.gen.feature.template.TemplateManager;
@@ -18,7 +19,7 @@ import java.util.Random;
 public class Class4227 extends Class4167 {
    private boolean field20558;
 
-   public Class4227(int var1, Class9764 var2, Direction var3) {
+   public Class4227(int var1, MutableBoundingBox var2, Direction var3) {
       super(Class7792.field33440, var1);
       this.method12939(var3);
       this.field20444 = var2;
@@ -36,12 +37,12 @@ public class Class4227 extends Class4167 {
    }
 
    public static Class4227 method13019(List<Class4178> var0, int var1, int var2, int var3, int var4, Direction var5) {
-      Class9764 var8 = Class9764.method38388(var1, var2, var3, -2, 0, 0, 7, 8, 9, var5);
+      MutableBoundingBox var8 = MutableBoundingBox.method38388(var1, var2, var3, -2, 0, 0, 7, 8, 9, var5);
       return method12904(var8) && Class4178.method12918(var0, var8) == null ? new Class4227(var4, var8, var5) : null;
    }
 
    @Override
-   public boolean method12896(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, MutableBoundingBox var5, ChunkPos var6, BlockPos var7) {
       this.method12927(var1, var5, 0, 2, 0, 6, 7, 7, Blocks.AIR.getDefaultState(), Blocks.AIR.getDefaultState(), false);
       this.method12927(var1, var5, 1, 0, 0, 5, 1, 7, Blocks.NETHER_BRICKS.getDefaultState(), Blocks.NETHER_BRICKS.getDefaultState(), false);
       this.method12927(var1, var5, 1, 2, 1, 5, 2, 7, Blocks.NETHER_BRICKS.getDefaultState(), Blocks.NETHER_BRICKS.getDefaultState(), false);

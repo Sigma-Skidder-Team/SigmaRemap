@@ -73,7 +73,7 @@ public class Class4858 extends Class4837 {
             HashMap var13 = Maps.newHashMap();
             Map<Enchantment, Integer> var14 = EnchantmentHelper.method26312(var16);
             Map<Enchantment, Integer> var15 = EnchantmentHelper.method26312(var17);
-            Registry.ENCHANTMENT.method9192().filter(Enchantment::method18825).forEach(var3 -> {
+            Registry.ENCHANTMENT.stream().filter(Enchantment::method18825).forEach(var3 -> {
                int var6x = Math.max(var14.getOrDefault(var3, 0), var15.getOrDefault(var3, 0));
                if (var6x > 0) {
                   var13.put(var3, var6x);

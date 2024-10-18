@@ -9,6 +9,7 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.client.network.play.NetworkPlayerInfo;
 import net.minecraft.client.resources.DefaultPlayerSkin;
 import net.minecraft.scoreboard.ScorePlayerTeam;
 import net.minecraft.util.ResourceLocation;
@@ -19,7 +20,7 @@ public class Class7224 implements Class7222 {
    private static String[] field31055;
    private final ScorePlayerTeam field31056;
    private final ResourceLocation field31057;
-   private final List<Class6589> field31058;
+   private final List<NetworkPlayerInfo> field31058;
    public final Class7227 field31059;
 
    public Class7224(Class7227 var1, ScorePlayerTeam var2) {
@@ -28,7 +29,7 @@ public class Class7224 implements Class7222 {
       this.field31058 = Lists.newArrayList();
 
       for (String var6 : var2.method28575()) {
-         Class6589 var7 = Minecraft.getInstance().getConnection().method15793(var6);
+         NetworkPlayerInfo var7 = Minecraft.getInstance().getConnection().method15793(var6);
          if (var7 != null) {
             this.field31058.add(var7);
          }

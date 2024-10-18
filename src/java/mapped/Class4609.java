@@ -3,6 +3,8 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.WorldRenderer;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.util.math.BlockPos;
 
 public class Class4609 extends Class4566 {

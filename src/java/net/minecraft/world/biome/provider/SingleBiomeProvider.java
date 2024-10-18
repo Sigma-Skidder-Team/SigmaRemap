@@ -13,7 +13,7 @@ import java.util.function.Supplier;
 import javax.annotation.Nullable;
 
 public class SingleBiomeProvider extends BiomeProvider {
-   public static final Codec<SingleBiomeProvider> CODEC = Biome.field40309.fieldOf("biome").xmap(SingleBiomeProvider::new, var0 -> var0.field9183).stable().codec();
+   public static final Codec<SingleBiomeProvider> CODEC = Biome.BIOME_CODEC.fieldOf("biome").xmap(SingleBiomeProvider::new, var0 -> var0.field9183).stable().codec();
    private final Supplier<Biome> field9183;
 
    public SingleBiomeProvider(Biome var1) {

@@ -82,7 +82,7 @@ public class BoxChestESP extends Module {
         GL11.glDisable(2896);
         GL11.glEnable(3553);
         GL11.glEnable(2903);
-        RenderSystem.method27905(33986, 240.0F, 240.0F);
+        RenderSystem.glMultiTexCoord2f(33986, 240.0F, 240.0F);
         TextureImpl.method36180();
         TextureManager var10000 = mc.getTextureManager();
         mc.getTextureManager();

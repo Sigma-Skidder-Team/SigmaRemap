@@ -36,7 +36,7 @@ public class Class9733 {
                   Class9537.field44402.listOf().fieldOf("layers").forGetter(Class9733::method38129),
                   Codec.BOOL.fieldOf("lakes").orElse(false).forGetter(var0x -> var0x.field45452),
                   Codec.BOOL.fieldOf("features").orElse(false).forGetter(var0x -> var0x.field45451),
-                  Biome.field40309
+                  Biome.BIOME_CODEC
                      .optionalFieldOf("biome")
                      .orElseGet(Optional::empty)
                      .forGetter(var0x -> Optional.<Supplier<Biome>>of(var0x.field45448))
@@ -132,10 +132,10 @@ public class Class9733 {
    public Biome method38125() {
       Biome var3 = this.method38127();
       BiomeGenerationSettings var4 = var3.getGenerationSettings();
-      Class7935 var5 = new Class7935().method26689(var4.method24282());
+      Class7935 var5 = new Class7935().method26689(var4.getSurfaceBuilder());
       if (this.field45452) {
-         var5.method26690(Class1993.field12999, Features.field41673);
-         var5.method26690(Class1993.field12999, Features.field41674);
+         var5.method26690(Decoration.field12999, Features.field41673);
+         var5.method26690(Decoration.field12999, Features.field41674);
       }
 
       for (Entry var7 : this.field45446.method38380().entrySet()) {
@@ -144,10 +144,10 @@ public class Class9733 {
 
       boolean var11 = (!this.field45450 || this.field45445.method9182(var3).equals(Optional.<RegistryKey<Biome>>of(Biomes.THE_VOID))) && this.field45451;
       if (var11) {
-         List<List<Supplier<ConfiguredFeature<?, ?>>>> var12 = var4.method24281();
+         List<List<Supplier<ConfiguredFeature<?, ?>>>> var12 = var4.getFeatures();
 
          for (int var8 = 0; var8 < var12.size(); var8++) {
-            if (var8 != Class1993.field13001.ordinal() && var8 != Class1993.field13002.ordinal()) {
+            if (var8 != Decoration.field13001.ordinal() && var8 != Decoration.field13002.ordinal()) {
                for (Supplier var10 : var12.get(var8)) {
                   var5.method26691(var8, var10);
                }
@@ -161,21 +161,21 @@ public class Class9733 {
          BlockState var15 = var13[var14];
          if (var15 != null && !Heightmap.Type.MOTION_BLOCKING.method287().test(var15)) {
             this.field45449[var14] = null;
-            var5.method26690(Class1993.field13007, Class2898.field17980.method11216(new Class4732(var14, var15)));
+            var5.method26690(Decoration.field13007, Class2898.field17980.method11216(new Class4732(var14, var15)));
          }
       }
 
-      return new Class9684()
-         .method37911(var3.method32500())
-         .method37912(var3.getCategory())
-         .method37913(var3.method32515())
-         .method37914(var3.method32517())
-         .method37915(var3.method32518())
-         .method37916(var3.method32516())
-         .method37917(var3.method32519())
-         .method37919(var5.method26695())
-         .method37918(var3.getMobSpawnInfo())
-         .method37921();
+      return new Biome.Builder()
+         .precipitation(var3.getPrecipitation())
+         .category(var3.getCategory())
+         .depth(var3.getDepth())
+         .scale(var3.getScale())
+         .temperature(var3.getTemperature())
+         .downfall(var3.getDownfall())
+         .setEffects(var3.getAmbience())
+         .withGenerationSettings(var5.method26695())
+         .withMobSpawnSettings(var3.getMobSpawnInfo())
+         .build();
    }
 
    public DimensionStructuresSettings method38126() {

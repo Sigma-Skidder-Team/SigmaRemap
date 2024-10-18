@@ -12,7 +12,7 @@ import net.minecraft.world.gen.OctavesNoiseGenerator;
 
 import java.util.Random;
 
-public class Class6772 extends Class6768<Class8278> {
+public class Class6772 extends SurfaceBuilder<Class8278> {
    private static final BlockState field29546 = Blocks.field37012.getDefaultState();
    public long field29547;
    private OctavesNoiseGenerator field29548;
@@ -21,7 +21,7 @@ public class Class6772 extends Class6768<Class8278> {
       super(var1);
    }
 
-   public void method20654(
+   public void buildSurface(
       Random var1,
       IChunk var2,
       Biome var3,

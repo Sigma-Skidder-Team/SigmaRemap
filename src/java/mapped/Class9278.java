@@ -23,6 +23,7 @@ import net.minecraft.potion.EffectInstance;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.server.ServerWorld;
+import net.minecraft.world.storage.MapData;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -70,7 +71,7 @@ public class Class9278 {
          ItemFrameEntity var4 = (ItemFrameEntity)this.field42668;
          ItemStack var5 = var4.method4090();
          if (var5.getItem() instanceof Class3316) {
-            Class7529 var6 = Class3316.method11861(var5, this.field42667);
+            MapData var6 = Class3316.method11861(var5, this.field42667);
 
             for (ServerPlayerEntity var8 : this.field42667.method6870()) {
                var6.method24594(var8, var5);

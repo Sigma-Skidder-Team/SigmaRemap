@@ -37,7 +37,7 @@ public class FillESP extends Module {
                 this.method16139();
                 this.method16134();
                 this.method16140();
-                this.field23482.method25602();
+                this.field23482.finish();
             }
         }
     }
@@ -87,7 +87,7 @@ public class FillESP extends Module {
         this.field23482.finish(RenderType.getEntityCutoutNoCull(AtlasTexture.LOCATION_BLOCKS_TEXTURE));
         this.field23482.finish(RenderType.getEntitySmoothCutout(AtlasTexture.LOCATION_BLOCKS_TEXTURE));
         this.field23482.finish(RenderType.getLines());
-        this.field23482.method25602();
+        this.field23482.finish();
         GL11.glDepthFunc(515);
         GL11.glPolygonMode(1032, 6914);
         GL11.glDisable(32823);
@@ -150,7 +150,7 @@ public class FillESP extends Module {
         GL11.glDisable(2896);
         GL11.glEnable(3553);
         GL11.glEnable(2903);
-        RenderSystem.method27905(33986, 240.0F, 240.0F);
+        RenderSystem.glMultiTexCoord2f(33986, 240.0F, 240.0F);
         TextureImpl.method36180();
         TextureManager var10000 = mc.getTextureManager();
         mc.getTextureManager();

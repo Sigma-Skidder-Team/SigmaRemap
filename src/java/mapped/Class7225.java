@@ -9,12 +9,13 @@ import java.util.List;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.client.network.play.NetworkPlayerInfo;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.GameType;
 
 public class Class7225 implements Class7226, Class7222 {
-   private static final Ordering<Class6589> field31060 = Ordering.from(
+   private static final Ordering<NetworkPlayerInfo> field31060 = Ordering.from(
       (var0, var1) -> ComparisonChain.start().compare(var0.method19966().getId(), var1.method19966().getId()).result()
    );
    private static final ITextComponent field31061 = new TranslationTextComponent("spectatorMenu.teleport");
@@ -25,8 +26,8 @@ public class Class7225 implements Class7226, Class7222 {
       this(field31060.sortedCopy(Minecraft.getInstance().getConnection().method15790()));
    }
 
-   public Class7225(Collection<Class6589> var1) {
-      for (Class6589 var5 : field31060.sortedCopy(var1)) {
+   public Class7225(Collection<NetworkPlayerInfo> var1) {
+      for (NetworkPlayerInfo var5 : field31060.sortedCopy(var1)) {
          if (var5.method19967() != GameType.SPECTATOR) {
             this.field31063.add(new Class7229(var5.method19966()));
          }

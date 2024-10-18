@@ -6,6 +6,7 @@ import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.biome.MobSpawnInfo;
 import net.minecraft.world.chunk.IChunk;
 
 public class Class7307 {
@@ -28,7 +29,7 @@ public class Class7307 {
    private boolean method23088(EntityType<?> var1, BlockPos var2, IChunk var3) {
       this.field31331 = var2;
       this.field31332 = var1;
-      Class7763 var6 = Class8170.method28437(var2, var3).getMobSpawnInfo().method31969(var1);
+      MobSpawnInfo.SpawnCosts var6 = Class8170.method28437(var2, var3).getMobSpawnInfo().getSpawnCost(var1);
       if (var6 != null) {
          double var7 = var6.method25733();
          this.field31333 = var7;
@@ -47,7 +48,7 @@ public class Class7307 {
       if (var6.equals(this.field31331) && var5 == this.field31332) {
          var8 = this.field31333;
       } else {
-         Class7763 var7 = Class8170.method28437(var6, var2).getMobSpawnInfo().method31969(var5);
+         MobSpawnInfo.SpawnCosts var7 = Class8170.method28437(var6, var2).getMobSpawnInfo().getSpawnCost(var5);
          if (var7 == null) {
             var8 = 0.0;
          } else {

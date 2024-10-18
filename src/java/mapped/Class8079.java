@@ -7,6 +7,8 @@ import net.minecraft.world.LightType;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeManager;
+import net.minecraft.world.biome.MoodSoundAmbience;
+import net.minecraft.world.biome.SoundAdditionsAmbience;
 
 import java.util.Optional;
 import java.util.Random;
@@ -18,8 +20,8 @@ public class Class8079 implements IAmbientSoundHandler {
    private final BiomeManager field34722;
    private final Random field34723;
    private Object2ObjectArrayMap<Biome, Class6337> field34724 = new Object2ObjectArrayMap();
-   private Optional<Class7959> field34725 = Optional.<Class7959>empty();
-   private Optional<Class8217> field34726 = Optional.<Class8217>empty();
+   private Optional<MoodSoundAmbience> field34725 = Optional.<MoodSoundAmbience>empty();
+   private Optional<SoundAdditionsAmbience> field34726 = Optional.<SoundAdditionsAmbience>empty();
    private float field34727;
    private Biome field34728;
 
@@ -40,10 +42,10 @@ public class Class8079 implements IAmbientSoundHandler {
       Biome var3 = this.field34722.getBiomeAtPosition(this.field34720.getPosX(), this.field34720.getPosY(), this.field34720.getPosZ());
       if (var3 != this.field34728) {
          this.field34728 = var3;
-         this.field34725 = var3.method32524();
-         this.field34726 = var3.method32525();
+         this.field34725 = var3.getMoodSound();
+         this.field34726 = var3.getAdditionalAmbientSound();
          this.field34724.values().forEach(Class6337::method19277);
-         var3.method32523().ifPresent(var2 -> {
+         var3.getAmbientSound().ifPresent(var2 -> {
             Class6337 var5 = (Class6337)this.field34724.compute(var3, (var2x, var3x) -> {
                if (var3x == null) {
                   var3x = new Class6337(var2);

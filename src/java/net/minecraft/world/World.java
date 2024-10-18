@@ -31,6 +31,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeManager;
 import net.minecraft.world.chunk.ChunkStatus;
 import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.storage.MapData;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -893,7 +894,7 @@ public abstract class World implements IWorld, AutoCloseable {
             return false;
          } else {
             Biome var4 = this.getBiome(var1);
-            return var4.method32500() == Class87.field224 && var4.method32503(var1) >= 0.15F;
+            return var4.getPrecipitation() == Biome.RainType.RAIN && var4.getTemperature(var1) >= 0.15F;
          }
       } else {
          return false;
@@ -902,13 +903,13 @@ public abstract class World implements IWorld, AutoCloseable {
 
    public boolean method6797(BlockPos var1) {
       Biome var4 = this.getBiome(var1);
-      return var4.method32501();
+      return var4.isHighHumidity();
    }
 
    @Nullable
-   public abstract Class7529 method6798(String var1);
+   public abstract MapData method6798(String var1);
 
-   public abstract void method6799(Class7529 var1);
+   public abstract void method6799(MapData var1);
 
    public abstract int method6800();
 

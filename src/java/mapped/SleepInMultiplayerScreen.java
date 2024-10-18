@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.gui.widget.button.Button;
+import net.minecraft.client.network.play.ClientPlayNetHandler;
 import net.minecraft.network.play.client.CEntityActionPacket;
 import net.minecraft.util.text.TranslationTextComponent;
 

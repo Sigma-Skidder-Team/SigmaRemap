@@ -301,7 +301,7 @@ public class VanillaMainMenuScreen extends Screen {
          if (this.field4708 != null) {
             RenderSystem.pushMatrix();
             RenderSystem.translatef((float)(this.width / 2 + 90), 70.0F, 0.0F);
-            RenderSystem.method27883(-20.0F, 0.0F, 0.0F, 1.0F);
+            RenderSystem.rotatef(-20.0F, 0.0F, 0.0F, 1.0F);
             float var13 = 1.8F
                - MathHelper.method37771(MathHelper.sin((float)(Util.milliTime() % 1000L) / 1000.0F * (float) (Math.PI * 2)) * 0.1F);
             var13 = var13 * 100.0F / (float)(this.font.getStringWidth(this.field4708) + 32);

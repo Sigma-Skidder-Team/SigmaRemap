@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.renderer.ActiveRenderInfo;
+import net.minecraft.client.world.ClientWorld;
 
 public class Class4603 extends Class4601 {
    private static String[] field22095;

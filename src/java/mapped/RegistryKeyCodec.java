@@ -19,7 +19,7 @@ public final class RegistryKeyCodec<E> implements Codec<Supplier<E>> {
       return method33673(var0, var1, true);
    }
 
-   public static <E> Codec<List<Supplier<E>>> method33672(RegistryKey<? extends Registry<E>> var0, Codec<E> var1) {
+   public static <E> Codec<List<Supplier<E>>> getValueCodecs(RegistryKey<? extends Registry<E>> var0, Codec<E> var1) {
       return Codec.either(method33673(var0, var1, false).listOf(), var1.<Supplier<E>>xmap(var0x -> () -> var0x, Supplier::get).listOf())
          .xmap(var0x -> var0x.map(var0xx -> var0xx, var0xx -> var0xx), Either::left);
    }

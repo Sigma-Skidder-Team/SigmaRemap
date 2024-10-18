@@ -27,7 +27,7 @@ public class NetherBiomeProvider extends BiomeProvider {
                RecordCodecBuilder.<Pair<Class7150, Supplier<Biome>>>create(
                      var0x -> var0x.group(
                               Class7150.field30717.fieldOf("parameters").forGetter(Pair::getFirst),
-                              Biome.field40309.fieldOf("biome").forGetter(Pair::getSecond)
+                              Biome.BIOME_CODEC.fieldOf("biome").forGetter(Pair::getSecond)
                            )
                            .apply(var0x, Pair::of)
                   )

@@ -21,7 +21,7 @@ public class Class1698 implements AutoCloseable {
    }
 
    public void method7302() {
-      GlStateManager.method23747(34962, this.field9242);
+      GlStateManager.bindBuffer(34962, this.field9242);
    }
 
    public void method7303(BufferBuilder var1) {
@@ -72,7 +72,7 @@ public class Class1698 implements AutoCloseable {
       }
 
       if (this.field9245 == null) {
-         RenderSystem.method27892(var2, 0, this.field9244);
+         RenderSystem.drawArrays(var2, 0, this.field9244);
       } else {
          this.field9245.method31985(var2, this.field9246);
       }
@@ -86,14 +86,14 @@ public class Class1698 implements AutoCloseable {
       }
 
       if (this.field9245 == null) {
-         RenderSystem.method27892(var1, 0, this.field9244);
+         RenderSystem.drawArrays(var1, 0, this.field9244);
       } else {
          this.field9245.method31985(var1, this.field9246);
       }
    }
 
    public static void method7308() {
-      GlStateManager.method23747(34962, 0);
+      GlStateManager.bindBuffer(34962, 0);
    }
 
    @Override

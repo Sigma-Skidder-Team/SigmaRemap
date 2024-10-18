@@ -105,7 +105,7 @@ public class GlobalEntityTypeAttributes {
 
    public static void method37377() {
       Registry.ENTITY_TYPE
-         .method9192()
+         .stream()
          .filter(var0 -> var0.method33209() != EntityClassification.MISC)
          .filter(var0 -> !method37376((EntityType<?>)var0))
          .<ResourceLocation>map(Registry.ENTITY_TYPE::getKey)

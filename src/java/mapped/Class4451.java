@@ -34,7 +34,7 @@ public class Class4451 implements Class4442 {
       for (Entry var6 : WorldGenRegistries.BIOME.method9191()) {
          Path var7 = method14085(var4, ((RegistryKey)var6.getKey()).getLocation());
          Biome var8 = (Biome)var6.getValue();
-         Function<Supplier<Biome>, DataResult<JsonElement>> var9 = JsonOps.INSTANCE.withEncoder(Biome.field40309);
+         Function<Supplier<Biome>, DataResult<JsonElement>> var9 = JsonOps.INSTANCE.withEncoder(Biome.BIOME_CODEC);
 
          try {
             Optional var10 = ((DataResult)var9.apply(() -> var8)).result();

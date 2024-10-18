@@ -24,7 +24,7 @@ import java.util.stream.Stream;
 
 public final class VoxelShapes {
    private static String[] field34461;
-   private static final VoxelShape field34462 = Util.<Class6410>method38507(() -> {
+   private static final VoxelShape field34462 = Util.<Class6410>make(() -> {
       Class7937 var2 = new Class7937(1, 1, 1);
       var2.method26718(0, 0, 0, true, true);
       return new Class6410(var2);

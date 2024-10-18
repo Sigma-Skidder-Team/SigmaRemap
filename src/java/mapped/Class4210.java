@@ -9,6 +9,7 @@ import net.minecraft.state.properties.StairsShape;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.gen.feature.structure.StructureManager;
 import net.minecraft.world.gen.feature.template.TemplateManager;
@@ -37,7 +38,7 @@ public class Class4210 extends Class4209 {
    }
 
    @Override
-   public boolean method12896(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, MutableBoundingBox var5, ChunkPos var6, BlockPos var7) {
       if (!this.method13002(var1, var5, 0)) {
          return false;
       } else {
@@ -100,7 +101,7 @@ public class Class4210 extends Class4209 {
       }
    }
 
-   private void method13003(Class1659 var1, Class9764 var2) {
+   private void method13003(Class1659 var1, MutableBoundingBox var2) {
       if (!this.field20521) {
          int var5 = this.method12920(2, 5);
          int var6 = this.method12921(2);

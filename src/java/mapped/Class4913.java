@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 
 public class Class4913 {
    private static final Supplier<Set<Class4913>> field22746 = Suppliers.memoize(
-      () -> Registry.field16090.method9192().<Class4913>map(Class8395::method29457).collect(Collectors.toSet())
+      () -> Registry.field16090.stream().<Class4913>map(Class8395::method29457).collect(Collectors.toSet())
    );
    public static final Predicate<Class4913> field22747 = var0 -> field22746.get().contains(var0);
    public static final Predicate<Class4913> field22748 = var0 -> true;

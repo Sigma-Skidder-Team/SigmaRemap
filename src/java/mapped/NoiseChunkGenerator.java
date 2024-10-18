@@ -9,19 +9,18 @@ import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.util.SharedSeedRandom;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.ChunkPos;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.SectionPos;
+import net.minecraft.util.math.*;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.MobSpawnInfo;
 import net.minecraft.world.biome.provider.BiomeProvider;
 import net.minecraft.world.biome.provider.EndBiomeProvider;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.chunk.ChunkSection;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.gen.OctavesNoiseGenerator;
+import net.minecraft.world.gen.PerlinNoiseGenerator;
 import net.minecraft.world.gen.WorldGenRegion;
 import net.minecraft.world.gen.feature.structure.StructureManager;
 
@@ -100,7 +99,7 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
       this.field24975 = new OctavesNoiseGenerator(this.randomSeed, IntStream.rangeClosed(-7, 0));
       this.field24976 = (Class7690)(!var9.method37018()
          ? new OctavesNoiseGenerator(this.randomSeed, IntStream.rangeClosed(-3, 0))
-         : new Class7691(this.randomSeed, IntStream.rangeClosed(-3, 0)));
+         : new PerlinNoiseGenerator(this.randomSeed, IntStream.rangeClosed(-3, 0)));
       this.randomSeed.skip(2620);
       this.field24977 = new OctavesNoiseGenerator(this.randomSeed, IntStream.rangeClosed(-15, 0));
       if (!var9.method37020()) {
@@ -184,13 +183,13 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
          float var9 = 0.0F;
          int var10 = 2;
          int var11 = this.func_230356_f_();
-         float var12 = this.biomeProvider.getNoiseBiome(var2, var11, var3).method32515();
+         float var12 = this.biomeProvider.getNoiseBiome(var2, var11, var3).getDepth();
 
          for (int var13 = -2; var13 <= 2; var13++) {
             for (int var18 = -2; var18 <= 2; var18++) {
                Biome var23 = this.biomeProvider.getNoiseBiome(var2 + var13, var11, var3 + var18);
-               float var24 = var23.method32515();
-               float var25 = var23.method32517();
+               float var24 = var23.getDepth();
+               float var25 = var23.getScale();
                float var26;
                float var27;
                if (var6.method37021() && var24 > 0.0F) {
@@ -362,7 +361,7 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
             int var19 = var2.getTopBlockY(Heightmap.Type.WORLD_SURFACE_WG, var15, var16) + 1;
             double var20 = this.field24976.method25314((double)var17 * 0.0625, (double)var18 * 0.0625, 0.0625, (double)var15 * 0.0625) * 15.0;
             var1.getBiome(var14.setPos(var10 + var15, var19, var11 + var16))
-               .method32514(var8, var2, var17, var18, var19, var20, this.field24979, this.field24980, this.func_230356_f_(), var1.getSeed());
+               .buildSurface(var8, var2, var17, var18, var19, var20, this.field24979, this.field24980, this.func_230356_f_(), var1.getSeed());
          }
       }
 
@@ -411,7 +410,7 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
       int var12 = var10 << 4;
 
       for (Structure var14 : Structure.field18076) {
-         var2.method24340(SectionPos.from(var8, 0), var14).forEach(var5 -> {
+         var2.func_235011_a_(SectionPos.from(var8, 0), var14).forEach(var5 -> {
             for (Class4178 var9x : var5.method17111()) {
                if (var9x.method12917(var8, 12)) {
                   if (!(var9x instanceof Class4193)) {
@@ -503,7 +502,7 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
 
                         while (var18.hasNext()) {
                            Class4178 var72 = (Class4178)var18.next();
-                           Class9764 var73 = var72.method12915();
+                           MutableBoundingBox var73 = var72.method12915();
                            int var74 = Math.max(0, Math.max(var73.field45678 - var55, var55 - var73.field45681));
                            int var75 = var41 - (var73.field45679 + (!(var72 instanceof Class4193) ? 0 : ((Class4193)var72).method12979()));
                            int var76 = Math.max(0, Math.max(var73.field45680 - var64, var64 - var73.field45683));
@@ -579,7 +578,7 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
    }
 
    @Override
-   public List<MobSpawnInfoSpawners> func_230353_a_(Biome var1, StructureManager var2, EntityClassification var3, BlockPos var4) {
+   public List<MobSpawnInfo.Spawners> func_230353_a_(Biome var1, StructureManager var2, EntityClassification var3, BlockPos var4) {
       if (var2.method24345(var4, true, Structure.SWAMP_HUT).method17117()) {
          if (var3 == EntityClassification.MONSTER) {
             return Structure.SWAMP_HUT.method11374();

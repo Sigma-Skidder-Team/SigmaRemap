@@ -15,17 +15,18 @@ import net.minecraft.util.registry.WorldGenRegistries;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.carver.ConfiguredCarver;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
+import net.minecraft.world.gen.surfacebuilders.ConfiguredSurfaceBuilder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public abstract class DynamicRegistries {
    private static final Logger field40298 = LogManager.getLogger();
-   private static final Map<RegistryKey<? extends Registry<?>>, Class9305<?>> field40299 = Util.<Map<RegistryKey<? extends Registry<?>>, Class9305<?>>>method38507(
+   private static final Map<RegistryKey<? extends Registry<?>>, Class9305<?>> field40299 = Util.<Map<RegistryKey<? extends Registry<?>>, Class9305<?>>>make(
       () -> {
          Builder var2 = ImmutableMap.builder();
          method32456(var2, Registry.DIMENSION_TYPE_KEY, DimensionType.CODEC, DimensionType.CODEC);
-         method32456(var2, Registry.BIOME_KEY, Biome.field40307, Biome.field40308);
-         method32455(var2, Registry.field16100, Class9319.field43262);
+         method32456(var2, Registry.BIOME_KEY, Biome.CODEC, Biome.PACKET_CODEC);
+         method32455(var2, Registry.CONFIGURED_SURFACE_BUILDER_KEY, ConfiguredSurfaceBuilder.field_237168_a_);
          method32455(var2, Registry.field16101, ConfiguredCarver.field29674);
          method32455(var2, Registry.field16102, ConfiguredFeature.field33882);
          method32455(var2, Registry.field16103, StructureFeature.field43171);
@@ -35,7 +36,7 @@ public abstract class DynamicRegistries {
          return var2.build();
       }
    );
-   private static final DynamicRegistriesImpl field40300 = Util.<DynamicRegistriesImpl>method38507(
+   private static final DynamicRegistriesImpl field40300 = Util.<DynamicRegistriesImpl>make(
       () -> {
          DynamicRegistriesImpl var2 = new DynamicRegistriesImpl();
          DimensionType.registerTypes(var2);

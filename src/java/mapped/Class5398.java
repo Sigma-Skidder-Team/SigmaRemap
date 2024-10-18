@@ -6,6 +6,7 @@ import net.minecraft.item.Items;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.server.ServerWorld;
+import net.minecraft.world.storage.MapData;
 
 import javax.annotation.Nullable;
 import java.util.Locale;
@@ -37,7 +38,7 @@ public class Class5398 implements Class5391 {
          } else {
             ItemStack var7 = Class3316.method11859(var5, var6.getX(), var6.getZ(), (byte)2, true, true);
             Class3316.method11868(var5, var7);
-            Class7529.method24595(var7, var6, "+", this.field24071);
+            MapData.method24595(var7, var6, "+", this.field24071);
             var7.method32150(new TranslationTextComponent("filled_map." + this.field24070.method11373().toLowerCase(Locale.ROOT)));
             return new Class9346(
                new ItemStack(Items.field38049, this.field24069), new ItemStack(Items.field37905), var7, this.field24072, this.field24073, 0.2F

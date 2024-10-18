@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.fluid.Fluids;
 
 public class Class3561 implements Class3499<Class7435> {

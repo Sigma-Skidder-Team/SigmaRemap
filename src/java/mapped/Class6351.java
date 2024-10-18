@@ -1,10 +1,11 @@
 package mapped;
 
+import net.minecraft.client.world.DimensionRenderInfo;
 import net.minecraft.util.math.vector.Vector3d;
 
 import javax.annotation.Nullable;
 
-public class Class6351 extends Class6349 {
+public class Class6351 extends DimensionRenderInfo {
    private static String[] field27892;
 
    public Class6351() {

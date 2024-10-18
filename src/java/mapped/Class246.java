@@ -16,7 +16,7 @@ public class Class246 extends Class219<Class1057, Class2887<Class1057>> {
       var1.translate(0.0, 1.0, 0.0);
       var1.scale(-1.0F, -1.0F, 1.0F);
       Quaternion var13 = var4.method4848().getOpposite().method532();
-      var13.method31184();
+      var13.conjugate();
       var1.rotate(var13);
       var1.scale(-1.0F, -1.0F, 1.0F);
       var1.translate(0.0, -1.0, 0.0);

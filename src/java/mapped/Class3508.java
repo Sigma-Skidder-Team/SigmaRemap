@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.particles.RedstoneParticleData;
 
 public class Class3508 implements Class3499<RedstoneParticleData> {

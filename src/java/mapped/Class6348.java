@@ -1,8 +1,9 @@
 package mapped;
 
+import net.minecraft.client.world.DimensionRenderInfo;
 import net.minecraft.util.math.vector.Vector3d;
 
-public class Class6348 extends Class6349 {
+public class Class6348 extends DimensionRenderInfo {
    private static String[] field27883;
 
    public Class6348() {

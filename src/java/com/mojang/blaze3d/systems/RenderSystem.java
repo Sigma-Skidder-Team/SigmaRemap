@@ -22,7 +22,7 @@ import java.util.function.LongSupplier;
 import java.util.function.Supplier;
 
 public class RenderSystem {
-   private static final Logger field34654 = LogManager.getLogger();
+   private static final Logger LOGGER = LogManager.getLogger();
    private static final ConcurrentLinkedQueue<IRenderCall> recordingQueue = Queues.newConcurrentLinkedQueue();
    private static final Tessellator field34656 = new Tessellator();
    public static final float field34657 = 0.1F;
@@ -30,7 +30,7 @@ public class RenderSystem {
    private static boolean isReplayingQueue;
    private static Thread gameThread;
    private static Thread renderThread;
-   private static int field34662 = -1;
+   private static int MAX_SUPPORTED_TEXTURE_SIZE = -1;
    private static boolean isInInit;
    private static double lastDrawTime = Double.MIN_VALUE;
 
@@ -359,14 +359,14 @@ public class RenderSystem {
       GlStateManager.method23796();
    }
 
-   public static void method27859(Class2270 var0) {
+   public static void logicOp(Class2270 var0) {
       assertThread(RenderSystem::isOnGameThread);
-      GlStateManager.logicOp(var0.field14772);
+      GlStateManager.logicOp(var0.opcode);
    }
 
-   public static void method27860(int var0) {
+   public static void activeTexture(int var0) {
       assertThread(RenderSystem::isOnGameThread);
-      GlStateManager.method23803(var0);
+      GlStateManager.activeTexture(var0);
    }
 
    public static void enableTexture() {
@@ -405,9 +405,9 @@ public class RenderSystem {
    }
 
    @Deprecated
-   public static void method27868() {
+   public static void disableRescaleNormal() {
       assertThread(RenderSystem::isOnGameThread);
-      GlStateManager.method23820();
+      GlStateManager.disableRescaleNormal();
    }
 
    public static void viewport(int var0, int var1, int var2, int var3) {
@@ -420,34 +420,34 @@ public class RenderSystem {
       GlStateManager.colorMask(var0, var1, var2, var3);
    }
 
-   public static void method27871(int var0, int var1, int var2) {
+   public static void stencilFunc(int var0, int var1, int var2) {
       assertThread(RenderSystem::isOnGameThread);
       GlStateManager.stencilFunc(var0, var1, var2);
    }
 
-   public static void method27872(int var0) {
+   public static void stencilMask(int var0) {
       assertThread(RenderSystem::isOnGameThread);
       GlStateManager.stencilMask(var0);
    }
 
-   public static void method27873(int var0, int var1, int var2) {
+   public static void stencilOp(int var0, int var1, int var2) {
       assertThread(RenderSystem::isOnGameThread);
       GlStateManager.stencilOp(var0, var1, var2);
    }
 
-   public static void method27874(double var0) {
+   public static void clearDepth(double var0) {
       assertThread(RenderSystem::isOnGameThreadOrInit);
       GlStateManager.clearDepth(var0);
    }
 
-   public static void method27875(float var0, float var1, float var2, float var3) {
+   public static void clearColor(float var0, float var1, float var2, float var3) {
       assertThread(RenderSystem::isOnGameThreadOrInit);
       GlStateManager.clearColor(var0, var1, var2, var3);
    }
 
-   public static void method27876(int var0) {
+   public static void clearStencil(int var0) {
       assertThread(RenderSystem::isOnGameThread);
-      GlStateManager.method23828(var0);
+      GlStateManager.clearStencil(var0);
    }
 
    public static void clear(int var0, boolean var1) {
@@ -470,13 +470,13 @@ public class RenderSystem {
    @Deprecated
    public static void pushMatrix() {
       assertThread(RenderSystem::isOnGameThread);
-      GlStateManager.method23832();
+      GlStateManager.pushMatrix();
    }
 
    @Deprecated
    public static void popMatrix() {
       assertThread(RenderSystem::isOnGameThread);
-      GlStateManager.method23833();
+      GlStateManager.popMatrix();
    }
 
    @Deprecated
@@ -486,21 +486,21 @@ public class RenderSystem {
    }
 
    @Deprecated
-   public static void method27883(float var0, float var1, float var2, float var3) {
+   public static void rotatef(float var0, float var1, float var2, float var3) {
       assertThread(RenderSystem::isOnGameThread);
-      GlStateManager.method23836(var0, var1, var2, var3);
+      GlStateManager.rotatef(var0, var1, var2, var3);
    }
 
    @Deprecated
    public static void scalef(float var0, float var1, float var2) {
       assertThread(RenderSystem::isOnGameThread);
-      GlStateManager.method23837(var0, var1, var2);
+      GlStateManager.scalef(var0, var1, var2);
    }
 
    @Deprecated
    public static void scaled(double var0, double var2, double var4) {
       assertThread(RenderSystem::isOnGameThread);
-      GlStateManager.method23838(var0, var2, var4);
+      GlStateManager.scaled(var0, var2, var4);
    }
 
    @Deprecated
@@ -512,7 +512,7 @@ public class RenderSystem {
    @Deprecated
    public static void translated(double var0, double var2, double var4) {
       assertThread(RenderSystem::isOnGameThread);
-      GlStateManager.method23840(var0, var2, var4);
+      GlStateManager.translated(var0, var2, var4);
    }
 
    @Deprecated
@@ -528,90 +528,90 @@ public class RenderSystem {
    }
 
    @Deprecated
-   public static void method27890(float var0, float var1, float var2) {
+   public static void color3f(float var0, float var1, float var2) {
       assertThread(RenderSystem::isOnGameThread);
       GlStateManager.color4f(var0, var1, var2, 1.0F);
    }
 
    @Deprecated
-   public static void method27891() {
+   public static void clearCurrentColor() {
       assertThread(RenderSystem::isOnGameThread);
-      GlStateManager.method23844();
+      GlStateManager.clearCurrentColor();
    }
 
-   public static void method27892(int var0, int var1, int var2) {
+   public static void drawArrays(int var0, int var1, int var2) {
       assertThread(RenderSystem::isOnGameThread);
-      GlStateManager.method23854(var0, var1, var2);
+      GlStateManager.drawArrays(var0, var1, var2);
    }
 
    public static void lineWidth(float var0) {
       assertThread(RenderSystem::isOnGameThread);
-      GlStateManager.method23855(var0);
+      GlStateManager.lineWidth(var0);
    }
 
-   public static void method27894(int var0, int var1) {
+   public static void pixelStore(int var0, int var1) {
       assertThread(RenderSystem::isOnGameThreadOrInit);
       GlStateManager.pixelStore(var0, var1);
    }
 
-   public static void method27895(int var0, float var1) {
+   public static void pixelTransfer(int var0, float var1) {
       GlStateManager.pixelTransfer(var0, var1);
    }
 
-   public static void method27896(int var0, int var1, int var2, int var3, int var4, int var5, ByteBuffer var6) {
+   public static void readPixels(int var0, int var1, int var2, int var3, int var4, int var5, ByteBuffer var6) {
       assertThread(RenderSystem::isOnGameThread);
       GlStateManager.readPixels(var0, var1, var2, var3, var4, var5, var6);
    }
 
-   public static void method27897(int var0, Consumer<String> var1) {
+   public static void getString(int var0, Consumer<String> var1) {
       assertThread(RenderSystem::isOnGameThread);
-      var1.accept(GlStateManager.method23860(var0));
+      var1.accept(GlStateManager.getString(var0));
    }
 
    public static String getBackendDescription() {
       assertThread(RenderSystem::isInInitPhase);
-      return String.format("LWJGL version %s", GLX.method28297());
+      return String.format("LWJGL version %s", GLX._getLWJGLVersion());
    }
 
    public static String getApiDescription() {
       assertThread(RenderSystem::isInInitPhase);
-      return GLX.method28295();
+      return GLX.getOpenGLVersionString();
    }
 
    public static LongSupplier initBackendSystem() {
       assertThread(RenderSystem::isInInitPhase);
-      return GLX.method28298();
+      return GLX._initGlfw();
    }
 
    public static void initRenderer(int var0, boolean var1) {
       assertThread(RenderSystem::isInInitPhase);
-      GLX.method28302(var0, var1);
+      GLX._init(var0, var1);
    }
 
    public static void setErrorCallback(GLFWErrorCallbackI var0) {
       assertThread(RenderSystem::isInInitPhase);
-      GLX.method28299(var0);
+      GLX._setGlfwErrorCallback(var0);
    }
 
-   public static void method27903(int var0) {
+   public static void renderCrosshair(int var0) {
       assertThread(RenderSystem::isOnGameThread);
-      GLX.method28305(var0, true, true, true);
+      GLX._renderCrosshair(var0, true, true, true);
    }
 
-   public static void method27904() {
+   public static void setupNvFogDistance() {
       assertThread(RenderSystem::isOnGameThread);
-      GLX.method28301();
+      GLX._setupNvFogDistance();
    }
 
    @Deprecated
-   public static void method27905(int var0, float var1, float var2) {
+   public static void glMultiTexCoord2f(int var0, float var1, float var2) {
       assertThread(RenderSystem::isOnGameThread);
-      GlStateManager.method23761(var0, var1, var2);
+      GlStateManager.multiTexCoord2f(var0, var1, var2);
    }
 
    public static String getCapsString() {
       assertThread(RenderSystem::isOnGameThread);
-      return GLX.method28303();
+      return GLX._getCapsString();
    }
 
    public static void setupDefaultState(int var0, int var1, int var2, int var3) {
@@ -629,29 +629,34 @@ public class RenderSystem {
       GlStateManager.viewport(var0, var1, var2, var3);
    }
 
-   public static int method27908() {
+   public static int maxSupportedTextureSize() {
       assertThread(RenderSystem::isInInitPhase);
-      if (field34662 == -1) {
-         int var2 = GlStateManager.method23861(3379);
 
-         for (int var3 = Math.max(32768, var2); var3 >= 1024; var3 >>= 1) {
-            GlStateManager.texImage2D(32868, 0, 6408, var3, var3, 0, 6408, 5121, (IntBuffer)null);
-            int var4 = GlStateManager.method23809(32868, 0, 4096);
-            if (var4 != 0) {
-               field34662 = var3;
-               return var3;
+      if (MAX_SUPPORTED_TEXTURE_SIZE == -1)
+      {
+         int i = GlStateManager.getInteger(3379);
+
+         for (int j = Math.max(32768, i); j >= 1024; j >>= 1)
+         {
+            GlStateManager.texImage2D(32868, 0, 6408, j, j, 0, 6408, 5121, (IntBuffer)null);
+            int k = GlStateManager.getTexLevelParameter(32868, 0, 4096);
+
+            if (k != 0)
+            {
+               MAX_SUPPORTED_TEXTURE_SIZE = j;
+               return j;
             }
          }
 
-         field34662 = Math.max(var2, 1024);
-         field34654.info("Failed to determine maximum texture size by probing, trying GL_MAX_TEXTURE_SIZE = {}", field34662);
+         MAX_SUPPORTED_TEXTURE_SIZE = Math.max(i, 1024);
+         LOGGER.info("Failed to determine maximum texture size by probing, trying GL_MAX_TEXTURE_SIZE = {}", (int)MAX_SUPPORTED_TEXTURE_SIZE);
       }
 
-      return field34662;
+      return MAX_SUPPORTED_TEXTURE_SIZE;
    }
 
-   public static void method27909(int var0, Supplier<Integer> var1) {
-      GlStateManager.method23747(var0, (Integer)var1.get());
+   public static void glBindBuffer(int var0, Supplier<Integer> var1) {
+      GlStateManager.bindBuffer(var0, (Integer)var1.get());
    }
 
    public static void method27910(int var0, ByteBuffer var1, int var2) {
@@ -744,17 +749,17 @@ public class RenderSystem {
       GlStateManager.method23768();
    }
 
-   public static void method27928(Vector3f var0, Vector3f var1, Matrix4f var2) {
+   public static void setupLevelDiffuseLighting(Vector3f var0, Vector3f var1, Matrix4f var2) {
       assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23772(var0, var1, var2);
    }
 
-   public static void method27929(Vector3f var0, Vector3f var1) {
+   public static void setupGuiFlatDiffuseLighting(Vector3f var0, Vector3f var1) {
       assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23773(var0, var1);
    }
 
-   public static void method27930(Vector3f var0, Vector3f var1) {
+   public static void setupGui3DDiffuseLighting(Vector3f var0, Vector3f var1) {
       assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23774(var0, var1);
    }

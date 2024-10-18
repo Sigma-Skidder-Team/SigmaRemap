@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.MutableBoundingBox;
 
 import java.util.List;
 import java.util.Random;
@@ -142,7 +143,7 @@ public class Class9331 {
             }
          }
 
-         Class9764 var16 = Class4208.method13001(var1, var2, var3, var4, var5, var6);
+         MutableBoundingBox var16 = Class4208.method13001(var1, var2, var3, var4, var5, var6);
          return var16 != null && var16.field45679 > 1 ? new Class4208(var7, var16, var6) : null;
       }
    }

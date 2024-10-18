@@ -5,6 +5,7 @@ import net.minecraft.item.Items;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
+import net.minecraft.world.storage.MapData;
 
 public class Class4853 extends Class4852 {
    public Class4853(ResourceLocation var1) {
@@ -44,7 +45,7 @@ public class Class4853 extends Class4852 {
          }
 
          if (!var5.isEmpty()) {
-            Class7529 var8 = Class3316.method11861(var5, var2);
+            MapData var8 = Class3316.method11861(var5, var2);
             if (var8 != null) {
                return !this.method14997(var8) ? var8.scale < 4 : false;
             } else {
@@ -56,7 +57,7 @@ public class Class4853 extends Class4852 {
       }
    }
 
-   private boolean method14997(Class7529 var1) {
+   private boolean method14997(MapData var1) {
       if (var1.field32327 != null) {
          for (Class7982 var5 : var1.field32327.values()) {
             if (var5.method27126() == MapDecorationType.MANSION || var5.method27126() == MapDecorationType.MONUMENT) {

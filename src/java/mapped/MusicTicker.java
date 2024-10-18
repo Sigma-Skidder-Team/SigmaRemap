@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.audio.BackgroundMusicSelector;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.Random;

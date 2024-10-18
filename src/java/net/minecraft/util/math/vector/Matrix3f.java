@@ -119,7 +119,7 @@ public final class Matrix3f {
          float var9 = var7 * var7 - var6 * var6;
          float var10 = -2.0F * var6 * var7;
          float var11 = var7 * var7 + var6 * var6;
-         var4.method31182(var8);
+         var4.multiply(var8);
          var3.method32824();
          var3.field40499 = var9;
          var3.field40503 = var9;
@@ -140,7 +140,7 @@ public final class Matrix3f {
          float var20 = var16 * var16 - var14 * var14;
          float var22 = -2.0F * var14 * var16;
          float var24 = var16 * var16 + var14 * var14;
-         var4.method31182(var18);
+         var4.multiply(var18);
          var3.method32824();
          var3.field40499 = var20;
          var3.field40507 = var20;
@@ -161,7 +161,7 @@ public final class Matrix3f {
          float var21 = var17 * var17 - var15 * var15;
          float var23 = -2.0F * var15 * var17;
          float var25 = var17 * var17 + var15 * var15;
-         var4.method31182(var19);
+         var4.multiply(var19);
          var3.method32824();
          var3.field40503 = var21;
          var3.field40507 = var21;
@@ -197,7 +197,7 @@ public final class Matrix3f {
       var5.method32828(this);
 
       for (int var6 = 0; var6 < 5; var6++) {
-         var4.method31182(method32820(var5));
+         var4.multiply(method32820(var5));
       }
 
       var4.method31188();
@@ -211,7 +211,7 @@ public final class Matrix3f {
       float var12 = -2.0F * var9 * var10;
       float var13 = var10 * var10 + var9 * var9;
       Quaternion var14 = new Quaternion(0.0F, 0.0F, var9, var10);
-      var3.method31182(var14);
+      var3.multiply(var14);
       Matrix3f var15 = new Matrix3f();
       var15.method32824();
       var15.field40499 = var11;
@@ -228,7 +228,7 @@ public final class Matrix3f {
       float var19 = -2.0F * var16 * var17;
       float var20 = var17 * var17 + var16 * var16;
       Quaternion var21 = new Quaternion(0.0F, var16, 0.0F, var17);
-      var3.method31182(var21);
+      var3.multiply(var21);
       Matrix3f var22 = new Matrix3f();
       var22.method32824();
       var22.field40499 = var18;
@@ -245,7 +245,7 @@ public final class Matrix3f {
       float var26 = -2.0F * var23 * var24;
       float var27 = var24 * var24 + var23 * var23;
       Quaternion var28 = new Quaternion(var23, 0.0F, 0.0F, var24);
-      var3.method31182(var28);
+      var3.multiply(var28);
       Matrix3f var29 = new Matrix3f();
       var29.method32824();
       var29.field40503 = var25;

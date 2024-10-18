@@ -40,7 +40,7 @@ public class Class3485 extends BushBlock implements Class3196 {
 
    @Override
    public boolean method11486(IBlockReader var1, BlockPos var2, BlockState var3, boolean var4) {
-      Block var7 = ((Class4709)this.field19346.get().field33887).field22337.getBlock();
+      Block var7 = ((Class4709)this.field19346.get().config).field22337.getBlock();
       Block var8 = var1.getBlockState(var2.down()).getBlock();
       return var8 == var7;
    }

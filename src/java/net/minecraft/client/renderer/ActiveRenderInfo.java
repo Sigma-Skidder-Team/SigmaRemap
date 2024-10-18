@@ -107,8 +107,8 @@ public class ActiveRenderInfo {
       this.pitch = var2;
       this.yaw = var1;
       this.rotation.method31185(0.0F, 0.0F, 0.0F, 1.0F);
-      this.rotation.method31182(Vector3f.YP.rotationDegrees(-var1));
-      this.rotation.method31182(Vector3f.XP.rotationDegrees(var2));
+      this.rotation.multiply(Vector3f.YP.rotationDegrees(-var1));
+      this.rotation.multiply(Vector3f.XP.rotationDegrees(var2));
       this.look.method25275(0.0F, 0.0F, 1.0F);
       this.look.method25283(this.rotation);
       this.up.method25275(0.0F, 1.0F, 0.0F);

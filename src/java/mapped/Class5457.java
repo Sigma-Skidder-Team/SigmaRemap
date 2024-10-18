@@ -5,6 +5,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.template.TemplateManager;
@@ -12,7 +13,7 @@ import net.minecraft.world.gen.feature.template.TemplateManager;
 public class Class5457 extends Class5455<Class4712> {
    private static String[] field24216;
 
-   public Class5457(Structure<Class4712> var1, int var2, int var3, Class9764 var4, int var5, long var6) {
+   public Class5457(Structure<Class4712> var1, int var2, int var3, MutableBoundingBox var4, int var5, long var6) {
       super(var1, var2, var3, var4, var5, var6);
    }
 

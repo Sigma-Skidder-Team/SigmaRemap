@@ -6,6 +6,7 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.IWorld;
@@ -32,15 +33,15 @@ public abstract class Class7487 {
 
    public abstract List<Class8266> method24374(TemplateManager var1, BlockPos var2, Rotation var3, Random var4);
 
-   public abstract Class9764 method24375(TemplateManager var1, BlockPos var2, Rotation var3);
+   public abstract MutableBoundingBox method24375(TemplateManager var1, BlockPos var2, Rotation var3);
 
    public abstract boolean method24376(
-           TemplateManager var1, ISeedReader var2, StructureManager var3, ChunkGenerator var4, BlockPos var5, BlockPos var6, Rotation var7, Class9764 var8, Random var9, boolean var10
+           TemplateManager var1, ISeedReader var2, StructureManager var3, ChunkGenerator var4, BlockPos var5, BlockPos var6, Rotation var7, MutableBoundingBox var8, Random var9, boolean var10
    );
 
    public abstract Class8325<?> method24377();
 
-   public void method24380(IWorld var1, Class8266 var2, BlockPos var3, Rotation var4, Random var5, Class9764 var6) {
+   public void method24380(IWorld var1, Class8266 var2, BlockPos var3, Rotation var4, Random var5, MutableBoundingBox var6) {
    }
 
    public Class7487 method24381(Class109 var1) {

@@ -54,7 +54,7 @@ public class SystemToast implements Class7601 {
       }
 
       var2.method5915().getTextureManager().bindTexture(field32630);
-      RenderSystem.method27890(1.0F, 1.0F, 1.0F);
+      RenderSystem.color3f(1.0F, 1.0F, 1.0F);
       int var7 = this.method24898();
       byte var8 = 12;
       if (var7 == 160 && this.field32639.size() <= 1) {

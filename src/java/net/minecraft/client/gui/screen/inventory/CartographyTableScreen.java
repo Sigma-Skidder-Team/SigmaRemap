@@ -8,6 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.storage.MapData;
 
 public class CartographyTableScreen extends ContainerScreen<Class5836> {
    private static final ResourceLocation field4753 = new ResourceLocation("textures/gui/container/cartography_table.png");
@@ -24,7 +25,7 @@ public class CartographyTableScreen extends ContainerScreen<Class5836> {
    }
 
    @Override
-   public void method2618(MatrixStack var1, float var2, int var3, int var4) {
+   public void drawGuiContainerBackgroundLayer(MatrixStack var1, float var2, int var3, int var4) {
       this.renderBackground(var1);
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       this.mc.getTextureManager().bindTexture(field4753);
@@ -37,7 +38,7 @@ public class CartographyTableScreen extends ContainerScreen<Class5836> {
       boolean var12 = var9 == Items.field37471;
       ItemStack var13 = this.field4727.getSlot(0).getStack();
       boolean var14 = false;
-      Class7529 var15;
+      MapData var15;
       if (var13.getItem() != Items.field37955) {
          var15 = null;
       } else {
@@ -60,7 +61,7 @@ public class CartographyTableScreen extends ContainerScreen<Class5836> {
       this.method2629(var1, var15, var10, var11, var12, var14);
    }
 
-   private void method2629(MatrixStack var1, Class7529 var2, boolean var3, boolean var4, boolean var5, boolean var6) {
+   private void method2629(MatrixStack var1, MapData var2, boolean var3, boolean var4, boolean var5, boolean var6) {
       int var9 = this.field4734;
       int var10 = this.field4735;
       if (var4 && !var6) {
@@ -91,14 +92,14 @@ public class CartographyTableScreen extends ContainerScreen<Class5836> {
       }
    }
 
-   private void method2630(Class7529 var1, int var2, int var3, float var4) {
+   private void method2630(MapData var1, int var2, int var3, float var4) {
       if (var1 != null) {
          RenderSystem.pushMatrix();
          RenderSystem.translatef((float)var2, (float)var3, 1.0F);
          RenderSystem.scalef(var4, var4, 1.0F);
          Class7735 var7 = Class7733.method25595(Tessellator.getInstance().getBuffer());
          this.mc.gameRenderer.method756().method593(new MatrixStack(), var7, var1, true, 15728880);
-         var7.method25602();
+         var7.finish();
          RenderSystem.popMatrix();
       }
    }

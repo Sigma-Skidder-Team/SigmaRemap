@@ -5,6 +5,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.client.Minecraft;
 import net.minecraft.state.Property;
 import net.minecraft.util.ResourceLocation;
@@ -418,7 +419,7 @@ public class Class9172 {
          return var0.getRenderType().ordinal();
       } else {
          Block var3 = var0.getBlock();
-         if (var3 instanceof Class3404) {
+         if (var3 instanceof FlowingFluidBlock) {
             return 1;
          } else {
             BlockRenderType var4 = var0.getRenderType();

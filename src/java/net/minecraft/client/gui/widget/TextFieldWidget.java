@@ -447,7 +447,7 @@ public class TextFieldWidget extends Widget implements Class1190, IGuiEventListe
       RenderSystem.color4f(0.0F, 0.0F, 255.0F, 255.0F);
       RenderSystem.disableTexture();
       RenderSystem.method27857();
-      RenderSystem.method27859(Class2270.field14769);
+      RenderSystem.logicOp(Class2270.field14769);
       var8.begin(7, DefaultVertexFormats.field43341);
       var8.pos((double)var1, (double)var4, 0.0).endVertex();
       var8.pos((double)var3, (double)var4, 0.0).endVertex();

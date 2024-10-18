@@ -27,7 +27,7 @@ public class TutorialToast implements Class7601 {
    @Override
    public Class2139 method24894(MatrixStack var1, ToastGui var2, long var3) {
       var2.method5915().getTextureManager().bindTexture(field32630);
-      RenderSystem.method27890(1.0F, 1.0F, 1.0F);
+      RenderSystem.color3f(1.0F, 1.0F, 1.0F);
       var2.blit(var1, 0, 0, 0, 96, this.method24898(), this.method24899());
       this.field32622.method8813(var1, var2, 6, 6);
       if (this.field32624 != null) {

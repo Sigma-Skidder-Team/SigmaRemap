@@ -4,6 +4,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.gen.feature.structure.StructureManager;
 import net.minecraft.world.gen.feature.template.TemplateManager;
@@ -14,7 +15,7 @@ import java.util.Random;
 public class Class4192 extends Class4188 {
    private static String[] field20487;
 
-   public Class4192(int var1, Class9764 var2, Direction var3, Class102 var4) {
+   public Class4192(int var1, MutableBoundingBox var2, Direction var3, Class102 var4) {
       super(Class7792.field33428, var1, var4);
       this.method12939(var3);
       this.field20444 = var2;
@@ -24,8 +25,8 @@ public class Class4192 extends Class4188 {
       super(Class7792.field33428, var2);
    }
 
-   public static Class9764 method12975(List<Class4178> var0, Random var1, int var2, int var3, int var4, Direction var5) {
-      Class9764 var8 = new Class9764(var2, var3 - 5, var4, var2, var3 + 3 - 1, var4);
+   public static MutableBoundingBox method12975(List<Class4178> var0, Random var1, int var2, int var3, int var4, Direction var5) {
+      MutableBoundingBox var8 = new MutableBoundingBox(var2, var3 - 5, var4, var2, var3 + 3 - 1, var4);
       switch (Class7441.field32015[var5.ordinal()]) {
          case 1:
          default:
@@ -79,7 +80,7 @@ public class Class4192 extends Class4188 {
    }
 
    @Override
-   public boolean method12896(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, StructureManager var2, ChunkGenerator var3, Random var4, MutableBoundingBox var5, ChunkPos var6, BlockPos var7) {
       if (!this.method12919(var1, var5)) {
          this.method12927(var1, var5, 0, 5, 0, 2, 7, 1, field20443, field20443, false);
          this.method12927(var1, var5, 0, 0, 7, 2, 2, 8, field20443, field20443, false);

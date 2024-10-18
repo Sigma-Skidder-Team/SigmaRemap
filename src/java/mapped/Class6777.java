@@ -16,7 +16,7 @@ import net.minecraft.world.gen.OctavesNoiseGenerator;
 import java.util.Comparator;
 import java.util.Random;
 
-public abstract class Class6777 extends Class6768<Class8278> {
+public abstract class Class6777 extends SurfaceBuilder<Class8278> {
    private long field29560;
    private ImmutableMap<BlockState, OctavesNoiseGenerator> field29561 = ImmutableMap.of();
    private ImmutableMap<BlockState, OctavesNoiseGenerator> field29562 = ImmutableMap.of();
@@ -26,7 +26,7 @@ public abstract class Class6777 extends Class6768<Class8278> {
       super(var1);
    }
 
-   public void method20654(
+   public void buildSurface(
       Random var1,
       IChunk var2,
       Biome var3,

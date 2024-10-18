@@ -45,7 +45,7 @@ public class CraftingScreen extends ContainerScreen<Class5829> implements Class8
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.renderBackground(var1);
       if (this.field4756.method5839() && this.field4757) {
-         this.method2618(var1, var4, var2, var3);
+         this.drawGuiContainerBackgroundLayer(var1, var4, var2, var3);
          this.field4756.render(var1, var2, var3, var4);
       } else {
          this.field4756.render(var1, var2, var3, var4);
@@ -58,7 +58,7 @@ public class CraftingScreen extends ContainerScreen<Class5829> implements Class8
    }
 
    @Override
-   public void method2618(MatrixStack var1, float var2, int var3, int var4) {
+   public void drawGuiContainerBackgroundLayer(MatrixStack var1, float var2, int var3, int var4) {
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       this.mc.getTextureManager().bindTexture(field4754);
       int var7 = this.field4734;

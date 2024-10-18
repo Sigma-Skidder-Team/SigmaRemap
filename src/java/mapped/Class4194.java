@@ -6,6 +6,7 @@ import net.minecraft.block.DoorBlock;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.ISeedReader;
 
 import javax.annotation.Nullable;
@@ -29,7 +30,7 @@ public abstract class Class4194 extends Class4178 {
       var1.method109("EntryDoor", this.field20495.name());
    }
 
-   public void method12984(ISeedReader var1, Random var2, Class9764 var3, Class2213 var4, int var5, int var6, int var7) {
+   public void method12984(ISeedReader var1, Random var2, MutableBoundingBox var3, Class2213 var4, int var5, int var6, int var7) {
       switch (Class9295.field42739[var4.ordinal()]) {
          case 1:
             this.method12927(var1, var3, var5, var6, var7, var5 + 3 - 1, var6 + 3 - 1, var7, field20443, field20443, false);
@@ -282,7 +283,7 @@ public abstract class Class4194 extends Class4178 {
       return null;
    }
 
-   public static boolean method12989(Class9764 var0) {
+   public static boolean method12989(MutableBoundingBox var0) {
       return var0 != null && var0.field45679 > 10;
    }
 }

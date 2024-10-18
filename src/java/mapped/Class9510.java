@@ -49,9 +49,9 @@ public class Class9510 {
    }
 
    public Class9510 method36727(Class9110 var1, boolean var2) {
-      long var5 = var1.method33979().method8332();
+      long var5 = var1.method33979().toLong();
       if (var2) {
-         long var7 = var1.method33979().up().method8332();
+         long var7 = var1.method33979().up().toLong();
          this.field44283.add(var7);
          this.field44281.add(var7);
          this.field44284.remove(var7);
@@ -64,14 +64,14 @@ public class Class9510 {
    }
 
    public Class9510 method36728(Class9110 var1) {
-      long var4 = var1.method33979().method8332();
+      long var4 = var1.method33979().toLong();
       this.field44283.remove(var4);
       this.field44284.add(var4);
       return this;
    }
 
    public Class9510 method36729(Class9110 var1) {
-      this.field44282.add(var1.method33979().method8332());
+      this.field44282.add(var1.method33979().toLong());
       return this;
    }
 

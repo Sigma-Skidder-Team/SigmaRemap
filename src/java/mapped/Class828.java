@@ -415,7 +415,7 @@ public class Class828 extends Screen {
       RenderSystem.color4f(0.0F, 0.0F, 255.0F, 255.0F);
       RenderSystem.disableTexture();
       RenderSystem.method27857();
-      RenderSystem.method27859(Class2270.field14769);
+      RenderSystem.logicOp(Class2270.field14769);
       var5.begin(7, DefaultVertexFormats.field43341);
 
       for (Class9518 var9 : var1) {

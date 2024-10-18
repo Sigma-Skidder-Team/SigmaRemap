@@ -10,6 +10,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.renderer.ActiveRenderInfo;
+import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.renderer.entity.PlayerRenderer;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
@@ -213,11 +214,11 @@ public class EntityRendererManager {
       this.field40019 = var3;
    }
 
-   public void method32214(Quaternion var1) {
+   public void setCameraOrientation(Quaternion var1) {
       this.field40018 = var1;
    }
 
-   public void method32215(boolean var1) {
+   public void setRenderShadow(boolean var1) {
       this.renderShadow = var1;
    }
 

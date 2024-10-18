@@ -1,6 +1,5 @@
 package net.minecraft.util.math;
 
-import mapped.*;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.vector.Vector3d;
 
@@ -40,7 +39,7 @@ public class AxisAlignedBB {
       this(min.x, min.y, min.z, max.x, max.y, max.z);
    }
 
-   public static AxisAlignedBB method19656(Class9764 var0) {
+   public static AxisAlignedBB method19656(MutableBoundingBox var0) {
       return new AxisAlignedBB(
          (double)var0.field45678,
          (double)var0.field45679,

@@ -335,8 +335,8 @@ public class Class1094 extends Class1018 {
    private int method5116(IWorld var1) {
       Biome var4 = var1.getBiome(this.getPosition());
       int var5 = this.rand.nextInt(100);
-      if (var4.method32500() != Class87.field225) {
-         if (var4.getCategory() != Class100.field286) {
+      if (var4.getPrecipitation() != Biome.RainType.SNOW) {
+         if (var4.getCategory() != Biome.Category.DESERT) {
             return var5 >= 50 ? (var5 >= 90 ? 2 : 5) : 0;
          } else {
             return 4;

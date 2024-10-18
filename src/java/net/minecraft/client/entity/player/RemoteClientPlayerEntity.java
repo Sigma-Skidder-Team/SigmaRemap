@@ -1,7 +1,7 @@
 package net.minecraft.client.entity.player;
 
 import com.mojang.authlib.GameProfile;
-import mapped.ClientWorld;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.MathHelper;

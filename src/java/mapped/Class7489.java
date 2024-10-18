@@ -5,6 +5,7 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
+import net.minecraft.util.math.MutableBoundingBox;
 
 import java.util.function.Supplier;
 
@@ -18,7 +19,7 @@ public class Class7489 extends Class7488 {
    }
 
    @Override
-   public Class9463 method24409(Rotation var1, Class9764 var2, boolean var3) {
+   public Class9463 method24409(Rotation var1, MutableBoundingBox var2, boolean var3) {
       Class9463 var6 = super.method24409(var1, var2, var3);
       var6.method36435(Class7095.field30526);
       var6.method36434(Class7095.field30528);
