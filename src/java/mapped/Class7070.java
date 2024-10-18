@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.module.impl.render.jello.NameTags;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -11,7 +11,6 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class Class7070 {
-   private static String[] field30447;
    public int field30448;
    public float field30449;
    public float field30450;
@@ -71,21 +70,21 @@ public class Class7070 {
       if (this.field30453 == null) {
          return null;
       } else {
-         if (!NameTags.method16937()
-            .<IInventory, Class4849>method1030(Class7207.field30936, new Class927(new ItemStack(Items.field37236)), NameTags.method16936().world)
+         if (!Minecraft.getInstance().getConnection().getRecipeManager()
+            .method1030(Class7207.field30936, new Class927(new ItemStack(Items.field37236)), Minecraft.getInstance().world)
             .isPresent()) {
             SimpleReloadableResourceManager var3 = new SimpleReloadableResourceManager(ResourcePackType.SERVER_DATA);
 
-            for (IResourcePack var6 : NameTags.method16938().resourcePackRepository.getEnabledPacks().stream().<IResourcePack>map(ResourcePackInfo::getResourcePack).collect(Collectors.toList())) {
+            for (IResourcePack var6 : Minecraft.getInstance().resourcePackRepository.getEnabledPacks().stream().<IResourcePack>map(ResourcePackInfo::getResourcePack).collect(Collectors.toList())) {
                var3.method588(var6);
             }
 
             Class7120 var9 = new Class7120(this);
-            NameTags.method16937().method777(var9, var3, EmptyProfiler.INSTANCE, EmptyProfiler.INSTANCE, Util.getServerExecutor(), NameTags.method16939());
+            Minecraft.getInstance().getConnection().getRecipeManager().method777(var9, var3, EmptyProfiler.INSTANCE, EmptyProfiler.INSTANCE, Util.getServerExecutor(), Minecraft.getInstance());
          }
 
-         Optional var7 = NameTags.method16937()
-            .<IInventory, Class4849>method1030(Class7207.field30936, new Class927(this.field30453), NameTags.method16940().world);
+         Optional<Class4849> var7 = Minecraft.getInstance().getConnection().getRecipeManager()
+            .method1030(Class7207.field30936, new Class927(this.field30453), Minecraft.getInstance().world);
          if (var7.isPresent()) {
             ItemStack var8 = ((Class4849)var7.get()).getRecipeOutput();
             if (!var8.isEmpty()) {
