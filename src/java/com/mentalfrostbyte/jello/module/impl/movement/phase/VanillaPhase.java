@@ -18,18 +18,18 @@ public class VanillaPhase extends Module {
     }
 
     @EventTarget
-    private void method16711(EventUpdate var1) {
+    private void EventUpdate(EventUpdate event) {
         if (this.isEnabled()) {
             if (mc.player.collidedHorizontally) {
                 Class9629 var4 = MultiUtilities.method17760(1.0E-4);
                 double var5 = /*JelloPortal.getCurrentVersionApplied() != ViaVerList._1_8_x.getVersionNumber() ? 1.0E-6 :*/ 0.0625;
                 if (((Direction) var4.method37538()).getAxis() != Direction.Axis.X) {
-                    var1.setZ(
+                    event.setZ(
                             (double) Math.round((((Vector3d) var4.method37539()).z + 1.1921022E-8) * 10000.0) / 10000.0
                                     + (double) ((Direction) var4.method37538()).getZOffset() * var5
                     );
                 } else {
-                    var1.setX(
+                    event.setX(
                             (double) Math.round((((Vector3d) var4.method37539()).x + 1.1921022E-8) * 10000.0) / 10000.0
                                     + (double) ((Direction) var4.method37538()).getXOffset() * var5
                     );
@@ -39,19 +39,19 @@ public class VanillaPhase extends Module {
     }
 
     @EventTarget
-    private void method16712(EventMove var1) {
+    private void EventMove(EventMove event) {
         if (this.isEnabled()) {
             if (mc.player.collidedHorizontally || MultiUtilities.method17761()) {
-                MovementUtils.setSpeed(var1, 0.0);
+                MovementUtils.setSpeed(event, 0.0);
                 MovementUtils.method37095(1.7);
             }
         }
     }
 
     @EventTarget
-    private void method16713(EventPushBlock var1) {
+    private void EventPushBlock(EventPushBlock event) {
         if (this.isEnabled()) {
-            var1.setCancelled(true);
+            event.setCancelled(true);
         }
     }
 }

@@ -15,7 +15,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.vector.Vector3d;
 
 public class JumpSpider extends Module {
-    private boolean field23832 = false;
+    private boolean isJumping = false;
 
     public JumpSpider() {
         super(ModuleCategory.MOVEMENT, "Jump", "Jump spider");
@@ -25,83 +25,83 @@ public class JumpSpider extends Module {
 
     @Override
     public void onEnable() {
-        this.field23832 = false;
+        this.isJumping = false;
     }
 
     @EventTarget
-    private void method16651(EventMove var1) {
+    private void EventMove(EventMove event) {
         if (!mc.player.collidedHorizontally) {
-            this.field23832 = false;
+            this.isJumping = false;
         } else if (!mc.player.onGround) {
             if (mc.player.getPositionVec().y != (double) ((int) mc.player.getPositionVec().y)) {
-                if (var1.getY() < 0.0
-                        && mc.player.getPositionVec().y + var1.getY() < (double) ((int) mc.player.getPositionVec().y)) {
-                    var1.setY((double) ((int) mc.player.getPositionVec().y) - mc.player.getPositionVec().y);
-                    this.field23832 = true;
+                if (event.getY() < 0.0
+                        && mc.player.getPositionVec().y + event.getY() < (double) ((int) mc.player.getPositionVec().y)) {
+                    event.setY((double) ((int) mc.player.getPositionVec().y) - mc.player.getPositionVec().y);
+                    this.isJumping = true;
                 }
             } else if (this.getBooleanValueFromSettingName("AutoJump") || mc.gameSettings.keyBindJump.isKeyDown()) {
                 mc.player.jump();
-                var1.setY(mc.player.getMotion().y);
+                event.setY(mc.player.getMotion().y);
             } else if (!mc.gameSettings.keyBindSneak.isKeyDown()) {
-                MovementUtils.setSpeed(var1, 0.28 + (double) MovementUtils.method37078() * 0.05);
-                var1.setY(0.0);
+                MovementUtils.setSpeed(event, 0.28 + (double) MovementUtils.method37078() * 0.05);
+                event.setY(0.0);
             } else {
-                var1.setY(-0.0784);
+                event.setY(-0.0784);
             }
         } else if (this.getBooleanValueFromSettingName("AutoJump")) {
             mc.player.jump();
-            var1.setY(mc.player.getMotion().y);
+            event.setY(mc.player.getMotion().y);
         }
 
-        MultiUtilities.setPlayerYMotion(var1.getY());
+        MultiUtilities.setPlayerYMotion(event.getY());
     }
 
     @EventTarget
-    private void method16652(EventUpdate var1) {
-        if (this.isEnabled() && var1.isPre()) {
+    private void EventUpdate(EventUpdate event) {
+        if (this.isEnabled() && event.isPre()) {
             Class9629 var4 = MultiUtilities.method17760(1.0E-4);
-            String var5 = this.getStringSettingValueByName("Mode");
+            String mode = this.getStringSettingValueByName("Mode");
             if (this.getBooleanValueFromSettingName("Ceiling")
                     && !mc.player.onGround
                     && mc.world.getCollisionShapes(mc.player, mc.player.boundingBox.offset(0.0, 1.0E-6, 0.0)).count() > 0L) {
-                var1.setY(var1.getY() + 4.9E-7);
+                event.setY(event.getY() + 4.9E-7);
             }
 
             if (var4 != null) {
-                var1.method13908(true);
-                double var6 = 0.0;
-                switch (var5) {
+                event.method13908(true);
+                double movementOffset = 0.0;
+                switch (mode) {
                     case "AGC":
-                        var6 = 4.85E-7;
+                        movementOffset = 4.85E-7;
                         break;
                     case "Spartan":
-                        var6 = 1.0E-13;
+                        movementOffset = 1.0E-13;
                 }
 
-                if (this.field23832) {
+                if (this.isJumping) {
                     if (this.getBooleanValueFromSettingName("AutoJump") || mc.gameSettings.keyBindJump.isKeyDown()) {
-                        this.field23832 = !this.field23832;
+                        this.isJumping = !this.isJumping;
                     }
 
-                    var1.setGround(true);
-                    switch (var5) {
+                    event.setGround(true);
+                    switch (mode) {
                         case "AGC":
-                            var6 = 4.85E-7;
+                            movementOffset = 4.85E-7;
                             break;
                         case "Spartan":
-                            var6 = 1.0E-12;
+                            movementOffset = 1.0E-12;
                     }
                 }
 
                 if (((Direction) var4.method37538()).getAxis() == Direction.Axis.X) {
-                    var1.setX(
+                    event.setX(
                             (double) Math.round((((Vector3d) var4.method37539()).x + 1.1921022E-8) * 10000.0) / 10000.0
-                                    + (double) ((Direction) var4.method37538()).getXOffset() * var6
+                                    + (double) ((Direction) var4.method37538()).getXOffset() * movementOffset
                     );
                 } else {
-                    var1.setZ(
+                    event.setZ(
                             (double) Math.round((((Vector3d) var4.method37539()).z + 1.1921022E-8) * 10000.0) / 10000.0
-                                    + (double) ((Direction) var4.method37538()).getZOffset() * var6
+                                    + (double) ((Direction) var4.method37538()).getZOffset() * movementOffset
                     );
                 }
             }
@@ -109,12 +109,12 @@ public class JumpSpider extends Module {
     }
 
     @EventTarget
-    private void method16653(EventBlockCollision var1) {
+    private void EventBlockCollision(EventBlockCollision event) {
         if (this.isEnabled() && mc.player != null) {
-            if (var1.getVoxelShape() != null
-                    && !var1.getVoxelShape().isEmpty()
-                    && var1.getVoxelShape().getBoundingBox().minY > mc.player.boundingBox.minY + 1.0) {
-                var1.setCancelled(true);
+            if (event.getVoxelShape() != null
+                    && !event.getVoxelShape().isEmpty()
+                    && event.getVoxelShape().getBoundingBox().minY > mc.player.boundingBox.minY + 1.0) {
+                event.setCancelled(true);
             }
         }
     }
