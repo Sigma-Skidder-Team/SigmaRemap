@@ -84,10 +84,13 @@ public class ClientWorld extends World {
    public ClientWorld(ClientPlayNetHandler p_i242067_1_, ClientWorldInfo p_i242067_2_, RegistryKey<World> p_i242067_3_, DimensionType p_i242067_4_, int p_i242067_5_, Supplier<IProfiler> p_i242067_6_, WorldRenderer p_i242067_7_, boolean p_i242067_8_, long p_i242067_9_) {
       super(p_i242067_2_, p_i242067_3_, p_i242067_4_, p_i242067_6_, true, p_i242067_8_, p_i242067_9_);
       this.connection = p_i242067_1_;
-      this.field_239129_E_ = new ClientChunkProvider(this, p_i242067_5_);
       this.field_239130_d_ = p_i242067_2_;
       this.worldRenderer = p_i242067_7_;
-      this.field_239131_x_ = DimensionRenderInfo.func_243495_a(p_i242067_4_);
+
+      if (p_i242067_1_ != null && p_i242067_4_ != null) {
+         this.field_239131_x_ = DimensionRenderInfo.func_243495_a(p_i242067_4_);
+         this.field_239129_E_ = new ClientChunkProvider(this, p_i242067_5_);
+      }
 
       this.func_239136_a_(new BlockPos(8, 64, 8), 0.0F);
       this.calculateInitialSkylight();
@@ -914,9 +917,7 @@ public class ClientWorld extends World {
       return this.field_239130_d_;
    }
 
-
    public static class ClientWorldInfo implements ISpawnWorldInfo {
-      private static String[] field29048;
       private final boolean field29049;
       private final GameRules field29050;
       private final boolean field29051;
