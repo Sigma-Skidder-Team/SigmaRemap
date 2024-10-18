@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
@@ -19,7 +19,7 @@ public class Class4250 extends Class4247 {
    public int field20610 = 30;
    private Animation field20611 = new Animation(300, 300);
 
-   public Class4250(IconPanel var1, String var2, int var3, int var4, int var5, int var6, int var7, float var8, float var9, float var10, float var11) {
+   public Class4250(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, int var7, float var8, float var9, float var10, float var11) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field20610 = var7;
       this.addToList(this.field20608 = new Class4279(this, 10, "pos1"));

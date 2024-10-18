@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import lol.ClientColors;
 
 import java.util.ArrayList;
@@ -10,7 +10,7 @@ public class Class4270 extends Class4247 {
    private List<ButtonPanel> field20695 = new ArrayList<ButtonPanel>();
    public int field20696;
 
-   public Class4270(IconPanel var1, String var2, int var3, int var4) {
+   public Class4270(CustomGuiScreen var1, String var2, int var3, int var4) {
       super(var1, var2, var3, var4, 1060, 357, false);
 
       for (Class2287 var10 : Class2287.values()) {
@@ -62,7 +62,7 @@ public class Class4270 extends Class4247 {
    }
 
    public void method13104() {
-      for (IconPanel var4 : this.method13241()) {
+      for (CustomGuiScreen var4 : this.method13241()) {
          if (var4 instanceof Class4268) {
             Class4268 var5 = (Class4268)var4;
             var5.method13102();

@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
@@ -12,7 +12,7 @@ public class UILoadingCircle extends Class4278 {
    public TimerUtil field20769 = new TimerUtil();
    public float field20770 = 0.0F;
 
-   public UILoadingCircle(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
+   public UILoadingCircle(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field20769.start();
    }

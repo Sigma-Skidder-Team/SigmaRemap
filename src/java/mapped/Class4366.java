@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
 
@@ -14,7 +14,7 @@ public class Class4366 extends Class4247 {
    public boolean field21345;
    public boolean field21346;
 
-   public Class4366(IconPanel var1, String var2, int var3, int var4, int var5, int var6, List<String> var7, int var8) {
+   public Class4366(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, List<String> var7, int var8) {
       super(var1, var2, var3, var4, var5, var6, field21342, false);
       this.field21343 = var7;
       this.field21344 = var8;
@@ -127,7 +127,7 @@ public class Class4366 extends Class4247 {
          );
       }
 
-      for (IconPanel var7 : this.method13241()) {
+      for (CustomGuiScreen var7 : this.method13241()) {
          if (!var7.method13257().equals("dropdownButton")) {
             var7.setEnabled(this.field21345);
          }

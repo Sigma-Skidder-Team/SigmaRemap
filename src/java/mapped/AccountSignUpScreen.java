@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.gui.screens.LoginAndOutScreen;
 import com.mentalfrostbyte.jello.network.Class9507;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
@@ -21,7 +21,7 @@ public class AccountSignUpScreen extends Class4247 {
    public static int widthy = 390;
    public static int height = 590;
 
-   public AccountSignUpScreen(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
+   public AccountSignUpScreen(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.addToList(
          this.stringPanel = new UITextDisplay(

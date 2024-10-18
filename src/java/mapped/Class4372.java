@@ -1,14 +1,13 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import net.minecraft.item.ItemStack;
 
 public class Class4372 extends Class4247 {
-   private static String[] field20602;
    public ItemStack field21366;
    public boolean field21367;
 
-   public Class4372(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ItemStack var7) {
+   public Class4372(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ItemStack var7) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field21366 = var7;
    }
@@ -33,10 +32,6 @@ public class Class4372 extends Class4247 {
 
    public boolean method13700() {
       return this.field21367;
-   }
-
-   public void method13701(boolean var1) {
-      this.method13702(var1, true);
    }
 
    public void method13702(boolean var1, boolean var2) {

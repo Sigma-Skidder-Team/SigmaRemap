@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.gui.jello.BrainFreeze;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
@@ -271,7 +271,7 @@ public class JelloClickGUI extends Screen {
          );
       }
 
-      for (IconPanel var9 : this.method13241()) {
+      for (CustomGuiScreen var9 : this.method13241()) {
          float var10 = (float)(var9.getYA() + var9.getHeightA() / 2 - mc.mainWindow.getHeight() / 2) * (1.0F - var4) * 0.5F;
          float var11 = (float)(var9.getXA() + var9.getWidthA() / 2 - mc.mainWindow.getWidth() / 2) * (1.0F - var4) * 0.5F;
          var9.method13286((int)var11, (int)var10);

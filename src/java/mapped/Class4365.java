@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.network.Account;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
@@ -12,15 +12,11 @@ import net.minecraft.client.Minecraft;
 
 public class Class4365 extends Class4247 {
    public float field21334 = 0.0F;
-   private final int field21335 = 10;
-   private final int field21336 = 60;
    public int field21337;
    public int field21338;
-   public int field21339;
-   public int field21340;
    private Account account;
 
-   public Class4365(IconPanel var1, String var2, int var3, int var4, int var5, int var6, String var7) {
+   public Class4365(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, String var7) {
       super(var1, var2, var3, var4, var5, var6, ColorHelper.field27961, var7, false);
       this.font = ResourceRegistry.JelloLightFont20;
    }
@@ -54,8 +50,6 @@ public class Class4365 extends Class4247 {
          (float)(this.yA + this.getHeightA()),
          MultiUtilities.applyAlpha(ClientColors.DULL_GREEN.getColor, (0.2F * this.field21334 + (!this.method13212() ? 0.0F : 0.2F)) * var1)
       );
-      float var7 = (float)(this.xA + this.widthA - 60 - 10);
-      float var8 = (float)(this.yA + 10);
       RenderUtil.drawImage(
          (float)(this.xA + this.widthA - 60 - 10),
          (float)(this.yA + 10),

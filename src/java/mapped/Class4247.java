@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.resource.ClientResource;
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,19 +9,19 @@ import java.util.List;
 public class Class4247 extends Class4278 {
     private final List<Class8435> field20603 = new ArrayList<Class8435>();
 
-   public Class4247(IconPanel var1, String var2, int var3, int var4, int var5, int var6, boolean var7) {
+   public Class4247(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, boolean var7) {
       super(var1, var2, var3, var4, var5, var6, var7);
    }
 
-   public Class4247(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, boolean var8) {
+   public Class4247(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, boolean var8) {
       super(var1, var2, var3, var4, var5, var6, var7, var8);
    }
 
-   public Class4247(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, boolean var9) {
+   public Class4247(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, boolean var9) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, var9);
    }
 
-   public Class4247(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, ClientResource var9, boolean var10) {
+   public Class4247(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, ClientResource var9, boolean var10) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, var9, var10);
    }
 

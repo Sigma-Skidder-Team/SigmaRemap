@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.account.Account;
 import com.mentalfrostbyte.jello.account.AccountManager;
 import com.mentalfrostbyte.jello.gui.Screen;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
@@ -221,9 +221,9 @@ public class AltManagerScreen extends Screen {
             this.field21017.method13181(var5.selectedAccount);
             this.field21018.method13178(var5.selectedAccount);
 
-            for (IconPanel var7 : this.field21010.method13241()) {
+            for (CustomGuiScreen var7 : this.field21010.method13241()) {
                if (!(var7 instanceof Class4292)) {
-                  for (IconPanel var9 : var7.method13241()) {
+                  for (CustomGuiScreen var9 : var7.method13241()) {
                      ((Class4294)var9).method13166(false);
                   }
                }
@@ -359,9 +359,9 @@ public class AltManagerScreen extends Screen {
    private void method13367() {
       float var3 = 1.0F;
 
-      for (IconPanel var5 : this.field21010.method13241()) {
+      for (CustomGuiScreen var5 : this.field21010.method13241()) {
          if (!(var5 instanceof Class4292)) {
-            for (IconPanel var7 : var5.method13241()) {
+            for (CustomGuiScreen var7 : var5.method13241()) {
                if (var7 instanceof Class4294) {
                   Class4294 var8 = (Class4294)var7;
                   if (var7.getYA() <= Minecraft.getInstance().mainWindow.getHeight() && this.field21010.method13513() == 0) {
@@ -385,9 +385,9 @@ public class AltManagerScreen extends Screen {
    private void method13368() {
       boolean var3 = false;
 
-      for (IconPanel var5 : this.field21010.method13241()) {
+      for (CustomGuiScreen var5 : this.field21010.method13241()) {
          if (!(var5 instanceof Class4292)) {
-            for (IconPanel var7 : var5.method13241()) {
+            for (CustomGuiScreen var7 : var5.method13241()) {
                Class4294 var8 = (Class4294)var7;
                var8.method13172(false);
             }
@@ -398,9 +398,9 @@ public class AltManagerScreen extends Screen {
    private boolean method13369() {
       boolean var3 = false;
 
-      for (IconPanel var5 : this.field21010.method13241()) {
+      for (CustomGuiScreen var5 : this.field21010.method13241()) {
          if (!(var5 instanceof Class4292)) {
-            for (IconPanel var7 : var5.method13241()) {
+            for (CustomGuiScreen var7 : var5.method13241()) {
                if (var7.method13280() != 0 && var7.getXA() > this.widthA) {
                   return false;
                }
@@ -414,9 +414,9 @@ public class AltManagerScreen extends Screen {
    private int method13370() {
       int var3 = 0;
 
-      for (IconPanel var5 : this.field21010.method13241()) {
+      for (CustomGuiScreen var5 : this.field21010.method13241()) {
          if (!(var5 instanceof Class4292)) {
-            for (IconPanel var7 : var5.method13241()) {
+            for (CustomGuiScreen var7 : var5.method13241()) {
                var3++;
             }
          }
@@ -465,9 +465,9 @@ public class AltManagerScreen extends Screen {
 
    @Override
    public void method13161(JSONObject var1) {
-      for (IconPanel var5 : this.field21010.method13241()) {
+      for (CustomGuiScreen var5 : this.field21010.method13241()) {
          if (!(var5 instanceof Class4292)) {
-            for (IconPanel var7 : var5.method13241()) {
+            for (CustomGuiScreen var7 : var5.method13241()) {
                this.field21010.method13234(var7);
             }
          }

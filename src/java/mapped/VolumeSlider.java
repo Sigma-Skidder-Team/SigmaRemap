@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
 
@@ -13,7 +13,7 @@ public class VolumeSlider extends Class4247 {
    private boolean field21373 = false;
    private final List<Class6649> field21374 = new ArrayList<Class6649>();
 
-   public VolumeSlider(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
+   public VolumeSlider(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, false);
    }
 

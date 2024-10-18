@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
@@ -25,7 +25,7 @@ public class Class4276 extends Class4247 {
    public Class4356 field20730;
    private final List<Class9073> field20731 = new ArrayList<Class9073>();
 
-   public Class4276(IconPanel var1, String var2, int var3, int var4, Vector3i var5) {
+   public Class4276(CustomGuiScreen var1, String var2, int var3, int var4, Vector3i var5) {
       super(var1, var2, var3 - 107, var4 + 10, 214, 170, ColorHelper.field27961, "", false);
       this.field20727 = var5;
       if (this.yA + this.heightA <= Minecraft.getInstance().mainWindow.getHeight()) {

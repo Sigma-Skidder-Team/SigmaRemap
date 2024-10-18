@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.gui.Screen;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
 import lol.Texture;
@@ -40,7 +40,7 @@ public class JelloKeyboardScreen extends Screen {
             var2 -> {
                boolean var5 = false;
 
-               for (IconPanel var7 : this.method13241()) {
+               for (CustomGuiScreen var7 : this.method13241()) {
                   if (var7 instanceof Class4375) {
                      var5 = true;
                   }

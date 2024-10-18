@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.ClientMode;
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
@@ -17,7 +17,7 @@ public class Class4292 extends Class4278 implements Class4293 {
    public final Class4288 field20796;
    public TimerUtil field20797 = new TimerUtil();
 
-   public Class4292(IconPanel var1, int var2) {
+   public Class4292(CustomGuiScreen var1, int var2) {
       super(var1, "verticalScrollBar", var1.getWidthA() - var2 - 5, 5, var2, var1.getHeightA() - 10, false);
       this.setSize((var1x, var2x) -> {
          var1x.setXA(var2x.getWidthA() - var2 - 5);

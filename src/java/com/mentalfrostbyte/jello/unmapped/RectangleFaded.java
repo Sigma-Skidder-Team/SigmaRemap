@@ -16,7 +16,7 @@ public class RectangleFaded extends ButtonPanel {
     private final Animation field20592 = new Animation(150, 190, Direction.BACKWARDS);
     private boolean field20591;
 
-    public RectangleFaded(IconPanel var1, String var2, int var3, int var4, int var5, int var6, Texture var7) {
+    public RectangleFaded(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Texture var7) {
         super(var1, var2, var3, var4, var5, var6);
         this.field20590 = var7;
     }

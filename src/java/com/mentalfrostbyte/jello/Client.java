@@ -102,7 +102,6 @@ public class Client {
         this.eventManager = new EventManager();
         this.commandManager = new CommandManager();
         this.commandManager.init();
-        ResourcesDecrypter.decrypt();
         this.networkManager = new NetworkManager();
         this.networkManager.init();
         this.guiManager = new GuiManager();
@@ -203,7 +202,6 @@ public class Client {
         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
         GL11.glDisable(2896);
         RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
-        ResourcesDecrypter.gingerbreadIconPNG.bind();
         getInstance().getEventManager().call(new EventRender2D());
         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.enableCull();

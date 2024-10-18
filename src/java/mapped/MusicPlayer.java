@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.gui.screens.JelloClickGUI;
 import com.mentalfrostbyte.jello.music.MusicManager;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.youtube.YoutubeType;
 import com.mentalfrostbyte.jello.util.youtube.YoutubeVideoData;
 import com.mentalfrostbyte.jello.unmapped.MusicPlayerVideo;
@@ -34,7 +34,7 @@ public class MusicPlayer extends Class4278 {
    public static URL field20850;
    private Class4339 field20851;
    private Class4339 field20852;
-   private IconPanel pngButtons;
+   private CustomGuiScreen pngButtons;
    private MusicManager field20854 = Client.getInstance().getMusicManager();
    public static Map<String, MusicPlayerVideo> field20855 = new LinkedHashMap<String, MusicPlayerVideo>();
    public static String field20856;
@@ -46,7 +46,7 @@ public class MusicPlayer extends Class4278 {
    private VolumeSlider volumeSlider;
    private int field20863;
    private Texture field20864;
-   private IconPanel field20865;
+   private CustomGuiScreen field20865;
    public SearchBoxButton searchBox;
    public Class4359 field20867;
    public static MusicPlayerVideo[] videos;
@@ -57,7 +57,7 @@ public class MusicPlayer extends Class4278 {
    private Animation field20873 = new Animation(80, 150, Direction.BACKWARDS);
    public boolean field20874 = false;
 
-   public MusicPlayer(IconPanel var1, String var2) {
+   public MusicPlayer(CustomGuiScreen var1, String var2) {
       super(var1, var2, 875, 55, 800, 600, false);
 
       if (videos == null) {
@@ -85,7 +85,7 @@ public class MusicPlayer extends Class4278 {
             this, "musiccontrols", this.field20845, this.getHeightA() - this.field20848, this.getWidthA() - this.field20845, this.field20848
          )
       );
-      this.addToList(this.field20865 = new IconPanel(this, "reShowView", 0, 0, 1, this.getHeightA()));
+      this.addToList(this.field20865 = new CustomGuiScreen(this, "reShowView", 0, 0, 1, this.getHeightA()));
       Class4265 var5;
       this.addToList(var5 = new Class4265(this, "spectrumButton", 15, this.heightA - 140, 40, 40, this.field20854.method24313()));
       var5.method13292(true);

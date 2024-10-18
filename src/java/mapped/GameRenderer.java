@@ -615,7 +615,6 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
             if (!this.mc.gameSettings.hideGUI || this.mc.currentScreen != null) {
                RenderSystem.method27939();
                this.renderItemActivation(this.mc.getMainWindow().getScaledWidth(), this.mc.getMainWindow().getScaledHeight(), var1);
-               ResourcesDecrypter.gingerbreadIconPNG.bind();
                this.mc.ingameGUI.method5961(var10, var1);
                if (this.mc.gameSettings.field44699 && !this.mc.gameSettings.showDebugInfo) {
                   Config.method26954(var10);

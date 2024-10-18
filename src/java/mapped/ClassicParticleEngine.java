@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import net.minecraft.client.Minecraft;
 
 import java.util.ArrayList;
@@ -13,7 +13,7 @@ public class ClassicParticleEngine extends Class4278 {
    private Class9715 field21275 = new Class9715();
    public Class2422 field21276 = new Class2422();
 
-   public ClassicParticleEngine(IconPanel var1, String var2) {
+   public ClassicParticleEngine(CustomGuiScreen var1, String var2) {
       super(var1, var2, 0, 0, Minecraft.getInstance().mainWindow.getWidth(), Minecraft.getInstance().mainWindow.getHeight(), false);
       this.method13145(false);
       this.method13296(false);

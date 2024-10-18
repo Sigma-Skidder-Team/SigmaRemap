@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.gui.screens.JelloKeyboardScreen;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
 
@@ -13,7 +13,7 @@ public class Class4268 extends Class4247 {
    private boolean field20692 = false;
    private boolean field20693 = false;
 
-   public Class4268(IconPanel var1, String var2, int var3, int var4, int var5, int var6, String var7, int var8) {
+   public Class4268(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, String var7, int var8) {
       super(var1, var2, var3, var4, var5, var6, ColorHelper.field27961, var7, false);
       this.field20690 = var8;
       this.method13102();

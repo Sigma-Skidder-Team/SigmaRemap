@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.settings.*;
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
@@ -20,19 +20,19 @@ public class Class4343 extends Class4339 implements Class4342 {
    private boolean field21221;
    public int field21222 = 200;
    private HashMap<UITextDisplay, Setting> field21223 = new HashMap<UITextDisplay, Setting>();
-   public HashMap<Module, IconPanel> field21224 = new HashMap<Module, IconPanel>();
+   public HashMap<Module, CustomGuiScreen> field21224 = new HashMap<Module, CustomGuiScreen>();
    public Animation field21225 = new Animation(114, 114);
    private String field21226 = "";
    private String field21227 = "";
 
-   public Class4343(IconPanel var1, String var2, int var3, int var4, int var5, int var6, Module var7) {
+   public Class4343(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Module var7) {
       super(var1, var2, var3, var4, var5, var6);
       this.field21219 = var7;
       this.method13300(false);
       this.method13511();
    }
 
-   private int method13531(IconPanel panel, Setting setting, int var3, int var4, int var5) {
+   private int method13531(CustomGuiScreen panel, Setting setting, int var3, int var4, int var5) {
       switch (Class8666.field39049[setting.getSettingType().ordinal()]) {
          case 1:
             UITextDisplay var37 = new UITextDisplay(panel, setting.getName() + "lbl", var3, var4, this.field21222, 24, UITextDisplay.field20778, setting.getName());
@@ -142,7 +142,7 @@ public class Class4343 extends Class4339 implements Class4342 {
          default:
             break;
          case 6:
-            IconPanel var17 = new IconPanel(panel, setting.getName() + "view", var3, var4, panel.getWidthA(), 0);
+            CustomGuiScreen var17 = new CustomGuiScreen(panel, setting.getName() + "view", var3, var4, panel.getWidthA(), 0);
             int var25 = 0;
 
             for (Setting var41 : ((SubOptionSetting)setting).getSubSettings()) {
@@ -254,7 +254,7 @@ public class Class4343 extends Class4339 implements Class4342 {
 
          for (Module var10 : var18.moduleArray) {
             int var11 = 0;
-            IconPanel var12 = new IconPanel(this, var10.getName() + "SubView", 0, var17, this.widthA, this.heightA - var4);
+            CustomGuiScreen var12 = new CustomGuiScreen(this, var10.getName() + "SubView", 0, var17, this.widthA, this.heightA - var4);
             var12.setSize((var0, var1) -> var0.setWidthA(var1.getWidthA()));
 
             for (Setting var14 : var10.getSettingMap().values()) {
@@ -263,7 +263,7 @@ public class Class4343 extends Class4339 implements Class4342 {
 
             var4 = Math.max(var4 + var11, var4);
 
-            for (IconPanel var20 : var12.method13241()) {
+            for (CustomGuiScreen var20 : var12.method13241()) {
                if (var20 instanceof Class4363) {
                   Class4363 var15 = (Class4363)var20;
                   int var16 = var15.method13649() + var15.getYA() + var15.getHeightA() + 14;
@@ -280,7 +280,7 @@ public class Class4343 extends Class4339 implements Class4342 {
          var18.method16724();
       }
 
-      this.addToList(new IconPanel(this, "extentionhack", 0, var4, 0, 20));
+      this.addToList(new CustomGuiScreen(this, "extentionhack", 0, var4, 0, 20));
    }
 
    @Override

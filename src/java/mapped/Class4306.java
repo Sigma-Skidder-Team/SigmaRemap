@@ -1,12 +1,12 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.gui.screens.JelloMainMenuScreen;
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
 import net.minecraft.client.Minecraft;
 
-public class Class4306 extends IconPanel {
+public class Class4306 extends CustomGuiScreen {
    private static String[] field20927;
    public float field20928;
    public float field20929;
@@ -20,7 +20,7 @@ public class Class4306 extends IconPanel {
    public int field20937;
    public int field20938 = 114;
 
-   public Class4306(IconPanel var1, String var2, int var3, int var4, int var5, int var6, int var7) {
+   public Class4306(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, int var7) {
       super(var1, var2, var3, var4, var5, var5);
       this.field20928 = this.field20930 = (float)var6;
       this.field20929 = this.field20931 = (float)var7;

@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
@@ -31,7 +31,7 @@ public class Class4358 extends Class4247 {
    public boolean field21311 = false;
    private final List<Class7875> field21312 = new ArrayList<Class7875>();
 
-   public Class4358(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
+   public Class4358(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field21305 = 500;
       this.field21306 = 600;
@@ -118,9 +118,9 @@ public class Class4358 extends Class4247 {
       Map<String, ButtonPanel> var7 = new TreeMap();
       List<ButtonPanel> var8 = new ArrayList();
 
-      for (IconPanel var10 : this.field21308.method13241()) {
+      for (CustomGuiScreen var10 : this.field21308.method13241()) {
          if (!(var10 instanceof Class4292)) {
-            for (IconPanel var12 : var10.method13241()) {
+            for (CustomGuiScreen var12 : var10.method13241()) {
                if (var12 instanceof ButtonPanel) {
                   ButtonPanel var13 = (ButtonPanel)var12;
                   boolean var14 = var13.getHeightA() != 40;

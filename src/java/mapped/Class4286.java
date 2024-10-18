@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.youtube.YoutubeVideoData;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
@@ -52,7 +52,7 @@ public class Class4286 extends Class4278 {
       }
    }
 
-   public Class4286(IconPanel var1, int var2, int var3, int var4, int var5, YoutubeVideoData var6) {
+   public Class4286(CustomGuiScreen var1, int var2, int var3, int var4, int var5, YoutubeVideoData var6) {
       super(var1, var6.videoId, var2, var3, var4, var5, field20771, var6.title, false);
       URL var9 = null;
 
@@ -79,7 +79,7 @@ public class Class4286 extends Class4278 {
 
    public boolean method13157() {
       if (this.getIcoPanel() != null && this.getIcoPanel().getIcoPanel() != null) {
-         IconPanel var3 = this.getIcoPanel().getIcoPanel();
+         CustomGuiScreen var3 = this.getIcoPanel().getIcoPanel();
          if (var3 instanceof Class4339) {
             Class4339 var4 = (Class4339)var3;
             int var5 = var4.method13513() + var4.getHeightA() + this.getHeightA();

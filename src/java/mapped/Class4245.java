@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
@@ -13,7 +13,7 @@ public class Class4245 extends ButtonPanel {
    public boolean field20598;
    public Animation field20599;
 
-   public Class4245(IconPanel var1, String var2, int var3, int var4, Class2060 var5) {
+   public Class4245(CustomGuiScreen var1, String var2, int var3, int var4, Class2060 var5) {
       super(var1, var2, var3, var4, 18, 18);
       this.field20597 = var5;
       this.field20599 = new Animation(250, 250);

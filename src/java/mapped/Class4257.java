@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.module.Module;
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
@@ -14,7 +14,7 @@ public class Class4257 extends Class4247 {
    public UIInput field20639;
    public String field20640;
 
-   public Class4257(IconPanel var1, String var2, int var3, int var4, int var5, int var6, boolean var7) {
+   public Class4257(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, boolean var7) {
       super(var1, var2, var3, var4, var5, var6, var7);
       this.addToList(this.field20639 = new UIInput(this, "search", 50, 0, var5 - 60, var6 - 2, UIInput.field20741, "", "Search..."));
       this.field20639.method13156(false);

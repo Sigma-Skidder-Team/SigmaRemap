@@ -1,14 +1,11 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
 
 public class Class4361 extends Class4247 {
-   private static String[] field21320;
-   public Animation field21321 = new Animation(1200, 1200, Direction.BACKWARDS);
-
-   public Class4361(IconPanel var1, String var2, int var3, int var4) {
+   public Class4361(CustomGuiScreen var1, String var2, int var3, int var4) {
       super(var1, var2, var3, var4, 30, 30, false);
    }
 

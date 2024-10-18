@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.gui.screens.JelloKeyboardScreen;
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 
 public class Class544 implements Runnable {
    private static String[] field2605;
@@ -15,7 +15,7 @@ public class Class544 implements Runnable {
 
    @Override
    public void run() {
-      for (IconPanel var4 : this.field2606.method13241()) {
+      for (CustomGuiScreen var4 : this.field2606.method13241()) {
          if (var4 instanceof Class4375) {
             Class4375 var5 = (Class4375)var4;
             var5.method13712();

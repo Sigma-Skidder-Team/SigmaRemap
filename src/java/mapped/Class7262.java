@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 
 public class Class7262 implements Class7261 {
    private static String[] field31150;
@@ -16,10 +16,10 @@ public class Class7262 implements Class7261 {
       this.field31152 = var2;
    }
 
-   private IconPanel method22797(IconPanel[] var1) {
-      IconPanel var4 = var1[0];
+   private CustomGuiScreen method22797(CustomGuiScreen[] var1) {
+      CustomGuiScreen var4 = var1[0];
 
-      for (IconPanel var8 : var1) {
+      for (CustomGuiScreen var8 : var1) {
          if (var8.getHeightA() > var4.getHeightA()) {
             var4 = var8;
          }
@@ -29,24 +29,24 @@ public class Class7262 implements Class7261 {
    }
 
    @Override
-   public void method22796(IconPanel var1) {
+   public void method22796(CustomGuiScreen var1) {
       if (var1.method13241().size() > 0) {
          int var4 = 0;
 
          while (var4 < var1.method13241().size()) {
-            IconPanel var5 = var1.method13241().get(var4);
+            CustomGuiScreen var5 = var1.method13241().get(var4);
             if (var4 > 0 && var4 % this.field31151 == 0) {
-               IconPanel[] var6 = new IconPanel[this.field31151];
+               CustomGuiScreen[] var6 = new CustomGuiScreen[this.field31151];
 
                for (int var7 = 0; var7 < this.field31151; var7++) {
                   var6[var7] = var1.method13241().get(var4 - this.field31151 + var7);
                }
 
-               IconPanel var9 = this.method22797(var6);
+               CustomGuiScreen var9 = this.method22797(var6);
                var5.setSize((var2, var3) -> var2.setYA(var9.getYA() + var2.getHeightA() + this.field31152));
             }
 
-            IconPanel[] var8 = new IconPanel[this.field31151];
+            CustomGuiScreen[] var8 = new CustomGuiScreen[this.field31151];
             var8[0] = var5;
 
             for (int var10 = 1; var10 < this.field31151; var10++) {

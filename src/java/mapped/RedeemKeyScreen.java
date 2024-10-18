@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.gui.screens.JelloMainMenuScreen;
 import com.mentalfrostbyte.jello.network.Class9507;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
@@ -12,13 +12,13 @@ import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import lol.ClientColors;
 import totalcross.json.JSONArray;
 
-public class RedeemKeyScreen extends IconPanel {
+public class RedeemKeyScreen extends CustomGuiScreen {
    public String field21135 = "";
    public Animation field21136 = new Animation(380, 200, Direction.BACKWARDS);
    private static JSONArray field21137;
    private UIInput field21138;
 
-   public RedeemKeyScreen(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
+   public RedeemKeyScreen(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6);
       this.method13300(false);
       UIInput var9;

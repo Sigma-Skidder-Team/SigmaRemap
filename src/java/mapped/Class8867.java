@@ -1,7 +1,7 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 
 public interface Class8867 {
-   void method32268(IconPanel var1, int var2);
+   void method32268(CustomGuiScreen var1, int var2);
 }

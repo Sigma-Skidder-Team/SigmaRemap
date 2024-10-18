@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
@@ -8,7 +8,7 @@ import lol.ClientColors;
 public class PNGButtonChanging extends Class4247 {
    public Class189 field20607;
 
-   public PNGButtonChanging(IconPanel var1, String var2, int var3, int var4, int var5, int var6, Class189 var7) {
+   public PNGButtonChanging(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Class189 var7) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field20607 = var7;
       this.doThis((var1x, var2x) -> {

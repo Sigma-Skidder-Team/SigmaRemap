@@ -17,7 +17,7 @@ public class NetworkManager {
 
     public void init() {
         Client.getInstance().getEventManager().register(this);
-        this.field38429 = new CombatTracker(this);
+        this.field38429 = new CombatTracker();
     }
 
     public String newAccount(String var1, String var2, Class9507 var3) {

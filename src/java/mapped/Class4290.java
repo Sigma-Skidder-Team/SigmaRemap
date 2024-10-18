@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.gui.screens.JelloClickGUI;
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
 import lol.Texture;
@@ -18,7 +18,7 @@ public class Class4290 extends Class4278 {
    public final List<ButtonPanel> field20790 = new ArrayList<ButtonPanel>();
    private Texture field20791;
 
-   public Class4290(IconPanel var1, String var2) {
+   public Class4290(CustomGuiScreen var1, String var2) {
       super(var1, var2, 0, Minecraft.getInstance().mainWindow.getHeight() - 70, Minecraft.getInstance().mainWindow.getWidth(), 110, false);
       this.method13292(true);
       this.method13300(false);

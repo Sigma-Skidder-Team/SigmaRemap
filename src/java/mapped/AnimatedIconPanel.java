@@ -1,14 +1,14 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.resource.ClientResource;
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import net.minecraft.client.Minecraft;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class AnimatedIconPanel extends IconPanel implements Class4347 {
+public class AnimatedIconPanel extends CustomGuiScreen implements Class4347 {
     public boolean field20876;
    public boolean field20877;
    public int field20878;
@@ -25,22 +25,22 @@ public class AnimatedIconPanel extends IconPanel implements Class4347 {
    public int field20889 = 2;
    private final List<Class6751> field20890 = new ArrayList<Class6751>();
 
-   public AnimatedIconPanel(IconPanel var1, String var2, int var3, int var4, int var5, int var6, boolean var7) {
+   public AnimatedIconPanel(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, boolean var7) {
       super(var1, var2, var3, var4, var5, var6);
       this.field20876 = var7;
    }
 
-   public AnimatedIconPanel(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, boolean var8) {
+   public AnimatedIconPanel(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, boolean var8) {
       super(var1, var2, var3, var4, var5, var6, var7);
       this.field20876 = var8;
    }
 
-   public AnimatedIconPanel(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, boolean var9) {
+   public AnimatedIconPanel(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, boolean var9) {
       super(var1, var2, var3, var4, var5, var6, var7, var8);
       this.field20876 = var9;
    }
 
-   public AnimatedIconPanel(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, ClientResource var9, boolean var10) {
+   public AnimatedIconPanel(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, ClientResource var9, boolean var10) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, var9);
       this.field20876 = var10;
    }

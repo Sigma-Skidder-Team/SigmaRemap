@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.settings.*;
 import com.mentalfrostbyte.jello.settings.SettingType;
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.render.animation.MathHelper;
@@ -17,16 +17,16 @@ public class Class4345 extends Class4339 {
    private Module field21229;
    public ClientResource field21230 = ClassicDecryption.regular20;
    public Animation field21231 = new Animation(150, 150);
-   public HashMap<Module, IconPanel> field21232 = new HashMap<Module, IconPanel>();
+   public HashMap<Module, CustomGuiScreen> field21232 = new HashMap<Module, CustomGuiScreen>();
 
-   public Class4345(IconPanel var1, String var2, int var3, int var4, int var5, int var6, Module var7) {
+   public Class4345(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Module var7) {
       super(var1, var2, var3, var4, var5, var6);
       this.field21229 = var7;
       this.method13300(false);
       this.method13511();
    }
 
-   private int method13555(IconPanel var1, Setting var2, int var3, int var4, int var5) {
+   private int method13555(CustomGuiScreen var1, Setting var2, int var3, int var4, int var5) {
       UITextDisplay var8 = new UITextDisplay(var1, var2.getName() + "lbl", var3, var4, 0, 0, UITextDisplay.field20778, var2.getName(), this.field21230);
       Class4248 var9 = new Class4248(var1, var2.getName() + "desc", var3 + 195, var4 + 4, 330, 18, var2);
       var1.addToList(var8);
@@ -153,7 +153,7 @@ public class Class4345 extends Class4339 {
 
          for (Module var11 : var16.moduleArray) {
             int var12 = 10;
-            IconPanel var13 = new IconPanel(this, var11.getName() + "SubView", 0, var6, this.widthA, this.heightA - var6);
+            CustomGuiScreen var13 = new CustomGuiScreen(this, var11.getName() + "SubView", 0, var6, this.widthA, this.heightA - var6);
             var13.setSize((var0, var1) -> var0.setWidthA(var1.getWidthA()));
 
             for (Setting var15 : var11.getSettingMap().values()) {

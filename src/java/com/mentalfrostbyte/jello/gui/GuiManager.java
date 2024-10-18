@@ -233,7 +233,6 @@ public class GuiManager {
     }
 
     public void method33464() {
-        ResourcesDecrypter.gingerbreadIconPNG.bind();
         if (Minecraft.getInstance().world != null) {
             GL11.glDisable(2896);
             int var3 = 0;

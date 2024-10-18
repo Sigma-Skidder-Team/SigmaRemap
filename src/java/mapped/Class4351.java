@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 
 public class Class4351 extends Class4278 {
-   public IconPanel buttonList;
+   public CustomGuiScreen buttonList;
    public Animation field21264;
    public Animation field21265;
    public Animation animation;
@@ -28,7 +28,7 @@ public class Class4351 extends Class4278 {
    public final int field21271;
    public boolean field21272 = false;
 
-   public Class4351(IconPanel var1, String var2, int var3, int var4, int var5, int var6, Configuration config, int var8) {
+   public Class4351(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Configuration config, int var8) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field21270 = (int)((float)var5 * 0.8F);
       this.currentConfig = config;

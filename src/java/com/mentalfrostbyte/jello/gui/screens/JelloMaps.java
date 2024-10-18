@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.gui.screens;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.gui.Screen;
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
 import lol.Texture;
@@ -46,7 +46,7 @@ public class JelloMaps extends Screen {
    private void method13390() {
       JelloMaps var3 = this;
 
-      for (IconPanel var5 : this.method13241()) {
+      for (CustomGuiScreen var5 : this.method13241()) {
          if (var5 instanceof Class4276) {
             Class4276 var6 = (Class4276)var5;
             this.method13222(new Class605(this, var3, var5));

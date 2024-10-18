@@ -47,7 +47,7 @@ public class GuiSwitch extends Screen {
             Client.getInstance().setupClient(ClientMode.CLASSIC);
             Minecraft.getInstance().displayGuiScreen(new VanillaMainMenuScreen());
         });
-        IconPanel var12 = new IconPanel(this, "socialbtns", (this.getWidthA() - 174) / 2, this.getHeightA() - 70, 174, 34);
+        CustomGuiScreen var12 = new CustomGuiScreen(this, "socialbtns", (this.getWidthA() - 174) / 2, this.getHeightA() - 70, 174, 34);
         ImageQ var13;
         var12.addToList(var13 = new ImageQ(var12, "youtube", 0, 0, 65, 34, ResourcesDecrypter.youtubePNG));
         ImageQ var14;

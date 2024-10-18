@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.gui.screens.JelloClickGUI;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
@@ -21,7 +21,7 @@ public class ConfigButtonOnClickGui extends Class4247 {
    public Class4272 field21300;
    private List<Class4351> field21301 = new ArrayList<Class4351>();
 
-   public ConfigButtonOnClickGui(IconPanel var1, String var2, int var3, int var4) {
+   public ConfigButtonOnClickGui(CustomGuiScreen var1, String var2, int var3, int var4) {
       super(var1, var2, var3 - 250, var4 - 500, 250, 500, ColorHelper.field27961, false);
       this.field21298 = new Animation(300, 100);
       this.method13292(true);

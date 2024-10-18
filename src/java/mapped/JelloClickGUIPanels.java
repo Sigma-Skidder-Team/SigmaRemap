@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
@@ -21,7 +21,7 @@ public class JelloClickGUIPanels extends AnimatedIconPanel {
    private int field21199;
    private final List<Class9476> field21200 = new ArrayList<>();
 
-   public JelloClickGUIPanels(IconPanel var1, String var2, int var3, int var4, ModuleCategory category) {
+   public JelloClickGUIPanels(CustomGuiScreen var1, String var2, int var3, int var4, ModuleCategory category) {
       super(var1, var2, var3, var4, 200, 350, true);
       this.setWidthA(200);
       this.setHeightA(350);

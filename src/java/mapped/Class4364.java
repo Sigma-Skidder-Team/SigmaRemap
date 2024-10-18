@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import org.lwjgl.opengl.GL11;
@@ -9,7 +9,7 @@ public class Class4364 extends Class4247 {
    private static String[] field21332;
    public Animation field21333 = new Animation(1200, 1200, Direction.BACKWARDS);
 
-   public Class4364(IconPanel var1, String var2, int var3, int var4) {
+   public Class4364(CustomGuiScreen var1, String var2, int var3, int var4) {
       super(var1, var2, var3, var4, 20, 20, false);
    }
 

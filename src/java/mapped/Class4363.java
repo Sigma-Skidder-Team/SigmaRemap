@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
@@ -18,37 +18,13 @@ import java.util.Map.Entry;
 public class Class4363 extends Class4247 {
    public static final ColorHelper field21325 = new ColorHelper(1250067, -15329770).method19410(ClientColors.DEEP_TEAL.getColor).method19414(Class2218.field14492);
    public List<String> values;
-   public int field21327 = 0;
+   public int field21327;
    public boolean field21328;
-   public boolean field21329;
    private Animation field21330 = new Animation(220, 220);
    private Map<Integer, Class4362> field21331 = new HashMap<Integer, Class4362>();
 
-   public Class4363(IconPanel var1, String var2, int var3, int var4, int var5, int var6, List<String> var7, int var8) {
+   public Class4363(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, List<String> var7, int var8) {
       super(var1, var2, var3, var4, var5, var6, field21325, false);
-      this.values = var7;
-      this.field21327 = var8;
-      this.method13646();
-   }
-
-   public Class4363(IconPanel var1, String var2, int var3, int var4, int var5, int var6, List<String> var7, int var8, ColorHelper var9) {
-      super(var1, var2, var3, var4, var5, var6, var9, false);
-      this.values = var7;
-      this.field21327 = var8;
-      this.method13646();
-   }
-
-   public Class4363(IconPanel var1, String var2, int var3, int var4, int var5, int var6, List<String> var7, int var8, ColorHelper var9, String var10) {
-      super(var1, var2, var3, var4, var5, var6, var9, var10, false);
-      this.values = var7;
-      this.field21327 = var8;
-      this.method13646();
-   }
-
-   public Class4363(
-           IconPanel var1, String var2, int var3, int var4, int var5, int var6, List<String> var7, int var8, ColorHelper var9, String var10, ClientResource var11
-   ) {
-      super(var1, var2, var3, var4, var5, var6, var9, var10, var11, false);
       this.values = var7;
       this.field21327 = var8;
       this.method13646();
@@ -64,11 +40,6 @@ public class Class4363 extends Class4247 {
          this.method13037();
       });
       this.addToList(var5);
-   }
-
-   public int method13644(int var1) {
-      Class4362 var4 = this.method13645(var1);
-      return var4 == null ? 0 : var4.field21324;
    }
 
    public Class4362 method13645(int var1) {
@@ -157,18 +128,6 @@ public class Class4363 extends Class4247 {
 
    public int method13649() {
       return (int)((float)(this.getHeightA() * this.values.size() + 1));
-   }
-
-   private int method13650() {
-      int var3 = 0;
-
-      for (Entry var5 : this.field21331.entrySet()) {
-         if (((Class4362)var5.getValue()).method13287()) {
-            var3 = Math.max(var3, ((Class4362)var5.getValue()).getWidthA() + ((Class4362)var5.getValue()).getXA() - this.getWidthA());
-         }
-      }
-
-      return var3;
    }
 
    @Override
@@ -278,19 +237,6 @@ public class Class4363 extends Class4247 {
    public void method13652(String var1, int var2) {
       this.method13651().add(var2, var1);
       this.method13646();
-   }
-
-   public void method13653(String var1) {
-      this.method13652(var1, this.values.size());
-   }
-
-   public <E extends Enum<E>> void method13654(Class<E> var1) {
-      this.values.clear();
-
-      for (Enum var7 : (Enum[])var1.getEnumConstants()) {
-         String var8 = var7.toString().substring(0, 1).toUpperCase() + var7.toString().substring(1, var7.toString().length()).toLowerCase();
-         this.method13652(var8, var7.ordinal());
-      }
    }
 
    public int method13655() {

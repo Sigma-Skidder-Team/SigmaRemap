@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mojang.blaze3d.platform.GlStateManager;
@@ -63,11 +63,11 @@ public class RenderUtil {
       return new Rectangle(var13, var14, var9, var10);
    }
 
-   public static Rectangle method11414(IconPanel var0) {
+   public static Rectangle method11414(CustomGuiScreen var0) {
       return new Rectangle(var0.getXA(), var0.getYA(), var0.getWidthA(), var0.getHeightA());
    }
 
-   public static void method11415(IconPanel var0) {
+   public static void method11415(CustomGuiScreen var0) {
       method11421(var0.getXA(), var0.getYA(), var0.getWidthA() + var0.getXA(), var0.getHeightA() + var0.getYA(), true);
    }
 

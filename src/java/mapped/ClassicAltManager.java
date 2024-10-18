@@ -6,13 +6,13 @@ import com.mentalfrostbyte.jello.gui.screens.ClassicDirectLogin;
 import com.mentalfrostbyte.jello.gui.screens.ClassicEditAlt;
 import com.mentalfrostbyte.jello.gui.screens.ClassicAddAlt;
 import com.mentalfrostbyte.jello.gui.screens.SigmaClassicAltManager;
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import lol.ClientColors;
 import net.minecraft.client.Minecraft;
 
 import java.util.Random;
 
-public class ClassicAltManager extends IconPanel {
+public class ClassicAltManager extends CustomGuiScreen {
    public Class4300 field21140;
    public Class4300 field21141;
    public Class4300 field21142;
@@ -23,7 +23,7 @@ public class ClassicAltManager extends IconPanel {
    public Class4300 field21147;
    public Class4300 field21148;
 
-   public ClassicAltManager(IconPanel var1, String var2, int var3, int var4) {
+   public ClassicAltManager(CustomGuiScreen var1, String var2, int var3, int var4) {
       super(var1, var2, var3, var4, 760, 87);
       this.addToList(this.field21140 = new Class4300(this, "reload", 0, 0, 120, 40, "Reload", ClientColors.DEEP_TEAL.getColor));
       this.addToList(this.field21141 = new Class4300(this, "back", 0, 48, 120, 40, "Back", ClientColors.DEEP_TEAL.getColor));

@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
@@ -19,7 +19,7 @@ public class ModuleSettingUI extends Class4247 {
    public final Module module;
    public boolean field20671 = false;
 
-   public ModuleSettingUI(IconPanel var1, String var2, int var3, int var4, int var5, int var6, Module var7) {
+   public ModuleSettingUI(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Module var7) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.width = 500;
       this.height = (int)Math.min(600.0F, (float)var6 * 0.7F);

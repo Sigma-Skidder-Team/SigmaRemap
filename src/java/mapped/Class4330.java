@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
@@ -12,10 +12,10 @@ import org.lwjgl.opengl.GL11;
 import totalcross.json.JSONException;
 import totalcross.json.JSONObject;
 
-public class Class4330 extends IconPanel {
+public class Class4330 extends CustomGuiScreen {
    public Animation animation2 = new Animation(370, 150, Direction.BACKWARDS);
 
-   public Class4330(IconPanel var1, String var2, JSONObject var3) throws JSONException {
+   public Class4330(CustomGuiScreen var1, String var2, JSONObject var3) throws JSONException {
       super(var1, var2);
       this.setWidthA(this.getIcoPanel().getWidthA());
       int var6 = 0;

@@ -3,14 +3,14 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.gui.screens.JelloChatPanel;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
 
 public class Class4269 extends Class4247 {
    public UIInput field20694;
 
-   public Class4269(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
+   public Class4269(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, ColorHelper.field27961, "", false);
       this.font = ResourceRegistry.JelloLightFont20;
       this.addToList(this.field20694 = new UIInput(this, "chat", 14, 0, var5 - 28, var6, UIInput.field20741, "", "Chat..."));

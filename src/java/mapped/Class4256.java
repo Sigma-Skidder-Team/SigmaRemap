@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 
 import java.awt.Color;
 
@@ -10,7 +10,7 @@ public class Class4256 extends Class4247 {
    public Class4360 field20637;
    public Class4360 field20638;
 
-   public Class4256(IconPanel var1, String var2, int var3, int var4, int var5, int var6, int var7) {
+   public Class4256(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, int var7) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field20635 = var7;
       Color var10 = new Color(var7);

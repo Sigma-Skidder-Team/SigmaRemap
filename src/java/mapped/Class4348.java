@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.account.Ban;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ImageUtil;
@@ -34,7 +34,7 @@ public class Class4348 extends Class4278 {
    private BufferedImage field21247;
    private Animation field21248;
 
-   public Class4348(IconPanel var1, String var2, int var3, int var4, int var5, int var6, Ban var7) {
+   public Class4348(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Ban var7) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field21243 = var7;
       this.field21244 = var7.method31736();

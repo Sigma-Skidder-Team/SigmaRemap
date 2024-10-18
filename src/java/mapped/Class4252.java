@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
 
@@ -13,7 +13,7 @@ public class Class4252 extends Class4247 {
    public Class4264 field20621;
    public Class4371 field20622;
 
-   public Class4252(IconPanel var1, String var2, int var3, int var4, int var5, int var6, int var7, boolean var8) {
+   public Class4252(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, int var7, boolean var8) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field20618 = var7;
       Color var11 = new Color(var7);

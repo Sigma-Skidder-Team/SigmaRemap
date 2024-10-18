@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
@@ -30,7 +30,7 @@ public class Class4259 extends Class4247 {
    private final List<Class8041> field20659 = new ArrayList<>();
    private final List<Class9693> field20660 = new ArrayList<>();
 
-   public Class4259(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
+   public Class4259(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, false);
       int var9 = 90;
       int var10 = 40;

@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
 import net.minecraft.util.math.vector.Vector3i;
@@ -20,7 +20,7 @@ public class Class4251 extends Class4247 {
    public int field20616;
    private final List<Class9514> field20617 = new ArrayList<Class9514>();
 
-   public Class4251(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
+   public Class4251(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field20616 = 260;
       this.addToList(this.field20615 = new Class4340(this, "waypointList", 0, 65, this.field20616, this.heightA - 65));

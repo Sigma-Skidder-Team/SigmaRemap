@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.gui.screens.ClassicScreenk;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import lol.Texture;
@@ -43,7 +43,7 @@ public class Class4334 extends Class4333 {
    public static Texture field21179;
    public static Texture field21180;
 
-   public Class4334(IconPanel var1, String var2, int var3, int var4) {
+   public Class4334(CustomGuiScreen var1, String var2, int var3, int var4) {
       super(var1, var2, var3 - 198, var4 - 298, 396, 596);
       method13477();
       this.addToList(this.field21152 = new Class4255(this, "combat", 24, 58, 170, 130, "Combat", field21160, field21161));

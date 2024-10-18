@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import lol.ClientColors;
 import lol.Texture;
@@ -27,7 +27,7 @@ public class Class4283 extends Class4278 {
    private Texture field20765;
    private Animation field20766;
 
-   public Class4283(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
+   public Class4283(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, field20760, var2, false);
    }
 

@@ -16,18 +16,18 @@ import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.List;
 
-public class IconPanel implements IGuiEventListener {
-    private final List<IconPanel> field20893 = new ArrayList<IconPanel>();
+public class CustomGuiScreen implements IGuiEventListener {
+    private final List<CustomGuiScreen> iconPanelList = new ArrayList<CustomGuiScreen>();
     private final List<Class6664> field20894 = new ArrayList<Class6664>();
-    private final List<IconPanel> field20916 = new ArrayList<IconPanel>();
-    private final List<IconPanel> field20918 = new ArrayList<IconPanel>();
+    private final List<CustomGuiScreen> field20916 = new ArrayList<CustomGuiScreen>();
+    private final List<CustomGuiScreen> field20918 = new ArrayList<CustomGuiScreen>();
     private final List<Class7914> field20920 = new ArrayList<Class7914>();
     private final List<Class8867> field20921 = new ArrayList<Class8867>();
     private final List<Class9781> field20922 = new ArrayList<Class9781>();
     private final List<Class8446> field20923 = new ArrayList<Class8446>();
     private final List<Class7381> field20924 = new ArrayList<Class7381>();
     public String field20891;
-    public IconPanel icoPanel;
+    public CustomGuiScreen icoPanel;
     public int xA;
     public int yA;
     public int widthA;
@@ -50,27 +50,27 @@ public class IconPanel implements IGuiEventListener {
     public ColorHelper textColor;
     private final ArrayList<Runnable> field20915 = new ArrayList<Runnable>();
     private boolean field20917;
-    private IconPanel field20919;
+    private CustomGuiScreen field20919;
     private int field20925;
     private int field20926;
 
-    public IconPanel(IconPanel var1, String var2) {
+    public CustomGuiScreen(CustomGuiScreen var1, String var2) {
         this(var1, var2, 0, 0, 0, 0);
     }
 
-    public IconPanel(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
+    public CustomGuiScreen(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6) {
         this(var1, var2, var3, var4, var5, var6, ColorHelper.field27961);
     }
 
-    public IconPanel(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7) {
+    public CustomGuiScreen(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7) {
         this(var1, var2, var3, var4, var5, var6, var7, null);
     }
 
-    public IconPanel(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8) {
+    public CustomGuiScreen(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8) {
         this(var1, var2, var3, var4, var5, var6, var7, var8, ResourceRegistry.JelloLightFont25);
     }
 
-    public IconPanel(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, ClientResource var9) {
+    public CustomGuiScreen(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, ClientResource var9) {
         this.field20891 = var2;
         this.icoPanel = var1;
         this.xA = var3;
@@ -87,21 +87,21 @@ public class IconPanel implements IGuiEventListener {
     }
 
     private void method13220() {
-        for (IconPanel var5 : new ArrayList<IconPanel>(this.field20893)) {
+        for (CustomGuiScreen var5 : new ArrayList<CustomGuiScreen>(this.iconPanelList)) {
             if (var5.method13291()) {
-                this.field20893.remove(var5);
-                this.field20893.add(var5);
+                this.iconPanelList.remove(var5);
+                this.iconPanelList.add(var5);
             }
 
             if (var5.method13293()) {
-                this.field20893.remove(var5);
-                this.field20893.add(0, var5);
+                this.iconPanelList.remove(var5);
+                this.iconPanelList.add(0, var5);
             }
         }
     }
 
-    public IconPanel method13221(String var1) {
-        for (IconPanel var5 : this.field20893) {
+    public CustomGuiScreen method13221(String var1) {
+        for (CustomGuiScreen var5 : this.iconPanelList) {
             if (var5.method13257().equals(var1)) {
                 return var5;
             }
@@ -119,8 +119,8 @@ public class IconPanel implements IGuiEventListener {
     }
 
     private void method13223() {
-        for (IconPanel var4 : this.field20918) {
-            this.field20893.remove(var4);
+        for (CustomGuiScreen var4 : this.field20918) {
+            this.iconPanelList.remove(var4);
             if (this.field20919 == var4) {
                 this.field20919 = null;
             }
@@ -128,14 +128,14 @@ public class IconPanel implements IGuiEventListener {
 
         this.field20916.clear();
 
-        for (IconPanel var6 : this.field20916) {
-            this.field20893.add(var6);
+        for (CustomGuiScreen var6 : this.field20916) {
+            this.iconPanelList.add(var6);
         }
 
         this.field20916.clear();
         if (this.field20919 != null) {
-            this.field20893.remove(this.field20919);
-            this.field20893.add(this.field20919);
+            this.iconPanelList.remove(this.field20919);
+            this.iconPanelList.add(this.field20919);
         }
 
         this.method13220();
@@ -157,7 +157,7 @@ public class IconPanel implements IGuiEventListener {
         this.field20917 = true;
 
         try {
-            for (IconPanel var10 : this.field20893) {
+            for (CustomGuiScreen var10 : this.iconPanelList) {
                 var10.method13028(var1, var2);
             }
         } catch (ConcurrentModificationException var7) {
@@ -196,7 +196,7 @@ public class IconPanel implements IGuiEventListener {
         GL11.glAlphaFunc(519, 0.0F);
         GL11.glTranslatef((float) this.getXA(), (float) this.getYA(), 0.0F);
 
-        for (IconPanel var5 : this.field20893) {
+        for (CustomGuiScreen var5 : this.iconPanelList) {
             if (var5.method13287()) {
                 GL11.glPushMatrix();
                 var5.draw(var1);
@@ -206,7 +206,7 @@ public class IconPanel implements IGuiEventListener {
     }
 
     public boolean method13227() {
-        for (IconPanel var4 : this.method13241()) {
+        for (CustomGuiScreen var4 : this.method13241()) {
             if (var4 instanceof UIInput && var4.field20905) {
                 return true;
             }
@@ -220,7 +220,7 @@ public class IconPanel implements IGuiEventListener {
     }
 
     public void method13103(int var1) {
-        for (IconPanel var5 : this.field20893) {
+        for (CustomGuiScreen var5 : this.iconPanelList) {
             if (var5.isHovered() && var5.method13287()) {
                 var5.method13103(var1);
             }
@@ -229,7 +229,7 @@ public class IconPanel implements IGuiEventListener {
 
     @Override
     public void charTyped(char var1) {
-        for (IconPanel var5 : this.field20893) {
+        for (CustomGuiScreen var5 : this.iconPanelList) {
             if (var5.isHovered() && var5.method13287()) {
                 var5.charTyped(var1);
             }
@@ -240,7 +240,7 @@ public class IconPanel implements IGuiEventListener {
 
     @Override
     public void keyPressed(int var1) {
-        for (IconPanel var5 : this.field20893) {
+        for (CustomGuiScreen var5 : this.iconPanelList) {
             if (var5.isHovered() && var5.method13287()) {
                 var5.keyPressed(var1);
             }
@@ -253,8 +253,8 @@ public class IconPanel implements IGuiEventListener {
     public boolean method13078(int var1, int var2, int var3) {
         boolean var6 = false;
 
-        for (int var7 = this.field20893.size() - 1; var7 >= 0; var7--) {
-            IconPanel var8 = this.field20893.get(var7);
+        for (int var7 = this.iconPanelList.size() - 1; var7 >= 0; var7--) {
+            CustomGuiScreen var8 = this.iconPanelList.get(var7);
             boolean var9 = var8.getIcoPanel() != null
                     && var8.getIcoPanel() instanceof Class4339
                     && var8.getIcoPanel().method13114(var1, var2)
@@ -263,7 +263,7 @@ public class IconPanel implements IGuiEventListener {
             if (var6 || !var8.isHovered() || !var8.method13287() || !var8.method13114(var1, var2) && !var9) {
                 var8.method13145(false);
                 if (var8 != null) {
-                    for (IconPanel var12 : var8.method13241()) {
+                    for (CustomGuiScreen var12 : var8.method13241()) {
                         var12.method13145(false);
                     }
                 }
@@ -287,7 +287,7 @@ public class IconPanel implements IGuiEventListener {
     public void method13095(int var1, int var2, int var3) {
         this.field20908 = this.method13114(var1, var2);
 
-        for (IconPanel var7 : this.field20893) {
+        for (CustomGuiScreen var7 : this.iconPanelList) {
             if (var7.isHovered() && var7.method13287()) {
                 var7.method13095(var1, var2, var3);
             }
@@ -308,7 +308,7 @@ public class IconPanel implements IGuiEventListener {
 
     @Override
     public void method13079(float var1) {
-        for (IconPanel var5 : this.field20893) {
+        for (CustomGuiScreen var5 : this.iconPanelList) {
             if (var5.isHovered() && var5.method13287()) {
                 var5.method13079(var1);
             }
@@ -325,18 +325,18 @@ public class IconPanel implements IGuiEventListener {
         boolean var6 = this.method13114(var1, var2);
         if (var6 && this.icoPanel != null) {
             if (var3) {
-                for (IconPanel var8 : this.method13241()) {
+                for (CustomGuiScreen var8 : this.method13241()) {
                     if (var8.method13287() && var8.method13114(var1, var2)) {
                         return false;
                     }
                 }
             }
 
-            IconPanel var11 = this;
+            CustomGuiScreen var11 = this;
 
-            for (IconPanel var12 = this.getIcoPanel(); var12 != null; var12 = var12.getIcoPanel()) {
+            for (CustomGuiScreen var12 = this.getIcoPanel(); var12 != null; var12 = var12.getIcoPanel()) {
                 for (int var9 = var12.method13240(var11) + 1; var9 < var12.method13241().size(); var9++) {
-                    IconPanel var10 = var12.method13241().get(var9);
+                    CustomGuiScreen var10 = var12.method13241().get(var9);
                     if (var10 != var11 && var10.method13287() && var10.method13114(var1, var2)) {
                         return false;
                     }
@@ -353,9 +353,9 @@ public class IconPanel implements IGuiEventListener {
         return this.method13228(var1, var2, true);
     }
 
-    public void addToList(IconPanel var1) {
+    public void addToList(CustomGuiScreen var1) {
         if (var1 != null) {
-            for (IconPanel var5 : this.method13241()) {
+            for (CustomGuiScreen var5 : this.method13241()) {
                 if (var5.method13257().equals(var1.method13257())) {
                     System.out.println("Children with duplicate IDs! Child with id \"" + var5.method13257() + "\" already exists in view \"" + this.method13257() + "\"!");
                     return;
@@ -367,7 +367,7 @@ public class IconPanel implements IGuiEventListener {
                 this.field20916.add(var1);
             } else {
                 try {
-                    this.field20893.add(var1);
+                    this.iconPanelList.add(var1);
                 } catch (ConcurrentModificationException var6) {
                     this.field20916.add(var1);
                 }
@@ -376,7 +376,7 @@ public class IconPanel implements IGuiEventListener {
     }
 
     public boolean method13231(String var1) {
-        for (IconPanel var5 : this.method13241()) {
+        for (CustomGuiScreen var5 : this.method13241()) {
             if (var5.method13257().equals(var1)) {
                 return true;
             }
@@ -385,9 +385,9 @@ public class IconPanel implements IGuiEventListener {
         return false;
     }
 
-    public void method13232(IconPanel var1) {
+    public void method13232(CustomGuiScreen var1) {
         if (var1 != null) {
-            for (IconPanel var5 : this.method13241()) {
+            for (CustomGuiScreen var5 : this.method13241()) {
                 if (var5.method13257().equals(var1.method13257())) {
                     throw new RuntimeException("Children with duplicate IDs!");
                 }
@@ -398,9 +398,9 @@ public class IconPanel implements IGuiEventListener {
         }
     }
 
-    public void method13233(IconPanel var1) {
+    public void method13233(CustomGuiScreen var1) {
         if (var1 != null) {
-            for (IconPanel var5 : this.method13241()) {
+            for (CustomGuiScreen var5 : this.method13241()) {
                 if (var5.method13257().equals(var1.method13257())) {
                     throw new RuntimeException("Children with duplicate IDs!");
                 }
@@ -409,13 +409,13 @@ public class IconPanel implements IGuiEventListener {
             var1.setIcoPanel(this);
 
             try {
-                this.field20893.add(var1);
+                this.iconPanelList.add(var1);
             } catch (ConcurrentModificationException var6) {
             }
         }
     }
 
-    public void method13234(IconPanel var1) {
+    public void method13234(CustomGuiScreen var1) {
         if (this.field20917) {
             this.field20918.add(var1);
         } else {
@@ -423,21 +423,17 @@ public class IconPanel implements IGuiEventListener {
         }
     }
 
-    public void method13235(IconPanel var1) {
-        this.field20918.add(var1);
-    }
-
-    public void method13236(IconPanel var1) {
-        this.field20893.remove(var1);
-        if (this.field20919 != null && this.field20919.equals(var1)) {
+    public void method13236(CustomGuiScreen guiIn) {
+        this.iconPanelList.remove(guiIn);
+        if (this.field20919 != null && this.field20919.equals(guiIn)) {
             this.field20919 = null;
         }
 
-        this.field20916.remove(var1);
+        this.field20916.remove(guiIn);
     }
 
-    public void method13237(IconPanel var1) {
-        for (IconPanel var5 : this.method13241()) {
+    public void method13237(CustomGuiScreen var1) {
+        for (CustomGuiScreen var5 : this.method13241()) {
             if (var5.field20891.equals(var1.field20891)) {
                 this.method13234(var5);
             }
@@ -445,19 +441,19 @@ public class IconPanel implements IGuiEventListener {
     }
 
     public void method13238() {
-        this.field20893.clear();
+        this.iconPanelList.clear();
     }
 
-    public boolean method13239(IconPanel var1) {
-        return this.field20893.contains(var1);
+    public boolean method13239(CustomGuiScreen var1) {
+        return this.iconPanelList.contains(var1);
     }
 
-    public int method13240(IconPanel var1) {
-        return this.field20893.indexOf(var1);
+    public int method13240(CustomGuiScreen var1) {
+        return this.iconPanelList.indexOf(var1);
     }
 
-    public List<IconPanel> method13241() {
-        return this.field20893;
+    public List<CustomGuiScreen> method13241() {
+        return this.iconPanelList;
     }
 
     public void method13242() {
@@ -469,7 +465,7 @@ public class IconPanel implements IGuiEventListener {
     }
 
     public void method13243() {
-        for (IconPanel var4 : this.icoPanel.method13241()) {
+        for (CustomGuiScreen var4 : this.icoPanel.method13241()) {
             if (var4 == this) {
                 return;
             }
@@ -479,7 +475,7 @@ public class IconPanel implements IGuiEventListener {
     }
 
     public void method13244() {
-        this.field20893.clear();
+        this.iconPanelList.clear();
     }
 
     public JSONObject method13160(JSONObject var1) {
@@ -502,7 +498,7 @@ public class IconPanel implements IGuiEventListener {
     public final JSONObject method13245(JSONObject var1) {
         JSONArray var4 = new JSONArray();
 
-        for (IconPanel var6 : this.field20893) {
+        for (CustomGuiScreen var6 : this.iconPanelList) {
             if (var6.method13299()) {
                 JSONObject var7 = var6.method13160(new JSONObject());
                 if (var7.length() > 0) {
@@ -527,7 +523,7 @@ public class IconPanel implements IGuiEventListener {
             JSONArray var4 = CJsonUtils.getJSONArrayOrNull(var1, "children");
             Iterator<String> var5 = var1.keySet().iterator();
             if (var4 != null) {
-                List<IconPanel> var6 = new ArrayList<>(this.field20893);
+                List<CustomGuiScreen> var6 = new ArrayList<>(this.iconPanelList);
 
                 for (int var7 = 0; var7 < var4.length(); var7++) {
                     JSONObject var8 = null;
@@ -539,15 +535,15 @@ public class IconPanel implements IGuiEventListener {
                     String var9 = CJsonUtils.getStringOrDefault(var8, "id", null);
                     int var10 = CJsonUtils.getIntOrDefault(var8, "index", -1);
 
-                    for (IconPanel var12 : var6) {
+                    for (CustomGuiScreen var12 : var6) {
                         if (var12.method13257().equals(var9)) {
                             var12.method13161(var8);
                             if (var10 >= 0) {
-                                this.field20893.remove(var12);
-                                if (var10 > this.field20893.size()) {
-                                    this.field20893.add(var12);
+                                this.iconPanelList.remove(var12);
+                                if (var10 > this.iconPanelList.size()) {
+                                    this.iconPanelList.add(var12);
                                 } else {
-                                    this.field20893.add(var10, var12);
+                                    this.iconPanelList.add(var10, var12);
                                 }
                             }
                         }
@@ -560,10 +556,10 @@ public class IconPanel implements IGuiEventListener {
     @Override
     public boolean equals(Object var1) {
         if (this != var1) {
-            if (!(var1 instanceof IconPanel)) {
+            if (!(var1 instanceof CustomGuiScreen)) {
                 return false;
             } else {
-                IconPanel var4 = (IconPanel) var1;
+                CustomGuiScreen var4 = (CustomGuiScreen) var1;
                 return this.field20891.equals(var4.field20891) && (this.getIcoPanel() == null || this.getIcoPanel().equals(var4.getIcoPanel()));
             }
         } else {
@@ -575,7 +571,7 @@ public class IconPanel implements IGuiEventListener {
         var1.method22796(this);
     }
 
-    public final IconPanel method13247(Class7914 var1) {
+    public final CustomGuiScreen method13247(Class7914 var1) {
         this.field20920.add(var1);
         return this;
     }
@@ -586,7 +582,7 @@ public class IconPanel implements IGuiEventListener {
         }
     }
 
-    public IconPanel method13249(Class8867 var1) {
+    public CustomGuiScreen method13249(Class8867 var1) {
         this.field20921.add(var1);
         return this;
     }
@@ -597,7 +593,7 @@ public class IconPanel implements IGuiEventListener {
         }
     }
 
-    public IconPanel doThis(Class9781 var1) {
+    public CustomGuiScreen doThis(Class9781 var1) {
         this.field20922.add(var1);
         return this;
     }
@@ -611,7 +607,7 @@ public class IconPanel implements IGuiEventListener {
         }
     }
 
-    public final IconPanel onType(Class8446 var1) {
+    public final CustomGuiScreen onType(Class8446 var1) {
         this.field20923.add(var1);
         return this;
     }
@@ -622,7 +618,7 @@ public class IconPanel implements IGuiEventListener {
         }
     }
 
-    public final IconPanel method13255(Class7381 var1) {
+    public final CustomGuiScreen method13255(Class7381 var1) {
         this.field20924.add(var1);
         return this;
     }
@@ -637,11 +633,11 @@ public class IconPanel implements IGuiEventListener {
         return this.field20891;
     }
 
-    public IconPanel getIcoPanel() {
+    public CustomGuiScreen getIcoPanel() {
         return this.icoPanel;
     }
 
-    public void setIcoPanel(IconPanel var1) {
+    public void setIcoPanel(CustomGuiScreen var1) {
         this.icoPanel = var1;
     }
 
