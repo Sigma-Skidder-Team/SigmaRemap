@@ -14,23 +14,23 @@ public class NoClipPhase extends Module {
     }
 
     @EventTarget
-    private void method16580(EventPushBlock var1) {
+    private void EventPushBlock(EventPushBlock event) {
         if (this.isEnabled()) {
-            var1.setCancelled(true);
+            event.setCancelled(true);
         }
     }
 
     @EventTarget
-    public void method16581(EventBlockCollision var1) {
+    public void TickEvent(EventBlockCollision event) {
         if (this.isEnabled() && mc.world != null) {
-            if ((double) var1.getBlockPos().getY() >= mc.player.getPosY()) {
-                var1.setBoxelShape(VoxelShapes.empty());
+            if ((double) event.getBlockPos().getY() >= mc.player.getPosY()) {
+                event.setBoxelShape(VoxelShapes.empty());
             }
         }
     }
 
     @EventTarget
-    public void method16582(TickEvent var1) {
+    public void TickEvent(TickEvent event) {
         if (this.isEnabled()) {
             mc.player.jumpTicks = 3;
             if (mc.player.ticksExisted % 2 == 0) {
