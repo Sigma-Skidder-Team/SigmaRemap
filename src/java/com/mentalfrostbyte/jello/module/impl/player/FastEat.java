@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
-import mapped.UseAction;
+import net.minecraft.item.UseAction;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.CHeldItemChangePacket;
 import net.minecraft.network.play.client.CPlayerPacket;
@@ -24,7 +24,7 @@ public class FastEat extends Module {
          if (mc.player.isHandActive()) {
             ItemStack itemStack= mc.player.getActiveItemStack();
             if (itemStack != null
-               && (itemStack.getUseAction() == UseAction.field13708 || itemStack.getUseAction() == UseAction.field13707)
+               && (itemStack.getUseAction() == UseAction.DRINK || itemStack.getUseAction() == UseAction.EAT)
                && (float) mc.player.getItemInUseCount() < this.getNumberValueBySettingName("Speed") * 32.0F) {
                String mode = this.getStringSettingValueByName("Mode");
                switch (mode) {

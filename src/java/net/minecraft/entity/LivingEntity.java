@@ -30,6 +30,7 @@ import net.minecraft.fluid.FluidState;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.item.UseAction;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
 import net.minecraft.network.IPacket;
@@ -2780,11 +2781,11 @@ public abstract class LivingEntity extends Entity {
 
    public void triggerItemUseEffects(ItemStack var1, int var2) {
       if (!var1.isEmpty() && this.isHandActive()) {
-         if (var1.getUseAction() == UseAction.field13708) {
+         if (var1.getUseAction() == UseAction.DRINK) {
             this.playSound(this.getDrinkSound(var1), 0.5F, this.world.rand.nextFloat() * 0.1F + 0.9F);
          }
 
-         if (var1.getUseAction() == UseAction.field13707) {
+         if (var1.getUseAction() == UseAction.EAT) {
             this.addItemParticles(var1, var2);
             this.playSound(
                this.getEatSound(var1), 0.5F + 0.5F * (float)this.rand.nextInt(2), (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F

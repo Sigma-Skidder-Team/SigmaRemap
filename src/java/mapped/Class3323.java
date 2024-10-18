@@ -8,6 +8,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.item.UseAction;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.Hand;
@@ -70,7 +71,7 @@ public class Class3323 extends Item {
 
    @Override
    public UseAction method11727(ItemStack var1) {
-      return UseAction.field13708;
+      return UseAction.DRINK;
    }
 
    @Override

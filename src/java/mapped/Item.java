@@ -14,6 +14,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.item.UseAction;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
@@ -188,7 +189,7 @@ public class Item implements IItemProvider {
    }
 
    public UseAction method11727(ItemStack var1) {
-      return !var1.getItem().isFood() ? UseAction.field13706 : UseAction.field13707;
+      return !var1.getItem().isFood() ? UseAction.NONE : UseAction.EAT;
    }
 
    public int method11728(ItemStack var1) {
