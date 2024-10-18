@@ -5,9 +5,6 @@ package totalcross.json;
  * - Raca
  */
 public class JSONException2 extends RuntimeException {
-   private static String[] field16602;
-   private static final long field16603 = 0L;
-
    public JSONException2(String var1) {
       super(var1);
    }
