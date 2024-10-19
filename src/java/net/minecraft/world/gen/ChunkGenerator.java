@@ -1,7 +1,8 @@
-package mapped;
+package net.minecraft.world.gen;
 
 import com.google.common.collect.Lists;
 import com.mojang.serialization.Codec;
+import mapped.*;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.crash.ReportedException;
@@ -19,7 +20,6 @@ import net.minecraft.world.biome.*;
 import net.minecraft.world.biome.provider.BiomeProvider;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.chunk.IChunk;
-import net.minecraft.world.gen.WorldGenRegion;
 import net.minecraft.world.gen.carver.ConfiguredCarver;
 import net.minecraft.world.gen.feature.structure.StructureFeatures;
 import net.minecraft.world.gen.feature.structure.StructureManager;
@@ -229,7 +229,7 @@ public abstract class ChunkGenerator {
       Biome biome = this.biomeProvider.getNoiseBiome((chunkpos.x << 2) + 2, 0, (chunkpos.z << 2) + 2);
       this.func_242705_a(StructureFeatures.STRONGHOLD, var1, var2, var3, var4, var5, chunkpos, biome);
 
-      for (Supplier < StructureFeature <? , ? >> var12 : biome.getGenerationSettings().getStructures()) {
+      for (Supplier <StructureFeature<? , ? >> var12 : biome.getGenerationSettings().getStructures()) {
          this.func_242705_a(var12.get(), var1, var2, var3, var4, var5, chunkpos, biome);
       }
    }

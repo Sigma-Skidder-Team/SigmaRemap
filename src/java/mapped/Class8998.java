@@ -7,6 +7,7 @@ import net.minecraft.network.IPacket;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.SectionPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.server.ChunkHolder;
 import net.minecraft.world.server.ChunkManager;
 
 import java.util.Collection;
@@ -83,7 +84,7 @@ public class Class8998 {
             boolean var7 = this.field41148.forceSpawn;
             if (!var7) {
                ChunkPos var8 = new ChunkPos(this.field41148.chunkCoordX, this.field41148.chunkCoordZ);
-               Class8641 var9 = this.field41152.method6539(var8.asLong());
+               ChunkHolder var9 = this.field41152.method6539(var8.asLong());
                if (var9 != null && var9.method31043() != null) {
                   var7 = ChunkManager.method6635(var8, var1, false) <= ChunkManager.method6634(this.field41152);
                }

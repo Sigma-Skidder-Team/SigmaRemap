@@ -102,7 +102,7 @@ public class Class322<T> implements Class321<T>, AutoCloseable, Runnable {
    }
 
    @Override
-   public void method1641(T var1) {
+   public void enqueue(T var1) {
       this.field1386.method23499((T)var1);
       this.method1656();
    }

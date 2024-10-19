@@ -31,12 +31,10 @@ import net.minecraft.util.math.SectionPos;
 import net.minecraft.util.palette.UpgradeData;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
-import net.minecraft.world.chunk.ChunkPrimer;
-import net.minecraft.world.chunk.ChunkStatus;
-import net.minecraft.world.chunk.IChunkLightProvider;
-import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.chunk.*;
 import net.minecraft.world.chunk.listener.IChunkStatusListener;
 import net.minecraft.world.chunk.storage.ChunkSerializer;
+import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.feature.structure.StructureStart;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 import net.minecraft.world.storage.DimensionSavedDataManager;
@@ -61,24 +59,24 @@ import java.util.stream.Stream;
 public class ChunkManager extends Class1648 implements Class1650 {
    private static final Logger field8950 = LogManager.getLogger();
    public static final int MAX_LOADED_LEVEL = 33 + ChunkStatus.maxDistance();
-   private final Long2ObjectLinkedOpenHashMap<Class8641> field8952 = new Long2ObjectLinkedOpenHashMap();
-   private volatile Long2ObjectLinkedOpenHashMap<Class8641> field8953 = this.field8952.clone();
-   private final Long2ObjectLinkedOpenHashMap<Class8641> field8954 = new Long2ObjectLinkedOpenHashMap();
+   private final Long2ObjectLinkedOpenHashMap<ChunkHolder> field8952 = new Long2ObjectLinkedOpenHashMap();
+   private volatile Long2ObjectLinkedOpenHashMap<ChunkHolder> field8953 = this.field8952.clone();
+   private final Long2ObjectLinkedOpenHashMap<ChunkHolder> field8954 = new Long2ObjectLinkedOpenHashMap();
    private final LongSet field8955 = new LongOpenHashSet();
    private final ServerWorld world;
-   private final Class195 lightManager;
+   private final ServerWorldLightManager lightManager;
    private final Class318<Runnable> field8958;
    private final ChunkGenerator field8959;
    private final Supplier<DimensionSavedDataManager> field8960;
    private final Class1653 field8961;
    private final LongSet field8962 = new LongOpenHashSet();
    private boolean field8963;
-   private final Class1812 field8964;
+   private final ChunkTaskPriorityQueueSorter field8964;
    private final Class321<Class6875<Runnable>> field8965;
-   private final Class321<Class6875<Runnable>> field8966;
+   private final Class321<Class6875<Runnable>> field_219265_s;
    private final IChunkStatusListener iChunkStatusListener;
    private final Class9306 field8968;
-   private final AtomicInteger field8969 = new AtomicInteger();
+   private final AtomicInteger field_219268_v = new AtomicInteger();
    private final TemplateManager templateManager;
    private final File field8971;
    private final Class6858 field8972 = new Class6858();
@@ -108,13 +106,13 @@ public class ChunkManager extends Class1648 implements Class1650 {
       this.field8959 = var8;
       this.field8958 = var6;
       Class322 var15 = Class322.method1650(var5, "worldgen");
-      Class321 var16 = Class321.method1648("main", var6::method1641);
+      Class321 var16 = Class321.method1648("main", var6::enqueue);
       this.iChunkStatusListener = var9;
       Class322 var17 = Class322.method1650(var5, "light");
-      this.field8964 = new Class1812(ImmutableList.of(var15, var16, var17), var5, Integer.MAX_VALUE);
+      this.field8964 = new ChunkTaskPriorityQueueSorter(ImmutableList.of(var15, var16, var17), var5, Integer.MAX_VALUE);
       this.field8965 = this.field8964.<Runnable>method7963(var15, false);
-      this.field8966 = this.field8964.<Runnable>method7963(var16, false);
-      this.lightManager = new Class195(var7, this, this.world.getDimensionType().hasSkyLight(), var17, this.field8964.<Runnable>method7963(var17, false));
+      this.field_219265_s = this.field8964.<Runnable>method7963(var16, false);
+      this.lightManager = new ServerWorldLightManager(var7, this, this.world.getDimensionType().hasSkyLight(), var17, this.field8964.<Runnable>method7963(var17, false));
       this.field8968 = new Class9306(this, var5, var6);
       this.field8960 = var10;
       this.field8961 = new Class1653(new File(this.field8971, "poi"), var3, var12);
@@ -150,39 +148,39 @@ public class ChunkManager extends Class1648 implements Class1650 {
       return Math.max(Math.abs(var5), Math.abs(var6));
    }
 
-   public Class195 method6537() {
+   public ServerWorldLightManager getLightManager() {
       return this.lightManager;
    }
 
    @Nullable
-   public Class8641 method6538(long var1) {
-      return (Class8641)this.field8952.get(var1);
+   public ChunkHolder func_219220_a(long var1) {
+      return (ChunkHolder)this.field8952.get(var1);
    }
 
    @Nullable
-   public Class8641 method6539(long var1) {
-      return (Class8641)this.field8953.get(var1);
+   public ChunkHolder method6539(long var1) {
+      return (ChunkHolder)this.field8953.get(var1);
    }
 
    public IntSupplier method6540(long var1) {
       return () -> {
-         Class8641 var5 = this.method6539(var1);
+         ChunkHolder var5 = this.method6539(var1);
          return var5 != null ? Math.min(var5.method31058(), Class8572.field38532 - 1) : Class8572.field38532 - 1;
       };
    }
 
    public String method6541(ChunkPos var1) {
-      Class8641 var4 = this.method6539(var1.asLong());
+      ChunkHolder var4 = this.method6539(var1.asLong());
       if (var4 != null) {
          String var5 = var4.method31057() + "\n";
          ChunkStatus var6 = var4.method31044();
          IChunk var7 = var4.method31045();
          if (var6 != null) {
-            var5 = var5 + "St: §" + var6.method34297() + var6 + '§' + "r\n";
+            var5 = var5 + "St: §" + var6.ordinal() + var6 + '§' + "r\n";
          }
 
          if (var7 != null) {
-            var5 = var5 + "Ch: §" + var7.getStatus().method34297() + var7.getStatus() + '§' + "r\n";
+            var5 = var5 + "Ch: §" + var7.getStatus().ordinal() + var7.getStatus() + '§' + "r\n";
          }
 
          ChunkHolderLocationType var8 = var4.method31055();
@@ -193,54 +191,71 @@ public class ChunkManager extends Class1648 implements Class1650 {
       }
    }
 
-   private CompletableFuture<Either<List<IChunk>, Class7022>> method6542(ChunkPos var1, int var2, IntFunction<ChunkStatus> var3) {
-      List<CompletableFuture<Either<IChunk, Class7022>>> var6 = Lists.newArrayList();
-      int var7 = var1.x;
-      int var8 = var1.z;
+   private CompletableFuture<Either<List<IChunk>, ChunkHolder.IChunkLoadingError>> func_219236_a(ChunkPos pos, int p_219236_2_, IntFunction<ChunkStatus> p_219236_3_) {
+      List<CompletableFuture<Either<IChunk, ChunkHolder.IChunkLoadingError>>> list = Lists.newArrayList();
+      int i = pos.x;
+      int j = pos.z;
 
-      for (int var9 = -var2; var9 <= var2; var9++) {
-         for (int var10 = -var2; var10 <= var2; var10++) {
-            int var11 = Math.max(Math.abs(var10), Math.abs(var9));
-            ChunkPos var12 = new ChunkPos(var7 + var10, var8 + var9);
-            long var13 = var12.asLong();
-            Class8641 var15 = this.method6538(var13);
-            if (var15 == null) {
-               return CompletableFuture.completedFuture(Either.right(new Class7021(this, var12)));
+      for (int k = -p_219236_2_; k <= p_219236_2_; k++) {
+         for (int l = -p_219236_2_; l <= p_219236_2_; l++) {
+            int i1 = Math.max(Math.abs(l), Math.abs(k));
+            final ChunkPos chunkpos = new ChunkPos(i + l, j + k);
+            long j1 = chunkpos.asLong();
+            ChunkHolder chunkholder = this.func_219220_a(j1);
+            if (chunkholder == null)
+            {
+               return CompletableFuture.completedFuture(Either.right(new ChunkHolder.IChunkLoadingError()
+               {
+                  public String toString()
+                  {
+                     return "Unloaded " + chunkpos.toString();
+                  }
+               }));
             }
 
-            ChunkStatus var16 = var3.apply(var11);
-            CompletableFuture<Either<IChunk, Class7022>> var17 = var15.method31053(var16, this);
-            var6.add(var17);
+            ChunkStatus chunkstatus = p_219236_3_.apply(i1);
+            CompletableFuture<Either<IChunk, ChunkHolder.IChunkLoadingError>> completablefuture = chunkholder.func_219276_a(chunkstatus, this);
+            list.add(completablefuture);
          }
       }
 
-      CompletableFuture<List<Either<IChunk, Class7022>>> var18 = Util.gather(var6);
+      CompletableFuture<List<Either<IChunk, ChunkHolder.IChunkLoadingError>>> completablefuture1 = Util.gather(list);
 
-      return var18.thenApply(var4 -> {
-         List var7x = Lists.newArrayList();
-         int var8x = 0;
+      return completablefuture1.thenApply((p_lambda$func_219236_a$1_4_) ->
+      {
+         List<IChunk> list1 = Lists.newArrayList();
+         int k1 = 0;
 
-         for (Either var10x : var4) {
-            Optional var11x = var10x.left();
-            if (!var11x.isPresent()) {
-               return Either.right(new Class7025(this, var7, var8x, var2, var8, var10x));
+         for (final Either<IChunk, ChunkHolder.IChunkLoadingError> either : p_lambda$func_219236_a$1_4_) {
+            Optional<IChunk> optional = either.left();
+
+            if (!optional.isPresent())
+            {
+               final int l1 = k1;
+               return Either.right(new ChunkHolder.IChunkLoadingError()
+               {
+                  public String toString()
+                  {
+                     return "Unloaded " + new ChunkPos(i + l1 % (p_219236_2_ * 2 + 1), j + l1 / (p_219236_2_ * 2 + 1)) + " " + either.right().get().toString();
+                  }
+               });
             }
 
-            var7x.add(var11x.get());
-            var8x++;
+            list1.add(optional.get());
+            ++k1;
          }
 
-         return Either.left(var7x);
+         return Either.left(list1);
       });
    }
 
-   public CompletableFuture<Either<Chunk, Class7022>> method6543(ChunkPos var1) {
-      return this.method6542(var1, 2, var0 -> ChunkStatus.FULL)
-         .<Either<Chunk, Class7022>>thenApplyAsync(var0 -> var0.mapLeft(var0x -> (Chunk)var0x.get(var0x.size() / 2)), this.field8958);
+   public CompletableFuture<Either<Chunk, ChunkHolder.IChunkLoadingError>> func_219188_b(ChunkPos var1) {
+      return this.func_219236_a(var1, 2, var0 -> ChunkStatus.FULL)
+         .thenApplyAsync(var0 -> var0.mapLeft(var0x -> (Chunk)var0x.get(var0x.size() / 2)), this.field8958);
    }
 
    @Nullable
-   private Class8641 method6544(long var1, int var3, Class8641 var4, int var5) {
+   private ChunkHolder method6544(long var1, int var3, ChunkHolder var4, int var5) {
       if (var5 > MAX_LOADED_LEVEL && var3 > MAX_LOADED_LEVEL) {
          return var4;
       } else {
@@ -257,9 +272,9 @@ public class ChunkManager extends Class1648 implements Class1650 {
          }
 
          if (var3 <= MAX_LOADED_LEVEL && var4 == null) {
-            var4 = (Class8641)this.field8954.remove(var1);
+            var4 = (ChunkHolder)this.field8954.remove(var1);
             if (var4 == null) {
-               var4 = new Class8641(new ChunkPos(var1), var3, this.lightManager, this.field8964, this);
+               var4 = new ChunkHolder(new ChunkPos(var1), var3, this.lightManager, this.field8964, this);
             } else {
                var4.method31060(var3);
             }
@@ -284,7 +299,7 @@ public class ChunkManager extends Class1648 implements Class1650 {
 
    public void method6545(boolean var1) {
       if (!var1) {
-         this.field8953.values().stream().filter(Class8641::method31064).forEach(var1x -> {
+         this.field8953.values().stream().filter(ChunkHolder::method31064).forEach(var1x -> {
             IChunk var4x = var1x.method31046().getNow((IChunk)null);
             if (var4x instanceof Class1673 || var4x instanceof Chunk) {
                this.method6561(var4x);
@@ -292,7 +307,7 @@ public class ChunkManager extends Class1648 implements Class1650 {
             }
          });
       } else {
-         List<Class8641> var4 = this.field8953.values().stream().filter(Class8641::method31064).peek(Class8641::method31065).collect(Collectors.toList());
+         List<ChunkHolder> var4 = this.field8953.values().stream().filter(ChunkHolder::method31064).peek(ChunkHolder::method31065).collect(Collectors.toList());
          MutableBoolean var5 = new MutableBoolean();
 
          do {
@@ -331,7 +346,7 @@ public class ChunkManager extends Class1648 implements Class1650 {
 
       for (int var5 = 0; var4.hasNext() && (var1.getAsBoolean() || var5 < 200 || this.field8962.size() > 2000); var4.remove()) {
          long var6 = var4.nextLong();
-         Class8641 var8 = (Class8641)this.field8952.remove(var6);
+         ChunkHolder var8 = (ChunkHolder)this.field8952.remove(var6);
          if (var8 != null) {
             this.field8954.put(var6, var8);
             this.field8963 = true;
@@ -346,7 +361,7 @@ public class ChunkManager extends Class1648 implements Class1650 {
       }
    }
 
-   private void method6548(long var1, Class8641 var3) {
+   private void method6548(long var1, ChunkHolder var3) {
       CompletableFuture<IChunk> var6 = var3.method31046();
       var6.thenAcceptAsync(var5 -> {
          CompletableFuture<IChunk> var8 = var3.method31046();
@@ -374,7 +389,7 @@ public class ChunkManager extends Class1648 implements Class1650 {
          }
       }, this.field8975::add).whenComplete((var1x, var2) -> {
          if (var2 != null) {
-            field8950.error("Failed to save chunk " + var3.method31056(), var2);
+            field8950.error("Failed to save chunk " + var3.getPosition(), var2);
          }
       });
    }
@@ -389,11 +404,11 @@ public class ChunkManager extends Class1648 implements Class1650 {
       }
    }
 
-   public CompletableFuture<Either<IChunk, Class7022>> method6550(Class8641 var1, ChunkStatus var2) {
-      ChunkPos var5 = var1.method31056();
+   public CompletableFuture<Either<IChunk, ChunkHolder.IChunkLoadingError>> func_219244_a(ChunkHolder var1, ChunkStatus var2) {
+      ChunkPos var5 = var1.getPosition();
       if (var2 != ChunkStatus.EMPTY) {
-         CompletableFuture<Either<IChunk, Class7022>> var6 = var1.method31053(var2.method34299(), this);
-         return var6.<Either<IChunk, Class7022>>thenComposeAsync(var4 -> {
+         CompletableFuture<Either<IChunk, ChunkHolder.IChunkLoadingError>> var6 = var1.func_219276_a(var2.method34299(), this);
+         return var6.<Either<IChunk, ChunkHolder.IChunkLoadingError>>thenComposeAsync(var4 -> {
             Optional var7 = var4.left();
             if (var7.isPresent()) {
                if (var2 == ChunkStatus.LIGHT) {
@@ -401,7 +416,7 @@ public class ChunkManager extends Class1648 implements Class1650 {
                }
 
                IChunk var8 = (IChunk)var7.get();
-               if (!var8.getStatus().method34306(var2)) {
+               if (!var8.getStatus().isAtLeast(var2)) {
                   return this.chunkGenerate(var1, var2);
                } else {
                   CompletableFuture varcompletablefuture19;
@@ -415,7 +430,7 @@ public class ChunkManager extends Class1648 implements Class1650 {
                   return varcompletablefuture19;
                }
             } else {
-               return CompletableFuture.<Either<IChunk, Class7022>>completedFuture((Either<IChunk, Class7022>)var4);
+               return CompletableFuture.<Either<IChunk, ChunkHolder.IChunkLoadingError>>completedFuture((Either<IChunk, ChunkHolder.IChunkLoadingError>)var4);
             }
          }, this.field8958);
       } else {
@@ -423,8 +438,8 @@ public class ChunkManager extends Class1648 implements Class1650 {
       }
    }
 
-   private CompletableFuture<Either<IChunk, Class7022>> method6551(ChunkPos var1) {
-      return CompletableFuture.<Either<IChunk, Class7022>>supplyAsync(() -> {
+   private CompletableFuture<Either<IChunk, ChunkHolder.IChunkLoadingError>> method6551(ChunkPos var1) {
+      return CompletableFuture.<Either<IChunk, ChunkHolder.IChunkLoadingError>>supplyAsync(() -> {
          try {
             this.world.getProfiler().func_230035_c_("chunkLoad");
             CompoundNBT var4 = this.loadChunkData(var1);
@@ -464,15 +479,15 @@ public class ChunkManager extends Class1648 implements Class1650 {
       return this.field8974.put(var1.asLong(), (byte)(var2 != Class2076.field13524 ? 1 : -1));
    }
 
-   private CompletableFuture<Either<IChunk, Class7022>> chunkGenerate(Class8641 var1, ChunkStatus var2) {
-      ChunkPos var5 = var1.method31056();
-      CompletableFuture<Either<List<IChunk>, Class7022>> var6 = this.method6542(var5, var2.method34302(), var2x -> this.method6556(var2, var2x));
+   private CompletableFuture<Either<IChunk, ChunkHolder.IChunkLoadingError>> chunkGenerate(ChunkHolder var1, ChunkStatus var2) {
+      ChunkPos var5 = var1.getPosition();
+      CompletableFuture<Either<List<IChunk>, ChunkHolder.IChunkLoadingError>> var6 = this.func_219236_a(var5, var2.method34302(), var2x -> this.method6556(var2, var2x));
       this.world.getProfiler().method22509(() -> "chunkGenerate " + var2.method34298());
       return var6.thenComposeAsync(
-         var4 -> (CompletionStage<Either<IChunk, Class7022>>)var4.map(
+         var4 -> (CompletionStage<Either<IChunk, ChunkHolder.IChunkLoadingError>>)var4.map(
                var4x -> {
                   try {
-                     CompletableFuture<Either<IChunk, Class7022>> var7 = var2.method34300(
+                     CompletableFuture<Either<IChunk, ChunkHolder.IChunkLoadingError>> var7 = var2.method34300(
                         this.world, this.field8959, this.templateManager, this.lightManager, var2xxx -> this.method6557(var1), var4x
                      );
                      this.iChunkStatusListener.statusChanged(var5, var2);
@@ -491,13 +506,13 @@ public class ChunkManager extends Class1648 implements Class1650 {
                   return CompletableFuture.<Either>completedFuture(Either.right(var2xx));
                }
             ),
-         var2x -> this.field8965.method1641(Class1812.method7961(var1, var2x))
+         var2x -> this.field8965.enqueue(ChunkTaskPriorityQueueSorter.func_219081_a(var1, var2x))
       );
    }
 
    public void method6555(ChunkPos var1) {
       this.field8958
-         .method1641(
+         .enqueue(
             Util.namedRunnable(
                () -> this.field8968.releaseWithLevel(TicketType.LIGHT, var1, 33 + ChunkStatus.method34296(ChunkStatus.FEATURES), var1),
                () -> "release light ticket " + var1
@@ -516,12 +531,12 @@ public class ChunkManager extends Class1648 implements Class1650 {
       return var5;
    }
 
-   private CompletableFuture<Either<IChunk, Class7022>> method6557(Class8641 var1) {
-      CompletableFuture<Either<IChunk, Class7022>> var4 = var1.method31038(ChunkStatus.FULL.method34299());
+   private CompletableFuture<Either<IChunk, ChunkHolder.IChunkLoadingError>> method6557(ChunkHolder var1) {
+      CompletableFuture<Either<IChunk, ChunkHolder.IChunkLoadingError>> var4 = var1.method31038(ChunkStatus.FULL.method34299());
       return var4.thenApplyAsync(var2 -> {
-         ChunkStatus var5 = Class8641.method31062(var1.method31057());
-         return var5.method34306(ChunkStatus.FULL) ? var2.mapLeft(var2x -> {
-            ChunkPos var5x = var1.method31056();
+         ChunkStatus var5 = ChunkHolder.getChunkStatusFromLevel(var1.method31057());
+         return var5.isAtLeast(ChunkStatus.FULL) ? var2.mapLeft(var2x -> {
+            ChunkPos var5x = var1.getPosition();
             Chunk var6;
             if (!(var2x instanceof Class1673)) {
                var6 = new Chunk(this.world, (ChunkPrimer)var2x);
@@ -530,26 +545,25 @@ public class ChunkManager extends Class1648 implements Class1650 {
                var6 = ((Class1673)var2x).method7127();
             }
 
-            var6.method7153(() -> Class8641.method31063(var1.method31057()));
+            var6.method7153(() -> ChunkHolder.getLocationTypeFromLevel(var1.method31057()));
             var6.method7136();
             if (this.field8955.add(var5x.asLong())) {
                var6.setLoaded(true);
                this.world.method6752(var6.getTileEntityMap().values());
               List<Entity> var7 = null;
                Class51<Entity>[] var8 = var6.method7146();
-               int var9 = var8.length;
 
-               for (int var10 = 0; var10 < var9; var10++) {
-                  for (Entity var12 : var8[var10]) {
-                     if (!(var12 instanceof PlayerEntity) && !this.world.method6925(var12)) {
-                        if (var7 != null) {
-                           var7.add(var12);
-                        } else {
-                           var7 = Lists.newArrayList(var12);
+                for (Class51<Entity> entities : var8) {
+                    for (Entity var12 : entities) {
+                        if (!(var12 instanceof PlayerEntity) && !this.world.method6925(var12)) {
+                            if (var7 != null) {
+                                var7.add(var12);
+                            } else {
+                                var7 = Lists.newArrayList(var12);
+                            }
                         }
-                     }
-                  }
-               }
+                    }
+                }
 
                if (var7 != null) {
                   var7.forEach(var6::removeEntity);
@@ -561,37 +575,39 @@ public class ChunkManager extends Class1648 implements Class1650 {
             }
 
             return var6;
-         }) : Class8641.field38893;
-      }, var2 -> this.field8966.method1641(Class1812.method7960(var2, var1.method31056().asLong(), var1::method31057)));
+         }) : ChunkHolder.field38893;
+      }, var2 -> this.field_219265_s.enqueue(ChunkTaskPriorityQueueSorter.method7960(var2, var1.getPosition().asLong(), var1::method31057)));
    }
 
-   public CompletableFuture<Either<Chunk, Class7022>> method6558(Class8641 var1) {
-      ChunkPos var4 = var1.method31056();
-      CompletableFuture<Either<List<IChunk>, Class7022>> var5 = this.method6542(var4, 1, var0 -> ChunkStatus.FULL);
-      CompletableFuture<Either<Chunk, Class7022>> var6 = var5.thenApplyAsync(var0 -> var0.flatMap(var0x -> {
-            Chunk var3 = (Chunk)var0x.get(var0x.size() / 2);
-            var3.method7148();
+   public CompletableFuture<Either<Chunk, ChunkHolder.IChunkLoadingError>> func_219179_a(ChunkHolder var1) {
+      ChunkPos var4 = var1.getPosition();
+      CompletableFuture<Either<List<IChunk>, ChunkHolder.IChunkLoadingError>> completablefuture = this.func_219236_a(var4, 1, var0 -> ChunkStatus.FULL);
+      CompletableFuture<Either<Chunk, ChunkHolder.IChunkLoadingError>> completablefuture1 = completablefuture.thenApplyAsync(var0 -> var0.flatMap(p_lambda$null$29_0_ -> {
+            System.out.println("wow");
+            Chunk var3 = (Chunk)p_lambda$null$29_0_.get(p_lambda$null$29_0_.size() / 2);
+            var3.postProcess();
             return Either.left(var3);
-         }), var2 -> this.field8966.method1641(Class1812.method7961(var1, var2)));
-      var6.thenAcceptAsync(var2 -> var2.mapLeft(var2x -> {
-            this.field8969.getAndIncrement();
-            IPacket[] var5x = new IPacket[2];
-            this.method6576(var4, false).forEach(var3 -> this.method6582(var3, var5x, var2x));
+         }), var2 -> this.field_219265_s.enqueue(ChunkTaskPriorityQueueSorter.func_219081_a(var1, var2)));
+      completablefuture1.thenAcceptAsync(var2 -> var2.mapLeft(var2x -> {
+         System.out.println("incrementing loaded chunk count: " + this.field_219268_v.get() + "+1");
+            this.field_219268_v.getAndIncrement();
+            IPacket<?>[] ipacket = new IPacket[2];
+            this.getTrackingPlayers(var4, false).forEach(var3 -> this.sendChunkData(var3, ipacket, var2x));
             return Either.left(var2x);
-         }), var2 -> this.field8966.method1641(Class1812.method7961(var1, var2)));
-      return var6;
+         }), var2 -> this.field_219265_s.enqueue(ChunkTaskPriorityQueueSorter.func_219081_a(var1, var2)));
+      return completablefuture1;
    }
 
-   public CompletableFuture<Either<Chunk, Class7022>> method6559(Class8641 var1) {
-      return var1.method31053(ChunkStatus.FULL, this).<Either<Chunk, Class7022>>thenApplyAsync(var0 -> var0.mapLeft(var0x -> {
+   public CompletableFuture<Either<Chunk, ChunkHolder.IChunkLoadingError>> method6559(ChunkHolder var1) {
+      return var1.func_219276_a(ChunkStatus.FULL, this).<Either<Chunk, ChunkHolder.IChunkLoadingError>>thenApplyAsync(var0 -> var0.mapLeft(var0x -> {
             Chunk var3 = (Chunk)var0x;
             var3.method7150();
             return var3;
-         }), var2 -> this.field8966.method1641(Class1812.method7961(var1, var2)));
+         }), var2 -> this.field_219265_s.enqueue(ChunkTaskPriorityQueueSorter.func_219081_a(var1, var2)));
    }
 
-   public int method6560() {
-      return this.field8969.get();
+   public int func_219174_c() {
+      return this.field_219268_v.get();
    }
 
    private boolean method6561(IChunk var1) {
@@ -664,10 +680,10 @@ public class ChunkManager extends Class1648 implements Class1650 {
          ObjectIterator var6 = this.field8952.values().iterator();
 
          while (var6.hasNext()) {
-            Class8641 var7 = (Class8641)var6.next();
-            ChunkPos var8 = var7.method31056();
+            ChunkHolder var7 = (ChunkHolder)var6.next();
+            ChunkPos var8 = var7.getPosition();
             IPacket[] var9 = new IPacket[2];
-            this.method6576(var8, false).forEach(var4x -> {
+            this.getTrackingPlayers(var8, false).forEach(var4x -> {
                int var7x = method6535(var8, var4x, true);
                boolean var8x = var7x <= var5;
                boolean var9x = var7x <= this.field8976;
@@ -684,11 +700,11 @@ public class ChunkManager extends Class1648 implements Class1650 {
          }
 
          if (var5 && !var4) {
-            Class8641 var8 = this.method6539(var2.asLong());
+            ChunkHolder var8 = this.method6539(var2.asLong());
             if (var8 != null) {
                Chunk var9 = var8.method31043();
                if (var9 != null) {
-                  this.method6582(var1, var3, var9);
+                  this.sendChunkData(var1, var3, var9);
                }
 
                DebugPacketSender.method23612(this.world, var2);
@@ -705,11 +721,11 @@ public class ChunkManager extends Class1648 implements Class1650 {
       return this.field8953.size();
    }
 
-   public Class9306 method6566() {
+   public Class9306 getTicketManager() {
       return this.field8968;
    }
 
-   public Iterable<Class8641> method6567() {
+   public Iterable<ChunkHolder> method6567() {
       return Iterables.unmodifiableIterable(this.field8953.values());
    }
 
@@ -730,9 +746,9 @@ public class ChunkManager extends Class1648 implements Class1650 {
          .method37003("block_entity_count")
          .method37004(var1);
 
-       for (Entry<Class8641> var6 : this.field8953.long2ObjectEntrySet()) {
+       for (Entry<ChunkHolder> var6 : this.field8953.long2ObjectEntrySet()) {
            ChunkPos var7 = new ChunkPos(var6.getLongKey());
-           Class8641 var8 = var6.getValue();
+           ChunkHolder var8 = var6.getValue();
            Optional<IChunk> var9 = Optional.ofNullable(var8.method31045());
            Optional<Chunk> var10 = var9.flatMap(var0 -> !(var0 instanceof Chunk) ? Optional.empty() : Optional.of((Chunk) var0));
            var4.method33938(
@@ -753,7 +769,7 @@ public class ChunkManager extends Class1648 implements Class1650 {
        }
    }
 
-   private static String method6569(CompletableFuture<Either<Chunk, Class7022>> var0) {
+   private static String method6569(CompletableFuture<Either<Chunk, ChunkHolder.IChunkLoadingError>> var0) {
       try {
          Either var3 = (Either)var0.getNow((Either)null);
          return var3 != null ? (String)var3.map(var0x -> "done", var0x -> "unloaded") : "not completed";
@@ -897,7 +913,7 @@ public class ChunkManager extends Class1648 implements Class1650 {
    }
 
    @Override
-   public Stream<ServerPlayerEntity> method6576(ChunkPos var1, boolean var2) {
+   public Stream<ServerPlayerEntity> getTrackingPlayers(ChunkPos var1, boolean var2) {
       return this.field8972.method20896(var1.asLong()).filter(var3 -> {
          int var6 = method6535(var1, var3, true);
          return var6 > this.field8976 ? false : !var2 || var6 == this.field8976;
@@ -995,7 +1011,7 @@ public class ChunkManager extends Class1648 implements Class1650 {
       }
    }
 
-   private void method6582(ServerPlayerEntity var1, IPacket<?>[] var2, Chunk var3) {
+   private void sendChunkData(ServerPlayerEntity var1, IPacket<?>[] var2, Chunk var3) {
       if (var2[0] == null) {
          var2[0] = new SChunkDataPacket(var3, 65535);
          var2[1] = new SUpdateLightPacket(var3.getPos(), this.lightManager, true);
@@ -1062,7 +1078,7 @@ public class ChunkManager extends Class1648 implements Class1650 {
    }
 
    // $VF: synthetic method
-   public static Class8641 method6637(ChunkManager var0, long var1, int var3, Class8641 var4, int var5) {
+   public static ChunkHolder method6637(ChunkManager var0, long var1, int var3, ChunkHolder var4, int var5) {
       return var0.method6544(var1, var3, var4, var5);
    }
 }

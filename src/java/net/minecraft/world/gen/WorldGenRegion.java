@@ -100,7 +100,7 @@ public class WorldGenRegion implements ISeedReader {
          int var8 = var1 - this.field9213.x;
          int var9 = var2 - this.field9213.z;
          var7 = this.field9201.get(var8 + var9 * this.field9204);
-         if (var7.getStatus().method34306(var3)) {
+         if (var7.getStatus().isAtLeast(var3)) {
             return var7;
          }
       }

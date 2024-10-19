@@ -417,12 +417,12 @@ public class CreateWorldScreen extends Screen {
       List var5 = var1.method1267().stream().filter(var1x -> !var4.contains(var1x)).collect(ImmutableList.toImmutableList());
       DatapackCodec var6 = new DatapackCodec(var4, var5);
       if (!var4.equals(this.field7077.method26104())) {
-         this.mc.method1641(() -> this.mc.displayGuiScreen(new DirtMessageScreen(new TranslationTextComponent("dataPack.validation.working"))));
+         this.mc.enqueue(() -> this.mc.displayGuiScreen(new DirtMessageScreen(new TranslationTextComponent("dataPack.validation.working"))));
          DataPackRegistries.func_240961_a_(var1.func_232623_f_(), Commands.EnvironmentType.INTEGRATED, 2, Util.getServerExecutor(), this.mc)
             .handle(
                (var2, var3) -> {
                   if (var3 == null) {
-                     this.mc.method1641(() -> {
+                     this.mc.enqueue(() -> {
                         this.field7077 = var6;
                         this.field7092.method5790(var2);
                         var2.close();
@@ -431,7 +431,7 @@ public class CreateWorldScreen extends Screen {
                   } else {
                      field7060.warn("Failed to validate datapack", var3);
                      this.mc
-                        .method1641(
+                        .enqueue(
                            () -> this.mc
                                  .displayGuiScreen(
                                     new ConfirmScreen(

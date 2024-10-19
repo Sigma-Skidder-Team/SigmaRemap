@@ -140,7 +140,7 @@ public class ChunkPrimer implements IChunk {
 
             ChunkSection var9 = this.method7106(var7 >> 4);
             BlockState var10 = var9.method21856(var6 & 15, var7 & 15, var8 & 15, var2);
-            if (this.field9094.method34306(ChunkStatus.FEATURES)
+            if (this.field9094.isAtLeast(ChunkStatus.FEATURES)
                && var2 != var10
                && (
                   var2.getOpacity(this, var1) != var10.getOpacity(this, var1)

@@ -18,7 +18,7 @@ public final class Class1642<Msg> implements Class321<Msg> {
    }
 
    @Override
-   public void method1641(Msg var1) {
+   public void enqueue(Msg var1) {
       this.field8919.accept(var1);
    }
 

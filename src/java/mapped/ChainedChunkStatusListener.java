@@ -17,16 +17,16 @@ public class ChainedChunkStatusListener implements IChunkStatusListener {
 
    @Override
    public void start(ChunkPos var1) {
-      this.field31095.method1641(() -> this.field31094.start(var1));
+      this.field31095.enqueue(() -> this.field31094.start(var1));
    }
 
    @Override
    public void statusChanged(ChunkPos var1, ChunkStatus var2) {
-      this.field31095.method1641(() -> this.field31094.statusChanged(var1, var2));
+      this.field31095.enqueue(() -> this.field31094.statusChanged(var1, var2));
    }
 
    @Override
    public void stop() {
-      this.field31095.method1641(this.field31094::stop);
+      this.field31095.enqueue(this.field31094::stop);
    }
 }

@@ -4,7 +4,9 @@ import it.unimi.dsi.fastutil.longs.Long2ByteMap.Entry;
 import it.unimi.dsi.fastutil.longs.*;
 import it.unimi.dsi.fastutil.objects.ObjectIterator;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.world.chunk.ChunkTaskPriorityQueueSorter;
 import net.minecraft.world.server.Ticket;
+import net.minecraft.world.server.TicketManager;
 import net.minecraft.world.server.TicketType;
 
 public class Class206 extends Class205 {
@@ -12,9 +14,9 @@ public class Class206 extends Class205 {
    private int field765;
    private final Long2IntMap field766;
    private final LongSet field767;
-   public final Class9307 field764;
+   public final TicketManager field764;
 
-   public Class206(Class9307 var1, int var2) {
+   public Class206(TicketManager var1, int var2) {
       super(var1, var2);
       this.field764 = var1;
       this.field766 = Long2IntMaps.synchronize(new Long2IntOpenHashMap());
@@ -43,20 +45,20 @@ public class Class206 extends Class205 {
 
    private void method686(long var1, int var3, boolean var4, boolean var5) {
       if (var4 != var5) {
-         Ticket var8 = new Ticket<ChunkPos>(TicketType.PLAYER, Class9307.method35152(), new ChunkPos(var1));
+         Ticket var8 = new Ticket<ChunkPos>(TicketType.PLAYER, TicketManager.method35152(), new ChunkPos(var1));
          if (!var5) {
-            Class9307.method35154(this.field764)
-               .method1641(
-                  Class1812.method7962(() -> Class9307.method35156(this.field764).execute(() -> Class9307.method35157(this.field764, var1, var8)), var1, true)
+            TicketManager.method35154(this.field764)
+               .enqueue(
+                  ChunkTaskPriorityQueueSorter.method7962(() -> TicketManager.method35156(this.field764).execute(() -> TicketManager.method35157(this.field764, var1, var8)), var1, true)
                );
          } else {
-            Class9307.method35153(this.field764).method1641(Class1812.method7960(() -> Class9307.method35156(this.field764).execute(() -> {
+            TicketManager.method35153(this.field764).enqueue(ChunkTaskPriorityQueueSorter.method7960(() -> TicketManager.method35156(this.field764).execute(() -> {
                   if (!this.method687(this.getLevel(var1))) {
-                     Class9307.method35154(this.field764).method1641(Class1812.method7962(() -> {
+                     TicketManager.method35154(this.field764).enqueue(ChunkTaskPriorityQueueSorter.method7962(() -> {
                      }, var1, false));
                   } else {
-                     Class9307.method35158(this.field764, var1, var8);
-                     Class9307.method35159(this.field764).add(var1);
+                     TicketManager.method35158(this.field764, var1, var8);
+                     TicketManager.method35159(this.field764).add(var1);
                   }
                }), var1, () -> var3));
          }
@@ -74,7 +76,7 @@ public class Class206 extends Class205 {
             int var6 = this.field766.get(var4);
             int var7 = this.getLevel(var4);
             if (var6 != var7) {
-               Class9307.method35155(this.field764).method7965(new ChunkPos(var4), () -> this.field766.get(var4), var7, var3x -> {
+               TicketManager.method35155(this.field764).method7965(new ChunkPos(var4), () -> this.field766.get(var4), var7, var3x -> {
                   if (var3x < this.field766.defaultReturnValue()) {
                      this.field766.put(var4, var3x);
                   } else {

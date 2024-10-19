@@ -10,6 +10,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.provider.NetherBiomeProvider;
 import net.minecraft.world.biome.provider.EndBiomeProvider;
+import net.minecraft.world.gen.ChunkGenerator;
 
 import java.util.ArrayList;
 import java.util.LinkedHashSet;

@@ -422,7 +422,7 @@ public class DebugOverlayGui extends AbstractGui {
 
          ServerWorld var30 = this.method5883();
          if (var30 != null) {
-            Class7307 var31 = var30.getChunkProvider().method7385();
+            EntityDensityManager var31 = var30.getChunkProvider().method7385();
             if (var31 != null) {
                Object2IntMap var33 = var31.method23091();
                int var34 = var31.method23090();

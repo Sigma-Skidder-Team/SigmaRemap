@@ -1,20 +1,17 @@
-package mapped;
+package net.minecraft.world.server;
 
 import com.mojang.datafixers.util.Pair;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import it.unimi.dsi.fastutil.objects.ObjectList;
 import it.unimi.dsi.fastutil.objects.ObjectListIterator;
+import mapped.*;
 import net.minecraft.util.Util;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.SectionPos;
 import net.minecraft.world.LightType;
-import net.minecraft.world.chunk.ChunkSection;
-import net.minecraft.world.chunk.IChunkLightProvider;
-import net.minecraft.world.chunk.IChunk;
-import net.minecraft.world.chunk.NibbleArray;
+import net.minecraft.world.chunk.*;
 import net.minecraft.world.lighting.WorldLightManager;
-import net.minecraft.world.server.ChunkManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -22,7 +19,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.IntSupplier;
 
-public class Class195 extends WorldLightManager implements AutoCloseable {
+public class ServerWorldLightManager extends WorldLightManager implements AutoCloseable {
    private static final Logger field734 = LogManager.getLogger();
    private final Class322<Runnable> field735;
    private final ObjectList<Pair<Class2044, Runnable>> field736 = new ObjectArrayList();
@@ -31,7 +28,7 @@ public class Class195 extends WorldLightManager implements AutoCloseable {
    private volatile int field739 = 5;
    private final AtomicBoolean field740 = new AtomicBoolean();
 
-   public Class195(IChunkLightProvider var1, ChunkManager var2, boolean var3, Class322<Runnable> var4, Class321<Class6875<Runnable>> var5) {
+   public ServerWorldLightManager(IChunkLightProvider var1, ChunkManager var2, boolean var3, Class322<Runnable> var4, Class321<Class6875<Runnable>> var5) {
       super(var1, true, var3);
       this.field737 = var2;
       this.field738 = var5;
@@ -113,7 +110,7 @@ public class Class195 extends WorldLightManager implements AutoCloseable {
    }
 
    private void method608(int var1, int var2, IntSupplier var3, Class2044 var4, Runnable var5) {
-      this.field738.method1641(Class1812.method7960(() -> {
+      this.field738.enqueue(ChunkTaskPriorityQueueSorter.method7960(() -> {
          this.field736.add(Pair.of(var4, var5));
          if (this.field736.size() >= this.field739) {
             this.method612();
@@ -157,7 +154,7 @@ public class Class195 extends WorldLightManager implements AutoCloseable {
 
    public void method611() {
       if ((!this.field736.isEmpty() || super.hasLightWork()) && this.field740.compareAndSet(false, true)) {
-         this.field735.method1641(() -> {
+         this.field735.enqueue(() -> {
             this.method612();
             this.field740.set(false);
          });

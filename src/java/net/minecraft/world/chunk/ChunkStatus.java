@@ -10,8 +10,11 @@ import net.minecraft.util.Util;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.WorldGenRegion;
 import net.minecraft.world.gen.feature.template.TemplateManager;
+import net.minecraft.world.server.ChunkHolder;
+import net.minecraft.world.server.ServerWorldLightManager;
 import net.minecraft.world.server.ServerWorld;
 
 import java.util.ArrayList;
@@ -25,7 +28,7 @@ public class ChunkStatus {
    private static final EnumSet<Heightmap.Type> field42130 = EnumSet.<Heightmap.Type>of(Heightmap.Type.OCEAN_FLOOR_WG, Heightmap.Type.WORLD_SURFACE_WG);
    private static final EnumSet<Heightmap.Type> field42131 = EnumSet.<Heightmap.Type>of(Heightmap.Type.OCEAN_FLOOR, Heightmap.Type.WORLD_SURFACE, Heightmap.Type.MOTION_BLOCKING, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES);
    private static final Class9241 field42132 = (var0, var1, var2, var3, var4, var5) -> {
-      if (var5 instanceof ChunkPrimer && !var5.getStatus().method34306(var0)) {
+      if (var5 instanceof ChunkPrimer && !var5.getStatus().isAtLeast(var0)) {
          ((ChunkPrimer)var5).method7111(var0);
       }
 
@@ -35,7 +38,7 @@ public class ChunkStatus {
    });
    public static final ChunkStatus STRUCTURE_STARTS = method34290(
       "structure_starts", EMPTY, 0, field42130, Class2076.field13524, (var0, var1, var2, var3, var4, var5, var6, var7) -> {
-         if (!var7.getStatus().method34306(var0)) {
+         if (!var7.getStatus().isAtLeast(var0)) {
             if (var1.getServer().func_240793_aU_().getDimensionGeneratorSettings().method26260()) {
                var2.func_242707_a(var1.func_241828_r(), var1.func_241112_a_(), var7, var3, var1.getSeed());
             }
@@ -89,7 +92,7 @@ public class ChunkStatus {
       "features", LIQUID_CARVERS, 8, field42131, Class2076.field13524, (var0, var1, var2, var3, var4, var5, var6, var7) -> {
          ChunkPrimer var10 = (ChunkPrimer)var7;
          var10.method7119(var4);
-         if (!var7.getStatus().method34306(var0)) {
+         if (!var7.getStatus().isAtLeast(var0)) {
             Heightmap.method24577(var7, EnumSet.<Heightmap.Type>of(Heightmap.Type.MOTION_BLOCKING, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, Heightmap.Type.OCEAN_FLOOR, Heightmap.Type.WORLD_SURFACE));
             WorldGenRegion var11 = new WorldGenRegion(var1, var6);
             var2.func_230351_a_(var11, var1.func_241112_a_().method24339(var11));
@@ -125,11 +128,11 @@ public class ChunkStatus {
    private static final List<ChunkStatus> field42146 = ImmutableList.of(
            FULL, FEATURES, LIQUID_CARVERS, STRUCTURE_STARTS, STRUCTURE_STARTS, STRUCTURE_STARTS, STRUCTURE_STARTS, STRUCTURE_STARTS, STRUCTURE_STARTS, STRUCTURE_STARTS, STRUCTURE_STARTS
    );
-   private static final IntList field42147 = Util.<IntList>make(new IntArrayList(method34292().size()), var0 -> {
+   private static final IntList field42147 = Util.<IntList>make(new IntArrayList(getAll().size()), var0 -> {
       int var3 = 0;
 
-      for (int var4 = method34292().size() - 1; var4 >= 0; var4--) {
-         while (var3 + 1 < field42146.size() && var4 <= field42146.get(var3 + 1).method34297()) {
+      for (int var4 = getAll().size() - 1; var4 >= 0; var4--) {
+         while (var3 + 1 < field42146.size() && var4 <= field42146.get(var3 + 1).ordinal()) {
             var3++;
          }
 
@@ -145,9 +148,9 @@ public class ChunkStatus {
    private final Class2076 field42154;
    private final EnumSet<Heightmap.Type> field42155;
 
-   private static CompletableFuture<Either<IChunk, Class7022>> method34288(ChunkStatus var0, Class195 var1, IChunk var2) {
+   private static CompletableFuture<Either<IChunk, ChunkHolder.IChunkLoadingError>> method34288(ChunkStatus var0, ServerWorldLightManager var1, IChunk var2) {
       boolean var5 = method34293(var0, var2);
-      if (!var2.getStatus().method34306(var0)) {
+      if (!var2.getStatus().isAtLeast(var0)) {
          ((ChunkPrimer)var2).method7111(var0);
       }
 
@@ -166,7 +169,7 @@ public class ChunkStatus {
       return Registry.<ChunkStatus>register(Registry.field16081, var0, new ChunkStatus(var0, var1, var2, var3, var4, var5, var6));
    }
 
-   public static List<ChunkStatus> method34292() {
+   public static List<ChunkStatus> getAll() {
       ArrayList var2 = Lists.newArrayList();
 
       ChunkStatus var3;
@@ -180,7 +183,7 @@ public class ChunkStatus {
    }
 
    private static boolean method34293(ChunkStatus var0, IChunk var1) {
-      return var1.getStatus().method34306(var0) && var1.hasLight();
+      return var1.getStatus().isAtLeast(var0) && var1.hasLight();
    }
 
    public static ChunkStatus method34294(int var0) {
@@ -196,7 +199,7 @@ public class ChunkStatus {
    }
 
    public static int method34296(ChunkStatus var0) {
-      return field42147.getInt(var0.method34297());
+      return field42147.getInt(var0.ordinal());
    }
 
    public ChunkStatus(String var1, ChunkStatus var2, int var3, EnumSet<Heightmap.Type> var4, Class2076 var5, Class6965 var6, Class9241 var7) {
@@ -207,10 +210,10 @@ public class ChunkStatus {
       this.field42153 = var3;
       this.field42154 = var5;
       this.field42155 = var4;
-      this.field42149 = var2 != null ? var2.method34297() + 1 : 0;
+      this.field42149 = var2 != null ? var2.ordinal() + 1 : 0;
    }
 
-   public int method34297() {
+   public int ordinal() {
       return this.field42149;
    }
 
@@ -222,19 +225,19 @@ public class ChunkStatus {
       return this.field42150;
    }
 
-   public CompletableFuture<Either<IChunk, Class7022>> method34300(
+   public CompletableFuture<Either<IChunk, ChunkHolder.IChunkLoadingError>> method34300(
       ServerWorld var1,
       ChunkGenerator var2,
       TemplateManager var3,
-      Class195 var4,
-      Function<IChunk, CompletableFuture<Either<IChunk, Class7022>>> var5,
+      ServerWorldLightManager var4,
+      Function<IChunk, CompletableFuture<Either<IChunk, ChunkHolder.IChunkLoadingError>>> var5,
       List<IChunk> var6
    ) {
       return this.field42151.method21487(this, var1, var2, var3, var4, var5, var6, (IChunk)var6.get(var6.size() / 2));
    }
 
-   public CompletableFuture<Either<IChunk, Class7022>> doLoadingWork(
-           ServerWorld var1, TemplateManager var2, Class195 var3, Function<IChunk, CompletableFuture<Either<IChunk, Class7022>>> var4, IChunk var5
+   public CompletableFuture<Either<IChunk, ChunkHolder.IChunkLoadingError>> doLoadingWork(
+           ServerWorld var1, TemplateManager var2, ServerWorldLightManager var3, Function<IChunk, CompletableFuture<Either<IChunk, ChunkHolder.IChunkLoadingError>>> var4, IChunk var5
    ) {
       return this.field42152.method34754(this, var1, var2, var3, var4, var5);
    }
@@ -255,8 +258,8 @@ public class ChunkStatus {
       return this.field42155;
    }
 
-   public boolean method34306(ChunkStatus var1) {
-      return this.method34297() >= var1.method34297();
+   public boolean isAtLeast(ChunkStatus var1) {
+      return this.ordinal() >= var1.ordinal();
    }
 
    @Override

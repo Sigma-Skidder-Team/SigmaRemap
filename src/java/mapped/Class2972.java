@@ -5,6 +5,7 @@ import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.provider.BiomeProvider;
+import net.minecraft.world.gen.ChunkGenerator;
 
 public class Class2972 extends Structure<MineshaftConfig> {
    public Class2972(Codec<MineshaftConfig> var1) {

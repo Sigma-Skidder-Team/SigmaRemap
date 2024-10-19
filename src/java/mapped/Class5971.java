@@ -5,6 +5,7 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.biome.provider.SingleBiomeProvider;
+import net.minecraft.world.gen.ChunkGenerator;
 
 public final class Class5971 extends BiomeGeneratorTypeScreens {
    public Class5971(String var1) {

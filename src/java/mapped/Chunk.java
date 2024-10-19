@@ -704,7 +704,7 @@ public class Chunk implements IChunk {
       this.field9129 = var1;
    }
 
-   public void method7148() {
+   public void postProcess() {
       ChunkPos var3 = this.getPos();
 
       for (int var4 = 0; var4 < this.field9123.length; var4++) {

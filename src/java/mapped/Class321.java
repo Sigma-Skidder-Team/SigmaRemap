@@ -9,7 +9,7 @@ import java.util.function.Function;
 public interface Class321<Msg> extends AutoCloseable {
    String method1631();
 
-   void method1641(Msg var1);
+   void enqueue(Msg var1);
 
    @Override
    default void close() {
@@ -18,7 +18,7 @@ public interface Class321<Msg> extends AutoCloseable {
    default <Source> CompletableFuture<Source> method1646(Function<? super Class321<Source>, ? extends Msg> var1) {
       CompletableFuture<Source> var4 = new CompletableFuture<>();
       Msg var5 = var1.apply(method1648("ask future procesor handle", var4::complete));
-      this.method1641((Msg)var5);
+      this.enqueue((Msg)var5);
       return var4;
    }
 
@@ -28,7 +28,7 @@ public interface Class321<Msg> extends AutoCloseable {
          var1x.ifLeft(var4::complete);
          var1x.ifRight(var4::completeExceptionally);
       }));
-      this.method1641((Msg)var5);
+      this.enqueue((Msg)var5);
       return var4;
    }
 

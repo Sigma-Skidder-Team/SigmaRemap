@@ -14,6 +14,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.biome.provider.SingleBiomeProvider;
+import net.minecraft.world.gen.ChunkGenerator;
 
 public abstract class BiomeGeneratorTypeScreens {
    public static final BiomeGeneratorTypeScreens field_239066_a_ = new Class5974("default");

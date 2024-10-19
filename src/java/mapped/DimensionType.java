@@ -14,6 +14,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.IBiomeMagnifier;
 import net.minecraft.world.biome.provider.EndBiomeProvider;
+import net.minecraft.world.gen.ChunkGenerator;
 
 import java.io.File;
 import java.util.Optional;

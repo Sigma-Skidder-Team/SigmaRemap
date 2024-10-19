@@ -38,9 +38,12 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeContainer;
 import net.minecraft.world.biome.provider.BiomeProvider;
 import net.minecraft.world.chunk.*;
+import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.feature.structure.StructureStart;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 import net.minecraft.world.lighting.WorldLightManager;
+import net.minecraft.world.server.ServerChunkProvider;
+import net.minecraft.world.server.ServerWorldLightManager;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -108,11 +111,11 @@ public class ChunkSerializer {
          var43 = var26;
          var26.setInhabitedTime(var23);
          var26.method7111(ChunkStatus.method34304(var9.getString("Status")));
-         if (var26.getStatus().method34306(ChunkStatus.FEATURES)) {
+         if (var26.getStatus().isAtLeast(ChunkStatus.FEATURES)) {
             var26.method7119(var21);
          }
 
-         if (!var15 && var26.getStatus().method34306(ChunkStatus.LIGHT)) {
+         if (!var15 && var26.getStatus().isAtLeast(ChunkStatus.LIGHT)) {
             for (BlockPos var29 : BlockPos.method8364(var3.getX(), 0, var3.getZ(), var3.getXEnd(), 255, var3.getZEnd())) {
                if (((IChunk)var43).getBlockState(var29).getLightValue() != 0) {
                   var26.method7105(var29);
@@ -226,7 +229,7 @@ public class ChunkSerializer {
 
       ChunkSection[] var8 = var1.getSections();
       ListNBT var9 = new ListNBT();
-      Class195 var10 = var0.getChunkProvider().getLightManager();
+      ServerWorldLightManager var10 = var0.getChunkProvider().getLightManager();
       boolean var11 = var1.hasLight();
 
       for (int var12 = -1; var12 < 17; var12++) {

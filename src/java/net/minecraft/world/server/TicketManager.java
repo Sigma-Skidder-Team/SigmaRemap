@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.world.server;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Sets;
@@ -16,17 +16,16 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
 import javax.annotation.Nullable;
 
+import mapped.*;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.SectionPos;
 import net.minecraft.world.chunk.ChunkStatus;
-import net.minecraft.world.server.ChunkManager;
-import net.minecraft.world.server.Ticket;
-import net.minecraft.world.server.TicketType;
+import net.minecraft.world.chunk.ChunkTaskPriorityQueueSorter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public abstract class Class9307 {
+public abstract class TicketManager {
    private static final Logger field43204 = LogManager.getLogger();
    private static final int field43205 = 33 + ChunkStatus.method34296(ChunkStatus.FULL) - 2;
    private final Long2ObjectMap<ObjectSet<ServerPlayerEntity>> field43206 = new Long2ObjectOpenHashMap();
@@ -34,17 +33,17 @@ public abstract class Class9307 {
    private final Class204 ticketTracker = new Class204(this);
    private final Class205 field43209 = new Class205(this, 8);
    private final Class206 field43210 = new Class206(this, 65);
-   private final Set<Class8641> field43211 = Sets.newHashSet();
-   private final Class1812 field43212;
+   private final Set<ChunkHolder> field43211 = Sets.newHashSet();
+   private final ChunkTaskPriorityQueueSorter field43212;
    private final Class321<Class6875<Runnable>> field43213;
    private final Class321<Class8132> field43214;
    private final LongSet field43215 = new LongOpenHashSet();
    private final Executor field43216;
    private long currentTime;
 
-   public Class9307(Executor var1, Executor var2) {
+   public TicketManager(Executor var1, Executor var2) {
       Class321 var5 = Class321.<Runnable>method1648("player ticket throttler", var2::execute);
-      Class1812 var6 = new Class1812(ImmutableList.of(var5), var1, 4);
+      ChunkTaskPriorityQueueSorter var6 = new ChunkTaskPriorityQueueSorter(ImmutableList.of(var5), var1, 4);
       this.field43212 = var6;
       this.field43213 = var6.<Runnable>method7963(var5, true);
       this.field43214 = var6.method7964(var5);
@@ -74,10 +73,10 @@ public abstract class Class9307 {
    public abstract boolean method35120(long var1);
 
    @Nullable
-   public abstract Class8641 method35121(long var1);
+   public abstract ChunkHolder method35121(long var1);
 
    @Nullable
-   public abstract Class8641 method35122(long var1, int var3, Class8641 var4, int var5);
+   public abstract ChunkHolder method35122(long var1, int var3, ChunkHolder var4, int var5);
 
    public boolean method35125(ChunkManager var1) {
       this.field43209.method684();
@@ -98,13 +97,13 @@ public abstract class Class9307 {
             while (var6.hasNext()) {
                long var7 = var6.nextLong();
                if (this.getTicketSet(var7).stream().anyMatch(var0 -> var0.method8484() == TicketType.PLAYER)) {
-                  Class8641 var9 = var1.method6538(var7);
+                  ChunkHolder var9 = var1.func_219220_a(var7);
                   if (var9 == null) {
                      throw new IllegalStateException();
                   }
 
                   CompletableFuture var10 = var9.method31041();
-                  var10.thenAccept(var3 -> this.field43216.execute(() -> this.field43214.method1641(Class1812.method7962(() -> {
+                  var10.thenAccept(var3 -> this.field43216.execute(() -> this.field43214.enqueue(ChunkTaskPriorityQueueSorter.method7962(() -> {
                         }, var7, false))));
                }
             }
@@ -216,17 +215,17 @@ public abstract class Class9307 {
    }
 
    // $VF: synthetic method
-   public static Long2ObjectOpenHashMap method35149(Class9307 var0) {
+   public static Long2ObjectOpenHashMap method35149(TicketManager var0) {
       return var0.field43207;
    }
 
    // $VF: synthetic method
-   public static Set method35150(Class9307 var0) {
+   public static Set method35150(TicketManager var0) {
       return var0.field43211;
    }
 
    // $VF: synthetic method
-   public static Long2ObjectMap method35151(Class9307 var0) {
+   public static Long2ObjectMap method35151(TicketManager var0) {
       return var0.field43206;
    }
 
@@ -236,37 +235,37 @@ public abstract class Class9307 {
    }
 
    // $VF: synthetic method
-   public static Class321 method35153(Class9307 var0) {
+   public static Class321 method35153(TicketManager var0) {
       return var0.field43213;
    }
 
    // $VF: synthetic method
-   public static Class321 method35154(Class9307 var0) {
+   public static Class321 method35154(TicketManager var0) {
       return var0.field43214;
    }
 
    // $VF: synthetic method
-   public static Class1812 method35155(Class9307 var0) {
+   public static ChunkTaskPriorityQueueSorter method35155(TicketManager var0) {
       return var0.field43212;
    }
 
    // $VF: synthetic method
-   public static Executor method35156(Class9307 var0) {
+   public static Executor method35156(TicketManager var0) {
       return var0.field43216;
    }
 
    // $VF: synthetic method
-   public static void method35157(Class9307 var0, long var1, Ticket var3) {
+   public static void method35157(TicketManager var0, long var1, Ticket var3) {
       var0.release(var1, var3);
    }
 
    // $VF: synthetic method
-   public static void method35158(Class9307 var0, long var1, Ticket var3) {
+   public static void method35158(TicketManager var0, long var1, Ticket var3) {
       var0.register(var1, var3);
    }
 
    // $VF: synthetic method
-   public static LongSet method35159(Class9307 var0) {
+   public static LongSet method35159(TicketManager var0) {
       return var0.field43215;
    }
 }

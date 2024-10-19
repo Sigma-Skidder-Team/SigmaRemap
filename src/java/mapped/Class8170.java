@@ -29,6 +29,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.MobSpawnInfo;
 import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.feature.structure.StructureManager;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
@@ -41,7 +42,7 @@ public final class Class8170 {
       .filter(var0 -> var0 != EntityClassification.MISC)
       .<EntityClassification>toArray(EntityClassification[]::new);
 
-   public static Class7307 method28415(int var0, Iterable<Entity> var1, Class8629 var2) {
+   public static EntityDensityManager method28415(int var0, Iterable<Entity> var1, Class8629 var2) {
       Class7672 var5 = new Class7672();
       Object2IntOpenHashMap var6 = new Object2IntOpenHashMap();
 
@@ -68,24 +69,24 @@ public final class Class8170 {
          }
       }
 
-      return new Class7307(var0, var6, var5);
+      return new EntityDensityManager(var0, var6, var5);
    }
 
    private static Biome method28416(BlockPos var0, IChunk var1) {
       return Class1962.field12770.getBiome(0L, var0.getX(), var0.getY(), var0.getZ(), var1.getBiomes());
    }
 
-   public static void method28417(ServerWorld var0, Chunk var1, Class7307 var2, boolean var3, boolean var4, boolean var5) {
+   public static void method28417(ServerWorld var0, Chunk var1, EntityDensityManager var2, boolean var3, boolean var4, boolean var5) {
       var0.getProfiler().startSection("spawner");
 
       for (EntityClassification var11 : field35151) {
-         if ((var3 || !var11.method520()) && (var4 || var11.method520()) && (var5 || !var11.method521()) && Class7307.method23093(var2, var11)) {
+         if ((var3 || !var11.method520()) && (var4 || var11.method520()) && (var5 || !var11.method521()) && EntityDensityManager.method23093(var2, var11)) {
             method28418(
                var11,
                var0,
                var1,
-               (var1x, var2x, var3x) -> Class7307.method23095(var2, var1x, var2x, var3x),
-               (var1x, var2x) -> Class7307.method23094(var2, var1x, var2x)
+               (var1x, var2x, var3x) -> EntityDensityManager.method23095(var2, var1x, var2x, var3x),
+               (var1x, var2x) -> EntityDensityManager.method23094(var2, var1x, var2x)
             );
          }
       }

@@ -79,7 +79,7 @@ public class Class9016 {
       this.field41240 = this.field41233;
       this.field41236 = var3;
       this.field41235 = Class322.method1650(var3, "Chunk Renderer");
-      this.field41235.method1641(this::method33319);
+      this.field41235.enqueue(this::method33319);
    }
 
    public void method33318(World var1) {
@@ -96,7 +96,7 @@ public class Class9016 {
             CompletableFuture.runAsync(() -> {
             }, this.field41236).<Class2046>thenCompose(var2 -> var3.method8527(var4)).whenComplete((var2, var3x) -> {
                if (var3x == null) {
-                  this.field41235.method1641(() -> {
+                  this.field41235.enqueue(() -> {
                      if (var2 != Class2046.field13358) {
                         var4.method26205();
                      } else {
@@ -147,7 +147,7 @@ public class Class9016 {
    }
 
    public void method33326(Class2009 var1) {
-      this.field41235.method1641(() -> {
+      this.field41235.enqueue(() -> {
          this.field41229.offer(var1);
          this.field41232 = this.field41229.size();
          this.method33319();

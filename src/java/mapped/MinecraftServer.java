@@ -49,9 +49,11 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeManager;
 import net.minecraft.world.biome.provider.BiomeProvider;
 import net.minecraft.world.chunk.listener.IChunkStatusListener;
+import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.feature.Features;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.template.TemplateManager;
+import net.minecraft.world.server.ServerChunkProvider;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.server.TicketType;
 import net.minecraft.world.storage.CommandStorage;
@@ -394,7 +396,6 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       System.out.println("MinecraftServer.loadInitialChunks() 1");
 
       while (serverChunkProvider.getLoadedChunksCount() != 441) {
-         System.out.println("while loop 1");
          this.serverTime = Util.milliTime() + 10L;
          this.runScheduledTasks();
       }

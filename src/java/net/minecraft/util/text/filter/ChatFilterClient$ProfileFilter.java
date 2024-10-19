@@ -19,7 +19,7 @@ public class ChatFilterClient$ProfileFilter implements IChatFilter {
       this.this$0 = this$0;
       this.field_244585_b = p_i244507_2_;
       Class322 var5 = Class322.method1650(ChatFilterClient.access$200(this$0), "chat stream for " + p_i244507_2_.getName());
-      this.field_244586_c = var5::method1641;
+      this.field_244586_c = var5::enqueue;
    }
 
    @Override

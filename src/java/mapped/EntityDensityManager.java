@@ -9,7 +9,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.MobSpawnInfo;
 import net.minecraft.world.chunk.IChunk;
 
-public class Class7307 {
+public class EntityDensityManager {
    private static String[] field31326;
    private final int field31327;
    private final Object2IntOpenHashMap<EntityClassification> field31328;
@@ -19,7 +19,7 @@ public class Class7307 {
    private EntityType<?> field31332;
    private double field31333;
 
-   public Class7307(int var1, Object2IntOpenHashMap<EntityClassification> var2, Class7672 var3) {
+   public EntityDensityManager(int var1, Object2IntOpenHashMap<EntityClassification> var2, Class7672 var3) {
       this.field31327 = var1;
       this.field31328 = var2;
       this.field31329 = var3;
@@ -74,17 +74,17 @@ public class Class7307 {
    }
 
    // $VF: synthetic method
-   public static boolean method23093(Class7307 var0, EntityClassification var1) {
+   public static boolean method23093(EntityDensityManager var0, EntityClassification var1) {
       return var0.method23092(var1);
    }
 
    // $VF: synthetic method
-   public static void method23094(Class7307 var0, MobEntity var1, IChunk var2) {
+   public static void method23094(EntityDensityManager var0, MobEntity var1, IChunk var2) {
       var0.method23089(var1, var2);
    }
 
    // $VF: synthetic method
-   public static boolean method23095(Class7307 var0, EntityType var1, BlockPos var2, IChunk var3) {
+   public static boolean method23095(EntityDensityManager var0, EntityType var1, BlockPos var2, IChunk var3) {
       return var0.method23088(var1, var2, var3);
    }
 }

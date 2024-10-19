@@ -72,7 +72,7 @@ public abstract class Class318<R extends Runnable> implements Class321<R>, Execu
       }
    }
 
-   public void method1641(R var1) {
+   public void enqueue(R var1) {
       this.field1379.add((R)var1);
       LockSupport.unpark(this.getExecutionThread());
    }
@@ -82,7 +82,7 @@ public abstract class Class318<R extends Runnable> implements Class321<R>, Execu
       if (!this.method1390()) {
          var1.run();
       } else {
-         this.method1641(this.wrapTask(var1));
+         this.enqueue(this.wrapTask(var1));
       }
    }
 

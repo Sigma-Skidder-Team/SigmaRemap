@@ -3,14 +3,15 @@ package mapped;
 import it.unimi.dsi.fastutil.longs.Long2ByteMap;
 import it.unimi.dsi.fastutil.longs.Long2ByteOpenHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectSet;
+import net.minecraft.world.server.TicketManager;
 
 public class Class205 extends Class203 {
    private static String[] field761;
    public final Long2ByteMap field762;
    public final int field763;
-   public final Class9307 field764;
+   public final TicketManager field764;
 
-   public Class205(Class9307 var1, int var2) {
+   public Class205(TicketManager var1, int var2) {
       super(var2 + 2, 16, 256);
       this.field764 = var1;
       this.field762 = new Long2ByteOpenHashMap();
@@ -44,7 +45,7 @@ public class Class205 extends Class203 {
    }
 
    private boolean method683(long var1) {
-      ObjectSet var5 = (ObjectSet)Class9307.method35151(this.field764).get(var1);
+      ObjectSet var5 = (ObjectSet) TicketManager.method35151(this.field764).get(var1);
       return var5 != null && !var5.isEmpty();
    }
 

@@ -50,6 +50,7 @@ import net.minecraft.world.chunk.ChunkStatus;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.chunk.listener.IChunkStatusListener;
 import net.minecraft.world.end.DragonFightManager;
+import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.feature.structure.StructureManager;
 import net.minecraft.world.gen.feature.structure.StructureStart;
 import net.minecraft.world.gen.feature.template.TemplateManager;
@@ -1250,11 +1251,11 @@ public class ServerWorld extends World implements ISeedReader {
    }
 
    public void method6960(Path var1) throws IOException {
-      ChunkManager var4 = this.getChunkProvider().field9279;
+      ChunkManager var4 = this.getChunkProvider().chunkManager;
 
       try (BufferedWriter var5 = Files.newBufferedWriter(var1.resolve("stats.txt"))) {
-         var5.write(String.format("spawning_chunks: %d\n", var4.method6566().method35138()));
-         Class7307 var7 = this.getChunkProvider().method7385();
+         var5.write(String.format("spawning_chunks: %d\n", var4.getTicketManager().method35138()));
+         EntityDensityManager var7 = this.getChunkProvider().method7385();
          if (var7 != null) {
             ObjectIterator var8 = var7.method23091().object2IntEntrySet().iterator();
 
@@ -1268,7 +1269,7 @@ public class ServerWorld extends World implements ISeedReader {
          var5.write(String.format("block_entities: %d\n", this.loadedTileEntityList.size()));
          var5.write(String.format("block_ticks: %d\n", this.method6860().method20736()));
          var5.write(String.format("fluid_ticks: %d\n", this.getPendingFluidTicks().method20736()));
-         var5.write("distance_manager: " + var4.method6566().method35140() + "\n");
+         var5.write("distance_manager: " + var4.getTicketManager().method35140() + "\n");
          var5.write(String.format("pending_tasks: %d\n", this.getChunkProvider().method7369()));
       }
 

@@ -96,7 +96,7 @@ public class Class1707 implements AutoCloseable {
    private <T> CompletableFuture<T> method7414(Supplier<Either<T, Exception>> var1) {
       return this.field9303.method1647(var2 -> new Class497(Class2262.field14710.ordinal(), () -> {
             if (!this.field9302.get()) {
-               var2.method1641(var1.get());
+               var2.enqueue(var1.get());
             }
 
             this.method7416();
@@ -114,7 +114,7 @@ public class Class1707 implements AutoCloseable {
    }
 
    private void method7416() {
-      this.field9303.method1641(new Class497(Class2262.field14711.ordinal(), this::method7415));
+      this.field9303.enqueue(new Class497(Class2262.field14711.ordinal(), this::method7415));
    }
 
    private void method7417(ChunkPos var1, Class9713 var2) {
@@ -130,7 +130,7 @@ public class Class1707 implements AutoCloseable {
    @Override
    public void close() throws IOException {
       if (this.field9302.compareAndSet(false, true)) {
-         CompletableFuture var3 = this.field9303.method1646(var0 -> new Class497(Class2262.field14710.ordinal(), () -> var0.method1641(Unit.INSTANCE)));
+         CompletableFuture var3 = this.field9303.method1646(var0 -> new Class497(Class2262.field14710.ordinal(), () -> var0.enqueue(Unit.INSTANCE)));
 
          try {
             var3.join();
