@@ -19,7 +19,7 @@ public class Class8647 extends Class8646 {
    @Override
    public <T extends Comparable<T>> boolean method31076(StateHolder<?, ?> var1, Property<T> var2) {
       Comparable var5 = var1.get(var2);
-      Optional var6 = var2.method30476(this.field38928);
+      Optional var6 = var2.parseValue(this.field38928);
       return var6.isPresent() && var5.compareTo(var6.get()) == 0;
    }
 

@@ -94,7 +94,7 @@ public final class Class8178 implements Class8176 {
       if (var5 && var6) {
          Optional var7 = Class3271.method11790(var2);
          if (var7.isPresent() && var1.getDimensionKey() == var7.get()) {
-            return NBTUtil.method29283(var2.getCompound("LodestonePos"));
+            return NBTUtil.readBlockPos(var2.getCompound("LodestonePos"));
          }
       }
 

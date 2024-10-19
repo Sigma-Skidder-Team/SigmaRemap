@@ -10,6 +10,7 @@ import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Dynamic;
 import java.util.Objects;
 
+import net.minecraft.util.datafix.TypeReferences;
 import net.minecraft.util.text.ITextComponent$Serializer;
 import net.minecraft.util.text.StringTextComponent;
 
@@ -19,8 +20,8 @@ public class Class9631 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type<Pair<String, Dynamic<?>>> var3 = DSL.named(TypeReferences.field35396.typeName(), DSL.remainderType());
-      if (Objects.equals(var3, this.getInputSchema().getType(TypeReferences.field35396))) {
+      Type<Pair<String, Dynamic<?>>> var3 = DSL.named(TypeReferences.OBJECTIVE.typeName(), DSL.remainderType());
+      if (Objects.equals(var3, this.getInputSchema().getType(TypeReferences.OBJECTIVE))) {
          return this.fixTypeEverywhere(
             "ObjectiveDisplayNameFix",
             var3,

@@ -15,7 +15,7 @@ public abstract class Class8646 {
    }
 
    public <S extends StateHolder<?, S>> boolean method31078(StateContainer<?, S> var1, S var2) {
-      Property var5 = var1.method35396(this.field38926);
+      Property var5 = var1.getProperty(this.field38926);
       return var5 != null ? this.method31076(var2, var5) : false;
    }
 
@@ -28,7 +28,7 @@ public abstract class Class8646 {
    }
 
    public void method31080(StateContainer<?, ?> var1, Consumer<String> var2) {
-      Property var5 = var1.method35396(this.field38926);
+      Property var5 = var1.getProperty(this.field38926);
       if (var5 == null) {
          var2.accept(this.field38926);
       }

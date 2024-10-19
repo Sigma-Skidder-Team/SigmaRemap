@@ -352,7 +352,7 @@ public class Class7104 {
 
    public static Property method22099(String var0, Collection<Property> var1) {
       for (Property var5 : var1) {
-         if (var0.equals(var5.method30472())) {
+         if (var0.equals(var5.getName())) {
             return var5;
          }
       }

@@ -9,6 +9,7 @@ import javax.annotation.Nullable;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.JSONToNBT;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
@@ -112,7 +113,7 @@ public class Class9272 {
             ItemStack var4 = new ItemStack(var3);
             if (var0.has("nbt")) {
                try {
-                  CompoundNBT var5 = Class7671.method25188(JSONUtils.method32762(var0.get("nbt"), "nbt"));
+                  CompoundNBT var5 = JSONToNBT.method25188(JSONUtils.method32762(var0.get("nbt"), "nbt"));
                   var4.setTag(var5);
                } catch (CommandSyntaxException var6) {
                   throw new JsonSyntaxException("Invalid nbt tag: " + var6.getMessage());

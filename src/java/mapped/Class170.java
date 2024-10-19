@@ -30,12 +30,12 @@ public class Class170 implements Predicate<CachedBlockInfo> {
          return false;
       } else {
          for (Entry var6 : this.field550.entrySet()) {
-            Property var7 = var4.getBlock().getStateContainer().method35396((String)var6.getKey());
+            Property var7 = var4.getBlock().getStateContainer().getProperty((String)var6.getKey());
             if (var7 == null) {
                return false;
             }
 
-            Comparable var8 = (Comparable)var7.method30476((String)var6.getValue()).orElse(null);
+            Comparable var8 = (Comparable)var7.parseValue((String)var6.getValue()).orElse(null);
             if (var8 == null) {
                return false;
             }

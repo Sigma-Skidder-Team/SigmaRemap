@@ -18,6 +18,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.CompressedStreamTools;
 import net.minecraft.nbt.NBTUtil;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.datafix.DefaultTypeReferences;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -100,7 +101,7 @@ public class TemplateManager {
       }
 
       Class8969 var4 = new Class8969();
-      var4.method32913(NBTUtil.method29289(this.field39443, Class2108.field13753, var1, var1.getInt("DataVersion")));
+      var4.method32913(NBTUtil.update(this.field39443, DefaultTypeReferences.STRUCTURE, var1, var1.getInt("DataVersion")));
       return var4;
    }
 

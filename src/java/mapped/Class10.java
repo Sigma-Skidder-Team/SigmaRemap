@@ -9,7 +9,7 @@ public final class Class10 implements Function<Entry<Property<?>, Comparable<?>>
    public String apply(Entry<Property<?>, Comparable<?>> var1) {
       if (var1 != null) {
          Property var4 = (Property)var1.getKey();
-         return var4.method30472() + "=" + this.method56(var4, (Comparable<?>)var1.getValue());
+         return var4.getName() + "=" + this.method56(var4, (Comparable<?>)var1.getValue());
       } else {
          return "<NULL>";
       }

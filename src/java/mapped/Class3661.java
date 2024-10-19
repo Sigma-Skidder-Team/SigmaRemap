@@ -3,6 +3,8 @@ package mapped;
 import com.mojang.datafixers.DSL;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.templates.TypeTemplate;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.util.Map;
 import java.util.function.Supplier;
 
@@ -16,7 +18,7 @@ public class Class3661 extends Class3639 {
          var1,
          var2,
          () -> DSL.optionalFields(
-               "Items", DSL.list(TypeReferences.field35387.in(var0)), "RecipesUsed", DSL.compoundList(TypeReferences.field35398.in(var0), DSL.constType(DSL.intType()))
+               "Items", DSL.list(TypeReferences.ITEM_STACK.in(var0)), "RecipesUsed", DSL.compoundList(TypeReferences.RECIPE.in(var0), DSL.constType(DSL.intType()))
             )
       );
    }

@@ -17,6 +17,8 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.Map.Entry;
 import javax.annotation.Nullable;
+
+import net.minecraft.util.datafix.TypeReferences;
 import org.apache.commons.lang3.StringUtils;
 
 public class Class7499 extends DataFix {
@@ -141,10 +143,10 @@ public class Class7499 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type<?> var3 = this.getOutputSchema().getType(TypeReferences.field35382);
+      Type<?> var3 = this.getOutputSchema().getType(TypeReferences.STATS);
       return this.fixTypeEverywhereTyped(
          "StatsCounterFix",
-         this.getInputSchema().getType(TypeReferences.field35382),
+         this.getInputSchema().getType(TypeReferences.STATS),
          var3,
          var2 -> {
             Dynamic<?> var5 = var2.get(DSL.remainderFinder());

@@ -5,6 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
+import net.minecraft.crash.ReportedException;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.resources.IResourceManagerReloadListener;

@@ -8,6 +8,7 @@ import com.mojang.datafixers.types.Type;
 import com.mojang.datafixers.types.templates.TaggedChoice.TaggedChoiceType;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.DynamicOps;
+import net.minecraft.util.datafix.TypeReferences;
 
 public abstract class EntityRename extends DataFix {
    public final String field22194;

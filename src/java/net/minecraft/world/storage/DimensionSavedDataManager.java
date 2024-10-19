@@ -2,7 +2,7 @@ package net.minecraft.world.storage;
 
 import com.google.common.collect.Maps;
 import com.mojang.datafixers.DataFixer;
-import mapped.Class2108;
+import net.minecraft.util.datafix.DefaultTypeReferences;
 import net.minecraft.nbt.NBTUtil;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.CompressedStreamTools;
@@ -93,7 +93,7 @@ public class DimensionSavedDataManager {
             }
 
             int i = compoundNBT1.contains("DataVersion", 99) ? compoundNBT1.getInt("DataVersion") : 1343;
-            compoundNBT = NBTUtil.method29290(this.dataFixer, Class2108.field13755, compoundNBT1, i, worldVersion);
+            compoundNBT = NBTUtil.update(this.dataFixer, DefaultTypeReferences.SAVED_DATA, compoundNBT1, i, worldVersion);
         }
 
         return compoundNBT;

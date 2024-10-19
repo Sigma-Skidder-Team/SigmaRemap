@@ -22,7 +22,7 @@ public class BooleanProperty extends Property<Boolean> {
    }
 
    @Override
-   public Optional<Boolean> method30476(String var1) {
+   public Optional<Boolean> parseValue(String var1) {
       return !"true".equals(var1) && !"false".equals(var1) ? Optional.<Boolean>empty() : Optional.<Boolean>of(Boolean.valueOf(var1));
    }
 

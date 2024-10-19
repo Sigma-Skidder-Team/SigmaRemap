@@ -12,6 +12,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
+
+import net.minecraft.util.datafix.TypeReferences;
 import org.apache.commons.lang3.math.NumberUtils;
 
 public class Class9445 extends DataFix {
@@ -27,7 +29,7 @@ public class Class9445 extends DataFix {
 
    public TypeRewriteRule makeRule() {
       return this.fixTypeEverywhereTyped(
-         "LevelFlatGeneratorInfoFix", this.getInputSchema().getType(TypeReferences.field35376), var1 -> var1.update(DSL.remainderFinder(), this::method36302)
+         "LevelFlatGeneratorInfoFix", this.getInputSchema().getType(TypeReferences.LEVEL), var1 -> var1.update(DSL.remainderFinder(), this::method36302)
       );
    }
 

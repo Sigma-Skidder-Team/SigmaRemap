@@ -20,6 +20,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.JSONToNBT;
 import net.minecraft.state.Property;
 import net.minecraft.state.properties.StructureMode;
 import net.minecraft.tileentity.CommandBlockTileEntity;
@@ -232,7 +233,7 @@ public class Class7803 {
       try {
          BufferedReader var3 = Files.newBufferedReader(var0);
          String var4 = IOUtils.toString(var3);
-         return Class7671.method25188(var4);
+         return JSONToNBT.method25188(var4);
       } catch (IOException var5) {
          return null;
       } catch (CommandSyntaxException var6) {

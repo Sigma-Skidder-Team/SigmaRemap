@@ -1,161 +1,223 @@
 package net.minecraft.nbt;
 
-import mapped.*;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import org.apache.commons.lang3.ArrayUtils;
 
-import java.io.DataOutput;
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
+public class IntArrayNBT extends CollectionNBT<IntNBT>
+{
+   public static final INBTType<IntArrayNBT> TYPE = new INBTType<IntArrayNBT>()
+   {
+      public IntArrayNBT readNBT(DataInput input, int depth, NBTSizeTracker accounter) throws IOException
+      {
+         accounter.read(192L);
+         int i = input.readInt();
+         accounter.read(32L * (long)i);
+         int[] aint = new int[i];
 
-public class IntArrayNBT extends CollectionNBT<IntNBT> {
-   public static final INBTType<IntArrayNBT> TYPE = new Class7053();
-   private int[] field53;
+         for (int j = 0; j < i; ++j)
+         {
+            aint[j] = input.readInt();
+         }
 
-   public IntArrayNBT(int[] var1) {
-      this.field53 = var1;
+         return new IntArrayNBT(aint);
+      }
+      public String getName()
+      {
+         return "INT[]";
+      }
+      public String getTagName()
+      {
+         return "TAG_Int_Array";
+      }
+   };
+   private int[] intArray;
+
+   public IntArrayNBT(int[] intArray)
+   {
+      this.intArray = intArray;
    }
 
-   public IntArrayNBT(List<Integer> var1) {
-      this(toArray(var1));
+   public IntArrayNBT(List<Integer> integers)
+   {
+      this(toArray(integers));
    }
 
-   private static int[] toArray(List<Integer> var0) {
-      int[] var3 = new int[var0.size()];
+   private static int[] toArray(List<Integer> integers)
+   {
+      int[] aint = new int[integers.size()];
 
-      for (int var4 = 0; var4 < var0.size(); var4++) {
-         Integer var5 = (Integer)var0.get(var4);
-         var3[var4] = var5 != null ? var5 : 0;
+      for (int i = 0; i < integers.size(); ++i)
+      {
+         Integer integer = integers.get(i);
+         aint[i] = integer == null ? 0 : integer;
       }
 
-      return var3;
+      return aint;
    }
 
-   @Override
-   public void write(DataOutput var1) throws IOException {
-      var1.writeInt(this.field53.length);
+   /**
+    * Write the actual data contents of the tag, implemented in NBT extension classes
+    */
+   public void write(DataOutput output) throws IOException
+   {
+      output.writeInt(this.intArray.length);
 
-      for (int var7 : this.field53) {
-         var1.writeInt(var7);
+      for (int i : this.intArray)
+      {
+         output.writeInt(i);
       }
    }
 
-   @Override
-   public byte getID() {
+   /**
+    * Gets the type byte for the tag.
+    */
+   public byte getID()
+   {
       return 11;
    }
 
-   @Override
-   public INBTType<IntArrayNBT> getType() {
+   public INBTType<IntArrayNBT> getType()
+   {
       return TYPE;
    }
 
-   @Override
-   public String toString() {
-      StringBuilder var3 = new StringBuilder("[I;");
+   public String toString()
+   {
+      StringBuilder stringbuilder = new StringBuilder("[I;");
 
-      for (int var4 = 0; var4 < this.field53.length; var4++) {
-         if (var4 != 0) {
-            var3.append(',');
+      for (int i = 0; i < this.intArray.length; ++i)
+      {
+         if (i != 0)
+         {
+            stringbuilder.append(',');
          }
 
-         var3.append(this.field53[var4]);
+         stringbuilder.append(this.intArray[i]);
       }
 
-      return var3.append(']').toString();
+      return stringbuilder.append(']').toString();
    }
 
-   public IntArrayNBT copy() {
-      int[] var3 = new int[this.field53.length];
-      System.arraycopy(this.field53, 0, var3, 0, this.field53.length);
-      return new IntArrayNBT(var3);
+   /**
+    * Creates a clone of the tag.
+    */
+   public IntArrayNBT copy()
+   {
+      int[] aint = new int[this.intArray.length];
+      System.arraycopy(this.intArray, 0, aint, 0, this.intArray.length);
+      return new IntArrayNBT(aint);
    }
 
-   @Override
-   public boolean equals(Object var1) {
-      return this == var1 ? true : var1 instanceof IntArrayNBT && Arrays.equals(this.field53, ((IntArrayNBT)var1).field53);
+   public boolean equals(Object p_equals_1_)
+   {
+      if (this == p_equals_1_)
+      {
+         return true;
+      }
+      else
+      {
+         return p_equals_1_ instanceof IntArrayNBT && Arrays.equals(this.intArray, ((IntArrayNBT)p_equals_1_).intArray);
+      }
    }
 
-   @Override
-   public int hashCode() {
-      return Arrays.hashCode(this.field53);
+   public int hashCode()
+   {
+      return Arrays.hashCode(this.intArray);
    }
 
-   public int[] getIntArray() {
-      return this.field53;
+   public int[] getIntArray()
+   {
+      return this.intArray;
    }
 
-   @Override
-   public ITextComponent toFormattedComponent(String indentation, int indentDepth) {
-      IFormattableTextComponent var5 = new StringTextComponent("I").mergeStyle(SYNTAX_HIGHLIGHTING_NUMBER_TYPE);
-      IFormattableTextComponent var6 = new StringTextComponent("[").append(var5).appendString(";");
+   public ITextComponent toFormattedComponent(String indentation, int indentDepth)
+   {
+      ITextComponent itextcomponent = (new StringTextComponent("I")).mergeStyle(SYNTAX_HIGHLIGHTING_NUMBER_TYPE);
+      IFormattableTextComponent iformattabletextcomponent = (new StringTextComponent("[")).append(itextcomponent).appendString(";");
 
-      for (int var7 = 0; var7 < this.field53.length; var7++) {
-         var6.appendString(" ").append(new StringTextComponent(String.valueOf(this.field53[var7])).mergeStyle(SYNTAX_HIGHLIGHTING_NUMBER));
-         if (var7 != this.field53.length - 1) {
-            var6.appendString(",");
+      for (int i = 0; i < this.intArray.length; ++i)
+      {
+         iformattabletextcomponent.appendString(" ").append((new StringTextComponent(String.valueOf(this.intArray[i]))).mergeStyle(SYNTAX_HIGHLIGHTING_NUMBER));
+
+         if (i != this.intArray.length - 1)
+         {
+            iformattabletextcomponent.appendString(",");
          }
       }
 
-      var6.appendString("]");
-      return var6;
+      iformattabletextcomponent.appendString("]");
+      return iformattabletextcomponent;
    }
 
-   @Override
-   public int size() {
-      return this.field53.length;
+   public int size()
+   {
+      return this.intArray.length;
    }
 
-   public IntNBT get(int var1) {
-      return IntNBT.valueOf(this.field53[var1]);
+   public IntNBT get(int p_get_1_)
+   {
+      return IntNBT.valueOf(this.intArray[p_get_1_]);
    }
 
-   public IntNBT set(int var1, IntNBT var2) {
-      int var5 = this.field53[var1];
-      this.field53[var1] = var2.getInt();
-      return IntNBT.valueOf(var5);
+   public IntNBT set(int p_set_1_, IntNBT p_set_2_)
+   {
+      int i = this.intArray[p_set_1_];
+      this.intArray[p_set_1_] = p_set_2_.getInt();
+      return IntNBT.valueOf(i);
    }
 
-   public void add(int var1, IntNBT var2) {
-      this.field53 = ArrayUtils.add(this.field53, var1, var2.getInt());
+   public void add(int p_add_1_, IntNBT p_add_2_)
+   {
+      this.intArray = ArrayUtils.add(this.intArray, p_add_1_, p_add_2_.getInt());
    }
 
-   @Override
-   public boolean setNBTByIndex(int var1, INBT var2) {
-      if (!(var2 instanceof NumberNBT)) {
-         return false;
-      } else {
-         this.field53[var1] = ((NumberNBT)var2).getInt();
+   public boolean setNBTByIndex(int index, INBT nbt)
+   {
+      if (nbt instanceof NumberNBT)
+      {
+         this.intArray[index] = ((NumberNBT)nbt).getInt();
          return true;
+      }
+      else
+      {
+         return false;
       }
    }
 
-   @Override
-   public boolean addNBTByIndex(int var1, INBT var2) {
-      if (!(var2 instanceof NumberNBT)) {
-         return false;
-      } else {
-         this.field53 = ArrayUtils.add(this.field53, var1, ((NumberNBT)var2).getInt());
+   public boolean addNBTByIndex(int index, INBT nbt)
+   {
+      if (nbt instanceof NumberNBT)
+      {
+         this.intArray = ArrayUtils.add(this.intArray, index, ((NumberNBT)nbt).getInt());
          return true;
+      }
+      else
+      {
+         return false;
       }
    }
 
-   public IntNBT remove(int var1) {
-      int var4 = this.field53[var1];
-      this.field53 = ArrayUtils.remove(this.field53, var1);
-      return IntNBT.valueOf(var4);
+   public IntNBT remove(int p_remove_1_)
+   {
+      int i = this.intArray[p_remove_1_];
+      this.intArray = ArrayUtils.remove(this.intArray, p_remove_1_);
+      return IntNBT.valueOf(i);
    }
 
-   @Override
-   public byte getTagType() {
+   public byte getTagType()
+   {
       return 3;
    }
 
-   @Override
-   public void clear() {
-      this.field53 = new int[0];
+   public void clear()
+   {
+      this.intArray = new int[0];
    }
 }

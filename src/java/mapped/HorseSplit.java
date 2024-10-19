@@ -6,6 +6,8 @@ import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.Type;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.util.Objects;
 
 public class HorseSplit extends EntityRename {

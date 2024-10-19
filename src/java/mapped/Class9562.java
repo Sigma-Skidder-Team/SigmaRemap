@@ -10,6 +10,8 @@ import com.mojang.datafixers.types.Type;
 import com.mojang.serialization.Dynamic;
 import it.unimi.dsi.fastutil.shorts.ShortArrayList;
 import it.unimi.dsi.fastutil.shorts.ShortList;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.List;
@@ -24,8 +26,8 @@ public class Class9562 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type<?> var3 = this.getInputSchema().getType(TypeReferences.field35378);
-      Type<?> var4 = this.getOutputSchema().getType(TypeReferences.field35378);
+      Type<?> var3 = this.getInputSchema().getType(TypeReferences.CHUNK);
+      Type<?> var4 = this.getOutputSchema().getType(TypeReferences.CHUNK);
       Type<?> var5 = var3.findFieldType("Level");
       Type<?> var6 = var4.findFieldType("Level");
       Type<?> var7 = var5.findFieldType("TileTicks");
@@ -35,7 +37,7 @@ public class Class9562 extends DataFix {
          this.fixTypeEverywhereTyped(
             "ChunkToProtoChunkFix",
             var3,
-            this.getOutputSchema().getType(TypeReferences.field35378),
+            this.getOutputSchema().getType(TypeReferences.CHUNK),
             var3x -> var3x.updateTyped(
                   var8,
                   var6,
@@ -90,7 +92,7 @@ public class Class9562 extends DataFix {
                   }
                )
          ),
-         this.writeAndRead("Structure biome inject", this.getInputSchema().getType(TypeReferences.field35395), this.getOutputSchema().getType(TypeReferences.field35395))
+         this.writeAndRead("Structure biome inject", this.getInputSchema().getType(TypeReferences.STRUCTURE_FEATURE), this.getOutputSchema().getType(TypeReferences.STRUCTURE_FEATURE))
       );
    }
 

@@ -32,7 +32,7 @@ public abstract class Class1028 extends MonsterEntity {
    public void writeAdditional(CompoundNBT var1) {
       super.writeAdditional(var1);
       if (this.field5724 != null) {
-         var1.put("PatrolTarget", NBTUtil.method29284(this.field5724));
+         var1.put("PatrolTarget", NBTUtil.writeBlockPos(this.field5724));
       }
 
       var1.putBoolean("PatrolLeader", this.field5725);
@@ -43,7 +43,7 @@ public abstract class Class1028 extends MonsterEntity {
    public void readAdditional(CompoundNBT var1) {
       super.readAdditional(var1);
       if (var1.contains("PatrolTarget")) {
-         this.field5724 = NBTUtil.method29283(var1.getCompound("PatrolTarget"));
+         this.field5724 = NBTUtil.readBlockPos(var1.getCompound("PatrolTarget"));
       }
 
       this.field5725 = var1.getBoolean("PatrolLeader");

@@ -9,6 +9,7 @@ import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.Type;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.util.datafix.TypeReferences;
 
 public class Class8618 extends DataFix {
    private static final ImmutableMap<String, Pair<String, ImmutableMap<String, String>>> field38747 = ImmutableMap.<String, Pair<String, ImmutableMap<String, String>>>builder()
@@ -121,7 +122,7 @@ public class Class8618 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type var3 = this.getInputSchema().getType(TypeReferences.field35395);
+      Type var3 = this.getInputSchema().getType(TypeReferences.STRUCTURE_FEATURE);
       OpticFinder var4 = var3.findField("Children");
       return this.fixTypeEverywhereTyped(
          "ChunkStructuresTemplateRenameFix",

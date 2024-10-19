@@ -3,6 +3,8 @@ package mapped;
 import com.mojang.datafixers.DSL;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.templates.TypeTemplate;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.util.Map;
 import java.util.function.Supplier;
 
@@ -15,42 +17,42 @@ public class Class3642 extends Class3639 {
       super.registerTypes(var1, var2, var3);
       var1.registerType(
          false,
-         TypeReferences.field35378,
+         TypeReferences.CHUNK,
          () -> DSL.fields(
                "Level",
                DSL.optionalFields(
                   "Entities",
-                  DSL.list(TypeReferences.field35390.in(var1)),
+                  DSL.list(TypeReferences.ENTITY_TREE.in(var1)),
                   "TileEntities",
-                  DSL.list(TypeReferences.field35386.in(var1)),
+                  DSL.list(TypeReferences.BLOCK_ENTITY.in(var1)),
                   "TileTicks",
-                  DSL.list(DSL.fields("i", TypeReferences.field35392.in(var1))),
+                  DSL.list(DSL.fields("i", TypeReferences.BLOCK_NAME.in(var1))),
                   "Sections",
-                  DSL.list(DSL.optionalFields("Palette", DSL.list(TypeReferences.field35388.in(var1)))),
+                  DSL.list(DSL.optionalFields("Palette", DSL.list(TypeReferences.BLOCK_STATE.in(var1)))),
                   "Structures",
-                  DSL.optionalFields("Starts", DSL.compoundList(TypeReferences.field35395.in(var1)))
+                  DSL.optionalFields("Starts", DSL.compoundList(TypeReferences.STRUCTURE_FEATURE.in(var1)))
                )
             )
       );
       var1.registerType(
          false,
-         TypeReferences.field35395,
+         TypeReferences.STRUCTURE_FEATURE,
          () -> DSL.optionalFields(
                "Children",
                DSL.list(
                   DSL.optionalFields(
                      "CA",
-                     TypeReferences.field35388.in(var1),
+                     TypeReferences.BLOCK_STATE.in(var1),
                      "CB",
-                     TypeReferences.field35388.in(var1),
+                     TypeReferences.BLOCK_STATE.in(var1),
                      "CC",
-                     TypeReferences.field35388.in(var1),
+                     TypeReferences.BLOCK_STATE.in(var1),
                      "CD",
-                     TypeReferences.field35388.in(var1)
+                     TypeReferences.BLOCK_STATE.in(var1)
                   )
                ),
                "biome",
-               TypeReferences.field35399.in(var1)
+               TypeReferences.BIOME.in(var1)
             )
       );
    }

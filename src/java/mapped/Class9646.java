@@ -12,6 +12,8 @@ import com.mojang.datafixers.util.Either;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.datafixers.util.Unit;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -22,19 +24,19 @@ public class Class9646 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      return this.method37613(this.getOutputSchema().getTypeRaw(TypeReferences.field35398));
+      return this.method37613(this.getOutputSchema().getTypeRaw(TypeReferences.RECIPE));
    }
 
    private <R> TypeRewriteRule method37613(Type<R> var1) {
       Type<Pair<Either<Pair<List<Pair<R, Integer>>, Dynamic<?>>, Unit>, Dynamic<?>>> var4 = DSL.and(DSL.optional(DSL.field("RecipesUsed", DSL.and(DSL.compoundList(var1, DSL.intType()), DSL.remainderType()))), DSL.remainderType());
-      OpticFinder<?> var5 = DSL.namedChoice("minecraft:furnace", this.getInputSchema().getChoiceType(TypeReferences.field35386, "minecraft:furnace"));
-      OpticFinder<?> var6 = DSL.namedChoice("minecraft:blast_furnace", this.getInputSchema().getChoiceType(TypeReferences.field35386, "minecraft:blast_furnace"));
-      OpticFinder<?> var7 = DSL.namedChoice("minecraft:smoker", this.getInputSchema().getChoiceType(TypeReferences.field35386, "minecraft:smoker"));
-      Type<?> var8 = this.getOutputSchema().getChoiceType(TypeReferences.field35386, "minecraft:furnace");
-      Type<?> var9 = this.getOutputSchema().getChoiceType(TypeReferences.field35386, "minecraft:blast_furnace");
-      Type<?> var10 = this.getOutputSchema().getChoiceType(TypeReferences.field35386, "minecraft:smoker");
-      Type<?> var11 = this.getInputSchema().getType(TypeReferences.field35386);
-      Type<?> var12 = this.getOutputSchema().getType(TypeReferences.field35386);
+      OpticFinder<?> var5 = DSL.namedChoice("minecraft:furnace", this.getInputSchema().getChoiceType(TypeReferences.BLOCK_ENTITY, "minecraft:furnace"));
+      OpticFinder<?> var6 = DSL.namedChoice("minecraft:blast_furnace", this.getInputSchema().getChoiceType(TypeReferences.BLOCK_ENTITY, "minecraft:blast_furnace"));
+      OpticFinder<?> var7 = DSL.namedChoice("minecraft:smoker", this.getInputSchema().getChoiceType(TypeReferences.BLOCK_ENTITY, "minecraft:smoker"));
+      Type<?> var8 = this.getOutputSchema().getChoiceType(TypeReferences.BLOCK_ENTITY, "minecraft:furnace");
+      Type<?> var9 = this.getOutputSchema().getChoiceType(TypeReferences.BLOCK_ENTITY, "minecraft:blast_furnace");
+      Type<?> var10 = this.getOutputSchema().getChoiceType(TypeReferences.BLOCK_ENTITY, "minecraft:smoker");
+      Type<?> var11 = this.getInputSchema().getType(TypeReferences.BLOCK_ENTITY);
+      Type<?> var12 = this.getOutputSchema().getType(TypeReferences.BLOCK_ENTITY);
       return this.fixTypeEverywhereTyped(
          "FurnaceRecipesFix",
          var11,

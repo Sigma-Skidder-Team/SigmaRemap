@@ -6,6 +6,7 @@ import com.mojang.datafixers.TypeRewriteRule;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.Type;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.util.datafix.TypeReferences;
 
 import java.util.Objects;
 import java.util.function.Function;
@@ -21,8 +22,8 @@ public class Class8167 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type<Pair<String, String>> var3 = DSL.named(TypeReferences.field35398.typeName(), Class3639.method12354());
-      if (Objects.equals(var3, this.getInputSchema().getType(TypeReferences.field35398))) {
+      Type<Pair<String, String>> var3 = DSL.named(TypeReferences.RECIPE.typeName(), Class3639.method12354());
+      if (Objects.equals(var3, this.getInputSchema().getType(TypeReferences.RECIPE))) {
          return this.fixTypeEverywhere(this.field35146, var3, var1 -> var1x -> var1x.mapSecond(this.field35147));
       } else {
          throw new IllegalStateException("Recipe type is not what was expected.");

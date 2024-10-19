@@ -38,6 +38,7 @@ import net.minecraft.resources.ResourcePackInfo;
 import net.minecraft.resources.ResourcePackList;
 import net.minecraft.util.HandSide;
 import net.minecraft.util.SharedConstants;
+import net.minecraft.util.datafix.DefaultTypeReferences;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -723,7 +724,7 @@ public class GameSettings {
       } catch (RuntimeException var4) {
       }
 
-      return NBTUtil.method29289(this.field44659.getDataFixer(), Class2108.field13752, var1, var2);
+      return NBTUtil.update(this.field44659.getDataFixer(), DefaultTypeReferences.OPTIONS, var1, var2);
    }
 
    private static float method37145(String var0) {

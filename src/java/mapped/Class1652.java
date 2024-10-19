@@ -7,10 +7,12 @@ import com.mojang.serialization.*;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.longs.LongLinkedOpenHashSet;
+import net.minecraft.nbt.NBTDynamicOps;
 import net.minecraft.util.Util;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
 import net.minecraft.util.SharedConstants;
+import net.minecraft.util.datafix.DefaultTypeReferences;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.SectionPos;
 import net.minecraft.world.World;
@@ -33,9 +35,9 @@ public class Class1652<R> implements AutoCloseable {
    private final Function<Runnable, Codec<R>> field8983;
    private final Function<Runnable, R> field8984;
    private final DataFixer field8985;
-   private final Class2108 field8986;
+   private final DefaultTypeReferences field8986;
 
-   public Class1652(File var1, Function<Runnable, Codec<R>> var2, Function<Runnable, R> var3, DataFixer var4, Class2108 var5, boolean var6) {
+   public Class1652(File var1, Function<Runnable, Codec<R>> var2, Function<Runnable, R> var3, DataFixer var4, DefaultTypeReferences var5, boolean var6) {
       this.field8983 = var2;
       this.field8984 = var3;
       this.field8985 = var4;
@@ -110,7 +112,7 @@ public class Class1652<R> implements AutoCloseable {
          int var7 = method6653(var6);
          int var8 = SharedConstants.getVersion().getWorldVersion();
          boolean var9 = var7 != var8;
-         Dynamic<T> var10 = this.field8985.update(this.field8986.method8778(), var6, var7, var8);
+         Dynamic<T> var10 = this.field8985.update(this.field8986.getTypeReference(), var6, var7, var8);
          OptionalDynamic<T> var11 = var10.get("Sections");
 
          for (int var12 = 0; var12 < 16; var12++) {

@@ -10,6 +10,8 @@ import com.mojang.datafixers.types.Type;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.util.Optional;
 import java.util.stream.Stream;
 
@@ -55,8 +57,8 @@ public class Class9430 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type var3 = this.getOutputSchema().getType(TypeReferences.field35394);
-      return this.fixTypeEverywhereTyped("MobSpawnerEntityIdentifiersFix", this.getInputSchema().getType(TypeReferences.field35394), var3, var2 -> {
+      Type var3 = this.getOutputSchema().getType(TypeReferences.UNTAGGED_SPAWNER);
+      return this.fixTypeEverywhereTyped("MobSpawnerEntityIdentifiersFix", this.getInputSchema().getType(TypeReferences.UNTAGGED_SPAWNER), var3, var2 -> {
          Dynamic var5 = (Dynamic)var2.get(DSL.remainderFinder());
          var5 = var5.set("id", var5.createString("MobSpawner"));
          DataResult var6 = var3.readTyped(this.method36192(var5));

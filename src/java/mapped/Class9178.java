@@ -18,7 +18,7 @@ public class Class9178 {
    }
 
    public Class9178 method34326(Property<?> var1, String var2) {
-      this.field42157.add(new Class8647(var1.method30472(), var2));
+      this.field42157.add(new Class8647(var1.getName(), var2));
       return this;
    }
 

@@ -6,6 +6,7 @@ import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import it.unimi.dsi.fastutil.longs.LongSet;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Util;
+import net.minecraft.util.datafix.DefaultTypeReferences;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.SectionPos;
@@ -27,7 +28,7 @@ public class Class1653 extends Class1652<Class8377> {
    private final LongSet field8989 = new LongOpenHashSet();
 
    public Class1653(File var1, DataFixer var2, boolean var3) {
-      super(var1, Class8377::method29350, Class8377::new, var2, Class2108.field13757, var3);
+      super(var1, Class8377::method29350, Class8377::new, var2, DefaultTypeReferences.POI_CHUNK, var3);
       this.field8988 = new Class211(this);
    }
 

@@ -14,6 +14,7 @@ import com.mojang.serialization.Dynamic;
 import com.mojang.serialization.DynamicOps;
 import com.mojang.serialization.JsonOps;
 import net.minecraft.util.Util;
+import net.minecraft.util.datafix.TypeReferences;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -108,9 +109,9 @@ public class Class9611 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type<?> var3 = this.getOutputSchema().getType(TypeReferences.field35376);
+      Type<?> var3 = this.getOutputSchema().getType(TypeReferences.LEVEL);
       return this.fixTypeEverywhereTyped(
-         "LevelDataGeneratorOptionsFix", this.getInputSchema().getType(TypeReferences.field35376), var3, var1 -> (Typed)var1.write().flatMap(var1x -> {
+         "LevelDataGeneratorOptionsFix", this.getInputSchema().getType(TypeReferences.LEVEL), var3, var1 -> (Typed)var1.write().flatMap(var1x -> {
                Optional<String> var4 = var1x.get("generatorOptions").asString().result();
                Dynamic<?> var5;
                if (!"flat".equalsIgnoreCase(var1x.get("generatorName").asString(""))) {

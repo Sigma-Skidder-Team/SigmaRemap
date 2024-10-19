@@ -221,7 +221,7 @@ public class Class907 extends Entity {
 
    @Override
    public void writeAdditional(CompoundNBT var1) {
-      var1.put("BlockState", NBTUtil.method29287(this.field5176));
+      var1.put("BlockState", NBTUtil.writeBlockState(this.field5176));
       var1.putInt("Time", this.field5177);
       var1.putBoolean("DropItem", this.field5178);
       var1.putBoolean("HurtEntities", this.field5180);
@@ -234,7 +234,7 @@ public class Class907 extends Entity {
 
    @Override
    public void readAdditional(CompoundNBT var1) {
-      this.field5176 = NBTUtil.method29285(var1.getCompound("BlockState"));
+      this.field5176 = NBTUtil.readBlockState(var1.getCompound("BlockState"));
       this.field5177 = var1.getInt("Time");
       if (!var1.contains("HurtEntities", 99)) {
          if (this.field5176.isIn(BlockTags.field32765)) {

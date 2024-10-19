@@ -6,6 +6,7 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import mapped.*;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.JSONToNBT;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.ITextComponent;
@@ -70,7 +71,7 @@ public class HoverEvent$ItemHover {
             String commandsyntaxexception = JSONUtils.getString(item, "tag");
 
             try {
-               CompoundNBT var7 = Class7671.method25188(commandsyntaxexception);
+               CompoundNBT var7 = JSONToNBT.method25188(commandsyntaxexception);
                return new HoverEvent$ItemHover(i, s, var7);
             } catch (CommandSyntaxException var8) {
                HoverEvent.access$400().warn("Failed to parse tag: {}", commandsyntaxexception, var8);
@@ -84,7 +85,7 @@ public class HoverEvent$ItemHover {
    @Nullable
    private static HoverEvent$ItemHover deserialize(ITextComponent component) {
       try {
-         CompoundNBT var3 = Class7671.method25188(component.getString());
+         CompoundNBT var3 = JSONToNBT.method25188(component.getString());
          return new HoverEvent$ItemHover(ItemStack.method32104(var3));
       } catch (CommandSyntaxException var4) {
          HoverEvent.access$400().warn("Failed to parse item tag: {}", component, var4);

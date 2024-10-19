@@ -3,6 +3,8 @@ package mapped;
 import com.mojang.datafixers.DSL;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.templates.TypeTemplate;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.util.Map;
 import java.util.function.Supplier;
 
@@ -15,18 +17,18 @@ public class Class3659 extends Class3639 {
       super.registerTypes(var1, var2, var3);
       var1.registerType(
          false,
-         TypeReferences.field35378,
+         TypeReferences.CHUNK,
          () -> DSL.fields(
                "Level",
                DSL.optionalFields(
                   "Entities",
-                  DSL.list(TypeReferences.field35390.in(var1)),
+                  DSL.list(TypeReferences.ENTITY_TREE.in(var1)),
                   "TileEntities",
-                  DSL.list(TypeReferences.field35386.in(var1)),
+                  DSL.list(TypeReferences.BLOCK_ENTITY.in(var1)),
                   "TileTicks",
-                  DSL.list(DSL.fields("i", TypeReferences.field35392.in(var1))),
+                  DSL.list(DSL.fields("i", TypeReferences.BLOCK_NAME.in(var1))),
                   "Sections",
-                  DSL.list(DSL.optionalFields("Palette", DSL.list(TypeReferences.field35388.in(var1))))
+                  DSL.list(DSL.optionalFields("Palette", DSL.list(TypeReferences.BLOCK_STATE.in(var1))))
                )
             )
       );

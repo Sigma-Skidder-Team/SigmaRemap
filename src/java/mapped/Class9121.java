@@ -4,6 +4,8 @@ import com.mojang.datafixers.DSL;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.templates.TypeTemplate;
 import com.mojang.datafixers.types.templates.Hook.HookFunction;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.util.Map;
 import java.util.function.Supplier;
 
@@ -16,21 +18,21 @@ public class Class9121 extends Schema {
       super.registerTypes(var1, var2, var3);
       var1.registerType(
          true,
-         TypeReferences.field35387,
+         TypeReferences.ITEM_STACK,
          () -> DSL.hook(
                DSL.optionalFields(
                   "id",
-                  TypeReferences.field35393.in(var1),
+                  TypeReferences.ITEM_NAME.in(var1),
                   "tag",
                   DSL.optionalFields(
                      "EntityTag",
-                     TypeReferences.field35390.in(var1),
+                     TypeReferences.ENTITY_TREE.in(var1),
                      "BlockEntityTag",
-                     TypeReferences.field35386.in(var1),
+                     TypeReferences.BLOCK_ENTITY.in(var1),
                      "CanDestroy",
-                     DSL.list(TypeReferences.field35392.in(var1)),
+                     DSL.list(TypeReferences.BLOCK_NAME.in(var1)),
                      "CanPlaceOn",
-                     DSL.list(TypeReferences.field35392.in(var1))
+                     DSL.list(TypeReferences.BLOCK_NAME.in(var1))
                   )
                ),
                Class8604.field38714,

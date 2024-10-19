@@ -8,6 +8,8 @@ import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.Type;
 import com.mojang.serialization.Dynamic;
 import com.mojang.serialization.OptionalDynamic;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.util.Arrays;
 import java.util.function.Function;
 

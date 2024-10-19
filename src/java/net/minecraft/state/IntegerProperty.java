@@ -56,7 +56,7 @@ public class IntegerProperty extends Property<Integer> {
    }
 
    @Override
-   public Optional<Integer> method30476(String var1) {
+   public Optional<Integer> parseValue(String var1) {
       try {
          Integer var4 = Integer.valueOf(var1);
          return this.field38445.contains(var4) ? Optional.<Integer>of(var4) : Optional.<Integer>empty();

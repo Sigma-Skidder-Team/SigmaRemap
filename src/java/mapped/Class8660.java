@@ -7,6 +7,7 @@ import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.Type;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.util.datafix.TypeReferences;
 
 import java.util.Objects;
 import java.util.Optional;
@@ -21,8 +22,8 @@ public class Class8660 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type<Pair<String, Dynamic<?>>> var3 = DSL.named(TypeReferences.field35396.typeName(), DSL.remainderType());
-      if (Objects.equals(var3, this.getInputSchema().getType(TypeReferences.field35396))) {
+      Type<Pair<String, Dynamic<?>>> var3 = DSL.named(TypeReferences.OBJECTIVE.typeName(), DSL.remainderType());
+      if (Objects.equals(var3, this.getInputSchema().getType(TypeReferences.OBJECTIVE))) {
          return this.fixTypeEverywhere("ObjectiveRenderTypeFix", var3, var0 -> var0x -> var0x.mapSecond(var0xx -> {
                   Optional var3x = var0xx.get("RenderType").asString().result();
                   if (var3x.isPresent()) {

@@ -81,7 +81,7 @@ public class DragonFightManager {
          }
 
          if (var4.contains("ExitPortalLocation", 10)) {
-            this.field33549 = NBTUtil.method29283(var4.getCompound("ExitPortalLocation"));
+            this.field33549 = NBTUtil.readBlockPos(var4.getCompound("ExitPortalLocation"));
          }
       }
 
@@ -115,7 +115,7 @@ public class DragonFightManager {
       var3.putBoolean("DragonKilled", this.field33545);
       var3.putBoolean("PreviouslyKilled", this.field33546);
       if (this.field33549 != null) {
-         var3.put("ExitPortalLocation", NBTUtil.method29284(this.field33549));
+         var3.put("ExitPortalLocation", NBTUtil.writeBlockPos(this.field33549));
       }
 
       ListNBT var4 = new ListNBT();

@@ -7,6 +7,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.NBTDynamicOps;
 import net.minecraft.nbt.NBTUtil;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.SoundEvents;
@@ -51,7 +52,7 @@ public class Class3271 extends Item implements IVanishable {
          if (var9.isPresent()
             && var9.get() == var2.getDimensionKey()
             && var8.contains("LodestonePos")
-            && !((ServerWorld)var2).method6951().method6664(Class4913.field22771, NBTUtil.method29283(var8.getCompound("LodestonePos")))) {
+            && !((ServerWorld)var2).method6951().method6664(Class4913.field22771, NBTUtil.readBlockPos(var8.getCompound("LodestonePos")))) {
             var8.remove("LodestonePos");
          }
       }
@@ -89,7 +90,7 @@ public class Class3271 extends Item implements IVanishable {
    }
 
    private void method11791(RegistryKey<World> var1, BlockPos var2, CompoundNBT var3) {
-      var3.put("LodestonePos", NBTUtil.method29284(var2));
+      var3.put("LodestonePos", NBTUtil.writeBlockPos(var2));
       World.CODEC
          .encodeStart(NBTDynamicOps.INSTANCE, var1)
          .resultOrPartial(field18771::error)

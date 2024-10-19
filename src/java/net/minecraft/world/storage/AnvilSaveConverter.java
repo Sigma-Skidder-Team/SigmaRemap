@@ -12,6 +12,7 @@ import java.util.Collections;
 import mapped.*;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.CompressedStreamTools;
+import net.minecraft.nbt.NBTDynamicOps;
 import net.minecraft.util.datafix.codec.DatapackCodec;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.registry.Registry;

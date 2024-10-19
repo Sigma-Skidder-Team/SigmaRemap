@@ -15,6 +15,8 @@ import java.util.BitSet;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
+
+import net.minecraft.util.datafix.TypeReferences;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -408,8 +410,8 @@ public class Class8782 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type var3 = this.getInputSchema().getType(TypeReferences.field35378);
-      Type var4 = this.getOutputSchema().getType(TypeReferences.field35378);
+      Type var3 = this.getInputSchema().getType(TypeReferences.CHUNK);
+      Type var4 = this.getOutputSchema().getType(TypeReferences.CHUNK);
       return this.writeFixAndRead("ChunkPalettedStorageFix", var3, var4, this::method31671);
    }
 

@@ -8,6 +8,8 @@ import com.mojang.datafixers.schemas.Schema;
 import com.mojang.serialization.Dynamic;
 import java.util.Objects;
 import java.util.Optional;
+
+import net.minecraft.util.datafix.TypeReferences;
 import net.minecraft.util.text.ITextComponent$Serializer;
 import net.minecraft.util.text.StringTextComponent;
 

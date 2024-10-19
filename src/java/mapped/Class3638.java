@@ -3,6 +3,8 @@ package mapped;
 import com.mojang.datafixers.DSL;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.templates.TypeTemplate;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.util.Map;
 import java.util.function.Supplier;
 
@@ -28,7 +30,7 @@ public class Class3638 extends Class3639 {
          var4,
          "minecraft:beehive",
          () -> DSL.optionalFields(
-               "Items", DSL.list(TypeReferences.field35387.in(var1)), "Bees", DSL.list(DSL.optionalFields("EntityData", TypeReferences.field35390.in(var1)))
+               "Items", DSL.list(TypeReferences.ITEM_STACK.in(var1)), "Bees", DSL.list(DSL.optionalFields("EntityData", TypeReferences.ENTITY_TREE.in(var1)))
             )
       );
       return var4;

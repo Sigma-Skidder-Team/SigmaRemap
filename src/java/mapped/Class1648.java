@@ -4,6 +4,7 @@ import com.mojang.datafixers.DataFixer;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.NBTUtil;
 import net.minecraft.util.SharedConstants;
+import net.minecraft.util.datafix.DefaultTypeReferences;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
 import net.minecraft.world.storage.DimensionSavedDataManager;
@@ -27,7 +28,7 @@ public class Class1648 implements AutoCloseable {
       int var6 = method6530(var3);
 
       if (var6 < 1493) {
-         var3 = NBTUtil.method29290(this.field8948, Class2108.field13750, var3, var6, 1493);
+         var3 = NBTUtil.update(this.field8948, DefaultTypeReferences.CHUNK, var3, var6, 1493);
          if (var3.getCompound("Level").getBoolean("hasLegacyStructureData")) {
             if (this.field8949 == null) {
                this.field8949 = Class8418.method29580(var1, (DimensionSavedDataManager)var2.get());
@@ -37,7 +38,7 @@ public class Class1648 implements AutoCloseable {
          }
       }
 
-      var3 = NBTUtil.method29289(this.field8948, Class2108.field13750, var3, Math.max(1493, var6));
+      var3 = NBTUtil.update(this.field8948, DefaultTypeReferences.CHUNK, var3, Math.max(1493, var6));
       if (var6 < SharedConstants.getVersion().getWorldVersion()) {
          var3.putInt("DataVersion", SharedConstants.getVersion().getWorldVersion());
       }

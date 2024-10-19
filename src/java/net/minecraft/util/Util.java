@@ -9,6 +9,7 @@ import com.mojang.datafixers.types.Type;
 import com.mojang.serialization.DataResult;
 import it.unimi.dsi.fastutil.Hash.Strategy;
 import mapped.*;
+import net.minecraft.crash.ReportedException;
 import net.minecraft.state.Property;
 import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;

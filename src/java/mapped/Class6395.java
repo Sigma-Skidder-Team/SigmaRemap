@@ -19,6 +19,7 @@ import javax.annotation.Nullable;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.nbt.NBTDynamicOps;
 import net.minecraft.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;

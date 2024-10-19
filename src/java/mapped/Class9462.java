@@ -5,6 +5,7 @@ import com.mojang.datafixers.TypeRewriteRule;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.Type;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.util.datafix.TypeReferences;
 
 public class Class9462 extends DataFix {
    public Class9462(Schema var1, boolean var2) {
@@ -12,8 +13,8 @@ public class Class9462 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type var3 = this.getInputSchema().getType(TypeReferences.field35395);
-      Type var4 = this.getOutputSchema().getType(TypeReferences.field35395);
+      Type var3 = this.getInputSchema().getType(TypeReferences.STRUCTURE_FEATURE);
+      Type var4 = this.getOutputSchema().getType(TypeReferences.STRUCTURE_FEATURE);
       return this.writeFixAndRead("IglooMetadataRemovalFix", var3, var4, Class9462::method36419);
    }
 

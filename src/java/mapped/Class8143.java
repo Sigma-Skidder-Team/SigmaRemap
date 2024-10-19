@@ -8,6 +8,8 @@ import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.Type;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.util.Objects;
 import java.util.Optional;
 
@@ -17,8 +19,8 @@ public abstract class Class8143 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type<Pair<String, Dynamic<?>>> var3 = DSL.named(TypeReferences.field35385.typeName(), DSL.remainderType());
-      if (Objects.equals(var3, this.getInputSchema().getType(TypeReferences.field35385))) {
+      Type<Pair<String, Dynamic<?>>> var3 = DSL.named(TypeReferences.POI_CHUNK.typeName(), DSL.remainderType());
+      if (Objects.equals(var3, this.getInputSchema().getType(TypeReferences.POI_CHUNK))) {
          return this.fixTypeEverywhere("POI rename", var3, var1 -> var1x -> var1x.mapSecond(this::method28237));
       } else {
          throw new IllegalStateException("Poi type is not what was expected.");

@@ -12,6 +12,7 @@ import com.mojang.datafixers.types.Type;
 import com.mojang.datafixers.types.templates.List.ListType;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.util.datafix.TypeReferences;
 
 import java.util.List;
 import java.util.Map;
@@ -24,7 +25,7 @@ public class Class9130 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type var3 = this.getOutputSchema().getType(TypeReferences.field35378);
+      Type var3 = this.getOutputSchema().getType(TypeReferences.CHUNK);
       Type var4 = var3.findFieldType("Level");
       Type var5 = var4.findFieldType("TileEntities");
       if (var5 instanceof ListType) {
@@ -43,13 +44,13 @@ public class Class9130 extends DataFix {
       return TypeRewriteRule.seq(
          this.fixTypeEverywhere(
             "InjectBedBlockEntityType",
-            this.getInputSchema().findChoiceType(TypeReferences.field35386),
-            this.getOutputSchema().findChoiceType(TypeReferences.field35386),
+            this.getInputSchema().findChoiceType(TypeReferences.BLOCK_ENTITY),
+            this.getOutputSchema().findChoiceType(TypeReferences.BLOCK_ENTITY),
             var0 -> var0x -> (Pair) var0x
          ),
          this.fixTypeEverywhereTyped(
             "BedBlockEntityInjecter",
-            this.getOutputSchema().getType(TypeReferences.field35378),
+            this.getOutputSchema().getType(TypeReferences.CHUNK),
             var3 -> {
                Typed<?> var6x = var3.getTyped(var6);
                Dynamic<?> var7x = (Dynamic)var6x.get(DSL.remainderFinder());

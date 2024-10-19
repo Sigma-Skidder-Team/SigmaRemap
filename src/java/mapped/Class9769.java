@@ -5,6 +5,7 @@ import com.mojang.datafixers.DataFix;
 import com.mojang.datafixers.TypeRewriteRule;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.util.datafix.TypeReferences;
 
 public class Class9769 extends DataFix {
    public Class9769(Schema var1) {
@@ -14,7 +15,7 @@ public class Class9769 extends DataFix {
    public TypeRewriteRule makeRule() {
       Schema var3 = this.getInputSchema();
       return this.fixTypeEverywhereTyped(
-         "RedstoneConnectionsFix", var3.getType(TypeReferences.field35388), var1 -> var1.update(DSL.remainderFinder(), this::method38426)
+         "RedstoneConnectionsFix", var3.getType(TypeReferences.BLOCK_STATE), var1 -> var1.update(DSL.remainderFinder(), this::method38426)
       );
    }
 

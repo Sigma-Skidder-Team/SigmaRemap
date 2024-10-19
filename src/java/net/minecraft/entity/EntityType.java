@@ -26,6 +26,7 @@ import net.minecraft.nbt.ListNBT;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.datafix.TypeReferences;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -734,7 +735,7 @@ public class EntityType<T extends Entity> {
 
       public EntityType<T> method32309(String var1) {
          if (this.field40184) {
-            Util.attemptDataFix(TypeReferences.field35390, var1);
+            Util.attemptDataFix(TypeReferences.ENTITY_TREE, var1);
          }
 
          return new EntityType<T>(

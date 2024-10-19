@@ -16,6 +16,7 @@ import java.util.function.Predicate;
 import net.minecraft.command.CommandSource;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
+import net.minecraft.nbt.JSONToNBT;
 import net.minecraft.nbt.NBTUtil;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -65,7 +66,7 @@ public class Class8320 implements ArgumentType<Class9670> {
             var0.skip();
             char var5 = var0.peek();
             if (var5 == '{') {
-               CompoundNBT var9 = new Class7671(var0).method25195();
+               CompoundNBT var9 = new JSONToNBT(var0).method25195();
                var0.expect(']');
                return new Class8360(var9);
             } else {
@@ -83,7 +84,7 @@ public class Class8320 implements ArgumentType<Class9670> {
                throw field35743.createWithContext(var0);
             }
 
-            CompoundNBT var6 = new Class7671(var0).method25195();
+            CompoundNBT var6 = new JSONToNBT(var0).method25195();
             return new Class8358(var6);
          default:
             String var7 = method29132(var0);
@@ -93,7 +94,7 @@ public class Class8320 implements ArgumentType<Class9670> {
 
    private static Class8356 method29131(StringReader var0, String var1) throws CommandSyntaxException {
       if (var0.canRead() && var0.peek() == '{') {
-         CompoundNBT var4 = new Class7671(var0).method25195();
+         CompoundNBT var4 = new JSONToNBT(var0).method25195();
          return new Class8357(var1, var4);
       } else {
          return new Class8359(var1);

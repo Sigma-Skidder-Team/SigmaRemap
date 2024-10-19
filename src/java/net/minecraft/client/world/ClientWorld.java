@@ -17,6 +17,7 @@ import net.minecraft.client.multiplayer.ClientChunkProvider;
 import net.minecraft.client.multiplayer.PlayerController;
 import net.minecraft.client.network.play.ClientPlayNetHandler;
 import net.minecraft.client.renderer.WorldRenderer;
+import net.minecraft.crash.ReportedException;
 import net.minecraft.util.Util;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;

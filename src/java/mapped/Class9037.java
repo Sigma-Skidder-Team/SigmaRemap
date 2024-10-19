@@ -21,6 +21,7 @@ import java.util.stream.Collectors;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.nbt.JSONToNBT;
 import net.minecraft.util.Util;
 import net.minecraft.command.CommandSource;
 import net.minecraft.nbt.CompoundNBT;
@@ -463,7 +464,7 @@ public class Class9037 {
          Files.createDirectories(var6.getParent());
 
          try (OutputStream var9 = Files.newOutputStream(var6)) {
-            CompressedStreamTools.writeCompressed(Class7671.method25188(var8), var9);
+            CompressedStreamTools.writeCompressed(JSONToNBT.method25188(var8), var9);
          }
 
          method33503(var0, "Imported to " + var6.toAbsolutePath());

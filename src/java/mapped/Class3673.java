@@ -4,6 +4,8 @@ import com.google.common.collect.ImmutableMap;
 import com.mojang.datafixers.DSL;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.templates.TypeTemplate;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.util.Map;
 import java.util.function.Supplier;
 
@@ -16,7 +18,7 @@ public class Class3673 extends Class3639 {
       super.registerTypes(var1, var2, var3);
       var1.registerType(
          false,
-         TypeReferences.field35400,
+         TypeReferences.WORLD_GEN_SETTINGS,
          () -> DSL.fields(
                "dimensions",
                DSL.compoundList(
@@ -33,7 +35,7 @@ public class Class3673 extends Class3639 {
                            (Supplier<TypeTemplate>)() -> DSL.optionalFields(
                                  "settings",
                                  DSL.optionalFields(
-                                    "biome", TypeReferences.field35399.in(var1), "layers", DSL.list(DSL.optionalFields("block", TypeReferences.field35392.in(var1)))
+                                    "biome", TypeReferences.BIOME.in(var1), "layers", DSL.list(DSL.optionalFields("block", TypeReferences.BLOCK_NAME.in(var1)))
                                  )
                               ),
                            "minecraft:noise",
@@ -44,11 +46,11 @@ public class Class3673 extends Class3639 {
                                     DSL.string(),
                                     ImmutableMap.of(
                                        "minecraft:fixed",
-                                       (Supplier<TypeTemplate>)() -> DSL.fields("biome", TypeReferences.field35399.in(var1)),
+                                       (Supplier<TypeTemplate>)() -> DSL.fields("biome", TypeReferences.BIOME.in(var1)),
                                        "minecraft:multi_noise",
-                                       (Supplier<TypeTemplate>)() -> DSL.list(DSL.fields("biome", TypeReferences.field35399.in(var1))),
+                                       (Supplier<TypeTemplate>)() -> DSL.list(DSL.fields("biome", TypeReferences.BIOME.in(var1))),
                                        "minecraft:checkerboard",
-                                       (Supplier<TypeTemplate>)() -> DSL.fields("biomes", DSL.list(TypeReferences.field35399.in(var1))),
+                                       (Supplier<TypeTemplate>)() -> DSL.fields("biomes", DSL.list(TypeReferences.BIOME.in(var1))),
                                        "minecraft:vanilla_layered",
                                        DSL::remainder,
                                        "minecraft:the_end",
@@ -58,7 +60,7 @@ public class Class3673 extends Class3639 {
                                  "settings",
                                  DSL.or(
                                     DSL.constType(DSL.string()),
-                                    DSL.optionalFields("default_block", TypeReferences.field35392.in(var1), "default_fluid", TypeReferences.field35392.in(var1))
+                                    DSL.optionalFields("default_block", TypeReferences.BLOCK_NAME.in(var1), "default_fluid", TypeReferences.BLOCK_NAME.in(var1))
                                  )
                               )
                         )

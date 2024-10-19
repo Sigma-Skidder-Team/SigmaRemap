@@ -3,6 +3,8 @@ package mapped;
 import com.mojang.datafixers.DSL;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.templates.TypeTemplate;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.util.Map;
 import java.util.function.Supplier;
 
@@ -16,34 +18,34 @@ public class Class3641 extends Class3639 {
       var1.registerSimple(var4, "minecraft:egg");
       var1.registerSimple(var4, "minecraft:ender_pearl");
       var1.registerSimple(var4, "minecraft:fireball");
-      var1.register(var4, "minecraft:potion", var1x -> DSL.optionalFields("Potion", TypeReferences.field35387.in(var1)));
+      var1.register(var4, "minecraft:potion", var1x -> DSL.optionalFields("Potion", TypeReferences.ITEM_STACK.in(var1)));
       var1.registerSimple(var4, "minecraft:small_fireball");
       var1.registerSimple(var4, "minecraft:snowball");
       var1.registerSimple(var4, "minecraft:wither_skull");
       var1.registerSimple(var4, "minecraft:xp_bottle");
-      var1.register(var4, "minecraft:arrow", () -> DSL.optionalFields("inBlockState", TypeReferences.field35388.in(var1)));
-      var1.register(var4, "minecraft:enderman", () -> DSL.optionalFields("carriedBlockState", TypeReferences.field35388.in(var1), Class9674.method37738(var1)));
+      var1.register(var4, "minecraft:arrow", () -> DSL.optionalFields("inBlockState", TypeReferences.BLOCK_STATE.in(var1)));
+      var1.register(var4, "minecraft:enderman", () -> DSL.optionalFields("carriedBlockState", TypeReferences.BLOCK_STATE.in(var1), Class9674.method37738(var1)));
       var1.register(
          var4,
          "minecraft:falling_block",
-         () -> DSL.optionalFields("BlockState", TypeReferences.field35388.in(var1), "TileEntityData", TypeReferences.field35386.in(var1))
+         () -> DSL.optionalFields("BlockState", TypeReferences.BLOCK_STATE.in(var1), "TileEntityData", TypeReferences.BLOCK_ENTITY.in(var1))
       );
-      var1.register(var4, "minecraft:spectral_arrow", () -> DSL.optionalFields("inBlockState", TypeReferences.field35388.in(var1)));
+      var1.register(var4, "minecraft:spectral_arrow", () -> DSL.optionalFields("inBlockState", TypeReferences.BLOCK_STATE.in(var1)));
       var1.register(
          var4,
          "minecraft:chest_minecart",
-         () -> DSL.optionalFields("DisplayState", TypeReferences.field35388.in(var1), "Items", DSL.list(TypeReferences.field35387.in(var1)))
+         () -> DSL.optionalFields("DisplayState", TypeReferences.BLOCK_STATE.in(var1), "Items", DSL.list(TypeReferences.ITEM_STACK.in(var1)))
       );
-      var1.register(var4, "minecraft:commandblock_minecart", () -> DSL.optionalFields("DisplayState", TypeReferences.field35388.in(var1)));
-      var1.register(var4, "minecraft:furnace_minecart", () -> DSL.optionalFields("DisplayState", TypeReferences.field35388.in(var1)));
+      var1.register(var4, "minecraft:commandblock_minecart", () -> DSL.optionalFields("DisplayState", TypeReferences.BLOCK_STATE.in(var1)));
+      var1.register(var4, "minecraft:furnace_minecart", () -> DSL.optionalFields("DisplayState", TypeReferences.BLOCK_STATE.in(var1)));
       var1.register(
          var4,
          "minecraft:hopper_minecart",
-         () -> DSL.optionalFields("DisplayState", TypeReferences.field35388.in(var1), "Items", DSL.list(TypeReferences.field35387.in(var1)))
+         () -> DSL.optionalFields("DisplayState", TypeReferences.BLOCK_STATE.in(var1), "Items", DSL.list(TypeReferences.ITEM_STACK.in(var1)))
       );
-      var1.register(var4, "minecraft:minecart", () -> DSL.optionalFields("DisplayState", TypeReferences.field35388.in(var1)));
-      var1.register(var4, "minecraft:spawner_minecart", () -> DSL.optionalFields("DisplayState", TypeReferences.field35388.in(var1), TypeReferences.field35394.in(var1)));
-      var1.register(var4, "minecraft:tnt_minecart", () -> DSL.optionalFields("DisplayState", TypeReferences.field35388.in(var1)));
+      var1.register(var4, "minecraft:minecart", () -> DSL.optionalFields("DisplayState", TypeReferences.BLOCK_STATE.in(var1)));
+      var1.register(var4, "minecraft:spawner_minecart", () -> DSL.optionalFields("DisplayState", TypeReferences.BLOCK_STATE.in(var1), TypeReferences.UNTAGGED_SPAWNER.in(var1)));
+      var1.register(var4, "minecraft:tnt_minecart", () -> DSL.optionalFields("DisplayState", TypeReferences.BLOCK_STATE.in(var1)));
       return var4;
    }
 }

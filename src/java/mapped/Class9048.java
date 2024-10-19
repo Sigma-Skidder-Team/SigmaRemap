@@ -3,6 +3,8 @@ package mapped;
 import com.mojang.datafixers.DSL;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.templates.TypeTemplate;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.util.Map;
 import java.util.function.Supplier;
 
@@ -15,18 +17,18 @@ public class Class9048 extends Schema {
       super.registerTypes(var1, var2, var3);
       var1.registerType(
          false,
-         TypeReferences.field35377,
+         TypeReferences.PLAYER,
          () -> DSL.optionalFields(
                "RootVehicle",
-               DSL.optionalFields("Entity", TypeReferences.field35390.in(var1)),
+               DSL.optionalFields("Entity", TypeReferences.ENTITY_TREE.in(var1)),
                "Inventory",
-               DSL.list(TypeReferences.field35387.in(var1)),
+               DSL.list(TypeReferences.ITEM_STACK.in(var1)),
                "EnderItems",
-               DSL.list(TypeReferences.field35387.in(var1))
+               DSL.list(TypeReferences.ITEM_STACK.in(var1))
             )
       );
       var1.registerType(
-         true, TypeReferences.field35390, () -> DSL.optionalFields("Passengers", DSL.list(TypeReferences.field35390.in(var1)), TypeReferences.ENTITY.in(var1))
+         true, TypeReferences.ENTITY_TREE, () -> DSL.optionalFields("Passengers", DSL.list(TypeReferences.ENTITY_TREE.in(var1)), TypeReferences.ENTITY.in(var1))
       );
    }
 }

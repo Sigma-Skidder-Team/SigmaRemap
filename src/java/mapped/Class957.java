@@ -42,7 +42,7 @@ public class Class957 extends Class956 implements ITickableTileEntity {
       super.write(var1);
       var1.putLong("Age", this.field5372);
       if (this.field5374 != null) {
-         var1.put("ExitPortal", NBTUtil.method29284(this.field5374));
+         var1.put("ExitPortal", NBTUtil.writeBlockPos(this.field5374));
       }
 
       if (this.field5375) {
@@ -57,7 +57,7 @@ public class Class957 extends Class956 implements ITickableTileEntity {
       super.read(var1, var2);
       this.field5372 = var2.getLong("Age");
       if (var2.contains("ExitPortal", 10)) {
-         this.field5374 = NBTUtil.method29283(var2.getCompound("ExitPortal"));
+         this.field5374 = NBTUtil.readBlockPos(var2.getCompound("ExitPortal"));
       }
 
       this.field5375 = var2.getBoolean("ExactTeleport");

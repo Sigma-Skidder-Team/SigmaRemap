@@ -18,6 +18,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.JSONToNBT;
 import net.minecraft.nbt.NBTUtil;
 import net.minecraft.scoreboard.ServerScoreboard;
 import net.minecraft.scoreboard.Team;
@@ -297,7 +298,7 @@ public class Class9748 {
          }, var0 -> true, new TranslationTextComponent("argument.entity.options.tag.description"));
          method38218("nbt", var0 -> {
             boolean var3 = var0.method30275();
-            CompoundNBT var4 = new Class7671(var0.method30277()).method25195();
+            CompoundNBT var4 = new JSONToNBT(var0.method30277()).method25195();
             var0.method30278(var2 -> {
                CompoundNBT var5 = var2.writeWithoutTypeId(new CompoundNBT());
                if (var2 instanceof ServerPlayerEntity) {

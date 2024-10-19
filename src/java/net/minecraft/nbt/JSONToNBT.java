@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.nbt;
 
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.Lists;
@@ -11,11 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import net.minecraft.nbt.*;
-import net.minecraft.nbt.INBTType;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class Class7671 {
+public class JSONToNBT {
    public static final SimpleCommandExceptionType field32863 = new SimpleCommandExceptionType(new TranslationTextComponent("argument.nbt.trailing"));
    public static final SimpleCommandExceptionType field32864 = new SimpleCommandExceptionType(new TranslationTextComponent("argument.nbt.expected.key"));
    public static final SimpleCommandExceptionType field32865 = new SimpleCommandExceptionType(new TranslationTextComponent("argument.nbt.expected.value"));
@@ -38,7 +36,7 @@ public class Class7671 {
    private final StringReader field32876;
 
    public static CompoundNBT method25188(String var0) throws CommandSyntaxException {
-      return new Class7671(new StringReader(var0)).method25189();
+      return new JSONToNBT(new StringReader(var0)).method25189();
    }
 
    @VisibleForTesting
@@ -52,7 +50,7 @@ public class Class7671 {
       }
    }
 
-   public Class7671(StringReader var1) {
+   public JSONToNBT(StringReader var1) {
       this.field32876 = var1;
    }
 
@@ -112,11 +110,11 @@ public class Class7671 {
          }
 
          if ("true".equalsIgnoreCase(var1)) {
-            return ByteNBT.field65;
+            return ByteNBT.ONE;
          }
 
          if ("false".equalsIgnoreCase(var1)) {
-            return ByteNBT.field64;
+            return ByteNBT.ZERO;
          }
       } catch (NumberFormatException var5) {
       }
@@ -222,13 +220,13 @@ public class Class7671 {
                   this.field32876.setCursor(var3);
                   throw field32868.createWithContext(this.field32876, String.valueOf(var4));
                } else {
-                  return new IntArrayNBT(this.<Integer>method25198(IntArrayNBT.TYPE, IntNBT.field73));
+                  return new IntArrayNBT(this.<Integer>method25198(IntArrayNBT.TYPE, IntNBT.TYPE));
                }
             } else {
-               return new LongArrayNBT(this.<Long>method25198(LongArrayNBT.TYPE, LongNBT.field70));
+               return new LongArrayNBT(this.<Long>method25198(LongArrayNBT.TYPE, LongNBT.TYPE));
             }
          } else {
-            return new ByteArrayNBT(this.<Byte>method25198(ByteArrayNBT.TYPE, ByteNBT.field63));
+            return new ByteArrayNBT(this.<Byte>method25198(ByteArrayNBT.TYPE, ByteNBT.TYPE));
          }
       } else {
          throw field32865.createWithContext(this.field32876);
@@ -247,8 +245,8 @@ public class Class7671 {
             throw field32867.createWithContext(this.field32876, var8.getTagName(), var1.getTagName());
          }
 
-         if (var2 != ByteNBT.field63) {
-            if (var2 != LongNBT.field70) {
+         if (var2 != ByteNBT.TYPE) {
+            if (var2 != LongNBT.TYPE) {
                var5.add(((NumberNBT)var7).getInt());
             } else {
                var5.add(((NumberNBT)var7).getLong());

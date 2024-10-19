@@ -6,6 +6,7 @@ import com.mojang.datafixers.DataFixUtils;
 import com.mojang.datafixers.TypeRewriteRule;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.util.datafix.TypeReferences;
 
 public class Class7840 extends DataFix {
    public Class7840(Schema var1, boolean var2) {
@@ -15,7 +16,7 @@ public class Class7840 extends DataFix {
    public TypeRewriteRule makeRule() {
       return this.fixTypeEverywhereTyped(
          "OptionsAddTextBackgroundFix",
-         this.getInputSchema().getType(TypeReferences.field35380),
+         this.getInputSchema().getType(TypeReferences.OPTIONS),
          var1 -> var1.update(
                DSL.remainderFinder(),
                var1x -> (Dynamic)DataFixUtils.orElse(

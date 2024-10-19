@@ -7,6 +7,7 @@ import com.mojang.datafixers.DSL;
 import com.mojang.datafixers.Typed;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.util.datafix.TypeReferences;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextComponent$Serializer;
 import net.minecraft.util.text.StringTextComponent;
@@ -16,7 +17,7 @@ public class Class6726 extends Class6717 {
    public static final Gson field29439 = new GsonBuilder().registerTypeAdapter(ITextComponent.class, new Class2554()).create();
 
    public Class6726(Schema var1, boolean var2) {
-      super(var1, var2, "BlockEntitySignTextStrictJsonFix", TypeReferences.field35386, "Sign");
+      super(var1, var2, "BlockEntitySignTextStrictJsonFix", TypeReferences.BLOCK_ENTITY, "Sign");
    }
 
    private Dynamic<?> method20525(Dynamic<?> var1, String var2) {

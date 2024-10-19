@@ -42,13 +42,13 @@ public class Class5142 implements Class5141 {
 
    public JsonElement get() {
       JsonObject var3 = new JsonObject();
-      this.field23364.forEach((var1, var2) -> var3.addProperty(var1.method30472(), var2));
+      this.field23364.forEach((var1, var2) -> var3.addProperty(var1.getName(), var2));
       return var3;
    }
 
    @Override
    public void method15918(StateContainer<?, ?> var1) {
-      List var4 = this.field23364.keySet().stream().filter(var1x -> var1.method35396(var1x.method30472()) != var1x).collect(Collectors.toList());
+      List var4 = this.field23364.keySet().stream().filter(var1x -> var1.getProperty(var1x.getName()) != var1x).collect(Collectors.toList());
       if (!var4.isEmpty()) {
          throw new IllegalStateException("Properties " + var4 + " are missing from " + var1);
       }

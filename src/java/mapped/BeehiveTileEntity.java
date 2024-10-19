@@ -262,7 +262,7 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
 
       this.field5393 = null;
       if (var2.contains("FlowerPos")) {
-         this.field5393 = NBTUtil.method29283(var2.getCompound("FlowerPos"));
+         this.field5393 = NBTUtil.readBlockPos(var2.getCompound("FlowerPos"));
       }
    }
 
@@ -271,7 +271,7 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
       super.write(var1);
       var1.put("Bees", this.method3927());
       if (this.method3925()) {
-         var1.put("FlowerPos", NBTUtil.method29284(this.field5393));
+         var1.put("FlowerPos", NBTUtil.writeBlockPos(this.field5393));
       }
 
       return var1;

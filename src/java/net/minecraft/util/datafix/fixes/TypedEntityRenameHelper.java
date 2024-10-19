@@ -8,7 +8,7 @@ import com.mojang.datafixers.types.Type;
 import com.mojang.datafixers.types.templates.TaggedChoice.TaggedChoiceType;
 import com.mojang.datafixers.util.Pair;
 import mapped.Class3639;
-import mapped.TypeReferences;
+import net.minecraft.util.datafix.TypeReferences;
 
 import java.util.Objects;
 
@@ -23,8 +23,8 @@ public abstract class TypedEntityRenameHelper extends DataFix {
    public TypeRewriteRule makeRule() {
       TaggedChoiceType<String> var3 = (TaggedChoiceType<String>) this.getInputSchema().findChoiceType(TypeReferences.ENTITY);
       TaggedChoiceType<String> var4 = (TaggedChoiceType<String>) this.getOutputSchema().findChoiceType(TypeReferences.ENTITY);
-      Type<Pair<String, String>> var5 = DSL.named(TypeReferences.field35389.typeName(), Class3639.method12354());
-      if (Objects.equals(this.getOutputSchema().getType(TypeReferences.field35389), var5)) {
+      Type<Pair<String, String>> var5 = DSL.named(TypeReferences.ENTITY_NAME.typeName(), Class3639.method12354());
+      if (Objects.equals(this.getOutputSchema().getType(TypeReferences.ENTITY_NAME), var5)) {
          return TypeRewriteRule.seq(this.fixTypeEverywhere(this.field27828, var3, var4, var3x -> var3xx -> var3xx.mapFirst(var3xxx -> {
                   String var6 = this.rename(var3xxx);
                   Type var7 = var3.types().get(var3xxx);

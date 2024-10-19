@@ -7,6 +7,8 @@ import com.mojang.datafixers.OpticFinder;
 import com.mojang.datafixers.TypeRewriteRule;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.Type;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.util.Optional;
 
 public class Class8698 extends DataFix {
@@ -15,7 +17,7 @@ public class Class8698 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type var3 = this.getInputSchema().getType(TypeReferences.field35383);
+      Type var3 = this.getInputSchema().getType(TypeReferences.SAVED_DATA);
       OpticFinder var4 = var3.findField("data");
       return this.fixTypeEverywhereTyped("Map id fix", var3, var1 -> {
          Optional var4x = var1.getOptionalTyped(var4);

@@ -6,6 +6,8 @@ import com.mojang.datafixers.TypeRewriteRule;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.util.stream.Collectors;
 
 public class Class9414 extends DataFix {
@@ -16,7 +18,7 @@ public class Class9414 extends DataFix {
    public TypeRewriteRule makeRule() {
       return this.fixTypeEverywhereTyped(
          "OptionsKeyTranslationFix",
-         this.getInputSchema().getType(TypeReferences.field35380),
+         this.getInputSchema().getType(TypeReferences.OPTIONS),
          var0 -> var0.update(DSL.remainderFinder(), var0x -> var0x.getMapValues().<Dynamic<?>>map(var1 -> var0x.createMap(var1.entrySet().stream().map(var1x -> {
                      if ((var1x.getKey()).asString("").startsWith("key_")) {
                         String var4 = (var1x.getValue()).asString("");

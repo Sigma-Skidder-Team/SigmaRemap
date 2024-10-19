@@ -4,10 +4,11 @@ import com.mojang.datafixers.DSL;
 import com.mojang.datafixers.OpticFinder;
 import com.mojang.datafixers.TypeRewriteRule;
 import com.mojang.datafixers.schemas.Schema;
+import net.minecraft.util.datafix.TypeReferences;
 
 public class Class7119 extends Class7114 {
    public Class7119(Schema var1) {
-      super(var1, TypeReferences.field35377);
+      super(var1, TypeReferences.PLAYER);
    }
 
    public TypeRewriteRule makeRule() {

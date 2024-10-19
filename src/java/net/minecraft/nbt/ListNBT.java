@@ -10,6 +10,7 @@ import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 
+import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 import java.util.Arrays;
@@ -17,7 +18,49 @@ import java.util.List;
 import java.util.Objects;
 
 public class ListNBT extends CollectionNBT<INBT> {
-    public static final INBTType<ListNBT> TYPE = new Class7064();
+    public static final INBTType<ListNBT> TYPE = new INBTType<ListNBT>()
+    {
+        public ListNBT readNBT(DataInput input, int depth, NBTSizeTracker accounter) throws IOException
+        {
+            accounter.read(296L);
+
+            if (depth > 512)
+            {
+                throw new RuntimeException("Tried to read NBT tag with too high complexity, depth > 512");
+            }
+            else
+            {
+                byte b0 = input.readByte();
+                int i = input.readInt();
+
+                if (b0 == 0 && i > 0)
+                {
+                    throw new RuntimeException("Missing type on ListTag");
+                }
+                else
+                {
+                    accounter.read(32L * (long)i);
+                    INBTType<?> inbttype = NBTTypes.getGetTypeByID(b0);
+                    List<INBT> list = Lists.newArrayListWithCapacity(i);
+
+                    for (int j = 0; j < i; ++j)
+                    {
+                        list.add(inbttype.readNBT(input, depth + 1, accounter));
+                    }
+
+                    return new ListNBT(list, b0);
+                }
+            }
+        }
+        public String getName()
+        {
+            return "LIST";
+        }
+        public String getTagName()
+        {
+            return "TAG_List";
+        }
+    };
     private static final ByteSet typeSet = new ByteOpenHashSet(Arrays.asList((byte) 1, (byte) 2, (byte) 3, (byte) 4, (byte) 5, (byte) 6));
     private final List<INBT> tagList;
     private byte tagType;
@@ -323,10 +366,5 @@ public class ListNBT extends CollectionNBT<INBT> {
     public void clear() {
         this.tagList.clear();
         this.tagType = 0;
-    }
-
-    // $VF: synthetic method
-    public ListNBT(List var1, byte var2, Class7064 var3) {
-        this(var1, var2);
     }
 }

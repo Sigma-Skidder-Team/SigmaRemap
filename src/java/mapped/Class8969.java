@@ -585,7 +585,7 @@ public class Class8969 {
                ListNBT var25 = new ListNBT();
 
                for (BlockState var27 : var23) {
-                  var25.add(NBTUtil.method29287(var27));
+                  var25.add(NBTUtil.writeBlockState(var27));
                }
 
                var19.add(var25);
@@ -596,7 +596,7 @@ public class Class8969 {
             ListNBT var20 = new ListNBT();
 
             for (BlockState var24 : var5) {
-               var20.add(NBTUtil.method29287(var24));
+               var20.add(NBTUtil.writeBlockState(var24));
             }
 
             var1.put("palette", var20);
@@ -660,7 +660,7 @@ public class Class8969 {
       Class2354 var5 = new Class2354();
 
       for (int var6 = 0; var6 < var1.size(); var6++) {
-         var5.method9283(NBTUtil.method29285(var1.getCompound(var6)), var6);
+         var5.method9283(NBTUtil.readBlockState(var1.getCompound(var6)), var6);
       }
 
       ArrayList var16 = Lists.newArrayList();

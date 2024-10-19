@@ -7,6 +7,8 @@ import com.mojang.datafixers.DataFixUtils;
 import com.mojang.datafixers.TypeRewriteRule;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.util.Set;
 
 public class Class9612 extends DataFix {
@@ -35,7 +37,7 @@ public class Class9612 extends DataFix {
 
    public TypeRewriteRule makeRule() {
       return this.fixTypeEverywhereTyped(
-         "WallPropertyFix", this.getInputSchema().getType(TypeReferences.field35388), var0 -> var0.update(DSL.remainderFinder(), Class9612::method37371)
+         "WallPropertyFix", this.getInputSchema().getType(TypeReferences.BLOCK_STATE), var0 -> var0.update(DSL.remainderFinder(), Class9612::method37371)
       );
    }
 

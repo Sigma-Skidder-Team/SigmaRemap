@@ -100,12 +100,12 @@ public class StateContainer<O, S extends StateHolder<O, S>> {
    public String toString() {
       return MoreObjects.toStringHelper(this)
          .add("block", this.field43395)
-         .add("properties", this.field43396.values().stream().<String>map(Property::method30472).collect(Collectors.toList()))
+         .add("properties", this.field43396.values().stream().<String>map(Property::getName).collect(Collectors.toList()))
          .toString();
    }
 
    @Nullable
-   public Property<?> method35396(String var1) {
+   public Property<?> getProperty(String var1) {
       return (Property<?>)this.field43396.get(var1);
    }
 
@@ -125,14 +125,14 @@ public class StateContainer<O, S extends StateHolder<O, S>> {
       public Builder<O, S> add(Property<?>... var1) {
          for (Property var7 : var1) {
             this.method24738(var7);
-            this.field32411.put(var7.method30472(), var7);
+            this.field32411.put(var7.getName(), var7);
          }
 
          return this;
       }
 
       private <T extends Comparable<T>> void method24738(Property<T> var1) {
-         String var4 = var1.method30472();
+         String var4 = var1.getName();
          if (!method35404().matcher(var4).matches()) {
             throw new IllegalArgumentException(this.field32410 + " has invalidly named property: " + var4);
          } else {

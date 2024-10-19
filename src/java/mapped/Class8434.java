@@ -6,6 +6,8 @@ import com.mojang.datafixers.DataFix;
 import com.mojang.datafixers.TypeRewriteRule;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.util.Map;
 import java.util.Optional;
 
@@ -33,7 +35,7 @@ public class Class8434 extends DataFix {
 
    public TypeRewriteRule makeRule() {
       return this.fixTypeEverywhereTyped(
-         "jigsaw_rotation_fix", this.getInputSchema().getType(TypeReferences.field35388), var0 -> var0.update(DSL.remainderFinder(), Class8434::method29645)
+         "jigsaw_rotation_fix", this.getInputSchema().getType(TypeReferences.BLOCK_STATE), var0 -> var0.update(DSL.remainderFinder(), Class8434::method29645)
       );
    }
 }

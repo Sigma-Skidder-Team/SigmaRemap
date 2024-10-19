@@ -25,7 +25,7 @@ public class ServerList {
    public void loadServerList() {
       try {
          this.field34263.clear();
-         CompoundNBT var3 = CompressedStreamTools.method31770(new File(this.field34262.gameDir, "servers.dat"));
+         CompoundNBT var3 = CompressedStreamTools.read(new File(this.field34262.gameDir, "servers.dat"));
          if (var3 == null) {
             return;
          }

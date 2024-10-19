@@ -540,7 +540,7 @@ public class DebugOverlayGui extends AbstractGui {
             var11.add("");
             var11.add(TextFormatting.UNDERLINE + "Targeted Block: " + var24.getX() + ", " + var24.getY() + ", " + var24.getZ());
             var11.add(String.valueOf(Registry.BLOCK.getKey(var27.getBlock())));
-            UnmodifiableIterator var21 = var27.method23468().entrySet().iterator();
+            UnmodifiableIterator var21 = var27.getValues().entrySet().iterator();
 
             while (var21.hasNext()) {
                Entry var22 = (Entry)var21.next();
@@ -565,7 +565,7 @@ public class DebugOverlayGui extends AbstractGui {
             var11.add("");
             var11.add(TextFormatting.UNDERLINE + "Targeted Fluid: " + var25.getX() + ", " + var25.getY() + ", " + var25.getZ());
             var11.add(String.valueOf(Registry.FLUID.getKey(var28.getFluid())));
-            UnmodifiableIterator var31 = var28.method23468().entrySet().iterator();
+            UnmodifiableIterator var31 = var28.getValues().entrySet().iterator();
 
             while (var31.hasNext()) {
                Entry var34 = (Entry)var31.next();
@@ -611,7 +611,7 @@ public class DebugOverlayGui extends AbstractGui {
          var6 = TextFormatting.GREEN + var6;
       }
 
-      return var4.method30472() + ": " + var6;
+      return var4.getName() + ": " + var6;
    }
 
    private void func_238509_a_(MatrixStack var1, FrameTimer var2, int var3, int var4, boolean var5) {

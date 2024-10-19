@@ -12,6 +12,8 @@ import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.Type;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
@@ -407,8 +409,8 @@ public class Class7774 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type var3 = this.getInputSchema().getType(TypeReferences.field35387);
-      OpticFinder var4 = DSL.fieldFinder("id", DSL.named(TypeReferences.field35393.typeName(), Class3639.method12354()));
+      Type var3 = this.getInputSchema().getType(TypeReferences.ITEM_STACK);
+      OpticFinder var4 = DSL.fieldFinder("id", DSL.named(TypeReferences.ITEM_NAME.typeName(), Class3639.method12354()));
       OpticFinder var5 = var3.findField("tag");
       return this.fixTypeEverywhereTyped("ItemInstanceTheFlatteningFix", var3, var2 -> {
          Optional var5x = var2.getOptional(var4);
@@ -418,7 +420,7 @@ public class Class7774 extends DataFix {
             int var8 = var7.get("Damage").asInt(0);
             String var9 = method25754((String)((Pair)var5x.get()).getSecond(), var8);
             if (var9 != null) {
-               var6 = var2.set(var4, Pair.of(TypeReferences.field35393.typeName(), var9));
+               var6 = var2.set(var4, Pair.of(TypeReferences.ITEM_NAME.typeName(), var9));
             }
 
             if (field33353.contains(((Pair)var5x.get()).getSecond())) {

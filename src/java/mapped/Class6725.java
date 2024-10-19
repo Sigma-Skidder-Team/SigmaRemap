@@ -3,6 +3,8 @@ package mapped;
 import com.mojang.datafixers.DSL;
 import com.mojang.datafixers.Typed;
 import com.mojang.datafixers.schemas.Schema;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.util.Optional;
 
 public class Class6725 extends Class6717 {

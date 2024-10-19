@@ -59,7 +59,7 @@ public class EnderCrystalEntity extends Entity {
    @Override
    public void writeAdditional(CompoundNBT var1) {
       if (this.method4143() != null) {
-         var1.put("BeamTarget", NBTUtil.method29284(this.method4143()));
+         var1.put("BeamTarget", NBTUtil.writeBlockPos(this.method4143()));
       }
 
       var1.putBoolean("ShowBottom", this.method4145());
@@ -68,7 +68,7 @@ public class EnderCrystalEntity extends Entity {
    @Override
    public void readAdditional(CompoundNBT var1) {
       if (var1.contains("BeamTarget", 10)) {
-         this.method4142(NBTUtil.method29283(var1.getCompound("BeamTarget")));
+         this.method4142(NBTUtil.readBlockPos(var1.getCompound("BeamTarget")));
       }
 
       if (var1.contains("ShowBottom", 1)) {

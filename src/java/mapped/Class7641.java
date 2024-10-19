@@ -6,6 +6,7 @@ import com.mojang.datafixers.TypeRewriteRule;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.Type;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.util.datafix.TypeReferences;
 
 import java.util.Map;
 import java.util.Objects;
@@ -21,8 +22,8 @@ public class Class7641 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type<Pair<String, String>> var3 = DSL.named(TypeReferences.field35399.typeName(), Class3639.method12354());
-      if (Objects.equals(var3, this.getInputSchema().getType(TypeReferences.field35399))) {
+      Type<Pair<String, String>> var3 = DSL.named(TypeReferences.BIOME.typeName(), Class3639.method12354());
+      if (Objects.equals(var3, this.getInputSchema().getType(TypeReferences.BIOME))) {
          return this.fixTypeEverywhere(this.field32721, var3, var1 -> var1x -> var1x.mapSecond(var1xx -> this.field32722.getOrDefault(var1xx, var1xx)));
       } else {
          throw new IllegalStateException("Biome type is not what was expected.");

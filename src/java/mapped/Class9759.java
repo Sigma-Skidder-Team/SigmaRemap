@@ -13,6 +13,7 @@ import java.util.function.BiFunction;
 import javax.annotation.Nullable;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.JSONToNBT;
 import net.minecraft.state.Property;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
@@ -72,7 +73,7 @@ public class Class9759 {
    }
 
    public void method38358() throws CommandSyntaxException {
-      this.field45659 = new Class7671(this.field45655).method25195();
+      this.field45659 = new JSONToNBT(this.field45655).method25195();
    }
 
    public Class9759 method38359() throws CommandSyntaxException {

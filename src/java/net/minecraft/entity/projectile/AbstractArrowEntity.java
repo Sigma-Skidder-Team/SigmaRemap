@@ -426,7 +426,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
       super.writeAdditional(var1);
       var1.putShort("life", (short)this.ticksInGround);
       if (this.field5099 != null) {
-         var1.put("inBlockState", NBTUtil.method29287(this.field5099));
+         var1.put("inBlockState", NBTUtil.writeBlockState(this.field5099));
       }
 
       var1.putByte("shake", (byte)this.field5103);
@@ -444,7 +444,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
       super.readAdditional(var1);
       this.ticksInGround = var1.getShort("life");
       if (var1.contains("inBlockState", 10)) {
-         this.field5099 = NBTUtil.method29285(var1.getCompound("inBlockState"));
+         this.field5099 = NBTUtil.readBlockState(var1.getCompound("inBlockState"));
       }
 
       this.field5103 = var1.getByte("shake") & 255;

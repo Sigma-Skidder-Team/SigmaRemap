@@ -7,6 +7,8 @@ import com.mojang.datafixers.TypeRewriteRule;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.Type;
 import com.mojang.datafixers.types.templates.TaggedChoice.TaggedChoiceType;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.util.Map;
 
 public class Class8476 extends DataFix {
@@ -95,8 +97,8 @@ public class Class8476 extends DataFix {
    public TypeRewriteRule makeRule() {
       TaggedChoiceType<String> var3 = (TaggedChoiceType<String>) this.getInputSchema().findChoiceType(TypeReferences.ENTITY);
       TaggedChoiceType<String> var4 = (TaggedChoiceType<String>) this.getOutputSchema().findChoiceType(TypeReferences.ENTITY);
-      Type var5 = this.getInputSchema().getType(TypeReferences.field35387);
-      Type var6 = this.getOutputSchema().getType(TypeReferences.field35387);
+      Type var5 = this.getInputSchema().getType(TypeReferences.ITEM_STACK);
+      Type var6 = this.getOutputSchema().getType(TypeReferences.ITEM_STACK);
       return TypeRewriteRule.seq(
          this.convertUnchecked("item stack entity name hook converter", var5, var6),
          this.fixTypeEverywhere("EntityIdFix", var3, var4, var0 -> var0x -> var0x.mapFirst(var0xx -> field36336.getOrDefault(var0xx, var0xx)))

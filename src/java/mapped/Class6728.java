@@ -7,6 +7,7 @@ import com.mojang.datafixers.Typed;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.serialization.Dynamic;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.datafix.TypeReferences;
 
 import java.util.Locale;
 import java.util.Map;

@@ -5,6 +5,8 @@ import com.mojang.datafixers.DSL;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.templates.TypeTemplate;
 import com.mojang.datafixers.types.templates.Hook.HookFunction;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Supplier;
@@ -21,14 +23,14 @@ public class Class3647 extends Class3639 {
    }
 
    public static void method12377(Schema var0, Map<String, Supplier<TypeTemplate>> var1, String var2) {
-      var0.register(var1, var2, () -> DSL.optionalFields("inTile", TypeReferences.field35392.in(var0)));
+      var0.register(var1, var2, () -> DSL.optionalFields("inTile", TypeReferences.BLOCK_NAME.in(var0)));
    }
 
    public Map<String, Supplier<TypeTemplate>> registerEntities(Schema var1) {
       HashMap var4 = Maps.newHashMap();
       var1.registerSimple(var4, "minecraft:area_effect_cloud");
       method12376(var1, var4, "minecraft:armor_stand");
-      var1.register(var4, "minecraft:arrow", var1x -> DSL.optionalFields("inTile", TypeReferences.field35392.in(var1)));
+      var1.register(var4, "minecraft:arrow", var1x -> DSL.optionalFields("inTile", TypeReferences.BLOCK_NAME.in(var1)));
       method12376(var1, var4, "minecraft:bat");
       method12376(var1, var4, "minecraft:blaze");
       var1.registerSimple(var4, "minecraft:boat");
@@ -36,94 +38,94 @@ public class Class3647 extends Class3639 {
       var1.register(
          var4,
          "minecraft:chest_minecart",
-         var1x -> DSL.optionalFields("DisplayTile", TypeReferences.field35392.in(var1), "Items", DSL.list(TypeReferences.field35387.in(var1)))
+         var1x -> DSL.optionalFields("DisplayTile", TypeReferences.BLOCK_NAME.in(var1), "Items", DSL.list(TypeReferences.ITEM_STACK.in(var1)))
       );
       method12376(var1, var4, "minecraft:chicken");
-      var1.register(var4, "minecraft:commandblock_minecart", var1x -> DSL.optionalFields("DisplayTile", TypeReferences.field35392.in(var1)));
+      var1.register(var4, "minecraft:commandblock_minecart", var1x -> DSL.optionalFields("DisplayTile", TypeReferences.BLOCK_NAME.in(var1)));
       method12376(var1, var4, "minecraft:cow");
       method12376(var1, var4, "minecraft:creeper");
       var1.register(
          var4,
          "minecraft:donkey",
-         var1x -> DSL.optionalFields("Items", DSL.list(TypeReferences.field35387.in(var1)), "SaddleItem", TypeReferences.field35387.in(var1), Class9674.method37738(var1))
+         var1x -> DSL.optionalFields("Items", DSL.list(TypeReferences.ITEM_STACK.in(var1)), "SaddleItem", TypeReferences.ITEM_STACK.in(var1), Class9674.method37738(var1))
       );
       var1.registerSimple(var4, "minecraft:dragon_fireball");
       method12377(var1, var4, "minecraft:egg");
       method12376(var1, var4, "minecraft:elder_guardian");
       var1.registerSimple(var4, "minecraft:ender_crystal");
       method12376(var1, var4, "minecraft:ender_dragon");
-      var1.register(var4, "minecraft:enderman", var1x -> DSL.optionalFields("carried", TypeReferences.field35392.in(var1), Class9674.method37738(var1)));
+      var1.register(var4, "minecraft:enderman", var1x -> DSL.optionalFields("carried", TypeReferences.BLOCK_NAME.in(var1), Class9674.method37738(var1)));
       method12376(var1, var4, "minecraft:endermite");
       method12377(var1, var4, "minecraft:ender_pearl");
       var1.registerSimple(var4, "minecraft:eye_of_ender_signal");
       var1.register(
-         var4, "minecraft:falling_block", var1x -> DSL.optionalFields("Block", TypeReferences.field35392.in(var1), "TileEntityData", TypeReferences.field35386.in(var1))
+         var4, "minecraft:falling_block", var1x -> DSL.optionalFields("Block", TypeReferences.BLOCK_NAME.in(var1), "TileEntityData", TypeReferences.BLOCK_ENTITY.in(var1))
       );
       method12377(var1, var4, "minecraft:fireball");
-      var1.register(var4, "minecraft:fireworks_rocket", var1x -> DSL.optionalFields("FireworksItem", TypeReferences.field35387.in(var1)));
-      var1.register(var4, "minecraft:furnace_minecart", var1x -> DSL.optionalFields("DisplayTile", TypeReferences.field35392.in(var1)));
+      var1.register(var4, "minecraft:fireworks_rocket", var1x -> DSL.optionalFields("FireworksItem", TypeReferences.ITEM_STACK.in(var1)));
+      var1.register(var4, "minecraft:furnace_minecart", var1x -> DSL.optionalFields("DisplayTile", TypeReferences.BLOCK_NAME.in(var1)));
       method12376(var1, var4, "minecraft:ghast");
       method12376(var1, var4, "minecraft:giant");
       method12376(var1, var4, "minecraft:guardian");
       var1.register(
          var4,
          "minecraft:hopper_minecart",
-         var1x -> DSL.optionalFields("DisplayTile", TypeReferences.field35392.in(var1), "Items", DSL.list(TypeReferences.field35387.in(var1)))
+         var1x -> DSL.optionalFields("DisplayTile", TypeReferences.BLOCK_NAME.in(var1), "Items", DSL.list(TypeReferences.ITEM_STACK.in(var1)))
       );
       var1.register(
          var4,
          "minecraft:horse",
-         var1x -> DSL.optionalFields("ArmorItem", TypeReferences.field35387.in(var1), "SaddleItem", TypeReferences.field35387.in(var1), Class9674.method37738(var1))
+         var1x -> DSL.optionalFields("ArmorItem", TypeReferences.ITEM_STACK.in(var1), "SaddleItem", TypeReferences.ITEM_STACK.in(var1), Class9674.method37738(var1))
       );
       method12376(var1, var4, "minecraft:husk");
-      var1.register(var4, "minecraft:item", var1x -> DSL.optionalFields("Item", TypeReferences.field35387.in(var1)));
-      var1.register(var4, "minecraft:item_frame", var1x -> DSL.optionalFields("Item", TypeReferences.field35387.in(var1)));
+      var1.register(var4, "minecraft:item", var1x -> DSL.optionalFields("Item", TypeReferences.ITEM_STACK.in(var1)));
+      var1.register(var4, "minecraft:item_frame", var1x -> DSL.optionalFields("Item", TypeReferences.ITEM_STACK.in(var1)));
       var1.registerSimple(var4, "minecraft:leash_knot");
       method12376(var1, var4, "minecraft:magma_cube");
-      var1.register(var4, "minecraft:minecart", var1x -> DSL.optionalFields("DisplayTile", TypeReferences.field35392.in(var1)));
+      var1.register(var4, "minecraft:minecart", var1x -> DSL.optionalFields("DisplayTile", TypeReferences.BLOCK_NAME.in(var1)));
       method12376(var1, var4, "minecraft:mooshroom");
       var1.register(
          var4,
          "minecraft:mule",
-         var1x -> DSL.optionalFields("Items", DSL.list(TypeReferences.field35387.in(var1)), "SaddleItem", TypeReferences.field35387.in(var1), Class9674.method37738(var1))
+         var1x -> DSL.optionalFields("Items", DSL.list(TypeReferences.ITEM_STACK.in(var1)), "SaddleItem", TypeReferences.ITEM_STACK.in(var1), Class9674.method37738(var1))
       );
       method12376(var1, var4, "minecraft:ocelot");
       var1.registerSimple(var4, "minecraft:painting");
       var1.registerSimple(var4, "minecraft:parrot");
       method12376(var1, var4, "minecraft:pig");
       method12376(var1, var4, "minecraft:polar_bear");
-      var1.register(var4, "minecraft:potion", var1x -> DSL.optionalFields("Potion", TypeReferences.field35387.in(var1), "inTile", TypeReferences.field35392.in(var1)));
+      var1.register(var4, "minecraft:potion", var1x -> DSL.optionalFields("Potion", TypeReferences.ITEM_STACK.in(var1), "inTile", TypeReferences.BLOCK_NAME.in(var1)));
       method12376(var1, var4, "minecraft:rabbit");
       method12376(var1, var4, "minecraft:sheep");
       method12376(var1, var4, "minecraft:shulker");
       var1.registerSimple(var4, "minecraft:shulker_bullet");
       method12376(var1, var4, "minecraft:silverfish");
       method12376(var1, var4, "minecraft:skeleton");
-      var1.register(var4, "minecraft:skeleton_horse", var1x -> DSL.optionalFields("SaddleItem", TypeReferences.field35387.in(var1), Class9674.method37738(var1)));
+      var1.register(var4, "minecraft:skeleton_horse", var1x -> DSL.optionalFields("SaddleItem", TypeReferences.ITEM_STACK.in(var1), Class9674.method37738(var1)));
       method12376(var1, var4, "minecraft:slime");
       method12377(var1, var4, "minecraft:small_fireball");
       method12377(var1, var4, "minecraft:snowball");
       method12376(var1, var4, "minecraft:snowman");
       var1.register(
-         var4, "minecraft:spawner_minecart", var1x -> DSL.optionalFields("DisplayTile", TypeReferences.field35392.in(var1), TypeReferences.field35394.in(var1))
+         var4, "minecraft:spawner_minecart", var1x -> DSL.optionalFields("DisplayTile", TypeReferences.BLOCK_NAME.in(var1), TypeReferences.UNTAGGED_SPAWNER.in(var1))
       );
-      var1.register(var4, "minecraft:spectral_arrow", var1x -> DSL.optionalFields("inTile", TypeReferences.field35392.in(var1)));
+      var1.register(var4, "minecraft:spectral_arrow", var1x -> DSL.optionalFields("inTile", TypeReferences.BLOCK_NAME.in(var1)));
       method12376(var1, var4, "minecraft:spider");
       method12376(var1, var4, "minecraft:squid");
       method12376(var1, var4, "minecraft:stray");
       var1.registerSimple(var4, "minecraft:tnt");
-      var1.register(var4, "minecraft:tnt_minecart", var1x -> DSL.optionalFields("DisplayTile", TypeReferences.field35392.in(var1)));
+      var1.register(var4, "minecraft:tnt_minecart", var1x -> DSL.optionalFields("DisplayTile", TypeReferences.BLOCK_NAME.in(var1)));
       var1.register(
          var4,
          "minecraft:villager",
          var1x -> DSL.optionalFields(
                "Inventory",
-               DSL.list(TypeReferences.field35387.in(var1)),
+               DSL.list(TypeReferences.ITEM_STACK.in(var1)),
                "Offers",
                DSL.optionalFields(
                   "Recipes",
                   DSL.list(
-                     DSL.optionalFields("buy", TypeReferences.field35387.in(var1), "buyB", TypeReferences.field35387.in(var1), "sell", TypeReferences.field35387.in(var1))
+                     DSL.optionalFields("buy", TypeReferences.ITEM_STACK.in(var1), "buyB", TypeReferences.ITEM_STACK.in(var1), "sell", TypeReferences.ITEM_STACK.in(var1))
                   )
                ),
                Class9674.method37738(var1)
@@ -138,7 +140,7 @@ public class Class3647 extends Class3639 {
       method12377(var1, var4, "minecraft:xp_bottle");
       var1.registerSimple(var4, "minecraft:xp_orb");
       method12376(var1, var4, "minecraft:zombie");
-      var1.register(var4, "minecraft:zombie_horse", var1x -> DSL.optionalFields("SaddleItem", TypeReferences.field35387.in(var1), Class9674.method37738(var1)));
+      var1.register(var4, "minecraft:zombie_horse", var1x -> DSL.optionalFields("SaddleItem", TypeReferences.ITEM_STACK.in(var1), Class9674.method37738(var1)));
       method12376(var1, var4, "minecraft:zombie_pigman");
       method12376(var1, var4, "minecraft:zombie_villager");
       var1.registerSimple(var4, "minecraft:evocation_fangs");
@@ -149,11 +151,11 @@ public class Class3647 extends Class3639 {
          "minecraft:llama",
          var1x -> DSL.optionalFields(
                "Items",
-               DSL.list(TypeReferences.field35387.in(var1)),
+               DSL.list(TypeReferences.ITEM_STACK.in(var1)),
                "SaddleItem",
-               TypeReferences.field35387.in(var1),
+               TypeReferences.ITEM_STACK.in(var1),
                "DecorItem",
-               TypeReferences.field35387.in(var1),
+               TypeReferences.ITEM_STACK.in(var1),
                Class9674.method37738(var1)
             )
       );
@@ -168,21 +170,21 @@ public class Class3647 extends Class3639 {
       var1.registerType(true, TypeReferences.ENTITY, () -> DSL.taggedChoiceLazy("id", method12354(), var2));
       var1.registerType(
          true,
-         TypeReferences.field35387,
+         TypeReferences.ITEM_STACK,
          () -> DSL.hook(
                DSL.optionalFields(
                   "id",
-                  TypeReferences.field35393.in(var1),
+                  TypeReferences.ITEM_NAME.in(var1),
                   "tag",
                   DSL.optionalFields(
                      "EntityTag",
-                     TypeReferences.field35390.in(var1),
+                     TypeReferences.ENTITY_TREE.in(var1),
                      "BlockEntityTag",
-                     TypeReferences.field35386.in(var1),
+                     TypeReferences.BLOCK_ENTITY.in(var1),
                      "CanDestroy",
-                     DSL.list(TypeReferences.field35392.in(var1)),
+                     DSL.list(TypeReferences.BLOCK_NAME.in(var1)),
                      "CanPlaceOn",
-                     DSL.list(TypeReferences.field35392.in(var1))
+                     DSL.list(TypeReferences.BLOCK_NAME.in(var1))
                   )
                ),
                field19682,

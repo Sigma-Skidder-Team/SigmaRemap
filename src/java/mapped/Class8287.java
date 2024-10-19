@@ -26,6 +26,7 @@ import net.minecraft.nbt.NBTUtil;
 import net.minecraft.network.play.server.SStatisticsPacket;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SharedConstants;
+import net.minecraft.util.datafix.DefaultTypeReferences;
 import net.minecraft.util.registry.Registry;
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
@@ -86,7 +87,7 @@ public class Class8287 extends Class8286 {
                   var8.putInt("DataVersion", 1343);
                }
 
-               var8 = NBTUtil.method29289(var1, Class2108.field13754, var8, var8.getInt("DataVersion"));
+               var8 = NBTUtil.update(var1, DefaultTypeReferences.STATS, var8, var8.getInt("DataVersion"));
                if (var8.contains("stats", 10)) {
                   CompoundNBT var9 = var8.getCompound("stats");
 

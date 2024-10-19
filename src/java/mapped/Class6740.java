@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.datafixers.DSL;
 import com.mojang.datafixers.Typed;
 import com.mojang.datafixers.schemas.Schema;
+import net.minecraft.util.datafix.TypeReferences;
 
 public class Class6740 extends Class6717 {
    public Class6740(Schema var1, boolean var2) {

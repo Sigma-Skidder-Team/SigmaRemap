@@ -11,6 +11,7 @@ import com.mojang.datafixers.types.Type;
 import com.mojang.datafixers.types.templates.List.ListType;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.util.datafix.TypeReferences;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.List;
@@ -22,18 +23,18 @@ public class Class7988 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type var3 = this.getInputSchema().getType(TypeReferences.field35378);
+      Type var3 = this.getInputSchema().getType(TypeReferences.CHUNK);
       Type var4 = var3.findFieldType("Level");
       OpticFinder var5 = DSL.fieldFinder("Level", var4);
       OpticFinder var6 = var5.type().findField("Sections");
       Type var7 = ((ListType)var6.type()).getElement();
       OpticFinder var8 = DSL.typeFinder(var7);
-      Type var9 = DSL.named(TypeReferences.field35388.typeName(), DSL.remainderType());
+      Type var9 = DSL.named(TypeReferences.BLOCK_STATE.typeName(), DSL.remainderType());
       OpticFinder var10 = DSL.fieldFinder("Palette", DSL.list(var9));
       return this.fixTypeEverywhereTyped(
          "BitStorageAlignFix",
          var3,
-         this.getOutputSchema().getType(TypeReferences.field35378),
+         this.getOutputSchema().getType(TypeReferences.CHUNK),
          var5x -> var5x.updateTyped(var5, var4xx -> this.method27144(method27145(var6, var8, var10, var4xx)))
       );
    }

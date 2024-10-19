@@ -5,6 +5,8 @@ import com.mojang.datafixers.DataFix;
 import com.mojang.datafixers.TypeRewriteRule;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.util.function.Function;
 
 public class Class8823 extends DataFix {
@@ -20,7 +22,7 @@ public class Class8823 extends DataFix {
    public TypeRewriteRule makeRule() {
       return this.fixTypeEverywhereTyped(
          this.field39785,
-         this.getInputSchema().getType(TypeReferences.field35384),
+         this.getInputSchema().getType(TypeReferences.ADVANCEMENTS),
          var1 -> var1.update(DSL.remainderFinder(), var1x -> var1x.updateMapValues(var2 -> {
                   String var5 = ((Dynamic)var2.getFirst()).asString("");
                   return var2.mapFirst(var3 -> var1x.createString(this.field39786.apply(var5)));

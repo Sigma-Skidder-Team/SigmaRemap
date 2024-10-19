@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.nbt;
 
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
@@ -9,7 +9,8 @@ import com.mojang.serialization.DataResult;
 import com.mojang.serialization.DynamicOps;
 import com.mojang.serialization.MapLike;
 import com.mojang.serialization.RecordBuilder;
-import net.minecraft.nbt.*;
+import mapped.Class4675;
+import mapped.Class8082;
 
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
@@ -56,7 +57,7 @@ public class NBTDynamicOps implements DynamicOps<INBT> {
          case 11:
             return (U)var1.createIntList(Arrays.stream(((IntArrayNBT)var2).getIntArray()));
          case 12:
-            return (U)var1.createLongList(Arrays.stream(((LongArrayNBT)var2).getLongArray()));
+            return (U)var1.createLongList(Arrays.stream(((LongArrayNBT)var2).getAsLongArray()));
          default:
             throw new IllegalStateException("Unknown tag type: " + var2);
       }
@@ -265,7 +266,7 @@ public class NBTDynamicOps implements DynamicOps<INBT> {
    }
 
    public DataResult<LongStream> getLongStream(INBT var1) {
-      return !(var1 instanceof LongArrayNBT) ?  DynamicOps.super.getLongStream(var1) : DataResult.success(Arrays.stream(((LongArrayNBT)var1).getLongArray()));
+      return !(var1 instanceof LongArrayNBT) ?  DynamicOps.super.getLongStream(var1) : DataResult.success(Arrays.stream(((LongArrayNBT)var1).getAsLongArray()));
    }
 
    public INBT createLongList(LongStream var1) {

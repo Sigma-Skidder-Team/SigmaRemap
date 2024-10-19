@@ -21,6 +21,7 @@ import javax.annotation.Nullable;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.JSONToNBT;
 import net.minecraft.state.Property;
 import net.minecraft.state.StateContainer;
 import net.minecraft.util.ResourceLocation;
@@ -128,8 +129,8 @@ public class Class8268 {
       String var5 = var1.getRemaining().toLowerCase(Locale.ROOT);
 
       for (Property var7 : this.field35549.method23461()) {
-         if (!this.field35545.containsKey(var7) && var7.method30472().startsWith(var5)) {
-            var1.suggest(var7.method30472() + '=');
+         if (!this.field35545.containsKey(var7) && var7.getName().startsWith(var5)) {
+            var1.suggest(var7.getName() + '=');
          }
       }
 
@@ -143,8 +144,8 @@ public class Class8268 {
          if (var6 != null) {
             for (Block var8 : var6.getAllElements()) {
                for (Property var10 : var8.getStateContainer().method35395()) {
-                  if (!this.field35546.containsKey(var10.method30472()) && var10.method30472().startsWith(var5)) {
-                     var1.suggest(var10.method30472() + '=');
+                  if (!this.field35546.containsKey(var10.getName()) && var10.getName().startsWith(var5)) {
+                     var1.suggest(var10.getName() + '=');
                   }
                }
             }
@@ -219,14 +220,14 @@ public class Class8268 {
          ITag<Block> var7 = var2.get(this.field35551);
          if (var7 != null) {
             for (Block var9 : var7.getAllElements()) {
-               Property var10 = var9.getStateContainer().method35396(var3);
+               Property var10 = var9.getStateContainer().getProperty(var3);
                if (var10 != null) {
                   method28849(var1, var10);
                }
 
                if (!var6) {
                   for (Property var12 : var9.getStateContainer().method35395()) {
-                     if (!this.field35546.containsKey(var12.method30472())) {
+                     if (!this.field35546.containsKey(var12.getName())) {
                         var6 = true;
                         break;
                      }
@@ -330,7 +331,7 @@ public class Class8268 {
          this.field35543.skipWhitespace();
          int var3 = this.field35543.getCursor();
          String var4 = this.field35543.readString();
-         Property var5 = this.field35548.method35396(var4);
+         Property var5 = this.field35548.getProperty(var4);
          if (var5 == null) {
             this.field35543.setCursor(var3);
             throw field35537.createWithContext(this.field35543, this.field35547.toString(), var4);
@@ -428,14 +429,14 @@ public class Class8268 {
    }
 
    public void method28859() throws CommandSyntaxException {
-      this.field35550 = new Class7671(this.field35543).method25195();
+      this.field35550 = new JSONToNBT(this.field35543).method25195();
    }
 
    private <T extends Comparable<T>> void method28860(Property<T> var1, String var2, int var3) throws CommandSyntaxException {
-      Optional<T> var6 = var1.method30476(var2);
+      Optional<T> var6 = var1.parseValue(var2);
       if (!var6.isPresent()) {
          this.field35543.setCursor(var3);
-         throw field35539.createWithContext(this.field35543, this.field35547.toString(), var1.method30472(), var2);
+         throw field35539.createWithContext(this.field35543, this.field35547.toString(), var1.getName(), var2);
       } else {
          this.field35549 = this.field35549.with(var1, var6.get());
          this.field35545.put(var1, var6.get());
@@ -448,7 +449,7 @@ public class Class8268 {
          var3.append('[');
          boolean var4 = false;
 
-         for (UnmodifiableIterator var5 = var0.method23468().entrySet().iterator(); var5.hasNext(); var4 = true) {
+         for (UnmodifiableIterator var5 = var0.getValues().entrySet().iterator(); var5.hasNext(); var4 = true) {
             Entry var6 = (Entry)var5.next();
             if (var4) {
                var3.append(',');
@@ -464,7 +465,7 @@ public class Class8268 {
    }
 
    private static <T extends Comparable<T>> void method28861(StringBuilder var0, Property<T> var1, Comparable<?> var2) {
-      var0.append(var1.method30472());
+      var0.append(var1.getName());
       var0.append('=');
       var0.append(var1.getName((T)var2));
    }

@@ -1,9 +1,5 @@
 package net.minecraft.nbt;
 
-import mapped.*;
-import net.minecraft.crash.CrashReport;
-import net.minecraft.crash.CrashReportCategory;
-
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.DataInput;
@@ -20,102 +16,155 @@ import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 import javax.annotation.Nullable;
 
-public class CompressedStreamTools {
-   public static CompoundNBT readCompressed(File var0) throws IOException {
-      CompoundNBT var5;
-      try (FileInputStream var3 = new FileInputStream(var0)) {
-         var5 = readCompressed(var3);
+import net.minecraft.crash.ReportedException;
+import net.minecraft.crash.CrashReport;
+import net.minecraft.crash.CrashReportCategory;
+
+public class CompressedStreamTools
+{
+   public static CompoundNBT readCompressed(File file) throws IOException
+   {
+      CompoundNBT compoundnbt;
+
+      try (InputStream inputstream = new FileInputStream(file))
+      {
+         compoundnbt = readCompressed(inputstream);
       }
 
-      return var5;
+      return compoundnbt;
    }
 
-   public static CompoundNBT readCompressed(InputStream var0) throws IOException {
-      CompoundNBT var5;
-      try (DataInputStream var3 = new DataInputStream(new BufferedInputStream(new GZIPInputStream(var0)))) {
-         var5 = read(var3, NBTSizeTracker.INFINITE);
+   /**
+    * Load the gzipped compound from the inputstream.
+    */
+   public static CompoundNBT readCompressed(InputStream is) throws IOException
+   {
+      CompoundNBT compoundnbt;
+
+      try (DataInputStream datainputstream = new DataInputStream(new BufferedInputStream(new GZIPInputStream(is))))
+      {
+         compoundnbt = read(datainputstream, NBTSizeTracker.INFINITE);
       }
 
-      return var5;
+      return compoundnbt;
    }
 
-   public static void writeCompressed(CompoundNBT var0, File var1) throws IOException {
-      try (FileOutputStream var4 = new FileOutputStream(var1)) {
-         writeCompressed(var0, var4);
+   public static void writeCompressed(CompoundNBT compound, File file) throws IOException
+   {
+      try (OutputStream outputstream = new FileOutputStream(file))
+      {
+         writeCompressed(compound, outputstream);
       }
    }
 
-   public static void writeCompressed(CompoundNBT var0, OutputStream var1) throws IOException {
-      try (DataOutputStream var4 = new DataOutputStream(new BufferedOutputStream(new GZIPOutputStream(var1)))) {
-         write(var0, var4);
+   /**
+    * Write the compound, gzipped, to the outputstream.
+    */
+   public static void writeCompressed(CompoundNBT compound, OutputStream outputStream) throws IOException
+   {
+      try (DataOutputStream dataoutputstream = new DataOutputStream(new BufferedOutputStream(new GZIPOutputStream(outputStream))))
+      {
+         write(compound, dataoutputstream);
       }
    }
 
-   public static void write(CompoundNBT var0, File var1) throws IOException {
+   public static void write(CompoundNBT compound, File fileIn) throws IOException
+   {
       try (
-         FileOutputStream var4 = new FileOutputStream(var1);
-         DataOutputStream var6 = new DataOutputStream(var4);
-      ) {
-         write(var0, var6);
+              FileOutputStream fileoutputstream = new FileOutputStream(fileIn);
+              DataOutputStream dataoutputstream = new DataOutputStream(fileoutputstream);
+      )
+      {
+         write(compound, dataoutputstream);
       }
    }
 
    @Nullable
-   public static CompoundNBT method31770(File var0) throws IOException {
-      if (!var0.exists()) {
+   public static CompoundNBT read(File fileIn) throws IOException
+   {
+      if (!fileIn.exists())
+      {
          return null;
-      } else {
-         CompoundNBT var7;
+      }
+      else
+      {
+         CompoundNBT compoundnbt;
+
          try (
-            FileInputStream var3 = new FileInputStream(var0);
-            DataInputStream var5 = new DataInputStream(var3);
-         ) {
-            var7 = read(var5, NBTSizeTracker.INFINITE);
+                 FileInputStream fileinputstream = new FileInputStream(fileIn);
+                 DataInputStream datainputstream = new DataInputStream(fileinputstream);
+         )
+         {
+            compoundnbt = read(datainputstream, NBTSizeTracker.INFINITE);
          }
 
-         return var7;
+         return compoundnbt;
       }
    }
 
-   public static CompoundNBT read(DataInput var0) throws IOException {
-      return read(var0, NBTSizeTracker.INFINITE);
+   /**
+    * Reads from a CompressedStream.
+    */
+   public static CompoundNBT read(DataInput inputStream) throws IOException
+   {
+      return read(inputStream, NBTSizeTracker.INFINITE);
    }
 
-   public static CompoundNBT read(DataInput var0, NBTSizeTracker var1) throws IOException {
-      INBT var4 = read(var0, 0, var1);
-      if (!(var4 instanceof CompoundNBT)) {
+   /**
+    * Reads the given DataInput, constructs, and returns an NBTTagCompound with the data from the DataInput
+    */
+   public static CompoundNBT read(DataInput input, NBTSizeTracker accounter) throws IOException
+   {
+      INBT inbt = read(input, 0, accounter);
+
+      if (inbt instanceof CompoundNBT)
+      {
+         return (CompoundNBT)inbt;
+      }
+      else
+      {
          throw new IOException("Root tag must be a named compound tag");
-      } else {
-         return (CompoundNBT)var4;
       }
    }
 
-   public static void write(CompoundNBT var0, DataOutput var1) throws IOException {
-      writeTag(var0, var1);
+   public static void write(CompoundNBT compound, DataOutput output) throws IOException
+   {
+      writeTag(compound, output);
    }
 
-   private static void writeTag(INBT var0, DataOutput var1) throws IOException {
-      var1.writeByte(var0.getID());
-      if (var0.getID() != 0) {
-         var1.writeUTF("");
-         var0.write(var1);
+   private static void writeTag(INBT tag, DataOutput output) throws IOException
+   {
+      output.writeByte(tag.getID());
+
+      if (tag.getID() != 0)
+      {
+         output.writeUTF("");
+         tag.write(output);
       }
    }
 
-   private static INBT read(DataInput var0, int var1, NBTSizeTracker var2) throws IOException {
-      byte var5 = var0.readByte();
-      if (var5 == 0) {
+   private static INBT read(DataInput input, int depth, NBTSizeTracker accounter) throws IOException
+   {
+      byte b0 = input.readByte();
+
+      if (b0 == 0)
+      {
          return EndNBT.INSTANCE;
-      } else {
-         var0.readUTF();
+      }
+      else
+      {
+         input.readUTF();
 
-         try {
-            return NBTTypes.getGetTypeByID(var5).readNBT(var0, var1, var2);
-         } catch (IOException var9) {
-            CrashReport var7 = CrashReport.makeCrashReport(var9, "Loading NBT data");
-            CrashReportCategory var8 = var7.makeCategory("NBT Tag");
-            var8.addDetail("Tag type", var5);
-            throw new ReportedException(var7);
+         try
+         {
+            return NBTTypes.getGetTypeByID(b0).readNBT(input, depth, accounter);
+         }
+         catch (IOException ioexception)
+         {
+            CrashReport crashreport = CrashReport.makeCrashReport(ioexception, "Loading NBT data");
+            CrashReportCategory crashreportcategory = crashreport.makeCategory("NBT Tag");
+            crashreportcategory.addDetail("Tag type", b0);
+            throw new ReportedException(crashreport);
          }
       }
    }

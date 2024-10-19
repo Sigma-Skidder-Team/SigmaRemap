@@ -7,6 +7,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.CompressedStreamTools;
 import net.minecraft.nbt.NBTUtil;
 import net.minecraft.util.SharedConstants;
+import net.minecraft.util.datafix.DefaultTypeReferences;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -28,7 +29,7 @@ public class CreativeSettings {
 
    private void method27627() {
       try {
-         CompoundNBT var3 = CompressedStreamTools.method31770(this.field34554);
+         CompoundNBT var3 = CompressedStreamTools.read(this.field34554);
          if (var3 == null) {
             return;
          }
@@ -37,7 +38,7 @@ public class CreativeSettings {
             var3.putInt("DataVersion", 1343);
          }
 
-         var3 = NBTUtil.method29289(this.field34555, Class2108.field13751, var3, var3.getInt("DataVersion"));
+         var3 = NBTUtil.update(this.field34555, DefaultTypeReferences.HOTBAR, var3, var3.getInt("DataVersion"));
 
          for (int var4 = 0; var4 < 9; var4++) {
             this.field34556[var4].method9285(var3.getList(String.valueOf(var4), 10));

@@ -10,6 +10,7 @@ import com.mojang.datafixers.Typed;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.Type;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.util.datafix.TypeReferences;
 
 import java.util.Map;
 import java.util.Objects;
@@ -69,8 +70,8 @@ public class Class8838 extends DataFix {
     }
 
     public TypeRewriteRule makeRule() {
-        Type var3 = this.getInputSchema().getType(TypeReferences.field35387);
-        OpticFinder var4 = DSL.fieldFinder("id", DSL.named(TypeReferences.field35393.typeName(), Class3639.method12354()));
+        Type var3 = this.getInputSchema().getType(TypeReferences.ITEM_STACK);
+        OpticFinder var4 = DSL.fieldFinder("id", DSL.named(TypeReferences.ITEM_NAME.typeName(), Class3639.method12354()));
         OpticFinder var5 = DSL.fieldFinder("id", Class3639.method12354());
         OpticFinder var6 = var3.findField("tag");
         OpticFinder var7 = var6.type().findField("EntityTag");
@@ -81,7 +82,7 @@ public class Class8838 extends DataFix {
                 Typed var9 = var8.getOrCreateTyped(var7);
                 Optional var10 = var9.getOptional(var5);
                 if (var10.isPresent()) {
-                    return var4x.set(var4, Pair.of(TypeReferences.field35393.typeName(), field39930.getOrDefault(var10.get(), "minecraft:pig_spawn_egg")));
+                    return var4x.set(var4, Pair.of(TypeReferences.ITEM_NAME.typeName(), field39930.getOrDefault(var10.get(), "minecraft:pig_spawn_egg")));
                 }
             }
 

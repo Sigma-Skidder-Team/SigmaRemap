@@ -6,6 +6,8 @@ import com.mojang.datafixers.TypeRewriteRule;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.OptionalDynamic;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.util.List;
 
 public class Class8784 extends DataFix {

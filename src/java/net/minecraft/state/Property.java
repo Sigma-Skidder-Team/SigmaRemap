@@ -14,7 +14,7 @@ public abstract class Property<T extends Comparable<T>> {
    private Integer field38438;
    private final Codec<T> field38439 = Codec.STRING
       .comapFlatMap(
-         var1x -> this.method30476(var1x)
+         var1x -> this.parseValue(var1x)
                .<DataResult>map(DataResult::success)
                .orElseGet(() -> DataResult.error("Unable to read property: " + this + " with value: " + var1x)),
          this::getName
@@ -42,7 +42,7 @@ public abstract class Property<T extends Comparable<T>> {
       return this.field38440;
    }
 
-   public String method30472() {
+   public String getName() {
       return this.field38437;
    }
 
@@ -54,7 +54,7 @@ public abstract class Property<T extends Comparable<T>> {
 
    public abstract String getName(T var1);
 
-   public abstract Optional<T> method30476(String var1);
+   public abstract Optional<T> parseValue(String var1);
 
    @Override
    public String toString() {
@@ -111,7 +111,7 @@ public abstract class Property<T extends Comparable<T>> {
 
       @Override
       public String toString() {
-         return this.field31190.method30472() + "=" + this.field31190.getName(this.field31191);
+         return this.field31190.getName() + "=" + this.field31190.getName(this.field31191);
       }
 
       @Override

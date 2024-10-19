@@ -5,6 +5,7 @@ import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.JSONToNBT;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -24,7 +25,7 @@ public class Class9770 implements ArgumentType<CompoundNBT> {
    }
 
    public CompoundNBT parse(StringReader var1) throws CommandSyntaxException {
-      return new Class7671(var1).method25195();
+      return new JSONToNBT(var1).method25195();
    }
 
    public Collection<String> getExamples() {

@@ -6,6 +6,7 @@ import com.mojang.datafixers.TypeRewriteRule;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.Type;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.util.datafix.TypeReferences;
 
 public class Class6177 extends DataFix {
    public Class6177(Schema var1, boolean var2) {
@@ -13,7 +14,7 @@ public class Class6177 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type var3 = this.getInputSchema().getType(TypeReferences.field35395);
+      Type var3 = this.getInputSchema().getType(TypeReferences.STRUCTURE_FEATURE);
       return this.fixTypeEverywhereTyped("Structure Reference Fix", var3, var0 -> var0.update(DSL.remainderFinder(), Class6177::method19085));
    }
 

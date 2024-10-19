@@ -30,7 +30,7 @@ public class Class5148 implements Class5146 {
 
    public Class5148 method15939(Class3629 var1) {
       var1.method12298().forEach(var1x -> {
-         if (this.field23372.getStateContainer().method35396(var1x.method30472()) == var1x) {
+         if (this.field23372.getStateContainer().getProperty(var1x.getName()) == var1x) {
             if (!this.field23374.add(var1x)) {
                throw new IllegalStateException("Values of property " + var1x + " already defined for block " + this.field23372);
             }

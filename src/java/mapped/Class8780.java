@@ -5,6 +5,7 @@ import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.nbt.INBT;
+import net.minecraft.nbt.JSONToNBT;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -24,7 +25,7 @@ public class Class8780 implements ArgumentType<INBT> {
    }
 
    public INBT parse(StringReader var1) throws CommandSyntaxException {
-      return new Class7671(var1).method25193();
+      return new JSONToNBT(var1).method25193();
    }
 
    public Collection<String> getExamples() {

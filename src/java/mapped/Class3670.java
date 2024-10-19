@@ -3,6 +3,8 @@ package mapped;
 import com.mojang.datafixers.DSL;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.templates.TypeTemplate;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.util.Map;
 import java.util.function.Supplier;
 
@@ -18,7 +20,7 @@ public class Class3670 extends Class3639 {
    public Map<String, Supplier<TypeTemplate>> registerEntities(Schema var1) {
       Map var4 = super.registerEntities(var1);
       method12484(var1, var4, "minecraft:panda");
-      var1.register(var4, "minecraft:pillager", var1x -> DSL.optionalFields("Inventory", DSL.list(TypeReferences.field35387.in(var1)), Class9674.method37738(var1)));
+      var1.register(var4, "minecraft:pillager", var1x -> DSL.optionalFields("Inventory", DSL.list(TypeReferences.ITEM_STACK.in(var1)), Class9674.method37738(var1)));
       return var4;
    }
 }

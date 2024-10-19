@@ -51,7 +51,7 @@ public class BlockModelShapes {
    }
 
    public static Class1997 method38157(ResourceLocation var0, BlockState var1) {
-      return new Class1997(var0, method38158(var1.method23468()));
+      return new Class1997(var0, method38158(var1.getValues()));
    }
 
    public static String method38158(Map<Property<?>, Comparable<?>> var0) {
@@ -63,7 +63,7 @@ public class BlockModelShapes {
          }
 
          Property var6 = (Property)var5.getKey();
-         var3.append(var6.method30472());
+         var3.append(var6.getName());
          var3.append('=');
          var3.append(method38159(var6, (Comparable<?>)var5.getValue()));
       }

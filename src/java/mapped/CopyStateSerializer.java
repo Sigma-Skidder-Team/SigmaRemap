@@ -17,7 +17,7 @@ public class CopyStateSerializer extends LootFunctionSerializer<Class129> {
       super.serialize(var1, var2, var3);
       var1.addProperty("block", Registry.BLOCK.getKey(Class129.method376(var2)).toString());
       JsonArray var6 = new JsonArray();
-      Class129.method377(var2).forEach(var1x -> var6.add(var1x.method30472()));
+      Class129.method377(var2).forEach(var1x -> var6.add(var1x.getName()));
       var1.add("properties", var6);
    }
 
@@ -28,7 +28,7 @@ public class CopyStateSerializer extends LootFunctionSerializer<Class129> {
       HashSet var9 = Sets.newHashSet();
       JsonArray var10 = JSONUtils.method32786(var1, "properties", (JsonArray)null);
       if (var10 != null) {
-         var10.forEach(var2x -> var9.add(var8.method35396(JSONUtils.method32762(var2x, "property"))));
+         var10.forEach(var2x -> var9.add(var8.getProperty(JSONUtils.method32762(var2x, "property"))));
       }
 
       return new Class129(var3, var7, var9);

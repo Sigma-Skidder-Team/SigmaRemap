@@ -9,6 +9,8 @@ import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.Type;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.util.Objects;
 import java.util.Optional;
 
@@ -37,8 +39,8 @@ public class Class9555 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type<?> var3 = this.getInputSchema().getType(TypeReferences.field35387);
-      OpticFinder<Pair<String, String>> var4 = DSL.fieldFinder("id", DSL.named(TypeReferences.field35393.typeName(), Class3639.method12354()));
+      Type<?> var3 = this.getInputSchema().getType(TypeReferences.ITEM_STACK);
+      OpticFinder<Pair<String, String>> var4 = DSL.fieldFinder("id", DSL.named(TypeReferences.ITEM_NAME.typeName(), Class3639.method12354()));
       OpticFinder<?>  var5 = var3.findField("tag");
       OpticFinder<?>  var6 = var5.type().findField("BlockEntityTag");
       return this.fixTypeEverywhereTyped(
@@ -57,7 +59,7 @@ public class Class9555 extends DataFix {
                      int var12 = var11.get("Color").asInt(0);
                      var11.remove("Color");
                      return var3x.set(var5, var8.set(var6, var10.set(DSL.remainderFinder(), var11)))
-                        .set(var4, Pair.of(TypeReferences.field35393.typeName(), field44509[var12 % 16]));
+                        .set(var4, Pair.of(TypeReferences.ITEM_NAME.typeName(), field44509[var12 % 16]));
                   }
                }
             }

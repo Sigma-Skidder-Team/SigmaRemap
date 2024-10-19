@@ -4,10 +4,11 @@ import com.mojang.datafixers.DSL;
 import com.mojang.datafixers.TypeRewriteRule;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.util.datafix.TypeReferences;
 
 public class Class7117 extends Class7114 {
    public Class7117(Schema var1) {
-      super(var1, TypeReferences.field35376);
+      super(var1, TypeReferences.LEVEL);
    }
 
    public TypeRewriteRule makeRule() {

@@ -238,7 +238,7 @@ public class ModelBakery {
          Iterator<String> var7 = field40526.split(var6).iterator();
          if (var7.hasNext()) {
             String var8 = var7.next();
-            Property<?> var9 = var0.method35396(var8);
+            Property<?> var9 = var0.getProperty(var8);
             if (var9 != null && var7.hasNext()) {
                String var10 = var7.next();
                Comparable var11 = method32840(var9, var10);
@@ -271,7 +271,7 @@ public class ModelBakery {
 
    @Nullable
    public static <T extends Comparable<T>> T method32840(Property<T> var0, String var1) {
-      return (T)var0.method30476(var1).orElse(null);
+      return (T)var0.parseValue(var1).orElse(null);
    }
 
    public Class7495 method32841(ResourceLocation var1) {

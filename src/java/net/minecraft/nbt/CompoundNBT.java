@@ -20,9 +20,9 @@ import java.util.UUID;
 import java.util.regex.Pattern;
 import javax.annotation.Nullable;
 
-import mapped.*;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
+import net.minecraft.crash.ReportedException;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -475,7 +475,7 @@ public class CompoundNBT implements INBT
       {
          if (this.contains(key, 12))
          {
-            return ((LongArrayNBT)this.tagMap.get(key)).getLongArray();
+            return ((LongArrayNBT)this.tagMap.get(key)).getAsLongArray();
          }
       }
       catch (ClassCastException classcastexception)

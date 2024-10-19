@@ -106,7 +106,7 @@ public class Class3292 extends Item {
          StateContainer var10 = var4.getBlock().getStateContainer();
 
          for (String var12 : var9.keySet()) {
-            Property var13 = var10.method35396(var12);
+            Property var13 = var10.getProperty(var12);
             if (var13 != null) {
                String var14 = var9.get(var12).getString();
                var7 = method11840(var7, var13, var14);
@@ -122,7 +122,7 @@ public class Class3292 extends Item {
    }
 
    private static <T extends Comparable<T>> BlockState method11840(BlockState var0, Property<T> var1, String var2) {
-      return var1.method30476(var2).<BlockState>map(var2x -> var0.with(var1, var2x)).orElse(var0);
+      return var1.parseValue(var2).<BlockState>map(var2x -> var0.with(var1, var2x)).orElse(var0);
    }
 
    public boolean method11841(BlockItemUseContext var1, BlockState var2) {

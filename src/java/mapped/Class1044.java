@@ -115,7 +115,7 @@ public class Class1044 extends Class1043 {
       super.writeAdditional(var1);
       var1.putInt("DespawnDelay", this.field5799);
       if (this.field5798 != null) {
-         var1.put("WanderTarget", NBTUtil.method29284(this.field5798));
+         var1.put("WanderTarget", NBTUtil.writeBlockPos(this.field5798));
       }
    }
 
@@ -127,7 +127,7 @@ public class Class1044 extends Class1043 {
       }
 
       if (var1.contains("WanderTarget")) {
-         this.field5798 = NBTUtil.method29283(var1.getCompound("WanderTarget"));
+         this.field5798 = NBTUtil.readBlockPos(var1.getCompound("WanderTarget"));
       }
 
       this.method4770(Math.max(0, this.method4767()));

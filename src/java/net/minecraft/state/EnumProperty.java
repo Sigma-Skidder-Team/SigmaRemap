@@ -37,7 +37,7 @@ public class EnumProperty<T extends Enum<T> & IStringSerializable> extends Prope
    }
 
    @Override
-   public Optional<T> method30476(String var1) {
+   public Optional<T> parseValue(String var1) {
       return Optional.<T>ofNullable(this.field38443.get(var1));
    }
 

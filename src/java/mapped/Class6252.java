@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.NBTUtil;
+import net.minecraft.util.datafix.DefaultTypeReferences;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -28,7 +29,7 @@ public class Class6252 implements Class6253 {
          field27741.warn("SNBT Too old, do not forget to update: " + var5 + " < " + 2532 + ": " + var0);
       }
 
-      CompoundNBT var7 = NBTUtil.method29289(DataFixesManager.getDataFixer(), Class2108.field13753, var1, var5);
+      CompoundNBT var7 = NBTUtil.update(DataFixesManager.getDataFixer(), DefaultTypeReferences.STRUCTURE, var1, var5);
       var4.method32913(var7);
       return var4.method32912(new CompoundNBT());
    }

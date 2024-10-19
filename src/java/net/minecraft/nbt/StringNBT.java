@@ -1,104 +1,150 @@
 package net.minecraft.nbt;
 
-import mapped.Class7062;
-import net.minecraft.util.text.IFormattableTextComponent;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
-
+import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 import java.util.Objects;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
 
-public class StringNBT implements INBT {
-   public static final INBTType<StringNBT> field84 = new Class7062();
-   private static final StringNBT field85 = new StringNBT("");
-   private final String field86;
+public class StringNBT implements INBT
+{
+   public static final INBTType<StringNBT> TYPE = new INBTType<StringNBT>()
+   {
+      public StringNBT readNBT(DataInput input, int depth, NBTSizeTracker accounter) throws IOException
+      {
+         accounter.read(288L);
+         String s = input.readUTF();
+         accounter.read((long)(16 * s.length()));
+         return StringNBT.valueOf(s);
+      }
+      public String getName()
+      {
+         return "STRING";
+      }
+      public String getTagName()
+      {
+         return "TAG_String";
+      }
+      public boolean isPrimitive()
+      {
+         return true;
+      }
+   };
+   private static final StringNBT EMPTY_STRING = new StringNBT("");
+   private final String data;
 
-   public StringNBT(String var1) {
-      Objects.<String>requireNonNull(var1, "Null string not allowed");
-      this.field86 = var1;
+   private StringNBT(String data)
+   {
+      Objects.requireNonNull(data, "Null string not allowed");
+      this.data = data;
    }
 
-   public static StringNBT valueOf(String var0) {
-      return !var0.isEmpty() ? new StringNBT(var0) : field85;
+   public static StringNBT valueOf(String value)
+   {
+      return value.isEmpty() ? EMPTY_STRING : new StringNBT(value);
    }
 
-   @Override
-   public void write(DataOutput var1) throws IOException {
-      var1.writeUTF(this.field86);
+   /**
+    * Write the actual data contents of the tag, implemented in NBT extension classes
+    */
+   public void write(DataOutput output) throws IOException
+   {
+      output.writeUTF(this.data);
    }
 
-   @Override
-   public byte getID() {
+   /**
+    * Gets the type byte for the tag.
+    */
+   public byte getID()
+   {
       return 8;
    }
 
-   @Override
-   public INBTType<StringNBT> getType() {
-      return field84;
+   public INBTType<StringNBT> getType()
+   {
+      return TYPE;
    }
 
-   @Override
-   public String toString() {
-      return quoteAndEscape(this.field86);
+   public String toString()
+   {
+      return quoteAndEscape(this.data);
    }
 
-   public StringNBT copy() {
+   /**
+    * Creates a clone of the tag.
+    */
+   public StringNBT copy()
+   {
       return this;
    }
 
-   @Override
-   public boolean equals(Object var1) {
-      return this == var1 ? true : var1 instanceof StringNBT && Objects.equals(this.field86, ((StringNBT)var1).field86);
+   public boolean equals(Object p_equals_1_)
+   {
+      if (this == p_equals_1_)
+      {
+         return true;
+      }
+      else
+      {
+         return p_equals_1_ instanceof StringNBT && Objects.equals(this.data, ((StringNBT)p_equals_1_).data);
+      }
    }
 
-   @Override
-   public int hashCode() {
-      return this.field86.hashCode();
+   public int hashCode()
+   {
+      return this.data.hashCode();
    }
 
-   @Override
-   public String getString() {
-      return this.field86;
+   public String getString()
+   {
+      return this.data;
    }
 
-   @Override
-   public ITextComponent toFormattedComponent(String indentation, int indentDepth) {
-      String var5 = quoteAndEscape(this.field86);
-      String var6 = var5.substring(0, 1);
-      IFormattableTextComponent var7 = new StringTextComponent(var5.substring(1, var5.length() - 1)).mergeStyle(SYNTAX_HIGHLIGHTING_STRING);
-      return new StringTextComponent(var6).append(var7).appendString(var6);
+   public ITextComponent toFormattedComponent(String indentation, int indentDepth)
+   {
+      String s = quoteAndEscape(this.data);
+      String s1 = s.substring(0, 1);
+      ITextComponent itextcomponent = (new StringTextComponent(s.substring(1, s.length() - 1))).mergeStyle(SYNTAX_HIGHLIGHTING_STRING);
+      return (new StringTextComponent(s1)).append(itextcomponent).appendString(s1);
    }
 
-   public static String quoteAndEscape(String var0) {
-      StringBuilder var3 = new StringBuilder(" ");
-      char var4 = 0;
+   public static String quoteAndEscape(String name)
+   {
+      StringBuilder stringbuilder = new StringBuilder(" ");
+      char c0 = 0;
 
-      for (int var5 = 0; var5 < var0.length(); var5++) {
-         char var6 = var0.charAt(var5);
-         if (var6 != '\\') {
-            if (var6 == '"' || var6 == '\'') {
-               if (var4 == 0) {
-                  var4 = (char)(var6 != '"' ? 34 : 39);
-               }
+      for (int i = 0; i < name.length(); ++i)
+      {
+         char c1 = name.charAt(i);
 
-               if (var4 == var6) {
-                  var3.append('\\');
-               }
+         if (c1 == '\\')
+         {
+            stringbuilder.append('\\');
+         }
+         else if (c1 == '"' || c1 == '\'')
+         {
+            if (c0 == 0)
+            {
+               c0 = (char)(c1 == '"' ? 39 : 34);
             }
-         } else {
-            var3.append('\\');
+
+            if (c0 == c1)
+            {
+               stringbuilder.append('\\');
+            }
          }
 
-         var3.append(var6);
+         stringbuilder.append(c1);
       }
 
-      if (var4 == 0) {
-         var4 = '"';
+      if (c0 == 0)
+      {
+         c0 = '"';
       }
 
-      var3.setCharAt(0, var4);
-      var3.append(var4);
-      return var3.toString();
+      stringbuilder.setCharAt(0, c0);
+      stringbuilder.append(c0);
+      return stringbuilder.toString();
    }
 }

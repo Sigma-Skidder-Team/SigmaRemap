@@ -3,6 +3,8 @@ package mapped;
 import com.mojang.datafixers.DSL;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.templates.TypeTemplate;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.util.Map;
 import java.util.function.Supplier;
 
@@ -15,8 +17,8 @@ public class Class8271 extends Schema {
       super.registerTypes(var1, var2, var3);
       var1.registerType(
          true,
-         TypeReferences.field35394,
-         () -> DSL.optionalFields("SpawnPotentials", DSL.list(DSL.fields("Entity", TypeReferences.field35390.in(var1))), "SpawnData", TypeReferences.field35390.in(var1))
+         TypeReferences.UNTAGGED_SPAWNER,
+         () -> DSL.optionalFields("SpawnPotentials", DSL.list(DSL.fields("Entity", TypeReferences.ENTITY_TREE.in(var1))), "SpawnData", TypeReferences.ENTITY_TREE.in(var1))
       );
    }
 }

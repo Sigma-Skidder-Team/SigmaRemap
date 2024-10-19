@@ -16,6 +16,7 @@ import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.nbt.*;
 import net.minecraft.util.SharedConstants;
 import net.minecraft.util.UUIDCodec;
+import net.minecraft.util.datafix.DefaultTypeReferences;
 import net.minecraft.util.datafix.codec.DatapackCodec;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
@@ -310,7 +311,7 @@ public class ServerWorldInfo implements IServerWorldInfo, IServerConfiguration {
                );
             }
 
-            this.field29076 = NBTUtil.method29289(this.field29073, Class2108.field13749, this.field29076, this.field29074);
+            this.field29076 = NBTUtil.update(this.field29073, DefaultTypeReferences.PLAYER, this.field29076, this.field29074);
          }
 
          this.field29075 = true;

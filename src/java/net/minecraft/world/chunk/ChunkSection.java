@@ -31,7 +31,7 @@ public class ChunkSection {
       this.field30371 = var3;
       this.field30372 = var4;
       this.field30373 = new Class8556<BlockState>(
-         field30368, Block.BLOCK_STATE_IDS, NBTUtil::method29285, NBTUtil::method29287, Blocks.AIR.getDefaultState()
+         field30368, Block.BLOCK_STATE_IDS, NBTUtil::readBlockState, NBTUtil::writeBlockState, Blocks.AIR.getDefaultState()
       );
    }
 

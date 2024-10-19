@@ -11,6 +11,8 @@ import com.mojang.datafixers.util.Either;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.datafixers.util.Unit;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -23,7 +25,7 @@ public class Class8104 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      return this.method28071(this.getInputSchema().getTypeRaw(TypeReferences.field35387));
+      return this.method28071(this.getInputSchema().getTypeRaw(TypeReferences.ITEM_STACK));
    }
 
    private <IS> TypeRewriteRule method28071(Type<IS> var1) {

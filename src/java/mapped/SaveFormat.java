@@ -30,11 +30,14 @@ import java.util.function.BiFunction;
 import java.util.zip.ZipOutputStream;
 import javax.annotation.Nullable;
 
+import net.minecraft.nbt.NBTDynamicOps;
 import net.minecraft.util.Util;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.CompressedStreamTools;
 import net.minecraft.nbt.INBT;
 import net.minecraft.util.SharedConstants;
+import net.minecraft.util.datafix.DefaultTypeReferences;
+import net.minecraft.util.datafix.TypeReferences;
 import net.minecraft.util.datafix.codec.DatapackCodec;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -95,7 +98,7 @@ public class SaveFormat {
          }
       }
 
-      Dynamic<T> var9 = var1.update(TypeReferences.field35400, var5, var2, SharedConstants.getVersion().getWorldVersion());
+      Dynamic<T> var9 = var1.update(TypeReferences.WORLD_GEN_SETTINGS, var5, var2, SharedConstants.getVersion().getWorldVersion());
       DataResult<DimensionGeneratorSettings> var10 = DimensionGeneratorSettings.field_236201_a_.parse(var9);
       return Pair.of(
          var10.resultOrPartial(Util.func_240982_a_("WorldGenSettings: ", field45713::error))
@@ -184,7 +187,7 @@ public class SaveFormat {
          CompoundNBT var5 = var4.getCompound("Data");
          var5.remove("Player");
          int var6 = var5.contains("DataVersion", 99) ? var5.getInt("DataVersion") : -1;
-         Dynamic<INBT> var7 = var1.update(Class2108.field13748.method8778(), new Dynamic(NBTDynamicOps.INSTANCE, var5), var6, SharedConstants.getVersion().getWorldVersion());
+         Dynamic<INBT> var7 = var1.update(DefaultTypeReferences.LEVEL.getTypeReference(), new Dynamic(NBTDynamicOps.INSTANCE, var5), var6, SharedConstants.getVersion().getWorldVersion());
          return var7.get("DataPacks").result().map(SaveFormat::method38457).orElse(DatapackCodec.VANILLA_CODEC);
       } catch (Exception var8) {
          field45713.error("Exception reading {}", var0, var8);
@@ -200,7 +203,7 @@ public class SaveFormat {
             CompoundNBT var8 = var7.contains("Player", 10) ? var7.getCompound("Player") : null;
             var7.remove("Player");
             int var9 = var7.contains("DataVersion", 99) ? var7.getInt("DataVersion") : -1;
-            Dynamic var10 = var3.update(Class2108.field13748.method8778(), new Dynamic(var0, var7), var9, SharedConstants.getVersion().getWorldVersion());
+            Dynamic var10 = var3.update(DefaultTypeReferences.LEVEL.getTypeReference(), new Dynamic(var0, var7), var9, SharedConstants.getVersion().getWorldVersion());
             Pair var11 = method38456(var10, var3, var9);
             Class8519 var12 = Class8519.method30181(var10);
             WorldSettings var13 = WorldSettings.method32425(var10, var1);
@@ -220,7 +223,7 @@ public class SaveFormat {
             var8.remove("Player");
             int var9 = var8.contains("DataVersion", 99) ? var8.getInt("DataVersion") : -1;
             Dynamic<INBT> var10 = var4.update(
-               Class2108.field13748.method8778(), new Dynamic(NBTDynamicOps.INSTANCE, var8), var9, SharedConstants.getVersion().getWorldVersion()
+               DefaultTypeReferences.LEVEL.getTypeReference(), new Dynamic(NBTDynamicOps.INSTANCE, var8), var9, SharedConstants.getVersion().getWorldVersion()
             );
             Class8519 var11 = Class8519.method30181(var10);
             int var12 = var11.method30182();

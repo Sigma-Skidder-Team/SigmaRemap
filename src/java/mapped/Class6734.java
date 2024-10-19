@@ -7,6 +7,8 @@ import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.Type;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.util.Optional;
 
 public class Class6734 extends Class6717 {
@@ -16,14 +18,14 @@ public class Class6734 extends Class6717 {
 
    @Override
    public Typed<?> method20508(Typed<?> var1) {
-      OpticFinder<Pair<String, String>> var4 = DSL.fieldFinder("id", DSL.named(TypeReferences.field35393.typeName(), Class3639.method12354()));
-      Type<?> var5 = this.getInputSchema().getTypeRaw(TypeReferences.field35387);
+      OpticFinder<Pair<String, String>> var4 = DSL.fieldFinder("id", DSL.named(TypeReferences.ITEM_NAME.typeName(), Class3639.method12354()));
+      Type<?> var5 = this.getInputSchema().getTypeRaw(TypeReferences.ITEM_STACK);
       OpticFinder<?> var6 = DSL.fieldFinder("SaddleItem", var5);
       Optional<? extends Typed<?>> var7 = var1.getOptionalTyped(var6);
       Dynamic<?>  var8 = var1.get(DSL.remainderFinder());
       if (!var7.isPresent() && var8.get("Saddle").asBoolean(false)) {
          Typed var9 = (Typed)var5.pointTyped(var1.getOps()).orElseThrow(IllegalStateException::new);
-         var9 = var9.set(var4, Pair.of(TypeReferences.field35393.typeName(), "minecraft:saddle"));
+         var9 = var9.set(var4, Pair.of(TypeReferences.ITEM_NAME.typeName(), "minecraft:saddle"));
          Dynamic var10 = var8.emptyMap();
          var10 = var10.set("Count", var10.createByte((byte)1));
          var10 = var10.set("Damage", var10.createShort((short)0));

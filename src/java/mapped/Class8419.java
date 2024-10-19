@@ -10,6 +10,8 @@ import com.mojang.datafixers.types.Type;
 import com.mojang.serialization.Dynamic;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.util.Optional;
 
 public class Class8419 extends DataFix {
@@ -55,7 +57,7 @@ public class Class8419 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type var3 = this.getInputSchema().getType(TypeReferences.field35387);
+      Type var3 = this.getInputSchema().getType(TypeReferences.ITEM_STACK);
       OpticFinder var4 = var3.findField("tag");
       return this.fixTypeEverywhereTyped(
          "ItemStackEnchantmentFix", var3, var2 -> var2.updateTyped(var4, var1x -> var1x.update(DSL.remainderFinder(), this::method29585))

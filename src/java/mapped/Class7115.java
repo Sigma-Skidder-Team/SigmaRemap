@@ -3,10 +3,11 @@ package mapped;
 import com.mojang.datafixers.TypeRewriteRule;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.util.datafix.TypeReferences;
 
 public class Class7115 extends Class7114 {
    public Class7115(Schema var1) {
-      super(var1, TypeReferences.field35386);
+      super(var1, TypeReferences.BLOCK_ENTITY);
    }
 
    public TypeRewriteRule makeRule() {

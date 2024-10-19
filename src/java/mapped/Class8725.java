@@ -10,6 +10,8 @@ import com.mojang.datafixers.Typed;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.Type;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.util.Map;
 
 public class Class8725 extends DataFix {
@@ -39,13 +41,13 @@ public class Class8725 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type var3 = this.getInputSchema().getType(TypeReferences.field35387);
+      Type var3 = this.getInputSchema().getType(TypeReferences.ITEM_STACK);
       OpticFinder var4 = var3.findField("tag");
       return TypeRewriteRule.seq(
          this.fixTypeEverywhereTyped("Rename ItemStack Attributes", var3, var1 -> var1.updateTyped(var4, Class8725::method31485)),
          new TypeRewriteRule[]{
             this.fixTypeEverywhereTyped("Rename Entity Attributes", this.getInputSchema().getType(TypeReferences.ENTITY), Class8725::method31486),
-            this.fixTypeEverywhereTyped("Rename Player Attributes", this.getInputSchema().getType(TypeReferences.field35377), Class8725::method31486)
+            this.fixTypeEverywhereTyped("Rename Player Attributes", this.getInputSchema().getType(TypeReferences.PLAYER), Class8725::method31486)
          }
       );
    }

@@ -7,6 +7,7 @@ import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.Type;
 import com.mojang.datafixers.util.Either;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.util.datafix.TypeReferences;
 
 import java.util.Objects;
 
@@ -16,10 +17,10 @@ public class Class9091 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type<?> var3 = this.getInputSchema().getType(TypeReferences.field35392);
-      Type<?> var4 = this.getOutputSchema().getType(TypeReferences.field35392);
-      Type<Pair<String, Either<Integer, String>>>  var5 = DSL.named(TypeReferences.field35392.typeName(), DSL.or(DSL.intType(), Class3639.method12354()));
-      Type<Pair<String, String>> var6 = DSL.named(TypeReferences.field35392.typeName(), Class3639.method12354());
+      Type<?> var3 = this.getInputSchema().getType(TypeReferences.BLOCK_NAME);
+      Type<?> var4 = this.getOutputSchema().getType(TypeReferences.BLOCK_NAME);
+      Type<Pair<String, Either<Integer, String>>>  var5 = DSL.named(TypeReferences.BLOCK_NAME.typeName(), DSL.or(DSL.intType(), Class3639.method12354()));
+      Type<Pair<String, String>> var6 = DSL.named(TypeReferences.BLOCK_NAME.typeName(), Class3639.method12354());
       if (Objects.equals(var3, var5) && Objects.equals(var4, var6)) {
          return this.fixTypeEverywhere(
             "BlockNameFlatteningFix",

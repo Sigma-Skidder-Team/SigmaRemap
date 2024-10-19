@@ -9,6 +9,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.CompressedStreamTools;
 import net.minecraft.nbt.NBTUtil;
+import net.minecraft.util.datafix.DefaultTypeReferences;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -51,7 +52,7 @@ public class Class8716 {
 
       if (var4 != null) {
          int var7 = var4.contains("DataVersion", 3) ? var4.getInt("DataVersion") : -1;
-         var1.read(NBTUtil.method29289(this.field39331, Class2108.field13749, var4, var7));
+         var1.read(NBTUtil.update(this.field39331, DefaultTypeReferences.PLAYER, var4, var7));
       }
 
       return var4;

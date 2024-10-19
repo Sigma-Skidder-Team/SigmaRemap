@@ -2,12 +2,10 @@ package net.minecraft.nbt;
 
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.UnmodifiableIterator;
 import com.mojang.authlib.GameProfile;
 import com.mojang.datafixers.DataFixer;
 import com.mojang.serialization.Dynamic;
-import mapped.Class2108;
-import mapped.NBTDynamicOps;
+import net.minecraft.util.datafix.DefaultTypeReferences;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -207,42 +205,62 @@ public final class NBTUtil {
         }
     }
 
-    public static BlockPos method29283(CompoundNBT var0) {
-        return new BlockPos(var0.getInt("X"), var0.getInt("Y"), var0.getInt("Z"));
+    /**
+     * Creates a BlockPos object from the data stored in the passed NBTTagCompound.
+     */
+    public static BlockPos readBlockPos(CompoundNBT tag)
+    {
+        return new BlockPos(tag.getInt("X"), tag.getInt("Y"), tag.getInt("Z"));
     }
 
-    public static CompoundNBT method29284(BlockPos var0) {
-        CompoundNBT var3 = new CompoundNBT();
-        var3.putInt("X", var0.getX());
-        var3.putInt("Y", var0.getY());
-        var3.putInt("Z", var0.getZ());
-        return var3;
+    /**
+     * Creates a new NBTTagCompound from a BlockPos.
+     */
+    public static CompoundNBT writeBlockPos(BlockPos pos)
+    {
+        CompoundNBT compoundnbt = new CompoundNBT();
+        compoundnbt.putInt("X", pos.getX());
+        compoundnbt.putInt("Y", pos.getY());
+        compoundnbt.putInt("Z", pos.getZ());
+        return compoundnbt;
     }
 
-    public static BlockState method29285(CompoundNBT var0) {
-        if (!var0.contains("Name", 8)) {
+    /**
+     * Reads a blockstate from the given tag.
+     */
+    public static BlockState readBlockState(CompoundNBT tag)
+    {
+        if (!tag.contains("Name", 8))
+        {
             return Blocks.AIR.getDefaultState();
-        } else {
-            Block var3 = Registry.BLOCK.getOrDefault(new ResourceLocation(var0.getString("Name")));
-            BlockState var4 = var3.getDefaultState();
-            if (var0.contains("Properties", 10)) {
-                CompoundNBT var5 = var0.getCompound("Properties");
-                StateContainer var6 = var3.getStateContainer();
+        }
+        else
+        {
+            Block block = Registry.BLOCK.getOrDefault(new ResourceLocation(tag.getString("Name")));
+            BlockState blockstate = block.getDefaultState();
 
-                for (String var8 : var5.keySet()) {
-                    Property var9 = var6.method35396(var8);
-                    if (var9 != null) {
-                        var4 = method29286(var4, var9, var8, var5, var0);
+            if (tag.contains("Properties", 10))
+            {
+                CompoundNBT compoundnbt = tag.getCompound("Properties");
+                StateContainer<Block, BlockState> statecontainer = block.getStateContainer();
+
+                for (String s : compoundnbt.keySet())
+                {
+                    Property<?> property = statecontainer.getProperty(s);
+
+                    if (property != null)
+                    {
+                        blockstate = setValueHelper(blockstate, property, s, compoundnbt, tag);
                     }
                 }
             }
 
-            return var4;
+            return blockstate;
         }
     }
 
-    private static <S extends StateHolder<?, S>, T extends Comparable<T>> S method29286(S var0, Property<T> var1, String var2, CompoundNBT var3, CompoundNBT var4) {
-        Optional<T> var7 = var1.method30476(var3.getString(var2));
+    private static <S extends StateHolder<?, S>, T extends Comparable<T>> S setValueHelper(S var0, Property<T> var1, String var2, CompoundNBT var3, CompoundNBT var4) {
+        Optional<T> var7 = var1.parseValue(var3.getString(var2));
         if (!var7.isPresent()) {
             LOGGER.warn("Unable to read property: {} with value: {} for blockstate: {}", var2, var3.getString(var2), var4.toString());
             return var0;
@@ -251,35 +269,42 @@ public final class NBTUtil {
         }
     }
 
-    public static CompoundNBT method29287(BlockState var0) {
-        CompoundNBT var3 = new CompoundNBT();
-        var3.putString("Name", Registry.BLOCK.getKey(var0.getBlock()).toString());
-        ImmutableMap var4 = var0.method23468();
-        if (!var4.isEmpty()) {
-            CompoundNBT var5 = new CompoundNBT();
-            UnmodifiableIterator var6 = var4.entrySet().iterator();
+    /**
+     * Writes the given blockstate to the given tag.
+     */
+    public static CompoundNBT writeBlockState(BlockState tag)
+    {
+        CompoundNBT compoundnbt = new CompoundNBT();
+        compoundnbt.putString("Name", Registry.BLOCK.getKey(tag.getBlock()).toString());
+        ImmutableMap < Property<?>, Comparable<? >> immutablemap = tag.getValues();
 
-            while (var6.hasNext()) {
-                Entry var7 = (Entry) var6.next();
-                Property var8 = (Property) var7.getKey();
-                var5.putString(var8.method30472(), method29288(var8, (Comparable<?>) var7.getValue()));
+        if (!immutablemap.isEmpty())
+        {
+            CompoundNBT compoundnbt1 = new CompoundNBT();
+
+            for (Entry < Property<?>, Comparable<? >> entry : immutablemap.entrySet())
+            {
+                Property<?> property = entry.getKey();
+                compoundnbt1.putString(property.getName(), getName(property, entry.getValue()));
             }
 
-            var3.put("Properties", var5);
+            compoundnbt.put("Properties", compoundnbt1);
         }
 
-        return var3;
+        return compoundnbt;
     }
 
-    private static <T extends Comparable<T>> String method29288(Property<T> var0, Comparable<?> var1) {
-        return var0.getName((T) var1);
+    private static <T extends Comparable<T>> String getName(Property<T> property, Comparable<?> t) {
+        return property.getName((T) t);
     }
 
-    public static CompoundNBT method29289(DataFixer var0, Class2108 var1, CompoundNBT var2, int var3) {
-        return method29290(var0, var1, var2, var3, SharedConstants.getVersion().getWorldVersion());
+    public static CompoundNBT update(DataFixer dataFixer, DefaultTypeReferences type, CompoundNBT nbt, int version)
+    {
+        return update(dataFixer, type, nbt, version, SharedConstants.getVersion().getWorldVersion());
     }
 
-    public static CompoundNBT method29290(DataFixer var0, Class2108 var1, CompoundNBT var2, int var3, int var4) {
-        return (CompoundNBT) var0.update(var1.method8778(), new Dynamic(NBTDynamicOps.INSTANCE, var2), var3, var4).getValue();
+    public static CompoundNBT update(DataFixer dataFixer, DefaultTypeReferences type, CompoundNBT nbt, int version, int newVersion)
+    {
+        return (CompoundNBT)dataFixer.update(type.getTypeReference(), new Dynamic<>(NBTDynamicOps.INSTANCE, nbt), version, newVersion).getValue();
     }
 }

@@ -1,109 +1,154 @@
 package net.minecraft.nbt;
 
-import mapped.Class7063;
-import mapped.Class8383;
-import net.minecraft.util.text.IFormattableTextComponent;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 
-import java.io.DataOutput;
-import java.io.IOException;
+public class ByteNBT extends NumberNBT
+{
+   public static final INBTType<ByteNBT> TYPE = new INBTType<ByteNBT>()
+   {
+      public ByteNBT readNBT(DataInput input, int depth, NBTSizeTracker accounter) throws IOException
+      {
+         accounter.read(72L);
+         return ByteNBT.valueOf(input.readByte());
+      }
+      public String getName()
+      {
+         return "BYTE";
+      }
+      public String getTagName()
+      {
+         return "TAG_Byte";
+      }
+      public boolean isPrimitive()
+      {
+         return true;
+      }
+   };
+   public static final ByteNBT ZERO = valueOf((byte)0);
+   public static final ByteNBT ONE = valueOf((byte)1);
+   private final byte data;
 
-public class ByteNBT extends NumberNBT {
-   public static final INBTType<ByteNBT> field63 = new Class7063();
-   public static final ByteNBT field64 = valueOf((byte)0);
-   public static final ByteNBT field65 = valueOf((byte)1);
-   private final byte field66;
-
-   private ByteNBT(byte var1) {
-      this.field66 = var1;
+   private ByteNBT(byte data)
+   {
+      this.data = data;
    }
 
-   public static ByteNBT valueOf(byte var0) {
-      return Class8383.method29376()[128 + var0];
+   public static ByteNBT valueOf(byte byteIn)
+   {
+      return ByteNBT.Cache.CACHE[128 + byteIn];
    }
 
-   public static ByteNBT valueOf(boolean var0) {
-      return !var0 ? field64 : field65;
+   public static ByteNBT valueOf(boolean one)
+   {
+      return one ? ONE : ZERO;
    }
 
-   @Override
-   public void write(DataOutput var1) throws IOException {
-      var1.writeByte(this.field66);
+   /**
+    * Write the actual data contents of the tag, implemented in NBT extension classes
+    */
+   public void write(DataOutput output) throws IOException
+   {
+      output.writeByte(this.data);
    }
 
-   @Override
-   public byte getID() {
+   /**
+    * Gets the type byte for the tag.
+    */
+   public byte getID()
+   {
       return 1;
    }
 
-   @Override
-   public INBTType<ByteNBT> getType() {
-      return field63;
+   public INBTType<ByteNBT> getType()
+   {
+      return TYPE;
    }
 
-   @Override
-   public String toString() {
-      return this.field66 + "b";
+   public String toString()
+   {
+      return this.data + "b";
    }
 
-   public ByteNBT copy() {
+   /**
+    * Creates a clone of the tag.
+    */
+   public ByteNBT copy()
+   {
       return this;
    }
 
-   @Override
-   public boolean equals(Object var1) {
-      return this == var1 ? true : var1 instanceof ByteNBT && this.field66 == ((ByteNBT)var1).field66;
+   public boolean equals(Object p_equals_1_)
+   {
+      if (this == p_equals_1_)
+      {
+         return true;
+      }
+      else
+      {
+         return p_equals_1_ instanceof ByteNBT && this.data == ((ByteNBT)p_equals_1_).data;
+      }
    }
 
-   @Override
-   public int hashCode() {
-      return this.field66;
+   public int hashCode()
+   {
+      return this.data;
    }
 
-   @Override
-   public ITextComponent toFormattedComponent(String indentation, int indentDepth) {
-      IFormattableTextComponent var5 = new StringTextComponent("b").mergeStyle(SYNTAX_HIGHLIGHTING_NUMBER_TYPE);
-      return new StringTextComponent(String.valueOf(this.field66)).append(var5).mergeStyle(SYNTAX_HIGHLIGHTING_NUMBER);
+   public ITextComponent toFormattedComponent(String indentation, int indentDepth)
+   {
+      ITextComponent itextcomponent = (new StringTextComponent("b")).mergeStyle(SYNTAX_HIGHLIGHTING_NUMBER_TYPE);
+      return (new StringTextComponent(String.valueOf((int)this.data))).append(itextcomponent).mergeStyle(SYNTAX_HIGHLIGHTING_NUMBER);
    }
 
-   @Override
-   public long getLong() {
-      return (long)this.field66;
+   public long getLong()
+   {
+      return (long)this.data;
    }
 
-   @Override
-   public int getInt() {
-      return this.field66;
+   public int getInt()
+   {
+      return this.data;
    }
 
-   @Override
-   public short getShort() {
-      return (short)this.field66;
+   public short getShort()
+   {
+      return (short)this.data;
    }
 
-   @Override
-   public byte getByte() {
-      return this.field66;
+   public byte getByte()
+   {
+      return this.data;
    }
 
-   @Override
-   public double getDouble() {
-      return (double)this.field66;
+   public double getDouble()
+   {
+      return (double)this.data;
    }
 
-   @Override
-   public float getFloat() {
-      return (float)this.field66;
+   public float getFloat()
+   {
+      return (float)this.data;
    }
 
-   @Override
-   public Number getAsNumber() {
-      return this.field66;
+   public Number getAsNumber()
+   {
+      return this.data;
    }
 
-   // $VF: synthetic method
-   public ByteNBT(byte var1, Class7063 var2) {
-      this(var1);
+   static class Cache
+   {
+      private static final ByteNBT[] CACHE = new ByteNBT[256];
+
+      static
+      {
+         for (int i = 0; i < CACHE.length; ++i)
+         {
+            CACHE[i] = new ByteNBT((byte)(i - 128));
+         }
+      }
    }
 }

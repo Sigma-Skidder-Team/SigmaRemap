@@ -42,7 +42,7 @@ public class Class4449 implements Class4442 {
                   var13.add(Util.getValueName(var12, var15));
                }
 
-               var10.add(var12.method30472(), var13);
+               var10.add(var12.getName(), var13);
             }
 
             var8.add("properties", var10);
@@ -57,7 +57,7 @@ public class Class4449 implements Class4442 {
             JsonObject var22 = new JsonObject();
 
             for (Property var16 : var9.method35395()) {
-               var22.addProperty(var16.method30472(), Util.getValueName(var16, var20.get(var16)));
+               var22.addProperty(var16.getName(), Util.getValueName(var16, var20.get(var16)));
             }
 
             if (var22.size() > 0) {

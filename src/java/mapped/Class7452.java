@@ -9,6 +9,8 @@ import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.Type;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
@@ -16,14 +18,14 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 public abstract class Class7452 {
-   private final Type<Pair<String, Dynamic<?>>> field32059 = DSL.named(TypeReferences.field35388.typeName(), DSL.remainderType());
+   private final Type<Pair<String, Dynamic<?>>> field32059 = DSL.named(TypeReferences.BLOCK_STATE.typeName(), DSL.remainderType());
    public final OpticFinder<List<Pair<String, Dynamic<?>>>> field32060 = DSL.fieldFinder("Palette", DSL.list(this.field32059));
    public final List<Dynamic<?>> field32061;
    public final int field32062;
    public Class8321 field32063;
 
    public Class7452(Typed<?> var1, Schema var2) {
-      if (Objects.equals(var2.getType(TypeReferences.field35388), this.field32059)) {
+      if (Objects.equals(var2.getType(TypeReferences.BLOCK_STATE), this.field32059)) {
          Optional<List<Pair<String, Dynamic<?>>>> var5 = var1.getOptional(this.field32060);
          this.field32061 = var5.map(var0 -> var0.stream().<Dynamic<?>>map(Pair::getSecond).collect(Collectors.<Dynamic<?>>toList()))
             .orElse(ImmutableList.of());
@@ -48,7 +50,7 @@ public abstract class Class7452 {
    public Typed<?> method24090(Typed<?> var1) {
       return !this.method24091()
          ? var1.update(DSL.remainderFinder(), var1x -> var1x.set("BlockStates", var1x.createLongList(Arrays.stream(this.field32063.method29140()))))
-            .set(this.field32060, this.field32061.stream().<Pair<String, Dynamic<?>>>map(var0 -> Pair.of(TypeReferences.field35388.typeName(), var0)).collect(Collectors.toList()))
+            .set(this.field32060, this.field32061.stream().<Pair<String, Dynamic<?>>>map(var0 -> Pair.of(TypeReferences.BLOCK_STATE.typeName(), var0)).collect(Collectors.toList()))
          : var1;
    }
 

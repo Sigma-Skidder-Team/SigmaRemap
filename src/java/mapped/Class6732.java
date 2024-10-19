@@ -7,6 +7,8 @@ import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.Type;
 import com.mojang.datafixers.types.templates.List.ListType;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.util.Objects;
 import java.util.function.Function;
 
@@ -27,7 +29,7 @@ public class Class6732 extends Class6717 {
          OpticFinder var10 = var8.findField("buy");
          OpticFinder var11 = var8.findField("buyB");
          OpticFinder var12 = var8.findField("sell");
-         OpticFinder var13 = DSL.fieldFinder("id", DSL.named(TypeReferences.field35393.typeName(), Class3639.method12354()));
+         OpticFinder var13 = DSL.fieldFinder("id", DSL.named(TypeReferences.ITEM_NAME.typeName(), Class3639.method12354()));
          Function<Typed<?>, Typed<?>> var14 = var2 -> this.method20538(var13, var2);
          return var1.updateTyped(
             var4,

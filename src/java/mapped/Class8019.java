@@ -39,6 +39,7 @@ import net.minecraft.network.play.server.SSelectAdvancementsTabPacket;
 import net.minecraft.network.play.server.SAdvancementInfoPacket;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SharedConstants;
+import net.minecraft.util.datafix.DefaultTypeReferences;
 import net.minecraft.util.text.ChatType;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.GameRules;
@@ -137,7 +138,7 @@ public class Class8019 {
                }
 
                var6 = this.field34448
-                  .update(Class2108.field13756.method8778(), var6, var6.get("DataVersion").asInt(0), SharedConstants.getVersion().getWorldVersion());
+                  .update(DefaultTypeReferences.ADVANCEMENTS.getTypeReference(), var6, var6.get("DataVersion").asInt(0), SharedConstants.getVersion().getWorldVersion());
                var6 = var6.remove("DataVersion");
                Map<ResourceLocation, Class2006> var7 =field34446.getAdapter(field34447).fromJsonTree((JsonElement)var6.getValue());
                if (var7 == null) {

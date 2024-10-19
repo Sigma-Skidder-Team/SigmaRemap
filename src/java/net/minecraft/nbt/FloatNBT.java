@@ -1,99 +1,136 @@
 package net.minecraft.nbt;
 
-import mapped.Class7056;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 
-import java.io.DataOutput;
-import java.io.IOException;
+public class FloatNBT extends NumberNBT
+{
+   public static final FloatNBT ZERO = new FloatNBT(0.0F);
+   public static final INBTType<FloatNBT> TYPE = new INBTType<FloatNBT>()
+   {
+      public FloatNBT readNBT(DataInput input, int depth, NBTSizeTracker accounter) throws IOException
+      {
+         accounter.read(96L);
+         return FloatNBT.valueOf(input.readFloat());
+      }
+      public String getName()
+      {
+         return "FLOAT";
+      }
+      public String getTagName()
+      {
+         return "TAG_Float";
+      }
+      public boolean isPrimitive()
+      {
+         return true;
+      }
+   };
+   private final float data;
 
-public class FloatNBT extends NumberNBT {
-   public static final FloatNBT field60 = new FloatNBT(0.0F);
-   public static final INBTType<FloatNBT> field61 = new Class7056();
-   private final float field62;
-
-   private FloatNBT(float var1) {
-      this.field62 = var1;
+   private FloatNBT(float data)
+   {
+      this.data = data;
    }
 
-   public static FloatNBT valueOf(float var0) {
-      return var0 != 0.0F ? new FloatNBT(var0) : field60;
+   public static FloatNBT valueOf(float value)
+   {
+      return value == 0.0F ? ZERO : new FloatNBT(value);
    }
 
-   @Override
-   public void write(DataOutput var1) throws IOException {
-      var1.writeFloat(this.field62);
+   /**
+    * Write the actual data contents of the tag, implemented in NBT extension classes
+    */
+   public void write(DataOutput output) throws IOException
+   {
+      output.writeFloat(this.data);
    }
 
-   @Override
-   public byte getID() {
+   /**
+    * Gets the type byte for the tag.
+    */
+   public byte getID()
+   {
       return 5;
    }
 
-   @Override
-   public INBTType<FloatNBT> getType() {
-      return field61;
+   public INBTType<FloatNBT> getType()
+   {
+      return TYPE;
    }
 
-   @Override
-   public String toString() {
-      return this.field62 + "f";
+   public String toString()
+   {
+      return this.data + "f";
    }
 
-   public FloatNBT copy() {
+   /**
+    * Creates a clone of the tag.
+    */
+   public FloatNBT copy()
+   {
       return this;
    }
 
-   @Override
-   public boolean equals(Object var1) {
-      return this == var1 ? true : var1 instanceof FloatNBT && this.field62 == ((FloatNBT)var1).field62;
+   public boolean equals(Object p_equals_1_)
+   {
+      if (this == p_equals_1_)
+      {
+         return true;
+      }
+      else
+      {
+         return p_equals_1_ instanceof FloatNBT && this.data == ((FloatNBT)p_equals_1_).data;
+      }
    }
 
-   @Override
-   public int hashCode() {
-      return Float.floatToIntBits(this.field62);
+   public int hashCode()
+   {
+      return Float.floatToIntBits(this.data);
    }
 
-   @Override
-   public ITextComponent toFormattedComponent(String indentation, int indentDepth) {
-      IFormattableTextComponent var5 = new StringTextComponent("f").mergeStyle(SYNTAX_HIGHLIGHTING_NUMBER_TYPE);
-      return new StringTextComponent(String.valueOf(this.field62)).append(var5).mergeStyle(SYNTAX_HIGHLIGHTING_NUMBER);
+   public ITextComponent toFormattedComponent(String indentation, int indentDepth)
+   {
+      ITextComponent itextcomponent = (new StringTextComponent("f")).mergeStyle(SYNTAX_HIGHLIGHTING_NUMBER_TYPE);
+      return (new StringTextComponent(String.valueOf(this.data))).append(itextcomponent).mergeStyle(SYNTAX_HIGHLIGHTING_NUMBER);
    }
 
-   @Override
-   public long getLong() {
-      return (long)this.field62;
+   public long getLong()
+   {
+      return (long)this.data;
    }
 
-   @Override
-   public int getInt() {
-      return MathHelper.floor(this.field62);
+   public int getInt()
+   {
+      return MathHelper.floor(this.data);
    }
 
-   @Override
-   public short getShort() {
-      return (short)(MathHelper.floor(this.field62) & 65535);
+   public short getShort()
+   {
+      return (short)(MathHelper.floor(this.data) & 65535);
    }
 
-   @Override
-   public byte getByte() {
-      return (byte)(MathHelper.floor(this.field62) & 0xFF);
+   public byte getByte()
+   {
+      return (byte)(MathHelper.floor(this.data) & 255);
    }
 
-   @Override
-   public double getDouble() {
-      return (double)this.field62;
+   public double getDouble()
+   {
+      return (double)this.data;
    }
 
-   @Override
-   public float getFloat() {
-      return this.field62;
+   public float getFloat()
+   {
+      return this.data;
    }
 
-   @Override
-   public Number getAsNumber() {
-      return this.field62;
+   public Number getAsNumber()
+   {
+      return this.data;
    }
 }

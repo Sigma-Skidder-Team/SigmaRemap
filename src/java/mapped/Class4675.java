@@ -6,6 +6,7 @@ import com.mojang.serialization.RecordBuilder.AbstractStringBuilder;
 import net.minecraft.nbt.EndNBT;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
+import net.minecraft.nbt.NBTDynamicOps;
 
 import java.util.Map.Entry;
 

@@ -673,7 +673,7 @@ public abstract class AbstractMinecartEntity extends Entity {
    @Override
    public void readAdditional(CompoundNBT var1) {
       if (var1.getBoolean("CustomDisplayTile")) {
-         this.method3607(NBTUtil.method29285(var1.getCompound("DisplayState")));
+         this.method3607(NBTUtil.readBlockState(var1.getCompound("DisplayState")));
          this.method3608(var1.getInt("DisplayOffset"));
       }
    }
@@ -682,7 +682,7 @@ public abstract class AbstractMinecartEntity extends Entity {
    public void writeAdditional(CompoundNBT var1) {
       if (this.method3609()) {
          var1.putBoolean("CustomDisplayTile", true);
-         var1.put("DisplayState", NBTUtil.method29287(this.method3603()));
+         var1.put("DisplayState", NBTUtil.writeBlockState(this.method3603()));
          var1.putInt("DisplayOffset", this.method3605());
       }
    }

@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 public final class Class9262 {
    private static final Class9262 field42595 = new Class9262(ImmutableList.of());
-   private static final Comparator<Property.ValuePair<?>> field42596 = Comparator.comparing(var0 -> var0.method22834().method30472());
+   private static final Comparator<Property.ValuePair<?>> field42596 = Comparator.comparing(var0 -> var0.method22834().getName());
    private final List<Property.ValuePair<?>> field42597;
 
    public Class9262 method34854(Property.ValuePair<?> var1) {

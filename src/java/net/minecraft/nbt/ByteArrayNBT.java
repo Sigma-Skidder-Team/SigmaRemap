@@ -1,160 +1,215 @@
 package net.minecraft.nbt;
 
-import mapped.*;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import org.apache.commons.lang3.ArrayUtils;
 
-import java.io.DataOutput;
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
+public class ByteArrayNBT extends CollectionNBT<ByteNBT>
+{
+   public static final INBTType<ByteArrayNBT> TYPE = new INBTType<ByteArrayNBT>()
+   {
+      public ByteArrayNBT readNBT(DataInput input, int depth, NBTSizeTracker accounter) throws IOException
+      {
+         accounter.read(192L);
+         int i = input.readInt();
+         accounter.read(8L * (long)i);
+         byte[] abyte = new byte[i];
+         input.readFully(abyte);
+         return new ByteArrayNBT(abyte);
+      }
+      public String getName()
+      {
+         return "BYTE[]";
+      }
+      public String getTagName()
+      {
+         return "TAG_Byte_Array";
+      }
+   };
+   private byte[] data;
 
-public class ByteArrayNBT extends CollectionNBT<ByteNBT> {
-   public static final INBTType<ByteArrayNBT> TYPE = new Class7058();
-   private byte[] field55;
-
-   public ByteArrayNBT(byte[] var1) {
-      this.field55 = var1;
+   public ByteArrayNBT(byte[] data)
+   {
+      this.data = data;
    }
 
-   public ByteArrayNBT(List<Byte> var1) {
-      this(toArray(var1));
+   public ByteArrayNBT(List<Byte> bytes)
+   {
+      this(toArray(bytes));
    }
 
-   private static byte[] toArray(List<Byte> var0) {
-      byte[] var3 = new byte[var0.size()];
+   private static byte[] toArray(List<Byte> bytes)
+   {
+      byte[] abyte = new byte[bytes.size()];
 
-      for (int var4 = 0; var4 < var0.size(); var4++) {
-         Byte var5 = (Byte)var0.get(var4);
-         var3[var4] = var5 != null ? var5 : 0;
+      for (int i = 0; i < bytes.size(); ++i)
+      {
+         Byte obyte = bytes.get(i);
+         abyte[i] = obyte == null ? 0 : obyte;
       }
 
-      return var3;
+      return abyte;
    }
 
-   @Override
-   public void write(DataOutput var1) throws IOException {
-      var1.writeInt(this.field55.length);
-      var1.write(this.field55);
+   /**
+    * Write the actual data contents of the tag, implemented in NBT extension classes
+    */
+   public void write(DataOutput output) throws IOException
+   {
+      output.writeInt(this.data.length);
+      output.write(this.data);
    }
 
-   @Override
-   public byte getID() {
+   /**
+    * Gets the type byte for the tag.
+    */
+   public byte getID()
+   {
       return 7;
    }
 
-   @Override
-   public INBTType<ByteArrayNBT> getType() {
+   public INBTType<ByteArrayNBT> getType()
+   {
       return TYPE;
    }
 
-   @Override
-   public String toString() {
-      StringBuilder var3 = new StringBuilder("[B;");
+   public String toString()
+   {
+      StringBuilder stringbuilder = new StringBuilder("[B;");
 
-      for (int var4 = 0; var4 < this.field55.length; var4++) {
-         if (var4 != 0) {
-            var3.append(',');
+      for (int i = 0; i < this.data.length; ++i)
+      {
+         if (i != 0)
+         {
+            stringbuilder.append(',');
          }
 
-         var3.append(this.field55[var4]).append('B');
+         stringbuilder.append((int)this.data[i]).append('B');
       }
 
-      return var3.append(']').toString();
+      return stringbuilder.append(']').toString();
    }
 
-   @Override
-   public INBT copy() {
-      byte[] var3 = new byte[this.field55.length];
-      System.arraycopy(this.field55, 0, var3, 0, this.field55.length);
-      return new ByteArrayNBT(var3);
+   /**
+    * Creates a clone of the tag.
+    */
+   public INBT copy()
+   {
+      byte[] abyte = new byte[this.data.length];
+      System.arraycopy(this.data, 0, abyte, 0, this.data.length);
+      return new ByteArrayNBT(abyte);
    }
 
-   @Override
-   public boolean equals(Object var1) {
-      return this == var1 ? true : var1 instanceof ByteArrayNBT && Arrays.equals(this.field55, ((ByteArrayNBT)var1).field55);
+   public boolean equals(Object p_equals_1_)
+   {
+      if (this == p_equals_1_)
+      {
+         return true;
+      }
+      else
+      {
+         return p_equals_1_ instanceof ByteArrayNBT && Arrays.equals(this.data, ((ByteArrayNBT)p_equals_1_).data);
+      }
    }
 
-   @Override
-   public int hashCode() {
-      return Arrays.hashCode(this.field55);
+   public int hashCode()
+   {
+      return Arrays.hashCode(this.data);
    }
 
-   @Override
-   public ITextComponent toFormattedComponent(String indentation, int indentDepth) {
-      IFormattableTextComponent var5 = new StringTextComponent("B").mergeStyle(SYNTAX_HIGHLIGHTING_NUMBER_TYPE);
-      IFormattableTextComponent var6 = new StringTextComponent("[").append(var5).appendString(";");
+   public ITextComponent toFormattedComponent(String indentation, int indentDepth)
+   {
+      ITextComponent itextcomponent = (new StringTextComponent("B")).mergeStyle(SYNTAX_HIGHLIGHTING_NUMBER_TYPE);
+      IFormattableTextComponent iformattabletextcomponent = (new StringTextComponent("[")).append(itextcomponent).appendString(";");
 
-      for (int var7 = 0; var7 < this.field55.length; var7++) {
-         IFormattableTextComponent var8 = new StringTextComponent(String.valueOf(this.field55[var7])).mergeStyle(SYNTAX_HIGHLIGHTING_NUMBER);
-         var6.appendString(" ").append(var8).append(var5);
-         if (var7 != this.field55.length - 1) {
-            var6.appendString(",");
+      for (int i = 0; i < this.data.length; ++i)
+      {
+         IFormattableTextComponent iformattabletextcomponent1 = (new StringTextComponent(String.valueOf((int)this.data[i]))).mergeStyle(SYNTAX_HIGHLIGHTING_NUMBER);
+         iformattabletextcomponent.appendString(" ").append(iformattabletextcomponent1).append(itextcomponent);
+
+         if (i != this.data.length - 1)
+         {
+            iformattabletextcomponent.appendString(",");
          }
       }
 
-      var6.appendString("]");
-      return var6;
+      iformattabletextcomponent.appendString("]");
+      return iformattabletextcomponent;
    }
 
-   public byte[] getByteArray() {
-      return this.field55;
+   public byte[] getByteArray()
+   {
+      return this.data;
    }
 
-   @Override
-   public int size() {
-      return this.field55.length;
+   public int size()
+   {
+      return this.data.length;
    }
 
-   public ByteNBT get(int var1) {
-      return ByteNBT.valueOf(this.field55[var1]);
+   public ByteNBT get(int p_get_1_)
+   {
+      return ByteNBT.valueOf(this.data[p_get_1_]);
    }
 
-   public ByteNBT set(int var1, ByteNBT var2) {
-      byte var5 = this.field55[var1];
-      this.field55[var1] = var2.getByte();
-      return ByteNBT.valueOf(var5);
+   public ByteNBT set(int p_set_1_, ByteNBT p_set_2_)
+   {
+      byte b0 = this.data[p_set_1_];
+      this.data[p_set_1_] = p_set_2_.getByte();
+      return ByteNBT.valueOf(b0);
    }
 
-   public void add(int var1, ByteNBT var2) {
-      this.field55 = ArrayUtils.add(this.field55, var1, var2.getByte());
+   public void add(int p_add_1_, ByteNBT p_add_2_)
+   {
+      this.data = ArrayUtils.add(this.data, p_add_1_, p_add_2_.getByte());
    }
 
-   @Override
-   public boolean setNBTByIndex(int var1, INBT var2) {
-      if (!(var2 instanceof NumberNBT)) {
-         return false;
-      } else {
-         this.field55[var1] = ((NumberNBT)var2).getByte();
+   public boolean setNBTByIndex(int index, INBT nbt)
+   {
+      if (nbt instanceof NumberNBT)
+      {
+         this.data[index] = ((NumberNBT)nbt).getByte();
          return true;
+      }
+      else
+      {
+         return false;
       }
    }
 
-   @Override
-   public boolean addNBTByIndex(int var1, INBT var2) {
-      if (!(var2 instanceof NumberNBT)) {
-         return false;
-      } else {
-         this.field55 = ArrayUtils.add(this.field55, var1, ((NumberNBT)var2).getByte());
+   public boolean addNBTByIndex(int index, INBT nbt)
+   {
+      if (nbt instanceof NumberNBT)
+      {
+         this.data = ArrayUtils.add(this.data, index, ((NumberNBT)nbt).getByte());
          return true;
+      }
+      else
+      {
+         return false;
       }
    }
 
-   public ByteNBT remove(int var1) {
-      byte var4 = this.field55[var1];
-      this.field55 = ArrayUtils.remove(this.field55, var1);
-      return ByteNBT.valueOf(var4);
+   public ByteNBT remove(int p_remove_1_)
+   {
+      byte b0 = this.data[p_remove_1_];
+      this.data = ArrayUtils.remove(this.data, p_remove_1_);
+      return ByteNBT.valueOf(b0);
    }
 
-   @Override
-   public byte getTagType() {
+   public byte getTagType()
+   {
       return 1;
    }
 
-   @Override
-   public void clear() {
-      this.field55 = new byte[0];
+   public void clear()
+   {
+      this.data = new byte[0];
    }
 }

@@ -1,103 +1,147 @@
 package net.minecraft.nbt;
 
-import mapped.Class7059;
-import mapped.Class9087;
-import net.minecraft.util.text.IFormattableTextComponent;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 
-import java.io.DataOutput;
-import java.io.IOException;
+public class ShortNBT extends NumberNBT
+{
+   public static final INBTType<ShortNBT> TYPE = new INBTType<ShortNBT>()
+   {
+      public ShortNBT readNBT(DataInput input, int depth, NBTSizeTracker accounter) throws IOException
+      {
+         accounter.read(80L);
+         return ShortNBT.valueOf(input.readShort());
+      }
+      public String getName()
+      {
+         return "SHORT";
+      }
+      public String getTagName()
+      {
+         return "TAG_Short";
+      }
+      public boolean isPrimitive()
+      {
+         return true;
+      }
+   };
+   private final short data;
 
-public class ShortNBT extends NumberNBT {
-   public static final INBTType<ShortNBT> field75 = new Class7059();
-   private final short field76;
-
-   private ShortNBT(short var1) {
-      this.field76 = var1;
+   private ShortNBT(short data)
+   {
+      this.data = data;
    }
 
-   public static ShortNBT valueOf(short var0) {
-      return var0 >= -128 && var0 <= 1024 ? Class9087.field41600[var0 + 128] : new ShortNBT(var0);
+   public static ShortNBT valueOf(short value)
+   {
+      return value >= -128 && value <= 1024 ? ShortNBT.Cache.CACHE[value + 128] : new ShortNBT(value);
    }
 
-   @Override
-   public void write(DataOutput var1) throws IOException {
-      var1.writeShort(this.field76);
+   /**
+    * Write the actual data contents of the tag, implemented in NBT extension classes
+    */
+   public void write(DataOutput output) throws IOException
+   {
+      output.writeShort(this.data);
    }
 
-   @Override
-   public byte getID() {
+   /**
+    * Gets the type byte for the tag.
+    */
+   public byte getID()
+   {
       return 2;
    }
 
-   @Override
-   public INBTType<ShortNBT> getType() {
-      return field75;
+   public INBTType<ShortNBT> getType()
+   {
+      return TYPE;
    }
 
-   @Override
-   public String toString() {
-      return this.field76 + "s";
+   public String toString()
+   {
+      return this.data + "s";
    }
 
-   public ShortNBT copy() {
+   /**
+    * Creates a clone of the tag.
+    */
+   public ShortNBT copy()
+   {
       return this;
    }
 
-   @Override
-   public boolean equals(Object var1) {
-      return this == var1 ? true : var1 instanceof ShortNBT && this.field76 == ((ShortNBT)var1).field76;
+   public boolean equals(Object p_equals_1_)
+   {
+      if (this == p_equals_1_)
+      {
+         return true;
+      }
+      else
+      {
+         return p_equals_1_ instanceof ShortNBT && this.data == ((ShortNBT)p_equals_1_).data;
+      }
    }
 
-   @Override
-   public int hashCode() {
-      return this.field76;
+   public int hashCode()
+   {
+      return this.data;
    }
 
-   @Override
-   public ITextComponent toFormattedComponent(String indentation, int indentDepth) {
-      IFormattableTextComponent var5 = new StringTextComponent("s").mergeStyle(SYNTAX_HIGHLIGHTING_NUMBER_TYPE);
-      return new StringTextComponent(String.valueOf(this.field76)).append(var5).mergeStyle(SYNTAX_HIGHLIGHTING_NUMBER);
+   public ITextComponent toFormattedComponent(String indentation, int indentDepth)
+   {
+      ITextComponent itextcomponent = (new StringTextComponent("s")).mergeStyle(SYNTAX_HIGHLIGHTING_NUMBER_TYPE);
+      return (new StringTextComponent(String.valueOf((int)this.data))).append(itextcomponent).mergeStyle(SYNTAX_HIGHLIGHTING_NUMBER);
    }
 
-   @Override
-   public long getLong() {
-      return (long)this.field76;
+   public long getLong()
+   {
+      return (long)this.data;
    }
 
-   @Override
-   public int getInt() {
-      return this.field76;
+   public int getInt()
+   {
+      return this.data;
    }
 
-   @Override
-   public short getShort() {
-      return this.field76;
+   public short getShort()
+   {
+      return this.data;
    }
 
-   @Override
-   public byte getByte() {
-      return (byte)(this.field76 & 255);
+   public byte getByte()
+   {
+      return (byte)(this.data & 255);
    }
 
-   @Override
-   public double getDouble() {
-      return (double)this.field76;
+   public double getDouble()
+   {
+      return (double)this.data;
    }
 
-   @Override
-   public float getFloat() {
-      return (float)this.field76;
+   public float getFloat()
+   {
+      return (float)this.data;
    }
 
-   @Override
-   public Number getAsNumber() {
-      return this.field76;
+   public Number getAsNumber()
+   {
+      return this.data;
    }
 
-   // $VF: synthetic method
-   public ShortNBT(short var1, Class7059 var2) {
-      this(var1);
+   static class Cache
+   {
+      static final ShortNBT[] CACHE = new ShortNBT[1153];
+
+      static
+      {
+         for (int i = 0; i < CACHE.length; ++i)
+         {
+            CACHE[i] = new ShortNBT((short)(-128 + i));
+         }
+      }
    }
 }

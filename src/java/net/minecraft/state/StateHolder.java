@@ -57,9 +57,9 @@ public abstract class StateHolder<O, S> {
    public String toString() {
       StringBuilder var3 = new StringBuilder();
       var3.append(this.field31579);
-      if (!this.method23468().isEmpty()) {
+      if (!this.getValues().isEmpty()) {
          var3.append('[');
-         var3.append(this.method23468().entrySet().stream().<String>map(field31578).collect(Collectors.joining(",")));
+         var3.append(this.getValues().entrySet().stream().<String>map(field31578).collect(Collectors.joining(",")));
          var3.append(']');
       }
 
@@ -134,7 +134,7 @@ public abstract class StateHolder<O, S> {
       return var5;
    }
 
-   public ImmutableMap<Property<?>, Comparable<?>> method23468() {
+   public ImmutableMap<Property<?>, Comparable<?>> getValues() {
       return this.field31580;
    }
 
@@ -143,7 +143,7 @@ public abstract class StateHolder<O, S> {
          return p_235895_0_.field31579;
       }, (p_235900_1_) -> {
          S s = p_235897_1_.apply(p_235900_1_);
-         return s.method23468().isEmpty() ? Codec.unit(s) : s.field31582.fieldOf("Properties").codec();
+         return s.getValues().isEmpty() ? Codec.unit(s) : s.field31582.fieldOf("Properties").codec();
       });
    }
 }

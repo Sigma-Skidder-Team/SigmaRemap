@@ -3,6 +3,8 @@ package mapped;
 import com.mojang.datafixers.DSL;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.templates.TypeTemplate;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.util.Map;
 import java.util.function.Supplier;
 
@@ -18,12 +20,12 @@ public class Class3643 extends Class3639 {
          "minecraft:wandering_trader",
          var1x -> DSL.optionalFields(
                "Inventory",
-               DSL.list(TypeReferences.field35387.in(var1)),
+               DSL.list(TypeReferences.ITEM_STACK.in(var1)),
                "Offers",
                DSL.optionalFields(
                   "Recipes",
                   DSL.list(
-                     DSL.optionalFields("buy", TypeReferences.field35387.in(var1), "buyB", TypeReferences.field35387.in(var1), "sell", TypeReferences.field35387.in(var1))
+                     DSL.optionalFields("buy", TypeReferences.ITEM_STACK.in(var1), "buyB", TypeReferences.ITEM_STACK.in(var1), "sell", TypeReferences.ITEM_STACK.in(var1))
                   )
                ),
                Class9674.method37738(var1)
@@ -34,11 +36,11 @@ public class Class3643 extends Class3639 {
          "minecraft:trader_llama",
          var1x -> DSL.optionalFields(
                "Items",
-               DSL.list(TypeReferences.field35387.in(var1)),
+               DSL.list(TypeReferences.ITEM_STACK.in(var1)),
                "SaddleItem",
-               TypeReferences.field35387.in(var1),
+               TypeReferences.ITEM_STACK.in(var1),
                "DecorItem",
-               TypeReferences.field35387.in(var1),
+               TypeReferences.ITEM_STACK.in(var1),
                Class9674.method37738(var1)
             )
       );

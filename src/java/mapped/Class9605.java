@@ -18,6 +18,8 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import net.minecraft.util.datafix.TypeReferences;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.apache.commons.lang3.mutable.MutableBoolean;
 import org.apache.commons.lang3.mutable.MutableInt;
@@ -41,7 +43,7 @@ public class Class9605 extends DataFix {
 
    public TypeRewriteRule makeRule() {
       return this.fixTypeEverywhereTyped(
-         "WorldGenSettings building", this.getInputSchema().getType(TypeReferences.field35400), var0 -> var0.update(DSL.remainderFinder(), Class9605::method37318)
+         "WorldGenSettings building", this.getInputSchema().getType(TypeReferences.WORLD_GEN_SETTINGS), var0 -> var0.update(DSL.remainderFinder(), Class9605::method37318)
       );
    }
 

@@ -8,6 +8,7 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import mapped.*;
 import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.JSONToNBT;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.*;
@@ -45,7 +46,7 @@ public class HoverEvent$EntityHover {
    @Nullable
    public static HoverEvent$EntityHover deserialize(ITextComponent component) {
       try {
-         CompoundNBT itextcomponent = Class7671.method25188(component.getString());
+         CompoundNBT itextcomponent = JSONToNBT.method25188(component.getString());
          IFormattableTextComponent entitytype = ITextComponent$Serializer.getComponentFromJson(itextcomponent.getString("name"));
          EntityType uuid = Registry.ENTITY_TYPE.getOrDefault(new ResourceLocation(itextcomponent.getString("type")));
          UUID var6 = UUID.fromString(itextcomponent.getString("id"));

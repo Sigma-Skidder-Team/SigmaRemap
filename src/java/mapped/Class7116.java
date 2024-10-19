@@ -6,14 +6,15 @@ import com.mojang.datafixers.TypeRewriteRule;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.util.datafix.TypeReferences;
 
 public class Class7116 extends Class7114 {
    public Class7116(Schema var1) {
-      super(var1, TypeReferences.field35387);
+      super(var1, TypeReferences.ITEM_STACK);
    }
 
    public TypeRewriteRule makeRule() {
-      OpticFinder<Pair<String, String>> var3 = DSL.fieldFinder("id", DSL.named(TypeReferences.field35393.typeName(), Class3639.method12354()));
+      OpticFinder<Pair<String, String>> var3 = DSL.fieldFinder("id", DSL.named(TypeReferences.ITEM_NAME.typeName(), Class3639.method12354()));
       return this.fixTypeEverywhereTyped("ItemStackUUIDFix", this.getInputSchema().getType(this.field30634), var2 -> {
          OpticFinder<?> var5 = var2.getType().findField("tag");
          return var2.updateTyped(var5, var3x -> var3x.update(DSL.remainderFinder(), var3xx -> {

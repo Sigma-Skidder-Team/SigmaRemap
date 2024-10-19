@@ -1,102 +1,146 @@
 package net.minecraft.nbt;
 
-import mapped.Class7065;
-import mapped.Class8136;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 
-import java.io.DataOutput;
-import java.io.IOException;
+public class IntNBT extends NumberNBT
+{
+   public static final INBTType<IntNBT> TYPE = new INBTType<IntNBT>()
+   {
+      public IntNBT readNBT(DataInput input, int depth, NBTSizeTracker accounter) throws IOException
+      {
+         accounter.read(96L);
+         return IntNBT.valueOf(input.readInt());
+      }
+      public String getName()
+      {
+         return "INT";
+      }
+      public String getTagName()
+      {
+         return "TAG_Int";
+      }
+      public boolean isPrimitive()
+      {
+         return true;
+      }
+   };
+   private final int data;
 
-public class IntNBT extends NumberNBT {
-   private static String[] field72;
-   public static final INBTType<IntNBT> field73 = new Class7065();
-   private final int field74;
-
-   private IntNBT(int var1) {
-      this.field74 = var1;
+   private IntNBT(int data)
+   {
+      this.data = data;
    }
 
-   public static IntNBT valueOf(int var0) {
-      return var0 >= -128 && var0 <= 1024 ? Class8136.field34975[var0 + 128] : new IntNBT(var0);
+   public static IntNBT valueOf(int dataIn)
+   {
+      return dataIn >= -128 && dataIn <= 1024 ? IntNBT.Cache.CACHE[dataIn + 128] : new IntNBT(dataIn);
    }
 
-   @Override
-   public void write(DataOutput var1) throws IOException {
-      var1.writeInt(this.field74);
+   /**
+    * Write the actual data contents of the tag, implemented in NBT extension classes
+    */
+   public void write(DataOutput output) throws IOException
+   {
+      output.writeInt(this.data);
    }
 
-   @Override
-   public byte getID() {
+   /**
+    * Gets the type byte for the tag.
+    */
+   public byte getID()
+   {
       return 3;
    }
 
-   @Override
-   public INBTType<IntNBT> getType() {
-      return field73;
+   public INBTType<IntNBT> getType()
+   {
+      return TYPE;
    }
 
-   @Override
-   public String toString() {
-      return String.valueOf(this.field74);
+   public String toString()
+   {
+      return String.valueOf(this.data);
    }
 
-   public IntNBT copy() {
+   /**
+    * Creates a clone of the tag.
+    */
+   public IntNBT copy()
+   {
       return this;
    }
 
-   @Override
-   public boolean equals(Object var1) {
-      return this == var1 ? true : var1 instanceof IntNBT && this.field74 == ((IntNBT)var1).field74;
+   public boolean equals(Object p_equals_1_)
+   {
+      if (this == p_equals_1_)
+      {
+         return true;
+      }
+      else
+      {
+         return p_equals_1_ instanceof IntNBT && this.data == ((IntNBT)p_equals_1_).data;
+      }
    }
 
-   @Override
-   public int hashCode() {
-      return this.field74;
+   public int hashCode()
+   {
+      return this.data;
    }
 
-   @Override
-   public ITextComponent toFormattedComponent(String indentation, int indentDepth) {
-      return new StringTextComponent(String.valueOf(this.field74)).mergeStyle(SYNTAX_HIGHLIGHTING_NUMBER);
+   public ITextComponent toFormattedComponent(String indentation, int indentDepth)
+   {
+      return (new StringTextComponent(String.valueOf(this.data))).mergeStyle(SYNTAX_HIGHLIGHTING_NUMBER);
    }
 
-   @Override
-   public long getLong() {
-      return (long)this.field74;
+   public long getLong()
+   {
+      return (long)this.data;
    }
 
-   @Override
-   public int getInt() {
-      return this.field74;
+   public int getInt()
+   {
+      return this.data;
    }
 
-   @Override
-   public short getShort() {
-      return (short)(this.field74 & 65535);
+   public short getShort()
+   {
+      return (short)(this.data & 65535);
    }
 
-   @Override
-   public byte getByte() {
-      return (byte)(this.field74 & 0xFF);
+   public byte getByte()
+   {
+      return (byte)(this.data & 255);
    }
 
-   @Override
-   public double getDouble() {
-      return (double)this.field74;
+   public double getDouble()
+   {
+      return (double)this.data;
    }
 
-   @Override
-   public float getFloat() {
-      return (float)this.field74;
+   public float getFloat()
+   {
+      return (float)this.data;
    }
 
-   @Override
-   public Number getAsNumber() {
-      return this.field74;
+   public Number getAsNumber()
+   {
+      return this.data;
    }
 
-   // $VF: synthetic method
-   public IntNBT(int var1, Class7065 var2) {
-      this(var1);
+   static class Cache
+   {
+      static final IntNBT[] CACHE = new IntNBT[1153];
+
+      static
+      {
+         for (int i = 0; i < CACHE.length; ++i)
+         {
+            CACHE[i] = new IntNBT(-128 + i);
+         }
+      }
    }
 }

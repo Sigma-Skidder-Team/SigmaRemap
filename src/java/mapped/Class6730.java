@@ -5,10 +5,11 @@ import com.mojang.datafixers.DataFixUtils;
 import com.mojang.datafixers.Typed;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.util.datafix.TypeReferences;
 
 public class Class6730 extends Class6717 {
    public Class6730(Schema var1, boolean var2) {
-      super(var1, var2, "BlockEntityBannerColorFix", TypeReferences.field35386, "minecraft:banner");
+      super(var1, var2, "BlockEntityBannerColorFix", TypeReferences.BLOCK_ENTITY, "minecraft:banner");
    }
 
    public Dynamic<?> method20533(Dynamic<?> var1) {

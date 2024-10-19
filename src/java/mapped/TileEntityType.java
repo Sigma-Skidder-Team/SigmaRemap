@@ -6,6 +6,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.util.Util;
 import net.minecraft.tileentity.*;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.datafix.TypeReferences;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IBlockReader;
@@ -189,7 +190,7 @@ public class TileEntityType<T extends TileEntity> {
          field21420.warn("Block entity type {} requires at least one valid block to be defined!", var0);
       }
 
-      Type var4 = Util.attemptDataFix(TypeReferences.field35386, var0);
+      Type var4 = Util.attemptDataFix(TypeReferences.BLOCK_ENTITY, var0);
       return Registry.<TileEntityType<T>>register(Registry.field16078, var0, var1.method38570(var4));
    }
 

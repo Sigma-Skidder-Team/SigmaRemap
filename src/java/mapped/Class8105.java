@@ -11,6 +11,7 @@ import com.mojang.datafixers.util.Either;
 import com.mojang.datafixers.util.Pair;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import net.minecraft.util.datafix.TypeReferences;
 
 public class Class8105 extends DataFix {
    private static final Int2ObjectMap<String> field34832 = (Int2ObjectMap<String>)DataFixUtils.make(new Int2ObjectOpenHashMap(), var0 -> {
@@ -341,14 +342,14 @@ public class Class8105 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type<Either<Integer, Pair<String, String>>> var3 = DSL.or(DSL.intType(), DSL.named(TypeReferences.field35393.typeName(), Class3639.method12354()));
-      Type<Pair<String, String>> var4 = DSL.named(TypeReferences.field35393.typeName(), Class3639.method12354());
+      Type<Either<Integer, Pair<String, String>>> var3 = DSL.or(DSL.intType(), DSL.named(TypeReferences.ITEM_NAME.typeName(), Class3639.method12354()));
+      Type<Pair<String, String>> var4 = DSL.named(TypeReferences.ITEM_NAME.typeName(), Class3639.method12354());
       OpticFinder<Either<Integer, Pair<String, String>>> var5 = DSL.fieldFinder("id", var3);
       return this.fixTypeEverywhereTyped(
          "ItemIdFix",
-         this.getInputSchema().getType(TypeReferences.field35387),
-         this.getOutputSchema().getType(TypeReferences.field35387),
-         var2 -> var2.update(var5, var4, var0x -> var0x.map(var0xx -> Pair.of(TypeReferences.field35393.typeName(), method28074(var0xx)), var0xx -> var0xx))
+         this.getInputSchema().getType(TypeReferences.ITEM_STACK),
+         this.getOutputSchema().getType(TypeReferences.ITEM_STACK),
+         var2 -> var2.update(var5, var4, var0x -> var0x.map(var0xx -> Pair.of(TypeReferences.ITEM_NAME.typeName(), method28074(var0xx)), var0xx -> var0xx))
       );
    }
 }

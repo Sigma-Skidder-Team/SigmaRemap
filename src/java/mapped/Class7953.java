@@ -10,6 +10,7 @@ import com.mojang.datafixers.util.Either;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.datafixers.util.Unit;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.util.datafix.TypeReferences;
 
 import java.util.List;
 
@@ -41,7 +42,7 @@ public class Class7953 extends DataFix {
                         "minecraft:flat",
                         method27038(
                                 "settings",
-                                method27039("biome", var3.getType(TypeReferences.field35399), "layers", DSL.list(method27038("block", var3.getType(TypeReferences.field35392))))
+                                method27039("biome", var3.getType(TypeReferences.BIOME), "layers", DSL.list(method27038("block", var3.getType(TypeReferences.BLOCK_NAME))))
                         ),
                         "minecraft:noise",
                         method27039(
@@ -51,11 +52,11 @@ public class Class7953 extends DataFix {
                                         DSL.string(),
                                         ImmutableMap.of(
                                                 "minecraft:fixed",
-                                                method27037("biome", var3.getType(TypeReferences.field35399)),
+                                                method27037("biome", var3.getType(TypeReferences.BIOME)),
                                                 "minecraft:multi_noise",
-                                                DSL.list(method27037("biome", var3.getType(TypeReferences.field35399))),
+                                                DSL.list(method27037("biome", var3.getType(TypeReferences.BIOME))),
                                                 "minecraft:checkerboard",
-                                                method27037("biomes", DSL.list(var3.getType(TypeReferences.field35399))),
+                                                method27037("biomes", DSL.list(var3.getType(TypeReferences.BIOME))),
                                                 "minecraft:vanilla_layered",
                                                 DSL.remainderType(),
                                                 "minecraft:the_end",
@@ -63,13 +64,13 @@ public class Class7953 extends DataFix {
                                         )
                                 ),
                                 "settings",
-                                DSL.or(DSL.string(), method27039("default_block", var3.getType(TypeReferences.field35392), "default_fluid", var3.getType(TypeReferences.field35392)))
+                                DSL.or(DSL.string(), method27039("default_block", var3.getType(TypeReferences.BLOCK_NAME), "default_fluid", var3.getType(TypeReferences.BLOCK_NAME)))
                         )
                 )
         );
         CompoundListType<String, ?> var5 = DSL.compoundList(Class3639.method12354(), method27037("generator", var4));
         Type<?> var6 = DSL.and(var5, DSL.remainderType());
-        Type<?> var7 = var3.getType(TypeReferences.field35400);
+        Type<?> var7 = var3.getType(TypeReferences.WORLD_GEN_SETTINGS);
         FieldFinder<?> var8 = new FieldFinder("dimensions", var6);
         if (var7.findFieldType("dimensions").equals(var6)) {
             OpticFinder<? extends List<? extends Pair<String, ?>>> var9 = var5.finder();

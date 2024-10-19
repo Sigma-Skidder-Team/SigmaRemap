@@ -22,7 +22,7 @@ public interface INBTType<T extends INBT>
       {
          public EndNBT readNBT(DataInput input, int depth, NBTSizeTracker accounter) throws IOException
          {
-            throw new IllegalArgumentException("Invalid tag id: " + id);
+            throw new IllegalArgumentException("Invalid tag ID: " + id);
          }
          public String getName()
          {

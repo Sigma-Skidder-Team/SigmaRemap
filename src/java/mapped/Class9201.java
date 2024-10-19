@@ -6,6 +6,8 @@ import com.mojang.datafixers.OpticFinder;
 import com.mojang.datafixers.TypeRewriteRule;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.Type;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.util.Arrays;
 import java.util.Optional;
 import java.util.stream.IntStream;
@@ -16,7 +18,7 @@ public class Class9201 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type var3 = this.getInputSchema().getType(TypeReferences.field35378);
+      Type var3 = this.getInputSchema().getType(TypeReferences.CHUNK);
       OpticFinder var4 = var3.findField("Level");
       return this.fixTypeEverywhereTyped("Leaves fix", var3, var1 -> var1.updateTyped(var4, var0x -> var0x.update(DSL.remainderFinder(), var0xx -> {
                Optional var3x = var0xx.get("Biomes").asIntStreamOpt().result();

@@ -21,14 +21,14 @@ public class Class8645 extends Class8646 {
    public <T extends Comparable<T>> boolean method31076(StateHolder<?, ?> var1, Property<T> var2) {
       T var5 = var1.get(var2);
       if (this.field38924 != null) {
-         Optional<T> var6 = var2.method30476(this.field38924);
+         Optional<T> var6 = var2.parseValue(this.field38924);
          if (!var6.isPresent() || var5.compareTo(var6.get()) < 0) {
             return false;
          }
       }
 
       if (this.field38925 != null) {
-         Optional<T> var7 = var2.method30476(this.field38925);
+         Optional<T> var7 = var2.parseValue(this.field38925);
          if (!var7.isPresent() || var5.compareTo(var7.get()) > 0) {
             return false;
          }

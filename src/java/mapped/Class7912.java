@@ -8,6 +8,8 @@ import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.Type;
 import com.mojang.serialization.Dynamic;
 import java.util.Optional;
+
+import net.minecraft.util.datafix.TypeReferences;
 import net.minecraft.util.text.ITextComponent$Serializer;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -39,7 +41,7 @@ public class Class7912 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type var3 = this.getInputSchema().getType(TypeReferences.field35387);
+      Type var3 = this.getInputSchema().getType(TypeReferences.ITEM_STACK);
       OpticFinder var4 = var3.findField("tag");
       return this.fixTypeEverywhereTyped(
          "ItemCustomNameToComponentFix", var3, var2 -> var2.updateTyped(var4, var1x -> var1x.update(DSL.remainderFinder(), this::method26541))

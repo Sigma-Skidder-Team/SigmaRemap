@@ -9,6 +9,8 @@ import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.Type;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.util.Objects;
 import java.util.Optional;
 
@@ -18,8 +20,8 @@ public class Class8540 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type<?> var3 = this.getInputSchema().getType(TypeReferences.field35387);
-      OpticFinder<Pair<String, String>> var4 = DSL.fieldFinder("id", DSL.named(TypeReferences.field35393.typeName(), Class3639.method12354()));
+      Type<?> var3 = this.getInputSchema().getType(TypeReferences.ITEM_STACK);
+      OpticFinder<Pair<String, String>> var4 = DSL.fieldFinder("id", DSL.named(TypeReferences.ITEM_NAME.typeName(), Class3639.method12354()));
       OpticFinder<?> var5 = var3.findField("tag");
       return this.fixTypeEverywhereTyped("ItemInstanceMapIdFix", var3, var2 -> {
          Optional<Pair<String, String>> var5x = var2.getOptional(var4);

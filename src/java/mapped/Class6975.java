@@ -4,6 +4,8 @@ import com.mojang.datafixers.DataFix;
 import com.mojang.datafixers.TypeRewriteRule;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.util.stream.Stream;
 
 public class Class6975 extends DataFix {
@@ -14,8 +16,8 @@ public class Class6975 extends DataFix {
    public TypeRewriteRule makeRule() {
       return this.writeFixAndRead(
          "SavedDataVillageCropFix",
-         this.getInputSchema().getType(TypeReferences.field35395),
-         this.getOutputSchema().getType(TypeReferences.field35395),
+         this.getInputSchema().getType(TypeReferences.STRUCTURE_FEATURE),
+         this.getOutputSchema().getType(TypeReferences.STRUCTURE_FEATURE),
          this::method21529
       );
    }

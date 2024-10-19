@@ -4,11 +4,13 @@ import com.mojang.datafixers.DSL;
 import com.mojang.datafixers.Typed;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.util.datafix.TypeReferences;
+
 import java.util.Optional;
 
 public class Class6739 extends Class6717 {
    public Class6739(Schema var1, boolean var2) {
-      super(var1, var2, "OminousBannerBlockEntityRenameFix", TypeReferences.field35386, "minecraft:banner");
+      super(var1, var2, "OminousBannerBlockEntityRenameFix", TypeReferences.BLOCK_ENTITY, "minecraft:banner");
    }
 
    @Override

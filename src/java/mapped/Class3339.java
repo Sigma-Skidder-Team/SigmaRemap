@@ -61,10 +61,10 @@ public class Class3339 extends Item {
          if (!var11.isEmpty()) {
             CompoundNBT var13 = var6.method32144("DebugProperty");
             String var14 = var13.getString(var12);
-            Property var15 = var10.method35396(var14);
+            Property var15 = var10.getProperty(var14);
             if (!var5) {
                var15 = method11888(var11, var15, var1.method2851());
-               String var16 = var15.method30472();
+               String var16 = var15.getName();
                var13.putString(var12, var16);
                method11889(var1, new TranslationTextComponent(this.getTranslationKey() + ".select", var16, method11890(var2, var15)));
             } else {
@@ -74,7 +74,7 @@ public class Class3339 extends Item {
 
                BlockState var18 = method11887(var2, var15, var1.method2851());
                var3.setBlockState(var4, var18, 18);
-               method11889(var1, new TranslationTextComponent(this.getTranslationKey() + ".update", var15.method30472(), method11890(var18, var15)));
+               method11889(var1, new TranslationTextComponent(this.getTranslationKey() + ".update", var15.getName(), method11890(var18, var15)));
             }
          } else {
             method11889(var1, new TranslationTextComponent(this.getTranslationKey() + ".empty", var12));
