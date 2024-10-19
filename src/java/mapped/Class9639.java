@@ -44,7 +44,7 @@ public class Class9639 implements ArgumentType<Integer> {
    }
 
    public <S> CompletableFuture<Suggestions> listSuggestions(CommandContext<S> var1, SuggestionsBuilder var2) {
-      return ISuggestionProvider.method20149(Scoreboard.method21010(), var2);
+      return ISuggestionProvider.suggest(Scoreboard.method21010(), var2);
    }
 
    public Collection<String> getExamples() {

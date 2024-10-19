@@ -37,7 +37,7 @@ public class Class9210 implements ArgumentType<String> {
    }
 
    public <S> CompletableFuture<Suggestions> listSuggestions(CommandContext<S> var1, SuggestionsBuilder var2) {
-      return ISuggestionProvider.method20148(Class7936.method26705().stream(), var2);
+      return ISuggestionProvider.suggest(Class7936.method26705().stream(), var2);
    }
 
    public Collection<String> getExamples() {

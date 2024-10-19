@@ -77,7 +77,7 @@ public class Class4914 implements ArgumentType<Integer> {
    }
 
    public <S> CompletableFuture<Suggestions> listSuggestions(CommandContext<S> var1, SuggestionsBuilder var2) {
-      return ISuggestionProvider.method20147(field22780.keySet(), var2);
+      return ISuggestionProvider.suggest(field22780.keySet(), var2);
    }
 
    public Collection<String> getExamples() {

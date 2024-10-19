@@ -34,7 +34,7 @@ public class Class7676 {
                               .suggests(
                                  (var0x, var1) -> {
                                     Class6395 var4 = ((CommandSource)var0x.getSource()).getServer().getPlayerList();
-                                    return ISuggestionProvider.method20148(
+                                    return ISuggestionProvider.suggest(
                                        var4.getPlayers()
                                           .stream()
                                           .filter(var1x -> !var4.method19468().method14448(var1x.getGameProfile()))
@@ -50,7 +50,7 @@ public class Class7676 {
                   Commands.method18839("remove")
                      .then(
                         Commands.method18840("targets", Class7713.method25483())
-                           .suggests((var0x, var1) -> ISuggestionProvider.method20149(((CommandSource)var0x.getSource()).getServer().getPlayerList().method19469(), var1))
+                           .suggests((var0x, var1) -> ISuggestionProvider.suggest(((CommandSource)var0x.getSource()).getServer().getPlayerList().method19469(), var1))
                            .executes(var0x -> method25220((CommandSource)var0x.getSource(), Class7713.method25482(var0x, "targets")))
                      )
                ))

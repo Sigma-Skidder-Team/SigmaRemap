@@ -16,12 +16,12 @@ import net.minecraft.world.biome.Biome;
 public class Class9222 {
    private static final Map<ResourceLocation, SuggestionProvider<ISuggestionProvider>> field42451 = Maps.newHashMap();
    private static final ResourceLocation field42452 = new ResourceLocation("ask_server");
-   public static final SuggestionProvider<ISuggestionProvider> field42453 = method34676(field42452, (var0, var1) -> ((ISuggestionProvider)var0.getSource()).method20130(var0, var1));
+   public static final SuggestionProvider<ISuggestionProvider> field42453 = method34676(field42452, (var0, var1) -> ((ISuggestionProvider)var0.getSource()).getSuggestionsFromServer(var0, var1));
    public static final SuggestionProvider<CommandSource> field42454 = method34676(
-      new ResourceLocation("all_recipes"), (var0, var1) -> ISuggestionProvider.method20143(((ISuggestionProvider)var0.getSource()).method20128(), var1)
+      new ResourceLocation("all_recipes"), (var0, var1) -> ISuggestionProvider.method20143(((ISuggestionProvider)var0.getSource()).getRecipeResourceLocations(), var1)
    );
    public static final SuggestionProvider<CommandSource> field42455 = method34676(
-      new ResourceLocation("available_sounds"), (var0, var1) -> ISuggestionProvider.suggestIterable(((ISuggestionProvider)var0.getSource()).method20127(), var1)
+      new ResourceLocation("available_sounds"), (var0, var1) -> ISuggestionProvider.suggestIterable(((ISuggestionProvider)var0.getSource()).getSoundResourceLocations(), var1)
    );
    public static final SuggestionProvider<CommandSource> field42456 = method34676(
       new ResourceLocation("available_biomes"),

@@ -48,7 +48,7 @@ public class Class7848 {
                                                    .then(
                                                       Commands.method18840("criterion", StringArgumentType.greedyString())
                                                          .suggests(
-                                                            (var0x, var1) -> ISuggestionProvider.method20147(
+                                                            (var0x, var1) -> ISuggestionProvider.suggest(
                                                                   ResourceLocationArgument.method29032(var0x, "advancement").method27030().keySet(), var1
                                                                )
                                                          )
@@ -144,7 +144,7 @@ public class Class7848 {
                                                 .then(
                                                    Commands.method18840("criterion", StringArgumentType.greedyString())
                                                       .suggests(
-                                                         (var0x, var1) -> ISuggestionProvider.method20147(
+                                                         (var0x, var1) -> ISuggestionProvider.suggest(
                                                                ResourceLocationArgument.method29032(var0x, "advancement").method27030().keySet(), var1
                                                             )
                                                       )

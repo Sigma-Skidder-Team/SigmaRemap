@@ -54,7 +54,7 @@ public class Class8127 implements ArgumentType<Integer> {
          return var2.buildFuture();
       }
 
-      return ISuggestionProvider.method20147(field34954.keySet(), var2.createOffset(var2.getStart() + var5.getCursor()));
+      return ISuggestionProvider.suggest(field34954.keySet(), var2.createOffset(var2.getStart() + var5.getCursor()));
    }
 
    public Collection<String> getExamples() {

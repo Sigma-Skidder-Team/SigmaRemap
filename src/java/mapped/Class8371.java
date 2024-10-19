@@ -59,7 +59,7 @@ public class Class8371 implements ArgumentType<Class9008> {
          }
       }
 
-      return ISuggestionProvider.method20147(var5, var2);
+      return ISuggestionProvider.suggest(var5, var2);
    }
 
    public <T> String method29324(Class49<T> var1, T var2) {

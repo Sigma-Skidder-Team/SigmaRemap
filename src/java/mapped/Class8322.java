@@ -83,7 +83,7 @@ public class Class8322 {
          }
       }
 
-      return ISuggestionProvider.method20147(var5, var1);
+      return ISuggestionProvider.suggest(var5, var1);
    }
 
    private static int method29144(CommandSource var0, Class9411 var1, int var2) {

@@ -60,12 +60,12 @@ public class Class7347 implements ArgumentType<Class7329> {
          String var5 = var2.getRemaining();
          Object var6;
          if (!var5.isEmpty() && var5.charAt(0) == '^') {
-            var6 = Collections.<Class9203>singleton(Class9203.field42265);
+            var6 = Collections.<ISuggestionProvider.Coordinates>singleton(ISuggestionProvider.Coordinates.DEFAULT_LOCAL);
          } else {
-            var6 = ((ISuggestionProvider)var1.getSource()).method20134();
+            var6 = ((ISuggestionProvider)var1.getSource()).defaultGlobal();
          }
 
-         return ISuggestionProvider.method20146(var5, (Collection<Class9203>)var6, var2, Commands.method18841(this::parse));
+         return ISuggestionProvider.func_211269_a(var5, (Collection<ISuggestionProvider.Coordinates>)var6, var2, Commands.method18841(this::parse));
       }
    }
 

@@ -42,7 +42,7 @@ public class Class9188 implements ArgumentType<Class2062> {
    }
 
    public <S> CompletableFuture<Suggestions> listSuggestions(CommandContext<S> var1, SuggestionsBuilder var2) {
-      return ISuggestionProvider.method20147(Class2062.method8716().keySet(), var2);
+      return ISuggestionProvider.suggest(Class2062.method8716().keySet(), var2);
    }
 
    public Collection<String> getExamples() {

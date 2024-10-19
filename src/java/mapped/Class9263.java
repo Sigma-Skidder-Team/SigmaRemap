@@ -67,10 +67,10 @@ public class Class9263 implements ArgumentType<String> {
             return Suggestions.empty();
          } else {
             ISuggestionProvider var5 = (ISuggestionProvider)var1.getSource();
-            return var5.method20130((CommandContext<ISuggestionProvider>) var1, var2);
+            return var5.getSuggestionsFromServer((CommandContext<ISuggestionProvider>) var1, var2);
          }
       } else {
-         return ISuggestionProvider.method20147(((CommandSource)var1.getSource()).getServer().method1409().method20983(), var2);
+         return ISuggestionProvider.suggest(((CommandSource)var1.getSource()).getServer().method1409().method20983(), var2);
       }
    }
 

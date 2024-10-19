@@ -36,7 +36,7 @@ public class Class6617 implements ISuggestionProvider {
    }
 
    @Override
-   public Collection<String> method20124() {
+   public Collection<String> getPlayerNames() {
       ArrayList var3 = Lists.newArrayList();
 
       for (NetworkPlayerInfo var5 : this.field29118.method15790()) {
@@ -47,24 +47,24 @@ public class Class6617 implements ISuggestionProvider {
    }
 
    @Override
-   public Collection<String> method20125() {
+   public Collection<String> getTargetEntity() {
       return (Collection<String>)(this.field29119.objectMouseOver != null && this.field29119.objectMouseOver.getType() == RayTraceResult.Type.ENTITY
          ? Collections.<String>singleton(((EntityRayTraceResult)this.field29119.objectMouseOver).getEntity().method3376())
          : Collections.<String>emptyList());
    }
 
    @Override
-   public Collection<String> method20126() {
+   public Collection<String> getTeamNames() {
       return this.field29118.method15797().method6805().method20996();
    }
 
    @Override
-   public Collection<ResourceLocation> method20127() {
+   public Collection<ResourceLocation> getSoundResourceLocations() {
       return this.field29119.getSoundHandler().method998();
    }
 
    @Override
-   public Stream<ResourceLocation> method20128() {
+   public Stream<ResourceLocation> getRecipeResourceLocations() {
       return this.field29118.getRecipeManager().method1037();
    }
 
@@ -75,14 +75,14 @@ public class Class6617 implements ISuggestionProvider {
    }
 
    @Override
-   public CompletableFuture<Suggestions> method20130(CommandContext<ISuggestionProvider> var1, SuggestionsBuilder var2) {
+   public CompletableFuture<Suggestions> getSuggestionsFromServer(CommandContext<ISuggestionProvider> context, SuggestionsBuilder suggestionsBuilder) {
       if (this.field29121 != null) {
          this.field29121.cancel(false);
       }
 
       this.field29121 = new CompletableFuture<Suggestions>();
       int var5 = ++this.field29120;
-      this.field29118.sendPacket(new CTabCompletePacket(var5, var1.getInput()));
+      this.field29118.sendPacket(new CTabCompletePacket(var5, context.getInput()));
       return this.field29121;
    }
 
@@ -95,24 +95,24 @@ public class Class6617 implements ISuggestionProvider {
    }
 
    @Override
-   public Collection<Class9203> method20133() {
+   public Collection<Coordinates> defaultLocal() {
       RayTraceResult var3 = this.field29119.objectMouseOver;
       if (var3 != null && var3.getType() == RayTraceResult.Type.BLOCK) {
          BlockPos var4 = ((BlockRayTraceResult)var3).getPos();
-         return Collections.<Class9203>singleton(new Class9203(method20132(var4.getX()), method20132(var4.getY()), method20132(var4.getZ())));
+         return Collections.<Coordinates>singleton(new Coordinates(method20132(var4.getX()), method20132(var4.getY()), method20132(var4.getZ())));
       } else {
-         return ISuggestionProvider.super.method20133();
+         return ISuggestionProvider.super.defaultLocal();
       }
    }
 
    @Override
-   public Collection<Class9203> method20134() {
+   public Collection<Coordinates> defaultGlobal() {
       RayTraceResult var3 = this.field29119.objectMouseOver;
       if (var3 != null && var3.getType() == RayTraceResult.Type.BLOCK) {
          Vector3d var4 = var3.getHitVec();
-         return Collections.<Class9203>singleton(new Class9203(method20131(var4.x), method20131(var4.y), method20131(var4.z)));
+         return Collections.<Coordinates>singleton(new Coordinates(method20131(var4.x), method20131(var4.y), method20131(var4.z)));
       } else {
-         return ISuggestionProvider.super.method20134();
+         return ISuggestionProvider.super.defaultGlobal();
       }
    }
 

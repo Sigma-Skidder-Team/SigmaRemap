@@ -170,8 +170,8 @@ public class Class6850 {
       if (!var6) {
          String var8 = var3.substring(0, var7);
          int var9 = method20836(var8);
-         Collection var10 = this.field29747.player.connection.method15781().method20124();
-         this.field29761 = ISuggestionProvider.method20147(var10, new SuggestionsBuilder(var8, var9));
+         Collection var10 = this.field29747.player.connection.method15781().getPlayerNames();
+         this.field29761 = ISuggestionProvider.suggest(var10, new SuggestionsBuilder(var8, var9));
       } else {
          CommandDispatcher var11 = this.field29747.player.connection.method15796();
          if (this.field29760 == null) {

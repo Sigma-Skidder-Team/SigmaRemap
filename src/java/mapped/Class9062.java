@@ -41,7 +41,7 @@ public class Class9062 implements ArgumentType<String> {
    }
 
    public <S> CompletableFuture<Suggestions> listSuggestions(CommandContext<S> var1, SuggestionsBuilder var2) {
-      return !(var1.getSource() instanceof ISuggestionProvider) ? Suggestions.empty() : ISuggestionProvider.method20147(((ISuggestionProvider)var1.getSource()).method20126(), var2);
+      return !(var1.getSource() instanceof ISuggestionProvider) ? Suggestions.empty() : ISuggestionProvider.suggest(((ISuggestionProvider)var1.getSource()).getTeamNames(), var2);
    }
 
    public Collection<String> getExamples() {

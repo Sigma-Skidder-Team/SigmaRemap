@@ -68,7 +68,7 @@ public class Class7713 implements ArgumentType<Class6205> {
          } catch (CommandSyntaxException var8) {
          }
 
-         return var6.method30314(var2, var1x -> ISuggestionProvider.method20147(((ISuggestionProvider)var1.getSource()).method20124(), var1x));
+         return var6.method30314(var2, var1x -> ISuggestionProvider.suggest(((ISuggestionProvider)var1.getSource()).getPlayerNames(), var1x));
       } else {
          return Suggestions.empty();
       }

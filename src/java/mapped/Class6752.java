@@ -22,7 +22,7 @@ public class Class6752 {
                   .suggests(
                      (var0x, var1) -> {
                         Class6395 var4 = ((CommandSource)var0x.getSource()).getServer().getPlayerList();
-                        return ISuggestionProvider.method20148(
+                        return ISuggestionProvider.suggest(
                            var4.getPlayers()
                               .stream()
                               .filter(var1x -> !var4.canSendCommands(var1x.getGameProfile()))

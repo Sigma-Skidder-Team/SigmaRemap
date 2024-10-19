@@ -120,9 +120,9 @@ public class Class8700 implements ArgumentType<Class8429> {
          }
 
          return var7.method30314(var2, var2x -> {
-            Collection var5x = var6.method20124();
-            Object var6x = !this.field39267 ? Iterables.concat(var5x, var6.method20125()) : var5x;
-            ISuggestionProvider.method20147((Iterable<String>)var6x, var2x);
+            Collection var5x = var6.getPlayerNames();
+            Object var6x = !this.field39267 ? Iterables.concat(var5x, var6.getTargetEntity()) : var5x;
+            ISuggestionProvider.suggest((Iterable<String>)var6x, var2x);
          });
       } else {
          return Suggestions.empty();

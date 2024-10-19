@@ -27,7 +27,7 @@ public class Class7591 implements ArgumentType<Class8985> {
       } catch (CommandSyntaxException var7) {
       }
 
-      return var5.method30314(var1, var1x -> ISuggestionProvider.method20147(var0.getSource().method20124(), var1x));
+      return var5.method30314(var1, var1x -> ISuggestionProvider.suggest(var0.getSource().getPlayerNames(), var1x));
    };
    private static final Collection<String> field32591 = Arrays.asList("Player", "0123", "*", "@e");
    private static final SimpleCommandExceptionType field32592 = new SimpleCommandExceptionType(new TranslationTextComponent("argument.scoreHolder.empty"));

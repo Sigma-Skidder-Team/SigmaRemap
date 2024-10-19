@@ -21,7 +21,7 @@ public class Class7517 {
    private static final DynamicCommandExceptionType field32248 = new DynamicCommandExceptionType(
       var0 -> new TranslationTextComponent("commands.schedule.cleared.failure", var0)
    );
-   private static final SuggestionProvider<CommandSource> field32249 = (var0, var1) -> ISuggestionProvider.method20147(
+   private static final SuggestionProvider<CommandSource> field32249 = (var0, var1) -> ISuggestionProvider.suggest(
          ((CommandSource)var0.getSource()).getServer().func_240793_aU_().method20098().method20074().method30537(), var1
       );
 

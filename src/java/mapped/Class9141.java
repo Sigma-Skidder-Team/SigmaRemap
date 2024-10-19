@@ -20,7 +20,7 @@ public class Class9141 {
          (LiteralArgumentBuilder)((LiteralArgumentBuilder) Commands.method18839("pardon-ip").requires(var0x -> var0x.method20129(3)))
             .then(
                Commands.method18840("target", StringArgumentType.word())
-                  .suggests((var0x, var1) -> ISuggestionProvider.method20149(((CommandSource)var0x.getSource()).getServer().getPlayerList().method19462().method14432(), var1))
+                  .suggests((var0x, var1) -> ISuggestionProvider.suggest(((CommandSource)var0x.getSource()).getServer().getPlayerList().method19462().method14432(), var1))
                   .executes(var0x -> method34131((CommandSource)var0x.getSource(), StringArgumentType.getString(var0x, "target")))
             )
       );

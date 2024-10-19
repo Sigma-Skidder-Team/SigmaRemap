@@ -369,27 +369,27 @@ public class CommandSource implements ISuggestionProvider {
    }
 
    @Override
-   public Collection<String> method20124() {
+   public Collection<String> getPlayerNames() {
       return Lists.newArrayList(this.field29130.method1324());
    }
 
    @Override
-   public Collection<String> method20126() {
+   public Collection<String> getTeamNames() {
       return this.field29130.method1409().method20996();
    }
 
    @Override
-   public Collection<ResourceLocation> method20127() {
+   public Collection<ResourceLocation> getSoundResourceLocations() {
       return Registry.field16069.method9190();
    }
 
    @Override
-   public Stream<ResourceLocation> method20128() {
+   public Stream<ResourceLocation> getRecipeResourceLocations() {
       return this.field29130.method1407().method1037();
    }
 
    @Override
-   public CompletableFuture<Suggestions> method20130(CommandContext<ISuggestionProvider> var1, SuggestionsBuilder var2) {
+   public CompletableFuture<Suggestions> getSuggestionsFromServer(CommandContext<ISuggestionProvider> context, SuggestionsBuilder suggestionsBuilder) {
       return null;
    }
 

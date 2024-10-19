@@ -20,7 +20,7 @@ public class Class8373 {
          (LiteralArgumentBuilder)((LiteralArgumentBuilder) Commands.method18839("pardon").requires(var0x -> var0x.method20129(3)))
             .then(
                Commands.method18840("targets", Class7713.method25483())
-                  .suggests((var0x, var1) -> ISuggestionProvider.method20149(((CommandSource)var0x.getSource()).getServer().getPlayerList().method19461().method14432(), var1))
+                  .suggests((var0x, var1) -> ISuggestionProvider.suggest(((CommandSource)var0x.getSource()).getServer().getPlayerList().method19461().method14432(), var1))
                   .executes(var0x -> method29331((CommandSource)var0x.getSource(), Class7713.method25482(var0x, "targets")))
             )
       );

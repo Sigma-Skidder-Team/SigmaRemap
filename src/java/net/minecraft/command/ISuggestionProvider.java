@@ -6,7 +6,6 @@ import com.mojang.brigadier.Message;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.suggestion.Suggestions;
 import com.mojang.brigadier.suggestion.SuggestionsBuilder;
-import mapped.Class9203;
 import mapped.DynamicRegistries;
 import mapped.RegistryKey;
 import net.minecraft.util.ResourceLocation;
@@ -24,26 +23,26 @@ import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 public interface ISuggestionProvider {
-   Collection<String> method20124();
+   Collection<String> getPlayerNames();
 
-   default Collection<String> method20125() {
+   default Collection<String> getTargetEntity() {
       return Collections.<String>emptyList();
    }
 
-   Collection<String> method20126();
+   Collection<String> getTeamNames();
 
-   Collection<ResourceLocation> method20127();
+   Collection<ResourceLocation> getSoundResourceLocations();
 
-   Stream<ResourceLocation> method20128();
+   Stream<ResourceLocation> getRecipeResourceLocations();
 
-   CompletableFuture<Suggestions> method20130(CommandContext<ISuggestionProvider> var1, SuggestionsBuilder var2);
+   CompletableFuture<Suggestions> getSuggestionsFromServer(CommandContext<ISuggestionProvider> context, SuggestionsBuilder suggestionsBuilder);
 
-   default Collection<Class9203> method20133() {
-      return Collections.<Class9203>singleton(Class9203.field42266);
+   default Collection<ISuggestionProvider.Coordinates> defaultLocal() {
+      return Collections.singleton(Coordinates.DEFAULT_LOCAL);
    }
 
-   default Collection<Class9203> method20134() {
-      return Collections.<Class9203>singleton(Class9203.field42266);
+   default Collection<Coordinates> defaultGlobal() {
+      return Collections.<Coordinates>singleton(Coordinates.DEFAULT_GLOBAL);
    }
 
    Set<RegistryKey<World>> method20135();
@@ -82,7 +81,7 @@ public interface ISuggestionProvider {
       }
    }
 
-   static CompletableFuture<Suggestions> method20140(Iterable<ResourceLocation> var0, SuggestionsBuilder var1, String var2) {
+   static CompletableFuture<Suggestions> suggestIterable(Iterable<ResourceLocation> var0, SuggestionsBuilder var1, String var2) {
       String var5 = var1.getRemaining().toLowerCase(Locale.ROOT);
       method20139(var0, var5, var2, var0x -> var0x, var2x -> var1.suggest(var2 + var2x));
       return var1.buildFuture();
@@ -108,68 +107,68 @@ public interface ISuggestionProvider {
       return method20142(var0::iterator, var1, var2, var3);
    }
 
-   static CompletableFuture<Suggestions> method20145(String var0, Collection<Class9203> var1, SuggestionsBuilder var2, Predicate<String> var3) {
+   static CompletableFuture<Suggestions> method20145(String var0, Collection<Coordinates> var1, SuggestionsBuilder var2, Predicate<String> var3) {
       ArrayList var6 = Lists.newArrayList();
       if (!Strings.isNullOrEmpty(var0)) {
          String[] var7 = var0.split(" ");
          if (var7.length != 1) {
             if (var7.length == 2) {
-               for (Class9203 var9 : var1) {
-                  String var10 = var7[0] + " " + var7[1] + " " + var9.field42269;
+               for (Coordinates var9 : var1) {
+                  String var10 = var7[0] + " " + var7[1] + " " + var9.z;
                   if (var3.test(var10)) {
                      var6.add(var10);
                   }
                }
             }
          } else {
-            for (Class9203 var14 : var1) {
-               String var16 = var7[0] + " " + var14.field42268 + " " + var14.field42269;
+            for (Coordinates var14 : var1) {
+               String var16 = var7[0] + " " + var14.y + " " + var14.z;
                if (var3.test(var16)) {
-                  var6.add(var7[0] + " " + var14.field42268);
+                  var6.add(var7[0] + " " + var14.y);
                   var6.add(var16);
                }
             }
          }
       } else {
-         for (Class9203 var13 : var1) {
-            String var15 = var13.field42267 + " " + var13.field42268 + " " + var13.field42269;
+         for (Coordinates var13 : var1) {
+            String var15 = var13.x + " " + var13.y + " " + var13.z;
             if (var3.test(var15)) {
-               var6.add(var13.field42267);
-               var6.add(var13.field42267 + " " + var13.field42268);
+               var6.add(var13.x);
+               var6.add(var13.x + " " + var13.y);
                var6.add(var15);
             }
          }
       }
 
-      return method20147(var6, var2);
+      return suggest(var6, var2);
    }
 
-   static CompletableFuture<Suggestions> method20146(String var0, Collection<Class9203> var1, SuggestionsBuilder var2, Predicate<String> var3) {
+   static CompletableFuture<Suggestions> func_211269_a(String var0, Collection<Coordinates> var1, SuggestionsBuilder var2, Predicate<String> var3) {
       ArrayList var6 = Lists.newArrayList();
       if (!Strings.isNullOrEmpty(var0)) {
          String[] var7 = var0.split(" ");
          if (var7.length == 1) {
-            for (Class9203 var9 : var1) {
-               String var10 = var7[0] + " " + var9.field42269;
+            for (Coordinates var9 : var1) {
+               String var10 = var7[0] + " " + var9.z;
                if (var3.test(var10)) {
                   var6.add(var10);
                }
             }
          }
       } else {
-         for (Class9203 var12 : var1) {
-            String var13 = var12.field42267 + " " + var12.field42269;
+         for (Coordinates var12 : var1) {
+            String var13 = var12.x + " " + var12.z;
             if (var3.test(var13)) {
-               var6.add(var12.field42267);
+               var6.add(var12.x);
                var6.add(var13);
             }
          }
       }
 
-      return method20147(var6, var2);
+      return suggest(var6, var2);
    }
 
-   static CompletableFuture<Suggestions> method20147(Iterable<String> var0, SuggestionsBuilder var1) {
+   static CompletableFuture<Suggestions> suggest(Iterable<String> var0, SuggestionsBuilder var1) {
       String var4 = var1.getRemaining().toLowerCase(Locale.ROOT);
 
       for (String var6 : var0) {
@@ -181,13 +180,13 @@ public interface ISuggestionProvider {
       return var1.buildFuture();
    }
 
-   static CompletableFuture<Suggestions> method20148(Stream<String> var0, SuggestionsBuilder var1) {
+   static CompletableFuture<Suggestions> suggest(Stream<String> var0, SuggestionsBuilder var1) {
       String var4 = var1.getRemaining().toLowerCase(Locale.ROOT);
       var0.filter(var1x -> method20150(var4, var1x.toLowerCase(Locale.ROOT))).forEach(var1::suggest);
       return var1.buildFuture();
    }
 
-   static CompletableFuture<Suggestions> method20149(String[] var0, SuggestionsBuilder var1) {
+   static CompletableFuture<Suggestions> suggest(String[] var0, SuggestionsBuilder var1) {
       String var4 = var1.getRemaining().toLowerCase(Locale.ROOT);
 
       for (String var8 : var0) {
@@ -208,5 +207,20 @@ public interface ISuggestionProvider {
       }
 
       return true;
+   }
+
+   class Coordinates {
+      public static final ISuggestionProvider.Coordinates DEFAULT_LOCAL = new ISuggestionProvider.Coordinates("^", "^", "^");
+      public static final ISuggestionProvider.Coordinates DEFAULT_GLOBAL = new ISuggestionProvider.Coordinates("~", "~", "~");
+      public final String x;
+      public final String y;
+      public final String z;
+
+      public Coordinates(String xIn, String yIn, String zIn)
+      {
+         this.x = xIn;
+         this.y = yIn;
+         this.z = zIn;
+      }
    }
 }

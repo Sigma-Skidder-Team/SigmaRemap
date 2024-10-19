@@ -12,7 +12,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class Class6206 {
    public static final SuggestionProvider<CommandSource> field27688 = (var0, var1) -> {
       FunctionManager var4 = ((CommandSource)var0.getSource()).getServer().method1397();
-      ISuggestionProvider.method20140(var4.method22832(), var1, "#");
+      ISuggestionProvider.suggestIterable(var4.method22832(), var1, "#");
       return ISuggestionProvider.suggestIterable(var4.method22831(), var1);
    };
 

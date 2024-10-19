@@ -294,7 +294,7 @@ public class Class8268 {
 
    private CompletableFuture<Suggestions> method28854(SuggestionsBuilder var1, Class7984<Block> var2) {
       if (this.field35544) {
-         ISuggestionProvider.method20140(var2.method27137(), var1, String.valueOf('#'));
+         ISuggestionProvider.suggestIterable(var2.method27137(), var1, String.valueOf('#'));
       }
 
       ISuggestionProvider.suggestIterable(Registry.BLOCK.method9190(), var1);

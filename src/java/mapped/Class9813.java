@@ -31,13 +31,13 @@ public class Class9813 {
    private static final DynamicCommandExceptionType field45861 = new DynamicCommandExceptionType(
       var0 -> new TranslationTextComponent("commands.datapack.disable.failed", var0)
    );
-   private static final SuggestionProvider<CommandSource> field45862 = (var0, var1) -> ISuggestionProvider.method20148(
+   private static final SuggestionProvider<CommandSource> field45862 = (var0, var1) -> ISuggestionProvider.suggest(
          ((CommandSource)var0.getSource()).getServer().method1402().func_232621_d_().stream().<String>map(StringArgumentType::escapeIfRequired), var1
       );
    private static final SuggestionProvider<CommandSource> field45863 = (var0, var1) -> {
       ResourcePackList var4 = ((CommandSource)var0.getSource()).getServer().method1402();
       Collection var5 = var4.func_232621_d_();
-      return ISuggestionProvider.method20148(var4.method1267().stream().filter(var1x -> !var5.contains(var1x)).<String>map(StringArgumentType::escapeIfRequired), var1);
+      return ISuggestionProvider.suggest(var4.method1267().stream().filter(var1x -> !var5.contains(var1x)).<String>map(StringArgumentType::escapeIfRequired), var1);
    };
 
    public static void method38700(CommandDispatcher<CommandSource> var0) {

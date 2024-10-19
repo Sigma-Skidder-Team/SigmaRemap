@@ -318,7 +318,7 @@ public class Class9601 {
          }
       }
 
-      return ISuggestionProvider.method20147(var5, var2);
+      return ISuggestionProvider.suggest(var5, var2);
    }
 
    private static int method37274(CommandSource var0, String var1, Class8375 var2) throws CommandSyntaxException {

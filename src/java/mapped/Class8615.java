@@ -40,7 +40,7 @@ public class Class8615 {
                         Commands.method18839("remove")
                            .then(
                               Commands.method18840("name", StringArgumentType.word())
-                                 .suggests((var0x, var1) -> ISuggestionProvider.method20147(method30864(Class8700.method31348(var0x, "targets")), var1))
+                                 .suggests((var0x, var1) -> ISuggestionProvider.suggest(method30864(Class8700.method31348(var0x, "targets")), var1))
                                  .executes(
                                     var0x -> method30866(
                                           (CommandSource)var0x.getSource(), Class8700.method31348(var0x, "targets"), StringArgumentType.getString(var0x, "name")

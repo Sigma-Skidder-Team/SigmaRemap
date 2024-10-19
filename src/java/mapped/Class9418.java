@@ -41,7 +41,7 @@ public class Class9418 implements ArgumentType<Class4871> {
 
    public <S> CompletableFuture<Suggestions> listSuggestions(CommandContext<S> var1, SuggestionsBuilder var2) {
       Stream var5 = Class7936.method26704().stream().<String>map(Class4871::method15034);
-      return ISuggestionProvider.method20148(var5, var2);
+      return ISuggestionProvider.suggest(var5, var2);
    }
 
    public Collection<String> getExamples() {
