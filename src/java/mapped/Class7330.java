@@ -4,6 +4,7 @@ import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.command.CommandSource;
 import net.minecraft.command.arguments.ILocationArgument;
+import net.minecraft.command.arguments.Vec3Argument;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector2f;
 import net.minecraft.util.math.vector.Vector3d;
@@ -73,11 +74,11 @@ public class Class7330 implements ILocationArgument {
             return new Class7330(var4, var6, var8);
          } else {
             var0.setCursor(var3);
-            throw Class6851.field29766.createWithContext(var0);
+            throw Vec3Argument.field29766.createWithContext(var0);
          }
       } else {
          var0.setCursor(var3);
-         throw Class6851.field29766.createWithContext(var0);
+         throw Vec3Argument.field29766.createWithContext(var0);
       }
    }
 
@@ -85,7 +86,7 @@ public class Class7330 implements ILocationArgument {
       if (var0.canRead()) {
          if (var0.peek() != '^') {
             var0.setCursor(var1);
-            throw Class6851.field29767.createWithContext(var0);
+            throw Vec3Argument.field29767.createWithContext(var0);
          } else {
             var0.skip();
             return var0.canRead() && var0.peek() != ' ' ? var0.readDouble() : 0.0;

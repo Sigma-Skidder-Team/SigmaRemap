@@ -6,6 +6,7 @@ import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import net.minecraft.command.CommandSource;
+import net.minecraft.command.arguments.Vec3Argument;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
@@ -37,12 +38,12 @@ public class Class8002 {
                            )
                      ))
                   .then(
-                     ((RequiredArgumentBuilder) Commands.method18840("pos", Class6851.method20857())
+                     ((RequiredArgumentBuilder) Commands.method18840("pos", Vec3Argument.method20857())
                            .executes(
                               var0x -> method27336(
                                     (CommandSource)var0x.getSource(),
                                     Class7822.method26156(var0x, "entity"),
-                                    Class6851.method20859(var0x, "pos"),
+                                    Vec3Argument.method20859(var0x, "pos"),
                                     new CompoundNBT(),
                                     true
                                  )
@@ -53,7 +54,7 @@ public class Class8002 {
                                  var0x -> method27336(
                                        (CommandSource)var0x.getSource(),
                                        Class7822.method26156(var0x, "entity"),
-                                       Class6851.method20859(var0x, "pos"),
+                                       Vec3Argument.method20859(var0x, "pos"),
                                        Class9770.method38433(var0x, "nbt"),
                                        false
                                     )

@@ -4,6 +4,7 @@ import com.mojang.brigadier.builder.ArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.command.CommandSource;
+import net.minecraft.command.arguments.BlockPosArgument;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 
@@ -18,7 +19,7 @@ public final class Class8197 implements Class8196 {
 
    @Override
    public Class7151 method28503(CommandContext<CommandSource> var1) throws CommandSyntaxException {
-      BlockPos var4 = Class6849.method20827(var1, this.field35223 + "Pos");
+      BlockPos var4 = BlockPosArgument.method20827(var1, this.field35223 + "Pos");
       TileEntity var5 = ((CommandSource)var1.getSource()).method20172().getTileEntity(var4);
       if (var5 != null) {
          return new Class7152(var5, var4);
@@ -32,7 +33,7 @@ public final class Class8197 implements Class8196 {
            ArgumentBuilder<CommandSource, ?> var1, Function<ArgumentBuilder<CommandSource, ?>, ArgumentBuilder<CommandSource, ?>> var2
    ) {
       return var1.then(
-         Commands.method18839("block").then((ArgumentBuilder)var2.apply(Commands.method18840(this.field35223 + "Pos", Class6849.method20826())))
+         Commands.method18839("block").then((ArgumentBuilder)var2.apply(Commands.method18840(this.field35223 + "Pos", BlockPosArgument.method20826())))
       );
    }
 }

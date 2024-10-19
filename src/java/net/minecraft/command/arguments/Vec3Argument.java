@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.command.arguments;
 
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.arguments.ArgumentType;
@@ -12,28 +12,30 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.concurrent.CompletableFuture;
 
+import mapped.Class7330;
+import mapped.Class7331;
+import mapped.Commands;
 import net.minecraft.command.CommandSource;
 import net.minecraft.command.ISuggestionProvider;
-import net.minecraft.command.arguments.ILocationArgument;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class Class6851 implements ArgumentType<ILocationArgument> {
+public class Vec3Argument implements ArgumentType<ILocationArgument> {
    private static final Collection<String> field29765 = Arrays.<String>asList("0 0 0", "~ ~ ~", "^ ^ ^", "^1 ^ ^-5", "0.1 -0.5 .9", "~0.5 ~1 ~-5");
    public static final SimpleCommandExceptionType field29766 = new SimpleCommandExceptionType(new TranslationTextComponent("argument.pos3d.incomplete"));
    public static final SimpleCommandExceptionType field29767 = new SimpleCommandExceptionType(new TranslationTextComponent("argument.pos.mixed"));
    private final boolean field29768;
 
-   public Class6851(boolean var1) {
+   public Vec3Argument(boolean var1) {
       this.field29768 = var1;
    }
 
-   public static Class6851 method20857() {
-      return new Class6851(true);
+   public static Vec3Argument method20857() {
+      return new Vec3Argument(true);
    }
 
-   public static Class6851 method20858(boolean var0) {
-      return new Class6851(var0);
+   public static Vec3Argument method20858(boolean var0) {
+      return new Vec3Argument(var0);
    }
 
    public static Vector3d method20859(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {

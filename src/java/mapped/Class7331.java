@@ -4,6 +4,7 @@ import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.command.CommandSource;
 import net.minecraft.command.arguments.ILocationArgument;
+import net.minecraft.command.arguments.Vec3Argument;
 import net.minecraft.util.math.vector.Vector2f;
 import net.minecraft.util.math.vector.Vector3d;
 
@@ -78,11 +79,11 @@ public class Class7331 implements ILocationArgument {
             return new Class7331(var4, var5, var6);
          } else {
             var0.setCursor(var3);
-            throw Class6851.field29766.createWithContext(var0);
+            throw Vec3Argument.field29766.createWithContext(var0);
          }
       } else {
          var0.setCursor(var3);
-         throw Class6851.field29766.createWithContext(var0);
+         throw Vec3Argument.field29766.createWithContext(var0);
       }
    }
 
@@ -98,11 +99,11 @@ public class Class7331 implements ILocationArgument {
             return new Class7331(var5, var6, var7);
          } else {
             var0.setCursor(var4);
-            throw Class6851.field29766.createWithContext(var0);
+            throw Vec3Argument.field29766.createWithContext(var0);
          }
       } else {
          var0.setCursor(var4);
-         throw Class6851.field29766.createWithContext(var0);
+         throw Vec3Argument.field29766.createWithContext(var0);
       }
    }
 

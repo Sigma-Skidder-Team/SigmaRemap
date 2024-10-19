@@ -8,6 +8,7 @@ import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.function.Predicate;
 
 import net.minecraft.command.CommandSource;
+import net.minecraft.command.arguments.BlockPosArgument;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.CachedBlockInfo;
 import net.minecraft.util.math.BlockPos;
@@ -21,13 +22,13 @@ public class Class8686 {
       var0.register(
          (LiteralArgumentBuilder)((LiteralArgumentBuilder) Commands.method18839("setblock").requires(var0x -> var0x.method20129(2)))
             .then(
-               Commands.method18840("pos", Class6849.method20826())
+               Commands.method18840("pos", BlockPosArgument.method20826())
                   .then(
                      ((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder) Commands.method18840("block", Class7971.method27103())
                                  .executes(
                                     var0x -> method31295(
                                           (CommandSource)var0x.getSource(),
-                                          Class6849.method20827(var0x, "pos"),
+                                          BlockPosArgument.method20827(var0x, "pos"),
                                           Class7971.method27104(var0x, "block"),
                                           Class2047.field13361,
                                           (Predicate<CachedBlockInfo>)null
@@ -38,7 +39,7 @@ public class Class8686 {
                                     .executes(
                                        var0x -> method31295(
                                              (CommandSource)var0x.getSource(),
-                                             Class6849.method20827(var0x, "pos"),
+                                             BlockPosArgument.method20827(var0x, "pos"),
                                              Class7971.method27104(var0x, "block"),
                                              Class2047.field13362,
                                              (Predicate<CachedBlockInfo>)null
@@ -50,7 +51,7 @@ public class Class8686 {
                                  .executes(
                                     var0x -> method31295(
                                           (CommandSource)var0x.getSource(),
-                                          Class6849.method20827(var0x, "pos"),
+                                          BlockPosArgument.method20827(var0x, "pos"),
                                           Class7971.method27104(var0x, "block"),
                                           Class2047.field13361,
                                           var0xx -> var0xx.method37550().method7007(var0xx.method37551())
@@ -62,7 +63,7 @@ public class Class8686 {
                               .executes(
                                  var0x -> method31295(
                                        (CommandSource)var0x.getSource(),
-                                       Class6849.method20827(var0x, "pos"),
+                                       BlockPosArgument.method20827(var0x, "pos"),
                                        Class7971.method27104(var0x, "block"),
                                        Class2047.field13361,
                                        (Predicate<CachedBlockInfo>)null

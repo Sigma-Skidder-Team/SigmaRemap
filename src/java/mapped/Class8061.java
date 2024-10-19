@@ -10,6 +10,7 @@ import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.Collection;
 
 import net.minecraft.command.CommandSource;
+import net.minecraft.command.arguments.Vec3Argument;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.util.math.vector.Vector3d;
@@ -37,12 +38,12 @@ public class Class8061 {
                            )
                      ))
                   .then(
-                     ((RequiredArgumentBuilder) Commands.method18840("pos", Class6851.method20857())
+                     ((RequiredArgumentBuilder) Commands.method18840("pos", Vec3Argument.method20857())
                            .executes(
                               var0x -> method27672(
                                     (CommandSource)var0x.getSource(),
                                     Class8050.method27649(var0x, "name"),
-                                    Class6851.method20859(var0x, "pos"),
+                                    Vec3Argument.method20859(var0x, "pos"),
                                     Vector3d.ZERO,
                                     0.0F,
                                     0,
@@ -51,7 +52,7 @@ public class Class8061 {
                                  )
                            ))
                         .then(
-                           Commands.method18840("delta", Class6851.method20858(false))
+                           Commands.method18840("delta", Vec3Argument.method20858(false))
                               .then(
                                  Commands.method18840("speed", FloatArgumentType.floatArg(0.0F))
                                     .then(
@@ -60,8 +61,8 @@ public class Class8061 {
                                                    var0x -> method27672(
                                                          (CommandSource)var0x.getSource(),
                                                          Class8050.method27649(var0x, "name"),
-                                                         Class6851.method20859(var0x, "pos"),
-                                                         Class6851.method20859(var0x, "delta"),
+                                                         Vec3Argument.method20859(var0x, "pos"),
+                                                         Vec3Argument.method20859(var0x, "delta"),
                                                          FloatArgumentType.getFloat(var0x, "speed"),
                                                          IntegerArgumentType.getInteger(var0x, "count"),
                                                          false,
@@ -74,8 +75,8 @@ public class Class8061 {
                                                          var0x -> method27672(
                                                                (CommandSource)var0x.getSource(),
                                                                Class8050.method27649(var0x, "name"),
-                                                               Class6851.method20859(var0x, "pos"),
-                                                               Class6851.method20859(var0x, "delta"),
+                                                               Vec3Argument.method20859(var0x, "pos"),
+                                                               Vec3Argument.method20859(var0x, "delta"),
                                                                FloatArgumentType.getFloat(var0x, "speed"),
                                                                IntegerArgumentType.getInteger(var0x, "count"),
                                                                true,
@@ -88,8 +89,8 @@ public class Class8061 {
                                                             var0x -> method27672(
                                                                   (CommandSource)var0x.getSource(),
                                                                   Class8050.method27649(var0x, "name"),
-                                                                  Class6851.method20859(var0x, "pos"),
-                                                                  Class6851.method20859(var0x, "delta"),
+                                                                  Vec3Argument.method20859(var0x, "pos"),
+                                                                  Vec3Argument.method20859(var0x, "delta"),
                                                                   FloatArgumentType.getFloat(var0x, "speed"),
                                                                   IntegerArgumentType.getInteger(var0x, "count"),
                                                                   true,
@@ -104,8 +105,8 @@ public class Class8061 {
                                                       var0x -> method27672(
                                                             (CommandSource)var0x.getSource(),
                                                             Class8050.method27649(var0x, "name"),
-                                                            Class6851.method20859(var0x, "pos"),
-                                                            Class6851.method20859(var0x, "delta"),
+                                                            Vec3Argument.method20859(var0x, "pos"),
+                                                            Vec3Argument.method20859(var0x, "delta"),
                                                             FloatArgumentType.getFloat(var0x, "speed"),
                                                             IntegerArgumentType.getInteger(var0x, "count"),
                                                             false,
@@ -118,8 +119,8 @@ public class Class8061 {
                                                          var0x -> method27672(
                                                                (CommandSource)var0x.getSource(),
                                                                Class8050.method27649(var0x, "name"),
-                                                               Class6851.method20859(var0x, "pos"),
-                                                               Class6851.method20859(var0x, "delta"),
+                                                               Vec3Argument.method20859(var0x, "pos"),
+                                                               Vec3Argument.method20859(var0x, "delta"),
                                                                FloatArgumentType.getFloat(var0x, "speed"),
                                                                IntegerArgumentType.getInteger(var0x, "count"),
                                                                false,

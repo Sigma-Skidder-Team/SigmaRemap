@@ -10,6 +10,7 @@ import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.command.CommandSource;
+import net.minecraft.command.arguments.BlockPosArgument;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.CachedBlockInfo;
@@ -34,19 +35,19 @@ public class Class6450 {
         var0.register(
                 (LiteralArgumentBuilder) ((LiteralArgumentBuilder) Commands.method18839("clone").requires(var0x -> var0x.method20129(2)))
                         .then(
-                                Commands.method18840("begin", Class6849.method20826())
+                                Commands.method18840("begin", BlockPosArgument.method20826())
                                         .then(
-                                                Commands.method18840("end", Class6849.method20826())
+                                                Commands.method18840("end", BlockPosArgument.method20826())
                                                         .then(
                                                                 ((RequiredArgumentBuilder) ((RequiredArgumentBuilder) ((RequiredArgumentBuilder) Commands.method18840(
-                                                                                "destination", Class6849.method20826()
+                                                                                "destination", BlockPosArgument.method20826()
                                                                         )
                                                                         .executes(
                                                                                 var0x -> method19589(
                                                                                         (CommandSource) var0x.getSource(),
-                                                                                        Class6849.method20827(var0x, "begin"),
-                                                                                        Class6849.method20827(var0x, "end"),
-                                                                                        Class6849.method20827(var0x, "destination"),
+                                                                                        BlockPosArgument.method20827(var0x, "begin"),
+                                                                                        BlockPosArgument.method20827(var0x, "end"),
+                                                                                        BlockPosArgument.method20827(var0x, "destination"),
                                                                                         var0xx -> true,
                                                                                         Class2109.field13763
                                                                                 )
@@ -56,9 +57,9 @@ public class Class6450 {
                                                                                         .executes(
                                                                                                 var0x -> method19589(
                                                                                                         (CommandSource) var0x.getSource(),
-                                                                                                        Class6849.method20827(var0x, "begin"),
-                                                                                                        Class6849.method20827(var0x, "end"),
-                                                                                                        Class6849.method20827(var0x, "destination"),
+                                                                                                        BlockPosArgument.method20827(var0x, "begin"),
+                                                                                                        BlockPosArgument.method20827(var0x, "end"),
+                                                                                                        BlockPosArgument.method20827(var0x, "destination"),
                                                                                                         var0xx -> true,
                                                                                                         Class2109.field13763
                                                                                                 )
@@ -68,9 +69,9 @@ public class Class6450 {
                                                                                                         .executes(
                                                                                                                 var0x -> method19589(
                                                                                                                         (CommandSource) var0x.getSource(),
-                                                                                                                        Class6849.method20827(var0x, "begin"),
-                                                                                                                        Class6849.method20827(var0x, "end"),
-                                                                                                                        Class6849.method20827(var0x, "destination"),
+                                                                                                                        BlockPosArgument.method20827(var0x, "begin"),
+                                                                                                                        BlockPosArgument.method20827(var0x, "end"),
+                                                                                                                        BlockPosArgument.method20827(var0x, "destination"),
                                                                                                                         var0xx -> true,
                                                                                                                         Class2109.field13761
                                                                                                                 )
@@ -81,9 +82,9 @@ public class Class6450 {
                                                                                                         .executes(
                                                                                                                 var0x -> method19589(
                                                                                                                         (CommandSource) var0x.getSource(),
-                                                                                                                        Class6849.method20827(var0x, "begin"),
-                                                                                                                        Class6849.method20827(var0x, "end"),
-                                                                                                                        Class6849.method20827(var0x, "destination"),
+                                                                                                                        BlockPosArgument.method20827(var0x, "begin"),
+                                                                                                                        BlockPosArgument.method20827(var0x, "end"),
+                                                                                                                        BlockPosArgument.method20827(var0x, "destination"),
                                                                                                                         var0xx -> true,
                                                                                                                         Class2109.field13762
                                                                                                                 )
@@ -94,9 +95,9 @@ public class Class6450 {
                                                                                                         .executes(
                                                                                                                 var0x -> method19589(
                                                                                                                         (CommandSource) var0x.getSource(),
-                                                                                                                        Class6849.method20827(var0x, "begin"),
-                                                                                                                        Class6849.method20827(var0x, "end"),
-                                                                                                                        Class6849.method20827(var0x, "destination"),
+                                                                                                                        BlockPosArgument.method20827(var0x, "begin"),
+                                                                                                                        BlockPosArgument.method20827(var0x, "end"),
+                                                                                                                        BlockPosArgument.method20827(var0x, "destination"),
                                                                                                                         var0xx -> true,
                                                                                                                         Class2109.field13763
                                                                                                                 )
@@ -108,9 +109,9 @@ public class Class6450 {
                                                                                         .executes(
                                                                                                 var0x -> method19589(
                                                                                                         (CommandSource) var0x.getSource(),
-                                                                                                        Class6849.method20827(var0x, "begin"),
-                                                                                                        Class6849.method20827(var0x, "end"),
-                                                                                                        Class6849.method20827(var0x, "destination"),
+                                                                                                        BlockPosArgument.method20827(var0x, "begin"),
+                                                                                                        BlockPosArgument.method20827(var0x, "end"),
+                                                                                                        BlockPosArgument.method20827(var0x, "destination"),
                                                                                                         field28363,
                                                                                                         Class2109.field13763
                                                                                                 )
@@ -120,9 +121,9 @@ public class Class6450 {
                                                                                                         .executes(
                                                                                                                 var0x -> method19589(
                                                                                                                         (CommandSource) var0x.getSource(),
-                                                                                                                        Class6849.method20827(var0x, "begin"),
-                                                                                                                        Class6849.method20827(var0x, "end"),
-                                                                                                                        Class6849.method20827(var0x, "destination"),
+                                                                                                                        BlockPosArgument.method20827(var0x, "begin"),
+                                                                                                                        BlockPosArgument.method20827(var0x, "end"),
+                                                                                                                        BlockPosArgument.method20827(var0x, "destination"),
                                                                                                                         field28363,
                                                                                                                         Class2109.field13761
                                                                                                                 )
@@ -133,9 +134,9 @@ public class Class6450 {
                                                                                                         .executes(
                                                                                                                 var0x -> method19589(
                                                                                                                         (CommandSource) var0x.getSource(),
-                                                                                                                        Class6849.method20827(var0x, "begin"),
-                                                                                                                        Class6849.method20827(var0x, "end"),
-                                                                                                                        Class6849.method20827(var0x, "destination"),
+                                                                                                                        BlockPosArgument.method20827(var0x, "begin"),
+                                                                                                                        BlockPosArgument.method20827(var0x, "end"),
+                                                                                                                        BlockPosArgument.method20827(var0x, "destination"),
                                                                                                                         field28363,
                                                                                                                         Class2109.field13762
                                                                                                                 )
@@ -146,9 +147,9 @@ public class Class6450 {
                                                                                                         .executes(
                                                                                                                 var0x -> method19589(
                                                                                                                         (CommandSource) var0x.getSource(),
-                                                                                                                        Class6849.method20827(var0x, "begin"),
-                                                                                                                        Class6849.method20827(var0x, "end"),
-                                                                                                                        Class6849.method20827(var0x, "destination"),
+                                                                                                                        BlockPosArgument.method20827(var0x, "begin"),
+                                                                                                                        BlockPosArgument.method20827(var0x, "end"),
+                                                                                                                        BlockPosArgument.method20827(var0x, "destination"),
                                                                                                                         field28363,
                                                                                                                         Class2109.field13763
                                                                                                                 )
@@ -164,9 +165,9 @@ public class Class6450 {
                                                                                                         .executes(
                                                                                                                 var0x -> method19589(
                                                                                                                         (CommandSource) var0x.getSource(),
-                                                                                                                        Class6849.method20827(var0x, "begin"),
-                                                                                                                        Class6849.method20827(var0x, "end"),
-                                                                                                                        Class6849.method20827(var0x, "destination"),
+                                                                                                                        BlockPosArgument.method20827(var0x, "begin"),
+                                                                                                                        BlockPosArgument.method20827(var0x, "end"),
+                                                                                                                        BlockPosArgument.method20827(var0x, "destination"),
                                                                                                                         Class7505.method24465(var0x, "filter"),
                                                                                                                         Class2109.field13763
                                                                                                                 )
@@ -176,9 +177,9 @@ public class Class6450 {
                                                                                                                         .executes(
                                                                                                                                 var0x -> method19589(
                                                                                                                                         (CommandSource) var0x.getSource(),
-                                                                                                                                        Class6849.method20827(var0x, "begin"),
-                                                                                                                                        Class6849.method20827(var0x, "end"),
-                                                                                                                                        Class6849.method20827(var0x, "destination"),
+                                                                                                                                        BlockPosArgument.method20827(var0x, "begin"),
+                                                                                                                                        BlockPosArgument.method20827(var0x, "end"),
+                                                                                                                                        BlockPosArgument.method20827(var0x, "destination"),
                                                                                                                                         Class7505.method24465(var0x, "filter"),
                                                                                                                                         Class2109.field13761
                                                                                                                                 )
@@ -189,9 +190,9 @@ public class Class6450 {
                                                                                                                         .executes(
                                                                                                                                 var0x -> method19589(
                                                                                                                                         (CommandSource) var0x.getSource(),
-                                                                                                                                        Class6849.method20827(var0x, "begin"),
-                                                                                                                                        Class6849.method20827(var0x, "end"),
-                                                                                                                                        Class6849.method20827(var0x, "destination"),
+                                                                                                                                        BlockPosArgument.method20827(var0x, "begin"),
+                                                                                                                                        BlockPosArgument.method20827(var0x, "end"),
+                                                                                                                                        BlockPosArgument.method20827(var0x, "destination"),
                                                                                                                                         Class7505.method24465(var0x, "filter"),
                                                                                                                                         Class2109.field13762
                                                                                                                                 )
@@ -202,9 +203,9 @@ public class Class6450 {
                                                                                                                         .executes(
                                                                                                                                 var0x -> method19589(
                                                                                                                                         (CommandSource) var0x.getSource(),
-                                                                                                                                        Class6849.method20827(var0x, "begin"),
-                                                                                                                                        Class6849.method20827(var0x, "end"),
-                                                                                                                                        Class6849.method20827(var0x, "destination"),
+                                                                                                                                        BlockPosArgument.method20827(var0x, "begin"),
+                                                                                                                                        BlockPosArgument.method20827(var0x, "end"),
+                                                                                                                                        BlockPosArgument.method20827(var0x, "destination"),
                                                                                                                                         Class7505.method24465(var0x, "filter"),
                                                                                                                                         Class2109.field13763
                                                                                                                                 )
@@ -321,7 +322,7 @@ public class Class6450 {
                         throw field28362.create();
                     }
                 } else {
-                    throw Class6849.field29741.create();
+                    throw BlockPosArgument.field29741.create();
                 }
             }
         }

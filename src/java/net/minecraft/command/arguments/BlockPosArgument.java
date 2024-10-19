@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.command.arguments;
 
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.arguments.ArgumentType;
@@ -12,20 +12,22 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.concurrent.CompletableFuture;
 
+import mapped.Class7330;
+import mapped.Class7331;
+import mapped.Commands;
 import net.minecraft.command.CommandSource;
 import net.minecraft.command.ISuggestionProvider;
-import net.minecraft.command.arguments.ILocationArgument;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.server.ServerWorld;
 
-public class Class6849 implements ArgumentType<ILocationArgument> {
+public class BlockPosArgument implements ArgumentType<ILocationArgument> {
    private static final Collection<String> field29740 = Arrays.<String>asList("0 0 0", "~ ~ ~", "^ ^ ^", "^1 ^ ^-5", "~0.5 ~1 ~-5");
    public static final SimpleCommandExceptionType field29741 = new SimpleCommandExceptionType(new TranslationTextComponent("argument.pos.unloaded"));
    public static final SimpleCommandExceptionType field29742 = new SimpleCommandExceptionType(new TranslationTextComponent("argument.pos.outofworld"));
 
-   public static Class6849 method20826() {
-      return new Class6849();
+   public static BlockPosArgument method20826() {
+      return new BlockPosArgument();
    }
 
    public static BlockPos method20827(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {

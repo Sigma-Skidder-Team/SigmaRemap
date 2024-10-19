@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import net.minecraft.command.CommandSource;
+import net.minecraft.command.arguments.BlockPosArgument;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -35,7 +36,7 @@ public class Class9195 {
                .then(
                   Commands.method18839("block")
                      .then(
-                        Commands.method18840("pos", Class6849.method20826())
+                        Commands.method18840("pos", BlockPosArgument.method20826())
                            .then(
                               Commands.method18840("slot", Class4914.method15195())
                                  .then(
@@ -43,7 +44,7 @@ public class Class9195 {
                                           .executes(
                                              var0x -> method34455(
                                                    (CommandSource)var0x.getSource(),
-                                                   Class6849.method20827(var0x, "pos"),
+                                                   BlockPosArgument.method20827(var0x, "pos"),
                                                    Class4914.method15196(var0x, "slot"),
                                                    Class8722.method31482(var0x, "item").method503(1, false)
                                                 )
@@ -53,7 +54,7 @@ public class Class9195 {
                                              .executes(
                                                 var0x -> method34455(
                                                       (CommandSource)var0x.getSource(),
-                                                      Class6849.method20827(var0x, "pos"),
+                                                      BlockPosArgument.method20827(var0x, "pos"),
                                                       Class4914.method15196(var0x, "slot"),
                                                       Class8722.method31482(var0x, "item").method503(IntegerArgumentType.getInteger(var0x, "count"), true)
                                                    )

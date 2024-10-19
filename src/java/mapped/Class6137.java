@@ -28,7 +28,9 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.command.CommandSource;
 import net.minecraft.command.ISuggestionProvider;
+import net.minecraft.command.arguments.BlockPosArgument;
 import net.minecraft.command.arguments.ResourceLocationArgument;
+import net.minecraft.command.arguments.Vec3Argument;
 import net.minecraft.command.impl.BossBarCommand;
 import net.minecraft.entity.Entity;
 import net.minecraft.nbt.*;
@@ -109,11 +111,11 @@ public class Class6137 {
                            .then(
                               ((LiteralArgumentBuilder) Commands.method18839("positioned")
                                     .then(
-                                       Commands.method18840("pos", Class6851.method20857())
+                                       Commands.method18840("pos", Vec3Argument.method20857())
                                           .redirect(
                                              var3,
                                              var0x -> ((CommandSource)var0x.getSource())
-                                                   .method20158(Class6851.method20859(var0x, "pos"))
+                                                   .method20158(Vec3Argument.method20859(var0x, "pos"))
                                                    .method20165(Class2062.field13441)
                                           )
                                     ))
@@ -166,8 +168,8 @@ public class Class6137 {
                                     )
                               ))
                            .then(
-                              Commands.method18840("pos", Class6851.method20857())
-                                 .redirect(var3, var0x -> ((CommandSource)var0x.getSource()).method20168(Class6851.method20859(var0x, "pos")))
+                              Commands.method18840("pos", Vec3Argument.method20857())
+                                 .redirect(var3, var0x -> ((CommandSource)var0x.getSource()).method20168(Vec3Argument.method20859(var0x, "pos")))
                            )
                      ))
                   .then(
@@ -378,14 +380,14 @@ public class Class6137 {
       ((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)var1.then(
                      Commands.method18839("block")
                         .then(
-                           Commands.method18840("pos", Class6849.method20826())
+                           Commands.method18840("pos", BlockPosArgument.method20826())
                               .then(
                                  method18970(
                                     var0,
                                     Commands.method18840("block", Class7505.method24464()),
                                     var2,
                                     var0x -> Class7505.method24465(var0x, "block")
-                                          .test(new CachedBlockInfo(((CommandSource)var0x.getSource()).method20172(), Class6849.method20827(var0x, "pos"), true))
+                                          .test(new CachedBlockInfo(((CommandSource)var0x.getSource()).method20172(), BlockPosArgument.method20827(var0x, "pos"), true))
                                  )
                               )
                         )
@@ -491,11 +493,11 @@ public class Class6137 {
                .then(
                   Commands.method18839("blocks")
                      .then(
-                        Commands.method18840("start", Class6849.method20826())
+                        Commands.method18840("start", BlockPosArgument.method20826())
                            .then(
-                              Commands.method18840("end", Class6849.method20826())
+                              Commands.method18840("end", BlockPosArgument.method20826())
                                  .then(
-                                    ((RequiredArgumentBuilder) Commands.method18840("destination", Class6849.method20826())
+                                    ((RequiredArgumentBuilder) Commands.method18840("destination", BlockPosArgument.method20826())
                                           .then(method18971(var0, Commands.method18839("all"), var2, false)))
                                        .then(method18971(var0, Commands.method18839("masked"), var2, true))
                                  )
@@ -633,9 +635,9 @@ public class Class6137 {
    private static OptionalInt method18974(CommandContext<CommandSource> var0, boolean var1) throws CommandSyntaxException {
       return method18975(
          ((CommandSource)var0.getSource()).method20172(),
-         Class6849.method20827(var0, "start"),
-         Class6849.method20827(var0, "end"),
-         Class6849.method20827(var0, "destination"),
+         BlockPosArgument.method20827(var0, "start"),
+         BlockPosArgument.method20827(var0, "end"),
+         BlockPosArgument.method20827(var0, "destination"),
          var1
       );
    }

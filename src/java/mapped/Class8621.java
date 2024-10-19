@@ -10,6 +10,7 @@ import java.util.Collection;
 
 import net.minecraft.command.CommandSource;
 import net.minecraft.command.arguments.ResourceLocationArgument;
+import net.minecraft.command.arguments.Vec3Argument;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.network.play.server.SPlaySoundPacket;
 import net.minecraft.util.ResourceLocation;
@@ -47,14 +48,14 @@ public class Class8621 {
                         )
                   ))
                .then(
-                  ((RequiredArgumentBuilder) Commands.method18840("pos", Class6851.method20857())
+                  ((RequiredArgumentBuilder) Commands.method18840("pos", Vec3Argument.method20857())
                         .executes(
                            var1 -> method30878(
                                  (CommandSource)var1.getSource(),
                                  Class8700.method31354(var1, "targets"),
                                  ResourceLocationArgument.getResourceLocation(var1, "sound"),
                                  var0,
-                                 Class6851.method20859(var1, "pos"),
+                                 Vec3Argument.method20859(var1, "pos"),
                                  1.0F,
                                  1.0F,
                                  0.0F
@@ -68,7 +69,7 @@ public class Class8621 {
                                        Class8700.method31354(var1, "targets"),
                                        ResourceLocationArgument.getResourceLocation(var1, "sound"),
                                        var0,
-                                       Class6851.method20859(var1, "pos"),
+                                       Vec3Argument.method20859(var1, "pos"),
                                        (Float)var1.getArgument("volume", Float.class),
                                        1.0F,
                                        0.0F
@@ -82,7 +83,7 @@ public class Class8621 {
                                              Class8700.method31354(var1, "targets"),
                                              ResourceLocationArgument.getResourceLocation(var1, "sound"),
                                              var0,
-                                             Class6851.method20859(var1, "pos"),
+                                             Vec3Argument.method20859(var1, "pos"),
                                              (Float)var1.getArgument("volume", Float.class),
                                              (Float)var1.getArgument("pitch", Float.class),
                                              0.0F
@@ -96,7 +97,7 @@ public class Class8621 {
                                                 Class8700.method31354(var1, "targets"),
                                                 ResourceLocationArgument.getResourceLocation(var1, "sound"),
                                                 var0,
-                                                Class6851.method20859(var1, "pos"),
+                                                Vec3Argument.method20859(var1, "pos"),
                                                 (Float)var1.getArgument("volume", Float.class),
                                                 (Float)var1.getArgument("pitch", Float.class),
                                                 (Float)var1.getArgument("minVolume", Float.class)

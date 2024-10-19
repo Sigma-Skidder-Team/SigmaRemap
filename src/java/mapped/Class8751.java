@@ -4,6 +4,7 @@ import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import net.minecraft.command.CommandSource;
+import net.minecraft.command.arguments.BlockPosArgument;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -14,12 +15,12 @@ public class Class8751 {
                   .requires(var0x -> var0x.method20129(2)))
                .executes(var0x -> method31570((CommandSource)var0x.getSource(), new BlockPos(((CommandSource)var0x.getSource()).method20171()), 0.0F)))
             .then(
-               ((RequiredArgumentBuilder) Commands.method18840("pos", Class6849.method20826())
-                     .executes(var0x -> method31570((CommandSource)var0x.getSource(), Class6849.method20828(var0x, "pos"), 0.0F)))
+               ((RequiredArgumentBuilder) Commands.method18840("pos", BlockPosArgument.method20826())
+                     .executes(var0x -> method31570((CommandSource)var0x.getSource(), BlockPosArgument.method20828(var0x, "pos"), 0.0F)))
                   .then(
                      Commands.method18840("angle", Class9076.method33816())
                         .executes(
-                           var0x -> method31570((CommandSource)var0x.getSource(), Class6849.method20828(var0x, "pos"), Class9076.method33817(var0x, "angle"))
+                           var0x -> method31570((CommandSource)var0x.getSource(), BlockPosArgument.method20828(var0x, "pos"), Class9076.method33817(var0x, "angle"))
                         )
                   )
             )

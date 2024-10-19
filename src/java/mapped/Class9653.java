@@ -18,7 +18,9 @@ import java.util.Objects;
 import net.minecraft.block.BlockState;
 import net.minecraft.command.CommandSource;
 import net.minecraft.command.ISuggestionProvider;
+import net.minecraft.command.arguments.BlockPosArgument;
 import net.minecraft.command.arguments.ResourceLocationArgument;
+import net.minecraft.command.arguments.Vec3Argument;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -56,13 +58,13 @@ public class Class9653 {
                               .suggests(field45128)
                               .then(
                                  ((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder) Commands.method18840(
-                                                "pos", Class6849.method20826()
+                                                "pos", BlockPosArgument.method20826()
                                              )
                                              .executes(
                                                 var1x -> method37675(
                                                       var1x,
                                                       ResourceLocationArgument.getResourceLocation(var1x, "loot_table"),
-                                                      Class6849.method20827(var1x, "pos"),
+                                                      BlockPosArgument.method20827(var1x, "pos"),
                                                       ItemStack.EMPTY,
                                                       var1
                                                    )
@@ -73,7 +75,7 @@ public class Class9653 {
                                                    var1x -> method37675(
                                                          var1x,
                                                          ResourceLocationArgument.getResourceLocation(var1x, "loot_table"),
-                                                         Class6849.method20827(var1x, "pos"),
+                                                         BlockPosArgument.method20827(var1x, "pos"),
                                                          Class8722.method31482(var1x, "tool").method503(1, false),
                                                          var1
                                                       )
@@ -85,7 +87,7 @@ public class Class9653 {
                                                 var1x -> method37675(
                                                       var1x,
                                                       ResourceLocationArgument.getResourceLocation(var1x, "loot_table"),
-                                                      Class6849.method20827(var1x, "pos"),
+                                                      BlockPosArgument.method20827(var1x, "pos"),
                                                       method37671((CommandSource)var1x.getSource(), EquipmentSlotType.MAINHAND),
                                                       var1
                                                    )
@@ -97,7 +99,7 @@ public class Class9653 {
                                              var1x -> method37675(
                                                    var1x,
                                                    ResourceLocationArgument.getResourceLocation(var1x, "loot_table"),
-                                                   Class6849.method20827(var1x, "pos"),
+                                                   BlockPosArgument.method20827(var1x, "pos"),
                                                    method37671((CommandSource)var1x.getSource(), EquipmentSlotType.OFFHAND),
                                                    var1
                                                 )
@@ -124,13 +126,13 @@ public class Class9653 {
                   .then(
                      Commands.method18839("mine")
                         .then(
-                           ((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder) Commands.method18840("pos", Class6849.method20826())
-                                       .executes(var1x -> method37672(var1x, Class6849.method20827(var1x, "pos"), ItemStack.EMPTY, var1)))
+                           ((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder) Commands.method18840("pos", BlockPosArgument.method20826())
+                                       .executes(var1x -> method37672(var1x, BlockPosArgument.method20827(var1x, "pos"), ItemStack.EMPTY, var1)))
                                     .then(
                                        Commands.method18840("tool", Class8722.method31481())
                                           .executes(
                                              var1x -> method37672(
-                                                   var1x, Class6849.method20827(var1x, "pos"), Class8722.method31482(var1x, "tool").method503(1, false), var1
+                                                   var1x, BlockPosArgument.method20827(var1x, "pos"), Class8722.method31482(var1x, "tool").method503(1, false), var1
                                                 )
                                           )
                                     ))
@@ -139,7 +141,7 @@ public class Class9653 {
                                        .executes(
                                           var1x -> method37672(
                                                 var1x,
-                                                Class6849.method20827(var1x, "pos"),
+                                                BlockPosArgument.method20827(var1x, "pos"),
                                                 method37671((CommandSource)var1x.getSource(), EquipmentSlotType.MAINHAND),
                                                 var1
                                              )
@@ -149,7 +151,7 @@ public class Class9653 {
                                  Commands.method18839("offhand")
                                     .executes(
                                        var1x -> method37672(
-                                             var1x, Class6849.method20827(var1x, "pos"), method37671((CommandSource)var1x.getSource(), EquipmentSlotType.OFFHAND), var1
+                                             var1x, BlockPosArgument.method20827(var1x, "pos"), method37671((CommandSource)var1x.getSource(), EquipmentSlotType.OFFHAND), var1
                                           )
                                     )
                               )
@@ -191,13 +193,13 @@ public class Class9653 {
                .then(
                   Commands.method18839("block")
                      .then(
-                        Commands.method18840("targetPos", Class6849.method20826())
+                        Commands.method18840("targetPos", BlockPosArgument.method20826())
                            .then(
                               var1.method28672(
                                     Commands.method18840("slot", Class4914.method15195()),
                                     (var0x, var1x, var2) -> method37663(
                                           (CommandSource)var0x.getSource(),
-                                          Class6849.method20827(var0x, "targetPos"),
+                                          BlockPosArgument.method20827(var0x, "targetPos"),
                                           Class4914.method15196(var0x, "slot"),
                                           var1x.size(),
                                           var1x,
@@ -209,7 +211,7 @@ public class Class9653 {
                                        Commands.method18840("count", IntegerArgumentType.integer(0)),
                                        (var0x, var1x, var2) -> method37663(
                                              (CommandSource)var0x.getSource(),
-                                             Class6849.method20827(var0x, "targetPos"),
+                                             BlockPosArgument.method20827(var0x, "targetPos"),
                                              IntegerArgumentType.getInteger(var0x, "slot"),
                                              IntegerArgumentType.getInteger(var0x, "count"),
                                              var1x,
@@ -225,8 +227,8 @@ public class Class9653 {
             Commands.method18839("insert")
                .then(
                   var1.method28672(
-                     Commands.method18840("targetPos", Class6849.method20826()),
-                     (var0x, var1x, var2) -> method37661((CommandSource)var0x.getSource(), Class6849.method20827(var0x, "targetPos"), var1x, var2)
+                     Commands.method18840("targetPos", BlockPosArgument.method20826()),
+                     (var0x, var1x, var2) -> method37661((CommandSource)var0x.getSource(), BlockPosArgument.method20827(var0x, "targetPos"), var1x, var2)
                   )
                )
          )
@@ -243,8 +245,8 @@ public class Class9653 {
             Commands.method18839("spawn")
                .then(
                   var1.method28672(
-                     Commands.method18840("targetPos", Class6851.method20857()),
-                     (var0x, var1x, var2) -> method37668((CommandSource)var0x.getSource(), Class6851.method20859(var0x, "targetPos"), var1x, var2)
+                     Commands.method18840("targetPos", Vec3Argument.method20857()),
+                     (var0x, var1x, var2) -> method37668((CommandSource)var0x.getSource(), Vec3Argument.method20859(var0x, "targetPos"), var1x, var2)
                   )
                )
          );

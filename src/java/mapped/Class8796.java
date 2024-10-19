@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
+import net.minecraft.command.arguments.Vec3Argument;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class8796 {
@@ -22,7 +23,7 @@ public class Class8796 {
 
    public static Class8796 method31755(StringReader var0, boolean var1) throws CommandSyntaxException {
       if (var0.canRead() && var0.peek() == '^') {
-         throw Class6851.field29767.createWithContext(var0);
+         throw Vec3Argument.field29767.createWithContext(var0);
       } else if (!var0.canRead()) {
          throw field39619.createWithContext(var0);
       } else {
@@ -44,7 +45,7 @@ public class Class8796 {
 
    public static Class8796 method31756(StringReader var0) throws CommandSyntaxException {
       if (var0.canRead() && var0.peek() == '^') {
-         throw Class6851.field29767.createWithContext(var0);
+         throw Vec3Argument.field29767.createWithContext(var0);
       } else if (!var0.canRead()) {
          throw field39620.createWithContext(var0);
       } else {

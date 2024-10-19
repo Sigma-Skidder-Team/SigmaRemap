@@ -4,6 +4,7 @@ import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import mapped.*;
 import net.minecraft.command.CommandSource;
+import net.minecraft.command.arguments.BlockPosArgument;
 import net.minecraft.command.arguments.ILocationArgument;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
@@ -27,7 +28,7 @@ public class NBTTextComponent$Block extends NBTTextComponent {
    @Nullable
    private ILocationArgument func_218682_b(String p_218682_1_) {
       try {
-         return Class6849.method20826().parse(new StringReader(p_218682_1_));
+         return BlockPosArgument.method20826().parse(new StringReader(p_218682_1_));
       } catch (CommandSyntaxException var5) {
          return null;
       }

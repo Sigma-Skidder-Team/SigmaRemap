@@ -13,6 +13,7 @@ import java.util.Set;
 
 import net.minecraft.command.CommandSource;
 import net.minecraft.command.arguments.ILocationArgument;
+import net.minecraft.command.arguments.Vec3Argument;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -38,13 +39,13 @@ public class Class9651 {
                   .then(
                      ((RequiredArgumentBuilder) Commands.method18840("targets", Class8700.method31347())
                            .then(
-                              ((RequiredArgumentBuilder)((RequiredArgumentBuilder) Commands.method18840("location", Class6851.method20857())
+                              ((RequiredArgumentBuilder)((RequiredArgumentBuilder) Commands.method18840("location", Vec3Argument.method20857())
                                        .executes(
                                           var0x -> method37646(
                                                 (CommandSource)var0x.getSource(),
                                                 Class8700.method31348(var0x, "targets"),
                                                 ((CommandSource)var0x.getSource()).method20172(),
-                                                Class6851.method20860(var0x, "location"),
+                                                Vec3Argument.method20860(var0x, "location"),
                                                 (ILocationArgument)null,
                                                 (Class8502)null
                                              )
@@ -56,7 +57,7 @@ public class Class9651 {
                                                    (CommandSource)var0x.getSource(),
                                                    Class8700.method31348(var0x, "targets"),
                                                    ((CommandSource)var0x.getSource()).method20172(),
-                                                   Class6851.method20860(var0x, "location"),
+                                                   Vec3Argument.method20860(var0x, "location"),
                                                    Class7918.method26559(var0x, "rotation"),
                                                    (Class8502)null
                                                 )
@@ -73,7 +74,7 @@ public class Class9651 {
                                                                   (CommandSource)var0x.getSource(),
                                                                   Class8700.method31348(var0x, "targets"),
                                                                   ((CommandSource)var0x.getSource()).method20172(),
-                                                                  Class6851.method20860(var0x, "location"),
+                                                                  Vec3Argument.method20860(var0x, "location"),
                                                                   (ILocationArgument)null,
                                                                   new Class8502(Class8700.method31346(var0x, "facingEntity"), Class2062.field13441)
                                                                )
@@ -85,7 +86,7 @@ public class Class9651 {
                                                                      (CommandSource)var0x.getSource(),
                                                                      Class8700.method31348(var0x, "targets"),
                                                                      ((CommandSource)var0x.getSource()).method20172(),
-                                                                     Class6851.method20860(var0x, "location"),
+                                                                     Vec3Argument.method20860(var0x, "location"),
                                                                      (ILocationArgument)null,
                                                                      new Class8502(
                                                                         Class8700.method31346(var0x, "facingEntity"),
@@ -97,15 +98,15 @@ public class Class9651 {
                                                 )
                                           ))
                                        .then(
-                                          Commands.method18840("facingLocation", Class6851.method20857())
+                                          Commands.method18840("facingLocation", Vec3Argument.method20857())
                                              .executes(
                                                 var0x -> method37646(
                                                       (CommandSource)var0x.getSource(),
                                                       Class8700.method31348(var0x, "targets"),
                                                       ((CommandSource)var0x.getSource()).method20172(),
-                                                      Class6851.method20860(var0x, "location"),
+                                                      Vec3Argument.method20860(var0x, "location"),
                                                       (ILocationArgument)null,
-                                                      new Class8502(Class6851.method20859(var0x, "facingLocation"))
+                                                      new Class8502(Vec3Argument.method20859(var0x, "facingLocation"))
                                                    )
                                              )
                                        )
@@ -121,13 +122,13 @@ public class Class9651 {
                         )
                   ))
                .then(
-                  Commands.method18840("location", Class6851.method20857())
+                  Commands.method18840("location", Vec3Argument.method20857())
                      .executes(
                         var0x -> method37646(
                               (CommandSource)var0x.getSource(),
                               Collections.singleton(((CommandSource)var0x.getSource()).method20174()),
                               ((CommandSource)var0x.getSource()).method20172(),
-                              Class6851.method20860(var0x, "location"),
+                              Vec3Argument.method20860(var0x, "location"),
                               Class7331.method23238(),
                               (Class8502)null
                            )

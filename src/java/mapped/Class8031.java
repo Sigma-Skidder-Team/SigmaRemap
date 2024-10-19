@@ -15,6 +15,7 @@ import java.util.function.Predicate;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.command.CommandSource;
+import net.minecraft.command.arguments.BlockPosArgument;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.state.Property;
 import net.minecraft.tileentity.TileEntity;
@@ -35,9 +36,9 @@ public class Class8031 {
       var0.register(
          (LiteralArgumentBuilder)((LiteralArgumentBuilder) Commands.method18839("fill").requires(var0x -> var0x.method20129(2)))
             .then(
-               Commands.method18840("from", Class6849.method20826())
+               Commands.method18840("from", BlockPosArgument.method20826())
                   .then(
-                     Commands.method18840("to", Class6849.method20826())
+                     Commands.method18840("to", BlockPosArgument.method20826())
                         .then(
                            ((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder) Commands.method18840(
                                                 "block", Class7971.method27103()
@@ -45,7 +46,7 @@ public class Class8031 {
                                              .executes(
                                                 var0x -> method27541(
                                                       (CommandSource)var0x.getSource(),
-                                                      new MutableBoundingBox(Class6849.method20827(var0x, "from"), Class6849.method20827(var0x, "to")),
+                                                      new MutableBoundingBox(BlockPosArgument.method20827(var0x, "from"), BlockPosArgument.method20827(var0x, "to")),
                                                       Class7971.method27104(var0x, "block"),
                                                       Class2222.field14510,
                                                       (Predicate<CachedBlockInfo>)null
@@ -56,7 +57,7 @@ public class Class8031 {
                                                    .executes(
                                                       var0x -> method27541(
                                                             (CommandSource)var0x.getSource(),
-                                                            new MutableBoundingBox(Class6849.method20827(var0x, "from"), Class6849.method20827(var0x, "to")),
+                                                            new MutableBoundingBox(BlockPosArgument.method20827(var0x, "from"), BlockPosArgument.method20827(var0x, "to")),
                                                             Class7971.method27104(var0x, "block"),
                                                             Class2222.field14510,
                                                             (Predicate<CachedBlockInfo>)null
@@ -67,7 +68,7 @@ public class Class8031 {
                                                       .executes(
                                                          var0x -> method27541(
                                                                (CommandSource)var0x.getSource(),
-                                                               new MutableBoundingBox(Class6849.method20827(var0x, "from"), Class6849.method20827(var0x, "to")),
+                                                               new MutableBoundingBox(BlockPosArgument.method20827(var0x, "from"), BlockPosArgument.method20827(var0x, "to")),
                                                                Class7971.method27104(var0x, "block"),
                                                                Class2222.field14510,
                                                                Class7505.method24465(var0x, "filter")
@@ -80,7 +81,7 @@ public class Class8031 {
                                              .executes(
                                                 var0x -> method27541(
                                                       (CommandSource)var0x.getSource(),
-                                                      new MutableBoundingBox(Class6849.method20827(var0x, "from"), Class6849.method20827(var0x, "to")),
+                                                      new MutableBoundingBox(BlockPosArgument.method20827(var0x, "from"), BlockPosArgument.method20827(var0x, "to")),
                                                       Class7971.method27104(var0x, "block"),
                                                       Class2222.field14510,
                                                       var0xx -> var0xx.method37550().method7007(var0xx.method37551())
@@ -92,7 +93,7 @@ public class Class8031 {
                                           .executes(
                                              var0x -> method27541(
                                                    (CommandSource)var0x.getSource(),
-                                                   new MutableBoundingBox(Class6849.method20827(var0x, "from"), Class6849.method20827(var0x, "to")),
+                                                   new MutableBoundingBox(BlockPosArgument.method20827(var0x, "from"), BlockPosArgument.method20827(var0x, "to")),
                                                    Class7971.method27104(var0x, "block"),
                                                    Class2222.field14511,
                                                    (Predicate<CachedBlockInfo>)null
@@ -104,7 +105,7 @@ public class Class8031 {
                                        .executes(
                                           var0x -> method27541(
                                                 (CommandSource)var0x.getSource(),
-                                                new MutableBoundingBox(Class6849.method20827(var0x, "from"), Class6849.method20827(var0x, "to")),
+                                                new MutableBoundingBox(BlockPosArgument.method20827(var0x, "from"), BlockPosArgument.method20827(var0x, "to")),
                                                 Class7971.method27104(var0x, "block"),
                                                 Class2222.field14512,
                                                 (Predicate<CachedBlockInfo>)null
@@ -116,7 +117,7 @@ public class Class8031 {
                                     .executes(
                                        var0x -> method27541(
                                              (CommandSource)var0x.getSource(),
-                                             new MutableBoundingBox(Class6849.method20827(var0x, "from"), Class6849.method20827(var0x, "to")),
+                                             new MutableBoundingBox(BlockPosArgument.method20827(var0x, "from"), BlockPosArgument.method20827(var0x, "to")),
                                              Class7971.method27104(var0x, "block"),
                                              Class2222.field14513,
                                              (Predicate<CachedBlockInfo>)null

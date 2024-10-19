@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.command.arguments;
 
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.arguments.ArgumentType;
@@ -12,18 +12,21 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.concurrent.CompletableFuture;
 
+import mapped.Class7331;
+import mapped.Class7760;
+import mapped.Class8796;
+import mapped.Commands;
 import net.minecraft.command.CommandSource;
 import net.minecraft.command.ISuggestionProvider;
-import net.minecraft.command.arguments.ILocationArgument;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class Class8693 implements ArgumentType<ILocationArgument> {
+public class ColumnPosArgument implements ArgumentType<ILocationArgument> {
    private static final Collection<String> field39235 = Arrays.<String>asList("0 0", "~ ~", "~1 ~-2", "^ ^", "^-1 ^0");
    public static final SimpleCommandExceptionType field39236 = new SimpleCommandExceptionType(new TranslationTextComponent("argument.pos2d.incomplete"));
 
-   public static Class8693 method31319() {
-      return new Class8693();
+   public static ColumnPosArgument method31319() {
+      return new ColumnPosArgument();
    }
 
    public static Class7760 method31320(CommandContext<CommandSource> var0, String var1) {

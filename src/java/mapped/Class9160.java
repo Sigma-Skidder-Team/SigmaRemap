@@ -7,6 +7,7 @@ import java.util.Collection;
 import java.util.Collections;
 
 import net.minecraft.command.CommandSource;
+import net.minecraft.command.arguments.BlockPosArgument;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -34,10 +35,10 @@ public class Class9160 {
                            )
                      ))
                   .then(
-                     ((RequiredArgumentBuilder) Commands.method18840("pos", Class6849.method20826())
+                     ((RequiredArgumentBuilder) Commands.method18840("pos", BlockPosArgument.method20826())
                            .executes(
                               var0x -> method34195(
-                                    (CommandSource)var0x.getSource(), Class8700.method31354(var0x, "targets"), Class6849.method20828(var0x, "pos"), 0.0F
+                                    (CommandSource)var0x.getSource(), Class8700.method31354(var0x, "targets"), BlockPosArgument.method20828(var0x, "pos"), 0.0F
                                  )
                            ))
                         .then(
@@ -46,7 +47,7 @@ public class Class9160 {
                                  var0x -> method34195(
                                        (CommandSource)var0x.getSource(),
                                        Class8700.method31354(var0x, "targets"),
-                                       Class6849.method20828(var0x, "pos"),
+                                       BlockPosArgument.method20828(var0x, "pos"),
                                        Class9076.method33817(var0x, "angle")
                                     )
                               )

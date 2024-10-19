@@ -9,6 +9,8 @@ import com.mojang.brigadier.exceptions.Dynamic2CommandExceptionType;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import it.unimi.dsi.fastutil.longs.LongSet;
 import net.minecraft.command.CommandSource;
+import net.minecraft.command.arguments.BlockPosArgument;
+import net.minecraft.command.arguments.ColumnPosArgument;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
@@ -33,17 +35,17 @@ public class Class9749 {
                   .then(
                      Commands.method18839("add")
                         .then(
-                           ((RequiredArgumentBuilder) Commands.method18840("from", Class8693.method31319())
+                           ((RequiredArgumentBuilder) Commands.method18840("from", ColumnPosArgument.method31319())
                                  .executes(
                                     var0x -> method38290(
-                                          (CommandSource)var0x.getSource(), Class8693.method31320(var0x, "from"), Class8693.method31320(var0x, "from"), true
+                                          (CommandSource)var0x.getSource(), ColumnPosArgument.method31320(var0x, "from"), ColumnPosArgument.method31320(var0x, "from"), true
                                        )
                                  ))
                               .then(
-                                 Commands.method18840("to", Class8693.method31319())
+                                 Commands.method18840("to", ColumnPosArgument.method31319())
                                     .executes(
                                        var0x -> method38290(
-                                             (CommandSource)var0x.getSource(), Class8693.method31320(var0x, "from"), Class8693.method31320(var0x, "to"), true
+                                             (CommandSource)var0x.getSource(), ColumnPosArgument.method31320(var0x, "from"), ColumnPosArgument.method31320(var0x, "to"), true
                                           )
                                     )
                               )
@@ -52,17 +54,17 @@ public class Class9749 {
                .then(
                   ((LiteralArgumentBuilder) Commands.method18839("remove")
                         .then(
-                           ((RequiredArgumentBuilder) Commands.method18840("from", Class8693.method31319())
+                           ((RequiredArgumentBuilder) Commands.method18840("from", ColumnPosArgument.method31319())
                                  .executes(
                                     var0x -> method38290(
-                                          (CommandSource)var0x.getSource(), Class8693.method31320(var0x, "from"), Class8693.method31320(var0x, "from"), false
+                                          (CommandSource)var0x.getSource(), ColumnPosArgument.method31320(var0x, "from"), ColumnPosArgument.method31320(var0x, "from"), false
                                        )
                                  ))
                               .then(
-                                 Commands.method18840("to", Class8693.method31319())
+                                 Commands.method18840("to", ColumnPosArgument.method31319())
                                     .executes(
                                        var0x -> method38290(
-                                             (CommandSource)var0x.getSource(), Class8693.method31320(var0x, "from"), Class8693.method31320(var0x, "to"), false
+                                             (CommandSource)var0x.getSource(), ColumnPosArgument.method31320(var0x, "from"), ColumnPosArgument.method31320(var0x, "to"), false
                                           )
                                     )
                               )
@@ -72,8 +74,8 @@ public class Class9749 {
             .then(
                ((LiteralArgumentBuilder) Commands.method18839("query").executes(var0x -> method38288((CommandSource)var0x.getSource())))
                   .then(
-                     Commands.method18840("pos", Class8693.method31319())
-                        .executes(var0x -> method38287((CommandSource)var0x.getSource(), Class8693.method31320(var0x, "pos")))
+                     Commands.method18840("pos", ColumnPosArgument.method31319())
+                        .executes(var0x -> method38287((CommandSource)var0x.getSource(), ColumnPosArgument.method31320(var0x, "pos")))
                   )
             )
       );
@@ -173,7 +175,7 @@ public class Class9749 {
             }
          }
       } else {
-         throw Class6849.field29742.create();
+         throw BlockPosArgument.field29742.create();
       }
    }
 }
