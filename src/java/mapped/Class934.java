@@ -6,7 +6,6 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.ITextComponent$Serializer;
 import net.minecraft.util.text.TranslationTextComponent;
 
 import javax.annotation.Nullable;
@@ -34,7 +33,7 @@ public class Class934 extends TileEntity implements INameable, ITickableTileEnti
    public CompoundNBT write(CompoundNBT var1) {
       super.write(var1);
       if (this.method3381()) {
-         var1.putString("CustomName", ITextComponent$Serializer.toJson(this.field5292));
+         var1.putString("CustomName", ITextComponent.Serializer.toJson(this.field5292));
       }
 
       return var1;
@@ -44,7 +43,7 @@ public class Class934 extends TileEntity implements INameable, ITickableTileEnti
    public void read(BlockState var1, CompoundNBT var2) {
       super.read(var1, var2);
       if (var2.contains("CustomName", 8)) {
-         this.field5292 = ITextComponent$Serializer.getComponentFromJson(var2.getString("CustomName"));
+         this.field5292 = ITextComponent.Serializer.getComponentFromJson(var2.getString("CustomName"));
       }
    }
 

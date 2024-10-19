@@ -3,6 +3,7 @@ package mapped;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSerializationContext;
+import net.minecraft.util.JSONUtils;
 
 public final class Class4935<T extends Class4688> extends Class4934<T> {
    public final Class8732 field22840;

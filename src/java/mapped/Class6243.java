@@ -5,6 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.dispenser.IBlockSource;
 import net.minecraft.fluid.FlowingFluid;
 import net.minecraft.fluid.Fluid;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;

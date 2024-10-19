@@ -1,13 +1,14 @@
 package mapped;
 
 import com.google.gson.*;
+import net.minecraft.util.JSONUtils;
 
 import java.lang.reflect.Type;
 
 public class Class2575 implements JsonDeserializer<Class6872>, JsonSerializer<Class6872> {
    public Class6872 deserialize(JsonElement var1, Type var2, JsonDeserializationContext var3) throws JsonParseException {
       if (!JSONUtils.method32757(var1)) {
-         JsonObject var6 = JSONUtils.method32781(var1, "value");
+         JsonObject var6 = JSONUtils.getJSONObject(var1, "value");
          float var7 = JSONUtils.method32771(var6, "min");
          float var8 = JSONUtils.method32771(var6, "max");
          return new Class6872(var7, var8);

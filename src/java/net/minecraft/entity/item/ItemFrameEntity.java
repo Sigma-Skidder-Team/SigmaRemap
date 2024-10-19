@@ -311,7 +311,7 @@ public class ItemFrameEntity extends Class995 {
       super.readAdditional(var1);
       CompoundNBT var4 = var1.getCompound("Item");
       if (var4 != null && !var4.isEmpty()) {
-         ItemStack var5 = ItemStack.method32104(var4);
+         ItemStack var5 = ItemStack.read(var4);
          if (var5.isEmpty()) {
             field5491.warn("Unable to load item from: {}", var4);
          }

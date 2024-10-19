@@ -5,11 +5,7 @@ import java.util.List;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.util.text.IFormattableTextComponent;
-import net.minecraft.util.text.ITextComponent$Serializer;
-import net.minecraft.util.text.ITextProperties;
-import net.minecraft.util.text.TextFormatting;
-import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.util.text.*;
 
 public class Class7501 implements Class7502 {
    private final List<String> field32222;
@@ -22,7 +18,7 @@ public class Class7501 implements Class7502 {
       CompoundNBT var3 = var0.getTag();
       return (List<String>)(var3 != null && Class3285.method11817(var3)
          ? Class870.method2696(var3)
-         : ImmutableList.of(ITextComponent$Serializer.toJson(new TranslationTextComponent("book.invalid.tag").mergeStyle(TextFormatting.DARK_RED))));
+         : ImmutableList.of(ITextComponent.Serializer.toJson(new TranslationTextComponent("book.invalid.tag").mergeStyle(TextFormatting.DARK_RED))));
    }
 
    @Override
@@ -35,7 +31,7 @@ public class Class7501 implements Class7502 {
       String var4 = this.field32222.get(var1);
 
       try {
-         IFormattableTextComponent var5 = ITextComponent$Serializer.getComponentFromJson(var4);
+         IFormattableTextComponent var5 = ITextComponent.Serializer.getComponentFromJson(var4);
          if (var5 != null) {
             return var5;
          }

@@ -37,7 +37,7 @@ public class Class954 extends TileEntity {
       super.write(var1);
 
       for (int var4 = 0; var4 < 4; var4++) {
-         String var5 = ITextComponent$Serializer.toJson(this.field5356[var4]);
+         String var5 = ITextComponent.Serializer.toJson(this.field5356[var4]);
          var1.putString("Text" + (var4 + 1), var5);
       }
 
@@ -53,7 +53,7 @@ public class Class954 extends TileEntity {
 
       for (int var5 = 0; var5 < 4; var5++) {
          String var6 = var2.getString("Text" + (var5 + 1));
-         IFormattableTextComponent var7 = ITextComponent$Serializer.getComponentFromJson(var6.isEmpty() ? "\"\"" : var6);
+         IFormattableTextComponent var7 = ITextComponent.Serializer.getComponentFromJson(var6.isEmpty() ? "\"\"" : var6);
          if (this.world instanceof ServerWorld) {
             try {
                this.field5356[var5] = TextComponentUtils.func_240645_a_(this.method3843((ServerPlayerEntity)null), var7, (Entity)null, 0);

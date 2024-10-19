@@ -1,6 +1,6 @@
 package net.minecraft.util;
 
-import mapped.Item;
+import net.minecraft.item.Item;
 
 public interface IItemProvider {
    Item asItem();

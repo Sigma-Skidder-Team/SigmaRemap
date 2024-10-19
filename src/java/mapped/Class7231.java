@@ -3,6 +3,7 @@ package mapped;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
+import net.minecraft.util.JSONUtils;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.server.ServerWorld;
 
@@ -34,7 +35,7 @@ public class Class7231 {
 
    public static Class7231 method22706(JsonElement var0) {
       if (var0 != null && !var0.isJsonNull()) {
-         JsonObject var3 = JSONUtils.method32781(var0, "light");
+         JsonObject var3 = JSONUtils.getJSONObject(var0, "light");
          Class8840 var4 = Class8840.method32016(var3.get("light"));
          return new Class7231(var4);
       } else {

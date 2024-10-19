@@ -8,13 +8,14 @@ import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.ListNBT;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.raid.Raid;
 import net.minecraft.world.server.ServerWorld;
 
 import java.util.ArrayList;
 import java.util.Random;
 
 public class Class3677 extends Class3676<Class1042> {
-   private Class7699 field19689;
+   private Raid field19689;
 
    public Class3677(int var1, int var2) {
       super(ImmutableMap.of(), var1, var2);

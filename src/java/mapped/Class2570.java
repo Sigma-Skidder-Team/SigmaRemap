@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.Streams;
 import com.google.gson.*;
+import net.minecraft.util.JSONUtils;
 
 import java.lang.reflect.Type;
 import java.util.List;

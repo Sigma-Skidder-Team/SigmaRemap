@@ -9,6 +9,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.HorizontalBlock;
 import net.minecraft.crash.ReportedException;
+import net.minecraft.item.Item;
 import net.minecraft.nbt.NBTDynamicOps;
 import net.minecraft.util.Util;
 import net.minecraft.crash.CrashReport;
@@ -39,7 +40,6 @@ import net.minecraft.util.math.*;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.*;
 import net.minecraft.util.text.event.HoverEvent;
-import net.minecraft.util.text.event.HoverEvent$Action;
 import net.minecraft.util.text.filter.IChatFilter;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.GameType;
@@ -420,7 +420,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
                         "death.attack.message_too_long", new StringTextComponent(var6x).mergeStyle(TextFormatting.YELLOW)
                      );
                      IFormattableTextComponent var8 = new TranslationTextComponent("death.attack.even_more_magic", this.getDisplayName())
-                        .modifyStyle(var1xx -> var1xx.setHoverEvent(new HoverEvent(HoverEvent$Action.SHOW_TEXT, var7x)));
+                        .modifyStyle(var1xx -> var1xx.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, var7x)));
                      this.connection.sendPacket(new SCombatPacket(this.getCombatTracker(), Class1900.field11157, var8));
                   }
                }

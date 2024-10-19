@@ -62,7 +62,7 @@ public abstract class NBTTextComponent extends TextComponent implements ITargete
          return (IFormattableTextComponent)(this.field_218678_b
             ? var6.<IFormattableTextComponent>flatMap(p_223137_3_ -> {
                try {
-                  IFormattableTextComponent var6x = ITextComponent$Serializer.getComponentFromJson(p_223137_3_);
+                  IFormattableTextComponent var6x = Serializer.getComponentFromJson(p_223137_3_);
                   return Stream.of(TextComponentUtils.func_240645_a_(p_230535_1_, var6x, p_230535_2_, p_230535_3_));
                } catch (Exception var7) {
                   field_218681_e.warn("Failed to parse component: " + p_223137_3_, var7);

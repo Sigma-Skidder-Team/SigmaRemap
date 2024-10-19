@@ -3,6 +3,7 @@ package mapped;
 import com.google.gson.JsonObject;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.nbt.INBT;
+import net.minecraft.util.JSONUtils;
 
 import java.util.List;
 import java.util.function.Supplier;

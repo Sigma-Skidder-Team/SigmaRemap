@@ -20,7 +20,6 @@ import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.ITextComponent$Serializer;
 import net.minecraft.util.text.TranslationTextComponent;
 
 import javax.annotation.Nullable;
@@ -236,7 +235,7 @@ public class Class950 extends TileEntity implements Class949, ITickableTileEntit
       this.field5344 = method3825(var2.getInt("Primary"));
       this.field5345 = method3825(var2.getInt("Secondary"));
       if (var2.contains("CustomName", 8)) {
-         this.field5346 = ITextComponent$Serializer.getComponentFromJson(var2.getString("CustomName"));
+         this.field5346 = ITextComponent.Serializer.getComponentFromJson(var2.getString("CustomName"));
       }
 
       this.field5347 = Class7969.method27093(var2);
@@ -249,7 +248,7 @@ public class Class950 extends TileEntity implements Class949, ITickableTileEntit
       var1.putInt("Secondary", Effect.getId(this.field5345));
       var1.putInt("Levels", this.field5342);
       if (this.field5346 != null) {
-         var1.putString("CustomName", ITextComponent$Serializer.toJson(this.field5346));
+         var1.putString("CustomName", ITextComponent.Serializer.toJson(this.field5346));
       }
 
       this.field5347.method27092(var1);

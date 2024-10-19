@@ -173,7 +173,7 @@ public class Class886 extends AbstractArrowEntity {
    public void readAdditional(CompoundNBT var1) {
       super.readAdditional(var1);
       if (var1.contains("Trident", 10)) {
-         this.field5113 = ItemStack.method32104(var1.getCompound("Trident"));
+         this.field5113 = ItemStack.read(var1.getCompound("Trident"));
       }
 
       this.field5114 = var1.getBoolean("DealtDamage");

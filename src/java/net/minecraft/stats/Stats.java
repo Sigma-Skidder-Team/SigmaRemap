@@ -2,7 +2,7 @@ package net.minecraft.stats;
 
 import mapped.Class49;
 import mapped.Class8762;
-import mapped.Item;
+import net.minecraft.item.Item;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.ResourceLocation;

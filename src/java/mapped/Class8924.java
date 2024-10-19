@@ -4,6 +4,7 @@ import com.google.common.base.Joiner;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonSyntaxException;
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.JSONUtils;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 

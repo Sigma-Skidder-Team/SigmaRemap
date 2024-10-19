@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.util;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -16,7 +16,7 @@ import java.io.Reader;
 import java.io.StringReader;
 import javax.annotation.Nullable;
 
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.item.Item;
 import net.minecraft.util.registry.Registry;
 import org.apache.commons.lang3.StringUtils;
 
@@ -67,7 +67,7 @@ public class JSONUtils {
       }
    }
 
-   public static String method32764(JsonObject var0, String var1, String var2) {
+   public static String getString(JsonObject var0, String var1, String var2) {
       return !var0.has(var1) ? var2 : method32762(var0.get(var1), var1);
    }
 
@@ -182,7 +182,7 @@ public class JSONUtils {
       return !var0.has(var1) ? var2 : method32779(var0.get(var1), var1);
    }
 
-   public static JsonObject method32781(JsonElement var0, String var1) {
+   public static JsonObject getJSONObject(JsonElement var0, String var1) {
       if (!var0.isJsonObject()) {
          throw new JsonSyntaxException("Expected " + var1 + " to be a JsonObject, was " + toString(var0));
       } else {
@@ -194,12 +194,12 @@ public class JSONUtils {
       if (!var0.has(var1)) {
          throw new JsonSyntaxException("Missing " + var1 + ", expected to find a JsonObject");
       } else {
-         return method32781(var0.get(var1), var1);
+         return getJSONObject(var0.get(var1), var1);
       }
    }
 
    public static JsonObject getJSONObject(JsonObject var0, String var1, JsonObject var2) {
-      return !var0.has(var1) ? var2 : method32781(var0.get(var1), var1);
+      return !var0.has(var1) ? var2 : getJSONObject(var0.get(var1), var1);
    }
 
    public static JsonArray method32784(JsonElement var0, String var1) {

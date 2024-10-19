@@ -12,6 +12,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
 import net.minecraft.nbt.JSONToNBT;
 import net.minecraft.nbt.NBTUtil;
+import net.minecraft.util.JSONUtils;
 
 public class Class8811 {
    public static final Class8811 field39645 = new Class8811((CompoundNBT)null);
@@ -41,7 +42,7 @@ public class Class8811 {
       if (var0 != null && !var0.isJsonNull()) {
          CompoundNBT var3;
          try {
-            var3 = JSONToNBT.method25188(JSONUtils.method32762(var0, "nbt"));
+            var3 = JSONToNBT.getTagFromJSON(JSONUtils.method32762(var0, "nbt"));
          } catch (CommandSyntaxException var5) {
             throw new JsonSyntaxException("Invalid nbt tag: " + var5.getMessage());
          }

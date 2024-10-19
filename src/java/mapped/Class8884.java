@@ -3,6 +3,7 @@ package mapped;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
+import net.minecraft.util.JSONUtils;
 import net.minecraft.util.math.MathHelper;
 
 public class Class8884 {
@@ -48,7 +49,7 @@ public class Class8884 {
 
    public static Class8884 method32329(JsonElement var0) {
       if (var0 != null && !var0.isJsonNull()) {
-         JsonObject var3 = JSONUtils.method32781(var0, "distance");
+         JsonObject var3 = JSONUtils.getJSONObject(var0, "distance");
          Class8841 var4 = Class8841.method32025(var3.get("x"));
          Class8841 var5 = Class8841.method32025(var3.get("y"));
          Class8841 var6 = Class8841.method32025(var3.get("z"));

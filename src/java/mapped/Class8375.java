@@ -5,7 +5,6 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextComponentUtils;
 import net.minecraft.util.text.event.HoverEvent;
-import net.minecraft.util.text.event.HoverEvent$Action;
 
 public class Class8375 {
    private static String[] field35938;
@@ -45,7 +44,7 @@ public class Class8375 {
       return TextComponentUtils.wrapWithSquareBrackets(
          this.field35942
             .deepCopy()
-            .modifyStyle(var1 -> var1.setHoverEvent(new HoverEvent(HoverEvent$Action.SHOW_TEXT, new StringTextComponent(this.field35940))))
+            .modifyStyle(var1 -> var1.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new StringTextComponent(this.field35940))))
       );
    }
 

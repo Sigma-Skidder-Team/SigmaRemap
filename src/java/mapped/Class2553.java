@@ -5,6 +5,7 @@ import com.google.common.collect.Maps;
 import com.google.gson.*;
 import com.mojang.datafixers.util.Either;
 import net.minecraft.client.renderer.model.ItemCameraTransforms;
+import net.minecraft.util.JSONUtils;
 import net.minecraft.util.ResourceLocation;
 
 import java.lang.reflect.Type;
@@ -76,7 +77,7 @@ public class Class2553 implements JsonDeserializer<Class7496> {
    }
 
    private String method10746(JsonObject var1) {
-      return JSONUtils.method32764(var1, "parent", "");
+      return JSONUtils.getString(var1, "parent", "");
    }
 
    public boolean method10747(JsonObject var1) {

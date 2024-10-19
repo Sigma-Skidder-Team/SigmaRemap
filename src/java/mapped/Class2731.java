@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Sets;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 import java.util.EnumSet;

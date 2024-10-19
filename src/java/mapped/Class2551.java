@@ -1,13 +1,14 @@
 package mapped;
 
 import com.google.gson.*;
+import net.minecraft.util.JSONUtils;
 import org.apache.commons.lang3.ArrayUtils;
 
 import java.lang.reflect.Type;
 
 public class Class2551 implements JsonDeserializer<Class8894>, JsonSerializer<Class8894> {
    public Class8894 deserialize(JsonElement var1, Type var2, JsonDeserializationContext var3) throws JsonParseException {
-      JsonObject var6 = JSONUtils.method32781(var1, "loot pool");
+      JsonObject var6 = JSONUtils.getJSONObject(var1, "loot pool");
       Class4688[] var7 = JSONUtils.<Class4688[]>method32788(var6, "entries", var3, Class4688[].class);
       ILootCondition[] var8 = JSONUtils.<ILootCondition[]>method32789(var6, "conditions", new ILootCondition[0], var3, ILootCondition[].class);
       ILootFunction[] var9 = JSONUtils.<ILootFunction[]>method32789(var6, "functions", new ILootFunction[0], var3, ILootFunction[].class);

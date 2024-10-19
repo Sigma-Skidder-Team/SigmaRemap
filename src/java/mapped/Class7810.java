@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonElement;
+import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
 

@@ -6,7 +6,6 @@ import net.minecraft.client.network.login.IClientLoginNetHandler;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.ITextComponent$Serializer;
 
 public class SDisconnectLoginPacket implements IPacket<IClientLoginNetHandler> {
     private ITextComponent reason;
@@ -20,7 +19,7 @@ public class SDisconnectLoginPacket implements IPacket<IClientLoginNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.reason = ITextComponent$Serializer.getComponentFromJsonLenient(var1.readString(262144));
+      this.reason = ITextComponent.Serializer.getComponentFromJsonLenient(var1.readString(262144));
    }
 
    @Override

@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.*;
+import net.minecraft.util.JSONUtils;
 
 import java.lang.reflect.Type;
 import java.util.Map.Entry;
@@ -26,7 +27,7 @@ public class Class2576 implements JsonDeserializer<Class2006>, JsonSerializer<Cl
    }
 
    public Class2006 deserialize(JsonElement var1, Type var2, JsonDeserializationContext var3) throws JsonParseException {
-      JsonObject var6 = JSONUtils.method32781(var1, "advancement");
+      JsonObject var6 = JSONUtils.getJSONObject(var1, "advancement");
       JsonObject var7 = JSONUtils.getJSONObject(var6, "criteria", new JsonObject());
       Class2006 var8 = new Class2006();
 

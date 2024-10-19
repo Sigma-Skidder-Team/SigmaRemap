@@ -9,6 +9,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.LightType;
 import net.minecraft.world.World;
+import net.minecraft.world.raid.Raid;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -71,7 +72,7 @@ public abstract class Class1028 extends MonsterEntity {
       }
 
       if (this.method4577()) {
-         this.setItemStackToSlot(EquipmentSlotType.HEAD, Class7699.method25421());
+         this.setItemStackToSlot(EquipmentSlotType.HEAD, Raid.method25421());
          this.method4279(EquipmentSlotType.HEAD, 2.0F);
       }
 

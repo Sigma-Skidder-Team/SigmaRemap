@@ -9,6 +9,7 @@ import joptsimple.*;
 import mapped.*;
 import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
+import net.minecraft.util.JSONUtils;
 import net.minecraft.util.Util;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.entity.player.PlayerEntity;

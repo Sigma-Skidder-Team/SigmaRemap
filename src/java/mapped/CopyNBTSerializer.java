@@ -6,6 +6,8 @@ import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSerializationContext;
+import net.minecraft.util.JSONUtils;
+
 import java.util.ArrayList;
 
 public class CopyNBTSerializer extends LootFunctionSerializer<Class142> {
@@ -22,7 +24,7 @@ public class CopyNBTSerializer extends LootFunctionSerializer<Class142> {
       ArrayList var7 = Lists.newArrayList();
 
       for (JsonElement var9 : JSONUtils.method32785(var1, "ops")) {
-         JsonObject var10 = JSONUtils.method32781(var9, "op");
+         JsonObject var10 = JSONUtils.getJSONObject(var9, "op");
          var7.add(Class9603.method37315(var10));
       }
 

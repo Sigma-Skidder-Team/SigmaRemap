@@ -11,7 +11,6 @@ import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TextComponentUtils;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.event.HoverEvent;
-import net.minecraft.util.text.event.HoverEvent$Action;
 
 public class ScorePlayerTeam extends Team {
    private final Scoreboard field35295;
@@ -32,7 +31,7 @@ public class ScorePlayerTeam extends Team {
       this.field35295 = var1;
       this.field35296 = var2;
       this.field35298 = new StringTextComponent(var2);
-      this.field35307 = Style.EMPTY.setInsertion(var2).setHoverEvent(new HoverEvent(HoverEvent$Action.SHOW_TEXT, new StringTextComponent(var2)));
+      this.field35307 = Style.EMPTY.setInsertion(var2).setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new StringTextComponent(var2)));
    }
 
    @Override

@@ -7,9 +7,9 @@ import com.mojang.datafixers.DSL;
 import com.mojang.datafixers.Typed;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.util.JSONUtils;
 import net.minecraft.util.datafix.TypeReferences;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.ITextComponent$Serializer;
 import net.minecraft.util.text.StringTextComponent;
 import org.apache.commons.lang3.StringUtils;
 
@@ -35,14 +35,14 @@ public class Class6726 extends Class6717 {
 
             if (var6 == null) {
                try {
-                  var6 = ITextComponent$Serializer.getComponentFromJson(var5);
+                  var6 = ITextComponent.Serializer.getComponentFromJson(var5);
                } catch (JsonParseException var9) {
                }
             }
 
             if (var6 == null) {
                try {
-                  var6 = ITextComponent$Serializer.getComponentFromJsonLenient(var5);
+                  var6 = ITextComponent.Serializer.getComponentFromJsonLenient(var5);
                } catch (JsonParseException var8) {
                }
             }
@@ -57,7 +57,7 @@ public class Class6726 extends Class6717 {
          var6 = StringTextComponent.EMPTY;
       }
 
-      return var1.set(var2, var1.createString(ITextComponent$Serializer.toJson((ITextComponent)var6)));
+      return var1.set(var2, var1.createString(ITextComponent.Serializer.toJson((ITextComponent)var6)));
    }
 
    @Override

@@ -59,7 +59,7 @@ public abstract class Class898 extends Class901 implements Class889 {
    @Override
    public void readAdditional(CompoundNBT var1) {
       super.readAdditional(var1);
-      ItemStack var4 = ItemStack.method32104(var1.getCompound("Item"));
+      ItemStack var4 = ItemStack.read(var1.getCompound("Item"));
       this.method3526(var4);
    }
 }

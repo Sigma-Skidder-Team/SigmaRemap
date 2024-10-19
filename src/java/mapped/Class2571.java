@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Maps;
 import com.google.gson.*;
+import net.minecraft.util.JSONUtils;
 
 import javax.annotation.Nullable;
 import java.lang.reflect.Type;

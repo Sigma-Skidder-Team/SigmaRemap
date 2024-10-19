@@ -16,10 +16,7 @@ import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.item.SwordItem;
-import net.minecraft.item.ToolItem;
+import net.minecraft.item.*;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.FloatNBT;
 import net.minecraft.nbt.ListNBT;
@@ -393,7 +390,7 @@ public abstract class MobEntity extends LivingEntity {
          ListNBT var4 = var1.getList("ArmorItems", 10);
 
          for (int var5 = 0; var5 < this.field5606.size(); var5++) {
-            this.field5606.set(var5, ItemStack.method32104(var4.getCompound(var5)));
+            this.field5606.set(var5, ItemStack.read(var4.getCompound(var5)));
          }
       }
 
@@ -401,7 +398,7 @@ public abstract class MobEntity extends LivingEntity {
          ListNBT var6 = var1.getList("HandItems", 10);
 
          for (int var9 = 0; var9 < this.field5604.size(); var9++) {
-            this.field5604.set(var9, ItemStack.method32104(var6.getCompound(var9)));
+            this.field5604.set(var9, ItemStack.read(var6.getCompound(var9)));
          }
       }
 

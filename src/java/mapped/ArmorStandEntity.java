@@ -219,7 +219,7 @@ public class ArmorStandEntity extends LivingEntity {
          ListNBT var4 = var1.getList("ArmorItems", 10);
 
          for (int var5 = 0; var5 < this.field5582.size(); var5++) {
-            this.field5582.set(var5, ItemStack.method32104(var4.getCompound(var5)));
+            this.field5582.set(var5, ItemStack.read(var4.getCompound(var5)));
          }
       }
 
@@ -227,7 +227,7 @@ public class ArmorStandEntity extends LivingEntity {
          ListNBT var6 = var1.getList("HandItems", 10);
 
          for (int var8 = 0; var8 < this.field5581.size(); var8++) {
-            this.field5581.set(var8, ItemStack.method32104(var6.getCompound(var8)));
+            this.field5581.set(var8, ItemStack.read(var6.getCompound(var8)));
          }
       }
 

@@ -31,7 +31,7 @@ public class Class2356 extends ForwardingList<ItemStack> {
       List var4 = this.delegate();
 
       for (int var5 = 0; var5 < var4.size(); var5++) {
-         var4.set(var5, ItemStack.method32104(var1.getCompound(var5)));
+         var4.set(var5, ItemStack.read(var1.getCompound(var5)));
       }
    }
 

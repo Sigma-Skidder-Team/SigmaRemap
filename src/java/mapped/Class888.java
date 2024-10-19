@@ -288,7 +288,7 @@ public class Class888 extends ProjectileEntity implements Class889 {
       super.readAdditional(var1);
       this.field5123 = var1.getInt("Life");
       this.field5124 = var1.getInt("LifeTime");
-      ItemStack var4 = ItemStack.method32104(var1.getCompound("FireworksItem"));
+      ItemStack var4 = ItemStack.read(var1.getCompound("FireworksItem"));
       if (!var4.isEmpty()) {
          this.dataManager.method35446(field5120, var4);
       }

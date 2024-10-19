@@ -18,6 +18,7 @@ import java.util.Collection;
 import java.util.Map;
 import javax.annotation.Nullable;
 
+import net.minecraft.util.JSONUtils;
 import net.minecraft.util.Util;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -118,7 +119,7 @@ public abstract class Class4529<K, V extends Class6789<K>> {
             this.field21844.clear();
 
             for (JsonElement var7 : var5) {
-               JsonObject var8 = JSONUtils.method32781(var7, "entry");
+               JsonObject var8 = JSONUtils.getJSONObject(var7, "entry");
                Class6789 var9 = this.method14430(var8);
                if (var9.method20686() != null) {
                   this.field21844.put(this.method14434((K)var9.method20686()), (V)var9);

@@ -9,6 +9,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.StateHolder;
+import net.minecraft.util.JSONUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +23,7 @@ public class Class7340 {
 
    private static Class8646 method23255(String var0, JsonElement var1) {
       if (!var1.isJsonPrimitive()) {
-         JsonObject var7 = JSONUtils.method32781(var1, "value");
+         JsonObject var7 = JSONUtils.getJSONObject(var1, "value");
          String var5 = !var7.has("min") ? null : method23256(var7.get("min"));
          String var6 = !var7.has("max") ? null : method23256(var7.get("max"));
          return (Class8646)(var5 != null && var5.equals(var6) ? new Class8647(var0, var5) : new Class8645(var0, var5, var6));
@@ -65,7 +66,7 @@ public class Class7340 {
 
    public static Class7340 method23261(JsonElement var0) {
       if (var0 != null && !var0.isJsonNull()) {
-         JsonObject var3 = JSONUtils.method32781(var0, "properties");
+         JsonObject var3 = JSONUtils.getJSONObject(var0, "properties");
          ArrayList var4 = Lists.newArrayList();
 
          for (Entry var6 : var3.entrySet()) {

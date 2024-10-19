@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.gson.JsonObject;
 import net.minecraft.resources.data.IMetadataSectionSerializer;
+import net.minecraft.util.JSONUtils;
 
 public class Class7174 implements IMetadataSectionSerializer<Class9620> {
    public Class9620 deserialize(JsonObject var1) {

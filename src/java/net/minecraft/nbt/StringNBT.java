@@ -34,7 +34,7 @@ public class StringNBT implements INBT
    private static final StringNBT EMPTY_STRING = new StringNBT("");
    private final String data;
 
-   private StringNBT(String data)
+   public StringNBT(String data)
    {
       Objects.requireNonNull(data, "Null string not allowed");
       this.data = data;

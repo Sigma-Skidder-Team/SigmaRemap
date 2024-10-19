@@ -35,7 +35,7 @@ public class JSONToNBT {
    private static final Pattern field32875 = Pattern.compile("[-+]?(?:0|[1-9][0-9]*)");
    private final StringReader field32876;
 
-   public static CompoundNBT method25188(String var0) throws CommandSyntaxException {
+   public static CompoundNBT getTagFromJSON(String var0) throws CommandSyntaxException {
       return new JSONToNBT(new StringReader(var0)).method25189();
    }
 

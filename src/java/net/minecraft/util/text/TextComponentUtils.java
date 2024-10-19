@@ -7,7 +7,6 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.command.CommandSource;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.text.event.HoverEvent;
-import net.minecraft.util.text.event.HoverEvent$Action;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -46,9 +45,9 @@ public class TextComponentUtils {
    private static Style func_240646_a_(CommandSource p_240646_0_, Style p_240646_1_, Entity p_240646_2_, int p_240646_3_) throws CommandSyntaxException {
       HoverEvent itextcomponent = p_240646_1_.getHoverEvent();
       if (itextcomponent != null) {
-         ITextComponent hoverevent1 = itextcomponent.<ITextComponent>getParameter(HoverEvent$Action.SHOW_TEXT);
+         ITextComponent hoverevent1 = itextcomponent.<ITextComponent>getParameter(HoverEvent.Action.SHOW_TEXT);
          if (hoverevent1 != null) {
-            HoverEvent var8 = new HoverEvent(HoverEvent$Action.SHOW_TEXT, func_240645_a_(p_240646_0_, hoverevent1, p_240646_2_, p_240646_3_ + 1));
+            HoverEvent var8 = new HoverEvent(HoverEvent.Action.SHOW_TEXT, func_240645_a_(p_240646_0_, hoverevent1, p_240646_2_, p_240646_3_ + 1));
             return p_240646_1_.setHoverEvent(var8);
          }
       }

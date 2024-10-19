@@ -63,7 +63,7 @@ public class Class1074 extends AbstractHorseEntity {
       super.readAdditional(var1);
       this.method4992(var1.getInt("Variant"));
       if (var1.contains("ArmorItem", 10)) {
-         ItemStack var4 = ItemStack.method32104(var1.getCompound("ArmorItem"));
+         ItemStack var4 = ItemStack.read(var1.getCompound("ArmorItem"));
          if (!var4.isEmpty() && this.method4900(var4)) {
             this.field5890.setInventorySlotContents(1, var4);
          }

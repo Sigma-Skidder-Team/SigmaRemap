@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.*;
+import net.minecraft.util.JSONUtils;
 
 import java.lang.reflect.Type;
 

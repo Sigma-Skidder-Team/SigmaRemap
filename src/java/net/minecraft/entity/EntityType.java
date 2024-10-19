@@ -535,7 +535,7 @@ public class EntityType<T extends Entity> {
       return this.field41122;
    }
 
-   public ITextComponent method33211() {
+   public ITextComponent getName() {
       if (this.field41123 == null) {
          this.field41123 = new TranslationTextComponent(this.method33210());
       }

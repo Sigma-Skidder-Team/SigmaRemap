@@ -3,6 +3,7 @@ package mapped;
 import com.google.gson.JsonObject;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.util.JSONUtils;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 
@@ -10,7 +11,7 @@ import java.util.Map;
 
 public class Class6507 implements Class6504<Class4852> {
    public Class4852 method19700(ResourceLocation var1, JsonObject var2) {
-      String var5 = JSONUtils.method32764(var2, "group", "");
+      String var5 = JSONUtils.getString(var2, "group", "");
       Map var6 = Class4852.method14989(JSONUtils.method32782(var2, "key"));
       String[] var7 = Class4852.method14982(Class4852.method14990(JSONUtils.method32785(var2, "pattern")));
       int var8 = var7[0].length();

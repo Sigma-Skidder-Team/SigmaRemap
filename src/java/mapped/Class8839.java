@@ -12,6 +12,8 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import javax.annotation.Nullable;
+
+import net.minecraft.util.JSONUtils;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public abstract class Class8839<T extends Number> {
@@ -66,7 +68,7 @@ public abstract class Class8839<T extends Number> {
       if (var0 == null || var0.isJsonNull()) {
          return var1;
       } else if (!JSONUtils.method32757(var0)) {
-         JsonObject var9 = JSONUtils.method32781(var0, "value");
+         JsonObject var9 = JSONUtils.getJSONObject(var0, "value");
          T var7 = !var9.has("min") ? null : var2.apply(var9.get("min"), "min");
          T var8 = !var9.has("max") ? null : var2.apply(var9.get("max"), "max");
          return var3.method35440(var7, var8);

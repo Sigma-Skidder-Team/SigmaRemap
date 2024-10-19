@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.item.Item;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 

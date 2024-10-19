@@ -45,15 +45,12 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.ITextComponent$Serializer;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TextComponentUtils;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.util.text.event.HoverEvent;
-import net.minecraft.util.text.event.HoverEvent$Action;
-import net.minecraft.util.text.event.HoverEvent$ItemHover;
 import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -124,7 +121,7 @@ public final class ItemStack {
       this.method32103();
    }
 
-   public static ItemStack method32104(CompoundNBT var0) {
+   public static ItemStack read(CompoundNBT var0) {
       try {
          return new ItemStack(var0);
       } catch (RuntimeException var4) {
@@ -448,7 +445,7 @@ public final class ItemStack {
       CompoundNBT var3 = this.method32145("display");
       if (var3 != null && var3.contains("Name", 8)) {
          try {
-            IFormattableTextComponent var4 = ITextComponent$Serializer.getComponentFromJson(var3.getString("Name"));
+            IFormattableTextComponent var4 = ITextComponent.Serializer.getComponentFromJson(var3.getString("Name"));
             if (var4 != null) {
                return var4;
             }
@@ -467,7 +464,7 @@ public final class ItemStack {
       if (var1 == null) {
          var4.remove("Name");
       } else {
-         var4.putString("Name", ITextComponent$Serializer.toJson(var1));
+         var4.putString("Name", ITextComponent.Serializer.toJson(var1));
       }
 
       return this;
@@ -531,7 +528,7 @@ public final class ItemStack {
                   String var11 = var9.getString(var10);
 
                   try {
-                     IFormattableTextComponent var12 = ITextComponent$Serializer.getComponentFromJson(var11);
+                     IFormattableTextComponent var12 = ITextComponent.Serializer.getComponentFromJson(var11);
                      if (var12 != null) {
                         var5.add(TextComponentUtils.func_240648_a_(var12, LORE_STYLE));
                      }
@@ -813,7 +810,7 @@ public final class ItemStack {
       IFormattableTextComponent var4 = TextComponentUtils.wrapWithSquareBrackets(var3);
       if (!this.isEmpty) {
          var4.mergeStyle(this.method32160().field12889)
-            .modifyStyle(var1 -> var1.setHoverEvent(new HoverEvent(HoverEvent$Action.SHOW_ITEM, new HoverEvent$ItemHover(this))));
+            .modifyStyle(var1 -> var1.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_ITEM, new HoverEvent.ItemHover(this))));
       }
 
       return var4;

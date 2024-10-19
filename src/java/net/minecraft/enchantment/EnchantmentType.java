@@ -3,6 +3,7 @@ package net.minecraft.enchantment;
 import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.item.Item;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolItem;
 

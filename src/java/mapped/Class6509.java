@@ -3,6 +3,7 @@ package mapped;
 import com.google.gson.JsonObject;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.util.JSONUtils;
 import net.minecraft.util.ResourceLocation;
 
 public class Class6509 implements Class6504<Class4846> {

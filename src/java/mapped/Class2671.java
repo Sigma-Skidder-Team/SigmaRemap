@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
+import net.minecraft.world.raid.Raid;
 
 import java.util.EnumSet;
 import java.util.List;
@@ -20,11 +21,11 @@ public class Class2671<T extends Class1026> extends Class2595 {
 
    @Override
    public boolean method10803() {
-      Class7699 var3 = this.field17055.method4551();
+      Raid var3 = this.field17055.method4551();
       if (this.field17055.method4552()
          && !this.field17055.method4551().method25388()
          && this.field17055.method4570()
-         && !ItemStack.areItemStacksEqual(this.field17055.getItemStackFromSlot(EquipmentSlotType.HEAD), Class7699.method25421())) {
+         && !ItemStack.areItemStacksEqual(this.field17055.getItemStackFromSlot(EquipmentSlotType.HEAD), Raid.method25421())) {
          Class1026 var4 = var3.method25422(this.field17055.method4554());
          if (var4 == null || !var4.isAlive()) {
             List var5 = this.field17055

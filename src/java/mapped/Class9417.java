@@ -16,7 +16,6 @@ import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.util.text.event.ClickEvent;
 import net.minecraft.util.text.event.ClickEvent$Action;
 import net.minecraft.util.text.event.HoverEvent;
-import net.minecraft.util.text.event.HoverEvent$Action;
 
 public class Class9417 {
    private static final SimpleCommandExceptionType field43678 = new SimpleCommandExceptionType(new TranslationTextComponent("commands.locate.failed"));
@@ -51,7 +50,7 @@ public class Class9417 {
          .modifyStyle(
             var1x -> var1x.setFormatting(TextFormatting.GREEN)
                   .setClickEvent(new ClickEvent(ClickEvent$Action.SUGGEST_COMMAND, "/tp @s " + var3.getX() + " ~ " + var3.getZ()))
-                  .setHoverEvent(new HoverEvent(HoverEvent$Action.SHOW_TEXT, new TranslationTextComponent("chat.coordinates.tooltip")))
+                  .setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new TranslationTextComponent("chat.coordinates.tooltip")))
          );
       var0.method20179(new TranslationTextComponent(var4, var1, var8, var7), false);
       return var7;

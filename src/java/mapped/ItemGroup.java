@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.enchantment.EnchantmentType;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.registry.Registry;

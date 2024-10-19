@@ -25,6 +25,7 @@ import java.util.UUID;
 import javax.annotation.Nullable;
 
 import mapped.*;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.*;
 import net.minecraft.util.Direction;
@@ -34,7 +35,6 @@ import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.SectionPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.ITextComponent$Serializer;
 import net.optifine.reflect.ReflectorForge;
 
 public class PacketBuffer extends ByteBuf {
@@ -212,11 +212,11 @@ public class PacketBuffer extends ByteBuf {
    }
 
    public ITextComponent readTextComponent() {
-      return ITextComponent$Serializer.getComponentFromJson(this.readString(262144));
+      return ITextComponent.Serializer.getComponentFromJson(this.readString(262144));
    }
 
    public PacketBuffer writeTextComponent(ITextComponent component) {
-      return this.writeString(ITextComponent$Serializer.toJson(component), 262144);
+      return this.writeString(ITextComponent.Serializer.toJson(component), 262144);
    }
 
    public <T extends Enum<T>> T readEnumValue(Class<T> enumClass)

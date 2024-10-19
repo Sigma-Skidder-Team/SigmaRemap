@@ -16,7 +16,6 @@ import net.minecraft.util.text.TextComponentUtils;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.util.text.event.HoverEvent;
-import net.minecraft.util.text.event.HoverEvent$Action;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -99,7 +98,7 @@ public class ResourcePackInfo implements AutoCloseable {
             var2 -> var2.setFormatting(!var1 ? TextFormatting.RED : TextFormatting.GREEN)
                   .setInsertion(StringArgumentType.escapeIfRequired(this.field9762))
                   .setHoverEvent(
-                     new HoverEvent(HoverEvent$Action.SHOW_TEXT, new StringTextComponent("").append(this.field9764).appendString("\n").append(this.field9765))
+                     new HoverEvent(HoverEvent.Action.SHOW_TEXT, new StringTextComponent("").append(this.field9764).appendString("\n").append(this.field9765))
                   )
          );
    }

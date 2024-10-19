@@ -9,6 +9,7 @@ import net.minecraft.client.gui.ClientBossInfo;
 import net.minecraft.network.play.server.SUpdateBossInfoPacket;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.BossInfo;
 
 import java.util.Map;
 import java.util.UUID;

@@ -14,6 +14,7 @@ import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.structure.StructureStart;
+import net.minecraft.world.raid.Raid;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -68,7 +69,7 @@ public class DebugPacketSender {
       }
    }
 
-   public static void method23621(ServerWorld var0, Collection<Class7699> var1) {
+   public static void method23621(ServerWorld var0, Collection<Raid> var1) {
    }
 
    public static void method23622(LivingEntity var0) {

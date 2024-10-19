@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Maps;
 import com.google.gson.*;
 import net.minecraft.advancements.Advancement;
+import net.minecraft.util.JSONUtils;
 import net.minecraft.util.ResourceLocation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -27,7 +28,7 @@ public class AdvancementManager extends Class281 {
       HashMap var6 = Maps.newHashMap();
       var1.forEach((var2x, var3x) -> {
          try {
-            JsonObject var6x = JSONUtils.method32781(var3x, "advancement");
+            JsonObject var6x = JSONUtils.getJSONObject(var3x, "advancement");
             Class7999 var7x = Class7999.method27320(var6x, new Class9366(var2x, this.field1087));
             var6.put(var2x, var7x);
          } catch (JsonParseException | IllegalArgumentException var8) {

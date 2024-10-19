@@ -2,6 +2,7 @@ package mapped;
 
 import java.util.function.Function;
 
+import net.minecraft.item.Item;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.biome.Biome;

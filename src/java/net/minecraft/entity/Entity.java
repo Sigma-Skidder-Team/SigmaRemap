@@ -46,11 +46,8 @@ import net.minecraft.util.math.vector.Vector2f;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.ITextComponent$Serializer;
 import net.minecraft.util.text.event.ClickEvent;
 import net.minecraft.util.text.event.HoverEvent;
-import net.minecraft.util.text.event.HoverEvent$Action;
-import net.minecraft.util.text.event.HoverEvent$EntityHover;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
@@ -1373,7 +1370,7 @@ public abstract class Entity implements INameable, ICommandSource {
          var1.putUniqueID("UUID", this.getUniqueID());
          ITextComponent var11 = this.method3380();
          if (var11 != null) {
-            var1.putString("CustomName", ITextComponent$Serializer.toJson(var11));
+            var1.putString("CustomName", ITextComponent.Serializer.toJson(var11));
          }
 
          if (this.method3383()) {
@@ -1463,7 +1460,7 @@ public abstract class Entity implements INameable, ICommandSource {
                String var13 = var1.getString("CustomName");
 
                try {
-                  this.method3379(ITextComponent$Serializer.getComponentFromJson(var13));
+                  this.method3379(ITextComponent.Serializer.getComponentFromJson(var13));
                } catch (Exception var16) {
                   LOGGER.warn("Failed to parse entity custom name {}", var13, var16);
                }
@@ -2031,7 +2028,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public ITextComponent getProfessionName() {
-      return this.type.method33211();
+      return this.type.getName();
    }
 
    public boolean isEntityEqual(Entity var1) {
@@ -2369,7 +2366,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public HoverEvent method3388() {
-      return new HoverEvent(HoverEvent$Action.SHOW_ENTITY, new HoverEvent$EntityHover(this.getType(), this.getUniqueID(), this.getName()));
+      return new HoverEvent(HoverEvent.Action.SHOW_ENTITY, new HoverEvent.EntityHover(this.getType(), this.getUniqueID(), this.getName()));
    }
 
    public boolean isSpectatedByPlayer(ServerPlayerEntity var1) {

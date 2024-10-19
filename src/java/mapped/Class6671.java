@@ -6,6 +6,7 @@ import com.google.gson.JsonObject;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.scoreboard.Team;
+import net.minecraft.util.JSONUtils;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.server.ServerWorld;
@@ -159,7 +160,7 @@ public class Class6671 {
 
    public static Class6671 method20330(JsonElement var0) {
       if (var0 != null && !var0.isJsonNull()) {
-         JsonObject var3 = JSONUtils.method32781(var0, "entity");
+         JsonObject var3 = JSONUtils.getJSONObject(var0, "entity");
          Class8924 var4 = Class8924.method32626(var3.get("type"));
          Class8884 var5 = Class8884.method32329(var3.get("distance"));
          Class8576 var6 = Class8576.method30653(var3.get("location"));
@@ -171,7 +172,7 @@ public class Class6671 {
          Class8713 var12 = Class8713.method31427(var3.get("fishing_hook"));
          Class6671 var13 = method20330(var3.get("vehicle"));
          Class6671 var14 = method20330(var3.get("targeted_entity"));
-         String var15 = JSONUtils.method32764(var3, "team", (String)null);
+         String var15 = JSONUtils.getString(var3, "team", (String)null);
          ResourceLocation var16 = !var3.has("catType") ? null : new ResourceLocation(JSONUtils.getString(var3, "catType"));
          return new Class7552()
             .method24704(var4)

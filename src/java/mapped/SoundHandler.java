@@ -6,10 +6,10 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import net.minecraft.client.GameSettings;
 import net.minecraft.client.renderer.ActiveRenderInfo;
+import net.minecraft.util.JSONUtils;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.ITextComponent$Serializer;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -27,7 +27,7 @@ public class SoundHandler extends Class269<Class8657> {
    public static final Class6647 field1051 = new Class6647("meta:missing_sound", 1.0F, 1.0F, 1, Class2221.field14506, false, false, 16);
    private static final Logger field1052 = LogManager.getLogger();
    private static final Gson field1053 = new GsonBuilder()
-      .registerTypeHierarchyAdapter(ITextComponent.class, new ITextComponent$Serializer())
+      .registerTypeHierarchyAdapter(ITextComponent.class, new ITextComponent.Serializer())
       .registerTypeAdapter(Class9304.class, new Class2569())
       .create();
    private static final TypeToken<Map<String, Class9304>> field1054 = new Class5799();

@@ -2,13 +2,14 @@ package mapped;
 
 import com.google.gson.*;
 import com.mojang.authlib.GameProfile;
+import net.minecraft.util.JSONUtils;
 
 import java.lang.reflect.Type;
 import java.util.UUID;
 
 public class Class2556 implements JsonDeserializer<Class9762>, JsonSerializer<Class9762> {
    public Class9762 deserialize(JsonElement var1, Type var2, JsonDeserializationContext var3) throws JsonParseException {
-      JsonObject var6 = JSONUtils.method32781(var1, "players");
+      JsonObject var6 = JSONUtils.getJSONObject(var1, "players");
       Class9762 var7 = new Class9762(JSONUtils.method32777(var6, "max"), JSONUtils.method32777(var6, "online"));
       if (JSONUtils.method32759(var6, "sample")) {
          JsonArray var8 = JSONUtils.method32785(var6, "sample");
@@ -16,7 +17,7 @@ public class Class2556 implements JsonDeserializer<Class9762>, JsonSerializer<Cl
             GameProfile[] var9 = new GameProfile[var8.size()];
 
             for (int var10 = 0; var10 < var9.length; var10++) {
-               JsonObject var11 = JSONUtils.method32781(var8.get(var10), "player[" + var10 + "]");
+               JsonObject var11 = JSONUtils.getJSONObject(var8.get(var10), "player[" + var10 + "]");
                String var12 = JSONUtils.getString(var11, "id");
                var9[var10] = new GameProfile(UUID.fromString(var12), JSONUtils.getString(var11, "name"));
             }

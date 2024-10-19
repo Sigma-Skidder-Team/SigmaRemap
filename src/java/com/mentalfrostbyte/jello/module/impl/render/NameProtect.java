@@ -73,7 +73,7 @@ public class NameProtect extends Module {
                 if (var16.contains(mc.getSession().getUsername())) {
                     var16 = var16.replaceAll(mc.getSession().getUsername(), this.getStringSettingValueByName("Username"));
                     StringTextComponent var20 = new StringTextComponent(var16);
-                    var12.name = var20;
+                    var12.setName(var20);
                 }
             }
 

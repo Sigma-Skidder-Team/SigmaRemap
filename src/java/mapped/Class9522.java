@@ -11,7 +11,7 @@ import com.mojang.serialization.Dynamic;
 import java.util.Objects;
 
 import net.minecraft.util.datafix.TypeReferences;
-import net.minecraft.util.text.ITextComponent$Serializer;
+import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 
 public class Class9522 extends DataFix {
@@ -30,7 +30,7 @@ public class Class9522 extends DataFix {
                            "DisplayName",
                            var1 -> (Dynamic)DataFixUtils.orElse(
                                  var1.asString()
-                                    .map(var0xxxx -> ITextComponent$Serializer.toJson(new StringTextComponent(var0xxxx)))
+                                    .map(var0xxxx -> ITextComponent.Serializer.toJson(new StringTextComponent(var0xxxx)))
                                     .map(var0xx::createString)
                                     .result(),
                                  var1

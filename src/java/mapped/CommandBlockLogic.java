@@ -10,7 +10,6 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.StringUtils;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.ITextComponent$Serializer;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
@@ -46,10 +45,10 @@ public abstract class CommandBlockLogic implements ICommandSource {
    public CompoundNBT method3560(CompoundNBT var1) {
       var1.putString("Command", this.field5198);
       var1.putInt("SuccessCount", this.field5195);
-      var1.putString("CustomName", ITextComponent$Serializer.toJson(this.field5199));
+      var1.putString("CustomName", ITextComponent.Serializer.toJson(this.field5199));
       var1.putBoolean("TrackOutput", this.field5196);
       if (this.field5197 != null && this.field5196) {
-         var1.putString("LastOutput", ITextComponent$Serializer.toJson(this.field5197));
+         var1.putString("LastOutput", ITextComponent.Serializer.toJson(this.field5197));
       }
 
       var1.putBoolean("UpdateLastExecution", this.field5194);
@@ -64,7 +63,7 @@ public abstract class CommandBlockLogic implements ICommandSource {
       this.field5198 = var1.getString("Command");
       this.field5195 = var1.getInt("SuccessCount");
       if (var1.contains("CustomName", 8)) {
-         this.method3566(ITextComponent$Serializer.getComponentFromJson(var1.getString("CustomName")));
+         this.method3566(ITextComponent.Serializer.getComponentFromJson(var1.getString("CustomName")));
       }
 
       if (var1.contains("TrackOutput", 1)) {
@@ -73,7 +72,7 @@ public abstract class CommandBlockLogic implements ICommandSource {
 
       if (var1.contains("LastOutput", 8) && this.field5196) {
          try {
-            this.field5197 = ITextComponent$Serializer.getComponentFromJson(var1.getString("LastOutput"));
+            this.field5197 = ITextComponent.Serializer.getComponentFromJson(var1.getString("LastOutput"));
          } catch (Throwable var5) {
             this.field5197 = new StringTextComponent(var5.getMessage());
          }

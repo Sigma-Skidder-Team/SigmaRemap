@@ -12,7 +12,6 @@ import java.util.Collection;
 import net.minecraft.command.CommandSource;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.ITextComponent$Serializer;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class8010 implements ArgumentType<ITextComponent> {
@@ -34,7 +33,7 @@ public class Class8010 implements ArgumentType<ITextComponent> {
 
    public ITextComponent parse(StringReader var1) throws CommandSyntaxException {
       try {
-         IFormattableTextComponent var4 = ITextComponent$Serializer.func_240642_a_(var1);
+         IFormattableTextComponent var4 = ITextComponent.Serializer.func_240642_a_(var1);
          if (var4 == null) {
             throw field34439.createWithContext(var1, "empty");
          } else {

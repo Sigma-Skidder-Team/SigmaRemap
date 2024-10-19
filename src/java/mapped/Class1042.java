@@ -15,6 +15,7 @@ import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.entity.merchant.villager.VillagerTrades;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -36,6 +37,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
+import net.minecraft.world.raid.Raid;
 import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
@@ -231,7 +233,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
       }
 
       if (!this.method4305() && this.rand.nextInt(100) == 0) {
-         Class7699 var3 = ((ServerWorld)this.world).method6957(this.getPosition());
+         Raid var3 = ((ServerWorld)this.world).method6957(this.getPosition());
          if (var3 != null && var3.method25433() && !var3.method25388()) {
             this.world.setEntityState(this, (byte)42);
          }

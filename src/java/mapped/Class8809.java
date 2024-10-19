@@ -9,9 +9,9 @@ import com.mojang.datafixers.TypeRewriteRule;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.Type;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.util.JSONUtils;
 import net.minecraft.util.datafix.TypeReferences;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.ITextComponent$Serializer;
 import net.minecraft.util.text.StringTextComponent;
 import org.apache.commons.lang3.StringUtils;
 
@@ -39,14 +39,14 @@ public class Class8809 extends DataFix {
 
                         if (var4 == null) {
                            try {
-                              var4 = ITextComponent$Serializer.getComponentFromJson(var3);
+                              var4 = ITextComponent.Serializer.getComponentFromJson(var3);
                            } catch (JsonParseException var7) {
                            }
                         }
 
                         if (var4 == null) {
                            try {
-                              var4 = ITextComponent$Serializer.getComponentFromJsonLenient(var3);
+                              var4 = ITextComponent.Serializer.getComponentFromJsonLenient(var3);
                            } catch (JsonParseException var6) {
                            }
                         }
@@ -61,7 +61,7 @@ public class Class8809 extends DataFix {
                      var4 = StringTextComponent.EMPTY;
                   }
 
-                  return var0xx.createString(ITextComponent$Serializer.toJson((ITextComponent)var4));
+                  return var0xx.createString(ITextComponent.Serializer.toJson((ITextComponent)var4));
                }
             })).map(var1::createList).result(), var1.emptyList()));
    }

@@ -4,6 +4,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.util.JSONUtils;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 
@@ -17,7 +18,7 @@ public class Class6503<T extends Class4847> implements Class6504<T> {
    }
 
    public T method19700(ResourceLocation var1, JsonObject var2) {
-      String var5 = JSONUtils.method32764(var2, "group", "");
+      String var5 = JSONUtils.getString(var2, "group", "");
       Object var6 = !JSONUtils.method32759(var2, "ingredient") ? JSONUtils.method32782(var2, "ingredient") : JSONUtils.method32785(var2, "ingredient");
       Class120 var7 = Class120.method344((JsonElement)var6);
       String var8 = JSONUtils.getString(var2, "result");

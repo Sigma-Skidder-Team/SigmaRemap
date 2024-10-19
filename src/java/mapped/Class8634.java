@@ -7,7 +7,9 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonSyntaxException;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.JSONUtils;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 
@@ -95,7 +97,7 @@ public class Class8634 {
 
    public static Class8634 method31017(JsonElement var0) {
       if (var0 != null && !var0.isJsonNull()) {
-         JsonObject var3 = JSONUtils.method32781(var0, "item");
+         JsonObject var3 = JSONUtils.getJSONObject(var0, "item");
          Class8840 var4 = Class8840.method32016(var3.get("count"));
          Class8840 var5 = Class8840.method32016(var3.get("durability"));
          if (!var3.has("data")) {

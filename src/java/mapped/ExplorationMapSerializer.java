@@ -3,6 +3,8 @@ package mapped;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSerializationContext;
+import net.minecraft.util.JSONUtils;
+
 import java.util.Locale;
 
 public class ExplorationMapSerializer extends LootFunctionSerializer<ExplorationMap> {

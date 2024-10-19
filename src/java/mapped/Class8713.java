@@ -5,6 +5,7 @@ import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.JSONUtils;
 
 public class Class8713 {
    public static final Class8713 field39324 = new Class8713(false);
@@ -20,7 +21,7 @@ public class Class8713 {
 
    public static Class8713 method31427(JsonElement var0) {
       if (var0 != null && !var0.isJsonNull()) {
-         JsonObject var3 = JSONUtils.method32781(var0, "fishing_hook");
+         JsonObject var3 = JSONUtils.getJSONObject(var0, "fishing_hook");
          JsonElement var4 = var3.get("in_open_water");
          return var4 == null ? field39324 : new Class8713(JSONUtils.method32767(var4, "in_open_water"));
       } else {

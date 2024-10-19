@@ -3,6 +3,7 @@ package mapped;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSerializationContext;
+import net.minecraft.util.JSONUtils;
 
 public class EnchantWithLevelsSerializer extends LootFunctionSerializer<Class143> {
    public void serialize(JsonObject var1, Class143 var2, JsonSerializationContext var3) {

@@ -9,6 +9,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -72,7 +73,7 @@ public class Class1064 extends Class1066 implements Class1022 {
       super.readAdditional(var1);
       this.method4890(var1.getInt("Variant"));
       if (var1.contains("DecorItem", 10)) {
-         this.field5890.setInventorySlotContents(1, ItemStack.method32104(var1.getCompound("DecorItem")));
+         this.field5890.setInventorySlotContents(1, ItemStack.read(var1.getCompound("DecorItem")));
       }
 
       this.method4903();

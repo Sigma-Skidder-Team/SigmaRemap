@@ -19,7 +19,6 @@ import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TextComponentUtils;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.event.HoverEvent;
-import net.minecraft.util.text.event.HoverEvent$Action;
 
 public class Advancement {
    private final Advancement field34186;
@@ -48,7 +47,7 @@ public class Advancement {
          IFormattableTextComponent var11 = TextComponentUtils.func_240648_a_(var9.deepCopy(), Style.EMPTY.setFormatting(var10))
             .appendString("\n")
             .append(var3.method34935());
-         IFormattableTextComponent var12 = var9.deepCopy().modifyStyle(var1x -> var1x.setHoverEvent(new HoverEvent(HoverEvent$Action.SHOW_TEXT, var11)));
+         IFormattableTextComponent var12 = var9.deepCopy().modifyStyle(var1x -> var1x.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, var11)));
          this.field34193 = TextComponentUtils.wrapWithSquareBrackets(var12).mergeStyle(var10);
       } else {
          this.field34193 = new StringTextComponent(var1.toString());

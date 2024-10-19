@@ -8,6 +8,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.JSONUtils;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
@@ -56,7 +57,7 @@ public class Class9449 {
 
    public static Class9449 method36329(JsonElement var0) {
       if (var0 != null && !var0.isJsonNull()) {
-         JsonObject var3 = JSONUtils.method32781(var0, "block");
+         JsonObject var3 = JSONUtils.getJSONObject(var0, "block");
          Class8811 var4 = Class8811.method31812(var3.get("nbt"));
          Block var5 = null;
          if (var3.has("block")) {

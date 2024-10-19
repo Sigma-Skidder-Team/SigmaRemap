@@ -7,13 +7,15 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Items;
+import net.minecraft.util.JSONUtils;
+import net.minecraft.world.raid.Raid;
 
 public class Class6597 {
    public static final Class6597 field29027 = new Class6597(
       Class8634.field38839, Class8634.field38839, Class8634.field38839, Class8634.field38839, Class8634.field38839, Class8634.field38839
    );
    public static final Class6597 field29028 = new Class6597(
-      Class9735.method38146().method38147(Items.field38092).method38149(Class7699.method25421().getTag()).method38151(),
+      Class9735.method38146().method38147(Items.field38092).method38149(Raid.method25421().getTag()).method38151(),
       Class8634.field38839,
       Class8634.field38839,
       Class8634.field38839,
@@ -69,7 +71,7 @@ public class Class6597 {
 
    public static Class6597 method19998(JsonElement var0) {
       if (var0 != null && !var0.isJsonNull()) {
-         JsonObject var3 = JSONUtils.method32781(var0, "equipment");
+         JsonObject var3 = JSONUtils.getJSONObject(var0, "equipment");
          Class8634 var4 = Class8634.method31017(var3.get("head"));
          Class8634 var5 = Class8634.method31017(var3.get("chest"));
          Class8634 var6 = Class8634.method31017(var3.get("legs"));

@@ -233,7 +233,7 @@ public class Class7803 {
       try {
          BufferedReader var3 = Files.newBufferedReader(var0);
          String var4 = IOUtils.toString(var3);
-         return JSONToNBT.method25188(var4);
+         return JSONToNBT.getTagFromJSON(var4);
       } catch (IOException var5) {
          return null;
       } catch (CommandSyntaxException var6) {

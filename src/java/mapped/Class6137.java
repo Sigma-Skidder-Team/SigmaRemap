@@ -30,6 +30,7 @@ import net.minecraft.command.CommandSource;
 import net.minecraft.entity.Entity;
 import net.minecraft.nbt.*;
 import net.minecraft.scoreboard.ServerScoreboard;
+import net.minecraft.server.CustomServerBossInfo;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.CachedBlockInfo;
 import net.minecraft.util.math.BlockPos;
@@ -347,13 +348,13 @@ public class Class6137 {
       }, field27534);
    }
 
-   private static CommandSource method18961(CommandSource var0, Class3623 var1, boolean var2, boolean var3) {
+   private static CommandSource method18961(CommandSource var0, CustomServerBossInfo var1, boolean var2, boolean var3) {
       return var0.method20161((var3x, var4, var5) -> {
          int var8 = !var3 ? (!var4 ? 0 : 1) : var5;
          if (!var2) {
-            var1.method12270(var8);
+            var1.setMax(var8);
          } else {
-            var1.method12269(var8);
+            var1.setValue(var8);
          }
       }, field27534);
    }

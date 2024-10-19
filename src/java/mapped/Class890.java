@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.item.Item;
 import net.minecraft.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
@@ -60,7 +61,7 @@ public abstract class Class890 extends Class893 implements Class889 {
    @Override
    public void readAdditional(CompoundNBT var1) {
       super.readAdditional(var1);
-      ItemStack var4 = ItemStack.method32104(var1.getCompound("Item"));
+      ItemStack var4 = ItemStack.read(var1.getCompound("Item"));
       this.method3511(var4);
    }
 }

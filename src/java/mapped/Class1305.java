@@ -5,6 +5,7 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.button.Button;
+import net.minecraft.item.Item;
 import net.minecraft.util.Util;
 import net.minecraft.network.play.client.CClientStatusPacket;
 import net.minecraft.util.ResourceLocation;

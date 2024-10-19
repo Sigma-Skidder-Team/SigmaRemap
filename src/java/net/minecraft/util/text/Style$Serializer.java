@@ -3,7 +3,7 @@ package net.minecraft.util.text;
 import com.google.gson.*;
 import net.minecraft.util.ResourceLocation;
 import mapped.Class2496;
-import mapped.JSONUtils;
+import net.minecraft.util.JSONUtils;
 import net.minecraft.util.text.event.ClickEvent;
 import net.minecraft.util.text.event.ClickEvent$Action;
 import net.minecraft.util.text.event.HoverEvent;
@@ -68,9 +68,9 @@ public class Style$Serializer implements JsonDeserializer<Style>, JsonSerializer
    private static ClickEvent deserializeClickEvent(JsonObject json) {
       if (json.has("clickEvent")) {
          JsonObject s = JSONUtils.method32782(json, "clickEvent");
-         String clickevent$action = JSONUtils.method32764(s, "action", (String)null);
+         String clickevent$action = JSONUtils.getString(s, "action", (String)null);
          ClickEvent$Action s1 = clickevent$action == null ? null : ClickEvent$Action.getValueByCanonicalName(clickevent$action);
-         String var6 = JSONUtils.method32764(s, "value", (String)null);
+         String var6 = JSONUtils.getString(s, "value", (String)null);
          if (s1 != null && var6 != null && s1.shouldAllowInChat()) {
             return new ClickEvent(s1, var6);
          }
@@ -81,7 +81,7 @@ public class Style$Serializer implements JsonDeserializer<Style>, JsonSerializer
 
    @Nullable
    private static String deserializeInsertion(JsonObject json) {
-      return JSONUtils.method32764(json, "insertion", (String)null);
+      return JSONUtils.getString(json, "insertion", (String)null);
    }
 
    @Nullable

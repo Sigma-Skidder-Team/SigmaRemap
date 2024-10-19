@@ -12,7 +12,6 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.ITextComponent$Serializer;
 import net.minecraft.world.GameType;
 
 import javax.annotation.Nullable;
@@ -246,7 +245,7 @@ public class SPlayerListItemPacket implements IPacket<IClientPlayNetHandler> {
             .add("latency", this.ping)
             .add("gameMode", this.gamemode)
             .add("profile", this.profile)
-            .add("displayName", this.displayName != null ? ITextComponent$Serializer.toJson(this.displayName) : null)
+            .add("displayName", this.displayName != null ? ITextComponent.Serializer.toJson(this.displayName) : null)
             .toString();
       }
    }

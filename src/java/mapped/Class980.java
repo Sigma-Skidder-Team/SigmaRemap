@@ -26,7 +26,7 @@ public class Class980 extends Class927 {
          CompoundNBT var5 = var1.getCompound(var7);
          int var6 = var5.getByte("Slot") & 255;
          if (var6 >= 0 && var6 < this.getSizeInventory()) {
-            this.setInventorySlotContents(var6, ItemStack.method32104(var5));
+            this.setInventorySlotContents(var6, ItemStack.read(var5));
          }
       }
    }

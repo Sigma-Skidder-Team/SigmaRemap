@@ -4,6 +4,7 @@ import com.google.gson.JsonObject;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.JSONUtils;
 import net.minecraft.util.ResourceLocation;
 
 public class Class4883 extends Class4874<Class4491> {

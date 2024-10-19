@@ -7,15 +7,16 @@ import com.google.gson.JsonSyntaxException;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import javax.annotation.Nullable;
 
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.JSONToNBT;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.util.JSONUtils;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.ITextComponent$Serializer;
 
 public class Class9272 {
    private final ITextComponent field42646;
@@ -87,8 +88,8 @@ public class Class9272 {
    }
 
    public static Class9272 method34944(JsonObject var0) {
-      IFormattableTextComponent var3 = ITextComponent$Serializer.func_240641_a_(var0.get("title"));
-      IFormattableTextComponent var4 = ITextComponent$Serializer.func_240641_a_(var0.get("description"));
+      IFormattableTextComponent var3 = ITextComponent.Serializer.func_240641_a_(var0.get("title"));
+      IFormattableTextComponent var4 = ITextComponent.Serializer.func_240641_a_(var0.get("description"));
       if (var3 != null && var4 != null) {
          ItemStack var5 = method34945(JSONUtils.method32782(var0, "icon"));
          ResourceLocation var6 = !var0.has("background") ? null : new ResourceLocation(JSONUtils.getString(var0, "background"));
@@ -113,7 +114,7 @@ public class Class9272 {
             ItemStack var4 = new ItemStack(var3);
             if (var0.has("nbt")) {
                try {
-                  CompoundNBT var5 = JSONToNBT.method25188(JSONUtils.method32762(var0.get("nbt"), "nbt"));
+                  CompoundNBT var5 = JSONToNBT.getTagFromJSON(JSONUtils.method32762(var0.get("nbt"), "nbt"));
                   var4.setTag(var5);
                } catch (CommandSyntaxException var6) {
                   throw new JsonSyntaxException("Invalid nbt tag: " + var6.getMessage());
@@ -169,8 +170,8 @@ public class Class9272 {
    public JsonElement method34948() {
       JsonObject var3 = new JsonObject();
       var3.add("icon", this.method34949());
-      var3.add("title", ITextComponent$Serializer.toJsonTree(this.field42646));
-      var3.add("description", ITextComponent$Serializer.toJsonTree(this.field42647));
+      var3.add("title", ITextComponent.Serializer.toJsonTree(this.field42646));
+      var3.add("description", ITextComponent.Serializer.toJsonTree(this.field42647));
       var3.addProperty("frame", this.field42650.method8241());
       var3.addProperty("show_toast", this.field42651);
       var3.addProperty("announce_to_chat", this.field42652);

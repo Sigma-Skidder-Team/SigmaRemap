@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.*;
+import net.minecraft.item.Item;
 import net.minecraft.state.DirectionProperty;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;

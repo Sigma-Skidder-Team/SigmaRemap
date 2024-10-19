@@ -20,6 +20,7 @@ import net.minecraft.util.SoundEvents;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
+import net.minecraft.world.raid.Raid;
 import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
@@ -155,7 +156,7 @@ public class Class1030 extends Class1025 {
    @Override
    public void method4545(int var1, boolean var2) {
       ItemStack var5 = new ItemStack(Items.field37823);
-      Class7699 var6 = this.method4551();
+      Raid var6 = this.method4551();
       int var7 = 1;
       if (var1 > var6.method25435(Difficulty.NORMAL)) {
          var7 = 2;

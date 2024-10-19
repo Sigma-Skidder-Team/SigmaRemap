@@ -13,6 +13,7 @@ import java.util.function.Predicate;
 import javax.annotation.Nullable;
 
 import mapped.*;
+import net.minecraft.item.Item;
 import net.minecraft.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;

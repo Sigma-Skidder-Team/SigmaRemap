@@ -7,6 +7,7 @@ import com.google.gson.JsonSyntaxException;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.JSONToNBT;
+import net.minecraft.util.JSONUtils;
 
 public class SetNBTSerializer extends LootFunctionSerializer<Class136> {
    public void serialize(JsonObject var1, Class136 var2, JsonSerializationContext var3) {
@@ -16,7 +17,7 @@ public class SetNBTSerializer extends LootFunctionSerializer<Class136> {
 
    public Class136 deserialize(JsonObject var1, JsonDeserializationContext var2, ILootCondition[] var3) {
       try {
-         CompoundNBT var6 = JSONToNBT.method25188(JSONUtils.getString(var1, "tag"));
+         CompoundNBT var6 = JSONToNBT.getTagFromJSON(JSONUtils.getString(var1, "tag"));
          return new Class136(var3, var6);
       } catch (CommandSyntaxException var7) {
          throw new JsonSyntaxException(var7.getMessage());

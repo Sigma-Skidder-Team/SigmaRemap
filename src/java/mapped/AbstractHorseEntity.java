@@ -11,6 +11,7 @@ import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -769,7 +770,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       }
 
       if (var1.contains("SaddleItem", 10)) {
-         ItemStack var6 = ItemStack.method32104(var1.getCompound("SaddleItem"));
+         ItemStack var6 = ItemStack.read(var1.getCompound("SaddleItem"));
          if (var6.getItem() == Items.field37886) {
             this.field5890.setInventorySlotContents(0, var6);
          }

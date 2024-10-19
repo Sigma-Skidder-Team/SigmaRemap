@@ -11,7 +11,6 @@ import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.util.text.event.ClickEvent;
 import net.minecraft.util.text.event.ClickEvent$Action;
 import net.minecraft.util.text.event.HoverEvent;
-import net.minecraft.util.text.event.HoverEvent$Action;
 
 public class Class9554 {
    public static void method37005(CommandDispatcher<CommandSource> var0, boolean var1) {
@@ -25,7 +24,7 @@ public class Class9554 {
                         .modifyStyle(
                            var2 -> var2.setFormatting(TextFormatting.GREEN)
                                  .setClickEvent(new ClickEvent(ClickEvent$Action.COPY_TO_CLIPBOARD, String.valueOf(var3)))
-                                 .setHoverEvent(new HoverEvent(HoverEvent$Action.SHOW_TEXT, new TranslationTextComponent("chat.copy.click")))
+                                 .setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new TranslationTextComponent("chat.copy.click")))
                                  .setInsertion(String.valueOf(var3))
                         )
                   );

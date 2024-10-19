@@ -26,6 +26,7 @@ import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.crash.ReportedException;
+import net.minecraft.item.Item;
 import net.minecraft.util.Util;
 import net.minecraft.command.CommandSource;
 import net.minecraft.crash.CrashReport;
@@ -60,7 +61,6 @@ import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ChatType;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.ITextComponent$Serializer;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -675,7 +675,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
 
          for (String var11 : var2) {
             StringTextComponent var12 = new StringTextComponent(var11);
-            String var13 = ITextComponent$Serializer.toJson(var12);
+            String var13 = ITextComponent.Serializer.toJson(var12);
             var9.add(StringNBT.valueOf(var13));
          }
 

@@ -18,9 +18,9 @@ public class Class9346 {
    private int field43393 = 1;
 
    public Class9346(CompoundNBT var1) {
-      this.field43384 = ItemStack.method32104(var1.getCompound("buy"));
-      this.field43385 = ItemStack.method32104(var1.getCompound("buyB"));
-      this.field43386 = ItemStack.method32104(var1.getCompound("sell"));
+      this.field43384 = ItemStack.read(var1.getCompound("buy"));
+      this.field43385 = ItemStack.read(var1.getCompound("buyB"));
+      this.field43386 = ItemStack.read(var1.getCompound("sell"));
       this.field43387 = var1.getInt("uses");
       if (!var1.contains("maxUses", 99)) {
          this.field43388 = 4;

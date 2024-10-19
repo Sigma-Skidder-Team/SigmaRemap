@@ -41,7 +41,6 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.event.ClickEvent;
 import net.minecraft.util.text.event.ClickEvent$Action;
 import net.minecraft.util.text.event.HoverEvent;
-import net.minecraft.util.text.event.HoverEvent$Action;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.commons.io.IOUtils;
 
@@ -260,7 +259,7 @@ public class Class9037 {
                Style.EMPTY
                   .setBold(true)
                   .setFormatting(TextFormatting.GREEN)
-                  .setHoverEvent(new HoverEvent(HoverEvent$Action.SHOW_TEXT, new StringTextComponent("Click to copy to clipboard")))
+                  .setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new StringTextComponent("Click to copy to clipboard")))
                   .setClickEvent(new ClickEvent(ClickEvent$Action.COPY_TO_CLIPBOARD, "final BlockPos " + var1 + " = new BlockPos(" + var10 + ");"))
             );
          var0.method20179(new StringTextComponent("Position relative to " + var11 + ": ").append(var12), false);
@@ -464,7 +463,7 @@ public class Class9037 {
          Files.createDirectories(var6.getParent());
 
          try (OutputStream var9 = Files.newOutputStream(var6)) {
-            CompressedStreamTools.writeCompressed(JSONToNBT.method25188(var8), var9);
+            CompressedStreamTools.writeCompressed(JSONToNBT.getTagFromJSON(var8), var9);
          }
 
          method33503(var0, "Imported to " + var6.toAbsolutePath());

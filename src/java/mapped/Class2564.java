@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.*;
+import net.minecraft.util.JSONUtils;
 import net.minecraft.util.ResourceLocation;
 import org.apache.commons.lang3.ArrayUtils;
 
@@ -8,7 +9,7 @@ import java.lang.reflect.Type;
 
 public class Class2564 implements JsonDeserializer<Class7318>, JsonSerializer<Class7318> {
    public Class7318 deserialize(JsonElement var1, Type var2, JsonDeserializationContext var3) throws JsonParseException {
-      JsonObject var6 = JSONUtils.method32781(var1, "loot table");
+      JsonObject var6 = JSONUtils.getJSONObject(var1, "loot table");
       Class8894[] var7 = JSONUtils.<Class8894[]>method32789(var6, "pools", new Class8894[0], var3, Class8894[].class);
       Class7538 var8 = null;
       if (var6.has("type")) {

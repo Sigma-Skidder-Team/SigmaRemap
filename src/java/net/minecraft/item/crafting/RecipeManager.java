@@ -5,6 +5,7 @@ import com.google.common.collect.ImmutableMap.Builder;
 import com.google.common.collect.Maps;
 import com.google.gson.*;
 import mapped.*;
+import net.minecraft.util.JSONUtils;
 import net.minecraft.util.Util;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
@@ -37,7 +38,7 @@ public class RecipeManager extends Class281 {
          ResourceLocation var9 = var8.getKey();
 
          try {
-            IRecipe<?> var10 = method1038(var9, JSONUtils.method32781((JsonElement)var8.getValue(), "top element"));
+            IRecipe<?> var10 = method1038(var9, JSONUtils.getJSONObject((JsonElement)var8.getValue(), "top element"));
             var6.computeIfAbsent(var10.method14967(), var0 -> ImmutableMap.builder()).put(var9, var10);
          } catch (JsonParseException | IllegalArgumentException var11) {
             field1075.error("Parsing error loading recipe {}", var9, var11);

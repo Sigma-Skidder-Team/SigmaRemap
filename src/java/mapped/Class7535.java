@@ -7,7 +7,7 @@ import net.minecraft.scoreboard.ScorePlayerTeam;
 import net.minecraft.scoreboard.Scoreboard;
 import net.minecraft.scoreboard.Team;
 import net.minecraft.util.text.IFormattableTextComponent;
-import net.minecraft.util.text.ITextComponent$Serializer;
+import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.storage.WorldSavedData;
 import org.apache.logging.log4j.LogManager;
@@ -55,7 +55,7 @@ public class Class7535 extends WorldSavedData {
          }
 
          ScorePlayerTeam var7 = this.field32341.method20991(var6);
-         IFormattableTextComponent var8 = ITextComponent$Serializer.getComponentFromJson(var5.getString("DisplayName"));
+         IFormattableTextComponent var8 = ITextComponent.Serializer.getComponentFromJson(var5.getString("DisplayName"));
          if (var8 != null) {
             var7.method28570(var8);
          }
@@ -73,14 +73,14 @@ public class Class7535 extends WorldSavedData {
          }
 
          if (var5.contains("MemberNamePrefix", 8)) {
-            IFormattableTextComponent var9 = ITextComponent$Serializer.getComponentFromJson(var5.getString("MemberNamePrefix"));
+            IFormattableTextComponent var9 = ITextComponent.Serializer.getComponentFromJson(var5.getString("MemberNamePrefix"));
             if (var9 != null) {
                var7.method28571(var9);
             }
          }
 
          if (var5.contains("MemberNameSuffix", 8)) {
-            IFormattableTextComponent var10 = ITextComponent$Serializer.getComponentFromJson(var5.getString("MemberNameSuffix"));
+            IFormattableTextComponent var10 = ITextComponent.Serializer.getComponentFromJson(var5.getString("MemberNameSuffix"));
             if (var10 != null) {
                var7.method28573(var10);
             }
@@ -136,7 +136,7 @@ public class Class7535 extends WorldSavedData {
                var5x = var5x.substring(0, 16);
             }
 
-            IFormattableTextComponent var6 = ITextComponent$Serializer.getComponentFromJson(var5.getString("DisplayName"));
+            IFormattableTextComponent var6 = ITextComponent.Serializer.getComponentFromJson(var5.getString("DisplayName"));
             Class2316 var7 = Class2316.method9089(var5.getString("RenderType"));
             this.field32341.method20977(var5x, var2, var6, var7);
          });
@@ -163,15 +163,15 @@ public class Class7535 extends WorldSavedData {
       for (ScorePlayerTeam var5 : this.field32341.method20997()) {
          CompoundNBT var6 = new CompoundNBT();
          var6.putString("Name", var5.method28567());
-         var6.putString("DisplayName", ITextComponent$Serializer.toJson(var5.method28568()));
+         var6.putString("DisplayName", ITextComponent.Serializer.toJson(var5.method28568()));
          if (var5.getColor().getColorIndex() >= 0) {
             var6.putString("TeamColor", var5.getColor().getFriendlyName());
          }
 
          var6.putBoolean("AllowFriendlyFire", var5.method28578());
          var6.putBoolean("SeeFriendlyInvisibles", var5.method28580());
-         var6.putString("MemberNamePrefix", ITextComponent$Serializer.toJson(var5.method28572()));
-         var6.putString("MemberNameSuffix", ITextComponent$Serializer.toJson(var5.method28574()));
+         var6.putString("MemberNamePrefix", ITextComponent.Serializer.toJson(var5.method28572()));
+         var6.putString("MemberNameSuffix", ITextComponent.Serializer.toJson(var5.method28574()));
          var6.putString("NameTagVisibility", var5.method28582().internalName);
          var6.putString("DeathMessageVisibility", var5.method28583().internalName);
          var6.putString("CollisionRule", var5.method28586().name);
@@ -213,7 +213,7 @@ public class Class7535 extends WorldSavedData {
             CompoundNBT var6 = new CompoundNBT();
             var6.putString("Name", var5.method29336());
             var6.putString("CriteriaName", var5.method29337().method33280());
-            var6.putString("DisplayName", ITextComponent$Serializer.toJson(var5.method29338()));
+            var6.putString("DisplayName", ITextComponent.Serializer.toJson(var5.method29338()));
             var6.putString("RenderType", var5.method29342().method9088());
             var3.add(var6);
          }

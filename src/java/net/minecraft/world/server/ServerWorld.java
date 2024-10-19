@@ -53,6 +53,7 @@ import net.minecraft.world.end.DragonFightManager;
 import net.minecraft.world.gen.feature.structure.StructureManager;
 import net.minecraft.world.gen.feature.structure.StructureStart;
 import net.minecraft.world.gen.feature.template.TemplateManager;
+import net.minecraft.world.raid.Raid;
 import net.minecraft.world.storage.DimensionSavedDataManager;
 import net.minecraft.world.storage.IServerWorldInfo;
 import net.minecraft.world.storage.MapData;
@@ -1236,7 +1237,7 @@ public class ServerWorld extends World implements ISeedReader {
    }
 
    @Nullable
-   public Class7699 method6957(BlockPos var1) {
+   public Raid method6957(BlockPos var1) {
       return this.field9054.method24617(var1, 9216);
    }
 

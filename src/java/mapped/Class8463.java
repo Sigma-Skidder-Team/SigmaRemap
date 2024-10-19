@@ -6,6 +6,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FluidState;
+import net.minecraft.util.JSONUtils;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
@@ -43,7 +44,7 @@ public class Class8463 {
 
    public static Class8463 method29763(JsonElement var0) {
       if (var0 != null && !var0.isJsonNull()) {
-         JsonObject var3 = JSONUtils.method32781(var0, "fluid");
+         JsonObject var3 = JSONUtils.getJSONObject(var0, "fluid");
          Fluid var4 = null;
          if (var3.has("fluid")) {
             ResourceLocation var5 = new ResourceLocation(JSONUtils.getString(var3, "fluid"));

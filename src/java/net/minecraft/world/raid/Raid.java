@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.world.raid;
 
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
@@ -15,6 +15,7 @@ import java.util.function.Predicate;
 import java.util.stream.Stream;
 import javax.annotation.Nullable;
 
+import mapped.*;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.LivingEntity;
@@ -40,17 +41,18 @@ import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.BossInfo;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerBossInfo;
 import net.minecraft.world.server.ServerWorld;
 
-public class Class7699 {
-   private static final ITextComponent field32968 = new TranslationTextComponent("event.minecraft.raid");
-   private static final ITextComponent field32969 = new TranslationTextComponent("event.minecraft.raid.victory");
-   private static final ITextComponent field32970 = new TranslationTextComponent("event.minecraft.raid.defeat");
-   private static final ITextComponent field32971 = field32968.deepCopy().appendString(" - ").append(field32969);
-   private static final ITextComponent field32972 = field32968.deepCopy().appendString(" - ").append(field32970);
+public class Raid {
+   private static final ITextComponent RAID = new TranslationTextComponent("event.minecraft.raid");
+   private static final ITextComponent VICTORY = new TranslationTextComponent("event.minecraft.raid.victory");
+   private static final ITextComponent DEFEAT = new TranslationTextComponent("event.minecraft.raid.defeat");
+   private static final ITextComponent RAID_VICTORY = RAID.deepCopy().appendString(" - ").append(VICTORY);
+   private static final ITextComponent RAID_DEFEAT = RAID.deepCopy().appendString(" - ").append(DEFEAT);
    private final Map<Integer, Class1026> field32973 = Maps.newHashMap();
    private final Map<Integer, Set<Class1026>> field32974 = Maps.newHashMap();
    private final Set<UUID> field32975 = Sets.newHashSet();
@@ -63,7 +65,7 @@ public class Class7699 {
    private int field32982;
    private boolean field32983;
    private int field32984;
-   private final ServerBossInfo field32985 = new ServerBossInfo(field32968, BossInfo.Color.RED, BossInfo.Overlay.NOTCHED_10);
+   private final ServerBossInfo field32985 = new ServerBossInfo(RAID, BossInfo.Color.RED, BossInfo.Overlay.NOTCHED_10);
    private int field32986;
    private int field32987;
    private final Random field32988 = new Random();
@@ -72,7 +74,7 @@ public class Class7699 {
    private int field32991;
    private Optional<BlockPos> field32992 = Optional.<BlockPos>empty();
 
-   public Class7699(int var1, ServerWorld var2, BlockPos var3) {
+   public Raid(int var1, ServerWorld var2, BlockPos var3) {
       this.field32980 = var1;
       this.field32978 = var2;
       this.field32983 = true;
@@ -83,7 +85,7 @@ public class Class7699 {
       this.field32990 = Class2305.field15739;
    }
 
-   public Class7699(ServerWorld var1, CompoundNBT var2) {
+   public Raid(ServerWorld var1, CompoundNBT var2) {
       this.field32978 = var1;
       this.field32980 = var2.getInt("Id");
       this.field32979 = var2.getBoolean("Started");
@@ -204,10 +206,10 @@ public class Class7699 {
                   this.method25398();
                   this.field32985.setVisible(true);
                   if (!this.method25392()) {
-                     this.field32985.setName(field32972);
+                     this.field32985.setName(RAID_DEFEAT);
                   } else {
                      this.field32985.setPercent(0.0F);
-                     this.field32985.setName(field32971);
+                     this.field32985.setName(RAID_VICTORY);
                   }
                }
             }
@@ -250,7 +252,7 @@ public class Class7699 {
                if (this.field32987 <= 0) {
                   if (this.field32987 == 0 && this.field32984 > 0) {
                      this.field32987 = 300;
-                     this.field32985.setName(field32968);
+                     this.field32985.setName(RAID);
                      return;
                   }
                } else {
@@ -286,13 +288,13 @@ public class Class7699 {
                this.method25398();
                this.method25411();
                if (var4 <= 0) {
-                  this.field32985.setName(field32968);
+                  this.field32985.setName(RAID);
                } else if (var4 > 2) {
-                  this.field32985.setName(field32968);
+                  this.field32985.setName(RAID);
                } else {
                   this.field32985
                      .setName(
-                        field32968.deepCopy().appendString(" - ").append(new TranslationTextComponent("event.minecraft.raid.raiders_remaining", var4))
+                        RAID.deepCopy().appendString(" - ").append(new TranslationTextComponent("event.minecraft.raid.raiders_remaining", var4))
                      );
                }
             }
@@ -536,7 +538,7 @@ public class Class7699 {
                this.field32981 = this.field32981 - var1.getHealth();
             }
 
-            var1.method4550((Class7699)null);
+            var1.method4550((Raid)null);
             this.method25415();
             this.method25420();
          }

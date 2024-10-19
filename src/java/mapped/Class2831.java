@@ -13,6 +13,7 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biomes;
+import net.minecraft.world.raid.Raid;
 
 public class Class2831 implements Consumer<Consumer<Advancement>> {
    private static final List<RegistryKey<Biome>> field17610 = ImmutableList.of(
@@ -351,7 +352,7 @@ public class Class2831 implements Consumer<Consumer<Advancement>> {
       Advancement var11 = Class7999.method27304()
          .method27305(var4)
          .method27307(
-            Class7699.method25421(),
+            Raid.method25421(),
             new TranslationTextComponent("advancements.adventure.voluntary_exile.title"),
             new TranslationTextComponent("advancements.adventure.voluntary_exile.description"),
             (ResourceLocation)null,
@@ -365,7 +366,7 @@ public class Class2831 implements Consumer<Consumer<Advancement>> {
       Class7999.method27304()
          .method27305(var11)
          .method27307(
-            Class7699.method25421(),
+            Raid.method25421(),
             new TranslationTextComponent("advancements.adventure.hero_of_the_village.title"),
             new TranslationTextComponent("advancements.adventure.hero_of_the_village.description"),
             (ResourceLocation)null,

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.item.Item;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.DirectionProperty;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;

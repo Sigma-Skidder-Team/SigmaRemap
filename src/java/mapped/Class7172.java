@@ -8,6 +8,7 @@ import com.google.gson.JsonParseException;
 import java.util.ArrayList;
 
 import net.minecraft.resources.data.IMetadataSectionSerializer;
+import net.minecraft.util.JSONUtils;
 import org.apache.commons.lang3.Validate;
 
 public class Class7172 implements IMetadataSectionSerializer<Class7788> {
@@ -53,7 +54,7 @@ public class Class7172 implements IMetadataSectionSerializer<Class7788> {
          if (!var2.isJsonObject()) {
             return null;
          } else {
-            JsonObject var5 = JSONUtils.method32781(var2, "frames[" + var1 + "]");
+            JsonObject var5 = JSONUtils.getJSONObject(var2, "frames[" + var1 + "]");
             int var6 = JSONUtils.getInt(var5, "time", -1);
             if (var5.has("time")) {
                Validate.inclusiveBetween(1L, 2147483647L, (long)var6, "Invalid frame time");

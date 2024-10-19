@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.item.Item;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.function.Predicate;

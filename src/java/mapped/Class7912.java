@@ -10,7 +10,7 @@ import com.mojang.serialization.Dynamic;
 import java.util.Optional;
 
 import net.minecraft.util.datafix.TypeReferences;
-import net.minecraft.util.text.ITextComponent$Serializer;
+import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -29,11 +29,11 @@ public class Class7912 extends DataFix {
          if (!var6.isPresent()) {
             Optional var7 = var5.get("LocName").asString().result();
             if (var7.isPresent()) {
-               var5 = var5.set("Name", var5.createString(ITextComponent$Serializer.toJson(new TranslationTextComponent((String)var7.get()))));
+               var5 = var5.set("Name", var5.createString(ITextComponent.Serializer.toJson(new TranslationTextComponent((String)var7.get()))));
                var5 = var5.remove("LocName");
             }
          } else {
-            var5 = var5.set("Name", var5.createString(ITextComponent$Serializer.toJson(new StringTextComponent((String)var6.get()))));
+            var5 = var5.set("Name", var5.createString(ITextComponent.Serializer.toJson(new StringTextComponent((String)var6.get()))));
          }
 
          return var1.set("display", var5);

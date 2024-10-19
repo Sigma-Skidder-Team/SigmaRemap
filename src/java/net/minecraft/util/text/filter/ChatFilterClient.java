@@ -5,7 +5,7 @@ import com.google.gson.internal.Streams;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.mojang.authlib.GameProfile;
-import mapped.JSONUtils;
+import net.minecraft.util.JSONUtils;
 import net.minecraft.util.SharedConstants;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -76,7 +76,7 @@ public class ChatFilterClient implements AutoCloseable {
                if (s) {
                   return Optional.<String>of(p_244567_2_);
                } else {
-                  String i = JSONUtils.method32764(flag, "hashed", (String)null);
+                  String i = JSONUtils.getString(flag, "hashed", (String)null);
                   if (i == null) {
                      return Optional.<String>empty();
                   } else {

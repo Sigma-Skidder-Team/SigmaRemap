@@ -12,14 +12,13 @@ public abstract class Property<T extends Comparable<T>> {
    private final Class<T> field38436;
    private final String field38437;
    private Integer field38438;
-   private final Codec<T> field38439 = Codec.STRING
-      .comapFlatMap(
-         var1x -> this.parseValue(var1x)
-               .<DataResult>map(DataResult::success)
-               .orElseGet(() -> DataResult.error("Unable to read property: " + this + " with value: " + var1x)),
-         this::getName
-      );
-   private final Codec<ValuePair<T>> field38440 = this.field38439.xmap(this::method30468, ValuePair::method22835);
+   private final Codec<T> field_235916_d_ = Codec.STRING.comapFlatMap((p_lambda$new$1_1_) ->
+   {
+      return this.parseValue(p_lambda$new$1_1_).map(DataResult::success).orElseGet(() -> {
+         return DataResult.error("Unable to read property: " + this + " with value: " + p_lambda$new$1_1_);
+      });
+   }, this::getName);
+   private final Codec<ValuePair<T>> field38440 = this.field_235916_d_.xmap(this::method30468, ValuePair::method22835);
 
    public Property(String var1, Class<T> var2) {
       this.field38436 = var2;

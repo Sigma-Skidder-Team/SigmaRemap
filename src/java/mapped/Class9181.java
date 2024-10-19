@@ -6,6 +6,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.util.JSONUtils;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.HashMap;
@@ -46,7 +47,7 @@ public class Class9181 {
       HashMap var4 = Maps.newHashMap();
 
       for (Entry var6 : var0.entrySet()) {
-         var4.put(var6.getKey(), method34336(JSONUtils.method32781((JsonElement)var6.getValue(), "criterion"), var1));
+         var4.put(var6.getKey(), method34336(JSONUtils.getJSONObject((JsonElement)var6.getValue(), "criterion"), var1));
       }
 
       return var4;

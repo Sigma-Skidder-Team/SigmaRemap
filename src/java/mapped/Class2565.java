@@ -1,13 +1,14 @@
 package mapped;
 
 import com.google.gson.*;
+import net.minecraft.util.JSONUtils;
 import net.minecraft.util.text.ITextComponent;
 
 import java.lang.reflect.Type;
 
 public class Class2565 implements JsonDeserializer<Class8783>, JsonSerializer<Class8783> {
    public Class8783 deserialize(JsonElement var1, Type var2, JsonDeserializationContext var3) throws JsonParseException {
-      JsonObject var6 = JSONUtils.method32781(var1, "status");
+      JsonObject var6 = JSONUtils.getJSONObject(var1, "status");
       Class8783 var7 = new Class8783();
       if (var6.has("description")) {
          var7.setServerDescription((ITextComponent)var3.deserialize(var6.get("description"), ITextComponent.class));

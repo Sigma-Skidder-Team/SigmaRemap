@@ -7,6 +7,8 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSyntaxException;
+import net.minecraft.util.JSONUtils;
+
 import java.util.ArrayList;
 
 public class SetAttribSerializer extends LootFunctionSerializer<Class148> {
@@ -26,7 +28,7 @@ public class SetAttribSerializer extends LootFunctionSerializer<Class148> {
       ArrayList var7 = Lists.newArrayListWithExpectedSize(var6.size());
 
       for (JsonElement var9 : var6) {
-         var7.add(Class6884.method20961(JSONUtils.method32781(var9, "modifier"), var2));
+         var7.add(Class6884.method20961(JSONUtils.getJSONObject(var9, "modifier"), var2));
       }
 
       if (!var7.isEmpty()) {

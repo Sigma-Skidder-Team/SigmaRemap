@@ -5,12 +5,13 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.util.JSONUtils;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 
 public class Class6506 implements Class6504<Class4854> {
    public Class4854 method19700(ResourceLocation var1, JsonObject var2) {
-      String var5 = JSONUtils.method32764(var2, "group", "");
+      String var5 = JSONUtils.getString(var2, "group", "");
       NonNullList var6 = method19703(JSONUtils.method32785(var2, "ingredients"));
       if (!var6.isEmpty()) {
          if (var6.size() <= 9) {

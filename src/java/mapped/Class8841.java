@@ -3,6 +3,8 @@ package mapped;
 import com.google.gson.JsonElement;
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import net.minecraft.util.JSONUtils;
+
 import java.util.function.Function;
 import javax.annotation.Nullable;
 

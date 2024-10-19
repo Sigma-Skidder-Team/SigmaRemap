@@ -7,7 +7,6 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.ListNBT;
 import net.minecraft.nbt.StringNBT;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.ITextComponent$Serializer;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -45,7 +44,7 @@ public class Class137 extends Class128 {
          }
 
          UnaryOperator<ITextComponent> var6 = Class132.method384(var2, this.field462);
-         this.field461.stream().map(var6).map(ITextComponent$Serializer::toJson).map(StringNBT::valueOf).forEach(var5::add);
+         this.field461.stream().map(var6).map(ITextComponent.Serializer::toJson).map(StringNBT::valueOf).forEach(var5::add);
       }
 
       return var1;

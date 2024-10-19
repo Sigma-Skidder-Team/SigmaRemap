@@ -14,6 +14,7 @@ import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -28,6 +29,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
+import net.minecraft.world.raid.Raid;
 
 import javax.annotation.Nullable;
 import java.util.HashMap;
@@ -123,7 +125,7 @@ public class Class1024 extends Class1025 implements Class1023 {
       ListNBT var4 = var1.getList("Inventory", 10);
 
       for (int var5 = 0; var5 < var4.size(); var5++) {
-         ItemStack var6 = ItemStack.method32104(var4.getCompound(var5));
+         ItemStack var6 = ItemStack.read(var4.getCompound(var5));
          if (!var6.isEmpty()) {
             this.field5711.method3676(var6);
          }
@@ -246,7 +248,7 @@ public class Class1024 extends Class1025 implements Class1023 {
 
    @Override
    public void method4545(int var1, boolean var2) {
-      Class7699 var5 = this.method4551();
+      Raid var5 = this.method4551();
       boolean var6 = this.rand.nextFloat() <= var5.method25436();
       if (var6) {
          ItemStack var7 = new ItemStack(Items.CROSSBOW);

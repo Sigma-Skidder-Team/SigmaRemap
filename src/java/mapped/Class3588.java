@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.item.Item;
+
 import java.util.Comparator;
 
 public class Class3588 implements Comparator<Item> {

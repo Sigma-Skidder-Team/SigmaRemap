@@ -1,6 +1,6 @@
 package net.minecraft.network.play.server;
 
-import mapped.Item;
+import net.minecraft.item.Item;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.IPacket;

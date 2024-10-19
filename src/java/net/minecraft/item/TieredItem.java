@@ -1,7 +1,5 @@
 package net.minecraft.item;
 
-import mapped.Item;
-
 public class TieredItem extends Item {
    private static String[] field18759;
    private final IItemTier field18760;

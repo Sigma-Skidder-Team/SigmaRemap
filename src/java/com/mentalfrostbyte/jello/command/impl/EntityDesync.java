@@ -34,7 +34,7 @@ public class EntityDesync extends Command {
 
                   mc.player.method3311(this.field25711);
                   this.field25711.addedToChunk = true;
-                  var3.send("Remounted entity " + this.field25711.getType().method33211().getUnformattedComponentText());
+                  var3.send("Remounted entity " + this.field25711.getType().getName().getUnformattedComponentText());
                   this.field25711 = null;
                } else {
                   Entity var6 = mc.player.getRidingEntity();
@@ -45,7 +45,7 @@ public class EntityDesync extends Command {
                   this.field25711 = mc.player.getRidingEntity();
                   this.field25711.addedToChunk = true;
                   mc.player.stopRiding();
-                  var3.send("Dismounted entity " + this.field25711.getType().method33211().getUnformattedComponentText());
+                  var3.send("Dismounted entity " + this.field25711.getType().getName().getUnformattedComponentText());
                }
             }
          } else {

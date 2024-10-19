@@ -7,6 +7,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
+import net.minecraft.util.JSONUtils;
 import net.minecraft.util.ResourceLocation;
 
 import java.io.BufferedReader;
@@ -48,7 +49,7 @@ public class Class272 extends Class269<Map<ResourceLocation, List<Class1768>>> {
                   var2.endStartSection("parsing");
 
                   for (int var19 = var18.size() - 1; var19 >= 0; var19--) {
-                     JsonObject var20 = JSONUtils.method32781(var18.get(var19), "providers[" + var19 + "]");
+                     JsonObject var20 = JSONUtils.getJSONObject(var18.get(var19), "providers[" + var19 + "]");
 
                      try {
                         String var21 = JSONUtils.getString(var20, "type");

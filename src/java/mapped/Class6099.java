@@ -31,7 +31,6 @@ import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.util.text.event.ClickEvent;
 import net.minecraft.util.text.event.ClickEvent$Action;
 import net.minecraft.util.text.event.HoverEvent;
-import net.minecraft.util.text.event.HoverEvent$Action;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -182,7 +181,7 @@ public class Class6099 {
          }
 
          var1.method20181(
-            new TranslationTextComponent("command.failed").modifyStyle(var1x -> var1x.setHoverEvent(new HoverEvent(HoverEvent$Action.SHOW_TEXT, var7)))
+            new TranslationTextComponent("command.failed").modifyStyle(var1x -> var1x.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, var7)))
          );
          if (SharedConstants.developmentMode) {
             var1.method20181(new StringTextComponent(Util.getMessage(var17)));

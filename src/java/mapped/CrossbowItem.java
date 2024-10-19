@@ -12,6 +12,7 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntityPickupStatus;
 import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.UseAction;
@@ -173,7 +174,7 @@ public class CrossbowItem extends Class3262 implements IVanishable {
          if (var5 != null) {
             for (int var6 = 0; var6 < var5.size(); var6++) {
                CompoundNBT var7 = var5.getCompound(var6);
-               var3.add(ItemStack.method32104(var7));
+               var3.add(ItemStack.read(var7));
             }
          }
       }

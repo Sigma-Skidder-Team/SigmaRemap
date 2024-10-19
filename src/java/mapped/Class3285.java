@@ -4,6 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.command.CommandSource;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
@@ -106,13 +107,13 @@ public class Class3285 extends Item {
 
                Object var9;
                try {
-                  var9 = ITextComponent$Serializer.getComponentFromJsonLenient(var8);
+                  var9 = ITextComponent.Serializer.getComponentFromJsonLenient(var8);
                   var9 = TextComponentUtils.func_240645_a_(var1, (ITextComponent)var9, var2, 0);
                } catch (Exception var11) {
                   var9 = new StringTextComponent(var8);
                }
 
-               var6.set(var7, (INBT) StringNBT.valueOf(ITextComponent$Serializer.toJson((ITextComponent)var9)));
+               var6.set(var7, (INBT) StringNBT.valueOf(ITextComponent.Serializer.toJson((ITextComponent)var9)));
             }
 
             var5.put("pages", var6);

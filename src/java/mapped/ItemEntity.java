@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -285,7 +286,7 @@ public class ItemEntity extends Entity {
       }
 
       CompoundNBT var4 = var1.getCompound("Item");
-      this.method4125(ItemStack.method32104(var4));
+      this.method4125(ItemStack.read(var4));
       if (this.method4124().isEmpty()) {
          this.remove();
       }

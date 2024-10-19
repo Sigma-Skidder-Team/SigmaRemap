@@ -6,8 +6,8 @@ import java.io.IOException;
 
 import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.util.JSONUtils;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.ITextComponent$Serializer;
 import net.minecraft.util.text.Style;
 import net.minecraft.util.text.Style$Serializer;
 
@@ -17,7 +17,7 @@ public class Class5552 implements IPacket<Class5112> {
       .registerTypeAdapter(Class9226.class, new Class2559())
       .registerTypeAdapter(Class9762.class, new Class2556())
       .registerTypeAdapter(Class8783.class, new Class2565())
-      .registerTypeHierarchyAdapter(ITextComponent.class, new ITextComponent$Serializer())
+      .registerTypeHierarchyAdapter(ITextComponent.class, new ITextComponent.Serializer())
       .registerTypeHierarchyAdapter(Style.class, new Style$Serializer())
       .registerTypeAdapterFactory(new Class9681())
       .create();

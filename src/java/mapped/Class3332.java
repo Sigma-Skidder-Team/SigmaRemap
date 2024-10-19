@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 public class Class3332 extends Item {

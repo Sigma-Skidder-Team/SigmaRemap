@@ -6,6 +6,7 @@ import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.util.JSONUtils;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 
@@ -68,7 +69,7 @@ public class Class8605 {
 
    public static Class8605 method30837(JsonElement var0) {
       if (var0 != null && !var0.isJsonNull()) {
-         JsonObject var3 = JSONUtils.method32781(var0, "enchantment");
+         JsonObject var3 = JSONUtils.getJSONObject(var0, "enchantment");
          Enchantment var4 = null;
          if (var3.has("enchantment")) {
             ResourceLocation var5 = new ResourceLocation(JSONUtils.getString(var3, "enchantment"));

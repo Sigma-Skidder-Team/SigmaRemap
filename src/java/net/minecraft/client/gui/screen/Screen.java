@@ -188,11 +188,11 @@ public abstract class Screen extends FocusableGui implements IScreen, Class1190 
    public void method2462(MatrixStack var1, Style var2, int var3, int var4) {
       if (var2 != null && var2.getHoverEvent() != null) {
          HoverEvent var7 = var2.getHoverEvent();
-         HoverEvent$ItemHover var8 = var7.<HoverEvent$ItemHover>getParameter(HoverEvent$Action.SHOW_ITEM);
+         HoverEvent.ItemHover var8 = var7.<HoverEvent.ItemHover>getParameter(HoverEvent.Action.SHOW_ITEM);
          if (var8 == null) {
-            HoverEvent$EntityHover var9 = var7.<HoverEvent$EntityHover>getParameter(HoverEvent$Action.SHOW_ENTITY);
+            HoverEvent.EntityHover var9 = var7.<HoverEvent.EntityHover>getParameter(HoverEvent.Action.SHOW_ENTITY);
             if (var9 == null) {
-               ITextComponent var10 = var7.<ITextComponent>getParameter(HoverEvent$Action.SHOW_TEXT);
+               ITextComponent var10 = var7.<ITextComponent>getParameter(HoverEvent.Action.SHOW_TEXT);
                if (var10 != null) {
                   this.method2461(var1, this.mc.fontRenderer.trimStringToWidth(var10, Math.max(this.width / 2, 200)), var3, var4);
                }

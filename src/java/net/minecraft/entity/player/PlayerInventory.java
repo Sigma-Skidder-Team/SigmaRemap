@@ -7,6 +7,7 @@ import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.crash.ReportedException;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.ListNBT;
@@ -424,7 +425,7 @@ public class PlayerInventory implements IInventory, INameable {
       for (int var4 = 0; var4 < var1.size(); var4++) {
          CompoundNBT var5 = var1.getCompound(var4);
          int var6 = var5.getByte("Slot") & 255;
-         ItemStack var7 = ItemStack.method32104(var5);
+         ItemStack var7 = ItemStack.read(var5);
          if (!var7.isEmpty()) {
             if (var6 >= 0 && var6 < this.field5439.size()) {
                this.field5439.set(var6, var7);

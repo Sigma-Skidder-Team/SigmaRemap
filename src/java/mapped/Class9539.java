@@ -5,6 +5,7 @@ import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.JSONUtils;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.server.ServerWorld;
 
@@ -70,7 +71,7 @@ public class Class9539 {
 
    public static Class9539 method36913(JsonElement var0) {
       if (var0 != null && !var0.isJsonNull()) {
-         JsonObject var3 = JSONUtils.method32781(var0, "damage type");
+         JsonObject var3 = JSONUtils.getJSONObject(var0, "damage type");
          Boolean var4 = method36914(var3, "is_projectile");
          Boolean var5 = method36914(var3, "is_explosion");
          Boolean var6 = method36914(var3, "bypasses_armor");

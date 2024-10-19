@@ -1,12 +1,13 @@
 package mapped;
 
 import com.google.gson.*;
+import net.minecraft.util.JSONUtils;
 
 import java.lang.reflect.Type;
 
 public class Class2559 implements JsonDeserializer<Class9226>, JsonSerializer<Class9226> {
    public Class9226 deserialize(JsonElement var1, Type var2, JsonDeserializationContext var3) throws JsonParseException {
-      JsonObject var6 = JSONUtils.method32781(var1, "version");
+      JsonObject var6 = JSONUtils.getJSONObject(var1, "version");
       return new Class9226(JSONUtils.getString(var6, "name"), JSONUtils.method32777(var6, "protocol"));
    }
 

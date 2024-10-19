@@ -4,9 +4,11 @@ import com.google.gson.*;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntComparators;
 import it.unimi.dsi.fastutil.ints.IntList;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.IItemProvider;
+import net.minecraft.util.JSONUtils;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 
@@ -136,7 +138,7 @@ public final class Class120 implements Predicate<ItemStack> {
       } else {
          JsonArray var3 = var0.getAsJsonArray();
          if (var3.size() != 0) {
-            return method338(StreamSupport.<JsonElement>stream(var3.spliterator(), false).map(var0x -> method345(JSONUtils.method32781(var0x, "item"))));
+            return method338(StreamSupport.<JsonElement>stream(var3.spliterator(), false).map(var0x -> method345(JSONUtils.getJSONObject(var0x, "item"))));
          } else {
             throw new JsonSyntaxException("Item array cannot be empty, at least one item must be defined");
          }

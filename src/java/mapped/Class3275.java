@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 
 public class Class3275 extends Item {

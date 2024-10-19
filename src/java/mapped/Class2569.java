@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import com.google.gson.*;
+import net.minecraft.util.JSONUtils;
 import org.apache.commons.lang3.Validate;
 
 import java.lang.reflect.Type;
@@ -10,9 +11,9 @@ import java.util.List;
 
 public class Class2569 implements JsonDeserializer<Class9304> {
    public Class9304 deserialize(JsonElement var1, Type var2, JsonDeserializationContext var3) throws JsonParseException {
-      JsonObject var6 = JSONUtils.method32781(var1, "entry");
+      JsonObject var6 = JSONUtils.getJSONObject(var1, "entry");
       boolean var7 = JSONUtils.getBoolean(var6, "replace", false);
-      String var8 = JSONUtils.method32764(var6, "subtitle", (String)null);
+      String var8 = JSONUtils.getString(var6, "subtitle", (String)null);
       List var9 = this.method10759(var6);
       return new Class9304(var9, var7, var8);
    }
@@ -25,7 +26,7 @@ public class Class2569 implements JsonDeserializer<Class9304> {
          for (int var6 = 0; var6 < var5.size(); var6++) {
             JsonElement var7 = var5.get(var6);
             if (!JSONUtils.method32756(var7)) {
-               var4.add(this.method10760(JSONUtils.method32781(var7, "sound")));
+               var4.add(this.method10760(JSONUtils.getJSONObject(var7, "sound")));
             } else {
                String var8 = JSONUtils.method32762(var7, "sound");
                var4.add(new Class6647(var8, 1.0F, 1.0F, 1, Class2221.field14506, false, false, 16));

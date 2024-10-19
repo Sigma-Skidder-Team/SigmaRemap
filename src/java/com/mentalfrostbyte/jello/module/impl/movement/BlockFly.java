@@ -23,6 +23,7 @@ import lol.MovementUtils;
 import mapped.*;
 import net.minecraft.block.*;
 import net.minecraft.inventory.container.ClickType;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.CClientStatusPacket;
 import net.minecraft.network.play.client.CCloseWindowPacket;

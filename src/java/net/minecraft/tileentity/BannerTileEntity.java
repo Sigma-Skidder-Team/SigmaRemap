@@ -9,7 +9,6 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.ListNBT;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.ITextComponent$Serializer;
 import net.minecraft.util.text.TranslationTextComponent;
 
 import javax.annotation.Nullable;
@@ -75,7 +74,7 @@ public class BannerTileEntity extends TileEntity implements INameable {
       }
 
       if (this.field5376 != null) {
-         var1.putString("CustomName", ITextComponent$Serializer.toJson(this.field5376));
+         var1.putString("CustomName", ITextComponent.Serializer.toJson(this.field5376));
       }
 
       return var1;
@@ -85,7 +84,7 @@ public class BannerTileEntity extends TileEntity implements INameable {
    public void read(BlockState var1, CompoundNBT var2) {
       super.read(var1, var2);
       if (var2.contains("CustomName", 8)) {
-         this.field5376 = ITextComponent$Serializer.getComponentFromJson(var2.getString("CustomName"));
+         this.field5376 = ITextComponent.Serializer.getComponentFromJson(var2.getString("CustomName"));
       }
 
       if (!this.method3770()) {

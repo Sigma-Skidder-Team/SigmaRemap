@@ -5,6 +5,7 @@ import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.JSONUtils;
 
 public class Class9404 {
    public static final Class9404 field43627 = Class9024.method33410().method33413();
@@ -52,7 +53,7 @@ public class Class9404 {
 
    public static Class9404 method35780(JsonElement var0) {
       if (var0 != null && !var0.isJsonNull()) {
-         JsonObject var3 = JSONUtils.method32781(var0, "damage");
+         JsonObject var3 = JSONUtils.getJSONObject(var0, "damage");
          Class8841 var4 = Class8841.method32025(var3.get("dealt"));
          Class8841 var5 = Class8841.method32025(var3.get("taken"));
          Boolean var6 = !var3.has("blocked") ? null : JSONUtils.method32768(var3, "blocked");

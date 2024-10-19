@@ -182,7 +182,7 @@ public class Class897 extends Entity implements Class889 {
 
    @Override
    public void readAdditional(CompoundNBT var1) {
-      ItemStack var4 = ItemStack.method32104(var1.getCompound("Item"));
+      ItemStack var4 = ItemStack.read(var1.getCompound("Item"));
       this.method3522(var4);
    }
 

@@ -5,6 +5,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import net.minecraft.resources.data.IMetadataSectionSerializer;
+import net.minecraft.util.JSONUtils;
 
 import java.util.HashSet;
 import java.util.Map.Entry;
@@ -19,7 +20,7 @@ public class Class7171 implements IMetadataSectionSerializer<Class9168> {
             throw new JsonParseException("Invalid language->'" + var7 + "': language code must not be more than " + 16 + " characters long");
          }
 
-         JsonObject var8 = JSONUtils.method32781((JsonElement)var6.getValue(), "language");
+         JsonObject var8 = JSONUtils.getJSONObject((JsonElement)var6.getValue(), "language");
          String var9 = JSONUtils.getString(var8, "region");
          String var10 = JSONUtils.getString(var8, "name");
          boolean var11 = JSONUtils.getBoolean(var8, "bidirectional", false);

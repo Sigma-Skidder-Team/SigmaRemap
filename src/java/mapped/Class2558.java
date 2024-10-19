@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.gson.*;
 import net.minecraft.util.Direction;
+import net.minecraft.util.JSONUtils;
 
 import javax.annotation.Nullable;
 import java.lang.reflect.Type;
@@ -26,7 +27,7 @@ public class Class2558 implements JsonDeserializer<Class9163> {
 
    @Nullable
    private Direction method10755(JsonObject var1) {
-      String var4 = JSONUtils.method32764(var1, "cullface", "");
+      String var4 = JSONUtils.getString(var1, "cullface", "");
       return Direction.byName(var4);
    }
 }

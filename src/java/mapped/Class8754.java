@@ -11,7 +11,7 @@ import com.mojang.serialization.Dynamic;
 import java.util.stream.Stream;
 
 import net.minecraft.util.datafix.TypeReferences;
-import net.minecraft.util.text.ITextComponent$Serializer;
+import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 
 public class Class8754 extends DataFix {
@@ -50,6 +50,6 @@ public class Class8754 extends DataFix {
    }
 
    private static String method31581(String var0) {
-      return ITextComponent$Serializer.toJson(new StringTextComponent(var0));
+      return ITextComponent.Serializer.toJson(new StringTextComponent(var0));
    }
 }

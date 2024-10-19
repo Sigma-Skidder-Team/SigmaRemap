@@ -10,7 +10,7 @@ import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import mapped.InvManagerUtils;
 import mapped.InventoryScreen;
-import mapped.Item;
+import net.minecraft.item.Item;
 import net.minecraft.inventory.container.ClickType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;

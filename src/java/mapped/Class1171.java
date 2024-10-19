@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.item.Item;
 
 public class Class1171 extends Class1155<Class1171> {
    public final Class1282 field6346;

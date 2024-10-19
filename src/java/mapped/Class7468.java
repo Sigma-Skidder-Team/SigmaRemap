@@ -10,7 +10,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.ITextComponent$Serializer;
 import net.minecraft.world.IBlockReader;
 
 public class Class7468 {
@@ -27,7 +26,7 @@ public class Class7468 {
    public static Class7468 method24183(CompoundNBT var0) {
       BlockPos var3 = NBTUtil.readBlockPos(var0.getCompound("Pos"));
       Class112 var4 = Class112.method316(var0.getString("Color"), Class112.field386);
-      IFormattableTextComponent var5 = !var0.contains("Name") ? null : ITextComponent$Serializer.getComponentFromJson(var0.getString("Name"));
+      IFormattableTextComponent var5 = !var0.contains("Name") ? null : ITextComponent.Serializer.getComponentFromJson(var0.getString("Name"));
       return new Class7468(var3, var4, var5);
    }
 
@@ -113,7 +112,7 @@ public class Class7468 {
       var3.put("Pos", NBTUtil.writeBlockPos(this.field32104));
       var3.putString("Color", this.field32105.method310());
       if (this.field32106 != null) {
-         var3.putString("Name", ITextComponent$Serializer.toJson(this.field32106));
+         var3.putString("Name", ITextComponent.Serializer.toJson(this.field32106));
       }
 
       return var3;

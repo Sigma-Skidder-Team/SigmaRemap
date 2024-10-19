@@ -5,6 +5,7 @@ import net.minecraft.command.CommandSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -108,7 +109,7 @@ public class Class948 extends TileEntity implements IClearable, Class949 {
       if (!var2.contains("Book", 10)) {
          this.field5335 = ItemStack.EMPTY;
       } else {
-         this.field5335 = this.method3813(ItemStack.method32104(var2.getCompound("Book")), (PlayerEntity)null);
+         this.field5335 = this.method3813(ItemStack.read(var2.getCompound("Book")), (PlayerEntity)null);
       }
 
       this.field5337 = Class3285.method11819(this.field5335);

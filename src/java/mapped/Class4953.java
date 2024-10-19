@@ -3,6 +3,7 @@ package mapped;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSerializationContext;
+import net.minecraft.util.JSONUtils;
 
 public class Class4953 implements ILootSerializer<Class152> {
    public void serialize(JsonObject var1, Class152 var2, JsonSerializationContext var3) {

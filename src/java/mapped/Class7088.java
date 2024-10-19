@@ -17,11 +17,13 @@ import net.minecraft.command.CommandSource;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.server.CustomServerBossInfo;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentUtils;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.BossInfo;
 
 public class Class7088 {
    private static final DynamicCommandExceptionType field30497 = new DynamicCommandExceptionType(
@@ -240,51 +242,51 @@ public class Class7088 {
       );
    }
 
-   private static int method22017(CommandSource var0, Class3623 var1) {
-      var0.method20179(new TranslationTextComponent("commands.bossbar.get.value", var1.method12271(), var1.method12267()), true);
-      return var1.method12267();
+   private static int method22017(CommandSource var0, CustomServerBossInfo var1) {
+      var0.method20179(new TranslationTextComponent("commands.bossbar.get.value", var1.getFormattedName(), var1.getValue()), true);
+      return var1.getValue();
    }
 
-   private static int method22018(CommandSource var0, Class3623 var1) {
-      var0.method20179(new TranslationTextComponent("commands.bossbar.get.max", var1.method12271(), var1.method12268()), true);
-      return var1.method12268();
+   private static int method22018(CommandSource var0, CustomServerBossInfo var1) {
+      var0.method20179(new TranslationTextComponent("commands.bossbar.get.max", var1.getFormattedName(), var1.getMax()), true);
+      return var1.getMax();
    }
 
-   private static int method22019(CommandSource var0, Class3623 var1) {
+   private static int method22019(CommandSource var0, CustomServerBossInfo var1) {
       if (!var1.isVisible()) {
-         var0.method20179(new TranslationTextComponent("commands.bossbar.get.visible.hidden", var1.method12271()), true);
+         var0.method20179(new TranslationTextComponent("commands.bossbar.get.visible.hidden", var1.getFormattedName()), true);
          return 0;
       } else {
-         var0.method20179(new TranslationTextComponent("commands.bossbar.get.visible.visible", var1.method12271()), true);
+         var0.method20179(new TranslationTextComponent("commands.bossbar.get.visible.visible", var1.getFormattedName()), true);
          return 1;
       }
    }
 
-   private static int method22020(CommandSource var0, Class3623 var1) {
+   private static int method22020(CommandSource var0, CustomServerBossInfo var1) {
       if (!var1.getPlayers().isEmpty()) {
          var0.method20179(
             new TranslationTextComponent(
                "commands.bossbar.get.players.some",
-               var1.method12271(),
+               var1.getFormattedName(),
                var1.getPlayers().size(),
                TextComponentUtils.func_240649_b_(var1.getPlayers(), PlayerEntity::getDisplayName)
             ),
             true
          );
       } else {
-         var0.method20179(new TranslationTextComponent("commands.bossbar.get.players.none", var1.method12271()), true);
+         var0.method20179(new TranslationTextComponent("commands.bossbar.get.players.none", var1.getFormattedName()), true);
       }
 
       return var1.getPlayers().size();
    }
 
-   private static int method22021(CommandSource var0, Class3623 var1, boolean var2) throws CommandSyntaxException {
+   private static int method22021(CommandSource var0, CustomServerBossInfo var1, boolean var2) throws CommandSyntaxException {
       if (var1.isVisible() != var2) {
          var1.setVisible(var2);
          if (!var2) {
-            var0.method20179(new TranslationTextComponent("commands.bossbar.set.visible.success.hidden", var1.method12271()), true);
+            var0.method20179(new TranslationTextComponent("commands.bossbar.set.visible.success.hidden", var1.getFormattedName()), true);
          } else {
-            var0.method20179(new TranslationTextComponent("commands.bossbar.set.visible.success.visible", var1.method12271()), true);
+            var0.method20179(new TranslationTextComponent("commands.bossbar.set.visible.success.visible", var1.getFormattedName()), true);
          }
 
          return 0;
@@ -295,69 +297,69 @@ public class Class7088 {
       }
    }
 
-   private static int method22022(CommandSource var0, Class3623 var1, int var2) throws CommandSyntaxException {
-      if (var1.method12267() != var2) {
-         var1.method12269(var2);
-         var0.method20179(new TranslationTextComponent("commands.bossbar.set.value.success", var1.method12271(), var2), true);
+   private static int method22022(CommandSource var0, CustomServerBossInfo var1, int var2) throws CommandSyntaxException {
+      if (var1.getValue() != var2) {
+         var1.setValue(var2);
+         var0.method20179(new TranslationTextComponent("commands.bossbar.set.value.success", var1.getFormattedName(), var2), true);
          return var2;
       } else {
          throw field30503.create();
       }
    }
 
-   private static int method22023(CommandSource var0, Class3623 var1, int var2) throws CommandSyntaxException {
-      if (var1.method12268() != var2) {
-         var1.method12270(var2);
-         var0.method20179(new TranslationTextComponent("commands.bossbar.set.max.success", var1.method12271(), var2), true);
+   private static int method22023(CommandSource var0, CustomServerBossInfo var1, int var2) throws CommandSyntaxException {
+      if (var1.getMax() != var2) {
+         var1.setMax(var2);
+         var0.method20179(new TranslationTextComponent("commands.bossbar.set.max.success", var1.getFormattedName(), var2), true);
          return var2;
       } else {
          throw field30504.create();
       }
    }
 
-   private static int method22024(CommandSource var0, Class3623 var1, BossInfo.Color var2) throws CommandSyntaxException {
+   private static int method22024(CommandSource var0, CustomServerBossInfo var1, BossInfo.Color var2) throws CommandSyntaxException {
       if (!var1.getColor().equals(var2)) {
          var1.setColor(var2);
-         var0.method20179(new TranslationTextComponent("commands.bossbar.set.color.success", var1.method12271()), true);
+         var0.method20179(new TranslationTextComponent("commands.bossbar.set.color.success", var1.getFormattedName()), true);
          return 0;
       } else {
          throw field30501.create();
       }
    }
 
-   private static int method22025(CommandSource var0, Class3623 var1, BossInfo.Overlay var2) throws CommandSyntaxException {
+   private static int method22025(CommandSource var0, CustomServerBossInfo var1, BossInfo.Overlay var2) throws CommandSyntaxException {
       if (!var1.getOverlay().equals(var2)) {
          var1.setOverlay(var2);
-         var0.method20179(new TranslationTextComponent("commands.bossbar.set.style.success", var1.method12271()), true);
+         var0.method20179(new TranslationTextComponent("commands.bossbar.set.style.success", var1.getFormattedName()), true);
          return 0;
       } else {
          throw field30502.create();
       }
    }
 
-   private static int method22026(CommandSource var0, Class3623 var1, ITextComponent var2) throws CommandSyntaxException {
+   private static int method22026(CommandSource var0, CustomServerBossInfo var1, ITextComponent var2) throws CommandSyntaxException {
       IFormattableTextComponent var5 = TextComponentUtils.func_240645_a_(var0, var2, (Entity)null, 0);
       if (!var1.getName().equals(var5)) {
          var1.setName(var5);
-         var0.method20179(new TranslationTextComponent("commands.bossbar.set.name.success", var1.method12271()), true);
+         var0.method20179(new TranslationTextComponent("commands.bossbar.set.name.success", var1.getFormattedName()), true);
          return 0;
       } else {
          throw field30500.create();
       }
    }
 
-   private static int method22027(CommandSource var0, Class3623 var1, Collection<ServerPlayerEntity> var2) throws CommandSyntaxException {
-      boolean var5 = var1.method12272(var2);
+   private static int method22027(CommandSource var0, CustomServerBossInfo var1, Collection<ServerPlayerEntity> var2) throws CommandSyntaxException {
+      boolean var5 = var1.setPlayers(var2);
       if (var5) {
          if (!var1.getPlayers().isEmpty()) {
             var0.method20179(
                new TranslationTextComponent(
-                  "commands.bossbar.set.players.success.some", var1.method12271(), var2.size(), TextComponentUtils.func_240649_b_(var2, PlayerEntity::getDisplayName)
+                  "commands.bossbar.set.players.success.some", var1.getFormattedName(), var2.size(), TextComponentUtils.func_240649_b_(var2, PlayerEntity::getDisplayName)
                ),
                true
             );
          } else {
-            var0.method20179(new TranslationTextComponent("commands.bossbar.set.players.success.none", var1.method12271()), true);
+            var0.method20179(new TranslationTextComponent("commands.bossbar.set.players.success.none", var1.getFormattedName()), true);
          }
 
          return var1.getPlayers().size();
@@ -370,7 +372,7 @@ public class Class7088 {
       Collection var3 = var0.method20177().method1414().method29604();
       if (!var3.isEmpty()) {
          var0.method20179(
-            new TranslationTextComponent("commands.bossbar.list.bars.some", var3.size(), TextComponentUtils.func_240649_b_(var3, Class3623::method12271)),
+            new TranslationTextComponent("commands.bossbar.list.bars.some", var3.size(), TextComponentUtils.func_240649_b_(var3, CustomServerBossInfo::getFormattedName)),
             false
          );
       } else {
@@ -383,25 +385,25 @@ public class Class7088 {
    private static int method22029(CommandSource var0, ResourceLocation var1, ITextComponent var2) throws CommandSyntaxException {
       Class8426 var5 = var0.method20177().method1414();
       if (var5.method29600(var1) == null) {
-         Class3623 var6 = var5.method29601(var1, TextComponentUtils.func_240645_a_(var0, var2, (Entity)null, 0));
-         var0.method20179(new TranslationTextComponent("commands.bossbar.create.success", var6.method12271()), true);
+         CustomServerBossInfo var6 = var5.method29601(var1, TextComponentUtils.func_240645_a_(var0, var2, (Entity)null, 0));
+         var0.method20179(new TranslationTextComponent("commands.bossbar.create.success", var6.getFormattedName()), true);
          return var5.method29604().size();
       } else {
          throw field30497.create(var1.toString());
       }
    }
 
-   private static int method22030(CommandSource var0, Class3623 var1) {
+   private static int method22030(CommandSource var0, CustomServerBossInfo var1) {
       Class8426 var4 = var0.method20177().method1414();
       var1.removeAllPlayers();
       var4.method29602(var1);
-      var0.method20179(new TranslationTextComponent("commands.bossbar.remove.success", var1.method12271()), true);
+      var0.method20179(new TranslationTextComponent("commands.bossbar.remove.success", var1.getFormattedName()), true);
       return var4.method29604().size();
    }
 
-   public static Class3623 method22031(CommandContext<CommandSource> var0) throws CommandSyntaxException {
+   public static CustomServerBossInfo method22031(CommandContext<CommandSource> var0) throws CommandSyntaxException {
       ResourceLocation var3 = Class8303.method29036(var0, "id");
-      Class3623 var4 = ((CommandSource)var0.getSource()).method20177().method1414().method29600(var3);
+      CustomServerBossInfo var4 = ((CommandSource)var0.getSource()).method20177().method1414().method29600(var3);
       if (var4 != null) {
          return var4;
       } else {

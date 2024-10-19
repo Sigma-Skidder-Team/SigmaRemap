@@ -4,6 +4,7 @@ import mapped.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.fluid.FlowingFluid;
 import net.minecraft.fluid.FluidState;
+import net.minecraft.item.Item;
 import net.minecraft.util.math.BlockPos;
 
 public interface ISelectionContext {

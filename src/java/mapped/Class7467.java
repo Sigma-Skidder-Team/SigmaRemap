@@ -10,7 +10,7 @@ import java.util.Objects;
 import java.util.Optional;
 
 import net.minecraft.util.datafix.TypeReferences;
-import net.minecraft.util.text.ITextComponent$Serializer;
+import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 
 public class Class7467 extends DataFix {
@@ -31,7 +31,7 @@ public class Class7467 extends DataFix {
    public static Dynamic<?> method24180(Dynamic<?> var0) {
       String var3 = var0.get("CustomName").asString("");
       return !var3.isEmpty()
-         ? var0.set("CustomName", var0.createString(ITextComponent$Serializer.toJson(new StringTextComponent(var3))))
+         ? var0.set("CustomName", var0.createString(ITextComponent.Serializer.toJson(new StringTextComponent(var3))))
          : var0.remove("CustomName");
    }
 }

@@ -19,7 +19,7 @@ public class Class1169 extends Class1155<Class1169> {
    public Class1169(Class1277  var1, EntityType<?> var2) {
       this.field6341 = var1;
       this.field6335 = var2;
-      this.field6336 = var2.method33211();
+      this.field6336 = var2.getName();
       int var5 = Class1305.method6193(var1.field6817).method28961(Stats.field40102.method172(var2));
       if (var5 != 0) {
          this.field6337 = new TranslationTextComponent("stat_type.minecraft.killed", var5, this.field6336);

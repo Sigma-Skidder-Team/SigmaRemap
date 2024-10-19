@@ -16,6 +16,7 @@ import java.util.Map;
 import java.util.function.IntSupplier;
 import javax.annotation.Nullable;
 
+import net.minecraft.util.JSONUtils;
 import net.minecraft.util.ResourceLocation;
 import org.apache.commons.io.IOUtils;
 import org.apache.logging.log4j.LogManager;
@@ -316,7 +317,7 @@ public class Class1808 implements Class1809, AutoCloseable {
    }
 
    private void method7939(JsonElement var1) {
-      JsonObject var4 = JSONUtils.method32781(var1, "sampler");
+      JsonObject var4 = JSONUtils.getJSONObject(var1, "sampler");
       String var5 = JSONUtils.getString(var4, "name");
       if (JSONUtils.method32755(var4, "file")) {
          this.field9747.add(var5);
@@ -336,7 +337,7 @@ public class Class1808 implements Class1809, AutoCloseable {
    }
 
    private void method7941(JsonElement var1) throws JSONException {
-      JsonObject var4 = JSONUtils.method32781(var1, "uniform");
+      JsonObject var4 = JSONUtils.getJSONObject(var1, "uniform");
       String var5 = JSONUtils.getString(var4, "name");
       int var6 = Class1708.method7434(JSONUtils.getString(var4, "type"));
       int var7 = JSONUtils.method32777(var4, "count");

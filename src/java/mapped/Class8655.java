@@ -10,7 +10,6 @@ import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.util.text.event.ClickEvent;
 import net.minecraft.util.text.event.ClickEvent$Action;
 import net.minecraft.util.text.event.HoverEvent;
-import net.minecraft.util.text.event.HoverEvent$Action;
 
 public class Class8655 extends DamageSource {
    public Class8655() {
@@ -24,7 +23,7 @@ public class Class8655 extends DamageSource {
       IFormattableTextComponent var4 = TextComponentUtils.wrapWithSquareBrackets(new TranslationTextComponent("death.attack.badRespawnPoint.link"))
          .modifyStyle(
             var0 -> var0.setClickEvent(new ClickEvent(ClickEvent$Action.OPEN_URL, "https://bugs.mojang.com/browse/MCPE-28723"))
-                  .setHoverEvent(new HoverEvent(HoverEvent$Action.SHOW_TEXT, new StringTextComponent("MCPE-28723")))
+                  .setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new StringTextComponent("MCPE-28723")))
          );
       return new TranslationTextComponent("death.attack.badRespawnPoint.message", var1.getDisplayName(), var4);
    }

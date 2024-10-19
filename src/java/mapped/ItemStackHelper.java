@@ -50,7 +50,7 @@ public class ItemStackHelper {
          CompoundNBT var6 = var4.getCompound(var5);
          int var7 = var6.getByte("Slot") & 255;
          if (var7 >= 0 && var7 < var1.size()) {
-            var1.set(var7, ItemStack.method32104(var6));
+            var1.set(var7, ItemStack.read(var6));
          }
       }
    }

@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Sets;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.raid.Raid;
 import net.minecraft.world.server.ServerWorld;
 
 import java.util.EnumSet;
@@ -38,7 +39,7 @@ public class Class2730<T extends Class1026> extends Class2595 {
    @Override
    public void method10805() {
       if (this.field17241.method4552()) {
-         Class7699 var3 = this.field17241.method4551();
+         Raid var3 = this.field17241.method4551();
          if (this.field17241.ticksExisted % 20 == 0) {
             this.method10940(var3);
          }
@@ -52,7 +53,7 @@ public class Class2730<T extends Class1026> extends Class2595 {
       }
    }
 
-   private void method10940(Class7699 var1) {
+   private void method10940(Raid var1) {
       if (var1.method25433()) {
          Set<Class1026> var4 = Sets.newHashSet();
          List<Class1026> var5 = this.field17241

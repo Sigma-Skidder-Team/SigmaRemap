@@ -3,6 +3,7 @@ package mapped;
 import com.google.gson.JsonObject;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.util.JSONUtils;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 
@@ -14,7 +15,7 @@ public class Class6508<T extends Class4844> implements Class6504<T> {
    }
 
    public T method19700(ResourceLocation var1, JsonObject var2) {
-      String var5 = JSONUtils.method32764(var2, "group", "");
+      String var5 = JSONUtils.getString(var2, "group", "");
       Class120 var6;
       if (!JSONUtils.method32759(var2, "ingredient")) {
          var6 = Class120.method344(JSONUtils.method32782(var2, "ingredient"));

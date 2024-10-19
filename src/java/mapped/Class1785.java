@@ -9,6 +9,7 @@ import java.nio.charset.StandardCharsets;
 import javax.annotation.Nullable;
 
 import net.minecraft.resources.data.IMetadataSectionSerializer;
+import net.minecraft.util.JSONUtils;
 import net.minecraft.util.ResourceLocation;
 import org.apache.commons.io.IOUtils;
 

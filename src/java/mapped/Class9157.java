@@ -5,6 +5,7 @@ import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.JSONUtils;
 
 import javax.annotation.Nullable;
 
@@ -45,7 +46,7 @@ public class Class9157 {
 
    public static Class9157 method34189(JsonElement var0) {
       if (var0 != null && !var0.isJsonNull()) {
-         JsonObject var3 = JSONUtils.method32781(var0, "entity flags");
+         JsonObject var3 = JSONUtils.getJSONObject(var0, "entity flags");
          Boolean var4 = method34188(var3, "is_on_fire");
          Boolean var5 = method34188(var3, "is_sneaking");
          Boolean var6 = method34188(var3, "is_sprinting");

@@ -11,6 +11,7 @@ import net.minecraft.stats.Stats;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.GameRules;
+import net.minecraft.world.raid.Raid;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.storage.WorldSavedData;
 
@@ -21,7 +22,7 @@ import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 
 public class Class7531 extends WorldSavedData {
-   private final Map<Integer, Class7699> field32332 = Maps.newHashMap();
+   private final Map<Integer, Raid> field32332 = Maps.newHashMap();
    private final ServerWorld field32333;
    private int field32334;
    private int field32335;
@@ -33,7 +34,7 @@ public class Class7531 extends WorldSavedData {
       this.markDirty();
    }
 
-   public Class7699 method24610(int var1) {
+   public Raid method24610(int var1) {
       return this.field32332.get(var1);
    }
 
@@ -42,7 +43,7 @@ public class Class7531 extends WorldSavedData {
       Iterator var3 = this.field32332.values().iterator();
 
       while (var3.hasNext()) {
-         Class7699 var4 = (Class7699)var3.next();
+         Raid var4 = (Raid)var3.next();
          if (this.field32333.getGameRules().getBoolean(GameRules.field24246)) {
             var4.method25402();
          }
@@ -62,14 +63,14 @@ public class Class7531 extends WorldSavedData {
       DebugPacketSender.method23621(this.field32333, this.field32332.values());
    }
 
-   public static boolean method24612(Class1026 var0, Class7699 var1) {
+   public static boolean method24612(Class1026 var0, Raid var1) {
       return var0 != null && var1 != null && var1.method25394() != null
          ? var0.isAlive() && var0.method4547() && var0.method3021() <= 2400 && var0.world.getDimensionType() == var1.method25394().getDimensionType()
          : false;
    }
 
    @Nullable
-   public Class7699 method24613(ServerPlayerEntity var1) {
+   public Raid method24613(ServerPlayerEntity var1) {
       if (var1.isSpectator()) {
          return null;
       } else if (this.field32333.getGameRules().getBoolean(GameRules.field24246)) {
@@ -98,7 +99,7 @@ public class Class7531 extends WorldSavedData {
                var13 = new BlockPos(var8);
             }
 
-            Class7699 var14 = this.method24614(var1.getServerWorld(), var13);
+            Raid var14 = this.method24614(var1.getServerWorld(), var13);
             boolean var15 = false;
             if (var14.method25395()) {
                if (var14.method25400() >= var14.method25399()) {
@@ -130,9 +131,9 @@ public class Class7531 extends WorldSavedData {
       }
    }
 
-   private Class7699 method24614(ServerWorld var1, BlockPos var2) {
-      Class7699 var5 = var1.method6957(var2);
-      return var5 == null ? new Class7699(this.method24616(), var1, var2) : var5;
+   private Raid method24614(ServerWorld var1, BlockPos var2) {
+      Raid var5 = var1.method6957(var2);
+      return var5 == null ? new Raid(this.method24616(), var1, var2) : var5;
    }
 
    @Override
@@ -143,7 +144,7 @@ public class Class7531 extends WorldSavedData {
 
       for (int var5 = 0; var5 < var4.size(); var5++) {
          CompoundNBT var6 = var4.getCompound(var5);
-         Class7699 var7 = new Class7699(this.field32333, var6);
+         Raid var7 = new Raid(this.field32333, var6);
          this.field32332.put(var7.method25430(), var7);
       }
    }
@@ -154,7 +155,7 @@ public class Class7531 extends WorldSavedData {
       compoundNBT.putInt("Tick", this.field32335);
       ListNBT var4 = new ListNBT();
 
-      for (Class7699 var6 : this.field32332.values()) {
+      for (Raid var6 : this.field32332.values()) {
          CompoundNBT var7 = new CompoundNBT();
          var6.method25434(var7);
          var4.add(var7);
@@ -173,11 +174,11 @@ public class Class7531 extends WorldSavedData {
    }
 
    @Nullable
-   public Class7699 method24617(BlockPos var1, int var2) {
-      Class7699 var5 = null;
+   public Raid method24617(BlockPos var1, int var2) {
+      Raid var5 = null;
       double var6 = (double)var2;
 
-      for (Class7699 var9 : this.field32332.values()) {
+      for (Raid var9 : this.field32332.values()) {
          double var10 = var9.method25428().distanceSq(var1);
          if (var9.method25433() && var10 < var6) {
             var5 = var9;
