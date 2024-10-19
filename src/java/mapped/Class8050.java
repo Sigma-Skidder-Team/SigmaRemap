@@ -12,6 +12,7 @@ import java.util.Collection;
 import java.util.concurrent.CompletableFuture;
 
 import net.minecraft.command.CommandSource;
+import net.minecraft.command.ISuggestionProvider;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
@@ -48,6 +49,6 @@ public class Class8050 implements ArgumentType<IParticleData> {
    }
 
    public <S> CompletableFuture<Suggestions> listSuggestions(CommandContext<S> var1, SuggestionsBuilder var2) {
-      return Class6618.method20141(Registry.PARTICLE_TYPE.method9190(), var2);
+      return ISuggestionProvider.suggestIterable(Registry.PARTICLE_TYPE.method9190(), var2);
    }
 }

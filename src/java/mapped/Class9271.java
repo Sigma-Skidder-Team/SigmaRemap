@@ -35,17 +35,17 @@ public class Class9271 {
 
    public static void method34922(CommandDispatcher<CommandSource> var0) {
       var0.register(
-         (LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("spreadplayers").requires(var0x -> var0x.method20129(2)))
+         (LiteralArgumentBuilder)((LiteralArgumentBuilder) Commands.method18839("spreadplayers").requires(var0x -> var0x.method20129(2)))
             .then(
-               Class6099.method18840("center", Class7347.method23292())
+               Commands.method18840("center", Class7347.method23292())
                   .then(
-                     Class6099.method18840("spreadDistance", FloatArgumentType.floatArg(0.0F))
+                     Commands.method18840("spreadDistance", FloatArgumentType.floatArg(0.0F))
                         .then(
-                           ((RequiredArgumentBuilder)Class6099.method18840("maxRange", FloatArgumentType.floatArg(1.0F))
+                           ((RequiredArgumentBuilder) Commands.method18840("maxRange", FloatArgumentType.floatArg(1.0F))
                                  .then(
-                                    Class6099.method18840("respectTeams", BoolArgumentType.bool())
+                                    Commands.method18840("respectTeams", BoolArgumentType.bool())
                                        .then(
-                                          Class6099.method18840("targets", Class8700.method31347())
+                                          Commands.method18840("targets", Class8700.method31347())
                                              .executes(
                                                 var0x -> method34923(
                                                       (CommandSource)var0x.getSource(),
@@ -60,13 +60,13 @@ public class Class9271 {
                                        )
                                  ))
                               .then(
-                                 Class6099.method18839("under")
+                                 Commands.method18839("under")
                                     .then(
-                                       Class6099.method18840("maxHeight", IntegerArgumentType.integer(0))
+                                       Commands.method18840("maxHeight", IntegerArgumentType.integer(0))
                                           .then(
-                                             Class6099.method18840("respectTeams", BoolArgumentType.bool())
+                                             Commands.method18840("respectTeams", BoolArgumentType.bool())
                                                 .then(
-                                                   Class6099.method18840("targets", Class8700.method31347())
+                                                   Commands.method18840("targets", Class8700.method31347())
                                                       .executes(
                                                          var0x -> method34923(
                                                                (CommandSource)var0x.getSource(),
@@ -97,7 +97,7 @@ public class Class9271 {
       Class9169[] var18 = method34927(var9, !var5 ? var6.size() : method34924(var6), var10, var12, var14, var16);
       method34925(var1, (double)var2, var0.method20172(), var9, var10, var12, var14, var16, var4, var18, var5);
       double var19 = method34926(var6, var0.method20172(), var18, var4, var5);
-      var0.method20179(
+      var0.sendFeedback(
          new TranslationTextComponent(
             "commands.spreadplayers.success." + (!var5 ? "entities" : "teams"),
             var18.length,

@@ -28,19 +28,19 @@ public class Class9749 {
 
    public static void method38286(CommandDispatcher<CommandSource> var0) {
       var0.register(
-         (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("forceload")
+         (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder) Commands.method18839("forceload")
                      .requires(var0x -> var0x.method20129(2)))
                   .then(
-                     Class6099.method18839("add")
+                     Commands.method18839("add")
                         .then(
-                           ((RequiredArgumentBuilder)Class6099.method18840("from", Class8693.method31319())
+                           ((RequiredArgumentBuilder) Commands.method18840("from", Class8693.method31319())
                                  .executes(
                                     var0x -> method38290(
                                           (CommandSource)var0x.getSource(), Class8693.method31320(var0x, "from"), Class8693.method31320(var0x, "from"), true
                                        )
                                  ))
                               .then(
-                                 Class6099.method18840("to", Class8693.method31319())
+                                 Commands.method18840("to", Class8693.method31319())
                                     .executes(
                                        var0x -> method38290(
                                              (CommandSource)var0x.getSource(), Class8693.method31320(var0x, "from"), Class8693.method31320(var0x, "to"), true
@@ -50,16 +50,16 @@ public class Class9749 {
                         )
                   ))
                .then(
-                  ((LiteralArgumentBuilder)Class6099.method18839("remove")
+                  ((LiteralArgumentBuilder) Commands.method18839("remove")
                         .then(
-                           ((RequiredArgumentBuilder)Class6099.method18840("from", Class8693.method31319())
+                           ((RequiredArgumentBuilder) Commands.method18840("from", Class8693.method31319())
                                  .executes(
                                     var0x -> method38290(
                                           (CommandSource)var0x.getSource(), Class8693.method31320(var0x, "from"), Class8693.method31320(var0x, "from"), false
                                        )
                                  ))
                               .then(
-                                 Class6099.method18840("to", Class8693.method31319())
+                                 Commands.method18840("to", Class8693.method31319())
                                     .executes(
                                        var0x -> method38290(
                                              (CommandSource)var0x.getSource(), Class8693.method31320(var0x, "from"), Class8693.method31320(var0x, "to"), false
@@ -67,12 +67,12 @@ public class Class9749 {
                                     )
                               )
                         ))
-                     .then(Class6099.method18839("all").executes(var0x -> method38289((CommandSource)var0x.getSource())))
+                     .then(Commands.method18839("all").executes(var0x -> method38289((CommandSource)var0x.getSource())))
                ))
             .then(
-               ((LiteralArgumentBuilder)Class6099.method18839("query").executes(var0x -> method38288((CommandSource)var0x.getSource())))
+               ((LiteralArgumentBuilder) Commands.method18839("query").executes(var0x -> method38288((CommandSource)var0x.getSource())))
                   .then(
-                     Class6099.method18840("pos", Class8693.method31319())
+                     Commands.method18840("pos", Class8693.method31319())
                         .executes(var0x -> method38287((CommandSource)var0x.getSource(), Class8693.method31320(var0x, "pos")))
                   )
             )
@@ -87,7 +87,7 @@ public class Class9749 {
       if (!var7) {
          throw field45508.create(var4, var6.getLocation());
       } else {
-         var0.method20179(new TranslationTextComponent("commands.forceload.query.success", var4, var6.getLocation()), false);
+         var0.sendFeedback(new TranslationTextComponent("commands.forceload.query.success", var4, var6.getLocation()), false);
          return 1;
       }
    }
@@ -102,9 +102,9 @@ public class Class9749 {
       } else {
          String var7 = Joiner.on(", ").join(var5.stream().sorted().<ChunkPos>map(ChunkPos::new).<String>map(ChunkPos::toString).iterator());
          if (var6 != 1) {
-            var0.method20179(new TranslationTextComponent("commands.forceload.list.multiple", var6, var4.getLocation(), var7), false);
+            var0.sendFeedback(new TranslationTextComponent("commands.forceload.list.multiple", var6, var4.getLocation(), var7), false);
          } else {
-            var0.method20179(new TranslationTextComponent("commands.forceload.list.single", var4.getLocation(), var7), false);
+            var0.sendFeedback(new TranslationTextComponent("commands.forceload.list.single", var4.getLocation(), var7), false);
          }
       }
 
@@ -118,7 +118,7 @@ public class Class9749 {
       for (long var1 : var5) {
          var3.method6950(ChunkPos.getX(var1), ChunkPos.getZ(var1), false);
       }
-      var0.method20179(new TranslationTextComponent("commands.forceload.removed.all", var4.getLocation()), true);
+      var0.sendFeedback(new TranslationTextComponent("commands.forceload.removed.all", var4.getLocation()), true);
       return 0;
    }
 
@@ -157,12 +157,12 @@ public class Class9749 {
                if (var19 != 1) {
                   ChunkPos var23 = new ChunkPos(var10, var11);
                   ChunkPos var24 = new ChunkPos(var12, var13);
-                  var0.method20179(
+                  var0.sendFeedback(
                      new TranslationTextComponent("commands.forceload." + (!var3 ? "removed" : "added") + ".multiple", var19, var17.getLocation(), var23, var24),
                      true
                   );
                } else {
-                  var0.method20179(
+                  var0.sendFeedback(
                      new TranslationTextComponent("commands.forceload." + (!var3 ? "removed" : "added") + ".single", var18, var17.getLocation()), true
                   );
                }

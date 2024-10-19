@@ -32,12 +32,12 @@ public class Class9651 {
 
    public static void method37644(CommandDispatcher<CommandSource> var0) {
       LiteralCommandNode var3 = var0.register(
-         (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("teleport")
+         (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder) Commands.method18839("teleport")
                      .requires(var0x -> var0x.method20129(2)))
                   .then(
-                     ((RequiredArgumentBuilder)Class6099.method18840("targets", Class8700.method31347())
+                     ((RequiredArgumentBuilder) Commands.method18840("targets", Class8700.method31347())
                            .then(
-                              ((RequiredArgumentBuilder)((RequiredArgumentBuilder)Class6099.method18840("location", Class6851.method20857())
+                              ((RequiredArgumentBuilder)((RequiredArgumentBuilder) Commands.method18840("location", Class6851.method20857())
                                        .executes(
                                           var0x -> method37646(
                                                 (CommandSource)var0x.getSource(),
@@ -49,7 +49,7 @@ public class Class9651 {
                                              )
                                        ))
                                     .then(
-                                       Class6099.method18840("rotation", Class7918.method26558())
+                                       Commands.method18840("rotation", Class7918.method26558())
                                           .executes(
                                              var0x -> method37646(
                                                    (CommandSource)var0x.getSource(),
@@ -62,11 +62,11 @@ public class Class9651 {
                                           )
                                     ))
                                  .then(
-                                    ((LiteralArgumentBuilder)Class6099.method18839("facing")
+                                    ((LiteralArgumentBuilder) Commands.method18839("facing")
                                           .then(
-                                             Class6099.method18839("entity")
+                                             Commands.method18839("entity")
                                                 .then(
-                                                   ((RequiredArgumentBuilder)Class6099.method18840("facingEntity", Class8700.method31345())
+                                                   ((RequiredArgumentBuilder) Commands.method18840("facingEntity", Class8700.method31345())
                                                          .executes(
                                                             var0x -> method37646(
                                                                   (CommandSource)var0x.getSource(),
@@ -78,7 +78,7 @@ public class Class9651 {
                                                                )
                                                          ))
                                                       .then(
-                                                         Class6099.method18840("facingAnchor", Class9188.method34388())
+                                                         Commands.method18840("facingAnchor", Class9188.method34388())
                                                             .executes(
                                                                var0x -> method37646(
                                                                      (CommandSource)var0x.getSource(),
@@ -96,7 +96,7 @@ public class Class9651 {
                                                 )
                                           ))
                                        .then(
-                                          Class6099.method18840("facingLocation", Class6851.method20857())
+                                          Commands.method18840("facingLocation", Class6851.method20857())
                                              .executes(
                                                 var0x -> method37646(
                                                       (CommandSource)var0x.getSource(),
@@ -111,7 +111,7 @@ public class Class9651 {
                                  )
                            ))
                         .then(
-                           Class6099.method18840("destination", Class8700.method31345())
+                           Commands.method18840("destination", Class8700.method31345())
                               .executes(
                                  var0x -> method37645(
                                        (CommandSource)var0x.getSource(), Class8700.method31348(var0x, "targets"), Class8700.method31346(var0x, "destination")
@@ -120,7 +120,7 @@ public class Class9651 {
                         )
                   ))
                .then(
-                  Class6099.method18840("location", Class6851.method20857())
+                  Commands.method18840("location", Class6851.method20857())
                      .executes(
                         var0x -> method37646(
                               (CommandSource)var0x.getSource(),
@@ -133,7 +133,7 @@ public class Class9651 {
                      )
                ))
             .then(
-               Class6099.method18840("destination", Class8700.method31345())
+               Commands.method18840("destination", Class8700.method31345())
                   .executes(
                      var0x -> method37645(
                            (CommandSource)var0x.getSource(),
@@ -143,7 +143,7 @@ public class Class9651 {
                   )
             )
       );
-      var0.register((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("tp").requires(var0x -> var0x.method20129(2))).redirect(var3));
+      var0.register((LiteralArgumentBuilder)((LiteralArgumentBuilder) Commands.method18839("tp").requires(var0x -> var0x.method20129(2))).redirect(var3));
    }
 
    private static int method37645(CommandSource var0, Collection<? extends Entity> var1, Entity var2) throws CommandSyntaxException {
@@ -163,9 +163,9 @@ public class Class9651 {
       }
 
       if (var1.size() != 1) {
-         var0.method20179(new TranslationTextComponent("commands.teleport.success.entity.multiple", var1.size(), var2.getDisplayName()), true);
+         var0.sendFeedback(new TranslationTextComponent("commands.teleport.success.entity.multiple", var1.size(), var2.getDisplayName()), true);
       } else {
-         var0.method20179(
+         var0.sendFeedback(
             new TranslationTextComponent("commands.teleport.success.entity.single", ((Entity)var1.iterator().next()).getDisplayName(), var2.getDisplayName()), true
          );
       }
@@ -211,11 +211,11 @@ public class Class9651 {
       }
 
       if (var1.size() != 1) {
-         var0.method20179(
+         var0.sendFeedback(
             new TranslationTextComponent("commands.teleport.success.location.multiple", var1.size(), var8.x, var8.y, var8.z), true
          );
       } else {
-         var0.method20179(
+         var0.sendFeedback(
             new TranslationTextComponent(
                "commands.teleport.success.location.single", ((Entity)var1.iterator().next()).getDisplayName(), var8.x, var8.y, var8.z
             ),

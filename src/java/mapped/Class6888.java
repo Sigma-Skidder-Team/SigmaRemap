@@ -12,6 +12,7 @@ import java.util.Collection;
 import java.util.concurrent.CompletableFuture;
 
 import net.minecraft.command.CommandSource;
+import net.minecraft.command.ISuggestionProvider;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -43,7 +44,7 @@ public class Class6888 implements ArgumentType<Class8420> {
    }
 
    public <S> CompletableFuture<Suggestions> listSuggestions(CommandContext<S> var1, SuggestionsBuilder var2) {
-      return Class6618.method20149(new String[]{"=", "+=", "-=", "*=", "/=", "%=", "<", ">", "><"}, var2);
+      return ISuggestionProvider.method20149(new String[]{"=", "+=", "-=", "*=", "/=", "%=", "<", ">", "><"}, var2);
    }
 
    public Collection<String> getExamples() {

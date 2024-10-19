@@ -32,7 +32,7 @@ public class Class7584 implements ArgumentType<Class9041> {
       if (var4.method38353() == null) {
          ResourceLocation var6 = var4.method38355();
          return var2 -> {
-            ITag var5x = ((CommandSource)var2.getSource()).method20177().method1408().method32658().get(var6);
+            ITag var5x = ((CommandSource)var2.getSource()).getServer().method1408().method32658().get(var6);
             if (var5x != null) {
                return new Class175(var5x, var4.method38354());
             } else {

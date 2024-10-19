@@ -11,6 +11,7 @@ import java.util.Collection;
 import java.util.HashSet;
 
 import net.minecraft.command.CommandSource;
+import net.minecraft.command.ISuggestionProvider;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.text.TextComponentUtils;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -21,13 +22,13 @@ public class Class8615 {
 
    public static void method30863(CommandDispatcher<CommandSource> var0) {
       var0.register(
-         (LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("tag").requires(var0x -> var0x.method20129(2)))
+         (LiteralArgumentBuilder)((LiteralArgumentBuilder) Commands.method18839("tag").requires(var0x -> var0x.method20129(2)))
             .then(
-               ((RequiredArgumentBuilder)((RequiredArgumentBuilder)Class6099.method18840("targets", Class8700.method31347())
+               ((RequiredArgumentBuilder)((RequiredArgumentBuilder) Commands.method18840("targets", Class8700.method31347())
                         .then(
-                           Class6099.method18839("add")
+                           Commands.method18839("add")
                               .then(
-                                 Class6099.method18840("name", StringArgumentType.word())
+                                 Commands.method18840("name", StringArgumentType.word())
                                     .executes(
                                        var0x -> method30865(
                                              (CommandSource)var0x.getSource(), Class8700.method31348(var0x, "targets"), StringArgumentType.getString(var0x, "name")
@@ -36,10 +37,10 @@ public class Class8615 {
                               )
                         ))
                      .then(
-                        Class6099.method18839("remove")
+                        Commands.method18839("remove")
                            .then(
-                              Class6099.method18840("name", StringArgumentType.word())
-                                 .suggests((var0x, var1) -> Class6618.method20147(method30864(Class8700.method31348(var0x, "targets")), var1))
+                              Commands.method18840("name", StringArgumentType.word())
+                                 .suggests((var0x, var1) -> ISuggestionProvider.method20147(method30864(Class8700.method31348(var0x, "targets")), var1))
                                  .executes(
                                     var0x -> method30866(
                                           (CommandSource)var0x.getSource(), Class8700.method31348(var0x, "targets"), StringArgumentType.getString(var0x, "name")
@@ -47,7 +48,7 @@ public class Class8615 {
                                  )
                            )
                      ))
-                  .then(Class6099.method18839("list").executes(var0x -> method30867((CommandSource)var0x.getSource(), Class8700.method31348(var0x, "targets"))))
+                  .then(Commands.method18839("list").executes(var0x -> method30867((CommandSource)var0x.getSource(), Class8700.method31348(var0x, "targets"))))
             )
       );
    }
@@ -73,9 +74,9 @@ public class Class8615 {
 
       if (var5 != 0) {
          if (var1.size() != 1) {
-            var0.method20179(new TranslationTextComponent("commands.tag.add.success.multiple", var2, var1.size()), true);
+            var0.sendFeedback(new TranslationTextComponent("commands.tag.add.success.multiple", var2, var1.size()), true);
          } else {
-            var0.method20179(new TranslationTextComponent("commands.tag.add.success.single", var2, ((Entity)var1.iterator().next()).getDisplayName()), true);
+            var0.sendFeedback(new TranslationTextComponent("commands.tag.add.success.single", var2, ((Entity)var1.iterator().next()).getDisplayName()), true);
          }
 
          return var5;
@@ -95,9 +96,9 @@ public class Class8615 {
 
       if (var5 != 0) {
          if (var1.size() != 1) {
-            var0.method20179(new TranslationTextComponent("commands.tag.remove.success.multiple", var2, var1.size()), true);
+            var0.sendFeedback(new TranslationTextComponent("commands.tag.remove.success.multiple", var2, var1.size()), true);
          } else {
-            var0.method20179(new TranslationTextComponent("commands.tag.remove.success.single", var2, ((Entity)var1.iterator().next()).getDisplayName()), true);
+            var0.sendFeedback(new TranslationTextComponent("commands.tag.remove.success.single", var2, ((Entity)var1.iterator().next()).getDisplayName()), true);
          }
 
          return var5;
@@ -115,22 +116,22 @@ public class Class8615 {
 
       if (var1.size() != 1) {
          if (!var4.isEmpty()) {
-            var0.method20179(
+            var0.sendFeedback(
                new TranslationTextComponent("commands.tag.list.multiple.success", var1.size(), var4.size(), TextComponentUtils.makeGreenSortedList(var4)),
                false
             );
          } else {
-            var0.method20179(new TranslationTextComponent("commands.tag.list.multiple.empty", var1.size()), false);
+            var0.sendFeedback(new TranslationTextComponent("commands.tag.list.multiple.empty", var1.size()), false);
          }
       } else {
          Entity var7 = (Entity)var1.iterator().next();
          if (!var4.isEmpty()) {
-            var0.method20179(
+            var0.sendFeedback(
                new TranslationTextComponent("commands.tag.list.single.success", var7.getDisplayName(), var4.size(), TextComponentUtils.makeGreenSortedList(var4)),
                false
             );
          } else {
-            var0.method20179(new TranslationTextComponent("commands.tag.list.single.empty", var7.getDisplayName()), false);
+            var0.sendFeedback(new TranslationTextComponent("commands.tag.list.single.empty", var7.getDisplayName()), false);
          }
       }
 

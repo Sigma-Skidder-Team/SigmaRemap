@@ -39,11 +39,11 @@ public class Class7566 implements ArgumentType<Class7352> {
    }
 
    private static Class7744 method24767(CommandContext<CommandSource> var0, ResourceLocation var1) throws CommandSyntaxException {
-      return ((CommandSource)var0.getSource()).method20177().method1397().method22829(var1).orElseThrow(() -> field32499.create(var1.toString()));
+      return ((CommandSource)var0.getSource()).getServer().method1397().method22829(var1).orElseThrow(() -> field32499.create(var1.toString()));
    }
 
    private static ITag<Class7744> method24768(CommandContext<CommandSource> var0, ResourceLocation var1) throws CommandSyntaxException {
-      ITag var4 = ((CommandSource)var0.getSource()).method20177().method1397().method22830(var1);
+      ITag var4 = ((CommandSource)var0.getSource()).getServer().method1397().method22830(var1);
       if (var4 != null) {
          return var4;
       } else {

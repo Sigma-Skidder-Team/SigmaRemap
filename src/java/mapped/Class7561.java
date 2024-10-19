@@ -12,6 +12,7 @@ import java.util.Collection;
 import java.util.concurrent.CompletableFuture;
 
 import net.minecraft.command.CommandSource;
+import net.minecraft.command.ISuggestionProvider;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -43,7 +44,7 @@ public class Class7561 implements ArgumentType<TextFormatting> {
    }
 
    public <S> CompletableFuture<Suggestions> listSuggestions(CommandContext<S> var1, SuggestionsBuilder var2) {
-      return Class6618.method20147(TextFormatting.getValidValues(true, false), var2);
+      return ISuggestionProvider.method20147(TextFormatting.getValidValues(true, false), var2);
    }
 
    public Collection<String> getExamples() {

@@ -13,6 +13,7 @@ import java.util.Collections;
 import java.util.concurrent.CompletableFuture;
 
 import net.minecraft.command.CommandSource;
+import net.minecraft.command.ISuggestionProvider;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -47,7 +48,7 @@ public class Class8693 implements ArgumentType<Class7329> {
    }
 
    public <S> CompletableFuture<Suggestions> listSuggestions(CommandContext<S> var1, SuggestionsBuilder var2) {
-      if (!(var1.getSource() instanceof Class6618)) {
+      if (!(var1.getSource() instanceof ISuggestionProvider)) {
          return Suggestions.empty();
       } else {
          String var5 = var2.getRemaining();
@@ -55,10 +56,10 @@ public class Class8693 implements ArgumentType<Class7329> {
          if (!var5.isEmpty() && var5.charAt(0) == '^') {
             var6 = Collections.<Class9203>singleton(Class9203.field42265);
          } else {
-            var6 = ((Class6618)var1.getSource()).method20133();
+            var6 = ((ISuggestionProvider)var1.getSource()).method20133();
          }
 
-         return Class6618.method20146(var5, (Collection<Class9203>)var6, var2, Class6099.method18841(this::parse));
+         return ISuggestionProvider.method20146(var5, (Collection<Class9203>)var6, var2, Commands.method18841(this::parse));
       }
    }
 

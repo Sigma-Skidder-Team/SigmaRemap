@@ -32,13 +32,13 @@ public class Class6450 {
 
     public static void method19588(CommandDispatcher<CommandSource> var0) {
         var0.register(
-                (LiteralArgumentBuilder) ((LiteralArgumentBuilder) Class6099.method18839("clone").requires(var0x -> var0x.method20129(2)))
+                (LiteralArgumentBuilder) ((LiteralArgumentBuilder) Commands.method18839("clone").requires(var0x -> var0x.method20129(2)))
                         .then(
-                                Class6099.method18840("begin", Class6849.method20826())
+                                Commands.method18840("begin", Class6849.method20826())
                                         .then(
-                                                Class6099.method18840("end", Class6849.method20826())
+                                                Commands.method18840("end", Class6849.method20826())
                                                         .then(
-                                                                ((RequiredArgumentBuilder) ((RequiredArgumentBuilder) ((RequiredArgumentBuilder) Class6099.method18840(
+                                                                ((RequiredArgumentBuilder) ((RequiredArgumentBuilder) ((RequiredArgumentBuilder) Commands.method18840(
                                                                                 "destination", Class6849.method20826()
                                                                         )
                                                                         .executes(
@@ -52,7 +52,7 @@ public class Class6450 {
                                                                                 )
                                                                         ))
                                                                         .then(
-                                                                                ((LiteralArgumentBuilder) ((LiteralArgumentBuilder) ((LiteralArgumentBuilder) Class6099.method18839("replace")
+                                                                                ((LiteralArgumentBuilder) ((LiteralArgumentBuilder) ((LiteralArgumentBuilder) Commands.method18839("replace")
                                                                                         .executes(
                                                                                                 var0x -> method19589(
                                                                                                         (CommandSource) var0x.getSource(),
@@ -64,7 +64,7 @@ public class Class6450 {
                                                                                                 )
                                                                                         ))
                                                                                         .then(
-                                                                                                Class6099.method18839("force")
+                                                                                                Commands.method18839("force")
                                                                                                         .executes(
                                                                                                                 var0x -> method19589(
                                                                                                                         (CommandSource) var0x.getSource(),
@@ -77,7 +77,7 @@ public class Class6450 {
                                                                                                         )
                                                                                         ))
                                                                                         .then(
-                                                                                                Class6099.method18839("move")
+                                                                                                Commands.method18839("move")
                                                                                                         .executes(
                                                                                                                 var0x -> method19589(
                                                                                                                         (CommandSource) var0x.getSource(),
@@ -90,7 +90,7 @@ public class Class6450 {
                                                                                                         )
                                                                                         ))
                                                                                         .then(
-                                                                                                Class6099.method18839("normal")
+                                                                                                Commands.method18839("normal")
                                                                                                         .executes(
                                                                                                                 var0x -> method19589(
                                                                                                                         (CommandSource) var0x.getSource(),
@@ -104,7 +104,7 @@ public class Class6450 {
                                                                                         )
                                                                         ))
                                                                         .then(
-                                                                                ((LiteralArgumentBuilder) ((LiteralArgumentBuilder) ((LiteralArgumentBuilder) Class6099.method18839("masked")
+                                                                                ((LiteralArgumentBuilder) ((LiteralArgumentBuilder) ((LiteralArgumentBuilder) Commands.method18839("masked")
                                                                                         .executes(
                                                                                                 var0x -> method19589(
                                                                                                         (CommandSource) var0x.getSource(),
@@ -116,7 +116,7 @@ public class Class6450 {
                                                                                                 )
                                                                                         ))
                                                                                         .then(
-                                                                                                Class6099.method18839("force")
+                                                                                                Commands.method18839("force")
                                                                                                         .executes(
                                                                                                                 var0x -> method19589(
                                                                                                                         (CommandSource) var0x.getSource(),
@@ -129,7 +129,7 @@ public class Class6450 {
                                                                                                         )
                                                                                         ))
                                                                                         .then(
-                                                                                                Class6099.method18839("move")
+                                                                                                Commands.method18839("move")
                                                                                                         .executes(
                                                                                                                 var0x -> method19589(
                                                                                                                         (CommandSource) var0x.getSource(),
@@ -142,7 +142,7 @@ public class Class6450 {
                                                                                                         )
                                                                                         ))
                                                                                         .then(
-                                                                                                Class6099.method18839("normal")
+                                                                                                Commands.method18839("normal")
                                                                                                         .executes(
                                                                                                                 var0x -> method19589(
                                                                                                                         (CommandSource) var0x.getSource(),
@@ -156,9 +156,9 @@ public class Class6450 {
                                                                                         )
                                                                         ))
                                                                         .then(
-                                                                                Class6099.method18839("filtered")
+                                                                                Commands.method18839("filtered")
                                                                                         .then(
-                                                                                                ((RequiredArgumentBuilder) ((RequiredArgumentBuilder) ((RequiredArgumentBuilder) Class6099.method18840(
+                                                                                                ((RequiredArgumentBuilder) ((RequiredArgumentBuilder) ((RequiredArgumentBuilder) Commands.method18840(
                                                                                                                 "filter", Class7505.method24464()
                                                                                                         )
                                                                                                         .executes(
@@ -172,7 +172,7 @@ public class Class6450 {
                                                                                                                 )
                                                                                                         ))
                                                                                                         .then(
-                                                                                                                Class6099.method18839("force")
+                                                                                                                Commands.method18839("force")
                                                                                                                         .executes(
                                                                                                                                 var0x -> method19589(
                                                                                                                                         (CommandSource) var0x.getSource(),
@@ -185,7 +185,7 @@ public class Class6450 {
                                                                                                                         )
                                                                                                         ))
                                                                                                         .then(
-                                                                                                                Class6099.method18839("move")
+                                                                                                                Commands.method18839("move")
                                                                                                                         .executes(
                                                                                                                                 var0x -> method19589(
                                                                                                                                         (CommandSource) var0x.getSource(),
@@ -198,7 +198,7 @@ public class Class6450 {
                                                                                                                         )
                                                                                                         ))
                                                                                                         .then(
-                                                                                                                Class6099.method18839("normal")
+                                                                                                                Commands.method18839("normal")
                                                                                                                         .executes(
                                                                                                                                 var0x -> method19589(
                                                                                                                                         (CommandSource) var0x.getSource(),
@@ -315,7 +315,7 @@ public class Class6450 {
 
                     var12.method6860().method20732(var8, var17);
                     if (var35 != 0) {
-                        var0.method20179(new TranslationTextComponent("commands.clone.success", var35), true);
+                        var0.sendFeedback(new TranslationTextComponent("commands.clone.success", var35), true);
                         return var35;
                     } else {
                         throw field28362.create();

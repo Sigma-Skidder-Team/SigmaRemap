@@ -13,6 +13,8 @@ import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.concurrent.CompletableFuture;
+
+import net.minecraft.command.ISuggestionProvider;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class8127 implements ArgumentType<Integer> {
@@ -52,7 +54,7 @@ public class Class8127 implements ArgumentType<Integer> {
          return var2.buildFuture();
       }
 
-      return Class6618.method20147(field34954.keySet(), var2.createOffset(var2.getStart() + var5.getCursor()));
+      return ISuggestionProvider.method20147(field34954.keySet(), var2.createOffset(var2.getStart() + var5.getCursor()));
    }
 
    public Collection<String> getExamples() {

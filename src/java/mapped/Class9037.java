@@ -47,23 +47,23 @@ import org.apache.commons.io.IOUtils;
 public class Class9037 {
    public static void method33489(CommandDispatcher<CommandSource> var0) {
       var0.register(
-         (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839(
+         (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder) Commands.method18839(
                                              "test"
                                           )
-                                          .then(Class6099.method18839("runthis").executes(var0x -> method33492((CommandSource)var0x.getSource()))))
-                                       .then(Class6099.method18839("runthese").executes(var0x -> method33493((CommandSource)var0x.getSource()))))
+                                          .then(Commands.method18839("runthis").executes(var0x -> method33492((CommandSource)var0x.getSource()))))
+                                       .then(Commands.method18839("runthese").executes(var0x -> method33493((CommandSource)var0x.getSource()))))
                                     .then(
-                                       ((LiteralArgumentBuilder)Class6099.method18839("runfailed")
+                                       ((LiteralArgumentBuilder) Commands.method18839("runfailed")
                                              .executes(var0x -> method33501((CommandSource)var0x.getSource(), false, 0, 8)))
                                           .then(
-                                             ((RequiredArgumentBuilder)Class6099.method18840("onlyRequiredTests", BoolArgumentType.bool())
+                                             ((RequiredArgumentBuilder) Commands.method18840("onlyRequiredTests", BoolArgumentType.bool())
                                                    .executes(
                                                       var0x -> method33501(
                                                             (CommandSource)var0x.getSource(), BoolArgumentType.getBool(var0x, "onlyRequiredTests"), 0, 8
                                                          )
                                                    ))
                                                 .then(
-                                                   ((RequiredArgumentBuilder)Class6099.method18840("rotationSteps", IntegerArgumentType.integer())
+                                                   ((RequiredArgumentBuilder) Commands.method18840("rotationSteps", IntegerArgumentType.integer())
                                                          .executes(
                                                             var0x -> method33501(
                                                                   (CommandSource)var0x.getSource(),
@@ -73,7 +73,7 @@ public class Class9037 {
                                                                )
                                                          ))
                                                       .then(
-                                                         Class6099.method18840("testsPerRow", IntegerArgumentType.integer())
+                                                         Commands.method18840("testsPerRow", IntegerArgumentType.integer())
                                                             .executes(
                                                                var0x -> method33501(
                                                                      (CommandSource)var0x.getSource(),
@@ -87,12 +87,12 @@ public class Class9037 {
                                           )
                                     ))
                                  .then(
-                                    Class6099.method18839("run")
+                                    Commands.method18839("run")
                                        .then(
-                                          ((RequiredArgumentBuilder)Class6099.method18840("testName", Class9418.method36138())
+                                          ((RequiredArgumentBuilder) Commands.method18840("testName", Class9418.method36138())
                                                 .executes(var0x -> method33497((CommandSource)var0x.getSource(), Class9418.method36139(var0x, "testName"), 0)))
                                              .then(
-                                                Class6099.method18840("rotationSteps", IntegerArgumentType.integer())
+                                                Commands.method18840("rotationSteps", IntegerArgumentType.integer())
                                                    .executes(
                                                       var0x -> method33497(
                                                             (CommandSource)var0x.getSource(),
@@ -104,15 +104,15 @@ public class Class9037 {
                                        )
                                  ))
                               .then(
-                                 ((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("runall")
+                                 ((LiteralArgumentBuilder)((LiteralArgumentBuilder) Commands.method18839("runall")
                                           .executes(var0x -> method33499((CommandSource)var0x.getSource(), 0, 8)))
                                        .then(
-                                          ((RequiredArgumentBuilder)Class6099.method18840("testClassName", Class9210.method34510())
+                                          ((RequiredArgumentBuilder) Commands.method18840("testClassName", Class9210.method34510())
                                                 .executes(
                                                    var0x -> method33500((CommandSource)var0x.getSource(), Class9210.method34511(var0x, "testClassName"), 0, 8)
                                                 ))
                                              .then(
-                                                ((RequiredArgumentBuilder)Class6099.method18840("rotationSteps", IntegerArgumentType.integer())
+                                                ((RequiredArgumentBuilder) Commands.method18840("rotationSteps", IntegerArgumentType.integer())
                                                       .executes(
                                                          var0x -> method33500(
                                                                (CommandSource)var0x.getSource(),
@@ -122,7 +122,7 @@ public class Class9037 {
                                                             )
                                                       ))
                                                    .then(
-                                                      Class6099.method18840("testsPerRow", IntegerArgumentType.integer())
+                                                      Commands.method18840("testsPerRow", IntegerArgumentType.integer())
                                                          .executes(
                                                             var0x -> method33500(
                                                                   (CommandSource)var0x.getSource(),
@@ -135,12 +135,12 @@ public class Class9037 {
                                              )
                                        ))
                                     .then(
-                                       ((RequiredArgumentBuilder)Class6099.method18840("rotationSteps", IntegerArgumentType.integer())
+                                       ((RequiredArgumentBuilder) Commands.method18840("rotationSteps", IntegerArgumentType.integer())
                                              .executes(
                                                 var0x -> method33499((CommandSource)var0x.getSource(), IntegerArgumentType.getInteger(var0x, "rotationSteps"), 8)
                                              ))
                                           .then(
-                                             Class6099.method18840("testsPerRow", IntegerArgumentType.integer())
+                                             Commands.method18840("testsPerRow", IntegerArgumentType.integer())
                                                 .executes(
                                                    var0x -> method33499(
                                                          (CommandSource)var0x.getSource(),
@@ -152,34 +152,34 @@ public class Class9037 {
                                     )
                               ))
                            .then(
-                              Class6099.method18839("export")
+                              Commands.method18839("export")
                                  .then(
-                                    Class6099.method18840("testName", StringArgumentType.word())
+                                    Commands.method18840("testName", StringArgumentType.word())
                                        .executes(var0x -> method33505((CommandSource)var0x.getSource(), StringArgumentType.getString(var0x, "testName")))
                                  )
                            ))
-                        .then(Class6099.method18839("exportthis").executes(var0x -> method33504((CommandSource)var0x.getSource()))))
+                        .then(Commands.method18839("exportthis").executes(var0x -> method33504((CommandSource)var0x.getSource()))))
                      .then(
-                        Class6099.method18839("import")
+                        Commands.method18839("import")
                            .then(
-                              Class6099.method18840("testName", StringArgumentType.word())
+                              Commands.method18840("testName", StringArgumentType.word())
                                  .executes(var0x -> method33506((CommandSource)var0x.getSource(), StringArgumentType.getString(var0x, "testName")))
                            )
                      ))
                   .then(
-                     ((LiteralArgumentBuilder)Class6099.method18839("pos").executes(var0x -> method33491((CommandSource)var0x.getSource(), "pos")))
+                     ((LiteralArgumentBuilder) Commands.method18839("pos").executes(var0x -> method33491((CommandSource)var0x.getSource(), "pos")))
                         .then(
-                           Class6099.method18840("var", StringArgumentType.word())
+                           Commands.method18840("var", StringArgumentType.word())
                               .executes(var0x -> method33491((CommandSource)var0x.getSource(), StringArgumentType.getString(var0x, "var")))
                         )
                   ))
                .then(
-                  Class6099.method18839("create")
+                  Commands.method18839("create")
                      .then(
-                        ((RequiredArgumentBuilder)Class6099.method18840("testName", StringArgumentType.word())
+                        ((RequiredArgumentBuilder) Commands.method18840("testName", StringArgumentType.word())
                               .executes(var0x -> method33490((CommandSource)var0x.getSource(), StringArgumentType.getString(var0x, "testName"), 5, 5, 5)))
                            .then(
-                              ((RequiredArgumentBuilder)Class6099.method18840("width", IntegerArgumentType.integer())
+                              ((RequiredArgumentBuilder) Commands.method18840("width", IntegerArgumentType.integer())
                                     .executes(
                                        var0x -> method33490(
                                              (CommandSource)var0x.getSource(),
@@ -190,9 +190,9 @@ public class Class9037 {
                                           )
                                     ))
                                  .then(
-                                    Class6099.method18840("height", IntegerArgumentType.integer())
+                                    Commands.method18840("height", IntegerArgumentType.integer())
                                        .then(
-                                          Class6099.method18840("depth", IntegerArgumentType.integer())
+                                          Commands.method18840("depth", IntegerArgumentType.integer())
                                              .executes(
                                                 var0x -> method33490(
                                                       (CommandSource)var0x.getSource(),
@@ -208,9 +208,9 @@ public class Class9037 {
                      )
                ))
             .then(
-               ((LiteralArgumentBuilder)Class6099.method18839("clearall").executes(var0x -> method33496((CommandSource)var0x.getSource(), 200)))
+               ((LiteralArgumentBuilder) Commands.method18839("clearall").executes(var0x -> method33496((CommandSource)var0x.getSource(), 200)))
                   .then(
-                     Class6099.method18840("radius", IntegerArgumentType.integer())
+                     Commands.method18840("radius", IntegerArgumentType.integer())
                         .executes(var0x -> method33496((CommandSource)var0x.getSource(), IntegerArgumentType.getInteger(var0x, "radius")))
                   )
             )
@@ -262,7 +262,7 @@ public class Class9037 {
                   .setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new StringTextComponent("Click to copy to clipboard")))
                   .setClickEvent(new ClickEvent(ClickEvent$Action.COPY_TO_CLIPBOARD, "final BlockPos " + var1 + " = new BlockPos(" + var10 + ");"))
             );
-         var0.method20179(new StringTextComponent("Position relative to " + var11 + ": ").append(var12), false);
+         var0.sendFeedback(new StringTextComponent("Position relative to " + var11 + ": ").append(var12), false);
          DebugPacketSender.method23610(var6, new BlockPos(var5), var10, -2147418368, 10000);
          return 1;
       } else {
@@ -413,7 +413,7 @@ public class Class9037 {
    }
 
    private static void method33503(CommandSource var0, String var1) {
-      var0.method20179(new StringTextComponent(var1), false);
+      var0.sendFeedback(new StringTextComponent(var1), false);
    }
 
    private static int method33504(CommandSource var0) {

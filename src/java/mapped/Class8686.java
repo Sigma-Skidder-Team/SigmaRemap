@@ -19,11 +19,11 @@ public class Class8686 {
 
    public static void method31294(CommandDispatcher<CommandSource> var0) {
       var0.register(
-         (LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("setblock").requires(var0x -> var0x.method20129(2)))
+         (LiteralArgumentBuilder)((LiteralArgumentBuilder) Commands.method18839("setblock").requires(var0x -> var0x.method20129(2)))
             .then(
-               Class6099.method18840("pos", Class6849.method20826())
+               Commands.method18840("pos", Class6849.method20826())
                   .then(
-                     ((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder)Class6099.method18840("block", Class7971.method27103())
+                     ((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder) Commands.method18840("block", Class7971.method27103())
                                  .executes(
                                     var0x -> method31295(
                                           (CommandSource)var0x.getSource(),
@@ -34,7 +34,7 @@ public class Class8686 {
                                        )
                                  ))
                               .then(
-                                 Class6099.method18839("destroy")
+                                 Commands.method18839("destroy")
                                     .executes(
                                        var0x -> method31295(
                                              (CommandSource)var0x.getSource(),
@@ -46,7 +46,7 @@ public class Class8686 {
                                     )
                               ))
                            .then(
-                              Class6099.method18839("keep")
+                              Commands.method18839("keep")
                                  .executes(
                                     var0x -> method31295(
                                           (CommandSource)var0x.getSource(),
@@ -58,7 +58,7 @@ public class Class8686 {
                                  )
                            ))
                         .then(
-                           Class6099.method18839("replace")
+                           Commands.method18839("replace")
                               .executes(
                                  var0x -> method31295(
                                        (CommandSource)var0x.getSource(),
@@ -93,7 +93,7 @@ public class Class8686 {
             throw field39214.create();
          } else {
             var7.func_230547_a_(var1, var2.method495().getBlock());
-            var0.method20179(new TranslationTextComponent("commands.setblock.success", var1.getX(), var1.getY(), var1.getZ()), true);
+            var0.sendFeedback(new TranslationTextComponent("commands.setblock.success", var1.getX(), var1.getY(), var1.getZ()), true);
             return 1;
          }
       }

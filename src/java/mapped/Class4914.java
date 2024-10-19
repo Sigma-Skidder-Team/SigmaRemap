@@ -13,6 +13,7 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
+import net.minecraft.command.ISuggestionProvider;
 import net.minecraft.util.Util;
 import net.minecraft.command.CommandSource;
 import net.minecraft.inventory.EquipmentSlotType;
@@ -76,7 +77,7 @@ public class Class4914 implements ArgumentType<Integer> {
    }
 
    public <S> CompletableFuture<Suggestions> listSuggestions(CommandContext<S> var1, SuggestionsBuilder var2) {
-      return Class6618.method20147(field22780.keySet(), var2);
+      return ISuggestionProvider.method20147(field22780.keySet(), var2);
    }
 
    public Collection<String> getExamples() {

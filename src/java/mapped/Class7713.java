@@ -14,6 +14,7 @@ import java.util.Collections;
 import java.util.concurrent.CompletableFuture;
 
 import net.minecraft.command.CommandSource;
+import net.minecraft.command.ISuggestionProvider;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class7713 implements ArgumentType<Class6205> {
@@ -46,7 +47,7 @@ public class Class7713 implements ArgumentType<Class6205> {
 
          String var5 = var1.getString().substring(var4, var1.getCursor());
          return var1x -> {
-            GameProfile var4x = var1x.method20177().getPlayerProfileCache().method31792(var5);
+            GameProfile var4x = var1x.getServer().getPlayerProfileCache().method31792(var5);
             if (var4x != null) {
                return Collections.<GameProfile>singleton(var4x);
             } else {
@@ -57,7 +58,7 @@ public class Class7713 implements ArgumentType<Class6205> {
    }
 
    public <S> CompletableFuture<Suggestions> listSuggestions(CommandContext<S> var1, SuggestionsBuilder var2) {
-      if (var1.getSource() instanceof Class6618) {
+      if (var1.getSource() instanceof ISuggestionProvider) {
          StringReader var5 = new StringReader(var2.getInput());
          var5.setCursor(var2.getStart());
          Class8533 var6 = new Class8533(var5);
@@ -67,7 +68,7 @@ public class Class7713 implements ArgumentType<Class6205> {
          } catch (CommandSyntaxException var8) {
          }
 
-         return var6.method30314(var2, var1x -> Class6618.method20147(((Class6618)var1.getSource()).method20124(), var1x));
+         return var6.method30314(var2, var1x -> ISuggestionProvider.method20147(((ISuggestionProvider)var1.getSource()).method20124(), var1x));
       } else {
          return Suggestions.empty();
       }

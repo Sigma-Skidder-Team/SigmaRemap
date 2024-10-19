@@ -21,11 +21,11 @@ public class Class9417 {
    private static final SimpleCommandExceptionType field43678 = new SimpleCommandExceptionType(new TranslationTextComponent("commands.locate.failed"));
 
    public static void method36131(CommandDispatcher<CommandSource> var0) {
-      LiteralArgumentBuilder var3 = (LiteralArgumentBuilder)Class6099.method18839("locate").requires(var0x -> var0x.method20129(2));
+      LiteralArgumentBuilder var3 = (LiteralArgumentBuilder) Commands.method18839("locate").requires(var0x -> var0x.method20129(2));
 
       for (Entry var5 : Structure.field_236365_a_.entrySet()) {
          var3 = (LiteralArgumentBuilder)var3.then(
-            Class6099.method18839((String)var5.getKey()).executes(var1 -> method36132((CommandSource)var1.getSource(), (Structure<?>)var5.getValue()))
+            Commands.method18839((String)var5.getKey()).executes(var1 -> method36132((CommandSource)var1.getSource(), (Structure<?>)var5.getValue()))
          );
       }
 
@@ -52,7 +52,7 @@ public class Class9417 {
                   .setClickEvent(new ClickEvent(ClickEvent$Action.SUGGEST_COMMAND, "/tp @s " + var3.getX() + " ~ " + var3.getZ()))
                   .setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new TranslationTextComponent("chat.coordinates.tooltip")))
          );
-      var0.method20179(new TranslationTextComponent(var4, var1, var8, var7), false);
+      var0.sendFeedback(new TranslationTextComponent(var4, var1, var8, var7), false);
       return var7;
    }
 

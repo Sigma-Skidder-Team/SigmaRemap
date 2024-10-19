@@ -42,14 +42,14 @@ public class Class8243 {
 
    public static void method28741(CommandDispatcher<CommandSource> var0) {
       var0.register(
-         (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839(
+         (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder) Commands.method18839(
                                  "worldborder"
                               )
                               .requires(var0x -> var0x.method20129(2)))
                            .then(
-                              Class6099.method18839("add")
+                              Commands.method18839("add")
                                  .then(
-                                    ((RequiredArgumentBuilder)Class6099.method18840("distance", FloatArgumentType.floatArg(-6.0E7F, 6.0E7F))
+                                    ((RequiredArgumentBuilder) Commands.method18840("distance", FloatArgumentType.floatArg(-6.0E7F, 6.0E7F))
                                           .executes(
                                              var0x -> method28748(
                                                    (CommandSource)var0x.getSource(),
@@ -59,7 +59,7 @@ public class Class8243 {
                                                 )
                                           ))
                                        .then(
-                                          Class6099.method18840("time", IntegerArgumentType.integer(0))
+                                          Commands.method18840("time", IntegerArgumentType.integer(0))
                                              .executes(
                                                 var0x -> method28748(
                                                       (CommandSource)var0x.getSource(),
@@ -73,12 +73,12 @@ public class Class8243 {
                                  )
                            ))
                         .then(
-                           Class6099.method18839("set")
+                           Commands.method18839("set")
                               .then(
-                                 ((RequiredArgumentBuilder)Class6099.method18840("distance", FloatArgumentType.floatArg(-6.0E7F, 6.0E7F))
+                                 ((RequiredArgumentBuilder) Commands.method18840("distance", FloatArgumentType.floatArg(-6.0E7F, 6.0E7F))
                                        .executes(var0x -> method28748((CommandSource)var0x.getSource(), (double)FloatArgumentType.getFloat(var0x, "distance"), 0L)))
                                     .then(
-                                       Class6099.method18840("time", IntegerArgumentType.integer(0))
+                                       Commands.method18840("time", IntegerArgumentType.integer(0))
                                           .executes(
                                              var0x -> method28748(
                                                    (CommandSource)var0x.getSource(),
@@ -90,43 +90,43 @@ public class Class8243 {
                               )
                         ))
                      .then(
-                        Class6099.method18839("center")
+                        Commands.method18839("center")
                            .then(
-                              Class6099.method18840("pos", Class7347.method23292())
+                              Commands.method18840("pos", Class7347.method23292())
                                  .executes(var0x -> method28747((CommandSource)var0x.getSource(), Class7347.method23293(var0x, "pos")))
                            )
                      ))
                   .then(
-                     ((LiteralArgumentBuilder)Class6099.method18839("damage")
+                     ((LiteralArgumentBuilder) Commands.method18839("damage")
                            .then(
-                              Class6099.method18839("amount")
+                              Commands.method18839("amount")
                                  .then(
-                                    Class6099.method18840("damagePerBlock", FloatArgumentType.floatArg(0.0F))
+                                    Commands.method18840("damagePerBlock", FloatArgumentType.floatArg(0.0F))
                                        .executes(var0x -> method28743((CommandSource)var0x.getSource(), FloatArgumentType.getFloat(var0x, "damagePerBlock")))
                                  )
                            ))
                         .then(
-                           Class6099.method18839("buffer")
+                           Commands.method18839("buffer")
                               .then(
-                                 Class6099.method18840("distance", FloatArgumentType.floatArg(0.0F))
+                                 Commands.method18840("distance", FloatArgumentType.floatArg(0.0F))
                                     .executes(var0x -> method28742((CommandSource)var0x.getSource(), FloatArgumentType.getFloat(var0x, "distance")))
                               )
                         )
                   ))
-               .then(Class6099.method18839("get").executes(var0x -> method28746((CommandSource)var0x.getSource()))))
+               .then(Commands.method18839("get").executes(var0x -> method28746((CommandSource)var0x.getSource()))))
             .then(
-               ((LiteralArgumentBuilder)Class6099.method18839("warning")
+               ((LiteralArgumentBuilder) Commands.method18839("warning")
                      .then(
-                        Class6099.method18839("distance")
+                        Commands.method18839("distance")
                            .then(
-                              Class6099.method18840("distance", IntegerArgumentType.integer(0))
+                              Commands.method18840("distance", IntegerArgumentType.integer(0))
                                  .executes(var0x -> method28745((CommandSource)var0x.getSource(), IntegerArgumentType.getInteger(var0x, "distance")))
                            )
                      ))
                   .then(
-                     Class6099.method18839("time")
+                     Commands.method18839("time")
                         .then(
-                           Class6099.method18840("time", IntegerArgumentType.integer(0))
+                           Commands.method18840("time", IntegerArgumentType.integer(0))
                               .executes(var0x -> method28744((CommandSource)var0x.getSource(), IntegerArgumentType.getInteger(var0x, "time")))
                         )
                   )
@@ -138,7 +138,7 @@ public class Class8243 {
       WorldBorder var4 = var0.method20172().getWorldBorder();
       if (var4.method24546() != (double)var1) {
          var4.method24547((double)var1);
-         var0.method20179(new TranslationTextComponent("commands.worldborder.damage.buffer.success", String.format(Locale.ROOT, "%.2f", var1)), true);
+         var0.sendFeedback(new TranslationTextComponent("commands.worldborder.damage.buffer.success", String.format(Locale.ROOT, "%.2f", var1)), true);
          return (int)var1;
       } else {
          throw field35421.create();
@@ -149,7 +149,7 @@ public class Class8243 {
       WorldBorder var4 = var0.method20172().getWorldBorder();
       if (var4.method24548() != (double)var1) {
          var4.method24549((double)var1);
-         var0.method20179(new TranslationTextComponent("commands.worldborder.damage.amount.success", String.format(Locale.ROOT, "%.2f", var1)), true);
+         var0.sendFeedback(new TranslationTextComponent("commands.worldborder.damage.amount.success", String.format(Locale.ROOT, "%.2f", var1)), true);
          return (int)var1;
       } else {
          throw field35422.create();
@@ -160,7 +160,7 @@ public class Class8243 {
       WorldBorder var4 = var0.method20172().getWorldBorder();
       if (var4.method24551() != var1) {
          var4.method24552(var1);
-         var0.method20179(new TranslationTextComponent("commands.worldborder.warning.time.success", var1), true);
+         var0.sendFeedback(new TranslationTextComponent("commands.worldborder.warning.time.success", var1), true);
          return var1;
       } else {
          throw field35419.create();
@@ -171,7 +171,7 @@ public class Class8243 {
       WorldBorder var4 = var0.method20172().getWorldBorder();
       if (var4.method24553() != var1) {
          var4.method24554(var1);
-         var0.method20179(new TranslationTextComponent("commands.worldborder.warning.distance.success", var1), true);
+         var0.sendFeedback(new TranslationTextComponent("commands.worldborder.warning.distance.success", var1), true);
          return var1;
       } else {
          throw field35420.create();
@@ -180,7 +180,7 @@ public class Class8243 {
 
    private static int method28746(CommandSource var0) {
       double var3 = var0.method20172().getWorldBorder().method24537();
-      var0.method20179(new TranslationTextComponent("commands.worldborder.get", String.format(Locale.ROOT, "%.0f", var3)), false);
+      var0.sendFeedback(new TranslationTextComponent("commands.worldborder.get", String.format(Locale.ROOT, "%.0f", var3)), false);
       return MathHelper.floor(var3 + 0.5);
    }
 
@@ -190,7 +190,7 @@ public class Class8243 {
          throw field35415.create();
       } else {
          var4.method24536((double)var1.x, (double)var1.y);
-         var0.method20179(
+         var0.sendFeedback(
             new TranslationTextComponent(
                "commands.worldborder.center.success", String.format(Locale.ROOT, "%.2f", var1.x), String.format("%.2f", var1.y)
             ),
@@ -208,16 +208,16 @@ public class Class8243 {
             if (!(var1 > 6.0E7)) {
                if (var3 <= 0L) {
                   var7.method24540(var1);
-                  var0.method20179(new TranslationTextComponent("commands.worldborder.set.immediate", String.format(Locale.ROOT, "%.1f", var1)), true);
+                  var0.sendFeedback(new TranslationTextComponent("commands.worldborder.set.immediate", String.format(Locale.ROOT, "%.1f", var1)), true);
                } else {
                   var7.method24541(var8, var1, var3);
                   if (!(var1 > var8)) {
-                     var0.method20179(
+                     var0.sendFeedback(
                         new TranslationTextComponent("commands.worldborder.set.shrink", String.format(Locale.ROOT, "%.1f", var1), Long.toString(var3 / 1000L)),
                         true
                      );
                   } else {
-                     var0.method20179(
+                     var0.sendFeedback(
                         new TranslationTextComponent("commands.worldborder.set.grow", String.format(Locale.ROOT, "%.1f", var1), Long.toString(var3 / 1000L)),
                         true
                      );

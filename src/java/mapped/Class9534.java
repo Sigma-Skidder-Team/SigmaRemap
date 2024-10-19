@@ -12,6 +12,7 @@ import java.util.Collection;
 import java.util.concurrent.CompletableFuture;
 
 import net.minecraft.command.CommandSource;
+import net.minecraft.command.ISuggestionProvider;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
@@ -37,7 +38,7 @@ public class Class9534 implements ArgumentType<Enchantment> {
    }
 
    public <S> CompletableFuture<Suggestions> listSuggestions(CommandContext<S> var1, SuggestionsBuilder var2) {
-      return Class6618.method20141(Registry.ENCHANTMENT.method9190(), var2);
+      return ISuggestionProvider.suggestIterable(Registry.ENCHANTMENT.method9190(), var2);
    }
 
    public Collection<String> getExamples() {

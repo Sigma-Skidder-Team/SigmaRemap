@@ -46,29 +46,29 @@ public class Class8158 {
    public static final List<Class8196> field35114 = field35112.stream().<Class8196>map(var0 -> var0.apply("source")).collect(ImmutableList.toImmutableList());
 
    public static void method28315(CommandDispatcher<CommandSource> var0) {
-      LiteralArgumentBuilder var3 = (LiteralArgumentBuilder)Class6099.method18839("data").requires(var0x -> var0x.method20129(2));
+      LiteralArgumentBuilder var3 = (LiteralArgumentBuilder) Commands.method18839("data").requires(var0x -> var0x.method20129(2));
 
       for (Class8196 var5 : field35113) {
          ((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)var3.then(
                      var5.method28504(
-                        Class6099.method18839("merge"),
+                        Commands.method18839("merge"),
                         var1 -> var1.then(
-                              Class6099.method18840("nbt", Class9770.method38432())
+                              Commands.method18840("nbt", Class9770.method38432())
                                  .executes(var1x -> method28324((CommandSource)var1x.getSource(), var5.method28503(var1x), Class9770.method38433(var1x, "nbt")))
                            )
                      )
                   ))
                   .then(
                      var5.method28504(
-                        Class6099.method18839("get"),
+                        Commands.method18839("get"),
                         var1 -> var1.executes(var1x -> method28323((CommandSource)var1x.getSource(), var5.method28503(var1x)))
                               .then(
-                                 ((RequiredArgumentBuilder)Class6099.method18840("path", Class8320.method29128())
+                                 ((RequiredArgumentBuilder) Commands.method18840("path", Class8320.method29128())
                                        .executes(
                                           var1x -> method28321((CommandSource)var1x.getSource(), var5.method28503(var1x), Class8320.method29129(var1x, "path"))
                                        ))
                                     .then(
-                                       Class6099.method18840("scale", DoubleArgumentType.doubleArg())
+                                       Commands.method18840("scale", DoubleArgumentType.doubleArg())
                                           .executes(
                                              var1x -> method28322(
                                                    (CommandSource)var1x.getSource(),
@@ -83,9 +83,9 @@ public class Class8158 {
                   ))
                .then(
                   var5.method28504(
-                     Class6099.method18839("remove"),
+                     Commands.method18839("remove"),
                      var1 -> var1.then(
-                           Class6099.method18840("path", Class8320.method29128())
+                           Commands.method18840("path", Class8320.method29128())
                               .executes(var1x -> method28319((CommandSource)var1x.getSource(), var5.method28503(var1x), Class8320.method29129(var1x, "path")))
                         )
                   )
@@ -93,19 +93,19 @@ public class Class8158 {
             .then(
                method28317(
                   (var0x, var1) -> var0x.then(
-                           Class6099.method18839("insert")
-                              .then(Class6099.method18840("index", IntegerArgumentType.integer()).then(var1.method25731((var0xx, var1x, var2, var3x) -> {
+                           Commands.method18839("insert")
+                              .then(Commands.method18840("index", IntegerArgumentType.integer()).then(var1.method25731((var0xx, var1x, var2, var3x) -> {
                                  int var6 = IntegerArgumentType.getInteger(var0xx, "index");
                                  return method28316(var6, var1x, var2, var3x);
                               })))
                         )
-                        .then(Class6099.method18839("prepend").then(var1.method25731((var0xx, var1x, var2, var3x) -> method28316(0, var1x, var2, var3x))))
-                        .then(Class6099.method18839("append").then(var1.method25731((var0xx, var1x, var2, var3x) -> method28316(-1, var1x, var2, var3x))))
+                        .then(Commands.method18839("prepend").then(var1.method25731((var0xx, var1x, var2, var3x) -> method28316(0, var1x, var2, var3x))))
+                        .then(Commands.method18839("append").then(var1.method25731((var0xx, var1x, var2, var3x) -> method28316(-1, var1x, var2, var3x))))
                         .then(
-                           Class6099.method18839("set")
+                           Commands.method18839("set")
                               .then(var1.method25731((var0xx, var1x, var2, var3x) -> var2.method37730(var1x, ((INBT)Iterables.getLast(var3x))::copy)))
                         )
-                        .then(Class6099.method18839("merge").then(var1.method25731((var0xx, var1x, var2, var3x) -> {
+                        .then(Commands.method18839("merge").then(var1.method25731((var0xx, var1x, var2, var3x) -> {
                            List<INBT> var6 = var2.method37728(var1x, CompoundNBT::new);
                            int var7 = 0;
 
@@ -168,17 +168,17 @@ public class Class8158 {
    }
 
    private static ArgumentBuilder<CommandSource, ?> method28317(BiConsumer<ArgumentBuilder<CommandSource, ?>, Class7761> var0) {
-      LiteralArgumentBuilder var3 = Class6099.method18839("modify");
+      LiteralArgumentBuilder var3 = Commands.method18839("modify");
 
       for (Class8196 var5 : field35113) {
          var5.method28504(var3, var2 -> {
-            RequiredArgumentBuilder var5x = Class6099.method18840("targetPath", Class8320.method29128());
+            RequiredArgumentBuilder var5x = Commands.method18840("targetPath", Class8320.method29128());
 
             for (Class8196 var7 : field35114) {
-               var0.accept(var5x, var2x -> var7.method28504(Class6099.method18839("from"), var3x -> var3x.executes(var3xx -> {
+               var0.accept(var5x, var2x -> var7.method28504(Commands.method18839("from"), var3x -> var3x.executes(var3xx -> {
                         List var6 = Collections.<CompoundNBT>singletonList(var7.method28503(var3xx).method22312());
                         return method28318(var3xx, var5, var2x, var6);
-                     }).then(Class6099.method18840("sourcePath", Class8320.method29128()).executes(var3xx -> {
+                     }).then(Commands.method18840("sourcePath", Class8320.method29128()).executes(var3xx -> {
                         Class7151 var6 = var7.method28503(var3xx);
                         Class9670 var7x = Class8320.method29129(var3xx, "sourcePath");
                         List var8 = var7x.method37725(var6.method22312());
@@ -186,7 +186,7 @@ public class Class8158 {
                      }))));
             }
 
-            var0.accept(var5x, var1x -> Class6099.method18839("value").then(Class6099.method18840("value", Class8780.method31660()).executes(var2x -> {
+            var0.accept(var5x, var1x -> Commands.method18839("value").then(Commands.method18840("value", Class8780.method31660()).executes(var2x -> {
                   List var5xx = Collections.<INBT>singletonList(Class8780.method31661(var2x, "value"));
                   return method28318(var2x, var5, var1x, var5xx);
                })));
@@ -204,7 +204,7 @@ public class Class8158 {
       int var9 = var2.method26160(var0, var8, var7, var3);
       if (var9 != 0) {
          var6.method22311(var8);
-         ((CommandSource)var0.getSource()).method20179(var6.method22313(), true);
+         ((CommandSource)var0.getSource()).sendFeedback(var6.method22313(), true);
          return var9;
       } else {
          throw field35105.create();
@@ -216,7 +216,7 @@ public class Class8158 {
       int var6 = var2.method37731(var5);
       if (var6 != 0) {
          var1.method22311(var5);
-         var0.method20179(var1.method22313(), true);
+         var0.sendFeedback(var1.method22313(), true);
          return var6;
       } else {
          throw field35105.create();
@@ -255,7 +255,7 @@ public class Class8158 {
          var6 = MathHelper.floor(((NumberNBT)var5).getDouble());
       }
 
-      var0.method20179(var1.method22314(var5), false);
+      var0.sendFeedback(var1.method22314(var5), false);
       return var6;
    }
 
@@ -263,7 +263,7 @@ public class Class8158 {
       INBT var7 = method28320(var2, var1);
       if (var7 instanceof NumberNBT) {
          int var8 = MathHelper.floor(((NumberNBT)var7).getDouble() * var3);
-         var0.method20179(var1.method22315(var2, var3, var8), false);
+         var0.sendFeedback(var1.method22315(var2, var3, var8), false);
          return var8;
       } else {
          throw field35106.create(var2.toString());
@@ -271,7 +271,7 @@ public class Class8158 {
    }
 
    private static int method28323(CommandSource var0, Class7151 var1) throws CommandSyntaxException {
-      var0.method20179(var1.method22314(var1.method22312()), false);
+      var0.sendFeedback(var1.method22314(var1.method22312()), false);
       return 1;
    }
 
@@ -280,7 +280,7 @@ public class Class8158 {
       CompoundNBT var6 = var5.copy().merge(var2);
       if (!var5.equals(var6)) {
          var1.method22311(var6);
-         var0.method20179(var1.method22313(), true);
+         var0.sendFeedback(var1.method22313(), true);
          return 1;
       } else {
          throw field35105.create();

@@ -32,7 +32,7 @@ public final class Class8197 implements Class8196 {
            ArgumentBuilder<CommandSource, ?> var1, Function<ArgumentBuilder<CommandSource, ?>, ArgumentBuilder<CommandSource, ?>> var2
    ) {
       return var1.then(
-         Class6099.method18839("block").then((ArgumentBuilder)var2.apply(Class6099.method18840(this.field35223 + "Pos", Class6849.method20826())))
+         Commands.method18839("block").then((ArgumentBuilder)var2.apply(Commands.method18840(this.field35223 + "Pos", Class6849.method20826())))
       );
    }
 }

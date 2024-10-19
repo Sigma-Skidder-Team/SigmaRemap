@@ -20,6 +20,7 @@ import javax.annotation.Nullable;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.command.ISuggestionProvider;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.JSONToNBT;
 import net.minecraft.state.Property;
@@ -288,15 +289,15 @@ public class Class8268 {
    }
 
    private CompletableFuture<Suggestions> method28853(SuggestionsBuilder var1, Class7984<Block> var2) {
-      return Class6618.method20141(var2.method27137(), var1.createOffset(this.field35552).add(var1));
+      return ISuggestionProvider.suggestIterable(var2.method27137(), var1.createOffset(this.field35552).add(var1));
    }
 
    private CompletableFuture<Suggestions> method28854(SuggestionsBuilder var1, Class7984<Block> var2) {
       if (this.field35544) {
-         Class6618.method20140(var2.method27137(), var1, String.valueOf('#'));
+         ISuggestionProvider.method20140(var2.method27137(), var1, String.valueOf('#'));
       }
 
-      Class6618.method20141(Registry.BLOCK.method9190(), var1);
+      ISuggestionProvider.suggestIterable(Registry.BLOCK.method9190(), var1);
       return var1.buildFuture();
    }
 

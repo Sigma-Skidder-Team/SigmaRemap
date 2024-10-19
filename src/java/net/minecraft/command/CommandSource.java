@@ -32,7 +32,7 @@ import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
-public class CommandSource implements Class6618 {
+public class CommandSource implements ISuggestionProvider {
    public static final SimpleCommandExceptionType field29122 = new SimpleCommandExceptionType(new TranslationTextComponent("permissions.requires.player"));
    public static final SimpleCommandExceptionType field29123 = new SimpleCommandExceptionType(new TranslationTextComponent("permissions.requires.entity"));
    private final ICommandSource field29124;
@@ -322,7 +322,7 @@ public class CommandSource implements Class6618 {
       return this.field29135;
    }
 
-   public MinecraftServer method20177() {
+   public MinecraftServer getServer() {
       return this.field29130;
    }
 
@@ -330,7 +330,7 @@ public class CommandSource implements Class6618 {
       return this.field29134;
    }
 
-   public void method20179(ITextComponent var1, boolean var2) {
+   public void sendFeedback(ITextComponent var1, boolean var2) {
       if (this.field29124.method1405() && !this.field29131) {
          this.field29124.sendMessage(var1, Util.DUMMY_UUID);
       }
@@ -389,7 +389,7 @@ public class CommandSource implements Class6618 {
    }
 
    @Override
-   public CompletableFuture<Suggestions> method20130(CommandContext<Class6618> var1, SuggestionsBuilder var2) {
+   public CompletableFuture<Suggestions> method20130(CommandContext<ISuggestionProvider> var1, SuggestionsBuilder var2) {
       return null;
    }
 

@@ -78,7 +78,7 @@ public class Bootstrap {
       if (field33186) {
          if (SharedConstants.developmentMode) {
             method25569().forEach(var0 -> field33187.error("Missing translations: " + var0));
-            Class6099.method18844();
+            Commands.method18844();
          }
 
          GlobalEntityTypeAttributes.method37377();

@@ -25,12 +25,12 @@ public class Class8345 {
 
    public static void method29252(CommandDispatcher<CommandSource> var0) {
       var0.register(
-         (LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("ban-ip").requires(var0x -> var0x.method20129(3)))
+         (LiteralArgumentBuilder)((LiteralArgumentBuilder) Commands.method18839("ban-ip").requires(var0x -> var0x.method20129(3)))
             .then(
-               ((RequiredArgumentBuilder)Class6099.method18840("target", StringArgumentType.word())
+               ((RequiredArgumentBuilder) Commands.method18840("target", StringArgumentType.word())
                      .executes(var0x -> method29253((CommandSource)var0x.getSource(), StringArgumentType.getString(var0x, "target"), (ITextComponent)null)))
                   .then(
-                     Class6099.method18840("reason", Class7026.method21755())
+                     Commands.method18840("reason", Class7026.method21755())
                         .executes(
                            var0x -> method29253(
                                  (CommandSource)var0x.getSource(), StringArgumentType.getString(var0x, "target"), Class7026.method21756(var0x, "reason")
@@ -44,7 +44,7 @@ public class Class8345 {
    private static int method29253(CommandSource var0, String var1, ITextComponent var2) throws CommandSyntaxException {
       Matcher var5 = field35870.matcher(var1);
       if (!var5.matches()) {
-         ServerPlayerEntity var6 = var0.method20177().getPlayerList().method19465(var1);
+         ServerPlayerEntity var6 = var0.getServer().getPlayerList().method19465(var1);
          if (var6 == null) {
             throw field35871.create();
          } else {
@@ -56,16 +56,16 @@ public class Class8345 {
    }
 
    private static int method29254(CommandSource var0, String var1, ITextComponent var2) throws CommandSyntaxException {
-      Class4532 var5 = var0.method20177().getPlayerList().method19462();
+      Class4532 var5 = var0.getServer().getPlayerList().method19462();
       if (var5.method14450(var1)) {
          throw field35872.create();
       } else {
-         List<ServerPlayerEntity> var6 = var0.method20177().getPlayerList().method19477(var1);
+         List<ServerPlayerEntity> var6 = var0.getServer().getPlayerList().method19477(var1);
          Class6788 var7 = new Class6788(var1, (Date)null, var0.method20170(), (Date)null, var2 != null ? var2.getString() : null);
          var5.method14436(var7);
-         var0.method20179(new TranslationTextComponent("commands.banip.success", var1, var7.method20683()), true);
+         var0.sendFeedback(new TranslationTextComponent("commands.banip.success", var1, var7.method20683()), true);
          if (!var6.isEmpty()) {
-            var0.method20179(new TranslationTextComponent("commands.banip.info", var6.size(), Class8429.method29623(var6)), true);
+            var0.sendFeedback(new TranslationTextComponent("commands.banip.info", var6.size(), Class8429.method29623(var6)), true);
          }
 
          for (ServerPlayerEntity var9 : var6) {

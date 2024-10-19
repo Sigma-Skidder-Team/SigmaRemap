@@ -17,6 +17,8 @@ import java.util.Objects;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.command.CommandSource;
+import net.minecraft.command.ISuggestionProvider;
+import net.minecraft.command.arguments.ResourceLocationArgument;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -33,8 +35,8 @@ import net.minecraft.world.server.ServerWorld;
 
 public class Class9653 {
    public static final SuggestionProvider<CommandSource> field45128 = (var0, var1) -> {
-      Class284 var4 = ((CommandSource)var0.getSource()).method20177().method1411();
-      return Class6618.method20141(var4.method1061(), var1);
+      Class284 var4 = ((CommandSource)var0.getSource()).getServer().method1411();
+      return ISuggestionProvider.suggestIterable(var4.method1061(), var1);
    };
    private static final DynamicCommandExceptionType field45129 = new DynamicCommandExceptionType(
       var0 -> new TranslationTextComponent("commands.drop.no_held_items", var0)
@@ -46,31 +48,31 @@ public class Class9653 {
    public static void method37658(CommandDispatcher<CommandSource> var0) {
       var0.register(
          method37659(
-            Class6099.method18839("loot").requires(var0x -> var0x.method20129(2)),
+            Commands.method18839("loot").requires(var0x -> var0x.method20129(2)),
             (var0x, var1) -> var0x.then(
-                     Class6099.method18839("fish")
+                     Commands.method18839("fish")
                         .then(
-                           Class6099.method18840("loot_table", Class8303.method29031())
+                           Commands.method18840("loot_table", ResourceLocationArgument.method29031())
                               .suggests(field45128)
                               .then(
-                                 ((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder)Class6099.method18840(
+                                 ((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder) Commands.method18840(
                                                 "pos", Class6849.method20826()
                                              )
                                              .executes(
                                                 var1x -> method37675(
                                                       var1x,
-                                                      Class8303.method29036(var1x, "loot_table"),
+                                                      ResourceLocationArgument.getResourceLocation(var1x, "loot_table"),
                                                       Class6849.method20827(var1x, "pos"),
                                                       ItemStack.EMPTY,
                                                       var1
                                                    )
                                              ))
                                           .then(
-                                             Class6099.method18840("tool", Class8722.method31481())
+                                             Commands.method18840("tool", Class8722.method31481())
                                                 .executes(
                                                    var1x -> method37675(
                                                          var1x,
-                                                         Class8303.method29036(var1x, "loot_table"),
+                                                         ResourceLocationArgument.getResourceLocation(var1x, "loot_table"),
                                                          Class6849.method20827(var1x, "pos"),
                                                          Class8722.method31482(var1x, "tool").method503(1, false),
                                                          var1
@@ -78,11 +80,11 @@ public class Class9653 {
                                                 )
                                           ))
                                        .then(
-                                          Class6099.method18839("mainhand")
+                                          Commands.method18839("mainhand")
                                              .executes(
                                                 var1x -> method37675(
                                                       var1x,
-                                                      Class8303.method29036(var1x, "loot_table"),
+                                                      ResourceLocationArgument.getResourceLocation(var1x, "loot_table"),
                                                       Class6849.method20827(var1x, "pos"),
                                                       method37671((CommandSource)var1x.getSource(), EquipmentSlotType.MAINHAND),
                                                       var1
@@ -90,11 +92,11 @@ public class Class9653 {
                                              )
                                        ))
                                     .then(
-                                       Class6099.method18839("offhand")
+                                       Commands.method18839("offhand")
                                           .executes(
                                              var1x -> method37675(
                                                    var1x,
-                                                   Class8303.method29036(var1x, "loot_table"),
+                                                   ResourceLocationArgument.getResourceLocation(var1x, "loot_table"),
                                                    Class6849.method20827(var1x, "pos"),
                                                    method37671((CommandSource)var1x.getSource(), EquipmentSlotType.OFFHAND),
                                                    var1
@@ -105,27 +107,27 @@ public class Class9653 {
                         )
                   )
                   .then(
-                     Class6099.method18839("loot")
+                     Commands.method18839("loot")
                         .then(
-                           Class6099.method18840("loot_table", Class8303.method29031())
+                           Commands.method18840("loot_table", ResourceLocationArgument.method29031())
                               .suggests(field45128)
-                              .executes(var1x -> method37674(var1x, Class8303.method29036(var1x, "loot_table"), var1))
+                              .executes(var1x -> method37674(var1x, ResourceLocationArgument.getResourceLocation(var1x, "loot_table"), var1))
                         )
                   )
                   .then(
-                     Class6099.method18839("kill")
+                     Commands.method18839("kill")
                         .then(
-                           Class6099.method18840("target", Class8700.method31345())
+                           Commands.method18840("target", Class8700.method31345())
                               .executes(var1x -> method37673(var1x, Class8700.method31346(var1x, "target"), var1))
                         )
                   )
                   .then(
-                     Class6099.method18839("mine")
+                     Commands.method18839("mine")
                         .then(
-                           ((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder)Class6099.method18840("pos", Class6849.method20826())
+                           ((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder) Commands.method18840("pos", Class6849.method20826())
                                        .executes(var1x -> method37672(var1x, Class6849.method20827(var1x, "pos"), ItemStack.EMPTY, var1)))
                                     .then(
-                                       Class6099.method18840("tool", Class8722.method31481())
+                                       Commands.method18840("tool", Class8722.method31481())
                                           .executes(
                                              var1x -> method37672(
                                                    var1x, Class6849.method20827(var1x, "pos"), Class8722.method31482(var1x, "tool").method503(1, false), var1
@@ -133,7 +135,7 @@ public class Class9653 {
                                           )
                                     ))
                                  .then(
-                                    Class6099.method18839("mainhand")
+                                    Commands.method18839("mainhand")
                                        .executes(
                                           var1x -> method37672(
                                                 var1x,
@@ -144,7 +146,7 @@ public class Class9653 {
                                        )
                                  ))
                               .then(
-                                 Class6099.method18839("offhand")
+                                 Commands.method18839("offhand")
                                     .executes(
                                        var1x -> method37672(
                                              var1x, Class6849.method20827(var1x, "pos"), method37671((CommandSource)var1x.getSource(), EquipmentSlotType.OFFHAND), var1
@@ -159,21 +161,21 @@ public class Class9653 {
 
    private static <T extends ArgumentBuilder<CommandSource, T>> T method37659(T var0, Class8236 var1) {
       return (T)var0.then(
-            ((LiteralArgumentBuilder)Class6099.method18839("replace")
+            ((LiteralArgumentBuilder) Commands.method18839("replace")
                   .then(
-                     Class6099.method18839("entity")
+                     Commands.method18839("entity")
                         .then(
-                           Class6099.method18840("entities", Class8700.method31347())
+                           Commands.method18840("entities", Class8700.method31347())
                               .then(
                                  var1.method28672(
-                                       Class6099.method18840("slot", Class4914.method15195()),
+                                       Commands.method18840("slot", Class4914.method15195()),
                                        (var0x, var1x, var2) -> method37667(
                                              Class8700.method31348(var0x, "entities"), Class4914.method15196(var0x, "slot"), var1x.size(), var1x, var2
                                           )
                                     )
                                     .then(
                                        var1.method28672(
-                                          Class6099.method18840("count", IntegerArgumentType.integer(0)),
+                                          Commands.method18840("count", IntegerArgumentType.integer(0)),
                                           (var0x, var1x, var2) -> method37667(
                                                 Class8700.method31348(var0x, "entities"),
                                                 Class4914.method15196(var0x, "slot"),
@@ -187,12 +189,12 @@ public class Class9653 {
                         )
                   ))
                .then(
-                  Class6099.method18839("block")
+                  Commands.method18839("block")
                      .then(
-                        Class6099.method18840("targetPos", Class6849.method20826())
+                        Commands.method18840("targetPos", Class6849.method20826())
                            .then(
                               var1.method28672(
-                                    Class6099.method18840("slot", Class4914.method15195()),
+                                    Commands.method18840("slot", Class4914.method15195()),
                                     (var0x, var1x, var2) -> method37663(
                                           (CommandSource)var0x.getSource(),
                                           Class6849.method20827(var0x, "targetPos"),
@@ -204,7 +206,7 @@ public class Class9653 {
                                  )
                                  .then(
                                     var1.method28672(
-                                       Class6099.method18840("count", IntegerArgumentType.integer(0)),
+                                       Commands.method18840("count", IntegerArgumentType.integer(0)),
                                        (var0x, var1x, var2) -> method37663(
                                              (CommandSource)var0x.getSource(),
                                              Class6849.method20827(var0x, "targetPos"),
@@ -220,28 +222,28 @@ public class Class9653 {
                )
          )
          .then(
-            Class6099.method18839("insert")
+            Commands.method18839("insert")
                .then(
                   var1.method28672(
-                     Class6099.method18840("targetPos", Class6849.method20826()),
+                     Commands.method18840("targetPos", Class6849.method20826()),
                      (var0x, var1x, var2) -> method37661((CommandSource)var0x.getSource(), Class6849.method20827(var0x, "targetPos"), var1x, var2)
                   )
                )
          )
          .then(
-            Class6099.method18839("give")
+            Commands.method18839("give")
                .then(
                   var1.method28672(
-                     Class6099.method18840("players", Class8700.method31353()),
+                     Commands.method18840("players", Class8700.method31353()),
                      (var0x, var1x, var2) -> method37665(Class8700.method31354(var0x, "players"), var1x, var2)
                   )
                )
          )
          .then(
-            Class6099.method18839("spawn")
+            Commands.method18839("spawn")
                .then(
                   var1.method28672(
-                     Class6099.method18840("targetPos", Class6851.method20857()),
+                     Commands.method18840("targetPos", Class6851.method20857()),
                      (var0x, var1x, var2) -> method37668((CommandSource)var0x.getSource(), Class6851.method20859(var0x, "targetPos"), var1x, var2)
                   )
                )
@@ -381,19 +383,19 @@ public class Class9653 {
 
    private static void method37669(CommandSource var0, List<ItemStack> var1) {
       if (var1.size() != 1) {
-         var0.method20179(new TranslationTextComponent("commands.drop.success.multiple", var1.size()), false);
+         var0.sendFeedback(new TranslationTextComponent("commands.drop.success.multiple", var1.size()), false);
       } else {
          ItemStack var4 = (ItemStack)var1.get(0);
-         var0.method20179(new TranslationTextComponent("commands.drop.success.single", var4.getCount(), var4.method32173()), false);
+         var0.sendFeedback(new TranslationTextComponent("commands.drop.success.single", var4.getCount(), var4.method32173()), false);
       }
    }
 
    private static void method37670(CommandSource var0, List<ItemStack> var1, ResourceLocation var2) {
       if (var1.size() != 1) {
-         var0.method20179(new TranslationTextComponent("commands.drop.success.multiple_with_table", var1.size(), var2), false);
+         var0.sendFeedback(new TranslationTextComponent("commands.drop.success.multiple_with_table", var1.size(), var2), false);
       } else {
          ItemStack var5 = (ItemStack)var1.get(0);
-         var0.method20179(new TranslationTextComponent("commands.drop.success.single_with_table", var5.getCount(), var5.method32173(), var2), false);
+         var0.sendFeedback(new TranslationTextComponent("commands.drop.success.single_with_table", var5.getCount(), var5.method32173(), var2), false);
       }
    }
 
@@ -436,7 +438,7 @@ public class Class9653 {
          var7.method36455(Class9525.field44333, var8);
          var7.method36454(Class9525.field44330, var1);
          var7.method36454(Class9525.field44335, var6.method20171());
-         Class7318 var9 = var6.method20177().method1411().method1058(var5);
+         Class7318 var9 = var6.getServer().method1411().method1058(var5);
          List var10 = var9.method23182(var7.method36460(Class8524.field38286));
          return var2.method32583(var0, var10, var2x -> method37670(var6, var2x, var5));
       } else {
@@ -464,7 +466,7 @@ public class Class9653 {
 
    private static int method37676(CommandContext<CommandSource> var0, ResourceLocation var1, LootContext var2, Class8914 var3) throws CommandSyntaxException {
       CommandSource var6 = (CommandSource)var0.getSource();
-      Class7318 var7 = var6.method20177().method1411().method1058(var1);
+      Class7318 var7 = var6.getServer().method1411().method1058(var1);
       List var8 = var7.method23182(var2);
       return var3.method32583(var0, var8, var1x -> method37669(var6, var1x));
    }

@@ -33,13 +33,13 @@ public class Class8031 {
 
    public static void method27540(CommandDispatcher<CommandSource> var0) {
       var0.register(
-         (LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("fill").requires(var0x -> var0x.method20129(2)))
+         (LiteralArgumentBuilder)((LiteralArgumentBuilder) Commands.method18839("fill").requires(var0x -> var0x.method20129(2)))
             .then(
-               Class6099.method18840("from", Class6849.method20826())
+               Commands.method18840("from", Class6849.method20826())
                   .then(
-                     Class6099.method18840("to", Class6849.method20826())
+                     Commands.method18840("to", Class6849.method20826())
                         .then(
-                           ((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder)Class6099.method18840(
+                           ((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder) Commands.method18840(
                                                 "block", Class7971.method27103()
                                              )
                                              .executes(
@@ -52,7 +52,7 @@ public class Class8031 {
                                                    )
                                              ))
                                           .then(
-                                             ((LiteralArgumentBuilder)Class6099.method18839("replace")
+                                             ((LiteralArgumentBuilder) Commands.method18839("replace")
                                                    .executes(
                                                       var0x -> method27541(
                                                             (CommandSource)var0x.getSource(),
@@ -63,7 +63,7 @@ public class Class8031 {
                                                          )
                                                    ))
                                                 .then(
-                                                   Class6099.method18840("filter", Class7505.method24464())
+                                                   Commands.method18840("filter", Class7505.method24464())
                                                       .executes(
                                                          var0x -> method27541(
                                                                (CommandSource)var0x.getSource(),
@@ -76,7 +76,7 @@ public class Class8031 {
                                                 )
                                           ))
                                        .then(
-                                          Class6099.method18839("keep")
+                                          Commands.method18839("keep")
                                              .executes(
                                                 var0x -> method27541(
                                                       (CommandSource)var0x.getSource(),
@@ -88,7 +88,7 @@ public class Class8031 {
                                              )
                                        ))
                                     .then(
-                                       Class6099.method18839("outline")
+                                       Commands.method18839("outline")
                                           .executes(
                                              var0x -> method27541(
                                                    (CommandSource)var0x.getSource(),
@@ -100,7 +100,7 @@ public class Class8031 {
                                           )
                                     ))
                                  .then(
-                                    Class6099.method18839("hollow")
+                                    Commands.method18839("hollow")
                                        .executes(
                                           var0x -> method27541(
                                                 (CommandSource)var0x.getSource(),
@@ -112,7 +112,7 @@ public class Class8031 {
                                        )
                                  ))
                               .then(
-                                 Class6099.method18839("destroy")
+                                 Commands.method18839("destroy")
                                     .executes(
                                        var0x -> method27541(
                                              (CommandSource)var0x.getSource(),
@@ -158,7 +158,7 @@ public class Class8031 {
          }
 
          if (var10 != 0) {
-            var0.method20179(new TranslationTextComponent("commands.fill.success", var10), true);
+            var0.sendFeedback(new TranslationTextComponent("commands.fill.success", var10), true);
             return var10;
          } else {
             throw field34513.create();

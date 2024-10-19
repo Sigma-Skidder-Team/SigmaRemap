@@ -101,7 +101,7 @@ public class Class8958 {
          ResourcePackList var34 = new ResourcePackList(new ServerPackFinder(), new FolderPackFinder(var31.resolveFilePath(FolderName.DATAPACKS).toFile(), IPackNameDecorator.WORLD));
          DatapackCodec var35 = MinecraftServer.func_240772_a_(var34, var32 == null ? DatapackCodec.VANILLA_CODEC : var32, var33);
          CompletableFuture var36 = DataPackRegistries.func_240961_a_(
-            var34.func_232623_f_(), Commands.DEDICATED, var21.getProperties().field43817, Util.getServerExecutor(), Runnable::run
+            var34.func_232623_f_(), Commands.EnvironmentType.DEDICATED, var21.getProperties().field43817, Util.getServerExecutor(), Runnable::run
          );
 
          DataPackRegistries var37;

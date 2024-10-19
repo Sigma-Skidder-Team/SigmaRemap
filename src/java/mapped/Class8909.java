@@ -17,18 +17,18 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class Class8909 {
    public static void method32551(CommandDispatcher<CommandSource> var0) {
       var0.register(
-         (LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("give").requires(var0x -> var0x.method20129(2)))
+         (LiteralArgumentBuilder)((LiteralArgumentBuilder) Commands.method18839("give").requires(var0x -> var0x.method20129(2)))
             .then(
-               Class6099.method18840("targets", Class8700.method31353())
+               Commands.method18840("targets", Class8700.method31353())
                   .then(
-                     ((RequiredArgumentBuilder)Class6099.method18840("item", Class8722.method31481())
+                     ((RequiredArgumentBuilder) Commands.method18840("item", Class8722.method31481())
                            .executes(
                               var0x -> method32552(
                                     (CommandSource)var0x.getSource(), Class8722.method31482(var0x, "item"), Class8700.method31354(var0x, "targets"), 1
                                  )
                            ))
                         .then(
-                           Class6099.method18840("count", IntegerArgumentType.integer(1))
+                           Commands.method18840("count", IntegerArgumentType.integer(1))
                               .executes(
                                  var0x -> method32552(
                                        (CommandSource)var0x.getSource(),
@@ -82,9 +82,9 @@ public class Class8909 {
       }
 
       if (var2.size() != 1) {
-         var0.method20179(new TranslationTextComponent("commands.give.success.single", var3, var1.method503(var3, false).method32173(), var2.size()), true);
+         var0.sendFeedback(new TranslationTextComponent("commands.give.success.single", var3, var1.method503(var3, false).method32173(), var2.size()), true);
       } else {
-         var0.method20179(
+         var0.sendFeedback(
             new TranslationTextComponent(
                "commands.give.success.single", var3, var1.method503(var3, false).method32173(), ((ServerPlayerEntity)var2.iterator().next()).getDisplayName()
             ),

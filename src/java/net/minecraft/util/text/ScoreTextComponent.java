@@ -58,7 +58,7 @@ public class ScoreTextComponent extends TextComponent implements ITargetedTextCo
    }
 
    private String func_240706_a_(String p_240706_1_, CommandSource p_240706_2_) {
-      MinecraftServer scoreboard = p_240706_2_.method20177();
+      MinecraftServer scoreboard = p_240706_2_.getServer();
       if (scoreboard != null) {
          ServerScoreboard scoreobjective = scoreboard.method1409();
          Class8375 score = scoreobjective.method20976(this.objective);

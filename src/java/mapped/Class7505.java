@@ -49,7 +49,7 @@ public class Class7505 implements ArgumentType<Class8439> {
    }
 
    public static Predicate<CachedBlockInfo> method24465(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
-      return ((Class8439)var0.getArgument(var1, Class8439.class)).method29657(((CommandSource)var0.getSource()).method20177().method1408());
+      return ((Class8439)var0.getArgument(var1, Class8439.class)).method29657(((CommandSource)var0.getSource()).getServer().method1408());
    }
 
    public <S> CompletableFuture<Suggestions> listSuggestions(CommandContext<S> var1, SuggestionsBuilder var2) {

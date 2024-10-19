@@ -18,19 +18,19 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class Class7508 {
    public static void method24477(CommandDispatcher<CommandSource> var0) {
       LiteralCommandNode var3 = var0.register(
-         (LiteralArgumentBuilder)Class6099.method18839("msg")
+         (LiteralArgumentBuilder) Commands.method18839("msg")
             .then(
-               Class6099.method18840("targets", Class8700.method31353())
+               Commands.method18840("targets", Class8700.method31353())
                   .then(
-                     Class6099.method18840("message", Class7026.method21755())
+                     Commands.method18840("message", Class7026.method21755())
                         .executes(
                            var0x -> method24478((CommandSource)var0x.getSource(), Class8700.method31354(var0x, "targets"), Class7026.method21756(var0x, "message"))
                         )
                   )
             )
       );
-      var0.register((LiteralArgumentBuilder)Class6099.method18839("tell").redirect(var3));
-      var0.register((LiteralArgumentBuilder)Class6099.method18839("w").redirect(var3));
+      var0.register((LiteralArgumentBuilder) Commands.method18839("tell").redirect(var3));
+      var0.register((LiteralArgumentBuilder) Commands.method18839("w").redirect(var3));
    }
 
    private static int method24478(CommandSource var0, Collection<ServerPlayerEntity> var1, ITextComponent var2) {
@@ -38,7 +38,7 @@ public class Class7508 {
       Entity var6 = var0.method20173();
       Consumer var7;
       if (!(var6 instanceof ServerPlayerEntity)) {
-         var7 = var2x -> var0.method20179(
+         var7 = var2x -> var0.sendFeedback(
                new TranslationTextComponent("commands.message.display.outgoing", var2x, var2)
                   .mergeStyle(new TextFormatting[]{TextFormatting.GRAY, TextFormatting.ITALIC}),
                false

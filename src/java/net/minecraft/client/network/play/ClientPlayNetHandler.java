@@ -39,6 +39,7 @@ import net.minecraft.client.multiplayer.ClientChunkProvider;
 import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.client.multiplayer.ServerList;
 import net.minecraft.client.world.ClientWorld;
+import net.minecraft.command.ISuggestionProvider;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -108,7 +109,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    private final Class4496 field23280 = new Class4496(this);
    private int field23281 = 3;
    private final Random field23282 = new Random();
-   private CommandDispatcher<Class6618> field23283 = new CommandDispatcher();
+   private CommandDispatcher<ISuggestionProvider> field23283 = new CommandDispatcher();
    private final RecipeManager field23284 = new RecipeManager();
    private final UUID field23285 = UUID.randomUUID();
    private Set<RegistryKey<World>> field23286;
@@ -2246,7 +2247,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       return this.field23277;
    }
 
-   public CommandDispatcher<Class6618> method15796() {
+   public CommandDispatcher<ISuggestionProvider> method15796() {
       return this.field23283;
    }
 

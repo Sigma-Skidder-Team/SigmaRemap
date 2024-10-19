@@ -1,39 +1,40 @@
-package mapped;
+package net.minecraft.server;
 
 import com.google.common.collect.Maps;
 import java.util.Collection;
 import java.util.Map;
+
 import javax.annotation.Nullable;
 
+import net.minecraft.server.CustomServerBossInfo;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.server.CustomServerBossInfo;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 
-public class Class8426 {
+public class CustomServerBossInfoManager {
     private final Map<ResourceLocation, CustomServerBossInfo> field36104 = Maps.newHashMap();
 
    @Nullable
-   public CustomServerBossInfo method29600(ResourceLocation var1) {
+   public CustomServerBossInfo get(ResourceLocation var1) {
       return this.field36104.get(var1);
    }
 
-   public CustomServerBossInfo method29601(ResourceLocation var1, ITextComponent var2) {
+   public CustomServerBossInfo add(ResourceLocation var1, ITextComponent var2) {
       CustomServerBossInfo var5 = new CustomServerBossInfo(var1, var2);
       this.field36104.put(var1, var5);
       return var5;
    }
 
-   public void method29602(CustomServerBossInfo var1) {
+   public void remove(CustomServerBossInfo var1) {
       this.field36104.remove(var1.getID());
    }
 
-   public Collection<ResourceLocation> method29603() {
+   public Collection<ResourceLocation> getIDs() {
       return this.field36104.keySet();
    }
 
-   public Collection<CustomServerBossInfo> method29604() {
+   public Collection<CustomServerBossInfo> getBossbars() {
       return this.field36104.values();
    }
 

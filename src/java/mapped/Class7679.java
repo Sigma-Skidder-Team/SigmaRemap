@@ -13,9 +13,9 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class Class7679 {
    public static void method25264(CommandDispatcher<CommandSource> var0) {
       var0.register(
-         (LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("kick").requires(var0x -> var0x.method20129(3)))
+         (LiteralArgumentBuilder)((LiteralArgumentBuilder) Commands.method18839("kick").requires(var0x -> var0x.method20129(3)))
             .then(
-               ((RequiredArgumentBuilder)Class6099.method18840("targets", Class8700.method31353())
+               ((RequiredArgumentBuilder) Commands.method18840("targets", Class8700.method31353())
                      .executes(
                         var0x -> method25265(
                               (CommandSource)var0x.getSource(),
@@ -24,7 +24,7 @@ public class Class7679 {
                            )
                      ))
                   .then(
-                     Class6099.method18840("reason", Class7026.method21755())
+                     Commands.method18840("reason", Class7026.method21755())
                         .executes(
                            var0x -> method25265((CommandSource)var0x.getSource(), Class8700.method31354(var0x, "targets"), Class7026.method21756(var0x, "reason"))
                         )
@@ -36,7 +36,7 @@ public class Class7679 {
    private static int method25265(CommandSource var0, Collection<ServerPlayerEntity> var1, ITextComponent var2) {
       for (ServerPlayerEntity var6 : var1) {
          var6.connection.disconnect(var2);
-         var0.method20179(new TranslationTextComponent("commands.kick.success", var6.getDisplayName(), var2), true);
+         var0.sendFeedback(new TranslationTextComponent("commands.kick.success", var6.getDisplayName(), var2), true);
       }
 
       return var1.size();

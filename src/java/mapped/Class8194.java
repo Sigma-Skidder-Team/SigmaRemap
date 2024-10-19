@@ -9,6 +9,7 @@ import java.util.Collection;
 import java.util.Collections;
 
 import net.minecraft.command.CommandSource;
+import net.minecraft.command.arguments.ResourceLocationArgument;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -19,56 +20,56 @@ public class Class8194 {
 
    public static void method28495(CommandDispatcher<CommandSource> var0) {
       var0.register(
-         (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("recipe").requires(var0x -> var0x.method20129(2)))
+         (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder) Commands.method18839("recipe").requires(var0x -> var0x.method20129(2)))
                .then(
-                  Class6099.method18839("give")
+                  Commands.method18839("give")
                      .then(
-                        ((RequiredArgumentBuilder)Class6099.method18840("targets", Class8700.method31353())
+                        ((RequiredArgumentBuilder) Commands.method18840("targets", Class8700.method31353())
                               .then(
-                                 Class6099.method18840("recipe", Class8303.method29031())
+                                 Commands.method18840("recipe", ResourceLocationArgument.method29031())
                                     .suggests(Class9222.field42454)
                                     .executes(
                                        var0x -> method28496(
                                              (CommandSource)var0x.getSource(),
                                              Class8700.method31354(var0x, "targets"),
-                                             Collections.<IRecipe<?>>singleton(Class8303.method29033(var0x, "recipe"))
+                                             Collections.<IRecipe<?>>singleton(ResourceLocationArgument.method29033(var0x, "recipe"))
                                           )
                                     )
                               ))
                            .then(
-                              Class6099.method18839("*")
+                              Commands.method18839("*")
                                  .executes(
                                     var0x -> method28496(
                                           (CommandSource)var0x.getSource(),
                                           Class8700.method31354(var0x, "targets"),
-                                          ((CommandSource)var0x.getSource()).method20177().method1407().method1036()
+                                          ((CommandSource)var0x.getSource()).getServer().method1407().method1036()
                                        )
                                  )
                            )
                      )
                ))
             .then(
-               Class6099.method18839("take")
+               Commands.method18839("take")
                   .then(
-                     ((RequiredArgumentBuilder)Class6099.method18840("targets", Class8700.method31353())
+                     ((RequiredArgumentBuilder) Commands.method18840("targets", Class8700.method31353())
                            .then(
-                              Class6099.method18840("recipe", Class8303.method29031())
+                              Commands.method18840("recipe", ResourceLocationArgument.method29031())
                                  .suggests(Class9222.field42454)
                                  .executes(
                                     var0x -> method28497(
                                           (CommandSource)var0x.getSource(),
                                           Class8700.method31354(var0x, "targets"),
-                                          Collections.<IRecipe<?>>singleton(Class8303.method29033(var0x, "recipe"))
+                                          Collections.<IRecipe<?>>singleton(ResourceLocationArgument.method29033(var0x, "recipe"))
                                        )
                                  )
                            ))
                         .then(
-                           Class6099.method18839("*")
+                           Commands.method18839("*")
                               .executes(
                                  var0x -> method28497(
                                        (CommandSource)var0x.getSource(),
                                        Class8700.method31354(var0x, "targets"),
-                                       ((CommandSource)var0x.getSource()).method20177().method1407().method1036()
+                                       ((CommandSource)var0x.getSource()).getServer().method1407().method1036()
                                     )
                               )
                         )
@@ -86,9 +87,9 @@ public class Class8194 {
 
       if (var5 != 0) {
          if (var1.size() != 1) {
-            var0.method20179(new TranslationTextComponent("commands.recipe.give.success.multiple", var2.size(), var1.size()), true);
+            var0.sendFeedback(new TranslationTextComponent("commands.recipe.give.success.multiple", var2.size(), var1.size()), true);
          } else {
-            var0.method20179(
+            var0.sendFeedback(
                new TranslationTextComponent("commands.recipe.give.success.single", var2.size(), ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()), true
             );
          }
@@ -108,9 +109,9 @@ public class Class8194 {
 
       if (var5 != 0) {
          if (var1.size() != 1) {
-            var0.method20179(new TranslationTextComponent("commands.recipe.take.success.multiple", var2.size(), var1.size()), true);
+            var0.sendFeedback(new TranslationTextComponent("commands.recipe.take.success.multiple", var2.size(), var1.size()), true);
          } else {
-            var0.method20179(
+            var0.sendFeedback(
                new TranslationTextComponent("commands.recipe.take.success.single", var2.size(), ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()), true
             );
          }

@@ -27,13 +27,13 @@ public class Class9175 {
 
    public static void method34285(CommandDispatcher<CommandSource> var0) {
       LiteralCommandNode var3 = var0.register(
-         (LiteralArgumentBuilder)Class6099.method18839("teammsg")
+         (LiteralArgumentBuilder) Commands.method18839("teammsg")
             .then(
-               Class6099.method18840("message", Class7026.method21755())
+               Commands.method18840("message", Class7026.method21755())
                   .executes(var0x -> method34286((CommandSource)var0x.getSource(), Class7026.method21756(var0x, "message")))
             )
       );
-      var0.register((LiteralArgumentBuilder)Class6099.method18839("tm").redirect(var3));
+      var0.register((LiteralArgumentBuilder) Commands.method18839("tm").redirect(var3));
    }
 
    private static int method34286(CommandSource var0, ITextComponent var1) throws CommandSyntaxException {
@@ -41,7 +41,7 @@ public class Class9175 {
       ScorePlayerTeam var5 = (ScorePlayerTeam)var4.getTeam();
       if (var5 != null) {
          IFormattableTextComponent var6 = var5.method28569().mergeStyle(field42128);
-         List<ServerPlayerEntity> var7 = var0.method20177().getPlayerList().getPlayers();
+         List<ServerPlayerEntity> var7 = var0.getServer().getPlayerList().getPlayers();
 
          for (ServerPlayerEntity var9 : var7) {
             if (var9 != var4) {

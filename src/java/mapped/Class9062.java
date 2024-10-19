@@ -12,6 +12,7 @@ import java.util.Collection;
 import java.util.concurrent.CompletableFuture;
 
 import net.minecraft.command.CommandSource;
+import net.minecraft.command.ISuggestionProvider;
 import net.minecraft.scoreboard.ScorePlayerTeam;
 import net.minecraft.scoreboard.ServerScoreboard;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -26,7 +27,7 @@ public class Class9062 implements ArgumentType<String> {
 
    public static ScorePlayerTeam method33747(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
       String var4 = (String)var0.getArgument(var1, String.class);
-      ServerScoreboard var5 = ((CommandSource)var0.getSource()).method20177().method1409();
+      ServerScoreboard var5 = ((CommandSource)var0.getSource()).getServer().method1409();
       ScorePlayerTeam var6 = var5.method20990(var4);
       if (var6 != null) {
          return var6;
@@ -40,7 +41,7 @@ public class Class9062 implements ArgumentType<String> {
    }
 
    public <S> CompletableFuture<Suggestions> listSuggestions(CommandContext<S> var1, SuggestionsBuilder var2) {
-      return !(var1.getSource() instanceof Class6618) ? Suggestions.empty() : Class6618.method20147(((Class6618)var1.getSource()).method20126(), var2);
+      return !(var1.getSource() instanceof ISuggestionProvider) ? Suggestions.empty() : ISuggestionProvider.method20147(((ISuggestionProvider)var1.getSource()).method20126(), var2);
    }
 
    public Collection<String> getExamples() {

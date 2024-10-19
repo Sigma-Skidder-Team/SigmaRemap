@@ -107,7 +107,7 @@ public class Class8429 {
       if (!this.field36110) {
          return this.method29620(var1);
       } else if (this.field36118 != null) {
-         ServerPlayerEntity var10 = var1.method20177().getPlayerList().method19465(this.field36118);
+         ServerPlayerEntity var10 = var1.getServer().getPlayerList().method19465(this.field36118);
          return (List<? extends Entity>)(var10 != null ? Lists.newArrayList(new ServerPlayerEntity[]{var10}) : Collections.emptyList());
       } else if (this.field36119 == null) {
          Vector3d var9 = this.field36114.apply(var1.method20171());
@@ -115,7 +115,7 @@ public class Class8429 {
          if (!this.field36117) {
             ArrayList var12 = Lists.newArrayList();
             if (!this.method29614()) {
-               for (ServerWorld var8 : var1.method20177().method1320()) {
+               for (ServerWorld var8 : var1.getServer().method1320()) {
                   this.method29618(var12, var8, var9, var11);
                }
             } else {
@@ -129,7 +129,7 @@ public class Class8429 {
                : Collections.emptyList());
          }
       } else {
-         for (ServerWorld var5 : var1.method20177().method1320()) {
+         for (ServerWorld var5 : var1.getServer().method1320()) {
             Entity var6 = var5.getEntityByUuid(this.field36119);
             if (var6 != null) {
                return Lists.newArrayList(new Entity[]{var6});
@@ -161,7 +161,7 @@ public class Class8429 {
    public List<ServerPlayerEntity> method29620(CommandSource var1) throws CommandSyntaxException {
       this.method29615(var1);
       if (this.field36118 != null) {
-         ServerPlayerEntity var10 = var1.method20177().getPlayerList().method19465(this.field36118);
+         ServerPlayerEntity var10 = var1.getServer().getPlayerList().method19465(this.field36118);
          return (List<ServerPlayerEntity>)(var10 != null ? Lists.newArrayList(new ServerPlayerEntity[]{var10}) : Collections.<ServerPlayerEntity>emptyList());
       } else if (this.field36119 == null) {
          Vector3d var9 = this.field36114.apply(var1.method20171());
@@ -180,7 +180,7 @@ public class Class8429 {
             if (!this.method29614()) {
                var6 = Lists.newArrayList();
 
-               for (ServerPlayerEntity var8 : var1.method20177().getPlayerList().getPlayers()) {
+               for (ServerPlayerEntity var8 : var1.getServer().getPlayerList().getPlayers()) {
                   if (var5.test(var8)) {
                      var6.add(var8);
                   }
@@ -192,7 +192,7 @@ public class Class8429 {
             return this.<ServerPlayerEntity>method29622(var9, (List<ServerPlayerEntity>)var6);
          }
       } else {
-         ServerPlayerEntity var4 = var1.method20177().getPlayerList().method19489(this.field36119);
+         ServerPlayerEntity var4 = var1.getServer().getPlayerList().method19489(this.field36119);
          return (List<ServerPlayerEntity>)(var4 != null ? Lists.newArrayList(new ServerPlayerEntity[]{var4}) : Collections.<ServerPlayerEntity>emptyList());
       }
    }

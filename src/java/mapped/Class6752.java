@@ -8,6 +8,7 @@ import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.Collection;
 
 import net.minecraft.command.CommandSource;
+import net.minecraft.command.ISuggestionProvider;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class6752 {
@@ -15,13 +16,13 @@ public class Class6752 {
 
    public static void method20581(CommandDispatcher<CommandSource> var0) {
       var0.register(
-         (LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("op").requires(var0x -> var0x.method20129(3)))
+         (LiteralArgumentBuilder)((LiteralArgumentBuilder) Commands.method18839("op").requires(var0x -> var0x.method20129(3)))
             .then(
-               Class6099.method18840("targets", Class7713.method25483())
+               Commands.method18840("targets", Class7713.method25483())
                   .suggests(
                      (var0x, var1) -> {
-                        Class6395 var4 = ((CommandSource)var0x.getSource()).method20177().getPlayerList();
-                        return Class6618.method20148(
+                        Class6395 var4 = ((CommandSource)var0x.getSource()).getServer().getPlayerList();
+                        return ISuggestionProvider.method20148(
                            var4.getPlayers()
                               .stream()
                               .filter(var1x -> !var4.canSendCommands(var1x.getGameProfile()))
@@ -36,14 +37,14 @@ public class Class6752 {
    }
 
    private static int method20582(CommandSource var0, Collection<GameProfile> var1) throws CommandSyntaxException {
-      Class6395 var4 = var0.method20177().getPlayerList();
+      Class6395 var4 = var0.getServer().getPlayerList();
       int var5 = 0;
 
       for (GameProfile var7 : var1) {
          if (!var4.canSendCommands(var7)) {
             var4.method19430(var7);
             var5++;
-            var0.method20179(new TranslationTextComponent("commands.op.success", ((GameProfile)var1.iterator().next()).getName()), true);
+            var0.sendFeedback(new TranslationTextComponent("commands.op.success", ((GameProfile)var1.iterator().next()).getName()), true);
          }
       }
 

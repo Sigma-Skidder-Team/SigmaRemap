@@ -14,7 +14,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class Class9160 {
    public static void method34194(CommandDispatcher<CommandSource> var0) {
       var0.register(
-         (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("spawnpoint").requires(var0x -> var0x.method20129(2)))
+         (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder) Commands.method18839("spawnpoint").requires(var0x -> var0x.method20129(2)))
                .executes(
                   var0x -> method34195(
                         (CommandSource)var0x.getSource(),
@@ -24,7 +24,7 @@ public class Class9160 {
                      )
                ))
             .then(
-               ((RequiredArgumentBuilder)Class6099.method18840("targets", Class8700.method31353())
+               ((RequiredArgumentBuilder) Commands.method18840("targets", Class8700.method31353())
                      .executes(
                         var0x -> method34195(
                               (CommandSource)var0x.getSource(),
@@ -34,14 +34,14 @@ public class Class9160 {
                            )
                      ))
                   .then(
-                     ((RequiredArgumentBuilder)Class6099.method18840("pos", Class6849.method20826())
+                     ((RequiredArgumentBuilder) Commands.method18840("pos", Class6849.method20826())
                            .executes(
                               var0x -> method34195(
                                     (CommandSource)var0x.getSource(), Class8700.method31354(var0x, "targets"), Class6849.method20828(var0x, "pos"), 0.0F
                                  )
                            ))
                         .then(
-                           Class6099.method18840("angle", Class9076.method33816())
+                           Commands.method18840("angle", Class9076.method33816())
                               .executes(
                                  var0x -> method34195(
                                        (CommandSource)var0x.getSource(),
@@ -65,14 +65,14 @@ public class Class9160 {
 
       String var9 = var6.getLocation().toString();
       if (var1.size() != 1) {
-         var0.method20179(
+         var0.sendFeedback(
             new TranslationTextComponent(
                "commands.spawnpoint.success.multiple", var2.getX(), var2.getY(), var2.getZ(), var3, var9, var1.size()
             ),
             true
          );
       } else {
-         var0.method20179(
+         var0.sendFeedback(
             new TranslationTextComponent(
                "commands.spawnpoint.success.single",
                var2.getX(),

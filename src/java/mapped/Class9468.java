@@ -12,6 +12,7 @@ import java.util.Collection;
 import java.util.concurrent.CompletableFuture;
 
 import net.minecraft.command.CommandSource;
+import net.minecraft.command.ISuggestionProvider;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -36,7 +37,7 @@ public class Class9468 implements ArgumentType<Effect> {
    }
 
    public <S> CompletableFuture<Suggestions> listSuggestions(CommandContext<S> var1, SuggestionsBuilder var2) {
-      return Class6618.method20141(Registry.EFFECTS.method9190(), var2);
+      return ISuggestionProvider.suggestIterable(Registry.EFFECTS.method9190(), var2);
    }
 
    public Collection<String> getExamples() {

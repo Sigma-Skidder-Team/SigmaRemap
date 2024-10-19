@@ -16,6 +16,7 @@ import io.netty.buffer.Unpooled;
 import it.unimi.dsi.fastutil.longs.LongIterator;
 import net.minecraft.block.Block;
 import net.minecraft.crash.ReportedException;
+import net.minecraft.server.CustomServerBossInfoManager;
 import net.minecraft.util.Util;
 import net.minecraft.command.CommandSource;
 import net.minecraft.crash.CrashReport;
@@ -143,7 +144,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    private final ResourcePackList resourcePacks;
    private final ServerScoreboard field1258 = new ServerScoreboard(this);
    private CommandStorage field1259;
-   private final Class8426 field1260 = new Class8426();
+   private final CustomServerBossInfoManager field1260 = new CustomServerBossInfoManager();
    private final FunctionManager functionManager;
    private final FrameTimer field1262 = new FrameTimer();
    private boolean field1263;
@@ -276,7 +277,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
 
       this.getPlayerList().method19447(var16);
       if (this.field_240768_i_.method20093() != null) {
-         this.method1414().method29606(this.field_240768_i_.method20093());
+         this.getCustomBossEvents().method29606(this.field_240768_i_.method20093());
       }
 
       for (Entry var29 : var12.method9191()) {
@@ -391,6 +392,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       this.serverTime = Util.milliTime();
       serverChunkProvider.registerTicket(TicketType.START, new ChunkPos(spawnPoint), 11, Unit.INSTANCE);
       System.out.println("MinecraftServer.loadInitialChunks() 1");
+
       while (serverChunkProvider.getLoadedChunksCount() != 441) {
          System.out.println("while loop 1");
          this.serverTime = Util.milliTime() + 10L;
@@ -469,7 +471,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       ServerWorld var9 = this.getServerWorld();
       IServerWorldInfo var10 = this.field_240768_i_.method20098();
       var10.method20068(var9.getWorldBorder().method24556());
-      this.field_240768_i_.method20094(this.method1414().method29605());
+      this.field_240768_i_.method20094(this.getCustomBossEvents().method29605());
       this.field1211.method8001(this.field_240767_f_, this.field_240768_i_, this.getPlayerList().method19479());
       return var6;
    }
@@ -1200,7 +1202,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
          return p_240780_1_.stream().map(this.resourcePacks::getPackInfo).filter(Objects::nonNull).map(ResourcePackInfo::getResourcePack).collect(ImmutableList.toImmutableList());
       }, this).thenCompose((p_240775_1_) ->
       {
-         return DataPackRegistries.func_240961_a_(p_240775_1_, this.isDedicatedServer() ? Commands.DEDICATED : Commands.INTEGRATED, this.getFunctionLevel(), this.backgroundExecutor, this);
+         return DataPackRegistries.func_240961_a_(p_240775_1_, this.isDedicatedServer() ? Commands.EnvironmentType.DEDICATED : Commands.EnvironmentType.INTEGRATED, this.getFunctionLevel(), this.backgroundExecutor, this);
       }).thenAcceptAsync((p_240782_2_) ->
       {
          this.resourceManager.close();
@@ -1265,7 +1267,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
 
    public void method1401(CommandSource var1) {
       if (this.method1415()) {
-         Class6395 var4 = var1.method20177().getPlayerList();
+         Class6395 var4 = var1.getServer().getPlayerList();
          Class4531 var5 = var4.method19468();
 
          for (ServerPlayerEntity var7 : Lists.newArrayList(var4.getPlayers())) {
@@ -1280,7 +1282,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       return this.resourcePacks;
    }
 
-   public Class6099 getCommandManager() {
+   public Commands getCommandManager() {
       return this.resourceManager.method7335();
    }
 
@@ -1332,7 +1334,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       return this.getServerWorld().getGameRules();
    }
 
-   public Class8426 method1414() {
+   public CustomServerBossInfoManager getCustomBossEvents() {
       return this.field1260;
    }
 

@@ -174,7 +174,7 @@ public abstract class Class6395 {
       }
 
       var12.method6921(var2);
-      this.field27990.method1414().method29607(var2);
+      this.field27990.getCustomBossEvents().method29607(var2);
       this.method19472(var2, var12);
       if (!this.field27990.method1344().isEmpty()) {
          var2.method2806(this.field27990.method1344(), this.field27990.method1345());
@@ -296,7 +296,7 @@ public abstract class Class6395 {
       var4.method6934(var1);
       var1.method2823().method27403();
       this.field27991.remove(var1);
-      this.field27990.method1414().method29608(var1);
+      this.field27990.getCustomBossEvents().method29608(var1);
       UUID var8 = var1.getUniqueID();
       ServerPlayerEntity var9 = this.field27992.get(var8);
       if (var9 == var1) {

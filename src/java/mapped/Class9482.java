@@ -17,7 +17,7 @@ public class Class9482 {
    private static final Logger field44075 = LogManager.getLogger();
 
    public static void method36605(Collection<String> var0, CommandSource var1) {
-      var1.method20177().func_240780_a_(var0).exceptionally(var1x -> {
+      var1.getServer().func_240780_a_(var0).exceptionally(var1x -> {
          field44075.warn("Failed to execute reload", var1x);
          var1.method20181(new TranslationTextComponent("commands.reload.failure"));
          return null;
@@ -40,14 +40,14 @@ public class Class9482 {
 
    public static void method36607(CommandDispatcher<CommandSource> var0) {
       var0.register(
-         (LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("reload").requires(var0x -> var0x.method20129(2))).executes(var0x -> {
+         (LiteralArgumentBuilder)((LiteralArgumentBuilder) Commands.method18839("reload").requires(var0x -> var0x.method20129(2))).executes(var0x -> {
             CommandSource var3 = (CommandSource)var0x.getSource();
-            MinecraftServer var4 = var3.method20177();
+            MinecraftServer var4 = var3.getServer();
             ResourcePackList var5 = var4.method1402();
             IServerConfiguration var6 = var4.func_240793_aU_();
             Collection var7 = var5.func_232621_d_();
             Collection var8 = method36606(var5, var6, var7);
-            var3.method20179(new TranslationTextComponent("commands.reload.success"), true);
+            var3.sendFeedback(new TranslationTextComponent("commands.reload.success"), true);
             method36605(var8, var3);
             return 0;
          })

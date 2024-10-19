@@ -12,19 +12,19 @@ public class Class8971 {
 
    public static void method32923(CommandDispatcher<CommandSource> var0) {
       var0.register(
-         (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("save-all").requires(var0x -> var0x.method20129(4)))
+         (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder) Commands.method18839("save-all").requires(var0x -> var0x.method20129(4)))
                .executes(var0x -> method32924((CommandSource)var0x.getSource(), false)))
-            .then(Class6099.method18839("flush").executes(var0x -> method32924((CommandSource)var0x.getSource(), true)))
+            .then(Commands.method18839("flush").executes(var0x -> method32924((CommandSource)var0x.getSource(), true)))
       );
    }
 
    private static int method32924(CommandSource var0, boolean var1) throws CommandSyntaxException {
-      var0.method20179(new TranslationTextComponent("commands.save.saving"), false);
-      MinecraftServer var4 = var0.method20177();
+      var0.sendFeedback(new TranslationTextComponent("commands.save.saving"), false);
+      MinecraftServer var4 = var0.getServer();
       var4.getPlayerList().saveAllPlayerData();
       boolean var5 = var4.method1291(true, var1, true);
       if (var5) {
-         var0.method20179(new TranslationTextComponent("commands.save.success"), true);
+         var0.sendFeedback(new TranslationTextComponent("commands.save.success"), true);
          return 1;
       } else {
          throw field40555.create();

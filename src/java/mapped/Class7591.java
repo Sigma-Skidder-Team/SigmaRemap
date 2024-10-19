@@ -13,6 +13,7 @@ import java.util.Set;
 import java.util.function.Supplier;
 
 import net.minecraft.command.CommandSource;
+import net.minecraft.command.ISuggestionProvider;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class7591 implements ArgumentType<Class8985> {
@@ -26,7 +27,7 @@ public class Class7591 implements ArgumentType<Class8985> {
       } catch (CommandSyntaxException var7) {
       }
 
-      return var5.method30314(var1, var1x -> Class6618.method20147(var0.getSource().method20124(), var1x));
+      return var5.method30314(var1, var1x -> ISuggestionProvider.method20147(var0.getSource().method20124(), var1x));
    };
    private static final Collection<String> field32591 = Arrays.asList("Player", "0123", "*", "@e");
    private static final SimpleCommandExceptionType field32592 = new SimpleCommandExceptionType(new TranslationTextComponent("argument.scoreHolder.empty"));
@@ -45,7 +46,7 @@ public class Class7591 implements ArgumentType<Class8985> {
    }
 
    public static Collection<String> method24860(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
-      return method24861(var0, var1, ((CommandSource)var0.getSource()).method20177().method1409()::method20984);
+      return method24861(var0, var1, ((CommandSource)var0.getSource()).getServer().method1409()::method20984);
    }
 
    public static Collection<String> method24861(CommandContext<CommandSource> var0, String var1, Supplier<Collection<String>> var2) throws CommandSyntaxException {

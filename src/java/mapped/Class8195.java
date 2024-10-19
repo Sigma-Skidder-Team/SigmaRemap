@@ -23,6 +23,6 @@ public final class Class8195 implements Class8196 {
    public ArgumentBuilder<CommandSource, ?> method28504(
            ArgumentBuilder<CommandSource, ?> var1, Function<ArgumentBuilder<CommandSource, ?>, ArgumentBuilder<CommandSource, ?>> var2
    ) {
-      return var1.then(Class6099.method18839("entity").then((ArgumentBuilder)var2.apply(Class6099.method18840(this.field35222, Class8700.method31345()))));
+      return var1.then(Commands.method18839("entity").then((ArgumentBuilder)var2.apply(Commands.method18840(this.field35222, Class8700.method31345()))));
    }
 }

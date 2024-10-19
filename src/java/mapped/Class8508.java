@@ -20,12 +20,12 @@ public class Class8508 {
 
    public static void method30139(CommandDispatcher<CommandSource> var0) {
       var0.register(
-         (LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("ban").requires(var0x -> var0x.method20129(3)))
+         (LiteralArgumentBuilder)((LiteralArgumentBuilder) Commands.method18839("ban").requires(var0x -> var0x.method20129(3)))
             .then(
-               ((RequiredArgumentBuilder)Class6099.method18840("targets", Class7713.method25483())
+               ((RequiredArgumentBuilder) Commands.method18840("targets", Class7713.method25483())
                      .executes(var0x -> method30140((CommandSource)var0x.getSource(), Class7713.method25482(var0x, "targets"), (ITextComponent)null)))
                   .then(
-                     Class6099.method18840("reason", Class7026.method21755())
+                     Commands.method18840("reason", Class7026.method21755())
                         .executes(
                            var0x -> method30140((CommandSource)var0x.getSource(), Class7713.method25482(var0x, "targets"), Class7026.method21756(var0x, "reason"))
                         )
@@ -35,7 +35,7 @@ public class Class8508 {
    }
 
    private static int method30140(CommandSource var0, Collection<GameProfile> var1, ITextComponent var2) throws CommandSyntaxException {
-      Class4528 var5 = var0.method20177().getPlayerList().method19461();
+      Class4528 var5 = var0.getServer().getPlayerList().method19461();
       int var6 = 0;
 
       for (GameProfile var8 : var1) {
@@ -43,8 +43,8 @@ public class Class8508 {
             Class6786 var9 = new Class6786(var8, (Date)null, var0.method20170(), (Date)null, var2 != null ? var2.getString() : null);
             var5.method14436(var9);
             var6++;
-            var0.method20179(new TranslationTextComponent("commands.ban.success", TextComponentUtils.getDisplayName(var8), var9.method20683()), true);
-            ServerPlayerEntity var10 = var0.method20177().getPlayerList().method19489(var8.getId());
+            var0.sendFeedback(new TranslationTextComponent("commands.ban.success", TextComponentUtils.getDisplayName(var8), var9.method20683()), true);
+            ServerPlayerEntity var10 = var0.getServer().getPlayerList().method19489(var8.getId());
             if (var10 != null) {
                var10.connection.disconnect(new TranslationTextComponent("multiplayer.disconnect.banned"));
             }

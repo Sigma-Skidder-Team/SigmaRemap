@@ -418,7 +418,7 @@ public class CreateWorldScreen extends Screen {
       DatapackCodec var6 = new DatapackCodec(var4, var5);
       if (!var4.equals(this.field7077.method26104())) {
          this.mc.method1641(() -> this.mc.displayGuiScreen(new DirtMessageScreen(new TranslationTextComponent("dataPack.validation.working"))));
-         DataPackRegistries.func_240961_a_(var1.func_232623_f_(), Commands.INTEGRATED, 2, Util.getServerExecutor(), this.mc)
+         DataPackRegistries.func_240961_a_(var1.func_232623_f_(), Commands.EnvironmentType.INTEGRATED, 2, Util.getServerExecutor(), this.mc)
             .handle(
                (var2, var3) -> {
                   if (var3 == null) {

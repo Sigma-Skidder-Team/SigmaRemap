@@ -14,6 +14,7 @@ import java.util.Collection;
 import java.util.concurrent.CompletableFuture;
 
 import net.minecraft.command.CommandSource;
+import net.minecraft.command.ISuggestionProvider;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -58,7 +59,7 @@ public class Class8371 implements ArgumentType<Class9008> {
          }
       }
 
-      return Class6618.method20147(var5, var2);
+      return ISuggestionProvider.method20147(var5, var2);
    }
 
    public <T> String method29324(Class49<T> var1, T var2) {

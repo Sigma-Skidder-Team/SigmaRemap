@@ -34,19 +34,19 @@ public class Class8456 {
 
    public static void method29738(CommandDispatcher<CommandSource> var0) {
       var0.register(
-         (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("debug")
+         (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder) Commands.method18839("debug")
                      .requires(var0x -> var0x.method20129(3)))
-                  .then(Class6099.method18839("start").executes(var0x -> method29739((CommandSource)var0x.getSource()))))
-               .then(Class6099.method18839("stop").executes(var0x -> method29740((CommandSource)var0x.getSource()))))
-            .then(Class6099.method18839("report").executes(var0x -> method29741((CommandSource)var0x.getSource())))
+                  .then(Commands.method18839("start").executes(var0x -> method29739((CommandSource)var0x.getSource()))))
+               .then(Commands.method18839("stop").executes(var0x -> method29740((CommandSource)var0x.getSource()))))
+            .then(Commands.method18839("report").executes(var0x -> method29741((CommandSource)var0x.getSource())))
       );
    }
 
    private static int method29739(CommandSource var0) throws CommandSyntaxException {
-      MinecraftServer var3 = var0.method20177();
+      MinecraftServer var3 = var0.getServer();
       if (!var3.method1430()) {
          var3.method1431();
-         var0.method20179(new TranslationTextComponent("commands.debug.started", "Started the debug profiler. Type '/debug stop' to stop it."), true);
+         var0.sendFeedback(new TranslationTextComponent("commands.debug.started", "Started the debug profiler. Type '/debug stop' to stop it."), true);
          return 0;
       } else {
          throw field36265.create();
@@ -54,14 +54,14 @@ public class Class8456 {
    }
 
    private static int method29740(CommandSource var0) throws CommandSyntaxException {
-      MinecraftServer var3 = var0.method20177();
+      MinecraftServer var3 = var0.getServer();
       if (var3.method1430()) {
          IProfileResult var4 = var3.method1432();
          File var5 = new File(var3.method1316("debug"), "profile-results-" + new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss").format(new Date()) + ".txt");
          var4.method25627(var5);
          float var6 = (float)var4.method25632() / 1.0E9F;
          float var7 = (float)var4.method25633() / var6;
-         var0.method20179(
+         var0.sendFeedback(
             new TranslationTextComponent("commands.debug.stopped", String.format(Locale.ROOT, "%.2f", var6), var4.method25633(), String.format("%.2f", var7)),
             true
          );
@@ -72,7 +72,7 @@ public class Class8456 {
    }
 
    private static int method29741(CommandSource var0) {
-      MinecraftServer var3 = var0.method20177();
+      MinecraftServer var3 = var0.getServer();
       String var4 = "debug-report-" + new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss").format(new Date());
 
       try {
@@ -89,7 +89,7 @@ public class Class8456 {
             var3.method1422(var6);
          }
 
-         var0.method20179(new TranslationTextComponent("commands.debug.reportSaved", var4), false);
+         var0.sendFeedback(new TranslationTextComponent("commands.debug.reportSaved", var4), false);
          return 1;
       } catch (IOException var20) {
          field36263.error("Failed to save debug dump", var20);

@@ -20,14 +20,14 @@ public class Class8910 {
 
    public static void method32556(CommandDispatcher<CommandSource> var0) {
       LiteralCommandNode var3 = var0.register(
-         (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("experience")
+         (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder) Commands.method18839("experience")
                      .requires(var0x -> var0x.method20129(2)))
                   .then(
-                     Class6099.method18839("add")
+                     Commands.method18839("add")
                         .then(
-                           Class6099.method18840("targets", Class8700.method31353())
+                           Commands.method18840("targets", Class8700.method31353())
                               .then(
-                                 ((RequiredArgumentBuilder)((RequiredArgumentBuilder)Class6099.method18840("amount", IntegerArgumentType.integer())
+                                 ((RequiredArgumentBuilder)((RequiredArgumentBuilder) Commands.method18840("amount", IntegerArgumentType.integer())
                                           .executes(
                                              var0x -> method32558(
                                                    (CommandSource)var0x.getSource(),
@@ -37,7 +37,7 @@ public class Class8910 {
                                                 )
                                           ))
                                        .then(
-                                          Class6099.method18839("points")
+                                          Commands.method18839("points")
                                              .executes(
                                                 var0x -> method32558(
                                                       (CommandSource)var0x.getSource(),
@@ -48,7 +48,7 @@ public class Class8910 {
                                              )
                                        ))
                                     .then(
-                                       Class6099.method18839("levels")
+                                       Commands.method18839("levels")
                                           .executes(
                                              var0x -> method32558(
                                                    (CommandSource)var0x.getSource(),
@@ -62,11 +62,11 @@ public class Class8910 {
                         )
                   ))
                .then(
-                  Class6099.method18839("set")
+                  Commands.method18839("set")
                      .then(
-                        Class6099.method18840("targets", Class8700.method31353())
+                        Commands.method18840("targets", Class8700.method31353())
                            .then(
-                              ((RequiredArgumentBuilder)((RequiredArgumentBuilder)Class6099.method18840("amount", IntegerArgumentType.integer(0))
+                              ((RequiredArgumentBuilder)((RequiredArgumentBuilder) Commands.method18840("amount", IntegerArgumentType.integer(0))
                                        .executes(
                                           var0x -> method32559(
                                                 (CommandSource)var0x.getSource(),
@@ -76,7 +76,7 @@ public class Class8910 {
                                              )
                                        ))
                                     .then(
-                                       Class6099.method18839("points")
+                                       Commands.method18839("points")
                                           .executes(
                                              var0x -> method32559(
                                                    (CommandSource)var0x.getSource(),
@@ -87,7 +87,7 @@ public class Class8910 {
                                           )
                                     ))
                                  .then(
-                                    Class6099.method18839("levels")
+                                    Commands.method18839("levels")
                                        .executes(
                                           var0x -> method32559(
                                                 (CommandSource)var0x.getSource(),
@@ -101,26 +101,26 @@ public class Class8910 {
                      )
                ))
             .then(
-               Class6099.method18839("query")
+               Commands.method18839("query")
                   .then(
-                     ((RequiredArgumentBuilder)Class6099.method18840("targets", Class8700.method31351())
+                     ((RequiredArgumentBuilder) Commands.method18840("targets", Class8700.method31351())
                            .then(
-                              Class6099.method18839("points")
+                              Commands.method18839("points")
                                  .executes(var0x -> method32557((CommandSource)var0x.getSource(), Class8700.method31352(var0x, "targets"), Class2319.field15891))
                            ))
                         .then(
-                           Class6099.method18839("levels")
+                           Commands.method18839("levels")
                               .executes(var0x -> method32557((CommandSource)var0x.getSource(), Class8700.method31352(var0x, "targets"), Class2319.field15892))
                         )
                   )
             )
       );
-      var0.register((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("xp").requires(var0x -> var0x.method20129(2))).redirect(var3));
+      var0.register((LiteralArgumentBuilder)((LiteralArgumentBuilder) Commands.method18839("xp").requires(var0x -> var0x.method20129(2))).redirect(var3));
    }
 
    private static int method32557(CommandSource var0, ServerPlayerEntity var1, Class2319 var2) {
       int var5 = Class2319.method9097(var2).applyAsInt(var1);
-      var0.method20179(new TranslationTextComponent("commands.experience.query." + var2.field15895, var1.getDisplayName(), var5), false);
+      var0.sendFeedback(new TranslationTextComponent("commands.experience.query." + var2.field15895, var1.getDisplayName(), var5), false);
       return var5;
    }
 
@@ -130,9 +130,9 @@ public class Class8910 {
       }
 
       if (var1.size() != 1) {
-         var0.method20179(new TranslationTextComponent("commands.experience.add." + var3.field15895 + ".success.multiple", var2, var1.size()), true);
+         var0.sendFeedback(new TranslationTextComponent("commands.experience.add." + var3.field15895 + ".success.multiple", var2, var1.size()), true);
       } else {
-         var0.method20179(
+         var0.sendFeedback(
             new TranslationTextComponent(
                "commands.experience.add." + var3.field15895 + ".success.single", var2, ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()
             ),
@@ -154,9 +154,9 @@ public class Class8910 {
 
       if (var6 != 0) {
          if (var1.size() != 1) {
-            var0.method20179(new TranslationTextComponent("commands.experience.set." + var3.field15895 + ".success.multiple", var2, var1.size()), true);
+            var0.sendFeedback(new TranslationTextComponent("commands.experience.set." + var3.field15895 + ".success.multiple", var2, var1.size()), true);
          } else {
-            var0.method20179(
+            var0.sendFeedback(
                new TranslationTextComponent(
                   "commands.experience.set." + var3.field15895 + ".success.single", var2, ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()
                ),

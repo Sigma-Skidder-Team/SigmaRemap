@@ -13,6 +13,7 @@ import java.util.function.BiConsumer;
 import java.util.function.Predicate;
 
 import net.minecraft.advancements.Advancement;
+import net.minecraft.command.ISuggestionProvider;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -152,7 +153,7 @@ public class Class9748 {
          method38218("sort", var0 -> {
             int var3 = var0.method30277().getCursor();
             String var4 = var0.method30277().readUnquotedString();
-            var0.method30313((var0x, var1) -> Class6618.method20147(Arrays.<String>asList("nearest", "furthest", "random", "arbitrary"), var0x));
+            var0.method30313((var0x, var1) -> ISuggestionProvider.method20147(Arrays.<String>asList("nearest", "furthest", "random", "arbitrary"), var0x));
             BiConsumer var7;
             switch (var4) {
                case "nearest":
@@ -252,11 +253,11 @@ public class Class9748 {
          }, var0 -> !var0.method30327(), new TranslationTextComponent("argument.entity.options.team.description"));
          method38218("type", var0 -> {
             var0.method30313((var1, var2) -> {
-               Class6618.method20140(Registry.ENTITY_TYPE.method9190(), var1, String.valueOf('!'));
-               Class6618.method20140(Class8613.method30861().method27137(), var1, "!#");
+               ISuggestionProvider.method20140(Registry.ENTITY_TYPE.method9190(), var1, String.valueOf('!'));
+               ISuggestionProvider.method20140(Class8613.method30861().method27137(), var1, "!#");
                if (!var0.method30333()) {
-                  Class6618.method20141(Registry.ENTITY_TYPE.method9190(), var1);
-                  Class6618.method20140(Class8613.method30861().method27137(), var1, String.valueOf('#'));
+                  ISuggestionProvider.suggestIterable(Registry.ENTITY_TYPE.method9190(), var1);
+                  ISuggestionProvider.method20140(Class8613.method30861().method27137(), var1, String.valueOf('#'));
                }
 
                return var1.buildFuture();

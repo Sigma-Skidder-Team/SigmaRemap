@@ -52,7 +52,7 @@ public class Class7744 {
             try {
                ParseResults var11 = var1.parse(var10, var2);
                if (var11.getReader().canRead()) {
-                  throw Class6099.method18843(var11);
+                  throw Commands.method18843(var11);
                }
 
                var6.add(new Class6796(var11));

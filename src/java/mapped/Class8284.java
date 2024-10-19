@@ -25,24 +25,24 @@ public class Class8284 {
 
    public static void method28947(CommandDispatcher<CommandSource> var0) {
       var0.register(
-         (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("clear").requires(var0x -> var0x.method20129(2)))
+         (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder) Commands.method18839("clear").requires(var0x -> var0x.method20129(2)))
                .executes(
                   var0x -> method28948(
                         (CommandSource)var0x.getSource(), Collections.<ServerPlayerEntity>singleton(((CommandSource)var0x.getSource()).method20175()), var0xx -> true, -1
                      )
                ))
             .then(
-               ((RequiredArgumentBuilder)Class6099.method18840("targets", Class8700.method31353())
+               ((RequiredArgumentBuilder) Commands.method18840("targets", Class8700.method31353())
                      .executes(var0x -> method28948((CommandSource)var0x.getSource(), Class8700.method31354(var0x, "targets"), var0xx -> true, -1)))
                   .then(
-                     ((RequiredArgumentBuilder)Class6099.method18840("item", Class7584.method24822())
+                     ((RequiredArgumentBuilder) Commands.method18840("item", Class7584.method24822())
                            .executes(
                               var0x -> method28948(
                                     (CommandSource)var0x.getSource(), Class8700.method31354(var0x, "targets"), Class7584.method24823(var0x, "item"), -1
                                  )
                            ))
                         .then(
-                           Class6099.method18840("maxCount", IntegerArgumentType.integer(0))
+                           Commands.method18840("maxCount", IntegerArgumentType.integer(0))
                               .executes(
                                  var0x -> method28948(
                                        (CommandSource)var0x.getSource(),
@@ -70,14 +70,14 @@ public class Class8284 {
       if (var6 != 0) {
          if (var3 != 0) {
             if (var1.size() != 1) {
-               var0.method20179(new TranslationTextComponent("commands.clear.success.multiple", var6, var1.size()), true);
+               var0.sendFeedback(new TranslationTextComponent("commands.clear.success.multiple", var6, var1.size()), true);
             } else {
-               var0.method20179(new TranslationTextComponent("commands.clear.success.single", var6, ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()), true);
+               var0.sendFeedback(new TranslationTextComponent("commands.clear.success.single", var6, ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()), true);
             }
          } else if (var1.size() != 1) {
-            var0.method20179(new TranslationTextComponent("commands.clear.test.multiple", var6, var1.size()), true);
+            var0.sendFeedback(new TranslationTextComponent("commands.clear.test.multiple", var6, var1.size()), true);
          } else {
-            var0.method20179(new TranslationTextComponent("commands.clear.test.single", var6, ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()), true);
+            var0.sendFeedback(new TranslationTextComponent("commands.clear.test.single", var6, ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()), true);
          }
 
          return var6;

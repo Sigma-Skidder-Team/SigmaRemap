@@ -6,6 +6,7 @@ import java.util.Locale;
 import java.util.function.Function;
 
 import net.minecraft.command.CommandSource;
+import net.minecraft.command.ISuggestionProvider;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
 import net.minecraft.util.ResourceLocation;
@@ -14,13 +15,13 @@ import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.storage.CommandStorage;
 
 public class Class7153 implements Class7151 {
-   private static final SuggestionProvider<CommandSource> field30727 = (var0, var1) -> Class6618.method20143(method22318(var0).method32750(), var1);
+   private static final SuggestionProvider<CommandSource> field30727 = (var0, var1) -> ISuggestionProvider.method20143(method22318(var0).method32750(), var1);
    public static final Function<String, Class8196> field30728 = var0 -> new Class8198(var0);
    private final CommandStorage field30729;
    private final ResourceLocation field30730;
 
    private static CommandStorage method22318(CommandContext<CommandSource> var0) {
-      return ((CommandSource)var0.getSource()).method20177().method1410();
+      return ((CommandSource)var0.getSource()).getServer().method1410();
    }
 
    private Class7153(CommandStorage var1, ResourceLocation var2) {

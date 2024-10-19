@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.command;
 
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
@@ -6,6 +6,9 @@ import com.mojang.brigadier.Message;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.suggestion.Suggestions;
 import com.mojang.brigadier.suggestion.SuggestionsBuilder;
+import mapped.Class9203;
+import mapped.DynamicRegistries;
+import mapped.RegistryKey;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
@@ -20,7 +23,7 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-public interface Class6618 {
+public interface ISuggestionProvider {
    Collection<String> method20124();
 
    default Collection<String> method20125() {
@@ -33,7 +36,7 @@ public interface Class6618 {
 
    Stream<ResourceLocation> method20128();
 
-   CompletableFuture<Suggestions> method20130(CommandContext<Class6618> var1, SuggestionsBuilder var2);
+   CompletableFuture<Suggestions> method20130(CommandContext<ISuggestionProvider> var1, SuggestionsBuilder var2);
 
    default Collection<Class9203> method20133() {
       return Collections.<Class9203>singleton(Class9203.field42266);
@@ -85,7 +88,7 @@ public interface Class6618 {
       return var1.buildFuture();
    }
 
-   static CompletableFuture<Suggestions> method20141(Iterable<ResourceLocation> var0, SuggestionsBuilder var1) {
+   static CompletableFuture<Suggestions> suggestIterable(Iterable<ResourceLocation> var0, SuggestionsBuilder var1) {
       String var4 = var1.getRemaining().toLowerCase(Locale.ROOT);
       method20138(var0, var4, var0x -> var0x, var1x -> var1.suggest(var1x.toString()));
       return var1.buildFuture();
@@ -98,7 +101,7 @@ public interface Class6618 {
    }
 
    static CompletableFuture<Suggestions> method20143(Stream<ResourceLocation> var0, SuggestionsBuilder var1) {
-      return method20141(var0::iterator, var1);
+      return suggestIterable(var0::iterator, var1);
    }
 
    static <T> CompletableFuture<Suggestions> method20144(Stream<T> var0, SuggestionsBuilder var1, Function<T, ResourceLocation> var2, Function<T, Message> var3) {

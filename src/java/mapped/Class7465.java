@@ -14,7 +14,7 @@ public abstract class Class7465<T extends Class7465<T>> {
 
    public void method24170(CommandContext<CommandSource> var1, String var2) {
       this.method24154(var1, var2);
-      this.method24171(((CommandSource)var1.getSource()).method20177());
+      this.method24171(((CommandSource)var1.getSource()).getServer());
    }
 
    public void method24171(MinecraftServer var1) {

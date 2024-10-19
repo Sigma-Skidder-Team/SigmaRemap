@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 import net.minecraft.command.CommandSource;
+import net.minecraft.command.ISuggestionProvider;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -107,10 +108,10 @@ public class Class8700 implements ArgumentType<Class8429> {
    }
 
    public <S> CompletableFuture<Suggestions> listSuggestions(CommandContext<S> var1, SuggestionsBuilder var2) {
-      if (var1.getSource() instanceof Class6618) {
+      if (var1.getSource() instanceof ISuggestionProvider) {
          StringReader var5 = new StringReader(var2.getInput());
          var5.setCursor(var2.getStart());
-         Class6618 var6 = (Class6618)var1.getSource();
+         ISuggestionProvider var6 = (ISuggestionProvider)var1.getSource();
          Class8533 var7 = new Class8533(var5, var6.method20129(2));
 
          try {
@@ -121,7 +122,7 @@ public class Class8700 implements ArgumentType<Class8429> {
          return var7.method30314(var2, var2x -> {
             Collection var5x = var6.method20124();
             Object var6x = !this.field39267 ? Iterables.concat(var5x, var6.method20125()) : var5x;
-            Class6618.method20147((Iterable<String>)var6x, var2x);
+            ISuggestionProvider.method20147((Iterable<String>)var6x, var2x);
          });
       } else {
          return Suggestions.empty();

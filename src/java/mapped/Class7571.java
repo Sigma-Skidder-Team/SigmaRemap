@@ -14,7 +14,7 @@ public final class Class7571 implements Class7567 {
    public <T extends Class7465<T>> void method24776(Class9221<T> var1, Class7989<T> var2) {
       this.field32510
          .then(
-            ((LiteralArgumentBuilder)Class6099.method18839(var1.method34672()).executes(var1x -> Class9643.method37599((CommandSource)var1x.getSource(), var1)))
+            ((LiteralArgumentBuilder) Commands.method18839(var1.method34672()).executes(var1x -> Class9643.method37599((CommandSource)var1x.getSource(), var1)))
                .then(var2.method27158("value").executes(var1x -> Class9643.method37598(var1x, var1)))
          );
    }

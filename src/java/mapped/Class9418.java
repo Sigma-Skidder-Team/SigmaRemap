@@ -14,6 +14,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.stream.Stream;
 
 import net.minecraft.command.CommandSource;
+import net.minecraft.command.ISuggestionProvider;
 import net.minecraft.util.text.StringTextComponent;
 
 public class Class9418 implements ArgumentType<Class4871> {
@@ -40,7 +41,7 @@ public class Class9418 implements ArgumentType<Class4871> {
 
    public <S> CompletableFuture<Suggestions> listSuggestions(CommandContext<S> var1, SuggestionsBuilder var2) {
       Stream var5 = Class7936.method26704().stream().<String>map(Class4871::method15034);
-      return Class6618.method20148(var5, var2);
+      return ISuggestionProvider.method20148(var5, var2);
    }
 
    public Collection<String> getExamples() {

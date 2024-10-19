@@ -31,15 +31,15 @@ public class Class9195 {
 
    public static void method34454(CommandDispatcher<CommandSource> var0) {
       var0.register(
-         (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("replaceitem").requires(var0x -> var0x.method20129(2)))
+         (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder) Commands.method18839("replaceitem").requires(var0x -> var0x.method20129(2)))
                .then(
-                  Class6099.method18839("block")
+                  Commands.method18839("block")
                      .then(
-                        Class6099.method18840("pos", Class6849.method20826())
+                        Commands.method18840("pos", Class6849.method20826())
                            .then(
-                              Class6099.method18840("slot", Class4914.method15195())
+                              Commands.method18840("slot", Class4914.method15195())
                                  .then(
-                                    ((RequiredArgumentBuilder)Class6099.method18840("item", Class8722.method31481())
+                                    ((RequiredArgumentBuilder) Commands.method18840("item", Class8722.method31481())
                                           .executes(
                                              var0x -> method34455(
                                                    (CommandSource)var0x.getSource(),
@@ -49,7 +49,7 @@ public class Class9195 {
                                                 )
                                           ))
                                        .then(
-                                          Class6099.method18840("count", IntegerArgumentType.integer(1, 64))
+                                          Commands.method18840("count", IntegerArgumentType.integer(1, 64))
                                              .executes(
                                                 var0x -> method34455(
                                                       (CommandSource)var0x.getSource(),
@@ -64,13 +64,13 @@ public class Class9195 {
                      )
                ))
             .then(
-               Class6099.method18839("entity")
+               Commands.method18839("entity")
                   .then(
-                     Class6099.method18840("targets", Class8700.method31347())
+                     Commands.method18840("targets", Class8700.method31347())
                         .then(
-                           Class6099.method18840("slot", Class4914.method15195())
+                           Commands.method18840("slot", Class4914.method15195())
                               .then(
-                                 ((RequiredArgumentBuilder)Class6099.method18840("item", Class8722.method31481())
+                                 ((RequiredArgumentBuilder) Commands.method18840("item", Class8722.method31481())
                                        .executes(
                                           var0x -> method34456(
                                                 (CommandSource)var0x.getSource(),
@@ -80,7 +80,7 @@ public class Class9195 {
                                              )
                                        ))
                                     .then(
-                                       Class6099.method18840("count", IntegerArgumentType.integer(1, 64))
+                                       Commands.method18840("count", IntegerArgumentType.integer(1, 64))
                                           .executes(
                                              var0x -> method34456(
                                                    (CommandSource)var0x.getSource(),
@@ -103,7 +103,7 @@ public class Class9195 {
          IInventory var7 = (IInventory)var6;
          if (var2 >= 0 && var2 < var7.getSizeInventory()) {
             var7.setInventorySlotContents(var2, var3);
-            var0.method20179(
+            var0.sendFeedback(
                new TranslationTextComponent("commands.replaceitem.block.success", var1.getX(), var1.getY(), var1.getZ(), var3.method32173()),
                true
             );
@@ -134,9 +134,9 @@ public class Class9195 {
 
       if (!var6.isEmpty()) {
          if (var6.size() != 1) {
-            var0.method20179(new TranslationTextComponent("commands.replaceitem.entity.success.multiple", var6.size(), var3.method32173()), true);
+            var0.sendFeedback(new TranslationTextComponent("commands.replaceitem.entity.success.multiple", var6.size(), var3.method32173()), true);
          } else {
-            var0.method20179(
+            var0.sendFeedback(
                new TranslationTextComponent("commands.replaceitem.entity.success.single", ((Entity)var6.iterator().next()).getDisplayName(), var3.method32173()),
                true
             );

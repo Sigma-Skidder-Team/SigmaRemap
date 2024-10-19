@@ -18,23 +18,23 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class Class9752 {
    public static void method38309(CommandDispatcher<CommandSource> var0) {
       var0.register(
-         (LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("title").requires(var0x -> var0x.method20129(2)))
+         (LiteralArgumentBuilder)((LiteralArgumentBuilder) Commands.method18839("title").requires(var0x -> var0x.method20129(2)))
             .then(
-               ((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder)Class6099.method18840(
+               ((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder) Commands.method18840(
                                     "targets", Class8700.method31353()
                                  )
                                  .then(
-                                    Class6099.method18839("clear")
+                                    Commands.method18839("clear")
                                        .executes(var0x -> method38310((CommandSource)var0x.getSource(), Class8700.method31354(var0x, "targets")))
                                  ))
                               .then(
-                                 Class6099.method18839("reset")
+                                 Commands.method18839("reset")
                                     .executes(var0x -> method38311((CommandSource)var0x.getSource(), Class8700.method31354(var0x, "targets")))
                               ))
                            .then(
-                              Class6099.method18839("title")
+                              Commands.method18839("title")
                                  .then(
-                                    Class6099.method18840("title", Class8010.method27395())
+                                    Commands.method18840("title", Class8010.method27395())
                                        .executes(
                                           var0x -> method38312(
                                                 (CommandSource)var0x.getSource(),
@@ -46,9 +46,9 @@ public class Class9752 {
                                  )
                            ))
                         .then(
-                           Class6099.method18839("subtitle")
+                           Commands.method18839("subtitle")
                               .then(
-                                 Class6099.method18840("title", Class8010.method27395())
+                                 Commands.method18840("title", Class8010.method27395())
                                     .executes(
                                        var0x -> method38312(
                                              (CommandSource)var0x.getSource(),
@@ -60,9 +60,9 @@ public class Class9752 {
                               )
                         ))
                      .then(
-                        Class6099.method18839("actionbar")
+                        Commands.method18839("actionbar")
                            .then(
-                              Class6099.method18840("title", Class8010.method27395())
+                              Commands.method18840("title", Class8010.method27395())
                                  .executes(
                                     var0x -> method38312(
                                           (CommandSource)var0x.getSource(),
@@ -74,13 +74,13 @@ public class Class9752 {
                            )
                      ))
                   .then(
-                     Class6099.method18839("times")
+                     Commands.method18839("times")
                         .then(
-                           Class6099.method18840("fadeIn", IntegerArgumentType.integer(0))
+                           Commands.method18840("fadeIn", IntegerArgumentType.integer(0))
                               .then(
-                                 Class6099.method18840("stay", IntegerArgumentType.integer(0))
+                                 Commands.method18840("stay", IntegerArgumentType.integer(0))
                                     .then(
-                                       Class6099.method18840("fadeOut", IntegerArgumentType.integer(0))
+                                       Commands.method18840("fadeOut", IntegerArgumentType.integer(0))
                                           .executes(
                                              var0x -> method38313(
                                                    (CommandSource)var0x.getSource(),
@@ -106,9 +106,9 @@ public class Class9752 {
       }
 
       if (var1.size() != 1) {
-         var0.method20179(new TranslationTextComponent("commands.title.cleared.multiple", var1.size()), true);
+         var0.sendFeedback(new TranslationTextComponent("commands.title.cleared.multiple", var1.size()), true);
       } else {
-         var0.method20179(new TranslationTextComponent("commands.title.cleared.single", ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()), true);
+         var0.sendFeedback(new TranslationTextComponent("commands.title.cleared.single", ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()), true);
       }
 
       return var1.size();
@@ -122,9 +122,9 @@ public class Class9752 {
       }
 
       if (var1.size() != 1) {
-         var0.method20179(new TranslationTextComponent("commands.title.reset.multiple", var1.size()), true);
+         var0.sendFeedback(new TranslationTextComponent("commands.title.reset.multiple", var1.size()), true);
       } else {
-         var0.method20179(new TranslationTextComponent("commands.title.reset.single", ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()), true);
+         var0.sendFeedback(new TranslationTextComponent("commands.title.reset.single", ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()), true);
       }
 
       return var1.size();
@@ -136,9 +136,9 @@ public class Class9752 {
       }
 
       if (var1.size() != 1) {
-         var0.method20179(new TranslationTextComponent("commands.title.show." + var3.name().toLowerCase(Locale.ROOT) + ".multiple", var1.size()), true);
+         var0.sendFeedback(new TranslationTextComponent("commands.title.show." + var3.name().toLowerCase(Locale.ROOT) + ".multiple", var1.size()), true);
       } else {
-         var0.method20179(
+         var0.sendFeedback(
             new TranslationTextComponent(
                "commands.title.show." + var3.name().toLowerCase(Locale.ROOT) + ".single", ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()
             ),
@@ -157,9 +157,9 @@ public class Class9752 {
       }
 
       if (var1.size() != 1) {
-         var0.method20179(new TranslationTextComponent("commands.title.times.multiple", var1.size()), true);
+         var0.sendFeedback(new TranslationTextComponent("commands.title.times.multiple", var1.size()), true);
       } else {
-         var0.method20179(new TranslationTextComponent("commands.title.times.single", ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()), true);
+         var0.sendFeedback(new TranslationTextComponent("commands.title.times.single", ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()), true);
       }
 
       return var1.size();

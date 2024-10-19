@@ -15,7 +15,7 @@ import net.minecraft.util.text.event.HoverEvent;
 public class Class9554 {
    public static void method37005(CommandDispatcher<CommandSource> var0, boolean var1) {
       var0.register(
-         (LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("seed").requires(var1x -> !var1 || var1x.method20129(2)))
+         (LiteralArgumentBuilder)((LiteralArgumentBuilder) Commands.method18839("seed").requires(var1x -> !var1 || var1x.method20129(2)))
             .executes(
                var0x -> {
                   long var3 = ((CommandSource)var0x.getSource()).method20172().getSeed();
@@ -28,7 +28,7 @@ public class Class9554 {
                                  .setInsertion(String.valueOf(var3))
                         )
                   );
-                  ((CommandSource)var0x.getSource()).method20179(new TranslationTextComponent("commands.seed.success", var5), false);
+                  ((CommandSource)var0x.getSource()).sendFeedback(new TranslationTextComponent("commands.seed.success", var5), false);
                   return (int)var3;
                }
             )

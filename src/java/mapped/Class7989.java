@@ -23,7 +23,7 @@ public class Class7989<T extends Class7465<T>> {
    }
 
    public RequiredArgumentBuilder<CommandSource, ?> method27158(String var1) {
-      return Class6099.method18840(var1, (ArgumentType<T>)this.field34317.get());
+      return Commands.method18840(var1, (ArgumentType<T>)this.field34317.get());
    }
 
    public T method27159() {

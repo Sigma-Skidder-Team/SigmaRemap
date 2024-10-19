@@ -16,6 +16,7 @@ import java.util.Map;
 import java.util.Set;
 import javax.annotation.Nullable;
 
+import net.minecraft.command.arguments.ResourceLocationArgument;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SharedConstants;
@@ -71,7 +72,7 @@ public class Class8651 {
       method31095("swizzle", Class9560.class, new Class2591(Class9560::method37040));
       method31095("team", Class9062.class, new Class2591(Class9062::method33746));
       method31095("item_slot", Class4914.class, new Class2591(Class4914::method15195));
-      method31095("resource_location", Class8303.class, new Class2591(Class8303::method29031));
+      method31095("resource_location", ResourceLocationArgument.class, new Class2591(ResourceLocationArgument::method29031));
       method31095("mob_effect", Class9468.class, new Class2591(Class9468::method36510));
       method31095("function", Class7566.class, new Class2591(Class7566::method24766));
       method31095("entity_anchor", Class9188.class, new Class2591(Class9188::method34388));

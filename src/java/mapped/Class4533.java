@@ -20,15 +20,15 @@ public class Class4533 {
 
    public static void method14453(CommandDispatcher<CommandSource> var0) {
       var0.register(
-         (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("spectate").requires(var0x -> var0x.method20129(2)))
+         (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder) Commands.method18839("spectate").requires(var0x -> var0x.method20129(2)))
                .executes(var0x -> method14454((CommandSource)var0x.getSource(), (Entity)null, ((CommandSource)var0x.getSource()).method20175())))
             .then(
-               ((RequiredArgumentBuilder)Class6099.method18840("target", Class8700.method31345())
+               ((RequiredArgumentBuilder) Commands.method18840("target", Class8700.method31345())
                      .executes(
                         var0x -> method14454((CommandSource)var0x.getSource(), Class8700.method31346(var0x, "target"), ((CommandSource)var0x.getSource()).method20175())
                      ))
                   .then(
-                     Class6099.method18840("player", Class8700.method31351())
+                     Commands.method18840("player", Class8700.method31351())
                         .executes(
                            var0x -> method14454((CommandSource)var0x.getSource(), Class8700.method31346(var0x, "target"), Class8700.method31352(var0x, "player"))
                         )
@@ -42,9 +42,9 @@ public class Class4533 {
          if (var2.interactionManager.getGameType() == GameType.SPECTATOR) {
             var2.method2815(var1);
             if (var1 == null) {
-               var0.method20179(new TranslationTextComponent("commands.spectate.success.stopped"), false);
+               var0.sendFeedback(new TranslationTextComponent("commands.spectate.success.stopped"), false);
             } else {
-               var0.method20179(new TranslationTextComponent("commands.spectate.success.started", var1.getDisplayName()), false);
+               var0.sendFeedback(new TranslationTextComponent("commands.spectate.success.started", var1.getDisplayName()), false);
             }
 
             return 1;

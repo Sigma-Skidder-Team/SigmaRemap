@@ -33,6 +33,7 @@ import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.TextFieldWidget;
+import net.minecraft.command.ISuggestionProvider;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.Style;
@@ -62,7 +63,7 @@ public class Class6850 {
    private final List<Class9125> field29757 = Lists.newArrayList();
    private int field29758;
    private int field29759;
-   private ParseResults<Class6618> field29760;
+   private ParseResults<ISuggestionProvider> field29760;
    private CompletableFuture<Suggestions> field29761;
    private Class8368 field29762;
    private boolean field29763;
@@ -170,7 +171,7 @@ public class Class6850 {
          String var8 = var3.substring(0, var7);
          int var9 = method20836(var8);
          Collection var10 = this.field29747.player.connection.method15781().method20124();
-         this.field29761 = Class6618.method20147(var10, new SuggestionsBuilder(var8, var9));
+         this.field29761 = ISuggestionProvider.method20147(var10, new SuggestionsBuilder(var8, var9));
       } else {
          CommandDispatcher var11 = this.field29747.player.connection.method15796();
          if (this.field29760 == null) {
@@ -228,7 +229,7 @@ public class Class6850 {
                this.field29757.add(method20837(CommandSyntaxException.BUILT_IN_EXCEPTIONS.dispatcherUnknownCommand().create()));
             }
          } else if (this.field29760.getReader().canRead()) {
-            this.field29757.add(method20837(Class6099.method18843(this.field29760)));
+            this.field29757.add(method20837(Commands.method18843(this.field29760)));
          }
       }
 
@@ -245,14 +246,14 @@ public class Class6850 {
    }
 
    private void method20839(TextFormatting var1) {
-      CommandContextBuilder<Class6618> var4 = this.field29760.getContext();
-      SuggestionContext<Class6618> var5 = var4.findSuggestionContext(this.field29749.method5659());
-      Map<CommandNode<Class6618>, String> var6 = this.field29747.player.connection.method15796().getSmartUsage(var5.parent, this.field29747.player.connection.method15781());
+      CommandContextBuilder<ISuggestionProvider> var4 = this.field29760.getContext();
+      SuggestionContext<ISuggestionProvider> var5 = var4.findSuggestionContext(this.field29749.method5659());
+      Map<CommandNode<ISuggestionProvider>, String> var6 = this.field29747.player.connection.method15796().getSmartUsage(var5.parent, this.field29747.player.connection.method15781());
       ArrayList var7 = Lists.newArrayList();
       int var8 = 0;
       Style var9 = Style.EMPTY.setFormatting(var1);
 
-      for (Entry<CommandNode<Class6618>, String> var11 : var6.entrySet()) {
+      for (Entry<CommandNode<ISuggestionProvider>, String> var11 : var6.entrySet()) {
          if (!(var11.getKey() instanceof LiteralCommandNode)) {
             var7.add(Class9125.method34038((String)var11.getValue(), var9));
             var8 = Math.max(var8, this.field29750.getStringWidth((String)var11.getValue()));
@@ -277,11 +278,11 @@ public class Class6850 {
       return !var1.startsWith(var0) ? null : var1.substring(var0.length());
    }
 
-   private static Class9125 method20842(ParseResults<Class6618> var0, String var1, int var2) {
+   private static Class9125 method20842(ParseResults<ISuggestionProvider> var0, String var1, int var2) {
       ArrayList var5 = Lists.newArrayList();
       int var6 = 0;
       int var7 = -1;
-      CommandContextBuilder<Class6618> var8 = var0.getContext().getLastChild();
+      CommandContextBuilder<ISuggestionProvider> var8 = var0.getContext().getLastChild();
 
       for (ParsedArgument var10 : var8.getArguments().values()) {
          if (++var7 >= field29746.size()) {

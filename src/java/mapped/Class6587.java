@@ -15,15 +15,15 @@ import net.minecraft.world.GameType;
 
 public class Class6587 {
    public static void method19960(CommandDispatcher<CommandSource> var0) {
-      LiteralArgumentBuilder var3 = (LiteralArgumentBuilder)Class6099.method18839("gamemode").requires(var0x -> var0x.method20129(2));
+      LiteralArgumentBuilder var3 = (LiteralArgumentBuilder) Commands.method18839("gamemode").requires(var0x -> var0x.method20129(2));
 
       for (GameType var7 : GameType.values()) {
          if (var7 != GameType.field11101) {
             var3.then(
-               ((LiteralArgumentBuilder)Class6099.method18839(var7.method8153())
+               ((LiteralArgumentBuilder) Commands.method18839(var7.method8153())
                      .executes(var1 -> method19962(var1, Collections.<ServerPlayerEntity>singleton(((CommandSource)var1.getSource()).method20175()), var7)))
                   .then(
-                     Class6099.method18840("target", Class8700.method31353()).executes(var1 -> method19962(var1, Class8700.method31354(var1, "target"), var7))
+                     Commands.method18840("target", Class8700.method31353()).executes(var1 -> method19962(var1, Class8700.method31354(var1, "target"), var7))
                   )
             );
          }
@@ -39,9 +39,9 @@ public class Class6587 {
             var1.sendMessage(new TranslationTextComponent("gameMode.changed", var5), Util.DUMMY_UUID);
          }
 
-         var0.method20179(new TranslationTextComponent("commands.gamemode.success.other", var1.getDisplayName(), var5), true);
+         var0.sendFeedback(new TranslationTextComponent("commands.gamemode.success.other", var1.getDisplayName(), var5), true);
       } else {
-         var0.method20179(new TranslationTextComponent("commands.gamemode.success.self", var5), true);
+         var0.sendFeedback(new TranslationTextComponent("commands.gamemode.success.self", var5), true);
       }
    }
 

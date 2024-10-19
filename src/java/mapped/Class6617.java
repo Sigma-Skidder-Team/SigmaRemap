@@ -7,6 +7,7 @@ import com.mojang.brigadier.suggestion.SuggestionsBuilder;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.network.play.ClientPlayNetHandler;
 import net.minecraft.client.network.play.NetworkPlayerInfo;
+import net.minecraft.command.ISuggestionProvider;
 import net.minecraft.network.play.client.CTabCompletePacket;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -23,7 +24,7 @@ import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Stream;
 
-public class Class6617 implements Class6618 {
+public class Class6617 implements ISuggestionProvider {
    private final ClientPlayNetHandler field29118;
    private final Minecraft field29119;
    private int field29120 = -1;
@@ -74,7 +75,7 @@ public class Class6617 implements Class6618 {
    }
 
    @Override
-   public CompletableFuture<Suggestions> method20130(CommandContext<Class6618> var1, SuggestionsBuilder var2) {
+   public CompletableFuture<Suggestions> method20130(CommandContext<ISuggestionProvider> var1, SuggestionsBuilder var2) {
       if (this.field29121 != null) {
          this.field29121.cancel(false);
       }
@@ -100,7 +101,7 @@ public class Class6617 implements Class6618 {
          BlockPos var4 = ((BlockRayTraceResult)var3).getPos();
          return Collections.<Class9203>singleton(new Class9203(method20132(var4.getX()), method20132(var4.getY()), method20132(var4.getZ())));
       } else {
-         return Class6618.super.method20133();
+         return ISuggestionProvider.super.method20133();
       }
    }
 
@@ -111,7 +112,7 @@ public class Class6617 implements Class6618 {
          Vector3d var4 = var3.getHitVec();
          return Collections.<Class9203>singleton(new Class9203(method20131(var4.x), method20131(var4.y), method20131(var4.z)));
       } else {
-         return Class6618.super.method20134();
+         return ISuggestionProvider.super.method20134();
       }
    }
 

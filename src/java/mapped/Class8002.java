@@ -23,9 +23,9 @@ public class Class8002 {
 
    public static void method27335(CommandDispatcher<CommandSource> var0) {
       var0.register(
-         (LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("summon").requires(var0x -> var0x.method20129(2)))
+         (LiteralArgumentBuilder)((LiteralArgumentBuilder) Commands.method18839("summon").requires(var0x -> var0x.method20129(2)))
             .then(
-               ((RequiredArgumentBuilder)Class6099.method18840("entity", Class7822.method26155())
+               ((RequiredArgumentBuilder) Commands.method18840("entity", Class7822.method26155())
                      .suggests(Class9222.field42457)
                      .executes(
                         var0x -> method27336(
@@ -37,7 +37,7 @@ public class Class8002 {
                            )
                      ))
                   .then(
-                     ((RequiredArgumentBuilder)Class6099.method18840("pos", Class6851.method20857())
+                     ((RequiredArgumentBuilder) Commands.method18840("pos", Class6851.method20857())
                            .executes(
                               var0x -> method27336(
                                     (CommandSource)var0x.getSource(),
@@ -48,7 +48,7 @@ public class Class8002 {
                                  )
                            ))
                         .then(
-                           Class6099.method18840("nbt", Class9770.method38432())
+                           Commands.method18840("nbt", Class9770.method38432())
                               .executes(
                                  var0x -> method27336(
                                        (CommandSource)var0x.getSource(),
@@ -81,7 +81,7 @@ public class Class8002 {
             }
 
             if (var9.method6928(var10)) {
-               var0.method20179(new TranslationTextComponent("commands.summon.success", var10.getDisplayName()), true);
+               var0.sendFeedback(new TranslationTextComponent("commands.summon.success", var10.getDisplayName()), true);
                return 1;
             } else {
                throw field34404.create();

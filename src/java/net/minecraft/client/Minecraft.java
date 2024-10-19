@@ -1774,7 +1774,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
 
       try {
          DatapackCodec var8 = MinecraftServer.func_240772_a_(var7, var6, var4);
-         CompletableFuture var9 = DataPackRegistries.func_240961_a_(var7.func_232623_f_(), Commands.INTEGRATED, 2, Util.getServerExecutor(), this);
+         CompletableFuture var9 = DataPackRegistries.func_240961_a_(var7.func_232623_f_(), Commands.EnvironmentType.INTEGRATED, 2, Util.getServerExecutor(), this);
          this.driveUntil(var9::isDone);
          DataPackRegistries var10 = (DataPackRegistries)var9.get();
          IServerConfiguration var11 = var3.apply(var5, var1, var10.getResourceManager(), var8);

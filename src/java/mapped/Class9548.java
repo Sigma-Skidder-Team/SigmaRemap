@@ -27,15 +27,15 @@ public class Class9548 {
 
    public static void method36984(CommandDispatcher<CommandSource> var0) {
       var0.register(
-         (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("effect").requires(var0x -> var0x.method20129(2)))
+         (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder) Commands.method18839("effect").requires(var0x -> var0x.method20129(2)))
                .then(
-                  ((LiteralArgumentBuilder)Class6099.method18839("clear")
+                  ((LiteralArgumentBuilder) Commands.method18839("clear")
                         .executes(var0x -> method36986((CommandSource)var0x.getSource(), ImmutableList.of(((CommandSource)var0x.getSource()).method20174()))))
                      .then(
-                        ((RequiredArgumentBuilder)Class6099.method18840("targets", Class8700.method31347())
+                        ((RequiredArgumentBuilder) Commands.method18840("targets", Class8700.method31347())
                               .executes(var0x -> method36986((CommandSource)var0x.getSource(), Class8700.method31348(var0x, "targets"))))
                            .then(
-                              Class6099.method18840("effect", Class9468.method36510())
+                              Commands.method18840("effect", Class9468.method36510())
                                  .executes(
                                     var0x -> method36987(
                                           (CommandSource)var0x.getSource(), Class8700.method31348(var0x, "targets"), Class9468.method36511(var0x, "effect")
@@ -45,11 +45,11 @@ public class Class9548 {
                      )
                ))
             .then(
-               Class6099.method18839("give")
+               Commands.method18839("give")
                   .then(
-                     Class6099.method18840("targets", Class8700.method31347())
+                     Commands.method18840("targets", Class8700.method31347())
                         .then(
-                           ((RequiredArgumentBuilder)Class6099.method18840("effect", Class9468.method36510())
+                           ((RequiredArgumentBuilder) Commands.method18840("effect", Class9468.method36510())
                                  .executes(
                                     var0x -> method36985(
                                           (CommandSource)var0x.getSource(),
@@ -61,7 +61,7 @@ public class Class9548 {
                                        )
                                  ))
                               .then(
-                                 ((RequiredArgumentBuilder)Class6099.method18840("seconds", IntegerArgumentType.integer(1, 1000000))
+                                 ((RequiredArgumentBuilder) Commands.method18840("seconds", IntegerArgumentType.integer(1, 1000000))
                                        .executes(
                                           var0x -> method36985(
                                                 (CommandSource)var0x.getSource(),
@@ -73,7 +73,7 @@ public class Class9548 {
                                              )
                                        ))
                                     .then(
-                                       ((RequiredArgumentBuilder)Class6099.method18840("amplifier", IntegerArgumentType.integer(0, 255))
+                                       ((RequiredArgumentBuilder) Commands.method18840("amplifier", IntegerArgumentType.integer(0, 255))
                                              .executes(
                                                 var0x -> method36985(
                                                       (CommandSource)var0x.getSource(),
@@ -85,7 +85,7 @@ public class Class9548 {
                                                    )
                                              ))
                                           .then(
-                                             Class6099.method18840("hideParticles", BoolArgumentType.bool())
+                                             Commands.method18840("hideParticles", BoolArgumentType.bool())
                                                 .executes(
                                                    var0x -> method36985(
                                                          (CommandSource)var0x.getSource(),
@@ -131,9 +131,9 @@ public class Class9548 {
 
       if (var8 != 0) {
          if (var1.size() != 1) {
-            var0.method20179(new TranslationTextComponent("commands.effect.give.success.multiple", var2.getDisplayName(), var1.size(), var9 / 20), true);
+            var0.sendFeedback(new TranslationTextComponent("commands.effect.give.success.multiple", var2.getDisplayName(), var1.size(), var9 / 20), true);
          } else {
-            var0.method20179(
+            var0.sendFeedback(
                new TranslationTextComponent(
                   "commands.effect.give.success.single", var2.getDisplayName(), ((Entity)var1.iterator().next()).getDisplayName(), var9 / 20
                ),
@@ -158,9 +158,9 @@ public class Class9548 {
 
       if (var4 != 0) {
          if (var1.size() != 1) {
-            var0.method20179(new TranslationTextComponent("commands.effect.clear.everything.success.multiple", var1.size()), true);
+            var0.sendFeedback(new TranslationTextComponent("commands.effect.clear.everything.success.multiple", var1.size()), true);
          } else {
-            var0.method20179(
+            var0.sendFeedback(
                new TranslationTextComponent("commands.effect.clear.everything.success.single", ((Entity)var1.iterator().next()).getDisplayName()), true
             );
          }
@@ -182,9 +182,9 @@ public class Class9548 {
 
       if (var5 != 0) {
          if (var1.size() != 1) {
-            var0.method20179(new TranslationTextComponent("commands.effect.clear.specific.success.multiple", var2.getDisplayName(), var1.size()), true);
+            var0.sendFeedback(new TranslationTextComponent("commands.effect.clear.specific.success.multiple", var2.getDisplayName(), var1.size()), true);
          } else {
-            var0.method20179(
+            var0.sendFeedback(
                new TranslationTextComponent(
                   "commands.effect.clear.specific.success.single", var2.getDisplayName(), ((Entity)var1.iterator().next()).getDisplayName()
                ),

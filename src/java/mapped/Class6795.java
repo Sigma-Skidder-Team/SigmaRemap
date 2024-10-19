@@ -35,18 +35,18 @@ public class Class6795 {
 
    public static void method20701(CommandDispatcher<CommandSource> var0) {
       var0.register(
-         (LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("enchant").requires(var0x -> var0x.method20129(2)))
+         (LiteralArgumentBuilder)((LiteralArgumentBuilder) Commands.method18839("enchant").requires(var0x -> var0x.method20129(2)))
             .then(
-               Class6099.method18840("targets", Class8700.method31347())
+               Commands.method18840("targets", Class8700.method31347())
                   .then(
-                     ((RequiredArgumentBuilder)Class6099.method18840("enchantment", Class9534.method36862())
+                     ((RequiredArgumentBuilder) Commands.method18840("enchantment", Class9534.method36862())
                            .executes(
                               var0x -> method20702(
                                     (CommandSource)var0x.getSource(), Class8700.method31348(var0x, "targets"), Class9534.method36863(var0x, "enchantment"), 1
                                  )
                            ))
                         .then(
-                           Class6099.method18840("level", IntegerArgumentType.integer(0))
+                           Commands.method18840("level", IntegerArgumentType.integer(0))
                               .executes(
                                  var0x -> method20702(
                                        (CommandSource)var0x.getSource(),
@@ -90,9 +90,9 @@ public class Class6795 {
 
          if (var6 != 0) {
             if (var1.size() != 1) {
-               var0.method20179(new TranslationTextComponent("commands.enchant.success.multiple", var2.method18820(var3), var1.size()), true);
+               var0.sendFeedback(new TranslationTextComponent("commands.enchant.success.multiple", var2.method18820(var3), var1.size()), true);
             } else {
-               var0.method20179(
+               var0.sendFeedback(
                   new TranslationTextComponent("commands.enchant.success.single", var2.method18820(var3), ((Entity)var1.iterator().next()).getDisplayName()),
                   true
                );

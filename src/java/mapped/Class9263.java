@@ -12,6 +12,7 @@ import java.util.Collection;
 import java.util.concurrent.CompletableFuture;
 
 import net.minecraft.command.CommandSource;
+import net.minecraft.command.ISuggestionProvider;
 import net.minecraft.scoreboard.ServerScoreboard;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -33,7 +34,7 @@ public class Class9263 implements ArgumentType<String> {
 
    public static Class8375 method34861(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
       String var4 = (String)var0.getArgument(var1, String.class);
-      ServerScoreboard var5 = ((CommandSource)var0.getSource()).method20177().method1409();
+      ServerScoreboard var5 = ((CommandSource)var0.getSource()).getServer().method1409();
       Class8375 var6 = var5.method20976(var4);
       if (var6 != null) {
          return var6;
@@ -62,14 +63,14 @@ public class Class9263 implements ArgumentType<String> {
 
    public <S> CompletableFuture<Suggestions> listSuggestions(CommandContext<S> var1, SuggestionsBuilder var2) {
       if (!(var1.getSource() instanceof CommandSource)) {
-         if (!(var1.getSource() instanceof Class6618)) {
+         if (!(var1.getSource() instanceof ISuggestionProvider)) {
             return Suggestions.empty();
          } else {
-            Class6618 var5 = (Class6618)var1.getSource();
-            return var5.method20130((CommandContext<Class6618>) var1, var2);
+            ISuggestionProvider var5 = (ISuggestionProvider)var1.getSource();
+            return var5.method20130((CommandContext<ISuggestionProvider>) var1, var2);
          }
       } else {
-         return Class6618.method20147(((CommandSource)var1.getSource()).method20177().method1409().method20983(), var2);
+         return ISuggestionProvider.method20147(((CommandSource)var1.getSource()).getServer().method1409().method20983(), var2);
       }
    }
 

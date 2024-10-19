@@ -9,6 +9,7 @@ import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.Collection;
 
 import net.minecraft.command.CommandSource;
+import net.minecraft.command.arguments.ResourceLocationArgument;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.network.play.server.SPlaySoundPacket;
 import net.minecraft.util.ResourceLocation;
@@ -20,24 +21,24 @@ public class Class8621 {
    private static final SimpleCommandExceptionType field38754 = new SimpleCommandExceptionType(new TranslationTextComponent("commands.playsound.failed"));
 
    public static void method30876(CommandDispatcher<CommandSource> var0) {
-      RequiredArgumentBuilder var3 = Class6099.method18840("sound", Class8303.method29031()).suggests(Class9222.field42455);
+      RequiredArgumentBuilder var3 = Commands.method18840("sound", ResourceLocationArgument.method29031()).suggests(Class9222.field42455);
 
       for (Class2266 var7 : Class2266.values()) {
          var3.then(method30877(var7));
       }
 
-      var0.register((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("playsound").requires(var0x -> var0x.method20129(2))).then(var3));
+      var0.register((LiteralArgumentBuilder)((LiteralArgumentBuilder) Commands.method18839("playsound").requires(var0x -> var0x.method20129(2))).then(var3));
    }
 
    private static LiteralArgumentBuilder<CommandSource> method30877(Class2266 var0) {
-      return (LiteralArgumentBuilder<CommandSource>)Class6099.method18839(var0.method8995())
+      return (LiteralArgumentBuilder<CommandSource>) Commands.method18839(var0.method8995())
          .then(
-            ((RequiredArgumentBuilder)Class6099.method18840("targets", Class8700.method31353())
+            ((RequiredArgumentBuilder) Commands.method18840("targets", Class8700.method31353())
                   .executes(
                      var1 -> method30878(
                            (CommandSource)var1.getSource(),
                            Class8700.method31354(var1, "targets"),
-                           Class8303.method29036(var1, "sound"),
+                           ResourceLocationArgument.getResourceLocation(var1, "sound"),
                            var0,
                            ((CommandSource)var1.getSource()).method20171(),
                            1.0F,
@@ -46,12 +47,12 @@ public class Class8621 {
                         )
                   ))
                .then(
-                  ((RequiredArgumentBuilder)Class6099.method18840("pos", Class6851.method20857())
+                  ((RequiredArgumentBuilder) Commands.method18840("pos", Class6851.method20857())
                         .executes(
                            var1 -> method30878(
                                  (CommandSource)var1.getSource(),
                                  Class8700.method31354(var1, "targets"),
-                                 Class8303.method29036(var1, "sound"),
+                                 ResourceLocationArgument.getResourceLocation(var1, "sound"),
                                  var0,
                                  Class6851.method20859(var1, "pos"),
                                  1.0F,
@@ -60,12 +61,12 @@ public class Class8621 {
                               )
                         ))
                      .then(
-                        ((RequiredArgumentBuilder)Class6099.method18840("volume", FloatArgumentType.floatArg(0.0F))
+                        ((RequiredArgumentBuilder) Commands.method18840("volume", FloatArgumentType.floatArg(0.0F))
                               .executes(
                                  var1 -> method30878(
                                        (CommandSource)var1.getSource(),
                                        Class8700.method31354(var1, "targets"),
-                                       Class8303.method29036(var1, "sound"),
+                                       ResourceLocationArgument.getResourceLocation(var1, "sound"),
                                        var0,
                                        Class6851.method20859(var1, "pos"),
                                        (Float)var1.getArgument("volume", Float.class),
@@ -74,12 +75,12 @@ public class Class8621 {
                                     )
                               ))
                            .then(
-                              ((RequiredArgumentBuilder)Class6099.method18840("pitch", FloatArgumentType.floatArg(0.0F, 2.0F))
+                              ((RequiredArgumentBuilder) Commands.method18840("pitch", FloatArgumentType.floatArg(0.0F, 2.0F))
                                     .executes(
                                        var1 -> method30878(
                                              (CommandSource)var1.getSource(),
                                              Class8700.method31354(var1, "targets"),
-                                             Class8303.method29036(var1, "sound"),
+                                             ResourceLocationArgument.getResourceLocation(var1, "sound"),
                                              var0,
                                              Class6851.method20859(var1, "pos"),
                                              (Float)var1.getArgument("volume", Float.class),
@@ -88,12 +89,12 @@ public class Class8621 {
                                           )
                                     ))
                                  .then(
-                                    Class6099.method18840("minVolume", FloatArgumentType.floatArg(0.0F, 1.0F))
+                                    Commands.method18840("minVolume", FloatArgumentType.floatArg(0.0F, 1.0F))
                                        .executes(
                                           var1 -> method30878(
                                                 (CommandSource)var1.getSource(),
                                                 Class8700.method31354(var1, "targets"),
-                                                Class8303.method29036(var1, "sound"),
+                                                ResourceLocationArgument.getResourceLocation(var1, "sound"),
                                                 var0,
                                                 Class6851.method20859(var1, "pos"),
                                                 (Float)var1.getArgument("volume", Float.class),
@@ -135,9 +136,9 @@ public class Class8621 {
 
       if (var12 != 0) {
          if (var1.size() != 1) {
-            var0.method20179(new TranslationTextComponent("commands.playsound.success.multiple", var2, var1.size()), true);
+            var0.sendFeedback(new TranslationTextComponent("commands.playsound.success.multiple", var2, var1.size()), true);
          } else {
-            var0.method20179(new TranslationTextComponent("commands.playsound.success.single", var2, ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()), true);
+            var0.sendFeedback(new TranslationTextComponent("commands.playsound.success.single", var2, ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()), true);
          }
 
          return var12;

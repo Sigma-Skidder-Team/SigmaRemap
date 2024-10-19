@@ -12,42 +12,44 @@ import java.util.List;
 
 import net.minecraft.advancements.Advancement;
 import net.minecraft.command.CommandSource;
+import net.minecraft.command.ISuggestionProvider;
+import net.minecraft.command.arguments.ResourceLocationArgument;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class7848 {
    private static final SuggestionProvider<CommandSource> field33657 = (var0, var1) -> {
-      Collection<Advancement> var4 = var0.getSource().method20177().method1396().method1066();
-      return Class6618.method20143(var4.stream().map(Advancement::getId), var1);
+      Collection<Advancement> var4 = var0.getSource().getServer().method1396().method1066();
+      return ISuggestionProvider.method20143(var4.stream().map(Advancement::getId), var1);
    };
 
    public static void method26285(CommandDispatcher<CommandSource> var0) {
       var0.register(
-         (LiteralArgumentBuilder) ((LiteralArgumentBuilder)Class6099.method18839("advancement").requires(var0x -> var0x.method20129(2)))
+         (LiteralArgumentBuilder) ((LiteralArgumentBuilder) Commands.method18839("advancement").requires(var0x -> var0x.method20129(2)))
                .then(
-                  Class6099.method18839("grant")
+                  Commands.method18839("grant")
                      .then(
-                        ((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder)Class6099.method18840(
+                        ((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder) Commands.method18840(
                                           "targets", Class8700.method31353()
                                        )
                                        .then(
-                                          Class6099.method18839("only")
+                                          Commands.method18839("only")
                                              .then(
-                                                ((RequiredArgumentBuilder)Class6099.method18840("advancement", Class8303.method29031())
+                                                ((RequiredArgumentBuilder) Commands.method18840("advancement", ResourceLocationArgument.method29031())
                                                       .suggests(field33657)
                                                       .executes(
                                                          var0x -> method26286(
                                                                (CommandSource)var0x.getSource(),
                                                                Class8700.method31354(var0x, "targets"),
                                                                Class2289.field15224,
-                                                               method26288(Class8303.method29032(var0x, "advancement"), Class2028.field13162)
+                                                               method26288(ResourceLocationArgument.method29032(var0x, "advancement"), Class2028.field13162)
                                                             )
                                                       ))
                                                    .then(
-                                                      Class6099.method18840("criterion", StringArgumentType.greedyString())
+                                                      Commands.method18840("criterion", StringArgumentType.greedyString())
                                                          .suggests(
-                                                            (var0x, var1) -> Class6618.method20147(
-                                                                  Class8303.method29032(var0x, "advancement").method27030().keySet(), var1
+                                                            (var0x, var1) -> ISuggestionProvider.method20147(
+                                                                  ResourceLocationArgument.method29032(var0x, "advancement").method27030().keySet(), var1
                                                                )
                                                          )
                                                          .executes(
@@ -55,7 +57,7 @@ public class Class7848 {
                                                                   (CommandSource)var0x.getSource(),
                                                                   Class8700.method31354(var0x, "targets"),
                                                                   Class2289.field15224,
-                                                                  Class8303.method29032(var0x, "advancement"),
+                                                                  ResourceLocationArgument.method29032(var0x, "advancement"),
                                                                   StringArgumentType.getString(var0x, "criterion")
                                                                )
                                                          )
@@ -63,87 +65,87 @@ public class Class7848 {
                                              )
                                        ))
                                     .then(
-                                       Class6099.method18839("from")
+                                       Commands.method18839("from")
                                           .then(
-                                             Class6099.method18840("advancement", Class8303.method29031())
+                                             Commands.method18840("advancement", ResourceLocationArgument.method29031())
                                                 .suggests(field33657)
                                                 .executes(
                                                    var0x -> method26286(
                                                          (CommandSource)var0x.getSource(),
                                                          Class8700.method31354(var0x, "targets"),
                                                          Class2289.field15224,
-                                                         method26288(Class8303.method29032(var0x, "advancement"), Class2028.field13164)
+                                                         method26288(ResourceLocationArgument.method29032(var0x, "advancement"), Class2028.field13164)
                                                       )
                                                 )
                                           )
                                     ))
                                  .then(
-                                    Class6099.method18839("until")
+                                    Commands.method18839("until")
                                        .then(
-                                          Class6099.method18840("advancement", Class8303.method29031())
+                                          Commands.method18840("advancement", ResourceLocationArgument.method29031())
                                              .suggests(field33657)
                                              .executes(
                                                 var0x -> method26286(
                                                       (CommandSource)var0x.getSource(),
                                                       Class8700.method31354(var0x, "targets"),
                                                       Class2289.field15224,
-                                                      method26288(Class8303.method29032(var0x, "advancement"), Class2028.field13165)
+                                                      method26288(ResourceLocationArgument.method29032(var0x, "advancement"), Class2028.field13165)
                                                    )
                                              )
                                        )
                                  ))
                               .then(
-                                 Class6099.method18839("through")
+                                 Commands.method18839("through")
                                     .then(
-                                       Class6099.method18840("advancement", Class8303.method29031())
+                                       Commands.method18840("advancement", ResourceLocationArgument.method29031())
                                           .suggests(field33657)
                                           .executes(
                                              var0x -> method26286(
                                                    (CommandSource)var0x.getSource(),
                                                    Class8700.method31354(var0x, "targets"),
                                                    Class2289.field15224,
-                                                   method26288(Class8303.method29032(var0x, "advancement"), Class2028.field13163)
+                                                   method26288(ResourceLocationArgument.method29032(var0x, "advancement"), Class2028.field13163)
                                                 )
                                           )
                                     )
                               ))
                            .then(
-                              Class6099.method18839("everything")
+                              Commands.method18839("everything")
                                  .executes(
                                     var0x -> method26286(
                                           (CommandSource)var0x.getSource(),
                                           Class8700.method31354(var0x, "targets"),
                                           Class2289.field15224,
-                                          ((CommandSource)var0x.getSource()).method20177().method1396().method1066()
+                                          ((CommandSource)var0x.getSource()).getServer().method1396().method1066()
                                        )
                                  )
                            )
                      )
                )
             .then(
-               Class6099.method18839("revoke")
+               Commands.method18839("revoke")
                   .then(
-                     ((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder)Class6099.method18840(
+                     ((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder) Commands.method18840(
                                        "targets", Class8700.method31353()
                                     )
                                     .then(
-                                       Class6099.method18839("only")
+                                       Commands.method18839("only")
                                           .then(
-                                             ((RequiredArgumentBuilder)Class6099.method18840("advancement", Class8303.method29031())
+                                             ((RequiredArgumentBuilder) Commands.method18840("advancement", ResourceLocationArgument.method29031())
                                                    .suggests(field33657)
                                                    .executes(
                                                       var0x -> method26286(
                                                             (CommandSource)var0x.getSource(),
                                                             Class8700.method31354(var0x, "targets"),
                                                             Class2289.field15225,
-                                                            method26288(Class8303.method29032(var0x, "advancement"), Class2028.field13162)
+                                                            method26288(ResourceLocationArgument.method29032(var0x, "advancement"), Class2028.field13162)
                                                          )
                                                    ))
                                                 .then(
-                                                   Class6099.method18840("criterion", StringArgumentType.greedyString())
+                                                   Commands.method18840("criterion", StringArgumentType.greedyString())
                                                       .suggests(
-                                                         (var0x, var1) -> Class6618.method20147(
-                                                               Class8303.method29032(var0x, "advancement").method27030().keySet(), var1
+                                                         (var0x, var1) -> ISuggestionProvider.method20147(
+                                                               ResourceLocationArgument.method29032(var0x, "advancement").method27030().keySet(), var1
                                                             )
                                                       )
                                                       .executes(
@@ -151,7 +153,7 @@ public class Class7848 {
                                                                (CommandSource)var0x.getSource(),
                                                                Class8700.method31354(var0x, "targets"),
                                                                Class2289.field15225,
-                                                               Class8303.method29032(var0x, "advancement"),
+                                                               ResourceLocationArgument.method29032(var0x, "advancement"),
                                                                StringArgumentType.getString(var0x, "criterion")
                                                             )
                                                       )
@@ -159,58 +161,58 @@ public class Class7848 {
                                           )
                                     ))
                                  .then(
-                                    Class6099.method18839("from")
+                                    Commands.method18839("from")
                                        .then(
-                                          Class6099.method18840("advancement", Class8303.method29031())
+                                          Commands.method18840("advancement", ResourceLocationArgument.method29031())
                                              .suggests(field33657)
                                              .executes(
                                                 var0x -> method26286(
                                                       (CommandSource)var0x.getSource(),
                                                       Class8700.method31354(var0x, "targets"),
                                                       Class2289.field15225,
-                                                      method26288(Class8303.method29032(var0x, "advancement"), Class2028.field13164)
+                                                      method26288(ResourceLocationArgument.method29032(var0x, "advancement"), Class2028.field13164)
                                                    )
                                              )
                                        )
                                  ))
                               .then(
-                                 Class6099.method18839("until")
+                                 Commands.method18839("until")
                                     .then(
-                                       Class6099.method18840("advancement", Class8303.method29031())
+                                       Commands.method18840("advancement", ResourceLocationArgument.method29031())
                                           .suggests(field33657)
                                           .executes(
                                              var0x -> method26286(
                                                    (CommandSource)var0x.getSource(),
                                                    Class8700.method31354(var0x, "targets"),
                                                    Class2289.field15225,
-                                                   method26288(Class8303.method29032(var0x, "advancement"), Class2028.field13165)
+                                                   method26288(ResourceLocationArgument.method29032(var0x, "advancement"), Class2028.field13165)
                                                 )
                                           )
                                     )
                               ))
                            .then(
-                              Class6099.method18839("through")
+                              Commands.method18839("through")
                                  .then(
-                                    Class6099.method18840("advancement", Class8303.method29031())
+                                    Commands.method18840("advancement", ResourceLocationArgument.method29031())
                                        .suggests(field33657)
                                        .executes(
                                           var0x -> method26286(
                                                 (CommandSource)var0x.getSource(),
                                                 Class8700.method31354(var0x, "targets"),
                                                 Class2289.field15225,
-                                                method26288(Class8303.method29032(var0x, "advancement"), Class2028.field13163)
+                                                method26288(ResourceLocationArgument.method29032(var0x, "advancement"), Class2028.field13163)
                                              )
                                        )
                                  )
                            ))
                         .then(
-                           Class6099.method18839("everything")
+                           Commands.method18839("everything")
                               .executes(
                                  var0x -> method26286(
                                        (CommandSource)var0x.getSource(),
                                        Class8700.method31354(var0x, "targets"),
                                        Class2289.field15225,
-                                       ((CommandSource)var0x.getSource()).method20177().method1396().method1066()
+                                       ((CommandSource)var0x.getSource()).getServer().method1396().method1066()
                                     )
                               )
                         )
@@ -229,18 +231,18 @@ public class Class7848 {
       if (var6 != 0) {
          if (var3.size() != 1) {
             if (var1.size() != 1) {
-               var0.method20179(new TranslationTextComponent(var2.method9040() + ".many.to.many.success", var3.size(), var1.size()), true);
+               var0.sendFeedback(new TranslationTextComponent(var2.method9040() + ".many.to.many.success", var3.size(), var1.size()), true);
             } else {
-               var0.method20179(
+               var0.sendFeedback(
                   new TranslationTextComponent(var2.method9040() + ".many.to.one.success", var3.size(), ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()), true
                );
             }
          } else if (var1.size() != 1) {
-            var0.method20179(
+            var0.sendFeedback(
                new TranslationTextComponent(var2.method9040() + ".one.to.many.success", ((Advancement)var3.iterator().next()).method27035(), var1.size()), true
             );
          } else {
-            var0.method20179(
+            var0.sendFeedback(
                new TranslationTextComponent(
                   var2.method9040() + ".one.to.one.success", ((Advancement)var3.iterator().next()).method27035(), ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()
                ),
@@ -281,9 +283,9 @@ public class Class7848 {
 
          if (var7 != 0) {
             if (var1.size() != 1) {
-               var0.method20179(new TranslationTextComponent(var2.method9040() + ".criterion.to.many.success", var4, var3.method27035(), var1.size()), true);
+               var0.sendFeedback(new TranslationTextComponent(var2.method9040() + ".criterion.to.many.success", var4, var3.method27035(), var1.size()), true);
             } else {
-               var0.method20179(
+               var0.sendFeedback(
                   new TranslationTextComponent(
                      var2.method9040() + ".criterion.to.one.success", var4, var3.method27035(), ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()
                   ),

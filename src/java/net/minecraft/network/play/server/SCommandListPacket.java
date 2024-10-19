@@ -17,6 +17,7 @@ import it.unimi.dsi.fastutil.objects.ObjectIterator;
 import it.unimi.dsi.fastutil.objects.Object2IntMap.Entry;
 import mapped.*;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
+import net.minecraft.command.ISuggestionProvider;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 
@@ -27,12 +28,12 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 public class SCommandListPacket implements IPacket<IClientPlayNetHandler> {
-   private RootCommandNode<Class6618> field24922;
+   private RootCommandNode<ISuggestionProvider> field24922;
 
    public SCommandListPacket() {
    }
 
-   public SCommandListPacket(RootCommandNode<Class6618> var1) {
+   public SCommandListPacket(RootCommandNode<ISuggestionProvider> var1) {
       this.field24922 = var1;
    }
 
@@ -45,7 +46,7 @@ public class SCommandListPacket implements IPacket<IClientPlayNetHandler> {
       }
 
       method17652(var4);
-      this.field24922 = (RootCommandNode<Class6618>)Class8125.method28147(var4[var1.readVarInt()]);
+      this.field24922 = (RootCommandNode<ISuggestionProvider>)Class8125.method28147(var4[var1.readVarInt()]);
    }
 
    @Override
@@ -72,7 +73,7 @@ public class SCommandListPacket implements IPacket<IClientPlayNetHandler> {
       }
    }
 
-   private static Object2IntMap<CommandNode<Class6618>> method17653(RootCommandNode<Class6618> var0) {
+   private static Object2IntMap<CommandNode<ISuggestionProvider>> method17653(RootCommandNode<ISuggestionProvider> var0) {
       Object2IntOpenHashMap var3 = new Object2IntOpenHashMap();
       ArrayDeque var4 = Queues.newArrayDeque();
       var4.add(var0);
@@ -92,7 +93,7 @@ public class SCommandListPacket implements IPacket<IClientPlayNetHandler> {
       return var3;
    }
 
-   private static CommandNode<Class6618>[] method17654(Object2IntMap<CommandNode<Class6618>> var0) {
+   private static CommandNode<ISuggestionProvider>[] method17654(Object2IntMap<CommandNode<ISuggestionProvider>> var0) {
       CommandNode[] var3 = new CommandNode[var0.size()];
       ObjectIterator var4 = Object2IntMaps.fastIterable(var0).iterator();
 
@@ -113,7 +114,7 @@ public class SCommandListPacket implements IPacket<IClientPlayNetHandler> {
    }
 
    @Nullable
-   private static ArgumentBuilder<Class6618, ?> method17656(PacketBuffer var0, byte var1) {
+   private static ArgumentBuilder<ISuggestionProvider, ?> method17656(PacketBuffer var0, byte var1) {
       int var4 = var1 & 3;
       if (var4 != 2) {
          return var4 != 1 ? null : LiteralArgumentBuilder.literal(var0.readString(32767));
@@ -133,7 +134,7 @@ public class SCommandListPacket implements IPacket<IClientPlayNetHandler> {
       }
    }
 
-   private static void method17657(PacketBuffer var0, CommandNode<Class6618> var1, Map<CommandNode<Class6618>, Integer> var2) {
+   private static void method17657(PacketBuffer var0, CommandNode<ISuggestionProvider> var1, Map<CommandNode<ISuggestionProvider>, Integer> var2) {
       int var5 = 0;
       if (var1.getRedirect() != null) {
          var5 = (byte)(var5 | 8);
@@ -189,7 +190,7 @@ public class SCommandListPacket implements IPacket<IClientPlayNetHandler> {
       var1.handleCommandList(this);
    }
 
-   public RootCommandNode<Class6618> method17658() {
+   public RootCommandNode<ISuggestionProvider> method17658() {
       return this.field24922;
    }
 }
