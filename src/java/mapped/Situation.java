@@ -1,9 +1,7 @@
 package mapped;
 
 public enum Situation {
-   field11097,
+   DEFAULT, // idk, it's only used in constructor
    PLAYER,
    SAFE;
-
-   private static final Situation[] field11100 = new Situation[]{field11097, PLAYER, SAFE};
 }

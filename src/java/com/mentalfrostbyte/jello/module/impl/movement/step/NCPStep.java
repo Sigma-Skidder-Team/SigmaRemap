@@ -105,7 +105,7 @@ public class NCPStep extends Module {
                 this.field23994--;
             }
 
-            if (!var1.method13967()) {
+            if (!var1.isOnEdge()) {
                 mc.player.stepHeight = this.getNumberValueBySettingName("Maximum heigh");
             } else {
                 mc.player.stepHeight = 0.5F;

@@ -42,7 +42,7 @@ public class AACStep extends Module {
     @EventTarget
     private void method16146(SafeWalkEvent var1) {
         if (this.isEnabled() && mc.player != null) {
-            if (!var1.method13967()) {
+            if (!var1.isOnEdge()) {
                 mc.player.stepHeight = 1.0F;
             } else {
                 mc.player.stepHeight = 0.5F;

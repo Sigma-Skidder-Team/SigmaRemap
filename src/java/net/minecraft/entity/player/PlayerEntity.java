@@ -987,8 +987,7 @@ public abstract class PlayerEntity extends LivingEntity {
    public Vector3d maybeBackOffFromEdge(Vector3d var1, MoverType var2) {
       SafeWalkEvent event = new SafeWalkEvent(true);
       Client.getInstance().getEventManager().call(event);
-      if (event.method13965() == Situation.PLAYER
-         || !this.abilities.isFlying && (var2 == MoverType.SELF || var2 == MoverType.PLAYER) && this.method2853() && this.method2899()) {
+      if (event.getSituation() == Situation.PLAYER || !this.abilities.isFlying && (var2 == MoverType.SELF || var2 == MoverType.PLAYER) && this.method2853() && this.method2899()) {
          double var6 = var1.x;
          double var8 = var1.z;
          double var10 = 0.05;

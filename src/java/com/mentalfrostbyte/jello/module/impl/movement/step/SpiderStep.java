@@ -128,7 +128,7 @@ public class SpiderStep extends Module {
     @EventTarget
     private void method16589(SafeWalkEvent var1) {
         if (this.isEnabled() && mc.player != null) {
-            if (!var1.method13967()) {
+            if (!var1.isOnEdge()) {
                 mc.player.stepHeight = 1.07F;
             } else {
                 mc.player.stepHeight = 0.5F;
