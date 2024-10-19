@@ -35,8 +35,8 @@ public abstract class TicketManager {
    private final Class206 field43210 = new Class206(this, 65);
    private final Set<ChunkHolder> field43211 = Sets.newHashSet();
    private final ChunkTaskPriorityQueueSorter field43212;
-   private final Class321<Class6875<Runnable>> field43213;
-   private final Class321<Class8132> field43214;
+   private final Class321<ChunkTaskPriorityQueueSorter.FunctionEntry<Runnable>> field43213;
+   private final Class321<ChunkTaskPriorityQueueSorter.RunnableEntry> field43214;
    private final LongSet field43215 = new LongOpenHashSet();
    private final Executor field43216;
    private long currentTime;

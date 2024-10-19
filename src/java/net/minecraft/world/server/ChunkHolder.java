@@ -28,6 +28,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.atomic.AtomicReferenceArray;
+import java.util.function.IntConsumer;
+import java.util.function.IntSupplier;
 import javax.annotation.Nullable;
 
 public class ChunkHolder {
@@ -48,19 +50,19 @@ public class ChunkHolder {
    private int field38904;
    private int chunkLevel;
    private int field38906;
-   private final ChunkPos field38907;
+   private final ChunkPos pos;
    private boolean field38908;
    private final ShortSet[] field38909 = new ShortSet[16];
    private int field38910;
    private int field38911;
    private final WorldLightManager field38912;
-   private final Class1813 field38913;
+   private final IListener field38913;
    private final Class1650 field38914;
    private boolean field38915;
    private boolean field38916;
 
-   public ChunkHolder(ChunkPos var1, int var2, WorldLightManager var3, Class1813 var4, Class1650 var5) {
-      this.field38907 = var1;
+   public ChunkHolder(ChunkPos var1, int var2, WorldLightManager var3, IListener var4, Class1650 var5) {
+      this.pos = var1;
       this.field38912 = var3;
       this.field38913 = var4;
       this.field38914 = var5;
@@ -213,7 +215,7 @@ public class ChunkHolder {
    }
 
    private void method31052(IPacket<?> var1, boolean var2) {
-      this.field38914.getTrackingPlayers(this.field38907, var2).forEach(var1x -> var1x.connection.sendPacket(var1));
+      this.field38914.getTrackingPlayers(this.pos, var2).forEach(var1x -> var1x.connection.sendPacket(var1));
    }
 
    public CompletableFuture<Either<IChunk, IChunkLoadingError>> func_219276_a(ChunkStatus p_219276_1_, ChunkManager p_219276_2_) {
@@ -250,14 +252,14 @@ public class ChunkHolder {
    }
 
    public ChunkPos getPosition() {
-      return this.field38907;
+      return this.pos;
    }
 
    public int method31057() {
       return this.chunkLevel;
    }
 
-   public int method31058() {
+   public int func_219281_j() {
       return this.field38906;
    }
 
@@ -277,14 +279,20 @@ public class ChunkHolder {
       ChunkHolderLocationType var8 = getLocationTypeFromLevel(this.field38904);
       ChunkHolderLocationType var9 = getLocationTypeFromLevel(this.chunkLevel);
       if (var6) {
-         Either var10 = Either.right(new Class7023(this));
+         Either<IChunk, ChunkHolder.IChunkLoadingError> either = Either.right(new ChunkHolder.IChunkLoadingError()
+         {
+            public String toString()
+            {
+               return "Unloaded ticket level " + ChunkHolder.this.pos.toString();
+            }
+         });
 
          for (int var11 = !var7 ? 0 : var5.ordinal() + 1; var11 <= var4.ordinal(); var11++) {
             CompletableFuture var12 = this.field_219312_g.get(var11);
             if (var12 == null) {
-               this.field_219312_g.set(var11, CompletableFuture.<Either<IChunk, IChunkLoadingError>>completedFuture(var10));
+               this.field_219312_g.set(var11, CompletableFuture.<Either<IChunk, IChunkLoadingError>>completedFuture(either));
             } else {
-               var12.complete(var10);
+               var12.complete(either);
             }
          }
       }
@@ -322,7 +330,7 @@ public class ChunkHolder {
             throw (IllegalStateException) Util.pauseDevMode(new IllegalStateException());
          }
 
-         this.field38902 = var1.func_219188_b(this.field38907);
+         this.field38902 = var1.func_219188_b(this.pos);
          this.chain(this.field38902);
       }
 
@@ -331,7 +339,7 @@ public class ChunkHolder {
          this.field38902 = field38896;
       }
 
-      this.field38913.method7965(this.field38907, this::method31058, this.chunkLevel, this::method31059);
+      this.field38913.method7965(this.pos, this::func_219281_j, this.chunkLevel, this::method31059);
       this.field38904 = this.chunkLevel;
    }
 
@@ -365,11 +373,6 @@ public class ChunkHolder {
       this.chain(CompletableFuture.completedFuture(Either.left(var1.method7127())));
    }
 
-   // $VF: synthetic method
-   public static ChunkPos method31073(ChunkHolder var0) {
-      return var0.field38907;
-   }
-
    public interface IChunkLoadingError
    {
       ChunkHolder.IChunkLoadingError UNLOADED = new ChunkHolder.IChunkLoadingError()
@@ -379,5 +382,9 @@ public class ChunkHolder {
             return "UNLOADED";
          }
       };
+   }
+
+   public static interface IListener {
+      void method7965(ChunkPos var1, IntSupplier var2, int var3, IntConsumer var4);
    }
 }

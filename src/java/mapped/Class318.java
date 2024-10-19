@@ -40,7 +40,7 @@ public abstract class Class318<R extends Runnable> implements Class321<R>, Execu
    }
 
    @Override
-   public String method1631() {
+   public String getName() {
       return this.field1377;
    }
 
@@ -132,7 +132,7 @@ public abstract class Class318<R extends Runnable> implements Class321<R>, Execu
       try {
          var1.run();
       } catch (Exception var6) {
-         field1378.fatal("Error executing task on {}", this.method1631(), var6);
+         field1378.fatal("Error executing task on {}", this.getName(), var6);
          if (var6.getCause() instanceof OutOfMemoryError) {
             OutOfMemoryError var5 = (OutOfMemoryError)var6.getCause();
             throw var5;

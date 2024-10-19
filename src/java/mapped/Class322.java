@@ -137,7 +137,7 @@ public class Class322<T> implements Class321<T>, AutoCloseable, Runnable {
    }
 
    @Override
-   public String method1631() {
+   public String getName() {
       return this.field1388;
    }
 }

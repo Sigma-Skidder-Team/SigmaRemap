@@ -7,7 +7,7 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 
 public interface Class321<Msg> extends AutoCloseable {
-   String method1631();
+   String getName();
 
    void enqueue(Msg var1);
 

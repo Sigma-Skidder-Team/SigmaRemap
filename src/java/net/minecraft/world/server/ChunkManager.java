@@ -72,8 +72,8 @@ public class ChunkManager extends Class1648 implements Class1650 {
    private final LongSet field8962 = new LongOpenHashSet();
    private boolean field8963;
    private final ChunkTaskPriorityQueueSorter field8964;
-   private final Class321<Class6875<Runnable>> field8965;
-   private final Class321<Class6875<Runnable>> field_219265_s;
+   private final Class321<ChunkTaskPriorityQueueSorter.FunctionEntry<Runnable>> field8965;
+   private final Class321<ChunkTaskPriorityQueueSorter.FunctionEntry<Runnable>> field_219265_s;
    private final IChunkStatusListener iChunkStatusListener;
    private final Class9306 field8968;
    private final AtomicInteger field_219268_v = new AtomicInteger();
@@ -165,7 +165,7 @@ public class ChunkManager extends Class1648 implements Class1650 {
    public IntSupplier method6540(long var1) {
       return () -> {
          ChunkHolder var5 = this.method6539(var1);
-         return var5 != null ? Math.min(var5.method31058(), Class8572.field38532 - 1) : Class8572.field38532 - 1;
+         return var5 != null ? Math.min(var5.func_219281_j(), Class8572.field38532 - 1) : Class8572.field38532 - 1;
       };
    }
 
@@ -576,7 +576,7 @@ public class ChunkManager extends Class1648 implements Class1650 {
 
             return var6;
          }) : ChunkHolder.field38893;
-      }, var2 -> this.field_219265_s.enqueue(ChunkTaskPriorityQueueSorter.method7960(var2, var1.getPosition().asLong(), var1::method31057)));
+      }, var2 -> this.field_219265_s.enqueue(ChunkTaskPriorityQueueSorter.func_219069_a(var2, var1.getPosition().asLong(), var1::method31057)));
    }
 
    public CompletableFuture<Either<Chunk, ChunkHolder.IChunkLoadingError>> func_219179_a(ChunkHolder var1) {

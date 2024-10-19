@@ -52,7 +52,7 @@ public class Class206 extends Class205 {
                   ChunkTaskPriorityQueueSorter.method7962(() -> TicketManager.method35156(this.field764).execute(() -> TicketManager.method35157(this.field764, var1, var8)), var1, true)
                );
          } else {
-            TicketManager.method35153(this.field764).enqueue(ChunkTaskPriorityQueueSorter.method7960(() -> TicketManager.method35156(this.field764).execute(() -> {
+            TicketManager.method35153(this.field764).enqueue(ChunkTaskPriorityQueueSorter.func_219069_a(() -> TicketManager.method35156(this.field764).execute(() -> {
                   if (!this.method687(this.getLevel(var1))) {
                      TicketManager.method35154(this.field764).enqueue(ChunkTaskPriorityQueueSorter.method7962(() -> {
                      }, var1, false));

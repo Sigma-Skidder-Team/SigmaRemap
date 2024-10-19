@@ -24,11 +24,11 @@ public class ServerWorldLightManager extends WorldLightManager implements AutoCl
    private final Class322<Runnable> field735;
    private final ObjectList<Pair<Class2044, Runnable>> field736 = new ObjectArrayList();
    private final ChunkManager field737;
-   private final Class321<Class6875<Runnable>> field738;
+   private final Class321<ChunkTaskPriorityQueueSorter.FunctionEntry<Runnable>> field738;
    private volatile int field739 = 5;
    private final AtomicBoolean field740 = new AtomicBoolean();
 
-   public ServerWorldLightManager(IChunkLightProvider var1, ChunkManager var2, boolean var3, Class322<Runnable> var4, Class321<Class6875<Runnable>> var5) {
+   public ServerWorldLightManager(IChunkLightProvider var1, ChunkManager var2, boolean var3, Class322<Runnable> var4, Class321<ChunkTaskPriorityQueueSorter.FunctionEntry<Runnable>> var5) {
       super(var1, true, var3);
       this.field737 = var2;
       this.field738 = var5;
@@ -110,7 +110,7 @@ public class ServerWorldLightManager extends WorldLightManager implements AutoCl
    }
 
    private void method608(int var1, int var2, IntSupplier var3, Class2044 var4, Runnable var5) {
-      this.field738.enqueue(ChunkTaskPriorityQueueSorter.method7960(() -> {
+      this.field738.enqueue(ChunkTaskPriorityQueueSorter.func_219069_a(() -> {
          this.field736.add(Pair.of(var4, var5));
          if (this.field736.size() >= this.field739) {
             this.method612();

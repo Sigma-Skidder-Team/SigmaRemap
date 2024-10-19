@@ -23,52 +23,52 @@ import net.minecraft.world.server.ChunkHolder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class ChunkTaskPriorityQueueSorter implements AutoCloseable, Class1813 {
+public class ChunkTaskPriorityQueueSorter implements AutoCloseable, ChunkHolder.IListener {
    private static final Logger field9775 = LogManager.getLogger();
    private final Map<Class321<?>, Class8572<? extends Function<Class321<Unit>, ?>>> field9776;
    private final Set<Class321<?>> field9777;
    private final Class322<Class497> field9778;
 
    public ChunkTaskPriorityQueueSorter(List<Class321<?>> var1, Executor var2, int var3) {
-      this.field9776 = var1.stream().collect(Collectors.toMap(Function.<Class321<?>>identity(), var1x -> new Class8572(var1x.method1631() + "_queue", var3)));
+      this.field9776 = var1.stream().collect(Collectors.toMap(Function.<Class321<?>>identity(), var1x -> new Class8572(var1x.getName() + "_queue", var3)));
       this.field9777 = Sets.newHashSet(var1);
       this.field9778 = new Class322<Class497>(new Class7384(4), var2, "sorter");
    }
 
-   public static Class6875<Runnable> method7960(Runnable var0, long var1, IntSupplier var3) {
-      return new Class6875<>((p_219072_1_) -> () -> {
+   public static FunctionEntry<Runnable> func_219069_a(Runnable var0, long var1, IntSupplier var3) {
+      return new FunctionEntry<>((p_219072_1_) -> () -> {
          var0.run();
          p_219072_1_.enqueue(Unit.INSTANCE);
       }, var1, var3);
    }
 
-   public static Class6875<Runnable> func_219081_a(ChunkHolder var0, Runnable var1) {
-      return method7960(var1, var0.getPosition().asLong(), var0::method31058);
+   public static FunctionEntry<Runnable> func_219081_a(ChunkHolder var0, Runnable var1) {
+      return func_219069_a(var1, var0.getPosition().asLong(), var0::func_219281_j);
    }
 
-   public static Class8132 method7962(Runnable var0, long var1, boolean var3) {
-      return new Class8132(var0, var1, var3);
+   public static RunnableEntry method7962(Runnable var0, long var1, boolean var3) {
+      return new RunnableEntry(var0, var1, var3);
    }
 
-   public <T> Class321<Class6875<T>> method7963(Class321<T> var1, boolean var2) {
-      return this.field9778.<Class321<Class6875<T>>>method1646(var3 -> new Class497(0, () -> {this.method7969(var1);
+   public <T> Class321<FunctionEntry<T>> method7963(Class321<T> var1, boolean var2) {
+      return this.field9778.<Class321<FunctionEntry<T>>>method1646(var3 -> new Class497(0, () -> {this.method7969(var1);
                      var3.enqueue(
                         Class321.method1648(
-                           "chunk priority sorter around " + var1.method1631(),
-                           var3xx -> this.method7967(var1, var3xx.field29808, Class6875.method20934(var3xx), Class6875.method20935(var3xx), var2)
+                           "chunk priority sorter around " + var1.getName(),
+                           var3xx -> this.method7967(var1, var3xx.task, var3xx.chunkPos, var3xx.field_219430_c, var2)
                         ));
                   })).join();
    }
 
-   public Class321<Class8132> method7964(Class321<Runnable> var1) {
+   public Class321<RunnableEntry> method7964(Class321<Runnable> var1) {
       return this.field9778
-         .<Class321<Class8132>>method1646(
+         .<Class321<RunnableEntry>>method1646(
             var2 -> new Class497(
                   0,
                   () -> var2.enqueue(
-                        Class321.<Class8132>method1648(
-                           "chunk priority sorter around " + var1.method1631(),
-                           var2xx -> this.method7966(var1, Class8132.method28157(var2xx), Class8132.method28158(var2xx), Class8132.method28159(var2xx))
+                        Class321.<RunnableEntry>method1648(
+                           "chunk priority sorter around " + var1.getName(),
+                           var2xx -> this.method7966(var1, var2xx.field_219435_b, var2xx.field_219434_a, var2xx.field_219436_c)
                         )
                      )
                )
@@ -141,7 +141,7 @@ public class ChunkTaskPriorityQueueSorter implements AutoCloseable, Class1813 {
             .entrySet()
             .stream()
             .<CharSequence>map(
-               var0 -> var0.getKey().method1631()
+               var0 -> var0.getKey().getName()
                      + "=["
                      + var0.getValue().method30630().stream().<CharSequence>map(var0x -> var0x + ":" + new ChunkPos(var0x)).collect(Collectors.joining(","))
                      + "]"
@@ -154,5 +154,29 @@ public class ChunkTaskPriorityQueueSorter implements AutoCloseable, Class1813 {
    @Override
    public void close() {
       this.field9776.keySet().forEach(Class321::close);
+   }
+
+   public static final class FunctionEntry<T> {
+      public final Function<Class321<Unit>, T> task;
+      private final long chunkPos;
+      private final IntSupplier field_219430_c;
+
+      public FunctionEntry(Function<Class321<Unit>, T> var1, long var2, IntSupplier var4) {
+         this.task = var1;
+         this.chunkPos = var2;
+         this.field_219430_c = var4;
+      }
+   }
+
+   public static final class RunnableEntry {
+      private final Runnable field_219434_a;
+      private final long field_219435_b;
+      private final boolean field_219436_c;
+
+      public RunnableEntry(Runnable var1, long var2, boolean var4) {
+         this.field_219434_a = var1;
+         this.field_219435_b = var2;
+         this.field_219436_c = var4;
+      }
    }
 }

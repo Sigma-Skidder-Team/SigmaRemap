@@ -13,7 +13,7 @@ public final class Class1642<Msg> implements Class321<Msg> {
    }
 
    @Override
-   public String method1631() {
+   public String getName() {
       return this.field8918;
    }
 
