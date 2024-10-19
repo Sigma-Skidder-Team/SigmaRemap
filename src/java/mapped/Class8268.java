@@ -430,7 +430,7 @@ public class Class8268 {
    }
 
    public void method28859() throws CommandSyntaxException {
-      this.field35550 = new JSONToNBT(this.field35543).method25195();
+      this.field35550 = new JSONToNBT(this.field35543).readStruct();
    }
 
    private <T extends Comparable<T>> void method28860(Property<T> var1, String var2, int var3) throws CommandSyntaxException {

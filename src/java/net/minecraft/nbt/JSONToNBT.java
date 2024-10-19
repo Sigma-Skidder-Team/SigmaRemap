@@ -7,280 +7,365 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.Dynamic2CommandExceptionType;
 import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
-
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class JSONToNBT {
-   public static final SimpleCommandExceptionType field32863 = new SimpleCommandExceptionType(new TranslationTextComponent("argument.nbt.trailing"));
-   public static final SimpleCommandExceptionType field32864 = new SimpleCommandExceptionType(new TranslationTextComponent("argument.nbt.expected.key"));
-   public static final SimpleCommandExceptionType field32865 = new SimpleCommandExceptionType(new TranslationTextComponent("argument.nbt.expected.value"));
-   public static final Dynamic2CommandExceptionType field32866 = new Dynamic2CommandExceptionType(
-      (var0, var1) -> new TranslationTextComponent("argument.nbt.list.mixed", var0, var1)
-   );
-   public static final Dynamic2CommandExceptionType field32867 = new Dynamic2CommandExceptionType(
-      (var0, var1) -> new TranslationTextComponent("argument.nbt.array.mixed", var0, var1)
-   );
-   public static final DynamicCommandExceptionType field32868 = new DynamicCommandExceptionType(
-      var0 -> new TranslationTextComponent("argument.nbt.array.invalid", var0)
-   );
-   private static final Pattern field32869 = Pattern.compile("[-+]?(?:[0-9]+[.]|[0-9]*[.][0-9]+)(?:e[-+]?[0-9]+)?", 2);
-   private static final Pattern field32870 = Pattern.compile("[-+]?(?:[0-9]+[.]?|[0-9]*[.][0-9]+)(?:e[-+]?[0-9]+)?d", 2);
-   private static final Pattern field32871 = Pattern.compile("[-+]?(?:[0-9]+[.]?|[0-9]*[.][0-9]+)(?:e[-+]?[0-9]+)?f", 2);
-   private static final Pattern field32872 = Pattern.compile("[-+]?(?:0|[1-9][0-9]*)b", 2);
-   private static final Pattern field32873 = Pattern.compile("[-+]?(?:0|[1-9][0-9]*)l", 2);
-   private static final Pattern field32874 = Pattern.compile("[-+]?(?:0|[1-9][0-9]*)s", 2);
-   private static final Pattern field32875 = Pattern.compile("[-+]?(?:0|[1-9][0-9]*)");
-   private final StringReader field32876;
+public class JSONToNBT
+{
+   public static final SimpleCommandExceptionType ERROR_TRAILING_DATA = new SimpleCommandExceptionType(new TranslationTextComponent("argument.nbt.trailing"));
+   public static final SimpleCommandExceptionType ERROR_EXPECTED_KEY = new SimpleCommandExceptionType(new TranslationTextComponent("argument.nbt.expected.key"));
+   public static final SimpleCommandExceptionType ERROR_EXPECTED_VALUE = new SimpleCommandExceptionType(new TranslationTextComponent("argument.nbt.expected.value"));
+   public static final Dynamic2CommandExceptionType ERROR_INSERT_MIXED_LIST = new Dynamic2CommandExceptionType((error1, error2) ->
+   {
+      return new TranslationTextComponent("argument.nbt.list.mixed", error1, error2);
+   });
+   public static final Dynamic2CommandExceptionType ERROR_INSERT_MIXED_ARRAY = new Dynamic2CommandExceptionType((error, error2) ->
+   {
+      return new TranslationTextComponent("argument.nbt.array.mixed", error, error2);
+   });
+   public static final DynamicCommandExceptionType ERROR_INVALID_ARRAY = new DynamicCommandExceptionType((error) ->
+   {
+      return new TranslationTextComponent("argument.nbt.array.invalid", error);
+   });
+   private static final Pattern DOUBLE_PATTERN_NOSUFFIX = Pattern.compile("[-+]?(?:[0-9]+[.]|[0-9]*[.][0-9]+)(?:e[-+]?[0-9]+)?", 2);
+   private static final Pattern DOUBLE_PATTERN = Pattern.compile("[-+]?(?:[0-9]+[.]?|[0-9]*[.][0-9]+)(?:e[-+]?[0-9]+)?d", 2);
+   private static final Pattern FLOAT_PATTERN = Pattern.compile("[-+]?(?:[0-9]+[.]?|[0-9]*[.][0-9]+)(?:e[-+]?[0-9]+)?f", 2);
+   private static final Pattern BYTE_PATTERN = Pattern.compile("[-+]?(?:0|[1-9][0-9]*)b", 2);
+   private static final Pattern LONG_PATTERN = Pattern.compile("[-+]?(?:0|[1-9][0-9]*)l", 2);
+   private static final Pattern SHORT_PATTERN = Pattern.compile("[-+]?(?:0|[1-9][0-9]*)s", 2);
+   private static final Pattern INT_PATTERN = Pattern.compile("[-+]?(?:0|[1-9][0-9]*)");
+   private final StringReader reader;
 
-   public static CompoundNBT getTagFromJSON(String var0) throws CommandSyntaxException {
-      return new JSONToNBT(new StringReader(var0)).method25189();
+   public static CompoundNBT getTagFromJson(String jsonString) throws CommandSyntaxException
+   {
+      return (new JSONToNBT(new StringReader(jsonString))).readSingleStruct();
    }
 
    @VisibleForTesting
-   public CompoundNBT method25189() throws CommandSyntaxException {
-      CompoundNBT var3 = this.method25195();
-      this.field32876.skipWhitespace();
-      if (!this.field32876.canRead()) {
-         return var3;
-      } else {
-         throw field32863.createWithContext(this.field32876);
+   CompoundNBT readSingleStruct() throws CommandSyntaxException
+   {
+      CompoundNBT compoundnbt = this.readStruct();
+      this.reader.skipWhitespace();
+
+      if (this.reader.canRead())
+      {
+         throw ERROR_TRAILING_DATA.createWithContext(this.reader);
+      }
+      else
+      {
+         return compoundnbt;
       }
    }
 
-   public JSONToNBT(StringReader var1) {
-      this.field32876 = var1;
+   public JSONToNBT(StringReader readerIn)
+   {
+      this.reader = readerIn;
    }
 
-   public String method25190() throws CommandSyntaxException {
-      this.field32876.skipWhitespace();
-      if (this.field32876.canRead()) {
-         return this.field32876.readString();
-      } else {
-         throw field32864.createWithContext(this.field32876);
+   protected String readKey() throws CommandSyntaxException
+   {
+      this.reader.skipWhitespace();
+
+      if (!this.reader.canRead())
+      {
+         throw ERROR_EXPECTED_KEY.createWithContext(this.reader);
+      }
+      else
+      {
+         return this.reader.readString();
       }
    }
 
-   public INBT method25191() throws CommandSyntaxException {
-      this.field32876.skipWhitespace();
-      int var3 = this.field32876.getCursor();
-      if (!StringReader.isQuotedStringStart(this.field32876.peek())) {
-         String var4 = this.field32876.readUnquotedString();
-         if (!var4.isEmpty()) {
-            return this.method25192(var4);
-         } else {
-            this.field32876.setCursor(var3);
-            throw field32865.createWithContext(this.field32876);
+   protected INBT readTypedValue() throws CommandSyntaxException
+   {
+      this.reader.skipWhitespace();
+      int i = this.reader.getCursor();
+
+      if (StringReader.isQuotedStringStart(this.reader.peek()))
+      {
+         return StringNBT.valueOf(this.reader.readQuotedString());
+      }
+      else
+      {
+         String s = this.reader.readUnquotedString();
+
+         if (s.isEmpty())
+         {
+            this.reader.setCursor(i);
+            throw ERROR_EXPECTED_VALUE.createWithContext(this.reader);
          }
-      } else {
-         return StringNBT.valueOf(this.field32876.readQuotedString());
+         else
+         {
+            return this.type(s);
+         }
       }
    }
 
-   private INBT method25192(String var1) {
-      try {
-         if (field32871.matcher(var1).matches()) {
-            return FloatNBT.valueOf(Float.parseFloat(var1.substring(0, var1.length() - 1)));
+   private INBT type(String stringIn)
+   {
+      try
+      {
+         if (FLOAT_PATTERN.matcher(stringIn).matches())
+         {
+            return FloatNBT.valueOf(Float.parseFloat(stringIn.substring(0, stringIn.length() - 1)));
          }
 
-         if (field32872.matcher(var1).matches()) {
-            return ByteNBT.valueOf(Byte.parseByte(var1.substring(0, var1.length() - 1)));
+         if (BYTE_PATTERN.matcher(stringIn).matches())
+         {
+            return ByteNBT.valueOf(Byte.parseByte(stringIn.substring(0, stringIn.length() - 1)));
          }
 
-         if (field32873.matcher(var1).matches()) {
-            return LongNBT.valueOf(Long.parseLong(var1.substring(0, var1.length() - 1)));
+         if (LONG_PATTERN.matcher(stringIn).matches())
+         {
+            return LongNBT.valueOf(Long.parseLong(stringIn.substring(0, stringIn.length() - 1)));
          }
 
-         if (field32874.matcher(var1).matches()) {
-            return ShortNBT.valueOf(Short.parseShort(var1.substring(0, var1.length() - 1)));
+         if (SHORT_PATTERN.matcher(stringIn).matches())
+         {
+            return ShortNBT.valueOf(Short.parseShort(stringIn.substring(0, stringIn.length() - 1)));
          }
 
-         if (field32875.matcher(var1).matches()) {
-            return IntNBT.valueOf(Integer.parseInt(var1));
+         if (INT_PATTERN.matcher(stringIn).matches())
+         {
+            return IntNBT.valueOf(Integer.parseInt(stringIn));
          }
 
-         if (field32870.matcher(var1).matches()) {
-            return DoubleNBT.valueOf(Double.parseDouble(var1.substring(0, var1.length() - 1)));
+         if (DOUBLE_PATTERN.matcher(stringIn).matches())
+         {
+            return DoubleNBT.valueOf(Double.parseDouble(stringIn.substring(0, stringIn.length() - 1)));
          }
 
-         if (field32869.matcher(var1).matches()) {
-            return DoubleNBT.valueOf(Double.parseDouble(var1));
+         if (DOUBLE_PATTERN_NOSUFFIX.matcher(stringIn).matches())
+         {
+            return DoubleNBT.valueOf(Double.parseDouble(stringIn));
          }
 
-         if ("true".equalsIgnoreCase(var1)) {
+         if ("true".equalsIgnoreCase(stringIn))
+         {
             return ByteNBT.ONE;
          }
 
-         if ("false".equalsIgnoreCase(var1)) {
+         if ("false".equalsIgnoreCase(stringIn))
+         {
             return ByteNBT.ZERO;
          }
-      } catch (NumberFormatException var5) {
+      }
+      catch (NumberFormatException numberformatexception)
+      {
       }
 
-      return StringNBT.valueOf(var1);
+      return StringNBT.valueOf(stringIn);
    }
 
-   public INBT method25193() throws CommandSyntaxException {
-      this.field32876.skipWhitespace();
-      if (this.field32876.canRead()) {
-         char var3 = this.field32876.peek();
-         if (var3 != '{') {
-            return var3 != '[' ? this.method25191() : this.method25194();
-         } else {
-            return this.method25195();
+   public INBT readValue() throws CommandSyntaxException
+   {
+      this.reader.skipWhitespace();
+
+      if (!this.reader.canRead())
+      {
+         throw ERROR_EXPECTED_VALUE.createWithContext(this.reader);
+      }
+      else
+      {
+         char c0 = this.reader.peek();
+
+         if (c0 == '{')
+         {
+            return this.readStruct();
          }
-      } else {
-         throw field32865.createWithContext(this.field32876);
+         else
+         {
+            return c0 == '[' ? this.readList() : this.readTypedValue();
+         }
       }
    }
 
-   public INBT method25194() throws CommandSyntaxException {
-      return this.field32876.canRead(3) && !StringReader.isQuotedStringStart(this.field32876.peek(1)) && this.field32876.peek(2) == ';'
-         ? this.method25197()
-         : this.method25196();
+   protected INBT readList() throws CommandSyntaxException
+   {
+      return this.reader.canRead(3) && !StringReader.isQuotedStringStart(this.reader.peek(1)) && this.reader.peek(2) == ';' ? this.readArrayTag() : this.readListTag();
    }
 
-   public CompoundNBT method25195() throws CommandSyntaxException {
-      this.method25200('{');
-      CompoundNBT var3 = new CompoundNBT();
-      this.field32876.skipWhitespace();
+   public CompoundNBT readStruct() throws CommandSyntaxException
+   {
+      this.expect('{');
+      CompoundNBT compoundnbt = new CompoundNBT();
+      this.reader.skipWhitespace();
 
-      while (this.field32876.canRead() && this.field32876.peek() != '}') {
-         int var4 = this.field32876.getCursor();
-         String var5 = this.method25190();
-         if (var5.isEmpty()) {
-            this.field32876.setCursor(var4);
-            throw field32864.createWithContext(this.field32876);
+      while (this.reader.canRead() && this.reader.peek() != '}')
+      {
+         int i = this.reader.getCursor();
+         String s = this.readKey();
+
+         if (s.isEmpty())
+         {
+            this.reader.setCursor(i);
+            throw ERROR_EXPECTED_KEY.createWithContext(this.reader);
          }
 
-         this.method25200(':');
-         var3.put(var5, this.method25193());
-         if (!this.method25199()) {
+         this.expect(':');
+         compoundnbt.put(s, this.readValue());
+
+         if (!this.hasElementSeparator())
+         {
             break;
          }
 
-         if (!this.field32876.canRead()) {
-            throw field32864.createWithContext(this.field32876);
+         if (!this.reader.canRead())
+         {
+            throw ERROR_EXPECTED_KEY.createWithContext(this.reader);
          }
       }
 
-      this.method25200('}');
-      return var3;
+      this.expect('}');
+      return compoundnbt;
    }
 
-   private INBT method25196() throws CommandSyntaxException {
-      this.method25200('[');
-      this.field32876.skipWhitespace();
-      if (!this.field32876.canRead()) {
-         throw field32865.createWithContext(this.field32876);
-      } else {
-         ListNBT var3 = new ListNBT();
-         INBTType var4 = null;
+   private INBT readListTag() throws CommandSyntaxException
+   {
+      this.expect('[');
+      this.reader.skipWhitespace();
 
-         while (this.field32876.peek() != ']') {
-            int var5 = this.field32876.getCursor();
-            INBT var6 = this.method25193();
-            INBTType var7 = var6.getType();
-            if (var4 != null) {
-               if (var7 != var4) {
-                  this.field32876.setCursor(var5);
-                  throw field32866.createWithContext(this.field32876, var7.getTagName(), var4.getTagName());
-               }
-            } else {
-               var4 = var7;
+      if (!this.reader.canRead())
+      {
+         throw ERROR_EXPECTED_VALUE.createWithContext(this.reader);
+      }
+      else
+      {
+         ListNBT listnbt = new ListNBT();
+         INBTType<?> inbttype = null;
+
+         while (this.reader.peek() != ']')
+         {
+            int i = this.reader.getCursor();
+            INBT inbt = this.readValue();
+            INBTType<?> inbttype1 = inbt.getType();
+
+            if (inbttype == null)
+            {
+               inbttype = inbttype1;
+            }
+            else if (inbttype1 != inbttype)
+            {
+               this.reader.setCursor(i);
+               throw ERROR_INSERT_MIXED_LIST.createWithContext(this.reader, inbttype1.getTagName(), inbttype.getTagName());
             }
 
-            var3.add(var6);
-            if (!this.method25199()) {
+            listnbt.add(inbt);
+
+            if (!this.hasElementSeparator())
+            {
                break;
             }
 
-            if (!this.field32876.canRead()) {
-               throw field32865.createWithContext(this.field32876);
+            if (!this.reader.canRead())
+            {
+               throw ERROR_EXPECTED_VALUE.createWithContext(this.reader);
             }
          }
 
-         this.method25200(']');
-         return var3;
+         this.expect(']');
+         return listnbt;
       }
    }
 
-   private INBT method25197() throws CommandSyntaxException {
-      this.method25200('[');
-      int var3 = this.field32876.getCursor();
-      char var4 = this.field32876.read();
-      this.field32876.read();
-      this.field32876.skipWhitespace();
-      if (this.field32876.canRead()) {
-         if (var4 != 'B') {
-            if (var4 != 'L') {
-               if (var4 != 'I') {
-                  this.field32876.setCursor(var3);
-                  throw field32868.createWithContext(this.field32876, String.valueOf(var4));
-               } else {
-                  return new IntArrayNBT(this.<Integer>method25198(IntArrayNBT.TYPE, IntNBT.TYPE));
+   private INBT readArrayTag() throws CommandSyntaxException
+   {
+      this.expect('[');
+      int i = this.reader.getCursor();
+      char c0 = this.reader.read();
+      this.reader.read();
+      this.reader.skipWhitespace();
+
+      if (!this.reader.canRead())
+      {
+         throw ERROR_EXPECTED_VALUE.createWithContext(this.reader);
+      }
+      else if (c0 == 'B')
+      {
+         return new ByteArrayNBT(this.getNumberList(ByteArrayNBT.TYPE, ByteNBT.TYPE));
+      }
+      else if (c0 == 'L')
+      {
+         return new LongArrayNBT(this.getNumberList(LongArrayNBT.TYPE, LongNBT.TYPE));
+      }
+      else if (c0 == 'I')
+      {
+         return new IntArrayNBT(this.getNumberList(IntArrayNBT.TYPE, IntNBT.TYPE));
+      }
+      else
+      {
+         this.reader.setCursor(i);
+         throw ERROR_INVALID_ARRAY.createWithContext(this.reader, String.valueOf(c0));
+      }
+   }
+
+   private <T extends Number> List<T> getNumberList(INBTType<?> arrayType, INBTType<?> numberType) throws CommandSyntaxException
+   {
+      List<T> list = Lists.newArrayList();
+
+      while (true)
+      {
+         if (this.reader.peek() != ']')
+         {
+            int i = this.reader.getCursor();
+            INBT inbt = this.readValue();
+            INBTType<?> inbttype = inbt.getType();
+
+            if (inbttype != numberType)
+            {
+               this.reader.setCursor(i);
+               throw ERROR_INSERT_MIXED_ARRAY.createWithContext(this.reader, inbttype.getTagName(), arrayType.getTagName());
+            }
+
+            if (numberType == ByteNBT.TYPE)
+            {
+               list.add((T)(Byte)((NumberNBT)inbt).getByte());
+            }
+            else if (numberType == LongNBT.TYPE)
+            {
+               list.add((T)(Long)((NumberNBT)inbt).getLong());
+            }
+            else
+            {
+               list.add((T)(Integer)((NumberNBT)inbt).getInt());
+            }
+
+            if (this.hasElementSeparator())
+            {
+               if (!this.reader.canRead())
+               {
+                  throw ERROR_EXPECTED_VALUE.createWithContext(this.reader);
                }
-            } else {
-               return new LongArrayNBT(this.<Long>method25198(LongArrayNBT.TYPE, LongNBT.TYPE));
+
+               continue;
             }
-         } else {
-            return new ByteArrayNBT(this.<Byte>method25198(ByteArrayNBT.TYPE, ByteNBT.TYPE));
          }
-      } else {
-         throw field32865.createWithContext(this.field32876);
+
+         this.expect(']');
+         return list;
       }
    }
 
-   private <T extends Number> List<T> method25198(INBTType<?> var1, INBTType<?> var2) throws CommandSyntaxException {
-      ArrayList var5 = Lists.newArrayList();
+   private boolean hasElementSeparator()
+   {
+      this.reader.skipWhitespace();
 
-      while (this.field32876.peek() != ']') {
-         int var6 = this.field32876.getCursor();
-         INBT var7 = this.method25193();
-         INBTType var8 = var7.getType();
-         if (var8 != var2) {
-            this.field32876.setCursor(var6);
-            throw field32867.createWithContext(this.field32876, var8.getTagName(), var1.getTagName());
-         }
-
-         if (var2 != ByteNBT.TYPE) {
-            if (var2 != LongNBT.TYPE) {
-               var5.add(((NumberNBT)var7).getInt());
-            } else {
-               var5.add(((NumberNBT)var7).getLong());
-            }
-         } else {
-            var5.add(((NumberNBT)var7).getByte());
-         }
-
-         if (!this.method25199()) {
-            break;
-         }
-
-         if (!this.field32876.canRead()) {
-            throw field32865.createWithContext(this.field32876);
-         }
-      }
-
-      this.method25200(']');
-      return var5;
-   }
-
-   private boolean method25199() {
-      this.field32876.skipWhitespace();
-      if (this.field32876.canRead() && this.field32876.peek() == ',') {
-         this.field32876.skip();
-         this.field32876.skipWhitespace();
+      if (this.reader.canRead() && this.reader.peek() == ',')
+      {
+         this.reader.skip();
+         this.reader.skipWhitespace();
          return true;
-      } else {
+      }
+      else
+      {
          return false;
       }
    }
 
-   private void method25200(char var1) throws CommandSyntaxException {
-      this.field32876.skipWhitespace();
-      this.field32876.expect(var1);
+   private void expect(char expected) throws CommandSyntaxException
+   {
+      this.reader.skipWhitespace();
+      this.reader.expect(expected);
    }
 }

@@ -299,7 +299,7 @@ public class Class9748 {
          }, var0 -> true, new TranslationTextComponent("argument.entity.options.tag.description"));
          method38218("nbt", var0 -> {
             boolean var3 = var0.method30275();
-            CompoundNBT var4 = new JSONToNBT(var0.method30277()).method25195();
+            CompoundNBT var4 = new JSONToNBT(var0.method30277()).readStruct();
             var0.method30278(var2 -> {
                CompoundNBT var5 = var2.writeWithoutTypeId(new CompoundNBT());
                if (var2 instanceof ServerPlayerEntity) {

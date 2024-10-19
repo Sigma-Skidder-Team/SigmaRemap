@@ -25,7 +25,7 @@ public class Class9770 implements ArgumentType<CompoundNBT> {
    }
 
    public CompoundNBT parse(StringReader var1) throws CommandSyntaxException {
-      return new JSONToNBT(var1).method25195();
+      return new JSONToNBT(var1).readStruct();
    }
 
    public Collection<String> getExamples() {

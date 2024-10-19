@@ -25,7 +25,7 @@ public class Class8780 implements ArgumentType<INBT> {
    }
 
    public INBT parse(StringReader var1) throws CommandSyntaxException {
-      return new JSONToNBT(var1).method25193();
+      return new JSONToNBT(var1).readValue();
    }
 
    public Collection<String> getExamples() {
