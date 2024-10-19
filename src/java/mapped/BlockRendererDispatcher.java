@@ -123,6 +123,6 @@ public class BlockRendererDispatcher implements IResourceManagerReloadListener {
    }
 
    public IResourceType method816() {
-      return VanillaResourceType.field12988;
+      return VanillaResourceType.MODELS;
    }
 }

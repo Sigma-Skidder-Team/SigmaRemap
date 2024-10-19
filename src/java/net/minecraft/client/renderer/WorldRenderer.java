@@ -3676,7 +3676,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
    }
 
    public IResourceType method942() {
-      return VanillaResourceType.field12988;
+      return VanillaResourceType.MODELS;
    }
 
    public void method943(Collection<TileEntity> var1, Collection<TileEntity> var2) {

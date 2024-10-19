@@ -452,6 +452,6 @@ public class ItemRenderer implements IResourceManagerReloadListener {
    }
 
    public IResourceType method800() {
-      return VanillaResourceType.field12988;
+      return VanillaResourceType.MODELS;
    }
 }
