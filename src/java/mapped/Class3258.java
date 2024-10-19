@@ -5,6 +5,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.RecipeManager;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ResourceLocation;
@@ -32,12 +33,12 @@ public class Class3258 extends Item {
 
       if (var7 != null && var7.contains("Recipes", 9)) {
          if (!var1.isRemote) {
-            ListNBT var8 = var7.method131("Recipes", 8);
+            ListNBT var8 = var7.getList("Recipes", 8);
             ArrayList var9 = Lists.newArrayList();
             RecipeManager var10 = var1.getServer().method1407();
 
             for (int var11 = 0; var11 < var8.size(); var11++) {
-               String var12 = var8.method160(var11);
+               String var12 = var8.getString(var11);
                Optional var13 = var10.method1035(new ResourceLocation(var12));
                if (!var13.isPresent()) {
                   field18744.error("Invalid recipe: {}", var12);

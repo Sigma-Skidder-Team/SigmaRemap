@@ -13,10 +13,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.util.Direction;
-import net.minecraft.util.IItemProvider;
-import net.minecraft.util.NonNullList;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.*;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
@@ -152,7 +149,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       this.field5249 = this.method3650(this.field5247.get(1));
       CompoundNBT var5 = var2.getCompound("RecipesUsed");
 
-      for (String var7 : var5.method97()) {
+      for (String var7 : var5.keySet()) {
          this.field5253.put(new ResourceLocation(var7), var5.getInt(var7));
       }
    }

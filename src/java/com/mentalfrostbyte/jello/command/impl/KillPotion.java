@@ -7,6 +7,7 @@ import mapped.*;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.network.play.client.CCreativeInventoryActionPacket;
 
 

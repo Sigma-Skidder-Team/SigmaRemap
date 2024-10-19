@@ -59,7 +59,7 @@ public class Class4855 extends Class4837 {
       }
 
       if (var5 != null && !var4.isEmpty()) {
-         var5.method32144("Explosion").method112("FadeColors", var4);
+         var5.method32144("Explosion").putIntArray("FadeColors", var4);
          return var5;
       } else {
          return ItemStack.EMPTY;

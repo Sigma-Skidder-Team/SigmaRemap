@@ -14,6 +14,7 @@ import net.minecraft.client.renderer.texture.NativeImage;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.DefaultUncaughtExceptionHandler;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SharedConstants;
 import net.minecraft.util.text.*;
 import org.apache.commons.lang3.Validate;
 import org.apache.logging.log4j.LogManager;

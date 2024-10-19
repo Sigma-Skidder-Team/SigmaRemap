@@ -43,7 +43,7 @@ public abstract class ProjectileEntity extends Entity {
    @Override
    public void writeAdditional(CompoundNBT var1) {
       if (this.field5093 != null) {
-         var1.method104("Owner", this.field5093);
+         var1.putUniqueID("Owner", this.field5093);
       }
 
       if (this.field5095) {
@@ -53,8 +53,8 @@ public abstract class ProjectileEntity extends Entity {
 
    @Override
    public void readAdditional(CompoundNBT var1) {
-      if (var1.method106("Owner")) {
-         this.field5093 = var1.method105("Owner");
+      if (var1.hasUniqueID("Owner")) {
+         this.field5093 = var1.getUniqueID("Owner");
       }
 
       this.field5095 = var1.getBoolean("LeftOwner");

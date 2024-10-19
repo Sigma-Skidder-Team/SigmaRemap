@@ -48,7 +48,7 @@ public class Class8426 {
    }
 
    public void method29606(CompoundNBT var1) {
-      for (String var5 : var1.method97()) {
+      for (String var5 : var1.keySet()) {
          ResourceLocation var6 = new ResourceLocation(var5);
          this.field36104.put(var6, Class3623.method12274(var1.getCompound(var5), var6));
       }

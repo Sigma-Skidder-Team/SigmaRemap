@@ -1,8 +1,9 @@
 package mapped;
 
+import net.minecraft.util.SharedConstants;
+import net.minecraft.util.StringUtils;
 import net.minecraft.util.text.*;
 import net.minecraft.world.GameType;
-import org.apache.commons.lang3.StringUtils;
 
 import java.io.File;
 
@@ -29,7 +30,7 @@ public class Class2024 implements Comparable<Class2024> {
    }
 
    public String method8644() {
-      return !StringUtils.isEmpty(this.field13143.method32426()) ? this.field13143.method32426() : this.field13145;
+      return !org.apache.commons.lang3.StringUtils.isEmpty(this.field13143.method32426()) ? this.field13143.method32426() : this.field13145;
    }
 
    public File method8645() {
@@ -65,7 +66,7 @@ public class Class2024 implements Comparable<Class2024> {
    }
 
    public IFormattableTextComponent method8651() {
-      return (IFormattableTextComponent)(!Class9001.method33256(this.field13144.method30184())
+      return (IFormattableTextComponent)(!StringUtils.isNullOrEmpty(this.field13144.method30184())
          ? new StringTextComponent(this.field13144.method30184())
          : new TranslationTextComponent("selectWorld.versionUnknown"));
    }

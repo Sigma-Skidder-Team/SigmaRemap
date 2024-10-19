@@ -11,6 +11,7 @@ import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
+import net.minecraft.nbt.NBTUtil;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -165,10 +166,10 @@ public class Class907 extends Entity {
                               if (var13 != null) {
                                  CompoundNBT var14 = var13.write(new CompoundNBT());
 
-                                 for (String var16 : this.field5183.method97()) {
-                                    INBT var17 = this.field5183.method116(var16);
+                                 for (String var16 : this.field5183.keySet()) {
+                                    INBT var17 = this.field5183.get(var16);
                                     if (!"x".equals(var16) && !"y".equals(var16) && !"z".equals(var16)) {
-                                       var14.put(var16, var17.method79());
+                                       var14.put(var16, var17.copy());
                                     }
                                  }
 
@@ -220,7 +221,7 @@ public class Class907 extends Entity {
 
    @Override
    public void writeAdditional(CompoundNBT var1) {
-      var1.put("BlockState", Class8354.method29287(this.field5176));
+      var1.put("BlockState", NBTUtil.method29287(this.field5176));
       var1.putInt("Time", this.field5177);
       var1.putBoolean("DropItem", this.field5178);
       var1.putBoolean("HurtEntities", this.field5180);
@@ -233,7 +234,7 @@ public class Class907 extends Entity {
 
    @Override
    public void readAdditional(CompoundNBT var1) {
-      this.field5176 = Class8354.method29285(var1.getCompound("BlockState"));
+      this.field5176 = NBTUtil.method29285(var1.getCompound("BlockState"));
       this.field5177 = var1.getInt("Time");
       if (!var1.contains("HurtEntities", 99)) {
          if (this.field5176.isIn(BlockTags.field32765)) {

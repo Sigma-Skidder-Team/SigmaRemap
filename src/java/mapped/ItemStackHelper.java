@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.util.NonNullList;
 
 import java.util.List;
@@ -29,7 +30,7 @@ public class ItemStackHelper {
          ItemStack var7 = (ItemStack)var1.get(var6);
          if (!var7.isEmpty()) {
             CompoundNBT var8 = new CompoundNBT();
-            var8.method100("Slot", (byte)var6);
+            var8.putByte("Slot", (byte)var6);
             var7.method32112(var8);
             var5.add(var8);
          }
@@ -43,10 +44,10 @@ public class ItemStackHelper {
    }
 
    public static void loadAllItems(CompoundNBT var0, NonNullList<ItemStack> var1) {
-      ListNBT var4 = var0.method131("Items", 10);
+      ListNBT var4 = var0.getList("Items", 10);
 
       for (int var5 = 0; var5 < var4.size(); var5++) {
-         CompoundNBT var6 = var4.method153(var5);
+         CompoundNBT var6 = var4.getCompound(var5);
          int var7 = var6.getByte("Slot") & 255;
          if (var7 >= 0 && var7 < var1.size()) {
             var1.set(var7, ItemStack.method32104(var6));

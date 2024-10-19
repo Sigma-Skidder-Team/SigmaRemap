@@ -1,6 +1,7 @@
 package mapped;
 
 import it.unimi.dsi.fastutil.shorts.ShortList;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.ITickList;
@@ -26,10 +27,10 @@ public class Class6806<T> implements ITickList<T> {
       this.field29629 = var2;
 
       for (int var6 = 0; var6 < var3.size(); var6++) {
-         ListNBT var7 = var3.method154(var6);
+         ListNBT var7 = var3.getList(var6);
 
          for (int var8 = 0; var8 < var7.size(); var8++) {
-            IChunk.getList(this.field29630, var6).add(var7.method155(var8));
+            IChunk.getList(this.field29630, var6).add(var7.getShort(var8));
          }
       }
    }

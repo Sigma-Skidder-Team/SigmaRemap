@@ -10,10 +10,13 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
+import net.minecraft.nbt.NBTUtil;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Rotation;
+import net.minecraft.util.SharedConstants;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MutableBoundingBox;
@@ -71,10 +74,10 @@ public class Class8969 {
                   var19 = new Class8266(var16, var17, (CompoundNBT)null);
                } else {
                   CompoundNBT var20 = var18.write(new CompoundNBT());
-                  var20.method133("x");
-                  var20.method133("y");
-                  var20.method133("z");
-                  var19 = new Class8266(var16, var17, var20.method79());
+                  var20.remove("x");
+                  var20.remove("y");
+                  var20.remove("z");
+                  var19 = new Class8266(var16, var17, var20.copy());
                }
 
                method32890(var19, var9, var10, var11);
@@ -135,7 +138,7 @@ public class Class8969 {
             var11 = ((PaintingEntity)var8).method4085().method8338(var2);
          }
 
-         this.field40546.add(new Class9559(var9, var11, var10.method79()));
+         this.field40546.add(new Class9559(var9, var11, var10.copy()));
       }
    }
 
@@ -224,7 +227,7 @@ public class Class8969 {
                            var20.field35532.putInt("y", var21.getY());
                            var20.field35532.putInt("z", var21.getZ());
                            if (var39 instanceof Class939) {
-                              var20.field35532.method103("LootTableSeed", var5.nextLong());
+                              var20.field35532.putLong("LootTableSeed", var5.nextLong());
                            }
 
                            var39.read(var20.field35531, var20.field35532);
@@ -346,7 +349,7 @@ public class Class8969 {
 
       for (Class8266 var9 : var4) {
          BlockPos var10 = method32896(var3, var9.field35530).method8337(var1);
-         Class8266 var11 = new Class8266(var10, var9.field35531, var9.field35532 == null ? null : var9.field35532.method79());
+         Class8266 var11 = new Class8266(var10, var9.field35531, var9.field35532 == null ? null : var9.field35532.copy());
          Iterator<Class7092> var12 = var3.method36443().iterator();
 
          while (var11 != null && var12.hasNext()) {
@@ -365,15 +368,15 @@ public class Class8969 {
       for (Class9559 var11 : this.field40546) {
          BlockPos var12 = method32905(var11.field44528, var3, var4, var5).method8337(var2);
          if (var6 == null || var6.method38396(var12)) {
-            CompoundNBT var13 = var11.field44529.method79();
+            CompoundNBT var13 = var11.field44529.copy();
             Vector3d var14 = method32906(var11.field44527, var3, var4, var5);
             Vector3d var15 = var14.add((double)var2.getX(), (double)var2.getY(), (double)var2.getZ());
             ListNBT var16 = new ListNBT();
-            var16.add(Class34.method93(var15.x));
-            var16.add(Class34.method93(var15.y));
-            var16.add(Class34.method93(var15.z));
+            var16.add(DoubleNBT.valueOf(var15.x));
+            var16.add(DoubleNBT.valueOf(var15.y));
+            var16.add(DoubleNBT.valueOf(var15.z));
             var13.put("Pos", var16);
-            var13.method133("UUID");
+            var13.remove("UUID");
             method32903(var1, var13).ifPresent(var6x -> {
                float var9 = var6x.getMirroredYaw(var3);
                var9 += var6x.rotationYaw - var6x.getRotatedYaw(var4);
@@ -584,7 +587,7 @@ public class Class8969 {
                ListNBT var25 = new ListNBT();
 
                for (BlockState var27 : var23) {
-                  var25.add(Class8354.method29287(var27));
+                  var25.add(NBTUtil.method29287(var27));
                }
 
                var19.add(var25);
@@ -595,7 +598,7 @@ public class Class8969 {
             ListNBT var20 = new ListNBT();
 
             for (BlockState var24 : var5) {
-               var20.add(Class8354.method29287(var24));
+               var20.add(NBTUtil.method29287(var24));
             }
 
             var1.put("palette", var20);
@@ -627,27 +630,27 @@ public class Class8969 {
    public void method32913(CompoundNBT var1) {
       this.field40545.clear();
       this.field40546.clear();
-      ListNBT var4 = var1.method131("size", 3);
-      this.field40547 = new BlockPos(var4.method156(0), var4.method156(1), var4.method156(2));
-      ListNBT var5 = var1.method131("blocks", 10);
+      ListNBT var4 = var1.getList("size", 3);
+      this.field40547 = new BlockPos(var4.getInt(0), var4.getInt(1), var4.getInt(2));
+      ListNBT var5 = var1.getList("blocks", 10);
       if (!var1.contains("palettes", 9)) {
-         this.method32914(var1.method131("palette", 10), var5);
+         this.method32914(var1.getList("palette", 10), var5);
       } else {
-         ListNBT var6 = var1.method131("palettes", 9);
+         ListNBT var6 = var1.getList("palettes", 9);
 
          for (int var7 = 0; var7 < var6.size(); var7++) {
-            this.method32914(var6.method154(var7), var5);
+            this.method32914(var6.getList(var7), var5);
          }
       }
 
-      ListNBT var14 = var1.method131("entities", 10);
+      ListNBT var14 = var1.getList("entities", 10);
 
       for (int var15 = 0; var15 < var14.size(); var15++) {
-         CompoundNBT var8 = var14.method153(var15);
-         ListNBT var9 = var8.method131("pos", 6);
-         Vector3d var10 = new Vector3d(var9.method158(0), var9.method158(1), var9.method158(2));
-         ListNBT var11 = var8.method131("blockPos", 3);
-         BlockPos var12 = new BlockPos(var11.method156(0), var11.method156(1), var11.method156(2));
+         CompoundNBT var8 = var14.getCompound(var15);
+         ListNBT var9 = var8.getList("pos", 6);
+         Vector3d var10 = new Vector3d(var9.getDouble(0), var9.getDouble(1), var9.getDouble(2));
+         ListNBT var11 = var8.getList("blockPos", 3);
+         BlockPos var12 = new BlockPos(var11.getInt(0), var11.getInt(1), var11.getInt(2));
          if (var8.contains("nbt")) {
             CompoundNBT var13 = var8.getCompound("nbt");
             this.field40546.add(new Class9559(var10, var12, var13));
@@ -659,7 +662,7 @@ public class Class8969 {
       Class2354 var5 = new Class2354();
 
       for (int var6 = 0; var6 < var1.size(); var6++) {
-         var5.method9283(Class8354.method29285(var1.method153(var6)), var6);
+         var5.method9283(NBTUtil.method29285(var1.getCompound(var6)), var6);
       }
 
       ArrayList var16 = Lists.newArrayList();
@@ -667,9 +670,9 @@ public class Class8969 {
       ArrayList var8 = Lists.newArrayList();
 
       for (int var9 = 0; var9 < var2.size(); var9++) {
-         CompoundNBT var10 = var2.method153(var9);
-         ListNBT var11 = var10.method131("pos", 3);
-         BlockPos var12 = new BlockPos(var11.method156(0), var11.method156(1), var11.method156(2));
+         CompoundNBT var10 = var2.getCompound(var9);
+         ListNBT var11 = var10.getList("pos", 3);
+         BlockPos var12 = new BlockPos(var11.getInt(0), var11.getInt(1), var11.getInt(2));
          BlockState var13 = var5.method9282(var10.getInt("state"));
          CompoundNBT var14;
          if (!var10.contains("nbt")) {
@@ -690,7 +693,7 @@ public class Class8969 {
       ListNBT var4 = new ListNBT();
 
       for (int var8 : var1) {
-         var4.add(Class36.method95(var8));
+         var4.add(IntNBT.valueOf(var8));
       }
 
       return var4;
@@ -700,7 +703,7 @@ public class Class8969 {
       ListNBT var4 = new ListNBT();
 
       for (double var8 : var1) {
-         var4.add(Class34.method93(var8));
+         var4.add(DoubleNBT.valueOf(var8));
       }
 
       return var4;

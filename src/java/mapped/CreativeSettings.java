@@ -5,6 +5,8 @@ import java.io.File;
 
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.CompressedStreamTools;
+import net.minecraft.nbt.NBTUtil;
+import net.minecraft.util.SharedConstants;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -35,10 +37,10 @@ public class CreativeSettings {
             var3.putInt("DataVersion", 1343);
          }
 
-         var3 = Class8354.method29289(this.field34555, Class2108.field13751, var3, var3.getInt("DataVersion"));
+         var3 = NBTUtil.method29289(this.field34555, Class2108.field13751, var3, var3.getInt("DataVersion"));
 
          for (int var4 = 0; var4 < 9; var4++) {
-            this.field34556[var4].method9285(var3.method131(String.valueOf(var4), 10));
+            this.field34556[var4].method9285(var3.getList(String.valueOf(var4), 10));
          }
       } catch (Exception var5) {
          field34553.error("Failed to load creative mode options", var5);

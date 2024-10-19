@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.SharedConstants;
+
 import java.io.IOException;
 import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
@@ -14,7 +16,7 @@ public class Class8950 {
    private static final Pattern field40459 = Pattern.compile(".*\\.|(?:COM|CLOCK\\$|CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9])(?:\\..*)?", 2);
 
    public static String method32695(Path var0, String var1, String var2) throws IOException {
-      for (char var8 : SharedConstants.field42546) {
+      for (char var8 : SharedConstants.ILLEGAL_FILE_CHARACTERS) {
          var1 = var1.replace(var8, '_');
       }
 

@@ -6,6 +6,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
+import net.minecraft.nbt.NBTUtil;
 import net.minecraft.network.DebugPacketSender;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tileentity.TileEntity;
@@ -139,9 +141,9 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
       } else {
          BlockPos var7 = this.getPos();
          CompoundNBT var8 = Beeee.method35245(var2);
-         var8.method133("Passengers");
-         var8.method133("Leash");
-         var8.method133("UUID");
+         var8.remove("Passengers");
+         var8.remove("Leash");
+         var8.remove("UUID");
          Direction var9 = var1.<Direction>get(Class3366.field18935);
          BlockPos var10 = var7.offset(var9);
          boolean var11 = !this.world.getBlockState(var10).method23414(this.world, var10).isEmpty();
@@ -250,17 +252,17 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
    public void read(BlockState var1, CompoundNBT var2) {
       super.read(var1, var2);
       this.field5392.clear();
-      ListNBT var5 = var2.method131("Bees", 10);
+      ListNBT var5 = var2.getList("Bees", 10);
 
       for (int var6 = 0; var6 < var5.size(); var6++) {
-         CompoundNBT var7 = var5.method153(var6);
+         CompoundNBT var7 = var5.getCompound(var6);
          Beeee var8 = new Beeee(var7.getCompound("EntityData"), var7.getInt("TicksInHive"), var7.getInt("MinOccupationTicks"));
          this.field5392.add(var8);
       }
 
       this.field5393 = null;
       if (var2.contains("FlowerPos")) {
-         this.field5393 = Class8354.method29283(var2.getCompound("FlowerPos"));
+         this.field5393 = NBTUtil.method29283(var2.getCompound("FlowerPos"));
       }
    }
 
@@ -269,7 +271,7 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
       super.write(var1);
       var1.put("Bees", this.method3927());
       if (this.method3925()) {
-         var1.put("FlowerPos", Class8354.method29284(this.field5393));
+         var1.put("FlowerPos", NBTUtil.method29284(this.field5393));
       }
 
       return var1;
@@ -279,7 +281,7 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
       ListNBT var3 = new ListNBT();
 
       for (Beeee var5 : this.field5392) {
-         Beeee.method35245(var5).method133("UUID");
+         Beeee.method35245(var5).remove("UUID");
          CompoundNBT var6 = new CompoundNBT();
          var6.put("EntityData", Beeee.method35245(var5));
          var6.putInt("TicksInHive", Beeee.method35246(var5));

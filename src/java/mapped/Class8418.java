@@ -7,8 +7,10 @@ import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.longs.LongArrayList;
 import net.minecraft.client.util.Util;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
+import net.minecraft.world.storage.DimensionSavedDataManager;
 
 import java.io.IOException;
 import java.util.Iterator;
@@ -42,7 +44,7 @@ public class Class8418 {
    private final List<String> field36093;
    private final List<String> field36094;
 
-   public Class8418(Class8250 var1, List<String> var2, List<String> var3) {
+   public Class8418(DimensionSavedDataManager var1, List<String> var2, List<String> var3) {
       this.field36093 = var2;
       this.field36094 = var3;
       this.method29579(var1);
@@ -60,7 +62,7 @@ public class Class8418 {
          Class7533 var7 = this.field36092.get(var6);
          if (var7 != null && var7.method24621(var1)) {
             var7.method24622(var1);
-            var7.method24605();
+            var7.markDirty();
          }
       }
    }
@@ -89,7 +91,7 @@ public class Class8418 {
                }
             }
 
-            var7.method114(var9, var12);
+            var7.putLongArray(var9, var12);
          }
       }
 
@@ -143,7 +145,7 @@ public class Class8418 {
       return var1;
    }
 
-   private void method29579(Class8250 var1) {
+   private void method29579(DimensionSavedDataManager var1) {
       if (var1 != null) {
          Iterator var4 = this.field36093.iterator();
 
@@ -159,8 +161,8 @@ public class Class8418 {
                var6 = new CompoundNBT();
 
                try {
-                  var6 = var1.method28771(var5, 1493).getCompound("data").getCompound("Features");
-                  if (var6.method134()) {
+                  var6 = var1.load(var5, 1493).getCompound("data").getCompound("Features");
+                  if (var6.isEmpty()) {
                      continue;
                   }
                } catch (IOException var17) {
@@ -168,15 +170,15 @@ public class Class8418 {
                break;
             }
 
-            for (String var8 : var6.method97()) {
+            for (String var8 : var6.keySet()) {
                CompoundNBT var9 = var6.getCompound(var8);
                long var10 = ChunkPos.asLong(var9.getInt("ChunkX"), var9.getInt("ChunkZ"));
-               ListNBT var12 = var9.method131("Children", 10);
+               ListNBT var12 = var9.getList("Children", 10);
                if (!var12.isEmpty()) {
-                  String var13 = var12.method153(0).getString("id");
+                  String var13 = var12.getCompound(0).getString("id");
                   String var14 = field36089.get(var13);
                   if (var14 != null) {
-                     var9.method109("id", var14);
+                     var9.putString("id", var14);
                   }
                }
 
@@ -185,25 +187,25 @@ public class Class8418 {
             }
 
             String var18 = var5 + "_index";
-            Class7533 var19 = var1.<Class7533>method28767(() -> new Class7533(var18), var18);
+            Class7533 var19 = var1.<Class7533>getOrCreate(() -> new Class7533(var18), var18);
             if (!var19.method24623().isEmpty()) {
                this.field36092.put(var5, var19);
             } else {
                Class7533 var20 = new Class7533(var18);
                this.field36092.put(var5, var20);
 
-               for (String var16 : var6.method97()) {
+               for (String var16 : var6.keySet()) {
                   CompoundNBT var21 = var6.getCompound(var16);
                   var20.method24619(ChunkPos.asLong(var21.getInt("ChunkX"), var21.getInt("ChunkZ")));
                }
 
-               var20.method24605();
+               var20.markDirty();
             }
          }
       }
    }
 
-   public static Class8418 method29580(RegistryKey<World> var0, Class8250 var1) {
+   public static Class8418 method29580(RegistryKey<World> var0, DimensionSavedDataManager var1) {
       if (var0 != World.OVERWORLD) {
          if (var0 != World.THE_NETHER) {
             if (var0 != World.THE_END) {

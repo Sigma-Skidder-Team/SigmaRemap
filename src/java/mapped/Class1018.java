@@ -81,7 +81,7 @@ public abstract class Class1018 extends Class1045 {
       super.writeAdditional(var1);
       var1.putInt("InLove", this.field5702);
       if (this.field5703 != null) {
-         var1.method104("LoveCause", this.field5703);
+         var1.putUniqueID("LoveCause", this.field5703);
       }
    }
 
@@ -94,7 +94,7 @@ public abstract class Class1018 extends Class1045 {
    public void readAdditional(CompoundNBT var1) {
       super.readAdditional(var1);
       this.field5702 = var1.getInt("InLove");
-      this.field5703 = !var1.method106("LoveCause") ? null : var1.method105("LoveCause");
+      this.field5703 = !var1.hasUniqueID("LoveCause") ? null : var1.getUniqueID("LoveCause");
    }
 
    public static boolean method4500(EntityType<? extends Class1018> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {

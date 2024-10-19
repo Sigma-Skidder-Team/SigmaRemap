@@ -16,6 +16,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
+import net.minecraft.nbt.NBTUtil;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.CachedBlockInfo;
 import net.minecraft.util.DamageSource;
@@ -64,8 +66,8 @@ public class Class7819 {
          this.field33545 = true;
          this.field33546 = true;
       } else {
-         if (var4.method106("Dragon")) {
-            this.field33547 = var4.method105("Dragon");
+         if (var4.hasUniqueID("Dragon")) {
+            this.field33547 = var4.getUniqueID("Dragon");
          }
 
          this.field33545 = var4.getBoolean("DragonKilled");
@@ -75,7 +77,7 @@ public class Class7819 {
          }
 
          if (var4.contains("ExitPortalLocation", 10)) {
-            this.field33549 = Class8354.method29283(var4.getCompound("ExitPortalLocation"));
+            this.field33549 = NBTUtil.method29283(var4.getCompound("ExitPortalLocation"));
          }
       }
 
@@ -83,10 +85,10 @@ public class Class7819 {
          this.field33539.addAll(ContiguousSet.create(Range.closedOpen(0, 20), DiscreteDomain.integers()));
          Collections.shuffle(this.field33539, new Random(var2));
       } else {
-         ListNBT var7 = var4.method131("Gateways", 3);
+         ListNBT var7 = var4.getList("Gateways", 3);
 
          for (int var8 = 0; var8 < var7.size(); var8++) {
-            this.field33539.add(var7.method156(var8));
+            this.field33539.add(var7.getInt(var8));
          }
       }
 
@@ -103,19 +105,19 @@ public class Class7819 {
    public CompoundNBT method26109() {
       CompoundNBT var3 = new CompoundNBT();
       if (this.field33547 != null) {
-         var3.method104("Dragon", this.field33547);
+         var3.putUniqueID("Dragon", this.field33547);
       }
 
       var3.putBoolean("DragonKilled", this.field33545);
       var3.putBoolean("PreviouslyKilled", this.field33546);
       if (this.field33549 != null) {
-         var3.put("ExitPortalLocation", Class8354.method29284(this.field33549));
+         var3.put("ExitPortalLocation", NBTUtil.method29284(this.field33549));
       }
 
       ListNBT var4 = new ListNBT();
 
       for (int var6 : this.field33539) {
-         var4.add(Class36.method95(var6));
+         var4.add(IntNBT.valueOf(var6));
       }
 
       var3.put("Gateways", var4);

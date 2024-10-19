@@ -4,6 +4,7 @@ import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ObjectIntIdentityMap;
 import net.minecraft.util.math.MathHelper;
@@ -215,7 +216,7 @@ public class Class8556<T> implements Class8555<T> {
          var12.method25761(var13, var9[var13]);
       }
 
-      var1.method113(var3, var12.method25763());
+      var1.putLongArray(var3, var12.method25763());
       this.method30491();
    }
 

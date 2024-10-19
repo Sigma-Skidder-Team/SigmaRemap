@@ -7,6 +7,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.NBTUtil;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
@@ -35,7 +36,7 @@ public class Class3271 extends Item implements IVanishable {
    }
 
    public static Optional<RegistryKey<World>> method11790(CompoundNBT var0) {
-      return World.CODEC.parse(NBTDynamicOps.INSTANCE, var0.method116("LodestoneDimension")).result();
+      return World.CODEC.parse(NBTDynamicOps.INSTANCE, var0.get("LodestoneDimension")).result();
    }
 
    @Override
@@ -50,8 +51,8 @@ public class Class3271 extends Item implements IVanishable {
          if (var9.isPresent()
             && var9.get() == var2.getDimensionKey()
             && var8.contains("LodestonePos")
-            && !((ServerWorld)var2).method6951().method6664(Class4913.field22771, Class8354.method29283(var8.getCompound("LodestonePos")))) {
-            var8.method133("LodestonePos");
+            && !((ServerWorld)var2).method6951().method6664(Class4913.field22771, NBTUtil.method29283(var8.getCompound("LodestonePos")))) {
+            var8.remove("LodestonePos");
          }
       }
    }
@@ -69,7 +70,7 @@ public class Class3271 extends Item implements IVanishable {
          boolean var8 = !var6.abilities.isCreativeMode && var7.getCount() == 1;
          if (!var8) {
             ItemStack var9 = new ItemStack(Items.field37905, 1);
-            CompoundNBT var10 = !var7.method32141() ? new CompoundNBT() : var7.getTag().method79();
+            CompoundNBT var10 = !var7.method32141() ? new CompoundNBT() : var7.getTag().copy();
             var9.setTag(var10);
             if (!var6.abilities.isCreativeMode) {
                var7.shrink(1);
@@ -88,7 +89,7 @@ public class Class3271 extends Item implements IVanishable {
    }
 
    private void method11791(RegistryKey<World> var1, BlockPos var2, CompoundNBT var3) {
-      var3.put("LodestonePos", Class8354.method29284(var2));
+      var3.put("LodestonePos", NBTUtil.method29284(var2));
       World.CODEC
          .encodeStart(NBTDynamicOps.INSTANCE, var1)
          .resultOrPartial(field18771::error)

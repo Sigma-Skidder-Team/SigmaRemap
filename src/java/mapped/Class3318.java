@@ -7,6 +7,7 @@ import java.util.List;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
@@ -74,10 +75,10 @@ public class Class3318 extends Item {
             );
          }
 
-         ListNBT var8 = var7.method131("Explosions", 10);
+         ListNBT var8 = var7.getList("Explosions", 10);
          if (!var8.isEmpty()) {
             for (int var9 = 0; var9 < var8.size(); var9++) {
-               CompoundNBT var10 = var8.method153(var9);
+               CompoundNBT var10 = var8.getCompound(var9);
                ArrayList var11 = Lists.newArrayList();
                Class3320.method11873(var10, var11);
                if (!var11.isEmpty()) {

@@ -4,6 +4,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.MathHelper;
@@ -22,12 +23,12 @@ public class Class4591 extends Class4588 {
       this.field22074 = var14;
       this.field22056 = 8;
       if (var15 != null) {
-         this.field22075 = var15.method131("Explosions", 10);
+         this.field22075 = var15.getList("Explosions", 10);
          if (!this.field22075.isEmpty()) {
             this.field22056 = this.field22075.size() * 2 - 1;
 
             for (int var18 = 0; var18 < this.field22075.size(); var18++) {
-               CompoundNBT var19 = this.field22075.method153(var18);
+               CompoundNBT var19 = this.field22075.getCompound(var18);
                if (var19.getBoolean("Flicker")) {
                   this.field22076 = true;
                   this.field22056 += 15;
@@ -49,7 +50,7 @@ public class Class4591 extends Class4588 {
             var4 = true;
          } else {
             for (int var5 = 0; var5 < this.field22075.size(); var5++) {
-               CompoundNBT var6 = this.field22075.method153(var5);
+               CompoundNBT var6 = this.field22075.getCompound(var5);
                if (Class2119.method8802(var6.getByte("Type")) == Class2119.field13808) {
                   var4 = true;
                   break;
@@ -70,7 +71,7 @@ public class Class4591 extends Class4588 {
 
       if (this.field22073 % 2 == 0 && this.field22075 != null && this.field22073 / 2 < this.field22075.size()) {
          int var15 = this.field22073 / 2;
-         CompoundNBT var17 = this.field22075.method153(var15);
+         CompoundNBT var17 = this.field22075.getCompound(var15);
          Class2119 var20 = Class2119.method8802(var17.getByte("Type"));
          boolean var21 = var17.getBoolean("Trail");
          boolean var7 = var17.getBoolean("Flicker");

@@ -21,6 +21,7 @@ import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
@@ -35,7 +36,7 @@ public class EnchantmentHelper {
          ListNBT var5 = var1.method32147();
 
          for (int var6 = 0; var6 < var5.size(); var6++) {
-            CompoundNBT var7 = var5.method153(var6);
+            CompoundNBT var7 = var5.getCompound(var6);
             ResourceLocation var8 = ResourceLocation.method8289(var7.getString("id"));
             if (var8 != null && var8.equals(var4)) {
                return MathHelper.clamp(var7.getInt("lvl"), 0, 255);
@@ -57,7 +58,7 @@ public class EnchantmentHelper {
       Map<Enchantment, Integer> var3 = Maps.newLinkedHashMap();
 
       for (int var4 = 0; var4 < var0.size(); var4++) {
-         CompoundNBT var5 = var0.method153(var4);
+         CompoundNBT var5 = var0.getCompound(var4);
          Registry.ENCHANTMENT.method9187(ResourceLocation.method8289(var5.getString("id"))).ifPresent(var2 -> {
             Integer var5x = var3.put(var2, var5.getInt("lvl"));
          });
@@ -74,7 +75,7 @@ public class EnchantmentHelper {
          if (var7 != null) {
             int var8 = (Integer)var6.getValue();
             CompoundNBT var9 = new CompoundNBT();
-            var9.method109("id", String.valueOf(Registry.ENCHANTMENT.getKey(var7)));
+            var9.putString("id", String.valueOf(Registry.ENCHANTMENT.getKey(var7)));
             var9.putShort("lvl", (short)var8);
             var4.add(var9);
             if (var1.getItem() == Items.field38070) {
@@ -97,8 +98,8 @@ public class EnchantmentHelper {
          ListNBT var4 = var1.method32147();
 
          for (int var5 = 0; var5 < var4.size(); var5++) {
-            String var6 = var4.method153(var5).getString("id");
-            int var7 = var4.method153(var5).getInt("lvl");
+            String var6 = var4.getCompound(var5).getString("id");
+            int var7 = var4.getCompound(var5).getInt("lvl");
             Registry.ENCHANTMENT.method9187(ResourceLocation.method8289(var6)).ifPresent(var2 -> var0.method30078(var2, var7));
          }
       }

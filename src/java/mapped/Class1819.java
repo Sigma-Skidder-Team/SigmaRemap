@@ -4,6 +4,7 @@ import com.google.common.collect.Iterables;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
+import net.minecraft.nbt.ListNBT;
 
 import java.util.List;
 
@@ -11,7 +12,7 @@ public enum Class1819 {
    field9817("replace") {
       @Override
       public void method8068(INBT class30, Class9670 class9670, List<INBT> list) throws CommandSyntaxException {
-         class9670.method37730(class30, Iterables.getLast(list)::method79);
+         class9670.method37730(class30, Iterables.getLast(list)::copy);
       }
    },
    field9818("append") {
@@ -20,7 +21,7 @@ public enum Class1819 {
          List<INBT> var6 = var2.method37728(var1, ListNBT::new);
          var6.forEach(var1x -> {
             if (var1x instanceof ListNBT) {
-               var3.forEach(var1xx -> ((ListNBT)var1x).add(var1xx.method79()));
+               var3.forEach(var1xx -> ((ListNBT)var1x).add(var1xx.copy()));
             }
          });
       }
@@ -32,7 +33,7 @@ public enum Class1819 {
             if (var1x instanceof CompoundNBT) {
                var3.forEach(var1xx -> {
                   if (var1xx instanceof CompoundNBT) {
-                     ((CompoundNBT)var1x).method140((CompoundNBT)var1xx);
+                     ((CompoundNBT)var1x).merge((CompoundNBT)var1xx);
                   }
                });
             }

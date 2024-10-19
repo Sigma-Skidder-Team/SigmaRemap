@@ -2,15 +2,16 @@ package mapped;
 
 import net.minecraft.nbt.IntArrayNBT;
 import net.minecraft.nbt.NBTSizeTracker;
+import net.minecraft.nbt.INBTType;
 
 import java.io.DataInput;
 import java.io.IOException;
 
-public final class Class7053 implements Class7052<IntArrayNBT> {
+public final class Class7053 implements INBTType<IntArrayNBT> {
    public IntArrayNBT readNBT(DataInput var1, int var2, NBTSizeTracker var3) throws IOException {
-      var3.method29769(192L);
+      var3.read(192L);
       int var6 = var1.readInt();
-      var3.method29769(32L * (long)var6);
+      var3.read(32L * (long)var6);
       int[] var7 = new int[var6];
 
       for (int var8 = 0; var8 < var6; var8++) {
@@ -21,12 +22,12 @@ public final class Class7053 implements Class7052<IntArrayNBT> {
    }
 
    @Override
-   public String method21975() {
+   public String getName() {
       return "INT[]";
    }
 
    @Override
-   public String method21976() {
+   public String getTagName() {
       return "TAG_Int_Array";
    }
 }

@@ -19,16 +19,16 @@ public class Class8082 implements MapLike<INBT> {
 
    @Nullable
    public INBT get(INBT var1) {
-      return this.field34734.method116(var1.getString());
+      return this.field34734.get(var1.getString());
    }
 
    @Nullable
    public INBT get(String var1) {
-      return this.field34734.method116(var1);
+      return this.field34734.get(var1);
    }
 
    public Stream<Pair<INBT, INBT>> entries() {
-      return this.field34734.method97().stream().<Pair<INBT, INBT>>map(var2 -> Pair.of(this.field34735.createString(var2), this.field34734.method116(var2)));
+      return this.field34734.keySet().stream().<Pair<INBT, INBT>>map(var2 -> Pair.of(this.field34735.createString(var2), this.field34734.get(var2)));
    }
 
    @Override

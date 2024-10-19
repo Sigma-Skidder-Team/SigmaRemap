@@ -17,6 +17,7 @@ import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.Items;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SharedConstants;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;

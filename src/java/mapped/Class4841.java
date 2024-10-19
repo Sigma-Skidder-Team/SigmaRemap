@@ -64,7 +64,7 @@ public class Class4841 extends Class4837 {
 
       if (!var5.isEmpty()) {
          CompoundNBT var8 = var4.method32145("BlockEntityTag");
-         CompoundNBT var9 = var8 != null ? var8.method79() : new CompoundNBT();
+         CompoundNBT var9 = var8 != null ? var8.copy() : new CompoundNBT();
          var9.putInt("Base", ((Class3301)var4.getItem()).method11849().method309());
          var5.setTagInfo("BlockEntityTag", var9);
          return var5;

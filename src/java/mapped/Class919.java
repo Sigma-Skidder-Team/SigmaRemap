@@ -129,9 +129,9 @@ public abstract class Class919 extends AbstractMinecartEntity implements IInvent
       if (this.field5238 == null) {
          ItemStackHelper.saveAllItems(var1, this.field5236);
       } else {
-         var1.method109("LootTable", this.field5238.toString());
+         var1.putString("LootTable", this.field5238.toString());
          if (this.field5239 != 0L) {
-            var1.method103("LootTableSeed", this.field5239);
+            var1.putLong("LootTableSeed", this.field5239);
          }
       }
    }

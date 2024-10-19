@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
@@ -19,9 +20,9 @@ public class Class7660 {
       var5.field41303 = new Class9074(var0.getByteArray("BlockLight"), 7);
       var5.field41302 = var0.getByteArray("HeightMap");
       var5.field41301 = var0.getBoolean("TerrainPopulated");
-      var5.field41307 = var0.method131("Entities", 10);
-      var5.field41308 = var0.method131("TileEntities", 10);
-      var5.field41309 = var0.method131("TileTicks", 10);
+      var5.field41307 = var0.getList("Entities", 10);
+      var5.field41308 = var0.getList("TileEntities", 10);
+      var5.field41309 = var0.getList("TileTicks", 10);
 
       try {
          var5.field41300 = var0.getLong("LastUpdate");
@@ -35,14 +36,14 @@ public class Class7660 {
    public static void method25181(DynamicRegistriesImpl var0, Class9028 var1, CompoundNBT var2, BiomeProvider var3) {
       var2.putInt("xPos", var1.field41310);
       var2.putInt("zPos", var1.field41311);
-      var2.method103("LastUpdate", var1.field41300);
+      var2.putLong("LastUpdate", var1.field41300);
       int[] var6 = new int[var1.field41302.length];
 
       for (int var7 = 0; var7 < var1.field41302.length; var7++) {
          var6[var7] = var1.field41302[var7];
       }
 
-      var2.method111("HeightMap", var6);
+      var2.putIntArray("HeightMap", var6);
       var2.putBoolean("TerrainPopulated", var1.field41301);
       ListNBT var19 = new ListNBT();
 
@@ -82,17 +83,17 @@ public class Class7660 {
             }
 
             CompoundNBT var25 = new CompoundNBT();
-            var25.method100("Y", (byte)(var8 & 0xFF));
-            var25.method110("Blocks", var20);
-            var25.method110("Data", var21.method20669());
-            var25.method110("SkyLight", var22.method20669());
-            var25.method110("BlockLight", var23.method20669());
+            var25.putByte("Y", (byte)(var8 & 0xFF));
+            var25.putByteArray("Blocks", var20);
+            var25.putByteArray("Data", var21.method20669());
+            var25.putByteArray("SkyLight", var22.method20669());
+            var25.putByteArray("BlockLight", var23.method20669());
             var19.add(var25);
          }
       }
 
       var2.put("Sections", var19);
-      var2.method111(
+      var2.putIntArray(
          "Biomes", new BiomeContainer(var0.<Biome>getRegistry(Registry.BIOME_KEY), new ChunkPos(var1.field41310, var1.field41311), var3).method7198()
       );
       var2.put("Entities", var1.field41307);

@@ -133,8 +133,8 @@ public class Class994 extends AbstractMinecartEntity {
    @Override
    public void writeAdditional(CompoundNBT var1) {
       super.writeAdditional(var1);
-      var1.method108("PushX", this.field5483);
-      var1.method108("PushZ", this.field5484);
+      var1.putDouble("PushX", this.field5483);
+      var1.putDouble("PushZ", this.field5484);
       var1.putShort("Fuel", (short)this.field5482);
    }
 

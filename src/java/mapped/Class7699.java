@@ -26,6 +26,8 @@ import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
+import net.minecraft.nbt.NBTUtil;
 import net.minecraft.network.play.server.SPlaySoundEffectPacket;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.stats.Stats;
@@ -96,10 +98,10 @@ public class Class7699 {
       this.field32990 = Class2305.method9075(var2.getString("Status"));
       this.field32975.clear();
       if (var2.contains("HeroesOfTheVillage", 9)) {
-         ListNBT var5 = var2.method131("HeroesOfTheVillage", 11);
+         ListNBT var5 = var2.getList("HeroesOfTheVillage", 11);
 
          for (int var6 = 0; var6 < var5.size(); var6++) {
-            this.field32975.add(Class8354.method29282(var5.get(var6)));
+            this.field32975.add(NBTUtil.readUniqueID(var5.get(var6)));
          }
       }
    }
@@ -541,7 +543,7 @@ public class Class7699 {
    }
 
    private void method25420() {
-      this.field32978.method6956().method24605();
+      this.field32978.method6956().markDirty();
    }
 
    public static ItemStack method25421() {
@@ -703,21 +705,21 @@ public class Class7699 {
       var1.putInt("Id", this.field32980);
       var1.putBoolean("Started", this.field32979);
       var1.putBoolean("Active", this.field32983);
-      var1.method103("TicksActive", this.field32976);
+      var1.putLong("TicksActive", this.field32976);
       var1.putInt("BadOmenLevel", this.field32982);
       var1.putInt("GroupsSpawned", this.field32984);
       var1.putInt("PreRaidTicks", this.field32987);
       var1.putInt("PostRaidTicks", this.field32986);
       var1.putFloat("TotalHealth", this.field32981);
       var1.putInt("NumGroups", this.field32989);
-      var1.method109("Status", this.field32990.method9074());
+      var1.putString("Status", this.field32990.method9074());
       var1.putInt("CX", this.field32977.getX());
       var1.putInt("CY", this.field32977.getY());
       var1.putInt("CZ", this.field32977.getZ());
       ListNBT var4 = new ListNBT();
 
       for (UUID var6 : this.field32975) {
-         var4.add(Class8354.method29281(var6));
+         var4.add(NBTUtil.valueOf(var6));
       }
 
       var1.put("HeroesOfTheVillage", var4);

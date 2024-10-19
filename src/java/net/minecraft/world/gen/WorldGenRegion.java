@@ -239,7 +239,7 @@ public class WorldGenRegion implements ISeedReader {
          var10.putInt("x", var1.getX());
          var10.putInt("y", var1.getY());
          var10.putInt("z", var1.getZ());
-         var10.method109("id", "DUMMY");
+         var10.putString("id", "DUMMY");
          var7.addTileEntity(var10);
       } else {
          var7.addTileEntity(var1, ((Class3245)var9).method11646(this));

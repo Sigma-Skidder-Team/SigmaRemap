@@ -21,6 +21,7 @@ import java.util.UUID;
 import javax.annotation.Nullable;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -46,7 +47,7 @@ public class PreYggdrasilConverter {
    }
 
    private static void method33727(MinecraftServer var0, Collection<String> var1, ProfileLookupCallback var2) {
-      String[] var5 = var1.stream().filter(var0x -> !Class9001.method33256(var0x)).<String>toArray(String[]::new);
+      String[] var5 = var1.stream().filter(var0x -> !StringUtils.isNullOrEmpty(var0x)).<String>toArray(String[]::new);
       if (!var0.isServerInOnlineMode()) {
          for (String var9 : var5) {
             UUID var10 = PlayerEntity.method2960(new GameProfile((UUID)null, var9));
@@ -187,7 +188,7 @@ public class PreYggdrasilConverter {
 
    @Nullable
    public static UUID method33732(MinecraftServer var0, String var1) {
-      if (!Class9001.method33256(var1) && var1.length() <= 16) {
+      if (!StringUtils.isNullOrEmpty(var1) && var1.length() <= 16) {
          GameProfile var4 = var0.getPlayerProfileCache().method31792(var1);
          if (var4 != null && var4.getId() != null) {
             return var4.getId();

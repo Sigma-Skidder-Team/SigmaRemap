@@ -28,14 +28,14 @@ public interface IAngerable {
    default void method4364(CompoundNBT var1) {
       var1.putInt("AngerTime", this.method4348());
       if (this.method4350() != null) {
-         var1.method104("AngryAt", this.method4350());
+         var1.putUniqueID("AngryAt", this.method4350());
       }
    }
 
    default void method4365(ServerWorld var1, CompoundNBT var2) {
       this.method4347(var2.getInt("AngerTime"));
-      if (var2.method106("AngryAt")) {
-         UUID var5 = var2.method105("AngryAt");
+      if (var2.hasUniqueID("AngryAt")) {
+         UUID var5 = var2.getUniqueID("AngryAt");
          this.setAngerTarget(var5);
          Entity var6 = var1.getEntityByUuid(var5);
          if (var6 != null) {

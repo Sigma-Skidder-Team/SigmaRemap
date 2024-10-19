@@ -10,7 +10,7 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 
-import mapped.ListNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.client.util.Util;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
@@ -111,7 +111,7 @@ public class AttributeModifierManager {
 
    public void deserialize(ListNBT listNBT) {
       for (int var4 = 0; var4 < listNBT.size(); var4++) {
-         CompoundNBT compoundNBT = listNBT.method153(var4);
+         CompoundNBT compoundNBT = listNBT.getCompound(var4);
          String s = compoundNBT.getString("Name");
          Util.acceptOrElse(Registry.ATTRIBUTE.method9187(ResourceLocation.method8289(s)), var2 -> {
             ModifiableAttributeInstance modifiableAttributeInstance = this.createInstanceIfAbsent(var2);

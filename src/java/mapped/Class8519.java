@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.serialization.Dynamic;
 import com.mojang.serialization.OptionalDynamic;
+import net.minecraft.util.SharedConstants;
 
 public class Class8519 {
    private final int field38225;

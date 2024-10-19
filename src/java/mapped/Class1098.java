@@ -126,7 +126,7 @@ public class Class1098 extends TameableEntity {
    public void writeAdditional(CompoundNBT var1) {
       super.writeAdditional(var1);
       var1.putInt("CatType", this.method5250());
-      var1.method100("CollarColor", (byte)this.method5256().method309());
+      var1.putByte("CollarColor", (byte)this.method5256().method309());
    }
 
    @Override

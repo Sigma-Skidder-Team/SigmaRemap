@@ -51,7 +51,7 @@ public class Class4184 extends Class4180 {
       this.field20468 = Mirror.valueOf(var2.getString("Mirror"));
       this.field20469 = Class2219.method8946(var2.getString("VerticalPlacement"));
       this.field20470 = (Class8299)Class8299.field35673
-         .parse(new Dynamic(NBTDynamicOps.INSTANCE, var2.method116("Properties")))
+         .parse(new Dynamic(NBTDynamicOps.INSTANCE, var2.get("Properties")))
          .getOrThrow(true, field20465::error);
       Class8969 var5 = var1.method31603(this.field20466);
       this.method12949(var5, new BlockPos(var5.method32886().getX() / 2, 0, var5.method32886().getZ() / 2));
@@ -60,10 +60,10 @@ public class Class4184 extends Class4180 {
    @Override
    public void method12897(CompoundNBT var1) {
       super.method12897(var1);
-      var1.method109("Template", this.field20466.toString());
-      var1.method109("Rotation", this.field20467.name());
-      var1.method109("Mirror", this.field20468.name());
-      var1.method109("VerticalPlacement", this.field20469.method8945());
+      var1.putString("Template", this.field20466.toString());
+      var1.putString("Rotation", this.field20467.name());
+      var1.putString("Mirror", this.field20468.name());
+      var1.putString("VerticalPlacement", this.field20469.method8945());
       Class8299.field35673
          .encodeStart(NBTDynamicOps.INSTANCE, this.field20470)
          .resultOrPartial(field20465::error)

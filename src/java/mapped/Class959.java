@@ -46,10 +46,10 @@ public class Class959 extends TileEntity implements ITickableTileEntity {
    @Override
    public void read(BlockState var1, CompoundNBT var2) {
       super.read(var1, var2);
-      if (!var2.method106("Target")) {
+      if (!var2.hasUniqueID("Target")) {
          this.field5388 = null;
       } else {
-         this.field5388 = var2.method105("Target");
+         this.field5388 = var2.getUniqueID("Target");
       }
    }
 
@@ -57,7 +57,7 @@ public class Class959 extends TileEntity implements ITickableTileEntity {
    public CompoundNBT write(CompoundNBT var1) {
       super.write(var1);
       if (this.field5387 != null) {
-         var1.method104("Target", this.field5387.getUniqueID());
+         var1.putUniqueID("Target", this.field5387.getUniqueID());
       }
 
       return var1;

@@ -16,6 +16,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.ShieldItem;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.NBTUtil;
 import net.minecraft.tileentity.BannerTileEntity;
 import net.minecraft.tileentity.SkullTileEntity;
 import net.minecraft.tileentity.TileEntity;
@@ -132,11 +133,11 @@ public class Class9809 {
                   if (var16.contains("SkullOwner", 8) && !StringUtils.isBlank(var16.getString("SkullOwner"))) {
                      GameProfile var19 = new GameProfile((UUID)null, var16.getString("SkullOwner"));
                      var18 = SkullTileEntity.method4008(var19);
-                     var16.method133("SkullOwner");
-                     var16.put("SkullOwner", Class8354.method29279(new CompoundNBT(), var18));
+                     var16.remove("SkullOwner");
+                     var16.put("SkullOwner", NBTUtil.writeGameProfile(new CompoundNBT(), var18));
                   }
                } else {
-                  var18 = Class8354.method29278(var16.getCompound("SkullOwner"));
+                  var18 = NBTUtil.readGameProfile(var16.getCompound("SkullOwner"));
                }
             }
 

@@ -4,6 +4,7 @@ import com.google.common.collect.Maps;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.network.DebugPacketSender;
 import net.minecraft.network.play.server.SEntityStatusPacket;
 import net.minecraft.stats.Stats;
@@ -11,6 +12,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.server.ServerWorld;
+import net.minecraft.world.storage.WorldSavedData;
 
 import java.util.Iterator;
 import java.util.List;
@@ -18,7 +20,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 
-public class Class7531 extends Class7530 {
+public class Class7531 extends WorldSavedData {
    private final Map<Integer, Class7699> field32332 = Maps.newHashMap();
    private final ServerWorld field32333;
    private int field32334;
@@ -28,7 +30,7 @@ public class Class7531 extends Class7530 {
       super(method24615(var1.getDimensionType()));
       this.field32333 = var1;
       this.field32334 = 1;
-      this.method24605();
+      this.markDirty();
    }
 
    public Class7699 method24610(int var1) {
@@ -49,12 +51,12 @@ public class Class7531 extends Class7530 {
             var4.method25403();
          } else {
             var3.remove();
-            this.method24605();
+            this.markDirty();
          }
       }
 
       if (this.field32335 % 200 == 0) {
-         this.method24605();
+         this.markDirty();
       }
 
       DebugPacketSender.method23621(this.field32333, this.field32332.values());
@@ -122,7 +124,7 @@ public class Class7531 extends Class7530 {
                }
             }
 
-            this.method24605();
+            this.markDirty();
             return var14;
          }
       }
@@ -134,22 +136,22 @@ public class Class7531 extends Class7530 {
    }
 
    @Override
-   public void method24591(CompoundNBT var1) {
-      this.field32334 = var1.getInt("NextAvailableID");
-      this.field32335 = var1.getInt("Tick");
-      ListNBT var4 = var1.method131("Raids", 10);
+   public void read(CompoundNBT compoundNBT) {
+      this.field32334 = compoundNBT.getInt("NextAvailableID");
+      this.field32335 = compoundNBT.getInt("Tick");
+      ListNBT var4 = compoundNBT.getList("Raids", 10);
 
       for (int var5 = 0; var5 < var4.size(); var5++) {
-         CompoundNBT var6 = var4.method153(var5);
+         CompoundNBT var6 = var4.getCompound(var5);
          Class7699 var7 = new Class7699(this.field32333, var6);
          this.field32332.put(var7.method25430(), var7);
       }
    }
 
    @Override
-   public CompoundNBT method24592(CompoundNBT var1) {
-      var1.putInt("NextAvailableID", this.field32334);
-      var1.putInt("Tick", this.field32335);
+   public CompoundNBT write(CompoundNBT compoundNBT) {
+      compoundNBT.putInt("NextAvailableID", this.field32334);
+      compoundNBT.putInt("Tick", this.field32335);
       ListNBT var4 = new ListNBT();
 
       for (Class7699 var6 : this.field32332.values()) {
@@ -158,8 +160,8 @@ public class Class7531 extends Class7530 {
          var4.add(var7);
       }
 
-      var1.put("Raids", var4);
-      return var1;
+      compoundNBT.put("Raids", var4);
+      return compoundNBT;
    }
 
    public static String method24615(DimensionType var0) {

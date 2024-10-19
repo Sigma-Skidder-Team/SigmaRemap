@@ -41,8 +41,8 @@ public class Class4182 extends Class4180 {
    @Override
    public void method12897(CompoundNBT var1) {
       super.method12897(var1);
-      var1.method109("Template", this.field20458.toString());
-      var1.method109("Rot", this.field20459.name());
+      var1.putString("Template", this.field20458.toString());
+      var1.putString("Rot", this.field20459.name());
    }
 
    @Override

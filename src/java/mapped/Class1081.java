@@ -85,7 +85,7 @@ public class Class1081 extends MonsterEntity implements Class1080 {
       }
 
       var1.putShort("Fuse", (short)this.field5943);
-      var1.method100("ExplosionRadius", (byte)this.field5944);
+      var1.putByte("ExplosionRadius", (byte)this.field5944);
       var1.putBoolean("ignited", this.method5024());
    }
 

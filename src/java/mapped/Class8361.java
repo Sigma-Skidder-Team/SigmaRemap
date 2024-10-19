@@ -1,6 +1,8 @@
 package mapped;
 
+import net.minecraft.nbt.CollectionNBT;
 import net.minecraft.nbt.INBT;
+import net.minecraft.nbt.ListNBT;
 
 import java.util.List;
 import java.util.function.Supplier;
@@ -14,20 +16,20 @@ public class Class8361 implements Class8356 {
 
    @Override
    public void method29291(INBT var1, List<INBT> var2) {
-      if (var1 instanceof Class27) {
-         var2.addAll((Class27)var1);
+      if (var1 instanceof CollectionNBT) {
+         var2.addAll((CollectionNBT)var1);
       }
    }
 
    @Override
    public void method29292(INBT var1, Supplier<INBT> var2, List<INBT> var3) {
-      if (var1 instanceof Class27) {
-         Class27 var6 = (Class27)var1;
+      if (var1 instanceof CollectionNBT) {
+         CollectionNBT var6 = (CollectionNBT)var1;
          if (!var6.isEmpty()) {
             var3.addAll(var6);
          } else {
             INBT var7 = (INBT)var2.get();
-            if (var6.method71(0, var7)) {
+            if (var6.addNBTByIndex(0, var7)) {
                var3.add(var7);
             }
          }
@@ -41,13 +43,13 @@ public class Class8361 implements Class8356 {
 
    @Override
    public int method29294(INBT var1, Supplier<INBT> var2) {
-      if (!(var1 instanceof Class27)) {
+      if (!(var1 instanceof CollectionNBT)) {
          return 0;
       } else {
-         Class27 var5 = (Class27)var1;
+         CollectionNBT var5 = (CollectionNBT)var1;
          int var6 = var5.size();
          if (var6 == 0) {
-            var5.method71(0, (INBT)var2.get());
+            var5.addNBTByIndex(0, (INBT)var2.get());
             return 1;
          } else {
             INBT var7 = (INBT)var2.get();
@@ -56,11 +58,11 @@ public class Class8361 implements Class8356 {
                return 0;
             } else {
                var5.clear();
-               if (!var5.method71(0, var7)) {
+               if (!var5.addNBTByIndex(0, var7)) {
                   return 0;
                } else {
                   for (int var9 = 1; var9 < var6; var9++) {
-                     var5.method71(var9, (INBT)var2.get());
+                     var5.addNBTByIndex(var9, (INBT)var2.get());
                   }
 
                   return var8;
@@ -72,8 +74,8 @@ public class Class8361 implements Class8356 {
 
    @Override
    public int method29295(INBT var1) {
-      if (var1 instanceof Class27) {
-         Class27 var4 = (Class27)var1;
+      if (var1 instanceof CollectionNBT) {
+         CollectionNBT var4 = (CollectionNBT)var1;
          int var5 = var4.size();
          if (var5 > 0) {
             var4.clear();

@@ -6,6 +6,7 @@ import java.util.function.Supplier;
 
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
+import net.minecraft.nbt.ListNBT;
 import org.apache.commons.lang3.mutable.MutableBoolean;
 
 public class Class8360 implements Class8356 {
@@ -36,7 +37,7 @@ public class Class8360 implements Class8356 {
             var6.setTrue();
          });
          if (var6.isFalse()) {
-            CompoundNBT var8 = this.field35908.method79();
+            CompoundNBT var8 = this.field35908.copy();
             var7.add(var8);
             var3.add(var8);
          }
@@ -59,7 +60,7 @@ public class Class8360 implements Class8356 {
                INBT var9 = var6.get(var8);
                if (this.field35909.test(var9)) {
                   INBT var10 = (INBT)var2.get();
-                  if (!var10.equals(var9) && var6.method70(var8, var10)) {
+                  if (!var10.equals(var9) && var6.setNBTByIndex(var8, var10)) {
                      var5++;
                   }
                }

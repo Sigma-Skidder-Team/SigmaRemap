@@ -38,10 +38,10 @@ public class Class954 extends TileEntity {
 
       for (int var4 = 0; var4 < 4; var4++) {
          String var5 = ITextComponent$Serializer.toJson(this.field5356[var4]);
-         var1.method109("Text" + (var4 + 1), var5);
+         var1.putString("Text" + (var4 + 1), var5);
       }
 
-      var1.method109("Color", this.field5360.method310());
+      var1.putString("Color", this.field5360.method310());
       return var1;
    }
 

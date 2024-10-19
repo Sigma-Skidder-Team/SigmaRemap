@@ -5,6 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.fluid.FluidState;
+import net.minecraft.nbt.NBTUtil;
 import net.minecraft.network.PacketBuffer;
 import net.optifine.ChunkDataOF;
 
@@ -30,7 +31,7 @@ public class ChunkSection {
       this.field30371 = var3;
       this.field30372 = var4;
       this.field30373 = new Class8556<BlockState>(
-         field30368, Block.BLOCK_STATE_IDS, Class8354::method29285, Class8354::method29287, Blocks.AIR.getDefaultState()
+         field30368, Block.BLOCK_STATE_IDS, NBTUtil::method29285, NBTUtil::method29287, Blocks.AIR.getDefaultState()
       );
    }
 

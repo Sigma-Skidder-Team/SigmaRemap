@@ -920,7 +920,7 @@ public abstract class World implements IWorld, AutoCloseable {
    }
 
    public CrashReportCategory fillCrashReport(CrashReport var1) {
-      CrashReportCategory var4 = var1.method14411("Affected level", 1);
+      CrashReportCategory var4 = var1.makeCategoryDepth("Affected level", 1);
       var4.addDetail("All players", () -> this.method6870().size() + " total; " + this.method6870());
       var4.addDetail("Chunk stats", this.getChunkProvider()::makeString);
       var4.addDetail("Level dimension", () -> this.getDimensionKey().getLocation().toString());

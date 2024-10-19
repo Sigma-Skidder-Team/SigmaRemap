@@ -7,6 +7,7 @@ import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
@@ -128,7 +129,7 @@ public class Class887 extends AbstractArrowEntity {
    public void writeAdditional(CompoundNBT var1) {
       super.writeAdditional(var1);
       if (this.field5117 != Class8137.field34976 && this.field5117 != null) {
-         var1.method109("Potion", Registry.field16076.getKey(this.field5117).toString());
+         var1.putString("Potion", Registry.field16076.getKey(this.field5117).toString());
       }
 
       if (this.field5119) {

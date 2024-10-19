@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Lists;
 import net.minecraft.block.Blocks;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
@@ -25,10 +26,10 @@ public class Class4189 extends Class4188 {
 
    public Class4189(TemplateManager var1, CompoundNBT var2) {
       super(Class7792.field33427, var2);
-      ListNBT var5 = var2.method131("Entrances", 11);
+      ListNBT var5 = var2.getList("Entrances", 11);
 
       for (int var6 = 0; var6 < var5.size(); var6++) {
-         this.field20480.add(new MutableBoundingBox(var5.method157(var6)));
+         this.field20480.add(new MutableBoundingBox(var5.getIntArray(var6)));
       }
    }
 

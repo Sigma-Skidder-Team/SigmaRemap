@@ -257,10 +257,10 @@ public class KeyboardListener {
 
    private void method36343(BlockState var1, BlockPos var2, CompoundNBT var3) {
       if (var3 != null) {
-         var3.method133("x");
-         var3.method133("y");
-         var3.method133("z");
-         var3.method133("id");
+         var3.remove("x");
+         var3.remove("y");
+         var3.remove("z");
+         var3.remove("id");
       }
 
       StringBuilder var6 = new StringBuilder(Class8268.toString(var1));
@@ -277,10 +277,10 @@ public class KeyboardListener {
       if (var3 == null) {
          var6 = String.format(Locale.ROOT, "/summon %s %.2f %.2f %.2f", var1.toString(), var2.x, var2.y, var2.z);
       } else {
-         var3.method133("UUID");
-         var3.method133("Pos");
-         var3.method133("Dimension");
-         String var7 = var3.method82().getString();
+         var3.remove("UUID");
+         var3.remove("Pos");
+         var3.remove("Dimension");
+         String var7 = var3.toFormattedComponent().getString();
          var6 = String.format(Locale.ROOT, "/summon %s %.2f %.2f %.2f %s", var1.toString(), var2.x, var2.y, var2.z, var7);
       }
 

@@ -9,6 +9,7 @@ import net.minecraft.entity.projectile.ProjectileHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -191,7 +192,7 @@ public class Class888 extends ProjectileEntity implements Class889 {
    private boolean method3505() {
       ItemStack var3 = this.dataManager.<ItemStack>method35445(field5120);
       CompoundNBT var4 = !var3.isEmpty() ? var3.method32145("Fireworks") : null;
-      ListNBT var5 = var4 == null ? null : var4.method131("Explosions", 10);
+      ListNBT var5 = var4 == null ? null : var4.getList("Explosions", 10);
       return var5 != null && !var5.isEmpty();
    }
 
@@ -199,7 +200,7 @@ public class Class888 extends ProjectileEntity implements Class889 {
       float var3 = 0.0F;
       ItemStack var4 = this.dataManager.<ItemStack>method35445(field5120);
       CompoundNBT var5 = !var4.isEmpty() ? var4.method32145("Fireworks") : null;
-      ListNBT var6 = var5 == null ? null : var5.method131("Explosions", 10);
+      ListNBT var6 = var5 == null ? null : var5.getList("Explosions", 10);
       if (var6 != null && !var6.isEmpty()) {
          var3 = 5.0F + (float)(var6.size() * 2);
       }

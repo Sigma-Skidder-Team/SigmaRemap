@@ -6,6 +6,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.entity.projectile.ProjectileHelper;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
 import net.minecraft.particles.IParticleData;
@@ -130,11 +131,11 @@ public abstract class Class901 extends ProjectileEntity {
    public void readAdditional(CompoundNBT var1) {
       super.readAdditional(var1);
       if (var1.contains("power", 9)) {
-         ListNBT var4 = var1.method131("power", 6);
+         ListNBT var4 = var1.getList("power", 6);
          if (var4.size() == 3) {
-            this.field5141 = var4.method158(0);
-            this.field5142 = var4.method158(1);
-            this.field5143 = var4.method158(2);
+            this.field5141 = var4.getDouble(0);
+            this.field5142 = var4.getDouble(1);
+            this.field5143 = var4.getDouble(2);
          }
       }
    }

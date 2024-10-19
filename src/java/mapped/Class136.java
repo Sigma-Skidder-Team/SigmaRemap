@@ -19,7 +19,7 @@ public class Class136 extends Class128 {
 
    @Override
    public ItemStack method371(ItemStack var1, LootContext var2) {
-      var1.getOrCreateTag().method140(this.field459);
+      var1.getOrCreateTag().merge(this.field459);
       return var1;
    }
 

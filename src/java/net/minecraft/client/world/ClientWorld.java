@@ -633,7 +633,7 @@ public class ClientWorld extends World {
 
    @Override
    public void method6799(MapData var1) {
-      this.maps.put(var1.method24608(), var1);
+      this.maps.put(var1.getName(), var1);
    }
 
    @Override

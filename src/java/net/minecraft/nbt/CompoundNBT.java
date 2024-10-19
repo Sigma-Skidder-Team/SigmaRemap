@@ -6,6 +6,20 @@ import com.google.common.collect.Maps;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.Dynamic;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
+import java.util.UUID;
+import java.util.regex.Pattern;
+import javax.annotation.Nullable;
+
 import mapped.*;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
@@ -15,468 +29,754 @@ import net.minecraft.util.text.StringTextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import javax.annotation.Nullable;
-import java.io.DataInput;
-import java.io.DataOutput;
-import java.io.IOException;
-import java.util.*;
-import java.util.regex.Pattern;
+public class CompoundNBT implements INBT
+{
+   public static final Codec<CompoundNBT> CODEC = Codec.PASSTHROUGH.comapFlatMap((dynamic) ->
+   {
+      INBT inbt = dynamic.convert(NBTDynamicOps.INSTANCE).getValue();
+      return inbt instanceof CompoundNBT ? DataResult.success((CompoundNBT)inbt) : DataResult.error("Not a compound tag: " + inbt);
+   }, (nbt) ->
+   {
+      return new Dynamic<>(NBTDynamicOps.INSTANCE, nbt);
+   });
+   private static final Logger LOGGER = LogManager.getLogger();
+   private static final Pattern SIMPLE_VALUE = Pattern.compile("[A-Za-z0-9._+-]+");
+   public static final INBTType<CompoundNBT> TYPE = new INBTType<CompoundNBT>()
+   {
+      public CompoundNBT readNBT(DataInput input, int depth, NBTSizeTracker accounter) throws IOException
+      {
+         accounter.read(384L);
 
-public class CompoundNBT implements INBT {
-   public static final Codec<CompoundNBT> field79 = Codec.PASSTHROUGH.comapFlatMap(var0 -> {
-      INBT var3 = (INBT)var0.convert(NBTDynamicOps.INSTANCE).getValue();
-      return !(var3 instanceof CompoundNBT) ? DataResult.error("Not a compound tag: " + var3) : DataResult.success((CompoundNBT)var3);
-   }, var0 -> new Dynamic(NBTDynamicOps.INSTANCE, var0));
-   private static final Logger field80 = LogManager.getLogger();
-   private static final Pattern field81 = Pattern.compile("[A-Za-z0-9._+-]+");
-   public static final Class7052<CompoundNBT> field82 = new Class7054();
+         if (depth > 512)
+         {
+            throw new RuntimeException("Tried to read NBT tag with too high complexity, depth > 512");
+         }
+         else
+         {
+            Map<String, INBT> map = Maps.newHashMap();
+            byte b0;
+
+            while ((b0 = CompoundNBT.readType(input, accounter)) != 0)
+            {
+               String s = CompoundNBT.readKey(input, accounter);
+               accounter.read((long)(224 + 16 * s.length()));
+               INBT inbt = CompoundNBT.loadNBT(NBTTypes.getGetTypeByID(b0), s, input, depth + 1, accounter);
+
+               if (map.put(s, inbt) != null)
+               {
+                  accounter.read(288L);
+               }
+            }
+
+            return new CompoundNBT(map);
+         }
+      }
+      public String getName()
+      {
+         return "COMPOUND";
+      }
+      public String getTagName()
+      {
+         return "TAG_Compound";
+      }
+   };
    private final Map<String, INBT> tagMap;
 
-   public CompoundNBT(Map<String, INBT> var1) {
-      this.tagMap = var1;
+   public CompoundNBT(Map<String, INBT> tagMap)
+   {
+      this.tagMap = tagMap;
    }
 
-   public CompoundNBT() {
+   public CompoundNBT()
+   {
       this(Maps.newHashMap());
    }
 
-   @Override
-   public void write(DataOutput var1) throws IOException {
-      for (String var5 : this.tagMap.keySet()) {
-         INBT var6 = this.tagMap.get(var5);
-         method136(var5, var6, var1);
+   /**
+    * Write the actual data contents of the tag, implemented in NBT extension classes
+    */
+   public void write(DataOutput output) throws IOException
+   {
+      for (String s : this.tagMap.keySet())
+      {
+         INBT inbt = this.tagMap.get(s);
+         writeEntry(s, inbt, output);
       }
 
-      var1.writeByte(0);
+      output.writeByte(0);
    }
 
-   public Set<String> method97() {
+   public Set<String> keySet()
+   {
       return this.tagMap.keySet();
    }
 
-   @Override
-   public byte getId() {
+   /**
+    * Gets the type byte for the tag.
+    */
+   public byte getID()
+   {
       return 10;
    }
 
-   @Override
-   public Class7052<CompoundNBT> method75() {
-      return field82;
+   public INBTType<CompoundNBT> getType()
+   {
+      return TYPE;
    }
 
-   public int method98() {
+   public int size()
+   {
       return this.tagMap.size();
    }
 
    @Nullable
-   public INBT put(String var1, INBT var2) {
-      return this.tagMap.put(var1, var2);
+   public INBT put(String key, INBT value)
+   {
+      return this.tagMap.put(key, value);
    }
 
-   public void method100(String var1, byte var2) {
-      this.tagMap.put(var1, Class33.method91(var2));
+   /**
+    * Stores a new NBTTagByte with the given byte value into the map with the given string key.
+    */
+   public void putByte(String key, byte value)
+   {
+      this.tagMap.put(key, ByteNBT.valueOf(value));
    }
 
-   public void putShort(String var1, short var2) {
-      this.tagMap.put(var1, Class37.method96(var2));
+   /**
+    * Stores a new NBTTagShort with the given short value into the map with the given string key.
+    */
+   public void putShort(String key, short value)
+   {
+      this.tagMap.put(key, ShortNBT.valueOf(value));
    }
 
-   public void putInt(String var1, int var2) {
-      this.tagMap.put(var1, Class36.method95(var2));
+   /**
+    * Stores a new NBTTagInt with the given integer value into the map with the given string key.
+    */
+   public void putInt(String key, int value)
+   {
+      this.tagMap.put(key, IntNBT.valueOf(value));
    }
 
-   public void method103(String var1, long var2) {
-      this.tagMap.put(var1, Class35.method94(var2));
+   /**
+    * Stores a new NBTTagLong with the given long value into the map with the given string key.
+    */
+   public void putLong(String key, long value)
+   {
+      this.tagMap.put(key, LongNBT.valueOf(value));
    }
 
-   public void method104(String var1, UUID var2) {
-      this.tagMap.put(var1, Class8354.method29281(var2));
+   public void putUniqueID(String key, UUID value)
+   {
+      this.tagMap.put(key, NBTUtil.valueOf(value));
    }
 
-   public UUID method105(String var1) {
-      return Class8354.method29282(this.method116(var1));
+   public UUID getUniqueID(String key)
+   {
+      return NBTUtil.readUniqueID(this.get(key));
    }
 
-   public boolean method106(String var1) {
-      INBT var4 = this.method116(var1);
-      return var4 != null && var4.method75() == IntArrayNBT.field52 && ((IntArrayNBT)var4).getIntArray().length == 4;
+   public boolean hasUniqueID(String key)
+   {
+      INBT inbt = this.get(key);
+      return inbt != null && inbt.getType() == IntArrayNBT.TYPE && ((IntArrayNBT)inbt).getIntArray().length == 4;
    }
 
-   public void putFloat(String var1, float var2) {
-      this.tagMap.put(var1, Class32.method90(var2));
+   /**
+    * Stores a new NBTTagFloat with the given float value into the map with the given string key.
+    */
+   public void putFloat(String key, float value)
+   {
+      this.tagMap.put(key, FloatNBT.valueOf(value));
    }
 
-   public void method108(String var1, double var2) {
-      this.tagMap.put(var1, Class34.method93(var2));
+   /**
+    * Stores a new NBTTagDouble with the given double value into the map with the given string key.
+    */
+   public void putDouble(String key, double value)
+   {
+      this.tagMap.put(key, DoubleNBT.valueOf(value));
    }
 
-   public void method109(String var1, String var2) {
-      this.tagMap.put(var1, StringNBT.valueOf(var2));
+   /**
+    * Stores a new NBTTagString with the given string value into the map with the given string key.
+    */
+   public void putString(String key, String value)
+   {
+      this.tagMap.put(key, StringNBT.valueOf(value));
    }
 
-   public void method110(String var1, byte[] var2) {
-      this.tagMap.put(var1, new ByteArrayNBT(var2));
+   /**
+    * Stores a new NBTTagByteArray with the given array as data into the map with the given string key.
+    */
+   public void putByteArray(String key, byte[] value)
+   {
+      this.tagMap.put(key, new ByteArrayNBT(value));
    }
 
-   public void method111(String var1, int[] var2) {
-      this.tagMap.put(var1, new IntArrayNBT(var2));
+   /**
+    * Stores a new NBTTagIntArray with the given array as data into the map with the given string key.
+    */
+   public void putIntArray(String key, int[] value)
+   {
+      this.tagMap.put(key, new IntArrayNBT(value));
    }
 
-   public void method112(String var1, List<Integer> var2) {
-      this.tagMap.put(var1, new IntArrayNBT(var2));
+   public void putIntArray(String key, List<Integer> value)
+   {
+      this.tagMap.put(key, new IntArrayNBT(value));
    }
 
-   public void method113(String var1, long[] var2) {
-      this.tagMap.put(var1, new LongArrayNBT(var2));
+   public void putLongArray(String key, long[] value)
+   {
+      this.tagMap.put(key, new LongArrayNBT(value));
    }
 
-   public void method114(String var1, List<Long> var2) {
-      this.tagMap.put(var1, new LongArrayNBT(var2));
+   public void putLongArray(String key, List<Long> value)
+   {
+      this.tagMap.put(key, new LongArrayNBT(value));
    }
 
-   public void putBoolean(String var1, boolean var2) {
-      this.tagMap.put(var1, Class33.method92(var2));
+   /**
+    * Stores the given boolean value as a NBTTagByte, storing 1 for true and 0 for false, using the given string key.
+    */
+   public void putBoolean(String key, boolean value)
+   {
+      this.tagMap.put(key, ByteNBT.valueOf(value));
    }
 
    @Nullable
-   public INBT method116(String var1) {
-      return this.tagMap.get(var1);
+
+   /**
+    * gets a generic tag with the specified name
+    */
+   public INBT get(String key)
+   {
+      return this.tagMap.get(key);
    }
 
-   public byte getTagId(String var1) {
-      INBT var4 = this.tagMap.get(var1);
-      return var4 != null ? var4.getId() : 0;
+   /**
+    * Gets the ID byte for the given tag key
+    */
+   public byte getTagID(String key)
+   {
+      INBT inbt = this.tagMap.get(key);
+      return inbt == null ? 0 : inbt.getID();
    }
 
-   public boolean contains(String var1) {
-      return this.tagMap.containsKey(var1);
+   /**
+    * Returns whether the given string has been previously stored as a key in the map.
+    */
+   public boolean contains(String key)
+   {
+      return this.tagMap.containsKey(key);
    }
 
-   public boolean contains(String var1, int var2) {
-      byte var5 = this.getTagId(var1);
-      if (var5 != var2) {
-         return var2 != 99 ? false : var5 == 1 || var5 == 2 || var5 == 3 || var5 == 4 || var5 == 5 || var5 == 6;
-      } else {
+   /**
+    * Returns whether the given string has been previously stored as a key in this tag compound as a particular type,
+    * denoted by a parameter in the form of an ordinal. If the provided ordinal is 99, this method will match tag types
+    * representing numbers.
+    */
+   public boolean contains(String key, int type)
+   {
+      int i = this.getTagID(key);
+
+      if (i == type)
+      {
          return true;
       }
+      else if (type != 99)
+      {
+         return false;
+      }
+      else
+      {
+         return i == 1 || i == 2 || i == 3 || i == 4 || i == 5 || i == 6;
+      }
    }
 
-   public byte getByte(String var1) {
-      try {
-         if (this.contains(var1, 99)) {
-            return ((NumberNBT)this.tagMap.get(var1)).getByte();
+   /**
+    * Retrieves a byte value using the specified key, or 0 if no such key was stored.
+    */
+   public byte getByte(String key)
+   {
+      try
+      {
+         if (this.contains(key, 99))
+         {
+            return ((NumberNBT)this.tagMap.get(key)).getByte();
          }
-      } catch (ClassCastException var5) {
+      }
+      catch (ClassCastException classcastexception)
+      {
       }
 
       return 0;
    }
 
-   public short getShort(String var1) {
-      try {
-         if (this.contains(var1, 99)) {
-            return ((NumberNBT)this.tagMap.get(var1)).getShort();
+   /**
+    * Retrieves a short value using the specified key, or 0 if no such key was stored.
+    */
+   public short getShort(String key)
+   {
+      try
+      {
+         if (this.contains(key, 99))
+         {
+            return ((NumberNBT)this.tagMap.get(key)).getShort();
          }
-      } catch (ClassCastException var5) {
+      }
+      catch (ClassCastException classcastexception)
+      {
       }
 
       return 0;
    }
 
-   public int getInt(String var1) {
-      try {
-         if (this.contains(var1, 99)) {
-            return ((NumberNBT)this.tagMap.get(var1)).getInt();
+   /**
+    * Retrieves an integer value using the specified key, or 0 if no such key was stored.
+    */
+   public int getInt(String key)
+   {
+      try
+      {
+         if (this.contains(key, 99))
+         {
+            return ((NumberNBT)this.tagMap.get(key)).getInt();
          }
-      } catch (ClassCastException var5) {
+      }
+      catch (ClassCastException classcastexception)
+      {
       }
 
       return 0;
    }
 
-   public long getLong(String var1) {
-      try {
-         if (this.contains(var1, 99)) {
-            return ((NumberNBT)this.tagMap.get(var1)).getLong();
+   /**
+    * Retrieves a long value using the specified key, or 0 if no such key was stored.
+    */
+   public long getLong(String key)
+   {
+      try
+      {
+         if (this.contains(key, 99))
+         {
+            return ((NumberNBT)this.tagMap.get(key)).getLong();
          }
-      } catch (ClassCastException var5) {
+      }
+      catch (ClassCastException classcastexception)
+      {
       }
 
       return 0L;
    }
 
-   public float getFloat(String var1) {
-      try {
-         if (this.contains(var1, 99)) {
-            return ((NumberNBT)this.tagMap.get(var1)).getFloat();
+   /**
+    * Retrieves a float value using the specified key, or 0 if no such key was stored.
+    */
+   public float getFloat(String key)
+   {
+      try
+      {
+         if (this.contains(key, 99))
+         {
+            return ((NumberNBT)this.tagMap.get(key)).getFloat();
          }
-      } catch (ClassCastException var5) {
+      }
+      catch (ClassCastException classcastexception)
+      {
       }
 
       return 0.0F;
    }
 
-   public double getDouble(String var1) {
-      try {
-         if (this.contains(var1, 99)) {
-            return ((NumberNBT)this.tagMap.get(var1)).getDouble();
+   /**
+    * Retrieves a double value using the specified key, or 0 if no such key was stored.
+    */
+   public double getDouble(String key)
+   {
+      try
+      {
+         if (this.contains(key, 99))
+         {
+            return ((NumberNBT)this.tagMap.get(key)).getDouble();
          }
-      } catch (ClassCastException var5) {
+      }
+      catch (ClassCastException classcastexception)
+      {
       }
 
-      return 0.0;
+      return 0.0D;
    }
 
-   public String getString(String var1) {
-      try {
-         if (this.contains(var1, 8)) {
-            return this.tagMap.get(var1).getString();
+   /**
+    * Retrieves a string value using the specified key, or an empty string if no such key was stored.
+    */
+   public String getString(String key)
+   {
+      try
+      {
+         if (this.contains(key, 8))
+         {
+            return this.tagMap.get(key).getString();
          }
-      } catch (ClassCastException var5) {
+      }
+      catch (ClassCastException classcastexception)
+      {
       }
 
       return "";
    }
 
-   public byte[] getByteArray(String var1) {
-      try {
-         if (this.contains(var1, 7)) {
-            return ((ByteArrayNBT)this.tagMap.get(var1)).getByteArray();
+   /**
+    * Retrieves a byte array using the specified key, or a zero-length array if no such key was stored.
+    */
+   public byte[] getByteArray(String key)
+   {
+      try
+      {
+         if (this.contains(key, 7))
+         {
+            return ((ByteArrayNBT)this.tagMap.get(key)).getByteArray();
          }
-      } catch (ClassCastException var5) {
-         throw new ReportedException(this.generateCrashReport(var1, ByteArrayNBT.field54, var5));
+      }
+      catch (ClassCastException classcastexception)
+      {
+         throw new ReportedException(this.generateCrashReport(key, ByteArrayNBT.TYPE, classcastexception));
       }
 
       return new byte[0];
    }
 
-   public int[] getIntArray(String var1) {
-      try {
-         if (this.contains(var1, 11)) {
-            return ((IntArrayNBT)this.tagMap.get(var1)).getIntArray();
+   /**
+    * Retrieves an int array using the specified key, or a zero-length array if no such key was stored.
+    */
+   public int[] getIntArray(String key)
+   {
+      try
+      {
+         if (this.contains(key, 11))
+         {
+            return ((IntArrayNBT)this.tagMap.get(key)).getIntArray();
          }
-      } catch (ClassCastException var5) {
-         throw new ReportedException(this.generateCrashReport(var1, IntArrayNBT.field52, var5));
+      }
+      catch (ClassCastException classcastexception)
+      {
+         throw new ReportedException(this.generateCrashReport(key, IntArrayNBT.TYPE, classcastexception));
       }
 
       return new int[0];
    }
 
-   public long[] getLongArray(String var1) {
-      try {
-         if (this.contains(var1, 12)) {
-            return ((LongArrayNBT)this.tagMap.get(var1)).getLongArray();
+   public long[] getLongArray(String key)
+   {
+      try
+      {
+         if (this.contains(key, 12))
+         {
+            return ((LongArrayNBT)this.tagMap.get(key)).getLongArray();
          }
-      } catch (ClassCastException var5) {
-         throw new ReportedException(this.generateCrashReport(var1, LongArrayNBT.field91, var5));
+      }
+      catch (ClassCastException classcastexception)
+      {
+         throw new ReportedException(this.generateCrashReport(key, LongArrayNBT.TYPE, classcastexception));
       }
 
       return new long[0];
    }
 
-   public CompoundNBT getCompound(String var1) {
-      try {
-         if (this.contains(var1, 10)) {
-            return (CompoundNBT)this.tagMap.get(var1);
+   /**
+    * Returns whether the given string has been previously stored as a key in this tag compound as a particular type,
+    * denoted by a parameter in the form of an ordinal. If the provided ordinal is 99, this method will match tag types
+    * representing numbers.
+    */
+   public boolean hasKey(String key, int type)
+   {
+      int i = this.getTagID(key);
+
+      if (i == type)
+      {
+         return true;
+      }
+      else if (type != 99)
+      {
+         return false;
+      }
+      else
+      {
+         return i == 1 || i == 2 || i == 3 || i == 4 || i == 5 || i == 6;
+      }
+   }
+   /**
+    * Retrieves a NBTTagCompound subtag matching the specified key, or a new empty NBTTagCompound if no such key was
+    * stored.
+    */
+   public CompoundNBT getCompound(String key)
+   {
+      try
+      {
+         if (this.contains(key, 10))
+         {
+            return (CompoundNBT)this.tagMap.get(key);
          }
-      } catch (ClassCastException var5) {
-         throw new ReportedException(this.generateCrashReport(var1, field82, var5));
+      }
+      catch (ClassCastException classcastexception)
+      {
+         throw new ReportedException(this.generateCrashReport(key, TYPE, classcastexception));
       }
 
       return new CompoundNBT();
    }
 
-   public ListNBT method131(String var1, int var2) {
-      try {
-         if (this.getTagId(var1) == 9) {
-            ListNBT var5 = (ListNBT)this.tagMap.get(var1);
-            if (!var5.isEmpty() && var5.method72() != var2) {
+   /**
+    * Gets the NBTTagList object with the given name.
+    */
+   public ListNBT getList(String key, int type)
+   {
+      try
+      {
+         if (this.getTagID(key) == 9)
+         {
+            ListNBT listnbt = (ListNBT)this.tagMap.get(key);
+
+            if (!listnbt.isEmpty() && listnbt.getTagType() != type)
+            {
                return new ListNBT();
             }
 
-            return var5;
+            return listnbt;
          }
-      } catch (ClassCastException var6) {
-         throw new ReportedException(this.generateCrashReport(var1, ListNBT.field87, var6));
+      }
+      catch (ClassCastException classcastexception)
+      {
+         throw new ReportedException(this.generateCrashReport(key, ListNBT.TYPE, classcastexception));
       }
 
       return new ListNBT();
    }
 
-   public boolean getBoolean(String var1) {
-      return this.getByte(var1) != 0;
+   /**
+    * Retrieves a boolean value using the specified key, or false if no such key was stored. This uses the getByte
+    * method.
+    */
+   public boolean getBoolean(String key)
+   {
+      return this.getByte(key) != 0;
    }
 
-   public void method133(String var1) {
-      this.tagMap.remove(var1);
+   /**
+    * Remove the specified tag.
+    */
+   public void remove(String key)
+   {
+      this.tagMap.remove(key);
    }
 
-   @Override
-   public String toString() {
-      StringBuilder var3 = new StringBuilder("{");
-      Collection<String> var4 = this.tagMap.keySet();
-      if (field80.isDebugEnabled()) {
-         List<String> var5 = Lists.newArrayList(this.tagMap.keySet());
-         Collections.sort(var5);
-         var4 = var5;
+   public String toString()
+   {
+      StringBuilder stringbuilder = new StringBuilder("{");
+      Collection<String> collection = this.tagMap.keySet();
+
+      if (LOGGER.isDebugEnabled())
+      {
+         List<String> list = Lists.newArrayList(this.tagMap.keySet());
+         Collections.sort(list);
+         collection = list;
       }
 
-      for (String var6 : var4) {
-         if (var3.length() != 1) {
-            var3.append(',');
+      for (String s : collection)
+      {
+         if (stringbuilder.length() != 1)
+         {
+            stringbuilder.append(',');
          }
 
-         var3.append(method141(var6)).append(':').append(this.tagMap.get(var6));
+         stringbuilder.append(handleEscape(s)).append(':').append(this.tagMap.get(s));
       }
 
-      return var3.append('}').toString();
+      return stringbuilder.append('}').toString();
    }
 
-   public boolean method134() {
+   public boolean isEmpty()
+   {
       return this.tagMap.isEmpty();
    }
 
-   private CrashReport generateCrashReport(String var1, Class7052<?> var2, ClassCastException var3) {
-      CrashReport var6 = CrashReport.makeCrashReport(var3, "Reading NBT data");
-      CrashReportCategory var7 = var6.method14411("Corrupt NBT tag", 1);
-      var7.addDetail("Tag type found", () -> this.tagMap.get(var1).method75().method21975());
-      var7.addDetail("Tag type expected", var2::method21975);
-      var7.addDetail("Tag name", var1);
-      return var6;
+   private CrashReport generateCrashReport(String tagName, INBTType<?> type, ClassCastException exception)
+   {
+      CrashReport crashreport = CrashReport.makeCrashReport(exception, "Reading NBT data");
+      CrashReportCategory crashreportcategory = crashreport.makeCategoryDepth("Corrupt NBT tag", 1);
+      crashreportcategory.addDetail("Tag type found", () ->
+      {
+         return this.tagMap.get(tagName).getType().getName();
+      });
+      crashreportcategory.addDetail("Tag type expected", type::getName);
+      crashreportcategory.addDetail("Tag name", tagName);
+      return crashreport;
    }
 
-   public CompoundNBT method79() {
-      HashMap var3 = Maps.newHashMap(Maps.transformValues(this.tagMap, INBT::method79));
-      return new CompoundNBT(var3);
+   /**
+    * Creates a clone of the tag.
+    */
+   public CompoundNBT copy()
+   {
+      Map<String, INBT> map = Maps.newHashMap(Maps.transformValues(this.tagMap, INBT::copy));
+      return new CompoundNBT(map);
    }
 
-   @Override
-   public boolean equals(Object var1) {
-      return this == var1 ? true : var1 instanceof CompoundNBT && Objects.equals(this.tagMap, ((CompoundNBT)var1).tagMap);
+   public boolean equals(Object p_equals_1_)
+   {
+      if (this == p_equals_1_)
+      {
+         return true;
+      }
+      else
+      {
+         return p_equals_1_ instanceof CompoundNBT && Objects.equals(this.tagMap, ((CompoundNBT)p_equals_1_).tagMap);
+      }
    }
 
-   @Override
-   public int hashCode() {
+   public int hashCode()
+   {
       return this.tagMap.hashCode();
    }
 
-   private static void method136(String var0, INBT var1, DataOutput var2) throws IOException {
-      var2.writeByte(var1.getId());
-      if (var1.getId() != 0) {
-         var2.writeUTF(var0);
-         var1.write(var2);
+   private static void writeEntry(String name, INBT data, DataOutput output) throws IOException
+   {
+      output.writeByte(data.getID());
+
+      if (data.getID() != 0)
+      {
+         output.writeUTF(name);
+         data.write(output);
       }
    }
 
-   private static byte method137(DataInput var0, NBTSizeTracker var1) throws IOException {
-      return var0.readByte();
+   private static byte readType(DataInput input, NBTSizeTracker sizeTracker) throws IOException
+   {
+      return input.readByte();
    }
 
-   private static String method138(DataInput var0, NBTSizeTracker var1) throws IOException {
-      return var0.readUTF();
+   private static String readKey(DataInput input, NBTSizeTracker sizeTracker) throws IOException
+   {
+      return input.readUTF();
    }
 
-   private static INBT method139(Class7052<?> var0, String var1, DataInput var2, int var3, NBTSizeTracker var4) {
-      try {
-         return var0.readNBT(var2, var3, var4);
-      } catch (IOException var10) {
-         CrashReport var8 = CrashReport.makeCrashReport(var10, "Loading NBT data");
-         CrashReportCategory var9 = var8.makeCategory("NBT Tag");
-         var9.addDetail("Tag name", var1);
-         var9.addDetail("Tag type", var0.method21975());
-         throw new ReportedException(var8);
+   private static INBT loadNBT(INBTType<?> type, String name, DataInput input, int depth, NBTSizeTracker accounter)
+   {
+      try
+      {
+         return type.readNBT(input, depth, accounter);
+      }
+      catch (IOException ioexception)
+      {
+         CrashReport crashreport = CrashReport.makeCrashReport(ioexception, "Loading NBT data");
+         CrashReportCategory crashreportcategory = crashreport.makeCategory("NBT Tag");
+         crashreportcategory.addDetail("Tag name", name);
+         crashreportcategory.addDetail("Tag type", type.getName());
+         throw new ReportedException(crashreport);
       }
    }
 
-   public CompoundNBT method140(CompoundNBT var1) {
-      for (String var5 : var1.tagMap.keySet()) {
-         INBT var6 = var1.tagMap.get(var5);
-         if (var6.getId() != 10) {
-            this.put(var5, var6.method79());
-         } else if (!this.contains(var5, 10)) {
-            this.put(var5, var6.method79());
-         } else {
-            CompoundNBT var7 = this.getCompound(var5);
-            var7.method140((CompoundNBT)var6);
+   /**
+    * Deep copies all the tags of {@code other} into this tag, then returns itself.
+    */
+   public CompoundNBT merge(CompoundNBT other)
+   {
+      for (String s : other.tagMap.keySet())
+      {
+         INBT inbt = other.tagMap.get(s);
+
+         if (inbt.getID() == 10)
+         {
+            if (this.contains(s, 10))
+            {
+               CompoundNBT compoundnbt = this.getCompound(s);
+               compoundnbt.merge((CompoundNBT)inbt);
+            }
+            else
+            {
+               this.put(s, inbt.copy());
+            }
+         }
+         else
+         {
+            this.put(s, inbt.copy());
          }
       }
 
       return this;
    }
 
-   public static String method141(String var0) {
-      return !field81.matcher(var0).matches() ? StringNBT.method151(var0) : var0;
+   protected static String handleEscape(String name)
+   {
+      return SIMPLE_VALUE.matcher(name).matches() ? name : StringNBT.quoteAndEscape(name);
    }
 
-   public static ITextComponent method142(String var0) {
-      if (!field81.matcher(var0).matches()) {
-         String var3 = StringNBT.method151(var0);
-         String var4 = var3.substring(0, 1);
-         IFormattableTextComponent var5 = new StringTextComponent(var3.substring(1, var3.length() - 1)).mergeStyle(field56);
-         return new StringTextComponent(var4).append(var5).appendString(var4);
-      } else {
-         return new StringTextComponent(var0).mergeStyle(field56);
+   protected static ITextComponent getNameComponent(String name)
+   {
+      if (SIMPLE_VALUE.matcher(name).matches())
+      {
+         return (new StringTextComponent(name)).mergeStyle(SYNTAX_HIGHLIGHTING_KEY);
+      }
+      else
+      {
+         String s = StringNBT.quoteAndEscape(name);
+         String s1 = s.substring(0, 1);
+         ITextComponent itextcomponent = (new StringTextComponent(s.substring(1, s.length() - 1))).mergeStyle(SYNTAX_HIGHLIGHTING_KEY);
+         return (new StringTextComponent(s1)).append(itextcomponent).appendString(s1);
       }
    }
 
-   @Override
-   public ITextComponent method78(String var1, int var2) {
-      if (!this.tagMap.isEmpty()) {
-         StringTextComponent var5 = new StringTextComponent("{");
-         Collection<String> var6 = this.tagMap.keySet();
-         if (field80.isDebugEnabled()) {
-            List<String> var8 = Lists.newArrayList(this.tagMap.keySet());
-            Collections.sort(var8);
-            var6 = var8;
-         }
-
-         if (!var1.isEmpty()) {
-            var5.appendString("\n");
-         }
-
-         Iterator<String> var7 = var6.iterator();
-
-         while (var7.hasNext()) {
-            String var9 = var7.next();
-            IFormattableTextComponent var10 = new StringTextComponent(Strings.repeat(var1, var2 + 1))
-               .append(method142(var9))
-               .appendString(String.valueOf(':'))
-               .appendString(" ")
-               .append(this.tagMap.get(var9).method78(var1, var2 + 1));
-            if (var7.hasNext()) {
-               var10.appendString(String.valueOf(',')).appendString(!var1.isEmpty() ? "\n" : " ");
-            }
-
-            var5.append(var10);
-         }
-
-         if (!var1.isEmpty()) {
-            var5.appendString("\n").appendString(Strings.repeat(var1, var2));
-         }
-
-         var5.appendString("}");
-         return var5;
-      } else {
+   public ITextComponent toFormattedComponent(String indentation, int indentDepth)
+   {
+      if (this.tagMap.isEmpty())
+      {
          return new StringTextComponent("{}");
       }
+      else
+      {
+         IFormattableTextComponent iformattabletextcomponent = new StringTextComponent("{");
+         Collection<String> collection = this.tagMap.keySet();
+
+         if (LOGGER.isDebugEnabled())
+         {
+            List<String> list = Lists.newArrayList(this.tagMap.keySet());
+            Collections.sort(list);
+            collection = list;
+         }
+
+         if (!indentation.isEmpty())
+         {
+            iformattabletextcomponent.appendString("\n");
+         }
+
+         IFormattableTextComponent iformattabletextcomponent1;
+
+         for (Iterator<String> iterator = collection.iterator(); iterator.hasNext(); iformattabletextcomponent.append(iformattabletextcomponent1))
+         {
+            String s = iterator.next();
+            iformattabletextcomponent1 = (new StringTextComponent(Strings.repeat(indentation, indentDepth + 1))).append(getNameComponent(s)).appendString(String.valueOf(':')).appendString(" ").append(this.tagMap.get(s).toFormattedComponent(indentation, indentDepth + 1));
+
+            if (iterator.hasNext())
+            {
+               iformattabletextcomponent1.appendString(String.valueOf(',')).appendString(indentation.isEmpty() ? " " : "\n");
+            }
+         }
+
+         if (!indentation.isEmpty())
+         {
+            iformattabletextcomponent.appendString("\n").appendString(Strings.repeat(indentation, indentDepth));
+         }
+
+         iformattabletextcomponent.appendString("}");
+         return iformattabletextcomponent;
+      }
    }
 
-   public Map<String, INBT> method143() {
-      return Collections.<String, INBT>unmodifiableMap(this.tagMap);
-   }
-
-   // $VF: synthetic method
-   public static byte method147(DataInput var0, NBTSizeTracker var1) throws IOException {
-      return method137(var0, var1);
-   }
-
-   // $VF: synthetic method
-   public static String method148(DataInput var0, NBTSizeTracker var1) throws IOException {
-      return method138(var0, var1);
-   }
-
-   // $VF: synthetic method
-   public static INBT method149(Class7052 var0, String var1, DataInput var2, int var3, NBTSizeTracker var4) {
-      return method139(var0, var1, var2, var3, var4);
+   public Map<String, INBT> getTagMap()
+   {
+      return Collections.unmodifiableMap(this.tagMap);
    }
 }

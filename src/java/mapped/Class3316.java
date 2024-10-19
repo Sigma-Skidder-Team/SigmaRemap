@@ -336,10 +336,10 @@ public class Class3316 extends Class3314 {
       CompoundNBT var6 = var1.getTag();
       if (var6 != null && var6.contains("map_scale_direction", 99)) {
          method11869(var1, var2, var6.getInt("map_scale_direction"));
-         var6.method133("map_scale_direction");
+         var6.remove("map_scale_direction");
       } else if (var6 != null && var6.contains("map_to_lock", 1) && var6.getBoolean("map_to_lock")) {
          method11870(var2, var1);
-         var6.method133("map_to_lock");
+         var6.remove("map_to_lock");
       }
    }
 

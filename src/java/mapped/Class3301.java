@@ -5,6 +5,7 @@ import java.util.List;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -21,10 +22,10 @@ public class Class3301 extends Class3298 {
    public static void method11848(ItemStack var0, List<ITextComponent> var1) {
       CompoundNBT var4 = var0.method32145("BlockEntityTag");
       if (var4 != null && var4.contains("Patterns")) {
-         ListNBT var5 = var4.method131("Patterns", 10);
+         ListNBT var5 = var4.getList("Patterns", 10);
 
          for (int var6 = 0; var6 < var5.size() && var6 < 6; var6++) {
-            CompoundNBT var7 = var5.method153(var6);
+            CompoundNBT var7 = var5.getCompound(var6);
             Class112 var8 = Class112.method315(var7.getInt("Color"));
             Class2154 var9 = Class2154.method8872(var7.getString("Pattern"));
             if (var9 != null) {

@@ -30,10 +30,7 @@ import net.minecraft.resources.ResourcePackList;
 import net.minecraft.scoreboard.ServerScoreboard;
 import net.minecraft.server.management.PlayerProfileCache;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.util.CryptException;
-import net.minecraft.util.CryptManager;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.Unit;
+import net.minecraft.util.*;
 import net.minecraft.util.datafix.codec.DatapackCodec;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
@@ -56,7 +53,9 @@ import net.minecraft.world.gen.feature.template.TemplateManager;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.server.TicketType;
 import net.minecraft.world.storage.CommandStorage;
+import net.minecraft.world.storage.DimensionSavedDataManager;
 import net.minecraft.world.storage.IServerWorldInfo;
+import net.minecraft.world.storage.WorldSavedDataCallableSave;
 import org.apache.commons.lang3.Validate;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -198,10 +197,10 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       this.backgroundExecutor = Util.getServerExecutor();
    }
 
-   private void method1276(Class8250 var1) {
-      Class7535 var4 = var1.<Class7535>method28767(Class7535::new, "scoreboard");
+   private void method1276(DimensionSavedDataManager var1) {
+      Class7535 var4 = var1.<Class7535>getOrCreate(Class7535::new, "scoreboard");
       var4.method24629(this.method1409());
-      this.method1409().method21021(new Class1415(var4));
+      this.method1409().method21021(new WorldSavedDataCallableSave(var4));
    }
 
    public abstract boolean    init() throws IOException;
@@ -248,7 +247,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
 
       ServerWorld var16 = new ServerWorld(this, this.backgroundExecutor, this.field1211, var4, World.OVERWORLD, var14, var1, (ChunkGenerator)var15, var6, var9, var11, true);
       this.worlds.put(World.OVERWORLD, var16);
-      Class8250 var17 = var16.method6945();
+      DimensionSavedDataManager var17 = var16.getSavedData();
       this.method1276(var17);
       this.field1259 = new CommandStorage(var17);
       WorldBorder var18 = var16.getWorldBorder();
@@ -390,17 +389,22 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       serverChunkProvider.getLightManager().func_215598_a(500);
       this.serverTime = Util.milliTime();
       serverChunkProvider.registerTicket(TicketType.START, new ChunkPos(spawnPoint), 11, Unit.INSTANCE);
-
+      System.out.println("MinecraftServer.loadInitialChunks() 1");
       while (serverChunkProvider.getLoadedChunksCount() != 441) {
+         System.out.println("while loop 1");
          this.serverTime = Util.milliTime() + 10L;
          this.runScheduledTasks();
       }
 
+      System.out.println("end while loop 1");
+
       this.serverTime = Util.milliTime() + 10L;
       this.runScheduledTasks();
 
+
       for (ServerWorld serverworld1 : this.worlds.values()) {
-         ForcedChunksSaveData forcedchunkssavedata = serverworld1.method6945().method28768(ForcedChunksSaveData::new, "chunks");
+         System.out.println("start for serverworlds loop");
+         ForcedChunksSaveData forcedchunkssavedata = serverworld1.getSavedData().get(ForcedChunksSaveData::new, "chunks");
          if (forcedchunkssavedata != null) {
             LongIterator longiterator = forcedchunkssavedata.getChunks().iterator();
 
@@ -408,10 +412,13 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
                long i = longiterator.nextLong();
                ChunkPos var13 = new ChunkPos(i);
                serverworld1.getChunkProvider().forceChunk(var13, true);
+               System.out.println("while 2");
             }
+         } else {
+            System.out.println("forcedchunkssavedata null");
          }
       }
-
+      System.out.println("End for serverworlds loop");
       this.serverTime = Util.milliTime() + 10L;
       this.runScheduledTasks();
       listener.stop();

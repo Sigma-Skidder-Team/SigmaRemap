@@ -5,7 +5,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 import mapped.Class2168;
-import mapped.SharedConstants;
+import net.minecraft.util.SharedConstants;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -32,10 +32,10 @@ public class ServerData {
 
    public CompoundNBT method25576() {
       CompoundNBT var3 = new CompoundNBT();
-      var3.method109("name", this.serverName);
-      var3.method109("ip", this.serverIP);
+      var3.putString("name", this.serverName);
+      var3.putString("ip", this.serverIP);
       if (this.field33198 != null) {
-         var3.method109("icon", this.field33198);
+         var3.putString("icon", this.field33198);
       }
 
       if (this.field33197 != Class2168.field14234) {

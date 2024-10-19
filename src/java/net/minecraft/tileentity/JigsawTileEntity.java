@@ -79,11 +79,11 @@ public class JigsawTileEntity extends TileEntity {
    @Override
    public CompoundNBT write(CompoundNBT var1) {
       super.write(var1);
-      var1.method109("name", this.field5409.toString());
-      var1.method109("target", this.field5410.toString());
-      var1.method109("pool", this.field5411.toString());
-      var1.method109("final_state", this.field5413);
-      var1.method109("joint", this.field5412.getString());
+      var1.putString("name", this.field5409.toString());
+      var1.putString("target", this.field5410.toString());
+      var1.putString("pool", this.field5411.toString());
+      var1.putString("final_state", this.field5413);
+      var1.putString("joint", this.field5412.getString());
       return var1;
    }
 

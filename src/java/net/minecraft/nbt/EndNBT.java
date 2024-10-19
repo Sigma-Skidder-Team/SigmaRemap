@@ -1,7 +1,6 @@
 package net.minecraft.nbt;
 
 import mapped.Class7051;
-import mapped.Class7052;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 
@@ -9,7 +8,7 @@ import java.io.DataOutput;
 import java.io.IOException;
 
 public class EndNBT implements INBT {
-   public static final Class7052<EndNBT> field77 = new Class7051();
+   public static final INBTType<EndNBT> field77 = new Class7051();
    public static final EndNBT INSTANCE = new EndNBT();
 
    private EndNBT() {
@@ -20,12 +19,12 @@ public class EndNBT implements INBT {
    }
 
    @Override
-   public byte getId() {
+   public byte getID() {
       return 0;
    }
 
    @Override
-   public Class7052<EndNBT> method75() {
+   public INBTType<EndNBT> getType() {
       return field77;
    }
 
@@ -34,12 +33,12 @@ public class EndNBT implements INBT {
       return "END";
    }
 
-   public EndNBT method79() {
+   public EndNBT copy() {
       return this;
    }
 
    @Override
-   public ITextComponent method78(String var1, int var2) {
+   public ITextComponent toFormattedComponent(String indentation, int indentDepth) {
       return StringTextComponent.EMPTY;
    }
 }

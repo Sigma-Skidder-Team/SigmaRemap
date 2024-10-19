@@ -7,6 +7,7 @@ import net.minecraft.block.material.PushReaction;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.NBTUtil;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.state.properties.PistonType;
 import net.minecraft.tileentity.TileEntity;
@@ -306,7 +307,7 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
    @Override
    public void read(BlockState var1, CompoundNBT var2) {
       super.read(var1, var2);
-      this.field5361 = Class8354.method29285(var2.getCompound("blockState"));
+      this.field5361 = NBTUtil.method29285(var2.getCompound("blockState"));
       this.field5362 = Direction.byIndex(var2.getInt("facing"));
       this.field5366 = var2.getFloat("progress");
       this.field5367 = this.field5366;
@@ -317,7 +318,7 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
    @Override
    public CompoundNBT write(CompoundNBT var1) {
       super.write(var1);
-      var1.put("blockState", Class8354.method29287(this.field5361));
+      var1.put("blockState", NBTUtil.method29287(this.field5361));
       var1.putInt("facing", this.field5362.getIndex());
       var1.putFloat("progress", this.field5367);
       var1.putBoolean("extending", this.field5363);

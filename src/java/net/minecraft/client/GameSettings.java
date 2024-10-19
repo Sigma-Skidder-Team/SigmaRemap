@@ -32,10 +32,12 @@ import net.minecraft.client.shader.Framebuffer;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.player.ChatVisibility;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.NBTUtil;
 import net.minecraft.network.play.client.CClientSettingsPacket;
 import net.minecraft.resources.ResourcePackInfo;
 import net.minecraft.resources.ResourcePackList;
 import net.minecraft.util.HandSide;
+import net.minecraft.util.SharedConstants;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -344,7 +346,7 @@ public class GameSettings {
             var2.lines().forEach(var1x -> {
                try {
                   Iterator var2x = field44572.split(var1x).iterator();
-                  var1.method109((String)var2x.next(), (String)var2x.next());
+                  var1.putString((String)var2x.next(), (String)var2x.next());
                } catch (Exception var3) {
                   field44569.warn("Skipping bad option: {}", var1x);
                }
@@ -360,7 +362,7 @@ public class GameSettings {
             }
          }
 
-         for (String var4 : var23.method97()) {
+         for (String var4 : var23.keySet()) {
             String var5 = var23.getString(var4);
 
             try {
@@ -721,7 +723,7 @@ public class GameSettings {
       } catch (RuntimeException var4) {
       }
 
-      return Class8354.method29289(this.field44659.getDataFixer(), Class2108.field13752, var1, var2);
+      return NBTUtil.method29289(this.field44659.getDataFixer(), Class2108.field13752, var1, var2);
    }
 
    private static float method37145(String var0) {

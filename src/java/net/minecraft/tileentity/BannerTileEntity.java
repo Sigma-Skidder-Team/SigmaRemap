@@ -6,6 +6,7 @@ import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextComponent$Serializer;
@@ -37,7 +38,7 @@ public class BannerTileEntity extends TileEntity implements INameable {
       ListNBT var3 = null;
       CompoundNBT var4 = var0.method32145("BlockEntityTag");
       if (var4 != null && var4.contains("Patterns", 9)) {
-         var3 = var4.method131("Patterns", 10).method79();
+         var3 = var4.getList("Patterns", 10).copy();
       }
 
       return var3;
@@ -74,7 +75,7 @@ public class BannerTileEntity extends TileEntity implements INameable {
       }
 
       if (this.field5376 != null) {
-         var1.method109("CustomName", ITextComponent$Serializer.toJson(this.field5376));
+         var1.putString("CustomName", ITextComponent$Serializer.toJson(this.field5376));
       }
 
       return var1;
@@ -93,7 +94,7 @@ public class BannerTileEntity extends TileEntity implements INameable {
          this.field5377 = ((Class3359)this.getBlockState().getBlock()).method11936();
       }
 
-      this.field5378 = var2.method131("Patterns", 10);
+      this.field5378 = var2.getList("Patterns", 10);
       this.field5380 = null;
       this.field5379 = true;
    }
@@ -111,7 +112,7 @@ public class BannerTileEntity extends TileEntity implements INameable {
 
    public static int method3889(ItemStack var0) {
       CompoundNBT var3 = var0.method32145("BlockEntityTag");
-      return var3 != null && var3.contains("Patterns") ? var3.method131("Patterns", 10).size() : 0;
+      return var3 != null && var3.contains("Patterns") ? var3.getList("Patterns", 10).size() : 0;
    }
 
    public List<Pair<Class2154, Class112>> method3890() {
@@ -127,7 +128,7 @@ public class BannerTileEntity extends TileEntity implements INameable {
       var4.add(Pair.of(Class2154.field14082, var0));
       if (var1 != null) {
          for (int var5 = 0; var5 < var1.size(); var5++) {
-            CompoundNBT var6 = var1.method153(var5);
+            CompoundNBT var6 = var1.getCompound(var5);
             Class2154 var7 = Class2154.method8872(var6.getString("Pattern"));
             if (var7 != null) {
                int var8 = var6.getInt("Color");
@@ -142,7 +143,7 @@ public class BannerTileEntity extends TileEntity implements INameable {
    public static void method3892(ItemStack var0) {
       CompoundNBT var3 = var0.method32145("BlockEntityTag");
       if (var3 != null && var3.contains("Patterns", 9)) {
-         ListNBT var4 = var3.method131("Patterns", 10);
+         ListNBT var4 = var3.getList("Patterns", 10);
          if (!var4.isEmpty()) {
             var4.remove(var4.size() - 1);
             if (var4.isEmpty()) {
@@ -155,7 +156,7 @@ public class BannerTileEntity extends TileEntity implements INameable {
    public ItemStack method3893(BlockState var1) {
       ItemStack var4 = new ItemStack(Class3360.method11937(this.method3894(() -> var1)));
       if (this.field5378 != null && !this.field5378.isEmpty()) {
-         var4.method32144("BlockEntityTag").put("Patterns", this.field5378.method79());
+         var4.method32144("BlockEntityTag").put("Patterns", this.field5378.copy());
       }
 
       if (this.field5376 != null) {

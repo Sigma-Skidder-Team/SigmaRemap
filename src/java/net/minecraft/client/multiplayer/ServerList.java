@@ -4,7 +4,7 @@ import com.google.common.collect.Lists;
 import java.io.File;
 import java.util.List;
 
-import mapped.ListNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;
 import net.minecraft.nbt.CompoundNBT;
@@ -30,10 +30,10 @@ public class ServerList {
             return;
          }
 
-         ListNBT var4 = var3.method131("servers", 10);
+         ListNBT var4 = var3.getList("servers", 10);
 
          for (int var5 = 0; var5 < var4.size(); var5++) {
-            this.field34263.add(ServerData.method25579(var4.method153(var5)));
+            this.field34263.add(ServerData.method25579(var4.getCompound(var5)));
          }
       } catch (Exception var6) {
          field34261.error("Couldn't load server list", var6);

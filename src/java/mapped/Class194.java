@@ -27,10 +27,10 @@ public class Class194 implements AutoCloseable {
    }
 
    private Class1695 method594(MapData var1) {
-      Class1695 var4 = this.field733.get(var1.method24608());
+      Class1695 var4 = this.field733.get(var1.getName());
       if (var4 == null) {
          var4 = new Class1695(this, var1);
-         this.field733.put(var1.method24608(), var4);
+         this.field733.put(var1.getName(), var4);
       }
 
       return var4;

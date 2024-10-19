@@ -13,6 +13,7 @@ import net.minecraft.entity.item.ItemFrameEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.network.IPacket;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -24,7 +25,7 @@ import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class MapData extends Class7530 {
+public class MapData extends WorldSavedData {
    private static final Logger field32315 = LogManager.getLogger();
    public int xCenter;
    public int zCenter;
@@ -50,7 +51,7 @@ public class MapData extends Class7530 {
       this.field32318 = var6;
       this.trackingPosition = var4;
       this.unlimitedTracking = var5;
-      this.method24605();
+      this.markDirty();
    }
 
    public void method24590(double var1, double var3, int var5) {
@@ -62,25 +63,25 @@ public class MapData extends Class7530 {
    }
 
    @Override
-   public void method24591(CompoundNBT var1) {
-      this.field32318 = (RegistryKey<World>) DimensionType.decodeWorldKey(new Dynamic(NBTDynamicOps.INSTANCE, var1.method116("dimension")))
+   public void read(CompoundNBT compoundNBT) {
+      this.field32318 = (RegistryKey<World>) DimensionType.decodeWorldKey(new Dynamic(NBTDynamicOps.INSTANCE, compoundNBT.get("dimension")))
          .resultOrPartial(field32315::error)
-         .orElseThrow(() -> new IllegalArgumentException("Invalid map dimension: " + var1.method116("dimension")));
-      this.xCenter = var1.getInt("xCenter");
-      this.zCenter = var1.getInt("zCenter");
-      this.scale = (byte) MathHelper.clamp(var1.getByte("scale"), 0, 4);
-      this.trackingPosition = !var1.contains("trackingPosition", 1) || var1.getBoolean("trackingPosition");
-      this.unlimitedTracking = var1.getBoolean("unlimitedTracking");
-      this.locked = var1.getBoolean("locked");
-      this.colors = var1.getByteArray("colors");
+         .orElseThrow(() -> new IllegalArgumentException("Invalid map dimension: " + compoundNBT.get("dimension")));
+      this.xCenter = compoundNBT.getInt("xCenter");
+      this.zCenter = compoundNBT.getInt("zCenter");
+      this.scale = (byte) MathHelper.clamp(compoundNBT.getByte("scale"), 0, 4);
+      this.trackingPosition = !compoundNBT.contains("trackingPosition", 1) || compoundNBT.getBoolean("trackingPosition");
+      this.unlimitedTracking = compoundNBT.getBoolean("unlimitedTracking");
+      this.locked = compoundNBT.getBoolean("locked");
+      this.colors = compoundNBT.getByteArray("colors");
       if (this.colors.length != 16384) {
          this.colors = new byte[16384];
       }
 
-      ListNBT var4 = var1.method131("banners", 10);
+      ListNBT var4 = compoundNBT.getList("banners", 10);
 
       for (int var5 = 0; var5 < var4.size(); var5++) {
-         Class7468 var6 = Class7468.method24183(var4.method153(var5));
+         Class7468 var6 = Class7468.method24183(var4.getCompound(var5));
          this.field32326.put(var6.method24189(), var6);
          this.method24596(
             var6.method24186(),
@@ -93,10 +94,10 @@ public class MapData extends Class7530 {
          );
       }
 
-      ListNBT var8 = var1.method131("frames", 10);
+      ListNBT var8 = compoundNBT.getList("frames", 10);
 
       for (int var9 = 0; var9 < var8.size(); var9++) {
-         Class6674 var7 = Class6674.method20349(var8.method153(var9));
+         Class6674 var7 = Class6674.method20349(var8.getCompound(var9));
          this.field32328.put(var7.method20354(), var7);
          this.method24596(
             MapDecorationType.FRAME,
@@ -111,33 +112,33 @@ public class MapData extends Class7530 {
    }
 
    @Override
-   public CompoundNBT method24592(CompoundNBT var1) {
+   public CompoundNBT write(CompoundNBT compoundNBT) {
       ResourceLocation.CODEC
          .encodeStart(NBTDynamicOps.INSTANCE, this.field32318.getLocation())
          .resultOrPartial(field32315::error)
-         .ifPresent(var1x -> var1.put("dimension", var1x));
-      var1.putInt("xCenter", this.xCenter);
-      var1.putInt("zCenter", this.zCenter);
-      var1.method100("scale", this.scale);
-      var1.method110("colors", this.colors);
-      var1.putBoolean("trackingPosition", this.trackingPosition);
-      var1.putBoolean("unlimitedTracking", this.unlimitedTracking);
-      var1.putBoolean("locked", this.locked);
+         .ifPresent(var1x -> compoundNBT.put("dimension", var1x));
+      compoundNBT.putInt("xCenter", this.xCenter);
+      compoundNBT.putInt("zCenter", this.zCenter);
+      compoundNBT.putByte("scale", this.scale);
+      compoundNBT.putByteArray("colors", this.colors);
+      compoundNBT.putBoolean("trackingPosition", this.trackingPosition);
+      compoundNBT.putBoolean("unlimitedTracking", this.unlimitedTracking);
+      compoundNBT.putBoolean("locked", this.locked);
       ListNBT var4 = new ListNBT();
 
       for (Class7468 var6 : this.field32326.values()) {
          var4.add(var6.method24188());
       }
 
-      var1.put("banners", var4);
+      compoundNBT.put("banners", var4);
       ListNBT var8 = new ListNBT();
 
       for (Class6674 var7 : this.field32328.values()) {
          var8.add(var7.method20350());
       }
 
-      var1.put("frames", var8);
-      return var1;
+      compoundNBT.put("frames", var8);
+      return compoundNBT;
    }
 
    public void method24593(MapData var1) {
@@ -147,7 +148,7 @@ public class MapData extends Class7530 {
       this.field32326.putAll(var1.field32326);
       this.field32327.putAll(var1.field32327);
       System.arraycopy(var1.colors, 0, this.colors, 0, var1.colors.length);
-      this.method24605();
+      this.markDirty();
    }
 
    public void method24594(PlayerEntity var1, ItemStack var2) {
@@ -206,10 +207,10 @@ public class MapData extends Class7530 {
 
       CompoundNBT var11 = var2.getTag();
       if (var11 != null && var11.contains("Decorations", 9)) {
-         ListNBT var13 = var11.method131("Decorations", 10);
+         ListNBT var13 = var11.getList("Decorations", 10);
 
          for (int var15 = 0; var15 < var13.size(); var15++) {
-            CompoundNBT var16 = var13.method153(var15);
+            CompoundNBT var16 = var13.getCompound(var15);
             if (!this.field32327.containsKey(var16.getString("id"))) {
                this.method24596(
                   MapDecorationType.byIcon(var16.getByte("type")),
@@ -228,18 +229,18 @@ public class MapData extends Class7530 {
    public static void method24595(ItemStack var0, BlockPos var1, String var2, MapDecorationType var3) {
       ListNBT var6;
       if (var0.method32141() && var0.getTag().contains("Decorations", 9)) {
-         var6 = var0.getTag().method131("Decorations", 10);
+         var6 = var0.getTag().getList("Decorations", 10);
       } else {
          var6 = new ListNBT();
          var0.setTagInfo("Decorations", var6);
       }
 
       CompoundNBT var7 = new CompoundNBT();
-      var7.method100("type", var3.getIcon());
-      var7.method109("id", var2);
-      var7.method108("x", (double)var1.getX());
-      var7.method108("z", (double)var1.getZ());
-      var7.method108("rot", 180.0);
+      var7.putByte("type", var3.getIcon());
+      var7.putString("id", var2);
+      var7.putDouble("x", (double)var1.getX());
+      var7.putDouble("z", (double)var1.getZ());
+      var7.putDouble("rot", 180.0);
       var6.add(var7);
       if (var3.hasMapColor()) {
          CompoundNBT var8 = var0.method32144("display");
@@ -306,7 +307,7 @@ public class MapData extends Class7530 {
    }
 
    public void method24598(int var1, int var2) {
-      this.method24605();
+      this.markDirty();
 
       for (Class8541 var6 : this.field32324) {
          var6.method30389(var1, var2);
@@ -353,7 +354,7 @@ public class MapData extends Class7530 {
          }
 
          if (var15) {
-            this.method24605();
+            this.markDirty();
          }
       }
    }

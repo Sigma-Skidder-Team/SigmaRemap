@@ -21,8 +21,10 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.nbt.LongArrayNBT;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.SharedConstants;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.SectionPos;
@@ -58,10 +60,10 @@ public class ChunkSerializer {
          var0.func_241828_r().<Biome>getRegistry(Registry.BIOME_KEY), var3, var8, !var9.contains("Biomes", 11) ? null : var9.getIntArray("Biomes")
       );
       UpgradeData var12 = !var9.contains("UpgradeData", 10) ? UpgradeData.field40388 : new UpgradeData(var9.getCompound("UpgradeData"));
-      Class6806 var13 = new Class6806<Block>(var0x -> var0x == null || var0x.getDefaultState().isAir(), var3, var9.method131("ToBeTicked", 9));
-      Class6806 var14 = new Class6806<Fluid>(var0x -> var0x == null || var0x == Fluids.EMPTY, var3, var9.method131("LiquidsToBeTicked", 9));
+      Class6806 var13 = new Class6806<Block>(var0x -> var0x == null || var0x.getDefaultState().isAir(), var3, var9.getList("ToBeTicked", 9));
+      Class6806 var14 = new Class6806<Fluid>(var0x -> var0x == null || var0x == Fluids.EMPTY, var3, var9.getList("LiquidsToBeTicked", 9));
       boolean var15 = var9.getBoolean("isLightOn");
-      ListNBT var16 = var9.method131("Sections", 10);
+      ListNBT var16 = var9.getList("Sections", 10);
       byte var17 = 16;
       ChunkSection[] var18 = new ChunkSection[16];
       boolean var19 = var0.getDimensionType().hasSkyLight();
@@ -72,11 +74,11 @@ public class ChunkSerializer {
       }
 
       for (int var22 = 0; var22 < var16.size(); var22++) {
-         CompoundNBT var30 = var16.method153(var22);
+         CompoundNBT var30 = var16.getCompound(var22);
          byte var25 = var30.getByte("Y");
          if (var30.contains("Palette", 9) && var30.contains("BlockStates", 12)) {
             ChunkSection var27 = new ChunkSection(var25 << 4);
-            var27.method21865().method30502(var30.method131("Palette", 10), var30.getLongArray("BlockStates"));
+            var27.method21865().method30502(var30.getList("Palette", 10), var30.getLongArray("BlockStates"));
             var27.method21864();
             if (!var27.method21858()) {
                var18[var25] = var27;
@@ -121,14 +123,14 @@ public class ChunkSerializer {
          if (!var9.contains("TileTicks", 9)) {
             var41 = var13;
          } else {
-            var41 = Class6801.<Block>method20722(var9.method131("TileTicks", 10), Registry.BLOCK::getKey, Registry.BLOCK::getOrDefault);
+            var41 = Class6801.<Block>method20722(var9.getList("TileTicks", 10), Registry.BLOCK::getKey, Registry.BLOCK::getOrDefault);
          }
 
          Object var44;
          if (!var9.contains("LiquidTicks", 9)) {
             var44 = var14;
          } else {
-            var44 = Class6801.<Fluid>method20722(var9.method131("LiquidTicks", 10), Registry.FLUID::getKey, Registry.FLUID::getOrDefault);
+            var44 = Class6801.<Fluid>method20722(var9.getList("LiquidTicks", 10), Registry.FLUID::getKey, Registry.FLUID::getOrDefault);
          }
 
          var43 = new Chunk(
@@ -157,13 +159,13 @@ public class ChunkSerializer {
          ((IChunk)var43).setModified(true);
       }
 
-      ListNBT var48 = var9.method131("PostProcessing", 9);
+      ListNBT var48 = var9.getList("PostProcessing", 9);
 
       for (int var49 = 0; var49 < var48.size(); var49++) {
-         ListNBT var33 = var48.method154(var49);
+         ListNBT var33 = var48.getList(var49);
 
          for (int var34 = 0; var34 < var33.size(); var34++) {
-            ((IChunk)var43).addPackedPosition(var33.method155(var34), var49);
+            ((IChunk)var43).addPackedPosition(var33.getShort(var34), var49);
          }
       }
 
@@ -171,32 +173,32 @@ public class ChunkSerializer {
          return new Class1673((Chunk)var43);
       } else {
          ChunkPrimer var50 = (ChunkPrimer)var43;
-         ListNBT var51 = var9.method131("Entities", 10);
+         ListNBT var51 = var9.getList("Entities", 10);
 
          for (int var52 = 0; var52 < var51.size(); var52++) {
-            var50.method7108(var51.method153(var52));
+            var50.method7108(var51.getCompound(var52));
          }
 
-         ListNBT var53 = var9.method131("TileEntities", 10);
+         ListNBT var53 = var9.getList("TileEntities", 10);
 
          for (int var35 = 0; var35 < var53.size(); var35++) {
-            CompoundNBT var36 = var53.method153(var35);
+            CompoundNBT var36 = var53.getCompound(var35);
             ((IChunk)var43).addTileEntity(var36);
          }
 
-         ListNBT var54 = var9.method131("Lights", 9);
+         ListNBT var54 = var9.getList("Lights", 9);
 
          for (int var55 = 0; var55 < var54.size(); var55++) {
-            ListNBT var37 = var54.method154(var55);
+            ListNBT var37 = var54.getList(var55);
 
             for (int var38 = 0; var38 < var37.size(); var38++) {
-               var50.method7104(var37.method155(var38), var55);
+               var50.method7104(var37.getShort(var38), var55);
             }
          }
 
          CompoundNBT var56 = var9.getCompound("CarvingMasks");
 
-         for (String var58 : var56.method97()) {
+         for (String var58 : var56.keySet()) {
             GenerationStageCarving var39 = GenerationStageCarving.valueOf(var58);
             var50.method7118(var39, BitSet.valueOf(var56.getByteArray(var58)));
          }
@@ -213,9 +215,9 @@ public class ChunkSerializer {
       var5.put("Level", var6);
       var6.putInt("xPos", var4.x);
       var6.putInt("zPos", var4.z);
-      var6.method103("LastUpdate", var0.getGameTime());
-      var6.method103("InhabitedTime", var1.getInhabitedTime());
-      var6.method109("Status", var1.getStatus().method34298());
+      var6.putLong("LastUpdate", var0.getGameTime());
+      var6.putLong("InhabitedTime", var1.getInhabitedTime());
+      var6.putString("Status", var1.getStatus().method34298());
       UpgradeData var7 = var1.getUpgradeData();
       if (!var7.method32607()) {
          var6.put("UpgradeData", var7.method32608());
@@ -236,17 +238,17 @@ public class ChunkSerializer {
          NibbleArray var16 = var10.getLightEngine(LightType.SKY).method642(SectionPos.from(var4, var13));
          if (var14 != Chunk.field9111 || var15 != null || var16 != null) {
             CompoundNBT var17 = new CompoundNBT();
-            var17.method100("Y", (byte)(var13 & 0xFF));
+            var17.putByte("Y", (byte)(var13 & 0xFF));
             if (var14 != Chunk.field9111) {
                var14.method21865().method30503(var17, "Palette", "BlockStates");
             }
 
             if (var15 != null && !var15.method20677()) {
-               var17.method110("BlockLight", var15.method20669());
+               var17.putByteArray("BlockLight", var15.method20669());
             }
 
             if (var16 != null && !var16.method20677()) {
-               var17.method110("SkyLight", var16.method20669());
+               var17.putByteArray("SkyLight", var16.method20669());
             }
 
             var9.add(var17);
@@ -260,7 +262,7 @@ public class ChunkSerializer {
 
       BiomeContainer var22 = var1.getBiomes();
       if (var22 != null) {
-         var6.method111("Biomes", var22.method7198());
+         var6.putIntArray("Biomes", var22.method7198());
       }
 
       ListNBT var23 = new ListNBT();
@@ -283,7 +285,7 @@ public class ChunkSerializer {
          for (GenerationStageCarving var20 : GenerationStageCarving.values()) {
             BitSet var21 = var27.method7116(var20);
             if (var21 != null) {
-               var31.method110(var20.toString(), var21.toByteArray());
+               var31.putByteArray(var20.toString(), var21.toByteArray());
             }
          }
 
@@ -352,11 +354,11 @@ public class ChunkSerializer {
    }
 
    private static void method38090(CompoundNBT var0, Chunk var1) {
-      ListNBT var4 = var0.method131("Entities", 10);
+      ListNBT var4 = var0.getList("Entities", 10);
       World var5 = var1.method7144();
 
       for (int var6 = 0; var6 < var4.size(); var6++) {
-         CompoundNBT var7 = var4.method153(var6);
+         CompoundNBT var7 = var4.getCompound(var6);
          EntityType.method33223(var7, var5, var1x -> {
             var1.addEntity(var1x);
             return var1x;
@@ -364,10 +366,10 @@ public class ChunkSerializer {
          var1.method7147(true);
       }
 
-      ListNBT var12 = var0.method131("TileEntities", 10);
+      ListNBT var12 = var0.getList("TileEntities", 10);
 
       for (int var13 = 0; var13 < var12.size(); var13++) {
-         CompoundNBT var8 = var12.method153(var13);
+         CompoundNBT var8 = var12.getCompound(var13);
          boolean var9 = var8.getBoolean("keepPacked");
          if (!var9) {
             BlockPos var10 = new BlockPos(var8.getInt("x"), var8.getInt("y"), var8.getInt("z"));
@@ -404,7 +406,7 @@ public class ChunkSerializer {
       HashMap var6 = Maps.newHashMap();
       CompoundNBT var7 = var1.getCompound("Starts");
 
-      for (String var9 : var7.method97()) {
+      for (String var9 : var7.keySet()) {
          String var10 = var9.toLowerCase(Locale.ROOT);
          Structure var11 = (Structure) Structure.field_236365_a_.get(var10);
          if (var11 != null) {
@@ -424,7 +426,7 @@ public class ChunkSerializer {
       HashMap var4 = Maps.newHashMap();
       CompoundNBT var5 = var1.getCompound("References");
 
-      for (String var7 : var5.method97()) {
+      for (String var7 : var5.keySet()) {
          var4.put(Structure.field_236365_a_.get(var7.toLowerCase(Locale.ROOT)), new LongOpenHashSet(Arrays.stream(var5.getLongArray(var7)).filter(var2 -> {
             ChunkPos var6 = new ChunkPos(var2);
             if (var6.getChessboardDistance(var0) <= 8) {
@@ -449,7 +451,7 @@ public class ChunkSerializer {
 
             while (var9.hasNext()) {
                Short var10 = (Short)var9.next();
-               var8.add(Class37.method96(var10));
+               var8.add(ShortNBT.valueOf(var10));
             }
          }
 

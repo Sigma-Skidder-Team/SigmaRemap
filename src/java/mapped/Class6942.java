@@ -13,6 +13,7 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.RecipeManager;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.network.play.server.SRecipeBookPacket;
 import net.minecraft.util.ResourceLocation;
 import org.apache.logging.log4j.LogManager;
@@ -83,15 +84,15 @@ public class Class6942 extends Class6941 {
 
    public void method21380(CompoundNBT var1, RecipeManager var2) {
       this.method21373(Class9223.method34692(var1));
-      ListNBT var5 = var1.method131("recipes", 8);
+      ListNBT var5 = var1.getList("recipes", 8);
       this.method21381(var5, this::method21358, var2);
-      ListNBT var6 = var1.method131("toBeDisplayed", 8);
+      ListNBT var6 = var1.getList("toBeDisplayed", 8);
       this.method21381(var6, this::method21366, var2);
    }
 
    private void method21381(ListNBT var1, Consumer<IRecipe<?>> var2, RecipeManager var3) {
       for (int var6 = 0; var6 < var1.size(); var6++) {
-         String var7 = var1.method160(var6);
+         String var7 = var1.getString(var6);
 
          try {
             ResourceLocation var8 = new ResourceLocation(var7);

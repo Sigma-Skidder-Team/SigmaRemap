@@ -230,7 +230,7 @@ public class Class1019 extends Class1018 implements Class1020 {
    public void writeAdditional(CompoundNBT var1) {
       super.writeAdditional(var1);
       var1.putBoolean("Sheared", this.method4519());
-      var1.method100("Color", (byte)this.method4517().method309());
+      var1.putByte("Color", (byte)this.method4517().method309());
    }
 
    @Override

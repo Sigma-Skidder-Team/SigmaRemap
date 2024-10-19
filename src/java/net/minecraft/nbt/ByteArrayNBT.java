@@ -11,8 +11,8 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-public class ByteArrayNBT extends Class27<Class33> {
-   public static final Class7052<ByteArrayNBT> field54 = new Class7058();
+public class ByteArrayNBT extends CollectionNBT<ByteNBT> {
+   public static final INBTType<ByteArrayNBT> TYPE = new Class7058();
    private byte[] field55;
 
    public ByteArrayNBT(byte[] var1) {
@@ -41,13 +41,13 @@ public class ByteArrayNBT extends Class27<Class33> {
    }
 
    @Override
-   public byte getId() {
+   public byte getID() {
       return 7;
    }
 
    @Override
-   public Class7052<ByteArrayNBT> method75() {
-      return field54;
+   public INBTType<ByteArrayNBT> getType() {
+      return TYPE;
    }
 
    @Override
@@ -66,7 +66,7 @@ public class ByteArrayNBT extends Class27<Class33> {
    }
 
    @Override
-   public INBT method79() {
+   public INBT copy() {
       byte[] var3 = new byte[this.field55.length];
       System.arraycopy(this.field55, 0, var3, 0, this.field55.length);
       return new ByteArrayNBT(var3);
@@ -83,12 +83,12 @@ public class ByteArrayNBT extends Class27<Class33> {
    }
 
    @Override
-   public ITextComponent method78(String var1, int var2) {
-      IFormattableTextComponent var5 = new StringTextComponent("B").mergeStyle(field59);
+   public ITextComponent toFormattedComponent(String indentation, int indentDepth) {
+      IFormattableTextComponent var5 = new StringTextComponent("B").mergeStyle(SYNTAX_HIGHLIGHTING_NUMBER_TYPE);
       IFormattableTextComponent var6 = new StringTextComponent("[").append(var5).appendString(";");
 
       for (int var7 = 0; var7 < this.field55.length; var7++) {
-         IFormattableTextComponent var8 = new StringTextComponent(String.valueOf(this.field55[var7])).mergeStyle(field58);
+         IFormattableTextComponent var8 = new StringTextComponent(String.valueOf(this.field55[var7])).mergeStyle(SYNTAX_HIGHLIGHTING_NUMBER);
          var6.appendString(" ").append(var8).append(var5);
          if (var7 != this.field55.length - 1) {
             var6.appendString(",");
@@ -108,22 +108,22 @@ public class ByteArrayNBT extends Class27<Class33> {
       return this.field55.length;
    }
 
-   public Class33 get(int var1) {
-      return Class33.method91(this.field55[var1]);
+   public ByteNBT get(int var1) {
+      return ByteNBT.valueOf(this.field55[var1]);
    }
 
-   public Class33 set(int var1, Class33 var2) {
+   public ByteNBT set(int var1, ByteNBT var2) {
       byte var5 = this.field55[var1];
       this.field55[var1] = var2.getByte();
-      return Class33.method91(var5);
+      return ByteNBT.valueOf(var5);
    }
 
-   public void add(int var1, Class33 var2) {
+   public void add(int var1, ByteNBT var2) {
       this.field55 = ArrayUtils.add(this.field55, var1, var2.getByte());
    }
 
    @Override
-   public boolean method70(int var1, INBT var2) {
+   public boolean setNBTByIndex(int var1, INBT var2) {
       if (!(var2 instanceof NumberNBT)) {
          return false;
       } else {
@@ -133,7 +133,7 @@ public class ByteArrayNBT extends Class27<Class33> {
    }
 
    @Override
-   public boolean method71(int var1, INBT var2) {
+   public boolean addNBTByIndex(int var1, INBT var2) {
       if (!(var2 instanceof NumberNBT)) {
          return false;
       } else {
@@ -142,14 +142,14 @@ public class ByteArrayNBT extends Class27<Class33> {
       }
    }
 
-   public Class33 remove(int var1) {
+   public ByteNBT remove(int var1) {
       byte var4 = this.field55[var1];
       this.field55 = ArrayUtils.remove(this.field55, var1);
-      return Class33.method91(var4);
+      return ByteNBT.valueOf(var4);
    }
 
    @Override
-   public byte method72() {
+   public byte getTagType() {
       return 1;
    }
 

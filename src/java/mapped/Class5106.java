@@ -4,6 +4,7 @@ import net.minecraft.network.NetworkManager;
 import net.minecraft.network.ProtocolType;
 import net.minecraft.network.login.server.SDisconnectLoginPacket;
 import net.minecraft.network.play.ServerLoginNetHandler;
+import net.minecraft.util.SharedConstants;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;

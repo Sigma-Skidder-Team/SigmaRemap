@@ -29,6 +29,7 @@ import net.minecraft.fluid.FluidState;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -1340,7 +1341,7 @@ public abstract class Entity implements INameable, ICommandSource {
    public boolean writeUnlessRemoved(CompoundNBT var1) {
       String var4 = this.getEntityString();
       if (!this.removed && var4 != null) {
-         var1.method109("id", var4);
+         var1.putString("id", var4);
          this.writeWithoutTypeId(var1);
          return true;
       } else {
@@ -1369,10 +1370,10 @@ public abstract class Entity implements INameable, ICommandSource {
          var1.putBoolean("OnGround", this.onGround);
          var1.putBoolean("Invulnerable", this.invulnerable);
          var1.putInt("PortalCooldown", this.field_242273_aw);
-         var1.method104("UUID", this.getUniqueID());
+         var1.putUniqueID("UUID", this.getUniqueID());
          ITextComponent var11 = this.method3380();
          if (var11 != null) {
-            var1.method109("CustomName", ITextComponent$Serializer.toJson(var11));
+            var1.putString("CustomName", ITextComponent$Serializer.toJson(var11));
          }
 
          if (this.method3383()) {
@@ -1428,16 +1429,16 @@ public abstract class Entity implements INameable, ICommandSource {
 
    public void read(CompoundNBT var1) {
       try {
-         ListNBT var4 = var1.method131("Pos", 6);
-         ListNBT var18 = var1.method131("Motion", 6);
-         ListNBT var19 = var1.method131("Rotation", 5);
-         double var7 = var18.method158(0);
-         double var9 = var18.method158(1);
-         double var11 = var18.method158(2);
+         ListNBT var4 = var1.getList("Pos", 6);
+         ListNBT var18 = var1.getList("Motion", 6);
+         ListNBT var19 = var1.getList("Rotation", 5);
+         double var7 = var18.getDouble(0);
+         double var9 = var18.getDouble(1);
+         double var11 = var18.getDouble(2);
          this.setMotion(Math.abs(var7) > 10.0 ? 0.0 : var7, Math.abs(var9) > 10.0 ? 0.0 : var9, Math.abs(var11) > 10.0 ? 0.0 : var11);
-         this.setLocationAndAngles(var4.method158(0), var4.method158(1), var4.method158(2));
-         this.rotationYaw = var19.method159(0);
-         this.rotationPitch = var19.method159(1);
+         this.setLocationAndAngles(var4.getDouble(0), var4.getDouble(1), var4.getDouble(2));
+         this.rotationYaw = var19.getFloat(0);
+         this.rotationPitch = var19.getFloat(1);
          this.prevRotationYaw = this.rotationYaw;
          this.prevRotationPitch = this.rotationPitch;
          this.setRotationYawHead(this.rotationYaw);
@@ -1448,8 +1449,8 @@ public abstract class Entity implements INameable, ICommandSource {
          this.onGround = var1.getBoolean("OnGround");
          this.invulnerable = var1.getBoolean("Invulnerable");
          this.field_242273_aw = var1.getInt("PortalCooldown");
-         if (var1.method106("UUID")) {
-            this.entityUniqueID = var1.method105("UUID");
+         if (var1.hasUniqueID("UUID")) {
+            this.entityUniqueID = var1.getUniqueID("UUID");
             this.cachedUniqueIdString = this.entityUniqueID.toString();
          }
 
@@ -1474,11 +1475,11 @@ public abstract class Entity implements INameable, ICommandSource {
             this.setGlowing(var1.getBoolean("Glowing"));
             if (var1.contains("Tags", 9)) {
                this.tags.clear();
-               ListNBT var20 = var1.method131("Tags", 8);
+               ListNBT var20 = var1.getList("Tags", 8);
                int var14 = Math.min(var20.size(), 1024);
 
                for (int var15 = 0; var15 < var14; var15++) {
-                  this.tags.add(var20.method160(var15));
+                  this.tags.add(var20.getString(var15));
                }
             }
 
@@ -1516,7 +1517,7 @@ public abstract class Entity implements INameable, ICommandSource {
       ListNBT var4 = new ListNBT();
 
       for (double var8 : var1) {
-         var4.add(Class34.method93(var8));
+         var4.add(DoubleNBT.valueOf(var8));
       }
 
       return var4;
@@ -1526,7 +1527,7 @@ public abstract class Entity implements INameable, ICommandSource {
       ListNBT var4 = new ListNBT();
 
       for (float var8 : var1) {
-         var4.add(Class32.method90(var8));
+         var4.add(FloatNBT.valueOf(var8));
       }
 
       return var4;
@@ -2088,7 +2089,7 @@ public abstract class Entity implements INameable, ICommandSource {
 
    public void method3365(Entity var1) {
       CompoundNBT var4 = var1.writeWithoutTypeId(new CompoundNBT());
-      var4.method133("Dimension");
+      var4.remove("Dimension");
       this.read(var4);
       this.field_242273_aw = var1.field_242273_aw;
       this.field_242271_ac = var1.field_242271_ac;

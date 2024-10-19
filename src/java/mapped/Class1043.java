@@ -160,7 +160,7 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
          this.field5796 = new Class46(var1.getCompound("Offers"));
       }
 
-      this.field5797.method3682(var1.method131("Inventory", 10));
+      this.field5797.method3682(var1.getList("Inventory", 10));
    }
 
    @Nullable

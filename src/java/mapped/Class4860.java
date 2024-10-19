@@ -123,8 +123,8 @@ public class Class4860 extends Class4837 {
          }
       }
 
-      var5.method112("Colors", var7);
-      var5.method100("Type", (byte)var6.method8800());
+      var5.putIntArray("Colors", var7);
+      var5.putByte("Type", (byte)var6.method8800());
       return var4;
    }
 

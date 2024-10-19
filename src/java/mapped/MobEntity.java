@@ -21,6 +21,7 @@ import net.minecraft.item.Items;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolItem;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.network.DebugPacketSender;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -334,20 +335,20 @@ public abstract class MobEntity extends LivingEntity {
       ListNBT var14 = new ListNBT();
 
       for (float var10 : this.field5607) {
-         var14.add(Class32.method90(var10));
+         var14.add(FloatNBT.valueOf(var10));
       }
 
       var1.put("ArmorDropChances", var14);
       ListNBT var17 = new ListNBT();
 
       for (float var11 : this.field5605) {
-         var17.add(Class32.method90(var11));
+         var17.add(FloatNBT.valueOf(var11));
       }
 
       var1.put("HandDropChances", var17);
       if (this.field5613 == null) {
          if (this.field5615 != null) {
-            var1.put("Leash", this.field5615.method79());
+            var1.put("Leash", this.field5615.copy());
          }
       } else {
          CompoundNBT var20 = new CompoundNBT();
@@ -360,7 +361,7 @@ public abstract class MobEntity extends LivingEntity {
             }
          } else {
             UUID var23 = this.field5613.getUniqueID();
-            var20.method104("UUID", var23);
+            var20.putUniqueID("UUID", var23);
          }
 
          var1.put("Leash", var20);
@@ -368,9 +369,9 @@ public abstract class MobEntity extends LivingEntity {
 
       var1.putBoolean("LeftHanded", this.method4306());
       if (this.field5611 != null) {
-         var1.method109("DeathLootTable", this.field5611.toString());
+         var1.putString("DeathLootTable", this.field5611.toString());
          if (this.field5612 != 0L) {
-            var1.method103("DeathLootTableSeed", this.field5612);
+            var1.putLong("DeathLootTableSeed", this.field5612);
          }
       }
 
@@ -388,34 +389,34 @@ public abstract class MobEntity extends LivingEntity {
 
       this.field5609 = var1.getBoolean("PersistenceRequired");
       if (var1.contains("ArmorItems", 9)) {
-         ListNBT var4 = var1.method131("ArmorItems", 10);
+         ListNBT var4 = var1.getList("ArmorItems", 10);
 
          for (int var5 = 0; var5 < this.field5606.size(); var5++) {
-            this.field5606.set(var5, ItemStack.method32104(var4.method153(var5)));
+            this.field5606.set(var5, ItemStack.method32104(var4.getCompound(var5)));
          }
       }
 
       if (var1.contains("HandItems", 9)) {
-         ListNBT var6 = var1.method131("HandItems", 10);
+         ListNBT var6 = var1.getList("HandItems", 10);
 
          for (int var9 = 0; var9 < this.field5604.size(); var9++) {
-            this.field5604.set(var9, ItemStack.method32104(var6.method153(var9)));
+            this.field5604.set(var9, ItemStack.method32104(var6.getCompound(var9)));
          }
       }
 
       if (var1.contains("ArmorDropChances", 9)) {
-         ListNBT var7 = var1.method131("ArmorDropChances", 5);
+         ListNBT var7 = var1.getList("ArmorDropChances", 5);
 
          for (int var10 = 0; var10 < var7.size(); var10++) {
-            this.field5607[var10] = var7.method159(var10);
+            this.field5607[var10] = var7.getFloat(var10);
          }
       }
 
       if (var1.contains("HandDropChances", 9)) {
-         ListNBT var8 = var1.method131("HandDropChances", 5);
+         ListNBT var8 = var1.getList("HandDropChances", 5);
 
          for (int var11 = 0; var11 < var8.size(); var11++) {
-            this.field5605[var11] = var8.method159(var11);
+            this.field5605[var11] = var8.getFloat(var11);
          }
       }
 
@@ -588,8 +589,8 @@ public abstract class MobEntity extends LivingEntity {
    public boolean method4251(ItemStack var1, ItemStack var2) {
       if (var1.method32117() >= var2.method32117() && (!var1.method32141() || var2.method32141())) {
          return var1.method32141() && var2.method32141()
-            ? var1.getTag().method97().stream().anyMatch(var0 -> !var0.equals("Damage"))
-               && !var2.getTag().method97().stream().anyMatch(var0 -> !var0.equals("Damage"))
+            ? var1.getTag().keySet().stream().anyMatch(var0 -> !var0.equals("Damage"))
+               && !var2.getTag().keySet().stream().anyMatch(var0 -> !var0.equals("Damage"))
             : false;
       } else {
          return true;
@@ -1235,14 +1236,14 @@ public abstract class MobEntity extends LivingEntity {
 
    private void method4300() {
       if (this.field5615 != null && this.world instanceof ServerWorld) {
-         if (!this.field5615.method106("UUID")) {
+         if (!this.field5615.hasUniqueID("UUID")) {
             if (this.field5615.contains("X", 99) && this.field5615.contains("Y", 99) && this.field5615.contains("Z", 99)) {
                BlockPos var3 = new BlockPos(this.field5615.getInt("X"), this.field5615.getInt("Y"), this.field5615.getInt("Z"));
                this.method4298(LeashKnotEntity.method4087(this.world, var3), true);
                return;
             }
          } else {
-            UUID var5 = this.field5615.method105("UUID");
+            UUID var5 = this.field5615.getUniqueID("UUID");
             Entity var4 = ((ServerWorld)this.world).getEntityByUuid(var5);
             if (var4 != null) {
                this.method4298(var4, true);

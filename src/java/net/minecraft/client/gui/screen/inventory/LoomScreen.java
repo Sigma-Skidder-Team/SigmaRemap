@@ -11,6 +11,7 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.tileentity.BannerTileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvents;
@@ -229,7 +230,7 @@ public class LoomScreen extends ContainerScreen<Class5837> {
       ItemStack var5 = this.field4727.method18248().getStack();
       ItemStack var6 = this.field4727.method18249().getStack();
       CompoundNBT var7 = var4.method32144("BlockEntityTag");
-      this.field4810 = var7.contains("Patterns", 9) && !var4.isEmpty() && var7.method131("Patterns", 10).size() >= 6;
+      this.field4810 = var7.contains("Patterns", 9) && !var4.isEmpty() && var7.getList("Patterns", 10).size() >= 6;
       if (this.field4810) {
          this.field4804 = null;
       }

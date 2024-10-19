@@ -84,17 +84,17 @@ public class AttributeModifier {
 
    public CompoundNBT method37934() {
       CompoundNBT var3 = new CompoundNBT();
-      var3.method109("Name", this.method37931());
-      var3.method108("Amount", this.field45302);
+      var3.putString("Name", this.method37931());
+      var3.putDouble("Amount", this.field45302);
       var3.putInt("Operation", this.field45303.getId());
-      var3.method104("UUID", this.field45305);
+      var3.putUniqueID("UUID", this.field45305);
       return var3;
    }
 
    @Nullable
    public static AttributeModifier method37935(CompoundNBT var0) {
       try {
-         UUID var3 = var0.method105("UUID");
+         UUID var3 = var0.getUniqueID("UUID");
          Operation var4 = Operation.byId(var0.getInt("Operation"));
          return new AttributeModifier(var3, var0.getString("Name"), var0.getDouble("Amount"), var4);
       } catch (Exception var5) {

@@ -110,7 +110,7 @@ public class Class1034 extends Class1035 implements Class1023 {
       super.readAdditional(var1);
       this.method4308(var1.getBoolean("IsBaby"));
       this.method4617(var1.getBoolean("CannotHunt"));
-      this.field5746.method3682(var1.method131("Inventory", 10));
+      this.field5746.method3682(var1.getList("Inventory", 10));
    }
 
    @Override

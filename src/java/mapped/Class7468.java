@@ -4,6 +4,7 @@ import java.util.Objects;
 import javax.annotation.Nullable;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.NBTUtil;
 import net.minecraft.tileentity.BannerTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
@@ -24,7 +25,7 @@ public class Class7468 {
    }
 
    public static Class7468 method24183(CompoundNBT var0) {
-      BlockPos var3 = Class8354.method29283(var0.getCompound("Pos"));
+      BlockPos var3 = NBTUtil.method29283(var0.getCompound("Pos"));
       Class112 var4 = Class112.method316(var0.getString("Color"), Class112.field386);
       IFormattableTextComponent var5 = !var0.contains("Name") ? null : ITextComponent$Serializer.getComponentFromJson(var0.getString("Name"));
       return new Class7468(var3, var4, var5);
@@ -109,10 +110,10 @@ public class Class7468 {
 
    public CompoundNBT method24188() {
       CompoundNBT var3 = new CompoundNBT();
-      var3.put("Pos", Class8354.method29284(this.field32104));
-      var3.method109("Color", this.field32105.method310());
+      var3.put("Pos", NBTUtil.method29284(this.field32104));
+      var3.putString("Color", this.field32105.method310());
       if (this.field32106 != null) {
-         var3.method109("Name", ITextComponent$Serializer.toJson(this.field32106));
+         var3.putString("Name", ITextComponent$Serializer.toJson(this.field32106));
       }
 
       return var3;

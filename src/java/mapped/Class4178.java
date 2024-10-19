@@ -65,7 +65,7 @@ public abstract class Class4178 {
 
    public final CompoundNBT method12914() {
       CompoundNBT var3 = new CompoundNBT();
-      var3.method109("id", Registry.field16116.getKey(this.method12941()).toString());
+      var3.putString("id", Registry.field16116.getKey(this.method12941()).toString());
       var3.put("BB", this.field20444.method38402());
       Direction var4 = this.method12938();
       var3.putInt("O", var4 != null ? var4.getHorizontalIndex() : -1);

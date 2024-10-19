@@ -45,7 +45,7 @@ public class Class7154 implements Class7151 {
 
    @Override
    public ITextComponent method22314(INBT var1) {
-      return new TranslationTextComponent("commands.data.entity.query", this.field30733.getDisplayName(), var1.method82());
+      return new TranslationTextComponent("commands.data.entity.query", this.field30733.getDisplayName(), var1.toFormattedComponent());
    }
 
    @Override

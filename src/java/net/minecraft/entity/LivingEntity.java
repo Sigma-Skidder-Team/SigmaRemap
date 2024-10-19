@@ -33,6 +33,7 @@ import net.minecraft.item.Items;
 import net.minecraft.item.UseAction;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -589,14 +590,14 @@ public abstract class LivingEntity extends Entity {
    public void readAdditional(CompoundNBT var1) {
       this.setAbsorptionAmount(var1.getFloat("AbsorptionAmount"));
       if (var1.contains("Attributes", 9) && this.world != null && !this.world.isRemote) {
-         this.getAttributeManager().deserialize(var1.method131("Attributes", 10));
+         this.getAttributeManager().deserialize(var1.getList("Attributes", 10));
       }
 
       if (var1.contains("ActiveEffects", 9)) {
-         ListNBT var4 = var1.method131("ActiveEffects", 10);
+         ListNBT var4 = var1.getList("ActiveEffects", 10);
 
          for (int var5 = 0; var5 < var4.size(); var5++) {
-            CompoundNBT var6 = var4.method153(var5);
+            CompoundNBT var6 = var4.getCompound(var5);
             EffectInstance var7 = EffectInstance.method8639(var6);
             if (var7 != null) {
                this.field4944.put(var7.getPotion(), var7);
@@ -634,7 +635,7 @@ public abstract class LivingEntity extends Entity {
       }
 
       if (var1.contains("Brain", 10)) {
-         this.field5011 = this.createBrain(new Dynamic(NBTDynamicOps.INSTANCE, var1.method116("Brain")));
+         this.field5011 = this.createBrain(new Dynamic(NBTDynamicOps.INSTANCE, var1.get("Brain")));
       }
    }
 

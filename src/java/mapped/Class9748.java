@@ -18,6 +18,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.NBTUtil;
 import net.minecraft.scoreboard.ServerScoreboard;
 import net.minecraft.scoreboard.Team;
 import net.minecraft.util.ResourceLocation;
@@ -306,7 +307,7 @@ public class Class9748 {
                   }
                }
 
-               return Class8354.method29280(var4, var5, true) != var3;
+               return NBTUtil.areNBTEquals(var4, var5, true) != var3;
             });
          }, var0 -> true, new TranslationTextComponent("argument.entity.options.nbt.description"));
          method38218("scores", var0 -> {

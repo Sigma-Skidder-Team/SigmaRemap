@@ -23,9 +23,9 @@ public class Class149 extends Class128 {
    public ItemStack method371(ItemStack var1, LootContext var2) {
       if (!var1.isEmpty()) {
          CompoundNBT var5 = new CompoundNBT();
-         var5.method109("LootTable", this.field493.toString());
+         var5.putString("LootTable", this.field493.toString());
          if (this.field494 != 0L) {
-            var5.method103("LootTableSeed", this.field494);
+            var5.putLong("LootTableSeed", this.field494);
          }
 
          var1.getOrCreateTag().put("BlockEntityTag", var5);

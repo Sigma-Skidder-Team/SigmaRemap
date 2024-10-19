@@ -175,7 +175,7 @@ public class Class931 extends Class932 implements Class930, ITickableTileEntity 
       super.write(var1);
       var1.putShort("BrewTime", (short)this.field5274);
       ItemStackHelper.saveAllItems(var1, this.field5273);
-      var1.method100("Fuel", (byte)this.field5277);
+      var1.putByte("Fuel", (byte)this.field5277);
       return var1;
    }
 

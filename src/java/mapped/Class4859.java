@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
@@ -65,7 +66,7 @@ public class Class4859 extends Class4837 {
          }
       }
 
-      var5.method100("Flight", (byte)var7);
+      var5.putByte("Flight", (byte)var7);
       if (!var6.isEmpty()) {
          var5.put("Explosions", var6);
       }

@@ -4,6 +4,7 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.Dynamic2CommandExceptionType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.NBTUtil;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -26,7 +27,7 @@ public class Class176 implements Predicate<ItemStack> {
    }
 
    public boolean test(ItemStack var1) {
-      return var1.getItem() == this.field563 && Class8354.method29280(this.field564, var1.getTag(), true);
+      return var1.getItem() == this.field563 && NBTUtil.areNBTEquals(this.field564, var1.getTag(), true);
    }
 
    public ItemStack method503(int var1, boolean var2) throws CommandSyntaxException {

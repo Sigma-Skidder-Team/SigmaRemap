@@ -16,6 +16,7 @@ import java.util.function.Predicate;
 import net.minecraft.command.CommandSource;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
+import net.minecraft.nbt.NBTUtil;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class8320 implements ArgumentType<Class9670> {
@@ -122,7 +123,7 @@ public class Class8320 implements ArgumentType<Class9670> {
    }
 
    private static Predicate<INBT> method29134(CompoundNBT var0) {
-      return var1 -> Class8354.method29280(var0, var1, true);
+      return var1 -> NBTUtil.areNBTEquals(var0, var1, true);
    }
 
    // $VF: synthetic method

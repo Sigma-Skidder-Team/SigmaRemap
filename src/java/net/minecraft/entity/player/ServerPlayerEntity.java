@@ -182,7 +182,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
          this.field4887 = var1.getFloat("SpawnAngle");
          if (var1.contains("SpawnDimension")) {
             this.field4884 = World.CODEC
-               .parse(NBTDynamicOps.INSTANCE, var1.method116("SpawnDimension"))
+               .parse(NBTDynamicOps.INSTANCE, var1.get("SpawnDimension"))
                .resultOrPartial(field4854::error)
                .orElse(World.OVERWORLD);
          }
@@ -197,9 +197,9 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
       var1.putBoolean("seenCredits", this.field4877);
       if (this.field4882 != null) {
          CompoundNBT var4 = new CompoundNBT();
-         var4.method108("x", this.field4882.x);
-         var4.method108("y", this.field4882.y);
-         var4.method108("z", this.field4882.z);
+         var4.putDouble("x", this.field4882.x);
+         var4.putDouble("y", this.field4882.y);
+         var4.putDouble("z", this.field4882.z);
          var1.put("enteredNetherPosition", var4);
       }
 
@@ -209,13 +209,13 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
          CompoundNBT var6 = new CompoundNBT();
          CompoundNBT var7 = new CompoundNBT();
          var8.writeUnlessPassenger(var7);
-         var6.method104("Attach", var5.getUniqueID());
+         var6.putUniqueID("Attach", var5.getUniqueID());
          var6.put("Entity", var7);
          var1.put("RootVehicle", var6);
       }
 
       var1.put("recipeBook", this.field4878.method21379());
-      var1.method109("Dimension", this.world.getDimensionKey().getLocation().toString());
+      var1.putString("Dimension", this.world.getDimensionKey().getLocation().toString());
       if (this.field4885 != null) {
          var1.putInt("SpawnX", this.field4885.getX());
          var1.putInt("SpawnY", this.field4885.getY());

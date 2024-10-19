@@ -14,6 +14,7 @@ import java.util.stream.Stream;
 
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
+import net.minecraft.nbt.ListNBT;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -92,8 +93,8 @@ public class Class8559<T> {
 
    private CompoundNBT method30539(Class8959<T> var1) {
       CompoundNBT var4 = new CompoundNBT();
-      var4.method109("Name", var1.field40478);
-      var4.method103("TriggerTime", var1.field40476);
+      var4.putString("Name", var1.field40478);
+      var4.putLong("TriggerTime", var1.field40476);
       var4.put("Callback", this.field38467.method18797(var1.field40479));
       return var4;
    }

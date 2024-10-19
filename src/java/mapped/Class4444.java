@@ -85,7 +85,7 @@ public class Class4444 implements Class4442 {
          String var11 = field21602.hashBytes(var10).toString();
          String var12;
          if (field21605 != null) {
-            var12 = var8.method78("    ", 0).getString() + "\n";
+            var12 = var8.toFormattedComponent("    ", 0).getString() + "\n";
          } else {
             var12 = null;
          }

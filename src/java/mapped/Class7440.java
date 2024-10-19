@@ -15,6 +15,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.network.DebugPacketSender;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;

@@ -14,6 +14,7 @@ import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.passive.ShoulderRidingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.StringUtils;
 import net.minecraft.world.GameType;
 import net.optifine.Config;
 
@@ -42,7 +43,7 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
       this.worldClient = var1;
       this.nameClear = var2.getName();
       if (this.nameClear != null && !this.nameClear.isEmpty()) {
-         this.nameClear = Class9001.method33255(this.nameClear);
+         this.nameClear = StringUtils.stripControlCodes(this.nameClear);
       }
 
       Class7749.method25668(this);
@@ -118,7 +119,7 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
       if (var5 == null) {
          var5 = new DownloadingTexture(
             (File)null,
-            String.format("http://skins.minecraft.net/MinecraftSkins/%s.png", Class9001.method33255(var1)),
+            String.format("http://skins.minecraft.net/MinecraftSkins/%s.png", StringUtils.stripControlCodes(var1)),
             DefaultPlayerSkin.getDefaultSkin(method2961(var1)),
             true,
             (Runnable)null
@@ -130,7 +131,7 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
    }
 
    public static ResourceLocation method5376(String var0) {
-      return new ResourceLocation("skins/" + Hashing.sha1().hashUnencodedChars(Class9001.method33255(var0)));
+      return new ResourceLocation("skins/" + Hashing.sha1().hashUnencodedChars(StringUtils.stripControlCodes(var0)));
    }
 
    public String method5377() {

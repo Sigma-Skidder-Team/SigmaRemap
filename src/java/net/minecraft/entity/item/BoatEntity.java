@@ -734,7 +734,7 @@ public class BoatEntity extends Entity {
 
    @Override
    public void writeAdditional(CompoundNBT var1) {
-      var1.method109("Type", this.method4172().method8761());
+      var1.putString("Type", this.method4172().method8761());
    }
 
    @Override

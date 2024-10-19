@@ -14,6 +14,7 @@ import mapped.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 
@@ -345,8 +346,8 @@ public class Scoreboard {
          .map(Map::values)
          .forEach(var1 -> var1.stream().filter(var0x -> var0x.method36053() != null).forEach(var1x -> {
                CompoundNBT var4 = new CompoundNBT();
-               var4.method109("Name", var1x.method36054());
-               var4.method109("Objective", var1x.method36053().method29336());
+               var4.putString("Name", var1x.method36054());
+               var4.putString("Objective", var1x.method36053().method29336());
                var4.putInt("Score", var1x.method36050());
                var4.putBoolean("Locked", var1x.method36056());
                var3.add(var4);
@@ -356,7 +357,7 @@ public class Scoreboard {
 
    public void method21013(ListNBT var1) {
       for (int var4 = 0; var4 < var1.size(); var4++) {
-         CompoundNBT var5 = var1.method153(var4);
+         CompoundNBT var5 = var1.getCompound(var4);
          Class8375 var6 = this.method20975(var5.getString("Objective"));
          String var7 = var5.getString("Name");
          if (var7.length() > 40) {

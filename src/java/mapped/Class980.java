@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 
 public class Class980 extends Class927 {
    private Class943 field5457;
@@ -22,7 +23,7 @@ public class Class980 extends Class927 {
       }
 
       for (int var7 = 0; var7 < var1.size(); var7++) {
-         CompoundNBT var5 = var1.method153(var7);
+         CompoundNBT var5 = var1.getCompound(var7);
          int var6 = var5.getByte("Slot") & 255;
          if (var6 >= 0 && var6 < this.getSizeInventory()) {
             this.setInventorySlotContents(var6, ItemStack.method32104(var5));
@@ -38,7 +39,7 @@ public class Class980 extends Class927 {
          ItemStack var5 = this.getStackInSlot(var4);
          if (!var5.isEmpty()) {
             CompoundNBT var6 = new CompoundNBT();
-            var6.method100("Slot", (byte)var4);
+            var6.putByte("Slot", (byte)var4);
             var5.method32112(var6);
             var3.add(var6);
          }

@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.network.PacketBuffer;
 
 import javax.annotation.Nullable;
@@ -12,10 +13,10 @@ public class Class46 extends ArrayList<Class9346> {
    }
 
    public Class46(CompoundNBT var1) {
-      ListNBT var4 = var1.method131("Recipes", 10);
+      ListNBT var4 = var1.getList("Recipes", 10);
 
       for (int var5 = 0; var5 < var4.size(); var5++) {
-         this.add(new Class9346(var4.method153(var5)));
+         this.add(new Class9346(var4.getCompound(var5)));
       }
    }
 

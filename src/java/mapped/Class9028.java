@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.nbt.ListNBT;
+
 public class Class9028 {
    private static String[] field41299;
    public long field41300;

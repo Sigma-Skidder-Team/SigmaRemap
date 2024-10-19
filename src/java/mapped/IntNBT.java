@@ -1,23 +1,24 @@
 package mapped;
 
 import net.minecraft.nbt.NumberNBT;
+import net.minecraft.nbt.INBTType;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 
 import java.io.DataOutput;
 import java.io.IOException;
 
-public class Class36 extends NumberNBT {
+public class IntNBT extends NumberNBT {
    private static String[] field72;
-   public static final Class7052<Class36> field73 = new Class7065();
+   public static final INBTType<IntNBT> field73 = new Class7065();
    private final int field74;
 
-   private Class36(int var1) {
+   private IntNBT(int var1) {
       this.field74 = var1;
    }
 
-   public static Class36 method95(int var0) {
-      return var0 >= -128 && var0 <= 1024 ? Class8136.field34975[var0 + 128] : new Class36(var0);
+   public static IntNBT valueOf(int var0) {
+      return var0 >= -128 && var0 <= 1024 ? Class8136.field34975[var0 + 128] : new IntNBT(var0);
    }
 
    @Override
@@ -26,12 +27,12 @@ public class Class36 extends NumberNBT {
    }
 
    @Override
-   public byte getId() {
+   public byte getID() {
       return 3;
    }
 
    @Override
-   public Class7052<Class36> method75() {
+   public INBTType<IntNBT> getType() {
       return field73;
    }
 
@@ -40,13 +41,13 @@ public class Class36 extends NumberNBT {
       return String.valueOf(this.field74);
    }
 
-   public Class36 method79() {
+   public IntNBT copy() {
       return this;
    }
 
    @Override
    public boolean equals(Object var1) {
-      return this == var1 ? true : var1 instanceof Class36 && this.field74 == ((Class36)var1).field74;
+      return this == var1 ? true : var1 instanceof IntNBT && this.field74 == ((IntNBT)var1).field74;
    }
 
    @Override
@@ -55,8 +56,8 @@ public class Class36 extends NumberNBT {
    }
 
    @Override
-   public ITextComponent method78(String var1, int var2) {
-      return new StringTextComponent(String.valueOf(this.field74)).mergeStyle(field58);
+   public ITextComponent toFormattedComponent(String indentation, int indentDepth) {
+      return new StringTextComponent(String.valueOf(this.field74)).mergeStyle(SYNTAX_HIGHLIGHTING_NUMBER);
    }
 
    @Override
@@ -95,7 +96,7 @@ public class Class36 extends NumberNBT {
    }
 
    // $VF: synthetic method
-   public Class36(int var1, Class7065 var2) {
+   public IntNBT(int var1, Class7065 var2) {
       this(var1);
    }
 }

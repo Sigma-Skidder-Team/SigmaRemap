@@ -13,6 +13,8 @@ import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
+import net.minecraft.nbt.NBTUtil;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
@@ -319,13 +321,13 @@ public class Class1095 extends Class1018 {
 
       for (UUID var7 : var4) {
          if (var7 != null) {
-            var5.add(Class8354.method29281(var7));
+            var5.add(NBTUtil.valueOf(var7));
          }
       }
 
       var1.put("Trusted", var5);
       var1.putBoolean("Sleeping", this.isSleeping());
-      var1.method109("Type", this.method5125().method567());
+      var1.putString("Type", this.method5125().method567());
       var1.putBoolean("Sitting", this.method5129());
       var1.putBoolean("Crouching", this.isCrouching());
    }
@@ -333,10 +335,10 @@ public class Class1095 extends Class1018 {
    @Override
    public void readAdditional(CompoundNBT var1) {
       super.readAdditional(var1);
-      ListNBT var4 = var1.method131("Trusted", 11);
+      ListNBT var4 = var1.getList("Trusted", 11);
 
       for (int var5 = 0; var5 < var4.size(); var5++) {
-         this.method5128(Class8354.method29282(var4.get(var5)));
+         this.method5128(NBTUtil.readUniqueID(var4.get(var5)));
       }
 
       this.method5135(var1.getBoolean("Sleeping"));

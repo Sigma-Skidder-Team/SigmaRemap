@@ -28,7 +28,7 @@ public class Class146 extends Class128 {
          CompoundNBT var6 = new CompoundNBT();
          ItemStackHelper.saveAllItems(var6, var5);
          CompoundNBT var7 = var1.getOrCreateTag();
-         var7.put("BlockEntityTag", var6.method140(var7.getCompound("BlockEntityTag")));
+         var7.put("BlockEntityTag", var6.merge(var7.getCompound("BlockEntityTag")));
          return var1;
       } else {
          return var1;

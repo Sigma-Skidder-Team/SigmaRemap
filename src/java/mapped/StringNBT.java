@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.nbt.INBT;
+import net.minecraft.nbt.INBTType;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -10,7 +11,7 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class StringNBT implements INBT {
-   public static final Class7052<StringNBT> field84 = new Class7062();
+   public static final INBTType<StringNBT> field84 = new Class7062();
    private static final StringNBT field85 = new StringNBT("");
    private final String field86;
 
@@ -29,21 +30,21 @@ public class StringNBT implements INBT {
    }
 
    @Override
-   public byte getId() {
+   public byte getID() {
       return 8;
    }
 
    @Override
-   public Class7052<StringNBT> method75() {
+   public INBTType<StringNBT> getType() {
       return field84;
    }
 
    @Override
    public String toString() {
-      return method151(this.field86);
+      return quoteAndEscape(this.field86);
    }
 
-   public StringNBT method79() {
+   public StringNBT copy() {
       return this;
    }
 
@@ -63,14 +64,14 @@ public class StringNBT implements INBT {
    }
 
    @Override
-   public ITextComponent method78(String var1, int var2) {
-      String var5 = method151(this.field86);
+   public ITextComponent toFormattedComponent(String indentation, int indentDepth) {
+      String var5 = quoteAndEscape(this.field86);
       String var6 = var5.substring(0, 1);
-      IFormattableTextComponent var7 = new StringTextComponent(var5.substring(1, var5.length() - 1)).mergeStyle(field57);
+      IFormattableTextComponent var7 = new StringTextComponent(var5.substring(1, var5.length() - 1)).mergeStyle(SYNTAX_HIGHLIGHTING_STRING);
       return new StringTextComponent(var6).append(var7).appendString(var6);
    }
 
-   public static String method151(String var0) {
+   public static String quoteAndEscape(String var0) {
       StringBuilder var3 = new StringBuilder(" ");
       char var4 = 0;
 

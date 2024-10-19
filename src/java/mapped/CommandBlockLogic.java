@@ -6,6 +6,7 @@ import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.StringUtils;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextComponent$Serializer;
@@ -42,17 +43,17 @@ public abstract class CommandBlockLogic implements ICommandSource {
    }
 
    public CompoundNBT method3560(CompoundNBT var1) {
-      var1.method109("Command", this.field5198);
+      var1.putString("Command", this.field5198);
       var1.putInt("SuccessCount", this.field5195);
-      var1.method109("CustomName", ITextComponent$Serializer.toJson(this.field5199));
+      var1.putString("CustomName", ITextComponent$Serializer.toJson(this.field5199));
       var1.putBoolean("TrackOutput", this.field5196);
       if (this.field5197 != null && this.field5196) {
-         var1.method109("LastOutput", ITextComponent$Serializer.toJson(this.field5197));
+         var1.putString("LastOutput", ITextComponent$Serializer.toJson(this.field5197));
       }
 
       var1.putBoolean("UpdateLastExecution", this.field5194);
       if (this.field5194 && this.field5193 > 0L) {
-         var1.method103("LastExecution", this.field5193);
+         var1.putLong("LastExecution", this.field5193);
       }
 
       return var1;
@@ -109,7 +110,7 @@ public abstract class CommandBlockLogic implements ICommandSource {
       } else {
          this.field5195 = 0;
          MinecraftServer var4 = this.method3567().getServer();
-         if (var4.method1361() && !Class9001.method33256(this.field5198)) {
+         if (var4.method1361() && !StringUtils.isNullOrEmpty(this.field5198)) {
             try {
                this.field5197 = null;
                CommandSource var5 = this.method3574().method20160((var1x, var2, var3) -> {

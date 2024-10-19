@@ -8,6 +8,7 @@ import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.network.play.server.SSetSlotPacket;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.NonNullList;
@@ -186,7 +187,7 @@ public class PlayerInventory implements IInventory, INameable {
       if (var7.isEmpty()) {
          var7 = new ItemStack(var5, 0);
          if (var2.method32141()) {
-            var7.setTag(var2.getTag().method79());
+            var7.setTag(var2.getTag().copy());
          }
 
          this.setInventorySlotContents(var1, var7);
@@ -387,7 +388,7 @@ public class PlayerInventory implements IInventory, INameable {
       for (int var4 = 0; var4 < this.field5439.size(); var4++) {
          if (!this.field5439.get(var4).isEmpty()) {
             CompoundNBT var5 = new CompoundNBT();
-            var5.method100("Slot", (byte)var4);
+            var5.putByte("Slot", (byte)var4);
             this.field5439.get(var4).method32112(var5);
             var1.add(var5);
          }
@@ -396,7 +397,7 @@ public class PlayerInventory implements IInventory, INameable {
       for (int var6 = 0; var6 < this.field5440.size(); var6++) {
          if (!this.field5440.get(var6).isEmpty()) {
             CompoundNBT var8 = new CompoundNBT();
-            var8.method100("Slot", (byte)(var6 + 100));
+            var8.putByte("Slot", (byte)(var6 + 100));
             this.field5440.get(var6).method32112(var8);
             var1.add(var8);
          }
@@ -405,7 +406,7 @@ public class PlayerInventory implements IInventory, INameable {
       for (int var7 = 0; var7 < this.field5441.size(); var7++) {
          if (!this.field5441.get(var7).isEmpty()) {
             CompoundNBT var9 = new CompoundNBT();
-            var9.method100("Slot", (byte)(var7 + 150));
+            var9.putByte("Slot", (byte)(var7 + 150));
             this.field5441.get(var7).method32112(var9);
             var1.add(var9);
          }
@@ -420,7 +421,7 @@ public class PlayerInventory implements IInventory, INameable {
       this.field5441.clear();
 
       for (int var4 = 0; var4 < var1.size(); var4++) {
-         CompoundNBT var5 = var1.method153(var4);
+         CompoundNBT var5 = var1.getCompound(var4);
          int var6 = var5.getByte("Slot") & 255;
          ItemStack var7 = ItemStack.method32104(var5);
          if (!var7.isEmpty()) {

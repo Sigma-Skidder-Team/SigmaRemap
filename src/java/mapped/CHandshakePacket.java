@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.ProtocolType;
+import net.minecraft.util.SharedConstants;
 
 import java.io.IOException;
 

@@ -39,9 +39,9 @@ public class Class4181 extends Class4180 {
    @Override
    public void method12897(CompoundNBT var1) {
       super.method12897(var1);
-      var1.method109("Template", this.field20456.toString());
+      var1.putString("Template", this.field20456.toString());
       var1.putBoolean("isBeached", this.field20457);
-      var1.method109("Rot", this.field20447.name());
+      var1.putString("Rot", this.field20447.name());
    }
 
    private void method12945(TemplateManager var1) {

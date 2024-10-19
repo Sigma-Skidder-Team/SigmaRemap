@@ -19,9 +19,7 @@ import java.util.function.BiConsumer;
 import java.util.function.Function;
 
 import net.minecraft.command.CommandSource;
-import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.nbt.INBT;
-import net.minecraft.nbt.NumberNBT;
+import net.minecraft.nbt.*;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -105,7 +103,7 @@ public class Class8158 {
                         .then(Class6099.method18839("append").then(var1.method25731((var0xx, var1x, var2, var3x) -> method28316(-1, var1x, var2, var3x))))
                         .then(
                            Class6099.method18839("set")
-                              .then(var1.method25731((var0xx, var1x, var2, var3x) -> var2.method37730(var1x, ((INBT)Iterables.getLast(var3x))::method79)))
+                              .then(var1.method25731((var0xx, var1x, var2, var3x) -> var2.method37730(var1x, ((INBT)Iterables.getLast(var3x))::copy)))
                         )
                         .then(Class6099.method18839("merge").then(var1.method25731((var0xx, var1x, var2, var3x) -> {
                            List<INBT> var6 = var2.method37728(var1x, CompoundNBT::new);
@@ -117,14 +115,14 @@ public class Class8158 {
                               }
 
                               CompoundNBT var10 = (CompoundNBT)var9;
-                              CompoundNBT var11 = var10.method79();
+                              CompoundNBT var11 = var10.copy();
 
                               for (INBT var13 : var3x) {
                                  if (!(var13 instanceof CompoundNBT)) {
                                     throw field35110.create(var13);
                                  }
 
-                                 var10.method140((CompoundNBT)var13);
+                                 var10.merge((CompoundNBT)var13);
                               }
 
                               var7 += !var11.equals(var10) ? 1 : 0;
@@ -144,17 +142,17 @@ public class Class8158 {
       int var7 = 0;
 
       for (INBT var9 : var6) {
-         if (!(var9 instanceof Class27)) {
+         if (!(var9 instanceof CollectionNBT)) {
             throw field35109.create(var9);
          }
 
          boolean var10 = false;
-         Class27 var11 = (Class27)var9;
+         CollectionNBT var11 = (CollectionNBT)var9;
          int var12 = var0 < 0 ? var11.size() + var0 + 1 : var0;
 
          for (INBT var14 : var3) {
             try {
-               if (var11.method71(var12, var14.method79())) {
+               if (var11.addNBTByIndex(var12, var14.copy())) {
                   var12++;
                   var10 = true;
                }
@@ -240,7 +238,7 @@ public class Class8158 {
       INBT var5 = method28320(var2, var1);
       int var6;
       if (!(var5 instanceof NumberNBT)) {
-         if (!(var5 instanceof Class27)) {
+         if (!(var5 instanceof CollectionNBT)) {
             if (!(var5 instanceof CompoundNBT)) {
                if (!(var5 instanceof StringNBT)) {
                   throw field35107.create(var2.toString());
@@ -248,10 +246,10 @@ public class Class8158 {
 
                var6 = var5.getString().length();
             } else {
-               var6 = ((CompoundNBT)var5).method98();
+               var6 = ((CompoundNBT)var5).size();
             }
          } else {
-            var6 = ((Class27)var5).size();
+            var6 = ((CollectionNBT)var5).size();
          }
       } else {
          var6 = MathHelper.floor(((NumberNBT)var5).getDouble());
@@ -279,7 +277,7 @@ public class Class8158 {
 
    private static int method28324(CommandSource var0, Class7151 var1, CompoundNBT var2) throws CommandSyntaxException {
       CompoundNBT var5 = var1.method22312();
-      CompoundNBT var6 = var5.method79().method140(var2);
+      CompoundNBT var6 = var5.copy().merge(var2);
       if (!var5.equals(var6)) {
          var1.method22311(var6);
          var0.method20179(var1.method22313(), true);

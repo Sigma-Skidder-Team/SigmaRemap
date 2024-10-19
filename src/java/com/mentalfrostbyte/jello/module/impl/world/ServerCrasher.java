@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import mapped.Class8906;
-import mapped.ListNBT;
+import net.minecraft.nbt.ListNBT;
 import mapped.StringNBT;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -79,8 +79,8 @@ public class ServerCrasher extends Module {
                             var17.add(var22);
                         }
 
-                        var18.method109("author", "LeakedPvP");
-                        var18.method109("title", "Sigma");
+                        var18.putString("author", "LeakedPvP");
+                        var18.putString("title", "Sigma");
                         var18.put("pages", var17);
                         var16.setTagInfo("pages", var17);
                         var16.setTag(var18);

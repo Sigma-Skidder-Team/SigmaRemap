@@ -3,11 +3,12 @@ package mapped;
 import com.google.common.collect.Maps;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.storage.WorldSavedData;
 
 import java.util.Map;
 import java.util.stream.Stream;
 
-public class Class7534 extends Class7530 {
+public class Class7534 extends WorldSavedData {
    private final Map<String, CompoundNBT> field32339 = Maps.newHashMap();
 
    public Class7534(String var1) {
@@ -15,20 +16,20 @@ public class Class7534 extends Class7530 {
    }
 
    @Override
-   public void method24591(CompoundNBT var1) {
-      CompoundNBT var4 = var1.getCompound("contents");
+   public void read(CompoundNBT compoundNBT) {
+      CompoundNBT var4 = compoundNBT.getCompound("contents");
 
-      for (String var6 : var4.method97()) {
+      for (String var6 : var4.keySet()) {
          this.field32339.put(var6, var4.getCompound(var6));
       }
    }
 
    @Override
-   public CompoundNBT method24592(CompoundNBT var1) {
+   public CompoundNBT write(CompoundNBT compoundNBT) {
       CompoundNBT var4 = new CompoundNBT();
-      this.field32339.forEach((var1x, var2) -> var4.put(var1x, var2.method79()));
-      var1.put("contents", var4);
-      return var1;
+      this.field32339.forEach((var1x, var2) -> var4.put(var1x, var2.copy()));
+      compoundNBT.put("contents", var4);
+      return compoundNBT;
    }
 
    public CompoundNBT method24624(String var1) {
@@ -37,13 +38,13 @@ public class Class7534 extends Class7530 {
    }
 
    public void method24625(String var1, CompoundNBT var2) {
-      if (!var2.method134()) {
+      if (!var2.isEmpty()) {
          this.field32339.put(var1, var2);
       } else {
          this.field32339.remove(var1);
       }
 
-      this.method24605();
+      this.markDirty();
    }
 
    public Stream<ResourceLocation> method24626(String var1) {

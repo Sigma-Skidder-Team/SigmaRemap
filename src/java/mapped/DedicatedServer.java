@@ -24,6 +24,7 @@ import net.minecraft.tileentity.SkullTileEntity;
 import net.minecraft.util.DefaultUncaughtExceptionHandler;
 import net.minecraft.util.DefaultWithNameUncaughtExceptionHandler;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.SharedConstants;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.filter.ChatFilterClient;

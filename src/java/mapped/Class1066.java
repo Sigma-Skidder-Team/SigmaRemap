@@ -8,6 +8,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
@@ -80,7 +81,7 @@ public abstract class Class1066 extends AbstractHorseEntity {
             ItemStack var6 = this.field5890.getStackInSlot(var5);
             if (!var6.isEmpty()) {
                CompoundNBT var7 = new CompoundNBT();
-               var7.method100("Slot", (byte)var5);
+               var7.putByte("Slot", (byte)var5);
                var6.method32112(var7);
                var4.add(var7);
             }
@@ -95,11 +96,11 @@ public abstract class Class1066 extends AbstractHorseEntity {
       super.readAdditional(var1);
       this.method4928(var1.getBoolean("ChestedHorse"));
       if (this.method4927()) {
-         ListNBT var4 = var1.method131("Items", 10);
+         ListNBT var4 = var1.getList("Items", 10);
          this.method4948();
 
          for (int var5 = 0; var5 < var4.size(); var5++) {
-            CompoundNBT var6 = var4.method153(var5);
+            CompoundNBT var6 = var4.getCompound(var5);
             int var7 = var6.getByte("Slot") & 255;
             if (var7 >= 2 && var7 < this.field5890.getSizeInventory()) {
                this.field5890.setInventorySlotContents(var7, ItemStack.method32104(var6));

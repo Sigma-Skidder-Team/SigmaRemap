@@ -3,6 +3,7 @@ package net.minecraft.crash;
 import com.google.common.collect.Lists;
 import mapped.*;
 import net.minecraft.client.util.Util;
+import net.minecraft.util.SharedConstants;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.logging.log4j.LogManager;
@@ -208,10 +209,10 @@ public class CrashReport {
    }
 
    public CrashReportCategory makeCategory(String var1) {
-      return this.method14411(var1, 1);
+      return this.makeCategoryDepth(var1, 1);
    }
 
-   public CrashReportCategory method14411(String var1, int var2) {
+   public CrashReportCategory makeCategoryDepth(String var1, int var2) {
       CrashReportCategory var5 = new CrashReportCategory(this, var1);
 
       try {

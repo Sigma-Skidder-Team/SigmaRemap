@@ -159,11 +159,11 @@ public class UpgradeData {
       for (int var5 = 0; var5 < this.field40391.length; var5++) {
          String var6 = String.valueOf(var5);
          if (this.field40391[var5] != null && this.field40391[var5].length != 0) {
-            var4.method111(var6, this.field40391[var5]);
+            var4.putIntArray(var6, this.field40391[var5]);
          }
       }
 
-      if (!var4.method134()) {
+      if (!var4.isEmpty()) {
          var3.put("Indices", var4);
       }
 
@@ -173,7 +173,7 @@ public class UpgradeData {
          var8 |= 1 << var7.ordinal();
       }
 
-      var3.method100("Sides", (byte)var8);
+      var3.putByte("Sides", (byte)var8);
       return var3;
    }
 

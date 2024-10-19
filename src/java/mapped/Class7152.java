@@ -49,7 +49,7 @@ public class Class7152 implements Class7151 {
    @Override
    public ITextComponent method22314(INBT var1) {
       return new TranslationTextComponent(
-         "commands.data.block.query", this.field30726.getX(), this.field30726.getY(), this.field30726.getZ(), var1.method82()
+         "commands.data.block.query", this.field30726.getX(), this.field30726.getY(), this.field30726.getZ(), var1.toFormattedComponent()
       );
    }
 

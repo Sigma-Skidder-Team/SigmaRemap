@@ -22,6 +22,7 @@ import net.minecraft.client.util.Util;
 import net.minecraft.command.CommandSource;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.network.play.server.SCommandListPacket;
+import net.minecraft.util.SharedConstants;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextComponentUtils;

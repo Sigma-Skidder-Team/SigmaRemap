@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 import net.minecraft.nbt.*;
+import net.minecraft.nbt.INBTType;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class7671 {
@@ -83,39 +84,39 @@ public class Class7671 {
    private INBT method25192(String var1) {
       try {
          if (field32871.matcher(var1).matches()) {
-            return Class32.method90(Float.parseFloat(var1.substring(0, var1.length() - 1)));
+            return FloatNBT.valueOf(Float.parseFloat(var1.substring(0, var1.length() - 1)));
          }
 
          if (field32872.matcher(var1).matches()) {
-            return Class33.method91(Byte.parseByte(var1.substring(0, var1.length() - 1)));
+            return ByteNBT.valueOf(Byte.parseByte(var1.substring(0, var1.length() - 1)));
          }
 
          if (field32873.matcher(var1).matches()) {
-            return Class35.method94(Long.parseLong(var1.substring(0, var1.length() - 1)));
+            return LongNBT.valueOf(Long.parseLong(var1.substring(0, var1.length() - 1)));
          }
 
          if (field32874.matcher(var1).matches()) {
-            return Class37.method96(Short.parseShort(var1.substring(0, var1.length() - 1)));
+            return ShortNBT.valueOf(Short.parseShort(var1.substring(0, var1.length() - 1)));
          }
 
          if (field32875.matcher(var1).matches()) {
-            return Class36.method95(Integer.parseInt(var1));
+            return IntNBT.valueOf(Integer.parseInt(var1));
          }
 
          if (field32870.matcher(var1).matches()) {
-            return Class34.method93(Double.parseDouble(var1.substring(0, var1.length() - 1)));
+            return DoubleNBT.valueOf(Double.parseDouble(var1.substring(0, var1.length() - 1)));
          }
 
          if (field32869.matcher(var1).matches()) {
-            return Class34.method93(Double.parseDouble(var1));
+            return DoubleNBT.valueOf(Double.parseDouble(var1));
          }
 
          if ("true".equalsIgnoreCase(var1)) {
-            return Class33.field65;
+            return ByteNBT.field65;
          }
 
          if ("false".equalsIgnoreCase(var1)) {
-            return Class33.field64;
+            return ByteNBT.field64;
          }
       } catch (NumberFormatException var5) {
       }
@@ -178,16 +179,16 @@ public class Class7671 {
          throw field32865.createWithContext(this.field32876);
       } else {
          ListNBT var3 = new ListNBT();
-         Class7052 var4 = null;
+         INBTType var4 = null;
 
          while (this.field32876.peek() != ']') {
             int var5 = this.field32876.getCursor();
             INBT var6 = this.method25193();
-            Class7052 var7 = var6.method75();
+            INBTType var7 = var6.getType();
             if (var4 != null) {
                if (var7 != var4) {
                   this.field32876.setCursor(var5);
-                  throw field32866.createWithContext(this.field32876, var7.method21976(), var4.method21976());
+                  throw field32866.createWithContext(this.field32876, var7.getTagName(), var4.getTagName());
                }
             } else {
                var4 = var7;
@@ -221,33 +222,33 @@ public class Class7671 {
                   this.field32876.setCursor(var3);
                   throw field32868.createWithContext(this.field32876, String.valueOf(var4));
                } else {
-                  return new IntArrayNBT(this.<Integer>method25198(IntArrayNBT.field52, Class36.field73));
+                  return new IntArrayNBT(this.<Integer>method25198(IntArrayNBT.TYPE, IntNBT.field73));
                }
             } else {
-               return new LongArrayNBT(this.<Long>method25198(LongArrayNBT.field91, Class35.field70));
+               return new LongArrayNBT(this.<Long>method25198(LongArrayNBT.TYPE, LongNBT.field70));
             }
          } else {
-            return new ByteArrayNBT(this.<Byte>method25198(ByteArrayNBT.field54, Class33.field63));
+            return new ByteArrayNBT(this.<Byte>method25198(ByteArrayNBT.TYPE, ByteNBT.field63));
          }
       } else {
          throw field32865.createWithContext(this.field32876);
       }
    }
 
-   private <T extends Number> List<T> method25198(Class7052<?> var1, Class7052<?> var2) throws CommandSyntaxException {
+   private <T extends Number> List<T> method25198(INBTType<?> var1, INBTType<?> var2) throws CommandSyntaxException {
       ArrayList var5 = Lists.newArrayList();
 
       while (this.field32876.peek() != ']') {
          int var6 = this.field32876.getCursor();
          INBT var7 = this.method25193();
-         Class7052 var8 = var7.method75();
+         INBTType var8 = var7.getType();
          if (var8 != var2) {
             this.field32876.setCursor(var6);
-            throw field32867.createWithContext(this.field32876, var8.method21976(), var1.method21976());
+            throw field32867.createWithContext(this.field32876, var8.getTagName(), var1.getTagName());
          }
 
-         if (var2 != Class33.field63) {
-            if (var2 != Class35.field70) {
+         if (var2 != ByteNBT.field63) {
+            if (var2 != LongNBT.field70) {
                var5.add(((NumberNBT)var7).getInt());
             } else {
                var5.add(((NumberNBT)var7).getLong());

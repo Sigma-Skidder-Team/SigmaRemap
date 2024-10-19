@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.util.Util;
+import net.minecraft.util.SharedConstants;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeRegistry;

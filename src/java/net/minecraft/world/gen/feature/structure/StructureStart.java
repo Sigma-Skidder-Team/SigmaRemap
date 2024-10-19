@@ -3,6 +3,7 @@ package net.minecraft.world.gen.feature.structure;
 import com.google.common.collect.Lists;
 import mapped.*;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
@@ -78,7 +79,7 @@ public abstract class StructureStart<C extends Class4698> {
    public CompoundNBT method17114(int var1, int var2) {
       CompoundNBT var5 = new CompoundNBT();
       if (this.method17117()) {
-         var5.method109("id", Registry.STRUCTURE_FEATURE.getKey(this.getStructure()).toString());
+         var5.putString("id", Registry.STRUCTURE_FEATURE.getKey(this.getStructure()).toString());
          var5.putInt("ChunkX", var1);
          var5.putInt("ChunkZ", var2);
          var5.putInt("references", this.field24200);
@@ -93,7 +94,7 @@ public abstract class StructureStart<C extends Class4698> {
          var5.put("Children", var6);
          return var5;
       } else {
-         var5.method109("id", "INVALID");
+         var5.putString("id", "INVALID");
          return var5;
       }
    }

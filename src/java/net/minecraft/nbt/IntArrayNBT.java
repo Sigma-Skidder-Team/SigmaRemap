@@ -11,8 +11,8 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-public class IntArrayNBT extends Class27<Class36> {
-   public static final Class7052<IntArrayNBT> field52 = new Class7053();
+public class IntArrayNBT extends CollectionNBT<IntNBT> {
+   public static final INBTType<IntArrayNBT> TYPE = new Class7053();
    private int[] field53;
 
    public IntArrayNBT(int[] var1) {
@@ -44,13 +44,13 @@ public class IntArrayNBT extends Class27<Class36> {
    }
 
    @Override
-   public byte getId() {
+   public byte getID() {
       return 11;
    }
 
    @Override
-   public Class7052<IntArrayNBT> method75() {
-      return field52;
+   public INBTType<IntArrayNBT> getType() {
+      return TYPE;
    }
 
    @Override
@@ -68,7 +68,7 @@ public class IntArrayNBT extends Class27<Class36> {
       return var3.append(']').toString();
    }
 
-   public IntArrayNBT method79() {
+   public IntArrayNBT copy() {
       int[] var3 = new int[this.field53.length];
       System.arraycopy(this.field53, 0, var3, 0, this.field53.length);
       return new IntArrayNBT(var3);
@@ -89,12 +89,12 @@ public class IntArrayNBT extends Class27<Class36> {
    }
 
    @Override
-   public ITextComponent method78(String var1, int var2) {
-      IFormattableTextComponent var5 = new StringTextComponent("I").mergeStyle(field59);
+   public ITextComponent toFormattedComponent(String indentation, int indentDepth) {
+      IFormattableTextComponent var5 = new StringTextComponent("I").mergeStyle(SYNTAX_HIGHLIGHTING_NUMBER_TYPE);
       IFormattableTextComponent var6 = new StringTextComponent("[").append(var5).appendString(";");
 
       for (int var7 = 0; var7 < this.field53.length; var7++) {
-         var6.appendString(" ").append(new StringTextComponent(String.valueOf(this.field53[var7])).mergeStyle(field58));
+         var6.appendString(" ").append(new StringTextComponent(String.valueOf(this.field53[var7])).mergeStyle(SYNTAX_HIGHLIGHTING_NUMBER));
          if (var7 != this.field53.length - 1) {
             var6.appendString(",");
          }
@@ -109,22 +109,22 @@ public class IntArrayNBT extends Class27<Class36> {
       return this.field53.length;
    }
 
-   public Class36 get(int var1) {
-      return Class36.method95(this.field53[var1]);
+   public IntNBT get(int var1) {
+      return IntNBT.valueOf(this.field53[var1]);
    }
 
-   public Class36 set(int var1, Class36 var2) {
+   public IntNBT set(int var1, IntNBT var2) {
       int var5 = this.field53[var1];
       this.field53[var1] = var2.getInt();
-      return Class36.method95(var5);
+      return IntNBT.valueOf(var5);
    }
 
-   public void add(int var1, Class36 var2) {
+   public void add(int var1, IntNBT var2) {
       this.field53 = ArrayUtils.add(this.field53, var1, var2.getInt());
    }
 
    @Override
-   public boolean method70(int var1, INBT var2) {
+   public boolean setNBTByIndex(int var1, INBT var2) {
       if (!(var2 instanceof NumberNBT)) {
          return false;
       } else {
@@ -134,7 +134,7 @@ public class IntArrayNBT extends Class27<Class36> {
    }
 
    @Override
-   public boolean method71(int var1, INBT var2) {
+   public boolean addNBTByIndex(int var1, INBT var2) {
       if (!(var2 instanceof NumberNBT)) {
          return false;
       } else {
@@ -143,14 +143,14 @@ public class IntArrayNBT extends Class27<Class36> {
       }
    }
 
-   public Class36 remove(int var1) {
+   public IntNBT remove(int var1) {
       int var4 = this.field53[var1];
       this.field53 = ArrayUtils.remove(this.field53, var1);
-      return Class36.method95(var4);
+      return IntNBT.valueOf(var4);
    }
 
    @Override
-   public byte method72() {
+   public byte getTagType() {
       return 3;
    }
 

@@ -188,9 +188,9 @@ public class Class1086 extends Class1087 implements Class1020 {
    @Override
    public void writeAdditional(CompoundNBT var1) {
       super.writeAdditional(var1);
-      var1.method109("Type", Class2210.method8936(this.method5037()));
+      var1.putString("Type", Class2210.method8936(this.method5037()));
       if (this.field5952 != null) {
-         var1.method100("EffectId", (byte) Effect.getId(this.field5952));
+         var1.putByte("EffectId", (byte) Effect.getId(this.field5952));
          var1.putInt("EffectDuration", this.field5953);
       }
    }

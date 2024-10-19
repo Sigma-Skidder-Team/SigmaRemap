@@ -4,6 +4,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.NBTUtil;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.LightType;
@@ -31,7 +32,7 @@ public abstract class Class1028 extends MonsterEntity {
    public void writeAdditional(CompoundNBT var1) {
       super.writeAdditional(var1);
       if (this.field5724 != null) {
-         var1.put("PatrolTarget", Class8354.method29284(this.field5724));
+         var1.put("PatrolTarget", NBTUtil.method29284(this.field5724));
       }
 
       var1.putBoolean("PatrolLeader", this.field5725);
@@ -42,7 +43,7 @@ public abstract class Class1028 extends MonsterEntity {
    public void readAdditional(CompoundNBT var1) {
       super.readAdditional(var1);
       if (var1.contains("PatrolTarget")) {
-         this.field5724 = Class8354.method29283(var1.getCompound("PatrolTarget"));
+         this.field5724 = NBTUtil.method29283(var1.getCompound("PatrolTarget"));
       }
 
       this.field5725 = var1.getBoolean("PatrolLeader");

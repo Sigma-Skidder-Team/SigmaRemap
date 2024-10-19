@@ -222,13 +222,13 @@ public class EffectInstance implements Comparable<EffectInstance> {
    }
 
    public CompoundNBT method8637(CompoundNBT var1) {
-      var1.method100("Id", (byte) Effect.getId(this.getPotion()));
+      var1.putByte("Id", (byte) Effect.getId(this.getPotion()));
       this.method8638(var1);
       return var1;
    }
 
    private void method8638(CompoundNBT var1) {
-      var1.method100("Amplifier", (byte)this.method8629());
+      var1.putByte("Amplifier", (byte)this.method8629());
       var1.putInt("Duration", this.method8628());
       var1.putBoolean("Ambient", this.isAmbient());
       var1.putBoolean("ShowParticles", this.method8631());

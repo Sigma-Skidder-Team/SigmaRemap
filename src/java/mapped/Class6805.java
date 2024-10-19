@@ -7,6 +7,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
@@ -168,7 +169,7 @@ public class Class6805<T> implements ITickList<T> {
 
       for (Class8269<T> var8 : var1) {
          CompoundNBT var9 = new CompoundNBT();
-         var9.method109("i", var0.apply(var8.method28874()).toString());
+         var9.putString("i", var0.apply(var8.method28874()).toString());
          var9.putInt("x", var8.field35556.getX());
          var9.putInt("y", var8.field35556.getY());
          var9.putInt("z", var8.field35556.getZ());

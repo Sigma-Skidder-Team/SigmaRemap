@@ -88,14 +88,14 @@ public class Class7235 {
    }
 
    public void method22720(CompoundNBT var1) {
-      var1.method108("BorderCenterX", this.field31079);
-      var1.method108("BorderCenterZ", this.field31080);
-      var1.method108("BorderSize", this.field31085);
-      var1.method103("BorderSizeLerpTime", this.field31086);
-      var1.method108("BorderSafeZone", this.field31082);
-      var1.method108("BorderDamagePerBlock", this.field31081);
-      var1.method108("BorderSizeLerpTarget", this.field31087);
-      var1.method108("BorderWarningBlocks", (double)this.field31083);
-      var1.method108("BorderWarningTime", (double)this.field31084);
+      var1.putDouble("BorderCenterX", this.field31079);
+      var1.putDouble("BorderCenterZ", this.field31080);
+      var1.putDouble("BorderSize", this.field31085);
+      var1.putLong("BorderSizeLerpTime", this.field31086);
+      var1.putDouble("BorderSafeZone", this.field31082);
+      var1.putDouble("BorderDamagePerBlock", this.field31081);
+      var1.putDouble("BorderSizeLerpTarget", this.field31087);
+      var1.putDouble("BorderWarningBlocks", (double)this.field31083);
+      var1.putDouble("BorderWarningTime", (double)this.field31084);
    }
 }

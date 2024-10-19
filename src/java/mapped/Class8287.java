@@ -22,8 +22,10 @@ import net.minecraft.client.util.Util;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.NBTUtil;
 import net.minecraft.network.play.server.SStatisticsPacket;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SharedConstants;
 import net.minecraft.util.registry.Registry;
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
@@ -84,21 +86,21 @@ public class Class8287 extends Class8286 {
                   var8.putInt("DataVersion", 1343);
                }
 
-               var8 = Class8354.method29289(var1, Class2108.field13754, var8, var8.getInt("DataVersion"));
+               var8 = NBTUtil.method29289(var1, Class2108.field13754, var8, var8.getInt("DataVersion"));
                if (var8.contains("stats", 10)) {
                   CompoundNBT var9 = var8.getCompound("stats");
 
-                  for (String var11 : var9.method97()) {
+                  for (String var11 : var9.keySet()) {
                      if (var9.contains(var11, 10)) {
                         Util.<Class49<?>>acceptOrElse(
                            Registry.field16088.method9187(new ResourceLocation(var11)),
                            var3 -> {
                               CompoundNBT var6x = var9.getCompound(var11);
 
-                              for (String var8x : var6x.method97()) {
+                              for (String var8x : var6x.keySet()) {
                                  if (!var6x.contains(var8x, 99)) {
                                     field35591.warn(
-                                       "Invalid statistic value in {}: Don't know what {} is for key {}", this.field35593, var6x.method116(var8x), var8x
+                                       "Invalid statistic value in {}: Don't know what {} is for key {}", this.field35593, var6x.get(var8x), var8x
                                     );
                                  } else {
                                     Util.acceptOrElse(

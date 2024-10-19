@@ -30,6 +30,7 @@ import net.minecraft.scoreboard.ScorePlayerTeam;
 import net.minecraft.scoreboard.Scoreboard;
 import net.minecraft.util.HandSide;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.StringUtils;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.EntityRayTraceResult;
@@ -37,7 +38,6 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.*;
 import net.minecraft.world.GameType;
 import net.optifine.Config;
-import org.apache.commons.lang3.StringUtils;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -619,7 +619,7 @@ public class IngameGui extends AbstractGui {
         this.field6716.getProfiler().startSection("demo");
         Object var4;
         if (this.field6716.world.getGameTime() < 120500L) {
-            var4 = new TranslationTextComponent("demo.remainingTime", Class9001.method33254((int) (120500L - this.field6716.world.getGameTime())));
+            var4 = new TranslationTextComponent("demo.remainingTime", StringUtils.ticksToElapsedTime((int) (120500L - this.field6716.world.getGameTime())));
         } else {
             var4 = field6714;
         }
@@ -1137,7 +1137,7 @@ public class IngameGui extends AbstractGui {
 
     public UUID method5987(ITextComponent var1) {
         String var4 = TextProcessing.func_244782_a(var1);
-        String var5 = StringUtils.substringBetween(var4, "<", ">");
+        String var5 = org.apache.commons.lang3.StringUtils.substringBetween(var4, "<", ">");
         return var5 != null ? this.field6716.func_244599_aA().method37610(var5) : Util.DUMMY_UUID;
     }
 

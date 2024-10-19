@@ -58,8 +58,8 @@ public class Class915 extends Entity {
    @Override
    public void readAdditional(CompoundNBT var1) {
       this.field5207 = var1.getInt("Warmup");
-      if (var1.method106("Owner")) {
-         this.field5212 = var1.method105("Owner");
+      if (var1.hasUniqueID("Owner")) {
+         this.field5212 = var1.getUniqueID("Owner");
       }
    }
 
@@ -67,7 +67,7 @@ public class Class915 extends Entity {
    public void writeAdditional(CompoundNBT var1) {
       var1.putInt("Warmup", this.field5207);
       if (this.field5212 != null) {
-         var1.method104("Owner", this.field5212);
+         var1.putUniqueID("Owner", this.field5212);
       }
    }
 

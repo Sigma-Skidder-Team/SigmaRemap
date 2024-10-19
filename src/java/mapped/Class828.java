@@ -13,8 +13,10 @@ import net.minecraft.client.util.Util;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.network.play.client.CEditBookPacket;
 import net.minecraft.util.Hand;
+import net.minecraft.util.SharedConstants;
 import net.minecraft.util.text.*;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.mutable.MutableBoolean;
@@ -64,10 +66,10 @@ public class Class828 extends Screen {
       this.field4596 = var3;
       CompoundNBT var6 = var2.getTag();
       if (var6 != null) {
-         ListNBT var7 = var6.method131("pages", 8).method79();
+         ListNBT var7 = var6.getList("pages", 8).copy();
 
          for (int var8 = 0; var8 < var7.size(); var8++) {
-            this.field4584.add(var7.method160(var8));
+            this.field4584.add(var7.getString(var8));
          }
       }
 

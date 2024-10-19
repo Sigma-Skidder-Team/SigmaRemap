@@ -22,6 +22,7 @@ import net.minecraft.entity.passive.fish.SalmonEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
@@ -498,7 +499,7 @@ public class EntityType<T extends Entity> {
          if (var6 != null && var2 != null && (var0.isRemote || !var2.method3404() || var1 != null && var6.getPlayerList().canSendCommands(var1.getGameProfile()))) {
             CompoundNBT var7 = var2.writeWithoutTypeId(new CompoundNBT());
             UUID var8 = var2.getUniqueID();
-            var7.method140(var3.getCompound("EntityTag"));
+            var7.merge(var3.getCompound("EntityTag"));
             var2.setUniqueId(var8);
             var2.read(var7);
          }
@@ -617,10 +618,10 @@ public class EntityType<T extends Entity> {
    public static Entity method33223(CompoundNBT var0, World var1, Function<Entity, Entity> var2) {
       return method33224(var0, var1).<Entity>map(var2).<Entity>map(var3 -> {
          if (var0.contains("Passengers", 9)) {
-            ListNBT var6 = var0.method131("Passengers", 10);
+            ListNBT var6 = var0.getList("Passengers", 10);
 
             for (int var7 = 0; var7 < var6.size(); var7++) {
-               Entity var8 = method33223(var6.method153(var7), var1, var2);
+               Entity var8 = method33223(var6.getCompound(var7), var1, var2);
                if (var8 != null) {
                   var8.startRiding(var3, true);
                }

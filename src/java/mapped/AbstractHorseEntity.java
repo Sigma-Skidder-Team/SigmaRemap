@@ -741,7 +741,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       var1.putInt("Temper", this.method4944());
       var1.putBoolean("Tame", this.method4932());
       if (this.method4933() != null) {
-         var1.method104("Owner", this.method4933());
+         var1.putUniqueID("Owner", this.method4933());
       }
 
       if (!this.field5890.getStackInSlot(0).isEmpty()) {
@@ -757,11 +757,11 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       this.method4945(var1.getInt("Temper"));
       this.method4936(var1.getBoolean("Tame"));
       UUID var5;
-      if (!var1.method106("Owner")) {
+      if (!var1.hasUniqueID("Owner")) {
          String var4 = var1.getString("Owner");
          var5 = PreYggdrasilConverter.method33732(this.method3396(), var4);
       } else {
-         var5 = var1.method105("Owner");
+         var5 = var1.getUniqueID("Owner");
       }
 
       if (var5 != null) {

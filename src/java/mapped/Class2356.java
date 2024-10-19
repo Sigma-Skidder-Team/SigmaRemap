@@ -4,6 +4,7 @@ import com.google.common.collect.ForwardingList;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.util.NonNullList;
 
 import java.util.List;
@@ -30,7 +31,7 @@ public class Class2356 extends ForwardingList<ItemStack> {
       List var4 = this.delegate();
 
       for (int var5 = 0; var5 < var4.size(); var5++) {
-         var4.set(var5, ItemStack.method32104(var1.method153(var5)));
+         var4.set(var5, ItemStack.method32104(var1.getCompound(var5)));
       }
    }
 

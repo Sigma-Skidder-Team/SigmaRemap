@@ -12,6 +12,7 @@ import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
@@ -55,10 +56,10 @@ public class Class9741 {
 
    public static void method38181(CompoundNBT var0, List<EffectInstance> var1) {
       if (var0 != null && var0.contains("CustomPotionEffects", 9)) {
-         ListNBT var4 = var0.method131("CustomPotionEffects", 10);
+         ListNBT var4 = var0.getList("CustomPotionEffects", 10);
 
          for (int var5 = 0; var5 < var4.size(); var5++) {
-            CompoundNBT var6 = var4.method153(var5);
+            CompoundNBT var6 = var4.getCompound(var5);
             EffectInstance var7 = EffectInstance.method8639(var6);
             if (var7 != null) {
                var1.add(var7);
@@ -127,7 +128,7 @@ public class Class9741 {
    public static ItemStack method38187(ItemStack var0, Class8812 var1) {
       ResourceLocation var4 = Registry.field16076.getKey(var1);
       if (var1 != Class8137.field34976) {
-         var0.getOrCreateTag().method109("Potion", var4.toString());
+         var0.getOrCreateTag().putString("Potion", var4.toString());
       } else {
          var0.method32146("Potion");
       }
@@ -140,7 +141,7 @@ public class Class9741 {
          return var0;
       } else {
          CompoundNBT var4 = var0.getOrCreateTag();
-         ListNBT var5 = var4.method131("CustomPotionEffects", 9);
+         ListNBT var5 = var4.getList("CustomPotionEffects", 9);
 
          for (EffectInstance var7 : var1) {
             var5.add(var7.method8637(new CompoundNBT()));

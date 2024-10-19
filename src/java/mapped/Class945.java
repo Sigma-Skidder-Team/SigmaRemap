@@ -122,8 +122,8 @@ public class Class945 extends TileEntity implements IClearable, ITickableTileEnt
    @Override
    public CompoundNBT write(CompoundNBT var1) {
       this.method3796(var1);
-      var1.method111("CookingTimes", this.field5330);
-      var1.method111("CookingTotalTimes", this.field5331);
+      var1.putIntArray("CookingTimes", this.field5330);
+      var1.putIntArray("CookingTotalTimes", this.field5331);
       return var1;
    }
 

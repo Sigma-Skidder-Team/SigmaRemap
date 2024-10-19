@@ -14,7 +14,7 @@ public abstract class ShoulderRidingEntity extends TameableEntity {
 
    public boolean method4404(ServerPlayerEntity var1) {
       CompoundNBT var4 = new CompoundNBT();
-      var4.method109("id", this.getEntityString());
+      var4.putString("id", this.getEntityString());
       this.writeWithoutTypeId(var4);
       if (!var1.method2948(var4)) {
          return false;

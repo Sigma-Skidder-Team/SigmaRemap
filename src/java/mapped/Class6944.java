@@ -9,7 +9,7 @@ public class Class6944 extends Class6945<MinecraftServer, Class6860> {
    }
 
    public void method21397(CompoundNBT var1, Class6860 var2) {
-      var1.method109("Name", Class6860.method20908(var2).toString());
+      var1.putString("Name", Class6860.method20908(var2).toString());
    }
 
    public Class6860 method21396(CompoundNBT var1) {

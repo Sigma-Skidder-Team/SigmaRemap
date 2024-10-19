@@ -226,7 +226,7 @@ public class ItemFrameEntity extends Class995 {
       if (var1.getItem() == Items.field37955) {
          MapData var4 = Class3316.method11861(var1, this.world);
          var4.method24602(this.field5488, this.getEntityId());
-         var4.method24606(true);
+         var4.setDirty(true);
       }
 
       var1.method32166((Entity)null);
@@ -297,11 +297,11 @@ public class ItemFrameEntity extends Class995 {
       super.writeAdditional(var1);
       if (!this.method4090().isEmpty()) {
          var1.put("Item", this.method4090().method32112(new CompoundNBT()));
-         var1.method100("ItemRotation", (byte)this.method4093());
+         var1.putByte("ItemRotation", (byte)this.method4093());
          var1.putFloat("ItemDropChance", this.field5494);
       }
 
-      var1.method100("Facing", (byte)this.field5489.getIndex());
+      var1.putByte("Facing", (byte)this.field5489.getIndex());
       var1.putBoolean("Invisible", this.isInvisible());
       var1.putBoolean("Fixed", this.field5495);
    }
@@ -310,7 +310,7 @@ public class ItemFrameEntity extends Class995 {
    public void readAdditional(CompoundNBT var1) {
       super.readAdditional(var1);
       CompoundNBT var4 = var1.getCompound("Item");
-      if (var4 != null && !var4.method134()) {
+      if (var4 != null && !var4.isEmpty()) {
          ItemStack var5 = ItemStack.method32104(var4);
          if (var5.isEmpty()) {
             field5491.warn("Unable to load item from: {}", var4);

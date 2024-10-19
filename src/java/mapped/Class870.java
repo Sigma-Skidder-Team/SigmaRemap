@@ -8,6 +8,7 @@ import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.*;
@@ -221,11 +222,11 @@ public class Class870 extends Screen {
    }
 
    public static List<String> method2696(CompoundNBT var0) {
-      ListNBT var3 = var0.method131("pages", 8).method79();
+      ListNBT var3 = var0.getList("pages", 8).copy();
       Builder var4 = ImmutableList.builder();
 
       for (int var5 = 0; var5 < var3.size(); var5++) {
-         var4.add(var3.method160(var5));
+         var4.add(var3.getString(var5));
       }
 
       return var4.build();

@@ -15,6 +15,9 @@ import net.minecraft.client.util.Util;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
+import net.minecraft.nbt.ListNBT;
+import net.minecraft.nbt.NBTUtil;
+import net.minecraft.util.SharedConstants;
 import net.minecraft.util.UUIDCodec;
 import net.minecraft.util.datafix.codec.DatapackCodec;
 import net.minecraft.util.math.BlockPos;
@@ -221,7 +224,7 @@ public class ServerWorldInfo implements IServerWorldInfo, IServerConfiguration {
       var2.put("ServerBrands", var6);
       var2.putBoolean("WasModded", this.field29092);
       CompoundNBT var7 = new CompoundNBT();
-      var7.method109("Name", SharedConstants.getVersion().getName());
+      var7.putString("Name", SharedConstants.getVersion().getName());
       var7.putInt("Id", SharedConstants.getVersion().getWorldVersion());
       var7.putBoolean("Snapshot", !SharedConstants.getVersion().isStable());
       var2.put("Version", var7);
@@ -236,10 +239,10 @@ public class ServerWorldInfo implements IServerWorldInfo, IServerConfiguration {
       var2.putInt("SpawnY", this.field29068);
       var2.putInt("SpawnZ", this.field29069);
       var2.putFloat("SpawnAngle", this.field29070);
-      var2.method103("Time", this.field29071);
-      var2.method103("DayTime", this.field29072);
-      var2.method103("LastPlayed", Util.method38489());
-      var2.method109("LevelName", this.field29064.method32426());
+      var2.putLong("Time", this.field29071);
+      var2.putLong("DayTime", this.field29072);
+      var2.putLong("LastPlayed", Util.method38489());
+      var2.putString("LevelName", this.field29064.method32426());
       var2.putInt("version", 19133);
       var2.putInt("clearWeatherTime", this.field29078);
       var2.putInt("rainTime", this.field29080);
@@ -250,7 +253,7 @@ public class ServerWorldInfo implements IServerWorldInfo, IServerConfiguration {
       var2.putBoolean("allowCommands", this.field29064.method32430());
       var2.putBoolean("initialized", this.field29083);
       this.field29085.method22720(var2);
-      var2.method100("Difficulty", (byte)this.field29064.method32429().getId());
+      var2.putByte("Difficulty", (byte)this.field29064.method32429().getId());
       var2.putBoolean("DifficultyLocked", this.field29084);
       var2.put("GameRules", this.field29064.method32431().method17129());
       var2.put("DragonFight", this.field29086);
@@ -267,7 +270,7 @@ public class ServerWorldInfo implements IServerWorldInfo, IServerConfiguration {
       var2.putInt("WanderingTraderSpawnDelay", this.field29088);
       var2.putInt("WanderingTraderSpawnChance", this.field29089);
       if (this.field29090 != null) {
-         var2.method104("WanderingTraderId", this.field29090);
+         var2.putUniqueID("WanderingTraderId", this.field29090);
       }
    }
 
@@ -310,7 +313,7 @@ public class ServerWorldInfo implements IServerWorldInfo, IServerConfiguration {
                );
             }
 
-            this.field29076 = Class8354.method29289(this.field29073, Class2108.field13749, this.field29076, this.field29074);
+            this.field29076 = NBTUtil.method29289(this.field29073, Class2108.field13749, this.field29076, this.field29074);
          }
 
          this.field29075 = true;

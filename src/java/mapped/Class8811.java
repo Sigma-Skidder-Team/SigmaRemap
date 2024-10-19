@@ -10,6 +10,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
+import net.minecraft.nbt.NBTUtil;
 
 public class Class8811 {
    public static final Class8811 field39645 = new Class8811((CompoundNBT)null);
@@ -28,7 +29,7 @@ public class Class8811 {
    }
 
    public boolean method31810(INBT var1) {
-      return var1 == null ? this == field39645 : this.field39646 == null || Class8354.method29280(this.field39646, var1, true);
+      return var1 == null ? this == field39645 : this.field39646 == null || NBTUtil.areNBTEquals(this.field39646, var1, true);
    }
 
    public JsonElement method31811() {

@@ -38,6 +38,7 @@ import net.minecraft.world.chunk.listener.IChunkStatusListener;
 import net.minecraft.world.chunk.storage.ChunkSerializer;
 import net.minecraft.world.gen.feature.structure.StructureStart;
 import net.minecraft.world.gen.feature.template.TemplateManager;
+import net.minecraft.world.storage.DimensionSavedDataManager;
 import org.apache.commons.lang3.mutable.MutableBoolean;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -67,7 +68,7 @@ public class ChunkManager extends Class1648 implements Class1650 {
    private final Class195 lightManager;
    private final Class318<Runnable> field8958;
    private final ChunkGenerator field8959;
-   private final Supplier<Class8250> field8960;
+   private final Supplier<DimensionSavedDataManager> field8960;
    private final Class1653 field8961;
    private final LongSet field8962 = new LongOpenHashSet();
    private boolean field8963;
@@ -95,7 +96,7 @@ public class ChunkManager extends Class1648 implements Class1650 {
       IChunkLightProvider var7,
       ChunkGenerator var8,
       IChunkStatusListener var9,
-      Supplier<Class8250> var10,
+      Supplier<DimensionSavedDataManager> var10,
       int var11,
       boolean var12
    ) {

@@ -65,7 +65,7 @@ public class Class3339 extends Item {
             if (!var5) {
                var15 = method11888(var11, var15, var1.method2851());
                String var16 = var15.method30472();
-               var13.method109(var12, var16);
+               var13.putString(var12, var16);
                method11889(var1, new TranslationTextComponent(this.getTranslationKey() + ".select", var16, method11890(var2, var15)));
             } else {
                if (var15 == null) {

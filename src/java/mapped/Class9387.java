@@ -88,12 +88,12 @@ public class Class9387 {
             }
          } else {
             CompoundNBT var9 = var5.method2969();
-            if (var9 != null && var9.contains("UUID") && Config.equals(var9.method105("UUID"), var6)) {
+            if (var9 != null && var9.contains("UUID") && Config.equals(var9.getUniqueID("UUID"), var6)) {
                var5.entityShoulderLeft = var0;
             }
 
             CompoundNBT var11 = var5.method2971();
-            if (var11 != null && var11.contains("UUID") && Config.equals(var11.method105("UUID"), var6)) {
+            if (var11 != null && var11.contains("UUID") && Config.equals(var11.getUniqueID("UUID"), var6)) {
                var5.entityShoulderRight = var0;
             }
          }

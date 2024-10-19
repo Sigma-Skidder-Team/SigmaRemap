@@ -10,6 +10,7 @@ import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
@@ -215,18 +216,18 @@ public class ArmorStandEntity extends LivingEntity {
    public void readAdditional(CompoundNBT var1) {
       super.readAdditional(var1);
       if (var1.contains("ArmorItems", 9)) {
-         ListNBT var4 = var1.method131("ArmorItems", 10);
+         ListNBT var4 = var1.getList("ArmorItems", 10);
 
          for (int var5 = 0; var5 < this.field5582.size(); var5++) {
-            this.field5582.set(var5, ItemStack.method32104(var4.method153(var5)));
+            this.field5582.set(var5, ItemStack.method32104(var4.getCompound(var5)));
          }
       }
 
       if (var1.contains("HandItems", 9)) {
-         ListNBT var6 = var1.method131("HandItems", 10);
+         ListNBT var6 = var1.getList("HandItems", 10);
 
          for (int var8 = 0; var8 < this.field5581.size(); var8++) {
-            this.field5581.set(var8, ItemStack.method32104(var6.method153(var8)));
+            this.field5581.set(var8, ItemStack.method32104(var6.getCompound(var8)));
          }
       }
 
@@ -242,17 +243,17 @@ public class ArmorStandEntity extends LivingEntity {
    }
 
    private void method4186(CompoundNBT var1) {
-      ListNBT var4 = var1.method131("Head", 5);
+      ListNBT var4 = var1.getList("Head", 5);
       this.method4205(!var4.isEmpty() ? new Class7087(var4) : field5565);
-      ListNBT var5 = var1.method131("Body", 5);
+      ListNBT var5 = var1.getList("Body", 5);
       this.method4206(!var5.isEmpty() ? new Class7087(var5) : field5566);
-      ListNBT var6 = var1.method131("LeftArm", 5);
+      ListNBT var6 = var1.getList("LeftArm", 5);
       this.method4207(!var6.isEmpty() ? new Class7087(var6) : field5567);
-      ListNBT var7 = var1.method131("RightArm", 5);
+      ListNBT var7 = var1.getList("RightArm", 5);
       this.method4208(!var7.isEmpty() ? new Class7087(var7) : field5568);
-      ListNBT var8 = var1.method131("LeftLeg", 5);
+      ListNBT var8 = var1.getList("LeftLeg", 5);
       this.method4209(!var8.isEmpty() ? new Class7087(var8) : field5569);
-      ListNBT var9 = var1.method131("RightLeg", 5);
+      ListNBT var9 = var1.getList("RightLeg", 5);
       this.method4210(!var9.isEmpty() ? new Class7087(var9) : field5570);
    }
 

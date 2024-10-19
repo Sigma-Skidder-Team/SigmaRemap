@@ -20,7 +20,7 @@ public class Class1695 implements AutoCloseable {
       this.field9234 = var1;
       this.field9231 = var2;
       this.field9232 = new DynamicTexture(128, 128, true);
-      ResourceLocation var5 = Class194.method598(var1).method1077("map/" + var2.method24608(), this.field9232);
+      ResourceLocation var5 = Class194.method598(var1).method1077("map/" + var2.getName(), this.field9232);
       this.field9233 = RenderType.method14339(var5);
    }
 

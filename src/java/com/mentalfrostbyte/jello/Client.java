@@ -84,7 +84,7 @@ public class Client {
 
     public void start() {
         long var3 = System.currentTimeMillis();
-        Class8379.method29373();
+        Class8379.override();
 
         this.logger = new ClientLogger(System.out, System.out, System.err);
         this.logger.info("Initializing...");
@@ -129,7 +129,6 @@ public class Client {
         this.field28989.init();
         GLFW.glfwSetWindowTitle(mc.mainWindow.getHandle(), "Sigma 5.0");
         long var6 = System.currentTimeMillis();
-        this.method19922();
         this.logger.info("Initialized.");
     }
 
@@ -146,9 +145,6 @@ public class Client {
         discordRichPresence.details = "Jello for Sigma";
         discordRichPresence.largeImageKey = "jello";
         var3.Discord_UpdatePresence(discordRichPresence);
-    }
-
-    public void method19922() {
     }
 
     public void shutdown() {

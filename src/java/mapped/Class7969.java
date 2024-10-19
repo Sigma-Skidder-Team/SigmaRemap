@@ -20,7 +20,7 @@ public class Class7969 {
 
    public void method27092(CompoundNBT var1) {
       if (!this.field34260.isEmpty()) {
-         var1.method109("Lock", this.field34260);
+         var1.putString("Lock", this.field34260);
       }
    }
 

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.nbt.ListNBT;
+
 public class Class7087 {
    private static String[] field30493;
    public final float field30494;
@@ -13,14 +15,14 @@ public class Class7087 {
    }
 
    public Class7087(ListNBT var1) {
-      this(var1.method159(0), var1.method159(1), var1.method159(2));
+      this(var1.getFloat(0), var1.getFloat(1), var1.getFloat(2));
    }
 
    public ListNBT method22012() {
       ListNBT var3 = new ListNBT();
-      var3.add(Class32.method90(this.field30494));
-      var3.add(Class32.method90(this.field30495));
-      var3.add(Class32.method90(this.field30496));
+      var3.add(FloatNBT.valueOf(this.field30494));
+      var3.add(FloatNBT.valueOf(this.field30495));
+      var3.add(FloatNBT.valueOf(this.field30496));
       return var3;
    }
 

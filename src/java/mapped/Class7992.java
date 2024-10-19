@@ -9,6 +9,7 @@ import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.optifine.Config;
@@ -715,7 +716,7 @@ public class Class7992 {
          int[][] var6 = new int[var4.size()][2];
 
          for (int var7 = 0; var7 < var13.size(); var7++) {
-            CompoundNBT var8 = var13.method153(var7);
+            CompoundNBT var8 = var13.getCompound(var7);
             String var9 = var8.getString("id");
             int var10 = var8.getInt("lvl");
             Enchantment var11 = Class7849.method26306(var9);

@@ -6,6 +6,7 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
@@ -29,7 +30,7 @@ public class Class3290 extends Item {
 
    public static ListNBT method11830(ItemStack var0) {
       CompoundNBT var3 = var0.getTag();
-      return var3 == null ? new ListNBT() : var3.method131("StoredEnchantments", 10);
+      return var3 == null ? new ListNBT() : var3.getList("StoredEnchantments", 10);
    }
 
    @Override
@@ -44,7 +45,7 @@ public class Class3290 extends Item {
       ResourceLocation var6 = Registry.ENCHANTMENT.getKey(var1.field29316);
 
       for (int var7 = 0; var7 < var4.size(); var7++) {
-         CompoundNBT var8 = var4.method153(var7);
+         CompoundNBT var8 = var4.getCompound(var7);
          ResourceLocation var9 = ResourceLocation.method8289(var8.getString("id"));
          if (var9 != null && var9.equals(var6)) {
             if (var8.getInt("lvl") < var1.field29317) {
@@ -58,7 +59,7 @@ public class Class3290 extends Item {
 
       if (var5) {
          CompoundNBT var10 = new CompoundNBT();
-         var10.method109("id", String.valueOf(var6));
+         var10.putString("id", String.valueOf(var6));
          var10.putShort("lvl", (short)var1.field29317);
          var4.add(var10);
       }

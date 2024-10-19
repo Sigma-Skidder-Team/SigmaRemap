@@ -101,77 +101,77 @@ public class Class2837 implements Consumer<BiConsumer<ResourceLocation, Class588
                   .method18291(
                      Class4695.method14724(Items.field38117)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 1.0F)))
-                        .method18296(Class136.method399(Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.method109("Potion", "minecraft:swiftness"))))
+                        .method18296(Class136.method399(Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.putString("Potion", "minecraft:swiftness"))))
                   )
                   .method18291(
                      Class4695.method14724(Items.field38117)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 1.0F)))
-                        .method18296(Class136.method399(Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.method109("Potion", "minecraft:slowness"))))
+                        .method18296(Class136.method399(Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.putString("Potion", "minecraft:slowness"))))
                   )
                   .method18291(
                      Class4695.method14724(Items.field38117)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 1.0F)))
-                        .method18296(Class136.method399(Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.method109("Potion", "minecraft:strength"))))
+                        .method18296(Class136.method399(Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.putString("Potion", "minecraft:strength"))))
                   )
                   .method18291(
                      Class4695.method14724(Items.field38117)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 1.0F)))
-                        .method18296(Class136.method399(Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.method109("Potion", "minecraft:healing"))))
+                        .method18296(Class136.method399(Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.putString("Potion", "minecraft:healing"))))
                   )
                   .method18291(
                      Class4695.method14724(Items.field38117)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 1.0F)))
-                        .method18296(Class136.method399(Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.method109("Potion", "minecraft:harming"))))
+                        .method18296(Class136.method399(Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.putString("Potion", "minecraft:harming"))))
                   )
                   .method18291(
                      Class4695.method14724(Items.field38117)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 1.0F)))
-                        .method18296(Class136.method399(Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.method109("Potion", "minecraft:leaping"))))
+                        .method18296(Class136.method399(Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.putString("Potion", "minecraft:leaping"))))
                   )
                   .method18291(
                      Class4695.method14724(Items.field38117)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 1.0F)))
                         .method18296(
-                           Class136.method399(Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.method109("Potion", "minecraft:regeneration")))
+                           Class136.method399(Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.putString("Potion", "minecraft:regeneration")))
                         )
                   )
                   .method18291(
                      Class4695.method14724(Items.field38117)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 1.0F)))
                         .method18296(
-                           Class136.method399(Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.method109("Potion", "minecraft:fire_resistance")))
+                           Class136.method399(Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.putString("Potion", "minecraft:fire_resistance")))
                         )
                   )
                   .method18291(
                      Class4695.method14724(Items.field38117)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 1.0F)))
                         .method18296(
-                           Class136.method399(Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.method109("Potion", "minecraft:water_breathing")))
+                           Class136.method399(Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.putString("Potion", "minecraft:water_breathing")))
                         )
                   )
                   .method18291(
                      Class4695.method14724(Items.field38117)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 1.0F)))
                         .method18296(
-                           Class136.method399(Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.method109("Potion", "minecraft:invisibility")))
+                           Class136.method399(Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.putString("Potion", "minecraft:invisibility")))
                         )
                   )
                   .method18291(
                      Class4695.method14724(Items.field38117)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 1.0F)))
                         .method18296(
-                           Class136.method399(Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.method109("Potion", "minecraft:night_vision")))
+                           Class136.method399(Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.putString("Potion", "minecraft:night_vision")))
                         )
                   )
                   .method18291(
                      Class4695.method14724(Items.field38117)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 1.0F)))
-                        .method18296(Class136.method399(Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.method109("Potion", "minecraft:weakness"))))
+                        .method18296(Class136.method399(Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.putString("Potion", "minecraft:weakness"))))
                   )
                   .method18291(
                      Class4695.method14724(Items.field38117)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 1.0F)))
-                        .method18296(Class136.method399(Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.method109("Potion", "minecraft:poison"))))
+                        .method18296(Class136.method399(Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.putString("Potion", "minecraft:poison"))))
                   )
             )
       );

@@ -67,8 +67,8 @@ public class Class8002 {
    private static int method27336(CommandSource var0, ResourceLocation var1, Vector3d var2, CompoundNBT var3, boolean var4) throws CommandSyntaxException {
       BlockPos var7 = new BlockPos(var2);
       if (World.isInvalidPosition(var7)) {
-         CompoundNBT var8 = var3.method79();
-         var8.method109("id", var1.toString());
+         CompoundNBT var8 = var3.copy();
+         var8.putString("id", var1.toString());
          ServerWorld var9 = var0.method20172();
          Entity var10 = EntityType.method33223(var8, var9, var1x -> {
             var1x.setLocationAndAngles(var2.x, var2.y, var2.z, var1x.rotationYaw, var1x.rotationPitch);

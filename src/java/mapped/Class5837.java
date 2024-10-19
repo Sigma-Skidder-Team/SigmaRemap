@@ -7,6 +7,7 @@ import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.util.IntReferenceHolder;
 
 public class Class5837 extends Container {
@@ -80,7 +81,7 @@ public class Class5837 extends Container {
             && (this.field25565.get() < Class2154.field14124 - Class2154.field14125 || !var6.isEmpty())) {
          if (!var6.isEmpty() && var6.getItem() instanceof Class3286) {
             CompoundNBT var8 = var4.method32144("BlockEntityTag");
-            boolean var9 = var8.contains("Patterns", 9) && !var4.isEmpty() && var8.method131("Patterns", 10).size() >= 6;
+            boolean var9 = var8.contains("Patterns", 9) && !var4.isEmpty() && var8.getList("Patterns", 10).size() >= 6;
             if (!var9) {
                this.field25565.method15235(((Class3286)var6.getItem()).method11821().ordinal());
             } else {
@@ -177,11 +178,11 @@ public class Class5837 extends Container {
                var9 = new ListNBT();
                var8.put("Patterns", var9);
             } else {
-               var9 = var8.method131("Patterns", 10);
+               var9 = var8.getList("Patterns", 10);
             }
 
             CompoundNBT var10 = new CompoundNBT();
-            var10.method109("Pattern", var6.method8871());
+            var10.putString("Pattern", var6.method8871());
             var10.putInt("Color", var7.method309());
             var9.add(var10);
          }

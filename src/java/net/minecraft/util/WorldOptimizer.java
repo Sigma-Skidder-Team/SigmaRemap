@@ -27,6 +27,7 @@ import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
+import net.minecraft.world.storage.DimensionSavedDataManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -47,14 +48,14 @@ public class WorldOptimizer {
    private final Object2FloatMap<RegistryKey<World>> field34219 = Object2FloatMaps.synchronize(new Object2FloatOpenCustomHashMap(Util.method38509()));
    private volatile ITextComponent field34220 = new TranslationTextComponent("optimizeWorld.stage.counting");
    private static final Pattern field34221 = Pattern.compile("^r\\.(-?[0-9]+)\\.(-?[0-9]+)\\.mca$");
-   private final Class8250 field34222;
+   private final DimensionSavedDataManager field34222;
 
    public WorldOptimizer(SaveFormat.LevelSave var1, DataFixer var2, ImmutableSet<RegistryKey<World>> var3, boolean var4) {
       this.field34208 = var3;
       this.field34209 = var4;
       this.field34212 = var2;
       this.field34210 = var1;
-      this.field34222 = new Class8250(new File(this.field34210.method7992(World.OVERWORLD), "data"), var2);
+      this.field34222 = new DimensionSavedDataManager(new File(this.field34210.method7992(World.OVERWORLD), "data"), var2);
       this.thread = field34207.newThread(this::optimize);
       this.thread.setUncaughtExceptionHandler((var1x, var2x) -> {
          field34206.error("Error upgrading world", var2x);
@@ -130,9 +131,9 @@ public class WorldOptimizer {
                         boolean var25 = var37 < SharedConstants.getVersion().getWorldVersion();
                         if (this.field34209) {
                            var25 = var25 || var23.contains("Heightmaps");
-                           var23.method133("Heightmaps");
+                           var23.remove("Heightmaps");
                            var25 = var25 || var23.contains("isLightOn");
-                           var23.method133("isLightOn");
+                           var23.remove("isLightOn");
                         }
 
                         if (var25) {

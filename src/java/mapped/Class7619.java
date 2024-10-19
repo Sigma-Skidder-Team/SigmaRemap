@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.Client;
+import net.minecraft.util.StringUtils;
 
 import java.lang.reflect.Field;
 
@@ -19,7 +20,7 @@ public class Class7619 extends Class7620 {
       this.field32681 = var2;
       this.field32680 = var1;
       var1.setAccessible(true);
-      if (Class9001.method33256(this.field32682 = var1.<Class5640>getAnnotation(Class5640.class).method17771())) {
+      if (StringUtils.isNullOrEmpty(this.field32682 = var1.<Class5640>getAnnotation(Class5640.class).method17771())) {
          this.field32682 = var1.getName();
       }
    }

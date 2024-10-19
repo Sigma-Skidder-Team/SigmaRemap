@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.Client;
+import net.minecraft.util.StringUtils;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -27,7 +28,7 @@ public class Class7621 extends Class7620 {
    public Class7621(Method var1, Object var2) {
       this.field32683 = var1;
       this.field32684 = var2;
-      if (Class9001.method33256(this.field32682 = var1.<Class5638>getAnnotation(Class5638.class).method17769())) {
+      if (StringUtils.isNullOrEmpty(this.field32682 = var1.<Class5638>getAnnotation(Class5638.class).method17769())) {
          this.field32682 = var1.getName();
       }
    }

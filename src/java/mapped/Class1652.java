@@ -10,6 +10,7 @@ import it.unimi.dsi.fastutil.longs.LongLinkedOpenHashSet;
 import net.minecraft.client.util.Util;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
+import net.minecraft.util.SharedConstants;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.SectionPos;
 import net.minecraft.world.World;

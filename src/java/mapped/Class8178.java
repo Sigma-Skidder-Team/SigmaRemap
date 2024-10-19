@@ -7,6 +7,7 @@ import net.minecraft.entity.item.ItemFrameEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.NBTUtil;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -93,7 +94,7 @@ public final class Class8178 implements Class8176 {
       if (var5 && var6) {
          Optional var7 = Class3271.method11790(var2);
          if (var7.isPresent() && var1.getDimensionKey() == var7.get()) {
-            return Class8354.method29283(var2.getCompound("LodestonePos"));
+            return NBTUtil.method29283(var2.getCompound("LodestonePos"));
          }
       }
 

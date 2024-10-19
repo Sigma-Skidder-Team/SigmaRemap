@@ -155,7 +155,7 @@ public class Class5822 extends Container {
                   var10 = new ItemStack(Items.field38070);
                   CompoundNBT var13 = var5.getTag();
                   if (var13 != null) {
-                     var10.setTag(var13.method79());
+                     var10.setTag(var13.copy());
                   }
 
                   this.field25505.setInventorySlotContents(0, var10);

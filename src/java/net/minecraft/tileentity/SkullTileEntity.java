@@ -8,8 +8,10 @@ import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.NBTUtil;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.server.management.PlayerProfileCache;
+import net.minecraft.util.StringUtils;
 
 import javax.annotation.Nullable;
 import java.util.UUID;
@@ -38,7 +40,7 @@ public class SkullTileEntity extends TileEntity implements ITickableTileEntity {
       super.write(var1);
       if (this.field5426 != null) {
          CompoundNBT var4 = new CompoundNBT();
-         Class8354.method29279(var4, this.field5426);
+         NBTUtil.writeGameProfile(var4, this.field5426);
          var1.put("SkullOwner", var4);
       }
 
@@ -51,12 +53,12 @@ public class SkullTileEntity extends TileEntity implements ITickableTileEntity {
       if (!var2.contains("SkullOwner", 10)) {
          if (var2.contains("ExtraType", 8)) {
             String var5 = var2.getString("ExtraType");
-            if (!Class9001.method33256(var5)) {
+            if (!StringUtils.isNullOrEmpty(var5)) {
                this.method4006(new GameProfile((UUID)null, var5));
             }
          }
       } else {
-         this.method4006(Class8354.method29278(var2.getCompound("SkullOwner")));
+         this.method4006(NBTUtil.readGameProfile(var2.getCompound("SkullOwner")));
       }
    }
 
@@ -105,7 +107,7 @@ public class SkullTileEntity extends TileEntity implements ITickableTileEntity {
 
    @Nullable
    public static GameProfile method4008(GameProfile var0) {
-      if (var0 != null && !Class9001.method33256(var0.getName())) {
+      if (var0 != null && !StringUtils.isNullOrEmpty(var0.getName())) {
          if (var0.isComplete() && var0.getProperties().containsKey("textures")) {
             return var0;
          } else if (field5424 != null && field5425 != null) {

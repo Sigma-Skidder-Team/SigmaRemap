@@ -65,7 +65,7 @@ public class CommandBlockBlock extends Class3241 {
       if (var7 instanceof CommandBlockTileEntity) {
          CommandBlockTileEntity var8 = (CommandBlockTileEntity)var7;
          CommandBlockLogic var9 = var8.method4009();
-         boolean var10 = !Class9001.method33256(var9.method3563());
+         boolean var10 = !StringUtils.isNullOrEmpty(var9.method3563());
          CommandBlockTileEntity.Mode var11 = var8.method4020();
          boolean var12 = var8.isConditionMet();
          if (var11 != CommandBlockTileEntity.Mode.field13324) {

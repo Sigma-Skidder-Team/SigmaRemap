@@ -1,6 +1,5 @@
 package net.minecraft.nbt;
 
-import mapped.Class7052;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 
@@ -8,29 +7,29 @@ import java.io.DataOutput;
 import java.io.IOException;
 
 public interface INBT {
-   TextFormatting field56 = TextFormatting.AQUA;
-   TextFormatting field57 = TextFormatting.GREEN;
-   TextFormatting field58 = TextFormatting.GOLD;
-   TextFormatting field59 = TextFormatting.RED;
+   TextFormatting SYNTAX_HIGHLIGHTING_KEY = TextFormatting.AQUA;
+   TextFormatting SYNTAX_HIGHLIGHTING_STRING = TextFormatting.GREEN;
+   TextFormatting SYNTAX_HIGHLIGHTING_NUMBER = TextFormatting.GOLD;
+   TextFormatting SYNTAX_HIGHLIGHTING_NUMBER_TYPE = TextFormatting.RED;
 
    void write(DataOutput var1) throws IOException;
 
    @Override
    String toString();
 
-   byte getId();
+   byte getID();
 
-   Class7052<?> method75();
+   INBTType<?> getType();
 
-   INBT method79();
+   INBT copy();
 
    default String getString() {
       return this.toString();
    }
 
-   default ITextComponent method82() {
-      return this.method78("", 0);
+   default ITextComponent toFormattedComponent() {
+      return this.toFormattedComponent("", 0);
    }
 
-   ITextComponent method78(String var1, int var2);
+   ITextComponent toFormattedComponent(String indentation, int indentDepth);
 }

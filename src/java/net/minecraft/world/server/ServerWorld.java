@@ -52,6 +52,7 @@ import net.minecraft.world.chunk.listener.IChunkStatusListener;
 import net.minecraft.world.gen.feature.structure.StructureManager;
 import net.minecraft.world.gen.feature.structure.StructureStart;
 import net.minecraft.world.gen.feature.template.TemplateManager;
+import net.minecraft.world.storage.DimensionSavedDataManager;
 import net.minecraft.world.storage.IServerWorldInfo;
 import net.minecraft.world.storage.MapData;
 import org.apache.logging.log4j.LogManager;
@@ -131,13 +132,13 @@ public class ServerWorld extends World implements ISeedReader {
          var1.getPlayerList().method19478(),
          var1.method1434(),
          var7,
-         () -> var1.getServerWorld().method6945()
+         () -> var1.getServerWorld().getSavedData()
       );
       this.field9050 = new Class3634(this);
       this.calculateInitialSkylight();
       this.calculateInitialWeather();
       this.getWorldBorder().method24544(var1.method1389());
-      this.field9054 = this.method6945().<Class7531>method28767(() -> new Class7531(this), Class7531.method24615(this.getDimensionType()));
+      this.field9054 = this.getSavedData().<Class7531>getOrCreate(() -> new Class7531(this), Class7531.method24615(this.getDimensionType()));
       if (!var1.isSinglePlayer()) {
          var4.setGameType(var1.method1286());
       }
@@ -618,7 +619,7 @@ public class ServerWorld extends World implements ISeedReader {
          this.field9045.func_240793_aU_().method20090(this.field9058.method26109());
       }
 
-      this.getChunkProvider().method7383().method28773();
+      this.getChunkProvider().getSavedData().method28773();
    }
 
    public List<Entity> method6912(EntityType<?> var1, Predicate<? super Entity> var2) {
@@ -1119,24 +1120,24 @@ public class ServerWorld extends World implements ISeedReader {
       return this.field9045.method1437();
    }
 
-   public Class8250 method6945() {
-      return this.getChunkProvider().method7383();
+   public DimensionSavedDataManager getSavedData() {
+      return this.getChunkProvider().getSavedData();
    }
 
    @Nullable
    @Override
    public MapData method6798(String var1) {
-      return this.getServer().getServerWorld().method6945().<MapData>method28768(() -> new MapData(var1), var1);
+      return this.getServer().getServerWorld().getSavedData().<MapData>get(() -> new MapData(var1), var1);
    }
 
    @Override
    public void method6799(MapData var1) {
-      this.getServer().getServerWorld().method6945().method28770(var1);
+      this.getServer().getServerWorld().getSavedData().set(var1);
    }
 
    @Override
    public int method6800() {
-      return this.getServer().getServerWorld().method6945().<Class7532>method28767(Class7532::new, "idcounts").method24618();
+      return this.getServer().getServerWorld().getSavedData().<Class7532>getOrCreate(Class7532::new, "idcounts").method24618();
    }
 
    public void method6946(BlockPos var1, float var2) {
@@ -1161,12 +1162,12 @@ public class ServerWorld extends World implements ISeedReader {
    }
 
    public LongSet method6949() {
-      ForcedChunksSaveData var3 = this.method6945().<ForcedChunksSaveData>method28768(ForcedChunksSaveData::new, "chunks");
+      ForcedChunksSaveData var3 = this.getSavedData().<ForcedChunksSaveData>get(ForcedChunksSaveData::new, "chunks");
       return (LongSet)(var3 == null ? LongSets.EMPTY_SET : LongSets.unmodifiable(var3.getChunks()));
    }
 
    public boolean method6950(int var1, int var2, boolean var3) {
-      ForcedChunksSaveData var6 = this.method6945().<ForcedChunksSaveData>method28767(ForcedChunksSaveData::new, "chunks");
+      ForcedChunksSaveData var6 = this.getSavedData().<ForcedChunksSaveData>getOrCreate(ForcedChunksSaveData::new, "chunks");
       ChunkPos var7 = new ChunkPos(var1, var2);
       long var8 = var7.asLong();
       boolean var10;
@@ -1179,7 +1180,7 @@ public class ServerWorld extends World implements ISeedReader {
          }
       }
 
-      var6.method24606(var10);
+      var6.setDirty(var10);
       if (var10) {
          this.getChunkProvider().forceChunk(var7, var3);
       }

@@ -7,6 +7,7 @@ import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.NBTUtil;
 import net.minecraft.network.DebugPacketSender;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -98,11 +99,11 @@ public class Class1017 extends Class1018 implements IAngerable, Class1016 {
    public void writeAdditional(CompoundNBT var1) {
       super.writeAdditional(var1);
       if (this.method4432()) {
-         var1.put("HivePos", Class8354.method29284(this.method4433()));
+         var1.put("HivePos", NBTUtil.method29284(this.method4433()));
       }
 
       if (this.method4422()) {
-         var1.put("FlowerPos", Class8354.method29284(this.method4421()));
+         var1.put("FlowerPos", NBTUtil.method29284(this.method4421()));
       }
 
       var1.putBoolean("HasNectar", this.method4438());
@@ -117,12 +118,12 @@ public class Class1017 extends Class1018 implements IAngerable, Class1016 {
    public void readAdditional(CompoundNBT var1) {
       this.field5697 = null;
       if (var1.contains("HivePos")) {
-         this.field5697 = Class8354.method29283(var1.getCompound("HivePos"));
+         this.field5697 = NBTUtil.method29283(var1.getCompound("HivePos"));
       }
 
       this.field5696 = null;
       if (var1.contains("FlowerPos")) {
-         this.field5696 = Class8354.method29283(var1.getCompound("FlowerPos"));
+         this.field5696 = NBTUtil.method29283(var1.getCompound("FlowerPos"));
       }
 
       super.readAdditional(var1);

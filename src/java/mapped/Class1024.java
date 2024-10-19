@@ -17,6 +17,7 @@ import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
@@ -119,10 +120,10 @@ public class Class1024 extends Class1025 implements Class1023 {
    @Override
    public void readAdditional(CompoundNBT var1) {
       super.readAdditional(var1);
-      ListNBT var4 = var1.method131("Inventory", 10);
+      ListNBT var4 = var1.getList("Inventory", 10);
 
       for (int var5 = 0; var5 < var4.size(); var5++) {
-         ItemStack var6 = ItemStack.method32104(var4.method153(var5));
+         ItemStack var6 = ItemStack.method32104(var4.getCompound(var5));
          if (!var6.isEmpty()) {
             this.field5711.method3676(var6);
          }

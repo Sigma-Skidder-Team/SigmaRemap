@@ -13,6 +13,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
+import net.minecraft.util.StringUtils;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
@@ -56,24 +57,24 @@ public class Class964 extends TileEntity {
    @Override
    public CompoundNBT write(CompoundNBT var1) {
       super.write(var1);
-      var1.method109("name", this.method3934());
-      var1.method109("author", this.field5396);
-      var1.method109("metadata", this.field5397);
+      var1.putString("name", this.method3934());
+      var1.putString("author", this.field5396);
+      var1.putString("metadata", this.field5397);
       var1.putInt("posX", this.field5398.getX());
       var1.putInt("posY", this.field5398.getY());
       var1.putInt("posZ", this.field5398.getZ());
       var1.putInt("sizeX", this.field5399.getX());
       var1.putInt("sizeY", this.field5399.getY());
       var1.putInt("sizeZ", this.field5399.getZ());
-      var1.method109("rotation", this.field5401.toString());
-      var1.method109("mirror", this.field5400.toString());
-      var1.method109("mode", this.field5402.toString());
+      var1.putString("rotation", this.field5401.toString());
+      var1.putString("mirror", this.field5400.toString());
+      var1.putString("mode", this.field5402.toString());
       var1.putBoolean("ignoreEntities", this.field5403);
       var1.putBoolean("powered", this.field5404);
       var1.putBoolean("showair", this.field5405);
       var1.putBoolean("showboundingbox", this.field5406);
       var1.putFloat("integrity", this.field5407);
-      var1.method103("seed", this.field5408);
+      var1.putLong("seed", this.field5408);
       return var1;
    }
 
@@ -170,7 +171,7 @@ public class Class964 extends TileEntity {
    }
 
    public void method3937(String var1) {
-      this.method3938(!Class9001.method33256(var1) ? ResourceLocation.method8289(var1) : null);
+      this.method3938(!StringUtils.isNullOrEmpty(var1) ? ResourceLocation.method8289(var1) : null);
    }
 
    public void method3938(ResourceLocation var1) {
@@ -425,7 +426,7 @@ public class Class964 extends TileEntity {
 
    public boolean method3968(ServerWorld var1, boolean var2, Class8969 var3) {
       BlockPos var6 = this.getPos();
-      if (!Class9001.method33256(var3.method32888())) {
+      if (!StringUtils.isNullOrEmpty(var3.method32888())) {
          this.field5396 = var3.method32888();
       }
 

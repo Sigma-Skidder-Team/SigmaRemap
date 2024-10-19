@@ -7,6 +7,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.NBTUtil;
 import net.minecraft.tileentity.SkullTileEntity;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -47,7 +48,7 @@ public class SkullItem extends Class3298 {
       if (var1.contains("SkullOwner", 8) && !StringUtils.isBlank(var1.getString("SkullOwner"))) {
          GameProfile var4 = new GameProfile((UUID)null, var1.getString("SkullOwner"));
          var4 = SkullTileEntity.method4008(var4);
-         var1.put("SkullOwner", Class8354.method29279(new CompoundNBT(), var4));
+         var1.put("SkullOwner", NBTUtil.writeGameProfile(new CompoundNBT(), var4));
          return true;
       } else {
          return false;

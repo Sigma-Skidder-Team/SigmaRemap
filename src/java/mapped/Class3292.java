@@ -105,10 +105,10 @@ public class Class3292 extends Item {
          CompoundNBT var9 = var8.getCompound("BlockStateTag");
          StateContainer var10 = var4.getBlock().getStateContainer();
 
-         for (String var12 : var9.method97()) {
+         for (String var12 : var9.keySet()) {
             Property var13 = var10.method35396(var12);
             if (var13 != null) {
-               String var14 = var9.method116(var12).getString();
+               String var14 = var9.get(var12).getString();
                var7 = method11840(var7, var13, var14);
             }
          }
@@ -153,8 +153,8 @@ public class Class3292 extends Item {
                }
 
                CompoundNBT var9 = var8.write(new CompoundNBT());
-               CompoundNBT var10 = var9.method79();
-               var9.method140(var7);
+               CompoundNBT var10 = var9.copy();
+               var9.merge(var7);
                var9.putInt("x", var2.getX());
                var9.putInt("y", var2.getY());
                var9.putInt("z", var2.getZ());

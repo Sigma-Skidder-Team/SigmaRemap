@@ -16,6 +16,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.UseAction;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvent;
@@ -155,7 +156,7 @@ public class CrossbowItem extends Class3262 implements IVanishable {
       if (!var4.contains("ChargedProjectiles", 9)) {
          var5 = new ListNBT();
       } else {
-         var5 = var4.method131("ChargedProjectiles", 10);
+         var5 = var4.getList("ChargedProjectiles", 10);
       }
 
       CompoundNBT var6 = new CompoundNBT();
@@ -168,10 +169,10 @@ public class CrossbowItem extends Class3262 implements IVanishable {
       ArrayList var3 = Lists.newArrayList();
       CompoundNBT var4 = var0.getTag();
       if (var4 != null && var4.contains("ChargedProjectiles", 9)) {
-         ListNBT var5 = var4.method131("ChargedProjectiles", 10);
+         ListNBT var5 = var4.getList("ChargedProjectiles", 10);
          if (var5 != null) {
             for (int var6 = 0; var6 < var5.size(); var6++) {
-               CompoundNBT var7 = var5.method153(var6);
+               CompoundNBT var7 = var5.getCompound(var6);
                var3.add(ItemStack.method32104(var7));
             }
          }
@@ -183,7 +184,7 @@ public class CrossbowItem extends Class3262 implements IVanishable {
    private static void method11759(ItemStack var0) {
       CompoundNBT var3 = var0.getTag();
       if (var3 != null) {
-         ListNBT var4 = var3.method131("ChargedProjectiles", 9);
+         ListNBT var4 = var3.getList("ChargedProjectiles", 9);
          var4.clear();
          var3.put("ChargedProjectiles", var4);
       }

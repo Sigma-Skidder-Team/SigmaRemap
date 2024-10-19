@@ -5,6 +5,7 @@ import com.mojang.datafixers.DataFixer;
 import com.mojang.datafixers.DataFixerBuilder;
 import com.mojang.datafixers.schemas.Schema;
 import net.minecraft.client.util.Util;
+import net.minecraft.util.SharedConstants;
 import net.minecraft.util.datafix.fixes.*;
 
 import java.util.Map;

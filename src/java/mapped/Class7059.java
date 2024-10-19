@@ -1,28 +1,29 @@
 package mapped;
 
 import net.minecraft.nbt.NBTSizeTracker;
+import net.minecraft.nbt.INBTType;
 
 import java.io.DataInput;
 import java.io.IOException;
 
-public final class Class7059 implements Class7052<Class37> {
-   public Class37 readNBT(DataInput var1, int var2, NBTSizeTracker var3) throws IOException {
-      var3.method29769(80L);
-      return Class37.method96(var1.readShort());
+public final class Class7059 implements INBTType<ShortNBT> {
+   public ShortNBT readNBT(DataInput var1, int var2, NBTSizeTracker var3) throws IOException {
+      var3.read(80L);
+      return ShortNBT.valueOf(var1.readShort());
    }
 
    @Override
-   public String method21975() {
+   public String getName() {
       return "SHORT";
    }
 
    @Override
-   public String method21976() {
+   public String getTagName() {
       return "TAG_Short";
    }
 
    @Override
-   public boolean method21977() {
+   public boolean isPrimitive() {
       return true;
    }
 }

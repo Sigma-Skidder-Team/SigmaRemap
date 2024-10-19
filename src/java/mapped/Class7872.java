@@ -17,7 +17,7 @@ public class Class7872 {
                Class6434.field28272.fieldOf("location_predicate").forGetter(var0x -> var0x.field33735),
                Class8033.field34519.optionalFieldOf("position_predicate", Class8034.field34522).forGetter(var0x -> var0x.field33736),
                BlockState.field31585.fieldOf("output_state").forGetter(var0x -> var0x.field33737),
-               CompoundNBT.field79.optionalFieldOf("output_nbt").forGetter(var0x -> Optional.<CompoundNBT>ofNullable(var0x.field33738))
+               CompoundNBT.CODEC.optionalFieldOf("output_nbt").forGetter(var0x -> Optional.<CompoundNBT>ofNullable(var0x.field33738))
             )
             .apply(var0, Class7872::new)
    );

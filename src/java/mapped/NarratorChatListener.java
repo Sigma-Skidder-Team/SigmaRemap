@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.NarratorStatus;
+import net.minecraft.util.SharedConstants;
 import net.minecraft.util.text.ChatType;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;

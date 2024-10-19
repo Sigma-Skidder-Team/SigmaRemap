@@ -15,6 +15,7 @@ import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.client.renderer.texture.NativeImage;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SharedConstants;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.datafix.codec.DatapackCodec;
 import net.minecraft.util.text.ITextComponent;

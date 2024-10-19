@@ -40,6 +40,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.IServerPlayNetHandler;
@@ -67,7 +68,6 @@ import net.minecraft.world.GameType;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -458,7 +458,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
             }
 
             var4.method3568();
-            if (!Class9001.method33256(var8)) {
+            if (!StringUtils.isNullOrEmpty(var8)) {
                this.player.sendMessage(new TranslationTextComponent("advMode.setCommand.success", var8), Util.DUMMY_UUID);
             }
          }
@@ -505,7 +505,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       if (this.player.openContainer instanceof Class5824) {
          Class5824 var4 = (Class5824)this.player.openContainer;
-         String var5 = SharedConstants.method34772(var1.method17477());
+         String var5 = SharedConstants.filterAllowedCharacters(var1.method17477());
          if (var5.length() <= 35) {
             var4.method18197(var5);
          }
@@ -633,10 +633,10 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
                var6.add(var5.getString("title"));
             }
 
-            ListNBT var8 = var5.method131("pages", 8);
+            ListNBT var8 = var5.getList("pages", 8);
 
             for (int var9 = 0; var9 < var8.size(); var9++) {
-               var6.add(var8.method160(var9));
+               var6.add(var8.getString(var9));
             }
 
             int var10 = var1.func_244708_d();
@@ -664,7 +664,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
          ItemStack var7 = new ItemStack(Items.field38048);
          CompoundNBT var8 = var6.getTag();
          if (var8 != null) {
-            var7.setTag(var8.method79());
+            var7.setTag(var8.copy());
          }
 
          var7.setTagInfo("author", StringNBT.valueOf(this.player.getName().getString()));
@@ -1058,7 +1058,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
 
    @Override
    public void processChatMessage(CChatMessagePacket var1) {
-      String var4 = StringUtils.normalizeSpace(var1.getMessage());
+      String var4 = org.apache.commons.lang3.StringUtils.normalizeSpace(var1.getMessage());
       if (!var4.startsWith("/")) {
          this.method15660(var4, this::func_244548_c);
       } else {
@@ -1310,9 +1310,9 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
             TileEntity var8 = this.player.world.getTileEntity(var7);
             if (var8 != null) {
                CompoundNBT var9 = var8.write(new CompoundNBT());
-               var9.method133("x");
-               var9.method133("y");
-               var9.method133("z");
+               var9.remove("x");
+               var9.remove("y");
+               var9.remove("z");
                var5.setTagInfo("BlockEntityTag", var9);
             }
          }

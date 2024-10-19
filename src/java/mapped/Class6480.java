@@ -15,6 +15,6 @@ public final class Class6480 implements Class6466<CompoundNBT> {
    }
 
    public CompoundNBT method19644(CompoundNBT var1) {
-      return var1.method79();
+      return var1.copy();
    }
 }

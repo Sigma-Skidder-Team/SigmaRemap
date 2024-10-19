@@ -42,7 +42,7 @@ public abstract class TameableEntity extends Class1018 {
    public void writeAdditional(CompoundNBT var1) {
       super.writeAdditional(var1);
       if (this.method4397() != null) {
-         var1.method104("Owner", this.method4397());
+         var1.putUniqueID("Owner", this.method4397());
       }
 
       var1.putBoolean("Sitting", this.field5670);
@@ -52,8 +52,8 @@ public abstract class TameableEntity extends Class1018 {
    public void readAdditional(CompoundNBT var1) {
       super.readAdditional(var1);
       UUID var4;
-      if (var1.method106("Owner")) {
-         var4 = var1.method105("Owner");
+      if (var1.hasUniqueID("Owner")) {
+         var4 = var1.getUniqueID("Owner");
       } else {
          String var5 = var1.getString("Owner");
          var4 = PreYggdrasilConverter.method33732(this.method3396(), var5);

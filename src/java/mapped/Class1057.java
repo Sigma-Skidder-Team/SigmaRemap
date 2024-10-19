@@ -126,9 +126,9 @@ public class Class1057 extends Class1056 implements IMob {
    @Override
    public void writeAdditional(CompoundNBT var1) {
       super.writeAdditional(var1);
-      var1.method100("AttachFace", (byte)this.dataManager.<Direction>method35445(field5841).getIndex());
-      var1.method100("Peek", this.dataManager.<Byte>method35445(field5843));
-      var1.method100("Color", this.dataManager.<Byte>method35445(field5844));
+      var1.putByte("AttachFace", (byte)this.dataManager.<Direction>method35445(field5841).getIndex());
+      var1.putByte("Peek", this.dataManager.<Byte>method35445(field5843));
+      var1.putByte("Color", this.dataManager.<Byte>method35445(field5844));
       BlockPos var4 = this.method4849();
       if (var4 != null) {
          var1.putInt("APX", var4.getX());

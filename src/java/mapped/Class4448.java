@@ -43,7 +43,7 @@ public class Class4448 implements Class4442 {
    public static Path method14080(Path var0, String var1, Path var2) {
       try {
          CompoundNBT var5 = CompressedStreamTools.readCompressed(Files.newInputStream(var0));
-         ITextComponent var6 = var5.method78("    ", 0);
+         ITextComponent var6 = var5.toFormattedComponent("    ", 0);
          String var7 = var6.getString() + "\n";
          Path var8 = var2.resolve(var1 + ".snbt");
          Files.createDirectories(var8.getParent());

@@ -447,7 +447,7 @@ public class Chunk implements IChunk {
       } else {
          CompoundNBT var5 = this.field9114.get(var1);
          if (var5 != null) {
-            var5 = var5.method79();
+            var5 = var5.copy();
             var5.putBoolean("keepPacked", true);
          }
 

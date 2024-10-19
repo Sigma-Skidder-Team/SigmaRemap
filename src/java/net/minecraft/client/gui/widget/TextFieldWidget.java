@@ -9,6 +9,7 @@ import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.util.Util;
+import net.minecraft.util.SharedConstants;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
@@ -101,7 +102,7 @@ public class TextFieldWidget extends Widget implements Class1190, IGuiEventListe
       int var4 = this.field6427 >= this.field6428 ? this.field6428 : this.field6427;
       int var5 = this.field6427 >= this.field6428 ? this.field6427 : this.field6428;
       int var6 = this.field6420 - this.field6419.length() - (var4 - var5);
-      String var7 = SharedConstants.method34772(var1);
+      String var7 = SharedConstants.filterAllowedCharacters(var1);
       int var8 = var7.length();
       if (var6 < var8) {
          var7 = var7.substring(0, var6);

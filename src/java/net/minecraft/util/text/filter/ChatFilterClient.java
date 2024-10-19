@@ -6,7 +6,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.mojang.authlib.GameProfile;
 import mapped.JSONUtils;
-import mapped.SharedConstants;
+import net.minecraft.util.SharedConstants;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

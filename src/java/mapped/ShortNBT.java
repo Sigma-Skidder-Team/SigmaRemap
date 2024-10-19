@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.nbt.NumberNBT;
+import net.minecraft.nbt.INBTType;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -8,16 +9,16 @@ import net.minecraft.util.text.StringTextComponent;
 import java.io.DataOutput;
 import java.io.IOException;
 
-public class Class37 extends NumberNBT {
-   public static final Class7052<Class37> field75 = new Class7059();
+public class ShortNBT extends NumberNBT {
+   public static final INBTType<ShortNBT> field75 = new Class7059();
    private final short field76;
 
-   private Class37(short var1) {
+   private ShortNBT(short var1) {
       this.field76 = var1;
    }
 
-   public static Class37 method96(short var0) {
-      return var0 >= -128 && var0 <= 1024 ? Class9087.field41600[var0 + 128] : new Class37(var0);
+   public static ShortNBT valueOf(short var0) {
+      return var0 >= -128 && var0 <= 1024 ? Class9087.field41600[var0 + 128] : new ShortNBT(var0);
    }
 
    @Override
@@ -26,12 +27,12 @@ public class Class37 extends NumberNBT {
    }
 
    @Override
-   public byte getId() {
+   public byte getID() {
       return 2;
    }
 
    @Override
-   public Class7052<Class37> method75() {
+   public INBTType<ShortNBT> getType() {
       return field75;
    }
 
@@ -40,13 +41,13 @@ public class Class37 extends NumberNBT {
       return this.field76 + "s";
    }
 
-   public Class37 method79() {
+   public ShortNBT copy() {
       return this;
    }
 
    @Override
    public boolean equals(Object var1) {
-      return this == var1 ? true : var1 instanceof Class37 && this.field76 == ((Class37)var1).field76;
+      return this == var1 ? true : var1 instanceof ShortNBT && this.field76 == ((ShortNBT)var1).field76;
    }
 
    @Override
@@ -55,9 +56,9 @@ public class Class37 extends NumberNBT {
    }
 
    @Override
-   public ITextComponent method78(String var1, int var2) {
-      IFormattableTextComponent var5 = new StringTextComponent("s").mergeStyle(field59);
-      return new StringTextComponent(String.valueOf(this.field76)).append(var5).mergeStyle(field58);
+   public ITextComponent toFormattedComponent(String indentation, int indentDepth) {
+      IFormattableTextComponent var5 = new StringTextComponent("s").mergeStyle(SYNTAX_HIGHLIGHTING_NUMBER_TYPE);
+      return new StringTextComponent(String.valueOf(this.field76)).append(var5).mergeStyle(SYNTAX_HIGHLIGHTING_NUMBER);
    }
 
    @Override
@@ -96,7 +97,7 @@ public class Class37 extends NumberNBT {
    }
 
    // $VF: synthetic method
-   public Class37(short var1, Class7059 var2) {
+   public ShortNBT(short var1, Class7059 var2) {
       this(var1);
    }
 }

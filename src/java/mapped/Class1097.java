@@ -183,8 +183,8 @@ public class Class1097 extends Class1018 {
    @Override
    public void writeAdditional(CompoundNBT var1) {
       super.writeAdditional(var1);
-      var1.method109("MainGene", this.method5200().method9043());
-      var1.method109("HiddenGene", this.method5202().method9043());
+      var1.putString("MainGene", this.method5200().method9043());
+      var1.putString("HiddenGene", this.method5202().method9043());
    }
 
    @Override

@@ -24,6 +24,7 @@ import net.minecraft.world.gen.feature.template.TemplateManager;
 import net.minecraft.world.server.ChunkManager;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.server.TicketType;
+import net.minecraft.world.storage.DimensionSavedDataManager;
 
 import java.io.File;
 import java.io.IOException;
@@ -49,7 +50,7 @@ public class ServerChunkProvider extends AbstractChunkProvider {
    private final Class195 field9277;
    private final Class320 field9278;
    public final ChunkManager field9279;
-   private final Class8250 field9280;
+   private final DimensionSavedDataManager field9280;
    private long field9281;
    private boolean field9282 = true;
    private boolean field9283 = true;
@@ -68,7 +69,7 @@ public class ServerChunkProvider extends AbstractChunkProvider {
       int var7,
       boolean var8,
       IChunkStatusListener var9,
-      Supplier<Class8250> var10
+      Supplier<DimensionSavedDataManager> var10
    ) {
       this.field9275 = var1;
       this.field9278 = new Class320(this, var1);
@@ -77,7 +78,7 @@ public class ServerChunkProvider extends AbstractChunkProvider {
       File var13 = var2.method7992(var1.getDimensionKey());
       File var14 = new File(var13, "data");
       var14.mkdirs();
-      this.field9280 = new Class8250(var14, var3);
+      this.field9280 = new DimensionSavedDataManager(var14, var3);
       this.field9279 = new ChunkManager(var1, var2, var3, var4, var5, this.field9278, this, this.getChunkGenerator(), var9, var10, var7, var8);
       this.field9277 = this.field9279.method6537();
       this.ticketManager = this.field9279.method6566();
@@ -470,7 +471,7 @@ public class ServerChunkProvider extends AbstractChunkProvider {
       return this.field9279.method6541(var1);
    }
 
-   public Class8250 method7383() {
+   public DimensionSavedDataManager getSavedData() {
       return this.field9280;
    }
 

@@ -93,7 +93,7 @@ public abstract class Class6395 {
       CompoundNBT var9 = this.method19448(var2);
       RegistryKey var10 = var9 == null
          ? World.OVERWORLD
-         : DimensionType.decodeWorldKey(new Dynamic(NBTDynamicOps.INSTANCE, var9.method116("Dimension"))).resultOrPartial(field27988::error).orElse(World.OVERWORLD);
+         : DimensionType.decodeWorldKey(new Dynamic(NBTDynamicOps.INSTANCE, var9.get("Dimension"))).resultOrPartial(field27988::error).orElse(World.OVERWORLD);
       ServerWorld var11 = this.field27990.method1318(var10);
       ServerWorld var12;
       if (var11 != null) {
@@ -188,10 +188,10 @@ public abstract class Class6395 {
          Entity var27 = EntityType.method33223(var26.getCompound("Entity"), var12, var1x -> var12.method6917(var1x) ? var1x : null);
          if (var27 != null) {
             UUID var22;
-            if (!var26.method106("Attach")) {
+            if (!var26.hasUniqueID("Attach")) {
                var22 = null;
             } else {
-               var22 = var26.method105("Attach");
+               var22 = var26.getUniqueID("Attach");
             }
 
             if (!var27.getUniqueID().equals(var22)) {

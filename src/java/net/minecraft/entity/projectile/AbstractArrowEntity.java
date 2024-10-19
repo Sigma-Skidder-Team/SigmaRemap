@@ -12,6 +12,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.NBTUtil;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -425,16 +426,16 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
       super.writeAdditional(var1);
       var1.putShort("life", (short)this.ticksInGround);
       if (this.field5099 != null) {
-         var1.put("inBlockState", Class8354.method29287(this.field5099));
+         var1.put("inBlockState", NBTUtil.method29287(this.field5099));
       }
 
-      var1.method100("shake", (byte)this.field5103);
+      var1.putByte("shake", (byte)this.field5103);
       var1.putBoolean("inGround", this.field5100);
-      var1.method100("pickup", (byte)this.pickupStatus.ordinal());
-      var1.method108("damage", this.field5105);
+      var1.putByte("pickup", (byte)this.pickupStatus.ordinal());
+      var1.putDouble("damage", this.field5105);
       var1.putBoolean("crit", this.method3487());
-      var1.method100("PierceLevel", this.method3489());
-      var1.method109("SoundEvent", Registry.field16069.getKey(this.hitSound).toString());
+      var1.putByte("PierceLevel", this.method3489());
+      var1.putString("SoundEvent", Registry.field16069.getKey(this.hitSound).toString());
       var1.putBoolean("ShotFromCrossbow", this.method3488());
    }
 
@@ -443,7 +444,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
       super.readAdditional(var1);
       this.ticksInGround = var1.getShort("life");
       if (var1.contains("inBlockState", 10)) {
-         this.field5099 = Class8354.method29285(var1.getCompound("inBlockState"));
+         this.field5099 = NBTUtil.method29285(var1.getCompound("inBlockState"));
       }
 
       this.field5103 = var1.getByte("shake") & 255;

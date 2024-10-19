@@ -244,7 +244,7 @@ public class Class6137 {
                                                          (CommandSource)var2xx.getSource(),
                                                          var6.method28503(var2xx),
                                                          Class8320.method29129(var2xx, "path"),
-                                                         var1xxx -> Class36.method95((int)((double)var1xxx * DoubleArgumentType.getDouble(var2xx, "scale"))),
+                                                         var1xxx -> IntNBT.valueOf((int)((double)var1xxx * DoubleArgumentType.getDouble(var2xx, "scale"))),
                                                          var2
                                                       )
                                                 )
@@ -260,7 +260,7 @@ public class Class6137 {
                                                       (CommandSource)var2xx.getSource(),
                                                       var6.method28503(var2xx),
                                                       Class8320.method29129(var2xx, "path"),
-                                                      var1xxx -> Class32.method90((float)((double)var1xxx * DoubleArgumentType.getDouble(var2xx, "scale"))),
+                                                      var1xxx -> FloatNBT.valueOf((float)((double)var1xxx * DoubleArgumentType.getDouble(var2xx, "scale"))),
                                                       var2
                                                    )
                                              )
@@ -276,7 +276,7 @@ public class Class6137 {
                                                    (CommandSource)var2xx.getSource(),
                                                    var6.method28503(var2xx),
                                                    Class8320.method29129(var2xx, "path"),
-                                                   var1xxx -> Class37.method96((short)((int)((double)var1xxx * DoubleArgumentType.getDouble(var2xx, "scale")))),
+                                                   var1xxx -> ShortNBT.valueOf((short)((int)((double)var1xxx * DoubleArgumentType.getDouble(var2xx, "scale")))),
                                                    var2
                                                 )
                                           )
@@ -292,7 +292,7 @@ public class Class6137 {
                                                 (CommandSource)var2xx.getSource(),
                                                 var6.method28503(var2xx),
                                                 Class8320.method29129(var2xx, "path"),
-                                                var1xxx -> Class35.method94((long)((double)var1xxx * DoubleArgumentType.getDouble(var2xx, "scale"))),
+                                                var1xxx -> LongNBT.valueOf((long)((double)var1xxx * DoubleArgumentType.getDouble(var2xx, "scale"))),
                                                 var2
                                              )
                                        )
@@ -308,7 +308,7 @@ public class Class6137 {
                                              (CommandSource)var2xx.getSource(),
                                              var6.method28503(var2xx),
                                              Class8320.method29129(var2xx, "path"),
-                                             var1xxx -> Class34.method93((double)var1xxx * DoubleArgumentType.getDouble(var2xx, "scale")),
+                                             var1xxx -> DoubleNBT.valueOf((double)var1xxx * DoubleArgumentType.getDouble(var2xx, "scale")),
                                              var2
                                           )
                                     )
@@ -324,7 +324,7 @@ public class Class6137 {
                                           (CommandSource)var2xx.getSource(),
                                           var6.method28503(var2xx),
                                           Class8320.method29129(var2xx, "path"),
-                                          var1xxx -> Class33.method91((byte)((int)((double)var1xxx * DoubleArgumentType.getDouble(var2xx, "scale")))),
+                                          var1xxx -> ByteNBT.valueOf((byte)((int)((double)var1xxx * DoubleArgumentType.getDouble(var2xx, "scale")))),
                                           var2
                                        )
                                  )
@@ -666,13 +666,13 @@ public class Class6137 {
                         }
 
                         CompoundNBT var20 = var18.write(new CompoundNBT());
-                        var20.method133("x");
-                        var20.method133("y");
-                        var20.method133("z");
+                        var20.remove("x");
+                        var20.remove("y");
+                        var20.remove("z");
                         CompoundNBT var21 = var19.write(new CompoundNBT());
-                        var21.method133("x");
-                        var21.method133("y");
-                        var21.method133("z");
+                        var21.remove("x");
+                        var21.remove("y");
+                        var21.remove("z");
                         if (!var20.equals(var21)) {
                            return OptionalInt.empty();
                         }

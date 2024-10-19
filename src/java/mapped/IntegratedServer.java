@@ -10,6 +10,7 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.resources.ResourcePackList;
 import net.minecraft.server.integrated.IntegratedPlayerList;
 import net.minecraft.server.management.PlayerProfileCache;
+import net.minecraft.util.SharedConstants;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.GameType;
 import net.minecraft.world.World;

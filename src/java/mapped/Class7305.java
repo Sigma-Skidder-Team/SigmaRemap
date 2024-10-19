@@ -6,6 +6,7 @@ import java.util.regex.Pattern;
 
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
+import net.minecraft.nbt.ListNBT;
 import net.optifine.Config;
 import org.apache.commons.lang3.StringEscapeUtils;
 
@@ -101,8 +102,8 @@ public class Class7305 {
       if (var1 instanceof CompoundNBT) {
          CompoundNBT var4 = (CompoundNBT)var1;
 
-         for (String var6 : var4.method97()) {
-            INBT var7 = var4.method116(var6);
+         for (String var6 : var4.keySet()) {
+            INBT var7 = var4.get(var6);
             if (this.method23083(var7)) {
                return true;
             }
@@ -127,13 +128,13 @@ public class Class7305 {
    private static INBT method23082(INBT var0, String var1) {
       if (var0 instanceof CompoundNBT) {
          CompoundNBT var6 = (CompoundNBT)var0;
-         return var6.method116(var1);
+         return var6.get(var1);
       } else if (!(var0 instanceof ListNBT)) {
          return null;
       } else {
          ListNBT var4 = (ListNBT)var0;
          if (var1.equals("count")) {
-            return Class36.method95(var4.size());
+            return IntNBT.valueOf(var4.size());
          } else {
             int var5 = Config.method26899(var1, -1);
             return var5 >= 0 && var5 < var4.size() ? var4.get(var5) : null;
@@ -182,35 +183,35 @@ public class Class7305 {
    private static String method23087(INBT var0, int var1) {
       if (var0 != null) {
          if (!(var0 instanceof StringNBT)) {
-            if (!(var0 instanceof Class36)) {
-               if (!(var0 instanceof Class33)) {
-                  if (!(var0 instanceof Class37)) {
-                     if (!(var0 instanceof Class35)) {
-                        if (!(var0 instanceof Class32)) {
-                           if (!(var0 instanceof Class34)) {
+            if (!(var0 instanceof IntNBT)) {
+               if (!(var0 instanceof ByteNBT)) {
+                  if (!(var0 instanceof ShortNBT)) {
+                     if (!(var0 instanceof LongNBT)) {
+                        if (!(var0 instanceof FloatNBT)) {
+                           if (!(var0 instanceof DoubleNBT)) {
                               return var0.toString();
                            } else {
-                              Class34 var12 = (Class34)var0;
+                              DoubleNBT var12 = (DoubleNBT)var0;
                               return Double.toString(var12.getDouble());
                            }
                         } else {
-                           Class32 var11 = (Class32)var0;
+                           FloatNBT var11 = (FloatNBT)var0;
                            return Float.toString(var11.getFloat());
                         }
                      } else {
-                        Class35 var10 = (Class35)var0;
+                        LongNBT var10 = (LongNBT)var0;
                         return Long.toString(var10.getLong());
                      }
                   } else {
-                     Class37 var9 = (Class37)var0;
+                     ShortNBT var9 = (ShortNBT)var0;
                      return Short.toString(var9.getShort());
                   }
                } else {
-                  Class33 var8 = (Class33)var0;
+                  ByteNBT var8 = (ByteNBT)var0;
                   return Byte.toString(var8.getByte());
                }
             } else {
-               Class36 var7 = (Class36)var0;
+               IntNBT var7 = (IntNBT)var0;
                return var1 != 1 ? Integer.toString(var7.getInt()) : "#" + Class9402.method35758(Integer.toHexString(var7.getInt()), 6, '0');
             }
          } else {

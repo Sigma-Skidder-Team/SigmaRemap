@@ -7,6 +7,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.NBTUtil;
 
 import java.util.Set;
 
@@ -34,7 +35,7 @@ public class Class147 extends Class128 {
          Entity var5 = var2.method26081(this.field490.method8717());
          if (var5 instanceof PlayerEntity) {
             GameProfile var6 = ((PlayerEntity)var5).getGameProfile();
-            var1.getOrCreateTag().put("SkullOwner", Class8354.method29279(new CompoundNBT(), var6));
+            var1.getOrCreateTag().put("SkullOwner", NBTUtil.writeGameProfile(new CompoundNBT(), var6));
          }
       }
 

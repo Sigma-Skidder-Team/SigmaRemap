@@ -19,7 +19,7 @@ public interface Class3277 {
    default void method11801(ItemStack var1) {
       CompoundNBT var4 = var1.method32145("display");
       if (var4 != null && var4.contains("color")) {
-         var4.method133("color");
+         var4.remove("color");
       }
    }
 

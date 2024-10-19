@@ -12,8 +12,8 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-public class LongArrayNBT extends Class27<Class35> {
-   public static final Class7052<LongArrayNBT> field91 = new Class7061();
+public class LongArrayNBT extends CollectionNBT<LongNBT> {
+   public static final INBTType<LongArrayNBT> TYPE = new Class7061();
    private long[] field92;
 
    public LongArrayNBT(long[] var1) {
@@ -49,13 +49,13 @@ public class LongArrayNBT extends Class27<Class35> {
    }
 
    @Override
-   public byte getId() {
+   public byte getID() {
       return 12;
    }
 
    @Override
-   public Class7052<LongArrayNBT> method75() {
-      return field91;
+   public INBTType<LongArrayNBT> getType() {
+      return TYPE;
    }
 
    @Override
@@ -73,7 +73,7 @@ public class LongArrayNBT extends Class27<Class35> {
       return var3.append(']').toString();
    }
 
-   public LongArrayNBT method79() {
+   public LongArrayNBT copy() {
       long[] var3 = new long[this.field92.length];
       System.arraycopy(this.field92, 0, var3, 0, this.field92.length);
       return new LongArrayNBT(var3);
@@ -90,12 +90,12 @@ public class LongArrayNBT extends Class27<Class35> {
    }
 
    @Override
-   public ITextComponent method78(String var1, int var2) {
-      IFormattableTextComponent var5 = new StringTextComponent("L").mergeStyle(field59);
+   public ITextComponent toFormattedComponent(String indentation, int indentDepth) {
+      IFormattableTextComponent var5 = new StringTextComponent("L").mergeStyle(SYNTAX_HIGHLIGHTING_NUMBER_TYPE);
       IFormattableTextComponent var6 = new StringTextComponent("[").append(var5).appendString(";");
 
       for (int var7 = 0; var7 < this.field92.length; var7++) {
-         IFormattableTextComponent var8 = new StringTextComponent(String.valueOf(this.field92[var7])).mergeStyle(field58);
+         IFormattableTextComponent var8 = new StringTextComponent(String.valueOf(this.field92[var7])).mergeStyle(SYNTAX_HIGHLIGHTING_NUMBER);
          var6.appendString(" ").append(var8).append(var5);
          if (var7 != this.field92.length - 1) {
             var6.appendString(",");
@@ -115,22 +115,22 @@ public class LongArrayNBT extends Class27<Class35> {
       return this.field92.length;
    }
 
-   public Class35 get(int var1) {
-      return Class35.method94(this.field92[var1]);
+   public LongNBT get(int var1) {
+      return LongNBT.valueOf(this.field92[var1]);
    }
 
-   public Class35 set(int var1, Class35 var2) {
+   public LongNBT set(int var1, LongNBT var2) {
       long var5 = this.field92[var1];
       this.field92[var1] = var2.getLong();
-      return Class35.method94(var5);
+      return LongNBT.valueOf(var5);
    }
 
-   public void add(int var1, Class35 var2) {
+   public void add(int var1, LongNBT var2) {
       this.field92 = ArrayUtils.add(this.field92, var1, var2.getLong());
    }
 
    @Override
-   public boolean method70(int var1, INBT var2) {
+   public boolean setNBTByIndex(int var1, INBT var2) {
       if (!(var2 instanceof NumberNBT)) {
          return false;
       } else {
@@ -140,7 +140,7 @@ public class LongArrayNBT extends Class27<Class35> {
    }
 
    @Override
-   public boolean method71(int var1, INBT var2) {
+   public boolean addNBTByIndex(int var1, INBT var2) {
       if (!(var2 instanceof NumberNBT)) {
          return false;
       } else {
@@ -149,14 +149,14 @@ public class LongArrayNBT extends Class27<Class35> {
       }
    }
 
-   public Class35 remove(int var1) {
+   public LongNBT remove(int var1) {
       long var4 = this.field92[var1];
       this.field92 = ArrayUtils.remove(this.field92, var1);
-      return Class35.method94(var4);
+      return LongNBT.valueOf(var4);
    }
 
    @Override
-   public byte method72() {
+   public byte getTagType() {
       return 4;
    }
 

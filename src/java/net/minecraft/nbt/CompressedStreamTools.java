@@ -95,8 +95,8 @@ public class CompressedStreamTools {
    }
 
    private static void writeTag(INBT var0, DataOutput var1) throws IOException {
-      var1.writeByte(var0.getId());
-      if (var0.getId() != 0) {
+      var1.writeByte(var0.getID());
+      if (var0.getID() != 0) {
          var1.writeUTF("");
          var0.write(var1);
       }

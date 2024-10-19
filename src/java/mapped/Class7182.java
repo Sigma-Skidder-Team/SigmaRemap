@@ -2,13 +2,14 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.potion.EffectInstance;
+import net.minecraft.util.StringUtils;
 import net.minecraft.util.math.MathHelper;
 
 public final class Class7182 {
    public static String method22535(EffectInstance var0, float var1) {
       if (!var0.method8642()) {
          int var4 = MathHelper.floor((float)var0.method8628() * var1);
-         return Class9001.method33254(var4);
+         return StringUtils.ticksToElapsedTime(var4);
       } else {
          return "**:**";
       }

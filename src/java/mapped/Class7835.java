@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ObjectIntIdentityMap;
 
@@ -96,7 +97,7 @@ public class Class7835<T> implements Class7833<T> {
    @Override
    public void method26246(ListNBT var1) {
       for (int var4 = 0; var4 < var1.size(); var4++) {
-         this.field33634[var4] = this.field33636.apply(var1.method153(var4));
+         this.field33634[var4] = this.field33636.apply(var1.getCompound(var4));
       }
 
       this.field33638 = var1.size();

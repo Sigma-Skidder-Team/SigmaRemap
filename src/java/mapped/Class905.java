@@ -68,7 +68,7 @@ public class Class905 extends ProjectileEntity {
    public void writeAdditional(CompoundNBT var1) {
       super.writeAdditional(var1);
       if (this.field5163 != null) {
-         var1.method104("Target", this.field5163.getUniqueID());
+         var1.putUniqueID("Target", this.field5163.getUniqueID());
       }
 
       if (this.field5164 != null) {
@@ -76,9 +76,9 @@ public class Class905 extends ProjectileEntity {
       }
 
       var1.putInt("Steps", this.field5165);
-      var1.method108("TXD", this.field5166);
-      var1.method108("TYD", this.field5167);
-      var1.method108("TZD", this.field5168);
+      var1.putDouble("TXD", this.field5166);
+      var1.putDouble("TYD", this.field5167);
+      var1.putDouble("TZD", this.field5168);
    }
 
    @Override
@@ -92,8 +92,8 @@ public class Class905 extends ProjectileEntity {
          this.field5164 = Direction.byIndex(var1.getInt("Dir"));
       }
 
-      if (var1.method106("Target")) {
-         this.field5169 = var1.method105("Target");
+      if (var1.hasUniqueID("Target")) {
+         this.field5169 = var1.getUniqueID("Target");
       }
    }
 

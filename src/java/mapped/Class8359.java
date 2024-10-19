@@ -17,7 +17,7 @@ public class Class8359 implements Class8356 {
    @Override
    public void method29291(INBT var1, List<INBT> var2) {
       if (var1 instanceof CompoundNBT) {
-         INBT var5 = ((CompoundNBT)var1).method116(this.field35906);
+         INBT var5 = ((CompoundNBT)var1).get(this.field35906);
          if (var5 != null) {
             var2.add(var5);
          }
@@ -33,7 +33,7 @@ public class Class8359 implements Class8356 {
             var7 = (INBT)var2.get();
             var6.put(this.field35906, var7);
          } else {
-            var7 = var6.method116(this.field35906);
+            var7 = var6.get(this.field35906);
          }
 
          var3.add(var7);
@@ -64,7 +64,7 @@ public class Class8359 implements Class8356 {
       if (var1 instanceof CompoundNBT) {
          CompoundNBT var4 = (CompoundNBT)var1;
          if (var4.contains(this.field35906)) {
-            var4.method133(this.field35906);
+            var4.remove(this.field35906);
             return 1;
          }
       }

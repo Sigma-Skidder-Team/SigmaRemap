@@ -32,9 +32,9 @@ public class Class4675 extends AbstractStringBuilder<INBT, CompoundNBT> {
       } else if (!(var2 instanceof CompoundNBT)) {
          return DataResult.error("mergeToMap called with not a map: " + var2, var2);
       } else {
-         CompoundNBT var5 = new CompoundNBT(Maps.newHashMap(((CompoundNBT)var2).method143()));
+         CompoundNBT var5 = new CompoundNBT(Maps.newHashMap(((CompoundNBT)var2).getTagMap()));
 
-         for (Entry var7 : var1.method143().entrySet()) {
+         for (Entry var7 : var1.getTagMap().entrySet()) {
             var5.put((String)var7.getKey(), (INBT)var7.getValue());
          }
 

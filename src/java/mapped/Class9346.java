@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.NBTUtil;
 import net.minecraft.util.math.MathHelper;
 
 public class Class9346 {
@@ -186,7 +187,7 @@ public class Class9346 {
          }
 
          return ItemStack.areItemStacksEqual(var5, var2)
-            && (!var2.method32141() || var5.method32141() && Class8354.method29280(var2.getTag(), var5.getTag(), false));
+            && (!var2.method32141() || var5.method32141() && NBTUtil.areNBTEquals(var2.getTag(), var5.getTag(), false));
       }
    }
 

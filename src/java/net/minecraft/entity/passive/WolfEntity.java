@@ -90,7 +90,7 @@ public class WolfEntity extends TameableEntity implements IAngerable {
    @Override
    public void writeAdditional(CompoundNBT var1) {
       super.writeAdditional(var1);
-      var1.method100("CollarColor", (byte)this.method4382().method309());
+      var1.putByte("CollarColor", (byte)this.method4382().method309());
       this.method4364(var1);
    }
 

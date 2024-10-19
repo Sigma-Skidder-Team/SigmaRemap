@@ -6,6 +6,7 @@ import net.minecraft.client.util.Util;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.server.ServerWorld;
 
@@ -55,8 +56,8 @@ public class Class3677 extends Class3676<Class1042> {
       CompoundNBT var7 = var6.method32144("Explosion");
       ArrayList var8 = Lists.newArrayList();
       var8.add(var1.method313());
-      var7.method112("Colors", var8);
-      var7.method100("Type", (byte)Class2119.field13811.method8800());
+      var7.putIntArray("Colors", var8);
+      var7.putByte("Type", (byte)Class2119.field13811.method8800());
       CompoundNBT var9 = var5.method32144("Fireworks");
       ListNBT var10 = new ListNBT();
       CompoundNBT var11 = var6.method32145("Explosion");
@@ -64,7 +65,7 @@ public class Class3677 extends Class3676<Class1042> {
          var10.add(var11);
       }
 
-      var9.method100("Flight", (byte)var2);
+      var9.putByte("Flight", (byte)var2);
       if (!var10.isEmpty()) {
          var9.put("Explosions", var10);
       }

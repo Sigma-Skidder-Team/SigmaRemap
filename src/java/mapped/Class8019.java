@@ -38,6 +38,7 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.network.play.server.SSelectAdvancementsTabPacket;
 import net.minecraft.network.play.server.SAdvancementInfoPacket;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SharedConstants;
 import net.minecraft.util.text.ChatType;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.GameRules;

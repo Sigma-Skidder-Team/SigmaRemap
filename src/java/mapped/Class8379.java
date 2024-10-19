@@ -4,7 +4,7 @@ import java.lang.reflect.Field;
 import javax.crypto.Cipher;
 
 public class Class8379 {
-   public static void method29373() {
+   public static void override() {
       try {
          if (Cipher.getMaxAllowedKeyLength("AES") < 256) {
             Field var2 = Class.forName("javax.crypto.JceSecurity").getDeclaredField("isRestricted");

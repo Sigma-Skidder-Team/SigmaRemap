@@ -5,7 +5,7 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
 import it.unimi.dsi.fastutil.objects.ObjectArraySet;
-import mapped.ListNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.nbt.CompoundNBT;
 
@@ -165,8 +165,8 @@ public class ModifiableAttributeInstance {
 
    public CompoundNBT writeInstances() {
       CompoundNBT var3 = new CompoundNBT();
-      var3.method109("Name", Registry.ATTRIBUTE.getKey(this.field45827).toString());
-      var3.method108("Base", this.field45831);
+      var3.putString("Name", Registry.ATTRIBUTE.getKey(this.field45827).toString());
+      var3.putDouble("Base", this.field45831);
       if (!this.field45830.isEmpty()) {
          ListNBT var4 = new ListNBT();
 
@@ -183,10 +183,10 @@ public class ModifiableAttributeInstance {
    public void method38679(CompoundNBT var1) {
       this.field45831 = var1.getDouble("Base");
       if (var1.contains("Modifiers", 9)) {
-         ListNBT var4 = var1.method131("Modifiers", 10);
+         ListNBT var4 = var1.getList("Modifiers", 10);
 
          for (int var5 = 0; var5 < var4.size(); var5++) {
-            AttributeModifier var6 = AttributeModifier.method37935(var4.method153(var5));
+            AttributeModifier var6 = AttributeModifier.method37935(var4.getCompound(var5));
             if (var6 != null) {
                this.field45829.put(var6.getID(), var6);
                this.method38662(var6.getOperation()).add(var6);

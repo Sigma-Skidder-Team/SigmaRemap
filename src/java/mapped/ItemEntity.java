@@ -256,11 +256,11 @@ public class ItemEntity extends Entity {
       var1.putShort("Age", (short)this.field5515);
       var1.putShort("PickupDelay", (short)this.field5516);
       if (this.method4128() != null) {
-         var1.method104("Thrower", this.method4128());
+         var1.putUniqueID("Thrower", this.method4128());
       }
 
       if (this.method4126() != null) {
-         var1.method104("Owner", this.method4126());
+         var1.putUniqueID("Owner", this.method4126());
       }
 
       if (!this.method4124().isEmpty()) {
@@ -276,12 +276,12 @@ public class ItemEntity extends Entity {
          this.field5516 = var1.getShort("PickupDelay");
       }
 
-      if (var1.method106("Owner")) {
-         this.field5519 = var1.method105("Owner");
+      if (var1.hasUniqueID("Owner")) {
+         this.field5519 = var1.getUniqueID("Owner");
       }
 
-      if (var1.method106("Thrower")) {
-         this.field5518 = var1.method105("Thrower");
+      if (var1.hasUniqueID("Thrower")) {
+         this.field5518 = var1.getUniqueID("Thrower");
       }
 
       CompoundNBT var4 = var1.getCompound("Item");

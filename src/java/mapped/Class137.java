@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextComponent$Serializer;
 
@@ -84,7 +85,7 @@ public class Class137 extends Class128 {
             return var7;
          }
       } else {
-         return var6.method131("Lore", 8);
+         return var6.getList("Lore", 8);
       }
    }
 

@@ -12,6 +12,7 @@ import mapped.*;
 import net.minecraft.state.Property;
 import net.minecraft.util.DefaultUncaughtExceptionHandler;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SharedConstants;
 import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -154,7 +155,7 @@ public class Util {
 
    @Nullable
    public static Type<?> method38500(TypeReference var0, String var1) {
-      return SharedConstants.field42544 ? method38501(var0, var1) : null;
+      return SharedConstants.useDataFixers ? method38501(var0, var1) : null;
    }
 
    @Nullable

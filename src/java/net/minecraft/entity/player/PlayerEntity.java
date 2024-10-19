@@ -25,6 +25,7 @@ import net.minecraft.item.Items;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
@@ -716,7 +717,7 @@ public abstract class PlayerEntity extends LivingEntity {
    public void readAdditional(CompoundNBT var1) {
       super.readAdditional(var1);
       this.setUniqueId(method2960(this.field4926));
-      ListNBT var4 = var1.method131("Inventory", 10);
+      ListNBT var4 = var1.getList("Inventory", 10);
       this.inventory.method4051(var4);
       this.inventory.currentItem = var1.getInt("SelectedItemSlot");
       this.field4917 = var1.getShort("SleepTimer");
@@ -733,7 +734,7 @@ public abstract class PlayerEntity extends LivingEntity {
       this.abilities.read(var1);
       this.getAttribute(Attributes.MOVEMENT_SPEED).method38661((double)this.abilities.getWalkSpeed());
       if (var1.contains("EnderItems", 9)) {
-         this.field4903.method3682(var1.method131("EnderItems", 10));
+         this.field4903.method3682(var1.getList("EnderItems", 10));
       }
 
       if (var1.contains("ShoulderEntityLeft", 10)) {
@@ -760,11 +761,11 @@ public abstract class PlayerEntity extends LivingEntity {
       this.foodStats.method37573(var1);
       this.abilities.method20712(var1);
       var1.put("EnderItems", this.field4903.method3683());
-      if (!this.method2969().method134()) {
+      if (!this.method2969().isEmpty()) {
          var1.put("ShoulderEntityLeft", this.method2969());
       }
 
-      if (!this.method2971().method134()) {
+      if (!this.method2971().isEmpty()) {
          var1.put("ShoulderEntityRight", this.method2971());
       }
    }
@@ -1771,11 +1772,11 @@ public abstract class PlayerEntity extends LivingEntity {
    public boolean method2948(CompoundNBT var1) {
       if (this.isPassenger() || !this.onGround || this.isInWater()) {
          return false;
-      } else if (this.method2969().method134()) {
+      } else if (this.method2969().isEmpty()) {
          this.method2970(var1);
          this.field4901 = this.world.getGameTime();
          return true;
-      } else if (!this.method2971().method134()) {
+      } else if (!this.method2971().isEmpty()) {
          return false;
       } else {
          this.method2972(var1);
@@ -1794,7 +1795,7 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    private void method2950(CompoundNBT var1) {
-      if (!this.world.isRemote && !var1.method134()) {
+      if (!this.world.isRemote && !var1.isEmpty()) {
          EntityType.method33217(var1, this.world).ifPresent(var1x -> {
             if (var1x instanceof TameableEntity) {
                ((TameableEntity)var1x).method4398(this.entityUniqueID);

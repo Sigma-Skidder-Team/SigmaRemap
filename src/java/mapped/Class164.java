@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.NBTUtil;
 import net.minecraft.state.Property;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.CachedBlockInfo;
@@ -42,7 +43,7 @@ public class Class164 implements Predicate<CachedBlockInfo> {
             return true;
          } else {
             TileEntity var7 = var1.method37549();
-            return var7 != null && Class8354.method29280(this.field531, var7.write(new CompoundNBT()), true);
+            return var7 != null && NBTUtil.areNBTEquals(this.field531, var7.write(new CompoundNBT()), true);
          }
       }
    }
@@ -57,7 +58,7 @@ public class Class164 implements Predicate<CachedBlockInfo> {
          if (this.field531 != null) {
             TileEntity var7 = var1.getTileEntity(var2);
             if (var7 != null) {
-               CompoundNBT var8 = this.field531.method79();
+               CompoundNBT var8 = this.field531.copy();
                var8.putInt("x", var2.getX());
                var8.putInt("y", var2.getY());
                var8.putInt("z", var2.getZ());

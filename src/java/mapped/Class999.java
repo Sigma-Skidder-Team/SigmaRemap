@@ -7,6 +7,7 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.block.material.PushReaction;
 import net.minecraft.entity.*;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -334,8 +335,8 @@ public class Class999 extends Entity {
       this.field5510 = var1.getFloat("RadiusOnUse");
       this.field5511 = var1.getFloat("RadiusPerTick");
       this.method4097(var1.getFloat("Radius"));
-      if (var1.method106("Owner")) {
-         this.field5513 = var1.method105("Owner");
+      if (var1.hasUniqueID("Owner")) {
+         this.field5513 = var1.getUniqueID("Owner");
       }
 
       if (var1.contains("Particle", 8)) {
@@ -355,11 +356,11 @@ public class Class999 extends Entity {
       }
 
       if (var1.contains("Effects", 9)) {
-         ListNBT var4 = var1.method131("Effects", 10);
+         ListNBT var4 = var1.getList("Effects", 10);
          this.field5503.clear();
 
          for (int var5 = 0; var5 < var4.size(); var5++) {
-            EffectInstance var6 = EffectInstance.method8639(var4.method153(var5));
+            EffectInstance var6 = EffectInstance.method8639(var4.getCompound(var5));
             if (var6 != null) {
                this.method4101(var6);
             }
@@ -377,9 +378,9 @@ public class Class999 extends Entity {
       var1.putFloat("RadiusOnUse", this.field5510);
       var1.putFloat("RadiusPerTick", this.field5511);
       var1.putFloat("Radius", this.method4098());
-      var1.method109("Particle", this.method4104().getParameters());
+      var1.putString("Particle", this.method4104().getParameters());
       if (this.field5513 != null) {
-         var1.method104("Owner", this.field5513);
+         var1.putUniqueID("Owner", this.field5513);
       }
 
       if (this.field5508) {
@@ -387,7 +388,7 @@ public class Class999 extends Entity {
       }
 
       if (this.field5502 != Class8137.field34976 && this.field5502 != null) {
-         var1.method109("Potion", Registry.field16076.getKey(this.field5502).toString());
+         var1.putString("Potion", Registry.field16076.getKey(this.field5502).toString());
       }
 
       if (!this.field5503.isEmpty()) {

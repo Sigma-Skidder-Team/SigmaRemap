@@ -8,7 +8,7 @@ public class Beeee {
    private final int field43286;
 
    public Beeee(CompoundNBT var1, int var2, int var3) {
-      var1.method133("UUID");
+      var1.remove("UUID");
       this.field43284 = var1;
       this.field43285 = var2;
       this.field43286 = var3;

@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.util.SharedConstants;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;

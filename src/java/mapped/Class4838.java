@@ -59,7 +59,7 @@ public class Class4838 extends Class4837 {
 
       ItemStack var9 = Class3368.method11958(var5.method11876());
       if (var4.method32141()) {
-         var9.setTag(var4.getTag().method79());
+         var9.setTag(var4.getTag().copy());
       }
 
       return var9;

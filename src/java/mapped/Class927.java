@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.util.NonNullList;
 
 import java.util.List;
@@ -212,7 +213,7 @@ public class Class927 implements IInventory, Class925 {
 
    public void method3682(ListNBT var1) {
       for (int var4 = 0; var4 < var1.size(); var4++) {
-         ItemStack var5 = ItemStack.method32104(var1.method153(var4));
+         ItemStack var5 = ItemStack.method32104(var1.getCompound(var4));
          if (!var5.isEmpty()) {
             this.method3676(var5);
          }

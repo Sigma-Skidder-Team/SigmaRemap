@@ -27,7 +27,7 @@ public abstract class Class4194 extends Class4178 {
 
    @Override
    public void method12897(CompoundNBT var1) {
-      var1.method109("EntryDoor", this.field20495.name());
+      var1.putString("EntryDoor", this.field20495.name());
    }
 
    public void method12984(ISeedReader var1, Random var2, MutableBoundingBox var3, Class2213 var4, int var5, int var6, int var7) {

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.nbt.NumberNBT;
+import net.minecraft.nbt.INBTType;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
@@ -9,17 +10,17 @@ import net.minecraft.util.text.StringTextComponent;
 import java.io.DataOutput;
 import java.io.IOException;
 
-public class Class32 extends NumberNBT {
-   public static final Class32 field60 = new Class32(0.0F);
-   public static final Class7052<Class32> field61 = new Class7056();
+public class FloatNBT extends NumberNBT {
+   public static final FloatNBT field60 = new FloatNBT(0.0F);
+   public static final INBTType<FloatNBT> field61 = new Class7056();
    private final float field62;
 
-   private Class32(float var1) {
+   private FloatNBT(float var1) {
       this.field62 = var1;
    }
 
-   public static Class32 method90(float var0) {
-      return var0 != 0.0F ? new Class32(var0) : field60;
+   public static FloatNBT valueOf(float var0) {
+      return var0 != 0.0F ? new FloatNBT(var0) : field60;
    }
 
    @Override
@@ -28,12 +29,12 @@ public class Class32 extends NumberNBT {
    }
 
    @Override
-   public byte getId() {
+   public byte getID() {
       return 5;
    }
 
    @Override
-   public Class7052<Class32> method75() {
+   public INBTType<FloatNBT> getType() {
       return field61;
    }
 
@@ -42,13 +43,13 @@ public class Class32 extends NumberNBT {
       return this.field62 + "f";
    }
 
-   public Class32 method79() {
+   public FloatNBT copy() {
       return this;
    }
 
    @Override
    public boolean equals(Object var1) {
-      return this == var1 ? true : var1 instanceof Class32 && this.field62 == ((Class32)var1).field62;
+      return this == var1 ? true : var1 instanceof FloatNBT && this.field62 == ((FloatNBT)var1).field62;
    }
 
    @Override
@@ -57,9 +58,9 @@ public class Class32 extends NumberNBT {
    }
 
    @Override
-   public ITextComponent method78(String var1, int var2) {
-      IFormattableTextComponent var5 = new StringTextComponent("f").mergeStyle(field59);
-      return new StringTextComponent(String.valueOf(this.field62)).append(var5).mergeStyle(field58);
+   public ITextComponent toFormattedComponent(String indentation, int indentDepth) {
+      IFormattableTextComponent var5 = new StringTextComponent("f").mergeStyle(SYNTAX_HIGHLIGHTING_NUMBER_TYPE);
+      return new StringTextComponent(String.valueOf(this.field62)).append(var5).mergeStyle(SYNTAX_HIGHLIGHTING_NUMBER);
    }
 
    @Override

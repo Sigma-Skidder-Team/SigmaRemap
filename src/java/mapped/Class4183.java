@@ -57,10 +57,10 @@ public class Class4183 extends Class4180 {
    @Override
    public void method12897(CompoundNBT var1) {
       super.method12897(var1);
-      var1.method109("Template", this.field20462.toString());
-      var1.method109("Rot", this.field20463.name());
+      var1.putString("Template", this.field20462.toString());
+      var1.putString("Rot", this.field20463.name());
       var1.putFloat("Integrity", this.field20461);
-      var1.method109("BiomeType", this.field20460.toString());
+      var1.putString("BiomeType", this.field20460.toString());
       var1.putBoolean("IsLarge", this.field20464);
    }
 

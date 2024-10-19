@@ -9,7 +9,9 @@ import javax.annotation.Nullable;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.StringUtils;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
@@ -38,7 +40,7 @@ public abstract class Class7574 {
       String var3 = this.field32518.method20414().getString("id");
 
       try {
-         return Class9001.method33256(var3) ? null : new ResourceLocation(var3);
+         return StringUtils.isNullOrEmpty(var3) ? null : new ResourceLocation(var3);
       } catch (Class2496 var6) {
          BlockPos var5 = this.method24787();
          field32515.warn(
@@ -54,7 +56,7 @@ public abstract class Class7574 {
    }
 
    public void method24790(EntityType<?> var1) {
-      this.field32518.method20414().method109("id", Registry.ENTITY_TYPE.getKey(var1).toString());
+      this.field32518.method20414().putString("id", Registry.ENTITY_TYPE.getKey(var1).toString());
    }
 
    private boolean method24791() {
@@ -87,15 +89,15 @@ public abstract class Class7574 {
                   return;
                }
 
-               ListNBT var15 = var13.method131("Pos", 6);
+               ListNBT var15 = var13.getList("Pos", 6);
                int var16 = var15.size();
                double var17 = var16 < 1
                   ? (double)var4.getX() + (var3.rand.nextDouble() - var3.rand.nextDouble()) * (double)this.field32527 + 0.5
-                  : var15.method158(0);
-               double var19 = var16 < 2 ? (double)(var4.getY() + var3.rand.nextInt(3) - 1) : var15.method158(1);
+                  : var15.getDouble(0);
+               double var19 = var16 < 2 ? (double)(var4.getY() + var3.rand.nextInt(3) - 1) : var15.getDouble(1);
                double var21 = var16 < 3
                   ? (double)var4.getZ() + (var3.rand.nextDouble() - var3.rand.nextDouble()) * (double)this.field32527 + 0.5
-                  : var15.method158(2);
+                  : var15.getDouble(2);
                if (var3.hasNoCollisions(((EntityType)var14.get()).method33219(var17, var19, var21))) {
                   ServerWorld var23 = (ServerWorld)var3;
                   if (Class6914.method21122((EntityType)var14.get(), var23, Class2202.field14393, new BlockPos(var17, var19, var21), var3.method6814())) {
@@ -133,7 +135,7 @@ public abstract class Class7574 {
                            continue;
                         }
 
-                        if (this.field32518.method20414().method98() == 1 && this.field32518.method20414().contains("id", 8)) {
+                        if (this.field32518.method20414().size() == 1 && this.field32518.method20414().contains("id", 8)) {
                            ((MobEntity)var24).method4276(var23, var3.method6807(var24.getPosition()), Class2202.field14393, (Class5093)null, (CompoundNBT)null);
                         }
                      }
@@ -193,10 +195,10 @@ public abstract class Class7574 {
       this.field32516 = var1.getShort("Delay");
       this.field32517.clear();
       if (var1.contains("SpawnPotentials", 9)) {
-         ListNBT var4 = var1.method131("SpawnPotentials", 10);
+         ListNBT var4 = var1.getList("SpawnPotentials", 10);
 
          for (int var5 = 0; var5 < var4.size(); var5++) {
-            this.field32517.add(new Class6693(var4.method153(var5)));
+            this.field32517.add(new Class6693(var4.getCompound(var5)));
          }
       }
 
@@ -240,7 +242,7 @@ public abstract class Class7574 {
          var1.putShort("MaxNearbyEntities", (short)this.field32525);
          var1.putShort("RequiredPlayerRange", (short)this.field32526);
          var1.putShort("SpawnRange", (short)this.field32527);
-         var1.put("SpawnData", this.field32518.method20414().method79());
+         var1.put("SpawnData", this.field32518.method20414().copy());
          ListNBT var5 = new ListNBT();
          if (!this.field32517.isEmpty()) {
             for (Class6693 var7 : this.field32517) {
@@ -259,7 +261,7 @@ public abstract class Class7574 {
    public Entity method24796() {
       if (this.field32524 == null) {
          this.field32524 = EntityType.method33223(this.field32518.method20414(), this.method24786(), Function.<Entity>identity());
-         if (this.field32518.method20414().method98() == 1 && this.field32518.method20414().contains("id", 8) && !(this.field32524 instanceof MobEntity)) {
+         if (this.field32518.method20414().size() == 1 && this.field32518.method20414().contains("id", 8) && !(this.field32524 instanceof MobEntity)) {
          }
       }
 

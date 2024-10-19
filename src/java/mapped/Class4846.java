@@ -31,7 +31,7 @@ public class Class4846 implements IRecipe<IInventory> {
       ItemStack var4 = this.field22628.copy();
       CompoundNBT var5 = var1.getStackInSlot(0).getTag();
       if (var5 != null) {
-         var4.setTag(var5.method79());
+         var4.setTag(var5.copy());
       }
 
       return var4;

@@ -7,9 +7,11 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
+import net.minecraft.util.StringUtils;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.*;
 import net.minecraft.world.World;
@@ -40,7 +42,7 @@ public class Class3285 extends Item {
 
    public static int method11819(ItemStack var0) {
       CompoundNBT var3 = var0.getTag();
-      return var3 == null ? 0 : var3.method131("pages", 8).size();
+      return var3 == null ? 0 : var3.getList("pages", 8).size();
    }
 
    @Override
@@ -48,7 +50,7 @@ public class Class3285 extends Item {
       if (var1.method32141()) {
          CompoundNBT var4 = var1.getTag();
          String var5 = var4.getString("title");
-         if (!Class9001.method33256(var5)) {
+         if (!StringUtils.isNullOrEmpty(var5)) {
             return new StringTextComponent(var5);
          }
       }
@@ -61,7 +63,7 @@ public class Class3285 extends Item {
       if (var1.method32141()) {
          CompoundNBT var7 = var1.getTag();
          String var8 = var7.getString("author");
-         if (!Class9001.method33256(var8)) {
+         if (!StringUtils.isNullOrEmpty(var8)) {
             var3.add(new TranslationTextComponent("book.byAuthor", var8).mergeStyle(TextFormatting.GRAY));
          }
 
@@ -96,10 +98,10 @@ public class Class3285 extends Item {
          if (!method11817(var5)) {
             return false;
          } else {
-            ListNBT var6 = var5.method131("pages", 8);
+            ListNBT var6 = var5.getList("pages", 8);
 
             for (int var7 = 0; var7 < var6.size(); var7++) {
-               String var8 = var6.method160(var7);
+               String var8 = var6.getString(var7);
 
                Object var9;
                try {

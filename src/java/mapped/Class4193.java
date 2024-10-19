@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.mojang.serialization.Dynamic;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
@@ -47,7 +48,7 @@ public class Class4193 extends Class4178 {
          .orElse(Class7486.field32182);
       this.field20492 = Rotation.valueOf(var2.getString("rotation"));
       this.field20444 = this.field20489.method24375(var1, this.field20490, this.field20492);
-      ListNBT var5 = var2.method131("junctions", 10);
+      ListNBT var5 = var2.getList("junctions", 10);
       this.field20493.clear();
       var5.forEach(var1x -> this.field20493.add(Class3637.method12349(new Dynamic(NBTDynamicOps.INSTANCE, var1x))));
    }
@@ -62,7 +63,7 @@ public class Class4193 extends Class4178 {
          .encodeStart(NBTDynamicOps.INSTANCE, this.field20489)
          .resultOrPartial(field20488::error)
          .ifPresent(var1x -> var1.put("pool_element", var1x));
-      var1.method109("rotation", this.field20492.name());
+      var1.putString("rotation", this.field20492.name());
       ListNBT var4 = new ListNBT();
 
       for (Class3637 var6 : this.field20493) {

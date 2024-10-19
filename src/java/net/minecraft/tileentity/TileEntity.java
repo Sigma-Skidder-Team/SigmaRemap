@@ -55,7 +55,7 @@ public abstract class TileEntity {
    private CompoundNBT method3771(CompoundNBT var1) {
       ResourceLocation var4 = TileEntityType.method13793(this.method3786());
       if (var4 != null) {
-         var1.method109("id", var4.toString());
+         var1.putString("id", var4.toString());
          var1.putInt("x", this.pos.getX());
          var1.putInt("y", this.pos.getY());
          var1.putInt("z", this.pos.getZ());

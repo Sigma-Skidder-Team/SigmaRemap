@@ -7,6 +7,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.NBTUtil;
 import net.minecraft.tileentity.SkullTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
@@ -32,7 +33,7 @@ public class Class3345 extends Class3343 {
                   var10 = new GameProfile((UUID)null, var11.getString("SkullOwner"));
                }
             } else {
-               var10 = Class8354.method29278(var11.getCompound("SkullOwner"));
+               var10 = NBTUtil.readGameProfile(var11.getCompound("SkullOwner"));
             }
          }
 

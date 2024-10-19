@@ -207,7 +207,7 @@ public class Class1114 extends Class1113 {
    @Override
    public void writeAdditional(CompoundNBT var1) {
       super.writeAdditional(var1);
-      var1.method100("BatFlags", this.dataManager.<Byte>method35445(field6093));
+      var1.putByte("BatFlags", this.dataManager.<Byte>method35445(field6093));
    }
 
    public static boolean method5366(EntityType<Class1114> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {

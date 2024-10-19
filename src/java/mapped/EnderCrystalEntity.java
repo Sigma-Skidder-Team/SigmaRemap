@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.NBTUtil;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -57,7 +58,7 @@ public class EnderCrystalEntity extends Entity {
    @Override
    public void writeAdditional(CompoundNBT var1) {
       if (this.method4143() != null) {
-         var1.put("BeamTarget", Class8354.method29284(this.method4143()));
+         var1.put("BeamTarget", NBTUtil.method29284(this.method4143()));
       }
 
       var1.putBoolean("ShowBottom", this.method4145());
@@ -66,7 +67,7 @@ public class EnderCrystalEntity extends Entity {
    @Override
    public void readAdditional(CompoundNBT var1) {
       if (var1.contains("BeamTarget", 10)) {
-         this.method4142(Class8354.method29283(var1.getCompound("BeamTarget")));
+         this.method4142(NBTUtil.method29283(var1.getCompound("BeamTarget")));
       }
 
       if (var1.contains("ShowBottom", 1)) {

@@ -45,9 +45,9 @@ public abstract class Class939 extends Class932 {
 
    public boolean checkLootAndWrite(CompoundNBT var1) {
       if (this.field5302 != null) {
-         var1.method109("LootTable", this.field5302.toString());
+         var1.putString("LootTable", this.field5302.toString());
          if (this.field5303 != 0L) {
-            var1.method103("LootTableSeed", this.field5303);
+            var1.putLong("LootTableSeed", this.field5303);
          }
 
          return true;

@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.*;
 import com.mojang.serialization.Codec;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.util.math.BlockPos;
@@ -93,13 +94,13 @@ public abstract class Structure<C extends Class4698> {
             int var9 = var1.getInt("ChunkZ");
             int var10 = var1.getInt("references");
             MutableBoundingBox var11 = var1.contains("BB") ? new MutableBoundingBox(var1.getIntArray("BB")) : MutableBoundingBox.method38386();
-            ListNBT var12 = var1.method131("Children", 10);
+            ListNBT var12 = var1.getList("Children", 10);
 
             try {
                StructureStart var13 = var7.method11371(var8, var9, var11, var10, var2);
 
                for (int var14 = 0; var14 < var12.size(); var14++) {
-                  CompoundNBT var15 = var12.method153(var14);
+                  CompoundNBT var15 = var12.getCompound(var14);
                   String var16 = var15.getString("id").toLowerCase(Locale.ROOT);
                   ResourceLocation var17 = new ResourceLocation(var16);
                   ResourceLocation var18 = field18078.getOrDefault(var17, var17);

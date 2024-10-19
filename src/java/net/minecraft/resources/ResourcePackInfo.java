@@ -9,6 +9,7 @@ import javax.annotation.Nullable;
 
 import mapped.*;
 import net.minecraft.resources.data.PackMetadataSection;
+import net.minecraft.util.SharedConstants;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextComponentUtils;

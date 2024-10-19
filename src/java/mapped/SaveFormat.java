@@ -34,6 +34,7 @@ import net.minecraft.client.util.Util;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.CompressedStreamTools;
 import net.minecraft.nbt.INBT;
+import net.minecraft.util.SharedConstants;
 import net.minecraft.util.datafix.codec.DatapackCodec;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -181,7 +182,7 @@ public class SaveFormat {
       try {
          CompoundNBT var4 = CompressedStreamTools.readCompressed(var0);
          CompoundNBT var5 = var4.getCompound("Data");
-         var5.method133("Player");
+         var5.remove("Player");
          int var6 = var5.contains("DataVersion", 99) ? var5.getInt("DataVersion") : -1;
          Dynamic<INBT> var7 = var1.update(Class2108.field13748.method8778(), new Dynamic(NBTDynamicOps.INSTANCE, var5), var6, SharedConstants.getVersion().getWorldVersion());
          return var7.get("DataPacks").result().map(SaveFormat::method38457).orElse(DatapackCodec.VANILLA_CODEC);
@@ -197,7 +198,7 @@ public class SaveFormat {
             CompoundNBT var6 = CompressedStreamTools.readCompressed(var2);
             CompoundNBT var7 = var6.getCompound("Data");
             CompoundNBT var8 = var7.contains("Player", 10) ? var7.getCompound("Player") : null;
-            var7.method133("Player");
+            var7.remove("Player");
             int var9 = var7.contains("DataVersion", 99) ? var7.getInt("DataVersion") : -1;
             Dynamic var10 = var3.update(Class2108.field13748.method8778(), new Dynamic(var0, var7), var9, SharedConstants.getVersion().getWorldVersion());
             Pair var11 = method38456(var10, var3, var9);
@@ -216,7 +217,7 @@ public class SaveFormat {
          try {
             CompoundNBT var7 = CompressedStreamTools.readCompressed(var3);
             CompoundNBT var8 = var7.getCompound("Data");
-            var8.method133("Player");
+            var8.remove("Player");
             int var9 = var8.contains("DataVersion", 99) ? var8.getInt("DataVersion") : -1;
             Dynamic<INBT> var10 = var4.update(
                Class2108.field13748.method8778(), new Dynamic(NBTDynamicOps.INSTANCE, var8), var9, SharedConstants.getVersion().getWorldVersion()
@@ -431,7 +432,7 @@ public class SaveFormat {
             if (var5.exists()) {
                CompoundNBT var6 = CompressedStreamTools.readCompressed(var5);
                CompoundNBT var7 = var6.getCompound("Data");
-               var7.method109("LevelName", var1);
+               var7.putString("LevelName", var1);
                CompressedStreamTools.writeCompressed(var6, var5);
             }
          }

@@ -11,6 +11,7 @@ import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.NBTUtil;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
@@ -144,7 +145,7 @@ public class EndermanEntity extends MonsterEntity implements IAngerable {
       super.writeAdditional(var1);
       BlockState var4 = this.method4357();
       if (var4 != null) {
-         var1.put("carriedBlockState", Class8354.method29287(var4));
+         var1.put("carriedBlockState", NBTUtil.method29287(var4));
       }
 
       this.method4364(var1);
@@ -155,7 +156,7 @@ public class EndermanEntity extends MonsterEntity implements IAngerable {
       super.readAdditional(var1);
       BlockState var4 = null;
       if (var1.contains("carriedBlockState", 10)) {
-         var4 = Class8354.method29285(var1.getCompound("carriedBlockState"));
+         var4 = NBTUtil.method29285(var1.getCompound("carriedBlockState"));
          if (var4.isAir()) {
             var4 = null;
          }

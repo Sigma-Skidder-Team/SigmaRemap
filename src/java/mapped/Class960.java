@@ -41,7 +41,7 @@ public class Class960 extends TileEntity implements ITickableTileEntity {
    @Override
    public CompoundNBT method3777() {
       CompoundNBT var3 = this.write(new CompoundNBT());
-      var3.method133("SpawnPotentials");
+      var3.remove("SpawnPotentials");
       return var3;
    }
 

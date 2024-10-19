@@ -7,6 +7,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.NBTUtil;
 import net.minecraft.tileentity.SkullTileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.vector.Vector3f;
@@ -61,11 +62,11 @@ public class Class235<T extends LivingEntity, M extends Class2827<T> & IHasHead>
                      String var19 = var18.getString("SkullOwner");
                      if (!StringUtils.isBlank(var19)) {
                         var22 = SkullTileEntity.method4008(new GameProfile((UUID)null, var19));
-                        var18.put("SkullOwner", Class8354.method29279(new CompoundNBT(), var22));
+                        var18.put("SkullOwner", NBTUtil.writeGameProfile(new CompoundNBT(), var22));
                      }
                   }
                } else {
-                  var22 = Class8354.method29278(var18.getCompound("SkullOwner"));
+                  var22 = NBTUtil.readGameProfile(var18.getCompound("SkullOwner"));
                }
             }
 

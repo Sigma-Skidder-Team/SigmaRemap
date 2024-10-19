@@ -26,7 +26,7 @@ public class HoverEvent$ItemHover {
    }
 
    public HoverEvent$ItemHover(ItemStack stack) {
-      this(stack.getItem(), stack.getCount(), stack.getTag() != null ? stack.getTag().method79() : null);
+      this(stack.getItem(), stack.getCount(), stack.getTag() != null ? stack.getTag().copy() : null);
    }
 
    @Override

@@ -4,6 +4,7 @@ import com.mojang.realmsclient.dto.RealmsServer;
 import com.mojang.realmsclient.exception.RealmsServiceException;
 import mapped.*;
 import net.minecraft.client.Minecraft;
+import net.minecraft.util.SharedConstants;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

@@ -1,6 +1,7 @@
 package mapped;
 
 import it.unimi.dsi.fastutil.ints.Int2BooleanFunction;
+import net.minecraft.util.SharedConstants;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

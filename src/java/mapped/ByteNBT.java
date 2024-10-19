@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.nbt.NumberNBT;
+import net.minecraft.nbt.INBTType;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -8,21 +9,21 @@ import net.minecraft.util.text.StringTextComponent;
 import java.io.DataOutput;
 import java.io.IOException;
 
-public class Class33 extends NumberNBT {
-   public static final Class7052<Class33> field63 = new Class7063();
-   public static final Class33 field64 = method91((byte)0);
-   public static final Class33 field65 = method91((byte)1);
+public class ByteNBT extends NumberNBT {
+   public static final INBTType<ByteNBT> field63 = new Class7063();
+   public static final ByteNBT field64 = valueOf((byte)0);
+   public static final ByteNBT field65 = valueOf((byte)1);
    private final byte field66;
 
-   private Class33(byte var1) {
+   private ByteNBT(byte var1) {
       this.field66 = var1;
    }
 
-   public static Class33 method91(byte var0) {
+   public static ByteNBT valueOf(byte var0) {
       return Class8383.method29376()[128 + var0];
    }
 
-   public static Class33 method92(boolean var0) {
+   public static ByteNBT valueOf(boolean var0) {
       return !var0 ? field64 : field65;
    }
 
@@ -32,12 +33,12 @@ public class Class33 extends NumberNBT {
    }
 
    @Override
-   public byte getId() {
+   public byte getID() {
       return 1;
    }
 
    @Override
-   public Class7052<Class33> method75() {
+   public INBTType<ByteNBT> getType() {
       return field63;
    }
 
@@ -46,13 +47,13 @@ public class Class33 extends NumberNBT {
       return this.field66 + "b";
    }
 
-   public Class33 method79() {
+   public ByteNBT copy() {
       return this;
    }
 
    @Override
    public boolean equals(Object var1) {
-      return this == var1 ? true : var1 instanceof Class33 && this.field66 == ((Class33)var1).field66;
+      return this == var1 ? true : var1 instanceof ByteNBT && this.field66 == ((ByteNBT)var1).field66;
    }
 
    @Override
@@ -61,9 +62,9 @@ public class Class33 extends NumberNBT {
    }
 
    @Override
-   public ITextComponent method78(String var1, int var2) {
-      IFormattableTextComponent var5 = new StringTextComponent("b").mergeStyle(field59);
-      return new StringTextComponent(String.valueOf(this.field66)).append(var5).mergeStyle(field58);
+   public ITextComponent toFormattedComponent(String indentation, int indentDepth) {
+      IFormattableTextComponent var5 = new StringTextComponent("b").mergeStyle(SYNTAX_HIGHLIGHTING_NUMBER_TYPE);
+      return new StringTextComponent(String.valueOf(this.field66)).append(var5).mergeStyle(SYNTAX_HIGHLIGHTING_NUMBER);
    }
 
    @Override
@@ -102,7 +103,7 @@ public class Class33 extends NumberNBT {
    }
 
    // $VF: synthetic method
-   public Class33(byte var1, Class7063 var2) {
+   public ByteNBT(byte var1, Class7063 var2) {
       this(var1);
    }
 }

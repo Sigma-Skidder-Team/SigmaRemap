@@ -66,7 +66,7 @@ public class Class1040 extends ZombieEntity implements Class1041 {
 
       var1.putInt("ConversionTime", !this.method4667() ? -1 : this.field5771);
       if (this.field5772 != null) {
-         var1.method104("ConversionPlayer", this.field5772);
+         var1.putUniqueID("ConversionPlayer", this.field5772);
       }
 
       var1.putInt("Xp", this.field5775);
@@ -76,7 +76,7 @@ public class Class1040 extends ZombieEntity implements Class1041 {
    public void readAdditional(CompoundNBT var1) {
       super.readAdditional(var1);
       if (var1.contains("VillagerData", 10)) {
-         DataResult<Class7921> var4 = Class7921.field33913.parse(new Dynamic<>(NBTDynamicOps.INSTANCE, var1.method116("VillagerData")));
+         DataResult<Class7921> var4 = Class7921.field33913.parse(new Dynamic<>(NBTDynamicOps.INSTANCE, var1.get("VillagerData")));
          var4.resultOrPartial(LOGGER::error).ifPresent(this::method4673);
       }
 
@@ -85,11 +85,11 @@ public class Class1040 extends ZombieEntity implements Class1041 {
       }
 
       if (var1.contains("Gossips", 10)) {
-         this.field5773 = var1.method131("Gossips", 10);
+         this.field5773 = var1.getList("Gossips", 10);
       }
 
       if (var1.contains("ConversionTime", 99) && var1.getInt("ConversionTime") > -1) {
-         this.method4668(!var1.method106("ConversionPlayer") ? null : var1.method105("ConversionPlayer"), var1.getInt("ConversionTime"));
+         this.method4668(!var1.hasUniqueID("ConversionPlayer") ? null : var1.getUniqueID("ConversionPlayer"), var1.getInt("ConversionTime"));
       }
 
       if (var1.contains("Xp", 3)) {

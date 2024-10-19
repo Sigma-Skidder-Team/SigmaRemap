@@ -13,6 +13,7 @@ import java.util.regex.Pattern;
 import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.CompressedStreamTools;
+import net.minecraft.util.SharedConstants;
 import org.apache.commons.compress.archivers.tar.TarArchiveEntry;
 import org.apache.commons.compress.archivers.tar.TarArchiveInputStream;
 import org.apache.commons.compress.compressors.gzip.GzipCompressorInputStream;
@@ -212,7 +213,7 @@ public class Class9478 {
       Pattern var6 = Pattern.compile(".*-([0-9]+)$");
       int var7 = 1;
 
-      for (char var11 : SharedConstants.field42546) {
+      for (char var11 : SharedConstants.ILLEGAL_FILE_CHARACTERS) {
          var1 = var1.replace(var11, '_');
       }
 
@@ -307,7 +308,7 @@ public class Class9478 {
          try {
             CompoundNBT var3 = CompressedStreamTools.readCompressed(var0);
             CompoundNBT var4 = var3.getCompound("Data");
-            var4.method133("Player");
+            var4.remove("Player");
             CompressedStreamTools.writeCompressed(var3, var0);
          } catch (Exception var5) {
             var5.printStackTrace();

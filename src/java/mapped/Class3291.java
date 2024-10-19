@@ -5,6 +5,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
@@ -42,10 +43,10 @@ public class Class3291 extends Item {
       } else if (!var0.contains("pages", 9)) {
          return false;
       } else {
-         ListNBT var3 = var0.method131("pages", 8);
+         ListNBT var3 = var0.getList("pages", 8);
 
          for (int var4 = 0; var4 < var3.size(); var4++) {
-            String var5 = var3.method160(var4);
+            String var5 = var3.getString(var4);
             if (var5.length() > 32767) {
                return false;
             }

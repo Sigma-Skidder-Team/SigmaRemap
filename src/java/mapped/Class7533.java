@@ -3,8 +3,9 @@ package mapped;
 import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import it.unimi.dsi.fastutil.longs.LongSet;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.world.storage.WorldSavedData;
 
-public class Class7533 extends Class7530 {
+public class Class7533 extends WorldSavedData {
    private LongSet field32337 = new LongOpenHashSet();
    private LongSet field32338 = new LongOpenHashSet();
 
@@ -13,16 +14,16 @@ public class Class7533 extends Class7530 {
    }
 
    @Override
-   public void method24591(CompoundNBT var1) {
-      this.field32337 = new LongOpenHashSet(var1.getLongArray("All"));
-      this.field32338 = new LongOpenHashSet(var1.getLongArray("Remaining"));
+   public void read(CompoundNBT compoundNBT) {
+      this.field32337 = new LongOpenHashSet(compoundNBT.getLongArray("All"));
+      this.field32338 = new LongOpenHashSet(compoundNBT.getLongArray("Remaining"));
    }
 
    @Override
-   public CompoundNBT method24592(CompoundNBT var1) {
-      var1.method113("All", this.field32337.toLongArray());
-      var1.method113("Remaining", this.field32338.toLongArray());
-      return var1;
+   public CompoundNBT write(CompoundNBT compoundNBT) {
+      compoundNBT.putLongArray("All", this.field32337.toLongArray());
+      compoundNBT.putLongArray("Remaining", this.field32338.toLongArray());
+      return compoundNBT;
    }
 
    public void method24619(long var1) {

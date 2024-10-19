@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ObjectIntIdentityMap;
 
@@ -96,7 +97,7 @@ public class Class7834<T> implements Class7833<T> {
       this.field33627.method9279();
 
       for (int var4 = 0; var4 < var1.size(); var4++) {
-         this.field33627.method9272(this.field33629.apply(var1.method153(var4)));
+         this.field33627.method9272(this.field33629.apply(var1.getCompound(var4)));
       }
    }
 

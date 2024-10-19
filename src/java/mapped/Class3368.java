@@ -102,7 +102,7 @@ public class Class3368 extends Class3241 {
          if (!var1.isRemote && var4.isCreative() && !var8.isEmpty()) {
             ItemStack var9 = method11958(this.method11957());
             CompoundNBT var10 = var8.method3754(new CompoundNBT());
-            if (!var10.method134()) {
+            if (!var10.isEmpty()) {
                var9.setTagInfo("BlockEntityTag", var10);
             }
 
@@ -218,7 +218,7 @@ public class Class3368 extends Class3241 {
       ItemStack var6 = super.getItem(var1, var2, var3);
       Class940 var7 = (Class940)var1.getTileEntity(var2);
       CompoundNBT var8 = var7.method3754(new CompoundNBT());
-      if (!var8.method134()) {
+      if (!var8.isEmpty()) {
          var6.setTagInfo("BlockEntityTag", var8);
       }
 

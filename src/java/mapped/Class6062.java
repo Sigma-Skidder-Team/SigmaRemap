@@ -29,7 +29,7 @@ public class Class6062<C> {
       Class6945<C, Class6861<C>> var4 = this.method18796(var1.getClass());
       CompoundNBT var5 = new CompoundNBT();
       var4.method21397(var5, var1);
-      var5.method109("Type", var4.method21398().toString());
+      var5.putString("Type", var4.method21398().toString());
       return var5;
    }
 

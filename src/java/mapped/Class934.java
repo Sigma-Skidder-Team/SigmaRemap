@@ -34,7 +34,7 @@ public class Class934 extends TileEntity implements INameable, ITickableTileEnti
    public CompoundNBT write(CompoundNBT var1) {
       super.write(var1);
       if (this.method3381()) {
-         var1.method109("CustomName", ITextComponent$Serializer.toJson(this.field5292));
+         var1.putString("CustomName", ITextComponent$Serializer.toJson(this.field5292));
       }
 
       return var1;

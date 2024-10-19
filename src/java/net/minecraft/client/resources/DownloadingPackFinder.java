@@ -22,6 +22,7 @@ import net.minecraft.resources.ResourcePackInfo;
 import net.minecraft.resources.VanillaPack;
 import net.minecraft.resources.data.PackMetadataSection;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SharedConstants;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.io.FileUtils;

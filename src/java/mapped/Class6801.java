@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ITickList;
@@ -49,7 +50,7 @@ public class Class6801<T> implements ITickList<T> {
 
       for (Class6575 var5 : this.field29613) {
          CompoundNBT var6 = new CompoundNBT();
-         var6.method109("i", this.field29614.apply((T)Class6575.method19905(var5)).toString());
+         var6.putString("i", this.field29614.apply((T)Class6575.method19905(var5)).toString());
          var6.putInt("x", var5.field28943.getX());
          var6.putInt("y", var5.field28943.getY());
          var6.putInt("z", var5.field28943.getZ());
@@ -65,7 +66,7 @@ public class Class6801<T> implements ITickList<T> {
       ArrayList var5 = Lists.newArrayList();
 
       for (int var6 = 0; var6 < var0.size(); var6++) {
-         CompoundNBT var7 = var0.method153(var6);
+         CompoundNBT var7 = var0.getCompound(var6);
          Object var8 = var2.apply(new ResourceLocation(var7.getString("i")));
          if (var8 != null) {
             BlockPos var9 = new BlockPos(var7.getInt("x"), var7.getInt("y"), var7.getInt("z"));

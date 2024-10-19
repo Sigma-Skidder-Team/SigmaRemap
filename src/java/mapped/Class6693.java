@@ -9,7 +9,7 @@ public class Class6693 extends Class6691 {
    public Class6693() {
       super(1);
       this.field29314 = new CompoundNBT();
-      this.field29314.method109("id", "minecraft:pig");
+      this.field29314.putString("id", "minecraft:pig");
    }
 
    public Class6693(CompoundNBT var1) {
@@ -21,9 +21,9 @@ public class Class6693 extends Class6691 {
       this.field29314 = var2;
       ResourceLocation var5 = ResourceLocation.method8289(var2.getString("id"));
       if (var5 == null) {
-         var2.method109("id", "minecraft:pig");
+         var2.putString("id", "minecraft:pig");
       } else {
-         var2.method109("id", var5.toString());
+         var2.putString("id", var5.toString());
       }
    }
 

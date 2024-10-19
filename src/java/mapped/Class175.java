@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.NBTUtil;
 
 import java.util.function.Predicate;
 
@@ -16,6 +17,6 @@ public class Class175 implements Predicate<ItemStack> {
    }
 
    public boolean test(ItemStack var1) {
-      return this.field560.method24917(var1.getItem()) && Class8354.method29280(this.field561, var1.getTag(), true);
+      return this.field560.method24917(var1.getItem()) && NBTUtil.areNBTEquals(this.field561, var1.getTag(), true);
    }
 }

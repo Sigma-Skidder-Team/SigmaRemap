@@ -14,7 +14,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import mapped.Class2083;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
-import mapped.SharedConstants;
+import net.minecraft.util.SharedConstants;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.lwjgl.opengl.GL11;

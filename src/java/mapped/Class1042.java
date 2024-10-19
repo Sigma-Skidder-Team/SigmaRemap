@@ -19,6 +19,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.network.DebugPacketSender;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -418,11 +419,11 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
          .encodeStart(NBTDynamicOps.INSTANCE, this.method4674())
          .resultOrPartial(LOGGER::error)
          .ifPresent(var1x -> var1.put("VillagerData", var1x));
-      var1.method100("FoodLevel", this.field5782);
+      var1.putByte("FoodLevel", this.field5782);
       var1.put("Gossips", (INBT)this.field5783.method25528(NBTDynamicOps.INSTANCE).getValue());
       var1.putInt("Xp", this.field5786);
-      var1.method103("LastRestock", this.field5787);
-      var1.method103("LastGossipDecay", this.field5785);
+      var1.putLong("LastRestock", this.field5787);
+      var1.putLong("LastGossipDecay", this.field5785);
       var1.putInt("RestocksToday", this.field5788);
       if (this.field5790) {
          var1.putBoolean("AssignProfessionWhenSpawned", true);
@@ -433,7 +434,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
    public void readAdditional(CompoundNBT var1) {
       super.readAdditional(var1);
       if (var1.contains("VillagerData", 10)) {
-         DataResult<Class7921> var4 = Class7921.field33913.parse(new Dynamic<>(NBTDynamicOps.INSTANCE, var1.method116("VillagerData")));
+         DataResult<Class7921> var4 = Class7921.field33913.parse(new Dynamic<>(NBTDynamicOps.INSTANCE, var1.get("VillagerData")));
          var4.resultOrPartial(LOGGER::error).ifPresent(this::method4695);
       }
 
@@ -445,7 +446,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
          this.field5782 = var1.getByte("FoodLevel");
       }
 
-      ListNBT var5 = var1.method131("Gossips", 10);
+      ListNBT var5 = var1.getList("Gossips", 10);
       this.field5783.method25529(new Dynamic(NBTDynamicOps.INSTANCE, var5));
       if (var1.contains("Xp", 3)) {
          this.field5786 = var1.getInt("Xp");

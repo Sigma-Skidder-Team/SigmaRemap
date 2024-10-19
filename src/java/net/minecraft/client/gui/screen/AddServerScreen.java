@@ -3,7 +3,7 @@ package net.minecraft.client.gui.screen;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import it.unimi.dsi.fastutil.booleans.BooleanConsumer;
 import mapped.Class2168;
-import mapped.Class9001;
+import net.minecraft.util.StringUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.widget.TextFieldWidget;
@@ -26,7 +26,7 @@ public class AddServerScreen extends Screen {
     private Button field7043;
     private final Screen field7044;
     private final Predicate<String> field7045 = var0 -> {
-        if (Class9001.method33256(var0)) {
+        if (StringUtils.isNullOrEmpty(var0)) {
             return true;
         } else {
             String[] var3x = var0.split(":");

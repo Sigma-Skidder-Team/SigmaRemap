@@ -45,7 +45,7 @@ public class Class7153 implements Class7151 {
 
    @Override
    public ITextComponent method22314(INBT var1) {
-      return new TranslationTextComponent("commands.data.storage.query", this.field30730, var1.method82());
+      return new TranslationTextComponent("commands.data.storage.query", this.field30730, var1.toFormattedComponent());
    }
 
    @Override

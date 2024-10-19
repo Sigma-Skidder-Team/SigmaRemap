@@ -7,6 +7,8 @@ import java.util.UUID;
 
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
+import net.minecraft.nbt.NBTUtil;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
@@ -135,19 +137,19 @@ public class Class3623 extends Class3624 {
 
    public CompoundNBT method12273() {
       CompoundNBT var3 = new CompoundNBT();
-      var3.method109("Name", ITextComponent$Serializer.toJson(this.field19634));
+      var3.putString("Name", ITextComponent$Serializer.toJson(this.field19634));
       var3.putBoolean("Visible", this.method12286());
       var3.putInt("Value", this.field19627);
       var3.putInt("Max", this.field19628);
-      var3.method109("Color", this.getColor().method9070());
-      var3.method109("Overlay", this.getOverlay().method9067());
+      var3.putString("Color", this.getColor().method9070());
+      var3.putString("Overlay", this.getOverlay().method9067());
       var3.putBoolean("DarkenScreen", this.shouldDarkenSky());
       var3.putBoolean("PlayBossMusic", this.shouldPlayEndBossMusic());
       var3.putBoolean("CreateWorldFog", this.shouldCreateFog());
       ListNBT var4 = new ListNBT();
 
       for (UUID var6 : this.field19626) {
-         var4.add(Class8354.method29281(var6));
+         var4.add(NBTUtil.valueOf(var6));
       }
 
       var3.put("Players", var4);
@@ -164,10 +166,10 @@ public class Class3623 extends Class3624 {
       var4.method12281(var0.getBoolean("DarkenScreen"));
       var4.method12282(var0.getBoolean("PlayBossMusic"));
       var4.method12283(var0.getBoolean("CreateWorldFog"));
-      ListNBT var5 = var0.method131("Players", 11);
+      ListNBT var5 = var0.getList("Players", 11);
 
       for (int var6 = 0; var6 < var5.size(); var6++) {
-         var4.method12264(Class8354.method29282(var5.get(var6)));
+         var4.method12264(NBTUtil.readUniqueID(var5.get(var6)));
       }
 
       return var4;

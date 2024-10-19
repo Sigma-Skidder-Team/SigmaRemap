@@ -12,6 +12,7 @@ import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.util.Util;
 import net.minecraft.realms.RealmsScreen;
+import net.minecraft.util.SharedConstants;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.commons.compress.archivers.tar.TarArchiveEntry;

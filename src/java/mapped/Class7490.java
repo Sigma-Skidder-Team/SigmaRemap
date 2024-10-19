@@ -37,11 +37,11 @@ public class Class7490 extends Class7487 {
 
    private CompoundNBT method24414() {
       CompoundNBT var3 = new CompoundNBT();
-      var3.method109("name", "minecraft:bottom");
-      var3.method109("final_state", "minecraft:air");
-      var3.method109("pool", "minecraft:empty");
-      var3.method109("target", "minecraft:empty");
-      var3.method109("joint", JigsawTileEntity.OrientationType.ROLLABLE.getString());
+      var3.putString("name", "minecraft:bottom");
+      var3.putString("final_state", "minecraft:air");
+      var3.putString("pool", "minecraft:empty");
+      var3.putString("target", "minecraft:empty");
+      var3.putString("joint", JigsawTileEntity.OrientationType.ROLLABLE.getString());
       return var3;
    }
 
