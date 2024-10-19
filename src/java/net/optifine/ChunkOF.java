@@ -1,7 +1,6 @@
 package net.optifine;
 
 import mapped.Chunk;
-import mapped.Class8889;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
@@ -27,11 +26,11 @@ public class ChunkOF extends Chunk {
    }
 
    public static ChunkDataOF method7168(Chunk var0) {
-      Class8889[] var3 = null;
+      ChunkSectionDataOF[] var3 = null;
       ChunkSection var4 = var0.getLastExtendedBlockStorage();
       if (var4 != null) {
          int var5 = (var4.getYLocation() >> 4) + 1;
-         var3 = new Class8889[var5];
+         var3 = new ChunkSectionDataOF[var5];
          ChunkSection[] var6 = var0.getSections();
 
          for (int var7 = 0; var7 < var5; var7++) {
@@ -40,7 +39,7 @@ public class ChunkOF extends Chunk {
                short var9 = var8.method21870();
                short var10 = var8.method21871();
                short var11 = var8.method21872();
-               var3[var7] = new Class8889(var9, var10, var11);
+               var3[var7] = new ChunkSectionDataOF(var9, var10, var11);
             }
          }
       }

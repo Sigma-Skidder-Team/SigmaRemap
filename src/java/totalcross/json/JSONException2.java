@@ -3,6 +3,8 @@ package totalcross.json;
 /**
  * Idk what happened here but this seems to be a second JSONException
  * - Raca
+ *
+ * no shit nigga it says "2"
  */
 public class JSONException2 extends RuntimeException {
    public JSONException2(String var1) {

@@ -8,6 +8,7 @@ import net.minecraft.fluid.FluidState;
 import net.minecraft.nbt.NBTUtil;
 import net.minecraft.network.PacketBuffer;
 import net.optifine.ChunkDataOF;
+import net.optifine.ChunkSectionDataOF;
 
 import java.util.function.Predicate;
 
@@ -117,15 +118,15 @@ public class ChunkSection {
    public void method21864() {
       ChunkDataOF var3 = THREAD_CHUNK_DATA_OF.get();
       if (var3 != null) {
-         Class8889[] var4 = var3.method32269();
+         ChunkSectionDataOF[] var4 = var3.method32269();
          if (var4 != null) {
             int var5 = this.field30369 >> 4;
             if (var5 >= 0 && var5 < var4.length) {
-               Class8889 var6 = var4[var5];
+               ChunkSectionDataOF var6 = var4[var5];
                if (var6 != null) {
-                  this.field30370 = var6.method32354();
-                  this.field30371 = var6.method32355();
-                  this.field30372 = var6.method32356();
+                  this.field30370 = var6.getBlockRefCount();
+                  this.field30371 = var6.getTickRefCount();
+                  this.field30372 = var6.getFluidRefCount();
                   var4[var5] = null;
                   return;
                }
