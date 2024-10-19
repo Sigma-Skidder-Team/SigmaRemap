@@ -3,7 +3,7 @@ package mapped;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.realmsclient.RealmsMainScreen;
 import net.minecraft.client.gui.widget.button.Button;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.text.StringTextComponent;
 
 public class Class1224 extends Button {

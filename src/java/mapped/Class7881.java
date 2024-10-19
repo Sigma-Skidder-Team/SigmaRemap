@@ -61,7 +61,7 @@ public class Class7881 extends Class7882<LivingEntity> {
                      }
                   } else {
                      PlayerEntity var22 = (PlayerEntity)var17;
-                     if (!var11.isPresent() && Class8088.field34762.test(var17) && !Class4388.method13843(var22)) {
+                     if (!var11.isPresent() && EntityPredicates.field34762.test(var17) && !Class4388.method13843(var22)) {
                         var11 = Optional.<PlayerEntity>of(var22);
                      }
 

@@ -31,7 +31,7 @@ import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GLAllocation;
 import net.minecraft.client.renderer.WorldRenderer;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.resources.ResourcePackInfo;
 import net.minecraft.resources.ResourcePackList;
 import net.minecraft.resources.VanillaPack;
@@ -1656,9 +1656,9 @@ public class Config {
    }
 
    public static boolean method26980(URI var0) {
-      Util.method38513((Exception)null);
+      Util.setExceptionOpenUrl((Exception)null);
       Util.getOSType().openURI(var0);
-      Exception var3 = Util.method38512();
+      Exception var3 = Util.getExceptionOpenUrl();
       return var3 == null;
    }
 

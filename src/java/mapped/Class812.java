@@ -9,7 +9,7 @@ import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.realms.RealmsScreen;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;

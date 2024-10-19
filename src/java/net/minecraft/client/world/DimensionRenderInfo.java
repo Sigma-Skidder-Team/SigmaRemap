@@ -3,7 +3,7 @@ package net.minecraft.client.world;
 import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
 import it.unimi.dsi.fastutil.objects.Object2ObjectMap;
 import mapped.*;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;

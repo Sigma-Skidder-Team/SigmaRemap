@@ -6,7 +6,7 @@ import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.passive.WolfEntity;
 import net.minecraft.block.BlockState;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;

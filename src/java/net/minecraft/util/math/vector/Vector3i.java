@@ -5,7 +5,7 @@ import com.mojang.serialization.Codec;
 import mapped.Class2955;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 
 import javax.annotation.concurrent.Immutable;
 import java.util.stream.IntStream;

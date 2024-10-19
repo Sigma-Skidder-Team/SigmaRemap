@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.world.end;
 
 import com.google.common.collect.ContiguousSet;
 import com.google.common.collect.DiscreteDomain;
@@ -10,12 +10,14 @@ import java.util.*;
 import java.util.function.Predicate;
 import javax.annotation.Nullable;
 
+import mapped.*;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.IntNBT;
 import net.minecraft.nbt.ListNBT;
 import net.minecraft.nbt.NBTUtil;
 import net.minecraft.tileentity.TileEntity;
@@ -28,22 +30,24 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.BossInfo;
 import net.minecraft.world.chunk.ChunkStatus;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.gen.feature.Features;
+import net.minecraft.world.server.ServerBossInfo;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.server.TicketType;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Class7819 {
-   private static final Logger field33535 = LogManager.getLogger();
-   private static final Predicate<Entity> field33536 = Class8088.field34757.and(Class8088.method27980(0.0, 128.0, 0.0, 192.0));
-   private final Class3624 field33537 = (Class3624)new Class3624(
-         new TranslationTextComponent("entity.minecraft.ender_dragon"), Class2303.field15720, Class2300.field15703
+public class DragonFightManager {
+   private static final Logger LOGGER = LogManager.getLogger();
+   private static final Predicate<Entity> VALID_PLAYER = EntityPredicates.IS_ALIVE.and(EntityPredicates.withinRange(0.0, 128.0, 0.0, 192.0));
+   private final ServerBossInfo bossInfo = (ServerBossInfo)new ServerBossInfo(
+         new TranslationTextComponent("entity.minecraft.ender_dragon"), BossInfo.Color.PINK, BossInfo.Overlay.PROGRESS
       )
-      .method12282(true)
-      .method12283(true);
+      .setPlayEndBossMusic(true)
+      .setCreateFog(true);
    private final ServerWorld field33538;
    private final List<Integer> field33539 = Lists.newArrayList();
    private final Class9803 field33540;
@@ -60,7 +64,7 @@ public class Class7819 {
    private int field33551;
    private List<EnderCrystalEntity> field33552;
 
-   public Class7819(ServerWorld var1, long var2, CompoundNBT var4) {
+   public DragonFightManager(ServerWorld var1, long var2, CompoundNBT var4) {
       this.field33538 = var1;
       if (!var4.contains("DragonKilled", 99)) {
          this.field33545 = true;
@@ -125,13 +129,13 @@ public class Class7819 {
    }
 
    public void method26110() {
-      this.field33537.method12287(!this.field33545);
+      this.bossInfo.setVisible(!this.field33545);
       if (++this.field33544 >= 20) {
          this.method26117();
          this.field33544 = 0;
       }
 
-      if (this.field33537.method12288().isEmpty()) {
+      if (this.bossInfo.getPlayers().isEmpty()) {
          this.field33538.getChunkProvider().releaseTicket(TicketType.DRAGON, new ChunkPos(0, 0), 9, Unit.INSTANCE);
       } else {
          this.field33538.getChunkProvider().registerTicket(TicketType.DRAGON, new ChunkPos(0, 0), 9, Unit.INSTANCE);
@@ -165,16 +169,16 @@ public class Class7819 {
    }
 
    private void method26111() {
-      field33535.info("Scanning for legacy world dragon fight...");
+      LOGGER.info("Scanning for legacy world dragon fight...");
       boolean var3 = this.method26114();
       if (!var3) {
-         field33535.info("Found that the dragon has not yet been killed in this world.");
+         LOGGER.info("Found that the dragon has not yet been killed in this world.");
          this.field33546 = false;
          if (this.method26115() == null) {
             this.method26122(false);
          }
       } else {
-         field33535.info("Found that the dragon has been killed in this world already.");
+         LOGGER.info("Found that the dragon has been killed in this world already.");
          this.field33546 = true;
       }
 
@@ -182,10 +186,10 @@ public class Class7819 {
       if (!var4.isEmpty()) {
          Class1007 var5 = (Class1007)var4.get(0);
          this.field33547 = var5.getUniqueID();
-         field33535.info("Found that there's a dragon still alive ({})", var5);
+         LOGGER.info("Found that there's a dragon still alive ({})", var5);
          this.field33545 = false;
          if (!var3) {
-            field33535.info("But we didn't have a portal, let's remove it.");
+            LOGGER.info("But we didn't have a portal, let's remove it.");
             var5.remove();
             this.field33547 = null;
          }
@@ -201,10 +205,10 @@ public class Class7819 {
    private void method26112() {
       List var3 = this.field33538.method6913();
       if (!var3.isEmpty()) {
-         field33535.debug("Haven't seen our dragon, but found another one to use.");
+         LOGGER.debug("Haven't seen our dragon, but found another one to use.");
          this.field33547 = ((Class1007)var3.get(0)).getUniqueID();
       } else {
-         field33535.debug("Haven't seen the dragon, respawning it");
+         LOGGER.debug("Haven't seen the dragon, respawning it");
          this.method26123();
       }
    }
@@ -221,7 +225,7 @@ public class Class7819 {
             this.field33545 = false;
             Class1007 var4 = this.method26123();
 
-            for (ServerPlayerEntity var6 : this.field33537.method12288()) {
+            for (ServerPlayerEntity var6 : this.bossInfo.getPlayers()) {
                CriteriaTriggers.field44478.method15080(var6, var4);
             }
          }
@@ -304,16 +308,16 @@ public class Class7819 {
    private void method26117() {
       HashSet var3 = Sets.newHashSet();
 
-      for (ServerPlayerEntity var5 : this.field33538.method6914(field33536)) {
-         this.field33537.method12263(var5);
+      for (ServerPlayerEntity var5 : this.field33538.method6914(VALID_PLAYER)) {
+         this.bossInfo.addPlayer(var5);
          var3.add(var5);
       }
 
-      Set<ServerPlayerEntity> var7 = Sets.newHashSet(this.field33537.method12288());
+      Set<ServerPlayerEntity> var7 = Sets.newHashSet(this.bossInfo.getPlayers());
       var7.removeAll(var3);
 
       for (ServerPlayerEntity var6 : var7) {
-         this.field33537.method12265(var6);
+         this.bossInfo.removePlayer(var6);
       }
    }
 
@@ -325,13 +329,13 @@ public class Class7819 {
          this.field33542 = this.field33542 + this.field33538.<EnderCrystalEntity>getEntitiesWithinAABB(EnderCrystalEntity.class, var4.method37631()).size();
       }
 
-      field33535.debug("Found {} end crystals still alive", this.field33542);
+      LOGGER.debug("Found {} end crystals still alive", this.field33542);
    }
 
    public void method26119(Class1007 var1) {
       if (var1.getUniqueID().equals(this.field33547)) {
-         this.field33537.method12278(0.0F);
-         this.field33537.method12287(false);
+         this.bossInfo.setPercent(0.0F);
+         this.bossInfo.setVisible(false);
          this.method26122(true);
          this.method26120();
          if (!this.field33546) {
@@ -382,10 +386,10 @@ public class Class7819 {
 
    public void method26124(Class1007 var1) {
       if (var1.getUniqueID().equals(this.field33547)) {
-         this.field33537.method12278(var1.getHealth() / var1.method3075());
+         this.bossInfo.setPercent(var1.getHealth() / var1.method3075());
          this.field33541 = 0;
          if (var1.method3381()) {
-            this.field33537.method12284(var1.getDisplayName());
+            this.bossInfo.setName(var1.getDisplayName());
          }
       }
    }
@@ -396,7 +400,7 @@ public class Class7819 {
 
    public void method26126(EnderCrystalEntity var1, DamageSource var2) {
       if (this.field33550 != null && this.field33552.contains(var1)) {
-         field33535.debug("Aborting respawn sequence");
+         LOGGER.debug("Aborting respawn sequence");
          this.field33550 = null;
          this.field33551 = 0;
          this.method26130();
@@ -418,12 +422,12 @@ public class Class7819 {
       if (this.field33545 && this.field33550 == null) {
          BlockPos var3 = this.field33549;
          if (var3 == null) {
-            field33535.debug("Tried to respawn, but need to find the portal first.");
+            LOGGER.debug("Tried to respawn, but need to find the portal first.");
             Class9086 var4 = this.method26115();
             if (var4 != null) {
-               field33535.debug("Found the exit portal & temporarily using it.");
+               LOGGER.debug("Found the exit portal & temporarily using it.");
             } else {
-               field33535.debug("Couldn't find a portal, so we made one.");
+               LOGGER.debug("Couldn't find a portal, so we made one.");
                this.method26122(true);
             }
 
@@ -442,7 +446,7 @@ public class Class7819 {
             var9.addAll(var8);
          }
 
-         field33535.debug("Found all crystals, respawning dragon.");
+         LOGGER.debug("Found all crystals, respawning dragon.");
          this.method26129(var9);
       }
    }

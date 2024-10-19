@@ -33,7 +33,7 @@ public class Class2607 extends Class2605 {
                if (this.field16858.ticksExisted % 20 == 0) {
                   List<Class1098> var4 = this.field16858
                      .world
-                     .getEntitiesInAABBexcluding(Class1098.class, this.field16858.getBoundingBox().grow(16.0), Class8088.field34757);
+                     .getEntitiesInAABBexcluding(Class1098.class, this.field16858.getBoundingBox().grow(16.0), EntityPredicates.IS_ALIVE);
                   if (!var4.isEmpty()) {
                      for (Class1098 var6 : var4) {
                         var6.method5258();

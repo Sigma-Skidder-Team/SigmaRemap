@@ -2,7 +2,7 @@ package mapped;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.command.CommandSource;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.text.TextComponentUtils;

@@ -8,7 +8,7 @@ import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.IHasContainer;
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.ClickType;
 import net.minecraft.inventory.container.Container;

@@ -34,7 +34,7 @@ public class Class2612 extends Class2595 {
             .method30205()
             .method30204()
             .method30207()
-            .method30209(var1x -> Class8088.method27982(var1).test(var1x));
+            .method30209(var1x -> EntityPredicates.method27982(var1).test(var1x));
       }
    }
 

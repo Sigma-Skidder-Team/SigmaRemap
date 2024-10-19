@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 
 import java.util.Arrays;
 import java.util.Collections;

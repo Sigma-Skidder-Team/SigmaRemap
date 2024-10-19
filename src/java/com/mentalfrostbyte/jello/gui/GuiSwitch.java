@@ -10,7 +10,7 @@ import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import lol.ClientColors;
 import mapped.*;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 
 import java.net.MalformedURLException;
 import java.net.URL;

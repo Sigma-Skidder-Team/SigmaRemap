@@ -5,7 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;

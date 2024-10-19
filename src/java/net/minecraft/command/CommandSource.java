@@ -15,7 +15,7 @@ import java.util.stream.Stream;
 import javax.annotation.Nullable;
 
 import mapped.*;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.ResourceLocation;

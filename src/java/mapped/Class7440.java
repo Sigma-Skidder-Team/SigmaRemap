@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.ListNBT;
@@ -64,7 +64,7 @@ public class Class7440 {
 
    private static void method24033(Class8262 var0) {
       Throwable var3 = var0.method28815();
-      String var4 = (!var0.method28818() ? "(optional) " : "") + var0.method28806() + " failed! " + Util.method38517(var3);
+      String var4 = (!var0.method28818() ? "(optional) " : "") + var0.method28806() + " failed! " + Util.getMessage(var3);
       method24037(var0.method28808(), !var0.method28818() ? TextFormatting.YELLOW : TextFormatting.RED, var4);
       if (var3 instanceof Class2476) {
          Class2476 var5 = (Class2476)var3;

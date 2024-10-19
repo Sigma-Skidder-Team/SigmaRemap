@@ -6,7 +6,7 @@ import com.mojang.datafixers.util.Either;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
 import mapped.*;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;

@@ -18,7 +18,7 @@ import java.io.StringReader;
 import java.util.*;
 import java.util.Map.Entry;
 
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;

@@ -24,7 +24,7 @@ import lol.ClientColors;
 import lol.Texture;
 import mapped.*;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import org.lwjgl.opengl.GL11;
 import totalcross.json.JSONException;
 import totalcross.json.JSONObject;
@@ -646,11 +646,11 @@ public class MusicManager {
 
     public boolean method24330() {
         File var3 = new File(Client.getInstance().getFile() + "/music/yt-dlp");
-        if (Util.getOSType() == OS.WINDOWS) {
+        if (Util.getOSType() == Util.OS.WINDOWS) {
             var3 = new File(Client.getInstance().getFile() + "/music/yt-dlp.exe");
-        } else if (Util.getOSType() == OS.LINUX) {
+        } else if (Util.getOSType() == Util.OS.LINUX) {
             var3 = new File(Client.getInstance().getFile() + "/music/yt-dlp_linux");
-        } else if (Util.getOSType() == OS.OSX) {
+        } else if (Util.getOSType() == Util.OS.OSX) {
             var3 = new File(Client.getInstance().getFile() + "/music/yt-dlp_macos");
         }
 
@@ -664,13 +664,13 @@ public class MusicManager {
 
     public void download() {
         if (!this.finished) {
-            if (Util.isOSSupported()) {
+            if (Util.getOSType() == Util.OS.WINDOWS || Util.getOSType() == Util.OS.OSX || Util.getOSType() == Util.OS.LINUX) {
                 File musicDir = new File(Client.getInstance().getFile() + "/music/");
                 musicDir.mkdirs();
 
                 String fileName =
-                        Util.getOSType() == OS.WINDOWS ? "yt-dlp.exe"
-                        : Util.getOSType() == OS.LINUX ? "yt-dlp_linux"
+                        Util.getOSType() == Util.OS.WINDOWS ? "yt-dlp.exe"
+                        : Util.getOSType() == Util.OS.LINUX ? "yt-dlp_linux"
                                                        : "yt-dlp_macos";
 
                 File targetFile = new File(Client.getInstance().getFile() + "/music/" + fileName);
@@ -698,11 +698,11 @@ public class MusicManager {
 
     public String method24333() {
         String fileName =
-        Util.getOSType() == OS.WINDOWS ? "yt-dlp.exe"
-        : Util.getOSType() == OS.LINUX ? "yt-dlp_linux"
+        Util.getOSType() == Util.OS.WINDOWS ? "yt-dlp.exe"
+        : Util.getOSType() == Util.OS.LINUX ? "yt-dlp_linux"
                                        : "yt-dlp_macos";
         String var3 = Client.getInstance().getFile().getAbsolutePath() + "/music/" + fileName;
-        if (Util.getOSType() != OS.WINDOWS) {
+        if (Util.getOSType() != Util.OS.WINDOWS) {
             File var4 = new File(var3);
             var4.setExecutable(true);
         }
@@ -711,7 +711,7 @@ public class MusicManager {
     }
 
     public boolean hasPython() {
-        if (Util.getOSType() == OS.WINDOWS) {
+        if (Util.getOSType() == Util.OS.WINDOWS) {
             return true;
         } else {
             File var3 = new File("/usr/local/bin/python");
@@ -742,7 +742,7 @@ public class MusicManager {
     }
 
     public boolean hasVCRedist() {
-        if (Util.getOSType() != OS.WINDOWS) {
+        if (Util.getOSType() != Util.OS.WINDOWS) {
             return true;
         } else {
             boolean var3 = false;

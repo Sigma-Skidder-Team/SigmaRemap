@@ -7,7 +7,7 @@ import com.mojang.authlib.minecraft.SocialInteractionsService;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.network.play.NetworkPlayerInfo;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 
 import java.util.Map;
 import java.util.Set;

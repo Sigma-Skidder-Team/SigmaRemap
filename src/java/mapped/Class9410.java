@@ -4,7 +4,7 @@ import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.command.CommandSource;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.ServerPlayerEntity;

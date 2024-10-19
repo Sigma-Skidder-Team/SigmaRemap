@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 
 import mapped.*;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.resources.IPackFinder;
 import net.minecraft.resources.ResourcePackInfo;
 import net.minecraft.resources.VanillaPack;
@@ -101,7 +101,7 @@ public class DownloadingPackFinder implements IPackFinder {
          }
 
          this.field32846 = var8.thenCompose(
-               var3 -> this.method25151(var6, var7) ? this.method25153(var7, IPackNameDecorator.field33173) : Util.method38497(new RuntimeException("Hash check failure for file " + var7 + ", see log")))
+               var3 -> this.method25151(var6, var7) ? this.method25153(var7, IPackNameDecorator.field33173) : Util.completedExceptionallyFuture(new RuntimeException("Hash check failure for file " + var7 + ", see log")))
             .whenComplete((var1x, var2x) -> {
                if (var2x != null) {
                   field32840.warn("Pack application failed: {}, deleting file {}", var2x.getMessage(), var7);
@@ -183,7 +183,7 @@ public class DownloadingPackFinder implements IPackFinder {
       try (Class311 var5 = new Class311(var1)) {
          var7 = var5.<PackMetadataSection>getMetadata(PackMetadataSection.field29661);
       } catch (IOException var19) {
-         return Util.<Void>method38497(new IOException(String.format("Invalid resourcepack at %s", var1), var19));
+         return Util.<Void>completedExceptionallyFuture(new IOException(String.format("Invalid resourcepack at %s", var1), var19));
       }
 
       field32840.info("Applying server pack {}", var1);

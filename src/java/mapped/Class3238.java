@@ -6,7 +6,7 @@ import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.IWaterLoggable;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.pathfinding.PathType;
@@ -32,7 +32,7 @@ public class Class3238 extends Block implements IWaterLoggable {
       .entrySet()
       .stream()
       .filter(var0 -> var0.getKey().getAxis().isHorizontal())
-      .collect(Util.<Direction, BooleanProperty>method38484());
+      .collect(Util.<Direction, BooleanProperty>toMapCollector());
    public final VoxelShape[] field18686;
    public final VoxelShape[] field18687;
    private final Object2IntMap<BlockState> field18688 = new Object2IntOpenHashMap();

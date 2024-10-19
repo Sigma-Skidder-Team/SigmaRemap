@@ -8,7 +8,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.block.Block;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.state.Property;
 
 import java.util.List;

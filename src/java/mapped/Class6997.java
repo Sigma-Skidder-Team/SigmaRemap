@@ -1,6 +1,6 @@
 package mapped;
 
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.network.DebugPacketSender;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;

@@ -16,7 +16,7 @@ import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.SectionPos;
 import org.apache.logging.log4j.LogManager;

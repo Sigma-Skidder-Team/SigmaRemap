@@ -2,7 +2,7 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.Unit;
 
 import java.util.ArrayList;

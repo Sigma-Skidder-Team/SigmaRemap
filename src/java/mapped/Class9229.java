@@ -3,7 +3,7 @@ package mapped;
 import java.time.Duration;
 import java.util.Arrays;
 
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.text.ChatType;
 import net.minecraft.util.text.StringTextComponent;
 

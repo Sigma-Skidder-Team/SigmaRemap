@@ -107,7 +107,7 @@ public class Class1093 extends MonsterEntity implements IMob, Class1092 {
 
    private static boolean method5097(LivingEntity var0) {
       EntityType var3 = var0.getType();
-      return var3 != EntityType.ZOGLIN && var3 != EntityType.CREEPER && Class8088.field34762.test(var0);
+      return var3 != EntityType.ZOGLIN && var3 != EntityType.CREEPER && EntityPredicates.field34762.test(var0);
    }
 
    @Override
@@ -172,7 +172,7 @@ public class Class1093 extends MonsterEntity implements IMob, Class1092 {
       if (!this.world.isRemote) {
          if (var5 && source.getTrueSource() instanceof LivingEntity) {
             LivingEntity var6 = (LivingEntity) source.getTrueSource();
-            if (Class8088.field34762.test(var6) && !Class6983.method21582(this, var6, 4.0)) {
+            if (EntityPredicates.field34762.test(var6) && !Class6983.method21582(this, var6, 4.0)) {
                this.method5100(var6);
             }
 

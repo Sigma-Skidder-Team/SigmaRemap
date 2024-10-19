@@ -6,7 +6,7 @@ import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import it.unimi.dsi.fastutil.objects.ObjectListIterator;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.chunk.IChunk;

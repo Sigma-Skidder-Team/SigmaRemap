@@ -2,7 +2,6 @@ package net.minecraft.util;
 
 import com.google.common.collect.Lists;
 import net.minecraft.util.math.vector.Orientation;
-import net.minecraft.client.util.Util;
 
 import java.util.Collections;
 import java.util.List;

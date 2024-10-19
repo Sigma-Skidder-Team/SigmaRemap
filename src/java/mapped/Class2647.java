@@ -77,7 +77,7 @@ public class Class2647 extends Class2595 {
    @Override
    public void method10807() {
       LivingEntity var3 = this.field16990.method4232();
-      if (!Class8088.field34761.test(var3)) {
+      if (!EntityPredicates.field34761.test(var3)) {
          this.field16990.method4233((LivingEntity)null);
       }
 

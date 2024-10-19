@@ -1,6 +1,6 @@
 package mapped;
 
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.CPlayerDiggingPacket;

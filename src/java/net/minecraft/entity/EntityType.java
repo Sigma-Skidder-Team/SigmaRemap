@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 
 import mapped.*;
 import net.minecraft.block.BlockState;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.entity.passive.SquidEntity;
 import net.minecraft.entity.passive.fish.SalmonEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -734,7 +734,7 @@ public class EntityType<T extends Entity> {
 
       public EntityType<T> method32309(String var1) {
          if (this.field40184) {
-            Util.method38500(TypeReferences.field35390, var1);
+            Util.attemptDataFix(TypeReferences.field35390, var1);
          }
 
          return new EntityType<T>(

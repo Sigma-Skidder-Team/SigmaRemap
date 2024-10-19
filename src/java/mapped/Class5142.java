@@ -15,7 +15,7 @@ public class Class5142 implements Class5141 {
    private final Map<Property<?>, String> field23364 = Maps.newHashMap();
 
    private static <T extends Comparable<T>> String method15921(Property<T> var0, Stream<T> var1) {
-      return var1.<CharSequence>map(var0::method30475).collect(Collectors.joining("|"));
+      return var1.<CharSequence>map(var0::getName).collect(Collectors.joining("|"));
    }
 
    private static <T extends Comparable<T>> String method15922(Property<T> var0, T var1, T[] var2) {
@@ -30,7 +30,7 @@ public class Class5142 implements Class5141 {
    }
 
    public final <T extends Comparable<T>> Class5142 method15924(Property<T> var1, T var2) {
-      this.method15923(var1, var1.method30475((T)var2));
+      this.method15923(var1, var1.getName((T)var2));
       return this;
    }
 

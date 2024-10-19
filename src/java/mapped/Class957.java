@@ -94,7 +94,7 @@ public class Class957 extends Class956 implements ITickableTileEntity {
    }
 
    public static boolean method3871(Entity var0) {
-      return Class8088.field34763.test(var0) && !var0.method3415().method3219();
+      return EntityPredicates.field34763.test(var0) && !var0.method3415().method3219();
    }
 
    public boolean method3872() {

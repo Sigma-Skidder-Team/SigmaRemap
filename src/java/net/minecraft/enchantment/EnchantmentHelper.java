@@ -13,7 +13,7 @@ import java.util.function.Predicate;
 import javax.annotation.Nullable;
 
 import mapped.*;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -308,7 +308,7 @@ public class EnchantmentHelper {
             var6.add(Class8879.<Class6691>method32314(var0, var10));
 
             while (var0.nextInt(50) <= var2) {
-               method26344(var10, Util.<Class6694>method38504(var6));
+               method26344(var10, Util.<Class6694>getLast(var6));
                if (var10.isEmpty()) {
                   break;
                }

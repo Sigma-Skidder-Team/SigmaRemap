@@ -29,7 +29,7 @@ import net.minecraft.client.settings.NarratorStatus;
 import net.minecraft.client.settings.ParticleStatus;
 import net.minecraft.client.settings.PointOfView;
 import net.minecraft.client.shader.Framebuffer;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.entity.player.ChatVisibility;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.NBTUtil;
@@ -305,7 +305,7 @@ public class GameSettings {
       }
 
       this.renderDistanceChunks = var1.isJava64bit() ? 12 : 8;
-      this.syncChunkWrites = Util.getOSType() == OS.WINDOWS;
+      this.syncChunkWrites = Util.getOSType() == Util.OS.WINDOWS;
       this.field44763 = new File(var2, "optionsof.txt");
       this.framerateLimit = (int) AbstractOption.FRAMERATE_LIMIT.getMaxValue();
       this.field44762 = new KeyBinding("of.key.zoom", 67, "key.categories.misc");

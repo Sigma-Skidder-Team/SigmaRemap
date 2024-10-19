@@ -3,7 +3,7 @@ package mapped;
 import it.unimi.dsi.fastutil.longs.LongSet;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FluidState;

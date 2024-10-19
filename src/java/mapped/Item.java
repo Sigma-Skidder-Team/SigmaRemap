@@ -5,7 +5,7 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Multimap;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.attributes.Attribute;

@@ -8,7 +8,7 @@ import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.SharedConstants;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.IFormattableTextComponent;

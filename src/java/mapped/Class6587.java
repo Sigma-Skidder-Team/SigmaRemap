@@ -6,7 +6,7 @@ import com.mojang.brigadier.context.CommandContext;
 import java.util.Collection;
 import java.util.Collections;
 
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.command.CommandSource;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.text.TranslationTextComponent;

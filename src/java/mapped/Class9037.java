@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.command.CommandSource;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.CompressedStreamTools;

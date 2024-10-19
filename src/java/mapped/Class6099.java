@@ -18,7 +18,7 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.command.CommandSource;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.network.play.server.SCommandListPacket;
@@ -185,7 +185,7 @@ public class Class6099 {
             new TranslationTextComponent("command.failed").modifyStyle(var1x -> var1x.setHoverEvent(new HoverEvent(HoverEvent$Action.SHOW_TEXT, var7)))
          );
          if (SharedConstants.developmentMode) {
-            var1.method20181(new StringTextComponent(Util.method38517(var17)));
+            var1.method20181(new StringTextComponent(Util.getMessage(var17)));
             field27344.error("'" + var2 + "' threw an exception", var17);
          }
 

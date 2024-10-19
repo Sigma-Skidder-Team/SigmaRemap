@@ -54,7 +54,7 @@ public class Class129 extends Class128 {
 
    private static <T extends Comparable<T>> String method374(BlockState var0, Property<T> var1) {
       Comparable var4 = var0.get(var1);
-      return var1.method30475((T)var4);
+      return var1.getName((T)var4);
    }
 
    // $VF: synthetic method

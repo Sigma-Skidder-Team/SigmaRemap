@@ -1,7 +1,7 @@
 package mapped;
 
 import net.minecraft.block.Blocks;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;

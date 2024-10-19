@@ -162,7 +162,7 @@ public class Class9069 {
 
    private static void method33794(Class1091 var0, LivingEntity var1) {
       if ((!var0.getBrain().method21430(Activity.field40232) || var1.getType() != EntityType.PIGLIN)
-         && Class8088.field34762.test(var1)
+         && EntityPredicates.field34762.test(var1)
          && var1.getType() != EntityType.HOGLIN
          && !Class6983.method21582(var0, var1, 4.0)) {
          method33795(var0, var1);

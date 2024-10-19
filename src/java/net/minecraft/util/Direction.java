@@ -5,7 +5,6 @@ import com.mojang.serialization.Codec;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 import mapped.*;
-import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;

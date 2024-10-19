@@ -1,7 +1,6 @@
 package net.minecraft.util;
 
 import net.minecraft.util.math.vector.Matrix3f;
-import net.minecraft.client.util.Util;
 
 import java.util.Arrays;
 

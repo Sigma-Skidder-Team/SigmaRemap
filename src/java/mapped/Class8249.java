@@ -1,6 +1,6 @@
 package mapped;
 
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 
 import java.util.Random;
 import java.util.UUID;

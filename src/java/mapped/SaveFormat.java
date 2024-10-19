@@ -30,7 +30,7 @@ import java.util.function.BiFunction;
 import java.util.zip.ZipOutputStream;
 import javax.annotation.Nullable;
 
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.CompressedStreamTools;
 import net.minecraft.nbt.INBT;
@@ -393,7 +393,7 @@ public class SaveFormat {
             CompressedStreamTools.writeCompressed(var8, var9);
             File var10 = new File(var6, "level.dat_old");
             File var11 = new File(var6, "level.dat");
-            Util.method38526(var11, var9, var10);
+            Util.backupThenUpdate(var11, var9, var10);
          } catch (Exception var12) {
             method38481().error("Failed to save level {}", var6, var12);
          }

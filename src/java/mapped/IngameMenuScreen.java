@@ -5,7 +5,7 @@ import net.minecraft.client.gui.screen.MultiplayerScreen;
 import net.minecraft.client.gui.screen.OptionsScreen;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.button.Button;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.SharedConstants;
 import net.minecraft.util.text.TranslationTextComponent;
 

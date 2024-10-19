@@ -2,7 +2,7 @@ package net.minecraft.util.math;
 
 import com.mojang.serialization.Codec;
 import mapped.*;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.vector.Vector3d;

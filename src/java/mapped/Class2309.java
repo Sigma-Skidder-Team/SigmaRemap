@@ -117,7 +117,7 @@ public enum Class2309 {
             .getEntitiesInAABBexcluding(
                Projectiles.method16543().player,
                var16.offset((double)this.field15828, (double)this.field15829, (double)this.field15830).grow(1.0, 1.0, 1.0),
-               Class8088.field34763.and(new Class167(this, var15, var13, var14))
+               EntityPredicates.field34763.and(new Class167(this, var15, var13, var14))
             );
          if (var17.size() > 0) {
             for (Entity var22 : var17) {

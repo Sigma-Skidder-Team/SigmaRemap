@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import mapped.*;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.resources.data.IMetadataSectionSerializer;
 import net.minecraft.util.ResourceLocation;
 import net.optifine.reflect.ReflectorForge;
@@ -66,7 +66,7 @@ public class VanillaPack implements IResourcePack {
       }
    });
    public final Set<String> resourceNamespaces;
-   private static final boolean field1193 = Util.getOSType() == OS.WINDOWS;
+   private static final boolean field1193 = Util.getOSType() == Util.OS.WINDOWS;
    private static final boolean field1194 = Reflector.field42864.method20245();
 
    public VanillaPack(String... resourceNamespacesIn)

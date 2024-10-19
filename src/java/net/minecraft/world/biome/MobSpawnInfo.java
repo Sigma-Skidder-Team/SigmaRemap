@@ -11,7 +11,7 @@ import java.util.stream.Stream;
 import javax.annotation.Nullable;
 
 import mapped.Class6691;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.IStringSerializable;

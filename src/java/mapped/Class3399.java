@@ -6,7 +6,7 @@ import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.IntegerProperty;
@@ -35,7 +35,7 @@ public class Class3399 extends AbstractFireBlock {
       .entrySet()
       .stream()
       .filter(var0 -> var0.getKey() != Direction.DOWN)
-      .collect(Util.<Direction, BooleanProperty>method38484());
+      .collect(Util.<Direction, BooleanProperty>toMapCollector());
    private static final VoxelShape field19045 = Block.makeCuboidShape(0.0, 15.0, 0.0, 16.0, 16.0, 16.0);
    private static final VoxelShape field19046 = Block.makeCuboidShape(0.0, 0.0, 0.0, 1.0, 16.0, 16.0);
    private static final VoxelShape field19047 = Block.makeCuboidShape(15.0, 0.0, 0.0, 16.0, 16.0, 16.0);

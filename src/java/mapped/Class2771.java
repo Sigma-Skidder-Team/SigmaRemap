@@ -7,7 +7,7 @@ public class Class2771<T extends LivingEntity> extends Class2770<T> {
    private final Class1097 field17360;
 
    public Class2771(Class1097 var1, Class<T> var2, float var3, double var4, double var6) {
-      super(var1, var2, var3, var4, var6, Class8088.field34763::test);
+      super(var1, var2, var3, var4, var6, EntityPredicates.field34763::test);
       this.field17360 = var1;
    }
 

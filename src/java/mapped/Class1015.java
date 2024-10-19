@@ -5,7 +5,7 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;

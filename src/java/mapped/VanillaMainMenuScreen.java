@@ -9,7 +9,7 @@ import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.screen.*;
 import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.client.gui.widget.button.Button;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SharedConstants;
 import net.minecraft.util.math.MathHelper;

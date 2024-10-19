@@ -9,7 +9,7 @@ import com.mojang.datafixers.util.Pair;
 import net.minecraft.client.renderer.texture.NativeImage;
 import net.minecraft.client.renderer.texture.Texture;
 import net.minecraft.client.renderer.texture.TextureUtil;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.util.ResourceLocation;

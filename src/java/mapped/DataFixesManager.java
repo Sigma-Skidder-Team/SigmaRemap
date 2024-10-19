@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import com.mojang.datafixers.DataFixer;
 import com.mojang.datafixers.DataFixerBuilder;
 import com.mojang.datafixers.schemas.Schema;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.SharedConstants;
 import net.minecraft.util.datafix.fixes.*;
 
@@ -21,7 +21,7 @@ public class DataFixesManager {
    private static DataFixer method14180() {
       DataFixerBuilder var2 = new DataFixerBuilder(SharedConstants.getVersion().getWorldVersion());
       method14182(var2);
-      return var2.build(Util.method38491());
+      return var2.build(Util.getBootstrapService());
    }
 
    public static DataFixer getDataFixer() {

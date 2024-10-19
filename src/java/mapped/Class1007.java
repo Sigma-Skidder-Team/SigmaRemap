@@ -27,6 +27,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
+import net.minecraft.world.end.DragonFightManager;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -56,7 +57,7 @@ public class Class1007 extends MobEntity implements IMob {
    public int field5635;
    public float field5636;
    public EnderCrystalEntity field5637;
-   private final Class7819 field5638;
+   private final DragonFightManager field5638;
    private final Class8942 field5639;
    private int field5640 = 100;
    private int field5641;
@@ -270,13 +271,13 @@ public class Class1007 extends MobEntity implements IMob {
             this.method4318(this.field5631, (double)(var34 * -4.5F), 2.0, (double)(var33 * -4.5F));
             if (!this.world.isRemote && this.hurtTime == 0) {
                this.method4321(
-                  this.world.getEntitiesInAABBexcluding(this, this.field5630.getBoundingBox().grow(4.0, 2.0, 4.0).offset(0.0, -2.0, 0.0), Class8088.field34761)
+                  this.world.getEntitiesInAABBexcluding(this, this.field5630.getBoundingBox().grow(4.0, 2.0, 4.0).offset(0.0, -2.0, 0.0), EntityPredicates.field34761)
                );
                this.method4321(
-                  this.world.getEntitiesInAABBexcluding(this, this.field5631.getBoundingBox().grow(4.0, 2.0, 4.0).offset(0.0, -2.0, 0.0), Class8088.field34761)
+                  this.world.getEntitiesInAABBexcluding(this, this.field5631.getBoundingBox().grow(4.0, 2.0, 4.0).offset(0.0, -2.0, 0.0), EntityPredicates.field34761)
                );
-               this.method4322(this.world.getEntitiesInAABBexcluding(this, this.field5624.getBoundingBox().grow(1.0), Class8088.field34761));
-               this.method4322(this.world.getEntitiesInAABBexcluding(this, this.field5625.getBoundingBox().grow(1.0), Class8088.field34761));
+               this.method4322(this.world.getEntitiesInAABBexcluding(this, this.field5624.getBoundingBox().grow(1.0), EntityPredicates.field34761));
+               this.method4322(this.world.getEntitiesInAABBexcluding(this, this.field5625.getBoundingBox().grow(1.0), EntityPredicates.field34761));
             }
 
             float var35 = MathHelper.sin(this.rotationYaw * (float) (Math.PI / 180.0) - this.field5636 * 0.01F);
@@ -873,7 +874,7 @@ public class Class1007 extends MobEntity implements IMob {
    }
 
    @Nullable
-   public Class7819 method4337() {
+   public DragonFightManager method4337() {
       return this.field5638;
    }
 

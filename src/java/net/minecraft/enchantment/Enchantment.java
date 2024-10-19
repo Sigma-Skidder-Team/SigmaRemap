@@ -6,7 +6,7 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 import mapped.CreatureAttribute;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.inventory.EquipmentSlotType;

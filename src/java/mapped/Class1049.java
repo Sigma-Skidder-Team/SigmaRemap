@@ -94,7 +94,7 @@ public abstract class Class1049 extends WaterMobEntity {
    public void method4219() {
       super.method4219();
       this.field5600.addGoal(0, new Class2747(this, 1.25));
-      this.field5600.addGoal(2, new Class2770<PlayerEntity>(this, PlayerEntity.class, 8.0F, 1.6, 1.4, Class8088.field34763::test));
+      this.field5600.addGoal(2, new Class2770<PlayerEntity>(this, PlayerEntity.class, 8.0F, 1.6, 1.4, EntityPredicates.field34763::test));
       this.field5600.addGoal(4, new Class2741(this));
    }
 

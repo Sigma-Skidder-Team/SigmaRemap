@@ -1,6 +1,6 @@
 package mapped;
 
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
 

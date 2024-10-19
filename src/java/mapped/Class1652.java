@@ -7,7 +7,7 @@ import com.mojang.serialization.*;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.longs.LongLinkedOpenHashSet;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
 import net.minecraft.util.SharedConstants;

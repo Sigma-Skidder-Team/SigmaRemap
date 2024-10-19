@@ -141,7 +141,7 @@ public class StateContainer<O, S extends StateHolder<O, S>> {
                throw new IllegalArgumentException(this.field32410 + " attempted use property " + var4 + " with <= 1 possible values");
             } else {
                for (Comparable var7 : var5) {
-                  String var8 = var1.method30475((T)var7);
+                  String var8 = var1.getName((T)var7);
                   if (!method35404().matcher(var8).matches()) {
                      throw new IllegalArgumentException(this.field32410 + " has property: " + var4 + " with invalidly named value: " + var8);
                   }

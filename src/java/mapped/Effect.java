@@ -6,7 +6,7 @@ import java.util.UUID;
 import java.util.Map.Entry;
 import javax.annotation.Nullable;
 
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.attributes.Attribute;

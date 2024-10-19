@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 
 public class LoginScreen extends Class4247 {
     private UIInput inputUsername;

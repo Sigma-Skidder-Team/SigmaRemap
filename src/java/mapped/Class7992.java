@@ -2,7 +2,7 @@ package mapped;
 
 import com.mojang.blaze3d.platform.GlStateManager;
 import net.minecraft.client.renderer.entity.ItemRenderer;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.inventory.EquipmentSlotType;

@@ -5,7 +5,7 @@ import com.google.common.collect.Maps;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.longs.LongArrayList;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.ListNBT;
 import net.minecraft.util.math.ChunkPos;

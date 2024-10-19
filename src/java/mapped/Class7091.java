@@ -3,7 +3,7 @@ package mapped;
 import com.google.common.collect.Maps;
 import com.mojang.serialization.Codec;
 import net.minecraft.block.*;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.state.properties.Half;
 import net.minecraft.state.properties.SlabType;
 import net.minecraft.util.Direction;

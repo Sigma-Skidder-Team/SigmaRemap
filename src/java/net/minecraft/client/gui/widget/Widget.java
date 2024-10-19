@@ -6,7 +6,7 @@ import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.gui.FontRenderer;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.MathHelper;

@@ -3,7 +3,7 @@ package mapped;
 import com.google.common.collect.Maps;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.Direction;

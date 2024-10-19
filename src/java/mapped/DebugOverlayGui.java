@@ -15,7 +15,7 @@ import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.shader.ShaderGroup;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.fluid.FluidState;
@@ -602,7 +602,7 @@ public class DebugOverlayGui extends AbstractGui {
    private String method5889(Entry<Property<?>, Comparable<?>> var1) {
       Property<?> var4 = var1.getKey();
       Comparable<?> var5 = var1.getValue();
-      String var6 = Util.method38485(var4, var5);
+      String var6 = Util.getValueName(var4, var5);
       if (!Boolean.TRUE.equals(var5)) {
          if (Boolean.FALSE.equals(var5)) {
             var6 = TextFormatting.RED + var6;

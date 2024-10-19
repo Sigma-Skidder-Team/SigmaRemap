@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.UUID;
 import java.util.function.Consumer;
 
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.command.CommandSource;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.ServerPlayerEntity;

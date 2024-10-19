@@ -11,7 +11,7 @@ import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.client.multiplayer.ServerList;
 import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.client.renderer.texture.NativeImage;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.DefaultUncaughtExceptionHandler;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SharedConstants;

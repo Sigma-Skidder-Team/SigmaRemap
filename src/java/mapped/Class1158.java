@@ -4,7 +4,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.MultiplayerScreen;
 import net.minecraft.client.gui.screen.ServerSelectionList;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 

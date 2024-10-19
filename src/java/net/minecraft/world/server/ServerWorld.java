@@ -14,7 +14,7 @@ import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.LivingEntity;
@@ -49,6 +49,7 @@ import net.minecraft.world.chunk.ChunkSection;
 import net.minecraft.world.chunk.ChunkStatus;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.chunk.listener.IChunkStatusListener;
+import net.minecraft.world.end.DragonFightManager;
 import net.minecraft.world.gen.feature.structure.StructureManager;
 import net.minecraft.world.gen.feature.structure.StructureStart;
 import net.minecraft.world.gen.feature.template.TemplateManager;
@@ -99,7 +100,7 @@ public class ServerWorld extends World implements ISeedReader {
    private final ObjectLinkedOpenHashSet<Class6808> field9055 = new ObjectLinkedOpenHashSet();
    private boolean field9056;
    private final List<Class7016> field9057;
-   private final Class7819 field9058;
+   private final DragonFightManager field9058;
    private final StructureManager field9059;
    private final boolean field9060;
 
@@ -147,7 +148,7 @@ public class ServerWorld extends World implements ISeedReader {
       if (!this.getDimensionType().doesHasDragonFight()) {
          this.field9058 = null;
       } else {
-         this.field9058 = new Class7819(this, var1.func_240793_aU_().getDimensionGeneratorSettings().method26259(), var1.func_240793_aU_().method20089());
+         this.field9058 = new DragonFightManager(this, var1.func_240793_aU_().getDimensionGeneratorSettings().method26259(), var1.func_240793_aU_().method20089());
       }
    }
 
@@ -1369,7 +1370,7 @@ public class ServerWorld extends World implements ISeedReader {
    }
 
    @Nullable
-   public Class7819 method6968() {
+   public DragonFightManager method6968() {
       return this.field9058;
    }
 

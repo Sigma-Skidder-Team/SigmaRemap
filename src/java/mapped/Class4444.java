@@ -2,7 +2,7 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.CompressedStreamTools;
 import org.apache.commons.io.FileUtils;

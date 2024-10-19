@@ -1,7 +1,6 @@
 package net.minecraft.client.gui.screen;
 
 import com.google.common.collect.ImmutableSet;
-import com.google.common.collect.UnmodifiableIterator;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.datafixers.DataFixer;
 import it.unimi.dsi.fastutil.booleans.BooleanConsumer;
@@ -11,7 +10,7 @@ import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.widget.button.Button;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.WorldOptimizer;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -24,7 +23,7 @@ import javax.annotation.Nullable;
 public class OptimizeWorldScreen extends Screen {
    private static final Logger field4624 = LogManager.getLogger();
    private static final Object2IntMap<RegistryKey<World>> PROGRESS_BAR_COLORS = Util.<Object2IntMap<RegistryKey<World>>>make(
-      new Object2IntOpenCustomHashMap(Util.method38509()), var0 -> {
+      new Object2IntOpenCustomHashMap(Util.identityHashStrategy()), var0 -> {
          var0.put(World.OVERWORLD, -13408734);
          var0.put(World.THE_NETHER, -10075085);
          var0.put(World.THE_END, -8943531);

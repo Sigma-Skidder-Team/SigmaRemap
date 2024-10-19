@@ -1,7 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Maps;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.attributes.MutableAttribute;

@@ -12,6 +12,7 @@ import net.minecraft.network.play.server.SSpawnObjectPacket;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.end.DragonFightManager;
 import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
@@ -110,7 +111,7 @@ public class EnderCrystalEntity extends Entity {
 
    private void method4141(DamageSource var1) {
       if (this.world instanceof ServerWorld) {
-         Class7819 var4 = ((ServerWorld)this.world).method6968();
+         DragonFightManager var4 = ((ServerWorld)this.world).method6968();
          if (var4 != null) {
             var4.method26126(this, var1);
          }

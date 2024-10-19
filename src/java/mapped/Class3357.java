@@ -6,7 +6,7 @@ import net.minecraft.state.DirectionProperty;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.dispenser.IBlockSource;
 import net.minecraft.dispenser.IDispenseItemBehavior;
 import net.minecraft.entity.LivingEntity;

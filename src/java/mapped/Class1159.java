@@ -3,7 +3,7 @@ package mapped;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.ServerSelectionList;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 
 public class Class1159 extends ServerSelectionList.Entry {
    private final Minecraft field6310 = Minecraft.getInstance();

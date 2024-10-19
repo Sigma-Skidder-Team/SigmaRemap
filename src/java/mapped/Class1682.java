@@ -25,7 +25,7 @@ public interface Class1682 {
    List<? extends PlayerEntity> method6870();
 
    default List<Entity> method7181(Entity var1, AxisAlignedBB var2) {
-      return this.getEntitiesInAABBexcluding(var1, var2, Class8088.field34763);
+      return this.getEntitiesInAABBexcluding(var1, var2, EntityPredicates.field34763);
    }
 
    default boolean method7048(Entity var1, VoxelShape var2) {
@@ -46,11 +46,11 @@ public interface Class1682 {
    }
 
    default <T extends Entity> List<T> getEntitiesWithinAABB(Class<? extends T> var1, AxisAlignedBB var2) {
-      return this.<T>getEntitiesInAABBexcluding(var1, var2, Class8088.field34763);
+      return this.<T>getEntitiesInAABBexcluding(var1, var2, EntityPredicates.field34763);
    }
 
    default <T extends Entity> List<T> method7183(Class<? extends T> var1, AxisAlignedBB var2) {
-      return this.<T>method6773(var1, var2, Class8088.field34763);
+      return this.<T>method6773(var1, var2, EntityPredicates.field34763);
    }
 
    default Stream<VoxelShape> func_230318_c_(Entity var1, AxisAlignedBB var2, Predicate<Entity> var3) {
@@ -99,13 +99,13 @@ public interface Class1682 {
 
    @Nullable
    default PlayerEntity method7186(double var1, double var3, double var5, double var7, boolean var9) {
-      Predicate var12 = !var9 ? Class8088.field34763 : Class8088.field34761;
+      Predicate var12 = !var9 ? EntityPredicates.field34763 : EntityPredicates.field34761;
       return this.method7184(var1, var3, var5, var7, var12);
    }
 
    default boolean method7187(double var1, double var3, double var5, double var7) {
       for (PlayerEntity var12 : this.method6870()) {
-         if (Class8088.field34763.test(var12) && Class8088.field34758.test(var12)) {
+         if (EntityPredicates.field34763.test(var12) && EntityPredicates.field34758.test(var12)) {
             double var13 = var12.getDistanceNearest(var1, var3, var5);
             if (var7 < 0.0 || var13 < var7 * var7) {
                return true;

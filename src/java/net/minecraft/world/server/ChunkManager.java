@@ -12,7 +12,7 @@ import it.unimi.dsi.fastutil.longs.*;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap.Entry;
 import it.unimi.dsi.fastutil.objects.ObjectIterator;
 import mapped.*;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.Entity;
@@ -497,7 +497,7 @@ public class ChunkManager extends Class1648 implements Class1650 {
    public void method6555(ChunkPos var1) {
       this.field8958
          .method1641(
-            Util.method38515(
+            Util.namedRunnable(
                () -> this.field8968.releaseWithLevel(TicketType.LIGHT, var1, 33 + ChunkStatus.method34296(ChunkStatus.FEATURES), var1),
                () -> "release light ticket " + var1
             )

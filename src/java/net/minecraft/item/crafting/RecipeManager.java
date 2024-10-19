@@ -5,7 +5,7 @@ import com.google.common.collect.ImmutableMap.Builder;
 import com.google.common.collect.Maps;
 import com.google.gson.*;
 import mapped.*;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
@@ -52,7 +52,7 @@ public class RecipeManager extends Class281 {
       return this.method1033(var1)
          .values()
          .stream()
-         .<T>flatMap(var3x -> Util.method38511(var1.method22635((IRecipe<IInventory>)var3x, var3, var2)))
+         .<T>flatMap(var3x -> Util.streamOptional(var1.method22635((IRecipe<IInventory>)var3x, var3, var2)))
          .findFirst();
    }
 
@@ -64,7 +64,7 @@ public class RecipeManager extends Class281 {
       return this.method1033(var1)
          .values()
          .stream()
-         .flatMap(var3x -> Util.method38511(var1.method22635(var3x, var3, var2)))
+         .flatMap(var3x -> Util.streamOptional(var1.method22635(var3x, var3, var2)))
          .sorted(Comparator.comparing(var0 -> var0.getRecipeOutput().getTranslationKey()))
          .collect(Collectors.<T>toList());
    }

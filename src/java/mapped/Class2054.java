@@ -1,7 +1,7 @@
 package mapped;
 
 import net.minecraft.client.renderer.texture.NativeImage;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 
 public enum Class2054 implements Class2051 {
    field13380;

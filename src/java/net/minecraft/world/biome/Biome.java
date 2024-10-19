@@ -15,7 +15,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.client.audio.BackgroundMusicSelector;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;

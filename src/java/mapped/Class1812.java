@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import com.mojang.datafixers.util.Either;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.Unit;
 import net.minecraft.util.math.ChunkPos;
 import org.apache.logging.log4j.LogManager;

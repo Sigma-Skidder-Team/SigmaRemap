@@ -47,7 +47,7 @@ public class Class1095 extends Class1018 {
       }
    };
    private static final Predicate<Entity> field5999 = var0 -> var0 instanceof Class1089 || var0 instanceof Class1094;
-   private static final Predicate<Entity> field6000 = var0 -> !var0.isDiscrete() && Class8088.field34761.test(var0);
+   private static final Predicate<Entity> field6000 = var0 -> !var0.isDiscrete() && EntityPredicates.field34761.test(var0);
    private Class2595 field6001;
    private Class2595 field6002;
    private Class2595 field6003;
@@ -575,7 +575,7 @@ public class Class1095 extends Class1018 {
    public SoundEvent getAmbientSound() {
       if (!this.isSleeping()) {
          if (!this.world.method6740() && this.rand.nextFloat() < 0.1F) {
-            List var3 = this.world.<Entity>getEntitiesInAABBexcluding(PlayerEntity.class, this.getBoundingBox().grow(16.0, 16.0, 16.0), Class8088.field34763);
+            List var3 = this.world.<Entity>getEntitiesInAABBexcluding(PlayerEntity.class, this.getBoundingBox().grow(16.0, 16.0, 16.0), EntityPredicates.field34763);
             if (var3.isEmpty()) {
                return SoundEvents.field26594;
             }

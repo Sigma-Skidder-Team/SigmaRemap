@@ -42,6 +42,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
+import net.minecraft.world.server.ServerBossInfo;
 import net.minecraft.world.server.ServerWorld;
 
 public class Class7699 {
@@ -62,7 +63,7 @@ public class Class7699 {
    private int field32982;
    private boolean field32983;
    private int field32984;
-   private final Class3624 field32985 = new Class3624(field32968, Class2303.field15722, Class2300.field15705);
+   private final ServerBossInfo field32985 = new ServerBossInfo(field32968, BossInfo.Color.RED, BossInfo.Overlay.NOTCHED_10);
    private int field32986;
    private int field32987;
    private final Random field32988 = new Random();
@@ -76,7 +77,7 @@ public class Class7699 {
       this.field32978 = var2;
       this.field32983 = true;
       this.field32987 = 300;
-      this.field32985.method12278(0.0F);
+      this.field32985.setPercent(0.0F);
       this.field32977 = var3;
       this.field32989 = this.method25435(var2.method6997());
       this.field32990 = Class2305.field15739;
@@ -150,18 +151,18 @@ public class Class7699 {
    }
 
    private void method25398() {
-      Set<ServerPlayerEntity> var3 = Sets.newHashSet(this.field32985.method12288());
+      Set<ServerPlayerEntity> var3 = Sets.newHashSet(this.field32985.getPlayers());
       List<ServerPlayerEntity> var4 = this.field32978.method6914(this.method25397());
 
       for (ServerPlayerEntity var6 : var4) {
          if (!var3.contains(var6)) {
-            this.field32985.method12263(var6);
+            this.field32985.addPlayer(var6);
          }
       }
 
       for (ServerPlayerEntity var8 : var3) {
          if (!var4.contains(var8)) {
-            this.field32985.method12265(var8);
+            this.field32985.removePlayer(var8);
          }
       }
    }
@@ -185,7 +186,7 @@ public class Class7699 {
 
    public void method25402() {
       this.field32983 = false;
-      this.field32985.method12266();
+      this.field32985.removeAllPlayers();
       this.field32990 = Class2305.field15742;
    }
 
@@ -201,12 +202,12 @@ public class Class7699 {
 
                if (this.field32991 % 20 == 0) {
                   this.method25398();
-                  this.field32985.method12287(true);
+                  this.field32985.setVisible(true);
                   if (!this.method25392()) {
-                     this.field32985.method12284(field32972);
+                     this.field32985.setName(field32972);
                   } else {
-                     this.field32985.method12278(0.0F);
-                     this.field32985.method12284(field32971);
+                     this.field32985.setPercent(0.0F);
+                     this.field32985.setName(field32971);
                   }
                }
             }
@@ -219,7 +220,7 @@ public class Class7699 {
             }
 
             if (var3 != this.field32983) {
-               this.field32985.method12287(this.field32983);
+               this.field32985.setVisible(this.field32983);
             }
 
             if (!this.field32983) {
@@ -249,7 +250,7 @@ public class Class7699 {
                if (this.field32987 <= 0) {
                   if (this.field32987 == 0 && this.field32984 > 0) {
                      this.field32987 = 300;
-                     this.field32985.method12284(field32968);
+                     this.field32985.setName(field32968);
                      return;
                   }
                } else {
@@ -277,7 +278,7 @@ public class Class7699 {
                   }
 
                   this.field32987--;
-                  this.field32985.method12278(MathHelper.clamp((float)(300 - this.field32987) / 300.0F, 0.0F, 1.0F));
+                  this.field32985.setPercent(MathHelper.clamp((float)(300 - this.field32987) / 300.0F, 0.0F, 1.0F));
                }
             }
 
@@ -285,12 +286,12 @@ public class Class7699 {
                this.method25398();
                this.method25411();
                if (var4 <= 0) {
-                  this.field32985.method12284(field32968);
+                  this.field32985.setName(field32968);
                } else if (var4 > 2) {
-                  this.field32985.method12284(field32968);
+                  this.field32985.setName(field32968);
                } else {
                   this.field32985
-                     .method12284(
+                     .setName(
                         field32968.deepCopy().appendString(" - ").append(new TranslationTextComponent("event.minecraft.raid.raiders_remaining", var4))
                      );
                }
@@ -418,7 +419,7 @@ public class Class7699 {
    private void method25412(BlockPos var1) {
       float var4 = 13.0F;
       byte var5 = 64;
-      Collection var6 = this.field32985.method12288();
+      Collection var6 = this.field32985.getPlayers();
 
       for (ServerPlayerEntity var8 : this.field32978.method6870()) {
          Vector3d var9 = var8.getPositionVec();
@@ -503,7 +504,7 @@ public class Class7699 {
    }
 
    public void method25415() {
-      this.field32985.method12278(MathHelper.clamp(this.method25416() / this.field32981, 0.0F, 1.0F));
+      this.field32985.setPercent(MathHelper.clamp(this.method25416() / this.field32981, 0.0F, 1.0F));
    }
 
    public float method25416() {

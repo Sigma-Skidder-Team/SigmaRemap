@@ -7,7 +7,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.state.Property;
 import net.minecraft.state.StateContainer;
 import net.minecraft.util.ResourceLocation;
@@ -39,7 +39,7 @@ public class Class4449 implements Class4442 {
                JsonArray var13 = new JsonArray();
 
                for (Object var15 : var12.method30474()) {
-                  var13.add(Util.method38485(var12, var15));
+                  var13.add(Util.getValueName(var12, var15));
                }
 
                var10.add(var12.method30472(), var13);
@@ -57,7 +57,7 @@ public class Class4449 implements Class4442 {
             JsonObject var22 = new JsonObject();
 
             for (Property var16 : var9.method35395()) {
-               var22.addProperty(var16.method30472(), Util.method38485(var16, var20.get(var16)));
+               var22.addProperty(var16.method30472(), Util.getValueName(var16, var20.get(var16)));
             }
 
             if (var22.size() > 0) {

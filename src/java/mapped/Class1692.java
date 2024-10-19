@@ -18,7 +18,7 @@ import java.nio.file.StandardCopyOption;
 import java.nio.file.StandardOpenOption;
 import javax.annotation.Nullable;
 
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.math.ChunkPos;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -272,7 +272,7 @@ public class Class1692 implements AutoCloseable {
          this.field9218.write(var14, (long)(var11 * 4096));
       }
 
-      int var15 = (int)(Util.method38489() / 1000L);
+      int var15 = (int)(Util.millisecondsSinceEpoch() / 1000L);
       this.field9222.put(var5, this.method7253(var11, var10));
       this.field9223.put(var5, var15);
       this.method7263();

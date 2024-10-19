@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.function.Supplier;
 import javax.annotation.Nullable;
 
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.network.INetHandler;
 import net.minecraft.network.IPacket;
 import org.apache.logging.log4j.LogManager;

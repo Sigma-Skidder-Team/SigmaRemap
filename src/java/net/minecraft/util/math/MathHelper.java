@@ -5,7 +5,7 @@ import java.util.UUID;
 import java.util.function.IntPredicate;
 
 import mapped.Class7317;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.math.vector.Vector3i;
 import org.apache.commons.lang3.math.NumberUtils;
 
@@ -326,7 +326,7 @@ public class MathHelper {
       return new UUID(var3, var5);
    }
 
-   public static UUID method37812() {
+   public static UUID getRandomUUID() {
       return getRandomUUID(field45218);
    }
 

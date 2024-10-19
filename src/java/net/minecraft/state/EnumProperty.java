@@ -41,7 +41,7 @@ public class EnumProperty<T extends Enum<T> & IStringSerializable> extends Prope
       return Optional.<T>ofNullable(this.field38443.get(var1));
    }
 
-   public String method30475(T var1) {
+   public String getName(T var1) {
       return ((IStringSerializable)var1).getString();
    }
 

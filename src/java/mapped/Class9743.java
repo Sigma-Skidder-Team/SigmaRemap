@@ -100,7 +100,7 @@ public class Class9743 {
    }
 
    private static boolean method38202(LivingEntity var0) {
-      return Class8088.field34762.test(var0);
+      return EntityPredicates.field34762.test(var0);
    }
 
    private static Optional<? extends LivingEntity> method38203(Class1035 var0, Class8830<? extends LivingEntity> var1) {

@@ -714,7 +714,7 @@ public class Class4388 {
    }
 
    private static boolean method13871(LivingEntity var0) {
-      return Class8088.field34762.test(var0);
+      return EntityPredicates.field34762.test(var0);
    }
 
    private static boolean method13872(Class1034 var0) {

@@ -1,6 +1,6 @@
 package mapped;
 
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 
 public class Class9162 {
    private static String[] field42061;

@@ -15,7 +15,6 @@ import mapped.MainWindow;
 import mapped.Reflector;
 import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.util.Util;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -94,7 +93,7 @@ public class ScreenShotHelper {
 
       File var21 = var19;
       Object var22 = var20;
-      Util.method38493()
+      Util.getRenderingService()
          .execute(
             () -> {
                try {

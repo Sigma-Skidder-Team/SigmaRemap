@@ -8,6 +8,7 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.end.DragonFightManager;
 import net.minecraft.world.server.ServerWorld;
 
 import java.util.List;
@@ -38,7 +39,7 @@ public class Class3340 extends Item {
                   EnderCrystalEntity var15 = new EnderCrystalEntity(var4, var8 + 0.5, var10, var12 + 0.5);
                   var15.method4144(false);
                   var4.addEntity(var15);
-                  Class7819 var16 = ((ServerWorld)var4).method6968();
+                  DragonFightManager var16 = ((ServerWorld)var4).method6968();
                   if (var16 != null) {
                      var16.method26128();
                   }

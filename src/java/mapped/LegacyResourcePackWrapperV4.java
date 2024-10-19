@@ -4,7 +4,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.client.renderer.texture.NativeImage;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.resources.data.IMetadataSectionSerializer;
 import net.minecraft.state.properties.ChestType;
 import net.minecraft.util.ResourceLocation;

@@ -2,7 +2,7 @@ package net.minecraft.client.renderer;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import mapped.Matrix4f;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.math.vector.Vector3f;
 
 public class RenderHelper {

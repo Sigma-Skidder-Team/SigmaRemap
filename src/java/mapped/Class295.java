@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.concurrent.CompletableFuture;

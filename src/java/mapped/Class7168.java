@@ -12,7 +12,7 @@ import java.util.function.IntSupplier;
 import java.util.function.LongSupplier;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.optifine.Config;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

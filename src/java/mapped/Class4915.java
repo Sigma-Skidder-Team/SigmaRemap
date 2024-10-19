@@ -1,6 +1,6 @@
 package mapped;
 
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.optifine.Config;
 import net.optifine.shaders.Shaders;
 
@@ -36,7 +36,7 @@ public class Class4915 {
    private static Class8489[] field22809;
 
    public static String method15199() {
-      OS var2 = Util.getOSType();
+      Util.OS var2 = Util.getOSType();
       switch (Class9720.field45412[var2.ordinal()]) {
          case 1:
             return "MC_OS_WINDOWS";

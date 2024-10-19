@@ -2,7 +2,7 @@ package net.minecraft.entity;
 
 import mapped.MobEntity;
 import net.minecraft.world.GameRules;
-import mapped.Class8088;
+import mapped.EntityPredicates;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.world.World;
@@ -73,7 +73,7 @@ public interface IAngerable {
    }
 
    default boolean method4367(LivingEntity var1) {
-      if (!Class8088.field34762.test(var1)) {
+      if (!EntityPredicates.field34762.test(var1)) {
          return false;
       } else {
          return var1.getType() == EntityType.PLAYER && this.method4368(var1.world) ? true : var1.getUniqueID().equals(this.method4350());

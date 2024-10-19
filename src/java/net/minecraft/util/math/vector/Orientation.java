@@ -6,7 +6,7 @@ import it.unimi.dsi.fastutil.booleans.BooleanArrayList;
 import it.unimi.dsi.fastutil.booleans.BooleanList;
 import net.minecraft.util.TriplePermutation;
 import mapped.Class9825;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.Direction;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.world.gen.feature.jigsaw.JigsawOrientation;

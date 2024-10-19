@@ -1,6 +1,6 @@
 package mapped;
 
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.passive.fish.AbstractGroupFishEntity;
 import net.minecraft.item.ItemStack;
@@ -209,7 +209,7 @@ public class Class1052 extends AbstractGroupFishEntity {
                var10 = this.rand.nextInt(15);
                var11 = this.rand.nextInt(15);
             } else {
-               int var12 = Util.method38519(field5817, this.rand);
+               int var12 = Util.getRandomInt(field5817, this.rand);
                var8 = var12 & 0xFF;
                var9 = (var12 & 0xFF00) >> 8;
                var10 = (var12 & 0xFF0000) >> 16;

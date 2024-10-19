@@ -21,7 +21,7 @@ public class Class2770<T extends LivingEntity> extends Class2595 {
    private final Class8522 field17359;
 
    public Class2770(CreatureEntity var1, Class<T> var2, float var3, double var4, double var6) {
-      this(var1, var2, var0 -> true, var3, var4, var6, Class8088.field34761::test);
+      this(var1, var2, var0 -> true, var3, var4, var6, EntityPredicates.field34761::test);
    }
 
    public Class2770(CreatureEntity var1, Class<T> var2, Predicate<LivingEntity> var3, float var4, double var5, double var7, Predicate<LivingEntity> var9) {

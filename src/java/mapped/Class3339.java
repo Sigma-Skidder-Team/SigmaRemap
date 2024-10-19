@@ -4,7 +4,7 @@ import java.util.Collection;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -87,7 +87,7 @@ public class Class3339 extends Item {
    }
 
    private static <T> T method11888(Iterable<T> var0, T var1, boolean var2) {
-      return !var2 ? Util.<T>method38505(var0, (T)var1) : Util.<T>method38506(var0, (T)var1);
+      return !var2 ? Util.<T>getElementAfter(var0, (T)var1) : Util.<T>getElementBefore(var0, (T)var1);
    }
 
    private static void method11889(PlayerEntity var0, ITextComponent var1) {
@@ -95,6 +95,6 @@ public class Class3339 extends Item {
    }
 
    private static <T extends Comparable<T>> String method11890(BlockState var0, Property<T> var1) {
-      return var1.method30475(var0.<T>get(var1));
+      return var1.getName(var0.<T>get(var1));
    }
 }

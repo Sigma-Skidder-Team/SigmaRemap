@@ -3,7 +3,7 @@ package mapped;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.AbstractGui;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.realms.RealmsScreen;
 import net.minecraft.util.ResourceLocation;
 

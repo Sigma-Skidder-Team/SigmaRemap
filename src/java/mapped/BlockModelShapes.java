@@ -72,6 +72,6 @@ public class BlockModelShapes {
    }
 
    private static <T extends Comparable<T>> String method38159(Property<T> var0, Comparable<?> var1) {
-      return var0.method30475((T)var1);
+      return var0.getName((T)var1);
    }
 }

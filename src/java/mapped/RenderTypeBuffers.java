@@ -1,7 +1,7 @@
 package mapped;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectLinkedOpenHashMap;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 
 import java.util.SortedMap;
 

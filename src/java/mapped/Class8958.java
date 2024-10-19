@@ -20,7 +20,7 @@ import joptsimple.NonOptionArgumentSpec;
 import joptsimple.OptionParser;
 import joptsimple.OptionSet;
 import joptsimple.OptionSpecBuilder;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.resources.ResourcePackList;
 import net.minecraft.server.management.PlayerProfileCache;

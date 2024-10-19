@@ -2,7 +2,7 @@ package net.minecraft.world.gen.feature.structure;
 
 import mapped.Class4178;
 import mapped.Class4181;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;

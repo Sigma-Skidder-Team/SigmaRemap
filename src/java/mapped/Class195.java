@@ -4,7 +4,7 @@ import com.mojang.datafixers.util.Pair;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import it.unimi.dsi.fastutil.objects.ObjectList;
 import it.unimi.dsi.fastutil.objects.ObjectListIterator;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.SectionPos;
@@ -56,12 +56,12 @@ public class Class195 extends WorldLightManager implements AutoCloseable {
    public void checkBlock(BlockPos var1) {
       BlockPos var4 = var1.toImmutable();
       this.method607(
-         var1.getX() >> 4, var1.getZ() >> 4, Class2044.field13350, Util.method38515(() -> super.checkBlock(var4), () -> "checkBlock " + var4)
+         var1.getX() >> 4, var1.getZ() >> 4, Class2044.field13350, Util.namedRunnable(() -> super.checkBlock(var4), () -> "checkBlock " + var4)
       );
    }
 
    public void method603(ChunkPos var1) {
-      this.method608(var1.x, var1.z, () -> 0, Class2044.field13349, Util.method38515(() -> {
+      this.method608(var1.x, var1.z, () -> 0, Class2044.field13349, Util.namedRunnable(() -> {
          super.method609(var1, false);
          super.enableLightSources(var1, false);
 
@@ -83,7 +83,7 @@ public class Class195 extends WorldLightManager implements AutoCloseable {
          var1.getSectionZ(),
          () -> 0,
          Class2044.field13349,
-         Util.method38515(() -> super.updateSectionStatus(var1, var2), () -> "updateSectionStatus " + var1 + " " + var2)
+         Util.namedRunnable(() -> super.updateSectionStatus(var1, var2), () -> "updateSectionStatus " + var1 + " " + var2)
       );
    }
 
@@ -93,7 +93,7 @@ public class Class195 extends WorldLightManager implements AutoCloseable {
          var1.x,
          var1.z,
          Class2044.field13349,
-         Util.method38515(() -> super.enableLightSources(var1, var2), () -> "enableLight " + var1 + " " + var2)
+         Util.namedRunnable(() -> super.enableLightSources(var1, var2), () -> "enableLight " + var1 + " " + var2)
       );
    }
 
@@ -104,7 +104,7 @@ public class Class195 extends WorldLightManager implements AutoCloseable {
          var2.getSectionZ(),
          () -> 0,
          Class2044.field13349,
-         Util.method38515(() -> super.method606(var1, var2, var3, var4), () -> "queueData " + var2)
+         Util.namedRunnable(() -> super.method606(var1, var2, var3, var4), () -> "queueData " + var2)
       );
    }
 
@@ -124,14 +124,14 @@ public class Class195 extends WorldLightManager implements AutoCloseable {
    @Override
    public void method609(ChunkPos var1, boolean var2) {
       this.method608(
-         var1.x, var1.z, () -> 0, Class2044.field13349, Util.method38515(() -> super.method609(var1, var2), () -> "retainData " + var1)
+         var1.x, var1.z, () -> 0, Class2044.field13349, Util.namedRunnable(() -> super.method609(var1, var2), () -> "retainData " + var1)
       );
    }
 
    public CompletableFuture<IChunk> method610(IChunk var1, boolean var2) {
       ChunkPos var5 = var1.getPos();
       var1.setLight(false);
-      this.method607(var5.x, var5.z, Class2044.field13349, Util.method38515(() -> {
+      this.method607(var5.x, var5.z, Class2044.field13349, Util.namedRunnable(() -> {
          ChunkSection[] var6 = var1.getSections();
 
          for (int var7 = 0; var7 < 16; var7++) {

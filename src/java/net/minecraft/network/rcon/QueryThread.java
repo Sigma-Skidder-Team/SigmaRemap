@@ -2,7 +2,7 @@ package net.minecraft.network.rcon;
 
 import com.google.common.collect.Maps;
 import mapped.*;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

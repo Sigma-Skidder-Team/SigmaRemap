@@ -14,7 +14,7 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 import javax.annotation.Nullable;
 
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Unit;
 import net.minecraft.util.math.ChunkPos;
@@ -30,7 +30,7 @@ public class Class1707 implements AutoCloseable {
 
    public Class1707(File var1, boolean var2, String var3) {
       this.field9304 = new Class1696(var1, var2);
-      this.field9303 = new Class322<>(new Class7384(Class2262.values().length), Util.method38493(), "IOWorker-" + var3);
+      this.field9303 = new Class322<>(new Class7384(Class2262.values().length), Util.getRenderingService(), "IOWorker-" + var3);
    }
 
    public CompletableFuture<Void> method7411(ChunkPos var1, CompoundNBT var2) {

@@ -26,7 +26,7 @@ public class BooleanProperty extends Property<Boolean> {
       return !"true".equals(var1) && !"false".equals(var1) ? Optional.<Boolean>empty() : Optional.<Boolean>of(Boolean.valueOf(var1));
    }
 
-   public String method30475(Boolean var1) {
+   public String getName(Boolean var1) {
       return var1.toString();
    }
 

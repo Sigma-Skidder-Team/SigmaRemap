@@ -13,7 +13,7 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.command.CommandSource;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.util.text.TranslationTextComponent;

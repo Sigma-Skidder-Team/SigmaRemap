@@ -3,7 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import com.mojang.datafixers.util.Pair;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.item.crafting.RecipeBookCategory;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.PacketBuffer;

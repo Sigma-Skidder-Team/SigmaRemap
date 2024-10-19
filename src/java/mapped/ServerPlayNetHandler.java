@@ -25,7 +25,7 @@ import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.command.CommandSource;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;

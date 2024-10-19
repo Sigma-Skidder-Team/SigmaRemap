@@ -65,7 +65,7 @@ public class IntegerProperty extends Property<Integer> {
       }
    }
 
-   public String method30475(Integer var1) {
+   public String getName(Integer var1) {
       return var1.toString();
    }
 }

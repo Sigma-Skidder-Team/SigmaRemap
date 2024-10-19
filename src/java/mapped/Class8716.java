@@ -4,7 +4,7 @@ import com.mojang.datafixers.DataFixer;
 import java.io.File;
 import javax.annotation.Nullable;
 
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.CompressedStreamTools;
@@ -30,7 +30,7 @@ public class Class8716 {
          CompressedStreamTools.writeCompressed(var4, var5);
          File var6 = new File(this.field39330, var1.method3376() + ".dat");
          File var7 = new File(this.field39330, var1.method3376() + ".dat_old");
-         Util.method38526(var6, var5, var7);
+         Util.backupThenUpdate(var6, var5, var7);
       } catch (Exception var8) {
          field39329.warn("Failed to save player data for {}", var1.getName().getString());
       }

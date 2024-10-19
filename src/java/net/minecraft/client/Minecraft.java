@@ -42,7 +42,7 @@ import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.resources.DownloadingPackFinder;
 import net.minecraft.client.settings.PointOfView;
 import net.minecraft.client.shader.Framebuffer;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
@@ -110,7 +110,7 @@ import java.util.stream.Stream;
 public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperInfo, IWindowEventListener {
    private static Minecraft instance;
    private static final Logger LOGGER = LogManager.getLogger();
-   public static final boolean IS_RUNNING_ON_MAC = Util.getOSType() == OS.OSX;
+   public static final boolean IS_RUNNING_ON_MAC = Util.getOSType() == Util.OS.OSX;
    public static final ResourceLocation DEFAULT_FONT_RENDERER_NAME = new ResourceLocation("default");
    public static final ResourceLocation UNIFORM_FONT_RENDERER_NAME = new ResourceLocation("uniform");
    public static final ResourceLocation standardGalacticFontRenderer = new ResourceLocation("alt");

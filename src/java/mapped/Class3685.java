@@ -24,7 +24,7 @@ public class Class3685<E extends MobEntity> extends Class3676<E> {
       if (!method12528(var2)) {
          if (!this.method12529((E)var2)) {
             if (!this.method12526((E)var2)) {
-               if (Class8088.field34762.test(this.method12527((E)var2))) {
+               if (EntityPredicates.field34762.test(this.method12527((E)var2))) {
                   if (this.field19702.test(this.method12527((E)var2))) {
                      this.method12530((E)var2);
                   }

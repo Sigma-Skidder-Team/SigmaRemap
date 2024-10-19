@@ -272,7 +272,7 @@ public final class NBTUtil {
     }
 
     private static <T extends Comparable<T>> String method29288(Property<T> var0, Comparable<?> var1) {
-        return var0.method30475((T) var1);
+        return var0.getName((T) var1);
     }
 
     public static CompoundNBT method29289(DataFixer var0, Class2108 var1, CompoundNBT var2, int var3) {

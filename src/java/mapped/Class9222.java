@@ -4,7 +4,7 @@ import com.google.common.collect.Maps;
 import com.mojang.brigadier.suggestion.SuggestionProvider;
 import java.util.Map;
 
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.command.CommandSource;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.ResourceLocation;

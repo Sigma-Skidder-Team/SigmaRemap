@@ -18,7 +18,7 @@ import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;

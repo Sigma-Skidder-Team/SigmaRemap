@@ -113,7 +113,7 @@ public class Class7088 {
                                                                      Class6099.method18839("pink")
                                                                         .executes(
                                                                            var0x -> method22024(
-                                                                                 (CommandSource)var0x.getSource(), method22031(var0x), Class2303.field15720
+                                                                                 (CommandSource)var0x.getSource(), method22031(var0x), BossInfo.Color.PINK
                                                                               )
                                                                         )
                                                                   ))
@@ -121,7 +121,7 @@ public class Class7088 {
                                                                   Class6099.method18839("blue")
                                                                      .executes(
                                                                         var0x -> method22024(
-                                                                              (CommandSource)var0x.getSource(), method22031(var0x), Class2303.field15721
+                                                                              (CommandSource)var0x.getSource(), method22031(var0x), BossInfo.Color.BLUE
                                                                            )
                                                                      )
                                                                ))
@@ -129,29 +129,29 @@ public class Class7088 {
                                                                Class6099.method18839("red")
                                                                   .executes(
                                                                      var0x -> method22024(
-                                                                           (CommandSource)var0x.getSource(), method22031(var0x), Class2303.field15722
+                                                                           (CommandSource)var0x.getSource(), method22031(var0x), BossInfo.Color.RED
                                                                         )
                                                                   )
                                                             ))
                                                          .then(
                                                             Class6099.method18839("green")
                                                                .executes(
-                                                                  var0x -> method22024((CommandSource)var0x.getSource(), method22031(var0x), Class2303.field15723)
+                                                                  var0x -> method22024((CommandSource)var0x.getSource(), method22031(var0x), BossInfo.Color.GREEN)
                                                                )
                                                          ))
                                                       .then(
                                                          Class6099.method18839("yellow")
                                                             .executes(
-                                                               var0x -> method22024((CommandSource)var0x.getSource(), method22031(var0x), Class2303.field15724)
+                                                               var0x -> method22024((CommandSource)var0x.getSource(), method22031(var0x), BossInfo.Color.YELLOW)
                                                             )
                                                       ))
                                                    .then(
                                                       Class6099.method18839("purple")
-                                                         .executes(var0x -> method22024((CommandSource)var0x.getSource(), method22031(var0x), Class2303.field15725))
+                                                         .executes(var0x -> method22024((CommandSource)var0x.getSource(), method22031(var0x), BossInfo.Color.PURPLE))
                                                    ))
                                                 .then(
                                                    Class6099.method18839("white")
-                                                      .executes(var0x -> method22024((CommandSource)var0x.getSource(), method22031(var0x), Class2303.field15726))
+                                                      .executes(var0x -> method22024((CommandSource)var0x.getSource(), method22031(var0x), BossInfo.Color.WHITE))
                                                 )
                                           ))
                                        .then(
@@ -161,26 +161,26 @@ public class Class7088 {
                                                          .then(
                                                             Class6099.method18839("progress")
                                                                .executes(
-                                                                  var0x -> method22025((CommandSource)var0x.getSource(), method22031(var0x), Class2300.field15703)
+                                                                  var0x -> method22025((CommandSource)var0x.getSource(), method22031(var0x), BossInfo.Overlay.PROGRESS)
                                                                )
                                                          ))
                                                       .then(
                                                          Class6099.method18839("notched_6")
                                                             .executes(
-                                                               var0x -> method22025((CommandSource)var0x.getSource(), method22031(var0x), Class2300.field15704)
+                                                               var0x -> method22025((CommandSource)var0x.getSource(), method22031(var0x), BossInfo.Overlay.NOTCHED_6)
                                                             )
                                                       ))
                                                    .then(
                                                       Class6099.method18839("notched_10")
-                                                         .executes(var0x -> method22025((CommandSource)var0x.getSource(), method22031(var0x), Class2300.field15705))
+                                                         .executes(var0x -> method22025((CommandSource)var0x.getSource(), method22031(var0x), BossInfo.Overlay.NOTCHED_10))
                                                    ))
                                                 .then(
                                                    Class6099.method18839("notched_12")
-                                                      .executes(var0x -> method22025((CommandSource)var0x.getSource(), method22031(var0x), Class2300.field15706))
+                                                      .executes(var0x -> method22025((CommandSource)var0x.getSource(), method22031(var0x), BossInfo.Overlay.NOTCHED_12))
                                                 ))
                                              .then(
                                                 Class6099.method18839("notched_20")
-                                                   .executes(var0x -> method22025((CommandSource)var0x.getSource(), method22031(var0x), Class2300.field15707))
+                                                   .executes(var0x -> method22025((CommandSource)var0x.getSource(), method22031(var0x), BossInfo.Overlay.NOTCHED_20))
                                              )
                                        ))
                                     .then(
@@ -251,7 +251,7 @@ public class Class7088 {
    }
 
    private static int method22019(CommandSource var0, Class3623 var1) {
-      if (!var1.method12286()) {
+      if (!var1.isVisible()) {
          var0.method20179(new TranslationTextComponent("commands.bossbar.get.visible.hidden", var1.method12271()), true);
          return 0;
       } else {
@@ -261,13 +261,13 @@ public class Class7088 {
    }
 
    private static int method22020(CommandSource var0, Class3623 var1) {
-      if (!var1.method12288().isEmpty()) {
+      if (!var1.getPlayers().isEmpty()) {
          var0.method20179(
             new TranslationTextComponent(
                "commands.bossbar.get.players.some",
                var1.method12271(),
-               var1.method12288().size(),
-               TextComponentUtils.func_240649_b_(var1.method12288(), PlayerEntity::getDisplayName)
+               var1.getPlayers().size(),
+               TextComponentUtils.func_240649_b_(var1.getPlayers(), PlayerEntity::getDisplayName)
             ),
             true
          );
@@ -275,12 +275,12 @@ public class Class7088 {
          var0.method20179(new TranslationTextComponent("commands.bossbar.get.players.none", var1.method12271()), true);
       }
 
-      return var1.method12288().size();
+      return var1.getPlayers().size();
    }
 
    private static int method22021(CommandSource var0, Class3623 var1, boolean var2) throws CommandSyntaxException {
-      if (var1.method12286() != var2) {
-         var1.method12287(var2);
+      if (var1.isVisible() != var2) {
+         var1.setVisible(var2);
          if (!var2) {
             var0.method20179(new TranslationTextComponent("commands.bossbar.set.visible.success.hidden", var1.method12271()), true);
          } else {
@@ -315,9 +315,9 @@ public class Class7088 {
       }
    }
 
-   private static int method22024(CommandSource var0, Class3623 var1, Class2303 var2) throws CommandSyntaxException {
+   private static int method22024(CommandSource var0, Class3623 var1, BossInfo.Color var2) throws CommandSyntaxException {
       if (!var1.getColor().equals(var2)) {
-         var1.method12279(var2);
+         var1.setColor(var2);
          var0.method20179(new TranslationTextComponent("commands.bossbar.set.color.success", var1.method12271()), true);
          return 0;
       } else {
@@ -325,9 +325,9 @@ public class Class7088 {
       }
    }
 
-   private static int method22025(CommandSource var0, Class3623 var1, Class2300 var2) throws CommandSyntaxException {
+   private static int method22025(CommandSource var0, Class3623 var1, BossInfo.Overlay var2) throws CommandSyntaxException {
       if (!var1.getOverlay().equals(var2)) {
-         var1.method12280(var2);
+         var1.setOverlay(var2);
          var0.method20179(new TranslationTextComponent("commands.bossbar.set.style.success", var1.method12271()), true);
          return 0;
       } else {
@@ -338,7 +338,7 @@ public class Class7088 {
    private static int method22026(CommandSource var0, Class3623 var1, ITextComponent var2) throws CommandSyntaxException {
       IFormattableTextComponent var5 = TextComponentUtils.func_240645_a_(var0, var2, (Entity)null, 0);
       if (!var1.getName().equals(var5)) {
-         var1.method12284(var5);
+         var1.setName(var5);
          var0.method20179(new TranslationTextComponent("commands.bossbar.set.name.success", var1.method12271()), true);
          return 0;
       } else {
@@ -349,7 +349,7 @@ public class Class7088 {
    private static int method22027(CommandSource var0, Class3623 var1, Collection<ServerPlayerEntity> var2) throws CommandSyntaxException {
       boolean var5 = var1.method12272(var2);
       if (var5) {
-         if (!var1.method12288().isEmpty()) {
+         if (!var1.getPlayers().isEmpty()) {
             var0.method20179(
                new TranslationTextComponent(
                   "commands.bossbar.set.players.success.some", var1.method12271(), var2.size(), TextComponentUtils.func_240649_b_(var2, PlayerEntity::getDisplayName)
@@ -360,7 +360,7 @@ public class Class7088 {
             var0.method20179(new TranslationTextComponent("commands.bossbar.set.players.success.none", var1.method12271()), true);
          }
 
-         return var1.method12288().size();
+         return var1.getPlayers().size();
       } else {
          throw field30499.create();
       }
@@ -393,7 +393,7 @@ public class Class7088 {
 
    private static int method22030(CommandSource var0, Class3623 var1) {
       Class8426 var4 = var0.method20177().method1414();
-      var1.method12266();
+      var1.removeAllPlayers();
       var4.method29602(var1);
       var0.method20179(new TranslationTextComponent("commands.bossbar.remove.success", var1.method12271()), true);
       return var4.method29604().size();

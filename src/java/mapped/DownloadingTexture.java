@@ -4,7 +4,7 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.NativeImage;
 import net.minecraft.client.renderer.texture.TextureUtil;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.ResourceLocation;
 import net.optifine.Config;
 import org.apache.commons.io.FileUtils;

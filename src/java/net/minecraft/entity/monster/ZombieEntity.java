@@ -417,7 +417,7 @@ public class ZombieEntity extends MonsterEntity {
                      var1.addEntity(var10);
                   }
                } else {
-                  List var14 = var1.<Entity>getEntitiesInAABBexcluding(Class1089.class, this.getBoundingBox().grow(5.0, 3.0, 5.0), Class8088.field34759);
+                  List var14 = var1.<Entity>getEntitiesInAABBexcluding(Class1089.class, this.getBoundingBox().grow(5.0, 3.0, 5.0), EntityPredicates.field34759);
                   if (!var14.isEmpty()) {
                      Class1089 var11 = (Class1089)var14.get(0);
                      var11.method5071(true);

@@ -7,7 +7,7 @@ import java.util.Objects;
 
 import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.client.network.ServerPinger;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;

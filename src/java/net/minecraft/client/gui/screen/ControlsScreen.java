@@ -7,7 +7,7 @@ import net.minecraft.client.GameSettings;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.client.gui.widget.button.Button;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class ControlsScreen extends Class1135 {

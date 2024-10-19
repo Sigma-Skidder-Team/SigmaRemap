@@ -16,6 +16,6 @@ public final class Class10 implements Function<Entry<Property<?>, Comparable<?>>
    }
 
    private <T extends Comparable<T>> String method56(Property<T> var1, Comparable<?> var2) {
-      return var1.method30475((T)var2);
+      return var1.getName((T)var2);
    }
 }

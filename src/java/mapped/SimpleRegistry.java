@@ -10,7 +10,7 @@ import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenCustomHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import it.unimi.dsi.fastutil.objects.ObjectList;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import org.apache.commons.lang3.Validate;
@@ -24,7 +24,7 @@ import java.util.Map.Entry;
 public class SimpleRegistry<T> extends MutableRegistry<T> {
    public static final Logger field16141 = LogManager.getLogger();
    private final ObjectList<T> field16142 = new ObjectArrayList(256);
-   private final Object2IntMap<T> field16143 = new Object2IntOpenCustomHashMap(Util.method38509());
+   private final Object2IntMap<T> field16143 = new Object2IntOpenCustomHashMap(Util.identityHashStrategy());
    private final BiMap<ResourceLocation, T> field16144;
    private final BiMap<RegistryKey<T>, T> field16145;
    private final Map<T, Lifecycle> field16146;

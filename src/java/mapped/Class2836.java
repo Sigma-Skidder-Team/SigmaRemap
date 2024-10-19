@@ -1,6 +1,6 @@
 package mapped;
 
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;

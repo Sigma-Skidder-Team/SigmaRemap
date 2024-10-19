@@ -28,6 +28,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
+import net.minecraft.world.server.ServerBossInfo;
 
 import java.util.List;
 import java.util.function.Predicate;
@@ -45,7 +46,7 @@ public class WitherEntity extends MonsterEntity implements Class1080, Class1022 
    private final int[] field5932 = new int[2];
    private final int[] field5933 = new int[2];
    private int field5934;
-   private final Class3624 field5935 = (Class3624)new Class3624(this.getDisplayName(), Class2303.field15725, Class2300.field15703).method12281(true);
+   private final ServerBossInfo field5935 = (ServerBossInfo)new ServerBossInfo(this.getDisplayName(), BossInfo.Color.PURPLE, BossInfo.Overlay.PROGRESS).setDarkenSky(true);
    private static final Predicate<LivingEntity> field5936 = var0 -> var0.getCreatureAttribute() != CreatureAttribute.field33506 && var0.attackable();
    private static final Class8522 field5937 = new Class8522().method30203(20.0).method30209(field5936);
 
@@ -87,14 +88,14 @@ public class WitherEntity extends MonsterEntity implements Class1080, Class1022 
       super.readAdditional(var1);
       this.method5013(var1.getInt("Invul"));
       if (this.method3381()) {
-         this.field5935.method12284(this.getDisplayName());
+         this.field5935.setName(this.getDisplayName());
       }
    }
 
    @Override
    public void method3379(ITextComponent var1) {
       super.method3379(var1);
-      this.field5935.method12284(this.getDisplayName());
+      this.field5935.setName(this.getDisplayName());
    }
 
    @Override
@@ -309,7 +310,7 @@ public class WitherEntity extends MonsterEntity implements Class1080, Class1022 
             this.heal(1.0F);
          }
 
-         this.field5935.method12278(this.getHealth() / this.method3075());
+         this.field5935.setPercent(this.getHealth() / this.method3075());
       } else {
          int var22 = this.method5012() - 1;
          if (var22 <= 0) {
@@ -343,13 +344,13 @@ public class WitherEntity extends MonsterEntity implements Class1080, Class1022 
    @Override
    public void method3400(ServerPlayerEntity var1) {
       super.method3400(var1);
-      this.field5935.method12263(var1);
+      this.field5935.addPlayer(var1);
    }
 
    @Override
    public void method3401(ServerPlayerEntity var1) {
       super.method3401(var1);
-      this.field5935.method12265(var1);
+      this.field5935.removePlayer(var1);
    }
 
    private double method5004(int var1) {

@@ -4,7 +4,7 @@ import com.google.common.collect.Queues;
 import mapped.Class8892;
 import net.minecraft.util.math.vector.Matrix3f;
 import mapped.Matrix4f;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Quaternion;
 

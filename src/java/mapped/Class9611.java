@@ -13,7 +13,7 @@ import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Dynamic;
 import com.mojang.serialization.DynamicOps;
 import com.mojang.serialization.JsonOps;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -6,7 +6,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.tileentity.TileEntity;

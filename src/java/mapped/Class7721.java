@@ -5,7 +5,7 @@ import com.google.common.collect.Sets;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.Dynamic;
 import com.mojang.serialization.DynamicOps;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -100,7 +100,7 @@ public class Class7721 {
    public void method25529(Dynamic<?> var1) {
       var1.asStream()
          .<DataResult<Class7539>>map(Class7539::method24649)
-         .<Class7539>flatMap(var0 -> Util.method38511(var0.result()))
+         .<Class7539>flatMap(var0 -> Util.streamOptional(var0.result()))
          .forEach(var1x -> Class8102.method28069(this.method25524(var1x.field32349)).put(var1x.field32350, var1x.field32351));
    }
 

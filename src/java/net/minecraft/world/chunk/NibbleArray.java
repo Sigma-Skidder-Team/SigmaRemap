@@ -1,6 +1,6 @@
 package net.minecraft.world.chunk;
 
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 
 public class NibbleArray {
    public byte[] field29578;

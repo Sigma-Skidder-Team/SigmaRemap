@@ -2,7 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableMap.Builder;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.resources.data.IMetadataSectionSerializer;
 import net.minecraft.util.ResourceLocation;
 

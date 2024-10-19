@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.function.Supplier;
 
 import mapped.*;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.world.gen.carver.ConfiguredCarver;
 import net.minecraft.world.gen.feature.ConfiguredFeature;

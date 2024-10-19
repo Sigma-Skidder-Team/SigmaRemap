@@ -1,6 +1,6 @@
 package net.minecraft.world.chunk.listener;
 
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.TranslationTextComponent;

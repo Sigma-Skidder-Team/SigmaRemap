@@ -6,7 +6,7 @@ import java.util.List;
 
 import net.minecraft.nbt.ListNBT;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.CompressedStreamTools;
 import org.apache.logging.log4j.LogManager;
@@ -54,7 +54,7 @@ public class ServerList {
          CompressedStreamTools.write(var9, var10);
          File var6 = new File(this.field34262.gameDir, "servers.dat_old");
          File var7 = new File(this.field34262.gameDir, "servers.dat");
-         Util.method38526(var7, var10, var6);
+         Util.backupThenUpdate(var7, var10, var6);
       } catch (Exception var8) {
          field34261.error("Couldn't save server list", var8);
       }

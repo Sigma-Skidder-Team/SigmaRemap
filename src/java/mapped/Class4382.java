@@ -7,7 +7,7 @@ import com.mojang.serialization.*;
 import com.mojang.serialization.DataResult.PartialResult;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenCustomHashMap;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 
@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 
 public final class Class4382 implements Class4383 {
    private final Map<RegistryKey<?>, JsonElement> field21392 = Maps.newIdentityHashMap();
-   private final Object2IntMap<RegistryKey<?>> field21393 = new Object2IntOpenCustomHashMap(Util.method38509());
+   private final Object2IntMap<RegistryKey<?>> field21393 = new Object2IntOpenCustomHashMap(Util.identityHashStrategy());
    private final Map<RegistryKey<?>, Lifecycle> field21394 = Maps.newIdentityHashMap();
 
    public <E> void method13745(DynamicRegistriesImpl var1, RegistryKey<E> var2, Encoder<E> var3, int var4, E var5, Lifecycle var6) {

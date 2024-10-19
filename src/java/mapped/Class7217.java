@@ -4,7 +4,7 @@ import it.unimi.dsi.fastutil.longs.Long2FloatLinkedOpenHashMap;
 import it.unimi.dsi.fastutil.longs.Long2IntLinkedOpenHashMap;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.renderer.WorldRenderer;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockDisplayReader;
 

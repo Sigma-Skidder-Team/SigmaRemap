@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 
 public final class Class4514 extends Class4513 {
    private final int field21785;

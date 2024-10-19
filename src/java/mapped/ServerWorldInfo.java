@@ -11,7 +11,7 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.nbt.*;
 import net.minecraft.util.SharedConstants;
@@ -187,7 +187,7 @@ public class ServerWorldInfo implements IServerWorldInfo, IServerConfiguration {
          (UUID)var0.get("WanderingTraderId").read(UUIDCodec.field39430).result().orElse((UUID)null),
          var0.get("ServerBrands")
             .asStream()
-            .<String>flatMap(var0x -> Util.method38511(var0x.asString().result()))
+            .<String>flatMap(var0x -> Util.streamOptional(var0x.asString().result()))
             .collect(Collectors.<String, LinkedHashSet<String>>toCollection(Sets::newLinkedHashSet)),
          new Class8559<MinecraftServer>(Class6062.field26300, var0.get("ScheduledEvents").asStream()),
          (CompoundNBT)var0.get("CustomBossEvents").orElseEmptyMap().getValue(),
@@ -238,7 +238,7 @@ public class ServerWorldInfo implements IServerWorldInfo, IServerConfiguration {
       var2.putFloat("SpawnAngle", this.field29070);
       var2.putLong("Time", this.field29071);
       var2.putLong("DayTime", this.field29072);
-      var2.putLong("LastPlayed", Util.method38489());
+      var2.putLong("LastPlayed", Util.millisecondsSinceEpoch());
       var2.putString("LevelName", this.field29064.method32426());
       var2.putInt("version", 19133);
       var2.putInt("clearWeatherTime", this.field29078);

@@ -1,6 +1,6 @@
 package mapped;
 
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.dispenser.IBlockSource;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;

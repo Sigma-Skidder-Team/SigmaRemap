@@ -12,7 +12,7 @@ import java.util.function.Predicate;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.client.renderer.model.ItemCameraTransforms;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.Direction;
 import org.apache.commons.lang3.tuple.Pair;
 
@@ -25,7 +25,7 @@ public class Class7201 implements IBakedModel {
    public final TextureAtlasSprite field30913;
    public final ItemCameraTransforms field30914;
    public final Class6391 field30915;
-   private final Map<BlockState, BitSet> field30916 = new Object2ObjectOpenCustomHashMap(Util.method38509());
+   private final Map<BlockState, BitSet> field30916 = new Object2ObjectOpenCustomHashMap(Util.identityHashStrategy());
 
    public Class7201(List<Pair<Predicate<BlockState>, IBakedModel>> var1) {
       this.field30909 = var1;

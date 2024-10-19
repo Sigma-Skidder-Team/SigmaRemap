@@ -5,7 +5,7 @@ import mapped.Bootstrap;
 import mapped.Class1616;
 import mapped.Class7464;
 import mapped.DedicatedServer;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.world.GameRules;

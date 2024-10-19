@@ -4,7 +4,7 @@ import com.google.common.util.concurrent.RateLimiter;
 import java.time.Duration;
 import java.util.concurrent.atomic.AtomicReference;
 
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.text.ChatType;
 import net.minecraft.util.text.StringTextComponent;
 

@@ -3,7 +3,7 @@ package mapped;
 import com.google.common.base.CharMatcher;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.ResourceLocation;
 import org.apache.commons.io.filefilter.DirectoryFileFilter;
 import org.apache.logging.log4j.LogManager;
@@ -16,7 +16,7 @@ import java.util.function.Predicate;
 
 public class Class309 extends ResourcePack {
    private static final Logger field1198 = LogManager.getLogger();
-   private static final boolean field1199 = Util.getOSType() == OS.WINDOWS;
+   private static final boolean field1199 = Util.getOSType() == Util.OS.WINDOWS;
    private static final CharMatcher field1200 = CharMatcher.is('\\');
 
    public Class309(File var1) {

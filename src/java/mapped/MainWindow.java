@@ -17,7 +17,7 @@ import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mojang.blaze3d.platform.GLX;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.renderer.texture.TextureUtil;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.optifine.Config;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -172,7 +172,7 @@ public final class MainWindow implements AutoCloseable {
    }
 
    public void setWindowIcon(InputStream var1, InputStream var2) {
-      if (Util.getOSType() == OS.LINUX) {
+      if (Util.getOSType() == Util.OS.LINUX) {
          return;
       }
 

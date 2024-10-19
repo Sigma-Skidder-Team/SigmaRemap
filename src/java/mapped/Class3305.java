@@ -17,7 +17,7 @@ import java.util.function.Predicate;
 
 public class Class3305 extends Item {
    private static String[] field18810;
-   private static final Predicate<Entity> field18811 = Class8088.field34763.and(Entity::canBeCollidedWith);
+   private static final Predicate<Entity> field18811 = EntityPredicates.field34763.and(Entity::canBeCollidedWith);
    private final Class2099 field18812;
 
    public Class3305(Class2099 var1, Properties var2) {

@@ -17,7 +17,7 @@ public abstract class Property<T extends Comparable<T>> {
          var1x -> this.method30476(var1x)
                .<DataResult>map(DataResult::success)
                .orElseGet(() -> DataResult.error("Unable to read property: " + this + " with value: " + var1x)),
-         this::method30475
+         this::getName
       );
    private final Codec<ValuePair<T>> field38440 = this.field38439.xmap(this::method30468, ValuePair::method22835);
 
@@ -52,7 +52,7 @@ public abstract class Property<T extends Comparable<T>> {
 
    public abstract Collection<T> method30474();
 
-   public abstract String method30475(T var1);
+   public abstract String getName(T var1);
 
    public abstract Optional<T> method30476(String var1);
 
@@ -111,7 +111,7 @@ public abstract class Property<T extends Comparable<T>> {
 
       @Override
       public String toString() {
-         return this.field31190.method30472() + "=" + this.field31190.method30475(this.field31191);
+         return this.field31190.method30472() + "=" + this.field31190.getName(this.field31191);
       }
 
       @Override

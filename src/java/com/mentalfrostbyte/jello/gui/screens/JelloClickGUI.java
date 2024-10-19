@@ -15,7 +15,7 @@ import com.mentalfrostbyte.jello.util.render.animation.MathHelper;
 import lol.ClientColors;
 import mapped.*;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import totalcross.json.JSONObject;
 
 import java.util.ArrayList;

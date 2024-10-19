@@ -2,7 +2,7 @@ package net.minecraft.crash;
 
 import com.google.common.collect.Lists;
 import mapped.*;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.SharedConstants;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.ArrayUtils;
@@ -59,7 +59,7 @@ public class CrashReport {
       });
       this.field21833.addDetail("CPUs", Runtime.getRuntime().availableProcessors());
       this.field21833.addDetail("JVM Flags", () -> {
-         List var2 = Util.method38503().collect(Collectors.toList());
+         List var2 = Util.getJVMFlags().collect(Collectors.toList());
          return String.format("%d total; %s", var2.size(), var2.stream().collect(Collectors.joining(" ")));
       });
       if (Reflector.field42782 != null) {

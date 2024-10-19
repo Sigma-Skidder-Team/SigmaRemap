@@ -1,7 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Lists;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;

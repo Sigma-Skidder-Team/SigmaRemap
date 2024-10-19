@@ -15,7 +15,7 @@ import io.netty.buffer.ByteBufOutputStream;
 import io.netty.buffer.Unpooled;
 import it.unimi.dsi.fastutil.longs.LongIterator;
 import net.minecraft.block.Block;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.command.CommandSource;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.entity.Entity;

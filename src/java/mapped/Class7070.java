@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.resources.ResourcePackInfo;

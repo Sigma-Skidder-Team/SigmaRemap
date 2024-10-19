@@ -1,7 +1,7 @@
 package mapped;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.ListNBT;
@@ -173,7 +173,7 @@ public class Class4591 extends Class4588 {
       int var20 = this.field22054.nextInt(var13.length);
       var19.method14535(var13[var20]);
       if (var14.length > 0) {
-         var19.method14536(Util.method38519(var14, this.field22054));
+         var19.method14536(Util.getRandomInt(var14, this.field22054));
       }
    }
 

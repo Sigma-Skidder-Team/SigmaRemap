@@ -21,7 +21,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import mapped.*;
-import net.minecraft.client.util.Util;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.text.ITextComponent;
@@ -45,7 +44,7 @@ public class WorldOptimizer {
    private volatile int done;
    private volatile int field34217;
    private volatile int field34218;
-   private final Object2FloatMap<RegistryKey<World>> field34219 = Object2FloatMaps.synchronize(new Object2FloatOpenCustomHashMap(Util.method38509()));
+   private final Object2FloatMap<RegistryKey<World>> field34219 = Object2FloatMaps.synchronize(new Object2FloatOpenCustomHashMap(Util.identityHashStrategy()));
    private volatile ITextComponent field34220 = new TranslationTextComponent("optimizeWorld.stage.counting");
    private static final Pattern field34221 = Pattern.compile("^r\\.(-?[0-9]+)\\.(-?[0-9]+)\\.mca$");
    private final DimensionSavedDataManager field34222;

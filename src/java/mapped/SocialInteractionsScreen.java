@@ -8,7 +8,7 @@ import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.client.network.play.NetworkPlayerInfo;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;

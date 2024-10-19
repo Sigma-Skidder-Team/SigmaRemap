@@ -14,7 +14,7 @@ import java.util.function.Supplier;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeGenerationSettings;

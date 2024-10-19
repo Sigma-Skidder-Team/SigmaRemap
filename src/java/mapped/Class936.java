@@ -301,7 +301,7 @@ public class Class936 extends Class939 implements Class937, ITickableTileEntity 
          .flatMap(
             var1 -> var0.method3734()
                   .getEntitiesInAABBexcluding(
-                     ItemEntity.class, var1.offset(var0.method3718() - 0.5, var0.method3719() - 0.5, var0.method3720() - 0.5), Class8088.field34757
+                     ItemEntity.class, var1.offset(var0.method3718() - 0.5, var0.method3719() - 0.5, var0.method3720() - 0.5), EntityPredicates.IS_ALIVE
                   )
                   .stream()
          )
@@ -335,7 +335,7 @@ public class Class936 extends Class939 implements Class937, ITickableTileEntity 
 
       if (var9 == null) {
          List var14 = var0.getEntitiesInAABBexcluding(
-            (Entity)null, new AxisAlignedBB(var1 - 0.5, var3 - 0.5, var5 - 0.5, var1 + 0.5, var3 + 0.5, var5 + 0.5), Class8088.field34760
+            (Entity)null, new AxisAlignedBB(var1 - 0.5, var3 - 0.5, var5 - 0.5, var1 + 0.5, var3 + 0.5, var5 + 0.5), EntityPredicates.field34760
          );
          if (!var14.isEmpty()) {
             var9 = (IInventory)var14.get(var0.rand.nextInt(var14.size()));

@@ -204,7 +204,7 @@ public class Class8268 {
    private static <T extends Comparable<T>> SuggestionsBuilder method28849(SuggestionsBuilder var0, Property<T> var1) {
       for (Comparable var5 : var1.method30474()) {
          if (!(var5 instanceof Integer)) {
-            var0.suggest(var1.method30475((T)var5));
+            var0.suggest(var1.getName((T)var5));
          } else {
             var0.suggest((Integer)var5);
          }
@@ -466,7 +466,7 @@ public class Class8268 {
    private static <T extends Comparable<T>> void method28861(StringBuilder var0, Property<T> var1, Comparable<?> var2) {
       var0.append(var1.method30472());
       var0.append('=');
-      var0.append(var1.method30475((T)var2));
+      var0.append(var1.getName((T)var2));
    }
 
    public CompletableFuture<Suggestions> method28862(SuggestionsBuilder var1, Class7984<Block> var2) {

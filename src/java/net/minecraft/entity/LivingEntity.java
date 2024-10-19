@@ -2483,7 +2483,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    public void collideWithNearbyEntities() {
-      List var3 = this.world.getEntitiesInAABBexcluding(this, this.getBoundingBox(), Class8088.method27981(this));
+      List var3 = this.world.getEntitiesInAABBexcluding(this, this.getBoundingBox(), EntityPredicates.method27981(this));
       if (!var3.isEmpty()) {
          int var4 = this.world.getGameRules().method17136(GameRules.field24241);
          if (var4 > 0 && var3.size() > var4 - 1 && this.rand.nextInt(4) == 0) {

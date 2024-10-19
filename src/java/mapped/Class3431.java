@@ -135,7 +135,7 @@ public class Class3431 extends Class3429 {
             return ((Class918)var6.get(0)).method3614().method3557();
          }
 
-         List var7 = this.<AbstractMinecartEntity>method12096(var2, var3, AbstractMinecartEntity.class, Class8088.field34760);
+         List var7 = this.<AbstractMinecartEntity>method12096(var2, var3, AbstractMinecartEntity.class, EntityPredicates.field34760);
          if (!var7.isEmpty()) {
             return Container.calcRedstoneFromInventory((IInventory)var7.get(0));
          }

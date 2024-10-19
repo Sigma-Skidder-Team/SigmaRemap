@@ -9,7 +9,7 @@ import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.gui.IngameGui;
 import net.minecraft.client.network.play.ClientPlayNetHandler;
 import net.minecraft.client.network.play.NetworkPlayerInfo;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.scoreboard.ScorePlayerTeam;
 import net.minecraft.scoreboard.Scoreboard;

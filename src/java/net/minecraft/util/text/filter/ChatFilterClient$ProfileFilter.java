@@ -3,7 +3,7 @@ package net.minecraft.util.text.filter;
 import com.google.common.collect.ImmutableList;
 import com.mojang.authlib.GameProfile;
 import mapped.Class322;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 
 import java.util.List;
 import java.util.Optional;

@@ -18,7 +18,7 @@ import net.minecraft.client.renderer.texture.NativeImage;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.shader.ShaderGroup;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
@@ -709,7 +709,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
    private void method752() {
       if (this.mc.worldRenderer.method872() > 10 && this.mc.worldRenderer.method921() && !this.mc.getIntegratedServer().method1305()) {
          NativeImage var3 = ScreenShotHelper.createScreenshot(this.mc.getMainWindow().getFramebufferWidth(), this.mc.getMainWindow().getFramebufferHeight(), this.mc.getFramebuffer());
-         Util.method38493().execute(() -> {
+         Util.getRenderingService().execute(() -> {
             int var4 = var3.method7886();
             int var5 = var3.method7887();
             int var6 = 0;

@@ -3,7 +3,7 @@ package mapped;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 

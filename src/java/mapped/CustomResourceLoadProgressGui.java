@@ -6,7 +6,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import lol.ClientColors;
 import lol.Texture;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 

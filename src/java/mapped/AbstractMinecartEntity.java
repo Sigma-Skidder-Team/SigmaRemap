@@ -8,7 +8,7 @@ import com.mojang.datafixers.util.Pair;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.entity.*;
 import net.minecraft.entity.item.BoatEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -330,7 +330,7 @@ public abstract class AbstractMinecartEntity extends Entity {
 
          this.setRotation(this.rotationYaw, this.rotationPitch);
          if (this.getMinecartType() == MinecartType.MINECART && horizontalMag(this.getMotion()) > 0.01) {
-            List var25 = this.world.getEntitiesInAABBexcluding(this, this.getBoundingBox().grow(0.2F, 0.0, 0.2F), Class8088.method27981(this));
+            List var25 = this.world.getEntitiesInAABBexcluding(this, this.getBoundingBox().grow(0.2F, 0.0, 0.2F), EntityPredicates.method27981(this));
             if (!var25.isEmpty()) {
                for (int var26 = 0; var26 < var25.size(); var26++) {
                   Entity var24 = (Entity)var25.get(var26);

@@ -312,7 +312,7 @@ public class BoatEntity extends Entity {
       }
 
       this.doBlockCollisions();
-      List var11 = this.world.getEntitiesInAABBexcluding(this, this.getBoundingBox().grow(0.2F, -0.01F, 0.2F), Class8088.method27981(this));
+      List var11 = this.world.getEntitiesInAABBexcluding(this, this.getBoundingBox().grow(0.2F, -0.01F, 0.2F), EntityPredicates.method27981(this));
       if (!var11.isEmpty()) {
          boolean var12 = !this.world.isRemote && !(this.method3407() instanceof PlayerEntity);
 

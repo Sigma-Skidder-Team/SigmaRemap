@@ -8,7 +8,7 @@ import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.client.util.Util;
+import net.minecraft.util.Util;
 import net.minecraft.state.properties.BedPart;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;

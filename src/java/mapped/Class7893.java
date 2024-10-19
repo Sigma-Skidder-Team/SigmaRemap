@@ -24,7 +24,7 @@ public class Class7893 extends Class7882<LivingEntity> {
    public void method26425(ServerWorld var1, LivingEntity var2) {
       List<ServerPlayerEntity> var5 = var1.method6870()
          .stream()
-         .filter(Class8088.field34763)
+         .filter(EntityPredicates.field34763)
          .filter(var1x -> var2.isEntityInRange(var1x, 16.0))
          .sorted(Comparator.comparingDouble(var2::getDistanceSq))
          .collect(Collectors.toList());
@@ -32,7 +32,7 @@ public class Class7893 extends Class7882<LivingEntity> {
       var6.method21406(Class8830.field39821, var5);
       List var7 = var5.stream().filter(var1x -> method26430(var2, var1x)).collect(Collectors.toList());
       var6.method21406(Class8830.field39822, !var7.isEmpty() ? (PlayerEntity)var7.get(0) : null);
-      Optional var8 = var7.stream().filter(Class8088.field34762).findFirst();
+      Optional var8 = var7.stream().filter(EntityPredicates.field34762).findFirst();
       var6.method21408(Class8830.field39823, var8);
    }
 }
