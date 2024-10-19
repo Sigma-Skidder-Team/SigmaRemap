@@ -14,11 +14,12 @@ import java.util.concurrent.CompletableFuture;
 
 import net.minecraft.command.CommandSource;
 import net.minecraft.command.ISuggestionProvider;
+import net.minecraft.command.arguments.ILocationArgument;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.server.ServerWorld;
 
-public class Class6849 implements ArgumentType<Class7329> {
+public class Class6849 implements ArgumentType<ILocationArgument> {
    private static final Collection<String> field29740 = Arrays.<String>asList("0 0 0", "~ ~ ~", "^ ^ ^", "^1 ^ ^-5", "~0.5 ~1 ~-5");
    public static final SimpleCommandExceptionType field29741 = new SimpleCommandExceptionType(new TranslationTextComponent("argument.pos.unloaded"));
    public static final SimpleCommandExceptionType field29742 = new SimpleCommandExceptionType(new TranslationTextComponent("argument.pos.outofworld"));
@@ -28,7 +29,7 @@ public class Class6849 implements ArgumentType<Class7329> {
    }
 
    public static BlockPos method20827(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
-      BlockPos var4 = ((Class7329)var0.getArgument(var1, Class7329.class)).method23230((CommandSource)var0.getSource());
+      BlockPos var4 = ((ILocationArgument)var0.getArgument(var1, ILocationArgument.class)).getBlockPos((CommandSource)var0.getSource());
       if (((CommandSource)var0.getSource()).method20172().isBlockLoaded(var4)) {
          ((CommandSource)var0.getSource()).method20172();
          if (ServerWorld.isValid(var4)) {
@@ -42,11 +43,11 @@ public class Class6849 implements ArgumentType<Class7329> {
    }
 
    public static BlockPos method20828(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
-      return ((Class7329)var0.getArgument(var1, Class7329.class)).method23230((CommandSource)var0.getSource());
+      return ((ILocationArgument)var0.getArgument(var1, ILocationArgument.class)).getBlockPos((CommandSource)var0.getSource());
    }
 
-   public Class7329 parse(StringReader var1) throws CommandSyntaxException {
-      return (Class7329)(var1.canRead() && var1.peek() == '^' ? Class7330.method23234(var1) : Class7331.method23236(var1));
+   public ILocationArgument parse(StringReader var1) throws CommandSyntaxException {
+      return (ILocationArgument)(var1.canRead() && var1.peek() == '^' ? Class7330.method23234(var1) : Class7331.method23236(var1));
    }
 
    public <S> CompletableFuture<Suggestions> listSuggestions(CommandContext<S> var1, SuggestionsBuilder var2) {

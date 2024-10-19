@@ -17,6 +17,7 @@ import java.util.Locale;
 import java.util.Random;
 
 import net.minecraft.command.CommandSource;
+import net.minecraft.command.arguments.Vec2Argument;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.scoreboard.Team;
@@ -37,7 +38,7 @@ public class Class9271 {
       var0.register(
          (LiteralArgumentBuilder)((LiteralArgumentBuilder) Commands.method18839("spreadplayers").requires(var0x -> var0x.method20129(2)))
             .then(
-               Commands.method18840("center", Class7347.method23292())
+               Commands.method18840("center", Vec2Argument.method23292())
                   .then(
                      Commands.method18840("spreadDistance", FloatArgumentType.floatArg(0.0F))
                         .then(
@@ -49,7 +50,7 @@ public class Class9271 {
                                              .executes(
                                                 var0x -> method34923(
                                                       (CommandSource)var0x.getSource(),
-                                                      Class7347.method23293(var0x, "center"),
+                                                      Vec2Argument.method23293(var0x, "center"),
                                                       FloatArgumentType.getFloat(var0x, "spreadDistance"),
                                                       FloatArgumentType.getFloat(var0x, "maxRange"),
                                                       256,
@@ -70,7 +71,7 @@ public class Class9271 {
                                                       .executes(
                                                          var0x -> method34923(
                                                                (CommandSource)var0x.getSource(),
-                                                               Class7347.method23293(var0x, "center"),
+                                                               Vec2Argument.method23293(var0x, "center"),
                                                                FloatArgumentType.getFloat(var0x, "spreadDistance"),
                                                                FloatArgumentType.getFloat(var0x, "maxRange"),
                                                                IntegerArgumentType.getInteger(var0x, "maxHeight"),

@@ -17,6 +17,7 @@ import java.util.Set;
 import javax.annotation.Nullable;
 
 import net.minecraft.command.arguments.ResourceLocationArgument;
+import net.minecraft.command.arguments.Vec2Argument;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SharedConstants;
@@ -50,7 +51,7 @@ public class Class8651 {
       method31095("block_pos", Class6849.class, new Class2591(Class6849::method20826));
       method31095("column_pos", Class8693.class, new Class2591(Class8693::method31319));
       method31095("vec3", Class6851.class, new Class2591(Class6851::method20857));
-      method31095("vec2", Class7347.class, new Class2591(Class7347::method23292));
+      method31095("vec2", Vec2Argument.class, new Class2591(Vec2Argument::method23292));
       method31095("block_state", Class7971.class, new Class2591(Class7971::method27103));
       method31095("block_predicate", Class7505.class, new Class2591(Class7505::method24464));
       method31095("item_stack", Class8722.class, new Class2591(Class8722::method31481));

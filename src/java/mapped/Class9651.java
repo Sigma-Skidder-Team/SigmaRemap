@@ -12,6 +12,7 @@ import java.util.EnumSet;
 import java.util.Set;
 
 import net.minecraft.command.CommandSource;
+import net.minecraft.command.arguments.ILocationArgument;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -44,7 +45,7 @@ public class Class9651 {
                                                 Class8700.method31348(var0x, "targets"),
                                                 ((CommandSource)var0x.getSource()).method20172(),
                                                 Class6851.method20860(var0x, "location"),
-                                                (Class7329)null,
+                                                (ILocationArgument)null,
                                                 (Class8502)null
                                              )
                                        ))
@@ -73,7 +74,7 @@ public class Class9651 {
                                                                   Class8700.method31348(var0x, "targets"),
                                                                   ((CommandSource)var0x.getSource()).method20172(),
                                                                   Class6851.method20860(var0x, "location"),
-                                                                  (Class7329)null,
+                                                                  (ILocationArgument)null,
                                                                   new Class8502(Class8700.method31346(var0x, "facingEntity"), Class2062.field13441)
                                                                )
                                                          ))
@@ -85,7 +86,7 @@ public class Class9651 {
                                                                      Class8700.method31348(var0x, "targets"),
                                                                      ((CommandSource)var0x.getSource()).method20172(),
                                                                      Class6851.method20860(var0x, "location"),
-                                                                     (Class7329)null,
+                                                                     (ILocationArgument)null,
                                                                      new Class8502(
                                                                         Class8700.method31346(var0x, "facingEntity"),
                                                                         Class9188.method34387(var0x, "facingAnchor")
@@ -103,7 +104,7 @@ public class Class9651 {
                                                       Class8700.method31348(var0x, "targets"),
                                                       ((CommandSource)var0x.getSource()).method20172(),
                                                       Class6851.method20860(var0x, "location"),
-                                                      (Class7329)null,
+                                                      (ILocationArgument)null,
                                                       new Class8502(Class6851.method20859(var0x, "facingLocation"))
                                                    )
                                              )
@@ -173,28 +174,28 @@ public class Class9651 {
       return var1.size();
    }
 
-   private static int method37646(CommandSource var0, Collection<? extends Entity> var1, ServerWorld var2, Class7329 var3, Class7329 var4, Class8502 var5) throws CommandSyntaxException {
-      Vector3d var8 = var3.method23228(var0);
-      Vector2f var9 = var4 != null ? var4.method23229(var0) : null;
+   private static int method37646(CommandSource var0, Collection<? extends Entity> var1, ServerWorld var2, ILocationArgument var3, ILocationArgument var4, Class8502 var5) throws CommandSyntaxException {
+      Vector3d var8 = var3.getPosition(var0);
+      Vector2f var9 = var4 != null ? var4.getRotation(var0) : null;
       EnumSet var10 = EnumSet.<Flags>noneOf(Flags.class);
-      if (var3.method23231()) {
+      if (var3.isXRelative()) {
          var10.add(Flags.field13198);
       }
 
-      if (var3.method23232()) {
+      if (var3.isYRelative()) {
          var10.add(Flags.field13199);
       }
 
-      if (var3.method23233()) {
+      if (var3.isZRelative()) {
          var10.add(Flags.field13200);
       }
 
       if (var4 != null) {
-         if (var4.method23231()) {
+         if (var4.isXRelative()) {
             var10.add(Flags.field13202);
          }
 
-         if (var4.method23232()) {
+         if (var4.isYRelative()) {
             var10.add(Flags.field13201);
          }
       } else {

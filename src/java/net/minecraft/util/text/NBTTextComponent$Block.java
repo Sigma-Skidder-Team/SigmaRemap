@@ -4,6 +4,7 @@ import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import mapped.*;
 import net.minecraft.command.CommandSource;
+import net.minecraft.command.arguments.ILocationArgument;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
@@ -15,7 +16,7 @@ import java.util.stream.Stream;
 
 public class NBTTextComponent$Block extends NBTTextComponent {
    private final String field_218684_e;
-   private final Class7329 field_218685_f;
+   private final ILocationArgument field_218685_f;
 
    public NBTTextComponent$Block(String p_i51294_1_, boolean p_i51294_2_, String p_i51294_3_) {
       super(p_i51294_1_, p_i51294_2_);
@@ -24,7 +25,7 @@ public class NBTTextComponent$Block extends NBTTextComponent {
    }
 
    @Nullable
-   private Class7329 func_218682_b(String p_218682_1_) {
+   private ILocationArgument func_218682_b(String p_218682_1_) {
       try {
          return Class6849.method20826().parse(new StringReader(p_218682_1_));
       } catch (CommandSyntaxException var5) {
@@ -32,7 +33,7 @@ public class NBTTextComponent$Block extends NBTTextComponent {
       }
    }
 
-   private NBTTextComponent$Block(String p_i51295_1_, Class9670 p_i51295_2_, boolean p_i51295_3_, String p_i51295_4_, Class7329 p_i51295_5_) {
+   private NBTTextComponent$Block(String p_i51295_1_, Class9670 p_i51295_2_, boolean p_i51295_3_, String p_i51295_4_, ILocationArgument p_i51295_5_) {
       super(p_i51295_1_, p_i51295_2_, p_i51295_3_);
       this.field_218684_e = p_i51295_4_;
       this.field_218685_f = p_i51295_5_;
@@ -51,7 +52,7 @@ public class NBTTextComponent$Block extends NBTTextComponent {
    public Stream<CompoundNBT> func_218673_a(CommandSource p_218673_1_) {
       if (this.field_218685_f != null) {
          ServerWorld blockpos = p_218673_1_.method20172();
-         BlockPos tileentity = this.field_218685_f.method23230(p_218673_1_);
+         BlockPos tileentity = this.field_218685_f.getBlockPos(p_218673_1_);
          if (blockpos.method6763(tileentity)) {
             TileEntity var6 = blockpos.getTileEntity(tileentity);
             if (var6 != null) {

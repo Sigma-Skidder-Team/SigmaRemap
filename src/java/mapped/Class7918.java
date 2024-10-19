@@ -9,9 +9,10 @@ import java.util.Arrays;
 import java.util.Collection;
 
 import net.minecraft.command.CommandSource;
+import net.minecraft.command.arguments.ILocationArgument;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class Class7918 implements ArgumentType<Class7329> {
+public class Class7918 implements ArgumentType<ILocationArgument> {
    private static final Collection<String> field33905 = Arrays.<String>asList("0 0", "~ ~", "~-5 ~5");
    public static final SimpleCommandExceptionType field33906 = new SimpleCommandExceptionType(new TranslationTextComponent("argument.rotation.incomplete"));
 
@@ -19,11 +20,11 @@ public class Class7918 implements ArgumentType<Class7329> {
       return new Class7918();
    }
 
-   public static Class7329 method26559(CommandContext<CommandSource> var0, String var1) {
-      return (Class7329)var0.getArgument(var1, Class7329.class);
+   public static ILocationArgument method26559(CommandContext<CommandSource> var0, String var1) {
+      return (ILocationArgument)var0.getArgument(var1, ILocationArgument.class);
    }
 
-   public Class7329 parse(StringReader var1) throws CommandSyntaxException {
+   public ILocationArgument parse(StringReader var1) throws CommandSyntaxException {
       int var4 = var1.getCursor();
       if (var1.canRead()) {
          Class8796 var5 = Class8796.method31755(var1, false);

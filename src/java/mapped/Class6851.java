@@ -14,10 +14,11 @@ import java.util.concurrent.CompletableFuture;
 
 import net.minecraft.command.CommandSource;
 import net.minecraft.command.ISuggestionProvider;
+import net.minecraft.command.arguments.ILocationArgument;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class Class6851 implements ArgumentType<Class7329> {
+public class Class6851 implements ArgumentType<ILocationArgument> {
    private static final Collection<String> field29765 = Arrays.<String>asList("0 0 0", "~ ~ ~", "^ ^ ^", "^1 ^ ^-5", "0.1 -0.5 .9", "~0.5 ~1 ~-5");
    public static final SimpleCommandExceptionType field29766 = new SimpleCommandExceptionType(new TranslationTextComponent("argument.pos3d.incomplete"));
    public static final SimpleCommandExceptionType field29767 = new SimpleCommandExceptionType(new TranslationTextComponent("argument.pos.mixed"));
@@ -36,15 +37,15 @@ public class Class6851 implements ArgumentType<Class7329> {
    }
 
    public static Vector3d method20859(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
-      return ((Class7329)var0.getArgument(var1, Class7329.class)).method23228((CommandSource)var0.getSource());
+      return ((ILocationArgument)var0.getArgument(var1, ILocationArgument.class)).getPosition((CommandSource)var0.getSource());
    }
 
-   public static Class7329 method20860(CommandContext<CommandSource> var0, String var1) {
-      return (Class7329)var0.getArgument(var1, Class7329.class);
+   public static ILocationArgument method20860(CommandContext<CommandSource> var0, String var1) {
+      return (ILocationArgument)var0.getArgument(var1, ILocationArgument.class);
    }
 
-   public Class7329 parse(StringReader var1) throws CommandSyntaxException {
-      return (Class7329)(var1.canRead() && var1.peek() == '^' ? Class7330.method23234(var1) : Class7331.method23237(var1, this.field29768));
+   public ILocationArgument parse(StringReader var1) throws CommandSyntaxException {
+      return (ILocationArgument)(var1.canRead() && var1.peek() == '^' ? Class7330.method23234(var1) : Class7331.method23237(var1, this.field29768));
    }
 
    public <S> CompletableFuture<Suggestions> listSuggestions(CommandContext<S> var1, SuggestionsBuilder var2) {

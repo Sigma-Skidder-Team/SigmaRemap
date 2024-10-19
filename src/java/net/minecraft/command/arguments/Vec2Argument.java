@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.command.arguments;
 
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.arguments.ArgumentType;
@@ -12,44 +12,47 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.concurrent.CompletableFuture;
 
+import mapped.Class7331;
+import mapped.Class8796;
+import mapped.Commands;
 import net.minecraft.command.CommandSource;
 import net.minecraft.command.ISuggestionProvider;
 import net.minecraft.util.math.vector.Vector2f;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class Class7347 implements ArgumentType<Class7329> {
-   private static final Collection<String> field31455 = Arrays.<String>asList("0 0", "~ ~", "0.1 -0.5", "~1 ~-2");
-   public static final SimpleCommandExceptionType field31456 = new SimpleCommandExceptionType(new TranslationTextComponent("argument.pos2d.incomplete"));
-   private final boolean field31457;
+public class Vec2Argument implements ArgumentType<ILocationArgument> {
+   private static final Collection<String> EXAMPLES = Arrays.<String>asList("0 0", "~ ~", "0.1 -0.5", "~1 ~-2");
+   public static final SimpleCommandExceptionType VEC2_INCOMPLETE = new SimpleCommandExceptionType(new TranslationTextComponent("argument.pos2d.incomplete"));
+   private final boolean centerIntegers;
 
-   public Class7347(boolean var1) {
-      this.field31457 = var1;
+   public Vec2Argument(boolean var1) {
+      this.centerIntegers = var1;
    }
 
-   public static Class7347 method23292() {
-      return new Class7347(true);
+   public static Vec2Argument method23292() {
+      return new Vec2Argument(true);
    }
 
    public static Vector2f method23293(CommandContext<CommandSource> var0, String var1) throws CommandSyntaxException {
-      Vector3d var4 = ((Class7329)var0.getArgument(var1, Class7329.class)).method23228((CommandSource)var0.getSource());
+      Vector3d var4 = ((ILocationArgument)var0.getArgument(var1, ILocationArgument.class)).getPosition((CommandSource)var0.getSource());
       return new Vector2f((float)var4.x, (float)var4.z);
    }
 
-   public Class7329 parse(StringReader var1) throws CommandSyntaxException {
+   public ILocationArgument parse(StringReader var1) throws CommandSyntaxException {
       int var4 = var1.getCursor();
       if (var1.canRead()) {
-         Class8796 var5 = Class8796.method31755(var1, this.field31457);
+         Class8796 var5 = Class8796.method31755(var1, this.centerIntegers);
          if (var1.canRead() && var1.peek() == ' ') {
             var1.skip();
-            Class8796 var6 = Class8796.method31755(var1, this.field31457);
+            Class8796 var6 = Class8796.method31755(var1, this.centerIntegers);
             return new Class7331(var5, new Class8796(true, 0.0), var6);
          } else {
             var1.setCursor(var4);
-            throw field31456.createWithContext(var1);
+            throw VEC2_INCOMPLETE.createWithContext(var1);
          }
       } else {
-         throw field31456.createWithContext(var1);
+         throw VEC2_INCOMPLETE.createWithContext(var1);
       }
    }
 
@@ -70,6 +73,6 @@ public class Class7347 implements ArgumentType<Class7329> {
    }
 
    public Collection<String> getExamples() {
-      return field31455;
+      return EXAMPLES;
    }
 }

@@ -10,6 +10,7 @@ import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.Locale;
 
 import net.minecraft.command.CommandSource;
+import net.minecraft.command.arguments.Vec2Argument;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector2f;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -92,8 +93,8 @@ public class Class8243 {
                      .then(
                         Commands.method18839("center")
                            .then(
-                              Commands.method18840("pos", Class7347.method23292())
-                                 .executes(var0x -> method28747((CommandSource)var0x.getSource(), Class7347.method23293(var0x, "pos")))
+                              Commands.method18840("pos", Vec2Argument.method23292())
+                                 .executes(var0x -> method28747((CommandSource)var0x.getSource(), Vec2Argument.method23293(var0x, "pos")))
                            )
                      ))
                   .then(

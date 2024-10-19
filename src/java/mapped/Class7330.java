@@ -3,13 +3,14 @@ package mapped;
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.command.CommandSource;
+import net.minecraft.command.arguments.ILocationArgument;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector2f;
 import net.minecraft.util.math.vector.Vector3d;
 
 import java.util.Objects;
 
-public class Class7330 implements Class7329 {
+public class Class7330 implements ILocationArgument {
    private static String[] field31411;
    private final double field31412;
    private final double field31413;
@@ -22,9 +23,9 @@ public class Class7330 implements Class7329 {
    }
 
    @Override
-   public Vector3d method23228(CommandSource var1) {
-      Vector2f var4 = var1.method20176();
-      Vector3d var5 = var1.method20178().method8712(var1);
+   public Vector3d getPosition(CommandSource source) {
+      Vector2f var4 = source.method20176();
+      Vector3d var5 = source.method20178().method8712(source);
       float var6 = MathHelper.cos((var4.y + 90.0F) * (float) (Math.PI / 180.0));
       float var7 = MathHelper.sin((var4.y + 90.0F) * (float) (Math.PI / 180.0));
       float var8 = MathHelper.cos(-var4.x * (float) (Math.PI / 180.0));
@@ -41,22 +42,22 @@ public class Class7330 implements Class7329 {
    }
 
    @Override
-   public Vector2f method23229(CommandSource var1) {
+   public Vector2f getRotation(CommandSource source) {
       return Vector2f.ZERO;
    }
 
    @Override
-   public boolean method23231() {
+   public boolean isXRelative() {
       return true;
    }
 
    @Override
-   public boolean method23232() {
+   public boolean isYRelative() {
       return true;
    }
 
    @Override
-   public boolean method23233() {
+   public boolean isZRelative() {
       return true;
    }
 

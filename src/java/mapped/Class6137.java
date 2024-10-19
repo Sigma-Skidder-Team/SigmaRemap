@@ -134,7 +134,7 @@ public class Class6137 {
                                        .redirect(
                                           var3,
                                           var0x -> ((CommandSource)var0x.getSource())
-                                                .method20159(Class7918.method26559(var0x, "rot").method23229((CommandSource)var0x.getSource()))
+                                                .method20159(Class7918.method26559(var0x, "rot").getRotation((CommandSource)var0x.getSource()))
                                        )
                                  ))
                               .then(Commands.method18839("as").then(Commands.method18840("targets", Class8700.method31347()).fork(var3, var0x -> {

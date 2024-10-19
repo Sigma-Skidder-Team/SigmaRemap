@@ -14,10 +14,11 @@ import java.util.concurrent.CompletableFuture;
 
 import net.minecraft.command.CommandSource;
 import net.minecraft.command.ISuggestionProvider;
+import net.minecraft.command.arguments.ILocationArgument;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class Class8693 implements ArgumentType<Class7329> {
+public class Class8693 implements ArgumentType<ILocationArgument> {
    private static final Collection<String> field39235 = Arrays.<String>asList("0 0", "~ ~", "~1 ~-2", "^ ^", "^-1 ^0");
    public static final SimpleCommandExceptionType field39236 = new SimpleCommandExceptionType(new TranslationTextComponent("argument.pos2d.incomplete"));
 
@@ -26,11 +27,11 @@ public class Class8693 implements ArgumentType<Class7329> {
    }
 
    public static Class7760 method31320(CommandContext<CommandSource> var0, String var1) {
-      BlockPos var4 = ((Class7329)var0.getArgument(var1, Class7329.class)).method23230((CommandSource)var0.getSource());
+      BlockPos var4 = ((ILocationArgument)var0.getArgument(var1, ILocationArgument.class)).getBlockPos((CommandSource)var0.getSource());
       return new Class7760(var4.getX(), var4.getZ());
    }
 
-   public Class7329 parse(StringReader var1) throws CommandSyntaxException {
+   public ILocationArgument parse(StringReader var1) throws CommandSyntaxException {
       int var4 = var1.getCursor();
       if (var1.canRead()) {
          Class8796 var5 = Class8796.method31756(var1);
