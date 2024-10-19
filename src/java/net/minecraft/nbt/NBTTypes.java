@@ -1,7 +1,5 @@
 package net.minecraft.nbt;
 
-import mapped.*;
-
 public class NBTTypes {
    private static String[] field19509;
    private static final INBTType<?>[] field19510 = new INBTType[]{

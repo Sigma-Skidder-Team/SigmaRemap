@@ -23,6 +23,7 @@ import net.minecraft.fluid.Fluids;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.ListNBT;
 import net.minecraft.nbt.LongArrayNBT;
+import net.minecraft.nbt.ShortNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.SharedConstants;
 import net.minecraft.util.math.BlockPos;

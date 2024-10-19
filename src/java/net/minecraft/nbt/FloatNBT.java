@@ -1,7 +1,6 @@
-package mapped;
+package net.minecraft.nbt;
 
-import net.minecraft.nbt.NumberNBT;
-import net.minecraft.nbt.INBTType;
+import mapped.Class7056;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
@@ -94,7 +93,7 @@ public class FloatNBT extends NumberNBT {
    }
 
    @Override
-   public Number method89() {
+   public Number getAsNumber() {
       return this.field62;
    }
 }

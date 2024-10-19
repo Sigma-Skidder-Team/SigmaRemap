@@ -13,5 +13,5 @@ public abstract class NumberNBT implements INBT {
 
    public abstract float getFloat();
 
-   public abstract Number method89();
+   public abstract Number getAsNumber();
 }

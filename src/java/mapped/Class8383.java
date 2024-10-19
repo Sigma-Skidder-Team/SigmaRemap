@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.nbt.ByteNBT;
+
 public class Class8383 {
    private static String[] field35955;
    private static final ByteNBT[] field35956 = new ByteNBT[256];

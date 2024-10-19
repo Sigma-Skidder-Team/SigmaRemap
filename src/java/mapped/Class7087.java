@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.nbt.FloatNBT;
 import net.minecraft.nbt.ListNBT;
 
 public class Class7087 {

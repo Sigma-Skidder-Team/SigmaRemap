@@ -1,7 +1,6 @@
-package mapped;
+package net.minecraft.nbt;
 
-import net.minecraft.nbt.INBT;
-import net.minecraft.nbt.INBTType;
+import mapped.Class7062;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;

@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.nbt.NBTSizeTracker;
 import net.minecraft.nbt.INBTType;
+import net.minecraft.nbt.ShortNBT;
 
 import java.io.DataInput;
 import java.io.IOException;

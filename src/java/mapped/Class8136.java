@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.nbt.IntNBT;
+
 public class Class8136 {
    private static String[] field34974;
    public static final IntNBT[] field34975 = new IntNBT[1153];

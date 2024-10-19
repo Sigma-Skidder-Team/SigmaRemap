@@ -1,7 +1,7 @@
-package mapped;
+package net.minecraft.nbt;
 
-import net.minecraft.nbt.NumberNBT;
-import net.minecraft.nbt.INBTType;
+import mapped.Class7059;
+import mapped.Class9087;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -92,7 +92,7 @@ public class ShortNBT extends NumberNBT {
    }
 
    @Override
-   public Number method89() {
+   public Number getAsNumber() {
       return this.field76;
    }
 

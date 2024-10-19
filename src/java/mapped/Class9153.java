@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.nbt.LongNBT;
+
 public class Class9153 {
    private static String[] field42032;
    public static final LongNBT[] field42033 = new LongNBT[1153];

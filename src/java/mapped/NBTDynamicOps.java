@@ -63,7 +63,7 @@ public class NBTDynamicOps implements DynamicOps<INBT> {
    }
 
    public DataResult<Number> getNumberValue(INBT var1) {
-      return !(var1 instanceof NumberNBT) ? DataResult.error("Not a number") : DataResult.success(((NumberNBT)var1).method89());
+      return !(var1 instanceof NumberNBT) ? DataResult.error("Not a number") : DataResult.success(((NumberNBT)var1).getAsNumber());
    }
 
    public INBT createNumeric(Number var1) {

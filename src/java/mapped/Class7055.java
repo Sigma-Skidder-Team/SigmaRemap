@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.nbt.LongNBT;
 import net.minecraft.nbt.NBTSizeTracker;
 import net.minecraft.nbt.INBTType;
 

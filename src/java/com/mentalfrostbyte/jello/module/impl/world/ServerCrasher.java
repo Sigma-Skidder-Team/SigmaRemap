@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import mapped.Class8906;
 import net.minecraft.nbt.ListNBT;
-import mapped.StringNBT;
+import net.minecraft.nbt.StringNBT;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;

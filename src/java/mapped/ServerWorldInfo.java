@@ -13,10 +13,7 @@ import javax.annotation.Nullable;
 
 import net.minecraft.client.util.Util;
 import net.minecraft.crash.CrashReportCategory;
-import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.nbt.INBT;
-import net.minecraft.nbt.ListNBT;
-import net.minecraft.nbt.NBTUtil;
+import net.minecraft.nbt.*;
 import net.minecraft.util.SharedConstants;
 import net.minecraft.util.UUIDCodec;
 import net.minecraft.util.datafix.codec.DatapackCodec;
