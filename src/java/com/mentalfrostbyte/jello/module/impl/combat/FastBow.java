@@ -11,19 +11,18 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 
 public class FastBow extends Module {
-    private int field23627;
 
     public FastBow() {
         super(ModuleCategory.COMBAT, "FastBow", "Shoots arrows faster");
     }
 
     @EventTarget
-    private void method16373(TickEvent var1) {
+    private void TickEvent(TickEvent event) {
         if (this.isEnabled()) {
             if (mc.player.getHeldItemMainhand() != null
                     && mc.player.getHeldItemMainhand().getItem() instanceof BowItem
                     && mc.player.onGround) {
-                for (int var4 = 0; var4 < 25; var4++) {
+                for (int i = 0; i < 25; i++) {
                     mc.getConnection().sendPacket(new CPlayerPacket(true));
                 }
 
