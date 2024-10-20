@@ -13,16 +13,16 @@ public class NoServerInfo extends Module {
     }
 
     @EventTarget
-    private void method16245(ReceivePacketEvent var1) {
+    private void RecievePacketEvent(ReceivePacketEvent event) {
         if (this.isEnabled()) {
-            if (var1.getPacket() instanceof SUpdateBossInfoPacket) {
-                SUpdateBossInfoPacket var4 = (SUpdateBossInfoPacket) var1.getPacket();
-                var1.setCancelled(true);
+            if (event.getPacket() instanceof SUpdateBossInfoPacket) {
+                SUpdateBossInfoPacket sUpdateBossInfoPacket = (SUpdateBossInfoPacket) event.getPacket();
+                event.setCancelled(true);
             }
 
-            if (var1.getPacket() instanceof SScoreboardObjectivePacket) {
-                SScoreboardObjectivePacket var5 = (SScoreboardObjectivePacket) var1.getPacket();
-                var1.setCancelled(true);
+            if (event.getPacket() instanceof SScoreboardObjectivePacket) {
+                SScoreboardObjectivePacket sScoreboardObjectivePacket = (SScoreboardObjectivePacket) event.getPacket();
+                event.setCancelled(true);
             }
         }
     }
