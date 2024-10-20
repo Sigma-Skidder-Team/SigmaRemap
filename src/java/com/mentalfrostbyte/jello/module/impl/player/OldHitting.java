@@ -144,34 +144,34 @@ public class OldHitting extends Module {
                     event.setCancelled(true);
                     switch (this.getStringSettingValueByName("Animation")) {
                         case "Vanilla":
-                            this.method16026(0.0F, var4, event.getMatrix());
+                            this.VanillaAnimation(0.0F, var4, event.getMatrix());
                             break;
                         case "Tap":
-                            this.method16027(0.0F, var4, event.getMatrix());
+                            this.TapAnimation(0.0F, var4, event.getMatrix());
                             break;
                         case "Tap2":
-                            this.method16028(0.0F, var4, event.getMatrix());
+                            this.Tap2Animation(0.0F, var4, event.getMatrix());
                             break;
                         case "Slide":
-                            this.method16029(0.0F, var4, event.getMatrix());
+                            this.SlideAnimation(0.0F, var4, event.getMatrix());
                             break;
                         case "Slide2":
-                            this.method16030(0.0F, var4, event.getMatrix());
+                            this.Slide2Animation(0.0F, var4, event.getMatrix());
                             break;
                         case "Scale":
-                            this.method16031(0.0F, var4, event.getMatrix());
+                            this.ScaleAnimation(0.0F, var4, event.getMatrix());
                             break;
                         case "Leaked":
-                            this.method16032(0.0F, var4, event.getMatrix());
+                            this.LeakedAnimation(0.0F, var4, event.getMatrix());
                             break;
                         case "Ninja":
-                            this.method16025(0.0F, var4, event.getMatrix());
+                            this.NinjaAnimation(0.0F, var4, event.getMatrix());
                             break;
                         case "Tomy":
-                            this.method16024(0.0F, var4, event.getMatrix());
+                            this.TomyAnimation(0.0F, var4, event.getMatrix());
                             break;
                         case "Down":
-                            this.method16033(0.0F, var4, event.getMatrix());
+                            this.DownAnimation(0.0F, var4, event.getMatrix());
                     }
                 }
             }
@@ -182,7 +182,7 @@ public class OldHitting extends Module {
         var5.rotate(new Vector3f(var2, var3, var4).rotationDegrees(var1));
     }
 
-    private void method16024(float var1, float var2, MatrixStack var3) {
+    private void TomyAnimation(float var1, float var2, MatrixStack var3) {
         var3.translate(0.48F, -0.55F, -0.71999997F);
         var3.translate(0.0, (double) (var1 * -0.6F), 0.0);
         this.rotate(77.0F, 0.0F, 1.0F, 0.0F, var3);
@@ -197,7 +197,7 @@ public class OldHitting extends Module {
         var3.scale(var8, var8, var8);
     }
 
-    private void method16025(float var1, float var2, MatrixStack var3) {
+    private void NinjaAnimation(float var1, float var2, MatrixStack var3) {
         var3.translate(0.48F, -0.39F, -0.71999997F);
         var3.translate(0.0, (double) (var1 * -0.6F), 0.0);
         this.rotate(100.0F, 0.0F, 1.0F, 0.0F, var3);
@@ -212,7 +212,7 @@ public class OldHitting extends Module {
         var3.scale(var8, var8, var8);
     }
 
-    private void method16026(float var1, float var2, MatrixStack var3) {
+    private void VanillaAnimation(float var1, float var2, MatrixStack var3) {
         var3.translate(0.48F, -0.55F, -0.71999997F);
         var3.translate(0.0, (double) (var1 * -0.6F), 0.0);
         this.rotate(77.0F, 0.0F, 1.0F, 0.0F, var3);
@@ -227,7 +227,7 @@ public class OldHitting extends Module {
         var3.scale(var8, var8, var8);
     }
 
-    private void method16027(float var1, float var2, MatrixStack var3) {
+    private void TapAnimation(float var1, float var2, MatrixStack var3) {
         var3.translate(0.0, -3.5, 0.0);
         var3.translate(0.56F, -0.52F, -0.72F);
         var3.translate(0.56F, -0.22F, -0.71999997F);
@@ -241,7 +241,7 @@ public class OldHitting extends Module {
         var3.scale(2.7F, 2.7F, 2.7F);
     }
 
-    private void method16028(float var1, float var2, MatrixStack var3) {
+    private void Tap2Animation(float var1, float var2, MatrixStack var3) {
         var3.translate(0.648F, -0.55F, -0.71999997F);
         var3.translate(0.0, (double) (var1 * -0.6F), 0.0);
         this.rotate(77.0F, 0.0F, 1.0F, 0.0F, var3);
@@ -253,7 +253,7 @@ public class OldHitting extends Module {
         var3.scale(var7, var7, var7);
     }
 
-    private void method16029(float var1, float var2, MatrixStack var3) {
+    private void SlideAnimation(float var1, float var2, MatrixStack var3) {
         var3.translate(0.648F, -0.55F, -0.71999997F);
         var3.translate(0.0, (double) (var1 * -0.6F), 0.0);
         this.rotate(77.0F, 0.0F, 1.0F, 0.0F, var3);
@@ -265,7 +265,7 @@ public class OldHitting extends Module {
         var3.scale(var7, var7, var7);
     }
 
-    private void method16030(float var1, float var2, MatrixStack var3) {
+    private void Slide2Animation(float var1, float var2, MatrixStack var3) {
         var3.translate(0.48F, -0.55F, -0.71999997F);
         var3.translate(0.0, (double) (var1 * -0.6F), 0.0);
         this.rotate(77.0F, 0.0F, 1.0F, 0.0F, var3);
@@ -280,7 +280,7 @@ public class OldHitting extends Module {
         var3.scale(var8, var8, var8);
     }
 
-    private void method16031(float var1, float var2, MatrixStack var3) {
+    private void ScaleAnimation(float var1, float var2, MatrixStack var3) {
         var3.translate(0.48F, -0.55F, -0.71999997F);
         var3.translate(0.0, (double) (var1 * -0.2F), 0.0);
         this.rotate(77.0F, 0.0F, 1.0F, 0.0F, var3);
@@ -291,7 +291,7 @@ public class OldHitting extends Module {
         var3.scale(var7, var7, var7);
     }
 
-    private void method16032(float var1, float var2, MatrixStack var3) {
+    private void LeakedAnimation(float var1, float var2, MatrixStack var3) {
         var3.translate(0.56, -0.52, -0.72);
         float var6 = MathHelper.sin(MathHelper.sqrt(var2) * (float) Math.PI);
         this.rotate(77.0F, 0.0F, 1.0F, 0.0F, var3);
@@ -301,7 +301,7 @@ public class OldHitting extends Module {
         this.rotate(var6 * 30.0F, 1.0F, -0.0F, -1.0F, var3);
     }
 
-    private void method16033(float var1, float var2, MatrixStack var3) {
+    private void DownAnimation(float var1, float var2, MatrixStack var3) {
         float var6 = MathHelper.sin(MathHelper.sqrt(var2) * (float) Math.PI);
         var3.translate(0.48F, -0.55F, -0.71999997F);
         var3.translate(0.0, (double) (var6 * -0.2F), 0.0);
