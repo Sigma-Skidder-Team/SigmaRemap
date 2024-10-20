@@ -30,7 +30,7 @@ import de.florianmichael.viamcp.gui.AsyncVersionSlider;
 import java.io.File;
 
 public class ViaMCP {
-    public final static int NATIVE_VERSION = 754;
+    public final static int NATIVE_VERSION = 754; //https://minecraft.fandom.com/wiki/Protocol_version
     public static ViaMCP INSTANCE;
 
     public static void create() {
@@ -39,7 +39,7 @@ public class ViaMCP {
 
     public ViaMCP() {
         ViaLoadingBase.ViaLoadingBaseBuilder.create().runDirectory(new File("ViaMCP")).nativeVersion(NATIVE_VERSION).onProtocolReload(protocolVersion -> {}).build();
-        //fixTransactions();
+        fixTransactions();
     }
 
     private void fixTransactions() {
