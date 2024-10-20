@@ -3,6 +3,7 @@ package mapped;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectIterator;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IItemProvider;
@@ -26,8 +27,8 @@ public class Class8400 {
 
    public TextureAtlasSprite method29491(ItemStack var1) {
       IBakedModel var4 = this.method29492(var1);
-      return var4 == this.field36049.getMissingModel() && var1.getItem() instanceof Class3292
-         ? this.field36049.method1025().getTexture(((Class3292)var1.getItem()).method11845().getDefaultState())
+      return var4 == this.field36049.getMissingModel() && var1.getItem() instanceof BlockItem
+         ? this.field36049.method1025().getTexture(((BlockItem)var1.getItem()).method11845().getDefaultState())
          : var4.getParticleTexture();
    }
 

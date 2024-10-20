@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.Item;
 import net.minecraft.util.Direction;
@@ -12,7 +13,7 @@ import net.minecraft.world.World;
 import java.util.Map;
 import javax.annotation.Nullable;
 
-public class Class3298 extends Class3292 {
+public class Class3298 extends BlockItem {
    private static String[] field18806;
    public final Block field18807;
 

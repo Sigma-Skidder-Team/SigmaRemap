@@ -64,11 +64,11 @@ public class Class2954 {
       for (int var4 = 0; var4 < this.field18031.size(); var4++) {
          Class1199 var5 = this.field18031.get(var4);
          if (var3 + var4 >= this.field18036.size()) {
-            var5.field6483 = false;
+            var5.visible = false;
          } else {
             RecipeList var6 = this.field18036.get(var3 + var4);
             var5.method5752(var6, this);
-            var5.field6483 = true;
+            var5.visible = true;
          }
       }
 
@@ -76,8 +76,8 @@ public class Class2954 {
    }
 
    private void method11310() {
-      this.field18037.field6483 = this.field18039 > 1 && this.field18040 < this.field18039 - 1;
-      this.field18038.field6483 = this.field18039 > 1 && this.field18040 > 0;
+      this.field18037.visible = this.field18039 > 1 && this.field18040 < this.field18039 - 1;
+      this.field18038.visible = this.field18039 > 1 && this.field18040 > 0;
    }
 
    public void method11311(MatrixStack var1, int var2, int var3, int var4, int var5, float var6) {
@@ -91,7 +91,7 @@ public class Class2954 {
 
       for (Class1199 var12 : this.field18031) {
          var12.render(var1, var4, var5, var6);
-         if (var12.field6483 && var12.method5737()) {
+         if (var12.visible && var12.isHovered()) {
             this.field18032 = var12;
          }
       }
@@ -150,8 +150,8 @@ public class Class2954 {
                         .method5901(
                            this.field18034,
                            var13.method5753(),
-                           var13.field6477,
-                           var13.field6478,
+                           var13.x,
+                           var13.y,
                            var6 + var8 / 2,
                            var7 + 13 + var9 / 2,
                            (float)var13.method5740()

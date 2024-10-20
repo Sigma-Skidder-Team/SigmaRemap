@@ -35,7 +35,7 @@ public class Class838 extends Screen {
          if (var5 == 1 && var9 instanceof Class1230) {
             Class1230 var10 = (Class1230)var9;
             if (var10.method5811() == AbstractOption.field25344) {
-               var9.method5739(super.mc.getSoundHandler());
+               var9.playDownSound(super.mc.getSoundHandler());
             }
          }
 
@@ -72,10 +72,10 @@ public class Class838 extends Screen {
    public static Widget method2566(int var0, int var1, List<Widget> var2) {
       for (int var5 = 0; var5 < var2.size(); var5++) {
          Widget var6 = (Widget)var2.get(var5);
-         if (var6.field6483) {
+         if (var6.visible) {
             int var7 = GuiUtils.method24650(var6);
             int var8 = GuiUtils.method24651(var6);
-            if (var0 >= var6.field6477 && var1 >= var6.field6478 && var0 < var6.field6477 + var7 && var1 < var6.field6478 + var8) {
+            if (var0 >= var6.x && var1 >= var6.y && var0 < var6.x + var7 && var1 < var6.y + var8) {
                return var6;
             }
          }

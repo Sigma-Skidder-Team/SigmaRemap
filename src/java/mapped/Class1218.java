@@ -32,7 +32,7 @@ public class Class1218 extends Button implements IScreen {
    private int field6546;
    private Class8638 field6547;
 
-   public Class1218(int var1, int var2, int var3, int var4, Supplier<RealmsServer> var5, Consumer<ITextComponent> var6, int var7, Class7192 var8) {
+   public Class1218(int var1, int var2, int var3, int var4, Supplier<RealmsServer> var5, Consumer<ITextComponent> var6, int var7, IPressable var8) {
       super(var1, var2, var3, var4, StringTextComponent.EMPTY, var8);
       this.field6543 = var5;
       this.field6545 = var7;
@@ -119,12 +119,12 @@ public class Class1218 extends Button implements IScreen {
    }
 
    @Override
-   public void method5655(MatrixStack var1, int var2, int var3, float var4) {
+   public void renderButton(MatrixStack var1, int var2, int var3, float var4) {
       if (this.field6547 != null) {
          this.method5778(
             var1,
-            this.field6477,
-            this.field6478,
+            this.x,
+            this.y,
             var2,
             var3,
             Class8638.method31029(this.field6547),
@@ -156,7 +156,7 @@ public class Class1218 extends Button implements IScreen {
       Class2194 var14,
       ITextComponent var15
    ) {
-      boolean var18 = this.method5737();
+      boolean var18 = this.isHovered();
       if (this.isMouseOver((double)var4, (double)var5) && var15 != null) {
          this.field6544.accept(var15);
       }

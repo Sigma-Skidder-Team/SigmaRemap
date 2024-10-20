@@ -12,7 +12,7 @@ import java.util.Optional;
 public class Class1227 extends Button {
    public final WorldOptionsScreen field6576;
 
-   public Class1227(WorldOptionsScreen var1, int var2, int var3, int var4, int var5, ITextComponent var6, Class7192 var7) {
+   public Class1227(WorldOptionsScreen var1, int var2, int var3, int var4, int var5, ITextComponent var6, IPressable var7) {
       super(var2, var3, var4, var5, var6, var7);
       this.field6576 = var1;
    }

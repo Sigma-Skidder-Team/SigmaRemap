@@ -50,7 +50,7 @@ public class JelloForSigmaOptions extends IngameMenuScreen {
 
       while (var3.hasNext()) {
          Widget var4 = (Widget)var3.next();
-         if (var4.field6478 == this.height / 4 + 72 + -16) {
+         if (var4.y == this.height / 4 + 72 + -16) {
             var3.remove();
          }
       }

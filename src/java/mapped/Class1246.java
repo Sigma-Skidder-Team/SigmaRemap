@@ -10,7 +10,7 @@ public class Class1246 extends Button {
    public final ITextComponent field6607;
    public final Class1188 field6608;
 
-   public Class1246(Class1188 var1, int var2, int var3, int var4, int var5, ITextComponent var6, Class7192 var7, Class1295 var8, ITextComponent var9) {
+   public Class1246(Class1188 var1, int var2, int var3, int var4, int var5, ITextComponent var6, IPressable var7, Class1295 var8, ITextComponent var9) {
       super(var2, var3, var4, var5, var6, var7);
       this.field6608 = var1;
       this.field6606 = var8;

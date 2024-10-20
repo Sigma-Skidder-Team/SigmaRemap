@@ -193,7 +193,7 @@ public class TextureManager implements Class268, Class288, AutoCloseable {
       }
 
       EmissiveTextures.method30599();
-      return CompletableFuture.allOf(VanillaMainMenuScreen.method2595(this, var5), this.method1078(Widget.field6474, var5))
+      return CompletableFuture.allOf(VanillaMainMenuScreen.method2595(this, var5), this.method1078(Widget.WIDGETS_LOCATION, var5))
          .<Void>thenCompose(var1::method22225)
          .thenAcceptAsync(var3x -> {
             Class1714.method7515();

@@ -120,8 +120,8 @@ public class Class823 extends RealmsScreen {
    }
 
    private void method2382() {
-      this.field4515.field6483 = this.method2383(this.field4514);
-      this.field4516.field6483 = this.method2383(this.field4514);
+      this.field4515.visible = this.method2383(this.field4514);
+      this.field4516.visible = this.method2383(this.field4514);
    }
 
    private boolean method2383(int var1) {

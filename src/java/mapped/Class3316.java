@@ -396,10 +396,10 @@ public class Class3316 extends Class3314 {
    }
 
    @Override
-   public ActionResultType method11707(ItemUseContext var1) {
+   public ActionResultType onItemUse(ItemUseContext var1) {
       BlockState var4 = var1.getWorld().getBlockState(var1.getPos());
       if (!var4.isIn(BlockTags.field32760)) {
-         return super.method11707(var1);
+         return super.onItemUse(var1);
       } else {
          if (!var1.getWorld().isRemote) {
             MapData var5 = method11861(var1.method18357(), var1.getWorld());

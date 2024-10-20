@@ -3,9 +3,10 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.BlockItemUseContext;
 
-public class Class3295 extends Class3292 {
+public class Class3295 extends BlockItem {
    private static String[] field18803;
 
    public Class3295(Block var1, Properties var2) {

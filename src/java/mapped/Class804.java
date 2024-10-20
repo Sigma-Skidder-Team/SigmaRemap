@@ -108,8 +108,8 @@ public class Class804 extends RealmsScreen {
          )
       );
       this.field4204.active = false;
-      this.field4205.field6483 = false;
-      this.field4206.field6483 = false;
+      this.field4205.visible = false;
+      this.field4206.visible = false;
       this.<Class1291>addListener(this.field4201);
       this.setListenerDefault(this.field4201);
       Stream<ITextComponent> var5 = Stream.<ITextComponent>of(this.field4203);
@@ -121,8 +121,8 @@ public class Class804 extends RealmsScreen {
    }
 
    private void method1959() {
-      this.field4206.field6483 = this.method1961();
-      this.field4205.field6483 = this.method1963();
+      this.field4206.visible = this.method1961();
+      this.field4205.visible = this.method1963();
       this.field4204.active = this.method1960();
    }
 

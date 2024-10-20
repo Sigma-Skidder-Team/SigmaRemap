@@ -108,8 +108,8 @@ public class RealmGUI extends RealmsScreen {
    }
 
    private void method2408() {
-      this.field4533.field6483 = this.method2409(this.field4537);
-      this.field4534.field6483 = this.method2409(this.field4537);
+      this.field4533.visible = this.method2409(this.field4537);
+      this.field4534.visible = this.method2409(this.field4537);
    }
 
    private boolean method2409(int var1) {

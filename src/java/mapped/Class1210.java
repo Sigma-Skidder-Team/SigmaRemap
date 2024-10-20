@@ -7,7 +7,7 @@ public class Class1210 extends Button {
    private static String[] field6511;
    public final int field6523;
 
-   public Class1210(int var1, int var2, int var3, int var4, int var5, String var6, Class7192 var7) {
+   public Class1210(int var1, int var2, int var3, int var4, int var5, String var6, IPressable var7) {
       super(var2, var3, var4, var5, new StringTextComponent(var6), var7);
       this.field6523 = var1;
    }

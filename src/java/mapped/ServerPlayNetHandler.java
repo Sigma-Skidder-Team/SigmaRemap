@@ -26,6 +26,7 @@ import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.crash.ReportedException;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.util.Util;
 import net.minecraft.command.CommandSource;
@@ -917,7 +918,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
          return false;
       } else {
          Item var4 = var1.getItem();
-         return (var4 instanceof Class3292 || var4 instanceof Class3287) && !var0.method2976().method19635(var4);
+         return (var4 instanceof BlockItem || var4 instanceof Class3287) && !var0.method2976().method19635(var4);
       }
    }
 

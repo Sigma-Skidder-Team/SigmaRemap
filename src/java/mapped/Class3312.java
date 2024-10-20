@@ -22,7 +22,7 @@ public class Class3312 extends Item {
    }
 
    @Override
-   public ActionResultType method11707(ItemUseContext var1) {
+   public ActionResultType onItemUse(ItemUseContext var1) {
       BlockPos var4 = var1.getPos();
       Direction var5 = var1.getFace();
       BlockPos var6 = var4.offset(var5);

@@ -23,6 +23,7 @@ import lol.MovementUtils;
 import mapped.*;
 import net.minecraft.block.*;
 import net.minecraft.inventory.container.ClickType;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.CClientStatusPacket;
@@ -95,10 +96,10 @@ public class BlockFly extends ModuleWithModuleSettings {
     }
 
     public static boolean method16733(Item var0) {
-        if (!(var0 instanceof Class3292)) {
+        if (!(var0 instanceof BlockItem)) {
             return false;
         } else {
-            Block var3 = ((Class3292) var0).method11845();
+            Block var3 = ((BlockItem) var0).method11845();
             return ! blocksToNotPlace.contains(var3)
                     && !(var3 instanceof AbstractButtonBlock)
                     && !(var3 instanceof BushBlock)

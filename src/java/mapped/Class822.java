@@ -74,7 +74,7 @@ public class Class822 extends RealmsScreen {
       this.field4496 = this.<Button>addButton(
          new Button(this.width / 2 - 100, this.height - 42, 200, 20, DialogTexts.field30663, var1 -> this.method2361())
       );
-      this.field4496.field6483 = false;
+      this.field4496.visible = false;
       this.field4497 = this.<Button>addButton(
          new Button(this.width / 2 - 100, this.height - 42, 200, 20, DialogTexts.GUI_CANCEL, var1 -> this.method2362())
       );
@@ -326,8 +326,8 @@ public class Class822 extends RealmsScreen {
                   if (field4480.isHeldByCurrentThread()) {
                      field4480.unlock();
                      this.field4494 = false;
-                     this.field4496.field6483 = true;
-                     this.field4497.field6483 = false;
+                     this.field4496.visible = true;
+                     this.field4497.visible = false;
                      if (var3 != null) {
                         field4479.debug("Deleting file " + var3.getAbsolutePath());
                         var3.delete();

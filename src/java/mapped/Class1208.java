@@ -11,7 +11,7 @@ public class Class1208 extends Button {
    public final CreateWorldScreen field6519;
    public final WorldOptionsScreen field6520;
 
-   public Class1208(WorldOptionsScreen var1, int var2, int var3, int var4, int var5, ITextComponent var6, Class7192 var7, CreateWorldScreen var8) {
+   public Class1208(WorldOptionsScreen var1, int var2, int var3, int var4, int var5, ITextComponent var6, IPressable var7, CreateWorldScreen var8) {
       super(var2, var3, var4, var5, var6, var7);
       this.field6520 = var1;
       this.field6519 = var8;

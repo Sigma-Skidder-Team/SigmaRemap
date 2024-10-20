@@ -25,6 +25,7 @@ import com.mentalfrostbyte.jello.util.tracker.PlayerStateTracker;
 import com.mentalfrostbyte.jello.util.tracker.SlotChangeTracker;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
+import de.florianmichael.viamcp.ViaMCP;
 import lol.Texture;
 import mapped.*;
 import net.minecraft.client.Minecraft;
@@ -39,6 +40,8 @@ import java.util.ConcurrentModificationException;
 import java.util.List;
 
 public class Client {
+    public static int currentVersionIndex = 28;
+
     public static final String VERSION = "5.0.0b15";
     public static final boolean field28963 = false;
     private static final Minecraft mc = Minecraft.getInstance();

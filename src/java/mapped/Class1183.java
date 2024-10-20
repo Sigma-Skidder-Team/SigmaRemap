@@ -30,8 +30,8 @@ public class Class1183 extends Class1182 {
    @Override
    public void render(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
       this.method5612(var1, var3, var4);
-      this.field6383.field6477 = var4 + var5 - 44;
-      this.field6383.field6478 = var3;
+      this.field6383.x = var4 + var5 - 44;
+      this.field6383.y = var3;
       this.field6383.render(var1, var7, var8, var10);
    }
 }

@@ -215,7 +215,7 @@ public class InvManagerUtils {
                   if (!(var3 instanceof ToolItem)) {
                      if (!(var3 instanceof BowItem)) {
                         if (!(var3 instanceof Class3323)) {
-                           if (!(var3 instanceof Class3292)) {
+                           if (!(var3 instanceof BlockItem)) {
                               if (var0.method32184() && var0.getItem().method11745() == Class8672.field39078) {
                                  return 1.0F;
                               } else if (!(var3 instanceof Class3335)) {

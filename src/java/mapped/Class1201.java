@@ -4,9 +4,10 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.inventory.BeaconScreen;
+import net.minecraft.client.gui.widget.button.AbstractButton;
 import net.minecraft.util.text.StringTextComponent;
 
-public abstract class Class1201 extends Class1200 {
+public abstract class Class1201 extends AbstractButton {
    private boolean field6499;
 
    public Class1201(int var1, int var2) {
@@ -14,24 +15,24 @@ public abstract class Class1201 extends Class1200 {
    }
 
    @Override
-   public void method5655(MatrixStack var1, int var2, int var3, float var4) {
+   public void renderButton(MatrixStack var1, int var2, int var3, float var4) {
       Minecraft.getInstance().getTextureManager().bindTexture(BeaconScreen.method2704());
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
 
       int var8 = 0;
       if (this.active) {
          if (!this.field6499) {
-            if (this.method5737()) {
-               var8 += this.field6475 * 3;
+            if (this.isHovered()) {
+               var8 += this.width * 3;
             }
          } else {
-            var8 += this.field6475 * 1;
+            var8 += this.width * 1;
          }
       } else {
-         var8 += this.field6475 * 2;
+         var8 += this.width * 2;
       }
 
-      this.blit(var1, this.field6477, this.field6478, var8, 219, this.field6475, this.field6476);
+      this.blit(var1, this.x, this.y, var8, 219, this.width, this.height);
       this.method5760(var1);
    }
 

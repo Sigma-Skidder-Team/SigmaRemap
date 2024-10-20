@@ -276,14 +276,14 @@ public class RealmsMainScreen extends RealmsScreen {
 
    private void method2015(RealmsServer var1) {
       this.field4275.active = this.method2017(var1) && !this.method2012();
-      this.field4277.field6483 = this.method2018(var1);
-      this.field4278.field6483 = this.method2019(var1);
-      this.field4279.field6483 = this.method2020(var1);
+      this.field4277.visible = this.method2018(var1);
+      this.field4278.visible = this.method2019(var1);
+      this.field4279.visible = this.method2020(var1);
       boolean var4 = this.method2012() && this.field4287 && !this.field4288;
-      this.field4303.field6483 = var4;
+      this.field4303.visible = var4;
       this.field4303.active = var4;
-      this.field4304.field6483 = this.method2012();
-      this.field4305.field6483 = this.method2012() && this.field4285;
+      this.field4304.visible = this.method2012();
+      this.field4305.visible = this.method2012() && this.field4285;
       this.field4277.active = !this.method2012();
       this.field4278.active = !this.method2012();
       this.field4279.active = !this.method2012();
@@ -403,7 +403,7 @@ public class RealmsMainScreen extends RealmsScreen {
          }
 
          if (this.field4300 != null) {
-            this.field4300.field6483 = this.method2016();
+            this.field4300.visible = this.method2016();
          }
       }
    }
@@ -615,8 +615,8 @@ public class RealmsMainScreen extends RealmsScreen {
 
          AbstractGui.method5699(
             var1,
-            this.field4303.field6477 + this.field4303.method5740() - 8 - 4,
-            this.field4303.field6478 + this.field4303.method5728() / 2 - 4,
+            this.field4303.x + this.field4303.method5740() - 8 - 4,
+            this.field4303.y + this.field4303.method5728() / 2 - 4,
             0.0F,
                  var9,
             8,

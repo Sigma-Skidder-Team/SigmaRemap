@@ -17,10 +17,10 @@ public class PacketThreadUtil {
    public static RegistryKey<World> field39630 = null;
 
    public static <T extends INetHandler> void checkThreadAndEnqueue(IPacket<T> var0, T var1, ServerWorld var2) throws ThreadQuickExitException {
-      method31780(var0, var1, var2.getServer());
+      checkThreadAndEnqueue(var0, var1, var2.getServer());
    }
 
-   public static <T extends INetHandler> void method31780(IPacket<T> var0, T var1, Class318<?> var2) throws ThreadQuickExitException {
+   public static <T extends INetHandler> void checkThreadAndEnqueue(IPacket<T> var0, T var1, Class318<?> var2) throws ThreadQuickExitException {
       if (var2.isOnExecutionThread()) {
          method31781(var0);
       } else {

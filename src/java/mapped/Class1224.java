@@ -13,7 +13,7 @@ public class Class1224 extends Button {
    public Class1224(RealmsMainScreen var1) {
       super(var1.width - 62, 6, 20, 20, StringTextComponent.EMPTY, null);
       this.field6569 = var1;
-      this.field6513 = var1x -> {
+      this.onPress = var1x -> {
          if (RealmsMainScreen.method2115(this.field6569) != null) {
             Util.getOSType().openLink(RealmsMainScreen.method2115(this.field6569));
             if (RealmsMainScreen.method2113(this.field6569)) {
@@ -27,9 +27,9 @@ public class Class1224 extends Button {
    }
 
    @Override
-   public void method5655(MatrixStack var1, int var2, int var3, float var4) {
+   public void renderButton(MatrixStack var1, int var2, int var3, float var4) {
       RealmsMainScreen.method2114(
-         this.field6569, var1, var2, var3, RealmsMainScreen.method2113(this.field6569), this.field6477, this.field6478, this.method5737(), this.active
+         this.field6569, var1, var2, var3, RealmsMainScreen.method2113(this.field6569), this.x, this.y, this.isHovered(), this.active
       );
    }
 }

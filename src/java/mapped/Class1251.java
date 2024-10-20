@@ -23,8 +23,8 @@ public class Class1251 extends Widget implements Class1253<Class120> {
       super(var1, var2, 200, 20, StringTextComponent.EMPTY);
       this.field6627 = var0;
       this.field6626 = Lists.newArrayList();
-      this.field6475 = 24;
-      this.field6476 = 24;
+      this.width = 24;
+      this.height = 24;
       this.field6624 = var3;
       this.field6625 = var4;
       this.method5829(var3);
@@ -43,7 +43,7 @@ public class Class1251 extends Widget implements Class1253<Class120> {
    }
 
    @Override
-   public void method5655(MatrixStack var1, int var2, int var3, float var4) {
+   public void renderButton(MatrixStack var1, int var2, int var3, float var4) {
       RenderSystem.enableAlphaTest();
       Class1263.method5908(this.field6627).getTextureManager().bindTexture(Class1263.method5907());
       int var7 = 152;
@@ -52,16 +52,16 @@ public class Class1251 extends Widget implements Class1253<Class120> {
       }
 
       int var8 = !Class1263.method5909(this.field6627) ? 78 : 130;
-      if (this.method5737()) {
+      if (this.isHovered()) {
          var8 += 26;
       }
 
-      this.blit(var1, this.field6477, this.field6478, var7, var8, this.field6475, this.field6476);
+      this.blit(var1, this.x, this.y, var7, var8, this.width, this.height);
 
       for (Class8834 var10 : this.field6626) {
          RenderSystem.pushMatrix();
-         int var12 = (int)((float)(this.field6477 + var10.field39895) / 0.42F - 3.0F);
-         int var13 = (int)((float)(this.field6478 + var10.field39896) / 0.42F - 3.0F);
+         int var12 = (int)((float)(this.x + var10.field39895) / 0.42F - 3.0F);
+         int var13 = (int)((float)(this.y + var10.field39896) / 0.42F - 3.0F);
          RenderSystem.scalef(0.42F, 0.42F, 1.0F);
          Class1263.method5908(this.field6627)
             .getItemRenderer()

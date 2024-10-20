@@ -21,6 +21,7 @@ import lol.TextureImpl;
 import mapped.*;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.Entity;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.NonNullList;
@@ -59,8 +60,8 @@ public class ShulkerInfo extends Module {
             for (Entity var5 : MultiUtilities.getEntitesInWorld()) {
                 if (var5 instanceof ItemEntity) {
                     ItemEntity var6 = (ItemEntity) var5;
-                    if (!(var6.method4124().getItem() instanceof Class3292)
-                            || !(((Class3292) var6.method4124().getItem()).method11845() instanceof Class3368)) {
+                    if (!(var6.method4124().getItem() instanceof BlockItem)
+                            || !(((BlockItem) var6.method4124().getItem()).method11845() instanceof Class3368)) {
                         return;
                     }
 
@@ -170,8 +171,8 @@ public class ShulkerInfo extends Module {
                 Slot var5 = var4.field4729;
                 if (var5 != null
                         && var5.getHasStack()
-                        && var5.getStack().getItem() instanceof Class3292
-                        && ((Class3292) var5.getStack().getItem()).method11845() instanceof Class3368) {
+                        && var5.getStack().getItem() instanceof BlockItem
+                        && ((BlockItem) var5.getStack().getItem()).method11845() instanceof Class3368) {
                     ItemStack var6 = var5.getStack();
                     List var7 = this.method16678(var6);
                     int var8 = Math.max(-1, Math.min(1, this.method16670()));

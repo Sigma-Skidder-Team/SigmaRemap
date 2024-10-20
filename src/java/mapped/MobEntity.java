@@ -541,7 +541,7 @@ public abstract class MobEntity extends LivingEntity {
                return this.method4251(var1, var2);
             } else if (!(var1.getItem() instanceof ArmorItem)) {
                if (var1.getItem() instanceof ToolItem) {
-                  if (var2.getItem() instanceof Class3292) {
+                  if (var2.getItem() instanceof BlockItem) {
                      return true;
                   }
 
@@ -888,7 +888,7 @@ public abstract class MobEntity extends LivingEntity {
       }
 
       Item var4 = var0.getItem();
-      if (var4 != Blocks.field36589.asItem() && (!(var4 instanceof Class3292) || !(((Class3292)var4).method11845() instanceof Class3251))) {
+      if (var4 != Blocks.field36589.asItem() && (!(var4 instanceof BlockItem) || !(((BlockItem)var4).method11845() instanceof Class3251))) {
          if (var4 instanceof ArmorItem) {
             return ((ArmorItem)var4).getType();
          } else if (var4 != Items.field38120) {

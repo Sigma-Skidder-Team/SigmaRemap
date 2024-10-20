@@ -158,7 +158,7 @@ public final class ItemStack {
          return ActionResultType.field14820;
       } else {
          Item var7 = this.getItem();
-         ActionResultType var8 = var7.method11707(var1);
+         ActionResultType var8 = var7.onItemUse(var1);
          if (var4 != null && var8.isSuccessOrConsume()) {
             var4.addStat(Stats.field40098.method172(var7));
          }

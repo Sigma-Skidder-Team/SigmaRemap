@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.blaze3d.systems.RenderSystem;
+import net.minecraft.client.gui.widget.OptionSlider;
 import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 
@@ -8,11 +9,11 @@ public class GuiUtils {
    private static String[] field32352;
 
    public static int method24650(Widget var0) {
-      return Class1232.method5814(var0);
+      return OptionSlider.method5814(var0);
    }
 
    public static int method24651(Widget var0) {
-      return Class1232.method5815(var0);
+      return OptionSlider.method5815(var0);
    }
 
    public static void fill(Matrix4f var0, GuiRect[] var1, int var2) {

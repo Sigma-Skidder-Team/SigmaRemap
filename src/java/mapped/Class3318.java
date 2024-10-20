@@ -25,7 +25,7 @@ public class Class3318 extends Item {
    }
 
    @Override
-   public ActionResultType method11707(ItemUseContext var1) {
+   public ActionResultType onItemUse(ItemUseContext var1) {
       World var4 = var1.getWorld();
       if (!var4.isRemote) {
          ItemStack var5 = var1.method18357();

@@ -320,17 +320,17 @@ public class Class1148 extends Screen {
       this.field6262.method5671(false);
       this.field6263.method5671(false);
       this.field6264.method5671(false);
-      this.field6267.field6483 = false;
-      this.field6268.field6483 = false;
-      this.field6274.field6483 = false;
-      this.field6275.field6483 = false;
-      this.field6276.field6483 = false;
-      this.field6269.field6483 = false;
-      this.field6270.field6483 = false;
-      this.field6271.field6483 = false;
-      this.field6272.field6483 = false;
-      this.field6277.field6483 = false;
-      this.field6278.field6483 = false;
+      this.field6267.visible = false;
+      this.field6268.visible = false;
+      this.field6274.visible = false;
+      this.field6275.visible = false;
+      this.field6276.visible = false;
+      this.field6269.visible = false;
+      this.field6270.visible = false;
+      this.field6271.visible = false;
+      this.field6272.visible = false;
+      this.field6277.visible = false;
+      this.field6278.visible = false;
       switch (Class9686.field45296[this.field6248.method3950().ordinal()]) {
          case 1:
             this.field6255.method5671(true);
@@ -340,10 +340,10 @@ public class Class1148 extends Screen {
             this.field6259.method5671(true);
             this.field6260.method5671(true);
             this.field6261.method5671(true);
-            this.field6267.field6483 = true;
-            this.field6274.field6483 = true;
-            this.field6275.field6483 = true;
-            this.field6277.field6483 = true;
+            this.field6267.visible = true;
+            this.field6274.visible = true;
+            this.field6275.visible = true;
+            this.field6277.visible = true;
             break;
          case 2:
             this.field6255.method5671(true);
@@ -352,14 +352,14 @@ public class Class1148 extends Screen {
             this.field6258.method5671(true);
             this.field6262.method5671(true);
             this.field6263.method5671(true);
-            this.field6268.field6483 = true;
-            this.field6275.field6483 = true;
-            this.field6276.field6483 = true;
-            this.field6269.field6483 = true;
-            this.field6270.field6483 = true;
-            this.field6271.field6483 = true;
-            this.field6272.field6483 = true;
-            this.field6278.field6483 = true;
+            this.field6268.visible = true;
+            this.field6275.visible = true;
+            this.field6276.visible = true;
+            this.field6269.visible = true;
+            this.field6270.visible = true;
+            this.field6271.visible = true;
+            this.field6272.visible = true;
+            this.field6278.visible = true;
             this.method5506();
             break;
          case 3:

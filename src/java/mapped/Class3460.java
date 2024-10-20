@@ -5,6 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.pathfinding.PathType;
@@ -47,7 +48,7 @@ public class Class3460 extends Block {
    public ActionResultType onBlockActivated(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       ItemStack var9 = var4.getHeldItem(var5);
       Item var10 = var9.getItem();
-      Block var11 = !(var10 instanceof Class3292) ? Blocks.AIR : field19289.getOrDefault(((Class3292)var10).method11845(), Blocks.AIR);
+      Block var11 = !(var10 instanceof BlockItem) ? Blocks.AIR : field19289.getOrDefault(((BlockItem)var10).method11845(), Blocks.AIR);
       boolean var12 = var11 == Blocks.AIR;
       boolean var13 = this.field19291 == Blocks.AIR;
       if (var12 == var13) {

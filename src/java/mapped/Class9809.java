@@ -12,10 +12,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.entity.model.ShieldModel;
 import net.minecraft.client.renderer.tileentity.BannerTileEntityRenderer;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.item.ShieldItem;
+import net.minecraft.item.*;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.NBTUtil;
 import net.minecraft.tileentity.BannerTileEntity;
@@ -59,7 +56,7 @@ public class Class9809 {
 
    public void method38686(ItemStack var1, MatrixStack var2, Class7733 var3, int var4, int var5) {
       Item var8 = var1.getItem();
-      if (!(var8 instanceof Class3292)) {
+      if (!(var8 instanceof BlockItem)) {
          if (var8 != Items.field38119) {
             if (var8 == Items.field38144) {
                var2.push();
@@ -85,7 +82,7 @@ public class Class9809 {
             var2.pop();
          }
       } else {
-         Block var14 = ((Class3292)var8).method11845();
+         Block var14 = ((BlockItem)var8).method11845();
          if (!(var14 instanceof Class3251)) {
             Object var17;
             if (!(var14 instanceof Class3359)) {

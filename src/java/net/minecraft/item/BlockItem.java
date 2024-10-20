@@ -1,17 +1,15 @@
-package mapped;
+package net.minecraft.item;
 
 import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
+import mapped.*;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.item.BlockItemUseContext;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.state.Property;
 import net.minecraft.state.StateContainer;
@@ -24,17 +22,17 @@ import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
 
-public class Class3292 extends Item {
+public class BlockItem extends Item {
    /** @deprecated */
    private final Block field18801;
 
-   public Class3292(Block var1, Properties var2) {
+   public BlockItem(Block var1, Properties var2) {
       super(var2);
       this.field18801 = var1;
    }
 
    @Override
-   public ActionResultType method11707(ItemUseContext var1) {
+   public ActionResultType onItemUse(ItemUseContext var1) {
       ActionResultType var4 = this.method11834(new BlockItemUseContext(var1));
       return !var4.isSuccessOrConsume() && this.isFood() ? this.method11700(var1.getWorld(), var1.method18358(), var1.method18359()).method20694() : var4;
    }

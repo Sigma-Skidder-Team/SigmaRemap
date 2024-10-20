@@ -35,12 +35,12 @@ public class Class1188 extends Class1186 {
          .field6782
          .fontRenderer
          .func_243248_b(var1, this.field6414, (float)(var4 + 90 - Class1295.method6128(this.field6417)), (float)(var3 + var6 / 2 - 4), 16777215);
-      this.field6416.field6477 = var4 + 190;
-      this.field6416.field6478 = var3;
+      this.field6416.x = var4 + 190;
+      this.field6416.y = var3;
       this.field6416.active = !this.field6413.isDefault();
       this.field6416.render(var1, var7, var8, var10);
-      this.field6415.field6477 = var4 + 105;
-      this.field6415.field6478 = var3;
+      this.field6415.x = var4 + 105;
+      this.field6415.y = var3;
       this.field6415.setMessage(this.field6413.func_238171_j_());
       boolean var14 = false;
       if (!this.field6413.isInvalid()) {

@@ -73,7 +73,7 @@ public class WorldOptionsScreen implements IScreen, Class1190 {
          this.field6563 = this.field6563.method26271();
          var1x.method5744(250);
       }));
-      this.field6557.field6483 = false;
+      this.field6557.visible = false;
       this.field6559 = var1.<Button>addButton(new Class1227(this, var7, 100, 150, 20, new TranslationTextComponent("selectWorld.mapType"), var2x -> {
          while (this.field6564.isPresent()) {
             int var5 = BiomeGeneratorTypeScreens.field26033.indexOf(this.field6564.get()) + 1;
@@ -92,7 +92,7 @@ public class WorldOptionsScreen implements IScreen, Class1190 {
          var1.method6359();
          var2x.method5744(250);
       }));
-      this.field6559.field6483 = false;
+      this.field6559.visible = false;
       this.field6559.active = this.field6564.isPresent();
       this.field6560 = var1.<Button>addButton(new Button(var7, 120, 150, 20, new TranslationTextComponent("selectWorld.customizeType"), var3x -> {
          Class7837 var6x = BiomeGeneratorTypeScreens.field26034.get(this.field6564);
@@ -100,12 +100,12 @@ public class WorldOptionsScreen implements IScreen, Class1190 {
             var2.displayGuiScreen(var6x.method26250(var1, this.field6563));
          }
       }));
-      this.field6560.field6483 = false;
+      this.field6560.visible = false;
       this.field6558 = var1.<Button>addButton(new Class1208(this, var6, 151, 150, 20, new TranslationTextComponent("selectWorld.bonusItems"), var1x -> {
          this.field6563 = this.field6563.method26272();
          var1x.method5744(250);
       }, var1));
-      this.field6558.field6483 = false;
+      this.field6558.visible = false;
       this.field6561 = var1.<Button>addButton(
          new Button(
             var6,
@@ -192,7 +192,7 @@ public class WorldOptionsScreen implements IScreen, Class1190 {
             }
          )
       );
-      this.field6561.field6483 = false;
+      this.field6561.visible = false;
       this.field6553 = Class5991.method18584(var3, field6551, this.field6559.method5740());
    }
 
@@ -212,13 +212,13 @@ public class WorldOptionsScreen implements IScreen, Class1190 {
 
    @Override
    public void render(MatrixStack var1, int var2, int var3, float var4) {
-      if (this.field6557.field6483) {
+      if (this.field6557.visible) {
          this.field6554.method38803(var1, field6552, (float)(this.field6555 / 2 - 150), 122.0F, -6250336);
       }
 
       this.field6556.render(var1, var2, var3, var4);
       if (this.field6564.equals(Optional.<BiomeGeneratorTypeScreens>of(BiomeGeneratorTypeScreens.field26028))) {
-         this.field6553.method18590(var1, this.field6559.field6477 + 2, this.field6559.field6478 + 22, 9, 10526880);
+         this.field6553.method18590(var1, this.field6559.x + 2, this.field6559.y + 22, 9, 10526880);
       }
    }
 
@@ -265,17 +265,17 @@ public class WorldOptionsScreen implements IScreen, Class1190 {
    }
 
    public void method5788(boolean var1) {
-      this.field6559.field6483 = var1;
+      this.field6559.visible = var1;
       if (!this.field6563.method26267()) {
-         this.field6557.field6483 = var1;
-         this.field6558.field6483 = var1;
-         this.field6560.field6483 = var1 && BiomeGeneratorTypeScreens.field26034.containsKey(this.field6564);
-         this.field6561.field6483 = var1;
+         this.field6557.visible = var1;
+         this.field6558.visible = var1;
+         this.field6560.visible = var1 && BiomeGeneratorTypeScreens.field26034.containsKey(this.field6564);
+         this.field6561.visible = var1;
       } else {
-         this.field6557.field6483 = false;
-         this.field6558.field6483 = false;
-         this.field6560.field6483 = false;
-         this.field6561.field6483 = false;
+         this.field6557.visible = false;
+         this.field6558.visible = false;
+         this.field6560.visible = false;
+         this.field6561.visible = false;
       }
 
       this.field6556.method5671(var1);

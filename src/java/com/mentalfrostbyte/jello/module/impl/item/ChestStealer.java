@@ -15,10 +15,7 @@ import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.client.gui.screen.inventory.ChestScreen;
 import net.minecraft.inventory.container.ClickType;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.item.SwordItem;
+import net.minecraft.item.*;
 import net.minecraft.network.play.client.CAnimateHandPacket;
 import net.minecraft.network.play.client.CPlayerTryUseItemOnBlockPacket;
 import net.minecraft.tileentity.TileEntity;
@@ -295,7 +292,7 @@ public class ChestStealer extends Module {
                 if (var4 instanceof HoeItem) {
                     return !InvManager.isHoe(var1);
                 } else if (!(var4 instanceof Class3323)) {
-                    if (var4 instanceof Class3292) {
+                    if (var4 instanceof BlockItem) {
                         return !BlockFly.method16733(var4);
                     } else if (!(var4 instanceof Class3308)
                             && (!(var4 instanceof BowItem) || !Client.getInstance().getModuleManager().getModuleByClass(InvManager.class).getBooleanValueFromSettingName("Archery"))) {

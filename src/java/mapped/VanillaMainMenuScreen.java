@@ -110,7 +110,7 @@ public class VanillaMainMenuScreen extends Screen {
             0,
             106,
             20,
-            Button.field6474,
+            Button.WIDGETS_LOCATION,
             256,
             256,
             var1 -> this.mc.displayGuiScreen(new LanguageScreen(this, this.mc.gameSettings, this.mc.getLanguageManager())),
@@ -169,7 +169,7 @@ public class VanillaMainMenuScreen extends Screen {
          )
       );
       boolean var5 = true;
-      Class8103 var6 = !var5
+      Button.ITooltip var6 = !var5
          ? (var1x, var2x, var3, var4) -> {
             if (!var1x.active) {
                this.method2461(
@@ -180,7 +180,7 @@ public class VanillaMainMenuScreen extends Screen {
                );
             }
          }
-         : Button.field6512;
+         : Button.field_238486_s_;
       this.<Button>addButton(new Button(this.width / 2 - 100, var1 + var2 * 1, 200, 20, new TranslationTextComponent("menu.multiplayer"), var1x -> {
          Object var4 = !this.mc.gameSettings.field44630 ? new Class1334(this) : new MultiplayerScreen(this);
          this.mc.displayGuiScreen((Screen)var4);
@@ -191,7 +191,7 @@ public class VanillaMainMenuScreen extends Screen {
          .active = var5;
       if (Reflector.field42976.exists() && this.field4566.size() > 0) {
          Widget var7 = this.field4566.get(this.field4566.size() - 1);
-         var7.field6477 = this.width / 2 + 2;
+         var7.x = this.width / 2 + 2;
          var7.method5741(98);
       }
    }

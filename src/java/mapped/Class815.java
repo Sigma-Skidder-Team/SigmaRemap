@@ -449,13 +449,13 @@ public class Class815 extends Class813 {
    }
 
    private void method2290(Button var1) {
-      var1.field6483 = false;
+      var1.visible = false;
       this.children.remove(var1);
       this.field4566.remove(var1);
    }
 
    private void method2291(Button var1) {
-      var1.field6483 = true;
+      var1.visible = true;
       this.<Button>addButton(var1);
    }
 

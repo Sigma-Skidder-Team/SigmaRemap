@@ -123,7 +123,7 @@ public class TextFieldWidget extends Widget implements Class1190, IGuiEventListe
          this.field6432.accept(var1);
       }
 
-      this.field6485 = Util.milliTime() + 500L;
+      this.nextNarration = Util.milliTime() + 500L;
    }
 
    private void method5641(int var1) {
@@ -334,16 +334,16 @@ public class TextFieldWidget extends Widget implements Class1190, IGuiEventListe
       if (!this.method5670()) {
          return false;
       } else {
-         boolean var8 = var1 >= (double)this.field6477
-            && var1 < (double)(this.field6477 + this.field6475)
-            && var3 >= (double)this.field6478
-            && var3 < (double)(this.field6478 + this.field6476);
+         boolean var8 = var1 >= (double)this.x
+            && var1 < (double)(this.x + this.width)
+            && var3 >= (double)this.y
+            && var3 < (double)(this.y + this.height);
          if (this.field6423) {
             this.method5654(var8);
          }
 
          if (this.method5746() && var8 && var5 == 0) {
-            int var9 = MathHelper.floor(var1) - this.field6477;
+            int var9 = MathHelper.floor(var1) - this.x;
             if (this.field6422) {
                var9 -= 4;
             }
@@ -362,12 +362,12 @@ public class TextFieldWidget extends Widget implements Class1190, IGuiEventListe
    }
 
    @Override
-   public void method5655(MatrixStack var1, int var2, int var3, float var4) {
+   public void renderButton(MatrixStack var1, int var2, int var3, float var4) {
       if (this.method5670()) {
          if (this.method5660()) {
             int var7 = !this.method5746() ? -6250336 : -1;
-            fill(var1, this.field6477 - 1, this.field6478 - 1, this.field6477 + this.field6475 + 1, this.field6478 + this.field6476 + 1, var7);
-            fill(var1, this.field6477, this.field6478, this.field6477 + this.field6475, this.field6478 + this.field6476, -16777216);
+            fill(var1, this.x - 1, this.y - 1, this.x + this.width + 1, this.y + this.height + 1, var7);
+            fill(var1, this.x, this.y, this.x + this.width, this.y + this.height, -16777216);
          }
 
          int var19 = !this.field6424 ? this.field6430 : this.field6429;
@@ -376,8 +376,8 @@ public class TextFieldWidget extends Widget implements Class1190, IGuiEventListe
          String var10 = this.field6418.method38824(this.field6419.substring(this.field6426), this.method5667());
          boolean var11 = var8 >= 0 && var8 <= var10.length();
          boolean var12 = this.method5746() && this.field6421 / 6 % 2 == 0 && var11;
-         int var13 = !this.field6422 ? this.field6477 : this.field6477 + 4;
-         int var14 = !this.field6422 ? this.field6478 : this.field6478 + (this.field6476 - 8) / 2;
+         int var13 = !this.field6422 ? this.x : this.x + 4;
+         int var14 = !this.field6422 ? this.y : this.y + (this.height - 8) / 2;
          int var15 = var13;
          if (var9 > var10.length()) {
             var9 = var10.length();
@@ -396,7 +396,7 @@ public class TextFieldWidget extends Widget implements Class1190, IGuiEventListe
                var15--;
             }
          } else {
-            var17 = var8 <= 0 ? var13 : var13 + this.field6475;
+            var17 = var8 <= 0 ? var13 : var13 + this.width;
          }
 
          if (!var10.isEmpty() && var11 && var8 < var10.length()) {
@@ -435,12 +435,12 @@ public class TextFieldWidget extends Widget implements Class1190, IGuiEventListe
          var4 = var9;
       }
 
-      if (var3 > this.field6477 + this.field6475) {
-         var3 = this.field6477 + this.field6475;
+      if (var3 > this.x + this.width) {
+         var3 = this.x + this.width;
       }
 
-      if (var1 > this.field6477 + this.field6475) {
-         var1 = this.field6477 + this.field6475;
+      if (var1 > this.x + this.width) {
+         var1 = this.x + this.width;
       }
 
       Tessellator var10 = Tessellator.getInstance();
@@ -493,16 +493,16 @@ public class TextFieldWidget extends Widget implements Class1190, IGuiEventListe
 
    @Override
    public boolean changeFocus(boolean var1) {
-      return this.field6483 && this.field6424 ? super.changeFocus(var1) : false;
+      return this.visible && this.field6424 ? super.changeFocus(var1) : false;
    }
 
    @Override
    public boolean isMouseOver(double var1, double var3) {
-      return this.field6483
-         && var1 >= (double)this.field6477
-         && var1 < (double)(this.field6477 + this.field6475)
-         && var3 >= (double)this.field6478
-         && var3 < (double)(this.field6478 + this.field6476);
+      return this.visible
+         && var1 >= (double)this.x
+         && var1 < (double)(this.x + this.width)
+         && var3 >= (double)this.y
+         && var3 < (double)(this.y + this.height);
    }
 
    @Override
@@ -521,7 +521,7 @@ public class TextFieldWidget extends Widget implements Class1190, IGuiEventListe
    }
 
    public int method5667() {
-      return !this.method5660() ? this.field6475 : this.field6475 - 8;
+      return !this.method5660() ? this.width : this.width - 8;
    }
 
    public void method5668(int var1) {
@@ -556,11 +556,11 @@ public class TextFieldWidget extends Widget implements Class1190, IGuiEventListe
    }
 
    public boolean method5670() {
-      return this.field6483;
+      return this.visible;
    }
 
    public void method5671(boolean var1) {
-      this.field6483 = var1;
+      this.visible = var1;
    }
 
    public void method5672(String var1) {
@@ -568,10 +568,10 @@ public class TextFieldWidget extends Widget implements Class1190, IGuiEventListe
    }
 
    public int method5673(int var1) {
-      return var1 <= this.field6419.length() ? this.field6477 + this.field6418.getStringWidth(this.field6419.substring(0, var1)) : this.field6477;
+      return var1 <= this.field6419.length() ? this.x + this.field6418.getStringWidth(this.field6419.substring(0, var1)) : this.x;
    }
 
    public void method5674(int var1) {
-      this.field6477 = var1;
+      this.x = var1;
    }
 }

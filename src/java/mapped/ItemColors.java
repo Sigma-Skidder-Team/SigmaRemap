@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -65,7 +66,7 @@ public class ItemColors {
 
       var3.method33259(
          (var1, var2) -> {
-            BlockState var5x = ((Class3292)var1.getItem()).method11845().getDefaultState();
+            BlockState var5x = ((BlockItem)var1.getItem()).method11845().getDefaultState();
             return var0.method29465(var5x, (IBlockDisplayReader)null, (BlockPos)null, var2);
          },
          Blocks.GRASS_BLOCK,

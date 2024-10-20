@@ -43,7 +43,7 @@ public class SpawnEggItem extends Item {
    }
 
    @Override
-   public ActionResultType method11707(ItemUseContext var1) {
+   public ActionResultType onItemUse(ItemUseContext var1) {
       World var4 = var1.getWorld();
       if (!(var4 instanceof ServerWorld)) {
          return ActionResultType.SUCCESS;

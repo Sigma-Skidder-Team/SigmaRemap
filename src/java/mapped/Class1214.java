@@ -17,7 +17,7 @@ public class Class1214 extends Class1213 {
       this.field6527 = 1.0F;
       this.field6526 = var6;
       this.field6527 = var6.method20389();
-      this.method5766(Class848.method2592(var6, this.field6475));
+      this.method5766(Class848.method2592(var6, this.width));
    }
 
    @Override
@@ -27,20 +27,20 @@ public class Class1214 extends Class1213 {
 
    @Override
    public void method5731(MatrixStack var1, Minecraft var2, int var3, int var4) {
-      if (this.field6483) {
+      if (this.visible) {
          if (this.field6528 && !Screen.method2476()) {
-            this.field6527 = (float)(var3 - (this.field6477 + 4)) / (float)(this.field6475 - 8);
+            this.field6527 = (float)(var3 - (this.x + 4)) / (float)(this.width - 8);
             this.field6527 = MathHelper.clamp(this.field6527, 0.0F, 1.0F);
             this.field6526.method20390(this.field6527);
             this.field6527 = this.field6526.method20389();
-            this.method5766(Class848.method2592(this.field6526, this.field6475));
+            this.method5766(Class848.method2592(this.field6526, this.width));
          }
 
-         var2.getTextureManager().bindTexture(field6474);
+         var2.getTextureManager().bindTexture(WIDGETS_LOCATION);
          GlStateManager.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-         int var7 = (!this.method5737() ? 1 : 2) * 20;
-         this.blit(var1, this.field6477 + (int)(this.field6527 * (float)(this.field6475 - 8)), this.field6478, 0, 46 + var7, 4, 20);
-         this.blit(var1, this.field6477 + (int)(this.field6527 * (float)(this.field6475 - 8)) + 4, this.field6478, 196, 46 + var7, 4, 20);
+         int var7 = (!this.isHovered() ? 1 : 2) * 20;
+         this.blit(var1, this.x + (int)(this.field6527 * (float)(this.width - 8)), this.y, 0, 46 + var7, 4, 20);
+         this.blit(var1, this.x + (int)(this.field6527 * (float)(this.width - 8)) + 4, this.y, 196, 46 + var7, 4, 20);
       }
    }
 
@@ -49,10 +49,10 @@ public class Class1214 extends Class1213 {
       if (!super.mouseClicked(var1, var3, var5)) {
          return false;
       } else {
-         this.field6527 = (float)(var1 - (double)(this.field6477 + 4)) / (float)(this.field6475 - 8);
+         this.field6527 = (float)(var1 - (double)(this.x + 4)) / (float)(this.width - 8);
          this.field6527 = MathHelper.clamp(this.field6527, 0.0F, 1.0F);
          this.field6526.method20390(this.field6527);
-         this.method5766(Class848.method2592(this.field6526, this.field6475));
+         this.method5766(Class848.method2592(this.field6526, this.width));
          this.field6528 = true;
          return true;
       }

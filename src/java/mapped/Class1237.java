@@ -40,7 +40,7 @@ public class Class1237 extends Class1236 {
    }
 
    @Override
-   public void method5732(double var1, double var3) {
+   public void onClick(double var1, double var3) {
    }
 
    @Override

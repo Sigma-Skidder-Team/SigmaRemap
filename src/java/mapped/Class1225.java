@@ -19,7 +19,7 @@ public class Class1225 extends Button {
       int var4,
       int var5,
       ITextComponent var6,
-      Class7192 var7,
+      IPressable var7,
       Class1127 var8,
       ITextComponent var9,
       Class7466 var10,

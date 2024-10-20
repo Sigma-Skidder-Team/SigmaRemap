@@ -204,8 +204,8 @@ public class VideoSettingsScreen extends Class838 {
       MainWindow var3 = this.mc.getMainWindow();
       int var4 = GuiUtils.method24650(this.field4673);
       int var5 = GuiUtils.method24651(this.field4673);
-      int var6 = this.field4673.field6477 + (var4 - var5);
-      int var7 = this.field4673.field6478 + var5 / 2;
+      int var6 = this.field4673.x + (var4 - var5);
+      int var7 = this.field4673.y + var5 / 2;
       GLFW.glfwSetCursorPos(var3.getHandle(), (double)var6 * var3.getGuiScaleFactor(), (double)var7 * var3.getGuiScaleFactor());
    }
 

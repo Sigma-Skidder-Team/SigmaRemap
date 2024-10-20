@@ -20,7 +20,7 @@ public class Class3281 extends Item {
    }
 
    @Override
-   public ActionResultType method11707(ItemUseContext var1) {
+   public ActionResultType onItemUse(ItemUseContext var1) {
       PlayerEntity var4 = var1.method18358();
       World var5 = var1.getWorld();
       BlockPos var6 = var1.getPos();

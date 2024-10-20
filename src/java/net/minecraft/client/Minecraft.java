@@ -24,6 +24,8 @@ import com.mojang.datafixers.util.Function4;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.JsonOps;
 import com.mojang.serialization.Lifecycle;
+import de.florianmichael.viamcp.ViaMCP;
+import de.florianmichael.viamcp.fixes.AttackOrder;
 import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -355,6 +357,8 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       this.mainWindow.setRawMouseInput(this.gameSettings.rawMouseInput);
       this.mainWindow.setLogOnGlError();
       this.updateWindowSize();
+      ViaMCP.create();
+
       if (s != null) {
          this.displayGuiScreen(new ConnectingScreen(new VanillaMainMenuScreen(), this, s, i));
       } else {
@@ -1181,7 +1185,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
 
                switch (this.objectMouseOver.getType()) {
                   case ENTITY:
-                     this.playerController.attackEntity(this.player, ((EntityRayTraceResult)this.objectMouseOver).getEntity());
+                     AttackOrder.sendFixedAttack(this.player, ((EntityRayTraceResult)this.objectMouseOver).getEntity(), Hand.MAIN_HAND);
                      if (rayTraceEvent != null) {
                         rayTraceEvent.unhover();
                         Client.getInstance().getEventManager().call(rayTraceEvent);
@@ -1202,7 +1206,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
                      this.player.resetCooldown();
                }
 
-               this.player.swingArm(Hand.MAIN_HAND);
+               AttackOrder.sendConditionalSwing(this.objectMouseOver, Hand.MAIN_HAND);
             }
          }
       }

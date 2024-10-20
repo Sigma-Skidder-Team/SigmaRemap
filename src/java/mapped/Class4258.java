@@ -3,6 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import net.minecraft.block.Blocks;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
@@ -43,15 +44,15 @@ public class Class4258 extends Class4247 {
             var5.add(var7);
          }
 
-         var5.add(new Class3292(Blocks.field36588, new Item.Properties().method17779(ItemGroup.field31669)));
-         var5.add(new Class3292(Blocks.field36649, new Item.Properties().method17779(ItemGroup.field31669)));
+         var5.add(new BlockItem(Blocks.field36588, new Item.Properties().method17779(ItemGroup.field31669)));
+         var5.add(new BlockItem(Blocks.field36649, new Item.Properties().method17779(ItemGroup.field31669)));
 
          for (Item var13 : method13070(var5, var1)) {
-            if (var13 != Items.AIR && (!this.field20644 || var13 instanceof Class3292)) {
+            if (var13 != Items.AIR && (!this.field20644 || var13 instanceof BlockItem)) {
                ResourceLocation var8 = Registry.ITEM.getKey(var13);
                String var9;
-               if (var13 instanceof Class3292 && var8.getPath().equals("air")) {
-                  var9 = Registry.BLOCK.getKey(((Class3292)var13).method11845()).toString();
+               if (var13 instanceof BlockItem && var8.getPath().equals("air")) {
+                  var9 = Registry.BLOCK.getKey(((BlockItem)var13).method11845()).toString();
                } else {
                   var9 = var8.toString();
                }

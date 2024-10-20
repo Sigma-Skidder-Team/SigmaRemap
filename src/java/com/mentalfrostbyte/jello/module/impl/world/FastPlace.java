@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
-import mapped.Class3292;
+import net.minecraft.item.BlockItem;
 import net.minecraft.util.math.BlockRayTraceResult;
 
 public class FastPlace extends Module {
@@ -18,7 +18,7 @@ public class FastPlace extends Module {
     private void TickEvent(TickEvent event) {
         if (this.isEnabled()) {
             if (mc.player.getHeldItemMainhand() != null) {
-                if (mc.player.getHeldItemMainhand().getItem() instanceof Class3292) {
+                if (mc.player.getHeldItemMainhand().getItem() instanceof BlockItem) {
                     if (mc.objectMouseOver instanceof BlockRayTraceResult) {
                         if (!this.getBooleanValueFromSettingName("Reduce Delay")) {
                             mc.rightClickDelayTimer = 0;

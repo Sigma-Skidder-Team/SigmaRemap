@@ -7,6 +7,7 @@ import com.mentalfrostbyte.jello.command.CommandManager;
 import com.mentalfrostbyte.jello.command.ChatCommandExecutor;
 import mapped.*;
 import net.minecraft.client.gui.screen.inventory.ShulkerBoxScreen;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -22,7 +23,7 @@ public class Peek extends Command {
    public void run(String var1, ChatCommandArguments[] var2, ChatCommandExecutor var3) throws CommandException {
       if (var2.length == 0) {
          ItemStack var6 = mc.player.inventory.method4028();
-         if (var6.getItem() instanceof Class3292 && ((Class3292)var6.getItem()).method11845() instanceof Class3241) {
+         if (var6.getItem() instanceof BlockItem && ((BlockItem)var6.getItem()).method11845() instanceof Class3241) {
             method18337(var6);
             var3.send("Now peeking shulker");
          } else {

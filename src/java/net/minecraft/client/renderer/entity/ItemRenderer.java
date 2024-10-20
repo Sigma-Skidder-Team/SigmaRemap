@@ -17,6 +17,7 @@ import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.crash.ReportedException;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -109,8 +110,8 @@ public class ItemRenderer implements IResourceManagerReloadListener {
          var4.translate(-0.5, -0.5, -0.5);
          if (!var8.method22623() && (var1.getItem() != Items.field38144 || var11)) {
             boolean var16;
-            if (var2 != ItemCameraTransformsTransformType.GUI && !var2.isFirstPerson() && var1.getItem() instanceof Class3292) {
-               Block var13 = ((Class3292)var1.getItem()).method11845();
+            if (var2 != ItemCameraTransformsTransformType.GUI && !var2.isFirstPerson() && var1.getItem() instanceof BlockItem) {
+               Block var13 = ((BlockItem)var1.getItem()).method11845();
                var16 = !(var13 instanceof Class3231) && !(var13 instanceof Class3236);
             } else {
                var16 = true;

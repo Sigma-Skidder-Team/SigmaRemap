@@ -10,7 +10,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.MovementUtils;
-import mapped.*;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.CHeldItemChangePacket;
 import net.minecraft.network.play.client.CPlayerTryUseItemOnBlockPacket;
@@ -86,7 +86,7 @@ public class SpartanFly extends Module {
                                 mc.getConnection().sendPacket(new CHeldItemChangePacket(var5));
                             }
 
-                            if (var6 && (var5 >= 0 || mc.player.getHeldItem(Hand.MAIN_HAND).getItem() instanceof Class3292)) {
+                            if (var6 && (var5 >= 0 || mc.player.getHeldItem(Hand.MAIN_HAND).getItem() instanceof BlockItem)) {
                                 BlockRayTraceResult var7 = new BlockRayTraceResult(
                                         mc.player.getPositionVec().add(0.0, -2.0, 0.0),
                                         Direction.UP,
@@ -131,7 +131,7 @@ public class SpartanFly extends Module {
         for (int var3 = 36; var3 < 45; var3++) {
             if (mc.player.container.getSlot(var3).getHasStack()) {
                 ItemStack var4 = mc.player.container.getSlot(var3).getStack();
-                if (var4.getItem() instanceof Class3292) {
+                if (var4.getItem() instanceof BlockItem) {
                     if (var3 - 36 == mc.player.inventory.currentItem) {
                         var3 = 34;
                     }

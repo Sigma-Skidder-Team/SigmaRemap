@@ -165,12 +165,12 @@ public class Class828 extends Screen {
    }
 
    private void method2498() {
-      this.field4591.field6483 = !this.field4581 && this.field4583 > 0;
-      this.field4590.field6483 = !this.field4581;
-      this.field4592.field6483 = !this.field4581;
-      this.field4593.field6483 = !this.field4581;
-      this.field4595.field6483 = this.field4581;
-      this.field4594.field6483 = this.field4581;
+      this.field4591.visible = !this.field4581 && this.field4583 > 0;
+      this.field4590.visible = !this.field4581;
+      this.field4592.visible = !this.field4581;
+      this.field4593.visible = !this.field4581;
+      this.field4595.visible = this.field4581;
+      this.field4594.visible = this.field4581;
       this.field4594.active = !this.field4585.trim().isEmpty();
    }
 
@@ -291,10 +291,10 @@ public class Class828 extends Screen {
                this.method2503();
                return true;
             case 266:
-               this.field4591.method5759();
+               this.field4591.onPress();
                return true;
             case 267:
-               this.field4590.method5759();
+               this.field4590.onPress();
                return true;
             case 268:
                this.method2506();

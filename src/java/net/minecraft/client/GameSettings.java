@@ -28,6 +28,7 @@ import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.settings.NarratorStatus;
 import net.minecraft.client.settings.ParticleStatus;
 import net.minecraft.client.settings.PointOfView;
+import net.minecraft.client.settings.SliderPercentageOption;
 import net.minecraft.client.shader.Framebuffer;
 import net.minecraft.util.JSONUtils;
 import net.minecraft.util.Util;
@@ -293,17 +294,17 @@ public class GameSettings {
       this.field44659 = var1;
       this.field44660 = new File(var2, "options.txt");
       if (var1.isJava64bit() && Runtime.getRuntime().maxMemory() >= 1000000000L) {
-         AbstractOption.field25333.method18088(32.0F);
+         AbstractOption.field25333.setMaxValue(32.0F);
          long var3 = 1000000L;
          if (Runtime.getRuntime().maxMemory() >= 1500L * var3) {
-            AbstractOption.field25333.method18088(48.0F);
+            AbstractOption.field25333.setMaxValue(48.0F);
          }
 
          if (Runtime.getRuntime().maxMemory() >= 2500L * var3) {
-            AbstractOption.field25333.method18088(64.0F);
+            AbstractOption.field25333.setMaxValue(64.0F);
          }
       } else {
-         AbstractOption.field25333.method18088(16.0F);
+         AbstractOption.field25333.setMaxValue(16.0F);
       }
 
       this.renderDistanceChunks = var1.isJava64bit() ? 12 : 8;
@@ -1365,7 +1366,7 @@ public class GameSettings {
       }
 
       if (var1 == AbstractOption.field25333) {
-         int var12 = (int) AbstractOption.field25333.getValue(this);
+         int var12 = (int) AbstractOption.field25333.get(this);
          String var13 = I18n.format("of.options.renderDistance.tiny");
          int var5 = 2;
          if (var12 >= 4) {
@@ -1657,7 +1658,7 @@ public class GameSettings {
       } else if (var1 == AbstractOption.field25438) {
          return this.field44588 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
       } else if (var1 == AbstractOption.FRAMERATE_LIMIT) {
-         double var8 = AbstractOption.FRAMERATE_LIMIT.getValue(this);
+         double var8 = AbstractOption.FRAMERATE_LIMIT.get(this);
          if (var8 == 0.0) {
             return var2 + Class8043.method27619("of.options.framerateLimit.vsync");
          } else {
@@ -1671,9 +1672,9 @@ public class GameSettings {
          }
       } else if (var1 == AbstractOption.field25445) {
          return this.field44730 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
-      } else if (var1 instanceof Class5807) {
-         Class5807 var3 = (Class5807)var1;
-         double var4 = var3.getValue(this);
+      } else if (var1 instanceof SliderPercentageOption) {
+         SliderPercentageOption var3 = (SliderPercentageOption)var1;
+         double var4 = var3.get(this);
          return var4 == 0.0 ? var2 + I18n.format("options.off") : var2 + (int)(var4 * 100.0) + "%";
       } else {
          return null;

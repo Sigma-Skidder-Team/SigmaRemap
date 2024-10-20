@@ -1,5 +1,7 @@
 package net.minecraft.network.play.client;
 
+import com.viaversion.viaversion.api.protocol.version.ProtocolVersion;
+import de.florianmichael.vialoadingbase.ViaLoadingBase;
 import net.minecraft.network.play.IServerPlayNetHandler;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
@@ -14,10 +16,10 @@ public class CConfirmTransactionPacket implements IPacket<IServerPlayNetHandler>
    public CConfirmTransactionPacket() {
    }
 
-   public CConfirmTransactionPacket(int var1, short var2, boolean var3) {
-      this.windowId = var1;
-      this.uid = var2;
-      this.accepted = var3;
+   public CConfirmTransactionPacket(int windowID, short uid, boolean accepted) {
+      this.windowId = windowID;
+      this.uid = uid;
+      this.accepted = accepted;
    }
 
    public void processPacket(IServerPlayNetHandler var1) {
@@ -32,10 +34,18 @@ public class CConfirmTransactionPacket implements IPacket<IServerPlayNetHandler>
    }
 
    @Override
-   public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.writeByte(this.windowId);
-      var1.writeShort(this.uid);
-      var1.writeByte(!this.accepted ? 0 : 1);
+   public void writePacketData(PacketBuffer buf) throws IOException {
+      if (ViaLoadingBase.getInstance().getTargetVersion().newerThanOrEqualTo(ProtocolVersion.v1_17)) {
+         buf.writeInt(this.windowId);
+      } else {
+         buf.writeByte(this.windowId);
+         buf.writeShort(this.uid);
+         buf.writeByte(this.accepted ? 1 : 0);
+      }
+   }
+
+   public boolean accepted() {
+      return this.accepted;
    }
 
    public int getWindowId() {

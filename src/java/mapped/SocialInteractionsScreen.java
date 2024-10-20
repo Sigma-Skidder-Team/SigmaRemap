@@ -201,12 +201,12 @@ public class SocialInteractionsScreen extends Screen {
       }
 
       if (!this.field6228.method5746() && this.field6228.getText().isEmpty()) {
-         drawString(var1, this.mc.fontRenderer, field6222, this.field6228.field6477, this.field6228.field6478, -1);
+         drawString(var1, this.mc.fontRenderer, field6222, this.field6228.x, this.field6228.y, -1);
       } else {
          this.field6228.render(var1, var2, var3, var4);
       }
 
-      this.field6234.field6483 = this.field6230 == Class2332.field15953;
+      this.field6234.visible = this.field6230 == Class2332.field15953;
       super.render(var1, var2, var3, var4);
       if (this.field6238 != null) {
          this.field6238.run();

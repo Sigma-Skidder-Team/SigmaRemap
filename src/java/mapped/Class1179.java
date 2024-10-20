@@ -28,7 +28,7 @@ public class Class1179 extends Class1178<Class1179> {
    @Override
    public void render(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
       this.field6376.forEach(var5x -> {
-         var5x.field6478 = var3;
+         var5x.y = var3;
          var5x.render(var1, var7, var8, var10);
       });
    }

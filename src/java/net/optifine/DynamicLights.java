@@ -9,6 +9,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -232,8 +233,8 @@ public class DynamicLights {
    public static int method36318(ItemStack var0) {
       if (var0 != null) {
          Item var3 = var0.getItem();
-         if (var3 instanceof Class3292) {
-            Class3292 var4 = (Class3292)var3;
+         if (var3 instanceof BlockItem) {
+            BlockItem var4 = (BlockItem)var3;
             Block var5 = var4.method11845();
             if (var5 != null) {
                return var5.getDefaultState().getLightValue();

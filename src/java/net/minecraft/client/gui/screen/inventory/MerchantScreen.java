@@ -181,11 +181,11 @@ public class MerchantScreen extends ContainerScreen<Class5826> {
          }
 
          for (Class1207 var25 : this.field4791) {
-            if (var25.method5737()) {
-               var25.method5738(var1, var2, var3);
+            if (var25.isHovered()) {
+               var25.renderToolTip(var1, var2, var3);
             }
 
-            var25.field6483 = var25.field6516 < this.field4727.method18217().size();
+            var25.visible = var25.field6516 < this.field4727.method18217().size();
          }
 
          RenderSystem.popMatrix();

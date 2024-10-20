@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.EventRenderBlocks;
 import it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap;
 import mapped.*;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.util.Util;
 import net.minecraft.entity.LivingEntity;
@@ -68,7 +69,7 @@ public class Block extends AbstractBlock implements IItemProvider {
    }
 
    public static Block method11537(Item var0) {
-      return !(var0 instanceof Class3292) ? Blocks.AIR : ((Class3292)var0).method11845();
+      return !(var0 instanceof BlockItem) ? Blocks.AIR : ((BlockItem)var0).method11845();
    }
 
    public static BlockState method11538(BlockState var0, BlockState var1, World var2, BlockPos var3) {

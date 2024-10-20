@@ -7,6 +7,7 @@ import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
+import de.florianmichael.viamcp.ViaMCP;
 import lol.ClientColors;
 import mapped.*;
 import net.minecraft.client.Minecraft;

@@ -11,22 +11,22 @@ public class Class1242 extends Button {
    private final ResourceLocation field6593;
    public final RealmsResetWorldScreen field6594;
 
-   public Class1242(RealmsResetWorldScreen var1, int var2, int var3, ITextComponent var4, ResourceLocation var5, Class7192 var6) {
+   public Class1242(RealmsResetWorldScreen var1, int var2, int var3, ITextComponent var4, ResourceLocation var5, IPressable var6) {
       super(var2, var3, 60, 72, var4, var6);
       this.field6594 = var1;
       this.field6593 = var5;
    }
 
    @Override
-   public void method5655(MatrixStack var1, int var2, int var3, float var4) {
+   public void renderButton(MatrixStack var1, int var2, int var3, float var4) {
       RealmsResetWorldScreen.method2270(
          this.field6594,
          var1,
-         this.field6477,
-         this.field6478,
+         this.x,
+         this.y,
          this.method5745(),
          this.field6593,
-         this.method5737(),
+         this.isHovered(),
          this.isMouseOver((double)var2, (double)var3)
       );
    }

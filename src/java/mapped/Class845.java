@@ -39,7 +39,7 @@ public class Class845 extends Class838 {
       this.field4685 = new Class1210(
          230, this.width / 2 - 100, this.height / 6 + 24 * (var3 >> 1), 200, 20, I18n.format("of.options.capeOF.copyEditorLink")
       );
-      this.field4685.field6483 = this.field4684 != null;
+      this.field4685.visible = this.field4684 != null;
       this.<Class1210>addButton(this.field4685);
       var3 += 4;
       this.<Class1210>addButton(new Class1210(200, this.width / 2 - 100, this.height / 6 + 24 * (var3 >> 1), I18n.format("gui.done")));
@@ -125,6 +125,6 @@ public class Class845 extends Class838 {
 
    public void method2591(String var1) {
       this.field4684 = var1;
-      this.field4685.field6483 = var1 != null;
+      this.field4685.visible = var1 != null;
    }
 }

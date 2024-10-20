@@ -280,25 +280,25 @@ public class CreateWorldScreen extends Screen {
 
    private void method6360(boolean var1) {
       this.field7080 = var1;
-      this.field7082.field6483 = !this.field7080;
-      this.field7083.field6483 = !this.field7080;
+      this.field7082.visible = !this.field7080;
+      this.field7083.visible = !this.field7080;
       if (!this.field7092.method5787()) {
          this.field7082.active = true;
          if (this.field7071 != null) {
             this.method6358(this.field7071);
          }
 
-         this.field7087.field6483 = !this.field7080;
-         this.field7086.field6483 = !this.field7080;
+         this.field7087.visible = !this.field7080;
+         this.field7086.visible = !this.field7080;
       } else {
-         this.field7086.field6483 = false;
+         this.field7086.visible = false;
          this.field7082.active = false;
          if (this.field7071 == null) {
             this.field7071 = this.field7070;
          }
 
          this.method6358(Class2079.field13542);
-         this.field7087.field6483 = false;
+         this.field7087.visible = false;
       }
 
       this.field7092.method5788(this.field7080);
@@ -309,7 +309,7 @@ public class CreateWorldScreen extends Screen {
          this.field7084.setMessage(DialogTexts.field30658);
       }
 
-      this.field7085.field6483 = !this.field7080;
+      this.field7085.visible = !this.field7080;
    }
 
    @Override
@@ -365,7 +365,7 @@ public class CreateWorldScreen extends Screen {
          this.field7068.render(var1, var2, var3, var4);
          drawString(var1, this.font, this.field7088, this.width / 2 - 150, 122, -6250336);
          drawString(var1, this.font, this.field7089, this.width / 2 - 150, 134, -6250336);
-         if (this.field7087.field6483) {
+         if (this.field7087.visible) {
             drawString(var1, this.font, field7066, this.width / 2 - 150, 172, -6250336);
          }
       } else {

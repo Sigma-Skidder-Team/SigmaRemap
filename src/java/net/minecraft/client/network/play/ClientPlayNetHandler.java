@@ -6,6 +6,8 @@ import com.google.common.collect.Multimap;
 import com.google.common.collect.Sets;
 import com.mojang.authlib.GameProfile;
 import com.mojang.brigadier.CommandDispatcher;
+import com.viaversion.viaversion.api.protocol.version.ProtocolVersion;
+import de.florianmichael.vialoadingbase.ViaLoadingBase;
 import io.netty.buffer.Unpooled;
 import java.io.File;
 import java.io.UnsupportedEncodingException;
@@ -98,7 +100,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    private final NetworkManager field23269;
    private final GameProfile field23270;
    private final Screen field23271;
-   private Minecraft field23272;
+   private Minecraft mc;
    private ClientWorld field23273;
    private ClientWorld.ClientWorldInfo field23274;
    private boolean field23275;
@@ -116,7 +118,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    public DynamicRegistries field23287 = DynamicRegistries.func_239770_b_();
 
    public ClientPlayNetHandler(Minecraft var1, Screen var2, NetworkManager var3, GameProfile var4) {
-      this.field23272 = var1;
+      this.mc = var1;
       this.field23271 = var2;
       this.field23269 = var3;
       this.field23270 = var4;
@@ -138,8 +140,8 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleJoinGame(SJoinGamePacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
-      this.field23272.playerController = new Class7314(this.field23272, this);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
+      this.mc.playerController = new Class7314(this.mc, this);
       if (!this.field23269.isLocalChannel()) {
          Class8384.method29379();
       }
@@ -155,37 +157,37 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       boolean var8 = var1.method17300();
       ClientWorld.ClientWorldInfo var9 = new ClientWorld.ClientWorldInfo(Difficulty.NORMAL, var1.method17289(), var8);
       this.field23274 = var9;
-      this.field23273 = new ClientWorld(this, var9, var5, var6, this.field23281, this.field23272::getProfiler, this.field23272.worldRenderer, var7, var1.method17288());
-      this.field23272.loadWorld(this.field23273);
-      if (this.field23272.player == null) {
-         this.field23272.player = this.field23272.playerController.createPlayer(this.field23273, new Class8286(), new Class6943());
-         this.field23272.player.rotationYaw = -180.0F;
-         if (this.field23272.getIntegratedServer() != null) {
-            this.field23272.getIntegratedServer().method6489(this.field23272.player.getUniqueID());
+      this.field23273 = new ClientWorld(this, var9, var5, var6, this.field23281, this.mc::getProfiler, this.mc.worldRenderer, var7, var1.method17288());
+      this.mc.loadWorld(this.field23273);
+      if (this.mc.player == null) {
+         this.mc.player = this.mc.playerController.createPlayer(this.field23273, new Class8286(), new Class6943());
+         this.mc.player.rotationYaw = -180.0F;
+         if (this.mc.getIntegratedServer() != null) {
+            this.mc.getIntegratedServer().method6489(this.mc.player.getUniqueID());
          }
       }
 
-      this.field23272.debugRenderer.method27451();
-      this.field23272.player.preparePlayerToSpawn();
+      this.mc.debugRenderer.method27451();
+      this.mc.player.preparePlayerToSpawn();
       int var10 = var1.method17287();
-      this.field23273.addPlayer(var10, this.field23272.player);
-      this.field23272.player.movementInput = new Class9451(this.field23272.gameSettings);
-      this.field23272.playerController.setPlayerCapabilities(this.field23272.player);
-      this.field23272.renderViewEntity = this.field23272.player;
-      this.field23272.displayGuiScreen(new Class1312());
-      this.field23272.player.setEntityId(var10);
-      this.field23272.player.method2965(var1.method17297());
-      this.field23272.player.method5403(var1.method17298());
-      this.field23272.playerController.setGameType(var1.method17290());
-      this.field23272.playerController.method23128(var1.method17291());
-      this.field23272.gameSettings.method37149();
+      this.field23273.addPlayer(var10, this.mc.player);
+      this.mc.player.movementInput = new Class9451(this.mc.gameSettings);
+      this.mc.playerController.setPlayerCapabilities(this.mc.player);
+      this.mc.renderViewEntity = this.mc.player;
+      this.mc.displayGuiScreen(new Class1312());
+      this.mc.player.setEntityId(var10);
+      this.mc.player.method2965(var1.method17297());
+      this.mc.player.method5403(var1.method17298());
+      this.mc.playerController.setGameType(var1.method17290());
+      this.mc.playerController.method23128(var1.method17291());
+      this.mc.gameSettings.method37149();
       this.field23269.sendPacket(new CCustomPayloadPacket(CCustomPayloadPacket.BRAND, new PacketBuffer(Unpooled.buffer()).writeString(ClientBrandRetriever.getClientModName())));
-      this.field23272.getMinecraftGame().method28908();
+      this.mc.getMinecraftGame().method28908();
    }
 
    @Override
    public void handleSpawnObject(SSpawnObjectPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       double var4 = var1.method17258();
       double var6 = var1.method17259();
       double var8 = var1.method17260();
@@ -408,14 +410,14 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          ((Entity)var11).setUniqueId(var1.method17257());
          this.field23273.addEntity(var16, (Entity)var11);
          if (var11 instanceof AbstractMinecartEntity) {
-            this.field23272.getSoundHandler().method1000(new Class6345((AbstractMinecartEntity)var11));
+            this.mc.getSoundHandler().method1000(new Class6345((AbstractMinecartEntity)var11));
          }
       }
    }
 
    @Override
    public void handleSpawnExperienceOrb(SSpawnExperienceOrbPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       double var4 = var1.method17354();
       double var6 = var1.method17355();
       double var8 = var1.method17356();
@@ -429,7 +431,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleSpawnPainting(SSpawnPaintingPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       PaintingEntity var4 = new PaintingEntity(this.field23273, var1.method17196(), var1.method17197(), var1.method17198());
       var4.setEntityId(var1.method17194());
       var4.setUniqueId(var1.method17195());
@@ -438,7 +440,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleEntityVelocity(SEntityVelocityPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       Entity var4 = this.field23273.getEntityByID(var1.getEntityID());
       if (var4 != null) {
          var4.method3325((double)var1.getMotionX() / 8000.0, (double)var1.getMotionY() / 8000.0, (double)var1.getMotionZ() / 8000.0);
@@ -447,7 +449,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleEntityMetadata(SEntityMetadataPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       Entity var4 = this.field23273.getEntityByID(var1.getEntityId());
       if (var4 != null && var1.getDataManagerEntries() != null) {
          var4.getDataManager().method35454(var1.getDataManagerEntries());
@@ -456,7 +458,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleSpawnPlayer(SSpawnPlayerPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       double var4 = var1.method17594();
       double var6 = var1.method17595();
       double var8 = var1.method17596();
@@ -464,7 +466,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       float var11 = (float)(var1.method17598() * 360) / 256.0F;
       if (this.method15792(var1.method17593()) != null) {
          int var12 = var1.method17592();
-         RemoteClientPlayerEntity var13 = new RemoteClientPlayerEntity(this.field23272.world, this.method15792(var1.method17593()).method19966());
+         RemoteClientPlayerEntity var13 = new RemoteClientPlayerEntity(this.mc.world, this.method15792(var1.method17593()).method19966());
          var13.setEntityId(var12);
          var13.setLocationAndAngles(var4, var6, var8);
          var13.setPacketCoordinates(var4, var6, var8);
@@ -475,7 +477,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleEntityTeleport(SEntityTeleportPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       Entity var4 = this.field23273.getEntityByID(var1.getEntityId());
       if (var4 != null) {
          double var5 = var1.getX();
@@ -493,15 +495,15 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleHeldItemChange(SHeldItemChangePacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       if (PlayerInventory.isHotbar(var1.method17633())) {
-         this.field23272.player.inventory.currentItem = var1.method17633();
+         this.mc.player.inventory.currentItem = var1.method17633();
       }
    }
 
    @Override
    public void handleEntityMovement(SEntityPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       Entity var4 = var1.getEntity(this.field23273);
       if (var4 != null && !var4.canPassengerSteer()) {
          if (!var1.func_229745_h_()) {
@@ -524,7 +526,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleEntityHeadLook(SEntityHeadLookPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       Entity var4 = var1.getEntity(this.field23273);
       if (var4 != null) {
          float var5 = (float)(var1.getYaw() * 360) / 256.0F;
@@ -534,7 +536,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleDestroyEntities(SDestroyEntitiesPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
 
       for (int var4 = 0; var4 < var1.getEntityIDs().length; var4++) {
          int var5 = var1.getEntityIDs()[var4];
@@ -544,8 +546,8 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handlePlayerPosLook(SPlayerPositionLookPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
-      ClientPlayerEntity var4 = this.field23272.player;
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
+      ClientPlayerEntity var4 = this.mc.player;
       Vector3d var5 = var4.getMotion();
       boolean var6 = var1.getFlags().contains(Flags.field13198);
       boolean var7 = var1.getFlags().contains(Flags.field13199);
@@ -610,20 +612,20 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       this.field23269.sendPacket(new CPlayerPacket.PositionRotationPacket(var4.getPosX(), var4.getPosY(), var4.getPosZ(), var4.rotationYaw, var4.rotationPitch, false));
       if (!this.field23275) {
          this.field23275 = true;
-         this.field23272.displayGuiScreen((Screen)null);
+         this.mc.displayGuiScreen((Screen)null);
       }
    }
 
    @Override
    public void handleMultiBlockChange(SMultiBlockChangePacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       int var4 = 19 | (!var1.method17462() ? 0 : 128);
       var1.method17461((var2, var3) -> this.field23273.setBlockState(var2, var3, var4));
    }
 
    @Override
    public void handleChunkData(SChunkDataPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       int var4 = var1.getChunkX();
       int var5 = var1.getChunkZ();
       BiomeContainer var6 = var1.method17384() != null ? new BiomeContainer(this.field23287.<Biome>getRegistry(Registry.BIOME_KEY), var1.method17384()) : null;
@@ -649,7 +651,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void processChunkUnload(SUnloadChunkPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       int var4 = var1.method17492();
       int var5 = var1.method17493();
       ClientChunkProvider var6 = this.field23273.getChunkProvider();
@@ -666,7 +668,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleBlockChange(SChangeBlockPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       this.field23273.method6851(var1.method17632(), var1.method17631());
    }
 
@@ -677,13 +679,13 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void onDisconnect(ITextComponent var1) {
-      this.field23272.unloadWorld();
+      this.mc.unloadWorld();
       if (this.field23271 == null) {
-         this.field23272.displayGuiScreen(new Class832(new MultiplayerScreen(new VanillaMainMenuScreen()), field23268, var1));
+         this.mc.displayGuiScreen(new Class832(new MultiplayerScreen(new VanillaMainMenuScreen()), field23268, var1));
       } else if (!(this.field23271 instanceof RealmsScreen)) {
-         this.field23272.displayGuiScreen(new Class832(this.field23271, field23268, var1));
+         this.mc.displayGuiScreen(new Class832(this.field23271, field23268, var1));
       } else {
-         this.field23272.displayGuiScreen(new Class801(this.field23271, field23268, var1));
+         this.mc.displayGuiScreen(new Class801(this.field23271, field23268, var1));
       }
    }
 
@@ -693,11 +695,11 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleCollectItem(SCollectItemPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       Entity var4 = this.field23273.getEntityByID(var1.method17186());
       Object var5 = (LivingEntity)this.field23273.getEntityByID(var1.method17187());
       if (var5 == null) {
-         var5 = this.field23272.player;
+         var5 = this.mc.player;
       }
 
       if (var4 != null) {
@@ -727,7 +729,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                );
          }
 
-         this.field23272.particles.method1199(new Class4593(this.field23272.getRenderManager(), this.field23272.getRenderTypeBuffers(), this.field23273, var4, (Entity)var5));
+         this.mc.particles.method1199(new Class4593(this.mc.getRenderManager(), this.mc.getRenderTypeBuffers(), this.field23273, var4, (Entity)var5));
          if (!(var4 instanceof ItemEntity)) {
             this.field23273.removeEntityFromWorld(var1.method17186());
          } else {
@@ -743,13 +745,13 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleChat(SChatPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
-      this.field23272.ingameGUI.method5988(var1.getType(), var1.getChatComponent(), var1.func_240810_e_());
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
+      this.mc.ingameGUI.method5988(var1.getType(), var1.getChatComponent(), var1.func_240810_e_());
    }
 
    @Override
    public void handleAnimation(SAnimateHandPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       Entity var4 = this.field23273.getEntityByID(var1.method17192());
       if (var4 != null) {
          if (var1.method17193() != 0) {
@@ -758,10 +760,10 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                   if (var1.method17193() != 2) {
                      if (var1.method17193() != 4) {
                         if (var1.method17193() == 5) {
-                           this.field23272.particles.addParticleEmitter(var4, ParticleTypes.ENCHANTED_HIT);
+                           this.mc.particles.addParticleEmitter(var4, ParticleTypes.ENCHANTED_HIT);
                         }
                      } else {
-                        this.field23272.particles.addParticleEmitter(var4, ParticleTypes.CRIT);
+                        this.mc.particles.addParticleEmitter(var4, ParticleTypes.CRIT);
                      }
                   } else {
                      PlayerEntity var5 = (PlayerEntity)var4;
@@ -783,13 +785,13 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleSpawnMob(SSpawnMobPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       double var4 = var1.method17538();
       double var6 = var1.method17539();
       double var8 = var1.method17540();
       float var10 = (float)(var1.method17544() * 360) / 256.0F;
       float var11 = (float)(var1.method17545() * 360) / 256.0F;
-      LivingEntity var12 = (LivingEntity) EntityType.method33216(var1.method17537(), this.field23272.world);
+      LivingEntity var12 = (LivingEntity) EntityType.method33216(var1.method17537(), this.mc.world);
       if (var12 == null) {
          field23267.warn("Skipping Entity with id {}", var1.method17537());
       } else {
@@ -820,38 +822,38 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                var16 = new Class6335((Class1017)var12);
             }
 
-            this.field23272.getSoundHandler().method999((Class6341)var16);
+            this.mc.getSoundHandler().method999((Class6341)var16);
          }
       }
    }
 
    @Override
    public void handleTimeUpdate(SUpdateTimePacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
-      this.field23272.world.func_239134_a_(var1.getTotalWorldTime());
-      this.field23272.world.setDayTime(var1.getWorldTime());
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
+      this.mc.world.func_239134_a_(var1.getTotalWorldTime());
+      this.mc.world.setDayTime(var1.getWorldTime());
    }
 
    @Override
    public void func_230488_a_(SWorldSpawnChangedPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
-      this.field23272.world.func_239136_a_(var1.method17372(), var1.method17373());
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
+      this.mc.world.func_239136_a_(var1.method17372(), var1.method17373());
    }
 
    @Override
    public void handleSetPassengers(SSetPassengersPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       Entity var4 = this.field23273.getEntityByID(var1.method17253());
       if (var4 != null) {
-         boolean var5 = var4.method3417(this.field23272.player);
+         boolean var5 = var4.method3417(this.mc.player);
          var4.removePassengers();
 
          for (int var9 : var1.method17252()) {
             Entity var10 = this.field23273.getEntityByID(var9);
             if (var10 != null) {
                var10.startRiding(var4, true);
-               if (var10 == this.field23272.player && !var5) {
-                  this.field23272.ingameGUI.method5985(new TranslationTextComponent("mount.onboard", this.field23272.gameSettings.keyBindSneak.func_238171_j_()), false);
+               if (var10 == this.mc.player && !var5) {
+                  this.mc.ingameGUI.method5985(new TranslationTextComponent("mount.onboard", this.mc.gameSettings.keyBindSneak.func_238171_j_()), false);
                }
             }
          }
@@ -862,7 +864,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleEntityAttach(SMountEntityPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       Entity var4 = this.field23273.getEntityByID(var1.method17577());
       if (var4 instanceof MobEntity) {
          ((MobEntity)var4).method4299(var1.method17578());
@@ -882,7 +884,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleEntityStatus(SEntityStatusPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       Entity var4 = var1.getEntity(this.field23273);
       if (var4 != null) {
          if (var1.getOpCode() != 21) {
@@ -890,38 +892,38 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                var4.handleStatusUpdate(var1.getOpCode());
             } else {
                byte var5 = 40;
-               this.field23272.particles.method1196(var4, ParticleTypes.field34097, 30);
+               this.mc.particles.method1196(var4, ParticleTypes.field34097, 30);
                this.field23273.method6745(var4.getPosX(), var4.getPosY(), var4.getPosZ(), SoundEvents.field27147, var4.getSoundCategory(), 1.0F, 1.0F, false);
-               if (var4 == this.field23272.player) {
-                  this.field23272.gameRenderer.displayItemActivation(method15785(this.field23272.player));
+               if (var4 == this.mc.player) {
+                  this.mc.gameRenderer.displayItemActivation(method15785(this.mc.player));
                }
             }
          } else {
-            this.field23272.getSoundHandler().method1000(new Class6347((Class1105)var4));
+            this.mc.getSoundHandler().method1000(new Class6347((Class1105)var4));
          }
       }
    }
 
    @Override
    public void handleUpdateHealth(SUpdateHealthPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
-      this.field23272.player.method5391(var1.method17574());
-      this.field23272.player.getFoodStats().method37578(var1.method17575());
-      this.field23272.player.getFoodStats().method37579(var1.method17576());
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
+      this.mc.player.method5391(var1.method17574());
+      this.mc.player.getFoodStats().method37578(var1.method17575());
+      this.mc.player.getFoodStats().method37579(var1.method17576());
    }
 
    @Override
    public void handleSetExperience(SSetExperiencePacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
-      this.field23272.player.method5402(var1.method17321(), var1.method17322(), var1.method17323());
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
+      this.mc.player.method5402(var1.method17321(), var1.method17322(), var1.method17323());
    }
 
    @Override
    public void handleRespawn(SRespawnPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       RegistryKey var4 = var1.method17433();
       DimensionType var5 = var1.method17432();
-      ClientPlayerEntity var6 = this.field23272.player;
+      ClientPlayerEntity var6 = this.mc.player;
       int var7 = var6.getEntityId();
       this.field23275 = false;
       if (var4 != var6.world.getDimensionKey()) {
@@ -931,24 +933,24 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          ClientWorld.ClientWorldInfo var11 = new ClientWorld.ClientWorldInfo(this.field23274.method20047(), this.field23274.isHardcore(), var10);
          this.field23274 = var11;
          this.field23273 = new ClientWorld(
-            this, var11, var4, var5, this.field23281, this.field23272::getProfiler, this.field23272.worldRenderer, var9, var1.method17434()
+            this, var11, var4, var5, this.field23281, this.mc::getProfiler, this.mc.worldRenderer, var9, var1.method17434()
          );
          this.field23273.method6859(var8);
-         this.field23272.loadWorld(this.field23273);
-         this.field23272.displayGuiScreen(new Class1312());
+         this.mc.loadWorld(this.field23273);
+         this.mc.displayGuiScreen(new Class1312());
       }
 
       this.field23273.method6857();
       String var12 = var6.method5395();
-      this.field23272.renderViewEntity = null;
-      ClientPlayerEntity var13 = this.field23272.playerController.func_239167_a_(this.field23273, var6.method5396(), var6.method5397(), var6.isSneaking(), var6.isSprinting());
+      this.mc.renderViewEntity = null;
+      ClientPlayerEntity var13 = this.mc.playerController.func_239167_a_(this.field23273, var6.method5396(), var6.method5397(), var6.isSneaking(), var6.isSprinting());
       var13.setEntityId(var7);
-      this.field23272.player = var13;
+      this.mc.player = var13;
       if (var4 != var6.world.getDimensionKey()) {
-         this.field23272.getMusicTicker().method33668();
+         this.mc.getMusicTicker().method33668();
       }
 
-      this.field23272.renderViewEntity = var13;
+      this.mc.renderViewEntity = var13;
       var13.getDataManager().method35454(var6.getDataManager().getAll());
       if (var1.method17439()) {
          var13.getAttributeManager().refreshOnRespawn(var6.getAttributeManager());
@@ -958,62 +960,62 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       var13.method5394(var12);
       this.field23273.addPlayer(var7, var13);
       var13.rotationYaw = -180.0F;
-      var13.movementInput = new Class9451(this.field23272.gameSettings);
-      this.field23272.playerController.setPlayerCapabilities(var13);
+      var13.movementInput = new Class9451(this.mc.gameSettings);
+      this.mc.playerController.setPlayerCapabilities(var13);
       var13.method2965(var6.hasReducedDebug());
       var13.method5403(var6.isShowDeathScreen());
-      if (this.field23272.currentScreen instanceof DeathScreen) {
-         this.field23272.displayGuiScreen((Screen)null);
+      if (this.mc.currentScreen instanceof DeathScreen) {
+         this.mc.displayGuiScreen((Screen)null);
       }
 
-      this.field23272.playerController.setGameType(var1.method17435());
-      this.field23272.playerController.method23128(var1.method17436());
+      this.mc.playerController.setGameType(var1.method17435());
+      this.mc.playerController.method23128(var1.method17436());
    }
 
    @Override
    public void handleExplosion(SExplosionPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       Explosion var4 = new Explosion(
-         this.field23272.world, (Entity)null, var1.getX(), var1.getY(), var1.getZ(), var1.getStrength(), var1.getAffectedBlockPositions()
+         this.mc.world, (Entity)null, var1.getX(), var1.getY(), var1.getZ(), var1.getStrength(), var1.getAffectedBlockPositions()
       );
       var4.method25785(true);
-      this.field23272
+      this.mc
          .player
-         .setMotion(this.field23272.player.getMotion().add((double)var1.getMotionX(), (double)var1.getMotionY(), (double)var1.getMotionZ()));
+         .setMotion(this.mc.player.getMotion().add((double)var1.getMotionX(), (double)var1.getMotionY(), (double)var1.getMotionZ()));
    }
 
    @Override
    public void handleOpenHorseWindow(SOpenHorseWindowPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       Entity var4 = this.field23273.getEntityByID(var1.method17326());
       if (var4 instanceof AbstractHorseEntity) {
-         ClientPlayerEntity var5 = this.field23272.player;
+         ClientPlayerEntity var5 = this.mc.player;
          AbstractHorseEntity var6 = (AbstractHorseEntity)var4;
          Class927 var7 = new Class927(var1.method17325());
          Class5827 var8 = new Class5827(var1.method17324(), var5.inventory, var7, var6);
          var5.openContainer = var8;
-         this.field23272.displayGuiScreen(new Class1125(var8, var5.inventory, var6));
+         this.mc.displayGuiScreen(new Class1125(var8, var5.inventory, var6));
       }
    }
 
    @Override
    public void handleOpenWindowPacket(SOpenWindowPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
-      ScreenManager.openScreen(var1.method17285(), this.field23272, var1.method17284(), var1.method17286());
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
+      ScreenManager.openScreen(var1.method17285(), this.mc, var1.method17284(), var1.method17286());
    }
 
    @Override
    public void handleSetSlot(SSetSlotPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
-      ClientPlayerEntity var4 = this.field23272.player;
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
+      ClientPlayerEntity var4 = this.mc.player;
       ItemStack var5 = var1.method17305();
       int var6 = var1.method17304();
-      this.field23272.getTutorial().method37028(var5);
+      this.mc.getTutorial().method37028(var5);
       if (var1.method17303() != -1) {
          if (var1.method17303() != -2) {
             boolean var7 = false;
-            if (this.field23272.currentScreen instanceof CreativeScreen) {
-               CreativeScreen var8 = (CreativeScreen)this.field23272.currentScreen;
+            if (this.mc.currentScreen instanceof CreativeScreen) {
+               CreativeScreen var8 = (CreativeScreen)this.mc.currentScreen;
                var7 = var8.method2654() != ItemGroup.field31677.method23641();
             }
 
@@ -1032,33 +1034,37 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          } else {
             var4.inventory.setInventorySlotContents(var6, var5);
          }
-      } else if (!(this.field23272.currentScreen instanceof CreativeScreen)) {
+      } else if (!(this.mc.currentScreen instanceof CreativeScreen)) {
          var4.inventory.setItemStack(var5);
       }
    }
 
    @Override
    public void handleConfirmTransaction(SConfirmTransactionPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
+      if (ViaLoadingBase.getInstance().getTargetVersion().newerThanOrEqualTo(ProtocolVersion.v1_17)) {
+         this.sendPacket(new CConfirmTransactionPacket(var1.getWindowId(), (short) 0, false));
+         return;
+      }
       Object var4 = null;
-      ClientPlayerEntity var5 = this.field23272.player;
-      if (var1.method17421() != 0) {
-         if (var1.method17421() == var5.openContainer.windowId) {
+      ClientPlayerEntity var5 = this.mc.player;
+      if (var1.getWindowId() != 0) {
+         if (var1.getWindowId() == var5.openContainer.windowId) {
             var4 = var5.openContainer;
          }
       } else {
          var4 = var5.container;
       }
 
-      if (var4 != null && !var1.method17423()) {
-         this.sendPacket(new CConfirmTransactionPacket(var1.method17421(), var1.method17422(), true));
+      if (var4 != null && !var1.getAccepted()) {
+         this.sendPacket(new CConfirmTransactionPacket(var1.getWindowId(), var1.getActionNumber(), true));
       }
    }
 
    @Override
    public void handleWindowItems(SWindowItemsPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
-      ClientPlayerEntity var4 = this.field23272.player;
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
+      ClientPlayerEntity var4 = this.mc.player;
       if (var1.method17644() != 0) {
          if (var1.method17644() == var4.openContainer.windowId) {
             var4.openContainer.setAll(var1.method17645());
@@ -1070,21 +1076,21 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleSignEditorOpen(SOpenSignMenuPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       Object var4 = this.field23273.getTileEntity(var1.method17271());
       if (!(var4 instanceof Class954)) {
          var4 = new Class954();
          ((TileEntity)var4).method3769(this.field23273, var1.method17271());
       }
 
-      this.field23272.player.method2764((Class954)var4);
+      this.mc.player.method2764((Class954)var4);
    }
 
    @Override
    public void handleUpdateTileEntity(SUpdateTileEntityPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       BlockPos var4 = var1.method17636();
-      TileEntity var5 = this.field23272.world.getTileEntity(var4);
+      TileEntity var5 = this.mc.world.getTileEntity(var4);
       int var6 = var1.method17637();
       boolean var7 = var6 == 2 && var5 instanceof CommandBlockTileEntity;
       if (var6 == 1 && var5 instanceof Class960
@@ -1100,18 +1106,18 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          || var6 == 12 && var5 instanceof JigsawTileEntity
          || var6 == 13 && var5 instanceof Class945
          || var6 == 14 && var5 instanceof BeehiveTileEntity) {
-         var5.read(this.field23272.world.getBlockState(var4), var1.method17638());
+         var5.read(this.mc.world.getBlockState(var4), var1.method17638());
       }
 
-      if (var7 && this.field23272.currentScreen instanceof Class1326) {
-         ((Class1326)this.field23272.currentScreen).method6314();
+      if (var7 && this.mc.currentScreen instanceof Class1326) {
+         ((Class1326)this.mc.currentScreen).method6314();
       }
    }
 
    @Override
    public void handleWindowProperty(SWindowPropertyPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
-      ClientPlayerEntity var4 = this.field23272.player;
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
+      ClientPlayerEntity var4 = this.mc.player;
       if (var4.openContainer != null && var4.openContainer.windowId == var1.method17239()) {
          var4.openContainer.updateProgressBar(var1.method17240(), var1.method17241());
       }
@@ -1119,7 +1125,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleEntityEquipment(SEntityEquipmentPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       Entity var4 = this.field23273.getEntityByID(var1.getEntityID());
       if (var4 != null) {
          var1.func_241790_c_().forEach(var1x -> var4.setItemStackToSlot((EquipmentSlotType)var1x.getFirst(), (ItemStack)var1x.getSecond()));
@@ -1128,26 +1134,26 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleCloseWindow(SCloseWindowPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
-      this.field23272.player.method5390();
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
+      this.mc.player.method5390();
    }
 
    @Override
    public void handleBlockAction(SBlockActionPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
-      this.field23272.world.addBlockEvent(var1.method17278(), var1.method17281(), var1.method17279(), var1.method17280());
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
+      this.mc.world.addBlockEvent(var1.method17278(), var1.method17281(), var1.method17279(), var1.method17280());
    }
 
    @Override
    public void handleBlockBreakAnim(SAnimateBlockBreakPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
-      this.field23272.world.sendBlockBreakProgress(var1.method17369(), var1.method17370(), var1.method17371());
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
+      this.mc.world.sendBlockBreakProgress(var1.method17369(), var1.method17370(), var1.method17371());
    }
 
    @Override
    public void handleChangeGameState(SChangeGameStatePacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
-      ClientPlayerEntity var4 = this.field23272.player;
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
+      ClientPlayerEntity var4 = this.mc.player;
       Class9385 var5 = var1.method17397();
       float var6 = var1.method17398();
       int var7 = MathHelper.floor(var6 + 0.5F);
@@ -1163,7 +1169,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                                  if (var5 != SChangeGameStatePacket.field24569) {
                                     if (var5 != SChangeGameStatePacket.field24570) {
                                        if (var5 == SChangeGameStatePacket.field24571) {
-                                          this.field23272.player.method5403(var6 == 0.0F);
+                                          this.mc.player.method5403(var6 == 0.0F);
                                        }
                                     } else {
                                        this.field23273.addParticle(ParticleTypes.field34064, var4.getPosX(), var4.getPosY(), var4.getPosZ(), 0.0, 0.0, 0.0);
@@ -1200,31 +1206,31 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                               );
                         }
                      } else {
-                        GameSettings var8 = this.field23272.gameSettings;
+                        GameSettings var8 = this.mc.gameSettings;
                         if (var6 != 0.0F) {
                            if (var6 != 101.0F) {
                               if (var6 != 102.0F) {
                                  if (var6 != 103.0F) {
                                     if (var6 == 104.0F) {
-                                       this.field23272
+                                       this.mc
                                           .ingameGUI
                                           .getChatGUI()
                                           .sendChatMessage(new TranslationTextComponent("demo.day.6", var8.keyBindScreenshot.func_238171_j_()));
                                     }
                                  } else {
-                                    this.field23272
+                                    this.mc
                                        .ingameGUI
                                        .getChatGUI()
                                        .sendChatMessage(new TranslationTextComponent("demo.help.inventory", var8.keyBindInventory.func_238171_j_()));
                                  }
                               } else {
-                                 this.field23272
+                                 this.mc
                                     .ingameGUI
                                     .getChatGUI()
                                     .sendChatMessage(new TranslationTextComponent("demo.help.jump", var8.keyBindJump.func_238171_j_()));
                               }
                            } else {
-                              this.field23272
+                              this.mc
                                  .ingameGUI
                                  .getChatGUI()
                                  .sendChatMessage(
@@ -1238,20 +1244,20 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                                  );
                            }
                         } else {
-                           this.field23272.displayGuiScreen(new Class1308());
+                           this.mc.displayGuiScreen(new Class1308());
                         }
                      }
                   } else if (var7 != 0) {
                      if (var7 == 1) {
-                        this.field23272
-                           .displayGuiScreen(new WinGameScreen(true, () -> this.field23272.player.connection.sendPacket(new CClientStatusPacket(CClientStatusPacket.State.field14277))));
+                        this.mc
+                           .displayGuiScreen(new WinGameScreen(true, () -> this.mc.player.connection.sendPacket(new CClientStatusPacket(CClientStatusPacket.State.field14277))));
                      }
                   } else {
-                     this.field23272.player.connection.sendPacket(new CClientStatusPacket(CClientStatusPacket.State.field14277));
-                     this.field23272.displayGuiScreen(new Class1312());
+                     this.mc.player.connection.sendPacket(new CClientStatusPacket(CClientStatusPacket.State.field14277));
+                     this.mc.displayGuiScreen(new Class1312());
                   }
                } else {
-                  this.field23272.playerController.setGameType(GameType.getByID(var7));
+                  this.mc.playerController.setGameType(GameType.getByID(var7));
                }
             } else {
                this.field23273.getWorldInfo().method20044(false);
@@ -1268,10 +1274,10 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleMaps(SMapDataPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
-      Class194 var4 = this.field23272.gameRenderer.method756();
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
+      Class194 var4 = this.mc.gameRenderer.method756();
       String var5 = Class3316.method11864(var1.method17634());
-      MapData var6 = this.field23272.world.method6798(var5);
+      MapData var6 = this.mc.world.method6798(var5);
       if (var6 == null) {
          var6 = new MapData(var5);
          if (var4.method595(var5) != null) {
@@ -1281,7 +1287,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
             }
          }
 
-         this.field23272.world.method6799(var6);
+         this.mc.world.method6799(var6);
       }
 
       var1.method17635(var6);
@@ -1290,23 +1296,23 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleEffect(SPlaySoundEventPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       if (!var1.method17242()) {
-         this.field23272.world.playEvent(var1.method17243(), var1.method17245(), var1.method17244());
+         this.mc.world.playEvent(var1.method17243(), var1.method17245(), var1.method17244());
       } else {
-         this.field23272.world.method6801(var1.method17243(), var1.method17245(), var1.method17244());
+         this.mc.world.method6801(var1.method17243(), var1.method17245(), var1.method17244());
       }
    }
 
    @Override
    public void handleAdvancementInfo(SAdvancementInfoPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       this.field23277.method31508(var1);
    }
 
    @Override
    public void handleSelectAdvancementsTab(SSelectAdvancementsTabPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       ResourceLocation var4 = var1.method17335();
       if (var4 != null) {
          Advancement var5 = this.field23277.method31509().method28599(var4);
@@ -1318,29 +1324,29 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleCommandList(SCommandListPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       this.field23283 = new CommandDispatcher(var1.method17658());
    }
 
    @Override
    public void handleStopSound(SStopSoundPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
-      this.field23272.getSoundHandler().method1013(var1.method17268(), var1.method17269());
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
+      this.mc.getSoundHandler().method1013(var1.method17268(), var1.method17269());
    }
 
    @Override
    public void handleTabComplete(STabCompletePacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       this.field23278.method20137(var1.getTransactionId(), var1.getSugestions());
    }
 
    @Override
    public void handleUpdateRecipes(SUpdateRecipesPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       this.field23284.method1039(var1.method17331());
-      IMutableSearchTree var4 = this.field23272.<RecipeList>getSearchTree(SearchTreeManager.RECIPES);
+      IMutableSearchTree var4 = this.mc.<RecipeList>getSearchTree(SearchTreeManager.RECIPES);
       var4.method21735();
-      Class6943 var5 = this.field23272.player.method5397();
+      Class6943 var5 = this.mc.player.method5397();
       var5.method21383(this.field23284.method1036());
       var5.method21386().forEach(var4::func_217872_a);
       var4.method21736();
@@ -1348,16 +1354,16 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handlePlayerLook(SPlayerLookPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       Vector3d var4 = var1.method17624(this.field23273);
       if (var4 != null) {
-         this.field23272.player.lookAt(var1.method17623(), var4);
+         this.mc.player.lookAt(var1.method17623(), var4);
       }
    }
 
    @Override
    public void handleNBTQueryResponse(SQueryNBTResponsePacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       if (!this.field23280.method14176(var1.method17328(), var1.method17329())) {
          field23267.debug("Got unhandled response to tag query {}", var1.method17328());
       }
@@ -1365,23 +1371,23 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleStatistics(SStatisticsPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
 
       for (Entry var5 : var1.method17459().entrySet()) {
          Class9007 var6 = (Class9007)var5.getKey();
          int var7 = (Integer)var5.getValue();
-         this.field23272.player.method5396().method28959(this.field23272.player, var6, var7);
+         this.mc.player.method5396().method28959(this.mc.player, var6, var7);
       }
 
-      if (this.field23272.currentScreen instanceof Class1306) {
-         ((Class1306)this.field23272.currentScreen).method6181();
+      if (this.mc.currentScreen instanceof Class1306) {
+         ((Class1306)this.mc.currentScreen).method6181();
       }
    }
 
    @Override
    public void handleRecipeBook(SRecipeBookPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
-      Class6943 var4 = this.field23272.player.method5397();
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
+      Class6943 var4 = this.mc.player.method5397();
       var4.method21373(var1.method17501());
       Class2338 var5 = var1.method17502();
       switch (Class8047.field34564[var5.ordinal()]) {
@@ -1404,20 +1410,20 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                this.field23284.method1035(var7).ifPresent(var2 -> {
                   var4.method21358((IRecipe<?>)var2);
                   var4.method21366((IRecipe<?>)var2);
-                  Class7602.method24901(this.field23272.getToastGui(), (IRecipe<?>)var2);
+                  Class7602.method24901(this.mc.getToastGui(), (IRecipe<?>)var2);
                });
             }
       }
 
       var4.method21386().forEach(var1x -> var1x.method34887(var4));
-      if (this.field23272.currentScreen instanceof Class854) {
-         ((Class854)this.field23272.currentScreen).method2631();
+      if (this.mc.currentScreen instanceof Class854) {
+         ((Class854)this.mc.currentScreen).method2631();
       }
    }
 
    @Override
    public void handleEntityEffect(SPlayEntityEffectPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       Entity var4 = this.field23273.getEntityByID(var1.method17407());
       if (var4 instanceof LivingEntity) {
          Effect var5 = Effect.get(var1.method17408());
@@ -1431,7 +1437,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleTags(STagsListPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       Class8933 var4 = var1.method17639();
       Multimap var5 = Class8384.method29380(var4);
       if (var5.isEmpty()) {
@@ -1440,7 +1446,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
             var4.method32661();
          }
 
-         this.field23272.<ItemStack>getSearchTree(SearchTreeManager.TAGS).method21736();
+         this.mc.<ItemStack>getSearchTree(SearchTreeManager.TAGS).method21736();
       } else {
          field23267.warn("Incomplete server tags, disconnecting. Missing: {}", var5);
          this.field23269.closeChannel(new TranslationTextComponent("multiplayer.disconnect.missing_tags"));
@@ -1449,14 +1455,14 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleCombatEvent(SCombatPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       if (var1.field24693 == Class1900.field11157) {
          Entity var4 = this.field23273.getEntityByID(var1.field24694);
-         if (var4 == this.field23272.player) {
-            if (!this.field23272.player.isShowDeathScreen()) {
-               this.field23272.player.respawnPlayer();
+         if (var4 == this.mc.player) {
+            if (!this.mc.player.isShowDeathScreen()) {
+               this.mc.player.respawnPlayer();
             } else {
-               this.field23272.displayGuiScreen(new DeathScreen(var1.field24697, this.field23273.getWorldInfo().isHardcore()));
+               this.mc.displayGuiScreen(new DeathScreen(var1.field24697, this.field23273.getWorldInfo().isHardcore()));
             }
          }
       }
@@ -1464,29 +1470,29 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleServerDifficulty(SServerDifficultyPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       this.field23274.method20050(var1.method17400());
       this.field23274.method20051(var1.method17399());
    }
 
    @Override
    public void handleCamera(SCameraPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       Entity var4 = var1.method17480(this.field23273);
       if (var4 != null) {
-         this.field23272.setRenderViewEntity(var4);
+         this.mc.setRenderViewEntity(var4);
       }
    }
 
    @Override
    public void handleWorldBorder(SWorldBorderPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       var1.method17221(this.field23273.getWorldBorder());
    }
 
    @Override
    public void handleTitle(STitlePacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       Class2301 var4 = var1.method17569();
       ITextComponent var5 = null;
       ITextComponent var6 = null;
@@ -1499,26 +1505,26 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
             var6 = var7;
             break;
          case 3:
-            this.field23272.ingameGUI.method5985(var7, false);
+            this.mc.ingameGUI.method5985(var7, false);
             return;
          case 4:
-            this.field23272.ingameGUI.method5986((ITextComponent)null, (ITextComponent)null, -1, -1, -1);
-            this.field23272.ingameGUI.method5960();
+            this.mc.ingameGUI.method5986((ITextComponent)null, (ITextComponent)null, -1, -1, -1);
+            this.mc.ingameGUI.method5960();
             return;
       }
 
-      this.field23272.ingameGUI.method5986(var5, var6, var1.method17571(), var1.method17572(), var1.method17573());
+      this.mc.ingameGUI.method5986(var5, var6, var1.method17571(), var1.method17572(), var1.method17573());
    }
 
    @Override
    public void handlePlayerListHeaderFooter(SPlayerListHeaderFooterPacket var1) {
-      this.field23272.ingameGUI.method5993().method5924(!var1.getHeader().getString().isEmpty() ? var1.getHeader() : null);
-      this.field23272.ingameGUI.method5993().method5923(!var1.getFooter().getString().isEmpty() ? var1.getFooter() : null);
+      this.mc.ingameGUI.method5993().method5924(!var1.getHeader().getString().isEmpty() ? var1.getHeader() : null);
+      this.mc.ingameGUI.method5993().method5923(!var1.getFooter().getString().isEmpty() ? var1.getFooter() : null);
    }
 
    @Override
    public void handleRemoveEntityEffect(SRemoveEntityEffectPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       Entity var4 = var1.method17349(this.field23273);
       if (var4 instanceof LivingEntity) {
          ((LivingEntity)var4).removeActivePotionEffect(var1.method17350());
@@ -1527,18 +1533,18 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handlePlayerListItem(SPlayerListItemPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
 
       for (SPlayerListItemPacket.AddPlayerData var5 : var1.getEntries()) {
          if (var1.getAction() == SPlayerListItemPacket.Action.REMOVE_PLAYER) {
-            this.field23272.func_244599_aA().method37612(var5.getProfile().getId());
+            this.mc.func_244599_aA().method37612(var5.getProfile().getId());
             this.field23276.remove(var5.getProfile().getId());
          } else {
             NetworkPlayerInfo var6 = this.field23276.get(var5.getProfile().getId());
             if (var1.getAction() == SPlayerListItemPacket.Action.ADD_PLAYER) {
                var6 = new NetworkPlayerInfo(var5);
                this.field23276.put(var6.method19966().getId(), var6);
-               this.field23272.func_244599_aA().method37611(var6);
+               this.mc.func_244599_aA().method37611(var6);
             }
 
             if (var6 != null) {
@@ -1569,8 +1575,8 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handlePlayerAbilities(SPlayerAbilitiesPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
-      ClientPlayerEntity var4 = this.field23272.player;
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
+      ClientPlayerEntity var4 = this.mc.player;
       var4.abilities.isFlying = var1.isFlying();
       var4.abilities.isCreativeMode = var1.isCreativeMode();
       var4.abilities.disableDamage = var1.isInvulnerable();
@@ -1581,11 +1587,11 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleSoundEffect(SPlaySoundEffectPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
-      this.field23272
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
+      this.mc
          .world
          .playSound(
-            this.field23272.player,
+            this.mc.player,
             var1.method17551(),
             var1.method17552(),
             var1.method17553(),
@@ -1598,17 +1604,17 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleSpawnMovingSoundEffect(SSpawnMovingSoundEffectPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       Entity var4 = this.field23273.getEntityByID(var1.method17443());
       if (var4 != null) {
-         this.field23272.world.method6744(this.field23272.player, var4, var1.method17441(), var1.method17442(), var1.method17444(), var1.method17445());
+         this.mc.world.method6744(this.mc.player, var4, var1.method17441(), var1.method17442(), var1.method17444(), var1.method17445());
       }
    }
 
    @Override
    public void handleCustomSound(SPlaySoundPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
-      this.field23272
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
+      this.mc
          .getSoundHandler()
          .method1000(
             new MinecraftSoundManager(
@@ -1635,11 +1641,11 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          if (var4.startsWith("level://")) {
             try {
                String var6 = URLDecoder.decode(var4.substring("level://".length()), StandardCharsets.UTF_8.toString());
-               File var7 = new File(this.field23272.gameDir, "saves");
+               File var7 = new File(this.mc.gameDir, "saves");
                File var8 = new File(var7, var6);
                if (var8.isFile()) {
                   this.method15788(CResourcePackStatusPacket.Action.ACCEPTED);
-                  CompletableFuture var9 = this.field23272.getPackFinder().method25153(var8, IPackNameDecorator.WORLD);
+                  CompletableFuture var9 = this.mc.getPackFinder().method25153(var8, IPackNameDecorator.WORLD);
                   this.method15787(var9);
                   return;
                }
@@ -1648,16 +1654,16 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
             this.method15788(CResourcePackStatusPacket.Action.FAILED_DOWNLOAD);
          } else {
-            ServerData var11 = this.field23272.getCurrentServerData();
+            ServerData var11 = this.mc.getCurrentServerData();
             if (var11 != null && var11.method25577() == Class2168.field14234) {
                this.method15788(CResourcePackStatusPacket.Action.ACCEPTED);
-               this.method15787(this.field23272.getPackFinder().downloadResourcePack(var4, var5));
+               this.method15787(this.mc.getPackFinder().downloadResourcePack(var4, var5));
             } else if (var11 != null && var11.method25577() != Class2168.field14236) {
                this.method15788(CResourcePackStatusPacket.Action.DECLINED);
             } else {
-               this.field23272.execute(() -> this.field23272.displayGuiScreen(new ConfirmScreen(var3 -> {
-                     this.field23272 = Minecraft.getInstance();
-                     ServerData var6x = this.field23272.getCurrentServerData();
+               this.mc.execute(() -> this.mc.displayGuiScreen(new ConfirmScreen(var3 -> {
+                     this.mc = Minecraft.getInstance();
+                     ServerData var6x = this.mc.getCurrentServerData();
                      if (!var3) {
                         if (var6x != null) {
                            var6x.method25578(Class2168.field14235);
@@ -1670,11 +1676,11 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                         }
 
                         this.method15788(CResourcePackStatusPacket.Action.ACCEPTED);
-                        this.method15787(this.field23272.getPackFinder().downloadResourcePack(var4, var5));
+                        this.method15787(this.mc.getPackFinder().downloadResourcePack(var4, var5));
                      }
 
                      ServerList.method27102(var6x);
-                     this.field23272.displayGuiScreen((Screen)null);
+                     this.mc.displayGuiScreen((Screen)null);
                   }, new TranslationTextComponent("multiplayer.texturePrompt.line1"), new TranslationTextComponent("multiplayer.texturePrompt.line2"))));
             }
          }
@@ -1712,25 +1718,25 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleUpdateBossInfo(SUpdateBossInfoPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
-      this.field23272.ingameGUI.getBossOverlay().method5955(var1);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
+      this.mc.ingameGUI.getBossOverlay().method5955(var1);
    }
 
    @Override
    public void handleCooldown(SCooldownPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       if (var1.method17507() != 0) {
-         this.field23272.player.method2976().method19638(var1.method17506(), var1.method17507());
+         this.mc.player.method2976().method19638(var1.method17506(), var1.method17507());
       } else {
-         this.field23272.player.method2976().method19639(var1.method17506());
+         this.mc.player.method2976().method19639(var1.method17506());
       }
    }
 
    @Override
    public void handleMoveVehicle(SMoveVehiclePacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
-      Entity var4 = this.field23272.player.method3415();
-      if (var4 != this.field23272.player && var4.canPassengerSteer()) {
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
+      Entity var4 = this.mc.player.method3415();
+      if (var4 != this.mc.player && var4.canPassengerSteer()) {
          var4.setPositionAndRotation(var1.method17401(), var1.method17402(), var1.method17403(), var1.method17404(), var1.method17405());
          this.field23269.sendPacket(new CMoveVehiclePacket(var4));
       }
@@ -1738,32 +1744,32 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleOpenBookPacket(SOpenBookWindowPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
-      ItemStack var4 = this.field23272.player.getHeldItem(var1.method17327());
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
+      ItemStack var4 = this.mc.player.getHeldItem(var1.method17327());
       if (var4.getItem() == Items.field38048) {
-         this.field23272.displayGuiScreen(new Class870(new Class7501(var4)));
+         this.mc.displayGuiScreen(new Class870(new Class7501(var4)));
       }
    }
 
    @Override
    public void handleCustomPayload(SCustomPayloadPlayPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       ResourceLocation var4 = var1.method17393();
       PacketBuffer var5 = null;
 
       try {
          var5 = var1.method17394();
          if (SCustomPayloadPlayPacket.field24537.equals(var4)) {
-            this.field23272.player.method5394(var5.readString(32767));
+            this.mc.player.method5394(var5.readString(32767));
          } else if (SCustomPayloadPlayPacket.field24538.equals(var4)) {
             int var6 = var5.readInt();
             float var7 = var5.readFloat();
             Class8238 var8 = Class8238.method28711(var5);
-            this.field23272.debugRenderer.field34466.method15902(var6, var8, var7);
+            this.mc.debugRenderer.field34466.method15902(var6, var8, var7);
          } else if (SCustomPayloadPlayPacket.field24539.equals(var4)) {
             long var9 = var5.readVarLong();
             BlockPos var62 = var5.readBlockPos();
-            ((Class5132)this.field23272.debugRenderer.field34471).method15869(var9, var62);
+            ((Class5132)this.mc.debugRenderer.field34471).method15869(var9, var62);
          } else if (SCustomPayloadPlayPacket.field24540.equals(var4)) {
             BlockPos var42 = var5.readBlockPos();
             int var52 = var5.readInt();
@@ -1775,7 +1781,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                var11.add(var5.readFloat());
             }
 
-            this.field23272.debugRenderer.field34472.method15868(var42, var63, var11);
+            this.mc.debugRenderer.field34472.method15868(var42, var63, var11);
          } else if (SCustomPayloadPlayPacket.field24541.equals(var4)) {
             DimensionType var43 = this.field23287.method32454().getOrDefault(var5.readResourceLocation());
             MutableBoundingBox var53 = new MutableBoundingBox(var5.readInt(), var5.readInt(), var5.readInt(), var5.readInt(), var5.readInt(), var5.readInt());
@@ -1788,35 +1794,35 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                var78.add(var5.readBoolean());
             }
 
-            this.field23272.debugRenderer.field34473.method15815(var53, var73, var78, var43);
+            this.mc.debugRenderer.field34473.method15815(var53, var73, var78, var43);
          } else if (SCustomPayloadPlayPacket.field24542.equals(var4)) {
-            ((Class5134)this.field23272.debugRenderer.field34475)
+            ((Class5134)this.mc.debugRenderer.field34475)
                .method15901(var5.readBlockPos(), var5.readFloat(), var5.readFloat(), var5.readFloat(), var5.readFloat(), var5.readFloat());
          } else if (SCustomPayloadPlayPacket.field24546.equals(var4)) {
             int var44 = var5.readInt();
 
             for (int var54 = 0; var54 < var44; var54++) {
-               this.field23272.debugRenderer.field34479.method15817(var5.readSectionPos());
+               this.mc.debugRenderer.field34479.method15817(var5.readSectionPos());
             }
 
             int var55 = var5.readInt();
 
             for (int var65 = 0; var65 < var55; var65++) {
-               this.field23272.debugRenderer.field34479.method15818(var5.readSectionPos());
+               this.mc.debugRenderer.field34479.method15818(var5.readSectionPos());
             }
          } else if (SCustomPayloadPlayPacket.field24544.equals(var4)) {
             BlockPos var45 = var5.readBlockPos();
             String var56 = var5.readString();
             int var66 = var5.readInt();
             Class9321 var74 = new Class9321(var45, var56, var66);
-            this.field23272.debugRenderer.field34478.method15871(var74);
+            this.mc.debugRenderer.field34478.method15871(var74);
          } else if (SCustomPayloadPlayPacket.field24545.equals(var4)) {
             BlockPos var46 = var5.readBlockPos();
-            this.field23272.debugRenderer.field34478.method15872(var46);
+            this.mc.debugRenderer.field34478.method15872(var46);
          } else if (SCustomPayloadPlayPacket.field24543.equals(var4)) {
             BlockPos var47 = var5.readBlockPos();
             int var57 = var5.readInt();
-            this.field23272.debugRenderer.field34478.method15873(var47, var57);
+            this.mc.debugRenderer.field34478.method15873(var47, var57);
          } else if (SCustomPayloadPlayPacket.field24547.equals(var4)) {
             BlockPos var48 = var5.readBlockPos();
             int var58 = var5.readInt();
@@ -1830,7 +1836,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                var75.add(new Class4231(var48, var81, var15, var14));
             }
 
-            this.field23272.debugRenderer.field34482.method15822(var58, var75);
+            this.mc.debugRenderer.field34482.method15822(var58, var75);
          } else if (SCustomPayloadPlayPacket.field24553.equals(var4)) {
             int var49 = var5.readInt();
             ArrayList var59 = Lists.newArrayList();
@@ -1839,7 +1845,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                var59.add(var5.readBlockPos());
             }
 
-            this.field23272.debugRenderer.field34481.method15863(var59);
+            this.mc.debugRenderer.field34481.method15863(var59);
          } else if (SCustomPayloadPlayPacket.field24548.equals(var4)) {
             double var71 = var5.readDouble();
             double var16 = var5.readDouble();
@@ -1905,7 +1911,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                var30.field40376.add(var38);
             }
 
-            this.field23272.debugRenderer.field34478.method15874(var30);
+            this.mc.debugRenderer.field34478.method15874(var30);
          } else if (SCustomPayloadPlayPacket.field24549.equals(var4)) {
             double var72 = var5.readDouble();
             double var87 = var5.readDouble();
@@ -1947,7 +1953,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                var97.field30227.add(var104);
             }
 
-            this.field23272.debugRenderer.field34480.method15825(var97);
+            this.mc.debugRenderer.field34480.method15825(var97);
          } else if (SCustomPayloadPlayPacket.field24550.equals(var4)) {
             BlockPos var50 = var5.readBlockPos();
             String var60 = var5.readString();
@@ -1955,15 +1961,15 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
             int var76 = var5.readInt();
             boolean var80 = var5.readBoolean();
             Class8974 var82 = new Class8974(var50, var60, var69, var76, var80, this.field23273.getGameTime());
-            this.field23272.debugRenderer.field34480.method15824(var82);
+            this.mc.debugRenderer.field34480.method15824(var82);
          } else if (SCustomPayloadPlayPacket.field24552.equals(var4)) {
-            this.field23272.debugRenderer.field34483.method15814();
+            this.mc.debugRenderer.field34483.method15814();
          } else if (SCustomPayloadPlayPacket.field24551.equals(var4)) {
             BlockPos var51 = var5.readBlockPos();
             int var61 = var5.readInt();
             String var70 = var5.readString();
             int var77 = var5.readInt();
-            this.field23272.debugRenderer.field34483.method15907(var51, var61, var70, var77);
+            this.mc.debugRenderer.field34483.method15907(var51, var61, var70, var77);
          } else {
             field23267.warn("Unknown custom packed identifier: {}", var4);
          }
@@ -1976,7 +1982,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleScoreboardObjective(SScoreboardObjectivePacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       Scoreboard var4 = this.field23273.method6805();
       String var5 = var1.method17510();
       if (var1.method17512() != 0) {
@@ -1998,7 +2004,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleUpdateScore(SUpdateScorePacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       Scoreboard var4 = this.field23273.method6805();
       String var5 = var1.method17474();
       switch (Class8047.field34567[var1.method17476().ordinal()]) {
@@ -2014,7 +2020,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleDisplayObjective(SDisplayObjectivePacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       Scoreboard var4 = this.field23273.method6805();
       String var5 = var1.method17647();
       Class8375 var6 = var5 != null ? var4.method20975(var5) : null;
@@ -2023,7 +2029,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleTeams(STeamsPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       Scoreboard var4 = this.field23273.method6805();
       ScorePlayerTeam var5;
       if (var1.getAction() != 0) {
@@ -2069,7 +2075,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleParticles(SSpawnParticlePacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       if (var1.getParticleCount() == 0) {
          double var4 = (double)(var1.getParticleSpeed() * var1.getXOffset());
          double var6 = (double)(var1.getParticleSpeed() * var1.getYOffset());
@@ -2111,7 +2117,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleEntityProperties(SEntityPropertiesPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       Entity var4 = this.field23273.getEntityByID(var1.method17463());
       if (var4 != null) {
          if (!(var4 instanceof LivingEntity)) {
@@ -2138,12 +2144,12 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handlePlaceGhostRecipe(SPlaceGhostRecipePacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
-      Container var4 = this.field23272.player.openContainer;
-      if (var4.windowId == var1.method17564() && var4.getCanCraft(this.field23272.player)) {
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
+      Container var4 = this.mc.player.openContainer;
+      if (var4.windowId == var1.method17564() && var4.getCanCraft(this.mc.player)) {
          this.field23284.method1035(var1.method17563()).ifPresent(var2 -> {
-            if (this.field23272.currentScreen instanceof Class854) {
-               Class1254 var5 = ((Class854)this.field23272.currentScreen).method2632();
+            if (this.mc.currentScreen instanceof Class854) {
+               Class1254 var5 = ((Class854)this.mc.currentScreen).method2632();
                var5.method5858((IRecipe<?>)var2, var4.inventorySlots);
             }
          });
@@ -2152,7 +2158,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleUpdateLight(SUpdateLightPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       int var4 = var1.method17360();
       int var5 = var1.method17361();
       WorldLightManager var6 = this.field23273.getChunkProvider().getLightManager();
@@ -2168,8 +2174,8 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleMerchantOffers(SMerchantOffersPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
-      Container var4 = this.field23272.player.openContainer;
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
+      Container var4 = this.mc.player.openContainer;
       if (var1.method17309() == var4.windowId && var4 instanceof Class5826) {
          ((Class5826)var4).method18216(new Class46(var1.method17310().method166()));
          ((Class5826)var4).method18207(var1.method17312());
@@ -2181,21 +2187,21 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleUpdateViewDistancePacket(SUpdateViewDistancePacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       this.field23281 = var1.method17306();
       this.field23273.getChunkProvider().method7403(var1.method17306());
    }
 
    @Override
    public void handleChunkPositionPacket(SUpdateChunkPositionPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       this.field23273.getChunkProvider().setCenter(var1.method17522(), var1.method17523());
    }
 
    @Override
    public void handleAcknowledgePlayerDigging(SPlayerDiggingPacket var1) {
-      PacketThreadUtil.method31780(var1, this, this.field23272);
-      this.field23272.playerController.acknowledgePlayerDiggingReceived(this.field23273, var1.method17557(), var1.method17556(), var1.method17559(), var1.method17558());
+      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
+      this.mc.playerController.acknowledgePlayerDiggingReceived(this.field23273, var1.method17557(), var1.method17556(), var1.method17559(), var1.method17558());
    }
 
    private void method15789(int var1, int var2, WorldLightManager var3, LightType var4, int var5, int var6, Iterator<byte[]> var7, boolean var8) {

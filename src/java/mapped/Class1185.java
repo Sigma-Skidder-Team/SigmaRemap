@@ -65,8 +65,8 @@ public class Class1185 extends Class1178<Class1185> {
                var2.method5491(() -> method5621(var2, var4x, this.field6397, var5x, var6));
             }
          }, new TranslationTextComponent("gui.socialInteractions.show"));
-         this.field6395.field6483 = var8.method37607(var3);
-         this.field6394.field6483 = !this.field6395.field6483;
+         this.field6395.visible = var8.method37607(var3);
+         this.field6394.visible = !this.field6395.visible;
          this.field6389 = ImmutableList.of(this.field6394, this.field6395);
       } else {
          this.field6389 = ImmutableList.of();
@@ -101,11 +101,11 @@ public class Class1185 extends Class1178<Class1185> {
 
       if (this.field6394 != null && this.field6395 != null) {
          float var18 = this.field6398;
-         this.field6394.field6477 = var4 + (var5 - this.field6394.method5740() - 4);
-         this.field6394.field6478 = var3 + (var6 - this.field6394.method5728()) / 2;
+         this.field6394.x = var4 + (var5 - this.field6394.method5740() - 4);
+         this.field6394.y = var3 + (var6 - this.field6394.method5728()) / 2;
          this.field6394.render(var1, var7, var8, var10);
-         this.field6395.field6477 = var4 + (var5 - this.field6395.method5740() - 4);
-         this.field6395.field6478 = var3 + (var6 - this.field6395.method5728()) / 2;
+         this.field6395.x = var4 + (var5 - this.field6395.method5740() - 4);
+         this.field6395.y = var3 + (var6 - this.field6395.method5728()) / 2;
          this.field6395.render(var1, var7, var8, var10);
          if (var18 == this.field6398) {
             this.field6398 = 0.0F;
@@ -131,8 +131,8 @@ public class Class1185 extends Class1178<Class1185> {
    }
 
    private void method5618(boolean var1, ITextComponent var2) {
-      this.field6395.field6483 = var1;
-      this.field6394.field6483 = !var1;
+      this.field6395.visible = var1;
+      this.field6394.visible = !var1;
       this.field6388.ingameGUI.getChatGUI().sendChatMessage(var2);
       NarratorChatListener.INSTANCE.say(var2.getString());
    }

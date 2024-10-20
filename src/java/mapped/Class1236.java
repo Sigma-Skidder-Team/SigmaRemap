@@ -29,15 +29,15 @@ public abstract class Class1236 extends Widget {
 
    @Override
    public void method5731(MatrixStack var1, Minecraft var2, int var3, int var4) {
-      var2.getTextureManager().bindTexture(field6474);
+      var2.getTextureManager().bindTexture(WIDGETS_LOCATION);
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-      int var7 = (!this.method5737() ? 1 : 2) * 20;
-      this.blit(var1, this.field6477 + (int)(this.field6584 * (double)(this.field6475 - 8)), this.field6478, 0, 46 + var7, 4, 20);
-      this.blit(var1, this.field6477 + (int)(this.field6584 * (double)(this.field6475 - 8)) + 4, this.field6478, 196, 46 + var7, 4, 20);
+      int var7 = (!this.isHovered() ? 1 : 2) * 20;
+      this.blit(var1, this.x + (int)(this.field6584 * (double)(this.width - 8)), this.y, 0, 46 + var7, 4, 20);
+      this.blit(var1, this.x + (int)(this.field6584 * (double)(this.width - 8)) + 4, this.y, 196, 46 + var7, 4, 20);
    }
 
    @Override
-   public void method5732(double var1, double var3) {
+   public void onClick(double var1, double var3) {
       this.method5816(var1);
    }
 
@@ -46,14 +46,14 @@ public abstract class Class1236 extends Widget {
       boolean var6 = var1 == 263;
       if (var6 || var1 == 262) {
          float var7 = !var6 ? 1.0F : -1.0F;
-         this.method5817(this.field6584 + (double)(var7 / (float)(this.field6475 - 8)));
+         this.method5817(this.field6584 + (double)(var7 / (float)(this.width - 8)));
       }
 
       return false;
    }
 
    private void method5816(double var1) {
-      this.method5817((var1 - (double)(this.field6477 + 4)) / (double)(this.field6475 - 8));
+      this.method5817((var1 - (double)(this.x + 4)) / (double)(this.width - 8));
    }
 
    private void method5817(double var1) {
@@ -73,12 +73,12 @@ public abstract class Class1236 extends Widget {
    }
 
    @Override
-   public void method5739(SoundHandler var1) {
+   public void playDownSound(SoundHandler var1) {
    }
 
    @Override
    public void method5733(double var1, double var3) {
-      super.method5739(Minecraft.getInstance().getSoundHandler());
+      super.playDownSound(Minecraft.getInstance().getSoundHandler());
    }
 
    public abstract void method5813();

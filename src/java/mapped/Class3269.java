@@ -56,7 +56,7 @@ public class Class3269 extends ToolItem {
    }
 
    @Override
-   public ActionResultType method11707(ItemUseContext var1) {
+   public ActionResultType onItemUse(ItemUseContext var1) {
       World var4 = var1.getWorld();
       BlockPos var5 = var1.getPos();
       if (var1.getFace() != Direction.DOWN && var4.getBlockState(var5.up()).isAir()) {

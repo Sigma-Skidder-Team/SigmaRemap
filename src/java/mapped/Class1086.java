@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -211,8 +212,8 @@ public class Class1086 extends Class1087 implements Class1020 {
 
    private Optional<Pair<Effect, Integer>> method5035(ItemStack var1) {
       Item var4 = var1.getItem();
-      if (var4 instanceof Class3292) {
-         Block var5 = ((Class3292)var4).method11845();
+      if (var4 instanceof BlockItem) {
+         Block var5 = ((BlockItem)var4).method11845();
          if (var5 instanceof Class3490) {
             Class3490 var6 = (Class3490)var5;
             return Optional.<Pair<Effect, Integer>>of(Pair.of(var6.method12186(), var6.method12187()));

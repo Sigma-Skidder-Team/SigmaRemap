@@ -5,6 +5,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
@@ -48,7 +49,7 @@ public class Class235<T extends LivingEntity, M extends Class2827<T> & IHasHead>
          }
 
          this.method825().getModelHead().translateRotate(var1);
-         if (var14 instanceof Class3292 && ((Class3292)var14).method11845() instanceof Class3251) {
+         if (var14 instanceof BlockItem && ((BlockItem)var14).method11845() instanceof Class3251) {
             float var21 = 1.1875F;
             var1.scale(1.1875F, -1.1875F, -1.1875F);
             if (var15) {
@@ -72,7 +73,7 @@ public class Class235<T extends LivingEntity, M extends Class2827<T> & IHasHead>
             }
 
             var1.translate(-0.5, 0.0, -0.5);
-            Class5952.method18482((Direction)null, 180.0F, ((Class3251)((Class3292)var14).method11845()).method11696(), var22, var5, var1, var2, var3);
+            Class5952.method18482((Direction)null, 180.0F, ((Class3251)((BlockItem)var14).method11845()).method11696(), var22, var5, var1, var2, var3);
          } else if (!(var14 instanceof ArmorItem) || ((ArmorItem)var14).getType() != EquipmentSlotType.HEAD) {
             float var20 = 0.625F;
             var1.translate(0.0, -0.25, 0.0);

@@ -106,8 +106,8 @@ public class Class870 extends Screen {
    }
 
    private void method2694() {
-      this.field4826.field6483 = this.field4822 < this.method2693() - 1;
-      this.field4827.field6483 = this.field4822 > 0;
+      this.field4826.visible = this.field4822 < this.method2693() - 1;
+      this.field4827.visible = this.field4822 > 0;
    }
 
    @Override
@@ -117,10 +117,10 @@ public class Class870 extends Screen {
       } else {
          switch (var1) {
             case 266:
-               this.field4827.method5759();
+               this.field4827.onPress();
                return true;
             case 267:
-               this.field4826.method5759();
+               this.field4826.onPress();
                return true;
             default:
                return false;

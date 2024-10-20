@@ -6,6 +6,7 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.particles.RedstoneParticleData;
@@ -51,7 +52,7 @@ public class Class3403 extends Block {
       }
 
       ItemStack var9 = var4.getHeldItem(var5);
-      return var9.getItem() instanceof Class3292 && new BlockItemUseContext(var4, var5, var9, var6).method18346() ? ActionResultType.field14820 : ActionResultType.SUCCESS;
+      return var9.getItem() instanceof BlockItem && new BlockItemUseContext(var4, var5, var9, var6).method18346() ? ActionResultType.field14820 : ActionResultType.SUCCESS;
    }
 
    private static void method12041(BlockState var0, World var1, BlockPos var2) {

@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 
 public class Class1171 extends Class1155<Class1171> {
@@ -18,10 +19,10 @@ public class Class1171 extends Class1155<Class1171> {
 
       for (int var14 = 0; var14 < Class1305.method6196(this.field6346.field6846).field6838.size(); var14++) {
          Class9007 var15;
-         if (!(var13 instanceof Class3292)) {
+         if (!(var13 instanceof BlockItem)) {
             var15 = null;
          } else {
-            var15 = Class1305.method6196(this.field6346.field6846).field6838.get(var14).method172(((Class3292)var13).method11845());
+            var15 = Class1305.method6196(this.field6346.field6846).field6838.get(var14).method172(((BlockItem)var13).method11845());
          }
 
          this.method5577(var1, var15, var4 + Class1305.method6194(this.field6346.field6846, var14), var3, var2 % 2 == 0);

@@ -17,7 +17,7 @@ public class Class1203 extends Class1202 {
    }
 
    @Override
-   public void method5759() {
+   public void onPress() {
       BeaconScreen.method2710(this.field6503)
          .getConnection()
          .sendPacket(new CUpdateBeaconPacket(Effect.getId(BeaconScreen.method2708(this.field6503)), Effect.getId(BeaconScreen.method2709(this.field6503))));
@@ -26,7 +26,7 @@ public class Class1203 extends Class1202 {
    }
 
    @Override
-   public void method5738(MatrixStack var1, int var2, int var3) {
+   public void renderToolTip(MatrixStack var1, int var2, int var3) {
       this.field6503.method2459(var1, DialogTexts.field30658, var2, var3);
    }
 }

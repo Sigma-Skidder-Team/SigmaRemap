@@ -12,6 +12,7 @@ import net.minecraft.client.renderer.GPUWarning;
 import net.minecraft.client.settings.IteratableOption;
 import net.minecraft.client.settings.NarratorStatus;
 import net.minecraft.client.settings.ParticleStatus;
+import net.minecraft.client.settings.SliderPercentageOption;
 import net.minecraft.client.shader.Framebuffer;
 import net.minecraft.entity.player.ChatVisibility;
 import net.minecraft.util.math.MathHelper;
@@ -20,60 +21,60 @@ import net.optifine.Config;
 import net.optifine.config.IteratableOptionOF;
 
 public abstract class AbstractOption {
-   public static final Class5807 field25315 = new Class5807("options.biomeBlendRadius", 0.0, 7.0, 1.0F, var0 -> (double)var0.biomeBlendRadius, (var0, var1) -> {
+   public static final SliderPercentageOption field25315 = new SliderPercentageOption("options.biomeBlendRadius", 0.0, 7.0, 1.0F, var0 -> (double)var0.biomeBlendRadius, (var0, var1) -> {
       var0.biomeBlendRadius = MathHelper.clamp((int)var1.doubleValue(), 0, 7);
       Minecraft.getInstance().worldRenderer.loadRenderers();
    }, (var0, var1) -> {
-      double var4 = var1.getValue(var0);
+      double var4 = var1.get(var0);
       int var6 = (int)var4 * 2 + 1;
       return var1.method17955(new TranslationTextComponent("options.biomeBlendRadius." + var6));
    });
-   public static final Class5807 field25316 = new Class5807("options.chat.height.focused", 0.0, 1.0, 0.0F, var0 -> var0.field44598, (var0, var1) -> {
+   public static final SliderPercentageOption field25316 = new SliderPercentageOption("options.chat.height.focused", 0.0, 1.0, 0.0F, var0 -> var0.field44598, (var0, var1) -> {
       var0.field44598 = var1;
       Minecraft.getInstance().ingameGUI.getChatGUI().method5933();
    }, (var0, var1) -> {
-      double var4 = var1.method18083(var1.getValue(var0));
+      double var4 = var1.normalizeValue(var1.get(var0));
       return var1.method17952(Class1266.method5946(var4));
    });
-   public static final Class5807 field25317 = new Class5807("options.chat.height.unfocused", 0.0, 1.0, 0.0F, var0 -> var0.field44597, (var0, var1) -> {
+   public static final SliderPercentageOption field25317 = new SliderPercentageOption("options.chat.height.unfocused", 0.0, 1.0, 0.0F, var0 -> var0.field44597, (var0, var1) -> {
       var0.field44597 = var1;
       Minecraft.getInstance().ingameGUI.getChatGUI().method5933();
    }, (var0, var1) -> {
-      double var4 = var1.method18083(var1.getValue(var0));
+      double var4 = var1.normalizeValue(var1.get(var0));
       return var1.method17952(Class1266.method5946(var4));
    });
-   public static final Class5807 field25318 = new Class5807("options.chat.opacity", 0.0, 1.0, 0.0F, var0 -> var0.field44583, (var0, var1) -> {
+   public static final SliderPercentageOption field25318 = new SliderPercentageOption("options.chat.opacity", 0.0, 1.0, 0.0F, var0 -> var0.field44583, (var0, var1) -> {
       var0.field44583 = var1;
       Minecraft.getInstance().ingameGUI.getChatGUI().method5933();
    }, (var0, var1) -> {
-      double var4 = var1.method18083(var1.getValue(var0));
+      double var4 = var1.normalizeValue(var1.get(var0));
       return var1.method17953(var4 * 0.9 + 0.1);
    });
-   public static final Class5807 field25319 = new Class5807("options.chat.scale", 0.0, 1.0, 0.0F, var0 -> var0.field44595, (var0, var1) -> {
+   public static final SliderPercentageOption field25319 = new SliderPercentageOption("options.chat.scale", 0.0, 1.0, 0.0F, var0 -> var0.field44595, (var0, var1) -> {
       var0.field44595 = var1;
       Minecraft.getInstance().ingameGUI.getChatGUI().method5933();
    }, (var0, var1) -> {
-      double var4 = var1.method18083(var1.getValue(var0));
+      double var4 = var1.normalizeValue(var1.get(var0));
       return (ITextComponent)(var4 != 0.0 ? var1.method17953(var4) : DialogTexts.method22238(var1.method17949(), false));
    });
-   public static final Class5807 field25320 = new Class5807("options.chat.width", 0.0, 1.0, 0.0F, var0 -> var0.field44596 / 4.0571431, (var0, var1) -> {
+   public static final SliderPercentageOption field25320 = new SliderPercentageOption("options.chat.width", 0.0, 1.0, 0.0F, var0 -> var0.field44596 / 4.0571431, (var0, var1) -> {
       var1 = var1 * 4.0571431;
       var0.field44596 = var1;
       Minecraft.getInstance().ingameGUI.getChatGUI().method5933();
    }, (var0, var1) -> {
-      double var4 = var1.method18083(var1.getValue(var0));
+      double var4 = var1.normalizeValue(var1.get(var0));
       return var1.method17952(Class1266.method5945(var4 * 4.0571431));
    });
-   public static final Class5807 field25321 = new Class5807(
+   public static final SliderPercentageOption field25321 = new SliderPercentageOption(
       "options.chat.line_spacing",
       0.0,
       1.0,
       0.0F,
       var0 -> var0.field44584,
       (var0, var1) -> var0.field44584 = var1,
-      (var0, var1) -> var1.method17953(var1.method18083(var1.getValue(var0)))
+      (var0, var1) -> var1.method17953(var1.normalizeValue(var1.get(var0)))
    );
-   public static final Class5807 field25322 = new Class5807(
+   public static final SliderPercentageOption field25322 = new SliderPercentageOption(
       "options.chat.delay_instant",
       0.0,
       6.0,
@@ -81,15 +82,15 @@ public abstract class AbstractOption {
       var0 -> var0.field44599,
       (var0, var1) -> var0.field44599 = var1,
       (var0, var1) -> {
-         double var4 = var1.getValue(var0);
+         double var4 = var1.get(var0);
          return !(var4 <= 0.0)
             ? new TranslationTextComponent("options.chat.delay", String.format("%.1f", var4))
             : new TranslationTextComponent("options.chat.delay_none");
       }
    );
-   public static final Class5807 FOV = new Class5807(
+   public static final SliderPercentageOption FOV = new SliderPercentageOption(
       "options.fov", 30.0, 110.0, 1.0F, var0 -> var0.fov, (var0, var1) -> var0.fov = var1, (var0, var1) -> {
-         double var4 = var1.getValue(var0);
+         double var4 = var1.get(var0);
          if (var4 != 70.0) {
             return var4 != var1.getMaxValue() ? var1.method17956((int)var4) : var1.method17955(new TranslationTextComponent("options.fov.max"));
          } else {
@@ -98,7 +99,7 @@ public abstract class AbstractOption {
       }
    );
    private static final ITextComponent field25324 = new TranslationTextComponent("options.fovEffectScale.tooltip");
-   public static final Class5807 field25325 = new Class5807(
+   public static final SliderPercentageOption field25325 = new SliderPercentageOption(
       "options.fovEffectScale",
       0.0,
       1.0,
@@ -107,19 +108,19 @@ public abstract class AbstractOption {
       (var0, var1) -> var0.fovScaleEffect = MathHelper.sqrt(var1),
       (var0, var1) -> {
          var1.setOptionValues(Minecraft.getInstance().fontRenderer.trimStringToWidth(field25324, 200));
-         double var4 = var1.method18083(var1.getValue(var0));
+         double var4 = var1.normalizeValue(var1.get(var0));
          return var4 != 0.0 ? var1.method17953(var4) : var1.method17955(new TranslationTextComponent("options.fovEffectScale.off"));
       }
    );
    private static final ITextComponent field25326 = new TranslationTextComponent("options.screenEffectScale.tooltip");
-   public static final Class5807 field25327 = new Class5807(
+   public static final SliderPercentageOption field25327 = new SliderPercentageOption(
       "options.screenEffectScale", 0.0, 1.0, 0.0F, var0 -> (double)var0.screenEffectScale, (var0, var1) -> var0.screenEffectScale = var1.floatValue(), (var0, var1) -> {
          var1.setOptionValues(Minecraft.getInstance().fontRenderer.trimStringToWidth(field25326, 200));
-         double var4 = var1.method18083(var1.getValue(var0));
+         double var4 = var1.normalizeValue(var1.get(var0));
          return var4 != 0.0 ? var1.method17953(var4) : var1.method17955(new TranslationTextComponent("options.screenEffectScale.off"));
       }
    );
-   public static final Class5807 FRAMERATE_LIMIT = new Class5807(
+   public static final SliderPercentageOption FRAMERATE_LIMIT = new SliderPercentageOption(
       "options.framerateLimit",
       0.0,
       260.0,
@@ -138,7 +139,7 @@ public abstract class AbstractOption {
       },
       (var0, var1) -> {
          if (!var0.vsync) {
-            double var4 = var1.getValue(var0);
+            double var4 = var1.get(var0);
             return var4 != var1.getMaxValue()
                ? var1.method17955(new TranslationTextComponent("options.framerate", (int)var4))
                : var1.method17955(new TranslationTextComponent("options.framerateLimit.max"));
@@ -147,9 +148,9 @@ public abstract class AbstractOption {
          }
       }
    );
-   public static final Class5807 field25329 = new Class5807(
+   public static final SliderPercentageOption field25329 = new SliderPercentageOption(
       "options.gamma", 0.0, 1.0, 0.0F, var0 -> var0.gamma, (var0, var1) -> var0.gamma = var1, (var0, var1) -> {
-         double var4 = var1.method18083(var1.getValue(var0));
+         double var4 = var1.normalizeValue(var1.get(var0));
          if (var4 != 0.0) {
             return var4 != 1.0 ? var1.method17954((int)(var4 * 100.0)) : var1.method17955(new TranslationTextComponent("options.gamma.max"));
          } else {
@@ -157,21 +158,21 @@ public abstract class AbstractOption {
          }
       }
    );
-   public static final Class5807 field25330 = new Class5807("options.mipmapLevels", 0.0, 4.0, 1.0F, var0 -> (double)var0.field44600, (var0, var1) -> {
+   public static final SliderPercentageOption field25330 = new SliderPercentageOption("options.mipmapLevels", 0.0, 4.0, 1.0F, var0 -> (double)var0.field44600, (var0, var1) -> {
       var0.field44600 = (int)var1.doubleValue();
       var0.method37165();
    }, (var0, var1) -> {
-      double var4 = var1.getValue(var0);
+      double var4 = var1.get(var0);
       if (!(var4 >= 4.0)) {
          return (ITextComponent)(var4 != 0.0 ? var1.method17956((int)var4) : DialogTexts.method22238(var1.method17949(), false));
       } else {
          return var1.method17955(new TranslationTextComponent("of.general.max"));
       }
    });
-   public static final Class5807 field25331 = new Class5808(
+   public static final SliderPercentageOption field25331 = new Class5808(
       "options.mouseWheelSensitivity", 0.01, 10.0, 0.01F, var0 -> var0.field44607, (var0, var1) -> var0.field44607 = var1, (var0, var1) -> {
-         double var4 = var1.method18083(var1.getValue(var0));
-         return var1.method17955(new StringTextComponent(String.format("%.2f", var1.method18084(var4))));
+         double var4 = var1.normalizeValue(var1.get(var0));
+         return var1.method17955(new StringTextComponent(String.format("%.2f", var1.denormalizeValue(var4))));
       }
    );
    public static final Class5806 field25332 = new Class5806("options.rawMouseInput", var0 -> var0.rawMouseInput, (var0, var1) -> {
@@ -181,14 +182,14 @@ public abstract class AbstractOption {
          var4.setRawMouseInput(var1);
       }
    });
-   public static final Class5807 field25333 = new Class5807("options.renderDistance", 2.0, 16.0, 1.0F, var0 -> (double)var0.renderDistanceChunks, (var0, var1) -> {
+   public static final SliderPercentageOption field25333 = new SliderPercentageOption("options.renderDistance", 2.0, 16.0, 1.0F, var0 -> (double)var0.renderDistanceChunks, (var0, var1) -> {
       var0.renderDistanceChunks = (int)var1.doubleValue();
       Minecraft.getInstance().worldRenderer.setDisplayListEntitiesDirty();
    }, (var0, var1) -> {
-      double var4 = var1.getValue(var0);
+      double var4 = var1.get(var0);
       return var1.method17955(new TranslationTextComponent("options.chunks", (int)var4));
    });
-   public static final Class5807 field25334 = new Class5807(
+   public static final SliderPercentageOption field25334 = new SliderPercentageOption(
       "options.entityDistanceScaling",
       0.5,
       5.0,
@@ -196,13 +197,13 @@ public abstract class AbstractOption {
       var0 -> (double)var0.field44575,
       (var0, var1) -> var0.field44575 = (float)var1.doubleValue(),
       (var0, var1) -> {
-         double var4 = var1.getValue(var0);
+         double var4 = var1.get(var0);
          return var1.method17953(var4);
       }
    );
-   public static final Class5807 field25335 = new Class5807(
+   public static final SliderPercentageOption field25335 = new SliderPercentageOption(
       "options.sensitivity", 0.0, 1.0, 0.0F, var0 -> var0.field44573, (var0, var1) -> var0.field44573 = var1, (var0, var1) -> {
-         double var4 = var1.method18083(var1.getValue(var0));
+         double var4 = var1.normalizeValue(var1.get(var0));
          if (var4 != 0.0) {
             return var4 != 1.0 ? var1.method17953(2.0 * var4) : var1.method17955(new TranslationTextComponent("options.sensitivity.max"));
          } else {
@@ -210,11 +211,11 @@ public abstract class AbstractOption {
          }
       }
    );
-   public static final Class5807 field25336 = new Class5807(
+   public static final SliderPercentageOption field25336 = new SliderPercentageOption(
       "options.accessibility.text_background_opacity", 0.0, 1.0, 0.0F, var0 -> var0.field44585, (var0, var1) -> {
          var0.field44585 = var1;
          Minecraft.getInstance().ingameGUI.getChatGUI().method5933();
-      }, (var0, var1) -> var1.method17953(var1.method18083(var1.getValue(var0)))
+      }, (var0, var1) -> var1.method17953(var1.normalizeValue(var1.get(var0)))
    );
    public static final IteratableOption field25337 = new IteratableOption("options.ao", (var0, var1) -> {
       var0.ambientOcclusionStatus = AmbientOcclusionStatus.method9117(var0.ambientOcclusionStatus.method9115() + var1);
@@ -369,17 +370,17 @@ public abstract class AbstractOption {
    private final String field25373;
    public static final IteratableOption field25374 = new IteratableOptionOF("of.options.FOG_FANCY");
    public static final IteratableOption field25375 = new IteratableOptionOF("of.options.FOG_START");
-   public static final Class5807 field25376 = new Class5809("of.options.MIPMAP_TYPE", 0.0, 3.0, 1.0F);
+   public static final SliderPercentageOption field25376 = new Class5809("of.options.MIPMAP_TYPE", 0.0, 3.0, 1.0F);
    public static final IteratableOption field25377 = new IteratableOptionOF("of.options.SMOOTH_FPS");
    public static final IteratableOption field25378 = new IteratableOptionOF("of.options.CLOUDS");
-   public static final Class5807 field25379 = new Class5809("of.options.CLOUD_HEIGHT");
+   public static final SliderPercentageOption field25379 = new Class5809("of.options.CLOUD_HEIGHT");
    public static final IteratableOption field25380 = new IteratableOptionOF("of.options.TREES");
    public static final IteratableOption field25381 = new IteratableOptionOF("of.options.RAIN");
    public static final IteratableOption field25382 = new IteratableOptionOF("of.options.ANIMATED_WATER");
    public static final IteratableOption field25383 = new IteratableOptionOF("of.options.ANIMATED_LAVA");
    public static final IteratableOption field25384 = new IteratableOptionOF("of.options.ANIMATED_FIRE");
    public static final IteratableOption field25385 = new IteratableOptionOF("of.options.ANIMATED_PORTAL");
-   public static final Class5807 field25386 = new Class5809("of.options.AO_LEVEL");
+   public static final SliderPercentageOption field25386 = new Class5809("of.options.AO_LEVEL");
    public static final IteratableOption field25387 = new IteratableOptionOF("of.options.LAGOMETER");
    public static final IteratableOption field25388 = new IteratableOptionOF("of.options.SHOW_FPS");
    public static final IteratableOption field25389 = new IteratableOptionOF("of.options.AUTOSAVE_TICKS");
@@ -415,8 +416,8 @@ public abstract class AbstractOption {
    public static final IteratableOption field25419 = new IteratableOptionOF("of.options.SHOW_CAPES");
    public static final IteratableOption field25420 = new IteratableOptionOF("of.options.CONNECTED_TEXTURES");
    public static final IteratableOption field25421 = new IteratableOptionOF("of.options.CUSTOM_ITEMS");
-   public static final Class5807 field25422 = new Class5809("of.options.AA_LEVEL", 0.0, 16.0, 1.0F);
-   public static final Class5807 field25423 = new Class5809("of.options.AF_LEVEL", 1.0, 16.0, 1.0F);
+   public static final SliderPercentageOption field25422 = new Class5809("of.options.AA_LEVEL", 0.0, 16.0, 1.0F);
+   public static final SliderPercentageOption field25423 = new Class5809("of.options.AF_LEVEL", 1.0, 16.0, 1.0F);
    public static final IteratableOption field25424 = new IteratableOptionOF("of.options.ANIMATED_TEXTURES");
    public static final IteratableOption field25425 = new IteratableOptionOF("of.options.NATURAL_TEXTURES");
    public static final IteratableOption field25426 = new IteratableOptionOF("of.options.EMISSIVE_TEXTURES");

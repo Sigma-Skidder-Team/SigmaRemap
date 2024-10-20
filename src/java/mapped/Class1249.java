@@ -38,12 +38,12 @@ public class Class1249 extends Widget {
    }
 
    public void method5824(int var1, int var2) {
-      this.field6477 = var1;
-      this.field6478 = var2;
+      this.x = var1;
+      this.y = var2;
    }
 
    @Override
-   public void method5655(MatrixStack var1, int var2, int var3, float var4) {
+   public void renderButton(MatrixStack var1, int var2, int var3, float var4) {
       Minecraft var7 = Minecraft.getInstance();
       var7.getTextureManager().bindTexture(this.field6615);
       RenderSystem.disableDepthTest();
@@ -53,11 +53,11 @@ public class Class1249 extends Widget {
          var8 += this.field6619;
       }
 
-      if (this.method5737()) {
+      if (this.isHovered()) {
          var9 += this.field6620;
       }
 
-      this.blit(var1, this.field6477, this.field6478, var8, var9, this.field6475, this.field6476);
+      this.blit(var1, this.x, this.y, var8, var9, this.width, this.height);
       RenderSystem.enableDepthTest();
    }
 }

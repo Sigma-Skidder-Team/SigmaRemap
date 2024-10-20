@@ -1,5 +1,7 @@
 package net.minecraft.network.play.server;
 
+import com.viaversion.viaversion.api.protocol.version.ProtocolVersion;
+import de.florianmichael.vialoadingbase.ViaLoadingBase;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.IPacket;
@@ -7,18 +9,17 @@ import net.minecraft.network.IPacket;
 import java.io.IOException;
 
 public class SConfirmTransactionPacket implements IPacket<IClientPlayNetHandler> {
-   private static String[] field24600;
-   private int field24601;
-   private short field24602;
-   private boolean field24603;
+   private int windowId;
+   private short actionNumber;
+   private boolean accepted;
 
    public SConfirmTransactionPacket() {
    }
 
    public SConfirmTransactionPacket(int var1, short var2, boolean var3) {
-      this.field24601 = var1;
-      this.field24602 = var2;
-      this.field24603 = var3;
+      this.windowId = var1;
+      this.actionNumber = var2;
+      this.accepted = var3;
    }
 
    public void processPacket(IClientPlayNetHandler var1) {
@@ -27,27 +28,31 @@ public class SConfirmTransactionPacket implements IPacket<IClientPlayNetHandler>
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24601 = var1.readUnsignedByte();
-      this.field24602 = var1.readShort();
-      this.field24603 = var1.readBoolean();
+      if (ViaLoadingBase.getInstance().getTargetVersion().newerThanOrEqualTo(ProtocolVersion.v1_17)) {
+         this.windowId = var1.readInt();
+      } else {
+         this.windowId = var1.readUnsignedByte();
+         this.actionNumber = var1.readShort();
+         this.accepted = var1.readBoolean();
+      }
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.writeByte(this.field24601);
-      var1.writeShort(this.field24602);
-      var1.writeBoolean(this.field24603);
+      var1.writeByte(this.windowId);
+      var1.writeShort(this.actionNumber);
+      var1.writeBoolean(this.accepted);
    }
 
-   public int method17421() {
-      return this.field24601;
+   public int getWindowId() {
+      return this.windowId;
    }
 
-   public short method17422() {
-      return this.field24602;
+   public short getActionNumber() {
+      return this.actionNumber;
    }
 
-   public boolean method17423() {
-      return this.field24603;
+   public boolean getAccepted() {
+      return this.accepted;
    }
 }

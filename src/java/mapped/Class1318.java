@@ -81,7 +81,7 @@ public class Class1318 extends Screen {
          for (Class1198 var11 : this.field6970) {
             var11.render(var1, var2, var3, var4);
             this.field6966.ifPresent(var1x -> var11.method5748(var1x == Class1198.method5751(var11)));
-            if (!var9 && var11.method5737()) {
+            if (!var9 && var11.isHovered()) {
                this.field6966 = Optional.<Class2150>of(Class1198.method5751(var11));
             }
          }

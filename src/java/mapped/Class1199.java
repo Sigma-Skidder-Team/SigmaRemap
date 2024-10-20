@@ -51,12 +51,12 @@ public class Class1199 extends Widget {
    }
 
    public void method5754(int var1, int var2) {
-      this.field6477 = var1;
-      this.field6478 = var2;
+      this.x = var1;
+      this.y = var2;
    }
 
    @Override
-   public void method5655(MatrixStack var1, int var2, int var3, float var4) {
+   public void renderButton(MatrixStack var1, int var2, int var3, float var4) {
       if (!Screen.hasControlDown()) {
          this.field6496 += var4;
       }
@@ -77,23 +77,23 @@ public class Class1199 extends Widget {
       if (var10) {
          float var11 = 1.0F + 0.1F * (float)Math.sin((double)(this.field6497 / 15.0F * (float) Math.PI));
          RenderSystem.pushMatrix();
-         RenderSystem.translatef((float)(this.field6477 + 8), (float)(this.field6478 + 12), 0.0F);
+         RenderSystem.translatef((float)(this.x + 8), (float)(this.y + 12), 0.0F);
          RenderSystem.scalef(var11, var11, 1.0F);
-         RenderSystem.translatef((float)(-(this.field6477 + 8)), (float)(-(this.field6478 + 12)), 0.0F);
+         RenderSystem.translatef((float)(-(this.x + 8)), (float)(-(this.y + 12)), 0.0F);
          this.field6497 -= var4;
       }
 
-      this.blit(var1, this.field6477, this.field6478, var8, var9, this.field6475, this.field6476);
+      this.blit(var1, this.x, this.y, var8, var9, this.width, this.height);
       List var14 = this.method5755();
       this.field6498 = MathHelper.floor(this.field6496 / 30.0F) % var14.size();
       ItemStack var12 = ((IRecipe)var14.get(this.field6498)).getRecipeOutput();
       int var13 = 4;
       if (this.field6495.method34895() && this.method5755().size() > 1) {
-         var7.getItemRenderer().method793(var12, this.field6477 + var13 + 1, this.field6478 + var13 + 1);
+         var7.getItemRenderer().method793(var12, this.x + var13 + 1, this.y + var13 + 1);
          var13--;
       }
 
-      var7.getItemRenderer().method794(var12, this.field6477 + var13, this.field6478 + var13);
+      var7.getItemRenderer().method794(var12, this.x + var13, this.y + var13);
       if (var10) {
          RenderSystem.popMatrix();
       }

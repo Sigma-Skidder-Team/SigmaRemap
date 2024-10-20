@@ -20,8 +20,8 @@ public class Class1245 extends Class1243 {
       ResourceLocation var9,
       int var10,
       int var11,
-      Class7192 var12,
-      Class8103 var13,
+      IPressable var12,
+      ITooltip var13,
       ITextComponent var14
    ) {
       super(var2, var3, var4, var5, var6, var7, var8, var9, var10, var11, var12, var13, var14);

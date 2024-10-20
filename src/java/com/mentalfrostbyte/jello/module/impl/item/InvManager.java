@@ -329,8 +329,8 @@ public class InvManager extends PremiumModule {
                 }
             }
 
-            if (var5 instanceof Class3292
-                    && (this.method16436() > (int) this.getNumberValueBySettingName("Block Cap") || BlockFly.blocksToNotPlace.contains(((Class3292) var5).method11845()))) {
+            if (var5 instanceof BlockItem
+                    && (this.method16436() > (int) this.getNumberValueBySettingName("Block Cap") || BlockFly.blocksToNotPlace.contains(((BlockItem) var5).method11845()))) {
                 return true;
             } else if (var5 == Items.WATER_BUCKET && Client.getInstance().getModuleManager().getModuleByClass(AutoMLG.class).isEnabled()) {
                 return method16437(Items.WATER_BUCKET) > 1;
@@ -391,7 +391,7 @@ public class InvManager extends PremiumModule {
             if (mc.player.container.getSlot(var4).getHasStack()) {
                 ItemStack var5 = mc.player.container.getSlot(var4).getStack();
                 Item var6 = var5.getItem();
-                if (var5.getItem() instanceof Class3292 && !BlockFly.blocksToNotPlace.contains(((Class3292) var6).method11845())) {
+                if (var5.getItem() instanceof BlockItem && !BlockFly.blocksToNotPlace.contains(((BlockItem) var6).method11845())) {
                     var3 += var5.count;
                 }
             }

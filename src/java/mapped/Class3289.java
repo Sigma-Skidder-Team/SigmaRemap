@@ -27,7 +27,7 @@ public class Class3289 extends Item {
    }
 
    @Override
-   public ActionResultType method11707(ItemUseContext var1) {
+   public ActionResultType onItemUse(ItemUseContext var1) {
       Direction var4 = var1.getFace();
       if (var4 != Direction.DOWN) {
          World var5 = var1.getWorld();

@@ -179,7 +179,7 @@ public class Class1254 extends AbstractGui implements Class1190, IGuiEventListen
       for (Class1250 var8 : this.field6638) {
          Class1896 var9 = var8.method5827();
          if (var9 == Class1896.field11113 || var9 == Class1896.field11118) {
-            var8.field6483 = true;
+            var8.visible = true;
             var8.method5824(var3, var4 + 27 * var6++);
          } else if (var8.method5828(this.field6645)) {
             var8.method5824(var3, var4 + 27 * var6++);
@@ -235,7 +235,7 @@ public class Class1254 extends AbstractGui implements Class1190, IGuiEventListen
    public void method5846(MatrixStack var1, int var2, int var3, int var4, int var5) {
       if (this.method5839()) {
          this.field6646.method11312(var1, var4, var5);
-         if (this.field6640.method5737()) {
+         if (this.field6640.isHovered()) {
             ITextComponent var8 = this.method5847();
             if (this.field6642.currentScreen != null) {
                this.field6642.currentScreen.method2459(var1, var8, var4, var5);
@@ -336,7 +336,7 @@ public class Class1254 extends AbstractGui implements Class1190, IGuiEventListen
       } else {
          boolean var12 = var1 < (double)var5 || var3 < (double)var6 || var1 >= (double)(var5 + var7) || var3 >= (double)(var6 + var8);
          boolean var13 = (double)(var5 - 147) < var1 && var1 < (double)var5 && (double)var6 < var3 && var3 < (double)(var6 + var8);
-         return var12 && !var13 && !this.field6639.method5737();
+         return var12 && !var13 && !this.field6639.isHovered();
       }
    }
 

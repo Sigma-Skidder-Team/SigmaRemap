@@ -17,18 +17,18 @@ public class Class1198 extends Widget {
    }
 
    @Override
-   public void method5655(MatrixStack var1, int var2, int var3, float var4) {
+   public void renderButton(MatrixStack var1, int var2, int var3, float var4) {
       Minecraft var7 = Minecraft.getInstance();
       this.method5749(var1, var7.getTextureManager());
-      Class2150.method8864(this.field6488, this.field6490.field4563, this.field6477 + 5, this.field6478 + 5);
+      Class2150.method8864(this.field6488, this.field6490.field4563, this.x + 5, this.y + 5);
       if (this.field6489) {
          this.method5750(var1, var7.getTextureManager());
       }
    }
 
    @Override
-   public boolean method5737() {
-      return super.method5737() || this.field6489;
+   public boolean isHovered() {
+      return super.isHovered() || this.field6489;
    }
 
    public void method5748(boolean var1) {
@@ -39,7 +39,7 @@ public class Class1198 extends Widget {
    private void method5749(MatrixStack var1, TextureManager var2) {
       var2.bindTexture(Class1318.method6262());
       var1.push();
-      var1.translate((double)this.field6477, (double)this.field6478, 0.0);
+      var1.translate((double)this.x, (double)this.y, 0.0);
       method5699(var1, 0, 0, 0.0F, 75.0F, 25, 25, 128, 128);
       var1.pop();
    }
@@ -47,7 +47,7 @@ public class Class1198 extends Widget {
    private void method5750(MatrixStack var1, TextureManager var2) {
       var2.bindTexture(Class1318.method6262());
       var1.push();
-      var1.translate((double)this.field6477, (double)this.field6478, 0.0);
+      var1.translate((double)this.x, (double)this.y, 0.0);
       method5699(var1, 0, 0, 25.0F, 75.0F, 25, 25, 128, 128);
       var1.pop();
    }

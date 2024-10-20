@@ -1,10 +1,12 @@
 package mapped;
 
 import java.util.Optional;
+
+import net.minecraft.client.settings.SliderPercentageOption;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class Class5810 extends Class5807 {
+public class Class5810 extends SliderPercentageOption {
    public Class5810(MainWindow var1) {
       this(var1, var1.getMonitor());
    }
@@ -34,7 +36,7 @@ public class Class5810 extends Class5807 {
          },
          (var1x, var2x) -> {
             if (var2 != null) {
-               double var5 = var2x.getValue(var1x);
+               double var5 = var2x.get(var1x);
                return var5 != -1.0
                   ? var2x.method17955(new StringTextComponent(var2.method24491((int)var5).toString()))
                   : var2x.method17955(new TranslationTextComponent("options.fullscreen.current"));

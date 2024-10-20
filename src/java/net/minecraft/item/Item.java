@@ -84,7 +84,7 @@ public class Item implements IItemProvider {
       return this;
    }
 
-   public ActionResultType method11707(ItemUseContext var1) {
+   public ActionResultType onItemUse(ItemUseContext var1) {
       return ActionResultType.field14820;
    }
 

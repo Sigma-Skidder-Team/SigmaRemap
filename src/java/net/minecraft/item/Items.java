@@ -290,7 +290,7 @@ public class Items {
    public static final Item field37492 = method30154(Blocks.field36650, ItemGroup.field31666);
    public static final Item field37493 = method30154(Blocks.field36651, ItemGroup.field31665);
    public static final Item field37494 = method30154(Blocks.field36883, ItemGroup.field31665);
-   public static final Item field37495 = method30155(new Class3292(Blocks.field36652, new Item.Properties().method17780(Class1978.field12888)));
+   public static final Item field37495 = method30155(new BlockItem(Blocks.field36652, new Item.Properties().method17780(Class1978.field12888)));
    public static final Item field37496 = method30154(Blocks.field36653, ItemGroup.field31667);
    public static final Item field37497 = method30154(Blocks.SANDSTONE_STAIRS, ItemGroup.field31665);
    public static final Item field37498 = method30154(Blocks.EMERALD_ORE, ItemGroup.field31665);
@@ -304,7 +304,7 @@ public class Items {
    public static final Item field37506 = method30154(Blocks.field37104, ItemGroup.field31665);
    public static final Item field37507 = method30155(new Class3293(Blocks.COMMAND_BLOCK, new Item.Properties().method17780(Class1978.field12888)));
    public static final Item field37508 = method30155(
-      new Class3292(Blocks.BEACON, new Item.Properties().method17779(ItemGroup.field31669).method17780(Class1978.field12887))
+      new BlockItem(Blocks.BEACON, new Item.Properties().method17779(ItemGroup.field31669).method17780(Class1978.field12887))
    );
    public static final Item field37509 = method30154(Blocks.COBBLESTONE_WALL, ItemGroup.field31666);
    public static final Item field37510 = method30154(Blocks.MOSSY_COBBLESTONE_WALL, ItemGroup.field31666);
@@ -450,23 +450,23 @@ public class Items {
    public static final Item field37650 = method30154(Blocks.field36893, ItemGroup.field31665);
    public static final Item field37651 = method30153(Blocks.field36894);
    public static final Item field37652 = method30154(Blocks.field36895, ItemGroup.field31667);
-   public static final Item field37653 = method30155(new Class3292(Blocks.field36896, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
-   public static final Item field37654 = method30155(new Class3292(Blocks.field36897, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
-   public static final Item field37655 = method30155(new Class3292(Blocks.field36898, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
-   public static final Item field37656 = method30155(new Class3292(Blocks.field36899, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
-   public static final Item field37657 = method30155(new Class3292(Blocks.field36900, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
-   public static final Item field37658 = method30155(new Class3292(Blocks.field36901, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
-   public static final Item field37659 = method30155(new Class3292(Blocks.field36902, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
-   public static final Item field37660 = method30155(new Class3292(Blocks.field36903, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
-   public static final Item field37661 = method30155(new Class3292(Blocks.field36904, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
-   public static final Item field37662 = method30155(new Class3292(Blocks.field36905, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
-   public static final Item field37663 = method30155(new Class3292(Blocks.field36906, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
-   public static final Item field37664 = method30155(new Class3292(Blocks.field36907, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
-   public static final Item field37665 = method30155(new Class3292(Blocks.field36908, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
-   public static final Item field37666 = method30155(new Class3292(Blocks.field36909, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
-   public static final Item field37667 = method30155(new Class3292(Blocks.field36910, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
-   public static final Item field37668 = method30155(new Class3292(Blocks.field36911, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
-   public static final Item field37669 = method30155(new Class3292(Blocks.field36912, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
+   public static final Item field37653 = method30155(new BlockItem(Blocks.field36896, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
+   public static final Item field37654 = method30155(new BlockItem(Blocks.field36897, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
+   public static final Item field37655 = method30155(new BlockItem(Blocks.field36898, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
+   public static final Item field37656 = method30155(new BlockItem(Blocks.field36899, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
+   public static final Item field37657 = method30155(new BlockItem(Blocks.field36900, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
+   public static final Item field37658 = method30155(new BlockItem(Blocks.field36901, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
+   public static final Item field37659 = method30155(new BlockItem(Blocks.field36902, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
+   public static final Item field37660 = method30155(new BlockItem(Blocks.field36903, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
+   public static final Item field37661 = method30155(new BlockItem(Blocks.field36904, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
+   public static final Item field37662 = method30155(new BlockItem(Blocks.field36905, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
+   public static final Item field37663 = method30155(new BlockItem(Blocks.field36906, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
+   public static final Item field37664 = method30155(new BlockItem(Blocks.field36907, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
+   public static final Item field37665 = method30155(new BlockItem(Blocks.field36908, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
+   public static final Item field37666 = method30155(new BlockItem(Blocks.field36909, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
+   public static final Item field37667 = method30155(new BlockItem(Blocks.field36910, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
+   public static final Item field37668 = method30155(new BlockItem(Blocks.field36911, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
+   public static final Item field37669 = method30155(new BlockItem(Blocks.field36912, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
    public static final Item field37670 = method30154(Blocks.field36913, ItemGroup.field31666);
    public static final Item field37671 = method30154(Blocks.field36914, ItemGroup.field31666);
    public static final Item field37672 = method30154(Blocks.field36915, ItemGroup.field31666);
@@ -568,7 +568,7 @@ public class Items {
    );
    public static final Item field37749 = method30154(Blocks.field37006, ItemGroup.field31665);
    public static final Item field37750 = method30155(
-      new Class3292(Blocks.field37007, new Item.Properties().method17779(ItemGroup.field31669).method17780(Class1978.field12887))
+      new BlockItem(Blocks.field37007, new Item.Properties().method17779(ItemGroup.field31669).method17780(Class1978.field12887))
    );
    public static final Item field37751 = method30154(Blocks.field37014, ItemGroup.field31665);
    public static final Item field37752 = method30154(Blocks.field37015, ItemGroup.field31665);
@@ -933,7 +933,7 @@ public class Items {
    public static final Item field37934 = method30157("bone_meal", new Class3336(new Item.Properties().method17779(ItemGroup.field31675)));
    public static final Item field37935 = method30157("bone", new Item(new Item.Properties().method17779(ItemGroup.field31669)));
    public static final Item field37936 = method30157("sugar", new Item(new Item.Properties().method17779(ItemGroup.field31675)));
-   public static final Item field37937 = method30155(new Class3292(Blocks.field36591, new Item.Properties().method17775(1).method17779(ItemGroup.field31671)));
+   public static final Item field37937 = method30155(new BlockItem(Blocks.field36591, new Item.Properties().method17775(1).method17779(ItemGroup.field31671)));
    public static final Item field37938 = method30155(new Class3297(Blocks.WHITE_BED, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
    public static final Item field37939 = method30155(new Class3297(Blocks.ORANGE_BED, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
    public static final Item field37940 = method30155(new Class3297(Blocks.MAGENTA_BED, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
@@ -1500,8 +1500,8 @@ public class Items {
    public static final Item field38178 = method30154(Blocks.field37119, ItemGroup.field31666);
    public static final Item field38179 = method30154(Blocks.field37120, ItemGroup.field31666);
    public static final Item field38180 = method30154(Blocks.field37129, ItemGroup.field31666);
-   public static final Item field38181 = method30155(new Class3292(Blocks.field37121, new Item.Properties().method17779(ItemGroup.field31665).method17781()));
-   public static final Item field38182 = method30155(new Class3292(Blocks.field37122, new Item.Properties().method17779(ItemGroup.field31665).method17781()));
+   public static final Item field38181 = method30155(new BlockItem(Blocks.field37121, new Item.Properties().method17779(ItemGroup.field31665).method17781()));
+   public static final Item field38182 = method30155(new BlockItem(Blocks.field37122, new Item.Properties().method17779(ItemGroup.field31665).method17781()));
    public static final Item field38183 = method30154(Blocks.field37116, ItemGroup.field31667);
    public static final Item field38184 = method30154(Blocks.field37123, ItemGroup.field31665);
    public static final Item field38185 = method30154(Blocks.field37130, ItemGroup.field31665);
@@ -1519,14 +1519,14 @@ public class Items {
    public static final Item field38197 = method30154(Blocks.field37124, ItemGroup.field31666);
 
    private static Item method30153(Block var0) {
-      return method30155(new Class3292(var0, new Item.Properties()));
+      return method30155(new BlockItem(var0, new Item.Properties()));
    }
 
    private static Item method30154(Block var0, ItemGroup var1) {
-      return method30155(new Class3292(var0, new Item.Properties().method17779(var1)));
+      return method30155(new BlockItem(var0, new Item.Properties().method17779(var1)));
    }
 
-   private static Item method30155(Class3292 var0) {
+   private static Item method30155(BlockItem var0) {
       return method30156(var0.method11845(), var0);
    }
 
@@ -1539,8 +1539,8 @@ public class Items {
    }
 
    private static Item method30158(ResourceLocation var0, Item var1) {
-      if (var1 instanceof Class3292) {
-         ((Class3292)var1).method11846(Item.field18732, var1);
+      if (var1 instanceof BlockItem) {
+         ((BlockItem)var1).method11846(Item.field18732, var1);
       }
 
       return Registry.<Item, Item>register(Registry.ITEM, var0, var1);

@@ -16,13 +16,13 @@ public class Class1204 extends Class1202 {
    }
 
    @Override
-   public void method5759() {
+   public void onPress() {
       BeaconScreen.method2706(this.field6505).player.connection.sendPacket(new CCloseWindowPacket(BeaconScreen.method2705(this.field6505).player.openContainer.windowId));
       BeaconScreen.method2707(this.field6505).displayGuiScreen((Screen)null);
    }
 
    @Override
-   public void method5738(MatrixStack var1, int var2, int var3) {
+   public void renderToolTip(MatrixStack var1, int var2, int var3) {
       this.field6505.method2459(var1, DialogTexts.GUI_CANCEL, var2, var3);
    }
 }

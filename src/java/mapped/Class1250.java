@@ -36,13 +36,13 @@ public class Class1250 extends Class1249 {
    }
 
    @Override
-   public void method5655(MatrixStack var1, int var2, int var3, float var4) {
+   public void renderButton(MatrixStack var1, int var2, int var3, float var4) {
       if (this.field6622 > 0.0F) {
          float var7 = 1.0F + 0.1F * (float)Math.sin((double)(this.field6622 / 15.0F * (float) Math.PI));
          RenderSystem.pushMatrix();
-         RenderSystem.translatef((float)(this.field6477 + 8), (float)(this.field6478 + 12), 0.0F);
+         RenderSystem.translatef((float)(this.x + 8), (float)(this.y + 12), 0.0F);
          RenderSystem.scalef(1.0F, var7, 1.0F);
-         RenderSystem.translatef((float)(-(this.field6477 + 8)), (float)(-(this.field6478 + 12)), 0.0F);
+         RenderSystem.translatef((float)(-(this.x + 8)), (float)(-(this.y + 12)), 0.0F);
       }
 
       Minecraft var11 = Minecraft.getInstance();
@@ -54,17 +54,17 @@ public class Class1250 extends Class1249 {
          var8 += this.field6619;
       }
 
-      if (this.method5737()) {
+      if (this.isHovered()) {
          var9 += this.field6620;
       }
 
-      int var10 = this.field6477;
+      int var10 = this.x;
       if (this.field6616) {
          var10 -= 2;
       }
 
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-      this.blit(var1, var10, this.field6478, var8, var9, this.field6475, this.field6476);
+      this.blit(var1, var10, this.y, var8, var9, this.width, this.height);
       RenderSystem.enableDepthTest();
       this.method5826(var11.getItemRenderer());
       if (this.field6622 > 0.0F) {
@@ -78,11 +78,11 @@ public class Class1250 extends Class1249 {
       int var5 = !this.field6616 ? 0 : -2;
       if (var4.size() != 1) {
          if (var4.size() == 2) {
-            var1.method794((ItemStack)var4.get(0), this.field6477 + 3 + var5, this.field6478 + 5);
-            var1.method794((ItemStack)var4.get(1), this.field6477 + 14 + var5, this.field6478 + 5);
+            var1.method794((ItemStack)var4.get(0), this.x + 3 + var5, this.y + 5);
+            var1.method794((ItemStack)var4.get(1), this.x + 14 + var5, this.y + 5);
          }
       } else {
-         var1.method794((ItemStack)var4.get(0), this.field6477 + 9 + var5, this.field6478 + 5);
+         var1.method794((ItemStack)var4.get(0), this.x + 9 + var5, this.y + 5);
       }
    }
 
@@ -92,16 +92,16 @@ public class Class1250 extends Class1249 {
 
    public boolean method5828(Class6943 var1) {
       List<RecipeList> var4 = var1.method21387(this.field6621);
-      this.field6483 = false;
+      this.visible = false;
       if (var4 != null) {
          for (RecipeList var6 : var4) {
             if (var6.method34886() && var6.method34891()) {
-               this.field6483 = true;
+               this.visible = true;
                break;
             }
          }
       }
 
-      return this.field6483;
+      return this.visible;
    }
 }

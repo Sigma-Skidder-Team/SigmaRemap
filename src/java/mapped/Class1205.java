@@ -35,7 +35,7 @@ public class Class1205 extends Class1201 {
    }
 
    @Override
-   public void method5759() {
+   public void onPress() {
       if (!this.method5761()) {
          if (!this.field6508) {
             BeaconScreen.method2702(this.field6510, this.field6506);
@@ -51,13 +51,13 @@ public class Class1205 extends Class1201 {
    }
 
    @Override
-   public void method5738(MatrixStack var1, int var2, int var3) {
+   public void renderToolTip(MatrixStack var1, int var2, int var3) {
       this.field6510.method2459(var1, this.field6509, var2, var3);
    }
 
    @Override
    public void method5760(MatrixStack var1) {
       Minecraft.getInstance().getTextureManager().bindTexture(this.field6507.getAtlasTexture().getTextureLocation());
-      method5695(var1, this.field6477 + 2, this.field6478 + 2, this.method5702(), 18, 18, this.field6507);
+      method5695(var1, this.x + 2, this.y + 2, this.method5702(), 18, 18, this.field6507);
    }
 }

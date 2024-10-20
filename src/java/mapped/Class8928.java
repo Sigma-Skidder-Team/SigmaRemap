@@ -5,6 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.Minecraft;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.util.Util;
 import net.minecraft.fluid.Fluid;
@@ -304,10 +305,10 @@ public class Class8928 {
 
    public static RenderType method32633(ItemStack var0, boolean var1) {
       Item var4 = var0.getItem();
-      if (!(var4 instanceof Class3292)) {
+      if (!(var4 instanceof BlockItem)) {
          return !var1 ? Class8624.method30908() : Class8624.method30909();
       } else {
-         Block var5 = ((Class3292)var4).method11845();
+         Block var5 = ((BlockItem)var4).method11845();
          return method32632(var5.getDefaultState(), var1);
       }
    }

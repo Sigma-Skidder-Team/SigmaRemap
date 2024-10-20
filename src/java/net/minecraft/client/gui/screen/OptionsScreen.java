@@ -74,8 +74,8 @@ public class OptionsScreen extends Screen {
             this.difficultyButton.method5741(this.difficultyButton.method5740() - 20);
             this.lockButton = this.<LockIconButton>addButton(
                new LockIconButton(
-                  this.difficultyButton.field6477 + this.difficultyButton.method5740(),
-                  this.difficultyButton.field6478,
+                  this.difficultyButton.x + this.difficultyButton.method5740(),
+                  this.difficultyButton.y,
                   var1 -> this.mc
                         .displayGuiScreen(
                            new ConfirmScreen(

@@ -17,6 +17,7 @@ import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.fluid.FluidState;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -2697,8 +2698,8 @@ public class Shaders {
                 Block var6 = null;
                 if (var4 != null) {
                     var5 = Registry.ITEM.getId(var4);
-                    if (var4 instanceof Class3292) {
-                        var6 = ((Class3292) var4).method11845();
+                    if (var4 instanceof BlockItem) {
+                        var6 = ((BlockItem) var4).method11845();
                     }
 
                     var5 = Class8715.method31433(var5);
@@ -2711,8 +2712,8 @@ public class Shaders {
                 Block var11 = null;
                 if (var9 != null) {
                     var10 = Registry.ITEM.getId(var9);
-                    if (var9 instanceof Class3292) {
-                        var11 = ((Class3292) var9).method11845();
+                    if (var9 instanceof BlockItem) {
+                        var11 = ((BlockItem) var9).method11845();
                     }
 
                     var10 = Class8715.method31433(var10);
@@ -4619,10 +4620,10 @@ public class Shaders {
             Item var1 = var0.getItem();
             if (var1 == null) {
                 return false;
-            } else if (!(var1 instanceof Class3292)) {
+            } else if (!(var1 instanceof BlockItem)) {
                 return false;
             } else {
-                Class3292 var2 = (Class3292) var1;
+                BlockItem var2 = (BlockItem) var1;
                 Block var3 = var2.method11845();
                 if (var3 == null) {
                     return false;

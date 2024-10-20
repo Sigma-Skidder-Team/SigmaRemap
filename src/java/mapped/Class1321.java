@@ -109,7 +109,7 @@ public class Class1321 extends Screen {
       }));
       boolean var4 = JigsawBlock.method11675(this.field6983.getBlockState()).getAxis().method323();
       this.field6990.active = var4;
-      this.field6990.field6483 = var4;
+      this.field6990.visible = var4;
       this.<Class1238>addButton(new Class1238(this, this.width / 2 - 154, 180, 100, 20, StringTextComponent.EMPTY, 0.0));
       this.<Class1247>addButton(
          new Class1247(this, this.width / 2 - 50, 180, 100, 20, new TranslationTextComponent("jigsaw_block.keep_jigsaws"), var1 -> {

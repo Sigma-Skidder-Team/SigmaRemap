@@ -5,6 +5,13 @@ import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
+import com.viaversion.viaversion.api.connection.UserConnection;
+import com.viaversion.viaversion.connection.UserConnectionImpl;
+import com.viaversion.viaversion.protocol.ProtocolPipelineImpl;
+import de.florianmichael.vialoadingbase.ViaLoadingBase;
+import de.florianmichael.vialoadingbase.netty.event.CompressionReorderEvent;
+import de.florianmichael.viamcp.MCPVLBPipeline;
+import de.florianmichael.viamcp.ViaMCP;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
 import io.netty.channel.epoll.Epoll;
@@ -311,6 +318,12 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>> {
             }
 
             p_initChannel_1_.pipeline().addLast("timeout", new ReadTimeoutHandler(30)).addLast("splitter", new NettyVarint21FrameDecoder()).addLast("decoder", new NettyPacketDecoder(PacketDirection.CLIENTBOUND)).addLast("prepender", new NettyVarint21FrameEncoder()).addLast("encoder", new NettyPacketEncoder(PacketDirection.SERVERBOUND)).addLast("packet_handler", networkmanager);
+            if (p_initChannel_1_ instanceof SocketChannel && ViaLoadingBase.getInstance().getTargetVersion().getVersion() != ViaMCP.NATIVE_VERSION) {
+               final UserConnection user = new UserConnectionImpl(p_initChannel_1_, true);
+               new ProtocolPipelineImpl(user);
+
+               p_initChannel_1_.pipeline().addLast(new MCPVLBPipeline(user));
+            }
          }
       }).channel(oclass).connect(address, serverPort).syncUninterruptibly();
       return networkmanager;
@@ -392,6 +405,8 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>> {
             this.channel.pipeline().remove("compress");
          }
       }
+
+      this.channel.pipeline().fireUserEventTriggered(new CompressionReorderEvent());
    }
 
    public void handleDisconnection() {

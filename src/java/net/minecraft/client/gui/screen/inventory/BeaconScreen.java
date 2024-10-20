@@ -102,8 +102,8 @@ public class BeaconScreen extends ContainerScreen<Class5821> {
       drawCenteredString(var1, this.font, field4843, 169, 10, 14737632);
 
       for (Widget var7 : this.field4566) {
-         if (var7.method5737()) {
-            var7.method5738(var1, var2 - this.field4734, var3 - this.field4735);
+         if (var7.isHovered()) {
+            var7.renderToolTip(var1, var2 - this.field4734, var3 - this.field4735);
             break;
          }
       }

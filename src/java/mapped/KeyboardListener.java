@@ -114,11 +114,11 @@ public class KeyboardListener {
                return true;
             case 70:
                AbstractOption.field25333
-                  .method18089(
+                  .set(
                      this.mc.gameSettings,
                      MathHelper.clamp(
                         (double)(this.mc.gameSettings.renderDistanceChunks + (Screen.method2476() ? -1 : 1)),
-                        AbstractOption.field25333.method18086(),
+                        AbstractOption.field25333.getMinValue(),
                         AbstractOption.field25333.getMaxValue()
                      )
                   );
