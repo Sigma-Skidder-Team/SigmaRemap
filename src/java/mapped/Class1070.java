@@ -345,7 +345,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
 
    @Override
    public float getBlockPathWeight(BlockPos var1, IWorldReader var2) {
-      if (!var2.getBlockState(var1).method23449().method23486(FluidTags.field40470)) {
+      if (!var2.getBlockState(var1).getFluidState().method23486(FluidTags.field40470)) {
          return !this.isInLava() ? 0.0F : Float.NEGATIVE_INFINITY;
       } else {
          return 10.0F;

@@ -40,7 +40,7 @@ public class Class1667 implements IBlockReader, ICollisionReader {
 
       for (int var9 = this.field9081; var9 <= var6; var9++) {
          for (int var10 = this.field9082; var10 <= var7; var10++) {
-            this.field9083[var9 - this.field9081][var10 - this.field9082] = var8.method7343(var9, var10);
+            this.field9083[var9 - this.field9081][var10 - this.field9082] = var8.getChunkNow(var9, var10);
          }
       }
 

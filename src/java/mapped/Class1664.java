@@ -171,7 +171,7 @@ public class Class1664 implements IBlockDisplayReader {
 
    @Override
    public FluidState getFluidState(BlockPos var1) {
-      return this.getBlockState(var1).method23449();
+      return this.getBlockState(var1).getFluidState();
    }
 
    @Override

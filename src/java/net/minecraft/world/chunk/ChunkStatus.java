@@ -198,7 +198,7 @@ public class ChunkStatus {
       return field42146.size();
    }
 
-   public static int method34296(ChunkStatus var0) {
+   public static int getDistance(ChunkStatus var0) {
       return field42147.getInt(var0.ordinal());
    }
 

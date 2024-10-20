@@ -394,7 +394,7 @@ public class WaypointsManager {
          for (int var9 = 0; var9 < 16; var9++) {
             BlockPos var10 = new BlockPos(var6 + var8, 64, var7 + var9);
             int var11 = this.method30006(
-               new BlockPos(var10.getX(), var1.getHeightmap(Heightmap.Type.WORLD_SURFACE).method24579(var8, var9) - 1, var10.getZ()), var2
+               new BlockPos(var10.getX(), var1.getHeightmap(Heightmap.Type.WORLD_SURFACE).getHeight(var8, var9) - 1, var10.getZ()), var2
             );
             var5.put((byte)(var11 >> 16 & 0xFF));
             var5.put((byte)(var11 >> 8 & 0xFF));

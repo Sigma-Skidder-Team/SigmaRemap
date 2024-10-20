@@ -258,7 +258,7 @@ public class EndermanEntity extends MonsterEntity implements IAngerable {
 
       BlockState var10 = this.world.getBlockState(var9);
       boolean var11 = var10.getMaterial().blocksMovement();
-      boolean var12 = var10.method23449().method23486(FluidTags.field40469);
+      boolean var12 = var10.getFluidState().method23486(FluidTags.field40469);
       if (var11 && !var12) {
          boolean var13 = this.attemptTeleport(var1, var3, var5, true);
          if (var13 && !this.isSilent()) {

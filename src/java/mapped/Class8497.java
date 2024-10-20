@@ -29,7 +29,7 @@ public final class Class8497 {
          for (int var16 = var12 - 12; var16 <= var12 + 12; var16++) {
             ChunkPos var17 = new ChunkPos(var15, var16);
             String var18 = "";
-            Chunk var19 = var14.method7342(var15, var16, false);
+            Chunk var19 = var14.getChunk(var15, var16, false);
             var18 = var18 + "Client: ";
             if (var19 != null) {
                var18 = var18 + (!var19.isEmpty() ? "" : " E");

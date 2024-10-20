@@ -57,7 +57,7 @@ public class Chunk implements IChunk {
    private final Map<BlockPos, CompoundNBT> field9114 = Maps.newHashMap();
    public boolean field9115;
    private final World field9116;
-   private final Map<Heightmap.Type, Heightmap> field9117 = Maps.newEnumMap(Heightmap.Type.class);
+   private final Map<Heightmap.Type, Heightmap> heightMap = Maps.newEnumMap(Heightmap.Type.class);
    private final UpgradeData field9118;
    private final Map<BlockPos, TileEntity> field9119 = Maps.newHashMap();
    private final Class51<Entity>[] field9120;
@@ -107,7 +107,7 @@ public class Chunk implements IChunk {
 
       for (Heightmap.Type var16 : Heightmap.Type.values()) {
          if (ChunkStatus.FULL.method34305().contains(var16)) {
-            this.field9117.put(var16, new Heightmap(this, var16));
+            this.heightMap.put(var16, new Heightmap(this, var16));
          }
       }
 
@@ -174,7 +174,7 @@ public class Chunk implements IChunk {
 
    @Override
    public Heightmap getHeightmap(Heightmap.Type var1) {
-      return this.field9117.computeIfAbsent(var1, var1x -> new Heightmap(this, var1x));
+      return this.heightMap.computeIfAbsent(var1, var1x -> new Heightmap(this, var1x));
    }
 
    @Override
@@ -268,10 +268,10 @@ public class Chunk implements IChunk {
       if (var11 != var2) {
          Block var12 = var2.getBlock();
          Block var13 = var11.getBlock();
-         this.field9117.get(Heightmap.Type.MOTION_BLOCKING).method24578(var6, var7, var8, var2);
-         this.field9117.get(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES).method24578(var6, var7, var8, var2);
-         this.field9117.get(Heightmap.Type.OCEAN_FLOOR).method24578(var6, var7, var8, var2);
-         this.field9117.get(Heightmap.Type.WORLD_SURFACE).method24578(var6, var7, var8, var2);
+         this.heightMap.get(Heightmap.Type.MOTION_BLOCKING).method24578(var6, var7, var8, var2);
+         this.heightMap.get(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES).method24578(var6, var7, var8, var2);
+         this.heightMap.get(Heightmap.Type.OCEAN_FLOOR).method24578(var6, var7, var8, var2);
+         this.heightMap.get(Heightmap.Type.WORLD_SURFACE).method24578(var6, var7, var8, var2);
          boolean var14 = var9.method21858();
          if (var10 != var14) {
             this.field9116.getChunkProvider().getLightManager().method641(var1, var14);
@@ -350,7 +350,7 @@ public class Chunk implements IChunk {
 
    @Override
    public void setHeightmap(Heightmap.Type var1, long[] var2) {
-      this.field9117.get(var1).method24582(var2);
+      this.heightMap.get(var1).method24582(var2);
    }
 
    public void removeEntity(Entity var1) {
@@ -369,9 +369,8 @@ public class Chunk implements IChunk {
       this.field9120[var2].remove(var1);
    }
 
-   @Override
    public int getTopBlockY(Heightmap.Type var1, int var2, int var3) {
-      return this.field9117.get(var1).method24579(var2 & 15, var3 & 15) - 1;
+      return this.heightMap.get(var1).getHeight(var2 & 15, var3 & 15) - 1;
    }
 
    @Nullable
@@ -596,7 +595,7 @@ public class Chunk implements IChunk {
 
    @Override
    public Collection<Entry<Heightmap.Type, Heightmap>> getHeightmaps() {
-      return Collections.<Entry<Heightmap.Type, Heightmap>>unmodifiableSet(this.field9117.entrySet());
+      return Collections.<Entry<Heightmap.Type, Heightmap>>unmodifiableSet(this.heightMap.entrySet());
    }
 
    public Map<BlockPos, TileEntity> getTileEntityMap() {

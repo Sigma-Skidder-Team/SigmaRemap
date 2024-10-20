@@ -41,7 +41,7 @@ public class ChunkSection {
    }
 
    public FluidState method21853(int var1, int var2, int var3) {
-      return this.field30373.method30498(var1, var2, var3).method23449();
+      return this.field30373.method30498(var1, var2, var3).getFluidState();
    }
 
    public void method21854() {
@@ -64,8 +64,8 @@ public class ChunkSection {
          var8 = this.field30373.method30494(var1, var2, var3, var4);
       }
 
-      FluidState var9 = var8.method23449();
-      FluidState var10 = var4.method23449();
+      FluidState var9 = var8.getFluidState();
+      FluidState var10 = var4.getFluidState();
       if (!var8.isAir()) {
          this.field30370--;
          if (var8.method23450()) {
@@ -138,7 +138,7 @@ public class ChunkSection {
       this.field30371 = 0;
       this.field30372 = 0;
       this.field30373.method30506((var1, var2) -> {
-         FluidState var5x = var1.method23449();
+         FluidState var5x = var1.getFluidState();
          if (!var1.isAir()) {
             this.field30370 = (short)(this.field30370 + var2);
             if (var1.method23450()) {

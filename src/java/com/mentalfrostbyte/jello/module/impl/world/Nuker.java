@@ -150,7 +150,7 @@ public class Nuker extends Module {
                             mc.player.getPosZ() + (double) var7
                     );
                     if (!mc.world.getBlockState(var8).isAir()
-                            && mc.world.getBlockState(var8).method23449().isEmpty()
+                            && mc.world.getBlockState(var8).getFluidState().isEmpty()
                             && Math.sqrt(
                             mc.player.getDistanceNearest((double) var8.getX() + 0.5, (double) var8.getY() + 0.5, (double) var8.getZ() + 0.5)
                     )

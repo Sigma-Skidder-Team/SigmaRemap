@@ -256,6 +256,7 @@ public class ChunkHolder {
    }
 
    public int method31057() {
+      System.out.println("this.chunkLevel: " + this.chunkLevel);
       return this.chunkLevel;
    }
 

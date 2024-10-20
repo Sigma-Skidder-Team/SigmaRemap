@@ -437,7 +437,7 @@ public class ClientWorld extends World {
    }
 
    private void method6854(BlockPos var1, BlockState var2, IParticleData var3, boolean var4) {
-      if (var2.method23449().isEmpty()) {
+      if (var2.getFluidState().isEmpty()) {
          VoxelShape var7 = var2.method23414(this, var1);
          double var8 = var7.getEnd(Direction.Axis.Y);
          if (!(var8 < 1.0)) {
@@ -448,7 +448,7 @@ public class ClientWorld extends World {
                   BlockState var13 = this.getBlockState(var12);
                   VoxelShape var14 = var13.method23414(this, var12);
                   double var15 = var14.getEnd(Direction.Axis.Y);
-                  if (var15 < 1.0 && var13.method23449().isEmpty()) {
+                  if (var15 < 1.0 && var13.getFluidState().isEmpty()) {
                      this.method6855(var1, var3, var7, (double)var1.getY() - 0.05);
                   }
                } else {

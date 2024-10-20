@@ -338,15 +338,9 @@ public class Util {
    public static <T extends Throwable> T pauseDevMode(T var0) {
       if (SharedConstants.developmentMode) {
          LOGGER.error("Trying to throw a fatal exception, pausing in IDE", var0);
-
-         while (true) {
-            try {
-               Thread.sleep(1000L);
-               LOGGER.error("paused");
-            } catch (InterruptedException var4) {
-               return var0;
-            }
-         }
+         System.out.println("pauseDevMode");
+         LOGGER.error("paused");
+         return var0;
       } else {
          return var0;
       }

@@ -66,8 +66,8 @@ public class ModelManager extends Class269<ModelBakery> implements AutoCloseable
          if (var5 != -1) {
             int var6 = this.field1069.getInt(var2);
             if (var5 == var6) {
-               FluidState var7 = var1.method23449();
-               FluidState var8 = var2.method23449();
+               FluidState var7 = var1.getFluidState();
+               FluidState var8 = var2.getFluidState();
                return var7 != var8;
             }
          }

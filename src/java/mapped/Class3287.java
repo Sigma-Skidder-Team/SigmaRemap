@@ -125,7 +125,7 @@ public class Class3287 extends Item {
                   var2.method7179(var3, true);
                }
 
-               if (!var2.setBlockState(var3, this.field18798.method25049().getBlockState(), 11) && !var7.method23449().isSource()) {
+               if (!var2.setBlockState(var3, this.field18798.method25049().getBlockState(), 11) && !var7.getFluidState().isSource()) {
                   return false;
                } else {
                   this.method11826(var1, var2, var3);

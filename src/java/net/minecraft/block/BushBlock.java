@@ -31,7 +31,7 @@ public class BushBlock extends Block {
    }
 
    public boolean propagatesSkylightDown(BlockState var1, IBlockReader var2, BlockPos var3) {
-      return var1.method23449().isEmpty();
+      return var1.getFluidState().isEmpty();
    }
 
    public boolean allowsMovement(BlockState var1, IBlockReader var2, BlockPos var3, PathType var4) {

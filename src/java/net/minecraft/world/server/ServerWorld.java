@@ -438,7 +438,7 @@ public class ServerWorld extends World implements ISeedReader {
                      var17.method23431(this, var16, this.rand);
                   }
 
-                  FluidState var18 = var17.method23449();
+                  FluidState var18 = var17.getFluidState();
                   if (var18.method23481()) {
                      var18.method23482(this, var16, this.rand);
                   }

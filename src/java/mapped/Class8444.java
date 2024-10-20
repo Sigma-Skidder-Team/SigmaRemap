@@ -31,7 +31,7 @@ public class Class8444 {
             int var8 = Client.getInstance()
                .getWaypointsManager()
                .method30006(
-                  new BlockPos(var7.getX(), this.field36184.getHeightmap(Heightmap.Type.WORLD_SURFACE).method24579(var5, var6) - 1, var7.getZ()), true
+                  new BlockPos(var7.getX(), this.field36184.getHeightmap(Heightmap.Type.WORLD_SURFACE).getHeight(var5, var6) - 1, var7.getZ()), true
                );
             this.field36185.put((byte)(var8 >> 16 & 0xFF));
             this.field36185.put((byte)(var8 >> 8 & 0xFF));

@@ -199,7 +199,7 @@ public class Block extends AbstractBlock implements IItemProvider {
    }
 
    public boolean propagatesSkylightDown(BlockState var1, IBlockReader var2, BlockPos var3) {
-      return !method11550(var1.method23412(var2, var3)) && var1.method23449().isEmpty();
+      return !method11550(var1.method23412(var2, var3)) && var1.getFluidState().isEmpty();
    }
 
    public void animateTick(BlockState var1, World var2, BlockPos var3, Random var4) {

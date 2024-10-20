@@ -322,7 +322,9 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
          {
             return p_244265_0_.getMobSpawnInfo().isValidSpawnBiomeForPlayer();
          }, random);
+         System.out.println("before chunkpos");
          ChunkPos chunkpos = blockpos == null ? new ChunkPos(0, 0) : new ChunkPos(blockpos);
+         System.out.println("after chunkpos + " + chunkpos == null ? "true" : "false");
 
          if (blockpos == null)
          {
@@ -335,12 +337,14 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
          {
             if (biomeprovider.getSurfaceBlocks().contains(block.getDefaultState()))
             {
+               System.out.println("flag = true");
                flag = true;
                break;
             }
          }
 
          p_240786_1_.setSpawn(chunkpos.asBlockPos().add(8, chunkgenerator.getGroundHeight(), 8), 0.0F);
+         System.out.println("setSpawn(chunkpos.asBlockPos()");
          int i1 = 0;
          int j1 = 0;
          int i = 0;
@@ -349,10 +353,14 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
 
          for (int l = 0; l < 1024; ++l)
          {
+            System.out.println("int l = 0; l < 1024; ++l");
             if (i1 > -16 && i1 <= 16 && j1 > -16 && j1 <= 16)
             {
-               BlockPos blockpos1 = SpawnLocationHelper.func_241094_a_(p_240786_0_, new ChunkPos(chunkpos.x + i1, chunkpos.z + j1), flag);
-
+               System.out.println("i1 > -16 && i1 <= 16 && j1 > -16 && j1 <= 16");
+               System.out.println("p_240786_0_ " + p_240786_0_ == null ? "true" : "not null");
+               System.out.println("p_240786_0_ " + p_240786_0_ == null ? "true" : "not null");
+               BlockPos blockpos1 = SpawnLocationHelper.findValidSpawnPosition(p_240786_0_, new ChunkPos(chunkpos.x + i1, chunkpos.z + j1), flag);
+               System.out.println("blockpos1 == "  + blockpos1 == null ? "true" : "false");
                if (blockpos1 != null)
                {
                   System.out.println("p_240786_1_.setSpawn(blockpos1, 0.0F)");

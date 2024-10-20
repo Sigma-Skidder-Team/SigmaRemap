@@ -414,7 +414,7 @@ public class Class904 extends ProjectileEntity {
    private Class2331 method3540(BlockPos var1) {
       BlockState var4 = this.world.getBlockState(var1);
       if (!var4.isAir() && !var4.isIn(Blocks.LILY_PAD)) {
-         FluidState var5 = var4.method23449();
+         FluidState var5 = var4.getFluidState();
          return var5.method23486(FluidTags.field40469) && var5.isSource() && var4.method23414(this.world, var1).isEmpty()
             ? Class2331.field15948
             : Class2331.field15949;

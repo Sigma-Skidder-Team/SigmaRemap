@@ -27,7 +27,7 @@ import org.apache.logging.log4j.Logger;
 
 public abstract class TicketManager {
    private static final Logger field43204 = LogManager.getLogger();
-   private static final int field43205 = 33 + ChunkStatus.method34296(ChunkStatus.FULL) - 2;
+   private static final int field43205 = 33 + ChunkStatus.getDistance(ChunkStatus.FULL) - 2;
    private final Long2ObjectMap<ObjectSet<ServerPlayerEntity>> field43206 = new Long2ObjectOpenHashMap();
    private final Long2ObjectOpenHashMap<SortedArraySet<Ticket<?>>> field43207 = new Long2ObjectOpenHashMap();
    private final Class204 ticketTracker = new Class204(this);

@@ -20,7 +20,7 @@ public abstract class Class3472 extends Class3471 {
       BlockState var6 = var1.getBlockState(var5);
       if (var6.isIn(Blocks.SNOW) && var6.<Integer>get(Class3410.field19092) == 1) {
          return true;
-      } else if (var6.method23449().method23477() != 8) {
+      } else if (var6.getFluidState().method23477() != 8) {
          int var7 = LightEngine.func_215613_a(var1, var0, var2, var6, var5, Direction.UP, var6.getOpacity(var1, var5));
          return var7 < var1.getMaxLightLevel();
       } else {

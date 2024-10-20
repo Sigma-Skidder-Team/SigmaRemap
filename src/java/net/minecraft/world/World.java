@@ -143,6 +143,7 @@ public abstract class World implements IWorld, AutoCloseable {
    }
 
    public Chunk getChunk(int chunkX, int chunkZ) {
+      System.out.println("before getChunk");
       return (Chunk)this.getChunk(chunkX, chunkZ, ChunkStatus.FULL);
    }
 
@@ -632,7 +633,7 @@ public abstract class World implements IWorld, AutoCloseable {
    }
 
    public void method6767(boolean var1, boolean var2) {
-      this.getChunkProvider().method7349(var1, var2);
+      this.getChunkProvider().setAllowedSpawnTypes(var1, var2);
    }
 
    public void calculateInitialWeather() {
@@ -667,7 +668,7 @@ public abstract class World implements IWorld, AutoCloseable {
 
       for (int var12 = var7; var12 <= var8; var12++) {
          for (int var13 = var9; var13 <= var10; var13++) {
-            Chunk var14 = var11.method7342(var12, var13, false);
+            Chunk var14 = var11.getChunk(var12, var13, false);
             if (var14 != null) {
                var14.method7138(var1, var2, var6, var3);
             }
@@ -687,7 +688,7 @@ public abstract class World implements IWorld, AutoCloseable {
 
       for (int var11 = var6; var11 < var7; var11++) {
          for (int var12 = var8; var12 < var9; var12++) {
-            Chunk var13 = this.getChunkProvider().method7342(var11, var12, false);
+            Chunk var13 = this.getChunkProvider().getChunk(var11, var12, false);
             if (var13 != null) {
                var13.method7139(var1, var2, var10, var3);
             }
@@ -709,7 +710,7 @@ public abstract class World implements IWorld, AutoCloseable {
 
       for (int var12 = var6; var12 < var7; var12++) {
          for (int var13 = var8; var13 < var9; var13++) {
-            Chunk var14 = var11.method7342(var12, var13, false);
+            Chunk var14 = var11.getChunk(var12, var13, false);
             if (var14 != null) {
                var14.method7140(var1, var2, var10, var3);
             }
@@ -731,7 +732,7 @@ public abstract class World implements IWorld, AutoCloseable {
 
       for (int var12 = var6; var12 < var7; var12++) {
          for (int var13 = var8; var13 < var9; var13++) {
-            Chunk var14 = var11.method7343(var12, var13);
+            Chunk var14 = var11.getChunkNow(var12, var13);
             if (var14 != null) {
                var14.method7140(var1, var2, var10, var3);
             }

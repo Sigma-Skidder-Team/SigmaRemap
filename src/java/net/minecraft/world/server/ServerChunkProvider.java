@@ -97,55 +97,75 @@ public class ServerChunkProvider extends AbstractChunkProvider {
       return this.chunkManager.func_219174_c();
    }
 
-   private void func_225315_a(long var1, IChunk var3, ChunkStatus var4) {
-      for (int var7 = 3; var7 > 0; var7--) {
-         this.recentPositions[var7] = this.recentPositions[var7 - 1];
-         this.recentStatuses[var7] = this.recentStatuses[var7 - 1];
-         this.recentChunks[var7] = this.recentChunks[var7 - 1];
+   private void func_225315_a(long p_225315_1_, IChunk p_225315_3_, ChunkStatus p_225315_4_) {
+      for (int i = 3; i > 0; --i)
+      {
+         this.recentPositions[i] = this.recentPositions[i - 1];
+         this.recentStatuses[i] = this.recentStatuses[i - 1];
+         this.recentChunks[i] = this.recentChunks[i - 1];
       }
 
-      this.recentPositions[0] = var1;
-      this.recentStatuses[0] = var4;
-      this.recentChunks[0] = var3;
+      this.recentPositions[0] = p_225315_1_;
+      this.recentStatuses[0] = p_225315_4_;
+      this.recentChunks[0] = p_225315_3_;
    }
 
    @Nullable
-   @Override
-   public IChunk getChunk(int var1, int var2, ChunkStatus var3, boolean var4) {
-      if (Thread.currentThread() != this.mainThread) {
-         return CompletableFuture.<IChunk>supplyAsync(() -> this.getChunk(var1, var2, var3, var4), this.executor).join();
+   public IChunk getChunk(int chunkX, int chunkZ, ChunkStatus requiredStatus, boolean load) {
+      if (Thread.currentThread() != this.mainThread)
+      {
+         return CompletableFuture.supplyAsync(() ->
+         {
+            return this.getChunk(chunkX, chunkZ, requiredStatus, load);
+         }, this.executor).join();
       } else {
-         IProfiler var7 = this.world.getProfiler();
-         var7.func_230035_c_("getChunk");
-         long var8 = ChunkPos.asLong(var1, var2);
+         IProfiler iprofiler = this.world.getProfiler();
+         iprofiler.func_230035_c_("getChunk");
+         long i = ChunkPos.asLong(chunkX, chunkZ);
 
-         for (int var10 = 0; var10 < 4; var10++) {
-            if (var8 == this.recentPositions[var10] && var3 == this.recentStatuses[var10]) {
-               IChunk var11 = this.recentChunks[var10];
-               if (var11 != null || !var4) {
-                  return var11;
+         for (int j = 0; j < 4; ++j)
+         {
+            if (i == this.recentPositions[j] && requiredStatus == this.recentStatuses[j])
+            {
+               IChunk ichunk = this.recentChunks[j];
+
+               if (ichunk != null || !load)
+               {
+                  System.out.println("iChunk");
+                  return ichunk;
+               } else {
+                  System.out.println("iChunk null");
                }
             }
          }
 
-         var7.func_230035_c_("getChunkCacheMiss");
-         CompletableFuture var12 = this.method7359(var1, var2, var3, var4);
-         this.executor.driveUntil(var12::isDone);
-         IChunk var13 = (IChunk)((Either)var12.join()).map(var0 -> var0, var1x -> {
-            if (!var4) {
+         iprofiler.func_230035_c_("getChunkCacheMiss");
+         CompletableFuture<Either<IChunk, ChunkHolder.IChunkLoadingError>> completablefuture = this.func_217233_c(chunkX, chunkZ, requiredStatus, load);
+         this.executor.driveUntil(completablefuture::isDone);
+         IChunk ichunk1 = completablefuture.join().map((p_222874_0_) ->
+         {
+            return p_222874_0_;
+         }, (p_222870_1_) ->
+         {
+            if (load)
+            {
+               System.out.println("Chunk not there when requested: " + p_222870_1_);
                return null;
             } else {
-               throw (IllegalStateException) Util.pauseDevMode(new IllegalStateException("Chunk not there when requested: " + var1x));
+               System.out.println("load false && null");
+               return null;
             }
          });
-         this.func_225315_a(var8, var13, var3);
-         return var13;
+         this.func_225315_a(i, ichunk1, requiredStatus);
+         System.out.println("func_225315_a finished");
+         System.out.println(ichunk1 == null ? "ichunk1 it's null" : "ichunk1 not null");
+         return ichunk1;
       }
    }
 
    @Nullable
    @Override
-   public Chunk method7343(int var1, int var2) {
+   public Chunk getChunkNow(int var1, int var2) {
       if (Thread.currentThread() == this.mainThread) {
          this.world.getProfiler().func_230035_c_("getChunkNow");
          long var5 = ChunkPos.asLong(var1, var2);
@@ -189,49 +209,65 @@ public class ServerChunkProvider extends AbstractChunkProvider {
 
    public CompletableFuture<Either<IChunk, ChunkHolder.IChunkLoadingError>> method7358(int var1, int var2, ChunkStatus var3, boolean var4) {
       boolean var7 = Thread.currentThread() == this.mainThread;
-      CompletableFuture var8;
+      CompletableFuture<Either<IChunk, ChunkHolder.IChunkLoadingError>> var8;
       if (!var7) {
-         var8 = CompletableFuture.<CompletableFuture<Either<IChunk, ChunkHolder.IChunkLoadingError>>>supplyAsync(() -> this.method7359(var1, var2, var3, var4), this.executor)
+         var8 = CompletableFuture.<CompletableFuture<Either<IChunk, ChunkHolder.IChunkLoadingError>>>supplyAsync(() -> this.func_217233_c(var1, var2, var3, var4), this.executor)
             .<Either<IChunk, ChunkHolder.IChunkLoadingError>>thenCompose(var0 -> (CompletionStage<Either<IChunk, ChunkHolder.IChunkLoadingError>>)var0);
       } else {
-         var8 = this.method7359(var1, var2, var3, var4);
+         var8 = this.func_217233_c(var1, var2, var3, var4);
          this.executor.driveUntil(var8::isDone);
       }
 
       return var8;
    }
 
-   private CompletableFuture<Either<IChunk, ChunkHolder.IChunkLoadingError>> method7359(int var1, int var2, ChunkStatus var3, boolean var4) {
-      ChunkPos var7 = new ChunkPos(var1, var2);
-      long var8 = var7.asLong();
-      int var10 = 33 + ChunkStatus.method34296(var3);
-      ChunkHolder var11 = this.func_217213_a(var8);
-      if (var4) {
-         this.ticketManager.registerWithLevel(TicketType.UNKNOWN, var7, var10, var7);
-         if (this.method7360(var11, var10)) {
-            IProfiler var12 = this.world.getProfiler();
-            var12.startSection("chunkLoad");
-            this.method7363();
-            var11 = this.func_217213_a(var8);
-            var12.endSection();
-            if (this.method7360(var11, var10)) {
-               throw (IllegalStateException) Util.pauseDevMode(new IllegalStateException("No chunk holder after ticket has been added"));
+   private CompletableFuture<Either<IChunk, ChunkHolder.IChunkLoadingError>> func_217233_c(int chunkX, int chunkZ, ChunkStatus requiredStatus, boolean load)
+   {
+      ChunkPos chunkpos = new ChunkPos(chunkX, chunkZ);
+      System.out.println("[1] chunkpos == " + chunkpos == null ? "yes null" : "no null");
+
+      long i = chunkpos.asLong();
+      int j = 33 + ChunkStatus.getDistance(requiredStatus);
+      ChunkHolder chunkholder = this.func_217213_a(i);
+      System.out.println("[1] chunkholder == " + chunkholder == null ? "yes null" : "no null");
+
+      if (load)
+      {
+         this.ticketManager.registerWithLevel(TicketType.UNKNOWN, chunkpos, j, chunkpos);
+
+         if (this.func_217224_a(chunkholder, j))
+         {
+            IProfiler iprofiler = this.world.getProfiler();
+            iprofiler.startSection("chunkLoad");
+            this.func_217235_l();
+            chunkholder = this.func_217213_a(i);
+            iprofiler.endSection();
+
+            System.out.println("[2] chunkholder == " + chunkholder == null ? "yes null" : "no null");
+
+            if (this.func_217224_a(chunkholder, j))
+            {
+               System.out.println("No chunk holder after ticket has been added");
+            } else {
+               System.out.println("hyuh");
             }
          }
       }
 
-      return !this.method7360(var11, var10) ? var11.func_219276_a(var3, this.chunkManager) : ChunkHolder.MISSING_CHUNK_FUTURE;
+      return this.func_217224_a(chunkholder, j) ? ChunkHolder.MISSING_CHUNK_FUTURE : chunkholder.func_219276_a(requiredStatus, this.chunkManager);
    }
 
-   private boolean method7360(ChunkHolder var1, int var2) {
+   private boolean func_217224_a(ChunkHolder var1, int var2) {
+      System.out.println(var1 == null ? "chunkHolder is null" : "chunkHOlder is not null");
+      System.out.println("func_217224_a.var2:" + var2);
       return var1 == null || var1.method31057() > var2;
    }
 
    @Override
    public boolean chunkExists(int var1, int var2) {
       ChunkHolder var5 = this.func_217213_a(new ChunkPos(var1, var2).asLong());
-      int var6 = 33 + ChunkStatus.method34296(ChunkStatus.FULL);
-      return !this.method7360(var5, var6);
+      int var6 = 33 + ChunkStatus.getDistance(ChunkStatus.FULL);
+      return !this.func_217224_a(var5, var6);
    }
 
    @Override
@@ -267,7 +303,7 @@ public class ServerChunkProvider extends AbstractChunkProvider {
       return this.executor.method1302();
    }
 
-   private boolean method7363() {
+   private boolean func_217235_l() {
       boolean var3 = this.ticketManager.method35125(this.chunkManager);
       boolean var4 = this.chunkManager.method6549();
       if (!var3 && !var4) {
@@ -306,7 +342,7 @@ public class ServerChunkProvider extends AbstractChunkProvider {
    }
 
    public void method7365(boolean var1) {
-      this.method7363();
+      this.func_217235_l();
       this.chunkManager.method6545(var1);
    }
 
@@ -320,7 +356,7 @@ public class ServerChunkProvider extends AbstractChunkProvider {
    public void method7366(BooleanSupplier var1) {
       this.world.getProfiler().startSection("purge");
       this.ticketManager.method35123();
-      this.method7363();
+      this.func_217235_l();
       this.world.getProfiler().endStartSection("chunks");
       this.method7367();
       this.world.getProfiler().endStartSection("unload");
@@ -461,7 +497,7 @@ public class ServerChunkProvider extends AbstractChunkProvider {
    }
 
    @Override
-   public void method7349(boolean var1, boolean var2) {
+   public void setAllowedSpawnTypes(boolean var1, boolean var2) {
       this.spawnHostiles = var1;
       this.spawnPassives = var2;
    }
@@ -495,7 +531,7 @@ public class ServerChunkProvider extends AbstractChunkProvider {
 
    // $VF: synthetic method
    public static boolean method7396(ServerChunkProvider var0) {
-      return var0.method7363();
+      return var0.func_217235_l();
    }
 
    // $VF: synthetic method

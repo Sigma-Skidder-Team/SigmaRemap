@@ -412,7 +412,7 @@ public class ChunkManager extends Class1648 implements Class1650 {
             Optional var7 = var4.left();
             if (var7.isPresent()) {
                if (var2 == ChunkStatus.LIGHT) {
-                  this.field8968.registerWithLevel(TicketType.LIGHT, var5, 33 + ChunkStatus.method34296(ChunkStatus.FEATURES), var5);
+                  this.field8968.registerWithLevel(TicketType.LIGHT, var5, 33 + ChunkStatus.getDistance(ChunkStatus.FEATURES), var5);
                }
 
                IChunk var8 = (IChunk)var7.get();
@@ -514,7 +514,7 @@ public class ChunkManager extends Class1648 implements Class1650 {
       this.field8958
          .enqueue(
             Util.namedRunnable(
-               () -> this.field8968.releaseWithLevel(TicketType.LIGHT, var1, 33 + ChunkStatus.method34296(ChunkStatus.FEATURES), var1),
+               () -> this.field8968.releaseWithLevel(TicketType.LIGHT, var1, 33 + ChunkStatus.getDistance(ChunkStatus.FEATURES), var1),
                () -> "release light ticket " + var1
             )
          );
@@ -523,7 +523,7 @@ public class ChunkManager extends Class1648 implements Class1650 {
    private ChunkStatus method6556(ChunkStatus var1, int var2) {
       ChunkStatus var5;
       if (var2 != 0) {
-         var5 = ChunkStatus.method34294(ChunkStatus.method34296(var1) + var2);
+         var5 = ChunkStatus.method34294(ChunkStatus.getDistance(var1) + var2);
       } else {
          var5 = var1.method34299();
       }

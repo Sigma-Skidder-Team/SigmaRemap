@@ -99,20 +99,23 @@ public interface IWorldReader extends IBlockDisplayReader, ICollisionReader, Bio
       return this.getBlockState(var1).method23407(this, var1, var2);
    }
 
-   default IChunk getChunk(BlockPos var1) {
-      return this.getChunk(var1.getX() >> 4, var1.getZ() >> 4);
+   default IChunk getChunk(BlockPos pos)
+   {
+      return this.getChunk(pos.getX() >> 4, pos.getZ() >> 4);
    }
 
-   default IChunk getChunk(int var1, int var2) {
-      return this.getChunk(var1, var2, ChunkStatus.FULL, true);
+   default IChunk getChunk(int chunkX, int chunkZ)
+   {
+      return this.getChunk(chunkX, chunkZ, ChunkStatus.FULL, true);
    }
 
-   default IChunk getChunk(int var1, int var2, ChunkStatus var3) {
-      return this.getChunk(var1, var2, var3, true);
+   default IChunk getChunk(int chunkX, int chunkZ, ChunkStatus requiredStatus)
+   {
+      System.out.println(this.getChunk(chunkX, chunkZ, requiredStatus, true) == null ? "default IChunk null" : "default IChunk not null");
+      return this.getChunk(chunkX, chunkZ, requiredStatus, true);
    }
 
    @Nullable
-   @Override
    default IBlockReader getBlockReader(int var1, int var2) {
       return this.getChunk(var1, var2, ChunkStatus.EMPTY, false);
    }
@@ -134,7 +137,7 @@ public interface IWorldReader extends IBlockDisplayReader, ICollisionReader, Bio
          for (int var12 = var6; var12 < var7; var12++) {
             for (int var13 = var8; var13 < var9; var13++) {
                BlockState var14 = this.getBlockState(var10.setPos(var11, var12, var13));
-               if (!var14.method23449().isEmpty()) {
+               if (!var14.getFluidState().isEmpty()) {
                   return true;
                }
             }

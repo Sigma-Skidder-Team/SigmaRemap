@@ -1403,7 +1403,7 @@ public abstract class PlayerEntity extends LivingEntity {
          double var12 = !(var10 < -0.2) ? 0.06 : 0.085;
          if (var10 <= 0.0
             || this.isJumping
-            || !this.world.getBlockState(new BlockPos(this.getPosX(), this.getPosY() + 1.0 - 0.1, this.getPosZ())).method23449().isEmpty()) {
+            || !this.world.getBlockState(new BlockPos(this.getPosX(), this.getPosY() + 1.0 - 0.1, this.getPosZ())).getFluidState().isEmpty()) {
             Vector3d var14 = this.getMotion();
             this.setMotion(var14.add(0.0, (var10 - var14.y) * var12, 0.0));
          }

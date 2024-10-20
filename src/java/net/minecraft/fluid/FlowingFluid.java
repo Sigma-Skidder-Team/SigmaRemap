@@ -160,7 +160,7 @@ public abstract class FlowingFluid extends Fluid {
       for (Direction var9 : Direction.Plane.HORIZONTAL) {
          BlockPos var10 = var2.offset(var9);
          BlockState var11 = var1.getBlockState(var10);
-         FluidState var12 = var11.method23449();
+         FluidState var12 = var11.getFluidState();
          if (var12.getFluid().method25066(this) && this.method25074(var9, var1, var2, var3, var10, var11)) {
             if (var12.isSource()) {
                var7++;
@@ -172,7 +172,7 @@ public abstract class FlowingFluid extends Fluid {
 
       if (this.method25079() && var7 >= 2) {
          BlockState var13 = var1.getBlockState(var2.down());
-         FluidState var15 = var13.method23449();
+         FluidState var15 = var13.getFluidState();
          if (var13.getMaterial().isSolid() || this.method25086(var15)) {
             return this.getStillFluidState(false);
          }
@@ -180,7 +180,7 @@ public abstract class FlowingFluid extends Fluid {
 
       BlockPos var14 = var2.up();
       BlockState var16 = var1.getBlockState(var14);
-      FluidState var17 = var16.method23449();
+      FluidState var17 = var16.getFluidState();
       if (!var17.isEmpty() && var17.getFluid().method25066(this) && this.method25074(Direction.UP, var1, var2, var3, var14, var16)) {
          return this.method25076(8, true);
       } else {
@@ -274,7 +274,7 @@ public abstract class FlowingFluid extends Fluid {
             short var15 = method25082(var6, var14);
             Pair var16 = (Pair)var7.computeIfAbsent(var15, var2x -> {
                BlockState var5x = var1.getBlockState(var14);
-               return Pair.of(var5x, var5x.method23449());
+               return Pair.of(var5x, var5x.getFluidState());
             });
             BlockState var17 = (BlockState)var16.getFirst();
             FluidState var18 = (FluidState)var16.getSecond();
@@ -303,7 +303,7 @@ public abstract class FlowingFluid extends Fluid {
 
    private boolean method25084(IBlockReader var1, Fluid var2, BlockPos var3, BlockState var4, BlockPos var5, BlockState var6) {
       if (this.method25074(Direction.DOWN, var1, var3, var4, var5, var6)) {
-         return !var6.method23449().getFluid().method25066(this) ? this.method25090(var1, var5, var6, var2) : true;
+         return !var6.getFluidState().getFluid().method25066(this) ? this.method25090(var1, var5, var6, var2) : true;
       } else {
          return false;
       }
@@ -344,7 +344,7 @@ public abstract class FlowingFluid extends Fluid {
          short var13 = method25082(var2, var12);
          Pair var14 = (Pair)var8.computeIfAbsent(var13, var2x -> {
             BlockState var5 = var1.getBlockState(var12);
-            return Pair.of(var5, var5.method23449());
+            return Pair.of(var5, var5.getFluidState());
          });
          BlockState var15 = (BlockState)var14.getFirst();
          FluidState var16 = (FluidState)var14.getSecond();

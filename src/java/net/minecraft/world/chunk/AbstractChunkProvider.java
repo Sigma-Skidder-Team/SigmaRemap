@@ -12,17 +12,16 @@ import javax.annotation.Nullable;
 
 public abstract class AbstractChunkProvider implements IChunkLightProvider, AutoCloseable {
    @Nullable
-   public Chunk method7342(int var1, int var2, boolean var3) {
+   public Chunk getChunk(int var1, int var2, boolean var3) {
       return (Chunk)this.getChunk(var1, var2, ChunkStatus.FULL, var3);
    }
 
    @Nullable
-   public Chunk method7343(int var1, int var2) {
-      return this.method7342(var1, var2, false);
+   public Chunk getChunkNow(int var1, int var2) {
+      return this.getChunk(var1, var2, false);
    }
 
    @Nullable
-   @Override
    public IBlockReader getChunkForLight(int var1, int var2) {
       return this.getChunk(var1, var2, ChunkStatus.EMPTY, false);
    }
@@ -32,17 +31,16 @@ public abstract class AbstractChunkProvider implements IChunkLightProvider, Auto
    }
 
    @Nullable
-   public abstract IChunk getChunk(int var1, int var2, ChunkStatus var3, boolean var4);
+   public abstract IChunk getChunk(int chunkX, int chunkZ, ChunkStatus requiredStatus, boolean load);
 
    public abstract String makeString();
 
-   @Override
    public void close() throws IOException {
    }
 
    public abstract WorldLightManager getLightManager();
 
-   public void method7349(boolean var1, boolean var2) {
+   public void setAllowedSpawnTypes(boolean var1, boolean var2) {
    }
 
    public void forceChunk(ChunkPos var1, boolean var2) {

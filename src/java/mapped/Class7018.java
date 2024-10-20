@@ -90,7 +90,7 @@ public class Class7018 implements Class7016 {
 
    private boolean method21749(ServerWorld var1, BlockPos var2, Random var3, boolean var4) {
       BlockState var7 = var1.getBlockState(var2);
-      if (Class8170.method28428(var1, var2, var7, var7.method23449(), EntityType.PILLAGER)) {
+      if (Class8170.method28428(var1, var2, var7, var7.getFluidState(), EntityType.PILLAGER)) {
          if (Class1028.method4572(EntityType.PILLAGER, var1, Class2202.field14406, var2, var3)) {
             Class1028 var8 = EntityType.PILLAGER.create(var1);
             if (var8 == null) {

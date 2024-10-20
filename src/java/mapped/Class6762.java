@@ -46,10 +46,10 @@ public class Class6762 extends Class6764 {
       BlockPos.Mutable var3 = new BlockPos.Mutable();
       int var4 = MathHelper.floor(this.field29476.getPosY());
       BlockState var5 = this.field29475.getBlockState(var3.method8373(this.field29476.getPosX(), (double)var4, this.field29476.getPosZ()));
-      if (!this.field29476.method3107(var5.method23449().getFluid())) {
+      if (!this.field29476.method3107(var5.getFluidState().getFluid())) {
          if (this.method20649() && this.field29476.isInWater()) {
             while (true) {
-               if (var5.getBlock() != Blocks.WATER && var5.method23449() != Fluids.WATER.getStillFluidState(false)) {
+               if (var5.getBlock() != Blocks.WATER && var5.getFluidState() != Fluids.WATER.getStillFluidState(false)) {
                   var4--;
                   break;
                }
@@ -71,7 +71,7 @@ public class Class6762 extends Class6764 {
             var4 = MathHelper.floor(this.field29476.getPosY() + 0.5);
          }
       } else {
-         while (this.field29476.method3107(var5.method23449().getFluid())) {
+         while (this.field29476.method3107(var5.getFluidState().getFluid())) {
             var5 = this.field29475.getBlockState(var3.method8373(this.field29476.getPosX(), (double)(++var4), this.field29476.getPosZ()));
          }
 

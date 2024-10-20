@@ -55,12 +55,12 @@ public class FlowingFluidBlock extends Block implements Class3405 {
 
    @Override
    public boolean ticksRandomly(BlockState var1) {
-      return var1.method23449().method23481();
+      return var1.getFluidState().method23481();
    }
 
    @Override
    public void randomTick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
-      var1.method23449().method23482(var2, var3, var4);
+      var1.getFluidState().method23482(var2, var3, var4);
    }
 
    @Override
@@ -81,7 +81,7 @@ public class FlowingFluidBlock extends Block implements Class3405 {
 
    @Override
    public boolean method11634(BlockState var1, BlockState var2, Direction var3) {
-      return var2.method23449().getFluid().method25066(this.field19080);
+      return var2.getFluidState().getFluid().method25066(this.field19080);
    }
 
    @Override
@@ -102,14 +102,14 @@ public class FlowingFluidBlock extends Block implements Class3405 {
    @Override
    public void onBlockAdded(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       if (this.method12043(var2, var3, var1)) {
-         var2.getPendingFluidTicks().scheduleTick(var3, var1.method23449().getFluid(), this.field19080.getTickRate(var2));
+         var2.getPendingFluidTicks().scheduleTick(var3, var1.getFluidState().getFluid(), this.field19080.getTickRate(var2));
       }
    }
 
    @Override
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
-      if (var1.method23449().isSource() || var3.method23449().isSource()) {
-         var4.getPendingFluidTicks().scheduleTick(var5, var1.method23449().getFluid(), this.field19080.getTickRate(var4));
+      if (var1.getFluidState().isSource() || var3.getFluidState().isSource()) {
+         var4.getPendingFluidTicks().scheduleTick(var5, var1.getFluidState().getFluid(), this.field19080.getTickRate(var4));
       }
 
       return super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
@@ -118,7 +118,7 @@ public class FlowingFluidBlock extends Block implements Class3405 {
    @Override
    public void method11506(BlockState var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       if (this.method12043(var2, var3, var1)) {
-         var2.getPendingFluidTicks().scheduleTick(var3, var1.method23449().getFluid(), this.field19080.getTickRate(var2));
+         var2.getPendingFluidTicks().scheduleTick(var3, var1.getFluidState().getFluid(), this.field19080.getTickRate(var2));
       }
    }
 

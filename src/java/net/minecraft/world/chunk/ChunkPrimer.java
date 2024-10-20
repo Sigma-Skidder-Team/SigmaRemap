@@ -292,7 +292,7 @@ public class ChunkPrimer implements IChunk {
          var6 = this.field9093.get(var1);
       }
 
-      return var6.method24579(var2 & 15, var3 & 15) - 1;
+      return var6.getHeight(var2 & 15, var3 & 15) - 1;
    }
 
    @Override

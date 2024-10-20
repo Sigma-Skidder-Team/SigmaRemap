@@ -949,7 +949,7 @@ public abstract class AbstractBlock {
           return this.getBlock().method11541(var1);
        }
 
-       public FluidState method23449() {
+       public FluidState getFluidState() {
           return this.getBlock().getFluidState(this.method23457());
        }
 

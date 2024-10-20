@@ -306,7 +306,7 @@ public class Class1058 extends Class1056 implements IAngerable {
          for (int var7 = 1; var7 < 3; var7++) {
             BlockPos var8 = var4.up(var7);
             BlockState var9 = var1.getBlockState(var8);
-            if (!Class8170.method28428(var1, var8, var9, var9.method23449(), EntityType.IRON_GOLEM)) {
+            if (!Class8170.method28428(var1, var8, var9, var9.getFluidState(), EntityType.IRON_GOLEM)) {
                return false;
             }
          }

@@ -129,7 +129,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
             int var15 = (var13 + var12 * var14) % var11;
             int var16 = var15 % (var5 * 2 + 1);
             int var17 = var15 / (var5 * 2 + 1);
-            BlockPos var18 = SpawnLocationHelper.method20940(var1, var4.getX() + var16 - var5, var4.getZ() + var17 - var5, false);
+            BlockPos var18 = SpawnLocationHelper.func_241092_a_(var1, var4.getX() + var16 - var5, var4.getZ() + var17 - var5, false);
             if (var18 != null) {
                this.moveToBlockPosAndAngles(var18, 0.0F, 0.0F);
                if (var1.hasNoCollisions(this)) {

@@ -51,7 +51,7 @@ public class Jesus extends Module {
                   if (!mc.player.isSneaking()) {
                      if (!(mc.player.fallDistance > 10.0F)) {
                         BlockState var4 = mc.world.getBlockState(var1.getBlockPos());
-                        int var5 = var4.method23449().method23477();
+                        int var5 = var4.getFluidState().method23477();
                         float var6 = 0.0F;
                         if (var5 > 3) {
                            var6++;
@@ -99,8 +99,8 @@ public class Jesus extends Module {
       if (this.isEnabled() && mc.world != null && !AutoMLG.method16421()) {
          if (this.method16951(mc.player.boundingBox) && !mc.player.isSneaking()) {
             BlockState var4 = mc.world.getBlockState(mc.player.getPosition());
-            if (var4 != null && !var4.method23449().isEmpty()) {
-               double var5 = (double)var4.method23449().method23476();
+            if (var4 != null && !var4.getFluidState().isEmpty()) {
+               double var5 = (double)var4.getFluidState().method23476();
                if (var5 > 0.4) {
                   if (this.getBooleanValueFromSettingName("Swim up")) {
                      var1.setY(0.13);
