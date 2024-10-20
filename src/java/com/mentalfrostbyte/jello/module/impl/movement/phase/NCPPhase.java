@@ -7,6 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.EventPushBlock;
 import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.MovementUtils;
@@ -14,7 +15,7 @@ import net.minecraft.network.IPacket;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
-public class NCPPhase extends Module {
+public class NCPPhase extends PremiumModule {
     private boolean field23651;
     private int field23652;
     private int field23653;

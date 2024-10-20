@@ -29,7 +29,7 @@ public class Jesus extends Module {
 
    public Jesus() {
       super(ModuleCategory.MOVEMENT, "Jesus", "Where's the scientific proof?");
-      this.registerSetting(new ModeSetting("Mode", "Mode", 0, "Basic", "Dolphin"));
+      this.registerSetting(new ModeSetting("Mode", "Mode", 0, "Basic", "Dolphin").setPremiumModes("Dolphin"));
       this.registerSetting(new BooleanSetting("Swim up", "Automatically swim up", true));
    }
 

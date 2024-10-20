@@ -7,6 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
@@ -26,7 +27,7 @@ import net.minecraft.util.math.BlockPos;
 import java.util.Iterator;
 import java.util.stream.Stream;
 
-public class AutoMLG extends Module {
+public class AutoMLG extends PremiumModule {
     private static int field23649;
     private int field23647;
     private int field23648;

@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.module.impl.misc.JelloAIBot;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
@@ -18,7 +19,7 @@ import net.minecraft.util.math.vector.Vector3d;
 
 import java.util.List;
 
-public class FightBot extends Module {
+public class FightBot extends PremiumModule {
     public Entity targetEntity;
 
     public FightBot() {

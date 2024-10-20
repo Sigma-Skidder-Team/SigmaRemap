@@ -82,4 +82,11 @@ public abstract class Setting<T> {
     public String toString() {
         return this.getCurrentValue().toString();
     }
+
+    public void clearPremiumModes() {
+    }
+
+    public boolean hasPremiumSettings() {
+        return false;
+    }
 }

@@ -6,11 +6,12 @@ import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.event.impl.EventKeyPress;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import com.mentalfrostbyte.jello.module.PremiumModule;
 import lol.MovementUtils;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import net.minecraft.entity.Entity;
 
-public class BoatFly extends Module {
+public class BoatFly extends PremiumModule {
     public boolean field23643 = false;
 
     public BoatFly() {

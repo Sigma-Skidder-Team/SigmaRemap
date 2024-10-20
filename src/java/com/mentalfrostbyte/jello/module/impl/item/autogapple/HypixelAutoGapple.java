@@ -4,6 +4,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.module.impl.item.AutoGapple;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import mapped.Effect;
@@ -12,7 +13,7 @@ import net.minecraft.network.play.client.CHeldItemChangePacket;
 import net.minecraft.network.play.client.CPlayerTryUseItemPacket;
 import net.minecraft.util.Hand;
 
-public class HypixelAutoGapple extends Module {
+public class HypixelAutoGapple extends PremiumModule {
     private int currentTickCounter;
     private int currentGappleSlot;
     private int gappleCooldown;
