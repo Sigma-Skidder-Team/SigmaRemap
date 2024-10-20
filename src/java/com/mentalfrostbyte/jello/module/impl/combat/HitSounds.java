@@ -14,14 +14,14 @@ public class HitSounds extends Module {
 
     @EventTarget
     @LowerPriority
-    private void method16897(ReceivePacketEvent var1) {
+    private void RecievePacketEvent(ReceivePacketEvent event) {
         if (this.isEnabled()) {
-            if (var1.getPacket() instanceof SEntityStatusPacket) {
-                SEntityStatusPacket var4 = (SEntityStatusPacket) var1.getPacket();
-                if (var4.getEntity(mc.world) == null
-                        || !var4.getEntity(mc.world).isAlive()
-                        || var4.getEntity(mc.world).getDistance(mc.player) > 5.0F
-                        || var4.getEntity(mc.world) == mc.player) {
+            if (event.getPacket() instanceof SEntityStatusPacket) {
+                SEntityStatusPacket sEntityStatusPacket = (SEntityStatusPacket) event.getPacket();
+                if (sEntityStatusPacket.getEntity(mc.world) == null
+                        || !sEntityStatusPacket.getEntity(mc.world).isAlive()
+                        || sEntityStatusPacket.getEntity(mc.world).getDistance(mc.player) > 5.0F
+                        || sEntityStatusPacket.getEntity(mc.world) == mc.player) {
                 }
             }
         }
