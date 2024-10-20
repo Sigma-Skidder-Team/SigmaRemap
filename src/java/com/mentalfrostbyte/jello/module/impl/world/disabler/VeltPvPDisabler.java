@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 
 public class VeltPvPDisabler extends Module {
-    private int field23801;
+    private int tickCounter;
 
     public VeltPvPDisabler() {
         super(ModuleCategory.EXPLOIT, "VeltPvP", "Disabler for VeltPvP.");
@@ -15,24 +15,24 @@ public class VeltPvPDisabler extends Module {
 
     @Override
     public void onEnable() {
-        this.field23801 = 0;
+        this.tickCounter = 0;
     }
 
     @EventTarget
-    public void method16619(EventUpdate var1) {
-        if (this.isEnabled() && mc.player != null && var1.isPre()) {
-            this.field23801++;
-            double var4 = -0.1;
-            if (this.field23801 >= 20) {
-                this.field23801 = 0;
-                var1.setY(var4);
-                var1.setGround(false);
+    public void onUpdate(EventUpdate event) {
+        if (this.isEnabled() && mc.player != null && event.isPre()) {
+            this.tickCounter++;
+            double motionY = -0.1;
+            if (this.tickCounter >= 20) {
+                this.tickCounter = 0;
+                event.setY(motionY);
+                event.setGround(false);
             }
         }
     }
 
     @EventTarget
-    public void method16620(ReceivePacketEvent var1) {
+    public void RecievePacketEvent(ReceivePacketEvent event) {
         if (!this.isEnabled()) {
         }
     }
