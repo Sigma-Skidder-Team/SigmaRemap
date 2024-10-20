@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.settings.ModeSetting;
 import net.minecraft.util.math.BlockPos;
 
 public class Fullbright extends Module {
-    public float field23850 = 1.0F;
+    public float currentGamma = 1.0F;
 
     public Fullbright() {
         super(ModuleCategory.RENDER, "Fullbright", "Makes you see in the dark");
@@ -31,22 +31,22 @@ public class Fullbright extends Module {
     }
 
     @EventTarget
-    public void method16691(TickEvent var1) {
+    public void onTick(TickEvent event) {
         if (this.isEnabled()) {
             mc.gameSettings.gamma = 999.0;
             if (mc.world != null) {
                 if (!this.getStringSettingValueByName("Type").equals("Normal")) {
-                    int var4 = 16;
-                    BlockPos var5 = new BlockPos(mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ())
-                            .up();
-                    IChunk var6 = mc.world.getChunk(var5);
-                    if (var6 != null && var5.getY() >= 0 && var5.getY() < 256 && !var6.hasLight()) {
-                        var4 -= var6.getLightValue(var5);
+                    int lightAdjustment = 16;
+                    BlockPos playerPos = new BlockPos(mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ()).up();
+                    IChunk currentChunk = mc.world.getChunk(playerPos);
+
+                    if (currentChunk != null && playerPos.getY() >= 0 && playerPos.getY() < 256 && !currentChunk.hasLight()) {
+                        lightAdjustment -= currentChunk.getLightValue(playerPos);
                     }
 
-                    this.field23850 = this.field23850 + ((float) var4 - this.field23850) * 0.2F;
-                    if (!(this.field23850 < 1.5F)) {
-                        mc.gameSettings.gamma = Math.min(Math.max(1.0F, this.field23850), 10.0F);
+                    this.currentGamma += (lightAdjustment - this.currentGamma) * 0.2F;
+                    if (this.currentGamma >= 1.5F) {
+                        mc.gameSettings.gamma = Math.min(Math.max(1.0F, this.currentGamma), 10.0F);
                     }
                 }
             }
