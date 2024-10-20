@@ -189,7 +189,7 @@ public class MacOSTouchBar {
                   try {
                      Thread.sleep(200L);
                      ((TouchBarButton)var5.getView()).setBezelColor(this.method13740(var1));
-                  } catch (InterruptedException var6) {
+                  } catch (InterruptedException ignored) {
                   }
                }).start();
             }
