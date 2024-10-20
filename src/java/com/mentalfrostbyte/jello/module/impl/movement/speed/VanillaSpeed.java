@@ -14,10 +14,10 @@ public class VanillaSpeed extends Module {
     }
 
     @EventTarget
-    public void method16056(EventMove var1) {
+    public void EventMove(EventMove event) {
         if (this.isEnabled()) {
-            double var4 = MovementUtils.getSpeed() * (double) this.getNumberValueBySettingName("Speed");
-            MovementUtils.setSpeed(var1, var4);
+            double speedInput= MovementUtils.getSpeed() * (double) this.getNumberValueBySettingName("Speed");
+            MovementUtils.setSpeed(event, speedInput);
         }
     }
 }
