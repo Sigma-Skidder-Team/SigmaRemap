@@ -12,7 +12,7 @@ public class GhostlyDisabler extends Module {
     }
 
     @EventTarget
-    public void method16909(TickEvent var1) {
+    public void TickEvent(TickEvent event) {
         if (this.isEnabled() && mc.getCurrentServerData() != null) {
             mc.getConnection().sendPacket(new CInputPacket(1.0F, 1.0F, false, false));
         }
