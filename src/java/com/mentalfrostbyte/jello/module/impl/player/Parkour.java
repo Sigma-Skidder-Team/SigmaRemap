@@ -12,7 +12,7 @@ public class Parkour extends Module {
     }
 
     @EventTarget
-    public void method16656(EventWalkingUpdate var1) {
+    public void EventWalkingUpdate(EventWalkingUpdate event) {
         if (this.isEnabled()) {
             if (mc.player.onGround) {
                 if (!MultiUtilities.method17729()) {
