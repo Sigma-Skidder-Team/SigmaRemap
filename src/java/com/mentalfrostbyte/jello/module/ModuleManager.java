@@ -42,11 +42,6 @@ public class ModuleManager {
         this.modules.add(var1);
     }
 
-    private void method14653(Class<? extends Module> var1) {
-        Client.getInstance().getEventManager().method23216(var1);
-        this.moduleMap.remove(var1);
-    }
-
     private void sortBySuffixAndRegisterEvents() {
         this.modules.sort(Comparator.comparing(Module::getSuffix));
 
@@ -56,7 +51,7 @@ public class ModuleManager {
         }
     }
 
-    public void register(ClientMode var1) {
+    public void register(ClientMode clientMode) {
         this.createModules();
         this.register(new Test());
         this.register(new BlockFly());
@@ -149,8 +144,8 @@ public class ModuleManager {
         this.register(new Unstuck());
         this.register(new AntiLevitation());
         this.register(new FakeForge());
-        if (var1 != ClientMode.JELLO) {
-            if (var1 == ClientMode.CLASSIC) {
+        if (clientMode != ClientMode.JELLO) {
+            if (clientMode == ClientMode.CLASSIC) {
                 this.register(new ActiveMods());
                 this.register(new com.mentalfrostbyte.jello.module.impl.gui.classic.TabGUI());
 
