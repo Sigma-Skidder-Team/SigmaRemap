@@ -11,11 +11,17 @@ import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.network.play.server.SConfirmTransactionPacket;
 import net.minecraft.network.play.server.SKeepAlivePacket;
 
+/*
+*  very bad code
+*
+*
+* */
+
 import java.util.ArrayList;
 
 public class ViperDisabler extends Module {
-    private int field23868;
-    private final ArrayList<Class8897> field23869 = new ArrayList<>();
+    private int tickCounter;
+    private final ArrayList<Class8897> pendingEvents = new ArrayList<>();
 
     public ViperDisabler() {
         super(ModuleCategory.EXPLOIT, "Viper", "Disabler for ViperMC");
@@ -23,43 +29,43 @@ public class ViperDisabler extends Module {
 
     @Override
     public void onEnable() {
-        this.field23868 = 0;
+        this.tickCounter = 0;
     }
 
     @EventTarget
-    public void method16715(EventUpdate var1) {
+    public void onUpdate(EventUpdate event) {
         if (this.isEnabled() && mc.player != null) {
-            this.field23868++;
-            boolean var4 = var1.getY() > mc.player.getPosY() - 1.0E-6 && var1.getY() < mc.player.getPosY() + 1.0E-6;
-            if (var4) {
-                var1.setY(mc.player.getPosY() + 0.4);
-                var1.setGround(false);
+            this.tickCounter++;
+            boolean isPlayerInAir = event.getY() > mc.player.getPosY() - 1.0E-6 && event.getY() < mc.player.getPosY() + 1.0E-6;
+            if (isPlayerInAir) {
+                event.setY(mc.player.getPosY() + 0.4);
+                event.setGround(false);
             }
 
-            if (this.field23868 > 60) {
-                var1.setY(mc.player.getPosY() + 0.4);
-                var1.setGround(false);
+            if (this.tickCounter > 60) {
+                event.setY(mc.player.getPosY() + 0.4);
+                event.setGround(false);
             } else {
-                for (int var5 = 0; var5 < 10; var5++) {
-                    boolean var6 = var5 > 2 && var5 < 8;
-                    double var7 = !var6 ? -0.2 : 0.2;
-                    CPlayerPacket.PositionPacket var9 = new CPlayerPacket.PositionPacket(
-                            mc.player.getPosX(), mc.player.getPosY() + var7, mc.player.getPosZ(), true
+                for (int i = 0; i < 10; i++) {
+                    boolean isMiddleIteration = i > 2 && i < 8;
+                    double verticalAdjustment = isMiddleIteration ? 0.2 : -0.2;
+                    CPlayerPacket.PositionPacket positionPacket = new CPlayerPacket.PositionPacket(
+                            mc.player.getPosX(), mc.player.getPosY() + verticalAdjustment, mc.player.getPosZ(), true
                     );
-                    mc.getConnection().sendPacket(var9);
+                    mc.getConnection().sendPacket(positionPacket);
                 }
 
                 mc.player.field6120 = 0.0;
                 if (mc.player.ticksExisted <= 1) {
-                    this.field23869.clear();
+                    this.pendingEvents.clear();
                 }
 
-                if (!this.field23869.isEmpty()) {
-                    for (int var10 = 0; var10 < this.field23869.size(); var10++) {
-                        Class8897 var11 = this.field23869.get(var10);
-                        if (var11.method32423()) {
-                            mc.getConnection().sendPacket(var11.method32424());
-                            this.field23869.remove(var10);
+                if (!this.pendingEvents.isEmpty()) {
+                    for (int index = 0; index < this.pendingEvents.size(); index++) {
+                        Class8897 event1 = this.pendingEvents.get(index);
+                        if (event1.method32423()) {
+                            mc.getConnection().sendPacket(event1.method32424());
+                            this.pendingEvents.remove(index);
                         }
                     }
                 }
@@ -68,17 +74,15 @@ public class ViperDisabler extends Module {
     }
 
     @EventTarget
-    public void method16716(ReceivePacketEvent var1) {
+    public void onReceivePacket(ReceivePacketEvent event) {
         if (this.isEnabled()) {
-            IPacket var4 = var1.getPacket();
-            if (var4 instanceof SKeepAlivePacket) {
-                SKeepAlivePacket var5 = (SKeepAlivePacket) var4;
-                var1.setCancelled(true);
+            IPacket incomingPacket = event.getPacket();
+            if (incomingPacket instanceof SKeepAlivePacket) {
+                event.setCancelled(true);
             }
 
-            if (var4 instanceof SConfirmTransactionPacket) {
-                SConfirmTransactionPacket var6 = (SConfirmTransactionPacket) var4;
-                var1.setCancelled(true);
+            if (incomingPacket instanceof SConfirmTransactionPacket) {
+                event.setCancelled(true);
             }
         }
     }
