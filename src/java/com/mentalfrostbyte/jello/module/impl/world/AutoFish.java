@@ -20,16 +20,16 @@ public class AutoFish extends Module {
     }
 
     @EventTarget
-    public void method16364(ReceivePacketEvent var1) {
+    public void RecievePacketEvent(ReceivePacketEvent event) {
         if (this.isEnabled()) {
-            if (var1.getPacket() instanceof SPlaySoundEffectPacket || var1.getPacket() instanceof SPlaySoundPacket) {
+            if (event.getPacket() instanceof SPlaySoundEffectPacket || event.getPacket() instanceof SPlaySoundPacket) {
                 if (mc.player.getHeldItemMainhand() != null) {
                     if (mc.player.getHeldItemMainhand().getItem() instanceof Class3259) {
-                        if (!(var1.getPacket() instanceof SPlaySoundEffectPacket)) {
-                            if (var1.getPacket() instanceof SPlaySoundPacket && !((SPlaySoundPacket) var1.getPacket()).field24315.equals("entity.bobber.splash")) {
+                        if (!(event.getPacket() instanceof SPlaySoundEffectPacket)) {
+                            if (event.getPacket() instanceof SPlaySoundPacket && !((SPlaySoundPacket) event.getPacket()).field24315.equals("entity.bobber.splash")) {
                                 return;
                             }
-                        } else if (!((SPlaySoundEffectPacket) var1.getPacket()).method17549().equals(SoundEvents.field26585)) {
+                        } else if (!((SPlaySoundEffectPacket) event.getPacket()).method17549().equals(SoundEvents.field26585)) {
                             return;
                         }
 
