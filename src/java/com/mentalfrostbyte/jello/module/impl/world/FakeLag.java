@@ -43,7 +43,7 @@ public class FakeLag extends Module {
     }
 
     @EventTarget
-    private void onWorldLoad(WorldLoadEvent var1) {
+    private void onWorldLoad(WorldLoadEvent event) {
         if (this.isEnabled()) {
             this.packets.clear();
             this.isLagging = false;
