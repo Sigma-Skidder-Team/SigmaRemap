@@ -1,44 +1,60 @@
 package com.mentalfrostbyte.jello.module.impl.render;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.EventRenderEntity;
-import com.mentalfrostbyte.jello.event.impl.TextReplaceEvent;
-import com.mentalfrostbyte.jello.event.impl.EventRenderNameTag;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.settings.BooleanSetting;
-import com.mentalfrostbyte.jello.settings.InputSetting;
+import net.minecraft.world.chunk.IChunk;
+import com.mentalfrostbyte.jello.settings.ModeSetting;
+import net.minecraft.util.math.BlockPos;
 
-public class Streaming extends Module {
-    public Streaming() {
-        super(ModuleCategory.RENDER, "Streaming", "Useful module when recording or streaming");
-        this.registerSetting(new BooleanSetting("Hide skins", "Spoof all players skin", true));
-        this.registerSetting(new BooleanSetting("Hide server name", "Spoof server name", false));
-        this.registerSetting(new InputSetting("Server name", "The server name that you need to hide", "servernamehere"));
-        this.registerSetting(new BooleanSetting("Hide date", "Hide date on scoreboard", false));
+public class Fullbright extends Module {
+    public float currentGamma = 1.0F;
+
+    public Fullbright() {
+        super(ModuleCategory.RENDER, "Fullbright", "Makes you see in the dark");
+        this.registerSetting(new ModeSetting("Type", "Fullbright type", 0, "Normal"));
     }
 
-    @EventTarget
-    public void TextReplaceEvent(TextReplaceEvent event) {
-        if (this.isEnabled()) {
-            if (this.getBooleanValueFromSettingName("Hide server name") && this.getStringSettingValueByName("Server name").length() > 1) {
-                event.setText(event.setText().replaceAll(this.getStringSettingValueByName("Server name"), "sigmaclient"));
-                event.setText(event.setText().replaceAll(this.getStringSettingValueByName("Server name").toLowerCase(), "sigmaclient"));
-                event.setText(event.setText().replaceAll(this.getStringSettingValueByName("Server name").toUpperCase(), "sigmaclient"));
-            }
+    @Override
+    public void initialize() {
+        if (!this.isEnabled()) {
+            mc.gameSettings.gamma = 1.0;
+        }
+    }
+
+    @Override
+    public void onEnable() {
+        if (this.getStringSettingValueByName("Type").equals("Normal")) {
+            mc.gameSettings.gamma = 999.0;
         }
     }
 
     @EventTarget
-    public void EventRenderNameTag(EventRenderNameTag event) {
-    }
-
-    @EventTarget
-    public void EventRenderEntity(EventRenderEntity event) {
+    public void onTick(TickEvent event) {
         if (this.isEnabled()) {
-            if (this.getBooleanValueFromSettingName("Hide skins")) {
-                event.method13955(false);
+            mc.gameSettings.gamma = 999.0;
+            if (mc.world != null) {
+                if (!this.getStringSettingValueByName("Type").equals("Normal")) {
+                    int lightAdjustment = 16;
+                    BlockPos playerPos = new BlockPos(mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ()).up();
+                    IChunk currentChunk = mc.world.getChunk(playerPos);
+
+                    if (currentChunk != null && playerPos.getY() >= 0 && playerPos.getY() < 256 && !currentChunk.hasLight()) {
+                        lightAdjustment -= currentChunk.getLightValue(playerPos);
+                    }
+
+                    this.currentGamma += (lightAdjustment - this.currentGamma) * 0.2F;
+                    if (this.currentGamma >= 1.5F) {
+                        mc.gameSettings.gamma = Math.min(Math.max(1.0F, this.currentGamma), 10.0F);
+                    }
+                }
             }
         }
+    }
+
+    @Override
+    public void onDisable() {
+        mc.gameSettings.gamma = 1.0;
     }
 }
