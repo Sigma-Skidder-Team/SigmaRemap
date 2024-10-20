@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import lol.MovementUtils;
 
 public class ViperMCSpeed extends Module {
-    private int field24009;
+    private int tickCounter;
 
     public ViperMCSpeed() {
         super(ModuleCategory.MOVEMENT, "ViperMC", "ViperMC speed");
@@ -15,7 +15,7 @@ public class ViperMCSpeed extends Module {
 
     @Override
     public void onEnable() {
-        this.field24009 = 1;
+        this.tickCounter = 1;
     }
 
     @Override
@@ -25,20 +25,20 @@ public class ViperMCSpeed extends Module {
     }
 
     @EventTarget
-    public void method16942(EventMove var1) {
+    public void EventMove(EventMove event) {
         if (this.isEnabled()) {
-            this.field24009++;
-            float var4 = 0.28F + (float) MovementUtils.method37078() * 0.05F;
-            if (this.field24009 >= 4) {
-                this.field24009 = 0;
-                var4 = 1.15F + (float) MovementUtils.method37078() * 0.04F;
+            this.tickCounter++;
+            float speed = 0.28F + (float) MovementUtils.method37078() * 0.05F;
+            if (this.tickCounter >= 4) {
+                this.tickCounter = 0;
+                speed = 1.15F + (float) MovementUtils.method37078() * 0.04F;
             }
 
             if (mc.gameSettings.keyBindBack.pressed) {
-                var4 /= 1.3F;
+                speed /= 1.3F;
             }
 
-            MovementUtils.setSpeed(var1, var4);
+            MovementUtils.setSpeed(event, speed);
         }
     }
 }
