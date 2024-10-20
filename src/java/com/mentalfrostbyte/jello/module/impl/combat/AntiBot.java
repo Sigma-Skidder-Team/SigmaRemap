@@ -33,8 +33,8 @@ public class AntiBot extends Module {
 
     private void setup() {
         Client.getInstance().getCombatManager().bots.clear();
-        String var3 = this.getStringSettingValueByName("Mode");
-        switch (var3) {
+        String mode = this.getStringSettingValueByName("Mode");
+        switch (mode) {
             case "Advanced":
                 Client.getInstance().getCombatManager().antiBot = new MovementAntiBot();
                 break;
