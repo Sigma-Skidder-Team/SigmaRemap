@@ -217,12 +217,19 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    }
 
    public void func_240800_l__() {
+      System.out.println("x");
       this.setResourcePackFromWorld();
+      System.out.println("x1");
       this.field_240768_i_.addServerBranding(this.getServerModName(), this.func_230045_q_().isPresent());
+      System.out.println("x2");
       IChunkStatusListener var3 = this.field1218.create(11);
+      System.out.println("x3");
       this.func_240787_a_(var3);
+      System.out.println("x4");
       this.func_230543_p_();
+      System.out.println("x5");
       this.loadInitialChunks(var3);
+      System.out.println("x6");
    }
 
    public void func_230543_p_() {
