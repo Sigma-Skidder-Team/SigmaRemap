@@ -20,7 +20,6 @@ import java.util.List;
 
 public class FightBot extends Module {
     public Entity targetEntity;
-    public Vector3d targetPosition;
 
     public FightBot() {
         super(ModuleCategory.WORLD, "FightBot", "Jello AI Fight Bot");
@@ -35,8 +34,8 @@ public class FightBot extends Module {
     }
 
     @EventTarget
-    public void onUpdate(EventUpdate var1) {
-        if (this.isEnabled() && !var1.isPre()) {
+    public void onUpdate(EventUpdate event) {
+        if (this.isEnabled() && !event.isPre()) {
             this.updateTarget();
             if (this.targetEntity != null) {
                 Rotations rots = RotationHelper.getRotations(this.targetEntity, false);
