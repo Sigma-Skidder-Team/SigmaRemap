@@ -75,7 +75,7 @@ public class Class9398 {
 
    public static Dynamic<?> method35691(String var0) {
       try {
-         return new Dynamic(NBTDynamicOps.INSTANCE, JSONToNBT.getTagFromJSON(var0.replace('\'', '"')));
+         return new Dynamic(NBTDynamicOps.INSTANCE, JSONToNBT.getTagFromJson(var0.replace('\'', '"')));
       } catch (Exception var4) {
          field43611.error("Parsing {}", var0, var4);
          throw new RuntimeException(var4);

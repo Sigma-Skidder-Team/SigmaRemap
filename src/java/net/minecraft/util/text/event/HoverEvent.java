@@ -239,7 +239,7 @@ public class HoverEvent
       {
          try
          {
-            CompoundNBT compoundnbt = JSONToNBT.getTagFromJSON(component.getString());
+            CompoundNBT compoundnbt = JSONToNBT.getTagFromJson(component.getString());
             ITextComponent itextcomponent = ITextComponent.Serializer.getComponentFromJson(compoundnbt.getString("name"));
             EntityType<?> entitytype = Registry.ENTITY_TYPE.getOrDefault(new ResourceLocation(compoundnbt.getString("type")));
             UUID uuid = UUID.fromString(compoundnbt.getString("id"));
@@ -386,7 +386,7 @@ public class HoverEvent
 
                try
                {
-                  CompoundNBT compoundnbt = JSONToNBT.getTagFromJSON(s);
+                  CompoundNBT compoundnbt = JSONToNBT.getTagFromJson(s);
                   return new HoverEvent.ItemHover(item, i, compoundnbt);
                }
                catch (CommandSyntaxException commandsyntaxexception)
@@ -404,7 +404,7 @@ public class HoverEvent
       {
          try
          {
-            CompoundNBT compoundnbt = JSONToNBT.getTagFromJSON(component.getString());
+            CompoundNBT compoundnbt = JSONToNBT.getTagFromJson(component.getString());
             return new HoverEvent.ItemHover(ItemStack.read(compoundnbt));
          }
          catch (CommandSyntaxException commandsyntaxexception)

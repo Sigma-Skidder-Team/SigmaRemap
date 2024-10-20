@@ -114,7 +114,7 @@ public class Class9272 {
             ItemStack var4 = new ItemStack(var3);
             if (var0.has("nbt")) {
                try {
-                  CompoundNBT var5 = JSONToNBT.getTagFromJSON(JSONUtils.method32762(var0.get("nbt"), "nbt"));
+                  CompoundNBT var5 = JSONToNBT.getTagFromJson(JSONUtils.method32762(var0.get("nbt"), "nbt"));
                   var4.setTag(var5);
                } catch (CommandSyntaxException var6) {
                   throw new JsonSyntaxException("Invalid nbt tag: " + var6.getMessage());

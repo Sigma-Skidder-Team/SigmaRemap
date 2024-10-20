@@ -79,7 +79,7 @@ public class Class4444 implements Class4442 {
    private Class9822 method14024(Path var1, String var2) {
       try (BufferedReader var5 = Files.newBufferedReader(var1)) {
          String var7 = IOUtils.toString(var5);
-         CompoundNBT var8 = this.method14022(var2, JSONToNBT.getTagFromJSON(var7));
+         CompoundNBT var8 = this.method14022(var2, JSONToNBT.getTagFromJson(var7));
          ByteArrayOutputStream var9 = new ByteArrayOutputStream();
          CompressedStreamTools.writeCompressed(var8, var9);
          byte[] var10 = var9.toByteArray();

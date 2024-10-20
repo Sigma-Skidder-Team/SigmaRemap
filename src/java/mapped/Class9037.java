@@ -463,7 +463,7 @@ public class Class9037 {
          Files.createDirectories(var6.getParent());
 
          try (OutputStream var9 = Files.newOutputStream(var6)) {
-            CompressedStreamTools.writeCompressed(JSONToNBT.getTagFromJSON(var8), var9);
+            CompressedStreamTools.writeCompressed(JSONToNBT.getTagFromJson(var8), var9);
          }
 
          method33503(var0, "Imported to " + var6.toAbsolutePath());
