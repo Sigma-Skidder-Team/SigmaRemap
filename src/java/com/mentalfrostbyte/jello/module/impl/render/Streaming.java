@@ -19,25 +19,25 @@ public class Streaming extends Module {
     }
 
     @EventTarget
-    public void method16849(TextReplaceEvent var1) {
+    public void TextReplaceEvent(TextReplaceEvent event) {
         if (this.isEnabled()) {
             if (this.getBooleanValueFromSettingName("Hide server name") && this.getStringSettingValueByName("Server name").length() > 1) {
-                var1.setText(var1.setText().replaceAll(this.getStringSettingValueByName("Server name"), "sigmaclient"));
-                var1.setText(var1.setText().replaceAll(this.getStringSettingValueByName("Server name").toLowerCase(), "sigmaclient"));
-                var1.setText(var1.setText().replaceAll(this.getStringSettingValueByName("Server name").toUpperCase(), "sigmaclient"));
+                event.setText(event.setText().replaceAll(this.getStringSettingValueByName("Server name"), "sigmaclient"));
+                event.setText(event.setText().replaceAll(this.getStringSettingValueByName("Server name").toLowerCase(), "sigmaclient"));
+                event.setText(event.setText().replaceAll(this.getStringSettingValueByName("Server name").toUpperCase(), "sigmaclient"));
             }
         }
     }
 
     @EventTarget
-    public void method16850(EventRenderNameTag var1) {
+    public void EventRenderNameTag(EventRenderNameTag event) {
     }
 
     @EventTarget
-    public void method16851(EventRenderEntity var1) {
+    public void EventRenderEntity(EventRenderEntity event) {
         if (this.isEnabled()) {
             if (this.getBooleanValueFromSettingName("Hide skins")) {
-                var1.method13955(false);
+                event.method13955(false);
             }
         }
     }
