@@ -14,7 +14,7 @@ public class XRay extends Module {
 
     public XRay() {
         super(ModuleCategory.RENDER, "XRay", "Shows ores");
-        field23483 = this;
+        field23483= this;
     }
 
     @Override
@@ -32,13 +32,13 @@ public class XRay extends Module {
     }
 
     @EventTarget
-    public void method16141(EventRenderBlocks var1) {
+    public void EventRenderBlocks(EventRenderBlocks event) {
         if (this.isEnabled()) {
-            AbstractBlock.AbstractBlockState var4 = var1.method13970();
-            if (!(var4.getBlock() instanceof Class3420) && var4.getBlock() != Blocks.field37121) {
-                var1.setCancelled(true);
+            AbstractBlock.AbstractBlockState getBlock = event.method13970();
+            if (!(getBlock.getBlock() instanceof Class3420) && getBlock.getBlock() != Blocks.field37121) {
+                event.setCancelled(true);
             } else {
-                var1.method13972(true);
+                event.method13972(true);
             }
         }
     }
