@@ -15,17 +15,17 @@ public class NullDisabler extends Module {
     }
 
     @EventTarget
-    public void method16255(ReceivePacketEvent var1) {
+    public void RecievePacketEvent(ReceivePacketEvent event) {
         if (this.isEnabled() && mc.getCurrentServerData() != null) {
-            if (!(var1.getPacket() instanceof SKeepAlivePacket)) {
-                if (var1.getPacket() instanceof SConfirmTransactionPacket) {
-                    SConfirmTransactionPacket var4 = (SConfirmTransactionPacket) var1.getPacket();
-                    if (var4.method17422() < 0 || !this.getBooleanValueFromSettingName("Inv Bypass")) {
-                        var1.setCancelled(true);
+            if (!(event.getPacket() instanceof SKeepAlivePacket)) {
+                if (event.getPacket() instanceof SConfirmTransactionPacket) {
+                    SConfirmTransactionPacket confirmTransactionPacket = (SConfirmTransactionPacket) event.getPacket();
+                    if (confirmTransactionPacket.method17422() < 0 || !this.getBooleanValueFromSettingName("Inv Bypass")) {
+                        event.setCancelled(true);
                     }
                 }
             } else {
-                var1.setCancelled(true);
+                event.setCancelled(true);
             }
         }
     }
