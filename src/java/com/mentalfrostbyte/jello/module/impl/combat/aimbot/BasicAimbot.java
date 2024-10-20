@@ -16,13 +16,13 @@ public class BasicAimbot extends Module {
    }
 
    @EventTarget
-   private void method16962(Render3DEvent var1) {
+   private void Render3DEvent(Render3DEvent event) {
       if (this.isEnabled()) {
-         Entity var4 = ((Aimbot)this.access()).getTarget(this.getNumberValueBySettingName("Range"));
-         if (var4 != null) {
-            float[] var5 = RotationHelper.doBasicRotation(var4);
-            mc.player.rotationYaw = var5[0];
-            mc.player.rotationPitch = var5[1];
+         Entity range = ((Aimbot)this.access()).getTarget(this.getNumberValueBySettingName("Range"));
+         if (range != null) {
+            float[] rotation = RotationHelper.doBasicRotation(range);
+            mc.player.rotationYaw = rotation[0];
+            mc.player.rotationPitch = rotation[1];
          }
       }
    }
