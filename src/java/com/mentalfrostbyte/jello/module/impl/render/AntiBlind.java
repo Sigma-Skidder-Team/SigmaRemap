@@ -12,7 +12,7 @@ public class AntiBlind extends Module {
     }
 
     @EventTarget
-    private void method16067(Render2DEvent var1) {
+    private void Render2DEvent(Render2DEvent event) {
         if (this.isEnabled()) {
             mc.player.removeEffects(Effects.NAUSEA);
             mc.player.removeEffects(Effects.BLINDNESS);
