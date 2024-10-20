@@ -10,7 +10,7 @@ import com.mentalfrostbyte.jello.settings.NumberSetting;
 import net.minecraft.network.play.client.CPlayerPacket;
 
 public class TPDisabler extends Module {
-    private int field23517;
+    private int tickCounter;
 
     public TPDisabler() {
         super(ModuleCategory.EXPLOIT, "TP", "Disabler working on some anticheats.");
@@ -23,43 +23,43 @@ public class TPDisabler extends Module {
 
     @Override
     public void onEnable() {
-        this.field23517 = 0;
+        this.tickCounter = 0;
     }
 
     @EventTarget
-    public void method16197(EventUpdate var1) {
-        if (this.isEnabled() && mc.player != null && var1.isPre() && mc.getCurrentServerData() != null) {
-            this.field23517++;
-            double var4 = -4.503599627370497E15;
-            String var6 = this.getStringSettingValueByName("Mode");
-            switch (var6) {
+    public void onUpdate(EventUpdate event) {
+        if (this.isEnabled() && mc.player != null && event.isPre() && mc.getCurrentServerData() != null) {
+            this.tickCounter++;
+            double PosY = -4.503599627370497E15;
+            String mode = this.getStringSettingValueByName("Mode");
+            switch (mode) {
                 case "Basic1":
-                    var4 = mc.player.getPosY() - 20.0;
+                    PosY = mc.player.getPosY() - 20.0;
                     break;
                 case "Basic2":
-                    var4 = mc.player.getPosY() - 1000.0 + Math.random() * 1000.0;
+                    PosY = mc.player.getPosY() - 1000.0 + Math.random() * 1000.0;
                     break;
                 case "MinInfinity":
-                    var4 = Double.NEGATIVE_INFINITY;
+                    PosY = Double.NEGATIVE_INFINITY;
                     break;
                 case "MaxInfinity":
-                    var4 = Double.POSITIVE_INFINITY;
+                    PosY = Double.POSITIVE_INFINITY;
                     break;
                 case "MinValue":
-                    var4 = Double.MIN_VALUE;
+                    PosY = Double.MIN_VALUE;
                     break;
                 case "MaxValue":
-                    var4 = Double.MAX_VALUE;
+                    PosY = Double.MAX_VALUE;
             }
 
-            if ((float) this.field23517 >= this.getNumberValueBySettingName("Delay")) {
-                this.field23517 = 0;
-                boolean var8 = this.getBooleanValueFromSettingName("OnGround");
+            if ((float) this.tickCounter >= this.getNumberValueBySettingName("Delay")) {
+                this.tickCounter = 0;
+                boolean onGround = this.getBooleanValueFromSettingName("OnGround");
                 if (this.getBooleanValueFromSettingName("More Packets")) {
-                    mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(mc.player.getPosX(), var4, mc.player.getPosX(), var8));
+                    mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(mc.player.getPosX(), PosY, mc.player.getPosX(), onGround));
                 } else {
-                    var1.setY(var4);
-                    var1.setGround(var8);
+                    event.setY(PosY);
+                    event.setGround(onGround);
                 }
             }
         }
