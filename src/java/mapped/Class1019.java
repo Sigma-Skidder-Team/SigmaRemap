@@ -4,6 +4,8 @@ import com.google.common.collect.Maps;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.item.crafting.ICraftingRecipe;
+import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.util.Util;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
@@ -332,7 +334,7 @@ public class Class1019 extends Class1018 implements Class1020 {
       Class926 var7 = method4523(var5, var6);
       return this.world
          .getRecipeManager()
-         .<Class926, Class4842>method1030(Class7207.field30935, var7, this.world)
+         .<Class926, ICraftingRecipe>method1030(IRecipeType.CRAFTING, var7, this.world)
          .<ItemStack>map(var1x -> var1x.method14962(var7))
          .<Item>map(ItemStack::getItem)
          .filter(Class3321.class::isInstance)

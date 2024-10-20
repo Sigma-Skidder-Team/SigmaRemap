@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.inventory.IInventory;
+
 import java.util.Optional;
 
 public final class Class6140 implements Class6139<ChestTileEntity, Optional<IInventory>> {

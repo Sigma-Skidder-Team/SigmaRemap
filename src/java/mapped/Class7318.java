@@ -9,6 +9,7 @@ import java.util.Random;
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
 
+import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;

@@ -36,7 +36,7 @@ public class Class2835 implements Consumer<Consumer<Advancement>> {
       Class123.method357(
             Class2063.field13447,
             Class7552.method24700()
-               .method24710(Class8330.method29204().method29207(Class9735.method38146().method38147(Items.field37862).method38151()).method29209())
+               .method24710(Class8330.method29204().method29207(Class9735.method38146().method38147(Items.GOLDEN_LEGGINGS).method38151()).method29209())
          )
          .method24518()
          .method24517(),
@@ -311,7 +311,7 @@ public class Class2835 implements Consumer<Consumer<Advancement>> {
       Class7999.method27304()
          .method27305(var13)
          .method27308(
-            Items.field37865,
+            Items.NETHERITE_CHESTPLATE,
             new TranslationTextComponent("advancements.nether.netherite_armor.title"),
             new TranslationTextComponent("advancements.nether.netherite_armor.description"),
             (ResourceLocation)null,
@@ -321,7 +321,7 @@ public class Class2835 implements Consumer<Consumer<Advancement>> {
             false
          )
          .method27310(Class9182.method34343(100))
-         .method27312("netherite_armor", Class4491.method14164(Items.field37864, Items.field37865, Items.field37866, Items.field37867))
+         .method27312("netherite_armor", Class4491.method14164(Items.field37864, Items.NETHERITE_CHESTPLATE, Items.field37866, Items.field37867))
          .method27317(var1, "nether/netherite_armor");
       Class7999.method27304()
          .method27305(var13)
@@ -339,7 +339,7 @@ public class Class2835 implements Consumer<Consumer<Advancement>> {
             "use_lodestone",
             Class4458.method14095(
                Class8912.method32576().method32578(Class8831.method31929().method31930(Blocks.field37129).method31933()),
-               Class9735.method38146().method38147(Items.field37905)
+               Class9735.method38146().method38147(Items.COMPASS)
             )
          )
          .method27317(var1, "nether/use_lodestone");

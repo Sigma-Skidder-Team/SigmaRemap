@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 
 public class Class5855 extends Slot {

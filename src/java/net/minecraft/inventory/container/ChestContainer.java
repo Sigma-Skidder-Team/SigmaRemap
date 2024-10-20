@@ -3,6 +3,7 @@ package net.minecraft.inventory.container;
 import mapped.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 
 public class ChestContainer extends Container {

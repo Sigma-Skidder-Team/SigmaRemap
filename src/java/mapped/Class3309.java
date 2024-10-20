@@ -2,6 +2,7 @@ package mapped;
 
 import java.util.List;
 
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.registry.Registry;

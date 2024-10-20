@@ -4,6 +4,7 @@ import net.minecraft.block.IWaterLoggable;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.item.crafting.CampfireCookingRecipe;
 import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.DirectionProperty;
@@ -68,7 +69,7 @@ public class Class3244 extends Class3241 implements IWaterLoggable {
          ItemStack var11 = var4.getHeldItem(var5);
          Optional var12 = var10.method3797(var11);
          if (var12.isPresent()) {
-            if (!var2.isRemote && var10.method3798(!var4.abilities.isCreativeMode ? var11 : var11.copy(), ((Class4850)var12.get()).method14977())) {
+            if (!var2.isRemote && var10.method3798(!var4.abilities.isCreativeMode ? var11 : var11.copy(), ((CampfireCookingRecipe)var12.get()).method14977())) {
                var4.method2911(Stats.field40168);
                return ActionResultType.SUCCESS;
             }

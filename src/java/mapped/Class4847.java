@@ -1,13 +1,15 @@
 package mapped;
 
+import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
 public abstract class Class4847 implements IRecipe<IInventory> {
-   public final Class7207<?> field22630;
+   public final IRecipeType<?> field22630;
    public final ResourceLocation field22631;
    public final String field22632;
    public final Class120 field22633;
@@ -15,7 +17,7 @@ public abstract class Class4847 implements IRecipe<IInventory> {
    public final float field22635;
    public final int field22636;
 
-   public Class4847(Class7207<?> var1, ResourceLocation var2, String var3, Class120 var4, ItemStack var5, float var6, int var7) {
+   public Class4847(IRecipeType<?> var1, ResourceLocation var2, String var3, Class120 var4, ItemStack var5, float var6, int var7) {
       this.field22630 = var1;
       this.field22631 = var2;
       this.field22632 = var3;
@@ -26,7 +28,7 @@ public abstract class Class4847 implements IRecipe<IInventory> {
    }
 
    @Override
-   public boolean method14963(IInventory var1, World var2) {
+   public boolean matches(IInventory var1, World var2) {
       return this.field22633.test(var1.getStackInSlot(0));
    }
 
@@ -71,7 +73,7 @@ public abstract class Class4847 implements IRecipe<IInventory> {
    }
 
    @Override
-   public Class7207<?> method14967() {
+   public IRecipeType<?> getType() {
       return this.field22630;
    }
 }

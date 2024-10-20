@@ -71,7 +71,7 @@ public class Class3271 extends Item implements IVanishable {
          ItemStack var7 = var1.method18357();
          boolean var8 = !var6.abilities.isCreativeMode && var7.getCount() == 1;
          if (!var8) {
-            ItemStack var9 = new ItemStack(Items.field37905, 1);
+            ItemStack var9 = new ItemStack(Items.COMPASS, 1);
             CompoundNBT var10 = !var7.method32141() ? new CompoundNBT() : var7.getTag().copy();
             var9.setTag(var10);
             if (!var6.abilities.isCreativeMode) {

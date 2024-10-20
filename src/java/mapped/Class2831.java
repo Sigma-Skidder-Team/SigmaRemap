@@ -146,7 +146,7 @@ public class Class2831 implements Consumer<Consumer<Advancement>> {
       Advancement var6 = Class7999.method27304()
          .method27305(var4)
          .method27308(
-            Items.field38049,
+            Items.EMERALD,
             new TranslationTextComponent("advancements.adventure.trade.title"),
             new TranslationTextComponent("advancements.adventure.trade.description"),
             (ResourceLocation)null,

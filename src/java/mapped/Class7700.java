@@ -76,7 +76,7 @@ public final class Class7700 {
    public static final BlockState field33054 = Blocks.field36420.getDefaultState();
    public static final BlockState field33055 = Blocks.field36419.getDefaultState();
    public static final BlockState field33056 = Blocks.field36418.getDefaultState();
-   public static final BlockState field33057 = Blocks.field36567.getDefaultState();
+   public static final BlockState field33057 = Blocks.REDSTONE_ORE.getDefaultState();
    public static final BlockState field33058 = Blocks.field36536.getDefaultState();
    public static final BlockState field33059 = Blocks.field36455.getDefaultState();
    public static final BlockState field33060 = Blocks.STONE.getDefaultState();

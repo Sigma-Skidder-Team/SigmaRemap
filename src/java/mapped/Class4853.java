@@ -31,8 +31,8 @@ public class Class4853 extends Class4852 {
    }
 
    @Override
-   public boolean method14963(Class926 var1, World var2) {
-      if (!super.method14963(var1, var2)) {
+   public boolean matches(Class926 var1, World var2) {
+      if (!super.matches(var1, var2)) {
          return false;
       } else {
          ItemStack var5 = ItemStack.EMPTY;

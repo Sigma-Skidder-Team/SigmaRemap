@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.inventory.IInventory;
 import net.minecraft.util.Util;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.attributes.AttributeModifier;

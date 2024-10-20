@@ -115,7 +115,7 @@ public class Class1030 extends Class1025 {
    @Override
    public void method4270(Class9755 var1) {
       if (this.method4551() == null) {
-         this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.field37823));
+         this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.IRON_AXE));
       }
    }
 
@@ -155,7 +155,7 @@ public class Class1030 extends Class1025 {
 
    @Override
    public void method4545(int var1, boolean var2) {
-      ItemStack var5 = new ItemStack(Items.field37823);
+      ItemStack var5 = new ItemStack(Items.IRON_AXE);
       Raid var6 = this.method4551();
       int var7 = 1;
       if (var1 > var6.method25435(Difficulty.NORMAL)) {

@@ -16,6 +16,7 @@ import net.minecraft.fluid.Fluids;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
+import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SharedConstants;
@@ -64,7 +65,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final RegistryKey<Registry<Class9277<?>>> field16049 = createKey("rule_test");
    public static final RegistryKey<Registry<Class8989<?>>> field16050 = createKey("pos_rule_test");
    public static final RegistryKey<Registry<ContainerType<?>>> field16051 = createKey("menu");
-   public static final RegistryKey<Registry<Class7207<?>>> field16052 = createKey("recipe_type");
+   public static final RegistryKey<Registry<IRecipeType<?>>> field16052 = createKey("recipe_type");
    public static final RegistryKey<Registry<Class6504<?>>> field16053 = createKey("recipe_serializer");
    public static final RegistryKey<Registry<Attribute>> field16054 = createKey("attribute");
    public static final RegistryKey<Registry<Class49<?>>> field16055 = createKey("stat_type");
@@ -97,7 +98,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final Registry<Class9277<?>> field16082 = method9175(field16049, () -> Class9277.field42660);
    public static final Registry<Class8989<?>> field16083 = method9175(field16050, () -> Class8989.field41001);
    public static final Registry<ContainerType<?>> MENU = method9175(field16051, () -> ContainerType.ANVIL);
-   public static final Registry<Class7207<?>> field16085 = method9175(field16052, () -> Class7207.field30935);
+   public static final Registry<IRecipeType<?>> RECIPE_TYPE = method9175(field16052, () -> IRecipeType.CRAFTING);
    public static final Registry<Class6504<?>> field16086 = method9175(field16053, () -> Class6504.field28471);
    public static final Registry<Attribute> ATTRIBUTE = method9175(field16054, () -> Attributes.LUCK);
    public static final Registry<Class49<?>> field16088 = method9175(field16055, () -> Stats.field40098);

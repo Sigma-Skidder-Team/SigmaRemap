@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.inventory.IInventory;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.DirectionProperty;

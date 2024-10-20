@@ -4,10 +4,13 @@ import com.google.common.collect.Lists;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.StonecuttingRecipe;
+import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.util.IntReferenceHolder;
 import net.minecraft.world.World;
 
@@ -18,7 +21,7 @@ public class Class5811 extends Container {
    private final IWorldPosCallable field25456;
    private final IntReferenceHolder field25457 = IntReferenceHolder.method15238();
    private final World field25458;
-   private List<Class4845> field25459 = Lists.newArrayList();
+   private List<StonecuttingRecipe> field25459 = Lists.newArrayList();
    private ItemStack field25460 = ItemStack.EMPTY;
    private long field25461;
    public final Slot field25462;
@@ -56,7 +59,7 @@ public class Class5811 extends Container {
       return this.field25457.get();
    }
 
-   public List<Class4845> method18100() {
+   public List<StonecuttingRecipe> method18100() {
       return this.field25459;
    }
 
@@ -101,13 +104,13 @@ public class Class5811 extends Container {
       this.field25457.method15235(-1);
       this.field25463.putStack(ItemStack.EMPTY);
       if (!var2.isEmpty()) {
-         this.field25459 = this.field25458.getRecipeManager().<IInventory, Class4845>method1032(Class7207.field30940, var1, this.field25458);
+         this.field25459 = this.field25458.getRecipeManager().<IInventory, StonecuttingRecipe>method1032(IRecipeType.STONECUTTING, var1, this.field25458);
       }
    }
 
    private void method18108() {
       if (!this.field25459.isEmpty() && this.method18105(this.field25457.get())) {
-         Class4845 var3 = this.field25459.get(this.field25457.get());
+         StonecuttingRecipe var3 = this.field25459.get(this.field25457.get());
          this.field25466.method3636(var3);
          this.field25463.putStack(var3.method14962(this.field25465));
       } else {
@@ -141,7 +144,7 @@ public class Class5811 extends Container {
          var5 = var7.copy();
          if (var2 != 1) {
             if (var2 != 0) {
-               if (!this.field25458.getRecipeManager().<IInventory, Class4845>method1030(Class7207.field30940, new Class927(var7), this.field25458).isPresent()) {
+               if (!this.field25458.getRecipeManager().<IInventory, StonecuttingRecipe>method1030(IRecipeType.STONECUTTING, new Class927(var7), this.field25458).isPresent()) {
                   if (var2 >= 2 && var2 < 29) {
                      if (!this.mergeItemStack(var7, 29, 38, false)) {
                         return ItemStack.EMPTY;

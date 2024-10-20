@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.Blocks;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 

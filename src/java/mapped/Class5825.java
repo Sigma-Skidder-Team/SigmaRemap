@@ -4,8 +4,11 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.SmithingRecipe;
+import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.world.World;
 
 import java.util.List;
@@ -13,8 +16,8 @@ import java.util.List;
 public class Class5825 extends Class5823 {
    private static String[] field25521;
    private final World field25522;
-   private Class4846 field25523;
-   private final List<Class4846> field25524;
+   private SmithingRecipe field25523;
+   private final List<SmithingRecipe> field25524;
 
    public Class5825(int var1, PlayerInventory var2) {
       this(var1, var2, IWorldPosCallable.field39521);
@@ -23,7 +26,7 @@ public class Class5825 extends Class5823 {
    public Class5825(int var1, PlayerInventory var2, IWorldPosCallable var3) {
       super(ContainerType.SMITHING, var1, var2, var3);
       this.field25522 = var2.field5444.world;
-      this.field25524 = this.field25522.getRecipeManager().<IInventory, Class4846>method1031(Class7207.field30941);
+      this.field25524 = this.field25522.getRecipeManager().<IInventory, SmithingRecipe>method1031(IRecipeType.SMITHING);
    }
 
    @Override
@@ -33,7 +36,7 @@ public class Class5825 extends Class5823 {
 
    @Override
    public boolean method18189(PlayerEntity var1, boolean var2) {
-      return this.field25523 != null && this.field25523.method14963(this.field25513, this.field25522);
+      return this.field25523 != null && this.field25523.matches(this.field25513, this.field25522);
    }
 
    @Override
@@ -54,9 +57,9 @@ public class Class5825 extends Class5823 {
 
    @Override
    public void method18192() {
-      List var3 = this.field25522.getRecipeManager().<IInventory, Class4846>method1032(Class7207.field30941, this.field25513, this.field25522);
+      List var3 = this.field25522.getRecipeManager().<IInventory, SmithingRecipe>method1032(IRecipeType.SMITHING, this.field25513, this.field25522);
       if (!var3.isEmpty()) {
-         this.field25523 = (Class4846)var3.get(0);
+         this.field25523 = (SmithingRecipe)var3.get(0);
          ItemStack var4 = this.field25523.method14962(this.field25513);
          this.field25512.method3636(this.field25523);
          this.field25512.setInventorySlotContents(0, var4);

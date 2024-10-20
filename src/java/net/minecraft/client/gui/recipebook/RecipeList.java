@@ -1,9 +1,11 @@
-package mapped;
+package net.minecraft.client.gui.recipebook;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import it.unimi.dsi.fastutil.ints.IntList;
+import mapped.Class6207;
+import mapped.Class6941;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 

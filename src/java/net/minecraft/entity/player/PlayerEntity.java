@@ -19,6 +19,7 @@ import net.minecraft.entity.boss.dragon.EnderDragonPartEntity;
 import net.minecraft.entity.item.BoatEntity;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;

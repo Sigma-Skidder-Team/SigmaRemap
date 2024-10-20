@@ -35,7 +35,7 @@ public class Class3268 extends ToolItem {
          Blocks.PACKED_ICE,
          Blocks.field37006,
          Blocks.RAIL,
-         Blocks.field36567,
+         Blocks.REDSTONE_ORE,
          Blocks.SANDSTONE,
          Blocks.CHISELED_SANDSTONE,
          Blocks.CUT_SANDSTONE,
@@ -121,7 +121,7 @@ public class Class3268 extends ToolItem {
          || var1.isIn(Blocks.EMERALD_BLOCK)
          || var1.isIn(Blocks.field36521)
          || var1.isIn(Blocks.field36418)
-         || var1.isIn(Blocks.field36567)) {
+         || var1.isIn(Blocks.REDSTONE_ORE)) {
          return var4 >= 2;
       } else if (!var1.isIn(Blocks.field36522)
          && !var1.isIn(Blocks.field36419)

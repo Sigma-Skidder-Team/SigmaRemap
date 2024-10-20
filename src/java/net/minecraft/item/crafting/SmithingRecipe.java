@@ -1,20 +1,22 @@
-package mapped;
+package net.minecraft.item.crafting;
 
+import mapped.Class120;
+import mapped.Class6504;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
-public class Class4846 implements IRecipe<IInventory> {
+public class SmithingRecipe implements IRecipe<IInventory> {
    private static String[] field22625;
    private final Class120 field22626;
    private final Class120 field22627;
    private final ItemStack field22628;
    private final ResourceLocation field22629;
 
-   public Class4846(ResourceLocation var1, Class120 var2, Class120 var3, ItemStack var4) {
+   public SmithingRecipe(ResourceLocation var1, Class120 var2, Class120 var3, ItemStack var4) {
       this.field22629 = var1;
       this.field22626 = var2;
       this.field22627 = var3;
@@ -22,7 +24,7 @@ public class Class4846 implements IRecipe<IInventory> {
    }
 
    @Override
-   public boolean method14963(IInventory var1, World var2) {
+   public boolean matches(IInventory var1, World var2) {
       return this.field22626.test(var1.getStackInSlot(0)) && this.field22627.test(var1.getStackInSlot(1));
    }
 
@@ -67,22 +69,22 @@ public class Class4846 implements IRecipe<IInventory> {
    }
 
    @Override
-   public Class7207<?> method14967() {
-      return Class7207.field30941;
+   public IRecipeType<?> getType() {
+      return IRecipeType.SMITHING;
    }
 
    // $VF: synthetic method
-   public static Class120 method14973(Class4846 var0) {
+   public static Class120 method14973(SmithingRecipe var0) {
       return var0.field22626;
    }
 
    // $VF: synthetic method
-   public static Class120 method14974(Class4846 var0) {
+   public static Class120 method14974(SmithingRecipe var0) {
       return var0.field22627;
    }
 
    // $VF: synthetic method
-   public static ItemStack method14975(Class4846 var0) {
+   public static ItemStack method14975(SmithingRecipe var0) {
       return var0.field22628;
    }
 }

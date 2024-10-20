@@ -14,6 +14,7 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.ClickType;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
@@ -31,7 +32,7 @@ public class CreativeScreen extends Class860<Class5820> {
    private static final ResourceLocation field4773 = new ResourceLocation("textures/gui/container/creative_inventory/tabs.png");
    private static final Class927 field4774 = new Class927(45);
    private static final ITextComponent field4775 = new TranslationTextComponent("inventory.binSlot");
-   private static int field4776 = ItemGroup.field31665.method23641();
+   private static int field4776 = ItemGroup.BUILDING_BLOCKS.method23641();
    private float field4777;
    private boolean field4778;
    private TextFieldWidget field4779;
@@ -589,7 +590,7 @@ public class CreativeScreen extends Class860<Class5820> {
          List var7 = var2.getTooltip(this.mc.player, !this.mc.gameSettings.field44588 ? TooltipFlags.NORMAL : TooltipFlags.field14481);
          ArrayList var8 = Lists.newArrayList(var7);
          Item var9 = var2.getItem();
-         ItemGroup var10 = var9.method11739();
+         ItemGroup var10 = var9.getGroup();
          if (var10 == null && var9 == Items.field38070) {
             Map var11 = EnchantmentHelper.method26312(var2);
             if (var11.size() == 1) {

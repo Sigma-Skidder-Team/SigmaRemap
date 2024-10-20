@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 
@@ -10,6 +11,6 @@ public final class Class7404 extends ItemGroup {
 
    @Override
    public ItemStack method23640() {
-      return new ItemStack(Items.field37815);
+      return new ItemStack(Items.GOLDEN_SWORD);
    }
 }

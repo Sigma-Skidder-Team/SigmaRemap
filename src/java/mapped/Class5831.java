@@ -3,9 +3,11 @@ package mapped;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.item.crafting.RecipeBookCategory;
 import net.minecraft.world.World;
 
@@ -13,14 +15,14 @@ public abstract class Class5831 extends Class5828<IInventory> {
    private final IInventory field25551;
    private final Class8202 field25552;
    public final World field25553;
-   private final Class7207<? extends Class4847> field25554;
+   private final IRecipeType<? extends Class4847> field25554;
    private final RecipeBookCategory field25555;
 
-   public Class5831(ContainerType<?> var1, Class7207<? extends Class4847> var2, RecipeBookCategory var3, int var4, PlayerInventory var5) {
+   public Class5831(ContainerType<?> var1, IRecipeType<? extends Class4847> var2, RecipeBookCategory var3, int var4, PlayerInventory var5) {
       this(var1, var2, var3, var4, var5, new Class927(3), new Class8206(4));
    }
 
-   public Class5831(ContainerType<?> var1, Class7207<? extends Class4847> var2, RecipeBookCategory var3, int var4, PlayerInventory var5, IInventory var6, Class8202 var7) {
+   public Class5831(ContainerType<?> var1, IRecipeType<? extends Class4847> var2, RecipeBookCategory var3, int var4, PlayerInventory var5, IInventory var6, Class8202 var7) {
       super(var1, var4);
       this.field25554 = var2;
       this.field25555 = var3;
@@ -65,7 +67,7 @@ public abstract class Class5831 extends Class5828<IInventory> {
 
    @Override
    public boolean method18222(IRecipe<? super IInventory> var1) {
-      return var1.method14963(this.field25551, this.field25553);
+      return var1.matches(this.field25551, this.field25553);
    }
 
    @Override

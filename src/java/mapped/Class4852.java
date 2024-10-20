@@ -10,6 +10,7 @@ import com.google.gson.JsonParseException;
 import com.google.gson.JsonSyntaxException;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.ICraftingRecipe;
 import net.minecraft.util.JSONUtils;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
@@ -21,7 +22,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
 
-public class Class4852 implements Class4842 {
+public class Class4852 implements ICraftingRecipe {
    private final int field22641;
    private final int field22642;
    private final NonNullList<Class120> field22643;
@@ -68,7 +69,7 @@ public class Class4852 implements Class4842 {
       return var1 >= this.field22641 && var2 >= this.field22642;
    }
 
-   public boolean method14963(Class926 var1, World var2) {
+   public boolean matches(Class926 var1, World var2) {
       for (int var5 = 0; var5 <= var1.method3671() - this.field22641; var5++) {
          for (int var6 = 0; var6 <= var1.method3670() - this.field22642; var6++) {
             if (this.method14978(var1, var5, var6, true)) {

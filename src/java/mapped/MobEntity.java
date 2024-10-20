@@ -932,7 +932,7 @@ public abstract class MobEntity extends LivingEntity {
             if (var1 == 0) {
                return Items.field37846;
             } else if (var1 == 1) {
-               return Items.field37862;
+               return Items.GOLDEN_LEGGINGS;
             } else if (var1 == 2) {
                return Items.field37850;
             } else if (var1 == 3) {

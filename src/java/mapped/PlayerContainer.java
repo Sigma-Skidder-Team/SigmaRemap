@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
@@ -66,7 +67,7 @@ public class PlayerContainer extends Class5828<Class926> {
 
    @Override
    public boolean method18222(IRecipe<? super Class926> var1) {
-      return var1.method14963(this.field25547, this.field25550.world);
+      return var1.matches(this.field25547, this.field25550.world);
    }
 
    @Override
@@ -183,7 +184,7 @@ public class PlayerContainer extends Class5828<Class926> {
 
    @Override
    public RecipeBookCategory method18227() {
-      return RecipeBookCategory.field12599;
+      return RecipeBookCategory.CRAFTING;
    }
 
    // $VF: synthetic method

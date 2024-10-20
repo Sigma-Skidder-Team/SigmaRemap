@@ -26,6 +26,6 @@ public class Class5393 implements Class5391 {
    public Class9346 method16977(Entity var1, Random var2) {
       ItemStack var5 = new ItemStack(Items.field38149, 1);
       Class3284.method11816(var5, this.field24038, this.field24039);
-      return new Class9346(new ItemStack(Items.field38049, 1), var5, 12, this.field24040, this.field24041);
+      return new Class9346(new ItemStack(Items.EMERALD, 1), var5, 12, this.field24040, this.field24041);
    }
 }

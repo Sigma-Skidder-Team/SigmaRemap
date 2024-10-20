@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.IInventory;
 
 public class Class5846 extends Slot {
    public Class5846(IInventory var1, int var2, int var3, int var4) {

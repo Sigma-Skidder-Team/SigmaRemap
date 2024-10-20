@@ -335,7 +335,7 @@ public class ZombieEntity extends MonsterEntity {
       if (this.rand.nextFloat() < (this.world.method6997() != Difficulty.HARD ? 0.01F : 0.05F)) {
          int var4 = this.rand.nextInt(3);
          if (var4 != 0) {
-            this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.field37821));
+            this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.IRON_SHOVEL));
          } else {
             this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.field37820));
          }

@@ -6,8 +6,11 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import it.unimi.dsi.fastutil.objects.ObjectLinkedOpenHashSet;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.client.gui.recipebook.RecipeList;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.TextFieldWidget;
+import net.minecraft.client.util.ClientRecipeBook;
+import net.minecraft.client.util.RecipeBookCategories;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.RecipeBookCategory;
@@ -40,7 +43,7 @@ public class Class1254 extends AbstractGui implements Class1190, IGuiEventListen
    public Minecraft field6642;
    private TextFieldWidget field6643;
    private String field6644 = "";
-   private Class6943 field6645;
+   private ClientRecipeBook field6645;
    private final Class2954 field6646 = new Class2954();
    private final Class6207 field6647 = new Class6207();
    private int field6648;
@@ -52,7 +55,7 @@ public class Class1254 extends AbstractGui implements Class1190, IGuiEventListen
       this.field6636 = var2;
       this.field6641 = var5;
       var3.player.openContainer = var5;
-      this.field6645 = var3.player.method5397();
+      this.field6645 = var3.player.getRecipeBook();
       this.field6648 = var3.player.inventory.method4055();
       if (this.method5839()) {
          this.method5834(var4);
@@ -81,7 +84,7 @@ public class Class1254 extends AbstractGui implements Class1190, IGuiEventListen
       this.method5835();
       this.field6638.clear();
 
-      for (Class1896 var8 : Class1896.method8163(this.field6641.method18227())) {
+      for (RecipeBookCategories var8 : RecipeBookCategories.func_243236_a(this.field6641.method18227())) {
          this.field6638.add(new Class1250(var8));
       }
 
@@ -151,7 +154,7 @@ public class Class1254 extends AbstractGui implements Class1190, IGuiEventListen
    }
 
    private void method5842(boolean var1) {
-      List<RecipeList> var4 = this.field6645.method21387(this.field6639.method5827());
+      List<RecipeList> var4 = this.field6645.getRecipes(this.field6639.method5827());
       var4.forEach(var1x -> var1x.method34888(this.field6647, this.field6641.method18224(), this.field6641.method18225(), this.field6645));
       ArrayList<RecipeList> var5 = Lists.newArrayList(var4);
       var5.removeIf(var0 -> !var0.method34886());
@@ -177,8 +180,8 @@ public class Class1254 extends AbstractGui implements Class1190, IGuiEventListen
       int var6 = 0;
 
       for (Class1250 var8 : this.field6638) {
-         Class1896 var9 = var8.method5827();
-         if (var9 == Class1896.field11113 || var9 == Class1896.field11118) {
+         RecipeBookCategories var9 = var8.method5827();
+         if (var9 == RecipeBookCategories.CRAFTING_SEARCH || var9 == RecipeBookCategories.FURNACE_SEARCH) {
             var8.visible = true;
             var8.method5824(var3, var4 + 27 * var6++);
          } else if (var8.method5828(this.field6645)) {

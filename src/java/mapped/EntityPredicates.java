@@ -4,6 +4,7 @@ import com.google.common.base.Predicates;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.scoreboard.Team;
 import net.minecraft.world.Difficulty;
 

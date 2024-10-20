@@ -103,7 +103,7 @@ public class Class4455 extends Class4441<Item> {
       this.method14014(Class5985.field26119).method31560(Items.field37797, Items.field38117, Items.field38116);
       this.method14014(Class5985.field26120).method31560(Items.field38048, Items.field38047);
       this.method14014(Class5985.field26121)
-         .method31560(Items.field37803, Items.field38049, Items.field37800, Items.field37802, Items.field37801);
+         .method31560(Items.field37803, Items.EMERALD, Items.field37800, Items.field37802, Items.field37801);
       this.method14014(Class5985.field26108).method31558(Items.field37445).method31558(Items.field38169).method31558(Items.field38172);
       this.method14014(Class5985.field26109)
          .method31559(Class5985.field26110)
@@ -120,10 +120,10 @@ public class Class4455 extends Class4441<Item> {
             Items.ENCHANTED_GOLDEN_APPLE,
             Items.field37860,
             Items.field37861,
-            Items.field37862,
+            Items.GOLDEN_LEGGINGS,
             Items.field37863,
             Items.field38084,
-            Items.field37815,
+            Items.GOLDEN_SWORD,
             Items.field37817,
             Items.field37816,
             Items.field37818,

@@ -37,10 +37,10 @@ public class Class2833 implements Consumer<Consumer<Advancement>> {
    private static final Item[] field17616 = new Item[]{Items.field37909, Items.field37911, Items.field37912, Items.field37910};
    private static final Item[] field17617 = new Item[]{Items.field37894, Items.field37895, Items.field37892, Items.SALMON_BUCKET};
    private static final Item[] field17618 = new Item[]{
-      Items.field37795,
+      Items.APPLE,
       Items.field37837,
       Items.field37843,
-      Items.field37869,
+      Items.PORKCHOP,
       Items.field37870,
       Items.GOLDEN_APPLE,
       Items.ENCHANTED_GOLDEN_APPLE,
@@ -129,7 +129,7 @@ public class Class2833 implements Consumer<Consumer<Advancement>> {
       this.method11036(Class7999.method27304())
          .method27305(var5)
          .method27308(
-            Items.field37795,
+            Items.APPLE,
             new TranslationTextComponent("advancements.husbandry.balanced_diet.title"),
             new TranslationTextComponent("advancements.husbandry.balanced_diet.description"),
             (ResourceLocation)null,

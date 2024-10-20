@@ -5,6 +5,7 @@ import com.google.common.collect.ImmutableMap.Builder;
 import com.google.common.collect.Maps;
 import com.google.gson.*;
 import mapped.*;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.util.JSONUtils;
 import net.minecraft.util.Util;
 import net.minecraft.item.ItemStack;
@@ -23,7 +24,7 @@ import java.util.stream.Stream;
 public class RecipeManager extends Class281 {
    private static final Gson field1074 = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
    private static final Logger field1075 = LogManager.getLogger();
-   private Map<Class7207<?>, Map<ResourceLocation, IRecipe<?>>> field1076 = ImmutableMap.of();
+   private Map<IRecipeType<?>, Map<ResourceLocation, IRecipe<?>>> field1076 = ImmutableMap.of();
    private boolean field1077;
 
    public RecipeManager() {
@@ -32,14 +33,14 @@ public class RecipeManager extends Class281 {
 
    public void method971(Map<ResourceLocation, JsonElement> var1, IResourceManager var2, IProfiler var3) {
       this.field1077 = false;
-      Map<Class7207<?>, Builder<ResourceLocation, IRecipe<?>>> var6 = Maps.newHashMap();
+      Map<IRecipeType<?>, Builder<ResourceLocation, IRecipe<?>>> var6 = Maps.newHashMap();
 
       for (Entry<ResourceLocation, JsonElement> var8 : var1.entrySet()) {
          ResourceLocation var9 = var8.getKey();
 
          try {
             IRecipe<?> var10 = method1038(var9, JSONUtils.getJSONObject((JsonElement)var8.getValue(), "top element"));
-            var6.computeIfAbsent(var10.method14967(), var0 -> ImmutableMap.builder()).put(var9, var10);
+            var6.computeIfAbsent(var10.getType(), var0 -> ImmutableMap.builder()).put(var9, var10);
          } catch (JsonParseException | IllegalArgumentException var11) {
             field1075.error("Parsing error loading recipe {}", var9, var11);
          }
@@ -49,32 +50,32 @@ public class RecipeManager extends Class281 {
       field1075.info("Loaded {} recipes", var6.size());
    }
 
-   public <C extends IInventory, T extends IRecipe<C>> Optional<T> method1030(Class7207<T> var1, C var2, World var3) {
+   public <C extends IInventory, T extends IRecipe<C>> Optional<T> method1030(IRecipeType<T> var1, C var2, World var3) {
       return this.method1033(var1)
          .values()
          .stream()
-         .<T>flatMap(var3x -> Util.streamOptional(var1.method22635((IRecipe<IInventory>)var3x, var3, var2)))
+         .<T>flatMap(var3x -> Util.streamOptional(var1.matches((IRecipe<IInventory>)var3x, var3, var2)))
          .findFirst();
    }
 
-   public <C extends IInventory, T extends IRecipe<C>> List<T> method1031(Class7207<T> var1) {
+   public <C extends IInventory, T extends IRecipe<C>> List<T> method1031(IRecipeType<T> var1) {
       return (List<T>) this.method1033(var1).values().stream().map(var0 -> (T) var0).collect(Collectors.toList());
    }
 
-   public <C extends IInventory, T extends IRecipe<C>> List<T> method1032(Class7207<T> var1, C var2, World var3) {
+   public <C extends IInventory, T extends IRecipe<C>> List<T> method1032(IRecipeType<T> var1, C var2, World var3) {
       return this.method1033(var1)
          .values()
          .stream()
-         .flatMap(var3x -> Util.streamOptional(var1.method22635(var3x, var3, var2)))
+         .flatMap(var3x -> Util.streamOptional(var1.matches(var3x, var3, var2)))
          .sorted(Comparator.comparing(var0 -> var0.getRecipeOutput().getTranslationKey()))
          .collect(Collectors.<T>toList());
    }
 
-   private <C extends IInventory, T extends IRecipe<C>> Map<ResourceLocation, IRecipe<C>> method1033(Class7207<T> var1) {
+   private <C extends IInventory, T extends IRecipe<C>> Map<ResourceLocation, IRecipe<C>> method1033(IRecipeType<T> var1) {
       return (Map)this.field1076.getOrDefault(var1, Collections.emptyMap());
    }
 
-   public <C extends IInventory, T extends IRecipe<C>> NonNullList<ItemStack> method1034(Class7207<T> var1, C var2, World var3) {
+   public <C extends IInventory, T extends IRecipe<C>> NonNullList<ItemStack> method1034(IRecipeType<T> var1, C var2, World var3) {
       Optional<T> var6 = this.method1030(var1, var2, var3);
       if (var6.isPresent()) {
          return ((IRecipe)var6.get()).method14968(var2);
@@ -111,9 +112,9 @@ public class RecipeManager extends Class281 {
 
    public void method1039(Iterable<IRecipe<?>> var1) {
       this.field1077 = false;
-      Map<Class7207<?>, Map<ResourceLocation, IRecipe<?>>> var4 = Maps.newHashMap();
+      Map<IRecipeType<?>, Map<ResourceLocation, IRecipe<?>>> var4 = Maps.newHashMap();
       var1.forEach(var1x -> {
-         Map<ResourceLocation, IRecipe<?>> var4x = var4.computeIfAbsent(var1x.method14967(), var0x -> Maps.newHashMap());
+         Map<ResourceLocation, IRecipe<?>> var4x = var4.computeIfAbsent(var1x.getType(), var0x -> Maps.newHashMap());
          IRecipe<?> var5 = var4x.put(var1x.getId(), var1x);
          if (var5 != null) {
             throw new IllegalStateException("Duplicate recipe ignored with ID " + var1x.getId());

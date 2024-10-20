@@ -39,7 +39,7 @@ public class Class5397 implements Class5391 {
    @Override
    public Class9346 method16977(Entity var1, Random var2) {
       return new Class9346(
-         new ItemStack(Items.field38049, this.field24063),
+         new ItemStack(Items.EMERALD, this.field24063),
          new ItemStack(this.field24061.getItem(), this.field24062),
          new ItemStack(this.field24064.getItem(), this.field24065),
          this.field24066,

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.inventory.IInventory;
+
 public class Class5862 extends Slot {
    private static String[] field25627;
    public final Class5818 field25628;

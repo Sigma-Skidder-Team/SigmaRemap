@@ -41,7 +41,7 @@ public class Class5398 implements Class5391 {
             MapData.method24595(var7, var6, "+", this.field24071);
             var7.method32150(new TranslationTextComponent("filled_map." + this.field24070.method11373().toLowerCase(Locale.ROOT)));
             return new Class9346(
-               new ItemStack(Items.field38049, this.field24069), new ItemStack(Items.field37905), var7, this.field24072, this.field24073, 0.2F
+               new ItemStack(Items.EMERALD, this.field24069), new ItemStack(Items.COMPASS), var7, this.field24072, this.field24073, 0.2F
             );
          }
       } else {

@@ -1,19 +1,21 @@
 package mapped;
 
+import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 
 public abstract class Class4844 implements IRecipe<IInventory> {
    public final Class120 field22618;
    public final ItemStack field22619;
-   private final Class7207<?> field22620;
+   private final IRecipeType<?> field22620;
    private final Class6504<?> field22621;
    public final ResourceLocation field22622;
    public final String field22623;
 
-   public Class4844(Class7207<?> var1, Class6504<?> var2, ResourceLocation var3, String var4, Class120 var5, ItemStack var6) {
+   public Class4844(IRecipeType<?> var1, Class6504<?> var2, ResourceLocation var3, String var4, Class120 var5, ItemStack var6) {
       this.field22620 = var1;
       this.field22621 = var2;
       this.field22622 = var3;
@@ -23,7 +25,7 @@ public abstract class Class4844 implements IRecipe<IInventory> {
    }
 
    @Override
-   public Class7207<?> method14967() {
+   public IRecipeType<?> getType() {
       return this.field22620;
    }
 

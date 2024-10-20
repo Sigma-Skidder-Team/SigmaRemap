@@ -2,11 +2,12 @@ package mapped;
 
 import it.unimi.dsi.fastutil.ints.IntList;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.ICraftingRecipe;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
-public class Class4854 implements Class4842 {
+public class Class4854 implements ICraftingRecipe {
    private static String[] field22647;
    private final ResourceLocation field22648;
    private final String field22649;
@@ -45,7 +46,7 @@ public class Class4854 implements Class4842 {
       return this.field22651;
    }
 
-   public boolean method14963(Class926 var1, World var2) {
+   public boolean matches(Class926 var1, World var2) {
       Class6207 var5 = new Class6207();
       int var6 = 0;
 

@@ -353,7 +353,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                .method18289(Class6871.method20919(1))
                .method18297(field17632)
                .method18291(
-                  ((Class5872)method11060(var0, Class4695.method14724(Items.field37795)))
+                  ((Class5872)method11060(var0, Class4695.method14724(Items.APPLE)))
                      .method18297(Class158.method476(Enchantments.FORTUNE, 0.005F, 0.0055555557F, 0.00625F, 0.008333334F, 0.025F))
                )
          );
@@ -523,7 +523,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11096(Blocks.RED_MUSHROOM);
       this.method11096(Blocks.field36521);
       this.method11096(Blocks.field36522);
-      this.method11096(Blocks.field36523);
+      this.method11096(Blocks.BRICKS);
       this.method11096(Blocks.field36526);
       this.method11096(Blocks.field36527);
       this.method11096(Blocks.field37123);
@@ -1149,7 +1149,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11097(Blocks.BROWN_MUSHROOM_BLOCK, var0 -> method11079(var0, Blocks.BROWN_MUSHROOM));
       this.method11097(Blocks.RED_MUSHROOM_BLOCK, var0 -> method11079(var0, Blocks.RED_MUSHROOM));
       this.method11097(Blocks.field36420, var0 -> method11078(var0, Items.field37798));
-      this.method11097(Blocks.EMERALD_ORE, var0 -> method11078(var0, Items.field38049));
+      this.method11097(Blocks.EMERALD_ORE, var0 -> method11078(var0, Items.EMERALD));
       this.method11097(Blocks.field36722, var0 -> method11078(var0, Items.field38072));
       this.method11097(Blocks.field36536, var0 -> method11078(var0, Items.field37800));
       this.method11097(
@@ -1232,7 +1232,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11097(
-         Blocks.field36567,
+         Blocks.REDSTONE_ORE,
          var0 -> method11063(
                var0,
                (Class5873<?>)method11059(

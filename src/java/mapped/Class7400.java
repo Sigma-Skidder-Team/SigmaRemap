@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.Blocks;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 
 public final class Class7400 extends ItemGroup {

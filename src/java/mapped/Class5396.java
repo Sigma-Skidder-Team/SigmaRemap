@@ -27,6 +27,6 @@ public class Class5396 implements Class5391 {
    @Override
    public Class9346 method16977(Entity var1, Random var2) {
       ItemStack var5 = new ItemStack(this.field24055, this.field24056);
-      return new Class9346(var5, new ItemStack(Items.field38049), this.field24057, this.field24058, this.field24059);
+      return new Class9346(var5, new ItemStack(Items.EMERALD), this.field24057, this.field24058, this.field24059);
    }
 }

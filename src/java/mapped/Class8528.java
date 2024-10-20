@@ -107,7 +107,7 @@ public class Class8528 {
             this.field38307,
             this.field38308,
             this.field38309,
-            new ResourceLocation(var2.getNamespace(), "recipes/" + this.field38305.method11739().method23642() + "/" + var2.getPath())
+            new ResourceLocation(var2.getNamespace(), "recipes/" + this.field38305.getGroup().method23642() + "/" + var2.getPath())
          )
       );
    }

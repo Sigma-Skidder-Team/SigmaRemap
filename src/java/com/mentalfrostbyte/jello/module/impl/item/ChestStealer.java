@@ -301,7 +301,7 @@ public class ChestStealer extends Module {
                         } else {
                             ArrayList var5 = new ArrayList<Item>(
                                     Arrays.asList(
-                                            Items.field37905,
+                                            Items.COMPASS,
                                             Items.field37839,
                                             Items.field37868,
                                             Items.field37904,

@@ -13,13 +13,13 @@ import java.util.Map;
 
 public final class Class9223 {
    private static final Map<RecipeBookCategory, Pair<String, String>> field42458 = ImmutableMap.of(
-      RecipeBookCategory.field12599,
+      RecipeBookCategory.CRAFTING,
       Pair.of("isGuiOpen", "isFilteringCraftable"),
-      RecipeBookCategory.field12600,
+      RecipeBookCategory.FURNACE,
       Pair.of("isFurnaceGuiOpen", "isFurnaceFilteringCraftable"),
-      RecipeBookCategory.field12601,
+      RecipeBookCategory.BLAST_FURNACE,
       Pair.of("isBlastingFurnaceGuiOpen", "isBlastingFurnaceFilteringCraftable"),
-      RecipeBookCategory.field12602,
+      RecipeBookCategory.SMOKER,
       Pair.of("isSmokerGuiOpen", "isSmokerFilteringCraftable")
    );
    private final Map<RecipeBookCategory, Class9248> field42459;

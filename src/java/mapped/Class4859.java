@@ -16,7 +16,7 @@ public class Class4859 extends Class4837 {
       super(var1);
    }
 
-   public boolean method14963(Class926 var1, World var2) {
+   public boolean matches(Class926 var1, World var2) {
       boolean var5 = false;
       int var6 = 0;
 

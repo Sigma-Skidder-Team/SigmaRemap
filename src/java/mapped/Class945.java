@@ -1,7 +1,10 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.CampfireCookingRecipe;
+import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.tileentity.TileEntity;
@@ -52,7 +55,7 @@ public class Class945 extends TileEntity implements IClearable, ITickableTileEnt
                Class927 var6 = new Class927(var4);
                ItemStack var7 = this.world
                   .getRecipeManager()
-                  .<IInventory, Class4850>method1030(Class7207.field30939, var6, this.world)
+                  .<IInventory, CampfireCookingRecipe>method1030(IRecipeType.CAMPFIRE_COOKING, var6, this.world)
                   .<ItemStack>map(var1 -> var1.method14962(var6))
                   .orElse(var4);
                BlockPos var8 = this.getPos();
@@ -144,10 +147,10 @@ public class Class945 extends TileEntity implements IClearable, ITickableTileEnt
       return this.method3796(new CompoundNBT());
    }
 
-   public Optional<Class4850> method3797(ItemStack var1) {
+   public Optional<CampfireCookingRecipe> method3797(ItemStack var1) {
       return !this.field5329.stream().noneMatch(ItemStack::isEmpty)
-         ? this.world.getRecipeManager().<IInventory, Class4850>method1030(Class7207.field30939, new Class927(var1), this.world)
-         : Optional.<Class4850>empty();
+         ? this.world.getRecipeManager().<IInventory, CampfireCookingRecipe>method1030(IRecipeType.CAMPFIRE_COOKING, new Class927(var1), this.world)
+         : Optional.<CampfireCookingRecipe>empty();
    }
 
    public boolean method3798(ItemStack var1, int var2) {

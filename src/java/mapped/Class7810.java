@@ -29,7 +29,7 @@ public class Class7810 {
 
    public void method26077() {
       this.method26074(Items.field38124, Class9756.field45623);
-      this.method26074(Items.field37795, Class9756.field45623);
+      this.method26074(Items.APPLE, Class9756.field45623);
       this.method26074(Items.ARMOR_STAND, Class9756.field45623);
       this.method26074(Items.field37797, Class9756.field45623);
       this.method26074(Items.field38054, Class9756.field45623);
@@ -71,7 +71,7 @@ public class Class7810 {
 
       for (int var4 = 0; var4 < 32; var4++) {
          if (var4 != 16) {
-            this.method26075(Items.field37905, String.format("_%02d", var4), Class9756.field45623);
+            this.method26075(Items.COMPASS, String.format("_%02d", var4), Class9756.field45623);
          }
       }
 
@@ -100,7 +100,7 @@ public class Class7810 {
       this.method26074(Items.field38114, Class9756.field45623);
       this.method26074(Items.field37958, Class9756.field45623);
       this.method26074(Items.field37904, Class9756.field45623);
-      this.method26074(Items.field38049, Class9756.field45623);
+      this.method26074(Items.EMERALD, Class9756.field45623);
       this.method26074(Items.field38070, Class9756.field45623);
       this.method26074(Items.field37979, Class9756.field45623);
       this.method26074(Items.field37966, Class9756.field45623);
@@ -126,10 +126,10 @@ public class Class7810 {
       this.method26074(Items.field37860, Class9756.field45623);
       this.method26074(Items.field37819, Class9756.field45624);
       this.method26074(Items.field38084, Class9756.field45623);
-      this.method26074(Items.field37862, Class9756.field45623);
+      this.method26074(Items.GOLDEN_LEGGINGS, Class9756.field45623);
       this.method26074(Items.field37817, Class9756.field45624);
       this.method26074(Items.field37816, Class9756.field45624);
-      this.method26074(Items.field37815, Class9756.field45624);
+      this.method26074(Items.GOLDEN_SWORD, Class9756.field45624);
       this.method26074(Items.field37802, Class9756.field45623);
       this.method26074(Items.field37969, Class9756.field45623);
       this.method26074(Items.field37925, Class9756.field45623);
@@ -140,7 +140,7 @@ public class Class7810 {
       this.method26074(Items.field38177, Class9756.field45623);
       this.method26074(Items.HOPPER_MINECART, Class9756.field45623);
       this.method26074(Items.field37915, Class9756.field45623);
-      this.method26074(Items.field37823, Class9756.field45624);
+      this.method26074(Items.IRON_AXE, Class9756.field45624);
       this.method26074(Items.field37855, Class9756.field45623);
       this.method26074(Items.field37853, Class9756.field45623);
       this.method26074(Items.field37852, Class9756.field45623);
@@ -150,7 +150,7 @@ public class Class7810 {
       this.method26074(Items.field37854, Class9756.field45623);
       this.method26074(Items.field38128, Class9756.field45623);
       this.method26074(Items.field37822, Class9756.field45624);
-      this.method26074(Items.field37821, Class9756.field45624);
+      this.method26074(Items.IRON_SHOVEL, Class9756.field45624);
       this.method26074(Items.field37820, Class9756.field45624);
       this.method26074(Items.ITEM_FRAME, Class9756.field45623);
       this.method26074(Items.field38123, Class9756.field45623);
@@ -188,7 +188,7 @@ public class Class7810 {
       this.method26074(Items.field38146, Class9756.field45623);
       this.method26074(Items.field37833, Class9756.field45624);
       this.method26074(Items.field37867, Class9756.field45623);
-      this.method26074(Items.field37865, Class9756.field45623);
+      this.method26074(Items.NETHERITE_CHESTPLATE, Class9756.field45623);
       this.method26074(Items.field37864, Class9756.field45623);
       this.method26074(Items.field37834, Class9756.field45624);
       this.method26074(Items.field37803, Class9756.field45623);
@@ -208,7 +208,7 @@ public class Class7810 {
       this.method26074(Items.field37924, Class9756.field45623);
       this.method26074(Items.field38055, Class9756.field45623);
       this.method26074(Items.field38110, Class9756.field45623);
-      this.method26074(Items.field37869, Class9756.field45623);
+      this.method26074(Items.PORKCHOP, Class9756.field45623);
       this.method26074(Items.field38076, Class9756.field45623);
       this.method26074(Items.field38075, Class9756.field45623);
       this.method26074(Items.field37912, Class9756.field45623);

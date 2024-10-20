@@ -3,12 +3,13 @@ package mapped;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class985 extends Class924 {
    public Class985() {
-      super(TileEntityType.field21447, Class7207.field30938);
+      super(TileEntityType.field21447, IRecipeType.SMOKING);
    }
 
    @Override

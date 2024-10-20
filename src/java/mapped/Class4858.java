@@ -21,7 +21,7 @@ public class Class4858 extends Class4837 {
       super(var1);
    }
 
-   public boolean method14963(Class926 var1, World var2) {
+   public boolean matches(Class926 var1, World var2) {
       ArrayList var5 = Lists.newArrayList();
 
       for (int var6 = 0; var6 < var1.getSizeInventory(); var6++) {

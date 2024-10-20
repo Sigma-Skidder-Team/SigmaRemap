@@ -29,7 +29,7 @@ public class Class5394 implements Class5391 {
 
    @Override
    public Class9346 method16977(Entity var1, Random var2) {
-      ItemStack var5 = new ItemStack(Items.field38049, this.field24044);
+      ItemStack var5 = new ItemStack(Items.EMERALD, this.field24044);
       ItemStack var6 = new ItemStack(this.field24043);
       if (this.field24043 instanceof Class3278) {
          ArrayList var7 = Lists.newArrayList();

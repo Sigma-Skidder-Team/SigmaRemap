@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Lists;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.recipebook.RecipeList;
 import net.minecraft.item.crafting.IRecipe;
 
 import javax.annotation.Nullable;
@@ -31,7 +32,7 @@ public class Class2954 {
 
    public void method11306(Minecraft var1, int var2, int var3) {
       this.field18034 = var1;
-      this.field18041 = var1.player.method5397();
+      this.field18041 = var1.player.getRecipeBook();
 
       for (int var6 = 0; var6 < this.field18031.size(); var6++) {
          this.field18031.get(var6).method5754(var2 + 11 + 25 * (var6 % 5), var3 + 31 + 25 * (var6 / 5));

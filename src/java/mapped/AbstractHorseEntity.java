@@ -11,6 +11,7 @@ import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -39,7 +40,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       Items.field37842,
       Items.field37936,
       Blocks.field36777.asItem(),
-      Items.field37795,
+      Items.APPLE,
       Items.field38057,
       Items.GOLDEN_APPLE,
       Items.ENCHANTED_GOLDEN_APPLE
@@ -397,7 +398,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       if (var9 != Items.field37842) {
          if (var9 != Items.field37936) {
             if (var9 != Blocks.field36777.asItem()) {
-               if (var9 != Items.field37795) {
+               if (var9 != Items.APPLE) {
                   if (var9 != Items.field38057) {
                      if (var9 == Items.GOLDEN_APPLE || var9 == Items.ENCHANTED_GOLDEN_APPLE) {
                         var6 = 10.0F;

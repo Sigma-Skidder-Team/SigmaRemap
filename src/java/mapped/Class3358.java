@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.dispenser.IDispenseItemBehavior;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;

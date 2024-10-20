@@ -1,8 +1,7 @@
-package mapped;
+package net.minecraft.item;
 
+import mapped.*;
 import net.minecraft.enchantment.EnchantmentType;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.ITextComponent;
@@ -10,16 +9,16 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 public abstract class ItemGroup {
    public static final ItemGroup[] field31664 = new ItemGroup[12];
-   public static final ItemGroup field31665 = new Class7411(0, "buildingBlocks").method23647("building_blocks");
+   public static final ItemGroup BUILDING_BLOCKS = new Class7411(0, "buildingBlocks").method23647("building_blocks");
    public static final ItemGroup field31666 = new Class7408(1, "decorations");
-   public static final ItemGroup field31667 = new Class7405(2, "redstone");
+   public static final ItemGroup REDSTONE = new Class7405(2, "redstone");
    public static final ItemGroup field31668 = new Class7400(3, "transportation");
    public static final ItemGroup field31669 = new Class7409(6, "misc");
    public static final ItemGroup SEARCH = new Class7410(5, "search").method23646("item_search.png");
    public static final ItemGroup field31671 = new Class7407(7, "food");
-   public static final ItemGroup field31672 = new Class7412(8, "tools")
+   public static final ItemGroup TOOLS = new Class7412(8, "tools")
       .method23656(new EnchantmentType[]{EnchantmentType.field14683, EnchantmentType.DIGGER, EnchantmentType.FISHING_ROD, EnchantmentType.field14679});
-   public static final ItemGroup field31673 = new Class7404(9, "combat")
+   public static final ItemGroup COMBAT = new Class7404(9, "combat")
       .method23656(
          new EnchantmentType[]{
             EnchantmentType.field14683,

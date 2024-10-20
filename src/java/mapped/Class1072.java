@@ -203,7 +203,7 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
          super.method3353(var1, var2);
       } else {
          ZombifiedPiglinEntity var5 = EntityType.ZOMBIFIED_PIGLIN.create(var1);
-         var5.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.field37815));
+         var5.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.GOLDEN_SWORD));
          var5.setLocationAndAngles(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
          var5.method4302(this.method4305());
          var5.method4308(this.isChild());

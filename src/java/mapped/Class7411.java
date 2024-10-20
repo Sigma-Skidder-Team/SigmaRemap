@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.Blocks;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 
 public final class Class7411 extends ItemGroup {
@@ -10,6 +11,6 @@ public final class Class7411 extends ItemGroup {
 
    @Override
    public ItemStack method23640() {
-      return new ItemStack(Blocks.field36523);
+      return new ItemStack(Blocks.BRICKS);
    }
 }

@@ -34,12 +34,14 @@ import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.RemoteClientPlayerEntity;
 import net.minecraft.client.gui.ScreenManager;
+import net.minecraft.client.gui.recipebook.RecipeList;
 import net.minecraft.client.gui.screen.ConfirmScreen;
 import net.minecraft.client.gui.screen.MultiplayerScreen;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.multiplayer.ClientChunkProvider;
 import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.client.multiplayer.ServerList;
+import net.minecraft.client.util.ClientRecipeBook;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.command.ISuggestionProvider;
 import net.minecraft.entity.LivingEntity;
@@ -56,6 +58,7 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.inventory.container.Container;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.IRecipe;
@@ -160,7 +163,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       this.field23273 = new ClientWorld(this, var9, var5, var6, this.field23281, this.mc::getProfiler, this.mc.worldRenderer, var7, var1.method17288());
       this.mc.loadWorld(this.field23273);
       if (this.mc.player == null) {
-         this.mc.player = this.mc.playerController.createPlayer(this.field23273, new Class8286(), new Class6943());
+         this.mc.player = this.mc.playerController.createPlayer(this.field23273, new Class8286(), new ClientRecipeBook());
          this.mc.player.rotationYaw = -180.0F;
          if (this.mc.getIntegratedServer() != null) {
             this.mc.getIntegratedServer().method6489(this.mc.player.getUniqueID());
@@ -943,7 +946,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       this.field23273.method6857();
       String var12 = var6.method5395();
       this.mc.renderViewEntity = null;
-      ClientPlayerEntity var13 = this.mc.playerController.func_239167_a_(this.field23273, var6.method5396(), var6.method5397(), var6.isSneaking(), var6.isSprinting());
+      ClientPlayerEntity var13 = this.mc.playerController.func_239167_a_(this.field23273, var6.method5396(), var6.getRecipeBook(), var6.isSneaking(), var6.isSprinting());
       var13.setEntityId(var7);
       this.mc.player = var13;
       if (var4 != var6.world.getDimensionKey()) {
@@ -1346,9 +1349,9 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       this.field23284.method1039(var1.method17331());
       IMutableSearchTree var4 = this.mc.<RecipeList>getSearchTree(SearchTreeManager.RECIPES);
       var4.method21735();
-      Class6943 var5 = this.mc.player.method5397();
-      var5.method21383(this.field23284.method1036());
-      var5.method21386().forEach(var4::func_217872_a);
+      ClientRecipeBook clientrecipebook = this.mc.player.getRecipeBook();
+      clientrecipebook.method21383(this.field23284.method1036());
+      clientrecipebook.getRecipes().forEach(var4::func_217872_a);
       var4.method21736();
    }
 
@@ -1387,7 +1390,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleRecipeBook(SRecipeBookPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
-      Class6943 var4 = this.mc.player.method5397();
+      ClientRecipeBook var4 = this.mc.player.getRecipeBook();
       var4.method21373(var1.method17501());
       Class2338 var5 = var1.method17502();
       switch (Class8047.field34564[var5.ordinal()]) {
@@ -1415,7 +1418,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
             }
       }
 
-      var4.method21386().forEach(var1x -> var1x.method34887(var4));
+      var4.getRecipes().forEach(var1x -> var1x.method34887(var4));
       if (this.mc.currentScreen instanceof Class854) {
          ((Class854)this.mc.currentScreen).method2631();
       }

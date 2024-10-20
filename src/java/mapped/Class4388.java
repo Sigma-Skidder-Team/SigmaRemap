@@ -27,7 +27,7 @@ public class Class4388 {
    private static final RangedInteger field21462 = TickRangeConverter.convertRange(5, 20);
    private static final RangedInteger field21463 = TickRangeConverter.convertRange(5, 7);
    private static final RangedInteger field21464 = TickRangeConverter.convertRange(5, 7);
-   private static final Set<Item> field21465 = ImmutableSet.of(Items.field37869, Items.field37870);
+   private static final Set<Item> field21465 = ImmutableSet.of(Items.PORKCHOP, Items.field37870);
 
    public static Brain<?> method13798(Class1034 var0, Brain<Class1034> var1) {
       method13800(var1);

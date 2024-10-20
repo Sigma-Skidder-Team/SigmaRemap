@@ -259,12 +259,12 @@ public class Item implements IItemProvider {
    }
 
    public boolean method11738(ItemGroup var1) {
-      ItemGroup var4 = this.method11739();
+      ItemGroup var4 = this.getGroup();
       return var4 != null && (var1 == ItemGroup.SEARCH || var1 == var4);
    }
 
    @Nullable
-   public final ItemGroup method11739() {
+   public final ItemGroup getGroup() {
       return this.field18736;
    }
 

@@ -30,20 +30,16 @@ import de.florianmichael.viamcp.gui.AsyncVersionSlider;
 import java.io.File;
 
 public class ViaMCP {
-    public final static int NATIVE_VERSION = 340;
+    public final static int NATIVE_VERSION = 754;
     public static ViaMCP INSTANCE;
 
     public static void create() {
         INSTANCE = new ViaMCP();
     }
 
-    private AsyncVersionSlider asyncVersionSlider;
-
     public ViaMCP() {
-        ViaLoadingBase.ViaLoadingBaseBuilder.create().runDirectory(new File("ViaMCP")).nativeVersion(NATIVE_VERSION).onProtocolReload(protocolVersion -> {
-
-        }).build();
-        fixTransactions();
+        ViaLoadingBase.ViaLoadingBaseBuilder.create().runDirectory(new File("ViaMCP")).nativeVersion(NATIVE_VERSION).onProtocolReload(protocolVersion -> {}).build();
+        //fixTransactions();
     }
 
     private void fixTransactions() {

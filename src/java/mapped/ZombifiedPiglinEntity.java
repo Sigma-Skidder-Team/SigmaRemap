@@ -209,7 +209,7 @@ public class ZombifiedPiglinEntity extends ZombieEntity implements IAngerable {
 
    @Override
    public void method4270(Class9755 var1) {
-      this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.field37815));
+      this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.GOLDEN_SWORD));
    }
 
    @Override

@@ -4,9 +4,12 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.ICraftingRecipe;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.item.crafting.RecipeBookCategory;
 import net.minecraft.network.play.server.SSetSlotPacket;
 import net.minecraft.world.World;
@@ -51,9 +54,9 @@ public class Class5829 extends Class5828<Class926> {
       if (!var1.isRemote) {
          ServerPlayerEntity var7 = (ServerPlayerEntity)var2;
          ItemStack var8 = ItemStack.EMPTY;
-         Optional var9 = var1.getServer().method1407().<Class926, Class4842>method1030(Class7207.field30935, var3, var1);
+         Optional var9 = var1.getServer().method1407().<Class926, ICraftingRecipe>method1030(IRecipeType.CRAFTING, var3, var1);
          if (var9.isPresent()) {
-            Class4842 var10 = (Class4842)var9.get();
+            ICraftingRecipe var10 = (ICraftingRecipe)var9.get();
             if (var4.method3639(var1, var7, var10)) {
                var8 = var10.method14962(var3);
             }
@@ -82,7 +85,7 @@ public class Class5829 extends Class5828<Class926> {
 
    @Override
    public boolean method18222(IRecipe<? super Class926> var1) {
-      return var1.method14963(this.field25535, this.field25538.world);
+      return var1.matches(this.field25535, this.field25538.world);
    }
 
    @Override
@@ -172,6 +175,6 @@ public class Class5829 extends Class5828<Class926> {
 
    @Override
    public RecipeBookCategory method18227() {
-      return RecipeBookCategory.field12599;
+      return RecipeBookCategory.CRAFTING;
    }
 }

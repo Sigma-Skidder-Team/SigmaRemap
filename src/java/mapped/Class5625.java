@@ -71,7 +71,7 @@ public class Class5625 {
             this.field24942,
             this.field24943,
             this.field24944,
-            new ResourceLocation(var2.getNamespace(), "recipes/" + this.field24940.method11739().method23642() + "/" + var2.getPath()),
+            new ResourceLocation(var2.getNamespace(), "recipes/" + this.field24940.getGroup().method23642() + "/" + var2.getPath()),
             (Class6504<? extends Class4847>)this.field24946
          )
       );

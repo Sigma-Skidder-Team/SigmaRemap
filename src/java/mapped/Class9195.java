@@ -16,6 +16,7 @@ import net.minecraft.command.CommandSource;
 import net.minecraft.command.arguments.BlockPosArgument;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;

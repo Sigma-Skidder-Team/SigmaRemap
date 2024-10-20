@@ -11,6 +11,7 @@ import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.client.network.play.ClientPlayNetHandler;
+import net.minecraft.client.util.ClientRecipeBook;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.Pose;
@@ -43,7 +44,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    private static String[] field6113;
    public final ClientPlayNetHandler connection;
    private final Class8286 field6115;
-   private final Class6943 field6116;
+   private final ClientRecipeBook field6116;
    private final List<IAmbientSoundHandler> field6117 = Lists.newArrayList();
    private int field6118 = 0;
    public double field6119;
@@ -79,7 +80,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    private int field6149;
    private boolean field6150 = true;
 
-   public ClientPlayerEntity(Minecraft var1, ClientWorld var2, ClientPlayNetHandler var3, Class8286 var4, Class6943 var5, boolean var6, boolean var7) {
+   public ClientPlayerEntity(Minecraft var1, ClientWorld var2, ClientPlayNetHandler var3, Class8286 var4, ClientRecipeBook var5, boolean var6, boolean var7) {
       super(var2, var3.method15794());
       this.field6132 = var1;
       this.connection = var3;
@@ -372,7 +373,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       return this.field6115;
    }
 
-   public Class6943 method5397() {
+   public ClientRecipeBook getRecipeBook() {
       return this.field6116;
    }
 

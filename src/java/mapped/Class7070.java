@@ -3,6 +3,8 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.Item;
+import net.minecraft.item.crafting.FurnaceRecipe;
+import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.util.Util;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -72,7 +74,7 @@ public class Class7070 {
          return null;
       } else {
          if (!Minecraft.getInstance().getConnection().getRecipeManager()
-            .method1030(Class7207.field30936, new Class927(new ItemStack(Items.field37236)), Minecraft.getInstance().world)
+            .method1030(IRecipeType.SMELTING, new Class927(new ItemStack(Items.field37236)), Minecraft.getInstance().world)
             .isPresent()) {
             SimpleReloadableResourceManager var3 = new SimpleReloadableResourceManager(ResourcePackType.SERVER_DATA);
 
@@ -84,10 +86,10 @@ public class Class7070 {
             Minecraft.getInstance().getConnection().getRecipeManager().method777(var9, var3, EmptyProfiler.INSTANCE, EmptyProfiler.INSTANCE, Util.getServerExecutor(), Minecraft.getInstance());
          }
 
-         Optional<Class4849> var7 = Minecraft.getInstance().getConnection().getRecipeManager()
-            .method1030(Class7207.field30936, new Class927(this.field30453), Minecraft.getInstance().world);
+         Optional<FurnaceRecipe> var7 = Minecraft.getInstance().getConnection().getRecipeManager()
+            .method1030(IRecipeType.SMELTING, new Class927(this.field30453), Minecraft.getInstance().world);
          if (var7.isPresent()) {
-            ItemStack var8 = ((Class4849)var7.get()).getRecipeOutput();
+            ItemStack var8 = ((FurnaceRecipe)var7.get()).getRecipeOutput();
             if (!var8.isEmpty()) {
                return var8.copy();
             }

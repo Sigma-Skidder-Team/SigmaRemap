@@ -34,7 +34,7 @@ public class VillagerTrades {
                   new Class5391[]{
                      new Class5396(Blocks.PUMPKIN, 6, 12, 10),
                      new Class5395(Items.field38067, 1, 4, 5),
-                     new Class5395(Items.field37795, 1, 4, 16, 5)
+                     new Class5395(Items.APPLE, 1, 4, 16, 5)
                   },
                   3,
                   new Class5391[]{new Class5395(Items.field37954, 3, 18, 10), new Class5396(Blocks.MELON, 4, 12, 20)},
@@ -239,7 +239,7 @@ public class VillagerTrades {
                         new Class5396(Items.field38047, 2, 12, 30),
                         new Class5399(15),
                         new Class5395(Items.field37907, 5, 1, 15),
-                        new Class5395(Items.field37905, 4, 1, 15)
+                        new Class5395(Items.COMPASS, 4, 1, 15)
                      }
                   )
                   .put(5, new Class5391[]{new Class5395(Items.field38088, 20, 1, 30)})
@@ -255,7 +255,7 @@ public class VillagerTrades {
                   2,
                   new Class5391[]{new Class5396(Items.field37471, 11, 16, 10), new Class5398(13, Structure.MONUMENT, MapDecorationType.MONUMENT, 12, 5)},
                   3,
-                  new Class5391[]{new Class5396(Items.field37905, 1, 12, 20), new Class5398(14, Structure.MANSION, MapDecorationType.MANSION, 12, 10)},
+                  new Class5391[]{new Class5396(Items.COMPASS, 1, 12, 20), new Class5398(14, Structure.MANSION, MapDecorationType.MANSION, 12, 10)},
                   4,
                   new Class5391[]{
                      new Class5395(Items.ITEM_FRAME, 7, 1, 15),
@@ -343,7 +343,7 @@ public class VillagerTrades {
                   1,
                   new Class5391[]{
                      new Class5396(Items.field37798, 15, 16, 2),
-                     new Class5395(new ItemStack(Items.field37823), 3, 1, 12, 1, 0.2F),
+                     new Class5395(new ItemStack(Items.IRON_AXE), 3, 1, 12, 1, 0.2F),
                      new Class5392(Items.field37820, 2, 3, 1)
                   },
                   2,
@@ -374,8 +374,8 @@ public class VillagerTrades {
                   3,
                   new Class5391[]{
                      new Class5396(Items.field37868, 30, 12, 20),
-                     new Class5392(Items.field37823, 1, 3, 10, 0.2F),
-                     new Class5392(Items.field37821, 2, 3, 10, 0.2F),
+                     new Class5392(Items.IRON_AXE, 1, 3, 10, 0.2F),
+                     new Class5392(Items.IRON_SHOVEL, 2, 3, 10, 0.2F),
                      new Class5392(Items.field37822, 3, 3, 10, 0.2F),
                      new Class5395(new ItemStack(Items.field37829), 4, 1, 3, 10, 0.2F)
                   },
@@ -397,7 +397,7 @@ public class VillagerTrades {
                   1,
                   new Class5391[]{
                      new Class5396(Items.field37963, 14, 16, 2),
-                     new Class5396(Items.field37869, 7, 16, 2),
+                     new Class5396(Items.PORKCHOP, 7, 16, 2),
                      new Class5396(Items.field38077, 4, 16, 2),
                      new Class5395(Items.field38079, 1, 1, 1)
                   },

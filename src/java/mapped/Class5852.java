@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.util.ResourceLocation;
 
 public class Class5852 extends Slot {

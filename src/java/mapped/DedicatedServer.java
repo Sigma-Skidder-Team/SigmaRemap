@@ -6,6 +6,7 @@ import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.GameProfileRepository;
 import com.mojang.authlib.minecraft.MinecraftSessionService;
 import com.mojang.datafixers.DataFixer;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Util;
 import net.minecraft.command.CommandSource;
 import net.minecraft.crash.CrashReport;

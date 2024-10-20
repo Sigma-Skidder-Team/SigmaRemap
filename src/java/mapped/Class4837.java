@@ -1,9 +1,10 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.ICraftingRecipe;
 import net.minecraft.util.ResourceLocation;
 
-public abstract class Class4837 implements Class4842 {
+public abstract class Class4837 implements ICraftingRecipe {
    private final ResourceLocation field22614;
 
    public Class4837(ResourceLocation var1) {

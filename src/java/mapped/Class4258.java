@@ -5,6 +5,7 @@ import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;

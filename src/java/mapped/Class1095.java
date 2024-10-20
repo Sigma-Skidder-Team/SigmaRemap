@@ -190,7 +190,7 @@ public class Class1095 extends Class1018 {
                var5 = new ItemStack(Items.field37904);
             }
          } else {
-            var5 = new ItemStack(Items.field38049);
+            var5 = new ItemStack(Items.EMERALD);
          }
 
          this.setItemStackToSlot(EquipmentSlotType.MAINHAND, var5);

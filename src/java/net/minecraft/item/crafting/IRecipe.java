@@ -2,6 +2,7 @@ package net.minecraft.item.crafting;
 
 import mapped.*;
 import net.minecraft.block.Blocks;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
@@ -9,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
 public interface IRecipe<C extends IInventory> {
-   boolean method14963(C var1, World var2);
+   boolean matches(C var1, World var2);
 
    ItemStack method14962(C var1);
 
@@ -50,5 +51,5 @@ public interface IRecipe<C extends IInventory> {
 
    Class6504<?> method14961();
 
-   Class7207<?> method14967();
+   IRecipeType<?> getType();
 }

@@ -271,7 +271,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
                   .method18291(
-                     Class4695.method14724(Items.field38049)
+                     Class4695.method14724(Items.EMERALD)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 1.0F)))
                         .method18296(Class130.method379(Class6872.method20921(0.0F, 1.0F)))
                   )
@@ -499,7 +499,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
                   .method18291(
-                     Class4695.method14724(Items.field37869)
+                     Class4695.method14724(Items.PORKCHOP)
                         .method18296(Class140.method420(Class6872.method20921(1.0F, 3.0F)))
                         .method18296(Class131.method383().method18297(Class123.method357(Class2063.field13447, field17612)))
                         .method18296(Class130.method379(Class6872.method20921(0.0F, 1.0F)))
@@ -828,7 +828,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
                   .method18291(
-                     Class4695.method14724(Items.field38049)
+                     Class4695.method14724(Items.EMERALD)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 1.0F)))
                         .method18296(Class130.method379(Class6872.method20921(0.0F, 1.0F)))
                   )
@@ -994,7 +994,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
                   .method18291(
-                     Class4695.method14724(Items.field37869)
+                     Class4695.method14724(Items.PORKCHOP)
                         .method18296(Class140.method420(Class6872.method20921(2.0F, 4.0F)))
                         .method18296(Class131.method383().method18297(Class123.method357(Class2063.field13447, field17612)))
                         .method18296(Class130.method379(Class6872.method20921(0.0F, 1.0F)))

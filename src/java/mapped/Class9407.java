@@ -3603,8 +3603,8 @@ public class Class9407 {
       this.method35807(Items.field37470);
       this.method35851(Blocks.field37010);
       this.method35851(Blocks.field36692);
-      this.method35869(Blocks.BARRIER, Items.field37569);
-      this.method35807(Items.field37569);
+      this.method35869(Blocks.BARRIER, Items.BARRIER);
+      this.method35807(Items.BARRIER);
       this.method35869(Blocks.field36894, Items.field37651);
       this.method35807(Items.field37651);
       this.method35870(Blocks.MOVING_PISTON, Class7287.method23042(Blocks.PISTON, "_side"));
@@ -3624,7 +3624,7 @@ public class Class9407 {
       this.method35841(Blocks.field36455, Class7524.field32271);
       this.method35841(Blocks.field36456, Class7524.field32271);
       this.method35841(Blocks.field36722, Class7524.field32271);
-      this.method35841(Blocks.field36567, Class7524.field32271);
+      this.method35841(Blocks.REDSTONE_ORE, Class7524.field32271);
       this.method35841(Blocks.field36721, Class7524.field32271);
       this.method35841(Blocks.field37141, Class7524.field32271);
       this.method35841(Blocks.field37006, Class7524.field32271);
@@ -4202,7 +4202,7 @@ public class Class9407 {
                .method24561(var0 -> var0.method22991(Class9588.field44833, Class7287.method23041(Blocks.field36837)))
          )
          .method31173(Blocks.field36856);
-      this.method35845(Blocks.field36523).method31168(Blocks.field37041).method31174(Blocks.BRICK_STAIRS).method31173(Blocks.field36851);
+      this.method35845(Blocks.BRICKS).method31168(Blocks.field37041).method31174(Blocks.BRICK_STAIRS).method31173(Blocks.field36851);
       this.method35845(Blocks.NETHER_BRICKS)
          .method31169(Blocks.NETHER_BRICK_FENCE)
          .method31168(Blocks.field37047)

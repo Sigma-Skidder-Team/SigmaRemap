@@ -234,7 +234,7 @@ public class Class2837 implements Consumer<BiConsumer<ResourceLocation, Class588
                   .method18289(Class6871.method20919(1))
                   .method18291(Class4695.method14724(Items.field37813))
                   .method18291(Class4695.method14724(Items.field37818))
-                  .method18291(Class4695.method14724(Items.field37823))
+                  .method18291(Class4695.method14724(Items.IRON_AXE))
             )
       );
    }

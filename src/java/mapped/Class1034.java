@@ -185,7 +185,7 @@ public class Class1034 extends Class1035 implements Class1023 {
       if (this.method4635()) {
          this.method4616(EquipmentSlotType.HEAD, new ItemStack(Items.field37860));
          this.method4616(EquipmentSlotType.CHEST, new ItemStack(Items.field37861));
-         this.method4616(EquipmentSlotType.LEGS, new ItemStack(Items.field37862));
+         this.method4616(EquipmentSlotType.LEGS, new ItemStack(Items.GOLDEN_LEGGINGS));
          this.method4616(EquipmentSlotType.FEET, new ItemStack(Items.field37863));
       }
    }
@@ -284,7 +284,7 @@ public class Class1034 extends Class1035 implements Class1023 {
    }
 
    private ItemStack method4620() {
-      return !((double)this.rand.nextFloat() < 0.5) ? new ItemStack(Items.field37815) : new ItemStack(Items.CROSSBOW);
+      return !((double)this.rand.nextFloat() < 0.5) ? new ItemStack(Items.GOLDEN_SWORD) : new ItemStack(Items.CROSSBOW);
    }
 
    private boolean method4621() {

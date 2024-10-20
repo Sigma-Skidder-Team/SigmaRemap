@@ -15,7 +15,7 @@ public class Class4839 extends Class4837 {
       super(var1);
    }
 
-   public boolean method14963(Class926 var1, World var2) {
+   public boolean matches(Class926 var1, World var2) {
       ItemStack var5 = ItemStack.EMPTY;
       ArrayList var6 = Lists.newArrayList();
 

@@ -67,7 +67,7 @@ public class Class9065 {
          Items.BOW, new ResourceLocation("pulling"), (var0, var1, var2) -> var2 != null && var2.isHandActive() && var2.getActiveItemStack() == var0 ? 1.0F : 0.0F
       );
       method33751(Items.field37907, new ResourceLocation("time"), new Class8177());
-      method33751(Items.field37905, new ResourceLocation("angle"), new Class8178());
+      method33751(Items.COMPASS, new ResourceLocation("angle"), new Class8178());
       method33751(Items.CROSSBOW, new ResourceLocation("pull"), (var0, var1, var2) -> {
          if (var2 != null) {
             return ! CrossbowItem.isCharged(var0) ? (float)(var0.getUseDuration() - var2.getItemInUseCount()) / (float) CrossbowItem.method11767(var0) : 0.0F;

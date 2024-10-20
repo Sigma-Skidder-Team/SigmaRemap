@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.client.gui.recipebook.RecipeList;
 import net.minecraft.item.ItemStack;
 import net.minecraft.resources.IResourceManagerReloadListener;
 

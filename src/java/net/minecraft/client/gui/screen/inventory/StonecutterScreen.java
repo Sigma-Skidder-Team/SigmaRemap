@@ -2,7 +2,7 @@ package net.minecraft.client.gui.screen.inventory;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
-import mapped.Class4845;
+import net.minecraft.item.crafting.StonecuttingRecipe;
 import mapped.Class5811;
 import mapped.MinecraftSoundManager;
 import net.minecraft.client.Minecraft;
@@ -64,7 +64,7 @@ public class StonecutterScreen extends ContainerScreen<Class5811> {
             int var12 = var6 + var11 % 4 * 16;
             int var13 = var7 + var11 / 4 * 18 + 2;
             if (var2 >= var12 && var2 < var12 + 16 && var3 >= var13 && var3 < var13 + 18) {
-               this.method2457(var1, ((Class4845)var9.get(var10)).getRecipeOutput(), var2, var3);
+               this.method2457(var1, ((StonecuttingRecipe)var9.get(var10)).getRecipeOutput(), var2, var3);
             }
          }
       }
@@ -97,7 +97,7 @@ public class StonecutterScreen extends ContainerScreen<Class5811> {
          int var9 = var1 + var8 % 4 * 16;
          int var10 = var8 / 4;
          int var11 = var2 + var10 * 18 + 2;
-         this.mc.getItemRenderer().method793(((Class4845)var6.get(var7)).getRecipeOutput(), var9, var11);
+         this.mc.getItemRenderer().method793(((StonecuttingRecipe)var6.get(var7)).getRecipeOutput(), var9, var11);
       }
    }
 

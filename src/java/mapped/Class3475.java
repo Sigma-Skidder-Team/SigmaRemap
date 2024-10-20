@@ -83,7 +83,7 @@ public class Class3475 extends Block implements Class3476 {
       method12163(0.65F, Items.field37438);
       method12163(0.65F, Items.field37439);
       method12163(0.65F, Items.field37472);
-      method12163(0.65F, Items.field37795);
+      method12163(0.65F, Items.APPLE);
       method12163(0.65F, Items.field38111);
       method12163(0.65F, Items.field38052);
       method12163(0.65F, Items.field37916);

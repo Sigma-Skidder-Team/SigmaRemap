@@ -5,6 +5,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.client.gui.recipebook.RecipeList;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
@@ -31,7 +32,7 @@ public class Class1263 extends AbstractGui implements Class1190, IGuiEventListen
          this.field6686 = true;
       }
 
-      boolean var10 = var1.player.method5397().method21370((Class5828<?>)var1.player.openContainer);
+      boolean var10 = var1.player.getRecipeBook().method21370((Class5828<?>)var1.player.openContainer);
       List var11 = var2.method34894(true);
       List var12 = !var10 ? var2.method34894(false) : Collections.emptyList();
       int var13 = var11.size();

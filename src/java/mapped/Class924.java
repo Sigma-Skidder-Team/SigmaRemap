@@ -8,6 +8,7 @@ import it.unimi.dsi.fastutil.objects.ObjectIterator;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.util.Util;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -36,9 +37,9 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    private int field5251;
    public final Class8202 field5252 = new Class8204(this);
    private final Object2IntOpenHashMap<ResourceLocation> field5253 = new Object2IntOpenHashMap();
-   public final Class7207<? extends Class4847> field5254;
+   public final IRecipeType<? extends Class4847> field5254;
 
-   public Class924(TileEntityType<?> var1, Class7207<? extends Class4847> var2) {
+   public Class924(TileEntityType<?> var1, IRecipeType<? extends Class4847> var2) {
       super(var1);
       this.field5254 = var2;
    }

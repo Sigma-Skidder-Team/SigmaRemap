@@ -9,22 +9,22 @@ public class Class8964 {
 
    static {
       try {
-         field40488[RecipeBookCategory.field12599.ordinal()] = 1;
+         field40488[RecipeBookCategory.CRAFTING.ordinal()] = 1;
       } catch (NoSuchFieldError var6) {
       }
 
       try {
-         field40488[RecipeBookCategory.field12600.ordinal()] = 2;
+         field40488[RecipeBookCategory.FURNACE.ordinal()] = 2;
       } catch (NoSuchFieldError var5) {
       }
 
       try {
-         field40488[RecipeBookCategory.field12601.ordinal()] = 3;
+         field40488[RecipeBookCategory.BLAST_FURNACE.ordinal()] = 3;
       } catch (NoSuchFieldError var4) {
       }
 
       try {
-         field40488[RecipeBookCategory.field12602.ordinal()] = 4;
+         field40488[RecipeBookCategory.SMOKER.ordinal()] = 4;
       } catch (NoSuchFieldError var3) {
       }
    }

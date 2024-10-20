@@ -3,7 +3,10 @@ package mapped;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.recipebook.RecipeList;
 import net.minecraft.client.renderer.entity.ItemRenderer;
+import net.minecraft.client.util.ClientRecipeBook;
+import net.minecraft.client.util.RecipeBookCategories;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 
@@ -11,18 +14,18 @@ import java.util.List;
 
 public class Class1250 extends Class1249 {
    private static String[] field6614;
-   private final Class1896 field6621;
+   private final RecipeBookCategories field6621;
    private float field6622;
 
-   public Class1250(Class1896 var1) {
+   public Class1250(RecipeBookCategories var1) {
       super(0, 0, 35, 27, false);
       this.field6621 = var1;
       this.method5821(153, 2, 35, 0, Class1254.field6630);
    }
 
    public void method5825(Minecraft var1) {
-      Class6943 var4 = var1.player.method5397();
-      List<RecipeList> var5 = var4.method21387(this.field6621);
+      ClientRecipeBook var4 = var1.player.getRecipeBook();
+      List<RecipeList> var5 = var4.getRecipes(this.field6621);
       if (var1.player.openContainer instanceof Class5828) {
          for (RecipeList var7 : var5) {
             for (IRecipe var9 : var7.method34893(var4.method21370((Class5828<?>)var1.player.openContainer))) {
@@ -74,7 +77,7 @@ public class Class1250 extends Class1249 {
    }
 
    private void method5826(ItemRenderer var1) {
-      List var4 = this.field6621.method8164();
+      List var4 = this.field6621.getIcons();
       int var5 = !this.field6616 ? 0 : -2;
       if (var4.size() != 1) {
          if (var4.size() == 2) {
@@ -86,12 +89,12 @@ public class Class1250 extends Class1249 {
       }
    }
 
-   public Class1896 method5827() {
+   public RecipeBookCategories method5827() {
       return this.field6621;
    }
 
-   public boolean method5828(Class6943 var1) {
-      List<RecipeList> var4 = var1.method21387(this.field6621);
+   public boolean method5828(ClientRecipeBook var1) {
+      List<RecipeList> var4 = var1.getRecipes(this.field6621);
       this.visible = false;
       if (var4 != null) {
          for (RecipeList var6 : var4) {

@@ -122,7 +122,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
             } else {
                RenderType var17 = Class8928.method32633(var1, var16);
                IVertexBuilder var14;
-               if (var1.getItem() == Items.field37905 && var1.method32159()) {
+               if (var1.getItem() == Items.COMPASS && var1.method32159()) {
                   var4.push();
                   Class8892 var15 = var4.getLast();
                   if (var2 != ItemCameraTransformsTransformType.GUI) {
