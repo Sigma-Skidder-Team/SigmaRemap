@@ -12,7 +12,7 @@ public class AutoWalk extends Module {
     }
 
     @EventTarget
-    private void method16336(TickEvent var1) {
+    private void TickEvent(TickEvent event) {
         if (this.isEnabled()) {
             mc.gameSettings.keyBindForward.pressed = true;
         }
@@ -20,7 +20,7 @@ public class AutoWalk extends Module {
 
     @Override
     public void onDisable() {
-        int var3 = GLFW.glfwGetKey(mc.mainWindow.getHandle(), mc.gameSettings.keyBindForward.inputMappingsInput.keyCode);
-        mc.gameSettings.keyBindForward.pressed = var3 == 1;
+        int keyState = GLFW.glfwGetKey(mc.mainWindow.getHandle(), mc.gameSettings.keyBindForward.inputMappingsInput.keyCode);
+        mc.gameSettings.keyBindForward.pressed = keyState == 1;
     }
 }
