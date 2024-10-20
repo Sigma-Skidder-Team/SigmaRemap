@@ -14,14 +14,14 @@ public class MinemenSpeed extends Module {
 
     @EventTarget
     @HigherPriority
-    public void method16683(EventMove var1) {
+    public void EventMove(EventMove event) {
         if (mc.player.onGround) {
-            double var4 = 0.3399 + (double) MovementUtils.method37078() * 0.06;
+            double calculatedSpeed = 0.3399 + (double) MovementUtils.method37078() * 0.06;
             if (mc.player.ticksExisted % 3 == 0) {
-                var4 = 0.679 + (double) MovementUtils.method37078() * 0.12;
+                calculatedSpeed = 0.679 + (double) MovementUtils.method37078() * 0.12;
             }
 
-            MovementUtils.setSpeed(var1, var4);
+            MovementUtils.setSpeed(event, calculatedSpeed);
         }
     }
 }
