@@ -7,7 +7,7 @@ Sigma 5.0 remapping project
 ### [!] Latest fixes/improvements
 We have fixed many features already,
 - music player (featured playlists & search functionality);
-- removed viaversion and the bugs that came with it;
+- added back viaversion from 1.7 all the way up to 1.21.1;
 - all modules that had rotations broken were fixed;
 - shield rendering when sword blocking;
 - recovered old and new changelogs; 
@@ -23,9 +23,8 @@ We have fixed many features already,
 
 ### [!] TO-DO
 1. Fix singleplayer;
-3. Packet issues on some servers (instant disconnect/kicks);
-2. Main menu, animation and gui flickering;
-4. Add back ViaVersion/Jello Portal.
+2. Packet issues on some servers (instant disconnect/kicks);
+3. Main menu, animation and gui flickering;
 
 ### Contributors
 - [Gato](https://github.com/gatov2)
