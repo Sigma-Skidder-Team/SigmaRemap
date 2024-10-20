@@ -15,7 +15,7 @@ public class FastPlace extends Module {
     }
 
     @EventTarget
-    private void method16186(TickEvent var1) {
+    private void TickEvent(TickEvent event) {
         if (this.isEnabled()) {
             if (mc.player.getHeldItemMainhand() != null) {
                 if (mc.player.getHeldItemMainhand().getItem() instanceof Class3292) {
