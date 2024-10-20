@@ -13,7 +13,7 @@ public class LegitWTap extends Module {
     }
 
     @EventTarget
-    private void method16218(TickEvent var1) {
+    private void TickEvent(TickEvent event) {
         if (this.isEnabled()) {
             mc.gameSettings.keyBindSprint.pressed = true;
             if (mc.player.swingProgressInt != 1) {
