@@ -39,18 +39,18 @@ public class ModuleWithModuleSettings extends Module {
     public void method16724() {
         this.method16725();
 
-        for (Module var6 : this.moduleArray) {
-            boolean var7 = this.getStringSettingValueByName("Type").equals(var6.name);
+        for (Module module : this.moduleArray) {
+            boolean var7 = this.getStringSettingValueByName("Type").equals(module.name);
             if (this.isEnabled() && mc.player != null) {
-                var6.setState(var7);
+                module.setState(var7);
                 if (var7) {
-                    this.parentModule = var6;
+                    this.parentModule = module;
                 }
             } else if (this.isEnabled()) {
-                var6.setEnabledBasic(var7);
+                module.setEnabledBasic(var7);
             }
 
-            this.method16728(var6, var7);
+            this.method16728(module, var7);
         }
     }
 

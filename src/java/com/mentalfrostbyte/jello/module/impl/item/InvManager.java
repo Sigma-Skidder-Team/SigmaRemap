@@ -5,6 +5,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
@@ -22,7 +23,7 @@ import net.minecraft.network.play.client.CCloseWindowPacket;
 
 import java.util.ArrayList;
 
-public class InvManager extends Module {
+public class InvManager extends PremiumModule {
     public static int field23654 = 36;
     public static int field23655 = 37;
     public static int field23656 = 38;
@@ -198,7 +199,7 @@ public class InvManager extends Module {
     }
 
     @EventTarget
-    public void method16430(TickEvent var1) {
+    public void onTick(TickEvent event) {
         if (!this.timer.isEnabled()) {
             this.timer.start();
         }

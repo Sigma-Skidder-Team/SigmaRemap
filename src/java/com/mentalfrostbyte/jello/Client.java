@@ -358,6 +358,7 @@ public class Client {
             this.moduleManager = new ModuleManager();
             this.moduleManager.register(this.clientMode);
             this.moduleManager.method14659(this.config);
+            this.moduleManager.saveCurrentConfigToJSON(this.config);
         }
        // System.gc();
     }

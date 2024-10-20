@@ -130,9 +130,9 @@ public class Class4351 extends Class4278 {
                ConfigButtonOnClickGui var5x = (ConfigButtonOnClickGui)this.getIcoPanel().getIcoPanel().getIcoPanel();
                var5x.method13222(() -> var5x.method13615());
 
-               for (Module var7x : Client.getInstance().getModuleManager().getModuleMap().values()) {
+               for (Module module : Client.getInstance().getModuleManager().getModuleMap().values()) {
                   if (!Client.getInstance().getNetworkManager().isPremium()) {
-                     var7x.setEnabledBasic(false);
+                     module.setEnabledBasic(false);
                   }
                }
             }
