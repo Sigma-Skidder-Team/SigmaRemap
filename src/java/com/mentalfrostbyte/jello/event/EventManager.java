@@ -4,39 +4,40 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.priority.*;
 import com.mentalfrostbyte.jello.module.Module;
 import mapped.Class5631;
-import mapped.Class6715;
 
 import java.lang.reflect.Method;
 import java.util.*;
 import java.util.Map.Entry;
 
 public class EventManager {
-    public final Map<Class<? extends Event>, MethodWrapper[]> eventList = new HashMap<Class<? extends Event>, MethodWrapper[]>();
-    public final Map<Class<? extends Module>, Map<Class<? extends Event>, List<MethodWrapper>>> field31402 = new HashMap<>();
-    public int field31403 = 0;
-    public long field31404 = System.currentTimeMillis();
 
-    public boolean isEventMethod(Method var1) {
-        return var1.isAnnotationPresent(EventTarget.class) && var1.getParameterCount() == 1 && Event.class.isAssignableFrom(var1.getParameterTypes()[0]);
+    // Event list and module event mappings
+    public final Map<Class<? extends Event>, MethodWrapper[]> eventHandlers = new HashMap<>();
+    public final Map<Class<? extends Module>, Map<Class<? extends Event>, List<MethodWrapper>>> moduleEventHandlers = new HashMap<>();
+
+    public boolean isEventMethod(Method method) {
+        return method.isAnnotationPresent(EventTarget.class) &&
+                method.getParameterCount() == 1 &&
+                Event.class.isAssignableFrom(method.getParameterTypes()[0]);
     }
 
-    public MethodWrapper[] filterByPriority(MethodWrapper[] var1) {
-        List<MethodWrapper> var4 = new ArrayList<>();
+    public MethodWrapper[] sortHandlersByPriority(MethodWrapper[] handlers) {
+        List<MethodWrapper> sortedHandlers = new ArrayList<>();
 
-        for (Priority var8 : Priority.values()) {
-            for (MethodWrapper var12 : var1) {
-                if (var12.method29026() == var8) {
-                    var4.add(var12);
+        for (Priority priority : Priority.values()) {
+            for (MethodWrapper handler : handlers) {
+                if (handler.getPriority() == priority) {
+                    sortedHandlers.add(handler);
                 }
             }
         }
 
-        return var4.toArray(new MethodWrapper[0]);
+        return sortedHandlers.toArray(new MethodWrapper[0]);
     }
 
-    public boolean method23210(MethodWrapper[] var1, MethodWrapper var2) {
-        for (MethodWrapper var8 : var1) {
-            if (var8.equals(var2)) {
+    public boolean containsHandler(MethodWrapper[] handlers, MethodWrapper handler) {
+        for (MethodWrapper existingHandler : handlers) {
+            if (existingHandler.equals(handler)) {
                 return true;
             }
         }
@@ -44,91 +45,81 @@ public class EventManager {
         return false;
     }
 
-    public boolean method23211(MethodWrapper[] var1, Class<?> var2, MethodWrapper var3) {
+    public boolean shouldRegisterHandler(MethodWrapper[] handlers, Class<?> declaringClass, MethodWrapper handler) {
         try {
-            Method var6 = var3.getOBjecct().getClass().getMethod(var3.method29025().getName(), var3.method29025().getParameterTypes());
-            return !this.method23210(var1, var3) && (var6.getDeclaringClass() == var2 || !this.isEventMethod(var6));
-        } catch (NoSuchMethodException var7) {
+            Method method = handler.getParent().getClass().getMethod(handler.getMethod().getName(), handler.getMethod().getParameterTypes());
+            return !this.containsHandler(handlers, handler) && (method.getDeclaringClass() == declaringClass || !this.isEventMethod(method));
+        } catch (NoSuchMethodException e) {
             return true;
-        } catch (SecurityException var8) {
-            var8.printStackTrace();
+        } catch (SecurityException e) {
             return false;
         }
     }
 
-    public Priority getMethodPriority(Method var1) {
-        if (!var1.isAnnotationPresent(HigestPriority.class)) {
-            if (!var1.isAnnotationPresent(HigherPriority.class)) {
-                if (!var1.isAnnotationPresent(LowerPriority.class)) {
-                    return !var1.isAnnotationPresent(LowestPriority.class) ? Priority.DEFAULT : Priority.LOWEST;
-                } else {
-                    return Priority.LOWER;
-                }
-            } else {
-                return Priority.HIGHER;
-            }
-        } else {
+    public Priority getMethodPriority(Method method) {
+        if (method.isAnnotationPresent(HigestPriority.class)) {
             return Priority.HIGHEST;
+        } else if (method.isAnnotationPresent(HigherPriority.class)) {
+            return Priority.HIGHER;
+        } else if (method.isAnnotationPresent(LowerPriority.class)) {
+            return Priority.LOWER;
+        } else {
+            return !method.isAnnotationPresent(LowestPriority.class) ? Priority.DEFAULT : Priority.LOWEST;
         }
     }
 
-    public void subscribe(Module var1) {
-        Map<Class<? extends Event>, List<MethodWrapper>> var4 = this.field31402.get(var1.getClass());
-        if (var4 != null) {
-            for (Entry<Class<? extends Event>, List<MethodWrapper>> var6 : var4.entrySet()) {
-                Class<? extends Event> var7 = var6.getKey();
-                Set<MethodWrapper> var8 = new LinkedHashSet<>(var6.getValue());
-                MethodWrapper[] var9 = this.eventList.getOrDefault(var7, new MethodWrapper[0]);
-                var8.addAll(Arrays.asList(var9));
-                this.eventList.put(var7, this.filterByPriority(var8.toArray(var9)));
+    public void subscribe(Module module) {
+        Map<Class<? extends Event>, List<MethodWrapper>> moduleHandlers = this.moduleEventHandlers.get(module.getClass());
+        if (moduleHandlers != null) {
+            for (Entry<Class<? extends Event>, List<MethodWrapper>> entry : moduleHandlers.entrySet()) {
+                Class<? extends Event> eventType = entry.getKey();
+                Set<MethodWrapper> handlers = new LinkedHashSet<>(entry.getValue());
+                MethodWrapper[] existingHandlers = this.eventHandlers.getOrDefault(eventType, new MethodWrapper[0]);
+                handlers.addAll(Arrays.asList(existingHandlers));
+                this.eventHandlers.put(eventType, this.sortHandlersByPriority(handlers.toArray(existingHandlers)));
             }
         }
     }
 
-    public void unsubscribe(Module var1) {
-        Map<Class<? extends Event>, List<MethodWrapper>> var4 = this.field31402.get(var1.getClass());
-        if (var4 != null) {
-            for (Entry<Class<? extends Event>, List<MethodWrapper>> var6 : var4.entrySet()) {
-                Class<? extends Event> var7 = var6.getKey();
-                List<MethodWrapper> var8 = var6.getValue();
-                Set<MethodWrapper> var9 = new LinkedHashSet<>(Arrays.asList(this.eventList.getOrDefault(var7,
-                        new MethodWrapper[0])));
-                var9.removeAll(var8);
-                this.eventList.put(var7, var9.toArray(new MethodWrapper[0]));
+    public void unsubscribe(Module module) {
+        Map<Class<? extends Event>, List<MethodWrapper>> moduleHandlers = this.moduleEventHandlers.get(module.getClass());
+        if (moduleHandlers != null) {
+            for (Entry<Class<? extends Event>, List<MethodWrapper>> entry : moduleHandlers.entrySet()) {
+                Class<? extends Event> eventType = entry.getKey();
+                List<MethodWrapper> handlersToRemove = entry.getValue();
+                Set<MethodWrapper> existingHandlers = new LinkedHashSet<>(Arrays.asList(this.eventHandlers.getOrDefault(eventType, new MethodWrapper[0])));
+                existingHandlers.removeAll(handlersToRemove);
+                this.eventHandlers.put(eventType, existingHandlers.toArray(new MethodWrapper[0]));
             }
         }
 
-        this.method23217();
+        this.cleanEventHandlers();
     }
 
-    public void register(Object var1) {
-        if (var1 != null) {
-            boolean var4 = false;
+    public void register(Object listener) {
+        if (listener != null) {
+            for (Class<?> moduleClass = listener.getClass(); moduleClass != null; moduleClass = moduleClass.getSuperclass()) {
+                for (Method method : moduleClass.getDeclaredMethods()) {
+                    if (this.isEventMethod(method)) {
+                        method.setAccessible(true);
+                        Priority priority = this.getMethodPriority(method);
+                        Class<? extends Event> eventType = (Class<? extends Event>) method.getParameterTypes()[0];
+                        MethodWrapper[] handlers = this.eventHandlers.computeIfAbsent(eventType, k -> new MethodWrapper[0]);
 
-            for (Class<?> var5 = var1.getClass(); var5 != null; var5 = var5.getSuperclass()) {
-                for (Method var9 : var5.getDeclaredMethods()) {
-                    if (this.isEventMethod(var9)) {
-                        var9.setAccessible(true);
-                        Priority var10 = this.getMethodPriority(var9);
-                        Class<? extends Event> var11 = (Class<? extends Event>) var9.getParameterTypes()[0];
-                        MethodWrapper[] var12 = this.eventList.computeIfAbsent(var11, k -> new MethodWrapper[0]);
+                        MethodWrapper handler = new MethodWrapper(listener, method, priority);
+                        if (this.shouldRegisterHandler(handlers, moduleClass, handler)) {
+                            boolean shouldExcludeMethod = Module.class.isAssignableFrom(moduleClass) && !method.isAnnotationPresent(Class5631.class);
+                            if (!shouldExcludeMethod) {
+                                handlers = Arrays.copyOf(handlers, handlers.length + 1);
+                                handlers[handlers.length - 1] = handler;
+                                this.eventHandlers.put(eventType, this.sortHandlersByPriority(handlers));
+                            } else if (handler.getTrue()) { //IF THIS IS SET TO FALSE MODULES WONT FUNCTION!!!
+                                Map<Class<? extends Event>, List<MethodWrapper>> moduleHandlers = this.moduleEventHandlers.getOrDefault(moduleClass, new HashMap<Class<? extends Event>, List<MethodWrapper>>());
+                                List<MethodWrapper> handlerList = moduleHandlers.computeIfAbsent(eventType, k -> new ArrayList<>());
 
-                        MethodWrapper var13 = new MethodWrapper(var1, var5, var9, var10);
-                        if (this.method23211(var12, var5, var13)) {
-                            boolean var14 = Module.class.isAssignableFrom(var5) && !var9.isAnnotationPresent(Class5631.class);
-                            if (!var14) {
-                                var12 = Arrays.copyOf(var12, var12.length + 1);
-                                var12[var12.length - 1] = var13;
-                                this.eventList.put(var11, this.filterByPriority(var12));
-                            } else if (!var13.getFalse()) { //IF THIS IS SET TO TRUE RENDER MODULES DONT RENDER!!!
-                                Map<Class<? extends Event>, List<MethodWrapper>> var15 = this.field31402.getOrDefault(var5, new HashMap<Class<? extends Event>, List<MethodWrapper>>());
-                                List<MethodWrapper> var16 = var15.computeIfAbsent(var11, k -> new ArrayList<>());
-
-                                var16.add(var13);
-                                var15.put(var11, var16);
-                                this.field31402.put((Class<? extends Module>) var5, var15);
-                            } else {
-                                Class6715.field29433.add(var1);
+                                handlerList.add(handler);
+                                moduleHandlers.put(eventType, handlerList);
+                                this.moduleEventHandlers.put((Class<? extends Module>) moduleClass, moduleHandlers);
                             }
                         }
                     }
@@ -137,33 +128,30 @@ public class EventManager {
         }
     }
 
-    public void method23216(Object var1) {
-    }
-
-    public void method23217() {
-        this.eventList.values().removeIf(var4 -> var4.length == 0);
+    public void cleanEventHandlers() {
+        this.eventHandlers.values().removeIf(handlers -> handlers.length == 0);
     }
 
     public void call(Event event) {
         if (event != null) {
-            MethodWrapper[] var4 = this.eventList.get(event.getClass());
-            if (var4 != null) {
-                int var5 = var4.length;
+            MethodWrapper[] handlers = this.eventHandlers.get(event.getClass());
+            if (handlers != null) {
+                int handlerLength = handlers.length;
 
                 try {
-                    for (int var6 = 0; var6 < var5; var6++) {
-                        MethodWrapper var7 = var4[var6];
-                        if (var7.getReflection() != null) {
-                            var7.getReflection().method31519(var7.getOBjecct(), event);
+                    for (int i = 0; i < handlerLength; i++) {
+                        MethodWrapper handler = handlers[i];
+                        if (handler.getReflection() != null) {
+                            handler.getReflection().method31519(handler.getParent(), event);
                         } else {
-                            System.out.println("null->  " + var7.getOBjecct());
+                            System.out.println("null ->  " + handler.getParent());
                         }
                     }
-                } catch (Exception var8) {
-                    var8.printStackTrace();
+                } catch (Exception e) {
+                    e.printStackTrace();
                     Client.getInstance().getLogger().error("An unhandled exception occured in an event handler's function");
-                } catch (Throwable var9) {
-                    var9.printStackTrace();
+                } catch (Throwable e) {
+                    e.printStackTrace();
                 }
             }
         }
