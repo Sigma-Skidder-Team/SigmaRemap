@@ -1,4 +1,4 @@
-4package mapped;
+package mapped;
 
 import com.google.common.collect.Lists;
 import com.mentalfrostbyte.jello.module.impl.render.XRay;
