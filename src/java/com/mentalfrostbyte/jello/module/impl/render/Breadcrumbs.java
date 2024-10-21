@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Breadcrumbs extends Module {
-    private final List<Vector3d> field23896 = new ArrayList<Vector3d>();
+    private final List<Vector3d> breadcrumbsPath = new ArrayList<>();
 
     public Breadcrumbs() {
         super(ModuleCategory.RENDER, "Breadcrumbs", "Shows your taken path");
@@ -27,30 +27,30 @@ public class Breadcrumbs extends Module {
     }
 
     @EventTarget
-    public void method16768(EventMove var1) {
+    public void onMove(EventMove event) {
         if (this.isEnabled()) {
-            if (var1.getX() != 0.0 || var1.getY() != 0.0 || var1.getZ() != 0.0) {
-                this.field23896.add(new Vector3d(mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ()));
+            if (event.getX() != 0.0 || event.getY() != 0.0 || event.getZ() != 0.0) {
+                this.breadcrumbsPath.add(new Vector3d(mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ()));
             }
         }
     }
 
     @EventTarget
-    public void method16769(WorldLoadEvent var1) {
+    public void onWorldLoad(WorldLoadEvent event) {
         if (this.isEnabled()) {
-            this.field23896.clear();
+            this.breadcrumbsPath.clear();
         }
     }
 
     @Override
     public void onDisable() {
-        this.field23896.clear();
+        this.breadcrumbsPath.clear();
     }
 
-    public Vector3d method16770(Vector3d var1) {
-        return var1.add(
+    public Vector3d adjustForRendering(Vector3d position) {
+        return position.add(
                 new Vector3d(
-                        - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getX(),
+                        -Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getX(),
                         -Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getY(),
                         -Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getZ()
                 )
@@ -58,41 +58,42 @@ public class Breadcrumbs extends Module {
     }
 
     @EventTarget
-    public void method16771(Render3DEvent var1) {
+    public void onRender3D(Render3DEvent event) {
         if (this.isEnabled()) {
-            Vector3d var4 = new Vector3d(
-                    mc.player.lastTickPosX - (mc.player.lastTickPosX - mc.player.getPosX()) * (double) mc.getRenderPartialTicks(),
-                    mc.player.lastTickPosY - (mc.player.lastTickPosY - mc.player.getPosY()) * (double) mc.getRenderPartialTicks(),
-                    mc.player.lastTickPosZ - (mc.player.lastTickPosZ - mc.player.getPosZ()) * (double) mc.getRenderPartialTicks()
+            Vector3d interpolatedPlayerPosition = new Vector3d(
+                    mc.player.lastTickPosX - (mc.player.lastTickPosX - mc.player.getPosX()) * mc.getRenderPartialTicks(),
+                    mc.player.lastTickPosY - (mc.player.lastTickPosY - mc.player.getPosY()) * mc.getRenderPartialTicks(),
+                    mc.player.lastTickPosZ - (mc.player.lastTickPosZ - mc.player.getPosZ()) * mc.getRenderPartialTicks()
             );
-            GL11.glBlendFunc(770, 771);
-            GL11.glEnable(3042);
-            GL11.glEnable(2848);
+
+            GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
+            GL11.glEnable(GL11.GL_BLEND);
+            GL11.glEnable(GL11.GL_LINE_SMOOTH);
             GL11.glLineWidth(2.0F);
-            GL11.glDisable(3553);
-            GL11.glDisable(2929);
+            GL11.glDisable(GL11.GL_TEXTURE_2D);
+            GL11.glDisable(GL11.GL_DEPTH_TEST);
             GL11.glDepthMask(false);
             GL11.glColor4fv(MultiUtilities.method17709(MultiUtilities.applyAlpha(this.parseSettingValueToIntBySettingName("Color"), 0.5F)));
-            GL11.glBegin(3);
+            GL11.glBegin(GL11.GL_LINE_STRIP);
 
-            for (Vector3d var6 : this.field23896) {
-                Vector3d var7 = this.method16770(var6);
-                double var8 = var6.method11341(var4);
-                double var10 = !this.getBooleanValueFromSettingName("Fade Out") ? 0.6F : 1.0 - Math.min(1.0, var8 / 14.0);
-                if (!(var8 > 24.0)) {
-                    GL11.glColor4fv(MultiUtilities.method17709(MultiUtilities.applyAlpha(this.parseSettingValueToIntBySettingName("Color"), (float) var10)));
-                    GL11.glVertex3d(var7.x, var7.y, var7.z);
+            for (Vector3d breadcrumb : this.breadcrumbsPath) {
+                Vector3d adjustedBreadcrumb = this.adjustForRendering(breadcrumb);
+                double distance = breadcrumb.method11341(interpolatedPlayerPosition);
+                double fadeFactor = !this.getBooleanValueFromSettingName("Fade Out") ? 0.6F : 1.0 - Math.min(1.0, distance / 14.0);
+                if (!(distance > 24.0)) {
+                    GL11.glColor4fv(MultiUtilities.method17709(MultiUtilities.applyAlpha(this.parseSettingValueToIntBySettingName("Color"), (float) fadeFactor)));
+                    GL11.glVertex3d(adjustedBreadcrumb.x, adjustedBreadcrumb.y, adjustedBreadcrumb.z);
                 }
             }
 
-            Vector3d var12 = this.method16770(var4);
-            GL11.glVertex3d(var12.x, var12.y, var12.z);
+            Vector3d adjustedPlayerPosition = this.adjustForRendering(interpolatedPlayerPosition);
+            GL11.glVertex3d(adjustedPlayerPosition.x, adjustedPlayerPosition.y, adjustedPlayerPosition.z);
             GL11.glEnd();
-            GL11.glEnable(3553);
-            GL11.glEnable(2929);
-            GL11.glDisable(2848);
+            GL11.glEnable(GL11.GL_TEXTURE_2D);
+            GL11.glEnable(GL11.GL_DEPTH_TEST);
+            GL11.glDisable(GL11.GL_LINE_SMOOTH);
             GL11.glDepthMask(true);
-            GL11.glDisable(3042);
+            GL11.glDisable(GL11.GL_BLEND);
             GL11.glColor4d(1.0, 1.0, 1.0, 1.0);
         }
     }
