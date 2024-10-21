@@ -18,52 +18,55 @@ public class BoxChestESP extends Module {
     }
 
     @EventTarget
-    private void method16297(Render3DEvent var1) {
+    private void onRender3D(Render3DEvent event) {
         if (this.isEnabled()) {
             if (mc.player != null && mc.world != null) {
-                this.method16299();
-                this.method16298();
-                this.method16300();
+                prepareRenderSettings();
+                renderChestBoxes();
+                applyTextureSettings();
             }
         }
     }
 
-    private void method16298() {
-        int var3 = MultiUtilities.applyAlpha(this.access().parseSettingValueToIntBySettingName("Regular Color"), 0.14F);
-        int var4 = MultiUtilities.applyAlpha(this.access().parseSettingValueToIntBySettingName("Ender Color"), 0.14F);
-        int var5 = MultiUtilities.applyAlpha(this.access().parseSettingValueToIntBySettingName("Trapped Color"), 0.14F);
+    private void renderChestBoxes() {
+        int regularColor = MultiUtilities.applyAlpha(this.access().parseSettingValueToIntBySettingName("Regular Color"), 0.14F);
+        int enderColor = MultiUtilities.applyAlpha(this.access().parseSettingValueToIntBySettingName("Ender Color"), 0.14F);
+        int trappedColor = MultiUtilities.applyAlpha(this.access().parseSettingValueToIntBySettingName("Trapped Color"), 0.14F);
 
-        for (TileEntity var7 : mc.world.loadedTileEntityList) {
-            boolean var8 = var7 instanceof ChestTileEntity && !(var7 instanceof Class970) && this.access().getBooleanValueFromSettingName("Show Regular Chests");
-            boolean var9 = var7 instanceof Class943 && this.access().getBooleanValueFromSettingName("Show Ender Chests");
-            boolean var10 = var7 instanceof Class970 && this.access().getBooleanValueFromSettingName("Show Trapped Chests");
-            if (var8 || var9 || var10) {
-                double var11 = PositionUtils.getRelativePosition(var7.getPos()).x;
-                double var13 = PositionUtils.getRelativePosition(var7.getPos()).y;
-                double var15 = PositionUtils.getRelativePosition(var7.getPos()).z;
+        for (TileEntity tileEntity : mc.world.loadedTileEntityList) {
+            boolean showRegularChests = tileEntity instanceof ChestTileEntity && !(tileEntity instanceof Class970)
+                    && this.access().getBooleanValueFromSettingName("Show Regular Chests");
+            boolean showEnderChests = tileEntity instanceof Class943 && this.access().getBooleanValueFromSettingName("Show Ender Chests");
+            boolean showTrappedChests = tileEntity instanceof Class970 && this.access().getBooleanValueFromSettingName("Show Trapped Chests");
+
+            if (showRegularChests || showEnderChests || showTrappedChests) {
+                double x = PositionUtils.getRelativePosition(tileEntity.getPos()).x;
+                double y = PositionUtils.getRelativePosition(tileEntity.getPos()).y;
+                double z = PositionUtils.getRelativePosition(tileEntity.getPos()).z;
+
                 GL11.glDisable(2929);
                 GL11.glEnable(3042);
-                int var17 = var3;
-                if (!(var7 instanceof Class943)) {
-                    if (var7 instanceof Class970) {
-                        var17 = var5;
-                    }
-                } else {
-                    var17 = var4;
+                int color = regularColor;
+
+                if (tileEntity instanceof Class970) {
+                    color = trappedColor;
+                } else if (tileEntity instanceof Class943) {
+                    color = enderColor;
                 }
 
-                Box3D var18 = new Box3D(
-                        var7.getBlockState().method23412(mc.world, var7.getPos()).getBoundingBox().offset(var11, var13, var15)
+                Box3D boundingBox = new Box3D(
+                        tileEntity.getBlockState().method23412(mc.world, tileEntity.getPos()).getBoundingBox().offset(x, y, z)
                 );
+
                 GL11.glAlphaFunc(519, 0.0F);
-                RenderUtil.render3DColoredBox(var18, var17);
-                RenderUtil.renderWireframeBox(var18, 2.0F, var17);
+                RenderUtil.render3DColoredBox(boundingBox, color);
+                RenderUtil.renderWireframeBox(boundingBox, 2.0F, color);
                 GL11.glDisable(3042);
             }
         }
     }
 
-    private void method16299() {
+    private void prepareRenderSettings() {
         GL11.glLineWidth(3.0F);
         GL11.glPointSize(3.0F);
         GL11.glEnable(2832);
@@ -78,16 +81,15 @@ public class BoxChestESP extends Module {
         mc.gameRenderer.lightmapTexture.method7316();
     }
 
-    private void method16300() {
+    private void applyTextureSettings() {
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
         GL11.glDisable(2896);
         GL11.glEnable(3553);
         GL11.glEnable(2903);
         RenderSystem.glMultiTexCoord2f(33986, 240.0F, 240.0F);
         TextureImpl.method36180();
-        TextureManager var10000 = mc.getTextureManager();
-        mc.getTextureManager();
-        var10000.bindTexture(TextureManager.field1094);
+        TextureManager textureManager = mc.getTextureManager();
+        textureManager.bindTexture(TextureManager.field1094);
         mc.gameRenderer.lightmapTexture.method7317();
     }
 }
