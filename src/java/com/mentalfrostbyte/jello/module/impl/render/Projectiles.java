@@ -17,10 +17,10 @@ import org.lwjgl.opengl.GL11;
 import java.util.List;
 
 public class Projectiles extends Module {
-    public EntityRendererManager field23731 = mc.getRenderManager();
-    public Class7423 field23732 = new Class7423(0.0F, 0.0F, 0.0F);
-    public Class7423 field23733 = new Class7423(0.0F, 0.0F, 0.0F);
-    public Class7423 field23734 = new Class7423(0.0F, 0.0F, 0.0F);
+    public EntityRendererManager renderManager = mc.getRenderManager();
+    public Class7423 rotationX = new Class7423(0.0F, 0.0F, 0.0F);
+    public Class7423 rotationY = new Class7423(0.0F, 0.0F, 0.0F);
+    public Class7423 rotationZ = new Class7423(0.0F, 0.0F, 0.0F);
 
     public Projectiles() {
         super(ModuleCategory.RENDER, "Projectiles", "Predict the path of a projectile");
@@ -237,15 +237,15 @@ public class Projectiles extends Module {
                         BlockPos var33 = new BlockPos(0, 0, 0).offset(((BlockRayTraceResult) var4.field15831).getFace());
                         GL11.glRotatef(
                                 45.0F,
-                                this.field23732.method23931((float) var33.getX()),
-                                this.field23732.method23932((float) (-var33.getY())),
-                                this.field23732.method23933((float) var33.getZ())
+                                this.rotationX.method23931((float) var33.getX()),
+                                this.rotationX.method23932((float) (-var33.getY())),
+                                this.rotationX.method23933((float) var33.getZ())
                         );
                         GL11.glRotatef(
                                 90.0F,
-                                this.field23733.method23931((float) var33.getZ()),
-                                this.field23733.method23932((float) var33.getY()),
-                                this.field23733.method23933((float) (-var33.getX()))
+                                this.rotationY.method23931((float) var33.getZ()),
+                                this.rotationY.method23932((float) var33.getY()),
+                                this.rotationY.method23933((float) (-var33.getX()))
                         );
                         GL11.glTranslatef(-0.5F, 0.0F, -0.5F);
                         Box3D var34 = new Box3D(0.0, 0.0, 0.0, 1.0, 0.0, 1.0);
