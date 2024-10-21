@@ -239,7 +239,7 @@ public class EntityRendererManager {
    public <E extends Entity> void renderEntityStatic(
            E var1, double var2, double var4, double var6, float var8, float var9, MatrixStack var10, Class7733 var11, int var12
    ) {
-      if (!FPSBooster.field23568 || !(var1 instanceof ArmorStandEntity) && !(var1 instanceof Class1099) && !(var1 instanceof ItemFrameEntity)) {
+      if (!FPSBooster.isEnabled || !(var1 instanceof ArmorStandEntity) && !(var1 instanceof Class1099) && !(var1 instanceof ItemFrameEntity)) {
          if (this.info != null) {
             EntityRenderer <? super E > var15 = this.getRenderer(var1);
 
