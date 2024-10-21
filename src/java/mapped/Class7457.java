@@ -1,4 +1,4 @@
-package mapped;
+4package mapped;
 
 import com.google.common.collect.Lists;
 import com.mentalfrostbyte.jello.module.impl.render.XRay;
@@ -34,7 +34,7 @@ public class Class7457 {
    }
 
    public boolean method24107(Direction var1, Direction var2) {
-      return !XRay.field23483.isEnabled() ? this.field32076.method33635(var1, var2) : true;
+      return !XRay.instance.isEnabled() ? this.field32076.method33635(var1, var2) : true;
    }
 
    public BitSet method24112(RenderType var1) {
