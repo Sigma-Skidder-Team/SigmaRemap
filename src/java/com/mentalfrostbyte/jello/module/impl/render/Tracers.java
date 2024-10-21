@@ -22,7 +22,7 @@ public class Tracers extends Module {
     }
 
     @EventTarget
-    public void method16521(Render3DEvent var1) {
+    public void method16521(Render3DEvent event) {
         if (this.isEnabled()) {
             GL11.glBlendFunc(770, 771);
             GL11.glAlphaFunc(519, 0.0F);
@@ -34,13 +34,10 @@ public class Tracers extends Module {
             GL11.glDepthMask(false);
             GL11.glShadeModel(7425);
 
-            for (Entity var5 : MultiUtilities.method17680()) {
-                if (var5 != mc.player
-                        && var5.isAlive()
-                        && var5.boundingBox.getAverageEdgeLength() > 0.8
-                        && var5.ticksExisted > 30
-                        && !Client.getInstance().getCombatManager().isTargetABot(var5)) {
-                    this.method16522(var5);
+            for (Entity entity : MultiUtilities.method17680()) {
+                if (entity != mc.player && entity.isAlive() && entity.boundingBox.getAverageEdgeLength() > 0.8
+                        && entity.ticksExisted > 30 && !Client.getInstance().getCombatManager().isTargetABot(entity)) {
+                    this.method16522(entity);
                 }
             }
 
@@ -52,19 +49,19 @@ public class Tracers extends Module {
         }
     }
 
-    public void method16522(Entity var1) {
-        double var4 = PositionUtils.getRelativePosition(var1).x;
-        double var6 = PositionUtils.getRelativePosition(var1).y + (double) (var1.getHeight() / 2.0F);
-        double var8 = PositionUtils.getRelativePosition(var1).z;
-        Vector3d var10 = new Vector3d(0.0, 0.0, 10.0)
+    public void method16522(Entity entity) {
+        double x = PositionUtils.getRelativePosition(entity).x;
+        double y = PositionUtils.getRelativePosition(entity).y + (double) (entity.getHeight() / 2.0F);
+        double z = PositionUtils.getRelativePosition(entity).z;
+        Vector3d offset = new Vector3d(0.0, 0.0, 10.0)
                 .method11350(-((float) Math.toRadians(Minecraft.getInstance().player.rotationPitch)))
                 .method11351(-((float) Math.toRadians(Minecraft.getInstance().player.rotationYaw)));
-        int var11 = this.parseSettingValueToIntBySettingName("Color");
+        int color = this.parseSettingValueToIntBySettingName("Color");
         GL11.glBegin(1);
-        GL11.glColor4fv(MultiUtilities.method17709(MultiUtilities.applyAlpha(var11, 0.45F)));
-        GL11.glVertex3d(var10.x, var10.y, var10.z);
-        GL11.glColor4fv(MultiUtilities.method17709(MultiUtilities.applyAlpha(var11, 0.0F)));
-        GL11.glVertex3d(var4, var6, var8);
+        GL11.glColor4fv(MultiUtilities.method17709(MultiUtilities.applyAlpha(color, 0.45F)));
+        GL11.glVertex3d(offset.x, offset.y, offset.z);
+        GL11.glColor4fv(MultiUtilities.method17709(MultiUtilities.applyAlpha(color, 0.0F)));
+        GL11.glVertex3d(x, y, z);
         GL11.glEnd();
     }
 }
