@@ -5,24 +5,24 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventRenderBlocks;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import mapped.Class3420;
+import mapped.Class3420; // Presumed to be an ore class.
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Blocks;
 
 public class XRay extends Module {
-    public static XRay field23483;
+    public static XRay instance;
 
     public XRay() {
         super(ModuleCategory.RENDER, "XRay", "Shows ores");
-        field23483= this;
+        instance = this;
     }
 
     @Override
     public void onEnable() {
         mc.worldRenderer.loadRenderers();
-        Fullbright fullbright = (Fullbright) Client.getInstance().getModuleManager().getModuleByClass(Fullbright.class);
-        if (!fullbright.isEnabled()) {
-            fullbright.setState(true);
+        Fullbright fullbrightModule = (Fullbright) Client.getInstance().getModuleManager().getModuleByClass(Fullbright.class);
+        if (!fullbrightModule.isEnabled()) {
+            fullbrightModule.setState(true);
         }
     }
 
@@ -32,10 +32,10 @@ public class XRay extends Module {
     }
 
     @EventTarget
-    public void EventRenderBlocks(EventRenderBlocks event) {
+    public void onRenderBlocks(EventRenderBlocks event) {
         if (this.isEnabled()) {
-            AbstractBlock.AbstractBlockState getBlock = event.method13970();
-            if (!(getBlock.getBlock() instanceof Class3420) && getBlock.getBlock() != Blocks.field37121) {
+            AbstractBlock.AbstractBlockState blockState = event.method13970();
+            if (!(blockState.getBlock() instanceof Class3420) && blockState.getBlock() != Blocks.field37121) {
                 event.setCancelled(true);
             } else {
                 event.method13972(true);
