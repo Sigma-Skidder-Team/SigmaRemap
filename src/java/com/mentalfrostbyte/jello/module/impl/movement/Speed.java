@@ -20,6 +20,7 @@ public class Speed extends ModuleWithModuleSettings {
                 "Speed",
                 "Vroom vroom",
                 new VanillaSpeed(),
+                new HypixelGroundSpeed(),
                 new HypixelSpeed(),
                 new AACSpeed(),
                 new OldAACSpeed(),
@@ -56,9 +57,9 @@ public class Speed extends ModuleWithModuleSettings {
     }
 
     public void method16764() {
-        if (this.parentModule instanceof HypixelSpeed) {
-            HypixelSpeed hypixelSpeed = (HypixelSpeed) this.parentModule;
-            hypixelSpeed.method16044();
+        if (this.parentModule instanceof HypixelGroundSpeed) {
+            HypixelGroundSpeed hypixelSpeed = (HypixelGroundSpeed) this.parentModule;
+          //  hypixelSpeed.method16044();
         }
     }
 }
