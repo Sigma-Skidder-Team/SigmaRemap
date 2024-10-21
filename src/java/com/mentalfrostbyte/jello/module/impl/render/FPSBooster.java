@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 
 public class FPSBooster extends Module {
-    public static boolean field23568 = false;
+    public static boolean isEnabled = false;
 
     public FPSBooster() {
         super(ModuleCategory.RENDER, "FPSBooster", "Disables Armor Stand and particle rendering");
@@ -13,16 +13,16 @@ public class FPSBooster extends Module {
     @Override
     public void initialize() {
         super.initialize();
-        field23568 = this.isEnabled();
+        isEnabled = this.isEnabled();
     }
 
     @Override
     public void onDisable() {
-        field23568 = false;
+        isEnabled = false;
     }
 
     @Override
     public void onEnable() {
-        field23568 = true;
+        isEnabled = true;
     }
 }
