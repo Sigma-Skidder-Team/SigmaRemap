@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventRenderBlocks;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import mapped.Class3420; // Presumed to be an ore class.
+import mapped.Class3420;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Blocks;
 
