@@ -18,25 +18,25 @@ import org.lwjgl.opengl.GL11;
 
 public class PathFinder extends Module {
     public BlockRayTraceResult rayTraceResult;
-    public Thread field23491;
-    public Class9823 field23492;
+    public Thread computationThread;
+    public Class9823 pathfindingClass;
 
     public PathFinder() {
         super(ModuleCategory.RENDER, "PathFinder", "You know what it is");
     }
 
     @EventTarget
-    public void onTick(TickEvent var1) {
+    public void onTick(TickEvent event) {
         this.rayTraceResult = BlockUtil.rayTrace(mc.player.rotationYaw, mc.player.rotationPitch, 200.0F);
-        if (this.field23491 != null && this.field23492 != null) {
+        if (this.computationThread != null && this.pathfindingClass != null) {
             Client.getInstance()
                     .getNotificationManager()
-                    .send(new Notification("AutoMiner", "Computing... (" + this.field23492.field45900 + ")", ResourceList.directionIconPNG));
+                    .send(new Notification("AutoMiner", "Computing... (" + this.pathfindingClass.field45900 + ")", ResourceList.directionIconPNG));
         }
     }
 
     @EventTarget
-    public void onRender3D(Render3DEvent var1) {
+    public void onRender3D(Render3DEvent event) {
         if (this.isEnabled()) {
             if (this.rayTraceResult != null) {
                 int color = MultiUtilities.applyAlpha(ClientColors.PALE_YELLOW.getColor, 0.14F);
