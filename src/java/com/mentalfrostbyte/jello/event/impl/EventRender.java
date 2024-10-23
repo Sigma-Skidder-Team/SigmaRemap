@@ -1,8 +1,8 @@
 package com.mentalfrostbyte.jello.event.impl;
 
-import com.mentalfrostbyte.jello.event.Event;
+import com.mentalfrostbyte.jello.event.CancellableEvent;
 
-public class EventRender implements Event {
+public class EventRender extends CancellableEvent {
     private int field21541 = 99;
 
     public int method13960() {

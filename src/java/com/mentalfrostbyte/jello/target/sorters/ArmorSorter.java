@@ -1,12 +1,14 @@
-package mapped;
+package com.mentalfrostbyte.jello.target.sorters;
 
+import mapped.InteractAutoBlock;
+import mapped.InvManagerUtils;
+import mapped.TimedEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 
 import java.util.Comparator;
 
 public class ArmorSorter implements Comparator<TimedEntity> {
-   private static String[] field19522;
    public final InteractAutoBlock field19523;
 
    public ArmorSorter(InteractAutoBlock var1) {

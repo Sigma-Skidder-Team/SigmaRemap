@@ -1,8 +1,8 @@
 package com.mentalfrostbyte.jello.event.impl;
 
-import com.mentalfrostbyte.jello.event.Event;
+import com.mentalfrostbyte.jello.event.CancellableEvent;
 
-public class Render2DEvent implements Event {
+public class Render2DEvent extends CancellableEvent {
     public final float partialTicks;
     public final long field21555;
 

@@ -1,8 +1,11 @@
-package mapped;
+package com.mentalfrostbyte.jello.gui;
 
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
+import mapped.Class4347;
+import mapped.Class6751;
+import mapped.ColorHelper;
 import net.minecraft.client.Minecraft;
 
 import java.util.ArrayList;

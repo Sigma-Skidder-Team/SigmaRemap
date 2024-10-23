@@ -1,13 +1,13 @@
-package mapped;
+package com.mentalfrostbyte.jello.gui.screens;
 
 import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.gui.screens.LoginAndOutScreen;
 import com.mentalfrostbyte.jello.network.Class9507;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
+import mapped.*;
 
 public class AccountSignUpScreen extends Class4247 {
    private UITextDisplay stringPanel;

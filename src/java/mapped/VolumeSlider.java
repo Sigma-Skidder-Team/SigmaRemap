@@ -1,5 +1,6 @@
 package mapped;
 
+import com.mentalfrostbyte.jello.gui.AnimatedIconPanel;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;

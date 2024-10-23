@@ -1,5 +1,6 @@
 package mapped;
 
+import com.mentalfrostbyte.jello.gui.AnimatedIconPanel;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;

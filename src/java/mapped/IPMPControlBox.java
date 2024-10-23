@@ -1,5 +1,7 @@
 package mapped;
 
+import com.mentalfrostbyte.jello.music.AudioByteManager;
+
 import java.io.IOException;
 
 public class IPMPControlBox extends Class4975 {

@@ -1,6 +1,6 @@
 package com.mentalfrostbyte.jello.event;
 
-public class CancellableEvent extends Class4416 implements ICancellableEvent {
+public class CancellableEvent implements ICancellableEvent {
     public boolean cancelled;
 
     @Override

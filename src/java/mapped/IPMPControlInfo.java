@@ -1,5 +1,7 @@
 package mapped;
 
+import com.mentalfrostbyte.jello.music.AudioByteManager;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;

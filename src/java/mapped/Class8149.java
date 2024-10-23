@@ -281,7 +281,7 @@ public class Class8149 {
    }
 
    public static String method28263(Screen var0) {
-      ITextComponent var3 = var0.getTextComponent();
+      ITextComponent var3 = var0.getTitle();
       return var3 != null ? var3.getUnformattedComponentText() : null;
    }
 

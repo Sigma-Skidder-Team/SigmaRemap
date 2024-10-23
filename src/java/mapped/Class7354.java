@@ -1,5 +1,7 @@
 package mapped;
 
+import com.mentalfrostbyte.jello.music.AudioByteManager;
+
 import java.io.EOFException;
 import java.io.IOException;
 import java.net.MalformedURLException;

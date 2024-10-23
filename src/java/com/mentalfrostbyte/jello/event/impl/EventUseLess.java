@@ -1,8 +1,8 @@
 package com.mentalfrostbyte.jello.event.impl;
 
-import com.mentalfrostbyte.jello.event.Event;
+import com.mentalfrostbyte.jello.event.CancellableEvent;
 
-public class EventUseLess implements Event {
+public class EventUseLess extends CancellableEvent {
     private final double field21552;
 
     public EventUseLess(double var1) {

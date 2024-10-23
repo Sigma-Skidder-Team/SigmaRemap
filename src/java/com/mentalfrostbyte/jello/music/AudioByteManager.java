@@ -1,4 +1,6 @@
-package mapped;
+package com.mentalfrostbyte.jello.music;
+
+import mapped.DataStreamReader;
 
 import java.io.IOException;
 import java.util.ArrayList;

@@ -48,12 +48,12 @@ public abstract class Screen extends FocusableGui implements IScreen, Class1190 
       this.title = var1;
    }
 
-   public ITextComponent getTextComponent() {
+   public ITextComponent getTitle() {
       return this.title;
    }
 
    public String getNarrationMessage() {
-      return this.getTextComponent().getString();
+      return this.getTitle().getString();
    }
 
    @Override

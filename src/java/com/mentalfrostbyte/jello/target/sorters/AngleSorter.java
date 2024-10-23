@@ -1,5 +1,8 @@
-package mapped;
+package com.mentalfrostbyte.jello.target.sorters;
 
+import mapped.InteractAutoBlock;
+import mapped.RotationHelper;
+import mapped.TimedEntity;
 import net.minecraft.entity.Entity;
 
 import java.util.Comparator;

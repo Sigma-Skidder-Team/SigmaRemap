@@ -1,6 +1,6 @@
 package com.mentalfrostbyte.jello.event.impl;
 
-import com.mentalfrostbyte.jello.event.Event;
+import com.mentalfrostbyte.jello.event.CancellableEvent;
 
-public class Render3DEvent implements Event {
+public class Render3DEvent extends CancellableEvent {
 }
