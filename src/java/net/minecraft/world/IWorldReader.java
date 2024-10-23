@@ -111,7 +111,7 @@ public interface IWorldReader extends IBlockDisplayReader, ICollisionReader, Bio
 
    default IChunk getChunk(int chunkX, int chunkZ, ChunkStatus requiredStatus)
    {
-      System.out.println(this.getChunk(chunkX, chunkZ, requiredStatus, true) == null ? "default IChunk null" : "default IChunk not null");
+    //  System.out.println(this.getChunk(chunkX, chunkZ, requiredStatus, true) == null ? "default IChunk null" : "default IChunk not null");
       return this.getChunk(chunkX, chunkZ, requiredStatus, true);
    }
 

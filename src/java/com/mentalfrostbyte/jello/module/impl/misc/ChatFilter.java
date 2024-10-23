@@ -8,39 +8,45 @@ import net.minecraft.network.play.client.CChatMessagePacket;
 
 public class ChatFilter extends Module {
     public ChatFilter() {
-        super(ModuleCategory.MISC, "ChatFilter", "Bypasse chat filters");
+        super(ModuleCategory.MISC, "ChatFilter", "Bypasses chat filters");
     }
 
     @EventTarget
-    private void method16679(SendPacketEvent var1) {
-        if (this.isEnabled()) {
-            if (var1.getPacket() instanceof CChatMessagePacket) {
-                CChatMessagePacket var4 = (CChatMessagePacket) var1.getPacket();
-                String[] var5 = var4.message.split(" ");
-                if (var4.message.length() + var5.length <= 100) {
-                    StringBuilder var6 = new StringBuilder();
-                    boolean var7 = false;
+    private void onSendPacket(SendPacketEvent event) {
+        if (this.isEnabled() && event.getPacket() instanceof CChatMessagePacket) {
+            CChatMessagePacket chatPacket = (CChatMessagePacket) event.getPacket();
+            String[] words = chatPacket.message.split(" ");
 
-                    for (int var8 = 0; var8 < var5.length; var8++) {
-                        if (!var5[var8].startsWith("/")) {
-                            if (var5.length != 0) {
-                                var6.append(" ");
-                            }
+            if (isMessageLengthValid(chatPacket.message, words.length)) {
+                StringBuilder filteredMessage = new StringBuilder();
+                boolean shouldReplaceMessage = false;
 
-                            String var9 = var5[var8].substring(0, 1);
-                            String var10 = var5[var8].substring(1);
-                            var6.append(var9 + "\uf8ff" + var10);
-                        } else {
-                            var6.append(var5[var8]);
-                            var7 = !var5[var8].equals("/r") && !var5[var8].equals("/msg");
+                for (String word : words) {
+                    if (!word.startsWith("/")) {
+                        if (filteredMessage.length() > 0) {
+                            filteredMessage.append(" ");
                         }
+                        filteredMessage.append(replaceFirstCharacter(word));
+                    } else {
+                        filteredMessage.append(word);
+                        shouldReplaceMessage = !word.equals("/r") && !word.equals("/msg");
                     }
+                }
 
-                    if (!var7) {
-                        var4.message = var6.toString();
-                    }
+                if (!shouldReplaceMessage) {
+                    chatPacket.message = filteredMessage.toString();
                 }
             }
         }
+    }
+
+    private boolean isMessageLengthValid(String message, int wordCount) {
+        return message.length() + wordCount <= 100;
+    }
+
+    private String replaceFirstCharacter(String word) {
+        String firstChar = word.substring(0, 1);
+        String remainingChars = word.substring(1);
+        return firstChar + "\uf8ff" + remainingChars;
     }
 }

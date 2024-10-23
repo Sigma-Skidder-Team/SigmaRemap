@@ -15,68 +15,68 @@ import lol.MovementUtils;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
 public class Unstuck extends Module {
-    private int field23574;
-    private int field23575;
+    private int flagCount;
+    private int unstuckDelay;
 
     public Unstuck() {
-        super(ModuleCategory.MISC, "Unstuck", "Toggle this when an anticheat freeze you mid-air");
+        super(ModuleCategory.MISC, "Unstuck", "Toggle this when an anticheat freezes you mid-air");
         this.registerSetting(new NumberSetting<Float>("Flags", "Maximum flag before trying to unstuck", 5.0F, Float.class, 2.0F, 20.0F, 1.0F));
     }
 
     @Override
     public void onEnable() {
-        this.field23574 = 0;
+        this.flagCount = 0;
     }
 
     @EventTarget
-    public void method16285(EventMove var1) {
+    public void onMove(EventMove event) {
         if (this.isEnabled()) {
-            if ((float) this.field23574 >= this.getNumberValueBySettingName("Flags")) {
-                MovementUtils.setSpeed(var1, 0.0);
-                var1.setY(0.0);
+            if ((float) this.flagCount >= this.getNumberValueBySettingName("Flags")) {
+                MovementUtils.setSpeed(event, 0.0);
+                event.setY(0.0);
                 mc.player.setMotion(0.0, 0.0, 0.0);
             }
         }
     }
 
     @EventTarget
-    public void method16286(WorldLoadEvent var1) {
+    public void onWorldLoad(WorldLoadEvent event) {
         if (this.isEnabled()) {
-            this.field23574 = 0;
+            this.flagCount = 0;
         }
     }
 
     @EventTarget
-    public void method16287(EventUpdate var1) {
-        if (this.isEnabled() && var1.isPre()) {
+    public void onUpdate(EventUpdate event) {
+        if (this.isEnabled() && event.isPre()) {
             if (!mc.player.onGround && !MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
-                if ((float) this.field23574 >= this.getNumberValueBySettingName("Flags") && this.field23575 == 0) {
-                    this.field23575 = 60;
+                if ((float) this.flagCount >= this.getNumberValueBySettingName("Flags") && this.unstuckDelay == 0) {
+                    this.unstuckDelay = 60;
                     Client.getInstance().getNotificationManager().send(new Notification("Unstuck", "Trying to unstuck you.."));
                 }
 
-                if (this.field23575 > 0) {
-                    this.field23575--;
-                    if (this.field23575 == 0) {
-                        this.field23574 = 0;
+                if (this.unstuckDelay > 0) {
+                    this.unstuckDelay--;
+                    if (this.unstuckDelay == 0) {
+                        this.flagCount = 0;
                     }
 
-                    var1.setCancelled(true);
+                    event.setCancelled(true);
                 }
             } else {
-                this.field23574 = 0;
+                this.flagCount = 0;
             }
         }
     }
 
     @EventTarget
-    public void method16288(ReceivePacketEvent var1) {
+    public void onReceivePacket(ReceivePacketEvent event) {
         if (this.isEnabled()) {
             if (mc.player != null) {
-                if (var1.getPacket() instanceof SPlayerPositionLookPacket && !MultiUtilities.isAboveBounds(mc.player, 0.3F) && mc.player.ticksExisted > 10) {
-                    this.field23574++;
-                    if ((float) this.field23574 > this.getNumberValueBySettingName("Flags")) {
-                        var1.setCancelled(true);
+                if (event.getPacket() instanceof SPlayerPositionLookPacket && !MultiUtilities.isAboveBounds(mc.player, 0.3F) && mc.player.ticksExisted > 10) {
+                    this.flagCount++;
+                    if ((float) this.flagCount > this.getNumberValueBySettingName("Flags")) {
+                        event.setCancelled(true);
                     }
                 }
             }

@@ -143,7 +143,7 @@ public abstract class World implements IWorld, AutoCloseable {
    }
 
    public Chunk getChunk(int chunkX, int chunkZ) {
-      System.out.println("before getChunk");
+    //  System.out.println("before getChunk");
       return (Chunk)this.getChunk(chunkX, chunkZ, ChunkStatus.FULL);
    }
 

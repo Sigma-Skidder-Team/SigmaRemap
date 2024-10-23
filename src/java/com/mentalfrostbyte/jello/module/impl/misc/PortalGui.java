@@ -11,7 +11,7 @@ public class PortalGui extends Module {
     }
 
     @EventTarget
-    private void method16663(TickEvent var1) {
+    private void onTick(TickEvent event) {
         if (this.isEnabled()) {
             mc.player.inPortal = false;
         }

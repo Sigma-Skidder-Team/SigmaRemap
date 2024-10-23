@@ -15,7 +15,7 @@ import net.minecraft.util.text.event.ClickEvent;
 import net.minecraft.util.text.event.ClickEvent$Action;
 
 public class JartexGamePlay extends Module {
-    private GamePlay field23527;
+    private GamePlay gameplayModule;
 
     public JartexGamePlay() {
         super(ModuleCategory.MISC, "Jartex", "Gameplay for Jartex network");
@@ -23,44 +23,45 @@ public class JartexGamePlay extends Module {
 
     @Override
     public void initialize() {
-        this.field23527 = (GamePlay) this.access();
+        this.gameplayModule = (GamePlay) this.access();
     }
 
     @EventTarget
-    private void method16219(ReceivePacketEvent var1) {
+    private void onReceivePacket(ReceivePacketEvent event) {
         if (this.isEnabled() && mc.player != null) {
-            IPacket var4 = var1.getPacket();
-            if (var4 instanceof SChatPacket) {
-                SChatPacket var5 = (SChatPacket) var4;
-                String var6 = var5.getChatComponent().getString();
-                String var7 = mc.player.getName().getString().toLowerCase();
-                String var8 = var5.getChatComponent().getString();
-                if (this.field23527.getBooleanValueFromSettingName("AutoL")
-                        && (
-                        var8.toLowerCase().contains("§r§7 has been killed by §r§a§l" + var7)
-                                || var8.toLowerCase().contains("§r§7 was shot by §r§a§l" + var7)
-                                || var6.toLowerCase().contains("§r§7 was killed with dynamite by §r§a§l" + var7)
-                )) {
-                    this.field23527.method16761(var6);
+            IPacket packet = event.getPacket();
+            if (packet instanceof SChatPacket) {
+                SChatPacket chatPacket = (SChatPacket) packet;
+                String chatMessage = chatPacket.getChatComponent().getString();
+                String playerName = mc.player.getName().getString().toLowerCase();
+                String messageContent = chatPacket.getChatComponent().getString();
+
+                if (this.gameplayModule.getBooleanValueFromSettingName("AutoL") && (
+                        messageContent.toLowerCase().contains("§r§7 has been killed by §r§a§l" + playerName) ||
+                                messageContent.toLowerCase().contains("§r§7 was shot by §r§a§l" + playerName) ||
+                                chatMessage.toLowerCase().contains("§r§7 was killed with dynamite by §r§a§l" + playerName))) {
+
+                    this.gameplayModule.method16761(chatMessage);
                 }
 
-                if (var8.contains("§e§lPlay Again? §r§7Click here!§r")) {
-                    if (this.field23527.getBooleanValueFromSettingName("AutoGG")) {
-                        this.field23527.method16760();
+                if (messageContent.contains("§e§lPlay Again? §r§7Click here!§r")) {
+                    if (this.gameplayModule.getBooleanValueFromSettingName("AutoGG")) {
+                        this.gameplayModule.method16760();
                     }
 
-                    if (this.field23527.getBooleanValueFromSettingName("Auto Join")) {
-                        for (ITextComponent var10 : var5.getChatComponent().getSiblings()) {
-                            ClickEvent var11 = var10.getStyle().getClickEvent();
-                            if (var11 != null && var11.getAction() == ClickEvent$Action.RUN_COMMAND) {
-                                this.field23527.method16759(new Class7200(var11.getValue(), (long) this.field23527.getNumberValueBySettingName("Auto Join delay") * 1000L));
-                                Client.getInstance()
-                                        .getNotificationManager()
-                                        .send(
-                                                new Notification(
-                                                        "Auto Join", "Joining a new game in 3 seconds.", (int) (this.field23527.getNumberValueBySettingName("Auto Join delay") - 1.0F) * 1000
-                                                )
-                                        );
+                    if (this.gameplayModule.getBooleanValueFromSettingName("Auto Join")) {
+                        for (ITextComponent sibling : chatPacket.getChatComponent().getSiblings()) {
+                            ClickEvent clickEvent = sibling.getStyle().getClickEvent();
+                            if (clickEvent != null && clickEvent.getAction() == ClickEvent$Action.RUN_COMMAND) {
+                                long delay = (long) this.gameplayModule.getNumberValueBySettingName("Auto Join delay") * 1000L;
+                                this.gameplayModule.method16759(new Class7200(clickEvent.getValue(), delay));
+                                Client.getInstance().getNotificationManager().send(
+                                        new Notification(
+                                                "Auto Join",
+                                                "Joining a new game in " + (this.gameplayModule.getNumberValueBySettingName("Auto Join delay") - 1.0F) + " seconds.",
+                                                (int) (this.gameplayModule.getNumberValueBySettingName("Auto Join delay") - 1.0F) * 1000
+                                        )
+                                );
                                 break;
                             }
                         }

@@ -20,151 +20,142 @@ import net.minecraft.network.play.client.CCloseWindowPacket;
 import net.minecraft.network.play.client.CEntityActionPacket;
 
 public class AutoArmor extends Module {
-    public static boolean field23798;
-    public boolean field23799 = false;
-    public boolean field23800 = false;
+    static boolean armorEquipped;
+    private boolean elytraActive;
+    private boolean jumpingLastTick;
     private final TimerUtil timer = new TimerUtil();
-    private boolean isInventoryOpen;
+    private boolean inventoryOpen;
 
     public AutoArmor() {
-        super(ModuleCategory.ITEM, "AutoArmor", "Automaticly equips your armor");
-        this.registerSetting(new BooleanSetting("Fake Items", "Bypass for fake items (AAC).", false));
-        this.registerSetting(new NumberSetting<Float>("Delay", "Inventory clicks delay", 0.3F, Float.class, 0.0F, 1.0F, 0.01F));
-        this.registerSetting(new ModeSetting("Mode", "The way it will move armor in your inventory", 0, "Basic", "OpenInv", "FakeInv"));
-        this.registerSetting(new ModeSetting("Elytra", "Elytra Equip Mode", 0, "Ignore", "Equip", "On Use"));
+        super(ModuleCategory.ITEM, "AutoArmor", "Automatically equips your armor");
+        registerSetting(new BooleanSetting("Fake Items", "Bypass for fake items (AAC).", false));
+        registerSetting(new NumberSetting<Float>("Delay", "Inventory clicks delay", 0.3F, Float.class, 0.0F, 1.0F, 0.01F));
+        registerSetting(new ModeSetting("Mode", "Movement mode for armor in your inventory", 0, "Basic", "OpenInv", "FakeInv"));
+        registerSetting(new ModeSetting("Elytra", "Elytra Equip Mode", 0, "Ignore", "Equip", "On Use"));
     }
 
     @Override
     public void onEnable() {
-        if (!this.timer.isEnabled()) {
-            this.timer.start();
+        if (!timer.isEnabled()) {
+            timer.start();
         }
-
-        this.isInventoryOpen = mc.currentScreen instanceof InventoryScreen;
-        field23798 = false;
+        inventoryOpen = mc.currentScreen instanceof InventoryScreen;
+        armorEquipped = false;
     }
 
     @Override
     public void onDisable() {
-        field23798 = false;
+        armorEquipped = false;
     }
 
     @EventTarget
     @HigherPriority
-    public void method16615(TickEvent var1) {
-        if (this.isEnabled()) {
-            if (!this.timer.isEnabled()) {
-                this.timer.start();
+    public void onTick(TickEvent event) {
+        if (isEnabled()) {
+            if (!timer.isEnabled()) {
+                timer.start();
             }
 
-            if (!this.getStringSettingValueByName("Mode").equals("OpenInv") || mc.currentScreen instanceof InventoryScreen) {
-                long var4 = (long) (this.getNumberValueBySettingName("Delay") * 1000.0F);
-                String var6 = this.getStringSettingValueByName("Elytra");
-                switch (var6) {
+            if (!getStringSettingValueByName("Mode").equals("OpenInv") || mc.currentScreen instanceof InventoryScreen) {
+                long delay = (long) (getNumberValueBySettingName("Delay") * 1000.0F);
+                String elytraMode = getStringSettingValueByName("Elytra");
+
+                switch (elytraMode) {
                     case "Ignore":
-                        this.field23799 = false;
+                        elytraActive = false;
                         break;
                     case "Equip":
-                        this.field23799 = true;
+                        elytraActive = true;
                         break;
                     case "On Use":
-                        if (!mc.player.onGround && mc.player.jumpTicks == 0 && mc.player.isJumping && !this.field23800) {
-                            this.field23799 = true;
-                        } else if (mc.player.onGround) {
-                            this.field23799 = false;
-                        }
+                        elytraActive = !mc.player.onGround && mc.player.isJumping && !jumpingLastTick;
+                        break;
                 }
+                jumpingLastTick = mc.player.isJumping;
 
-                this.field23800 = mc.player.isJumping;
                 if (mc.currentScreen instanceof InventoryScreen) {
-                    this.isInventoryOpen = false;
+                    inventoryOpen = false;
                 }
 
                 if ((mc.currentScreen == null || mc.currentScreen instanceof InventoryScreen || mc.currentScreen instanceof ChatScreen)
-                        && this.timer.getElapsedTime() > var4
-                        && (float) Client.getInstance().getPlayerTracker().getMode() > (float) var4 / 50.0F) {
-                    field23798 = false;
-                    this.method16616(this.getStringSettingValueByName("Mode").equalsIgnoreCase("FakeInv"));
+                        && timer.getElapsedTime() > delay
+                        && (float) Client.getInstance().getPlayerTracker().getMode() > (float) delay / 50.0F) {
+                    armorEquipped = false;
+                    handleArmorMovement(getStringSettingValueByName("Mode").equalsIgnoreCase("FakeInv"));
                 }
 
-                for (EquipmentSlotType var9 : EquipmentSlotType.values()) {
-                    if (mc.player.container.getSlot(8 - var9.getIndex()).getHasStack()) {
-                        if (InvManagerUtils.isArmor(8 - var9.getIndex())) {
+                for (EquipmentSlotType slot : EquipmentSlotType.values()) {
+                    if (mc.player.container.getSlot(8 - slot.getIndex()).getHasStack()) {
+                        if (InvManagerUtils.isArmor(8 - slot.getIndex())) {
                             return;
                         }
-                    } else if (this.method16618(var9)) {
+                    } else if (isArmorInInventory(slot)) {
                         return;
                     }
                 }
 
-                if (!this.isInventoryOpen && !(mc.currentScreen instanceof InventoryScreen) && this.timer.getElapsedTime() > 0L) {
-                    this.isInventoryOpen = true;
+                if (!inventoryOpen && !(mc.currentScreen instanceof InventoryScreen) && timer.getElapsedTime() > 0L) {
+                    inventoryOpen = true;
                     mc.getConnection().sendPacket(new CCloseWindowPacket(-1));
                 }
             }
         }
     }
 
-    private void method16616(boolean var1) {
-        for (EquipmentSlotType var7 : EquipmentSlotType.values()) {
-            if (mc.player.container.getSlot(8 - var7.getIndex()).getHasStack()) {
-                ItemStack var8 = mc.player.container.getSlot(8 - var7.getIndex()).getStack();
-                if (InvManagerUtils.isBestArmorPiece(var8) && (!this.field23799 || var7 != EquipmentSlotType.CHEST)) {
+    private void handleArmorMovement(boolean fakeInventory) {
+        for (EquipmentSlotType slot : EquipmentSlotType.values()) {
+            if (mc.player.container.getSlot(8 - slot.getIndex()).getHasStack()) {
+                ItemStack currentArmor = mc.player.container.getSlot(8 - slot.getIndex()).getStack();
+                if (InvManagerUtils.isBestArmorPiece(currentArmor) && (!elytraActive || slot != EquipmentSlotType.CHEST)) {
                     continue;
                 }
             }
 
-            for (int var12 = 9; var12 < 45; var12++) {
-                if (mc.player.container.getSlot(var12).getHasStack()) {
-                    ItemStack var9 = mc.player.container.getSlot(var12).getStack();
-                    if (var9.getItem() instanceof Class3256
-                            && this.field23799
+            for (int index = 9; index < 45; index++) {
+                if (mc.player.container.getSlot(index).getHasStack()) {
+                    ItemStack itemStack = mc.player.container.getSlot(index).getStack();
+                    if (itemStack.getItem() instanceof Class3256 && elytraActive
                             && !(mc.player.inventory.getStackInSlot(36 + EquipmentSlotType.CHEST.getIndex()).getItem() instanceof Class3256)) {
-                        Class3256 var13 = (Class3256) var9.getItem();
-                        if (EquipmentSlotType.CHEST == var7
-                                && (
-                                !Client.getInstance().getModuleManager().getModuleByClass(AutoArmor.class).getBooleanValueFromSettingName("Fake Items")
-                                        || Client.getInstance().getSlotChangeTracker().method33238(var12) >= 1500L
-                        )) {
-                            this.method16617(var1);
-                            if (!(mc.player.inventory.getStackInSlot(36 + var7.getIndex()).getItem() instanceof Class3280)) {
-                                InvManagerUtils.click(8 - var7.getIndex(), 0, true);
+                        Class3256 item = (Class3256) itemStack.getItem();
+                        if (EquipmentSlotType.CHEST == slot
+                                && (!Client.getInstance().getModuleManager().getModuleByClass(AutoArmor.class).getBooleanValueFromSettingName("Fake Items")
+                                || Client.getInstance().getSlotChangeTracker().method33238(index) >= 1500L)) {
+                            processArmorClick(fakeInventory);
+                            if (!(mc.player.inventory.getStackInSlot(36 + slot.getIndex()).getItem() instanceof Class3280)) {
+                                InvManagerUtils.click(8 - slot.getIndex(), 0, true);
                             }
+                            InvManagerUtils.fixedClick(mc.player.container.windowId, index, 0, ClickType.QUICK_MOVE, mc.player, true);
+                            timer.reset();
+                            armorEquipped = true;
 
-                            InvManagerUtils.fixedClick(mc.player.container.windowId, var12, 0, ClickType.QUICK_MOVE, mc.player, true);
-                            this.timer.reset();
-                            field23798 = true;
-                            if (this.getStringSettingValueByName("Elytra").equals("On Use")) {
+                            if (getStringSettingValueByName("Elytra").equals("On Use")) {
                                 mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, CEntityActionPacket.Action.START_FALL_FLYING));
                                 mc.player.setFlag(7, true);
                             }
-
-                            if (Client.getInstance().getModuleManager().getModuleByClass(AutoArmor.class).getNumberValueBySettingName("Delay") > 0.0F) {
+                            if (getNumberValueBySettingName("Delay") > 0.0F) {
                                 return;
                             }
                         }
-                    } else if (var9.getItem() instanceof ArmorItem && !this.field23799) {
-                        ArmorItem var10 = (ArmorItem) var9.getItem();
-                        if (var10.getType() == var7
-                                && InvManagerUtils.isBestArmorPiece(var9)
-                                && InvManagerUtils.getArmorProtectionValue(var9) > 0
-                                && (
-                                !Client.getInstance().getModuleManager().getModuleByClass(AutoArmor.class).getBooleanValueFromSettingName("Fake Items")
-                                        || Client.getInstance().getSlotChangeTracker().method33238(var12) >= 1500L
-                        )) {
-                            this.method16617(var1);
-                            Item var11 = mc.player.inventory.getStackInSlot(36 + var10.getType().getIndex()).getItem();
-                            if (!(var11 instanceof Class3256)) {
-                                if (!(var11 instanceof Class3280)) {
-                                    InvManagerUtils.method25871(8 - var10.getType().getIndex());
+                    } else if (itemStack.getItem() instanceof ArmorItem && !elytraActive) {
+                        ArmorItem armorItem = (ArmorItem) itemStack.getItem();
+                        if (armorItem.getType() == slot
+                                && InvManagerUtils.isBestArmorPiece(itemStack)
+                                && InvManagerUtils.getArmorProtectionValue(itemStack) > 0
+                                && (!Client.getInstance().getModuleManager().getModuleByClass(AutoArmor.class).getBooleanValueFromSettingName("Fake Items")
+                                || Client.getInstance().getSlotChangeTracker().method33238(index) >= 1500L)) {
+                            processArmorClick(fakeInventory);
+                            Item equippedItem = mc.player.inventory.getStackInSlot(36 + armorItem.getType().getIndex()).getItem();
+                            if (!(equippedItem instanceof Class3256)) {
+                                if (!(equippedItem instanceof Class3280)) {
+                                    InvManagerUtils.method25871(8 - armorItem.getType().getIndex());
                                 }
                             } else {
-                                InvManagerUtils.click(8 - var7.getIndex(), 0, true);
+                                InvManagerUtils.click(8 - slot.getIndex(), 0, true);
                             }
+                            InvManagerUtils.fixedClick(mc.player.container.windowId, index, 0, ClickType.QUICK_MOVE, mc.player, true);
+                            timer.reset();
+                            armorEquipped = true;
 
-                            InvManagerUtils.fixedClick(mc.player.container.windowId, var12, 0, ClickType.QUICK_MOVE, mc.player, true);
-                            this.timer.reset();
-                            field23798 = true;
                             if (Client.getInstance().getModuleManager().getModuleByClass(AutoArmor.class).getNumberValueBySettingName("Delay") > 0.0F) {
                                 return;
                             }
@@ -175,27 +166,26 @@ public class AutoArmor extends Module {
         }
     }
 
-    private void method16617(boolean var1) {
-        if (var1 && this.isInventoryOpen && !(mc.currentScreen instanceof InventoryScreen)/* && JelloPortal.getCurrentVersionApplied() <= ViaVerList._1_11_1_or_2.getVersionNumber()*/) {
+    private void processArmorClick(boolean fakeInventory) {
+        if (fakeInventory && inventoryOpen && !(mc.currentScreen instanceof InventoryScreen)) {
             mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacket.State.OPEN_INVENTORY));
-            this.isInventoryOpen = false;
+            inventoryOpen = false;
         }
     }
 
-    private boolean method16618(EquipmentSlotType var1) {
-        for (int var4 = 9; var4 < 45; var4++) {
-            if (mc.player.container.getSlot(var4).getHasStack()) {
-                ItemStack var5 = mc.player.container.getSlot(var4).getStack();
-                Item var6 = var5.getItem();
-                if (var6 instanceof ArmorItem) {
-                    ArmorItem var7 = (ArmorItem) var6;
-                    if (var1 == var7.getType()) {
+    private boolean isArmorInInventory(EquipmentSlotType slot) {
+        for (int index = 9; index < 45; index++) {
+            if (mc.player.container.getSlot(index).getHasStack()) {
+                ItemStack itemStack = mc.player.container.getSlot(index).getStack();
+                Item item = itemStack.getItem();
+                if (item instanceof ArmorItem) {
+                    ArmorItem armorItem = (ArmorItem) item;
+                    if (slot == armorItem.getType()) {
                         return true;
                     }
                 }
             }
         }
-
         return false;
     }
 }
